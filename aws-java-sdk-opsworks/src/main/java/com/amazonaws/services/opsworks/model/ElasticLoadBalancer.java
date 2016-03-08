@@ -89,6 +89,7 @@ public class ElasticLoadBalancer implements Serializable, Cloneable {
      * @param elasticLoadBalancerName
      *        The Elastic Load Balancing instance's name.
      */
+
     public void setElasticLoadBalancerName(String elasticLoadBalancerName) {
         this.elasticLoadBalancerName = elasticLoadBalancerName;
     }
@@ -100,6 +101,7 @@ public class ElasticLoadBalancer implements Serializable, Cloneable {
      * 
      * @return The Elastic Load Balancing instance's name.
      */
+
     public String getElasticLoadBalancerName() {
         return this.elasticLoadBalancerName;
     }
@@ -114,6 +116,7 @@ public class ElasticLoadBalancer implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ElasticLoadBalancer withElasticLoadBalancerName(
             String elasticLoadBalancerName) {
         setElasticLoadBalancerName(elasticLoadBalancerName);
@@ -128,6 +131,7 @@ public class ElasticLoadBalancer implements Serializable, Cloneable {
      * @param region
      *        The instance's AWS region.
      */
+
     public void setRegion(String region) {
         this.region = region;
     }
@@ -139,6 +143,7 @@ public class ElasticLoadBalancer implements Serializable, Cloneable {
      * 
      * @return The instance's AWS region.
      */
+
     public String getRegion() {
         return this.region;
     }
@@ -153,6 +158,7 @@ public class ElasticLoadBalancer implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ElasticLoadBalancer withRegion(String region) {
         setRegion(region);
         return this;
@@ -166,6 +172,7 @@ public class ElasticLoadBalancer implements Serializable, Cloneable {
      * @param dnsName
      *        The instance's public DNS name.
      */
+
     public void setDnsName(String dnsName) {
         this.dnsName = dnsName;
     }
@@ -177,6 +184,7 @@ public class ElasticLoadBalancer implements Serializable, Cloneable {
      * 
      * @return The instance's public DNS name.
      */
+
     public String getDnsName() {
         return this.dnsName;
     }
@@ -191,6 +199,7 @@ public class ElasticLoadBalancer implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ElasticLoadBalancer withDnsName(String dnsName) {
         setDnsName(dnsName);
         return this;
@@ -204,6 +213,7 @@ public class ElasticLoadBalancer implements Serializable, Cloneable {
      * @param stackId
      *        The ID of the stack that the instance is associated with.
      */
+
     public void setStackId(String stackId) {
         this.stackId = stackId;
     }
@@ -215,6 +225,7 @@ public class ElasticLoadBalancer implements Serializable, Cloneable {
      * 
      * @return The ID of the stack that the instance is associated with.
      */
+
     public String getStackId() {
         return this.stackId;
     }
@@ -229,6 +240,7 @@ public class ElasticLoadBalancer implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ElasticLoadBalancer withStackId(String stackId) {
         setStackId(stackId);
         return this;
@@ -242,6 +254,7 @@ public class ElasticLoadBalancer implements Serializable, Cloneable {
      * @param layerId
      *        The ID of the layer that the instance is attached to.
      */
+
     public void setLayerId(String layerId) {
         this.layerId = layerId;
     }
@@ -253,6 +266,7 @@ public class ElasticLoadBalancer implements Serializable, Cloneable {
      * 
      * @return The ID of the layer that the instance is attached to.
      */
+
     public String getLayerId() {
         return this.layerId;
     }
@@ -267,6 +281,7 @@ public class ElasticLoadBalancer implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ElasticLoadBalancer withLayerId(String layerId) {
         setLayerId(layerId);
         return this;
@@ -280,6 +295,7 @@ public class ElasticLoadBalancer implements Serializable, Cloneable {
      * @param vpcId
      *        The VPC ID.
      */
+
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
@@ -291,6 +307,7 @@ public class ElasticLoadBalancer implements Serializable, Cloneable {
      * 
      * @return The VPC ID.
      */
+
     public String getVpcId() {
         return this.vpcId;
     }
@@ -305,6 +322,7 @@ public class ElasticLoadBalancer implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ElasticLoadBalancer withVpcId(String vpcId) {
         setVpcId(vpcId);
         return this;
@@ -317,6 +335,7 @@ public class ElasticLoadBalancer implements Serializable, Cloneable {
      * 
      * @return A list of Availability Zones.
      */
+
     public java.util.List<String> getAvailabilityZones() {
         if (availabilityZones == null) {
             availabilityZones = new com.amazonaws.internal.SdkInternalList<String>();
@@ -332,6 +351,7 @@ public class ElasticLoadBalancer implements Serializable, Cloneable {
      * @param availabilityZones
      *        A list of Availability Zones.
      */
+
     public void setAvailabilityZones(
             java.util.Collection<String> availabilityZones) {
         if (availabilityZones == null) {
@@ -359,6 +379,7 @@ public class ElasticLoadBalancer implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ElasticLoadBalancer withAvailabilityZones(
             String... availabilityZones) {
         if (this.availabilityZones == null) {
@@ -381,6 +402,7 @@ public class ElasticLoadBalancer implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ElasticLoadBalancer withAvailabilityZones(
             java.util.Collection<String> availabilityZones) {
         setAvailabilityZones(availabilityZones);
@@ -394,6 +416,7 @@ public class ElasticLoadBalancer implements Serializable, Cloneable {
      * 
      * @return A list of subnet IDs, if the stack is running in a VPC.
      */
+
     public java.util.List<String> getSubnetIds() {
         if (subnetIds == null) {
             subnetIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -409,6 +432,7 @@ public class ElasticLoadBalancer implements Serializable, Cloneable {
      * @param subnetIds
      *        A list of subnet IDs, if the stack is running in a VPC.
      */
+
     public void setSubnetIds(java.util.Collection<String> subnetIds) {
         if (subnetIds == null) {
             this.subnetIds = null;
@@ -435,6 +459,7 @@ public class ElasticLoadBalancer implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ElasticLoadBalancer withSubnetIds(String... subnetIds) {
         if (this.subnetIds == null) {
             setSubnetIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -456,6 +481,7 @@ public class ElasticLoadBalancer implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ElasticLoadBalancer withSubnetIds(
             java.util.Collection<String> subnetIds) {
         setSubnetIds(subnetIds);
@@ -471,6 +497,7 @@ public class ElasticLoadBalancer implements Serializable, Cloneable {
      * @return A list of the EC2 instances that the Elastic Load Balancing
      *         instance is managing traffic for.
      */
+
     public java.util.List<String> getEc2InstanceIds() {
         if (ec2InstanceIds == null) {
             ec2InstanceIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -488,6 +515,7 @@ public class ElasticLoadBalancer implements Serializable, Cloneable {
      *        A list of the EC2 instances that the Elastic Load Balancing
      *        instance is managing traffic for.
      */
+
     public void setEc2InstanceIds(java.util.Collection<String> ec2InstanceIds) {
         if (ec2InstanceIds == null) {
             this.ec2InstanceIds = null;
@@ -516,6 +544,7 @@ public class ElasticLoadBalancer implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ElasticLoadBalancer withEc2InstanceIds(String... ec2InstanceIds) {
         if (this.ec2InstanceIds == null) {
             setEc2InstanceIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -539,6 +568,7 @@ public class ElasticLoadBalancer implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ElasticLoadBalancer withEc2InstanceIds(
             java.util.Collection<String> ec2InstanceIds) {
         setEc2InstanceIds(ec2InstanceIds);

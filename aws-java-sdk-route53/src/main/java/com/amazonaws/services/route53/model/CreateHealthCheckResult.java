@@ -49,6 +49,7 @@ public class CreateHealthCheckResult implements Serializable, Cloneable {
      *        A complex type that contains identifying information about the
      *        health check.
      */
+
     public void setHealthCheck(HealthCheck healthCheck) {
         this.healthCheck = healthCheck;
     }
@@ -62,6 +63,7 @@ public class CreateHealthCheckResult implements Serializable, Cloneable {
      * @return A complex type that contains identifying information about the
      *         health check.
      */
+
     public HealthCheck getHealthCheck() {
         return this.healthCheck;
     }
@@ -78,6 +80,7 @@ public class CreateHealthCheckResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateHealthCheckResult withHealthCheck(HealthCheck healthCheck) {
         setHealthCheck(healthCheck);
         return this;
@@ -91,6 +94,7 @@ public class CreateHealthCheckResult implements Serializable, Cloneable {
      * @param location
      *        The unique URL representing the new health check.
      */
+
     public void setLocation(String location) {
         this.location = location;
     }
@@ -102,6 +106,7 @@ public class CreateHealthCheckResult implements Serializable, Cloneable {
      * 
      * @return The unique URL representing the new health check.
      */
+
     public String getLocation() {
         return this.location;
     }
@@ -116,6 +121,7 @@ public class CreateHealthCheckResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateHealthCheckResult withLocation(String location) {
         setLocation(location);
         return this;

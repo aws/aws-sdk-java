@@ -46,6 +46,7 @@ public class BatchGetDeploymentInstancesResult implements Serializable,
      * 
      * @return Information about the instances.
      */
+
     public java.util.List<InstanceSummary> getInstancesSummary() {
         if (instancesSummary == null) {
             instancesSummary = new com.amazonaws.internal.SdkInternalList<InstanceSummary>();
@@ -61,6 +62,7 @@ public class BatchGetDeploymentInstancesResult implements Serializable,
      * @param instancesSummary
      *        Information about the instances.
      */
+
     public void setInstancesSummary(
             java.util.Collection<InstanceSummary> instancesSummary) {
         if (instancesSummary == null) {
@@ -88,6 +90,7 @@ public class BatchGetDeploymentInstancesResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchGetDeploymentInstancesResult withInstancesSummary(
             InstanceSummary... instancesSummary) {
         if (this.instancesSummary == null) {
@@ -110,6 +113,7 @@ public class BatchGetDeploymentInstancesResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchGetDeploymentInstancesResult withInstancesSummary(
             java.util.Collection<InstanceSummary> instancesSummary) {
         setInstancesSummary(instancesSummary);
@@ -125,6 +129,7 @@ public class BatchGetDeploymentInstancesResult implements Serializable,
      *        Information about errors that may have occurred during the API
      *        call.
      */
+
     public void setErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;
     }
@@ -137,6 +142,7 @@ public class BatchGetDeploymentInstancesResult implements Serializable,
      * @return Information about errors that may have occurred during the API
      *         call.
      */
+
     public String getErrorMessage() {
         return this.errorMessage;
     }
@@ -152,6 +158,7 @@ public class BatchGetDeploymentInstancesResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchGetDeploymentInstancesResult withErrorMessage(
             String errorMessage) {
         setErrorMessage(errorMessage);

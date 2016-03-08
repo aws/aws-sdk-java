@@ -52,6 +52,7 @@ public class ReportTaskProgressRequest extends AmazonWebServiceRequest
      *        The ID of the task assigned to the task runner. This value is
      *        provided in the response for <a>PollForTask</a>.
      */
+
     public void setTaskId(String taskId) {
         this.taskId = taskId;
     }
@@ -65,6 +66,7 @@ public class ReportTaskProgressRequest extends AmazonWebServiceRequest
      * @return The ID of the task assigned to the task runner. This value is
      *         provided in the response for <a>PollForTask</a>.
      */
+
     public String getTaskId() {
         return this.taskId;
     }
@@ -81,6 +83,7 @@ public class ReportTaskProgressRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReportTaskProgressRequest withTaskId(String taskId) {
         setTaskId(taskId);
         return this;
@@ -95,6 +98,7 @@ public class ReportTaskProgressRequest extends AmazonWebServiceRequest
      * @return Key-value pairs that define the properties of the
      *         ReportTaskProgressInput object.
      */
+
     public java.util.List<Field> getFields() {
         if (fields == null) {
             fields = new com.amazonaws.internal.SdkInternalList<Field>();
@@ -112,6 +116,7 @@ public class ReportTaskProgressRequest extends AmazonWebServiceRequest
      *        Key-value pairs that define the properties of the
      *        ReportTaskProgressInput object.
      */
+
     public void setFields(java.util.Collection<Field> fields) {
         if (fields == null) {
             this.fields = null;
@@ -139,6 +144,7 @@ public class ReportTaskProgressRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReportTaskProgressRequest withFields(Field... fields) {
         if (this.fields == null) {
             setFields(new com.amazonaws.internal.SdkInternalList<Field>(
@@ -162,6 +168,7 @@ public class ReportTaskProgressRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReportTaskProgressRequest withFields(
             java.util.Collection<Field> fields) {
         setFields(fields);

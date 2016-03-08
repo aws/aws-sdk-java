@@ -43,6 +43,7 @@ public class DeleteNetworkAclRequest extends AmazonWebServiceRequest implements
      * @param networkAclId
      *        The ID of the network ACL.
      */
+
     public void setNetworkAclId(String networkAclId) {
         this.networkAclId = networkAclId;
     }
@@ -54,6 +55,7 @@ public class DeleteNetworkAclRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ID of the network ACL.
      */
+
     public String getNetworkAclId() {
         return this.networkAclId;
     }
@@ -68,6 +70,7 @@ public class DeleteNetworkAclRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteNetworkAclRequest withNetworkAclId(String networkAclId) {
         setNetworkAclId(networkAclId);
         return this;

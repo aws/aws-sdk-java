@@ -192,6 +192,7 @@ public class Stack implements Serializable, Cloneable {
      * @param stackId
      *        The stack ID.
      */
+
     public void setStackId(String stackId) {
         this.stackId = stackId;
     }
@@ -203,6 +204,7 @@ public class Stack implements Serializable, Cloneable {
      * 
      * @return The stack ID.
      */
+
     public String getStackId() {
         return this.stackId;
     }
@@ -217,6 +219,7 @@ public class Stack implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Stack withStackId(String stackId) {
         setStackId(stackId);
         return this;
@@ -230,6 +233,7 @@ public class Stack implements Serializable, Cloneable {
      * @param name
      *        The stack name.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -241,6 +245,7 @@ public class Stack implements Serializable, Cloneable {
      * 
      * @return The stack name.
      */
+
     public String getName() {
         return this.name;
     }
@@ -255,6 +260,7 @@ public class Stack implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Stack withName(String name) {
         setName(name);
         return this;
@@ -268,6 +274,7 @@ public class Stack implements Serializable, Cloneable {
      * @param arn
      *        The stack's ARN.
      */
+
     public void setArn(String arn) {
         this.arn = arn;
     }
@@ -279,6 +286,7 @@ public class Stack implements Serializable, Cloneable {
      * 
      * @return The stack's ARN.
      */
+
     public String getArn() {
         return this.arn;
     }
@@ -293,6 +301,7 @@ public class Stack implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Stack withArn(String arn) {
         setArn(arn);
         return this;
@@ -312,6 +321,7 @@ public class Stack implements Serializable, Cloneable {
      *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html"
      *        >Regions and Endpoints</a>.
      */
+
     public void setRegion(String region) {
         this.region = region;
     }
@@ -329,6 +339,7 @@ public class Stack implements Serializable, Cloneable {
      *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html"
      *         >Regions and Endpoints</a>.
      */
+
     public String getRegion() {
         return this.region;
     }
@@ -349,6 +360,7 @@ public class Stack implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Stack withRegion(String region) {
         setRegion(region);
         return this;
@@ -362,6 +374,7 @@ public class Stack implements Serializable, Cloneable {
      * @param vpcId
      *        The VPC ID; applicable only if the stack is running in a VPC.
      */
+
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
@@ -373,6 +386,7 @@ public class Stack implements Serializable, Cloneable {
      * 
      * @return The VPC ID; applicable only if the stack is running in a VPC.
      */
+
     public String getVpcId() {
         return this.vpcId;
     }
@@ -387,6 +401,7 @@ public class Stack implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Stack withVpcId(String vpcId) {
         setVpcId(vpcId);
         return this;
@@ -399,6 +414,7 @@ public class Stack implements Serializable, Cloneable {
      * 
      * @return The stack's attributes.
      */
+
     public java.util.Map<String, String> getAttributes() {
         if (attributes == null) {
             attributes = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -414,6 +430,7 @@ public class Stack implements Serializable, Cloneable {
      * @param attributes
      *        The stack's attributes.
      */
+
     public void setAttributes(java.util.Map<String, String> attributes) {
         this.attributes = attributes == null ? null
                 : new com.amazonaws.internal.SdkInternalMap<String, String>(
@@ -430,6 +447,7 @@ public class Stack implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Stack withAttributes(java.util.Map<String, String> attributes) {
         setAttributes(attributes);
         return this;
@@ -450,6 +468,7 @@ public class Stack implements Serializable, Cloneable {
      * Removes all the entries added into Attributes. &lt;p> Returns a reference
      * to this object so that method calls can be chained together.
      */
+
     public Stack clearAttributesEntries() {
         this.attributes = null;
         return this;
@@ -463,6 +482,7 @@ public class Stack implements Serializable, Cloneable {
      * @param serviceRoleArn
      *        The stack AWS Identity and Access Management (IAM) role.
      */
+
     public void setServiceRoleArn(String serviceRoleArn) {
         this.serviceRoleArn = serviceRoleArn;
     }
@@ -474,6 +494,7 @@ public class Stack implements Serializable, Cloneable {
      * 
      * @return The stack AWS Identity and Access Management (IAM) role.
      */
+
     public String getServiceRoleArn() {
         return this.serviceRoleArn;
     }
@@ -488,6 +509,7 @@ public class Stack implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Stack withServiceRoleArn(String serviceRoleArn) {
         setServiceRoleArn(serviceRoleArn);
         return this;
@@ -508,6 +530,7 @@ public class Stack implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *        >Using Identifiers</a>.
      */
+
     public void setDefaultInstanceProfileArn(String defaultInstanceProfileArn) {
         this.defaultInstanceProfileArn = defaultInstanceProfileArn;
     }
@@ -526,6 +549,7 @@ public class Stack implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *         >Using Identifiers</a>.
      */
+
     public String getDefaultInstanceProfileArn() {
         return this.defaultInstanceProfileArn;
     }
@@ -547,6 +571,7 @@ public class Stack implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Stack withDefaultInstanceProfileArn(String defaultInstanceProfileArn) {
         setDefaultInstanceProfileArn(defaultInstanceProfileArn);
         return this;
@@ -560,6 +585,7 @@ public class Stack implements Serializable, Cloneable {
      * @param defaultOs
      *        The stack's default operating system.
      */
+
     public void setDefaultOs(String defaultOs) {
         this.defaultOs = defaultOs;
     }
@@ -571,6 +597,7 @@ public class Stack implements Serializable, Cloneable {
      * 
      * @return The stack's default operating system.
      */
+
     public String getDefaultOs() {
         return this.defaultOs;
     }
@@ -585,6 +612,7 @@ public class Stack implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Stack withDefaultOs(String defaultOs) {
         setDefaultOs(defaultOs);
         return this;
@@ -598,6 +626,7 @@ public class Stack implements Serializable, Cloneable {
      * @param hostnameTheme
      *        The stack host name theme, with spaces replaced by underscores.
      */
+
     public void setHostnameTheme(String hostnameTheme) {
         this.hostnameTheme = hostnameTheme;
     }
@@ -609,6 +638,7 @@ public class Stack implements Serializable, Cloneable {
      * 
      * @return The stack host name theme, with spaces replaced by underscores.
      */
+
     public String getHostnameTheme() {
         return this.hostnameTheme;
     }
@@ -623,6 +653,7 @@ public class Stack implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Stack withHostnameTheme(String hostnameTheme) {
         setHostnameTheme(hostnameTheme);
         return this;
@@ -640,6 +671,7 @@ public class Stack implements Serializable, Cloneable {
      *        <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">
      *        Regions and Endpoints</a>.
      */
+
     public void setDefaultAvailabilityZone(String defaultAvailabilityZone) {
         this.defaultAvailabilityZone = defaultAvailabilityZone;
     }
@@ -656,6 +688,7 @@ public class Stack implements Serializable, Cloneable {
      *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html">
      *         Regions and Endpoints</a>.
      */
+
     public String getDefaultAvailabilityZone() {
         return this.defaultAvailabilityZone;
     }
@@ -674,6 +707,7 @@ public class Stack implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Stack withDefaultAvailabilityZone(String defaultAvailabilityZone) {
         setDefaultAvailabilityZone(defaultAvailabilityZone);
         return this;
@@ -688,6 +722,7 @@ public class Stack implements Serializable, Cloneable {
      *        The default subnet ID; applicable only if the stack is running in
      *        a VPC.
      */
+
     public void setDefaultSubnetId(String defaultSubnetId) {
         this.defaultSubnetId = defaultSubnetId;
     }
@@ -700,6 +735,7 @@ public class Stack implements Serializable, Cloneable {
      * @return The default subnet ID; applicable only if the stack is running in
      *         a VPC.
      */
+
     public String getDefaultSubnetId() {
         return this.defaultSubnetId;
     }
@@ -715,6 +751,7 @@ public class Stack implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Stack withDefaultSubnetId(String defaultSubnetId) {
         setDefaultSubnetId(defaultSubnetId);
         return this;
@@ -752,6 +789,7 @@ public class Stack implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html"
      *        >Use Custom JSON to Modify the Stack Configuration Attributes</a>.
      */
+
     public void setCustomJson(String customJson) {
         this.customJson = customJson;
     }
@@ -788,6 +826,7 @@ public class Stack implements Serializable, Cloneable {
      *         >Use Custom JSON to Modify the Stack Configuration
      *         Attributes</a>.
      */
+
     public String getCustomJson() {
         return this.customJson;
     }
@@ -826,6 +865,7 @@ public class Stack implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Stack withCustomJson(String customJson) {
         setCustomJson(customJson);
         return this;
@@ -839,6 +879,7 @@ public class Stack implements Serializable, Cloneable {
      * @param configurationManager
      *        The configuration manager.
      */
+
     public void setConfigurationManager(
             StackConfigurationManager configurationManager) {
         this.configurationManager = configurationManager;
@@ -851,6 +892,7 @@ public class Stack implements Serializable, Cloneable {
      * 
      * @return The configuration manager.
      */
+
     public StackConfigurationManager getConfigurationManager() {
         return this.configurationManager;
     }
@@ -865,6 +907,7 @@ public class Stack implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Stack withConfigurationManager(
             StackConfigurationManager configurationManager) {
         setConfigurationManager(configurationManager);
@@ -886,6 +929,7 @@ public class Stack implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html"
      *        >Create a New Stack</a>.
      */
+
     public void setChefConfiguration(ChefConfiguration chefConfiguration) {
         this.chefConfiguration = chefConfiguration;
     }
@@ -904,6 +948,7 @@ public class Stack implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html"
      *         >Create a New Stack</a>.
      */
+
     public ChefConfiguration getChefConfiguration() {
         return this.chefConfiguration;
     }
@@ -925,6 +970,7 @@ public class Stack implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Stack withChefConfiguration(ChefConfiguration chefConfiguration) {
         setChefConfiguration(chefConfiguration);
         return this;
@@ -938,6 +984,7 @@ public class Stack implements Serializable, Cloneable {
      * @param useCustomCookbooks
      *        Whether the stack uses custom cookbooks.
      */
+
     public void setUseCustomCookbooks(Boolean useCustomCookbooks) {
         this.useCustomCookbooks = useCustomCookbooks;
     }
@@ -949,6 +996,7 @@ public class Stack implements Serializable, Cloneable {
      * 
      * @return Whether the stack uses custom cookbooks.
      */
+
     public Boolean getUseCustomCookbooks() {
         return this.useCustomCookbooks;
     }
@@ -963,6 +1011,7 @@ public class Stack implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Stack withUseCustomCookbooks(Boolean useCustomCookbooks) {
         setUseCustomCookbooks(useCustomCookbooks);
         return this;
@@ -975,6 +1024,7 @@ public class Stack implements Serializable, Cloneable {
      * 
      * @return Whether the stack uses custom cookbooks.
      */
+
     public Boolean isUseCustomCookbooks() {
         return this.useCustomCookbooks;
     }
@@ -989,6 +1039,7 @@ public class Stack implements Serializable, Cloneable {
      *        Whether the stack automatically associates the AWS OpsWorks
      *        built-in security groups with the stack's layers.
      */
+
     public void setUseOpsworksSecurityGroups(Boolean useOpsworksSecurityGroups) {
         this.useOpsworksSecurityGroups = useOpsworksSecurityGroups;
     }
@@ -1002,6 +1053,7 @@ public class Stack implements Serializable, Cloneable {
      * @return Whether the stack automatically associates the AWS OpsWorks
      *         built-in security groups with the stack's layers.
      */
+
     public Boolean getUseOpsworksSecurityGroups() {
         return this.useOpsworksSecurityGroups;
     }
@@ -1018,6 +1070,7 @@ public class Stack implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Stack withUseOpsworksSecurityGroups(Boolean useOpsworksSecurityGroups) {
         setUseOpsworksSecurityGroups(useOpsworksSecurityGroups);
         return this;
@@ -1032,6 +1085,7 @@ public class Stack implements Serializable, Cloneable {
      * @return Whether the stack automatically associates the AWS OpsWorks
      *         built-in security groups with the stack's layers.
      */
+
     public Boolean isUseOpsworksSecurityGroups() {
         return this.useOpsworksSecurityGroups;
     }
@@ -1039,6 +1093,7 @@ public class Stack implements Serializable, Cloneable {
     /**
      * @param customCookbooksSource
      */
+
     public void setCustomCookbooksSource(Source customCookbooksSource) {
         this.customCookbooksSource = customCookbooksSource;
     }
@@ -1046,6 +1101,7 @@ public class Stack implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Source getCustomCookbooksSource() {
         return this.customCookbooksSource;
     }
@@ -1055,6 +1111,7 @@ public class Stack implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Stack withCustomCookbooksSource(Source customCookbooksSource) {
         setCustomCookbooksSource(customCookbooksSource);
         return this;
@@ -1070,6 +1127,7 @@ public class Stack implements Serializable, Cloneable {
      *        A default Amazon EC2 key pair for the stack's instances. You can
      *        override this value when you create or update an instance.
      */
+
     public void setDefaultSshKeyName(String defaultSshKeyName) {
         this.defaultSshKeyName = defaultSshKeyName;
     }
@@ -1083,6 +1141,7 @@ public class Stack implements Serializable, Cloneable {
      * @return A default Amazon EC2 key pair for the stack's instances. You can
      *         override this value when you create or update an instance.
      */
+
     public String getDefaultSshKeyName() {
         return this.defaultSshKeyName;
     }
@@ -1099,6 +1158,7 @@ public class Stack implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Stack withDefaultSshKeyName(String defaultSshKeyName) {
         setDefaultSshKeyName(defaultSshKeyName);
         return this;
@@ -1112,6 +1172,7 @@ public class Stack implements Serializable, Cloneable {
      * @param createdAt
      *        The date when the stack was created.
      */
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -1123,6 +1184,7 @@ public class Stack implements Serializable, Cloneable {
      * 
      * @return The date when the stack was created.
      */
+
     public String getCreatedAt() {
         return this.createdAt;
     }
@@ -1137,6 +1199,7 @@ public class Stack implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Stack withCreatedAt(String createdAt) {
         setCreatedAt(createdAt);
         return this;
@@ -1159,6 +1222,7 @@ public class Stack implements Serializable, Cloneable {
      *        >Storage for the Root Device</a>.
      * @see RootDeviceType
      */
+
     public void setDefaultRootDeviceType(String defaultRootDeviceType) {
         this.defaultRootDeviceType = defaultRootDeviceType;
     }
@@ -1179,6 +1243,7 @@ public class Stack implements Serializable, Cloneable {
      *         >Storage for the Root Device</a>.
      * @see RootDeviceType
      */
+
     public String getDefaultRootDeviceType() {
         return this.defaultRootDeviceType;
     }
@@ -1202,6 +1267,7 @@ public class Stack implements Serializable, Cloneable {
      *         chained together.
      * @see RootDeviceType
      */
+
     public Stack withDefaultRootDeviceType(String defaultRootDeviceType) {
         setDefaultRootDeviceType(defaultRootDeviceType);
         return this;
@@ -1226,6 +1292,7 @@ public class Stack implements Serializable, Cloneable {
      *         chained together.
      * @see RootDeviceType
      */
+
     public void setDefaultRootDeviceType(RootDeviceType defaultRootDeviceType) {
         this.defaultRootDeviceType = defaultRootDeviceType.toString();
     }
@@ -1249,6 +1316,7 @@ public class Stack implements Serializable, Cloneable {
      *         chained together.
      * @see RootDeviceType
      */
+
     public Stack withDefaultRootDeviceType(RootDeviceType defaultRootDeviceType) {
         setDefaultRootDeviceType(defaultRootDeviceType);
         return this;
@@ -1264,6 +1332,7 @@ public class Stack implements Serializable, Cloneable {
      *        The agent version. This parameter is set to <code>LATEST</code>
      *        for auto-update. or a version number for a fixed agent version.
      */
+
     public void setAgentVersion(String agentVersion) {
         this.agentVersion = agentVersion;
     }
@@ -1277,6 +1346,7 @@ public class Stack implements Serializable, Cloneable {
      * @return The agent version. This parameter is set to <code>LATEST</code>
      *         for auto-update. or a version number for a fixed agent version.
      */
+
     public String getAgentVersion() {
         return this.agentVersion;
     }
@@ -1293,6 +1363,7 @@ public class Stack implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Stack withAgentVersion(String agentVersion) {
         setAgentVersion(agentVersion);
         return this;

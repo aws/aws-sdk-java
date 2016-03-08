@@ -43,6 +43,7 @@ public class ListHsmsRequest extends AmazonWebServiceRequest implements
      *        The <i>NextToken</i> value from a previous call to
      *        <a>ListHsms</a>. Pass null if this is the first call.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -56,6 +57,7 @@ public class ListHsmsRequest extends AmazonWebServiceRequest implements
      * @return The <i>NextToken</i> value from a previous call to
      *         <a>ListHsms</a>. Pass null if this is the first call.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -72,6 +74,7 @@ public class ListHsmsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListHsmsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

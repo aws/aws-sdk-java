@@ -40,6 +40,7 @@ public class CreatePlayerSessionResult implements Serializable, Cloneable {
      * @param playerSession
      *        Object containing the newly created player session record.
      */
+
     public void setPlayerSession(PlayerSession playerSession) {
         this.playerSession = playerSession;
     }
@@ -51,6 +52,7 @@ public class CreatePlayerSessionResult implements Serializable, Cloneable {
      * 
      * @return Object containing the newly created player session record.
      */
+
     public PlayerSession getPlayerSession() {
         return this.playerSession;
     }
@@ -65,6 +67,7 @@ public class CreatePlayerSessionResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePlayerSessionResult withPlayerSession(
             PlayerSession playerSession) {
         setPlayerSession(playerSession);

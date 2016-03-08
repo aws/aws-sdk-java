@@ -49,6 +49,7 @@ public class DeleteServiceRequest extends AmazonWebServiceRequest implements
      *        The name of the cluster that hosts the service to delete. If you
      *        do not specify a cluster, the default cluster is assumed.
      */
+
     public void setCluster(String cluster) {
         this.cluster = cluster;
     }
@@ -62,6 +63,7 @@ public class DeleteServiceRequest extends AmazonWebServiceRequest implements
      * @return The name of the cluster that hosts the service to delete. If you
      *         do not specify a cluster, the default cluster is assumed.
      */
+
     public String getCluster() {
         return this.cluster;
     }
@@ -78,6 +80,7 @@ public class DeleteServiceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteServiceRequest withCluster(String cluster) {
         setCluster(cluster);
         return this;
@@ -91,6 +94,7 @@ public class DeleteServiceRequest extends AmazonWebServiceRequest implements
      * @param service
      *        The name of the service to delete.
      */
+
     public void setService(String service) {
         this.service = service;
     }
@@ -102,6 +106,7 @@ public class DeleteServiceRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the service to delete.
      */
+
     public String getService() {
         return this.service;
     }
@@ -116,6 +121,7 @@ public class DeleteServiceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteServiceRequest withService(String service) {
         setService(service);
         return this;

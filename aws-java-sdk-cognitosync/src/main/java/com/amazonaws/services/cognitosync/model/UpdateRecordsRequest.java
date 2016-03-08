@@ -73,6 +73,7 @@ public class UpdateRecordsRequest extends AmazonWebServiceRequest implements
      *        us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
      *        Cognito. GUID generation is unique within a region.
      */
+
     public void setIdentityPoolId(String identityPoolId) {
         this.identityPoolId = identityPoolId;
     }
@@ -86,6 +87,7 @@ public class UpdateRecordsRequest extends AmazonWebServiceRequest implements
      *         us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
      *         Cognito. GUID generation is unique within a region.
      */
+
     public String getIdentityPoolId() {
         return this.identityPoolId;
     }
@@ -102,6 +104,7 @@ public class UpdateRecordsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateRecordsRequest withIdentityPoolId(String identityPoolId) {
         setIdentityPoolId(identityPoolId);
         return this;
@@ -117,6 +120,7 @@ public class UpdateRecordsRequest extends AmazonWebServiceRequest implements
      *        us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
      *        Cognito. GUID generation is unique within a region.
      */
+
     public void setIdentityId(String identityId) {
         this.identityId = identityId;
     }
@@ -130,6 +134,7 @@ public class UpdateRecordsRequest extends AmazonWebServiceRequest implements
      *         us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
      *         Cognito. GUID generation is unique within a region.
      */
+
     public String getIdentityId() {
         return this.identityId;
     }
@@ -146,6 +151,7 @@ public class UpdateRecordsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateRecordsRequest withIdentityId(String identityId) {
         setIdentityId(identityId);
         return this;
@@ -159,6 +165,7 @@ public class UpdateRecordsRequest extends AmazonWebServiceRequest implements
      *        A string of up to 128 characters. Allowed characters are a-z, A-Z,
      *        0-9, '_' (underscore), '-' (dash), and '.' (dot).
      */
+
     public void setDatasetName(String datasetName) {
         this.datasetName = datasetName;
     }
@@ -170,6 +177,7 @@ public class UpdateRecordsRequest extends AmazonWebServiceRequest implements
      * @return A string of up to 128 characters. Allowed characters are a-z,
      *         A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
      */
+
     public String getDatasetName() {
         return this.datasetName;
     }
@@ -184,6 +192,7 @@ public class UpdateRecordsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateRecordsRequest withDatasetName(String datasetName) {
         setDatasetName(datasetName);
         return this;
@@ -197,6 +206,7 @@ public class UpdateRecordsRequest extends AmazonWebServiceRequest implements
      * @param deviceId
      *        The unique ID generated for this device by Cognito.
      */
+
     public void setDeviceId(String deviceId) {
         this.deviceId = deviceId;
     }
@@ -208,6 +218,7 @@ public class UpdateRecordsRequest extends AmazonWebServiceRequest implements
      * 
      * @return The unique ID generated for this device by Cognito.
      */
+
     public String getDeviceId() {
         return this.deviceId;
     }
@@ -222,6 +233,7 @@ public class UpdateRecordsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateRecordsRequest withDeviceId(String deviceId) {
         setDeviceId(deviceId);
         return this;
@@ -232,6 +244,7 @@ public class UpdateRecordsRequest extends AmazonWebServiceRequest implements
      * 
      * @return A list of patch operations.
      */
+
     public java.util.List<RecordPatch> getRecordPatches() {
         if (recordPatches == null) {
             recordPatches = new com.amazonaws.internal.SdkInternalList<RecordPatch>();
@@ -245,6 +258,7 @@ public class UpdateRecordsRequest extends AmazonWebServiceRequest implements
      * @param recordPatches
      *        A list of patch operations.
      */
+
     public void setRecordPatches(java.util.Collection<RecordPatch> recordPatches) {
         if (recordPatches == null) {
             this.recordPatches = null;
@@ -269,6 +283,7 @@ public class UpdateRecordsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateRecordsRequest withRecordPatches(RecordPatch... recordPatches) {
         if (this.recordPatches == null) {
             setRecordPatches(new com.amazonaws.internal.SdkInternalList<RecordPatch>(
@@ -288,6 +303,7 @@ public class UpdateRecordsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateRecordsRequest withRecordPatches(
             java.util.Collection<RecordPatch> recordPatches) {
         setRecordPatches(recordPatches);
@@ -302,6 +318,7 @@ public class UpdateRecordsRequest extends AmazonWebServiceRequest implements
      *        The SyncSessionToken returned by a previous call to ListRecords
      *        for this dataset and identity.
      */
+
     public void setSyncSessionToken(String syncSessionToken) {
         this.syncSessionToken = syncSessionToken;
     }
@@ -313,6 +330,7 @@ public class UpdateRecordsRequest extends AmazonWebServiceRequest implements
      * @return The SyncSessionToken returned by a previous call to ListRecords
      *         for this dataset and identity.
      */
+
     public String getSyncSessionToken() {
         return this.syncSessionToken;
     }
@@ -327,6 +345,7 @@ public class UpdateRecordsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateRecordsRequest withSyncSessionToken(String syncSessionToken) {
         setSyncSessionToken(syncSessionToken);
         return this;
@@ -342,6 +361,7 @@ public class UpdateRecordsRequest extends AmazonWebServiceRequest implements
      *        lastModifiedBy field referenced in other methods. The
      *        ClientContext field is not yet implemented.
      */
+
     public void setClientContext(String clientContext) {
         this.clientContext = clientContext;
     }
@@ -355,6 +375,7 @@ public class UpdateRecordsRequest extends AmazonWebServiceRequest implements
      *         lastModifiedBy field referenced in other methods. The
      *         ClientContext field is not yet implemented.
      */
+
     public String getClientContext() {
         return this.clientContext;
     }
@@ -371,6 +392,7 @@ public class UpdateRecordsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateRecordsRequest withClientContext(String clientContext) {
         setClientContext(clientContext);
         return this;

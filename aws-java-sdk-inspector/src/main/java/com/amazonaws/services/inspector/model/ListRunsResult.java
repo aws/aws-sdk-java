@@ -47,6 +47,7 @@ public class ListRunsResult implements Serializable, Cloneable {
      * @return A list of ARNs specifying the assessment runs returned by the
      *         action.
      */
+
     public java.util.List<String> getRunArnList() {
         return runArnList;
     }
@@ -60,6 +61,7 @@ public class ListRunsResult implements Serializable, Cloneable {
      *        A list of ARNs specifying the assessment runs returned by the
      *        action.
      */
+
     public void setRunArnList(java.util.Collection<String> runArnList) {
         if (runArnList == null) {
             this.runArnList = null;
@@ -86,6 +88,7 @@ public class ListRunsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListRunsResult withRunArnList(String... runArnList) {
         if (this.runArnList == null) {
             setRunArnList(new java.util.ArrayList<String>(runArnList.length));
@@ -107,6 +110,7 @@ public class ListRunsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListRunsResult withRunArnList(java.util.Collection<String> runArnList) {
         setRunArnList(runArnList);
         return this;
@@ -127,6 +131,7 @@ public class ListRunsResult implements Serializable, Cloneable {
      *        pagination request. If there is no more data to be listed, this
      *        parameter is set to 'null'.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -145,6 +150,7 @@ public class ListRunsResult implements Serializable, Cloneable {
      *         pagination request. If there is no more data to be listed, this
      *         parameter is set to 'null'.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -166,6 +172,7 @@ public class ListRunsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListRunsResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

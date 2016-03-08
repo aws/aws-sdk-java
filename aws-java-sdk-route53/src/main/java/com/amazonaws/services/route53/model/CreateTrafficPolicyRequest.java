@@ -55,6 +55,7 @@ public class CreateTrafficPolicyRequest extends AmazonWebServiceRequest
      * @param name
      *        The name of the traffic policy.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -66,6 +67,7 @@ public class CreateTrafficPolicyRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the traffic policy.
      */
+
     public String getName() {
         return this.name;
     }
@@ -80,6 +82,7 @@ public class CreateTrafficPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateTrafficPolicyRequest withName(String name) {
         setName(name);
         return this;
@@ -93,6 +96,7 @@ public class CreateTrafficPolicyRequest extends AmazonWebServiceRequest
      * @param document
      *        The definition of this traffic policy in JSON format.
      */
+
     public void setDocument(String document) {
         this.document = document;
     }
@@ -104,6 +108,7 @@ public class CreateTrafficPolicyRequest extends AmazonWebServiceRequest
      * 
      * @return The definition of this traffic policy in JSON format.
      */
+
     public String getDocument() {
         return this.document;
     }
@@ -118,6 +123,7 @@ public class CreateTrafficPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateTrafficPolicyRequest withDocument(String document) {
         setDocument(document);
         return this;
@@ -131,6 +137,7 @@ public class CreateTrafficPolicyRequest extends AmazonWebServiceRequest
      * @param comment
      *        Any comments that you want to include about the traffic policy.
      */
+
     public void setComment(String comment) {
         this.comment = comment;
     }
@@ -142,6 +149,7 @@ public class CreateTrafficPolicyRequest extends AmazonWebServiceRequest
      * 
      * @return Any comments that you want to include about the traffic policy.
      */
+
     public String getComment() {
         return this.comment;
     }
@@ -156,6 +164,7 @@ public class CreateTrafficPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateTrafficPolicyRequest withComment(String comment) {
         setComment(comment);
         return this;

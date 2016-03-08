@@ -52,6 +52,7 @@ public class UpdateThingRequest extends AmazonWebServiceRequest implements
      * @param thingName
      *        The thing name.
      */
+
     public void setThingName(String thingName) {
         this.thingName = thingName;
     }
@@ -63,6 +64,7 @@ public class UpdateThingRequest extends AmazonWebServiceRequest implements
      * 
      * @return The thing name.
      */
+
     public String getThingName() {
         return this.thingName;
     }
@@ -77,6 +79,7 @@ public class UpdateThingRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateThingRequest withThingName(String thingName) {
         setThingName(thingName);
         return this;
@@ -97,6 +100,7 @@ public class UpdateThingRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        For example: {\"attributes\":{\"string1\":\"string2\"}}
      */
+
     public void setAttributePayload(AttributePayload attributePayload) {
         this.attributePayload = attributePayload;
     }
@@ -115,6 +119,7 @@ public class UpdateThingRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         For example: {\"attributes\":{\"string1\":\"string2\"}}
      */
+
     public AttributePayload getAttributePayload() {
         return this.attributePayload;
     }
@@ -136,6 +141,7 @@ public class UpdateThingRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateThingRequest withAttributePayload(
             AttributePayload attributePayload) {
         setAttributePayload(attributePayload);

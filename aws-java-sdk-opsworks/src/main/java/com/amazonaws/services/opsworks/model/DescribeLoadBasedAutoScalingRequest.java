@@ -39,6 +39,7 @@ public class DescribeLoadBasedAutoScalingRequest extends
      * 
      * @return An array of layer IDs.
      */
+
     public java.util.List<String> getLayerIds() {
         if (layerIds == null) {
             layerIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -54,6 +55,7 @@ public class DescribeLoadBasedAutoScalingRequest extends
      * @param layerIds
      *        An array of layer IDs.
      */
+
     public void setLayerIds(java.util.Collection<String> layerIds) {
         if (layerIds == null) {
             this.layerIds = null;
@@ -80,6 +82,7 @@ public class DescribeLoadBasedAutoScalingRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLoadBasedAutoScalingRequest withLayerIds(String... layerIds) {
         if (this.layerIds == null) {
             setLayerIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -101,6 +104,7 @@ public class DescribeLoadBasedAutoScalingRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLoadBasedAutoScalingRequest withLayerIds(
             java.util.Collection<String> layerIds) {
         setLayerIds(layerIds);

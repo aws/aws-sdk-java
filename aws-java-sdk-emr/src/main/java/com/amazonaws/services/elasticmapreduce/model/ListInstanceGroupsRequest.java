@@ -49,6 +49,7 @@ public class ListInstanceGroupsRequest extends AmazonWebServiceRequest
      *        The identifier of the cluster for which to list the instance
      *        groups.
      */
+
     public void setClusterId(String clusterId) {
         this.clusterId = clusterId;
     }
@@ -61,6 +62,7 @@ public class ListInstanceGroupsRequest extends AmazonWebServiceRequest
      * @return The identifier of the cluster for which to list the instance
      *         groups.
      */
+
     public String getClusterId() {
         return this.clusterId;
     }
@@ -76,6 +78,7 @@ public class ListInstanceGroupsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListInstanceGroupsRequest withClusterId(String clusterId) {
         setClusterId(clusterId);
         return this;
@@ -90,6 +93,7 @@ public class ListInstanceGroupsRequest extends AmazonWebServiceRequest
      *        The pagination token that indicates the next set of results to
      *        retrieve.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -102,6 +106,7 @@ public class ListInstanceGroupsRequest extends AmazonWebServiceRequest
      * @return The pagination token that indicates the next set of results to
      *         retrieve.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -117,6 +122,7 @@ public class ListInstanceGroupsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListInstanceGroupsRequest withMarker(String marker) {
         setMarker(marker);
         return this;

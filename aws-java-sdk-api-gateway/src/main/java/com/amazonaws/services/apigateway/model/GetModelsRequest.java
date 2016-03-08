@@ -56,6 +56,7 @@ public class GetModelsRequest extends AmazonWebServiceRequest implements
      * @param restApiId
      *        The <a>RestApi</a> identifier.
      */
+
     public void setRestApiId(String restApiId) {
         this.restApiId = restApiId;
     }
@@ -67,6 +68,7 @@ public class GetModelsRequest extends AmazonWebServiceRequest implements
      * 
      * @return The <a>RestApi</a> identifier.
      */
+
     public String getRestApiId() {
         return this.restApiId;
     }
@@ -81,6 +83,7 @@ public class GetModelsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetModelsRequest withRestApiId(String restApiId) {
         setRestApiId(restApiId);
         return this;
@@ -96,6 +99,7 @@ public class GetModelsRequest extends AmazonWebServiceRequest implements
      *        The position of the next set of results in the <a>Models</a>
      *        resource to get information about.
      */
+
     public void setPosition(String position) {
         this.position = position;
     }
@@ -109,6 +113,7 @@ public class GetModelsRequest extends AmazonWebServiceRequest implements
      * @return The position of the next set of results in the <a>Models</a>
      *         resource to get information about.
      */
+
     public String getPosition() {
         return this.position;
     }
@@ -125,6 +130,7 @@ public class GetModelsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetModelsRequest withPosition(String position) {
         setPosition(position);
         return this;
@@ -141,6 +147,7 @@ public class GetModelsRequest extends AmazonWebServiceRequest implements
      *        about. The default limit is 25. It should be an integer between 1
      *        - 500.
      */
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -155,6 +162,7 @@ public class GetModelsRequest extends AmazonWebServiceRequest implements
      *         about. The default limit is 25. It should be an integer between 1
      *         - 500.
      */
+
     public Integer getLimit() {
         return this.limit;
     }
@@ -172,6 +180,7 @@ public class GetModelsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetModelsRequest withLimit(Integer limit) {
         setLimit(limit);
         return this;

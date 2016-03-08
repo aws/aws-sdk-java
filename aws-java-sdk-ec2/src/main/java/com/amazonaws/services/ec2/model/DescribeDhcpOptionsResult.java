@@ -37,6 +37,7 @@ public class DescribeDhcpOptionsResult implements Serializable, Cloneable {
      * 
      * @return Information about one or more DHCP options sets.
      */
+
     public java.util.List<DhcpOptions> getDhcpOptions() {
         if (dhcpOptions == null) {
             dhcpOptions = new com.amazonaws.internal.SdkInternalList<DhcpOptions>();
@@ -52,6 +53,7 @@ public class DescribeDhcpOptionsResult implements Serializable, Cloneable {
      * @param dhcpOptions
      *        Information about one or more DHCP options sets.
      */
+
     public void setDhcpOptions(java.util.Collection<DhcpOptions> dhcpOptions) {
         if (dhcpOptions == null) {
             this.dhcpOptions = null;
@@ -78,6 +80,7 @@ public class DescribeDhcpOptionsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeDhcpOptionsResult withDhcpOptions(DhcpOptions... dhcpOptions) {
         if (this.dhcpOptions == null) {
             setDhcpOptions(new com.amazonaws.internal.SdkInternalList<DhcpOptions>(
@@ -99,6 +102,7 @@ public class DescribeDhcpOptionsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeDhcpOptionsResult withDhcpOptions(
             java.util.Collection<DhcpOptions> dhcpOptions) {
         setDhcpOptions(dhcpOptions);

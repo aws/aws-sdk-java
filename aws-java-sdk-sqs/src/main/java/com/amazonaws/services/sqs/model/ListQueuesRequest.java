@@ -64,6 +64,7 @@ public class ListQueuesRequest extends AmazonWebServiceRequest implements
      *        A string to use for filtering the list results. Only those queues
      *        whose name begins with the specified string are returned.
      */
+
     public void setQueueNamePrefix(String queueNamePrefix) {
         this.queueNamePrefix = queueNamePrefix;
     }
@@ -77,6 +78,7 @@ public class ListQueuesRequest extends AmazonWebServiceRequest implements
      * @return A string to use for filtering the list results. Only those queues
      *         whose name begins with the specified string are returned.
      */
+
     public String getQueueNamePrefix() {
         return this.queueNamePrefix;
     }
@@ -93,6 +95,7 @@ public class ListQueuesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListQueuesRequest withQueueNamePrefix(String queueNamePrefix) {
         setQueueNamePrefix(queueNamePrefix);
         return this;

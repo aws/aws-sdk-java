@@ -420,6 +420,7 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
     /**
      * @param value
      */
+
     public void setValue(AttributeValue value) {
         this.value = value;
     }
@@ -427,6 +428,7 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public AttributeValue getValue() {
         return this.value;
     }
@@ -436,6 +438,7 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AttributeValueUpdate withValue(AttributeValue value) {
         setValue(value);
         return this;
@@ -671,6 +674,7 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
      *        </li>
      * @see AttributeAction
      */
+
     public void setAction(String action) {
         this.action = action;
     }
@@ -904,6 +908,7 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
      *         </li>
      * @see AttributeAction
      */
+
     public String getAction() {
         return this.action;
     }
@@ -1140,6 +1145,7 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
      *         chained together.
      * @see AttributeAction
      */
+
     public AttributeValueUpdate withAction(String action) {
         setAction(action);
         return this;
@@ -1377,6 +1383,7 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
      *         chained together.
      * @see AttributeAction
      */
+
     public void setAction(AttributeAction action) {
         this.action = action.toString();
     }
@@ -1613,6 +1620,7 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
      *         chained together.
      * @see AttributeAction
      */
+
     public AttributeValueUpdate withAction(AttributeAction action) {
         setAction(action);
         return this;

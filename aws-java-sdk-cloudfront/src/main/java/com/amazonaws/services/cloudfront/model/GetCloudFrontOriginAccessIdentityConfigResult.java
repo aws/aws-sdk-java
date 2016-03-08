@@ -35,6 +35,7 @@ public class GetCloudFrontOriginAccessIdentityConfigResult implements
      * @param cloudFrontOriginAccessIdentityConfig
      *        The origin access identity's configuration information.
      */
+
     public void setCloudFrontOriginAccessIdentityConfig(
             CloudFrontOriginAccessIdentityConfig cloudFrontOriginAccessIdentityConfig) {
         this.cloudFrontOriginAccessIdentityConfig = cloudFrontOriginAccessIdentityConfig;
@@ -45,6 +46,7 @@ public class GetCloudFrontOriginAccessIdentityConfigResult implements
      * 
      * @return The origin access identity's configuration information.
      */
+
     public CloudFrontOriginAccessIdentityConfig getCloudFrontOriginAccessIdentityConfig() {
         return this.cloudFrontOriginAccessIdentityConfig;
     }
@@ -57,6 +59,7 @@ public class GetCloudFrontOriginAccessIdentityConfigResult implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetCloudFrontOriginAccessIdentityConfigResult withCloudFrontOriginAccessIdentityConfig(
             CloudFrontOriginAccessIdentityConfig cloudFrontOriginAccessIdentityConfig) {
         setCloudFrontOriginAccessIdentityConfig(cloudFrontOriginAccessIdentityConfig);
@@ -70,6 +73,7 @@ public class GetCloudFrontOriginAccessIdentityConfigResult implements
      *        The current version of the configuration. For example:
      *        E2QWRUHAPOMQZL.
      */
+
     public void setETag(String eTag) {
         this.eTag = eTag;
     }
@@ -80,6 +84,7 @@ public class GetCloudFrontOriginAccessIdentityConfigResult implements
      * @return The current version of the configuration. For example:
      *         E2QWRUHAPOMQZL.
      */
+
     public String getETag() {
         return this.eTag;
     }
@@ -93,6 +98,7 @@ public class GetCloudFrontOriginAccessIdentityConfigResult implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetCloudFrontOriginAccessIdentityConfigResult withETag(String eTag) {
         setETag(eTag);
         return this;

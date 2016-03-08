@@ -181,6 +181,7 @@ public class Image implements Serializable, Cloneable {
      * @param imageId
      *        The ID of the AMI.
      */
+
     public void setImageId(String imageId) {
         this.imageId = imageId;
     }
@@ -192,6 +193,7 @@ public class Image implements Serializable, Cloneable {
      * 
      * @return The ID of the AMI.
      */
+
     public String getImageId() {
         return this.imageId;
     }
@@ -206,6 +208,7 @@ public class Image implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Image withImageId(String imageId) {
         setImageId(imageId);
         return this;
@@ -219,6 +222,7 @@ public class Image implements Serializable, Cloneable {
      * @param imageLocation
      *        The location of the AMI.
      */
+
     public void setImageLocation(String imageLocation) {
         this.imageLocation = imageLocation;
     }
@@ -230,6 +234,7 @@ public class Image implements Serializable, Cloneable {
      * 
      * @return The location of the AMI.
      */
+
     public String getImageLocation() {
         return this.imageLocation;
     }
@@ -244,6 +249,7 @@ public class Image implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Image withImageLocation(String imageLocation) {
         setImageLocation(imageLocation);
         return this;
@@ -261,6 +267,7 @@ public class Image implements Serializable, Cloneable {
      *        can be used to launch an instance.
      * @see ImageState
      */
+
     public void setState(String state) {
         this.state = state;
     }
@@ -276,6 +283,7 @@ public class Image implements Serializable, Cloneable {
      *         can be used to launch an instance.
      * @see ImageState
      */
+
     public String getState() {
         return this.state;
     }
@@ -294,6 +302,7 @@ public class Image implements Serializable, Cloneable {
      *         chained together.
      * @see ImageState
      */
+
     public Image withState(String state) {
         setState(state);
         return this;
@@ -313,6 +322,7 @@ public class Image implements Serializable, Cloneable {
      *         chained together.
      * @see ImageState
      */
+
     public void setState(ImageState state) {
         this.state = state.toString();
     }
@@ -331,6 +341,7 @@ public class Image implements Serializable, Cloneable {
      *         chained together.
      * @see ImageState
      */
+
     public Image withState(ImageState state) {
         setState(state);
         return this;
@@ -344,6 +355,7 @@ public class Image implements Serializable, Cloneable {
      * @param ownerId
      *        The AWS account ID of the image owner.
      */
+
     public void setOwnerId(String ownerId) {
         this.ownerId = ownerId;
     }
@@ -355,6 +367,7 @@ public class Image implements Serializable, Cloneable {
      * 
      * @return The AWS account ID of the image owner.
      */
+
     public String getOwnerId() {
         return this.ownerId;
     }
@@ -369,6 +382,7 @@ public class Image implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Image withOwnerId(String ownerId) {
         setOwnerId(ownerId);
         return this;
@@ -382,6 +396,7 @@ public class Image implements Serializable, Cloneable {
      * @param creationDate
      *        The date and time the image was created.
      */
+
     public void setCreationDate(String creationDate) {
         this.creationDate = creationDate;
     }
@@ -393,6 +408,7 @@ public class Image implements Serializable, Cloneable {
      * 
      * @return The date and time the image was created.
      */
+
     public String getCreationDate() {
         return this.creationDate;
     }
@@ -407,6 +423,7 @@ public class Image implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Image withCreationDate(String creationDate) {
         setCreationDate(creationDate);
         return this;
@@ -426,6 +443,7 @@ public class Image implements Serializable, Cloneable {
      *        permissions or <code>false</code> if it has only implicit and
      *        explicit launch permissions.
      */
+
     public void setPublic(Boolean publicValue) {
         this.publicValue = publicValue;
     }
@@ -443,6 +461,7 @@ public class Image implements Serializable, Cloneable {
      *         permissions or <code>false</code> if it has only implicit and
      *         explicit launch permissions.
      */
+
     public Boolean getPublic() {
         return this.publicValue;
     }
@@ -463,6 +482,7 @@ public class Image implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Image withPublic(Boolean publicValue) {
         setPublic(publicValue);
         return this;
@@ -481,6 +501,7 @@ public class Image implements Serializable, Cloneable {
      *         permissions or <code>false</code> if it has only implicit and
      *         explicit launch permissions.
      */
+
     public Boolean isPublic() {
         return this.publicValue;
     }
@@ -492,6 +513,7 @@ public class Image implements Serializable, Cloneable {
      * 
      * @return Any product codes associated with the AMI.
      */
+
     public java.util.List<ProductCode> getProductCodes() {
         if (productCodes == null) {
             productCodes = new com.amazonaws.internal.SdkInternalList<ProductCode>();
@@ -507,6 +529,7 @@ public class Image implements Serializable, Cloneable {
      * @param productCodes
      *        Any product codes associated with the AMI.
      */
+
     public void setProductCodes(java.util.Collection<ProductCode> productCodes) {
         if (productCodes == null) {
             this.productCodes = null;
@@ -533,6 +556,7 @@ public class Image implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Image withProductCodes(ProductCode... productCodes) {
         if (this.productCodes == null) {
             setProductCodes(new com.amazonaws.internal.SdkInternalList<ProductCode>(
@@ -554,6 +578,7 @@ public class Image implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Image withProductCodes(java.util.Collection<ProductCode> productCodes) {
         setProductCodes(productCodes);
         return this;
@@ -568,6 +593,7 @@ public class Image implements Serializable, Cloneable {
      *        The architecture of the image.
      * @see ArchitectureValues
      */
+
     public void setArchitecture(String architecture) {
         this.architecture = architecture;
     }
@@ -580,6 +606,7 @@ public class Image implements Serializable, Cloneable {
      * @return The architecture of the image.
      * @see ArchitectureValues
      */
+
     public String getArchitecture() {
         return this.architecture;
     }
@@ -595,6 +622,7 @@ public class Image implements Serializable, Cloneable {
      *         chained together.
      * @see ArchitectureValues
      */
+
     public Image withArchitecture(String architecture) {
         setArchitecture(architecture);
         return this;
@@ -611,6 +639,7 @@ public class Image implements Serializable, Cloneable {
      *         chained together.
      * @see ArchitectureValues
      */
+
     public void setArchitecture(ArchitectureValues architecture) {
         this.architecture = architecture.toString();
     }
@@ -626,6 +655,7 @@ public class Image implements Serializable, Cloneable {
      *         chained together.
      * @see ArchitectureValues
      */
+
     public Image withArchitecture(ArchitectureValues architecture) {
         setArchitecture(architecture);
         return this;
@@ -640,6 +670,7 @@ public class Image implements Serializable, Cloneable {
      *        The type of image.
      * @see ImageTypeValues
      */
+
     public void setImageType(String imageType) {
         this.imageType = imageType;
     }
@@ -652,6 +683,7 @@ public class Image implements Serializable, Cloneable {
      * @return The type of image.
      * @see ImageTypeValues
      */
+
     public String getImageType() {
         return this.imageType;
     }
@@ -667,6 +699,7 @@ public class Image implements Serializable, Cloneable {
      *         chained together.
      * @see ImageTypeValues
      */
+
     public Image withImageType(String imageType) {
         setImageType(imageType);
         return this;
@@ -683,6 +716,7 @@ public class Image implements Serializable, Cloneable {
      *         chained together.
      * @see ImageTypeValues
      */
+
     public void setImageType(ImageTypeValues imageType) {
         this.imageType = imageType.toString();
     }
@@ -698,6 +732,7 @@ public class Image implements Serializable, Cloneable {
      *         chained together.
      * @see ImageTypeValues
      */
+
     public Image withImageType(ImageTypeValues imageType) {
         setImageType(imageType);
         return this;
@@ -713,6 +748,7 @@ public class Image implements Serializable, Cloneable {
      *        The kernel associated with the image, if any. Only applicable for
      *        machine images.
      */
+
     public void setKernelId(String kernelId) {
         this.kernelId = kernelId;
     }
@@ -726,6 +762,7 @@ public class Image implements Serializable, Cloneable {
      * @return The kernel associated with the image, if any. Only applicable for
      *         machine images.
      */
+
     public String getKernelId() {
         return this.kernelId;
     }
@@ -742,6 +779,7 @@ public class Image implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Image withKernelId(String kernelId) {
         setKernelId(kernelId);
         return this;
@@ -757,6 +795,7 @@ public class Image implements Serializable, Cloneable {
      *        The RAM disk associated with the image, if any. Only applicable
      *        for machine images.
      */
+
     public void setRamdiskId(String ramdiskId) {
         this.ramdiskId = ramdiskId;
     }
@@ -770,6 +809,7 @@ public class Image implements Serializable, Cloneable {
      * @return The RAM disk associated with the image, if any. Only applicable
      *         for machine images.
      */
+
     public String getRamdiskId() {
         return this.ramdiskId;
     }
@@ -786,6 +826,7 @@ public class Image implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Image withRamdiskId(String ramdiskId) {
         setRamdiskId(ramdiskId);
         return this;
@@ -801,6 +842,7 @@ public class Image implements Serializable, Cloneable {
      *        blank.
      * @see PlatformValues
      */
+
     public void setPlatform(String platform) {
         this.platform = platform;
     }
@@ -814,6 +856,7 @@ public class Image implements Serializable, Cloneable {
      *         blank.
      * @see PlatformValues
      */
+
     public String getPlatform() {
         return this.platform;
     }
@@ -830,6 +873,7 @@ public class Image implements Serializable, Cloneable {
      *         chained together.
      * @see PlatformValues
      */
+
     public Image withPlatform(String platform) {
         setPlatform(platform);
         return this;
@@ -847,6 +891,7 @@ public class Image implements Serializable, Cloneable {
      *         chained together.
      * @see PlatformValues
      */
+
     public void setPlatform(PlatformValues platform) {
         this.platform = platform.toString();
     }
@@ -863,6 +908,7 @@ public class Image implements Serializable, Cloneable {
      *         chained together.
      * @see PlatformValues
      */
+
     public Image withPlatform(PlatformValues platform) {
         setPlatform(platform);
         return this;
@@ -876,6 +922,7 @@ public class Image implements Serializable, Cloneable {
      * @param sriovNetSupport
      *        Specifies whether enhanced networking is enabled.
      */
+
     public void setSriovNetSupport(String sriovNetSupport) {
         this.sriovNetSupport = sriovNetSupport;
     }
@@ -887,6 +934,7 @@ public class Image implements Serializable, Cloneable {
      * 
      * @return Specifies whether enhanced networking is enabled.
      */
+
     public String getSriovNetSupport() {
         return this.sriovNetSupport;
     }
@@ -901,6 +949,7 @@ public class Image implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Image withSriovNetSupport(String sriovNetSupport) {
         setSriovNetSupport(sriovNetSupport);
         return this;
@@ -914,6 +963,7 @@ public class Image implements Serializable, Cloneable {
      * @param stateReason
      *        The reason for the state change.
      */
+
     public void setStateReason(StateReason stateReason) {
         this.stateReason = stateReason;
     }
@@ -925,6 +975,7 @@ public class Image implements Serializable, Cloneable {
      * 
      * @return The reason for the state change.
      */
+
     public StateReason getStateReason() {
         return this.stateReason;
     }
@@ -939,6 +990,7 @@ public class Image implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Image withStateReason(StateReason stateReason) {
         setStateReason(stateReason);
         return this;
@@ -954,6 +1006,7 @@ public class Image implements Serializable, Cloneable {
      *        The AWS account alias (for example, <code>amazon</code>,
      *        <code>self</code>) or the AWS account ID of the AMI owner.
      */
+
     public void setImageOwnerAlias(String imageOwnerAlias) {
         this.imageOwnerAlias = imageOwnerAlias;
     }
@@ -967,6 +1020,7 @@ public class Image implements Serializable, Cloneable {
      * @return The AWS account alias (for example, <code>amazon</code>,
      *         <code>self</code>) or the AWS account ID of the AMI owner.
      */
+
     public String getImageOwnerAlias() {
         return this.imageOwnerAlias;
     }
@@ -983,6 +1037,7 @@ public class Image implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Image withImageOwnerAlias(String imageOwnerAlias) {
         setImageOwnerAlias(imageOwnerAlias);
         return this;
@@ -996,6 +1051,7 @@ public class Image implements Serializable, Cloneable {
      * @param name
      *        The name of the AMI that was provided during image creation.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -1007,6 +1063,7 @@ public class Image implements Serializable, Cloneable {
      * 
      * @return The name of the AMI that was provided during image creation.
      */
+
     public String getName() {
         return this.name;
     }
@@ -1021,6 +1078,7 @@ public class Image implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Image withName(String name) {
         setName(name);
         return this;
@@ -1035,6 +1093,7 @@ public class Image implements Serializable, Cloneable {
      *        The description of the AMI that was provided during image
      *        creation.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -1047,6 +1106,7 @@ public class Image implements Serializable, Cloneable {
      * @return The description of the AMI that was provided during image
      *         creation.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -1062,6 +1122,7 @@ public class Image implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Image withDescription(String description) {
         setDescription(description);
         return this;
@@ -1078,6 +1139,7 @@ public class Image implements Serializable, Cloneable {
      *        volume or an instance store volume.
      * @see DeviceType
      */
+
     public void setRootDeviceType(String rootDeviceType) {
         this.rootDeviceType = rootDeviceType;
     }
@@ -1092,6 +1154,7 @@ public class Image implements Serializable, Cloneable {
      *         volume or an instance store volume.
      * @see DeviceType
      */
+
     public String getRootDeviceType() {
         return this.rootDeviceType;
     }
@@ -1109,6 +1172,7 @@ public class Image implements Serializable, Cloneable {
      *         chained together.
      * @see DeviceType
      */
+
     public Image withRootDeviceType(String rootDeviceType) {
         setRootDeviceType(rootDeviceType);
         return this;
@@ -1127,6 +1191,7 @@ public class Image implements Serializable, Cloneable {
      *         chained together.
      * @see DeviceType
      */
+
     public void setRootDeviceType(DeviceType rootDeviceType) {
         this.rootDeviceType = rootDeviceType.toString();
     }
@@ -1144,6 +1209,7 @@ public class Image implements Serializable, Cloneable {
      *         chained together.
      * @see DeviceType
      */
+
     public Image withRootDeviceType(DeviceType rootDeviceType) {
         setRootDeviceType(rootDeviceType);
         return this;
@@ -1159,6 +1225,7 @@ public class Image implements Serializable, Cloneable {
      *        The device name of the root device (for example,
      *        <code>/dev/sda1</code> or <code>/dev/xvda</code>).
      */
+
     public void setRootDeviceName(String rootDeviceName) {
         this.rootDeviceName = rootDeviceName;
     }
@@ -1172,6 +1239,7 @@ public class Image implements Serializable, Cloneable {
      * @return The device name of the root device (for example,
      *         <code>/dev/sda1</code> or <code>/dev/xvda</code>).
      */
+
     public String getRootDeviceName() {
         return this.rootDeviceName;
     }
@@ -1188,6 +1256,7 @@ public class Image implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Image withRootDeviceName(String rootDeviceName) {
         setRootDeviceName(rootDeviceName);
         return this;
@@ -1200,6 +1269,7 @@ public class Image implements Serializable, Cloneable {
      * 
      * @return Any block device mapping entries.
      */
+
     public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
         if (blockDeviceMappings == null) {
             blockDeviceMappings = new com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>();
@@ -1215,6 +1285,7 @@ public class Image implements Serializable, Cloneable {
      * @param blockDeviceMappings
      *        Any block device mapping entries.
      */
+
     public void setBlockDeviceMappings(
             java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
         if (blockDeviceMappings == null) {
@@ -1242,6 +1313,7 @@ public class Image implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Image withBlockDeviceMappings(
             BlockDeviceMapping... blockDeviceMappings) {
         if (this.blockDeviceMappings == null) {
@@ -1264,6 +1336,7 @@ public class Image implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Image withBlockDeviceMappings(
             java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
         setBlockDeviceMappings(blockDeviceMappings);
@@ -1279,6 +1352,7 @@ public class Image implements Serializable, Cloneable {
      *        The type of virtualization of the AMI.
      * @see VirtualizationType
      */
+
     public void setVirtualizationType(String virtualizationType) {
         this.virtualizationType = virtualizationType;
     }
@@ -1291,6 +1365,7 @@ public class Image implements Serializable, Cloneable {
      * @return The type of virtualization of the AMI.
      * @see VirtualizationType
      */
+
     public String getVirtualizationType() {
         return this.virtualizationType;
     }
@@ -1306,6 +1381,7 @@ public class Image implements Serializable, Cloneable {
      *         chained together.
      * @see VirtualizationType
      */
+
     public Image withVirtualizationType(String virtualizationType) {
         setVirtualizationType(virtualizationType);
         return this;
@@ -1322,6 +1398,7 @@ public class Image implements Serializable, Cloneable {
      *         chained together.
      * @see VirtualizationType
      */
+
     public void setVirtualizationType(VirtualizationType virtualizationType) {
         this.virtualizationType = virtualizationType.toString();
     }
@@ -1337,6 +1414,7 @@ public class Image implements Serializable, Cloneable {
      *         chained together.
      * @see VirtualizationType
      */
+
     public Image withVirtualizationType(VirtualizationType virtualizationType) {
         setVirtualizationType(virtualizationType);
         return this;
@@ -1349,6 +1427,7 @@ public class Image implements Serializable, Cloneable {
      * 
      * @return Any tags assigned to the image.
      */
+
     public java.util.List<Tag> getTags() {
         if (tags == null) {
             tags = new com.amazonaws.internal.SdkInternalList<Tag>();
@@ -1364,6 +1443,7 @@ public class Image implements Serializable, Cloneable {
      * @param tags
      *        Any tags assigned to the image.
      */
+
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
             this.tags = null;
@@ -1389,6 +1469,7 @@ public class Image implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Image withTags(Tag... tags) {
         if (this.tags == null) {
             setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
@@ -1409,6 +1490,7 @@ public class Image implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Image withTags(java.util.Collection<Tag> tags) {
         setTags(tags);
         return this;
@@ -1423,6 +1505,7 @@ public class Image implements Serializable, Cloneable {
      *        The hypervisor type of the image.
      * @see HypervisorType
      */
+
     public void setHypervisor(String hypervisor) {
         this.hypervisor = hypervisor;
     }
@@ -1435,6 +1518,7 @@ public class Image implements Serializable, Cloneable {
      * @return The hypervisor type of the image.
      * @see HypervisorType
      */
+
     public String getHypervisor() {
         return this.hypervisor;
     }
@@ -1450,6 +1534,7 @@ public class Image implements Serializable, Cloneable {
      *         chained together.
      * @see HypervisorType
      */
+
     public Image withHypervisor(String hypervisor) {
         setHypervisor(hypervisor);
         return this;
@@ -1466,6 +1551,7 @@ public class Image implements Serializable, Cloneable {
      *         chained together.
      * @see HypervisorType
      */
+
     public void setHypervisor(HypervisorType hypervisor) {
         this.hypervisor = hypervisor.toString();
     }
@@ -1481,6 +1567,7 @@ public class Image implements Serializable, Cloneable {
      *         chained together.
      * @see HypervisorType
      */
+
     public Image withHypervisor(HypervisorType hypervisor) {
         setHypervisor(hypervisor);
         return this;

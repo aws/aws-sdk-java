@@ -64,6 +64,7 @@ public class DeploymentOverview implements Serializable, Cloneable {
      * @param pending
      *        The number of instances that are pending in the deployment.
      */
+
     public void setPending(Long pending) {
         this.pending = pending;
     }
@@ -75,6 +76,7 @@ public class DeploymentOverview implements Serializable, Cloneable {
      * 
      * @return The number of instances that are pending in the deployment.
      */
+
     public Long getPending() {
         return this.pending;
     }
@@ -89,6 +91,7 @@ public class DeploymentOverview implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeploymentOverview withPending(Long pending) {
         setPending(pending);
         return this;
@@ -102,6 +105,7 @@ public class DeploymentOverview implements Serializable, Cloneable {
      * @param inProgress
      *        The number of instances that are in progress in the deployment.
      */
+
     public void setInProgress(Long inProgress) {
         this.inProgress = inProgress;
     }
@@ -113,6 +117,7 @@ public class DeploymentOverview implements Serializable, Cloneable {
      * 
      * @return The number of instances that are in progress in the deployment.
      */
+
     public Long getInProgress() {
         return this.inProgress;
     }
@@ -127,6 +132,7 @@ public class DeploymentOverview implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeploymentOverview withInProgress(Long inProgress) {
         setInProgress(inProgress);
         return this;
@@ -140,6 +146,7 @@ public class DeploymentOverview implements Serializable, Cloneable {
      * @param succeeded
      *        The number of instances that have succeeded in the deployment.
      */
+
     public void setSucceeded(Long succeeded) {
         this.succeeded = succeeded;
     }
@@ -151,6 +158,7 @@ public class DeploymentOverview implements Serializable, Cloneable {
      * 
      * @return The number of instances that have succeeded in the deployment.
      */
+
     public Long getSucceeded() {
         return this.succeeded;
     }
@@ -165,6 +173,7 @@ public class DeploymentOverview implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeploymentOverview withSucceeded(Long succeeded) {
         setSucceeded(succeeded);
         return this;
@@ -178,6 +187,7 @@ public class DeploymentOverview implements Serializable, Cloneable {
      * @param failed
      *        The number of instances that have failed in the deployment.
      */
+
     public void setFailed(Long failed) {
         this.failed = failed;
     }
@@ -189,6 +199,7 @@ public class DeploymentOverview implements Serializable, Cloneable {
      * 
      * @return The number of instances that have failed in the deployment.
      */
+
     public Long getFailed() {
         return this.failed;
     }
@@ -203,6 +214,7 @@ public class DeploymentOverview implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeploymentOverview withFailed(Long failed) {
         setFailed(failed);
         return this;
@@ -216,6 +228,7 @@ public class DeploymentOverview implements Serializable, Cloneable {
      * @param skipped
      *        The number of instances that have been skipped in the deployment.
      */
+
     public void setSkipped(Long skipped) {
         this.skipped = skipped;
     }
@@ -227,6 +240,7 @@ public class DeploymentOverview implements Serializable, Cloneable {
      * 
      * @return The number of instances that have been skipped in the deployment.
      */
+
     public Long getSkipped() {
         return this.skipped;
     }
@@ -241,6 +255,7 @@ public class DeploymentOverview implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeploymentOverview withSkipped(Long skipped) {
         setSkipped(skipped);
         return this;

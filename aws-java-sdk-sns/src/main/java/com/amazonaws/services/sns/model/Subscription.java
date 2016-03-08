@@ -64,6 +64,7 @@ public class Subscription implements Serializable, Cloneable {
      * @param subscriptionArn
      *        The subscription's ARN.
      */
+
     public void setSubscriptionArn(String subscriptionArn) {
         this.subscriptionArn = subscriptionArn;
     }
@@ -75,6 +76,7 @@ public class Subscription implements Serializable, Cloneable {
      * 
      * @return The subscription's ARN.
      */
+
     public String getSubscriptionArn() {
         return this.subscriptionArn;
     }
@@ -89,6 +91,7 @@ public class Subscription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Subscription withSubscriptionArn(String subscriptionArn) {
         setSubscriptionArn(subscriptionArn);
         return this;
@@ -102,6 +105,7 @@ public class Subscription implements Serializable, Cloneable {
      * @param owner
      *        The subscription's owner.
      */
+
     public void setOwner(String owner) {
         this.owner = owner;
     }
@@ -113,6 +117,7 @@ public class Subscription implements Serializable, Cloneable {
      * 
      * @return The subscription's owner.
      */
+
     public String getOwner() {
         return this.owner;
     }
@@ -127,6 +132,7 @@ public class Subscription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Subscription withOwner(String owner) {
         setOwner(owner);
         return this;
@@ -140,6 +146,7 @@ public class Subscription implements Serializable, Cloneable {
      * @param protocol
      *        The subscription's protocol.
      */
+
     public void setProtocol(String protocol) {
         this.protocol = protocol;
     }
@@ -151,6 +158,7 @@ public class Subscription implements Serializable, Cloneable {
      * 
      * @return The subscription's protocol.
      */
+
     public String getProtocol() {
         return this.protocol;
     }
@@ -165,6 +173,7 @@ public class Subscription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Subscription withProtocol(String protocol) {
         setProtocol(protocol);
         return this;
@@ -178,6 +187,7 @@ public class Subscription implements Serializable, Cloneable {
      * @param endpoint
      *        The subscription's endpoint (format depends on the protocol).
      */
+
     public void setEndpoint(String endpoint) {
         this.endpoint = endpoint;
     }
@@ -189,6 +199,7 @@ public class Subscription implements Serializable, Cloneable {
      * 
      * @return The subscription's endpoint (format depends on the protocol).
      */
+
     public String getEndpoint() {
         return this.endpoint;
     }
@@ -203,6 +214,7 @@ public class Subscription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Subscription withEndpoint(String endpoint) {
         setEndpoint(endpoint);
         return this;
@@ -216,6 +228,7 @@ public class Subscription implements Serializable, Cloneable {
      * @param topicArn
      *        The ARN of the subscription's topic.
      */
+
     public void setTopicArn(String topicArn) {
         this.topicArn = topicArn;
     }
@@ -227,6 +240,7 @@ public class Subscription implements Serializable, Cloneable {
      * 
      * @return The ARN of the subscription's topic.
      */
+
     public String getTopicArn() {
         return this.topicArn;
     }
@@ -241,6 +255,7 @@ public class Subscription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Subscription withTopicArn(String topicArn) {
         setTopicArn(topicArn);
         return this;

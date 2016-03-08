@@ -58,6 +58,7 @@ public class SelfUserProfile implements Serializable, Cloneable {
      * @param iamUserArn
      *        The user's IAM ARN.
      */
+
     public void setIamUserArn(String iamUserArn) {
         this.iamUserArn = iamUserArn;
     }
@@ -69,6 +70,7 @@ public class SelfUserProfile implements Serializable, Cloneable {
      * 
      * @return The user's IAM ARN.
      */
+
     public String getIamUserArn() {
         return this.iamUserArn;
     }
@@ -83,6 +85,7 @@ public class SelfUserProfile implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SelfUserProfile withIamUserArn(String iamUserArn) {
         setIamUserArn(iamUserArn);
         return this;
@@ -96,6 +99,7 @@ public class SelfUserProfile implements Serializable, Cloneable {
      * @param name
      *        The user's name.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -107,6 +111,7 @@ public class SelfUserProfile implements Serializable, Cloneable {
      * 
      * @return The user's name.
      */
+
     public String getName() {
         return this.name;
     }
@@ -121,6 +126,7 @@ public class SelfUserProfile implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SelfUserProfile withName(String name) {
         setName(name);
         return this;
@@ -134,6 +140,7 @@ public class SelfUserProfile implements Serializable, Cloneable {
      * @param sshUsername
      *        The user's SSH user name.
      */
+
     public void setSshUsername(String sshUsername) {
         this.sshUsername = sshUsername;
     }
@@ -145,6 +152,7 @@ public class SelfUserProfile implements Serializable, Cloneable {
      * 
      * @return The user's SSH user name.
      */
+
     public String getSshUsername() {
         return this.sshUsername;
     }
@@ -159,6 +167,7 @@ public class SelfUserProfile implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SelfUserProfile withSshUsername(String sshUsername) {
         setSshUsername(sshUsername);
         return this;
@@ -172,6 +181,7 @@ public class SelfUserProfile implements Serializable, Cloneable {
      * @param sshPublicKey
      *        The user's SSH public key.
      */
+
     public void setSshPublicKey(String sshPublicKey) {
         this.sshPublicKey = sshPublicKey;
     }
@@ -183,6 +193,7 @@ public class SelfUserProfile implements Serializable, Cloneable {
      * 
      * @return The user's SSH public key.
      */
+
     public String getSshPublicKey() {
         return this.sshPublicKey;
     }
@@ -197,6 +208,7 @@ public class SelfUserProfile implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SelfUserProfile withSshPublicKey(String sshPublicKey) {
         setSshPublicKey(sshPublicKey);
         return this;

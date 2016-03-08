@@ -166,6 +166,7 @@ public class ListUniqueProblemsResult implements Serializable, Cloneable {
      *         </p>
      *         </li>
      */
+
     public java.util.Map<String, java.util.List<UniqueProblem>> getUniqueProblems() {
         return uniqueProblems;
     }
@@ -257,6 +258,7 @@ public class ListUniqueProblemsResult implements Serializable, Cloneable {
      *        </p>
      *        </li>
      */
+
     public void setUniqueProblems(
             java.util.Map<String, java.util.List<UniqueProblem>> uniqueProblems) {
         this.uniqueProblems = uniqueProblems;
@@ -351,6 +353,7 @@ public class ListUniqueProblemsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListUniqueProblemsResult withUniqueProblems(
             java.util.Map<String, java.util.List<UniqueProblem>> uniqueProblems) {
         setUniqueProblems(uniqueProblems);
@@ -373,6 +376,7 @@ public class ListUniqueProblemsResult implements Serializable, Cloneable {
      * Removes all the entries added into UniqueProblems. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public ListUniqueProblemsResult clearUniqueProblemsEntries() {
         this.uniqueProblems = null;
         return this;
@@ -391,6 +395,7 @@ public class ListUniqueProblemsResult implements Serializable, Cloneable {
      *        a subsequent call to this operation to return the next set of
      *        items in the list.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -407,6 +412,7 @@ public class ListUniqueProblemsResult implements Serializable, Cloneable {
      *         a subsequent call to this operation to return the next set of
      *         items in the list.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -426,6 +432,7 @@ public class ListUniqueProblemsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListUniqueProblemsResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

@@ -75,6 +75,7 @@ public class Body implements Serializable, Cloneable {
      *        text-based email clients, or clients on high-latency networks
      *        (such as mobile devices).
      */
+
     public void setText(Content text) {
         this.text = text;
     }
@@ -89,6 +90,7 @@ public class Body implements Serializable, Cloneable {
      *         text-based email clients, or clients on high-latency networks
      *         (such as mobile devices).
      */
+
     public Content getText() {
         return this.text;
     }
@@ -106,6 +108,7 @@ public class Body implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Body withText(Content text) {
         setText(text);
         return this;
@@ -123,6 +126,7 @@ public class Body implements Serializable, Cloneable {
      *        clients that can process HTML. You can include clickable links,
      *        formatted text, and much more in an HTML message.
      */
+
     public void setHtml(Content html) {
         this.html = html;
     }
@@ -138,6 +142,7 @@ public class Body implements Serializable, Cloneable {
      *         clients that can process HTML. You can include clickable links,
      *         formatted text, and much more in an HTML message.
      */
+
     public Content getHtml() {
         return this.html;
     }
@@ -156,6 +161,7 @@ public class Body implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Body withHtml(Content html) {
         setHtml(html);
         return this;

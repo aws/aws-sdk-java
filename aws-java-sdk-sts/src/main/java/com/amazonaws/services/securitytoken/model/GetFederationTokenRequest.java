@@ -116,6 +116,7 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest
      *        For example, you can reference the federated user name in a
      *        resource-based policy, such as in an Amazon S3 bucket policy.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -133,6 +134,7 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest
      *         ). For example, you can reference the federated user name in a
      *         resource-based policy, such as in an Amazon S3 bucket policy.
      */
+
     public String getName() {
         return this.name;
     }
@@ -153,6 +155,7 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetFederationTokenRequest withName(String name) {
         setName(name);
         return this;
@@ -219,6 +222,7 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_getfederationtoken.html"
      *        >Permissions for GetFederationToken</a>.
      */
+
     public void setPolicy(String policy) {
         this.policy = policy;
     }
@@ -283,6 +287,7 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_getfederationtoken.html"
      *         >Permissions for GetFederationToken</a>.
      */
+
     public String getPolicy() {
         return this.policy;
     }
@@ -350,6 +355,7 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetFederationTokenRequest withPolicy(String policy) {
         setPolicy(policy);
         return this;
@@ -376,6 +382,7 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest
      *        session obtained by using AWS account (root) credentials defaults
      *        to one hour.
      */
+
     public void setDurationSeconds(Integer durationSeconds) {
         this.durationSeconds = durationSeconds;
     }
@@ -400,6 +407,7 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest
      *         hour, the session obtained by using AWS account (root)
      *         credentials defaults to one hour.
      */
+
     public Integer getDurationSeconds() {
         return this.durationSeconds;
     }
@@ -427,6 +435,7 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetFederationTokenRequest withDurationSeconds(Integer durationSeconds) {
         setDurationSeconds(durationSeconds);
         return this;

@@ -40,6 +40,7 @@ public class CreateRepositoryResult implements Serializable, Cloneable {
      * @param repositoryMetadata
      *        Information about the newly created repository.
      */
+
     public void setRepositoryMetadata(RepositoryMetadata repositoryMetadata) {
         this.repositoryMetadata = repositoryMetadata;
     }
@@ -51,6 +52,7 @@ public class CreateRepositoryResult implements Serializable, Cloneable {
      * 
      * @return Information about the newly created repository.
      */
+
     public RepositoryMetadata getRepositoryMetadata() {
         return this.repositoryMetadata;
     }
@@ -65,6 +67,7 @@ public class CreateRepositoryResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateRepositoryResult withRepositoryMetadata(
             RepositoryMetadata repositoryMetadata) {
         setRepositoryMetadata(repositoryMetadata);

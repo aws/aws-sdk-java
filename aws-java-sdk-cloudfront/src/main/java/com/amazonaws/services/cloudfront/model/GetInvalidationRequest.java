@@ -59,6 +59,7 @@ public class GetInvalidationRequest extends AmazonWebServiceRequest implements
      * @param distributionId
      *        The distribution's id.
      */
+
     public void setDistributionId(String distributionId) {
         this.distributionId = distributionId;
     }
@@ -68,6 +69,7 @@ public class GetInvalidationRequest extends AmazonWebServiceRequest implements
      * 
      * @return The distribution's id.
      */
+
     public String getDistributionId() {
         return this.distributionId;
     }
@@ -80,6 +82,7 @@ public class GetInvalidationRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetInvalidationRequest withDistributionId(String distributionId) {
         setDistributionId(distributionId);
         return this;
@@ -91,6 +94,7 @@ public class GetInvalidationRequest extends AmazonWebServiceRequest implements
      * @param id
      *        The invalidation's id.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -100,6 +104,7 @@ public class GetInvalidationRequest extends AmazonWebServiceRequest implements
      * 
      * @return The invalidation's id.
      */
+
     public String getId() {
         return this.id;
     }
@@ -112,6 +117,7 @@ public class GetInvalidationRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetInvalidationRequest withId(String id) {
         setId(id);
         return this;

@@ -76,6 +76,7 @@ public class VpcEndpoint implements Serializable, Cloneable {
      * @param vpcEndpointId
      *        The ID of the VPC endpoint.
      */
+
     public void setVpcEndpointId(String vpcEndpointId) {
         this.vpcEndpointId = vpcEndpointId;
     }
@@ -87,6 +88,7 @@ public class VpcEndpoint implements Serializable, Cloneable {
      * 
      * @return The ID of the VPC endpoint.
      */
+
     public String getVpcEndpointId() {
         return this.vpcEndpointId;
     }
@@ -101,6 +103,7 @@ public class VpcEndpoint implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VpcEndpoint withVpcEndpointId(String vpcEndpointId) {
         setVpcEndpointId(vpcEndpointId);
         return this;
@@ -114,6 +117,7 @@ public class VpcEndpoint implements Serializable, Cloneable {
      * @param vpcId
      *        The ID of the VPC to which the endpoint is associated.
      */
+
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
@@ -125,6 +129,7 @@ public class VpcEndpoint implements Serializable, Cloneable {
      * 
      * @return The ID of the VPC to which the endpoint is associated.
      */
+
     public String getVpcId() {
         return this.vpcId;
     }
@@ -139,6 +144,7 @@ public class VpcEndpoint implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VpcEndpoint withVpcId(String vpcId) {
         setVpcId(vpcId);
         return this;
@@ -152,6 +158,7 @@ public class VpcEndpoint implements Serializable, Cloneable {
      * @param serviceName
      *        The name of the AWS service to which the endpoint is associated.
      */
+
     public void setServiceName(String serviceName) {
         this.serviceName = serviceName;
     }
@@ -163,6 +170,7 @@ public class VpcEndpoint implements Serializable, Cloneable {
      * 
      * @return The name of the AWS service to which the endpoint is associated.
      */
+
     public String getServiceName() {
         return this.serviceName;
     }
@@ -177,6 +185,7 @@ public class VpcEndpoint implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VpcEndpoint withServiceName(String serviceName) {
         setServiceName(serviceName);
         return this;
@@ -191,6 +200,7 @@ public class VpcEndpoint implements Serializable, Cloneable {
      *        The state of the VPC endpoint.
      * @see State
      */
+
     public void setState(String state) {
         this.state = state;
     }
@@ -203,6 +213,7 @@ public class VpcEndpoint implements Serializable, Cloneable {
      * @return The state of the VPC endpoint.
      * @see State
      */
+
     public String getState() {
         return this.state;
     }
@@ -218,6 +229,7 @@ public class VpcEndpoint implements Serializable, Cloneable {
      *         chained together.
      * @see State
      */
+
     public VpcEndpoint withState(String state) {
         setState(state);
         return this;
@@ -234,6 +246,7 @@ public class VpcEndpoint implements Serializable, Cloneable {
      *         chained together.
      * @see State
      */
+
     public void setState(State state) {
         this.state = state.toString();
     }
@@ -249,6 +262,7 @@ public class VpcEndpoint implements Serializable, Cloneable {
      *         chained together.
      * @see State
      */
+
     public VpcEndpoint withState(State state) {
         setState(state);
         return this;
@@ -262,6 +276,7 @@ public class VpcEndpoint implements Serializable, Cloneable {
      * @param policyDocument
      *        The policy document associated with the endpoint.
      */
+
     public void setPolicyDocument(String policyDocument) {
         this.policyDocument = policyDocument;
     }
@@ -273,6 +288,7 @@ public class VpcEndpoint implements Serializable, Cloneable {
      * 
      * @return The policy document associated with the endpoint.
      */
+
     public String getPolicyDocument() {
         return this.policyDocument;
     }
@@ -287,6 +303,7 @@ public class VpcEndpoint implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VpcEndpoint withPolicyDocument(String policyDocument) {
         setPolicyDocument(policyDocument);
         return this;
@@ -299,6 +316,7 @@ public class VpcEndpoint implements Serializable, Cloneable {
      * 
      * @return One or more route tables associated with the endpoint.
      */
+
     public java.util.List<String> getRouteTableIds() {
         if (routeTableIds == null) {
             routeTableIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -314,6 +332,7 @@ public class VpcEndpoint implements Serializable, Cloneable {
      * @param routeTableIds
      *        One or more route tables associated with the endpoint.
      */
+
     public void setRouteTableIds(java.util.Collection<String> routeTableIds) {
         if (routeTableIds == null) {
             this.routeTableIds = null;
@@ -340,6 +359,7 @@ public class VpcEndpoint implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VpcEndpoint withRouteTableIds(String... routeTableIds) {
         if (this.routeTableIds == null) {
             setRouteTableIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -361,6 +381,7 @@ public class VpcEndpoint implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VpcEndpoint withRouteTableIds(
             java.util.Collection<String> routeTableIds) {
         setRouteTableIds(routeTableIds);
@@ -375,6 +396,7 @@ public class VpcEndpoint implements Serializable, Cloneable {
      * @param creationTimestamp
      *        The date and time the VPC endpoint was created.
      */
+
     public void setCreationTimestamp(java.util.Date creationTimestamp) {
         this.creationTimestamp = creationTimestamp;
     }
@@ -386,6 +408,7 @@ public class VpcEndpoint implements Serializable, Cloneable {
      * 
      * @return The date and time the VPC endpoint was created.
      */
+
     public java.util.Date getCreationTimestamp() {
         return this.creationTimestamp;
     }
@@ -400,6 +423,7 @@ public class VpcEndpoint implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VpcEndpoint withCreationTimestamp(java.util.Date creationTimestamp) {
         setCreationTimestamp(creationTimestamp);
         return this;

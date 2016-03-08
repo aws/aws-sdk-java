@@ -76,6 +76,11 @@ public class InMemoryRegionImpl implements RegionImpl {
     }
 
     @Override
+    public String getPartition() {
+        throw new UnsupportedOperationException("Partition is not available in the in memory implementation");
+    }
+
+    @Override
     public boolean isServiceSupported(String serviceName) {
         return endpoints.containsKey(serviceName);
     }

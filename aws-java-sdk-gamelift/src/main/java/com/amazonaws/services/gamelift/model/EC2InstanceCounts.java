@@ -63,6 +63,7 @@ public class EC2InstanceCounts implements Serializable, Cloneable {
      * @param dESIRED
      *        Ideal number of active instances in the fleet.
      */
+
     public void setDESIRED(Integer dESIRED) {
         this.dESIRED = dESIRED;
     }
@@ -74,6 +75,7 @@ public class EC2InstanceCounts implements Serializable, Cloneable {
      * 
      * @return Ideal number of active instances in the fleet.
      */
+
     public Integer getDESIRED() {
         return this.dESIRED;
     }
@@ -88,6 +90,7 @@ public class EC2InstanceCounts implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EC2InstanceCounts withDESIRED(Integer dESIRED) {
         setDESIRED(dESIRED);
         return this;
@@ -102,6 +105,7 @@ public class EC2InstanceCounts implements Serializable, Cloneable {
      *        Number of instances in the fleet that are spinning up but not yet
      *        active.
      */
+
     public void setPENDING(Integer pENDING) {
         this.pENDING = pENDING;
     }
@@ -114,6 +118,7 @@ public class EC2InstanceCounts implements Serializable, Cloneable {
      * @return Number of instances in the fleet that are spinning up but not yet
      *         active.
      */
+
     public Integer getPENDING() {
         return this.pENDING;
     }
@@ -129,6 +134,7 @@ public class EC2InstanceCounts implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EC2InstanceCounts withPENDING(Integer pENDING) {
         setPENDING(pENDING);
         return this;
@@ -142,6 +148,7 @@ public class EC2InstanceCounts implements Serializable, Cloneable {
      * @param aCTIVE
      *        Actual number of active instances in the fleet.
      */
+
     public void setACTIVE(Integer aCTIVE) {
         this.aCTIVE = aCTIVE;
     }
@@ -153,6 +160,7 @@ public class EC2InstanceCounts implements Serializable, Cloneable {
      * 
      * @return Actual number of active instances in the fleet.
      */
+
     public Integer getACTIVE() {
         return this.aCTIVE;
     }
@@ -167,6 +175,7 @@ public class EC2InstanceCounts implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EC2InstanceCounts withACTIVE(Integer aCTIVE) {
         setACTIVE(aCTIVE);
         return this;
@@ -182,6 +191,7 @@ public class EC2InstanceCounts implements Serializable, Cloneable {
      *        Number of instances in the fleet that are no longer active but
      *        haven't yet been terminated.
      */
+
     public void setTERMINATING(Integer tERMINATING) {
         this.tERMINATING = tERMINATING;
     }
@@ -195,6 +205,7 @@ public class EC2InstanceCounts implements Serializable, Cloneable {
      * @return Number of instances in the fleet that are no longer active but
      *         haven't yet been terminated.
      */
+
     public Integer getTERMINATING() {
         return this.tERMINATING;
     }
@@ -211,6 +222,7 @@ public class EC2InstanceCounts implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EC2InstanceCounts withTERMINATING(Integer tERMINATING) {
         setTERMINATING(tERMINATING);
         return this;

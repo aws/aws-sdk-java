@@ -40,6 +40,7 @@ public class CreateStorageLocationResult implements Serializable, Cloneable {
      * @param s3Bucket
      *        The name of the Amazon S3 bucket created.
      */
+
     public void setS3Bucket(String s3Bucket) {
         this.s3Bucket = s3Bucket;
     }
@@ -51,6 +52,7 @@ public class CreateStorageLocationResult implements Serializable, Cloneable {
      * 
      * @return The name of the Amazon S3 bucket created.
      */
+
     public String getS3Bucket() {
         return this.s3Bucket;
     }
@@ -65,6 +67,7 @@ public class CreateStorageLocationResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateStorageLocationResult withS3Bucket(String s3Bucket) {
         setS3Bucket(s3Bucket);
         return this;

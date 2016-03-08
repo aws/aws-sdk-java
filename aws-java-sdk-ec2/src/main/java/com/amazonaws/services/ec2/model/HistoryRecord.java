@@ -74,6 +74,7 @@ public class HistoryRecord implements Serializable, Cloneable {
      *        The date and time of the event, in UTC format (for example,
      *        <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      */
+
     public void setTimestamp(java.util.Date timestamp) {
         this.timestamp = timestamp;
     }
@@ -87,6 +88,7 @@ public class HistoryRecord implements Serializable, Cloneable {
      * @return The date and time of the event, in UTC format (for example,
      *         <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      */
+
     public java.util.Date getTimestamp() {
         return this.timestamp;
     }
@@ -103,6 +105,7 @@ public class HistoryRecord implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HistoryRecord withTimestamp(java.util.Date timestamp) {
         setTimestamp(timestamp);
         return this;
@@ -155,6 +158,7 @@ public class HistoryRecord implements Serializable, Cloneable {
      *        </li>
      * @see EventType
      */
+
     public void setEventType(String eventType) {
         this.eventType = eventType;
     }
@@ -205,6 +209,7 @@ public class HistoryRecord implements Serializable, Cloneable {
      *         </li>
      * @see EventType
      */
+
     public String getEventType() {
         return this.eventType;
     }
@@ -258,6 +263,7 @@ public class HistoryRecord implements Serializable, Cloneable {
      *         chained together.
      * @see EventType
      */
+
     public HistoryRecord withEventType(String eventType) {
         setEventType(eventType);
         return this;
@@ -312,6 +318,7 @@ public class HistoryRecord implements Serializable, Cloneable {
      *         chained together.
      * @see EventType
      */
+
     public void setEventType(EventType eventType) {
         this.eventType = eventType.toString();
     }
@@ -365,6 +372,7 @@ public class HistoryRecord implements Serializable, Cloneable {
      *         chained together.
      * @see EventType
      */
+
     public HistoryRecord withEventType(EventType eventType) {
         setEventType(eventType);
         return this;
@@ -378,6 +386,7 @@ public class HistoryRecord implements Serializable, Cloneable {
      * @param eventInformation
      *        Information about the event.
      */
+
     public void setEventInformation(EventInformation eventInformation) {
         this.eventInformation = eventInformation;
     }
@@ -389,6 +398,7 @@ public class HistoryRecord implements Serializable, Cloneable {
      * 
      * @return Information about the event.
      */
+
     public EventInformation getEventInformation() {
         return this.eventInformation;
     }
@@ -403,6 +413,7 @@ public class HistoryRecord implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HistoryRecord withEventInformation(EventInformation eventInformation) {
         setEventInformation(eventInformation);
         return this;

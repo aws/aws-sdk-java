@@ -50,6 +50,7 @@ public class AddTagsRequest extends AmazonWebServiceRequest implements
      * @param aRN
      *        Specify the <code>ARN</code> for which you want to add the tags.
      */
+
     public void setARN(String aRN) {
         this.aRN = aRN;
     }
@@ -61,6 +62,7 @@ public class AddTagsRequest extends AmazonWebServiceRequest implements
      * 
      * @return Specify the <code>ARN</code> for which you want to add the tags.
      */
+
     public String getARN() {
         return this.aRN;
     }
@@ -75,6 +77,7 @@ public class AddTagsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddTagsRequest withARN(String aRN) {
         setARN(aRN);
         return this;
@@ -89,6 +92,7 @@ public class AddTagsRequest extends AmazonWebServiceRequest implements
      * @return List of <code>Tag</code> that need to be added for the
      *         Elasticsearch domain.
      */
+
     public java.util.List<Tag> getTagList() {
         return tagList;
     }
@@ -103,6 +107,7 @@ public class AddTagsRequest extends AmazonWebServiceRequest implements
      *        List of <code>Tag</code> that need to be added for the
      *        Elasticsearch domain.
      */
+
     public void setTagList(java.util.Collection<Tag> tagList) {
         if (tagList == null) {
             this.tagList = null;
@@ -130,6 +135,7 @@ public class AddTagsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddTagsRequest withTagList(Tag... tagList) {
         if (this.tagList == null) {
             setTagList(new java.util.ArrayList<Tag>(tagList.length));
@@ -152,6 +158,7 @@ public class AddTagsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddTagsRequest withTagList(java.util.Collection<Tag> tagList) {
         setTagList(tagList);
         return this;

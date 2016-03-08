@@ -99,6 +99,7 @@ public class AttributeDefinition implements Serializable, Cloneable {
      * @param attributeName
      *        A name for the attribute.
      */
+
     public void setAttributeName(String attributeName) {
         this.attributeName = attributeName;
     }
@@ -110,6 +111,7 @@ public class AttributeDefinition implements Serializable, Cloneable {
      * 
      * @return A name for the attribute.
      */
+
     public String getAttributeName() {
         return this.attributeName;
     }
@@ -124,6 +126,7 @@ public class AttributeDefinition implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AttributeDefinition withAttributeName(String attributeName) {
         setAttributeName(attributeName);
         return this;
@@ -147,6 +150,7 @@ public class AttributeDefinition implements Serializable, Cloneable {
      *        <li><code>B</code> - the attribute is of type Binary</li>
      * @see ScalarAttributeType
      */
+
     public void setAttributeType(String attributeType) {
         this.attributeType = attributeType;
     }
@@ -168,6 +172,7 @@ public class AttributeDefinition implements Serializable, Cloneable {
      *         <li><code>B</code> - the attribute is of type Binary</li>
      * @see ScalarAttributeType
      */
+
     public String getAttributeType() {
         return this.attributeType;
     }
@@ -192,6 +197,7 @@ public class AttributeDefinition implements Serializable, Cloneable {
      *         chained together.
      * @see ScalarAttributeType
      */
+
     public AttributeDefinition withAttributeType(String attributeType) {
         setAttributeType(attributeType);
         return this;
@@ -217,6 +223,7 @@ public class AttributeDefinition implements Serializable, Cloneable {
      *         chained together.
      * @see ScalarAttributeType
      */
+
     public void setAttributeType(ScalarAttributeType attributeType) {
         this.attributeType = attributeType.toString();
     }
@@ -241,6 +248,7 @@ public class AttributeDefinition implements Serializable, Cloneable {
      *         chained together.
      * @see ScalarAttributeType
      */
+
     public AttributeDefinition withAttributeType(
             ScalarAttributeType attributeType) {
         setAttributeType(attributeType);

@@ -55,6 +55,7 @@ public class UpdateOpenIDConnectProviderThumbprintRequest extends
      *        provider ARNs by using the <a>ListOpenIDConnectProviders</a>
      *        action.
      */
+
     public void setOpenIDConnectProviderArn(String openIDConnectProviderArn) {
         this.openIDConnectProviderArn = openIDConnectProviderArn;
     }
@@ -71,6 +72,7 @@ public class UpdateOpenIDConnectProviderThumbprintRequest extends
      *         provider ARNs by using the <a>ListOpenIDConnectProviders</a>
      *         action.
      */
+
     public String getOpenIDConnectProviderArn() {
         return this.openIDConnectProviderArn;
     }
@@ -90,6 +92,7 @@ public class UpdateOpenIDConnectProviderThumbprintRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateOpenIDConnectProviderThumbprintRequest withOpenIDConnectProviderArn(
             String openIDConnectProviderArn) {
         setOpenIDConnectProviderArn(openIDConnectProviderArn);
@@ -107,6 +110,7 @@ public class UpdateOpenIDConnectProviderThumbprintRequest extends
      *         specified IAM OpenID Connect provider. For more information, see
      *         <a>CreateOpenIDConnectProvider</a>.
      */
+
     public java.util.List<String> getThumbprintList() {
         if (thumbprintList == null) {
             thumbprintList = new com.amazonaws.internal.SdkInternalList<String>();
@@ -126,6 +130,7 @@ public class UpdateOpenIDConnectProviderThumbprintRequest extends
      *        specified IAM OpenID Connect provider. For more information, see
      *        <a>CreateOpenIDConnectProvider</a>.
      */
+
     public void setThumbprintList(java.util.Collection<String> thumbprintList) {
         if (thumbprintList == null) {
             this.thumbprintList = null;
@@ -156,6 +161,7 @@ public class UpdateOpenIDConnectProviderThumbprintRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateOpenIDConnectProviderThumbprintRequest withThumbprintList(
             String... thumbprintList) {
         if (this.thumbprintList == null) {
@@ -182,6 +188,7 @@ public class UpdateOpenIDConnectProviderThumbprintRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateOpenIDConnectProviderThumbprintRequest withThumbprintList(
             java.util.Collection<String> thumbprintList) {
         setThumbprintList(thumbprintList);

@@ -64,6 +64,7 @@ public class ListSqlInjectionMatchSetsResult implements Serializable, Cloneable 
      *        <code>NextMarker</code> value from the response in the
      *        <code>NextMarker</code> value in the next request.
      */
+
     public void setNextMarker(String nextMarker) {
         this.nextMarker = nextMarker;
     }
@@ -87,6 +88,7 @@ public class ListSqlInjectionMatchSetsResult implements Serializable, Cloneable 
      *         <code>NextMarker</code> value from the response in the
      *         <code>NextMarker</code> value in the next request.
      */
+
     public String getNextMarker() {
         return this.nextMarker;
     }
@@ -113,6 +115,7 @@ public class ListSqlInjectionMatchSetsResult implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListSqlInjectionMatchSetsResult withNextMarker(String nextMarker) {
         setNextMarker(nextMarker);
         return this;
@@ -125,6 +128,7 @@ public class ListSqlInjectionMatchSetsResult implements Serializable, Cloneable 
      * 
      * @return An array of <a>SqlInjectionMatchSetSummary</a> objects.
      */
+
     public java.util.List<SqlInjectionMatchSetSummary> getSqlInjectionMatchSets() {
         return sqlInjectionMatchSets;
     }
@@ -137,6 +141,7 @@ public class ListSqlInjectionMatchSetsResult implements Serializable, Cloneable 
      * @param sqlInjectionMatchSets
      *        An array of <a>SqlInjectionMatchSetSummary</a> objects.
      */
+
     public void setSqlInjectionMatchSets(
             java.util.Collection<SqlInjectionMatchSetSummary> sqlInjectionMatchSets) {
         if (sqlInjectionMatchSets == null) {
@@ -164,6 +169,7 @@ public class ListSqlInjectionMatchSetsResult implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListSqlInjectionMatchSetsResult withSqlInjectionMatchSets(
             SqlInjectionMatchSetSummary... sqlInjectionMatchSets) {
         if (this.sqlInjectionMatchSets == null) {
@@ -186,6 +192,7 @@ public class ListSqlInjectionMatchSetsResult implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListSqlInjectionMatchSetsResult withSqlInjectionMatchSets(
             java.util.Collection<SqlInjectionMatchSetSummary> sqlInjectionMatchSets) {
         setSqlInjectionMatchSets(sqlInjectionMatchSets);

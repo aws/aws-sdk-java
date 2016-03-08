@@ -42,6 +42,7 @@ public class DeregisterOnPremisesInstanceRequest extends
      * @param instanceName
      *        The name of the on-premises instance to deregister.
      */
+
     public void setInstanceName(String instanceName) {
         this.instanceName = instanceName;
     }
@@ -53,6 +54,7 @@ public class DeregisterOnPremisesInstanceRequest extends
      * 
      * @return The name of the on-premises instance to deregister.
      */
+
     public String getInstanceName() {
         return this.instanceName;
     }
@@ -67,6 +69,7 @@ public class DeregisterOnPremisesInstanceRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeregisterOnPremisesInstanceRequest withInstanceName(
             String instanceName) {
         setInstanceName(instanceName);

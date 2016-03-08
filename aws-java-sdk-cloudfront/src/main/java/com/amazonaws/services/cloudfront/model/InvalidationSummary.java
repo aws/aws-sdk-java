@@ -36,6 +36,7 @@ public class InvalidationSummary implements Serializable, Cloneable {
      * @param id
      *        The unique ID for an invalidation request.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -45,6 +46,7 @@ public class InvalidationSummary implements Serializable, Cloneable {
      * 
      * @return The unique ID for an invalidation request.
      */
+
     public String getId() {
         return this.id;
     }
@@ -57,6 +59,7 @@ public class InvalidationSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InvalidationSummary withId(String id) {
         setId(id);
         return this;
@@ -65,6 +68,7 @@ public class InvalidationSummary implements Serializable, Cloneable {
     /**
      * @param createTime
      */
+
     public void setCreateTime(java.util.Date createTime) {
         this.createTime = createTime;
     }
@@ -72,6 +76,7 @@ public class InvalidationSummary implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public java.util.Date getCreateTime() {
         return this.createTime;
     }
@@ -81,6 +86,7 @@ public class InvalidationSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InvalidationSummary withCreateTime(java.util.Date createTime) {
         setCreateTime(createTime);
         return this;
@@ -92,6 +98,7 @@ public class InvalidationSummary implements Serializable, Cloneable {
      * @param status
      *        The status of an invalidation request.
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -101,6 +108,7 @@ public class InvalidationSummary implements Serializable, Cloneable {
      * 
      * @return The status of an invalidation request.
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -113,6 +121,7 @@ public class InvalidationSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InvalidationSummary withStatus(String status) {
         setStatus(status);
         return this;

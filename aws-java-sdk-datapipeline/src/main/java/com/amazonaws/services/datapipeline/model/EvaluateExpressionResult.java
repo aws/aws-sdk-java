@@ -40,6 +40,7 @@ public class EvaluateExpressionResult implements Serializable, Cloneable {
      * @param evaluatedExpression
      *        The evaluated expression.
      */
+
     public void setEvaluatedExpression(String evaluatedExpression) {
         this.evaluatedExpression = evaluatedExpression;
     }
@@ -51,6 +52,7 @@ public class EvaluateExpressionResult implements Serializable, Cloneable {
      * 
      * @return The evaluated expression.
      */
+
     public String getEvaluatedExpression() {
         return this.evaluatedExpression;
     }
@@ -65,6 +67,7 @@ public class EvaluateExpressionResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EvaluateExpressionResult withEvaluatedExpression(
             String evaluatedExpression) {
         setEvaluatedExpression(evaluatedExpression);

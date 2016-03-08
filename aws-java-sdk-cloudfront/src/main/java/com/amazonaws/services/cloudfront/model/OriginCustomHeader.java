@@ -34,6 +34,7 @@ public class OriginCustomHeader implements Serializable, Cloneable {
      * @param headerName
      *        The header's name.
      */
+
     public void setHeaderName(String headerName) {
         this.headerName = headerName;
     }
@@ -43,6 +44,7 @@ public class OriginCustomHeader implements Serializable, Cloneable {
      * 
      * @return The header's name.
      */
+
     public String getHeaderName() {
         return this.headerName;
     }
@@ -55,6 +57,7 @@ public class OriginCustomHeader implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public OriginCustomHeader withHeaderName(String headerName) {
         setHeaderName(headerName);
         return this;
@@ -66,6 +69,7 @@ public class OriginCustomHeader implements Serializable, Cloneable {
      * @param headerValue
      *        The header's value.
      */
+
     public void setHeaderValue(String headerValue) {
         this.headerValue = headerValue;
     }
@@ -75,6 +79,7 @@ public class OriginCustomHeader implements Serializable, Cloneable {
      * 
      * @return The header's value.
      */
+
     public String getHeaderValue() {
         return this.headerValue;
     }
@@ -87,6 +92,7 @@ public class OriginCustomHeader implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public OriginCustomHeader withHeaderValue(String headerValue) {
         setHeaderValue(headerValue);
         return this;

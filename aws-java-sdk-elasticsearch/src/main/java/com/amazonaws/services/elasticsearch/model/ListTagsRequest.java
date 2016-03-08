@@ -47,6 +47,7 @@ public class ListTagsRequest extends AmazonWebServiceRequest implements
      *        Specify the <code>ARN</code> for the Elasticsearch domain to which
      *        the tags are attached that you want to view.
      */
+
     public void setARN(String aRN) {
         this.aRN = aRN;
     }
@@ -60,6 +61,7 @@ public class ListTagsRequest extends AmazonWebServiceRequest implements
      * @return Specify the <code>ARN</code> for the Elasticsearch domain to
      *         which the tags are attached that you want to view.
      */
+
     public String getARN() {
         return this.aRN;
     }
@@ -76,6 +78,7 @@ public class ListTagsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTagsRequest withARN(String aRN) {
         setARN(aRN);
         return this;

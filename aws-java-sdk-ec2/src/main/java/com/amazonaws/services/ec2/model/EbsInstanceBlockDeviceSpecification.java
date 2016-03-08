@@ -45,6 +45,7 @@ public class EbsInstanceBlockDeviceSpecification implements Serializable,
      * @param volumeId
      *        The ID of the EBS volume.
      */
+
     public void setVolumeId(String volumeId) {
         this.volumeId = volumeId;
     }
@@ -56,6 +57,7 @@ public class EbsInstanceBlockDeviceSpecification implements Serializable,
      * 
      * @return The ID of the EBS volume.
      */
+
     public String getVolumeId() {
         return this.volumeId;
     }
@@ -70,6 +72,7 @@ public class EbsInstanceBlockDeviceSpecification implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EbsInstanceBlockDeviceSpecification withVolumeId(String volumeId) {
         setVolumeId(volumeId);
         return this;
@@ -83,6 +86,7 @@ public class EbsInstanceBlockDeviceSpecification implements Serializable,
      * @param deleteOnTermination
      *        Indicates whether the volume is deleted on instance termination.
      */
+
     public void setDeleteOnTermination(Boolean deleteOnTermination) {
         this.deleteOnTermination = deleteOnTermination;
     }
@@ -94,6 +98,7 @@ public class EbsInstanceBlockDeviceSpecification implements Serializable,
      * 
      * @return Indicates whether the volume is deleted on instance termination.
      */
+
     public Boolean getDeleteOnTermination() {
         return this.deleteOnTermination;
     }
@@ -108,6 +113,7 @@ public class EbsInstanceBlockDeviceSpecification implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EbsInstanceBlockDeviceSpecification withDeleteOnTermination(
             Boolean deleteOnTermination) {
         setDeleteOnTermination(deleteOnTermination);
@@ -121,6 +127,7 @@ public class EbsInstanceBlockDeviceSpecification implements Serializable,
      * 
      * @return Indicates whether the volume is deleted on instance termination.
      */
+
     public Boolean isDeleteOnTermination() {
         return this.deleteOnTermination;
     }

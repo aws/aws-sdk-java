@@ -15,17 +15,6 @@
 
 package com.amazonaws.metrics.internal.cloudwatch;
 
-import static com.amazonaws.metrics.internal.cloudwatch.spi.MetricData.newMetricDatum;
-import static com.amazonaws.metrics.internal.cloudwatch.spi.RequestMetricTransformer.Utils.endTimestamp;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.apache.http.annotation.ThreadSafe;
-
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.Request;
 import com.amazonaws.Response;
@@ -39,6 +28,16 @@ import com.amazonaws.services.cloudwatch.model.StandardUnit;
 import com.amazonaws.util.AWSRequestMetrics;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.util.TimingInfo;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.apache.http.annotation.ThreadSafe;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+import static com.amazonaws.metrics.internal.cloudwatch.spi.MetricData.newMetricDatum;
+import static com.amazonaws.metrics.internal.cloudwatch.spi.RequestMetricTransformer.Utils.endTimestamp;
 /**
  * Used to transform the predefined metrics of the AWS SDK into instances of
  * {@link MetricDatum}.
@@ -76,6 +75,8 @@ public class PredefinedMetricTransformer {
                 case RequestCount:  // intentionally fall thru to reuse the same routine as RetryCount
                 case RetryCount:
                     return metricOfRequestOrRetryCount(predefined, request, response);
+                case RetryCapacityConsumed:
+                    return counterMetricOf(predefined, request, response, EXCLUDE_REQUEST_TYPE);
                 case ResponseProcessingTime: // drop thru
                 case RequestSigningTime: // drop thru
                     return latencyMetricOf(predefined, request, response, EXCLUDE_REQUEST_TYPE);

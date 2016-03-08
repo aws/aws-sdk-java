@@ -52,6 +52,7 @@ public class Selector implements Serializable, Cloneable {
      *        pipeline definition syntax that is used by the AWS Data Pipeline
      *        API. If the field is not set on the object, the condition fails.
      */
+
     public void setFieldName(String fieldName) {
         this.fieldName = fieldName;
     }
@@ -69,6 +70,7 @@ public class Selector implements Serializable, Cloneable {
      *         pipeline definition syntax that is used by the AWS Data Pipeline
      *         API. If the field is not set on the object, the condition fails.
      */
+
     public String getFieldName() {
         return this.fieldName;
     }
@@ -89,6 +91,7 @@ public class Selector implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Selector withFieldName(String fieldName) {
         setFieldName(fieldName);
         return this;
@@ -97,6 +100,7 @@ public class Selector implements Serializable, Cloneable {
     /**
      * @param operator
      */
+
     public void setOperator(Operator operator) {
         this.operator = operator;
     }
@@ -104,6 +108,7 @@ public class Selector implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Operator getOperator() {
         return this.operator;
     }
@@ -113,6 +118,7 @@ public class Selector implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Selector withOperator(Operator operator) {
         setOperator(operator);
         return this;

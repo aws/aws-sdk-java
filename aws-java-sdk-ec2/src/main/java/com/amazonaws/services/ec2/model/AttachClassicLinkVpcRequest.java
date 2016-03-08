@@ -57,6 +57,7 @@ public class AttachClassicLinkVpcRequest extends AmazonWebServiceRequest
      *        The ID of an EC2-Classic instance to link to the
      *        ClassicLink-enabled VPC.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -69,6 +70,7 @@ public class AttachClassicLinkVpcRequest extends AmazonWebServiceRequest
      * @return The ID of an EC2-Classic instance to link to the
      *         ClassicLink-enabled VPC.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
@@ -84,6 +86,7 @@ public class AttachClassicLinkVpcRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AttachClassicLinkVpcRequest withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;
@@ -97,6 +100,7 @@ public class AttachClassicLinkVpcRequest extends AmazonWebServiceRequest
      * @param vpcId
      *        The ID of a ClassicLink-enabled VPC.
      */
+
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
@@ -108,6 +112,7 @@ public class AttachClassicLinkVpcRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of a ClassicLink-enabled VPC.
      */
+
     public String getVpcId() {
         return this.vpcId;
     }
@@ -122,6 +127,7 @@ public class AttachClassicLinkVpcRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AttachClassicLinkVpcRequest withVpcId(String vpcId) {
         setVpcId(vpcId);
         return this;
@@ -136,6 +142,7 @@ public class AttachClassicLinkVpcRequest extends AmazonWebServiceRequest
      * @return The ID of one or more of the VPC's security groups. You cannot
      *         specify security groups from a different VPC.
      */
+
     public java.util.List<String> getGroups() {
         if (groups == null) {
             groups = new com.amazonaws.internal.SdkInternalList<String>();
@@ -153,6 +160,7 @@ public class AttachClassicLinkVpcRequest extends AmazonWebServiceRequest
      *        The ID of one or more of the VPC's security groups. You cannot
      *        specify security groups from a different VPC.
      */
+
     public void setGroups(java.util.Collection<String> groups) {
         if (groups == null) {
             this.groups = null;
@@ -180,6 +188,7 @@ public class AttachClassicLinkVpcRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AttachClassicLinkVpcRequest withGroups(String... groups) {
         if (this.groups == null) {
             setGroups(new com.amazonaws.internal.SdkInternalList<String>(
@@ -203,6 +212,7 @@ public class AttachClassicLinkVpcRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AttachClassicLinkVpcRequest withGroups(
             java.util.Collection<String> groups) {
         setGroups(groups);

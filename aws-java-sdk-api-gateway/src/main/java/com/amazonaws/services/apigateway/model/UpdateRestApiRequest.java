@@ -49,6 +49,7 @@ public class UpdateRestApiRequest extends AmazonWebServiceRequest implements
      * @param restApiId
      *        The ID of the <a>RestApi</a> you want to update.
      */
+
     public void setRestApiId(String restApiId) {
         this.restApiId = restApiId;
     }
@@ -60,6 +61,7 @@ public class UpdateRestApiRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ID of the <a>RestApi</a> you want to update.
      */
+
     public String getRestApiId() {
         return this.restApiId;
     }
@@ -74,6 +76,7 @@ public class UpdateRestApiRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateRestApiRequest withRestApiId(String restApiId) {
         setRestApiId(restApiId);
         return this;
@@ -89,6 +92,7 @@ public class UpdateRestApiRequest extends AmazonWebServiceRequest implements
      *         specified resource. The patches are applied in the order
      *         specified in the list.
      */
+
     public java.util.List<PatchOperation> getPatchOperations() {
         return patchOperations;
     }
@@ -104,6 +108,7 @@ public class UpdateRestApiRequest extends AmazonWebServiceRequest implements
      *        specified resource. The patches are applied in the order specified
      *        in the list.
      */
+
     public void setPatchOperations(
             java.util.Collection<PatchOperation> patchOperations) {
         if (patchOperations == null) {
@@ -134,6 +139,7 @@ public class UpdateRestApiRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateRestApiRequest withPatchOperations(
             PatchOperation... patchOperations) {
         if (this.patchOperations == null) {
@@ -159,6 +165,7 @@ public class UpdateRestApiRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateRestApiRequest withPatchOperations(
             java.util.Collection<PatchOperation> patchOperations) {
         setPatchOperations(patchOperations);

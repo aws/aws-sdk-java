@@ -58,6 +58,7 @@ public class CreatePolicyResult implements Serializable, Cloneable {
      * @param policyName
      *        The policy name.
      */
+
     public void setPolicyName(String policyName) {
         this.policyName = policyName;
     }
@@ -69,6 +70,7 @@ public class CreatePolicyResult implements Serializable, Cloneable {
      * 
      * @return The policy name.
      */
+
     public String getPolicyName() {
         return this.policyName;
     }
@@ -83,6 +85,7 @@ public class CreatePolicyResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePolicyResult withPolicyName(String policyName) {
         setPolicyName(policyName);
         return this;
@@ -96,6 +99,7 @@ public class CreatePolicyResult implements Serializable, Cloneable {
      * @param policyArn
      *        The policy ARN.
      */
+
     public void setPolicyArn(String policyArn) {
         this.policyArn = policyArn;
     }
@@ -107,6 +111,7 @@ public class CreatePolicyResult implements Serializable, Cloneable {
      * 
      * @return The policy ARN.
      */
+
     public String getPolicyArn() {
         return this.policyArn;
     }
@@ -121,6 +126,7 @@ public class CreatePolicyResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePolicyResult withPolicyArn(String policyArn) {
         setPolicyArn(policyArn);
         return this;
@@ -134,6 +140,7 @@ public class CreatePolicyResult implements Serializable, Cloneable {
      * @param policyDocument
      *        The JSON document that describes the policy.
      */
+
     public void setPolicyDocument(String policyDocument) {
         this.policyDocument = policyDocument;
     }
@@ -145,6 +152,7 @@ public class CreatePolicyResult implements Serializable, Cloneable {
      * 
      * @return The JSON document that describes the policy.
      */
+
     public String getPolicyDocument() {
         return this.policyDocument;
     }
@@ -159,6 +167,7 @@ public class CreatePolicyResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePolicyResult withPolicyDocument(String policyDocument) {
         setPolicyDocument(policyDocument);
         return this;
@@ -172,6 +181,7 @@ public class CreatePolicyResult implements Serializable, Cloneable {
      * @param policyVersionId
      *        The policy version ID.
      */
+
     public void setPolicyVersionId(String policyVersionId) {
         this.policyVersionId = policyVersionId;
     }
@@ -183,6 +193,7 @@ public class CreatePolicyResult implements Serializable, Cloneable {
      * 
      * @return The policy version ID.
      */
+
     public String getPolicyVersionId() {
         return this.policyVersionId;
     }
@@ -197,6 +208,7 @@ public class CreatePolicyResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePolicyResult withPolicyVersionId(String policyVersionId) {
         setPolicyVersionId(policyVersionId);
         return this;

@@ -56,6 +56,7 @@ public class RevisionLocation implements Serializable, Cloneable {
      *        <li>GitHub: An application revision stored in GitHub.</li>
      * @see RevisionLocationType
      */
+
     public void setRevisionType(String revisionType) {
         this.revisionType = revisionType;
     }
@@ -75,6 +76,7 @@ public class RevisionLocation implements Serializable, Cloneable {
      *         <li>GitHub: An application revision stored in GitHub.</li>
      * @see RevisionLocationType
      */
+
     public String getRevisionType() {
         return this.revisionType;
     }
@@ -97,6 +99,7 @@ public class RevisionLocation implements Serializable, Cloneable {
      *         chained together.
      * @see RevisionLocationType
      */
+
     public RevisionLocation withRevisionType(String revisionType) {
         setRevisionType(revisionType);
         return this;
@@ -120,6 +123,7 @@ public class RevisionLocation implements Serializable, Cloneable {
      *         chained together.
      * @see RevisionLocationType
      */
+
     public void setRevisionType(RevisionLocationType revisionType) {
         this.revisionType = revisionType.toString();
     }
@@ -142,6 +146,7 @@ public class RevisionLocation implements Serializable, Cloneable {
      *         chained together.
      * @see RevisionLocationType
      */
+
     public RevisionLocation withRevisionType(RevisionLocationType revisionType) {
         setRevisionType(revisionType);
         return this;
@@ -150,6 +155,7 @@ public class RevisionLocation implements Serializable, Cloneable {
     /**
      * @param s3Location
      */
+
     public void setS3Location(S3Location s3Location) {
         this.s3Location = s3Location;
     }
@@ -157,6 +163,7 @@ public class RevisionLocation implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public S3Location getS3Location() {
         return this.s3Location;
     }
@@ -166,6 +173,7 @@ public class RevisionLocation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RevisionLocation withS3Location(S3Location s3Location) {
         setS3Location(s3Location);
         return this;
@@ -174,6 +182,7 @@ public class RevisionLocation implements Serializable, Cloneable {
     /**
      * @param gitHubLocation
      */
+
     public void setGitHubLocation(GitHubLocation gitHubLocation) {
         this.gitHubLocation = gitHubLocation;
     }
@@ -181,6 +190,7 @@ public class RevisionLocation implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public GitHubLocation getGitHubLocation() {
         return this.gitHubLocation;
     }
@@ -190,6 +200,7 @@ public class RevisionLocation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RevisionLocation withGitHubLocation(GitHubLocation gitHubLocation) {
         setGitHubLocation(gitHubLocation);
         return this;

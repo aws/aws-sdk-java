@@ -46,6 +46,7 @@ public class AssociateElasticIpRequest extends AmazonWebServiceRequest
      * @param elasticIp
      *        The Elastic IP address.
      */
+
     public void setElasticIp(String elasticIp) {
         this.elasticIp = elasticIp;
     }
@@ -57,6 +58,7 @@ public class AssociateElasticIpRequest extends AmazonWebServiceRequest
      * 
      * @return The Elastic IP address.
      */
+
     public String getElasticIp() {
         return this.elasticIp;
     }
@@ -71,6 +73,7 @@ public class AssociateElasticIpRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssociateElasticIpRequest withElasticIp(String elasticIp) {
         setElasticIp(elasticIp);
         return this;
@@ -84,6 +87,7 @@ public class AssociateElasticIpRequest extends AmazonWebServiceRequest
      * @param instanceId
      *        The instance ID.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -95,6 +99,7 @@ public class AssociateElasticIpRequest extends AmazonWebServiceRequest
      * 
      * @return The instance ID.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
@@ -109,6 +114,7 @@ public class AssociateElasticIpRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssociateElasticIpRequest withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;

@@ -49,6 +49,7 @@ public class DeleteRolePolicyRequest extends AmazonWebServiceRequest implements
      *        The name (friendly name, not ARN) identifying the role that the
      *        policy is embedded in.
      */
+
     public void setRoleName(String roleName) {
         this.roleName = roleName;
     }
@@ -62,6 +63,7 @@ public class DeleteRolePolicyRequest extends AmazonWebServiceRequest implements
      * @return The name (friendly name, not ARN) identifying the role that the
      *         policy is embedded in.
      */
+
     public String getRoleName() {
         return this.roleName;
     }
@@ -78,6 +80,7 @@ public class DeleteRolePolicyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteRolePolicyRequest withRoleName(String roleName) {
         setRoleName(roleName);
         return this;
@@ -91,6 +94,7 @@ public class DeleteRolePolicyRequest extends AmazonWebServiceRequest implements
      * @param policyName
      *        The name identifying the policy document to delete.
      */
+
     public void setPolicyName(String policyName) {
         this.policyName = policyName;
     }
@@ -102,6 +106,7 @@ public class DeleteRolePolicyRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name identifying the policy document to delete.
      */
+
     public String getPolicyName() {
         return this.policyName;
     }
@@ -116,6 +121,7 @@ public class DeleteRolePolicyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteRolePolicyRequest withPolicyName(String policyName) {
         setPolicyName(policyName);
         return this;

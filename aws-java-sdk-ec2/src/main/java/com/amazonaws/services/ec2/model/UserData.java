@@ -40,6 +40,7 @@ public class UserData implements Serializable, Cloneable {
      * @param data
      *        The Base64-encoded MIME user data for the instance.
      */
+
     public void setData(String data) {
         this.data = data;
     }
@@ -51,6 +52,7 @@ public class UserData implements Serializable, Cloneable {
      * 
      * @return The Base64-encoded MIME user data for the instance.
      */
+
     public String getData() {
         return this.data;
     }
@@ -65,6 +67,7 @@ public class UserData implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UserData withData(String data) {
         setData(data);
         return this;

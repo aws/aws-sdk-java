@@ -95,6 +95,7 @@ public class IPSet implements Serializable, Cloneable {
      *        <code>IPSetId</code> is returned by <a>CreateIPSet</a> and by
      *        <a>ListIPSets</a>.
      */
+
     public void setIPSetId(String iPSetId) {
         this.iPSetId = iPSetId;
     }
@@ -124,6 +125,7 @@ public class IPSet implements Serializable, Cloneable {
      *         <code>IPSetId</code> is returned by <a>CreateIPSet</a> and by
      *         <a>ListIPSets</a>.
      */
+
     public String getIPSetId() {
         return this.iPSetId;
     }
@@ -156,6 +158,7 @@ public class IPSet implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public IPSet withIPSetId(String iPSetId) {
         setIPSetId(iPSetId);
         return this;
@@ -171,6 +174,7 @@ public class IPSet implements Serializable, Cloneable {
      *        A friendly name or description of the <a>IPSet</a>. You can't
      *        change the name of an <code>IPSet</code> after you create it.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -184,6 +188,7 @@ public class IPSet implements Serializable, Cloneable {
      * @return A friendly name or description of the <a>IPSet</a>. You can't
      *         change the name of an <code>IPSet</code> after you create it.
      */
+
     public String getName() {
         return this.name;
     }
@@ -200,6 +205,7 @@ public class IPSet implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public IPSet withName(String name) {
         setName(name);
         return this;
@@ -230,6 +236,7 @@ public class IPSet implements Serializable, Cloneable {
      *         <li><code>x-forwarded-for</code>, if the viewer did use an HTTP
      *         proxy or a load balancer to send the request</li>
      */
+
     public java.util.List<IPSetDescriptor> getIPSetDescriptors() {
         return iPSetDescriptors;
     }
@@ -260,6 +267,7 @@ public class IPSet implements Serializable, Cloneable {
      *        <li><code>x-forwarded-for</code>, if the viewer did use an HTTP
      *        proxy or a load balancer to send the request</li>
      */
+
     public void setIPSetDescriptors(
             java.util.Collection<IPSetDescriptor> iPSetDescriptors) {
         if (iPSetDescriptors == null) {
@@ -305,6 +313,7 @@ public class IPSet implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public IPSet withIPSetDescriptors(IPSetDescriptor... iPSetDescriptors) {
         if (this.iPSetDescriptors == null) {
             setIPSetDescriptors(new java.util.ArrayList<IPSetDescriptor>(
@@ -344,6 +353,7 @@ public class IPSet implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public IPSet withIPSetDescriptors(
             java.util.Collection<IPSetDescriptor> iPSetDescriptors) {
         setIPSetDescriptors(iPSetDescriptors);

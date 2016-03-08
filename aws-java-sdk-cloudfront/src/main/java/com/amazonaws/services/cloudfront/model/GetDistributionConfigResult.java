@@ -34,6 +34,7 @@ public class GetDistributionConfigResult implements Serializable, Cloneable {
      * @param distributionConfig
      *        The distribution's configuration information.
      */
+
     public void setDistributionConfig(DistributionConfig distributionConfig) {
         this.distributionConfig = distributionConfig;
     }
@@ -43,6 +44,7 @@ public class GetDistributionConfigResult implements Serializable, Cloneable {
      * 
      * @return The distribution's configuration information.
      */
+
     public DistributionConfig getDistributionConfig() {
         return this.distributionConfig;
     }
@@ -55,6 +57,7 @@ public class GetDistributionConfigResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDistributionConfigResult withDistributionConfig(
             DistributionConfig distributionConfig) {
         setDistributionConfig(distributionConfig);
@@ -68,6 +71,7 @@ public class GetDistributionConfigResult implements Serializable, Cloneable {
      *        The current version of the configuration. For example:
      *        E2QWRUHAPOMQZL.
      */
+
     public void setETag(String eTag) {
         this.eTag = eTag;
     }
@@ -78,6 +82,7 @@ public class GetDistributionConfigResult implements Serializable, Cloneable {
      * @return The current version of the configuration. For example:
      *         E2QWRUHAPOMQZL.
      */
+
     public String getETag() {
         return this.eTag;
     }
@@ -91,6 +96,7 @@ public class GetDistributionConfigResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDistributionConfigResult withETag(String eTag) {
         setETag(eTag);
         return this;

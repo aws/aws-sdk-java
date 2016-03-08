@@ -37,6 +37,7 @@ public class DescribeInternetGatewaysResult implements Serializable, Cloneable {
      * 
      * @return Information about one or more Internet gateways.
      */
+
     public java.util.List<InternetGateway> getInternetGateways() {
         if (internetGateways == null) {
             internetGateways = new com.amazonaws.internal.SdkInternalList<InternetGateway>();
@@ -52,6 +53,7 @@ public class DescribeInternetGatewaysResult implements Serializable, Cloneable {
      * @param internetGateways
      *        Information about one or more Internet gateways.
      */
+
     public void setInternetGateways(
             java.util.Collection<InternetGateway> internetGateways) {
         if (internetGateways == null) {
@@ -79,6 +81,7 @@ public class DescribeInternetGatewaysResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeInternetGatewaysResult withInternetGateways(
             InternetGateway... internetGateways) {
         if (this.internetGateways == null) {
@@ -101,6 +104,7 @@ public class DescribeInternetGatewaysResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeInternetGatewaysResult withInternetGateways(
             java.util.Collection<InternetGateway> internetGateways) {
         setInternetGateways(internetGateways);

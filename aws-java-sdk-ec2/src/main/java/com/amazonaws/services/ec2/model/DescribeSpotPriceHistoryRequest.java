@@ -137,6 +137,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest
      *        retrieving the price history data, in UTC format (for example,
      *        <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      */
+
     public void setStartTime(java.util.Date startTime) {
         this.startTime = startTime;
     }
@@ -152,6 +153,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest
      *         retrieving the price history data, in UTC format (for example,
      *         <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      */
+
     public java.util.Date getStartTime() {
         return this.startTime;
     }
@@ -170,6 +172,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSpotPriceHistoryRequest withStartTime(
             java.util.Date startTime) {
         setStartTime(startTime);
@@ -188,6 +191,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest
      *        retrieving the price history data, in UTC format (for example,
      *        <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      */
+
     public void setEndTime(java.util.Date endTime) {
         this.endTime = endTime;
     }
@@ -203,6 +207,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest
      *         retrieving the price history data, in UTC format (for example,
      *         <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      */
+
     public java.util.Date getEndTime() {
         return this.endTime;
     }
@@ -221,6 +226,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSpotPriceHistoryRequest withEndTime(java.util.Date endTime) {
         setEndTime(endTime);
         return this;
@@ -234,6 +240,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest
      * @return Filters the results by the specified instance types.
      * @see InstanceType
      */
+
     public java.util.List<String> getInstanceTypes() {
         if (instanceTypes == null) {
             instanceTypes = new com.amazonaws.internal.SdkInternalList<String>();
@@ -250,6 +257,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest
      *        Filters the results by the specified instance types.
      * @see InstanceType
      */
+
     public void setInstanceTypes(java.util.Collection<String> instanceTypes) {
         if (instanceTypes == null) {
             this.instanceTypes = null;
@@ -277,6 +285,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see InstanceType
      */
+
     public DescribeSpotPriceHistoryRequest withInstanceTypes(
             String... instanceTypes) {
         if (this.instanceTypes == null) {
@@ -300,6 +309,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see InstanceType
      */
+
     public DescribeSpotPriceHistoryRequest withInstanceTypes(
             java.util.Collection<String> instanceTypes) {
         setInstanceTypes(instanceTypes);
@@ -317,6 +327,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see InstanceType
      */
+
     public DescribeSpotPriceHistoryRequest withInstanceTypes(
             InstanceType... instanceTypes) {
         com.amazonaws.internal.SdkInternalList<String> instanceTypesCopy = new com.amazonaws.internal.SdkInternalList<String>(
@@ -339,6 +350,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest
      * 
      * @return Filters the results by the specified basic product descriptions.
      */
+
     public java.util.List<String> getProductDescriptions() {
         if (productDescriptions == null) {
             productDescriptions = new com.amazonaws.internal.SdkInternalList<String>();
@@ -354,6 +366,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest
      * @param productDescriptions
      *        Filters the results by the specified basic product descriptions.
      */
+
     public void setProductDescriptions(
             java.util.Collection<String> productDescriptions) {
         if (productDescriptions == null) {
@@ -381,6 +394,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSpotPriceHistoryRequest withProductDescriptions(
             String... productDescriptions) {
         if (this.productDescriptions == null) {
@@ -403,6 +417,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSpotPriceHistoryRequest withProductDescriptions(
             java.util.Collection<String> productDescriptions) {
         setProductDescriptions(productDescriptions);
@@ -493,6 +508,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest
      *         </p>
      *         </li>
      */
+
     public java.util.List<Filter> getFilters() {
         if (filters == null) {
             filters = new com.amazonaws.internal.SdkInternalList<Filter>();
@@ -585,6 +601,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest
      *        </p>
      *        </li>
      */
+
     public void setFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
             this.filters = null;
@@ -688,6 +705,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSpotPriceHistoryRequest withFilters(Filter... filters) {
         if (this.filters == null) {
             setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(
@@ -786,6 +804,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSpotPriceHistoryRequest withFilters(
             java.util.Collection<Filter> filters) {
         setFilters(filters);
@@ -800,6 +819,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest
      * @param availabilityZone
      *        Filters the results by the specified Availability Zone.
      */
+
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
@@ -811,6 +831,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest
      * 
      * @return Filters the results by the specified Availability Zone.
      */
+
     public String getAvailabilityZone() {
         return this.availabilityZone;
     }
@@ -825,6 +846,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSpotPriceHistoryRequest withAvailabilityZone(
             String availabilityZone) {
         setAvailabilityZone(availabilityZone);
@@ -845,6 +867,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest
      *        the remaining results, make another call with the returned
      *        <code>NextToken</code> value.
      */
+
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
     }
@@ -862,6 +885,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest
      *         retrieve the remaining results, make another call with the
      *         returned <code>NextToken</code> value.
      */
+
     public Integer getMaxResults() {
         return this.maxResults;
     }
@@ -882,6 +906,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSpotPriceHistoryRequest withMaxResults(Integer maxResults) {
         setMaxResults(maxResults);
         return this;
@@ -895,6 +920,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest
      * @param nextToken
      *        The token for the next set of results.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -906,6 +932,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest
      * 
      * @return The token for the next set of results.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -920,6 +947,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSpotPriceHistoryRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

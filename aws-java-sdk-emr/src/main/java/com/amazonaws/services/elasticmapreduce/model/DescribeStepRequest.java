@@ -48,6 +48,7 @@ public class DescribeStepRequest extends AmazonWebServiceRequest implements
      * @param clusterId
      *        The identifier of the cluster with steps to describe.
      */
+
     public void setClusterId(String clusterId) {
         this.clusterId = clusterId;
     }
@@ -59,6 +60,7 @@ public class DescribeStepRequest extends AmazonWebServiceRequest implements
      * 
      * @return The identifier of the cluster with steps to describe.
      */
+
     public String getClusterId() {
         return this.clusterId;
     }
@@ -73,6 +75,7 @@ public class DescribeStepRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeStepRequest withClusterId(String clusterId) {
         setClusterId(clusterId);
         return this;
@@ -86,6 +89,7 @@ public class DescribeStepRequest extends AmazonWebServiceRequest implements
      * @param stepId
      *        The identifier of the step to describe.
      */
+
     public void setStepId(String stepId) {
         this.stepId = stepId;
     }
@@ -97,6 +101,7 @@ public class DescribeStepRequest extends AmazonWebServiceRequest implements
      * 
      * @return The identifier of the step to describe.
      */
+
     public String getStepId() {
         return this.stepId;
     }
@@ -111,6 +116,7 @@ public class DescribeStepRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeStepRequest withStepId(String stepId) {
         setStepId(stepId);
         return this;

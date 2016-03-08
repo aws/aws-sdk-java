@@ -38,6 +38,7 @@ public class RegisterInstancesWithLoadBalancerResult implements Serializable,
      * 
      * @return The updated list of instances for the load balancer.
      */
+
     public java.util.List<Instance> getInstances() {
         if (instances == null) {
             instances = new com.amazonaws.internal.SdkInternalList<Instance>();
@@ -53,6 +54,7 @@ public class RegisterInstancesWithLoadBalancerResult implements Serializable,
      * @param instances
      *        The updated list of instances for the load balancer.
      */
+
     public void setInstances(java.util.Collection<Instance> instances) {
         if (instances == null) {
             this.instances = null;
@@ -79,6 +81,7 @@ public class RegisterInstancesWithLoadBalancerResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterInstancesWithLoadBalancerResult withInstances(
             Instance... instances) {
         if (this.instances == null) {
@@ -101,6 +104,7 @@ public class RegisterInstancesWithLoadBalancerResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterInstancesWithLoadBalancerResult withInstances(
             java.util.Collection<Instance> instances) {
         setInstances(instances);

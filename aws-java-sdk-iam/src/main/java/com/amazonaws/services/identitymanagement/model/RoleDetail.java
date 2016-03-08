@@ -97,6 +97,7 @@ public class RoleDetail implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *        >IAM Identifiers</a> in the <i>Using IAM</i> guide.
      */
+
     public void setPath(String path) {
         this.path = path;
     }
@@ -113,6 +114,7 @@ public class RoleDetail implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *         >IAM Identifiers</a> in the <i>Using IAM</i> guide.
      */
+
     public String getPath() {
         return this.path;
     }
@@ -132,6 +134,7 @@ public class RoleDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RoleDetail withPath(String path) {
         setPath(path);
         return this;
@@ -145,6 +148,7 @@ public class RoleDetail implements Serializable, Cloneable {
      * @param roleName
      *        The friendly name that identifies the role.
      */
+
     public void setRoleName(String roleName) {
         this.roleName = roleName;
     }
@@ -156,6 +160,7 @@ public class RoleDetail implements Serializable, Cloneable {
      * 
      * @return The friendly name that identifies the role.
      */
+
     public String getRoleName() {
         return this.roleName;
     }
@@ -170,6 +175,7 @@ public class RoleDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RoleDetail withRoleName(String roleName) {
         setRoleName(roleName);
         return this;
@@ -189,6 +195,7 @@ public class RoleDetail implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *        >IAM Identifiers</a> in the <i>Using IAM</i> guide.
      */
+
     public void setRoleId(String roleId) {
         this.roleId = roleId;
     }
@@ -206,6 +213,7 @@ public class RoleDetail implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *         >IAM Identifiers</a> in the <i>Using IAM</i> guide.
      */
+
     public String getRoleId() {
         return this.roleId;
     }
@@ -226,6 +234,7 @@ public class RoleDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RoleDetail withRoleId(String roleId) {
         setRoleId(roleId);
         return this;
@@ -234,6 +243,7 @@ public class RoleDetail implements Serializable, Cloneable {
     /**
      * @param arn
      */
+
     public void setArn(String arn) {
         this.arn = arn;
     }
@@ -241,6 +251,7 @@ public class RoleDetail implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getArn() {
         return this.arn;
     }
@@ -250,6 +261,7 @@ public class RoleDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RoleDetail withArn(String arn) {
         setArn(arn);
         return this;
@@ -265,6 +277,7 @@ public class RoleDetail implements Serializable, Cloneable {
      *        The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO
      *        8601 date-time format</a>, when the role was created.
      */
+
     public void setCreateDate(java.util.Date createDate) {
         this.createDate = createDate;
     }
@@ -279,6 +292,7 @@ public class RoleDetail implements Serializable, Cloneable {
      *         href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
      *         format</a>, when the role was created.
      */
+
     public java.util.Date getCreateDate() {
         return this.createDate;
     }
@@ -295,6 +309,7 @@ public class RoleDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RoleDetail withCreateDate(java.util.Date createDate) {
         setCreateDate(createDate);
         return this;
@@ -308,6 +323,7 @@ public class RoleDetail implements Serializable, Cloneable {
      * @param assumeRolePolicyDocument
      *        The trust policy that grants permission to assume the role.
      */
+
     public void setAssumeRolePolicyDocument(String assumeRolePolicyDocument) {
         this.assumeRolePolicyDocument = assumeRolePolicyDocument;
     }
@@ -319,6 +335,7 @@ public class RoleDetail implements Serializable, Cloneable {
      * 
      * @return The trust policy that grants permission to assume the role.
      */
+
     public String getAssumeRolePolicyDocument() {
         return this.assumeRolePolicyDocument;
     }
@@ -333,6 +350,7 @@ public class RoleDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RoleDetail withAssumeRolePolicyDocument(
             String assumeRolePolicyDocument) {
         setAssumeRolePolicyDocument(assumeRolePolicyDocument);
@@ -342,6 +360,7 @@ public class RoleDetail implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public java.util.List<InstanceProfile> getInstanceProfileList() {
         if (instanceProfileList == null) {
             instanceProfileList = new com.amazonaws.internal.SdkInternalList<InstanceProfile>();
@@ -352,6 +371,7 @@ public class RoleDetail implements Serializable, Cloneable {
     /**
      * @param instanceProfileList
      */
+
     public void setInstanceProfileList(
             java.util.Collection<InstanceProfile> instanceProfileList) {
         if (instanceProfileList == null) {
@@ -375,6 +395,7 @@ public class RoleDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RoleDetail withInstanceProfileList(
             InstanceProfile... instanceProfileList) {
         if (this.instanceProfileList == null) {
@@ -392,6 +413,7 @@ public class RoleDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RoleDetail withInstanceProfileList(
             java.util.Collection<InstanceProfile> instanceProfileList) {
         setInstanceProfileList(instanceProfileList);
@@ -407,6 +429,7 @@ public class RoleDetail implements Serializable, Cloneable {
      * @return A list of inline policies embedded in the role. These policies
      *         are the role's access (permissions) policies.
      */
+
     public java.util.List<PolicyDetail> getRolePolicyList() {
         if (rolePolicyList == null) {
             rolePolicyList = new com.amazonaws.internal.SdkInternalList<PolicyDetail>();
@@ -424,6 +447,7 @@ public class RoleDetail implements Serializable, Cloneable {
      *        A list of inline policies embedded in the role. These policies are
      *        the role's access (permissions) policies.
      */
+
     public void setRolePolicyList(
             java.util.Collection<PolicyDetail> rolePolicyList) {
         if (rolePolicyList == null) {
@@ -453,6 +477,7 @@ public class RoleDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RoleDetail withRolePolicyList(PolicyDetail... rolePolicyList) {
         if (this.rolePolicyList == null) {
             setRolePolicyList(new com.amazonaws.internal.SdkInternalList<PolicyDetail>(
@@ -476,6 +501,7 @@ public class RoleDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RoleDetail withRolePolicyList(
             java.util.Collection<PolicyDetail> rolePolicyList) {
         setRolePolicyList(rolePolicyList);
@@ -491,6 +517,7 @@ public class RoleDetail implements Serializable, Cloneable {
      * @return A list of managed policies attached to the role. These policies
      *         are the role's access (permissions) policies.
      */
+
     public java.util.List<AttachedPolicy> getAttachedManagedPolicies() {
         if (attachedManagedPolicies == null) {
             attachedManagedPolicies = new com.amazonaws.internal.SdkInternalList<AttachedPolicy>();
@@ -508,6 +535,7 @@ public class RoleDetail implements Serializable, Cloneable {
      *        A list of managed policies attached to the role. These policies
      *        are the role's access (permissions) policies.
      */
+
     public void setAttachedManagedPolicies(
             java.util.Collection<AttachedPolicy> attachedManagedPolicies) {
         if (attachedManagedPolicies == null) {
@@ -537,6 +565,7 @@ public class RoleDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RoleDetail withAttachedManagedPolicies(
             AttachedPolicy... attachedManagedPolicies) {
         if (this.attachedManagedPolicies == null) {
@@ -561,6 +590,7 @@ public class RoleDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RoleDetail withAttachedManagedPolicies(
             java.util.Collection<AttachedPolicy> attachedManagedPolicies) {
         setAttachedManagedPolicies(attachedManagedPolicies);

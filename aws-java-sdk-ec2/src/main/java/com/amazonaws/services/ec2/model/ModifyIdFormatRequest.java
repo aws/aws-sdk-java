@@ -48,6 +48,7 @@ public class ModifyIdFormatRequest extends AmazonWebServiceRequest implements
      * @param resource
      *        The type of resource.
      */
+
     public void setResource(String resource) {
         this.resource = resource;
     }
@@ -59,6 +60,7 @@ public class ModifyIdFormatRequest extends AmazonWebServiceRequest implements
      * 
      * @return The type of resource.
      */
+
     public String getResource() {
         return this.resource;
     }
@@ -73,6 +75,7 @@ public class ModifyIdFormatRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyIdFormatRequest withResource(String resource) {
         setResource(resource);
         return this;
@@ -87,6 +90,7 @@ public class ModifyIdFormatRequest extends AmazonWebServiceRequest implements
      *        Indicate whether the resource should use longer IDs (17-character
      *        IDs).
      */
+
     public void setUseLongIds(Boolean useLongIds) {
         this.useLongIds = useLongIds;
     }
@@ -99,6 +103,7 @@ public class ModifyIdFormatRequest extends AmazonWebServiceRequest implements
      * @return Indicate whether the resource should use longer IDs (17-character
      *         IDs).
      */
+
     public Boolean getUseLongIds() {
         return this.useLongIds;
     }
@@ -114,6 +119,7 @@ public class ModifyIdFormatRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyIdFormatRequest withUseLongIds(Boolean useLongIds) {
         setUseLongIds(useLongIds);
         return this;
@@ -127,6 +133,7 @@ public class ModifyIdFormatRequest extends AmazonWebServiceRequest implements
      * @return Indicate whether the resource should use longer IDs (17-character
      *         IDs).
      */
+
     public Boolean isUseLongIds() {
         return this.useLongIds;
     }

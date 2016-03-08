@@ -71,6 +71,7 @@ public class ChangeBatch implements Serializable, Cloneable {
      * @param comment
      *        Optional:
      */
+
     public void setComment(String comment) {
         this.comment = comment;
     }
@@ -83,6 +84,7 @@ public class ChangeBatch implements Serializable, Cloneable {
      * 
      * @return Optional:
      */
+
     public String getComment() {
         return this.comment;
     }
@@ -98,6 +100,7 @@ public class ChangeBatch implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ChangeBatch withComment(String comment) {
         setComment(comment);
         return this;
@@ -112,6 +115,7 @@ public class ChangeBatch implements Serializable, Cloneable {
      * @return A complex type that contains one <code>Change</code> element for
      *         each resource record set that you want to create or delete.
      */
+
     public java.util.List<Change> getChanges() {
         if (changes == null) {
             changes = new com.amazonaws.internal.SdkInternalList<Change>();
@@ -129,6 +133,7 @@ public class ChangeBatch implements Serializable, Cloneable {
      *        A complex type that contains one <code>Change</code> element for
      *        each resource record set that you want to create or delete.
      */
+
     public void setChanges(java.util.Collection<Change> changes) {
         if (changes == null) {
             this.changes = null;
@@ -157,6 +162,7 @@ public class ChangeBatch implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ChangeBatch withChanges(Change... changes) {
         if (this.changes == null) {
             setChanges(new com.amazonaws.internal.SdkInternalList<Change>(
@@ -180,6 +186,7 @@ public class ChangeBatch implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ChangeBatch withChanges(java.util.Collection<Change> changes) {
         setChanges(changes);
         return this;

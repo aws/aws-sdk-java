@@ -34,6 +34,7 @@ public class GatewayInfo implements Serializable, Cloneable {
     /**
      * @param gatewayARN
      */
+
     public void setGatewayARN(String gatewayARN) {
         this.gatewayARN = gatewayARN;
     }
@@ -41,6 +42,7 @@ public class GatewayInfo implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getGatewayARN() {
         return this.gatewayARN;
     }
@@ -50,6 +52,7 @@ public class GatewayInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GatewayInfo withGatewayARN(String gatewayARN) {
         setGatewayARN(gatewayARN);
         return this;
@@ -58,6 +61,7 @@ public class GatewayInfo implements Serializable, Cloneable {
     /**
      * @param gatewayType
      */
+
     public void setGatewayType(String gatewayType) {
         this.gatewayType = gatewayType;
     }
@@ -65,6 +69,7 @@ public class GatewayInfo implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getGatewayType() {
         return this.gatewayType;
     }
@@ -74,6 +79,7 @@ public class GatewayInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GatewayInfo withGatewayType(String gatewayType) {
         setGatewayType(gatewayType);
         return this;
@@ -82,6 +88,7 @@ public class GatewayInfo implements Serializable, Cloneable {
     /**
      * @param gatewayOperationalState
      */
+
     public void setGatewayOperationalState(String gatewayOperationalState) {
         this.gatewayOperationalState = gatewayOperationalState;
     }
@@ -89,6 +96,7 @@ public class GatewayInfo implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getGatewayOperationalState() {
         return this.gatewayOperationalState;
     }
@@ -98,6 +106,7 @@ public class GatewayInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GatewayInfo withGatewayOperationalState(
             String gatewayOperationalState) {
         setGatewayOperationalState(gatewayOperationalState);
@@ -107,6 +116,7 @@ public class GatewayInfo implements Serializable, Cloneable {
     /**
      * @param gatewayName
      */
+
     public void setGatewayName(String gatewayName) {
         this.gatewayName = gatewayName;
     }
@@ -114,6 +124,7 @@ public class GatewayInfo implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getGatewayName() {
         return this.gatewayName;
     }
@@ -123,6 +134,7 @@ public class GatewayInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GatewayInfo withGatewayName(String gatewayName) {
         setGatewayName(gatewayName);
         return this;

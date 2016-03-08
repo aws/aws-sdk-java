@@ -38,6 +38,7 @@ public class RunAssessmentResult implements Serializable, Cloneable {
      * @param runArn
      *        The ARN specifying the run of the assessment.
      */
+
     public void setRunArn(String runArn) {
         this.runArn = runArn;
     }
@@ -49,6 +50,7 @@ public class RunAssessmentResult implements Serializable, Cloneable {
      * 
      * @return The ARN specifying the run of the assessment.
      */
+
     public String getRunArn() {
         return this.runArn;
     }
@@ -63,6 +65,7 @@ public class RunAssessmentResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunAssessmentResult withRunArn(String runArn) {
         setRunArn(runArn);
         return this;

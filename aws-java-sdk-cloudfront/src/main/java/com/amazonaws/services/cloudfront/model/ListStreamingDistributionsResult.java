@@ -33,6 +33,7 @@ public class ListStreamingDistributionsResult implements Serializable,
      * @param streamingDistributionList
      *        The StreamingDistributionList type.
      */
+
     public void setStreamingDistributionList(
             StreamingDistributionList streamingDistributionList) {
         this.streamingDistributionList = streamingDistributionList;
@@ -43,6 +44,7 @@ public class ListStreamingDistributionsResult implements Serializable,
      * 
      * @return The StreamingDistributionList type.
      */
+
     public StreamingDistributionList getStreamingDistributionList() {
         return this.streamingDistributionList;
     }
@@ -55,6 +57,7 @@ public class ListStreamingDistributionsResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListStreamingDistributionsResult withStreamingDistributionList(
             StreamingDistributionList streamingDistributionList) {
         setStreamingDistributionList(streamingDistributionList);

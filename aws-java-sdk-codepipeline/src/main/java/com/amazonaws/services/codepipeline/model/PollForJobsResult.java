@@ -39,6 +39,7 @@ public class PollForJobsResult implements Serializable, Cloneable {
      * 
      * @return Information about the jobs to take action on.
      */
+
     public java.util.List<Job> getJobs() {
         return jobs;
     }
@@ -51,6 +52,7 @@ public class PollForJobsResult implements Serializable, Cloneable {
      * @param jobs
      *        Information about the jobs to take action on.
      */
+
     public void setJobs(java.util.Collection<Job> jobs) {
         if (jobs == null) {
             this.jobs = null;
@@ -76,6 +78,7 @@ public class PollForJobsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PollForJobsResult withJobs(Job... jobs) {
         if (this.jobs == null) {
             setJobs(new java.util.ArrayList<Job>(jobs.length));
@@ -96,6 +99,7 @@ public class PollForJobsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PollForJobsResult withJobs(java.util.Collection<Job> jobs) {
         setJobs(jobs);
         return this;

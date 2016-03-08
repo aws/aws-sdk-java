@@ -48,6 +48,7 @@ public class TestEventPatternRequest extends AmazonWebServiceRequest implements
      * @param eventPattern
      *        The event pattern you want to test.
      */
+
     public void setEventPattern(String eventPattern) {
         this.eventPattern = eventPattern;
     }
@@ -59,6 +60,7 @@ public class TestEventPatternRequest extends AmazonWebServiceRequest implements
      * 
      * @return The event pattern you want to test.
      */
+
     public String getEventPattern() {
         return this.eventPattern;
     }
@@ -73,6 +75,7 @@ public class TestEventPatternRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TestEventPatternRequest withEventPattern(String eventPattern) {
         setEventPattern(eventPattern);
         return this;
@@ -86,6 +89,7 @@ public class TestEventPatternRequest extends AmazonWebServiceRequest implements
      * @param event
      *        The event in the JSON format to test against the event pattern.
      */
+
     public void setEvent(String event) {
         this.event = event;
     }
@@ -97,6 +101,7 @@ public class TestEventPatternRequest extends AmazonWebServiceRequest implements
      * 
      * @return The event in the JSON format to test against the event pattern.
      */
+
     public String getEvent() {
         return this.event;
     }
@@ -111,6 +116,7 @@ public class TestEventPatternRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TestEventPatternRequest withEvent(String event) {
         setEvent(event);
         return this;

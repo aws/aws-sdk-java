@@ -41,6 +41,7 @@ public class ActionContext implements Serializable, Cloneable {
      * @param name
      *        The name of the action within the context of a job.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -52,6 +53,7 @@ public class ActionContext implements Serializable, Cloneable {
      * 
      * @return The name of the action within the context of a job.
      */
+
     public String getName() {
         return this.name;
     }
@@ -66,6 +68,7 @@ public class ActionContext implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActionContext withName(String name) {
         setName(name);
         return this;

@@ -56,6 +56,7 @@ public class GetRecordsRequest extends AmazonWebServiceRequest implements
      *        sequentially reading data records. A shard iterator specifies this
      *        position using the sequence number of a data record in the shard.
      */
+
     public void setShardIterator(String shardIterator) {
         this.shardIterator = shardIterator;
     }
@@ -72,6 +73,7 @@ public class GetRecordsRequest extends AmazonWebServiceRequest implements
      *         this position using the sequence number of a data record in the
      *         shard.
      */
+
     public String getShardIterator() {
         return this.shardIterator;
     }
@@ -90,6 +92,7 @@ public class GetRecordsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetRecordsRequest withShardIterator(String shardIterator) {
         setShardIterator(shardIterator);
         return this;
@@ -107,6 +110,7 @@ public class GetRecordsRequest extends AmazonWebServiceRequest implements
      *        10,000. If you specify a value that is greater than 10,000,
      *        <a>GetRecords</a> throws <code>InvalidArgumentException</code>.
      */
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -122,6 +126,7 @@ public class GetRecordsRequest extends AmazonWebServiceRequest implements
      *         10,000. If you specify a value that is greater than 10,000,
      *         <a>GetRecords</a> throws <code>InvalidArgumentException</code>.
      */
+
     public Integer getLimit() {
         return this.limit;
     }
@@ -140,6 +145,7 @@ public class GetRecordsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetRecordsRequest withLimit(Integer limit) {
         setLimit(limit);
         return this;

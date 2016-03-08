@@ -42,6 +42,7 @@ public class DeleteRestApiRequest extends AmazonWebServiceRequest implements
      * @param restApiId
      *        The ID of the <a>RestApi</a> you want to delete.
      */
+
     public void setRestApiId(String restApiId) {
         this.restApiId = restApiId;
     }
@@ -53,6 +54,7 @@ public class DeleteRestApiRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ID of the <a>RestApi</a> you want to delete.
      */
+
     public String getRestApiId() {
         return this.restApiId;
     }
@@ -67,6 +69,7 @@ public class DeleteRestApiRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteRestApiRequest withRestApiId(String restApiId) {
         setRestApiId(restApiId);
         return this;

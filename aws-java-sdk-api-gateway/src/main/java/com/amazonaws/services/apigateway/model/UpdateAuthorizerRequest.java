@@ -55,6 +55,7 @@ public class UpdateAuthorizerRequest extends AmazonWebServiceRequest implements
      * @param restApiId
      *        The <a>RestApi</a> identifier for the <a>Authorizer</a> resource.
      */
+
     public void setRestApiId(String restApiId) {
         this.restApiId = restApiId;
     }
@@ -66,6 +67,7 @@ public class UpdateAuthorizerRequest extends AmazonWebServiceRequest implements
      * 
      * @return The <a>RestApi</a> identifier for the <a>Authorizer</a> resource.
      */
+
     public String getRestApiId() {
         return this.restApiId;
     }
@@ -80,6 +82,7 @@ public class UpdateAuthorizerRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateAuthorizerRequest withRestApiId(String restApiId) {
         setRestApiId(restApiId);
         return this;
@@ -93,6 +96,7 @@ public class UpdateAuthorizerRequest extends AmazonWebServiceRequest implements
      * @param authorizerId
      *        The identifier of the <a>Authorizer</a> resource.
      */
+
     public void setAuthorizerId(String authorizerId) {
         this.authorizerId = authorizerId;
     }
@@ -104,6 +108,7 @@ public class UpdateAuthorizerRequest extends AmazonWebServiceRequest implements
      * 
      * @return The identifier of the <a>Authorizer</a> resource.
      */
+
     public String getAuthorizerId() {
         return this.authorizerId;
     }
@@ -118,6 +123,7 @@ public class UpdateAuthorizerRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateAuthorizerRequest withAuthorizerId(String authorizerId) {
         setAuthorizerId(authorizerId);
         return this;
@@ -133,6 +139,7 @@ public class UpdateAuthorizerRequest extends AmazonWebServiceRequest implements
      *         specified resource. The patches are applied in the order
      *         specified in the list.
      */
+
     public java.util.List<PatchOperation> getPatchOperations() {
         return patchOperations;
     }
@@ -148,6 +155,7 @@ public class UpdateAuthorizerRequest extends AmazonWebServiceRequest implements
      *        specified resource. The patches are applied in the order specified
      *        in the list.
      */
+
     public void setPatchOperations(
             java.util.Collection<PatchOperation> patchOperations) {
         if (patchOperations == null) {
@@ -178,6 +186,7 @@ public class UpdateAuthorizerRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateAuthorizerRequest withPatchOperations(
             PatchOperation... patchOperations) {
         if (this.patchOperations == null) {
@@ -203,6 +212,7 @@ public class UpdateAuthorizerRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateAuthorizerRequest withPatchOperations(
             java.util.Collection<PatchOperation> patchOperations) {
         setPatchOperations(patchOperations);

@@ -64,6 +64,7 @@ public class EnableKeyRequest extends AmazonWebServiceRequest implements
      *        12345678-1234-1234-1234-123456789012</li>
      *        </ul>
      */
+
     public void setKeyId(String keyId) {
         this.keyId = keyId;
     }
@@ -92,6 +93,7 @@ public class EnableKeyRequest extends AmazonWebServiceRequest implements
      *         12345678-1234-1234-1234-123456789012</li>
      *         </ul>
      */
+
     public String getKeyId() {
         return this.keyId;
     }
@@ -122,6 +124,7 @@ public class EnableKeyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EnableKeyRequest withKeyId(String keyId) {
         setKeyId(keyId);
         return this;

@@ -78,6 +78,7 @@ public class S3Storage implements Serializable, Cloneable {
      *        your behalf. If you specify a bucket that belongs to someone else,
      *        Amazon EC2 returns an error.
      */
+
     public void setBucket(String bucket) {
         this.bucket = bucket;
     }
@@ -95,6 +96,7 @@ public class S3Storage implements Serializable, Cloneable {
      *         your behalf. If you specify a bucket that belongs to someone
      *         else, Amazon EC2 returns an error.
      */
+
     public String getBucket() {
         return this.bucket;
     }
@@ -115,6 +117,7 @@ public class S3Storage implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public S3Storage withBucket(String bucket) {
         setBucket(bucket);
         return this;
@@ -128,6 +131,7 @@ public class S3Storage implements Serializable, Cloneable {
      * @param prefix
      *        The beginning of the file name of the AMI.
      */
+
     public void setPrefix(String prefix) {
         this.prefix = prefix;
     }
@@ -139,6 +143,7 @@ public class S3Storage implements Serializable, Cloneable {
      * 
      * @return The beginning of the file name of the AMI.
      */
+
     public String getPrefix() {
         return this.prefix;
     }
@@ -153,6 +158,7 @@ public class S3Storage implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public S3Storage withPrefix(String prefix) {
         setPrefix(prefix);
         return this;
@@ -173,6 +179,7 @@ public class S3Storage implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"
      *        >Best Practices for Managing AWS Access Keys</a>.
      */
+
     public void setAWSAccessKeyId(String aWSAccessKeyId) {
         this.aWSAccessKeyId = aWSAccessKeyId;
     }
@@ -191,6 +198,7 @@ public class S3Storage implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"
      *         >Best Practices for Managing AWS Access Keys</a>.
      */
+
     public String getAWSAccessKeyId() {
         return this.aWSAccessKeyId;
     }
@@ -212,6 +220,7 @@ public class S3Storage implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public S3Storage withAWSAccessKeyId(String aWSAccessKeyId) {
         setAWSAccessKeyId(aWSAccessKeyId);
         return this;
@@ -227,6 +236,7 @@ public class S3Storage implements Serializable, Cloneable {
      *        A Base64-encoded Amazon S3 upload policy that gives Amazon EC2
      *        permission to upload items into Amazon S3 on your behalf.
      */
+
     public void setUploadPolicy(String uploadPolicy) {
         this.uploadPolicy = uploadPolicy;
     }
@@ -240,6 +250,7 @@ public class S3Storage implements Serializable, Cloneable {
      * @return A Base64-encoded Amazon S3 upload policy that gives Amazon EC2
      *         permission to upload items into Amazon S3 on your behalf.
      */
+
     public String getUploadPolicy() {
         return this.uploadPolicy;
     }
@@ -256,6 +267,7 @@ public class S3Storage implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public S3Storage withUploadPolicy(String uploadPolicy) {
         setUploadPolicy(uploadPolicy);
         return this;
@@ -269,6 +281,7 @@ public class S3Storage implements Serializable, Cloneable {
      * @param uploadPolicySignature
      *        The signature of the Base64 encoded JSON document.
      */
+
     public void setUploadPolicySignature(String uploadPolicySignature) {
         this.uploadPolicySignature = uploadPolicySignature;
     }
@@ -280,6 +293,7 @@ public class S3Storage implements Serializable, Cloneable {
      * 
      * @return The signature of the Base64 encoded JSON document.
      */
+
     public String getUploadPolicySignature() {
         return this.uploadPolicySignature;
     }
@@ -294,6 +308,7 @@ public class S3Storage implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public S3Storage withUploadPolicySignature(String uploadPolicySignature) {
         setUploadPolicySignature(uploadPolicySignature);
         return this;

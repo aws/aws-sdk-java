@@ -46,6 +46,7 @@ public class DescribeConfigRuleEvaluationStatusRequest extends
      *         returns status information for all AWS managed Config rules that
      *         you use.
      */
+
     public java.util.List<String> getConfigRuleNames() {
         if (configRuleNames == null) {
             configRuleNames = new com.amazonaws.internal.SdkInternalList<String>();
@@ -65,6 +66,7 @@ public class DescribeConfigRuleEvaluationStatusRequest extends
      *        information. If you do not specify any names, AWS Config returns
      *        status information for all AWS managed Config rules that you use.
      */
+
     public void setConfigRuleNames(java.util.Collection<String> configRuleNames) {
         if (configRuleNames == null) {
             this.configRuleNames = null;
@@ -95,6 +97,7 @@ public class DescribeConfigRuleEvaluationStatusRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeConfigRuleEvaluationStatusRequest withConfigRuleNames(
             String... configRuleNames) {
         if (this.configRuleNames == null) {
@@ -121,6 +124,7 @@ public class DescribeConfigRuleEvaluationStatusRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeConfigRuleEvaluationStatusRequest withConfigRuleNames(
             java.util.Collection<String> configRuleNames) {
         setConfigRuleNames(configRuleNames);

@@ -57,6 +57,7 @@ public class Application implements Serializable, Cloneable {
      * @param applicationArn
      *        The ARN specifying the Inspector application.
      */
+
     public void setApplicationArn(String applicationArn) {
         this.applicationArn = applicationArn;
     }
@@ -68,6 +69,7 @@ public class Application implements Serializable, Cloneable {
      * 
      * @return The ARN specifying the Inspector application.
      */
+
     public String getApplicationArn() {
         return this.applicationArn;
     }
@@ -82,6 +84,7 @@ public class Application implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Application withApplicationArn(String applicationArn) {
         setApplicationArn(applicationArn);
         return this;
@@ -95,6 +98,7 @@ public class Application implements Serializable, Cloneable {
      * @param applicationName
      *        The name of the Inspector application.
      */
+
     public void setApplicationName(String applicationName) {
         this.applicationName = applicationName;
     }
@@ -106,6 +110,7 @@ public class Application implements Serializable, Cloneable {
      * 
      * @return The name of the Inspector application.
      */
+
     public String getApplicationName() {
         return this.applicationName;
     }
@@ -120,6 +125,7 @@ public class Application implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Application withApplicationName(String applicationName) {
         setApplicationName(applicationName);
         return this;
@@ -135,6 +141,7 @@ public class Application implements Serializable, Cloneable {
      *        The ARN specifying the resource group that is associated with the
      *        application.
      */
+
     public void setResourceGroupArn(String resourceGroupArn) {
         this.resourceGroupArn = resourceGroupArn;
     }
@@ -148,6 +155,7 @@ public class Application implements Serializable, Cloneable {
      * @return The ARN specifying the resource group that is associated with the
      *         application.
      */
+
     public String getResourceGroupArn() {
         return this.resourceGroupArn;
     }
@@ -164,6 +172,7 @@ public class Application implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Application withResourceGroupArn(String resourceGroupArn) {
         setResourceGroupArn(resourceGroupArn);
         return this;

@@ -69,6 +69,7 @@ public class MessageDsn implements Serializable, Cloneable {
      *        3464</a> (<code>mta-name-type; mta-name</code>). The default value
      *        is <code>dns; inbound-smtp.[region].amazonaws.com</code>.
      */
+
     public void setReportingMta(String reportingMta) {
         this.reportingMta = reportingMta;
     }
@@ -87,6 +88,7 @@ public class MessageDsn implements Serializable, Cloneable {
      *         <code>mta-name-type; mta-name</code>). The default value is
      *         <code>dns; inbound-smtp.[region].amazonaws.com</code>.
      */
+
     public String getReportingMta() {
         return this.reportingMta;
     }
@@ -107,6 +109,7 @@ public class MessageDsn implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MessageDsn withReportingMta(String reportingMta) {
         setReportingMta(reportingMta);
         return this;
@@ -124,6 +127,7 @@ public class MessageDsn implements Serializable, Cloneable {
      *        (MTA), in <a href="https://www.ietf.org/rfc/rfc0822.txt">RFC
      *        822</a> date-time format.
      */
+
     public void setArrivalDate(java.util.Date arrivalDate) {
         this.arrivalDate = arrivalDate;
     }
@@ -140,6 +144,7 @@ public class MessageDsn implements Serializable, Cloneable {
      *         href="https://www.ietf.org/rfc/rfc0822.txt">RFC 822</a> date-time
      *         format.
      */
+
     public java.util.Date getArrivalDate() {
         return this.arrivalDate;
     }
@@ -158,6 +163,7 @@ public class MessageDsn implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MessageDsn withArrivalDate(java.util.Date arrivalDate) {
         setArrivalDate(arrivalDate);
         return this;
@@ -170,6 +176,7 @@ public class MessageDsn implements Serializable, Cloneable {
      * 
      * @return Additional X-headers to include in the DSN.
      */
+
     public java.util.List<ExtensionField> getExtensionFields() {
         if (extensionFields == null) {
             extensionFields = new com.amazonaws.internal.SdkInternalList<ExtensionField>();
@@ -185,6 +192,7 @@ public class MessageDsn implements Serializable, Cloneable {
      * @param extensionFields
      *        Additional X-headers to include in the DSN.
      */
+
     public void setExtensionFields(
             java.util.Collection<ExtensionField> extensionFields) {
         if (extensionFields == null) {
@@ -212,6 +220,7 @@ public class MessageDsn implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MessageDsn withExtensionFields(ExtensionField... extensionFields) {
         if (this.extensionFields == null) {
             setExtensionFields(new com.amazonaws.internal.SdkInternalList<ExtensionField>(
@@ -233,6 +242,7 @@ public class MessageDsn implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MessageDsn withExtensionFields(
             java.util.Collection<ExtensionField> extensionFields) {
         setExtensionFields(extensionFields);

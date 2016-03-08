@@ -34,6 +34,7 @@ public class GameProperty implements Serializable, Cloneable {
     /**
      * @param key
      */
+
     public void setKey(String key) {
         this.key = key;
     }
@@ -41,6 +42,7 @@ public class GameProperty implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getKey() {
         return this.key;
     }
@@ -50,6 +52,7 @@ public class GameProperty implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GameProperty withKey(String key) {
         setKey(key);
         return this;
@@ -58,6 +61,7 @@ public class GameProperty implements Serializable, Cloneable {
     /**
      * @param value
      */
+
     public void setValue(String value) {
         this.value = value;
     }
@@ -65,6 +69,7 @@ public class GameProperty implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getValue() {
         return this.value;
     }
@@ -74,6 +79,7 @@ public class GameProperty implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GameProperty withValue(String value) {
         setValue(value);
         return this;

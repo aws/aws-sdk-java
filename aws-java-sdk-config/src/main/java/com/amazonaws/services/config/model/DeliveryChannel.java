@@ -69,6 +69,7 @@ public class DeliveryChannel implements Serializable, Cloneable {
      *        automatically assigns the name &quot;default&quot; when creating
      *        the delivery channel. You cannot change the assigned name.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -84,6 +85,7 @@ public class DeliveryChannel implements Serializable, Cloneable {
      *         automatically assigns the name &quot;default&quot; when creating
      *         the delivery channel. You cannot change the assigned name.
      */
+
     public String getName() {
         return this.name;
     }
@@ -102,6 +104,7 @@ public class DeliveryChannel implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeliveryChannel withName(String name) {
         setName(name);
         return this;
@@ -117,6 +120,7 @@ public class DeliveryChannel implements Serializable, Cloneable {
      *        The name of the Amazon S3 bucket used to store configuration
      *        history for the delivery channel.
      */
+
     public void setS3BucketName(String s3BucketName) {
         this.s3BucketName = s3BucketName;
     }
@@ -130,6 +134,7 @@ public class DeliveryChannel implements Serializable, Cloneable {
      * @return The name of the Amazon S3 bucket used to store configuration
      *         history for the delivery channel.
      */
+
     public String getS3BucketName() {
         return this.s3BucketName;
     }
@@ -146,6 +151,7 @@ public class DeliveryChannel implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeliveryChannel withS3BucketName(String s3BucketName) {
         setS3BucketName(s3BucketName);
         return this;
@@ -159,6 +165,7 @@ public class DeliveryChannel implements Serializable, Cloneable {
      * @param s3KeyPrefix
      *        The prefix for the specified Amazon S3 bucket.
      */
+
     public void setS3KeyPrefix(String s3KeyPrefix) {
         this.s3KeyPrefix = s3KeyPrefix;
     }
@@ -170,6 +177,7 @@ public class DeliveryChannel implements Serializable, Cloneable {
      * 
      * @return The prefix for the specified Amazon S3 bucket.
      */
+
     public String getS3KeyPrefix() {
         return this.s3KeyPrefix;
     }
@@ -184,6 +192,7 @@ public class DeliveryChannel implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeliveryChannel withS3KeyPrefix(String s3KeyPrefix) {
         setS3KeyPrefix(s3KeyPrefix);
         return this;
@@ -199,6 +208,7 @@ public class DeliveryChannel implements Serializable, Cloneable {
      *        The Amazon Resource Name (ARN) of the SNS topic that AWS Config
      *        delivers notifications to.
      */
+
     public void setSnsTopicARN(String snsTopicARN) {
         this.snsTopicARN = snsTopicARN;
     }
@@ -212,6 +222,7 @@ public class DeliveryChannel implements Serializable, Cloneable {
      * @return The Amazon Resource Name (ARN) of the SNS topic that AWS Config
      *         delivers notifications to.
      */
+
     public String getSnsTopicARN() {
         return this.snsTopicARN;
     }
@@ -228,6 +239,7 @@ public class DeliveryChannel implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeliveryChannel withSnsTopicARN(String snsTopicARN) {
         setSnsTopicARN(snsTopicARN);
         return this;
@@ -236,6 +248,7 @@ public class DeliveryChannel implements Serializable, Cloneable {
     /**
      * @param configSnapshotDeliveryProperties
      */
+
     public void setConfigSnapshotDeliveryProperties(
             ConfigSnapshotDeliveryProperties configSnapshotDeliveryProperties) {
         this.configSnapshotDeliveryProperties = configSnapshotDeliveryProperties;
@@ -244,6 +257,7 @@ public class DeliveryChannel implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public ConfigSnapshotDeliveryProperties getConfigSnapshotDeliveryProperties() {
         return this.configSnapshotDeliveryProperties;
     }
@@ -253,6 +267,7 @@ public class DeliveryChannel implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeliveryChannel withConfigSnapshotDeliveryProperties(
             ConfigSnapshotDeliveryProperties configSnapshotDeliveryProperties) {
         setConfigSnapshotDeliveryProperties(configSnapshotDeliveryProperties);

@@ -48,6 +48,7 @@ public class ListDeploymentConfigsRequest extends AmazonWebServiceRequest
      *        configurations call, which can be used to return the next set of
      *        deployment configurations in the list.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -63,6 +64,7 @@ public class ListDeploymentConfigsRequest extends AmazonWebServiceRequest
      *         configurations call, which can be used to return the next set of
      *         deployment configurations in the list.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -81,6 +83,7 @@ public class ListDeploymentConfigsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListDeploymentConfigsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

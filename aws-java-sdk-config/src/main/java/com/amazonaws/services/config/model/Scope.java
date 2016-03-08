@@ -75,6 +75,7 @@ public class Scope implements Serializable, Cloneable {
      *         if you also specify a resource ID for
      *         <code>ComplianceResourceId</code>.
      */
+
     public java.util.List<String> getComplianceResourceTypes() {
         if (complianceResourceTypes == null) {
             complianceResourceTypes = new com.amazonaws.internal.SdkInternalList<String>();
@@ -95,6 +96,7 @@ public class Scope implements Serializable, Cloneable {
      *        if you also specify a resource ID for
      *        <code>ComplianceResourceId</code>.
      */
+
     public void setComplianceResourceTypes(
             java.util.Collection<String> complianceResourceTypes) {
         if (complianceResourceTypes == null) {
@@ -127,6 +129,7 @@ public class Scope implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Scope withComplianceResourceTypes(String... complianceResourceTypes) {
         if (this.complianceResourceTypes == null) {
             setComplianceResourceTypes(new com.amazonaws.internal.SdkInternalList<String>(
@@ -153,6 +156,7 @@ public class Scope implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Scope withComplianceResourceTypes(
             java.util.Collection<String> complianceResourceTypes) {
         setComplianceResourceTypes(complianceResourceTypes);
@@ -169,6 +173,7 @@ public class Scope implements Serializable, Cloneable {
      *        The tag key that is applied to only those AWS resources that you
      *        want you want to trigger an evaluation for the rule.
      */
+
     public void setTagKey(String tagKey) {
         this.tagKey = tagKey;
     }
@@ -182,6 +187,7 @@ public class Scope implements Serializable, Cloneable {
      * @return The tag key that is applied to only those AWS resources that you
      *         want you want to trigger an evaluation for the rule.
      */
+
     public String getTagKey() {
         return this.tagKey;
     }
@@ -198,6 +204,7 @@ public class Scope implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Scope withTagKey(String tagKey) {
         setTagKey(tagKey);
         return this;
@@ -217,6 +224,7 @@ public class Scope implements Serializable, Cloneable {
      *        <code>TagValue</code>, you must also specify a value for
      *        <code>TagKey</code>.
      */
+
     public void setTagValue(String tagValue) {
         this.tagValue = tagValue;
     }
@@ -234,6 +242,7 @@ public class Scope implements Serializable, Cloneable {
      *         <code>TagValue</code>, you must also specify a value for
      *         <code>TagKey</code>.
      */
+
     public String getTagValue() {
         return this.tagValue;
     }
@@ -254,6 +263,7 @@ public class Scope implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Scope withTagValue(String tagValue) {
         setTagValue(tagValue);
         return this;
@@ -272,6 +282,7 @@ public class Scope implements Serializable, Cloneable {
      *        specify one resource type for <code>ComplianceResourceTypes</code>
      *        .
      */
+
     public void setComplianceResourceId(String complianceResourceId) {
         this.complianceResourceId = complianceResourceId;
     }
@@ -288,6 +299,7 @@ public class Scope implements Serializable, Cloneable {
      *         specify one resource type for
      *         <code>ComplianceResourceTypes</code>.
      */
+
     public String getComplianceResourceId() {
         return this.complianceResourceId;
     }
@@ -307,6 +319,7 @@ public class Scope implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Scope withComplianceResourceId(String complianceResourceId) {
         setComplianceResourceId(complianceResourceId);
         return this;

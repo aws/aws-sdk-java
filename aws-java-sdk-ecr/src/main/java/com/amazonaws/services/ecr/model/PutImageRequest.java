@@ -58,6 +58,7 @@ public class PutImageRequest extends AmazonWebServiceRequest implements
      *        repository in which to put the image. If you do not specify a
      *        registry, the default registry is assumed.
      */
+
     public void setRegistryId(String registryId) {
         this.registryId = registryId;
     }
@@ -73,6 +74,7 @@ public class PutImageRequest extends AmazonWebServiceRequest implements
      *         repository in which to put the image. If you do not specify a
      *         registry, the default registry is assumed.
      */
+
     public String getRegistryId() {
         return this.registryId;
     }
@@ -91,6 +93,7 @@ public class PutImageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutImageRequest withRegistryId(String registryId) {
         setRegistryId(registryId);
         return this;
@@ -104,6 +107,7 @@ public class PutImageRequest extends AmazonWebServiceRequest implements
      * @param repositoryName
      *        The name of the repository in which to put the image.
      */
+
     public void setRepositoryName(String repositoryName) {
         this.repositoryName = repositoryName;
     }
@@ -115,6 +119,7 @@ public class PutImageRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the repository in which to put the image.
      */
+
     public String getRepositoryName() {
         return this.repositoryName;
     }
@@ -129,6 +134,7 @@ public class PutImageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutImageRequest withRepositoryName(String repositoryName) {
         setRepositoryName(repositoryName);
         return this;
@@ -142,6 +148,7 @@ public class PutImageRequest extends AmazonWebServiceRequest implements
      * @param imageManifest
      *        The image manifest corresponding to the image to be uploaded.
      */
+
     public void setImageManifest(String imageManifest) {
         this.imageManifest = imageManifest;
     }
@@ -153,6 +160,7 @@ public class PutImageRequest extends AmazonWebServiceRequest implements
      * 
      * @return The image manifest corresponding to the image to be uploaded.
      */
+
     public String getImageManifest() {
         return this.imageManifest;
     }
@@ -167,6 +175,7 @@ public class PutImageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutImageRequest withImageManifest(String imageManifest) {
         setImageManifest(imageManifest);
         return this;

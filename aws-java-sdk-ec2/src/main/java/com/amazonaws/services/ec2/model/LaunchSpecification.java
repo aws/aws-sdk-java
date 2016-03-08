@@ -135,6 +135,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * @param imageId
      *        The ID of the AMI.
      */
+
     public void setImageId(String imageId) {
         this.imageId = imageId;
     }
@@ -146,6 +147,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * 
      * @return The ID of the AMI.
      */
+
     public String getImageId() {
         return this.imageId;
     }
@@ -160,6 +162,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LaunchSpecification withImageId(String imageId) {
         setImageId(imageId);
         return this;
@@ -173,6 +176,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * @param keyName
      *        The name of the key pair.
      */
+
     public void setKeyName(String keyName) {
         this.keyName = keyName;
     }
@@ -184,6 +188,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * 
      * @return The name of the key pair.
      */
+
     public String getKeyName() {
         return this.keyName;
     }
@@ -198,6 +203,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LaunchSpecification withKeyName(String keyName) {
         setKeyName(keyName);
         return this;
@@ -212,6 +218,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      *        The Base64-encoded MIME user data to make available to the
      *        instances.
      */
+
     public void setUserData(String userData) {
         this.userData = userData;
     }
@@ -224,6 +231,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * @return The Base64-encoded MIME user data to make available to the
      *         instances.
      */
+
     public String getUserData() {
         return this.userData;
     }
@@ -239,6 +247,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LaunchSpecification withUserData(String userData) {
         setUserData(userData);
         return this;
@@ -252,6 +261,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * @param addressingType
      *        Deprecated.
      */
+
     public void setAddressingType(String addressingType) {
         this.addressingType = addressingType;
     }
@@ -263,6 +273,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * 
      * @return Deprecated.
      */
+
     public String getAddressingType() {
         return this.addressingType;
     }
@@ -277,6 +288,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LaunchSpecification withAddressingType(String addressingType) {
         setAddressingType(addressingType);
         return this;
@@ -291,6 +303,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      *        The instance type.
      * @see InstanceType
      */
+
     public void setInstanceType(String instanceType) {
         this.instanceType = instanceType;
     }
@@ -303,6 +316,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * @return The instance type.
      * @see InstanceType
      */
+
     public String getInstanceType() {
         return this.instanceType;
     }
@@ -318,6 +332,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      *         chained together.
      * @see InstanceType
      */
+
     public LaunchSpecification withInstanceType(String instanceType) {
         setInstanceType(instanceType);
         return this;
@@ -334,6 +349,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      *         chained together.
      * @see InstanceType
      */
+
     public void setInstanceType(InstanceType instanceType) {
         this.instanceType = instanceType.toString();
     }
@@ -349,6 +365,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      *         chained together.
      * @see InstanceType
      */
+
     public LaunchSpecification withInstanceType(InstanceType instanceType) {
         setInstanceType(instanceType);
         return this;
@@ -362,6 +379,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * @param placement
      *        The placement information for the instance.
      */
+
     public void setPlacement(SpotPlacement placement) {
         this.placement = placement;
     }
@@ -373,6 +391,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * 
      * @return The placement information for the instance.
      */
+
     public SpotPlacement getPlacement() {
         return this.placement;
     }
@@ -387,6 +406,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LaunchSpecification withPlacement(SpotPlacement placement) {
         setPlacement(placement);
         return this;
@@ -400,6 +420,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * @param kernelId
      *        The ID of the kernel.
      */
+
     public void setKernelId(String kernelId) {
         this.kernelId = kernelId;
     }
@@ -411,6 +432,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * 
      * @return The ID of the kernel.
      */
+
     public String getKernelId() {
         return this.kernelId;
     }
@@ -425,6 +447,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LaunchSpecification withKernelId(String kernelId) {
         setKernelId(kernelId);
         return this;
@@ -438,6 +461,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * @param ramdiskId
      *        The ID of the RAM disk.
      */
+
     public void setRamdiskId(String ramdiskId) {
         this.ramdiskId = ramdiskId;
     }
@@ -449,6 +473,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * 
      * @return The ID of the RAM disk.
      */
+
     public String getRamdiskId() {
         return this.ramdiskId;
     }
@@ -463,6 +488,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LaunchSpecification withRamdiskId(String ramdiskId) {
         setRamdiskId(ramdiskId);
         return this;
@@ -475,6 +501,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * 
      * @return One or more block device mapping entries.
      */
+
     public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
         if (blockDeviceMappings == null) {
             blockDeviceMappings = new com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>();
@@ -490,6 +517,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * @param blockDeviceMappings
      *        One or more block device mapping entries.
      */
+
     public void setBlockDeviceMappings(
             java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
         if (blockDeviceMappings == null) {
@@ -517,6 +545,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LaunchSpecification withBlockDeviceMappings(
             BlockDeviceMapping... blockDeviceMappings) {
         if (this.blockDeviceMappings == null) {
@@ -539,6 +568,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LaunchSpecification withBlockDeviceMappings(
             java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
         setBlockDeviceMappings(blockDeviceMappings);
@@ -553,6 +583,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * @param subnetId
      *        The ID of the subnet in which to launch the instance.
      */
+
     public void setSubnetId(String subnetId) {
         this.subnetId = subnetId;
     }
@@ -564,6 +595,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * 
      * @return The ID of the subnet in which to launch the instance.
      */
+
     public String getSubnetId() {
         return this.subnetId;
     }
@@ -578,6 +610,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LaunchSpecification withSubnetId(String subnetId) {
         setSubnetId(subnetId);
         return this;
@@ -590,6 +623,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * 
      * @return One or more network interfaces.
      */
+
     public java.util.List<InstanceNetworkInterfaceSpecification> getNetworkInterfaces() {
         if (networkInterfaces == null) {
             networkInterfaces = new com.amazonaws.internal.SdkInternalList<InstanceNetworkInterfaceSpecification>();
@@ -605,6 +639,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * @param networkInterfaces
      *        One or more network interfaces.
      */
+
     public void setNetworkInterfaces(
             java.util.Collection<InstanceNetworkInterfaceSpecification> networkInterfaces) {
         if (networkInterfaces == null) {
@@ -632,6 +667,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LaunchSpecification withNetworkInterfaces(
             InstanceNetworkInterfaceSpecification... networkInterfaces) {
         if (this.networkInterfaces == null) {
@@ -654,6 +690,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LaunchSpecification withNetworkInterfaces(
             java.util.Collection<InstanceNetworkInterfaceSpecification> networkInterfaces) {
         setNetworkInterfaces(networkInterfaces);
@@ -668,6 +705,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * @param iamInstanceProfile
      *        The IAM instance profile.
      */
+
     public void setIamInstanceProfile(
             IamInstanceProfileSpecification iamInstanceProfile) {
         this.iamInstanceProfile = iamInstanceProfile;
@@ -680,6 +718,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * 
      * @return The IAM instance profile.
      */
+
     public IamInstanceProfileSpecification getIamInstanceProfile() {
         return this.iamInstanceProfile;
     }
@@ -694,6 +733,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LaunchSpecification withIamInstanceProfile(
             IamInstanceProfileSpecification iamInstanceProfile) {
         setIamInstanceProfile(iamInstanceProfile);
@@ -722,6 +762,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      *        <p>
      *        Default: <code>false</code>
      */
+
     public void setEbsOptimized(Boolean ebsOptimized) {
         this.ebsOptimized = ebsOptimized;
     }
@@ -747,6 +788,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      *         <p>
      *         Default: <code>false</code>
      */
+
     public Boolean getEbsOptimized() {
         return this.ebsOptimized;
     }
@@ -775,6 +817,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LaunchSpecification withEbsOptimized(Boolean ebsOptimized) {
         setEbsOptimized(ebsOptimized);
         return this;
@@ -801,6 +844,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      *         <p>
      *         Default: <code>false</code>
      */
+
     public Boolean isEbsOptimized() {
         return this.ebsOptimized;
     }
@@ -817,6 +861,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      *         instances in EC2-Classic, you can specify the names or the IDs of
      *         the security groups.
      */
+
     public java.util.List<GroupIdentifier> getAllSecurityGroups() {
         if (allSecurityGroups == null) {
             allSecurityGroups = new com.amazonaws.internal.SdkInternalList<GroupIdentifier>();
@@ -837,6 +882,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      *        instances in EC2-Classic, you can specify the names or the IDs of
      *        the security groups.
      */
+
     public void setAllSecurityGroups(
             java.util.Collection<GroupIdentifier> allSecurityGroups) {
         if (allSecurityGroups == null) {
@@ -869,6 +915,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LaunchSpecification withAllSecurityGroups(
             GroupIdentifier... allSecurityGroups) {
         if (this.allSecurityGroups == null) {
@@ -896,6 +943,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LaunchSpecification withAllSecurityGroups(
             java.util.Collection<GroupIdentifier> allSecurityGroups) {
         setAllSecurityGroups(allSecurityGroups);
@@ -905,6 +953,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
     /**
      * @param monitoringEnabled
      */
+
     public void setMonitoringEnabled(Boolean monitoringEnabled) {
         this.monitoringEnabled = monitoringEnabled;
     }
@@ -912,6 +961,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Boolean getMonitoringEnabled() {
         return this.monitoringEnabled;
     }
@@ -921,6 +971,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LaunchSpecification withMonitoringEnabled(Boolean monitoringEnabled) {
         setMonitoringEnabled(monitoringEnabled);
         return this;
@@ -929,6 +980,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Boolean isMonitoringEnabled() {
         return this.monitoringEnabled;
     }
@@ -940,6 +992,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * 
      * @return One or more security group names.
      */
+
     public java.util.List<String> getSecurityGroups() {
         if (securityGroups == null) {
             securityGroups = new com.amazonaws.internal.SdkInternalList<String>();
@@ -955,6 +1008,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * @param securityGroups
      *        One or more security group names.
      */
+
     public void setSecurityGroups(java.util.Collection<String> securityGroups) {
         if (securityGroups == null) {
             this.securityGroups = null;
@@ -981,6 +1035,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LaunchSpecification withSecurityGroups(String... securityGroups) {
         if (this.securityGroups == null) {
             setSecurityGroups(new com.amazonaws.internal.SdkInternalList<String>(
@@ -1002,6 +1057,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LaunchSpecification withSecurityGroups(
             java.util.Collection<String> securityGroups) {
         setSecurityGroups(securityGroups);

@@ -44,6 +44,7 @@ public class UpdatePipelineNotificationsResult implements Serializable,
      *        A section of the response body that provides information about the
      *        pipeline.
      */
+
     public void setPipeline(Pipeline pipeline) {
         this.pipeline = pipeline;
     }
@@ -57,6 +58,7 @@ public class UpdatePipelineNotificationsResult implements Serializable,
      * @return A section of the response body that provides information about
      *         the pipeline.
      */
+
     public Pipeline getPipeline() {
         return this.pipeline;
     }
@@ -73,6 +75,7 @@ public class UpdatePipelineNotificationsResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdatePipelineNotificationsResult withPipeline(Pipeline pipeline) {
         setPipeline(pipeline);
         return this;

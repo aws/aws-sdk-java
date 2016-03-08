@@ -45,6 +45,7 @@ public class GetDeploymentRequest extends AmazonWebServiceRequest implements
      *        An existing deployment ID associated with the applicable IAM user
      *        or AWS account.
      */
+
     public void setDeploymentId(String deploymentId) {
         this.deploymentId = deploymentId;
     }
@@ -58,6 +59,7 @@ public class GetDeploymentRequest extends AmazonWebServiceRequest implements
      * @return An existing deployment ID associated with the applicable IAM user
      *         or AWS account.
      */
+
     public String getDeploymentId() {
         return this.deploymentId;
     }
@@ -74,6 +76,7 @@ public class GetDeploymentRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDeploymentRequest withDeploymentId(String deploymentId) {
         setDeploymentId(deploymentId);
         return this;

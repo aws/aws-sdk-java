@@ -50,6 +50,7 @@ public class CreateByteMatchSetResult implements Serializable, Cloneable {
      *        A <a>ByteMatchSet</a> that contains no <code>ByteMatchTuple</code>
      *        objects.
      */
+
     public void setByteMatchSet(ByteMatchSet byteMatchSet) {
         this.byteMatchSet = byteMatchSet;
     }
@@ -63,6 +64,7 @@ public class CreateByteMatchSetResult implements Serializable, Cloneable {
      * @return A <a>ByteMatchSet</a> that contains no
      *         <code>ByteMatchTuple</code> objects.
      */
+
     public ByteMatchSet getByteMatchSet() {
         return this.byteMatchSet;
     }
@@ -79,6 +81,7 @@ public class CreateByteMatchSetResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateByteMatchSetResult withByteMatchSet(ByteMatchSet byteMatchSet) {
         setByteMatchSet(byteMatchSet);
         return this;
@@ -98,6 +101,7 @@ public class CreateByteMatchSetResult implements Serializable, Cloneable {
      *        value to query the status of the request. For more information,
      *        see <a>GetChangeTokenStatus</a>.
      */
+
     public void setChangeToken(String changeToken) {
         this.changeToken = changeToken;
     }
@@ -115,6 +119,7 @@ public class CreateByteMatchSetResult implements Serializable, Cloneable {
      *         value to query the status of the request. For more information,
      *         see <a>GetChangeTokenStatus</a>.
      */
+
     public String getChangeToken() {
         return this.changeToken;
     }
@@ -135,6 +140,7 @@ public class CreateByteMatchSetResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateByteMatchSetResult withChangeToken(String changeToken) {
         setChangeToken(changeToken);
         return this;

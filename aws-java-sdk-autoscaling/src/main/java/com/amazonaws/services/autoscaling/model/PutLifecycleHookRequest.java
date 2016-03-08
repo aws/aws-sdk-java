@@ -131,6 +131,7 @@ public class PutLifecycleHookRequest extends AmazonWebServiceRequest implements
      * @param lifecycleHookName
      *        The name of the lifecycle hook.
      */
+
     public void setLifecycleHookName(String lifecycleHookName) {
         this.lifecycleHookName = lifecycleHookName;
     }
@@ -142,6 +143,7 @@ public class PutLifecycleHookRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the lifecycle hook.
      */
+
     public String getLifecycleHookName() {
         return this.lifecycleHookName;
     }
@@ -156,6 +158,7 @@ public class PutLifecycleHookRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutLifecycleHookRequest withLifecycleHookName(
             String lifecycleHookName) {
         setLifecycleHookName(lifecycleHookName);
@@ -172,6 +175,7 @@ public class PutLifecycleHookRequest extends AmazonWebServiceRequest implements
      *        The name of the Auto Scaling group to which you want to assign the
      *        lifecycle hook.
      */
+
     public void setAutoScalingGroupName(String autoScalingGroupName) {
         this.autoScalingGroupName = autoScalingGroupName;
     }
@@ -185,6 +189,7 @@ public class PutLifecycleHookRequest extends AmazonWebServiceRequest implements
      * @return The name of the Auto Scaling group to which you want to assign
      *         the lifecycle hook.
      */
+
     public String getAutoScalingGroupName() {
         return this.autoScalingGroupName;
     }
@@ -201,6 +206,7 @@ public class PutLifecycleHookRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutLifecycleHookRequest withAutoScalingGroupName(
             String autoScalingGroupName) {
         setAutoScalingGroupName(autoScalingGroupName);
@@ -225,6 +231,7 @@ public class PutLifecycleHookRequest extends AmazonWebServiceRequest implements
      *        This parameter is required for new lifecycle hooks, but optional
      *        when updating existing hooks.
      */
+
     public void setLifecycleTransition(String lifecycleTransition) {
         this.lifecycleTransition = lifecycleTransition;
     }
@@ -246,6 +253,7 @@ public class PutLifecycleHookRequest extends AmazonWebServiceRequest implements
      *         This parameter is required for new lifecycle hooks, but optional
      *         when updating existing hooks.
      */
+
     public String getLifecycleTransition() {
         return this.lifecycleTransition;
     }
@@ -270,6 +278,7 @@ public class PutLifecycleHookRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutLifecycleHookRequest withLifecycleTransition(
             String lifecycleTransition) {
         setLifecycleTransition(lifecycleTransition);
@@ -293,6 +302,7 @@ public class PutLifecycleHookRequest extends AmazonWebServiceRequest implements
      *        This parameter is required for new lifecycle hooks, but optional
      *        when updating existing hooks.
      */
+
     public void setRoleARN(String roleARN) {
         this.roleARN = roleARN;
     }
@@ -313,6 +323,7 @@ public class PutLifecycleHookRequest extends AmazonWebServiceRequest implements
      *         This parameter is required for new lifecycle hooks, but optional
      *         when updating existing hooks.
      */
+
     public String getRoleARN() {
         return this.roleARN;
     }
@@ -336,6 +347,7 @@ public class PutLifecycleHookRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutLifecycleHookRequest withRoleARN(String roleARN) {
         setRoleARN(roleARN);
         return this;
@@ -406,6 +418,7 @@ public class PutLifecycleHookRequest extends AmazonWebServiceRequest implements
      *        notification target. This test message contains an additional
      *        key/value pair: <code>Event:autoscaling:TEST_NOTIFICATION</code>.
      */
+
     public void setNotificationTargetARN(String notificationTargetARN) {
         this.notificationTargetARN = notificationTargetARN;
     }
@@ -474,6 +487,7 @@ public class PutLifecycleHookRequest extends AmazonWebServiceRequest implements
      *         notification target. This test message contains an additional
      *         key/value pair: <code>Event:autoscaling:TEST_NOTIFICATION</code>.
      */
+
     public String getNotificationTargetARN() {
         return this.notificationTargetARN;
     }
@@ -545,6 +559,7 @@ public class PutLifecycleHookRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutLifecycleHookRequest withNotificationTargetARN(
             String notificationTargetARN) {
         setNotificationTargetARN(notificationTargetARN);
@@ -561,6 +576,7 @@ public class PutLifecycleHookRequest extends AmazonWebServiceRequest implements
      *        Contains additional information that you want to include any time
      *        Auto Scaling sends a message to the notification target.
      */
+
     public void setNotificationMetadata(String notificationMetadata) {
         this.notificationMetadata = notificationMetadata;
     }
@@ -574,6 +590,7 @@ public class PutLifecycleHookRequest extends AmazonWebServiceRequest implements
      * @return Contains additional information that you want to include any time
      *         Auto Scaling sends a message to the notification target.
      */
+
     public String getNotificationMetadata() {
         return this.notificationMetadata;
     }
@@ -590,6 +607,7 @@ public class PutLifecycleHookRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutLifecycleHookRequest withNotificationMetadata(
             String notificationMetadata) {
         setNotificationMetadata(notificationMetadata);
@@ -615,6 +633,7 @@ public class PutLifecycleHookRequest extends AmazonWebServiceRequest implements
      *        <a>RecordLifecycleActionHeartbeat</a>. The default is 3600 seconds
      *        (1 hour).
      */
+
     public void setHeartbeatTimeout(Integer heartbeatTimeout) {
         this.heartbeatTimeout = heartbeatTimeout;
     }
@@ -637,6 +656,7 @@ public class PutLifecycleHookRequest extends AmazonWebServiceRequest implements
      *         <a>RecordLifecycleActionHeartbeat</a>. The default is 3600
      *         seconds (1 hour).
      */
+
     public Integer getHeartbeatTimeout() {
         return this.heartbeatTimeout;
     }
@@ -662,6 +682,7 @@ public class PutLifecycleHookRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutLifecycleHookRequest withHeartbeatTimeout(Integer heartbeatTimeout) {
         setHeartbeatTimeout(heartbeatTimeout);
         return this;
@@ -683,6 +704,7 @@ public class PutLifecycleHookRequest extends AmazonWebServiceRequest implements
      *        or <code>ABANDON</code>. The default value for this parameter is
      *        <code>ABANDON</code>.
      */
+
     public void setDefaultResult(String defaultResult) {
         this.defaultResult = defaultResult;
     }
@@ -702,6 +724,7 @@ public class PutLifecycleHookRequest extends AmazonWebServiceRequest implements
      *         <code>CONTINUE</code> or <code>ABANDON</code>. The default value
      *         for this parameter is <code>ABANDON</code>.
      */
+
     public String getDefaultResult() {
         return this.defaultResult;
     }
@@ -724,6 +747,7 @@ public class PutLifecycleHookRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutLifecycleHookRequest withDefaultResult(String defaultResult) {
         setDefaultResult(defaultResult);
         return this;

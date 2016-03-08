@@ -46,6 +46,7 @@ public class TagDescription implements Serializable, Cloneable {
      * @param loadBalancerName
      *        The name of the load balancer.
      */
+
     public void setLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
     }
@@ -57,6 +58,7 @@ public class TagDescription implements Serializable, Cloneable {
      * 
      * @return The name of the load balancer.
      */
+
     public String getLoadBalancerName() {
         return this.loadBalancerName;
     }
@@ -71,6 +73,7 @@ public class TagDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TagDescription withLoadBalancerName(String loadBalancerName) {
         setLoadBalancerName(loadBalancerName);
         return this;
@@ -83,6 +86,7 @@ public class TagDescription implements Serializable, Cloneable {
      * 
      * @return The tags.
      */
+
     public java.util.List<Tag> getTags() {
         if (tags == null) {
             tags = new com.amazonaws.internal.SdkInternalList<Tag>();
@@ -98,6 +102,7 @@ public class TagDescription implements Serializable, Cloneable {
      * @param tags
      *        The tags.
      */
+
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
             this.tags = null;
@@ -123,6 +128,7 @@ public class TagDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TagDescription withTags(Tag... tags) {
         if (this.tags == null) {
             setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
@@ -143,6 +149,7 @@ public class TagDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TagDescription withTags(java.util.Collection<Tag> tags) {
         setTags(tags);
         return this;

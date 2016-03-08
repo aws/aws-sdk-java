@@ -54,6 +54,7 @@ public class ListDeadLetterSourceQueuesRequest extends AmazonWebServiceRequest
      * @param queueUrl
      *        The queue URL of a dead letter queue.
      */
+
     public void setQueueUrl(String queueUrl) {
         this.queueUrl = queueUrl;
     }
@@ -63,6 +64,7 @@ public class ListDeadLetterSourceQueuesRequest extends AmazonWebServiceRequest
      * 
      * @return The queue URL of a dead letter queue.
      */
+
     public String getQueueUrl() {
         return this.queueUrl;
     }
@@ -75,6 +77,7 @@ public class ListDeadLetterSourceQueuesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListDeadLetterSourceQueuesRequest withQueueUrl(String queueUrl) {
         setQueueUrl(queueUrl);
         return this;

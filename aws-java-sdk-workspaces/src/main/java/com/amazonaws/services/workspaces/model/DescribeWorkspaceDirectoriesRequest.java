@@ -52,6 +52,7 @@ public class DescribeWorkspaceDirectoriesRequest extends
      *         retrieve information for. If this member is null, all directories
      *         are retrieved.
      */
+
     public java.util.List<String> getDirectoryIds() {
         if (directoryIds == null) {
             directoryIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -70,6 +71,7 @@ public class DescribeWorkspaceDirectoriesRequest extends
      *        retrieve information for. If this member is null, all directories
      *        are retrieved.
      */
+
     public void setDirectoryIds(java.util.Collection<String> directoryIds) {
         if (directoryIds == null) {
             this.directoryIds = null;
@@ -99,6 +101,7 @@ public class DescribeWorkspaceDirectoriesRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeWorkspaceDirectoriesRequest withDirectoryIds(
             String... directoryIds) {
         if (this.directoryIds == null) {
@@ -124,6 +127,7 @@ public class DescribeWorkspaceDirectoriesRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeWorkspaceDirectoriesRequest withDirectoryIds(
             java.util.Collection<String> directoryIds) {
         setDirectoryIds(directoryIds);
@@ -140,6 +144,7 @@ public class DescribeWorkspaceDirectoriesRequest extends
      *        The <code>NextToken</code> value from a previous call to this
      *        operation. Pass null if this is the first call.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -153,6 +158,7 @@ public class DescribeWorkspaceDirectoriesRequest extends
      * @return The <code>NextToken</code> value from a previous call to this
      *         operation. Pass null if this is the first call.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -169,6 +175,7 @@ public class DescribeWorkspaceDirectoriesRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeWorkspaceDirectoriesRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

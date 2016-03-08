@@ -36,6 +36,7 @@ public class UpdateClientCertificateResult implements Serializable, Cloneable {
     /**
      * @param clientCertificateId
      */
+
     public void setClientCertificateId(String clientCertificateId) {
         this.clientCertificateId = clientCertificateId;
     }
@@ -43,6 +44,7 @@ public class UpdateClientCertificateResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getClientCertificateId() {
         return this.clientCertificateId;
     }
@@ -52,6 +54,7 @@ public class UpdateClientCertificateResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateClientCertificateResult withClientCertificateId(
             String clientCertificateId) {
         setClientCertificateId(clientCertificateId);
@@ -61,6 +64,7 @@ public class UpdateClientCertificateResult implements Serializable, Cloneable {
     /**
      * @param description
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -68,6 +72,7 @@ public class UpdateClientCertificateResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -77,6 +82,7 @@ public class UpdateClientCertificateResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateClientCertificateResult withDescription(String description) {
         setDescription(description);
         return this;
@@ -85,6 +91,7 @@ public class UpdateClientCertificateResult implements Serializable, Cloneable {
     /**
      * @param pemEncodedCertificate
      */
+
     public void setPemEncodedCertificate(String pemEncodedCertificate) {
         this.pemEncodedCertificate = pemEncodedCertificate;
     }
@@ -92,6 +99,7 @@ public class UpdateClientCertificateResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getPemEncodedCertificate() {
         return this.pemEncodedCertificate;
     }
@@ -101,6 +109,7 @@ public class UpdateClientCertificateResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateClientCertificateResult withPemEncodedCertificate(
             String pemEncodedCertificate) {
         setPemEncodedCertificate(pemEncodedCertificate);
@@ -110,6 +119,7 @@ public class UpdateClientCertificateResult implements Serializable, Cloneable {
     /**
      * @param createdDate
      */
+
     public void setCreatedDate(java.util.Date createdDate) {
         this.createdDate = createdDate;
     }
@@ -117,6 +127,7 @@ public class UpdateClientCertificateResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public java.util.Date getCreatedDate() {
         return this.createdDate;
     }
@@ -126,6 +137,7 @@ public class UpdateClientCertificateResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateClientCertificateResult withCreatedDate(
             java.util.Date createdDate) {
         setCreatedDate(createdDate);
@@ -135,6 +147,7 @@ public class UpdateClientCertificateResult implements Serializable, Cloneable {
     /**
      * @param expirationDate
      */
+
     public void setExpirationDate(java.util.Date expirationDate) {
         this.expirationDate = expirationDate;
     }
@@ -142,6 +155,7 @@ public class UpdateClientCertificateResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public java.util.Date getExpirationDate() {
         return this.expirationDate;
     }
@@ -151,6 +165,7 @@ public class UpdateClientCertificateResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateClientCertificateResult withExpirationDate(
             java.util.Date expirationDate) {
         setExpirationDate(expirationDate);

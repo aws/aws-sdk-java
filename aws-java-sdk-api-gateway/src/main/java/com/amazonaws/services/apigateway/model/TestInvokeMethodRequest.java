@@ -44,6 +44,7 @@ public class TestInvokeMethodRequest extends AmazonWebServiceRequest implements
     /**
      * @param restApiId
      */
+
     public void setRestApiId(String restApiId) {
         this.restApiId = restApiId;
     }
@@ -51,6 +52,7 @@ public class TestInvokeMethodRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public String getRestApiId() {
         return this.restApiId;
     }
@@ -60,6 +62,7 @@ public class TestInvokeMethodRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TestInvokeMethodRequest withRestApiId(String restApiId) {
         setRestApiId(restApiId);
         return this;
@@ -68,6 +71,7 @@ public class TestInvokeMethodRequest extends AmazonWebServiceRequest implements
     /**
      * @param resourceId
      */
+
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
     }
@@ -75,6 +79,7 @@ public class TestInvokeMethodRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public String getResourceId() {
         return this.resourceId;
     }
@@ -84,6 +89,7 @@ public class TestInvokeMethodRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TestInvokeMethodRequest withResourceId(String resourceId) {
         setResourceId(resourceId);
         return this;
@@ -92,6 +98,7 @@ public class TestInvokeMethodRequest extends AmazonWebServiceRequest implements
     /**
      * @param httpMethod
      */
+
     public void setHttpMethod(String httpMethod) {
         this.httpMethod = httpMethod;
     }
@@ -99,6 +106,7 @@ public class TestInvokeMethodRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public String getHttpMethod() {
         return this.httpMethod;
     }
@@ -108,6 +116,7 @@ public class TestInvokeMethodRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TestInvokeMethodRequest withHttpMethod(String httpMethod) {
         setHttpMethod(httpMethod);
         return this;
@@ -116,6 +125,7 @@ public class TestInvokeMethodRequest extends AmazonWebServiceRequest implements
     /**
      * @param pathWithQueryString
      */
+
     public void setPathWithQueryString(String pathWithQueryString) {
         this.pathWithQueryString = pathWithQueryString;
     }
@@ -123,6 +133,7 @@ public class TestInvokeMethodRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public String getPathWithQueryString() {
         return this.pathWithQueryString;
     }
@@ -132,6 +143,7 @@ public class TestInvokeMethodRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TestInvokeMethodRequest withPathWithQueryString(
             String pathWithQueryString) {
         setPathWithQueryString(pathWithQueryString);
@@ -141,6 +153,7 @@ public class TestInvokeMethodRequest extends AmazonWebServiceRequest implements
     /**
      * @param body
      */
+
     public void setBody(String body) {
         this.body = body;
     }
@@ -148,6 +161,7 @@ public class TestInvokeMethodRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public String getBody() {
         return this.body;
     }
@@ -157,6 +171,7 @@ public class TestInvokeMethodRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TestInvokeMethodRequest withBody(String body) {
         setBody(body);
         return this;
@@ -165,6 +180,7 @@ public class TestInvokeMethodRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public java.util.Map<String, String> getHeaders() {
         return headers;
     }
@@ -172,6 +188,7 @@ public class TestInvokeMethodRequest extends AmazonWebServiceRequest implements
     /**
      * @param headers
      */
+
     public void setHeaders(java.util.Map<String, String> headers) {
         this.headers = headers;
     }
@@ -181,6 +198,7 @@ public class TestInvokeMethodRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TestInvokeMethodRequest withHeaders(
             java.util.Map<String, String> headers) {
         setHeaders(headers);
@@ -202,6 +220,7 @@ public class TestInvokeMethodRequest extends AmazonWebServiceRequest implements
      * Removes all the entries added into Headers. &lt;p> Returns a reference to
      * this object so that method calls can be chained together.
      */
+
     public TestInvokeMethodRequest clearHeadersEntries() {
         this.headers = null;
         return this;
@@ -210,6 +229,7 @@ public class TestInvokeMethodRequest extends AmazonWebServiceRequest implements
     /**
      * @param clientCertificateId
      */
+
     public void setClientCertificateId(String clientCertificateId) {
         this.clientCertificateId = clientCertificateId;
     }
@@ -217,6 +237,7 @@ public class TestInvokeMethodRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public String getClientCertificateId() {
         return this.clientCertificateId;
     }
@@ -226,6 +247,7 @@ public class TestInvokeMethodRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TestInvokeMethodRequest withClientCertificateId(
             String clientCertificateId) {
         setClientCertificateId(clientCertificateId);
@@ -235,6 +257,7 @@ public class TestInvokeMethodRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public java.util.Map<String, String> getStageVariables() {
         return stageVariables;
     }
@@ -242,6 +265,7 @@ public class TestInvokeMethodRequest extends AmazonWebServiceRequest implements
     /**
      * @param stageVariables
      */
+
     public void setStageVariables(java.util.Map<String, String> stageVariables) {
         this.stageVariables = stageVariables;
     }
@@ -251,6 +275,7 @@ public class TestInvokeMethodRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TestInvokeMethodRequest withStageVariables(
             java.util.Map<String, String> stageVariables) {
         setStageVariables(stageVariables);
@@ -273,6 +298,7 @@ public class TestInvokeMethodRequest extends AmazonWebServiceRequest implements
      * Removes all the entries added into StageVariables. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public TestInvokeMethodRequest clearStageVariablesEntries() {
         this.stageVariables = null;
         return this;

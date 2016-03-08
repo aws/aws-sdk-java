@@ -55,6 +55,7 @@ public class CreateReceiptRuleRequest extends AmazonWebServiceRequest implements
      * @param ruleSetName
      *        The name of the rule set to which to add the rule.
      */
+
     public void setRuleSetName(String ruleSetName) {
         this.ruleSetName = ruleSetName;
     }
@@ -66,6 +67,7 @@ public class CreateReceiptRuleRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the rule set to which to add the rule.
      */
+
     public String getRuleSetName() {
         return this.ruleSetName;
     }
@@ -80,6 +82,7 @@ public class CreateReceiptRuleRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateReceiptRuleRequest withRuleSetName(String ruleSetName) {
         setRuleSetName(ruleSetName);
         return this;
@@ -97,6 +100,7 @@ public class CreateReceiptRuleRequest extends AmazonWebServiceRequest implements
      *        placed. If this parameter is null, the new rule will be inserted
      *        at the beginning of the rule list.
      */
+
     public void setAfter(String after) {
         this.after = after;
     }
@@ -112,6 +116,7 @@ public class CreateReceiptRuleRequest extends AmazonWebServiceRequest implements
      *         placed. If this parameter is null, the new rule will be inserted
      *         at the beginning of the rule list.
      */
+
     public String getAfter() {
         return this.after;
     }
@@ -130,6 +135,7 @@ public class CreateReceiptRuleRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateReceiptRuleRequest withAfter(String after) {
         setAfter(after);
         return this;
@@ -145,6 +151,7 @@ public class CreateReceiptRuleRequest extends AmazonWebServiceRequest implements
      *        A data structure that contains the specified rule's name, actions,
      *        recipients, domains, enabled status, scan status, and TLS policy.
      */
+
     public void setRule(ReceiptRule rule) {
         this.rule = rule;
     }
@@ -159,6 +166,7 @@ public class CreateReceiptRuleRequest extends AmazonWebServiceRequest implements
      *         actions, recipients, domains, enabled status, scan status, and
      *         TLS policy.
      */
+
     public ReceiptRule getRule() {
         return this.rule;
     }
@@ -175,6 +183,7 @@ public class CreateReceiptRuleRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateReceiptRuleRequest withRule(ReceiptRule rule) {
         setRule(rule);
         return this;

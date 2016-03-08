@@ -42,6 +42,7 @@ public class RDSDatabase implements Serializable, Cloneable {
      * @param instanceIdentifier
      *        The ID of an RDS DB instance.
      */
+
     public void setInstanceIdentifier(String instanceIdentifier) {
         this.instanceIdentifier = instanceIdentifier;
     }
@@ -53,6 +54,7 @@ public class RDSDatabase implements Serializable, Cloneable {
      * 
      * @return The ID of an RDS DB instance.
      */
+
     public String getInstanceIdentifier() {
         return this.instanceIdentifier;
     }
@@ -67,6 +69,7 @@ public class RDSDatabase implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RDSDatabase withInstanceIdentifier(String instanceIdentifier) {
         setInstanceIdentifier(instanceIdentifier);
         return this;
@@ -75,6 +78,7 @@ public class RDSDatabase implements Serializable, Cloneable {
     /**
      * @param databaseName
      */
+
     public void setDatabaseName(String databaseName) {
         this.databaseName = databaseName;
     }
@@ -82,6 +86,7 @@ public class RDSDatabase implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getDatabaseName() {
         return this.databaseName;
     }
@@ -91,6 +96,7 @@ public class RDSDatabase implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RDSDatabase withDatabaseName(String databaseName) {
         setDatabaseName(databaseName);
         return this;

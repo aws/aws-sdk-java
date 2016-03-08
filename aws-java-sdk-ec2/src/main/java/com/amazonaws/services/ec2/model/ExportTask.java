@@ -70,6 +70,7 @@ public class ExportTask implements Serializable, Cloneable {
      * @param exportTaskId
      *        The ID of the export task.
      */
+
     public void setExportTaskId(String exportTaskId) {
         this.exportTaskId = exportTaskId;
     }
@@ -81,6 +82,7 @@ public class ExportTask implements Serializable, Cloneable {
      * 
      * @return The ID of the export task.
      */
+
     public String getExportTaskId() {
         return this.exportTaskId;
     }
@@ -95,6 +97,7 @@ public class ExportTask implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ExportTask withExportTaskId(String exportTaskId) {
         setExportTaskId(exportTaskId);
         return this;
@@ -108,6 +111,7 @@ public class ExportTask implements Serializable, Cloneable {
      * @param description
      *        A description of the resource being exported.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -119,6 +123,7 @@ public class ExportTask implements Serializable, Cloneable {
      * 
      * @return A description of the resource being exported.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -133,6 +138,7 @@ public class ExportTask implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ExportTask withDescription(String description) {
         setDescription(description);
         return this;
@@ -147,6 +153,7 @@ public class ExportTask implements Serializable, Cloneable {
      *        The state of the export task.
      * @see ExportTaskState
      */
+
     public void setState(String state) {
         this.state = state;
     }
@@ -159,6 +166,7 @@ public class ExportTask implements Serializable, Cloneable {
      * @return The state of the export task.
      * @see ExportTaskState
      */
+
     public String getState() {
         return this.state;
     }
@@ -174,6 +182,7 @@ public class ExportTask implements Serializable, Cloneable {
      *         chained together.
      * @see ExportTaskState
      */
+
     public ExportTask withState(String state) {
         setState(state);
         return this;
@@ -190,6 +199,7 @@ public class ExportTask implements Serializable, Cloneable {
      *         chained together.
      * @see ExportTaskState
      */
+
     public void setState(ExportTaskState state) {
         this.state = state.toString();
     }
@@ -205,6 +215,7 @@ public class ExportTask implements Serializable, Cloneable {
      *         chained together.
      * @see ExportTaskState
      */
+
     public ExportTask withState(ExportTaskState state) {
         setState(state);
         return this;
@@ -218,6 +229,7 @@ public class ExportTask implements Serializable, Cloneable {
      * @param statusMessage
      *        The status message related to the export task.
      */
+
     public void setStatusMessage(String statusMessage) {
         this.statusMessage = statusMessage;
     }
@@ -229,6 +241,7 @@ public class ExportTask implements Serializable, Cloneable {
      * 
      * @return The status message related to the export task.
      */
+
     public String getStatusMessage() {
         return this.statusMessage;
     }
@@ -243,6 +256,7 @@ public class ExportTask implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ExportTask withStatusMessage(String statusMessage) {
         setStatusMessage(statusMessage);
         return this;
@@ -256,6 +270,7 @@ public class ExportTask implements Serializable, Cloneable {
      * @param instanceExportDetails
      *        Information about the instance to export.
      */
+
     public void setInstanceExportDetails(
             InstanceExportDetails instanceExportDetails) {
         this.instanceExportDetails = instanceExportDetails;
@@ -268,6 +283,7 @@ public class ExportTask implements Serializable, Cloneable {
      * 
      * @return Information about the instance to export.
      */
+
     public InstanceExportDetails getInstanceExportDetails() {
         return this.instanceExportDetails;
     }
@@ -282,6 +298,7 @@ public class ExportTask implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ExportTask withInstanceExportDetails(
             InstanceExportDetails instanceExportDetails) {
         setInstanceExportDetails(instanceExportDetails);
@@ -296,6 +313,7 @@ public class ExportTask implements Serializable, Cloneable {
      * @param exportToS3Task
      *        Information about the export task.
      */
+
     public void setExportToS3Task(ExportToS3Task exportToS3Task) {
         this.exportToS3Task = exportToS3Task;
     }
@@ -307,6 +325,7 @@ public class ExportTask implements Serializable, Cloneable {
      * 
      * @return Information about the export task.
      */
+
     public ExportToS3Task getExportToS3Task() {
         return this.exportToS3Task;
     }
@@ -321,6 +340,7 @@ public class ExportTask implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ExportTask withExportToS3Task(ExportToS3Task exportToS3Task) {
         setExportToS3Task(exportToS3Task);
         return this;

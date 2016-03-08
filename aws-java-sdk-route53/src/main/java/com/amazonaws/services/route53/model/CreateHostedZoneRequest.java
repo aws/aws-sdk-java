@@ -154,6 +154,7 @@ public class CreateHostedZoneRequest extends AmazonWebServiceRequest implements
      *        for your domain to the set of <code>NameServers</code> elements
      *        returned in <code>DelegationSet</code>.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -185,6 +186,7 @@ public class CreateHostedZoneRequest extends AmazonWebServiceRequest implements
      *         servers for your domain to the set of <code>NameServers</code>
      *         elements returned in <code>DelegationSet</code>.
      */
+
     public String getName() {
         return this.name;
     }
@@ -219,6 +221,7 @@ public class CreateHostedZoneRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateHostedZoneRequest withName(String name) {
         setName(name);
         return this;
@@ -236,6 +239,7 @@ public class CreateHostedZoneRequest extends AmazonWebServiceRequest implements
      *        providing this parameter, your newly created hosted cannot be
      *        resolved anywhere other than the given VPC.
      */
+
     public void setVPC(VPC vPC) {
         this.vPC = vPC;
     }
@@ -251,6 +255,7 @@ public class CreateHostedZoneRequest extends AmazonWebServiceRequest implements
      *         providing this parameter, your newly created hosted cannot be
      *         resolved anywhere other than the given VPC.
      */
+
     public VPC getVPC() {
         return this.vPC;
     }
@@ -269,6 +274,7 @@ public class CreateHostedZoneRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateHostedZoneRequest withVPC(VPC vPC) {
         setVPC(vPC);
         return this;
@@ -302,6 +308,7 @@ public class CreateHostedZoneRequest extends AmazonWebServiceRequest implements
      *        XML 1.0 document. The UTF-8 encoding of the value must be less
      *        than 128 bytes.
      */
+
     public void setCallerReference(String callerReference) {
         this.callerReference = callerReference;
     }
@@ -333,6 +340,7 @@ public class CreateHostedZoneRequest extends AmazonWebServiceRequest implements
      *         XML 1.0 document. The UTF-8 encoding of the value must be less
      *         than 128 bytes.
      */
+
     public String getCallerReference() {
         return this.callerReference;
     }
@@ -367,6 +375,7 @@ public class CreateHostedZoneRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateHostedZoneRequest withCallerReference(String callerReference) {
         setCallerReference(callerReference);
         return this;
@@ -381,6 +390,7 @@ public class CreateHostedZoneRequest extends AmazonWebServiceRequest implements
      *        A complex type that contains an optional comment about your hosted
      *        zone.
      */
+
     public void setHostedZoneConfig(HostedZoneConfig hostedZoneConfig) {
         this.hostedZoneConfig = hostedZoneConfig;
     }
@@ -393,6 +403,7 @@ public class CreateHostedZoneRequest extends AmazonWebServiceRequest implements
      * @return A complex type that contains an optional comment about your
      *         hosted zone.
      */
+
     public HostedZoneConfig getHostedZoneConfig() {
         return this.hostedZoneConfig;
     }
@@ -408,6 +419,7 @@ public class CreateHostedZoneRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateHostedZoneRequest withHostedZoneConfig(
             HostedZoneConfig hostedZoneConfig) {
         setHostedZoneConfig(hostedZoneConfig);
@@ -424,6 +436,7 @@ public class CreateHostedZoneRequest extends AmazonWebServiceRequest implements
      *        The delegation set id of the reusable delgation set whose NS
      *        records you want to assign to the new hosted zone.
      */
+
     public void setDelegationSetId(String delegationSetId) {
         this.delegationSetId = delegationSetId;
     }
@@ -437,6 +450,7 @@ public class CreateHostedZoneRequest extends AmazonWebServiceRequest implements
      * @return The delegation set id of the reusable delgation set whose NS
      *         records you want to assign to the new hosted zone.
      */
+
     public String getDelegationSetId() {
         return this.delegationSetId;
     }
@@ -453,6 +467,7 @@ public class CreateHostedZoneRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateHostedZoneRequest withDelegationSetId(String delegationSetId) {
         setDelegationSetId(delegationSetId);
         return this;

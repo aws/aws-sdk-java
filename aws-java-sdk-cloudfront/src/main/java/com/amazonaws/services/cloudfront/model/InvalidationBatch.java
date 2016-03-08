@@ -128,6 +128,7 @@ public class InvalidationBatch implements Serializable, Cloneable {
      *        CloudFront will not invalidate the old version of the updated
      *        object.
      */
+
     public void setPaths(Paths paths) {
         this.paths = paths;
     }
@@ -150,6 +151,7 @@ public class InvalidationBatch implements Serializable, Cloneable {
      *         or CloudFront will not invalidate the old version of the updated
      *         object.
      */
+
     public Paths getPaths() {
         return this.paths;
     }
@@ -175,6 +177,7 @@ public class InvalidationBatch implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InvalidationBatch withPaths(Paths paths) {
         setPaths(paths);
         return this;
@@ -205,6 +208,7 @@ public class InvalidationBatch implements Serializable, Cloneable {
      *        original request, CloudFront returns an
      *        InvalidationBatchAlreadyExists error.
      */
+
     public void setCallerReference(String callerReference) {
         this.callerReference = callerReference;
     }
@@ -233,6 +237,7 @@ public class InvalidationBatch implements Serializable, Cloneable {
      *         from the original request, CloudFront returns an
      *         InvalidationBatchAlreadyExists error.
      */
+
     public String getCallerReference() {
         return this.callerReference;
     }
@@ -264,6 +269,7 @@ public class InvalidationBatch implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InvalidationBatch withCallerReference(String callerReference) {
         setCallerReference(callerReference);
         return this;

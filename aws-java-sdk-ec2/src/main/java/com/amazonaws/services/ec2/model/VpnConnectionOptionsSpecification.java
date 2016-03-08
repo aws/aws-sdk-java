@@ -44,6 +44,7 @@ public class VpnConnectionOptionsSpecification implements Serializable,
      *        Indicates whether the VPN connection uses static routes only.
      *        Static routes must be used for devices that don't support BGP.
      */
+
     public void setStaticRoutesOnly(Boolean staticRoutesOnly) {
         this.staticRoutesOnly = staticRoutesOnly;
     }
@@ -57,6 +58,7 @@ public class VpnConnectionOptionsSpecification implements Serializable,
      * @return Indicates whether the VPN connection uses static routes only.
      *         Static routes must be used for devices that don't support BGP.
      */
+
     public Boolean getStaticRoutesOnly() {
         return this.staticRoutesOnly;
     }
@@ -73,6 +75,7 @@ public class VpnConnectionOptionsSpecification implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VpnConnectionOptionsSpecification withStaticRoutesOnly(
             Boolean staticRoutesOnly) {
         setStaticRoutesOnly(staticRoutesOnly);
@@ -88,6 +91,7 @@ public class VpnConnectionOptionsSpecification implements Serializable,
      * @return Indicates whether the VPN connection uses static routes only.
      *         Static routes must be used for devices that don't support BGP.
      */
+
     public Boolean isStaticRoutesOnly() {
         return this.staticRoutesOnly;
     }

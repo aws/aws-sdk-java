@@ -58,6 +58,7 @@ public class CreatePolicyVersionResult implements Serializable, Cloneable {
      * @param policyArn
      *        The policy ARN.
      */
+
     public void setPolicyArn(String policyArn) {
         this.policyArn = policyArn;
     }
@@ -69,6 +70,7 @@ public class CreatePolicyVersionResult implements Serializable, Cloneable {
      * 
      * @return The policy ARN.
      */
+
     public String getPolicyArn() {
         return this.policyArn;
     }
@@ -83,6 +85,7 @@ public class CreatePolicyVersionResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePolicyVersionResult withPolicyArn(String policyArn) {
         setPolicyArn(policyArn);
         return this;
@@ -96,6 +99,7 @@ public class CreatePolicyVersionResult implements Serializable, Cloneable {
      * @param policyDocument
      *        The JSON document that describes the policy.
      */
+
     public void setPolicyDocument(String policyDocument) {
         this.policyDocument = policyDocument;
     }
@@ -107,6 +111,7 @@ public class CreatePolicyVersionResult implements Serializable, Cloneable {
      * 
      * @return The JSON document that describes the policy.
      */
+
     public String getPolicyDocument() {
         return this.policyDocument;
     }
@@ -121,6 +126,7 @@ public class CreatePolicyVersionResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePolicyVersionResult withPolicyDocument(String policyDocument) {
         setPolicyDocument(policyDocument);
         return this;
@@ -134,6 +140,7 @@ public class CreatePolicyVersionResult implements Serializable, Cloneable {
      * @param policyVersionId
      *        The policy version ID.
      */
+
     public void setPolicyVersionId(String policyVersionId) {
         this.policyVersionId = policyVersionId;
     }
@@ -145,6 +152,7 @@ public class CreatePolicyVersionResult implements Serializable, Cloneable {
      * 
      * @return The policy version ID.
      */
+
     public String getPolicyVersionId() {
         return this.policyVersionId;
     }
@@ -159,6 +167,7 @@ public class CreatePolicyVersionResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePolicyVersionResult withPolicyVersionId(String policyVersionId) {
         setPolicyVersionId(policyVersionId);
         return this;
@@ -172,6 +181,7 @@ public class CreatePolicyVersionResult implements Serializable, Cloneable {
      * @param isDefaultVersion
      *        Specifies whether the policy version is the default.
      */
+
     public void setIsDefaultVersion(Boolean isDefaultVersion) {
         this.isDefaultVersion = isDefaultVersion;
     }
@@ -183,6 +193,7 @@ public class CreatePolicyVersionResult implements Serializable, Cloneable {
      * 
      * @return Specifies whether the policy version is the default.
      */
+
     public Boolean getIsDefaultVersion() {
         return this.isDefaultVersion;
     }
@@ -197,6 +208,7 @@ public class CreatePolicyVersionResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePolicyVersionResult withIsDefaultVersion(
             Boolean isDefaultVersion) {
         setIsDefaultVersion(isDefaultVersion);
@@ -210,6 +222,7 @@ public class CreatePolicyVersionResult implements Serializable, Cloneable {
      * 
      * @return Specifies whether the policy version is the default.
      */
+
     public Boolean isDefaultVersion() {
         return this.isDefaultVersion;
     }

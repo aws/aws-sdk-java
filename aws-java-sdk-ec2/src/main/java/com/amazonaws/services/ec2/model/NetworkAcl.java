@@ -70,6 +70,7 @@ public class NetworkAcl implements Serializable, Cloneable {
      * @param networkAclId
      *        The ID of the network ACL.
      */
+
     public void setNetworkAclId(String networkAclId) {
         this.networkAclId = networkAclId;
     }
@@ -81,6 +82,7 @@ public class NetworkAcl implements Serializable, Cloneable {
      * 
      * @return The ID of the network ACL.
      */
+
     public String getNetworkAclId() {
         return this.networkAclId;
     }
@@ -95,6 +97,7 @@ public class NetworkAcl implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NetworkAcl withNetworkAclId(String networkAclId) {
         setNetworkAclId(networkAclId);
         return this;
@@ -108,6 +111,7 @@ public class NetworkAcl implements Serializable, Cloneable {
      * @param vpcId
      *        The ID of the VPC for the network ACL.
      */
+
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
@@ -119,6 +123,7 @@ public class NetworkAcl implements Serializable, Cloneable {
      * 
      * @return The ID of the VPC for the network ACL.
      */
+
     public String getVpcId() {
         return this.vpcId;
     }
@@ -133,6 +138,7 @@ public class NetworkAcl implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NetworkAcl withVpcId(String vpcId) {
         setVpcId(vpcId);
         return this;
@@ -146,6 +152,7 @@ public class NetworkAcl implements Serializable, Cloneable {
      * @param isDefault
      *        Indicates whether this is the default network ACL for the VPC.
      */
+
     public void setIsDefault(Boolean isDefault) {
         this.isDefault = isDefault;
     }
@@ -157,6 +164,7 @@ public class NetworkAcl implements Serializable, Cloneable {
      * 
      * @return Indicates whether this is the default network ACL for the VPC.
      */
+
     public Boolean getIsDefault() {
         return this.isDefault;
     }
@@ -171,6 +179,7 @@ public class NetworkAcl implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NetworkAcl withIsDefault(Boolean isDefault) {
         setIsDefault(isDefault);
         return this;
@@ -183,6 +192,7 @@ public class NetworkAcl implements Serializable, Cloneable {
      * 
      * @return Indicates whether this is the default network ACL for the VPC.
      */
+
     public Boolean isDefault() {
         return this.isDefault;
     }
@@ -194,6 +204,7 @@ public class NetworkAcl implements Serializable, Cloneable {
      * 
      * @return One or more entries (rules) in the network ACL.
      */
+
     public java.util.List<NetworkAclEntry> getEntries() {
         if (entries == null) {
             entries = new com.amazonaws.internal.SdkInternalList<NetworkAclEntry>();
@@ -209,6 +220,7 @@ public class NetworkAcl implements Serializable, Cloneable {
      * @param entries
      *        One or more entries (rules) in the network ACL.
      */
+
     public void setEntries(java.util.Collection<NetworkAclEntry> entries) {
         if (entries == null) {
             this.entries = null;
@@ -235,6 +247,7 @@ public class NetworkAcl implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NetworkAcl withEntries(NetworkAclEntry... entries) {
         if (this.entries == null) {
             setEntries(new com.amazonaws.internal.SdkInternalList<NetworkAclEntry>(
@@ -256,6 +269,7 @@ public class NetworkAcl implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NetworkAcl withEntries(java.util.Collection<NetworkAclEntry> entries) {
         setEntries(entries);
         return this;
@@ -268,6 +282,7 @@ public class NetworkAcl implements Serializable, Cloneable {
      * 
      * @return Any associations between the network ACL and one or more subnets
      */
+
     public java.util.List<NetworkAclAssociation> getAssociations() {
         if (associations == null) {
             associations = new com.amazonaws.internal.SdkInternalList<NetworkAclAssociation>();
@@ -283,6 +298,7 @@ public class NetworkAcl implements Serializable, Cloneable {
      * @param associations
      *        Any associations between the network ACL and one or more subnets
      */
+
     public void setAssociations(
             java.util.Collection<NetworkAclAssociation> associations) {
         if (associations == null) {
@@ -310,6 +326,7 @@ public class NetworkAcl implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NetworkAcl withAssociations(NetworkAclAssociation... associations) {
         if (this.associations == null) {
             setAssociations(new com.amazonaws.internal.SdkInternalList<NetworkAclAssociation>(
@@ -331,6 +348,7 @@ public class NetworkAcl implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NetworkAcl withAssociations(
             java.util.Collection<NetworkAclAssociation> associations) {
         setAssociations(associations);
@@ -344,6 +362,7 @@ public class NetworkAcl implements Serializable, Cloneable {
      * 
      * @return Any tags assigned to the network ACL.
      */
+
     public java.util.List<Tag> getTags() {
         if (tags == null) {
             tags = new com.amazonaws.internal.SdkInternalList<Tag>();
@@ -359,6 +378,7 @@ public class NetworkAcl implements Serializable, Cloneable {
      * @param tags
      *        Any tags assigned to the network ACL.
      */
+
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
             this.tags = null;
@@ -384,6 +404,7 @@ public class NetworkAcl implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NetworkAcl withTags(Tag... tags) {
         if (this.tags == null) {
             setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
@@ -404,6 +425,7 @@ public class NetworkAcl implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NetworkAcl withTags(java.util.Collection<Tag> tags) {
         setTags(tags);
         return this;

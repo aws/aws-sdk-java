@@ -44,6 +44,7 @@ public class DescribeHostsResult implements Serializable, Cloneable {
      * 
      * @return Information about the Dedicated hosts.
      */
+
     public java.util.List<Host> getHosts() {
         if (hosts == null) {
             hosts = new com.amazonaws.internal.SdkInternalList<Host>();
@@ -59,6 +60,7 @@ public class DescribeHostsResult implements Serializable, Cloneable {
      * @param hosts
      *        Information about the Dedicated hosts.
      */
+
     public void setHosts(java.util.Collection<Host> hosts) {
         if (hosts == null) {
             this.hosts = null;
@@ -84,6 +86,7 @@ public class DescribeHostsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeHostsResult withHosts(Host... hosts) {
         if (this.hosts == null) {
             setHosts(new com.amazonaws.internal.SdkInternalList<Host>(
@@ -105,6 +108,7 @@ public class DescribeHostsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeHostsResult withHosts(java.util.Collection<Host> hosts) {
         setHosts(hosts);
         return this;
@@ -120,6 +124,7 @@ public class DescribeHostsResult implements Serializable, Cloneable {
      *        The token to use to retrieve the next page of results. This value
      *        is <code>null</code> when there are no more results to return.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -133,6 +138,7 @@ public class DescribeHostsResult implements Serializable, Cloneable {
      * @return The token to use to retrieve the next page of results. This value
      *         is <code>null</code> when there are no more results to return.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -149,6 +155,7 @@ public class DescribeHostsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeHostsResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

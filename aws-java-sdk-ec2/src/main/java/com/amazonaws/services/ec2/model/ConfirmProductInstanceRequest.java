@@ -72,6 +72,7 @@ public class ConfirmProductInstanceRequest extends AmazonWebServiceRequest
      * @param productCode
      *        The product code. This must be a product code that you own.
      */
+
     public void setProductCode(String productCode) {
         this.productCode = productCode;
     }
@@ -83,6 +84,7 @@ public class ConfirmProductInstanceRequest extends AmazonWebServiceRequest
      * 
      * @return The product code. This must be a product code that you own.
      */
+
     public String getProductCode() {
         return this.productCode;
     }
@@ -97,6 +99,7 @@ public class ConfirmProductInstanceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfirmProductInstanceRequest withProductCode(String productCode) {
         setProductCode(productCode);
         return this;
@@ -110,6 +113,7 @@ public class ConfirmProductInstanceRequest extends AmazonWebServiceRequest
      * @param instanceId
      *        The ID of the instance.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -121,6 +125,7 @@ public class ConfirmProductInstanceRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the instance.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
@@ -135,6 +140,7 @@ public class ConfirmProductInstanceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfirmProductInstanceRequest withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;

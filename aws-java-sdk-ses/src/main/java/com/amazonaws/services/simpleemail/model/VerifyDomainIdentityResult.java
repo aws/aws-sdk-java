@@ -41,6 +41,7 @@ public class VerifyDomainIdentityResult implements Serializable, Cloneable {
      *        A TXT record that must be placed in the DNS settings for the
      *        domain, in order to complete domain verification.
      */
+
     public void setVerificationToken(String verificationToken) {
         this.verificationToken = verificationToken;
     }
@@ -54,6 +55,7 @@ public class VerifyDomainIdentityResult implements Serializable, Cloneable {
      * @return A TXT record that must be placed in the DNS settings for the
      *         domain, in order to complete domain verification.
      */
+
     public String getVerificationToken() {
         return this.verificationToken;
     }
@@ -70,6 +72,7 @@ public class VerifyDomainIdentityResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VerifyDomainIdentityResult withVerificationToken(
             String verificationToken) {
         setVerificationToken(verificationToken);

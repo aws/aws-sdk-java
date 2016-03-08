@@ -73,6 +73,7 @@ public class CreateGameSessionRequest extends AmazonWebServiceRequest implements
      *        Unique identifier for a fleet. Each request must reference either
      *        a fleet ID or alias ID, but not both.
      */
+
     public void setFleetId(String fleetId) {
         this.fleetId = fleetId;
     }
@@ -86,6 +87,7 @@ public class CreateGameSessionRequest extends AmazonWebServiceRequest implements
      * @return Unique identifier for a fleet. Each request must reference either
      *         a fleet ID or alias ID, but not both.
      */
+
     public String getFleetId() {
         return this.fleetId;
     }
@@ -102,6 +104,7 @@ public class CreateGameSessionRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateGameSessionRequest withFleetId(String fleetId) {
         setFleetId(fleetId);
         return this;
@@ -117,6 +120,7 @@ public class CreateGameSessionRequest extends AmazonWebServiceRequest implements
      *        Unique identifier for a fleet alias. Each request must reference
      *        either a fleet ID or alias ID, but not both.
      */
+
     public void setAliasId(String aliasId) {
         this.aliasId = aliasId;
     }
@@ -130,6 +134,7 @@ public class CreateGameSessionRequest extends AmazonWebServiceRequest implements
      * @return Unique identifier for a fleet alias. Each request must reference
      *         either a fleet ID or alias ID, but not both.
      */
+
     public String getAliasId() {
         return this.aliasId;
     }
@@ -146,6 +151,7 @@ public class CreateGameSessionRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateGameSessionRequest withAliasId(String aliasId) {
         setAliasId(aliasId);
         return this;
@@ -161,6 +167,7 @@ public class CreateGameSessionRequest extends AmazonWebServiceRequest implements
      *        Maximum number of players that can be simultaneously connected to
      *        the game session.
      */
+
     public void setMaximumPlayerSessionCount(Integer maximumPlayerSessionCount) {
         this.maximumPlayerSessionCount = maximumPlayerSessionCount;
     }
@@ -174,6 +181,7 @@ public class CreateGameSessionRequest extends AmazonWebServiceRequest implements
      * @return Maximum number of players that can be simultaneously connected to
      *         the game session.
      */
+
     public Integer getMaximumPlayerSessionCount() {
         return this.maximumPlayerSessionCount;
     }
@@ -190,6 +198,7 @@ public class CreateGameSessionRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateGameSessionRequest withMaximumPlayerSessionCount(
             Integer maximumPlayerSessionCount) {
         setMaximumPlayerSessionCount(maximumPlayerSessionCount);
@@ -206,6 +215,7 @@ public class CreateGameSessionRequest extends AmazonWebServiceRequest implements
      *        Descriptive label associated with this game session. Session names
      *        do not need to be unique.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -219,6 +229,7 @@ public class CreateGameSessionRequest extends AmazonWebServiceRequest implements
      * @return Descriptive label associated with this game session. Session
      *         names do not need to be unique.
      */
+
     public String getName() {
         return this.name;
     }
@@ -235,6 +246,7 @@ public class CreateGameSessionRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateGameSessionRequest withName(String name) {
         setName(name);
         return this;
@@ -249,6 +261,7 @@ public class CreateGameSessionRequest extends AmazonWebServiceRequest implements
      * @return Set of properties used to administer a game session. These
      *         properties are passed to your game server.
      */
+
     public java.util.List<GameProperty> getGameProperties() {
         return gameProperties;
     }
@@ -263,6 +276,7 @@ public class CreateGameSessionRequest extends AmazonWebServiceRequest implements
      *        Set of properties used to administer a game session. These
      *        properties are passed to your game server.
      */
+
     public void setGameProperties(
             java.util.Collection<GameProperty> gameProperties) {
         if (gameProperties == null) {
@@ -292,6 +306,7 @@ public class CreateGameSessionRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateGameSessionRequest withGameProperties(
             GameProperty... gameProperties) {
         if (this.gameProperties == null) {
@@ -316,6 +331,7 @@ public class CreateGameSessionRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateGameSessionRequest withGameProperties(
             java.util.Collection<GameProperty> gameProperties) {
         setGameProperties(gameProperties);

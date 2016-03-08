@@ -76,6 +76,7 @@ public class DescribeFleetEventsRequest extends AmazonWebServiceRequest
      * @param fleetId
      *        Unique identifier for the fleet to get event logs for.
      */
+
     public void setFleetId(String fleetId) {
         this.fleetId = fleetId;
     }
@@ -87,6 +88,7 @@ public class DescribeFleetEventsRequest extends AmazonWebServiceRequest
      * 
      * @return Unique identifier for the fleet to get event logs for.
      */
+
     public String getFleetId() {
         return this.fleetId;
     }
@@ -101,6 +103,7 @@ public class DescribeFleetEventsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeFleetEventsRequest withFleetId(String fleetId) {
         setFleetId(fleetId);
         return this;
@@ -120,6 +123,7 @@ public class DescribeFleetEventsRequest extends AmazonWebServiceRequest
      *        was created to the specified end time. Format is an integer
      *        representing the number of seconds since epoch.
      */
+
     public void setStartTime(java.util.Date startTime) {
         this.startTime = startTime;
     }
@@ -137,6 +141,7 @@ public class DescribeFleetEventsRequest extends AmazonWebServiceRequest
      *         was created to the specified end time. Format is an integer
      *         representing the number of seconds since epoch.
      */
+
     public java.util.Date getStartTime() {
         return this.startTime;
     }
@@ -157,6 +162,7 @@ public class DescribeFleetEventsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeFleetEventsRequest withStartTime(java.util.Date startTime) {
         setStartTime(startTime);
         return this;
@@ -176,6 +182,7 @@ public class DescribeFleetEventsRequest extends AmazonWebServiceRequest
      *        up to the present. Format is an integer representing the number of
      *        seconds since epoch.
      */
+
     public void setEndTime(java.util.Date endTime) {
         this.endTime = endTime;
     }
@@ -193,6 +200,7 @@ public class DescribeFleetEventsRequest extends AmazonWebServiceRequest
      *         time up to the present. Format is an integer representing the
      *         number of seconds since epoch.
      */
+
     public java.util.Date getEndTime() {
         return this.endTime;
     }
@@ -213,6 +221,7 @@ public class DescribeFleetEventsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeFleetEventsRequest withEndTime(java.util.Date endTime) {
         setEndTime(endTime);
         return this;
@@ -228,6 +237,7 @@ public class DescribeFleetEventsRequest extends AmazonWebServiceRequest
      *        Maximum number of results to return. You can use this parameter
      *        with <i>NextToken</i> to get results as a set of sequential pages.
      */
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -242,6 +252,7 @@ public class DescribeFleetEventsRequest extends AmazonWebServiceRequest
      *         with <i>NextToken</i> to get results as a set of sequential
      *         pages.
      */
+
     public Integer getLimit() {
         return this.limit;
     }
@@ -258,6 +269,7 @@ public class DescribeFleetEventsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeFleetEventsRequest withLimit(Integer limit) {
         setLimit(limit);
         return this;
@@ -277,6 +289,7 @@ public class DescribeFleetEventsRequest extends AmazonWebServiceRequest
      *        retrieved. To start at the beginning of a result set, do not set
      *        this parameter.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -294,6 +307,7 @@ public class DescribeFleetEventsRequest extends AmazonWebServiceRequest
      *         results to be retrieved. To start at the beginning of a result
      *         set, do not set this parameter.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -314,6 +328,7 @@ public class DescribeFleetEventsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeFleetEventsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

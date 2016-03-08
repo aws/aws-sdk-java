@@ -20,7 +20,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains information about the event to be used in the PutEvents action.
+ * Contains information about the event to be used in PutEvents.
  * </p>
  */
 public class PutEventsRequestEntry implements Serializable, Cloneable {
@@ -76,6 +76,7 @@ public class PutEventsRequestEntry implements Serializable, Cloneable {
      *        no timestamp is provided, the timestamp of the <a>PutEvents</a>
      *        call will be used.
      */
+
     public void setTime(java.util.Date time) {
         this.time = time;
     }
@@ -93,6 +94,7 @@ public class PutEventsRequestEntry implements Serializable, Cloneable {
      *         no timestamp is provided, the timestamp of the <a>PutEvents</a>
      *         call will be used.
      */
+
     public java.util.Date getTime() {
         return this.time;
     }
@@ -113,6 +115,7 @@ public class PutEventsRequestEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutEventsRequestEntry withTime(java.util.Date time) {
         setTime(time);
         return this;
@@ -126,6 +129,7 @@ public class PutEventsRequestEntry implements Serializable, Cloneable {
      * @param source
      *        The source of the event.
      */
+
     public void setSource(String source) {
         this.source = source;
     }
@@ -137,6 +141,7 @@ public class PutEventsRequestEntry implements Serializable, Cloneable {
      * 
      * @return The source of the event.
      */
+
     public String getSource() {
         return this.source;
     }
@@ -151,6 +156,7 @@ public class PutEventsRequestEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutEventsRequestEntry withSource(String source) {
         setSource(source);
         return this;
@@ -166,6 +172,7 @@ public class PutEventsRequestEntry implements Serializable, Cloneable {
      *         the event primarily concerns. Any number, including zero, may be
      *         present.
      */
+
     public java.util.List<String> getResources() {
         return resources;
     }
@@ -181,6 +188,7 @@ public class PutEventsRequestEntry implements Serializable, Cloneable {
      *        event primarily concerns. Any number, including zero, may be
      *        present.
      */
+
     public void setResources(java.util.Collection<String> resources) {
         if (resources == null) {
             this.resources = null;
@@ -209,6 +217,7 @@ public class PutEventsRequestEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutEventsRequestEntry withResources(String... resources) {
         if (this.resources == null) {
             setResources(new java.util.ArrayList<String>(resources.length));
@@ -232,6 +241,7 @@ public class PutEventsRequestEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutEventsRequestEntry withResources(
             java.util.Collection<String> resources) {
         setResources(resources);
@@ -248,6 +258,7 @@ public class PutEventsRequestEntry implements Serializable, Cloneable {
      *        Free-form string used to decide what fields to expect in the event
      *        detail.
      */
+
     public void setDetailType(String detailType) {
         this.detailType = detailType;
     }
@@ -261,6 +272,7 @@ public class PutEventsRequestEntry implements Serializable, Cloneable {
      * @return Free-form string used to decide what fields to expect in the
      *         event detail.
      */
+
     public String getDetailType() {
         return this.detailType;
     }
@@ -277,6 +289,7 @@ public class PutEventsRequestEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutEventsRequestEntry withDetailType(String detailType) {
         setDetailType(detailType);
         return this;
@@ -293,6 +306,7 @@ public class PutEventsRequestEntry implements Serializable, Cloneable {
      *        contain nested sub-objects. No constraints are imposed on its
      *        contents.
      */
+
     public void setDetail(String detail) {
         this.detail = detail;
     }
@@ -307,6 +321,7 @@ public class PutEventsRequestEntry implements Serializable, Cloneable {
      *         contain nested sub-objects. No constraints are imposed on its
      *         contents.
      */
+
     public String getDetail() {
         return this.detail;
     }
@@ -324,6 +339,7 @@ public class PutEventsRequestEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutEventsRequestEntry withDetail(String detail) {
         setDetail(detail);
         return this;

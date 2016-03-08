@@ -80,6 +80,7 @@ public class PutSubscriptionFilterRequest extends AmazonWebServiceRequest
      *        The name of the log group to associate the subscription filter
      *        with.
      */
+
     public void setLogGroupName(String logGroupName) {
         this.logGroupName = logGroupName;
     }
@@ -92,6 +93,7 @@ public class PutSubscriptionFilterRequest extends AmazonWebServiceRequest
      * @return The name of the log group to associate the subscription filter
      *         with.
      */
+
     public String getLogGroupName() {
         return this.logGroupName;
     }
@@ -107,6 +109,7 @@ public class PutSubscriptionFilterRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutSubscriptionFilterRequest withLogGroupName(String logGroupName) {
         setLogGroupName(logGroupName);
         return this;
@@ -120,6 +123,7 @@ public class PutSubscriptionFilterRequest extends AmazonWebServiceRequest
      * @param filterName
      *        A name for the subscription filter.
      */
+
     public void setFilterName(String filterName) {
         this.filterName = filterName;
     }
@@ -131,6 +135,7 @@ public class PutSubscriptionFilterRequest extends AmazonWebServiceRequest
      * 
      * @return A name for the subscription filter.
      */
+
     public String getFilterName() {
         return this.filterName;
     }
@@ -145,6 +150,7 @@ public class PutSubscriptionFilterRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutSubscriptionFilterRequest withFilterName(String filterName) {
         setFilterName(filterName);
         return this;
@@ -160,6 +166,7 @@ public class PutSubscriptionFilterRequest extends AmazonWebServiceRequest
      *        A valid CloudWatch Logs filter pattern for subscribing to a
      *        filtered stream of log events.
      */
+
     public void setFilterPattern(String filterPattern) {
         this.filterPattern = filterPattern;
     }
@@ -173,6 +180,7 @@ public class PutSubscriptionFilterRequest extends AmazonWebServiceRequest
      * @return A valid CloudWatch Logs filter pattern for subscribing to a
      *         filtered stream of log events.
      */
+
     public String getFilterPattern() {
         return this.filterPattern;
     }
@@ -189,6 +197,7 @@ public class PutSubscriptionFilterRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutSubscriptionFilterRequest withFilterPattern(String filterPattern) {
         setFilterPattern(filterPattern);
         return this;
@@ -225,6 +234,7 @@ public class PutSubscriptionFilterRequest extends AmazonWebServiceRequest
      *        subscription filter, for same-account delivery.</li>
      *        </ul>
      */
+
     public void setDestinationArn(String destinationArn) {
         this.destinationArn = destinationArn;
     }
@@ -259,6 +269,7 @@ public class PutSubscriptionFilterRequest extends AmazonWebServiceRequest
      *         subscription filter, for same-account delivery.</li>
      *         </ul>
      */
+
     public String getDestinationArn() {
         return this.destinationArn;
     }
@@ -296,6 +307,7 @@ public class PutSubscriptionFilterRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutSubscriptionFilterRequest withDestinationArn(String destinationArn) {
         setDestinationArn(destinationArn);
         return this;
@@ -316,6 +328,7 @@ public class PutSubscriptionFilterRequest extends AmazonWebServiceRequest
      *        destination (used via an ARN of <code>Destination</code>) for
      *        cross-account delivery.
      */
+
     public void setRoleArn(String roleArn) {
         this.roleArn = roleArn;
     }
@@ -334,6 +347,7 @@ public class PutSubscriptionFilterRequest extends AmazonWebServiceRequest
      *         destination (used via an ARN of <code>Destination</code>) for
      *         cross-account delivery.
      */
+
     public String getRoleArn() {
         return this.roleArn;
     }
@@ -355,6 +369,7 @@ public class PutSubscriptionFilterRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutSubscriptionFilterRequest withRoleArn(String roleArn) {
         setRoleArn(roleArn);
         return this;

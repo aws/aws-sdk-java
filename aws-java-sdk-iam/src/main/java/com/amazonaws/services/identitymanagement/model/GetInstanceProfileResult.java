@@ -40,6 +40,7 @@ public class GetInstanceProfileResult implements Serializable, Cloneable {
      * @param instanceProfile
      *        Information about the instance profile.
      */
+
     public void setInstanceProfile(InstanceProfile instanceProfile) {
         this.instanceProfile = instanceProfile;
     }
@@ -51,6 +52,7 @@ public class GetInstanceProfileResult implements Serializable, Cloneable {
      * 
      * @return Information about the instance profile.
      */
+
     public InstanceProfile getInstanceProfile() {
         return this.instanceProfile;
     }
@@ -65,6 +67,7 @@ public class GetInstanceProfileResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetInstanceProfileResult withInstanceProfile(
             InstanceProfile instanceProfile) {
         setInstanceProfile(instanceProfile);

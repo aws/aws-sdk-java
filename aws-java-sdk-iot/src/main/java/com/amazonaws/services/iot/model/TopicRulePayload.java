@@ -67,6 +67,7 @@ public class TopicRulePayload implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/iot/latest/developerguide/iot-rules.html#aws-iot-sql-reference"
      *        >AWS IoT SQL Reference</a> in the <i>AWS IoT Developer Guide</i>.
      */
+
     public void setSql(String sql) {
         this.sql = sql;
     }
@@ -84,6 +85,7 @@ public class TopicRulePayload implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/iot/latest/developerguide/iot-rules.html#aws-iot-sql-reference"
      *         >AWS IoT SQL Reference</a> in the <i>AWS IoT Developer Guide</i>.
      */
+
     public String getSql() {
         return this.sql;
     }
@@ -104,6 +106,7 @@ public class TopicRulePayload implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TopicRulePayload withSql(String sql) {
         setSql(sql);
         return this;
@@ -117,6 +120,7 @@ public class TopicRulePayload implements Serializable, Cloneable {
      * @param description
      *        The description of the rule.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -128,6 +132,7 @@ public class TopicRulePayload implements Serializable, Cloneable {
      * 
      * @return The description of the rule.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -142,6 +147,7 @@ public class TopicRulePayload implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TopicRulePayload withDescription(String description) {
         setDescription(description);
         return this;
@@ -154,6 +160,7 @@ public class TopicRulePayload implements Serializable, Cloneable {
      * 
      * @return The actions associated with the rule.
      */
+
     public java.util.List<Action> getActions() {
         return actions;
     }
@@ -166,6 +173,7 @@ public class TopicRulePayload implements Serializable, Cloneable {
      * @param actions
      *        The actions associated with the rule.
      */
+
     public void setActions(java.util.Collection<Action> actions) {
         if (actions == null) {
             this.actions = null;
@@ -191,6 +199,7 @@ public class TopicRulePayload implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TopicRulePayload withActions(Action... actions) {
         if (this.actions == null) {
             setActions(new java.util.ArrayList<Action>(actions.length));
@@ -211,6 +220,7 @@ public class TopicRulePayload implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TopicRulePayload withActions(java.util.Collection<Action> actions) {
         setActions(actions);
         return this;
@@ -224,6 +234,7 @@ public class TopicRulePayload implements Serializable, Cloneable {
      * @param ruleDisabled
      *        Specifies whether the rule is disabled.
      */
+
     public void setRuleDisabled(Boolean ruleDisabled) {
         this.ruleDisabled = ruleDisabled;
     }
@@ -235,6 +246,7 @@ public class TopicRulePayload implements Serializable, Cloneable {
      * 
      * @return Specifies whether the rule is disabled.
      */
+
     public Boolean getRuleDisabled() {
         return this.ruleDisabled;
     }
@@ -249,6 +261,7 @@ public class TopicRulePayload implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TopicRulePayload withRuleDisabled(Boolean ruleDisabled) {
         setRuleDisabled(ruleDisabled);
         return this;
@@ -261,6 +274,7 @@ public class TopicRulePayload implements Serializable, Cloneable {
      * 
      * @return Specifies whether the rule is disabled.
      */
+
     public Boolean isRuleDisabled() {
         return this.ruleDisabled;
     }

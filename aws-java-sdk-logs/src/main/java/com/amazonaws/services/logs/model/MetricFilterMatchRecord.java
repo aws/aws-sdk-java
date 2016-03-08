@@ -32,6 +32,7 @@ public class MetricFilterMatchRecord implements Serializable, Cloneable {
     /**
      * @param eventNumber
      */
+
     public void setEventNumber(Long eventNumber) {
         this.eventNumber = eventNumber;
     }
@@ -39,6 +40,7 @@ public class MetricFilterMatchRecord implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Long getEventNumber() {
         return this.eventNumber;
     }
@@ -48,6 +50,7 @@ public class MetricFilterMatchRecord implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MetricFilterMatchRecord withEventNumber(Long eventNumber) {
         setEventNumber(eventNumber);
         return this;
@@ -56,6 +59,7 @@ public class MetricFilterMatchRecord implements Serializable, Cloneable {
     /**
      * @param eventMessage
      */
+
     public void setEventMessage(String eventMessage) {
         this.eventMessage = eventMessage;
     }
@@ -63,6 +67,7 @@ public class MetricFilterMatchRecord implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getEventMessage() {
         return this.eventMessage;
     }
@@ -72,6 +77,7 @@ public class MetricFilterMatchRecord implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MetricFilterMatchRecord withEventMessage(String eventMessage) {
         setEventMessage(eventMessage);
         return this;
@@ -80,6 +86,7 @@ public class MetricFilterMatchRecord implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public java.util.Map<String, String> getExtractedValues() {
         if (extractedValues == null) {
             extractedValues = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -90,6 +97,7 @@ public class MetricFilterMatchRecord implements Serializable, Cloneable {
     /**
      * @param extractedValues
      */
+
     public void setExtractedValues(java.util.Map<String, String> extractedValues) {
         this.extractedValues = extractedValues == null ? null
                 : new com.amazonaws.internal.SdkInternalMap<String, String>(
@@ -101,6 +109,7 @@ public class MetricFilterMatchRecord implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MetricFilterMatchRecord withExtractedValues(
             java.util.Map<String, String> extractedValues) {
         setExtractedValues(extractedValues);
@@ -123,6 +132,7 @@ public class MetricFilterMatchRecord implements Serializable, Cloneable {
      * Removes all the entries added into ExtractedValues. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public MetricFilterMatchRecord clearExtractedValuesEntries() {
         this.extractedValues = null;
         return this;

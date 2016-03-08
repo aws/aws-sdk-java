@@ -55,6 +55,7 @@ public class GetTrailStatusRequest extends AmazonWebServiceRequest implements
      *        <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
      *        .
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -75,6 +76,7 @@ public class GetTrailStatusRequest extends AmazonWebServiceRequest implements
      *         <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
      *         .
      */
+
     public String getName() {
         return this.name;
     }
@@ -98,6 +100,7 @@ public class GetTrailStatusRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetTrailStatusRequest withName(String name) {
         setName(name);
         return this;

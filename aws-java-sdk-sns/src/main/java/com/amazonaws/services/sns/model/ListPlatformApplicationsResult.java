@@ -49,6 +49,7 @@ public class ListPlatformApplicationsResult implements Serializable, Cloneable {
      * @return Platform applications returned when calling
      *         ListPlatformApplications action.
      */
+
     public java.util.List<PlatformApplication> getPlatformApplications() {
         if (platformApplications == null) {
             platformApplications = new com.amazonaws.internal.SdkInternalList<PlatformApplication>();
@@ -66,6 +67,7 @@ public class ListPlatformApplicationsResult implements Serializable, Cloneable {
      *        Platform applications returned when calling
      *        ListPlatformApplications action.
      */
+
     public void setPlatformApplications(
             java.util.Collection<PlatformApplication> platformApplications) {
         if (platformApplications == null) {
@@ -95,6 +97,7 @@ public class ListPlatformApplicationsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListPlatformApplicationsResult withPlatformApplications(
             PlatformApplication... platformApplications) {
         if (this.platformApplications == null) {
@@ -119,6 +122,7 @@ public class ListPlatformApplicationsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListPlatformApplicationsResult withPlatformApplications(
             java.util.Collection<PlatformApplication> platformApplications) {
         setPlatformApplications(platformApplications);
@@ -136,6 +140,7 @@ public class ListPlatformApplicationsResult implements Serializable, Cloneable {
      *        action if additional records are available after the first page
      *        results.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -150,6 +155,7 @@ public class ListPlatformApplicationsResult implements Serializable, Cloneable {
      *         ListPlatformApplications action if additional records are
      *         available after the first page results.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -167,6 +173,7 @@ public class ListPlatformApplicationsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListPlatformApplicationsResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

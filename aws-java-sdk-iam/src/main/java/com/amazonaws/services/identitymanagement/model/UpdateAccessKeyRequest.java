@@ -138,6 +138,7 @@ public class UpdateAccessKeyRequest extends AmazonWebServiceRequest implements
      * @param userName
      *        The name of the user whose key you want to update.
      */
+
     public void setUserName(String userName) {
         this.userName = userName;
     }
@@ -149,6 +150,7 @@ public class UpdateAccessKeyRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the user whose key you want to update.
      */
+
     public String getUserName() {
         return this.userName;
     }
@@ -163,6 +165,7 @@ public class UpdateAccessKeyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateAccessKeyRequest withUserName(String userName) {
         setUserName(userName);
         return this;
@@ -176,6 +179,7 @@ public class UpdateAccessKeyRequest extends AmazonWebServiceRequest implements
      * @param accessKeyId
      *        The access key ID of the secret access key you want to update.
      */
+
     public void setAccessKeyId(String accessKeyId) {
         this.accessKeyId = accessKeyId;
     }
@@ -187,6 +191,7 @@ public class UpdateAccessKeyRequest extends AmazonWebServiceRequest implements
      * 
      * @return The access key ID of the secret access key you want to update.
      */
+
     public String getAccessKeyId() {
         return this.accessKeyId;
     }
@@ -201,6 +206,7 @@ public class UpdateAccessKeyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateAccessKeyRequest withAccessKeyId(String accessKeyId) {
         setAccessKeyId(accessKeyId);
         return this;
@@ -219,6 +225,7 @@ public class UpdateAccessKeyRequest extends AmazonWebServiceRequest implements
      *        AWS, while <code>Inactive</code> means the key cannot be used.
      * @see StatusType
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -235,6 +242,7 @@ public class UpdateAccessKeyRequest extends AmazonWebServiceRequest implements
      *         AWS, while <code>Inactive</code> means the key cannot be used.
      * @see StatusType
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -254,6 +262,7 @@ public class UpdateAccessKeyRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see StatusType
      */
+
     public UpdateAccessKeyRequest withStatus(String status) {
         setStatus(status);
         return this;
@@ -274,6 +283,7 @@ public class UpdateAccessKeyRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see StatusType
      */
+
     public void setStatus(StatusType status) {
         this.status = status.toString();
     }
@@ -293,6 +303,7 @@ public class UpdateAccessKeyRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see StatusType
      */
+
     public UpdateAccessKeyRequest withStatus(StatusType status) {
         setStatus(status);
         return this;

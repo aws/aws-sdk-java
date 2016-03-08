@@ -79,6 +79,7 @@ public class Resource implements Serializable, Cloneable {
      *        <code>MEMORY</code>, <code>PORTS</code>, or a user-defined
      *        resource.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -93,6 +94,7 @@ public class Resource implements Serializable, Cloneable {
      *         <code>MEMORY</code>, <code>PORTS</code>, or a user-defined
      *         resource.
      */
+
     public String getName() {
         return this.name;
     }
@@ -110,6 +112,7 @@ public class Resource implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Resource withName(String name) {
         setName(name);
         return this;
@@ -125,6 +128,7 @@ public class Resource implements Serializable, Cloneable {
      *        The type of the resource, such as <code>INTEGER</code>,
      *        <code>DOUBLE</code>, <code>LONG</code>, or <code>STRINGSET</code>.
      */
+
     public void setType(String type) {
         this.type = type;
     }
@@ -139,6 +143,7 @@ public class Resource implements Serializable, Cloneable {
      *         <code>DOUBLE</code>, <code>LONG</code>, or <code>STRINGSET</code>
      *         .
      */
+
     public String getType() {
         return this.type;
     }
@@ -155,6 +160,7 @@ public class Resource implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Resource withType(String type) {
         setType(type);
         return this;
@@ -170,6 +176,7 @@ public class Resource implements Serializable, Cloneable {
      *        When the <code>doubleValue</code> type is set, the value of the
      *        resource must be a double precision floating-point type.
      */
+
     public void setDoubleValue(Double doubleValue) {
         this.doubleValue = doubleValue;
     }
@@ -183,6 +190,7 @@ public class Resource implements Serializable, Cloneable {
      * @return When the <code>doubleValue</code> type is set, the value of the
      *         resource must be a double precision floating-point type.
      */
+
     public Double getDoubleValue() {
         return this.doubleValue;
     }
@@ -199,6 +207,7 @@ public class Resource implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Resource withDoubleValue(Double doubleValue) {
         setDoubleValue(doubleValue);
         return this;
@@ -214,6 +223,7 @@ public class Resource implements Serializable, Cloneable {
      *        When the <code>longValue</code> type is set, the value of the
      *        resource must be an extended precision floating-point type.
      */
+
     public void setLongValue(Long longValue) {
         this.longValue = longValue;
     }
@@ -227,6 +237,7 @@ public class Resource implements Serializable, Cloneable {
      * @return When the <code>longValue</code> type is set, the value of the
      *         resource must be an extended precision floating-point type.
      */
+
     public Long getLongValue() {
         return this.longValue;
     }
@@ -243,6 +254,7 @@ public class Resource implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Resource withLongValue(Long longValue) {
         setLongValue(longValue);
         return this;
@@ -258,6 +270,7 @@ public class Resource implements Serializable, Cloneable {
      *        When the <code>integerValue</code> type is set, the value of the
      *        resource must be an integer.
      */
+
     public void setIntegerValue(Integer integerValue) {
         this.integerValue = integerValue;
     }
@@ -271,6 +284,7 @@ public class Resource implements Serializable, Cloneable {
      * @return When the <code>integerValue</code> type is set, the value of the
      *         resource must be an integer.
      */
+
     public Integer getIntegerValue() {
         return this.integerValue;
     }
@@ -287,6 +301,7 @@ public class Resource implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Resource withIntegerValue(Integer integerValue) {
         setIntegerValue(integerValue);
         return this;
@@ -301,6 +316,7 @@ public class Resource implements Serializable, Cloneable {
      * @return When the <code>stringSetValue</code> type is set, the value of
      *         the resource must be a string type.
      */
+
     public java.util.List<String> getStringSetValue() {
         if (stringSetValue == null) {
             stringSetValue = new com.amazonaws.internal.SdkInternalList<String>();
@@ -318,6 +334,7 @@ public class Resource implements Serializable, Cloneable {
      *        When the <code>stringSetValue</code> type is set, the value of the
      *        resource must be a string type.
      */
+
     public void setStringSetValue(java.util.Collection<String> stringSetValue) {
         if (stringSetValue == null) {
             this.stringSetValue = null;
@@ -346,6 +363,7 @@ public class Resource implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Resource withStringSetValue(String... stringSetValue) {
         if (this.stringSetValue == null) {
             setStringSetValue(new com.amazonaws.internal.SdkInternalList<String>(
@@ -369,6 +387,7 @@ public class Resource implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Resource withStringSetValue(
             java.util.Collection<String> stringSetValue) {
         setStringSetValue(stringSetValue);

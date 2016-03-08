@@ -48,6 +48,7 @@ public class RemoveTagsRequest extends AmazonWebServiceRequest implements
      * @return The name of the load balancer. You can specify a maximum of one
      *         load balancer name.
      */
+
     public java.util.List<String> getLoadBalancerNames() {
         if (loadBalancerNames == null) {
             loadBalancerNames = new com.amazonaws.internal.SdkInternalList<String>();
@@ -65,6 +66,7 @@ public class RemoveTagsRequest extends AmazonWebServiceRequest implements
      *        The name of the load balancer. You can specify a maximum of one
      *        load balancer name.
      */
+
     public void setLoadBalancerNames(
             java.util.Collection<String> loadBalancerNames) {
         if (loadBalancerNames == null) {
@@ -94,6 +96,7 @@ public class RemoveTagsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RemoveTagsRequest withLoadBalancerNames(String... loadBalancerNames) {
         if (this.loadBalancerNames == null) {
             setLoadBalancerNames(new com.amazonaws.internal.SdkInternalList<String>(
@@ -117,6 +120,7 @@ public class RemoveTagsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RemoveTagsRequest withLoadBalancerNames(
             java.util.Collection<String> loadBalancerNames) {
         setLoadBalancerNames(loadBalancerNames);
@@ -130,6 +134,7 @@ public class RemoveTagsRequest extends AmazonWebServiceRequest implements
      * 
      * @return The list of tag keys to remove.
      */
+
     public java.util.List<TagKeyOnly> getTags() {
         if (tags == null) {
             tags = new com.amazonaws.internal.SdkInternalList<TagKeyOnly>();
@@ -145,6 +150,7 @@ public class RemoveTagsRequest extends AmazonWebServiceRequest implements
      * @param tags
      *        The list of tag keys to remove.
      */
+
     public void setTags(java.util.Collection<TagKeyOnly> tags) {
         if (tags == null) {
             this.tags = null;
@@ -170,6 +176,7 @@ public class RemoveTagsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RemoveTagsRequest withTags(TagKeyOnly... tags) {
         if (this.tags == null) {
             setTags(new com.amazonaws.internal.SdkInternalList<TagKeyOnly>(
@@ -191,6 +198,7 @@ public class RemoveTagsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RemoveTagsRequest withTags(java.util.Collection<TagKeyOnly> tags) {
         setTags(tags);
         return this;

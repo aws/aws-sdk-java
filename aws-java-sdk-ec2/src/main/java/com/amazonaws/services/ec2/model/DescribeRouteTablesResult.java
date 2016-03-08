@@ -37,6 +37,7 @@ public class DescribeRouteTablesResult implements Serializable, Cloneable {
      * 
      * @return Information about one or more route tables.
      */
+
     public java.util.List<RouteTable> getRouteTables() {
         if (routeTables == null) {
             routeTables = new com.amazonaws.internal.SdkInternalList<RouteTable>();
@@ -52,6 +53,7 @@ public class DescribeRouteTablesResult implements Serializable, Cloneable {
      * @param routeTables
      *        Information about one or more route tables.
      */
+
     public void setRouteTables(java.util.Collection<RouteTable> routeTables) {
         if (routeTables == null) {
             this.routeTables = null;
@@ -78,6 +80,7 @@ public class DescribeRouteTablesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeRouteTablesResult withRouteTables(RouteTable... routeTables) {
         if (this.routeTables == null) {
             setRouteTables(new com.amazonaws.internal.SdkInternalList<RouteTable>(
@@ -99,6 +102,7 @@ public class DescribeRouteTablesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeRouteTablesResult withRouteTables(
             java.util.Collection<RouteTable> routeTables) {
         setRouteTables(routeTables);

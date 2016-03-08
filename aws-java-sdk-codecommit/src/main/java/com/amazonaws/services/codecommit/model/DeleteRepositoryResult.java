@@ -40,6 +40,7 @@ public class DeleteRepositoryResult implements Serializable, Cloneable {
      * @param repositoryId
      *        The ID of the repository that was deleted.
      */
+
     public void setRepositoryId(String repositoryId) {
         this.repositoryId = repositoryId;
     }
@@ -51,6 +52,7 @@ public class DeleteRepositoryResult implements Serializable, Cloneable {
      * 
      * @return The ID of the repository that was deleted.
      */
+
     public String getRepositoryId() {
         return this.repositoryId;
     }
@@ -65,6 +67,7 @@ public class DeleteRepositoryResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteRepositoryResult withRepositoryId(String repositoryId) {
         setRepositoryId(repositoryId);
         return this;

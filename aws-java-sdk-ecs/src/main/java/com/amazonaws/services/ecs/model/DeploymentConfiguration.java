@@ -67,6 +67,7 @@ public class DeploymentConfiguration implements Serializable, Cloneable {
      *        multiplied by the <code>maximumPercent</code>/100, rounded down to
      *        the nearest integer value.
      */
+
     public void setMaximumPercent(Integer maximumPercent) {
         this.maximumPercent = maximumPercent;
     }
@@ -89,6 +90,7 @@ public class DeploymentConfiguration implements Serializable, Cloneable {
      *         <code>maximumPercent</code>/100, rounded down to the nearest
      *         integer value.
      */
+
     public Integer getMaximumPercent() {
         return this.maximumPercent;
     }
@@ -113,6 +115,7 @@ public class DeploymentConfiguration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeploymentConfiguration withMaximumPercent(Integer maximumPercent) {
         setMaximumPercent(maximumPercent);
         return this;
@@ -137,6 +140,7 @@ public class DeploymentConfiguration implements Serializable, Cloneable {
      *        <code>minimumHealthyPercent</code>/100, rounded up to the nearest
      *        integer value.
      */
+
     public void setMinimumHealthyPercent(Integer minimumHealthyPercent) {
         this.minimumHealthyPercent = minimumHealthyPercent;
     }
@@ -159,6 +163,7 @@ public class DeploymentConfiguration implements Serializable, Cloneable {
      *         <code>minimumHealthyPercent</code>/100, rounded up to the nearest
      *         integer value.
      */
+
     public Integer getMinimumHealthyPercent() {
         return this.minimumHealthyPercent;
     }
@@ -184,6 +189,7 @@ public class DeploymentConfiguration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeploymentConfiguration withMinimumHealthyPercent(
             Integer minimumHealthyPercent) {
         setMinimumHealthyPercent(minimumHealthyPercent);

@@ -53,6 +53,7 @@ public class IPSetSummary implements Serializable, Cloneable {
      *        <code>IPSetId</code> in a <a>GetIPSet</a> request to get detailed
      *        information about an <a>IPSet</a>.
      */
+
     public void setIPSetId(String iPSetId) {
         this.iPSetId = iPSetId;
     }
@@ -68,6 +69,7 @@ public class IPSetSummary implements Serializable, Cloneable {
      *         <code>IPSetId</code> in a <a>GetIPSet</a> request to get detailed
      *         information about an <a>IPSet</a>.
      */
+
     public String getIPSetId() {
         return this.iPSetId;
     }
@@ -86,6 +88,7 @@ public class IPSetSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public IPSetSummary withIPSetId(String iPSetId) {
         setIPSetId(iPSetId);
         return this;
@@ -101,6 +104,7 @@ public class IPSetSummary implements Serializable, Cloneable {
      *        A friendly name or description of the <a>IPSet</a>. You can't
      *        change the name of an <code>IPSet</code> after you create it.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -114,6 +118,7 @@ public class IPSetSummary implements Serializable, Cloneable {
      * @return A friendly name or description of the <a>IPSet</a>. You can't
      *         change the name of an <code>IPSet</code> after you create it.
      */
+
     public String getName() {
         return this.name;
     }
@@ -130,6 +135,7 @@ public class IPSetSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public IPSetSummary withName(String name) {
         setName(name);
         return this;

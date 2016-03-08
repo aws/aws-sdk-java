@@ -51,6 +51,7 @@ public class GetConsoleOutputResult implements Serializable, Cloneable {
      * @param instanceId
      *        The ID of the instance.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -62,6 +63,7 @@ public class GetConsoleOutputResult implements Serializable, Cloneable {
      * 
      * @return The ID of the instance.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
@@ -76,6 +78,7 @@ public class GetConsoleOutputResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetConsoleOutputResult withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;
@@ -89,6 +92,7 @@ public class GetConsoleOutputResult implements Serializable, Cloneable {
      * @param timestamp
      *        The time the output was last updated.
      */
+
     public void setTimestamp(java.util.Date timestamp) {
         this.timestamp = timestamp;
     }
@@ -100,6 +104,7 @@ public class GetConsoleOutputResult implements Serializable, Cloneable {
      * 
      * @return The time the output was last updated.
      */
+
     public java.util.Date getTimestamp() {
         return this.timestamp;
     }
@@ -114,6 +119,7 @@ public class GetConsoleOutputResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetConsoleOutputResult withTimestamp(java.util.Date timestamp) {
         setTimestamp(timestamp);
         return this;
@@ -129,6 +135,7 @@ public class GetConsoleOutputResult implements Serializable, Cloneable {
      *        The console output, Base64 encoded. If using a command line tool,
      *        the tools decode the output for you.
      */
+
     public void setOutput(String output) {
         this.output = output;
     }
@@ -142,6 +149,7 @@ public class GetConsoleOutputResult implements Serializable, Cloneable {
      * @return The console output, Base64 encoded. If using a command line tool,
      *         the tools decode the output for you.
      */
+
     public String getOutput() {
         return this.output;
     }
@@ -158,6 +166,7 @@ public class GetConsoleOutputResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetConsoleOutputResult withOutput(String output) {
         setOutput(output);
         return this;

@@ -61,6 +61,7 @@ public class GetMethodResponseRequest extends AmazonWebServiceRequest implements
      *        The <a>RestApi</a> identifier for the <a>MethodResponse</a>
      *        resource.
      */
+
     public void setRestApiId(String restApiId) {
         this.restApiId = restApiId;
     }
@@ -73,6 +74,7 @@ public class GetMethodResponseRequest extends AmazonWebServiceRequest implements
      * @return The <a>RestApi</a> identifier for the <a>MethodResponse</a>
      *         resource.
      */
+
     public String getRestApiId() {
         return this.restApiId;
     }
@@ -88,6 +90,7 @@ public class GetMethodResponseRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetMethodResponseRequest withRestApiId(String restApiId) {
         setRestApiId(restApiId);
         return this;
@@ -102,6 +105,7 @@ public class GetMethodResponseRequest extends AmazonWebServiceRequest implements
      *        The <a>Resource</a> identifier for the <a>MethodResponse</a>
      *        resource.
      */
+
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
     }
@@ -114,6 +118,7 @@ public class GetMethodResponseRequest extends AmazonWebServiceRequest implements
      * @return The <a>Resource</a> identifier for the <a>MethodResponse</a>
      *         resource.
      */
+
     public String getResourceId() {
         return this.resourceId;
     }
@@ -129,6 +134,7 @@ public class GetMethodResponseRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetMethodResponseRequest withResourceId(String resourceId) {
         setResourceId(resourceId);
         return this;
@@ -142,6 +148,7 @@ public class GetMethodResponseRequest extends AmazonWebServiceRequest implements
      * @param httpMethod
      *        The HTTP verb identifier for the parent <a>Method</a> resource.
      */
+
     public void setHttpMethod(String httpMethod) {
         this.httpMethod = httpMethod;
     }
@@ -153,6 +160,7 @@ public class GetMethodResponseRequest extends AmazonWebServiceRequest implements
      * 
      * @return The HTTP verb identifier for the parent <a>Method</a> resource.
      */
+
     public String getHttpMethod() {
         return this.httpMethod;
     }
@@ -167,6 +175,7 @@ public class GetMethodResponseRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetMethodResponseRequest withHttpMethod(String httpMethod) {
         setHttpMethod(httpMethod);
         return this;
@@ -180,6 +189,7 @@ public class GetMethodResponseRequest extends AmazonWebServiceRequest implements
      * @param statusCode
      *        The status code identifier for the <a>MethodResponse</a> resource.
      */
+
     public void setStatusCode(String statusCode) {
         this.statusCode = statusCode;
     }
@@ -192,6 +202,7 @@ public class GetMethodResponseRequest extends AmazonWebServiceRequest implements
      * @return The status code identifier for the <a>MethodResponse</a>
      *         resource.
      */
+
     public String getStatusCode() {
         return this.statusCode;
     }
@@ -206,6 +217,7 @@ public class GetMethodResponseRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetMethodResponseRequest withStatusCode(String statusCode) {
         setStatusCode(statusCode);
         return this;

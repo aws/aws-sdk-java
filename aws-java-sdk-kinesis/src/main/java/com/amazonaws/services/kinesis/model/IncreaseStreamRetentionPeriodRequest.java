@@ -49,6 +49,7 @@ public class IncreaseStreamRetentionPeriodRequest extends
      * @param streamName
      *        The name of the stream to modify.
      */
+
     public void setStreamName(String streamName) {
         this.streamName = streamName;
     }
@@ -60,6 +61,7 @@ public class IncreaseStreamRetentionPeriodRequest extends
      * 
      * @return The name of the stream to modify.
      */
+
     public String getStreamName() {
         return this.streamName;
     }
@@ -74,6 +76,7 @@ public class IncreaseStreamRetentionPeriodRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public IncreaseStreamRetentionPeriodRequest withStreamName(String streamName) {
         setStreamName(streamName);
         return this;
@@ -89,6 +92,7 @@ public class IncreaseStreamRetentionPeriodRequest extends
      *        The new retention period of the stream, in hours. Must be more
      *        than the current retention period.
      */
+
     public void setRetentionPeriodHours(Integer retentionPeriodHours) {
         this.retentionPeriodHours = retentionPeriodHours;
     }
@@ -102,6 +106,7 @@ public class IncreaseStreamRetentionPeriodRequest extends
      * @return The new retention period of the stream, in hours. Must be more
      *         than the current retention period.
      */
+
     public Integer getRetentionPeriodHours() {
         return this.retentionPeriodHours;
     }
@@ -118,6 +123,7 @@ public class IncreaseStreamRetentionPeriodRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public IncreaseStreamRetentionPeriodRequest withRetentionPeriodHours(
             Integer retentionPeriodHours) {
         setRetentionPeriodHours(retentionPeriodHours);

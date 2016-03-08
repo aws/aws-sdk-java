@@ -134,6 +134,7 @@ public class ErrorInformation implements Serializable, Cloneable {
      *        after the deployment is created but before it starts.</li>
      * @see ErrorCode
      */
+
     public void setCode(String code) {
         this.code = code;
     }
@@ -205,6 +206,7 @@ public class ErrorInformation implements Serializable, Cloneable {
      *         after the deployment is created but before it starts.</li>
      * @see ErrorCode
      */
+
     public String getCode() {
         return this.code;
     }
@@ -279,6 +281,7 @@ public class ErrorInformation implements Serializable, Cloneable {
      *         chained together.
      * @see ErrorCode
      */
+
     public ErrorInformation withCode(String code) {
         setCode(code);
         return this;
@@ -354,6 +357,7 @@ public class ErrorInformation implements Serializable, Cloneable {
      *         chained together.
      * @see ErrorCode
      */
+
     public void setCode(ErrorCode code) {
         this.code = code.toString();
     }
@@ -428,6 +432,7 @@ public class ErrorInformation implements Serializable, Cloneable {
      *         chained together.
      * @see ErrorCode
      */
+
     public ErrorInformation withCode(ErrorCode code) {
         setCode(code);
         return this;
@@ -441,6 +446,7 @@ public class ErrorInformation implements Serializable, Cloneable {
      * @param message
      *        An accompanying error message.
      */
+
     public void setMessage(String message) {
         this.message = message;
     }
@@ -452,6 +458,7 @@ public class ErrorInformation implements Serializable, Cloneable {
      * 
      * @return An accompanying error message.
      */
+
     public String getMessage() {
         return this.message;
     }
@@ -466,6 +473,7 @@ public class ErrorInformation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ErrorInformation withMessage(String message) {
         setMessage(message);
         return this;

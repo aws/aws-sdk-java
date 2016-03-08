@@ -103,6 +103,7 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
      * @param namespace
      *        The namespace of the metric, with or without spaces.
      */
+
     public void setNamespace(String namespace) {
         this.namespace = namespace;
     }
@@ -114,6 +115,7 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
      * 
      * @return The namespace of the metric, with or without spaces.
      */
+
     public String getNamespace() {
         return this.namespace;
     }
@@ -128,6 +130,7 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetMetricStatisticsRequest withNamespace(String namespace) {
         setNamespace(namespace);
         return this;
@@ -141,6 +144,7 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
      * @param metricName
      *        The name of the metric, with or without spaces.
      */
+
     public void setMetricName(String metricName) {
         this.metricName = metricName;
     }
@@ -152,6 +156,7 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the metric, with or without spaces.
      */
+
     public String getMetricName() {
         return this.metricName;
     }
@@ -166,6 +171,7 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetMetricStatisticsRequest withMetricName(String metricName) {
         setMetricName(metricName);
         return this;
@@ -178,6 +184,7 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
      * 
      * @return A list of dimensions describing qualities of the metric.
      */
+
     public java.util.List<Dimension> getDimensions() {
         if (dimensions == null) {
             dimensions = new com.amazonaws.internal.SdkInternalList<Dimension>();
@@ -193,6 +200,7 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
      * @param dimensions
      *        A list of dimensions describing qualities of the metric.
      */
+
     public void setDimensions(java.util.Collection<Dimension> dimensions) {
         if (dimensions == null) {
             this.dimensions = null;
@@ -219,6 +227,7 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetMetricStatisticsRequest withDimensions(Dimension... dimensions) {
         if (this.dimensions == null) {
             setDimensions(new com.amazonaws.internal.SdkInternalList<Dimension>(
@@ -240,6 +249,7 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetMetricStatisticsRequest withDimensions(
             java.util.Collection<Dimension> dimensions) {
         setDimensions(dimensions);
@@ -280,6 +290,7 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
      *        <code>GetMetricStatistics</code>.
      *        </p>
      */
+
     public void setStartTime(java.util.Date startTime) {
         this.startTime = startTime;
     }
@@ -317,6 +328,7 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
      *         <code>GetMetricStatistics</code>.
      *         </p>
      */
+
     public java.util.Date getStartTime() {
         return this.startTime;
     }
@@ -357,6 +369,7 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetMetricStatisticsRequest withStartTime(java.util.Date startTime) {
         setStartTime(startTime);
         return this;
@@ -376,6 +389,7 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
      *        datapoints up to the time stamp specified. The time stamp must be
      *        in ISO 8601 UTC format (e.g., 2014-09-03T23:00:00Z).
      */
+
     public void setEndTime(java.util.Date endTime) {
         this.endTime = endTime;
     }
@@ -393,6 +407,7 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
      *         datapoints up to the time stamp specified. The time stamp must be
      *         in ISO 8601 UTC format (e.g., 2014-09-03T23:00:00Z).
      */
+
     public java.util.Date getEndTime() {
         return this.endTime;
     }
@@ -413,6 +428,7 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetMetricStatisticsRequest withEndTime(java.util.Date endTime) {
         setEndTime(endTime);
         return this;
@@ -430,6 +446,7 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
      *        <code>Period</code> must be at least 60 seconds and must be a
      *        multiple of 60. The default value is 60.
      */
+
     public void setPeriod(Integer period) {
         this.period = period;
     }
@@ -445,6 +462,7 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
      *         <code>Period</code> must be at least 60 seconds and must be a
      *         multiple of 60. The default value is 60.
      */
+
     public Integer getPeriod() {
         return this.period;
     }
@@ -463,6 +481,7 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetMetricStatisticsRequest withPeriod(Integer period) {
         setPeriod(period);
         return this;
@@ -482,6 +501,7 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
      *         >Statistics</a> in the <i>Amazon CloudWatch Developer Guide</i>.
      * @see Statistic
      */
+
     public java.util.List<String> getStatistics() {
         if (statistics == null) {
             statistics = new com.amazonaws.internal.SdkInternalList<String>();
@@ -504,6 +524,7 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
      *        >Statistics</a> in the <i>Amazon CloudWatch Developer Guide</i>.
      * @see Statistic
      */
+
     public void setStatistics(java.util.Collection<String> statistics) {
         if (statistics == null) {
             this.statistics = null;
@@ -537,6 +558,7 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see Statistic
      */
+
     public GetMetricStatisticsRequest withStatistics(String... statistics) {
         if (this.statistics == null) {
             setStatistics(new com.amazonaws.internal.SdkInternalList<String>(
@@ -565,6 +587,7 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see Statistic
      */
+
     public GetMetricStatisticsRequest withStatistics(
             java.util.Collection<String> statistics) {
         setStatistics(statistics);
@@ -588,6 +611,7 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see Statistic
      */
+
     public GetMetricStatisticsRequest withStatistics(Statistic... statistics) {
         com.amazonaws.internal.SdkInternalList<String> statisticsCopy = new com.amazonaws.internal.SdkInternalList<String>(
                 statistics.length);
@@ -611,6 +635,7 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
      *        The unit for the metric.
      * @see StandardUnit
      */
+
     public void setUnit(String unit) {
         this.unit = unit;
     }
@@ -623,6 +648,7 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
      * @return The unit for the metric.
      * @see StandardUnit
      */
+
     public String getUnit() {
         return this.unit;
     }
@@ -638,6 +664,7 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see StandardUnit
      */
+
     public GetMetricStatisticsRequest withUnit(String unit) {
         setUnit(unit);
         return this;
@@ -654,6 +681,7 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see StandardUnit
      */
+
     public void setUnit(StandardUnit unit) {
         this.unit = unit.toString();
     }
@@ -669,6 +697,7 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see StandardUnit
      */
+
     public GetMetricStatisticsRequest withUnit(StandardUnit unit) {
         setUnit(unit);
         return this;

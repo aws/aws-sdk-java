@@ -44,6 +44,7 @@ public class MoveAddressToVpcResult implements Serializable, Cloneable {
      * @param allocationId
      *        The allocation ID for the Elastic IP address.
      */
+
     public void setAllocationId(String allocationId) {
         this.allocationId = allocationId;
     }
@@ -55,6 +56,7 @@ public class MoveAddressToVpcResult implements Serializable, Cloneable {
      * 
      * @return The allocation ID for the Elastic IP address.
      */
+
     public String getAllocationId() {
         return this.allocationId;
     }
@@ -69,6 +71,7 @@ public class MoveAddressToVpcResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MoveAddressToVpcResult withAllocationId(String allocationId) {
         setAllocationId(allocationId);
         return this;
@@ -83,6 +86,7 @@ public class MoveAddressToVpcResult implements Serializable, Cloneable {
      *        The status of the move of the IP address.
      * @see Status
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -95,6 +99,7 @@ public class MoveAddressToVpcResult implements Serializable, Cloneable {
      * @return The status of the move of the IP address.
      * @see Status
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -110,6 +115,7 @@ public class MoveAddressToVpcResult implements Serializable, Cloneable {
      *         chained together.
      * @see Status
      */
+
     public MoveAddressToVpcResult withStatus(String status) {
         setStatus(status);
         return this;
@@ -126,6 +132,7 @@ public class MoveAddressToVpcResult implements Serializable, Cloneable {
      *         chained together.
      * @see Status
      */
+
     public void setStatus(Status status) {
         this.status = status.toString();
     }
@@ -141,6 +148,7 @@ public class MoveAddressToVpcResult implements Serializable, Cloneable {
      *         chained together.
      * @see Status
      */
+
     public MoveAddressToVpcResult withStatus(Status status) {
         setStatus(status);
         return this;

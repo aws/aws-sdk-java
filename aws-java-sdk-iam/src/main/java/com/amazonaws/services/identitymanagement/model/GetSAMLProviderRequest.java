@@ -43,6 +43,7 @@ public class GetSAMLProviderRequest extends AmazonWebServiceRequest implements
      *        The Amazon Resource Name (ARN) of the SAML provider to get
      *        information about.
      */
+
     public void setSAMLProviderArn(String sAMLProviderArn) {
         this.sAMLProviderArn = sAMLProviderArn;
     }
@@ -56,6 +57,7 @@ public class GetSAMLProviderRequest extends AmazonWebServiceRequest implements
      * @return The Amazon Resource Name (ARN) of the SAML provider to get
      *         information about.
      */
+
     public String getSAMLProviderArn() {
         return this.sAMLProviderArn;
     }
@@ -72,6 +74,7 @@ public class GetSAMLProviderRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetSAMLProviderRequest withSAMLProviderArn(String sAMLProviderArn) {
         setSAMLProviderArn(sAMLProviderArn);
         return this;

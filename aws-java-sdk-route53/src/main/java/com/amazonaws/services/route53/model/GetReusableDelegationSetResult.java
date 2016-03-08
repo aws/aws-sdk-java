@@ -44,6 +44,7 @@ public class GetReusableDelegationSetResult implements Serializable, Cloneable {
      *        A complex type that contains the information about the nameservers
      *        for the specified delegation set ID.
      */
+
     public void setDelegationSet(DelegationSet delegationSet) {
         this.delegationSet = delegationSet;
     }
@@ -57,6 +58,7 @@ public class GetReusableDelegationSetResult implements Serializable, Cloneable {
      * @return A complex type that contains the information about the
      *         nameservers for the specified delegation set ID.
      */
+
     public DelegationSet getDelegationSet() {
         return this.delegationSet;
     }
@@ -73,6 +75,7 @@ public class GetReusableDelegationSetResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetReusableDelegationSetResult withDelegationSet(
             DelegationSet delegationSet) {
         setDelegationSet(delegationSet);

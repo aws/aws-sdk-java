@@ -66,6 +66,7 @@ public class ListInstanceProfilesForRoleRequest extends AmazonWebServiceRequest
      * @param roleName
      *        The name of the role to list instance profiles for.
      */
+
     public void setRoleName(String roleName) {
         this.roleName = roleName;
     }
@@ -77,6 +78,7 @@ public class ListInstanceProfilesForRoleRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the role to list instance profiles for.
      */
+
     public String getRoleName() {
         return this.roleName;
     }
@@ -91,6 +93,7 @@ public class ListInstanceProfilesForRoleRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListInstanceProfilesForRoleRequest withRoleName(String roleName) {
         setRoleName(roleName);
         return this;
@@ -110,6 +113,7 @@ public class ListInstanceProfilesForRoleRequest extends AmazonWebServiceRequest
      *        it to the value of the <code>Marker</code> element in the response
      *        that you received to indicate where the next call should start.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -128,6 +132,7 @@ public class ListInstanceProfilesForRoleRequest extends AmazonWebServiceRequest
      *         response that you received to indicate where the next call should
      *         start.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -148,6 +153,7 @@ public class ListInstanceProfilesForRoleRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListInstanceProfilesForRoleRequest withMarker(String marker) {
         setMarker(marker);
         return this;
@@ -183,6 +189,7 @@ public class ListInstanceProfilesForRoleRequest extends AmazonWebServiceRequest
      *        include in the subsequent call that tells the service where to
      *        continue from.
      */
+
     public void setMaxItems(Integer maxItems) {
         this.maxItems = maxItems;
     }
@@ -217,6 +224,7 @@ public class ListInstanceProfilesForRoleRequest extends AmazonWebServiceRequest
      *         include in the subsequent call that tells the service where to
      *         continue from.
      */
+
     public Integer getMaxItems() {
         return this.maxItems;
     }
@@ -253,6 +261,7 @@ public class ListInstanceProfilesForRoleRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListInstanceProfilesForRoleRequest withMaxItems(Integer maxItems) {
         setMaxItems(maxItems);
         return this;

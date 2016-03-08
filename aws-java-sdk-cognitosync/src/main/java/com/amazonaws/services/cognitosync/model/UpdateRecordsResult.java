@@ -31,6 +31,7 @@ public class UpdateRecordsResult implements Serializable, Cloneable {
      * 
      * @return A list of records that have been updated.
      */
+
     public java.util.List<Record> getRecords() {
         if (records == null) {
             records = new com.amazonaws.internal.SdkInternalList<Record>();
@@ -44,6 +45,7 @@ public class UpdateRecordsResult implements Serializable, Cloneable {
      * @param records
      *        A list of records that have been updated.
      */
+
     public void setRecords(java.util.Collection<Record> records) {
         if (records == null) {
             this.records = null;
@@ -68,6 +70,7 @@ public class UpdateRecordsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateRecordsResult withRecords(Record... records) {
         if (this.records == null) {
             setRecords(new com.amazonaws.internal.SdkInternalList<Record>(
@@ -87,6 +90,7 @@ public class UpdateRecordsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateRecordsResult withRecords(java.util.Collection<Record> records) {
         setRecords(records);
         return this;

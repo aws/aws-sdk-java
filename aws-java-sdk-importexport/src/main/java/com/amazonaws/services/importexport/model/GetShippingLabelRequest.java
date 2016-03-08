@@ -52,6 +52,7 @@ public class GetShippingLabelRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public java.util.List<String> getJobIds() {
         if (jobIds == null) {
             jobIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -62,6 +63,7 @@ public class GetShippingLabelRequest extends AmazonWebServiceRequest implements
     /**
      * @param jobIds
      */
+
     public void setJobIds(java.util.Collection<String> jobIds) {
         if (jobIds == null) {
             this.jobIds = null;
@@ -83,6 +85,7 @@ public class GetShippingLabelRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetShippingLabelRequest withJobIds(String... jobIds) {
         if (this.jobIds == null) {
             setJobIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -99,6 +102,7 @@ public class GetShippingLabelRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetShippingLabelRequest withJobIds(
             java.util.Collection<String> jobIds) {
         setJobIds(jobIds);
@@ -108,6 +112,7 @@ public class GetShippingLabelRequest extends AmazonWebServiceRequest implements
     /**
      * @param name
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -115,6 +120,7 @@ public class GetShippingLabelRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public String getName() {
         return this.name;
     }
@@ -124,6 +130,7 @@ public class GetShippingLabelRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetShippingLabelRequest withName(String name) {
         setName(name);
         return this;
@@ -132,6 +139,7 @@ public class GetShippingLabelRequest extends AmazonWebServiceRequest implements
     /**
      * @param company
      */
+
     public void setCompany(String company) {
         this.company = company;
     }
@@ -139,6 +147,7 @@ public class GetShippingLabelRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public String getCompany() {
         return this.company;
     }
@@ -148,6 +157,7 @@ public class GetShippingLabelRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetShippingLabelRequest withCompany(String company) {
         setCompany(company);
         return this;
@@ -156,6 +166,7 @@ public class GetShippingLabelRequest extends AmazonWebServiceRequest implements
     /**
      * @param phoneNumber
      */
+
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
@@ -163,6 +174,7 @@ public class GetShippingLabelRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public String getPhoneNumber() {
         return this.phoneNumber;
     }
@@ -172,6 +184,7 @@ public class GetShippingLabelRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetShippingLabelRequest withPhoneNumber(String phoneNumber) {
         setPhoneNumber(phoneNumber);
         return this;
@@ -180,6 +193,7 @@ public class GetShippingLabelRequest extends AmazonWebServiceRequest implements
     /**
      * @param country
      */
+
     public void setCountry(String country) {
         this.country = country;
     }
@@ -187,6 +201,7 @@ public class GetShippingLabelRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public String getCountry() {
         return this.country;
     }
@@ -196,6 +211,7 @@ public class GetShippingLabelRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetShippingLabelRequest withCountry(String country) {
         setCountry(country);
         return this;
@@ -204,6 +220,7 @@ public class GetShippingLabelRequest extends AmazonWebServiceRequest implements
     /**
      * @param stateOrProvince
      */
+
     public void setStateOrProvince(String stateOrProvince) {
         this.stateOrProvince = stateOrProvince;
     }
@@ -211,6 +228,7 @@ public class GetShippingLabelRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public String getStateOrProvince() {
         return this.stateOrProvince;
     }
@@ -220,6 +238,7 @@ public class GetShippingLabelRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetShippingLabelRequest withStateOrProvince(String stateOrProvince) {
         setStateOrProvince(stateOrProvince);
         return this;
@@ -228,6 +247,7 @@ public class GetShippingLabelRequest extends AmazonWebServiceRequest implements
     /**
      * @param city
      */
+
     public void setCity(String city) {
         this.city = city;
     }
@@ -235,6 +255,7 @@ public class GetShippingLabelRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public String getCity() {
         return this.city;
     }
@@ -244,6 +265,7 @@ public class GetShippingLabelRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetShippingLabelRequest withCity(String city) {
         setCity(city);
         return this;
@@ -252,6 +274,7 @@ public class GetShippingLabelRequest extends AmazonWebServiceRequest implements
     /**
      * @param postalCode
      */
+
     public void setPostalCode(String postalCode) {
         this.postalCode = postalCode;
     }
@@ -259,6 +282,7 @@ public class GetShippingLabelRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public String getPostalCode() {
         return this.postalCode;
     }
@@ -268,6 +292,7 @@ public class GetShippingLabelRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetShippingLabelRequest withPostalCode(String postalCode) {
         setPostalCode(postalCode);
         return this;
@@ -276,6 +301,7 @@ public class GetShippingLabelRequest extends AmazonWebServiceRequest implements
     /**
      * @param street1
      */
+
     public void setStreet1(String street1) {
         this.street1 = street1;
     }
@@ -283,6 +309,7 @@ public class GetShippingLabelRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public String getStreet1() {
         return this.street1;
     }
@@ -292,6 +319,7 @@ public class GetShippingLabelRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetShippingLabelRequest withStreet1(String street1) {
         setStreet1(street1);
         return this;
@@ -300,6 +328,7 @@ public class GetShippingLabelRequest extends AmazonWebServiceRequest implements
     /**
      * @param street2
      */
+
     public void setStreet2(String street2) {
         this.street2 = street2;
     }
@@ -307,6 +336,7 @@ public class GetShippingLabelRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public String getStreet2() {
         return this.street2;
     }
@@ -316,6 +346,7 @@ public class GetShippingLabelRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetShippingLabelRequest withStreet2(String street2) {
         setStreet2(street2);
         return this;
@@ -324,6 +355,7 @@ public class GetShippingLabelRequest extends AmazonWebServiceRequest implements
     /**
      * @param street3
      */
+
     public void setStreet3(String street3) {
         this.street3 = street3;
     }
@@ -331,6 +363,7 @@ public class GetShippingLabelRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public String getStreet3() {
         return this.street3;
     }
@@ -340,6 +373,7 @@ public class GetShippingLabelRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetShippingLabelRequest withStreet3(String street3) {
         setStreet3(street3);
         return this;
@@ -348,6 +382,7 @@ public class GetShippingLabelRequest extends AmazonWebServiceRequest implements
     /**
      * @param aPIVersion
      */
+
     public void setAPIVersion(String aPIVersion) {
         this.aPIVersion = aPIVersion;
     }
@@ -355,6 +390,7 @@ public class GetShippingLabelRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public String getAPIVersion() {
         return this.aPIVersion;
     }
@@ -364,6 +400,7 @@ public class GetShippingLabelRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetShippingLabelRequest withAPIVersion(String aPIVersion) {
         setAPIVersion(aPIVersion);
         return this;

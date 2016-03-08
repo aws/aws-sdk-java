@@ -38,6 +38,7 @@ public class CreateExportTaskResult implements Serializable, Cloneable {
      * @param taskId
      *        Id of the export task that got created.
      */
+
     public void setTaskId(String taskId) {
         this.taskId = taskId;
     }
@@ -49,6 +50,7 @@ public class CreateExportTaskResult implements Serializable, Cloneable {
      * 
      * @return Id of the export task that got created.
      */
+
     public String getTaskId() {
         return this.taskId;
     }
@@ -63,6 +65,7 @@ public class CreateExportTaskResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateExportTaskResult withTaskId(String taskId) {
         setTaskId(taskId);
         return this;

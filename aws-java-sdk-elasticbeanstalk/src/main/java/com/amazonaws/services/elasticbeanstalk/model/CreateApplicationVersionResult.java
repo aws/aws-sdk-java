@@ -41,6 +41,7 @@ public class CreateApplicationVersionResult implements Serializable, Cloneable {
      *        The <a>ApplicationVersionDescription</a> of the application
      *        version.
      */
+
     public void setApplicationVersion(
             ApplicationVersionDescription applicationVersion) {
         this.applicationVersion = applicationVersion;
@@ -54,6 +55,7 @@ public class CreateApplicationVersionResult implements Serializable, Cloneable {
      * @return The <a>ApplicationVersionDescription</a> of the application
      *         version.
      */
+
     public ApplicationVersionDescription getApplicationVersion() {
         return this.applicationVersion;
     }
@@ -69,6 +71,7 @@ public class CreateApplicationVersionResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateApplicationVersionResult withApplicationVersion(
             ApplicationVersionDescription applicationVersion) {
         setApplicationVersion(applicationVersion);

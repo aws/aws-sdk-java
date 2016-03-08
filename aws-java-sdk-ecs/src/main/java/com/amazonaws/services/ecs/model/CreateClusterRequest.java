@@ -47,6 +47,7 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements
      *        255 letters (uppercase and lowercase), numbers, hyphens, and
      *        underscores are allowed.
      */
+
     public void setClusterName(String clusterName) {
         this.clusterName = clusterName;
     }
@@ -63,6 +64,7 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements
      *         255 letters (uppercase and lowercase), numbers, hyphens, and
      *         underscores are allowed.
      */
+
     public String getClusterName() {
         return this.clusterName;
     }
@@ -82,6 +84,7 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateClusterRequest withClusterName(String clusterName) {
         setClusterName(clusterName);
         return this;

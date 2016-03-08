@@ -1010,6 +1010,7 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements
      *         </p>
      *         </li>
      */
+
     public java.util.Map<String, KeysAndAttributes> getRequestItems() {
         return requestItems;
     }
@@ -1324,6 +1325,7 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements
      *        </p>
      *        </li>
      */
+
     public void setRequestItems(
             java.util.Map<String, KeysAndAttributes> requestItems) {
         this.requestItems = requestItems;
@@ -1641,6 +1643,7 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchGetItemRequest withRequestItems(
             java.util.Map<String, KeysAndAttributes> requestItems) {
         setRequestItems(requestItems);
@@ -1663,6 +1666,7 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements
      * Removes all the entries added into RequestItems. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public BatchGetItemRequest clearRequestItemsEntries() {
         this.requestItems = null;
         return this;
@@ -1672,6 +1676,7 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements
      * @param returnConsumedCapacity
      * @see ReturnConsumedCapacity
      */
+
     public void setReturnConsumedCapacity(String returnConsumedCapacity) {
         this.returnConsumedCapacity = returnConsumedCapacity;
     }
@@ -1680,6 +1685,7 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements
      * @return
      * @see ReturnConsumedCapacity
      */
+
     public String getReturnConsumedCapacity() {
         return this.returnConsumedCapacity;
     }
@@ -1690,6 +1696,7 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ReturnConsumedCapacity
      */
+
     public BatchGetItemRequest withReturnConsumedCapacity(
             String returnConsumedCapacity) {
         setReturnConsumedCapacity(returnConsumedCapacity);
@@ -1702,6 +1709,7 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ReturnConsumedCapacity
      */
+
     public void setReturnConsumedCapacity(
             ReturnConsumedCapacity returnConsumedCapacity) {
         this.returnConsumedCapacity = returnConsumedCapacity.toString();
@@ -1713,6 +1721,7 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ReturnConsumedCapacity
      */
+
     public BatchGetItemRequest withReturnConsumedCapacity(
             ReturnConsumedCapacity returnConsumedCapacity) {
         setReturnConsumedCapacity(returnConsumedCapacity);

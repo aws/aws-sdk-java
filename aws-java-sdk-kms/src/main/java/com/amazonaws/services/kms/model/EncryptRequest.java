@@ -105,6 +105,7 @@ public class EncryptRequest extends AmazonWebServiceRequest implements
      *        <li>Alias Name Example - alias/MyAliasName</li>
      *        </ul>
      */
+
     public void setKeyId(String keyId) {
         this.keyId = keyId;
     }
@@ -140,6 +141,7 @@ public class EncryptRequest extends AmazonWebServiceRequest implements
      *         <li>Alias Name Example - alias/MyAliasName</li>
      *         </ul>
      */
+
     public String getKeyId() {
         return this.keyId;
     }
@@ -178,6 +180,7 @@ public class EncryptRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EncryptRequest withKeyId(String keyId) {
         setKeyId(keyId);
         return this;
@@ -196,6 +199,7 @@ public class EncryptRequest extends AmazonWebServiceRequest implements
      * @param plaintext
      *        Data to be encrypted.
      */
+
     public void setPlaintext(java.nio.ByteBuffer plaintext) {
         this.plaintext = plaintext;
     }
@@ -217,6 +221,7 @@ public class EncryptRequest extends AmazonWebServiceRequest implements
      * 
      * @return Data to be encrypted.
      */
+
     public java.nio.ByteBuffer getPlaintext() {
         return this.plaintext;
     }
@@ -231,6 +236,7 @@ public class EncryptRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EncryptRequest withPlaintext(java.nio.ByteBuffer plaintext) {
         setPlaintext(plaintext);
         return this;
@@ -253,6 +259,7 @@ public class EncryptRequest extends AmazonWebServiceRequest implements
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html"
      *         >Encryption Context</a>.
      */
+
     public java.util.Map<String, String> getEncryptionContext() {
         if (encryptionContext == null) {
             encryptionContext = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -278,6 +285,7 @@ public class EncryptRequest extends AmazonWebServiceRequest implements
      *        "http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html"
      *        >Encryption Context</a>.
      */
+
     public void setEncryptionContext(
             java.util.Map<String, String> encryptionContext) {
         this.encryptionContext = encryptionContext == null ? null
@@ -305,6 +313,7 @@ public class EncryptRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EncryptRequest withEncryptionContext(
             java.util.Map<String, String> encryptionContext) {
         setEncryptionContext(encryptionContext);
@@ -326,6 +335,7 @@ public class EncryptRequest extends AmazonWebServiceRequest implements
      * Removes all the entries added into EncryptionContext. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public EncryptRequest clearEncryptionContextEntries() {
         this.encryptionContext = null;
         return this;
@@ -349,6 +359,7 @@ public class EncryptRequest extends AmazonWebServiceRequest implements
      *         >Grant Tokens</a> in the <i>AWS Key Management Service Developer
      *         Guide</i>.
      */
+
     public java.util.List<String> getGrantTokens() {
         if (grantTokens == null) {
             grantTokens = new com.amazonaws.internal.SdkInternalList<String>();
@@ -375,6 +386,7 @@ public class EncryptRequest extends AmazonWebServiceRequest implements
      *        >Grant Tokens</a> in the <i>AWS Key Management Service Developer
      *        Guide</i>.
      */
+
     public void setGrantTokens(java.util.Collection<String> grantTokens) {
         if (grantTokens == null) {
             this.grantTokens = null;
@@ -412,6 +424,7 @@ public class EncryptRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EncryptRequest withGrantTokens(String... grantTokens) {
         if (this.grantTokens == null) {
             setGrantTokens(new com.amazonaws.internal.SdkInternalList<String>(
@@ -444,6 +457,7 @@ public class EncryptRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EncryptRequest withGrantTokens(
             java.util.Collection<String> grantTokens) {
         setGrantTokens(grantTokens);

@@ -41,6 +41,7 @@ public class ListReceiptFiltersResult implements Serializable, Cloneable {
      *         of a name, an IP address range, and whether to allow or block
      *         mail from it.
      */
+
     public java.util.List<ReceiptFilter> getFilters() {
         if (filters == null) {
             filters = new com.amazonaws.internal.SdkInternalList<ReceiptFilter>();
@@ -59,6 +60,7 @@ public class ListReceiptFiltersResult implements Serializable, Cloneable {
      *        a name, an IP address range, and whether to allow or block mail
      *        from it.
      */
+
     public void setFilters(java.util.Collection<ReceiptFilter> filters) {
         if (filters == null) {
             this.filters = null;
@@ -88,6 +90,7 @@ public class ListReceiptFiltersResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListReceiptFiltersResult withFilters(ReceiptFilter... filters) {
         if (this.filters == null) {
             setFilters(new com.amazonaws.internal.SdkInternalList<ReceiptFilter>(
@@ -112,6 +115,7 @@ public class ListReceiptFiltersResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListReceiptFiltersResult withFilters(
             java.util.Collection<ReceiptFilter> filters) {
         setFilters(filters);

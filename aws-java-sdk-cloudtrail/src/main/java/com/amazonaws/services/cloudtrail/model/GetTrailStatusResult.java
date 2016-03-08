@@ -167,6 +167,7 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
      * @param isLogging
      *        Whether the CloudTrail is currently logging AWS API calls.
      */
+
     public void setIsLogging(Boolean isLogging) {
         this.isLogging = isLogging;
     }
@@ -178,6 +179,7 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
      * 
      * @return Whether the CloudTrail is currently logging AWS API calls.
      */
+
     public Boolean getIsLogging() {
         return this.isLogging;
     }
@@ -192,6 +194,7 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetTrailStatusResult withIsLogging(Boolean isLogging) {
         setIsLogging(isLogging);
         return this;
@@ -204,6 +207,7 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
      * 
      * @return Whether the CloudTrail is currently logging AWS API calls.
      */
+
     public Boolean isLogging() {
         return this.isLogging;
     }
@@ -234,6 +238,7 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
      *        to specify the new bucket, or fix the existing objects so that
      *        CloudTrail can again write to the bucket.
      */
+
     public void setLatestDeliveryError(String latestDeliveryError) {
         this.latestDeliveryError = latestDeliveryError;
     }
@@ -263,6 +268,7 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
      *         to specify the new bucket, or fix the existing objects so that
      *         CloudTrail can again write to the bucket.
      */
+
     public String getLatestDeliveryError() {
         return this.latestDeliveryError;
     }
@@ -295,6 +301,7 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetTrailStatusResult withLatestDeliveryError(
             String latestDeliveryError) {
         setLatestDeliveryError(latestDeliveryError);
@@ -317,6 +324,7 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
      *        href="http://docs.aws.amazon.com/sns/latest/dg/welcome.html"
      *        >Amazon SNS Developer Guide</a>.
      */
+
     public void setLatestNotificationError(String latestNotificationError) {
         this.latestNotificationError = latestNotificationError;
     }
@@ -336,6 +344,7 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
      *         href="http://docs.aws.amazon.com/sns/latest/dg/welcome.html"
      *         >Amazon SNS Developer Guide</a>.
      */
+
     public String getLatestNotificationError() {
         return this.latestNotificationError;
     }
@@ -358,6 +367,7 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetTrailStatusResult withLatestNotificationError(
             String latestNotificationError) {
         setLatestNotificationError(latestNotificationError);
@@ -374,6 +384,7 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
      *        Specifies the date and time that CloudTrail last delivered log
      *        files to an account's Amazon S3 bucket.
      */
+
     public void setLatestDeliveryTime(java.util.Date latestDeliveryTime) {
         this.latestDeliveryTime = latestDeliveryTime;
     }
@@ -387,6 +398,7 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
      * @return Specifies the date and time that CloudTrail last delivered log
      *         files to an account's Amazon S3 bucket.
      */
+
     public java.util.Date getLatestDeliveryTime() {
         return this.latestDeliveryTime;
     }
@@ -403,6 +415,7 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetTrailStatusResult withLatestDeliveryTime(
             java.util.Date latestDeliveryTime) {
         setLatestDeliveryTime(latestDeliveryTime);
@@ -421,6 +434,7 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
      *        notification that CloudTrail has written a new log file to an
      *        account's Amazon S3 bucket.
      */
+
     public void setLatestNotificationTime(java.util.Date latestNotificationTime) {
         this.latestNotificationTime = latestNotificationTime;
     }
@@ -436,6 +450,7 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
      *         notification that CloudTrail has written a new log file to an
      *         account's Amazon S3 bucket.
      */
+
     public java.util.Date getLatestNotificationTime() {
         return this.latestNotificationTime;
     }
@@ -454,6 +469,7 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetTrailStatusResult withLatestNotificationTime(
             java.util.Date latestNotificationTime) {
         setLatestNotificationTime(latestNotificationTime);
@@ -470,6 +486,7 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
      *        Specifies the most recent date and time when CloudTrail started
      *        recording API calls for an AWS account.
      */
+
     public void setStartLoggingTime(java.util.Date startLoggingTime) {
         this.startLoggingTime = startLoggingTime;
     }
@@ -483,6 +500,7 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
      * @return Specifies the most recent date and time when CloudTrail started
      *         recording API calls for an AWS account.
      */
+
     public java.util.Date getStartLoggingTime() {
         return this.startLoggingTime;
     }
@@ -499,6 +517,7 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetTrailStatusResult withStartLoggingTime(
             java.util.Date startLoggingTime) {
         setStartLoggingTime(startLoggingTime);
@@ -515,6 +534,7 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
      *        Specifies the most recent date and time when CloudTrail stopped
      *        recording API calls for an AWS account.
      */
+
     public void setStopLoggingTime(java.util.Date stopLoggingTime) {
         this.stopLoggingTime = stopLoggingTime;
     }
@@ -528,6 +548,7 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
      * @return Specifies the most recent date and time when CloudTrail stopped
      *         recording API calls for an AWS account.
      */
+
     public java.util.Date getStopLoggingTime() {
         return this.stopLoggingTime;
     }
@@ -544,6 +565,7 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetTrailStatusResult withStopLoggingTime(
             java.util.Date stopLoggingTime) {
         setStopLoggingTime(stopLoggingTime);
@@ -560,6 +582,7 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
      *        Displays any CloudWatch Logs error that CloudTrail encountered
      *        when attempting to deliver logs to CloudWatch Logs.
      */
+
     public void setLatestCloudWatchLogsDeliveryError(
             String latestCloudWatchLogsDeliveryError) {
         this.latestCloudWatchLogsDeliveryError = latestCloudWatchLogsDeliveryError;
@@ -574,6 +597,7 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
      * @return Displays any CloudWatch Logs error that CloudTrail encountered
      *         when attempting to deliver logs to CloudWatch Logs.
      */
+
     public String getLatestCloudWatchLogsDeliveryError() {
         return this.latestCloudWatchLogsDeliveryError;
     }
@@ -590,6 +614,7 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetTrailStatusResult withLatestCloudWatchLogsDeliveryError(
             String latestCloudWatchLogsDeliveryError) {
         setLatestCloudWatchLogsDeliveryError(latestCloudWatchLogsDeliveryError);
@@ -606,6 +631,7 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
      *        Displays the most recent date and time when CloudTrail delivered
      *        logs to CloudWatch Logs.
      */
+
     public void setLatestCloudWatchLogsDeliveryTime(
             java.util.Date latestCloudWatchLogsDeliveryTime) {
         this.latestCloudWatchLogsDeliveryTime = latestCloudWatchLogsDeliveryTime;
@@ -620,6 +646,7 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
      * @return Displays the most recent date and time when CloudTrail delivered
      *         logs to CloudWatch Logs.
      */
+
     public java.util.Date getLatestCloudWatchLogsDeliveryTime() {
         return this.latestCloudWatchLogsDeliveryTime;
     }
@@ -636,6 +663,7 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetTrailStatusResult withLatestCloudWatchLogsDeliveryTime(
             java.util.Date latestCloudWatchLogsDeliveryTime) {
         setLatestCloudWatchLogsDeliveryTime(latestCloudWatchLogsDeliveryTime);
@@ -652,6 +680,7 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
      *        Specifies the date and time that CloudTrail last delivered a
      *        digest file to an account's Amazon S3 bucket.
      */
+
     public void setLatestDigestDeliveryTime(
             java.util.Date latestDigestDeliveryTime) {
         this.latestDigestDeliveryTime = latestDigestDeliveryTime;
@@ -666,6 +695,7 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
      * @return Specifies the date and time that CloudTrail last delivered a
      *         digest file to an account's Amazon S3 bucket.
      */
+
     public java.util.Date getLatestDigestDeliveryTime() {
         return this.latestDigestDeliveryTime;
     }
@@ -682,6 +712,7 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetTrailStatusResult withLatestDigestDeliveryTime(
             java.util.Date latestDigestDeliveryTime) {
         setLatestDigestDeliveryTime(latestDigestDeliveryTime);
@@ -714,6 +745,7 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
      *        to specify the new bucket, or fix the existing objects so that
      *        CloudTrail can again write to the bucket.
      */
+
     public void setLatestDigestDeliveryError(String latestDigestDeliveryError) {
         this.latestDigestDeliveryError = latestDigestDeliveryError;
     }
@@ -743,6 +775,7 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
      *         to specify the new bucket, or fix the existing objects so that
      *         CloudTrail can again write to the bucket.
      */
+
     public String getLatestDigestDeliveryError() {
         return this.latestDigestDeliveryError;
     }
@@ -775,6 +808,7 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetTrailStatusResult withLatestDigestDeliveryError(
             String latestDigestDeliveryError) {
         setLatestDigestDeliveryError(latestDigestDeliveryError);
@@ -789,6 +823,7 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
      * @param latestDeliveryAttemptTime
      *        This field is deprecated.
      */
+
     public void setLatestDeliveryAttemptTime(String latestDeliveryAttemptTime) {
         this.latestDeliveryAttemptTime = latestDeliveryAttemptTime;
     }
@@ -800,6 +835,7 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
      * 
      * @return This field is deprecated.
      */
+
     public String getLatestDeliveryAttemptTime() {
         return this.latestDeliveryAttemptTime;
     }
@@ -814,6 +850,7 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetTrailStatusResult withLatestDeliveryAttemptTime(
             String latestDeliveryAttemptTime) {
         setLatestDeliveryAttemptTime(latestDeliveryAttemptTime);
@@ -828,6 +865,7 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
      * @param latestNotificationAttemptTime
      *        This field is deprecated.
      */
+
     public void setLatestNotificationAttemptTime(
             String latestNotificationAttemptTime) {
         this.latestNotificationAttemptTime = latestNotificationAttemptTime;
@@ -840,6 +878,7 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
      * 
      * @return This field is deprecated.
      */
+
     public String getLatestNotificationAttemptTime() {
         return this.latestNotificationAttemptTime;
     }
@@ -854,6 +893,7 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetTrailStatusResult withLatestNotificationAttemptTime(
             String latestNotificationAttemptTime) {
         setLatestNotificationAttemptTime(latestNotificationAttemptTime);
@@ -868,6 +908,7 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
      * @param latestNotificationAttemptSucceeded
      *        This field is deprecated.
      */
+
     public void setLatestNotificationAttemptSucceeded(
             String latestNotificationAttemptSucceeded) {
         this.latestNotificationAttemptSucceeded = latestNotificationAttemptSucceeded;
@@ -880,6 +921,7 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
      * 
      * @return This field is deprecated.
      */
+
     public String getLatestNotificationAttemptSucceeded() {
         return this.latestNotificationAttemptSucceeded;
     }
@@ -894,6 +936,7 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetTrailStatusResult withLatestNotificationAttemptSucceeded(
             String latestNotificationAttemptSucceeded) {
         setLatestNotificationAttemptSucceeded(latestNotificationAttemptSucceeded);
@@ -908,6 +951,7 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
      * @param latestDeliveryAttemptSucceeded
      *        This field is deprecated.
      */
+
     public void setLatestDeliveryAttemptSucceeded(
             String latestDeliveryAttemptSucceeded) {
         this.latestDeliveryAttemptSucceeded = latestDeliveryAttemptSucceeded;
@@ -920,6 +964,7 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
      * 
      * @return This field is deprecated.
      */
+
     public String getLatestDeliveryAttemptSucceeded() {
         return this.latestDeliveryAttemptSucceeded;
     }
@@ -934,6 +979,7 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetTrailStatusResult withLatestDeliveryAttemptSucceeded(
             String latestDeliveryAttemptSucceeded) {
         setLatestDeliveryAttemptSucceeded(latestDeliveryAttemptSucceeded);
@@ -948,6 +994,7 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
      * @param timeLoggingStarted
      *        This field is deprecated.
      */
+
     public void setTimeLoggingStarted(String timeLoggingStarted) {
         this.timeLoggingStarted = timeLoggingStarted;
     }
@@ -959,6 +1006,7 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
      * 
      * @return This field is deprecated.
      */
+
     public String getTimeLoggingStarted() {
         return this.timeLoggingStarted;
     }
@@ -973,6 +1021,7 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetTrailStatusResult withTimeLoggingStarted(String timeLoggingStarted) {
         setTimeLoggingStarted(timeLoggingStarted);
         return this;
@@ -986,6 +1035,7 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
      * @param timeLoggingStopped
      *        This field is deprecated.
      */
+
     public void setTimeLoggingStopped(String timeLoggingStopped) {
         this.timeLoggingStopped = timeLoggingStopped;
     }
@@ -997,6 +1047,7 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
      * 
      * @return This field is deprecated.
      */
+
     public String getTimeLoggingStopped() {
         return this.timeLoggingStopped;
     }
@@ -1011,6 +1062,7 @@ public class GetTrailStatusResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetTrailStatusResult withTimeLoggingStopped(String timeLoggingStopped) {
         setTimeLoggingStopped(timeLoggingStopped);
         return this;

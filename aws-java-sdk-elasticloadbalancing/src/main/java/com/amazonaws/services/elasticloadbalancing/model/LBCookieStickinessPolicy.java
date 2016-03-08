@@ -78,6 +78,7 @@ public class LBCookieStickinessPolicy implements Serializable, Cloneable {
      *        The name for the policy being created. The name must be unique
      *        within the set of policies for this load balancer.
      */
+
     public void setPolicyName(String policyName) {
         this.policyName = policyName;
     }
@@ -91,6 +92,7 @@ public class LBCookieStickinessPolicy implements Serializable, Cloneable {
      * @return The name for the policy being created. The name must be unique
      *         within the set of policies for this load balancer.
      */
+
     public String getPolicyName() {
         return this.policyName;
     }
@@ -107,6 +109,7 @@ public class LBCookieStickinessPolicy implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LBCookieStickinessPolicy withPolicyName(String policyName) {
         setPolicyName(policyName);
         return this;
@@ -124,6 +127,7 @@ public class LBCookieStickinessPolicy implements Serializable, Cloneable {
      *        considered stale. If this parameter is not specified, the
      *        stickiness session lasts for the duration of the browser session.
      */
+
     public void setCookieExpirationPeriod(Long cookieExpirationPeriod) {
         this.cookieExpirationPeriod = cookieExpirationPeriod;
     }
@@ -139,6 +143,7 @@ public class LBCookieStickinessPolicy implements Serializable, Cloneable {
      *         considered stale. If this parameter is not specified, the
      *         stickiness session lasts for the duration of the browser session.
      */
+
     public Long getCookieExpirationPeriod() {
         return this.cookieExpirationPeriod;
     }
@@ -157,6 +162,7 @@ public class LBCookieStickinessPolicy implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LBCookieStickinessPolicy withCookieExpirationPeriod(
             Long cookieExpirationPeriod) {
         setCookieExpirationPeriod(cookieExpirationPeriod);

@@ -66,6 +66,7 @@ public class AuthorizationData implements Serializable, Cloneable {
      *        presented in the format <code>user:password</code> for private
      *        registry authentication using <code>docker login</code>.
      */
+
     public void setAuthorizationToken(String authorizationToken) {
         this.authorizationToken = authorizationToken;
     }
@@ -83,6 +84,7 @@ public class AuthorizationData implements Serializable, Cloneable {
      *         presented in the format <code>user:password</code> for private
      *         registry authentication using <code>docker login</code>.
      */
+
     public String getAuthorizationToken() {
         return this.authorizationToken;
     }
@@ -103,6 +105,7 @@ public class AuthorizationData implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AuthorizationData withAuthorizationToken(String authorizationToken) {
         setAuthorizationToken(authorizationToken);
         return this;
@@ -118,6 +121,7 @@ public class AuthorizationData implements Serializable, Cloneable {
      *        The Unix time in seconds and milliseconds when the authorization
      *        token expires. Authorization tokens are valid for 12 hours.
      */
+
     public void setExpiresAt(java.util.Date expiresAt) {
         this.expiresAt = expiresAt;
     }
@@ -131,6 +135,7 @@ public class AuthorizationData implements Serializable, Cloneable {
      * @return The Unix time in seconds and milliseconds when the authorization
      *         token expires. Authorization tokens are valid for 12 hours.
      */
+
     public java.util.Date getExpiresAt() {
         return this.expiresAt;
     }
@@ -147,6 +152,7 @@ public class AuthorizationData implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AuthorizationData withExpiresAt(java.util.Date expiresAt) {
         setExpiresAt(expiresAt);
         return this;
@@ -169,6 +175,7 @@ public class AuthorizationData implements Serializable, Cloneable {
      *        For example,
      *        <code>https://012345678910.dkr.ecr.us-east-1.amazonaws.com</code>.
      */
+
     public void setProxyEndpoint(String proxyEndpoint) {
         this.proxyEndpoint = proxyEndpoint;
     }
@@ -190,6 +197,7 @@ public class AuthorizationData implements Serializable, Cloneable {
      *         <code>https://012345678910.dkr.ecr.us-east-1.amazonaws.com</code>
      *         .
      */
+
     public String getProxyEndpoint() {
         return this.proxyEndpoint;
     }
@@ -213,6 +221,7 @@ public class AuthorizationData implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AuthorizationData withProxyEndpoint(String proxyEndpoint) {
         setProxyEndpoint(proxyEndpoint);
         return this;

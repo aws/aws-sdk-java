@@ -42,6 +42,7 @@ public class ReadPipelineRequest extends AmazonWebServiceRequest implements
      * @param id
      *        The identifier of the pipeline to read.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -53,6 +54,7 @@ public class ReadPipelineRequest extends AmazonWebServiceRequest implements
      * 
      * @return The identifier of the pipeline to read.
      */
+
     public String getId() {
         return this.id;
     }
@@ -67,6 +69,7 @@ public class ReadPipelineRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReadPipelineRequest withId(String id) {
         setId(id);
         return this;

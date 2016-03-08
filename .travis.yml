@@ -13,11 +13,11 @@ matrix:
       env: MODULES_TO_SKIP=\!aws-java-sdk-osgi
     - jdk: openjdk7
       env: MODULES_TO_SKIP=\!aws-java-sdk-osgi,\!aws-java-sdk-code-generator
-    - jdk: oraclejdk7  
+    - jdk: oraclejdk7
       env: MODULES_TO_SKIP=\!aws-java-sdk-osgi,\!aws-java-sdk-code-generator
-    - jdk: oraclejdk8  
-      env: MODULES_TO_SKIP=\!aws-java-sdk-osgi,\!aws-java-sdk-code-generator  
-    
+    - jdk: oraclejdk8
+      env: MODULES_TO_SKIP=\!aws-java-sdk-osgi,\!aws-java-sdk-code-generator
+
 install: /bin/true
 sudo: false
 script: mvn install -pl ${MODULES_TO_SKIP}

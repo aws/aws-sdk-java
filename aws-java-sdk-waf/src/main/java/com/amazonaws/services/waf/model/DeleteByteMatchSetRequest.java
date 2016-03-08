@@ -52,6 +52,7 @@ public class DeleteByteMatchSetRequest extends AmazonWebServiceRequest
      *        you want to delete. <code>ByteMatchSetId</code> is returned by
      *        <a>CreateByteMatchSet</a> and by <a>ListByteMatchSets</a>.
      */
+
     public void setByteMatchSetId(String byteMatchSetId) {
         this.byteMatchSetId = byteMatchSetId;
     }
@@ -67,6 +68,7 @@ public class DeleteByteMatchSetRequest extends AmazonWebServiceRequest
      *         you want to delete. <code>ByteMatchSetId</code> is returned by
      *         <a>CreateByteMatchSet</a> and by <a>ListByteMatchSets</a>.
      */
+
     public String getByteMatchSetId() {
         return this.byteMatchSetId;
     }
@@ -85,6 +87,7 @@ public class DeleteByteMatchSetRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteByteMatchSetRequest withByteMatchSetId(String byteMatchSetId) {
         setByteMatchSetId(byteMatchSetId);
         return this;
@@ -99,6 +102,7 @@ public class DeleteByteMatchSetRequest extends AmazonWebServiceRequest
      *        The value returned by the most recent call to
      *        <a>GetChangeToken</a>.
      */
+
     public void setChangeToken(String changeToken) {
         this.changeToken = changeToken;
     }
@@ -111,6 +115,7 @@ public class DeleteByteMatchSetRequest extends AmazonWebServiceRequest
      * @return The value returned by the most recent call to
      *         <a>GetChangeToken</a>.
      */
+
     public String getChangeToken() {
         return this.changeToken;
     }
@@ -126,6 +131,7 @@ public class DeleteByteMatchSetRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteByteMatchSetRequest withChangeToken(String changeToken) {
         setChangeToken(changeToken);
         return this;

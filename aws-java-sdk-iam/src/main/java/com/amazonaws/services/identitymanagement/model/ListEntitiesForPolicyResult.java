@@ -71,6 +71,7 @@ public class ListEntitiesForPolicyResult implements Serializable, Cloneable {
      * 
      * @return A list of groups that the policy is attached to.
      */
+
     public java.util.List<PolicyGroup> getPolicyGroups() {
         if (policyGroups == null) {
             policyGroups = new com.amazonaws.internal.SdkInternalList<PolicyGroup>();
@@ -86,6 +87,7 @@ public class ListEntitiesForPolicyResult implements Serializable, Cloneable {
      * @param policyGroups
      *        A list of groups that the policy is attached to.
      */
+
     public void setPolicyGroups(java.util.Collection<PolicyGroup> policyGroups) {
         if (policyGroups == null) {
             this.policyGroups = null;
@@ -112,6 +114,7 @@ public class ListEntitiesForPolicyResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListEntitiesForPolicyResult withPolicyGroups(
             PolicyGroup... policyGroups) {
         if (this.policyGroups == null) {
@@ -134,6 +137,7 @@ public class ListEntitiesForPolicyResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListEntitiesForPolicyResult withPolicyGroups(
             java.util.Collection<PolicyGroup> policyGroups) {
         setPolicyGroups(policyGroups);
@@ -147,6 +151,7 @@ public class ListEntitiesForPolicyResult implements Serializable, Cloneable {
      * 
      * @return A list of users that the policy is attached to.
      */
+
     public java.util.List<PolicyUser> getPolicyUsers() {
         if (policyUsers == null) {
             policyUsers = new com.amazonaws.internal.SdkInternalList<PolicyUser>();
@@ -162,6 +167,7 @@ public class ListEntitiesForPolicyResult implements Serializable, Cloneable {
      * @param policyUsers
      *        A list of users that the policy is attached to.
      */
+
     public void setPolicyUsers(java.util.Collection<PolicyUser> policyUsers) {
         if (policyUsers == null) {
             this.policyUsers = null;
@@ -188,6 +194,7 @@ public class ListEntitiesForPolicyResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListEntitiesForPolicyResult withPolicyUsers(
             PolicyUser... policyUsers) {
         if (this.policyUsers == null) {
@@ -210,6 +217,7 @@ public class ListEntitiesForPolicyResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListEntitiesForPolicyResult withPolicyUsers(
             java.util.Collection<PolicyUser> policyUsers) {
         setPolicyUsers(policyUsers);
@@ -223,6 +231,7 @@ public class ListEntitiesForPolicyResult implements Serializable, Cloneable {
      * 
      * @return A list of roles that the policy is attached to.
      */
+
     public java.util.List<PolicyRole> getPolicyRoles() {
         if (policyRoles == null) {
             policyRoles = new com.amazonaws.internal.SdkInternalList<PolicyRole>();
@@ -238,6 +247,7 @@ public class ListEntitiesForPolicyResult implements Serializable, Cloneable {
      * @param policyRoles
      *        A list of roles that the policy is attached to.
      */
+
     public void setPolicyRoles(java.util.Collection<PolicyRole> policyRoles) {
         if (policyRoles == null) {
             this.policyRoles = null;
@@ -264,6 +274,7 @@ public class ListEntitiesForPolicyResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListEntitiesForPolicyResult withPolicyRoles(
             PolicyRole... policyRoles) {
         if (this.policyRoles == null) {
@@ -286,6 +297,7 @@ public class ListEntitiesForPolicyResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListEntitiesForPolicyResult withPolicyRoles(
             java.util.Collection<PolicyRole> policyRoles) {
         setPolicyRoles(policyRoles);
@@ -313,6 +325,7 @@ public class ListEntitiesForPolicyResult implements Serializable, Cloneable {
      *        <code>IsTruncated</code> after every call to ensure that you
      *        receive all of your results.
      */
+
     public void setIsTruncated(Boolean isTruncated) {
         this.isTruncated = isTruncated;
     }
@@ -337,6 +350,7 @@ public class ListEntitiesForPolicyResult implements Serializable, Cloneable {
      *         <code>IsTruncated</code> after every call to ensure that you
      *         receive all of your results.
      */
+
     public Boolean getIsTruncated() {
         return this.isTruncated;
     }
@@ -364,6 +378,7 @@ public class ListEntitiesForPolicyResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListEntitiesForPolicyResult withIsTruncated(Boolean isTruncated) {
         setIsTruncated(isTruncated);
         return this;
@@ -389,6 +404,7 @@ public class ListEntitiesForPolicyResult implements Serializable, Cloneable {
      *         <code>IsTruncated</code> after every call to ensure that you
      *         receive all of your results.
      */
+
     public Boolean isTruncated() {
         return this.isTruncated;
     }
@@ -405,6 +421,7 @@ public class ListEntitiesForPolicyResult implements Serializable, Cloneable {
      *        is present and contains the value to use for the
      *        <code>Marker</code> parameter in a subsequent pagination request.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -420,6 +437,7 @@ public class ListEntitiesForPolicyResult implements Serializable, Cloneable {
      *         is present and contains the value to use for the
      *         <code>Marker</code> parameter in a subsequent pagination request.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -438,6 +456,7 @@ public class ListEntitiesForPolicyResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListEntitiesForPolicyResult withMarker(String marker) {
         setMarker(marker);
         return this;

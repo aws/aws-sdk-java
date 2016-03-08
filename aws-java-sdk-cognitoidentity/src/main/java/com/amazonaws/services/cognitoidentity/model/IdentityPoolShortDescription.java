@@ -34,6 +34,7 @@ public class IdentityPoolShortDescription implements Serializable, Cloneable {
      * @param identityPoolId
      *        An identity pool ID in the format REGION:GUID.
      */
+
     public void setIdentityPoolId(String identityPoolId) {
         this.identityPoolId = identityPoolId;
     }
@@ -43,6 +44,7 @@ public class IdentityPoolShortDescription implements Serializable, Cloneable {
      * 
      * @return An identity pool ID in the format REGION:GUID.
      */
+
     public String getIdentityPoolId() {
         return this.identityPoolId;
     }
@@ -55,6 +57,7 @@ public class IdentityPoolShortDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public IdentityPoolShortDescription withIdentityPoolId(String identityPoolId) {
         setIdentityPoolId(identityPoolId);
         return this;
@@ -66,6 +69,7 @@ public class IdentityPoolShortDescription implements Serializable, Cloneable {
      * @param identityPoolName
      *        A string that you provide.
      */
+
     public void setIdentityPoolName(String identityPoolName) {
         this.identityPoolName = identityPoolName;
     }
@@ -75,6 +79,7 @@ public class IdentityPoolShortDescription implements Serializable, Cloneable {
      * 
      * @return A string that you provide.
      */
+
     public String getIdentityPoolName() {
         return this.identityPoolName;
     }
@@ -87,6 +92,7 @@ public class IdentityPoolShortDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public IdentityPoolShortDescription withIdentityPoolName(
             String identityPoolName) {
         setIdentityPoolName(identityPoolName);

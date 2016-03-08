@@ -54,6 +54,7 @@ public class CachedMethods implements Serializable, Cloneable {
      *        HEAD requests) and 3 (for caching responses to GET, HEAD, and
      *        OPTIONS requests).
      */
+
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
@@ -69,6 +70,7 @@ public class CachedMethods implements Serializable, Cloneable {
      *         HEAD requests) and 3 (for caching responses to GET, HEAD, and
      *         OPTIONS requests).
      */
+
     public Integer getQuantity() {
         return this.quantity;
     }
@@ -87,6 +89,7 @@ public class CachedMethods implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CachedMethods withQuantity(Integer quantity) {
         setQuantity(quantity);
         return this;
@@ -100,6 +103,7 @@ public class CachedMethods implements Serializable, Cloneable {
      *         CloudFront to cache responses to.
      * @see Method
      */
+
     public java.util.List<String> getItems() {
         if (items == null) {
             items = new com.amazonaws.internal.SdkInternalList<String>();
@@ -116,6 +120,7 @@ public class CachedMethods implements Serializable, Cloneable {
      *        CloudFront to cache responses to.
      * @see Method
      */
+
     public void setItems(java.util.Collection<String> items) {
         if (items == null) {
             this.items = null;
@@ -142,6 +147,7 @@ public class CachedMethods implements Serializable, Cloneable {
      *         chained together.
      * @see Method
      */
+
     public CachedMethods withItems(String... items) {
         if (this.items == null) {
             setItems(new com.amazonaws.internal.SdkInternalList<String>(
@@ -164,6 +170,7 @@ public class CachedMethods implements Serializable, Cloneable {
      *         chained together.
      * @see Method
      */
+
     public CachedMethods withItems(java.util.Collection<String> items) {
         setItems(items);
         return this;
@@ -180,6 +187,7 @@ public class CachedMethods implements Serializable, Cloneable {
      *         chained together.
      * @see Method
      */
+
     public CachedMethods withItems(Method... items) {
         com.amazonaws.internal.SdkInternalList<String> itemsCopy = new com.amazonaws.internal.SdkInternalList<String>(
                 items.length);

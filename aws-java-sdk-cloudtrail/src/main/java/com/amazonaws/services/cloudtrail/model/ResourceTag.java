@@ -42,6 +42,7 @@ public class ResourceTag implements Serializable, Cloneable {
      * @param resourceId
      *        Specifies the ARN of the resource.
      */
+
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
     }
@@ -53,6 +54,7 @@ public class ResourceTag implements Serializable, Cloneable {
      * 
      * @return Specifies the ARN of the resource.
      */
+
     public String getResourceId() {
         return this.resourceId;
     }
@@ -67,6 +69,7 @@ public class ResourceTag implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ResourceTag withResourceId(String resourceId) {
         setResourceId(resourceId);
         return this;
@@ -75,6 +78,7 @@ public class ResourceTag implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public java.util.List<Tag> getTagsList() {
         if (tagsList == null) {
             tagsList = new com.amazonaws.internal.SdkInternalList<Tag>();
@@ -85,6 +89,7 @@ public class ResourceTag implements Serializable, Cloneable {
     /**
      * @param tagsList
      */
+
     public void setTagsList(java.util.Collection<Tag> tagsList) {
         if (tagsList == null) {
             this.tagsList = null;
@@ -107,6 +112,7 @@ public class ResourceTag implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ResourceTag withTagsList(Tag... tagsList) {
         if (this.tagsList == null) {
             setTagsList(new com.amazonaws.internal.SdkInternalList<Tag>(
@@ -123,6 +129,7 @@ public class ResourceTag implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ResourceTag withTagsList(java.util.Collection<Tag> tagsList) {
         setTagsList(tagsList);
         return this;

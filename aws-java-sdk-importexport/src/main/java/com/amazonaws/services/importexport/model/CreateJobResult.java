@@ -38,6 +38,7 @@ public class CreateJobResult implements Serializable, Cloneable {
     /**
      * @param jobId
      */
+
     public void setJobId(String jobId) {
         this.jobId = jobId;
     }
@@ -45,6 +46,7 @@ public class CreateJobResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getJobId() {
         return this.jobId;
     }
@@ -54,6 +56,7 @@ public class CreateJobResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateJobResult withJobId(String jobId) {
         setJobId(jobId);
         return this;
@@ -63,6 +66,7 @@ public class CreateJobResult implements Serializable, Cloneable {
      * @param jobType
      * @see JobType
      */
+
     public void setJobType(String jobType) {
         this.jobType = jobType;
     }
@@ -71,6 +75,7 @@ public class CreateJobResult implements Serializable, Cloneable {
      * @return
      * @see JobType
      */
+
     public String getJobType() {
         return this.jobType;
     }
@@ -81,6 +86,7 @@ public class CreateJobResult implements Serializable, Cloneable {
      *         chained together.
      * @see JobType
      */
+
     public CreateJobResult withJobType(String jobType) {
         setJobType(jobType);
         return this;
@@ -92,6 +98,7 @@ public class CreateJobResult implements Serializable, Cloneable {
      *         chained together.
      * @see JobType
      */
+
     public void setJobType(JobType jobType) {
         this.jobType = jobType.toString();
     }
@@ -102,6 +109,7 @@ public class CreateJobResult implements Serializable, Cloneable {
      *         chained together.
      * @see JobType
      */
+
     public CreateJobResult withJobType(JobType jobType) {
         setJobType(jobType);
         return this;
@@ -110,6 +118,7 @@ public class CreateJobResult implements Serializable, Cloneable {
     /**
      * @param signature
      */
+
     public void setSignature(String signature) {
         this.signature = signature;
     }
@@ -117,6 +126,7 @@ public class CreateJobResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getSignature() {
         return this.signature;
     }
@@ -126,6 +136,7 @@ public class CreateJobResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateJobResult withSignature(String signature) {
         setSignature(signature);
         return this;
@@ -134,6 +145,7 @@ public class CreateJobResult implements Serializable, Cloneable {
     /**
      * @param signatureFileContents
      */
+
     public void setSignatureFileContents(String signatureFileContents) {
         this.signatureFileContents = signatureFileContents;
     }
@@ -141,6 +153,7 @@ public class CreateJobResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getSignatureFileContents() {
         return this.signatureFileContents;
     }
@@ -150,6 +163,7 @@ public class CreateJobResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateJobResult withSignatureFileContents(
             String signatureFileContents) {
         setSignatureFileContents(signatureFileContents);
@@ -159,6 +173,7 @@ public class CreateJobResult implements Serializable, Cloneable {
     /**
      * @param warningMessage
      */
+
     public void setWarningMessage(String warningMessage) {
         this.warningMessage = warningMessage;
     }
@@ -166,6 +181,7 @@ public class CreateJobResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getWarningMessage() {
         return this.warningMessage;
     }
@@ -175,6 +191,7 @@ public class CreateJobResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateJobResult withWarningMessage(String warningMessage) {
         setWarningMessage(warningMessage);
         return this;
@@ -183,6 +200,7 @@ public class CreateJobResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public java.util.List<Artifact> getArtifactList() {
         if (artifactList == null) {
             artifactList = new com.amazonaws.internal.SdkInternalList<Artifact>();
@@ -193,6 +211,7 @@ public class CreateJobResult implements Serializable, Cloneable {
     /**
      * @param artifactList
      */
+
     public void setArtifactList(java.util.Collection<Artifact> artifactList) {
         if (artifactList == null) {
             this.artifactList = null;
@@ -215,6 +234,7 @@ public class CreateJobResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateJobResult withArtifactList(Artifact... artifactList) {
         if (this.artifactList == null) {
             setArtifactList(new com.amazonaws.internal.SdkInternalList<Artifact>(
@@ -231,6 +251,7 @@ public class CreateJobResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateJobResult withArtifactList(
             java.util.Collection<Artifact> artifactList) {
         setArtifactList(artifactList);

@@ -40,6 +40,7 @@ public class CreateAliasResult implements Serializable, Cloneable {
      * @param alias
      *        Object containing the newly created alias record.
      */
+
     public void setAlias(Alias alias) {
         this.alias = alias;
     }
@@ -51,6 +52,7 @@ public class CreateAliasResult implements Serializable, Cloneable {
      * 
      * @return Object containing the newly created alias record.
      */
+
     public Alias getAlias() {
         return this.alias;
     }
@@ -65,6 +67,7 @@ public class CreateAliasResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateAliasResult withAlias(Alias alias) {
         setAlias(alias);
         return this;

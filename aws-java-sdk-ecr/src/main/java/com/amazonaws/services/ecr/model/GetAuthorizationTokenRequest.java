@@ -45,6 +45,7 @@ public class GetAuthorizationTokenRequest extends AmazonWebServiceRequest
      *         for which to get authorization tokens. If you do not specify a
      *         registry, the default registry is assumed.
      */
+
     public java.util.List<String> getRegistryIds() {
         return registryIds;
     }
@@ -61,6 +62,7 @@ public class GetAuthorizationTokenRequest extends AmazonWebServiceRequest
      *        for which to get authorization tokens. If you do not specify a
      *        registry, the default registry is assumed.
      */
+
     public void setRegistryIds(java.util.Collection<String> registryIds) {
         if (registryIds == null) {
             this.registryIds = null;
@@ -90,6 +92,7 @@ public class GetAuthorizationTokenRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetAuthorizationTokenRequest withRegistryIds(String... registryIds) {
         if (this.registryIds == null) {
             setRegistryIds(new java.util.ArrayList<String>(registryIds.length));
@@ -114,6 +117,7 @@ public class GetAuthorizationTokenRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetAuthorizationTokenRequest withRegistryIds(
             java.util.Collection<String> registryIds) {
         setRegistryIds(registryIds);

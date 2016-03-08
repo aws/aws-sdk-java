@@ -41,6 +41,7 @@ public class InvalidSequenceTokenException extends AmazonServiceException {
     /**
      * @param expectedSequenceToken
      */
+
     public void setExpectedSequenceToken(String expectedSequenceToken) {
         this.expectedSequenceToken = expectedSequenceToken;
     }
@@ -48,6 +49,7 @@ public class InvalidSequenceTokenException extends AmazonServiceException {
     /**
      * @return
      */
+
     public String getExpectedSequenceToken() {
         return this.expectedSequenceToken;
     }
@@ -57,6 +59,7 @@ public class InvalidSequenceTokenException extends AmazonServiceException {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InvalidSequenceTokenException withExpectedSequenceToken(
             String expectedSequenceToken) {
         setExpectedSequenceToken(expectedSequenceToken);

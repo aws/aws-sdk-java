@@ -38,6 +38,7 @@ public class RegisterImageResult implements Serializable, Cloneable {
      * @param imageId
      *        The ID of the newly registered AMI.
      */
+
     public void setImageId(String imageId) {
         this.imageId = imageId;
     }
@@ -49,6 +50,7 @@ public class RegisterImageResult implements Serializable, Cloneable {
      * 
      * @return The ID of the newly registered AMI.
      */
+
     public String getImageId() {
         return this.imageId;
     }
@@ -63,6 +65,7 @@ public class RegisterImageResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterImageResult withImageId(String imageId) {
         setImageId(imageId);
         return this;

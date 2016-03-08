@@ -80,6 +80,7 @@ public class GetSessionTokenRequest extends AmazonWebServiceRequest implements
      *        duration is longer than one hour, the session for AWS account
      *        owners defaults to one hour.
      */
+
     public void setDurationSeconds(Integer durationSeconds) {
         this.durationSeconds = durationSeconds;
     }
@@ -102,6 +103,7 @@ public class GetSessionTokenRequest extends AmazonWebServiceRequest implements
      *         the duration is longer than one hour, the session for AWS account
      *         owners defaults to one hour.
      */
+
     public Integer getDurationSeconds() {
         return this.durationSeconds;
     }
@@ -127,6 +129,7 @@ public class GetSessionTokenRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetSessionTokenRequest withDurationSeconds(Integer durationSeconds) {
         setDurationSeconds(durationSeconds);
         return this;
@@ -155,6 +158,7 @@ public class GetSessionTokenRequest extends AmazonWebServiceRequest implements
      *        device for an IAM user by going to the AWS Management Console and
      *        viewing the user's security credentials.
      */
+
     public void setSerialNumber(String serialNumber) {
         this.serialNumber = serialNumber;
     }
@@ -181,6 +185,7 @@ public class GetSessionTokenRequest extends AmazonWebServiceRequest implements
      *         the device for an IAM user by going to the AWS Management Console
      *         and viewing the user's security credentials.
      */
+
     public String getSerialNumber() {
         return this.serialNumber;
     }
@@ -210,6 +215,7 @@ public class GetSessionTokenRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetSessionTokenRequest withSerialNumber(String serialNumber) {
         setSerialNumber(serialNumber);
         return this;
@@ -233,6 +239,7 @@ public class GetSessionTokenRequest extends AmazonWebServiceRequest implements
      *        credentials, the user will receive an "access denied" response
      *        when requesting resources that require MFA authentication.
      */
+
     public void setTokenCode(String tokenCode) {
         this.tokenCode = tokenCode;
     }
@@ -254,6 +261,7 @@ public class GetSessionTokenRequest extends AmazonWebServiceRequest implements
      *         credentials, the user will receive an "access denied" response
      *         when requesting resources that require MFA authentication.
      */
+
     public String getTokenCode() {
         return this.tokenCode;
     }
@@ -278,6 +286,7 @@ public class GetSessionTokenRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetSessionTokenRequest withTokenCode(String tokenCode) {
         setTokenCode(tokenCode);
         return this;

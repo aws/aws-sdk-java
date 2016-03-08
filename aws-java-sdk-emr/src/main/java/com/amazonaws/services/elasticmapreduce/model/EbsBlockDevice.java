@@ -53,6 +53,7 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      *        that will be requested for the EBS volume attached to an EC2
      *        instance in the cluster.
      */
+
     public void setVolumeSpecification(VolumeSpecification volumeSpecification) {
         this.volumeSpecification = volumeSpecification;
     }
@@ -68,6 +69,7 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      *         size(GiB) that will be requested for the EBS volume attached to
      *         an EC2 instance in the cluster.
      */
+
     public VolumeSpecification getVolumeSpecification() {
         return this.volumeSpecification;
     }
@@ -86,6 +88,7 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EbsBlockDevice withVolumeSpecification(
             VolumeSpecification volumeSpecification) {
         setVolumeSpecification(volumeSpecification);
@@ -100,6 +103,7 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * @param device
      *        The device name that is exposed to the instance, such as /dev/sdh.
      */
+
     public void setDevice(String device) {
         this.device = device;
     }
@@ -112,6 +116,7 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * @return The device name that is exposed to the instance, such as
      *         /dev/sdh.
      */
+
     public String getDevice() {
         return this.device;
     }
@@ -126,6 +131,7 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EbsBlockDevice withDevice(String device) {
         setDevice(device);
         return this;

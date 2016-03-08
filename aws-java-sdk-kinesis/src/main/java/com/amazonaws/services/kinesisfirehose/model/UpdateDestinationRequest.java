@@ -64,6 +64,7 @@ public class UpdateDestinationRequest extends AmazonWebServiceRequest implements
      * @param deliveryStreamName
      *        The name of the delivery stream.
      */
+
     public void setDeliveryStreamName(String deliveryStreamName) {
         this.deliveryStreamName = deliveryStreamName;
     }
@@ -75,6 +76,7 @@ public class UpdateDestinationRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the delivery stream.
      */
+
     public String getDeliveryStreamName() {
         return this.deliveryStreamName;
     }
@@ -89,6 +91,7 @@ public class UpdateDestinationRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateDestinationRequest withDeliveryStreamName(
             String deliveryStreamName) {
         setDeliveryStreamName(deliveryStreamName);
@@ -116,6 +119,7 @@ public class UpdateDestinationRequest extends AmazonWebServiceRequest implements
      *        service then performs a merge of the old configuration with the
      *        new configuration.
      */
+
     public void setCurrentDeliveryStreamVersionId(
             String currentDeliveryStreamVersionId) {
         this.currentDeliveryStreamVersionId = currentDeliveryStreamVersionId;
@@ -141,6 +145,7 @@ public class UpdateDestinationRequest extends AmazonWebServiceRequest implements
      *         updated. The service then performs a merge of the old
      *         configuration with the new configuration.
      */
+
     public String getCurrentDeliveryStreamVersionId() {
         return this.currentDeliveryStreamVersionId;
     }
@@ -168,6 +173,7 @@ public class UpdateDestinationRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateDestinationRequest withCurrentDeliveryStreamVersionId(
             String currentDeliveryStreamVersionId) {
         setCurrentDeliveryStreamVersionId(currentDeliveryStreamVersionId);
@@ -182,6 +188,7 @@ public class UpdateDestinationRequest extends AmazonWebServiceRequest implements
      * @param destinationId
      *        The ID of the destination.
      */
+
     public void setDestinationId(String destinationId) {
         this.destinationId = destinationId;
     }
@@ -193,6 +200,7 @@ public class UpdateDestinationRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ID of the destination.
      */
+
     public String getDestinationId() {
         return this.destinationId;
     }
@@ -207,6 +215,7 @@ public class UpdateDestinationRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateDestinationRequest withDestinationId(String destinationId) {
         setDestinationId(destinationId);
         return this;
@@ -215,6 +224,7 @@ public class UpdateDestinationRequest extends AmazonWebServiceRequest implements
     /**
      * @param s3DestinationUpdate
      */
+
     public void setS3DestinationUpdate(S3DestinationUpdate s3DestinationUpdate) {
         this.s3DestinationUpdate = s3DestinationUpdate;
     }
@@ -222,6 +232,7 @@ public class UpdateDestinationRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public S3DestinationUpdate getS3DestinationUpdate() {
         return this.s3DestinationUpdate;
     }
@@ -231,6 +242,7 @@ public class UpdateDestinationRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateDestinationRequest withS3DestinationUpdate(
             S3DestinationUpdate s3DestinationUpdate) {
         setS3DestinationUpdate(s3DestinationUpdate);
@@ -240,6 +252,7 @@ public class UpdateDestinationRequest extends AmazonWebServiceRequest implements
     /**
      * @param redshiftDestinationUpdate
      */
+
     public void setRedshiftDestinationUpdate(
             RedshiftDestinationUpdate redshiftDestinationUpdate) {
         this.redshiftDestinationUpdate = redshiftDestinationUpdate;
@@ -248,6 +261,7 @@ public class UpdateDestinationRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public RedshiftDestinationUpdate getRedshiftDestinationUpdate() {
         return this.redshiftDestinationUpdate;
     }
@@ -257,6 +271,7 @@ public class UpdateDestinationRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateDestinationRequest withRedshiftDestinationUpdate(
             RedshiftDestinationUpdate redshiftDestinationUpdate) {
         setRedshiftDestinationUpdate(redshiftDestinationUpdate);

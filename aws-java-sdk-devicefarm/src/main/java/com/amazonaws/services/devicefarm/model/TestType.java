@@ -33,7 +33,8 @@ public enum TestType {
     INSTRUMENTATION("INSTRUMENTATION"),
     UIAUTOMATION("UIAUTOMATION"),
     UIAUTOMATOR("UIAUTOMATOR"),
-    XCTEST("XCTEST");
+    XCTEST("XCTEST"),
+    XCTEST_UI("XCTEST_UI");
 
     private String value;
 
@@ -82,6 +83,8 @@ public enum TestType {
             return UIAUTOMATOR;
         } else if ("XCTEST".equals(value)) {
             return XCTEST;
+        } else if ("XCTEST_UI".equals(value)) {
+            return XCTEST_UI;
         } else {
             throw new IllegalArgumentException("Cannot create enum from "
                     + value + " value!");

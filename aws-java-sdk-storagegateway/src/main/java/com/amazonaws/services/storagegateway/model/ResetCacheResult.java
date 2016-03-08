@@ -28,6 +28,7 @@ public class ResetCacheResult implements Serializable, Cloneable {
     /**
      * @param gatewayARN
      */
+
     public void setGatewayARN(String gatewayARN) {
         this.gatewayARN = gatewayARN;
     }
@@ -35,6 +36,7 @@ public class ResetCacheResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getGatewayARN() {
         return this.gatewayARN;
     }
@@ -44,6 +46,7 @@ public class ResetCacheResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ResetCacheResult withGatewayARN(String gatewayARN) {
         setGatewayARN(gatewayARN);
         return this;

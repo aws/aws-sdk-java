@@ -47,6 +47,7 @@ public class ChangePasswordRequest extends AmazonWebServiceRequest implements
      * @param oldPassword
      *        The IAM user's current password.
      */
+
     public void setOldPassword(String oldPassword) {
         this.oldPassword = oldPassword;
     }
@@ -58,6 +59,7 @@ public class ChangePasswordRequest extends AmazonWebServiceRequest implements
      * 
      * @return The IAM user's current password.
      */
+
     public String getOldPassword() {
         return this.oldPassword;
     }
@@ -72,6 +74,7 @@ public class ChangePasswordRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ChangePasswordRequest withOldPassword(String oldPassword) {
         setOldPassword(oldPassword);
         return this;
@@ -87,6 +90,7 @@ public class ChangePasswordRequest extends AmazonWebServiceRequest implements
      *        The new password. The new password must conform to the AWS
      *        account's password policy, if one exists.
      */
+
     public void setNewPassword(String newPassword) {
         this.newPassword = newPassword;
     }
@@ -100,6 +104,7 @@ public class ChangePasswordRequest extends AmazonWebServiceRequest implements
      * @return The new password. The new password must conform to the AWS
      *         account's password policy, if one exists.
      */
+
     public String getNewPassword() {
         return this.newPassword;
     }
@@ -116,6 +121,7 @@ public class ChangePasswordRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ChangePasswordRequest withNewPassword(String newPassword) {
         setNewPassword(newPassword);
         return this;

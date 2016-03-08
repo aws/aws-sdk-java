@@ -63,6 +63,7 @@ public class DeleteVpnConnectionRequest extends AmazonWebServiceRequest
      * @param vpnConnectionId
      *        The ID of the VPN connection.
      */
+
     public void setVpnConnectionId(String vpnConnectionId) {
         this.vpnConnectionId = vpnConnectionId;
     }
@@ -74,6 +75,7 @@ public class DeleteVpnConnectionRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the VPN connection.
      */
+
     public String getVpnConnectionId() {
         return this.vpnConnectionId;
     }
@@ -88,6 +90,7 @@ public class DeleteVpnConnectionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteVpnConnectionRequest withVpnConnectionId(String vpnConnectionId) {
         setVpnConnectionId(vpnConnectionId);
         return this;

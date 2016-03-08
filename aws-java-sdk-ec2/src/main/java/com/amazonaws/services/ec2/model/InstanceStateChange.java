@@ -52,6 +52,7 @@ public class InstanceStateChange implements Serializable, Cloneable {
      * @param instanceId
      *        The ID of the instance.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -63,6 +64,7 @@ public class InstanceStateChange implements Serializable, Cloneable {
      * 
      * @return The ID of the instance.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
@@ -77,6 +79,7 @@ public class InstanceStateChange implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceStateChange withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;
@@ -90,6 +93,7 @@ public class InstanceStateChange implements Serializable, Cloneable {
      * @param currentState
      *        The current state of the instance.
      */
+
     public void setCurrentState(InstanceState currentState) {
         this.currentState = currentState;
     }
@@ -101,6 +105,7 @@ public class InstanceStateChange implements Serializable, Cloneable {
      * 
      * @return The current state of the instance.
      */
+
     public InstanceState getCurrentState() {
         return this.currentState;
     }
@@ -115,6 +120,7 @@ public class InstanceStateChange implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceStateChange withCurrentState(InstanceState currentState) {
         setCurrentState(currentState);
         return this;
@@ -128,6 +134,7 @@ public class InstanceStateChange implements Serializable, Cloneable {
      * @param previousState
      *        The previous state of the instance.
      */
+
     public void setPreviousState(InstanceState previousState) {
         this.previousState = previousState;
     }
@@ -139,6 +146,7 @@ public class InstanceStateChange implements Serializable, Cloneable {
      * 
      * @return The previous state of the instance.
      */
+
     public InstanceState getPreviousState() {
         return this.previousState;
     }
@@ -153,6 +161,7 @@ public class InstanceStateChange implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceStateChange withPreviousState(InstanceState previousState) {
         setPreviousState(previousState);
         return this;

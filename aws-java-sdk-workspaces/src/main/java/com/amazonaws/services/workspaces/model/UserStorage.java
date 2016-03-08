@@ -40,6 +40,7 @@ public class UserStorage implements Serializable, Cloneable {
      * @param capacity
      *        The amount of user storage for the bundle.
      */
+
     public void setCapacity(String capacity) {
         this.capacity = capacity;
     }
@@ -51,6 +52,7 @@ public class UserStorage implements Serializable, Cloneable {
      * 
      * @return The amount of user storage for the bundle.
      */
+
     public String getCapacity() {
         return this.capacity;
     }
@@ -65,6 +67,7 @@ public class UserStorage implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UserStorage withCapacity(String capacity) {
         setCapacity(capacity);
         return this;

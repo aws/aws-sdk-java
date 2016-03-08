@@ -100,6 +100,7 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements
      *        The ARN of the topic whose access control policy you wish to
      *        modify.
      */
+
     public void setTopicArn(String topicArn) {
         this.topicArn = topicArn;
     }
@@ -112,6 +113,7 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements
      * @return The ARN of the topic whose access control policy you wish to
      *         modify.
      */
+
     public String getTopicArn() {
         return this.topicArn;
     }
@@ -127,6 +129,7 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddPermissionRequest withTopicArn(String topicArn) {
         setTopicArn(topicArn);
         return this;
@@ -140,6 +143,7 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements
      * @param label
      *        A unique identifier for the new policy statement.
      */
+
     public void setLabel(String label) {
         this.label = label;
     }
@@ -151,6 +155,7 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements
      * 
      * @return A unique identifier for the new policy statement.
      */
+
     public String getLabel() {
         return this.label;
     }
@@ -165,6 +170,7 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddPermissionRequest withLabel(String label) {
         setLabel(label);
         return this;
@@ -181,6 +187,7 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements
      *         access to the specified actions. The users must have AWS
      *         accounts, but do not need to be signed up for this service.
      */
+
     public java.util.List<String> getAWSAccountIds() {
         if (aWSAccountIds == null) {
             aWSAccountIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -200,6 +207,7 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements
      *        access to the specified actions. The users must have AWS accounts,
      *        but do not need to be signed up for this service.
      */
+
     public void setAWSAccountIds(java.util.Collection<String> aWSAccountIds) {
         if (aWSAccountIds == null) {
             this.aWSAccountIds = null;
@@ -230,6 +238,7 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddPermissionRequest withAWSAccountIds(String... aWSAccountIds) {
         if (this.aWSAccountIds == null) {
             setAWSAccountIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -255,6 +264,7 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddPermissionRequest withAWSAccountIds(
             java.util.Collection<String> aWSAccountIds) {
         setAWSAccountIds(aWSAccountIds);
@@ -273,6 +283,7 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Valid values: any Amazon SNS action name.
      */
+
     public java.util.List<String> getActionNames() {
         if (actionNames == null) {
             actionNames = new com.amazonaws.internal.SdkInternalList<String>();
@@ -293,6 +304,7 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        Valid values: any Amazon SNS action name.
      */
+
     public void setActionNames(java.util.Collection<String> actionNames) {
         if (actionNames == null) {
             this.actionNames = null;
@@ -324,6 +336,7 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddPermissionRequest withActionNames(String... actionNames) {
         if (this.actionNames == null) {
             setActionNames(new com.amazonaws.internal.SdkInternalList<String>(
@@ -350,6 +363,7 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddPermissionRequest withActionNames(
             java.util.Collection<String> actionNames) {
         setActionNames(actionNames);

@@ -46,6 +46,7 @@ public class RunAssessmentRequest extends AmazonWebServiceRequest implements
      * @param assessmentArn
      *        The ARN of the assessment that you want to run.
      */
+
     public void setAssessmentArn(String assessmentArn) {
         this.assessmentArn = assessmentArn;
     }
@@ -57,6 +58,7 @@ public class RunAssessmentRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ARN of the assessment that you want to run.
      */
+
     public String getAssessmentArn() {
         return this.assessmentArn;
     }
@@ -71,6 +73,7 @@ public class RunAssessmentRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunAssessmentRequest withAssessmentArn(String assessmentArn) {
         setAssessmentArn(assessmentArn);
         return this;
@@ -84,6 +87,7 @@ public class RunAssessmentRequest extends AmazonWebServiceRequest implements
      * @param runName
      *        A name specifying the run of the assessment.
      */
+
     public void setRunName(String runName) {
         this.runName = runName;
     }
@@ -95,6 +99,7 @@ public class RunAssessmentRequest extends AmazonWebServiceRequest implements
      * 
      * @return A name specifying the run of the assessment.
      */
+
     public String getRunName() {
         return this.runName;
     }
@@ -109,6 +114,7 @@ public class RunAssessmentRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunAssessmentRequest withRunName(String runName) {
         setRunName(runName);
         return this;

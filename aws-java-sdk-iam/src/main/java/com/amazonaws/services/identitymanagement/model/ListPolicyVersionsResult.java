@@ -74,6 +74,7 @@ public class ListPolicyVersionsResult implements Serializable, Cloneable {
      *         >Versioning for Managed Policies</a> in the <i>IAM User
      *         Guide</i>.
      */
+
     public java.util.List<PolicyVersion> getVersions() {
         if (versions == null) {
             versions = new com.amazonaws.internal.SdkInternalList<PolicyVersion>();
@@ -98,6 +99,7 @@ public class ListPolicyVersionsResult implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html"
      *        >Versioning for Managed Policies</a> in the <i>IAM User Guide</i>.
      */
+
     public void setVersions(java.util.Collection<PolicyVersion> versions) {
         if (versions == null) {
             this.versions = null;
@@ -133,6 +135,7 @@ public class ListPolicyVersionsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListPolicyVersionsResult withVersions(PolicyVersion... versions) {
         if (this.versions == null) {
             setVersions(new com.amazonaws.internal.SdkInternalList<PolicyVersion>(
@@ -163,6 +166,7 @@ public class ListPolicyVersionsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListPolicyVersionsResult withVersions(
             java.util.Collection<PolicyVersion> versions) {
         setVersions(versions);
@@ -190,6 +194,7 @@ public class ListPolicyVersionsResult implements Serializable, Cloneable {
      *        <code>IsTruncated</code> after every call to ensure that you
      *        receive all of your results.
      */
+
     public void setIsTruncated(Boolean isTruncated) {
         this.isTruncated = isTruncated;
     }
@@ -214,6 +219,7 @@ public class ListPolicyVersionsResult implements Serializable, Cloneable {
      *         <code>IsTruncated</code> after every call to ensure that you
      *         receive all of your results.
      */
+
     public Boolean getIsTruncated() {
         return this.isTruncated;
     }
@@ -241,6 +247,7 @@ public class ListPolicyVersionsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListPolicyVersionsResult withIsTruncated(Boolean isTruncated) {
         setIsTruncated(isTruncated);
         return this;
@@ -266,6 +273,7 @@ public class ListPolicyVersionsResult implements Serializable, Cloneable {
      *         <code>IsTruncated</code> after every call to ensure that you
      *         receive all of your results.
      */
+
     public Boolean isTruncated() {
         return this.isTruncated;
     }
@@ -282,6 +290,7 @@ public class ListPolicyVersionsResult implements Serializable, Cloneable {
      *        is present and contains the value to use for the
      *        <code>Marker</code> parameter in a subsequent pagination request.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -297,6 +306,7 @@ public class ListPolicyVersionsResult implements Serializable, Cloneable {
      *         is present and contains the value to use for the
      *         <code>Marker</code> parameter in a subsequent pagination request.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -315,6 +325,7 @@ public class ListPolicyVersionsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListPolicyVersionsResult withMarker(String marker) {
         setMarker(marker);
         return this;

@@ -54,6 +54,7 @@ public class ArtifactStore implements Serializable, Cloneable {
      *        The type of the artifact store, such as S3.
      * @see ArtifactStoreType
      */
+
     public void setType(String type) {
         this.type = type;
     }
@@ -66,6 +67,7 @@ public class ArtifactStore implements Serializable, Cloneable {
      * @return The type of the artifact store, such as S3.
      * @see ArtifactStoreType
      */
+
     public String getType() {
         return this.type;
     }
@@ -81,6 +83,7 @@ public class ArtifactStore implements Serializable, Cloneable {
      *         chained together.
      * @see ArtifactStoreType
      */
+
     public ArtifactStore withType(String type) {
         setType(type);
         return this;
@@ -97,6 +100,7 @@ public class ArtifactStore implements Serializable, Cloneable {
      *         chained together.
      * @see ArtifactStoreType
      */
+
     public void setType(ArtifactStoreType type) {
         this.type = type.toString();
     }
@@ -112,6 +116,7 @@ public class ArtifactStore implements Serializable, Cloneable {
      *         chained together.
      * @see ArtifactStoreType
      */
+
     public ArtifactStore withType(ArtifactStoreType type) {
         setType(type);
         return this;
@@ -127,6 +132,7 @@ public class ArtifactStore implements Serializable, Cloneable {
      *        The location for storing the artifacts for a pipeline, such as an
      *        S3 bucket or folder.
      */
+
     public void setLocation(String location) {
         this.location = location;
     }
@@ -140,6 +146,7 @@ public class ArtifactStore implements Serializable, Cloneable {
      * @return The location for storing the artifacts for a pipeline, such as an
      *         S3 bucket or folder.
      */
+
     public String getLocation() {
         return this.location;
     }
@@ -156,6 +163,7 @@ public class ArtifactStore implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ArtifactStore withLocation(String location) {
         setLocation(location);
         return this;
@@ -164,6 +172,7 @@ public class ArtifactStore implements Serializable, Cloneable {
     /**
      * @param encryptionKey
      */
+
     public void setEncryptionKey(EncryptionKey encryptionKey) {
         this.encryptionKey = encryptionKey;
     }
@@ -171,6 +180,7 @@ public class ArtifactStore implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public EncryptionKey getEncryptionKey() {
         return this.encryptionKey;
     }
@@ -180,6 +190,7 @@ public class ArtifactStore implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ArtifactStore withEncryptionKey(EncryptionKey encryptionKey) {
         setEncryptionKey(encryptionKey);
         return this;

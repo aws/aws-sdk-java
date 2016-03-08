@@ -85,6 +85,7 @@ public class ListHealthChecksResult implements Serializable, Cloneable {
      * @return A complex type that contains information about the health checks
      *         associated with the current AWS account.
      */
+
     public java.util.List<HealthCheck> getHealthChecks() {
         if (healthChecks == null) {
             healthChecks = new com.amazonaws.internal.SdkInternalList<HealthCheck>();
@@ -102,6 +103,7 @@ public class ListHealthChecksResult implements Serializable, Cloneable {
      *        A complex type that contains information about the health checks
      *        associated with the current AWS account.
      */
+
     public void setHealthChecks(java.util.Collection<HealthCheck> healthChecks) {
         if (healthChecks == null) {
             this.healthChecks = null;
@@ -130,6 +132,7 @@ public class ListHealthChecksResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListHealthChecksResult withHealthChecks(HealthCheck... healthChecks) {
         if (this.healthChecks == null) {
             setHealthChecks(new com.amazonaws.internal.SdkInternalList<HealthCheck>(
@@ -153,6 +156,7 @@ public class ListHealthChecksResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListHealthChecksResult withHealthChecks(
             java.util.Collection<HealthCheck> healthChecks) {
         setHealthChecks(healthChecks);
@@ -173,6 +177,7 @@ public class ListHealthChecksResult implements Serializable, Cloneable {
      *        from the last response in the <code>marker</code> parameter to get
      *        the next page of results.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -190,6 +195,7 @@ public class ListHealthChecksResult implements Serializable, Cloneable {
      *         from the last response in the <code>marker</code> parameter to
      *         get the next page of results.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -210,6 +216,7 @@ public class ListHealthChecksResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListHealthChecksResult withMarker(String marker) {
         setMarker(marker);
         return this;
@@ -233,6 +240,7 @@ public class ListHealthChecksResult implements Serializable, Cloneable {
      *        <p>
      *        Valid Values: <code>true</code> | <code>false</code>
      */
+
     public void setIsTruncated(Boolean isTruncated) {
         this.isTruncated = isTruncated;
     }
@@ -254,6 +262,7 @@ public class ListHealthChecksResult implements Serializable, Cloneable {
      *         <p>
      *         Valid Values: <code>true</code> | <code>false</code>
      */
+
     public Boolean getIsTruncated() {
         return this.isTruncated;
     }
@@ -278,6 +287,7 @@ public class ListHealthChecksResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListHealthChecksResult withIsTruncated(Boolean isTruncated) {
         setIsTruncated(isTruncated);
         return this;
@@ -300,6 +310,7 @@ public class ListHealthChecksResult implements Serializable, Cloneable {
      *         <p>
      *         Valid Values: <code>true</code> | <code>false</code>
      */
+
     public Boolean isTruncated() {
         return this.isTruncated;
     }
@@ -320,6 +331,7 @@ public class ListHealthChecksResult implements Serializable, Cloneable {
      *        the value of the <code>NextMarker</code> element in the
      *        <code>Marker</code> element to get the next page of results.
      */
+
     public void setNextMarker(String nextMarker) {
         this.nextMarker = nextMarker;
     }
@@ -339,6 +351,7 @@ public class ListHealthChecksResult implements Serializable, Cloneable {
      *         the value of the <code>NextMarker</code> element in the
      *         <code>Marker</code> element to get the next page of results.
      */
+
     public String getNextMarker() {
         return this.nextMarker;
     }
@@ -361,6 +374,7 @@ public class ListHealthChecksResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListHealthChecksResult withNextMarker(String nextMarker) {
         setNextMarker(nextMarker);
         return this;
@@ -388,6 +402,7 @@ public class ListHealthChecksResult implements Serializable, Cloneable {
      *        the <a>ListHostedZonesRequest$Marker</a> element to get the next
      *        page of results.
      */
+
     public void setMaxItems(String maxItems) {
         this.maxItems = maxItems;
     }
@@ -413,6 +428,7 @@ public class ListHealthChecksResult implements Serializable, Cloneable {
      *         in the <a>ListHostedZonesRequest$Marker</a> element to get the
      *         next page of results.
      */
+
     public String getMaxItems() {
         return this.maxItems;
     }
@@ -441,6 +457,7 @@ public class ListHealthChecksResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListHealthChecksResult withMaxItems(String maxItems) {
         setMaxItems(maxItems);
         return this;

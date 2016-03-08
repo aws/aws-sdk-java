@@ -76,6 +76,7 @@ public class ListAttachedUserPoliciesRequest extends AmazonWebServiceRequest
      *        The name (friendly name, not ARN) of the user to list attached
      *        policies for.
      */
+
     public void setUserName(String userName) {
         this.userName = userName;
     }
@@ -89,6 +90,7 @@ public class ListAttachedUserPoliciesRequest extends AmazonWebServiceRequest
      * @return The name (friendly name, not ARN) of the user to list attached
      *         policies for.
      */
+
     public String getUserName() {
         return this.userName;
     }
@@ -105,6 +107,7 @@ public class ListAttachedUserPoliciesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListAttachedUserPoliciesRequest withUserName(String userName) {
         setUserName(userName);
         return this;
@@ -121,6 +124,7 @@ public class ListAttachedUserPoliciesRequest extends AmazonWebServiceRequest
      *        optional. If it is not included, it defaults to a slash (/),
      *        listing all policies.
      */
+
     public void setPathPrefix(String pathPrefix) {
         this.pathPrefix = pathPrefix;
     }
@@ -135,6 +139,7 @@ public class ListAttachedUserPoliciesRequest extends AmazonWebServiceRequest
      *         optional. If it is not included, it defaults to a slash (/),
      *         listing all policies.
      */
+
     public String getPathPrefix() {
         return this.pathPrefix;
     }
@@ -152,6 +157,7 @@ public class ListAttachedUserPoliciesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListAttachedUserPoliciesRequest withPathPrefix(String pathPrefix) {
         setPathPrefix(pathPrefix);
         return this;
@@ -171,6 +177,7 @@ public class ListAttachedUserPoliciesRequest extends AmazonWebServiceRequest
      *        it to the value of the <code>Marker</code> element in the response
      *        that you received to indicate where the next call should start.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -189,6 +196,7 @@ public class ListAttachedUserPoliciesRequest extends AmazonWebServiceRequest
      *         response that you received to indicate where the next call should
      *         start.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -209,6 +217,7 @@ public class ListAttachedUserPoliciesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListAttachedUserPoliciesRequest withMarker(String marker) {
         setMarker(marker);
         return this;
@@ -244,6 +253,7 @@ public class ListAttachedUserPoliciesRequest extends AmazonWebServiceRequest
      *        include in the subsequent call that tells the service where to
      *        continue from.
      */
+
     public void setMaxItems(Integer maxItems) {
         this.maxItems = maxItems;
     }
@@ -278,6 +288,7 @@ public class ListAttachedUserPoliciesRequest extends AmazonWebServiceRequest
      *         include in the subsequent call that tells the service where to
      *         continue from.
      */
+
     public Integer getMaxItems() {
         return this.maxItems;
     }
@@ -314,6 +325,7 @@ public class ListAttachedUserPoliciesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListAttachedUserPoliciesRequest withMaxItems(Integer maxItems) {
         setMaxItems(maxItems);
         return this;

@@ -56,6 +56,7 @@ public class ListTagsForResourceResult implements Serializable, Cloneable {
      *        he Amazon Resource Name (ARN) of the resource for which you want
      *        to list tags.
      */
+
     public void setResourceARN(String resourceARN) {
         this.resourceARN = resourceARN;
     }
@@ -69,6 +70,7 @@ public class ListTagsForResourceResult implements Serializable, Cloneable {
      * @return he Amazon Resource Name (ARN) of the resource for which you want
      *         to list tags.
      */
+
     public String getResourceARN() {
         return this.resourceARN;
     }
@@ -85,6 +87,7 @@ public class ListTagsForResourceResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTagsForResourceResult withResourceARN(String resourceARN) {
         setResourceARN(resourceARN);
         return this;
@@ -100,6 +103,7 @@ public class ListTagsForResourceResult implements Serializable, Cloneable {
      *        An opaque string that indicates the position at which to stop
      *        returning the list of tags.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -113,6 +117,7 @@ public class ListTagsForResourceResult implements Serializable, Cloneable {
      * @return An opaque string that indicates the position at which to stop
      *         returning the list of tags.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -129,6 +134,7 @@ public class ListTagsForResourceResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTagsForResourceResult withMarker(String marker) {
         setMarker(marker);
         return this;
@@ -141,6 +147,7 @@ public class ListTagsForResourceResult implements Serializable, Cloneable {
      * 
      * @return An array that contains the tags for the specified resource.
      */
+
     public java.util.List<Tag> getTags() {
         if (tags == null) {
             tags = new com.amazonaws.internal.SdkInternalList<Tag>();
@@ -156,6 +163,7 @@ public class ListTagsForResourceResult implements Serializable, Cloneable {
      * @param tags
      *        An array that contains the tags for the specified resource.
      */
+
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
             this.tags = null;
@@ -181,6 +189,7 @@ public class ListTagsForResourceResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTagsForResourceResult withTags(Tag... tags) {
         if (this.tags == null) {
             setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
@@ -201,6 +210,7 @@ public class ListTagsForResourceResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTagsForResourceResult withTags(java.util.Collection<Tag> tags) {
         setTags(tags);
         return this;

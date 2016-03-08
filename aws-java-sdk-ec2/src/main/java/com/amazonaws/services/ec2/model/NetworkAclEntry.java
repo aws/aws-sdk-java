@@ -80,6 +80,7 @@ public class NetworkAclEntry implements Serializable, Cloneable {
      *        The rule number for the entry. ACL entries are processed in
      *        ascending order by rule number.
      */
+
     public void setRuleNumber(Integer ruleNumber) {
         this.ruleNumber = ruleNumber;
     }
@@ -93,6 +94,7 @@ public class NetworkAclEntry implements Serializable, Cloneable {
      * @return The rule number for the entry. ACL entries are processed in
      *         ascending order by rule number.
      */
+
     public Integer getRuleNumber() {
         return this.ruleNumber;
     }
@@ -109,6 +111,7 @@ public class NetworkAclEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NetworkAclEntry withRuleNumber(Integer ruleNumber) {
         setRuleNumber(ruleNumber);
         return this;
@@ -122,6 +125,7 @@ public class NetworkAclEntry implements Serializable, Cloneable {
      * @param protocol
      *        The protocol. A value of <code>-1</code> means all protocols.
      */
+
     public void setProtocol(String protocol) {
         this.protocol = protocol;
     }
@@ -133,6 +137,7 @@ public class NetworkAclEntry implements Serializable, Cloneable {
      * 
      * @return The protocol. A value of <code>-1</code> means all protocols.
      */
+
     public String getProtocol() {
         return this.protocol;
     }
@@ -147,6 +152,7 @@ public class NetworkAclEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NetworkAclEntry withProtocol(String protocol) {
         setProtocol(protocol);
         return this;
@@ -162,6 +168,7 @@ public class NetworkAclEntry implements Serializable, Cloneable {
      *        rule.
      * @see RuleAction
      */
+
     public void setRuleAction(String ruleAction) {
         this.ruleAction = ruleAction;
     }
@@ -175,6 +182,7 @@ public class NetworkAclEntry implements Serializable, Cloneable {
      *         rule.
      * @see RuleAction
      */
+
     public String getRuleAction() {
         return this.ruleAction;
     }
@@ -191,6 +199,7 @@ public class NetworkAclEntry implements Serializable, Cloneable {
      *         chained together.
      * @see RuleAction
      */
+
     public NetworkAclEntry withRuleAction(String ruleAction) {
         setRuleAction(ruleAction);
         return this;
@@ -208,6 +217,7 @@ public class NetworkAclEntry implements Serializable, Cloneable {
      *         chained together.
      * @see RuleAction
      */
+
     public void setRuleAction(RuleAction ruleAction) {
         this.ruleAction = ruleAction.toString();
     }
@@ -224,6 +234,7 @@ public class NetworkAclEntry implements Serializable, Cloneable {
      *         chained together.
      * @see RuleAction
      */
+
     public NetworkAclEntry withRuleAction(RuleAction ruleAction) {
         setRuleAction(ruleAction);
         return this;
@@ -239,6 +250,7 @@ public class NetworkAclEntry implements Serializable, Cloneable {
      *        Indicates whether the rule is an egress rule (applied to traffic
      *        leaving the subnet).
      */
+
     public void setEgress(Boolean egress) {
         this.egress = egress;
     }
@@ -252,6 +264,7 @@ public class NetworkAclEntry implements Serializable, Cloneable {
      * @return Indicates whether the rule is an egress rule (applied to traffic
      *         leaving the subnet).
      */
+
     public Boolean getEgress() {
         return this.egress;
     }
@@ -268,6 +281,7 @@ public class NetworkAclEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NetworkAclEntry withEgress(Boolean egress) {
         setEgress(egress);
         return this;
@@ -282,6 +296,7 @@ public class NetworkAclEntry implements Serializable, Cloneable {
      * @return Indicates whether the rule is an egress rule (applied to traffic
      *         leaving the subnet).
      */
+
     public Boolean isEgress() {
         return this.egress;
     }
@@ -294,6 +309,7 @@ public class NetworkAclEntry implements Serializable, Cloneable {
      * @param cidrBlock
      *        The network range to allow or deny, in CIDR notation.
      */
+
     public void setCidrBlock(String cidrBlock) {
         this.cidrBlock = cidrBlock;
     }
@@ -305,6 +321,7 @@ public class NetworkAclEntry implements Serializable, Cloneable {
      * 
      * @return The network range to allow or deny, in CIDR notation.
      */
+
     public String getCidrBlock() {
         return this.cidrBlock;
     }
@@ -319,6 +336,7 @@ public class NetworkAclEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NetworkAclEntry withCidrBlock(String cidrBlock) {
         setCidrBlock(cidrBlock);
         return this;
@@ -332,6 +350,7 @@ public class NetworkAclEntry implements Serializable, Cloneable {
      * @param icmpTypeCode
      *        ICMP protocol: The ICMP type and code.
      */
+
     public void setIcmpTypeCode(IcmpTypeCode icmpTypeCode) {
         this.icmpTypeCode = icmpTypeCode;
     }
@@ -343,6 +362,7 @@ public class NetworkAclEntry implements Serializable, Cloneable {
      * 
      * @return ICMP protocol: The ICMP type and code.
      */
+
     public IcmpTypeCode getIcmpTypeCode() {
         return this.icmpTypeCode;
     }
@@ -357,6 +377,7 @@ public class NetworkAclEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NetworkAclEntry withIcmpTypeCode(IcmpTypeCode icmpTypeCode) {
         setIcmpTypeCode(icmpTypeCode);
         return this;
@@ -370,6 +391,7 @@ public class NetworkAclEntry implements Serializable, Cloneable {
      * @param portRange
      *        TCP or UDP protocols: The range of ports the rule applies to.
      */
+
     public void setPortRange(PortRange portRange) {
         this.portRange = portRange;
     }
@@ -381,6 +403,7 @@ public class NetworkAclEntry implements Serializable, Cloneable {
      * 
      * @return TCP or UDP protocols: The range of ports the rule applies to.
      */
+
     public PortRange getPortRange() {
         return this.portRange;
     }
@@ -395,6 +418,7 @@ public class NetworkAclEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NetworkAclEntry withPortRange(PortRange portRange) {
         setPortRange(portRange);
         return this;

@@ -40,6 +40,7 @@ public class DescribeResourceGroupRequest extends AmazonWebServiceRequest
      * @param resourceGroupArn
      *        The ARN specifying the resource group that you want to describe.
      */
+
     public void setResourceGroupArn(String resourceGroupArn) {
         this.resourceGroupArn = resourceGroupArn;
     }
@@ -51,6 +52,7 @@ public class DescribeResourceGroupRequest extends AmazonWebServiceRequest
      * 
      * @return The ARN specifying the resource group that you want to describe.
      */
+
     public String getResourceGroupArn() {
         return this.resourceGroupArn;
     }
@@ -65,6 +67,7 @@ public class DescribeResourceGroupRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeResourceGroupRequest withResourceGroupArn(
             String resourceGroupArn) {
         setResourceGroupArn(resourceGroupArn);

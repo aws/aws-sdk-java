@@ -93,6 +93,7 @@ public class PolicyVersion implements Serializable, Cloneable {
      *        <a>CreatePolicyVersion</a> or <a>ListPolicyVersions</a>
      *        operations.
      */
+
     public void setDocument(String document) {
         this.document = document;
     }
@@ -116,6 +117,7 @@ public class PolicyVersion implements Serializable, Cloneable {
      *         <a>CreatePolicyVersion</a> or <a>ListPolicyVersions</a>
      *         operations.
      */
+
     public String getDocument() {
         return this.document;
     }
@@ -142,6 +144,7 @@ public class PolicyVersion implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PolicyVersion withDocument(String document) {
         setDocument(document);
         return this;
@@ -164,6 +167,7 @@ public class PolicyVersion implements Serializable, Cloneable {
      *        (always lowercase). When a policy is created, the first policy
      *        version is <code>v1</code>.
      */
+
     public void setVersionId(String versionId) {
         this.versionId = versionId;
     }
@@ -184,6 +188,7 @@ public class PolicyVersion implements Serializable, Cloneable {
      *         (always lowercase). When a policy is created, the first policy
      *         version is <code>v1</code>.
      */
+
     public String getVersionId() {
         return this.versionId;
     }
@@ -207,6 +212,7 @@ public class PolicyVersion implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PolicyVersion withVersionId(String versionId) {
         setVersionId(versionId);
         return this;
@@ -222,6 +228,7 @@ public class PolicyVersion implements Serializable, Cloneable {
      *        Specifies whether the policy version is set as the policy's
      *        default version.
      */
+
     public void setIsDefaultVersion(Boolean isDefaultVersion) {
         this.isDefaultVersion = isDefaultVersion;
     }
@@ -235,6 +242,7 @@ public class PolicyVersion implements Serializable, Cloneable {
      * @return Specifies whether the policy version is set as the policy's
      *         default version.
      */
+
     public Boolean getIsDefaultVersion() {
         return this.isDefaultVersion;
     }
@@ -251,6 +259,7 @@ public class PolicyVersion implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PolicyVersion withIsDefaultVersion(Boolean isDefaultVersion) {
         setIsDefaultVersion(isDefaultVersion);
         return this;
@@ -265,6 +274,7 @@ public class PolicyVersion implements Serializable, Cloneable {
      * @return Specifies whether the policy version is set as the policy's
      *         default version.
      */
+
     public Boolean isDefaultVersion() {
         return this.isDefaultVersion;
     }
@@ -279,6 +289,7 @@ public class PolicyVersion implements Serializable, Cloneable {
      *        The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO
      *        8601 date-time format</a>, when the policy version was created.
      */
+
     public void setCreateDate(java.util.Date createDate) {
         this.createDate = createDate;
     }
@@ -293,6 +304,7 @@ public class PolicyVersion implements Serializable, Cloneable {
      *         href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
      *         format</a>, when the policy version was created.
      */
+
     public java.util.Date getCreateDate() {
         return this.createDate;
     }
@@ -309,6 +321,7 @@ public class PolicyVersion implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PolicyVersion withCreateDate(java.util.Date createDate) {
         setCreateDate(createDate);
         return this;

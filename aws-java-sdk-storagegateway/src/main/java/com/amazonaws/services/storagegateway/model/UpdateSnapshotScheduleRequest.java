@@ -72,6 +72,7 @@ public class UpdateSnapshotScheduleRequest extends AmazonWebServiceRequest
      *        The Amazon Resource Name (ARN) of the volume. Use the
      *        <a>ListVolumes</a> operation to return a list of gateway volumes.
      */
+
     public void setVolumeARN(String volumeARN) {
         this.volumeARN = volumeARN;
     }
@@ -85,6 +86,7 @@ public class UpdateSnapshotScheduleRequest extends AmazonWebServiceRequest
      * @return The Amazon Resource Name (ARN) of the volume. Use the
      *         <a>ListVolumes</a> operation to return a list of gateway volumes.
      */
+
     public String getVolumeARN() {
         return this.volumeARN;
     }
@@ -101,6 +103,7 @@ public class UpdateSnapshotScheduleRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateSnapshotScheduleRequest withVolumeARN(String volumeARN) {
         setVolumeARN(volumeARN);
         return this;
@@ -118,6 +121,7 @@ public class UpdateSnapshotScheduleRequest extends AmazonWebServiceRequest
      *        represented as <i>hh</i>, where <i>hh</i> is the hour (0 to 23).
      *        The hour of the day is in the time zone of the gateway.
      */
+
     public void setStartAt(Integer startAt) {
         this.startAt = startAt;
     }
@@ -133,6 +137,7 @@ public class UpdateSnapshotScheduleRequest extends AmazonWebServiceRequest
      *         represented as <i>hh</i>, where <i>hh</i> is the hour (0 to 23).
      *         The hour of the day is in the time zone of the gateway.
      */
+
     public Integer getStartAt() {
         return this.startAt;
     }
@@ -151,6 +156,7 @@ public class UpdateSnapshotScheduleRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateSnapshotScheduleRequest withStartAt(Integer startAt) {
         setStartAt(startAt);
         return this;
@@ -165,6 +171,7 @@ public class UpdateSnapshotScheduleRequest extends AmazonWebServiceRequest
      *        Frequency of snapshots. Specify the number of hours between
      *        snapshots.
      */
+
     public void setRecurrenceInHours(Integer recurrenceInHours) {
         this.recurrenceInHours = recurrenceInHours;
     }
@@ -177,6 +184,7 @@ public class UpdateSnapshotScheduleRequest extends AmazonWebServiceRequest
      * @return Frequency of snapshots. Specify the number of hours between
      *         snapshots.
      */
+
     public Integer getRecurrenceInHours() {
         return this.recurrenceInHours;
     }
@@ -192,6 +200,7 @@ public class UpdateSnapshotScheduleRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateSnapshotScheduleRequest withRecurrenceInHours(
             Integer recurrenceInHours) {
         setRecurrenceInHours(recurrenceInHours);
@@ -208,6 +217,7 @@ public class UpdateSnapshotScheduleRequest extends AmazonWebServiceRequest
      *        Optional description of the snapshot that overwrites the existing
      *        description.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -221,6 +231,7 @@ public class UpdateSnapshotScheduleRequest extends AmazonWebServiceRequest
      * @return Optional description of the snapshot that overwrites the existing
      *         description.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -237,6 +248,7 @@ public class UpdateSnapshotScheduleRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateSnapshotScheduleRequest withDescription(String description) {
         setDescription(description);
         return this;

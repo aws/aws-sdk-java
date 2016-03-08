@@ -82,6 +82,7 @@ public class CreateLBCookieStickinessPolicyRequest extends
      * @param loadBalancerName
      *        The name of the load balancer.
      */
+
     public void setLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
     }
@@ -93,6 +94,7 @@ public class CreateLBCookieStickinessPolicyRequest extends
      * 
      * @return The name of the load balancer.
      */
+
     public String getLoadBalancerName() {
         return this.loadBalancerName;
     }
@@ -107,6 +109,7 @@ public class CreateLBCookieStickinessPolicyRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateLBCookieStickinessPolicyRequest withLoadBalancerName(
             String loadBalancerName) {
         setLoadBalancerName(loadBalancerName);
@@ -125,6 +128,7 @@ public class CreateLBCookieStickinessPolicyRequest extends
      *        alphanumeric characters and dashes (-). This name must be unique
      *        within the set of policies for this load balancer.
      */
+
     public void setPolicyName(String policyName) {
         this.policyName = policyName;
     }
@@ -140,6 +144,7 @@ public class CreateLBCookieStickinessPolicyRequest extends
      *         of alphanumeric characters and dashes (-). This name must be
      *         unique within the set of policies for this load balancer.
      */
+
     public String getPolicyName() {
         return this.policyName;
     }
@@ -158,6 +163,7 @@ public class CreateLBCookieStickinessPolicyRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateLBCookieStickinessPolicyRequest withPolicyName(
             String policyName) {
         setPolicyName(policyName);
@@ -176,6 +182,7 @@ public class CreateLBCookieStickinessPolicyRequest extends
      *        considered stale. If you do not specify this parameter, the sticky
      *        session lasts for the duration of the browser session.
      */
+
     public void setCookieExpirationPeriod(Long cookieExpirationPeriod) {
         this.cookieExpirationPeriod = cookieExpirationPeriod;
     }
@@ -191,6 +198,7 @@ public class CreateLBCookieStickinessPolicyRequest extends
      *         considered stale. If you do not specify this parameter, the
      *         sticky session lasts for the duration of the browser session.
      */
+
     public Long getCookieExpirationPeriod() {
         return this.cookieExpirationPeriod;
     }
@@ -209,6 +217,7 @@ public class CreateLBCookieStickinessPolicyRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateLBCookieStickinessPolicyRequest withCookieExpirationPeriod(
             Long cookieExpirationPeriod) {
         setCookieExpirationPeriod(cookieExpirationPeriod);

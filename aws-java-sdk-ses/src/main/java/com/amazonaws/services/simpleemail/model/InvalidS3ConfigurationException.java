@@ -47,6 +47,7 @@ public class InvalidS3ConfigurationException extends AmazonServiceException {
     /**
      * @param bucket
      */
+
     public void setBucket(String bucket) {
         this.bucket = bucket;
     }
@@ -54,6 +55,7 @@ public class InvalidS3ConfigurationException extends AmazonServiceException {
     /**
      * @return
      */
+
     public String getBucket() {
         return this.bucket;
     }
@@ -63,6 +65,7 @@ public class InvalidS3ConfigurationException extends AmazonServiceException {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InvalidS3ConfigurationException withBucket(String bucket) {
         setBucket(bucket);
         return this;

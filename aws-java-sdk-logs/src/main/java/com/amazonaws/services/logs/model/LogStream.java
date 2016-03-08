@@ -44,6 +44,7 @@ public class LogStream implements Serializable, Cloneable {
     /**
      * @param logStreamName
      */
+
     public void setLogStreamName(String logStreamName) {
         this.logStreamName = logStreamName;
     }
@@ -51,6 +52,7 @@ public class LogStream implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getLogStreamName() {
         return this.logStreamName;
     }
@@ -60,6 +62,7 @@ public class LogStream implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LogStream withLogStreamName(String logStreamName) {
         setLogStreamName(logStreamName);
         return this;
@@ -68,6 +71,7 @@ public class LogStream implements Serializable, Cloneable {
     /**
      * @param creationTime
      */
+
     public void setCreationTime(Long creationTime) {
         this.creationTime = creationTime;
     }
@@ -75,6 +79,7 @@ public class LogStream implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Long getCreationTime() {
         return this.creationTime;
     }
@@ -84,6 +89,7 @@ public class LogStream implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LogStream withCreationTime(Long creationTime) {
         setCreationTime(creationTime);
         return this;
@@ -92,6 +98,7 @@ public class LogStream implements Serializable, Cloneable {
     /**
      * @param firstEventTimestamp
      */
+
     public void setFirstEventTimestamp(Long firstEventTimestamp) {
         this.firstEventTimestamp = firstEventTimestamp;
     }
@@ -99,6 +106,7 @@ public class LogStream implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Long getFirstEventTimestamp() {
         return this.firstEventTimestamp;
     }
@@ -108,6 +116,7 @@ public class LogStream implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LogStream withFirstEventTimestamp(Long firstEventTimestamp) {
         setFirstEventTimestamp(firstEventTimestamp);
         return this;
@@ -116,6 +125,7 @@ public class LogStream implements Serializable, Cloneable {
     /**
      * @param lastEventTimestamp
      */
+
     public void setLastEventTimestamp(Long lastEventTimestamp) {
         this.lastEventTimestamp = lastEventTimestamp;
     }
@@ -123,6 +133,7 @@ public class LogStream implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Long getLastEventTimestamp() {
         return this.lastEventTimestamp;
     }
@@ -132,6 +143,7 @@ public class LogStream implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LogStream withLastEventTimestamp(Long lastEventTimestamp) {
         setLastEventTimestamp(lastEventTimestamp);
         return this;
@@ -140,6 +152,7 @@ public class LogStream implements Serializable, Cloneable {
     /**
      * @param lastIngestionTime
      */
+
     public void setLastIngestionTime(Long lastIngestionTime) {
         this.lastIngestionTime = lastIngestionTime;
     }
@@ -147,6 +160,7 @@ public class LogStream implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Long getLastIngestionTime() {
         return this.lastIngestionTime;
     }
@@ -156,6 +170,7 @@ public class LogStream implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LogStream withLastIngestionTime(Long lastIngestionTime) {
         setLastIngestionTime(lastIngestionTime);
         return this;
@@ -164,6 +179,7 @@ public class LogStream implements Serializable, Cloneable {
     /**
      * @param uploadSequenceToken
      */
+
     public void setUploadSequenceToken(String uploadSequenceToken) {
         this.uploadSequenceToken = uploadSequenceToken;
     }
@@ -171,6 +187,7 @@ public class LogStream implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getUploadSequenceToken() {
         return this.uploadSequenceToken;
     }
@@ -180,6 +197,7 @@ public class LogStream implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LogStream withUploadSequenceToken(String uploadSequenceToken) {
         setUploadSequenceToken(uploadSequenceToken);
         return this;
@@ -188,6 +206,7 @@ public class LogStream implements Serializable, Cloneable {
     /**
      * @param arn
      */
+
     public void setArn(String arn) {
         this.arn = arn;
     }
@@ -195,6 +214,7 @@ public class LogStream implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getArn() {
         return this.arn;
     }
@@ -204,6 +224,7 @@ public class LogStream implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LogStream withArn(String arn) {
         setArn(arn);
         return this;
@@ -212,6 +233,7 @@ public class LogStream implements Serializable, Cloneable {
     /**
      * @param storedBytes
      */
+
     public void setStoredBytes(Long storedBytes) {
         this.storedBytes = storedBytes;
     }
@@ -219,6 +241,7 @@ public class LogStream implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Long getStoredBytes() {
         return this.storedBytes;
     }
@@ -228,6 +251,7 @@ public class LogStream implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LogStream withStoredBytes(Long storedBytes) {
         setStoredBytes(storedBytes);
         return this;

@@ -111,6 +111,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable,
      * @param networkInterfaceId
      *        The ID of the network interface.
      */
+
     public void setNetworkInterfaceId(String networkInterfaceId) {
         this.networkInterfaceId = networkInterfaceId;
     }
@@ -122,6 +123,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable,
      * 
      * @return The ID of the network interface.
      */
+
     public String getNetworkInterfaceId() {
         return this.networkInterfaceId;
     }
@@ -136,6 +138,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceNetworkInterfaceSpecification withNetworkInterfaceId(
             String networkInterfaceId) {
         setNetworkInterfaceId(networkInterfaceId);
@@ -154,6 +157,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable,
      *        attachment. If you are specifying a network interface in a
      *        <a>RunInstances</a> request, you must provide the device index.
      */
+
     public void setDeviceIndex(Integer deviceIndex) {
         this.deviceIndex = deviceIndex;
     }
@@ -169,6 +173,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable,
      *         attachment. If you are specifying a network interface in a
      *         <a>RunInstances</a> request, you must provide the device index.
      */
+
     public Integer getDeviceIndex() {
         return this.deviceIndex;
     }
@@ -187,6 +192,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceNetworkInterfaceSpecification withDeviceIndex(
             Integer deviceIndex) {
         setDeviceIndex(deviceIndex);
@@ -203,6 +209,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable,
      *        The ID of the subnet associated with the network string. Applies
      *        only if creating a network interface when launching an instance.
      */
+
     public void setSubnetId(String subnetId) {
         this.subnetId = subnetId;
     }
@@ -216,6 +223,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable,
      * @return The ID of the subnet associated with the network string. Applies
      *         only if creating a network interface when launching an instance.
      */
+
     public String getSubnetId() {
         return this.subnetId;
     }
@@ -232,6 +240,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceNetworkInterfaceSpecification withSubnetId(String subnetId) {
         setSubnetId(subnetId);
         return this;
@@ -247,6 +256,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable,
      *        The description of the network interface. Applies only if creating
      *        a network interface when launching an instance.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -260,6 +270,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable,
      * @return The description of the network interface. Applies only if
      *         creating a network interface when launching an instance.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -276,6 +287,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceNetworkInterfaceSpecification withDescription(
             String description) {
         setDescription(description);
@@ -292,6 +304,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable,
      *        The private IP address of the network interface. Applies only if
      *        creating a network interface when launching an instance.
      */
+
     public void setPrivateIpAddress(String privateIpAddress) {
         this.privateIpAddress = privateIpAddress;
     }
@@ -305,6 +318,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable,
      * @return The private IP address of the network interface. Applies only if
      *         creating a network interface when launching an instance.
      */
+
     public String getPrivateIpAddress() {
         return this.privateIpAddress;
     }
@@ -321,6 +335,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceNetworkInterfaceSpecification withPrivateIpAddress(
             String privateIpAddress) {
         setPrivateIpAddress(privateIpAddress);
@@ -336,6 +351,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable,
      * @return The IDs of the security groups for the network interface. Applies
      *         only if creating a network interface when launching an instance.
      */
+
     public java.util.List<String> getGroups() {
         if (groups == null) {
             groups = new com.amazonaws.internal.SdkInternalList<String>();
@@ -353,6 +369,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable,
      *        The IDs of the security groups for the network interface. Applies
      *        only if creating a network interface when launching an instance.
      */
+
     public void setGroups(java.util.Collection<String> groups) {
         if (groups == null) {
             this.groups = null;
@@ -380,6 +397,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceNetworkInterfaceSpecification withGroups(String... groups) {
         if (this.groups == null) {
             setGroups(new com.amazonaws.internal.SdkInternalList<String>(
@@ -403,6 +421,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceNetworkInterfaceSpecification withGroups(
             java.util.Collection<String> groups) {
         setGroups(groups);
@@ -421,6 +440,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable,
      *        instance is terminated. You can specify <code>true</code> only if
      *        creating a new network interface when launching an instance.
      */
+
     public void setDeleteOnTermination(Boolean deleteOnTermination) {
         this.deleteOnTermination = deleteOnTermination;
     }
@@ -436,6 +456,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable,
      *         instance is terminated. You can specify <code>true</code> only if
      *         creating a new network interface when launching an instance.
      */
+
     public Boolean getDeleteOnTermination() {
         return this.deleteOnTermination;
     }
@@ -454,6 +475,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceNetworkInterfaceSpecification withDeleteOnTermination(
             Boolean deleteOnTermination) {
         setDeleteOnTermination(deleteOnTermination);
@@ -471,6 +493,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable,
      *         instance is terminated. You can specify <code>true</code> only if
      *         creating a new network interface when launching an instance.
      */
+
     public Boolean isDeleteOnTermination() {
         return this.deleteOnTermination;
     }
@@ -485,6 +508,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable,
      *         interface. Only one private IP address can be designated as
      *         primary.
      */
+
     public java.util.List<PrivateIpAddressSpecification> getPrivateIpAddresses() {
         if (privateIpAddresses == null) {
             privateIpAddresses = new com.amazonaws.internal.SdkInternalList<PrivateIpAddressSpecification>();
@@ -503,6 +527,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable,
      *        interface. Only one private IP address can be designated as
      *        primary.
      */
+
     public void setPrivateIpAddresses(
             java.util.Collection<PrivateIpAddressSpecification> privateIpAddresses) {
         if (privateIpAddresses == null) {
@@ -533,6 +558,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceNetworkInterfaceSpecification withPrivateIpAddresses(
             PrivateIpAddressSpecification... privateIpAddresses) {
         if (this.privateIpAddresses == null) {
@@ -558,6 +584,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceNetworkInterfaceSpecification withPrivateIpAddresses(
             java.util.Collection<PrivateIpAddressSpecification> privateIpAddresses) {
         setPrivateIpAddresses(privateIpAddresses);
@@ -576,6 +603,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable,
      *        this option and specify more than one private IP address using the
      *        private IP addresses option.
      */
+
     public void setSecondaryPrivateIpAddressCount(
             Integer secondaryPrivateIpAddressCount) {
         this.secondaryPrivateIpAddressCount = secondaryPrivateIpAddressCount;
@@ -592,6 +620,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable,
      *         this option and specify more than one private IP address using
      *         the private IP addresses option.
      */
+
     public Integer getSecondaryPrivateIpAddressCount() {
         return this.secondaryPrivateIpAddressCount;
     }
@@ -610,6 +639,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceNetworkInterfaceSpecification withSecondaryPrivateIpAddressCount(
             Integer secondaryPrivateIpAddressCount) {
         setSecondaryPrivateIpAddressCount(secondaryPrivateIpAddressCount);
@@ -634,6 +664,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable,
      *        than one network interface in the request. If launching into a
      *        default subnet, the default value is <code>true</code>.
      */
+
     public void setAssociatePublicIpAddress(Boolean associatePublicIpAddress) {
         this.associatePublicIpAddress = associatePublicIpAddress;
     }
@@ -655,6 +686,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable,
      *         more than one network interface in the request. If launching into
      *         a default subnet, the default value is <code>true</code>.
      */
+
     public Boolean getAssociatePublicIpAddress() {
         return this.associatePublicIpAddress;
     }
@@ -679,6 +711,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceNetworkInterfaceSpecification withAssociatePublicIpAddress(
             Boolean associatePublicIpAddress) {
         setAssociatePublicIpAddress(associatePublicIpAddress);
@@ -702,6 +735,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable,
      *         more than one network interface in the request. If launching into
      *         a default subnet, the default value is <code>true</code>.
      */
+
     public Boolean isAssociatePublicIpAddress() {
         return this.associatePublicIpAddress;
     }

@@ -88,6 +88,7 @@ public class StreamDescription implements Serializable, Cloneable {
      * @param streamName
      *        The name of the stream being described.
      */
+
     public void setStreamName(String streamName) {
         this.streamName = streamName;
     }
@@ -99,6 +100,7 @@ public class StreamDescription implements Serializable, Cloneable {
      * 
      * @return The name of the stream being described.
      */
+
     public String getStreamName() {
         return this.streamName;
     }
@@ -113,6 +115,7 @@ public class StreamDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StreamDescription withStreamName(String streamName) {
         setStreamName(streamName);
         return this;
@@ -126,6 +129,7 @@ public class StreamDescription implements Serializable, Cloneable {
      * @param streamARN
      *        The Amazon Resource Name (ARN) for the stream being described.
      */
+
     public void setStreamARN(String streamARN) {
         this.streamARN = streamARN;
     }
@@ -137,6 +141,7 @@ public class StreamDescription implements Serializable, Cloneable {
      * 
      * @return The Amazon Resource Name (ARN) for the stream being described.
      */
+
     public String getStreamARN() {
         return this.streamARN;
     }
@@ -151,6 +156,7 @@ public class StreamDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StreamDescription withStreamARN(String streamARN) {
         setStreamARN(streamARN);
         return this;
@@ -198,6 +204,7 @@ public class StreamDescription implements Serializable, Cloneable {
      *        stream is in the <code>UPDATING</code> state.</li>
      * @see StreamStatus
      */
+
     public void setStreamStatus(String streamStatus) {
         this.streamStatus = streamStatus;
     }
@@ -243,6 +250,7 @@ public class StreamDescription implements Serializable, Cloneable {
      *         stream is in the <code>UPDATING</code> state.</li>
      * @see StreamStatus
      */
+
     public String getStreamStatus() {
         return this.streamStatus;
     }
@@ -291,6 +299,7 @@ public class StreamDescription implements Serializable, Cloneable {
      *         chained together.
      * @see StreamStatus
      */
+
     public StreamDescription withStreamStatus(String streamStatus) {
         setStreamStatus(streamStatus);
         return this;
@@ -340,6 +349,7 @@ public class StreamDescription implements Serializable, Cloneable {
      *         chained together.
      * @see StreamStatus
      */
+
     public void setStreamStatus(StreamStatus streamStatus) {
         this.streamStatus = streamStatus.toString();
     }
@@ -388,6 +398,7 @@ public class StreamDescription implements Serializable, Cloneable {
      *         chained together.
      * @see StreamStatus
      */
+
     public StreamDescription withStreamStatus(StreamStatus streamStatus) {
         setStreamStatus(streamStatus);
         return this;
@@ -400,6 +411,7 @@ public class StreamDescription implements Serializable, Cloneable {
      * 
      * @return The shards that comprise the stream.
      */
+
     public java.util.List<Shard> getShards() {
         if (shards == null) {
             shards = new com.amazonaws.internal.SdkInternalList<Shard>();
@@ -415,6 +427,7 @@ public class StreamDescription implements Serializable, Cloneable {
      * @param shards
      *        The shards that comprise the stream.
      */
+
     public void setShards(java.util.Collection<Shard> shards) {
         if (shards == null) {
             this.shards = null;
@@ -440,6 +453,7 @@ public class StreamDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StreamDescription withShards(Shard... shards) {
         if (this.shards == null) {
             setShards(new com.amazonaws.internal.SdkInternalList<Shard>(
@@ -461,6 +475,7 @@ public class StreamDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StreamDescription withShards(java.util.Collection<Shard> shards) {
         setShards(shards);
         return this;
@@ -476,6 +491,7 @@ public class StreamDescription implements Serializable, Cloneable {
      *        If set to <code>true</code>, more shards in the stream are
      *        available to describe.
      */
+
     public void setHasMoreShards(Boolean hasMoreShards) {
         this.hasMoreShards = hasMoreShards;
     }
@@ -489,6 +505,7 @@ public class StreamDescription implements Serializable, Cloneable {
      * @return If set to <code>true</code>, more shards in the stream are
      *         available to describe.
      */
+
     public Boolean getHasMoreShards() {
         return this.hasMoreShards;
     }
@@ -505,6 +522,7 @@ public class StreamDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StreamDescription withHasMoreShards(Boolean hasMoreShards) {
         setHasMoreShards(hasMoreShards);
         return this;
@@ -519,6 +537,7 @@ public class StreamDescription implements Serializable, Cloneable {
      * @return If set to <code>true</code>, more shards in the stream are
      *         available to describe.
      */
+
     public Boolean isHasMoreShards() {
         return this.hasMoreShards;
     }
@@ -531,6 +550,7 @@ public class StreamDescription implements Serializable, Cloneable {
      * @param retentionPeriodHours
      *        The current retention period, in hours.
      */
+
     public void setRetentionPeriodHours(Integer retentionPeriodHours) {
         this.retentionPeriodHours = retentionPeriodHours;
     }
@@ -542,6 +562,7 @@ public class StreamDescription implements Serializable, Cloneable {
      * 
      * @return The current retention period, in hours.
      */
+
     public Integer getRetentionPeriodHours() {
         return this.retentionPeriodHours;
     }
@@ -556,6 +577,7 @@ public class StreamDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StreamDescription withRetentionPeriodHours(
             Integer retentionPeriodHours) {
         setRetentionPeriodHours(retentionPeriodHours);

@@ -46,6 +46,7 @@ public class ProductCode implements Serializable, Cloneable {
      * @param productCodeId
      *        The product code.
      */
+
     public void setProductCodeId(String productCodeId) {
         this.productCodeId = productCodeId;
     }
@@ -57,6 +58,7 @@ public class ProductCode implements Serializable, Cloneable {
      * 
      * @return The product code.
      */
+
     public String getProductCodeId() {
         return this.productCodeId;
     }
@@ -71,6 +73,7 @@ public class ProductCode implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ProductCode withProductCodeId(String productCodeId) {
         setProductCodeId(productCodeId);
         return this;
@@ -85,6 +88,7 @@ public class ProductCode implements Serializable, Cloneable {
      *        The type of product code.
      * @see ProductCodeValues
      */
+
     public void setProductCodeType(String productCodeType) {
         this.productCodeType = productCodeType;
     }
@@ -97,6 +101,7 @@ public class ProductCode implements Serializable, Cloneable {
      * @return The type of product code.
      * @see ProductCodeValues
      */
+
     public String getProductCodeType() {
         return this.productCodeType;
     }
@@ -112,6 +117,7 @@ public class ProductCode implements Serializable, Cloneable {
      *         chained together.
      * @see ProductCodeValues
      */
+
     public ProductCode withProductCodeType(String productCodeType) {
         setProductCodeType(productCodeType);
         return this;
@@ -128,6 +134,7 @@ public class ProductCode implements Serializable, Cloneable {
      *         chained together.
      * @see ProductCodeValues
      */
+
     public void setProductCodeType(ProductCodeValues productCodeType) {
         this.productCodeType = productCodeType.toString();
     }
@@ -143,6 +150,7 @@ public class ProductCode implements Serializable, Cloneable {
      *         chained together.
      * @see ProductCodeValues
      */
+
     public ProductCode withProductCodeType(ProductCodeValues productCodeType) {
         setProductCodeType(productCodeType);
         return this;

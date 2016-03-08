@@ -38,6 +38,7 @@ public class DescribeLoadBalancerPolicyTypesResult implements Serializable,
      * 
      * @return Information about the policy types.
      */
+
     public java.util.List<PolicyTypeDescription> getPolicyTypeDescriptions() {
         if (policyTypeDescriptions == null) {
             policyTypeDescriptions = new com.amazonaws.internal.SdkInternalList<PolicyTypeDescription>();
@@ -53,6 +54,7 @@ public class DescribeLoadBalancerPolicyTypesResult implements Serializable,
      * @param policyTypeDescriptions
      *        Information about the policy types.
      */
+
     public void setPolicyTypeDescriptions(
             java.util.Collection<PolicyTypeDescription> policyTypeDescriptions) {
         if (policyTypeDescriptions == null) {
@@ -80,6 +82,7 @@ public class DescribeLoadBalancerPolicyTypesResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLoadBalancerPolicyTypesResult withPolicyTypeDescriptions(
             PolicyTypeDescription... policyTypeDescriptions) {
         if (this.policyTypeDescriptions == null) {
@@ -102,6 +105,7 @@ public class DescribeLoadBalancerPolicyTypesResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLoadBalancerPolicyTypesResult withPolicyTypeDescriptions(
             java.util.Collection<PolicyTypeDescription> policyTypeDescriptions) {
         setPolicyTypeDescriptions(policyTypeDescriptions);

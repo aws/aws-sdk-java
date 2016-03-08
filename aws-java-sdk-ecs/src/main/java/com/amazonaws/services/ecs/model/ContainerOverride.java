@@ -56,6 +56,7 @@ public class ContainerOverride implements Serializable, Cloneable {
      * @param name
      *        The name of the container that receives the override.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -67,6 +68,7 @@ public class ContainerOverride implements Serializable, Cloneable {
      * 
      * @return The name of the container that receives the override.
      */
+
     public String getName() {
         return this.name;
     }
@@ -81,6 +83,7 @@ public class ContainerOverride implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContainerOverride withName(String name) {
         setName(name);
         return this;
@@ -95,6 +98,7 @@ public class ContainerOverride implements Serializable, Cloneable {
      * @return The command to send to the container that overrides the default
      *         command from the Docker image or the task definition.
      */
+
     public java.util.List<String> getCommand() {
         if (command == null) {
             command = new com.amazonaws.internal.SdkInternalList<String>();
@@ -112,6 +116,7 @@ public class ContainerOverride implements Serializable, Cloneable {
      *        The command to send to the container that overrides the default
      *        command from the Docker image or the task definition.
      */
+
     public void setCommand(java.util.Collection<String> command) {
         if (command == null) {
             this.command = null;
@@ -140,6 +145,7 @@ public class ContainerOverride implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContainerOverride withCommand(String... command) {
         if (this.command == null) {
             setCommand(new com.amazonaws.internal.SdkInternalList<String>(
@@ -163,6 +169,7 @@ public class ContainerOverride implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContainerOverride withCommand(java.util.Collection<String> command) {
         setCommand(command);
         return this;
@@ -181,6 +188,7 @@ public class ContainerOverride implements Serializable, Cloneable {
      *         launch, or you can override the existing environment variables
      *         from the Docker image or the task definition.
      */
+
     public java.util.List<KeyValuePair> getEnvironment() {
         if (environment == null) {
             environment = new com.amazonaws.internal.SdkInternalList<KeyValuePair>();
@@ -202,6 +210,7 @@ public class ContainerOverride implements Serializable, Cloneable {
      *        launch, or you can override the existing environment variables
      *        from the Docker image or the task definition.
      */
+
     public void setEnvironment(java.util.Collection<KeyValuePair> environment) {
         if (environment == null) {
             this.environment = null;
@@ -234,6 +243,7 @@ public class ContainerOverride implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContainerOverride withEnvironment(KeyValuePair... environment) {
         if (this.environment == null) {
             setEnvironment(new com.amazonaws.internal.SdkInternalList<KeyValuePair>(
@@ -261,6 +271,7 @@ public class ContainerOverride implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContainerOverride withEnvironment(
             java.util.Collection<KeyValuePair> environment) {
         setEnvironment(environment);

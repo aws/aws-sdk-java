@@ -32,6 +32,7 @@ public class UpdateGatewayInformationResult implements Serializable, Cloneable {
     /**
      * @param gatewayARN
      */
+
     public void setGatewayARN(String gatewayARN) {
         this.gatewayARN = gatewayARN;
     }
@@ -39,6 +40,7 @@ public class UpdateGatewayInformationResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getGatewayARN() {
         return this.gatewayARN;
     }
@@ -48,6 +50,7 @@ public class UpdateGatewayInformationResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateGatewayInformationResult withGatewayARN(String gatewayARN) {
         setGatewayARN(gatewayARN);
         return this;
@@ -56,6 +59,7 @@ public class UpdateGatewayInformationResult implements Serializable, Cloneable {
     /**
      * @param gatewayName
      */
+
     public void setGatewayName(String gatewayName) {
         this.gatewayName = gatewayName;
     }
@@ -63,6 +67,7 @@ public class UpdateGatewayInformationResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getGatewayName() {
         return this.gatewayName;
     }
@@ -72,6 +77,7 @@ public class UpdateGatewayInformationResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateGatewayInformationResult withGatewayName(String gatewayName) {
         setGatewayName(gatewayName);
         return this;

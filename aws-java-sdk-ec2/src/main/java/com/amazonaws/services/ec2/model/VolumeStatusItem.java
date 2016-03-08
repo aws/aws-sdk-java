@@ -64,6 +64,7 @@ public class VolumeStatusItem implements Serializable, Cloneable {
      * @param volumeId
      *        The volume ID.
      */
+
     public void setVolumeId(String volumeId) {
         this.volumeId = volumeId;
     }
@@ -75,6 +76,7 @@ public class VolumeStatusItem implements Serializable, Cloneable {
      * 
      * @return The volume ID.
      */
+
     public String getVolumeId() {
         return this.volumeId;
     }
@@ -89,6 +91,7 @@ public class VolumeStatusItem implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VolumeStatusItem withVolumeId(String volumeId) {
         setVolumeId(volumeId);
         return this;
@@ -102,6 +105,7 @@ public class VolumeStatusItem implements Serializable, Cloneable {
      * @param availabilityZone
      *        The Availability Zone of the volume.
      */
+
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
@@ -113,6 +117,7 @@ public class VolumeStatusItem implements Serializable, Cloneable {
      * 
      * @return The Availability Zone of the volume.
      */
+
     public String getAvailabilityZone() {
         return this.availabilityZone;
     }
@@ -127,6 +132,7 @@ public class VolumeStatusItem implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VolumeStatusItem withAvailabilityZone(String availabilityZone) {
         setAvailabilityZone(availabilityZone);
         return this;
@@ -140,6 +146,7 @@ public class VolumeStatusItem implements Serializable, Cloneable {
      * @param volumeStatus
      *        The volume status.
      */
+
     public void setVolumeStatus(VolumeStatusInfo volumeStatus) {
         this.volumeStatus = volumeStatus;
     }
@@ -151,6 +158,7 @@ public class VolumeStatusItem implements Serializable, Cloneable {
      * 
      * @return The volume status.
      */
+
     public VolumeStatusInfo getVolumeStatus() {
         return this.volumeStatus;
     }
@@ -165,6 +173,7 @@ public class VolumeStatusItem implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VolumeStatusItem withVolumeStatus(VolumeStatusInfo volumeStatus) {
         setVolumeStatus(volumeStatus);
         return this;
@@ -177,6 +186,7 @@ public class VolumeStatusItem implements Serializable, Cloneable {
      * 
      * @return A list of events associated with the volume.
      */
+
     public java.util.List<VolumeStatusEvent> getEvents() {
         if (events == null) {
             events = new com.amazonaws.internal.SdkInternalList<VolumeStatusEvent>();
@@ -192,6 +202,7 @@ public class VolumeStatusItem implements Serializable, Cloneable {
      * @param events
      *        A list of events associated with the volume.
      */
+
     public void setEvents(java.util.Collection<VolumeStatusEvent> events) {
         if (events == null) {
             this.events = null;
@@ -218,6 +229,7 @@ public class VolumeStatusItem implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VolumeStatusItem withEvents(VolumeStatusEvent... events) {
         if (this.events == null) {
             setEvents(new com.amazonaws.internal.SdkInternalList<VolumeStatusEvent>(
@@ -239,6 +251,7 @@ public class VolumeStatusItem implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VolumeStatusItem withEvents(
             java.util.Collection<VolumeStatusEvent> events) {
         setEvents(events);
@@ -252,6 +265,7 @@ public class VolumeStatusItem implements Serializable, Cloneable {
      * 
      * @return The details of the operation.
      */
+
     public java.util.List<VolumeStatusAction> getActions() {
         if (actions == null) {
             actions = new com.amazonaws.internal.SdkInternalList<VolumeStatusAction>();
@@ -267,6 +281,7 @@ public class VolumeStatusItem implements Serializable, Cloneable {
      * @param actions
      *        The details of the operation.
      */
+
     public void setActions(java.util.Collection<VolumeStatusAction> actions) {
         if (actions == null) {
             this.actions = null;
@@ -293,6 +308,7 @@ public class VolumeStatusItem implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VolumeStatusItem withActions(VolumeStatusAction... actions) {
         if (this.actions == null) {
             setActions(new com.amazonaws.internal.SdkInternalList<VolumeStatusAction>(
@@ -314,6 +330,7 @@ public class VolumeStatusItem implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VolumeStatusItem withActions(
             java.util.Collection<VolumeStatusAction> actions) {
         setActions(actions);

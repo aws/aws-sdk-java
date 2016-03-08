@@ -169,6 +169,7 @@ public class Change implements Serializable, Cloneable {
      *        latency, geolocation, and failover resource record sets).</li>
      * @see ChangeAction
      */
+
     public void setAction(String action) {
         this.action = action;
     }
@@ -216,6 +217,7 @@ public class Change implements Serializable, Cloneable {
      *         and failover resource record sets).</li>
      * @see ChangeAction
      */
+
     public String getAction() {
         return this.action;
     }
@@ -265,6 +267,7 @@ public class Change implements Serializable, Cloneable {
      *         chained together.
      * @see ChangeAction
      */
+
     public Change withAction(String action) {
         setAction(action);
         return this;
@@ -315,6 +318,7 @@ public class Change implements Serializable, Cloneable {
      *         chained together.
      * @see ChangeAction
      */
+
     public void setAction(ChangeAction action) {
         this.action = action.toString();
     }
@@ -364,6 +368,7 @@ public class Change implements Serializable, Cloneable {
      *         chained together.
      * @see ChangeAction
      */
+
     public Change withAction(ChangeAction action) {
         setAction(action);
         return this;
@@ -377,6 +382,7 @@ public class Change implements Serializable, Cloneable {
      * @param resourceRecordSet
      *        Information about the resource record set to create or delete.
      */
+
     public void setResourceRecordSet(ResourceRecordSet resourceRecordSet) {
         this.resourceRecordSet = resourceRecordSet;
     }
@@ -388,6 +394,7 @@ public class Change implements Serializable, Cloneable {
      * 
      * @return Information about the resource record set to create or delete.
      */
+
     public ResourceRecordSet getResourceRecordSet() {
         return this.resourceRecordSet;
     }
@@ -402,6 +409,7 @@ public class Change implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Change withResourceRecordSet(ResourceRecordSet resourceRecordSet) {
         setResourceRecordSet(resourceRecordSet);
         return this;

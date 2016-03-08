@@ -92,6 +92,7 @@ public class ReceiptAction implements Serializable, Cloneable {
      *        (Amazon S3) bucket and, optionally, publishes a notification to
      *        Amazon SNS.
      */
+
     public void setS3Action(S3Action s3Action) {
         this.s3Action = s3Action;
     }
@@ -106,6 +107,7 @@ public class ReceiptAction implements Serializable, Cloneable {
      *         (Amazon S3) bucket and, optionally, publishes a notification to
      *         Amazon SNS.
      */
+
     public S3Action getS3Action() {
         return this.s3Action;
     }
@@ -123,6 +125,7 @@ public class ReceiptAction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReceiptAction withS3Action(S3Action s3Action) {
         setS3Action(s3Action);
         return this;
@@ -140,6 +143,7 @@ public class ReceiptAction implements Serializable, Cloneable {
      *        sender and, optionally, publishes a notification to Amazon Simple
      *        Notification Service (Amazon SNS).
      */
+
     public void setBounceAction(BounceAction bounceAction) {
         this.bounceAction = bounceAction;
     }
@@ -155,6 +159,7 @@ public class ReceiptAction implements Serializable, Cloneable {
      *         sender and, optionally, publishes a notification to Amazon Simple
      *         Notification Service (Amazon SNS).
      */
+
     public BounceAction getBounceAction() {
         return this.bounceAction;
     }
@@ -173,6 +178,7 @@ public class ReceiptAction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReceiptAction withBounceAction(BounceAction bounceAction) {
         setBounceAction(bounceAction);
         return this;
@@ -188,6 +194,7 @@ public class ReceiptAction implements Serializable, Cloneable {
      *        Calls Amazon WorkMail and, optionally, publishes a notification to
      *        Amazon SNS.
      */
+
     public void setWorkmailAction(WorkmailAction workmailAction) {
         this.workmailAction = workmailAction;
     }
@@ -201,6 +208,7 @@ public class ReceiptAction implements Serializable, Cloneable {
      * @return Calls Amazon WorkMail and, optionally, publishes a notification
      *         to Amazon SNS.
      */
+
     public WorkmailAction getWorkmailAction() {
         return this.workmailAction;
     }
@@ -217,6 +225,7 @@ public class ReceiptAction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReceiptAction withWorkmailAction(WorkmailAction workmailAction) {
         setWorkmailAction(workmailAction);
         return this;
@@ -232,6 +241,7 @@ public class ReceiptAction implements Serializable, Cloneable {
      *        Calls an AWS Lambda function, and optionally, publishes a
      *        notification to Amazon SNS.
      */
+
     public void setLambdaAction(LambdaAction lambdaAction) {
         this.lambdaAction = lambdaAction;
     }
@@ -245,6 +255,7 @@ public class ReceiptAction implements Serializable, Cloneable {
      * @return Calls an AWS Lambda function, and optionally, publishes a
      *         notification to Amazon SNS.
      */
+
     public LambdaAction getLambdaAction() {
         return this.lambdaAction;
     }
@@ -261,6 +272,7 @@ public class ReceiptAction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReceiptAction withLambdaAction(LambdaAction lambdaAction) {
         setLambdaAction(lambdaAction);
         return this;
@@ -276,6 +288,7 @@ public class ReceiptAction implements Serializable, Cloneable {
      *        Terminates the evaluation of the receipt rule set and optionally
      *        publishes a notification to Amazon SNS.
      */
+
     public void setStopAction(StopAction stopAction) {
         this.stopAction = stopAction;
     }
@@ -289,6 +302,7 @@ public class ReceiptAction implements Serializable, Cloneable {
      * @return Terminates the evaluation of the receipt rule set and optionally
      *         publishes a notification to Amazon SNS.
      */
+
     public StopAction getStopAction() {
         return this.stopAction;
     }
@@ -305,6 +319,7 @@ public class ReceiptAction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReceiptAction withStopAction(StopAction stopAction) {
         setStopAction(stopAction);
         return this;
@@ -318,6 +333,7 @@ public class ReceiptAction implements Serializable, Cloneable {
      * @param addHeaderAction
      *        Adds a header to the received email.
      */
+
     public void setAddHeaderAction(AddHeaderAction addHeaderAction) {
         this.addHeaderAction = addHeaderAction;
     }
@@ -329,6 +345,7 @@ public class ReceiptAction implements Serializable, Cloneable {
      * 
      * @return Adds a header to the received email.
      */
+
     public AddHeaderAction getAddHeaderAction() {
         return this.addHeaderAction;
     }
@@ -343,6 +360,7 @@ public class ReceiptAction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReceiptAction withAddHeaderAction(AddHeaderAction addHeaderAction) {
         setAddHeaderAction(addHeaderAction);
         return this;
@@ -356,6 +374,7 @@ public class ReceiptAction implements Serializable, Cloneable {
      * @param sNSAction
      *        Publishes the email content within a notification to Amazon SNS.
      */
+
     public void setSNSAction(SNSAction sNSAction) {
         this.sNSAction = sNSAction;
     }
@@ -367,6 +386,7 @@ public class ReceiptAction implements Serializable, Cloneable {
      * 
      * @return Publishes the email content within a notification to Amazon SNS.
      */
+
     public SNSAction getSNSAction() {
         return this.sNSAction;
     }
@@ -381,6 +401,7 @@ public class ReceiptAction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReceiptAction withSNSAction(SNSAction sNSAction) {
         setSNSAction(sNSAction);
         return this;

@@ -52,6 +52,7 @@ public class DhcpOptions implements Serializable, Cloneable {
      * @param dhcpOptionsId
      *        The ID of the set of DHCP options.
      */
+
     public void setDhcpOptionsId(String dhcpOptionsId) {
         this.dhcpOptionsId = dhcpOptionsId;
     }
@@ -63,6 +64,7 @@ public class DhcpOptions implements Serializable, Cloneable {
      * 
      * @return The ID of the set of DHCP options.
      */
+
     public String getDhcpOptionsId() {
         return this.dhcpOptionsId;
     }
@@ -77,6 +79,7 @@ public class DhcpOptions implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DhcpOptions withDhcpOptionsId(String dhcpOptionsId) {
         setDhcpOptionsId(dhcpOptionsId);
         return this;
@@ -89,6 +92,7 @@ public class DhcpOptions implements Serializable, Cloneable {
      * 
      * @return One or more DHCP options in the set.
      */
+
     public java.util.List<DhcpConfiguration> getDhcpConfigurations() {
         if (dhcpConfigurations == null) {
             dhcpConfigurations = new com.amazonaws.internal.SdkInternalList<DhcpConfiguration>();
@@ -104,6 +108,7 @@ public class DhcpOptions implements Serializable, Cloneable {
      * @param dhcpConfigurations
      *        One or more DHCP options in the set.
      */
+
     public void setDhcpConfigurations(
             java.util.Collection<DhcpConfiguration> dhcpConfigurations) {
         if (dhcpConfigurations == null) {
@@ -131,6 +136,7 @@ public class DhcpOptions implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DhcpOptions withDhcpConfigurations(
             DhcpConfiguration... dhcpConfigurations) {
         if (this.dhcpConfigurations == null) {
@@ -153,6 +159,7 @@ public class DhcpOptions implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DhcpOptions withDhcpConfigurations(
             java.util.Collection<DhcpConfiguration> dhcpConfigurations) {
         setDhcpConfigurations(dhcpConfigurations);
@@ -166,6 +173,7 @@ public class DhcpOptions implements Serializable, Cloneable {
      * 
      * @return Any tags assigned to the DHCP options set.
      */
+
     public java.util.List<Tag> getTags() {
         if (tags == null) {
             tags = new com.amazonaws.internal.SdkInternalList<Tag>();
@@ -181,6 +189,7 @@ public class DhcpOptions implements Serializable, Cloneable {
      * @param tags
      *        Any tags assigned to the DHCP options set.
      */
+
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
             this.tags = null;
@@ -206,6 +215,7 @@ public class DhcpOptions implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DhcpOptions withTags(Tag... tags) {
         if (this.tags == null) {
             setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
@@ -226,6 +236,7 @@ public class DhcpOptions implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DhcpOptions withTags(java.util.Collection<Tag> tags) {
         setTags(tags);
         return this;

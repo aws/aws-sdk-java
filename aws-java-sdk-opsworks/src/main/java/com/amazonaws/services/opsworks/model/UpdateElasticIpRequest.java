@@ -46,6 +46,7 @@ public class UpdateElasticIpRequest extends AmazonWebServiceRequest implements
      * @param elasticIp
      *        The address.
      */
+
     public void setElasticIp(String elasticIp) {
         this.elasticIp = elasticIp;
     }
@@ -57,6 +58,7 @@ public class UpdateElasticIpRequest extends AmazonWebServiceRequest implements
      * 
      * @return The address.
      */
+
     public String getElasticIp() {
         return this.elasticIp;
     }
@@ -71,6 +73,7 @@ public class UpdateElasticIpRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateElasticIpRequest withElasticIp(String elasticIp) {
         setElasticIp(elasticIp);
         return this;
@@ -84,6 +87,7 @@ public class UpdateElasticIpRequest extends AmazonWebServiceRequest implements
      * @param name
      *        The new name.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -95,6 +99,7 @@ public class UpdateElasticIpRequest extends AmazonWebServiceRequest implements
      * 
      * @return The new name.
      */
+
     public String getName() {
         return this.name;
     }
@@ -109,6 +114,7 @@ public class UpdateElasticIpRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateElasticIpRequest withName(String name) {
         setName(name);
         return this;

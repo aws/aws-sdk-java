@@ -58,6 +58,7 @@ public class Connection implements Serializable, Cloneable {
     /**
      * @param ownerAccount
      */
+
     public void setOwnerAccount(String ownerAccount) {
         this.ownerAccount = ownerAccount;
     }
@@ -65,6 +66,7 @@ public class Connection implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getOwnerAccount() {
         return this.ownerAccount;
     }
@@ -74,6 +76,7 @@ public class Connection implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Connection withOwnerAccount(String ownerAccount) {
         setOwnerAccount(ownerAccount);
         return this;
@@ -82,6 +85,7 @@ public class Connection implements Serializable, Cloneable {
     /**
      * @param connectionId
      */
+
     public void setConnectionId(String connectionId) {
         this.connectionId = connectionId;
     }
@@ -89,6 +93,7 @@ public class Connection implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getConnectionId() {
         return this.connectionId;
     }
@@ -98,6 +103,7 @@ public class Connection implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Connection withConnectionId(String connectionId) {
         setConnectionId(connectionId);
         return this;
@@ -106,6 +112,7 @@ public class Connection implements Serializable, Cloneable {
     /**
      * @param connectionName
      */
+
     public void setConnectionName(String connectionName) {
         this.connectionName = connectionName;
     }
@@ -113,6 +120,7 @@ public class Connection implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getConnectionName() {
         return this.connectionName;
     }
@@ -122,6 +130,7 @@ public class Connection implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Connection withConnectionName(String connectionName) {
         setConnectionName(connectionName);
         return this;
@@ -131,6 +140,7 @@ public class Connection implements Serializable, Cloneable {
      * @param connectionState
      * @see ConnectionState
      */
+
     public void setConnectionState(String connectionState) {
         this.connectionState = connectionState;
     }
@@ -139,6 +149,7 @@ public class Connection implements Serializable, Cloneable {
      * @return
      * @see ConnectionState
      */
+
     public String getConnectionState() {
         return this.connectionState;
     }
@@ -149,6 +160,7 @@ public class Connection implements Serializable, Cloneable {
      *         chained together.
      * @see ConnectionState
      */
+
     public Connection withConnectionState(String connectionState) {
         setConnectionState(connectionState);
         return this;
@@ -160,6 +172,7 @@ public class Connection implements Serializable, Cloneable {
      *         chained together.
      * @see ConnectionState
      */
+
     public void setConnectionState(ConnectionState connectionState) {
         this.connectionState = connectionState.toString();
     }
@@ -170,6 +183,7 @@ public class Connection implements Serializable, Cloneable {
      *         chained together.
      * @see ConnectionState
      */
+
     public Connection withConnectionState(ConnectionState connectionState) {
         setConnectionState(connectionState);
         return this;
@@ -178,6 +192,7 @@ public class Connection implements Serializable, Cloneable {
     /**
      * @param region
      */
+
     public void setRegion(String region) {
         this.region = region;
     }
@@ -185,6 +200,7 @@ public class Connection implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getRegion() {
         return this.region;
     }
@@ -194,6 +210,7 @@ public class Connection implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Connection withRegion(String region) {
         setRegion(region);
         return this;
@@ -202,6 +219,7 @@ public class Connection implements Serializable, Cloneable {
     /**
      * @param location
      */
+
     public void setLocation(String location) {
         this.location = location;
     }
@@ -209,6 +227,7 @@ public class Connection implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getLocation() {
         return this.location;
     }
@@ -218,6 +237,7 @@ public class Connection implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Connection withLocation(String location) {
         setLocation(location);
         return this;
@@ -244,6 +264,7 @@ public class Connection implements Serializable, Cloneable {
      *        <p>
      *        Default: None
      */
+
     public void setBandwidth(String bandwidth) {
         this.bandwidth = bandwidth;
     }
@@ -268,6 +289,7 @@ public class Connection implements Serializable, Cloneable {
      *         <p>
      *         Default: None
      */
+
     public String getBandwidth() {
         return this.bandwidth;
     }
@@ -295,6 +317,7 @@ public class Connection implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Connection withBandwidth(String bandwidth) {
         setBandwidth(bandwidth);
         return this;
@@ -303,6 +326,7 @@ public class Connection implements Serializable, Cloneable {
     /**
      * @param vlan
      */
+
     public void setVlan(Integer vlan) {
         this.vlan = vlan;
     }
@@ -310,6 +334,7 @@ public class Connection implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Integer getVlan() {
         return this.vlan;
     }
@@ -319,6 +344,7 @@ public class Connection implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Connection withVlan(Integer vlan) {
         setVlan(vlan);
         return this;
@@ -327,6 +353,7 @@ public class Connection implements Serializable, Cloneable {
     /**
      * @param partnerName
      */
+
     public void setPartnerName(String partnerName) {
         this.partnerName = partnerName;
     }
@@ -334,6 +361,7 @@ public class Connection implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getPartnerName() {
         return this.partnerName;
     }
@@ -343,6 +371,7 @@ public class Connection implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Connection withPartnerName(String partnerName) {
         setPartnerName(partnerName);
         return this;

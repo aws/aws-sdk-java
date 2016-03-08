@@ -52,6 +52,7 @@ public class KinesisAction implements Serializable, Cloneable {
      * @param roleArn
      *        The ARN of the IAM role that grants access to the Kinesis stream.
      */
+
     public void setRoleArn(String roleArn) {
         this.roleArn = roleArn;
     }
@@ -63,6 +64,7 @@ public class KinesisAction implements Serializable, Cloneable {
      * 
      * @return The ARN of the IAM role that grants access to the Kinesis stream.
      */
+
     public String getRoleArn() {
         return this.roleArn;
     }
@@ -77,6 +79,7 @@ public class KinesisAction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public KinesisAction withRoleArn(String roleArn) {
         setRoleArn(roleArn);
         return this;
@@ -90,6 +93,7 @@ public class KinesisAction implements Serializable, Cloneable {
      * @param streamName
      *        The name of the Kinesis stream.
      */
+
     public void setStreamName(String streamName) {
         this.streamName = streamName;
     }
@@ -101,6 +105,7 @@ public class KinesisAction implements Serializable, Cloneable {
      * 
      * @return The name of the Kinesis stream.
      */
+
     public String getStreamName() {
         return this.streamName;
     }
@@ -115,6 +120,7 @@ public class KinesisAction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public KinesisAction withStreamName(String streamName) {
         setStreamName(streamName);
         return this;
@@ -128,6 +134,7 @@ public class KinesisAction implements Serializable, Cloneable {
      * @param partitionKey
      *        The partition key.
      */
+
     public void setPartitionKey(String partitionKey) {
         this.partitionKey = partitionKey;
     }
@@ -139,6 +146,7 @@ public class KinesisAction implements Serializable, Cloneable {
      * 
      * @return The partition key.
      */
+
     public String getPartitionKey() {
         return this.partitionKey;
     }
@@ -153,6 +161,7 @@ public class KinesisAction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public KinesisAction withPartitionKey(String partitionKey) {
         setPartitionKey(partitionKey);
         return this;

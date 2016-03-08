@@ -47,6 +47,7 @@ public class Resolution implements Serializable, Cloneable {
      * @param width
      *        The screen resolution's width, expressed in pixels.
      */
+
     public void setWidth(Integer width) {
         this.width = width;
     }
@@ -58,6 +59,7 @@ public class Resolution implements Serializable, Cloneable {
      * 
      * @return The screen resolution's width, expressed in pixels.
      */
+
     public Integer getWidth() {
         return this.width;
     }
@@ -72,6 +74,7 @@ public class Resolution implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Resolution withWidth(Integer width) {
         setWidth(width);
         return this;
@@ -85,6 +88,7 @@ public class Resolution implements Serializable, Cloneable {
      * @param height
      *        The screen resolution's height, expressed in pixels.
      */
+
     public void setHeight(Integer height) {
         this.height = height;
     }
@@ -96,6 +100,7 @@ public class Resolution implements Serializable, Cloneable {
      * 
      * @return The screen resolution's height, expressed in pixels.
      */
+
     public Integer getHeight() {
         return this.height;
     }
@@ -110,6 +115,7 @@ public class Resolution implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Resolution withHeight(Integer height) {
         setHeight(height);
         return this;

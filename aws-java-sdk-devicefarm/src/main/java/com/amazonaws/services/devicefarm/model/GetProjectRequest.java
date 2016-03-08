@@ -42,6 +42,7 @@ public class GetProjectRequest extends AmazonWebServiceRequest implements
      * @param arn
      *        The project's ARN.
      */
+
     public void setArn(String arn) {
         this.arn = arn;
     }
@@ -53,6 +54,7 @@ public class GetProjectRequest extends AmazonWebServiceRequest implements
      * 
      * @return The project's ARN.
      */
+
     public String getArn() {
         return this.arn;
     }
@@ -67,6 +69,7 @@ public class GetProjectRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetProjectRequest withArn(String arn) {
         setArn(arn);
         return this;

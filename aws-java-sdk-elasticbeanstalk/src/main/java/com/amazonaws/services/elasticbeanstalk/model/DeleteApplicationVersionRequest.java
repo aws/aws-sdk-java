@@ -85,6 +85,7 @@ public class DeleteApplicationVersionRequest extends AmazonWebServiceRequest
      * @param applicationName
      *        The name of the application to delete releases from.
      */
+
     public void setApplicationName(String applicationName) {
         this.applicationName = applicationName;
     }
@@ -96,6 +97,7 @@ public class DeleteApplicationVersionRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the application to delete releases from.
      */
+
     public String getApplicationName() {
         return this.applicationName;
     }
@@ -110,6 +112,7 @@ public class DeleteApplicationVersionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteApplicationVersionRequest withApplicationName(
             String applicationName) {
         setApplicationName(applicationName);
@@ -124,6 +127,7 @@ public class DeleteApplicationVersionRequest extends AmazonWebServiceRequest
      * @param versionLabel
      *        The label of the version to delete.
      */
+
     public void setVersionLabel(String versionLabel) {
         this.versionLabel = versionLabel;
     }
@@ -135,6 +139,7 @@ public class DeleteApplicationVersionRequest extends AmazonWebServiceRequest
      * 
      * @return The label of the version to delete.
      */
+
     public String getVersionLabel() {
         return this.versionLabel;
     }
@@ -149,6 +154,7 @@ public class DeleteApplicationVersionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteApplicationVersionRequest withVersionLabel(String versionLabel) {
         setVersionLabel(versionLabel);
         return this;
@@ -180,6 +186,7 @@ public class DeleteApplicationVersionRequest extends AmazonWebServiceRequest
      *        <p>
      *        Valid Values: <code>true</code> | <code>false</code>
      */
+
     public void setDeleteSourceBundle(Boolean deleteSourceBundle) {
         this.deleteSourceBundle = deleteSourceBundle;
     }
@@ -210,6 +217,7 @@ public class DeleteApplicationVersionRequest extends AmazonWebServiceRequest
      *         <p>
      *         Valid Values: <code>true</code> | <code>false</code>
      */
+
     public Boolean getDeleteSourceBundle() {
         return this.deleteSourceBundle;
     }
@@ -242,6 +250,7 @@ public class DeleteApplicationVersionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteApplicationVersionRequest withDeleteSourceBundle(
             Boolean deleteSourceBundle) {
         setDeleteSourceBundle(deleteSourceBundle);
@@ -274,6 +283,7 @@ public class DeleteApplicationVersionRequest extends AmazonWebServiceRequest
      *         <p>
      *         Valid Values: <code>true</code> | <code>false</code>
      */
+
     public Boolean isDeleteSourceBundle() {
         return this.deleteSourceBundle;
     }

@@ -82,6 +82,7 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable {
      * @param name
      *        The name of the configuration recorder.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -93,6 +94,7 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable {
      * 
      * @return The name of the configuration recorder.
      */
+
     public String getName() {
         return this.name;
     }
@@ -107,6 +109,7 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigurationRecorderStatus withName(String name) {
         setName(name);
         return this;
@@ -120,6 +123,7 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable {
      * @param lastStartTime
      *        The time the recorder was last started.
      */
+
     public void setLastStartTime(java.util.Date lastStartTime) {
         this.lastStartTime = lastStartTime;
     }
@@ -131,6 +135,7 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable {
      * 
      * @return The time the recorder was last started.
      */
+
     public java.util.Date getLastStartTime() {
         return this.lastStartTime;
     }
@@ -145,6 +150,7 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigurationRecorderStatus withLastStartTime(
             java.util.Date lastStartTime) {
         setLastStartTime(lastStartTime);
@@ -159,6 +165,7 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable {
      * @param lastStopTime
      *        The time the recorder was last stopped.
      */
+
     public void setLastStopTime(java.util.Date lastStopTime) {
         this.lastStopTime = lastStopTime;
     }
@@ -170,6 +177,7 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable {
      * 
      * @return The time the recorder was last stopped.
      */
+
     public java.util.Date getLastStopTime() {
         return this.lastStopTime;
     }
@@ -184,6 +192,7 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigurationRecorderStatus withLastStopTime(
             java.util.Date lastStopTime) {
         setLastStopTime(lastStopTime);
@@ -198,6 +207,7 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable {
      * @param recording
      *        Specifies whether the recorder is currently recording or not.
      */
+
     public void setRecording(Boolean recording) {
         this.recording = recording;
     }
@@ -209,6 +219,7 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable {
      * 
      * @return Specifies whether the recorder is currently recording or not.
      */
+
     public Boolean getRecording() {
         return this.recording;
     }
@@ -223,6 +234,7 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigurationRecorderStatus withRecording(Boolean recording) {
         setRecording(recording);
         return this;
@@ -235,6 +247,7 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable {
      * 
      * @return Specifies whether the recorder is currently recording or not.
      */
+
     public Boolean isRecording() {
         return this.recording;
     }
@@ -248,6 +261,7 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable {
      *        The last (previous) status of the recorder.
      * @see RecorderStatus
      */
+
     public void setLastStatus(String lastStatus) {
         this.lastStatus = lastStatus;
     }
@@ -260,6 +274,7 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable {
      * @return The last (previous) status of the recorder.
      * @see RecorderStatus
      */
+
     public String getLastStatus() {
         return this.lastStatus;
     }
@@ -275,6 +290,7 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable {
      *         chained together.
      * @see RecorderStatus
      */
+
     public ConfigurationRecorderStatus withLastStatus(String lastStatus) {
         setLastStatus(lastStatus);
         return this;
@@ -291,6 +307,7 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable {
      *         chained together.
      * @see RecorderStatus
      */
+
     public void setLastStatus(RecorderStatus lastStatus) {
         this.lastStatus = lastStatus.toString();
     }
@@ -306,6 +323,7 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable {
      *         chained together.
      * @see RecorderStatus
      */
+
     public ConfigurationRecorderStatus withLastStatus(RecorderStatus lastStatus) {
         setLastStatus(lastStatus);
         return this;
@@ -319,6 +337,7 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable {
      * @param lastErrorCode
      *        The error code indicating that the recording failed.
      */
+
     public void setLastErrorCode(String lastErrorCode) {
         this.lastErrorCode = lastErrorCode;
     }
@@ -330,6 +349,7 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable {
      * 
      * @return The error code indicating that the recording failed.
      */
+
     public String getLastErrorCode() {
         return this.lastErrorCode;
     }
@@ -344,6 +364,7 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigurationRecorderStatus withLastErrorCode(String lastErrorCode) {
         setLastErrorCode(lastErrorCode);
         return this;
@@ -357,6 +378,7 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable {
      * @param lastErrorMessage
      *        The message indicating that the recording failed due to an error.
      */
+
     public void setLastErrorMessage(String lastErrorMessage) {
         this.lastErrorMessage = lastErrorMessage;
     }
@@ -368,6 +390,7 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable {
      * 
      * @return The message indicating that the recording failed due to an error.
      */
+
     public String getLastErrorMessage() {
         return this.lastErrorMessage;
     }
@@ -382,6 +405,7 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigurationRecorderStatus withLastErrorMessage(
             String lastErrorMessage) {
         setLastErrorMessage(lastErrorMessage);
@@ -396,6 +420,7 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable {
      * @param lastStatusChangeTime
      *        The time when the status was last changed.
      */
+
     public void setLastStatusChangeTime(java.util.Date lastStatusChangeTime) {
         this.lastStatusChangeTime = lastStatusChangeTime;
     }
@@ -407,6 +432,7 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable {
      * 
      * @return The time when the status was last changed.
      */
+
     public java.util.Date getLastStatusChangeTime() {
         return this.lastStatusChangeTime;
     }
@@ -421,6 +447,7 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigurationRecorderStatus withLastStatusChangeTime(
             java.util.Date lastStatusChangeTime) {
         setLastStatusChangeTime(lastStatusChangeTime);

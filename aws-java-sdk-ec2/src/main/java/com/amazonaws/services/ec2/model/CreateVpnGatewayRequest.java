@@ -82,6 +82,7 @@ public class CreateVpnGatewayRequest extends AmazonWebServiceRequest implements
      *        The type of VPN connection this virtual private gateway supports.
      * @see GatewayType
      */
+
     public void setType(String type) {
         this.type = type;
     }
@@ -94,6 +95,7 @@ public class CreateVpnGatewayRequest extends AmazonWebServiceRequest implements
      * @return The type of VPN connection this virtual private gateway supports.
      * @see GatewayType
      */
+
     public String getType() {
         return this.type;
     }
@@ -109,6 +111,7 @@ public class CreateVpnGatewayRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see GatewayType
      */
+
     public CreateVpnGatewayRequest withType(String type) {
         setType(type);
         return this;
@@ -125,6 +128,7 @@ public class CreateVpnGatewayRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see GatewayType
      */
+
     public void setType(GatewayType type) {
         this.type = type.toString();
     }
@@ -140,6 +144,7 @@ public class CreateVpnGatewayRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see GatewayType
      */
+
     public CreateVpnGatewayRequest withType(GatewayType type) {
         setType(type);
         return this;
@@ -153,6 +158,7 @@ public class CreateVpnGatewayRequest extends AmazonWebServiceRequest implements
      * @param availabilityZone
      *        The Availability Zone for the virtual private gateway.
      */
+
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
@@ -164,6 +170,7 @@ public class CreateVpnGatewayRequest extends AmazonWebServiceRequest implements
      * 
      * @return The Availability Zone for the virtual private gateway.
      */
+
     public String getAvailabilityZone() {
         return this.availabilityZone;
     }
@@ -178,6 +185,7 @@ public class CreateVpnGatewayRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateVpnGatewayRequest withAvailabilityZone(String availabilityZone) {
         setAvailabilityZone(availabilityZone);
         return this;

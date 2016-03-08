@@ -68,6 +68,7 @@ public class CommandPlugin implements Serializable, Cloneable {
      *        aws:runPowerShellScript, aws:psmodule, aws:cloudWatch,
      *        aws:runShellScript, or aws:updateSSMAgent.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -82,6 +83,7 @@ public class CommandPlugin implements Serializable, Cloneable {
      *         aws:runPowerShellScript, aws:psmodule, aws:cloudWatch,
      *         aws:runShellScript, or aws:updateSSMAgent.
      */
+
     public String getName() {
         return this.name;
     }
@@ -99,6 +101,7 @@ public class CommandPlugin implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CommandPlugin withName(String name) {
         setName(name);
         return this;
@@ -113,6 +116,7 @@ public class CommandPlugin implements Serializable, Cloneable {
      *        multiple plugins.
      * @see CommandPluginStatus
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -125,6 +129,7 @@ public class CommandPlugin implements Serializable, Cloneable {
      *         multiple plugins.
      * @see CommandPluginStatus
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -140,6 +145,7 @@ public class CommandPlugin implements Serializable, Cloneable {
      *         chained together.
      * @see CommandPluginStatus
      */
+
     public CommandPlugin withStatus(String status) {
         setStatus(status);
         return this;
@@ -156,6 +162,7 @@ public class CommandPlugin implements Serializable, Cloneable {
      *         chained together.
      * @see CommandPluginStatus
      */
+
     public void setStatus(CommandPluginStatus status) {
         this.status = status.toString();
     }
@@ -171,6 +178,7 @@ public class CommandPlugin implements Serializable, Cloneable {
      *         chained together.
      * @see CommandPluginStatus
      */
+
     public CommandPlugin withStatus(CommandPluginStatus status) {
         setStatus(status);
         return this;
@@ -182,6 +190,7 @@ public class CommandPlugin implements Serializable, Cloneable {
      * @param responseCode
      *        A numeric response code generated after executing the plugin.
      */
+
     public void setResponseCode(Integer responseCode) {
         this.responseCode = responseCode;
     }
@@ -191,6 +200,7 @@ public class CommandPlugin implements Serializable, Cloneable {
      * 
      * @return A numeric response code generated after executing the plugin.
      */
+
     public Integer getResponseCode() {
         return this.responseCode;
     }
@@ -203,6 +213,7 @@ public class CommandPlugin implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CommandPlugin withResponseCode(Integer responseCode) {
         setResponseCode(responseCode);
         return this;
@@ -214,6 +225,7 @@ public class CommandPlugin implements Serializable, Cloneable {
      * @param responseStartDateTime
      *        The time the plugin started executing.
      */
+
     public void setResponseStartDateTime(java.util.Date responseStartDateTime) {
         this.responseStartDateTime = responseStartDateTime;
     }
@@ -223,6 +235,7 @@ public class CommandPlugin implements Serializable, Cloneable {
      * 
      * @return The time the plugin started executing.
      */
+
     public java.util.Date getResponseStartDateTime() {
         return this.responseStartDateTime;
     }
@@ -235,6 +248,7 @@ public class CommandPlugin implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CommandPlugin withResponseStartDateTime(
             java.util.Date responseStartDateTime) {
         setResponseStartDateTime(responseStartDateTime);
@@ -249,6 +263,7 @@ public class CommandPlugin implements Serializable, Cloneable {
      *        The time the plugin stopped executing. Could stop prematurely if,
      *        for example, a cancel command was sent.
      */
+
     public void setResponseFinishDateTime(java.util.Date responseFinishDateTime) {
         this.responseFinishDateTime = responseFinishDateTime;
     }
@@ -260,6 +275,7 @@ public class CommandPlugin implements Serializable, Cloneable {
      * @return The time the plugin stopped executing. Could stop prematurely if,
      *         for example, a cancel command was sent.
      */
+
     public java.util.Date getResponseFinishDateTime() {
         return this.responseFinishDateTime;
     }
@@ -274,6 +290,7 @@ public class CommandPlugin implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CommandPlugin withResponseFinishDateTime(
             java.util.Date responseFinishDateTime) {
         setResponseFinishDateTime(responseFinishDateTime);
@@ -286,6 +303,7 @@ public class CommandPlugin implements Serializable, Cloneable {
      * @param output
      *        Output of the plugin execution.
      */
+
     public void setOutput(String output) {
         this.output = output;
     }
@@ -295,6 +313,7 @@ public class CommandPlugin implements Serializable, Cloneable {
      * 
      * @return Output of the plugin execution.
      */
+
     public String getOutput() {
         return this.output;
     }
@@ -307,6 +326,7 @@ public class CommandPlugin implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CommandPlugin withOutput(String output) {
         setOutput(output);
         return this;
@@ -320,6 +340,7 @@ public class CommandPlugin implements Serializable, Cloneable {
      *        The S3 bucket where the responses to the command executions should
      *        be stored. This was requested when issuing the command.
      */
+
     public void setOutputS3BucketName(String outputS3BucketName) {
         this.outputS3BucketName = outputS3BucketName;
     }
@@ -331,6 +352,7 @@ public class CommandPlugin implements Serializable, Cloneable {
      * @return The S3 bucket where the responses to the command executions
      *         should be stored. This was requested when issuing the command.
      */
+
     public String getOutputS3BucketName() {
         return this.outputS3BucketName;
     }
@@ -345,6 +367,7 @@ public class CommandPlugin implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CommandPlugin withOutputS3BucketName(String outputS3BucketName) {
         setOutputS3BucketName(outputS3BucketName);
         return this;
@@ -360,6 +383,7 @@ public class CommandPlugin implements Serializable, Cloneable {
      *        command executions should be stored. This was requested when
      *        issuing the command.
      */
+
     public void setOutputS3KeyPrefix(String outputS3KeyPrefix) {
         this.outputS3KeyPrefix = outputS3KeyPrefix;
     }
@@ -373,6 +397,7 @@ public class CommandPlugin implements Serializable, Cloneable {
      *         the command executions should be stored. This was requested when
      *         issuing the command.
      */
+
     public String getOutputS3KeyPrefix() {
         return this.outputS3KeyPrefix;
     }
@@ -389,6 +414,7 @@ public class CommandPlugin implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CommandPlugin withOutputS3KeyPrefix(String outputS3KeyPrefix) {
         setOutputS3KeyPrefix(outputS3KeyPrefix);
         return this;

@@ -52,6 +52,7 @@ public class VpcPeeringConnectionVpcInfo implements Serializable, Cloneable {
      * @param cidrBlock
      *        The CIDR block for the VPC.
      */
+
     public void setCidrBlock(String cidrBlock) {
         this.cidrBlock = cidrBlock;
     }
@@ -63,6 +64,7 @@ public class VpcPeeringConnectionVpcInfo implements Serializable, Cloneable {
      * 
      * @return The CIDR block for the VPC.
      */
+
     public String getCidrBlock() {
         return this.cidrBlock;
     }
@@ -77,6 +79,7 @@ public class VpcPeeringConnectionVpcInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VpcPeeringConnectionVpcInfo withCidrBlock(String cidrBlock) {
         setCidrBlock(cidrBlock);
         return this;
@@ -90,6 +93,7 @@ public class VpcPeeringConnectionVpcInfo implements Serializable, Cloneable {
      * @param ownerId
      *        The AWS account ID of the VPC owner.
      */
+
     public void setOwnerId(String ownerId) {
         this.ownerId = ownerId;
     }
@@ -101,6 +105,7 @@ public class VpcPeeringConnectionVpcInfo implements Serializable, Cloneable {
      * 
      * @return The AWS account ID of the VPC owner.
      */
+
     public String getOwnerId() {
         return this.ownerId;
     }
@@ -115,6 +120,7 @@ public class VpcPeeringConnectionVpcInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VpcPeeringConnectionVpcInfo withOwnerId(String ownerId) {
         setOwnerId(ownerId);
         return this;
@@ -128,6 +134,7 @@ public class VpcPeeringConnectionVpcInfo implements Serializable, Cloneable {
      * @param vpcId
      *        The ID of the VPC.
      */
+
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
@@ -139,6 +146,7 @@ public class VpcPeeringConnectionVpcInfo implements Serializable, Cloneable {
      * 
      * @return The ID of the VPC.
      */
+
     public String getVpcId() {
         return this.vpcId;
     }
@@ -153,6 +161,7 @@ public class VpcPeeringConnectionVpcInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VpcPeeringConnectionVpcInfo withVpcId(String vpcId) {
         setVpcId(vpcId);
         return this;

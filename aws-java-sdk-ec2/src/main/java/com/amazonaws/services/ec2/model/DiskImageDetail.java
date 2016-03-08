@@ -65,6 +65,7 @@ public class DiskImageDetail implements Serializable, Cloneable {
      *        The disk image format.
      * @see DiskImageFormat
      */
+
     public void setFormat(String format) {
         this.format = format;
     }
@@ -77,6 +78,7 @@ public class DiskImageDetail implements Serializable, Cloneable {
      * @return The disk image format.
      * @see DiskImageFormat
      */
+
     public String getFormat() {
         return this.format;
     }
@@ -92,6 +94,7 @@ public class DiskImageDetail implements Serializable, Cloneable {
      *         chained together.
      * @see DiskImageFormat
      */
+
     public DiskImageDetail withFormat(String format) {
         setFormat(format);
         return this;
@@ -108,6 +111,7 @@ public class DiskImageDetail implements Serializable, Cloneable {
      *         chained together.
      * @see DiskImageFormat
      */
+
     public void setFormat(DiskImageFormat format) {
         this.format = format.toString();
     }
@@ -123,6 +127,7 @@ public class DiskImageDetail implements Serializable, Cloneable {
      *         chained together.
      * @see DiskImageFormat
      */
+
     public DiskImageDetail withFormat(DiskImageFormat format) {
         setFormat(format);
         return this;
@@ -136,6 +141,7 @@ public class DiskImageDetail implements Serializable, Cloneable {
      * @param bytes
      *        The size of the disk image, in GiB.
      */
+
     public void setBytes(Long bytes) {
         this.bytes = bytes;
     }
@@ -147,6 +153,7 @@ public class DiskImageDetail implements Serializable, Cloneable {
      * 
      * @return The size of the disk image, in GiB.
      */
+
     public Long getBytes() {
         return this.bytes;
     }
@@ -161,6 +168,7 @@ public class DiskImageDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DiskImageDetail withBytes(Long bytes) {
         setBytes(bytes);
         return this;
@@ -198,6 +206,7 @@ public class DiskImageDetail implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html"
      *        >VM Import Manifest</a>.
      */
+
     public void setImportManifestUrl(String importManifestUrl) {
         this.importManifestUrl = importManifestUrl;
     }
@@ -233,6 +242,7 @@ public class DiskImageDetail implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html"
      *         >VM Import Manifest</a>.
      */
+
     public String getImportManifestUrl() {
         return this.importManifestUrl;
     }
@@ -271,6 +281,7 @@ public class DiskImageDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DiskImageDetail withImportManifestUrl(String importManifestUrl) {
         setImportManifestUrl(importManifestUrl);
         return this;

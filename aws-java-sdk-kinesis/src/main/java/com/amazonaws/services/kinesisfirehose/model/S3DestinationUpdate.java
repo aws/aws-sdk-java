@@ -85,6 +85,7 @@ public class S3DestinationUpdate implements Serializable, Cloneable {
      * @param roleARN
      *        The ARN of the AWS credentials.
      */
+
     public void setRoleARN(String roleARN) {
         this.roleARN = roleARN;
     }
@@ -96,6 +97,7 @@ public class S3DestinationUpdate implements Serializable, Cloneable {
      * 
      * @return The ARN of the AWS credentials.
      */
+
     public String getRoleARN() {
         return this.roleARN;
     }
@@ -110,6 +112,7 @@ public class S3DestinationUpdate implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public S3DestinationUpdate withRoleARN(String roleARN) {
         setRoleARN(roleARN);
         return this;
@@ -123,6 +126,7 @@ public class S3DestinationUpdate implements Serializable, Cloneable {
      * @param bucketARN
      *        The ARN of the S3 bucket.
      */
+
     public void setBucketARN(String bucketARN) {
         this.bucketARN = bucketARN;
     }
@@ -134,6 +138,7 @@ public class S3DestinationUpdate implements Serializable, Cloneable {
      * 
      * @return The ARN of the S3 bucket.
      */
+
     public String getBucketARN() {
         return this.bucketARN;
     }
@@ -148,6 +153,7 @@ public class S3DestinationUpdate implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public S3DestinationUpdate withBucketARN(String bucketARN) {
         setBucketARN(bucketARN);
         return this;
@@ -175,6 +181,7 @@ public class S3DestinationUpdate implements Serializable, Cloneable {
      *        href="http://docs.aws.amazon.com/firehose/latest/dev/"
      *        >guide-fh-dev</a>.
      */
+
     public void setPrefix(String prefix) {
         this.prefix = prefix;
     }
@@ -200,6 +207,7 @@ public class S3DestinationUpdate implements Serializable, Cloneable {
      *         href="http://docs.aws.amazon.com/firehose/latest/dev/"
      *         >guide-fh-dev</a>.
      */
+
     public String getPrefix() {
         return this.prefix;
     }
@@ -228,6 +236,7 @@ public class S3DestinationUpdate implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public S3DestinationUpdate withPrefix(String prefix) {
         setPrefix(prefix);
         return this;
@@ -243,6 +252,7 @@ public class S3DestinationUpdate implements Serializable, Cloneable {
      *        The buffering option. If no value is specified,
      *        <code>BufferingHints</code> object default values are used.
      */
+
     public void setBufferingHints(BufferingHints bufferingHints) {
         this.bufferingHints = bufferingHints;
     }
@@ -256,6 +266,7 @@ public class S3DestinationUpdate implements Serializable, Cloneable {
      * @return The buffering option. If no value is specified,
      *         <code>BufferingHints</code> object default values are used.
      */
+
     public BufferingHints getBufferingHints() {
         return this.bufferingHints;
     }
@@ -272,6 +283,7 @@ public class S3DestinationUpdate implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public S3DestinationUpdate withBufferingHints(BufferingHints bufferingHints) {
         setBufferingHints(bufferingHints);
         return this;
@@ -299,6 +311,7 @@ public class S3DestinationUpdate implements Serializable, Cloneable {
      *        operation that reads from the S3 bucket.
      * @see CompressionFormat
      */
+
     public void setCompressionFormat(String compressionFormat) {
         this.compressionFormat = compressionFormat;
     }
@@ -324,6 +337,7 @@ public class S3DestinationUpdate implements Serializable, Cloneable {
      *         operation that reads from the S3 bucket.
      * @see CompressionFormat
      */
+
     public String getCompressionFormat() {
         return this.compressionFormat;
     }
@@ -352,6 +366,7 @@ public class S3DestinationUpdate implements Serializable, Cloneable {
      *         chained together.
      * @see CompressionFormat
      */
+
     public S3DestinationUpdate withCompressionFormat(String compressionFormat) {
         setCompressionFormat(compressionFormat);
         return this;
@@ -381,6 +396,7 @@ public class S3DestinationUpdate implements Serializable, Cloneable {
      *         chained together.
      * @see CompressionFormat
      */
+
     public void setCompressionFormat(CompressionFormat compressionFormat) {
         this.compressionFormat = compressionFormat.toString();
     }
@@ -409,6 +425,7 @@ public class S3DestinationUpdate implements Serializable, Cloneable {
      *         chained together.
      * @see CompressionFormat
      */
+
     public S3DestinationUpdate withCompressionFormat(
             CompressionFormat compressionFormat) {
         setCompressionFormat(compressionFormat);
@@ -425,6 +442,7 @@ public class S3DestinationUpdate implements Serializable, Cloneable {
      *        The encryption configuration. If no value is specified, the
      *        default is no encryption.
      */
+
     public void setEncryptionConfiguration(
             EncryptionConfiguration encryptionConfiguration) {
         this.encryptionConfiguration = encryptionConfiguration;
@@ -439,6 +457,7 @@ public class S3DestinationUpdate implements Serializable, Cloneable {
      * @return The encryption configuration. If no value is specified, the
      *         default is no encryption.
      */
+
     public EncryptionConfiguration getEncryptionConfiguration() {
         return this.encryptionConfiguration;
     }
@@ -455,6 +474,7 @@ public class S3DestinationUpdate implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public S3DestinationUpdate withEncryptionConfiguration(
             EncryptionConfiguration encryptionConfiguration) {
         setEncryptionConfiguration(encryptionConfiguration);

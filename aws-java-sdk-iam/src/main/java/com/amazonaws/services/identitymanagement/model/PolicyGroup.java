@@ -49,6 +49,7 @@ public class PolicyGroup implements Serializable, Cloneable {
      * @param groupName
      *        The name (friendly name, not ARN) identifying the group.
      */
+
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
@@ -60,6 +61,7 @@ public class PolicyGroup implements Serializable, Cloneable {
      * 
      * @return The name (friendly name, not ARN) identifying the group.
      */
+
     public String getGroupName() {
         return this.groupName;
     }
@@ -74,6 +76,7 @@ public class PolicyGroup implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PolicyGroup withGroupName(String groupName) {
         setGroupName(groupName);
         return this;

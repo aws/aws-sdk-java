@@ -40,6 +40,7 @@ public class TestEventPatternResult implements Serializable, Cloneable {
      * @param result
      *        Indicates whether the event matches the event pattern.
      */
+
     public void setResult(Boolean result) {
         this.result = result;
     }
@@ -51,6 +52,7 @@ public class TestEventPatternResult implements Serializable, Cloneable {
      * 
      * @return Indicates whether the event matches the event pattern.
      */
+
     public Boolean getResult() {
         return this.result;
     }
@@ -65,6 +67,7 @@ public class TestEventPatternResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TestEventPatternResult withResult(Boolean result) {
         setResult(result);
         return this;
@@ -77,6 +80,7 @@ public class TestEventPatternResult implements Serializable, Cloneable {
      * 
      * @return Indicates whether the event matches the event pattern.
      */
+
     public Boolean isResult() {
         return this.result;
     }

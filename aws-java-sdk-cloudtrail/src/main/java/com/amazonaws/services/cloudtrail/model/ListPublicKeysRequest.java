@@ -62,6 +62,7 @@ public class ListPublicKeysRequest extends AmazonWebServiceRequest implements
      *        up public keys for CloudTrail digest files. If not specified, the
      *        current time is used, and the current public key is returned.
      */
+
     public void setStartTime(java.util.Date startTime) {
         this.startTime = startTime;
     }
@@ -77,6 +78,7 @@ public class ListPublicKeysRequest extends AmazonWebServiceRequest implements
      *         up public keys for CloudTrail digest files. If not specified, the
      *         current time is used, and the current public key is returned.
      */
+
     public java.util.Date getStartTime() {
         return this.startTime;
     }
@@ -95,6 +97,7 @@ public class ListPublicKeysRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListPublicKeysRequest withStartTime(java.util.Date startTime) {
         setStartTime(startTime);
         return this;
@@ -112,6 +115,7 @@ public class ListPublicKeysRequest extends AmazonWebServiceRequest implements
      *        public keys for CloudTrail digest files. If not specified, the
      *        current time is used.
      */
+
     public void setEndTime(java.util.Date endTime) {
         this.endTime = endTime;
     }
@@ -127,6 +131,7 @@ public class ListPublicKeysRequest extends AmazonWebServiceRequest implements
      *         up public keys for CloudTrail digest files. If not specified, the
      *         current time is used.
      */
+
     public java.util.Date getEndTime() {
         return this.endTime;
     }
@@ -145,6 +150,7 @@ public class ListPublicKeysRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListPublicKeysRequest withEndTime(java.util.Date endTime) {
         setEndTime(endTime);
         return this;
@@ -158,6 +164,7 @@ public class ListPublicKeysRequest extends AmazonWebServiceRequest implements
      * @param nextToken
      *        Reserved for future use.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -169,6 +176,7 @@ public class ListPublicKeysRequest extends AmazonWebServiceRequest implements
      * 
      * @return Reserved for future use.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -183,6 +191,7 @@ public class ListPublicKeysRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListPublicKeysRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

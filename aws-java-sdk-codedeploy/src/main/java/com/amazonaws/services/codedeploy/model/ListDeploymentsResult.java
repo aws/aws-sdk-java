@@ -47,6 +47,7 @@ public class ListDeploymentsResult implements Serializable, Cloneable {
      * 
      * @return A list of deployment IDs.
      */
+
     public java.util.List<String> getDeployments() {
         if (deployments == null) {
             deployments = new com.amazonaws.internal.SdkInternalList<String>();
@@ -62,6 +63,7 @@ public class ListDeploymentsResult implements Serializable, Cloneable {
      * @param deployments
      *        A list of deployment IDs.
      */
+
     public void setDeployments(java.util.Collection<String> deployments) {
         if (deployments == null) {
             this.deployments = null;
@@ -88,6 +90,7 @@ public class ListDeploymentsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListDeploymentsResult withDeployments(String... deployments) {
         if (this.deployments == null) {
             setDeployments(new com.amazonaws.internal.SdkInternalList<String>(
@@ -109,6 +112,7 @@ public class ListDeploymentsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListDeploymentsResult withDeployments(
             java.util.Collection<String> deployments) {
         setDeployments(deployments);
@@ -128,6 +132,7 @@ public class ListDeploymentsResult implements Serializable, Cloneable {
      *        subsequent list deployments call to return the next set of
      *        deployments in the list.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -144,6 +149,7 @@ public class ListDeploymentsResult implements Serializable, Cloneable {
      *         a subsequent list deployments call to return the next set of
      *         deployments in the list.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -163,6 +169,7 @@ public class ListDeploymentsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListDeploymentsResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

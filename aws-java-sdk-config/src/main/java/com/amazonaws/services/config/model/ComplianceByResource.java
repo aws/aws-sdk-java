@@ -56,6 +56,7 @@ public class ComplianceByResource implements Serializable, Cloneable {
      * @param resourceType
      *        The type of the AWS resource that was evaluated.
      */
+
     public void setResourceType(String resourceType) {
         this.resourceType = resourceType;
     }
@@ -67,6 +68,7 @@ public class ComplianceByResource implements Serializable, Cloneable {
      * 
      * @return The type of the AWS resource that was evaluated.
      */
+
     public String getResourceType() {
         return this.resourceType;
     }
@@ -81,6 +83,7 @@ public class ComplianceByResource implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ComplianceByResource withResourceType(String resourceType) {
         setResourceType(resourceType);
         return this;
@@ -94,6 +97,7 @@ public class ComplianceByResource implements Serializable, Cloneable {
      * @param resourceId
      *        The ID of the AWS resource that was evaluated.
      */
+
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
     }
@@ -105,6 +109,7 @@ public class ComplianceByResource implements Serializable, Cloneable {
      * 
      * @return The ID of the AWS resource that was evaluated.
      */
+
     public String getResourceId() {
         return this.resourceId;
     }
@@ -119,6 +124,7 @@ public class ComplianceByResource implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ComplianceByResource withResourceId(String resourceId) {
         setResourceId(resourceId);
         return this;
@@ -134,6 +140,7 @@ public class ComplianceByResource implements Serializable, Cloneable {
      *        Indicates whether the AWS resource complies with all of the AWS
      *        Config rules that evaluated it.
      */
+
     public void setCompliance(Compliance compliance) {
         this.compliance = compliance;
     }
@@ -147,6 +154,7 @@ public class ComplianceByResource implements Serializable, Cloneable {
      * @return Indicates whether the AWS resource complies with all of the AWS
      *         Config rules that evaluated it.
      */
+
     public Compliance getCompliance() {
         return this.compliance;
     }
@@ -163,6 +171,7 @@ public class ComplianceByResource implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ComplianceByResource withCompliance(Compliance compliance) {
         setCompliance(compliance);
         return this;

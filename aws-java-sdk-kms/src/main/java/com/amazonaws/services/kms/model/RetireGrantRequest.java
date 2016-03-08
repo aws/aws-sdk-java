@@ -66,6 +66,7 @@ public class RetireGrantRequest extends AmazonWebServiceRequest implements
      * @param grantToken
      *        Token that identifies the grant to be retired.
      */
+
     public void setGrantToken(String grantToken) {
         this.grantToken = grantToken;
     }
@@ -77,6 +78,7 @@ public class RetireGrantRequest extends AmazonWebServiceRequest implements
      * 
      * @return Token that identifies the grant to be retired.
      */
+
     public String getGrantToken() {
         return this.grantToken;
     }
@@ -91,6 +93,7 @@ public class RetireGrantRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RetireGrantRequest withGrantToken(String grantToken) {
         setGrantToken(grantToken);
         return this;
@@ -122,6 +125,7 @@ public class RetireGrantRequest extends AmazonWebServiceRequest implements
      *        12345678-1234-1234-1234-123456789012</li>
      *        </ul>
      */
+
     public void setKeyId(String keyId) {
         this.keyId = keyId;
     }
@@ -151,6 +155,7 @@ public class RetireGrantRequest extends AmazonWebServiceRequest implements
      *         12345678-1234-1234-1234-123456789012</li>
      *         </ul>
      */
+
     public String getKeyId() {
         return this.keyId;
     }
@@ -183,6 +188,7 @@ public class RetireGrantRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RetireGrantRequest withKeyId(String keyId) {
         setKeyId(keyId);
         return this;
@@ -206,6 +212,7 @@ public class RetireGrantRequest extends AmazonWebServiceRequest implements
      *        0123456789012345678901234567890123456789012345678901234567890123</li>
      *        </ul>
      */
+
     public void setGrantId(String grantId) {
         this.grantId = grantId;
     }
@@ -227,6 +234,7 @@ public class RetireGrantRequest extends AmazonWebServiceRequest implements
      *         0123456789012345678901234567890123456789012345678901234567890123</li>
      *         </ul>
      */
+
     public String getGrantId() {
         return this.grantId;
     }
@@ -251,6 +259,7 @@ public class RetireGrantRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RetireGrantRequest withGrantId(String grantId) {
         setGrantId(grantId);
         return this;

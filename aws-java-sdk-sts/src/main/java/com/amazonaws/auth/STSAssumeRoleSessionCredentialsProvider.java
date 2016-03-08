@@ -15,8 +15,6 @@
 
 package com.amazonaws.auth;
 
-import java.util.concurrent.atomic.AtomicReference;
-
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.internal.StaticCredentialsProvider;
@@ -25,6 +23,9 @@ import com.amazonaws.services.securitytoken.AWSSecurityTokenServiceClient;
 import com.amazonaws.services.securitytoken.model.AssumeRoleRequest;
 import com.amazonaws.services.securitytoken.model.AssumeRoleResult;
 import com.amazonaws.services.securitytoken.model.Credentials;
+import com.amazonaws.util.ValidationUtils;
+
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * AWSCredentialsProvider implementation that uses the AWS Security Token
@@ -51,10 +52,10 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCreden
 
     /** An identifier for the assumed role session. */
     private final String roleSessionName;
-    
+
     /** An external Id parameter for the assumed role session */
     private final String roleExternalId;
-    
+
     /** The Duration for assume role sessions. */
     private final int roleSessionDurationSeconds;
 
@@ -64,7 +65,7 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCreden
      * {@link #roleArn} to assume a role and then request short lived session
      * credentials, which will then be returned by this class's
      * {@link #getCredentials()} method.
-     * 
+     *
      * @param roleArn
      *            The ARN of the Role to be assumed.
      * @param roleSessionName
@@ -73,15 +74,15 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCreden
     public STSAssumeRoleSessionCredentialsProvider(String roleArn, String roleSessionName) {
         this(new Builder(roleArn, roleSessionName));
     }
-    
-    
+
+
     /**
      * Constructs a new STSAssumeRoleSessionCredentialsProvider, which will use
      * the specified long lived AWS credentials to make a request to the AWS
      * Security Token Service (STS), uses the provided {@link #roleArn} to
      * assume a role and then request short lived session credentials, which
      * will then be returned by this class's {@link #getCredentials()} method.
-     * 
+     *
      * @param longLivedCredentials
      *            The main AWS credentials for a user's account.
      * @param roleArn
@@ -100,7 +101,7 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCreden
      * Security Token Service (STS), uses the provided {@link #roleArn} to
      * assume a role and then request short lived session credentials, which
      * will then be returned by this class's {@link #getCredentials()} method.
-     * 
+     *
      * @param longLivedCredentials
      *            The main AWS credentials for a user's account.
      * @param roleArn
@@ -118,7 +119,7 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCreden
     }
 
 
-    
+
     /**
      * Constructs a new STSAssumeRoleSessionCredentialsProvider, which will use
      * the specified credentials provider (which vends long lived AWS
@@ -126,7 +127,7 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCreden
      * usess the provided {@link #roleArn} to assume a role and then request
      * short lived session credentials, which will then be returned by this
      * class's {@link #getCredentials()} method.
-     * 
+     *
      * @param longLivedCredentialsProvider
      *            Credentials provider for the main AWS credentials for a user's
      *            account.
@@ -147,7 +148,7 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCreden
      * uses the provided {@link #roleArn} to assume a role and then request
      * short lived session credentials, which will then be returned by this
      * class's {@link #getCredentials()} method.
-     * 
+     *
      * @param longLivedCredentialsProvider
      *            Credentials provider for the main AWS credentials for a user's
      *            account.
@@ -164,63 +165,88 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCreden
                         .withLongLivedCredentialsProvider(longLivedCredentialsProvider)
                         .withClientConfiguration(clientConfiguration));
     }
-    
+
     /**
      * The following private constructor reads state from the builder and sets the appropriate parameters accordingly
-     * 
+     *
      * When public constructors are called, this constructors is deferred to with a null value for roleExternalId and endpoint
      * The inner Builder class can be used to construct an object that actually has a value for roleExternalId and endpoint
-     * 
+     *
      * @throws IllegalArgumentException if both an AWSCredentials and AWSCredentialsProvider have been set on the builder
      */
-    
+
     private STSAssumeRoleSessionCredentialsProvider(Builder builder) {
-         /**
-         * Passing two types of credential interfaces is not permitted
-         */
-        if (builder.longLivedCredentials != null && builder.longLivedCredentialsProvider != null) {
-            throw new IllegalArgumentException("It is illegal to set both an AWSCredentials and an AWSCredentialsProvider for an " + STSAssumeRoleSessionCredentialsProvider.class.getName());
-        } 
-        
+        if (builder.sts != null) {
+            ValidationUtils.assertAllAreNull(
+                    "If a custom STS client is set you must not set any other client related fields (ClientConfiguration, AWSCredentials, Endpoint, etc",
+                    builder.longLivedCredentials, builder.longLivedCredentialsProvider, builder.clientConfiguration,
+                    builder.serviceEndpoint);
+            this.securityTokenService = builder.sts;
+        } else {
+            this.securityTokenService = buildStsClient(builder);
+
+            if (builder.serviceEndpoint != null) {
+                securityTokenService.setEndpoint(builder.serviceEndpoint);
+            }
+        }
+
         //required parameters are null checked in the builder constructor
         this.roleArn = builder.roleArn;
         this.roleSessionName = builder.roleSessionName;
-        
+
         //roleExternalId may be null
         this.roleExternalId = builder.roleExternalId;
-        
+
         //Assume Role Session duration may not be provided, in which case we fall back to default value of 15min
         if(builder.roleSessionDurationSeconds != 0) {
             this.roleSessionDurationSeconds = builder.roleSessionDurationSeconds;
         } else {
             this.roleSessionDurationSeconds = DEFAULT_DURATION_SECONDS;
         }
+
+    }
+
+    /**
+     * Construct a new STS client from the settings in the builder.
+     *
+     * @param builder
+     *         Configured builder
+     * @return New instance of AWSSecurityTokenService
+     * @throws IllegalArgumentException
+     *         if builder configuration is inconsistent
+     */
+    private static AWSSecurityTokenService buildStsClient(Builder builder) throws IllegalArgumentException {
+        /**
+         * Passing two types of credential interfaces is not permitted
+         */
+        if (builder.longLivedCredentials != null && builder.longLivedCredentialsProvider != null) {
+            throw new IllegalArgumentException(
+                    "It is illegal to set both an AWSCredentials and an AWSCredentialsProvider for an "
+                            + STSAssumeRoleSessionCredentialsProvider.class.getName());
+        }
+
         AWSCredentialsProvider longLivedCredentialsProvider = null;
         if (builder.longLivedCredentials != null) {
             longLivedCredentialsProvider = new StaticCredentialsProvider(builder.longLivedCredentials);
         } else if (builder.longLivedCredentialsProvider != null) {
             longLivedCredentialsProvider = builder.longLivedCredentialsProvider;
         }
-        
-        
+
+        // Depending on which options are explicitly provided we have to call the right overloaded constructor so
+        // defaults are properly applied.
         if (longLivedCredentialsProvider == null) {
             if (builder.clientConfiguration == null) {
-                securityTokenService = new AWSSecurityTokenServiceClient();
+                return new AWSSecurityTokenServiceClient();
             } else {
-                securityTokenService = new AWSSecurityTokenServiceClient(builder.clientConfiguration);
+                return new AWSSecurityTokenServiceClient(builder.clientConfiguration);
             }
         } else {
             if (builder.clientConfiguration == null) {
-                securityTokenService = new AWSSecurityTokenServiceClient(longLivedCredentialsProvider);
+                return new AWSSecurityTokenServiceClient(longLivedCredentialsProvider);
             } else {
-                securityTokenService = new AWSSecurityTokenServiceClient(longLivedCredentialsProvider, builder.clientConfiguration);
+                return new AWSSecurityTokenServiceClient(longLivedCredentialsProvider, builder.clientConfiguration);
             }
         }
-        
-        if (builder.serviceEndpoint != null) {
-            securityTokenService.setEndpoint(builder.serviceEndpoint);
-        }
-        
     }
 
     /**
@@ -240,7 +266,7 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCreden
         sessionCredentials.set(null);
     }
 
-    
+
     @Override
     public AWSSessionCredentials getCredentials() {
         if (needsNewSession()) {
@@ -279,7 +305,7 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCreden
      * Returns true if a new STS session needs to be started. A new STS session
      * is needed when no session has been started yet, or if the last session is
      * within {@link #EXPIRY_TIME_MILLIS} seconds of expiring.
-     * 
+     *
      * @return True if a new STS session needs to be started.
      */
     private boolean needsNewSession() {
@@ -290,14 +316,14 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCreden
         long timeRemaining = tempCredentials.getExpiration().getTime() - System.currentTimeMillis();
         return timeRemaining < EXPIRY_TIME_MILLIS;
     }
-    
-    
+
+
     /**
      * Provides a builder pattern to avoid combinatorial explosion of the number of parameters that are passed
      * to constructors. The builder introspects which parameters have been set and calls the appropriate constructor.
      */
     public static final class Builder {
-        
+
         private AWSCredentialsProvider longLivedCredentialsProvider;
         private AWSCredentials longLivedCredentials;
         private ClientConfiguration clientConfiguration;
@@ -306,9 +332,10 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCreden
         private String roleExternalId;
         private String serviceEndpoint;
         private int roleSessionDurationSeconds;
-        
+        private AWSSecurityTokenService sts;
+
         /**
-         * 
+         *
          * @param roleArn Required roleArn parameter used when starting a session
          * @param roleSessionName Required roleSessionName parameter used when starting a session
          */
@@ -319,11 +346,11 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCreden
             this.roleArn = roleArn;
             this.roleSessionName = roleSessionName;
         }
-        
+
         /**
          * Set credentials to use when retrieving session credentials
          * This is not the recommended approach. Instead, consider using the CredentialsProvider field.
-         * 
+         *
          * @param longLivedCredentials Credentials used to generate sessions in the assumed role
          * @return the builder itself for chained calls
          */
@@ -331,10 +358,10 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCreden
             this.longLivedCredentials = longLivedCredentials;
             return this;
         }
-        
+
         /**
          * Set credentials provider to use when retrieving session credentials
-         * 
+         *
          * @param longLivedCredentialsProvider A credentials provider used to generate sessions in the assumed role
          * @return the builder itself for chained calls
          */
@@ -342,10 +369,10 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCreden
             this.longLivedCredentialsProvider = longLivedCredentialsProvider;
             return this;
         }
-        
+
         /**
          * Set the client configuration used to create the AWSSecurityTokenService
-         * 
+         *
          * @param clientConfiguration ClientConfiguration for the AWSSecurityTokenService client
          * @return the builder itself for chained calls
          */
@@ -353,7 +380,7 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCreden
             this.clientConfiguration = clientConfiguration;
             return this;
         }
-        
+
         /**
          * Set the roleExternalId parameter that is used when retrieving session credentials under
          * an assumed role.
@@ -365,11 +392,11 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCreden
             this.roleExternalId = roleExternalId;
             return this;
         }
-        
+
         /**
          * Set the roleSessionDurationSeconds that is used when creating a new assumed role session.
-         * 
-         * @param roleSessionDurationSeconds The duration for which we want to have an assumed role session 
+         *
+         * @param roleSessionDurationSeconds The duration for which we want to have an assumed role session
          *        to be active.
          * @return the itself for chained calls
          */
@@ -396,10 +423,24 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCreden
             this.serviceEndpoint = serviceEndpoint;
             return this;
         }
-        
+
+        /**
+         * Sets a preconfigured STS client to use for the credentials provider. A custom client is mutually exclusive to
+         * any other client related settings ({@link #withClientConfiguration(ClientConfiguration)}, {@link
+         * #withLongLivedCredentials(AWSCredentials)}, {@link #withServiceEndpoint(String)}, etc).
+         *
+         * @param sts
+         *         Custom STS client to use.
+         * @return This object for chained calls.
+         */
+        public Builder withStsClient(AWSSecurityTokenService sts) {
+            this.sts = sts;
+            return this;
+        }
+
         /**
          * Build the configured provider
-         * 
+         *
          * @return the configured STSAssumeRoleSessionCredentialsProvider
          */
         public STSAssumeRoleSessionCredentialsProvider build() {

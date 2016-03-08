@@ -39,6 +39,7 @@ public class CreateVpcPeeringConnectionResult implements Serializable,
      * @param vpcPeeringConnection
      *        Information about the VPC peering connection.
      */
+
     public void setVpcPeeringConnection(
             VpcPeeringConnection vpcPeeringConnection) {
         this.vpcPeeringConnection = vpcPeeringConnection;
@@ -51,6 +52,7 @@ public class CreateVpcPeeringConnectionResult implements Serializable,
      * 
      * @return Information about the VPC peering connection.
      */
+
     public VpcPeeringConnection getVpcPeeringConnection() {
         return this.vpcPeeringConnection;
     }
@@ -65,6 +67,7 @@ public class CreateVpcPeeringConnectionResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateVpcPeeringConnectionResult withVpcPeeringConnection(
             VpcPeeringConnection vpcPeeringConnection) {
         setVpcPeeringConnection(vpcPeeringConnection);

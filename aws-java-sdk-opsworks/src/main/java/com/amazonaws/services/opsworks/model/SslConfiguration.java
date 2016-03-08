@@ -53,6 +53,7 @@ public class SslConfiguration implements Serializable, Cloneable {
      * @param certificate
      *        The contents of the certificate's domain.crt file.
      */
+
     public void setCertificate(String certificate) {
         this.certificate = certificate;
     }
@@ -64,6 +65,7 @@ public class SslConfiguration implements Serializable, Cloneable {
      * 
      * @return The contents of the certificate's domain.crt file.
      */
+
     public String getCertificate() {
         return this.certificate;
     }
@@ -78,6 +80,7 @@ public class SslConfiguration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SslConfiguration withCertificate(String certificate) {
         setCertificate(certificate);
         return this;
@@ -92,6 +95,7 @@ public class SslConfiguration implements Serializable, Cloneable {
      *        The private key; the contents of the certificate's domain.kex
      *        file.
      */
+
     public void setPrivateKey(String privateKey) {
         this.privateKey = privateKey;
     }
@@ -104,6 +108,7 @@ public class SslConfiguration implements Serializable, Cloneable {
      * @return The private key; the contents of the certificate's domain.kex
      *         file.
      */
+
     public String getPrivateKey() {
         return this.privateKey;
     }
@@ -119,6 +124,7 @@ public class SslConfiguration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SslConfiguration withPrivateKey(String privateKey) {
         setPrivateKey(privateKey);
         return this;
@@ -134,6 +140,7 @@ public class SslConfiguration implements Serializable, Cloneable {
      *        Optional. Can be used to specify an intermediate certificate
      *        authority key or client authentication.
      */
+
     public void setChain(String chain) {
         this.chain = chain;
     }
@@ -147,6 +154,7 @@ public class SslConfiguration implements Serializable, Cloneable {
      * @return Optional. Can be used to specify an intermediate certificate
      *         authority key or client authentication.
      */
+
     public String getChain() {
         return this.chain;
     }
@@ -163,6 +171,7 @@ public class SslConfiguration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SslConfiguration withChain(String chain) {
         setChain(chain);
         return this;

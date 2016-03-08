@@ -58,6 +58,7 @@ public class DeleteChapCredentialsRequest extends AmazonWebServiceRequest
      *        <a>DescribeStorediSCSIVolumes</a> operation to return to retrieve
      *        the TargetARN for specified VolumeARN.
      */
+
     public void setTargetARN(String targetARN) {
         this.targetARN = targetARN;
     }
@@ -73,6 +74,7 @@ public class DeleteChapCredentialsRequest extends AmazonWebServiceRequest
      *         the <a>DescribeStorediSCSIVolumes</a> operation to return to
      *         retrieve the TargetARN for specified VolumeARN.
      */
+
     public String getTargetARN() {
         return this.targetARN;
     }
@@ -91,6 +93,7 @@ public class DeleteChapCredentialsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteChapCredentialsRequest withTargetARN(String targetARN) {
         setTargetARN(targetARN);
         return this;
@@ -104,6 +107,7 @@ public class DeleteChapCredentialsRequest extends AmazonWebServiceRequest
      * @param initiatorName
      *        The iSCSI initiator that connects to the target.
      */
+
     public void setInitiatorName(String initiatorName) {
         this.initiatorName = initiatorName;
     }
@@ -115,6 +119,7 @@ public class DeleteChapCredentialsRequest extends AmazonWebServiceRequest
      * 
      * @return The iSCSI initiator that connects to the target.
      */
+
     public String getInitiatorName() {
         return this.initiatorName;
     }
@@ -129,6 +134,7 @@ public class DeleteChapCredentialsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteChapCredentialsRequest withInitiatorName(String initiatorName) {
         setInitiatorName(initiatorName);
         return this;

@@ -63,6 +63,7 @@ public class DescribeFleetAttributesRequest extends AmazonWebServiceRequest
      *         attributes for. Leave this parameter empty to retrieve attributes
      *         for all fleets.
      */
+
     public java.util.List<String> getFleetIds() {
         return fleetIds;
     }
@@ -78,6 +79,7 @@ public class DescribeFleetAttributesRequest extends AmazonWebServiceRequest
      *        attributes for. Leave this parameter empty to retrieve attributes
      *        for all fleets.
      */
+
     public void setFleetIds(java.util.Collection<String> fleetIds) {
         if (fleetIds == null) {
             this.fleetIds = null;
@@ -106,6 +108,7 @@ public class DescribeFleetAttributesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeFleetAttributesRequest withFleetIds(String... fleetIds) {
         if (this.fleetIds == null) {
             setFleetIds(new java.util.ArrayList<String>(fleetIds.length));
@@ -129,6 +132,7 @@ public class DescribeFleetAttributesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeFleetAttributesRequest withFleetIds(
             java.util.Collection<String> fleetIds) {
         setFleetIds(fleetIds);
@@ -148,6 +152,7 @@ public class DescribeFleetAttributesRequest extends AmazonWebServiceRequest
      *        This parameter is ignored when specifying one or a list of fleet
      *        IDs.
      */
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -164,6 +169,7 @@ public class DescribeFleetAttributesRequest extends AmazonWebServiceRequest
      *         pages. This parameter is ignored when specifying one or a list of
      *         fleet IDs.
      */
+
     public Integer getLimit() {
         return this.limit;
     }
@@ -183,6 +189,7 @@ public class DescribeFleetAttributesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeFleetAttributesRequest withLimit(Integer limit) {
         setLimit(limit);
         return this;
@@ -204,6 +211,7 @@ public class DescribeFleetAttributesRequest extends AmazonWebServiceRequest
      *        this parameter. This parameter is ignored when specifying one or a
      *        list of fleet IDs.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -223,6 +231,7 @@ public class DescribeFleetAttributesRequest extends AmazonWebServiceRequest
      *         set, do not set this parameter. This parameter is ignored when
      *         specifying one or a list of fleet IDs.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -245,6 +254,7 @@ public class DescribeFleetAttributesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeFleetAttributesRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

@@ -47,6 +47,7 @@ public class RemoveTagsFromOnPremisesInstancesRequest extends
      * 
      * @return The tag key-value pairs to remove from the on-premises instances.
      */
+
     public java.util.List<Tag> getTags() {
         if (tags == null) {
             tags = new com.amazonaws.internal.SdkInternalList<Tag>();
@@ -62,6 +63,7 @@ public class RemoveTagsFromOnPremisesInstancesRequest extends
      * @param tags
      *        The tag key-value pairs to remove from the on-premises instances.
      */
+
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
             this.tags = null;
@@ -87,6 +89,7 @@ public class RemoveTagsFromOnPremisesInstancesRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RemoveTagsFromOnPremisesInstancesRequest withTags(Tag... tags) {
         if (this.tags == null) {
             setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
@@ -107,6 +110,7 @@ public class RemoveTagsFromOnPremisesInstancesRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RemoveTagsFromOnPremisesInstancesRequest withTags(
             java.util.Collection<Tag> tags) {
         setTags(tags);
@@ -120,6 +124,7 @@ public class RemoveTagsFromOnPremisesInstancesRequest extends
      * 
      * @return The names of the on-premises instances to remove tags from.
      */
+
     public java.util.List<String> getInstanceNames() {
         if (instanceNames == null) {
             instanceNames = new com.amazonaws.internal.SdkInternalList<String>();
@@ -135,6 +140,7 @@ public class RemoveTagsFromOnPremisesInstancesRequest extends
      * @param instanceNames
      *        The names of the on-premises instances to remove tags from.
      */
+
     public void setInstanceNames(java.util.Collection<String> instanceNames) {
         if (instanceNames == null) {
             this.instanceNames = null;
@@ -161,6 +167,7 @@ public class RemoveTagsFromOnPremisesInstancesRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RemoveTagsFromOnPremisesInstancesRequest withInstanceNames(
             String... instanceNames) {
         if (this.instanceNames == null) {
@@ -183,6 +190,7 @@ public class RemoveTagsFromOnPremisesInstancesRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RemoveTagsFromOnPremisesInstancesRequest withInstanceNames(
             java.util.Collection<String> instanceNames) {
         setInstanceNames(instanceNames);

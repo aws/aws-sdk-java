@@ -70,6 +70,7 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      * @param value
      *        The minimum healthy instances value.
      */
+
     public void setValue(Integer value) {
         this.value = value;
     }
@@ -81,6 +82,7 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      * 
      * @return The minimum healthy instances value.
      */
+
     public Integer getValue() {
         return this.value;
     }
@@ -95,6 +97,7 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MinimumHealthyHosts withValue(Integer value) {
         setValue(value);
         return this;
@@ -159,6 +162,7 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      *        deployment still succeeds.
      * @see MinimumHealthyHostsType
      */
+
     public void setType(String type) {
         this.type = type;
     }
@@ -221,6 +225,7 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      *         overall deployment still succeeds.
      * @see MinimumHealthyHostsType
      */
+
     public String getType() {
         return this.type;
     }
@@ -286,6 +291,7 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      *         chained together.
      * @see MinimumHealthyHostsType
      */
+
     public MinimumHealthyHosts withType(String type) {
         setType(type);
         return this;
@@ -352,6 +358,7 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      *         chained together.
      * @see MinimumHealthyHostsType
      */
+
     public void setType(MinimumHealthyHostsType type) {
         this.type = type.toString();
     }
@@ -417,6 +424,7 @@ public class MinimumHealthyHosts implements Serializable, Cloneable {
      *         chained together.
      * @see MinimumHealthyHostsType
      */
+
     public MinimumHealthyHosts withType(MinimumHealthyHostsType type) {
         setType(type);
         return this;

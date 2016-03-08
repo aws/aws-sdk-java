@@ -40,6 +40,7 @@ public class ListDomainNamesResult implements Serializable, Cloneable {
      * 
      * @return List of Elasticsearch domain names.
      */
+
     public java.util.List<DomainInfo> getDomainNames() {
         return domainNames;
     }
@@ -52,6 +53,7 @@ public class ListDomainNamesResult implements Serializable, Cloneable {
      * @param domainNames
      *        List of Elasticsearch domain names.
      */
+
     public void setDomainNames(java.util.Collection<DomainInfo> domainNames) {
         if (domainNames == null) {
             this.domainNames = null;
@@ -77,6 +79,7 @@ public class ListDomainNamesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListDomainNamesResult withDomainNames(DomainInfo... domainNames) {
         if (this.domainNames == null) {
             setDomainNames(new java.util.ArrayList<DomainInfo>(
@@ -98,6 +101,7 @@ public class ListDomainNamesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListDomainNamesResult withDomainNames(
             java.util.Collection<DomainInfo> domainNames) {
         setDomainNames(domainNames);

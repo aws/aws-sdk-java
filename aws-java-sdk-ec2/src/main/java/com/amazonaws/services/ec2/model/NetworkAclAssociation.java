@@ -52,6 +52,7 @@ public class NetworkAclAssociation implements Serializable, Cloneable {
      * @param networkAclAssociationId
      *        The ID of the association between a network ACL and a subnet.
      */
+
     public void setNetworkAclAssociationId(String networkAclAssociationId) {
         this.networkAclAssociationId = networkAclAssociationId;
     }
@@ -63,6 +64,7 @@ public class NetworkAclAssociation implements Serializable, Cloneable {
      * 
      * @return The ID of the association between a network ACL and a subnet.
      */
+
     public String getNetworkAclAssociationId() {
         return this.networkAclAssociationId;
     }
@@ -77,6 +79,7 @@ public class NetworkAclAssociation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NetworkAclAssociation withNetworkAclAssociationId(
             String networkAclAssociationId) {
         setNetworkAclAssociationId(networkAclAssociationId);
@@ -91,6 +94,7 @@ public class NetworkAclAssociation implements Serializable, Cloneable {
      * @param networkAclId
      *        The ID of the network ACL.
      */
+
     public void setNetworkAclId(String networkAclId) {
         this.networkAclId = networkAclId;
     }
@@ -102,6 +106,7 @@ public class NetworkAclAssociation implements Serializable, Cloneable {
      * 
      * @return The ID of the network ACL.
      */
+
     public String getNetworkAclId() {
         return this.networkAclId;
     }
@@ -116,6 +121,7 @@ public class NetworkAclAssociation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NetworkAclAssociation withNetworkAclId(String networkAclId) {
         setNetworkAclId(networkAclId);
         return this;
@@ -129,6 +135,7 @@ public class NetworkAclAssociation implements Serializable, Cloneable {
      * @param subnetId
      *        The ID of the subnet.
      */
+
     public void setSubnetId(String subnetId) {
         this.subnetId = subnetId;
     }
@@ -140,6 +147,7 @@ public class NetworkAclAssociation implements Serializable, Cloneable {
      * 
      * @return The ID of the subnet.
      */
+
     public String getSubnetId() {
         return this.subnetId;
     }
@@ -154,6 +162,7 @@ public class NetworkAclAssociation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NetworkAclAssociation withSubnetId(String subnetId) {
         setSubnetId(subnetId);
         return this;

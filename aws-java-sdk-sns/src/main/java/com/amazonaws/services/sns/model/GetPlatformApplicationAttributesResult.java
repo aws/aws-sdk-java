@@ -73,6 +73,7 @@ public class GetPlatformApplicationAttributesResult implements Serializable,
      *         Publish delivery failure (permanent) to one of the application's
      *         endpoints.</li>
      */
+
     public java.util.Map<String, String> getAttributes() {
         if (attributes == null) {
             attributes = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -110,6 +111,7 @@ public class GetPlatformApplicationAttributesResult implements Serializable,
      *        Publish delivery failure (permanent) to one of the application's
      *        endpoints.</li>
      */
+
     public void setAttributes(java.util.Map<String, String> attributes) {
         this.attributes = attributes == null ? null
                 : new com.amazonaws.internal.SdkInternalMap<String, String>(
@@ -148,6 +150,7 @@ public class GetPlatformApplicationAttributesResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetPlatformApplicationAttributesResult withAttributes(
             java.util.Map<String, String> attributes) {
         setAttributes(attributes);
@@ -170,6 +173,7 @@ public class GetPlatformApplicationAttributesResult implements Serializable,
      * Removes all the entries added into Attributes. &lt;p> Returns a reference
      * to this object so that method calls can be chained together.
      */
+
     public GetPlatformApplicationAttributesResult clearAttributesEntries() {
         this.attributes = null;
         return this;

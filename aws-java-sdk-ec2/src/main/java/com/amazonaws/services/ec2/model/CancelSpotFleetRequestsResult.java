@@ -48,6 +48,7 @@ public class CancelSpotFleetRequestsResult implements Serializable, Cloneable {
      * @return Information about the Spot fleet requests that are not
      *         successfully canceled.
      */
+
     public java.util.List<CancelSpotFleetRequestsErrorItem> getUnsuccessfulFleetRequests() {
         if (unsuccessfulFleetRequests == null) {
             unsuccessfulFleetRequests = new com.amazonaws.internal.SdkInternalList<CancelSpotFleetRequestsErrorItem>();
@@ -65,6 +66,7 @@ public class CancelSpotFleetRequestsResult implements Serializable, Cloneable {
      *        Information about the Spot fleet requests that are not
      *        successfully canceled.
      */
+
     public void setUnsuccessfulFleetRequests(
             java.util.Collection<CancelSpotFleetRequestsErrorItem> unsuccessfulFleetRequests) {
         if (unsuccessfulFleetRequests == null) {
@@ -94,6 +96,7 @@ public class CancelSpotFleetRequestsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CancelSpotFleetRequestsResult withUnsuccessfulFleetRequests(
             CancelSpotFleetRequestsErrorItem... unsuccessfulFleetRequests) {
         if (this.unsuccessfulFleetRequests == null) {
@@ -118,6 +121,7 @@ public class CancelSpotFleetRequestsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CancelSpotFleetRequestsResult withUnsuccessfulFleetRequests(
             java.util.Collection<CancelSpotFleetRequestsErrorItem> unsuccessfulFleetRequests) {
         setUnsuccessfulFleetRequests(unsuccessfulFleetRequests);
@@ -132,6 +136,7 @@ public class CancelSpotFleetRequestsResult implements Serializable, Cloneable {
      * @return Information about the Spot fleet requests that are successfully
      *         canceled.
      */
+
     public java.util.List<CancelSpotFleetRequestsSuccessItem> getSuccessfulFleetRequests() {
         if (successfulFleetRequests == null) {
             successfulFleetRequests = new com.amazonaws.internal.SdkInternalList<CancelSpotFleetRequestsSuccessItem>();
@@ -148,6 +153,7 @@ public class CancelSpotFleetRequestsResult implements Serializable, Cloneable {
      *        Information about the Spot fleet requests that are successfully
      *        canceled.
      */
+
     public void setSuccessfulFleetRequests(
             java.util.Collection<CancelSpotFleetRequestsSuccessItem> successfulFleetRequests) {
         if (successfulFleetRequests == null) {
@@ -176,6 +182,7 @@ public class CancelSpotFleetRequestsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CancelSpotFleetRequestsResult withSuccessfulFleetRequests(
             CancelSpotFleetRequestsSuccessItem... successfulFleetRequests) {
         if (this.successfulFleetRequests == null) {
@@ -199,6 +206,7 @@ public class CancelSpotFleetRequestsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CancelSpotFleetRequestsResult withSuccessfulFleetRequests(
             java.util.Collection<CancelSpotFleetRequestsSuccessItem> successfulFleetRequests) {
         setSuccessfulFleetRequests(successfulFleetRequests);

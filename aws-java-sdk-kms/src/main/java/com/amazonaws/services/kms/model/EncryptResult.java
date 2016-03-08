@@ -52,6 +52,7 @@ public class EncryptResult implements Serializable, Cloneable {
      *        The encrypted plaintext. If you are using the CLI, the value is
      *        Base64 encoded. Otherwise, it is not encoded.
      */
+
     public void setCiphertextBlob(java.nio.ByteBuffer ciphertextBlob) {
         this.ciphertextBlob = ciphertextBlob;
     }
@@ -75,6 +76,7 @@ public class EncryptResult implements Serializable, Cloneable {
      * @return The encrypted plaintext. If you are using the CLI, the value is
      *         Base64 encoded. Otherwise, it is not encoded.
      */
+
     public java.nio.ByteBuffer getCiphertextBlob() {
         return this.ciphertextBlob;
     }
@@ -91,6 +93,7 @@ public class EncryptResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EncryptResult withCiphertextBlob(java.nio.ByteBuffer ciphertextBlob) {
         setCiphertextBlob(ciphertextBlob);
         return this;
@@ -104,6 +107,7 @@ public class EncryptResult implements Serializable, Cloneable {
      * @param keyId
      *        The ID of the key used during encryption.
      */
+
     public void setKeyId(String keyId) {
         this.keyId = keyId;
     }
@@ -115,6 +119,7 @@ public class EncryptResult implements Serializable, Cloneable {
      * 
      * @return The ID of the key used during encryption.
      */
+
     public String getKeyId() {
         return this.keyId;
     }
@@ -129,6 +134,7 @@ public class EncryptResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EncryptResult withKeyId(String keyId) {
         setKeyId(keyId);
         return this;

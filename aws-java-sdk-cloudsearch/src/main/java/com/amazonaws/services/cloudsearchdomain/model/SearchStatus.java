@@ -47,6 +47,7 @@ public class SearchStatus implements Serializable, Cloneable {
      * @param timems
      *        How long it took to process the request, in milliseconds.
      */
+
     public void setTimems(Long timems) {
         this.timems = timems;
     }
@@ -58,6 +59,7 @@ public class SearchStatus implements Serializable, Cloneable {
      * 
      * @return How long it took to process the request, in milliseconds.
      */
+
     public Long getTimems() {
         return this.timems;
     }
@@ -72,6 +74,7 @@ public class SearchStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SearchStatus withTimems(Long timems) {
         setTimems(timems);
         return this;
@@ -85,6 +88,7 @@ public class SearchStatus implements Serializable, Cloneable {
      * @param rid
      *        The encrypted resource ID for the request.
      */
+
     public void setRid(String rid) {
         this.rid = rid;
     }
@@ -96,6 +100,7 @@ public class SearchStatus implements Serializable, Cloneable {
      * 
      * @return The encrypted resource ID for the request.
      */
+
     public String getRid() {
         return this.rid;
     }
@@ -110,6 +115,7 @@ public class SearchStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SearchStatus withRid(String rid) {
         setRid(rid);
         return this;

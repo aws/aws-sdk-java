@@ -46,6 +46,7 @@ public class GetContextKeysForCustomPolicyRequest extends
      *         a string containing the complete, valid JSON text of an IAM
      *         policy.
      */
+
     public java.util.List<String> getPolicyInputList() {
         if (policyInputList == null) {
             policyInputList = new com.amazonaws.internal.SdkInternalList<String>();
@@ -65,6 +66,7 @@ public class GetContextKeysForCustomPolicyRequest extends
      *        <code>Condition</code> elements. Each document is specified as a
      *        string containing the complete, valid JSON text of an IAM policy.
      */
+
     public void setPolicyInputList(java.util.Collection<String> policyInputList) {
         if (policyInputList == null) {
             this.policyInputList = null;
@@ -95,6 +97,7 @@ public class GetContextKeysForCustomPolicyRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetContextKeysForCustomPolicyRequest withPolicyInputList(
             String... policyInputList) {
         if (this.policyInputList == null) {
@@ -121,6 +124,7 @@ public class GetContextKeysForCustomPolicyRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetContextKeysForCustomPolicyRequest withPolicyInputList(
             java.util.Collection<String> policyInputList) {
         setPolicyInputList(policyInputList);

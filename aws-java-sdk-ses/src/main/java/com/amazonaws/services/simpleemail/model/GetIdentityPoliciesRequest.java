@@ -68,6 +68,7 @@ public class GetIdentityPoliciesRequest extends AmazonWebServiceRequest
      *        <p>
      *        To successfully call this API, you must own the identity.
      */
+
     public void setIdentity(String identity) {
         this.identity = identity;
     }
@@ -92,6 +93,7 @@ public class GetIdentityPoliciesRequest extends AmazonWebServiceRequest
      *         <p>
      *         To successfully call this API, you must own the identity.
      */
+
     public String getIdentity() {
         return this.identity;
     }
@@ -119,6 +121,7 @@ public class GetIdentityPoliciesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetIdentityPoliciesRequest withIdentity(String identity) {
         setIdentity(identity);
         return this;
@@ -137,6 +140,7 @@ public class GetIdentityPoliciesRequest extends AmazonWebServiceRequest
      *         of the policies that are attached to the identity, you can use
      *         <code>ListIdentityPolicies</code>.
      */
+
     public java.util.List<String> getPolicyNames() {
         if (policyNames == null) {
             policyNames = new com.amazonaws.internal.SdkInternalList<String>();
@@ -158,6 +162,7 @@ public class GetIdentityPoliciesRequest extends AmazonWebServiceRequest
      *        of the policies that are attached to the identity, you can use
      *        <code>ListIdentityPolicies</code>.
      */
+
     public void setPolicyNames(java.util.Collection<String> policyNames) {
         if (policyNames == null) {
             this.policyNames = null;
@@ -190,6 +195,7 @@ public class GetIdentityPoliciesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetIdentityPoliciesRequest withPolicyNames(String... policyNames) {
         if (this.policyNames == null) {
             setPolicyNames(new com.amazonaws.internal.SdkInternalList<String>(
@@ -217,6 +223,7 @@ public class GetIdentityPoliciesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetIdentityPoliciesRequest withPolicyNames(
             java.util.Collection<String> policyNames) {
         setPolicyNames(policyNames);

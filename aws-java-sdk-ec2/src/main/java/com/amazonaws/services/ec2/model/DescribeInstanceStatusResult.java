@@ -44,6 +44,7 @@ public class DescribeInstanceStatusResult implements Serializable, Cloneable {
      * 
      * @return One or more instance status descriptions.
      */
+
     public java.util.List<InstanceStatus> getInstanceStatuses() {
         if (instanceStatuses == null) {
             instanceStatuses = new com.amazonaws.internal.SdkInternalList<InstanceStatus>();
@@ -59,6 +60,7 @@ public class DescribeInstanceStatusResult implements Serializable, Cloneable {
      * @param instanceStatuses
      *        One or more instance status descriptions.
      */
+
     public void setInstanceStatuses(
             java.util.Collection<InstanceStatus> instanceStatuses) {
         if (instanceStatuses == null) {
@@ -86,6 +88,7 @@ public class DescribeInstanceStatusResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeInstanceStatusResult withInstanceStatuses(
             InstanceStatus... instanceStatuses) {
         if (this.instanceStatuses == null) {
@@ -108,6 +111,7 @@ public class DescribeInstanceStatusResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeInstanceStatusResult withInstanceStatuses(
             java.util.Collection<InstanceStatus> instanceStatuses) {
         setInstanceStatuses(instanceStatuses);
@@ -124,6 +128,7 @@ public class DescribeInstanceStatusResult implements Serializable, Cloneable {
      *        The token to use to retrieve the next page of results. This value
      *        is <code>null</code> when there are no more results to return.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -137,6 +142,7 @@ public class DescribeInstanceStatusResult implements Serializable, Cloneable {
      * @return The token to use to retrieve the next page of results. This value
      *         is <code>null</code> when there are no more results to return.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -153,6 +159,7 @@ public class DescribeInstanceStatusResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeInstanceStatusResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

@@ -66,6 +66,7 @@ public class DescribeDirectoriesResult implements Serializable, Cloneable {
      *         to retrieve, or if the limitations of the operation have been
      *         exceeded.
      */
+
     public java.util.List<DirectoryDescription> getDirectoryDescriptions() {
         if (directoryDescriptions == null) {
             directoryDescriptions = new com.amazonaws.internal.SdkInternalList<DirectoryDescription>();
@@ -94,6 +95,7 @@ public class DescribeDirectoriesResult implements Serializable, Cloneable {
      *        to retrieve, or if the limitations of the operation have been
      *        exceeded.
      */
+
     public void setDirectoryDescriptions(
             java.util.Collection<DirectoryDescription> directoryDescriptions) {
         if (directoryDescriptions == null) {
@@ -134,6 +136,7 @@ public class DescribeDirectoriesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeDirectoriesResult withDirectoryDescriptions(
             DirectoryDescription... directoryDescriptions) {
         if (this.directoryDescriptions == null) {
@@ -169,6 +172,7 @@ public class DescribeDirectoriesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeDirectoriesResult withDirectoryDescriptions(
             java.util.Collection<DirectoryDescription> directoryDescriptions) {
         setDirectoryDescriptions(directoryDescriptions);
@@ -187,6 +191,7 @@ public class DescribeDirectoriesResult implements Serializable, Cloneable {
      *        <i>NextToken</i> parameter in a subsequent call to
      *        <a>DescribeDirectories</a> to retrieve the next set of items.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -202,6 +207,7 @@ public class DescribeDirectoriesResult implements Serializable, Cloneable {
      *         <i>NextToken</i> parameter in a subsequent call to
      *         <a>DescribeDirectories</a> to retrieve the next set of items.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -220,6 +226,7 @@ public class DescribeDirectoriesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeDirectoriesResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

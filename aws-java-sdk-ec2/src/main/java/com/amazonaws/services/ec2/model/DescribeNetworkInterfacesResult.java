@@ -37,6 +37,7 @@ public class DescribeNetworkInterfacesResult implements Serializable, Cloneable 
      * 
      * @return Information about one or more network interfaces.
      */
+
     public java.util.List<NetworkInterface> getNetworkInterfaces() {
         if (networkInterfaces == null) {
             networkInterfaces = new com.amazonaws.internal.SdkInternalList<NetworkInterface>();
@@ -52,6 +53,7 @@ public class DescribeNetworkInterfacesResult implements Serializable, Cloneable 
      * @param networkInterfaces
      *        Information about one or more network interfaces.
      */
+
     public void setNetworkInterfaces(
             java.util.Collection<NetworkInterface> networkInterfaces) {
         if (networkInterfaces == null) {
@@ -79,6 +81,7 @@ public class DescribeNetworkInterfacesResult implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeNetworkInterfacesResult withNetworkInterfaces(
             NetworkInterface... networkInterfaces) {
         if (this.networkInterfaces == null) {
@@ -101,6 +104,7 @@ public class DescribeNetworkInterfacesResult implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeNetworkInterfacesResult withNetworkInterfaces(
             java.util.Collection<NetworkInterface> networkInterfaces) {
         setNetworkInterfaces(networkInterfaces);

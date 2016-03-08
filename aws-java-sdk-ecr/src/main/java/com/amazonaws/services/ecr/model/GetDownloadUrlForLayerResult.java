@@ -44,6 +44,7 @@ public class GetDownloadUrlForLayerResult implements Serializable, Cloneable {
      * @param downloadUrl
      *        The pre-signed Amazon S3 download URL for the requested layer.
      */
+
     public void setDownloadUrl(String downloadUrl) {
         this.downloadUrl = downloadUrl;
     }
@@ -55,6 +56,7 @@ public class GetDownloadUrlForLayerResult implements Serializable, Cloneable {
      * 
      * @return The pre-signed Amazon S3 download URL for the requested layer.
      */
+
     public String getDownloadUrl() {
         return this.downloadUrl;
     }
@@ -69,6 +71,7 @@ public class GetDownloadUrlForLayerResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDownloadUrlForLayerResult withDownloadUrl(String downloadUrl) {
         setDownloadUrl(downloadUrl);
         return this;
@@ -82,6 +85,7 @@ public class GetDownloadUrlForLayerResult implements Serializable, Cloneable {
      * @param layerDigest
      *        The digest of the image layer to download.
      */
+
     public void setLayerDigest(String layerDigest) {
         this.layerDigest = layerDigest;
     }
@@ -93,6 +97,7 @@ public class GetDownloadUrlForLayerResult implements Serializable, Cloneable {
      * 
      * @return The digest of the image layer to download.
      */
+
     public String getLayerDigest() {
         return this.layerDigest;
     }
@@ -107,6 +112,7 @@ public class GetDownloadUrlForLayerResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDownloadUrlForLayerResult withLayerDigest(String layerDigest) {
         setLayerDigest(layerDigest);
         return this;

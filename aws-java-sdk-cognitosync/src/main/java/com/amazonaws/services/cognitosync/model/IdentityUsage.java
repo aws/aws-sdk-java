@@ -52,6 +52,7 @@ public class IdentityUsage implements Serializable, Cloneable {
      *        us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
      *        Cognito. GUID generation is unique within a region.
      */
+
     public void setIdentityId(String identityId) {
         this.identityId = identityId;
     }
@@ -65,6 +66,7 @@ public class IdentityUsage implements Serializable, Cloneable {
      *         us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
      *         Cognito. GUID generation is unique within a region.
      */
+
     public String getIdentityId() {
         return this.identityId;
     }
@@ -81,6 +83,7 @@ public class IdentityUsage implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public IdentityUsage withIdentityId(String identityId) {
         setIdentityId(identityId);
         return this;
@@ -96,6 +99,7 @@ public class IdentityUsage implements Serializable, Cloneable {
      *        us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
      *        Cognito. GUID generation is unique within a region.
      */
+
     public void setIdentityPoolId(String identityPoolId) {
         this.identityPoolId = identityPoolId;
     }
@@ -109,6 +113,7 @@ public class IdentityUsage implements Serializable, Cloneable {
      *         us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
      *         Cognito. GUID generation is unique within a region.
      */
+
     public String getIdentityPoolId() {
         return this.identityPoolId;
     }
@@ -125,6 +130,7 @@ public class IdentityUsage implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public IdentityUsage withIdentityPoolId(String identityPoolId) {
         setIdentityPoolId(identityPoolId);
         return this;
@@ -136,6 +142,7 @@ public class IdentityUsage implements Serializable, Cloneable {
      * @param lastModifiedDate
      *        Date on which the identity was last modified.
      */
+
     public void setLastModifiedDate(java.util.Date lastModifiedDate) {
         this.lastModifiedDate = lastModifiedDate;
     }
@@ -145,6 +152,7 @@ public class IdentityUsage implements Serializable, Cloneable {
      * 
      * @return Date on which the identity was last modified.
      */
+
     public java.util.Date getLastModifiedDate() {
         return this.lastModifiedDate;
     }
@@ -157,6 +165,7 @@ public class IdentityUsage implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public IdentityUsage withLastModifiedDate(java.util.Date lastModifiedDate) {
         setLastModifiedDate(lastModifiedDate);
         return this;
@@ -168,6 +177,7 @@ public class IdentityUsage implements Serializable, Cloneable {
      * @param datasetCount
      *        Number of datasets for the identity.
      */
+
     public void setDatasetCount(Integer datasetCount) {
         this.datasetCount = datasetCount;
     }
@@ -177,6 +187,7 @@ public class IdentityUsage implements Serializable, Cloneable {
      * 
      * @return Number of datasets for the identity.
      */
+
     public Integer getDatasetCount() {
         return this.datasetCount;
     }
@@ -189,6 +200,7 @@ public class IdentityUsage implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public IdentityUsage withDatasetCount(Integer datasetCount) {
         setDatasetCount(datasetCount);
         return this;
@@ -200,6 +212,7 @@ public class IdentityUsage implements Serializable, Cloneable {
      * @param dataStorage
      *        Total data storage for this identity.
      */
+
     public void setDataStorage(Long dataStorage) {
         this.dataStorage = dataStorage;
     }
@@ -209,6 +222,7 @@ public class IdentityUsage implements Serializable, Cloneable {
      * 
      * @return Total data storage for this identity.
      */
+
     public Long getDataStorage() {
         return this.dataStorage;
     }
@@ -221,6 +235,7 @@ public class IdentityUsage implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public IdentityUsage withDataStorage(Long dataStorage) {
         setDataStorage(dataStorage);
         return this;

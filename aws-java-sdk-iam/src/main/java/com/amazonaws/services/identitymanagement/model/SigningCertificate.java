@@ -125,6 +125,7 @@ public class SigningCertificate implements Serializable, Cloneable {
      * @param userName
      *        The name of the user the signing certificate is associated with.
      */
+
     public void setUserName(String userName) {
         this.userName = userName;
     }
@@ -136,6 +137,7 @@ public class SigningCertificate implements Serializable, Cloneable {
      * 
      * @return The name of the user the signing certificate is associated with.
      */
+
     public String getUserName() {
         return this.userName;
     }
@@ -150,6 +152,7 @@ public class SigningCertificate implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SigningCertificate withUserName(String userName) {
         setUserName(userName);
         return this;
@@ -163,6 +166,7 @@ public class SigningCertificate implements Serializable, Cloneable {
      * @param certificateId
      *        The ID for the signing certificate.
      */
+
     public void setCertificateId(String certificateId) {
         this.certificateId = certificateId;
     }
@@ -174,6 +178,7 @@ public class SigningCertificate implements Serializable, Cloneable {
      * 
      * @return The ID for the signing certificate.
      */
+
     public String getCertificateId() {
         return this.certificateId;
     }
@@ -188,6 +193,7 @@ public class SigningCertificate implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SigningCertificate withCertificateId(String certificateId) {
         setCertificateId(certificateId);
         return this;
@@ -201,6 +207,7 @@ public class SigningCertificate implements Serializable, Cloneable {
      * @param certificateBody
      *        The contents of the signing certificate.
      */
+
     public void setCertificateBody(String certificateBody) {
         this.certificateBody = certificateBody;
     }
@@ -212,6 +219,7 @@ public class SigningCertificate implements Serializable, Cloneable {
      * 
      * @return The contents of the signing certificate.
      */
+
     public String getCertificateBody() {
         return this.certificateBody;
     }
@@ -226,6 +234,7 @@ public class SigningCertificate implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SigningCertificate withCertificateBody(String certificateBody) {
         setCertificateBody(certificateBody);
         return this;
@@ -243,6 +252,7 @@ public class SigningCertificate implements Serializable, Cloneable {
      *        it is not.
      * @see StatusType
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -258,6 +268,7 @@ public class SigningCertificate implements Serializable, Cloneable {
      *         it is not.
      * @see StatusType
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -276,6 +287,7 @@ public class SigningCertificate implements Serializable, Cloneable {
      *         chained together.
      * @see StatusType
      */
+
     public SigningCertificate withStatus(String status) {
         setStatus(status);
         return this;
@@ -295,6 +307,7 @@ public class SigningCertificate implements Serializable, Cloneable {
      *         chained together.
      * @see StatusType
      */
+
     public void setStatus(StatusType status) {
         this.status = status.toString();
     }
@@ -313,6 +326,7 @@ public class SigningCertificate implements Serializable, Cloneable {
      *         chained together.
      * @see StatusType
      */
+
     public SigningCertificate withStatus(StatusType status) {
         setStatus(status);
         return this;
@@ -326,6 +340,7 @@ public class SigningCertificate implements Serializable, Cloneable {
      * @param uploadDate
      *        The date when the signing certificate was uploaded.
      */
+
     public void setUploadDate(java.util.Date uploadDate) {
         this.uploadDate = uploadDate;
     }
@@ -337,6 +352,7 @@ public class SigningCertificate implements Serializable, Cloneable {
      * 
      * @return The date when the signing certificate was uploaded.
      */
+
     public java.util.Date getUploadDate() {
         return this.uploadDate;
     }
@@ -351,6 +367,7 @@ public class SigningCertificate implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SigningCertificate withUploadDate(java.util.Date uploadDate) {
         setUploadDate(uploadDate);
         return this;

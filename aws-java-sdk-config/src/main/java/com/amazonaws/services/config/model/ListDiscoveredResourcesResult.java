@@ -50,6 +50,7 @@ public class ListDiscoveredResourcesResult implements Serializable, Cloneable {
      *         Config, including the resource type, ID, and (if available) the
      *         custom resource name.
      */
+
     public java.util.List<ResourceIdentifier> getResourceIdentifiers() {
         if (resourceIdentifiers == null) {
             resourceIdentifiers = new com.amazonaws.internal.SdkInternalList<ResourceIdentifier>();
@@ -69,6 +70,7 @@ public class ListDiscoveredResourcesResult implements Serializable, Cloneable {
      *        Config, including the resource type, ID, and (if available) the
      *        custom resource name.
      */
+
     public void setResourceIdentifiers(
             java.util.Collection<ResourceIdentifier> resourceIdentifiers) {
         if (resourceIdentifiers == null) {
@@ -100,6 +102,7 @@ public class ListDiscoveredResourcesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListDiscoveredResourcesResult withResourceIdentifiers(
             ResourceIdentifier... resourceIdentifiers) {
         if (this.resourceIdentifiers == null) {
@@ -126,6 +129,7 @@ public class ListDiscoveredResourcesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListDiscoveredResourcesResult withResourceIdentifiers(
             java.util.Collection<ResourceIdentifier> resourceIdentifiers) {
         setResourceIdentifiers(resourceIdentifiers);
@@ -142,6 +146,7 @@ public class ListDiscoveredResourcesResult implements Serializable, Cloneable {
      *        The string that you use in a subsequent request to get the next
      *        page of results in a paginated response.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -155,6 +160,7 @@ public class ListDiscoveredResourcesResult implements Serializable, Cloneable {
      * @return The string that you use in a subsequent request to get the next
      *         page of results in a paginated response.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -171,6 +177,7 @@ public class ListDiscoveredResourcesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListDiscoveredResourcesResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

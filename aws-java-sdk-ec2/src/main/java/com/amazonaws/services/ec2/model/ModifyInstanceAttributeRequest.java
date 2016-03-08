@@ -208,6 +208,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest
      * @param instanceId
      *        The ID of the instance.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -219,6 +220,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the instance.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
@@ -233,6 +235,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyInstanceAttributeRequest withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;
@@ -247,6 +250,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest
      *        The name of the attribute.
      * @see InstanceAttributeName
      */
+
     public void setAttribute(String attribute) {
         this.attribute = attribute;
     }
@@ -259,6 +263,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest
      * @return The name of the attribute.
      * @see InstanceAttributeName
      */
+
     public String getAttribute() {
         return this.attribute;
     }
@@ -274,6 +279,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see InstanceAttributeName
      */
+
     public ModifyInstanceAttributeRequest withAttribute(String attribute) {
         setAttribute(attribute);
         return this;
@@ -290,6 +296,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see InstanceAttributeName
      */
+
     public void setAttribute(InstanceAttributeName attribute) {
         this.attribute = attribute.toString();
     }
@@ -305,6 +312,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see InstanceAttributeName
      */
+
     public ModifyInstanceAttributeRequest withAttribute(
             InstanceAttributeName attribute) {
         setAttribute(attribute);
@@ -325,6 +333,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest
      *        <code>disableApiTermination</code>, or
      *        <code>instanceInitiatedShutdownBehavior</code> attribute.
      */
+
     public void setValue(String value) {
         this.value = value;
     }
@@ -342,6 +351,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest
      *         <code>disableApiTermination</code>, or
      *         <code>instanceInitiatedShutdownBehavior</code> attribute.
      */
+
     public String getValue() {
         return this.value;
     }
@@ -362,6 +372,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyInstanceAttributeRequest withValue(String value) {
         setValue(value);
         return this;
@@ -397,6 +408,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest
      *         >Updating the Block Device Mapping when Launching an Instance</a>
      *         in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
+
     public java.util.List<InstanceBlockDeviceMappingSpecification> getBlockDeviceMappings() {
         if (blockDeviceMappings == null) {
             blockDeviceMappings = new com.amazonaws.internal.SdkInternalList<InstanceBlockDeviceMappingSpecification>();
@@ -434,6 +446,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest
      *        >Updating the Block Device Mapping when Launching an Instance</a>
      *        in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
+
     public void setBlockDeviceMappings(
             java.util.Collection<InstanceBlockDeviceMappingSpecification> blockDeviceMappings) {
         if (blockDeviceMappings == null) {
@@ -483,6 +496,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyInstanceAttributeRequest withBlockDeviceMappings(
             InstanceBlockDeviceMappingSpecification... blockDeviceMappings) {
         if (this.blockDeviceMappings == null) {
@@ -527,6 +541,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyInstanceAttributeRequest withBlockDeviceMappings(
             java.util.Collection<InstanceBlockDeviceMappingSpecification> blockDeviceMappings) {
         setBlockDeviceMappings(blockDeviceMappings);
@@ -547,6 +562,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest
      *        <code>false</code> means checking is disabled. This value must be
      *        <code>false</code> for a NAT instance to perform NAT.
      */
+
     public void setSourceDestCheck(Boolean sourceDestCheck) {
         this.sourceDestCheck = sourceDestCheck;
     }
@@ -564,6 +580,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest
      *         <code>false</code> means checking is disabled. This value must be
      *         <code>false</code> for a NAT instance to perform NAT.
      */
+
     public Boolean getSourceDestCheck() {
         return this.sourceDestCheck;
     }
@@ -584,6 +601,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyInstanceAttributeRequest withSourceDestCheck(
             Boolean sourceDestCheck) {
         setSourceDestCheck(sourceDestCheck);
@@ -603,6 +621,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest
      *         <code>false</code> means checking is disabled. This value must be
      *         <code>false</code> for a NAT instance to perform NAT.
      */
+
     public Boolean isSourceDestCheck() {
         return this.sourceDestCheck;
     }
@@ -619,6 +638,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest
      *        instance using the Amazon EC2 console, CLI, or API; otherwise, you
      *        can. You cannot use this paramater for Spot Instances.
      */
+
     public void setDisableApiTermination(Boolean disableApiTermination) {
         this.disableApiTermination = disableApiTermination;
     }
@@ -634,6 +654,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest
      *         instance using the Amazon EC2 console, CLI, or API; otherwise,
      *         you can. You cannot use this paramater for Spot Instances.
      */
+
     public Boolean getDisableApiTermination() {
         return this.disableApiTermination;
     }
@@ -652,6 +673,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyInstanceAttributeRequest withDisableApiTermination(
             Boolean disableApiTermination) {
         setDisableApiTermination(disableApiTermination);
@@ -669,6 +691,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest
      *         instance using the Amazon EC2 console, CLI, or API; otherwise,
      *         you can. You cannot use this paramater for Spot Instances.
      */
+
     public Boolean isDisableApiTermination() {
         return this.disableApiTermination;
     }
@@ -689,6 +712,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest
      *        >Instance Types</a>. If the instance type is not valid, the error
      *        returned is <code>InvalidInstanceAttributeValue</code>.
      */
+
     public void setInstanceType(String instanceType) {
         this.instanceType = instanceType;
     }
@@ -708,6 +732,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest
      *         >Instance Types</a>. If the instance type is not valid, the error
      *         returned is <code>InvalidInstanceAttributeValue</code>.
      */
+
     public String getInstanceType() {
         return this.instanceType;
     }
@@ -730,6 +755,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyInstanceAttributeRequest withInstanceType(String instanceType) {
         setInstanceType(instanceType);
         return this;
@@ -751,6 +777,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest
      *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html"
      *        >PV-GRUB</a>.
      */
+
     public void setKernel(String kernel) {
         this.kernel = kernel;
     }
@@ -770,6 +797,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest
      *         "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html"
      *         >PV-GRUB</a>.
      */
+
     public String getKernel() {
         return this.kernel;
     }
@@ -792,6 +820,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyInstanceAttributeRequest withKernel(String kernel) {
         setKernel(kernel);
         return this;
@@ -813,6 +842,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest
      *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html"
      *        >PV-GRUB</a>.
      */
+
     public void setRamdisk(String ramdisk) {
         this.ramdisk = ramdisk;
     }
@@ -832,6 +862,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest
      *         "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html"
      *         >PV-GRUB</a>.
      */
+
     public String getRamdisk() {
         return this.ramdisk;
     }
@@ -854,6 +885,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyInstanceAttributeRequest withRamdisk(String ramdisk) {
         setRamdisk(ramdisk);
         return this;
@@ -867,6 +899,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest
      * @param userData
      *        Changes the instance's user data to the specified value.
      */
+
     public void setUserData(String userData) {
         this.userData = userData;
     }
@@ -878,6 +911,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest
      * 
      * @return Changes the instance's user data to the specified value.
      */
+
     public String getUserData() {
         return this.userData;
     }
@@ -892,6 +926,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyInstanceAttributeRequest withUserData(String userData) {
         setUserData(userData);
         return this;
@@ -909,6 +944,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest
      *        initiate shutdown from the instance (using the operating system
      *        command for system shutdown).
      */
+
     public void setInstanceInitiatedShutdownBehavior(
             String instanceInitiatedShutdownBehavior) {
         this.instanceInitiatedShutdownBehavior = instanceInitiatedShutdownBehavior;
@@ -925,6 +961,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest
      *         initiate shutdown from the instance (using the operating system
      *         command for system shutdown).
      */
+
     public String getInstanceInitiatedShutdownBehavior() {
         return this.instanceInitiatedShutdownBehavior;
     }
@@ -943,6 +980,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyInstanceAttributeRequest withInstanceInitiatedShutdownBehavior(
             String instanceInitiatedShutdownBehavior) {
         setInstanceInitiatedShutdownBehavior(instanceInitiatedShutdownBehavior);
@@ -962,6 +1000,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest
      *         default security group for the VPC. You must specify the security
      *         group ID, not the security group name.
      */
+
     public java.util.List<String> getGroups() {
         if (groups == null) {
             groups = new com.amazonaws.internal.SdkInternalList<String>();
@@ -983,6 +1022,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest
      *        security group for the VPC. You must specify the security group
      *        ID, not the security group name.
      */
+
     public void setGroups(java.util.Collection<String> groups) {
         if (groups == null) {
             this.groups = null;
@@ -1014,6 +1054,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyInstanceAttributeRequest withGroups(String... groups) {
         if (this.groups == null) {
             setGroups(new com.amazonaws.internal.SdkInternalList<String>(
@@ -1041,6 +1082,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyInstanceAttributeRequest withGroups(
             java.util.Collection<String> groups) {
         setGroups(groups);
@@ -1064,6 +1106,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest
      *        types. Additional usage charges apply when using an EBS Optimized
      *        instance.
      */
+
     public void setEbsOptimized(Boolean ebsOptimized) {
         this.ebsOptimized = ebsOptimized;
     }
@@ -1084,6 +1127,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest
      *         types. Additional usage charges apply when using an EBS Optimized
      *         instance.
      */
+
     public Boolean getEbsOptimized() {
         return this.ebsOptimized;
     }
@@ -1107,6 +1151,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyInstanceAttributeRequest withEbsOptimized(Boolean ebsOptimized) {
         setEbsOptimized(ebsOptimized);
         return this;
@@ -1128,6 +1173,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest
      *         types. Additional usage charges apply when using an EBS Optimized
      *         instance.
      */
+
     public Boolean isEbsOptimized() {
         return this.ebsOptimized;
     }
@@ -1155,6 +1201,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest
      *        This option is supported only for HVM instances. Specifying this
      *        option with a PV instance can make it unreachable.
      */
+
     public void setSriovNetSupport(String sriovNetSupport) {
         this.sriovNetSupport = sriovNetSupport;
     }
@@ -1181,6 +1228,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest
      *         This option is supported only for HVM instances. Specifying this
      *         option with a PV instance can make it unreachable.
      */
+
     public String getSriovNetSupport() {
         return this.sriovNetSupport;
     }
@@ -1210,6 +1258,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyInstanceAttributeRequest withSriovNetSupport(
             String sriovNetSupport) {
         setSriovNetSupport(sriovNetSupport);

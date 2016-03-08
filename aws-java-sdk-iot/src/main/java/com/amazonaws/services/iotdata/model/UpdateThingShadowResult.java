@@ -45,6 +45,7 @@ public class UpdateThingShadowResult implements Serializable, Cloneable {
      * @param payload
      *        The state information, in JSON format.
      */
+
     public void setPayload(java.nio.ByteBuffer payload) {
         this.payload = payload;
     }
@@ -66,6 +67,7 @@ public class UpdateThingShadowResult implements Serializable, Cloneable {
      * 
      * @return The state information, in JSON format.
      */
+
     public java.nio.ByteBuffer getPayload() {
         return this.payload;
     }
@@ -80,6 +82,7 @@ public class UpdateThingShadowResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateThingShadowResult withPayload(java.nio.ByteBuffer payload) {
         setPayload(payload);
         return this;

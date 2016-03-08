@@ -88,6 +88,7 @@ public class SnapshotTaskDetail implements Serializable, Cloneable {
      * @param diskImageSize
      *        The size of the disk in the snapshot, in GiB.
      */
+
     public void setDiskImageSize(Double diskImageSize) {
         this.diskImageSize = diskImageSize;
     }
@@ -99,6 +100,7 @@ public class SnapshotTaskDetail implements Serializable, Cloneable {
      * 
      * @return The size of the disk in the snapshot, in GiB.
      */
+
     public Double getDiskImageSize() {
         return this.diskImageSize;
     }
@@ -113,6 +115,7 @@ public class SnapshotTaskDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SnapshotTaskDetail withDiskImageSize(Double diskImageSize) {
         setDiskImageSize(diskImageSize);
         return this;
@@ -126,6 +129,7 @@ public class SnapshotTaskDetail implements Serializable, Cloneable {
      * @param description
      *        The description of the snapshot.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -137,6 +141,7 @@ public class SnapshotTaskDetail implements Serializable, Cloneable {
      * 
      * @return The description of the snapshot.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -151,6 +156,7 @@ public class SnapshotTaskDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SnapshotTaskDetail withDescription(String description) {
         setDescription(description);
         return this;
@@ -164,6 +170,7 @@ public class SnapshotTaskDetail implements Serializable, Cloneable {
      * @param format
      *        The format of the disk image from which the snapshot is created.
      */
+
     public void setFormat(String format) {
         this.format = format;
     }
@@ -175,6 +182,7 @@ public class SnapshotTaskDetail implements Serializable, Cloneable {
      * 
      * @return The format of the disk image from which the snapshot is created.
      */
+
     public String getFormat() {
         return this.format;
     }
@@ -189,6 +197,7 @@ public class SnapshotTaskDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SnapshotTaskDetail withFormat(String format) {
         setFormat(format);
         return this;
@@ -202,6 +211,7 @@ public class SnapshotTaskDetail implements Serializable, Cloneable {
      * @param url
      *        The URL of the disk image from which the snapshot is created.
      */
+
     public void setUrl(String url) {
         this.url = url;
     }
@@ -213,6 +223,7 @@ public class SnapshotTaskDetail implements Serializable, Cloneable {
      * 
      * @return The URL of the disk image from which the snapshot is created.
      */
+
     public String getUrl() {
         return this.url;
     }
@@ -227,6 +238,7 @@ public class SnapshotTaskDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SnapshotTaskDetail withUrl(String url) {
         setUrl(url);
         return this;
@@ -240,6 +252,7 @@ public class SnapshotTaskDetail implements Serializable, Cloneable {
      * @param userBucket
      *        The S3 bucket for the disk image.
      */
+
     public void setUserBucket(UserBucketDetails userBucket) {
         this.userBucket = userBucket;
     }
@@ -251,6 +264,7 @@ public class SnapshotTaskDetail implements Serializable, Cloneable {
      * 
      * @return The S3 bucket for the disk image.
      */
+
     public UserBucketDetails getUserBucket() {
         return this.userBucket;
     }
@@ -265,6 +279,7 @@ public class SnapshotTaskDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SnapshotTaskDetail withUserBucket(UserBucketDetails userBucket) {
         setUserBucket(userBucket);
         return this;
@@ -278,6 +293,7 @@ public class SnapshotTaskDetail implements Serializable, Cloneable {
      * @param snapshotId
      *        The snapshot ID of the disk being imported.
      */
+
     public void setSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
     }
@@ -289,6 +305,7 @@ public class SnapshotTaskDetail implements Serializable, Cloneable {
      * 
      * @return The snapshot ID of the disk being imported.
      */
+
     public String getSnapshotId() {
         return this.snapshotId;
     }
@@ -303,6 +320,7 @@ public class SnapshotTaskDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SnapshotTaskDetail withSnapshotId(String snapshotId) {
         setSnapshotId(snapshotId);
         return this;
@@ -316,6 +334,7 @@ public class SnapshotTaskDetail implements Serializable, Cloneable {
      * @param progress
      *        The percentage of completion for the import snapshot task.
      */
+
     public void setProgress(String progress) {
         this.progress = progress;
     }
@@ -327,6 +346,7 @@ public class SnapshotTaskDetail implements Serializable, Cloneable {
      * 
      * @return The percentage of completion for the import snapshot task.
      */
+
     public String getProgress() {
         return this.progress;
     }
@@ -341,6 +361,7 @@ public class SnapshotTaskDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SnapshotTaskDetail withProgress(String progress) {
         setProgress(progress);
         return this;
@@ -354,6 +375,7 @@ public class SnapshotTaskDetail implements Serializable, Cloneable {
      * @param statusMessage
      *        A detailed status message for the import snapshot task.
      */
+
     public void setStatusMessage(String statusMessage) {
         this.statusMessage = statusMessage;
     }
@@ -365,6 +387,7 @@ public class SnapshotTaskDetail implements Serializable, Cloneable {
      * 
      * @return A detailed status message for the import snapshot task.
      */
+
     public String getStatusMessage() {
         return this.statusMessage;
     }
@@ -379,6 +402,7 @@ public class SnapshotTaskDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SnapshotTaskDetail withStatusMessage(String statusMessage) {
         setStatusMessage(statusMessage);
         return this;
@@ -392,6 +416,7 @@ public class SnapshotTaskDetail implements Serializable, Cloneable {
      * @param status
      *        A brief status for the import snapshot task.
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -403,6 +428,7 @@ public class SnapshotTaskDetail implements Serializable, Cloneable {
      * 
      * @return A brief status for the import snapshot task.
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -417,6 +443,7 @@ public class SnapshotTaskDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SnapshotTaskDetail withStatus(String status) {
         setStatus(status);
         return this;

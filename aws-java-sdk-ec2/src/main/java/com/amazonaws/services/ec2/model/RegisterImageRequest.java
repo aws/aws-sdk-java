@@ -137,6 +137,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements
      * @param imageLocation
      *        The full path to your AMI manifest in Amazon S3 storage.
      */
+
     public void setImageLocation(String imageLocation) {
         this.imageLocation = imageLocation;
     }
@@ -148,6 +149,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements
      * 
      * @return The full path to your AMI manifest in Amazon S3 storage.
      */
+
     public String getImageLocation() {
         return this.imageLocation;
     }
@@ -162,6 +164,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterImageRequest withImageLocation(String imageLocation) {
         setImageLocation(imageLocation);
         return this;
@@ -184,6 +187,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements
      *        square brackets ([]), spaces ( ), periods (.), slashes (/), dashes
      *        (-), single quotes ('), at-signs (@), or underscores(_)
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -204,6 +208,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements
      *         square brackets ([]), spaces ( ), periods (.), slashes (/),
      *         dashes (-), single quotes ('), at-signs (@), or underscores(_)
      */
+
     public String getName() {
         return this.name;
     }
@@ -227,6 +232,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterImageRequest withName(String name) {
         setName(name);
         return this;
@@ -240,6 +246,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements
      * @param description
      *        A description for your AMI.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -251,6 +258,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements
      * 
      * @return A description for your AMI.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -265,6 +273,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterImageRequest withDescription(String description) {
         setDescription(description);
         return this;
@@ -287,6 +296,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements
      *        manifest file.
      * @see ArchitectureValues
      */
+
     public void setArchitecture(String architecture) {
         this.architecture = architecture;
     }
@@ -307,6 +317,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements
      *         manifest file.
      * @see ArchitectureValues
      */
+
     public String getArchitecture() {
         return this.architecture;
     }
@@ -330,6 +341,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ArchitectureValues
      */
+
     public RegisterImageRequest withArchitecture(String architecture) {
         setArchitecture(architecture);
         return this;
@@ -354,6 +366,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ArchitectureValues
      */
+
     public void setArchitecture(ArchitectureValues architecture) {
         this.architecture = architecture.toString();
     }
@@ -377,6 +390,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ArchitectureValues
      */
+
     public RegisterImageRequest withArchitecture(ArchitectureValues architecture) {
         setArchitecture(architecture);
         return this;
@@ -390,6 +404,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements
      * @param kernelId
      *        The ID of the kernel.
      */
+
     public void setKernelId(String kernelId) {
         this.kernelId = kernelId;
     }
@@ -401,6 +416,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ID of the kernel.
      */
+
     public String getKernelId() {
         return this.kernelId;
     }
@@ -415,6 +431,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterImageRequest withKernelId(String kernelId) {
         setKernelId(kernelId);
         return this;
@@ -428,6 +445,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements
      * @param ramdiskId
      *        The ID of the RAM disk.
      */
+
     public void setRamdiskId(String ramdiskId) {
         this.ramdiskId = ramdiskId;
     }
@@ -439,6 +457,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ID of the RAM disk.
      */
+
     public String getRamdiskId() {
         return this.ramdiskId;
     }
@@ -453,6 +472,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterImageRequest withRamdiskId(String ramdiskId) {
         setRamdiskId(ramdiskId);
         return this;
@@ -468,6 +488,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements
      *        The name of the root device (for example, <code>/dev/sda1</code>,
      *        or <code>/dev/xvda</code>).
      */
+
     public void setRootDeviceName(String rootDeviceName) {
         this.rootDeviceName = rootDeviceName;
     }
@@ -481,6 +502,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements
      * @return The name of the root device (for example, <code>/dev/sda1</code>,
      *         or <code>/dev/xvda</code>).
      */
+
     public String getRootDeviceName() {
         return this.rootDeviceName;
     }
@@ -497,6 +519,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterImageRequest withRootDeviceName(String rootDeviceName) {
         setRootDeviceName(rootDeviceName);
         return this;
@@ -509,6 +532,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements
      * 
      * @return One or more block device mapping entries.
      */
+
     public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
         if (blockDeviceMappings == null) {
             blockDeviceMappings = new com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>();
@@ -524,6 +548,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements
      * @param blockDeviceMappings
      *        One or more block device mapping entries.
      */
+
     public void setBlockDeviceMappings(
             java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
         if (blockDeviceMappings == null) {
@@ -551,6 +576,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterImageRequest withBlockDeviceMappings(
             BlockDeviceMapping... blockDeviceMappings) {
         if (this.blockDeviceMappings == null) {
@@ -573,6 +599,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterImageRequest withBlockDeviceMappings(
             java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
         setBlockDeviceMappings(blockDeviceMappings);
@@ -592,6 +619,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        Default: <code>paravirtual</code>
      */
+
     public void setVirtualizationType(String virtualizationType) {
         this.virtualizationType = virtualizationType;
     }
@@ -608,6 +636,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Default: <code>paravirtual</code>
      */
+
     public String getVirtualizationType() {
         return this.virtualizationType;
     }
@@ -627,6 +656,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterImageRequest withVirtualizationType(String virtualizationType) {
         setVirtualizationType(virtualizationType);
         return this;
@@ -656,6 +686,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements
      *        with a PV AMI can make instances launched from the AMI
      *        unreachable.
      */
+
     public void setSriovNetSupport(String sriovNetSupport) {
         this.sriovNetSupport = sriovNetSupport;
     }
@@ -683,6 +714,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements
      *         option with a PV AMI can make instances launched from the AMI
      *         unreachable.
      */
+
     public String getSriovNetSupport() {
         return this.sriovNetSupport;
     }
@@ -713,6 +745,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterImageRequest withSriovNetSupport(String sriovNetSupport) {
         setSriovNetSupport(sriovNetSupport);
         return this;

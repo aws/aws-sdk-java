@@ -40,6 +40,7 @@ public class CreateHapgResult implements Serializable, Cloneable {
      * @param hapgArn
      *        The ARN of the high-availability partition group.
      */
+
     public void setHapgArn(String hapgArn) {
         this.hapgArn = hapgArn;
     }
@@ -51,6 +52,7 @@ public class CreateHapgResult implements Serializable, Cloneable {
      * 
      * @return The ARN of the high-availability partition group.
      */
+
     public String getHapgArn() {
         return this.hapgArn;
     }
@@ -65,6 +67,7 @@ public class CreateHapgResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateHapgResult withHapgArn(String hapgArn) {
         setHapgArn(hapgArn);
         return this;

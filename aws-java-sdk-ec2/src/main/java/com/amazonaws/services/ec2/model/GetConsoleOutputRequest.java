@@ -63,6 +63,7 @@ public class GetConsoleOutputRequest extends AmazonWebServiceRequest implements
      * @param instanceId
      *        The ID of the instance.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -74,6 +75,7 @@ public class GetConsoleOutputRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ID of the instance.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
@@ -88,6 +90,7 @@ public class GetConsoleOutputRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetConsoleOutputRequest withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;

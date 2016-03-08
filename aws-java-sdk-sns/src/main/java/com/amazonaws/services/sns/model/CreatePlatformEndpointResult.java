@@ -40,6 +40,7 @@ public class CreatePlatformEndpointResult implements Serializable, Cloneable {
      * @param endpointArn
      *        EndpointArn returned from CreateEndpoint action.
      */
+
     public void setEndpointArn(String endpointArn) {
         this.endpointArn = endpointArn;
     }
@@ -51,6 +52,7 @@ public class CreatePlatformEndpointResult implements Serializable, Cloneable {
      * 
      * @return EndpointArn returned from CreateEndpoint action.
      */
+
     public String getEndpointArn() {
         return this.endpointArn;
     }
@@ -65,6 +67,7 @@ public class CreatePlatformEndpointResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePlatformEndpointResult withEndpointArn(String endpointArn) {
         setEndpointArn(endpointArn);
         return this;

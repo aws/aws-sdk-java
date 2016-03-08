@@ -149,6 +149,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      * @param autoScalingGroupName
      *        The name or ARN of the group.
      */
+
     public void setAutoScalingGroupName(String autoScalingGroupName) {
         this.autoScalingGroupName = autoScalingGroupName;
     }
@@ -160,6 +161,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name or ARN of the group.
      */
+
     public String getAutoScalingGroupName() {
         return this.autoScalingGroupName;
     }
@@ -174,6 +176,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutScalingPolicyRequest withAutoScalingGroupName(
             String autoScalingGroupName) {
         setAutoScalingGroupName(autoScalingGroupName);
@@ -188,6 +191,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      * @param policyName
      *        The name of the policy.
      */
+
     public void setPolicyName(String policyName) {
         this.policyName = policyName;
     }
@@ -199,6 +203,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the policy.
      */
+
     public String getPolicyName() {
         return this.policyName;
     }
@@ -213,6 +218,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutScalingPolicyRequest withPolicyName(String policyName) {
         setPolicyName(policyName);
         return this;
@@ -230,6 +236,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      *        <code>StepScaling</code>. If the policy type is null, the value is
      *        treated as <code>SimpleScaling</code>.
      */
+
     public void setPolicyType(String policyType) {
         this.policyType = policyType;
     }
@@ -245,6 +252,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      *         <code>StepScaling</code>. If the policy type is null, the value
      *         is treated as <code>SimpleScaling</code>.
      */
+
     public String getPolicyType() {
         return this.policyType;
     }
@@ -263,6 +271,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutScalingPolicyRequest withPolicyType(String policyType) {
         setPolicyType(policyType);
         return this;
@@ -288,6 +297,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      *        "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-scale-based-on-demand.html"
      *        >Dynamic Scaling</a> in the <i>Auto Scaling Developer Guide</i>.
      */
+
     public void setAdjustmentType(String adjustmentType) {
         this.adjustmentType = adjustmentType;
     }
@@ -311,6 +321,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      *         "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-scale-based-on-demand.html"
      *         >Dynamic Scaling</a> in the <i>Auto Scaling Developer Guide</i>.
      */
+
     public String getAdjustmentType() {
         return this.adjustmentType;
     }
@@ -337,6 +348,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutScalingPolicyRequest withAdjustmentType(String adjustmentType) {
         setAdjustmentType(adjustmentType);
         return this;
@@ -352,6 +364,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      *        Available for backward compatibility. Use
      *        <code>MinAdjustmentMagnitude</code> instead.
      */
+
     public void setMinAdjustmentStep(Integer minAdjustmentStep) {
         this.minAdjustmentStep = minAdjustmentStep;
     }
@@ -365,6 +378,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      * @return Available for backward compatibility. Use
      *         <code>MinAdjustmentMagnitude</code> instead.
      */
+
     public Integer getMinAdjustmentStep() {
         return this.minAdjustmentStep;
     }
@@ -381,6 +395,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutScalingPolicyRequest withMinAdjustmentStep(
             Integer minAdjustmentStep) {
         setMinAdjustmentStep(minAdjustmentStep);
@@ -404,6 +419,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      *        least this many instances. Otherwise, the error is
      *        <code>ValidationError</code>.
      */
+
     public void setMinAdjustmentMagnitude(Integer minAdjustmentMagnitude) {
         this.minAdjustmentMagnitude = minAdjustmentMagnitude;
     }
@@ -424,6 +440,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      *         least this many instances. Otherwise, the error is
      *         <code>ValidationError</code>.
      */
+
     public Integer getMinAdjustmentMagnitude() {
         return this.minAdjustmentMagnitude;
     }
@@ -447,6 +464,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutScalingPolicyRequest withMinAdjustmentMagnitude(
             Integer minAdjustmentMagnitude) {
         setMinAdjustmentMagnitude(minAdjustmentMagnitude);
@@ -472,6 +490,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      *        This parameter is required if the policy type is
      *        <code>SimpleScaling</code> and not supported otherwise.
      */
+
     public void setScalingAdjustment(Integer scalingAdjustment) {
         this.scalingAdjustment = scalingAdjustment;
     }
@@ -494,6 +513,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      *         This parameter is required if the policy type is
      *         <code>SimpleScaling</code> and not supported otherwise.
      */
+
     public Integer getScalingAdjustment() {
         return this.scalingAdjustment;
     }
@@ -519,6 +539,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutScalingPolicyRequest withScalingAdjustment(
             Integer scalingAdjustment) {
         setScalingAdjustment(scalingAdjustment);
@@ -557,6 +578,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      *        >Understanding Auto Scaling Cooldowns</a> in the <i>Auto Scaling
      *        Developer Guide</i>.
      */
+
     public void setCooldown(Integer cooldown) {
         this.cooldown = cooldown;
     }
@@ -592,6 +614,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      *         >Understanding Auto Scaling Cooldowns</a> in the <i>Auto Scaling
      *         Developer Guide</i>.
      */
+
     public Integer getCooldown() {
         return this.cooldown;
     }
@@ -630,6 +653,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutScalingPolicyRequest withCooldown(Integer cooldown) {
         setCooldown(cooldown);
         return this;
@@ -656,6 +680,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      *        This parameter is not supported if the policy type is
      *        <code>SimpleScaling</code>.
      */
+
     public void setMetricAggregationType(String metricAggregationType) {
         this.metricAggregationType = metricAggregationType;
     }
@@ -680,6 +705,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      *         This parameter is not supported if the policy type is
      *         <code>SimpleScaling</code>.
      */
+
     public String getMetricAggregationType() {
         return this.metricAggregationType;
     }
@@ -707,6 +733,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutScalingPolicyRequest withMetricAggregationType(
             String metricAggregationType) {
         setMetricAggregationType(metricAggregationType);
@@ -729,6 +756,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      *         This parameter is required if the policy type is
      *         <code>StepScaling</code> and not supported otherwise.
      */
+
     public java.util.List<StepAdjustment> getStepAdjustments() {
         if (stepAdjustments == null) {
             stepAdjustments = new com.amazonaws.internal.SdkInternalList<StepAdjustment>();
@@ -753,6 +781,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      *        This parameter is required if the policy type is
      *        <code>StepScaling</code> and not supported otherwise.
      */
+
     public void setStepAdjustments(
             java.util.Collection<StepAdjustment> stepAdjustments) {
         if (stepAdjustments == null) {
@@ -789,6 +818,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutScalingPolicyRequest withStepAdjustments(
             StepAdjustment... stepAdjustments) {
         if (this.stepAdjustments == null) {
@@ -820,6 +850,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutScalingPolicyRequest withStepAdjustments(
             java.util.Collection<StepAdjustment> stepAdjustments) {
         setStepAdjustments(stepAdjustments);
@@ -846,6 +877,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      *        This parameter is not supported if the policy type is
      *        <code>SimpleScaling</code>.
      */
+
     public void setEstimatedInstanceWarmup(Integer estimatedInstanceWarmup) {
         this.estimatedInstanceWarmup = estimatedInstanceWarmup;
     }
@@ -869,6 +901,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      *         This parameter is not supported if the policy type is
      *         <code>SimpleScaling</code>.
      */
+
     public Integer getEstimatedInstanceWarmup() {
         return this.estimatedInstanceWarmup;
     }
@@ -895,6 +928,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutScalingPolicyRequest withEstimatedInstanceWarmup(
             Integer estimatedInstanceWarmup) {
         setEstimatedInstanceWarmup(estimatedInstanceWarmup);

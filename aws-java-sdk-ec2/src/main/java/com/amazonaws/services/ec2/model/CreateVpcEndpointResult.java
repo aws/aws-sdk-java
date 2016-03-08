@@ -45,6 +45,7 @@ public class CreateVpcEndpointResult implements Serializable, Cloneable {
      * @param vpcEndpoint
      *        Information about the endpoint.
      */
+
     public void setVpcEndpoint(VpcEndpoint vpcEndpoint) {
         this.vpcEndpoint = vpcEndpoint;
     }
@@ -56,6 +57,7 @@ public class CreateVpcEndpointResult implements Serializable, Cloneable {
      * 
      * @return Information about the endpoint.
      */
+
     public VpcEndpoint getVpcEndpoint() {
         return this.vpcEndpoint;
     }
@@ -70,6 +72,7 @@ public class CreateVpcEndpointResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateVpcEndpointResult withVpcEndpoint(VpcEndpoint vpcEndpoint) {
         setVpcEndpoint(vpcEndpoint);
         return this;
@@ -85,6 +88,7 @@ public class CreateVpcEndpointResult implements Serializable, Cloneable {
      *        Unique, case-sensitive identifier you provide to ensure the
      *        idempotency of the request.
      */
+
     public void setClientToken(String clientToken) {
         this.clientToken = clientToken;
     }
@@ -98,6 +102,7 @@ public class CreateVpcEndpointResult implements Serializable, Cloneable {
      * @return Unique, case-sensitive identifier you provide to ensure the
      *         idempotency of the request.
      */
+
     public String getClientToken() {
         return this.clientToken;
     }
@@ -114,6 +119,7 @@ public class CreateVpcEndpointResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateVpcEndpointResult withClientToken(String clientToken) {
         setClientToken(clientToken);
         return this;

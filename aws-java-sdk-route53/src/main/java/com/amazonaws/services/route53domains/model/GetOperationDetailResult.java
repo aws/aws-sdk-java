@@ -90,6 +90,7 @@ public class GetOperationDetailResult implements Serializable, Cloneable {
      *        <p>
      *        Type: String
      */
+
     public void setOperationId(String operationId) {
         this.operationId = operationId;
     }
@@ -106,6 +107,7 @@ public class GetOperationDetailResult implements Serializable, Cloneable {
      *         <p>
      *         Type: String
      */
+
     public String getOperationId() {
         return this.operationId;
     }
@@ -125,6 +127,7 @@ public class GetOperationDetailResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetOperationDetailResult withOperationId(String operationId) {
         setOperationId(operationId);
         return this;
@@ -144,6 +147,7 @@ public class GetOperationDetailResult implements Serializable, Cloneable {
      *        Type: String
      * @see OperationStatus
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -161,6 +165,7 @@ public class GetOperationDetailResult implements Serializable, Cloneable {
      *         Type: String
      * @see OperationStatus
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -181,6 +186,7 @@ public class GetOperationDetailResult implements Serializable, Cloneable {
      *         chained together.
      * @see OperationStatus
      */
+
     public GetOperationDetailResult withStatus(String status) {
         setStatus(status);
         return this;
@@ -202,6 +208,7 @@ public class GetOperationDetailResult implements Serializable, Cloneable {
      *         chained together.
      * @see OperationStatus
      */
+
     public void setStatus(OperationStatus status) {
         this.status = status.toString();
     }
@@ -222,6 +229,7 @@ public class GetOperationDetailResult implements Serializable, Cloneable {
      *         chained together.
      * @see OperationStatus
      */
+
     public GetOperationDetailResult withStatus(OperationStatus status) {
         setStatus(status);
         return this;
@@ -240,6 +248,7 @@ public class GetOperationDetailResult implements Serializable, Cloneable {
      *        <p>
      *        Type: String
      */
+
     public void setMessage(String message) {
         this.message = message;
     }
@@ -256,6 +265,7 @@ public class GetOperationDetailResult implements Serializable, Cloneable {
      *         <p>
      *         Type: String
      */
+
     public String getMessage() {
         return this.message;
     }
@@ -275,6 +285,7 @@ public class GetOperationDetailResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetOperationDetailResult withMessage(String message) {
         setMessage(message);
         return this;
@@ -293,6 +304,7 @@ public class GetOperationDetailResult implements Serializable, Cloneable {
      *        <p>
      *        Type: String
      */
+
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
@@ -309,6 +321,7 @@ public class GetOperationDetailResult implements Serializable, Cloneable {
      *         <p>
      *         Type: String
      */
+
     public String getDomainName() {
         return this.domainName;
     }
@@ -328,6 +341,7 @@ public class GetOperationDetailResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetOperationDetailResult withDomainName(String domainName) {
         setDomainName(domainName);
         return this;
@@ -347,6 +361,7 @@ public class GetOperationDetailResult implements Serializable, Cloneable {
      *        Type: String
      * @see OperationType
      */
+
     public void setType(String type) {
         this.type = type;
     }
@@ -364,6 +379,7 @@ public class GetOperationDetailResult implements Serializable, Cloneable {
      *         Type: String
      * @see OperationType
      */
+
     public String getType() {
         return this.type;
     }
@@ -384,6 +400,7 @@ public class GetOperationDetailResult implements Serializable, Cloneable {
      *         chained together.
      * @see OperationType
      */
+
     public GetOperationDetailResult withType(String type) {
         setType(type);
         return this;
@@ -405,6 +422,7 @@ public class GetOperationDetailResult implements Serializable, Cloneable {
      *         chained together.
      * @see OperationType
      */
+
     public void setType(OperationType type) {
         this.type = type.toString();
     }
@@ -425,6 +443,7 @@ public class GetOperationDetailResult implements Serializable, Cloneable {
      *         chained together.
      * @see OperationType
      */
+
     public GetOperationDetailResult withType(OperationType type) {
         setType(type);
         return this;
@@ -438,6 +457,7 @@ public class GetOperationDetailResult implements Serializable, Cloneable {
      * @param submittedDate
      *        The date when the request was submitted.
      */
+
     public void setSubmittedDate(java.util.Date submittedDate) {
         this.submittedDate = submittedDate;
     }
@@ -449,6 +469,7 @@ public class GetOperationDetailResult implements Serializable, Cloneable {
      * 
      * @return The date when the request was submitted.
      */
+
     public java.util.Date getSubmittedDate() {
         return this.submittedDate;
     }
@@ -463,6 +484,7 @@ public class GetOperationDetailResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetOperationDetailResult withSubmittedDate(
             java.util.Date submittedDate) {
         setSubmittedDate(submittedDate);

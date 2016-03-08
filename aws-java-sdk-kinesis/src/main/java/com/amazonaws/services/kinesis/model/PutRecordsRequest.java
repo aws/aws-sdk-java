@@ -47,6 +47,7 @@ public class PutRecordsRequest extends AmazonWebServiceRequest implements
      * 
      * @return The records associated with the request.
      */
+
     public java.util.List<PutRecordsRequestEntry> getRecords() {
         if (records == null) {
             records = new com.amazonaws.internal.SdkInternalList<PutRecordsRequestEntry>();
@@ -62,6 +63,7 @@ public class PutRecordsRequest extends AmazonWebServiceRequest implements
      * @param records
      *        The records associated with the request.
      */
+
     public void setRecords(java.util.Collection<PutRecordsRequestEntry> records) {
         if (records == null) {
             this.records = null;
@@ -88,6 +90,7 @@ public class PutRecordsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutRecordsRequest withRecords(PutRecordsRequestEntry... records) {
         if (this.records == null) {
             setRecords(new com.amazonaws.internal.SdkInternalList<PutRecordsRequestEntry>(
@@ -109,6 +112,7 @@ public class PutRecordsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutRecordsRequest withRecords(
             java.util.Collection<PutRecordsRequestEntry> records) {
         setRecords(records);
@@ -123,6 +127,7 @@ public class PutRecordsRequest extends AmazonWebServiceRequest implements
      * @param streamName
      *        The stream name associated with the request.
      */
+
     public void setStreamName(String streamName) {
         this.streamName = streamName;
     }
@@ -134,6 +139,7 @@ public class PutRecordsRequest extends AmazonWebServiceRequest implements
      * 
      * @return The stream name associated with the request.
      */
+
     public String getStreamName() {
         return this.streamName;
     }
@@ -148,6 +154,7 @@ public class PutRecordsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutRecordsRequest withStreamName(String streamName) {
         setStreamName(streamName);
         return this;

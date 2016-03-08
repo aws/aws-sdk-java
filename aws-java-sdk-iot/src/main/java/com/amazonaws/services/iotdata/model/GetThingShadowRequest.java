@@ -42,6 +42,7 @@ public class GetThingShadowRequest extends AmazonWebServiceRequest implements
      * @param thingName
      *        The name of the thing.
      */
+
     public void setThingName(String thingName) {
         this.thingName = thingName;
     }
@@ -53,6 +54,7 @@ public class GetThingShadowRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the thing.
      */
+
     public String getThingName() {
         return this.thingName;
     }
@@ -67,6 +69,7 @@ public class GetThingShadowRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetThingShadowRequest withThingName(String thingName) {
         setThingName(thingName);
         return this;

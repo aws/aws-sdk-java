@@ -90,6 +90,7 @@ public class Distribution implements Serializable, Cloneable {
      * @param id
      *        The identifier for the distribution. For example: EDFDVBD632BHDS5.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -100,6 +101,7 @@ public class Distribution implements Serializable, Cloneable {
      * @return The identifier for the distribution. For example:
      *         EDFDVBD632BHDS5.
      */
+
     public String getId() {
         return this.id;
     }
@@ -112,6 +114,7 @@ public class Distribution implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Distribution withId(String id) {
         setId(id);
         return this;
@@ -128,6 +131,7 @@ public class Distribution implements Serializable, Cloneable {
      *        information is fully propagated throughout the Amazon CloudFront
      *        system.
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -142,6 +146,7 @@ public class Distribution implements Serializable, Cloneable {
      *         information is fully propagated throughout the Amazon CloudFront
      *         system.
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -159,6 +164,7 @@ public class Distribution implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Distribution withStatus(String status) {
         setStatus(status);
         return this;
@@ -170,6 +176,7 @@ public class Distribution implements Serializable, Cloneable {
      * @param lastModifiedTime
      *        The date and time the distribution was last modified.
      */
+
     public void setLastModifiedTime(java.util.Date lastModifiedTime) {
         this.lastModifiedTime = lastModifiedTime;
     }
@@ -179,6 +186,7 @@ public class Distribution implements Serializable, Cloneable {
      * 
      * @return The date and time the distribution was last modified.
      */
+
     public java.util.Date getLastModifiedTime() {
         return this.lastModifiedTime;
     }
@@ -191,6 +199,7 @@ public class Distribution implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Distribution withLastModifiedTime(java.util.Date lastModifiedTime) {
         setLastModifiedTime(lastModifiedTime);
         return this;
@@ -202,6 +211,7 @@ public class Distribution implements Serializable, Cloneable {
      * @param inProgressInvalidationBatches
      *        The number of invalidation batches currently in progress.
      */
+
     public void setInProgressInvalidationBatches(
             Integer inProgressInvalidationBatches) {
         this.inProgressInvalidationBatches = inProgressInvalidationBatches;
@@ -212,6 +222,7 @@ public class Distribution implements Serializable, Cloneable {
      * 
      * @return The number of invalidation batches currently in progress.
      */
+
     public Integer getInProgressInvalidationBatches() {
         return this.inProgressInvalidationBatches;
     }
@@ -224,6 +235,7 @@ public class Distribution implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Distribution withInProgressInvalidationBatches(
             Integer inProgressInvalidationBatches) {
         setInProgressInvalidationBatches(inProgressInvalidationBatches);
@@ -238,6 +250,7 @@ public class Distribution implements Serializable, Cloneable {
      *        The domain name corresponding to the distribution. For example:
      *        d604721fxaaqy9.cloudfront.net.
      */
+
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
@@ -249,6 +262,7 @@ public class Distribution implements Serializable, Cloneable {
      * @return The domain name corresponding to the distribution. For example:
      *         d604721fxaaqy9.cloudfront.net.
      */
+
     public String getDomainName() {
         return this.domainName;
     }
@@ -263,6 +277,7 @@ public class Distribution implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Distribution withDomainName(String domainName) {
         setDomainName(domainName);
         return this;
@@ -289,6 +304,7 @@ public class Distribution implements Serializable, Cloneable {
      *        signer's AWS account. If no KeyPairId element appears for a
      *        Signer, that signer can't create working signed URLs.
      */
+
     public void setActiveTrustedSigners(
             ActiveTrustedSigners activeTrustedSigners) {
         this.activeTrustedSigners = activeTrustedSigners;
@@ -314,6 +330,7 @@ public class Distribution implements Serializable, Cloneable {
      *         trusted signer's AWS account. If no KeyPairId element appears for
      *         a Signer, that signer can't create working signed URLs.
      */
+
     public ActiveTrustedSigners getActiveTrustedSigners() {
         return this.activeTrustedSigners;
     }
@@ -341,6 +358,7 @@ public class Distribution implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Distribution withActiveTrustedSigners(
             ActiveTrustedSigners activeTrustedSigners) {
         setActiveTrustedSigners(activeTrustedSigners);
@@ -353,6 +371,7 @@ public class Distribution implements Serializable, Cloneable {
      * @param distributionConfig
      *        The current configuration information for the distribution.
      */
+
     public void setDistributionConfig(DistributionConfig distributionConfig) {
         this.distributionConfig = distributionConfig;
     }
@@ -362,6 +381,7 @@ public class Distribution implements Serializable, Cloneable {
      * 
      * @return The current configuration information for the distribution.
      */
+
     public DistributionConfig getDistributionConfig() {
         return this.distributionConfig;
     }
@@ -374,6 +394,7 @@ public class Distribution implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Distribution withDistributionConfig(
             DistributionConfig distributionConfig) {
         setDistributionConfig(distributionConfig);

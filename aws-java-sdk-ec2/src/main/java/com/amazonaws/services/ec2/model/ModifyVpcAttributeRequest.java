@@ -70,6 +70,7 @@ public class ModifyVpcAttributeRequest extends AmazonWebServiceRequest
      * @param vpcId
      *        The ID of the VPC.
      */
+
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
@@ -81,6 +82,7 @@ public class ModifyVpcAttributeRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the VPC.
      */
+
     public String getVpcId() {
         return this.vpcId;
     }
@@ -95,6 +97,7 @@ public class ModifyVpcAttributeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyVpcAttributeRequest withVpcId(String vpcId) {
         setVpcId(vpcId);
         return this;
@@ -125,6 +128,7 @@ public class ModifyVpcAttributeRequest extends AmazonWebServiceRequest
      *        You cannot modify the DNS resolution and DNS hostnames attributes
      *        in the same request. Use separate requests for each attribute.
      */
+
     public void setEnableDnsSupport(Boolean enableDnsSupport) {
         this.enableDnsSupport = enableDnsSupport;
     }
@@ -154,6 +158,7 @@ public class ModifyVpcAttributeRequest extends AmazonWebServiceRequest
      *         You cannot modify the DNS resolution and DNS hostnames attributes
      *         in the same request. Use separate requests for each attribute.
      */
+
     public Boolean getEnableDnsSupport() {
         return this.enableDnsSupport;
     }
@@ -185,6 +190,7 @@ public class ModifyVpcAttributeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyVpcAttributeRequest withEnableDnsSupport(
             Boolean enableDnsSupport) {
         setEnableDnsSupport(enableDnsSupport);
@@ -216,6 +222,7 @@ public class ModifyVpcAttributeRequest extends AmazonWebServiceRequest
      *         You cannot modify the DNS resolution and DNS hostnames attributes
      *         in the same request. Use separate requests for each attribute.
      */
+
     public Boolean isEnableDnsSupport() {
         return this.enableDnsSupport;
     }
@@ -240,6 +247,7 @@ public class ModifyVpcAttributeRequest extends AmazonWebServiceRequest
      *        in the same request. Use separate requests for each attribute. You
      *        can only enable DNS hostnames if you've enabled DNS support.
      */
+
     public void setEnableDnsHostnames(Boolean enableDnsHostnames) {
         this.enableDnsHostnames = enableDnsHostnames;
     }
@@ -263,6 +271,7 @@ public class ModifyVpcAttributeRequest extends AmazonWebServiceRequest
      *         in the same request. Use separate requests for each attribute.
      *         You can only enable DNS hostnames if you've enabled DNS support.
      */
+
     public Boolean getEnableDnsHostnames() {
         return this.enableDnsHostnames;
     }
@@ -289,6 +298,7 @@ public class ModifyVpcAttributeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyVpcAttributeRequest withEnableDnsHostnames(
             Boolean enableDnsHostnames) {
         setEnableDnsHostnames(enableDnsHostnames);
@@ -314,6 +324,7 @@ public class ModifyVpcAttributeRequest extends AmazonWebServiceRequest
      *         in the same request. Use separate requests for each attribute.
      *         You can only enable DNS hostnames if you've enabled DNS support.
      */
+
     public Boolean isEnableDnsHostnames() {
         return this.enableDnsHostnames;
     }

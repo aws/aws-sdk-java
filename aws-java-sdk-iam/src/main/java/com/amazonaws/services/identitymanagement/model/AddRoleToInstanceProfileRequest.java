@@ -46,6 +46,7 @@ public class AddRoleToInstanceProfileRequest extends AmazonWebServiceRequest
      * @param instanceProfileName
      *        The name of the instance profile to update.
      */
+
     public void setInstanceProfileName(String instanceProfileName) {
         this.instanceProfileName = instanceProfileName;
     }
@@ -57,6 +58,7 @@ public class AddRoleToInstanceProfileRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the instance profile to update.
      */
+
     public String getInstanceProfileName() {
         return this.instanceProfileName;
     }
@@ -71,6 +73,7 @@ public class AddRoleToInstanceProfileRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddRoleToInstanceProfileRequest withInstanceProfileName(
             String instanceProfileName) {
         setInstanceProfileName(instanceProfileName);
@@ -85,6 +88,7 @@ public class AddRoleToInstanceProfileRequest extends AmazonWebServiceRequest
      * @param roleName
      *        The name of the role to add.
      */
+
     public void setRoleName(String roleName) {
         this.roleName = roleName;
     }
@@ -96,6 +100,7 @@ public class AddRoleToInstanceProfileRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the role to add.
      */
+
     public String getRoleName() {
         return this.roleName;
     }
@@ -110,6 +115,7 @@ public class AddRoleToInstanceProfileRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddRoleToInstanceProfileRequest withRoleName(String roleName) {
         setRoleName(roleName);
         return this;

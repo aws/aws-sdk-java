@@ -69,6 +69,7 @@ public class GetGroupPolicyRequest extends AmazonWebServiceRequest implements
      * @param groupName
      *        The name of the group the policy is associated with.
      */
+
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
@@ -80,6 +81,7 @@ public class GetGroupPolicyRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the group the policy is associated with.
      */
+
     public String getGroupName() {
         return this.groupName;
     }
@@ -94,6 +96,7 @@ public class GetGroupPolicyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetGroupPolicyRequest withGroupName(String groupName) {
         setGroupName(groupName);
         return this;
@@ -107,6 +110,7 @@ public class GetGroupPolicyRequest extends AmazonWebServiceRequest implements
      * @param policyName
      *        The name of the policy document to get.
      */
+
     public void setPolicyName(String policyName) {
         this.policyName = policyName;
     }
@@ -118,6 +122,7 @@ public class GetGroupPolicyRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the policy document to get.
      */
+
     public String getPolicyName() {
         return this.policyName;
     }
@@ -132,6 +137,7 @@ public class GetGroupPolicyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetGroupPolicyRequest withPolicyName(String policyName) {
         setPolicyName(policyName);
         return this;

@@ -66,6 +66,7 @@ public class CreateEvaluationRequest extends AmazonWebServiceRequest implements
      *        A user-supplied ID that uniquely identifies the
      *        <code>Evaluation</code>.
      */
+
     public void setEvaluationId(String evaluationId) {
         this.evaluationId = evaluationId;
     }
@@ -78,6 +79,7 @@ public class CreateEvaluationRequest extends AmazonWebServiceRequest implements
      * @return A user-supplied ID that uniquely identifies the
      *         <code>Evaluation</code>.
      */
+
     public String getEvaluationId() {
         return this.evaluationId;
     }
@@ -93,6 +95,7 @@ public class CreateEvaluationRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateEvaluationRequest withEvaluationId(String evaluationId) {
         setEvaluationId(evaluationId);
         return this;
@@ -107,6 +110,7 @@ public class CreateEvaluationRequest extends AmazonWebServiceRequest implements
      *        A user-supplied name or description of the <code>Evaluation</code>
      *        .
      */
+
     public void setEvaluationName(String evaluationName) {
         this.evaluationName = evaluationName;
     }
@@ -119,6 +123,7 @@ public class CreateEvaluationRequest extends AmazonWebServiceRequest implements
      * @return A user-supplied name or description of the
      *         <code>Evaluation</code>.
      */
+
     public String getEvaluationName() {
         return this.evaluationName;
     }
@@ -134,6 +139,7 @@ public class CreateEvaluationRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateEvaluationRequest withEvaluationName(String evaluationName) {
         setEvaluationName(evaluationName);
         return this;
@@ -156,6 +162,7 @@ public class CreateEvaluationRequest extends AmazonWebServiceRequest implements
      *        the schema of the <code>DataSource</code> used in the
      *        <code>Evaluation</code>.
      */
+
     public void setMLModelId(String mLModelId) {
         this.mLModelId = mLModelId;
     }
@@ -176,6 +183,7 @@ public class CreateEvaluationRequest extends AmazonWebServiceRequest implements
      *         the schema of the <code>DataSource</code> used in the
      *         <code>Evaluation</code>.
      */
+
     public String getMLModelId() {
         return this.mLModelId;
     }
@@ -199,6 +207,7 @@ public class CreateEvaluationRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateEvaluationRequest withMLModelId(String mLModelId) {
         setMLModelId(mLModelId);
         return this;
@@ -216,6 +225,7 @@ public class CreateEvaluationRequest extends AmazonWebServiceRequest implements
      *        schema of the <code>DataSource</code> must match the schema used
      *        to create the <code>MLModel</code>.
      */
+
     public void setEvaluationDataSourceId(String evaluationDataSourceId) {
         this.evaluationDataSourceId = evaluationDataSourceId;
     }
@@ -231,6 +241,7 @@ public class CreateEvaluationRequest extends AmazonWebServiceRequest implements
      *         schema of the <code>DataSource</code> must match the schema used
      *         to create the <code>MLModel</code>.
      */
+
     public String getEvaluationDataSourceId() {
         return this.evaluationDataSourceId;
     }
@@ -249,6 +260,7 @@ public class CreateEvaluationRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateEvaluationRequest withEvaluationDataSourceId(
             String evaluationDataSourceId) {
         setEvaluationDataSourceId(evaluationDataSourceId);

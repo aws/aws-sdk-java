@@ -51,6 +51,7 @@ public class Tag implements Serializable, Cloneable {
      * @param key
      *        The tag key.
      */
+
     public void setKey(String key) {
         this.key = key;
     }
@@ -62,6 +63,7 @@ public class Tag implements Serializable, Cloneable {
      * 
      * @return The tag key.
      */
+
     public String getKey() {
         return this.key;
     }
@@ -76,6 +78,7 @@ public class Tag implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Tag withKey(String key) {
         setKey(key);
         return this;
@@ -89,6 +92,7 @@ public class Tag implements Serializable, Cloneable {
      * @param value
      *        The value assigned to a tag key.
      */
+
     public void setValue(String value) {
         this.value = value;
     }
@@ -100,6 +104,7 @@ public class Tag implements Serializable, Cloneable {
      * 
      * @return The value assigned to a tag key.
      */
+
     public String getValue() {
         return this.value;
     }
@@ -114,6 +119,7 @@ public class Tag implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Tag withValue(String value) {
         setValue(value);
         return this;

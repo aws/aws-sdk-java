@@ -60,6 +60,7 @@ public class DescribeImportSnapshotTasksRequest extends AmazonWebServiceRequest
      * 
      * @return A list of import snapshot task IDs.
      */
+
     public java.util.List<String> getImportTaskIds() {
         if (importTaskIds == null) {
             importTaskIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -75,6 +76,7 @@ public class DescribeImportSnapshotTasksRequest extends AmazonWebServiceRequest
      * @param importTaskIds
      *        A list of import snapshot task IDs.
      */
+
     public void setImportTaskIds(java.util.Collection<String> importTaskIds) {
         if (importTaskIds == null) {
             this.importTaskIds = null;
@@ -101,6 +103,7 @@ public class DescribeImportSnapshotTasksRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeImportSnapshotTasksRequest withImportTaskIds(
             String... importTaskIds) {
         if (this.importTaskIds == null) {
@@ -123,6 +126,7 @@ public class DescribeImportSnapshotTasksRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeImportSnapshotTasksRequest withImportTaskIds(
             java.util.Collection<String> importTaskIds) {
         setImportTaskIds(importTaskIds);
@@ -137,6 +141,7 @@ public class DescribeImportSnapshotTasksRequest extends AmazonWebServiceRequest
      * @param nextToken
      *        A token that indicates the next page of results.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -148,6 +153,7 @@ public class DescribeImportSnapshotTasksRequest extends AmazonWebServiceRequest
      * 
      * @return A token that indicates the next page of results.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -162,6 +168,7 @@ public class DescribeImportSnapshotTasksRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeImportSnapshotTasksRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -175,6 +182,7 @@ public class DescribeImportSnapshotTasksRequest extends AmazonWebServiceRequest
      * @param maxResults
      *        The maximum number of results to return in a single request.
      */
+
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
     }
@@ -186,6 +194,7 @@ public class DescribeImportSnapshotTasksRequest extends AmazonWebServiceRequest
      * 
      * @return The maximum number of results to return in a single request.
      */
+
     public Integer getMaxResults() {
         return this.maxResults;
     }
@@ -200,6 +209,7 @@ public class DescribeImportSnapshotTasksRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeImportSnapshotTasksRequest withMaxResults(Integer maxResults) {
         setMaxResults(maxResults);
         return this;
@@ -212,6 +222,7 @@ public class DescribeImportSnapshotTasksRequest extends AmazonWebServiceRequest
      * 
      * @return One or more filters.
      */
+
     public java.util.List<Filter> getFilters() {
         if (filters == null) {
             filters = new com.amazonaws.internal.SdkInternalList<Filter>();
@@ -227,6 +238,7 @@ public class DescribeImportSnapshotTasksRequest extends AmazonWebServiceRequest
      * @param filters
      *        One or more filters.
      */
+
     public void setFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
             this.filters = null;
@@ -253,6 +265,7 @@ public class DescribeImportSnapshotTasksRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeImportSnapshotTasksRequest withFilters(Filter... filters) {
         if (this.filters == null) {
             setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(
@@ -274,6 +287,7 @@ public class DescribeImportSnapshotTasksRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeImportSnapshotTasksRequest withFilters(
             java.util.Collection<Filter> filters) {
         setFilters(filters);

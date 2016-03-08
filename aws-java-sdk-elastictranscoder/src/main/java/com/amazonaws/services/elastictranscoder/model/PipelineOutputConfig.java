@@ -122,6 +122,7 @@ public class PipelineOutputConfig implements Serializable, Cloneable {
      *        for <code>ContentConfig</code> and <code>ThumbnailConfig</code>
      *        instead.
      */
+
     public void setBucket(String bucket) {
         this.bucket = bucket;
     }
@@ -167,6 +168,7 @@ public class PipelineOutputConfig implements Serializable, Cloneable {
      *         for <code>ContentConfig</code> and <code>ThumbnailConfig</code>
      *         instead.
      */
+
     public String getBucket() {
         return this.bucket;
     }
@@ -215,6 +217,7 @@ public class PipelineOutputConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PipelineOutputConfig withBucket(String bucket) {
         setBucket(bucket);
         return this;
@@ -234,6 +237,7 @@ public class PipelineOutputConfig implements Serializable, Cloneable {
      *        to assign to the video files and playlists that it stores in your
      *        Amazon S3 bucket.
      */
+
     public void setStorageClass(String storageClass) {
         this.storageClass = storageClass;
     }
@@ -251,6 +255,7 @@ public class PipelineOutputConfig implements Serializable, Cloneable {
      *         to assign to the video files and playlists that it stores in your
      *         Amazon S3 bucket.
      */
+
     public String getStorageClass() {
         return this.storageClass;
     }
@@ -271,6 +276,7 @@ public class PipelineOutputConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PipelineOutputConfig withStorageClass(String storageClass) {
         setStorageClass(storageClass);
         return this;
@@ -316,6 +322,7 @@ public class PipelineOutputConfig implements Serializable, Cloneable {
      *         of the role specified by <code>Role</code>, and grants no other
      *         permissions to any other user or group.
      */
+
     public java.util.List<Permission> getPermissions() {
         if (permissions == null) {
             permissions = new com.amazonaws.internal.SdkInternalList<Permission>();
@@ -364,6 +371,7 @@ public class PipelineOutputConfig implements Serializable, Cloneable {
      *        of the role specified by <code>Role</code>, and grants no other
      *        permissions to any other user or group.
      */
+
     public void setPermissions(java.util.Collection<Permission> permissions) {
         if (permissions == null) {
             this.permissions = null;
@@ -423,6 +431,7 @@ public class PipelineOutputConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PipelineOutputConfig withPermissions(Permission... permissions) {
         if (this.permissions == null) {
             setPermissions(new com.amazonaws.internal.SdkInternalList<Permission>(
@@ -477,6 +486,7 @@ public class PipelineOutputConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PipelineOutputConfig withPermissions(
             java.util.Collection<Permission> permissions) {
         setPermissions(permissions);

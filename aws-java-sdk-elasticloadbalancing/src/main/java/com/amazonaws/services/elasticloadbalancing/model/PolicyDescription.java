@@ -52,6 +52,7 @@ public class PolicyDescription implements Serializable, Cloneable {
      * @param policyName
      *        The name of the policy.
      */
+
     public void setPolicyName(String policyName) {
         this.policyName = policyName;
     }
@@ -63,6 +64,7 @@ public class PolicyDescription implements Serializable, Cloneable {
      * 
      * @return The name of the policy.
      */
+
     public String getPolicyName() {
         return this.policyName;
     }
@@ -77,6 +79,7 @@ public class PolicyDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PolicyDescription withPolicyName(String policyName) {
         setPolicyName(policyName);
         return this;
@@ -90,6 +93,7 @@ public class PolicyDescription implements Serializable, Cloneable {
      * @param policyTypeName
      *        The name of the policy type.
      */
+
     public void setPolicyTypeName(String policyTypeName) {
         this.policyTypeName = policyTypeName;
     }
@@ -101,6 +105,7 @@ public class PolicyDescription implements Serializable, Cloneable {
      * 
      * @return The name of the policy type.
      */
+
     public String getPolicyTypeName() {
         return this.policyTypeName;
     }
@@ -115,6 +120,7 @@ public class PolicyDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PolicyDescription withPolicyTypeName(String policyTypeName) {
         setPolicyTypeName(policyTypeName);
         return this;
@@ -127,6 +133,7 @@ public class PolicyDescription implements Serializable, Cloneable {
      * 
      * @return The policy attributes.
      */
+
     public java.util.List<PolicyAttributeDescription> getPolicyAttributeDescriptions() {
         if (policyAttributeDescriptions == null) {
             policyAttributeDescriptions = new com.amazonaws.internal.SdkInternalList<PolicyAttributeDescription>();
@@ -142,6 +149,7 @@ public class PolicyDescription implements Serializable, Cloneable {
      * @param policyAttributeDescriptions
      *        The policy attributes.
      */
+
     public void setPolicyAttributeDescriptions(
             java.util.Collection<PolicyAttributeDescription> policyAttributeDescriptions) {
         if (policyAttributeDescriptions == null) {
@@ -169,6 +177,7 @@ public class PolicyDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PolicyDescription withPolicyAttributeDescriptions(
             PolicyAttributeDescription... policyAttributeDescriptions) {
         if (this.policyAttributeDescriptions == null) {
@@ -191,6 +200,7 @@ public class PolicyDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PolicyDescription withPolicyAttributeDescriptions(
             java.util.Collection<PolicyAttributeDescription> policyAttributeDescriptions) {
         setPolicyAttributeDescriptions(policyAttributeDescriptions);

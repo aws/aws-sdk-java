@@ -41,6 +41,7 @@ public class UnlinkIdentityRequest extends AmazonWebServiceRequest implements
      * @param identityId
      *        A unique identifier in the format REGION:GUID.
      */
+
     public void setIdentityId(String identityId) {
         this.identityId = identityId;
     }
@@ -50,6 +51,7 @@ public class UnlinkIdentityRequest extends AmazonWebServiceRequest implements
      * 
      * @return A unique identifier in the format REGION:GUID.
      */
+
     public String getIdentityId() {
         return this.identityId;
     }
@@ -62,6 +64,7 @@ public class UnlinkIdentityRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UnlinkIdentityRequest withIdentityId(String identityId) {
         setIdentityId(identityId);
         return this;
@@ -74,6 +77,7 @@ public class UnlinkIdentityRequest extends AmazonWebServiceRequest implements
      * @return A set of optional name-value pairs that map provider names to
      *         provider tokens.
      */
+
     public java.util.Map<String, String> getLogins() {
         return logins;
     }
@@ -86,6 +90,7 @@ public class UnlinkIdentityRequest extends AmazonWebServiceRequest implements
      *        A set of optional name-value pairs that map provider names to
      *        provider tokens.
      */
+
     public void setLogins(java.util.Map<String, String> logins) {
         this.logins = logins;
     }
@@ -100,6 +105,7 @@ public class UnlinkIdentityRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UnlinkIdentityRequest withLogins(java.util.Map<String, String> logins) {
         setLogins(logins);
         return this;
@@ -120,6 +126,7 @@ public class UnlinkIdentityRequest extends AmazonWebServiceRequest implements
      * Removes all the entries added into Logins. &lt;p> Returns a reference to
      * this object so that method calls can be chained together.
      */
+
     public UnlinkIdentityRequest clearLoginsEntries() {
         this.logins = null;
         return this;
@@ -130,6 +137,7 @@ public class UnlinkIdentityRequest extends AmazonWebServiceRequest implements
      * 
      * @return Provider names to unlink from this identity.
      */
+
     public java.util.List<String> getLoginsToRemove() {
         return loginsToRemove;
     }
@@ -140,6 +148,7 @@ public class UnlinkIdentityRequest extends AmazonWebServiceRequest implements
      * @param loginsToRemove
      *        Provider names to unlink from this identity.
      */
+
     public void setLoginsToRemove(java.util.Collection<String> loginsToRemove) {
         if (loginsToRemove == null) {
             this.loginsToRemove = null;
@@ -163,6 +172,7 @@ public class UnlinkIdentityRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UnlinkIdentityRequest withLoginsToRemove(String... loginsToRemove) {
         if (this.loginsToRemove == null) {
             setLoginsToRemove(new java.util.ArrayList<String>(
@@ -182,6 +192,7 @@ public class UnlinkIdentityRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UnlinkIdentityRequest withLoginsToRemove(
             java.util.Collection<String> loginsToRemove) {
         setLoginsToRemove(loginsToRemove);

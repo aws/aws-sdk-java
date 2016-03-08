@@ -48,6 +48,7 @@ public class CreateWebACLResult implements Serializable, Cloneable {
      *        The <a>WebACL</a> returned in the <code>CreateWebACL</code>
      *        response.
      */
+
     public void setWebACL(WebACL webACL) {
         this.webACL = webACL;
     }
@@ -60,6 +61,7 @@ public class CreateWebACLResult implements Serializable, Cloneable {
      * @return The <a>WebACL</a> returned in the <code>CreateWebACL</code>
      *         response.
      */
+
     public WebACL getWebACL() {
         return this.webACL;
     }
@@ -75,6 +77,7 @@ public class CreateWebACLResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateWebACLResult withWebACL(WebACL webACL) {
         setWebACL(webACL);
         return this;
@@ -94,6 +97,7 @@ public class CreateWebACLResult implements Serializable, Cloneable {
      *        query the status of the request. For more information, see
      *        <a>GetChangeTokenStatus</a>.
      */
+
     public void setChangeToken(String changeToken) {
         this.changeToken = changeToken;
     }
@@ -111,6 +115,7 @@ public class CreateWebACLResult implements Serializable, Cloneable {
      *         query the status of the request. For more information, see
      *         <a>GetChangeTokenStatus</a>.
      */
+
     public String getChangeToken() {
         return this.changeToken;
     }
@@ -131,6 +136,7 @@ public class CreateWebACLResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateWebACLResult withChangeToken(String changeToken) {
         setChangeToken(changeToken);
         return this;

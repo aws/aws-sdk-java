@@ -96,6 +96,7 @@ public class CreateDataSourceFromS3Request extends AmazonWebServiceRequest
      *        A user-supplied identifier that uniquely identifies the
      *        <code>DataSource</code>.
      */
+
     public void setDataSourceId(String dataSourceId) {
         this.dataSourceId = dataSourceId;
     }
@@ -109,6 +110,7 @@ public class CreateDataSourceFromS3Request extends AmazonWebServiceRequest
      * @return A user-supplied identifier that uniquely identifies the
      *         <code>DataSource</code>.
      */
+
     public String getDataSourceId() {
         return this.dataSourceId;
     }
@@ -125,6 +127,7 @@ public class CreateDataSourceFromS3Request extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDataSourceFromS3Request withDataSourceId(String dataSourceId) {
         setDataSourceId(dataSourceId);
         return this;
@@ -139,6 +142,7 @@ public class CreateDataSourceFromS3Request extends AmazonWebServiceRequest
      *        A user-supplied name or description of the <code>DataSource</code>
      *        .
      */
+
     public void setDataSourceName(String dataSourceName) {
         this.dataSourceName = dataSourceName;
     }
@@ -151,6 +155,7 @@ public class CreateDataSourceFromS3Request extends AmazonWebServiceRequest
      * @return A user-supplied name or description of the
      *         <code>DataSource</code>.
      */
+
     public String getDataSourceName() {
         return this.dataSourceName;
     }
@@ -166,6 +171,7 @@ public class CreateDataSourceFromS3Request extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDataSourceFromS3Request withDataSourceName(
             String dataSourceName) {
         setDataSourceName(dataSourceName);
@@ -240,6 +246,7 @@ public class CreateDataSourceFromS3Request extends AmazonWebServiceRequest
      *        </p>
      *        </li>
      */
+
     public void setDataSpec(S3DataSpec dataSpec) {
         this.dataSpec = dataSpec;
     }
@@ -311,6 +318,7 @@ public class CreateDataSourceFromS3Request extends AmazonWebServiceRequest
      *         </p>
      *         </li>
      */
+
     public S3DataSpec getDataSpec() {
         return this.dataSpec;
     }
@@ -385,6 +393,7 @@ public class CreateDataSourceFromS3Request extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDataSourceFromS3Request withDataSpec(S3DataSpec dataSpec) {
         setDataSpec(dataSpec);
         return this;
@@ -408,6 +417,7 @@ public class CreateDataSourceFromS3Request extends AmazonWebServiceRequest
      *        set to <code>true</code> if the <code></code>DataSource
      *        <code></code> needs to be used for <code>MLModel</code> training
      */
+
     public void setComputeStatistics(Boolean computeStatistics) {
         this.computeStatistics = computeStatistics;
     }
@@ -430,6 +440,7 @@ public class CreateDataSourceFromS3Request extends AmazonWebServiceRequest
      *         DataSource<code></code> needs to be used for <code>MLModel</code>
      *         training
      */
+
     public Boolean getComputeStatistics() {
         return this.computeStatistics;
     }
@@ -454,6 +465,7 @@ public class CreateDataSourceFromS3Request extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDataSourceFromS3Request withComputeStatistics(
             Boolean computeStatistics) {
         setComputeStatistics(computeStatistics);
@@ -478,6 +490,7 @@ public class CreateDataSourceFromS3Request extends AmazonWebServiceRequest
      *         DataSource<code></code> needs to be used for <code>MLModel</code>
      *         training
      */
+
     public Boolean isComputeStatistics() {
         return this.computeStatistics;
     }

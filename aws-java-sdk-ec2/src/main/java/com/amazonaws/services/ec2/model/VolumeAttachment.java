@@ -70,6 +70,7 @@ public class VolumeAttachment implements Serializable, Cloneable {
      * @param volumeId
      *        The ID of the volume.
      */
+
     public void setVolumeId(String volumeId) {
         this.volumeId = volumeId;
     }
@@ -81,6 +82,7 @@ public class VolumeAttachment implements Serializable, Cloneable {
      * 
      * @return The ID of the volume.
      */
+
     public String getVolumeId() {
         return this.volumeId;
     }
@@ -95,6 +97,7 @@ public class VolumeAttachment implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VolumeAttachment withVolumeId(String volumeId) {
         setVolumeId(volumeId);
         return this;
@@ -108,6 +111,7 @@ public class VolumeAttachment implements Serializable, Cloneable {
      * @param instanceId
      *        The ID of the instance.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -119,6 +123,7 @@ public class VolumeAttachment implements Serializable, Cloneable {
      * 
      * @return The ID of the instance.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
@@ -133,6 +138,7 @@ public class VolumeAttachment implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VolumeAttachment withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;
@@ -146,6 +152,7 @@ public class VolumeAttachment implements Serializable, Cloneable {
      * @param device
      *        The device name.
      */
+
     public void setDevice(String device) {
         this.device = device;
     }
@@ -157,6 +164,7 @@ public class VolumeAttachment implements Serializable, Cloneable {
      * 
      * @return The device name.
      */
+
     public String getDevice() {
         return this.device;
     }
@@ -171,6 +179,7 @@ public class VolumeAttachment implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VolumeAttachment withDevice(String device) {
         setDevice(device);
         return this;
@@ -185,6 +194,7 @@ public class VolumeAttachment implements Serializable, Cloneable {
      *        The attachment state of the volume.
      * @see VolumeAttachmentState
      */
+
     public void setState(String state) {
         this.state = state;
     }
@@ -197,6 +207,7 @@ public class VolumeAttachment implements Serializable, Cloneable {
      * @return The attachment state of the volume.
      * @see VolumeAttachmentState
      */
+
     public String getState() {
         return this.state;
     }
@@ -212,6 +223,7 @@ public class VolumeAttachment implements Serializable, Cloneable {
      *         chained together.
      * @see VolumeAttachmentState
      */
+
     public VolumeAttachment withState(String state) {
         setState(state);
         return this;
@@ -228,6 +240,7 @@ public class VolumeAttachment implements Serializable, Cloneable {
      *         chained together.
      * @see VolumeAttachmentState
      */
+
     public void setState(VolumeAttachmentState state) {
         this.state = state.toString();
     }
@@ -243,6 +256,7 @@ public class VolumeAttachment implements Serializable, Cloneable {
      *         chained together.
      * @see VolumeAttachmentState
      */
+
     public VolumeAttachment withState(VolumeAttachmentState state) {
         setState(state);
         return this;
@@ -256,6 +270,7 @@ public class VolumeAttachment implements Serializable, Cloneable {
      * @param attachTime
      *        The time stamp when the attachment initiated.
      */
+
     public void setAttachTime(java.util.Date attachTime) {
         this.attachTime = attachTime;
     }
@@ -267,6 +282,7 @@ public class VolumeAttachment implements Serializable, Cloneable {
      * 
      * @return The time stamp when the attachment initiated.
      */
+
     public java.util.Date getAttachTime() {
         return this.attachTime;
     }
@@ -281,6 +297,7 @@ public class VolumeAttachment implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VolumeAttachment withAttachTime(java.util.Date attachTime) {
         setAttachTime(attachTime);
         return this;
@@ -295,6 +312,7 @@ public class VolumeAttachment implements Serializable, Cloneable {
      *        Indicates whether the EBS volume is deleted on instance
      *        termination.
      */
+
     public void setDeleteOnTermination(Boolean deleteOnTermination) {
         this.deleteOnTermination = deleteOnTermination;
     }
@@ -307,6 +325,7 @@ public class VolumeAttachment implements Serializable, Cloneable {
      * @return Indicates whether the EBS volume is deleted on instance
      *         termination.
      */
+
     public Boolean getDeleteOnTermination() {
         return this.deleteOnTermination;
     }
@@ -322,6 +341,7 @@ public class VolumeAttachment implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VolumeAttachment withDeleteOnTermination(Boolean deleteOnTermination) {
         setDeleteOnTermination(deleteOnTermination);
         return this;
@@ -335,6 +355,7 @@ public class VolumeAttachment implements Serializable, Cloneable {
      * @return Indicates whether the EBS volume is deleted on instance
      *         termination.
      */
+
     public Boolean isDeleteOnTermination() {
         return this.deleteOnTermination;
     }

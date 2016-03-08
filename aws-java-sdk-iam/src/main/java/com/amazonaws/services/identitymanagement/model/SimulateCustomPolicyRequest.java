@@ -245,6 +245,7 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
      *         >AssumeRole</a> APIs to restrict what a user can do while using
      *         the temporary credentials.
      */
+
     public java.util.List<String> getPolicyInputList() {
         if (policyInputList == null) {
             policyInputList = new com.amazonaws.internal.SdkInternalList<String>();
@@ -281,6 +282,7 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
      *        >AssumeRole</a> APIs to restrict what a user can do while using
      *        the temporary credentials.
      */
+
     public void setPolicyInputList(java.util.Collection<String> policyInputList) {
         if (policyInputList == null) {
             this.policyInputList = null;
@@ -328,6 +330,7 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SimulateCustomPolicyRequest withPolicyInputList(
             String... policyInputList) {
         if (this.policyInputList == null) {
@@ -371,6 +374,7 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SimulateCustomPolicyRequest withPolicyInputList(
             java.util.Collection<String> policyInputList) {
         setPolicyInputList(policyInputList);
@@ -389,6 +393,7 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
      *         include the service identifier, such as
      *         <code>iam:CreateUser</code>.
      */
+
     public java.util.List<String> getActionNames() {
         if (actionNames == null) {
             actionNames = new com.amazonaws.internal.SdkInternalList<String>();
@@ -409,6 +414,7 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
      *        include the service identifier, such as
      *        <code>iam:CreateUser</code>.
      */
+
     public void setActionNames(java.util.Collection<String> actionNames) {
         if (actionNames == null) {
             this.actionNames = null;
@@ -440,6 +446,7 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SimulateCustomPolicyRequest withActionNames(String... actionNames) {
         if (this.actionNames == null) {
             setActionNames(new com.amazonaws.internal.SdkInternalList<String>(
@@ -466,6 +473,7 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SimulateCustomPolicyRequest withActionNames(
             java.util.Collection<String> actionNames) {
         setActionNames(actionNames);
@@ -511,6 +519,7 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
      *         applicable to all of the resources included in the simulation or
      *         you receive an invalid input error.
      */
+
     public java.util.List<String> getResourceArns() {
         if (resourceArns == null) {
             resourceArns = new com.amazonaws.internal.SdkInternalList<String>();
@@ -557,6 +566,7 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
      *        applicable to all of the resources included in the simulation or
      *        you receive an invalid input error.
      */
+
     public void setResourceArns(java.util.Collection<String> resourceArns) {
         if (resourceArns == null) {
             this.resourceArns = null;
@@ -614,6 +624,7 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SimulateCustomPolicyRequest withResourceArns(String... resourceArns) {
         if (this.resourceArns == null) {
             setResourceArns(new com.amazonaws.internal.SdkInternalList<String>(
@@ -666,6 +677,7 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SimulateCustomPolicyRequest withResourceArns(
             java.util.Collection<String> resourceArns) {
         setResourceArns(resourceArns);
@@ -686,6 +698,7 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
      *        this policy attached. You can include only one resource-based
      *        policy in a simulation.
      */
+
     public void setResourcePolicy(String resourcePolicy) {
         this.resourcePolicy = resourcePolicy;
     }
@@ -703,6 +716,7 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
      *         this policy attached. You can include only one resource-based
      *         policy in a simulation.
      */
+
     public String getResourcePolicy() {
         return this.resourcePolicy;
     }
@@ -723,6 +737,7 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SimulateCustomPolicyRequest withResourcePolicy(String resourcePolicy) {
         setResourcePolicy(resourcePolicy);
         return this;
@@ -755,6 +770,7 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
      *        and account that owns the resource is different from the account
      *        that owns the simulated calling user <code>CallerArn</code>.
      */
+
     public void setResourceOwner(String resourceOwner) {
         this.resourceOwner = resourceOwner;
     }
@@ -785,6 +801,7 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
      *         and account that owns the resource is different from the account
      *         that owns the simulated calling user <code>CallerArn</code>.
      */
+
     public String getResourceOwner() {
         return this.resourceOwner;
     }
@@ -818,6 +835,7 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SimulateCustomPolicyRequest withResourceOwner(String resourceOwner) {
         setResourceOwner(resourceOwner);
         return this;
@@ -846,6 +864,7 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
      *        the ARN of an assumed role, federated user, or a service
      *        principal.
      */
+
     public void setCallerArn(String callerArn) {
         this.callerArn = callerArn;
     }
@@ -872,6 +891,7 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
      *         the ARN of an assumed role, federated user, or a service
      *         principal.
      */
+
     public String getCallerArn() {
         return this.callerArn;
     }
@@ -901,6 +921,7 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SimulateCustomPolicyRequest withCallerArn(String callerArn) {
         setCallerArn(callerArn);
         return this;
@@ -919,6 +940,7 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
      *         <code>Condition</code> element in one of the simulated IAM
      *         permission policies, the corresponding value is supplied.
      */
+
     public java.util.List<ContextEntry> getContextEntries() {
         if (contextEntries == null) {
             contextEntries = new com.amazonaws.internal.SdkInternalList<ContextEntry>();
@@ -940,6 +962,7 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
      *        <code>Condition</code> element in one of the simulated IAM
      *        permission policies, the corresponding value is supplied.
      */
+
     public void setContextEntries(
             java.util.Collection<ContextEntry> contextEntries) {
         if (contextEntries == null) {
@@ -973,6 +996,7 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SimulateCustomPolicyRequest withContextEntries(
             ContextEntry... contextEntries) {
         if (this.contextEntries == null) {
@@ -1001,6 +1025,7 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SimulateCustomPolicyRequest withContextEntries(
             java.util.Collection<ContextEntry> contextEntries) {
         setContextEntries(contextEntries);
@@ -1150,6 +1175,7 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
      *        </p>
      *        </li>
      */
+
     public void setResourceHandlingOption(String resourceHandlingOption) {
         this.resourceHandlingOption = resourceHandlingOption;
     }
@@ -1297,6 +1323,7 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
      *         </p>
      *         </li>
      */
+
     public String getResourceHandlingOption() {
         return this.resourceHandlingOption;
     }
@@ -1446,6 +1473,7 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SimulateCustomPolicyRequest withResourceHandlingOption(
             String resourceHandlingOption) {
         setResourceHandlingOption(resourceHandlingOption);
@@ -1482,6 +1510,7 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
      *        include in the subsequent call that tells the service where to
      *        continue from.
      */
+
     public void setMaxItems(Integer maxItems) {
         this.maxItems = maxItems;
     }
@@ -1516,6 +1545,7 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
      *         include in the subsequent call that tells the service where to
      *         continue from.
      */
+
     public Integer getMaxItems() {
         return this.maxItems;
     }
@@ -1552,6 +1582,7 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SimulateCustomPolicyRequest withMaxItems(Integer maxItems) {
         setMaxItems(maxItems);
         return this;
@@ -1571,6 +1602,7 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
      *        it to the value of the <code>Marker</code> element in the response
      *        that you received to indicate where the next call should start.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -1589,6 +1621,7 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
      *         response that you received to indicate where the next call should
      *         start.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -1609,6 +1642,7 @@ public class SimulateCustomPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SimulateCustomPolicyRequest withMarker(String marker) {
         setMarker(marker);
         return this;

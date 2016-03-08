@@ -46,6 +46,7 @@ public class IdempotentParameterMismatchException extends
     /**
      * @param code
      */
+
     public void setCode(Integer code) {
         this.code = code;
     }
@@ -53,6 +54,7 @@ public class IdempotentParameterMismatchException extends
     /**
      * @return
      */
+
     public Integer getCode() {
         return this.code;
     }
@@ -62,6 +64,7 @@ public class IdempotentParameterMismatchException extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public IdempotentParameterMismatchException withCode(Integer code) {
         setCode(code);
         return this;

@@ -73,6 +73,7 @@ public class ImportKeyPairRequest extends AmazonWebServiceRequest implements
      * @param keyName
      *        A unique name for the key pair.
      */
+
     public void setKeyName(String keyName) {
         this.keyName = keyName;
     }
@@ -84,6 +85,7 @@ public class ImportKeyPairRequest extends AmazonWebServiceRequest implements
      * 
      * @return A unique name for the key pair.
      */
+
     public String getKeyName() {
         return this.keyName;
     }
@@ -98,6 +100,7 @@ public class ImportKeyPairRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportKeyPairRequest withKeyName(String keyName) {
         setKeyName(keyName);
         return this;
@@ -113,6 +116,7 @@ public class ImportKeyPairRequest extends AmazonWebServiceRequest implements
      *        The public key. You must base64 encode the public key material
      *        before sending it to AWS.
      */
+
     public void setPublicKeyMaterial(String publicKeyMaterial) {
         this.publicKeyMaterial = publicKeyMaterial;
     }
@@ -126,6 +130,7 @@ public class ImportKeyPairRequest extends AmazonWebServiceRequest implements
      * @return The public key. You must base64 encode the public key material
      *         before sending it to AWS.
      */
+
     public String getPublicKeyMaterial() {
         return this.publicKeyMaterial;
     }
@@ -142,6 +147,7 @@ public class ImportKeyPairRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportKeyPairRequest withPublicKeyMaterial(String publicKeyMaterial) {
         setPublicKeyMaterial(publicKeyMaterial);
         return this;

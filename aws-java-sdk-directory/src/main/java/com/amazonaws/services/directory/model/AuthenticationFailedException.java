@@ -53,6 +53,7 @@ public class AuthenticationFailedException extends AmazonServiceException {
      * @param requestId
      *        The identifier of the request that caused the exception.
      */
+
     public void setRequestId(String requestId) {
         this.requestId = requestId;
     }
@@ -64,6 +65,7 @@ public class AuthenticationFailedException extends AmazonServiceException {
      * 
      * @return The identifier of the request that caused the exception.
      */
+
     public String getRequestId() {
         return this.requestId;
     }
@@ -78,6 +80,7 @@ public class AuthenticationFailedException extends AmazonServiceException {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AuthenticationFailedException withRequestId(String requestId) {
         setRequestId(requestId);
         return this;

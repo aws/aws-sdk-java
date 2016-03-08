@@ -49,6 +49,7 @@ public class CancelConversionTaskRequest extends AmazonWebServiceRequest
      * @param conversionTaskId
      *        The ID of the conversion task.
      */
+
     public void setConversionTaskId(String conversionTaskId) {
         this.conversionTaskId = conversionTaskId;
     }
@@ -60,6 +61,7 @@ public class CancelConversionTaskRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the conversion task.
      */
+
     public String getConversionTaskId() {
         return this.conversionTaskId;
     }
@@ -74,6 +76,7 @@ public class CancelConversionTaskRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CancelConversionTaskRequest withConversionTaskId(
             String conversionTaskId) {
         setConversionTaskId(conversionTaskId);
@@ -88,6 +91,7 @@ public class CancelConversionTaskRequest extends AmazonWebServiceRequest
      * @param reasonMessage
      *        The reason for canceling the conversion task.
      */
+
     public void setReasonMessage(String reasonMessage) {
         this.reasonMessage = reasonMessage;
     }
@@ -99,6 +103,7 @@ public class CancelConversionTaskRequest extends AmazonWebServiceRequest
      * 
      * @return The reason for canceling the conversion task.
      */
+
     public String getReasonMessage() {
         return this.reasonMessage;
     }
@@ -113,6 +118,7 @@ public class CancelConversionTaskRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CancelConversionTaskRequest withReasonMessage(String reasonMessage) {
         setReasonMessage(reasonMessage);
         return this;

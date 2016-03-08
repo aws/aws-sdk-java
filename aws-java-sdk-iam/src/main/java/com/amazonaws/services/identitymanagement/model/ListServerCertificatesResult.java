@@ -59,6 +59,7 @@ public class ListServerCertificatesResult implements Serializable, Cloneable {
      * 
      * @return A list of server certificates.
      */
+
     public java.util.List<ServerCertificateMetadata> getServerCertificateMetadataList() {
         if (serverCertificateMetadataList == null) {
             serverCertificateMetadataList = new com.amazonaws.internal.SdkInternalList<ServerCertificateMetadata>();
@@ -74,6 +75,7 @@ public class ListServerCertificatesResult implements Serializable, Cloneable {
      * @param serverCertificateMetadataList
      *        A list of server certificates.
      */
+
     public void setServerCertificateMetadataList(
             java.util.Collection<ServerCertificateMetadata> serverCertificateMetadataList) {
         if (serverCertificateMetadataList == null) {
@@ -101,6 +103,7 @@ public class ListServerCertificatesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListServerCertificatesResult withServerCertificateMetadataList(
             ServerCertificateMetadata... serverCertificateMetadataList) {
         if (this.serverCertificateMetadataList == null) {
@@ -123,6 +126,7 @@ public class ListServerCertificatesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListServerCertificatesResult withServerCertificateMetadataList(
             java.util.Collection<ServerCertificateMetadata> serverCertificateMetadataList) {
         setServerCertificateMetadataList(serverCertificateMetadataList);
@@ -150,6 +154,7 @@ public class ListServerCertificatesResult implements Serializable, Cloneable {
      *        <code>IsTruncated</code> after every call to ensure that you
      *        receive all of your results.
      */
+
     public void setIsTruncated(Boolean isTruncated) {
         this.isTruncated = isTruncated;
     }
@@ -174,6 +179,7 @@ public class ListServerCertificatesResult implements Serializable, Cloneable {
      *         <code>IsTruncated</code> after every call to ensure that you
      *         receive all of your results.
      */
+
     public Boolean getIsTruncated() {
         return this.isTruncated;
     }
@@ -201,6 +207,7 @@ public class ListServerCertificatesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListServerCertificatesResult withIsTruncated(Boolean isTruncated) {
         setIsTruncated(isTruncated);
         return this;
@@ -226,6 +233,7 @@ public class ListServerCertificatesResult implements Serializable, Cloneable {
      *         <code>IsTruncated</code> after every call to ensure that you
      *         receive all of your results.
      */
+
     public Boolean isTruncated() {
         return this.isTruncated;
     }
@@ -242,6 +250,7 @@ public class ListServerCertificatesResult implements Serializable, Cloneable {
      *        is present and contains the value to use for the
      *        <code>Marker</code> parameter in a subsequent pagination request.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -257,6 +266,7 @@ public class ListServerCertificatesResult implements Serializable, Cloneable {
      *         is present and contains the value to use for the
      *         <code>Marker</code> parameter in a subsequent pagination request.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -275,6 +285,7 @@ public class ListServerCertificatesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListServerCertificatesResult withMarker(String marker) {
         setMarker(marker);
         return this;

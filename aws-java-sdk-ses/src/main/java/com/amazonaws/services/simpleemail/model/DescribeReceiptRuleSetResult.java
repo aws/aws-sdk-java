@@ -48,6 +48,7 @@ public class DescribeReceiptRuleSetResult implements Serializable, Cloneable {
      *        The metadata for the receipt rule set, which consists of the rule
      *        set name and the timestamp of when the rule set was created.
      */
+
     public void setMetadata(ReceiptRuleSetMetadata metadata) {
         this.metadata = metadata;
     }
@@ -61,6 +62,7 @@ public class DescribeReceiptRuleSetResult implements Serializable, Cloneable {
      * @return The metadata for the receipt rule set, which consists of the rule
      *         set name and the timestamp of when the rule set was created.
      */
+
     public ReceiptRuleSetMetadata getMetadata() {
         return this.metadata;
     }
@@ -77,6 +79,7 @@ public class DescribeReceiptRuleSetResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeReceiptRuleSetResult withMetadata(
             ReceiptRuleSetMetadata metadata) {
         setMetadata(metadata);
@@ -92,6 +95,7 @@ public class DescribeReceiptRuleSetResult implements Serializable, Cloneable {
      * @return A list of the receipt rules that belong to the specified receipt
      *         rule set.
      */
+
     public java.util.List<ReceiptRule> getRules() {
         if (rules == null) {
             rules = new com.amazonaws.internal.SdkInternalList<ReceiptRule>();
@@ -109,6 +113,7 @@ public class DescribeReceiptRuleSetResult implements Serializable, Cloneable {
      *        A list of the receipt rules that belong to the specified receipt
      *        rule set.
      */
+
     public void setRules(java.util.Collection<ReceiptRule> rules) {
         if (rules == null) {
             this.rules = null;
@@ -137,6 +142,7 @@ public class DescribeReceiptRuleSetResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeReceiptRuleSetResult withRules(ReceiptRule... rules) {
         if (this.rules == null) {
             setRules(new com.amazonaws.internal.SdkInternalList<ReceiptRule>(
@@ -160,6 +166,7 @@ public class DescribeReceiptRuleSetResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeReceiptRuleSetResult withRules(
             java.util.Collection<ReceiptRule> rules) {
         setRules(rules);

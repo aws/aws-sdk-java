@@ -100,6 +100,7 @@ public class DynamoDBAction implements Serializable, Cloneable {
      * @param tableName
      *        The name of the DynamoDB table.
      */
+
     public void setTableName(String tableName) {
         this.tableName = tableName;
     }
@@ -111,6 +112,7 @@ public class DynamoDBAction implements Serializable, Cloneable {
      * 
      * @return The name of the DynamoDB table.
      */
+
     public String getTableName() {
         return this.tableName;
     }
@@ -125,6 +127,7 @@ public class DynamoDBAction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DynamoDBAction withTableName(String tableName) {
         setTableName(tableName);
         return this;
@@ -138,6 +141,7 @@ public class DynamoDBAction implements Serializable, Cloneable {
      * @param roleArn
      *        The ARN of the IAM role that grants access to the DynamoDB table.
      */
+
     public void setRoleArn(String roleArn) {
         this.roleArn = roleArn;
     }
@@ -149,6 +153,7 @@ public class DynamoDBAction implements Serializable, Cloneable {
      * 
      * @return The ARN of the IAM role that grants access to the DynamoDB table.
      */
+
     public String getRoleArn() {
         return this.roleArn;
     }
@@ -163,6 +168,7 @@ public class DynamoDBAction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DynamoDBAction withRoleArn(String roleArn) {
         setRoleArn(roleArn);
         return this;
@@ -176,6 +182,7 @@ public class DynamoDBAction implements Serializable, Cloneable {
      * @param hashKeyField
      *        The hash key name.
      */
+
     public void setHashKeyField(String hashKeyField) {
         this.hashKeyField = hashKeyField;
     }
@@ -187,6 +194,7 @@ public class DynamoDBAction implements Serializable, Cloneable {
      * 
      * @return The hash key name.
      */
+
     public String getHashKeyField() {
         return this.hashKeyField;
     }
@@ -201,6 +209,7 @@ public class DynamoDBAction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DynamoDBAction withHashKeyField(String hashKeyField) {
         setHashKeyField(hashKeyField);
         return this;
@@ -214,6 +223,7 @@ public class DynamoDBAction implements Serializable, Cloneable {
      * @param hashKeyValue
      *        The hash key value.
      */
+
     public void setHashKeyValue(String hashKeyValue) {
         this.hashKeyValue = hashKeyValue;
     }
@@ -225,6 +235,7 @@ public class DynamoDBAction implements Serializable, Cloneable {
      * 
      * @return The hash key value.
      */
+
     public String getHashKeyValue() {
         return this.hashKeyValue;
     }
@@ -239,6 +250,7 @@ public class DynamoDBAction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DynamoDBAction withHashKeyValue(String hashKeyValue) {
         setHashKeyValue(hashKeyValue);
         return this;
@@ -252,6 +264,7 @@ public class DynamoDBAction implements Serializable, Cloneable {
      * @param rangeKeyField
      *        The range key name.
      */
+
     public void setRangeKeyField(String rangeKeyField) {
         this.rangeKeyField = rangeKeyField;
     }
@@ -263,6 +276,7 @@ public class DynamoDBAction implements Serializable, Cloneable {
      * 
      * @return The range key name.
      */
+
     public String getRangeKeyField() {
         return this.rangeKeyField;
     }
@@ -277,6 +291,7 @@ public class DynamoDBAction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DynamoDBAction withRangeKeyField(String rangeKeyField) {
         setRangeKeyField(rangeKeyField);
         return this;
@@ -290,6 +305,7 @@ public class DynamoDBAction implements Serializable, Cloneable {
      * @param rangeKeyValue
      *        The range key value.
      */
+
     public void setRangeKeyValue(String rangeKeyValue) {
         this.rangeKeyValue = rangeKeyValue;
     }
@@ -301,6 +317,7 @@ public class DynamoDBAction implements Serializable, Cloneable {
      * 
      * @return The range key value.
      */
+
     public String getRangeKeyValue() {
         return this.rangeKeyValue;
     }
@@ -315,6 +332,7 @@ public class DynamoDBAction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DynamoDBAction withRangeKeyValue(String rangeKeyValue) {
         setRangeKeyValue(rangeKeyValue);
         return this;
@@ -328,6 +346,7 @@ public class DynamoDBAction implements Serializable, Cloneable {
      * @param payloadField
      *        The action payload, this name can be customized.
      */
+
     public void setPayloadField(String payloadField) {
         this.payloadField = payloadField;
     }
@@ -339,6 +358,7 @@ public class DynamoDBAction implements Serializable, Cloneable {
      * 
      * @return The action payload, this name can be customized.
      */
+
     public String getPayloadField() {
         return this.payloadField;
     }
@@ -353,6 +373,7 @@ public class DynamoDBAction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DynamoDBAction withPayloadField(String payloadField) {
         setPayloadField(payloadField);
         return this;

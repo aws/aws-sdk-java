@@ -54,6 +54,7 @@ public class ClusterStatus implements Serializable, Cloneable {
      *        The current state of the cluster.
      * @see ClusterState
      */
+
     public void setState(String state) {
         this.state = state;
     }
@@ -66,6 +67,7 @@ public class ClusterStatus implements Serializable, Cloneable {
      * @return The current state of the cluster.
      * @see ClusterState
      */
+
     public String getState() {
         return this.state;
     }
@@ -81,6 +83,7 @@ public class ClusterStatus implements Serializable, Cloneable {
      *         chained together.
      * @see ClusterState
      */
+
     public ClusterStatus withState(String state) {
         setState(state);
         return this;
@@ -97,6 +100,7 @@ public class ClusterStatus implements Serializable, Cloneable {
      *         chained together.
      * @see ClusterState
      */
+
     public void setState(ClusterState state) {
         this.state = state.toString();
     }
@@ -112,6 +116,7 @@ public class ClusterStatus implements Serializable, Cloneable {
      *         chained together.
      * @see ClusterState
      */
+
     public ClusterStatus withState(ClusterState state) {
         setState(state);
         return this;
@@ -125,6 +130,7 @@ public class ClusterStatus implements Serializable, Cloneable {
      * @param stateChangeReason
      *        The reason for the cluster status change.
      */
+
     public void setStateChangeReason(ClusterStateChangeReason stateChangeReason) {
         this.stateChangeReason = stateChangeReason;
     }
@@ -136,6 +142,7 @@ public class ClusterStatus implements Serializable, Cloneable {
      * 
      * @return The reason for the cluster status change.
      */
+
     public ClusterStateChangeReason getStateChangeReason() {
         return this.stateChangeReason;
     }
@@ -150,6 +157,7 @@ public class ClusterStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ClusterStatus withStateChangeReason(
             ClusterStateChangeReason stateChangeReason) {
         setStateChangeReason(stateChangeReason);
@@ -166,6 +174,7 @@ public class ClusterStatus implements Serializable, Cloneable {
      *        A timeline that represents the status of a cluster over the
      *        lifetime of the cluster.
      */
+
     public void setTimeline(ClusterTimeline timeline) {
         this.timeline = timeline;
     }
@@ -179,6 +188,7 @@ public class ClusterStatus implements Serializable, Cloneable {
      * @return A timeline that represents the status of a cluster over the
      *         lifetime of the cluster.
      */
+
     public ClusterTimeline getTimeline() {
         return this.timeline;
     }
@@ -195,6 +205,7 @@ public class ClusterStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ClusterStatus withTimeline(ClusterTimeline timeline) {
         setTimeline(timeline);
         return this;

@@ -23,6 +23,7 @@ import java.io.Serializable;
  * The input for a ListChangeBatchesByHostedZone request.
  * </p>
  */
+@Deprecated
 public class ListChangeBatchesByHostedZoneResult implements Serializable,
         Cloneable {
 
@@ -65,6 +66,7 @@ public class ListChangeBatchesByHostedZoneResult implements Serializable,
      * @param maxItems
      *        The maximum number of items on a page.
      */
+
     public void setMaxItems(String maxItems) {
         this.maxItems = maxItems;
     }
@@ -76,6 +78,7 @@ public class ListChangeBatchesByHostedZoneResult implements Serializable,
      * 
      * @return The maximum number of items on a page.
      */
+
     public String getMaxItems() {
         return this.maxItems;
     }
@@ -90,6 +93,7 @@ public class ListChangeBatchesByHostedZoneResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListChangeBatchesByHostedZoneResult withMaxItems(String maxItems) {
         setMaxItems(maxItems);
         return this;
@@ -103,6 +107,7 @@ public class ListChangeBatchesByHostedZoneResult implements Serializable,
      * @param marker
      *        The page marker.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -114,6 +119,7 @@ public class ListChangeBatchesByHostedZoneResult implements Serializable,
      * 
      * @return The page marker.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -128,6 +134,7 @@ public class ListChangeBatchesByHostedZoneResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListChangeBatchesByHostedZoneResult withMarker(String marker) {
         setMarker(marker);
         return this;
@@ -141,6 +148,7 @@ public class ListChangeBatchesByHostedZoneResult implements Serializable,
      * @param isTruncated
      *        A flag that indicates if there are more change batches to list.
      */
+
     public void setIsTruncated(Boolean isTruncated) {
         this.isTruncated = isTruncated;
     }
@@ -152,6 +160,7 @@ public class ListChangeBatchesByHostedZoneResult implements Serializable,
      * 
      * @return A flag that indicates if there are more change batches to list.
      */
+
     public Boolean getIsTruncated() {
         return this.isTruncated;
     }
@@ -166,6 +175,7 @@ public class ListChangeBatchesByHostedZoneResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListChangeBatchesByHostedZoneResult withIsTruncated(
             Boolean isTruncated) {
         setIsTruncated(isTruncated);
@@ -179,6 +189,7 @@ public class ListChangeBatchesByHostedZoneResult implements Serializable,
      * 
      * @return A flag that indicates if there are more change batches to list.
      */
+
     public Boolean isTruncated() {
         return this.isTruncated;
     }
@@ -190,6 +201,7 @@ public class ListChangeBatchesByHostedZoneResult implements Serializable,
      * 
      * @return The change batches within the given hosted zone and time period.
      */
+
     public java.util.List<ChangeBatchRecord> getChangeBatchRecords() {
         if (changeBatchRecords == null) {
             changeBatchRecords = new com.amazonaws.internal.SdkInternalList<ChangeBatchRecord>();
@@ -205,6 +217,7 @@ public class ListChangeBatchesByHostedZoneResult implements Serializable,
      * @param changeBatchRecords
      *        The change batches within the given hosted zone and time period.
      */
+
     public void setChangeBatchRecords(
             java.util.Collection<ChangeBatchRecord> changeBatchRecords) {
         if (changeBatchRecords == null) {
@@ -232,6 +245,7 @@ public class ListChangeBatchesByHostedZoneResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListChangeBatchesByHostedZoneResult withChangeBatchRecords(
             ChangeBatchRecord... changeBatchRecords) {
         if (this.changeBatchRecords == null) {
@@ -254,6 +268,7 @@ public class ListChangeBatchesByHostedZoneResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListChangeBatchesByHostedZoneResult withChangeBatchRecords(
             java.util.Collection<ChangeBatchRecord> changeBatchRecords) {
         setChangeBatchRecords(changeBatchRecords);
@@ -268,6 +283,7 @@ public class ListChangeBatchesByHostedZoneResult implements Serializable,
      * @param nextMarker
      *        The next page marker.
      */
+
     public void setNextMarker(String nextMarker) {
         this.nextMarker = nextMarker;
     }
@@ -279,6 +295,7 @@ public class ListChangeBatchesByHostedZoneResult implements Serializable,
      * 
      * @return The next page marker.
      */
+
     public String getNextMarker() {
         return this.nextMarker;
     }
@@ -293,6 +310,7 @@ public class ListChangeBatchesByHostedZoneResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListChangeBatchesByHostedZoneResult withNextMarker(String nextMarker) {
         setNextMarker(nextMarker);
         return this;

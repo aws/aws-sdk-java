@@ -70,6 +70,7 @@ public class ListDeploymentInstancesRequest extends AmazonWebServiceRequest
      * @param deploymentId
      *        The unique ID of a deployment.
      */
+
     public void setDeploymentId(String deploymentId) {
         this.deploymentId = deploymentId;
     }
@@ -81,6 +82,7 @@ public class ListDeploymentInstancesRequest extends AmazonWebServiceRequest
      * 
      * @return The unique ID of a deployment.
      */
+
     public String getDeploymentId() {
         return this.deploymentId;
     }
@@ -95,6 +97,7 @@ public class ListDeploymentInstancesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListDeploymentInstancesRequest withDeploymentId(String deploymentId) {
         setDeploymentId(deploymentId);
         return this;
@@ -112,6 +115,7 @@ public class ListDeploymentInstancesRequest extends AmazonWebServiceRequest
      *        instances call, which can be used to return the next set of
      *        deployment instances in the list.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -127,6 +131,7 @@ public class ListDeploymentInstancesRequest extends AmazonWebServiceRequest
      *         instances call, which can be used to return the next set of
      *         deployment instances in the list.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -145,6 +150,7 @@ public class ListDeploymentInstancesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListDeploymentInstancesRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -185,6 +191,7 @@ public class ListDeploymentInstancesRequest extends AmazonWebServiceRequest
      *         deployments in an unknown state.</li>
      * @see InstanceStatus
      */
+
     public java.util.List<String> getInstanceStatusFilter() {
         if (instanceStatusFilter == null) {
             instanceStatusFilter = new com.amazonaws.internal.SdkInternalList<String>();
@@ -228,6 +235,7 @@ public class ListDeploymentInstancesRequest extends AmazonWebServiceRequest
      *        deployments in an unknown state.</li>
      * @see InstanceStatus
      */
+
     public void setInstanceStatusFilter(
             java.util.Collection<String> instanceStatusFilter) {
         if (instanceStatusFilter == null) {
@@ -283,6 +291,7 @@ public class ListDeploymentInstancesRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see InstanceStatus
      */
+
     public ListDeploymentInstancesRequest withInstanceStatusFilter(
             String... instanceStatusFilter) {
         if (this.instanceStatusFilter == null) {
@@ -333,6 +342,7 @@ public class ListDeploymentInstancesRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see InstanceStatus
      */
+
     public ListDeploymentInstancesRequest withInstanceStatusFilter(
             java.util.Collection<String> instanceStatusFilter) {
         setInstanceStatusFilter(instanceStatusFilter);
@@ -377,6 +387,7 @@ public class ListDeploymentInstancesRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see InstanceStatus
      */
+
     public ListDeploymentInstancesRequest withInstanceStatusFilter(
             InstanceStatus... instanceStatusFilter) {
         com.amazonaws.internal.SdkInternalList<String> instanceStatusFilterCopy = new com.amazonaws.internal.SdkInternalList<String>(

@@ -77,6 +77,7 @@ public class RegisterInstanceRequest extends AmazonWebServiceRequest implements
      * @param stackId
      *        The ID of the stack that the instance is to be registered with.
      */
+
     public void setStackId(String stackId) {
         this.stackId = stackId;
     }
@@ -88,6 +89,7 @@ public class RegisterInstanceRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ID of the stack that the instance is to be registered with.
      */
+
     public String getStackId() {
         return this.stackId;
     }
@@ -102,6 +104,7 @@ public class RegisterInstanceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterInstanceRequest withStackId(String stackId) {
         setStackId(stackId);
         return this;
@@ -115,6 +118,7 @@ public class RegisterInstanceRequest extends AmazonWebServiceRequest implements
      * @param hostname
      *        The instance's hostname.
      */
+
     public void setHostname(String hostname) {
         this.hostname = hostname;
     }
@@ -126,6 +130,7 @@ public class RegisterInstanceRequest extends AmazonWebServiceRequest implements
      * 
      * @return The instance's hostname.
      */
+
     public String getHostname() {
         return this.hostname;
     }
@@ -140,6 +145,7 @@ public class RegisterInstanceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterInstanceRequest withHostname(String hostname) {
         setHostname(hostname);
         return this;
@@ -153,6 +159,7 @@ public class RegisterInstanceRequest extends AmazonWebServiceRequest implements
      * @param publicIp
      *        The instance's public IP address.
      */
+
     public void setPublicIp(String publicIp) {
         this.publicIp = publicIp;
     }
@@ -164,6 +171,7 @@ public class RegisterInstanceRequest extends AmazonWebServiceRequest implements
      * 
      * @return The instance's public IP address.
      */
+
     public String getPublicIp() {
         return this.publicIp;
     }
@@ -178,6 +186,7 @@ public class RegisterInstanceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterInstanceRequest withPublicIp(String publicIp) {
         setPublicIp(publicIp);
         return this;
@@ -191,6 +200,7 @@ public class RegisterInstanceRequest extends AmazonWebServiceRequest implements
      * @param privateIp
      *        The instance's private IP address.
      */
+
     public void setPrivateIp(String privateIp) {
         this.privateIp = privateIp;
     }
@@ -202,6 +212,7 @@ public class RegisterInstanceRequest extends AmazonWebServiceRequest implements
      * 
      * @return The instance's private IP address.
      */
+
     public String getPrivateIp() {
         return this.privateIp;
     }
@@ -216,6 +227,7 @@ public class RegisterInstanceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterInstanceRequest withPrivateIp(String privateIp) {
         setPrivateIp(privateIp);
         return this;
@@ -231,6 +243,7 @@ public class RegisterInstanceRequest extends AmazonWebServiceRequest implements
      *        The instances public RSA key. This key is used to encrypt
      *        communication between the instance and the service.
      */
+
     public void setRsaPublicKey(String rsaPublicKey) {
         this.rsaPublicKey = rsaPublicKey;
     }
@@ -244,6 +257,7 @@ public class RegisterInstanceRequest extends AmazonWebServiceRequest implements
      * @return The instances public RSA key. This key is used to encrypt
      *         communication between the instance and the service.
      */
+
     public String getRsaPublicKey() {
         return this.rsaPublicKey;
     }
@@ -260,6 +274,7 @@ public class RegisterInstanceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterInstanceRequest withRsaPublicKey(String rsaPublicKey) {
         setRsaPublicKey(rsaPublicKey);
         return this;
@@ -273,6 +288,7 @@ public class RegisterInstanceRequest extends AmazonWebServiceRequest implements
      * @param rsaPublicKeyFingerprint
      *        The instances public RSA key fingerprint.
      */
+
     public void setRsaPublicKeyFingerprint(String rsaPublicKeyFingerprint) {
         this.rsaPublicKeyFingerprint = rsaPublicKeyFingerprint;
     }
@@ -284,6 +300,7 @@ public class RegisterInstanceRequest extends AmazonWebServiceRequest implements
      * 
      * @return The instances public RSA key fingerprint.
      */
+
     public String getRsaPublicKeyFingerprint() {
         return this.rsaPublicKeyFingerprint;
     }
@@ -298,6 +315,7 @@ public class RegisterInstanceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterInstanceRequest withRsaPublicKeyFingerprint(
             String rsaPublicKeyFingerprint) {
         setRsaPublicKeyFingerprint(rsaPublicKeyFingerprint);
@@ -312,6 +330,7 @@ public class RegisterInstanceRequest extends AmazonWebServiceRequest implements
      * @param instanceIdentity
      *        An InstanceIdentity object that contains the instance's identity.
      */
+
     public void setInstanceIdentity(InstanceIdentity instanceIdentity) {
         this.instanceIdentity = instanceIdentity;
     }
@@ -323,6 +342,7 @@ public class RegisterInstanceRequest extends AmazonWebServiceRequest implements
      * 
      * @return An InstanceIdentity object that contains the instance's identity.
      */
+
     public InstanceIdentity getInstanceIdentity() {
         return this.instanceIdentity;
     }
@@ -337,6 +357,7 @@ public class RegisterInstanceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterInstanceRequest withInstanceIdentity(
             InstanceIdentity instanceIdentity) {
         setInstanceIdentity(instanceIdentity);

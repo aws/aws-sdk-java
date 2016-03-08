@@ -52,6 +52,7 @@ public class Filter implements Serializable, Cloneable {
      *        <code>"auto-scaling-group"</code>, <code>"key"</code>,
      *        <code>"value"</code>, and <code>"propagate-at-launch"</code>.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -67,6 +68,7 @@ public class Filter implements Serializable, Cloneable {
      *         <code>"auto-scaling-group"</code>, <code>"key"</code>,
      *         <code>"value"</code>, and <code>"propagate-at-launch"</code>.
      */
+
     public String getName() {
         return this.name;
     }
@@ -85,6 +87,7 @@ public class Filter implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Filter withName(String name) {
         setName(name);
         return this;
@@ -97,6 +100,7 @@ public class Filter implements Serializable, Cloneable {
      * 
      * @return The value of the filter.
      */
+
     public java.util.List<String> getValues() {
         if (values == null) {
             values = new com.amazonaws.internal.SdkInternalList<String>();
@@ -112,6 +116,7 @@ public class Filter implements Serializable, Cloneable {
      * @param values
      *        The value of the filter.
      */
+
     public void setValues(java.util.Collection<String> values) {
         if (values == null) {
             this.values = null;
@@ -137,6 +142,7 @@ public class Filter implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Filter withValues(String... values) {
         if (this.values == null) {
             setValues(new com.amazonaws.internal.SdkInternalList<String>(
@@ -158,6 +164,7 @@ public class Filter implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Filter withValues(java.util.Collection<String> values) {
         setValues(values);
         return this;

@@ -134,6 +134,7 @@ public class Snapshot implements Serializable, Cloneable {
      *        The ID of the snapshot. Each snapshot receives a unique identifier
      *        when it is created.
      */
+
     public void setSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
     }
@@ -147,6 +148,7 @@ public class Snapshot implements Serializable, Cloneable {
      * @return The ID of the snapshot. Each snapshot receives a unique
      *         identifier when it is created.
      */
+
     public String getSnapshotId() {
         return this.snapshotId;
     }
@@ -163,6 +165,7 @@ public class Snapshot implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Snapshot withSnapshotId(String snapshotId) {
         setSnapshotId(snapshotId);
         return this;
@@ -176,6 +179,7 @@ public class Snapshot implements Serializable, Cloneable {
      * @param volumeId
      *        The ID of the volume that was used to create the snapshot.
      */
+
     public void setVolumeId(String volumeId) {
         this.volumeId = volumeId;
     }
@@ -187,6 +191,7 @@ public class Snapshot implements Serializable, Cloneable {
      * 
      * @return The ID of the volume that was used to create the snapshot.
      */
+
     public String getVolumeId() {
         return this.volumeId;
     }
@@ -201,6 +206,7 @@ public class Snapshot implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Snapshot withVolumeId(String volumeId) {
         setVolumeId(volumeId);
         return this;
@@ -215,6 +221,7 @@ public class Snapshot implements Serializable, Cloneable {
      *        The snapshot state.
      * @see SnapshotState
      */
+
     public void setState(String state) {
         this.state = state;
     }
@@ -227,6 +234,7 @@ public class Snapshot implements Serializable, Cloneable {
      * @return The snapshot state.
      * @see SnapshotState
      */
+
     public String getState() {
         return this.state;
     }
@@ -242,6 +250,7 @@ public class Snapshot implements Serializable, Cloneable {
      *         chained together.
      * @see SnapshotState
      */
+
     public Snapshot withState(String state) {
         setState(state);
         return this;
@@ -258,6 +267,7 @@ public class Snapshot implements Serializable, Cloneable {
      *         chained together.
      * @see SnapshotState
      */
+
     public void setState(SnapshotState state) {
         this.state = state.toString();
     }
@@ -273,6 +283,7 @@ public class Snapshot implements Serializable, Cloneable {
      *         chained together.
      * @see SnapshotState
      */
+
     public Snapshot withState(SnapshotState state) {
         setState(state);
         return this;
@@ -295,6 +306,7 @@ public class Snapshot implements Serializable, Cloneable {
      *        error occurred. This parameter is only returned by the
      *        <a>DescribeSnapshots</a> API operation.
      */
+
     public void setStateMessage(String stateMessage) {
         this.stateMessage = stateMessage;
     }
@@ -315,6 +327,7 @@ public class Snapshot implements Serializable, Cloneable {
      *         error occurred. This parameter is only returned by the
      *         <a>DescribeSnapshots</a> API operation.
      */
+
     public String getStateMessage() {
         return this.stateMessage;
     }
@@ -338,6 +351,7 @@ public class Snapshot implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Snapshot withStateMessage(String stateMessage) {
         setStateMessage(stateMessage);
         return this;
@@ -351,6 +365,7 @@ public class Snapshot implements Serializable, Cloneable {
      * @param startTime
      *        The time stamp when the snapshot was initiated.
      */
+
     public void setStartTime(java.util.Date startTime) {
         this.startTime = startTime;
     }
@@ -362,6 +377,7 @@ public class Snapshot implements Serializable, Cloneable {
      * 
      * @return The time stamp when the snapshot was initiated.
      */
+
     public java.util.Date getStartTime() {
         return this.startTime;
     }
@@ -376,6 +392,7 @@ public class Snapshot implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Snapshot withStartTime(java.util.Date startTime) {
         setStartTime(startTime);
         return this;
@@ -389,6 +406,7 @@ public class Snapshot implements Serializable, Cloneable {
      * @param progress
      *        The progress of the snapshot, as a percentage.
      */
+
     public void setProgress(String progress) {
         this.progress = progress;
     }
@@ -400,6 +418,7 @@ public class Snapshot implements Serializable, Cloneable {
      * 
      * @return The progress of the snapshot, as a percentage.
      */
+
     public String getProgress() {
         return this.progress;
     }
@@ -414,6 +433,7 @@ public class Snapshot implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Snapshot withProgress(String progress) {
         setProgress(progress);
         return this;
@@ -427,6 +447,7 @@ public class Snapshot implements Serializable, Cloneable {
      * @param ownerId
      *        The AWS account ID of the EBS snapshot owner.
      */
+
     public void setOwnerId(String ownerId) {
         this.ownerId = ownerId;
     }
@@ -438,6 +459,7 @@ public class Snapshot implements Serializable, Cloneable {
      * 
      * @return The AWS account ID of the EBS snapshot owner.
      */
+
     public String getOwnerId() {
         return this.ownerId;
     }
@@ -452,6 +474,7 @@ public class Snapshot implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Snapshot withOwnerId(String ownerId) {
         setOwnerId(ownerId);
         return this;
@@ -465,6 +488,7 @@ public class Snapshot implements Serializable, Cloneable {
      * @param description
      *        The description for the snapshot.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -476,6 +500,7 @@ public class Snapshot implements Serializable, Cloneable {
      * 
      * @return The description for the snapshot.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -490,6 +515,7 @@ public class Snapshot implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Snapshot withDescription(String description) {
         setDescription(description);
         return this;
@@ -503,6 +529,7 @@ public class Snapshot implements Serializable, Cloneable {
      * @param volumeSize
      *        The size of the volume, in GiB.
      */
+
     public void setVolumeSize(Integer volumeSize) {
         this.volumeSize = volumeSize;
     }
@@ -514,6 +541,7 @@ public class Snapshot implements Serializable, Cloneable {
      * 
      * @return The size of the volume, in GiB.
      */
+
     public Integer getVolumeSize() {
         return this.volumeSize;
     }
@@ -528,6 +556,7 @@ public class Snapshot implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Snapshot withVolumeSize(Integer volumeSize) {
         setVolumeSize(volumeSize);
         return this;
@@ -543,6 +572,7 @@ public class Snapshot implements Serializable, Cloneable {
      *        The AWS account alias (for example, <code>amazon</code>,
      *        <code>self</code>) or AWS account ID that owns the snapshot.
      */
+
     public void setOwnerAlias(String ownerAlias) {
         this.ownerAlias = ownerAlias;
     }
@@ -556,6 +586,7 @@ public class Snapshot implements Serializable, Cloneable {
      * @return The AWS account alias (for example, <code>amazon</code>,
      *         <code>self</code>) or AWS account ID that owns the snapshot.
      */
+
     public String getOwnerAlias() {
         return this.ownerAlias;
     }
@@ -572,6 +603,7 @@ public class Snapshot implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Snapshot withOwnerAlias(String ownerAlias) {
         setOwnerAlias(ownerAlias);
         return this;
@@ -584,6 +616,7 @@ public class Snapshot implements Serializable, Cloneable {
      * 
      * @return Any tags assigned to the snapshot.
      */
+
     public java.util.List<Tag> getTags() {
         if (tags == null) {
             tags = new com.amazonaws.internal.SdkInternalList<Tag>();
@@ -599,6 +632,7 @@ public class Snapshot implements Serializable, Cloneable {
      * @param tags
      *        Any tags assigned to the snapshot.
      */
+
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
             this.tags = null;
@@ -624,6 +658,7 @@ public class Snapshot implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Snapshot withTags(Tag... tags) {
         if (this.tags == null) {
             setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
@@ -644,6 +679,7 @@ public class Snapshot implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Snapshot withTags(java.util.Collection<Tag> tags) {
         setTags(tags);
         return this;
@@ -657,6 +693,7 @@ public class Snapshot implements Serializable, Cloneable {
      * @param encrypted
      *        Indicates whether the snapshot is encrypted.
      */
+
     public void setEncrypted(Boolean encrypted) {
         this.encrypted = encrypted;
     }
@@ -668,6 +705,7 @@ public class Snapshot implements Serializable, Cloneable {
      * 
      * @return Indicates whether the snapshot is encrypted.
      */
+
     public Boolean getEncrypted() {
         return this.encrypted;
     }
@@ -682,6 +720,7 @@ public class Snapshot implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Snapshot withEncrypted(Boolean encrypted) {
         setEncrypted(encrypted);
         return this;
@@ -694,6 +733,7 @@ public class Snapshot implements Serializable, Cloneable {
      * 
      * @return Indicates whether the snapshot is encrypted.
      */
+
     public Boolean isEncrypted() {
         return this.encrypted;
     }
@@ -710,6 +750,7 @@ public class Snapshot implements Serializable, Cloneable {
      *        master key (CMK) that was used to protect the volume encryption
      *        key for the parent volume.
      */
+
     public void setKmsKeyId(String kmsKeyId) {
         this.kmsKeyId = kmsKeyId;
     }
@@ -725,6 +766,7 @@ public class Snapshot implements Serializable, Cloneable {
      *         master key (CMK) that was used to protect the volume encryption
      *         key for the parent volume.
      */
+
     public String getKmsKeyId() {
         return this.kmsKeyId;
     }
@@ -743,6 +785,7 @@ public class Snapshot implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Snapshot withKmsKeyId(String kmsKeyId) {
         setKmsKeyId(kmsKeyId);
         return this;
@@ -769,6 +812,7 @@ public class Snapshot implements Serializable, Cloneable {
      *        volume/snapshot lineage. This parameter is only returned by the
      *        <a>DescribeSnapshots</a> API operation.
      */
+
     public void setDataEncryptionKeyId(String dataEncryptionKeyId) {
         this.dataEncryptionKeyId = dataEncryptionKeyId;
     }
@@ -793,6 +837,7 @@ public class Snapshot implements Serializable, Cloneable {
      *         volume/snapshot lineage. This parameter is only returned by the
      *         <a>DescribeSnapshots</a> API operation.
      */
+
     public String getDataEncryptionKeyId() {
         return this.dataEncryptionKeyId;
     }
@@ -820,6 +865,7 @@ public class Snapshot implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Snapshot withDataEncryptionKeyId(String dataEncryptionKeyId) {
         setDataEncryptionKeyId(dataEncryptionKeyId);
         return this;

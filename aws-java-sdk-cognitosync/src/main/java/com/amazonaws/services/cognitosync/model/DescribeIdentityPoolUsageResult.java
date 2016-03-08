@@ -32,6 +32,7 @@ public class DescribeIdentityPoolUsageResult implements Serializable, Cloneable 
      * @param identityPoolUsage
      *        Information about the usage of the identity pool.
      */
+
     public void setIdentityPoolUsage(IdentityPoolUsage identityPoolUsage) {
         this.identityPoolUsage = identityPoolUsage;
     }
@@ -41,6 +42,7 @@ public class DescribeIdentityPoolUsageResult implements Serializable, Cloneable 
      * 
      * @return Information about the usage of the identity pool.
      */
+
     public IdentityPoolUsage getIdentityPoolUsage() {
         return this.identityPoolUsage;
     }
@@ -53,6 +55,7 @@ public class DescribeIdentityPoolUsageResult implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeIdentityPoolUsageResult withIdentityPoolUsage(
             IdentityPoolUsage identityPoolUsage) {
         setIdentityPoolUsage(identityPoolUsage);

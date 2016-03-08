@@ -49,6 +49,7 @@ public class DeleteAutoScalingGroupRequest extends AmazonWebServiceRequest
      * @param autoScalingGroupName
      *        The name of the group to delete.
      */
+
     public void setAutoScalingGroupName(String autoScalingGroupName) {
         this.autoScalingGroupName = autoScalingGroupName;
     }
@@ -60,6 +61,7 @@ public class DeleteAutoScalingGroupRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the group to delete.
      */
+
     public String getAutoScalingGroupName() {
         return this.autoScalingGroupName;
     }
@@ -74,6 +76,7 @@ public class DeleteAutoScalingGroupRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteAutoScalingGroupRequest withAutoScalingGroupName(
             String autoScalingGroupName) {
         setAutoScalingGroupName(autoScalingGroupName);
@@ -94,6 +97,7 @@ public class DeleteAutoScalingGroupRequest extends AmazonWebServiceRequest
      *        terminated. This parameter also deletes any lifecycle actions
      *        associated with the group.
      */
+
     public void setForceDelete(Boolean forceDelete) {
         this.forceDelete = forceDelete;
     }
@@ -111,6 +115,7 @@ public class DeleteAutoScalingGroupRequest extends AmazonWebServiceRequest
      *         be terminated. This parameter also deletes any lifecycle actions
      *         associated with the group.
      */
+
     public Boolean getForceDelete() {
         return this.forceDelete;
     }
@@ -131,6 +136,7 @@ public class DeleteAutoScalingGroupRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteAutoScalingGroupRequest withForceDelete(Boolean forceDelete) {
         setForceDelete(forceDelete);
         return this;
@@ -149,6 +155,7 @@ public class DeleteAutoScalingGroupRequest extends AmazonWebServiceRequest
      *         be terminated. This parameter also deletes any lifecycle actions
      *         associated with the group.
      */
+
     public Boolean isForceDelete() {
         return this.forceDelete;
     }

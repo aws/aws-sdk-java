@@ -66,6 +66,7 @@ public class UpdateGameSessionRequest extends AmazonWebServiceRequest implements
      *        Unique identifier for a game session. Specify the game session you
      *        want to update.
      */
+
     public void setGameSessionId(String gameSessionId) {
         this.gameSessionId = gameSessionId;
     }
@@ -79,6 +80,7 @@ public class UpdateGameSessionRequest extends AmazonWebServiceRequest implements
      * @return Unique identifier for a game session. Specify the game session
      *         you want to update.
      */
+
     public String getGameSessionId() {
         return this.gameSessionId;
     }
@@ -95,6 +97,7 @@ public class UpdateGameSessionRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateGameSessionRequest withGameSessionId(String gameSessionId) {
         setGameSessionId(gameSessionId);
         return this;
@@ -110,6 +113,7 @@ public class UpdateGameSessionRequest extends AmazonWebServiceRequest implements
      *        Maximum number of players that can be simultaneously connected to
      *        the game session.
      */
+
     public void setMaximumPlayerSessionCount(Integer maximumPlayerSessionCount) {
         this.maximumPlayerSessionCount = maximumPlayerSessionCount;
     }
@@ -123,6 +127,7 @@ public class UpdateGameSessionRequest extends AmazonWebServiceRequest implements
      * @return Maximum number of players that can be simultaneously connected to
      *         the game session.
      */
+
     public Integer getMaximumPlayerSessionCount() {
         return this.maximumPlayerSessionCount;
     }
@@ -139,6 +144,7 @@ public class UpdateGameSessionRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateGameSessionRequest withMaximumPlayerSessionCount(
             Integer maximumPlayerSessionCount) {
         setMaximumPlayerSessionCount(maximumPlayerSessionCount);
@@ -155,6 +161,7 @@ public class UpdateGameSessionRequest extends AmazonWebServiceRequest implements
      *        Descriptive label associated with this game session. Session names
      *        do not need to be unique.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -168,6 +175,7 @@ public class UpdateGameSessionRequest extends AmazonWebServiceRequest implements
      * @return Descriptive label associated with this game session. Session
      *         names do not need to be unique.
      */
+
     public String getName() {
         return this.name;
     }
@@ -184,6 +192,7 @@ public class UpdateGameSessionRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateGameSessionRequest withName(String name) {
         setName(name);
         return this;
@@ -200,6 +209,7 @@ public class UpdateGameSessionRequest extends AmazonWebServiceRequest implements
      *        players.
      * @see PlayerSessionCreationPolicy
      */
+
     public void setPlayerSessionCreationPolicy(
             String playerSessionCreationPolicy) {
         this.playerSessionCreationPolicy = playerSessionCreationPolicy;
@@ -215,6 +225,7 @@ public class UpdateGameSessionRequest extends AmazonWebServiceRequest implements
      *         new players.
      * @see PlayerSessionCreationPolicy
      */
+
     public String getPlayerSessionCreationPolicy() {
         return this.playerSessionCreationPolicy;
     }
@@ -232,6 +243,7 @@ public class UpdateGameSessionRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see PlayerSessionCreationPolicy
      */
+
     public UpdateGameSessionRequest withPlayerSessionCreationPolicy(
             String playerSessionCreationPolicy) {
         setPlayerSessionCreationPolicy(playerSessionCreationPolicy);
@@ -251,6 +263,7 @@ public class UpdateGameSessionRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see PlayerSessionCreationPolicy
      */
+
     public void setPlayerSessionCreationPolicy(
             PlayerSessionCreationPolicy playerSessionCreationPolicy) {
         this.playerSessionCreationPolicy = playerSessionCreationPolicy
@@ -270,6 +283,7 @@ public class UpdateGameSessionRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see PlayerSessionCreationPolicy
      */
+
     public UpdateGameSessionRequest withPlayerSessionCreationPolicy(
             PlayerSessionCreationPolicy playerSessionCreationPolicy) {
         setPlayerSessionCreationPolicy(playerSessionCreationPolicy);

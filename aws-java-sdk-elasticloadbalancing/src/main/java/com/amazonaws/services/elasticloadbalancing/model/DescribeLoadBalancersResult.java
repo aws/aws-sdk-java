@@ -44,6 +44,7 @@ public class DescribeLoadBalancersResult implements Serializable, Cloneable {
      * 
      * @return Information about the load balancers.
      */
+
     public java.util.List<LoadBalancerDescription> getLoadBalancerDescriptions() {
         if (loadBalancerDescriptions == null) {
             loadBalancerDescriptions = new com.amazonaws.internal.SdkInternalList<LoadBalancerDescription>();
@@ -59,6 +60,7 @@ public class DescribeLoadBalancersResult implements Serializable, Cloneable {
      * @param loadBalancerDescriptions
      *        Information about the load balancers.
      */
+
     public void setLoadBalancerDescriptions(
             java.util.Collection<LoadBalancerDescription> loadBalancerDescriptions) {
         if (loadBalancerDescriptions == null) {
@@ -86,6 +88,7 @@ public class DescribeLoadBalancersResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLoadBalancersResult withLoadBalancerDescriptions(
             LoadBalancerDescription... loadBalancerDescriptions) {
         if (this.loadBalancerDescriptions == null) {
@@ -108,6 +111,7 @@ public class DescribeLoadBalancersResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLoadBalancersResult withLoadBalancerDescriptions(
             java.util.Collection<LoadBalancerDescription> loadBalancerDescriptions) {
         setLoadBalancerDescriptions(loadBalancerDescriptions);
@@ -124,6 +128,7 @@ public class DescribeLoadBalancersResult implements Serializable, Cloneable {
      *        The marker to use when requesting the next set of results. If
      *        there are no additional results, the string is empty.
      */
+
     public void setNextMarker(String nextMarker) {
         this.nextMarker = nextMarker;
     }
@@ -137,6 +142,7 @@ public class DescribeLoadBalancersResult implements Serializable, Cloneable {
      * @return The marker to use when requesting the next set of results. If
      *         there are no additional results, the string is empty.
      */
+
     public String getNextMarker() {
         return this.nextMarker;
     }
@@ -153,6 +159,7 @@ public class DescribeLoadBalancersResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLoadBalancersResult withNextMarker(String nextMarker) {
         setNextMarker(nextMarker);
         return this;

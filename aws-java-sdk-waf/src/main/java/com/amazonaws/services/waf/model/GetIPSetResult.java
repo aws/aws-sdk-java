@@ -64,6 +64,7 @@ public class GetIPSetResult implements Serializable, Cloneable {
      *        <a>IPSetDescriptor</a> objects. Each <code>IPSetDescriptor</code>
      *        object contains <code>Type</code> and <code>Value</code></li>
      */
+
     public void setIPSet(IPSet iPSet) {
         this.iPSet = iPSet;
     }
@@ -92,6 +93,7 @@ public class GetIPSetResult implements Serializable, Cloneable {
      *         <a>IPSetDescriptor</a> objects. Each <code>IPSetDescriptor</code>
      *         object contains <code>Type</code> and <code>Value</code></li>
      */
+
     public IPSet getIPSet() {
         return this.iPSet;
     }
@@ -123,6 +125,7 @@ public class GetIPSetResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetIPSetResult withIPSet(IPSet iPSet) {
         setIPSet(iPSet);
         return this;

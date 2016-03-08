@@ -53,6 +53,7 @@ public class SetLoadBalancerPoliciesForBackendServerRequest extends
      * @param loadBalancerName
      *        The name of the load balancer.
      */
+
     public void setLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
     }
@@ -64,6 +65,7 @@ public class SetLoadBalancerPoliciesForBackendServerRequest extends
      * 
      * @return The name of the load balancer.
      */
+
     public String getLoadBalancerName() {
         return this.loadBalancerName;
     }
@@ -78,6 +80,7 @@ public class SetLoadBalancerPoliciesForBackendServerRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetLoadBalancerPoliciesForBackendServerRequest withLoadBalancerName(
             String loadBalancerName) {
         setLoadBalancerName(loadBalancerName);
@@ -92,6 +95,7 @@ public class SetLoadBalancerPoliciesForBackendServerRequest extends
      * @param instancePort
      *        The port number associated with the back-end server.
      */
+
     public void setInstancePort(Integer instancePort) {
         this.instancePort = instancePort;
     }
@@ -103,6 +107,7 @@ public class SetLoadBalancerPoliciesForBackendServerRequest extends
      * 
      * @return The port number associated with the back-end server.
      */
+
     public Integer getInstancePort() {
         return this.instancePort;
     }
@@ -117,6 +122,7 @@ public class SetLoadBalancerPoliciesForBackendServerRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetLoadBalancerPoliciesForBackendServerRequest withInstancePort(
             Integer instancePort) {
         setInstancePort(instancePort);
@@ -132,6 +138,7 @@ public class SetLoadBalancerPoliciesForBackendServerRequest extends
      * @return The names of the policies. If the list is empty, then all current
      *         polices are removed from the back-end server.
      */
+
     public java.util.List<String> getPolicyNames() {
         if (policyNames == null) {
             policyNames = new com.amazonaws.internal.SdkInternalList<String>();
@@ -149,6 +156,7 @@ public class SetLoadBalancerPoliciesForBackendServerRequest extends
      *        The names of the policies. If the list is empty, then all current
      *        polices are removed from the back-end server.
      */
+
     public void setPolicyNames(java.util.Collection<String> policyNames) {
         if (policyNames == null) {
             this.policyNames = null;
@@ -177,6 +185,7 @@ public class SetLoadBalancerPoliciesForBackendServerRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetLoadBalancerPoliciesForBackendServerRequest withPolicyNames(
             String... policyNames) {
         if (this.policyNames == null) {
@@ -201,6 +210,7 @@ public class SetLoadBalancerPoliciesForBackendServerRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetLoadBalancerPoliciesForBackendServerRequest withPolicyNames(
             java.util.Collection<String> policyNames) {
         setPolicyNames(policyNames);

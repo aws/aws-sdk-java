@@ -39,6 +39,7 @@ public class DescribeFleetPortSettingsResult implements Serializable, Cloneable 
      * 
      * @return Object containing port settings for the requested fleet ID.
      */
+
     public java.util.List<IpPermission> getInboundPermissions() {
         return inboundPermissions;
     }
@@ -51,6 +52,7 @@ public class DescribeFleetPortSettingsResult implements Serializable, Cloneable 
      * @param inboundPermissions
      *        Object containing port settings for the requested fleet ID.
      */
+
     public void setInboundPermissions(
             java.util.Collection<IpPermission> inboundPermissions) {
         if (inboundPermissions == null) {
@@ -78,6 +80,7 @@ public class DescribeFleetPortSettingsResult implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeFleetPortSettingsResult withInboundPermissions(
             IpPermission... inboundPermissions) {
         if (this.inboundPermissions == null) {
@@ -100,6 +103,7 @@ public class DescribeFleetPortSettingsResult implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeFleetPortSettingsResult withInboundPermissions(
             java.util.Collection<IpPermission> inboundPermissions) {
         setInboundPermissions(inboundPermissions);

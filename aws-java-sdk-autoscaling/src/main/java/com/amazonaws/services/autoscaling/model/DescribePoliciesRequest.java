@@ -69,6 +69,7 @@ public class DescribePoliciesRequest extends AmazonWebServiceRequest implements
      * @param autoScalingGroupName
      *        The name of the group.
      */
+
     public void setAutoScalingGroupName(String autoScalingGroupName) {
         this.autoScalingGroupName = autoScalingGroupName;
     }
@@ -80,6 +81,7 @@ public class DescribePoliciesRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the group.
      */
+
     public String getAutoScalingGroupName() {
         return this.autoScalingGroupName;
     }
@@ -94,6 +96,7 @@ public class DescribePoliciesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribePoliciesRequest withAutoScalingGroupName(
             String autoScalingGroupName) {
         setAutoScalingGroupName(autoScalingGroupName);
@@ -114,6 +117,7 @@ public class DescribePoliciesRequest extends AmazonWebServiceRequest implements
      *         limited to 50 items. If you specify an unknown policy name, it is
      *         ignored with no error.
      */
+
     public java.util.List<String> getPolicyNames() {
         if (policyNames == null) {
             policyNames = new com.amazonaws.internal.SdkInternalList<String>();
@@ -136,6 +140,7 @@ public class DescribePoliciesRequest extends AmazonWebServiceRequest implements
      *        limited to 50 items. If you specify an unknown policy name, it is
      *        ignored with no error.
      */
+
     public void setPolicyNames(java.util.Collection<String> policyNames) {
         if (policyNames == null) {
             this.policyNames = null;
@@ -169,6 +174,7 @@ public class DescribePoliciesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribePoliciesRequest withPolicyNames(String... policyNames) {
         if (this.policyNames == null) {
             setPolicyNames(new com.amazonaws.internal.SdkInternalList<String>(
@@ -197,6 +203,7 @@ public class DescribePoliciesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribePoliciesRequest withPolicyNames(
             java.util.Collection<String> policyNames) {
         setPolicyNames(policyNames);
@@ -212,6 +219,7 @@ public class DescribePoliciesRequest extends AmazonWebServiceRequest implements
      * @return One or more policy types. Valid values are
      *         <code>SimpleScaling</code> and <code>StepScaling</code>.
      */
+
     public java.util.List<String> getPolicyTypes() {
         if (policyTypes == null) {
             policyTypes = new com.amazonaws.internal.SdkInternalList<String>();
@@ -229,6 +237,7 @@ public class DescribePoliciesRequest extends AmazonWebServiceRequest implements
      *        One or more policy types. Valid values are
      *        <code>SimpleScaling</code> and <code>StepScaling</code>.
      */
+
     public void setPolicyTypes(java.util.Collection<String> policyTypes) {
         if (policyTypes == null) {
             this.policyTypes = null;
@@ -257,6 +266,7 @@ public class DescribePoliciesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribePoliciesRequest withPolicyTypes(String... policyTypes) {
         if (this.policyTypes == null) {
             setPolicyTypes(new com.amazonaws.internal.SdkInternalList<String>(
@@ -280,6 +290,7 @@ public class DescribePoliciesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribePoliciesRequest withPolicyTypes(
             java.util.Collection<String> policyTypes) {
         setPolicyTypes(policyTypes);
@@ -296,6 +307,7 @@ public class DescribePoliciesRequest extends AmazonWebServiceRequest implements
      *        The token for the next set of items to return. (You received this
      *        token from a previous call.)
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -309,6 +321,7 @@ public class DescribePoliciesRequest extends AmazonWebServiceRequest implements
      * @return The token for the next set of items to return. (You received this
      *         token from a previous call.)
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -325,6 +338,7 @@ public class DescribePoliciesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribePoliciesRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -338,6 +352,7 @@ public class DescribePoliciesRequest extends AmazonWebServiceRequest implements
      * @param maxRecords
      *        The maximum number of items to be returned with each call.
      */
+
     public void setMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
     }
@@ -349,6 +364,7 @@ public class DescribePoliciesRequest extends AmazonWebServiceRequest implements
      * 
      * @return The maximum number of items to be returned with each call.
      */
+
     public Integer getMaxRecords() {
         return this.maxRecords;
     }
@@ -363,6 +379,7 @@ public class DescribePoliciesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribePoliciesRequest withMaxRecords(Integer maxRecords) {
         setMaxRecords(maxRecords);
         return this;

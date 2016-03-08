@@ -46,6 +46,7 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
     /**
      * @param volumeARN
      */
+
     public void setVolumeARN(String volumeARN) {
         this.volumeARN = volumeARN;
     }
@@ -53,6 +54,7 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getVolumeARN() {
         return this.volumeARN;
     }
@@ -62,6 +64,7 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StorediSCSIVolume withVolumeARN(String volumeARN) {
         setVolumeARN(volumeARN);
         return this;
@@ -70,6 +73,7 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
     /**
      * @param volumeId
      */
+
     public void setVolumeId(String volumeId) {
         this.volumeId = volumeId;
     }
@@ -77,6 +81,7 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getVolumeId() {
         return this.volumeId;
     }
@@ -86,6 +91,7 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StorediSCSIVolume withVolumeId(String volumeId) {
         setVolumeId(volumeId);
         return this;
@@ -94,6 +100,7 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
     /**
      * @param volumeType
      */
+
     public void setVolumeType(String volumeType) {
         this.volumeType = volumeType;
     }
@@ -101,6 +108,7 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getVolumeType() {
         return this.volumeType;
     }
@@ -110,6 +118,7 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StorediSCSIVolume withVolumeType(String volumeType) {
         setVolumeType(volumeType);
         return this;
@@ -118,6 +127,7 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
     /**
      * @param volumeStatus
      */
+
     public void setVolumeStatus(String volumeStatus) {
         this.volumeStatus = volumeStatus;
     }
@@ -125,6 +135,7 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getVolumeStatus() {
         return this.volumeStatus;
     }
@@ -134,6 +145,7 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StorediSCSIVolume withVolumeStatus(String volumeStatus) {
         setVolumeStatus(volumeStatus);
         return this;
@@ -142,6 +154,7 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
     /**
      * @param volumeSizeInBytes
      */
+
     public void setVolumeSizeInBytes(Long volumeSizeInBytes) {
         this.volumeSizeInBytes = volumeSizeInBytes;
     }
@@ -149,6 +162,7 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Long getVolumeSizeInBytes() {
         return this.volumeSizeInBytes;
     }
@@ -158,6 +172,7 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StorediSCSIVolume withVolumeSizeInBytes(Long volumeSizeInBytes) {
         setVolumeSizeInBytes(volumeSizeInBytes);
         return this;
@@ -166,6 +181,7 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
     /**
      * @param volumeProgress
      */
+
     public void setVolumeProgress(Double volumeProgress) {
         this.volumeProgress = volumeProgress;
     }
@@ -173,6 +189,7 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Double getVolumeProgress() {
         return this.volumeProgress;
     }
@@ -182,6 +199,7 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StorediSCSIVolume withVolumeProgress(Double volumeProgress) {
         setVolumeProgress(volumeProgress);
         return this;
@@ -190,6 +208,7 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
     /**
      * @param volumeDiskId
      */
+
     public void setVolumeDiskId(String volumeDiskId) {
         this.volumeDiskId = volumeDiskId;
     }
@@ -197,6 +216,7 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getVolumeDiskId() {
         return this.volumeDiskId;
     }
@@ -206,6 +226,7 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StorediSCSIVolume withVolumeDiskId(String volumeDiskId) {
         setVolumeDiskId(volumeDiskId);
         return this;
@@ -214,6 +235,7 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
     /**
      * @param sourceSnapshotId
      */
+
     public void setSourceSnapshotId(String sourceSnapshotId) {
         this.sourceSnapshotId = sourceSnapshotId;
     }
@@ -221,6 +243,7 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getSourceSnapshotId() {
         return this.sourceSnapshotId;
     }
@@ -230,6 +253,7 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StorediSCSIVolume withSourceSnapshotId(String sourceSnapshotId) {
         setSourceSnapshotId(sourceSnapshotId);
         return this;
@@ -238,6 +262,7 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
     /**
      * @param preservedExistingData
      */
+
     public void setPreservedExistingData(Boolean preservedExistingData) {
         this.preservedExistingData = preservedExistingData;
     }
@@ -245,6 +270,7 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Boolean getPreservedExistingData() {
         return this.preservedExistingData;
     }
@@ -254,6 +280,7 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StorediSCSIVolume withPreservedExistingData(
             Boolean preservedExistingData) {
         setPreservedExistingData(preservedExistingData);
@@ -263,6 +290,7 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Boolean isPreservedExistingData() {
         return this.preservedExistingData;
     }
@@ -270,6 +298,7 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
     /**
      * @param volumeiSCSIAttributes
      */
+
     public void setVolumeiSCSIAttributes(
             VolumeiSCSIAttributes volumeiSCSIAttributes) {
         this.volumeiSCSIAttributes = volumeiSCSIAttributes;
@@ -278,6 +307,7 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public VolumeiSCSIAttributes getVolumeiSCSIAttributes() {
         return this.volumeiSCSIAttributes;
     }
@@ -287,6 +317,7 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StorediSCSIVolume withVolumeiSCSIAttributes(
             VolumeiSCSIAttributes volumeiSCSIAttributes) {
         setVolumeiSCSIAttributes(volumeiSCSIAttributes);

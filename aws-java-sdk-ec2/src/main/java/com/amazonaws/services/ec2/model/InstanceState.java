@@ -144,6 +144,7 @@ public class InstanceState implements Serializable, Cloneable {
      *        </p>
      *        </li>
      */
+
     public void setCode(Integer code) {
         this.code = code;
     }
@@ -220,6 +221,7 @@ public class InstanceState implements Serializable, Cloneable {
      *         </p>
      *         </li>
      */
+
     public Integer getCode() {
         return this.code;
     }
@@ -299,6 +301,7 @@ public class InstanceState implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceState withCode(Integer code) {
         setCode(code);
         return this;
@@ -313,6 +316,7 @@ public class InstanceState implements Serializable, Cloneable {
      *        The current state of the instance.
      * @see InstanceStateName
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -325,6 +329,7 @@ public class InstanceState implements Serializable, Cloneable {
      * @return The current state of the instance.
      * @see InstanceStateName
      */
+
     public String getName() {
         return this.name;
     }
@@ -340,6 +345,7 @@ public class InstanceState implements Serializable, Cloneable {
      *         chained together.
      * @see InstanceStateName
      */
+
     public InstanceState withName(String name) {
         setName(name);
         return this;
@@ -356,6 +362,7 @@ public class InstanceState implements Serializable, Cloneable {
      *         chained together.
      * @see InstanceStateName
      */
+
     public void setName(InstanceStateName name) {
         this.name = name.toString();
     }
@@ -371,6 +378,7 @@ public class InstanceState implements Serializable, Cloneable {
      *         chained together.
      * @see InstanceStateName
      */
+
     public InstanceState withName(InstanceStateName name) {
         setName(name);
         return this;

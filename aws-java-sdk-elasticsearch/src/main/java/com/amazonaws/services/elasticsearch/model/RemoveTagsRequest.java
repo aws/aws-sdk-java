@@ -54,6 +54,7 @@ public class RemoveTagsRequest extends AmazonWebServiceRequest implements
      *        Specifies the <code>ARN</code> for the Elasticsearch domain from
      *        which you want to delete the specified tags.
      */
+
     public void setARN(String aRN) {
         this.aRN = aRN;
     }
@@ -67,6 +68,7 @@ public class RemoveTagsRequest extends AmazonWebServiceRequest implements
      * @return Specifies the <code>ARN</code> for the Elasticsearch domain from
      *         which you want to delete the specified tags.
      */
+
     public String getARN() {
         return this.aRN;
     }
@@ -83,6 +85,7 @@ public class RemoveTagsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RemoveTagsRequest withARN(String aRN) {
         setARN(aRN);
         return this;
@@ -97,6 +100,7 @@ public class RemoveTagsRequest extends AmazonWebServiceRequest implements
      * @return Specifies the <code>TagKey</code> list which you want to remove
      *         from the Elasticsearch domain.
      */
+
     public java.util.List<String> getTagKeys() {
         return tagKeys;
     }
@@ -111,6 +115,7 @@ public class RemoveTagsRequest extends AmazonWebServiceRequest implements
      *        Specifies the <code>TagKey</code> list which you want to remove
      *        from the Elasticsearch domain.
      */
+
     public void setTagKeys(java.util.Collection<String> tagKeys) {
         if (tagKeys == null) {
             this.tagKeys = null;
@@ -138,6 +143,7 @@ public class RemoveTagsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RemoveTagsRequest withTagKeys(String... tagKeys) {
         if (this.tagKeys == null) {
             setTagKeys(new java.util.ArrayList<String>(tagKeys.length));
@@ -160,6 +166,7 @@ public class RemoveTagsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RemoveTagsRequest withTagKeys(java.util.Collection<String> tagKeys) {
         setTagKeys(tagKeys);
         return this;

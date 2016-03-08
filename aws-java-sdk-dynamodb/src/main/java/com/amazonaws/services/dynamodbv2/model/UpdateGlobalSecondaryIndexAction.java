@@ -44,6 +44,7 @@ public class UpdateGlobalSecondaryIndexAction implements Serializable,
      * @param indexName
      *        The name of the global secondary index to be updated.
      */
+
     public void setIndexName(String indexName) {
         this.indexName = indexName;
     }
@@ -55,6 +56,7 @@ public class UpdateGlobalSecondaryIndexAction implements Serializable,
      * 
      * @return The name of the global secondary index to be updated.
      */
+
     public String getIndexName() {
         return this.indexName;
     }
@@ -69,6 +71,7 @@ public class UpdateGlobalSecondaryIndexAction implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateGlobalSecondaryIndexAction withIndexName(String indexName) {
         setIndexName(indexName);
         return this;
@@ -77,6 +80,7 @@ public class UpdateGlobalSecondaryIndexAction implements Serializable,
     /**
      * @param provisionedThroughput
      */
+
     public void setProvisionedThroughput(
             ProvisionedThroughput provisionedThroughput) {
         this.provisionedThroughput = provisionedThroughput;
@@ -85,6 +89,7 @@ public class UpdateGlobalSecondaryIndexAction implements Serializable,
     /**
      * @return
      */
+
     public ProvisionedThroughput getProvisionedThroughput() {
         return this.provisionedThroughput;
     }
@@ -94,6 +99,7 @@ public class UpdateGlobalSecondaryIndexAction implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateGlobalSecondaryIndexAction withProvisionedThroughput(
             ProvisionedThroughput provisionedThroughput) {
         setProvisionedThroughput(provisionedThroughput);

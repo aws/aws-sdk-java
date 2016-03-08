@@ -81,6 +81,7 @@ public class FederatedUser implements Serializable, Cloneable {
      *        The string that identifies the federated user associated with the
      *        credentials, similar to the unique ID of an IAM user.
      */
+
     public void setFederatedUserId(String federatedUserId) {
         this.federatedUserId = federatedUserId;
     }
@@ -94,6 +95,7 @@ public class FederatedUser implements Serializable, Cloneable {
      * @return The string that identifies the federated user associated with the
      *         credentials, similar to the unique ID of an IAM user.
      */
+
     public String getFederatedUserId() {
         return this.federatedUserId;
     }
@@ -110,6 +112,7 @@ public class FederatedUser implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FederatedUser withFederatedUserId(String federatedUserId) {
         setFederatedUserId(federatedUserId);
         return this;
@@ -131,6 +134,7 @@ public class FederatedUser implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html"
      *        >IAM Identifiers</a> in <i>Using IAM</i>.
      */
+
     public void setArn(String arn) {
         this.arn = arn;
     }
@@ -150,6 +154,7 @@ public class FederatedUser implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html"
      *         >IAM Identifiers</a> in <i>Using IAM</i>.
      */
+
     public String getArn() {
         return this.arn;
     }
@@ -172,6 +177,7 @@ public class FederatedUser implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FederatedUser withArn(String arn) {
         setArn(arn);
         return this;

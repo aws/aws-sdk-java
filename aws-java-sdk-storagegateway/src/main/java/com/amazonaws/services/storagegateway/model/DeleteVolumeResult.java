@@ -43,6 +43,7 @@ public class DeleteVolumeResult implements Serializable, Cloneable {
      *        The Amazon Resource Name (ARN) of the storage volume that was
      *        deleted. It is the same ARN you provided in the request.
      */
+
     public void setVolumeARN(String volumeARN) {
         this.volumeARN = volumeARN;
     }
@@ -56,6 +57,7 @@ public class DeleteVolumeResult implements Serializable, Cloneable {
      * @return The Amazon Resource Name (ARN) of the storage volume that was
      *         deleted. It is the same ARN you provided in the request.
      */
+
     public String getVolumeARN() {
         return this.volumeARN;
     }
@@ -72,6 +74,7 @@ public class DeleteVolumeResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteVolumeResult withVolumeARN(String volumeARN) {
         setVolumeARN(volumeARN);
         return this;

@@ -130,6 +130,7 @@ public class InstanceState implements Serializable, Cloneable {
      * @param instanceId
      *        The ID of the instance.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -141,6 +142,7 @@ public class InstanceState implements Serializable, Cloneable {
      * 
      * @return The ID of the instance.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
@@ -155,6 +157,7 @@ public class InstanceState implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceState withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;
@@ -175,6 +178,7 @@ public class InstanceState implements Serializable, Cloneable {
      *        Valid values: <code>InService</code> | <code>OutOfService</code> |
      *        <code>Unknown</code>
      */
+
     public void setState(String state) {
         this.state = state;
     }
@@ -193,6 +197,7 @@ public class InstanceState implements Serializable, Cloneable {
      *         Valid values: <code>InService</code> | <code>OutOfService</code>
      *         | <code>Unknown</code>
      */
+
     public String getState() {
         return this.state;
     }
@@ -214,6 +219,7 @@ public class InstanceState implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceState withState(String state) {
         setState(state);
         return this;
@@ -237,6 +243,7 @@ public class InstanceState implements Serializable, Cloneable {
      *        Valid values: <code>ELB</code> | <code>Instance</code> |
      *        <code>N/A</code>
      */
+
     public void setReasonCode(String reasonCode) {
         this.reasonCode = reasonCode;
     }
@@ -258,6 +265,7 @@ public class InstanceState implements Serializable, Cloneable {
      *         Valid values: <code>ELB</code> | <code>Instance</code> |
      *         <code>N/A</code>
      */
+
     public String getReasonCode() {
         return this.reasonCode;
     }
@@ -282,6 +290,7 @@ public class InstanceState implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceState withReasonCode(String reasonCode) {
         setReasonCode(reasonCode);
         return this;
@@ -420,6 +429,7 @@ public class InstanceState implements Serializable, Cloneable {
      *        </p>
      *        </li>
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -556,6 +566,7 @@ public class InstanceState implements Serializable, Cloneable {
      *         </p>
      *         </li>
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -695,6 +706,7 @@ public class InstanceState implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceState withDescription(String description) {
         setDescription(description);
         return this;

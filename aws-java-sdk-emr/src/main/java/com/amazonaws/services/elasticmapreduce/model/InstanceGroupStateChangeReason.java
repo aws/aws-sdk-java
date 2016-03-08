@@ -47,6 +47,7 @@ public class InstanceGroupStateChangeReason implements Serializable, Cloneable {
      *        The programmable code for the state change reason.
      * @see InstanceGroupStateChangeReasonCode
      */
+
     public void setCode(String code) {
         this.code = code;
     }
@@ -59,6 +60,7 @@ public class InstanceGroupStateChangeReason implements Serializable, Cloneable {
      * @return The programmable code for the state change reason.
      * @see InstanceGroupStateChangeReasonCode
      */
+
     public String getCode() {
         return this.code;
     }
@@ -74,6 +76,7 @@ public class InstanceGroupStateChangeReason implements Serializable, Cloneable {
      *         chained together.
      * @see InstanceGroupStateChangeReasonCode
      */
+
     public InstanceGroupStateChangeReason withCode(String code) {
         setCode(code);
         return this;
@@ -90,6 +93,7 @@ public class InstanceGroupStateChangeReason implements Serializable, Cloneable {
      *         chained together.
      * @see InstanceGroupStateChangeReasonCode
      */
+
     public void setCode(InstanceGroupStateChangeReasonCode code) {
         this.code = code.toString();
     }
@@ -105,6 +109,7 @@ public class InstanceGroupStateChangeReason implements Serializable, Cloneable {
      *         chained together.
      * @see InstanceGroupStateChangeReasonCode
      */
+
     public InstanceGroupStateChangeReason withCode(
             InstanceGroupStateChangeReasonCode code) {
         setCode(code);
@@ -119,6 +124,7 @@ public class InstanceGroupStateChangeReason implements Serializable, Cloneable {
      * @param message
      *        The status change reason description.
      */
+
     public void setMessage(String message) {
         this.message = message;
     }
@@ -130,6 +136,7 @@ public class InstanceGroupStateChangeReason implements Serializable, Cloneable {
      * 
      * @return The status change reason description.
      */
+
     public String getMessage() {
         return this.message;
     }
@@ -144,6 +151,7 @@ public class InstanceGroupStateChangeReason implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceGroupStateChangeReason withMessage(String message) {
         setMessage(message);
         return this;

@@ -249,6 +249,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * @param name
      *        The name of the job flow.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -260,6 +261,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the job flow.
      */
+
     public String getName() {
         return this.name;
     }
@@ -274,6 +276,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunJobFlowRequest withName(String name) {
         setName(name);
         return this;
@@ -289,6 +292,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      *        The location in Amazon S3 to write the log files of the job flow.
      *        If a value is not provided, logs are not created.
      */
+
     public void setLogUri(String logUri) {
         this.logUri = logUri;
     }
@@ -302,6 +306,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * @return The location in Amazon S3 to write the log files of the job flow.
      *         If a value is not provided, logs are not created.
      */
+
     public String getLogUri() {
         return this.logUri;
     }
@@ -318,6 +323,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunJobFlowRequest withLogUri(String logUri) {
         setLogUri(logUri);
         return this;
@@ -331,6 +337,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * @param additionalInfo
      *        A JSON string for selecting additional features.
      */
+
     public void setAdditionalInfo(String additionalInfo) {
         this.additionalInfo = additionalInfo;
     }
@@ -342,6 +349,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * 
      * @return A JSON string for selecting additional features.
      */
+
     public String getAdditionalInfo() {
         return this.additionalInfo;
     }
@@ -356,6 +364,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunJobFlowRequest withAdditionalInfo(String additionalInfo) {
         setAdditionalInfo(additionalInfo);
         return this;
@@ -413,6 +422,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      *        >AMI Versions Supported in Elastic MapReduce</a> in the <i>Amazon
      *        Elastic MapReduce Developer's Guide.
      */
+
     public void setAmiVersion(String amiVersion) {
         this.amiVersion = amiVersion;
     }
@@ -469,6 +479,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      *         >AMI Versions Supported in Elastic MapReduce</a> in the <i>Amazon
      *         Elastic MapReduce Developer's Guide.
      */
+
     public String getAmiVersion() {
         return this.amiVersion;
     }
@@ -527,6 +538,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunJobFlowRequest withAmiVersion(String amiVersion) {
         setAmiVersion(amiVersion);
         return this;
@@ -546,6 +558,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * @param releaseLabel
      *        Amazon EMR releases 4.x or later.</p></note>
      */
+
     public void setReleaseLabel(String releaseLabel) {
         this.releaseLabel = releaseLabel;
     }
@@ -563,6 +576,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * 
      * @return Amazon EMR releases 4.x or later.</p></note>
      */
+
     public String getReleaseLabel() {
         return this.releaseLabel;
     }
@@ -583,6 +597,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunJobFlowRequest withReleaseLabel(String releaseLabel) {
         setReleaseLabel(releaseLabel);
         return this;
@@ -598,6 +613,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      *        A specification of the number and type of Amazon EC2 instances on
      *        which to run the job flow.
      */
+
     public void setInstances(JobFlowInstancesConfig instances) {
         this.instances = instances;
     }
@@ -611,6 +627,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * @return A specification of the number and type of Amazon EC2 instances on
      *         which to run the job flow.
      */
+
     public JobFlowInstancesConfig getInstances() {
         return this.instances;
     }
@@ -627,6 +644,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunJobFlowRequest withInstances(JobFlowInstancesConfig instances) {
         setInstances(instances);
         return this;
@@ -639,6 +657,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * 
      * @return A list of steps to be executed by the job flow.
      */
+
     public java.util.List<StepConfig> getSteps() {
         if (steps == null) {
             steps = new com.amazonaws.internal.SdkInternalList<StepConfig>();
@@ -654,6 +673,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * @param steps
      *        A list of steps to be executed by the job flow.
      */
+
     public void setSteps(java.util.Collection<StepConfig> steps) {
         if (steps == null) {
             this.steps = null;
@@ -680,6 +700,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunJobFlowRequest withSteps(StepConfig... steps) {
         if (this.steps == null) {
             setSteps(new com.amazonaws.internal.SdkInternalList<StepConfig>(
@@ -701,6 +722,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunJobFlowRequest withSteps(java.util.Collection<StepConfig> steps) {
         setSteps(steps);
         return this;
@@ -715,6 +737,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * @return A list of bootstrap actions that will be run before Hadoop is
      *         started on the cluster nodes.
      */
+
     public java.util.List<BootstrapActionConfig> getBootstrapActions() {
         if (bootstrapActions == null) {
             bootstrapActions = new com.amazonaws.internal.SdkInternalList<BootstrapActionConfig>();
@@ -732,6 +755,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      *        A list of bootstrap actions that will be run before Hadoop is
      *        started on the cluster nodes.
      */
+
     public void setBootstrapActions(
             java.util.Collection<BootstrapActionConfig> bootstrapActions) {
         if (bootstrapActions == null) {
@@ -761,6 +785,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunJobFlowRequest withBootstrapActions(
             BootstrapActionConfig... bootstrapActions) {
         if (this.bootstrapActions == null) {
@@ -785,6 +810,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunJobFlowRequest withBootstrapActions(
             java.util.Collection<BootstrapActionConfig> bootstrapActions) {
         setBootstrapActions(bootstrapActions);
@@ -823,6 +849,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      *         <li>"mapr-m3" - launch the job flow using MapR M3 Edition.</li>
      *         <li>"mapr-m5" - launch the job flow using MapR M5 Edition.
      */
+
     public java.util.List<String> getSupportedProducts() {
         if (supportedProducts == null) {
             supportedProducts = new com.amazonaws.internal.SdkInternalList<String>();
@@ -863,6 +890,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      *        <li>"mapr-m3" - launch the job flow using MapR M3 Edition.</li>
      *        <li>"mapr-m5" - launch the job flow using MapR M5 Edition.
      */
+
     public void setSupportedProducts(
             java.util.Collection<String> supportedProducts) {
         if (supportedProducts == null) {
@@ -915,6 +943,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunJobFlowRequest withSupportedProducts(String... supportedProducts) {
         if (this.supportedProducts == null) {
             setSupportedProducts(new com.amazonaws.internal.SdkInternalList<String>(
@@ -961,6 +990,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunJobFlowRequest withSupportedProducts(
             java.util.Collection<String> supportedProducts) {
         setSupportedProducts(supportedProducts);
@@ -1024,6 +1054,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      *         <li>"ganglia" - launch the cluster with the Ganglia Monitoring
      *         System installed.
      */
+
     public java.util.List<SupportedProductConfig> getNewSupportedProducts() {
         if (newSupportedProducts == null) {
             newSupportedProducts = new com.amazonaws.internal.SdkInternalList<SupportedProductConfig>();
@@ -1089,6 +1120,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      *        <li>"ganglia" - launch the cluster with the Ganglia Monitoring
      *        System installed.
      */
+
     public void setNewSupportedProducts(
             java.util.Collection<SupportedProductConfig> newSupportedProducts) {
         if (newSupportedProducts == null) {
@@ -1166,6 +1198,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunJobFlowRequest withNewSupportedProducts(
             SupportedProductConfig... newSupportedProducts) {
         if (this.newSupportedProducts == null) {
@@ -1238,6 +1271,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunJobFlowRequest withNewSupportedProducts(
             java.util.Collection<SupportedProductConfig> newSupportedProducts) {
         setNewSupportedProducts(newSupportedProducts);
@@ -1257,6 +1291,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * 
      * @return Amazon EMR releases 4.x or later.</p></note>
      */
+
     public java.util.List<Application> getApplications() {
         if (applications == null) {
             applications = new com.amazonaws.internal.SdkInternalList<Application>();
@@ -1278,6 +1313,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * @param applications
      *        Amazon EMR releases 4.x or later.</p></note>
      */
+
     public void setApplications(java.util.Collection<Application> applications) {
         if (applications == null) {
             this.applications = null;
@@ -1310,6 +1346,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunJobFlowRequest withApplications(Application... applications) {
         if (this.applications == null) {
             setApplications(new com.amazonaws.internal.SdkInternalList<Application>(
@@ -1337,6 +1374,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunJobFlowRequest withApplications(
             java.util.Collection<Application> applications) {
         setApplications(applications);
@@ -1355,6 +1393,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * 
      * @return Amazon EMR releases 4.x or later.</p></note>
      */
+
     public java.util.List<Configuration> getConfigurations() {
         if (configurations == null) {
             configurations = new com.amazonaws.internal.SdkInternalList<Configuration>();
@@ -1375,6 +1414,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * @param configurations
      *        Amazon EMR releases 4.x or later.</p></note>
      */
+
     public void setConfigurations(
             java.util.Collection<Configuration> configurations) {
         if (configurations == null) {
@@ -1407,6 +1447,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunJobFlowRequest withConfigurations(Configuration... configurations) {
         if (this.configurations == null) {
             setConfigurations(new com.amazonaws.internal.SdkInternalList<Configuration>(
@@ -1433,6 +1474,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunJobFlowRequest withConfigurations(
             java.util.Collection<Configuration> configurations) {
         setConfigurations(configurations);
@@ -1457,6 +1499,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      *        flow. If it is set to <code>false</code>, only the IAM user that
      *        created the job flow can view and manage it.
      */
+
     public void setVisibleToAllUsers(Boolean visibleToAllUsers) {
         this.visibleToAllUsers = visibleToAllUsers;
     }
@@ -1478,6 +1521,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      *         flow. If it is set to <code>false</code>, only the IAM user that
      *         created the job flow can view and manage it.
      */
+
     public Boolean getVisibleToAllUsers() {
         return this.visibleToAllUsers;
     }
@@ -1502,6 +1546,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunJobFlowRequest withVisibleToAllUsers(Boolean visibleToAllUsers) {
         setVisibleToAllUsers(visibleToAllUsers);
         return this;
@@ -1524,6 +1569,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      *         flow. If it is set to <code>false</code>, only the IAM user that
      *         created the job flow can view and manage it.
      */
+
     public Boolean isVisibleToAllUsers() {
         return this.visibleToAllUsers;
     }
@@ -1543,6 +1589,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      *        the default role, you must have already created it using the CLI
      *        or console.
      */
+
     public void setJobFlowRole(String jobFlowRole) {
         this.jobFlowRole = jobFlowRole;
     }
@@ -1561,6 +1608,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      *         the default role, you must have already created it using the CLI
      *         or console.
      */
+
     public String getJobFlowRole() {
         return this.jobFlowRole;
     }
@@ -1582,6 +1630,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunJobFlowRequest withJobFlowRole(String jobFlowRole) {
         setJobFlowRole(jobFlowRole);
         return this;
@@ -1597,6 +1646,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      *        The IAM role that will be assumed by the Amazon EMR service to
      *        access AWS resources on your behalf.
      */
+
     public void setServiceRole(String serviceRole) {
         this.serviceRole = serviceRole;
     }
@@ -1610,6 +1660,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * @return The IAM role that will be assumed by the Amazon EMR service to
      *         access AWS resources on your behalf.
      */
+
     public String getServiceRole() {
         return this.serviceRole;
     }
@@ -1626,6 +1677,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunJobFlowRequest withServiceRole(String serviceRole) {
         setServiceRole(serviceRole);
         return this;
@@ -1640,6 +1692,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * @return A list of tags to associate with a cluster and propagate to
      *         Amazon EC2 instances.
      */
+
     public java.util.List<Tag> getTags() {
         if (tags == null) {
             tags = new com.amazonaws.internal.SdkInternalList<Tag>();
@@ -1657,6 +1710,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      *        A list of tags to associate with a cluster and propagate to Amazon
      *        EC2 instances.
      */
+
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
             this.tags = null;
@@ -1684,6 +1738,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunJobFlowRequest withTags(Tag... tags) {
         if (this.tags == null) {
             setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
@@ -1706,6 +1761,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunJobFlowRequest withTags(java.util.Collection<Tag> tags) {
         setTags(tags);
         return this;

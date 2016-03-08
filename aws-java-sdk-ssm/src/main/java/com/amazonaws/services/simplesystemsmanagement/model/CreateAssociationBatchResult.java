@@ -43,6 +43,7 @@ public class CreateAssociationBatchResult implements Serializable, Cloneable {
      * 
      * @return Information about the associations that succeeded.
      */
+
     public java.util.List<AssociationDescription> getSuccessful() {
         if (successful == null) {
             successful = new com.amazonaws.internal.SdkInternalList<AssociationDescription>();
@@ -58,6 +59,7 @@ public class CreateAssociationBatchResult implements Serializable, Cloneable {
      * @param successful
      *        Information about the associations that succeeded.
      */
+
     public void setSuccessful(
             java.util.Collection<AssociationDescription> successful) {
         if (successful == null) {
@@ -85,6 +87,7 @@ public class CreateAssociationBatchResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateAssociationBatchResult withSuccessful(
             AssociationDescription... successful) {
         if (this.successful == null) {
@@ -107,6 +110,7 @@ public class CreateAssociationBatchResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateAssociationBatchResult withSuccessful(
             java.util.Collection<AssociationDescription> successful) {
         setSuccessful(successful);
@@ -120,6 +124,7 @@ public class CreateAssociationBatchResult implements Serializable, Cloneable {
      * 
      * @return Information about the associations that failed.
      */
+
     public java.util.List<FailedCreateAssociation> getFailed() {
         if (failed == null) {
             failed = new com.amazonaws.internal.SdkInternalList<FailedCreateAssociation>();
@@ -135,6 +140,7 @@ public class CreateAssociationBatchResult implements Serializable, Cloneable {
      * @param failed
      *        Information about the associations that failed.
      */
+
     public void setFailed(java.util.Collection<FailedCreateAssociation> failed) {
         if (failed == null) {
             this.failed = null;
@@ -161,6 +167,7 @@ public class CreateAssociationBatchResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateAssociationBatchResult withFailed(
             FailedCreateAssociation... failed) {
         if (this.failed == null) {
@@ -183,6 +190,7 @@ public class CreateAssociationBatchResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateAssociationBatchResult withFailed(
             java.util.Collection<FailedCreateAssociation> failed) {
         setFailed(failed);

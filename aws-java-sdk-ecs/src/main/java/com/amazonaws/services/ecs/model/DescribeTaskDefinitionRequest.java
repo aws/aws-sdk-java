@@ -50,6 +50,7 @@ public class DescribeTaskDefinitionRequest extends AmazonWebServiceRequest
      *        family, or full Amazon Resource Name (ARN) of the task definition
      *        to describe.
      */
+
     public void setTaskDefinition(String taskDefinition) {
         this.taskDefinition = taskDefinition;
     }
@@ -68,6 +69,7 @@ public class DescribeTaskDefinitionRequest extends AmazonWebServiceRequest
      *         family, or full Amazon Resource Name (ARN) of the task definition
      *         to describe.
      */
+
     public String getTaskDefinition() {
         return this.taskDefinition;
     }
@@ -89,6 +91,7 @@ public class DescribeTaskDefinitionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTaskDefinitionRequest withTaskDefinition(
             String taskDefinition) {
         setTaskDefinition(taskDefinition);

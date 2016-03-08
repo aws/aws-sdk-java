@@ -69,6 +69,7 @@ public class Alias implements Serializable, Cloneable {
      * @param aliasId
      *        Unique identifier for a fleet alias.
      */
+
     public void setAliasId(String aliasId) {
         this.aliasId = aliasId;
     }
@@ -80,6 +81,7 @@ public class Alias implements Serializable, Cloneable {
      * 
      * @return Unique identifier for a fleet alias.
      */
+
     public String getAliasId() {
         return this.aliasId;
     }
@@ -94,6 +96,7 @@ public class Alias implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Alias withAliasId(String aliasId) {
         setAliasId(aliasId);
         return this;
@@ -109,6 +112,7 @@ public class Alias implements Serializable, Cloneable {
      *        Descriptive label associated with this alias. Alias names do not
      *        need to be unique.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -122,6 +126,7 @@ public class Alias implements Serializable, Cloneable {
      * @return Descriptive label associated with this alias. Alias names do not
      *         need to be unique.
      */
+
     public String getName() {
         return this.name;
     }
@@ -138,6 +143,7 @@ public class Alias implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Alias withName(String name) {
         setName(name);
         return this;
@@ -151,6 +157,7 @@ public class Alias implements Serializable, Cloneable {
      * @param description
      *        Human-readable description of the alias.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -162,6 +169,7 @@ public class Alias implements Serializable, Cloneable {
      * 
      * @return Human-readable description of the alias.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -176,6 +184,7 @@ public class Alias implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Alias withDescription(String description) {
         setDescription(description);
         return this;
@@ -184,6 +193,7 @@ public class Alias implements Serializable, Cloneable {
     /**
      * @param routingStrategy
      */
+
     public void setRoutingStrategy(RoutingStrategy routingStrategy) {
         this.routingStrategy = routingStrategy;
     }
@@ -191,6 +201,7 @@ public class Alias implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public RoutingStrategy getRoutingStrategy() {
         return this.routingStrategy;
     }
@@ -200,6 +211,7 @@ public class Alias implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Alias withRoutingStrategy(RoutingStrategy routingStrategy) {
         setRoutingStrategy(routingStrategy);
         return this;
@@ -215,6 +227,7 @@ public class Alias implements Serializable, Cloneable {
      *        Time stamp indicating when this object was created. Format is an
      *        integer representing the number of seconds since epoch.
      */
+
     public void setCreationTime(java.util.Date creationTime) {
         this.creationTime = creationTime;
     }
@@ -228,6 +241,7 @@ public class Alias implements Serializable, Cloneable {
      * @return Time stamp indicating when this object was created. Format is an
      *         integer representing the number of seconds since epoch.
      */
+
     public java.util.Date getCreationTime() {
         return this.creationTime;
     }
@@ -244,6 +258,7 @@ public class Alias implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Alias withCreationTime(java.util.Date creationTime) {
         setCreationTime(creationTime);
         return this;
@@ -259,6 +274,7 @@ public class Alias implements Serializable, Cloneable {
      *        Time stamp indicating when this object was last modified. Format
      *        is an integer representing the number of seconds since epoch.
      */
+
     public void setLastUpdatedTime(java.util.Date lastUpdatedTime) {
         this.lastUpdatedTime = lastUpdatedTime;
     }
@@ -272,6 +288,7 @@ public class Alias implements Serializable, Cloneable {
      * @return Time stamp indicating when this object was last modified. Format
      *         is an integer representing the number of seconds since epoch.
      */
+
     public java.util.Date getLastUpdatedTime() {
         return this.lastUpdatedTime;
     }
@@ -288,6 +305,7 @@ public class Alias implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Alias withLastUpdatedTime(java.util.Date lastUpdatedTime) {
         setLastUpdatedTime(lastUpdatedTime);
         return this;

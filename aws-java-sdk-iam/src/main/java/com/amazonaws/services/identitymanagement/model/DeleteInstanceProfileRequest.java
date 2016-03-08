@@ -40,6 +40,7 @@ public class DeleteInstanceProfileRequest extends AmazonWebServiceRequest
      * @param instanceProfileName
      *        The name of the instance profile to delete.
      */
+
     public void setInstanceProfileName(String instanceProfileName) {
         this.instanceProfileName = instanceProfileName;
     }
@@ -51,6 +52,7 @@ public class DeleteInstanceProfileRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the instance profile to delete.
      */
+
     public String getInstanceProfileName() {
         return this.instanceProfileName;
     }
@@ -65,6 +67,7 @@ public class DeleteInstanceProfileRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteInstanceProfileRequest withInstanceProfileName(
             String instanceProfileName) {
         setInstanceProfileName(instanceProfileName);

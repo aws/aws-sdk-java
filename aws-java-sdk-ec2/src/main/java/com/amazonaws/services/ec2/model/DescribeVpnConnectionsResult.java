@@ -37,6 +37,7 @@ public class DescribeVpnConnectionsResult implements Serializable, Cloneable {
      * 
      * @return Information about one or more VPN connections.
      */
+
     public java.util.List<VpnConnection> getVpnConnections() {
         if (vpnConnections == null) {
             vpnConnections = new com.amazonaws.internal.SdkInternalList<VpnConnection>();
@@ -52,6 +53,7 @@ public class DescribeVpnConnectionsResult implements Serializable, Cloneable {
      * @param vpnConnections
      *        Information about one or more VPN connections.
      */
+
     public void setVpnConnections(
             java.util.Collection<VpnConnection> vpnConnections) {
         if (vpnConnections == null) {
@@ -79,6 +81,7 @@ public class DescribeVpnConnectionsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVpnConnectionsResult withVpnConnections(
             VpnConnection... vpnConnections) {
         if (this.vpnConnections == null) {
@@ -101,6 +104,7 @@ public class DescribeVpnConnectionsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVpnConnectionsResult withVpnConnections(
             java.util.Collection<VpnConnection> vpnConnections) {
         setVpnConnections(vpnConnections);

@@ -59,6 +59,7 @@ public class ListMFADevicesResult implements Serializable, Cloneable {
      * 
      * @return A list of MFA devices.
      */
+
     public java.util.List<MFADevice> getMFADevices() {
         if (mFADevices == null) {
             mFADevices = new com.amazonaws.internal.SdkInternalList<MFADevice>();
@@ -74,6 +75,7 @@ public class ListMFADevicesResult implements Serializable, Cloneable {
      * @param mFADevices
      *        A list of MFA devices.
      */
+
     public void setMFADevices(java.util.Collection<MFADevice> mFADevices) {
         if (mFADevices == null) {
             this.mFADevices = null;
@@ -100,6 +102,7 @@ public class ListMFADevicesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListMFADevicesResult withMFADevices(MFADevice... mFADevices) {
         if (this.mFADevices == null) {
             setMFADevices(new com.amazonaws.internal.SdkInternalList<MFADevice>(
@@ -121,6 +124,7 @@ public class ListMFADevicesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListMFADevicesResult withMFADevices(
             java.util.Collection<MFADevice> mFADevices) {
         setMFADevices(mFADevices);
@@ -148,6 +152,7 @@ public class ListMFADevicesResult implements Serializable, Cloneable {
      *        <code>IsTruncated</code> after every call to ensure that you
      *        receive all of your results.
      */
+
     public void setIsTruncated(Boolean isTruncated) {
         this.isTruncated = isTruncated;
     }
@@ -172,6 +177,7 @@ public class ListMFADevicesResult implements Serializable, Cloneable {
      *         <code>IsTruncated</code> after every call to ensure that you
      *         receive all of your results.
      */
+
     public Boolean getIsTruncated() {
         return this.isTruncated;
     }
@@ -199,6 +205,7 @@ public class ListMFADevicesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListMFADevicesResult withIsTruncated(Boolean isTruncated) {
         setIsTruncated(isTruncated);
         return this;
@@ -224,6 +231,7 @@ public class ListMFADevicesResult implements Serializable, Cloneable {
      *         <code>IsTruncated</code> after every call to ensure that you
      *         receive all of your results.
      */
+
     public Boolean isTruncated() {
         return this.isTruncated;
     }
@@ -240,6 +248,7 @@ public class ListMFADevicesResult implements Serializable, Cloneable {
      *        is present and contains the value to use for the
      *        <code>Marker</code> parameter in a subsequent pagination request.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -255,6 +264,7 @@ public class ListMFADevicesResult implements Serializable, Cloneable {
      *         is present and contains the value to use for the
      *         <code>Marker</code> parameter in a subsequent pagination request.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -273,6 +283,7 @@ public class ListMFADevicesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListMFADevicesResult withMarker(String marker) {
         setMarker(marker);
         return this;

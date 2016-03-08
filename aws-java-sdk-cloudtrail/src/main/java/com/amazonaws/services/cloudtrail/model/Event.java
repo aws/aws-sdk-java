@@ -72,6 +72,7 @@ public class Event implements Serializable, Cloneable {
      * @param eventId
      *        The CloudTrail ID of the event returned.
      */
+
     public void setEventId(String eventId) {
         this.eventId = eventId;
     }
@@ -83,6 +84,7 @@ public class Event implements Serializable, Cloneable {
      * 
      * @return The CloudTrail ID of the event returned.
      */
+
     public String getEventId() {
         return this.eventId;
     }
@@ -97,6 +99,7 @@ public class Event implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Event withEventId(String eventId) {
         setEventId(eventId);
         return this;
@@ -110,6 +113,7 @@ public class Event implements Serializable, Cloneable {
      * @param eventName
      *        The name of the event returned.
      */
+
     public void setEventName(String eventName) {
         this.eventName = eventName;
     }
@@ -121,6 +125,7 @@ public class Event implements Serializable, Cloneable {
      * 
      * @return The name of the event returned.
      */
+
     public String getEventName() {
         return this.eventName;
     }
@@ -135,6 +140,7 @@ public class Event implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Event withEventName(String eventName) {
         setEventName(eventName);
         return this;
@@ -148,6 +154,7 @@ public class Event implements Serializable, Cloneable {
      * @param eventTime
      *        The date and time of the event returned.
      */
+
     public void setEventTime(java.util.Date eventTime) {
         this.eventTime = eventTime;
     }
@@ -159,6 +166,7 @@ public class Event implements Serializable, Cloneable {
      * 
      * @return The date and time of the event returned.
      */
+
     public java.util.Date getEventTime() {
         return this.eventTime;
     }
@@ -173,6 +181,7 @@ public class Event implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Event withEventTime(java.util.Date eventTime) {
         setEventTime(eventTime);
         return this;
@@ -188,6 +197,7 @@ public class Event implements Serializable, Cloneable {
      *        A user name or role name of the requester that called the API in
      *        the event returned.
      */
+
     public void setUsername(String username) {
         this.username = username;
     }
@@ -201,6 +211,7 @@ public class Event implements Serializable, Cloneable {
      * @return A user name or role name of the requester that called the API in
      *         the event returned.
      */
+
     public String getUsername() {
         return this.username;
     }
@@ -217,6 +228,7 @@ public class Event implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Event withUsername(String username) {
         setUsername(username);
         return this;
@@ -229,6 +241,7 @@ public class Event implements Serializable, Cloneable {
      * 
      * @return A list of resources referenced by the event returned.
      */
+
     public java.util.List<Resource> getResources() {
         if (resources == null) {
             resources = new com.amazonaws.internal.SdkInternalList<Resource>();
@@ -244,6 +257,7 @@ public class Event implements Serializable, Cloneable {
      * @param resources
      *        A list of resources referenced by the event returned.
      */
+
     public void setResources(java.util.Collection<Resource> resources) {
         if (resources == null) {
             this.resources = null;
@@ -270,6 +284,7 @@ public class Event implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Event withResources(Resource... resources) {
         if (this.resources == null) {
             setResources(new com.amazonaws.internal.SdkInternalList<Resource>(
@@ -291,6 +306,7 @@ public class Event implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Event withResources(java.util.Collection<Resource> resources) {
         setResources(resources);
         return this;
@@ -305,6 +321,7 @@ public class Event implements Serializable, Cloneable {
      *        A JSON string that contains a representation of the event
      *        returned.
      */
+
     public void setCloudTrailEvent(String cloudTrailEvent) {
         this.cloudTrailEvent = cloudTrailEvent;
     }
@@ -317,6 +334,7 @@ public class Event implements Serializable, Cloneable {
      * @return A JSON string that contains a representation of the event
      *         returned.
      */
+
     public String getCloudTrailEvent() {
         return this.cloudTrailEvent;
     }
@@ -332,6 +350,7 @@ public class Event implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Event withCloudTrailEvent(String cloudTrailEvent) {
         setCloudTrailEvent(cloudTrailEvent);
         return this;

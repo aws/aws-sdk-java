@@ -59,6 +59,7 @@ public class DescribeSpotFleetRequestsRequest extends AmazonWebServiceRequest
      * 
      * @return The IDs of the Spot fleet requests.
      */
+
     public java.util.List<String> getSpotFleetRequestIds() {
         if (spotFleetRequestIds == null) {
             spotFleetRequestIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -74,6 +75,7 @@ public class DescribeSpotFleetRequestsRequest extends AmazonWebServiceRequest
      * @param spotFleetRequestIds
      *        The IDs of the Spot fleet requests.
      */
+
     public void setSpotFleetRequestIds(
             java.util.Collection<String> spotFleetRequestIds) {
         if (spotFleetRequestIds == null) {
@@ -101,6 +103,7 @@ public class DescribeSpotFleetRequestsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSpotFleetRequestsRequest withSpotFleetRequestIds(
             String... spotFleetRequestIds) {
         if (this.spotFleetRequestIds == null) {
@@ -123,6 +126,7 @@ public class DescribeSpotFleetRequestsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSpotFleetRequestsRequest withSpotFleetRequestIds(
             java.util.Collection<String> spotFleetRequestIds) {
         setSpotFleetRequestIds(spotFleetRequestIds);
@@ -137,6 +141,7 @@ public class DescribeSpotFleetRequestsRequest extends AmazonWebServiceRequest
      * @param nextToken
      *        The token for the next set of results.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -148,6 +153,7 @@ public class DescribeSpotFleetRequestsRequest extends AmazonWebServiceRequest
      * 
      * @return The token for the next set of results.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -162,6 +168,7 @@ public class DescribeSpotFleetRequestsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSpotFleetRequestsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -181,6 +188,7 @@ public class DescribeSpotFleetRequestsRequest extends AmazonWebServiceRequest
      *        the remaining results, make another call with the returned
      *        <code>NextToken</code> value.
      */
+
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
     }
@@ -198,6 +206,7 @@ public class DescribeSpotFleetRequestsRequest extends AmazonWebServiceRequest
      *         retrieve the remaining results, make another call with the
      *         returned <code>NextToken</code> value.
      */
+
     public Integer getMaxResults() {
         return this.maxResults;
     }
@@ -218,6 +227,7 @@ public class DescribeSpotFleetRequestsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSpotFleetRequestsRequest withMaxResults(Integer maxResults) {
         setMaxResults(maxResults);
         return this;

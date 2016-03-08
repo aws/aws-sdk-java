@@ -58,6 +58,7 @@ public class ClientData implements Serializable, Cloneable {
      * @param uploadStart
      *        The time that the disk upload starts.
      */
+
     public void setUploadStart(java.util.Date uploadStart) {
         this.uploadStart = uploadStart;
     }
@@ -69,6 +70,7 @@ public class ClientData implements Serializable, Cloneable {
      * 
      * @return The time that the disk upload starts.
      */
+
     public java.util.Date getUploadStart() {
         return this.uploadStart;
     }
@@ -83,6 +85,7 @@ public class ClientData implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ClientData withUploadStart(java.util.Date uploadStart) {
         setUploadStart(uploadStart);
         return this;
@@ -96,6 +99,7 @@ public class ClientData implements Serializable, Cloneable {
      * @param uploadEnd
      *        The time that the disk upload ends.
      */
+
     public void setUploadEnd(java.util.Date uploadEnd) {
         this.uploadEnd = uploadEnd;
     }
@@ -107,6 +111,7 @@ public class ClientData implements Serializable, Cloneable {
      * 
      * @return The time that the disk upload ends.
      */
+
     public java.util.Date getUploadEnd() {
         return this.uploadEnd;
     }
@@ -121,6 +126,7 @@ public class ClientData implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ClientData withUploadEnd(java.util.Date uploadEnd) {
         setUploadEnd(uploadEnd);
         return this;
@@ -134,6 +140,7 @@ public class ClientData implements Serializable, Cloneable {
      * @param uploadSize
      *        The size of the uploaded disk image, in GiB.
      */
+
     public void setUploadSize(Double uploadSize) {
         this.uploadSize = uploadSize;
     }
@@ -145,6 +152,7 @@ public class ClientData implements Serializable, Cloneable {
      * 
      * @return The size of the uploaded disk image, in GiB.
      */
+
     public Double getUploadSize() {
         return this.uploadSize;
     }
@@ -159,6 +167,7 @@ public class ClientData implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ClientData withUploadSize(Double uploadSize) {
         setUploadSize(uploadSize);
         return this;
@@ -172,6 +181,7 @@ public class ClientData implements Serializable, Cloneable {
      * @param comment
      *        A user-defined comment about the disk upload.
      */
+
     public void setComment(String comment) {
         this.comment = comment;
     }
@@ -183,6 +193,7 @@ public class ClientData implements Serializable, Cloneable {
      * 
      * @return A user-defined comment about the disk upload.
      */
+
     public String getComment() {
         return this.comment;
     }
@@ -197,6 +208,7 @@ public class ClientData implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ClientData withComment(String comment) {
         setComment(comment);
         return this;

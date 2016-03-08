@@ -45,6 +45,7 @@ public class PutConfigurationRecorderRequest extends AmazonWebServiceRequest
      *        The configuration recorder object that records each configuration
      *        change made to the resources.
      */
+
     public void setConfigurationRecorder(
             ConfigurationRecorder configurationRecorder) {
         this.configurationRecorder = configurationRecorder;
@@ -59,6 +60,7 @@ public class PutConfigurationRecorderRequest extends AmazonWebServiceRequest
      * @return The configuration recorder object that records each configuration
      *         change made to the resources.
      */
+
     public ConfigurationRecorder getConfigurationRecorder() {
         return this.configurationRecorder;
     }
@@ -75,6 +77,7 @@ public class PutConfigurationRecorderRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutConfigurationRecorderRequest withConfigurationRecorder(
             ConfigurationRecorder configurationRecorder) {
         setConfigurationRecorder(configurationRecorder);

@@ -34,6 +34,7 @@ public class ListJobsRequest extends AmazonWebServiceRequest implements
     /**
      * @param maxJobs
      */
+
     public void setMaxJobs(Integer maxJobs) {
         this.maxJobs = maxJobs;
     }
@@ -41,6 +42,7 @@ public class ListJobsRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public Integer getMaxJobs() {
         return this.maxJobs;
     }
@@ -50,6 +52,7 @@ public class ListJobsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListJobsRequest withMaxJobs(Integer maxJobs) {
         setMaxJobs(maxJobs);
         return this;
@@ -58,6 +61,7 @@ public class ListJobsRequest extends AmazonWebServiceRequest implements
     /**
      * @param marker
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -65,6 +69,7 @@ public class ListJobsRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -74,6 +79,7 @@ public class ListJobsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListJobsRequest withMarker(String marker) {
         setMarker(marker);
         return this;
@@ -82,6 +88,7 @@ public class ListJobsRequest extends AmazonWebServiceRequest implements
     /**
      * @param aPIVersion
      */
+
     public void setAPIVersion(String aPIVersion) {
         this.aPIVersion = aPIVersion;
     }
@@ -89,6 +96,7 @@ public class ListJobsRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public String getAPIVersion() {
         return this.aPIVersion;
     }
@@ -98,6 +106,7 @@ public class ListJobsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListJobsRequest withAPIVersion(String aPIVersion) {
         setAPIVersion(aPIVersion);
         return this;

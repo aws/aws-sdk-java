@@ -58,6 +58,7 @@ public class SpotFleetRequestConfig implements Serializable, Cloneable {
      * @param spotFleetRequestId
      *        The ID of the Spot fleet request.
      */
+
     public void setSpotFleetRequestId(String spotFleetRequestId) {
         this.spotFleetRequestId = spotFleetRequestId;
     }
@@ -69,6 +70,7 @@ public class SpotFleetRequestConfig implements Serializable, Cloneable {
      * 
      * @return The ID of the Spot fleet request.
      */
+
     public String getSpotFleetRequestId() {
         return this.spotFleetRequestId;
     }
@@ -83,6 +85,7 @@ public class SpotFleetRequestConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SpotFleetRequestConfig withSpotFleetRequestId(
             String spotFleetRequestId) {
         setSpotFleetRequestId(spotFleetRequestId);
@@ -98,6 +101,7 @@ public class SpotFleetRequestConfig implements Serializable, Cloneable {
      *        The state of the Spot fleet request.
      * @see BatchState
      */
+
     public void setSpotFleetRequestState(String spotFleetRequestState) {
         this.spotFleetRequestState = spotFleetRequestState;
     }
@@ -110,6 +114,7 @@ public class SpotFleetRequestConfig implements Serializable, Cloneable {
      * @return The state of the Spot fleet request.
      * @see BatchState
      */
+
     public String getSpotFleetRequestState() {
         return this.spotFleetRequestState;
     }
@@ -125,6 +130,7 @@ public class SpotFleetRequestConfig implements Serializable, Cloneable {
      *         chained together.
      * @see BatchState
      */
+
     public SpotFleetRequestConfig withSpotFleetRequestState(
             String spotFleetRequestState) {
         setSpotFleetRequestState(spotFleetRequestState);
@@ -142,6 +148,7 @@ public class SpotFleetRequestConfig implements Serializable, Cloneable {
      *         chained together.
      * @see BatchState
      */
+
     public void setSpotFleetRequestState(BatchState spotFleetRequestState) {
         this.spotFleetRequestState = spotFleetRequestState.toString();
     }
@@ -157,6 +164,7 @@ public class SpotFleetRequestConfig implements Serializable, Cloneable {
      *         chained together.
      * @see BatchState
      */
+
     public SpotFleetRequestConfig withSpotFleetRequestState(
             BatchState spotFleetRequestState) {
         setSpotFleetRequestState(spotFleetRequestState);
@@ -171,6 +179,7 @@ public class SpotFleetRequestConfig implements Serializable, Cloneable {
      * @param spotFleetRequestConfig
      *        Information about the configuration of the Spot fleet request.
      */
+
     public void setSpotFleetRequestConfig(
             SpotFleetRequestConfigData spotFleetRequestConfig) {
         this.spotFleetRequestConfig = spotFleetRequestConfig;
@@ -183,6 +192,7 @@ public class SpotFleetRequestConfig implements Serializable, Cloneable {
      * 
      * @return Information about the configuration of the Spot fleet request.
      */
+
     public SpotFleetRequestConfigData getSpotFleetRequestConfig() {
         return this.spotFleetRequestConfig;
     }
@@ -197,6 +207,7 @@ public class SpotFleetRequestConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SpotFleetRequestConfig withSpotFleetRequestConfig(
             SpotFleetRequestConfigData spotFleetRequestConfig) {
         setSpotFleetRequestConfig(spotFleetRequestConfig);
@@ -211,6 +222,7 @@ public class SpotFleetRequestConfig implements Serializable, Cloneable {
      * @param createTime
      *        The creation date and time of the request.
      */
+
     public void setCreateTime(java.util.Date createTime) {
         this.createTime = createTime;
     }
@@ -222,6 +234,7 @@ public class SpotFleetRequestConfig implements Serializable, Cloneable {
      * 
      * @return The creation date and time of the request.
      */
+
     public java.util.Date getCreateTime() {
         return this.createTime;
     }
@@ -236,6 +249,7 @@ public class SpotFleetRequestConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SpotFleetRequestConfig withCreateTime(java.util.Date createTime) {
         setCreateTime(createTime);
         return this;

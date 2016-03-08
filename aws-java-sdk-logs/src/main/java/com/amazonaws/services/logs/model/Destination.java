@@ -73,6 +73,7 @@ public class Destination implements Serializable, Cloneable {
      * @param destinationName
      *        Name of the destination.
      */
+
     public void setDestinationName(String destinationName) {
         this.destinationName = destinationName;
     }
@@ -84,6 +85,7 @@ public class Destination implements Serializable, Cloneable {
      * 
      * @return Name of the destination.
      */
+
     public String getDestinationName() {
         return this.destinationName;
     }
@@ -98,6 +100,7 @@ public class Destination implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Destination withDestinationName(String destinationName) {
         setDestinationName(destinationName);
         return this;
@@ -113,6 +116,7 @@ public class Destination implements Serializable, Cloneable {
      *        ARN of the physical target where the log events will be delivered
      *        (eg. ARN of a Kinesis stream).
      */
+
     public void setTargetArn(String targetArn) {
         this.targetArn = targetArn;
     }
@@ -126,6 +130,7 @@ public class Destination implements Serializable, Cloneable {
      * @return ARN of the physical target where the log events will be delivered
      *         (eg. ARN of a Kinesis stream).
      */
+
     public String getTargetArn() {
         return this.targetArn;
     }
@@ -142,6 +147,7 @@ public class Destination implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Destination withTargetArn(String targetArn) {
         setTargetArn(targetArn);
         return this;
@@ -155,6 +161,7 @@ public class Destination implements Serializable, Cloneable {
      * @param roleArn
      *        A role for impersonation for delivering log events to the target.
      */
+
     public void setRoleArn(String roleArn) {
         this.roleArn = roleArn;
     }
@@ -166,6 +173,7 @@ public class Destination implements Serializable, Cloneable {
      * 
      * @return A role for impersonation for delivering log events to the target.
      */
+
     public String getRoleArn() {
         return this.roleArn;
     }
@@ -180,6 +188,7 @@ public class Destination implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Destination withRoleArn(String roleArn) {
         setRoleArn(roleArn);
         return this;
@@ -195,6 +204,7 @@ public class Destination implements Serializable, Cloneable {
      *        An IAM policy document that governs which AWS accounts can create
      *        subscription filters against this destination.
      */
+
     public void setAccessPolicy(String accessPolicy) {
         this.accessPolicy = accessPolicy;
     }
@@ -208,6 +218,7 @@ public class Destination implements Serializable, Cloneable {
      * @return An IAM policy document that governs which AWS accounts can create
      *         subscription filters against this destination.
      */
+
     public String getAccessPolicy() {
         return this.accessPolicy;
     }
@@ -224,6 +235,7 @@ public class Destination implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Destination withAccessPolicy(String accessPolicy) {
         setAccessPolicy(accessPolicy);
         return this;
@@ -237,6 +249,7 @@ public class Destination implements Serializable, Cloneable {
      * @param arn
      *        ARN of this destination.
      */
+
     public void setArn(String arn) {
         this.arn = arn;
     }
@@ -248,6 +261,7 @@ public class Destination implements Serializable, Cloneable {
      * 
      * @return ARN of this destination.
      */
+
     public String getArn() {
         return this.arn;
     }
@@ -262,6 +276,7 @@ public class Destination implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Destination withArn(String arn) {
         setArn(arn);
         return this;
@@ -277,6 +292,7 @@ public class Destination implements Serializable, Cloneable {
      *        A point in time expressed as the number of milliseconds since Jan
      *        1, 1970 00:00:00 UTC specifying when this destination was created.
      */
+
     public void setCreationTime(Long creationTime) {
         this.creationTime = creationTime;
     }
@@ -291,6 +307,7 @@ public class Destination implements Serializable, Cloneable {
      *         1, 1970 00:00:00 UTC specifying when this destination was
      *         created.
      */
+
     public Long getCreationTime() {
         return this.creationTime;
     }
@@ -307,6 +324,7 @@ public class Destination implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Destination withCreationTime(Long creationTime) {
         setCreationTime(creationTime);
         return this;

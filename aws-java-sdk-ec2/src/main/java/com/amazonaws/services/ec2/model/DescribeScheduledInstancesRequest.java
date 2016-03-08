@@ -97,6 +97,7 @@ public class DescribeScheduledInstancesRequest extends AmazonWebServiceRequest
      * 
      * @return One or more Scheduled Instance IDs.
      */
+
     public java.util.List<String> getScheduledInstanceIds() {
         if (scheduledInstanceIds == null) {
             scheduledInstanceIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -112,6 +113,7 @@ public class DescribeScheduledInstancesRequest extends AmazonWebServiceRequest
      * @param scheduledInstanceIds
      *        One or more Scheduled Instance IDs.
      */
+
     public void setScheduledInstanceIds(
             java.util.Collection<String> scheduledInstanceIds) {
         if (scheduledInstanceIds == null) {
@@ -139,6 +141,7 @@ public class DescribeScheduledInstancesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeScheduledInstancesRequest withScheduledInstanceIds(
             String... scheduledInstanceIds) {
         if (this.scheduledInstanceIds == null) {
@@ -161,6 +164,7 @@ public class DescribeScheduledInstancesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeScheduledInstancesRequest withScheduledInstanceIds(
             java.util.Collection<String> scheduledInstanceIds) {
         setScheduledInstanceIds(scheduledInstanceIds);
@@ -175,6 +179,7 @@ public class DescribeScheduledInstancesRequest extends AmazonWebServiceRequest
      * @param slotStartTimeRange
      *        The time period for the first schedule to start.
      */
+
     public void setSlotStartTimeRange(
             SlotStartTimeRangeRequest slotStartTimeRange) {
         this.slotStartTimeRange = slotStartTimeRange;
@@ -187,6 +192,7 @@ public class DescribeScheduledInstancesRequest extends AmazonWebServiceRequest
      * 
      * @return The time period for the first schedule to start.
      */
+
     public SlotStartTimeRangeRequest getSlotStartTimeRange() {
         return this.slotStartTimeRange;
     }
@@ -201,6 +207,7 @@ public class DescribeScheduledInstancesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeScheduledInstancesRequest withSlotStartTimeRange(
             SlotStartTimeRangeRequest slotStartTimeRange) {
         setSlotStartTimeRange(slotStartTimeRange);
@@ -215,6 +222,7 @@ public class DescribeScheduledInstancesRequest extends AmazonWebServiceRequest
      * @param nextToken
      *        The token for the next set of results.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -226,6 +234,7 @@ public class DescribeScheduledInstancesRequest extends AmazonWebServiceRequest
      * 
      * @return The token for the next set of results.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -240,6 +249,7 @@ public class DescribeScheduledInstancesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeScheduledInstancesRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -259,6 +269,7 @@ public class DescribeScheduledInstancesRequest extends AmazonWebServiceRequest
      *        retrieve the remaining results, make another call with the
      *        returned <code>NextToken</code> value.
      */
+
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
     }
@@ -276,6 +287,7 @@ public class DescribeScheduledInstancesRequest extends AmazonWebServiceRequest
      *         retrieve the remaining results, make another call with the
      *         returned <code>NextToken</code> value.
      */
+
     public Integer getMaxResults() {
         return this.maxResults;
     }
@@ -296,6 +308,7 @@ public class DescribeScheduledInstancesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeScheduledInstancesRequest withMaxResults(Integer maxResults) {
         setMaxResults(maxResults);
         return this;
@@ -359,6 +372,7 @@ public class DescribeScheduledInstancesRequest extends AmazonWebServiceRequest
      *         </p>
      *         </li>
      */
+
     public java.util.List<Filter> getFilters() {
         if (filters == null) {
             filters = new com.amazonaws.internal.SdkInternalList<Filter>();
@@ -425,6 +439,7 @@ public class DescribeScheduledInstancesRequest extends AmazonWebServiceRequest
      *        </p>
      *        </li>
      */
+
     public void setFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
             this.filters = null;
@@ -502,6 +517,7 @@ public class DescribeScheduledInstancesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeScheduledInstancesRequest withFilters(Filter... filters) {
         if (this.filters == null) {
             setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(
@@ -574,6 +590,7 @@ public class DescribeScheduledInstancesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeScheduledInstancesRequest withFilters(
             java.util.Collection<Filter> filters) {
         setFilters(filters);

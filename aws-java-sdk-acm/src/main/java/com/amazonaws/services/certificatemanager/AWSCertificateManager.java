@@ -25,11 +25,11 @@ import com.amazonaws.services.certificatemanager.model.*;
  * <p>
  * <fullname>AWS Certificate Manager</fullname>
  * <p>
- * Welcome to the AWS Certificate Manager (ACM) CLI Command Reference. This
- * guide provides descriptions, syntax, and usage examples for each ACM CLI
- * command. You can use AWS Certificate Manager to request ACM Certificates for
- * your AWS-based websites and applications. For general information about using
- * ACM and for more information about using the console, see the <a
+ * Welcome to the AWS Certificate Manager (ACM) Command Reference. This guide
+ * provides descriptions, syntax, and usage examples for each ACM command. You
+ * can use AWS Certificate Manager to request ACM Certificates for your
+ * AWS-based websites and applications. For general information about using ACM
+ * and for more information about using the console, see the <a
  * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">AWS
  * Certificate Manager User Guide</a>. For more information about using the ACM
  * API, see the <a
@@ -214,8 +214,8 @@ public interface AWSCertificateManager {
      *         more domains than are allowed or you've requested too many
      *         certificates for your account. See the exception message returned
      *         by ACM to determine which limit you have violated. For more
-     *         information about ACM limits, see the <a
-     *         href="http://docs.amazon.com/acm/latest/userguide/limits.html"
+     *         information about ACM limits, see the <a href=
+     *         "http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html"
      *         >Limits</a> topic.
      * @throws InvalidDomainValidationOptionsException
      *         One or more values in the <a>DomainValidationOption</a> structure

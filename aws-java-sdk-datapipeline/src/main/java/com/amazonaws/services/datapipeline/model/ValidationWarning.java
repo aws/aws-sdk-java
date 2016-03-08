@@ -48,6 +48,7 @@ public class ValidationWarning implements Serializable, Cloneable {
      * @param id
      *        The identifier of the object that contains the validation warning.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -60,6 +61,7 @@ public class ValidationWarning implements Serializable, Cloneable {
      * @return The identifier of the object that contains the validation
      *         warning.
      */
+
     public String getId() {
         return this.id;
     }
@@ -74,6 +76,7 @@ public class ValidationWarning implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ValidationWarning withId(String id) {
         setId(id);
         return this;
@@ -86,6 +89,7 @@ public class ValidationWarning implements Serializable, Cloneable {
      * 
      * @return A description of the validation warning.
      */
+
     public java.util.List<String> getWarnings() {
         if (warnings == null) {
             warnings = new com.amazonaws.internal.SdkInternalList<String>();
@@ -101,6 +105,7 @@ public class ValidationWarning implements Serializable, Cloneable {
      * @param warnings
      *        A description of the validation warning.
      */
+
     public void setWarnings(java.util.Collection<String> warnings) {
         if (warnings == null) {
             this.warnings = null;
@@ -127,6 +132,7 @@ public class ValidationWarning implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ValidationWarning withWarnings(String... warnings) {
         if (this.warnings == null) {
             setWarnings(new com.amazonaws.internal.SdkInternalList<String>(
@@ -148,6 +154,7 @@ public class ValidationWarning implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ValidationWarning withWarnings(java.util.Collection<String> warnings) {
         setWarnings(warnings);
         return this;

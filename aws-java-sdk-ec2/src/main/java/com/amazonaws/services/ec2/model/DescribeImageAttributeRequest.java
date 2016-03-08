@@ -107,6 +107,7 @@ public class DescribeImageAttributeRequest extends AmazonWebServiceRequest
      * @param imageId
      *        The ID of the AMI.
      */
+
     public void setImageId(String imageId) {
         this.imageId = imageId;
     }
@@ -118,6 +119,7 @@ public class DescribeImageAttributeRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the AMI.
      */
+
     public String getImageId() {
         return this.imageId;
     }
@@ -132,6 +134,7 @@ public class DescribeImageAttributeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeImageAttributeRequest withImageId(String imageId) {
         setImageId(imageId);
         return this;
@@ -159,6 +162,7 @@ public class DescribeImageAttributeRequest extends AmazonWebServiceRequest
      *        mapping for the AMI.
      * @see ImageAttributeName
      */
+
     public void setAttribute(String attribute) {
         this.attribute = attribute;
     }
@@ -184,6 +188,7 @@ public class DescribeImageAttributeRequest extends AmazonWebServiceRequest
      *         mapping for the AMI.
      * @see ImageAttributeName
      */
+
     public String getAttribute() {
         return this.attribute;
     }
@@ -212,6 +217,7 @@ public class DescribeImageAttributeRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see ImageAttributeName
      */
+
     public DescribeImageAttributeRequest withAttribute(String attribute) {
         setAttribute(attribute);
         return this;
@@ -241,6 +247,7 @@ public class DescribeImageAttributeRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see ImageAttributeName
      */
+
     public void setAttribute(ImageAttributeName attribute) {
         this.attribute = attribute.toString();
     }
@@ -269,6 +276,7 @@ public class DescribeImageAttributeRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see ImageAttributeName
      */
+
     public DescribeImageAttributeRequest withAttribute(
             ImageAttributeName attribute) {
         setAttribute(attribute);

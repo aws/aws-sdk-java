@@ -94,6 +94,7 @@ public class AddTagsRequest extends AmazonWebServiceRequest implements
      *        The Amazon EMR resource identifier to which tags will be added.
      *        This value must be a cluster identifier.
      */
+
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
     }
@@ -107,6 +108,7 @@ public class AddTagsRequest extends AmazonWebServiceRequest implements
      * @return The Amazon EMR resource identifier to which tags will be added.
      *         This value must be a cluster identifier.
      */
+
     public String getResourceId() {
         return this.resourceId;
     }
@@ -123,6 +125,7 @@ public class AddTagsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddTagsRequest withResourceId(String resourceId) {
         setResourceId(resourceId);
         return this;
@@ -142,6 +145,7 @@ public class AddTagsRequest extends AmazonWebServiceRequest implements
      *         characters, and an optional value string with a maximum of 256
      *         characters.
      */
+
     public java.util.List<Tag> getTags() {
         if (tags == null) {
             tags = new com.amazonaws.internal.SdkInternalList<Tag>();
@@ -163,6 +167,7 @@ public class AddTagsRequest extends AmazonWebServiceRequest implements
      *        of a required key string with a maximum of 128 characters, and an
      *        optional value string with a maximum of 256 characters.
      */
+
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
             this.tags = null;
@@ -194,6 +199,7 @@ public class AddTagsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddTagsRequest withTags(Tag... tags) {
         if (this.tags == null) {
             setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
@@ -220,6 +226,7 @@ public class AddTagsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddTagsRequest withTags(java.util.Collection<Tag> tags) {
         setTags(tags);
         return this;

@@ -52,6 +52,7 @@ public class UpdateRadiusRequest extends AmazonWebServiceRequest implements
      *        The identifier of the directory for which to update the RADIUS
      *        server information.
      */
+
     public void setDirectoryId(String directoryId) {
         this.directoryId = directoryId;
     }
@@ -65,6 +66,7 @@ public class UpdateRadiusRequest extends AmazonWebServiceRequest implements
      * @return The identifier of the directory for which to update the RADIUS
      *         server information.
      */
+
     public String getDirectoryId() {
         return this.directoryId;
     }
@@ -81,6 +83,7 @@ public class UpdateRadiusRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateRadiusRequest withDirectoryId(String directoryId) {
         setDirectoryId(directoryId);
         return this;
@@ -96,6 +99,7 @@ public class UpdateRadiusRequest extends AmazonWebServiceRequest implements
      *        A <a>RadiusSettings</a> object that contains information about the
      *        RADIUS server.
      */
+
     public void setRadiusSettings(RadiusSettings radiusSettings) {
         this.radiusSettings = radiusSettings;
     }
@@ -109,6 +113,7 @@ public class UpdateRadiusRequest extends AmazonWebServiceRequest implements
      * @return A <a>RadiusSettings</a> object that contains information about
      *         the RADIUS server.
      */
+
     public RadiusSettings getRadiusSettings() {
         return this.radiusSettings;
     }
@@ -125,6 +130,7 @@ public class UpdateRadiusRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateRadiusRequest withRadiusSettings(RadiusSettings radiusSettings) {
         setRadiusSettings(radiusSettings);
         return this;

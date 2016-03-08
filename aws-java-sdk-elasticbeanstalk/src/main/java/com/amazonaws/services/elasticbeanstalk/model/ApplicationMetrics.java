@@ -69,6 +69,7 @@ public class ApplicationMetrics implements Serializable, Cloneable {
      *        ) within the most recent time slice of 10 seconds (
      *        <code>duration</code>).
      */
+
     public void setDuration(Integer duration) {
         this.duration = duration;
     }
@@ -85,6 +86,7 @@ public class ApplicationMetrics implements Serializable, Cloneable {
      *         <code>request_count</code>) within the most recent time slice of
      *         10 seconds (<code>duration</code>).
      */
+
     public Integer getDuration() {
         return this.duration;
     }
@@ -104,6 +106,7 @@ public class ApplicationMetrics implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ApplicationMetrics withDuration(Integer duration) {
         setDuration(duration);
         return this;
@@ -119,6 +122,7 @@ public class ApplicationMetrics implements Serializable, Cloneable {
      *        Average number of requests handled by the web server per second
      *        over the last 10 seconds.
      */
+
     public void setRequestCount(Integer requestCount) {
         this.requestCount = requestCount;
     }
@@ -132,6 +136,7 @@ public class ApplicationMetrics implements Serializable, Cloneable {
      * @return Average number of requests handled by the web server per second
      *         over the last 10 seconds.
      */
+
     public Integer getRequestCount() {
         return this.requestCount;
     }
@@ -148,6 +153,7 @@ public class ApplicationMetrics implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ApplicationMetrics withRequestCount(Integer requestCount) {
         setRequestCount(requestCount);
         return this;
@@ -163,6 +169,7 @@ public class ApplicationMetrics implements Serializable, Cloneable {
      *        Represents the percentage of requests over the last 10 seconds
      *        that resulted in each type of status code response.
      */
+
     public void setStatusCodes(StatusCodes statusCodes) {
         this.statusCodes = statusCodes;
     }
@@ -176,6 +183,7 @@ public class ApplicationMetrics implements Serializable, Cloneable {
      * @return Represents the percentage of requests over the last 10 seconds
      *         that resulted in each type of status code response.
      */
+
     public StatusCodes getStatusCodes() {
         return this.statusCodes;
     }
@@ -192,6 +200,7 @@ public class ApplicationMetrics implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ApplicationMetrics withStatusCodes(StatusCodes statusCodes) {
         setStatusCodes(statusCodes);
         return this;
@@ -209,6 +218,7 @@ public class ApplicationMetrics implements Serializable, Cloneable {
      *        requests over the last 10 seconds. Latencies are in seconds with
      *        one milisecond resolution.
      */
+
     public void setLatency(Latency latency) {
         this.latency = latency;
     }
@@ -224,6 +234,7 @@ public class ApplicationMetrics implements Serializable, Cloneable {
      *         requests over the last 10 seconds. Latencies are in seconds with
      *         one milisecond resolution.
      */
+
     public Latency getLatency() {
         return this.latency;
     }
@@ -242,6 +253,7 @@ public class ApplicationMetrics implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ApplicationMetrics withLatency(Latency latency) {
         setLatency(latency);
         return this;

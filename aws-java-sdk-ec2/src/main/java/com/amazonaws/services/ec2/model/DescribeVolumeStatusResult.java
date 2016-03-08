@@ -44,6 +44,7 @@ public class DescribeVolumeStatusResult implements Serializable, Cloneable {
      * 
      * @return A list of volumes.
      */
+
     public java.util.List<VolumeStatusItem> getVolumeStatuses() {
         if (volumeStatuses == null) {
             volumeStatuses = new com.amazonaws.internal.SdkInternalList<VolumeStatusItem>();
@@ -59,6 +60,7 @@ public class DescribeVolumeStatusResult implements Serializable, Cloneable {
      * @param volumeStatuses
      *        A list of volumes.
      */
+
     public void setVolumeStatuses(
             java.util.Collection<VolumeStatusItem> volumeStatuses) {
         if (volumeStatuses == null) {
@@ -86,6 +88,7 @@ public class DescribeVolumeStatusResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVolumeStatusResult withVolumeStatuses(
             VolumeStatusItem... volumeStatuses) {
         if (this.volumeStatuses == null) {
@@ -108,6 +111,7 @@ public class DescribeVolumeStatusResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVolumeStatusResult withVolumeStatuses(
             java.util.Collection<VolumeStatusItem> volumeStatuses) {
         setVolumeStatuses(volumeStatuses);
@@ -124,6 +128,7 @@ public class DescribeVolumeStatusResult implements Serializable, Cloneable {
      *        The token to use to retrieve the next page of results. This value
      *        is <code>null</code> when there are no more results to return.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -137,6 +142,7 @@ public class DescribeVolumeStatusResult implements Serializable, Cloneable {
      * @return The token to use to retrieve the next page of results. This value
      *         is <code>null</code> when there are no more results to return.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -153,6 +159,7 @@ public class DescribeVolumeStatusResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVolumeStatusResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

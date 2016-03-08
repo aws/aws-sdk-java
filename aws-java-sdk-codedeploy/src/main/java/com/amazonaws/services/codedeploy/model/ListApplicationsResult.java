@@ -47,6 +47,7 @@ public class ListApplicationsResult implements Serializable, Cloneable {
      * 
      * @return A list of application names.
      */
+
     public java.util.List<String> getApplications() {
         if (applications == null) {
             applications = new com.amazonaws.internal.SdkInternalList<String>();
@@ -62,6 +63,7 @@ public class ListApplicationsResult implements Serializable, Cloneable {
      * @param applications
      *        A list of application names.
      */
+
     public void setApplications(java.util.Collection<String> applications) {
         if (applications == null) {
             this.applications = null;
@@ -88,6 +90,7 @@ public class ListApplicationsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListApplicationsResult withApplications(String... applications) {
         if (this.applications == null) {
             setApplications(new com.amazonaws.internal.SdkInternalList<String>(
@@ -109,6 +112,7 @@ public class ListApplicationsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListApplicationsResult withApplications(
             java.util.Collection<String> applications) {
         setApplications(applications);
@@ -128,6 +132,7 @@ public class ListApplicationsResult implements Serializable, Cloneable {
      *        subsequent list applications call to return the next set of
      *        applications in the list.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -144,6 +149,7 @@ public class ListApplicationsResult implements Serializable, Cloneable {
      *         a subsequent list applications call to return the next set of
      *         applications in the list.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -163,6 +169,7 @@ public class ListApplicationsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListApplicationsResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

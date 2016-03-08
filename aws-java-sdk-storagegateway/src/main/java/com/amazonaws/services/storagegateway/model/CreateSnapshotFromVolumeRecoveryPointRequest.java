@@ -32,6 +32,7 @@ public class CreateSnapshotFromVolumeRecoveryPointRequest extends
     /**
      * @param volumeARN
      */
+
     public void setVolumeARN(String volumeARN) {
         this.volumeARN = volumeARN;
     }
@@ -39,6 +40,7 @@ public class CreateSnapshotFromVolumeRecoveryPointRequest extends
     /**
      * @return
      */
+
     public String getVolumeARN() {
         return this.volumeARN;
     }
@@ -48,6 +50,7 @@ public class CreateSnapshotFromVolumeRecoveryPointRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateSnapshotFromVolumeRecoveryPointRequest withVolumeARN(
             String volumeARN) {
         setVolumeARN(volumeARN);
@@ -57,6 +60,7 @@ public class CreateSnapshotFromVolumeRecoveryPointRequest extends
     /**
      * @param snapshotDescription
      */
+
     public void setSnapshotDescription(String snapshotDescription) {
         this.snapshotDescription = snapshotDescription;
     }
@@ -64,6 +68,7 @@ public class CreateSnapshotFromVolumeRecoveryPointRequest extends
     /**
      * @return
      */
+
     public String getSnapshotDescription() {
         return this.snapshotDescription;
     }
@@ -73,6 +78,7 @@ public class CreateSnapshotFromVolumeRecoveryPointRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateSnapshotFromVolumeRecoveryPointRequest withSnapshotDescription(
             String snapshotDescription) {
         setSnapshotDescription(snapshotDescription);

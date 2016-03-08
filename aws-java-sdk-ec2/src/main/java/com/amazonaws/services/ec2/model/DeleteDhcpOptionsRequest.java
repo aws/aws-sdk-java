@@ -63,6 +63,7 @@ public class DeleteDhcpOptionsRequest extends AmazonWebServiceRequest implements
      * @param dhcpOptionsId
      *        The ID of the DHCP options set.
      */
+
     public void setDhcpOptionsId(String dhcpOptionsId) {
         this.dhcpOptionsId = dhcpOptionsId;
     }
@@ -74,6 +75,7 @@ public class DeleteDhcpOptionsRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ID of the DHCP options set.
      */
+
     public String getDhcpOptionsId() {
         return this.dhcpOptionsId;
     }
@@ -88,6 +90,7 @@ public class DeleteDhcpOptionsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteDhcpOptionsRequest withDhcpOptionsId(String dhcpOptionsId) {
         setDhcpOptionsId(dhcpOptionsId);
         return this;

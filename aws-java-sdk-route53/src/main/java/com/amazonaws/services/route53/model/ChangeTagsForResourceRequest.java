@@ -82,6 +82,7 @@ public class ChangeTagsForResourceRequest extends AmazonWebServiceRequest
      *        - The resource type for hosted zones is <code>hostedzone</code>.
      * @see TagResourceType
      */
+
     public void setResourceType(String resourceType) {
         this.resourceType = resourceType;
     }
@@ -106,6 +107,7 @@ public class ChangeTagsForResourceRequest extends AmazonWebServiceRequest
      *         - The resource type for hosted zones is <code>hostedzone</code>.
      * @see TagResourceType
      */
+
     public String getResourceType() {
         return this.resourceType;
     }
@@ -132,6 +134,7 @@ public class ChangeTagsForResourceRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see TagResourceType
      */
+
     public ChangeTagsForResourceRequest withResourceType(String resourceType) {
         setResourceType(resourceType);
         return this;
@@ -159,6 +162,7 @@ public class ChangeTagsForResourceRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see TagResourceType
      */
+
     public void setResourceType(TagResourceType resourceType) {
         this.resourceType = resourceType.toString();
     }
@@ -185,6 +189,7 @@ public class ChangeTagsForResourceRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see TagResourceType
      */
+
     public ChangeTagsForResourceRequest withResourceType(
             TagResourceType resourceType) {
         setResourceType(resourceType);
@@ -200,6 +205,7 @@ public class ChangeTagsForResourceRequest extends AmazonWebServiceRequest
      *        The ID of the resource for which you want to add, change, or
      *        delete tags.
      */
+
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
     }
@@ -212,6 +218,7 @@ public class ChangeTagsForResourceRequest extends AmazonWebServiceRequest
      * @return The ID of the resource for which you want to add, change, or
      *         delete tags.
      */
+
     public String getResourceId() {
         return this.resourceId;
     }
@@ -227,6 +234,7 @@ public class ChangeTagsForResourceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ChangeTagsForResourceRequest withResourceId(String resourceId) {
         setResourceId(resourceId);
         return this;
@@ -243,6 +251,7 @@ public class ChangeTagsForResourceRequest extends AmazonWebServiceRequest
      *         Each <code>Tag</code> element identifies a tag that you want to
      *         add or update for the specified resource.
      */
+
     public java.util.List<Tag> getAddTags() {
         if (addTags == null) {
             addTags = new com.amazonaws.internal.SdkInternalList<Tag>();
@@ -262,6 +271,7 @@ public class ChangeTagsForResourceRequest extends AmazonWebServiceRequest
      *        Each <code>Tag</code> element identifies a tag that you want to
      *        add or update for the specified resource.
      */
+
     public void setAddTags(java.util.Collection<Tag> addTags) {
         if (addTags == null) {
             this.addTags = null;
@@ -291,6 +301,7 @@ public class ChangeTagsForResourceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ChangeTagsForResourceRequest withAddTags(Tag... addTags) {
         if (this.addTags == null) {
             setAddTags(new com.amazonaws.internal.SdkInternalList<Tag>(
@@ -316,6 +327,7 @@ public class ChangeTagsForResourceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ChangeTagsForResourceRequest withAddTags(
             java.util.Collection<Tag> addTags) {
         setAddTags(addTags);
@@ -331,6 +343,7 @@ public class ChangeTagsForResourceRequest extends AmazonWebServiceRequest
      * @return A list of <code>Tag</code> keys that you want to remove from the
      *         specified resource.
      */
+
     public java.util.List<String> getRemoveTagKeys() {
         if (removeTagKeys == null) {
             removeTagKeys = new com.amazonaws.internal.SdkInternalList<String>();
@@ -348,6 +361,7 @@ public class ChangeTagsForResourceRequest extends AmazonWebServiceRequest
      *        A list of <code>Tag</code> keys that you want to remove from the
      *        specified resource.
      */
+
     public void setRemoveTagKeys(java.util.Collection<String> removeTagKeys) {
         if (removeTagKeys == null) {
             this.removeTagKeys = null;
@@ -376,6 +390,7 @@ public class ChangeTagsForResourceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ChangeTagsForResourceRequest withRemoveTagKeys(
             String... removeTagKeys) {
         if (this.removeTagKeys == null) {
@@ -400,6 +415,7 @@ public class ChangeTagsForResourceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ChangeTagsForResourceRequest withRemoveTagKeys(
             java.util.Collection<String> removeTagKeys) {
         setRemoveTagKeys(removeTagKeys);

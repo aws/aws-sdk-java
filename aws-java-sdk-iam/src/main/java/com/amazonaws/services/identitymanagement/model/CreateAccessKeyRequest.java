@@ -60,6 +60,7 @@ public class CreateAccessKeyRequest extends AmazonWebServiceRequest implements
      * @param userName
      *        The user name that the new key will belong to.
      */
+
     public void setUserName(String userName) {
         this.userName = userName;
     }
@@ -71,6 +72,7 @@ public class CreateAccessKeyRequest extends AmazonWebServiceRequest implements
      * 
      * @return The user name that the new key will belong to.
      */
+
     public String getUserName() {
         return this.userName;
     }
@@ -85,6 +87,7 @@ public class CreateAccessKeyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateAccessKeyRequest withUserName(String userName) {
         setUserName(userName);
         return this;

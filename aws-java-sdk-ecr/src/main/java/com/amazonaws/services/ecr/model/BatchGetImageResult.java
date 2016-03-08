@@ -46,6 +46,7 @@ public class BatchGetImageResult implements Serializable, Cloneable {
      * @return A list of image objects corresponding to the image references in
      *         the request.
      */
+
     public java.util.List<Image> getImages() {
         return images;
     }
@@ -60,6 +61,7 @@ public class BatchGetImageResult implements Serializable, Cloneable {
      *        A list of image objects corresponding to the image references in
      *        the request.
      */
+
     public void setImages(java.util.Collection<Image> images) {
         if (images == null) {
             this.images = null;
@@ -87,6 +89,7 @@ public class BatchGetImageResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchGetImageResult withImages(Image... images) {
         if (this.images == null) {
             setImages(new java.util.ArrayList<Image>(images.length));
@@ -109,6 +112,7 @@ public class BatchGetImageResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchGetImageResult withImages(java.util.Collection<Image> images) {
         setImages(images);
         return this;
@@ -121,6 +125,7 @@ public class BatchGetImageResult implements Serializable, Cloneable {
      * 
      * @return Any failures associated with the call.
      */
+
     public java.util.List<ImageFailure> getFailures() {
         return failures;
     }
@@ -133,6 +138,7 @@ public class BatchGetImageResult implements Serializable, Cloneable {
      * @param failures
      *        Any failures associated with the call.
      */
+
     public void setFailures(java.util.Collection<ImageFailure> failures) {
         if (failures == null) {
             this.failures = null;
@@ -158,6 +164,7 @@ public class BatchGetImageResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchGetImageResult withFailures(ImageFailure... failures) {
         if (this.failures == null) {
             setFailures(new java.util.ArrayList<ImageFailure>(failures.length));
@@ -178,6 +185,7 @@ public class BatchGetImageResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchGetImageResult withFailures(
             java.util.Collection<ImageFailure> failures) {
         setFailures(failures);

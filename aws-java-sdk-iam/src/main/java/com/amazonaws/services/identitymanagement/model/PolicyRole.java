@@ -49,6 +49,7 @@ public class PolicyRole implements Serializable, Cloneable {
      * @param roleName
      *        The name (friendly name, not ARN) identifying the role.
      */
+
     public void setRoleName(String roleName) {
         this.roleName = roleName;
     }
@@ -60,6 +61,7 @@ public class PolicyRole implements Serializable, Cloneable {
      * 
      * @return The name (friendly name, not ARN) identifying the role.
      */
+
     public String getRoleName() {
         return this.roleName;
     }
@@ -74,6 +76,7 @@ public class PolicyRole implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PolicyRole withRoleName(String roleName) {
         setRoleName(roleName);
         return this;

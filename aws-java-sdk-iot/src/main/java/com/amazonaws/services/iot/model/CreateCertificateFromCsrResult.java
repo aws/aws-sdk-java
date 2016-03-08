@@ -56,6 +56,7 @@ public class CreateCertificateFromCsrResult implements Serializable, Cloneable {
      *        The Amazon Resource Name (ARN) of the certificate. You can use the
      *        ARN as a principal for policy operations.
      */
+
     public void setCertificateArn(String certificateArn) {
         this.certificateArn = certificateArn;
     }
@@ -69,6 +70,7 @@ public class CreateCertificateFromCsrResult implements Serializable, Cloneable {
      * @return The Amazon Resource Name (ARN) of the certificate. You can use
      *         the ARN as a principal for policy operations.
      */
+
     public String getCertificateArn() {
         return this.certificateArn;
     }
@@ -85,6 +87,7 @@ public class CreateCertificateFromCsrResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateCertificateFromCsrResult withCertificateArn(
             String certificateArn) {
         setCertificateArn(certificateArn);
@@ -101,6 +104,7 @@ public class CreateCertificateFromCsrResult implements Serializable, Cloneable {
      *        The ID of the certificate. Certificate management operations only
      *        take a certificateId.
      */
+
     public void setCertificateId(String certificateId) {
         this.certificateId = certificateId;
     }
@@ -114,6 +118,7 @@ public class CreateCertificateFromCsrResult implements Serializable, Cloneable {
      * @return The ID of the certificate. Certificate management operations only
      *         take a certificateId.
      */
+
     public String getCertificateId() {
         return this.certificateId;
     }
@@ -130,6 +135,7 @@ public class CreateCertificateFromCsrResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateCertificateFromCsrResult withCertificateId(String certificateId) {
         setCertificateId(certificateId);
         return this;
@@ -143,6 +149,7 @@ public class CreateCertificateFromCsrResult implements Serializable, Cloneable {
      * @param certificatePem
      *        The certificate data, in PEM format.
      */
+
     public void setCertificatePem(String certificatePem) {
         this.certificatePem = certificatePem;
     }
@@ -154,6 +161,7 @@ public class CreateCertificateFromCsrResult implements Serializable, Cloneable {
      * 
      * @return The certificate data, in PEM format.
      */
+
     public String getCertificatePem() {
         return this.certificatePem;
     }
@@ -168,6 +176,7 @@ public class CreateCertificateFromCsrResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateCertificateFromCsrResult withCertificatePem(
             String certificatePem) {
         setCertificatePem(certificatePem);

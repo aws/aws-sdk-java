@@ -64,6 +64,7 @@ public class UpdateTrafficPolicyInstanceRequest extends AmazonWebServiceRequest
      * @param id
      *        The ID of the traffic policy instance that you want to update.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -75,6 +76,7 @@ public class UpdateTrafficPolicyInstanceRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the traffic policy instance that you want to update.
      */
+
     public String getId() {
         return this.id;
     }
@@ -89,6 +91,7 @@ public class UpdateTrafficPolicyInstanceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateTrafficPolicyInstanceRequest withId(String id) {
         setId(id);
         return this;
@@ -104,6 +107,7 @@ public class UpdateTrafficPolicyInstanceRequest extends AmazonWebServiceRequest
      *        The TTL that you want Amazon Route 53 to assign to all of the
      *        updated resource record sets.
      */
+
     public void setTTL(Long tTL) {
         this.tTL = tTL;
     }
@@ -117,6 +121,7 @@ public class UpdateTrafficPolicyInstanceRequest extends AmazonWebServiceRequest
      * @return The TTL that you want Amazon Route 53 to assign to all of the
      *         updated resource record sets.
      */
+
     public Long getTTL() {
         return this.tTL;
     }
@@ -133,6 +138,7 @@ public class UpdateTrafficPolicyInstanceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateTrafficPolicyInstanceRequest withTTL(Long tTL) {
         setTTL(tTL);
         return this;
@@ -149,6 +155,7 @@ public class UpdateTrafficPolicyInstanceRequest extends AmazonWebServiceRequest
      *        to update resource record sets for the specified traffic policy
      *        instance.
      */
+
     public void setTrafficPolicyId(String trafficPolicyId) {
         this.trafficPolicyId = trafficPolicyId;
     }
@@ -163,6 +170,7 @@ public class UpdateTrafficPolicyInstanceRequest extends AmazonWebServiceRequest
      *         to update resource record sets for the specified traffic policy
      *         instance.
      */
+
     public String getTrafficPolicyId() {
         return this.trafficPolicyId;
     }
@@ -180,6 +188,7 @@ public class UpdateTrafficPolicyInstanceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateTrafficPolicyInstanceRequest withTrafficPolicyId(
             String trafficPolicyId) {
         setTrafficPolicyId(trafficPolicyId);
@@ -197,6 +206,7 @@ public class UpdateTrafficPolicyInstanceRequest extends AmazonWebServiceRequest
      *        use to update resource record sets for the specified traffic
      *        policy instance.
      */
+
     public void setTrafficPolicyVersion(Integer trafficPolicyVersion) {
         this.trafficPolicyVersion = trafficPolicyVersion;
     }
@@ -211,6 +221,7 @@ public class UpdateTrafficPolicyInstanceRequest extends AmazonWebServiceRequest
      *         to use to update resource record sets for the specified traffic
      *         policy instance.
      */
+
     public Integer getTrafficPolicyVersion() {
         return this.trafficPolicyVersion;
     }
@@ -228,6 +239,7 @@ public class UpdateTrafficPolicyInstanceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateTrafficPolicyInstanceRequest withTrafficPolicyVersion(
             Integer trafficPolicyVersion) {
         setTrafficPolicyVersion(trafficPolicyVersion);

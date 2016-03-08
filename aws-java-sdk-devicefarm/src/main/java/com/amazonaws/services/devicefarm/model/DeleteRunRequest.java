@@ -42,6 +42,7 @@ public class DeleteRunRequest extends AmazonWebServiceRequest implements
      * @param arn
      *        The Amazon Resource Name (ARN) for the run you wish to delete.
      */
+
     public void setArn(String arn) {
         this.arn = arn;
     }
@@ -53,6 +54,7 @@ public class DeleteRunRequest extends AmazonWebServiceRequest implements
      * 
      * @return The Amazon Resource Name (ARN) for the run you wish to delete.
      */
+
     public String getArn() {
         return this.arn;
     }
@@ -67,6 +69,7 @@ public class DeleteRunRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteRunRequest withArn(String arn) {
         setArn(arn);
         return this;

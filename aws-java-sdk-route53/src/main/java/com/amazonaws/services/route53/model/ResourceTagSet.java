@@ -70,6 +70,7 @@ public class ResourceTagSet implements Serializable, Cloneable {
      *        - The resource type for hosted zones is <code>hostedzone</code>.
      * @see TagResourceType
      */
+
     public void setResourceType(String resourceType) {
         this.resourceType = resourceType;
     }
@@ -94,6 +95,7 @@ public class ResourceTagSet implements Serializable, Cloneable {
      *         - The resource type for hosted zones is <code>hostedzone</code>.
      * @see TagResourceType
      */
+
     public String getResourceType() {
         return this.resourceType;
     }
@@ -120,6 +122,7 @@ public class ResourceTagSet implements Serializable, Cloneable {
      *         chained together.
      * @see TagResourceType
      */
+
     public ResourceTagSet withResourceType(String resourceType) {
         setResourceType(resourceType);
         return this;
@@ -147,6 +150,7 @@ public class ResourceTagSet implements Serializable, Cloneable {
      *         chained together.
      * @see TagResourceType
      */
+
     public void setResourceType(TagResourceType resourceType) {
         this.resourceType = resourceType.toString();
     }
@@ -173,6 +177,7 @@ public class ResourceTagSet implements Serializable, Cloneable {
      *         chained together.
      * @see TagResourceType
      */
+
     public ResourceTagSet withResourceType(TagResourceType resourceType) {
         setResourceType(resourceType);
         return this;
@@ -186,6 +191,7 @@ public class ResourceTagSet implements Serializable, Cloneable {
      * @param resourceId
      *        The ID for the specified resource.
      */
+
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
     }
@@ -197,6 +203,7 @@ public class ResourceTagSet implements Serializable, Cloneable {
      * 
      * @return The ID for the specified resource.
      */
+
     public String getResourceId() {
         return this.resourceId;
     }
@@ -211,6 +218,7 @@ public class ResourceTagSet implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ResourceTagSet withResourceId(String resourceId) {
         setResourceId(resourceId);
         return this;
@@ -223,6 +231,7 @@ public class ResourceTagSet implements Serializable, Cloneable {
      * 
      * @return The tags associated with the specified resource.
      */
+
     public java.util.List<Tag> getTags() {
         if (tags == null) {
             tags = new com.amazonaws.internal.SdkInternalList<Tag>();
@@ -238,6 +247,7 @@ public class ResourceTagSet implements Serializable, Cloneable {
      * @param tags
      *        The tags associated with the specified resource.
      */
+
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
             this.tags = null;
@@ -263,6 +273,7 @@ public class ResourceTagSet implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ResourceTagSet withTags(Tag... tags) {
         if (this.tags == null) {
             setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
@@ -283,6 +294,7 @@ public class ResourceTagSet implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ResourceTagSet withTags(java.util.Collection<Tag> tags) {
         setTags(tags);
         return this;

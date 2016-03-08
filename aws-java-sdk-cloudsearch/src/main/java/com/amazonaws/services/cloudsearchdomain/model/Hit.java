@@ -58,6 +58,7 @@ public class Hit implements Serializable, Cloneable {
      * @param id
      *        The document ID of a document that matches the search request.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -69,6 +70,7 @@ public class Hit implements Serializable, Cloneable {
      * 
      * @return The document ID of a document that matches the search request.
      */
+
     public String getId() {
         return this.id;
     }
@@ -83,6 +85,7 @@ public class Hit implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Hit withId(String id) {
         setId(id);
         return this;
@@ -96,6 +99,7 @@ public class Hit implements Serializable, Cloneable {
      * @return The fields returned from a document that matches the search
      *         request.
      */
+
     public java.util.Map<String, java.util.List<String>> getFields() {
         if (fields == null) {
             fields = new com.amazonaws.internal.SdkInternalMap<String, java.util.List<String>>();
@@ -112,6 +116,7 @@ public class Hit implements Serializable, Cloneable {
      *        The fields returned from a document that matches the search
      *        request.
      */
+
     public void setFields(java.util.Map<String, java.util.List<String>> fields) {
         this.fields = fields == null ? null
                 : new com.amazonaws.internal.SdkInternalMap<String, java.util.List<String>>(
@@ -129,6 +134,7 @@ public class Hit implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Hit withFields(java.util.Map<String, java.util.List<String>> fields) {
         setFields(fields);
         return this;
@@ -149,6 +155,7 @@ public class Hit implements Serializable, Cloneable {
      * Removes all the entries added into Fields. &lt;p> Returns a reference to
      * this object so that method calls can be chained together.
      */
+
     public Hit clearFieldsEntries() {
         this.fields = null;
         return this;
@@ -162,6 +169,7 @@ public class Hit implements Serializable, Cloneable {
      * @return The expressions returned from a document that matches the search
      *         request.
      */
+
     public java.util.Map<String, String> getExprs() {
         if (exprs == null) {
             exprs = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -178,6 +186,7 @@ public class Hit implements Serializable, Cloneable {
      *        The expressions returned from a document that matches the search
      *        request.
      */
+
     public void setExprs(java.util.Map<String, String> exprs) {
         this.exprs = exprs == null ? null
                 : new com.amazonaws.internal.SdkInternalMap<String, String>(
@@ -195,6 +204,7 @@ public class Hit implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Hit withExprs(java.util.Map<String, String> exprs) {
         setExprs(exprs);
         return this;
@@ -215,6 +225,7 @@ public class Hit implements Serializable, Cloneable {
      * Removes all the entries added into Exprs. &lt;p> Returns a reference to
      * this object so that method calls can be chained together.
      */
+
     public Hit clearExprsEntries() {
         this.exprs = null;
         return this;
@@ -228,6 +239,7 @@ public class Hit implements Serializable, Cloneable {
      * @return The highlights returned from a document that matches the search
      *         request.
      */
+
     public java.util.Map<String, String> getHighlights() {
         if (highlights == null) {
             highlights = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -244,6 +256,7 @@ public class Hit implements Serializable, Cloneable {
      *        The highlights returned from a document that matches the search
      *        request.
      */
+
     public void setHighlights(java.util.Map<String, String> highlights) {
         this.highlights = highlights == null ? null
                 : new com.amazonaws.internal.SdkInternalMap<String, String>(
@@ -261,6 +274,7 @@ public class Hit implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Hit withHighlights(java.util.Map<String, String> highlights) {
         setHighlights(highlights);
         return this;
@@ -281,6 +295,7 @@ public class Hit implements Serializable, Cloneable {
      * Removes all the entries added into Highlights. &lt;p> Returns a reference
      * to this object so that method calls can be chained together.
      */
+
     public Hit clearHighlightsEntries() {
         this.highlights = null;
         return this;

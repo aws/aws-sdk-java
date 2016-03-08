@@ -15,16 +15,11 @@
 
 package com.amazonaws.codegen.model.intermediate;
 
-import static com.amazonaws.codegen.internal.Constants.LINE_SEPARATOR;
-import static com.amazonaws.codegen.internal.DocumentationUtils.DEFAULT_FLUENT_RETURN;
-import static com.amazonaws.codegen.internal.DocumentationUtils.DEFAULT_GETTER;
-import static com.amazonaws.codegen.internal.DocumentationUtils.DEFAULT_GETTER_PARAM;
-import static com.amazonaws.codegen.internal.DocumentationUtils.DEFAULT_SETTER;
-import static com.amazonaws.codegen.internal.DocumentationUtils.DEFAULT_SETTER_PARAM;
-import static com.amazonaws.codegen.internal.DocumentationUtils.LIST_VARARG_ADDITIONAL_DOC;
-import static com.amazonaws.codegen.internal.DocumentationUtils.stripHTMLTags;
-
 import com.amazonaws.codegen.internal.TypeUtils;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import static com.amazonaws.codegen.internal.Constants.LINE_SEPARATOR;
+import static com.amazonaws.codegen.internal.DocumentationUtils.*;
 
 public class MemberModel extends DocumentationModel {
 
@@ -51,6 +46,8 @@ public class MemberModel extends DocumentationModel {
     private String enumType;
 
     private String xmlNameSpaceUri;
+
+    private ShapeModel shape;
 
     public String getName() {
         return name;
@@ -336,8 +333,19 @@ public class MemberModel extends DocumentationModel {
         return docBuilder.toString();
     }
 
+
+    @JsonIgnore
+    public ShapeModel getShape() {
+        return shape;
+    }
+
+    public void setShape(ShapeModel shape) {
+        this.shape = shape;
+    }
+
     @Override
     public String toString() {
         return c2jName;
     }
+
 }

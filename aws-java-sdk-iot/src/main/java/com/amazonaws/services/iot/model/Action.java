@@ -82,6 +82,7 @@ public class Action implements Serializable, Cloneable {
      * @param dynamoDB
      *        Write to a DynamoDB table.
      */
+
     public void setDynamoDB(DynamoDBAction dynamoDB) {
         this.dynamoDB = dynamoDB;
     }
@@ -93,6 +94,7 @@ public class Action implements Serializable, Cloneable {
      * 
      * @return Write to a DynamoDB table.
      */
+
     public DynamoDBAction getDynamoDB() {
         return this.dynamoDB;
     }
@@ -107,6 +109,7 @@ public class Action implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Action withDynamoDB(DynamoDBAction dynamoDB) {
         setDynamoDB(dynamoDB);
         return this;
@@ -120,6 +123,7 @@ public class Action implements Serializable, Cloneable {
      * @param lambda
      *        Invoke a Lambda function.
      */
+
     public void setLambda(LambdaAction lambda) {
         this.lambda = lambda;
     }
@@ -131,6 +135,7 @@ public class Action implements Serializable, Cloneable {
      * 
      * @return Invoke a Lambda function.
      */
+
     public LambdaAction getLambda() {
         return this.lambda;
     }
@@ -145,6 +150,7 @@ public class Action implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Action withLambda(LambdaAction lambda) {
         setLambda(lambda);
         return this;
@@ -158,6 +164,7 @@ public class Action implements Serializable, Cloneable {
      * @param sns
      *        Publish to an SNS topic.
      */
+
     public void setSns(SnsAction sns) {
         this.sns = sns;
     }
@@ -169,6 +176,7 @@ public class Action implements Serializable, Cloneable {
      * 
      * @return Publish to an SNS topic.
      */
+
     public SnsAction getSns() {
         return this.sns;
     }
@@ -183,6 +191,7 @@ public class Action implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Action withSns(SnsAction sns) {
         setSns(sns);
         return this;
@@ -196,6 +205,7 @@ public class Action implements Serializable, Cloneable {
      * @param sqs
      *        Publish to an SQS queue.
      */
+
     public void setSqs(SqsAction sqs) {
         this.sqs = sqs;
     }
@@ -207,6 +217,7 @@ public class Action implements Serializable, Cloneable {
      * 
      * @return Publish to an SQS queue.
      */
+
     public SqsAction getSqs() {
         return this.sqs;
     }
@@ -221,6 +232,7 @@ public class Action implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Action withSqs(SqsAction sqs) {
         setSqs(sqs);
         return this;
@@ -234,6 +246,7 @@ public class Action implements Serializable, Cloneable {
      * @param kinesis
      *        Write data to a Kinesis stream.
      */
+
     public void setKinesis(KinesisAction kinesis) {
         this.kinesis = kinesis;
     }
@@ -245,6 +258,7 @@ public class Action implements Serializable, Cloneable {
      * 
      * @return Write data to a Kinesis stream.
      */
+
     public KinesisAction getKinesis() {
         return this.kinesis;
     }
@@ -259,6 +273,7 @@ public class Action implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Action withKinesis(KinesisAction kinesis) {
         setKinesis(kinesis);
         return this;
@@ -272,6 +287,7 @@ public class Action implements Serializable, Cloneable {
      * @param republish
      *        Publish to another MQTT topic.
      */
+
     public void setRepublish(RepublishAction republish) {
         this.republish = republish;
     }
@@ -283,6 +299,7 @@ public class Action implements Serializable, Cloneable {
      * 
      * @return Publish to another MQTT topic.
      */
+
     public RepublishAction getRepublish() {
         return this.republish;
     }
@@ -297,6 +314,7 @@ public class Action implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Action withRepublish(RepublishAction republish) {
         setRepublish(republish);
         return this;
@@ -310,6 +328,7 @@ public class Action implements Serializable, Cloneable {
      * @param s3
      *        Write to an S3 bucket.
      */
+
     public void setS3(S3Action s3) {
         this.s3 = s3;
     }
@@ -321,6 +340,7 @@ public class Action implements Serializable, Cloneable {
      * 
      * @return Write to an S3 bucket.
      */
+
     public S3Action getS3() {
         return this.s3;
     }
@@ -335,6 +355,7 @@ public class Action implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Action withS3(S3Action s3) {
         setS3(s3);
         return this;
@@ -348,6 +369,7 @@ public class Action implements Serializable, Cloneable {
      * @param firehose
      *        Write to a Kinesis Firehose stream.
      */
+
     public void setFirehose(FirehoseAction firehose) {
         this.firehose = firehose;
     }
@@ -359,6 +381,7 @@ public class Action implements Serializable, Cloneable {
      * 
      * @return Write to a Kinesis Firehose stream.
      */
+
     public FirehoseAction getFirehose() {
         return this.firehose;
     }
@@ -373,6 +396,7 @@ public class Action implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Action withFirehose(FirehoseAction firehose) {
         setFirehose(firehose);
         return this;

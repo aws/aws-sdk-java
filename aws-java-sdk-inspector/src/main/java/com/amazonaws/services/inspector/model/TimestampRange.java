@@ -47,6 +47,7 @@ public class TimestampRange implements Serializable, Cloneable {
      * @param minimum
      *        The minimum value of the timestamp range.
      */
+
     public void setMinimum(java.util.Date minimum) {
         this.minimum = minimum;
     }
@@ -58,6 +59,7 @@ public class TimestampRange implements Serializable, Cloneable {
      * 
      * @return The minimum value of the timestamp range.
      */
+
     public java.util.Date getMinimum() {
         return this.minimum;
     }
@@ -72,6 +74,7 @@ public class TimestampRange implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TimestampRange withMinimum(java.util.Date minimum) {
         setMinimum(minimum);
         return this;
@@ -85,6 +88,7 @@ public class TimestampRange implements Serializable, Cloneable {
      * @param maximum
      *        The maximum value of the timestamp range.
      */
+
     public void setMaximum(java.util.Date maximum) {
         this.maximum = maximum;
     }
@@ -96,6 +100,7 @@ public class TimestampRange implements Serializable, Cloneable {
      * 
      * @return The maximum value of the timestamp range.
      */
+
     public java.util.Date getMaximum() {
         return this.maximum;
     }
@@ -110,6 +115,7 @@ public class TimestampRange implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TimestampRange withMaximum(java.util.Date maximum) {
         setMaximum(maximum);
         return this;

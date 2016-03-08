@@ -74,6 +74,7 @@ public class RoutingStrategy implements Serializable, Cloneable {
      *        message embedded.lt/ligtlt/ulgt
      * @see RoutingStrategyType
      */
+
     public void setType(String type) {
         this.type = type;
     }
@@ -100,6 +101,7 @@ public class RoutingStrategy implements Serializable, Cloneable {
      *         message embedded.lt/ligtlt/ulgt
      * @see RoutingStrategyType
      */
+
     public String getType() {
         return this.type;
     }
@@ -129,6 +131,7 @@ public class RoutingStrategy implements Serializable, Cloneable {
      *         chained together.
      * @see RoutingStrategyType
      */
+
     public RoutingStrategy withType(String type) {
         setType(type);
         return this;
@@ -159,6 +162,7 @@ public class RoutingStrategy implements Serializable, Cloneable {
      *         chained together.
      * @see RoutingStrategyType
      */
+
     public void setType(RoutingStrategyType type) {
         this.type = type.toString();
     }
@@ -188,6 +192,7 @@ public class RoutingStrategy implements Serializable, Cloneable {
      *         chained together.
      * @see RoutingStrategyType
      */
+
     public RoutingStrategy withType(RoutingStrategyType type) {
         setType(type);
         return this;
@@ -201,6 +206,7 @@ public class RoutingStrategy implements Serializable, Cloneable {
      * @param fleetId
      *        Unique identifier for a fleet.
      */
+
     public void setFleetId(String fleetId) {
         this.fleetId = fleetId;
     }
@@ -212,6 +218,7 @@ public class RoutingStrategy implements Serializable, Cloneable {
      * 
      * @return Unique identifier for a fleet.
      */
+
     public String getFleetId() {
         return this.fleetId;
     }
@@ -226,6 +233,7 @@ public class RoutingStrategy implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RoutingStrategy withFleetId(String fleetId) {
         setFleetId(fleetId);
         return this;
@@ -239,6 +247,7 @@ public class RoutingStrategy implements Serializable, Cloneable {
      * @param message
      *        Message text to be displayed with a terminal routing strategy.
      */
+
     public void setMessage(String message) {
         this.message = message;
     }
@@ -250,6 +259,7 @@ public class RoutingStrategy implements Serializable, Cloneable {
      * 
      * @return Message text to be displayed with a terminal routing strategy.
      */
+
     public String getMessage() {
         return this.message;
     }
@@ -264,6 +274,7 @@ public class RoutingStrategy implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RoutingStrategy withMessage(String message) {
         setMessage(message);
         return this;

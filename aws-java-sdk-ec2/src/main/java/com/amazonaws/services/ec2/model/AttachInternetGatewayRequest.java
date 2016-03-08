@@ -49,6 +49,7 @@ public class AttachInternetGatewayRequest extends AmazonWebServiceRequest
      * @param internetGatewayId
      *        The ID of the Internet gateway.
      */
+
     public void setInternetGatewayId(String internetGatewayId) {
         this.internetGatewayId = internetGatewayId;
     }
@@ -60,6 +61,7 @@ public class AttachInternetGatewayRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the Internet gateway.
      */
+
     public String getInternetGatewayId() {
         return this.internetGatewayId;
     }
@@ -74,6 +76,7 @@ public class AttachInternetGatewayRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AttachInternetGatewayRequest withInternetGatewayId(
             String internetGatewayId) {
         setInternetGatewayId(internetGatewayId);
@@ -88,6 +91,7 @@ public class AttachInternetGatewayRequest extends AmazonWebServiceRequest
      * @param vpcId
      *        The ID of the VPC.
      */
+
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
@@ -99,6 +103,7 @@ public class AttachInternetGatewayRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the VPC.
      */
+
     public String getVpcId() {
         return this.vpcId;
     }
@@ -113,6 +118,7 @@ public class AttachInternetGatewayRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AttachInternetGatewayRequest withVpcId(String vpcId) {
         setVpcId(vpcId);
         return this;

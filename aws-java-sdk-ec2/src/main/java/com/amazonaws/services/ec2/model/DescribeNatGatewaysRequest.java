@@ -91,6 +91,7 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest
      * 
      * @return One or more NAT gateway IDs.
      */
+
     public java.util.List<String> getNatGatewayIds() {
         if (natGatewayIds == null) {
             natGatewayIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -106,6 +107,7 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest
      * @param natGatewayIds
      *        One or more NAT gateway IDs.
      */
+
     public void setNatGatewayIds(java.util.Collection<String> natGatewayIds) {
         if (natGatewayIds == null) {
             this.natGatewayIds = null;
@@ -132,6 +134,7 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeNatGatewaysRequest withNatGatewayIds(String... natGatewayIds) {
         if (this.natGatewayIds == null) {
             setNatGatewayIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -153,6 +156,7 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeNatGatewaysRequest withNatGatewayIds(
             java.util.Collection<String> natGatewayIds) {
         setNatGatewayIds(natGatewayIds);
@@ -217,6 +221,7 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest
      *         </p>
      *         </li>
      */
+
     public java.util.List<Filter> getFilter() {
         if (filter == null) {
             filter = new com.amazonaws.internal.SdkInternalList<Filter>();
@@ -283,6 +288,7 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest
      *        </p>
      *        </li>
      */
+
     public void setFilter(java.util.Collection<Filter> filter) {
         if (filter == null) {
             this.filter = null;
@@ -359,6 +365,7 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeNatGatewaysRequest withFilter(Filter... filter) {
         if (this.filter == null) {
             setFilter(new com.amazonaws.internal.SdkInternalList<Filter>(
@@ -431,6 +438,7 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeNatGatewaysRequest withFilter(
             java.util.Collection<Filter> filter) {
         setFilter(filter);
@@ -456,6 +464,7 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest
      *        Constraint: If the value specified is greater than 1000, we return
      *        only 1000 items.
      */
+
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
     }
@@ -478,6 +487,7 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest
      *         Constraint: If the value specified is greater than 1000, we
      *         return only 1000 items.
      */
+
     public Integer getMaxResults() {
         return this.maxResults;
     }
@@ -503,6 +513,7 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeNatGatewaysRequest withMaxResults(Integer maxResults) {
         setMaxResults(maxResults);
         return this;
@@ -516,6 +527,7 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest
      * @param nextToken
      *        The token to retrieve the next page of results.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -527,6 +539,7 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest
      * 
      * @return The token to retrieve the next page of results.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -541,6 +554,7 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeNatGatewaysRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

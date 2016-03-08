@@ -40,6 +40,7 @@ public class DeleteLaunchConfigurationRequest extends AmazonWebServiceRequest
      * @param launchConfigurationName
      *        The name of the launch configuration.
      */
+
     public void setLaunchConfigurationName(String launchConfigurationName) {
         this.launchConfigurationName = launchConfigurationName;
     }
@@ -51,6 +52,7 @@ public class DeleteLaunchConfigurationRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the launch configuration.
      */
+
     public String getLaunchConfigurationName() {
         return this.launchConfigurationName;
     }
@@ -65,6 +67,7 @@ public class DeleteLaunchConfigurationRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteLaunchConfigurationRequest withLaunchConfigurationName(
             String launchConfigurationName) {
         setLaunchConfigurationName(launchConfigurationName);

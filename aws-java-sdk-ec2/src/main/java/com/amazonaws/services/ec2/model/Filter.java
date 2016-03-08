@@ -81,6 +81,7 @@ public class Filter implements Serializable, Cloneable {
      * @param name
      *        The name of the filter. Filter names are case-sensitive.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -92,6 +93,7 @@ public class Filter implements Serializable, Cloneable {
      * 
      * @return The name of the filter. Filter names are case-sensitive.
      */
+
     public String getName() {
         return this.name;
     }
@@ -106,6 +108,7 @@ public class Filter implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Filter withName(String name) {
         setName(name);
         return this;
@@ -118,6 +121,7 @@ public class Filter implements Serializable, Cloneable {
      * 
      * @return One or more filter values. Filter values are case-sensitive.
      */
+
     public java.util.List<String> getValues() {
         if (values == null) {
             values = new com.amazonaws.internal.SdkInternalList<String>();
@@ -133,6 +137,7 @@ public class Filter implements Serializable, Cloneable {
      * @param values
      *        One or more filter values. Filter values are case-sensitive.
      */
+
     public void setValues(java.util.Collection<String> values) {
         if (values == null) {
             this.values = null;
@@ -158,6 +163,7 @@ public class Filter implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Filter withValues(String... values) {
         if (this.values == null) {
             setValues(new com.amazonaws.internal.SdkInternalList<String>(
@@ -179,6 +185,7 @@ public class Filter implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Filter withValues(java.util.Collection<String> values) {
         setValues(values);
         return this;

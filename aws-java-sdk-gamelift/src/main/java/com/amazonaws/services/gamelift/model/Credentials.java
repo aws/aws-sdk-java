@@ -55,6 +55,7 @@ public class Credentials implements Serializable, Cloneable {
      * @param accessKeyId
      *        Access key for an AWS account.
      */
+
     public void setAccessKeyId(String accessKeyId) {
         this.accessKeyId = accessKeyId;
     }
@@ -66,6 +67,7 @@ public class Credentials implements Serializable, Cloneable {
      * 
      * @return Access key for an AWS account.
      */
+
     public String getAccessKeyId() {
         return this.accessKeyId;
     }
@@ -80,6 +82,7 @@ public class Credentials implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Credentials withAccessKeyId(String accessKeyId) {
         setAccessKeyId(accessKeyId);
         return this;
@@ -93,6 +96,7 @@ public class Credentials implements Serializable, Cloneable {
      * @param secretAccessKey
      *        Secret key for an AWS account.
      */
+
     public void setSecretAccessKey(String secretAccessKey) {
         this.secretAccessKey = secretAccessKey;
     }
@@ -104,6 +108,7 @@ public class Credentials implements Serializable, Cloneable {
      * 
      * @return Secret key for an AWS account.
      */
+
     public String getSecretAccessKey() {
         return this.secretAccessKey;
     }
@@ -118,6 +123,7 @@ public class Credentials implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Credentials withSecretAccessKey(String secretAccessKey) {
         setSecretAccessKey(secretAccessKey);
         return this;
@@ -131,6 +137,7 @@ public class Credentials implements Serializable, Cloneable {
      * @param sessionToken
      *        Token specific to a build ID.
      */
+
     public void setSessionToken(String sessionToken) {
         this.sessionToken = sessionToken;
     }
@@ -142,6 +149,7 @@ public class Credentials implements Serializable, Cloneable {
      * 
      * @return Token specific to a build ID.
      */
+
     public String getSessionToken() {
         return this.sessionToken;
     }
@@ -156,6 +164,7 @@ public class Credentials implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Credentials withSessionToken(String sessionToken) {
         setSessionToken(sessionToken);
         return this;

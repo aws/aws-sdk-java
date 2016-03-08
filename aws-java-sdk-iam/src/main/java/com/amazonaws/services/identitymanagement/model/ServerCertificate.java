@@ -85,6 +85,7 @@ public class ServerCertificate implements Serializable, Cloneable {
      *        The meta information of the server certificate, such as its name,
      *        path, ID, and ARN.
      */
+
     public void setServerCertificateMetadata(
             ServerCertificateMetadata serverCertificateMetadata) {
         this.serverCertificateMetadata = serverCertificateMetadata;
@@ -99,6 +100,7 @@ public class ServerCertificate implements Serializable, Cloneable {
      * @return The meta information of the server certificate, such as its name,
      *         path, ID, and ARN.
      */
+
     public ServerCertificateMetadata getServerCertificateMetadata() {
         return this.serverCertificateMetadata;
     }
@@ -115,6 +117,7 @@ public class ServerCertificate implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ServerCertificate withServerCertificateMetadata(
             ServerCertificateMetadata serverCertificateMetadata) {
         setServerCertificateMetadata(serverCertificateMetadata);
@@ -129,6 +132,7 @@ public class ServerCertificate implements Serializable, Cloneable {
      * @param certificateBody
      *        The contents of the public key certificate.
      */
+
     public void setCertificateBody(String certificateBody) {
         this.certificateBody = certificateBody;
     }
@@ -140,6 +144,7 @@ public class ServerCertificate implements Serializable, Cloneable {
      * 
      * @return The contents of the public key certificate.
      */
+
     public String getCertificateBody() {
         return this.certificateBody;
     }
@@ -154,6 +159,7 @@ public class ServerCertificate implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ServerCertificate withCertificateBody(String certificateBody) {
         setCertificateBody(certificateBody);
         return this;
@@ -167,6 +173,7 @@ public class ServerCertificate implements Serializable, Cloneable {
      * @param certificateChain
      *        The contents of the public key certificate chain.
      */
+
     public void setCertificateChain(String certificateChain) {
         this.certificateChain = certificateChain;
     }
@@ -178,6 +185,7 @@ public class ServerCertificate implements Serializable, Cloneable {
      * 
      * @return The contents of the public key certificate chain.
      */
+
     public String getCertificateChain() {
         return this.certificateChain;
     }
@@ -192,6 +200,7 @@ public class ServerCertificate implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ServerCertificate withCertificateChain(String certificateChain) {
         setCertificateChain(certificateChain);
         return this;

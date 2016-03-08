@@ -54,6 +54,7 @@ public class InstanceCapacity implements Serializable, Cloneable {
      * @param instanceType
      *        The instance type size supported by the Dedicated host.
      */
+
     public void setInstanceType(String instanceType) {
         this.instanceType = instanceType;
     }
@@ -65,6 +66,7 @@ public class InstanceCapacity implements Serializable, Cloneable {
      * 
      * @return The instance type size supported by the Dedicated host.
      */
+
     public String getInstanceType() {
         return this.instanceType;
     }
@@ -79,6 +81,7 @@ public class InstanceCapacity implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceCapacity withInstanceType(String instanceType) {
         setInstanceType(instanceType);
         return this;
@@ -94,6 +97,7 @@ public class InstanceCapacity implements Serializable, Cloneable {
      *        The number of instances that can still be launched onto the
      *        Dedicated host.
      */
+
     public void setAvailableCapacity(Integer availableCapacity) {
         this.availableCapacity = availableCapacity;
     }
@@ -107,6 +111,7 @@ public class InstanceCapacity implements Serializable, Cloneable {
      * @return The number of instances that can still be launched onto the
      *         Dedicated host.
      */
+
     public Integer getAvailableCapacity() {
         return this.availableCapacity;
     }
@@ -123,6 +128,7 @@ public class InstanceCapacity implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceCapacity withAvailableCapacity(Integer availableCapacity) {
         setAvailableCapacity(availableCapacity);
         return this;
@@ -138,6 +144,7 @@ public class InstanceCapacity implements Serializable, Cloneable {
      *        The total number of instances that can be launched onto the
      *        Dedicated host.
      */
+
     public void setTotalCapacity(Integer totalCapacity) {
         this.totalCapacity = totalCapacity;
     }
@@ -151,6 +158,7 @@ public class InstanceCapacity implements Serializable, Cloneable {
      * @return The total number of instances that can be launched onto the
      *         Dedicated host.
      */
+
     public Integer getTotalCapacity() {
         return this.totalCapacity;
     }
@@ -167,6 +175,7 @@ public class InstanceCapacity implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceCapacity withTotalCapacity(Integer totalCapacity) {
         setTotalCapacity(totalCapacity);
         return this;

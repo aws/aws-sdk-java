@@ -60,6 +60,7 @@ public class ItemCollectionMetrics implements Serializable, Cloneable {
      * @return The partition key value of the item collection. This value is the
      *         same as the partition key value of the item.
      */
+
     public java.util.Map<String, AttributeValue> getItemCollectionKey() {
         return itemCollectionKey;
     }
@@ -74,6 +75,7 @@ public class ItemCollectionMetrics implements Serializable, Cloneable {
      *        The partition key value of the item collection. This value is the
      *        same as the partition key value of the item.
      */
+
     public void setItemCollectionKey(
             java.util.Map<String, AttributeValue> itemCollectionKey) {
         this.itemCollectionKey = itemCollectionKey;
@@ -91,6 +93,7 @@ public class ItemCollectionMetrics implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ItemCollectionMetrics withItemCollectionKey(
             java.util.Map<String, AttributeValue> itemCollectionKey) {
         setItemCollectionKey(itemCollectionKey);
@@ -113,6 +116,7 @@ public class ItemCollectionMetrics implements Serializable, Cloneable {
      * Removes all the entries added into ItemCollectionKey. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public ItemCollectionMetrics clearItemCollectionKeyEntries() {
         this.itemCollectionKey = null;
         return this;
@@ -143,6 +147,7 @@ public class ItemCollectionMetrics implements Serializable, Cloneable {
      *         The estimate is subject to change over time; therefore, do not
      *         rely on the precision or accuracy of the estimate.
      */
+
     public java.util.List<Double> getSizeEstimateRangeGB() {
         return sizeEstimateRangeGB;
     }
@@ -173,6 +178,7 @@ public class ItemCollectionMetrics implements Serializable, Cloneable {
      *        The estimate is subject to change over time; therefore, do not
      *        rely on the precision or accuracy of the estimate.
      */
+
     public void setSizeEstimateRangeGB(
             java.util.Collection<Double> sizeEstimateRangeGB) {
         if (sizeEstimateRangeGB == null) {
@@ -218,6 +224,7 @@ public class ItemCollectionMetrics implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ItemCollectionMetrics withSizeEstimateRangeGB(
             Double... sizeEstimateRangeGB) {
         if (this.sizeEstimateRangeGB == null) {
@@ -258,6 +265,7 @@ public class ItemCollectionMetrics implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ItemCollectionMetrics withSizeEstimateRangeGB(
             java.util.Collection<Double> sizeEstimateRangeGB) {
         setSizeEstimateRangeGB(sizeEstimateRangeGB);

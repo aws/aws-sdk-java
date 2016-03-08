@@ -40,6 +40,7 @@ public class DescribeBuildResult implements Serializable, Cloneable {
      * @param build
      *        Set of properties describing the requested build.
      */
+
     public void setBuild(Build build) {
         this.build = build;
     }
@@ -51,6 +52,7 @@ public class DescribeBuildResult implements Serializable, Cloneable {
      * 
      * @return Set of properties describing the requested build.
      */
+
     public Build getBuild() {
         return this.build;
     }
@@ -65,6 +67,7 @@ public class DescribeBuildResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeBuildResult withBuild(Build build) {
         setBuild(build);
         return this;

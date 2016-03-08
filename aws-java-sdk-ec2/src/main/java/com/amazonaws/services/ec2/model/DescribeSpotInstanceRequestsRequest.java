@@ -293,6 +293,7 @@ public class DescribeSpotInstanceRequestsRequest extends
      * 
      * @return One or more Spot instance request IDs.
      */
+
     public java.util.List<String> getSpotInstanceRequestIds() {
         if (spotInstanceRequestIds == null) {
             spotInstanceRequestIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -308,6 +309,7 @@ public class DescribeSpotInstanceRequestsRequest extends
      * @param spotInstanceRequestIds
      *        One or more Spot instance request IDs.
      */
+
     public void setSpotInstanceRequestIds(
             java.util.Collection<String> spotInstanceRequestIds) {
         if (spotInstanceRequestIds == null) {
@@ -335,6 +337,7 @@ public class DescribeSpotInstanceRequestsRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSpotInstanceRequestsRequest withSpotInstanceRequestIds(
             String... spotInstanceRequestIds) {
         if (this.spotInstanceRequestIds == null) {
@@ -357,6 +360,7 @@ public class DescribeSpotInstanceRequestsRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSpotInstanceRequestsRequest withSpotInstanceRequestIds(
             java.util.Collection<String> spotInstanceRequestIds) {
         setSpotInstanceRequestIds(spotInstanceRequestIds);
@@ -865,6 +869,7 @@ public class DescribeSpotInstanceRequestsRequest extends
      *         </p>
      *         </li>
      */
+
     public java.util.List<Filter> getFilters() {
         if (filters == null) {
             filters = new com.amazonaws.internal.SdkInternalList<Filter>();
@@ -1375,6 +1380,7 @@ public class DescribeSpotInstanceRequestsRequest extends
      *        </p>
      *        </li>
      */
+
     public void setFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
             this.filters = null;
@@ -1896,6 +1902,7 @@ public class DescribeSpotInstanceRequestsRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSpotInstanceRequestsRequest withFilters(Filter... filters) {
         if (this.filters == null) {
             setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(
@@ -2412,6 +2419,7 @@ public class DescribeSpotInstanceRequestsRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSpotInstanceRequestsRequest withFilters(
             java.util.Collection<Filter> filters) {
         setFilters(filters);

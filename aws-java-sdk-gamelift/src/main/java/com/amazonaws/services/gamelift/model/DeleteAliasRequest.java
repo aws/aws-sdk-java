@@ -45,6 +45,7 @@ public class DeleteAliasRequest extends AmazonWebServiceRequest implements
      *        Unique identifier for a fleet alias. Specify the alias you want to
      *        delete.
      */
+
     public void setAliasId(String aliasId) {
         this.aliasId = aliasId;
     }
@@ -58,6 +59,7 @@ public class DeleteAliasRequest extends AmazonWebServiceRequest implements
      * @return Unique identifier for a fleet alias. Specify the alias you want
      *         to delete.
      */
+
     public String getAliasId() {
         return this.aliasId;
     }
@@ -74,6 +76,7 @@ public class DeleteAliasRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteAliasRequest withAliasId(String aliasId) {
         setAliasId(aliasId);
         return this;

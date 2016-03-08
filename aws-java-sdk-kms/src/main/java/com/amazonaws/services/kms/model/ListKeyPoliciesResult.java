@@ -56,6 +56,7 @@ public class ListKeyPoliciesResult implements Serializable, Cloneable {
      * @return A list of policy names. Currently, there is only one policy and
      *         it is named "Default".
      */
+
     public java.util.List<String> getPolicyNames() {
         if (policyNames == null) {
             policyNames = new com.amazonaws.internal.SdkInternalList<String>();
@@ -73,6 +74,7 @@ public class ListKeyPoliciesResult implements Serializable, Cloneable {
      *        A list of policy names. Currently, there is only one policy and it
      *        is named "Default".
      */
+
     public void setPolicyNames(java.util.Collection<String> policyNames) {
         if (policyNames == null) {
             this.policyNames = null;
@@ -101,6 +103,7 @@ public class ListKeyPoliciesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListKeyPoliciesResult withPolicyNames(String... policyNames) {
         if (this.policyNames == null) {
             setPolicyNames(new com.amazonaws.internal.SdkInternalList<String>(
@@ -124,6 +127,7 @@ public class ListKeyPoliciesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListKeyPoliciesResult withPolicyNames(
             java.util.Collection<String> policyNames) {
         setPolicyNames(policyNames);
@@ -142,6 +146,7 @@ public class ListKeyPoliciesResult implements Serializable, Cloneable {
      *        contains the value to use for the <code>Marker</code> parameter in
      *        a subsequent pagination request.
      */
+
     public void setNextMarker(String nextMarker) {
         this.nextMarker = nextMarker;
     }
@@ -157,6 +162,7 @@ public class ListKeyPoliciesResult implements Serializable, Cloneable {
      *         contains the value to use for the <code>Marker</code> parameter
      *         in a subsequent pagination request.
      */
+
     public String getNextMarker() {
         return this.nextMarker;
     }
@@ -175,6 +181,7 @@ public class ListKeyPoliciesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListKeyPoliciesResult withNextMarker(String nextMarker) {
         setNextMarker(nextMarker);
         return this;
@@ -193,6 +200,7 @@ public class ListKeyPoliciesResult implements Serializable, Cloneable {
      *        parameter to make a subsequent pagination request to retrieve more
      *        items in the list.
      */
+
     public void setTruncated(Boolean truncated) {
         this.truncated = truncated;
     }
@@ -209,6 +217,7 @@ public class ListKeyPoliciesResult implements Serializable, Cloneable {
      *         <code>Marker</code> parameter to make a subsequent pagination
      *         request to retrieve more items in the list.
      */
+
     public Boolean getTruncated() {
         return this.truncated;
     }
@@ -228,6 +237,7 @@ public class ListKeyPoliciesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListKeyPoliciesResult withTruncated(Boolean truncated) {
         setTruncated(truncated);
         return this;
@@ -245,6 +255,7 @@ public class ListKeyPoliciesResult implements Serializable, Cloneable {
      *         <code>Marker</code> parameter to make a subsequent pagination
      *         request to retrieve more items in the list.
      */
+
     public Boolean isTruncated() {
         return this.truncated;
     }

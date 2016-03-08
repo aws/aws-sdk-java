@@ -60,6 +60,7 @@ public class PurchaseScheduledInstancesRequest extends AmazonWebServiceRequest
      *        "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html"
      *        >Ensuring Idempotency</a>.
      */
+
     public void setClientToken(String clientToken) {
         this.clientToken = clientToken;
     }
@@ -77,6 +78,7 @@ public class PurchaseScheduledInstancesRequest extends AmazonWebServiceRequest
      *         "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html"
      *         >Ensuring Idempotency</a>.
      */
+
     public String getClientToken() {
         return this.clientToken;
     }
@@ -97,6 +99,7 @@ public class PurchaseScheduledInstancesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PurchaseScheduledInstancesRequest withClientToken(String clientToken) {
         setClientToken(clientToken);
         return this;
@@ -109,6 +112,7 @@ public class PurchaseScheduledInstancesRequest extends AmazonWebServiceRequest
      * 
      * @return One or more purchase requests.
      */
+
     public java.util.List<PurchaseRequest> getPurchaseRequests() {
         if (purchaseRequests == null) {
             purchaseRequests = new com.amazonaws.internal.SdkInternalList<PurchaseRequest>();
@@ -124,6 +128,7 @@ public class PurchaseScheduledInstancesRequest extends AmazonWebServiceRequest
      * @param purchaseRequests
      *        One or more purchase requests.
      */
+
     public void setPurchaseRequests(
             java.util.Collection<PurchaseRequest> purchaseRequests) {
         if (purchaseRequests == null) {
@@ -151,6 +156,7 @@ public class PurchaseScheduledInstancesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PurchaseScheduledInstancesRequest withPurchaseRequests(
             PurchaseRequest... purchaseRequests) {
         if (this.purchaseRequests == null) {
@@ -173,6 +179,7 @@ public class PurchaseScheduledInstancesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PurchaseScheduledInstancesRequest withPurchaseRequests(
             java.util.Collection<PurchaseRequest> purchaseRequests) {
         setPurchaseRequests(purchaseRequests);

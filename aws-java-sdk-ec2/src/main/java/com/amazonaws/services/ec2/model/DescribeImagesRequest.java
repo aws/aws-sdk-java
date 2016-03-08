@@ -246,6 +246,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Default: Describes all images available to you.
      */
+
     public java.util.List<String> getImageIds() {
         if (imageIds == null) {
             imageIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -266,6 +267,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        Default: Describes all images available to you.
      */
+
     public void setImageIds(java.util.Collection<String> imageIds) {
         if (imageIds == null) {
             this.imageIds = null;
@@ -297,6 +299,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeImagesRequest withImageIds(String... imageIds) {
         if (this.imageIds == null) {
             setImageIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -323,6 +326,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeImagesRequest withImageIds(
             java.util.Collection<String> imageIds) {
         setImageIds(imageIds);
@@ -345,6 +349,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      *         this option returns all images for which you have launch
      *         permissions, regardless of ownership.
      */
+
     public java.util.List<String> getOwners() {
         if (owners == null) {
             owners = new com.amazonaws.internal.SdkInternalList<String>();
@@ -369,6 +374,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      *        this option returns all images for which you have launch
      *        permissions, regardless of ownership.
      */
+
     public void setOwners(java.util.Collection<String> owners) {
         if (owners == null) {
             this.owners = null;
@@ -403,6 +409,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeImagesRequest withOwners(String... owners) {
         if (this.owners == null) {
             setOwners(new com.amazonaws.internal.SdkInternalList<String>(
@@ -433,6 +440,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeImagesRequest withOwners(java.util.Collection<String> owners) {
         setOwners(owners);
         return this;
@@ -449,6 +457,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      *         Specify an AWS account ID, <code>self</code> (the sender of the
      *         request), or <code>all</code> (public AMIs).
      */
+
     public java.util.List<String> getExecutableUsers() {
         if (executableUsers == null) {
             executableUsers = new com.amazonaws.internal.SdkInternalList<String>();
@@ -468,6 +477,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      *        Specify an AWS account ID, <code>self</code> (the sender of the
      *        request), or <code>all</code> (public AMIs).
      */
+
     public void setExecutableUsers(java.util.Collection<String> executableUsers) {
         if (executableUsers == null) {
             this.executableUsers = null;
@@ -498,6 +508,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeImagesRequest withExecutableUsers(String... executableUsers) {
         if (this.executableUsers == null) {
             setExecutableUsers(new com.amazonaws.internal.SdkInternalList<String>(
@@ -523,6 +534,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeImagesRequest withExecutableUsers(
             java.util.Collection<String> executableUsers) {
         setExecutableUsers(executableUsers);
@@ -889,6 +901,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      *         </p>
      *         </li>
      */
+
     public java.util.List<Filter> getFilters() {
         if (filters == null) {
             filters = new com.amazonaws.internal.SdkInternalList<Filter>();
@@ -1257,6 +1270,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      *        </p>
      *        </li>
      */
+
     public void setFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
             this.filters = null;
@@ -1636,6 +1650,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeImagesRequest withFilters(Filter... filters) {
         if (this.filters == null) {
             setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(
@@ -2010,6 +2025,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeImagesRequest withFilters(
             java.util.Collection<Filter> filters) {
         setFilters(filters);

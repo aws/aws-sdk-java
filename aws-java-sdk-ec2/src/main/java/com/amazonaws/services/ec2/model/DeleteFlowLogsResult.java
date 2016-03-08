@@ -38,6 +38,7 @@ public class DeleteFlowLogsResult implements Serializable, Cloneable {
      * @return Information about the flow logs that could not be deleted
      *         successfully.
      */
+
     public java.util.List<UnsuccessfulItem> getUnsuccessful() {
         if (unsuccessful == null) {
             unsuccessful = new com.amazonaws.internal.SdkInternalList<UnsuccessfulItem>();
@@ -54,6 +55,7 @@ public class DeleteFlowLogsResult implements Serializable, Cloneable {
      *        Information about the flow logs that could not be deleted
      *        successfully.
      */
+
     public void setUnsuccessful(
             java.util.Collection<UnsuccessfulItem> unsuccessful) {
         if (unsuccessful == null) {
@@ -82,6 +84,7 @@ public class DeleteFlowLogsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteFlowLogsResult withUnsuccessful(
             UnsuccessfulItem... unsuccessful) {
         if (this.unsuccessful == null) {
@@ -105,6 +108,7 @@ public class DeleteFlowLogsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteFlowLogsResult withUnsuccessful(
             java.util.Collection<UnsuccessfulItem> unsuccessful) {
         setUnsuccessful(unsuccessful);

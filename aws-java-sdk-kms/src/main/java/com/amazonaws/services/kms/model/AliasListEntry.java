@@ -52,6 +52,7 @@ public class AliasListEntry implements Serializable, Cloneable {
      * @param aliasName
      *        String that contains the alias.
      */
+
     public void setAliasName(String aliasName) {
         this.aliasName = aliasName;
     }
@@ -63,6 +64,7 @@ public class AliasListEntry implements Serializable, Cloneable {
      * 
      * @return String that contains the alias.
      */
+
     public String getAliasName() {
         return this.aliasName;
     }
@@ -77,6 +79,7 @@ public class AliasListEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AliasListEntry withAliasName(String aliasName) {
         setAliasName(aliasName);
         return this;
@@ -90,6 +93,7 @@ public class AliasListEntry implements Serializable, Cloneable {
      * @param aliasArn
      *        String that contains the key ARN.
      */
+
     public void setAliasArn(String aliasArn) {
         this.aliasArn = aliasArn;
     }
@@ -101,6 +105,7 @@ public class AliasListEntry implements Serializable, Cloneable {
      * 
      * @return String that contains the key ARN.
      */
+
     public String getAliasArn() {
         return this.aliasArn;
     }
@@ -115,6 +120,7 @@ public class AliasListEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AliasListEntry withAliasArn(String aliasArn) {
         setAliasArn(aliasArn);
         return this;
@@ -128,6 +134,7 @@ public class AliasListEntry implements Serializable, Cloneable {
      * @param targetKeyId
      *        String that contains the key identifier pointed to by the alias.
      */
+
     public void setTargetKeyId(String targetKeyId) {
         this.targetKeyId = targetKeyId;
     }
@@ -139,6 +146,7 @@ public class AliasListEntry implements Serializable, Cloneable {
      * 
      * @return String that contains the key identifier pointed to by the alias.
      */
+
     public String getTargetKeyId() {
         return this.targetKeyId;
     }
@@ -153,6 +161,7 @@ public class AliasListEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AliasListEntry withTargetKeyId(String targetKeyId) {
         setTargetKeyId(targetKeyId);
         return this;

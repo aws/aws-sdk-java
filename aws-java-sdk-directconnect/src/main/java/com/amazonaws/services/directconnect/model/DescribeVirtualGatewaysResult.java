@@ -39,6 +39,7 @@ public class DescribeVirtualGatewaysResult implements Serializable, Cloneable {
      * 
      * @return A list of virtual private gateways.
      */
+
     public java.util.List<VirtualGateway> getVirtualGateways() {
         if (virtualGateways == null) {
             virtualGateways = new com.amazonaws.internal.SdkInternalList<VirtualGateway>();
@@ -54,6 +55,7 @@ public class DescribeVirtualGatewaysResult implements Serializable, Cloneable {
      * @param virtualGateways
      *        A list of virtual private gateways.
      */
+
     public void setVirtualGateways(
             java.util.Collection<VirtualGateway> virtualGateways) {
         if (virtualGateways == null) {
@@ -81,6 +83,7 @@ public class DescribeVirtualGatewaysResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVirtualGatewaysResult withVirtualGateways(
             VirtualGateway... virtualGateways) {
         if (this.virtualGateways == null) {
@@ -103,6 +106,7 @@ public class DescribeVirtualGatewaysResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVirtualGatewaysResult withVirtualGateways(
             java.util.Collection<VirtualGateway> virtualGateways) {
         setVirtualGateways(virtualGateways);

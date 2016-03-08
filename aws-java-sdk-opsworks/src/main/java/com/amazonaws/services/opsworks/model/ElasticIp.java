@@ -66,6 +66,7 @@ public class ElasticIp implements Serializable, Cloneable {
      * @param ip
      *        The IP address.
      */
+
     public void setIp(String ip) {
         this.ip = ip;
     }
@@ -77,6 +78,7 @@ public class ElasticIp implements Serializable, Cloneable {
      * 
      * @return The IP address.
      */
+
     public String getIp() {
         return this.ip;
     }
@@ -91,6 +93,7 @@ public class ElasticIp implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ElasticIp withIp(String ip) {
         setIp(ip);
         return this;
@@ -104,6 +107,7 @@ public class ElasticIp implements Serializable, Cloneable {
      * @param name
      *        The name.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -115,6 +119,7 @@ public class ElasticIp implements Serializable, Cloneable {
      * 
      * @return The name.
      */
+
     public String getName() {
         return this.name;
     }
@@ -129,6 +134,7 @@ public class ElasticIp implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ElasticIp withName(String name) {
         setName(name);
         return this;
@@ -142,6 +148,7 @@ public class ElasticIp implements Serializable, Cloneable {
      * @param domain
      *        The domain.
      */
+
     public void setDomain(String domain) {
         this.domain = domain;
     }
@@ -153,6 +160,7 @@ public class ElasticIp implements Serializable, Cloneable {
      * 
      * @return The domain.
      */
+
     public String getDomain() {
         return this.domain;
     }
@@ -167,6 +175,7 @@ public class ElasticIp implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ElasticIp withDomain(String domain) {
         setDomain(domain);
         return this;
@@ -184,6 +193,7 @@ public class ElasticIp implements Serializable, Cloneable {
      *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html"
      *        >Regions and Endpoints</a>.
      */
+
     public void setRegion(String region) {
         this.region = region;
     }
@@ -199,6 +209,7 @@ public class ElasticIp implements Serializable, Cloneable {
      *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html"
      *         >Regions and Endpoints</a>.
      */
+
     public String getRegion() {
         return this.region;
     }
@@ -217,6 +228,7 @@ public class ElasticIp implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ElasticIp withRegion(String region) {
         setRegion(region);
         return this;
@@ -230,6 +242,7 @@ public class ElasticIp implements Serializable, Cloneable {
      * @param instanceId
      *        The ID of the instance that the address is attached to.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -241,6 +254,7 @@ public class ElasticIp implements Serializable, Cloneable {
      * 
      * @return The ID of the instance that the address is attached to.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
@@ -255,6 +269,7 @@ public class ElasticIp implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ElasticIp withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;

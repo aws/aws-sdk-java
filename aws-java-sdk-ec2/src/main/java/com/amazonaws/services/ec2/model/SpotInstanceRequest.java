@@ -163,6 +163,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      * @param spotInstanceRequestId
      *        The ID of the Spot instance request.
      */
+
     public void setSpotInstanceRequestId(String spotInstanceRequestId) {
         this.spotInstanceRequestId = spotInstanceRequestId;
     }
@@ -174,6 +175,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      * 
      * @return The ID of the Spot instance request.
      */
+
     public String getSpotInstanceRequestId() {
         return this.spotInstanceRequestId;
     }
@@ -188,6 +190,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SpotInstanceRequest withSpotInstanceRequestId(
             String spotInstanceRequestId) {
         setSpotInstanceRequestId(spotInstanceRequestId);
@@ -204,6 +207,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      *        The maximum hourly price (bid) for the Spot instance launched to
      *        fulfill the request.
      */
+
     public void setSpotPrice(String spotPrice) {
         this.spotPrice = spotPrice;
     }
@@ -217,6 +221,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      * @return The maximum hourly price (bid) for the Spot instance launched to
      *         fulfill the request.
      */
+
     public String getSpotPrice() {
         return this.spotPrice;
     }
@@ -233,6 +238,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SpotInstanceRequest withSpotPrice(String spotPrice) {
         setSpotPrice(spotPrice);
         return this;
@@ -247,6 +253,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      *        The Spot instance request type.
      * @see SpotInstanceType
      */
+
     public void setType(String type) {
         this.type = type;
     }
@@ -259,6 +266,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      * @return The Spot instance request type.
      * @see SpotInstanceType
      */
+
     public String getType() {
         return this.type;
     }
@@ -274,6 +282,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      *         chained together.
      * @see SpotInstanceType
      */
+
     public SpotInstanceRequest withType(String type) {
         setType(type);
         return this;
@@ -290,6 +299,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      *         chained together.
      * @see SpotInstanceType
      */
+
     public void setType(SpotInstanceType type) {
         this.type = type.toString();
     }
@@ -305,6 +315,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      *         chained together.
      * @see SpotInstanceType
      */
+
     public SpotInstanceRequest withType(SpotInstanceType type) {
         setType(type);
         return this;
@@ -329,6 +340,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      *        Guide</i>.
      * @see SpotInstanceState
      */
+
     public void setState(String state) {
         this.state = state;
     }
@@ -351,6 +363,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      *         Guide</i>.
      * @see SpotInstanceState
      */
+
     public String getState() {
         return this.state;
     }
@@ -376,6 +389,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      *         chained together.
      * @see SpotInstanceState
      */
+
     public SpotInstanceRequest withState(String state) {
         setState(state);
         return this;
@@ -402,6 +416,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      *         chained together.
      * @see SpotInstanceState
      */
+
     public void setState(SpotInstanceState state) {
         this.state = state.toString();
     }
@@ -427,6 +442,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      *         chained together.
      * @see SpotInstanceState
      */
+
     public SpotInstanceRequest withState(SpotInstanceState state) {
         setState(state);
         return this;
@@ -440,6 +456,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      * @param fault
      *        The fault codes for the Spot instance request, if any.
      */
+
     public void setFault(SpotInstanceStateFault fault) {
         this.fault = fault;
     }
@@ -451,6 +468,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      * 
      * @return The fault codes for the Spot instance request, if any.
      */
+
     public SpotInstanceStateFault getFault() {
         return this.fault;
     }
@@ -465,6 +483,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SpotInstanceRequest withFault(SpotInstanceStateFault fault) {
         setFault(fault);
         return this;
@@ -479,6 +498,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      *        The status code and status message describing the Spot instance
      *        request.
      */
+
     public void setStatus(SpotInstanceStatus status) {
         this.status = status;
     }
@@ -491,6 +511,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      * @return The status code and status message describing the Spot instance
      *         request.
      */
+
     public SpotInstanceStatus getStatus() {
         return this.status;
     }
@@ -506,6 +527,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SpotInstanceRequest withStatus(SpotInstanceStatus status) {
         setStatus(status);
         return this;
@@ -523,6 +545,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      *        <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      *        The request becomes active at this date and time.
      */
+
     public void setValidFrom(java.util.Date validFrom) {
         this.validFrom = validFrom;
     }
@@ -538,6 +561,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      *         <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      *         The request becomes active at this date and time.
      */
+
     public java.util.Date getValidFrom() {
         return this.validFrom;
     }
@@ -556,6 +580,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SpotInstanceRequest withValidFrom(java.util.Date validFrom) {
         setValidFrom(validFrom);
         return this;
@@ -579,6 +604,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      *        reached. If the request is persistent, it remains active until it
      *        is canceled or this date is reached.
      */
+
     public void setValidUntil(java.util.Date validUntil) {
         this.validUntil = validUntil;
     }
@@ -600,6 +626,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      *         reached. If the request is persistent, it remains active until it
      *         is canceled or this date is reached.
      */
+
     public java.util.Date getValidUntil() {
         return this.validUntil;
     }
@@ -624,6 +651,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SpotInstanceRequest withValidUntil(java.util.Date validUntil) {
         setValidUntil(validUntil);
         return this;
@@ -639,6 +667,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      *        The instance launch group. Launch groups are Spot instances that
      *        launch together and terminate together.
      */
+
     public void setLaunchGroup(String launchGroup) {
         this.launchGroup = launchGroup;
     }
@@ -652,6 +681,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      * @return The instance launch group. Launch groups are Spot instances that
      *         launch together and terminate together.
      */
+
     public String getLaunchGroup() {
         return this.launchGroup;
     }
@@ -668,6 +698,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SpotInstanceRequest withLaunchGroup(String launchGroup) {
         setLaunchGroup(launchGroup);
         return this;
@@ -685,6 +716,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      *        Zone group for all Spot instance requests, all Spot instances are
      *        launched in the same Availability Zone.
      */
+
     public void setAvailabilityZoneGroup(String availabilityZoneGroup) {
         this.availabilityZoneGroup = availabilityZoneGroup;
     }
@@ -700,6 +732,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      *         Zone group for all Spot instance requests, all Spot instances are
      *         launched in the same Availability Zone.
      */
+
     public String getAvailabilityZoneGroup() {
         return this.availabilityZoneGroup;
     }
@@ -718,6 +751,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SpotInstanceRequest withAvailabilityZoneGroup(
             String availabilityZoneGroup) {
         setAvailabilityZoneGroup(availabilityZoneGroup);
@@ -732,6 +766,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      * @param launchSpecification
      *        Additional information for launching instances.
      */
+
     public void setLaunchSpecification(LaunchSpecification launchSpecification) {
         this.launchSpecification = launchSpecification;
     }
@@ -743,6 +778,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      * 
      * @return Additional information for launching instances.
      */
+
     public LaunchSpecification getLaunchSpecification() {
         return this.launchSpecification;
     }
@@ -757,6 +793,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SpotInstanceRequest withLaunchSpecification(
             LaunchSpecification launchSpecification) {
         setLaunchSpecification(launchSpecification);
@@ -773,6 +810,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      *        The instance ID, if an instance has been launched to fulfill the
      *        Spot instance request.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -786,6 +824,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      * @return The instance ID, if an instance has been launched to fulfill the
      *         Spot instance request.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
@@ -802,6 +841,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SpotInstanceRequest withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;
@@ -819,6 +859,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      *        UTC format (for example,
      *        <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      */
+
     public void setCreateTime(java.util.Date createTime) {
         this.createTime = createTime;
     }
@@ -834,6 +875,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      *         UTC format (for example,
      *         <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      */
+
     public java.util.Date getCreateTime() {
         return this.createTime;
     }
@@ -852,6 +894,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SpotInstanceRequest withCreateTime(java.util.Date createTime) {
         setCreateTime(createTime);
         return this;
@@ -866,6 +909,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      *        The product description associated with the Spot instance.
      * @see RIProductDescription
      */
+
     public void setProductDescription(String productDescription) {
         this.productDescription = productDescription;
     }
@@ -878,6 +922,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      * @return The product description associated with the Spot instance.
      * @see RIProductDescription
      */
+
     public String getProductDescription() {
         return this.productDescription;
     }
@@ -893,6 +938,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      *         chained together.
      * @see RIProductDescription
      */
+
     public SpotInstanceRequest withProductDescription(String productDescription) {
         setProductDescription(productDescription);
         return this;
@@ -909,6 +955,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      *         chained together.
      * @see RIProductDescription
      */
+
     public void setProductDescription(RIProductDescription productDescription) {
         this.productDescription = productDescription.toString();
     }
@@ -924,6 +971,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      *         chained together.
      * @see RIProductDescription
      */
+
     public SpotInstanceRequest withProductDescription(
             RIProductDescription productDescription) {
         setProductDescription(productDescription);
@@ -938,6 +986,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      * @param blockDurationMinutes
      *        The duration for the Spot instance, in minutes.
      */
+
     public void setBlockDurationMinutes(Integer blockDurationMinutes) {
         this.blockDurationMinutes = blockDurationMinutes;
     }
@@ -949,6 +998,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      * 
      * @return The duration for the Spot instance, in minutes.
      */
+
     public Integer getBlockDurationMinutes() {
         return this.blockDurationMinutes;
     }
@@ -963,6 +1013,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SpotInstanceRequest withBlockDurationMinutes(
             Integer blockDurationMinutes) {
         setBlockDurationMinutes(blockDurationMinutes);
@@ -981,6 +1032,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      *        fulfilled, this is the fixed hourly price in effect for the Spot
      *        instance while it runs.
      */
+
     public void setActualBlockHourlyPrice(String actualBlockHourlyPrice) {
         this.actualBlockHourlyPrice = actualBlockHourlyPrice;
     }
@@ -996,6 +1048,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      *         fulfilled, this is the fixed hourly price in effect for the Spot
      *         instance while it runs.
      */
+
     public String getActualBlockHourlyPrice() {
         return this.actualBlockHourlyPrice;
     }
@@ -1014,6 +1067,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SpotInstanceRequest withActualBlockHourlyPrice(
             String actualBlockHourlyPrice) {
         setActualBlockHourlyPrice(actualBlockHourlyPrice);
@@ -1027,6 +1081,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      * 
      * @return Any tags assigned to the resource.
      */
+
     public java.util.List<Tag> getTags() {
         if (tags == null) {
             tags = new com.amazonaws.internal.SdkInternalList<Tag>();
@@ -1042,6 +1097,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      * @param tags
      *        Any tags assigned to the resource.
      */
+
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
             this.tags = null;
@@ -1067,6 +1123,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SpotInstanceRequest withTags(Tag... tags) {
         if (this.tags == null) {
             setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
@@ -1087,6 +1144,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SpotInstanceRequest withTags(java.util.Collection<Tag> tags) {
         setTags(tags);
         return this;
@@ -1100,6 +1158,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      * @param launchedAvailabilityZone
      *        The Availability Zone in which the bid is launched.
      */
+
     public void setLaunchedAvailabilityZone(String launchedAvailabilityZone) {
         this.launchedAvailabilityZone = launchedAvailabilityZone;
     }
@@ -1111,6 +1170,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      * 
      * @return The Availability Zone in which the bid is launched.
      */
+
     public String getLaunchedAvailabilityZone() {
         return this.launchedAvailabilityZone;
     }
@@ -1125,6 +1185,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SpotInstanceRequest withLaunchedAvailabilityZone(
             String launchedAvailabilityZone) {
         setLaunchedAvailabilityZone(launchedAvailabilityZone);

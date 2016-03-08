@@ -104,6 +104,7 @@ public class UpdateDomainNameserversRequest extends AmazonWebServiceRequest
      *        <p>
      *        Required: Yes
      */
+
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
@@ -142,6 +143,7 @@ public class UpdateDomainNameserversRequest extends AmazonWebServiceRequest
      *         <p>
      *         Required: Yes
      */
+
     public String getDomainName() {
         return this.domainName;
     }
@@ -183,6 +185,7 @@ public class UpdateDomainNameserversRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateDomainNameserversRequest withDomainName(String domainName) {
         setDomainName(domainName);
         return this;
@@ -196,6 +199,7 @@ public class UpdateDomainNameserversRequest extends AmazonWebServiceRequest
      * @param fIAuthKey
      *        The authorization key for .fi domains
      */
+
     public void setFIAuthKey(String fIAuthKey) {
         this.fIAuthKey = fIAuthKey;
     }
@@ -207,6 +211,7 @@ public class UpdateDomainNameserversRequest extends AmazonWebServiceRequest
      * 
      * @return The authorization key for .fi domains
      */
+
     public String getFIAuthKey() {
         return this.fIAuthKey;
     }
@@ -221,6 +226,7 @@ public class UpdateDomainNameserversRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateDomainNameserversRequest withFIAuthKey(String fIAuthKey) {
         setFIAuthKey(fIAuthKey);
         return this;
@@ -250,6 +256,7 @@ public class UpdateDomainNameserversRequest extends AmazonWebServiceRequest
      *         <p>
      *         Required: Yes
      */
+
     public java.util.List<Nameserver> getNameservers() {
         if (nameservers == null) {
             nameservers = new com.amazonaws.internal.SdkInternalList<Nameserver>();
@@ -282,6 +289,7 @@ public class UpdateDomainNameserversRequest extends AmazonWebServiceRequest
      *        <p>
      *        Required: Yes
      */
+
     public void setNameservers(java.util.Collection<Nameserver> nameservers) {
         if (nameservers == null) {
             this.nameservers = null;
@@ -325,6 +333,7 @@ public class UpdateDomainNameserversRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateDomainNameserversRequest withNameservers(
             Nameserver... nameservers) {
         if (this.nameservers == null) {
@@ -364,6 +373,7 @@ public class UpdateDomainNameserversRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateDomainNameserversRequest withNameservers(
             java.util.Collection<Nameserver> nameservers) {
         setNameservers(nameservers);

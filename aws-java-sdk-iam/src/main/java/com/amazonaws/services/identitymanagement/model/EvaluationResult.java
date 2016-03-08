@@ -104,6 +104,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      * @param evalActionName
      *        The name of the API action tested on the indicated resource.
      */
+
     public void setEvalActionName(String evalActionName) {
         this.evalActionName = evalActionName;
     }
@@ -115,6 +116,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      * 
      * @return The name of the API action tested on the indicated resource.
      */
+
     public String getEvalActionName() {
         return this.evalActionName;
     }
@@ -129,6 +131,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EvaluationResult withEvalActionName(String evalActionName) {
         setEvalActionName(evalActionName);
         return this;
@@ -143,6 +146,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      *        The ARN of the resource that the indicated API action was tested
      *        on.
      */
+
     public void setEvalResourceName(String evalResourceName) {
         this.evalResourceName = evalResourceName;
     }
@@ -155,6 +159,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      * @return The ARN of the resource that the indicated API action was tested
      *         on.
      */
+
     public String getEvalResourceName() {
         return this.evalResourceName;
     }
@@ -170,6 +175,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EvaluationResult withEvalResourceName(String evalResourceName) {
         setEvalResourceName(evalResourceName);
         return this;
@@ -184,6 +190,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      *        The result of the simulation.
      * @see PolicyEvaluationDecisionType
      */
+
     public void setEvalDecision(String evalDecision) {
         this.evalDecision = evalDecision;
     }
@@ -196,6 +203,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      * @return The result of the simulation.
      * @see PolicyEvaluationDecisionType
      */
+
     public String getEvalDecision() {
         return this.evalDecision;
     }
@@ -211,6 +219,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      *         chained together.
      * @see PolicyEvaluationDecisionType
      */
+
     public EvaluationResult withEvalDecision(String evalDecision) {
         setEvalDecision(evalDecision);
         return this;
@@ -227,6 +236,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      *         chained together.
      * @see PolicyEvaluationDecisionType
      */
+
     public void setEvalDecision(PolicyEvaluationDecisionType evalDecision) {
         this.evalDecision = evalDecision.toString();
     }
@@ -242,6 +252,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      *         chained together.
      * @see PolicyEvaluationDecisionType
      */
+
     public EvaluationResult withEvalDecision(
             PolicyEvaluationDecisionType evalDecision) {
         setEvalDecision(evalDecision);
@@ -264,6 +275,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      *         any allow, and the deny statement is the only entry included in
      *         the result.
      */
+
     public java.util.List<Statement> getMatchedStatements() {
         if (matchedStatements == null) {
             matchedStatements = new com.amazonaws.internal.SdkInternalList<Statement>();
@@ -287,6 +299,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      *        denies that action, then the explicit deny overrides any allow,
      *        and the deny statement is the only entry included in the result.
      */
+
     public void setMatchedStatements(
             java.util.Collection<Statement> matchedStatements) {
         if (matchedStatements == null) {
@@ -322,6 +335,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EvaluationResult withMatchedStatements(
             Statement... matchedStatements) {
         if (this.matchedStatements == null) {
@@ -352,6 +366,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EvaluationResult withMatchedStatements(
             java.util.Collection<Statement> matchedStatements) {
         setMatchedStatements(matchedStatements);
@@ -387,6 +402,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      *         policies that would occur in a real world request.
      *         </p>
      */
+
     public java.util.List<String> getMissingContextValues() {
         if (missingContextValues == null) {
             missingContextValues = new com.amazonaws.internal.SdkInternalList<String>();
@@ -424,6 +440,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      *        policies that would occur in a real world request.
      *        </p>
      */
+
     public void setMissingContextValues(
             java.util.Collection<String> missingContextValues) {
         if (missingContextValues == null) {
@@ -473,6 +490,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EvaluationResult withMissingContextValues(
             String... missingContextValues) {
         if (this.missingContextValues == null) {
@@ -517,6 +535,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EvaluationResult withMissingContextValues(
             java.util.Collection<String> missingContextValues) {
         setMissingContextValues(missingContextValues);
@@ -544,6 +563,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html"
      *         >How IAM Roles Differ from Resource-based Policies</a>
      */
+
     public java.util.Map<String, String> getEvalDecisionDetails() {
         if (evalDecisionDetails == null) {
             evalDecisionDetails = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -573,6 +593,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html"
      *        >How IAM Roles Differ from Resource-based Policies</a>
      */
+
     public void setEvalDecisionDetails(
             java.util.Map<String, String> evalDecisionDetails) {
         this.evalDecisionDetails = evalDecisionDetails == null ? null
@@ -604,6 +625,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EvaluationResult withEvalDecisionDetails(
             java.util.Map<String, String> evalDecisionDetails) {
         setEvalDecisionDetails(evalDecisionDetails);
@@ -625,6 +647,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      * Removes all the entries added into EvalDecisionDetails. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public EvaluationResult clearEvalDecisionDetailsEntries() {
         this.evalDecisionDetails = null;
         return this;
@@ -639,6 +662,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      * @return The individual results of the simulation of the API action
      *         specified in EvalActionName on each resource.
      */
+
     public java.util.List<ResourceSpecificResult> getResourceSpecificResults() {
         if (resourceSpecificResults == null) {
             resourceSpecificResults = new com.amazonaws.internal.SdkInternalList<ResourceSpecificResult>();
@@ -656,6 +680,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      *        The individual results of the simulation of the API action
      *        specified in EvalActionName on each resource.
      */
+
     public void setResourceSpecificResults(
             java.util.Collection<ResourceSpecificResult> resourceSpecificResults) {
         if (resourceSpecificResults == null) {
@@ -685,6 +710,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EvaluationResult withResourceSpecificResults(
             ResourceSpecificResult... resourceSpecificResults) {
         if (this.resourceSpecificResults == null) {
@@ -709,6 +735,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EvaluationResult withResourceSpecificResults(
             java.util.Collection<ResourceSpecificResult> resourceSpecificResults) {
         setResourceSpecificResults(resourceSpecificResults);

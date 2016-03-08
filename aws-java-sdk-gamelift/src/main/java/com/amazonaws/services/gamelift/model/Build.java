@@ -82,6 +82,7 @@ public class Build implements Serializable, Cloneable {
      * @param buildId
      *        Unique identifier for a build.
      */
+
     public void setBuildId(String buildId) {
         this.buildId = buildId;
     }
@@ -93,6 +94,7 @@ public class Build implements Serializable, Cloneable {
      * 
      * @return Unique identifier for a build.
      */
+
     public String getBuildId() {
         return this.buildId;
     }
@@ -107,6 +109,7 @@ public class Build implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Build withBuildId(String buildId) {
         setBuildId(buildId);
         return this;
@@ -123,6 +126,7 @@ public class Build implements Serializable, Cloneable {
      *        need to be unique. It can be set using <a>CreateBuild</a> or
      *        <a>UpdateBuild</a>.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -137,6 +141,7 @@ public class Build implements Serializable, Cloneable {
      *         need to be unique. It can be set using <a>CreateBuild</a> or
      *         <a>UpdateBuild</a>.
      */
+
     public String getName() {
         return this.name;
     }
@@ -154,6 +159,7 @@ public class Build implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Build withName(String name) {
         setName(name);
         return this;
@@ -171,6 +177,7 @@ public class Build implements Serializable, Cloneable {
      *        be unique to a build. This value can be set using
      *        <a>CreateBuild</a> or <a>UpdateBuild</a>.
      */
+
     public void setVersion(String version) {
         this.version = version;
     }
@@ -186,6 +193,7 @@ public class Build implements Serializable, Cloneable {
      *         to be unique to a build. This value can be set using
      *         <a>CreateBuild</a> or <a>UpdateBuild</a>.
      */
+
     public String getVersion() {
         return this.version;
     }
@@ -204,6 +212,7 @@ public class Build implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Build withVersion(String version) {
         setVersion(version);
         return this;
@@ -232,6 +241,7 @@ public class Build implements Serializable, Cloneable {
      *        cannot create new fleets for this build. lt/ligtlt/ulgt
      * @see BuildStatus
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -259,6 +269,7 @@ public class Build implements Serializable, Cloneable {
      *         lt/ligtlt/ulgt
      * @see BuildStatus
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -288,6 +299,7 @@ public class Build implements Serializable, Cloneable {
      *         chained together.
      * @see BuildStatus
      */
+
     public Build withStatus(String status) {
         setStatus(status);
         return this;
@@ -318,6 +330,7 @@ public class Build implements Serializable, Cloneable {
      *         chained together.
      * @see BuildStatus
      */
+
     public void setStatus(BuildStatus status) {
         this.status = status.toString();
     }
@@ -347,6 +360,7 @@ public class Build implements Serializable, Cloneable {
      *         chained together.
      * @see BuildStatus
      */
+
     public Build withStatus(BuildStatus status) {
         setStatus(status);
         return this;
@@ -362,6 +376,7 @@ public class Build implements Serializable, Cloneable {
      *        File size of the uploaded game build, expressed in bytes. When the
      *        build state is INITIALIZED, this value is 0.
      */
+
     public void setSizeOnDisk(Long sizeOnDisk) {
         this.sizeOnDisk = sizeOnDisk;
     }
@@ -375,6 +390,7 @@ public class Build implements Serializable, Cloneable {
      * @return File size of the uploaded game build, expressed in bytes. When
      *         the build state is INITIALIZED, this value is 0.
      */
+
     public Long getSizeOnDisk() {
         return this.sizeOnDisk;
     }
@@ -391,6 +407,7 @@ public class Build implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Build withSizeOnDisk(Long sizeOnDisk) {
         setSizeOnDisk(sizeOnDisk);
         return this;
@@ -406,6 +423,7 @@ public class Build implements Serializable, Cloneable {
      *        Time stamp indicating when this object was created. Format is an
      *        integer representing the number of seconds since epoch.
      */
+
     public void setCreationTime(java.util.Date creationTime) {
         this.creationTime = creationTime;
     }
@@ -419,6 +437,7 @@ public class Build implements Serializable, Cloneable {
      * @return Time stamp indicating when this object was created. Format is an
      *         integer representing the number of seconds since epoch.
      */
+
     public java.util.Date getCreationTime() {
         return this.creationTime;
     }
@@ -435,6 +454,7 @@ public class Build implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Build withCreationTime(java.util.Date creationTime) {
         setCreationTime(creationTime);
         return this;

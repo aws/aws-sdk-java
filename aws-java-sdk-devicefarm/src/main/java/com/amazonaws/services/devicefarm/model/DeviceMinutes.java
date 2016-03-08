@@ -58,6 +58,7 @@ public class DeviceMinutes implements Serializable, Cloneable {
      *        When specified, represents the total minutes used by the resource
      *        to run tests.
      */
+
     public void setTotal(Double total) {
         this.total = total;
     }
@@ -71,6 +72,7 @@ public class DeviceMinutes implements Serializable, Cloneable {
      * @return When specified, represents the total minutes used by the resource
      *         to run tests.
      */
+
     public Double getTotal() {
         return this.total;
     }
@@ -87,6 +89,7 @@ public class DeviceMinutes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeviceMinutes withTotal(Double total) {
         setTotal(total);
         return this;
@@ -102,6 +105,7 @@ public class DeviceMinutes implements Serializable, Cloneable {
      *        When specified, represents only the sum of metered minutes used by
      *        the resource to run tests.
      */
+
     public void setMetered(Double metered) {
         this.metered = metered;
     }
@@ -115,6 +119,7 @@ public class DeviceMinutes implements Serializable, Cloneable {
      * @return When specified, represents only the sum of metered minutes used
      *         by the resource to run tests.
      */
+
     public Double getMetered() {
         return this.metered;
     }
@@ -131,6 +136,7 @@ public class DeviceMinutes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeviceMinutes withMetered(Double metered) {
         setMetered(metered);
         return this;
@@ -146,6 +152,7 @@ public class DeviceMinutes implements Serializable, Cloneable {
      *        When specified, represents only the sum of unmetered minutes used
      *        by the resource to run tests.
      */
+
     public void setUnmetered(Double unmetered) {
         this.unmetered = unmetered;
     }
@@ -159,6 +166,7 @@ public class DeviceMinutes implements Serializable, Cloneable {
      * @return When specified, represents only the sum of unmetered minutes used
      *         by the resource to run tests.
      */
+
     public Double getUnmetered() {
         return this.unmetered;
     }
@@ -175,6 +183,7 @@ public class DeviceMinutes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeviceMinutes withUnmetered(Double unmetered) {
         setUnmetered(unmetered);
         return this;

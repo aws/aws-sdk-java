@@ -40,6 +40,7 @@ public class ListTagsResult implements Serializable, Cloneable {
      * 
      * @return List of <code>Tag</code> for the requested Elasticsearch domain.
      */
+
     public java.util.List<Tag> getTagList() {
         return tagList;
     }
@@ -52,6 +53,7 @@ public class ListTagsResult implements Serializable, Cloneable {
      * @param tagList
      *        List of <code>Tag</code> for the requested Elasticsearch domain.
      */
+
     public void setTagList(java.util.Collection<Tag> tagList) {
         if (tagList == null) {
             this.tagList = null;
@@ -77,6 +79,7 @@ public class ListTagsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTagsResult withTagList(Tag... tagList) {
         if (this.tagList == null) {
             setTagList(new java.util.ArrayList<Tag>(tagList.length));
@@ -97,6 +100,7 @@ public class ListTagsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTagsResult withTagList(java.util.Collection<Tag> tagList) {
         setTagList(tagList);
         return this;

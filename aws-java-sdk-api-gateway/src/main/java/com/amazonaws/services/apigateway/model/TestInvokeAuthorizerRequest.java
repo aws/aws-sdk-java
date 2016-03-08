@@ -42,6 +42,7 @@ public class TestInvokeAuthorizerRequest extends AmazonWebServiceRequest
     /**
      * @param restApiId
      */
+
     public void setRestApiId(String restApiId) {
         this.restApiId = restApiId;
     }
@@ -49,6 +50,7 @@ public class TestInvokeAuthorizerRequest extends AmazonWebServiceRequest
     /**
      * @return
      */
+
     public String getRestApiId() {
         return this.restApiId;
     }
@@ -58,6 +60,7 @@ public class TestInvokeAuthorizerRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TestInvokeAuthorizerRequest withRestApiId(String restApiId) {
         setRestApiId(restApiId);
         return this;
@@ -66,6 +69,7 @@ public class TestInvokeAuthorizerRequest extends AmazonWebServiceRequest
     /**
      * @param authorizerId
      */
+
     public void setAuthorizerId(String authorizerId) {
         this.authorizerId = authorizerId;
     }
@@ -73,6 +77,7 @@ public class TestInvokeAuthorizerRequest extends AmazonWebServiceRequest
     /**
      * @return
      */
+
     public String getAuthorizerId() {
         return this.authorizerId;
     }
@@ -82,6 +87,7 @@ public class TestInvokeAuthorizerRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TestInvokeAuthorizerRequest withAuthorizerId(String authorizerId) {
         setAuthorizerId(authorizerId);
         return this;
@@ -90,6 +96,7 @@ public class TestInvokeAuthorizerRequest extends AmazonWebServiceRequest
     /**
      * @return
      */
+
     public java.util.Map<String, String> getHeaders() {
         return headers;
     }
@@ -97,6 +104,7 @@ public class TestInvokeAuthorizerRequest extends AmazonWebServiceRequest
     /**
      * @param headers
      */
+
     public void setHeaders(java.util.Map<String, String> headers) {
         this.headers = headers;
     }
@@ -106,6 +114,7 @@ public class TestInvokeAuthorizerRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TestInvokeAuthorizerRequest withHeaders(
             java.util.Map<String, String> headers) {
         setHeaders(headers);
@@ -127,6 +136,7 @@ public class TestInvokeAuthorizerRequest extends AmazonWebServiceRequest
      * Removes all the entries added into Headers. &lt;p> Returns a reference to
      * this object so that method calls can be chained together.
      */
+
     public TestInvokeAuthorizerRequest clearHeadersEntries() {
         this.headers = null;
         return this;
@@ -135,6 +145,7 @@ public class TestInvokeAuthorizerRequest extends AmazonWebServiceRequest
     /**
      * @param pathWithQueryString
      */
+
     public void setPathWithQueryString(String pathWithQueryString) {
         this.pathWithQueryString = pathWithQueryString;
     }
@@ -142,6 +153,7 @@ public class TestInvokeAuthorizerRequest extends AmazonWebServiceRequest
     /**
      * @return
      */
+
     public String getPathWithQueryString() {
         return this.pathWithQueryString;
     }
@@ -151,6 +163,7 @@ public class TestInvokeAuthorizerRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TestInvokeAuthorizerRequest withPathWithQueryString(
             String pathWithQueryString) {
         setPathWithQueryString(pathWithQueryString);
@@ -160,6 +173,7 @@ public class TestInvokeAuthorizerRequest extends AmazonWebServiceRequest
     /**
      * @param body
      */
+
     public void setBody(String body) {
         this.body = body;
     }
@@ -167,6 +181,7 @@ public class TestInvokeAuthorizerRequest extends AmazonWebServiceRequest
     /**
      * @return
      */
+
     public String getBody() {
         return this.body;
     }
@@ -176,6 +191,7 @@ public class TestInvokeAuthorizerRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TestInvokeAuthorizerRequest withBody(String body) {
         setBody(body);
         return this;
@@ -184,6 +200,7 @@ public class TestInvokeAuthorizerRequest extends AmazonWebServiceRequest
     /**
      * @return
      */
+
     public java.util.Map<String, String> getStageVariables() {
         return stageVariables;
     }
@@ -191,6 +208,7 @@ public class TestInvokeAuthorizerRequest extends AmazonWebServiceRequest
     /**
      * @param stageVariables
      */
+
     public void setStageVariables(java.util.Map<String, String> stageVariables) {
         this.stageVariables = stageVariables;
     }
@@ -200,6 +218,7 @@ public class TestInvokeAuthorizerRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TestInvokeAuthorizerRequest withStageVariables(
             java.util.Map<String, String> stageVariables) {
         setStageVariables(stageVariables);
@@ -222,6 +241,7 @@ public class TestInvokeAuthorizerRequest extends AmazonWebServiceRequest
      * Removes all the entries added into StageVariables. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public TestInvokeAuthorizerRequest clearStageVariablesEntries() {
         this.stageVariables = null;
         return this;
@@ -230,6 +250,7 @@ public class TestInvokeAuthorizerRequest extends AmazonWebServiceRequest
     /**
      * @return
      */
+
     public java.util.Map<String, String> getAdditionalContext() {
         return additionalContext;
     }
@@ -237,6 +258,7 @@ public class TestInvokeAuthorizerRequest extends AmazonWebServiceRequest
     /**
      * @param additionalContext
      */
+
     public void setAdditionalContext(
             java.util.Map<String, String> additionalContext) {
         this.additionalContext = additionalContext;
@@ -247,6 +269,7 @@ public class TestInvokeAuthorizerRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TestInvokeAuthorizerRequest withAdditionalContext(
             java.util.Map<String, String> additionalContext) {
         setAdditionalContext(additionalContext);
@@ -269,6 +292,7 @@ public class TestInvokeAuthorizerRequest extends AmazonWebServiceRequest
      * Removes all the entries added into AdditionalContext. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public TestInvokeAuthorizerRequest clearAdditionalContextEntries() {
         this.additionalContext = null;
         return this;

@@ -63,6 +63,7 @@ public class TaskObject implements Serializable, Cloneable {
      *        An internal identifier for the task. This ID is passed to the
      *        <a>SetTaskStatus</a> and <a>ReportTaskProgress</a> actions.
      */
+
     public void setTaskId(String taskId) {
         this.taskId = taskId;
     }
@@ -76,6 +77,7 @@ public class TaskObject implements Serializable, Cloneable {
      * @return An internal identifier for the task. This ID is passed to the
      *         <a>SetTaskStatus</a> and <a>ReportTaskProgress</a> actions.
      */
+
     public String getTaskId() {
         return this.taskId;
     }
@@ -92,6 +94,7 @@ public class TaskObject implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TaskObject withTaskId(String taskId) {
         setTaskId(taskId);
         return this;
@@ -105,6 +108,7 @@ public class TaskObject implements Serializable, Cloneable {
      * @param pipelineId
      *        The ID of the pipeline that provided the task.
      */
+
     public void setPipelineId(String pipelineId) {
         this.pipelineId = pipelineId;
     }
@@ -116,6 +120,7 @@ public class TaskObject implements Serializable, Cloneable {
      * 
      * @return The ID of the pipeline that provided the task.
      */
+
     public String getPipelineId() {
         return this.pipelineId;
     }
@@ -130,6 +135,7 @@ public class TaskObject implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TaskObject withPipelineId(String pipelineId) {
         setPipelineId(pipelineId);
         return this;
@@ -145,6 +151,7 @@ public class TaskObject implements Serializable, Cloneable {
      *        The ID of the pipeline task attempt object. AWS Data Pipeline uses
      *        this value to track how many times a task is attempted.
      */
+
     public void setAttemptId(String attemptId) {
         this.attemptId = attemptId;
     }
@@ -158,6 +165,7 @@ public class TaskObject implements Serializable, Cloneable {
      * @return The ID of the pipeline task attempt object. AWS Data Pipeline
      *         uses this value to track how many times a task is attempted.
      */
+
     public String getAttemptId() {
         return this.attemptId;
     }
@@ -174,6 +182,7 @@ public class TaskObject implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TaskObject withAttemptId(String attemptId) {
         setAttemptId(attemptId);
         return this;
@@ -188,6 +197,7 @@ public class TaskObject implements Serializable, Cloneable {
      * @return Connection information for the location where the task runner
      *         will publish the output of the task.
      */
+
     public java.util.Map<String, PipelineObject> getObjects() {
         return objects;
     }
@@ -202,6 +212,7 @@ public class TaskObject implements Serializable, Cloneable {
      *        Connection information for the location where the task runner will
      *        publish the output of the task.
      */
+
     public void setObjects(java.util.Map<String, PipelineObject> objects) {
         this.objects = objects;
     }
@@ -218,6 +229,7 @@ public class TaskObject implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TaskObject withObjects(java.util.Map<String, PipelineObject> objects) {
         setObjects(objects);
         return this;
@@ -238,6 +250,7 @@ public class TaskObject implements Serializable, Cloneable {
      * Removes all the entries added into Objects. &lt;p> Returns a reference to
      * this object so that method calls can be chained together.
      */
+
     public TaskObject clearObjectsEntries() {
         this.objects = null;
         return this;

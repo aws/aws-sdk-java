@@ -52,6 +52,7 @@ public class DeleteRuleRequest extends AmazonWebServiceRequest implements
      *        delete. <code>RuleId</code> is returned by <a>CreateRule</a> and
      *        by <a>ListRules</a>.
      */
+
     public void setRuleId(String ruleId) {
         this.ruleId = ruleId;
     }
@@ -67,6 +68,7 @@ public class DeleteRuleRequest extends AmazonWebServiceRequest implements
      *         delete. <code>RuleId</code> is returned by <a>CreateRule</a> and
      *         by <a>ListRules</a>.
      */
+
     public String getRuleId() {
         return this.ruleId;
     }
@@ -85,6 +87,7 @@ public class DeleteRuleRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteRuleRequest withRuleId(String ruleId) {
         setRuleId(ruleId);
         return this;
@@ -99,6 +102,7 @@ public class DeleteRuleRequest extends AmazonWebServiceRequest implements
      *        The value returned by the most recent call to
      *        <a>GetChangeToken</a>.
      */
+
     public void setChangeToken(String changeToken) {
         this.changeToken = changeToken;
     }
@@ -111,6 +115,7 @@ public class DeleteRuleRequest extends AmazonWebServiceRequest implements
      * @return The value returned by the most recent call to
      *         <a>GetChangeToken</a>.
      */
+
     public String getChangeToken() {
         return this.changeToken;
     }
@@ -126,6 +131,7 @@ public class DeleteRuleRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteRuleRequest withChangeToken(String changeToken) {
         setChangeToken(changeToken);
         return this;

@@ -39,6 +39,7 @@ public class DescribeStackResourcesResult implements Serializable, Cloneable {
      * 
      * @return A list of <code>StackResource</code> structures.
      */
+
     public java.util.List<StackResource> getStackResources() {
         if (stackResources == null) {
             stackResources = new com.amazonaws.internal.SdkInternalList<StackResource>();
@@ -54,6 +55,7 @@ public class DescribeStackResourcesResult implements Serializable, Cloneable {
      * @param stackResources
      *        A list of <code>StackResource</code> structures.
      */
+
     public void setStackResources(
             java.util.Collection<StackResource> stackResources) {
         if (stackResources == null) {
@@ -81,6 +83,7 @@ public class DescribeStackResourcesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeStackResourcesResult withStackResources(
             StackResource... stackResources) {
         if (this.stackResources == null) {
@@ -103,6 +106,7 @@ public class DescribeStackResourcesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeStackResourcesResult withStackResources(
             java.util.Collection<StackResource> stackResources) {
         setStackResources(stackResources);

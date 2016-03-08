@@ -48,6 +48,7 @@ public class TimeBasedAutoScalingConfiguration implements Serializable,
      * @param instanceId
      *        The instance ID.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -59,6 +60,7 @@ public class TimeBasedAutoScalingConfiguration implements Serializable,
      * 
      * @return The instance ID.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
@@ -73,6 +75,7 @@ public class TimeBasedAutoScalingConfiguration implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TimeBasedAutoScalingConfiguration withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;
@@ -88,6 +91,7 @@ public class TimeBasedAutoScalingConfiguration implements Serializable,
      *        A <code>WeeklyAutoScalingSchedule</code> object with the instance
      *        schedule.
      */
+
     public void setAutoScalingSchedule(
             WeeklyAutoScalingSchedule autoScalingSchedule) {
         this.autoScalingSchedule = autoScalingSchedule;
@@ -102,6 +106,7 @@ public class TimeBasedAutoScalingConfiguration implements Serializable,
      * @return A <code>WeeklyAutoScalingSchedule</code> object with the instance
      *         schedule.
      */
+
     public WeeklyAutoScalingSchedule getAutoScalingSchedule() {
         return this.autoScalingSchedule;
     }
@@ -118,6 +123,7 @@ public class TimeBasedAutoScalingConfiguration implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TimeBasedAutoScalingConfiguration withAutoScalingSchedule(
             WeeklyAutoScalingSchedule autoScalingSchedule) {
         setAutoScalingSchedule(autoScalingSchedule);

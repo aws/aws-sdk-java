@@ -48,6 +48,7 @@ public class SpotFleetMonitoring implements Serializable, Cloneable {
      *        <p>
      *        Default: <code>false</code>
      */
+
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
     }
@@ -64,6 +65,7 @@ public class SpotFleetMonitoring implements Serializable, Cloneable {
      *         <p>
      *         Default: <code>false</code>
      */
+
     public Boolean getEnabled() {
         return this.enabled;
     }
@@ -83,6 +85,7 @@ public class SpotFleetMonitoring implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SpotFleetMonitoring withEnabled(Boolean enabled) {
         setEnabled(enabled);
         return this;
@@ -100,6 +103,7 @@ public class SpotFleetMonitoring implements Serializable, Cloneable {
      *         <p>
      *         Default: <code>false</code>
      */
+
     public Boolean isEnabled() {
         return this.enabled;
     }

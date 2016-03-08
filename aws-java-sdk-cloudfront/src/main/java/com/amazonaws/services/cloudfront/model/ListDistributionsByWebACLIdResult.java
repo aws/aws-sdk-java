@@ -34,6 +34,7 @@ public class ListDistributionsByWebACLIdResult implements Serializable,
      * @param distributionList
      *        The DistributionList type.
      */
+
     public void setDistributionList(DistributionList distributionList) {
         this.distributionList = distributionList;
     }
@@ -43,6 +44,7 @@ public class ListDistributionsByWebACLIdResult implements Serializable,
      * 
      * @return The DistributionList type.
      */
+
     public DistributionList getDistributionList() {
         return this.distributionList;
     }
@@ -55,6 +57,7 @@ public class ListDistributionsByWebACLIdResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListDistributionsByWebACLIdResult withDistributionList(
             DistributionList distributionList) {
         setDistributionList(distributionList);

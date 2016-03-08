@@ -73,6 +73,7 @@ public class DeleteMetricFilterRequest extends AmazonWebServiceRequest
      *        The name of the log group that is associated with the metric
      *        filter to delete.
      */
+
     public void setLogGroupName(String logGroupName) {
         this.logGroupName = logGroupName;
     }
@@ -86,6 +87,7 @@ public class DeleteMetricFilterRequest extends AmazonWebServiceRequest
      * @return The name of the log group that is associated with the metric
      *         filter to delete.
      */
+
     public String getLogGroupName() {
         return this.logGroupName;
     }
@@ -102,6 +104,7 @@ public class DeleteMetricFilterRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteMetricFilterRequest withLogGroupName(String logGroupName) {
         setLogGroupName(logGroupName);
         return this;
@@ -115,6 +118,7 @@ public class DeleteMetricFilterRequest extends AmazonWebServiceRequest
      * @param filterName
      *        The name of the metric filter to delete.
      */
+
     public void setFilterName(String filterName) {
         this.filterName = filterName;
     }
@@ -126,6 +130,7 @@ public class DeleteMetricFilterRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the metric filter to delete.
      */
+
     public String getFilterName() {
         return this.filterName;
     }
@@ -140,6 +145,7 @@ public class DeleteMetricFilterRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteMetricFilterRequest withFilterName(String filterName) {
         setFilterName(filterName);
         return this;

@@ -52,6 +52,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * @param loadBalancerName
      *        The name of the LoadBalancer.
      */
+
     public void setLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
     }
@@ -63,6 +64,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * 
      * @return The name of the LoadBalancer.
      */
+
     public String getLoadBalancerName() {
         return this.loadBalancerName;
     }
@@ -77,6 +79,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LoadBalancerDescription withLoadBalancerName(String loadBalancerName) {
         setLoadBalancerName(loadBalancerName);
         return this;
@@ -90,6 +93,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * @param domain
      *        The domain name of the LoadBalancer.
      */
+
     public void setDomain(String domain) {
         this.domain = domain;
     }
@@ -101,6 +105,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * 
      * @return The domain name of the LoadBalancer.
      */
+
     public String getDomain() {
         return this.domain;
     }
@@ -115,6 +120,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LoadBalancerDescription withDomain(String domain) {
         setDomain(domain);
         return this;
@@ -127,6 +133,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * 
      * @return A list of Listeners used by the LoadBalancer.
      */
+
     public java.util.List<Listener> getListeners() {
         if (listeners == null) {
             listeners = new com.amazonaws.internal.SdkInternalList<Listener>();
@@ -142,6 +149,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * @param listeners
      *        A list of Listeners used by the LoadBalancer.
      */
+
     public void setListeners(java.util.Collection<Listener> listeners) {
         if (listeners == null) {
             this.listeners = null;
@@ -168,6 +176,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LoadBalancerDescription withListeners(Listener... listeners) {
         if (this.listeners == null) {
             setListeners(new com.amazonaws.internal.SdkInternalList<Listener>(
@@ -189,6 +198,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LoadBalancerDescription withListeners(
             java.util.Collection<Listener> listeners) {
         setListeners(listeners);

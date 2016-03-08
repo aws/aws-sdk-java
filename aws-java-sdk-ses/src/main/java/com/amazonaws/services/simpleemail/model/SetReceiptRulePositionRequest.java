@@ -56,6 +56,7 @@ public class SetReceiptRulePositionRequest extends AmazonWebServiceRequest
      *        The name of the receipt rule set that contains the receipt rule to
      *        reposition.
      */
+
     public void setRuleSetName(String ruleSetName) {
         this.ruleSetName = ruleSetName;
     }
@@ -69,6 +70,7 @@ public class SetReceiptRulePositionRequest extends AmazonWebServiceRequest
      * @return The name of the receipt rule set that contains the receipt rule
      *         to reposition.
      */
+
     public String getRuleSetName() {
         return this.ruleSetName;
     }
@@ -85,6 +87,7 @@ public class SetReceiptRulePositionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetReceiptRulePositionRequest withRuleSetName(String ruleSetName) {
         setRuleSetName(ruleSetName);
         return this;
@@ -98,6 +101,7 @@ public class SetReceiptRulePositionRequest extends AmazonWebServiceRequest
      * @param ruleName
      *        The name of the receipt rule to reposition.
      */
+
     public void setRuleName(String ruleName) {
         this.ruleName = ruleName;
     }
@@ -109,6 +113,7 @@ public class SetReceiptRulePositionRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the receipt rule to reposition.
      */
+
     public String getRuleName() {
         return this.ruleName;
     }
@@ -123,6 +128,7 @@ public class SetReceiptRulePositionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetReceiptRulePositionRequest withRuleName(String ruleName) {
         setRuleName(ruleName);
         return this;
@@ -138,6 +144,7 @@ public class SetReceiptRulePositionRequest extends AmazonWebServiceRequest
      *        The name of the receipt rule after which to place the specified
      *        receipt rule.
      */
+
     public void setAfter(String after) {
         this.after = after;
     }
@@ -151,6 +158,7 @@ public class SetReceiptRulePositionRequest extends AmazonWebServiceRequest
      * @return The name of the receipt rule after which to place the specified
      *         receipt rule.
      */
+
     public String getAfter() {
         return this.after;
     }
@@ -167,6 +175,7 @@ public class SetReceiptRulePositionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetReceiptRulePositionRequest withAfter(String after) {
         setAfter(after);
         return this;

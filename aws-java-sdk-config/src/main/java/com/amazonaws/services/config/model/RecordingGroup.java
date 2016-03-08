@@ -35,8 +35,8 @@ import java.io.Serializable;
  * </p>
  * <p>
  * You can also have AWS Config record configuration changes for supported types
- * of global resources. Global resources are not tied to an individual region
- * and can be used in all regions.
+ * of global resources (for example, IAM resources). Global resources are not
+ * tied to an individual region and can be used in all regions.
  * </p>
  * <important>The configuration details for any global resource are the same in
  * all regions. If you customize AWS Config in multiple regions to record global
@@ -83,7 +83,8 @@ public class RecordingGroup implements Serializable, Cloneable {
     /**
      * <p>
      * Specifies whether AWS Config includes all supported types of global
-     * resources with the resources that it records.
+     * resources (for example, IAM resources) with the resources that it
+     * records.
      * </p>
      * <p>
      * Before you can set this option to <code>true</code>, you must set the
@@ -93,6 +94,11 @@ public class RecordingGroup implements Serializable, Cloneable {
      * If you set this option to <code>true</code>, when AWS Config adds support
      * for a new type of global resource, it automatically starts recording
      * resources of that type.
+     * </p>
+     * <p>
+     * The configuration details for any global resource are the same in all
+     * regions. To prevent duplicate configuration items, you should consider
+     * customizing AWS Config in only one region to record global resources.
      * </p>
      */
     private Boolean includeGlobalResourceTypes;
@@ -147,6 +153,7 @@ public class RecordingGroup implements Serializable, Cloneable {
      *        If you set this option to <code>true</code>, you cannot enumerate
      *        a list of <code>resourceTypes</code>.
      */
+
     public void setAllSupported(Boolean allSupported) {
         this.allSupported = allSupported;
     }
@@ -177,6 +184,7 @@ public class RecordingGroup implements Serializable, Cloneable {
      *         If you set this option to <code>true</code>, you cannot enumerate
      *         a list of <code>resourceTypes</code>.
      */
+
     public Boolean getAllSupported() {
         return this.allSupported;
     }
@@ -210,6 +218,7 @@ public class RecordingGroup implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RecordingGroup withAllSupported(Boolean allSupported) {
         setAllSupported(allSupported);
         return this;
@@ -241,6 +250,7 @@ public class RecordingGroup implements Serializable, Cloneable {
      *         If you set this option to <code>true</code>, you cannot enumerate
      *         a list of <code>resourceTypes</code>.
      */
+
     public Boolean isAllSupported() {
         return this.allSupported;
     }
@@ -248,7 +258,8 @@ public class RecordingGroup implements Serializable, Cloneable {
     /**
      * <p>
      * Specifies whether AWS Config includes all supported types of global
-     * resources with the resources that it records.
+     * resources (for example, IAM resources) with the resources that it
+     * records.
      * </p>
      * <p>
      * Before you can set this option to <code>true</code>, you must set the
@@ -259,10 +270,16 @@ public class RecordingGroup implements Serializable, Cloneable {
      * for a new type of global resource, it automatically starts recording
      * resources of that type.
      * </p>
+     * <p>
+     * The configuration details for any global resource are the same in all
+     * regions. To prevent duplicate configuration items, you should consider
+     * customizing AWS Config in only one region to record global resources.
+     * </p>
      * 
      * @param includeGlobalResourceTypes
      *        Specifies whether AWS Config includes all supported types of
-     *        global resources with the resources that it records.</p>
+     *        global resources (for example, IAM resources) with the resources
+     *        that it records.</p>
      *        <p>
      *        Before you can set this option to <code>true</code>, you must set
      *        the <code>allSupported</code> option to <code>true</code>.
@@ -271,7 +288,14 @@ public class RecordingGroup implements Serializable, Cloneable {
      *        If you set this option to <code>true</code>, when AWS Config adds
      *        support for a new type of global resource, it automatically starts
      *        recording resources of that type.
+     *        </p>
+     *        <p>
+     *        The configuration details for any global resource are the same in
+     *        all regions. To prevent duplicate configuration items, you should
+     *        consider customizing AWS Config in only one region to record
+     *        global resources.
      */
+
     public void setIncludeGlobalResourceTypes(Boolean includeGlobalResourceTypes) {
         this.includeGlobalResourceTypes = includeGlobalResourceTypes;
     }
@@ -279,7 +303,8 @@ public class RecordingGroup implements Serializable, Cloneable {
     /**
      * <p>
      * Specifies whether AWS Config includes all supported types of global
-     * resources with the resources that it records.
+     * resources (for example, IAM resources) with the resources that it
+     * records.
      * </p>
      * <p>
      * Before you can set this option to <code>true</code>, you must set the
@@ -290,9 +315,15 @@ public class RecordingGroup implements Serializable, Cloneable {
      * for a new type of global resource, it automatically starts recording
      * resources of that type.
      * </p>
+     * <p>
+     * The configuration details for any global resource are the same in all
+     * regions. To prevent duplicate configuration items, you should consider
+     * customizing AWS Config in only one region to record global resources.
+     * </p>
      * 
      * @return Specifies whether AWS Config includes all supported types of
-     *         global resources with the resources that it records.</p>
+     *         global resources (for example, IAM resources) with the resources
+     *         that it records.</p>
      *         <p>
      *         Before you can set this option to <code>true</code>, you must set
      *         the <code>allSupported</code> option to <code>true</code>.
@@ -301,7 +332,14 @@ public class RecordingGroup implements Serializable, Cloneable {
      *         If you set this option to <code>true</code>, when AWS Config adds
      *         support for a new type of global resource, it automatically
      *         starts recording resources of that type.
+     *         </p>
+     *         <p>
+     *         The configuration details for any global resource are the same in
+     *         all regions. To prevent duplicate configuration items, you should
+     *         consider customizing AWS Config in only one region to record
+     *         global resources.
      */
+
     public Boolean getIncludeGlobalResourceTypes() {
         return this.includeGlobalResourceTypes;
     }
@@ -309,7 +347,8 @@ public class RecordingGroup implements Serializable, Cloneable {
     /**
      * <p>
      * Specifies whether AWS Config includes all supported types of global
-     * resources with the resources that it records.
+     * resources (for example, IAM resources) with the resources that it
+     * records.
      * </p>
      * <p>
      * Before you can set this option to <code>true</code>, you must set the
@@ -320,10 +359,16 @@ public class RecordingGroup implements Serializable, Cloneable {
      * for a new type of global resource, it automatically starts recording
      * resources of that type.
      * </p>
+     * <p>
+     * The configuration details for any global resource are the same in all
+     * regions. To prevent duplicate configuration items, you should consider
+     * customizing AWS Config in only one region to record global resources.
+     * </p>
      * 
      * @param includeGlobalResourceTypes
      *        Specifies whether AWS Config includes all supported types of
-     *        global resources with the resources that it records.</p>
+     *        global resources (for example, IAM resources) with the resources
+     *        that it records.</p>
      *        <p>
      *        Before you can set this option to <code>true</code>, you must set
      *        the <code>allSupported</code> option to <code>true</code>.
@@ -332,9 +377,16 @@ public class RecordingGroup implements Serializable, Cloneable {
      *        If you set this option to <code>true</code>, when AWS Config adds
      *        support for a new type of global resource, it automatically starts
      *        recording resources of that type.
+     *        </p>
+     *        <p>
+     *        The configuration details for any global resource are the same in
+     *        all regions. To prevent duplicate configuration items, you should
+     *        consider customizing AWS Config in only one region to record
+     *        global resources.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RecordingGroup withIncludeGlobalResourceTypes(
             Boolean includeGlobalResourceTypes) {
         setIncludeGlobalResourceTypes(includeGlobalResourceTypes);
@@ -344,7 +396,8 @@ public class RecordingGroup implements Serializable, Cloneable {
     /**
      * <p>
      * Specifies whether AWS Config includes all supported types of global
-     * resources with the resources that it records.
+     * resources (for example, IAM resources) with the resources that it
+     * records.
      * </p>
      * <p>
      * Before you can set this option to <code>true</code>, you must set the
@@ -355,9 +408,15 @@ public class RecordingGroup implements Serializable, Cloneable {
      * for a new type of global resource, it automatically starts recording
      * resources of that type.
      * </p>
+     * <p>
+     * The configuration details for any global resource are the same in all
+     * regions. To prevent duplicate configuration items, you should consider
+     * customizing AWS Config in only one region to record global resources.
+     * </p>
      * 
      * @return Specifies whether AWS Config includes all supported types of
-     *         global resources with the resources that it records.</p>
+     *         global resources (for example, IAM resources) with the resources
+     *         that it records.</p>
      *         <p>
      *         Before you can set this option to <code>true</code>, you must set
      *         the <code>allSupported</code> option to <code>true</code>.
@@ -366,7 +425,14 @@ public class RecordingGroup implements Serializable, Cloneable {
      *         If you set this option to <code>true</code>, when AWS Config adds
      *         support for a new type of global resource, it automatically
      *         starts recording resources of that type.
+     *         </p>
+     *         <p>
+     *         The configuration details for any global resource are the same in
+     *         all regions. To prevent duplicate configuration items, you should
+     *         consider customizing AWS Config in only one region to record
+     *         global resources.
      */
+
     public Boolean isIncludeGlobalResourceTypes() {
         return this.includeGlobalResourceTypes;
     }
@@ -414,6 +480,7 @@ public class RecordingGroup implements Serializable, Cloneable {
      *         >Supported AWS Resource Types</a>.
      * @see ResourceType
      */
+
     public java.util.List<String> getResourceTypes() {
         if (resourceTypes == null) {
             resourceTypes = new com.amazonaws.internal.SdkInternalList<String>();
@@ -465,6 +532,7 @@ public class RecordingGroup implements Serializable, Cloneable {
      *        >Supported AWS Resource Types</a>.
      * @see ResourceType
      */
+
     public void setResourceTypes(java.util.Collection<String> resourceTypes) {
         if (resourceTypes == null) {
             this.resourceTypes = null;
@@ -527,6 +595,7 @@ public class RecordingGroup implements Serializable, Cloneable {
      *         chained together.
      * @see ResourceType
      */
+
     public RecordingGroup withResourceTypes(String... resourceTypes) {
         if (this.resourceTypes == null) {
             setResourceTypes(new com.amazonaws.internal.SdkInternalList<String>(
@@ -584,6 +653,7 @@ public class RecordingGroup implements Serializable, Cloneable {
      *         chained together.
      * @see ResourceType
      */
+
     public RecordingGroup withResourceTypes(
             java.util.Collection<String> resourceTypes) {
         setResourceTypes(resourceTypes);
@@ -636,6 +706,7 @@ public class RecordingGroup implements Serializable, Cloneable {
      *         chained together.
      * @see ResourceType
      */
+
     public RecordingGroup withResourceTypes(ResourceType... resourceTypes) {
         com.amazonaws.internal.SdkInternalList<String> resourceTypesCopy = new com.amazonaws.internal.SdkInternalList<String>(
                 resourceTypes.length);

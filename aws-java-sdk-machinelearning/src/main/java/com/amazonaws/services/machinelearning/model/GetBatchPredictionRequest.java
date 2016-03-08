@@ -40,6 +40,7 @@ public class GetBatchPredictionRequest extends AmazonWebServiceRequest
      * @param batchPredictionId
      *        An ID assigned to the <code>BatchPrediction</code> at creation.
      */
+
     public void setBatchPredictionId(String batchPredictionId) {
         this.batchPredictionId = batchPredictionId;
     }
@@ -51,6 +52,7 @@ public class GetBatchPredictionRequest extends AmazonWebServiceRequest
      * 
      * @return An ID assigned to the <code>BatchPrediction</code> at creation.
      */
+
     public String getBatchPredictionId() {
         return this.batchPredictionId;
     }
@@ -65,6 +67,7 @@ public class GetBatchPredictionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetBatchPredictionRequest withBatchPredictionId(
             String batchPredictionId) {
         setBatchPredictionId(batchPredictionId);

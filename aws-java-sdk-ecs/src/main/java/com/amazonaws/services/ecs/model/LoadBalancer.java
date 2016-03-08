@@ -56,6 +56,7 @@ public class LoadBalancer implements Serializable, Cloneable {
      * @param loadBalancerName
      *        The name of the load balancer.
      */
+
     public void setLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
     }
@@ -67,6 +68,7 @@ public class LoadBalancer implements Serializable, Cloneable {
      * 
      * @return The name of the load balancer.
      */
+
     public String getLoadBalancerName() {
         return this.loadBalancerName;
     }
@@ -81,6 +83,7 @@ public class LoadBalancer implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LoadBalancer withLoadBalancerName(String loadBalancerName) {
         setLoadBalancerName(loadBalancerName);
         return this;
@@ -96,6 +99,7 @@ public class LoadBalancer implements Serializable, Cloneable {
      *        The name of the container (as it appears in a container
      *        definition) to associate with the load balancer.
      */
+
     public void setContainerName(String containerName) {
         this.containerName = containerName;
     }
@@ -109,6 +113,7 @@ public class LoadBalancer implements Serializable, Cloneable {
      * @return The name of the container (as it appears in a container
      *         definition) to associate with the load balancer.
      */
+
     public String getContainerName() {
         return this.containerName;
     }
@@ -125,6 +130,7 @@ public class LoadBalancer implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LoadBalancer withContainerName(String containerName) {
         setContainerName(containerName);
         return this;
@@ -144,6 +150,7 @@ public class LoadBalancer implements Serializable, Cloneable {
      *        service's task definition. Your container instances must allow
      *        ingress traffic on the <code>hostPort</code> of the port mapping.
      */
+
     public void setContainerPort(Integer containerPort) {
         this.containerPort = containerPort;
     }
@@ -161,6 +168,7 @@ public class LoadBalancer implements Serializable, Cloneable {
      *         service's task definition. Your container instances must allow
      *         ingress traffic on the <code>hostPort</code> of the port mapping.
      */
+
     public Integer getContainerPort() {
         return this.containerPort;
     }
@@ -181,6 +189,7 @@ public class LoadBalancer implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LoadBalancer withContainerPort(Integer containerPort) {
         setContainerPort(containerPort);
         return this;

@@ -88,6 +88,7 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements
      * @param ciphertextBlob
      *        Ciphertext of the data to re-encrypt.
      */
+
     public void setCiphertextBlob(java.nio.ByteBuffer ciphertextBlob) {
         this.ciphertextBlob = ciphertextBlob;
     }
@@ -109,6 +110,7 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements
      * 
      * @return Ciphertext of the data to re-encrypt.
      */
+
     public java.nio.ByteBuffer getCiphertextBlob() {
         return this.ciphertextBlob;
     }
@@ -123,6 +125,7 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReEncryptRequest withCiphertextBlob(
             java.nio.ByteBuffer ciphertextBlob) {
         setCiphertextBlob(ciphertextBlob);
@@ -138,6 +141,7 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements
      * @return Encryption context used to encrypt and decrypt the data specified
      *         in the <code>CiphertextBlob</code> parameter.
      */
+
     public java.util.Map<String, String> getSourceEncryptionContext() {
         if (sourceEncryptionContext == null) {
             sourceEncryptionContext = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -155,6 +159,7 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements
      *        Encryption context used to encrypt and decrypt the data specified
      *        in the <code>CiphertextBlob</code> parameter.
      */
+
     public void setSourceEncryptionContext(
             java.util.Map<String, String> sourceEncryptionContext) {
         this.sourceEncryptionContext = sourceEncryptionContext == null ? null
@@ -174,6 +179,7 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReEncryptRequest withSourceEncryptionContext(
             java.util.Map<String, String> sourceEncryptionContext) {
         setSourceEncryptionContext(sourceEncryptionContext);
@@ -197,6 +203,7 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements
      * Returns a reference to this object so that method calls can be chained
      * together.
      */
+
     public ReEncryptRequest clearSourceEncryptionContextEntries() {
         this.sourceEncryptionContext = null;
         return this;
@@ -235,6 +242,7 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements
      *        <li>Alias Name Example - alias/MyAliasName</li>
      *        </ul>
      */
+
     public void setDestinationKeyId(String destinationKeyId) {
         this.destinationKeyId = destinationKeyId;
     }
@@ -271,6 +279,7 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements
      *         <li>Alias Name Example - alias/MyAliasName</li>
      *         </ul>
      */
+
     public String getDestinationKeyId() {
         return this.destinationKeyId;
     }
@@ -310,6 +319,7 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReEncryptRequest withDestinationKeyId(String destinationKeyId) {
         setDestinationKeyId(destinationKeyId);
         return this;
@@ -322,6 +332,7 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements
      * 
      * @return Encryption context to be used when the data is re-encrypted.
      */
+
     public java.util.Map<String, String> getDestinationEncryptionContext() {
         if (destinationEncryptionContext == null) {
             destinationEncryptionContext = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -337,6 +348,7 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements
      * @param destinationEncryptionContext
      *        Encryption context to be used when the data is re-encrypted.
      */
+
     public void setDestinationEncryptionContext(
             java.util.Map<String, String> destinationEncryptionContext) {
         this.destinationEncryptionContext = destinationEncryptionContext == null ? null
@@ -354,6 +366,7 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReEncryptRequest withDestinationEncryptionContext(
             java.util.Map<String, String> destinationEncryptionContext) {
         setDestinationEncryptionContext(destinationEncryptionContext);
@@ -377,6 +390,7 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements
      * Returns a reference to this object so that method calls can be chained
      * together.
      */
+
     public ReEncryptRequest clearDestinationEncryptionContextEntries() {
         this.destinationEncryptionContext = null;
         return this;
@@ -400,6 +414,7 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements
      *         >Grant Tokens</a> in the <i>AWS Key Management Service Developer
      *         Guide</i>.
      */
+
     public java.util.List<String> getGrantTokens() {
         if (grantTokens == null) {
             grantTokens = new com.amazonaws.internal.SdkInternalList<String>();
@@ -426,6 +441,7 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements
      *        >Grant Tokens</a> in the <i>AWS Key Management Service Developer
      *        Guide</i>.
      */
+
     public void setGrantTokens(java.util.Collection<String> grantTokens) {
         if (grantTokens == null) {
             this.grantTokens = null;
@@ -463,6 +479,7 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReEncryptRequest withGrantTokens(String... grantTokens) {
         if (this.grantTokens == null) {
             setGrantTokens(new com.amazonaws.internal.SdkInternalList<String>(
@@ -495,6 +512,7 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReEncryptRequest withGrantTokens(
             java.util.Collection<String> grantTokens) {
         setGrantTokens(grantTokens);

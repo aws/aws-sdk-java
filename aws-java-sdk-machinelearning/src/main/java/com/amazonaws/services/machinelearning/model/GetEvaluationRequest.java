@@ -46,6 +46,7 @@ public class GetEvaluationRequest extends AmazonWebServiceRequest implements
      *        of each <code>MLModel</code> is recorded and cataloged. The ID
      *        provides the means to access the information.
      */
+
     public void setEvaluationId(String evaluationId) {
         this.evaluationId = evaluationId;
     }
@@ -61,6 +62,7 @@ public class GetEvaluationRequest extends AmazonWebServiceRequest implements
      *         of each <code>MLModel</code> is recorded and cataloged. The ID
      *         provides the means to access the information.
      */
+
     public String getEvaluationId() {
         return this.evaluationId;
     }
@@ -79,6 +81,7 @@ public class GetEvaluationRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetEvaluationRequest withEvaluationId(String evaluationId) {
         setEvaluationId(evaluationId);
         return this;

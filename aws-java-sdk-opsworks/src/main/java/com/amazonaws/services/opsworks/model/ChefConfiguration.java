@@ -46,6 +46,7 @@ public class ChefConfiguration implements Serializable, Cloneable {
      * @param manageBerkshelf
      *        Whether to enable Berkshelf.
      */
+
     public void setManageBerkshelf(Boolean manageBerkshelf) {
         this.manageBerkshelf = manageBerkshelf;
     }
@@ -57,6 +58,7 @@ public class ChefConfiguration implements Serializable, Cloneable {
      * 
      * @return Whether to enable Berkshelf.
      */
+
     public Boolean getManageBerkshelf() {
         return this.manageBerkshelf;
     }
@@ -71,6 +73,7 @@ public class ChefConfiguration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ChefConfiguration withManageBerkshelf(Boolean manageBerkshelf) {
         setManageBerkshelf(manageBerkshelf);
         return this;
@@ -83,6 +86,7 @@ public class ChefConfiguration implements Serializable, Cloneable {
      * 
      * @return Whether to enable Berkshelf.
      */
+
     public Boolean isManageBerkshelf() {
         return this.manageBerkshelf;
     }
@@ -95,6 +99,7 @@ public class ChefConfiguration implements Serializable, Cloneable {
      * @param berkshelfVersion
      *        The Berkshelf version.
      */
+
     public void setBerkshelfVersion(String berkshelfVersion) {
         this.berkshelfVersion = berkshelfVersion;
     }
@@ -106,6 +111,7 @@ public class ChefConfiguration implements Serializable, Cloneable {
      * 
      * @return The Berkshelf version.
      */
+
     public String getBerkshelfVersion() {
         return this.berkshelfVersion;
     }
@@ -120,6 +126,7 @@ public class ChefConfiguration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ChefConfiguration withBerkshelfVersion(String berkshelfVersion) {
         setBerkshelfVersion(berkshelfVersion);
         return this;

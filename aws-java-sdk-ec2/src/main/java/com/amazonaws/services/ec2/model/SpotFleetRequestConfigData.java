@@ -121,6 +121,7 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html"
      *        >Ensuring Idempotency</a>.
      */
+
     public void setClientToken(String clientToken) {
         this.clientToken = clientToken;
     }
@@ -140,6 +141,7 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html"
      *         >Ensuring Idempotency</a>.
      */
+
     public String getClientToken() {
         return this.clientToken;
     }
@@ -162,6 +164,7 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SpotFleetRequestConfigData withClientToken(String clientToken) {
         setClientToken(clientToken);
         return this;
@@ -175,6 +178,7 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * @param spotPrice
      *        The bid price per unit hour.
      */
+
     public void setSpotPrice(String spotPrice) {
         this.spotPrice = spotPrice;
     }
@@ -186,6 +190,7 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * 
      * @return The bid price per unit hour.
      */
+
     public String getSpotPrice() {
         return this.spotPrice;
     }
@@ -200,6 +205,7 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SpotFleetRequestConfigData withSpotPrice(String spotPrice) {
         setSpotPrice(spotPrice);
         return this;
@@ -218,6 +224,7 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      *        that is important to your application workload, such as vCPUs,
      *        memory, or I/O.
      */
+
     public void setTargetCapacity(Integer targetCapacity) {
         this.targetCapacity = targetCapacity;
     }
@@ -234,6 +241,7 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      *         that is important to your application workload, such as vCPUs,
      *         memory, or I/O.
      */
+
     public Integer getTargetCapacity() {
         return this.targetCapacity;
     }
@@ -253,6 +261,7 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SpotFleetRequestConfigData withTargetCapacity(Integer targetCapacity) {
         setTargetCapacity(targetCapacity);
         return this;
@@ -271,6 +280,7 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      *        <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      *        The default is to start fulfilling the request immediately.
      */
+
     public void setValidFrom(java.util.Date validFrom) {
         this.validFrom = validFrom;
     }
@@ -287,6 +297,7 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      *         <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      *         The default is to start fulfilling the request immediately.
      */
+
     public java.util.Date getValidFrom() {
         return this.validFrom;
     }
@@ -306,6 +317,7 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SpotFleetRequestConfigData withValidFrom(java.util.Date validFrom) {
         setValidFrom(validFrom);
         return this;
@@ -325,6 +337,7 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      *        At this point, no new Spot instance requests are placed or enabled
      *        to fulfill the request.
      */
+
     public void setValidUntil(java.util.Date validUntil) {
         this.validUntil = validUntil;
     }
@@ -342,6 +355,7 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      *         At this point, no new Spot instance requests are placed or
      *         enabled to fulfill the request.
      */
+
     public java.util.Date getValidUntil() {
         return this.validUntil;
     }
@@ -362,6 +376,7 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SpotFleetRequestConfigData withValidUntil(java.util.Date validUntil) {
         setValidUntil(validUntil);
         return this;
@@ -377,6 +392,7 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      *        Indicates whether running Spot instances should be terminated when
      *        the Spot fleet request expires.
      */
+
     public void setTerminateInstancesWithExpiration(
             Boolean terminateInstancesWithExpiration) {
         this.terminateInstancesWithExpiration = terminateInstancesWithExpiration;
@@ -391,6 +407,7 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * @return Indicates whether running Spot instances should be terminated
      *         when the Spot fleet request expires.
      */
+
     public Boolean getTerminateInstancesWithExpiration() {
         return this.terminateInstancesWithExpiration;
     }
@@ -407,6 +424,7 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SpotFleetRequestConfigData withTerminateInstancesWithExpiration(
             Boolean terminateInstancesWithExpiration) {
         setTerminateInstancesWithExpiration(terminateInstancesWithExpiration);
@@ -422,6 +440,7 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * @return Indicates whether running Spot instances should be terminated
      *         when the Spot fleet request expires.
      */
+
     public Boolean isTerminateInstancesWithExpiration() {
         return this.terminateInstancesWithExpiration;
     }
@@ -440,6 +459,7 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      *        <a>CancelSpotFleetRequests</a> or when the Spot fleet request
      *        expires, if you set <code>terminateInstancesWithExpiration</code>.
      */
+
     public void setIamFleetRole(String iamFleetRole) {
         this.iamFleetRole = iamFleetRole;
     }
@@ -458,6 +478,7 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      *         expires, if you set <code>terminateInstancesWithExpiration</code>
      *         .
      */
+
     public String getIamFleetRole() {
         return this.iamFleetRole;
     }
@@ -478,6 +499,7 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SpotFleetRequestConfigData withIamFleetRole(String iamFleetRole) {
         setIamFleetRole(iamFleetRole);
         return this;
@@ -491,6 +513,7 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * @return Information about the launch specifications for the Spot fleet
      *         request.
      */
+
     public java.util.List<SpotFleetLaunchSpecification> getLaunchSpecifications() {
         if (launchSpecifications == null) {
             launchSpecifications = new com.amazonaws.internal.SdkInternalList<SpotFleetLaunchSpecification>();
@@ -507,6 +530,7 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      *        Information about the launch specifications for the Spot fleet
      *        request.
      */
+
     public void setLaunchSpecifications(
             java.util.Collection<SpotFleetLaunchSpecification> launchSpecifications) {
         if (launchSpecifications == null) {
@@ -535,6 +559,7 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SpotFleetRequestConfigData withLaunchSpecifications(
             SpotFleetLaunchSpecification... launchSpecifications) {
         if (this.launchSpecifications == null) {
@@ -558,6 +583,7 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SpotFleetRequestConfigData withLaunchSpecifications(
             java.util.Collection<SpotFleetLaunchSpecification> launchSpecifications) {
         setLaunchSpecifications(launchSpecifications);
@@ -577,6 +603,7 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      *        the current size of the Spot fleet.
      * @see ExcessCapacityTerminationPolicy
      */
+
     public void setExcessCapacityTerminationPolicy(
             String excessCapacityTerminationPolicy) {
         this.excessCapacityTerminationPolicy = excessCapacityTerminationPolicy;
@@ -594,6 +621,7 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      *         the current size of the Spot fleet.
      * @see ExcessCapacityTerminationPolicy
      */
+
     public String getExcessCapacityTerminationPolicy() {
         return this.excessCapacityTerminationPolicy;
     }
@@ -613,6 +641,7 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      *         chained together.
      * @see ExcessCapacityTerminationPolicy
      */
+
     public SpotFleetRequestConfigData withExcessCapacityTerminationPolicy(
             String excessCapacityTerminationPolicy) {
         setExcessCapacityTerminationPolicy(excessCapacityTerminationPolicy);
@@ -634,6 +663,7 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      *         chained together.
      * @see ExcessCapacityTerminationPolicy
      */
+
     public void setExcessCapacityTerminationPolicy(
             ExcessCapacityTerminationPolicy excessCapacityTerminationPolicy) {
         this.excessCapacityTerminationPolicy = excessCapacityTerminationPolicy
@@ -655,6 +685,7 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      *         chained together.
      * @see ExcessCapacityTerminationPolicy
      */
+
     public SpotFleetRequestConfigData withExcessCapacityTerminationPolicy(
             ExcessCapacityTerminationPolicy excessCapacityTerminationPolicy) {
         setExcessCapacityTerminationPolicy(excessCapacityTerminationPolicy);
@@ -674,6 +705,7 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      *        <code>lowestPrice</code>.
      * @see AllocationStrategy
      */
+
     public void setAllocationStrategy(String allocationStrategy) {
         this.allocationStrategy = allocationStrategy;
     }
@@ -690,6 +722,7 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      *         <code>lowestPrice</code>.
      * @see AllocationStrategy
      */
+
     public String getAllocationStrategy() {
         return this.allocationStrategy;
     }
@@ -709,6 +742,7 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      *         chained together.
      * @see AllocationStrategy
      */
+
     public SpotFleetRequestConfigData withAllocationStrategy(
             String allocationStrategy) {
         setAllocationStrategy(allocationStrategy);
@@ -730,6 +764,7 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      *         chained together.
      * @see AllocationStrategy
      */
+
     public void setAllocationStrategy(AllocationStrategy allocationStrategy) {
         this.allocationStrategy = allocationStrategy.toString();
     }
@@ -749,6 +784,7 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      *         chained together.
      * @see AllocationStrategy
      */
+
     public SpotFleetRequestConfigData withAllocationStrategy(
             AllocationStrategy allocationStrategy) {
         setAllocationStrategy(allocationStrategy);

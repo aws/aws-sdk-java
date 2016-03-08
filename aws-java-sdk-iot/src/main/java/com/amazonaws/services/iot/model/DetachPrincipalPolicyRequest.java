@@ -52,6 +52,7 @@ public class DetachPrincipalPolicyRequest extends AmazonWebServiceRequest
      * @param policyName
      *        The name of the policy to detach.
      */
+
     public void setPolicyName(String policyName) {
         this.policyName = policyName;
     }
@@ -63,6 +64,7 @@ public class DetachPrincipalPolicyRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the policy to detach.
      */
+
     public String getPolicyName() {
         return this.policyName;
     }
@@ -77,6 +79,7 @@ public class DetachPrincipalPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DetachPrincipalPolicyRequest withPolicyName(String policyName) {
         setPolicyName(policyName);
         return this;
@@ -97,6 +100,7 @@ public class DetachPrincipalPolicyRequest extends AmazonWebServiceRequest
      *        If the principal is a certificate, specify the certificate ARN. If
      *        the principal is a Cognito identity specify the identity ID.
      */
+
     public void setPrincipal(String principal) {
         this.principal = principal;
     }
@@ -115,6 +119,7 @@ public class DetachPrincipalPolicyRequest extends AmazonWebServiceRequest
      *         If the principal is a certificate, specify the certificate ARN.
      *         If the principal is a Cognito identity specify the identity ID.
      */
+
     public String getPrincipal() {
         return this.principal;
     }
@@ -136,6 +141,7 @@ public class DetachPrincipalPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DetachPrincipalPolicyRequest withPrincipal(String principal) {
         setPrincipal(principal);
         return this;

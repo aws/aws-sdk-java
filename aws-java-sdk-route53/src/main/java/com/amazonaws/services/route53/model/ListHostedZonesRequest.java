@@ -73,6 +73,7 @@ public class ListHostedZonesRequest extends AmazonWebServiceRequest implements
      *        from the last response in the <code>marker</code> parameter to get
      *        the next page of results.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -90,6 +91,7 @@ public class ListHostedZonesRequest extends AmazonWebServiceRequest implements
      *         from the last response in the <code>marker</code> parameter to
      *         get the next page of results.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -110,6 +112,7 @@ public class ListHostedZonesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListHostedZonesRequest withMarker(String marker) {
         setMarker(marker);
         return this;
@@ -124,6 +127,7 @@ public class ListHostedZonesRequest extends AmazonWebServiceRequest implements
      *        Specify the maximum number of hosted zones to return per page of
      *        results.
      */
+
     public void setMaxItems(String maxItems) {
         this.maxItems = maxItems;
     }
@@ -136,6 +140,7 @@ public class ListHostedZonesRequest extends AmazonWebServiceRequest implements
      * @return Specify the maximum number of hosted zones to return per page of
      *         results.
      */
+
     public String getMaxItems() {
         return this.maxItems;
     }
@@ -151,6 +156,7 @@ public class ListHostedZonesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListHostedZonesRequest withMaxItems(String maxItems) {
         setMaxItems(maxItems);
         return this;
@@ -159,6 +165,7 @@ public class ListHostedZonesRequest extends AmazonWebServiceRequest implements
     /**
      * @param delegationSetId
      */
+
     public void setDelegationSetId(String delegationSetId) {
         this.delegationSetId = delegationSetId;
     }
@@ -166,6 +173,7 @@ public class ListHostedZonesRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public String getDelegationSetId() {
         return this.delegationSetId;
     }
@@ -175,6 +183,7 @@ public class ListHostedZonesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListHostedZonesRequest withDelegationSetId(String delegationSetId) {
         setDelegationSetId(delegationSetId);
         return this;

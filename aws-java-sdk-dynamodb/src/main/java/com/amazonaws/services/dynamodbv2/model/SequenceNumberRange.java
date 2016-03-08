@@ -47,6 +47,7 @@ public class SequenceNumberRange implements Serializable, Cloneable {
      * @param startingSequenceNumber
      *        The first sequence number.
      */
+
     public void setStartingSequenceNumber(String startingSequenceNumber) {
         this.startingSequenceNumber = startingSequenceNumber;
     }
@@ -58,6 +59,7 @@ public class SequenceNumberRange implements Serializable, Cloneable {
      * 
      * @return The first sequence number.
      */
+
     public String getStartingSequenceNumber() {
         return this.startingSequenceNumber;
     }
@@ -72,6 +74,7 @@ public class SequenceNumberRange implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SequenceNumberRange withStartingSequenceNumber(
             String startingSequenceNumber) {
         setStartingSequenceNumber(startingSequenceNumber);
@@ -86,6 +89,7 @@ public class SequenceNumberRange implements Serializable, Cloneable {
      * @param endingSequenceNumber
      *        The last sequence number.
      */
+
     public void setEndingSequenceNumber(String endingSequenceNumber) {
         this.endingSequenceNumber = endingSequenceNumber;
     }
@@ -97,6 +101,7 @@ public class SequenceNumberRange implements Serializable, Cloneable {
      * 
      * @return The last sequence number.
      */
+
     public String getEndingSequenceNumber() {
         return this.endingSequenceNumber;
     }
@@ -111,6 +116,7 @@ public class SequenceNumberRange implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SequenceNumberRange withEndingSequenceNumber(
             String endingSequenceNumber) {
         setEndingSequenceNumber(endingSequenceNumber);

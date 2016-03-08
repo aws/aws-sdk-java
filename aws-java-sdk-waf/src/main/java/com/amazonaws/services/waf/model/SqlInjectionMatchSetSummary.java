@@ -87,6 +87,7 @@ public class SqlInjectionMatchSetSummary implements Serializable, Cloneable {
      *        <a>CreateSqlInjectionMatchSet</a> and by
      *        <a>ListSqlInjectionMatchSets</a>.
      */
+
     public void setSqlInjectionMatchSetId(String sqlInjectionMatchSetId) {
         this.sqlInjectionMatchSetId = sqlInjectionMatchSetId;
     }
@@ -124,6 +125,7 @@ public class SqlInjectionMatchSetSummary implements Serializable, Cloneable {
      *         <a>CreateSqlInjectionMatchSet</a> and by
      *         <a>ListSqlInjectionMatchSets</a>.
      */
+
     public String getSqlInjectionMatchSetId() {
         return this.sqlInjectionMatchSetId;
     }
@@ -164,6 +166,7 @@ public class SqlInjectionMatchSetSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SqlInjectionMatchSetSummary withSqlInjectionMatchSetId(
             String sqlInjectionMatchSetId) {
         setSqlInjectionMatchSetId(sqlInjectionMatchSetId);
@@ -180,6 +183,7 @@ public class SqlInjectionMatchSetSummary implements Serializable, Cloneable {
      *        The name of the <code>SqlInjectionMatchSet</code>, if any,
      *        specified by <code>Id</code>.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -193,6 +197,7 @@ public class SqlInjectionMatchSetSummary implements Serializable, Cloneable {
      * @return The name of the <code>SqlInjectionMatchSet</code>, if any,
      *         specified by <code>Id</code>.
      */
+
     public String getName() {
         return this.name;
     }
@@ -209,6 +214,7 @@ public class SqlInjectionMatchSetSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SqlInjectionMatchSetSummary withName(String name) {
         setName(name);
         return this;

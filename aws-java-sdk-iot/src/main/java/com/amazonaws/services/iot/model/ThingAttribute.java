@@ -46,6 +46,7 @@ public class ThingAttribute implements Serializable, Cloneable {
      * @param thingName
      *        The name of the thing.
      */
+
     public void setThingName(String thingName) {
         this.thingName = thingName;
     }
@@ -57,6 +58,7 @@ public class ThingAttribute implements Serializable, Cloneable {
      * 
      * @return The name of the thing.
      */
+
     public String getThingName() {
         return this.thingName;
     }
@@ -71,6 +73,7 @@ public class ThingAttribute implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ThingAttribute withThingName(String thingName) {
         setThingName(thingName);
         return this;
@@ -83,6 +86,7 @@ public class ThingAttribute implements Serializable, Cloneable {
      * 
      * @return The attributes.
      */
+
     public java.util.Map<String, String> getAttributes() {
         return attributes;
     }
@@ -95,6 +99,7 @@ public class ThingAttribute implements Serializable, Cloneable {
      * @param attributes
      *        The attributes.
      */
+
     public void setAttributes(java.util.Map<String, String> attributes) {
         this.attributes = attributes;
     }
@@ -109,6 +114,7 @@ public class ThingAttribute implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ThingAttribute withAttributes(
             java.util.Map<String, String> attributes) {
         setAttributes(attributes);
@@ -130,6 +136,7 @@ public class ThingAttribute implements Serializable, Cloneable {
      * Removes all the entries added into Attributes. &lt;p> Returns a reference
      * to this object so that method calls can be chained together.
      */
+
     public ThingAttribute clearAttributesEntries() {
         this.attributes = null;
         return this;

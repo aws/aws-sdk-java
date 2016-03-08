@@ -52,6 +52,7 @@ public class EnvironmentTier implements Serializable, Cloneable {
      * @param name
      *        The name of this environment tier.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -63,6 +64,7 @@ public class EnvironmentTier implements Serializable, Cloneable {
      * 
      * @return The name of this environment tier.
      */
+
     public String getName() {
         return this.name;
     }
@@ -77,6 +79,7 @@ public class EnvironmentTier implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EnvironmentTier withName(String name) {
         setName(name);
         return this;
@@ -90,6 +93,7 @@ public class EnvironmentTier implements Serializable, Cloneable {
      * @param type
      *        The type of this environment tier.
      */
+
     public void setType(String type) {
         this.type = type;
     }
@@ -101,6 +105,7 @@ public class EnvironmentTier implements Serializable, Cloneable {
      * 
      * @return The type of this environment tier.
      */
+
     public String getType() {
         return this.type;
     }
@@ -115,6 +120,7 @@ public class EnvironmentTier implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EnvironmentTier withType(String type) {
         setType(type);
         return this;
@@ -128,6 +134,7 @@ public class EnvironmentTier implements Serializable, Cloneable {
      * @param version
      *        The version of this environment tier.
      */
+
     public void setVersion(String version) {
         this.version = version;
     }
@@ -139,6 +146,7 @@ public class EnvironmentTier implements Serializable, Cloneable {
      * 
      * @return The version of this environment tier.
      */
+
     public String getVersion() {
         return this.version;
     }
@@ -153,6 +161,7 @@ public class EnvironmentTier implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EnvironmentTier withVersion(String version) {
         setVersion(version);
         return this;

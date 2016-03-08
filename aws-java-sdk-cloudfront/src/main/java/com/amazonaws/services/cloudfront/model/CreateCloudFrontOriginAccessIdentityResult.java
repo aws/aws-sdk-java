@@ -42,6 +42,7 @@ public class CreateCloudFrontOriginAccessIdentityResult implements
      * @param cloudFrontOriginAccessIdentity
      *        The origin access identity's information.
      */
+
     public void setCloudFrontOriginAccessIdentity(
             CloudFrontOriginAccessIdentity cloudFrontOriginAccessIdentity) {
         this.cloudFrontOriginAccessIdentity = cloudFrontOriginAccessIdentity;
@@ -52,6 +53,7 @@ public class CreateCloudFrontOriginAccessIdentityResult implements
      * 
      * @return The origin access identity's information.
      */
+
     public CloudFrontOriginAccessIdentity getCloudFrontOriginAccessIdentity() {
         return this.cloudFrontOriginAccessIdentity;
     }
@@ -64,6 +66,7 @@ public class CreateCloudFrontOriginAccessIdentityResult implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateCloudFrontOriginAccessIdentityResult withCloudFrontOriginAccessIdentity(
             CloudFrontOriginAccessIdentity cloudFrontOriginAccessIdentity) {
         setCloudFrontOriginAccessIdentity(cloudFrontOriginAccessIdentity);
@@ -82,6 +85,7 @@ public class CreateCloudFrontOriginAccessIdentityResult implements
      *        https://cloudfront.amazonaws.com/2010-11-01/origin
      *        -access-identity/cloudfront/E74FTE3AJFJ256A.
      */
+
     public void setLocation(String location) {
         this.location = location;
     }
@@ -97,6 +101,7 @@ public class CreateCloudFrontOriginAccessIdentityResult implements
      *         https://cloudfront.amazonaws.com/2010-11-01/
      *         origin-access-identity/cloudfront/E74FTE3AJFJ256A.
      */
+
     public String getLocation() {
         return this.location;
     }
@@ -115,6 +120,7 @@ public class CreateCloudFrontOriginAccessIdentityResult implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateCloudFrontOriginAccessIdentityResult withLocation(
             String location) {
         setLocation(location);
@@ -127,6 +133,7 @@ public class CreateCloudFrontOriginAccessIdentityResult implements
      * @param eTag
      *        The current version of the origin access identity created.
      */
+
     public void setETag(String eTag) {
         this.eTag = eTag;
     }
@@ -136,6 +143,7 @@ public class CreateCloudFrontOriginAccessIdentityResult implements
      * 
      * @return The current version of the origin access identity created.
      */
+
     public String getETag() {
         return this.eTag;
     }
@@ -148,6 +156,7 @@ public class CreateCloudFrontOriginAccessIdentityResult implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateCloudFrontOriginAccessIdentityResult withETag(String eTag) {
         setETag(eTag);
         return this;

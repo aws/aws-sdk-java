@@ -32,6 +32,7 @@ public class CancelJobRequest extends AmazonWebServiceRequest implements
     /**
      * @param jobId
      */
+
     public void setJobId(String jobId) {
         this.jobId = jobId;
     }
@@ -39,6 +40,7 @@ public class CancelJobRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public String getJobId() {
         return this.jobId;
     }
@@ -48,6 +50,7 @@ public class CancelJobRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CancelJobRequest withJobId(String jobId) {
         setJobId(jobId);
         return this;
@@ -56,6 +59,7 @@ public class CancelJobRequest extends AmazonWebServiceRequest implements
     /**
      * @param aPIVersion
      */
+
     public void setAPIVersion(String aPIVersion) {
         this.aPIVersion = aPIVersion;
     }
@@ -63,6 +67,7 @@ public class CancelJobRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public String getAPIVersion() {
         return this.aPIVersion;
     }
@@ -72,6 +77,7 @@ public class CancelJobRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CancelJobRequest withAPIVersion(String aPIVersion) {
         setAPIVersion(aPIVersion);
         return this;

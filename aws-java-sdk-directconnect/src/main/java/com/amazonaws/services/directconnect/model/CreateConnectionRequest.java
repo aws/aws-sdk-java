@@ -36,6 +36,7 @@ public class CreateConnectionRequest extends AmazonWebServiceRequest implements
     /**
      * @param location
      */
+
     public void setLocation(String location) {
         this.location = location;
     }
@@ -43,6 +44,7 @@ public class CreateConnectionRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public String getLocation() {
         return this.location;
     }
@@ -52,6 +54,7 @@ public class CreateConnectionRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateConnectionRequest withLocation(String location) {
         setLocation(location);
         return this;
@@ -60,6 +63,7 @@ public class CreateConnectionRequest extends AmazonWebServiceRequest implements
     /**
      * @param bandwidth
      */
+
     public void setBandwidth(String bandwidth) {
         this.bandwidth = bandwidth;
     }
@@ -67,6 +71,7 @@ public class CreateConnectionRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public String getBandwidth() {
         return this.bandwidth;
     }
@@ -76,6 +81,7 @@ public class CreateConnectionRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateConnectionRequest withBandwidth(String bandwidth) {
         setBandwidth(bandwidth);
         return this;
@@ -84,6 +90,7 @@ public class CreateConnectionRequest extends AmazonWebServiceRequest implements
     /**
      * @param connectionName
      */
+
     public void setConnectionName(String connectionName) {
         this.connectionName = connectionName;
     }
@@ -91,6 +98,7 @@ public class CreateConnectionRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public String getConnectionName() {
         return this.connectionName;
     }
@@ -100,6 +108,7 @@ public class CreateConnectionRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateConnectionRequest withConnectionName(String connectionName) {
         setConnectionName(connectionName);
         return this;

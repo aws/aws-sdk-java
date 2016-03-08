@@ -49,6 +49,7 @@ public class DescribeChapCredentialsRequest extends AmazonWebServiceRequest
      *        <a>DescribeStorediSCSIVolumes</a> operation to return to retrieve
      *        the TargetARN for specified VolumeARN.
      */
+
     public void setTargetARN(String targetARN) {
         this.targetARN = targetARN;
     }
@@ -64,6 +65,7 @@ public class DescribeChapCredentialsRequest extends AmazonWebServiceRequest
      *         the <a>DescribeStorediSCSIVolumes</a> operation to return to
      *         retrieve the TargetARN for specified VolumeARN.
      */
+
     public String getTargetARN() {
         return this.targetARN;
     }
@@ -82,6 +84,7 @@ public class DescribeChapCredentialsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeChapCredentialsRequest withTargetARN(String targetARN) {
         setTargetARN(targetARN);
         return this;

@@ -48,6 +48,7 @@ public class DescribeConversionTasksRequest extends AmazonWebServiceRequest
      * 
      * @return One or more filters.
      */
+
     public java.util.List<Filter> getFilters() {
         if (filters == null) {
             filters = new com.amazonaws.internal.SdkInternalList<Filter>();
@@ -63,6 +64,7 @@ public class DescribeConversionTasksRequest extends AmazonWebServiceRequest
      * @param filters
      *        One or more filters.
      */
+
     public void setFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
             this.filters = null;
@@ -89,6 +91,7 @@ public class DescribeConversionTasksRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeConversionTasksRequest withFilters(Filter... filters) {
         if (this.filters == null) {
             setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(
@@ -110,6 +113,7 @@ public class DescribeConversionTasksRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeConversionTasksRequest withFilters(
             java.util.Collection<Filter> filters) {
         setFilters(filters);
@@ -123,6 +127,7 @@ public class DescribeConversionTasksRequest extends AmazonWebServiceRequest
      * 
      * @return One or more conversion task IDs.
      */
+
     public java.util.List<String> getConversionTaskIds() {
         if (conversionTaskIds == null) {
             conversionTaskIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -138,6 +143,7 @@ public class DescribeConversionTasksRequest extends AmazonWebServiceRequest
      * @param conversionTaskIds
      *        One or more conversion task IDs.
      */
+
     public void setConversionTaskIds(
             java.util.Collection<String> conversionTaskIds) {
         if (conversionTaskIds == null) {
@@ -165,6 +171,7 @@ public class DescribeConversionTasksRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeConversionTasksRequest withConversionTaskIds(
             String... conversionTaskIds) {
         if (this.conversionTaskIds == null) {
@@ -187,6 +194,7 @@ public class DescribeConversionTasksRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeConversionTasksRequest withConversionTaskIds(
             java.util.Collection<String> conversionTaskIds) {
         setConversionTaskIds(conversionTaskIds);

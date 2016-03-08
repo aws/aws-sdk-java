@@ -40,6 +40,7 @@ public class CreateAccessKeyResult implements Serializable, Cloneable {
      * @param accessKey
      *        Information about the access key.
      */
+
     public void setAccessKey(AccessKey accessKey) {
         this.accessKey = accessKey;
     }
@@ -51,6 +52,7 @@ public class CreateAccessKeyResult implements Serializable, Cloneable {
      * 
      * @return Information about the access key.
      */
+
     public AccessKey getAccessKey() {
         return this.accessKey;
     }
@@ -65,6 +67,7 @@ public class CreateAccessKeyResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateAccessKeyResult withAccessKey(AccessKey accessKey) {
         setAccessKey(accessKey);
         return this;

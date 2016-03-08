@@ -200,6 +200,7 @@ public class DescribeEvaluationsRequest extends AmazonWebServiceRequest
      *        bucket or directory.</li>
      * @see EvaluationFilterVariable
      */
+
     public void setFilterVariable(String filterVariable) {
         this.filterVariable = filterVariable;
     }
@@ -248,6 +249,7 @@ public class DescribeEvaluationsRequest extends AmazonWebServiceRequest
      *         bucket or directory.</li>
      * @see EvaluationFilterVariable
      */
+
     public String getFilterVariable() {
         return this.filterVariable;
     }
@@ -299,6 +301,7 @@ public class DescribeEvaluationsRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see EvaluationFilterVariable
      */
+
     public DescribeEvaluationsRequest withFilterVariable(String filterVariable) {
         setFilterVariable(filterVariable);
         return this;
@@ -351,6 +354,7 @@ public class DescribeEvaluationsRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see EvaluationFilterVariable
      */
+
     public void setFilterVariable(EvaluationFilterVariable filterVariable) {
         this.filterVariable = filterVariable.toString();
     }
@@ -402,6 +406,7 @@ public class DescribeEvaluationsRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see EvaluationFilterVariable
      */
+
     public DescribeEvaluationsRequest withFilterVariable(
             EvaluationFilterVariable filterVariable) {
         setFilterVariable(filterVariable);
@@ -420,6 +425,7 @@ public class DescribeEvaluationsRequest extends AmazonWebServiceRequest
      *        have <code>FilterVariable</code> values that exactly match the
      *        value specified with <code>EQ</code>.
      */
+
     public void setEQ(String eQ) {
         this.eQ = eQ;
     }
@@ -435,6 +441,7 @@ public class DescribeEvaluationsRequest extends AmazonWebServiceRequest
      *         have <code>FilterVariable</code> values that exactly match the
      *         value specified with <code>EQ</code>.
      */
+
     public String getEQ() {
         return this.eQ;
     }
@@ -453,6 +460,7 @@ public class DescribeEvaluationsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeEvaluationsRequest withEQ(String eQ) {
         setEQ(eQ);
         return this;
@@ -470,6 +478,7 @@ public class DescribeEvaluationsRequest extends AmazonWebServiceRequest
      *        will have <code>FilterVariable</code> values that are greater than
      *        the value specified with <code>GT</code>.
      */
+
     public void setGT(String gT) {
         this.gT = gT;
     }
@@ -485,6 +494,7 @@ public class DescribeEvaluationsRequest extends AmazonWebServiceRequest
      *         will have <code>FilterVariable</code> values that are greater
      *         than the value specified with <code>GT</code>.
      */
+
     public String getGT() {
         return this.gT;
     }
@@ -503,6 +513,7 @@ public class DescribeEvaluationsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeEvaluationsRequest withGT(String gT) {
         setGT(gT);
         return this;
@@ -520,6 +531,7 @@ public class DescribeEvaluationsRequest extends AmazonWebServiceRequest
      *        have <code>FilterVariable</code> values that are less than the
      *        value specified with <code>LT</code>.
      */
+
     public void setLT(String lT) {
         this.lT = lT;
     }
@@ -535,6 +547,7 @@ public class DescribeEvaluationsRequest extends AmazonWebServiceRequest
      *         have <code>FilterVariable</code> values that are less than the
      *         value specified with <code>LT</code>.
      */
+
     public String getLT() {
         return this.lT;
     }
@@ -553,6 +566,7 @@ public class DescribeEvaluationsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeEvaluationsRequest withLT(String lT) {
         setLT(lT);
         return this;
@@ -570,6 +584,7 @@ public class DescribeEvaluationsRequest extends AmazonWebServiceRequest
      *        results will have <code>FilterVariable</code> values that are
      *        greater than or equal to the value specified with <code>GE</code>.
      */
+
     public void setGE(String gE) {
         this.gE = gE;
     }
@@ -586,6 +601,7 @@ public class DescribeEvaluationsRequest extends AmazonWebServiceRequest
      *         <code>FilterVariable</code> values that are greater than or equal
      *         to the value specified with <code>GE</code>.
      */
+
     public String getGE() {
         return this.gE;
     }
@@ -604,6 +620,7 @@ public class DescribeEvaluationsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeEvaluationsRequest withGE(String gE) {
         setGE(gE);
         return this;
@@ -621,6 +638,7 @@ public class DescribeEvaluationsRequest extends AmazonWebServiceRequest
      *        results will have <code>FilterVariable</code> values that are less
      *        than or equal to the value specified with <code>LE</code>.
      */
+
     public void setLE(String lE) {
         this.lE = lE;
     }
@@ -636,6 +654,7 @@ public class DescribeEvaluationsRequest extends AmazonWebServiceRequest
      *         results will have <code>FilterVariable</code> values that are
      *         less than or equal to the value specified with <code>LE</code>.
      */
+
     public String getLE() {
         return this.lE;
     }
@@ -654,6 +673,7 @@ public class DescribeEvaluationsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeEvaluationsRequest withLE(String lE) {
         setLE(lE);
         return this;
@@ -671,6 +691,7 @@ public class DescribeEvaluationsRequest extends AmazonWebServiceRequest
      *        will have <code>FilterVariable</code> values not equal to the
      *        value specified with <code>NE</code>.
      */
+
     public void setNE(String nE) {
         this.nE = nE;
     }
@@ -686,6 +707,7 @@ public class DescribeEvaluationsRequest extends AmazonWebServiceRequest
      *         will have <code>FilterVariable</code> values not equal to the
      *         value specified with <code>NE</code>.
      */
+
     public String getNE() {
         return this.nE;
     }
@@ -704,6 +726,7 @@ public class DescribeEvaluationsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeEvaluationsRequest withNE(String nE) {
         setNE(nE);
         return this;
@@ -766,6 +789,7 @@ public class DescribeEvaluationsRequest extends AmazonWebServiceRequest
      *        </p>
      *        </li>
      */
+
     public void setPrefix(String prefix) {
         this.prefix = prefix;
     }
@@ -826,6 +850,7 @@ public class DescribeEvaluationsRequest extends AmazonWebServiceRequest
      *         </p>
      *         </li>
      */
+
     public String getPrefix() {
         return this.prefix;
     }
@@ -889,6 +914,7 @@ public class DescribeEvaluationsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeEvaluationsRequest withPrefix(String prefix) {
         setPrefix(prefix);
         return this;
@@ -920,6 +946,7 @@ public class DescribeEvaluationsRequest extends AmazonWebServiceRequest
      *        Results are sorted by <code>FilterVariable</code>.
      * @see SortOrder
      */
+
     public void setSortOrder(String sortOrder) {
         this.sortOrder = sortOrder;
     }
@@ -949,6 +976,7 @@ public class DescribeEvaluationsRequest extends AmazonWebServiceRequest
      *         Results are sorted by <code>FilterVariable</code>.
      * @see SortOrder
      */
+
     public String getSortOrder() {
         return this.sortOrder;
     }
@@ -981,6 +1009,7 @@ public class DescribeEvaluationsRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see SortOrder
      */
+
     public DescribeEvaluationsRequest withSortOrder(String sortOrder) {
         setSortOrder(sortOrder);
         return this;
@@ -1014,6 +1043,7 @@ public class DescribeEvaluationsRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see SortOrder
      */
+
     public void setSortOrder(SortOrder sortOrder) {
         this.sortOrder = sortOrder.toString();
     }
@@ -1046,6 +1076,7 @@ public class DescribeEvaluationsRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see SortOrder
      */
+
     public DescribeEvaluationsRequest withSortOrder(SortOrder sortOrder) {
         setSortOrder(sortOrder);
         return this;
@@ -1059,6 +1090,7 @@ public class DescribeEvaluationsRequest extends AmazonWebServiceRequest
      * @param nextToken
      *        The ID of the page in the paginated results.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -1070,6 +1102,7 @@ public class DescribeEvaluationsRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the page in the paginated results.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -1084,6 +1117,7 @@ public class DescribeEvaluationsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeEvaluationsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -1098,6 +1132,7 @@ public class DescribeEvaluationsRequest extends AmazonWebServiceRequest
      *        The maximum number of <code>Evaluation</code> to include in the
      *        result.
      */
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -1110,6 +1145,7 @@ public class DescribeEvaluationsRequest extends AmazonWebServiceRequest
      * @return The maximum number of <code>Evaluation</code> to include in the
      *         result.
      */
+
     public Integer getLimit() {
         return this.limit;
     }
@@ -1125,6 +1161,7 @@ public class DescribeEvaluationsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeEvaluationsRequest withLimit(Integer limit) {
         setLimit(limit);
         return this;

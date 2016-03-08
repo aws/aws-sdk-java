@@ -55,6 +55,7 @@ public class VpnStaticRoute implements Serializable, Cloneable {
      *        The CIDR block associated with the local subnet of the customer
      *        data center.
      */
+
     public void setDestinationCidrBlock(String destinationCidrBlock) {
         this.destinationCidrBlock = destinationCidrBlock;
     }
@@ -68,6 +69,7 @@ public class VpnStaticRoute implements Serializable, Cloneable {
      * @return The CIDR block associated with the local subnet of the customer
      *         data center.
      */
+
     public String getDestinationCidrBlock() {
         return this.destinationCidrBlock;
     }
@@ -84,6 +86,7 @@ public class VpnStaticRoute implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VpnStaticRoute withDestinationCidrBlock(String destinationCidrBlock) {
         setDestinationCidrBlock(destinationCidrBlock);
         return this;
@@ -98,6 +101,7 @@ public class VpnStaticRoute implements Serializable, Cloneable {
      *        Indicates how the routes were provided.
      * @see VpnStaticRouteSource
      */
+
     public void setSource(String source) {
         this.source = source;
     }
@@ -110,6 +114,7 @@ public class VpnStaticRoute implements Serializable, Cloneable {
      * @return Indicates how the routes were provided.
      * @see VpnStaticRouteSource
      */
+
     public String getSource() {
         return this.source;
     }
@@ -125,6 +130,7 @@ public class VpnStaticRoute implements Serializable, Cloneable {
      *         chained together.
      * @see VpnStaticRouteSource
      */
+
     public VpnStaticRoute withSource(String source) {
         setSource(source);
         return this;
@@ -141,6 +147,7 @@ public class VpnStaticRoute implements Serializable, Cloneable {
      *         chained together.
      * @see VpnStaticRouteSource
      */
+
     public void setSource(VpnStaticRouteSource source) {
         this.source = source.toString();
     }
@@ -156,6 +163,7 @@ public class VpnStaticRoute implements Serializable, Cloneable {
      *         chained together.
      * @see VpnStaticRouteSource
      */
+
     public VpnStaticRoute withSource(VpnStaticRouteSource source) {
         setSource(source);
         return this;
@@ -170,6 +178,7 @@ public class VpnStaticRoute implements Serializable, Cloneable {
      *        The current state of the static route.
      * @see VpnState
      */
+
     public void setState(String state) {
         this.state = state;
     }
@@ -182,6 +191,7 @@ public class VpnStaticRoute implements Serializable, Cloneable {
      * @return The current state of the static route.
      * @see VpnState
      */
+
     public String getState() {
         return this.state;
     }
@@ -197,6 +207,7 @@ public class VpnStaticRoute implements Serializable, Cloneable {
      *         chained together.
      * @see VpnState
      */
+
     public VpnStaticRoute withState(String state) {
         setState(state);
         return this;
@@ -213,6 +224,7 @@ public class VpnStaticRoute implements Serializable, Cloneable {
      *         chained together.
      * @see VpnState
      */
+
     public void setState(VpnState state) {
         this.state = state.toString();
     }
@@ -228,6 +240,7 @@ public class VpnStaticRoute implements Serializable, Cloneable {
      *         chained together.
      * @see VpnState
      */
+
     public VpnStaticRoute withState(VpnState state) {
         setState(state);
         return this;

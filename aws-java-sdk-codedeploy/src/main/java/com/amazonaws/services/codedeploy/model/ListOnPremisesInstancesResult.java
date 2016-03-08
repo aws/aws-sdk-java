@@ -48,6 +48,7 @@ public class ListOnPremisesInstancesResult implements Serializable, Cloneable {
      * 
      * @return The list of matching on-premises instance names.
      */
+
     public java.util.List<String> getInstanceNames() {
         if (instanceNames == null) {
             instanceNames = new com.amazonaws.internal.SdkInternalList<String>();
@@ -63,6 +64,7 @@ public class ListOnPremisesInstancesResult implements Serializable, Cloneable {
      * @param instanceNames
      *        The list of matching on-premises instance names.
      */
+
     public void setInstanceNames(java.util.Collection<String> instanceNames) {
         if (instanceNames == null) {
             this.instanceNames = null;
@@ -89,6 +91,7 @@ public class ListOnPremisesInstancesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListOnPremisesInstancesResult withInstanceNames(
             String... instanceNames) {
         if (this.instanceNames == null) {
@@ -111,6 +114,7 @@ public class ListOnPremisesInstancesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListOnPremisesInstancesResult withInstanceNames(
             java.util.Collection<String> instanceNames) {
         setInstanceNames(instanceNames);
@@ -131,6 +135,7 @@ public class ListOnPremisesInstancesResult implements Serializable, Cloneable {
      *        subsequent list on-premises instances call to return the next set
      *        of on-premises instances in the list.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -148,6 +153,7 @@ public class ListOnPremisesInstancesResult implements Serializable, Cloneable {
      *         a subsequent list on-premises instances call to return the next
      *         set of on-premises instances in the list.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -168,6 +174,7 @@ public class ListOnPremisesInstancesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListOnPremisesInstancesResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

@@ -39,6 +39,7 @@ public class DescribeVirtualInterfacesResult implements Serializable, Cloneable 
      * 
      * @return A list of virtual interfaces.
      */
+
     public java.util.List<VirtualInterface> getVirtualInterfaces() {
         if (virtualInterfaces == null) {
             virtualInterfaces = new com.amazonaws.internal.SdkInternalList<VirtualInterface>();
@@ -54,6 +55,7 @@ public class DescribeVirtualInterfacesResult implements Serializable, Cloneable 
      * @param virtualInterfaces
      *        A list of virtual interfaces.
      */
+
     public void setVirtualInterfaces(
             java.util.Collection<VirtualInterface> virtualInterfaces) {
         if (virtualInterfaces == null) {
@@ -81,6 +83,7 @@ public class DescribeVirtualInterfacesResult implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVirtualInterfacesResult withVirtualInterfaces(
             VirtualInterface... virtualInterfaces) {
         if (this.virtualInterfaces == null) {
@@ -103,6 +106,7 @@ public class DescribeVirtualInterfacesResult implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVirtualInterfacesResult withVirtualInterfaces(
             java.util.Collection<VirtualInterface> virtualInterfaces) {
         setVirtualInterfaces(virtualInterfaces);

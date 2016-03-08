@@ -40,6 +40,7 @@ public class VolumeDetail implements Serializable, Cloneable {
      * @param size
      *        The size of the volume, in GiB.
      */
+
     public void setSize(Long size) {
         this.size = size;
     }
@@ -51,6 +52,7 @@ public class VolumeDetail implements Serializable, Cloneable {
      * 
      * @return The size of the volume, in GiB.
      */
+
     public Long getSize() {
         return this.size;
     }
@@ -65,6 +67,7 @@ public class VolumeDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VolumeDetail withSize(Long size) {
         setSize(size);
         return this;

@@ -90,6 +90,7 @@ public class BounceAction implements Serializable, Cloneable {
      *        href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html"
      *        >Amazon SNS Developer Guide</a>.
      */
+
     public void setTopicArn(String topicArn) {
         this.topicArn = topicArn;
     }
@@ -112,6 +113,7 @@ public class BounceAction implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html"
      *         >Amazon SNS Developer Guide</a>.
      */
+
     public String getTopicArn() {
         return this.topicArn;
     }
@@ -136,6 +138,7 @@ public class BounceAction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BounceAction withTopicArn(String topicArn) {
         setTopicArn(topicArn);
         return this;
@@ -151,6 +154,7 @@ public class BounceAction implements Serializable, Cloneable {
      *        The SMTP reply code, as defined by <a
      *        href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.
      */
+
     public void setSmtpReplyCode(String smtpReplyCode) {
         this.smtpReplyCode = smtpReplyCode;
     }
@@ -164,6 +168,7 @@ public class BounceAction implements Serializable, Cloneable {
      * @return The SMTP reply code, as defined by <a
      *         href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.
      */
+
     public String getSmtpReplyCode() {
         return this.smtpReplyCode;
     }
@@ -180,6 +185,7 @@ public class BounceAction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BounceAction withSmtpReplyCode(String smtpReplyCode) {
         setSmtpReplyCode(smtpReplyCode);
         return this;
@@ -195,6 +201,7 @@ public class BounceAction implements Serializable, Cloneable {
      *        The SMTP enhanced status code, as defined by <a
      *        href="https://tools.ietf.org/html/rfc3463">RFC 3463</a>.
      */
+
     public void setStatusCode(String statusCode) {
         this.statusCode = statusCode;
     }
@@ -208,6 +215,7 @@ public class BounceAction implements Serializable, Cloneable {
      * @return The SMTP enhanced status code, as defined by <a
      *         href="https://tools.ietf.org/html/rfc3463">RFC 3463</a>.
      */
+
     public String getStatusCode() {
         return this.statusCode;
     }
@@ -224,6 +232,7 @@ public class BounceAction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BounceAction withStatusCode(String statusCode) {
         setStatusCode(statusCode);
         return this;
@@ -237,6 +246,7 @@ public class BounceAction implements Serializable, Cloneable {
      * @param message
      *        Human-readable text to include in the bounce message.
      */
+
     public void setMessage(String message) {
         this.message = message;
     }
@@ -248,6 +258,7 @@ public class BounceAction implements Serializable, Cloneable {
      * 
      * @return Human-readable text to include in the bounce message.
      */
+
     public String getMessage() {
         return this.message;
     }
@@ -262,6 +273,7 @@ public class BounceAction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BounceAction withMessage(String message) {
         setMessage(message);
         return this;
@@ -277,6 +289,7 @@ public class BounceAction implements Serializable, Cloneable {
      *        The email address of the sender of the bounced email. This is the
      *        address from which the bounce message will be sent.
      */
+
     public void setSender(String sender) {
         this.sender = sender;
     }
@@ -290,6 +303,7 @@ public class BounceAction implements Serializable, Cloneable {
      * @return The email address of the sender of the bounced email. This is the
      *         address from which the bounce message will be sent.
      */
+
     public String getSender() {
         return this.sender;
     }
@@ -306,6 +320,7 @@ public class BounceAction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BounceAction withSender(String sender) {
         setSender(sender);
         return this;

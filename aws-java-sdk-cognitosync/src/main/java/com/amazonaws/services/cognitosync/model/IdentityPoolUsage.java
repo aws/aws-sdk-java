@@ -46,6 +46,7 @@ public class IdentityPoolUsage implements Serializable, Cloneable {
      *        us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
      *        Cognito. GUID generation is unique within a region.
      */
+
     public void setIdentityPoolId(String identityPoolId) {
         this.identityPoolId = identityPoolId;
     }
@@ -59,6 +60,7 @@ public class IdentityPoolUsage implements Serializable, Cloneable {
      *         us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
      *         Cognito. GUID generation is unique within a region.
      */
+
     public String getIdentityPoolId() {
         return this.identityPoolId;
     }
@@ -75,6 +77,7 @@ public class IdentityPoolUsage implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public IdentityPoolUsage withIdentityPoolId(String identityPoolId) {
         setIdentityPoolId(identityPoolId);
         return this;
@@ -86,6 +89,7 @@ public class IdentityPoolUsage implements Serializable, Cloneable {
      * @param syncSessionsCount
      *        Number of sync sessions for the identity pool.
      */
+
     public void setSyncSessionsCount(Long syncSessionsCount) {
         this.syncSessionsCount = syncSessionsCount;
     }
@@ -95,6 +99,7 @@ public class IdentityPoolUsage implements Serializable, Cloneable {
      * 
      * @return Number of sync sessions for the identity pool.
      */
+
     public Long getSyncSessionsCount() {
         return this.syncSessionsCount;
     }
@@ -107,6 +112,7 @@ public class IdentityPoolUsage implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public IdentityPoolUsage withSyncSessionsCount(Long syncSessionsCount) {
         setSyncSessionsCount(syncSessionsCount);
         return this;
@@ -118,6 +124,7 @@ public class IdentityPoolUsage implements Serializable, Cloneable {
      * @param dataStorage
      *        Data storage information for the identity pool.
      */
+
     public void setDataStorage(Long dataStorage) {
         this.dataStorage = dataStorage;
     }
@@ -127,6 +134,7 @@ public class IdentityPoolUsage implements Serializable, Cloneable {
      * 
      * @return Data storage information for the identity pool.
      */
+
     public Long getDataStorage() {
         return this.dataStorage;
     }
@@ -139,6 +147,7 @@ public class IdentityPoolUsage implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public IdentityPoolUsage withDataStorage(Long dataStorage) {
         setDataStorage(dataStorage);
         return this;
@@ -150,6 +159,7 @@ public class IdentityPoolUsage implements Serializable, Cloneable {
      * @param lastModifiedDate
      *        Date on which the identity pool was last modified.
      */
+
     public void setLastModifiedDate(java.util.Date lastModifiedDate) {
         this.lastModifiedDate = lastModifiedDate;
     }
@@ -159,6 +169,7 @@ public class IdentityPoolUsage implements Serializable, Cloneable {
      * 
      * @return Date on which the identity pool was last modified.
      */
+
     public java.util.Date getLastModifiedDate() {
         return this.lastModifiedDate;
     }
@@ -171,6 +182,7 @@ public class IdentityPoolUsage implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public IdentityPoolUsage withLastModifiedDate(
             java.util.Date lastModifiedDate) {
         setLastModifiedDate(lastModifiedDate);

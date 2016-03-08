@@ -81,6 +81,7 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements
      * @param routeTableId
      *        The ID of the route table for the route.
      */
+
     public void setRouteTableId(String routeTableId) {
         this.routeTableId = routeTableId;
     }
@@ -92,6 +93,7 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ID of the route table for the route.
      */
+
     public String getRouteTableId() {
         return this.routeTableId;
     }
@@ -106,6 +108,7 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateRouteRequest withRouteTableId(String routeTableId) {
         setRouteTableId(routeTableId);
         return this;
@@ -121,6 +124,7 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements
      *        The CIDR address block used for the destination match. Routing
      *        decisions are based on the most specific match.
      */
+
     public void setDestinationCidrBlock(String destinationCidrBlock) {
         this.destinationCidrBlock = destinationCidrBlock;
     }
@@ -134,6 +138,7 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements
      * @return The CIDR address block used for the destination match. Routing
      *         decisions are based on the most specific match.
      */
+
     public String getDestinationCidrBlock() {
         return this.destinationCidrBlock;
     }
@@ -150,6 +155,7 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateRouteRequest withDestinationCidrBlock(
             String destinationCidrBlock) {
         setDestinationCidrBlock(destinationCidrBlock);
@@ -166,6 +172,7 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements
      *        The ID of an Internet gateway or virtual private gateway attached
      *        to your VPC.
      */
+
     public void setGatewayId(String gatewayId) {
         this.gatewayId = gatewayId;
     }
@@ -179,6 +186,7 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements
      * @return The ID of an Internet gateway or virtual private gateway attached
      *         to your VPC.
      */
+
     public String getGatewayId() {
         return this.gatewayId;
     }
@@ -195,6 +203,7 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateRouteRequest withGatewayId(String gatewayId) {
         setGatewayId(gatewayId);
         return this;
@@ -211,6 +220,7 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements
      *        specify an instance ID unless exactly one network interface is
      *        attached.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -225,6 +235,7 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements
      *         specify an instance ID unless exactly one network interface is
      *         attached.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
@@ -242,6 +253,7 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateRouteRequest withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;
@@ -255,6 +267,7 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements
      * @param networkInterfaceId
      *        The ID of a network interface.
      */
+
     public void setNetworkInterfaceId(String networkInterfaceId) {
         this.networkInterfaceId = networkInterfaceId;
     }
@@ -266,6 +279,7 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ID of a network interface.
      */
+
     public String getNetworkInterfaceId() {
         return this.networkInterfaceId;
     }
@@ -280,6 +294,7 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateRouteRequest withNetworkInterfaceId(String networkInterfaceId) {
         setNetworkInterfaceId(networkInterfaceId);
         return this;
@@ -293,6 +308,7 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements
      * @param vpcPeeringConnectionId
      *        The ID of a VPC peering connection.
      */
+
     public void setVpcPeeringConnectionId(String vpcPeeringConnectionId) {
         this.vpcPeeringConnectionId = vpcPeeringConnectionId;
     }
@@ -304,6 +320,7 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ID of a VPC peering connection.
      */
+
     public String getVpcPeeringConnectionId() {
         return this.vpcPeeringConnectionId;
     }
@@ -318,6 +335,7 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateRouteRequest withVpcPeeringConnectionId(
             String vpcPeeringConnectionId) {
         setVpcPeeringConnectionId(vpcPeeringConnectionId);
@@ -332,6 +350,7 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements
      * @param natGatewayId
      *        The ID of a NAT gateway.
      */
+
     public void setNatGatewayId(String natGatewayId) {
         this.natGatewayId = natGatewayId;
     }
@@ -343,6 +362,7 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ID of a NAT gateway.
      */
+
     public String getNatGatewayId() {
         return this.natGatewayId;
     }
@@ -357,6 +377,7 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateRouteRequest withNatGatewayId(String natGatewayId) {
         setNatGatewayId(natGatewayId);
         return this;

@@ -62,6 +62,7 @@ public class UnsubscribeRequest extends AmazonWebServiceRequest implements
      * @param subscriptionArn
      *        The ARN of the subscription to be deleted.
      */
+
     public void setSubscriptionArn(String subscriptionArn) {
         this.subscriptionArn = subscriptionArn;
     }
@@ -73,6 +74,7 @@ public class UnsubscribeRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ARN of the subscription to be deleted.
      */
+
     public String getSubscriptionArn() {
         return this.subscriptionArn;
     }
@@ -87,6 +89,7 @@ public class UnsubscribeRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UnsubscribeRequest withSubscriptionArn(String subscriptionArn) {
         setSubscriptionArn(subscriptionArn);
         return this;

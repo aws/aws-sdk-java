@@ -49,6 +49,7 @@ public class S3Location implements Serializable, Cloneable {
      * @param bucket
      *        S3 bucket identifier.
      */
+
     public void setBucket(String bucket) {
         this.bucket = bucket;
     }
@@ -60,6 +61,7 @@ public class S3Location implements Serializable, Cloneable {
      * 
      * @return S3 bucket identifier.
      */
+
     public String getBucket() {
         return this.bucket;
     }
@@ -74,6 +76,7 @@ public class S3Location implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public S3Location withBucket(String bucket) {
         setBucket(bucket);
         return this;
@@ -87,6 +90,7 @@ public class S3Location implements Serializable, Cloneable {
      * @param key
      *        S3 bucket key.
      */
+
     public void setKey(String key) {
         this.key = key;
     }
@@ -98,6 +102,7 @@ public class S3Location implements Serializable, Cloneable {
      * 
      * @return S3 bucket key.
      */
+
     public String getKey() {
         return this.key;
     }
@@ -112,6 +117,7 @@ public class S3Location implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public S3Location withKey(String key) {
         setKey(key);
         return this;

@@ -88,6 +88,7 @@ public class ResumeProcessesRequest extends AmazonWebServiceRequest implements
      * @param autoScalingGroupName
      *        The name or Amazon Resource Name (ARN) of the Auto Scaling group.
      */
+
     public void setAutoScalingGroupName(String autoScalingGroupName) {
         this.autoScalingGroupName = autoScalingGroupName;
     }
@@ -99,6 +100,7 @@ public class ResumeProcessesRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name or Amazon Resource Name (ARN) of the Auto Scaling group.
      */
+
     public String getAutoScalingGroupName() {
         return this.autoScalingGroupName;
     }
@@ -113,6 +115,7 @@ public class ResumeProcessesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ResumeProcessesRequest withAutoScalingGroupName(
             String autoScalingGroupName) {
         setAutoScalingGroupName(autoScalingGroupName);
@@ -209,6 +212,7 @@ public class ResumeProcessesRequest extends AmazonWebServiceRequest implements
      *         </p>
      *         </li>
      */
+
     public java.util.List<String> getScalingProcesses() {
         if (scalingProcesses == null) {
             scalingProcesses = new com.amazonaws.internal.SdkInternalList<String>();
@@ -307,6 +311,7 @@ public class ResumeProcessesRequest extends AmazonWebServiceRequest implements
      *        </p>
      *        </li>
      */
+
     public void setScalingProcesses(
             java.util.Collection<String> scalingProcesses) {
         if (scalingProcesses == null) {
@@ -417,6 +422,7 @@ public class ResumeProcessesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ResumeProcessesRequest withScalingProcesses(
             String... scalingProcesses) {
         if (this.scalingProcesses == null) {
@@ -522,6 +528,7 @@ public class ResumeProcessesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ResumeProcessesRequest withScalingProcesses(
             java.util.Collection<String> scalingProcesses) {
         setScalingProcesses(scalingProcesses);

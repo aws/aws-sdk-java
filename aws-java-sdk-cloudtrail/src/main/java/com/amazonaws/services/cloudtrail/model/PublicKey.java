@@ -63,6 +63,7 @@ public class PublicKey implements Serializable, Cloneable {
      * @param value
      *        The DER encoded public key value in PKCS#1 format.
      */
+
     public void setValue(java.nio.ByteBuffer value) {
         this.value = value;
     }
@@ -84,6 +85,7 @@ public class PublicKey implements Serializable, Cloneable {
      * 
      * @return The DER encoded public key value in PKCS#1 format.
      */
+
     public java.nio.ByteBuffer getValue() {
         return this.value;
     }
@@ -98,6 +100,7 @@ public class PublicKey implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PublicKey withValue(java.nio.ByteBuffer value) {
         setValue(value);
         return this;
@@ -111,6 +114,7 @@ public class PublicKey implements Serializable, Cloneable {
      * @param validityStartTime
      *        The starting time of validity of the public key.
      */
+
     public void setValidityStartTime(java.util.Date validityStartTime) {
         this.validityStartTime = validityStartTime;
     }
@@ -122,6 +126,7 @@ public class PublicKey implements Serializable, Cloneable {
      * 
      * @return The starting time of validity of the public key.
      */
+
     public java.util.Date getValidityStartTime() {
         return this.validityStartTime;
     }
@@ -136,6 +141,7 @@ public class PublicKey implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PublicKey withValidityStartTime(java.util.Date validityStartTime) {
         setValidityStartTime(validityStartTime);
         return this;
@@ -149,6 +155,7 @@ public class PublicKey implements Serializable, Cloneable {
      * @param validityEndTime
      *        The ending time of validity of the public key.
      */
+
     public void setValidityEndTime(java.util.Date validityEndTime) {
         this.validityEndTime = validityEndTime;
     }
@@ -160,6 +167,7 @@ public class PublicKey implements Serializable, Cloneable {
      * 
      * @return The ending time of validity of the public key.
      */
+
     public java.util.Date getValidityEndTime() {
         return this.validityEndTime;
     }
@@ -174,6 +182,7 @@ public class PublicKey implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PublicKey withValidityEndTime(java.util.Date validityEndTime) {
         setValidityEndTime(validityEndTime);
         return this;
@@ -187,6 +196,7 @@ public class PublicKey implements Serializable, Cloneable {
      * @param fingerprint
      *        The fingerprint of the public key.
      */
+
     public void setFingerprint(String fingerprint) {
         this.fingerprint = fingerprint;
     }
@@ -198,6 +208,7 @@ public class PublicKey implements Serializable, Cloneable {
      * 
      * @return The fingerprint of the public key.
      */
+
     public String getFingerprint() {
         return this.fingerprint;
     }
@@ -212,6 +223,7 @@ public class PublicKey implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PublicKey withFingerprint(String fingerprint) {
         setFingerprint(fingerprint);
         return this;

@@ -64,6 +64,7 @@ public class ListFleetsRequest extends AmazonWebServiceRequest implements
      *        parameter to return only fleets using the specified build. To
      *        retrieve all fleets, leave this parameter empty.
      */
+
     public void setBuildId(String buildId) {
         this.buildId = buildId;
     }
@@ -79,6 +80,7 @@ public class ListFleetsRequest extends AmazonWebServiceRequest implements
      *         parameter to return only fleets using the specified build. To
      *         retrieve all fleets, leave this parameter empty.
      */
+
     public String getBuildId() {
         return this.buildId;
     }
@@ -97,6 +99,7 @@ public class ListFleetsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListFleetsRequest withBuildId(String buildId) {
         setBuildId(buildId);
         return this;
@@ -112,6 +115,7 @@ public class ListFleetsRequest extends AmazonWebServiceRequest implements
      *        Maximum number of results to return. You can use this parameter
      *        with <i>NextToken</i> to get results as a set of sequential pages.
      */
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -126,6 +130,7 @@ public class ListFleetsRequest extends AmazonWebServiceRequest implements
      *         with <i>NextToken</i> to get results as a set of sequential
      *         pages.
      */
+
     public Integer getLimit() {
         return this.limit;
     }
@@ -142,6 +147,7 @@ public class ListFleetsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListFleetsRequest withLimit(Integer limit) {
         setLimit(limit);
         return this;
@@ -161,6 +167,7 @@ public class ListFleetsRequest extends AmazonWebServiceRequest implements
      *        retrieved. To start at the beginning of a result set, do not set
      *        this parameter.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -178,6 +185,7 @@ public class ListFleetsRequest extends AmazonWebServiceRequest implements
      *         results to be retrieved. To start at the beginning of a result
      *         set, do not set this parameter.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -198,6 +206,7 @@ public class ListFleetsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListFleetsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

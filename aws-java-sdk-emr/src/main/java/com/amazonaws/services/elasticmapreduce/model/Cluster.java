@@ -154,6 +154,7 @@ public class Cluster implements Serializable, Cloneable {
      * @param id
      *        The unique identifier for the cluster.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -165,6 +166,7 @@ public class Cluster implements Serializable, Cloneable {
      * 
      * @return The unique identifier for the cluster.
      */
+
     public String getId() {
         return this.id;
     }
@@ -179,6 +181,7 @@ public class Cluster implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Cluster withId(String id) {
         setId(id);
         return this;
@@ -192,6 +195,7 @@ public class Cluster implements Serializable, Cloneable {
      * @param name
      *        The name of the cluster.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -203,6 +207,7 @@ public class Cluster implements Serializable, Cloneable {
      * 
      * @return The name of the cluster.
      */
+
     public String getName() {
         return this.name;
     }
@@ -217,6 +222,7 @@ public class Cluster implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Cluster withName(String name) {
         setName(name);
         return this;
@@ -230,6 +236,7 @@ public class Cluster implements Serializable, Cloneable {
      * @param status
      *        The current status details about the cluster.
      */
+
     public void setStatus(ClusterStatus status) {
         this.status = status;
     }
@@ -241,6 +248,7 @@ public class Cluster implements Serializable, Cloneable {
      * 
      * @return The current status details about the cluster.
      */
+
     public ClusterStatus getStatus() {
         return this.status;
     }
@@ -255,6 +263,7 @@ public class Cluster implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Cluster withStatus(ClusterStatus status) {
         setStatus(status);
         return this;
@@ -263,6 +272,7 @@ public class Cluster implements Serializable, Cloneable {
     /**
      * @param ec2InstanceAttributes
      */
+
     public void setEc2InstanceAttributes(
             Ec2InstanceAttributes ec2InstanceAttributes) {
         this.ec2InstanceAttributes = ec2InstanceAttributes;
@@ -271,6 +281,7 @@ public class Cluster implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Ec2InstanceAttributes getEc2InstanceAttributes() {
         return this.ec2InstanceAttributes;
     }
@@ -280,6 +291,7 @@ public class Cluster implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Cluster withEc2InstanceAttributes(
             Ec2InstanceAttributes ec2InstanceAttributes) {
         setEc2InstanceAttributes(ec2InstanceAttributes);
@@ -296,6 +308,7 @@ public class Cluster implements Serializable, Cloneable {
      *        The path to the Amazon S3 location where logs for this cluster are
      *        stored.
      */
+
     public void setLogUri(String logUri) {
         this.logUri = logUri;
     }
@@ -309,6 +322,7 @@ public class Cluster implements Serializable, Cloneable {
      * @return The path to the Amazon S3 location where logs for this cluster
      *         are stored.
      */
+
     public String getLogUri() {
         return this.logUri;
     }
@@ -325,6 +339,7 @@ public class Cluster implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Cluster withLogUri(String logUri) {
         setLogUri(logUri);
         return this;
@@ -338,6 +353,7 @@ public class Cluster implements Serializable, Cloneable {
      * @param requestedAmiVersion
      *        The AMI version requested for this cluster.
      */
+
     public void setRequestedAmiVersion(String requestedAmiVersion) {
         this.requestedAmiVersion = requestedAmiVersion;
     }
@@ -349,6 +365,7 @@ public class Cluster implements Serializable, Cloneable {
      * 
      * @return The AMI version requested for this cluster.
      */
+
     public String getRequestedAmiVersion() {
         return this.requestedAmiVersion;
     }
@@ -363,6 +380,7 @@ public class Cluster implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Cluster withRequestedAmiVersion(String requestedAmiVersion) {
         setRequestedAmiVersion(requestedAmiVersion);
         return this;
@@ -376,6 +394,7 @@ public class Cluster implements Serializable, Cloneable {
      * @param runningAmiVersion
      *        The AMI version running on this cluster.
      */
+
     public void setRunningAmiVersion(String runningAmiVersion) {
         this.runningAmiVersion = runningAmiVersion;
     }
@@ -387,6 +406,7 @@ public class Cluster implements Serializable, Cloneable {
      * 
      * @return The AMI version running on this cluster.
      */
+
     public String getRunningAmiVersion() {
         return this.runningAmiVersion;
     }
@@ -401,6 +421,7 @@ public class Cluster implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Cluster withRunningAmiVersion(String runningAmiVersion) {
         setRunningAmiVersion(runningAmiVersion);
         return this;
@@ -416,6 +437,7 @@ public class Cluster implements Serializable, Cloneable {
      *        The release label for the Amazon EMR release. For Amazon EMR 3.x
      *        and 2.x AMIs, use amiVersion instead instead of ReleaseLabel.
      */
+
     public void setReleaseLabel(String releaseLabel) {
         this.releaseLabel = releaseLabel;
     }
@@ -429,6 +451,7 @@ public class Cluster implements Serializable, Cloneable {
      * @return The release label for the Amazon EMR release. For Amazon EMR 3.x
      *         and 2.x AMIs, use amiVersion instead instead of ReleaseLabel.
      */
+
     public String getReleaseLabel() {
         return this.releaseLabel;
     }
@@ -445,6 +468,7 @@ public class Cluster implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Cluster withReleaseLabel(String releaseLabel) {
         setReleaseLabel(releaseLabel);
         return this;
@@ -460,6 +484,7 @@ public class Cluster implements Serializable, Cloneable {
      *        Specifies whether the cluster should terminate after completing
      *        all steps.
      */
+
     public void setAutoTerminate(Boolean autoTerminate) {
         this.autoTerminate = autoTerminate;
     }
@@ -473,6 +498,7 @@ public class Cluster implements Serializable, Cloneable {
      * @return Specifies whether the cluster should terminate after completing
      *         all steps.
      */
+
     public Boolean getAutoTerminate() {
         return this.autoTerminate;
     }
@@ -489,6 +515,7 @@ public class Cluster implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Cluster withAutoTerminate(Boolean autoTerminate) {
         setAutoTerminate(autoTerminate);
         return this;
@@ -503,6 +530,7 @@ public class Cluster implements Serializable, Cloneable {
      * @return Specifies whether the cluster should terminate after completing
      *         all steps.
      */
+
     public Boolean isAutoTerminate() {
         return this.autoTerminate;
     }
@@ -519,6 +547,7 @@ public class Cluster implements Serializable, Cloneable {
      *        EC2 instances from being terminated by an API call or user
      *        intervention, or in the event of a cluster error.
      */
+
     public void setTerminationProtected(Boolean terminationProtected) {
         this.terminationProtected = terminationProtected;
     }
@@ -534,6 +563,7 @@ public class Cluster implements Serializable, Cloneable {
      *         EC2 instances from being terminated by an API call or user
      *         intervention, or in the event of a cluster error.
      */
+
     public Boolean getTerminationProtected() {
         return this.terminationProtected;
     }
@@ -552,6 +582,7 @@ public class Cluster implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Cluster withTerminationProtected(Boolean terminationProtected) {
         setTerminationProtected(terminationProtected);
         return this;
@@ -568,6 +599,7 @@ public class Cluster implements Serializable, Cloneable {
      *         EC2 instances from being terminated by an API call or user
      *         intervention, or in the event of a cluster error.
      */
+
     public Boolean isTerminationProtected() {
         return this.terminationProtected;
     }
@@ -592,6 +624,7 @@ public class Cluster implements Serializable, Cloneable {
      *        created the cluster can view and manage it. This value can be
      *        changed using the <a>SetVisibleToAllUsers</a> action.
      */
+
     public void setVisibleToAllUsers(Boolean visibleToAllUsers) {
         this.visibleToAllUsers = visibleToAllUsers;
     }
@@ -615,6 +648,7 @@ public class Cluster implements Serializable, Cloneable {
      *         created the cluster can view and manage it. This value can be
      *         changed using the <a>SetVisibleToAllUsers</a> action.
      */
+
     public Boolean getVisibleToAllUsers() {
         return this.visibleToAllUsers;
     }
@@ -641,6 +675,7 @@ public class Cluster implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Cluster withVisibleToAllUsers(Boolean visibleToAllUsers) {
         setVisibleToAllUsers(visibleToAllUsers);
         return this;
@@ -665,6 +700,7 @@ public class Cluster implements Serializable, Cloneable {
      *         created the cluster can view and manage it. This value can be
      *         changed using the <a>SetVisibleToAllUsers</a> action.
      */
+
     public Boolean isVisibleToAllUsers() {
         return this.visibleToAllUsers;
     }
@@ -676,6 +712,7 @@ public class Cluster implements Serializable, Cloneable {
      * 
      * @return The applications installed on this cluster.
      */
+
     public java.util.List<Application> getApplications() {
         if (applications == null) {
             applications = new com.amazonaws.internal.SdkInternalList<Application>();
@@ -691,6 +728,7 @@ public class Cluster implements Serializable, Cloneable {
      * @param applications
      *        The applications installed on this cluster.
      */
+
     public void setApplications(java.util.Collection<Application> applications) {
         if (applications == null) {
             this.applications = null;
@@ -717,6 +755,7 @@ public class Cluster implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Cluster withApplications(Application... applications) {
         if (this.applications == null) {
             setApplications(new com.amazonaws.internal.SdkInternalList<Application>(
@@ -738,6 +777,7 @@ public class Cluster implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Cluster withApplications(
             java.util.Collection<Application> applications) {
         setApplications(applications);
@@ -751,6 +791,7 @@ public class Cluster implements Serializable, Cloneable {
      * 
      * @return A list of tags associated with a cluster.
      */
+
     public java.util.List<Tag> getTags() {
         if (tags == null) {
             tags = new com.amazonaws.internal.SdkInternalList<Tag>();
@@ -766,6 +807,7 @@ public class Cluster implements Serializable, Cloneable {
      * @param tags
      *        A list of tags associated with a cluster.
      */
+
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
             this.tags = null;
@@ -791,6 +833,7 @@ public class Cluster implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Cluster withTags(Tag... tags) {
         if (this.tags == null) {
             setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
@@ -811,6 +854,7 @@ public class Cluster implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Cluster withTags(java.util.Collection<Tag> tags) {
         setTags(tags);
         return this;
@@ -826,6 +870,7 @@ public class Cluster implements Serializable, Cloneable {
      *        The IAM role that will be assumed by the Amazon EMR service to
      *        access AWS resources on your behalf.
      */
+
     public void setServiceRole(String serviceRole) {
         this.serviceRole = serviceRole;
     }
@@ -839,6 +884,7 @@ public class Cluster implements Serializable, Cloneable {
      * @return The IAM role that will be assumed by the Amazon EMR service to
      *         access AWS resources on your behalf.
      */
+
     public String getServiceRole() {
         return this.serviceRole;
     }
@@ -855,6 +901,7 @@ public class Cluster implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Cluster withServiceRole(String serviceRole) {
         setServiceRole(serviceRole);
         return this;
@@ -879,6 +926,7 @@ public class Cluster implements Serializable, Cloneable {
      *        This result is only an approximation and does not reflect the
      *        actual billing rate.
      */
+
     public void setNormalizedInstanceHours(Integer normalizedInstanceHours) {
         this.normalizedInstanceHours = normalizedInstanceHours;
     }
@@ -901,6 +949,7 @@ public class Cluster implements Serializable, Cloneable {
      *         four. This result is only an approximation and does not reflect
      *         the actual billing rate.
      */
+
     public Integer getNormalizedInstanceHours() {
         return this.normalizedInstanceHours;
     }
@@ -926,6 +975,7 @@ public class Cluster implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Cluster withNormalizedInstanceHours(Integer normalizedInstanceHours) {
         setNormalizedInstanceHours(normalizedInstanceHours);
         return this;
@@ -939,6 +989,7 @@ public class Cluster implements Serializable, Cloneable {
      * @param masterPublicDnsName
      *        The public DNS name of the master EC2 instance.
      */
+
     public void setMasterPublicDnsName(String masterPublicDnsName) {
         this.masterPublicDnsName = masterPublicDnsName;
     }
@@ -950,6 +1001,7 @@ public class Cluster implements Serializable, Cloneable {
      * 
      * @return The public DNS name of the master EC2 instance.
      */
+
     public String getMasterPublicDnsName() {
         return this.masterPublicDnsName;
     }
@@ -964,6 +1016,7 @@ public class Cluster implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Cluster withMasterPublicDnsName(String masterPublicDnsName) {
         setMasterPublicDnsName(masterPublicDnsName);
         return this;
@@ -981,6 +1034,7 @@ public class Cluster implements Serializable, Cloneable {
      * 
      * @return Amazon EMR releases 4.x or later.</p></note>
      */
+
     public java.util.List<Configuration> getConfigurations() {
         if (configurations == null) {
             configurations = new com.amazonaws.internal.SdkInternalList<Configuration>();
@@ -1001,6 +1055,7 @@ public class Cluster implements Serializable, Cloneable {
      * @param configurations
      *        Amazon EMR releases 4.x or later.</p></note>
      */
+
     public void setConfigurations(
             java.util.Collection<Configuration> configurations) {
         if (configurations == null) {
@@ -1033,6 +1088,7 @@ public class Cluster implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Cluster withConfigurations(Configuration... configurations) {
         if (this.configurations == null) {
             setConfigurations(new com.amazonaws.internal.SdkInternalList<Configuration>(
@@ -1059,6 +1115,7 @@ public class Cluster implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Cluster withConfigurations(
             java.util.Collection<Configuration> configurations) {
         setConfigurations(configurations);

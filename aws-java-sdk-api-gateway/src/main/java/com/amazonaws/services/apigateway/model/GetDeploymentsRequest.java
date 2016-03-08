@@ -61,6 +61,7 @@ public class GetDeploymentsRequest extends AmazonWebServiceRequest implements
      *        The identifier of the <a>RestApi</a> resource for the collection
      *        of <a>Deployment</a> resources to get information about.
      */
+
     public void setRestApiId(String restApiId) {
         this.restApiId = restApiId;
     }
@@ -74,6 +75,7 @@ public class GetDeploymentsRequest extends AmazonWebServiceRequest implements
      * @return The identifier of the <a>RestApi</a> resource for the collection
      *         of <a>Deployment</a> resources to get information about.
      */
+
     public String getRestApiId() {
         return this.restApiId;
     }
@@ -90,6 +92,7 @@ public class GetDeploymentsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDeploymentsRequest withRestApiId(String restApiId) {
         setRestApiId(restApiId);
         return this;
@@ -105,6 +108,7 @@ public class GetDeploymentsRequest extends AmazonWebServiceRequest implements
      *        The position of the current <a>Deployment</a> resource in the
      *        collection to get information about.
      */
+
     public void setPosition(String position) {
         this.position = position;
     }
@@ -118,6 +122,7 @@ public class GetDeploymentsRequest extends AmazonWebServiceRequest implements
      * @return The position of the current <a>Deployment</a> resource in the
      *         collection to get information about.
      */
+
     public String getPosition() {
         return this.position;
     }
@@ -134,6 +139,7 @@ public class GetDeploymentsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDeploymentsRequest withPosition(String position) {
         setPosition(position);
         return this;
@@ -151,6 +157,7 @@ public class GetDeploymentsRequest extends AmazonWebServiceRequest implements
      *        collection to get information about. The default limit is 25. It
      *        should be an integer between 1 - 500.
      */
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -166,6 +173,7 @@ public class GetDeploymentsRequest extends AmazonWebServiceRequest implements
      *         collection to get information about. The default limit is 25. It
      *         should be an integer between 1 - 500.
      */
+
     public Integer getLimit() {
         return this.limit;
     }
@@ -184,6 +192,7 @@ public class GetDeploymentsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDeploymentsRequest withLimit(Integer limit) {
         setLimit(limit);
         return this;

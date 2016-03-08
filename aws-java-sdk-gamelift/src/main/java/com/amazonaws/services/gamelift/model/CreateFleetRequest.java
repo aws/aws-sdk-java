@@ -102,6 +102,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements
      *        Descriptive label associated with this fleet. Fleet names do not
      *        need to be unique.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -115,6 +116,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements
      * @return Descriptive label associated with this fleet. Fleet names do not
      *         need to be unique.
      */
+
     public String getName() {
         return this.name;
     }
@@ -131,6 +133,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateFleetRequest withName(String name) {
         setName(name);
         return this;
@@ -144,6 +147,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements
      * @param description
      *        Human-readable description of the fleet.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -155,6 +159,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements
      * 
      * @return Human-readable description of the fleet.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -169,6 +174,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateFleetRequest withDescription(String description) {
         setDescription(description);
         return this;
@@ -182,6 +188,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements
      * @param buildId
      *        Unique identifier for the build you want the new fleet to use.
      */
+
     public void setBuildId(String buildId) {
         this.buildId = buildId;
     }
@@ -193,6 +200,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements
      * 
      * @return Unique identifier for the build you want the new fleet to use.
      */
+
     public String getBuildId() {
         return this.buildId;
     }
@@ -207,6 +215,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateFleetRequest withBuildId(String buildId) {
         setBuildId(buildId);
         return this;
@@ -228,6 +237,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements
      *        files are in a folder called "MyGame", your log path should be
      *        "C:\game\MyGame\server.exe".
      */
+
     public void setServerLaunchPath(String serverLaunchPath) {
         this.serverLaunchPath = serverLaunchPath;
     }
@@ -247,6 +257,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements
      *         files are in a folder called "MyGame", your log path should be
      *         "C:\game\MyGame\server.exe".
      */
+
     public String getServerLaunchPath() {
         return this.serverLaunchPath;
     }
@@ -269,6 +280,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateFleetRequest withServerLaunchPath(String serverLaunchPath) {
         setServerLaunchPath(serverLaunchPath);
         return this;
@@ -286,6 +298,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements
      *        should be expressed as a string of command-line parameters.
      *        Example: "+sv_port 33435 +start_lobby".
      */
+
     public void setServerLaunchParameters(String serverLaunchParameters) {
         this.serverLaunchParameters = serverLaunchParameters;
     }
@@ -301,6 +314,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements
      *         should be expressed as a string of command-line parameters.
      *         Example: "+sv_port 33435 +start_lobby".
      */
+
     public String getServerLaunchParameters() {
         return this.serverLaunchParameters;
     }
@@ -319,6 +333,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateFleetRequest withServerLaunchParameters(
             String serverLaunchParameters) {
         setServerLaunchParameters(serverLaunchParameters);
@@ -337,6 +352,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements
      *         logs on S3. Use the Amazon GameLift console to access the stored
      *         logs.
      */
+
     public java.util.List<String> getLogPaths() {
         return logPaths;
     }
@@ -353,6 +369,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements
      *        a game session terminates, GameLift captures and stores the logs
      *        on S3. Use the Amazon GameLift console to access the stored logs.
      */
+
     public void setLogPaths(java.util.Collection<String> logPaths) {
         if (logPaths == null) {
             this.logPaths = null;
@@ -382,6 +399,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateFleetRequest withLogPaths(String... logPaths) {
         if (this.logPaths == null) {
             setLogPaths(new java.util.ArrayList<String>(logPaths.length));
@@ -406,6 +424,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateFleetRequest withLogPaths(java.util.Collection<String> logPaths) {
         setLogPaths(logPaths);
         return this;
@@ -430,6 +449,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements
      *        type.
      * @see EC2InstanceType
      */
+
     public void setEC2InstanceType(String eC2InstanceType) {
         this.eC2InstanceType = eC2InstanceType;
     }
@@ -452,6 +472,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements
      *         type.
      * @see EC2InstanceType
      */
+
     public String getEC2InstanceType() {
         return this.eC2InstanceType;
     }
@@ -477,6 +498,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see EC2InstanceType
      */
+
     public CreateFleetRequest withEC2InstanceType(String eC2InstanceType) {
         setEC2InstanceType(eC2InstanceType);
         return this;
@@ -503,6 +525,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see EC2InstanceType
      */
+
     public void setEC2InstanceType(EC2InstanceType eC2InstanceType) {
         this.eC2InstanceType = eC2InstanceType.toString();
     }
@@ -528,6 +551,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see EC2InstanceType
      */
+
     public CreateFleetRequest withEC2InstanceType(
             EC2InstanceType eC2InstanceType) {
         setEC2InstanceType(eC2InstanceType);
@@ -547,6 +571,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements
      *         and port numbers. Some ports in a range may be restricted. You
      *         can provide one or more sets of permissions for the fleet.
      */
+
     public java.util.List<IpPermission> getEC2InboundPermissions() {
         return eC2InboundPermissions;
     }
@@ -565,6 +590,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements
      *        and port numbers. Some ports in a range may be restricted. You can
      *        provide one or more sets of permissions for the fleet.
      */
+
     public void setEC2InboundPermissions(
             java.util.Collection<IpPermission> eC2InboundPermissions) {
         if (eC2InboundPermissions == null) {
@@ -598,6 +624,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateFleetRequest withEC2InboundPermissions(
             IpPermission... eC2InboundPermissions) {
         if (this.eC2InboundPermissions == null) {
@@ -626,6 +653,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateFleetRequest withEC2InboundPermissions(
             java.util.Collection<IpPermission> eC2InboundPermissions) {
         setEC2InboundPermissions(eC2InboundPermissions);

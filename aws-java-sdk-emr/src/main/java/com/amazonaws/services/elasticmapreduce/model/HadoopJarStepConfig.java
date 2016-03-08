@@ -85,6 +85,7 @@ public class HadoopJarStepConfig implements Serializable, Cloneable {
      *         can use these properties to pass key value pairs to your main
      *         function.
      */
+
     public java.util.List<KeyValue> getProperties() {
         if (properties == null) {
             properties = new com.amazonaws.internal.SdkInternalList<KeyValue>();
@@ -103,6 +104,7 @@ public class HadoopJarStepConfig implements Serializable, Cloneable {
      *        use these properties to pass key value pairs to your main
      *        function.
      */
+
     public void setProperties(java.util.Collection<KeyValue> properties) {
         if (properties == null) {
             this.properties = null;
@@ -132,6 +134,7 @@ public class HadoopJarStepConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HadoopJarStepConfig withProperties(KeyValue... properties) {
         if (this.properties == null) {
             setProperties(new com.amazonaws.internal.SdkInternalList<KeyValue>(
@@ -156,6 +159,7 @@ public class HadoopJarStepConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HadoopJarStepConfig withProperties(
             java.util.Collection<KeyValue> properties) {
         setProperties(properties);
@@ -170,6 +174,7 @@ public class HadoopJarStepConfig implements Serializable, Cloneable {
      * @param jar
      *        A path to a JAR file run during the step.
      */
+
     public void setJar(String jar) {
         this.jar = jar;
     }
@@ -181,6 +186,7 @@ public class HadoopJarStepConfig implements Serializable, Cloneable {
      * 
      * @return A path to a JAR file run during the step.
      */
+
     public String getJar() {
         return this.jar;
     }
@@ -195,6 +201,7 @@ public class HadoopJarStepConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HadoopJarStepConfig withJar(String jar) {
         setJar(jar);
         return this;
@@ -211,6 +218,7 @@ public class HadoopJarStepConfig implements Serializable, Cloneable {
      *        specified, the JAR file should specify a Main-Class in its
      *        manifest file.
      */
+
     public void setMainClass(String mainClass) {
         this.mainClass = mainClass;
     }
@@ -225,6 +233,7 @@ public class HadoopJarStepConfig implements Serializable, Cloneable {
      *         specified, the JAR file should specify a Main-Class in its
      *         manifest file.
      */
+
     public String getMainClass() {
         return this.mainClass;
     }
@@ -242,6 +251,7 @@ public class HadoopJarStepConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HadoopJarStepConfig withMainClass(String mainClass) {
         setMainClass(mainClass);
         return this;
@@ -256,6 +266,7 @@ public class HadoopJarStepConfig implements Serializable, Cloneable {
      * @return A list of command line arguments passed to the JAR file's main
      *         function when executed.
      */
+
     public java.util.List<String> getArgs() {
         if (args == null) {
             args = new com.amazonaws.internal.SdkInternalList<String>();
@@ -273,6 +284,7 @@ public class HadoopJarStepConfig implements Serializable, Cloneable {
      *        A list of command line arguments passed to the JAR file's main
      *        function when executed.
      */
+
     public void setArgs(java.util.Collection<String> args) {
         if (args == null) {
             this.args = null;
@@ -300,6 +312,7 @@ public class HadoopJarStepConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HadoopJarStepConfig withArgs(String... args) {
         if (this.args == null) {
             setArgs(new com.amazonaws.internal.SdkInternalList<String>(
@@ -323,6 +336,7 @@ public class HadoopJarStepConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HadoopJarStepConfig withArgs(java.util.Collection<String> args) {
         setArgs(args);
         return this;

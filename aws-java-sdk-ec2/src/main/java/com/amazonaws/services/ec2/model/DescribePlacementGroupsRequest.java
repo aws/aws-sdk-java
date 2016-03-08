@@ -79,6 +79,7 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest
      *         Default: Describes all your placement groups, or only those
      *         otherwise specified.
      */
+
     public java.util.List<String> getGroupNames() {
         if (groupNames == null) {
             groupNames = new com.amazonaws.internal.SdkInternalList<String>();
@@ -101,6 +102,7 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest
      *        Default: Describes all your placement groups, or only those
      *        otherwise specified.
      */
+
     public void setGroupNames(java.util.Collection<String> groupNames) {
         if (groupNames == null) {
             this.groupNames = null;
@@ -134,6 +136,7 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribePlacementGroupsRequest withGroupNames(String... groupNames) {
         if (this.groupNames == null) {
             setGroupNames(new com.amazonaws.internal.SdkInternalList<String>(
@@ -162,6 +165,7 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribePlacementGroupsRequest withGroupNames(
             java.util.Collection<String> groupNames) {
         setGroupNames(groupNames);
@@ -214,6 +218,7 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest
      *         </p>
      *         </li>
      */
+
     public java.util.List<Filter> getFilters() {
         if (filters == null) {
             filters = new com.amazonaws.internal.SdkInternalList<Filter>();
@@ -268,6 +273,7 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest
      *        </p>
      *        </li>
      */
+
     public void setFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
             this.filters = null;
@@ -333,6 +339,7 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribePlacementGroupsRequest withFilters(Filter... filters) {
         if (this.filters == null) {
             setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(
@@ -393,6 +400,7 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribePlacementGroupsRequest withFilters(
             java.util.Collection<Filter> filters) {
         setFilters(filters);

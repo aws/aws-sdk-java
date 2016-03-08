@@ -110,6 +110,7 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
      *        >Enable Cross-Zone Load Balancing</a> in the <i>Elastic Load
      *        Balancing Developer Guide</i>.
      */
+
     public void setCrossZoneLoadBalancing(
             CrossZoneLoadBalancing crossZoneLoadBalancing) {
         this.crossZoneLoadBalancing = crossZoneLoadBalancing;
@@ -136,6 +137,7 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
      *         >Enable Cross-Zone Load Balancing</a> in the <i>Elastic Load
      *         Balancing Developer Guide</i>.
      */
+
     public CrossZoneLoadBalancing getCrossZoneLoadBalancing() {
         return this.crossZoneLoadBalancing;
     }
@@ -164,6 +166,7 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LoadBalancerAttributes withCrossZoneLoadBalancing(
             CrossZoneLoadBalancing crossZoneLoadBalancing) {
         setCrossZoneLoadBalancing(crossZoneLoadBalancing);
@@ -193,6 +196,7 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
      *        >Enable Access Logs</a> in the <i>Elastic Load Balancing Developer
      *        Guide</i>.
      */
+
     public void setAccessLog(AccessLog accessLog) {
         this.accessLog = accessLog;
     }
@@ -219,6 +223,7 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
      *         >Enable Access Logs</a> in the <i>Elastic Load Balancing
      *         Developer Guide</i>.
      */
+
     public AccessLog getAccessLog() {
         return this.accessLog;
     }
@@ -248,6 +253,7 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LoadBalancerAttributes withAccessLog(AccessLog accessLog) {
         setAccessLog(accessLog);
         return this;
@@ -276,6 +282,7 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
      *        >Enable Connection Draining</a> in the <i>Elastic Load Balancing
      *        Developer Guide</i>.
      */
+
     public void setConnectionDraining(ConnectionDraining connectionDraining) {
         this.connectionDraining = connectionDraining;
     }
@@ -302,6 +309,7 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
      *         >Enable Connection Draining</a> in the <i>Elastic Load Balancing
      *         Developer Guide</i>.
      */
+
     public ConnectionDraining getConnectionDraining() {
         return this.connectionDraining;
     }
@@ -331,6 +339,7 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LoadBalancerAttributes withConnectionDraining(
             ConnectionDraining connectionDraining) {
         setConnectionDraining(connectionDraining);
@@ -363,6 +372,7 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
      *        >Configure Idle Connection Timeout</a> in the <i>Elastic Load
      *        Balancing Developer Guide</i>.
      */
+
     public void setConnectionSettings(ConnectionSettings connectionSettings) {
         this.connectionSettings = connectionSettings;
     }
@@ -392,6 +402,7 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
      *         >Configure Idle Connection Timeout</a> in the <i>Elastic Load
      *         Balancing Developer Guide</i>.
      */
+
     public ConnectionSettings getConnectionSettings() {
         return this.connectionSettings;
     }
@@ -424,6 +435,7 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LoadBalancerAttributes withConnectionSettings(
             ConnectionSettings connectionSettings) {
         setConnectionSettings(connectionSettings);
@@ -437,6 +449,7 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
      * 
      * @return This parameter is reserved.
      */
+
     public java.util.List<AdditionalAttribute> getAdditionalAttributes() {
         if (additionalAttributes == null) {
             additionalAttributes = new com.amazonaws.internal.SdkInternalList<AdditionalAttribute>();
@@ -452,6 +465,7 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
      * @param additionalAttributes
      *        This parameter is reserved.
      */
+
     public void setAdditionalAttributes(
             java.util.Collection<AdditionalAttribute> additionalAttributes) {
         if (additionalAttributes == null) {
@@ -479,6 +493,7 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LoadBalancerAttributes withAdditionalAttributes(
             AdditionalAttribute... additionalAttributes) {
         if (this.additionalAttributes == null) {
@@ -501,6 +516,7 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LoadBalancerAttributes withAdditionalAttributes(
             java.util.Collection<AdditionalAttribute> additionalAttributes) {
         setAdditionalAttributes(additionalAttributes);

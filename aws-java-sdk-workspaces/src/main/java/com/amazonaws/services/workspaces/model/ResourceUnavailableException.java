@@ -53,6 +53,7 @@ public class ResourceUnavailableException extends AmazonServiceException {
      * @param resourceId
      *        The identifier of the resource that is not available.
      */
+
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
     }
@@ -64,6 +65,7 @@ public class ResourceUnavailableException extends AmazonServiceException {
      * 
      * @return The identifier of the resource that is not available.
      */
+
     public String getResourceId() {
         return this.resourceId;
     }
@@ -78,6 +80,7 @@ public class ResourceUnavailableException extends AmazonServiceException {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ResourceUnavailableException withResourceId(String resourceId) {
         setResourceId(resourceId);
         return this;

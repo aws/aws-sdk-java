@@ -52,6 +52,7 @@ public class ImportSnapshotTask implements Serializable, Cloneable {
      * @param importTaskId
      *        The ID of the import snapshot task.
      */
+
     public void setImportTaskId(String importTaskId) {
         this.importTaskId = importTaskId;
     }
@@ -63,6 +64,7 @@ public class ImportSnapshotTask implements Serializable, Cloneable {
      * 
      * @return The ID of the import snapshot task.
      */
+
     public String getImportTaskId() {
         return this.importTaskId;
     }
@@ -77,6 +79,7 @@ public class ImportSnapshotTask implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportSnapshotTask withImportTaskId(String importTaskId) {
         setImportTaskId(importTaskId);
         return this;
@@ -90,6 +93,7 @@ public class ImportSnapshotTask implements Serializable, Cloneable {
      * @param snapshotTaskDetail
      *        Describes an import snapshot task.
      */
+
     public void setSnapshotTaskDetail(SnapshotTaskDetail snapshotTaskDetail) {
         this.snapshotTaskDetail = snapshotTaskDetail;
     }
@@ -101,6 +105,7 @@ public class ImportSnapshotTask implements Serializable, Cloneable {
      * 
      * @return Describes an import snapshot task.
      */
+
     public SnapshotTaskDetail getSnapshotTaskDetail() {
         return this.snapshotTaskDetail;
     }
@@ -115,6 +120,7 @@ public class ImportSnapshotTask implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportSnapshotTask withSnapshotTaskDetail(
             SnapshotTaskDetail snapshotTaskDetail) {
         setSnapshotTaskDetail(snapshotTaskDetail);
@@ -129,6 +135,7 @@ public class ImportSnapshotTask implements Serializable, Cloneable {
      * @param description
      *        A description of the import snapshot task.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -140,6 +147,7 @@ public class ImportSnapshotTask implements Serializable, Cloneable {
      * 
      * @return A description of the import snapshot task.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -154,6 +162,7 @@ public class ImportSnapshotTask implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportSnapshotTask withDescription(String description) {
         setDescription(description);
         return this;

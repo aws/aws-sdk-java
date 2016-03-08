@@ -32,6 +32,7 @@ public class DeleteVirtualInterfaceRequest extends AmazonWebServiceRequest
     /**
      * @param virtualInterfaceId
      */
+
     public void setVirtualInterfaceId(String virtualInterfaceId) {
         this.virtualInterfaceId = virtualInterfaceId;
     }
@@ -39,6 +40,7 @@ public class DeleteVirtualInterfaceRequest extends AmazonWebServiceRequest
     /**
      * @return
      */
+
     public String getVirtualInterfaceId() {
         return this.virtualInterfaceId;
     }
@@ -48,6 +50,7 @@ public class DeleteVirtualInterfaceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteVirtualInterfaceRequest withVirtualInterfaceId(
             String virtualInterfaceId) {
         setVirtualInterfaceId(virtualInterfaceId);

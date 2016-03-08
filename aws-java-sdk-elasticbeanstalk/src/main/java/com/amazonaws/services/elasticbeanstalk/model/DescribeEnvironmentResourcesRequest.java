@@ -66,6 +66,7 @@ public class DescribeEnvironmentResourcesRequest extends
      *        both. If you do not specify either, AWS Elastic Beanstalk returns
      *        <code>MissingRequiredParameter</code> error.
      */
+
     public void setEnvironmentId(String environmentId) {
         this.environmentId = environmentId;
     }
@@ -87,6 +88,7 @@ public class DescribeEnvironmentResourcesRequest extends
      *         both. If you do not specify either, AWS Elastic Beanstalk returns
      *         <code>MissingRequiredParameter</code> error.
      */
+
     public String getEnvironmentId() {
         return this.environmentId;
     }
@@ -111,6 +113,7 @@ public class DescribeEnvironmentResourcesRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeEnvironmentResourcesRequest withEnvironmentId(
             String environmentId) {
         setEnvironmentId(environmentId);
@@ -135,6 +138,7 @@ public class DescribeEnvironmentResourcesRequest extends
      *        both. If you do not specify either, AWS Elastic Beanstalk returns
      *        <code>MissingRequiredParameter</code> error.
      */
+
     public void setEnvironmentName(String environmentName) {
         this.environmentName = environmentName;
     }
@@ -156,6 +160,7 @@ public class DescribeEnvironmentResourcesRequest extends
      *         both. If you do not specify either, AWS Elastic Beanstalk returns
      *         <code>MissingRequiredParameter</code> error.
      */
+
     public String getEnvironmentName() {
         return this.environmentName;
     }
@@ -180,6 +185,7 @@ public class DescribeEnvironmentResourcesRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeEnvironmentResourcesRequest withEnvironmentName(
             String environmentName) {
         setEnvironmentName(environmentName);

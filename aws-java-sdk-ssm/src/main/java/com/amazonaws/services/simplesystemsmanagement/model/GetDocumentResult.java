@@ -44,6 +44,7 @@ public class GetDocumentResult implements Serializable, Cloneable {
      * @param name
      *        The name of the SSM document.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -55,6 +56,7 @@ public class GetDocumentResult implements Serializable, Cloneable {
      * 
      * @return The name of the SSM document.
      */
+
     public String getName() {
         return this.name;
     }
@@ -69,6 +71,7 @@ public class GetDocumentResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDocumentResult withName(String name) {
         setName(name);
         return this;
@@ -82,6 +85,7 @@ public class GetDocumentResult implements Serializable, Cloneable {
      * @param content
      *        The contents of the SSM document.
      */
+
     public void setContent(String content) {
         this.content = content;
     }
@@ -93,6 +97,7 @@ public class GetDocumentResult implements Serializable, Cloneable {
      * 
      * @return The contents of the SSM document.
      */
+
     public String getContent() {
         return this.content;
     }
@@ -107,6 +112,7 @@ public class GetDocumentResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDocumentResult withContent(String content) {
         setContent(content);
         return this;

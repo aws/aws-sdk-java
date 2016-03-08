@@ -46,6 +46,7 @@ public class BlockerDeclaration implements Serializable, Cloneable {
      * @param name
      *        The name of the gate declaration.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -57,6 +58,7 @@ public class BlockerDeclaration implements Serializable, Cloneable {
      * 
      * @return The name of the gate declaration.
      */
+
     public String getName() {
         return this.name;
     }
@@ -71,6 +73,7 @@ public class BlockerDeclaration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BlockerDeclaration withName(String name) {
         setName(name);
         return this;
@@ -85,6 +88,7 @@ public class BlockerDeclaration implements Serializable, Cloneable {
      *        The type of the gate declaration.
      * @see BlockerType
      */
+
     public void setType(String type) {
         this.type = type;
     }
@@ -97,6 +101,7 @@ public class BlockerDeclaration implements Serializable, Cloneable {
      * @return The type of the gate declaration.
      * @see BlockerType
      */
+
     public String getType() {
         return this.type;
     }
@@ -112,6 +117,7 @@ public class BlockerDeclaration implements Serializable, Cloneable {
      *         chained together.
      * @see BlockerType
      */
+
     public BlockerDeclaration withType(String type) {
         setType(type);
         return this;
@@ -128,6 +134,7 @@ public class BlockerDeclaration implements Serializable, Cloneable {
      *         chained together.
      * @see BlockerType
      */
+
     public void setType(BlockerType type) {
         this.type = type.toString();
     }
@@ -143,6 +150,7 @@ public class BlockerDeclaration implements Serializable, Cloneable {
      *         chained together.
      * @see BlockerType
      */
+
     public BlockerDeclaration withType(BlockerType type) {
         setType(type);
         return this;

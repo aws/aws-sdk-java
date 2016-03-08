@@ -45,6 +45,7 @@ public class ListBranchesResult implements Serializable, Cloneable {
      * 
      * @return The list of branch names.
      */
+
     public java.util.List<String> getBranches() {
         return branches;
     }
@@ -57,6 +58,7 @@ public class ListBranchesResult implements Serializable, Cloneable {
      * @param branches
      *        The list of branch names.
      */
+
     public void setBranches(java.util.Collection<String> branches) {
         if (branches == null) {
             this.branches = null;
@@ -82,6 +84,7 @@ public class ListBranchesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListBranchesResult withBranches(String... branches) {
         if (this.branches == null) {
             setBranches(new java.util.ArrayList<String>(branches.length));
@@ -102,6 +105,7 @@ public class ListBranchesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListBranchesResult withBranches(java.util.Collection<String> branches) {
         setBranches(branches);
         return this;
@@ -115,6 +119,7 @@ public class ListBranchesResult implements Serializable, Cloneable {
      * @param nextToken
      *        An enumeration token that returns the batch of the results.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -126,6 +131,7 @@ public class ListBranchesResult implements Serializable, Cloneable {
      * 
      * @return An enumeration token that returns the batch of the results.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -140,6 +146,7 @@ public class ListBranchesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListBranchesResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

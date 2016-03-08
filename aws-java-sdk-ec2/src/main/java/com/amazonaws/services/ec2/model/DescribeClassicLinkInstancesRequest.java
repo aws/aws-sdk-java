@@ -113,6 +113,7 @@ public class DescribeClassicLinkInstancesRequest extends
      * @return One or more instance IDs. Must be instances linked to a VPC
      *         through ClassicLink.
      */
+
     public java.util.List<String> getInstanceIds() {
         if (instanceIds == null) {
             instanceIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -130,6 +131,7 @@ public class DescribeClassicLinkInstancesRequest extends
      *        One or more instance IDs. Must be instances linked to a VPC
      *        through ClassicLink.
      */
+
     public void setInstanceIds(java.util.Collection<String> instanceIds) {
         if (instanceIds == null) {
             this.instanceIds = null;
@@ -158,6 +160,7 @@ public class DescribeClassicLinkInstancesRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeClassicLinkInstancesRequest withInstanceIds(
             String... instanceIds) {
         if (this.instanceIds == null) {
@@ -182,6 +185,7 @@ public class DescribeClassicLinkInstancesRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeClassicLinkInstancesRequest withInstanceIds(
             java.util.Collection<String> instanceIds) {
         setInstanceIds(instanceIds);
@@ -279,6 +283,7 @@ public class DescribeClassicLinkInstancesRequest extends
      *         </p>
      *         </li>
      */
+
     public java.util.List<Filter> getFilters() {
         if (filters == null) {
             filters = new com.amazonaws.internal.SdkInternalList<Filter>();
@@ -378,6 +383,7 @@ public class DescribeClassicLinkInstancesRequest extends
      *        </p>
      *        </li>
      */
+
     public void setFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
             this.filters = null;
@@ -488,6 +494,7 @@ public class DescribeClassicLinkInstancesRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeClassicLinkInstancesRequest withFilters(Filter... filters) {
         if (this.filters == null) {
             setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(
@@ -593,6 +600,7 @@ public class DescribeClassicLinkInstancesRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeClassicLinkInstancesRequest withFilters(
             java.util.Collection<Filter> filters) {
         setFilters(filters);
@@ -607,6 +615,7 @@ public class DescribeClassicLinkInstancesRequest extends
      * @param nextToken
      *        The token to retrieve the next page of results.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -618,6 +627,7 @@ public class DescribeClassicLinkInstancesRequest extends
      * 
      * @return The token to retrieve the next page of results.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -632,6 +642,7 @@ public class DescribeClassicLinkInstancesRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeClassicLinkInstancesRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -663,6 +674,7 @@ public class DescribeClassicLinkInstancesRequest extends
      *        Constraint: If the value is greater than 1000, we return only 1000
      *        items.
      */
+
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
     }
@@ -692,6 +704,7 @@ public class DescribeClassicLinkInstancesRequest extends
      *         Constraint: If the value is greater than 1000, we return only
      *         1000 items.
      */
+
     public Integer getMaxResults() {
         return this.maxResults;
     }
@@ -724,6 +737,7 @@ public class DescribeClassicLinkInstancesRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeClassicLinkInstancesRequest withMaxResults(Integer maxResults) {
         setMaxResults(maxResults);
         return this;

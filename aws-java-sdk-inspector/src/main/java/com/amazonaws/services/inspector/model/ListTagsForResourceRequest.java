@@ -40,6 +40,7 @@ public class ListTagsForResourceRequest extends AmazonWebServiceRequest
      * @param resourceArn
      *        The ARN specifying the resource whose tags you want to list.
      */
+
     public void setResourceArn(String resourceArn) {
         this.resourceArn = resourceArn;
     }
@@ -51,6 +52,7 @@ public class ListTagsForResourceRequest extends AmazonWebServiceRequest
      * 
      * @return The ARN specifying the resource whose tags you want to list.
      */
+
     public String getResourceArn() {
         return this.resourceArn;
     }
@@ -65,6 +67,7 @@ public class ListTagsForResourceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTagsForResourceRequest withResourceArn(String resourceArn) {
         setResourceArn(resourceArn);
         return this;

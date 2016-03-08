@@ -40,6 +40,7 @@ public class GetInstanceProfileRequest extends AmazonWebServiceRequest
      * @param instanceProfileName
      *        The name of the instance profile to get information about.
      */
+
     public void setInstanceProfileName(String instanceProfileName) {
         this.instanceProfileName = instanceProfileName;
     }
@@ -51,6 +52,7 @@ public class GetInstanceProfileRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the instance profile to get information about.
      */
+
     public String getInstanceProfileName() {
         return this.instanceProfileName;
     }
@@ -65,6 +67,7 @@ public class GetInstanceProfileRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetInstanceProfileRequest withInstanceProfileName(
             String instanceProfileName) {
         setInstanceProfileName(instanceProfileName);

@@ -40,6 +40,7 @@ public class CreateVirtualMFADeviceResult implements Serializable, Cloneable {
      * @param virtualMFADevice
      *        A newly created virtual MFA device.
      */
+
     public void setVirtualMFADevice(VirtualMFADevice virtualMFADevice) {
         this.virtualMFADevice = virtualMFADevice;
     }
@@ -51,6 +52,7 @@ public class CreateVirtualMFADeviceResult implements Serializable, Cloneable {
      * 
      * @return A newly created virtual MFA device.
      */
+
     public VirtualMFADevice getVirtualMFADevice() {
         return this.virtualMFADevice;
     }
@@ -65,6 +67,7 @@ public class CreateVirtualMFADeviceResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateVirtualMFADeviceResult withVirtualMFADevice(
             VirtualMFADevice virtualMFADevice) {
         setVirtualMFADevice(virtualMFADevice);

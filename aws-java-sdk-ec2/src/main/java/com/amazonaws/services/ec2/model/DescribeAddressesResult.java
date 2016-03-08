@@ -37,6 +37,7 @@ public class DescribeAddressesResult implements Serializable, Cloneable {
      * 
      * @return Information about one or more Elastic IP addresses.
      */
+
     public java.util.List<Address> getAddresses() {
         if (addresses == null) {
             addresses = new com.amazonaws.internal.SdkInternalList<Address>();
@@ -52,6 +53,7 @@ public class DescribeAddressesResult implements Serializable, Cloneable {
      * @param addresses
      *        Information about one or more Elastic IP addresses.
      */
+
     public void setAddresses(java.util.Collection<Address> addresses) {
         if (addresses == null) {
             this.addresses = null;
@@ -78,6 +80,7 @@ public class DescribeAddressesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAddressesResult withAddresses(Address... addresses) {
         if (this.addresses == null) {
             setAddresses(new com.amazonaws.internal.SdkInternalList<Address>(
@@ -99,6 +102,7 @@ public class DescribeAddressesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAddressesResult withAddresses(
             java.util.Collection<Address> addresses) {
         setAddresses(addresses);

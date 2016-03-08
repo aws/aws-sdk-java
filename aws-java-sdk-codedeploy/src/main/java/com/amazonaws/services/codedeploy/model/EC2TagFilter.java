@@ -57,6 +57,7 @@ public class EC2TagFilter implements Serializable, Cloneable {
      * @param key
      *        The tag filter key.
      */
+
     public void setKey(String key) {
         this.key = key;
     }
@@ -68,6 +69,7 @@ public class EC2TagFilter implements Serializable, Cloneable {
      * 
      * @return The tag filter key.
      */
+
     public String getKey() {
         return this.key;
     }
@@ -82,6 +84,7 @@ public class EC2TagFilter implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EC2TagFilter withKey(String key) {
         setKey(key);
         return this;
@@ -95,6 +98,7 @@ public class EC2TagFilter implements Serializable, Cloneable {
      * @param value
      *        The tag filter value.
      */
+
     public void setValue(String value) {
         this.value = value;
     }
@@ -106,6 +110,7 @@ public class EC2TagFilter implements Serializable, Cloneable {
      * 
      * @return The tag filter value.
      */
+
     public String getValue() {
         return this.value;
     }
@@ -120,6 +125,7 @@ public class EC2TagFilter implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EC2TagFilter withValue(String value) {
         setValue(value);
         return this;
@@ -143,6 +149,7 @@ public class EC2TagFilter implements Serializable, Cloneable {
      *        <li>KEY_AND_VALUE: Key and value.</li>
      * @see EC2TagFilterType
      */
+
     public void setType(String type) {
         this.type = type;
     }
@@ -164,6 +171,7 @@ public class EC2TagFilter implements Serializable, Cloneable {
      *         <li>KEY_AND_VALUE: Key and value.</li>
      * @see EC2TagFilterType
      */
+
     public String getType() {
         return this.type;
     }
@@ -188,6 +196,7 @@ public class EC2TagFilter implements Serializable, Cloneable {
      *         chained together.
      * @see EC2TagFilterType
      */
+
     public EC2TagFilter withType(String type) {
         setType(type);
         return this;
@@ -213,6 +222,7 @@ public class EC2TagFilter implements Serializable, Cloneable {
      *         chained together.
      * @see EC2TagFilterType
      */
+
     public void setType(EC2TagFilterType type) {
         this.type = type.toString();
     }
@@ -237,6 +247,7 @@ public class EC2TagFilter implements Serializable, Cloneable {
      *         chained together.
      * @see EC2TagFilterType
      */
+
     public EC2TagFilter withType(EC2TagFilterType type) {
         setType(type);
         return this;

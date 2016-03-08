@@ -59,6 +59,7 @@ public class ListSSHPublicKeysResult implements Serializable, Cloneable {
      * 
      * @return A list of SSH public keys.
      */
+
     public java.util.List<SSHPublicKeyMetadata> getSSHPublicKeys() {
         if (sSHPublicKeys == null) {
             sSHPublicKeys = new com.amazonaws.internal.SdkInternalList<SSHPublicKeyMetadata>();
@@ -74,6 +75,7 @@ public class ListSSHPublicKeysResult implements Serializable, Cloneable {
      * @param sSHPublicKeys
      *        A list of SSH public keys.
      */
+
     public void setSSHPublicKeys(
             java.util.Collection<SSHPublicKeyMetadata> sSHPublicKeys) {
         if (sSHPublicKeys == null) {
@@ -101,6 +103,7 @@ public class ListSSHPublicKeysResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListSSHPublicKeysResult withSSHPublicKeys(
             SSHPublicKeyMetadata... sSHPublicKeys) {
         if (this.sSHPublicKeys == null) {
@@ -123,6 +126,7 @@ public class ListSSHPublicKeysResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListSSHPublicKeysResult withSSHPublicKeys(
             java.util.Collection<SSHPublicKeyMetadata> sSHPublicKeys) {
         setSSHPublicKeys(sSHPublicKeys);
@@ -150,6 +154,7 @@ public class ListSSHPublicKeysResult implements Serializable, Cloneable {
      *        <code>IsTruncated</code> after every call to ensure that you
      *        receive all of your results.
      */
+
     public void setIsTruncated(Boolean isTruncated) {
         this.isTruncated = isTruncated;
     }
@@ -174,6 +179,7 @@ public class ListSSHPublicKeysResult implements Serializable, Cloneable {
      *         <code>IsTruncated</code> after every call to ensure that you
      *         receive all of your results.
      */
+
     public Boolean getIsTruncated() {
         return this.isTruncated;
     }
@@ -201,6 +207,7 @@ public class ListSSHPublicKeysResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListSSHPublicKeysResult withIsTruncated(Boolean isTruncated) {
         setIsTruncated(isTruncated);
         return this;
@@ -226,6 +233,7 @@ public class ListSSHPublicKeysResult implements Serializable, Cloneable {
      *         <code>IsTruncated</code> after every call to ensure that you
      *         receive all of your results.
      */
+
     public Boolean isTruncated() {
         return this.isTruncated;
     }
@@ -242,6 +250,7 @@ public class ListSSHPublicKeysResult implements Serializable, Cloneable {
      *        is present and contains the value to use for the
      *        <code>Marker</code> parameter in a subsequent pagination request.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -257,6 +266,7 @@ public class ListSSHPublicKeysResult implements Serializable, Cloneable {
      *         is present and contains the value to use for the
      *         <code>Marker</code> parameter in a subsequent pagination request.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -275,6 +285,7 @@ public class ListSSHPublicKeysResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListSSHPublicKeysResult withMarker(String marker) {
         setMarker(marker);
         return this;

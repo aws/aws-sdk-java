@@ -34,6 +34,7 @@ public class Origins implements Serializable, Cloneable {
      * @param quantity
      *        The number of origins for this distribution.
      */
+
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
@@ -43,6 +44,7 @@ public class Origins implements Serializable, Cloneable {
      * 
      * @return The number of origins for this distribution.
      */
+
     public Integer getQuantity() {
         return this.quantity;
     }
@@ -55,6 +57,7 @@ public class Origins implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Origins withQuantity(Integer quantity) {
         setQuantity(quantity);
         return this;
@@ -65,6 +68,7 @@ public class Origins implements Serializable, Cloneable {
      * 
      * @return A complex type that contains origins for this distribution.
      */
+
     public java.util.List<Origin> getItems() {
         if (items == null) {
             items = new com.amazonaws.internal.SdkInternalList<Origin>();
@@ -78,6 +82,7 @@ public class Origins implements Serializable, Cloneable {
      * @param items
      *        A complex type that contains origins for this distribution.
      */
+
     public void setItems(java.util.Collection<Origin> items) {
         if (items == null) {
             this.items = null;
@@ -101,6 +106,7 @@ public class Origins implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Origins withItems(Origin... items) {
         if (this.items == null) {
             setItems(new com.amazonaws.internal.SdkInternalList<Origin>(
@@ -120,6 +126,7 @@ public class Origins implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Origins withItems(java.util.Collection<Origin> items) {
         setItems(items);
         return this;

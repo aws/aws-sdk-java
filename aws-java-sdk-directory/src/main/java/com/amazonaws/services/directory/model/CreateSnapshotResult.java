@@ -40,6 +40,7 @@ public class CreateSnapshotResult implements Serializable, Cloneable {
      * @param snapshotId
      *        The identifier of the snapshot that was created.
      */
+
     public void setSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
     }
@@ -51,6 +52,7 @@ public class CreateSnapshotResult implements Serializable, Cloneable {
      * 
      * @return The identifier of the snapshot that was created.
      */
+
     public String getSnapshotId() {
         return this.snapshotId;
     }
@@ -65,6 +67,7 @@ public class CreateSnapshotResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateSnapshotResult withSnapshotId(String snapshotId) {
         setSnapshotId(snapshotId);
         return this;

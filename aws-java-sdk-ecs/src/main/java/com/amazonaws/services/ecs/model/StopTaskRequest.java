@@ -62,6 +62,7 @@ public class StopTaskRequest extends AmazonWebServiceRequest implements
      *        that hosts the task to stop. If you do not specify a cluster, the
      *        default cluster is assumed..
      */
+
     public void setCluster(String cluster) {
         this.cluster = cluster;
     }
@@ -77,6 +78,7 @@ public class StopTaskRequest extends AmazonWebServiceRequest implements
      *         that hosts the task to stop. If you do not specify a cluster, the
      *         default cluster is assumed..
      */
+
     public String getCluster() {
         return this.cluster;
     }
@@ -95,6 +97,7 @@ public class StopTaskRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StopTaskRequest withCluster(String cluster) {
         setCluster(cluster);
         return this;
@@ -109,6 +112,7 @@ public class StopTaskRequest extends AmazonWebServiceRequest implements
      *        The task ID or full Amazon Resource Name (ARN) entry of the task
      *        to stop.
      */
+
     public void setTask(String task) {
         this.task = task;
     }
@@ -121,6 +125,7 @@ public class StopTaskRequest extends AmazonWebServiceRequest implements
      * @return The task ID or full Amazon Resource Name (ARN) entry of the task
      *         to stop.
      */
+
     public String getTask() {
         return this.task;
     }
@@ -136,6 +141,7 @@ public class StopTaskRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StopTaskRequest withTask(String task) {
         setTask(task);
         return this;
@@ -157,6 +163,7 @@ public class StopTaskRequest extends AmazonWebServiceRequest implements
      *        will appear in subsequent <a>DescribeTasks</a> API operations on
      *        this task. Up to 255 characters are allowed in this message.
      */
+
     public void setReason(String reason) {
         this.reason = reason;
     }
@@ -177,6 +184,7 @@ public class StopTaskRequest extends AmazonWebServiceRequest implements
      *         operations on this task. Up to 255 characters are allowed in this
      *         message.
      */
+
     public String getReason() {
         return this.reason;
     }
@@ -199,6 +207,7 @@ public class StopTaskRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StopTaskRequest withReason(String reason) {
         setReason(reason);
         return this;

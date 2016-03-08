@@ -95,6 +95,7 @@ public class Host implements Serializable, Cloneable {
      * @param hostId
      *        The ID of the Dedicated host.
      */
+
     public void setHostId(String hostId) {
         this.hostId = hostId;
     }
@@ -106,6 +107,7 @@ public class Host implements Serializable, Cloneable {
      * 
      * @return The ID of the Dedicated host.
      */
+
     public String getHostId() {
         return this.hostId;
     }
@@ -120,6 +122,7 @@ public class Host implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Host withHostId(String hostId) {
         setHostId(hostId);
         return this;
@@ -134,6 +137,7 @@ public class Host implements Serializable, Cloneable {
      *        Whether auto-placement is on or off.
      * @see AutoPlacement
      */
+
     public void setAutoPlacement(String autoPlacement) {
         this.autoPlacement = autoPlacement;
     }
@@ -146,6 +150,7 @@ public class Host implements Serializable, Cloneable {
      * @return Whether auto-placement is on or off.
      * @see AutoPlacement
      */
+
     public String getAutoPlacement() {
         return this.autoPlacement;
     }
@@ -161,6 +166,7 @@ public class Host implements Serializable, Cloneable {
      *         chained together.
      * @see AutoPlacement
      */
+
     public Host withAutoPlacement(String autoPlacement) {
         setAutoPlacement(autoPlacement);
         return this;
@@ -177,6 +183,7 @@ public class Host implements Serializable, Cloneable {
      *         chained together.
      * @see AutoPlacement
      */
+
     public void setAutoPlacement(AutoPlacement autoPlacement) {
         this.autoPlacement = autoPlacement.toString();
     }
@@ -192,6 +199,7 @@ public class Host implements Serializable, Cloneable {
      *         chained together.
      * @see AutoPlacement
      */
+
     public Host withAutoPlacement(AutoPlacement autoPlacement) {
         setAutoPlacement(autoPlacement);
         return this;
@@ -209,6 +217,7 @@ public class Host implements Serializable, Cloneable {
      *        <code>null</code> response if the Dedicated host doesn't have an
      *        associated reservation.
      */
+
     public void setHostReservationId(String hostReservationId) {
         this.hostReservationId = hostReservationId;
     }
@@ -224,6 +233,7 @@ public class Host implements Serializable, Cloneable {
      *         <code>null</code> response if the Dedicated host doesn't have an
      *         associated reservation.
      */
+
     public String getHostReservationId() {
         return this.hostReservationId;
     }
@@ -242,6 +252,7 @@ public class Host implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Host withHostReservationId(String hostReservationId) {
         setHostReservationId(hostReservationId);
         return this;
@@ -263,6 +274,7 @@ public class Host implements Serializable, Cloneable {
      *        >How to Ensure Idempotency</a> in the <i>Amazon Elastic Compute
      *        Cloud User Guide</i>.
      */
+
     public void setClientToken(String clientToken) {
         this.clientToken = clientToken;
     }
@@ -282,6 +294,7 @@ public class Host implements Serializable, Cloneable {
      *         >How to Ensure Idempotency</a> in the <i>Amazon Elastic Compute
      *         Cloud User Guide</i>.
      */
+
     public String getClientToken() {
         return this.clientToken;
     }
@@ -304,6 +317,7 @@ public class Host implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Host withClientToken(String clientToken) {
         setClientToken(clientToken);
         return this;
@@ -317,6 +331,7 @@ public class Host implements Serializable, Cloneable {
      * @param hostProperties
      *        The hardware specifications of the Dedicated host.
      */
+
     public void setHostProperties(HostProperties hostProperties) {
         this.hostProperties = hostProperties;
     }
@@ -328,6 +343,7 @@ public class Host implements Serializable, Cloneable {
      * 
      * @return The hardware specifications of the Dedicated host.
      */
+
     public HostProperties getHostProperties() {
         return this.hostProperties;
     }
@@ -342,6 +358,7 @@ public class Host implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Host withHostProperties(HostProperties hostProperties) {
         setHostProperties(hostProperties);
         return this;
@@ -356,6 +373,7 @@ public class Host implements Serializable, Cloneable {
      *        The Dedicated host's state.
      * @see AllocationState
      */
+
     public void setState(String state) {
         this.state = state;
     }
@@ -368,6 +386,7 @@ public class Host implements Serializable, Cloneable {
      * @return The Dedicated host's state.
      * @see AllocationState
      */
+
     public String getState() {
         return this.state;
     }
@@ -383,6 +402,7 @@ public class Host implements Serializable, Cloneable {
      *         chained together.
      * @see AllocationState
      */
+
     public Host withState(String state) {
         setState(state);
         return this;
@@ -399,6 +419,7 @@ public class Host implements Serializable, Cloneable {
      *         chained together.
      * @see AllocationState
      */
+
     public void setState(AllocationState state) {
         this.state = state.toString();
     }
@@ -414,6 +435,7 @@ public class Host implements Serializable, Cloneable {
      *         chained together.
      * @see AllocationState
      */
+
     public Host withState(AllocationState state) {
         setState(state);
         return this;
@@ -427,6 +449,7 @@ public class Host implements Serializable, Cloneable {
      * @param availabilityZone
      *        The Availability Zone of the Dedicated host.
      */
+
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
@@ -438,6 +461,7 @@ public class Host implements Serializable, Cloneable {
      * 
      * @return The Availability Zone of the Dedicated host.
      */
+
     public String getAvailabilityZone() {
         return this.availabilityZone;
     }
@@ -452,6 +476,7 @@ public class Host implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Host withAvailabilityZone(String availabilityZone) {
         setAvailabilityZone(availabilityZone);
         return this;
@@ -466,6 +491,7 @@ public class Host implements Serializable, Cloneable {
      * @return The IDs and instance type that are currently running on the
      *         Dedicated host.
      */
+
     public java.util.List<HostInstance> getInstances() {
         if (instances == null) {
             instances = new com.amazonaws.internal.SdkInternalList<HostInstance>();
@@ -483,6 +509,7 @@ public class Host implements Serializable, Cloneable {
      *        The IDs and instance type that are currently running on the
      *        Dedicated host.
      */
+
     public void setInstances(java.util.Collection<HostInstance> instances) {
         if (instances == null) {
             this.instances = null;
@@ -511,6 +538,7 @@ public class Host implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Host withInstances(HostInstance... instances) {
         if (this.instances == null) {
             setInstances(new com.amazonaws.internal.SdkInternalList<HostInstance>(
@@ -534,6 +562,7 @@ public class Host implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Host withInstances(java.util.Collection<HostInstance> instances) {
         setInstances(instances);
         return this;
@@ -548,6 +577,7 @@ public class Host implements Serializable, Cloneable {
      *        The number of new instances that can be launched onto the
      *        Dedicated host.
      */
+
     public void setAvailableCapacity(AvailableCapacity availableCapacity) {
         this.availableCapacity = availableCapacity;
     }
@@ -560,6 +590,7 @@ public class Host implements Serializable, Cloneable {
      * @return The number of new instances that can be launched onto the
      *         Dedicated host.
      */
+
     public AvailableCapacity getAvailableCapacity() {
         return this.availableCapacity;
     }
@@ -575,6 +606,7 @@ public class Host implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Host withAvailableCapacity(AvailableCapacity availableCapacity) {
         setAvailableCapacity(availableCapacity);
         return this;

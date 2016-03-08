@@ -34,6 +34,7 @@ public class DescribeUploadBufferResult implements Serializable, Cloneable {
     /**
      * @param gatewayARN
      */
+
     public void setGatewayARN(String gatewayARN) {
         this.gatewayARN = gatewayARN;
     }
@@ -41,6 +42,7 @@ public class DescribeUploadBufferResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getGatewayARN() {
         return this.gatewayARN;
     }
@@ -50,6 +52,7 @@ public class DescribeUploadBufferResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeUploadBufferResult withGatewayARN(String gatewayARN) {
         setGatewayARN(gatewayARN);
         return this;
@@ -58,6 +61,7 @@ public class DescribeUploadBufferResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public java.util.List<String> getDiskIds() {
         if (diskIds == null) {
             diskIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -68,6 +72,7 @@ public class DescribeUploadBufferResult implements Serializable, Cloneable {
     /**
      * @param diskIds
      */
+
     public void setDiskIds(java.util.Collection<String> diskIds) {
         if (diskIds == null) {
             this.diskIds = null;
@@ -90,6 +95,7 @@ public class DescribeUploadBufferResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeUploadBufferResult withDiskIds(String... diskIds) {
         if (this.diskIds == null) {
             setDiskIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -106,6 +112,7 @@ public class DescribeUploadBufferResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeUploadBufferResult withDiskIds(
             java.util.Collection<String> diskIds) {
         setDiskIds(diskIds);
@@ -115,6 +122,7 @@ public class DescribeUploadBufferResult implements Serializable, Cloneable {
     /**
      * @param uploadBufferUsedInBytes
      */
+
     public void setUploadBufferUsedInBytes(Long uploadBufferUsedInBytes) {
         this.uploadBufferUsedInBytes = uploadBufferUsedInBytes;
     }
@@ -122,6 +130,7 @@ public class DescribeUploadBufferResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Long getUploadBufferUsedInBytes() {
         return this.uploadBufferUsedInBytes;
     }
@@ -131,6 +140,7 @@ public class DescribeUploadBufferResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeUploadBufferResult withUploadBufferUsedInBytes(
             Long uploadBufferUsedInBytes) {
         setUploadBufferUsedInBytes(uploadBufferUsedInBytes);
@@ -140,6 +150,7 @@ public class DescribeUploadBufferResult implements Serializable, Cloneable {
     /**
      * @param uploadBufferAllocatedInBytes
      */
+
     public void setUploadBufferAllocatedInBytes(
             Long uploadBufferAllocatedInBytes) {
         this.uploadBufferAllocatedInBytes = uploadBufferAllocatedInBytes;
@@ -148,6 +159,7 @@ public class DescribeUploadBufferResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Long getUploadBufferAllocatedInBytes() {
         return this.uploadBufferAllocatedInBytes;
     }
@@ -157,6 +169,7 @@ public class DescribeUploadBufferResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeUploadBufferResult withUploadBufferAllocatedInBytes(
             Long uploadBufferAllocatedInBytes) {
         setUploadBufferAllocatedInBytes(uploadBufferAllocatedInBytes);

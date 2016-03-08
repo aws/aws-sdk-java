@@ -173,6 +173,7 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest
      *         <p>
      *         Constraints: Maximum 100 explicitly specified instance IDs.
      */
+
     public java.util.List<String> getInstanceIds() {
         if (instanceIds == null) {
             instanceIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -199,6 +200,7 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest
      *        <p>
      *        Constraints: Maximum 100 explicitly specified instance IDs.
      */
+
     public void setInstanceIds(java.util.Collection<String> instanceIds) {
         if (instanceIds == null) {
             this.instanceIds = null;
@@ -236,6 +238,7 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeInstanceStatusRequest withInstanceIds(String... instanceIds) {
         if (this.instanceIds == null) {
             setInstanceIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -268,6 +271,7 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeInstanceStatusRequest withInstanceIds(
             java.util.Collection<String> instanceIds) {
         setInstanceIds(instanceIds);
@@ -444,6 +448,7 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest
      *         </p>
      *         </li>
      */
+
     public java.util.List<Filter> getFilters() {
         if (filters == null) {
             filters = new com.amazonaws.internal.SdkInternalList<Filter>();
@@ -622,6 +627,7 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest
      *        </p>
      *        </li>
      */
+
     public void setFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
             this.filters = null;
@@ -811,6 +817,7 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeInstanceStatusRequest withFilters(Filter... filters) {
         if (this.filters == null) {
             setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(
@@ -995,6 +1002,7 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeInstanceStatusRequest withFilters(
             java.util.Collection<Filter> filters) {
         setFilters(filters);
@@ -1009,6 +1017,7 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest
      * @param nextToken
      *        The token to retrieve the next page of results.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -1020,6 +1029,7 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest
      * 
      * @return The token to retrieve the next page of results.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -1034,6 +1044,7 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeInstanceStatusRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -1059,6 +1070,7 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest
      *        1000, only 1000 results are returned. You cannot specify this
      *        parameter and the instance IDs parameter in the same request.
      */
+
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
     }
@@ -1082,6 +1094,7 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest
      *         1000, only 1000 results are returned. You cannot specify this
      *         parameter and the instance IDs parameter in the same request.
      */
+
     public Integer getMaxResults() {
         return this.maxResults;
     }
@@ -1108,6 +1121,7 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeInstanceStatusRequest withMaxResults(Integer maxResults) {
         setMaxResults(maxResults);
         return this;
@@ -1130,6 +1144,7 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest
      *        <p>
      *        Default: <code>false</code>
      */
+
     public void setIncludeAllInstances(Boolean includeAllInstances) {
         this.includeAllInstances = includeAllInstances;
     }
@@ -1150,6 +1165,7 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest
      *         <p>
      *         Default: <code>false</code>
      */
+
     public Boolean getIncludeAllInstances() {
         return this.includeAllInstances;
     }
@@ -1173,6 +1189,7 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeInstanceStatusRequest withIncludeAllInstances(
             Boolean includeAllInstances) {
         setIncludeAllInstances(includeAllInstances);
@@ -1195,6 +1212,7 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest
      *         <p>
      *         Default: <code>false</code>
      */
+
     public Boolean isIncludeAllInstances() {
         return this.includeAllInstances;
     }

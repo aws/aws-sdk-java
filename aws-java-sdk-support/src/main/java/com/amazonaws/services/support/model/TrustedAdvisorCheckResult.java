@@ -69,6 +69,7 @@ public class TrustedAdvisorCheckResult implements Serializable, Cloneable {
      * @param checkId
      *        The unique identifier for the Trusted Advisor check.
      */
+
     public void setCheckId(String checkId) {
         this.checkId = checkId;
     }
@@ -80,6 +81,7 @@ public class TrustedAdvisorCheckResult implements Serializable, Cloneable {
      * 
      * @return The unique identifier for the Trusted Advisor check.
      */
+
     public String getCheckId() {
         return this.checkId;
     }
@@ -94,6 +96,7 @@ public class TrustedAdvisorCheckResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TrustedAdvisorCheckResult withCheckId(String checkId) {
         setCheckId(checkId);
         return this;
@@ -107,6 +110,7 @@ public class TrustedAdvisorCheckResult implements Serializable, Cloneable {
      * @param timestamp
      *        The time of the last refresh of the check.
      */
+
     public void setTimestamp(String timestamp) {
         this.timestamp = timestamp;
     }
@@ -118,6 +122,7 @@ public class TrustedAdvisorCheckResult implements Serializable, Cloneable {
      * 
      * @return The time of the last refresh of the check.
      */
+
     public String getTimestamp() {
         return this.timestamp;
     }
@@ -132,6 +137,7 @@ public class TrustedAdvisorCheckResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TrustedAdvisorCheckResult withTimestamp(String timestamp) {
         setTimestamp(timestamp);
         return this;
@@ -147,6 +153,7 @@ public class TrustedAdvisorCheckResult implements Serializable, Cloneable {
      *        The alert status of the check: "ok" (green), "warning" (yellow),
      *        "error" (red), or "not_available".
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -160,6 +167,7 @@ public class TrustedAdvisorCheckResult implements Serializable, Cloneable {
      * @return The alert status of the check: "ok" (green), "warning" (yellow),
      *         "error" (red), or "not_available".
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -176,6 +184,7 @@ public class TrustedAdvisorCheckResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TrustedAdvisorCheckResult withStatus(String status) {
         setStatus(status);
         return this;
@@ -184,6 +193,7 @@ public class TrustedAdvisorCheckResult implements Serializable, Cloneable {
     /**
      * @param resourcesSummary
      */
+
     public void setResourcesSummary(
             TrustedAdvisorResourcesSummary resourcesSummary) {
         this.resourcesSummary = resourcesSummary;
@@ -192,6 +202,7 @@ public class TrustedAdvisorCheckResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public TrustedAdvisorResourcesSummary getResourcesSummary() {
         return this.resourcesSummary;
     }
@@ -201,6 +212,7 @@ public class TrustedAdvisorCheckResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TrustedAdvisorCheckResult withResourcesSummary(
             TrustedAdvisorResourcesSummary resourcesSummary) {
         setResourcesSummary(resourcesSummary);
@@ -217,6 +229,7 @@ public class TrustedAdvisorCheckResult implements Serializable, Cloneable {
      *        Summary information that relates to the category of the check.
      *        Cost Optimizing is the only category that is currently supported.
      */
+
     public void setCategorySpecificSummary(
             TrustedAdvisorCategorySpecificSummary categorySpecificSummary) {
         this.categorySpecificSummary = categorySpecificSummary;
@@ -231,6 +244,7 @@ public class TrustedAdvisorCheckResult implements Serializable, Cloneable {
      * @return Summary information that relates to the category of the check.
      *         Cost Optimizing is the only category that is currently supported.
      */
+
     public TrustedAdvisorCategorySpecificSummary getCategorySpecificSummary() {
         return this.categorySpecificSummary;
     }
@@ -247,6 +261,7 @@ public class TrustedAdvisorCheckResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TrustedAdvisorCheckResult withCategorySpecificSummary(
             TrustedAdvisorCategorySpecificSummary categorySpecificSummary) {
         setCategorySpecificSummary(categorySpecificSummary);
@@ -260,6 +275,7 @@ public class TrustedAdvisorCheckResult implements Serializable, Cloneable {
      * 
      * @return The details about each resource listed in the check result.
      */
+
     public java.util.List<TrustedAdvisorResourceDetail> getFlaggedResources() {
         if (flaggedResources == null) {
             flaggedResources = new com.amazonaws.internal.SdkInternalList<TrustedAdvisorResourceDetail>();
@@ -275,6 +291,7 @@ public class TrustedAdvisorCheckResult implements Serializable, Cloneable {
      * @param flaggedResources
      *        The details about each resource listed in the check result.
      */
+
     public void setFlaggedResources(
             java.util.Collection<TrustedAdvisorResourceDetail> flaggedResources) {
         if (flaggedResources == null) {
@@ -302,6 +319,7 @@ public class TrustedAdvisorCheckResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TrustedAdvisorCheckResult withFlaggedResources(
             TrustedAdvisorResourceDetail... flaggedResources) {
         if (this.flaggedResources == null) {
@@ -324,6 +342,7 @@ public class TrustedAdvisorCheckResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TrustedAdvisorCheckResult withFlaggedResources(
             java.util.Collection<TrustedAdvisorResourceDetail> flaggedResources) {
         setFlaggedResources(flaggedResources);

@@ -48,6 +48,7 @@ public class SnapshotOptions implements Serializable, Cloneable {
      *        automated snapshot of the specified Elasticsearch domain. Default
      *        value is <code>0</code> hours.
      */
+
     public void setAutomatedSnapshotStartHour(Integer automatedSnapshotStartHour) {
         this.automatedSnapshotStartHour = automatedSnapshotStartHour;
     }
@@ -63,6 +64,7 @@ public class SnapshotOptions implements Serializable, Cloneable {
      *         automated snapshot of the specified Elasticsearch domain. Default
      *         value is <code>0</code> hours.
      */
+
     public Integer getAutomatedSnapshotStartHour() {
         return this.automatedSnapshotStartHour;
     }
@@ -81,6 +83,7 @@ public class SnapshotOptions implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SnapshotOptions withAutomatedSnapshotStartHour(
             Integer automatedSnapshotStartHour) {
         setAutomatedSnapshotStartHour(automatedSnapshotStartHour);

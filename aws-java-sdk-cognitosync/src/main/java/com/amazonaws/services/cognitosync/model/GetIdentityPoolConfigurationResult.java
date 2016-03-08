@@ -55,6 +55,7 @@ public class GetIdentityPoolConfigurationResult implements Serializable,
      *        us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
      *        Cognito.
      */
+
     public void setIdentityPoolId(String identityPoolId) {
         this.identityPoolId = identityPoolId;
     }
@@ -70,6 +71,7 @@ public class GetIdentityPoolConfigurationResult implements Serializable,
      *         us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
      *         Cognito.
      */
+
     public String getIdentityPoolId() {
         return this.identityPoolId;
     }
@@ -88,6 +90,7 @@ public class GetIdentityPoolConfigurationResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetIdentityPoolConfigurationResult withIdentityPoolId(
             String identityPoolId) {
         setIdentityPoolId(identityPoolId);
@@ -102,6 +105,7 @@ public class GetIdentityPoolConfigurationResult implements Serializable,
      * @param pushSync
      *        Options to apply to this identity pool for push synchronization.
      */
+
     public void setPushSync(PushSync pushSync) {
         this.pushSync = pushSync;
     }
@@ -113,6 +117,7 @@ public class GetIdentityPoolConfigurationResult implements Serializable,
      * 
      * @return Options to apply to this identity pool for push synchronization.
      */
+
     public PushSync getPushSync() {
         return this.pushSync;
     }
@@ -127,6 +132,7 @@ public class GetIdentityPoolConfigurationResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetIdentityPoolConfigurationResult withPushSync(PushSync pushSync) {
         setPushSync(pushSync);
         return this;
@@ -138,6 +144,7 @@ public class GetIdentityPoolConfigurationResult implements Serializable,
      * @param cognitoStreams
      *        Options to apply to this identity pool for Amazon Cognito streams.
      */
+
     public void setCognitoStreams(CognitoStreams cognitoStreams) {
         this.cognitoStreams = cognitoStreams;
     }
@@ -148,6 +155,7 @@ public class GetIdentityPoolConfigurationResult implements Serializable,
      * @return Options to apply to this identity pool for Amazon Cognito
      *         streams.
      */
+
     public CognitoStreams getCognitoStreams() {
         return this.cognitoStreams;
     }
@@ -160,6 +168,7 @@ public class GetIdentityPoolConfigurationResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetIdentityPoolConfigurationResult withCognitoStreams(
             CognitoStreams cognitoStreams) {
         setCognitoStreams(cognitoStreams);

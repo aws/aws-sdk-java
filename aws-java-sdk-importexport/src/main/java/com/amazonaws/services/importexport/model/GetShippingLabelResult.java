@@ -30,6 +30,7 @@ public class GetShippingLabelResult implements Serializable, Cloneable {
     /**
      * @param shippingLabelURL
      */
+
     public void setShippingLabelURL(String shippingLabelURL) {
         this.shippingLabelURL = shippingLabelURL;
     }
@@ -37,6 +38,7 @@ public class GetShippingLabelResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getShippingLabelURL() {
         return this.shippingLabelURL;
     }
@@ -46,6 +48,7 @@ public class GetShippingLabelResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetShippingLabelResult withShippingLabelURL(String shippingLabelURL) {
         setShippingLabelURL(shippingLabelURL);
         return this;
@@ -54,6 +57,7 @@ public class GetShippingLabelResult implements Serializable, Cloneable {
     /**
      * @param warning
      */
+
     public void setWarning(String warning) {
         this.warning = warning;
     }
@@ -61,6 +65,7 @@ public class GetShippingLabelResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getWarning() {
         return this.warning;
     }
@@ -70,6 +75,7 @@ public class GetShippingLabelResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetShippingLabelResult withWarning(String warning) {
         setWarning(warning);
         return this;

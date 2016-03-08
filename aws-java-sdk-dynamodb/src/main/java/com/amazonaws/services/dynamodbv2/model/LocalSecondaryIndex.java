@@ -78,6 +78,7 @@ public class LocalSecondaryIndex implements Serializable, Cloneable {
      *        The name of the local secondary index. The name must be unique
      *        among all other indexes on this table.
      */
+
     public void setIndexName(String indexName) {
         this.indexName = indexName;
     }
@@ -91,6 +92,7 @@ public class LocalSecondaryIndex implements Serializable, Cloneable {
      * @return The name of the local secondary index. The name must be unique
      *         among all other indexes on this table.
      */
+
     public String getIndexName() {
         return this.indexName;
     }
@@ -107,6 +109,7 @@ public class LocalSecondaryIndex implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LocalSecondaryIndex withIndexName(String indexName) {
         setIndexName(indexName);
         return this;
@@ -173,6 +176,7 @@ public class LocalSecondaryIndex implements Serializable, Cloneable {
      *         close together, in sorted order by the sort key value.
      *         </p>
      */
+
     public java.util.List<KeySchemaElement> getKeySchema() {
         return keySchema;
     }
@@ -239,6 +243,7 @@ public class LocalSecondaryIndex implements Serializable, Cloneable {
      *        together, in sorted order by the sort key value.
      *        </p>
      */
+
     public void setKeySchema(java.util.Collection<KeySchemaElement> keySchema) {
         if (keySchema == null) {
             this.keySchema = null;
@@ -318,6 +323,7 @@ public class LocalSecondaryIndex implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LocalSecondaryIndex withKeySchema(KeySchemaElement... keySchema) {
         if (this.keySchema == null) {
             setKeySchema(new java.util.ArrayList<KeySchemaElement>(
@@ -393,6 +399,7 @@ public class LocalSecondaryIndex implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LocalSecondaryIndex withKeySchema(
             java.util.Collection<KeySchemaElement> keySchema) {
         setKeySchema(keySchema);
@@ -402,6 +409,7 @@ public class LocalSecondaryIndex implements Serializable, Cloneable {
     /**
      * @param projection
      */
+
     public void setProjection(Projection projection) {
         this.projection = projection;
     }
@@ -409,6 +417,7 @@ public class LocalSecondaryIndex implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Projection getProjection() {
         return this.projection;
     }
@@ -418,6 +427,7 @@ public class LocalSecondaryIndex implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LocalSecondaryIndex withProjection(Projection projection) {
         setProjection(projection);
         return this;

@@ -40,6 +40,7 @@ public class PropagatingVgw implements Serializable, Cloneable {
      * @param gatewayId
      *        The ID of the virtual private gateway (VGW).
      */
+
     public void setGatewayId(String gatewayId) {
         this.gatewayId = gatewayId;
     }
@@ -51,6 +52,7 @@ public class PropagatingVgw implements Serializable, Cloneable {
      * 
      * @return The ID of the virtual private gateway (VGW).
      */
+
     public String getGatewayId() {
         return this.gatewayId;
     }
@@ -65,6 +67,7 @@ public class PropagatingVgw implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PropagatingVgw withGatewayId(String gatewayId) {
         setGatewayId(gatewayId);
         return this;

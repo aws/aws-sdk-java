@@ -52,6 +52,7 @@ public class StageDeclaration implements Serializable, Cloneable {
      * @param name
      *        The name of the stage.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -63,6 +64,7 @@ public class StageDeclaration implements Serializable, Cloneable {
      * 
      * @return The name of the stage.
      */
+
     public String getName() {
         return this.name;
     }
@@ -77,6 +79,7 @@ public class StageDeclaration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StageDeclaration withName(String name) {
         setName(name);
         return this;
@@ -89,6 +92,7 @@ public class StageDeclaration implements Serializable, Cloneable {
      * 
      * @return The gates included in a stage.
      */
+
     public java.util.List<BlockerDeclaration> getBlockers() {
         return blockers;
     }
@@ -101,6 +105,7 @@ public class StageDeclaration implements Serializable, Cloneable {
      * @param blockers
      *        The gates included in a stage.
      */
+
     public void setBlockers(java.util.Collection<BlockerDeclaration> blockers) {
         if (blockers == null) {
             this.blockers = null;
@@ -126,6 +131,7 @@ public class StageDeclaration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StageDeclaration withBlockers(BlockerDeclaration... blockers) {
         if (this.blockers == null) {
             setBlockers(new java.util.ArrayList<BlockerDeclaration>(
@@ -147,6 +153,7 @@ public class StageDeclaration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StageDeclaration withBlockers(
             java.util.Collection<BlockerDeclaration> blockers) {
         setBlockers(blockers);
@@ -160,6 +167,7 @@ public class StageDeclaration implements Serializable, Cloneable {
      * 
      * @return The actions included in a stage.
      */
+
     public java.util.List<ActionDeclaration> getActions() {
         return actions;
     }
@@ -172,6 +180,7 @@ public class StageDeclaration implements Serializable, Cloneable {
      * @param actions
      *        The actions included in a stage.
      */
+
     public void setActions(java.util.Collection<ActionDeclaration> actions) {
         if (actions == null) {
             this.actions = null;
@@ -197,6 +206,7 @@ public class StageDeclaration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StageDeclaration withActions(ActionDeclaration... actions) {
         if (this.actions == null) {
             setActions(new java.util.ArrayList<ActionDeclaration>(
@@ -218,6 +228,7 @@ public class StageDeclaration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StageDeclaration withActions(
             java.util.Collection<ActionDeclaration> actions) {
         setActions(actions);

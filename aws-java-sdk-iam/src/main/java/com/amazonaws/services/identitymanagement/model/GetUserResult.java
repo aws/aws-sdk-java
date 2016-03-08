@@ -40,6 +40,7 @@ public class GetUserResult implements Serializable, Cloneable {
      * @param user
      *        Information about the user.
      */
+
     public void setUser(User user) {
         this.user = user;
     }
@@ -51,6 +52,7 @@ public class GetUserResult implements Serializable, Cloneable {
      * 
      * @return Information about the user.
      */
+
     public User getUser() {
         return this.user;
     }
@@ -65,6 +67,7 @@ public class GetUserResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetUserResult withUser(User user) {
         setUser(user);
         return this;

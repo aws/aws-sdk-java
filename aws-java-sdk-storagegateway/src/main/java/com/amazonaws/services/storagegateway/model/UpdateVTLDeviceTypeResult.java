@@ -41,6 +41,7 @@ public class UpdateVTLDeviceTypeResult implements Serializable, Cloneable {
      *        The Amazon Resource Name (ARN) of the medium changer you have
      *        selected.
      */
+
     public void setVTLDeviceARN(String vTLDeviceARN) {
         this.vTLDeviceARN = vTLDeviceARN;
     }
@@ -53,6 +54,7 @@ public class UpdateVTLDeviceTypeResult implements Serializable, Cloneable {
      * @return The Amazon Resource Name (ARN) of the medium changer you have
      *         selected.
      */
+
     public String getVTLDeviceARN() {
         return this.vTLDeviceARN;
     }
@@ -68,6 +70,7 @@ public class UpdateVTLDeviceTypeResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateVTLDeviceTypeResult withVTLDeviceARN(String vTLDeviceARN) {
         setVTLDeviceARN(vTLDeviceARN);
         return this;

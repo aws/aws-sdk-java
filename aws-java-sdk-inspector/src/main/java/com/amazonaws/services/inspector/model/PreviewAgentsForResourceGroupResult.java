@@ -47,6 +47,7 @@ public class PreviewAgentsForResourceGroupResult implements Serializable,
      * 
      * @return The resulting list of agents.
      */
+
     public java.util.List<AgentPreview> getAgentPreviewList() {
         return agentPreviewList;
     }
@@ -59,6 +60,7 @@ public class PreviewAgentsForResourceGroupResult implements Serializable,
      * @param agentPreviewList
      *        The resulting list of agents.
      */
+
     public void setAgentPreviewList(
             java.util.Collection<AgentPreview> agentPreviewList) {
         if (agentPreviewList == null) {
@@ -86,6 +88,7 @@ public class PreviewAgentsForResourceGroupResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PreviewAgentsForResourceGroupResult withAgentPreviewList(
             AgentPreview... agentPreviewList) {
         if (this.agentPreviewList == null) {
@@ -108,6 +111,7 @@ public class PreviewAgentsForResourceGroupResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PreviewAgentsForResourceGroupResult withAgentPreviewList(
             java.util.Collection<AgentPreview> agentPreviewList) {
         setAgentPreviewList(agentPreviewList);
@@ -129,6 +133,7 @@ public class PreviewAgentsForResourceGroupResult implements Serializable,
      *        pagination request. If there is no more data to be listed, this
      *        parameter is set to 'null'.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -147,6 +152,7 @@ public class PreviewAgentsForResourceGroupResult implements Serializable,
      *         pagination request. If there is no more data to be listed, this
      *         parameter is set to 'null'.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -168,6 +174,7 @@ public class PreviewAgentsForResourceGroupResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PreviewAgentsForResourceGroupResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

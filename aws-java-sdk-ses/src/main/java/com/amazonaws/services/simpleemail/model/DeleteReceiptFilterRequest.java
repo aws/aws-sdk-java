@@ -40,6 +40,7 @@ public class DeleteReceiptFilterRequest extends AmazonWebServiceRequest
      * @param filterName
      *        The name of the IP address filter to delete.
      */
+
     public void setFilterName(String filterName) {
         this.filterName = filterName;
     }
@@ -51,6 +52,7 @@ public class DeleteReceiptFilterRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the IP address filter to delete.
      */
+
     public String getFilterName() {
         return this.filterName;
     }
@@ -65,6 +67,7 @@ public class DeleteReceiptFilterRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteReceiptFilterRequest withFilterName(String filterName) {
         setFilterName(filterName);
         return this;

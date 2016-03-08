@@ -48,6 +48,7 @@ public class GetResourceRequest extends AmazonWebServiceRequest implements
      * @param restApiId
      *        The <a>RestApi</a> identifier for the resource.
      */
+
     public void setRestApiId(String restApiId) {
         this.restApiId = restApiId;
     }
@@ -59,6 +60,7 @@ public class GetResourceRequest extends AmazonWebServiceRequest implements
      * 
      * @return The <a>RestApi</a> identifier for the resource.
      */
+
     public String getRestApiId() {
         return this.restApiId;
     }
@@ -73,6 +75,7 @@ public class GetResourceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetResourceRequest withRestApiId(String restApiId) {
         setRestApiId(restApiId);
         return this;
@@ -86,6 +89,7 @@ public class GetResourceRequest extends AmazonWebServiceRequest implements
      * @param resourceId
      *        The identifier for the <a>Resource</a> resource.
      */
+
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
     }
@@ -97,6 +101,7 @@ public class GetResourceRequest extends AmazonWebServiceRequest implements
      * 
      * @return The identifier for the <a>Resource</a> resource.
      */
+
     public String getResourceId() {
         return this.resourceId;
     }
@@ -111,6 +116,7 @@ public class GetResourceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetResourceRequest withResourceId(String resourceId) {
         setResourceId(resourceId);
         return this;

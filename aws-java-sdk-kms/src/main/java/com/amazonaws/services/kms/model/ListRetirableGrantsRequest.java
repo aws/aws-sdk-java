@@ -85,6 +85,7 @@ public class ListRetirableGrantsRequest extends AmazonWebServiceRequest
      *        1 and 100, inclusive. If you do not include a value, it defaults
      *        to 50.
      */
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -109,6 +110,7 @@ public class ListRetirableGrantsRequest extends AmazonWebServiceRequest
      *         between 1 and 100, inclusive. If you do not include a value, it
      *         defaults to 50.
      */
+
     public Integer getLimit() {
         return this.limit;
     }
@@ -136,6 +138,7 @@ public class ListRetirableGrantsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListRetirableGrantsRequest withLimit(Integer limit) {
         setLimit(limit);
         return this;
@@ -155,6 +158,7 @@ public class ListRetirableGrantsRequest extends AmazonWebServiceRequest
      *        results. Set it to the value of <code>NextMarker</code> from the
      *        response you just received.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -172,6 +176,7 @@ public class ListRetirableGrantsRequest extends AmazonWebServiceRequest
      *         truncated results. Set it to the value of <code>NextMarker</code>
      *         from the response you just received.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -192,6 +197,7 @@ public class ListRetirableGrantsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListRetirableGrantsRequest withMarker(String marker) {
         setMarker(marker);
         return this;
@@ -226,6 +232,7 @@ public class ListRetirableGrantsRequest extends AmazonWebServiceRequest
      *        >AWS Identity and Access Management (IAM)</a> in the Example ARNs
      *        section of the <i>Amazon Web Services General Reference</i>.
      */
+
     public void setRetiringPrincipal(String retiringPrincipal) {
         this.retiringPrincipal = retiringPrincipal;
     }
@@ -258,6 +265,7 @@ public class ListRetirableGrantsRequest extends AmazonWebServiceRequest
      *         >AWS Identity and Access Management (IAM)</a> in the Example ARNs
      *         section of the <i>Amazon Web Services General Reference</i>.
      */
+
     public String getRetiringPrincipal() {
         return this.retiringPrincipal;
     }
@@ -293,6 +301,7 @@ public class ListRetirableGrantsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListRetirableGrantsRequest withRetiringPrincipal(
             String retiringPrincipal) {
         setRetiringPrincipal(retiringPrincipal);

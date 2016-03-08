@@ -62,6 +62,7 @@ public class SubmitTaskStateChangeRequest extends AmazonWebServiceRequest
      *        The short name or full Amazon Resource Name (ARN) of the cluster
      *        that hosts the task.
      */
+
     public void setCluster(String cluster) {
         this.cluster = cluster;
     }
@@ -75,6 +76,7 @@ public class SubmitTaskStateChangeRequest extends AmazonWebServiceRequest
      * @return The short name or full Amazon Resource Name (ARN) of the cluster
      *         that hosts the task.
      */
+
     public String getCluster() {
         return this.cluster;
     }
@@ -91,6 +93,7 @@ public class SubmitTaskStateChangeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SubmitTaskStateChangeRequest withCluster(String cluster) {
         setCluster(cluster);
         return this;
@@ -106,6 +109,7 @@ public class SubmitTaskStateChangeRequest extends AmazonWebServiceRequest
      *        The task ID or full Amazon Resource Name (ARN) of the task in the
      *        state change request.
      */
+
     public void setTask(String task) {
         this.task = task;
     }
@@ -119,6 +123,7 @@ public class SubmitTaskStateChangeRequest extends AmazonWebServiceRequest
      * @return The task ID or full Amazon Resource Name (ARN) of the task in the
      *         state change request.
      */
+
     public String getTask() {
         return this.task;
     }
@@ -135,6 +140,7 @@ public class SubmitTaskStateChangeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SubmitTaskStateChangeRequest withTask(String task) {
         setTask(task);
         return this;
@@ -148,6 +154,7 @@ public class SubmitTaskStateChangeRequest extends AmazonWebServiceRequest
      * @param status
      *        The status of the state change request.
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -159,6 +166,7 @@ public class SubmitTaskStateChangeRequest extends AmazonWebServiceRequest
      * 
      * @return The status of the state change request.
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -173,6 +181,7 @@ public class SubmitTaskStateChangeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SubmitTaskStateChangeRequest withStatus(String status) {
         setStatus(status);
         return this;
@@ -186,6 +195,7 @@ public class SubmitTaskStateChangeRequest extends AmazonWebServiceRequest
      * @param reason
      *        The reason for the state change request.
      */
+
     public void setReason(String reason) {
         this.reason = reason;
     }
@@ -197,6 +207,7 @@ public class SubmitTaskStateChangeRequest extends AmazonWebServiceRequest
      * 
      * @return The reason for the state change request.
      */
+
     public String getReason() {
         return this.reason;
     }
@@ -211,6 +222,7 @@ public class SubmitTaskStateChangeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SubmitTaskStateChangeRequest withReason(String reason) {
         setReason(reason);
         return this;

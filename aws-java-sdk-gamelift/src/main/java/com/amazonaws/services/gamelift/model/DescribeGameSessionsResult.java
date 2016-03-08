@@ -50,6 +50,7 @@ public class DescribeGameSessionsResult implements Serializable, Cloneable {
      * @return Collection of objects containing game session properties for each
      *         session matching the request.
      */
+
     public java.util.List<GameSession> getGameSessions() {
         return gameSessions;
     }
@@ -64,6 +65,7 @@ public class DescribeGameSessionsResult implements Serializable, Cloneable {
      *        Collection of objects containing game session properties for each
      *        session matching the request.
      */
+
     public void setGameSessions(java.util.Collection<GameSession> gameSessions) {
         if (gameSessions == null) {
             this.gameSessions = null;
@@ -91,6 +93,7 @@ public class DescribeGameSessionsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeGameSessionsResult withGameSessions(
             GameSession... gameSessions) {
         if (this.gameSessions == null) {
@@ -115,6 +118,7 @@ public class DescribeGameSessionsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeGameSessionsResult withGameSessions(
             java.util.Collection<GameSession> gameSessions) {
         setGameSessions(gameSessions);
@@ -133,6 +137,7 @@ public class DescribeGameSessionsResult implements Serializable, Cloneable {
      *        call to this action. If no token is returned, these results
      *        represent the end of the list.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -148,6 +153,7 @@ public class DescribeGameSessionsResult implements Serializable, Cloneable {
      *         call to this action. If no token is returned, these results
      *         represent the end of the list.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -166,6 +172,7 @@ public class DescribeGameSessionsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeGameSessionsResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

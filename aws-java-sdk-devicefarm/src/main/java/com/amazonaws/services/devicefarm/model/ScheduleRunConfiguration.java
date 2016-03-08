@@ -85,6 +85,7 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable {
      *        file that AWS Device Farm will extract to external data for
      *        Android or the app's sandbox for iOS.
      */
+
     public void setExtraDataPackageArn(String extraDataPackageArn) {
         this.extraDataPackageArn = extraDataPackageArn;
     }
@@ -100,6 +101,7 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable {
      *         file that AWS Device Farm will extract to external data for
      *         Android or the app's sandbox for iOS.
      */
+
     public String getExtraDataPackageArn() {
         return this.extraDataPackageArn;
     }
@@ -118,6 +120,7 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduleRunConfiguration withExtraDataPackageArn(
             String extraDataPackageArn) {
         setExtraDataPackageArn(extraDataPackageArn);
@@ -132,6 +135,7 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable {
      * @param networkProfileArn
      *        Reserved for internal use.
      */
+
     public void setNetworkProfileArn(String networkProfileArn) {
         this.networkProfileArn = networkProfileArn;
     }
@@ -143,6 +147,7 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable {
      * 
      * @return Reserved for internal use.
      */
+
     public String getNetworkProfileArn() {
         return this.networkProfileArn;
     }
@@ -157,6 +162,7 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduleRunConfiguration withNetworkProfileArn(
             String networkProfileArn) {
         setNetworkProfileArn(networkProfileArn);
@@ -171,6 +177,7 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable {
      * @param locale
      *        Information about the locale that is used for the run.
      */
+
     public void setLocale(String locale) {
         this.locale = locale;
     }
@@ -182,6 +189,7 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable {
      * 
      * @return Information about the locale that is used for the run.
      */
+
     public String getLocale() {
         return this.locale;
     }
@@ -196,6 +204,7 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduleRunConfiguration withLocale(String locale) {
         setLocale(locale);
         return this;
@@ -209,6 +218,7 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable {
      * @param location
      *        Information about the location that is used for the run.
      */
+
     public void setLocation(Location location) {
         this.location = location;
     }
@@ -220,6 +230,7 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable {
      * 
      * @return Information about the location that is used for the run.
      */
+
     public Location getLocation() {
         return this.location;
     }
@@ -234,6 +245,7 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduleRunConfiguration withLocation(Location location) {
         setLocation(location);
         return this;
@@ -247,6 +259,7 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable {
      * @param radios
      *        Information about the radio states for the run.
      */
+
     public void setRadios(Radios radios) {
         this.radios = radios;
     }
@@ -258,6 +271,7 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable {
      * 
      * @return Information about the radio states for the run.
      */
+
     public Radios getRadios() {
         return this.radios;
     }
@@ -272,6 +286,7 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduleRunConfiguration withRadios(Radios radios) {
         setRadios(radios);
         return this;
@@ -284,6 +299,7 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable {
      * 
      * @return A list of auxiliary apps for the run.
      */
+
     public java.util.List<String> getAuxiliaryApps() {
         return auxiliaryApps;
     }
@@ -296,6 +312,7 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable {
      * @param auxiliaryApps
      *        A list of auxiliary apps for the run.
      */
+
     public void setAuxiliaryApps(java.util.Collection<String> auxiliaryApps) {
         if (auxiliaryApps == null) {
             this.auxiliaryApps = null;
@@ -321,6 +338,7 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduleRunConfiguration withAuxiliaryApps(String... auxiliaryApps) {
         if (this.auxiliaryApps == null) {
             setAuxiliaryApps(new java.util.ArrayList<String>(
@@ -342,6 +360,7 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduleRunConfiguration withAuxiliaryApps(
             java.util.Collection<String> auxiliaryApps) {
         setAuxiliaryApps(auxiliaryApps);
@@ -361,6 +380,7 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable {
      *        default value is <code>unmetered</code>.
      * @see BillingMethod
      */
+
     public void setBillingMethod(String billingMethod) {
         this.billingMethod = billingMethod;
     }
@@ -377,6 +397,7 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable {
      *         default value is <code>unmetered</code>.
      * @see BillingMethod
      */
+
     public String getBillingMethod() {
         return this.billingMethod;
     }
@@ -396,6 +417,7 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable {
      *         chained together.
      * @see BillingMethod
      */
+
     public ScheduleRunConfiguration withBillingMethod(String billingMethod) {
         setBillingMethod(billingMethod);
         return this;
@@ -416,6 +438,7 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable {
      *         chained together.
      * @see BillingMethod
      */
+
     public void setBillingMethod(BillingMethod billingMethod) {
         this.billingMethod = billingMethod.toString();
     }
@@ -435,6 +458,7 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable {
      *         chained together.
      * @see BillingMethod
      */
+
     public ScheduleRunConfiguration withBillingMethod(
             BillingMethod billingMethod) {
         setBillingMethod(billingMethod);

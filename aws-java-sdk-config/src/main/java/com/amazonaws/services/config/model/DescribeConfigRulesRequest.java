@@ -50,6 +50,7 @@ public class DescribeConfigRulesRequest extends AmazonWebServiceRequest
      *         you do not specify any names, AWS Config returns details for all
      *         your rules.
      */
+
     public java.util.List<String> getConfigRuleNames() {
         if (configRuleNames == null) {
             configRuleNames = new com.amazonaws.internal.SdkInternalList<String>();
@@ -68,6 +69,7 @@ public class DescribeConfigRulesRequest extends AmazonWebServiceRequest
      *        you do not specify any names, AWS Config returns details for all
      *        your rules.
      */
+
     public void setConfigRuleNames(java.util.Collection<String> configRuleNames) {
         if (configRuleNames == null) {
             this.configRuleNames = null;
@@ -97,6 +99,7 @@ public class DescribeConfigRulesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeConfigRulesRequest withConfigRuleNames(
             String... configRuleNames) {
         if (this.configRuleNames == null) {
@@ -122,6 +125,7 @@ public class DescribeConfigRulesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeConfigRulesRequest withConfigRuleNames(
             java.util.Collection<String> configRuleNames) {
         setConfigRuleNames(configRuleNames);
@@ -138,6 +142,7 @@ public class DescribeConfigRulesRequest extends AmazonWebServiceRequest
      *        The <code>nextToken</code> string returned on a previous page that
      *        you use to get the next page of results in a paginated response.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -152,6 +157,7 @@ public class DescribeConfigRulesRequest extends AmazonWebServiceRequest
      *         that you use to get the next page of results in a paginated
      *         response.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -168,6 +174,7 @@ public class DescribeConfigRulesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeConfigRulesRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

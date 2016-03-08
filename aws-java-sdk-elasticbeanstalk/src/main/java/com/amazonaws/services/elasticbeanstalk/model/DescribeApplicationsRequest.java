@@ -42,6 +42,7 @@ public class DescribeApplicationsRequest extends AmazonWebServiceRequest
      * @return If specified, AWS Elastic Beanstalk restricts the returned
      *         descriptions to only include those with the specified names.
      */
+
     public java.util.List<String> getApplicationNames() {
         if (applicationNames == null) {
             applicationNames = new com.amazonaws.internal.SdkInternalList<String>();
@@ -59,6 +60,7 @@ public class DescribeApplicationsRequest extends AmazonWebServiceRequest
      *        If specified, AWS Elastic Beanstalk restricts the returned
      *        descriptions to only include those with the specified names.
      */
+
     public void setApplicationNames(
             java.util.Collection<String> applicationNames) {
         if (applicationNames == null) {
@@ -88,6 +90,7 @@ public class DescribeApplicationsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeApplicationsRequest withApplicationNames(
             String... applicationNames) {
         if (this.applicationNames == null) {
@@ -112,6 +115,7 @@ public class DescribeApplicationsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeApplicationsRequest withApplicationNames(
             java.util.Collection<String> applicationNames) {
         setApplicationNames(applicationNames);

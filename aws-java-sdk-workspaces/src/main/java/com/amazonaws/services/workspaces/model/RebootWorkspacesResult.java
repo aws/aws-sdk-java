@@ -42,6 +42,7 @@ public class RebootWorkspacesResult implements Serializable, Cloneable {
      * @return An array of structures that represent any WorkSpaces that could
      *         not be rebooted.
      */
+
     public java.util.List<FailedWorkspaceChangeRequest> getFailedRequests() {
         if (failedRequests == null) {
             failedRequests = new com.amazonaws.internal.SdkInternalList<FailedWorkspaceChangeRequest>();
@@ -59,6 +60,7 @@ public class RebootWorkspacesResult implements Serializable, Cloneable {
      *        An array of structures that represent any WorkSpaces that could
      *        not be rebooted.
      */
+
     public void setFailedRequests(
             java.util.Collection<FailedWorkspaceChangeRequest> failedRequests) {
         if (failedRequests == null) {
@@ -88,6 +90,7 @@ public class RebootWorkspacesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RebootWorkspacesResult withFailedRequests(
             FailedWorkspaceChangeRequest... failedRequests) {
         if (this.failedRequests == null) {
@@ -112,6 +115,7 @@ public class RebootWorkspacesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RebootWorkspacesResult withFailedRequests(
             java.util.Collection<FailedWorkspaceChangeRequest> failedRequests) {
         setFailedRequests(failedRequests);

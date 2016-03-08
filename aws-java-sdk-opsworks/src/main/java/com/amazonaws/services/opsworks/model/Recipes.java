@@ -82,6 +82,7 @@ public class Recipes implements Serializable, Cloneable {
      * @return An array of custom recipe names to be run following a
      *         <code>setup</code> event.
      */
+
     public java.util.List<String> getSetup() {
         if (setup == null) {
             setup = new com.amazonaws.internal.SdkInternalList<String>();
@@ -99,6 +100,7 @@ public class Recipes implements Serializable, Cloneable {
      *        An array of custom recipe names to be run following a
      *        <code>setup</code> event.
      */
+
     public void setSetup(java.util.Collection<String> setup) {
         if (setup == null) {
             this.setup = null;
@@ -126,6 +128,7 @@ public class Recipes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Recipes withSetup(String... setup) {
         if (this.setup == null) {
             setSetup(new com.amazonaws.internal.SdkInternalList<String>(
@@ -149,6 +152,7 @@ public class Recipes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Recipes withSetup(java.util.Collection<String> setup) {
         setSetup(setup);
         return this;
@@ -163,6 +167,7 @@ public class Recipes implements Serializable, Cloneable {
      * @return An array of custom recipe names to be run following a
      *         <code>configure</code> event.
      */
+
     public java.util.List<String> getConfigure() {
         if (configure == null) {
             configure = new com.amazonaws.internal.SdkInternalList<String>();
@@ -180,6 +185,7 @@ public class Recipes implements Serializable, Cloneable {
      *        An array of custom recipe names to be run following a
      *        <code>configure</code> event.
      */
+
     public void setConfigure(java.util.Collection<String> configure) {
         if (configure == null) {
             this.configure = null;
@@ -208,6 +214,7 @@ public class Recipes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Recipes withConfigure(String... configure) {
         if (this.configure == null) {
             setConfigure(new com.amazonaws.internal.SdkInternalList<String>(
@@ -231,6 +238,7 @@ public class Recipes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Recipes withConfigure(java.util.Collection<String> configure) {
         setConfigure(configure);
         return this;
@@ -245,6 +253,7 @@ public class Recipes implements Serializable, Cloneable {
      * @return An array of custom recipe names to be run following a
      *         <code>deploy</code> event.
      */
+
     public java.util.List<String> getDeploy() {
         if (deploy == null) {
             deploy = new com.amazonaws.internal.SdkInternalList<String>();
@@ -262,6 +271,7 @@ public class Recipes implements Serializable, Cloneable {
      *        An array of custom recipe names to be run following a
      *        <code>deploy</code> event.
      */
+
     public void setDeploy(java.util.Collection<String> deploy) {
         if (deploy == null) {
             this.deploy = null;
@@ -289,6 +299,7 @@ public class Recipes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Recipes withDeploy(String... deploy) {
         if (this.deploy == null) {
             setDeploy(new com.amazonaws.internal.SdkInternalList<String>(
@@ -312,6 +323,7 @@ public class Recipes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Recipes withDeploy(java.util.Collection<String> deploy) {
         setDeploy(deploy);
         return this;
@@ -326,6 +338,7 @@ public class Recipes implements Serializable, Cloneable {
      * @return An array of custom recipe names to be run following a
      *         <code>undeploy</code> event.
      */
+
     public java.util.List<String> getUndeploy() {
         if (undeploy == null) {
             undeploy = new com.amazonaws.internal.SdkInternalList<String>();
@@ -343,6 +356,7 @@ public class Recipes implements Serializable, Cloneable {
      *        An array of custom recipe names to be run following a
      *        <code>undeploy</code> event.
      */
+
     public void setUndeploy(java.util.Collection<String> undeploy) {
         if (undeploy == null) {
             this.undeploy = null;
@@ -371,6 +385,7 @@ public class Recipes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Recipes withUndeploy(String... undeploy) {
         if (this.undeploy == null) {
             setUndeploy(new com.amazonaws.internal.SdkInternalList<String>(
@@ -394,6 +409,7 @@ public class Recipes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Recipes withUndeploy(java.util.Collection<String> undeploy) {
         setUndeploy(undeploy);
         return this;
@@ -408,6 +424,7 @@ public class Recipes implements Serializable, Cloneable {
      * @return An array of custom recipe names to be run following a
      *         <code>shutdown</code> event.
      */
+
     public java.util.List<String> getShutdown() {
         if (shutdown == null) {
             shutdown = new com.amazonaws.internal.SdkInternalList<String>();
@@ -425,6 +442,7 @@ public class Recipes implements Serializable, Cloneable {
      *        An array of custom recipe names to be run following a
      *        <code>shutdown</code> event.
      */
+
     public void setShutdown(java.util.Collection<String> shutdown) {
         if (shutdown == null) {
             this.shutdown = null;
@@ -453,6 +471,7 @@ public class Recipes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Recipes withShutdown(String... shutdown) {
         if (this.shutdown == null) {
             setShutdown(new com.amazonaws.internal.SdkInternalList<String>(
@@ -476,6 +495,7 @@ public class Recipes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Recipes withShutdown(java.util.Collection<String> shutdown) {
         setShutdown(shutdown);
         return this;

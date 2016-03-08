@@ -83,6 +83,7 @@ public class ValidateTemplateRequest extends AmazonWebServiceRequest implements
      *        <code>TemplateBody</code>. If both are passed, only
      *        <code>TemplateBody</code> is used.
      */
+
     public void setTemplateBody(String templateBody) {
         this.templateBody = templateBody;
     }
@@ -111,6 +112,7 @@ public class ValidateTemplateRequest extends AmazonWebServiceRequest implements
      *         <code>TemplateBody</code>. If both are passed, only
      *         <code>TemplateBody</code> is used.
      */
+
     public String getTemplateBody() {
         return this.templateBody;
     }
@@ -142,6 +144,7 @@ public class ValidateTemplateRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ValidateTemplateRequest withTemplateBody(String templateBody) {
         setTemplateBody(templateBody);
         return this;
@@ -172,6 +175,7 @@ public class ValidateTemplateRequest extends AmazonWebServiceRequest implements
      *        <code>TemplateBody</code>. If both are passed, only
      *        <code>TemplateBody</code> is used.
      */
+
     public void setTemplateURL(String templateURL) {
         this.templateURL = templateURL;
     }
@@ -200,6 +204,7 @@ public class ValidateTemplateRequest extends AmazonWebServiceRequest implements
      *         <code>TemplateBody</code>. If both are passed, only
      *         <code>TemplateBody</code> is used.
      */
+
     public String getTemplateURL() {
         return this.templateURL;
     }
@@ -231,6 +236,7 @@ public class ValidateTemplateRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ValidateTemplateRequest withTemplateURL(String templateURL) {
         setTemplateURL(templateURL);
         return this;

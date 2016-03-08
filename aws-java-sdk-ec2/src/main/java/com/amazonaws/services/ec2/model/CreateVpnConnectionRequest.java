@@ -93,6 +93,7 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest
      * @param type
      *        The type of VPN connection (<code>ipsec.1</code>).
      */
+
     public void setType(String type) {
         this.type = type;
     }
@@ -104,6 +105,7 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest
      * 
      * @return The type of VPN connection (<code>ipsec.1</code>).
      */
+
     public String getType() {
         return this.type;
     }
@@ -118,6 +120,7 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateVpnConnectionRequest withType(String type) {
         setType(type);
         return this;
@@ -131,6 +134,7 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest
      * @param customerGatewayId
      *        The ID of the customer gateway.
      */
+
     public void setCustomerGatewayId(String customerGatewayId) {
         this.customerGatewayId = customerGatewayId;
     }
@@ -142,6 +146,7 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the customer gateway.
      */
+
     public String getCustomerGatewayId() {
         return this.customerGatewayId;
     }
@@ -156,6 +161,7 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateVpnConnectionRequest withCustomerGatewayId(
             String customerGatewayId) {
         setCustomerGatewayId(customerGatewayId);
@@ -170,6 +176,7 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest
      * @param vpnGatewayId
      *        The ID of the virtual private gateway.
      */
+
     public void setVpnGatewayId(String vpnGatewayId) {
         this.vpnGatewayId = vpnGatewayId;
     }
@@ -181,6 +188,7 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the virtual private gateway.
      */
+
     public String getVpnGatewayId() {
         return this.vpnGatewayId;
     }
@@ -195,6 +203,7 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateVpnConnectionRequest withVpnGatewayId(String vpnGatewayId) {
         setVpnGatewayId(vpnGatewayId);
         return this;
@@ -217,6 +226,7 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest
      *        <p>
      *        Default: <code>false</code>
      */
+
     public void setOptions(VpnConnectionOptionsSpecification options) {
         this.options = options;
     }
@@ -237,6 +247,7 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest
      *         <p>
      *         Default: <code>false</code>
      */
+
     public VpnConnectionOptionsSpecification getOptions() {
         return this.options;
     }
@@ -260,6 +271,7 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateVpnConnectionRequest withOptions(
             VpnConnectionOptionsSpecification options) {
         setOptions(options);

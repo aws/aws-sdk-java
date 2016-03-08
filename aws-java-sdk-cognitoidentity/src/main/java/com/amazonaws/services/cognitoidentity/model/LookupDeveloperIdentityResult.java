@@ -61,6 +61,7 @@ public class LookupDeveloperIdentityResult implements Serializable, Cloneable {
      * @param identityId
      *        A unique identifier in the format REGION:GUID.
      */
+
     public void setIdentityId(String identityId) {
         this.identityId = identityId;
     }
@@ -72,6 +73,7 @@ public class LookupDeveloperIdentityResult implements Serializable, Cloneable {
      * 
      * @return A unique identifier in the format REGION:GUID.
      */
+
     public String getIdentityId() {
         return this.identityId;
     }
@@ -86,6 +88,7 @@ public class LookupDeveloperIdentityResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LookupDeveloperIdentityResult withIdentityId(String identityId) {
         setIdentityId(identityId);
         return this;
@@ -102,6 +105,7 @@ public class LookupDeveloperIdentityResult implements Serializable, Cloneable {
      *         identity ID. Cognito supports the association of multiple
      *         developer user identifiers with an identity ID.
      */
+
     public java.util.List<String> getDeveloperUserIdentifierList() {
         return developerUserIdentifierList;
     }
@@ -118,6 +122,7 @@ public class LookupDeveloperIdentityResult implements Serializable, Cloneable {
      *        identity ID. Cognito supports the association of multiple
      *        developer user identifiers with an identity ID.
      */
+
     public void setDeveloperUserIdentifierList(
             java.util.Collection<String> developerUserIdentifierList) {
         if (developerUserIdentifierList == null) {
@@ -149,6 +154,7 @@ public class LookupDeveloperIdentityResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LookupDeveloperIdentityResult withDeveloperUserIdentifierList(
             String... developerUserIdentifierList) {
         if (this.developerUserIdentifierList == null) {
@@ -175,6 +181,7 @@ public class LookupDeveloperIdentityResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LookupDeveloperIdentityResult withDeveloperUserIdentifierList(
             java.util.Collection<String> developerUserIdentifierList) {
         setDeveloperUserIdentifierList(developerUserIdentifierList);
@@ -202,6 +209,7 @@ public class LookupDeveloperIdentityResult implements Serializable, Cloneable {
      *        to call the API again and get results starting from the 11th
      *        match.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -226,6 +234,7 @@ public class LookupDeveloperIdentityResult implements Serializable, Cloneable {
      *         can be used to call the API again and get results starting from
      *         the 11th match.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -253,6 +262,7 @@ public class LookupDeveloperIdentityResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LookupDeveloperIdentityResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

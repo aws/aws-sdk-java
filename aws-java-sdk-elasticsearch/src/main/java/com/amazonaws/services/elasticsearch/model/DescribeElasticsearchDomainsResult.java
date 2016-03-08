@@ -44,6 +44,7 @@ public class DescribeElasticsearchDomainsResult implements Serializable,
      * @return The status of the domains requested in the
      *         <code>DescribeElasticsearchDomains</code> request.
      */
+
     public java.util.List<ElasticsearchDomainStatus> getDomainStatusList() {
         return domainStatusList;
     }
@@ -58,6 +59,7 @@ public class DescribeElasticsearchDomainsResult implements Serializable,
      *        The status of the domains requested in the
      *        <code>DescribeElasticsearchDomains</code> request.
      */
+
     public void setDomainStatusList(
             java.util.Collection<ElasticsearchDomainStatus> domainStatusList) {
         if (domainStatusList == null) {
@@ -87,6 +89,7 @@ public class DescribeElasticsearchDomainsResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeElasticsearchDomainsResult withDomainStatusList(
             ElasticsearchDomainStatus... domainStatusList) {
         if (this.domainStatusList == null) {
@@ -111,6 +114,7 @@ public class DescribeElasticsearchDomainsResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeElasticsearchDomainsResult withDomainStatusList(
             java.util.Collection<ElasticsearchDomainStatus> domainStatusList) {
         setDomainStatusList(domainStatusList);

@@ -41,6 +41,7 @@ public class ModifySpotFleetRequestResult implements Serializable, Cloneable {
      *        Is <code>true</code> if the request succeeds, and an error
      *        otherwise.
      */
+
     public void setReturn(Boolean returnValue) {
         this.returnValue = returnValue;
     }
@@ -53,6 +54,7 @@ public class ModifySpotFleetRequestResult implements Serializable, Cloneable {
      * @return Is <code>true</code> if the request succeeds, and an error
      *         otherwise.
      */
+
     public Boolean getReturn() {
         return this.returnValue;
     }
@@ -68,6 +70,7 @@ public class ModifySpotFleetRequestResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifySpotFleetRequestResult withReturn(Boolean returnValue) {
         setReturn(returnValue);
         return this;
@@ -81,6 +84,7 @@ public class ModifySpotFleetRequestResult implements Serializable, Cloneable {
      * @return Is <code>true</code> if the request succeeds, and an error
      *         otherwise.
      */
+
     public Boolean isReturn() {
         return this.returnValue;
     }

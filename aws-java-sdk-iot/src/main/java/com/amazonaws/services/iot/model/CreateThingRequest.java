@@ -49,6 +49,7 @@ public class CreateThingRequest extends AmazonWebServiceRequest implements
      * @param thingName
      *        The name of the thing.
      */
+
     public void setThingName(String thingName) {
         this.thingName = thingName;
     }
@@ -60,6 +61,7 @@ public class CreateThingRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the thing.
      */
+
     public String getThingName() {
         return this.thingName;
     }
@@ -74,6 +76,7 @@ public class CreateThingRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateThingRequest withThingName(String thingName) {
         setThingName(thingName);
         return this;
@@ -90,6 +93,7 @@ public class CreateThingRequest extends AmazonWebServiceRequest implements
      *        in a JSON document. For example:
      *        {\"attributes\":{\"string1\":\"string2\"}}
      */
+
     public void setAttributePayload(AttributePayload attributePayload) {
         this.attributePayload = attributePayload;
     }
@@ -104,6 +108,7 @@ public class CreateThingRequest extends AmazonWebServiceRequest implements
      *         in a JSON document. For example:
      *         {\"attributes\":{\"string1\":\"string2\"}}
      */
+
     public AttributePayload getAttributePayload() {
         return this.attributePayload;
     }
@@ -121,6 +126,7 @@ public class CreateThingRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateThingRequest withAttributePayload(
             AttributePayload attributePayload) {
         setAttributePayload(attributePayload);

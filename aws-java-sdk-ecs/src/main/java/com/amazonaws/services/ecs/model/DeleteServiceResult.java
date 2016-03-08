@@ -38,6 +38,7 @@ public class DeleteServiceResult implements Serializable, Cloneable {
      * @param service
      *        The full description of the deleted service.
      */
+
     public void setService(Service service) {
         this.service = service;
     }
@@ -49,6 +50,7 @@ public class DeleteServiceResult implements Serializable, Cloneable {
      * 
      * @return The full description of the deleted service.
      */
+
     public Service getService() {
         return this.service;
     }
@@ -63,6 +65,7 @@ public class DeleteServiceResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteServiceResult withService(Service service) {
         setService(service);
         return this;

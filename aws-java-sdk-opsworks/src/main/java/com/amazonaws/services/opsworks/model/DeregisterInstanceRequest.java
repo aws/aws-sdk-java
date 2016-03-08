@@ -40,6 +40,7 @@ public class DeregisterInstanceRequest extends AmazonWebServiceRequest
      * @param instanceId
      *        The instance ID.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -51,6 +52,7 @@ public class DeregisterInstanceRequest extends AmazonWebServiceRequest
      * 
      * @return The instance ID.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
@@ -65,6 +67,7 @@ public class DeregisterInstanceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeregisterInstanceRequest withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;

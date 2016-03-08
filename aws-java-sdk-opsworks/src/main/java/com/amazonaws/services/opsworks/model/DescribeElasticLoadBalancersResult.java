@@ -43,6 +43,7 @@ public class DescribeElasticLoadBalancersResult implements Serializable,
      * @return A list of <code>ElasticLoadBalancer</code> objects that describe
      *         the specified Elastic Load Balancing instances.
      */
+
     public java.util.List<ElasticLoadBalancer> getElasticLoadBalancers() {
         if (elasticLoadBalancers == null) {
             elasticLoadBalancers = new com.amazonaws.internal.SdkInternalList<ElasticLoadBalancer>();
@@ -60,6 +61,7 @@ public class DescribeElasticLoadBalancersResult implements Serializable,
      *        A list of <code>ElasticLoadBalancer</code> objects that describe
      *        the specified Elastic Load Balancing instances.
      */
+
     public void setElasticLoadBalancers(
             java.util.Collection<ElasticLoadBalancer> elasticLoadBalancers) {
         if (elasticLoadBalancers == null) {
@@ -89,6 +91,7 @@ public class DescribeElasticLoadBalancersResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeElasticLoadBalancersResult withElasticLoadBalancers(
             ElasticLoadBalancer... elasticLoadBalancers) {
         if (this.elasticLoadBalancers == null) {
@@ -113,6 +116,7 @@ public class DescribeElasticLoadBalancersResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeElasticLoadBalancersResult withElasticLoadBalancers(
             java.util.Collection<ElasticLoadBalancer> elasticLoadBalancers) {
         setElasticLoadBalancers(elasticLoadBalancers);

@@ -122,6 +122,7 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable {
      * @param domainId
      *        The unique identifier for the specified Elasticsearch domain.
      */
+
     public void setDomainId(String domainId) {
         this.domainId = domainId;
     }
@@ -133,6 +134,7 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable {
      * 
      * @return The unique identifier for the specified Elasticsearch domain.
      */
+
     public String getDomainId() {
         return this.domainId;
     }
@@ -147,6 +149,7 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ElasticsearchDomainStatus withDomainId(String domainId) {
         setDomainId(domainId);
         return this;
@@ -166,6 +169,7 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable {
      *        Domain names start with a letter or number and can contain the
      *        following characters: a-z (lowercase), 0-9, and - (hyphen).
      */
+
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
@@ -183,6 +187,7 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable {
      *         Domain names start with a letter or number and can contain the
      *         following characters: a-z (lowercase), 0-9, and - (hyphen).
      */
+
     public String getDomainName() {
         return this.domainName;
     }
@@ -203,6 +208,7 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ElasticsearchDomainStatus withDomainName(String domainName) {
         setDomainName(domainName);
         return this;
@@ -223,6 +229,7 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable {
      *        target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *        Identity and Access Management</i> for more information.
      */
+
     public void setARN(String aRN) {
         this.aRN = aRN;
     }
@@ -241,6 +248,7 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable {
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i> for more information.
      */
+
     public String getARN() {
         return this.aRN;
     }
@@ -262,6 +270,7 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ElasticsearchDomainStatus withARN(String aRN) {
         setARN(aRN);
         return this;
@@ -279,6 +288,7 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable {
      *        an Elasticsearch domain is complete. <code>False</code> if domain
      *        creation is still in progress.
      */
+
     public void setCreated(Boolean created) {
         this.created = created;
     }
@@ -294,6 +304,7 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable {
      *         an Elasticsearch domain is complete. <code>False</code> if domain
      *         creation is still in progress.
      */
+
     public Boolean getCreated() {
         return this.created;
     }
@@ -312,6 +323,7 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ElasticsearchDomainStatus withCreated(Boolean created) {
         setCreated(created);
         return this;
@@ -328,6 +340,7 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable {
      *         an Elasticsearch domain is complete. <code>False</code> if domain
      *         creation is still in progress.
      */
+
     public Boolean isCreated() {
         return this.created;
     }
@@ -347,6 +360,7 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable {
      *        Once domain deletion is complete, the status of the domain is no
      *        longer returned.
      */
+
     public void setDeleted(Boolean deleted) {
         this.deleted = deleted;
     }
@@ -365,6 +379,7 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable {
      *         Once domain deletion is complete, the status of the domain is no
      *         longer returned.
      */
+
     public Boolean getDeleted() {
         return this.deleted;
     }
@@ -386,6 +401,7 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ElasticsearchDomainStatus withDeleted(Boolean deleted) {
         setDeleted(deleted);
         return this;
@@ -405,6 +421,7 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable {
      *         Once domain deletion is complete, the status of the domain is no
      *         longer returned.
      */
+
     public Boolean isDeleted() {
         return this.deleted;
     }
@@ -419,6 +436,7 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable {
      *        The Elasticsearch domain endpoint that you use to submit index and
      *        search requests.
      */
+
     public void setEndpoint(String endpoint) {
         this.endpoint = endpoint;
     }
@@ -432,6 +450,7 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable {
      * @return The Elasticsearch domain endpoint that you use to submit index
      *         and search requests.
      */
+
     public String getEndpoint() {
         return this.endpoint;
     }
@@ -448,6 +467,7 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ElasticsearchDomainStatus withEndpoint(String endpoint) {
         setEndpoint(endpoint);
         return this;
@@ -466,6 +486,7 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable {
      *        configuration changes. <code>False</code> if the configuration is
      *        active.
      */
+
     public void setProcessing(Boolean processing) {
         this.processing = processing;
     }
@@ -482,6 +503,7 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable {
      *         configuration changes. <code>False</code> if the configuration is
      *         active.
      */
+
     public Boolean getProcessing() {
         return this.processing;
     }
@@ -501,6 +523,7 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ElasticsearchDomainStatus withProcessing(Boolean processing) {
         setProcessing(processing);
         return this;
@@ -518,6 +541,7 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable {
      *         configuration changes. <code>False</code> if the configuration is
      *         active.
      */
+
     public Boolean isProcessing() {
         return this.processing;
     }
@@ -530,6 +554,7 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable {
      * @param elasticsearchClusterConfig
      *        The type and number of instances in the domain cluster.
      */
+
     public void setElasticsearchClusterConfig(
             ElasticsearchClusterConfig elasticsearchClusterConfig) {
         this.elasticsearchClusterConfig = elasticsearchClusterConfig;
@@ -542,6 +567,7 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable {
      * 
      * @return The type and number of instances in the domain cluster.
      */
+
     public ElasticsearchClusterConfig getElasticsearchClusterConfig() {
         return this.elasticsearchClusterConfig;
     }
@@ -556,6 +582,7 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ElasticsearchDomainStatus withElasticsearchClusterConfig(
             ElasticsearchClusterConfig elasticsearchClusterConfig) {
         setElasticsearchClusterConfig(elasticsearchClusterConfig);
@@ -575,6 +602,7 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable {
      *        target="_blank">Configuring EBS-based Storage</a> for more
      *        information.
      */
+
     public void setEBSOptions(EBSOptions eBSOptions) {
         this.eBSOptions = eBSOptions;
     }
@@ -592,6 +620,7 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable {
      *         target="_blank">Configuring EBS-based Storage</a> for more
      *         information.
      */
+
     public EBSOptions getEBSOptions() {
         return this.eBSOptions;
     }
@@ -611,6 +640,7 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ElasticsearchDomainStatus withEBSOptions(EBSOptions eBSOptions) {
         setEBSOptions(eBSOptions);
         return this;
@@ -624,6 +654,7 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable {
      * @param accessPolicies
      *        IAM access policy as a JSON-formatted string.
      */
+
     public void setAccessPolicies(String accessPolicies) {
         this.accessPolicies = accessPolicies;
     }
@@ -635,6 +666,7 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable {
      * 
      * @return IAM access policy as a JSON-formatted string.
      */
+
     public String getAccessPolicies() {
         return this.accessPolicies;
     }
@@ -649,6 +681,7 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ElasticsearchDomainStatus withAccessPolicies(String accessPolicies) {
         setAccessPolicies(accessPolicies);
         return this;
@@ -662,6 +695,7 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable {
      * @param snapshotOptions
      *        Specifies the status of the <code>SnapshotOptions</code>
      */
+
     public void setSnapshotOptions(SnapshotOptions snapshotOptions) {
         this.snapshotOptions = snapshotOptions;
     }
@@ -673,6 +707,7 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable {
      * 
      * @return Specifies the status of the <code>SnapshotOptions</code>
      */
+
     public SnapshotOptions getSnapshotOptions() {
         return this.snapshotOptions;
     }
@@ -687,6 +722,7 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ElasticsearchDomainStatus withSnapshotOptions(
             SnapshotOptions snapshotOptions) {
         setSnapshotOptions(snapshotOptions);
@@ -700,6 +736,7 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable {
      * 
      * @return Specifies the status of the <code>AdvancedOptions</code>
      */
+
     public java.util.Map<String, String> getAdvancedOptions() {
         return advancedOptions;
     }
@@ -712,6 +749,7 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable {
      * @param advancedOptions
      *        Specifies the status of the <code>AdvancedOptions</code>
      */
+
     public void setAdvancedOptions(java.util.Map<String, String> advancedOptions) {
         this.advancedOptions = advancedOptions;
     }
@@ -726,6 +764,7 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ElasticsearchDomainStatus withAdvancedOptions(
             java.util.Map<String, String> advancedOptions) {
         setAdvancedOptions(advancedOptions);
@@ -748,6 +787,7 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable {
      * Removes all the entries added into AdvancedOptions. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public ElasticsearchDomainStatus clearAdvancedOptionsEntries() {
         this.advancedOptions = null;
         return this;

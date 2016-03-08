@@ -181,6 +181,7 @@ public class Playlist implements Serializable, Cloneable {
      *        playlists). If you include a file extension in <code>Name</code>,
      *        the file name will have two extensions.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -217,6 +218,7 @@ public class Playlist implements Serializable, Cloneable {
      *         playlists). If you include a file extension in <code>Name</code>,
      *         the file name will have two extensions.
      */
+
     public String getName() {
         return this.name;
     }
@@ -256,6 +258,7 @@ public class Playlist implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Playlist withName(String name) {
         setName(name);
         return this;
@@ -271,6 +274,7 @@ public class Playlist implements Serializable, Cloneable {
      *        The format of the output playlist. Valid formats include
      *        <code>HLSv3</code>, <code>HLSv4</code>, and <code>Smooth</code>.
      */
+
     public void setFormat(String format) {
         this.format = format;
     }
@@ -284,6 +288,7 @@ public class Playlist implements Serializable, Cloneable {
      * @return The format of the output playlist. Valid formats include
      *         <code>HLSv3</code>, <code>HLSv4</code>, and <code>Smooth</code>.
      */
+
     public String getFormat() {
         return this.format;
     }
@@ -300,6 +305,7 @@ public class Playlist implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Playlist withFormat(String format) {
         setFormat(format);
         return this;
@@ -431,6 +437,7 @@ public class Playlist implements Serializable, Cloneable {
      *         <code>Video:KeyframesMaxDist</code> ratio must be the same for
      *         all outputs.
      */
+
     public java.util.List<String> getOutputKeys() {
         if (outputKeys == null) {
             outputKeys = new com.amazonaws.internal.SdkInternalList<String>();
@@ -565,6 +572,7 @@ public class Playlist implements Serializable, Cloneable {
      *        <code>Video:KeyframesMaxDist</code> ratio must be the same for all
      *        outputs.
      */
+
     public void setOutputKeys(java.util.Collection<String> outputKeys) {
         if (outputKeys == null) {
             this.outputKeys = null;
@@ -710,6 +718,7 @@ public class Playlist implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Playlist withOutputKeys(String... outputKeys) {
         if (this.outputKeys == null) {
             setOutputKeys(new com.amazonaws.internal.SdkInternalList<String>(
@@ -850,6 +859,7 @@ public class Playlist implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Playlist withOutputKeys(java.util.Collection<String> outputKeys) {
         setOutputKeys(outputKeys);
         return this;
@@ -866,6 +876,7 @@ public class Playlist implements Serializable, Cloneable {
      *        Transcoder to apply to the output files associated with this
      *        playlist.
      */
+
     public void setHlsContentProtection(
             HlsContentProtection hlsContentProtection) {
         this.hlsContentProtection = hlsContentProtection;
@@ -881,6 +892,7 @@ public class Playlist implements Serializable, Cloneable {
      *         Elastic Transcoder to apply to the output files associated with
      *         this playlist.
      */
+
     public HlsContentProtection getHlsContentProtection() {
         return this.hlsContentProtection;
     }
@@ -898,6 +910,7 @@ public class Playlist implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Playlist withHlsContentProtection(
             HlsContentProtection hlsContentProtection) {
         setHlsContentProtection(hlsContentProtection);
@@ -914,6 +927,7 @@ public class Playlist implements Serializable, Cloneable {
      *        The DRM settings, if any, that you want Elastic Transcoder to
      *        apply to the output files associated with this playlist.
      */
+
     public void setPlayReadyDrm(PlayReadyDrm playReadyDrm) {
         this.playReadyDrm = playReadyDrm;
     }
@@ -927,6 +941,7 @@ public class Playlist implements Serializable, Cloneable {
      * @return The DRM settings, if any, that you want Elastic Transcoder to
      *         apply to the output files associated with this playlist.
      */
+
     public PlayReadyDrm getPlayReadyDrm() {
         return this.playReadyDrm;
     }
@@ -943,6 +958,7 @@ public class Playlist implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Playlist withPlayReadyDrm(PlayReadyDrm playReadyDrm) {
         setPlayReadyDrm(playReadyDrm);
         return this;
@@ -956,6 +972,7 @@ public class Playlist implements Serializable, Cloneable {
      * @param status
      *        The status of the job with which the playlist is associated.
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -967,6 +984,7 @@ public class Playlist implements Serializable, Cloneable {
      * 
      * @return The status of the job with which the playlist is associated.
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -981,6 +999,7 @@ public class Playlist implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Playlist withStatus(String status) {
         setStatus(status);
         return this;
@@ -994,6 +1013,7 @@ public class Playlist implements Serializable, Cloneable {
      * @param statusDetail
      *        Information that further explains the status.
      */
+
     public void setStatusDetail(String statusDetail) {
         this.statusDetail = statusDetail;
     }
@@ -1005,6 +1025,7 @@ public class Playlist implements Serializable, Cloneable {
      * 
      * @return Information that further explains the status.
      */
+
     public String getStatusDetail() {
         return this.statusDetail;
     }
@@ -1019,6 +1040,7 @@ public class Playlist implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Playlist withStatusDetail(String statusDetail) {
         setStatusDetail(statusDetail);
         return this;

@@ -67,6 +67,7 @@ public class DeleteIdentityPolicyRequest extends AmazonWebServiceRequest
      *        <p>
      *        To successfully call this API, you must own the identity.
      */
+
     public void setIdentity(String identity) {
         this.identity = identity;
     }
@@ -92,6 +93,7 @@ public class DeleteIdentityPolicyRequest extends AmazonWebServiceRequest
      *         <p>
      *         To successfully call this API, you must own the identity.
      */
+
     public String getIdentity() {
         return this.identity;
     }
@@ -120,6 +122,7 @@ public class DeleteIdentityPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteIdentityPolicyRequest withIdentity(String identity) {
         setIdentity(identity);
         return this;
@@ -133,6 +136,7 @@ public class DeleteIdentityPolicyRequest extends AmazonWebServiceRequest
      * @param policyName
      *        The name of the policy to be deleted.
      */
+
     public void setPolicyName(String policyName) {
         this.policyName = policyName;
     }
@@ -144,6 +148,7 @@ public class DeleteIdentityPolicyRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the policy to be deleted.
      */
+
     public String getPolicyName() {
         return this.policyName;
     }
@@ -158,6 +163,7 @@ public class DeleteIdentityPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteIdentityPolicyRequest withPolicyName(String policyName) {
         setPolicyName(policyName);
         return this;

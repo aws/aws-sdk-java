@@ -42,6 +42,7 @@ public class ListThingPrincipalsRequest extends AmazonWebServiceRequest
      * @param thingName
      *        The name of the thing.
      */
+
     public void setThingName(String thingName) {
         this.thingName = thingName;
     }
@@ -53,6 +54,7 @@ public class ListThingPrincipalsRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the thing.
      */
+
     public String getThingName() {
         return this.thingName;
     }
@@ -67,6 +69,7 @@ public class ListThingPrincipalsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListThingPrincipalsRequest withThingName(String thingName) {
         setThingName(thingName);
         return this;

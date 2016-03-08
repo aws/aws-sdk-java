@@ -69,6 +69,7 @@ public class GetUserPolicyRequest extends AmazonWebServiceRequest implements
      * @param userName
      *        The name of the user who the policy is associated with.
      */
+
     public void setUserName(String userName) {
         this.userName = userName;
     }
@@ -80,6 +81,7 @@ public class GetUserPolicyRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the user who the policy is associated with.
      */
+
     public String getUserName() {
         return this.userName;
     }
@@ -94,6 +96,7 @@ public class GetUserPolicyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetUserPolicyRequest withUserName(String userName) {
         setUserName(userName);
         return this;
@@ -107,6 +110,7 @@ public class GetUserPolicyRequest extends AmazonWebServiceRequest implements
      * @param policyName
      *        The name of the policy document to get.
      */
+
     public void setPolicyName(String policyName) {
         this.policyName = policyName;
     }
@@ -118,6 +122,7 @@ public class GetUserPolicyRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the policy document to get.
      */
+
     public String getPolicyName() {
         return this.policyName;
     }
@@ -132,6 +137,7 @@ public class GetUserPolicyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetUserPolicyRequest withPolicyName(String policyName) {
         setPolicyName(policyName);
         return this;

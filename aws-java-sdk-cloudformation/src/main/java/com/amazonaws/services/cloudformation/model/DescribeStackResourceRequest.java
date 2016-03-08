@@ -77,6 +77,7 @@ public class DescribeStackResourceRequest extends AmazonWebServiceRequest
      *        <p>
      *        Default: There is no default value.
      */
+
     public void setStackName(String stackName) {
         this.stackName = stackName;
     }
@@ -105,6 +106,7 @@ public class DescribeStackResourceRequest extends AmazonWebServiceRequest
      *         <p>
      *         Default: There is no default value.
      */
+
     public String getStackName() {
         return this.stackName;
     }
@@ -136,6 +138,7 @@ public class DescribeStackResourceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeStackResourceRequest withStackName(String stackName) {
         setStackName(stackName);
         return this;
@@ -154,6 +157,7 @@ public class DescribeStackResourceRequest extends AmazonWebServiceRequest
      *        <p>
      *        Default: There is no default value.
      */
+
     public void setLogicalResourceId(String logicalResourceId) {
         this.logicalResourceId = logicalResourceId;
     }
@@ -171,6 +175,7 @@ public class DescribeStackResourceRequest extends AmazonWebServiceRequest
      *         <p>
      *         Default: There is no default value.
      */
+
     public String getLogicalResourceId() {
         return this.logicalResourceId;
     }
@@ -190,6 +195,7 @@ public class DescribeStackResourceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeStackResourceRequest withLogicalResourceId(
             String logicalResourceId) {
         setLogicalResourceId(logicalResourceId);

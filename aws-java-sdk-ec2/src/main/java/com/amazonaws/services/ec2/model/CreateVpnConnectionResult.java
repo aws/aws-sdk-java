@@ -38,6 +38,7 @@ public class CreateVpnConnectionResult implements Serializable, Cloneable {
      * @param vpnConnection
      *        Information about the VPN connection.
      */
+
     public void setVpnConnection(VpnConnection vpnConnection) {
         this.vpnConnection = vpnConnection;
     }
@@ -49,6 +50,7 @@ public class CreateVpnConnectionResult implements Serializable, Cloneable {
      * 
      * @return Information about the VPN connection.
      */
+
     public VpnConnection getVpnConnection() {
         return this.vpnConnection;
     }
@@ -63,6 +65,7 @@ public class CreateVpnConnectionResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateVpnConnectionResult withVpnConnection(
             VpnConnection vpnConnection) {
         setVpnConnection(vpnConnection);

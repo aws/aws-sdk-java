@@ -54,6 +54,7 @@ public class DeleteSizeConstraintSetRequest extends AmazonWebServiceRequest
      *        <a>CreateSizeConstraintSet</a> and by
      *        <a>ListSizeConstraintSets</a>.
      */
+
     public void setSizeConstraintSetId(String sizeConstraintSetId) {
         this.sizeConstraintSetId = sizeConstraintSetId;
     }
@@ -71,6 +72,7 @@ public class DeleteSizeConstraintSetRequest extends AmazonWebServiceRequest
      *         <a>CreateSizeConstraintSet</a> and by
      *         <a>ListSizeConstraintSets</a>.
      */
+
     public String getSizeConstraintSetId() {
         return this.sizeConstraintSetId;
     }
@@ -91,6 +93,7 @@ public class DeleteSizeConstraintSetRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteSizeConstraintSetRequest withSizeConstraintSetId(
             String sizeConstraintSetId) {
         setSizeConstraintSetId(sizeConstraintSetId);
@@ -106,6 +109,7 @@ public class DeleteSizeConstraintSetRequest extends AmazonWebServiceRequest
      *        The value returned by the most recent call to
      *        <a>GetChangeToken</a>.
      */
+
     public void setChangeToken(String changeToken) {
         this.changeToken = changeToken;
     }
@@ -118,6 +122,7 @@ public class DeleteSizeConstraintSetRequest extends AmazonWebServiceRequest
      * @return The value returned by the most recent call to
      *         <a>GetChangeToken</a>.
      */
+
     public String getChangeToken() {
         return this.changeToken;
     }
@@ -133,6 +138,7 @@ public class DeleteSizeConstraintSetRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteSizeConstraintSetRequest withChangeToken(String changeToken) {
         setChangeToken(changeToken);
         return this;

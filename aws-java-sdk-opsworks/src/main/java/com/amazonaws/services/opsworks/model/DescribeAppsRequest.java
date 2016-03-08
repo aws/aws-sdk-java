@@ -52,6 +52,7 @@ public class DescribeAppsRequest extends AmazonWebServiceRequest implements
      *        <code>DescribeApps</code> returns a description of the apps in the
      *        specified stack.
      */
+
     public void setStackId(String stackId) {
         this.stackId = stackId;
     }
@@ -66,6 +67,7 @@ public class DescribeAppsRequest extends AmazonWebServiceRequest implements
      *         <code>DescribeApps</code> returns a description of the apps in
      *         the specified stack.
      */
+
     public String getStackId() {
         return this.stackId;
     }
@@ -83,6 +85,7 @@ public class DescribeAppsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAppsRequest withStackId(String stackId) {
         setStackId(stackId);
         return this;
@@ -99,6 +102,7 @@ public class DescribeAppsRequest extends AmazonWebServiceRequest implements
      *         parameter, <code>DescribeApps</code> returns a description of the
      *         specified apps. Otherwise, it returns a description of every app.
      */
+
     public java.util.List<String> getAppIds() {
         if (appIds == null) {
             appIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -118,6 +122,7 @@ public class DescribeAppsRequest extends AmazonWebServiceRequest implements
      *        parameter, <code>DescribeApps</code> returns a description of the
      *        specified apps. Otherwise, it returns a description of every app.
      */
+
     public void setAppIds(java.util.Collection<String> appIds) {
         if (appIds == null) {
             this.appIds = null;
@@ -147,6 +152,7 @@ public class DescribeAppsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAppsRequest withAppIds(String... appIds) {
         if (this.appIds == null) {
             setAppIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -172,6 +178,7 @@ public class DescribeAppsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAppsRequest withAppIds(java.util.Collection<String> appIds) {
         setAppIds(appIds);
         return this;

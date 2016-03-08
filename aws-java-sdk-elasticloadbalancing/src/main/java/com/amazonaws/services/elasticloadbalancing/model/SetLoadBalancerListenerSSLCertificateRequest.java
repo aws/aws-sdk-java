@@ -80,6 +80,7 @@ public class SetLoadBalancerListenerSSLCertificateRequest extends
      * @param loadBalancerName
      *        The name of the load balancer.
      */
+
     public void setLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
     }
@@ -91,6 +92,7 @@ public class SetLoadBalancerListenerSSLCertificateRequest extends
      * 
      * @return The name of the load balancer.
      */
+
     public String getLoadBalancerName() {
         return this.loadBalancerName;
     }
@@ -105,6 +107,7 @@ public class SetLoadBalancerListenerSSLCertificateRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetLoadBalancerListenerSSLCertificateRequest withLoadBalancerName(
             String loadBalancerName) {
         setLoadBalancerName(loadBalancerName);
@@ -119,6 +122,7 @@ public class SetLoadBalancerListenerSSLCertificateRequest extends
      * @param loadBalancerPort
      *        The port that uses the specified SSL certificate.
      */
+
     public void setLoadBalancerPort(Integer loadBalancerPort) {
         this.loadBalancerPort = loadBalancerPort;
     }
@@ -130,6 +134,7 @@ public class SetLoadBalancerListenerSSLCertificateRequest extends
      * 
      * @return The port that uses the specified SSL certificate.
      */
+
     public Integer getLoadBalancerPort() {
         return this.loadBalancerPort;
     }
@@ -144,6 +149,7 @@ public class SetLoadBalancerListenerSSLCertificateRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetLoadBalancerListenerSSLCertificateRequest withLoadBalancerPort(
             Integer loadBalancerPort) {
         setLoadBalancerPort(loadBalancerPort);
@@ -158,6 +164,7 @@ public class SetLoadBalancerListenerSSLCertificateRequest extends
      * @param sSLCertificateId
      *        The Amazon Resource Name (ARN) of the SSL certificate.
      */
+
     public void setSSLCertificateId(String sSLCertificateId) {
         this.sSLCertificateId = sSLCertificateId;
     }
@@ -169,6 +176,7 @@ public class SetLoadBalancerListenerSSLCertificateRequest extends
      * 
      * @return The Amazon Resource Name (ARN) of the SSL certificate.
      */
+
     public String getSSLCertificateId() {
         return this.sSLCertificateId;
     }
@@ -183,6 +191,7 @@ public class SetLoadBalancerListenerSSLCertificateRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetLoadBalancerListenerSSLCertificateRequest withSSLCertificateId(
             String sSLCertificateId) {
         setSSLCertificateId(sSLCertificateId);

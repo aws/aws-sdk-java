@@ -51,6 +51,7 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest implements
      *         <i>AutoScalingGroupName</i>, key=<i>value</i>,
      *         value=<i>value</i>, propagate=<i>true</i> or <i>false</i>.
      */
+
     public java.util.List<Tag> getTags() {
         if (tags == null) {
             tags = new com.amazonaws.internal.SdkInternalList<Tag>();
@@ -74,6 +75,7 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest implements
      *        <i>AutoScalingGroupName</i>, key=<i>value</i>, value=<i>value</i>,
      *        propagate=<i>true</i> or <i>false</i>.
      */
+
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
             this.tags = null;
@@ -107,6 +109,7 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteTagsRequest withTags(Tag... tags) {
         if (this.tags == null) {
             setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
@@ -135,6 +138,7 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteTagsRequest withTags(java.util.Collection<Tag> tags) {
         setTags(tags);
         return this;

@@ -77,6 +77,7 @@ public class ListTaskDefinitionFamiliesRequest extends AmazonWebServiceRequest
      *        names that begin with the <code>familyPrefix</code> string are
      *        returned.
      */
+
     public void setFamilyPrefix(String familyPrefix) {
         this.familyPrefix = familyPrefix;
     }
@@ -95,6 +96,7 @@ public class ListTaskDefinitionFamiliesRequest extends AmazonWebServiceRequest
      *         names that begin with the <code>familyPrefix</code> string are
      *         returned.
      */
+
     public String getFamilyPrefix() {
         return this.familyPrefix;
     }
@@ -116,6 +118,7 @@ public class ListTaskDefinitionFamiliesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTaskDefinitionFamiliesRequest withFamilyPrefix(
             String familyPrefix) {
         setFamilyPrefix(familyPrefix);
@@ -141,6 +144,7 @@ public class ListTaskDefinitionFamiliesRequest extends AmazonWebServiceRequest
      *        This value is <code>null</code> when there are no more results to
      *        return.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -163,6 +167,7 @@ public class ListTaskDefinitionFamiliesRequest extends AmazonWebServiceRequest
      *         This value is <code>null</code> when there are no more results to
      *         return.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -188,6 +193,7 @@ public class ListTaskDefinitionFamiliesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTaskDefinitionFamiliesRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -221,6 +227,7 @@ public class ListTaskDefinitionFamiliesRequest extends AmazonWebServiceRequest
      *        <code>ListTaskDefinitionFamilies</code> returns up to 100 results
      *        and a <code>nextToken</code> value if applicable.
      */
+
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
     }
@@ -252,6 +259,7 @@ public class ListTaskDefinitionFamiliesRequest extends AmazonWebServiceRequest
      *         <code>ListTaskDefinitionFamilies</code> returns up to 100 results
      *         and a <code>nextToken</code> value if applicable.
      */
+
     public Integer getMaxResults() {
         return this.maxResults;
     }
@@ -286,6 +294,7 @@ public class ListTaskDefinitionFamiliesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTaskDefinitionFamiliesRequest withMaxResults(Integer maxResults) {
         setMaxResults(maxResults);
         return this;

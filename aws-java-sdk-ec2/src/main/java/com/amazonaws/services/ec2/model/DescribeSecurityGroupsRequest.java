@@ -167,6 +167,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest
      *         <p>
      *         Default: Describes all your security groups.
      */
+
     public java.util.List<String> getGroupNames() {
         if (groupNames == null) {
             groupNames = new com.amazonaws.internal.SdkInternalList<String>();
@@ -194,6 +195,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest
      *        <p>
      *        Default: Describes all your security groups.
      */
+
     public void setGroupNames(java.util.Collection<String> groupNames) {
         if (groupNames == null) {
             this.groupNames = null;
@@ -232,6 +234,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSecurityGroupsRequest withGroupNames(String... groupNames) {
         if (this.groupNames == null) {
             setGroupNames(new com.amazonaws.internal.SdkInternalList<String>(
@@ -265,6 +268,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSecurityGroupsRequest withGroupNames(
             java.util.Collection<String> groupNames) {
         setGroupNames(groupNames);
@@ -285,6 +289,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest
      *         <p>
      *         Default: Describes all your security groups.
      */
+
     public java.util.List<String> getGroupIds() {
         if (groupIds == null) {
             groupIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -307,6 +312,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest
      *        <p>
      *        Default: Describes all your security groups.
      */
+
     public void setGroupIds(java.util.Collection<String> groupIds) {
         if (groupIds == null) {
             this.groupIds = null;
@@ -340,6 +346,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSecurityGroupsRequest withGroupIds(String... groupIds) {
         if (this.groupIds == null) {
             setGroupIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -368,6 +375,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSecurityGroupsRequest withGroupIds(
             java.util.Collection<String> groupIds) {
         setGroupIds(groupIds);
@@ -564,6 +572,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest
      *         </p>
      *         </li>
      */
+
     public java.util.List<Filter> getFilters() {
         if (filters == null) {
             filters = new com.amazonaws.internal.SdkInternalList<Filter>();
@@ -761,6 +770,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest
      *        </p>
      *        </li>
      */
+
     public void setFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
             this.filters = null;
@@ -969,6 +979,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSecurityGroupsRequest withFilters(Filter... filters) {
         if (this.filters == null) {
             setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(
@@ -1172,6 +1183,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSecurityGroupsRequest withFilters(
             java.util.Collection<Filter> filters) {
         setFilters(filters);

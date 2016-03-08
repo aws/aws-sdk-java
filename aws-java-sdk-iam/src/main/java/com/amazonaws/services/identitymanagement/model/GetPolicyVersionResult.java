@@ -54,6 +54,7 @@ public class GetPolicyVersionResult implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html"
      *        >Versioning for Managed Policies</a> in the <i>IAM User Guide</i>.
      */
+
     public void setPolicyVersion(PolicyVersion policyVersion) {
         this.policyVersion = policyVersion;
     }
@@ -75,6 +76,7 @@ public class GetPolicyVersionResult implements Serializable, Cloneable {
      *         >Versioning for Managed Policies</a> in the <i>IAM User
      *         Guide</i>.
      */
+
     public PolicyVersion getPolicyVersion() {
         return this.policyVersion;
     }
@@ -98,6 +100,7 @@ public class GetPolicyVersionResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetPolicyVersionResult withPolicyVersion(PolicyVersion policyVersion) {
         setPolicyVersion(policyVersion);
         return this;

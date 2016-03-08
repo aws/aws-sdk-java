@@ -65,6 +65,7 @@ public class NetworkInterfaceAssociation implements Serializable, Cloneable {
      *        The address of the Elastic IP address bound to the network
      *        interface.
      */
+
     public void setPublicIp(String publicIp) {
         this.publicIp = publicIp;
     }
@@ -77,6 +78,7 @@ public class NetworkInterfaceAssociation implements Serializable, Cloneable {
      * @return The address of the Elastic IP address bound to the network
      *         interface.
      */
+
     public String getPublicIp() {
         return this.publicIp;
     }
@@ -92,6 +94,7 @@ public class NetworkInterfaceAssociation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NetworkInterfaceAssociation withPublicIp(String publicIp) {
         setPublicIp(publicIp);
         return this;
@@ -105,6 +108,7 @@ public class NetworkInterfaceAssociation implements Serializable, Cloneable {
      * @param publicDnsName
      *        The public DNS name.
      */
+
     public void setPublicDnsName(String publicDnsName) {
         this.publicDnsName = publicDnsName;
     }
@@ -116,6 +120,7 @@ public class NetworkInterfaceAssociation implements Serializable, Cloneable {
      * 
      * @return The public DNS name.
      */
+
     public String getPublicDnsName() {
         return this.publicDnsName;
     }
@@ -130,6 +135,7 @@ public class NetworkInterfaceAssociation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NetworkInterfaceAssociation withPublicDnsName(String publicDnsName) {
         setPublicDnsName(publicDnsName);
         return this;
@@ -143,6 +149,7 @@ public class NetworkInterfaceAssociation implements Serializable, Cloneable {
      * @param ipOwnerId
      *        The ID of the Elastic IP address owner.
      */
+
     public void setIpOwnerId(String ipOwnerId) {
         this.ipOwnerId = ipOwnerId;
     }
@@ -154,6 +161,7 @@ public class NetworkInterfaceAssociation implements Serializable, Cloneable {
      * 
      * @return The ID of the Elastic IP address owner.
      */
+
     public String getIpOwnerId() {
         return this.ipOwnerId;
     }
@@ -168,6 +176,7 @@ public class NetworkInterfaceAssociation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NetworkInterfaceAssociation withIpOwnerId(String ipOwnerId) {
         setIpOwnerId(ipOwnerId);
         return this;
@@ -181,6 +190,7 @@ public class NetworkInterfaceAssociation implements Serializable, Cloneable {
      * @param allocationId
      *        The allocation ID.
      */
+
     public void setAllocationId(String allocationId) {
         this.allocationId = allocationId;
     }
@@ -192,6 +202,7 @@ public class NetworkInterfaceAssociation implements Serializable, Cloneable {
      * 
      * @return The allocation ID.
      */
+
     public String getAllocationId() {
         return this.allocationId;
     }
@@ -206,6 +217,7 @@ public class NetworkInterfaceAssociation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NetworkInterfaceAssociation withAllocationId(String allocationId) {
         setAllocationId(allocationId);
         return this;
@@ -219,6 +231,7 @@ public class NetworkInterfaceAssociation implements Serializable, Cloneable {
      * @param associationId
      *        The association ID.
      */
+
     public void setAssociationId(String associationId) {
         this.associationId = associationId;
     }
@@ -230,6 +243,7 @@ public class NetworkInterfaceAssociation implements Serializable, Cloneable {
      * 
      * @return The association ID.
      */
+
     public String getAssociationId() {
         return this.associationId;
     }
@@ -244,6 +258,7 @@ public class NetworkInterfaceAssociation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NetworkInterfaceAssociation withAssociationId(String associationId) {
         setAssociationId(associationId);
         return this;

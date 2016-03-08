@@ -100,6 +100,7 @@ public class LambdaAction implements Serializable, Cloneable {
      *        href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html"
      *        >Amazon SNS Developer Guide</a>.
      */
+
     public void setTopicArn(String topicArn) {
         this.topicArn = topicArn;
     }
@@ -122,6 +123,7 @@ public class LambdaAction implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html"
      *         >Amazon SNS Developer Guide</a>.
      */
+
     public String getTopicArn() {
         return this.topicArn;
     }
@@ -146,6 +148,7 @@ public class LambdaAction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LambdaAction withTopicArn(String topicArn) {
         setTopicArn(topicArn);
         return this;
@@ -169,6 +172,7 @@ public class LambdaAction implements Serializable, Cloneable {
      *        href="http://docs.aws.amazon.com/lambda/latest/dg/welcome.html"
      *        >AWS Lambda Developer Guide</a>.
      */
+
     public void setFunctionArn(String functionArn) {
         this.functionArn = functionArn;
     }
@@ -190,6 +194,7 @@ public class LambdaAction implements Serializable, Cloneable {
      *         href="http://docs.aws.amazon.com/lambda/latest/dg/welcome.html"
      *         >AWS Lambda Developer Guide</a>.
      */
+
     public String getFunctionArn() {
         return this.functionArn;
     }
@@ -214,6 +219,7 @@ public class LambdaAction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LambdaAction withFunctionArn(String functionArn) {
         setFunctionArn(functionArn);
         return this;
@@ -252,6 +258,7 @@ public class LambdaAction implements Serializable, Cloneable {
      *        receipt rule set.
      * @see InvocationType
      */
+
     public void setInvocationType(String invocationType) {
         this.invocationType = invocationType;
     }
@@ -288,6 +295,7 @@ public class LambdaAction implements Serializable, Cloneable {
      *         receipt rule set.
      * @see InvocationType
      */
+
     public String getInvocationType() {
         return this.invocationType;
     }
@@ -327,6 +335,7 @@ public class LambdaAction implements Serializable, Cloneable {
      *         chained together.
      * @see InvocationType
      */
+
     public LambdaAction withInvocationType(String invocationType) {
         setInvocationType(invocationType);
         return this;
@@ -367,6 +376,7 @@ public class LambdaAction implements Serializable, Cloneable {
      *         chained together.
      * @see InvocationType
      */
+
     public void setInvocationType(InvocationType invocationType) {
         this.invocationType = invocationType.toString();
     }
@@ -406,6 +416,7 @@ public class LambdaAction implements Serializable, Cloneable {
      *         chained together.
      * @see InvocationType
      */
+
     public LambdaAction withInvocationType(InvocationType invocationType) {
         setInvocationType(invocationType);
         return this;

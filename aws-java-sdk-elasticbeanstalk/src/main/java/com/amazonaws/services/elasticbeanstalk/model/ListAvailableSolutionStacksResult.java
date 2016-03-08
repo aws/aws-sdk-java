@@ -47,6 +47,7 @@ public class ListAvailableSolutionStacksResult implements Serializable,
      * 
      * @return A list of available solution stacks.
      */
+
     public java.util.List<String> getSolutionStacks() {
         if (solutionStacks == null) {
             solutionStacks = new com.amazonaws.internal.SdkInternalList<String>();
@@ -62,6 +63,7 @@ public class ListAvailableSolutionStacksResult implements Serializable,
      * @param solutionStacks
      *        A list of available solution stacks.
      */
+
     public void setSolutionStacks(java.util.Collection<String> solutionStacks) {
         if (solutionStacks == null) {
             this.solutionStacks = null;
@@ -88,6 +90,7 @@ public class ListAvailableSolutionStacksResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListAvailableSolutionStacksResult withSolutionStacks(
             String... solutionStacks) {
         if (this.solutionStacks == null) {
@@ -110,6 +113,7 @@ public class ListAvailableSolutionStacksResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListAvailableSolutionStacksResult withSolutionStacks(
             java.util.Collection<String> solutionStacks) {
         setSolutionStacks(solutionStacks);
@@ -125,6 +129,7 @@ public class ListAvailableSolutionStacksResult implements Serializable,
      * @return A list of available solution stacks and their
      *         <a>SolutionStackDescription</a>.
      */
+
     public java.util.List<SolutionStackDescription> getSolutionStackDetails() {
         if (solutionStackDetails == null) {
             solutionStackDetails = new com.amazonaws.internal.SdkInternalList<SolutionStackDescription>();
@@ -142,6 +147,7 @@ public class ListAvailableSolutionStacksResult implements Serializable,
      *        A list of available solution stacks and their
      *        <a>SolutionStackDescription</a>.
      */
+
     public void setSolutionStackDetails(
             java.util.Collection<SolutionStackDescription> solutionStackDetails) {
         if (solutionStackDetails == null) {
@@ -171,6 +177,7 @@ public class ListAvailableSolutionStacksResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListAvailableSolutionStacksResult withSolutionStackDetails(
             SolutionStackDescription... solutionStackDetails) {
         if (this.solutionStackDetails == null) {
@@ -195,6 +202,7 @@ public class ListAvailableSolutionStacksResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListAvailableSolutionStacksResult withSolutionStackDetails(
             java.util.Collection<SolutionStackDescription> solutionStackDetails) {
         setSolutionStackDetails(solutionStackDetails);

@@ -60,6 +60,7 @@ public class ReceiptIpFilter implements Serializable, Cloneable {
      *        specified IP addresses.
      * @see ReceiptFilterPolicy
      */
+
     public void setPolicy(String policy) {
         this.policy = policy;
     }
@@ -74,6 +75,7 @@ public class ReceiptIpFilter implements Serializable, Cloneable {
      *         specified IP addresses.
      * @see ReceiptFilterPolicy
      */
+
     public String getPolicy() {
         return this.policy;
     }
@@ -91,6 +93,7 @@ public class ReceiptIpFilter implements Serializable, Cloneable {
      *         chained together.
      * @see ReceiptFilterPolicy
      */
+
     public ReceiptIpFilter withPolicy(String policy) {
         setPolicy(policy);
         return this;
@@ -109,6 +112,7 @@ public class ReceiptIpFilter implements Serializable, Cloneable {
      *         chained together.
      * @see ReceiptFilterPolicy
      */
+
     public void setPolicy(ReceiptFilterPolicy policy) {
         this.policy = policy.toString();
     }
@@ -126,6 +130,7 @@ public class ReceiptIpFilter implements Serializable, Cloneable {
      *         chained together.
      * @see ReceiptFilterPolicy
      */
+
     public ReceiptIpFilter withPolicy(ReceiptFilterPolicy policy) {
         setPolicy(policy);
         return this;
@@ -148,6 +153,7 @@ public class ReceiptIpFilter implements Serializable, Cloneable {
      *        information about CIDR notation, see <a
      *        href="https://tools.ietf.org/html/rfc2317">RFC 2317</a>.
      */
+
     public void setCidr(String cidr) {
         this.cidr = cidr;
     }
@@ -168,6 +174,7 @@ public class ReceiptIpFilter implements Serializable, Cloneable {
      *         For more information about CIDR notation, see <a
      *         href="https://tools.ietf.org/html/rfc2317">RFC 2317</a>.
      */
+
     public String getCidr() {
         return this.cidr;
     }
@@ -191,6 +198,7 @@ public class ReceiptIpFilter implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReceiptIpFilter withCidr(String cidr) {
         setCidr(cidr);
         return this;

@@ -47,6 +47,7 @@ public class ListTestsResult implements Serializable, Cloneable {
      * 
      * @return Information about the tests.
      */
+
     public java.util.List<Test> getTests() {
         return tests;
     }
@@ -59,6 +60,7 @@ public class ListTestsResult implements Serializable, Cloneable {
      * @param tests
      *        Information about the tests.
      */
+
     public void setTests(java.util.Collection<Test> tests) {
         if (tests == null) {
             this.tests = null;
@@ -84,6 +86,7 @@ public class ListTestsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTestsResult withTests(Test... tests) {
         if (this.tests == null) {
             setTests(new java.util.ArrayList<Test>(tests.length));
@@ -104,6 +107,7 @@ public class ListTestsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTestsResult withTests(java.util.Collection<Test> tests) {
         setTests(tests);
         return this;
@@ -122,6 +126,7 @@ public class ListTestsResult implements Serializable, Cloneable {
      *        a subsequent call to this operation to return the next set of
      *        items in the list.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -138,6 +143,7 @@ public class ListTestsResult implements Serializable, Cloneable {
      *         a subsequent call to this operation to return the next set of
      *         items in the list.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -157,6 +163,7 @@ public class ListTestsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTestsResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

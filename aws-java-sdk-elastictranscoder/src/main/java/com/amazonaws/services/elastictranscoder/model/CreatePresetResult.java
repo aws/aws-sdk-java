@@ -53,6 +53,7 @@ public class CreatePresetResult implements Serializable, Cloneable {
      *        A section of the response body that provides information about the
      *        preset that is created.
      */
+
     public void setPreset(Preset preset) {
         this.preset = preset;
     }
@@ -66,6 +67,7 @@ public class CreatePresetResult implements Serializable, Cloneable {
      * @return A section of the response body that provides information about
      *         the preset that is created.
      */
+
     public Preset getPreset() {
         return this.preset;
     }
@@ -82,6 +84,7 @@ public class CreatePresetResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePresetResult withPreset(Preset preset) {
         setPreset(preset);
         return this;
@@ -103,6 +106,7 @@ public class CreatePresetResult implements Serializable, Cloneable {
      *        standard. Elastic Transcoder created the preset because the
      *        settings might produce acceptable output.
      */
+
     public void setWarning(String warning) {
         this.warning = warning;
     }
@@ -122,6 +126,7 @@ public class CreatePresetResult implements Serializable, Cloneable {
      *         standard. Elastic Transcoder created the preset because the
      *         settings might produce acceptable output.
      */
+
     public String getWarning() {
         return this.warning;
     }
@@ -144,6 +149,7 @@ public class CreatePresetResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePresetResult withWarning(String warning) {
         setWarning(warning);
         return this;

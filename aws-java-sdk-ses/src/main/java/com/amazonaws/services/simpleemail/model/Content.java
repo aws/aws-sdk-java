@@ -70,6 +70,7 @@ public class Content implements Serializable, Cloneable {
      * @param data
      *        The textual data of the content.
      */
+
     public void setData(String data) {
         this.data = data;
     }
@@ -81,6 +82,7 @@ public class Content implements Serializable, Cloneable {
      * 
      * @return The textual data of the content.
      */
+
     public String getData() {
         return this.data;
     }
@@ -95,6 +97,7 @@ public class Content implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Content withData(String data) {
         setData(data);
         return this;
@@ -108,6 +111,7 @@ public class Content implements Serializable, Cloneable {
      * @param charset
      *        The character set of the content.
      */
+
     public void setCharset(String charset) {
         this.charset = charset;
     }
@@ -119,6 +123,7 @@ public class Content implements Serializable, Cloneable {
      * 
      * @return The character set of the content.
      */
+
     public String getCharset() {
         return this.charset;
     }
@@ -133,6 +138,7 @@ public class Content implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Content withCharset(String charset) {
         setCharset(charset);
         return this;

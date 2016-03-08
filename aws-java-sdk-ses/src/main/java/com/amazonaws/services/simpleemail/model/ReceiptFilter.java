@@ -70,6 +70,7 @@ public class ReceiptFilter implements Serializable, Cloneable {
      *        <li>Start and end with a letter or number.</li>
      *        <li>Contain less than 64 characters.</li>
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -92,6 +93,7 @@ public class ReceiptFilter implements Serializable, Cloneable {
      *         <li>Start and end with a letter or number.</li>
      *         <li>Contain less than 64 characters.</li>
      */
+
     public String getName() {
         return this.name;
     }
@@ -117,6 +119,7 @@ public class ReceiptFilter implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReceiptFilter withName(String name) {
         setName(name);
         return this;
@@ -132,6 +135,7 @@ public class ReceiptFilter implements Serializable, Cloneable {
      *        A structure that provides the IP addresses to block or allow, and
      *        whether to block or allow incoming mail from them.
      */
+
     public void setIpFilter(ReceiptIpFilter ipFilter) {
         this.ipFilter = ipFilter;
     }
@@ -145,6 +149,7 @@ public class ReceiptFilter implements Serializable, Cloneable {
      * @return A structure that provides the IP addresses to block or allow, and
      *         whether to block or allow incoming mail from them.
      */
+
     public ReceiptIpFilter getIpFilter() {
         return this.ipFilter;
     }
@@ -161,6 +166,7 @@ public class ReceiptFilter implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReceiptFilter withIpFilter(ReceiptIpFilter ipFilter) {
         setIpFilter(ipFilter);
         return this;

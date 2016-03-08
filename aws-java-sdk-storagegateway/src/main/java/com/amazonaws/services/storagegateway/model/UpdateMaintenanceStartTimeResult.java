@@ -32,6 +32,7 @@ public class UpdateMaintenanceStartTimeResult implements Serializable,
     /**
      * @param gatewayARN
      */
+
     public void setGatewayARN(String gatewayARN) {
         this.gatewayARN = gatewayARN;
     }
@@ -39,6 +40,7 @@ public class UpdateMaintenanceStartTimeResult implements Serializable,
     /**
      * @return
      */
+
     public String getGatewayARN() {
         return this.gatewayARN;
     }
@@ -48,6 +50,7 @@ public class UpdateMaintenanceStartTimeResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateMaintenanceStartTimeResult withGatewayARN(String gatewayARN) {
         setGatewayARN(gatewayARN);
         return this;

@@ -31,6 +31,7 @@ public class DeleteInterconnectResult implements Serializable, Cloneable {
      * @param interconnectState
      * @see InterconnectState
      */
+
     public void setInterconnectState(String interconnectState) {
         this.interconnectState = interconnectState;
     }
@@ -39,6 +40,7 @@ public class DeleteInterconnectResult implements Serializable, Cloneable {
      * @return
      * @see InterconnectState
      */
+
     public String getInterconnectState() {
         return this.interconnectState;
     }
@@ -49,6 +51,7 @@ public class DeleteInterconnectResult implements Serializable, Cloneable {
      *         chained together.
      * @see InterconnectState
      */
+
     public DeleteInterconnectResult withInterconnectState(
             String interconnectState) {
         setInterconnectState(interconnectState);
@@ -61,6 +64,7 @@ public class DeleteInterconnectResult implements Serializable, Cloneable {
      *         chained together.
      * @see InterconnectState
      */
+
     public void setInterconnectState(InterconnectState interconnectState) {
         this.interconnectState = interconnectState.toString();
     }
@@ -71,6 +75,7 @@ public class DeleteInterconnectResult implements Serializable, Cloneable {
      *         chained together.
      * @see InterconnectState
      */
+
     public DeleteInterconnectResult withInterconnectState(
             InterconnectState interconnectState) {
         setInterconnectState(interconnectState);

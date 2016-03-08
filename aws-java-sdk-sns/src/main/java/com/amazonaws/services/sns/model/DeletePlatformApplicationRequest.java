@@ -42,6 +42,7 @@ public class DeletePlatformApplicationRequest extends AmazonWebServiceRequest
      * @param platformApplicationArn
      *        PlatformApplicationArn of platform application object to delete.
      */
+
     public void setPlatformApplicationArn(String platformApplicationArn) {
         this.platformApplicationArn = platformApplicationArn;
     }
@@ -53,6 +54,7 @@ public class DeletePlatformApplicationRequest extends AmazonWebServiceRequest
      * 
      * @return PlatformApplicationArn of platform application object to delete.
      */
+
     public String getPlatformApplicationArn() {
         return this.platformApplicationArn;
     }
@@ -67,6 +69,7 @@ public class DeletePlatformApplicationRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeletePlatformApplicationRequest withPlatformApplicationArn(
             String platformApplicationArn) {
         setPlatformApplicationArn(platformApplicationArn);

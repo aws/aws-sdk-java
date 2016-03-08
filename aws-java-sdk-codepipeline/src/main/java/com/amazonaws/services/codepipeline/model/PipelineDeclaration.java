@@ -65,6 +65,7 @@ public class PipelineDeclaration implements Serializable, Cloneable {
      * @param name
      *        The name of the action to be performed.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -76,6 +77,7 @@ public class PipelineDeclaration implements Serializable, Cloneable {
      * 
      * @return The name of the action to be performed.
      */
+
     public String getName() {
         return this.name;
     }
@@ -90,6 +92,7 @@ public class PipelineDeclaration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PipelineDeclaration withName(String name) {
         setName(name);
         return this;
@@ -107,6 +110,7 @@ public class PipelineDeclaration implements Serializable, Cloneable {
      *        either perform actions with no actionRoleArn, or to use to assume
      *        roles for actions with an actionRoleArn.
      */
+
     public void setRoleArn(String roleArn) {
         this.roleArn = roleArn;
     }
@@ -122,6 +126,7 @@ public class PipelineDeclaration implements Serializable, Cloneable {
      *         either perform actions with no actionRoleArn, or to use to assume
      *         roles for actions with an actionRoleArn.
      */
+
     public String getRoleArn() {
         return this.roleArn;
     }
@@ -140,6 +145,7 @@ public class PipelineDeclaration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PipelineDeclaration withRoleArn(String roleArn) {
         setRoleArn(roleArn);
         return this;
@@ -148,6 +154,7 @@ public class PipelineDeclaration implements Serializable, Cloneable {
     /**
      * @param artifactStore
      */
+
     public void setArtifactStore(ArtifactStore artifactStore) {
         this.artifactStore = artifactStore;
     }
@@ -155,6 +162,7 @@ public class PipelineDeclaration implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public ArtifactStore getArtifactStore() {
         return this.artifactStore;
     }
@@ -164,6 +172,7 @@ public class PipelineDeclaration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PipelineDeclaration withArtifactStore(ArtifactStore artifactStore) {
         setArtifactStore(artifactStore);
         return this;
@@ -176,6 +185,7 @@ public class PipelineDeclaration implements Serializable, Cloneable {
      * 
      * @return The stage in which to perform the action.
      */
+
     public java.util.List<StageDeclaration> getStages() {
         return stages;
     }
@@ -188,6 +198,7 @@ public class PipelineDeclaration implements Serializable, Cloneable {
      * @param stages
      *        The stage in which to perform the action.
      */
+
     public void setStages(java.util.Collection<StageDeclaration> stages) {
         if (stages == null) {
             this.stages = null;
@@ -213,6 +224,7 @@ public class PipelineDeclaration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PipelineDeclaration withStages(StageDeclaration... stages) {
         if (this.stages == null) {
             setStages(new java.util.ArrayList<StageDeclaration>(stages.length));
@@ -233,6 +245,7 @@ public class PipelineDeclaration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PipelineDeclaration withStages(
             java.util.Collection<StageDeclaration> stages) {
         setStages(stages);
@@ -251,6 +264,7 @@ public class PipelineDeclaration implements Serializable, Cloneable {
      *        version number of 1. This number is automatically incremented when
      *        a pipeline is updated.
      */
+
     public void setVersion(Integer version) {
         this.version = version;
     }
@@ -266,6 +280,7 @@ public class PipelineDeclaration implements Serializable, Cloneable {
      *         version number of 1. This number is automatically incremented
      *         when a pipeline is updated.
      */
+
     public Integer getVersion() {
         return this.version;
     }
@@ -284,6 +299,7 @@ public class PipelineDeclaration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PipelineDeclaration withVersion(Integer version) {
         setVersion(version);
         return this;

@@ -50,6 +50,7 @@ public class DescribeFleetAttributesResult implements Serializable, Cloneable {
      * @return Collection of objects containing attribute metadata for each
      *         requested fleet ID.
      */
+
     public java.util.List<FleetAttributes> getFleetAttributes() {
         return fleetAttributes;
     }
@@ -64,6 +65,7 @@ public class DescribeFleetAttributesResult implements Serializable, Cloneable {
      *        Collection of objects containing attribute metadata for each
      *        requested fleet ID.
      */
+
     public void setFleetAttributes(
             java.util.Collection<FleetAttributes> fleetAttributes) {
         if (fleetAttributes == null) {
@@ -93,6 +95,7 @@ public class DescribeFleetAttributesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeFleetAttributesResult withFleetAttributes(
             FleetAttributes... fleetAttributes) {
         if (this.fleetAttributes == null) {
@@ -117,6 +120,7 @@ public class DescribeFleetAttributesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeFleetAttributesResult withFleetAttributes(
             java.util.Collection<FleetAttributes> fleetAttributes) {
         setFleetAttributes(fleetAttributes);
@@ -135,6 +139,7 @@ public class DescribeFleetAttributesResult implements Serializable, Cloneable {
      *        call to this action. If no token is returned, these results
      *        represent the end of the list.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -150,6 +155,7 @@ public class DescribeFleetAttributesResult implements Serializable, Cloneable {
      *         call to this action. If no token is returned, these results
      *         represent the end of the list.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -168,6 +174,7 @@ public class DescribeFleetAttributesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeFleetAttributesResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

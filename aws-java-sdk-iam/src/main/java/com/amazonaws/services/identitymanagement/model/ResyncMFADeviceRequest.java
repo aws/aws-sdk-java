@@ -88,6 +88,7 @@ public class ResyncMFADeviceRequest extends AmazonWebServiceRequest implements
      * @param userName
      *        The name of the user whose MFA device you want to resynchronize.
      */
+
     public void setUserName(String userName) {
         this.userName = userName;
     }
@@ -99,6 +100,7 @@ public class ResyncMFADeviceRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the user whose MFA device you want to resynchronize.
      */
+
     public String getUserName() {
         return this.userName;
     }
@@ -113,6 +115,7 @@ public class ResyncMFADeviceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ResyncMFADeviceRequest withUserName(String userName) {
         setUserName(userName);
         return this;
@@ -126,6 +129,7 @@ public class ResyncMFADeviceRequest extends AmazonWebServiceRequest implements
      * @param serialNumber
      *        Serial number that uniquely identifies the MFA device.
      */
+
     public void setSerialNumber(String serialNumber) {
         this.serialNumber = serialNumber;
     }
@@ -137,6 +141,7 @@ public class ResyncMFADeviceRequest extends AmazonWebServiceRequest implements
      * 
      * @return Serial number that uniquely identifies the MFA device.
      */
+
     public String getSerialNumber() {
         return this.serialNumber;
     }
@@ -151,6 +156,7 @@ public class ResyncMFADeviceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ResyncMFADeviceRequest withSerialNumber(String serialNumber) {
         setSerialNumber(serialNumber);
         return this;
@@ -164,6 +170,7 @@ public class ResyncMFADeviceRequest extends AmazonWebServiceRequest implements
      * @param authenticationCode1
      *        An authentication code emitted by the device.
      */
+
     public void setAuthenticationCode1(String authenticationCode1) {
         this.authenticationCode1 = authenticationCode1;
     }
@@ -175,6 +182,7 @@ public class ResyncMFADeviceRequest extends AmazonWebServiceRequest implements
      * 
      * @return An authentication code emitted by the device.
      */
+
     public String getAuthenticationCode1() {
         return this.authenticationCode1;
     }
@@ -189,6 +197,7 @@ public class ResyncMFADeviceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ResyncMFADeviceRequest withAuthenticationCode1(
             String authenticationCode1) {
         setAuthenticationCode1(authenticationCode1);
@@ -203,6 +212,7 @@ public class ResyncMFADeviceRequest extends AmazonWebServiceRequest implements
      * @param authenticationCode2
      *        A subsequent authentication code emitted by the device.
      */
+
     public void setAuthenticationCode2(String authenticationCode2) {
         this.authenticationCode2 = authenticationCode2;
     }
@@ -214,6 +224,7 @@ public class ResyncMFADeviceRequest extends AmazonWebServiceRequest implements
      * 
      * @return A subsequent authentication code emitted by the device.
      */
+
     public String getAuthenticationCode2() {
         return this.authenticationCode2;
     }
@@ -228,6 +239,7 @@ public class ResyncMFADeviceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ResyncMFADeviceRequest withAuthenticationCode2(
             String authenticationCode2) {
         setAuthenticationCode2(authenticationCode2);

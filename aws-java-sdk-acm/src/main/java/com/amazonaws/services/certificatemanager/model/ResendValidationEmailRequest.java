@@ -96,6 +96,7 @@ public class ResendValidationEmailRequest extends AmazonWebServiceRequest
      *        <p>
      *        <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
      */
+
     public void setCertificateArn(String certificateArn) {
         this.certificateArn = certificateArn;
     }
@@ -126,6 +127,7 @@ public class ResendValidationEmailRequest extends AmazonWebServiceRequest
      *         <p>
      *         <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
      */
+
     public String getCertificateArn() {
         return this.certificateArn;
     }
@@ -159,6 +161,7 @@ public class ResendValidationEmailRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ResendValidationEmailRequest withCertificateArn(String certificateArn) {
         setCertificateArn(certificateArn);
         return this;
@@ -174,6 +177,7 @@ public class ResendValidationEmailRequest extends AmazonWebServiceRequest
      *        The Fully Qualified Domain Name (FQDN) of the certificate that
      *        needs to be validated.
      */
+
     public void setDomain(String domain) {
         this.domain = domain;
     }
@@ -187,6 +191,7 @@ public class ResendValidationEmailRequest extends AmazonWebServiceRequest
      * @return The Fully Qualified Domain Name (FQDN) of the certificate that
      *         needs to be validated.
      */
+
     public String getDomain() {
         return this.domain;
     }
@@ -203,6 +208,7 @@ public class ResendValidationEmailRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ResendValidationEmailRequest withDomain(String domain) {
         setDomain(domain);
         return this;
@@ -245,6 +251,7 @@ public class ResendValidationEmailRequest extends AmazonWebServiceRequest
      *        <li>webmaster@subdomain.example.com</li>
      *        </ul>
      */
+
     public void setValidationDomain(String validationDomain) {
         this.validationDomain = validationDomain;
     }
@@ -285,6 +292,7 @@ public class ResendValidationEmailRequest extends AmazonWebServiceRequest
      *         <li>webmaster@subdomain.example.com</li>
      *         </ul>
      */
+
     public String getValidationDomain() {
         return this.validationDomain;
     }
@@ -328,6 +336,7 @@ public class ResendValidationEmailRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ResendValidationEmailRequest withValidationDomain(
             String validationDomain) {
         setValidationDomain(validationDomain);

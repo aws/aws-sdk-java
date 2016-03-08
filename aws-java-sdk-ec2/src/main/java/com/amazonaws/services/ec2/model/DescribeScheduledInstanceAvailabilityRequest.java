@@ -114,6 +114,7 @@ public class DescribeScheduledInstanceAvailabilityRequest extends
      * @param recurrence
      *        The schedule recurrence.
      */
+
     public void setRecurrence(ScheduledInstanceRecurrenceRequest recurrence) {
         this.recurrence = recurrence;
     }
@@ -125,6 +126,7 @@ public class DescribeScheduledInstanceAvailabilityRequest extends
      * 
      * @return The schedule recurrence.
      */
+
     public ScheduledInstanceRecurrenceRequest getRecurrence() {
         return this.recurrence;
     }
@@ -139,6 +141,7 @@ public class DescribeScheduledInstanceAvailabilityRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeScheduledInstanceAvailabilityRequest withRecurrence(
             ScheduledInstanceRecurrenceRequest recurrence) {
         setRecurrence(recurrence);
@@ -153,6 +156,7 @@ public class DescribeScheduledInstanceAvailabilityRequest extends
      * @param firstSlotStartTimeRange
      *        The time period for the first schedule to start.
      */
+
     public void setFirstSlotStartTimeRange(
             SlotDateTimeRangeRequest firstSlotStartTimeRange) {
         this.firstSlotStartTimeRange = firstSlotStartTimeRange;
@@ -165,6 +169,7 @@ public class DescribeScheduledInstanceAvailabilityRequest extends
      * 
      * @return The time period for the first schedule to start.
      */
+
     public SlotDateTimeRangeRequest getFirstSlotStartTimeRange() {
         return this.firstSlotStartTimeRange;
     }
@@ -179,6 +184,7 @@ public class DescribeScheduledInstanceAvailabilityRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeScheduledInstanceAvailabilityRequest withFirstSlotStartTimeRange(
             SlotDateTimeRangeRequest firstSlotStartTimeRange) {
         setFirstSlotStartTimeRange(firstSlotStartTimeRange);
@@ -199,6 +205,7 @@ public class DescribeScheduledInstanceAvailabilityRequest extends
      *        schedule is 4 hours, the minimum weekly schedule is 24 hours, and
      *        the minimum monthly schedule is 100 hours.
      */
+
     public void setMinSlotDurationInHours(Integer minSlotDurationInHours) {
         this.minSlotDurationInHours = minSlotDurationInHours;
     }
@@ -216,6 +223,7 @@ public class DescribeScheduledInstanceAvailabilityRequest extends
      *         schedule is 4 hours, the minimum weekly schedule is 24 hours, and
      *         the minimum monthly schedule is 100 hours.
      */
+
     public Integer getMinSlotDurationInHours() {
         return this.minSlotDurationInHours;
     }
@@ -236,6 +244,7 @@ public class DescribeScheduledInstanceAvailabilityRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeScheduledInstanceAvailabilityRequest withMinSlotDurationInHours(
             Integer minSlotDurationInHours) {
         setMinSlotDurationInHours(minSlotDurationInHours);
@@ -253,6 +262,7 @@ public class DescribeScheduledInstanceAvailabilityRequest extends
      *        greater than <code>MinSlotDurationInHours</code> and less than
      *        1,720.
      */
+
     public void setMaxSlotDurationInHours(Integer maxSlotDurationInHours) {
         this.maxSlotDurationInHours = maxSlotDurationInHours;
     }
@@ -267,6 +277,7 @@ public class DescribeScheduledInstanceAvailabilityRequest extends
      *         greater than <code>MinSlotDurationInHours</code> and less than
      *         1,720.
      */
+
     public Integer getMaxSlotDurationInHours() {
         return this.maxSlotDurationInHours;
     }
@@ -284,6 +295,7 @@ public class DescribeScheduledInstanceAvailabilityRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeScheduledInstanceAvailabilityRequest withMaxSlotDurationInHours(
             Integer maxSlotDurationInHours) {
         setMaxSlotDurationInHours(maxSlotDurationInHours);
@@ -298,6 +310,7 @@ public class DescribeScheduledInstanceAvailabilityRequest extends
      * @param nextToken
      *        The token for the next set of results.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -309,6 +322,7 @@ public class DescribeScheduledInstanceAvailabilityRequest extends
      * 
      * @return The token for the next set of results.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -323,6 +337,7 @@ public class DescribeScheduledInstanceAvailabilityRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeScheduledInstanceAvailabilityRequest withNextToken(
             String nextToken) {
         setNextToken(nextToken);
@@ -343,6 +358,7 @@ public class DescribeScheduledInstanceAvailabilityRequest extends
      *        retrieve the remaining results, make another call with the
      *        returned <code>NextToken</code> value.
      */
+
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
     }
@@ -360,6 +376,7 @@ public class DescribeScheduledInstanceAvailabilityRequest extends
      *         retrieve the remaining results, make another call with the
      *         returned <code>NextToken</code> value.
      */
+
     public Integer getMaxResults() {
         return this.maxResults;
     }
@@ -380,6 +397,7 @@ public class DescribeScheduledInstanceAvailabilityRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeScheduledInstanceAvailabilityRequest withMaxResults(
             Integer maxResults) {
         setMaxResults(maxResults);
@@ -444,6 +462,7 @@ public class DescribeScheduledInstanceAvailabilityRequest extends
      *         </p>
      *         </li>
      */
+
     public java.util.List<Filter> getFilters() {
         if (filters == null) {
             filters = new com.amazonaws.internal.SdkInternalList<Filter>();
@@ -510,6 +529,7 @@ public class DescribeScheduledInstanceAvailabilityRequest extends
      *        </p>
      *        </li>
      */
+
     public void setFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
             this.filters = null;
@@ -587,6 +607,7 @@ public class DescribeScheduledInstanceAvailabilityRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeScheduledInstanceAvailabilityRequest withFilters(
             Filter... filters) {
         if (this.filters == null) {
@@ -660,6 +681,7 @@ public class DescribeScheduledInstanceAvailabilityRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeScheduledInstanceAvailabilityRequest withFilters(
             java.util.Collection<Filter> filters) {
         setFilters(filters);

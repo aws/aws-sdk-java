@@ -109,6 +109,7 @@ public class ImportInstanceLaunchSpecification implements Serializable,
      *        The architecture of the instance.
      * @see ArchitectureValues
      */
+
     public void setArchitecture(String architecture) {
         this.architecture = architecture;
     }
@@ -121,6 +122,7 @@ public class ImportInstanceLaunchSpecification implements Serializable,
      * @return The architecture of the instance.
      * @see ArchitectureValues
      */
+
     public String getArchitecture() {
         return this.architecture;
     }
@@ -136,6 +138,7 @@ public class ImportInstanceLaunchSpecification implements Serializable,
      *         chained together.
      * @see ArchitectureValues
      */
+
     public ImportInstanceLaunchSpecification withArchitecture(
             String architecture) {
         setArchitecture(architecture);
@@ -153,6 +156,7 @@ public class ImportInstanceLaunchSpecification implements Serializable,
      *         chained together.
      * @see ArchitectureValues
      */
+
     public void setArchitecture(ArchitectureValues architecture) {
         this.architecture = architecture.toString();
     }
@@ -168,6 +172,7 @@ public class ImportInstanceLaunchSpecification implements Serializable,
      *         chained together.
      * @see ArchitectureValues
      */
+
     public ImportInstanceLaunchSpecification withArchitecture(
             ArchitectureValues architecture) {
         setArchitecture(architecture);
@@ -181,6 +186,7 @@ public class ImportInstanceLaunchSpecification implements Serializable,
      * 
      * @return One or more security group names.
      */
+
     public java.util.List<String> getGroupNames() {
         if (groupNames == null) {
             groupNames = new com.amazonaws.internal.SdkInternalList<String>();
@@ -196,6 +202,7 @@ public class ImportInstanceLaunchSpecification implements Serializable,
      * @param groupNames
      *        One or more security group names.
      */
+
     public void setGroupNames(java.util.Collection<String> groupNames) {
         if (groupNames == null) {
             this.groupNames = null;
@@ -222,6 +229,7 @@ public class ImportInstanceLaunchSpecification implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportInstanceLaunchSpecification withGroupNames(
             String... groupNames) {
         if (this.groupNames == null) {
@@ -244,6 +252,7 @@ public class ImportInstanceLaunchSpecification implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportInstanceLaunchSpecification withGroupNames(
             java.util.Collection<String> groupNames) {
         setGroupNames(groupNames);
@@ -257,6 +266,7 @@ public class ImportInstanceLaunchSpecification implements Serializable,
      * 
      * @return One or more security group IDs.
      */
+
     public java.util.List<String> getGroupIds() {
         if (groupIds == null) {
             groupIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -272,6 +282,7 @@ public class ImportInstanceLaunchSpecification implements Serializable,
      * @param groupIds
      *        One or more security group IDs.
      */
+
     public void setGroupIds(java.util.Collection<String> groupIds) {
         if (groupIds == null) {
             this.groupIds = null;
@@ -298,6 +309,7 @@ public class ImportInstanceLaunchSpecification implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportInstanceLaunchSpecification withGroupIds(String... groupIds) {
         if (this.groupIds == null) {
             setGroupIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -319,6 +331,7 @@ public class ImportInstanceLaunchSpecification implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportInstanceLaunchSpecification withGroupIds(
             java.util.Collection<String> groupIds) {
         setGroupIds(groupIds);
@@ -333,6 +346,7 @@ public class ImportInstanceLaunchSpecification implements Serializable,
      * @param additionalInfo
      *        Reserved.
      */
+
     public void setAdditionalInfo(String additionalInfo) {
         this.additionalInfo = additionalInfo;
     }
@@ -344,6 +358,7 @@ public class ImportInstanceLaunchSpecification implements Serializable,
      * 
      * @return Reserved.
      */
+
     public String getAdditionalInfo() {
         return this.additionalInfo;
     }
@@ -358,6 +373,7 @@ public class ImportInstanceLaunchSpecification implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportInstanceLaunchSpecification withAdditionalInfo(
             String additionalInfo) {
         setAdditionalInfo(additionalInfo);
@@ -373,6 +389,7 @@ public class ImportInstanceLaunchSpecification implements Serializable,
      *        The Base64-encoded MIME user data to be made available to the
      *        instance.
      */
+
     public void setUserData(UserData userData) {
         this.userData = userData;
     }
@@ -385,6 +402,7 @@ public class ImportInstanceLaunchSpecification implements Serializable,
      * @return The Base64-encoded MIME user data to be made available to the
      *         instance.
      */
+
     public UserData getUserData() {
         return this.userData;
     }
@@ -400,6 +418,7 @@ public class ImportInstanceLaunchSpecification implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportInstanceLaunchSpecification withUserData(UserData userData) {
         setUserData(userData);
         return this;
@@ -422,6 +441,7 @@ public class ImportInstanceLaunchSpecification implements Serializable,
      *        User Guide.
      * @see InstanceType
      */
+
     public void setInstanceType(String instanceType) {
         this.instanceType = instanceType;
     }
@@ -442,6 +462,7 @@ public class ImportInstanceLaunchSpecification implements Serializable,
      *         User Guide.
      * @see InstanceType
      */
+
     public String getInstanceType() {
         return this.instanceType;
     }
@@ -465,6 +486,7 @@ public class ImportInstanceLaunchSpecification implements Serializable,
      *         chained together.
      * @see InstanceType
      */
+
     public ImportInstanceLaunchSpecification withInstanceType(
             String instanceType) {
         setInstanceType(instanceType);
@@ -490,6 +512,7 @@ public class ImportInstanceLaunchSpecification implements Serializable,
      *         chained together.
      * @see InstanceType
      */
+
     public void setInstanceType(InstanceType instanceType) {
         this.instanceType = instanceType.toString();
     }
@@ -513,6 +536,7 @@ public class ImportInstanceLaunchSpecification implements Serializable,
      *         chained together.
      * @see InstanceType
      */
+
     public ImportInstanceLaunchSpecification withInstanceType(
             InstanceType instanceType) {
         setInstanceType(instanceType);
@@ -527,6 +551,7 @@ public class ImportInstanceLaunchSpecification implements Serializable,
      * @param placement
      *        The placement information for the instance.
      */
+
     public void setPlacement(Placement placement) {
         this.placement = placement;
     }
@@ -538,6 +563,7 @@ public class ImportInstanceLaunchSpecification implements Serializable,
      * 
      * @return The placement information for the instance.
      */
+
     public Placement getPlacement() {
         return this.placement;
     }
@@ -552,6 +578,7 @@ public class ImportInstanceLaunchSpecification implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportInstanceLaunchSpecification withPlacement(Placement placement) {
         setPlacement(placement);
         return this;
@@ -565,6 +592,7 @@ public class ImportInstanceLaunchSpecification implements Serializable,
      * @param monitoring
      *        Indicates whether monitoring is enabled.
      */
+
     public void setMonitoring(Boolean monitoring) {
         this.monitoring = monitoring;
     }
@@ -576,6 +604,7 @@ public class ImportInstanceLaunchSpecification implements Serializable,
      * 
      * @return Indicates whether monitoring is enabled.
      */
+
     public Boolean getMonitoring() {
         return this.monitoring;
     }
@@ -590,6 +619,7 @@ public class ImportInstanceLaunchSpecification implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportInstanceLaunchSpecification withMonitoring(Boolean monitoring) {
         setMonitoring(monitoring);
         return this;
@@ -602,6 +632,7 @@ public class ImportInstanceLaunchSpecification implements Serializable,
      * 
      * @return Indicates whether monitoring is enabled.
      */
+
     public Boolean isMonitoring() {
         return this.monitoring;
     }
@@ -614,6 +645,7 @@ public class ImportInstanceLaunchSpecification implements Serializable,
      * @param subnetId
      *        [EC2-VPC] The ID of the subnet in which to launch the instance.
      */
+
     public void setSubnetId(String subnetId) {
         this.subnetId = subnetId;
     }
@@ -625,6 +657,7 @@ public class ImportInstanceLaunchSpecification implements Serializable,
      * 
      * @return [EC2-VPC] The ID of the subnet in which to launch the instance.
      */
+
     public String getSubnetId() {
         return this.subnetId;
     }
@@ -639,6 +672,7 @@ public class ImportInstanceLaunchSpecification implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportInstanceLaunchSpecification withSubnetId(String subnetId) {
         setSubnetId(subnetId);
         return this;
@@ -657,6 +691,7 @@ public class ImportInstanceLaunchSpecification implements Serializable,
      *        command for system shutdown).
      * @see ShutdownBehavior
      */
+
     public void setInstanceInitiatedShutdownBehavior(
             String instanceInitiatedShutdownBehavior) {
         this.instanceInitiatedShutdownBehavior = instanceInitiatedShutdownBehavior;
@@ -674,6 +709,7 @@ public class ImportInstanceLaunchSpecification implements Serializable,
      *         command for system shutdown).
      * @see ShutdownBehavior
      */
+
     public String getInstanceInitiatedShutdownBehavior() {
         return this.instanceInitiatedShutdownBehavior;
     }
@@ -693,6 +729,7 @@ public class ImportInstanceLaunchSpecification implements Serializable,
      *         chained together.
      * @see ShutdownBehavior
      */
+
     public ImportInstanceLaunchSpecification withInstanceInitiatedShutdownBehavior(
             String instanceInitiatedShutdownBehavior) {
         setInstanceInitiatedShutdownBehavior(instanceInitiatedShutdownBehavior);
@@ -714,6 +751,7 @@ public class ImportInstanceLaunchSpecification implements Serializable,
      *         chained together.
      * @see ShutdownBehavior
      */
+
     public void setInstanceInitiatedShutdownBehavior(
             ShutdownBehavior instanceInitiatedShutdownBehavior) {
         this.instanceInitiatedShutdownBehavior = instanceInitiatedShutdownBehavior
@@ -735,6 +773,7 @@ public class ImportInstanceLaunchSpecification implements Serializable,
      *         chained together.
      * @see ShutdownBehavior
      */
+
     public ImportInstanceLaunchSpecification withInstanceInitiatedShutdownBehavior(
             ShutdownBehavior instanceInitiatedShutdownBehavior) {
         setInstanceInitiatedShutdownBehavior(instanceInitiatedShutdownBehavior);
@@ -751,6 +790,7 @@ public class ImportInstanceLaunchSpecification implements Serializable,
      *        [EC2-VPC] An available IP address from the IP address range of the
      *        subnet.
      */
+
     public void setPrivateIpAddress(String privateIpAddress) {
         this.privateIpAddress = privateIpAddress;
     }
@@ -764,6 +804,7 @@ public class ImportInstanceLaunchSpecification implements Serializable,
      * @return [EC2-VPC] An available IP address from the IP address range of
      *         the subnet.
      */
+
     public String getPrivateIpAddress() {
         return this.privateIpAddress;
     }
@@ -780,6 +821,7 @@ public class ImportInstanceLaunchSpecification implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportInstanceLaunchSpecification withPrivateIpAddress(
             String privateIpAddress) {
         setPrivateIpAddress(privateIpAddress);

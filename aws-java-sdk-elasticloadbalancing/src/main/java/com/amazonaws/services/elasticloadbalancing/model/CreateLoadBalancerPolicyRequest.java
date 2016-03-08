@@ -60,6 +60,7 @@ public class CreateLoadBalancerPolicyRequest extends AmazonWebServiceRequest
      * @param loadBalancerName
      *        The name of the load balancer.
      */
+
     public void setLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
     }
@@ -71,6 +72,7 @@ public class CreateLoadBalancerPolicyRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the load balancer.
      */
+
     public String getLoadBalancerName() {
         return this.loadBalancerName;
     }
@@ -85,6 +87,7 @@ public class CreateLoadBalancerPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateLoadBalancerPolicyRequest withLoadBalancerName(
             String loadBalancerName) {
         setLoadBalancerName(loadBalancerName);
@@ -101,6 +104,7 @@ public class CreateLoadBalancerPolicyRequest extends AmazonWebServiceRequest
      *        The name of the load balancer policy to be created. This name must
      *        be unique within the set of policies for this load balancer.
      */
+
     public void setPolicyName(String policyName) {
         this.policyName = policyName;
     }
@@ -114,6 +118,7 @@ public class CreateLoadBalancerPolicyRequest extends AmazonWebServiceRequest
      * @return The name of the load balancer policy to be created. This name
      *         must be unique within the set of policies for this load balancer.
      */
+
     public String getPolicyName() {
         return this.policyName;
     }
@@ -130,6 +135,7 @@ public class CreateLoadBalancerPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateLoadBalancerPolicyRequest withPolicyName(String policyName) {
         setPolicyName(policyName);
         return this;
@@ -145,6 +151,7 @@ public class CreateLoadBalancerPolicyRequest extends AmazonWebServiceRequest
      *        The name of the base policy type. To get the list of policy types,
      *        use <a>DescribeLoadBalancerPolicyTypes</a>.
      */
+
     public void setPolicyTypeName(String policyTypeName) {
         this.policyTypeName = policyTypeName;
     }
@@ -158,6 +165,7 @@ public class CreateLoadBalancerPolicyRequest extends AmazonWebServiceRequest
      * @return The name of the base policy type. To get the list of policy
      *         types, use <a>DescribeLoadBalancerPolicyTypes</a>.
      */
+
     public String getPolicyTypeName() {
         return this.policyTypeName;
     }
@@ -174,6 +182,7 @@ public class CreateLoadBalancerPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateLoadBalancerPolicyRequest withPolicyTypeName(
             String policyTypeName) {
         setPolicyTypeName(policyTypeName);
@@ -187,6 +196,7 @@ public class CreateLoadBalancerPolicyRequest extends AmazonWebServiceRequest
      * 
      * @return The attributes for the policy.
      */
+
     public java.util.List<PolicyAttribute> getPolicyAttributes() {
         if (policyAttributes == null) {
             policyAttributes = new com.amazonaws.internal.SdkInternalList<PolicyAttribute>();
@@ -202,6 +212,7 @@ public class CreateLoadBalancerPolicyRequest extends AmazonWebServiceRequest
      * @param policyAttributes
      *        The attributes for the policy.
      */
+
     public void setPolicyAttributes(
             java.util.Collection<PolicyAttribute> policyAttributes) {
         if (policyAttributes == null) {
@@ -229,6 +240,7 @@ public class CreateLoadBalancerPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateLoadBalancerPolicyRequest withPolicyAttributes(
             PolicyAttribute... policyAttributes) {
         if (this.policyAttributes == null) {
@@ -251,6 +263,7 @@ public class CreateLoadBalancerPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateLoadBalancerPolicyRequest withPolicyAttributes(
             java.util.Collection<PolicyAttribute> policyAttributes) {
         setPolicyAttributes(policyAttributes);

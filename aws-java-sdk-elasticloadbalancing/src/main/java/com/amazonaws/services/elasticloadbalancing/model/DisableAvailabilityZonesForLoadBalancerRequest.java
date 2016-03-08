@@ -70,6 +70,7 @@ public class DisableAvailabilityZonesForLoadBalancerRequest extends
      * @param loadBalancerName
      *        The name of the load balancer.
      */
+
     public void setLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
     }
@@ -81,6 +82,7 @@ public class DisableAvailabilityZonesForLoadBalancerRequest extends
      * 
      * @return The name of the load balancer.
      */
+
     public String getLoadBalancerName() {
         return this.loadBalancerName;
     }
@@ -95,6 +97,7 @@ public class DisableAvailabilityZonesForLoadBalancerRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DisableAvailabilityZonesForLoadBalancerRequest withLoadBalancerName(
             String loadBalancerName) {
         setLoadBalancerName(loadBalancerName);
@@ -108,6 +111,7 @@ public class DisableAvailabilityZonesForLoadBalancerRequest extends
      * 
      * @return The Availability Zones.
      */
+
     public java.util.List<String> getAvailabilityZones() {
         if (availabilityZones == null) {
             availabilityZones = new com.amazonaws.internal.SdkInternalList<String>();
@@ -123,6 +127,7 @@ public class DisableAvailabilityZonesForLoadBalancerRequest extends
      * @param availabilityZones
      *        The Availability Zones.
      */
+
     public void setAvailabilityZones(
             java.util.Collection<String> availabilityZones) {
         if (availabilityZones == null) {
@@ -150,6 +155,7 @@ public class DisableAvailabilityZonesForLoadBalancerRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DisableAvailabilityZonesForLoadBalancerRequest withAvailabilityZones(
             String... availabilityZones) {
         if (this.availabilityZones == null) {
@@ -172,6 +178,7 @@ public class DisableAvailabilityZonesForLoadBalancerRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DisableAvailabilityZonesForLoadBalancerRequest withAvailabilityZones(
             java.util.Collection<String> availabilityZones) {
         setAvailabilityZones(availabilityZones);

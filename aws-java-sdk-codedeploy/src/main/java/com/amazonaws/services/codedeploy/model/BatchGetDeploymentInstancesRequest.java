@@ -48,6 +48,7 @@ public class BatchGetDeploymentInstancesRequest extends AmazonWebServiceRequest
      * @param deploymentId
      *        The unique ID of a deployment.
      */
+
     public void setDeploymentId(String deploymentId) {
         this.deploymentId = deploymentId;
     }
@@ -59,6 +60,7 @@ public class BatchGetDeploymentInstancesRequest extends AmazonWebServiceRequest
      * 
      * @return The unique ID of a deployment.
      */
+
     public String getDeploymentId() {
         return this.deploymentId;
     }
@@ -73,6 +75,7 @@ public class BatchGetDeploymentInstancesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchGetDeploymentInstancesRequest withDeploymentId(
             String deploymentId) {
         setDeploymentId(deploymentId);
@@ -86,6 +89,7 @@ public class BatchGetDeploymentInstancesRequest extends AmazonWebServiceRequest
      * 
      * @return The unique IDs of instances in the deployment's deployment group.
      */
+
     public java.util.List<String> getInstanceIds() {
         if (instanceIds == null) {
             instanceIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -101,6 +105,7 @@ public class BatchGetDeploymentInstancesRequest extends AmazonWebServiceRequest
      * @param instanceIds
      *        The unique IDs of instances in the deployment's deployment group.
      */
+
     public void setInstanceIds(java.util.Collection<String> instanceIds) {
         if (instanceIds == null) {
             this.instanceIds = null;
@@ -127,6 +132,7 @@ public class BatchGetDeploymentInstancesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchGetDeploymentInstancesRequest withInstanceIds(
             String... instanceIds) {
         if (this.instanceIds == null) {
@@ -149,6 +155,7 @@ public class BatchGetDeploymentInstancesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchGetDeploymentInstancesRequest withInstanceIds(
             java.util.Collection<String> instanceIds) {
         setInstanceIds(instanceIds);

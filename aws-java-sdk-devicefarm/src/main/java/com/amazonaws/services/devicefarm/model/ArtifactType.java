@@ -42,7 +42,8 @@ public enum ArtifactType {
     APPIUM_PYTHON_XML_OUTPUT("APPIUM_PYTHON_XML_OUTPUT"),
     EXPLORER_EVENT_LOG("EXPLORER_EVENT_LOG"),
     EXPLORER_SUMMARY_LOG("EXPLORER_SUMMARY_LOG"),
-    APPLICATION_CRASH_REPORT("APPLICATION_CRASH_REPORT");
+    APPLICATION_CRASH_REPORT("APPLICATION_CRASH_REPORT"),
+    XCTEST_LOG("XCTEST_LOG");
 
     private String value;
 
@@ -109,6 +110,8 @@ public enum ArtifactType {
             return EXPLORER_SUMMARY_LOG;
         } else if ("APPLICATION_CRASH_REPORT".equals(value)) {
             return APPLICATION_CRASH_REPORT;
+        } else if ("XCTEST_LOG".equals(value)) {
+            return XCTEST_LOG;
         } else {
             throw new IllegalArgumentException("Cannot create enum from "
                     + value + " value!");

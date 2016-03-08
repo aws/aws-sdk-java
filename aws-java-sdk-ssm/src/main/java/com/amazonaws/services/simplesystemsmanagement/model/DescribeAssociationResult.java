@@ -38,6 +38,7 @@ public class DescribeAssociationResult implements Serializable, Cloneable {
      * @param associationDescription
      *        Information about the association.
      */
+
     public void setAssociationDescription(
             AssociationDescription associationDescription) {
         this.associationDescription = associationDescription;
@@ -50,6 +51,7 @@ public class DescribeAssociationResult implements Serializable, Cloneable {
      * 
      * @return Information about the association.
      */
+
     public AssociationDescription getAssociationDescription() {
         return this.associationDescription;
     }
@@ -64,6 +66,7 @@ public class DescribeAssociationResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAssociationResult withAssociationDescription(
             AssociationDescription associationDescription) {
         setAssociationDescription(associationDescription);

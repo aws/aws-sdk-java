@@ -49,6 +49,7 @@ public class GetModelTemplateResult implements Serializable, Cloneable {
      *        target="_blank">Velocity Template Language (VTL)</a> template
      *        content used for the template resource.
      */
+
     public void setValue(String value) {
         this.value = value;
     }
@@ -66,6 +67,7 @@ public class GetModelTemplateResult implements Serializable, Cloneable {
      *         target="_blank">Velocity Template Language (VTL)</a> template
      *         content used for the template resource.
      */
+
     public String getValue() {
         return this.value;
     }
@@ -86,6 +88,7 @@ public class GetModelTemplateResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetModelTemplateResult withValue(String value) {
         setValue(value);
         return this;

@@ -73,6 +73,7 @@ public class DeleteGroupPolicyRequest extends AmazonWebServiceRequest implements
      *        The name (friendly name, not ARN) identifying the group that the
      *        policy is embedded in.
      */
+
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
@@ -86,6 +87,7 @@ public class DeleteGroupPolicyRequest extends AmazonWebServiceRequest implements
      * @return The name (friendly name, not ARN) identifying the group that the
      *         policy is embedded in.
      */
+
     public String getGroupName() {
         return this.groupName;
     }
@@ -102,6 +104,7 @@ public class DeleteGroupPolicyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteGroupPolicyRequest withGroupName(String groupName) {
         setGroupName(groupName);
         return this;
@@ -115,6 +118,7 @@ public class DeleteGroupPolicyRequest extends AmazonWebServiceRequest implements
      * @param policyName
      *        The name identifying the policy document to delete.
      */
+
     public void setPolicyName(String policyName) {
         this.policyName = policyName;
     }
@@ -126,6 +130,7 @@ public class DeleteGroupPolicyRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name identifying the policy document to delete.
      */
+
     public String getPolicyName() {
         return this.policyName;
     }
@@ -140,6 +145,7 @@ public class DeleteGroupPolicyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteGroupPolicyRequest withPolicyName(String policyName) {
         setPolicyName(policyName);
         return this;

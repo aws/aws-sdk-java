@@ -48,6 +48,7 @@ public class TransferCertificateRequest extends AmazonWebServiceRequest
      * @param certificateId
      *        The ID of the certificate.
      */
+
     public void setCertificateId(String certificateId) {
         this.certificateId = certificateId;
     }
@@ -59,6 +60,7 @@ public class TransferCertificateRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the certificate.
      */
+
     public String getCertificateId() {
         return this.certificateId;
     }
@@ -73,6 +75,7 @@ public class TransferCertificateRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TransferCertificateRequest withCertificateId(String certificateId) {
         setCertificateId(certificateId);
         return this;
@@ -86,6 +89,7 @@ public class TransferCertificateRequest extends AmazonWebServiceRequest
      * @param targetAwsAccount
      *        The AWS account.
      */
+
     public void setTargetAwsAccount(String targetAwsAccount) {
         this.targetAwsAccount = targetAwsAccount;
     }
@@ -97,6 +101,7 @@ public class TransferCertificateRequest extends AmazonWebServiceRequest
      * 
      * @return The AWS account.
      */
+
     public String getTargetAwsAccount() {
         return this.targetAwsAccount;
     }
@@ -111,6 +116,7 @@ public class TransferCertificateRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TransferCertificateRequest withTargetAwsAccount(
             String targetAwsAccount) {
         setTargetAwsAccount(targetAwsAccount);

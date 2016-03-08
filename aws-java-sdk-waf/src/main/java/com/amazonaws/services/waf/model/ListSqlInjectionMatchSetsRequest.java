@@ -75,6 +75,7 @@ public class ListSqlInjectionMatchSetsRequest extends AmazonWebServiceRequest
      *        information about another batch of
      *        <code>SqlInjectionMatchSets</code>.
      */
+
     public void setNextMarker(String nextMarker) {
         this.nextMarker = nextMarker;
     }
@@ -101,6 +102,7 @@ public class ListSqlInjectionMatchSetsRequest extends AmazonWebServiceRequest
      *         get information about another batch of
      *         <code>SqlInjectionMatchSets</code>.
      */
+
     public String getNextMarker() {
         return this.nextMarker;
     }
@@ -130,6 +132,7 @@ public class ListSqlInjectionMatchSetsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListSqlInjectionMatchSetsRequest withNextMarker(String nextMarker) {
         setNextMarker(nextMarker);
         return this;
@@ -152,6 +155,7 @@ public class ListSqlInjectionMatchSetsRequest extends AmazonWebServiceRequest
      *        <code>NextMarker</code> value that you can use to get another
      *        batch of <code>Rules</code>.
      */
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -172,6 +176,7 @@ public class ListSqlInjectionMatchSetsRequest extends AmazonWebServiceRequest
      *         <code>NextMarker</code> value that you can use to get another
      *         batch of <code>Rules</code>.
      */
+
     public Integer getLimit() {
         return this.limit;
     }
@@ -195,6 +200,7 @@ public class ListSqlInjectionMatchSetsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListSqlInjectionMatchSetsRequest withLimit(Integer limit) {
         setLimit(limit);
         return this;

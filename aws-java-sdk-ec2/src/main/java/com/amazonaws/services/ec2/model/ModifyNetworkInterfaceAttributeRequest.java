@@ -77,6 +77,7 @@ public class ModifyNetworkInterfaceAttributeRequest extends
      * @param networkInterfaceId
      *        The ID of the network interface.
      */
+
     public void setNetworkInterfaceId(String networkInterfaceId) {
         this.networkInterfaceId = networkInterfaceId;
     }
@@ -88,6 +89,7 @@ public class ModifyNetworkInterfaceAttributeRequest extends
      * 
      * @return The ID of the network interface.
      */
+
     public String getNetworkInterfaceId() {
         return this.networkInterfaceId;
     }
@@ -102,6 +104,7 @@ public class ModifyNetworkInterfaceAttributeRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyNetworkInterfaceAttributeRequest withNetworkInterfaceId(
             String networkInterfaceId) {
         setNetworkInterfaceId(networkInterfaceId);
@@ -116,6 +119,7 @@ public class ModifyNetworkInterfaceAttributeRequest extends
      * @param description
      *        A description for the network interface.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -127,6 +131,7 @@ public class ModifyNetworkInterfaceAttributeRequest extends
      * 
      * @return A description for the network interface.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -141,6 +146,7 @@ public class ModifyNetworkInterfaceAttributeRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyNetworkInterfaceAttributeRequest withDescription(
             String description) {
         setDescription(description);
@@ -167,6 +173,7 @@ public class ModifyNetworkInterfaceAttributeRequest extends
      *        >NAT Instances</a> in the <i>Amazon Virtual Private Cloud User
      *        Guide</i>.
      */
+
     public void setSourceDestCheck(Boolean sourceDestCheck) {
         this.sourceDestCheck = sourceDestCheck;
     }
@@ -190,6 +197,7 @@ public class ModifyNetworkInterfaceAttributeRequest extends
      *         >NAT Instances</a> in the <i>Amazon Virtual Private Cloud User
      *         Guide</i>.
      */
+
     public Boolean getSourceDestCheck() {
         return this.sourceDestCheck;
     }
@@ -216,6 +224,7 @@ public class ModifyNetworkInterfaceAttributeRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyNetworkInterfaceAttributeRequest withSourceDestCheck(
             Boolean sourceDestCheck) {
         setSourceDestCheck(sourceDestCheck);
@@ -241,6 +250,7 @@ public class ModifyNetworkInterfaceAttributeRequest extends
      *         >NAT Instances</a> in the <i>Amazon Virtual Private Cloud User
      *         Guide</i>.
      */
+
     public Boolean isSourceDestCheck() {
         return this.sourceDestCheck;
     }
@@ -259,6 +269,7 @@ public class ModifyNetworkInterfaceAttributeRequest extends
      *         security group in the VPC. You must specify the ID of the
      *         security group, not the name.
      */
+
     public java.util.List<String> getGroups() {
         if (groups == null) {
             groups = new com.amazonaws.internal.SdkInternalList<String>();
@@ -281,6 +292,7 @@ public class ModifyNetworkInterfaceAttributeRequest extends
      *        in the VPC. You must specify the ID of the security group, not the
      *        name.
      */
+
     public void setGroups(java.util.Collection<String> groups) {
         if (groups == null) {
             this.groups = null;
@@ -313,6 +325,7 @@ public class ModifyNetworkInterfaceAttributeRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyNetworkInterfaceAttributeRequest withGroups(String... groups) {
         if (this.groups == null) {
             setGroups(new com.amazonaws.internal.SdkInternalList<String>(
@@ -341,6 +354,7 @@ public class ModifyNetworkInterfaceAttributeRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyNetworkInterfaceAttributeRequest withGroups(
             java.util.Collection<String> groups) {
         setGroups(groups);
@@ -359,6 +373,7 @@ public class ModifyNetworkInterfaceAttributeRequest extends
      *        'delete on termination' attribute, you must specify the ID of the
      *        interface attachment.
      */
+
     public void setAttachment(NetworkInterfaceAttachmentChanges attachment) {
         this.attachment = attachment;
     }
@@ -374,6 +389,7 @@ public class ModifyNetworkInterfaceAttributeRequest extends
      *         'delete on termination' attribute, you must specify the ID of the
      *         interface attachment.
      */
+
     public NetworkInterfaceAttachmentChanges getAttachment() {
         return this.attachment;
     }
@@ -392,6 +408,7 @@ public class ModifyNetworkInterfaceAttributeRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyNetworkInterfaceAttributeRequest withAttachment(
             NetworkInterfaceAttachmentChanges attachment) {
         setAttachment(attachment);

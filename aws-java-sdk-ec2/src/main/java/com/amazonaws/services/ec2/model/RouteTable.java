@@ -70,6 +70,7 @@ public class RouteTable implements Serializable, Cloneable {
      * @param routeTableId
      *        The ID of the route table.
      */
+
     public void setRouteTableId(String routeTableId) {
         this.routeTableId = routeTableId;
     }
@@ -81,6 +82,7 @@ public class RouteTable implements Serializable, Cloneable {
      * 
      * @return The ID of the route table.
      */
+
     public String getRouteTableId() {
         return this.routeTableId;
     }
@@ -95,6 +97,7 @@ public class RouteTable implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RouteTable withRouteTableId(String routeTableId) {
         setRouteTableId(routeTableId);
         return this;
@@ -108,6 +111,7 @@ public class RouteTable implements Serializable, Cloneable {
      * @param vpcId
      *        The ID of the VPC.
      */
+
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
@@ -119,6 +123,7 @@ public class RouteTable implements Serializable, Cloneable {
      * 
      * @return The ID of the VPC.
      */
+
     public String getVpcId() {
         return this.vpcId;
     }
@@ -133,6 +138,7 @@ public class RouteTable implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RouteTable withVpcId(String vpcId) {
         setVpcId(vpcId);
         return this;
@@ -145,6 +151,7 @@ public class RouteTable implements Serializable, Cloneable {
      * 
      * @return The routes in the route table.
      */
+
     public java.util.List<Route> getRoutes() {
         if (routes == null) {
             routes = new com.amazonaws.internal.SdkInternalList<Route>();
@@ -160,6 +167,7 @@ public class RouteTable implements Serializable, Cloneable {
      * @param routes
      *        The routes in the route table.
      */
+
     public void setRoutes(java.util.Collection<Route> routes) {
         if (routes == null) {
             this.routes = null;
@@ -185,6 +193,7 @@ public class RouteTable implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RouteTable withRoutes(Route... routes) {
         if (this.routes == null) {
             setRoutes(new com.amazonaws.internal.SdkInternalList<Route>(
@@ -206,6 +215,7 @@ public class RouteTable implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RouteTable withRoutes(java.util.Collection<Route> routes) {
         setRoutes(routes);
         return this;
@@ -218,6 +228,7 @@ public class RouteTable implements Serializable, Cloneable {
      * 
      * @return The associations between the route table and one or more subnets.
      */
+
     public java.util.List<RouteTableAssociation> getAssociations() {
         if (associations == null) {
             associations = new com.amazonaws.internal.SdkInternalList<RouteTableAssociation>();
@@ -233,6 +244,7 @@ public class RouteTable implements Serializable, Cloneable {
      * @param associations
      *        The associations between the route table and one or more subnets.
      */
+
     public void setAssociations(
             java.util.Collection<RouteTableAssociation> associations) {
         if (associations == null) {
@@ -260,6 +272,7 @@ public class RouteTable implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RouteTable withAssociations(RouteTableAssociation... associations) {
         if (this.associations == null) {
             setAssociations(new com.amazonaws.internal.SdkInternalList<RouteTableAssociation>(
@@ -281,6 +294,7 @@ public class RouteTable implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RouteTable withAssociations(
             java.util.Collection<RouteTableAssociation> associations) {
         setAssociations(associations);
@@ -294,6 +308,7 @@ public class RouteTable implements Serializable, Cloneable {
      * 
      * @return Any tags assigned to the route table.
      */
+
     public java.util.List<Tag> getTags() {
         if (tags == null) {
             tags = new com.amazonaws.internal.SdkInternalList<Tag>();
@@ -309,6 +324,7 @@ public class RouteTable implements Serializable, Cloneable {
      * @param tags
      *        Any tags assigned to the route table.
      */
+
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
             this.tags = null;
@@ -334,6 +350,7 @@ public class RouteTable implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RouteTable withTags(Tag... tags) {
         if (this.tags == null) {
             setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
@@ -354,6 +371,7 @@ public class RouteTable implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RouteTable withTags(java.util.Collection<Tag> tags) {
         setTags(tags);
         return this;
@@ -366,6 +384,7 @@ public class RouteTable implements Serializable, Cloneable {
      * 
      * @return Any virtual private gateway (VGW) propagating routes.
      */
+
     public java.util.List<PropagatingVgw> getPropagatingVgws() {
         if (propagatingVgws == null) {
             propagatingVgws = new com.amazonaws.internal.SdkInternalList<PropagatingVgw>();
@@ -381,6 +400,7 @@ public class RouteTable implements Serializable, Cloneable {
      * @param propagatingVgws
      *        Any virtual private gateway (VGW) propagating routes.
      */
+
     public void setPropagatingVgws(
             java.util.Collection<PropagatingVgw> propagatingVgws) {
         if (propagatingVgws == null) {
@@ -408,6 +428,7 @@ public class RouteTable implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RouteTable withPropagatingVgws(PropagatingVgw... propagatingVgws) {
         if (this.propagatingVgws == null) {
             setPropagatingVgws(new com.amazonaws.internal.SdkInternalList<PropagatingVgw>(
@@ -429,6 +450,7 @@ public class RouteTable implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RouteTable withPropagatingVgws(
             java.util.Collection<PropagatingVgw> propagatingVgws) {
         setPropagatingVgws(propagatingVgws);

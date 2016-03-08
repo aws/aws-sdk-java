@@ -47,6 +47,7 @@ public class SuspendedProcess implements Serializable, Cloneable {
      * @param processName
      *        The name of the suspended process.
      */
+
     public void setProcessName(String processName) {
         this.processName = processName;
     }
@@ -58,6 +59,7 @@ public class SuspendedProcess implements Serializable, Cloneable {
      * 
      * @return The name of the suspended process.
      */
+
     public String getProcessName() {
         return this.processName;
     }
@@ -72,6 +74,7 @@ public class SuspendedProcess implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SuspendedProcess withProcessName(String processName) {
         setProcessName(processName);
         return this;
@@ -85,6 +88,7 @@ public class SuspendedProcess implements Serializable, Cloneable {
      * @param suspensionReason
      *        The reason that the process was suspended.
      */
+
     public void setSuspensionReason(String suspensionReason) {
         this.suspensionReason = suspensionReason;
     }
@@ -96,6 +100,7 @@ public class SuspendedProcess implements Serializable, Cloneable {
      * 
      * @return The reason that the process was suspended.
      */
+
     public String getSuspensionReason() {
         return this.suspensionReason;
     }
@@ -110,6 +115,7 @@ public class SuspendedProcess implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SuspendedProcess withSuspensionReason(String suspensionReason) {
         setSuspensionReason(suspensionReason);
         return this;

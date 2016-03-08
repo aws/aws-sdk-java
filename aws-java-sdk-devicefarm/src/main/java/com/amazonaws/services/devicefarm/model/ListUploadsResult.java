@@ -47,6 +47,7 @@ public class ListUploadsResult implements Serializable, Cloneable {
      * 
      * @return Information about the uploads.
      */
+
     public java.util.List<Upload> getUploads() {
         return uploads;
     }
@@ -59,6 +60,7 @@ public class ListUploadsResult implements Serializable, Cloneable {
      * @param uploads
      *        Information about the uploads.
      */
+
     public void setUploads(java.util.Collection<Upload> uploads) {
         if (uploads == null) {
             this.uploads = null;
@@ -84,6 +86,7 @@ public class ListUploadsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListUploadsResult withUploads(Upload... uploads) {
         if (this.uploads == null) {
             setUploads(new java.util.ArrayList<Upload>(uploads.length));
@@ -104,6 +107,7 @@ public class ListUploadsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListUploadsResult withUploads(java.util.Collection<Upload> uploads) {
         setUploads(uploads);
         return this;
@@ -122,6 +126,7 @@ public class ListUploadsResult implements Serializable, Cloneable {
      *        a subsequent call to this operation to return the next set of
      *        items in the list.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -138,6 +143,7 @@ public class ListUploadsResult implements Serializable, Cloneable {
      *         a subsequent call to this operation to return the next set of
      *         items in the list.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -157,6 +163,7 @@ public class ListUploadsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListUploadsResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

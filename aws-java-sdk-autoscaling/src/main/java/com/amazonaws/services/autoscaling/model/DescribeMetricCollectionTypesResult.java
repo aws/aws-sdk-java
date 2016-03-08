@@ -44,6 +44,7 @@ public class DescribeMetricCollectionTypesResult implements Serializable,
      * 
      * @return One or more metrics.
      */
+
     public java.util.List<MetricCollectionType> getMetrics() {
         if (metrics == null) {
             metrics = new com.amazonaws.internal.SdkInternalList<MetricCollectionType>();
@@ -59,6 +60,7 @@ public class DescribeMetricCollectionTypesResult implements Serializable,
      * @param metrics
      *        One or more metrics.
      */
+
     public void setMetrics(java.util.Collection<MetricCollectionType> metrics) {
         if (metrics == null) {
             this.metrics = null;
@@ -85,6 +87,7 @@ public class DescribeMetricCollectionTypesResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeMetricCollectionTypesResult withMetrics(
             MetricCollectionType... metrics) {
         if (this.metrics == null) {
@@ -107,6 +110,7 @@ public class DescribeMetricCollectionTypesResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeMetricCollectionTypesResult withMetrics(
             java.util.Collection<MetricCollectionType> metrics) {
         setMetrics(metrics);
@@ -120,6 +124,7 @@ public class DescribeMetricCollectionTypesResult implements Serializable,
      * 
      * @return The granularities for the metrics.
      */
+
     public java.util.List<MetricGranularityType> getGranularities() {
         if (granularities == null) {
             granularities = new com.amazonaws.internal.SdkInternalList<MetricGranularityType>();
@@ -135,6 +140,7 @@ public class DescribeMetricCollectionTypesResult implements Serializable,
      * @param granularities
      *        The granularities for the metrics.
      */
+
     public void setGranularities(
             java.util.Collection<MetricGranularityType> granularities) {
         if (granularities == null) {
@@ -162,6 +168,7 @@ public class DescribeMetricCollectionTypesResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeMetricCollectionTypesResult withGranularities(
             MetricGranularityType... granularities) {
         if (this.granularities == null) {
@@ -184,6 +191,7 @@ public class DescribeMetricCollectionTypesResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeMetricCollectionTypesResult withGranularities(
             java.util.Collection<MetricGranularityType> granularities) {
         setGranularities(granularities);

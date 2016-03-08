@@ -113,6 +113,7 @@ public class FleetAttributes implements Serializable, Cloneable {
      * @param fleetId
      *        Unique identifier for a fleet.
      */
+
     public void setFleetId(String fleetId) {
         this.fleetId = fleetId;
     }
@@ -124,6 +125,7 @@ public class FleetAttributes implements Serializable, Cloneable {
      * 
      * @return Unique identifier for a fleet.
      */
+
     public String getFleetId() {
         return this.fleetId;
     }
@@ -138,6 +140,7 @@ public class FleetAttributes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FleetAttributes withFleetId(String fleetId) {
         setFleetId(fleetId);
         return this;
@@ -151,6 +154,7 @@ public class FleetAttributes implements Serializable, Cloneable {
      * @param description
      *        Human-readable description of the fleet.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -162,6 +166,7 @@ public class FleetAttributes implements Serializable, Cloneable {
      * 
      * @return Human-readable description of the fleet.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -176,6 +181,7 @@ public class FleetAttributes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FleetAttributes withDescription(String description) {
         setDescription(description);
         return this;
@@ -191,6 +197,7 @@ public class FleetAttributes implements Serializable, Cloneable {
      *        Descriptive label associated with this fleet. Fleet names do not
      *        need to be unique.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -204,6 +211,7 @@ public class FleetAttributes implements Serializable, Cloneable {
      * @return Descriptive label associated with this fleet. Fleet names do not
      *         need to be unique.
      */
+
     public String getName() {
         return this.name;
     }
@@ -220,6 +228,7 @@ public class FleetAttributes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FleetAttributes withName(String name) {
         setName(name);
         return this;
@@ -235,6 +244,7 @@ public class FleetAttributes implements Serializable, Cloneable {
      *        Time stamp indicating when this object was created. Format is an
      *        integer representing the number of seconds since epoch.
      */
+
     public void setCreationTime(java.util.Date creationTime) {
         this.creationTime = creationTime;
     }
@@ -248,6 +258,7 @@ public class FleetAttributes implements Serializable, Cloneable {
      * @return Time stamp indicating when this object was created. Format is an
      *         integer representing the number of seconds since epoch.
      */
+
     public java.util.Date getCreationTime() {
         return this.creationTime;
     }
@@ -264,6 +275,7 @@ public class FleetAttributes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FleetAttributes withCreationTime(java.util.Date creationTime) {
         setCreationTime(creationTime);
         return this;
@@ -279,6 +291,7 @@ public class FleetAttributes implements Serializable, Cloneable {
      *        Time stamp indicating when this fleet was terminated. Format is an
      *        integer representing the number of seconds since epoch.
      */
+
     public void setTerminationTime(java.util.Date terminationTime) {
         this.terminationTime = terminationTime;
     }
@@ -292,6 +305,7 @@ public class FleetAttributes implements Serializable, Cloneable {
      * @return Time stamp indicating when this fleet was terminated. Format is
      *         an integer representing the number of seconds since epoch.
      */
+
     public java.util.Date getTerminationTime() {
         return this.terminationTime;
     }
@@ -308,6 +322,7 @@ public class FleetAttributes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FleetAttributes withTerminationTime(java.util.Date terminationTime) {
         setTerminationTime(terminationTime);
         return this;
@@ -339,6 +354,7 @@ public class FleetAttributes implements Serializable, Cloneable {
      *        exists.lt/ligtlt/ulgt
      * @see FleetStatus
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -369,6 +385,7 @@ public class FleetAttributes implements Serializable, Cloneable {
      *         exists.lt/ligtlt/ulgt
      * @see FleetStatus
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -401,6 +418,7 @@ public class FleetAttributes implements Serializable, Cloneable {
      *         chained together.
      * @see FleetStatus
      */
+
     public FleetAttributes withStatus(String status) {
         setStatus(status);
         return this;
@@ -434,6 +452,7 @@ public class FleetAttributes implements Serializable, Cloneable {
      *         chained together.
      * @see FleetStatus
      */
+
     public void setStatus(FleetStatus status) {
         this.status = status.toString();
     }
@@ -466,6 +485,7 @@ public class FleetAttributes implements Serializable, Cloneable {
      *         chained together.
      * @see FleetStatus
      */
+
     public FleetAttributes withStatus(FleetStatus status) {
         setStatus(status);
         return this;
@@ -479,6 +499,7 @@ public class FleetAttributes implements Serializable, Cloneable {
      * @param buildId
      *        Unique identifier for a build.
      */
+
     public void setBuildId(String buildId) {
         this.buildId = buildId;
     }
@@ -490,6 +511,7 @@ public class FleetAttributes implements Serializable, Cloneable {
      * 
      * @return Unique identifier for a build.
      */
+
     public String getBuildId() {
         return this.buildId;
     }
@@ -504,6 +526,7 @@ public class FleetAttributes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FleetAttributes withBuildId(String buildId) {
         setBuildId(buildId);
         return this;
@@ -525,6 +548,7 @@ public class FleetAttributes implements Serializable, Cloneable {
      *        files are in a folder called "MyGame", your log path should be
      *        "C:\game\MyGame\server.exe".
      */
+
     public void setServerLaunchPath(String serverLaunchPath) {
         this.serverLaunchPath = serverLaunchPath;
     }
@@ -544,6 +568,7 @@ public class FleetAttributes implements Serializable, Cloneable {
      *         files are in a folder called "MyGame", your log path should be
      *         "C:\game\MyGame\server.exe".
      */
+
     public String getServerLaunchPath() {
         return this.serverLaunchPath;
     }
@@ -566,6 +591,7 @@ public class FleetAttributes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FleetAttributes withServerLaunchPath(String serverLaunchPath) {
         setServerLaunchPath(serverLaunchPath);
         return this;
@@ -583,6 +609,7 @@ public class FleetAttributes implements Serializable, Cloneable {
      *        should be expressed as a string of command-line parameters.
      *        Example: "+sv_port 33435 +start_lobby".
      */
+
     public void setServerLaunchParameters(String serverLaunchParameters) {
         this.serverLaunchParameters = serverLaunchParameters;
     }
@@ -598,6 +625,7 @@ public class FleetAttributes implements Serializable, Cloneable {
      *         should be expressed as a string of command-line parameters.
      *         Example: "+sv_port 33435 +start_lobby".
      */
+
     public String getServerLaunchParameters() {
         return this.serverLaunchParameters;
     }
@@ -616,6 +644,7 @@ public class FleetAttributes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FleetAttributes withServerLaunchParameters(
             String serverLaunchParameters) {
         setServerLaunchParameters(serverLaunchParameters);
@@ -634,6 +663,7 @@ public class FleetAttributes implements Serializable, Cloneable {
      *         logs on S3. Use the Amazon GameLift console to access the stored
      *         logs.
      */
+
     public java.util.List<String> getLogPaths() {
         return logPaths;
     }
@@ -650,6 +680,7 @@ public class FleetAttributes implements Serializable, Cloneable {
      *        a game session terminates, GameLift captures and stores the logs
      *        on S3. Use the Amazon GameLift console to access the stored logs.
      */
+
     public void setLogPaths(java.util.Collection<String> logPaths) {
         if (logPaths == null) {
             this.logPaths = null;
@@ -679,6 +710,7 @@ public class FleetAttributes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FleetAttributes withLogPaths(String... logPaths) {
         if (this.logPaths == null) {
             setLogPaths(new java.util.ArrayList<String>(logPaths.length));
@@ -703,6 +735,7 @@ public class FleetAttributes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FleetAttributes withLogPaths(java.util.Collection<String> logPaths) {
         setLogPaths(logPaths);
         return this;

@@ -74,6 +74,7 @@ public class ScriptBootstrapActionConfig implements Serializable, Cloneable {
      *        Location of the script to run during a bootstrap action. Can be
      *        either a location in Amazon S3 or on a local file system.
      */
+
     public void setPath(String path) {
         this.path = path;
     }
@@ -87,6 +88,7 @@ public class ScriptBootstrapActionConfig implements Serializable, Cloneable {
      * @return Location of the script to run during a bootstrap action. Can be
      *         either a location in Amazon S3 or on a local file system.
      */
+
     public String getPath() {
         return this.path;
     }
@@ -103,6 +105,7 @@ public class ScriptBootstrapActionConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScriptBootstrapActionConfig withPath(String path) {
         setPath(path);
         return this;
@@ -116,6 +119,7 @@ public class ScriptBootstrapActionConfig implements Serializable, Cloneable {
      * @return A list of command line arguments to pass to the bootstrap action
      *         script.
      */
+
     public java.util.List<String> getArgs() {
         if (args == null) {
             args = new com.amazonaws.internal.SdkInternalList<String>();
@@ -132,6 +136,7 @@ public class ScriptBootstrapActionConfig implements Serializable, Cloneable {
      *        A list of command line arguments to pass to the bootstrap action
      *        script.
      */
+
     public void setArgs(java.util.Collection<String> args) {
         if (args == null) {
             this.args = null;
@@ -158,6 +163,7 @@ public class ScriptBootstrapActionConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScriptBootstrapActionConfig withArgs(String... args) {
         if (this.args == null) {
             setArgs(new com.amazonaws.internal.SdkInternalList<String>(
@@ -180,6 +186,7 @@ public class ScriptBootstrapActionConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScriptBootstrapActionConfig withArgs(
             java.util.Collection<String> args) {
         setArgs(args);

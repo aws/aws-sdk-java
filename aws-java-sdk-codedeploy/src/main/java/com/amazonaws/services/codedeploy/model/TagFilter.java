@@ -57,6 +57,7 @@ public class TagFilter implements Serializable, Cloneable {
      * @param key
      *        The on-premises instance tag filter key.
      */
+
     public void setKey(String key) {
         this.key = key;
     }
@@ -68,6 +69,7 @@ public class TagFilter implements Serializable, Cloneable {
      * 
      * @return The on-premises instance tag filter key.
      */
+
     public String getKey() {
         return this.key;
     }
@@ -82,6 +84,7 @@ public class TagFilter implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TagFilter withKey(String key) {
         setKey(key);
         return this;
@@ -95,6 +98,7 @@ public class TagFilter implements Serializable, Cloneable {
      * @param value
      *        The on-premises instance tag filter value.
      */
+
     public void setValue(String value) {
         this.value = value;
     }
@@ -106,6 +110,7 @@ public class TagFilter implements Serializable, Cloneable {
      * 
      * @return The on-premises instance tag filter value.
      */
+
     public String getValue() {
         return this.value;
     }
@@ -120,6 +125,7 @@ public class TagFilter implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TagFilter withValue(String value) {
         setValue(value);
         return this;
@@ -143,6 +149,7 @@ public class TagFilter implements Serializable, Cloneable {
      *        <li>KEY_AND_VALUE: Key and value.</li>
      * @see TagFilterType
      */
+
     public void setType(String type) {
         this.type = type;
     }
@@ -164,6 +171,7 @@ public class TagFilter implements Serializable, Cloneable {
      *         <li>KEY_AND_VALUE: Key and value.</li>
      * @see TagFilterType
      */
+
     public String getType() {
         return this.type;
     }
@@ -188,6 +196,7 @@ public class TagFilter implements Serializable, Cloneable {
      *         chained together.
      * @see TagFilterType
      */
+
     public TagFilter withType(String type) {
         setType(type);
         return this;
@@ -213,6 +222,7 @@ public class TagFilter implements Serializable, Cloneable {
      *         chained together.
      * @see TagFilterType
      */
+
     public void setType(TagFilterType type) {
         this.type = type.toString();
     }
@@ -237,6 +247,7 @@ public class TagFilter implements Serializable, Cloneable {
      *         chained together.
      * @see TagFilterType
      */
+
     public TagFilter withType(TagFilterType type) {
         setType(type);
         return this;

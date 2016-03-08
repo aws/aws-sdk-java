@@ -113,6 +113,7 @@ public class NatGateway implements Serializable, Cloneable {
      * @param vpcId
      *        The ID of the VPC in which the NAT gateway is located.
      */
+
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
@@ -124,6 +125,7 @@ public class NatGateway implements Serializable, Cloneable {
      * 
      * @return The ID of the VPC in which the NAT gateway is located.
      */
+
     public String getVpcId() {
         return this.vpcId;
     }
@@ -138,6 +140,7 @@ public class NatGateway implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NatGateway withVpcId(String vpcId) {
         setVpcId(vpcId);
         return this;
@@ -151,6 +154,7 @@ public class NatGateway implements Serializable, Cloneable {
      * @param subnetId
      *        The ID of the subnet in which the NAT gateway is located.
      */
+
     public void setSubnetId(String subnetId) {
         this.subnetId = subnetId;
     }
@@ -162,6 +166,7 @@ public class NatGateway implements Serializable, Cloneable {
      * 
      * @return The ID of the subnet in which the NAT gateway is located.
      */
+
     public String getSubnetId() {
         return this.subnetId;
     }
@@ -176,6 +181,7 @@ public class NatGateway implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NatGateway withSubnetId(String subnetId) {
         setSubnetId(subnetId);
         return this;
@@ -189,6 +195,7 @@ public class NatGateway implements Serializable, Cloneable {
      * @param natGatewayId
      *        The ID of the NAT gateway.
      */
+
     public void setNatGatewayId(String natGatewayId) {
         this.natGatewayId = natGatewayId;
     }
@@ -200,6 +207,7 @@ public class NatGateway implements Serializable, Cloneable {
      * 
      * @return The ID of the NAT gateway.
      */
+
     public String getNatGatewayId() {
         return this.natGatewayId;
     }
@@ -214,6 +222,7 @@ public class NatGateway implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NatGateway withNatGatewayId(String natGatewayId) {
         setNatGatewayId(natGatewayId);
         return this;
@@ -227,6 +236,7 @@ public class NatGateway implements Serializable, Cloneable {
      * @param createTime
      *        The date and time the NAT gateway was created.
      */
+
     public void setCreateTime(java.util.Date createTime) {
         this.createTime = createTime;
     }
@@ -238,6 +248,7 @@ public class NatGateway implements Serializable, Cloneable {
      * 
      * @return The date and time the NAT gateway was created.
      */
+
     public java.util.Date getCreateTime() {
         return this.createTime;
     }
@@ -252,6 +263,7 @@ public class NatGateway implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NatGateway withCreateTime(java.util.Date createTime) {
         setCreateTime(createTime);
         return this;
@@ -265,6 +277,7 @@ public class NatGateway implements Serializable, Cloneable {
      * @param deleteTime
      *        The date and time the NAT gateway was deleted, if applicable.
      */
+
     public void setDeleteTime(java.util.Date deleteTime) {
         this.deleteTime = deleteTime;
     }
@@ -276,6 +289,7 @@ public class NatGateway implements Serializable, Cloneable {
      * 
      * @return The date and time the NAT gateway was deleted, if applicable.
      */
+
     public java.util.Date getDeleteTime() {
         return this.deleteTime;
     }
@@ -290,6 +304,7 @@ public class NatGateway implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NatGateway withDeleteTime(java.util.Date deleteTime) {
         setDeleteTime(deleteTime);
         return this;
@@ -304,6 +319,7 @@ public class NatGateway implements Serializable, Cloneable {
      * @return Information about the IP addresses and network interface
      *         associated with the NAT gateway.
      */
+
     public java.util.List<NatGatewayAddress> getNatGatewayAddresses() {
         if (natGatewayAddresses == null) {
             natGatewayAddresses = new com.amazonaws.internal.SdkInternalList<NatGatewayAddress>();
@@ -321,6 +337,7 @@ public class NatGateway implements Serializable, Cloneable {
      *        Information about the IP addresses and network interface
      *        associated with the NAT gateway.
      */
+
     public void setNatGatewayAddresses(
             java.util.Collection<NatGatewayAddress> natGatewayAddresses) {
         if (natGatewayAddresses == null) {
@@ -350,6 +367,7 @@ public class NatGateway implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NatGateway withNatGatewayAddresses(
             NatGatewayAddress... natGatewayAddresses) {
         if (this.natGatewayAddresses == null) {
@@ -374,6 +392,7 @@ public class NatGateway implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NatGateway withNatGatewayAddresses(
             java.util.Collection<NatGatewayAddress> natGatewayAddresses) {
         setNatGatewayAddresses(natGatewayAddresses);
@@ -389,6 +408,7 @@ public class NatGateway implements Serializable, Cloneable {
      *        The state of the NAT gateway.
      * @see NatGatewayState
      */
+
     public void setState(String state) {
         this.state = state;
     }
@@ -401,6 +421,7 @@ public class NatGateway implements Serializable, Cloneable {
      * @return The state of the NAT gateway.
      * @see NatGatewayState
      */
+
     public String getState() {
         return this.state;
     }
@@ -416,6 +437,7 @@ public class NatGateway implements Serializable, Cloneable {
      *         chained together.
      * @see NatGatewayState
      */
+
     public NatGateway withState(String state) {
         setState(state);
         return this;
@@ -432,6 +454,7 @@ public class NatGateway implements Serializable, Cloneable {
      *         chained together.
      * @see NatGatewayState
      */
+
     public void setState(NatGatewayState state) {
         this.state = state.toString();
     }
@@ -447,6 +470,7 @@ public class NatGateway implements Serializable, Cloneable {
      *         chained together.
      * @see NatGatewayState
      */
+
     public NatGateway withState(NatGatewayState state) {
         setState(state);
         return this;
@@ -471,6 +495,7 @@ public class NatGateway implements Serializable, Cloneable {
      *        <code>InternalError</code> | <code>InvalidSubnetID.NotFound</code>
      *        )
      */
+
     public void setFailureCode(String failureCode) {
         this.failureCode = failureCode;
     }
@@ -493,6 +518,7 @@ public class NatGateway implements Serializable, Cloneable {
      *         <code>InternalError</code> |
      *         <code>InvalidSubnetID.NotFound</code>)
      */
+
     public String getFailureCode() {
         return this.failureCode;
     }
@@ -518,6 +544,7 @@ public class NatGateway implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NatGateway withFailureCode(String failureCode) {
         setFailureCode(failureCode);
         return this;
@@ -570,6 +597,7 @@ public class NatGateway implements Serializable, Cloneable {
      *        <code>The specified subnet subnet-xxxxxxxx does not exist or could not be found.</code>
      *        </li>
      */
+
     public void setFailureMessage(String failureMessage) {
         this.failureMessage = failureMessage;
     }
@@ -620,6 +648,7 @@ public class NatGateway implements Serializable, Cloneable {
      *         <code>The specified subnet subnet-xxxxxxxx does not exist or could not be found.</code>
      *         </li>
      */
+
     public String getFailureMessage() {
         return this.failureMessage;
     }
@@ -673,6 +702,7 @@ public class NatGateway implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NatGateway withFailureMessage(String failureMessage) {
         setFailureMessage(failureMessage);
         return this;

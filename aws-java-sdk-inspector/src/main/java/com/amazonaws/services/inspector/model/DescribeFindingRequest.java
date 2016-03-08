@@ -40,6 +40,7 @@ public class DescribeFindingRequest extends AmazonWebServiceRequest implements
      * @param findingArn
      *        The ARN specifying the finding that you want to describe.
      */
+
     public void setFindingArn(String findingArn) {
         this.findingArn = findingArn;
     }
@@ -51,6 +52,7 @@ public class DescribeFindingRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ARN specifying the finding that you want to describe.
      */
+
     public String getFindingArn() {
         return this.findingArn;
     }
@@ -65,6 +67,7 @@ public class DescribeFindingRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeFindingRequest withFindingArn(String findingArn) {
         setFindingArn(findingArn);
         return this;

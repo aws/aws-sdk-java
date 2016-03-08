@@ -47,6 +47,7 @@ public class ListAliasesResult implements Serializable, Cloneable {
      * 
      * @return Collection of alias records that match the list request.
      */
+
     public java.util.List<Alias> getAliases() {
         return aliases;
     }
@@ -59,6 +60,7 @@ public class ListAliasesResult implements Serializable, Cloneable {
      * @param aliases
      *        Collection of alias records that match the list request.
      */
+
     public void setAliases(java.util.Collection<Alias> aliases) {
         if (aliases == null) {
             this.aliases = null;
@@ -84,6 +86,7 @@ public class ListAliasesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListAliasesResult withAliases(Alias... aliases) {
         if (this.aliases == null) {
             setAliases(new java.util.ArrayList<Alias>(aliases.length));
@@ -104,6 +107,7 @@ public class ListAliasesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListAliasesResult withAliases(java.util.Collection<Alias> aliases) {
         setAliases(aliases);
         return this;
@@ -121,6 +125,7 @@ public class ListAliasesResult implements Serializable, Cloneable {
      *        call to this action. If no token is returned, these results
      *        represent the end of the list.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -136,6 +141,7 @@ public class ListAliasesResult implements Serializable, Cloneable {
      *         call to this action. If no token is returned, these results
      *         represent the end of the list.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -154,6 +160,7 @@ public class ListAliasesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListAliasesResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

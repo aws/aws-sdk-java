@@ -62,6 +62,7 @@ public class HostVolumeProperties implements Serializable, Cloneable {
      *        instance, the Docker daemon creates it. If the location does
      *        exist, the contents of the source path folder are exported.
      */
+
     public void setSourcePath(String sourcePath) {
         this.sourcePath = sourcePath;
     }
@@ -88,6 +89,7 @@ public class HostVolumeProperties implements Serializable, Cloneable {
      *         container instance, the Docker daemon creates it. If the location
      *         does exist, the contents of the source path folder are exported.
      */
+
     public String getSourcePath() {
         return this.sourcePath;
     }
@@ -117,6 +119,7 @@ public class HostVolumeProperties implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HostVolumeProperties withSourcePath(String sourcePath) {
         setSourcePath(sourcePath);
         return this;

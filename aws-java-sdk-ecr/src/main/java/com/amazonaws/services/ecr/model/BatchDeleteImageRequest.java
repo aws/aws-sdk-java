@@ -63,6 +63,7 @@ public class BatchDeleteImageRequest extends AmazonWebServiceRequest implements
      *        image to delete. If you do not specify a registry, the default
      *        registry is assumed.
      */
+
     public void setRegistryId(String registryId) {
         this.registryId = registryId;
     }
@@ -78,6 +79,7 @@ public class BatchDeleteImageRequest extends AmazonWebServiceRequest implements
      *         image to delete. If you do not specify a registry, the default
      *         registry is assumed.
      */
+
     public String getRegistryId() {
         return this.registryId;
     }
@@ -96,6 +98,7 @@ public class BatchDeleteImageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchDeleteImageRequest withRegistryId(String registryId) {
         setRegistryId(registryId);
         return this;
@@ -109,6 +112,7 @@ public class BatchDeleteImageRequest extends AmazonWebServiceRequest implements
      * @param repositoryName
      *        The repository that contains the image to delete.
      */
+
     public void setRepositoryName(String repositoryName) {
         this.repositoryName = repositoryName;
     }
@@ -120,6 +124,7 @@ public class BatchDeleteImageRequest extends AmazonWebServiceRequest implements
      * 
      * @return The repository that contains the image to delete.
      */
+
     public String getRepositoryName() {
         return this.repositoryName;
     }
@@ -134,6 +139,7 @@ public class BatchDeleteImageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchDeleteImageRequest withRepositoryName(String repositoryName) {
         setRepositoryName(repositoryName);
         return this;
@@ -150,6 +156,7 @@ public class BatchDeleteImageRequest extends AmazonWebServiceRequest implements
      *         delete. The format of the <code>imageIds</code> reference is
      *         <code>imageTag=tag</code> or <code>imageDigest=digest</code>.
      */
+
     public java.util.List<ImageIdentifier> getImageIds() {
         return imageIds;
     }
@@ -166,6 +173,7 @@ public class BatchDeleteImageRequest extends AmazonWebServiceRequest implements
      *        The format of the <code>imageIds</code> reference is
      *        <code>imageTag=tag</code> or <code>imageDigest=digest</code>.
      */
+
     public void setImageIds(java.util.Collection<ImageIdentifier> imageIds) {
         if (imageIds == null) {
             this.imageIds = null;
@@ -195,6 +203,7 @@ public class BatchDeleteImageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchDeleteImageRequest withImageIds(ImageIdentifier... imageIds) {
         if (this.imageIds == null) {
             setImageIds(new java.util.ArrayList<ImageIdentifier>(
@@ -220,6 +229,7 @@ public class BatchDeleteImageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchDeleteImageRequest withImageIds(
             java.util.Collection<ImageIdentifier> imageIds) {
         setImageIds(imageIds);

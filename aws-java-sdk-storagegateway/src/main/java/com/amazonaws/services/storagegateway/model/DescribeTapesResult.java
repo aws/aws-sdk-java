@@ -50,6 +50,7 @@ public class DescribeTapesResult implements Serializable, Cloneable {
      * 
      * @return An array of virtual tape descriptions.
      */
+
     public java.util.List<Tape> getTapes() {
         if (tapes == null) {
             tapes = new com.amazonaws.internal.SdkInternalList<Tape>();
@@ -65,6 +66,7 @@ public class DescribeTapesResult implements Serializable, Cloneable {
      * @param tapes
      *        An array of virtual tape descriptions.
      */
+
     public void setTapes(java.util.Collection<Tape> tapes) {
         if (tapes == null) {
             this.tapes = null;
@@ -90,6 +92,7 @@ public class DescribeTapesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTapesResult withTapes(Tape... tapes) {
         if (this.tapes == null) {
             setTapes(new com.amazonaws.internal.SdkInternalList<Tape>(
@@ -111,6 +114,7 @@ public class DescribeTapesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTapesResult withTapes(java.util.Collection<Tape> tapes) {
         setTapes(tapes);
         return this;
@@ -133,6 +137,7 @@ public class DescribeTapesResult implements Serializable, Cloneable {
      *        If a response does not contain a marker, then there are no more
      *        results to be retrieved.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -153,6 +158,7 @@ public class DescribeTapesResult implements Serializable, Cloneable {
      *         If a response does not contain a marker, then there are no more
      *         results to be retrieved.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -176,6 +182,7 @@ public class DescribeTapesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTapesResult withMarker(String marker) {
         setMarker(marker);
         return this;

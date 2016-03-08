@@ -44,6 +44,7 @@ public class DescribeNatGatewaysResult implements Serializable, Cloneable {
      * 
      * @return Information about the NAT gateways.
      */
+
     public java.util.List<NatGateway> getNatGateways() {
         if (natGateways == null) {
             natGateways = new com.amazonaws.internal.SdkInternalList<NatGateway>();
@@ -59,6 +60,7 @@ public class DescribeNatGatewaysResult implements Serializable, Cloneable {
      * @param natGateways
      *        Information about the NAT gateways.
      */
+
     public void setNatGateways(java.util.Collection<NatGateway> natGateways) {
         if (natGateways == null) {
             this.natGateways = null;
@@ -85,6 +87,7 @@ public class DescribeNatGatewaysResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeNatGatewaysResult withNatGateways(NatGateway... natGateways) {
         if (this.natGateways == null) {
             setNatGateways(new com.amazonaws.internal.SdkInternalList<NatGateway>(
@@ -106,6 +109,7 @@ public class DescribeNatGatewaysResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeNatGatewaysResult withNatGateways(
             java.util.Collection<NatGateway> natGateways) {
         setNatGateways(natGateways);
@@ -122,6 +126,7 @@ public class DescribeNatGatewaysResult implements Serializable, Cloneable {
      *        The token to use to retrieve the next page of results. This value
      *        is <code>null</code> when there are no more results to return.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -135,6 +140,7 @@ public class DescribeNatGatewaysResult implements Serializable, Cloneable {
      * @return The token to use to retrieve the next page of results. This value
      *         is <code>null</code> when there are no more results to return.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -151,6 +157,7 @@ public class DescribeNatGatewaysResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeNatGatewaysResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

@@ -60,6 +60,7 @@ public class DeleteLoadBalancerRequest extends AmazonWebServiceRequest
      * @param loadBalancerName
      *        The name of the load balancer.
      */
+
     public void setLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
     }
@@ -71,6 +72,7 @@ public class DeleteLoadBalancerRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the load balancer.
      */
+
     public String getLoadBalancerName() {
         return this.loadBalancerName;
     }
@@ -85,6 +87,7 @@ public class DeleteLoadBalancerRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteLoadBalancerRequest withLoadBalancerName(
             String loadBalancerName) {
         setLoadBalancerName(loadBalancerName);

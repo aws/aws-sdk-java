@@ -32,6 +32,7 @@ public class GetClientCertificatesRequest extends AmazonWebServiceRequest
     /**
      * @param position
      */
+
     public void setPosition(String position) {
         this.position = position;
     }
@@ -39,6 +40,7 @@ public class GetClientCertificatesRequest extends AmazonWebServiceRequest
     /**
      * @return
      */
+
     public String getPosition() {
         return this.position;
     }
@@ -48,6 +50,7 @@ public class GetClientCertificatesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetClientCertificatesRequest withPosition(String position) {
         setPosition(position);
         return this;
@@ -56,6 +59,7 @@ public class GetClientCertificatesRequest extends AmazonWebServiceRequest
     /**
      * @param limit
      */
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -63,6 +67,7 @@ public class GetClientCertificatesRequest extends AmazonWebServiceRequest
     /**
      * @return
      */
+
     public Integer getLimit() {
         return this.limit;
     }
@@ -72,6 +77,7 @@ public class GetClientCertificatesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetClientCertificatesRequest withLimit(Integer limit) {
         setLimit(limit);
         return this;

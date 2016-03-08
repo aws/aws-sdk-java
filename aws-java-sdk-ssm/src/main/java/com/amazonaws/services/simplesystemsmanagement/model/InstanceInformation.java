@@ -49,6 +49,7 @@ public class InstanceInformation implements Serializable, Cloneable {
      * @param instanceId
      *        The instance ID.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -58,6 +59,7 @@ public class InstanceInformation implements Serializable, Cloneable {
      * 
      * @return The instance ID.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
@@ -70,6 +72,7 @@ public class InstanceInformation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceInformation withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;
@@ -82,6 +85,7 @@ public class InstanceInformation implements Serializable, Cloneable {
      *        Connection status of the SSM agent.
      * @see PingStatus
      */
+
     public void setPingStatus(String pingStatus) {
         this.pingStatus = pingStatus;
     }
@@ -92,6 +96,7 @@ public class InstanceInformation implements Serializable, Cloneable {
      * @return Connection status of the SSM agent.
      * @see PingStatus
      */
+
     public String getPingStatus() {
         return this.pingStatus;
     }
@@ -105,6 +110,7 @@ public class InstanceInformation implements Serializable, Cloneable {
      *         chained together.
      * @see PingStatus
      */
+
     public InstanceInformation withPingStatus(String pingStatus) {
         setPingStatus(pingStatus);
         return this;
@@ -119,6 +125,7 @@ public class InstanceInformation implements Serializable, Cloneable {
      *         chained together.
      * @see PingStatus
      */
+
     public void setPingStatus(PingStatus pingStatus) {
         this.pingStatus = pingStatus.toString();
     }
@@ -132,6 +139,7 @@ public class InstanceInformation implements Serializable, Cloneable {
      *         chained together.
      * @see PingStatus
      */
+
     public InstanceInformation withPingStatus(PingStatus pingStatus) {
         setPingStatus(pingStatus);
         return this;
@@ -143,6 +151,7 @@ public class InstanceInformation implements Serializable, Cloneable {
      * @param lastPingDateTime
      *        The date and time when agent last pinged SSM service.
      */
+
     public void setLastPingDateTime(java.util.Date lastPingDateTime) {
         this.lastPingDateTime = lastPingDateTime;
     }
@@ -152,6 +161,7 @@ public class InstanceInformation implements Serializable, Cloneable {
      * 
      * @return The date and time when agent last pinged SSM service.
      */
+
     public java.util.Date getLastPingDateTime() {
         return this.lastPingDateTime;
     }
@@ -164,6 +174,7 @@ public class InstanceInformation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceInformation withLastPingDateTime(
             java.util.Date lastPingDateTime) {
         setLastPingDateTime(lastPingDateTime);
@@ -176,6 +187,7 @@ public class InstanceInformation implements Serializable, Cloneable {
      * @param agentVersion
      *        The version of the SSM agent running on your instance.
      */
+
     public void setAgentVersion(String agentVersion) {
         this.agentVersion = agentVersion;
     }
@@ -185,6 +197,7 @@ public class InstanceInformation implements Serializable, Cloneable {
      * 
      * @return The version of the SSM agent running on your instance.
      */
+
     public String getAgentVersion() {
         return this.agentVersion;
     }
@@ -197,6 +210,7 @@ public class InstanceInformation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceInformation withAgentVersion(String agentVersion) {
         setAgentVersion(agentVersion);
         return this;
@@ -210,6 +224,7 @@ public class InstanceInformation implements Serializable, Cloneable {
      *        Indicates whether latest version of the SSM agent is running on
      *        your instance.
      */
+
     public void setIsLatestVersion(Boolean isLatestVersion) {
         this.isLatestVersion = isLatestVersion;
     }
@@ -221,6 +236,7 @@ public class InstanceInformation implements Serializable, Cloneable {
      * @return Indicates whether latest version of the SSM agent is running on
      *         your instance.
      */
+
     public Boolean getIsLatestVersion() {
         return this.isLatestVersion;
     }
@@ -235,6 +251,7 @@ public class InstanceInformation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceInformation withIsLatestVersion(Boolean isLatestVersion) {
         setIsLatestVersion(isLatestVersion);
         return this;
@@ -247,6 +264,7 @@ public class InstanceInformation implements Serializable, Cloneable {
      * @return Indicates whether latest version of the SSM agent is running on
      *         your instance.
      */
+
     public Boolean isLatestVersion() {
         return this.isLatestVersion;
     }
@@ -258,6 +276,7 @@ public class InstanceInformation implements Serializable, Cloneable {
      *        The operating system platform type.
      * @see PlatformType
      */
+
     public void setPlatformType(String platformType) {
         this.platformType = platformType;
     }
@@ -268,6 +287,7 @@ public class InstanceInformation implements Serializable, Cloneable {
      * @return The operating system platform type.
      * @see PlatformType
      */
+
     public String getPlatformType() {
         return this.platformType;
     }
@@ -281,6 +301,7 @@ public class InstanceInformation implements Serializable, Cloneable {
      *         chained together.
      * @see PlatformType
      */
+
     public InstanceInformation withPlatformType(String platformType) {
         setPlatformType(platformType);
         return this;
@@ -295,6 +316,7 @@ public class InstanceInformation implements Serializable, Cloneable {
      *         chained together.
      * @see PlatformType
      */
+
     public void setPlatformType(PlatformType platformType) {
         this.platformType = platformType.toString();
     }
@@ -308,6 +330,7 @@ public class InstanceInformation implements Serializable, Cloneable {
      *         chained together.
      * @see PlatformType
      */
+
     public InstanceInformation withPlatformType(PlatformType platformType) {
         setPlatformType(platformType);
         return this;
@@ -320,6 +343,7 @@ public class InstanceInformation implements Serializable, Cloneable {
      *        The name of the operating system platform running on your
      *        instance.
      */
+
     public void setPlatformName(String platformName) {
         this.platformName = platformName;
     }
@@ -330,6 +354,7 @@ public class InstanceInformation implements Serializable, Cloneable {
      * @return The name of the operating system platform running on your
      *         instance.
      */
+
     public String getPlatformName() {
         return this.platformName;
     }
@@ -343,6 +368,7 @@ public class InstanceInformation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceInformation withPlatformName(String platformName) {
         setPlatformName(platformName);
         return this;
@@ -354,6 +380,7 @@ public class InstanceInformation implements Serializable, Cloneable {
      * @param platformVersion
      *        The version of the OS platform running on your instance.
      */
+
     public void setPlatformVersion(String platformVersion) {
         this.platformVersion = platformVersion;
     }
@@ -363,6 +390,7 @@ public class InstanceInformation implements Serializable, Cloneable {
      * 
      * @return The version of the OS platform running on your instance.
      */
+
     public String getPlatformVersion() {
         return this.platformVersion;
     }
@@ -375,6 +403,7 @@ public class InstanceInformation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceInformation withPlatformVersion(String platformVersion) {
         setPlatformVersion(platformVersion);
         return this;

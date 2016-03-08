@@ -52,6 +52,7 @@ public class UpdateVolumeRequest extends AmazonWebServiceRequest implements
      * @param volumeId
      *        The volume ID.
      */
+
     public void setVolumeId(String volumeId) {
         this.volumeId = volumeId;
     }
@@ -63,6 +64,7 @@ public class UpdateVolumeRequest extends AmazonWebServiceRequest implements
      * 
      * @return The volume ID.
      */
+
     public String getVolumeId() {
         return this.volumeId;
     }
@@ -77,6 +79,7 @@ public class UpdateVolumeRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateVolumeRequest withVolumeId(String volumeId) {
         setVolumeId(volumeId);
         return this;
@@ -90,6 +93,7 @@ public class UpdateVolumeRequest extends AmazonWebServiceRequest implements
      * @param name
      *        The new name.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -101,6 +105,7 @@ public class UpdateVolumeRequest extends AmazonWebServiceRequest implements
      * 
      * @return The new name.
      */
+
     public String getName() {
         return this.name;
     }
@@ -115,6 +120,7 @@ public class UpdateVolumeRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateVolumeRequest withName(String name) {
         setName(name);
         return this;
@@ -128,6 +134,7 @@ public class UpdateVolumeRequest extends AmazonWebServiceRequest implements
      * @param mountPoint
      *        The new mount point.
      */
+
     public void setMountPoint(String mountPoint) {
         this.mountPoint = mountPoint;
     }
@@ -139,6 +146,7 @@ public class UpdateVolumeRequest extends AmazonWebServiceRequest implements
      * 
      * @return The new mount point.
      */
+
     public String getMountPoint() {
         return this.mountPoint;
     }
@@ -153,6 +161,7 @@ public class UpdateVolumeRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateVolumeRequest withMountPoint(String mountPoint) {
         setMountPoint(mountPoint);
         return this;

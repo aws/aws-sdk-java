@@ -64,6 +64,7 @@ public class ModifyReservedInstancesRequest extends AmazonWebServiceRequest
      *        "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html"
      *        >Ensuring Idempotency</a>.
      */
+
     public void setClientToken(String clientToken) {
         this.clientToken = clientToken;
     }
@@ -81,6 +82,7 @@ public class ModifyReservedInstancesRequest extends AmazonWebServiceRequest
      *         "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html"
      *         >Ensuring Idempotency</a>.
      */
+
     public String getClientToken() {
         return this.clientToken;
     }
@@ -101,6 +103,7 @@ public class ModifyReservedInstancesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyReservedInstancesRequest withClientToken(String clientToken) {
         setClientToken(clientToken);
         return this;
@@ -113,6 +116,7 @@ public class ModifyReservedInstancesRequest extends AmazonWebServiceRequest
      * 
      * @return The IDs of the Reserved Instances to modify.
      */
+
     public java.util.List<String> getReservedInstancesIds() {
         if (reservedInstancesIds == null) {
             reservedInstancesIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -128,6 +132,7 @@ public class ModifyReservedInstancesRequest extends AmazonWebServiceRequest
      * @param reservedInstancesIds
      *        The IDs of the Reserved Instances to modify.
      */
+
     public void setReservedInstancesIds(
             java.util.Collection<String> reservedInstancesIds) {
         if (reservedInstancesIds == null) {
@@ -155,6 +160,7 @@ public class ModifyReservedInstancesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyReservedInstancesRequest withReservedInstancesIds(
             String... reservedInstancesIds) {
         if (this.reservedInstancesIds == null) {
@@ -177,6 +183,7 @@ public class ModifyReservedInstancesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyReservedInstancesRequest withReservedInstancesIds(
             java.util.Collection<String> reservedInstancesIds) {
         setReservedInstancesIds(reservedInstancesIds);
@@ -190,6 +197,7 @@ public class ModifyReservedInstancesRequest extends AmazonWebServiceRequest
      * 
      * @return The configuration settings for the Reserved Instances to modify.
      */
+
     public java.util.List<ReservedInstancesConfiguration> getTargetConfigurations() {
         if (targetConfigurations == null) {
             targetConfigurations = new com.amazonaws.internal.SdkInternalList<ReservedInstancesConfiguration>();
@@ -205,6 +213,7 @@ public class ModifyReservedInstancesRequest extends AmazonWebServiceRequest
      * @param targetConfigurations
      *        The configuration settings for the Reserved Instances to modify.
      */
+
     public void setTargetConfigurations(
             java.util.Collection<ReservedInstancesConfiguration> targetConfigurations) {
         if (targetConfigurations == null) {
@@ -232,6 +241,7 @@ public class ModifyReservedInstancesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyReservedInstancesRequest withTargetConfigurations(
             ReservedInstancesConfiguration... targetConfigurations) {
         if (this.targetConfigurations == null) {
@@ -254,6 +264,7 @@ public class ModifyReservedInstancesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyReservedInstancesRequest withTargetConfigurations(
             java.util.Collection<ReservedInstancesConfiguration> targetConfigurations) {
         setTargetConfigurations(targetConfigurations);

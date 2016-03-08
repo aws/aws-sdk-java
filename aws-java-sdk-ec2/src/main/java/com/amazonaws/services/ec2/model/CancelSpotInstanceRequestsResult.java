@@ -40,6 +40,7 @@ public class CancelSpotInstanceRequestsResult implements Serializable,
      * 
      * @return One or more Spot instance requests.
      */
+
     public java.util.List<CancelledSpotInstanceRequest> getCancelledSpotInstanceRequests() {
         if (cancelledSpotInstanceRequests == null) {
             cancelledSpotInstanceRequests = new com.amazonaws.internal.SdkInternalList<CancelledSpotInstanceRequest>();
@@ -55,6 +56,7 @@ public class CancelSpotInstanceRequestsResult implements Serializable,
      * @param cancelledSpotInstanceRequests
      *        One or more Spot instance requests.
      */
+
     public void setCancelledSpotInstanceRequests(
             java.util.Collection<CancelledSpotInstanceRequest> cancelledSpotInstanceRequests) {
         if (cancelledSpotInstanceRequests == null) {
@@ -82,6 +84,7 @@ public class CancelSpotInstanceRequestsResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CancelSpotInstanceRequestsResult withCancelledSpotInstanceRequests(
             CancelledSpotInstanceRequest... cancelledSpotInstanceRequests) {
         if (this.cancelledSpotInstanceRequests == null) {
@@ -104,6 +107,7 @@ public class CancelSpotInstanceRequestsResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CancelSpotInstanceRequestsResult withCancelledSpotInstanceRequests(
             java.util.Collection<CancelledSpotInstanceRequest> cancelledSpotInstanceRequests) {
         setCancelledSpotInstanceRequests(cancelledSpotInstanceRequests);

@@ -56,6 +56,7 @@ public class Warning implements Serializable, Cloneable {
      * @param code
      *        The code of the cross-regional warning.
      */
+
     public void setCode(String code) {
         this.code = code;
     }
@@ -67,6 +68,7 @@ public class Warning implements Serializable, Cloneable {
      * 
      * @return The code of the cross-regional warning.
      */
+
     public String getCode() {
         return this.code;
     }
@@ -81,6 +83,7 @@ public class Warning implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Warning withCode(String code) {
         setCode(code);
         return this;
@@ -102,6 +105,7 @@ public class Warning implements Serializable, Cloneable {
      *        <b>Note:</b> AWS KMS keys must be in the same region as the
      *        pipeline.
      */
+
     public void setMessage(String message) {
         this.message = message;
     }
@@ -121,6 +125,7 @@ public class Warning implements Serializable, Cloneable {
      *         <b>Note:</b> AWS KMS keys must be in the same region as the
      *         pipeline.
      */
+
     public String getMessage() {
         return this.message;
     }
@@ -143,6 +148,7 @@ public class Warning implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Warning withMessage(String message) {
         setMessage(message);
         return this;

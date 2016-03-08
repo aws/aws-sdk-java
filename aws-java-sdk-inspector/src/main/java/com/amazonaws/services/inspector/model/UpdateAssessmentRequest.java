@@ -53,6 +53,7 @@ public class UpdateAssessmentRequest extends AmazonWebServiceRequest implements
      * @param assessmentArn
      *        Asessment ARN that you want to update.
      */
+
     public void setAssessmentArn(String assessmentArn) {
         this.assessmentArn = assessmentArn;
     }
@@ -64,6 +65,7 @@ public class UpdateAssessmentRequest extends AmazonWebServiceRequest implements
      * 
      * @return Asessment ARN that you want to update.
      */
+
     public String getAssessmentArn() {
         return this.assessmentArn;
     }
@@ -78,6 +80,7 @@ public class UpdateAssessmentRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateAssessmentRequest withAssessmentArn(String assessmentArn) {
         setAssessmentArn(assessmentArn);
         return this;
@@ -91,6 +94,7 @@ public class UpdateAssessmentRequest extends AmazonWebServiceRequest implements
      * @param assessmentName
      *        Assessment name that you want to update.
      */
+
     public void setAssessmentName(String assessmentName) {
         this.assessmentName = assessmentName;
     }
@@ -102,6 +106,7 @@ public class UpdateAssessmentRequest extends AmazonWebServiceRequest implements
      * 
      * @return Assessment name that you want to update.
      */
+
     public String getAssessmentName() {
         return this.assessmentName;
     }
@@ -116,6 +121,7 @@ public class UpdateAssessmentRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateAssessmentRequest withAssessmentName(String assessmentName) {
         setAssessmentName(assessmentName);
         return this;
@@ -132,6 +138,7 @@ public class UpdateAssessmentRequest extends AmazonWebServiceRequest implements
      *        default value is 3600 seconds (one hour). The maximum value is
      *        86400 seconds (one day).
      */
+
     public void setDurationInSeconds(Integer durationInSeconds) {
         this.durationInSeconds = durationInSeconds;
     }
@@ -146,6 +153,7 @@ public class UpdateAssessmentRequest extends AmazonWebServiceRequest implements
      *         default value is 3600 seconds (one hour). The maximum value is
      *         86400 seconds (one day).
      */
+
     public Integer getDurationInSeconds() {
         return this.durationInSeconds;
     }
@@ -163,6 +171,7 @@ public class UpdateAssessmentRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateAssessmentRequest withDurationInSeconds(
             Integer durationInSeconds) {
         setDurationInSeconds(durationInSeconds);

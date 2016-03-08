@@ -46,6 +46,7 @@ public class SetTimeBasedAutoScalingRequest extends AmazonWebServiceRequest
      * @param instanceId
      *        The instance ID.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -57,6 +58,7 @@ public class SetTimeBasedAutoScalingRequest extends AmazonWebServiceRequest
      * 
      * @return The instance ID.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
@@ -71,6 +73,7 @@ public class SetTimeBasedAutoScalingRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetTimeBasedAutoScalingRequest withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;
@@ -84,6 +87,7 @@ public class SetTimeBasedAutoScalingRequest extends AmazonWebServiceRequest
      * @param autoScalingSchedule
      *        An <code>AutoScalingSchedule</code> with the instance schedule.
      */
+
     public void setAutoScalingSchedule(
             WeeklyAutoScalingSchedule autoScalingSchedule) {
         this.autoScalingSchedule = autoScalingSchedule;
@@ -96,6 +100,7 @@ public class SetTimeBasedAutoScalingRequest extends AmazonWebServiceRequest
      * 
      * @return An <code>AutoScalingSchedule</code> with the instance schedule.
      */
+
     public WeeklyAutoScalingSchedule getAutoScalingSchedule() {
         return this.autoScalingSchedule;
     }
@@ -110,6 +115,7 @@ public class SetTimeBasedAutoScalingRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetTimeBasedAutoScalingRequest withAutoScalingSchedule(
             WeeklyAutoScalingSchedule autoScalingSchedule) {
         setAutoScalingSchedule(autoScalingSchedule);

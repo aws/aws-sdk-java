@@ -208,6 +208,7 @@ public class DescribeReservedInstancesOfferingsRequest extends
      * 
      * @return One or more Reserved Instances offering IDs.
      */
+
     public java.util.List<String> getReservedInstancesOfferingIds() {
         if (reservedInstancesOfferingIds == null) {
             reservedInstancesOfferingIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -223,6 +224,7 @@ public class DescribeReservedInstancesOfferingsRequest extends
      * @param reservedInstancesOfferingIds
      *        One or more Reserved Instances offering IDs.
      */
+
     public void setReservedInstancesOfferingIds(
             java.util.Collection<String> reservedInstancesOfferingIds) {
         if (reservedInstancesOfferingIds == null) {
@@ -250,6 +252,7 @@ public class DescribeReservedInstancesOfferingsRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeReservedInstancesOfferingsRequest withReservedInstancesOfferingIds(
             String... reservedInstancesOfferingIds) {
         if (this.reservedInstancesOfferingIds == null) {
@@ -272,6 +275,7 @@ public class DescribeReservedInstancesOfferingsRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeReservedInstancesOfferingsRequest withReservedInstancesOfferingIds(
             java.util.Collection<String> reservedInstancesOfferingIds) {
         setReservedInstancesOfferingIds(reservedInstancesOfferingIds);
@@ -295,6 +299,7 @@ public class DescribeReservedInstancesOfferingsRequest extends
      *        Guide</i>.
      * @see InstanceType
      */
+
     public void setInstanceType(String instanceType) {
         this.instanceType = instanceType;
     }
@@ -315,6 +320,7 @@ public class DescribeReservedInstancesOfferingsRequest extends
      *         Guide</i>.
      * @see InstanceType
      */
+
     public String getInstanceType() {
         return this.instanceType;
     }
@@ -338,6 +344,7 @@ public class DescribeReservedInstancesOfferingsRequest extends
      *         chained together.
      * @see InstanceType
      */
+
     public DescribeReservedInstancesOfferingsRequest withInstanceType(
             String instanceType) {
         setInstanceType(instanceType);
@@ -363,6 +370,7 @@ public class DescribeReservedInstancesOfferingsRequest extends
      *         chained together.
      * @see InstanceType
      */
+
     public void setInstanceType(InstanceType instanceType) {
         this.instanceType = instanceType.toString();
     }
@@ -386,6 +394,7 @@ public class DescribeReservedInstancesOfferingsRequest extends
      *         chained together.
      * @see InstanceType
      */
+
     public DescribeReservedInstancesOfferingsRequest withInstanceType(
             InstanceType instanceType) {
         setInstanceType(instanceType);
@@ -400,6 +409,7 @@ public class DescribeReservedInstancesOfferingsRequest extends
      * @param availabilityZone
      *        The Availability Zone in which the Reserved Instance can be used.
      */
+
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
@@ -411,6 +421,7 @@ public class DescribeReservedInstancesOfferingsRequest extends
      * 
      * @return The Availability Zone in which the Reserved Instance can be used.
      */
+
     public String getAvailabilityZone() {
         return this.availabilityZone;
     }
@@ -425,6 +436,7 @@ public class DescribeReservedInstancesOfferingsRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeReservedInstancesOfferingsRequest withAvailabilityZone(
             String availabilityZone) {
         setAvailabilityZone(availabilityZone);
@@ -444,6 +456,7 @@ public class DescribeReservedInstancesOfferingsRequest extends
      *        with Amazon VPC.
      * @see RIProductDescription
      */
+
     public void setProductDescription(String productDescription) {
         this.productDescription = productDescription;
     }
@@ -460,6 +473,7 @@ public class DescribeReservedInstancesOfferingsRequest extends
      *         use with Amazon VPC.
      * @see RIProductDescription
      */
+
     public String getProductDescription() {
         return this.productDescription;
     }
@@ -479,6 +493,7 @@ public class DescribeReservedInstancesOfferingsRequest extends
      *         chained together.
      * @see RIProductDescription
      */
+
     public DescribeReservedInstancesOfferingsRequest withProductDescription(
             String productDescription) {
         setProductDescription(productDescription);
@@ -500,6 +515,7 @@ public class DescribeReservedInstancesOfferingsRequest extends
      *         chained together.
      * @see RIProductDescription
      */
+
     public void setProductDescription(RIProductDescription productDescription) {
         this.productDescription = productDescription.toString();
     }
@@ -519,6 +535,7 @@ public class DescribeReservedInstancesOfferingsRequest extends
      *         chained together.
      * @see RIProductDescription
      */
+
     public DescribeReservedInstancesOfferingsRequest withProductDescription(
             RIProductDescription productDescription) {
         setProductDescription(productDescription);
@@ -664,6 +681,7 @@ public class DescribeReservedInstancesOfferingsRequest extends
      *         </p>
      *         </li>
      */
+
     public java.util.List<Filter> getFilters() {
         if (filters == null) {
             filters = new com.amazonaws.internal.SdkInternalList<Filter>();
@@ -811,6 +829,7 @@ public class DescribeReservedInstancesOfferingsRequest extends
      *        </p>
      *        </li>
      */
+
     public void setFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
             this.filters = null;
@@ -969,6 +988,7 @@ public class DescribeReservedInstancesOfferingsRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeReservedInstancesOfferingsRequest withFilters(
             Filter... filters) {
         if (this.filters == null) {
@@ -1123,6 +1143,7 @@ public class DescribeReservedInstancesOfferingsRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeReservedInstancesOfferingsRequest withFilters(
             java.util.Collection<Filter> filters) {
         setFilters(filters);
@@ -1148,6 +1169,7 @@ public class DescribeReservedInstancesOfferingsRequest extends
      *        Default: <code>default</code>
      * @see Tenancy
      */
+
     public void setInstanceTenancy(String instanceTenancy) {
         this.instanceTenancy = instanceTenancy;
     }
@@ -1170,6 +1192,7 @@ public class DescribeReservedInstancesOfferingsRequest extends
      *         Default: <code>default</code>
      * @see Tenancy
      */
+
     public String getInstanceTenancy() {
         return this.instanceTenancy;
     }
@@ -1195,6 +1218,7 @@ public class DescribeReservedInstancesOfferingsRequest extends
      *         chained together.
      * @see Tenancy
      */
+
     public DescribeReservedInstancesOfferingsRequest withInstanceTenancy(
             String instanceTenancy) {
         setInstanceTenancy(instanceTenancy);
@@ -1222,6 +1246,7 @@ public class DescribeReservedInstancesOfferingsRequest extends
      *         chained together.
      * @see Tenancy
      */
+
     public void setInstanceTenancy(Tenancy instanceTenancy) {
         this.instanceTenancy = instanceTenancy.toString();
     }
@@ -1247,6 +1272,7 @@ public class DescribeReservedInstancesOfferingsRequest extends
      *         chained together.
      * @see Tenancy
      */
+
     public DescribeReservedInstancesOfferingsRequest withInstanceTenancy(
             Tenancy instanceTenancy) {
         setInstanceTenancy(instanceTenancy);
@@ -1266,6 +1292,7 @@ public class DescribeReservedInstancesOfferingsRequest extends
      *        <code>Medium Utilization</code> Reserved Instance offering type.
      * @see OfferingTypeValues
      */
+
     public void setOfferingType(String offeringType) {
         this.offeringType = offeringType;
     }
@@ -1282,6 +1309,7 @@ public class DescribeReservedInstancesOfferingsRequest extends
      *         <code>Medium Utilization</code> Reserved Instance offering type.
      * @see OfferingTypeValues
      */
+
     public String getOfferingType() {
         return this.offeringType;
     }
@@ -1301,6 +1329,7 @@ public class DescribeReservedInstancesOfferingsRequest extends
      *         chained together.
      * @see OfferingTypeValues
      */
+
     public DescribeReservedInstancesOfferingsRequest withOfferingType(
             String offeringType) {
         setOfferingType(offeringType);
@@ -1322,6 +1351,7 @@ public class DescribeReservedInstancesOfferingsRequest extends
      *         chained together.
      * @see OfferingTypeValues
      */
+
     public void setOfferingType(OfferingTypeValues offeringType) {
         this.offeringType = offeringType.toString();
     }
@@ -1341,6 +1371,7 @@ public class DescribeReservedInstancesOfferingsRequest extends
      *         chained together.
      * @see OfferingTypeValues
      */
+
     public DescribeReservedInstancesOfferingsRequest withOfferingType(
             OfferingTypeValues offeringType) {
         setOfferingType(offeringType);
@@ -1355,6 +1386,7 @@ public class DescribeReservedInstancesOfferingsRequest extends
      * @param nextToken
      *        The token to retrieve the next page of results.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -1366,6 +1398,7 @@ public class DescribeReservedInstancesOfferingsRequest extends
      * 
      * @return The token to retrieve the next page of results.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -1380,6 +1413,7 @@ public class DescribeReservedInstancesOfferingsRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeReservedInstancesOfferingsRequest withNextToken(
             String nextToken) {
         setNextToken(nextToken);
@@ -1405,6 +1439,7 @@ public class DescribeReservedInstancesOfferingsRequest extends
      *        <p>
      *        Default: 100
      */
+
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
     }
@@ -1427,6 +1462,7 @@ public class DescribeReservedInstancesOfferingsRequest extends
      *         <p>
      *         Default: 100
      */
+
     public Integer getMaxResults() {
         return this.maxResults;
     }
@@ -1452,6 +1488,7 @@ public class DescribeReservedInstancesOfferingsRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeReservedInstancesOfferingsRequest withMaxResults(
             Integer maxResults) {
         setMaxResults(maxResults);
@@ -1466,6 +1503,7 @@ public class DescribeReservedInstancesOfferingsRequest extends
      * @param includeMarketplace
      *        Include Reserved Instance Marketplace offerings in the response.
      */
+
     public void setIncludeMarketplace(Boolean includeMarketplace) {
         this.includeMarketplace = includeMarketplace;
     }
@@ -1477,6 +1515,7 @@ public class DescribeReservedInstancesOfferingsRequest extends
      * 
      * @return Include Reserved Instance Marketplace offerings in the response.
      */
+
     public Boolean getIncludeMarketplace() {
         return this.includeMarketplace;
     }
@@ -1491,6 +1530,7 @@ public class DescribeReservedInstancesOfferingsRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeReservedInstancesOfferingsRequest withIncludeMarketplace(
             Boolean includeMarketplace) {
         setIncludeMarketplace(includeMarketplace);
@@ -1504,6 +1544,7 @@ public class DescribeReservedInstancesOfferingsRequest extends
      * 
      * @return Include Reserved Instance Marketplace offerings in the response.
      */
+
     public Boolean isIncludeMarketplace() {
         return this.includeMarketplace;
     }
@@ -1522,6 +1563,7 @@ public class DescribeReservedInstancesOfferingsRequest extends
      *        <p>
      *        Default: 2592000 (1 month)
      */
+
     public void setMinDuration(Long minDuration) {
         this.minDuration = minDuration;
     }
@@ -1539,6 +1581,7 @@ public class DescribeReservedInstancesOfferingsRequest extends
      *         <p>
      *         Default: 2592000 (1 month)
      */
+
     public Long getMinDuration() {
         return this.minDuration;
     }
@@ -1559,6 +1602,7 @@ public class DescribeReservedInstancesOfferingsRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeReservedInstancesOfferingsRequest withMinDuration(
             Long minDuration) {
         setMinDuration(minDuration);
@@ -1579,6 +1623,7 @@ public class DescribeReservedInstancesOfferingsRequest extends
      *        <p>
      *        Default: 94608000 (3 years)
      */
+
     public void setMaxDuration(Long maxDuration) {
         this.maxDuration = maxDuration;
     }
@@ -1596,6 +1641,7 @@ public class DescribeReservedInstancesOfferingsRequest extends
      *         <p>
      *         Default: 94608000 (3 years)
      */
+
     public Long getMaxDuration() {
         return this.maxDuration;
     }
@@ -1616,6 +1662,7 @@ public class DescribeReservedInstancesOfferingsRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeReservedInstancesOfferingsRequest withMaxDuration(
             Long maxDuration) {
         setMaxDuration(maxDuration);
@@ -1636,6 +1683,7 @@ public class DescribeReservedInstancesOfferingsRequest extends
      *        <p>
      *        Default: 20
      */
+
     public void setMaxInstanceCount(Integer maxInstanceCount) {
         this.maxInstanceCount = maxInstanceCount;
     }
@@ -1653,6 +1701,7 @@ public class DescribeReservedInstancesOfferingsRequest extends
      *         <p>
      *         Default: 20
      */
+
     public Integer getMaxInstanceCount() {
         return this.maxInstanceCount;
     }
@@ -1673,6 +1722,7 @@ public class DescribeReservedInstancesOfferingsRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeReservedInstancesOfferingsRequest withMaxInstanceCount(
             Integer maxInstanceCount) {
         setMaxInstanceCount(maxInstanceCount);

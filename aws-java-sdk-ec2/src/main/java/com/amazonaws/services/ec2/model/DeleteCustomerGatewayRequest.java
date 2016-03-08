@@ -63,6 +63,7 @@ public class DeleteCustomerGatewayRequest extends AmazonWebServiceRequest
      * @param customerGatewayId
      *        The ID of the customer gateway.
      */
+
     public void setCustomerGatewayId(String customerGatewayId) {
         this.customerGatewayId = customerGatewayId;
     }
@@ -74,6 +75,7 @@ public class DeleteCustomerGatewayRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the customer gateway.
      */
+
     public String getCustomerGatewayId() {
         return this.customerGatewayId;
     }
@@ -88,6 +90,7 @@ public class DeleteCustomerGatewayRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteCustomerGatewayRequest withCustomerGatewayId(
             String customerGatewayId) {
         setCustomerGatewayId(customerGatewayId);

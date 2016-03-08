@@ -64,6 +64,7 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable {
      * @param roleARN
      *        The ARN of the AWS credentials.
      */
+
     public void setRoleARN(String roleARN) {
         this.roleARN = roleARN;
     }
@@ -75,6 +76,7 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable {
      * 
      * @return The ARN of the AWS credentials.
      */
+
     public String getRoleARN() {
         return this.roleARN;
     }
@@ -89,6 +91,7 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RedshiftDestinationDescription withRoleARN(String roleARN) {
         setRoleARN(roleARN);
         return this;
@@ -102,6 +105,7 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable {
      * @param clusterJDBCURL
      *        The database connection string.
      */
+
     public void setClusterJDBCURL(String clusterJDBCURL) {
         this.clusterJDBCURL = clusterJDBCURL;
     }
@@ -113,6 +117,7 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable {
      * 
      * @return The database connection string.
      */
+
     public String getClusterJDBCURL() {
         return this.clusterJDBCURL;
     }
@@ -127,6 +132,7 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RedshiftDestinationDescription withClusterJDBCURL(
             String clusterJDBCURL) {
         setClusterJDBCURL(clusterJDBCURL);
@@ -141,6 +147,7 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable {
      * @param copyCommand
      *        The <code>COPY</code> command.
      */
+
     public void setCopyCommand(CopyCommand copyCommand) {
         this.copyCommand = copyCommand;
     }
@@ -152,6 +159,7 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable {
      * 
      * @return The <code>COPY</code> command.
      */
+
     public CopyCommand getCopyCommand() {
         return this.copyCommand;
     }
@@ -166,6 +174,7 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RedshiftDestinationDescription withCopyCommand(
             CopyCommand copyCommand) {
         setCopyCommand(copyCommand);
@@ -180,6 +189,7 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable {
      * @param username
      *        The name of the user.
      */
+
     public void setUsername(String username) {
         this.username = username;
     }
@@ -191,6 +201,7 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable {
      * 
      * @return The name of the user.
      */
+
     public String getUsername() {
         return this.username;
     }
@@ -205,6 +216,7 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RedshiftDestinationDescription withUsername(String username) {
         setUsername(username);
         return this;
@@ -218,6 +230,7 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable {
      * @param s3DestinationDescription
      *        The Amazon S3 destination.
      */
+
     public void setS3DestinationDescription(
             S3DestinationDescription s3DestinationDescription) {
         this.s3DestinationDescription = s3DestinationDescription;
@@ -230,6 +243,7 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable {
      * 
      * @return The Amazon S3 destination.
      */
+
     public S3DestinationDescription getS3DestinationDescription() {
         return this.s3DestinationDescription;
     }
@@ -244,6 +258,7 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RedshiftDestinationDescription withS3DestinationDescription(
             S3DestinationDescription s3DestinationDescription) {
         setS3DestinationDescription(s3DestinationDescription);

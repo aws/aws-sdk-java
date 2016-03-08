@@ -86,6 +86,7 @@ public class DetachVolumeRequest extends AmazonWebServiceRequest implements
      * @param volumeId
      *        The ID of the volume.
      */
+
     public void setVolumeId(String volumeId) {
         this.volumeId = volumeId;
     }
@@ -97,6 +98,7 @@ public class DetachVolumeRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ID of the volume.
      */
+
     public String getVolumeId() {
         return this.volumeId;
     }
@@ -111,6 +113,7 @@ public class DetachVolumeRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DetachVolumeRequest withVolumeId(String volumeId) {
         setVolumeId(volumeId);
         return this;
@@ -124,6 +127,7 @@ public class DetachVolumeRequest extends AmazonWebServiceRequest implements
      * @param instanceId
      *        The ID of the instance.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -135,6 +139,7 @@ public class DetachVolumeRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ID of the instance.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
@@ -149,6 +154,7 @@ public class DetachVolumeRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DetachVolumeRequest withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;
@@ -162,6 +168,7 @@ public class DetachVolumeRequest extends AmazonWebServiceRequest implements
      * @param device
      *        The device name.
      */
+
     public void setDevice(String device) {
         this.device = device;
     }
@@ -173,6 +180,7 @@ public class DetachVolumeRequest extends AmazonWebServiceRequest implements
      * 
      * @return The device name.
      */
+
     public String getDevice() {
         return this.device;
     }
@@ -187,6 +195,7 @@ public class DetachVolumeRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DetachVolumeRequest withDevice(String device) {
         setDevice(device);
         return this;
@@ -213,6 +222,7 @@ public class DetachVolumeRequest extends AmazonWebServiceRequest implements
      *        metadata. If you use this option, you must perform file system
      *        check and repair procedures.
      */
+
     public void setForce(Boolean force) {
         this.force = force;
     }
@@ -237,6 +247,7 @@ public class DetachVolumeRequest extends AmazonWebServiceRequest implements
      *         system metadata. If you use this option, you must perform file
      *         system check and repair procedures.
      */
+
     public Boolean getForce() {
         return this.force;
     }
@@ -264,6 +275,7 @@ public class DetachVolumeRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DetachVolumeRequest withForce(Boolean force) {
         setForce(force);
         return this;
@@ -289,6 +301,7 @@ public class DetachVolumeRequest extends AmazonWebServiceRequest implements
      *         system metadata. If you use this option, you must perform file
      *         system check and repair procedures.
      */
+
     public Boolean isForce() {
         return this.force;
     }

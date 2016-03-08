@@ -64,6 +64,7 @@ public class DescribeSnapshotsResult implements Serializable, Cloneable {
      *         to retrieve, or if the limitations of the operation have been
      *         exceeded.
      */
+
     public java.util.List<Snapshot> getSnapshots() {
         if (snapshots == null) {
             snapshots = new com.amazonaws.internal.SdkInternalList<Snapshot>();
@@ -91,6 +92,7 @@ public class DescribeSnapshotsResult implements Serializable, Cloneable {
      *        to retrieve, or if the limitations of the operation have been
      *        exceeded.
      */
+
     public void setSnapshots(java.util.Collection<Snapshot> snapshots) {
         if (snapshots == null) {
             this.snapshots = null;
@@ -129,6 +131,7 @@ public class DescribeSnapshotsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSnapshotsResult withSnapshots(Snapshot... snapshots) {
         if (this.snapshots == null) {
             setSnapshots(new com.amazonaws.internal.SdkInternalList<Snapshot>(
@@ -162,6 +165,7 @@ public class DescribeSnapshotsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSnapshotsResult withSnapshots(
             java.util.Collection<Snapshot> snapshots) {
         setSnapshots(snapshots);
@@ -179,6 +183,7 @@ public class DescribeSnapshotsResult implements Serializable, Cloneable {
      *        <i>NextToken</i> member of a subsequent call to
      *        <a>DescribeSnapshots</a>.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -193,6 +198,7 @@ public class DescribeSnapshotsResult implements Serializable, Cloneable {
      *         <i>NextToken</i> member of a subsequent call to
      *         <a>DescribeSnapshots</a>.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -210,6 +216,7 @@ public class DescribeSnapshotsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSnapshotsResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

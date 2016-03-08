@@ -121,6 +121,7 @@ public class InstanceAttribute implements Serializable, Cloneable {
      * @param instanceId
      *        The ID of the instance.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -132,6 +133,7 @@ public class InstanceAttribute implements Serializable, Cloneable {
      * 
      * @return The ID of the instance.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
@@ -146,6 +148,7 @@ public class InstanceAttribute implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceAttribute withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;
@@ -159,6 +162,7 @@ public class InstanceAttribute implements Serializable, Cloneable {
      * @param instanceType
      *        The instance type.
      */
+
     public void setInstanceType(String instanceType) {
         this.instanceType = instanceType;
     }
@@ -170,6 +174,7 @@ public class InstanceAttribute implements Serializable, Cloneable {
      * 
      * @return The instance type.
      */
+
     public String getInstanceType() {
         return this.instanceType;
     }
@@ -184,6 +189,7 @@ public class InstanceAttribute implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceAttribute withInstanceType(String instanceType) {
         setInstanceType(instanceType);
         return this;
@@ -197,6 +203,7 @@ public class InstanceAttribute implements Serializable, Cloneable {
      * @param kernelId
      *        The kernel ID.
      */
+
     public void setKernelId(String kernelId) {
         this.kernelId = kernelId;
     }
@@ -208,6 +215,7 @@ public class InstanceAttribute implements Serializable, Cloneable {
      * 
      * @return The kernel ID.
      */
+
     public String getKernelId() {
         return this.kernelId;
     }
@@ -222,6 +230,7 @@ public class InstanceAttribute implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceAttribute withKernelId(String kernelId) {
         setKernelId(kernelId);
         return this;
@@ -235,6 +244,7 @@ public class InstanceAttribute implements Serializable, Cloneable {
      * @param ramdiskId
      *        The RAM disk ID.
      */
+
     public void setRamdiskId(String ramdiskId) {
         this.ramdiskId = ramdiskId;
     }
@@ -246,6 +256,7 @@ public class InstanceAttribute implements Serializable, Cloneable {
      * 
      * @return The RAM disk ID.
      */
+
     public String getRamdiskId() {
         return this.ramdiskId;
     }
@@ -260,6 +271,7 @@ public class InstanceAttribute implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceAttribute withRamdiskId(String ramdiskId) {
         setRamdiskId(ramdiskId);
         return this;
@@ -273,6 +285,7 @@ public class InstanceAttribute implements Serializable, Cloneable {
      * @param userData
      *        The Base64-encoded MIME user data.
      */
+
     public void setUserData(String userData) {
         this.userData = userData;
     }
@@ -284,6 +297,7 @@ public class InstanceAttribute implements Serializable, Cloneable {
      * 
      * @return The Base64-encoded MIME user data.
      */
+
     public String getUserData() {
         return this.userData;
     }
@@ -298,6 +312,7 @@ public class InstanceAttribute implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceAttribute withUserData(String userData) {
         setUserData(userData);
         return this;
@@ -314,6 +329,7 @@ public class InstanceAttribute implements Serializable, Cloneable {
      *        instance through the Amazon EC2 console, CLI, or API; otherwise,
      *        you can.
      */
+
     public void setDisableApiTermination(Boolean disableApiTermination) {
         this.disableApiTermination = disableApiTermination;
     }
@@ -328,6 +344,7 @@ public class InstanceAttribute implements Serializable, Cloneable {
      *         instance through the Amazon EC2 console, CLI, or API; otherwise,
      *         you can.
      */
+
     public Boolean getDisableApiTermination() {
         return this.disableApiTermination;
     }
@@ -345,6 +362,7 @@ public class InstanceAttribute implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceAttribute withDisableApiTermination(
             Boolean disableApiTermination) {
         setDisableApiTermination(disableApiTermination);
@@ -361,6 +379,7 @@ public class InstanceAttribute implements Serializable, Cloneable {
      *         instance through the Amazon EC2 console, CLI, or API; otherwise,
      *         you can.
      */
+
     public Boolean isDisableApiTermination() {
         return this.disableApiTermination;
     }
@@ -377,6 +396,7 @@ public class InstanceAttribute implements Serializable, Cloneable {
      *        initiate shutdown from the instance (using the operating system
      *        command for system shutdown).
      */
+
     public void setInstanceInitiatedShutdownBehavior(
             String instanceInitiatedShutdownBehavior) {
         this.instanceInitiatedShutdownBehavior = instanceInitiatedShutdownBehavior;
@@ -393,6 +413,7 @@ public class InstanceAttribute implements Serializable, Cloneable {
      *         initiate shutdown from the instance (using the operating system
      *         command for system shutdown).
      */
+
     public String getInstanceInitiatedShutdownBehavior() {
         return this.instanceInitiatedShutdownBehavior;
     }
@@ -411,6 +432,7 @@ public class InstanceAttribute implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceAttribute withInstanceInitiatedShutdownBehavior(
             String instanceInitiatedShutdownBehavior) {
         setInstanceInitiatedShutdownBehavior(instanceInitiatedShutdownBehavior);
@@ -427,6 +449,7 @@ public class InstanceAttribute implements Serializable, Cloneable {
      *        The name of the root device (for example, <code>/dev/sda1</code>
      *        or <code>/dev/xvda</code>).
      */
+
     public void setRootDeviceName(String rootDeviceName) {
         this.rootDeviceName = rootDeviceName;
     }
@@ -440,6 +463,7 @@ public class InstanceAttribute implements Serializable, Cloneable {
      * @return The name of the root device (for example, <code>/dev/sda1</code>
      *         or <code>/dev/xvda</code>).
      */
+
     public String getRootDeviceName() {
         return this.rootDeviceName;
     }
@@ -456,6 +480,7 @@ public class InstanceAttribute implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceAttribute withRootDeviceName(String rootDeviceName) {
         setRootDeviceName(rootDeviceName);
         return this;
@@ -468,6 +493,7 @@ public class InstanceAttribute implements Serializable, Cloneable {
      * 
      * @return The block device mapping of the instance.
      */
+
     public java.util.List<InstanceBlockDeviceMapping> getBlockDeviceMappings() {
         if (blockDeviceMappings == null) {
             blockDeviceMappings = new com.amazonaws.internal.SdkInternalList<InstanceBlockDeviceMapping>();
@@ -483,6 +509,7 @@ public class InstanceAttribute implements Serializable, Cloneable {
      * @param blockDeviceMappings
      *        The block device mapping of the instance.
      */
+
     public void setBlockDeviceMappings(
             java.util.Collection<InstanceBlockDeviceMapping> blockDeviceMappings) {
         if (blockDeviceMappings == null) {
@@ -510,6 +537,7 @@ public class InstanceAttribute implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceAttribute withBlockDeviceMappings(
             InstanceBlockDeviceMapping... blockDeviceMappings) {
         if (this.blockDeviceMappings == null) {
@@ -532,6 +560,7 @@ public class InstanceAttribute implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceAttribute withBlockDeviceMappings(
             java.util.Collection<InstanceBlockDeviceMapping> blockDeviceMappings) {
         setBlockDeviceMappings(blockDeviceMappings);
@@ -545,6 +574,7 @@ public class InstanceAttribute implements Serializable, Cloneable {
      * 
      * @return A list of product codes.
      */
+
     public java.util.List<ProductCode> getProductCodes() {
         if (productCodes == null) {
             productCodes = new com.amazonaws.internal.SdkInternalList<ProductCode>();
@@ -560,6 +590,7 @@ public class InstanceAttribute implements Serializable, Cloneable {
      * @param productCodes
      *        A list of product codes.
      */
+
     public void setProductCodes(java.util.Collection<ProductCode> productCodes) {
         if (productCodes == null) {
             this.productCodes = null;
@@ -586,6 +617,7 @@ public class InstanceAttribute implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceAttribute withProductCodes(ProductCode... productCodes) {
         if (this.productCodes == null) {
             setProductCodes(new com.amazonaws.internal.SdkInternalList<ProductCode>(
@@ -607,6 +639,7 @@ public class InstanceAttribute implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceAttribute withProductCodes(
             java.util.Collection<ProductCode> productCodes) {
         setProductCodes(productCodes);
@@ -621,6 +654,7 @@ public class InstanceAttribute implements Serializable, Cloneable {
      * @param ebsOptimized
      *        Indicates whether the instance is optimized for EBS I/O.
      */
+
     public void setEbsOptimized(Boolean ebsOptimized) {
         this.ebsOptimized = ebsOptimized;
     }
@@ -632,6 +666,7 @@ public class InstanceAttribute implements Serializable, Cloneable {
      * 
      * @return Indicates whether the instance is optimized for EBS I/O.
      */
+
     public Boolean getEbsOptimized() {
         return this.ebsOptimized;
     }
@@ -646,6 +681,7 @@ public class InstanceAttribute implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceAttribute withEbsOptimized(Boolean ebsOptimized) {
         setEbsOptimized(ebsOptimized);
         return this;
@@ -658,6 +694,7 @@ public class InstanceAttribute implements Serializable, Cloneable {
      * 
      * @return Indicates whether the instance is optimized for EBS I/O.
      */
+
     public Boolean isEbsOptimized() {
         return this.ebsOptimized;
     }
@@ -665,6 +702,7 @@ public class InstanceAttribute implements Serializable, Cloneable {
     /**
      * @param sriovNetSupport
      */
+
     public void setSriovNetSupport(String sriovNetSupport) {
         this.sriovNetSupport = sriovNetSupport;
     }
@@ -672,6 +710,7 @@ public class InstanceAttribute implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getSriovNetSupport() {
         return this.sriovNetSupport;
     }
@@ -681,6 +720,7 @@ public class InstanceAttribute implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceAttribute withSriovNetSupport(String sriovNetSupport) {
         setSriovNetSupport(sriovNetSupport);
         return this;
@@ -700,6 +740,7 @@ public class InstanceAttribute implements Serializable, Cloneable {
      *        <code>false</code> means checking is disabled. This value must be
      *        <code>false</code> for a NAT instance to perform NAT.
      */
+
     public void setSourceDestCheck(Boolean sourceDestCheck) {
         this.sourceDestCheck = sourceDestCheck;
     }
@@ -717,6 +758,7 @@ public class InstanceAttribute implements Serializable, Cloneable {
      *         <code>false</code> means checking is disabled. This value must be
      *         <code>false</code> for a NAT instance to perform NAT.
      */
+
     public Boolean getSourceDestCheck() {
         return this.sourceDestCheck;
     }
@@ -737,6 +779,7 @@ public class InstanceAttribute implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceAttribute withSourceDestCheck(Boolean sourceDestCheck) {
         setSourceDestCheck(sourceDestCheck);
         return this;
@@ -755,6 +798,7 @@ public class InstanceAttribute implements Serializable, Cloneable {
      *         <code>false</code> means checking is disabled. This value must be
      *         <code>false</code> for a NAT instance to perform NAT.
      */
+
     public Boolean isSourceDestCheck() {
         return this.sourceDestCheck;
     }
@@ -766,6 +810,7 @@ public class InstanceAttribute implements Serializable, Cloneable {
      * 
      * @return The security groups associated with the instance.
      */
+
     public java.util.List<GroupIdentifier> getGroups() {
         if (groups == null) {
             groups = new com.amazonaws.internal.SdkInternalList<GroupIdentifier>();
@@ -781,6 +826,7 @@ public class InstanceAttribute implements Serializable, Cloneable {
      * @param groups
      *        The security groups associated with the instance.
      */
+
     public void setGroups(java.util.Collection<GroupIdentifier> groups) {
         if (groups == null) {
             this.groups = null;
@@ -807,6 +853,7 @@ public class InstanceAttribute implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceAttribute withGroups(GroupIdentifier... groups) {
         if (this.groups == null) {
             setGroups(new com.amazonaws.internal.SdkInternalList<GroupIdentifier>(
@@ -828,6 +875,7 @@ public class InstanceAttribute implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceAttribute withGroups(
             java.util.Collection<GroupIdentifier> groups) {
         setGroups(groups);

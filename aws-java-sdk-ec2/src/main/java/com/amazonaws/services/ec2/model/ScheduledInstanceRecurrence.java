@@ -72,6 +72,7 @@ public class ScheduledInstanceRecurrence implements Serializable, Cloneable {
      *        The frequency (<code>Daily</code>, <code>Weekly</code>, or
      *        <code>Monthly</code>).
      */
+
     public void setFrequency(String frequency) {
         this.frequency = frequency;
     }
@@ -85,6 +86,7 @@ public class ScheduledInstanceRecurrence implements Serializable, Cloneable {
      * @return The frequency (<code>Daily</code>, <code>Weekly</code>, or
      *         <code>Monthly</code>).
      */
+
     public String getFrequency() {
         return this.frequency;
     }
@@ -101,6 +103,7 @@ public class ScheduledInstanceRecurrence implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstanceRecurrence withFrequency(String frequency) {
         setFrequency(frequency);
         return this;
@@ -117,6 +120,7 @@ public class ScheduledInstanceRecurrence implements Serializable, Cloneable {
      *        <code>frequency</code>. For example, every 2 weeks or every 2
      *        months.
      */
+
     public void setInterval(Integer interval) {
         this.interval = interval;
     }
@@ -131,6 +135,7 @@ public class ScheduledInstanceRecurrence implements Serializable, Cloneable {
      *         <code>frequency</code>. For example, every 2 weeks or every 2
      *         months.
      */
+
     public Integer getInterval() {
         return this.interval;
     }
@@ -148,6 +153,7 @@ public class ScheduledInstanceRecurrence implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstanceRecurrence withInterval(Integer interval) {
         setInterval(interval);
         return this;
@@ -164,6 +170,7 @@ public class ScheduledInstanceRecurrence implements Serializable, Cloneable {
      *         month (1-31). For a weekly schedule, this is one or more days of
      *         the week (1-7, where 1 is Sunday).
      */
+
     public java.util.List<Integer> getOccurrenceDaySet() {
         if (occurrenceDaySet == null) {
             occurrenceDaySet = new com.amazonaws.internal.SdkInternalList<Integer>();
@@ -183,6 +190,7 @@ public class ScheduledInstanceRecurrence implements Serializable, Cloneable {
      *        month (1-31). For a weekly schedule, this is one or more days of
      *        the week (1-7, where 1 is Sunday).
      */
+
     public void setOccurrenceDaySet(
             java.util.Collection<Integer> occurrenceDaySet) {
         if (occurrenceDaySet == null) {
@@ -214,6 +222,7 @@ public class ScheduledInstanceRecurrence implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstanceRecurrence withOccurrenceDaySet(
             Integer... occurrenceDaySet) {
         if (this.occurrenceDaySet == null) {
@@ -240,6 +249,7 @@ public class ScheduledInstanceRecurrence implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstanceRecurrence withOccurrenceDaySet(
             java.util.Collection<Integer> occurrenceDaySet) {
         setOccurrenceDaySet(occurrenceDaySet);
@@ -256,6 +266,7 @@ public class ScheduledInstanceRecurrence implements Serializable, Cloneable {
      *        Indicates whether the occurrence is relative to the end of the
      *        specified week or month.
      */
+
     public void setOccurrenceRelativeToEnd(Boolean occurrenceRelativeToEnd) {
         this.occurrenceRelativeToEnd = occurrenceRelativeToEnd;
     }
@@ -269,6 +280,7 @@ public class ScheduledInstanceRecurrence implements Serializable, Cloneable {
      * @return Indicates whether the occurrence is relative to the end of the
      *         specified week or month.
      */
+
     public Boolean getOccurrenceRelativeToEnd() {
         return this.occurrenceRelativeToEnd;
     }
@@ -285,6 +297,7 @@ public class ScheduledInstanceRecurrence implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstanceRecurrence withOccurrenceRelativeToEnd(
             Boolean occurrenceRelativeToEnd) {
         setOccurrenceRelativeToEnd(occurrenceRelativeToEnd);
@@ -300,6 +313,7 @@ public class ScheduledInstanceRecurrence implements Serializable, Cloneable {
      * @return Indicates whether the occurrence is relative to the end of the
      *         specified week or month.
      */
+
     public Boolean isOccurrenceRelativeToEnd() {
         return this.occurrenceRelativeToEnd;
     }
@@ -314,6 +328,7 @@ public class ScheduledInstanceRecurrence implements Serializable, Cloneable {
      *        The unit for <code>occurrenceDaySet</code> (<code>DayOfWeek</code>
      *        or <code>DayOfMonth</code>).
      */
+
     public void setOccurrenceUnit(String occurrenceUnit) {
         this.occurrenceUnit = occurrenceUnit;
     }
@@ -327,6 +342,7 @@ public class ScheduledInstanceRecurrence implements Serializable, Cloneable {
      * @return The unit for <code>occurrenceDaySet</code> (
      *         <code>DayOfWeek</code> or <code>DayOfMonth</code>).
      */
+
     public String getOccurrenceUnit() {
         return this.occurrenceUnit;
     }
@@ -343,6 +359,7 @@ public class ScheduledInstanceRecurrence implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstanceRecurrence withOccurrenceUnit(String occurrenceUnit) {
         setOccurrenceUnit(occurrenceUnit);
         return this;

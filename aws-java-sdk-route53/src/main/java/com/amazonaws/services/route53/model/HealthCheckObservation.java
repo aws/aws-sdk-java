@@ -51,6 +51,7 @@ public class HealthCheckObservation implements Serializable, Cloneable {
      *        The IP address of the Amazon Route 53 health checker that
      *        performed the health check.
      */
+
     public void setIPAddress(String iPAddress) {
         this.iPAddress = iPAddress;
     }
@@ -64,6 +65,7 @@ public class HealthCheckObservation implements Serializable, Cloneable {
      * @return The IP address of the Amazon Route 53 health checker that
      *         performed the health check.
      */
+
     public String getIPAddress() {
         return this.iPAddress;
     }
@@ -80,6 +82,7 @@ public class HealthCheckObservation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HealthCheckObservation withIPAddress(String iPAddress) {
         setIPAddress(iPAddress);
         return this;
@@ -95,6 +98,7 @@ public class HealthCheckObservation implements Serializable, Cloneable {
      *        A complex type that contains information about the health check
      *        status for the current observation.
      */
+
     public void setStatusReport(StatusReport statusReport) {
         this.statusReport = statusReport;
     }
@@ -108,6 +112,7 @@ public class HealthCheckObservation implements Serializable, Cloneable {
      * @return A complex type that contains information about the health check
      *         status for the current observation.
      */
+
     public StatusReport getStatusReport() {
         return this.statusReport;
     }
@@ -124,6 +129,7 @@ public class HealthCheckObservation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HealthCheckObservation withStatusReport(StatusReport statusReport) {
         setStatusReport(statusReport);
         return this;

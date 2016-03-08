@@ -36,6 +36,7 @@ public class ListCommandsResult implements Serializable, Cloneable {
      * 
      * @return (Optional) The list of commands requested by the user.
      */
+
     public java.util.List<Command> getCommands() {
         if (commands == null) {
             commands = new com.amazonaws.internal.SdkInternalList<Command>();
@@ -49,6 +50,7 @@ public class ListCommandsResult implements Serializable, Cloneable {
      * @param commands
      *        (Optional) The list of commands requested by the user.
      */
+
     public void setCommands(java.util.Collection<Command> commands) {
         if (commands == null) {
             this.commands = null;
@@ -73,6 +75,7 @@ public class ListCommandsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListCommandsResult withCommands(Command... commands) {
         if (this.commands == null) {
             setCommands(new com.amazonaws.internal.SdkInternalList<Command>(
@@ -92,6 +95,7 @@ public class ListCommandsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListCommandsResult withCommands(
             java.util.Collection<Command> commands) {
         setCommands(commands);
@@ -106,6 +110,7 @@ public class ListCommandsResult implements Serializable, Cloneable {
      *        (Optional) The token for the next set of items to return. (You
      *        received this token from a previous call.)
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -117,6 +122,7 @@ public class ListCommandsResult implements Serializable, Cloneable {
      * @return (Optional) The token for the next set of items to return. (You
      *         received this token from a previous call.)
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -131,6 +137,7 @@ public class ListCommandsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListCommandsResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

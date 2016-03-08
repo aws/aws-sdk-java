@@ -41,6 +41,7 @@ public class RebootRequest implements Serializable, Cloneable {
      * @param workspaceId
      *        The identifier of the WorkSpace to reboot.
      */
+
     public void setWorkspaceId(String workspaceId) {
         this.workspaceId = workspaceId;
     }
@@ -52,6 +53,7 @@ public class RebootRequest implements Serializable, Cloneable {
      * 
      * @return The identifier of the WorkSpace to reboot.
      */
+
     public String getWorkspaceId() {
         return this.workspaceId;
     }
@@ -66,6 +68,7 @@ public class RebootRequest implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RebootRequest withWorkspaceId(String workspaceId) {
         setWorkspaceId(workspaceId);
         return this;

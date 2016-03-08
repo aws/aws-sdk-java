@@ -61,6 +61,7 @@ public class UpdateMLModelRequest extends AmazonWebServiceRequest implements
      * @param mLModelId
      *        The ID assigned to the <code>MLModel</code> during creation.
      */
+
     public void setMLModelId(String mLModelId) {
         this.mLModelId = mLModelId;
     }
@@ -72,6 +73,7 @@ public class UpdateMLModelRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ID assigned to the <code>MLModel</code> during creation.
      */
+
     public String getMLModelId() {
         return this.mLModelId;
     }
@@ -86,6 +88,7 @@ public class UpdateMLModelRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateMLModelRequest withMLModelId(String mLModelId) {
         setMLModelId(mLModelId);
         return this;
@@ -99,6 +102,7 @@ public class UpdateMLModelRequest extends AmazonWebServiceRequest implements
      * @param mLModelName
      *        A user-supplied name or description of the <code>MLModel</code>.
      */
+
     public void setMLModelName(String mLModelName) {
         this.mLModelName = mLModelName;
     }
@@ -110,6 +114,7 @@ public class UpdateMLModelRequest extends AmazonWebServiceRequest implements
      * 
      * @return A user-supplied name or description of the <code>MLModel</code>.
      */
+
     public String getMLModelName() {
         return this.mLModelName;
     }
@@ -124,6 +129,7 @@ public class UpdateMLModelRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateMLModelRequest withMLModelName(String mLModelName) {
         setMLModelName(mLModelName);
         return this;
@@ -154,6 +160,7 @@ public class UpdateMLModelRequest extends AmazonWebServiceRequest implements
      *        less than the <code>ScoreThreshold</code> receive a negative
      *        response from the <code>MLModel</code>, such as <code>false</code>.
      */
+
     public void setScoreThreshold(Float scoreThreshold) {
         this.scoreThreshold = scoreThreshold;
     }
@@ -183,6 +190,7 @@ public class UpdateMLModelRequest extends AmazonWebServiceRequest implements
      *         response from the <code>MLModel</code>, such as
      *         <code>false</code>.
      */
+
     public Float getScoreThreshold() {
         return this.scoreThreshold;
     }
@@ -214,6 +222,7 @@ public class UpdateMLModelRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateMLModelRequest withScoreThreshold(Float scoreThreshold) {
         setScoreThreshold(scoreThreshold);
         return this;

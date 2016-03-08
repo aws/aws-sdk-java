@@ -48,6 +48,7 @@ public class UpdateFleetCapacityRequest extends AmazonWebServiceRequest
      * @param fleetId
      *        Unique identifier for the fleet you want to update capacity for.
      */
+
     public void setFleetId(String fleetId) {
         this.fleetId = fleetId;
     }
@@ -59,6 +60,7 @@ public class UpdateFleetCapacityRequest extends AmazonWebServiceRequest
      * 
      * @return Unique identifier for the fleet you want to update capacity for.
      */
+
     public String getFleetId() {
         return this.fleetId;
     }
@@ -73,6 +75,7 @@ public class UpdateFleetCapacityRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateFleetCapacityRequest withFleetId(String fleetId) {
         setFleetId(fleetId);
         return this;
@@ -86,6 +89,7 @@ public class UpdateFleetCapacityRequest extends AmazonWebServiceRequest
      * @param desiredInstances
      *        Number of EC2 instances you want this fleet to host.
      */
+
     public void setDesiredInstances(Integer desiredInstances) {
         this.desiredInstances = desiredInstances;
     }
@@ -97,6 +101,7 @@ public class UpdateFleetCapacityRequest extends AmazonWebServiceRequest
      * 
      * @return Number of EC2 instances you want this fleet to host.
      */
+
     public Integer getDesiredInstances() {
         return this.desiredInstances;
     }
@@ -111,6 +116,7 @@ public class UpdateFleetCapacityRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateFleetCapacityRequest withDesiredInstances(
             Integer desiredInstances) {
         setDesiredInstances(desiredInstances);

@@ -95,6 +95,7 @@ public class PutMethodRequest extends AmazonWebServiceRequest implements
      * @param restApiId
      *        The <a>RestApi</a> identifier for the new <a>Method</a> resource.
      */
+
     public void setRestApiId(String restApiId) {
         this.restApiId = restApiId;
     }
@@ -106,6 +107,7 @@ public class PutMethodRequest extends AmazonWebServiceRequest implements
      * 
      * @return The <a>RestApi</a> identifier for the new <a>Method</a> resource.
      */
+
     public String getRestApiId() {
         return this.restApiId;
     }
@@ -120,6 +122,7 @@ public class PutMethodRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutMethodRequest withRestApiId(String restApiId) {
         setRestApiId(restApiId);
         return this;
@@ -133,6 +136,7 @@ public class PutMethodRequest extends AmazonWebServiceRequest implements
      * @param resourceId
      *        The <a>Resource</a> identifier for the new <a>Method</a> resource.
      */
+
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
     }
@@ -145,6 +149,7 @@ public class PutMethodRequest extends AmazonWebServiceRequest implements
      * @return The <a>Resource</a> identifier for the new <a>Method</a>
      *         resource.
      */
+
     public String getResourceId() {
         return this.resourceId;
     }
@@ -159,6 +164,7 @@ public class PutMethodRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutMethodRequest withResourceId(String resourceId) {
         setResourceId(resourceId);
         return this;
@@ -172,6 +178,7 @@ public class PutMethodRequest extends AmazonWebServiceRequest implements
      * @param httpMethod
      *        Specifies the put method request's HTTP method type.
      */
+
     public void setHttpMethod(String httpMethod) {
         this.httpMethod = httpMethod;
     }
@@ -183,6 +190,7 @@ public class PutMethodRequest extends AmazonWebServiceRequest implements
      * 
      * @return Specifies the put method request's HTTP method type.
      */
+
     public String getHttpMethod() {
         return this.httpMethod;
     }
@@ -197,6 +205,7 @@ public class PutMethodRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutMethodRequest withHttpMethod(String httpMethod) {
         setHttpMethod(httpMethod);
         return this;
@@ -210,6 +219,7 @@ public class PutMethodRequest extends AmazonWebServiceRequest implements
      * @param authorizationType
      *        Specifies the type of authorization used for the method.
      */
+
     public void setAuthorizationType(String authorizationType) {
         this.authorizationType = authorizationType;
     }
@@ -221,6 +231,7 @@ public class PutMethodRequest extends AmazonWebServiceRequest implements
      * 
      * @return Specifies the type of authorization used for the method.
      */
+
     public String getAuthorizationType() {
         return this.authorizationType;
     }
@@ -235,6 +246,7 @@ public class PutMethodRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutMethodRequest withAuthorizationType(String authorizationType) {
         setAuthorizationType(authorizationType);
         return this;
@@ -250,6 +262,7 @@ public class PutMethodRequest extends AmazonWebServiceRequest implements
      *        Specifies the identifier of an <a>Authorizer</a> to use on this
      *        Method, if the type is CUSTOM.
      */
+
     public void setAuthorizerId(String authorizerId) {
         this.authorizerId = authorizerId;
     }
@@ -263,6 +276,7 @@ public class PutMethodRequest extends AmazonWebServiceRequest implements
      * @return Specifies the identifier of an <a>Authorizer</a> to use on this
      *         Method, if the type is CUSTOM.
      */
+
     public String getAuthorizerId() {
         return this.authorizerId;
     }
@@ -279,6 +293,7 @@ public class PutMethodRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutMethodRequest withAuthorizerId(String authorizerId) {
         setAuthorizerId(authorizerId);
         return this;
@@ -292,6 +307,7 @@ public class PutMethodRequest extends AmazonWebServiceRequest implements
      * @param apiKeyRequired
      *        Specifies whether the method required a valid <a>ApiKey</a>.
      */
+
     public void setApiKeyRequired(Boolean apiKeyRequired) {
         this.apiKeyRequired = apiKeyRequired;
     }
@@ -303,6 +319,7 @@ public class PutMethodRequest extends AmazonWebServiceRequest implements
      * 
      * @return Specifies whether the method required a valid <a>ApiKey</a>.
      */
+
     public Boolean getApiKeyRequired() {
         return this.apiKeyRequired;
     }
@@ -317,6 +334,7 @@ public class PutMethodRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutMethodRequest withApiKeyRequired(Boolean apiKeyRequired) {
         setApiKeyRequired(apiKeyRequired);
         return this;
@@ -329,6 +347,7 @@ public class PutMethodRequest extends AmazonWebServiceRequest implements
      * 
      * @return Specifies whether the method required a valid <a>ApiKey</a>.
      */
+
     public Boolean isApiKeyRequired() {
         return this.apiKeyRequired;
     }
@@ -357,6 +376,7 @@ public class PutMethodRequest extends AmazonWebServiceRequest implements
      *         <code>location</code> is either querystring, path, or header.
      *         <code>name</code> must be a valid, unique parameter name.
      */
+
     public java.util.Map<String, Boolean> getRequestParameters() {
         return requestParameters;
     }
@@ -386,6 +406,7 @@ public class PutMethodRequest extends AmazonWebServiceRequest implements
      *        <code>location</code> is either querystring, path, or header.
      *        <code>name</code> must be a valid, unique parameter name.
      */
+
     public void setRequestParameters(
             java.util.Map<String, Boolean> requestParameters) {
         this.requestParameters = requestParameters;
@@ -418,6 +439,7 @@ public class PutMethodRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutMethodRequest withRequestParameters(
             java.util.Map<String, Boolean> requestParameters) {
         setRequestParameters(requestParameters);
@@ -439,6 +461,7 @@ public class PutMethodRequest extends AmazonWebServiceRequest implements
      * Removes all the entries added into RequestParameters. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public PutMethodRequest clearRequestParametersEntries() {
         this.requestParameters = null;
         return this;
@@ -456,6 +479,7 @@ public class PutMethodRequest extends AmazonWebServiceRequest implements
      *         with a content type as the key and a <a>Model</a> name as the
      *         value.
      */
+
     public java.util.Map<String, String> getRequestModels() {
         return requestModels;
     }
@@ -473,6 +497,7 @@ public class PutMethodRequest extends AmazonWebServiceRequest implements
      *        with a content type as the key and a <a>Model</a> name as the
      *        value.
      */
+
     public void setRequestModels(java.util.Map<String, String> requestModels) {
         this.requestModels = requestModels;
     }
@@ -492,6 +517,7 @@ public class PutMethodRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutMethodRequest withRequestModels(
             java.util.Map<String, String> requestModels) {
         setRequestModels(requestModels);
@@ -513,6 +539,7 @@ public class PutMethodRequest extends AmazonWebServiceRequest implements
      * Removes all the entries added into RequestModels. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public PutMethodRequest clearRequestModelsEntries() {
         this.requestModels = null;
         return this;

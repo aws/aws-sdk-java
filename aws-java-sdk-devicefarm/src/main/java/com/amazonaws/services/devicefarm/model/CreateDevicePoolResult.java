@@ -40,6 +40,7 @@ public class CreateDevicePoolResult implements Serializable, Cloneable {
      * @param devicePool
      *        The newly created device pool.
      */
+
     public void setDevicePool(DevicePool devicePool) {
         this.devicePool = devicePool;
     }
@@ -51,6 +52,7 @@ public class CreateDevicePoolResult implements Serializable, Cloneable {
      * 
      * @return The newly created device pool.
      */
+
     public DevicePool getDevicePool() {
         return this.devicePool;
     }
@@ -65,6 +67,7 @@ public class CreateDevicePoolResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDevicePoolResult withDevicePool(DevicePool devicePool) {
         setDevicePool(devicePool);
         return this;

@@ -51,6 +51,7 @@ public class CreateVolumePermission implements Serializable, Cloneable {
      *        The specific AWS account ID that is to be added or removed from a
      *        volume's list of create volume permissions.
      */
+
     public void setUserId(String userId) {
         this.userId = userId;
     }
@@ -64,6 +65,7 @@ public class CreateVolumePermission implements Serializable, Cloneable {
      * @return The specific AWS account ID that is to be added or removed from a
      *         volume's list of create volume permissions.
      */
+
     public String getUserId() {
         return this.userId;
     }
@@ -80,6 +82,7 @@ public class CreateVolumePermission implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateVolumePermission withUserId(String userId) {
         setUserId(userId);
         return this;
@@ -96,6 +99,7 @@ public class CreateVolumePermission implements Serializable, Cloneable {
      *        list of create volume permissions.
      * @see PermissionGroup
      */
+
     public void setGroup(String group) {
         this.group = group;
     }
@@ -110,6 +114,7 @@ public class CreateVolumePermission implements Serializable, Cloneable {
      *         list of create volume permissions.
      * @see PermissionGroup
      */
+
     public String getGroup() {
         return this.group;
     }
@@ -127,6 +132,7 @@ public class CreateVolumePermission implements Serializable, Cloneable {
      *         chained together.
      * @see PermissionGroup
      */
+
     public CreateVolumePermission withGroup(String group) {
         setGroup(group);
         return this;
@@ -145,6 +151,7 @@ public class CreateVolumePermission implements Serializable, Cloneable {
      *         chained together.
      * @see PermissionGroup
      */
+
     public void setGroup(PermissionGroup group) {
         this.group = group.toString();
     }
@@ -162,6 +169,7 @@ public class CreateVolumePermission implements Serializable, Cloneable {
      *         chained together.
      * @see PermissionGroup
      */
+
     public CreateVolumePermission withGroup(PermissionGroup group) {
         setGroup(group);
         return this;

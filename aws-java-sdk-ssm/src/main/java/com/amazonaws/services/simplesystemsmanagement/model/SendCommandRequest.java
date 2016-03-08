@@ -63,6 +63,7 @@ public class SendCommandRequest extends AmazonWebServiceRequest implements
      * 
      * @return Required. The instance IDs where the command should execute.
      */
+
     public java.util.List<String> getInstanceIds() {
         if (instanceIds == null) {
             instanceIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -76,6 +77,7 @@ public class SendCommandRequest extends AmazonWebServiceRequest implements
      * @param instanceIds
      *        Required. The instance IDs where the command should execute.
      */
+
     public void setInstanceIds(java.util.Collection<String> instanceIds) {
         if (instanceIds == null) {
             this.instanceIds = null;
@@ -100,6 +102,7 @@ public class SendCommandRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendCommandRequest withInstanceIds(String... instanceIds) {
         if (this.instanceIds == null) {
             setInstanceIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -119,6 +122,7 @@ public class SendCommandRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendCommandRequest withInstanceIds(
             java.util.Collection<String> instanceIds) {
         setInstanceIds(instanceIds);
@@ -133,6 +137,7 @@ public class SendCommandRequest extends AmazonWebServiceRequest implements
      *        Required. The name of the SSM document to execute. This can be an
      *        SSM public document or a custom document.
      */
+
     public void setDocumentName(String documentName) {
         this.documentName = documentName;
     }
@@ -144,6 +149,7 @@ public class SendCommandRequest extends AmazonWebServiceRequest implements
      * @return Required. The name of the SSM document to execute. This can be an
      *         SSM public document or a custom document.
      */
+
     public String getDocumentName() {
         return this.documentName;
     }
@@ -158,6 +164,7 @@ public class SendCommandRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendCommandRequest withDocumentName(String documentName) {
         setDocumentName(documentName);
         return this;
@@ -171,6 +178,7 @@ public class SendCommandRequest extends AmazonWebServiceRequest implements
      *        If this time is reached and the command has not already started
      *        executing, it will not execute.
      */
+
     public void setTimeoutSeconds(Integer timeoutSeconds) {
         this.timeoutSeconds = timeoutSeconds;
     }
@@ -182,6 +190,7 @@ public class SendCommandRequest extends AmazonWebServiceRequest implements
      * @return If this time is reached and the command has not already started
      *         executing, it will not execute.
      */
+
     public Integer getTimeoutSeconds() {
         return this.timeoutSeconds;
     }
@@ -196,6 +205,7 @@ public class SendCommandRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendCommandRequest withTimeoutSeconds(Integer timeoutSeconds) {
         setTimeoutSeconds(timeoutSeconds);
         return this;
@@ -209,6 +219,7 @@ public class SendCommandRequest extends AmazonWebServiceRequest implements
      *        User-specified information about the command, such as a brief
      *        description of what the command should do.
      */
+
     public void setComment(String comment) {
         this.comment = comment;
     }
@@ -220,6 +231,7 @@ public class SendCommandRequest extends AmazonWebServiceRequest implements
      * @return User-specified information about the command, such as a brief
      *         description of what the command should do.
      */
+
     public String getComment() {
         return this.comment;
     }
@@ -234,6 +246,7 @@ public class SendCommandRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendCommandRequest withComment(String comment) {
         setComment(comment);
         return this;
@@ -246,6 +259,7 @@ public class SendCommandRequest extends AmazonWebServiceRequest implements
      * @return The required and optional parameters specified in the SSM
      *         document being executed.
      */
+
     public java.util.Map<String, java.util.List<String>> getParameters() {
         return parameters;
     }
@@ -258,6 +272,7 @@ public class SendCommandRequest extends AmazonWebServiceRequest implements
      *        The required and optional parameters specified in the SSM document
      *        being executed.
      */
+
     public void setParameters(
             java.util.Map<String, java.util.List<String>> parameters) {
         this.parameters = parameters;
@@ -273,6 +288,7 @@ public class SendCommandRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendCommandRequest withParameters(
             java.util.Map<String, java.util.List<String>> parameters) {
         setParameters(parameters);
@@ -295,6 +311,7 @@ public class SendCommandRequest extends AmazonWebServiceRequest implements
      * Removes all the entries added into Parameters. &lt;p> Returns a reference
      * to this object so that method calls can be chained together.
      */
+
     public SendCommandRequest clearParametersEntries() {
         this.parameters = null;
         return this;
@@ -308,6 +325,7 @@ public class SendCommandRequest extends AmazonWebServiceRequest implements
      *        The name of the S3 bucket where command execution responses should
      *        be stored.
      */
+
     public void setOutputS3BucketName(String outputS3BucketName) {
         this.outputS3BucketName = outputS3BucketName;
     }
@@ -319,6 +337,7 @@ public class SendCommandRequest extends AmazonWebServiceRequest implements
      * @return The name of the S3 bucket where command execution responses
      *         should be stored.
      */
+
     public String getOutputS3BucketName() {
         return this.outputS3BucketName;
     }
@@ -333,6 +352,7 @@ public class SendCommandRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendCommandRequest withOutputS3BucketName(String outputS3BucketName) {
         setOutputS3BucketName(outputS3BucketName);
         return this;
@@ -346,6 +366,7 @@ public class SendCommandRequest extends AmazonWebServiceRequest implements
      *        The directory structure within the S3 bucket where the responses
      *        should be stored.
      */
+
     public void setOutputS3KeyPrefix(String outputS3KeyPrefix) {
         this.outputS3KeyPrefix = outputS3KeyPrefix;
     }
@@ -357,6 +378,7 @@ public class SendCommandRequest extends AmazonWebServiceRequest implements
      * @return The directory structure within the S3 bucket where the responses
      *         should be stored.
      */
+
     public String getOutputS3KeyPrefix() {
         return this.outputS3KeyPrefix;
     }
@@ -371,6 +393,7 @@ public class SendCommandRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendCommandRequest withOutputS3KeyPrefix(String outputS3KeyPrefix) {
         setOutputS3KeyPrefix(outputS3KeyPrefix);
         return this;

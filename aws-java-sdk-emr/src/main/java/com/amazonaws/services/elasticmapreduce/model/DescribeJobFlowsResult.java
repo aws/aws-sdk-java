@@ -39,6 +39,7 @@ public class DescribeJobFlowsResult implements Serializable, Cloneable {
      * 
      * @return A list of job flows matching the parameters supplied.
      */
+
     public java.util.List<JobFlowDetail> getJobFlows() {
         if (jobFlows == null) {
             jobFlows = new com.amazonaws.internal.SdkInternalList<JobFlowDetail>();
@@ -54,6 +55,7 @@ public class DescribeJobFlowsResult implements Serializable, Cloneable {
      * @param jobFlows
      *        A list of job flows matching the parameters supplied.
      */
+
     public void setJobFlows(java.util.Collection<JobFlowDetail> jobFlows) {
         if (jobFlows == null) {
             this.jobFlows = null;
@@ -80,6 +82,7 @@ public class DescribeJobFlowsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeJobFlowsResult withJobFlows(JobFlowDetail... jobFlows) {
         if (this.jobFlows == null) {
             setJobFlows(new com.amazonaws.internal.SdkInternalList<JobFlowDetail>(
@@ -101,6 +104,7 @@ public class DescribeJobFlowsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeJobFlowsResult withJobFlows(
             java.util.Collection<JobFlowDetail> jobFlows) {
         setJobFlows(jobFlows);

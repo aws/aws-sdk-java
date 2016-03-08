@@ -55,6 +55,7 @@ public class RemoveClientIDFromOpenIDConnectProviderRequest extends
      *        provider ARNs by using the <a>ListOpenIDConnectProviders</a>
      *        action.
      */
+
     public void setOpenIDConnectProviderArn(String openIDConnectProviderArn) {
         this.openIDConnectProviderArn = openIDConnectProviderArn;
     }
@@ -71,6 +72,7 @@ public class RemoveClientIDFromOpenIDConnectProviderRequest extends
      *         provider ARNs by using the <a>ListOpenIDConnectProviders</a>
      *         action.
      */
+
     public String getOpenIDConnectProviderArn() {
         return this.openIDConnectProviderArn;
     }
@@ -90,6 +92,7 @@ public class RemoveClientIDFromOpenIDConnectProviderRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RemoveClientIDFromOpenIDConnectProviderRequest withOpenIDConnectProviderArn(
             String openIDConnectProviderArn) {
         setOpenIDConnectProviderArn(openIDConnectProviderArn);
@@ -108,6 +111,7 @@ public class RemoveClientIDFromOpenIDConnectProviderRequest extends
      *        OpenID Connect provider. For more information about client IDs,
      *        see <a>CreateOpenIDConnectProvider</a>.
      */
+
     public void setClientID(String clientID) {
         this.clientID = clientID;
     }
@@ -123,6 +127,7 @@ public class RemoveClientIDFromOpenIDConnectProviderRequest extends
      *         OpenID Connect provider. For more information about client IDs,
      *         see <a>CreateOpenIDConnectProvider</a>.
      */
+
     public String getClientID() {
         return this.clientID;
     }
@@ -141,6 +146,7 @@ public class RemoveClientIDFromOpenIDConnectProviderRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RemoveClientIDFromOpenIDConnectProviderRequest withClientID(
             String clientID) {
         setClientID(clientID);

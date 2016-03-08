@@ -42,6 +42,7 @@ public class DescribeEC2InstanceLimitsResult implements Serializable, Cloneable 
      * @return Object containing the maximum number of instances for the
      *         specified instance type.
      */
+
     public java.util.List<EC2InstanceLimit> getEC2InstanceLimits() {
         return eC2InstanceLimits;
     }
@@ -56,6 +57,7 @@ public class DescribeEC2InstanceLimitsResult implements Serializable, Cloneable 
      *        Object containing the maximum number of instances for the
      *        specified instance type.
      */
+
     public void setEC2InstanceLimits(
             java.util.Collection<EC2InstanceLimit> eC2InstanceLimits) {
         if (eC2InstanceLimits == null) {
@@ -85,6 +87,7 @@ public class DescribeEC2InstanceLimitsResult implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeEC2InstanceLimitsResult withEC2InstanceLimits(
             EC2InstanceLimit... eC2InstanceLimits) {
         if (this.eC2InstanceLimits == null) {
@@ -109,6 +112,7 @@ public class DescribeEC2InstanceLimitsResult implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeEC2InstanceLimitsResult withEC2InstanceLimits(
             java.util.Collection<EC2InstanceLimit> eC2InstanceLimits) {
         setEC2InstanceLimits(eC2InstanceLimits);

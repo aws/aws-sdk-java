@@ -64,6 +64,7 @@ public class SizeConstraintSetUpdate implements Serializable, Cloneable {
      *        <code>SizeConstraintSet</code>.
      * @see ChangeAction
      */
+
     public void setAction(String action) {
         this.action = action;
     }
@@ -83,6 +84,7 @@ public class SizeConstraintSetUpdate implements Serializable, Cloneable {
      *         <code>SizeConstraintSet</code>.
      * @see ChangeAction
      */
+
     public String getAction() {
         return this.action;
     }
@@ -105,6 +107,7 @@ public class SizeConstraintSetUpdate implements Serializable, Cloneable {
      *         chained together.
      * @see ChangeAction
      */
+
     public SizeConstraintSetUpdate withAction(String action) {
         setAction(action);
         return this;
@@ -128,6 +131,7 @@ public class SizeConstraintSetUpdate implements Serializable, Cloneable {
      *         chained together.
      * @see ChangeAction
      */
+
     public void setAction(ChangeAction action) {
         this.action = action.toString();
     }
@@ -150,6 +154,7 @@ public class SizeConstraintSetUpdate implements Serializable, Cloneable {
      *         chained together.
      * @see ChangeAction
      */
+
     public SizeConstraintSetUpdate withAction(ChangeAction action) {
         setAction(action);
         return this;
@@ -174,6 +179,7 @@ public class SizeConstraintSetUpdate implements Serializable, Cloneable {
      *        <code>FieldToMatch</code>". If that expression is true, the
      *        <code>SizeConstraint</code> is considered to match.
      */
+
     public void setSizeConstraint(SizeConstraint sizeConstraint) {
         this.sizeConstraint = sizeConstraint;
     }
@@ -196,6 +202,7 @@ public class SizeConstraintSetUpdate implements Serializable, Cloneable {
      *         <code>FieldToMatch</code>". If that expression is true, the
      *         <code>SizeConstraint</code> is considered to match.
      */
+
     public SizeConstraint getSizeConstraint() {
         return this.sizeConstraint;
     }
@@ -221,6 +228,7 @@ public class SizeConstraintSetUpdate implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SizeConstraintSetUpdate withSizeConstraint(
             SizeConstraint sizeConstraint) {
         setSizeConstraint(sizeConstraint);

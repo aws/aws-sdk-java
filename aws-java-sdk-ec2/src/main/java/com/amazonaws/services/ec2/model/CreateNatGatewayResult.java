@@ -45,6 +45,7 @@ public class CreateNatGatewayResult implements Serializable, Cloneable {
      * @param natGateway
      *        Information about the NAT gateway.
      */
+
     public void setNatGateway(NatGateway natGateway) {
         this.natGateway = natGateway;
     }
@@ -56,6 +57,7 @@ public class CreateNatGatewayResult implements Serializable, Cloneable {
      * 
      * @return Information about the NAT gateway.
      */
+
     public NatGateway getNatGateway() {
         return this.natGateway;
     }
@@ -70,6 +72,7 @@ public class CreateNatGatewayResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateNatGatewayResult withNatGateway(NatGateway natGateway) {
         setNatGateway(natGateway);
         return this;
@@ -86,6 +89,7 @@ public class CreateNatGatewayResult implements Serializable, Cloneable {
      *        request. Only returned if a client token was provided in the
      *        request.
      */
+
     public void setClientToken(String clientToken) {
         this.clientToken = clientToken;
     }
@@ -100,6 +104,7 @@ public class CreateNatGatewayResult implements Serializable, Cloneable {
      *         the request. Only returned if a client token was provided in the
      *         request.
      */
+
     public String getClientToken() {
         return this.clientToken;
     }
@@ -117,6 +122,7 @@ public class CreateNatGatewayResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateNatGatewayResult withClientToken(String clientToken) {
         setClientToken(clientToken);
         return this;

@@ -40,6 +40,7 @@ public class GetDeploymentsResult implements Serializable, Cloneable {
     /**
      * @param position
      */
+
     public void setPosition(String position) {
         this.position = position;
     }
@@ -47,6 +48,7 @@ public class GetDeploymentsResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getPosition() {
         return this.position;
     }
@@ -56,6 +58,7 @@ public class GetDeploymentsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDeploymentsResult withPosition(String position) {
         setPosition(position);
         return this;
@@ -70,6 +73,7 @@ public class GetDeploymentsResult implements Serializable, Cloneable {
      * @return The current page of any <a>Deployment</a> resources in the
      *         collection of deployment resources.
      */
+
     public java.util.List<Deployment> getItems() {
         return items;
     }
@@ -84,6 +88,7 @@ public class GetDeploymentsResult implements Serializable, Cloneable {
      *        The current page of any <a>Deployment</a> resources in the
      *        collection of deployment resources.
      */
+
     public void setItems(java.util.Collection<Deployment> items) {
         if (items == null) {
             this.items = null;
@@ -111,6 +116,7 @@ public class GetDeploymentsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDeploymentsResult withItems(Deployment... items) {
         if (this.items == null) {
             setItems(new java.util.ArrayList<Deployment>(items.length));
@@ -133,6 +139,7 @@ public class GetDeploymentsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDeploymentsResult withItems(java.util.Collection<Deployment> items) {
         setItems(items);
         return this;

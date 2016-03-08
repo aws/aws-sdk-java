@@ -45,6 +45,7 @@ public class DescribeAccountLimitsRequest extends AmazonWebServiceRequest
      *        A string that identifies the next page of limits that you want to
      *        retrieve.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -58,6 +59,7 @@ public class DescribeAccountLimitsRequest extends AmazonWebServiceRequest
      * @return A string that identifies the next page of limits that you want to
      *         retrieve.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -74,6 +76,7 @@ public class DescribeAccountLimitsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAccountLimitsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

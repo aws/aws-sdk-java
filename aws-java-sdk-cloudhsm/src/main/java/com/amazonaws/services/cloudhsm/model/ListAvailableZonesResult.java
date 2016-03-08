@@ -38,6 +38,7 @@ public class ListAvailableZonesResult implements Serializable, Cloneable {
      * @return The list of Availability Zones that have available AWS CloudHSM
      *         capacity.
      */
+
     public java.util.List<String> getAZList() {
         if (aZList == null) {
             aZList = new com.amazonaws.internal.SdkInternalList<String>();
@@ -54,6 +55,7 @@ public class ListAvailableZonesResult implements Serializable, Cloneable {
      *        The list of Availability Zones that have available AWS CloudHSM
      *        capacity.
      */
+
     public void setAZList(java.util.Collection<String> aZList) {
         if (aZList == null) {
             this.aZList = null;
@@ -80,6 +82,7 @@ public class ListAvailableZonesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListAvailableZonesResult withAZList(String... aZList) {
         if (this.aZList == null) {
             setAZList(new com.amazonaws.internal.SdkInternalList<String>(
@@ -102,6 +105,7 @@ public class ListAvailableZonesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListAvailableZonesResult withAZList(
             java.util.Collection<String> aZList) {
         setAZList(aZList);

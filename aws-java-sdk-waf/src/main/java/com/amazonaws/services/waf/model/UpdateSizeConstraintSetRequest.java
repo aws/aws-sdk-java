@@ -71,6 +71,7 @@ public class UpdateSizeConstraintSetRequest extends AmazonWebServiceRequest
      *        <a>CreateSizeConstraintSet</a> and by
      *        <a>ListSizeConstraintSets</a>.
      */
+
     public void setSizeConstraintSetId(String sizeConstraintSetId) {
         this.sizeConstraintSetId = sizeConstraintSetId;
     }
@@ -88,6 +89,7 @@ public class UpdateSizeConstraintSetRequest extends AmazonWebServiceRequest
      *         <a>CreateSizeConstraintSet</a> and by
      *         <a>ListSizeConstraintSets</a>.
      */
+
     public String getSizeConstraintSetId() {
         return this.sizeConstraintSetId;
     }
@@ -108,6 +110,7 @@ public class UpdateSizeConstraintSetRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateSizeConstraintSetRequest withSizeConstraintSetId(
             String sizeConstraintSetId) {
         setSizeConstraintSetId(sizeConstraintSetId);
@@ -123,6 +126,7 @@ public class UpdateSizeConstraintSetRequest extends AmazonWebServiceRequest
      *        The value returned by the most recent call to
      *        <a>GetChangeToken</a>.
      */
+
     public void setChangeToken(String changeToken) {
         this.changeToken = changeToken;
     }
@@ -135,6 +139,7 @@ public class UpdateSizeConstraintSetRequest extends AmazonWebServiceRequest
      * @return The value returned by the most recent call to
      *         <a>GetChangeToken</a>.
      */
+
     public String getChangeToken() {
         return this.changeToken;
     }
@@ -150,6 +155,7 @@ public class UpdateSizeConstraintSetRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateSizeConstraintSetRequest withChangeToken(String changeToken) {
         setChangeToken(changeToken);
         return this;
@@ -183,6 +189,7 @@ public class UpdateSizeConstraintSetRequest extends AmazonWebServiceRequest
      *         <li><a>FieldToMatch</a>: Contains <code>Data</code> and
      *         <code>Type</code></li>
      */
+
     public java.util.List<SizeConstraintSetUpdate> getUpdates() {
         return updates;
     }
@@ -216,6 +223,7 @@ public class UpdateSizeConstraintSetRequest extends AmazonWebServiceRequest
      *        <li><a>FieldToMatch</a>: Contains <code>Data</code> and
      *        <code>Type</code></li>
      */
+
     public void setUpdates(java.util.Collection<SizeConstraintSetUpdate> updates) {
         if (updates == null) {
             this.updates = null;
@@ -262,6 +270,7 @@ public class UpdateSizeConstraintSetRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateSizeConstraintSetRequest withUpdates(
             SizeConstraintSetUpdate... updates) {
         if (this.updates == null) {
@@ -305,6 +314,7 @@ public class UpdateSizeConstraintSetRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateSizeConstraintSetRequest withUpdates(
             java.util.Collection<SizeConstraintSetUpdate> updates) {
         setUpdates(updates);

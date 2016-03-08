@@ -46,6 +46,7 @@ public class AccountAttribute implements Serializable, Cloneable {
      * @param attributeName
      *        The name of the account attribute.
      */
+
     public void setAttributeName(String attributeName) {
         this.attributeName = attributeName;
     }
@@ -57,6 +58,7 @@ public class AccountAttribute implements Serializable, Cloneable {
      * 
      * @return The name of the account attribute.
      */
+
     public String getAttributeName() {
         return this.attributeName;
     }
@@ -71,6 +73,7 @@ public class AccountAttribute implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AccountAttribute withAttributeName(String attributeName) {
         setAttributeName(attributeName);
         return this;
@@ -83,6 +86,7 @@ public class AccountAttribute implements Serializable, Cloneable {
      * 
      * @return One or more values for the account attribute.
      */
+
     public java.util.List<AccountAttributeValue> getAttributeValues() {
         if (attributeValues == null) {
             attributeValues = new com.amazonaws.internal.SdkInternalList<AccountAttributeValue>();
@@ -98,6 +102,7 @@ public class AccountAttribute implements Serializable, Cloneable {
      * @param attributeValues
      *        One or more values for the account attribute.
      */
+
     public void setAttributeValues(
             java.util.Collection<AccountAttributeValue> attributeValues) {
         if (attributeValues == null) {
@@ -125,6 +130,7 @@ public class AccountAttribute implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AccountAttribute withAttributeValues(
             AccountAttributeValue... attributeValues) {
         if (this.attributeValues == null) {
@@ -147,6 +153,7 @@ public class AccountAttribute implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AccountAttribute withAttributeValues(
             java.util.Collection<AccountAttributeValue> attributeValues) {
         setAttributeValues(attributeValues);

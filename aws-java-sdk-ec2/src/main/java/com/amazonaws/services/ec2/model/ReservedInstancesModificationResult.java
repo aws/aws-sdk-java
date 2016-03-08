@@ -52,6 +52,7 @@ public class ReservedInstancesModificationResult implements Serializable,
      *        modification request. This field is only available when the
      *        modification is fulfilled.
      */
+
     public void setReservedInstancesId(String reservedInstancesId) {
         this.reservedInstancesId = reservedInstancesId;
     }
@@ -67,6 +68,7 @@ public class ReservedInstancesModificationResult implements Serializable,
      *         the modification request. This field is only available when the
      *         modification is fulfilled.
      */
+
     public String getReservedInstancesId() {
         return this.reservedInstancesId;
     }
@@ -85,6 +87,7 @@ public class ReservedInstancesModificationResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReservedInstancesModificationResult withReservedInstancesId(
             String reservedInstancesId) {
         setReservedInstancesId(reservedInstancesId);
@@ -101,6 +104,7 @@ public class ReservedInstancesModificationResult implements Serializable,
      *        The target Reserved Instances configurations supplied as part of
      *        the modification request.
      */
+
     public void setTargetConfiguration(
             ReservedInstancesConfiguration targetConfiguration) {
         this.targetConfiguration = targetConfiguration;
@@ -115,6 +119,7 @@ public class ReservedInstancesModificationResult implements Serializable,
      * @return The target Reserved Instances configurations supplied as part of
      *         the modification request.
      */
+
     public ReservedInstancesConfiguration getTargetConfiguration() {
         return this.targetConfiguration;
     }
@@ -131,6 +136,7 @@ public class ReservedInstancesModificationResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReservedInstancesModificationResult withTargetConfiguration(
             ReservedInstancesConfiguration targetConfiguration) {
         setTargetConfiguration(targetConfiguration);

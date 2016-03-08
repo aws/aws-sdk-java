@@ -35,6 +35,7 @@ public class UpdateCloudFrontOriginAccessIdentityResult implements
      * @param cloudFrontOriginAccessIdentity
      *        The origin access identity's information.
      */
+
     public void setCloudFrontOriginAccessIdentity(
             CloudFrontOriginAccessIdentity cloudFrontOriginAccessIdentity) {
         this.cloudFrontOriginAccessIdentity = cloudFrontOriginAccessIdentity;
@@ -45,6 +46,7 @@ public class UpdateCloudFrontOriginAccessIdentityResult implements
      * 
      * @return The origin access identity's information.
      */
+
     public CloudFrontOriginAccessIdentity getCloudFrontOriginAccessIdentity() {
         return this.cloudFrontOriginAccessIdentity;
     }
@@ -57,6 +59,7 @@ public class UpdateCloudFrontOriginAccessIdentityResult implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateCloudFrontOriginAccessIdentityResult withCloudFrontOriginAccessIdentity(
             CloudFrontOriginAccessIdentity cloudFrontOriginAccessIdentity) {
         setCloudFrontOriginAccessIdentity(cloudFrontOriginAccessIdentity);
@@ -70,6 +73,7 @@ public class UpdateCloudFrontOriginAccessIdentityResult implements
      *        The current version of the configuration. For example:
      *        E2QWRUHAPOMQZL.
      */
+
     public void setETag(String eTag) {
         this.eTag = eTag;
     }
@@ -80,6 +84,7 @@ public class UpdateCloudFrontOriginAccessIdentityResult implements
      * @return The current version of the configuration. For example:
      *         E2QWRUHAPOMQZL.
      */
+
     public String getETag() {
         return this.eTag;
     }
@@ -93,6 +98,7 @@ public class UpdateCloudFrontOriginAccessIdentityResult implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateCloudFrontOriginAccessIdentityResult withETag(String eTag) {
         setETag(eTag);
         return this;

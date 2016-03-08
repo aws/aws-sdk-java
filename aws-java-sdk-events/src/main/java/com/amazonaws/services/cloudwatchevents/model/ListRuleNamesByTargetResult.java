@@ -45,6 +45,7 @@ public class ListRuleNamesByTargetResult implements Serializable, Cloneable {
      * 
      * @return List of rules names that can invoke the given target.
      */
+
     public java.util.List<String> getRuleNames() {
         return ruleNames;
     }
@@ -57,6 +58,7 @@ public class ListRuleNamesByTargetResult implements Serializable, Cloneable {
      * @param ruleNames
      *        List of rules names that can invoke the given target.
      */
+
     public void setRuleNames(java.util.Collection<String> ruleNames) {
         if (ruleNames == null) {
             this.ruleNames = null;
@@ -82,6 +84,7 @@ public class ListRuleNamesByTargetResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListRuleNamesByTargetResult withRuleNames(String... ruleNames) {
         if (this.ruleNames == null) {
             setRuleNames(new java.util.ArrayList<String>(ruleNames.length));
@@ -102,6 +105,7 @@ public class ListRuleNamesByTargetResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListRuleNamesByTargetResult withRuleNames(
             java.util.Collection<String> ruleNames) {
         setRuleNames(ruleNames);
@@ -116,6 +120,7 @@ public class ListRuleNamesByTargetResult implements Serializable, Cloneable {
      * @param nextToken
      *        Indicates that there are additional results to retrieve.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -127,6 +132,7 @@ public class ListRuleNamesByTargetResult implements Serializable, Cloneable {
      * 
      * @return Indicates that there are additional results to retrieve.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -141,6 +147,7 @@ public class ListRuleNamesByTargetResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListRuleNamesByTargetResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

@@ -44,6 +44,7 @@ public class LocalizeTextResult implements Serializable, Cloneable {
      * @param message
      *        Confirmation details of the action performed.
      */
+
     public void setMessage(String message) {
         this.message = message;
     }
@@ -55,6 +56,7 @@ public class LocalizeTextResult implements Serializable, Cloneable {
      * 
      * @return Confirmation details of the action performed.
      */
+
     public String getMessage() {
         return this.message;
     }
@@ -69,6 +71,7 @@ public class LocalizeTextResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LocalizeTextResult withMessage(String message) {
         setMessage(message);
         return this;
@@ -81,6 +84,7 @@ public class LocalizeTextResult implements Serializable, Cloneable {
      * 
      * @return The resulting list of user-readable texts.
      */
+
     public java.util.List<String> getResults() {
         return results;
     }
@@ -93,6 +97,7 @@ public class LocalizeTextResult implements Serializable, Cloneable {
      * @param results
      *        The resulting list of user-readable texts.
      */
+
     public void setResults(java.util.Collection<String> results) {
         if (results == null) {
             this.results = null;
@@ -118,6 +123,7 @@ public class LocalizeTextResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LocalizeTextResult withResults(String... results) {
         if (this.results == null) {
             setResults(new java.util.ArrayList<String>(results.length));
@@ -138,6 +144,7 @@ public class LocalizeTextResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LocalizeTextResult withResults(java.util.Collection<String> results) {
         setResults(results);
         return this;

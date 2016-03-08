@@ -55,6 +55,7 @@ public class PutThirdPartyJobFailureResultRequest extends
      *        The ID of the job that failed. This is the same ID returned from
      *        PollForThirdPartyJobs.
      */
+
     public void setJobId(String jobId) {
         this.jobId = jobId;
     }
@@ -68,6 +69,7 @@ public class PutThirdPartyJobFailureResultRequest extends
      * @return The ID of the job that failed. This is the same ID returned from
      *         PollForThirdPartyJobs.
      */
+
     public String getJobId() {
         return this.jobId;
     }
@@ -84,6 +86,7 @@ public class PutThirdPartyJobFailureResultRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutThirdPartyJobFailureResultRequest withJobId(String jobId) {
         setJobId(jobId);
         return this;
@@ -101,6 +104,7 @@ public class PutThirdPartyJobFailureResultRequest extends
      *        to verify that the calling entity is allowed access to the job and
      *        its details.
      */
+
     public void setClientToken(String clientToken) {
         this.clientToken = clientToken;
     }
@@ -116,6 +120,7 @@ public class PutThirdPartyJobFailureResultRequest extends
      *         to verify that the calling entity is allowed access to the job
      *         and its details.
      */
+
     public String getClientToken() {
         return this.clientToken;
     }
@@ -134,6 +139,7 @@ public class PutThirdPartyJobFailureResultRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutThirdPartyJobFailureResultRequest withClientToken(
             String clientToken) {
         setClientToken(clientToken);
@@ -143,6 +149,7 @@ public class PutThirdPartyJobFailureResultRequest extends
     /**
      * @param failureDetails
      */
+
     public void setFailureDetails(FailureDetails failureDetails) {
         this.failureDetails = failureDetails;
     }
@@ -150,6 +157,7 @@ public class PutThirdPartyJobFailureResultRequest extends
     /**
      * @return
      */
+
     public FailureDetails getFailureDetails() {
         return this.failureDetails;
     }
@@ -159,6 +167,7 @@ public class PutThirdPartyJobFailureResultRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutThirdPartyJobFailureResultRequest withFailureDetails(
             FailureDetails failureDetails) {
         setFailureDetails(failureDetails);

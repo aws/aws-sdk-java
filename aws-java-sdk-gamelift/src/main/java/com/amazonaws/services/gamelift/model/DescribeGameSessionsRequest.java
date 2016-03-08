@@ -82,6 +82,7 @@ public class DescribeGameSessionsRequest extends AmazonWebServiceRequest
      *        Unique identifier for a fleet. Specify only one fleet ID, alias ID
      *        or game session ID.
      */
+
     public void setFleetId(String fleetId) {
         this.fleetId = fleetId;
     }
@@ -95,6 +96,7 @@ public class DescribeGameSessionsRequest extends AmazonWebServiceRequest
      * @return Unique identifier for a fleet. Specify only one fleet ID, alias
      *         ID or game session ID.
      */
+
     public String getFleetId() {
         return this.fleetId;
     }
@@ -111,6 +113,7 @@ public class DescribeGameSessionsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeGameSessionsRequest withFleetId(String fleetId) {
         setFleetId(fleetId);
         return this;
@@ -126,6 +129,7 @@ public class DescribeGameSessionsRequest extends AmazonWebServiceRequest
      *        Unique identifier for a game session. Specify only one fleet ID,
      *        alias ID or game session ID.
      */
+
     public void setGameSessionId(String gameSessionId) {
         this.gameSessionId = gameSessionId;
     }
@@ -139,6 +143,7 @@ public class DescribeGameSessionsRequest extends AmazonWebServiceRequest
      * @return Unique identifier for a game session. Specify only one fleet ID,
      *         alias ID or game session ID.
      */
+
     public String getGameSessionId() {
         return this.gameSessionId;
     }
@@ -155,6 +160,7 @@ public class DescribeGameSessionsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeGameSessionsRequest withGameSessionId(String gameSessionId) {
         setGameSessionId(gameSessionId);
         return this;
@@ -170,6 +176,7 @@ public class DescribeGameSessionsRequest extends AmazonWebServiceRequest
      *        Unique identifier for a fleet alias. Specify only one fleet ID,
      *        alias ID or game session ID.
      */
+
     public void setAliasId(String aliasId) {
         this.aliasId = aliasId;
     }
@@ -183,6 +190,7 @@ public class DescribeGameSessionsRequest extends AmazonWebServiceRequest
      * @return Unique identifier for a fleet alias. Specify only one fleet ID,
      *         alias ID or game session ID.
      */
+
     public String getAliasId() {
         return this.aliasId;
     }
@@ -199,6 +207,7 @@ public class DescribeGameSessionsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeGameSessionsRequest withAliasId(String aliasId) {
         setAliasId(aliasId);
         return this;
@@ -214,6 +223,7 @@ public class DescribeGameSessionsRequest extends AmazonWebServiceRequest
      *        Indicate a game session status to filter results on. (Note:
      *        ACTIVATING and TERMINATING are short-term transitory states only.)
      */
+
     public void setStatusFilter(String statusFilter) {
         this.statusFilter = statusFilter;
     }
@@ -228,6 +238,7 @@ public class DescribeGameSessionsRequest extends AmazonWebServiceRequest
      *         ACTIVATING and TERMINATING are short-term transitory states
      *         only.)
      */
+
     public String getStatusFilter() {
         return this.statusFilter;
     }
@@ -244,6 +255,7 @@ public class DescribeGameSessionsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeGameSessionsRequest withStatusFilter(String statusFilter) {
         setStatusFilter(statusFilter);
         return this;
@@ -259,6 +271,7 @@ public class DescribeGameSessionsRequest extends AmazonWebServiceRequest
      *        Maximum number of results to return. You can use this parameter
      *        with <i>NextToken</i> to get results as a set of sequential pages.
      */
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -273,6 +286,7 @@ public class DescribeGameSessionsRequest extends AmazonWebServiceRequest
      *         with <i>NextToken</i> to get results as a set of sequential
      *         pages.
      */
+
     public Integer getLimit() {
         return this.limit;
     }
@@ -289,6 +303,7 @@ public class DescribeGameSessionsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeGameSessionsRequest withLimit(Integer limit) {
         setLimit(limit);
         return this;
@@ -308,6 +323,7 @@ public class DescribeGameSessionsRequest extends AmazonWebServiceRequest
      *        retrieved. To start at the beginning of a result set, do not set
      *        this parameter.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -325,6 +341,7 @@ public class DescribeGameSessionsRequest extends AmazonWebServiceRequest
      *         results to be retrieved. To start at the beginning of a result
      *         set, do not set this parameter.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -345,6 +362,7 @@ public class DescribeGameSessionsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeGameSessionsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

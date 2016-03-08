@@ -43,6 +43,7 @@ public class VpnConnectionOptions implements Serializable, Cloneable {
      *        Indicates whether the VPN connection uses static routes only.
      *        Static routes must be used for devices that don't support BGP.
      */
+
     public void setStaticRoutesOnly(Boolean staticRoutesOnly) {
         this.staticRoutesOnly = staticRoutesOnly;
     }
@@ -56,6 +57,7 @@ public class VpnConnectionOptions implements Serializable, Cloneable {
      * @return Indicates whether the VPN connection uses static routes only.
      *         Static routes must be used for devices that don't support BGP.
      */
+
     public Boolean getStaticRoutesOnly() {
         return this.staticRoutesOnly;
     }
@@ -72,6 +74,7 @@ public class VpnConnectionOptions implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VpnConnectionOptions withStaticRoutesOnly(Boolean staticRoutesOnly) {
         setStaticRoutesOnly(staticRoutesOnly);
         return this;
@@ -86,6 +89,7 @@ public class VpnConnectionOptions implements Serializable, Cloneable {
      * @return Indicates whether the VPN connection uses static routes only.
      *         Static routes must be used for devices that don't support BGP.
      */
+
     public Boolean isStaticRoutesOnly() {
         return this.staticRoutesOnly;
     }

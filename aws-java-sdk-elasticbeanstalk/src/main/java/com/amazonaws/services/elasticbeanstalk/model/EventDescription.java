@@ -82,6 +82,7 @@ public class EventDescription implements Serializable, Cloneable {
      * @param eventDate
      *        The date when the event occurred.
      */
+
     public void setEventDate(java.util.Date eventDate) {
         this.eventDate = eventDate;
     }
@@ -93,6 +94,7 @@ public class EventDescription implements Serializable, Cloneable {
      * 
      * @return The date when the event occurred.
      */
+
     public java.util.Date getEventDate() {
         return this.eventDate;
     }
@@ -107,6 +109,7 @@ public class EventDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EventDescription withEventDate(java.util.Date eventDate) {
         setEventDate(eventDate);
         return this;
@@ -120,6 +123,7 @@ public class EventDescription implements Serializable, Cloneable {
      * @param message
      *        The event message.
      */
+
     public void setMessage(String message) {
         this.message = message;
     }
@@ -131,6 +135,7 @@ public class EventDescription implements Serializable, Cloneable {
      * 
      * @return The event message.
      */
+
     public String getMessage() {
         return this.message;
     }
@@ -145,6 +150,7 @@ public class EventDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EventDescription withMessage(String message) {
         setMessage(message);
         return this;
@@ -158,6 +164,7 @@ public class EventDescription implements Serializable, Cloneable {
      * @param applicationName
      *        The application associated with the event.
      */
+
     public void setApplicationName(String applicationName) {
         this.applicationName = applicationName;
     }
@@ -169,6 +176,7 @@ public class EventDescription implements Serializable, Cloneable {
      * 
      * @return The application associated with the event.
      */
+
     public String getApplicationName() {
         return this.applicationName;
     }
@@ -183,6 +191,7 @@ public class EventDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EventDescription withApplicationName(String applicationName) {
         setApplicationName(applicationName);
         return this;
@@ -197,6 +206,7 @@ public class EventDescription implements Serializable, Cloneable {
      *        The release label for the application version associated with this
      *        event.
      */
+
     public void setVersionLabel(String versionLabel) {
         this.versionLabel = versionLabel;
     }
@@ -209,6 +219,7 @@ public class EventDescription implements Serializable, Cloneable {
      * @return The release label for the application version associated with
      *         this event.
      */
+
     public String getVersionLabel() {
         return this.versionLabel;
     }
@@ -224,6 +235,7 @@ public class EventDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EventDescription withVersionLabel(String versionLabel) {
         setVersionLabel(versionLabel);
         return this;
@@ -237,6 +249,7 @@ public class EventDescription implements Serializable, Cloneable {
      * @param templateName
      *        The name of the configuration associated with this event.
      */
+
     public void setTemplateName(String templateName) {
         this.templateName = templateName;
     }
@@ -248,6 +261,7 @@ public class EventDescription implements Serializable, Cloneable {
      * 
      * @return The name of the configuration associated with this event.
      */
+
     public String getTemplateName() {
         return this.templateName;
     }
@@ -262,6 +276,7 @@ public class EventDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EventDescription withTemplateName(String templateName) {
         setTemplateName(templateName);
         return this;
@@ -275,6 +290,7 @@ public class EventDescription implements Serializable, Cloneable {
      * @param environmentName
      *        The name of the environment associated with this event.
      */
+
     public void setEnvironmentName(String environmentName) {
         this.environmentName = environmentName;
     }
@@ -286,6 +302,7 @@ public class EventDescription implements Serializable, Cloneable {
      * 
      * @return The name of the environment associated with this event.
      */
+
     public String getEnvironmentName() {
         return this.environmentName;
     }
@@ -300,6 +317,7 @@ public class EventDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EventDescription withEnvironmentName(String environmentName) {
         setEnvironmentName(environmentName);
         return this;
@@ -313,6 +331,7 @@ public class EventDescription implements Serializable, Cloneable {
      * @param requestId
      *        The web service request ID for the activity of this event.
      */
+
     public void setRequestId(String requestId) {
         this.requestId = requestId;
     }
@@ -324,6 +343,7 @@ public class EventDescription implements Serializable, Cloneable {
      * 
      * @return The web service request ID for the activity of this event.
      */
+
     public String getRequestId() {
         return this.requestId;
     }
@@ -338,6 +358,7 @@ public class EventDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EventDescription withRequestId(String requestId) {
         setRequestId(requestId);
         return this;
@@ -352,6 +373,7 @@ public class EventDescription implements Serializable, Cloneable {
      *        The severity level of this event.
      * @see EventSeverity
      */
+
     public void setSeverity(String severity) {
         this.severity = severity;
     }
@@ -364,6 +386,7 @@ public class EventDescription implements Serializable, Cloneable {
      * @return The severity level of this event.
      * @see EventSeverity
      */
+
     public String getSeverity() {
         return this.severity;
     }
@@ -379,6 +402,7 @@ public class EventDescription implements Serializable, Cloneable {
      *         chained together.
      * @see EventSeverity
      */
+
     public EventDescription withSeverity(String severity) {
         setSeverity(severity);
         return this;
@@ -395,6 +419,7 @@ public class EventDescription implements Serializable, Cloneable {
      *         chained together.
      * @see EventSeverity
      */
+
     public void setSeverity(EventSeverity severity) {
         this.severity = severity.toString();
     }
@@ -410,6 +435,7 @@ public class EventDescription implements Serializable, Cloneable {
      *         chained together.
      * @see EventSeverity
      */
+
     public EventDescription withSeverity(EventSeverity severity) {
         setSeverity(severity);
         return this;

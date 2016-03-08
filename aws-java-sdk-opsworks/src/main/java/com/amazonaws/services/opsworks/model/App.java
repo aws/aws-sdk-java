@@ -130,6 +130,7 @@ public class App implements Serializable, Cloneable {
      * @param appId
      *        The app ID.
      */
+
     public void setAppId(String appId) {
         this.appId = appId;
     }
@@ -141,6 +142,7 @@ public class App implements Serializable, Cloneable {
      * 
      * @return The app ID.
      */
+
     public String getAppId() {
         return this.appId;
     }
@@ -155,6 +157,7 @@ public class App implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public App withAppId(String appId) {
         setAppId(appId);
         return this;
@@ -168,6 +171,7 @@ public class App implements Serializable, Cloneable {
      * @param stackId
      *        The app stack ID.
      */
+
     public void setStackId(String stackId) {
         this.stackId = stackId;
     }
@@ -179,6 +183,7 @@ public class App implements Serializable, Cloneable {
      * 
      * @return The app stack ID.
      */
+
     public String getStackId() {
         return this.stackId;
     }
@@ -193,6 +198,7 @@ public class App implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public App withStackId(String stackId) {
         setStackId(stackId);
         return this;
@@ -206,6 +212,7 @@ public class App implements Serializable, Cloneable {
      * @param shortname
      *        The app's short name.
      */
+
     public void setShortname(String shortname) {
         this.shortname = shortname;
     }
@@ -217,6 +224,7 @@ public class App implements Serializable, Cloneable {
      * 
      * @return The app's short name.
      */
+
     public String getShortname() {
         return this.shortname;
     }
@@ -231,6 +239,7 @@ public class App implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public App withShortname(String shortname) {
         setShortname(shortname);
         return this;
@@ -244,6 +253,7 @@ public class App implements Serializable, Cloneable {
      * @param name
      *        The app name.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -255,6 +265,7 @@ public class App implements Serializable, Cloneable {
      * 
      * @return The app name.
      */
+
     public String getName() {
         return this.name;
     }
@@ -269,6 +280,7 @@ public class App implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public App withName(String name) {
         setName(name);
         return this;
@@ -282,6 +294,7 @@ public class App implements Serializable, Cloneable {
      * @param description
      *        A description of the app.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -293,6 +306,7 @@ public class App implements Serializable, Cloneable {
      * 
      * @return A description of the app.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -307,6 +321,7 @@ public class App implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public App withDescription(String description) {
         setDescription(description);
         return this;
@@ -319,6 +334,7 @@ public class App implements Serializable, Cloneable {
      * 
      * @return The app's data sources.
      */
+
     public java.util.List<DataSource> getDataSources() {
         if (dataSources == null) {
             dataSources = new com.amazonaws.internal.SdkInternalList<DataSource>();
@@ -334,6 +350,7 @@ public class App implements Serializable, Cloneable {
      * @param dataSources
      *        The app's data sources.
      */
+
     public void setDataSources(java.util.Collection<DataSource> dataSources) {
         if (dataSources == null) {
             this.dataSources = null;
@@ -360,6 +377,7 @@ public class App implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public App withDataSources(DataSource... dataSources) {
         if (this.dataSources == null) {
             setDataSources(new com.amazonaws.internal.SdkInternalList<DataSource>(
@@ -381,6 +399,7 @@ public class App implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public App withDataSources(java.util.Collection<DataSource> dataSources) {
         setDataSources(dataSources);
         return this;
@@ -395,6 +414,7 @@ public class App implements Serializable, Cloneable {
      *        The app type.
      * @see AppType
      */
+
     public void setType(String type) {
         this.type = type;
     }
@@ -407,6 +427,7 @@ public class App implements Serializable, Cloneable {
      * @return The app type.
      * @see AppType
      */
+
     public String getType() {
         return this.type;
     }
@@ -422,6 +443,7 @@ public class App implements Serializable, Cloneable {
      *         chained together.
      * @see AppType
      */
+
     public App withType(String type) {
         setType(type);
         return this;
@@ -438,6 +460,7 @@ public class App implements Serializable, Cloneable {
      *         chained together.
      * @see AppType
      */
+
     public void setType(AppType type) {
         this.type = type.toString();
     }
@@ -453,6 +476,7 @@ public class App implements Serializable, Cloneable {
      *         chained together.
      * @see AppType
      */
+
     public App withType(AppType type) {
         setType(type);
         return this;
@@ -466,6 +490,7 @@ public class App implements Serializable, Cloneable {
      * @param appSource
      *        A <code>Source</code> object that describes the app repository.
      */
+
     public void setAppSource(Source appSource) {
         this.appSource = appSource;
     }
@@ -477,6 +502,7 @@ public class App implements Serializable, Cloneable {
      * 
      * @return A <code>Source</code> object that describes the app repository.
      */
+
     public Source getAppSource() {
         return this.appSource;
     }
@@ -491,6 +517,7 @@ public class App implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public App withAppSource(Source appSource) {
         setAppSource(appSource);
         return this;
@@ -505,6 +532,7 @@ public class App implements Serializable, Cloneable {
      * @return The app vhost settings with multiple domains separated by commas.
      *         For example: <code>'www.example.com, example.com'</code>
      */
+
     public java.util.List<String> getDomains() {
         if (domains == null) {
             domains = new com.amazonaws.internal.SdkInternalList<String>();
@@ -522,6 +550,7 @@ public class App implements Serializable, Cloneable {
      *        The app vhost settings with multiple domains separated by commas.
      *        For example: <code>'www.example.com, example.com'</code>
      */
+
     public void setDomains(java.util.Collection<String> domains) {
         if (domains == null) {
             this.domains = null;
@@ -550,6 +579,7 @@ public class App implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public App withDomains(String... domains) {
         if (this.domains == null) {
             setDomains(new com.amazonaws.internal.SdkInternalList<String>(
@@ -573,6 +603,7 @@ public class App implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public App withDomains(java.util.Collection<String> domains) {
         setDomains(domains);
         return this;
@@ -586,6 +617,7 @@ public class App implements Serializable, Cloneable {
      * @param enableSsl
      *        Whether to enable SSL for the app.
      */
+
     public void setEnableSsl(Boolean enableSsl) {
         this.enableSsl = enableSsl;
     }
@@ -597,6 +629,7 @@ public class App implements Serializable, Cloneable {
      * 
      * @return Whether to enable SSL for the app.
      */
+
     public Boolean getEnableSsl() {
         return this.enableSsl;
     }
@@ -611,6 +644,7 @@ public class App implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public App withEnableSsl(Boolean enableSsl) {
         setEnableSsl(enableSsl);
         return this;
@@ -623,6 +657,7 @@ public class App implements Serializable, Cloneable {
      * 
      * @return Whether to enable SSL for the app.
      */
+
     public Boolean isEnableSsl() {
         return this.enableSsl;
     }
@@ -636,6 +671,7 @@ public class App implements Serializable, Cloneable {
      *        An <code>SslConfiguration</code> object with the SSL
      *        configuration.
      */
+
     public void setSslConfiguration(SslConfiguration sslConfiguration) {
         this.sslConfiguration = sslConfiguration;
     }
@@ -648,6 +684,7 @@ public class App implements Serializable, Cloneable {
      * @return An <code>SslConfiguration</code> object with the SSL
      *         configuration.
      */
+
     public SslConfiguration getSslConfiguration() {
         return this.sslConfiguration;
     }
@@ -663,6 +700,7 @@ public class App implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public App withSslConfiguration(SslConfiguration sslConfiguration) {
         setSslConfiguration(sslConfiguration);
         return this;
@@ -675,6 +713,7 @@ public class App implements Serializable, Cloneable {
      * 
      * @return The stack attributes.
      */
+
     public java.util.Map<String, String> getAttributes() {
         if (attributes == null) {
             attributes = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -690,6 +729,7 @@ public class App implements Serializable, Cloneable {
      * @param attributes
      *        The stack attributes.
      */
+
     public void setAttributes(java.util.Map<String, String> attributes) {
         this.attributes = attributes == null ? null
                 : new com.amazonaws.internal.SdkInternalMap<String, String>(
@@ -706,6 +746,7 @@ public class App implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public App withAttributes(java.util.Map<String, String> attributes) {
         setAttributes(attributes);
         return this;
@@ -726,6 +767,7 @@ public class App implements Serializable, Cloneable {
      * Removes all the entries added into Attributes. &lt;p> Returns a reference
      * to this object so that method calls can be chained together.
      */
+
     public App clearAttributesEntries() {
         this.attributes = null;
         return this;
@@ -739,6 +781,7 @@ public class App implements Serializable, Cloneable {
      * @param createdAt
      *        When the app was created.
      */
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -750,6 +793,7 @@ public class App implements Serializable, Cloneable {
      * 
      * @return When the app was created.
      */
+
     public String getCreatedAt() {
         return this.createdAt;
     }
@@ -764,6 +808,7 @@ public class App implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public App withCreatedAt(String createdAt) {
         setCreatedAt(createdAt);
         return this;
@@ -798,6 +843,7 @@ public class App implements Serializable, Cloneable {
      *         cases, but if you do exceed it, you will cause an exception (API)
      *         with an "Environment: is too large (maximum is 10KB)" message.
      */
+
     public java.util.List<EnvironmentVariable> getEnvironment() {
         if (environment == null) {
             environment = new com.amazonaws.internal.SdkInternalList<EnvironmentVariable>();
@@ -835,6 +881,7 @@ public class App implements Serializable, Cloneable {
      *        cases, but if you do exceed it, you will cause an exception (API)
      *        with an "Environment: is too large (maximum is 10KB)" message.
      */
+
     public void setEnvironment(
             java.util.Collection<EnvironmentVariable> environment) {
         if (environment == null) {
@@ -884,6 +931,7 @@ public class App implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public App withEnvironment(EnvironmentVariable... environment) {
         if (this.environment == null) {
             setEnvironment(new com.amazonaws.internal.SdkInternalList<EnvironmentVariable>(
@@ -927,6 +975,7 @@ public class App implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public App withEnvironment(
             java.util.Collection<EnvironmentVariable> environment) {
         setEnvironment(environment);

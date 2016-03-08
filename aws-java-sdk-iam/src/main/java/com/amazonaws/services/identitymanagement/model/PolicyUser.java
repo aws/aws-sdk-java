@@ -49,6 +49,7 @@ public class PolicyUser implements Serializable, Cloneable {
      * @param userName
      *        The name (friendly name, not ARN) identifying the user.
      */
+
     public void setUserName(String userName) {
         this.userName = userName;
     }
@@ -60,6 +61,7 @@ public class PolicyUser implements Serializable, Cloneable {
      * 
      * @return The name (friendly name, not ARN) identifying the user.
      */
+
     public String getUserName() {
         return this.userName;
     }
@@ -74,6 +76,7 @@ public class PolicyUser implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PolicyUser withUserName(String userName) {
         setUserName(userName);
         return this;

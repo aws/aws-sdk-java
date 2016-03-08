@@ -102,6 +102,7 @@ public class StartTaskRequest extends AmazonWebServiceRequest implements
      *        on which to start your task. If you do not specify a cluster, the
      *        default cluster is assumed..
      */
+
     public void setCluster(String cluster) {
         this.cluster = cluster;
     }
@@ -117,6 +118,7 @@ public class StartTaskRequest extends AmazonWebServiceRequest implements
      *         on which to start your task. If you do not specify a cluster, the
      *         default cluster is assumed..
      */
+
     public String getCluster() {
         return this.cluster;
     }
@@ -135,6 +137,7 @@ public class StartTaskRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StartTaskRequest withCluster(String cluster) {
         setCluster(cluster);
         return this;
@@ -154,6 +157,7 @@ public class StartTaskRequest extends AmazonWebServiceRequest implements
      *        of the task definition to start. If a <code>revision</code> is not
      *        specified, the latest <code>ACTIVE</code> revision is used.
      */
+
     public void setTaskDefinition(String taskDefinition) {
         this.taskDefinition = taskDefinition;
     }
@@ -171,6 +175,7 @@ public class StartTaskRequest extends AmazonWebServiceRequest implements
      *         of the task definition to start. If a <code>revision</code> is
      *         not specified, the latest <code>ACTIVE</code> revision is used.
      */
+
     public String getTaskDefinition() {
         return this.taskDefinition;
     }
@@ -191,6 +196,7 @@ public class StartTaskRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StartTaskRequest withTaskDefinition(String taskDefinition) {
         setTaskDefinition(taskDefinition);
         return this;
@@ -229,6 +235,7 @@ public class StartTaskRequest extends AmazonWebServiceRequest implements
      *        includes the JSON formatting characters of the override structure.
      *        </p>
      */
+
     public void setOverrides(TaskOverride overrides) {
         this.overrides = overrides;
     }
@@ -266,6 +273,7 @@ public class StartTaskRequest extends AmazonWebServiceRequest implements
      *         structure.
      *         </p>
      */
+
     public TaskOverride getOverrides() {
         return this.overrides;
     }
@@ -305,6 +313,7 @@ public class StartTaskRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StartTaskRequest withOverrides(TaskOverride overrides) {
         setOverrides(overrides);
         return this;
@@ -329,6 +338,7 @@ public class StartTaskRequest extends AmazonWebServiceRequest implements
      *         10.
      *         </p>
      */
+
     public java.util.List<String> getContainerInstances() {
         if (containerInstances == null) {
             containerInstances = new com.amazonaws.internal.SdkInternalList<String>();
@@ -356,6 +366,7 @@ public class StartTaskRequest extends AmazonWebServiceRequest implements
      *        10.
      *        </p>
      */
+
     public void setContainerInstances(
             java.util.Collection<String> containerInstances) {
         if (containerInstances == null) {
@@ -395,6 +406,7 @@ public class StartTaskRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StartTaskRequest withContainerInstances(String... containerInstances) {
         if (this.containerInstances == null) {
             setContainerInstances(new com.amazonaws.internal.SdkInternalList<String>(
@@ -428,6 +440,7 @@ public class StartTaskRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StartTaskRequest withContainerInstances(
             java.util.Collection<String> containerInstances) {
         setContainerInstances(containerInstances);
@@ -461,6 +474,7 @@ public class StartTaskRequest extends AmazonWebServiceRequest implements
      *        <code>startedBy</code> parameter contains the deployment ID of the
      *        service that starts it.
      */
+
     public void setStartedBy(String startedBy) {
         this.startedBy = startedBy;
     }
@@ -491,6 +505,7 @@ public class StartTaskRequest extends AmazonWebServiceRequest implements
      *         <code>startedBy</code> parameter contains the deployment ID of
      *         the service that starts it.
      */
+
     public String getStartedBy() {
         return this.startedBy;
     }
@@ -524,6 +539,7 @@ public class StartTaskRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StartTaskRequest withStartedBy(String startedBy) {
         setStartedBy(startedBy);
         return this;

@@ -47,6 +47,7 @@ public class ApplySecurityGroupsToLoadBalancerRequest extends
      * @param loadBalancerName
      *        The name of the load balancer.
      */
+
     public void setLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
     }
@@ -58,6 +59,7 @@ public class ApplySecurityGroupsToLoadBalancerRequest extends
      * 
      * @return The name of the load balancer.
      */
+
     public String getLoadBalancerName() {
         return this.loadBalancerName;
     }
@@ -72,6 +74,7 @@ public class ApplySecurityGroupsToLoadBalancerRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ApplySecurityGroupsToLoadBalancerRequest withLoadBalancerName(
             String loadBalancerName) {
         setLoadBalancerName(loadBalancerName);
@@ -88,6 +91,7 @@ public class ApplySecurityGroupsToLoadBalancerRequest extends
      *         balancer. Note that you cannot specify the name of the security
      *         group.
      */
+
     public java.util.List<String> getSecurityGroups() {
         if (securityGroups == null) {
             securityGroups = new com.amazonaws.internal.SdkInternalList<String>();
@@ -106,6 +110,7 @@ public class ApplySecurityGroupsToLoadBalancerRequest extends
      *        balancer. Note that you cannot specify the name of the security
      *        group.
      */
+
     public void setSecurityGroups(java.util.Collection<String> securityGroups) {
         if (securityGroups == null) {
             this.securityGroups = null;
@@ -135,6 +140,7 @@ public class ApplySecurityGroupsToLoadBalancerRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ApplySecurityGroupsToLoadBalancerRequest withSecurityGroups(
             String... securityGroups) {
         if (this.securityGroups == null) {
@@ -160,6 +166,7 @@ public class ApplySecurityGroupsToLoadBalancerRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ApplySecurityGroupsToLoadBalancerRequest withSecurityGroups(
             java.util.Collection<String> securityGroups) {
         setSecurityGroups(securityGroups);

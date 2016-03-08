@@ -135,6 +135,7 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest
      * @param groupName
      *        [EC2-Classic, default VPC] The name of the security group.
      */
+
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
@@ -146,6 +147,7 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest
      * 
      * @return [EC2-Classic, default VPC] The name of the security group.
      */
+
     public String getGroupName() {
         return this.groupName;
     }
@@ -160,6 +162,7 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RevokeSecurityGroupIngressRequest withGroupName(String groupName) {
         setGroupName(groupName);
         return this;
@@ -175,6 +178,7 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest
      *        The ID of the security group. Required for a security group in a
      *        nondefault VPC.
      */
+
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
@@ -188,6 +192,7 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest
      * @return The ID of the security group. Required for a security group in a
      *         nondefault VPC.
      */
+
     public String getGroupId() {
         return this.groupId;
     }
@@ -204,6 +209,7 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RevokeSecurityGroupIngressRequest withGroupId(String groupId) {
         setGroupId(groupId);
         return this;
@@ -225,6 +231,7 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest
      *        range, the IP protocol, and the end of the port range. For
      *        EC2-VPC, the source security group must be in the same VPC.
      */
+
     public void setSourceSecurityGroupName(String sourceSecurityGroupName) {
         this.sourceSecurityGroupName = sourceSecurityGroupName;
     }
@@ -244,6 +251,7 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest
      *         port range, the IP protocol, and the end of the port range. For
      *         EC2-VPC, the source security group must be in the same VPC.
      */
+
     public String getSourceSecurityGroupName() {
         return this.sourceSecurityGroupName;
     }
@@ -266,6 +274,7 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RevokeSecurityGroupIngressRequest withSourceSecurityGroupName(
             String sourceSecurityGroupName) {
         setSourceSecurityGroupName(sourceSecurityGroupName);
@@ -291,6 +300,7 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest
      *        range. To revoke a specific rule for an IP protocol and port
      *        range, use a set of IP permissions instead.
      */
+
     public void setSourceSecurityGroupOwnerId(String sourceSecurityGroupOwnerId) {
         this.sourceSecurityGroupOwnerId = sourceSecurityGroupOwnerId;
     }
@@ -313,6 +323,7 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest
      *         range. To revoke a specific rule for an IP protocol and port
      *         range, use a set of IP permissions instead.
      */
+
     public String getSourceSecurityGroupOwnerId() {
         return this.sourceSecurityGroupOwnerId;
     }
@@ -338,6 +349,7 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RevokeSecurityGroupIngressRequest withSourceSecurityGroupOwnerId(
             String sourceSecurityGroupOwnerId) {
         setSourceSecurityGroupOwnerId(sourceSecurityGroupOwnerId);
@@ -358,6 +370,7 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest
      *        "http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml"
      *        >Protocol Numbers</a>). Use <code>-1</code> to specify all.
      */
+
     public void setIpProtocol(String ipProtocol) {
         this.ipProtocol = ipProtocol;
     }
@@ -375,6 +388,7 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest
      *         "http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml"
      *         >Protocol Numbers</a>). Use <code>-1</code> to specify all.
      */
+
     public String getIpProtocol() {
         return this.ipProtocol;
     }
@@ -395,6 +409,7 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RevokeSecurityGroupIngressRequest withIpProtocol(String ipProtocol) {
         setIpProtocol(ipProtocol);
         return this;
@@ -412,6 +427,7 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest
      *        type number. For the ICMP type number, use <code>-1</code> to
      *        specify all ICMP types.
      */
+
     public void setFromPort(Integer fromPort) {
         this.fromPort = fromPort;
     }
@@ -427,6 +443,7 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest
      *         type number. For the ICMP type number, use <code>-1</code> to
      *         specify all ICMP types.
      */
+
     public Integer getFromPort() {
         return this.fromPort;
     }
@@ -445,6 +462,7 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RevokeSecurityGroupIngressRequest withFromPort(Integer fromPort) {
         setFromPort(fromPort);
         return this;
@@ -462,6 +480,7 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest
      *        code number. For the ICMP code number, use <code>-1</code> to
      *        specify all ICMP codes for the ICMP type.
      */
+
     public void setToPort(Integer toPort) {
         this.toPort = toPort;
     }
@@ -477,6 +496,7 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest
      *         code number. For the ICMP code number, use <code>-1</code> to
      *         specify all ICMP codes for the ICMP type.
      */
+
     public Integer getToPort() {
         return this.toPort;
     }
@@ -495,6 +515,7 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RevokeSecurityGroupIngressRequest withToPort(Integer toPort) {
         setToPort(toPort);
         return this;
@@ -510,6 +531,7 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest
      *        The CIDR IP address range. You can't specify this parameter when
      *        specifying a source security group.
      */
+
     public void setCidrIp(String cidrIp) {
         this.cidrIp = cidrIp;
     }
@@ -523,6 +545,7 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest
      * @return The CIDR IP address range. You can't specify this parameter when
      *         specifying a source security group.
      */
+
     public String getCidrIp() {
         return this.cidrIp;
     }
@@ -539,6 +562,7 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RevokeSecurityGroupIngressRequest withCidrIp(String cidrIp) {
         setCidrIp(cidrIp);
         return this;
@@ -553,6 +577,7 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest
      * @return A set of IP permissions. You can't specify a source security
      *         group and a CIDR IP address range.
      */
+
     public java.util.List<IpPermission> getIpPermissions() {
         if (ipPermissions == null) {
             ipPermissions = new com.amazonaws.internal.SdkInternalList<IpPermission>();
@@ -570,6 +595,7 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest
      *        A set of IP permissions. You can't specify a source security group
      *        and a CIDR IP address range.
      */
+
     public void setIpPermissions(
             java.util.Collection<IpPermission> ipPermissions) {
         if (ipPermissions == null) {
@@ -599,6 +625,7 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RevokeSecurityGroupIngressRequest withIpPermissions(
             IpPermission... ipPermissions) {
         if (this.ipPermissions == null) {
@@ -623,6 +650,7 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RevokeSecurityGroupIngressRequest withIpPermissions(
             java.util.Collection<IpPermission> ipPermissions) {
         setIpPermissions(ipPermissions);

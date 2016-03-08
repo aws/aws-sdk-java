@@ -59,6 +59,7 @@ public class SnapshotDiskContainer implements Serializable, Cloneable {
      * @param description
      *        The description of the disk image being imported.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -70,6 +71,7 @@ public class SnapshotDiskContainer implements Serializable, Cloneable {
      * 
      * @return The description of the disk image being imported.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -84,6 +86,7 @@ public class SnapshotDiskContainer implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SnapshotDiskContainer withDescription(String description) {
         setDescription(description);
         return this;
@@ -104,6 +107,7 @@ public class SnapshotDiskContainer implements Serializable, Cloneable {
      *        Valid values: <code>RAW</code> | <code>VHD</code> |
      *        <code>VMDK</code> | <code>OVA</code>
      */
+
     public void setFormat(String format) {
         this.format = format;
     }
@@ -122,6 +126,7 @@ public class SnapshotDiskContainer implements Serializable, Cloneable {
      *         Valid values: <code>RAW</code> | <code>VHD</code> |
      *         <code>VMDK</code> | <code>OVA</code>
      */
+
     public String getFormat() {
         return this.format;
     }
@@ -143,6 +148,7 @@ public class SnapshotDiskContainer implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SnapshotDiskContainer withFormat(String format) {
         setFormat(format);
         return this;
@@ -158,6 +164,7 @@ public class SnapshotDiskContainer implements Serializable, Cloneable {
      *        The URL to the Amazon S3-based disk image being imported. It can
      *        either be a https URL (https://..) or an Amazon S3 URL (s3://..).
      */
+
     public void setUrl(String url) {
         this.url = url;
     }
@@ -171,6 +178,7 @@ public class SnapshotDiskContainer implements Serializable, Cloneable {
      * @return The URL to the Amazon S3-based disk image being imported. It can
      *         either be a https URL (https://..) or an Amazon S3 URL (s3://..).
      */
+
     public String getUrl() {
         return this.url;
     }
@@ -187,6 +195,7 @@ public class SnapshotDiskContainer implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SnapshotDiskContainer withUrl(String url) {
         setUrl(url);
         return this;
@@ -195,6 +204,7 @@ public class SnapshotDiskContainer implements Serializable, Cloneable {
     /**
      * @param userBucket
      */
+
     public void setUserBucket(UserBucket userBucket) {
         this.userBucket = userBucket;
     }
@@ -202,6 +212,7 @@ public class SnapshotDiskContainer implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public UserBucket getUserBucket() {
         return this.userBucket;
     }
@@ -211,6 +222,7 @@ public class SnapshotDiskContainer implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SnapshotDiskContainer withUserBucket(UserBucket userBucket) {
         setUserBucket(userBucket);
         return this;

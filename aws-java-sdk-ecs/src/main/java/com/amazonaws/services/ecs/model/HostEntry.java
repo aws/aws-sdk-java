@@ -48,6 +48,7 @@ public class HostEntry implements Serializable, Cloneable {
      * @param hostname
      *        The hostname to use in the <code>/etc/hosts</code> entry.
      */
+
     public void setHostname(String hostname) {
         this.hostname = hostname;
     }
@@ -59,6 +60,7 @@ public class HostEntry implements Serializable, Cloneable {
      * 
      * @return The hostname to use in the <code>/etc/hosts</code> entry.
      */
+
     public String getHostname() {
         return this.hostname;
     }
@@ -73,6 +75,7 @@ public class HostEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HostEntry withHostname(String hostname) {
         setHostname(hostname);
         return this;
@@ -86,6 +89,7 @@ public class HostEntry implements Serializable, Cloneable {
      * @param ipAddress
      *        The IP address to use in the <code>/etc/hosts</code> entry.
      */
+
     public void setIpAddress(String ipAddress) {
         this.ipAddress = ipAddress;
     }
@@ -97,6 +101,7 @@ public class HostEntry implements Serializable, Cloneable {
      * 
      * @return The IP address to use in the <code>/etc/hosts</code> entry.
      */
+
     public String getIpAddress() {
         return this.ipAddress;
     }
@@ -111,6 +116,7 @@ public class HostEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HostEntry withIpAddress(String ipAddress) {
         setIpAddress(ipAddress);
         return this;

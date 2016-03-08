@@ -37,6 +37,7 @@ public class UpdateClientCertificateRequest extends AmazonWebServiceRequest
     /**
      * @param clientCertificateId
      */
+
     public void setClientCertificateId(String clientCertificateId) {
         this.clientCertificateId = clientCertificateId;
     }
@@ -44,6 +45,7 @@ public class UpdateClientCertificateRequest extends AmazonWebServiceRequest
     /**
      * @return
      */
+
     public String getClientCertificateId() {
         return this.clientCertificateId;
     }
@@ -53,6 +55,7 @@ public class UpdateClientCertificateRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateClientCertificateRequest withClientCertificateId(
             String clientCertificateId) {
         setClientCertificateId(clientCertificateId);
@@ -69,6 +72,7 @@ public class UpdateClientCertificateRequest extends AmazonWebServiceRequest
      *         specified resource. The patches are applied in the order
      *         specified in the list.
      */
+
     public java.util.List<PatchOperation> getPatchOperations() {
         return patchOperations;
     }
@@ -84,6 +88,7 @@ public class UpdateClientCertificateRequest extends AmazonWebServiceRequest
      *        specified resource. The patches are applied in the order specified
      *        in the list.
      */
+
     public void setPatchOperations(
             java.util.Collection<PatchOperation> patchOperations) {
         if (patchOperations == null) {
@@ -114,6 +119,7 @@ public class UpdateClientCertificateRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateClientCertificateRequest withPatchOperations(
             PatchOperation... patchOperations) {
         if (this.patchOperations == null) {
@@ -139,6 +145,7 @@ public class UpdateClientCertificateRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateClientCertificateRequest withPatchOperations(
             java.util.Collection<PatchOperation> patchOperations) {
         setPatchOperations(patchOperations);

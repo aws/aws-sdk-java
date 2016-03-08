@@ -47,6 +47,7 @@ public class DescribeVolumesResult implements Serializable, Cloneable {
      * 
      * @return Information about the volumes.
      */
+
     public java.util.List<Volume> getVolumes() {
         if (volumes == null) {
             volumes = new com.amazonaws.internal.SdkInternalList<Volume>();
@@ -62,6 +63,7 @@ public class DescribeVolumesResult implements Serializable, Cloneable {
      * @param volumes
      *        Information about the volumes.
      */
+
     public void setVolumes(java.util.Collection<Volume> volumes) {
         if (volumes == null) {
             this.volumes = null;
@@ -88,6 +90,7 @@ public class DescribeVolumesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVolumesResult withVolumes(Volume... volumes) {
         if (this.volumes == null) {
             setVolumes(new com.amazonaws.internal.SdkInternalList<Volume>(
@@ -109,6 +112,7 @@ public class DescribeVolumesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVolumesResult withVolumes(
             java.util.Collection<Volume> volumes) {
         setVolumes(volumes);
@@ -132,6 +136,7 @@ public class DescribeVolumesResult implements Serializable, Cloneable {
      *        next page of results. This value is <code>null</code> when there
      *        are no more results to return.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -152,6 +157,7 @@ public class DescribeVolumesResult implements Serializable, Cloneable {
      *         next page of results. This value is <code>null</code> when there
      *         are no more results to return.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -175,6 +181,7 @@ public class DescribeVolumesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVolumesResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

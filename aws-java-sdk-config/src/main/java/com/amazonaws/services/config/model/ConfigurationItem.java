@@ -158,6 +158,7 @@ public class ConfigurationItem implements Serializable, Cloneable {
      * @param version
      *        The version number of the resource configuration.
      */
+
     public void setVersion(String version) {
         this.version = version;
     }
@@ -169,6 +170,7 @@ public class ConfigurationItem implements Serializable, Cloneable {
      * 
      * @return The version number of the resource configuration.
      */
+
     public String getVersion() {
         return this.version;
     }
@@ -183,6 +185,7 @@ public class ConfigurationItem implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigurationItem withVersion(String version) {
         setVersion(version);
         return this;
@@ -196,6 +199,7 @@ public class ConfigurationItem implements Serializable, Cloneable {
      * @param accountId
      *        The 12 digit AWS account ID associated with the resource.
      */
+
     public void setAccountId(String accountId) {
         this.accountId = accountId;
     }
@@ -207,6 +211,7 @@ public class ConfigurationItem implements Serializable, Cloneable {
      * 
      * @return The 12 digit AWS account ID associated with the resource.
      */
+
     public String getAccountId() {
         return this.accountId;
     }
@@ -221,6 +226,7 @@ public class ConfigurationItem implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigurationItem withAccountId(String accountId) {
         setAccountId(accountId);
         return this;
@@ -234,6 +240,7 @@ public class ConfigurationItem implements Serializable, Cloneable {
      * @param configurationItemCaptureTime
      *        The time when the configuration recording was initiated.
      */
+
     public void setConfigurationItemCaptureTime(
             java.util.Date configurationItemCaptureTime) {
         this.configurationItemCaptureTime = configurationItemCaptureTime;
@@ -246,6 +253,7 @@ public class ConfigurationItem implements Serializable, Cloneable {
      * 
      * @return The time when the configuration recording was initiated.
      */
+
     public java.util.Date getConfigurationItemCaptureTime() {
         return this.configurationItemCaptureTime;
     }
@@ -260,6 +268,7 @@ public class ConfigurationItem implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigurationItem withConfigurationItemCaptureTime(
             java.util.Date configurationItemCaptureTime) {
         setConfigurationItemCaptureTime(configurationItemCaptureTime);
@@ -275,6 +284,7 @@ public class ConfigurationItem implements Serializable, Cloneable {
      *        The configuration item status.
      * @see ConfigurationItemStatus
      */
+
     public void setConfigurationItemStatus(String configurationItemStatus) {
         this.configurationItemStatus = configurationItemStatus;
     }
@@ -287,6 +297,7 @@ public class ConfigurationItem implements Serializable, Cloneable {
      * @return The configuration item status.
      * @see ConfigurationItemStatus
      */
+
     public String getConfigurationItemStatus() {
         return this.configurationItemStatus;
     }
@@ -302,6 +313,7 @@ public class ConfigurationItem implements Serializable, Cloneable {
      *         chained together.
      * @see ConfigurationItemStatus
      */
+
     public ConfigurationItem withConfigurationItemStatus(
             String configurationItemStatus) {
         setConfigurationItemStatus(configurationItemStatus);
@@ -319,6 +331,7 @@ public class ConfigurationItem implements Serializable, Cloneable {
      *         chained together.
      * @see ConfigurationItemStatus
      */
+
     public void setConfigurationItemStatus(
             ConfigurationItemStatus configurationItemStatus) {
         this.configurationItemStatus = configurationItemStatus.toString();
@@ -335,6 +348,7 @@ public class ConfigurationItem implements Serializable, Cloneable {
      *         chained together.
      * @see ConfigurationItemStatus
      */
+
     public ConfigurationItem withConfigurationItemStatus(
             ConfigurationItemStatus configurationItemStatus) {
         setConfigurationItemStatus(configurationItemStatus);
@@ -351,6 +365,7 @@ public class ConfigurationItem implements Serializable, Cloneable {
      *        An identifier that indicates the ordering of the configuration
      *        items of a resource.
      */
+
     public void setConfigurationStateId(String configurationStateId) {
         this.configurationStateId = configurationStateId;
     }
@@ -364,6 +379,7 @@ public class ConfigurationItem implements Serializable, Cloneable {
      * @return An identifier that indicates the ordering of the configuration
      *         items of a resource.
      */
+
     public String getConfigurationStateId() {
         return this.configurationStateId;
     }
@@ -380,6 +396,7 @@ public class ConfigurationItem implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigurationItem withConfigurationStateId(
             String configurationStateId) {
         setConfigurationStateId(configurationStateId);
@@ -402,6 +419,7 @@ public class ConfigurationItem implements Serializable, Cloneable {
      *        You can use MD5 hash to compare the states of two or more
      *        configuration items that are associated with the same resource.
      */
+
     public void setConfigurationItemMD5Hash(String configurationItemMD5Hash) {
         this.configurationItemMD5Hash = configurationItemMD5Hash;
     }
@@ -421,6 +439,7 @@ public class ConfigurationItem implements Serializable, Cloneable {
      *         You can use MD5 hash to compare the states of two or more
      *         configuration items that are associated with the same resource.
      */
+
     public String getConfigurationItemMD5Hash() {
         return this.configurationItemMD5Hash;
     }
@@ -443,6 +462,7 @@ public class ConfigurationItem implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigurationItem withConfigurationItemMD5Hash(
             String configurationItemMD5Hash) {
         setConfigurationItemMD5Hash(configurationItemMD5Hash);
@@ -457,6 +477,7 @@ public class ConfigurationItem implements Serializable, Cloneable {
      * @param arn
      *        The Amazon Resource Name (ARN) of the resource.
      */
+
     public void setArn(String arn) {
         this.arn = arn;
     }
@@ -468,6 +489,7 @@ public class ConfigurationItem implements Serializable, Cloneable {
      * 
      * @return The Amazon Resource Name (ARN) of the resource.
      */
+
     public String getArn() {
         return this.arn;
     }
@@ -482,6 +504,7 @@ public class ConfigurationItem implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigurationItem withArn(String arn) {
         setArn(arn);
         return this;
@@ -496,6 +519,7 @@ public class ConfigurationItem implements Serializable, Cloneable {
      *        The type of AWS resource.
      * @see ResourceType
      */
+
     public void setResourceType(String resourceType) {
         this.resourceType = resourceType;
     }
@@ -508,6 +532,7 @@ public class ConfigurationItem implements Serializable, Cloneable {
      * @return The type of AWS resource.
      * @see ResourceType
      */
+
     public String getResourceType() {
         return this.resourceType;
     }
@@ -523,6 +548,7 @@ public class ConfigurationItem implements Serializable, Cloneable {
      *         chained together.
      * @see ResourceType
      */
+
     public ConfigurationItem withResourceType(String resourceType) {
         setResourceType(resourceType);
         return this;
@@ -539,6 +565,7 @@ public class ConfigurationItem implements Serializable, Cloneable {
      *         chained together.
      * @see ResourceType
      */
+
     public void setResourceType(ResourceType resourceType) {
         this.resourceType = resourceType.toString();
     }
@@ -554,6 +581,7 @@ public class ConfigurationItem implements Serializable, Cloneable {
      *         chained together.
      * @see ResourceType
      */
+
     public ConfigurationItem withResourceType(ResourceType resourceType) {
         setResourceType(resourceType);
         return this;
@@ -567,6 +595,7 @@ public class ConfigurationItem implements Serializable, Cloneable {
      * @param resourceId
      *        The ID of the resource (for example., <code>sg-xxxxxx</code>).
      */
+
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
     }
@@ -578,6 +607,7 @@ public class ConfigurationItem implements Serializable, Cloneable {
      * 
      * @return The ID of the resource (for example., <code>sg-xxxxxx</code>).
      */
+
     public String getResourceId() {
         return this.resourceId;
     }
@@ -592,6 +622,7 @@ public class ConfigurationItem implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigurationItem withResourceId(String resourceId) {
         setResourceId(resourceId);
         return this;
@@ -605,6 +636,7 @@ public class ConfigurationItem implements Serializable, Cloneable {
      * @param resourceName
      *        The custom name of the resource, if available.
      */
+
     public void setResourceName(String resourceName) {
         this.resourceName = resourceName;
     }
@@ -616,6 +648,7 @@ public class ConfigurationItem implements Serializable, Cloneable {
      * 
      * @return The custom name of the resource, if available.
      */
+
     public String getResourceName() {
         return this.resourceName;
     }
@@ -630,6 +663,7 @@ public class ConfigurationItem implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigurationItem withResourceName(String resourceName) {
         setResourceName(resourceName);
         return this;
@@ -643,6 +677,7 @@ public class ConfigurationItem implements Serializable, Cloneable {
      * @param awsRegion
      *        The region where the resource resides.
      */
+
     public void setAwsRegion(String awsRegion) {
         this.awsRegion = awsRegion;
     }
@@ -654,6 +689,7 @@ public class ConfigurationItem implements Serializable, Cloneable {
      * 
      * @return The region where the resource resides.
      */
+
     public String getAwsRegion() {
         return this.awsRegion;
     }
@@ -668,6 +704,7 @@ public class ConfigurationItem implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigurationItem withAwsRegion(String awsRegion) {
         setAwsRegion(awsRegion);
         return this;
@@ -681,6 +718,7 @@ public class ConfigurationItem implements Serializable, Cloneable {
      * @param availabilityZone
      *        The Availability Zone associated with the resource.
      */
+
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
@@ -692,6 +730,7 @@ public class ConfigurationItem implements Serializable, Cloneable {
      * 
      * @return The Availability Zone associated with the resource.
      */
+
     public String getAvailabilityZone() {
         return this.availabilityZone;
     }
@@ -706,6 +745,7 @@ public class ConfigurationItem implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigurationItem withAvailabilityZone(String availabilityZone) {
         setAvailabilityZone(availabilityZone);
         return this;
@@ -719,6 +759,7 @@ public class ConfigurationItem implements Serializable, Cloneable {
      * @param resourceCreationTime
      *        The time stamp when the resource was created.
      */
+
     public void setResourceCreationTime(java.util.Date resourceCreationTime) {
         this.resourceCreationTime = resourceCreationTime;
     }
@@ -730,6 +771,7 @@ public class ConfigurationItem implements Serializable, Cloneable {
      * 
      * @return The time stamp when the resource was created.
      */
+
     public java.util.Date getResourceCreationTime() {
         return this.resourceCreationTime;
     }
@@ -744,6 +786,7 @@ public class ConfigurationItem implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigurationItem withResourceCreationTime(
             java.util.Date resourceCreationTime) {
         setResourceCreationTime(resourceCreationTime);
@@ -757,6 +800,7 @@ public class ConfigurationItem implements Serializable, Cloneable {
      * 
      * @return A mapping of key value tags associated with the resource.
      */
+
     public java.util.Map<String, String> getTags() {
         return tags;
     }
@@ -769,6 +813,7 @@ public class ConfigurationItem implements Serializable, Cloneable {
      * @param tags
      *        A mapping of key value tags associated with the resource.
      */
+
     public void setTags(java.util.Map<String, String> tags) {
         this.tags = tags;
     }
@@ -783,6 +828,7 @@ public class ConfigurationItem implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigurationItem withTags(java.util.Map<String, String> tags) {
         setTags(tags);
         return this;
@@ -803,6 +849,7 @@ public class ConfigurationItem implements Serializable, Cloneable {
      * Removes all the entries added into Tags. &lt;p> Returns a reference to
      * this object so that method calls can be chained together.
      */
+
     public ConfigurationItem clearTagsEntries() {
         this.tags = null;
         return this;
@@ -836,6 +883,7 @@ public class ConfigurationItem implements Serializable, Cloneable {
      *         An empty field indicates that the current configuration was not
      *         initiated by any event.
      */
+
     public java.util.List<String> getRelatedEvents() {
         if (relatedEvents == null) {
             relatedEvents = new com.amazonaws.internal.SdkInternalList<String>();
@@ -872,6 +920,7 @@ public class ConfigurationItem implements Serializable, Cloneable {
      *        An empty field indicates that the current configuration was not
      *        initiated by any event.
      */
+
     public void setRelatedEvents(java.util.Collection<String> relatedEvents) {
         if (relatedEvents == null) {
             this.relatedEvents = null;
@@ -919,6 +968,7 @@ public class ConfigurationItem implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigurationItem withRelatedEvents(String... relatedEvents) {
         if (this.relatedEvents == null) {
             setRelatedEvents(new com.amazonaws.internal.SdkInternalList<String>(
@@ -961,6 +1011,7 @@ public class ConfigurationItem implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigurationItem withRelatedEvents(
             java.util.Collection<String> relatedEvents) {
         setRelatedEvents(relatedEvents);
@@ -974,6 +1025,7 @@ public class ConfigurationItem implements Serializable, Cloneable {
      * 
      * @return A list of related AWS resources.
      */
+
     public java.util.List<Relationship> getRelationships() {
         if (relationships == null) {
             relationships = new com.amazonaws.internal.SdkInternalList<Relationship>();
@@ -989,6 +1041,7 @@ public class ConfigurationItem implements Serializable, Cloneable {
      * @param relationships
      *        A list of related AWS resources.
      */
+
     public void setRelationships(
             java.util.Collection<Relationship> relationships) {
         if (relationships == null) {
@@ -1016,6 +1069,7 @@ public class ConfigurationItem implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigurationItem withRelationships(Relationship... relationships) {
         if (this.relationships == null) {
             setRelationships(new com.amazonaws.internal.SdkInternalList<Relationship>(
@@ -1037,6 +1091,7 @@ public class ConfigurationItem implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigurationItem withRelationships(
             java.util.Collection<Relationship> relationships) {
         setRelationships(relationships);
@@ -1051,6 +1106,7 @@ public class ConfigurationItem implements Serializable, Cloneable {
      * @param configuration
      *        The description of the resource configuration.
      */
+
     public void setConfiguration(String configuration) {
         this.configuration = configuration;
     }
@@ -1062,6 +1118,7 @@ public class ConfigurationItem implements Serializable, Cloneable {
      * 
      * @return The description of the resource configuration.
      */
+
     public String getConfiguration() {
         return this.configuration;
     }
@@ -1076,6 +1133,7 @@ public class ConfigurationItem implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigurationItem withConfiguration(String configuration) {
         setConfiguration(configuration);
         return this;

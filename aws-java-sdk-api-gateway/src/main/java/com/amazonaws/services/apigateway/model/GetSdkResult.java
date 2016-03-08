@@ -32,6 +32,7 @@ public class GetSdkResult implements Serializable, Cloneable {
     /**
      * @param contentType
      */
+
     public void setContentType(String contentType) {
         this.contentType = contentType;
     }
@@ -39,6 +40,7 @@ public class GetSdkResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getContentType() {
         return this.contentType;
     }
@@ -48,6 +50,7 @@ public class GetSdkResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetSdkResult withContentType(String contentType) {
         setContentType(contentType);
         return this;
@@ -56,6 +59,7 @@ public class GetSdkResult implements Serializable, Cloneable {
     /**
      * @param contentDisposition
      */
+
     public void setContentDisposition(String contentDisposition) {
         this.contentDisposition = contentDisposition;
     }
@@ -63,6 +67,7 @@ public class GetSdkResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getContentDisposition() {
         return this.contentDisposition;
     }
@@ -72,6 +77,7 @@ public class GetSdkResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetSdkResult withContentDisposition(String contentDisposition) {
         setContentDisposition(contentDisposition);
         return this;
@@ -86,6 +92,7 @@ public class GetSdkResult implements Serializable, Cloneable {
      * 
      * @param body
      */
+
     public void setBody(java.nio.ByteBuffer body) {
         this.body = body;
     }
@@ -104,6 +111,7 @@ public class GetSdkResult implements Serializable, Cloneable {
      * 
      * @return
      */
+
     public java.nio.ByteBuffer getBody() {
         return this.body;
     }
@@ -113,6 +121,7 @@ public class GetSdkResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetSdkResult withBody(java.nio.ByteBuffer body) {
         setBody(body);
         return this;

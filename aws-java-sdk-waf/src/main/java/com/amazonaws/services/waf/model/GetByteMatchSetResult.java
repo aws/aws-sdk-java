@@ -74,6 +74,7 @@ public class GetByteMatchSetResult implements Serializable, Cloneable {
      *        <li><a>FieldToMatch</a>: Contains <code>Data</code> and
      *        <code>Type</code></li>
      */
+
     public void setByteMatchSet(ByteMatchSet byteMatchSet) {
         this.byteMatchSet = byteMatchSet;
     }
@@ -109,6 +110,7 @@ public class GetByteMatchSetResult implements Serializable, Cloneable {
      *         <li><a>FieldToMatch</a>: Contains <code>Data</code> and
      *         <code>Type</code></li>
      */
+
     public ByteMatchSet getByteMatchSet() {
         return this.byteMatchSet;
     }
@@ -147,6 +149,7 @@ public class GetByteMatchSetResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetByteMatchSetResult withByteMatchSet(ByteMatchSet byteMatchSet) {
         setByteMatchSet(byteMatchSet);
         return this;

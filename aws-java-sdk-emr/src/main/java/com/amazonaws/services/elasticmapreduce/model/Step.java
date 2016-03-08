@@ -65,6 +65,7 @@ public class Step implements Serializable, Cloneable {
      * @param id
      *        The identifier of the cluster step.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -76,6 +77,7 @@ public class Step implements Serializable, Cloneable {
      * 
      * @return The identifier of the cluster step.
      */
+
     public String getId() {
         return this.id;
     }
@@ -90,6 +92,7 @@ public class Step implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Step withId(String id) {
         setId(id);
         return this;
@@ -103,6 +106,7 @@ public class Step implements Serializable, Cloneable {
      * @param name
      *        The name of the cluster step.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -114,6 +118,7 @@ public class Step implements Serializable, Cloneable {
      * 
      * @return The name of the cluster step.
      */
+
     public String getName() {
         return this.name;
     }
@@ -128,6 +133,7 @@ public class Step implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Step withName(String name) {
         setName(name);
         return this;
@@ -141,6 +147,7 @@ public class Step implements Serializable, Cloneable {
      * @param config
      *        The Hadoop job configuration of the cluster step.
      */
+
     public void setConfig(HadoopStepConfig config) {
         this.config = config;
     }
@@ -152,6 +159,7 @@ public class Step implements Serializable, Cloneable {
      * 
      * @return The Hadoop job configuration of the cluster step.
      */
+
     public HadoopStepConfig getConfig() {
         return this.config;
     }
@@ -166,6 +174,7 @@ public class Step implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Step withConfig(HadoopStepConfig config) {
         setConfig(config);
         return this;
@@ -183,6 +192,7 @@ public class Step implements Serializable, Cloneable {
      *        CONTINUE.
      * @see ActionOnFailure
      */
+
     public void setActionOnFailure(String actionOnFailure) {
         this.actionOnFailure = actionOnFailure;
     }
@@ -198,6 +208,7 @@ public class Step implements Serializable, Cloneable {
      *         CONTINUE.
      * @see ActionOnFailure
      */
+
     public String getActionOnFailure() {
         return this.actionOnFailure;
     }
@@ -216,6 +227,7 @@ public class Step implements Serializable, Cloneable {
      *         chained together.
      * @see ActionOnFailure
      */
+
     public Step withActionOnFailure(String actionOnFailure) {
         setActionOnFailure(actionOnFailure);
         return this;
@@ -235,6 +247,7 @@ public class Step implements Serializable, Cloneable {
      *         chained together.
      * @see ActionOnFailure
      */
+
     public void setActionOnFailure(ActionOnFailure actionOnFailure) {
         this.actionOnFailure = actionOnFailure.toString();
     }
@@ -253,6 +266,7 @@ public class Step implements Serializable, Cloneable {
      *         chained together.
      * @see ActionOnFailure
      */
+
     public Step withActionOnFailure(ActionOnFailure actionOnFailure) {
         setActionOnFailure(actionOnFailure);
         return this;
@@ -266,6 +280,7 @@ public class Step implements Serializable, Cloneable {
      * @param status
      *        The current execution status details of the cluster step.
      */
+
     public void setStatus(StepStatus status) {
         this.status = status;
     }
@@ -277,6 +292,7 @@ public class Step implements Serializable, Cloneable {
      * 
      * @return The current execution status details of the cluster step.
      */
+
     public StepStatus getStatus() {
         return this.status;
     }
@@ -291,6 +307,7 @@ public class Step implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Step withStatus(StepStatus status) {
         setStatus(status);
         return this;

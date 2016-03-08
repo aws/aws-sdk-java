@@ -46,6 +46,7 @@ public class SolutionStackDescription implements Serializable, Cloneable {
      * @param solutionStackName
      *        The name of the solution stack.
      */
+
     public void setSolutionStackName(String solutionStackName) {
         this.solutionStackName = solutionStackName;
     }
@@ -57,6 +58,7 @@ public class SolutionStackDescription implements Serializable, Cloneable {
      * 
      * @return The name of the solution stack.
      */
+
     public String getSolutionStackName() {
         return this.solutionStackName;
     }
@@ -71,6 +73,7 @@ public class SolutionStackDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SolutionStackDescription withSolutionStackName(
             String solutionStackName) {
         setSolutionStackName(solutionStackName);
@@ -84,6 +87,7 @@ public class SolutionStackDescription implements Serializable, Cloneable {
      * 
      * @return The permitted file types allowed for a solution stack.
      */
+
     public java.util.List<String> getPermittedFileTypes() {
         if (permittedFileTypes == null) {
             permittedFileTypes = new com.amazonaws.internal.SdkInternalList<String>();
@@ -99,6 +103,7 @@ public class SolutionStackDescription implements Serializable, Cloneable {
      * @param permittedFileTypes
      *        The permitted file types allowed for a solution stack.
      */
+
     public void setPermittedFileTypes(
             java.util.Collection<String> permittedFileTypes) {
         if (permittedFileTypes == null) {
@@ -126,6 +131,7 @@ public class SolutionStackDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SolutionStackDescription withPermittedFileTypes(
             String... permittedFileTypes) {
         if (this.permittedFileTypes == null) {
@@ -148,6 +154,7 @@ public class SolutionStackDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SolutionStackDescription withPermittedFileTypes(
             java.util.Collection<String> permittedFileTypes) {
         setPermittedFileTypes(permittedFileTypes);

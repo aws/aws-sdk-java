@@ -38,6 +38,7 @@ public class GetIdentityNotificationAttributesResult implements Serializable,
      * 
      * @return A map of Identity to IdentityNotificationAttributes.
      */
+
     public java.util.Map<String, IdentityNotificationAttributes> getNotificationAttributes() {
         if (notificationAttributes == null) {
             notificationAttributes = new com.amazonaws.internal.SdkInternalMap<String, IdentityNotificationAttributes>();
@@ -53,6 +54,7 @@ public class GetIdentityNotificationAttributesResult implements Serializable,
      * @param notificationAttributes
      *        A map of Identity to IdentityNotificationAttributes.
      */
+
     public void setNotificationAttributes(
             java.util.Map<String, IdentityNotificationAttributes> notificationAttributes) {
         this.notificationAttributes = notificationAttributes == null ? null
@@ -70,6 +72,7 @@ public class GetIdentityNotificationAttributesResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetIdentityNotificationAttributesResult withNotificationAttributes(
             java.util.Map<String, IdentityNotificationAttributes> notificationAttributes) {
         setNotificationAttributes(notificationAttributes);
@@ -92,6 +95,7 @@ public class GetIdentityNotificationAttributesResult implements Serializable,
      * Removes all the entries added into NotificationAttributes. &lt;p> Returns
      * a reference to this object so that method calls can be chained together.
      */
+
     public GetIdentityNotificationAttributesResult clearNotificationAttributesEntries() {
         this.notificationAttributes = null;
         return this;

@@ -46,6 +46,7 @@ public class ProblemDetail implements Serializable, Cloneable {
      * @param arn
      *        The problem detail's ARN.
      */
+
     public void setArn(String arn) {
         this.arn = arn;
     }
@@ -57,6 +58,7 @@ public class ProblemDetail implements Serializable, Cloneable {
      * 
      * @return The problem detail's ARN.
      */
+
     public String getArn() {
         return this.arn;
     }
@@ -71,6 +73,7 @@ public class ProblemDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ProblemDetail withArn(String arn) {
         setArn(arn);
         return this;
@@ -84,6 +87,7 @@ public class ProblemDetail implements Serializable, Cloneable {
      * @param name
      *        The problem detail's name.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -95,6 +99,7 @@ public class ProblemDetail implements Serializable, Cloneable {
      * 
      * @return The problem detail's name.
      */
+
     public String getName() {
         return this.name;
     }
@@ -109,6 +114,7 @@ public class ProblemDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ProblemDetail withName(String name) {
         setName(name);
         return this;

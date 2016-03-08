@@ -46,6 +46,7 @@ public class ListAttachedAssessmentsResult implements Serializable, Cloneable {
      * 
      * @return A list of ARNs specifying the assessments returned by the action.
      */
+
     public java.util.List<String> getAssessmentArnList() {
         return assessmentArnList;
     }
@@ -58,6 +59,7 @@ public class ListAttachedAssessmentsResult implements Serializable, Cloneable {
      * @param assessmentArnList
      *        A list of ARNs specifying the assessments returned by the action.
      */
+
     public void setAssessmentArnList(
             java.util.Collection<String> assessmentArnList) {
         if (assessmentArnList == null) {
@@ -85,6 +87,7 @@ public class ListAttachedAssessmentsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListAttachedAssessmentsResult withAssessmentArnList(
             String... assessmentArnList) {
         if (this.assessmentArnList == null) {
@@ -107,6 +110,7 @@ public class ListAttachedAssessmentsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListAttachedAssessmentsResult withAssessmentArnList(
             java.util.Collection<String> assessmentArnList) {
         setAssessmentArnList(assessmentArnList);
@@ -128,6 +132,7 @@ public class ListAttachedAssessmentsResult implements Serializable, Cloneable {
      *        pagination request. If there is no more data to be listed, this
      *        parameter is set to 'null'.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -146,6 +151,7 @@ public class ListAttachedAssessmentsResult implements Serializable, Cloneable {
      *         pagination request. If there is no more data to be listed, this
      *         parameter is set to 'null'.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -167,6 +173,7 @@ public class ListAttachedAssessmentsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListAttachedAssessmentsResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

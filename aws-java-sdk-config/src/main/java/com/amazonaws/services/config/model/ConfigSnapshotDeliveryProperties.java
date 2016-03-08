@@ -46,6 +46,7 @@ public class ConfigSnapshotDeliveryProperties implements Serializable,
      *        configuration snapshots.
      * @see MaximumExecutionFrequency
      */
+
     public void setDeliveryFrequency(String deliveryFrequency) {
         this.deliveryFrequency = deliveryFrequency;
     }
@@ -60,6 +61,7 @@ public class ConfigSnapshotDeliveryProperties implements Serializable,
      *         configuration snapshots.
      * @see MaximumExecutionFrequency
      */
+
     public String getDeliveryFrequency() {
         return this.deliveryFrequency;
     }
@@ -77,6 +79,7 @@ public class ConfigSnapshotDeliveryProperties implements Serializable,
      *         chained together.
      * @see MaximumExecutionFrequency
      */
+
     public ConfigSnapshotDeliveryProperties withDeliveryFrequency(
             String deliveryFrequency) {
         setDeliveryFrequency(deliveryFrequency);
@@ -96,6 +99,7 @@ public class ConfigSnapshotDeliveryProperties implements Serializable,
      *         chained together.
      * @see MaximumExecutionFrequency
      */
+
     public void setDeliveryFrequency(MaximumExecutionFrequency deliveryFrequency) {
         this.deliveryFrequency = deliveryFrequency.toString();
     }
@@ -113,6 +117,7 @@ public class ConfigSnapshotDeliveryProperties implements Serializable,
      *         chained together.
      * @see MaximumExecutionFrequency
      */
+
     public ConfigSnapshotDeliveryProperties withDeliveryFrequency(
             MaximumExecutionFrequency deliveryFrequency) {
         setDeliveryFrequency(deliveryFrequency);

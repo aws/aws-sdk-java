@@ -64,6 +64,7 @@ public class GetCertificateRequest extends AmazonWebServiceRequest implements
      *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
      *        >Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.
      */
+
     public void setCertificateArn(String certificateArn) {
         this.certificateArn = certificateArn;
     }
@@ -91,6 +92,7 @@ public class GetCertificateRequest extends AmazonWebServiceRequest implements
      *         "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
      *         >Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.
      */
+
     public String getCertificateArn() {
         return this.certificateArn;
     }
@@ -121,6 +123,7 @@ public class GetCertificateRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetCertificateRequest withCertificateArn(String certificateArn) {
         setCertificateArn(certificateArn);
         return this;

@@ -162,6 +162,7 @@ public class EventInformation implements Serializable, Cloneable {
      *        The ID of the instance. This information is available only for
      *        <code>instanceChange</code> events.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -175,6 +176,7 @@ public class EventInformation implements Serializable, Cloneable {
      * @return The ID of the instance. This information is available only for
      *         <code>instanceChange</code> events.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
@@ -191,6 +193,7 @@ public class EventInformation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EventInformation withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;
@@ -424,6 +427,7 @@ public class EventInformation implements Serializable, Cloneable {
      *        </p>
      *        </li>
      */
+
     public void setEventSubType(String eventSubType) {
         this.eventSubType = eventSubType;
     }
@@ -656,6 +660,7 @@ public class EventInformation implements Serializable, Cloneable {
      *         </p>
      *         </li>
      */
+
     public String getEventSubType() {
         return this.eventSubType;
     }
@@ -890,6 +895,7 @@ public class EventInformation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EventInformation withEventSubType(String eventSubType) {
         setEventSubType(eventSubType);
         return this;
@@ -903,6 +909,7 @@ public class EventInformation implements Serializable, Cloneable {
      * @param eventDescription
      *        The description of the event.
      */
+
     public void setEventDescription(String eventDescription) {
         this.eventDescription = eventDescription;
     }
@@ -914,6 +921,7 @@ public class EventInformation implements Serializable, Cloneable {
      * 
      * @return The description of the event.
      */
+
     public String getEventDescription() {
         return this.eventDescription;
     }
@@ -928,6 +936,7 @@ public class EventInformation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EventInformation withEventDescription(String eventDescription) {
         setEventDescription(eventDescription);
         return this;

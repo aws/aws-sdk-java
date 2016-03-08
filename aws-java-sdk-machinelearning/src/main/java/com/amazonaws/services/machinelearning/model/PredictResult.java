@@ -28,6 +28,7 @@ public class PredictResult implements Serializable, Cloneable {
     /**
      * @param prediction
      */
+
     public void setPrediction(Prediction prediction) {
         this.prediction = prediction;
     }
@@ -35,6 +36,7 @@ public class PredictResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Prediction getPrediction() {
         return this.prediction;
     }
@@ -44,6 +46,7 @@ public class PredictResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PredictResult withPrediction(Prediction prediction) {
         setPrediction(prediction);
         return this;

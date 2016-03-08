@@ -55,6 +55,7 @@ public class VersionInfo implements Serializable, Cloneable {
      * @param agentVersion
      *        The version number of the Amazon ECS container agent.
      */
+
     public void setAgentVersion(String agentVersion) {
         this.agentVersion = agentVersion;
     }
@@ -66,6 +67,7 @@ public class VersionInfo implements Serializable, Cloneable {
      * 
      * @return The version number of the Amazon ECS container agent.
      */
+
     public String getAgentVersion() {
         return this.agentVersion;
     }
@@ -80,6 +82,7 @@ public class VersionInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VersionInfo withAgentVersion(String agentVersion) {
         setAgentVersion(agentVersion);
         return this;
@@ -98,6 +101,7 @@ public class VersionInfo implements Serializable, Cloneable {
      *        href="https://github.com/aws/amazon-ecs-agent/commits/master"
      *        >amazon-ecs-agent </a> GitHub repository.
      */
+
     public void setAgentHash(String agentHash) {
         this.agentHash = agentHash;
     }
@@ -114,6 +118,7 @@ public class VersionInfo implements Serializable, Cloneable {
      *         href="https://github.com/aws/amazon-ecs-agent/commits/master"
      *         >amazon-ecs-agent </a> GitHub repository.
      */
+
     public String getAgentHash() {
         return this.agentHash;
     }
@@ -133,6 +138,7 @@ public class VersionInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VersionInfo withAgentHash(String agentHash) {
         setAgentHash(agentHash);
         return this;
@@ -146,6 +152,7 @@ public class VersionInfo implements Serializable, Cloneable {
      * @param dockerVersion
      *        The Docker version running on the container instance.
      */
+
     public void setDockerVersion(String dockerVersion) {
         this.dockerVersion = dockerVersion;
     }
@@ -157,6 +164,7 @@ public class VersionInfo implements Serializable, Cloneable {
      * 
      * @return The Docker version running on the container instance.
      */
+
     public String getDockerVersion() {
         return this.dockerVersion;
     }
@@ -171,6 +179,7 @@ public class VersionInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VersionInfo withDockerVersion(String dockerVersion) {
         setDockerVersion(dockerVersion);
         return this;

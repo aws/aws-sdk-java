@@ -31,6 +31,7 @@ public class GetAccountPasswordPolicyResult implements Serializable, Cloneable {
     /**
      * @param passwordPolicy
      */
+
     public void setPasswordPolicy(PasswordPolicy passwordPolicy) {
         this.passwordPolicy = passwordPolicy;
     }
@@ -38,6 +39,7 @@ public class GetAccountPasswordPolicyResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public PasswordPolicy getPasswordPolicy() {
         return this.passwordPolicy;
     }
@@ -47,6 +49,7 @@ public class GetAccountPasswordPolicyResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetAccountPasswordPolicyResult withPasswordPolicy(
             PasswordPolicy passwordPolicy) {
         setPasswordPolicy(passwordPolicy);

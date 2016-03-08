@@ -40,6 +40,7 @@ public class UpdateAliasResult implements Serializable, Cloneable {
      * @param alias
      *        Object containing the updated alias configuration.
      */
+
     public void setAlias(Alias alias) {
         this.alias = alias;
     }
@@ -51,6 +52,7 @@ public class UpdateAliasResult implements Serializable, Cloneable {
      * 
      * @return Object containing the updated alias configuration.
      */
+
     public Alias getAlias() {
         return this.alias;
     }
@@ -65,6 +67,7 @@ public class UpdateAliasResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateAliasResult withAlias(Alias alias) {
         setAlias(alias);
         return this;

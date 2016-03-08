@@ -103,6 +103,7 @@ public class CloudFrontOriginAccessIdentityConfig implements Serializable,
      *        original request, CloudFront returns a
      *        CloudFrontOriginAccessIdentityAlreadyExists error.
      */
+
     public void setCallerReference(String callerReference) {
         this.callerReference = callerReference;
     }
@@ -135,6 +136,7 @@ public class CloudFrontOriginAccessIdentityConfig implements Serializable,
      *         original request, CloudFront returns a
      *         CloudFrontOriginAccessIdentityAlreadyExists error.
      */
+
     public String getCallerReference() {
         return this.callerReference;
     }
@@ -170,6 +172,7 @@ public class CloudFrontOriginAccessIdentityConfig implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CloudFrontOriginAccessIdentityConfig withCallerReference(
             String callerReference) {
         setCallerReference(callerReference);
@@ -182,6 +185,7 @@ public class CloudFrontOriginAccessIdentityConfig implements Serializable,
      * @param comment
      *        Any comments you want to include about the origin access identity.
      */
+
     public void setComment(String comment) {
         this.comment = comment;
     }
@@ -192,6 +196,7 @@ public class CloudFrontOriginAccessIdentityConfig implements Serializable,
      * @return Any comments you want to include about the origin access
      *         identity.
      */
+
     public String getComment() {
         return this.comment;
     }
@@ -204,6 +209,7 @@ public class CloudFrontOriginAccessIdentityConfig implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CloudFrontOriginAccessIdentityConfig withComment(String comment) {
         setComment(comment);
         return this;

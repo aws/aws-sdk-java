@@ -76,6 +76,7 @@ public class UpdateGroupRequest extends AmazonWebServiceRequest implements
      *        Name of the group to update. If you're changing the name of the
      *        group, this is the original name.
      */
+
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
@@ -89,6 +90,7 @@ public class UpdateGroupRequest extends AmazonWebServiceRequest implements
      * @return Name of the group to update. If you're changing the name of the
      *         group, this is the original name.
      */
+
     public String getGroupName() {
         return this.groupName;
     }
@@ -105,6 +107,7 @@ public class UpdateGroupRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateGroupRequest withGroupName(String groupName) {
         setGroupName(groupName);
         return this;
@@ -119,6 +122,7 @@ public class UpdateGroupRequest extends AmazonWebServiceRequest implements
      *        New path for the group. Only include this if changing the group's
      *        path.
      */
+
     public void setNewPath(String newPath) {
         this.newPath = newPath;
     }
@@ -131,6 +135,7 @@ public class UpdateGroupRequest extends AmazonWebServiceRequest implements
      * @return New path for the group. Only include this if changing the group's
      *         path.
      */
+
     public String getNewPath() {
         return this.newPath;
     }
@@ -146,6 +151,7 @@ public class UpdateGroupRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateGroupRequest withNewPath(String newPath) {
         setNewPath(newPath);
         return this;
@@ -160,6 +166,7 @@ public class UpdateGroupRequest extends AmazonWebServiceRequest implements
      *        New name for the group. Only include this if changing the group's
      *        name.
      */
+
     public void setNewGroupName(String newGroupName) {
         this.newGroupName = newGroupName;
     }
@@ -172,6 +179,7 @@ public class UpdateGroupRequest extends AmazonWebServiceRequest implements
      * @return New name for the group. Only include this if changing the group's
      *         name.
      */
+
     public String getNewGroupName() {
         return this.newGroupName;
     }
@@ -187,6 +195,7 @@ public class UpdateGroupRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateGroupRequest withNewGroupName(String newGroupName) {
         setNewGroupName(newGroupName);
         return this;

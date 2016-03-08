@@ -146,6 +146,7 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      *        A unique namespace identifying the option's associated AWS
      *        resource.
      */
+
     public void setNamespace(String namespace) {
         this.namespace = namespace;
     }
@@ -158,6 +159,7 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * @return A unique namespace identifying the option's associated AWS
      *         resource.
      */
+
     public String getNamespace() {
         return this.namespace;
     }
@@ -173,6 +175,7 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigurationOptionDescription withNamespace(String namespace) {
         setNamespace(namespace);
         return this;
@@ -186,6 +189,7 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * @param name
      *        The name of the configuration option.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -197,6 +201,7 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * 
      * @return The name of the configuration option.
      */
+
     public String getName() {
         return this.name;
     }
@@ -211,6 +216,7 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigurationOptionDescription withName(String name) {
         setName(name);
         return this;
@@ -224,6 +230,7 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * @param defaultValue
      *        The default value for this configuration option.
      */
+
     public void setDefaultValue(String defaultValue) {
         this.defaultValue = defaultValue;
     }
@@ -235,6 +242,7 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * 
      * @return The default value for this configuration option.
      */
+
     public String getDefaultValue() {
         return this.defaultValue;
     }
@@ -249,6 +257,7 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigurationOptionDescription withDefaultValue(String defaultValue) {
         setDefaultValue(defaultValue);
         return this;
@@ -284,6 +293,7 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      *        occurs when the application servers on the running Amazon EC2
      *        instances are restarted.</li>
      */
+
     public void setChangeSeverity(String changeSeverity) {
         this.changeSeverity = changeSeverity;
     }
@@ -317,6 +327,7 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      *         occurs when the application servers on the running Amazon EC2
      *         instances are restarted.</li>
      */
+
     public String getChangeSeverity() {
         return this.changeSeverity;
     }
@@ -353,6 +364,7 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigurationOptionDescription withChangeSeverity(
             String changeSeverity) {
         setChangeSeverity(changeSeverity);
@@ -403,6 +415,7 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      *        <p>
      *        Valid Values: <code>true</code> | <code>false</code>
      */
+
     public void setUserDefined(Boolean userDefined) {
         this.userDefined = userDefined;
     }
@@ -450,6 +463,7 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      *         <p>
      *         Valid Values: <code>true</code> | <code>false</code>
      */
+
     public Boolean getUserDefined() {
         return this.userDefined;
     }
@@ -500,6 +514,7 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigurationOptionDescription withUserDefined(Boolean userDefined) {
         setUserDefined(userDefined);
         return this;
@@ -548,6 +563,7 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      *         <p>
      *         Valid Values: <code>true</code> | <code>false</code>
      */
+
     public Boolean isUserDefined() {
         return this.userDefined;
     }
@@ -586,6 +602,7 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      *        representation of a <code>ConfigDocument</code>.</li>
      * @see ConfigurationOptionValueType
      */
+
     public void setValueType(String valueType) {
         this.valueType = valueType;
     }
@@ -623,6 +640,7 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      *         representation of a <code>ConfigDocument</code>.</li>
      * @see ConfigurationOptionValueType
      */
+
     public String getValueType() {
         return this.valueType;
     }
@@ -663,6 +681,7 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      *         chained together.
      * @see ConfigurationOptionValueType
      */
+
     public ConfigurationOptionDescription withValueType(String valueType) {
         setValueType(valueType);
         return this;
@@ -704,6 +723,7 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      *         chained together.
      * @see ConfigurationOptionValueType
      */
+
     public void setValueType(ConfigurationOptionValueType valueType) {
         this.valueType = valueType.toString();
     }
@@ -744,6 +764,7 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      *         chained together.
      * @see ConfigurationOptionValueType
      */
+
     public ConfigurationOptionDescription withValueType(
             ConfigurationOptionValueType valueType) {
         setValueType(valueType);
@@ -759,6 +780,7 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * @return If specified, values for the configuration option are selected
      *         from this list.
      */
+
     public java.util.List<String> getValueOptions() {
         if (valueOptions == null) {
             valueOptions = new com.amazonaws.internal.SdkInternalList<String>();
@@ -776,6 +798,7 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      *        If specified, values for the configuration option are selected
      *        from this list.
      */
+
     public void setValueOptions(java.util.Collection<String> valueOptions) {
         if (valueOptions == null) {
             this.valueOptions = null;
@@ -804,6 +827,7 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigurationOptionDescription withValueOptions(
             String... valueOptions) {
         if (this.valueOptions == null) {
@@ -828,6 +852,7 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigurationOptionDescription withValueOptions(
             java.util.Collection<String> valueOptions) {
         setValueOptions(valueOptions);
@@ -844,6 +869,7 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      *        If specified, the configuration option must be a numeric value
      *        greater than this value.
      */
+
     public void setMinValue(Integer minValue) {
         this.minValue = minValue;
     }
@@ -857,6 +883,7 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * @return If specified, the configuration option must be a numeric value
      *         greater than this value.
      */
+
     public Integer getMinValue() {
         return this.minValue;
     }
@@ -873,6 +900,7 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigurationOptionDescription withMinValue(Integer minValue) {
         setMinValue(minValue);
         return this;
@@ -888,6 +916,7 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      *        If specified, the configuration option must be a numeric value
      *        less than this value.
      */
+
     public void setMaxValue(Integer maxValue) {
         this.maxValue = maxValue;
     }
@@ -901,6 +930,7 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * @return If specified, the configuration option must be a numeric value
      *         less than this value.
      */
+
     public Integer getMaxValue() {
         return this.maxValue;
     }
@@ -917,6 +947,7 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigurationOptionDescription withMaxValue(Integer maxValue) {
         setMaxValue(maxValue);
         return this;
@@ -932,6 +963,7 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      *        If specified, the configuration option must be a string value no
      *        longer than this value.
      */
+
     public void setMaxLength(Integer maxLength) {
         this.maxLength = maxLength;
     }
@@ -945,6 +977,7 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * @return If specified, the configuration option must be a string value no
      *         longer than this value.
      */
+
     public Integer getMaxLength() {
         return this.maxLength;
     }
@@ -961,6 +994,7 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigurationOptionDescription withMaxLength(Integer maxLength) {
         setMaxLength(maxLength);
         return this;
@@ -976,6 +1010,7 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      *        If specified, the configuration option must be a string value that
      *        satisfies this regular expression.
      */
+
     public void setRegex(OptionRestrictionRegex regex) {
         this.regex = regex;
     }
@@ -989,6 +1024,7 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * @return If specified, the configuration option must be a string value
      *         that satisfies this regular expression.
      */
+
     public OptionRestrictionRegex getRegex() {
         return this.regex;
     }
@@ -1005,6 +1041,7 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigurationOptionDescription withRegex(OptionRestrictionRegex regex) {
         setRegex(regex);
         return this;

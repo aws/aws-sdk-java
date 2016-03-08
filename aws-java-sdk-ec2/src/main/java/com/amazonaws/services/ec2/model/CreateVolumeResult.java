@@ -38,6 +38,7 @@ public class CreateVolumeResult implements Serializable, Cloneable {
      * @param volume
      *        Describes a volume.
      */
+
     public void setVolume(Volume volume) {
         this.volume = volume;
     }
@@ -49,6 +50,7 @@ public class CreateVolumeResult implements Serializable, Cloneable {
      * 
      * @return Describes a volume.
      */
+
     public Volume getVolume() {
         return this.volume;
     }
@@ -63,6 +65,7 @@ public class CreateVolumeResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateVolumeResult withVolume(Volume volume) {
         setVolume(volume);
         return this;

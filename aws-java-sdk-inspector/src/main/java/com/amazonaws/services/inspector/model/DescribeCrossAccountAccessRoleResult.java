@@ -49,6 +49,7 @@ public class DescribeCrossAccountAccessRoleResult implements Serializable,
      *        The ARN specifying the IAM role that Inspector uses to access your
      *        AWS account.
      */
+
     public void setRoleArn(String roleArn) {
         this.roleArn = roleArn;
     }
@@ -62,6 +63,7 @@ public class DescribeCrossAccountAccessRoleResult implements Serializable,
      * @return The ARN specifying the IAM role that Inspector uses to access
      *         your AWS account.
      */
+
     public String getRoleArn() {
         return this.roleArn;
     }
@@ -78,6 +80,7 @@ public class DescribeCrossAccountAccessRoleResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeCrossAccountAccessRoleResult withRoleArn(String roleArn) {
         setRoleArn(roleArn);
         return this;
@@ -94,6 +97,7 @@ public class DescribeCrossAccountAccessRoleResult implements Serializable,
      *        necessary policies attached to enable Inspector to access your AWS
      *        account.
      */
+
     public void setValid(Boolean valid) {
         this.valid = valid;
     }
@@ -108,6 +112,7 @@ public class DescribeCrossAccountAccessRoleResult implements Serializable,
      *         necessary policies attached to enable Inspector to access your
      *         AWS account.
      */
+
     public Boolean getValid() {
         return this.valid;
     }
@@ -125,6 +130,7 @@ public class DescribeCrossAccountAccessRoleResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeCrossAccountAccessRoleResult withValid(Boolean valid) {
         setValid(valid);
         return this;
@@ -140,6 +146,7 @@ public class DescribeCrossAccountAccessRoleResult implements Serializable,
      *         necessary policies attached to enable Inspector to access your
      *         AWS account.
      */
+
     public Boolean isValid() {
         return this.valid;
     }

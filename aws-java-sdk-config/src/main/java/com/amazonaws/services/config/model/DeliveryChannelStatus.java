@@ -64,6 +64,7 @@ public class DeliveryChannelStatus implements Serializable, Cloneable {
      * @param name
      *        The name of the delivery channel.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -75,6 +76,7 @@ public class DeliveryChannelStatus implements Serializable, Cloneable {
      * 
      * @return The name of the delivery channel.
      */
+
     public String getName() {
         return this.name;
     }
@@ -89,6 +91,7 @@ public class DeliveryChannelStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeliveryChannelStatus withName(String name) {
         setName(name);
         return this;
@@ -104,6 +107,7 @@ public class DeliveryChannelStatus implements Serializable, Cloneable {
      *        A list containing the status of the delivery of the snapshot to
      *        the specified Amazon S3 bucket.
      */
+
     public void setConfigSnapshotDeliveryInfo(
             ConfigExportDeliveryInfo configSnapshotDeliveryInfo) {
         this.configSnapshotDeliveryInfo = configSnapshotDeliveryInfo;
@@ -118,6 +122,7 @@ public class DeliveryChannelStatus implements Serializable, Cloneable {
      * @return A list containing the status of the delivery of the snapshot to
      *         the specified Amazon S3 bucket.
      */
+
     public ConfigExportDeliveryInfo getConfigSnapshotDeliveryInfo() {
         return this.configSnapshotDeliveryInfo;
     }
@@ -134,6 +139,7 @@ public class DeliveryChannelStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeliveryChannelStatus withConfigSnapshotDeliveryInfo(
             ConfigExportDeliveryInfo configSnapshotDeliveryInfo) {
         setConfigSnapshotDeliveryInfo(configSnapshotDeliveryInfo);
@@ -150,6 +156,7 @@ public class DeliveryChannelStatus implements Serializable, Cloneable {
      *        A list that contains the status of the delivery of the
      *        configuration history to the specified Amazon S3 bucket.
      */
+
     public void setConfigHistoryDeliveryInfo(
             ConfigExportDeliveryInfo configHistoryDeliveryInfo) {
         this.configHistoryDeliveryInfo = configHistoryDeliveryInfo;
@@ -164,6 +171,7 @@ public class DeliveryChannelStatus implements Serializable, Cloneable {
      * @return A list that contains the status of the delivery of the
      *         configuration history to the specified Amazon S3 bucket.
      */
+
     public ConfigExportDeliveryInfo getConfigHistoryDeliveryInfo() {
         return this.configHistoryDeliveryInfo;
     }
@@ -180,6 +188,7 @@ public class DeliveryChannelStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeliveryChannelStatus withConfigHistoryDeliveryInfo(
             ConfigExportDeliveryInfo configHistoryDeliveryInfo) {
         setConfigHistoryDeliveryInfo(configHistoryDeliveryInfo);
@@ -196,6 +205,7 @@ public class DeliveryChannelStatus implements Serializable, Cloneable {
      *        A list containing the status of the delivery of the configuration
      *        stream notification to the specified Amazon SNS topic.
      */
+
     public void setConfigStreamDeliveryInfo(
             ConfigStreamDeliveryInfo configStreamDeliveryInfo) {
         this.configStreamDeliveryInfo = configStreamDeliveryInfo;
@@ -210,6 +220,7 @@ public class DeliveryChannelStatus implements Serializable, Cloneable {
      * @return A list containing the status of the delivery of the configuration
      *         stream notification to the specified Amazon SNS topic.
      */
+
     public ConfigStreamDeliveryInfo getConfigStreamDeliveryInfo() {
         return this.configStreamDeliveryInfo;
     }
@@ -226,6 +237,7 @@ public class DeliveryChannelStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeliveryChannelStatus withConfigStreamDeliveryInfo(
             ConfigStreamDeliveryInfo configStreamDeliveryInfo) {
         setConfigStreamDeliveryInfo(configStreamDeliveryInfo);

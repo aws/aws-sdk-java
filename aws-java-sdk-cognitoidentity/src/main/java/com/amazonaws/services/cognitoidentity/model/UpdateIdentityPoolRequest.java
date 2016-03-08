@@ -60,6 +60,7 @@ public class UpdateIdentityPoolRequest extends AmazonWebServiceRequest
      * @param identityPoolId
      *        An identity pool ID in the format REGION:GUID.
      */
+
     public void setIdentityPoolId(String identityPoolId) {
         this.identityPoolId = identityPoolId;
     }
@@ -69,6 +70,7 @@ public class UpdateIdentityPoolRequest extends AmazonWebServiceRequest
      * 
      * @return An identity pool ID in the format REGION:GUID.
      */
+
     public String getIdentityPoolId() {
         return this.identityPoolId;
     }
@@ -81,6 +83,7 @@ public class UpdateIdentityPoolRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateIdentityPoolRequest withIdentityPoolId(String identityPoolId) {
         setIdentityPoolId(identityPoolId);
         return this;
@@ -94,6 +97,7 @@ public class UpdateIdentityPoolRequest extends AmazonWebServiceRequest
      * @param identityPoolName
      *        A string that you provide.
      */
+
     public void setIdentityPoolName(String identityPoolName) {
         this.identityPoolName = identityPoolName;
     }
@@ -105,6 +109,7 @@ public class UpdateIdentityPoolRequest extends AmazonWebServiceRequest
      * 
      * @return A string that you provide.
      */
+
     public String getIdentityPoolName() {
         return this.identityPoolName;
     }
@@ -119,6 +124,7 @@ public class UpdateIdentityPoolRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateIdentityPoolRequest withIdentityPoolName(
             String identityPoolName) {
         setIdentityPoolName(identityPoolName);
@@ -131,6 +137,7 @@ public class UpdateIdentityPoolRequest extends AmazonWebServiceRequest
      * @param allowUnauthenticatedIdentities
      *        TRUE if the identity pool supports unauthenticated logins.
      */
+
     public void setAllowUnauthenticatedIdentities(
             Boolean allowUnauthenticatedIdentities) {
         this.allowUnauthenticatedIdentities = allowUnauthenticatedIdentities;
@@ -141,6 +148,7 @@ public class UpdateIdentityPoolRequest extends AmazonWebServiceRequest
      * 
      * @return TRUE if the identity pool supports unauthenticated logins.
      */
+
     public Boolean getAllowUnauthenticatedIdentities() {
         return this.allowUnauthenticatedIdentities;
     }
@@ -153,6 +161,7 @@ public class UpdateIdentityPoolRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateIdentityPoolRequest withAllowUnauthenticatedIdentities(
             Boolean allowUnauthenticatedIdentities) {
         setAllowUnauthenticatedIdentities(allowUnauthenticatedIdentities);
@@ -164,6 +173,7 @@ public class UpdateIdentityPoolRequest extends AmazonWebServiceRequest
      * 
      * @return TRUE if the identity pool supports unauthenticated logins.
      */
+
     public Boolean isAllowUnauthenticatedIdentities() {
         return this.allowUnauthenticatedIdentities;
     }
@@ -176,6 +186,7 @@ public class UpdateIdentityPoolRequest extends AmazonWebServiceRequest
      * @return Optional key:value pairs mapping provider names to provider app
      *         IDs.
      */
+
     public java.util.Map<String, String> getSupportedLoginProviders() {
         return supportedLoginProviders;
     }
@@ -189,6 +200,7 @@ public class UpdateIdentityPoolRequest extends AmazonWebServiceRequest
      *        Optional key:value pairs mapping provider names to provider app
      *        IDs.
      */
+
     public void setSupportedLoginProviders(
             java.util.Map<String, String> supportedLoginProviders) {
         this.supportedLoginProviders = supportedLoginProviders;
@@ -205,6 +217,7 @@ public class UpdateIdentityPoolRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateIdentityPoolRequest withSupportedLoginProviders(
             java.util.Map<String, String> supportedLoginProviders) {
         setSupportedLoginProviders(supportedLoginProviders);
@@ -228,6 +241,7 @@ public class UpdateIdentityPoolRequest extends AmazonWebServiceRequest
      * Returns a reference to this object so that method calls can be chained
      * together.
      */
+
     public UpdateIdentityPoolRequest clearSupportedLoginProvidersEntries() {
         this.supportedLoginProviders = null;
         return this;
@@ -241,6 +255,7 @@ public class UpdateIdentityPoolRequest extends AmazonWebServiceRequest
      * @param developerProviderName
      *        The "domain" by which Cognito will refer to your users.
      */
+
     public void setDeveloperProviderName(String developerProviderName) {
         this.developerProviderName = developerProviderName;
     }
@@ -252,6 +267,7 @@ public class UpdateIdentityPoolRequest extends AmazonWebServiceRequest
      * 
      * @return The "domain" by which Cognito will refer to your users.
      */
+
     public String getDeveloperProviderName() {
         return this.developerProviderName;
     }
@@ -266,6 +282,7 @@ public class UpdateIdentityPoolRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateIdentityPoolRequest withDeveloperProviderName(
             String developerProviderName) {
         setDeveloperProviderName(developerProviderName);
@@ -279,6 +296,7 @@ public class UpdateIdentityPoolRequest extends AmazonWebServiceRequest
      * 
      * @return A list of OpendID Connect provider ARNs.
      */
+
     public java.util.List<String> getOpenIdConnectProviderARNs() {
         return openIdConnectProviderARNs;
     }
@@ -291,6 +309,7 @@ public class UpdateIdentityPoolRequest extends AmazonWebServiceRequest
      * @param openIdConnectProviderARNs
      *        A list of OpendID Connect provider ARNs.
      */
+
     public void setOpenIdConnectProviderARNs(
             java.util.Collection<String> openIdConnectProviderARNs) {
         if (openIdConnectProviderARNs == null) {
@@ -318,6 +337,7 @@ public class UpdateIdentityPoolRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateIdentityPoolRequest withOpenIdConnectProviderARNs(
             String... openIdConnectProviderARNs) {
         if (this.openIdConnectProviderARNs == null) {
@@ -340,6 +360,7 @@ public class UpdateIdentityPoolRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateIdentityPoolRequest withOpenIdConnectProviderARNs(
             java.util.Collection<String> openIdConnectProviderARNs) {
         setOpenIdConnectProviderARNs(openIdConnectProviderARNs);

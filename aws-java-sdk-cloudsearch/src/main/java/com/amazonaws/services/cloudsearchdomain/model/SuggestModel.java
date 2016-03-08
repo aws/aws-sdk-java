@@ -53,6 +53,7 @@ public class SuggestModel implements Serializable, Cloneable {
      * @param query
      *        The query string specified in the suggest request.
      */
+
     public void setQuery(String query) {
         this.query = query;
     }
@@ -64,6 +65,7 @@ public class SuggestModel implements Serializable, Cloneable {
      * 
      * @return The query string specified in the suggest request.
      */
+
     public String getQuery() {
         return this.query;
     }
@@ -78,6 +80,7 @@ public class SuggestModel implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SuggestModel withQuery(String query) {
         setQuery(query);
         return this;
@@ -91,6 +94,7 @@ public class SuggestModel implements Serializable, Cloneable {
      * @param found
      *        The number of documents that were found to match the query string.
      */
+
     public void setFound(Long found) {
         this.found = found;
     }
@@ -103,6 +107,7 @@ public class SuggestModel implements Serializable, Cloneable {
      * @return The number of documents that were found to match the query
      *         string.
      */
+
     public Long getFound() {
         return this.found;
     }
@@ -117,6 +122,7 @@ public class SuggestModel implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SuggestModel withFound(Long found) {
         setFound(found);
         return this;
@@ -129,6 +135,7 @@ public class SuggestModel implements Serializable, Cloneable {
      * 
      * @return The documents that match the query string.
      */
+
     public java.util.List<SuggestionMatch> getSuggestions() {
         if (suggestions == null) {
             suggestions = new com.amazonaws.internal.SdkInternalList<SuggestionMatch>();
@@ -144,6 +151,7 @@ public class SuggestModel implements Serializable, Cloneable {
      * @param suggestions
      *        The documents that match the query string.
      */
+
     public void setSuggestions(java.util.Collection<SuggestionMatch> suggestions) {
         if (suggestions == null) {
             this.suggestions = null;
@@ -170,6 +178,7 @@ public class SuggestModel implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SuggestModel withSuggestions(SuggestionMatch... suggestions) {
         if (this.suggestions == null) {
             setSuggestions(new com.amazonaws.internal.SdkInternalList<SuggestionMatch>(
@@ -191,6 +200,7 @@ public class SuggestModel implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SuggestModel withSuggestions(
             java.util.Collection<SuggestionMatch> suggestions) {
         setSuggestions(suggestions);

@@ -32,6 +32,7 @@ public class RejectedLogEventsInfo implements Serializable, Cloneable {
     /**
      * @param tooNewLogEventStartIndex
      */
+
     public void setTooNewLogEventStartIndex(Integer tooNewLogEventStartIndex) {
         this.tooNewLogEventStartIndex = tooNewLogEventStartIndex;
     }
@@ -39,6 +40,7 @@ public class RejectedLogEventsInfo implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Integer getTooNewLogEventStartIndex() {
         return this.tooNewLogEventStartIndex;
     }
@@ -48,6 +50,7 @@ public class RejectedLogEventsInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RejectedLogEventsInfo withTooNewLogEventStartIndex(
             Integer tooNewLogEventStartIndex) {
         setTooNewLogEventStartIndex(tooNewLogEventStartIndex);
@@ -57,6 +60,7 @@ public class RejectedLogEventsInfo implements Serializable, Cloneable {
     /**
      * @param tooOldLogEventEndIndex
      */
+
     public void setTooOldLogEventEndIndex(Integer tooOldLogEventEndIndex) {
         this.tooOldLogEventEndIndex = tooOldLogEventEndIndex;
     }
@@ -64,6 +68,7 @@ public class RejectedLogEventsInfo implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Integer getTooOldLogEventEndIndex() {
         return this.tooOldLogEventEndIndex;
     }
@@ -73,6 +78,7 @@ public class RejectedLogEventsInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RejectedLogEventsInfo withTooOldLogEventEndIndex(
             Integer tooOldLogEventEndIndex) {
         setTooOldLogEventEndIndex(tooOldLogEventEndIndex);
@@ -82,6 +88,7 @@ public class RejectedLogEventsInfo implements Serializable, Cloneable {
     /**
      * @param expiredLogEventEndIndex
      */
+
     public void setExpiredLogEventEndIndex(Integer expiredLogEventEndIndex) {
         this.expiredLogEventEndIndex = expiredLogEventEndIndex;
     }
@@ -89,6 +96,7 @@ public class RejectedLogEventsInfo implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Integer getExpiredLogEventEndIndex() {
         return this.expiredLogEventEndIndex;
     }
@@ -98,6 +106,7 @@ public class RejectedLogEventsInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RejectedLogEventsInfo withExpiredLogEventEndIndex(
             Integer expiredLogEventEndIndex) {
         setExpiredLogEventEndIndex(expiredLogEventEndIndex);

@@ -40,6 +40,7 @@ public class CreatePolicyVersionResult implements Serializable, Cloneable {
      * @param policyVersion
      *        Information about the policy version.
      */
+
     public void setPolicyVersion(PolicyVersion policyVersion) {
         this.policyVersion = policyVersion;
     }
@@ -51,6 +52,7 @@ public class CreatePolicyVersionResult implements Serializable, Cloneable {
      * 
      * @return Information about the policy version.
      */
+
     public PolicyVersion getPolicyVersion() {
         return this.policyVersion;
     }
@@ -65,6 +67,7 @@ public class CreatePolicyVersionResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePolicyVersionResult withPolicyVersion(
             PolicyVersion policyVersion) {
         setPolicyVersion(policyVersion);

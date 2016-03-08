@@ -46,6 +46,7 @@ public class AddTagsRequest extends AmazonWebServiceRequest implements
      * @return The name of the load balancer. You can specify one load balancer
      *         only.
      */
+
     public java.util.List<String> getLoadBalancerNames() {
         if (loadBalancerNames == null) {
             loadBalancerNames = new com.amazonaws.internal.SdkInternalList<String>();
@@ -62,6 +63,7 @@ public class AddTagsRequest extends AmazonWebServiceRequest implements
      *        The name of the load balancer. You can specify one load balancer
      *        only.
      */
+
     public void setLoadBalancerNames(
             java.util.Collection<String> loadBalancerNames) {
         if (loadBalancerNames == null) {
@@ -90,6 +92,7 @@ public class AddTagsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddTagsRequest withLoadBalancerNames(String... loadBalancerNames) {
         if (this.loadBalancerNames == null) {
             setLoadBalancerNames(new com.amazonaws.internal.SdkInternalList<String>(
@@ -112,6 +115,7 @@ public class AddTagsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddTagsRequest withLoadBalancerNames(
             java.util.Collection<String> loadBalancerNames) {
         setLoadBalancerNames(loadBalancerNames);
@@ -125,6 +129,7 @@ public class AddTagsRequest extends AmazonWebServiceRequest implements
      * 
      * @return The tags.
      */
+
     public java.util.List<Tag> getTags() {
         if (tags == null) {
             tags = new com.amazonaws.internal.SdkInternalList<Tag>();
@@ -140,6 +145,7 @@ public class AddTagsRequest extends AmazonWebServiceRequest implements
      * @param tags
      *        The tags.
      */
+
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
             this.tags = null;
@@ -165,6 +171,7 @@ public class AddTagsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddTagsRequest withTags(Tag... tags) {
         if (this.tags == null) {
             setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
@@ -185,6 +192,7 @@ public class AddTagsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddTagsRequest withTags(java.util.Collection<Tag> tags) {
         setTags(tags);
         return this;

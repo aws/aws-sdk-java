@@ -38,6 +38,7 @@ public class DomainInfo implements Serializable, Cloneable {
      * @param domainName
      *        Specifies the <code>DomainName</code>.
      */
+
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
@@ -49,6 +50,7 @@ public class DomainInfo implements Serializable, Cloneable {
      * 
      * @return Specifies the <code>DomainName</code>.
      */
+
     public String getDomainName() {
         return this.domainName;
     }
@@ -63,6 +65,7 @@ public class DomainInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DomainInfo withDomainName(String domainName) {
         setDomainName(domainName);
         return this;

@@ -47,6 +47,7 @@ public class DescribeImportImageTasksResult implements Serializable, Cloneable {
      * @return A list of zero or more import image tasks that are currently
      *         active or were completed or canceled in the previous 7 days.
      */
+
     public java.util.List<ImportImageTask> getImportImageTasks() {
         if (importImageTasks == null) {
             importImageTasks = new com.amazonaws.internal.SdkInternalList<ImportImageTask>();
@@ -64,6 +65,7 @@ public class DescribeImportImageTasksResult implements Serializable, Cloneable {
      *        A list of zero or more import image tasks that are currently
      *        active or were completed or canceled in the previous 7 days.
      */
+
     public void setImportImageTasks(
             java.util.Collection<ImportImageTask> importImageTasks) {
         if (importImageTasks == null) {
@@ -93,6 +95,7 @@ public class DescribeImportImageTasksResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeImportImageTasksResult withImportImageTasks(
             ImportImageTask... importImageTasks) {
         if (this.importImageTasks == null) {
@@ -117,6 +120,7 @@ public class DescribeImportImageTasksResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeImportImageTasksResult withImportImageTasks(
             java.util.Collection<ImportImageTask> importImageTasks) {
         setImportImageTasks(importImageTasks);
@@ -133,6 +137,7 @@ public class DescribeImportImageTasksResult implements Serializable, Cloneable {
      *        The token to use to get the next page of results. This value is
      *        <code>null</code> when there are no more results to return.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -146,6 +151,7 @@ public class DescribeImportImageTasksResult implements Serializable, Cloneable {
      * @return The token to use to get the next page of results. This value is
      *         <code>null</code> when there are no more results to return.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -162,6 +168,7 @@ public class DescribeImportImageTasksResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeImportImageTasksResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

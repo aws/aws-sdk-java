@@ -23,6 +23,7 @@ import java.io.Serializable;
  * A complex type that contains the <code>ChangeBatchRecord</code> element.
  * </p>
  */
+@Deprecated
 public class GetChangeDetailsResult implements Serializable, Cloneable {
 
     /**
@@ -46,6 +47,7 @@ public class GetChangeDetailsResult implements Serializable, Cloneable {
      *        change batch, including the change batch ID, the status of the
      *        change, and the contained changes.
      */
+    @Deprecated
     public void setChangeBatchRecord(ChangeBatchRecord changeBatchRecord) {
         this.changeBatchRecord = changeBatchRecord;
     }
@@ -61,6 +63,7 @@ public class GetChangeDetailsResult implements Serializable, Cloneable {
      *         change batch, including the change batch ID, the status of the
      *         change, and the contained changes.
      */
+    @Deprecated
     public ChangeBatchRecord getChangeBatchRecord() {
         return this.changeBatchRecord;
     }
@@ -79,6 +82,7 @@ public class GetChangeDetailsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+    @Deprecated
     public GetChangeDetailsResult withChangeBatchRecord(
             ChangeBatchRecord changeBatchRecord) {
         setChangeBatchRecord(changeBatchRecord);

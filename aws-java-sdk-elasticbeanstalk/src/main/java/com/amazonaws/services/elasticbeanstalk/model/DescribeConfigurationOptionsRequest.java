@@ -76,6 +76,7 @@ public class DescribeConfigurationOptionsRequest extends
      *        configuration options associated with either the configuration
      *        template or environment.
      */
+
     public void setApplicationName(String applicationName) {
         this.applicationName = applicationName;
     }
@@ -92,6 +93,7 @@ public class DescribeConfigurationOptionsRequest extends
      *         configuration options associated with either the configuration
      *         template or environment.
      */
+
     public String getApplicationName() {
         return this.applicationName;
     }
@@ -111,6 +113,7 @@ public class DescribeConfigurationOptionsRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeConfigurationOptionsRequest withApplicationName(
             String applicationName) {
         setApplicationName(applicationName);
@@ -127,6 +130,7 @@ public class DescribeConfigurationOptionsRequest extends
      *        The name of the configuration template whose configuration options
      *        you want to describe.
      */
+
     public void setTemplateName(String templateName) {
         this.templateName = templateName;
     }
@@ -140,6 +144,7 @@ public class DescribeConfigurationOptionsRequest extends
      * @return The name of the configuration template whose configuration
      *         options you want to describe.
      */
+
     public String getTemplateName() {
         return this.templateName;
     }
@@ -156,6 +161,7 @@ public class DescribeConfigurationOptionsRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeConfigurationOptionsRequest withTemplateName(
             String templateName) {
         setTemplateName(templateName);
@@ -172,6 +178,7 @@ public class DescribeConfigurationOptionsRequest extends
      *        The name of the environment whose configuration options you want
      *        to describe.
      */
+
     public void setEnvironmentName(String environmentName) {
         this.environmentName = environmentName;
     }
@@ -185,6 +192,7 @@ public class DescribeConfigurationOptionsRequest extends
      * @return The name of the environment whose configuration options you want
      *         to describe.
      */
+
     public String getEnvironmentName() {
         return this.environmentName;
     }
@@ -201,6 +209,7 @@ public class DescribeConfigurationOptionsRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeConfigurationOptionsRequest withEnvironmentName(
             String environmentName) {
         setEnvironmentName(environmentName);
@@ -217,6 +226,7 @@ public class DescribeConfigurationOptionsRequest extends
      *        The name of the solution stack whose configuration options you
      *        want to describe.
      */
+
     public void setSolutionStackName(String solutionStackName) {
         this.solutionStackName = solutionStackName;
     }
@@ -230,6 +240,7 @@ public class DescribeConfigurationOptionsRequest extends
      * @return The name of the solution stack whose configuration options you
      *         want to describe.
      */
+
     public String getSolutionStackName() {
         return this.solutionStackName;
     }
@@ -246,6 +257,7 @@ public class DescribeConfigurationOptionsRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeConfigurationOptionsRequest withSolutionStackName(
             String solutionStackName) {
         setSolutionStackName(solutionStackName);
@@ -260,6 +272,7 @@ public class DescribeConfigurationOptionsRequest extends
      * @return If specified, restricts the descriptions to only the specified
      *         options.
      */
+
     public java.util.List<OptionSpecification> getOptions() {
         if (options == null) {
             options = new com.amazonaws.internal.SdkInternalList<OptionSpecification>();
@@ -276,6 +289,7 @@ public class DescribeConfigurationOptionsRequest extends
      *        If specified, restricts the descriptions to only the specified
      *        options.
      */
+
     public void setOptions(java.util.Collection<OptionSpecification> options) {
         if (options == null) {
             this.options = null;
@@ -303,6 +317,7 @@ public class DescribeConfigurationOptionsRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeConfigurationOptionsRequest withOptions(
             OptionSpecification... options) {
         if (this.options == null) {
@@ -326,6 +341,7 @@ public class DescribeConfigurationOptionsRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeConfigurationOptionsRequest withOptions(
             java.util.Collection<OptionSpecification> options) {
         setOptions(options);

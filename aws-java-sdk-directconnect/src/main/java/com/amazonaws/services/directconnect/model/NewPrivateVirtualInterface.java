@@ -42,6 +42,7 @@ public class NewPrivateVirtualInterface implements Serializable, Cloneable {
     /**
      * @param virtualInterfaceName
      */
+
     public void setVirtualInterfaceName(String virtualInterfaceName) {
         this.virtualInterfaceName = virtualInterfaceName;
     }
@@ -49,6 +50,7 @@ public class NewPrivateVirtualInterface implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getVirtualInterfaceName() {
         return this.virtualInterfaceName;
     }
@@ -58,6 +60,7 @@ public class NewPrivateVirtualInterface implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NewPrivateVirtualInterface withVirtualInterfaceName(
             String virtualInterfaceName) {
         setVirtualInterfaceName(virtualInterfaceName);
@@ -67,6 +70,7 @@ public class NewPrivateVirtualInterface implements Serializable, Cloneable {
     /**
      * @param vlan
      */
+
     public void setVlan(Integer vlan) {
         this.vlan = vlan;
     }
@@ -74,6 +78,7 @@ public class NewPrivateVirtualInterface implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Integer getVlan() {
         return this.vlan;
     }
@@ -83,6 +88,7 @@ public class NewPrivateVirtualInterface implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NewPrivateVirtualInterface withVlan(Integer vlan) {
         setVlan(vlan);
         return this;
@@ -91,6 +97,7 @@ public class NewPrivateVirtualInterface implements Serializable, Cloneable {
     /**
      * @param asn
      */
+
     public void setAsn(Integer asn) {
         this.asn = asn;
     }
@@ -98,6 +105,7 @@ public class NewPrivateVirtualInterface implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Integer getAsn() {
         return this.asn;
     }
@@ -107,6 +115,7 @@ public class NewPrivateVirtualInterface implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NewPrivateVirtualInterface withAsn(Integer asn) {
         setAsn(asn);
         return this;
@@ -115,6 +124,7 @@ public class NewPrivateVirtualInterface implements Serializable, Cloneable {
     /**
      * @param authKey
      */
+
     public void setAuthKey(String authKey) {
         this.authKey = authKey;
     }
@@ -122,6 +132,7 @@ public class NewPrivateVirtualInterface implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getAuthKey() {
         return this.authKey;
     }
@@ -131,6 +142,7 @@ public class NewPrivateVirtualInterface implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NewPrivateVirtualInterface withAuthKey(String authKey) {
         setAuthKey(authKey);
         return this;
@@ -139,6 +151,7 @@ public class NewPrivateVirtualInterface implements Serializable, Cloneable {
     /**
      * @param amazonAddress
      */
+
     public void setAmazonAddress(String amazonAddress) {
         this.amazonAddress = amazonAddress;
     }
@@ -146,6 +159,7 @@ public class NewPrivateVirtualInterface implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getAmazonAddress() {
         return this.amazonAddress;
     }
@@ -155,6 +169,7 @@ public class NewPrivateVirtualInterface implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NewPrivateVirtualInterface withAmazonAddress(String amazonAddress) {
         setAmazonAddress(amazonAddress);
         return this;
@@ -163,6 +178,7 @@ public class NewPrivateVirtualInterface implements Serializable, Cloneable {
     /**
      * @param customerAddress
      */
+
     public void setCustomerAddress(String customerAddress) {
         this.customerAddress = customerAddress;
     }
@@ -170,6 +186,7 @@ public class NewPrivateVirtualInterface implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getCustomerAddress() {
         return this.customerAddress;
     }
@@ -179,6 +196,7 @@ public class NewPrivateVirtualInterface implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NewPrivateVirtualInterface withCustomerAddress(String customerAddress) {
         setCustomerAddress(customerAddress);
         return this;
@@ -187,6 +205,7 @@ public class NewPrivateVirtualInterface implements Serializable, Cloneable {
     /**
      * @param virtualGatewayId
      */
+
     public void setVirtualGatewayId(String virtualGatewayId) {
         this.virtualGatewayId = virtualGatewayId;
     }
@@ -194,6 +213,7 @@ public class NewPrivateVirtualInterface implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getVirtualGatewayId() {
         return this.virtualGatewayId;
     }
@@ -203,6 +223,7 @@ public class NewPrivateVirtualInterface implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NewPrivateVirtualInterface withVirtualGatewayId(
             String virtualGatewayId) {
         setVirtualGatewayId(virtualGatewayId);

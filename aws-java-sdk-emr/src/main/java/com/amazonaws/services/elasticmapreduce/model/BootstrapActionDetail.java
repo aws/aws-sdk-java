@@ -60,6 +60,7 @@ public class BootstrapActionDetail implements Serializable, Cloneable {
      * @param bootstrapActionConfig
      *        A description of the bootstrap action.
      */
+
     public void setBootstrapActionConfig(
             BootstrapActionConfig bootstrapActionConfig) {
         this.bootstrapActionConfig = bootstrapActionConfig;
@@ -72,6 +73,7 @@ public class BootstrapActionDetail implements Serializable, Cloneable {
      * 
      * @return A description of the bootstrap action.
      */
+
     public BootstrapActionConfig getBootstrapActionConfig() {
         return this.bootstrapActionConfig;
     }
@@ -86,6 +88,7 @@ public class BootstrapActionDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BootstrapActionDetail withBootstrapActionConfig(
             BootstrapActionConfig bootstrapActionConfig) {
         setBootstrapActionConfig(bootstrapActionConfig);

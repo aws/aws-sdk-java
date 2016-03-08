@@ -93,6 +93,7 @@ public class PortMapping implements Serializable, Cloneable {
      *        receives a host port in the ephemeral port range (for more
      *        information, see <code>hostPort</code>).
      */
+
     public void setContainerPort(Integer containerPort) {
         this.containerPort = containerPort;
     }
@@ -111,6 +112,7 @@ public class PortMapping implements Serializable, Cloneable {
      *         automatically receives a host port in the ephemeral port range
      *         (for more information, see <code>hostPort</code>).
      */
+
     public Integer getContainerPort() {
         return this.containerPort;
     }
@@ -132,6 +134,7 @@ public class PortMapping implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PortMapping withContainerPort(Integer containerPort) {
         setContainerPort(containerPort);
         return this;
@@ -200,6 +203,7 @@ public class PortMapping implements Serializable, Cloneable {
      *        reserved ports (automatically assigned ports do not count toward
      *        this limit).
      */
+
     public void setHostPort(Integer hostPort) {
         this.hostPort = hostPort;
     }
@@ -266,6 +270,7 @@ public class PortMapping implements Serializable, Cloneable {
      *         the default reserved ports (automatically assigned ports do not
      *         count toward this limit).
      */
+
     public Integer getHostPort() {
         return this.hostPort;
     }
@@ -335,6 +340,7 @@ public class PortMapping implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PortMapping withHostPort(Integer hostPort) {
         setHostPort(hostPort);
         return this;
@@ -352,6 +358,7 @@ public class PortMapping implements Serializable, Cloneable {
      *        <code>tcp</code>.
      * @see TransportProtocol
      */
+
     public void setProtocol(String protocol) {
         this.protocol = protocol;
     }
@@ -367,6 +374,7 @@ public class PortMapping implements Serializable, Cloneable {
      *         <code>tcp</code>.
      * @see TransportProtocol
      */
+
     public String getProtocol() {
         return this.protocol;
     }
@@ -385,6 +393,7 @@ public class PortMapping implements Serializable, Cloneable {
      *         chained together.
      * @see TransportProtocol
      */
+
     public PortMapping withProtocol(String protocol) {
         setProtocol(protocol);
         return this;
@@ -404,6 +413,7 @@ public class PortMapping implements Serializable, Cloneable {
      *         chained together.
      * @see TransportProtocol
      */
+
     public void setProtocol(TransportProtocol protocol) {
         this.protocol = protocol.toString();
     }
@@ -422,6 +432,7 @@ public class PortMapping implements Serializable, Cloneable {
      *         chained together.
      * @see TransportProtocol
      */
+
     public PortMapping withProtocol(TransportProtocol protocol) {
         setProtocol(protocol);
         return this;

@@ -37,6 +37,7 @@ public class DescribeAvailabilityZonesResult implements Serializable, Cloneable 
      * 
      * @return Information about one or more Availability Zones.
      */
+
     public java.util.List<AvailabilityZone> getAvailabilityZones() {
         if (availabilityZones == null) {
             availabilityZones = new com.amazonaws.internal.SdkInternalList<AvailabilityZone>();
@@ -52,6 +53,7 @@ public class DescribeAvailabilityZonesResult implements Serializable, Cloneable 
      * @param availabilityZones
      *        Information about one or more Availability Zones.
      */
+
     public void setAvailabilityZones(
             java.util.Collection<AvailabilityZone> availabilityZones) {
         if (availabilityZones == null) {
@@ -79,6 +81,7 @@ public class DescribeAvailabilityZonesResult implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAvailabilityZonesResult withAvailabilityZones(
             AvailabilityZone... availabilityZones) {
         if (this.availabilityZones == null) {
@@ -101,6 +104,7 @@ public class DescribeAvailabilityZonesResult implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAvailabilityZonesResult withAvailabilityZones(
             java.util.Collection<AvailabilityZone> availabilityZones) {
         setAvailabilityZones(availabilityZones);

@@ -50,6 +50,7 @@ public class DescribeTapeRecoveryPointsResult implements Serializable,
     /**
      * @param gatewayARN
      */
+
     public void setGatewayARN(String gatewayARN) {
         this.gatewayARN = gatewayARN;
     }
@@ -57,6 +58,7 @@ public class DescribeTapeRecoveryPointsResult implements Serializable,
     /**
      * @return
      */
+
     public String getGatewayARN() {
         return this.gatewayARN;
     }
@@ -66,6 +68,7 @@ public class DescribeTapeRecoveryPointsResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTapeRecoveryPointsResult withGatewayARN(String gatewayARN) {
         setGatewayARN(gatewayARN);
         return this;
@@ -80,6 +83,7 @@ public class DescribeTapeRecoveryPointsResult implements Serializable,
      * @return An array of TapeRecoveryPointInfos that are available for the
      *         specified gateway.
      */
+
     public java.util.List<TapeRecoveryPointInfo> getTapeRecoveryPointInfos() {
         if (tapeRecoveryPointInfos == null) {
             tapeRecoveryPointInfos = new com.amazonaws.internal.SdkInternalList<TapeRecoveryPointInfo>();
@@ -97,6 +101,7 @@ public class DescribeTapeRecoveryPointsResult implements Serializable,
      *        An array of TapeRecoveryPointInfos that are available for the
      *        specified gateway.
      */
+
     public void setTapeRecoveryPointInfos(
             java.util.Collection<TapeRecoveryPointInfo> tapeRecoveryPointInfos) {
         if (tapeRecoveryPointInfos == null) {
@@ -126,6 +131,7 @@ public class DescribeTapeRecoveryPointsResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTapeRecoveryPointsResult withTapeRecoveryPointInfos(
             TapeRecoveryPointInfo... tapeRecoveryPointInfos) {
         if (this.tapeRecoveryPointInfos == null) {
@@ -150,6 +156,7 @@ public class DescribeTapeRecoveryPointsResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTapeRecoveryPointsResult withTapeRecoveryPointInfos(
             java.util.Collection<TapeRecoveryPointInfo> tapeRecoveryPointInfos) {
         setTapeRecoveryPointInfos(tapeRecoveryPointInfos);
@@ -176,6 +183,7 @@ public class DescribeTapeRecoveryPointsResult implements Serializable,
      *        recovery points to describe, this field does not appear in the
      *        response.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -199,6 +207,7 @@ public class DescribeTapeRecoveryPointsResult implements Serializable,
      *         recovery points to describe, this field does not appear in the
      *         response.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -225,6 +234,7 @@ public class DescribeTapeRecoveryPointsResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTapeRecoveryPointsResult withMarker(String marker) {
         setMarker(marker);
         return this;

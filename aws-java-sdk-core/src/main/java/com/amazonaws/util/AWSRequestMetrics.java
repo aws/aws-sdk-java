@@ -15,13 +15,12 @@
 
 package com.amazonaws.util;
 
-import java.util.Collections;
-import java.util.List;
-
-import org.apache.http.annotation.NotThreadSafe;
-
 import com.amazonaws.metrics.MetricType;
 import com.amazonaws.metrics.RequestMetricType;
+import org.apache.http.annotation.NotThreadSafe;
+
+import java.util.Collections;
+import java.util.List;
 
 /**
  * Used as both a base class and a minimal support of AWS SDK request metrics.
@@ -45,7 +44,7 @@ public class AWSRequestMetrics {
      * specific predefined metrics like S3 or DynamoDB are defined in the client
      * specific packages.
      */
-    public static enum Field implements RequestMetricType {
+    public enum Field implements RequestMetricType {
         AWSErrorCode,
         AWSRequestID,
         BytesProcessed,
@@ -89,6 +88,10 @@ public class AWSRequestMetrics {
          * Number of retries of AWS SDK sending a request to AWS.
          */
         RetryCount, // captured via the RequestCount since (RetryCount = RequestCount - 1)
+        /**
+         * Snapshot of currently consumed retry capacity.
+         */
+        RetryCapacityConsumed,
         /**
          * Number of retries of the underlying http client library in sending a
          * request to AWS.
@@ -136,8 +139,8 @@ public class AWSRequestMetrics {
          */
         HttpClientPoolPendingCount,
         RetryPauseTime,
-//      S3DownloadThroughput, // migrated to S3RequestMetric in the S3 clint library
-//      S3UploadThroughput,   // migrated to S3RequestMetric in the S3 clint library
+//      S3DownloadThroughput, // migrated to S3RequestMetric in the S3 client library
+//      S3UploadThroughput,   // migrated to S3RequestMetric in the S3 client library
         ServiceEndpoint,
         ServiceName,
         StatusCode, // The http status code

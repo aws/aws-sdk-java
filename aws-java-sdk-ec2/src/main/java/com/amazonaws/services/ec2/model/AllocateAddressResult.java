@@ -53,6 +53,7 @@ public class AllocateAddressResult implements Serializable, Cloneable {
      * @param publicIp
      *        The Elastic IP address.
      */
+
     public void setPublicIp(String publicIp) {
         this.publicIp = publicIp;
     }
@@ -64,6 +65,7 @@ public class AllocateAddressResult implements Serializable, Cloneable {
      * 
      * @return The Elastic IP address.
      */
+
     public String getPublicIp() {
         return this.publicIp;
     }
@@ -78,6 +80,7 @@ public class AllocateAddressResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AllocateAddressResult withPublicIp(String publicIp) {
         setPublicIp(publicIp);
         return this;
@@ -96,6 +99,7 @@ public class AllocateAddressResult implements Serializable, Cloneable {
      *        VPC (<code>vpc</code>).
      * @see DomainType
      */
+
     public void setDomain(String domain) {
         this.domain = domain;
     }
@@ -112,6 +116,7 @@ public class AllocateAddressResult implements Serializable, Cloneable {
      *         a VPC (<code>vpc</code>).
      * @see DomainType
      */
+
     public String getDomain() {
         return this.domain;
     }
@@ -131,6 +136,7 @@ public class AllocateAddressResult implements Serializable, Cloneable {
      *         chained together.
      * @see DomainType
      */
+
     public AllocateAddressResult withDomain(String domain) {
         setDomain(domain);
         return this;
@@ -151,6 +157,7 @@ public class AllocateAddressResult implements Serializable, Cloneable {
      *         chained together.
      * @see DomainType
      */
+
     public void setDomain(DomainType domain) {
         this.domain = domain.toString();
     }
@@ -170,6 +177,7 @@ public class AllocateAddressResult implements Serializable, Cloneable {
      *         chained together.
      * @see DomainType
      */
+
     public AllocateAddressResult withDomain(DomainType domain) {
         setDomain(domain);
         return this;
@@ -185,6 +193,7 @@ public class AllocateAddressResult implements Serializable, Cloneable {
      *        [EC2-VPC] The ID that AWS assigns to represent the allocation of
      *        the Elastic IP address for use with instances in a VPC.
      */
+
     public void setAllocationId(String allocationId) {
         this.allocationId = allocationId;
     }
@@ -198,6 +207,7 @@ public class AllocateAddressResult implements Serializable, Cloneable {
      * @return [EC2-VPC] The ID that AWS assigns to represent the allocation of
      *         the Elastic IP address for use with instances in a VPC.
      */
+
     public String getAllocationId() {
         return this.allocationId;
     }
@@ -214,6 +224,7 @@ public class AllocateAddressResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AllocateAddressResult withAllocationId(String allocationId) {
         setAllocationId(allocationId);
         return this;

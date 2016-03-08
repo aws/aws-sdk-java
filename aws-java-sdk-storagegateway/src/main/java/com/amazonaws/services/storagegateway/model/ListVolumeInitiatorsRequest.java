@@ -46,6 +46,7 @@ public class ListVolumeInitiatorsRequest extends AmazonWebServiceRequest
      *        <a>ListVolumes</a> operation to return a list of gateway volumes
      *        for the gateway.
      */
+
     public void setVolumeARN(String volumeARN) {
         this.volumeARN = volumeARN;
     }
@@ -60,6 +61,7 @@ public class ListVolumeInitiatorsRequest extends AmazonWebServiceRequest
      *         <a>ListVolumes</a> operation to return a list of gateway volumes
      *         for the gateway.
      */
+
     public String getVolumeARN() {
         return this.volumeARN;
     }
@@ -77,6 +79,7 @@ public class ListVolumeInitiatorsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListVolumeInitiatorsRequest withVolumeARN(String volumeARN) {
         setVolumeARN(volumeARN);
         return this;

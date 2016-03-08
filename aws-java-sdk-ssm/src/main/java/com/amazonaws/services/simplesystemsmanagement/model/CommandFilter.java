@@ -35,6 +35,7 @@ public class CommandFilter implements Serializable, Cloneable {
      *        The name of the filter. For example, requested date and time.
      * @see CommandFilterKey
      */
+
     public void setKey(String key) {
         this.key = key;
     }
@@ -45,6 +46,7 @@ public class CommandFilter implements Serializable, Cloneable {
      * @return The name of the filter. For example, requested date and time.
      * @see CommandFilterKey
      */
+
     public String getKey() {
         return this.key;
     }
@@ -58,6 +60,7 @@ public class CommandFilter implements Serializable, Cloneable {
      *         chained together.
      * @see CommandFilterKey
      */
+
     public CommandFilter withKey(String key) {
         setKey(key);
         return this;
@@ -72,6 +75,7 @@ public class CommandFilter implements Serializable, Cloneable {
      *         chained together.
      * @see CommandFilterKey
      */
+
     public void setKey(CommandFilterKey key) {
         this.key = key.toString();
     }
@@ -85,6 +89,7 @@ public class CommandFilter implements Serializable, Cloneable {
      *         chained together.
      * @see CommandFilterKey
      */
+
     public CommandFilter withKey(CommandFilterKey key) {
         setKey(key);
         return this;
@@ -96,6 +101,7 @@ public class CommandFilter implements Serializable, Cloneable {
      * @param value
      *        The filter value. For example: June 30, 2015.
      */
+
     public void setValue(String value) {
         this.value = value;
     }
@@ -105,6 +111,7 @@ public class CommandFilter implements Serializable, Cloneable {
      * 
      * @return The filter value. For example: June 30, 2015.
      */
+
     public String getValue() {
         return this.value;
     }
@@ -117,6 +124,7 @@ public class CommandFilter implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CommandFilter withValue(String value) {
         setValue(value);
         return this;

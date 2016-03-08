@@ -78,6 +78,7 @@ public class ImageAttribute implements Serializable, Cloneable {
      * @param imageId
      *        The ID of the AMI.
      */
+
     public void setImageId(String imageId) {
         this.imageId = imageId;
     }
@@ -89,6 +90,7 @@ public class ImageAttribute implements Serializable, Cloneable {
      * 
      * @return The ID of the AMI.
      */
+
     public String getImageId() {
         return this.imageId;
     }
@@ -103,6 +105,7 @@ public class ImageAttribute implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImageAttribute withImageId(String imageId) {
         setImageId(imageId);
         return this;
@@ -115,6 +118,7 @@ public class ImageAttribute implements Serializable, Cloneable {
      * 
      * @return One or more launch permissions.
      */
+
     public java.util.List<LaunchPermission> getLaunchPermissions() {
         if (launchPermissions == null) {
             launchPermissions = new com.amazonaws.internal.SdkInternalList<LaunchPermission>();
@@ -130,6 +134,7 @@ public class ImageAttribute implements Serializable, Cloneable {
      * @param launchPermissions
      *        One or more launch permissions.
      */
+
     public void setLaunchPermissions(
             java.util.Collection<LaunchPermission> launchPermissions) {
         if (launchPermissions == null) {
@@ -157,6 +162,7 @@ public class ImageAttribute implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImageAttribute withLaunchPermissions(
             LaunchPermission... launchPermissions) {
         if (this.launchPermissions == null) {
@@ -179,6 +185,7 @@ public class ImageAttribute implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImageAttribute withLaunchPermissions(
             java.util.Collection<LaunchPermission> launchPermissions) {
         setLaunchPermissions(launchPermissions);
@@ -192,6 +199,7 @@ public class ImageAttribute implements Serializable, Cloneable {
      * 
      * @return One or more product codes.
      */
+
     public java.util.List<ProductCode> getProductCodes() {
         if (productCodes == null) {
             productCodes = new com.amazonaws.internal.SdkInternalList<ProductCode>();
@@ -207,6 +215,7 @@ public class ImageAttribute implements Serializable, Cloneable {
      * @param productCodes
      *        One or more product codes.
      */
+
     public void setProductCodes(java.util.Collection<ProductCode> productCodes) {
         if (productCodes == null) {
             this.productCodes = null;
@@ -233,6 +242,7 @@ public class ImageAttribute implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImageAttribute withProductCodes(ProductCode... productCodes) {
         if (this.productCodes == null) {
             setProductCodes(new com.amazonaws.internal.SdkInternalList<ProductCode>(
@@ -254,6 +264,7 @@ public class ImageAttribute implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImageAttribute withProductCodes(
             java.util.Collection<ProductCode> productCodes) {
         setProductCodes(productCodes);
@@ -268,6 +279,7 @@ public class ImageAttribute implements Serializable, Cloneable {
      * @param kernelId
      *        The kernel ID.
      */
+
     public void setKernelId(String kernelId) {
         this.kernelId = kernelId;
     }
@@ -279,6 +291,7 @@ public class ImageAttribute implements Serializable, Cloneable {
      * 
      * @return The kernel ID.
      */
+
     public String getKernelId() {
         return this.kernelId;
     }
@@ -293,6 +306,7 @@ public class ImageAttribute implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImageAttribute withKernelId(String kernelId) {
         setKernelId(kernelId);
         return this;
@@ -306,6 +320,7 @@ public class ImageAttribute implements Serializable, Cloneable {
      * @param ramdiskId
      *        The RAM disk ID.
      */
+
     public void setRamdiskId(String ramdiskId) {
         this.ramdiskId = ramdiskId;
     }
@@ -317,6 +332,7 @@ public class ImageAttribute implements Serializable, Cloneable {
      * 
      * @return The RAM disk ID.
      */
+
     public String getRamdiskId() {
         return this.ramdiskId;
     }
@@ -331,6 +347,7 @@ public class ImageAttribute implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImageAttribute withRamdiskId(String ramdiskId) {
         setRamdiskId(ramdiskId);
         return this;
@@ -344,6 +361,7 @@ public class ImageAttribute implements Serializable, Cloneable {
      * @param description
      *        A description for the AMI.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -355,6 +373,7 @@ public class ImageAttribute implements Serializable, Cloneable {
      * 
      * @return A description for the AMI.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -369,6 +388,7 @@ public class ImageAttribute implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImageAttribute withDescription(String description) {
         setDescription(description);
         return this;
@@ -377,6 +397,7 @@ public class ImageAttribute implements Serializable, Cloneable {
     /**
      * @param sriovNetSupport
      */
+
     public void setSriovNetSupport(String sriovNetSupport) {
         this.sriovNetSupport = sriovNetSupport;
     }
@@ -384,6 +405,7 @@ public class ImageAttribute implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getSriovNetSupport() {
         return this.sriovNetSupport;
     }
@@ -393,6 +415,7 @@ public class ImageAttribute implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImageAttribute withSriovNetSupport(String sriovNetSupport) {
         setSriovNetSupport(sriovNetSupport);
         return this;
@@ -405,6 +428,7 @@ public class ImageAttribute implements Serializable, Cloneable {
      * 
      * @return One or more block device mapping entries.
      */
+
     public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
         if (blockDeviceMappings == null) {
             blockDeviceMappings = new com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>();
@@ -420,6 +444,7 @@ public class ImageAttribute implements Serializable, Cloneable {
      * @param blockDeviceMappings
      *        One or more block device mapping entries.
      */
+
     public void setBlockDeviceMappings(
             java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
         if (blockDeviceMappings == null) {
@@ -447,6 +472,7 @@ public class ImageAttribute implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImageAttribute withBlockDeviceMappings(
             BlockDeviceMapping... blockDeviceMappings) {
         if (this.blockDeviceMappings == null) {
@@ -469,6 +495,7 @@ public class ImageAttribute implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImageAttribute withBlockDeviceMappings(
             java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
         setBlockDeviceMappings(blockDeviceMappings);

@@ -50,6 +50,7 @@ public class ReservedInstanceLimitPrice implements Serializable, Cloneable {
      *        Used for Reserved Instance Marketplace offerings. Specifies the
      *        limit price on the total order (instanceCount * price).
      */
+
     public void setAmount(Double amount) {
         this.amount = amount;
     }
@@ -63,6 +64,7 @@ public class ReservedInstanceLimitPrice implements Serializable, Cloneable {
      * @return Used for Reserved Instance Marketplace offerings. Specifies the
      *         limit price on the total order (instanceCount * price).
      */
+
     public Double getAmount() {
         return this.amount;
     }
@@ -79,6 +81,7 @@ public class ReservedInstanceLimitPrice implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReservedInstanceLimitPrice withAmount(Double amount) {
         setAmount(amount);
         return this;
@@ -96,6 +99,7 @@ public class ReservedInstanceLimitPrice implements Serializable, Cloneable {
      *        <code>USD</code>.
      * @see CurrencyCodeValues
      */
+
     public void setCurrencyCode(String currencyCode) {
         this.currencyCode = currencyCode;
     }
@@ -111,6 +115,7 @@ public class ReservedInstanceLimitPrice implements Serializable, Cloneable {
      *         <code>USD</code>.
      * @see CurrencyCodeValues
      */
+
     public String getCurrencyCode() {
         return this.currencyCode;
     }
@@ -129,6 +134,7 @@ public class ReservedInstanceLimitPrice implements Serializable, Cloneable {
      *         chained together.
      * @see CurrencyCodeValues
      */
+
     public ReservedInstanceLimitPrice withCurrencyCode(String currencyCode) {
         setCurrencyCode(currencyCode);
         return this;
@@ -148,6 +154,7 @@ public class ReservedInstanceLimitPrice implements Serializable, Cloneable {
      *         chained together.
      * @see CurrencyCodeValues
      */
+
     public void setCurrencyCode(CurrencyCodeValues currencyCode) {
         this.currencyCode = currencyCode.toString();
     }
@@ -166,6 +173,7 @@ public class ReservedInstanceLimitPrice implements Serializable, Cloneable {
      *         chained together.
      * @see CurrencyCodeValues
      */
+
     public ReservedInstanceLimitPrice withCurrencyCode(
             CurrencyCodeValues currencyCode) {
         setCurrencyCode(currencyCode);

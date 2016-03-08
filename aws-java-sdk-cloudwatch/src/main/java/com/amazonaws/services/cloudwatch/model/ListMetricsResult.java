@@ -45,6 +45,7 @@ public class ListMetricsResult implements Serializable, Cloneable {
      * 
      * @return A list of metrics used to generate statistics for an AWS account.
      */
+
     public java.util.List<Metric> getMetrics() {
         if (metrics == null) {
             metrics = new com.amazonaws.internal.SdkInternalList<Metric>();
@@ -60,6 +61,7 @@ public class ListMetricsResult implements Serializable, Cloneable {
      * @param metrics
      *        A list of metrics used to generate statistics for an AWS account.
      */
+
     public void setMetrics(java.util.Collection<Metric> metrics) {
         if (metrics == null) {
             this.metrics = null;
@@ -86,6 +88,7 @@ public class ListMetricsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListMetricsResult withMetrics(Metric... metrics) {
         if (this.metrics == null) {
             setMetrics(new com.amazonaws.internal.SdkInternalList<Metric>(
@@ -107,6 +110,7 @@ public class ListMetricsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListMetricsResult withMetrics(java.util.Collection<Metric> metrics) {
         setMetrics(metrics);
         return this;
@@ -121,6 +125,7 @@ public class ListMetricsResult implements Serializable, Cloneable {
      *        A string that marks the start of the next batch of returned
      *        results.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -133,6 +138,7 @@ public class ListMetricsResult implements Serializable, Cloneable {
      * @return A string that marks the start of the next batch of returned
      *         results.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -148,6 +154,7 @@ public class ListMetricsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListMetricsResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

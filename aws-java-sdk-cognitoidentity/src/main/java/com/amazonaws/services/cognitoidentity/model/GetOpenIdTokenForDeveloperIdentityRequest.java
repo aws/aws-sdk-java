@@ -77,6 +77,7 @@ public class GetOpenIdTokenForDeveloperIdentityRequest extends
      * @param identityPoolId
      *        An identity pool ID in the format REGION:GUID.
      */
+
     public void setIdentityPoolId(String identityPoolId) {
         this.identityPoolId = identityPoolId;
     }
@@ -88,6 +89,7 @@ public class GetOpenIdTokenForDeveloperIdentityRequest extends
      * 
      * @return An identity pool ID in the format REGION:GUID.
      */
+
     public String getIdentityPoolId() {
         return this.identityPoolId;
     }
@@ -102,6 +104,7 @@ public class GetOpenIdTokenForDeveloperIdentityRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetOpenIdTokenForDeveloperIdentityRequest withIdentityPoolId(
             String identityPoolId) {
         setIdentityPoolId(identityPoolId);
@@ -116,6 +119,7 @@ public class GetOpenIdTokenForDeveloperIdentityRequest extends
      * @param identityId
      *        A unique identifier in the format REGION:GUID.
      */
+
     public void setIdentityId(String identityId) {
         this.identityId = identityId;
     }
@@ -127,6 +131,7 @@ public class GetOpenIdTokenForDeveloperIdentityRequest extends
      * 
      * @return A unique identifier in the format REGION:GUID.
      */
+
     public String getIdentityId() {
         return this.identityId;
     }
@@ -141,6 +146,7 @@ public class GetOpenIdTokenForDeveloperIdentityRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetOpenIdTokenForDeveloperIdentityRequest withIdentityId(
             String identityId) {
         setIdentityId(identityId);
@@ -173,6 +179,7 @@ public class GetOpenIdTokenForDeveloperIdentityRequest extends
      *         identifies a user. When you create an identity pool, you can
      *         specify the supported logins.
      */
+
     public java.util.Map<String, String> getLogins() {
         return logins;
     }
@@ -204,6 +211,7 @@ public class GetOpenIdTokenForDeveloperIdentityRequest extends
      *        user. When you create an identity pool, you can specify the
      *        supported logins.
      */
+
     public void setLogins(java.util.Map<String, String> logins) {
         this.logins = logins;
     }
@@ -237,6 +245,7 @@ public class GetOpenIdTokenForDeveloperIdentityRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetOpenIdTokenForDeveloperIdentityRequest withLogins(
             java.util.Map<String, String> logins) {
         setLogins(logins);
@@ -259,6 +268,7 @@ public class GetOpenIdTokenForDeveloperIdentityRequest extends
      * Removes all the entries added into Logins. &lt;p> Returns a reference to
      * this object so that method calls can be chained together.
      */
+
     public GetOpenIdTokenForDeveloperIdentityRequest clearLoginsEntries() {
         this.logins = null;
         return this;
@@ -288,6 +298,7 @@ public class GetOpenIdTokenForDeveloperIdentityRequest extends
      *        significant security implications: an attacker could use a leaked
      *        token to access your AWS resources for the token's duration.
      */
+
     public void setTokenDuration(Long tokenDuration) {
         this.tokenDuration = tokenDuration;
     }
@@ -315,6 +326,7 @@ public class GetOpenIdTokenForDeveloperIdentityRequest extends
      *         significant security implications: an attacker could use a leaked
      *         token to access your AWS resources for the token's duration.
      */
+
     public Long getTokenDuration() {
         return this.tokenDuration;
     }
@@ -345,6 +357,7 @@ public class GetOpenIdTokenForDeveloperIdentityRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetOpenIdTokenForDeveloperIdentityRequest withTokenDuration(
             Long tokenDuration) {
         setTokenDuration(tokenDuration);

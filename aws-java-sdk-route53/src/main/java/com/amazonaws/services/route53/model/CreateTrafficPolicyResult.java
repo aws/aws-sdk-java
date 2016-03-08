@@ -43,6 +43,7 @@ public class CreateTrafficPolicyResult implements Serializable, Cloneable {
      * @param trafficPolicy
      *        A complex type that contains settings for the new traffic policy.
      */
+
     public void setTrafficPolicy(TrafficPolicy trafficPolicy) {
         this.trafficPolicy = trafficPolicy;
     }
@@ -54,6 +55,7 @@ public class CreateTrafficPolicyResult implements Serializable, Cloneable {
      * 
      * @return A complex type that contains settings for the new traffic policy.
      */
+
     public TrafficPolicy getTrafficPolicy() {
         return this.trafficPolicy;
     }
@@ -68,6 +70,7 @@ public class CreateTrafficPolicyResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateTrafficPolicyResult withTrafficPolicy(
             TrafficPolicy trafficPolicy) {
         setTrafficPolicy(trafficPolicy);
@@ -77,6 +80,7 @@ public class CreateTrafficPolicyResult implements Serializable, Cloneable {
     /**
      * @param location
      */
+
     public void setLocation(String location) {
         this.location = location;
     }
@@ -84,6 +88,7 @@ public class CreateTrafficPolicyResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getLocation() {
         return this.location;
     }
@@ -93,6 +98,7 @@ public class CreateTrafficPolicyResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateTrafficPolicyResult withLocation(String location) {
         setLocation(location);
         return this;

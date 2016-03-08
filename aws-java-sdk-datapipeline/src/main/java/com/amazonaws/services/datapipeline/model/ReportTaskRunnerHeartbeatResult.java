@@ -40,6 +40,7 @@ public class ReportTaskRunnerHeartbeatResult implements Serializable, Cloneable 
      * @param terminate
      *        Indicates whether the calling task runner should terminate.
      */
+
     public void setTerminate(Boolean terminate) {
         this.terminate = terminate;
     }
@@ -51,6 +52,7 @@ public class ReportTaskRunnerHeartbeatResult implements Serializable, Cloneable 
      * 
      * @return Indicates whether the calling task runner should terminate.
      */
+
     public Boolean getTerminate() {
         return this.terminate;
     }
@@ -65,6 +67,7 @@ public class ReportTaskRunnerHeartbeatResult implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReportTaskRunnerHeartbeatResult withTerminate(Boolean terminate) {
         setTerminate(terminate);
         return this;
@@ -77,6 +80,7 @@ public class ReportTaskRunnerHeartbeatResult implements Serializable, Cloneable 
      * 
      * @return Indicates whether the calling task runner should terminate.
      */
+
     public Boolean isTerminate() {
         return this.terminate;
     }

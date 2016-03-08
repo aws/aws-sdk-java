@@ -46,6 +46,7 @@ public class ParameterValue implements Serializable, Cloneable {
      * @param id
      *        The ID of the parameter value.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -57,6 +58,7 @@ public class ParameterValue implements Serializable, Cloneable {
      * 
      * @return The ID of the parameter value.
      */
+
     public String getId() {
         return this.id;
     }
@@ -71,6 +73,7 @@ public class ParameterValue implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ParameterValue withId(String id) {
         setId(id);
         return this;
@@ -84,6 +87,7 @@ public class ParameterValue implements Serializable, Cloneable {
      * @param stringValue
      *        The field value, expressed as a String.
      */
+
     public void setStringValue(String stringValue) {
         this.stringValue = stringValue;
     }
@@ -95,6 +99,7 @@ public class ParameterValue implements Serializable, Cloneable {
      * 
      * @return The field value, expressed as a String.
      */
+
     public String getStringValue() {
         return this.stringValue;
     }
@@ -109,6 +114,7 @@ public class ParameterValue implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ParameterValue withStringValue(String stringValue) {
         setStringValue(stringValue);
         return this;

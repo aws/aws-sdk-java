@@ -71,6 +71,7 @@ public class TopicRule implements Serializable, Cloneable {
      * @param ruleName
      *        The name of the rule.
      */
+
     public void setRuleName(String ruleName) {
         this.ruleName = ruleName;
     }
@@ -82,6 +83,7 @@ public class TopicRule implements Serializable, Cloneable {
      * 
      * @return The name of the rule.
      */
+
     public String getRuleName() {
         return this.ruleName;
     }
@@ -96,6 +98,7 @@ public class TopicRule implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TopicRule withRuleName(String ruleName) {
         setRuleName(ruleName);
         return this;
@@ -112,6 +115,7 @@ public class TopicRule implements Serializable, Cloneable {
      *        with multiple lines, be sure to escape the newline characters
      *        properly.
      */
+
     public void setSql(String sql) {
         this.sql = sql;
     }
@@ -126,6 +130,7 @@ public class TopicRule implements Serializable, Cloneable {
      *         with multiple lines, be sure to escape the newline characters
      *         properly.
      */
+
     public String getSql() {
         return this.sql;
     }
@@ -143,6 +148,7 @@ public class TopicRule implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TopicRule withSql(String sql) {
         setSql(sql);
         return this;
@@ -156,6 +162,7 @@ public class TopicRule implements Serializable, Cloneable {
      * @param description
      *        The description of the rule.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -167,6 +174,7 @@ public class TopicRule implements Serializable, Cloneable {
      * 
      * @return The description of the rule.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -181,6 +189,7 @@ public class TopicRule implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TopicRule withDescription(String description) {
         setDescription(description);
         return this;
@@ -194,6 +203,7 @@ public class TopicRule implements Serializable, Cloneable {
      * @param createdAt
      *        The date and time the rule was created.
      */
+
     public void setCreatedAt(java.util.Date createdAt) {
         this.createdAt = createdAt;
     }
@@ -205,6 +215,7 @@ public class TopicRule implements Serializable, Cloneable {
      * 
      * @return The date and time the rule was created.
      */
+
     public java.util.Date getCreatedAt() {
         return this.createdAt;
     }
@@ -219,6 +230,7 @@ public class TopicRule implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TopicRule withCreatedAt(java.util.Date createdAt) {
         setCreatedAt(createdAt);
         return this;
@@ -231,6 +243,7 @@ public class TopicRule implements Serializable, Cloneable {
      * 
      * @return The actions associated with the rule.
      */
+
     public java.util.List<Action> getActions() {
         return actions;
     }
@@ -243,6 +256,7 @@ public class TopicRule implements Serializable, Cloneable {
      * @param actions
      *        The actions associated with the rule.
      */
+
     public void setActions(java.util.Collection<Action> actions) {
         if (actions == null) {
             this.actions = null;
@@ -268,6 +282,7 @@ public class TopicRule implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TopicRule withActions(Action... actions) {
         if (this.actions == null) {
             setActions(new java.util.ArrayList<Action>(actions.length));
@@ -288,6 +303,7 @@ public class TopicRule implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TopicRule withActions(java.util.Collection<Action> actions) {
         setActions(actions);
         return this;
@@ -301,6 +317,7 @@ public class TopicRule implements Serializable, Cloneable {
      * @param ruleDisabled
      *        Specifies whether the rule is disabled.
      */
+
     public void setRuleDisabled(Boolean ruleDisabled) {
         this.ruleDisabled = ruleDisabled;
     }
@@ -312,6 +329,7 @@ public class TopicRule implements Serializable, Cloneable {
      * 
      * @return Specifies whether the rule is disabled.
      */
+
     public Boolean getRuleDisabled() {
         return this.ruleDisabled;
     }
@@ -326,6 +344,7 @@ public class TopicRule implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TopicRule withRuleDisabled(Boolean ruleDisabled) {
         setRuleDisabled(ruleDisabled);
         return this;
@@ -338,6 +357,7 @@ public class TopicRule implements Serializable, Cloneable {
      * 
      * @return Specifies whether the rule is disabled.
      */
+
     public Boolean isRuleDisabled() {
         return this.ruleDisabled;
     }

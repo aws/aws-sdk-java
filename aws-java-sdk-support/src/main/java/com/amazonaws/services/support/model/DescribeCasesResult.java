@@ -46,6 +46,7 @@ public class DescribeCasesResult implements Serializable, Cloneable {
      * 
      * @return The details for the cases that match the request.
      */
+
     public java.util.List<CaseDetails> getCases() {
         if (cases == null) {
             cases = new com.amazonaws.internal.SdkInternalList<CaseDetails>();
@@ -61,6 +62,7 @@ public class DescribeCasesResult implements Serializable, Cloneable {
      * @param cases
      *        The details for the cases that match the request.
      */
+
     public void setCases(java.util.Collection<CaseDetails> cases) {
         if (cases == null) {
             this.cases = null;
@@ -87,6 +89,7 @@ public class DescribeCasesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeCasesResult withCases(CaseDetails... cases) {
         if (this.cases == null) {
             setCases(new com.amazonaws.internal.SdkInternalList<CaseDetails>(
@@ -108,6 +111,7 @@ public class DescribeCasesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeCasesResult withCases(java.util.Collection<CaseDetails> cases) {
         setCases(cases);
         return this;
@@ -121,6 +125,7 @@ public class DescribeCasesResult implements Serializable, Cloneable {
      * @param nextToken
      *        A resumption point for pagination.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -132,6 +137,7 @@ public class DescribeCasesResult implements Serializable, Cloneable {
      * 
      * @return A resumption point for pagination.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -146,6 +152,7 @@ public class DescribeCasesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeCasesResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

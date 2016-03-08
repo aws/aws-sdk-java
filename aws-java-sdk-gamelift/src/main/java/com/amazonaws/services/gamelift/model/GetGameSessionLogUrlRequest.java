@@ -45,6 +45,7 @@ public class GetGameSessionLogUrlRequest extends AmazonWebServiceRequest
      *        Unique identifier for a game session. Specify the game session you
      *        want to get logs for.
      */
+
     public void setGameSessionId(String gameSessionId) {
         this.gameSessionId = gameSessionId;
     }
@@ -58,6 +59,7 @@ public class GetGameSessionLogUrlRequest extends AmazonWebServiceRequest
      * @return Unique identifier for a game session. Specify the game session
      *         you want to get logs for.
      */
+
     public String getGameSessionId() {
         return this.gameSessionId;
     }
@@ -74,6 +76,7 @@ public class GetGameSessionLogUrlRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetGameSessionLogUrlRequest withGameSessionId(String gameSessionId) {
         setGameSessionId(gameSessionId);
         return this;

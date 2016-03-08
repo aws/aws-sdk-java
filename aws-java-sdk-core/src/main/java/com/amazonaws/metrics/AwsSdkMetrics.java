@@ -859,6 +859,7 @@ public enum AwsSdkMetrics {
 //            metricTypes.add(Field.RequestSigningTime);
 //            metricTypes.add(Field.ResponseProcessingTime);
             metricTypes.add(Field.RetryCount);
+            metricTypes.add(Field.RetryCapacityConsumed);
             metricTypes.add(Field.HttpClientSendRequestTime);
             metricTypes.add(Field.HttpClientReceiveResponseTime);
             metricTypes.add(Field.HttpSocketReadTime);

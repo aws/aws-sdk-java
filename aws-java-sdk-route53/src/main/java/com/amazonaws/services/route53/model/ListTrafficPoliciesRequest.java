@@ -93,6 +93,7 @@ public class ListTrafficPoliciesRequest extends AmazonWebServiceRequest
      *        <p>
      *        Policies are listed in the order in which they were created.
      */
+
     public void setTrafficPolicyIdMarker(String trafficPolicyIdMarker) {
         this.trafficPolicyIdMarker = trafficPolicyIdMarker;
     }
@@ -130,6 +131,7 @@ public class ListTrafficPoliciesRequest extends AmazonWebServiceRequest
      *         <p>
      *         Policies are listed in the order in which they were created.
      */
+
     public String getTrafficPolicyIdMarker() {
         return this.trafficPolicyIdMarker;
     }
@@ -170,6 +172,7 @@ public class ListTrafficPoliciesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTrafficPoliciesRequest withTrafficPolicyIdMarker(
             String trafficPolicyIdMarker) {
         setTrafficPolicyIdMarker(trafficPolicyIdMarker);
@@ -196,6 +199,7 @@ public class ListTrafficPoliciesRequest extends AmazonWebServiceRequest
      *        traffic policy in the next group of <code>MaxItems</code> traffic
      *        policies.
      */
+
     public void setMaxItems(String maxItems) {
         this.maxItems = maxItems;
     }
@@ -219,6 +223,7 @@ public class ListTrafficPoliciesRequest extends AmazonWebServiceRequest
      *         traffic policy in the next group of <code>MaxItems</code> traffic
      *         policies.
      */
+
     public String getMaxItems() {
         return this.maxItems;
     }
@@ -245,6 +250,7 @@ public class ListTrafficPoliciesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTrafficPoliciesRequest withMaxItems(String maxItems) {
         setMaxItems(maxItems);
         return this;

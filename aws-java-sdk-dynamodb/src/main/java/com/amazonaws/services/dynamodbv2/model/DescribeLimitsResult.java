@@ -67,6 +67,7 @@ public class DescribeLimitsResult implements Serializable, Cloneable {
      *        The maximum total read capacity units that your account allows you
      *        to provision across all of your tables in this region.
      */
+
     public void setAccountMaxReadCapacityUnits(Long accountMaxReadCapacityUnits) {
         this.accountMaxReadCapacityUnits = accountMaxReadCapacityUnits;
     }
@@ -80,6 +81,7 @@ public class DescribeLimitsResult implements Serializable, Cloneable {
      * @return The maximum total read capacity units that your account allows
      *         you to provision across all of your tables in this region.
      */
+
     public Long getAccountMaxReadCapacityUnits() {
         return this.accountMaxReadCapacityUnits;
     }
@@ -96,6 +98,7 @@ public class DescribeLimitsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLimitsResult withAccountMaxReadCapacityUnits(
             Long accountMaxReadCapacityUnits) {
         setAccountMaxReadCapacityUnits(accountMaxReadCapacityUnits);
@@ -112,6 +115,7 @@ public class DescribeLimitsResult implements Serializable, Cloneable {
      *        The maximum total write capacity units that your account allows
      *        you to provision across all of your tables in this region.
      */
+
     public void setAccountMaxWriteCapacityUnits(
             Long accountMaxWriteCapacityUnits) {
         this.accountMaxWriteCapacityUnits = accountMaxWriteCapacityUnits;
@@ -126,6 +130,7 @@ public class DescribeLimitsResult implements Serializable, Cloneable {
      * @return The maximum total write capacity units that your account allows
      *         you to provision across all of your tables in this region.
      */
+
     public Long getAccountMaxWriteCapacityUnits() {
         return this.accountMaxWriteCapacityUnits;
     }
@@ -142,6 +147,7 @@ public class DescribeLimitsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLimitsResult withAccountMaxWriteCapacityUnits(
             Long accountMaxWriteCapacityUnits) {
         setAccountMaxWriteCapacityUnits(accountMaxWriteCapacityUnits);
@@ -161,6 +167,7 @@ public class DescribeLimitsResult implements Serializable, Cloneable {
      *        including the read capacity units provisioned for its global
      *        secondary indexes (GSIs).
      */
+
     public void setTableMaxReadCapacityUnits(Long tableMaxReadCapacityUnits) {
         this.tableMaxReadCapacityUnits = tableMaxReadCapacityUnits;
     }
@@ -177,6 +184,7 @@ public class DescribeLimitsResult implements Serializable, Cloneable {
      *         including the read capacity units provisioned for its global
      *         secondary indexes (GSIs).
      */
+
     public Long getTableMaxReadCapacityUnits() {
         return this.tableMaxReadCapacityUnits;
     }
@@ -196,6 +204,7 @@ public class DescribeLimitsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLimitsResult withTableMaxReadCapacityUnits(
             Long tableMaxReadCapacityUnits) {
         setTableMaxReadCapacityUnits(tableMaxReadCapacityUnits);
@@ -216,6 +225,7 @@ public class DescribeLimitsResult implements Serializable, Cloneable {
      *        including the write capacity units provisioned for its global
      *        secondary indexes (GSIs).
      */
+
     public void setTableMaxWriteCapacityUnits(Long tableMaxWriteCapacityUnits) {
         this.tableMaxWriteCapacityUnits = tableMaxWriteCapacityUnits;
     }
@@ -233,6 +243,7 @@ public class DescribeLimitsResult implements Serializable, Cloneable {
      *         including the write capacity units provisioned for its global
      *         secondary indexes (GSIs).
      */
+
     public Long getTableMaxWriteCapacityUnits() {
         return this.tableMaxWriteCapacityUnits;
     }
@@ -253,6 +264,7 @@ public class DescribeLimitsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLimitsResult withTableMaxWriteCapacityUnits(
             Long tableMaxWriteCapacityUnits) {
         setTableMaxWriteCapacityUnits(tableMaxWriteCapacityUnits);

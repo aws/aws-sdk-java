@@ -56,6 +56,7 @@ public class RecordLifecycleActionHeartbeatRequest extends
      * @param lifecycleHookName
      *        The name of the lifecycle hook.
      */
+
     public void setLifecycleHookName(String lifecycleHookName) {
         this.lifecycleHookName = lifecycleHookName;
     }
@@ -67,6 +68,7 @@ public class RecordLifecycleActionHeartbeatRequest extends
      * 
      * @return The name of the lifecycle hook.
      */
+
     public String getLifecycleHookName() {
         return this.lifecycleHookName;
     }
@@ -81,6 +83,7 @@ public class RecordLifecycleActionHeartbeatRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RecordLifecycleActionHeartbeatRequest withLifecycleHookName(
             String lifecycleHookName) {
         setLifecycleHookName(lifecycleHookName);
@@ -95,6 +98,7 @@ public class RecordLifecycleActionHeartbeatRequest extends
      * @param autoScalingGroupName
      *        The name of the Auto Scaling group for the hook.
      */
+
     public void setAutoScalingGroupName(String autoScalingGroupName) {
         this.autoScalingGroupName = autoScalingGroupName;
     }
@@ -106,6 +110,7 @@ public class RecordLifecycleActionHeartbeatRequest extends
      * 
      * @return The name of the Auto Scaling group for the hook.
      */
+
     public String getAutoScalingGroupName() {
         return this.autoScalingGroupName;
     }
@@ -120,6 +125,7 @@ public class RecordLifecycleActionHeartbeatRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RecordLifecycleActionHeartbeatRequest withAutoScalingGroupName(
             String autoScalingGroupName) {
         setAutoScalingGroupName(autoScalingGroupName);
@@ -139,6 +145,7 @@ public class RecordLifecycleActionHeartbeatRequest extends
      *        notification target you specified when you created the lifecycle
      *        hook.
      */
+
     public void setLifecycleActionToken(String lifecycleActionToken) {
         this.lifecycleActionToken = lifecycleActionToken;
     }
@@ -155,6 +162,7 @@ public class RecordLifecycleActionHeartbeatRequest extends
      *         notification target you specified when you created the lifecycle
      *         hook.
      */
+
     public String getLifecycleActionToken() {
         return this.lifecycleActionToken;
     }
@@ -174,6 +182,7 @@ public class RecordLifecycleActionHeartbeatRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RecordLifecycleActionHeartbeatRequest withLifecycleActionToken(
             String lifecycleActionToken) {
         setLifecycleActionToken(lifecycleActionToken);
@@ -183,6 +192,7 @@ public class RecordLifecycleActionHeartbeatRequest extends
     /**
      * @param instanceId
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -190,6 +200,7 @@ public class RecordLifecycleActionHeartbeatRequest extends
     /**
      * @return
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
@@ -199,6 +210,7 @@ public class RecordLifecycleActionHeartbeatRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RecordLifecycleActionHeartbeatRequest withInstanceId(
             String instanceId) {
         setInstanceId(instanceId);

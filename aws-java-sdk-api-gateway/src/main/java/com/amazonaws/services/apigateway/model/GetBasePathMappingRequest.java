@@ -52,6 +52,7 @@ public class GetBasePathMappingRequest extends AmazonWebServiceRequest
      *        The domain name of the <a>BasePathMapping</a> resource to be
      *        described.
      */
+
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
@@ -64,6 +65,7 @@ public class GetBasePathMappingRequest extends AmazonWebServiceRequest
      * @return The domain name of the <a>BasePathMapping</a> resource to be
      *         described.
      */
+
     public String getDomainName() {
         return this.domainName;
     }
@@ -79,6 +81,7 @@ public class GetBasePathMappingRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetBasePathMappingRequest withDomainName(String domainName) {
         setDomainName(domainName);
         return this;
@@ -99,6 +102,7 @@ public class GetBasePathMappingRequest extends AmazonWebServiceRequest
      *        not want callers to specify any base path name after the domain
      *        name.
      */
+
     public void setBasePath(String basePath) {
         this.basePath = basePath;
     }
@@ -117,6 +121,7 @@ public class GetBasePathMappingRequest extends AmazonWebServiceRequest
      *         do not want callers to specify any base path name after the
      *         domain name.
      */
+
     public String getBasePath() {
         return this.basePath;
     }
@@ -138,6 +143,7 @@ public class GetBasePathMappingRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetBasePathMappingRequest withBasePath(String basePath) {
         setBasePath(basePath);
         return this;

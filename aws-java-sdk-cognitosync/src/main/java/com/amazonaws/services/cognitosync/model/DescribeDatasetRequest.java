@@ -54,6 +54,7 @@ public class DescribeDatasetRequest extends AmazonWebServiceRequest implements
      *        us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
      *        Cognito. GUID generation is unique within a region.
      */
+
     public void setIdentityPoolId(String identityPoolId) {
         this.identityPoolId = identityPoolId;
     }
@@ -67,6 +68,7 @@ public class DescribeDatasetRequest extends AmazonWebServiceRequest implements
      *         us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
      *         Cognito. GUID generation is unique within a region.
      */
+
     public String getIdentityPoolId() {
         return this.identityPoolId;
     }
@@ -83,6 +85,7 @@ public class DescribeDatasetRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeDatasetRequest withIdentityPoolId(String identityPoolId) {
         setIdentityPoolId(identityPoolId);
         return this;
@@ -98,6 +101,7 @@ public class DescribeDatasetRequest extends AmazonWebServiceRequest implements
      *        us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
      *        Cognito. GUID generation is unique within a region.
      */
+
     public void setIdentityId(String identityId) {
         this.identityId = identityId;
     }
@@ -111,6 +115,7 @@ public class DescribeDatasetRequest extends AmazonWebServiceRequest implements
      *         us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
      *         Cognito. GUID generation is unique within a region.
      */
+
     public String getIdentityId() {
         return this.identityId;
     }
@@ -127,6 +132,7 @@ public class DescribeDatasetRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeDatasetRequest withIdentityId(String identityId) {
         setIdentityId(identityId);
         return this;
@@ -140,6 +146,7 @@ public class DescribeDatasetRequest extends AmazonWebServiceRequest implements
      *        A string of up to 128 characters. Allowed characters are a-z, A-Z,
      *        0-9, '_' (underscore), '-' (dash), and '.' (dot).
      */
+
     public void setDatasetName(String datasetName) {
         this.datasetName = datasetName;
     }
@@ -151,6 +158,7 @@ public class DescribeDatasetRequest extends AmazonWebServiceRequest implements
      * @return A string of up to 128 characters. Allowed characters are a-z,
      *         A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
      */
+
     public String getDatasetName() {
         return this.datasetName;
     }
@@ -165,6 +173,7 @@ public class DescribeDatasetRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeDatasetRequest withDatasetName(String datasetName) {
         setDatasetName(datasetName);
         return this;

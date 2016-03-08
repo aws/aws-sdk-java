@@ -42,6 +42,7 @@ public class GetQueueUrlResult implements Serializable, Cloneable {
      * @param queueUrl
      *        The URL for the queue.
      */
+
     public void setQueueUrl(String queueUrl) {
         this.queueUrl = queueUrl;
     }
@@ -53,6 +54,7 @@ public class GetQueueUrlResult implements Serializable, Cloneable {
      * 
      * @return The URL for the queue.
      */
+
     public String getQueueUrl() {
         return this.queueUrl;
     }
@@ -67,6 +69,7 @@ public class GetQueueUrlResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetQueueUrlResult withQueueUrl(String queueUrl) {
         setQueueUrl(queueUrl);
         return this;

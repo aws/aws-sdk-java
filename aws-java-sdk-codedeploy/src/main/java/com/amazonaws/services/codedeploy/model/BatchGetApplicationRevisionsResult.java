@@ -54,6 +54,7 @@ public class BatchGetApplicationRevisionsResult implements Serializable,
      * @param applicationName
      *        The name of the application that corresponds to the revisions.
      */
+
     public void setApplicationName(String applicationName) {
         this.applicationName = applicationName;
     }
@@ -65,6 +66,7 @@ public class BatchGetApplicationRevisionsResult implements Serializable,
      * 
      * @return The name of the application that corresponds to the revisions.
      */
+
     public String getApplicationName() {
         return this.applicationName;
     }
@@ -79,6 +81,7 @@ public class BatchGetApplicationRevisionsResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchGetApplicationRevisionsResult withApplicationName(
             String applicationName) {
         setApplicationName(applicationName);
@@ -94,6 +97,7 @@ public class BatchGetApplicationRevisionsResult implements Serializable,
      *        Information about errors that may have occurred during the API
      *        call.
      */
+
     public void setErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;
     }
@@ -106,6 +110,7 @@ public class BatchGetApplicationRevisionsResult implements Serializable,
      * @return Information about errors that may have occurred during the API
      *         call.
      */
+
     public String getErrorMessage() {
         return this.errorMessage;
     }
@@ -121,6 +126,7 @@ public class BatchGetApplicationRevisionsResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchGetApplicationRevisionsResult withErrorMessage(
             String errorMessage) {
         setErrorMessage(errorMessage);
@@ -136,6 +142,7 @@ public class BatchGetApplicationRevisionsResult implements Serializable,
      * @return Additional information about the revisions, including the
      *         revision type and location.
      */
+
     public java.util.List<RevisionInfo> getRevisions() {
         if (revisions == null) {
             revisions = new com.amazonaws.internal.SdkInternalList<RevisionInfo>();
@@ -153,6 +160,7 @@ public class BatchGetApplicationRevisionsResult implements Serializable,
      *        Additional information about the revisions, including the revision
      *        type and location.
      */
+
     public void setRevisions(java.util.Collection<RevisionInfo> revisions) {
         if (revisions == null) {
             this.revisions = null;
@@ -181,6 +189,7 @@ public class BatchGetApplicationRevisionsResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchGetApplicationRevisionsResult withRevisions(
             RevisionInfo... revisions) {
         if (this.revisions == null) {
@@ -205,6 +214,7 @@ public class BatchGetApplicationRevisionsResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchGetApplicationRevisionsResult withRevisions(
             java.util.Collection<RevisionInfo> revisions) {
         setRevisions(revisions);

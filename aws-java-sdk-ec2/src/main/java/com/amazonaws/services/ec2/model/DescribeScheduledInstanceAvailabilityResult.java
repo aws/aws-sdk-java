@@ -50,6 +50,7 @@ public class DescribeScheduledInstanceAvailabilityResult implements
      *        The token required to retrieve the next set of results. This value
      *        is <code>null</code> when there are no more results to return.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -64,6 +65,7 @@ public class DescribeScheduledInstanceAvailabilityResult implements
      *         value is <code>null</code> when there are no more results to
      *         return.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -80,6 +82,7 @@ public class DescribeScheduledInstanceAvailabilityResult implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeScheduledInstanceAvailabilityResult withNextToken(
             String nextToken) {
         setNextToken(nextToken);
@@ -93,6 +96,7 @@ public class DescribeScheduledInstanceAvailabilityResult implements
      * 
      * @return Information about the available Scheduled Instances.
      */
+
     public java.util.List<ScheduledInstanceAvailability> getScheduledInstanceAvailabilitySet() {
         if (scheduledInstanceAvailabilitySet == null) {
             scheduledInstanceAvailabilitySet = new com.amazonaws.internal.SdkInternalList<ScheduledInstanceAvailability>();
@@ -108,6 +112,7 @@ public class DescribeScheduledInstanceAvailabilityResult implements
      * @param scheduledInstanceAvailabilitySet
      *        Information about the available Scheduled Instances.
      */
+
     public void setScheduledInstanceAvailabilitySet(
             java.util.Collection<ScheduledInstanceAvailability> scheduledInstanceAvailabilitySet) {
         if (scheduledInstanceAvailabilitySet == null) {
@@ -136,6 +141,7 @@ public class DescribeScheduledInstanceAvailabilityResult implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeScheduledInstanceAvailabilityResult withScheduledInstanceAvailabilitySet(
             ScheduledInstanceAvailability... scheduledInstanceAvailabilitySet) {
         if (this.scheduledInstanceAvailabilitySet == null) {
@@ -158,6 +164,7 @@ public class DescribeScheduledInstanceAvailabilityResult implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeScheduledInstanceAvailabilityResult withScheduledInstanceAvailabilitySet(
             java.util.Collection<ScheduledInstanceAvailability> scheduledInstanceAvailabilitySet) {
         setScheduledInstanceAvailabilitySet(scheduledInstanceAvailabilitySet);

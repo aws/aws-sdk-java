@@ -60,6 +60,7 @@ public class DeleteLogGroupRequest extends AmazonWebServiceRequest implements
      * @param logGroupName
      *        The name of the log group to delete.
      */
+
     public void setLogGroupName(String logGroupName) {
         this.logGroupName = logGroupName;
     }
@@ -71,6 +72,7 @@ public class DeleteLogGroupRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the log group to delete.
      */
+
     public String getLogGroupName() {
         return this.logGroupName;
     }
@@ -85,6 +87,7 @@ public class DeleteLogGroupRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteLogGroupRequest withLogGroupName(String logGroupName) {
         setLogGroupName(logGroupName);
         return this;

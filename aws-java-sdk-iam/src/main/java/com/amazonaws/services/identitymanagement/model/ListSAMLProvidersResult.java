@@ -39,6 +39,7 @@ public class ListSAMLProvidersResult implements Serializable, Cloneable {
      * 
      * @return The list of SAML providers for this account.
      */
+
     public java.util.List<SAMLProviderListEntry> getSAMLProviderList() {
         if (sAMLProviderList == null) {
             sAMLProviderList = new com.amazonaws.internal.SdkInternalList<SAMLProviderListEntry>();
@@ -54,6 +55,7 @@ public class ListSAMLProvidersResult implements Serializable, Cloneable {
      * @param sAMLProviderList
      *        The list of SAML providers for this account.
      */
+
     public void setSAMLProviderList(
             java.util.Collection<SAMLProviderListEntry> sAMLProviderList) {
         if (sAMLProviderList == null) {
@@ -81,6 +83,7 @@ public class ListSAMLProvidersResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListSAMLProvidersResult withSAMLProviderList(
             SAMLProviderListEntry... sAMLProviderList) {
         if (this.sAMLProviderList == null) {
@@ -103,6 +106,7 @@ public class ListSAMLProvidersResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListSAMLProvidersResult withSAMLProviderList(
             java.util.Collection<SAMLProviderListEntry> sAMLProviderList) {
         setSAMLProviderList(sAMLProviderList);

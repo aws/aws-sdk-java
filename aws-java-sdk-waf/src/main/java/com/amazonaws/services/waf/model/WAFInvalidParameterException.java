@@ -69,6 +69,7 @@ public class WAFInvalidParameterException extends AmazonServiceException {
      * @param field
      * @see ParameterExceptionField
      */
+
     public void setField(String field) {
         this.field = field;
     }
@@ -77,6 +78,7 @@ public class WAFInvalidParameterException extends AmazonServiceException {
      * @return
      * @see ParameterExceptionField
      */
+
     public String getField() {
         return this.field;
     }
@@ -87,6 +89,7 @@ public class WAFInvalidParameterException extends AmazonServiceException {
      *         chained together.
      * @see ParameterExceptionField
      */
+
     public WAFInvalidParameterException withField(String field) {
         setField(field);
         return this;
@@ -98,6 +101,7 @@ public class WAFInvalidParameterException extends AmazonServiceException {
      *         chained together.
      * @see ParameterExceptionField
      */
+
     public void setField(ParameterExceptionField field) {
         this.field = field.toString();
     }
@@ -108,6 +112,7 @@ public class WAFInvalidParameterException extends AmazonServiceException {
      *         chained together.
      * @see ParameterExceptionField
      */
+
     public WAFInvalidParameterException withField(ParameterExceptionField field) {
         setField(field);
         return this;
@@ -116,6 +121,7 @@ public class WAFInvalidParameterException extends AmazonServiceException {
     /**
      * @param parameter
      */
+
     public void setParameter(String parameter) {
         this.parameter = parameter;
     }
@@ -123,6 +129,7 @@ public class WAFInvalidParameterException extends AmazonServiceException {
     /**
      * @return
      */
+
     public String getParameter() {
         return this.parameter;
     }
@@ -132,6 +139,7 @@ public class WAFInvalidParameterException extends AmazonServiceException {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public WAFInvalidParameterException withParameter(String parameter) {
         setParameter(parameter);
         return this;
@@ -141,6 +149,7 @@ public class WAFInvalidParameterException extends AmazonServiceException {
      * @param reason
      * @see ParameterExceptionReason
      */
+
     public void setReason(String reason) {
         this.reason = reason;
     }
@@ -149,6 +158,7 @@ public class WAFInvalidParameterException extends AmazonServiceException {
      * @return
      * @see ParameterExceptionReason
      */
+
     public String getReason() {
         return this.reason;
     }
@@ -159,6 +169,7 @@ public class WAFInvalidParameterException extends AmazonServiceException {
      *         chained together.
      * @see ParameterExceptionReason
      */
+
     public WAFInvalidParameterException withReason(String reason) {
         setReason(reason);
         return this;
@@ -170,6 +181,7 @@ public class WAFInvalidParameterException extends AmazonServiceException {
      *         chained together.
      * @see ParameterExceptionReason
      */
+
     public void setReason(ParameterExceptionReason reason) {
         this.reason = reason.toString();
     }
@@ -180,6 +192,7 @@ public class WAFInvalidParameterException extends AmazonServiceException {
      *         chained together.
      * @see ParameterExceptionReason
      */
+
     public WAFInvalidParameterException withReason(
             ParameterExceptionReason reason) {
         setReason(reason);

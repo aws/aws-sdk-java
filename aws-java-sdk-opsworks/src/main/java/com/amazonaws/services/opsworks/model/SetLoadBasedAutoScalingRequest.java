@@ -63,6 +63,7 @@ public class SetLoadBasedAutoScalingRequest extends AmazonWebServiceRequest
      * @param layerId
      *        The layer ID.
      */
+
     public void setLayerId(String layerId) {
         this.layerId = layerId;
     }
@@ -74,6 +75,7 @@ public class SetLoadBasedAutoScalingRequest extends AmazonWebServiceRequest
      * 
      * @return The layer ID.
      */
+
     public String getLayerId() {
         return this.layerId;
     }
@@ -88,6 +90,7 @@ public class SetLoadBasedAutoScalingRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetLoadBasedAutoScalingRequest withLayerId(String layerId) {
         setLayerId(layerId);
         return this;
@@ -101,6 +104,7 @@ public class SetLoadBasedAutoScalingRequest extends AmazonWebServiceRequest
      * @param enable
      *        Enables load-based auto scaling for the layer.
      */
+
     public void setEnable(Boolean enable) {
         this.enable = enable;
     }
@@ -112,6 +116,7 @@ public class SetLoadBasedAutoScalingRequest extends AmazonWebServiceRequest
      * 
      * @return Enables load-based auto scaling for the layer.
      */
+
     public Boolean getEnable() {
         return this.enable;
     }
@@ -126,6 +131,7 @@ public class SetLoadBasedAutoScalingRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetLoadBasedAutoScalingRequest withEnable(Boolean enable) {
         setEnable(enable);
         return this;
@@ -138,6 +144,7 @@ public class SetLoadBasedAutoScalingRequest extends AmazonWebServiceRequest
      * 
      * @return Enables load-based auto scaling for the layer.
      */
+
     public Boolean isEnable() {
         return this.enable;
     }
@@ -155,6 +162,7 @@ public class SetLoadBasedAutoScalingRequest extends AmazonWebServiceRequest
      *        a specified amount of time, AWS OpsWorks starts a specified number
      *        of instances.
      */
+
     public void setUpScaling(AutoScalingThresholds upScaling) {
         this.upScaling = upScaling;
     }
@@ -171,6 +179,7 @@ public class SetLoadBasedAutoScalingRequest extends AmazonWebServiceRequest
      *         a specified amount of time, AWS OpsWorks starts a specified
      *         number of instances.
      */
+
     public AutoScalingThresholds getUpScaling() {
         return this.upScaling;
     }
@@ -190,6 +199,7 @@ public class SetLoadBasedAutoScalingRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetLoadBasedAutoScalingRequest withUpScaling(
             AutoScalingThresholds upScaling) {
         setUpScaling(upScaling);
@@ -210,6 +220,7 @@ public class SetLoadBasedAutoScalingRequest extends AmazonWebServiceRequest
      *        for a specified amount of time, AWS OpsWorks stops a specified
      *        number of instances.
      */
+
     public void setDownScaling(AutoScalingThresholds downScaling) {
         this.downScaling = downScaling;
     }
@@ -227,6 +238,7 @@ public class SetLoadBasedAutoScalingRequest extends AmazonWebServiceRequest
      *         for a specified amount of time, AWS OpsWorks stops a specified
      *         number of instances.
      */
+
     public AutoScalingThresholds getDownScaling() {
         return this.downScaling;
     }
@@ -247,6 +259,7 @@ public class SetLoadBasedAutoScalingRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetLoadBasedAutoScalingRequest withDownScaling(
             AutoScalingThresholds downScaling) {
         setDownScaling(downScaling);

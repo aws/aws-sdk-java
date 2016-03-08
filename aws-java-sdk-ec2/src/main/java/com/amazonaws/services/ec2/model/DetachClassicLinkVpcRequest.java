@@ -49,6 +49,7 @@ public class DetachClassicLinkVpcRequest extends AmazonWebServiceRequest
      * @param instanceId
      *        The ID of the instance to unlink from the VPC.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -60,6 +61,7 @@ public class DetachClassicLinkVpcRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the instance to unlink from the VPC.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
@@ -74,6 +76,7 @@ public class DetachClassicLinkVpcRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DetachClassicLinkVpcRequest withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;
@@ -87,6 +90,7 @@ public class DetachClassicLinkVpcRequest extends AmazonWebServiceRequest
      * @param vpcId
      *        The ID of the VPC to which the instance is linked.
      */
+
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
@@ -98,6 +102,7 @@ public class DetachClassicLinkVpcRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the VPC to which the instance is linked.
      */
+
     public String getVpcId() {
         return this.vpcId;
     }
@@ -112,6 +117,7 @@ public class DetachClassicLinkVpcRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DetachClassicLinkVpcRequest withVpcId(String vpcId) {
         setVpcId(vpcId);
         return this;

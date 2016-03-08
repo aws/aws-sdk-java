@@ -71,6 +71,7 @@ public class ListAssessmentsRequest extends AmazonWebServiceRequest implements
      * @return A list of ARNs specifying the applications the assessments of
      *         which you want to list.
      */
+
     public java.util.List<String> getApplicationArns() {
         return applicationArns;
     }
@@ -85,6 +86,7 @@ public class ListAssessmentsRequest extends AmazonWebServiceRequest implements
      *        A list of ARNs specifying the applications the assessments of
      *        which you want to list.
      */
+
     public void setApplicationArns(java.util.Collection<String> applicationArns) {
         if (applicationArns == null) {
             this.applicationArns = null;
@@ -112,6 +114,7 @@ public class ListAssessmentsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListAssessmentsRequest withApplicationArns(String... applicationArns) {
         if (this.applicationArns == null) {
             setApplicationArns(new java.util.ArrayList<String>(
@@ -135,6 +138,7 @@ public class ListAssessmentsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListAssessmentsRequest withApplicationArns(
             java.util.Collection<String> applicationArns) {
         setApplicationArns(applicationArns);
@@ -160,6 +164,7 @@ public class ListAssessmentsRequest extends AmazonWebServiceRequest implements
      *        must match. When multiple values are specified for a filter
      *        attribute, any of the values can match.
      */
+
     public void setFilter(AssessmentsFilter filter) {
         this.filter = filter;
     }
@@ -182,6 +187,7 @@ public class ListAssessmentsRequest extends AmazonWebServiceRequest implements
      *         must match. When multiple values are specified for a filter
      *         attribute, any of the values can match.
      */
+
     public AssessmentsFilter getFilter() {
         return this.filter;
     }
@@ -207,6 +213,7 @@ public class ListAssessmentsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListAssessmentsRequest withFilter(AssessmentsFilter filter) {
         setFilter(filter);
         return this;
@@ -228,6 +235,7 @@ public class ListAssessmentsRequest extends AmazonWebServiceRequest implements
      *        <b>nextToken</b> in the request with the value of <b>NextToken</b>
      *        from previous response to continue listing data.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -247,6 +255,7 @@ public class ListAssessmentsRequest extends AmazonWebServiceRequest implements
      *         fill <b>nextToken</b> in the request with the value of
      *         <b>NextToken</b> from previous response to continue listing data.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -269,6 +278,7 @@ public class ListAssessmentsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListAssessmentsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -285,6 +295,7 @@ public class ListAssessmentsRequest extends AmazonWebServiceRequest implements
      *        you want in the response. The default value is 10. The maximum
      *        value is 500.
      */
+
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
     }
@@ -299,6 +310,7 @@ public class ListAssessmentsRequest extends AmazonWebServiceRequest implements
      *         items you want in the response. The default value is 10. The
      *         maximum value is 500.
      */
+
     public Integer getMaxResults() {
         return this.maxResults;
     }
@@ -316,6 +328,7 @@ public class ListAssessmentsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListAssessmentsRequest withMaxResults(Integer maxResults) {
         setMaxResults(maxResults);
         return this;

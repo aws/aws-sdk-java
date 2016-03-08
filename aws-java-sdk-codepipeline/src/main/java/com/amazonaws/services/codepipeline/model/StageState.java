@@ -52,6 +52,7 @@ public class StageState implements Serializable, Cloneable {
      * @param stageName
      *        The name of the stage.
      */
+
     public void setStageName(String stageName) {
         this.stageName = stageName;
     }
@@ -63,6 +64,7 @@ public class StageState implements Serializable, Cloneable {
      * 
      * @return The name of the stage.
      */
+
     public String getStageName() {
         return this.stageName;
     }
@@ -77,6 +79,7 @@ public class StageState implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StageState withStageName(String stageName) {
         setStageName(stageName);
         return this;
@@ -91,6 +94,7 @@ public class StageState implements Serializable, Cloneable {
      *        The state of the inbound transition, which is either enabled or
      *        disabled.
      */
+
     public void setInboundTransitionState(TransitionState inboundTransitionState) {
         this.inboundTransitionState = inboundTransitionState;
     }
@@ -103,6 +107,7 @@ public class StageState implements Serializable, Cloneable {
      * @return The state of the inbound transition, which is either enabled or
      *         disabled.
      */
+
     public TransitionState getInboundTransitionState() {
         return this.inboundTransitionState;
     }
@@ -118,6 +123,7 @@ public class StageState implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StageState withInboundTransitionState(
             TransitionState inboundTransitionState) {
         setInboundTransitionState(inboundTransitionState);
@@ -131,6 +137,7 @@ public class StageState implements Serializable, Cloneable {
      * 
      * @return The state of the stage.
      */
+
     public java.util.List<ActionState> getActionStates() {
         return actionStates;
     }
@@ -143,6 +150,7 @@ public class StageState implements Serializable, Cloneable {
      * @param actionStates
      *        The state of the stage.
      */
+
     public void setActionStates(java.util.Collection<ActionState> actionStates) {
         if (actionStates == null) {
             this.actionStates = null;
@@ -168,6 +176,7 @@ public class StageState implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StageState withActionStates(ActionState... actionStates) {
         if (this.actionStates == null) {
             setActionStates(new java.util.ArrayList<ActionState>(
@@ -189,6 +198,7 @@ public class StageState implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StageState withActionStates(
             java.util.Collection<ActionState> actionStates) {
         setActionStates(actionStates);

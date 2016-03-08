@@ -60,6 +60,7 @@ public class DeleteSqlInjectionMatchSetRequest extends AmazonWebServiceRequest
      *        <a>CreateSqlInjectionMatchSet</a> and by
      *        <a>ListSqlInjectionMatchSets</a>.
      */
+
     public void setSqlInjectionMatchSetId(String sqlInjectionMatchSetId) {
         this.sqlInjectionMatchSetId = sqlInjectionMatchSetId;
     }
@@ -79,6 +80,7 @@ public class DeleteSqlInjectionMatchSetRequest extends AmazonWebServiceRequest
      *         <a>CreateSqlInjectionMatchSet</a> and by
      *         <a>ListSqlInjectionMatchSets</a>.
      */
+
     public String getSqlInjectionMatchSetId() {
         return this.sqlInjectionMatchSetId;
     }
@@ -101,6 +103,7 @@ public class DeleteSqlInjectionMatchSetRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteSqlInjectionMatchSetRequest withSqlInjectionMatchSetId(
             String sqlInjectionMatchSetId) {
         setSqlInjectionMatchSetId(sqlInjectionMatchSetId);
@@ -116,6 +119,7 @@ public class DeleteSqlInjectionMatchSetRequest extends AmazonWebServiceRequest
      *        The value returned by the most recent call to
      *        <a>GetChangeToken</a>.
      */
+
     public void setChangeToken(String changeToken) {
         this.changeToken = changeToken;
     }
@@ -128,6 +132,7 @@ public class DeleteSqlInjectionMatchSetRequest extends AmazonWebServiceRequest
      * @return The value returned by the most recent call to
      *         <a>GetChangeToken</a>.
      */
+
     public String getChangeToken() {
         return this.changeToken;
     }
@@ -143,6 +148,7 @@ public class DeleteSqlInjectionMatchSetRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteSqlInjectionMatchSetRequest withChangeToken(String changeToken) {
         setChangeToken(changeToken);
         return this;

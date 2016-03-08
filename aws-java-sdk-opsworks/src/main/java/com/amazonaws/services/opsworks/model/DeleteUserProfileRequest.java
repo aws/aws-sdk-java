@@ -40,6 +40,7 @@ public class DeleteUserProfileRequest extends AmazonWebServiceRequest implements
      * @param iamUserArn
      *        The user's IAM ARN.
      */
+
     public void setIamUserArn(String iamUserArn) {
         this.iamUserArn = iamUserArn;
     }
@@ -51,6 +52,7 @@ public class DeleteUserProfileRequest extends AmazonWebServiceRequest implements
      * 
      * @return The user's IAM ARN.
      */
+
     public String getIamUserArn() {
         return this.iamUserArn;
     }
@@ -65,6 +67,7 @@ public class DeleteUserProfileRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteUserProfileRequest withIamUserArn(String iamUserArn) {
         setIamUserArn(iamUserArn);
         return this;

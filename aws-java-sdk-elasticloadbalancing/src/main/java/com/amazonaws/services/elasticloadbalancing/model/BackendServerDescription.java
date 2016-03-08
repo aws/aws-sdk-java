@@ -46,6 +46,7 @@ public class BackendServerDescription implements Serializable, Cloneable {
      * @param instancePort
      *        The port on which the back-end server is listening.
      */
+
     public void setInstancePort(Integer instancePort) {
         this.instancePort = instancePort;
     }
@@ -57,6 +58,7 @@ public class BackendServerDescription implements Serializable, Cloneable {
      * 
      * @return The port on which the back-end server is listening.
      */
+
     public Integer getInstancePort() {
         return this.instancePort;
     }
@@ -71,6 +73,7 @@ public class BackendServerDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BackendServerDescription withInstancePort(Integer instancePort) {
         setInstancePort(instancePort);
         return this;
@@ -83,6 +86,7 @@ public class BackendServerDescription implements Serializable, Cloneable {
      * 
      * @return The names of the policies enabled for the back-end server.
      */
+
     public java.util.List<String> getPolicyNames() {
         if (policyNames == null) {
             policyNames = new com.amazonaws.internal.SdkInternalList<String>();
@@ -98,6 +102,7 @@ public class BackendServerDescription implements Serializable, Cloneable {
      * @param policyNames
      *        The names of the policies enabled for the back-end server.
      */
+
     public void setPolicyNames(java.util.Collection<String> policyNames) {
         if (policyNames == null) {
             this.policyNames = null;
@@ -124,6 +129,7 @@ public class BackendServerDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BackendServerDescription withPolicyNames(String... policyNames) {
         if (this.policyNames == null) {
             setPolicyNames(new com.amazonaws.internal.SdkInternalList<String>(
@@ -145,6 +151,7 @@ public class BackendServerDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BackendServerDescription withPolicyNames(
             java.util.Collection<String> policyNames) {
         setPolicyNames(policyNames);

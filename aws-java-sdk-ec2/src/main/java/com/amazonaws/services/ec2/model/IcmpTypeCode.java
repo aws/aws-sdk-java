@@ -47,6 +47,7 @@ public class IcmpTypeCode implements Serializable, Cloneable {
      *        The ICMP code. A value of -1 means all codes for the specified
      *        ICMP type.
      */
+
     public void setType(Integer type) {
         this.type = type;
     }
@@ -59,6 +60,7 @@ public class IcmpTypeCode implements Serializable, Cloneable {
      * @return The ICMP code. A value of -1 means all codes for the specified
      *         ICMP type.
      */
+
     public Integer getType() {
         return this.type;
     }
@@ -74,6 +76,7 @@ public class IcmpTypeCode implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public IcmpTypeCode withType(Integer type) {
         setType(type);
         return this;
@@ -87,6 +90,7 @@ public class IcmpTypeCode implements Serializable, Cloneable {
      * @param code
      *        The ICMP type. A value of -1 means all types.
      */
+
     public void setCode(Integer code) {
         this.code = code;
     }
@@ -98,6 +102,7 @@ public class IcmpTypeCode implements Serializable, Cloneable {
      * 
      * @return The ICMP type. A value of -1 means all types.
      */
+
     public Integer getCode() {
         return this.code;
     }
@@ -112,6 +117,7 @@ public class IcmpTypeCode implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public IcmpTypeCode withCode(Integer code) {
         setCode(code);
         return this;

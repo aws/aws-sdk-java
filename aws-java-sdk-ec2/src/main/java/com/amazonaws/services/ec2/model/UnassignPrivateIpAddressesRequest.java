@@ -51,6 +51,7 @@ public class UnassignPrivateIpAddressesRequest extends AmazonWebServiceRequest
      * @param networkInterfaceId
      *        The ID of the network interface.
      */
+
     public void setNetworkInterfaceId(String networkInterfaceId) {
         this.networkInterfaceId = networkInterfaceId;
     }
@@ -62,6 +63,7 @@ public class UnassignPrivateIpAddressesRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the network interface.
      */
+
     public String getNetworkInterfaceId() {
         return this.networkInterfaceId;
     }
@@ -76,6 +78,7 @@ public class UnassignPrivateIpAddressesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UnassignPrivateIpAddressesRequest withNetworkInterfaceId(
             String networkInterfaceId) {
         setNetworkInterfaceId(networkInterfaceId);
@@ -93,6 +96,7 @@ public class UnassignPrivateIpAddressesRequest extends AmazonWebServiceRequest
      *         interface. You can specify this option multiple times to unassign
      *         more than one IP address.
      */
+
     public java.util.List<String> getPrivateIpAddresses() {
         if (privateIpAddresses == null) {
             privateIpAddresses = new com.amazonaws.internal.SdkInternalList<String>();
@@ -112,6 +116,7 @@ public class UnassignPrivateIpAddressesRequest extends AmazonWebServiceRequest
      *        interface. You can specify this option multiple times to unassign
      *        more than one IP address.
      */
+
     public void setPrivateIpAddresses(
             java.util.Collection<String> privateIpAddresses) {
         if (privateIpAddresses == null) {
@@ -143,6 +148,7 @@ public class UnassignPrivateIpAddressesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UnassignPrivateIpAddressesRequest withPrivateIpAddresses(
             String... privateIpAddresses) {
         if (this.privateIpAddresses == null) {
@@ -169,6 +175,7 @@ public class UnassignPrivateIpAddressesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UnassignPrivateIpAddressesRequest withPrivateIpAddresses(
             java.util.Collection<String> privateIpAddresses) {
         setPrivateIpAddresses(privateIpAddresses);

@@ -137,6 +137,7 @@ public class DescribeReservedInstancesModificationsRequest extends
      * 
      * @return IDs for the submitted modification request.
      */
+
     public java.util.List<String> getReservedInstancesModificationIds() {
         if (reservedInstancesModificationIds == null) {
             reservedInstancesModificationIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -152,6 +153,7 @@ public class DescribeReservedInstancesModificationsRequest extends
      * @param reservedInstancesModificationIds
      *        IDs for the submitted modification request.
      */
+
     public void setReservedInstancesModificationIds(
             java.util.Collection<String> reservedInstancesModificationIds) {
         if (reservedInstancesModificationIds == null) {
@@ -180,6 +182,7 @@ public class DescribeReservedInstancesModificationsRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeReservedInstancesModificationsRequest withReservedInstancesModificationIds(
             String... reservedInstancesModificationIds) {
         if (this.reservedInstancesModificationIds == null) {
@@ -202,6 +205,7 @@ public class DescribeReservedInstancesModificationsRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeReservedInstancesModificationsRequest withReservedInstancesModificationIds(
             java.util.Collection<String> reservedInstancesModificationIds) {
         setReservedInstancesModificationIds(reservedInstancesModificationIds);
@@ -216,6 +220,7 @@ public class DescribeReservedInstancesModificationsRequest extends
      * @param nextToken
      *        The token to retrieve the next page of results.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -227,6 +232,7 @@ public class DescribeReservedInstancesModificationsRequest extends
      * 
      * @return The token to retrieve the next page of results.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -241,6 +247,7 @@ public class DescribeReservedInstancesModificationsRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeReservedInstancesModificationsRequest withNextToken(
             String nextToken) {
         setNextToken(nextToken);
@@ -419,6 +426,7 @@ public class DescribeReservedInstancesModificationsRequest extends
      *         </p>
      *         </li>
      */
+
     public java.util.List<Filter> getFilters() {
         if (filters == null) {
             filters = new com.amazonaws.internal.SdkInternalList<Filter>();
@@ -599,6 +607,7 @@ public class DescribeReservedInstancesModificationsRequest extends
      *        </p>
      *        </li>
      */
+
     public void setFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
             this.filters = null;
@@ -790,6 +799,7 @@ public class DescribeReservedInstancesModificationsRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeReservedInstancesModificationsRequest withFilters(
             Filter... filters) {
         if (this.filters == null) {
@@ -977,6 +987,7 @@ public class DescribeReservedInstancesModificationsRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeReservedInstancesModificationsRequest withFilters(
             java.util.Collection<Filter> filters) {
         setFilters(filters);

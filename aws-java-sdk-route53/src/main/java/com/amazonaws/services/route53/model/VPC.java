@@ -31,6 +31,7 @@ public class VPC implements Serializable, Cloneable {
      * @param vPCRegion
      * @see VPCRegion
      */
+
     public void setVPCRegion(String vPCRegion) {
         this.vPCRegion = vPCRegion;
     }
@@ -39,6 +40,7 @@ public class VPC implements Serializable, Cloneable {
      * @return
      * @see VPCRegion
      */
+
     public String getVPCRegion() {
         return this.vPCRegion;
     }
@@ -49,6 +51,7 @@ public class VPC implements Serializable, Cloneable {
      *         chained together.
      * @see VPCRegion
      */
+
     public VPC withVPCRegion(String vPCRegion) {
         setVPCRegion(vPCRegion);
         return this;
@@ -60,6 +63,7 @@ public class VPC implements Serializable, Cloneable {
      *         chained together.
      * @see VPCRegion
      */
+
     public void setVPCRegion(VPCRegion vPCRegion) {
         this.vPCRegion = vPCRegion.toString();
     }
@@ -70,6 +74,7 @@ public class VPC implements Serializable, Cloneable {
      *         chained together.
      * @see VPCRegion
      */
+
     public VPC withVPCRegion(VPCRegion vPCRegion) {
         setVPCRegion(vPCRegion);
         return this;
@@ -78,6 +83,7 @@ public class VPC implements Serializable, Cloneable {
     /**
      * @param vPCId
      */
+
     public void setVPCId(String vPCId) {
         this.vPCId = vPCId;
     }
@@ -85,6 +91,7 @@ public class VPC implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getVPCId() {
         return this.vPCId;
     }
@@ -94,6 +101,7 @@ public class VPC implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VPC withVPCId(String vPCId) {
         setVPCId(vPCId);
         return this;

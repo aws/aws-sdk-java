@@ -32,6 +32,7 @@ public class AddCacheRequest extends AmazonWebServiceRequest implements
     /**
      * @param gatewayARN
      */
+
     public void setGatewayARN(String gatewayARN) {
         this.gatewayARN = gatewayARN;
     }
@@ -39,6 +40,7 @@ public class AddCacheRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public String getGatewayARN() {
         return this.gatewayARN;
     }
@@ -48,6 +50,7 @@ public class AddCacheRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddCacheRequest withGatewayARN(String gatewayARN) {
         setGatewayARN(gatewayARN);
         return this;
@@ -56,6 +59,7 @@ public class AddCacheRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public java.util.List<String> getDiskIds() {
         if (diskIds == null) {
             diskIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -66,6 +70,7 @@ public class AddCacheRequest extends AmazonWebServiceRequest implements
     /**
      * @param diskIds
      */
+
     public void setDiskIds(java.util.Collection<String> diskIds) {
         if (diskIds == null) {
             this.diskIds = null;
@@ -88,6 +93,7 @@ public class AddCacheRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddCacheRequest withDiskIds(String... diskIds) {
         if (this.diskIds == null) {
             setDiskIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -104,6 +110,7 @@ public class AddCacheRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddCacheRequest withDiskIds(java.util.Collection<String> diskIds) {
         setDiskIds(diskIds);
         return this;

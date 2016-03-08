@@ -40,6 +40,7 @@ public class AvailabilityZoneMessage implements Serializable, Cloneable {
      * @param message
      *        The message about the Availability Zone.
      */
+
     public void setMessage(String message) {
         this.message = message;
     }
@@ -51,6 +52,7 @@ public class AvailabilityZoneMessage implements Serializable, Cloneable {
      * 
      * @return The message about the Availability Zone.
      */
+
     public String getMessage() {
         return this.message;
     }
@@ -65,6 +67,7 @@ public class AvailabilityZoneMessage implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AvailabilityZoneMessage withMessage(String message) {
         setMessage(message);
         return this;

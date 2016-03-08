@@ -42,6 +42,7 @@ public class ListVolumeInitiatorsResult implements Serializable, Cloneable {
      * @return The host names and port numbers of all iSCSI initiators that are
      *         connected to the gateway.
      */
+
     public java.util.List<String> getInitiators() {
         if (initiators == null) {
             initiators = new com.amazonaws.internal.SdkInternalList<String>();
@@ -59,6 +60,7 @@ public class ListVolumeInitiatorsResult implements Serializable, Cloneable {
      *        The host names and port numbers of all iSCSI initiators that are
      *        connected to the gateway.
      */
+
     public void setInitiators(java.util.Collection<String> initiators) {
         if (initiators == null) {
             this.initiators = null;
@@ -87,6 +89,7 @@ public class ListVolumeInitiatorsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListVolumeInitiatorsResult withInitiators(String... initiators) {
         if (this.initiators == null) {
             setInitiators(new com.amazonaws.internal.SdkInternalList<String>(
@@ -110,6 +113,7 @@ public class ListVolumeInitiatorsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListVolumeInitiatorsResult withInitiators(
             java.util.Collection<String> initiators) {
         setInitiators(initiators);

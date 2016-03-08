@@ -38,6 +38,7 @@ public class DescribeMountTargetSecurityGroupsResult implements Serializable,
      * 
      * @return An array of security groups.
      */
+
     public java.util.List<String> getSecurityGroups() {
         if (securityGroups == null) {
             securityGroups = new com.amazonaws.internal.SdkInternalList<String>();
@@ -53,6 +54,7 @@ public class DescribeMountTargetSecurityGroupsResult implements Serializable,
      * @param securityGroups
      *        An array of security groups.
      */
+
     public void setSecurityGroups(java.util.Collection<String> securityGroups) {
         if (securityGroups == null) {
             this.securityGroups = null;
@@ -79,6 +81,7 @@ public class DescribeMountTargetSecurityGroupsResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeMountTargetSecurityGroupsResult withSecurityGroups(
             String... securityGroups) {
         if (this.securityGroups == null) {
@@ -101,6 +104,7 @@ public class DescribeMountTargetSecurityGroupsResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeMountTargetSecurityGroupsResult withSecurityGroups(
             java.util.Collection<String> securityGroups) {
         setSecurityGroups(securityGroups);

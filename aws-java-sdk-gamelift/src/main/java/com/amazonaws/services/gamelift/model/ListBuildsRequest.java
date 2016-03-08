@@ -84,6 +84,7 @@ public class ListBuildsRequest extends AmazonWebServiceRequest implements
      *        cannot create new fleets for this build. lt/ligtlt/ulgt
      * @see BuildStatus
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -114,6 +115,7 @@ public class ListBuildsRequest extends AmazonWebServiceRequest implements
      *         lt/ligtlt/ulgt
      * @see BuildStatus
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -146,6 +148,7 @@ public class ListBuildsRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see BuildStatus
      */
+
     public ListBuildsRequest withStatus(String status) {
         setStatus(status);
         return this;
@@ -179,6 +182,7 @@ public class ListBuildsRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see BuildStatus
      */
+
     public void setStatus(BuildStatus status) {
         this.status = status.toString();
     }
@@ -211,6 +215,7 @@ public class ListBuildsRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see BuildStatus
      */
+
     public ListBuildsRequest withStatus(BuildStatus status) {
         setStatus(status);
         return this;
@@ -226,6 +231,7 @@ public class ListBuildsRequest extends AmazonWebServiceRequest implements
      *        Maximum number of results to return. You can use this parameter
      *        with <i>NextToken</i> to get results as a set of sequential pages.
      */
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -240,6 +246,7 @@ public class ListBuildsRequest extends AmazonWebServiceRequest implements
      *         with <i>NextToken</i> to get results as a set of sequential
      *         pages.
      */
+
     public Integer getLimit() {
         return this.limit;
     }
@@ -256,6 +263,7 @@ public class ListBuildsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListBuildsRequest withLimit(Integer limit) {
         setLimit(limit);
         return this;
@@ -275,6 +283,7 @@ public class ListBuildsRequest extends AmazonWebServiceRequest implements
      *        retrieved. To start at the beginning of a result set, do not set
      *        this parameter.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -292,6 +301,7 @@ public class ListBuildsRequest extends AmazonWebServiceRequest implements
      *         results to be retrieved. To start at the beginning of a result
      *         set, do not set this parameter.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -312,6 +322,7 @@ public class ListBuildsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListBuildsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

@@ -150,6 +150,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * @param networkInterfaceId
      *        The ID of the network interface.
      */
+
     public void setNetworkInterfaceId(String networkInterfaceId) {
         this.networkInterfaceId = networkInterfaceId;
     }
@@ -161,6 +162,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * 
      * @return The ID of the network interface.
      */
+
     public String getNetworkInterfaceId() {
         return this.networkInterfaceId;
     }
@@ -175,6 +177,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NetworkInterface withNetworkInterfaceId(String networkInterfaceId) {
         setNetworkInterfaceId(networkInterfaceId);
         return this;
@@ -188,6 +191,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * @param subnetId
      *        The ID of the subnet.
      */
+
     public void setSubnetId(String subnetId) {
         this.subnetId = subnetId;
     }
@@ -199,6 +203,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * 
      * @return The ID of the subnet.
      */
+
     public String getSubnetId() {
         return this.subnetId;
     }
@@ -213,6 +218,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NetworkInterface withSubnetId(String subnetId) {
         setSubnetId(subnetId);
         return this;
@@ -226,6 +232,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * @param vpcId
      *        The ID of the VPC.
      */
+
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
@@ -237,6 +244,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * 
      * @return The ID of the VPC.
      */
+
     public String getVpcId() {
         return this.vpcId;
     }
@@ -251,6 +259,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NetworkInterface withVpcId(String vpcId) {
         setVpcId(vpcId);
         return this;
@@ -264,6 +273,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * @param availabilityZone
      *        The Availability Zone.
      */
+
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
@@ -275,6 +285,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * 
      * @return The Availability Zone.
      */
+
     public String getAvailabilityZone() {
         return this.availabilityZone;
     }
@@ -289,6 +300,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NetworkInterface withAvailabilityZone(String availabilityZone) {
         setAvailabilityZone(availabilityZone);
         return this;
@@ -302,6 +314,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * @param description
      *        A description.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -313,6 +326,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * 
      * @return A description.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -327,6 +341,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NetworkInterface withDescription(String description) {
         setDescription(description);
         return this;
@@ -340,6 +355,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * @param ownerId
      *        The AWS account ID of the owner of the network interface.
      */
+
     public void setOwnerId(String ownerId) {
         this.ownerId = ownerId;
     }
@@ -351,6 +367,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * 
      * @return The AWS account ID of the owner of the network interface.
      */
+
     public String getOwnerId() {
         return this.ownerId;
     }
@@ -365,6 +382,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NetworkInterface withOwnerId(String ownerId) {
         setOwnerId(ownerId);
         return this;
@@ -380,6 +398,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      *        The ID of the entity that launched the instance on your behalf
      *        (for example, AWS Management Console or Auto Scaling).
      */
+
     public void setRequesterId(String requesterId) {
         this.requesterId = requesterId;
     }
@@ -393,6 +412,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * @return The ID of the entity that launched the instance on your behalf
      *         (for example, AWS Management Console or Auto Scaling).
      */
+
     public String getRequesterId() {
         return this.requesterId;
     }
@@ -409,6 +429,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NetworkInterface withRequesterId(String requesterId) {
         setRequesterId(requesterId);
         return this;
@@ -422,6 +443,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * @param requesterManaged
      *        Indicates whether the network interface is being managed by AWS.
      */
+
     public void setRequesterManaged(Boolean requesterManaged) {
         this.requesterManaged = requesterManaged;
     }
@@ -433,6 +455,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * 
      * @return Indicates whether the network interface is being managed by AWS.
      */
+
     public Boolean getRequesterManaged() {
         return this.requesterManaged;
     }
@@ -447,6 +470,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NetworkInterface withRequesterManaged(Boolean requesterManaged) {
         setRequesterManaged(requesterManaged);
         return this;
@@ -459,6 +483,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * 
      * @return Indicates whether the network interface is being managed by AWS.
      */
+
     public Boolean isRequesterManaged() {
         return this.requesterManaged;
     }
@@ -472,6 +497,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      *        The status of the network interface.
      * @see NetworkInterfaceStatus
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -484,6 +510,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * @return The status of the network interface.
      * @see NetworkInterfaceStatus
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -499,6 +526,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      *         chained together.
      * @see NetworkInterfaceStatus
      */
+
     public NetworkInterface withStatus(String status) {
         setStatus(status);
         return this;
@@ -515,6 +543,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      *         chained together.
      * @see NetworkInterfaceStatus
      */
+
     public void setStatus(NetworkInterfaceStatus status) {
         this.status = status.toString();
     }
@@ -530,6 +559,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      *         chained together.
      * @see NetworkInterfaceStatus
      */
+
     public NetworkInterface withStatus(NetworkInterfaceStatus status) {
         setStatus(status);
         return this;
@@ -543,6 +573,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * @param macAddress
      *        The MAC address.
      */
+
     public void setMacAddress(String macAddress) {
         this.macAddress = macAddress;
     }
@@ -554,6 +585,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * 
      * @return The MAC address.
      */
+
     public String getMacAddress() {
         return this.macAddress;
     }
@@ -568,6 +600,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NetworkInterface withMacAddress(String macAddress) {
         setMacAddress(macAddress);
         return this;
@@ -581,6 +614,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * @param privateIpAddress
      *        The IP address of the network interface within the subnet.
      */
+
     public void setPrivateIpAddress(String privateIpAddress) {
         this.privateIpAddress = privateIpAddress;
     }
@@ -592,6 +626,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * 
      * @return The IP address of the network interface within the subnet.
      */
+
     public String getPrivateIpAddress() {
         return this.privateIpAddress;
     }
@@ -606,6 +641,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NetworkInterface withPrivateIpAddress(String privateIpAddress) {
         setPrivateIpAddress(privateIpAddress);
         return this;
@@ -619,6 +655,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * @param privateDnsName
      *        The private DNS name.
      */
+
     public void setPrivateDnsName(String privateDnsName) {
         this.privateDnsName = privateDnsName;
     }
@@ -630,6 +667,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * 
      * @return The private DNS name.
      */
+
     public String getPrivateDnsName() {
         return this.privateDnsName;
     }
@@ -644,6 +682,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NetworkInterface withPrivateDnsName(String privateDnsName) {
         setPrivateDnsName(privateDnsName);
         return this;
@@ -657,6 +696,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * @param sourceDestCheck
      *        Indicates whether traffic to or from the instance is validated.
      */
+
     public void setSourceDestCheck(Boolean sourceDestCheck) {
         this.sourceDestCheck = sourceDestCheck;
     }
@@ -668,6 +708,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * 
      * @return Indicates whether traffic to or from the instance is validated.
      */
+
     public Boolean getSourceDestCheck() {
         return this.sourceDestCheck;
     }
@@ -682,6 +723,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NetworkInterface withSourceDestCheck(Boolean sourceDestCheck) {
         setSourceDestCheck(sourceDestCheck);
         return this;
@@ -694,6 +736,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * 
      * @return Indicates whether traffic to or from the instance is validated.
      */
+
     public Boolean isSourceDestCheck() {
         return this.sourceDestCheck;
     }
@@ -705,6 +748,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * 
      * @return Any security groups for the network interface.
      */
+
     public java.util.List<GroupIdentifier> getGroups() {
         if (groups == null) {
             groups = new com.amazonaws.internal.SdkInternalList<GroupIdentifier>();
@@ -720,6 +764,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * @param groups
      *        Any security groups for the network interface.
      */
+
     public void setGroups(java.util.Collection<GroupIdentifier> groups) {
         if (groups == null) {
             this.groups = null;
@@ -746,6 +791,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NetworkInterface withGroups(GroupIdentifier... groups) {
         if (this.groups == null) {
             setGroups(new com.amazonaws.internal.SdkInternalList<GroupIdentifier>(
@@ -767,6 +813,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NetworkInterface withGroups(
             java.util.Collection<GroupIdentifier> groups) {
         setGroups(groups);
@@ -781,6 +828,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * @param attachment
      *        The network interface attachment.
      */
+
     public void setAttachment(NetworkInterfaceAttachment attachment) {
         this.attachment = attachment;
     }
@@ -792,6 +840,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * 
      * @return The network interface attachment.
      */
+
     public NetworkInterfaceAttachment getAttachment() {
         return this.attachment;
     }
@@ -806,6 +855,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NetworkInterface withAttachment(NetworkInterfaceAttachment attachment) {
         setAttachment(attachment);
         return this;
@@ -821,6 +871,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      *        The association information for an Elastic IP associated with the
      *        network interface.
      */
+
     public void setAssociation(NetworkInterfaceAssociation association) {
         this.association = association;
     }
@@ -834,6 +885,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * @return The association information for an Elastic IP associated with the
      *         network interface.
      */
+
     public NetworkInterfaceAssociation getAssociation() {
         return this.association;
     }
@@ -850,6 +902,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NetworkInterface withAssociation(
             NetworkInterfaceAssociation association) {
         setAssociation(association);
@@ -863,6 +916,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * 
      * @return Any tags assigned to the network interface.
      */
+
     public java.util.List<Tag> getTagSet() {
         if (tagSet == null) {
             tagSet = new com.amazonaws.internal.SdkInternalList<Tag>();
@@ -878,6 +932,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * @param tagSet
      *        Any tags assigned to the network interface.
      */
+
     public void setTagSet(java.util.Collection<Tag> tagSet) {
         if (tagSet == null) {
             this.tagSet = null;
@@ -903,6 +958,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NetworkInterface withTagSet(Tag... tagSet) {
         if (this.tagSet == null) {
             setTagSet(new com.amazonaws.internal.SdkInternalList<Tag>(
@@ -924,6 +980,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NetworkInterface withTagSet(java.util.Collection<Tag> tagSet) {
         setTagSet(tagSet);
         return this;
@@ -936,6 +993,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * 
      * @return The private IP addresses associated with the network interface.
      */
+
     public java.util.List<NetworkInterfacePrivateIpAddress> getPrivateIpAddresses() {
         if (privateIpAddresses == null) {
             privateIpAddresses = new com.amazonaws.internal.SdkInternalList<NetworkInterfacePrivateIpAddress>();
@@ -951,6 +1009,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * @param privateIpAddresses
      *        The private IP addresses associated with the network interface.
      */
+
     public void setPrivateIpAddresses(
             java.util.Collection<NetworkInterfacePrivateIpAddress> privateIpAddresses) {
         if (privateIpAddresses == null) {
@@ -978,6 +1037,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NetworkInterface withPrivateIpAddresses(
             NetworkInterfacePrivateIpAddress... privateIpAddresses) {
         if (this.privateIpAddresses == null) {
@@ -1000,6 +1060,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NetworkInterface withPrivateIpAddresses(
             java.util.Collection<NetworkInterfacePrivateIpAddress> privateIpAddresses) {
         setPrivateIpAddresses(privateIpAddresses);
@@ -1015,6 +1076,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      *        The type of interface.
      * @see NetworkInterfaceType
      */
+
     public void setInterfaceType(String interfaceType) {
         this.interfaceType = interfaceType;
     }
@@ -1027,6 +1089,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * @return The type of interface.
      * @see NetworkInterfaceType
      */
+
     public String getInterfaceType() {
         return this.interfaceType;
     }
@@ -1042,6 +1105,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      *         chained together.
      * @see NetworkInterfaceType
      */
+
     public NetworkInterface withInterfaceType(String interfaceType) {
         setInterfaceType(interfaceType);
         return this;
@@ -1058,6 +1122,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      *         chained together.
      * @see NetworkInterfaceType
      */
+
     public void setInterfaceType(NetworkInterfaceType interfaceType) {
         this.interfaceType = interfaceType.toString();
     }
@@ -1073,6 +1138,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      *         chained together.
      * @see NetworkInterfaceType
      */
+
     public NetworkInterface withInterfaceType(NetworkInterfaceType interfaceType) {
         setInterfaceType(interfaceType);
         return this;

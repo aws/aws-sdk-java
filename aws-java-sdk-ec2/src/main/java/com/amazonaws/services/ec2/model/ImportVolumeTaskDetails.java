@@ -64,6 +64,7 @@ public class ImportVolumeTaskDetails implements Serializable, Cloneable {
      * @param bytesConverted
      *        The number of bytes converted so far.
      */
+
     public void setBytesConverted(Long bytesConverted) {
         this.bytesConverted = bytesConverted;
     }
@@ -75,6 +76,7 @@ public class ImportVolumeTaskDetails implements Serializable, Cloneable {
      * 
      * @return The number of bytes converted so far.
      */
+
     public Long getBytesConverted() {
         return this.bytesConverted;
     }
@@ -89,6 +91,7 @@ public class ImportVolumeTaskDetails implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportVolumeTaskDetails withBytesConverted(Long bytesConverted) {
         setBytesConverted(bytesConverted);
         return this;
@@ -102,6 +105,7 @@ public class ImportVolumeTaskDetails implements Serializable, Cloneable {
      * @param availabilityZone
      *        The Availability Zone where the resulting volume will reside.
      */
+
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
@@ -113,6 +117,7 @@ public class ImportVolumeTaskDetails implements Serializable, Cloneable {
      * 
      * @return The Availability Zone where the resulting volume will reside.
      */
+
     public String getAvailabilityZone() {
         return this.availabilityZone;
     }
@@ -127,6 +132,7 @@ public class ImportVolumeTaskDetails implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportVolumeTaskDetails withAvailabilityZone(String availabilityZone) {
         setAvailabilityZone(availabilityZone);
         return this;
@@ -140,6 +146,7 @@ public class ImportVolumeTaskDetails implements Serializable, Cloneable {
      * @param description
      *        The description you provided when starting the import volume task.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -152,6 +159,7 @@ public class ImportVolumeTaskDetails implements Serializable, Cloneable {
      * @return The description you provided when starting the import volume
      *         task.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -166,6 +174,7 @@ public class ImportVolumeTaskDetails implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportVolumeTaskDetails withDescription(String description) {
         setDescription(description);
         return this;
@@ -179,6 +188,7 @@ public class ImportVolumeTaskDetails implements Serializable, Cloneable {
      * @param image
      *        The image.
      */
+
     public void setImage(DiskImageDescription image) {
         this.image = image;
     }
@@ -190,6 +200,7 @@ public class ImportVolumeTaskDetails implements Serializable, Cloneable {
      * 
      * @return The image.
      */
+
     public DiskImageDescription getImage() {
         return this.image;
     }
@@ -204,6 +215,7 @@ public class ImportVolumeTaskDetails implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportVolumeTaskDetails withImage(DiskImageDescription image) {
         setImage(image);
         return this;
@@ -217,6 +229,7 @@ public class ImportVolumeTaskDetails implements Serializable, Cloneable {
      * @param volume
      *        The volume.
      */
+
     public void setVolume(DiskImageVolumeDescription volume) {
         this.volume = volume;
     }
@@ -228,6 +241,7 @@ public class ImportVolumeTaskDetails implements Serializable, Cloneable {
      * 
      * @return The volume.
      */
+
     public DiskImageVolumeDescription getVolume() {
         return this.volume;
     }
@@ -242,6 +256,7 @@ public class ImportVolumeTaskDetails implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportVolumeTaskDetails withVolume(DiskImageVolumeDescription volume) {
         setVolume(volume);
         return this;

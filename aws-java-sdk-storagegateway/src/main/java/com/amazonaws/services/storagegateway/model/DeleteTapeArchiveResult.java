@@ -43,6 +43,7 @@ public class DeleteTapeArchiveResult implements Serializable, Cloneable {
      *        The Amazon Resource Name (ARN) of the virtual tape that was
      *        deleted from the virtual tape shelf (VTS).
      */
+
     public void setTapeARN(String tapeARN) {
         this.tapeARN = tapeARN;
     }
@@ -56,6 +57,7 @@ public class DeleteTapeArchiveResult implements Serializable, Cloneable {
      * @return The Amazon Resource Name (ARN) of the virtual tape that was
      *         deleted from the virtual tape shelf (VTS).
      */
+
     public String getTapeARN() {
         return this.tapeARN;
     }
@@ -72,6 +74,7 @@ public class DeleteTapeArchiveResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteTapeArchiveResult withTapeARN(String tapeARN) {
         setTapeARN(tapeARN);
         return this;

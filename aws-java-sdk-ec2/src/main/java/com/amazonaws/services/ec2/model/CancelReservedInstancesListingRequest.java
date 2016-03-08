@@ -43,6 +43,7 @@ public class CancelReservedInstancesListingRequest extends
      * @param reservedInstancesListingId
      *        The ID of the Reserved Instance listing.
      */
+
     public void setReservedInstancesListingId(String reservedInstancesListingId) {
         this.reservedInstancesListingId = reservedInstancesListingId;
     }
@@ -54,6 +55,7 @@ public class CancelReservedInstancesListingRequest extends
      * 
      * @return The ID of the Reserved Instance listing.
      */
+
     public String getReservedInstancesListingId() {
         return this.reservedInstancesListingId;
     }
@@ -68,6 +70,7 @@ public class CancelReservedInstancesListingRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CancelReservedInstancesListingRequest withReservedInstancesListingId(
             String reservedInstancesListingId) {
         setReservedInstancesListingId(reservedInstancesListingId);

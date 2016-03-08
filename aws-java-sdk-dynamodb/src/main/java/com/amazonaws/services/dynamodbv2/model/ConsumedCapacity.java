@@ -71,6 +71,7 @@ public class ConsumedCapacity implements Serializable, Cloneable {
      * @param tableName
      *        The name of the table that was affected by the operation.
      */
+
     public void setTableName(String tableName) {
         this.tableName = tableName;
     }
@@ -82,6 +83,7 @@ public class ConsumedCapacity implements Serializable, Cloneable {
      * 
      * @return The name of the table that was affected by the operation.
      */
+
     public String getTableName() {
         return this.tableName;
     }
@@ -96,6 +98,7 @@ public class ConsumedCapacity implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConsumedCapacity withTableName(String tableName) {
         setTableName(tableName);
         return this;
@@ -109,6 +112,7 @@ public class ConsumedCapacity implements Serializable, Cloneable {
      * @param capacityUnits
      *        The total number of capacity units consumed by the operation.
      */
+
     public void setCapacityUnits(Double capacityUnits) {
         this.capacityUnits = capacityUnits;
     }
@@ -120,6 +124,7 @@ public class ConsumedCapacity implements Serializable, Cloneable {
      * 
      * @return The total number of capacity units consumed by the operation.
      */
+
     public Double getCapacityUnits() {
         return this.capacityUnits;
     }
@@ -134,6 +139,7 @@ public class ConsumedCapacity implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConsumedCapacity withCapacityUnits(Double capacityUnits) {
         setCapacityUnits(capacityUnits);
         return this;
@@ -148,6 +154,7 @@ public class ConsumedCapacity implements Serializable, Cloneable {
      *        The amount of throughput consumed on the table affected by the
      *        operation.
      */
+
     public void setTable(Capacity table) {
         this.table = table;
     }
@@ -160,6 +167,7 @@ public class ConsumedCapacity implements Serializable, Cloneable {
      * @return The amount of throughput consumed on the table affected by the
      *         operation.
      */
+
     public Capacity getTable() {
         return this.table;
     }
@@ -175,6 +183,7 @@ public class ConsumedCapacity implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConsumedCapacity withTable(Capacity table) {
         setTable(table);
         return this;
@@ -189,6 +198,7 @@ public class ConsumedCapacity implements Serializable, Cloneable {
      * @return The amount of throughput consumed on each local index affected by
      *         the operation.
      */
+
     public java.util.Map<String, Capacity> getLocalSecondaryIndexes() {
         return localSecondaryIndexes;
     }
@@ -203,6 +213,7 @@ public class ConsumedCapacity implements Serializable, Cloneable {
      *        The amount of throughput consumed on each local index affected by
      *        the operation.
      */
+
     public void setLocalSecondaryIndexes(
             java.util.Map<String, Capacity> localSecondaryIndexes) {
         this.localSecondaryIndexes = localSecondaryIndexes;
@@ -220,6 +231,7 @@ public class ConsumedCapacity implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConsumedCapacity withLocalSecondaryIndexes(
             java.util.Map<String, Capacity> localSecondaryIndexes) {
         setLocalSecondaryIndexes(localSecondaryIndexes);
@@ -242,6 +254,7 @@ public class ConsumedCapacity implements Serializable, Cloneable {
      * Removes all the entries added into LocalSecondaryIndexes. &lt;p> Returns
      * a reference to this object so that method calls can be chained together.
      */
+
     public ConsumedCapacity clearLocalSecondaryIndexesEntries() {
         this.localSecondaryIndexes = null;
         return this;
@@ -256,6 +269,7 @@ public class ConsumedCapacity implements Serializable, Cloneable {
      * @return The amount of throughput consumed on each global index affected
      *         by the operation.
      */
+
     public java.util.Map<String, Capacity> getGlobalSecondaryIndexes() {
         return globalSecondaryIndexes;
     }
@@ -270,6 +284,7 @@ public class ConsumedCapacity implements Serializable, Cloneable {
      *        The amount of throughput consumed on each global index affected by
      *        the operation.
      */
+
     public void setGlobalSecondaryIndexes(
             java.util.Map<String, Capacity> globalSecondaryIndexes) {
         this.globalSecondaryIndexes = globalSecondaryIndexes;
@@ -287,6 +302,7 @@ public class ConsumedCapacity implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConsumedCapacity withGlobalSecondaryIndexes(
             java.util.Map<String, Capacity> globalSecondaryIndexes) {
         setGlobalSecondaryIndexes(globalSecondaryIndexes);
@@ -309,6 +325,7 @@ public class ConsumedCapacity implements Serializable, Cloneable {
      * Removes all the entries added into GlobalSecondaryIndexes. &lt;p> Returns
      * a reference to this object so that method calls can be chained together.
      */
+
     public ConsumedCapacity clearGlobalSecondaryIndexesEntries() {
         this.globalSecondaryIndexes = null;
         return this;

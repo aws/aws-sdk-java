@@ -48,6 +48,7 @@ public class AddTagsRequest extends AmazonWebServiceRequest implements
      * @param pipelineId
      *        The ID of the pipeline.
      */
+
     public void setPipelineId(String pipelineId) {
         this.pipelineId = pipelineId;
     }
@@ -59,6 +60,7 @@ public class AddTagsRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ID of the pipeline.
      */
+
     public String getPipelineId() {
         return this.pipelineId;
     }
@@ -73,6 +75,7 @@ public class AddTagsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddTagsRequest withPipelineId(String pipelineId) {
         setPipelineId(pipelineId);
         return this;
@@ -85,6 +88,7 @@ public class AddTagsRequest extends AmazonWebServiceRequest implements
      * 
      * @return The tags to add, as key/value pairs.
      */
+
     public java.util.List<Tag> getTags() {
         if (tags == null) {
             tags = new com.amazonaws.internal.SdkInternalList<Tag>();
@@ -100,6 +104,7 @@ public class AddTagsRequest extends AmazonWebServiceRequest implements
      * @param tags
      *        The tags to add, as key/value pairs.
      */
+
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
             this.tags = null;
@@ -125,6 +130,7 @@ public class AddTagsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddTagsRequest withTags(Tag... tags) {
         if (this.tags == null) {
             setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
@@ -145,6 +151,7 @@ public class AddTagsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddTagsRequest withTags(java.util.Collection<Tag> tags) {
         setTags(tags);
         return this;

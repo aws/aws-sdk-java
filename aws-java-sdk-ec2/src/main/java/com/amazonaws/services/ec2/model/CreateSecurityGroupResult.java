@@ -38,6 +38,7 @@ public class CreateSecurityGroupResult implements Serializable, Cloneable {
      * @param groupId
      *        The ID of the security group.
      */
+
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
@@ -49,6 +50,7 @@ public class CreateSecurityGroupResult implements Serializable, Cloneable {
      * 
      * @return The ID of the security group.
      */
+
     public String getGroupId() {
         return this.groupId;
     }
@@ -63,6 +65,7 @@ public class CreateSecurityGroupResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateSecurityGroupResult withGroupId(String groupId) {
         setGroupId(groupId);
         return this;

@@ -40,6 +40,7 @@ public class GetStagesResult implements Serializable, Cloneable {
      * 
      * @return An individual <a>Stage</a> resource.
      */
+
     public java.util.List<Stage> getItem() {
         return item;
     }
@@ -52,6 +53,7 @@ public class GetStagesResult implements Serializable, Cloneable {
      * @param item
      *        An individual <a>Stage</a> resource.
      */
+
     public void setItem(java.util.Collection<Stage> item) {
         if (item == null) {
             this.item = null;
@@ -77,6 +79,7 @@ public class GetStagesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetStagesResult withItem(Stage... item) {
         if (this.item == null) {
             setItem(new java.util.ArrayList<Stage>(item.length));
@@ -97,6 +100,7 @@ public class GetStagesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetStagesResult withItem(java.util.Collection<Stage> item) {
         setItem(item);
         return this;

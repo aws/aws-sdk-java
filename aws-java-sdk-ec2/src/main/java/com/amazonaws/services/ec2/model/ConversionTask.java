@@ -79,6 +79,7 @@ public class ConversionTask implements Serializable, Cloneable {
      * @param conversionTaskId
      *        The ID of the conversion task.
      */
+
     public void setConversionTaskId(String conversionTaskId) {
         this.conversionTaskId = conversionTaskId;
     }
@@ -90,6 +91,7 @@ public class ConversionTask implements Serializable, Cloneable {
      * 
      * @return The ID of the conversion task.
      */
+
     public String getConversionTaskId() {
         return this.conversionTaskId;
     }
@@ -104,6 +106,7 @@ public class ConversionTask implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConversionTask withConversionTaskId(String conversionTaskId) {
         setConversionTaskId(conversionTaskId);
         return this;
@@ -119,6 +122,7 @@ public class ConversionTask implements Serializable, Cloneable {
      *        The time when the task expires. If the upload isn't complete
      *        before the expiration time, we automatically cancel the task.
      */
+
     public void setExpirationTime(String expirationTime) {
         this.expirationTime = expirationTime;
     }
@@ -132,6 +136,7 @@ public class ConversionTask implements Serializable, Cloneable {
      * @return The time when the task expires. If the upload isn't complete
      *         before the expiration time, we automatically cancel the task.
      */
+
     public String getExpirationTime() {
         return this.expirationTime;
     }
@@ -148,6 +153,7 @@ public class ConversionTask implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConversionTask withExpirationTime(String expirationTime) {
         setExpirationTime(expirationTime);
         return this;
@@ -163,6 +169,7 @@ public class ConversionTask implements Serializable, Cloneable {
      *        If the task is for importing an instance, this contains
      *        information about the import instance task.
      */
+
     public void setImportInstance(ImportInstanceTaskDetails importInstance) {
         this.importInstance = importInstance;
     }
@@ -176,6 +183,7 @@ public class ConversionTask implements Serializable, Cloneable {
      * @return If the task is for importing an instance, this contains
      *         information about the import instance task.
      */
+
     public ImportInstanceTaskDetails getImportInstance() {
         return this.importInstance;
     }
@@ -192,6 +200,7 @@ public class ConversionTask implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConversionTask withImportInstance(
             ImportInstanceTaskDetails importInstance) {
         setImportInstance(importInstance);
@@ -208,6 +217,7 @@ public class ConversionTask implements Serializable, Cloneable {
      *        If the task is for importing a volume, this contains information
      *        about the import volume task.
      */
+
     public void setImportVolume(ImportVolumeTaskDetails importVolume) {
         this.importVolume = importVolume;
     }
@@ -221,6 +231,7 @@ public class ConversionTask implements Serializable, Cloneable {
      * @return If the task is for importing a volume, this contains information
      *         about the import volume task.
      */
+
     public ImportVolumeTaskDetails getImportVolume() {
         return this.importVolume;
     }
@@ -237,6 +248,7 @@ public class ConversionTask implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConversionTask withImportVolume(ImportVolumeTaskDetails importVolume) {
         setImportVolume(importVolume);
         return this;
@@ -251,6 +263,7 @@ public class ConversionTask implements Serializable, Cloneable {
      *        The state of the conversion task.
      * @see ConversionTaskState
      */
+
     public void setState(String state) {
         this.state = state;
     }
@@ -263,6 +276,7 @@ public class ConversionTask implements Serializable, Cloneable {
      * @return The state of the conversion task.
      * @see ConversionTaskState
      */
+
     public String getState() {
         return this.state;
     }
@@ -278,6 +292,7 @@ public class ConversionTask implements Serializable, Cloneable {
      *         chained together.
      * @see ConversionTaskState
      */
+
     public ConversionTask withState(String state) {
         setState(state);
         return this;
@@ -294,6 +309,7 @@ public class ConversionTask implements Serializable, Cloneable {
      *         chained together.
      * @see ConversionTaskState
      */
+
     public void setState(ConversionTaskState state) {
         this.state = state.toString();
     }
@@ -309,6 +325,7 @@ public class ConversionTask implements Serializable, Cloneable {
      *         chained together.
      * @see ConversionTaskState
      */
+
     public ConversionTask withState(ConversionTaskState state) {
         setState(state);
         return this;
@@ -322,6 +339,7 @@ public class ConversionTask implements Serializable, Cloneable {
      * @param statusMessage
      *        The status message related to the conversion task.
      */
+
     public void setStatusMessage(String statusMessage) {
         this.statusMessage = statusMessage;
     }
@@ -333,6 +351,7 @@ public class ConversionTask implements Serializable, Cloneable {
      * 
      * @return The status message related to the conversion task.
      */
+
     public String getStatusMessage() {
         return this.statusMessage;
     }
@@ -347,6 +366,7 @@ public class ConversionTask implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConversionTask withStatusMessage(String statusMessage) {
         setStatusMessage(statusMessage);
         return this;
@@ -359,6 +379,7 @@ public class ConversionTask implements Serializable, Cloneable {
      * 
      * @return Any tags assigned to the task.
      */
+
     public java.util.List<Tag> getTags() {
         if (tags == null) {
             tags = new com.amazonaws.internal.SdkInternalList<Tag>();
@@ -374,6 +395,7 @@ public class ConversionTask implements Serializable, Cloneable {
      * @param tags
      *        Any tags assigned to the task.
      */
+
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
             this.tags = null;
@@ -399,6 +421,7 @@ public class ConversionTask implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConversionTask withTags(Tag... tags) {
         if (this.tags == null) {
             setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
@@ -419,6 +442,7 @@ public class ConversionTask implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConversionTask withTags(java.util.Collection<Tag> tags) {
         setTags(tags);
         return this;

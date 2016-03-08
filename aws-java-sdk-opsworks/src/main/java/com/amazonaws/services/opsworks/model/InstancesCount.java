@@ -148,6 +148,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * @param assigning
      *        The number of instances in the Assigning state.
      */
+
     public void setAssigning(Integer assigning) {
         this.assigning = assigning;
     }
@@ -159,6 +160,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * 
      * @return The number of instances in the Assigning state.
      */
+
     public Integer getAssigning() {
         return this.assigning;
     }
@@ -173,6 +175,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstancesCount withAssigning(Integer assigning) {
         setAssigning(assigning);
         return this;
@@ -186,6 +189,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * @param booting
      *        The number of instances with <code>booting</code> status.
      */
+
     public void setBooting(Integer booting) {
         this.booting = booting;
     }
@@ -197,6 +201,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * 
      * @return The number of instances with <code>booting</code> status.
      */
+
     public Integer getBooting() {
         return this.booting;
     }
@@ -211,6 +216,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstancesCount withBooting(Integer booting) {
         setBooting(booting);
         return this;
@@ -224,6 +230,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * @param connectionLost
      *        The number of instances with <code>connection_lost</code> status.
      */
+
     public void setConnectionLost(Integer connectionLost) {
         this.connectionLost = connectionLost;
     }
@@ -235,6 +242,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * 
      * @return The number of instances with <code>connection_lost</code> status.
      */
+
     public Integer getConnectionLost() {
         return this.connectionLost;
     }
@@ -249,6 +257,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstancesCount withConnectionLost(Integer connectionLost) {
         setConnectionLost(connectionLost);
         return this;
@@ -262,6 +271,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * @param deregistering
      *        The number of instances in the Deregistering state.
      */
+
     public void setDeregistering(Integer deregistering) {
         this.deregistering = deregistering;
     }
@@ -273,6 +283,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * 
      * @return The number of instances in the Deregistering state.
      */
+
     public Integer getDeregistering() {
         return this.deregistering;
     }
@@ -287,6 +298,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstancesCount withDeregistering(Integer deregistering) {
         setDeregistering(deregistering);
         return this;
@@ -300,6 +312,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * @param online
      *        The number of instances with <code>online</code> status.
      */
+
     public void setOnline(Integer online) {
         this.online = online;
     }
@@ -311,6 +324,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * 
      * @return The number of instances with <code>online</code> status.
      */
+
     public Integer getOnline() {
         return this.online;
     }
@@ -325,6 +339,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstancesCount withOnline(Integer online) {
         setOnline(online);
         return this;
@@ -338,6 +353,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * @param pending
      *        The number of instances with <code>pending</code> status.
      */
+
     public void setPending(Integer pending) {
         this.pending = pending;
     }
@@ -349,6 +365,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * 
      * @return The number of instances with <code>pending</code> status.
      */
+
     public Integer getPending() {
         return this.pending;
     }
@@ -363,6 +380,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstancesCount withPending(Integer pending) {
         setPending(pending);
         return this;
@@ -376,6 +394,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * @param rebooting
      *        The number of instances with <code>rebooting</code> status.
      */
+
     public void setRebooting(Integer rebooting) {
         this.rebooting = rebooting;
     }
@@ -387,6 +406,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * 
      * @return The number of instances with <code>rebooting</code> status.
      */
+
     public Integer getRebooting() {
         return this.rebooting;
     }
@@ -401,6 +421,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstancesCount withRebooting(Integer rebooting) {
         setRebooting(rebooting);
         return this;
@@ -414,6 +435,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * @param registered
      *        The number of instances in the Registered state.
      */
+
     public void setRegistered(Integer registered) {
         this.registered = registered;
     }
@@ -425,6 +447,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * 
      * @return The number of instances in the Registered state.
      */
+
     public Integer getRegistered() {
         return this.registered;
     }
@@ -439,6 +462,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstancesCount withRegistered(Integer registered) {
         setRegistered(registered);
         return this;
@@ -452,6 +476,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * @param registering
      *        The number of instances in the Registering state.
      */
+
     public void setRegistering(Integer registering) {
         this.registering = registering;
     }
@@ -463,6 +488,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * 
      * @return The number of instances in the Registering state.
      */
+
     public Integer getRegistering() {
         return this.registering;
     }
@@ -477,6 +503,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstancesCount withRegistering(Integer registering) {
         setRegistering(registering);
         return this;
@@ -490,6 +517,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * @param requested
      *        The number of instances with <code>requested</code> status.
      */
+
     public void setRequested(Integer requested) {
         this.requested = requested;
     }
@@ -501,6 +529,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * 
      * @return The number of instances with <code>requested</code> status.
      */
+
     public Integer getRequested() {
         return this.requested;
     }
@@ -515,6 +544,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstancesCount withRequested(Integer requested) {
         setRequested(requested);
         return this;
@@ -528,6 +558,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * @param runningSetup
      *        The number of instances with <code>running_setup</code> status.
      */
+
     public void setRunningSetup(Integer runningSetup) {
         this.runningSetup = runningSetup;
     }
@@ -539,6 +570,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * 
      * @return The number of instances with <code>running_setup</code> status.
      */
+
     public Integer getRunningSetup() {
         return this.runningSetup;
     }
@@ -553,6 +585,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstancesCount withRunningSetup(Integer runningSetup) {
         setRunningSetup(runningSetup);
         return this;
@@ -566,6 +599,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * @param setupFailed
      *        The number of instances with <code>setup_failed</code> status.
      */
+
     public void setSetupFailed(Integer setupFailed) {
         this.setupFailed = setupFailed;
     }
@@ -577,6 +611,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * 
      * @return The number of instances with <code>setup_failed</code> status.
      */
+
     public Integer getSetupFailed() {
         return this.setupFailed;
     }
@@ -591,6 +626,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstancesCount withSetupFailed(Integer setupFailed) {
         setSetupFailed(setupFailed);
         return this;
@@ -604,6 +640,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * @param shuttingDown
      *        The number of instances with <code>shutting_down</code> status.
      */
+
     public void setShuttingDown(Integer shuttingDown) {
         this.shuttingDown = shuttingDown;
     }
@@ -615,6 +652,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * 
      * @return The number of instances with <code>shutting_down</code> status.
      */
+
     public Integer getShuttingDown() {
         return this.shuttingDown;
     }
@@ -629,6 +667,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstancesCount withShuttingDown(Integer shuttingDown) {
         setShuttingDown(shuttingDown);
         return this;
@@ -642,6 +681,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * @param startFailed
      *        The number of instances with <code>start_failed</code> status.
      */
+
     public void setStartFailed(Integer startFailed) {
         this.startFailed = startFailed;
     }
@@ -653,6 +693,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * 
      * @return The number of instances with <code>start_failed</code> status.
      */
+
     public Integer getStartFailed() {
         return this.startFailed;
     }
@@ -667,6 +708,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstancesCount withStartFailed(Integer startFailed) {
         setStartFailed(startFailed);
         return this;
@@ -680,6 +722,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * @param stopped
      *        The number of instances with <code>stopped</code> status.
      */
+
     public void setStopped(Integer stopped) {
         this.stopped = stopped;
     }
@@ -691,6 +734,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * 
      * @return The number of instances with <code>stopped</code> status.
      */
+
     public Integer getStopped() {
         return this.stopped;
     }
@@ -705,6 +749,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstancesCount withStopped(Integer stopped) {
         setStopped(stopped);
         return this;
@@ -718,6 +763,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * @param stopping
      *        The number of instances with <code>stopping</code> status.
      */
+
     public void setStopping(Integer stopping) {
         this.stopping = stopping;
     }
@@ -729,6 +775,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * 
      * @return The number of instances with <code>stopping</code> status.
      */
+
     public Integer getStopping() {
         return this.stopping;
     }
@@ -743,6 +790,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstancesCount withStopping(Integer stopping) {
         setStopping(stopping);
         return this;
@@ -756,6 +804,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * @param terminated
      *        The number of instances with <code>terminated</code> status.
      */
+
     public void setTerminated(Integer terminated) {
         this.terminated = terminated;
     }
@@ -767,6 +816,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * 
      * @return The number of instances with <code>terminated</code> status.
      */
+
     public Integer getTerminated() {
         return this.terminated;
     }
@@ -781,6 +831,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstancesCount withTerminated(Integer terminated) {
         setTerminated(terminated);
         return this;
@@ -794,6 +845,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * @param terminating
      *        The number of instances with <code>terminating</code> status.
      */
+
     public void setTerminating(Integer terminating) {
         this.terminating = terminating;
     }
@@ -805,6 +857,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * 
      * @return The number of instances with <code>terminating</code> status.
      */
+
     public Integer getTerminating() {
         return this.terminating;
     }
@@ -819,6 +872,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstancesCount withTerminating(Integer terminating) {
         setTerminating(terminating);
         return this;
@@ -832,6 +886,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * @param unassigning
      *        The number of instances in the Unassigning state.
      */
+
     public void setUnassigning(Integer unassigning) {
         this.unassigning = unassigning;
     }
@@ -843,6 +898,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * 
      * @return The number of instances in the Unassigning state.
      */
+
     public Integer getUnassigning() {
         return this.unassigning;
     }
@@ -857,6 +913,7 @@ public class InstancesCount implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstancesCount withUnassigning(Integer unassigning) {
         setUnassigning(unassigning);
         return this;

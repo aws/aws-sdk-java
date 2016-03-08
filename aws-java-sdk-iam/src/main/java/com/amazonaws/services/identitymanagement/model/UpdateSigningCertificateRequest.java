@@ -99,6 +99,7 @@ public class UpdateSigningCertificateRequest extends AmazonWebServiceRequest
      * @param userName
      *        The name of the user the signing certificate belongs to.
      */
+
     public void setUserName(String userName) {
         this.userName = userName;
     }
@@ -110,6 +111,7 @@ public class UpdateSigningCertificateRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the user the signing certificate belongs to.
      */
+
     public String getUserName() {
         return this.userName;
     }
@@ -124,6 +126,7 @@ public class UpdateSigningCertificateRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateSigningCertificateRequest withUserName(String userName) {
         setUserName(userName);
         return this;
@@ -137,6 +140,7 @@ public class UpdateSigningCertificateRequest extends AmazonWebServiceRequest
      * @param certificateId
      *        The ID of the signing certificate you want to update.
      */
+
     public void setCertificateId(String certificateId) {
         this.certificateId = certificateId;
     }
@@ -148,6 +152,7 @@ public class UpdateSigningCertificateRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the signing certificate you want to update.
      */
+
     public String getCertificateId() {
         return this.certificateId;
     }
@@ -162,6 +167,7 @@ public class UpdateSigningCertificateRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateSigningCertificateRequest withCertificateId(
             String certificateId) {
         setCertificateId(certificateId);
@@ -182,6 +188,7 @@ public class UpdateSigningCertificateRequest extends AmazonWebServiceRequest
      *        cannot be used.
      * @see StatusType
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -199,6 +206,7 @@ public class UpdateSigningCertificateRequest extends AmazonWebServiceRequest
      *         cannot be used.
      * @see StatusType
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -219,6 +227,7 @@ public class UpdateSigningCertificateRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see StatusType
      */
+
     public UpdateSigningCertificateRequest withStatus(String status) {
         setStatus(status);
         return this;
@@ -240,6 +249,7 @@ public class UpdateSigningCertificateRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see StatusType
      */
+
     public void setStatus(StatusType status) {
         this.status = status.toString();
     }
@@ -260,6 +270,7 @@ public class UpdateSigningCertificateRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see StatusType
      */
+
     public UpdateSigningCertificateRequest withStatus(StatusType status) {
         setStatus(status);
         return this;

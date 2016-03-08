@@ -76,6 +76,7 @@ public class WorkmailAction implements Serializable, Cloneable {
      *        href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html"
      *        >Amazon SNS Developer Guide</a>.
      */
+
     public void setTopicArn(String topicArn) {
         this.topicArn = topicArn;
     }
@@ -98,6 +99,7 @@ public class WorkmailAction implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html"
      *         >Amazon SNS Developer Guide</a>.
      */
+
     public String getTopicArn() {
         return this.topicArn;
     }
@@ -123,6 +125,7 @@ public class WorkmailAction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public WorkmailAction withTopicArn(String topicArn) {
         setTopicArn(topicArn);
         return this;
@@ -147,6 +150,7 @@ public class WorkmailAction implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/workmail/latest/adminguide/organizations_overview.html"
      *        >Amazon WorkMail Administrator Guide</a>.
      */
+
     public void setOrganizationArn(String organizationArn) {
         this.organizationArn = organizationArn;
     }
@@ -169,6 +173,7 @@ public class WorkmailAction implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/workmail/latest/adminguide/organizations_overview.html"
      *         >Amazon WorkMail Administrator Guide</a>.
      */
+
     public String getOrganizationArn() {
         return this.organizationArn;
     }
@@ -194,6 +199,7 @@ public class WorkmailAction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public WorkmailAction withOrganizationArn(String organizationArn) {
         setOrganizationArn(organizationArn);
         return this;

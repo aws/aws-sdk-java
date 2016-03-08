@@ -42,6 +42,7 @@ public class RequestUploadCredentialsRequest extends AmazonWebServiceRequest
      * @param buildId
      *        Unique identifier for the build you want to get credentials for.
      */
+
     public void setBuildId(String buildId) {
         this.buildId = buildId;
     }
@@ -53,6 +54,7 @@ public class RequestUploadCredentialsRequest extends AmazonWebServiceRequest
      * 
      * @return Unique identifier for the build you want to get credentials for.
      */
+
     public String getBuildId() {
         return this.buildId;
     }
@@ -67,6 +69,7 @@ public class RequestUploadCredentialsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RequestUploadCredentialsRequest withBuildId(String buildId) {
         setBuildId(buildId);
         return this;

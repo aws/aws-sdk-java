@@ -63,6 +63,7 @@ public class CreateNatGatewayRequest extends AmazonWebServiceRequest implements
      * @param subnetId
      *        The subnet in which to create the NAT gateway.
      */
+
     public void setSubnetId(String subnetId) {
         this.subnetId = subnetId;
     }
@@ -74,6 +75,7 @@ public class CreateNatGatewayRequest extends AmazonWebServiceRequest implements
      * 
      * @return The subnet in which to create the NAT gateway.
      */
+
     public String getSubnetId() {
         return this.subnetId;
     }
@@ -88,6 +90,7 @@ public class CreateNatGatewayRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateNatGatewayRequest withSubnetId(String subnetId) {
         setSubnetId(subnetId);
         return this;
@@ -105,6 +108,7 @@ public class CreateNatGatewayRequest extends AmazonWebServiceRequest implements
      *        NAT gateway. If the Elastic IP address is associated with another
      *        resource, you must first disassociate it.
      */
+
     public void setAllocationId(String allocationId) {
         this.allocationId = allocationId;
     }
@@ -120,6 +124,7 @@ public class CreateNatGatewayRequest extends AmazonWebServiceRequest implements
      *         NAT gateway. If the Elastic IP address is associated with another
      *         resource, you must first disassociate it.
      */
+
     public String getAllocationId() {
         return this.allocationId;
     }
@@ -138,6 +143,7 @@ public class CreateNatGatewayRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateNatGatewayRequest withAllocationId(String allocationId) {
         setAllocationId(allocationId);
         return this;
@@ -162,6 +168,7 @@ public class CreateNatGatewayRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        Constraint: Maximum 64 ASCII characters.
      */
+
     public void setClientToken(String clientToken) {
         this.clientToken = clientToken;
     }
@@ -184,6 +191,7 @@ public class CreateNatGatewayRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Constraint: Maximum 64 ASCII characters.
      */
+
     public String getClientToken() {
         return this.clientToken;
     }
@@ -209,6 +217,7 @@ public class CreateNatGatewayRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateNatGatewayRequest withClientToken(String clientToken) {
         setClientToken(clientToken);
         return this;

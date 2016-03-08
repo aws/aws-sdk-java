@@ -42,6 +42,7 @@ public class GetCognitoEventsRequest extends AmazonWebServiceRequest implements
      * @param identityPoolId
      *        The Cognito Identity Pool ID for the request
      */
+
     public void setIdentityPoolId(String identityPoolId) {
         this.identityPoolId = identityPoolId;
     }
@@ -53,6 +54,7 @@ public class GetCognitoEventsRequest extends AmazonWebServiceRequest implements
      * 
      * @return The Cognito Identity Pool ID for the request
      */
+
     public String getIdentityPoolId() {
         return this.identityPoolId;
     }
@@ -67,6 +69,7 @@ public class GetCognitoEventsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetCognitoEventsRequest withIdentityPoolId(String identityPoolId) {
         setIdentityPoolId(identityPoolId);
         return this;

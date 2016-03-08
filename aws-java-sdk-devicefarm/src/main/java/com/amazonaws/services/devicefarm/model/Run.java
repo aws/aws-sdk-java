@@ -69,6 +69,26 @@ public class Run implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * APPIUM_PYTHON: The Appium Python type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * CALABASH: The Calabash type.
      * </p>
      * </li>
@@ -90,6 +110,11 @@ public class Run implements Serializable, Cloneable {
      * <li>
      * <p>
      * XCTEST: The XCode test type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_UI: The XCode UI test type.
      * </p>
      * </li>
      * </ul>
@@ -263,6 +288,7 @@ public class Run implements Serializable, Cloneable {
      * @param arn
      *        The run's ARN.
      */
+
     public void setArn(String arn) {
         this.arn = arn;
     }
@@ -274,6 +300,7 @@ public class Run implements Serializable, Cloneable {
      * 
      * @return The run's ARN.
      */
+
     public String getArn() {
         return this.arn;
     }
@@ -288,6 +315,7 @@ public class Run implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Run withArn(String arn) {
         setArn(arn);
         return this;
@@ -301,6 +329,7 @@ public class Run implements Serializable, Cloneable {
      * @param name
      *        The run's name.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -312,6 +341,7 @@ public class Run implements Serializable, Cloneable {
      * 
      * @return The run's name.
      */
+
     public String getName() {
         return this.name;
     }
@@ -326,6 +356,7 @@ public class Run implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Run withName(String name) {
         setName(name);
         return this;
@@ -363,6 +394,26 @@ public class Run implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * APPIUM_PYTHON: The Appium Python type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * CALABASH: The Calabash type.
      * </p>
      * </li>
@@ -384,6 +435,11 @@ public class Run implements Serializable, Cloneable {
      * <li>
      * <p>
      * XCTEST: The XCode test type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_UI: The XCode UI test type.
      * </p>
      * </li>
      * </ul>
@@ -418,6 +474,26 @@ public class Run implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
+     *        APPIUM_PYTHON: The Appium Python type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        CALABASH: The Calabash type.
      *        </p>
      *        </li>
@@ -441,8 +517,14 @@ public class Run implements Serializable, Cloneable {
      *        XCTEST: The XCode test type.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST_UI: The XCode UI test type.
+     *        </p>
+     *        </li>
      * @see TestType
      */
+
     public void setType(String type) {
         this.type = type;
     }
@@ -479,6 +561,26 @@ public class Run implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * APPIUM_PYTHON: The Appium Python type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * CALABASH: The Calabash type.
      * </p>
      * </li>
@@ -500,6 +602,11 @@ public class Run implements Serializable, Cloneable {
      * <li>
      * <p>
      * XCTEST: The XCode test type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_UI: The XCode UI test type.
      * </p>
      * </li>
      * </ul>
@@ -533,6 +640,26 @@ public class Run implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
+     *         APPIUM_PYTHON: The Appium Python type.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         CALABASH: The Calabash type.
      *         </p>
      *         </li>
@@ -556,8 +683,14 @@ public class Run implements Serializable, Cloneable {
      *         XCTEST: The XCode test type.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         XCTEST_UI: The XCode UI test type.
+     *         </p>
+     *         </li>
      * @see TestType
      */
+
     public String getType() {
         return this.type;
     }
@@ -594,6 +727,26 @@ public class Run implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * APPIUM_PYTHON: The Appium Python type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * CALABASH: The Calabash type.
      * </p>
      * </li>
@@ -615,6 +768,11 @@ public class Run implements Serializable, Cloneable {
      * <li>
      * <p>
      * XCTEST: The XCode test type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_UI: The XCode UI test type.
      * </p>
      * </li>
      * </ul>
@@ -649,6 +807,26 @@ public class Run implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
+     *        APPIUM_PYTHON: The Appium Python type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        CALABASH: The Calabash type.
      *        </p>
      *        </li>
@@ -672,10 +850,16 @@ public class Run implements Serializable, Cloneable {
      *        XCTEST: The XCode test type.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST_UI: The XCode UI test type.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see TestType
      */
+
     public Run withType(String type) {
         setType(type);
         return this;
@@ -713,6 +897,26 @@ public class Run implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * APPIUM_PYTHON: The Appium Python type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * CALABASH: The Calabash type.
      * </p>
      * </li>
@@ -734,6 +938,11 @@ public class Run implements Serializable, Cloneable {
      * <li>
      * <p>
      * XCTEST: The XCode test type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_UI: The XCode UI test type.
      * </p>
      * </li>
      * </ul>
@@ -768,6 +977,26 @@ public class Run implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
+     *        APPIUM_PYTHON: The Appium Python type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        CALABASH: The Calabash type.
      *        </p>
      *        </li>
@@ -791,10 +1020,16 @@ public class Run implements Serializable, Cloneable {
      *        XCTEST: The XCode test type.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST_UI: The XCode UI test type.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see TestType
      */
+
     public void setType(TestType type) {
         this.type = type.toString();
     }
@@ -831,6 +1066,26 @@ public class Run implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * APPIUM_PYTHON: The Appium Python type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * CALABASH: The Calabash type.
      * </p>
      * </li>
@@ -852,6 +1107,11 @@ public class Run implements Serializable, Cloneable {
      * <li>
      * <p>
      * XCTEST: The XCode test type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_UI: The XCode UI test type.
      * </p>
      * </li>
      * </ul>
@@ -886,6 +1146,26 @@ public class Run implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
+     *        APPIUM_PYTHON: The Appium Python type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        CALABASH: The Calabash type.
      *        </p>
      *        </li>
@@ -909,10 +1189,16 @@ public class Run implements Serializable, Cloneable {
      *        XCTEST: The XCode test type.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST_UI: The XCode UI test type.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see TestType
      */
+
     public Run withType(TestType type) {
         setType(type);
         return this;
@@ -956,6 +1242,7 @@ public class Run implements Serializable, Cloneable {
      *        </li>
      * @see DevicePlatform
      */
+
     public void setPlatform(String platform) {
         this.platform = platform;
     }
@@ -997,6 +1284,7 @@ public class Run implements Serializable, Cloneable {
      *         </li>
      * @see DevicePlatform
      */
+
     public String getPlatform() {
         return this.platform;
     }
@@ -1041,6 +1329,7 @@ public class Run implements Serializable, Cloneable {
      *         chained together.
      * @see DevicePlatform
      */
+
     public Run withPlatform(String platform) {
         setPlatform(platform);
         return this;
@@ -1086,6 +1375,7 @@ public class Run implements Serializable, Cloneable {
      *         chained together.
      * @see DevicePlatform
      */
+
     public void setPlatform(DevicePlatform platform) {
         this.platform = platform.toString();
     }
@@ -1130,6 +1420,7 @@ public class Run implements Serializable, Cloneable {
      *         chained together.
      * @see DevicePlatform
      */
+
     public Run withPlatform(DevicePlatform platform) {
         setPlatform(platform);
         return this;
@@ -1143,6 +1434,7 @@ public class Run implements Serializable, Cloneable {
      * @param created
      *        When the run was created.
      */
+
     public void setCreated(java.util.Date created) {
         this.created = created;
     }
@@ -1154,6 +1446,7 @@ public class Run implements Serializable, Cloneable {
      * 
      * @return When the run was created.
      */
+
     public java.util.Date getCreated() {
         return this.created;
     }
@@ -1168,6 +1461,7 @@ public class Run implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Run withCreated(java.util.Date created) {
         setCreated(created);
         return this;
@@ -1241,6 +1535,7 @@ public class Run implements Serializable, Cloneable {
      *        </li>
      * @see ExecutionStatus
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -1312,6 +1607,7 @@ public class Run implements Serializable, Cloneable {
      *         </li>
      * @see ExecutionStatus
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -1386,6 +1682,7 @@ public class Run implements Serializable, Cloneable {
      *         chained together.
      * @see ExecutionStatus
      */
+
     public Run withStatus(String status) {
         setStatus(status);
         return this;
@@ -1461,6 +1758,7 @@ public class Run implements Serializable, Cloneable {
      *         chained together.
      * @see ExecutionStatus
      */
+
     public void setStatus(ExecutionStatus status) {
         this.status = status.toString();
     }
@@ -1535,6 +1833,7 @@ public class Run implements Serializable, Cloneable {
      *         chained together.
      * @see ExecutionStatus
      */
+
     public Run withStatus(ExecutionStatus status) {
         setStatus(status);
         return this;
@@ -1628,6 +1927,7 @@ public class Run implements Serializable, Cloneable {
      *        </li>
      * @see ExecutionResult
      */
+
     public void setResult(String result) {
         this.result = result;
     }
@@ -1719,6 +2019,7 @@ public class Run implements Serializable, Cloneable {
      *         </li>
      * @see ExecutionResult
      */
+
     public String getResult() {
         return this.result;
     }
@@ -1813,6 +2114,7 @@ public class Run implements Serializable, Cloneable {
      *         chained together.
      * @see ExecutionResult
      */
+
     public Run withResult(String result) {
         setResult(result);
         return this;
@@ -1908,6 +2210,7 @@ public class Run implements Serializable, Cloneable {
      *         chained together.
      * @see ExecutionResult
      */
+
     public void setResult(ExecutionResult result) {
         this.result = result.toString();
     }
@@ -2002,6 +2305,7 @@ public class Run implements Serializable, Cloneable {
      *         chained together.
      * @see ExecutionResult
      */
+
     public Run withResult(ExecutionResult result) {
         setResult(result);
         return this;
@@ -2015,6 +2319,7 @@ public class Run implements Serializable, Cloneable {
      * @param started
      *        The run's start time.
      */
+
     public void setStarted(java.util.Date started) {
         this.started = started;
     }
@@ -2026,6 +2331,7 @@ public class Run implements Serializable, Cloneable {
      * 
      * @return The run's start time.
      */
+
     public java.util.Date getStarted() {
         return this.started;
     }
@@ -2040,6 +2346,7 @@ public class Run implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Run withStarted(java.util.Date started) {
         setStarted(started);
         return this;
@@ -2053,6 +2360,7 @@ public class Run implements Serializable, Cloneable {
      * @param stopped
      *        The run's stop time.
      */
+
     public void setStopped(java.util.Date stopped) {
         this.stopped = stopped;
     }
@@ -2064,6 +2372,7 @@ public class Run implements Serializable, Cloneable {
      * 
      * @return The run's stop time.
      */
+
     public java.util.Date getStopped() {
         return this.stopped;
     }
@@ -2078,6 +2387,7 @@ public class Run implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Run withStopped(java.util.Date stopped) {
         setStopped(stopped);
         return this;
@@ -2091,6 +2401,7 @@ public class Run implements Serializable, Cloneable {
      * @param counters
      *        The run's result counters.
      */
+
     public void setCounters(Counters counters) {
         this.counters = counters;
     }
@@ -2102,6 +2413,7 @@ public class Run implements Serializable, Cloneable {
      * 
      * @return The run's result counters.
      */
+
     public Counters getCounters() {
         return this.counters;
     }
@@ -2116,6 +2428,7 @@ public class Run implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Run withCounters(Counters counters) {
         setCounters(counters);
         return this;
@@ -2129,6 +2442,7 @@ public class Run implements Serializable, Cloneable {
      * @param message
      *        A message about the run's result.
      */
+
     public void setMessage(String message) {
         this.message = message;
     }
@@ -2140,6 +2454,7 @@ public class Run implements Serializable, Cloneable {
      * 
      * @return A message about the run's result.
      */
+
     public String getMessage() {
         return this.message;
     }
@@ -2154,6 +2469,7 @@ public class Run implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Run withMessage(String message) {
         setMessage(message);
         return this;
@@ -2167,6 +2483,7 @@ public class Run implements Serializable, Cloneable {
      * @param totalJobs
      *        The total number of jobs for the run.
      */
+
     public void setTotalJobs(Integer totalJobs) {
         this.totalJobs = totalJobs;
     }
@@ -2178,6 +2495,7 @@ public class Run implements Serializable, Cloneable {
      * 
      * @return The total number of jobs for the run.
      */
+
     public Integer getTotalJobs() {
         return this.totalJobs;
     }
@@ -2192,6 +2510,7 @@ public class Run implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Run withTotalJobs(Integer totalJobs) {
         setTotalJobs(totalJobs);
         return this;
@@ -2205,6 +2524,7 @@ public class Run implements Serializable, Cloneable {
      * @param completedJobs
      *        The total number of completed jobs.
      */
+
     public void setCompletedJobs(Integer completedJobs) {
         this.completedJobs = completedJobs;
     }
@@ -2216,6 +2536,7 @@ public class Run implements Serializable, Cloneable {
      * 
      * @return The total number of completed jobs.
      */
+
     public Integer getCompletedJobs() {
         return this.completedJobs;
     }
@@ -2230,6 +2551,7 @@ public class Run implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Run withCompletedJobs(Integer completedJobs) {
         setCompletedJobs(completedJobs);
         return this;
@@ -2248,6 +2570,7 @@ public class Run implements Serializable, Cloneable {
      *        default value is <code>unmetered</code>.
      * @see BillingMethod
      */
+
     public void setBillingMethod(String billingMethod) {
         this.billingMethod = billingMethod;
     }
@@ -2264,6 +2587,7 @@ public class Run implements Serializable, Cloneable {
      *         default value is <code>unmetered</code>.
      * @see BillingMethod
      */
+
     public String getBillingMethod() {
         return this.billingMethod;
     }
@@ -2283,6 +2607,7 @@ public class Run implements Serializable, Cloneable {
      *         chained together.
      * @see BillingMethod
      */
+
     public Run withBillingMethod(String billingMethod) {
         setBillingMethod(billingMethod);
         return this;
@@ -2303,6 +2628,7 @@ public class Run implements Serializable, Cloneable {
      *         chained together.
      * @see BillingMethod
      */
+
     public void setBillingMethod(BillingMethod billingMethod) {
         this.billingMethod = billingMethod.toString();
     }
@@ -2322,6 +2648,7 @@ public class Run implements Serializable, Cloneable {
      *         chained together.
      * @see BillingMethod
      */
+
     public Run withBillingMethod(BillingMethod billingMethod) {
         setBillingMethod(billingMethod);
         return this;
@@ -2336,6 +2663,7 @@ public class Run implements Serializable, Cloneable {
      *        Represents the total (metered or unmetered) minutes used by the
      *        test run.
      */
+
     public void setDeviceMinutes(DeviceMinutes deviceMinutes) {
         this.deviceMinutes = deviceMinutes;
     }
@@ -2348,6 +2676,7 @@ public class Run implements Serializable, Cloneable {
      * @return Represents the total (metered or unmetered) minutes used by the
      *         test run.
      */
+
     public DeviceMinutes getDeviceMinutes() {
         return this.deviceMinutes;
     }
@@ -2363,6 +2692,7 @@ public class Run implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Run withDeviceMinutes(DeviceMinutes deviceMinutes) {
         setDeviceMinutes(deviceMinutes);
         return this;

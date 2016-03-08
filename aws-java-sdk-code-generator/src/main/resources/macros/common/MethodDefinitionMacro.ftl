@@ -12,8 +12,9 @@
 <#local setterDoc = member.setterDocumentation!""/>
 <#local getterDoc = member.getterDocumentation!""/>
 <#local fluentDoc = member.fluentSetterDocumentation!""/>
-<#if member.deprecated>
-<#local deprecated = member.deprecated/>
+
+<#if member.deprecated || (member.shape?? && member.shape.deprecated)>
+<#local deprecated = "@Deprecated"/>
 <#else>
 <#local deprecated = ""/>
 </#if>
@@ -21,8 +22,8 @@
 <#if member.list>
     <#local listModel = member.listModel/>
 
-    ${deprecated}
     ${getterDoc}
+    ${deprecated}
     public ${getter.returnType} ${getterFunctionName}() {
         <#if customConfig.useAutoConstructList>
         if(${variableName} == null) {
@@ -32,8 +33,8 @@
         return ${variableName};
     }
 
-    ${deprecated}
     ${setterDoc}
+    ${deprecated}
     public void ${setterFunctionName}(${setter.variableSetterType} ${setter.variableName}){
         if (${setter.variableName} == null) {
             this.${variableName} = null;
@@ -44,8 +45,8 @@
             new ${listModel.templateImplType}(${setter.variableName});
     }
 
-    ${deprecated}
     ${member.varargSetterDocumentation}
+    ${deprecated}
     public ${shapeName} ${fluentFunctionName}(${listModel.memberType}... ${setter.variableName}){
         if (this.${variableName} == null) {
             ${setterFunctionName}(new ${listModel.templateImplType}(${setter.variableName}.length));
@@ -56,8 +57,8 @@
         return this;
     }
 
-    ${deprecated}
     ${fluentDoc}
+    ${deprecated}
     public ${shapeName} ${fluentFunctionName}(${setter.variableSetterType} ${setter.variableName}){
         ${setterFunctionName}(${setter.variableName});
         return this;
@@ -65,8 +66,8 @@
 
 
     <#if member.enumType?has_content>
-    ${deprecated}
     ${fluentDoc}
+    ${deprecated}
     public ${shapeName} ${fluentFunctionName}(${member.enumType}... ${setter.variableName}) {
         ${listModel.templateImplType} ${setter.variableName}Copy = new ${listModel.templateImplType}(${setter.variableName}.length);
         for (${member.enumType} value : ${setter.variableName}) {
@@ -88,8 +89,8 @@
     <#local keyVariableName = "key">
     <#local valueVariableName = "value"/>
 
-    ${deprecated}
     ${getterDoc}
+    ${deprecated}
     public ${getter.returnType} ${getterFunctionName}(){
         <#if customConfig.useAutoConstructMap>
         if(${variableName} == null) {
@@ -99,8 +100,8 @@
         return ${variableName};
     }
 
-    ${deprecated}
     ${setterDoc}
+    ${deprecated}
     public void ${setterFunctionName}(${setter.variableType} ${setter.variableName}){
         <#if customConfig.useAutoConstructMap>
             this.${variableName} = ${setter.variableName} == null
@@ -111,8 +112,8 @@
         </#if>
     }
 
-    ${deprecated}
     ${fluentDoc}
+    ${deprecated}
     public ${shapeName} ${fluentFunctionName}(${setter.variableType} ${setter.variableName}){
         ${setterFunctionName}(${setter.variableName});
         return this;
@@ -129,12 +130,12 @@
         return this;
     }
 
-    ${deprecated}
     /**
       * Removes all the entries added into ${member.name}.
       * &lt;p>
       * Returns a reference to this object so that method calls can be chained together.
       */
+    ${deprecated}
     public ${shapeName} clear${member.name}Entries() {
         this.${variableName} = null;
         return this;
@@ -142,34 +143,34 @@
 
 <#else>
 
-    ${deprecated}
     ${setterDoc}
+    ${deprecated}
     public void ${setterFunctionName}(${setter.variableType} ${setter.variableName}) {
         this.${variableName} = ${setter.variableName};
     }
 
-    ${deprecated}
     ${getterDoc}
+    ${deprecated}
     public ${getter.returnType} ${getterFunctionName}() {
         return this.${variableName};
     }
 
-    ${deprecated}
     ${fluentDoc}
+    ${deprecated}
     public ${shapeName} ${fluentFunctionName}(${setter.variableType} ${setter.variableName}) {
         ${setterFunctionName}(${setter.variableName});
         return this;
     }
 
     <#if member.enumType?has_content>
-    ${deprecated}
     ${fluentDoc}
+    ${deprecated}
     public void ${setterFunctionName}(${member.enumType} ${setter.variableName}) {
         this.${variableName} = ${setter.variableName}.toString();
     }
 
-    ${deprecated}
     ${fluentDoc}
+    ${deprecated}
     public ${shapeName} ${fluentFunctionName}(${member.enumType} ${setter.variableName}) {
         ${setterFunctionName}(${setter.variableName});
         return this;
@@ -177,8 +178,8 @@
     </#if>
 
     <#if variableType == "Boolean">
-    ${deprecated}
     ${getterDoc}
+    ${deprecated}
     <#local functionName = "is${memberName}" />
     <#if memberName?starts_with("is") || memberName?starts_with("Is")>
       <#-- Replaces first occurrence of String "is" with empty string. Ignores case and replaces only first occurrence. -->

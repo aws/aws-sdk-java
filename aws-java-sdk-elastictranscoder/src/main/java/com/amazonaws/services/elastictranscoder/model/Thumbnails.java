@@ -165,6 +165,7 @@ public class Thumbnails implements Serializable, Cloneable {
      *        You specify whether you want Elastic Transcoder to create
      *        thumbnails when you create a job.
      */
+
     public void setFormat(String format) {
         this.format = format;
     }
@@ -185,6 +186,7 @@ public class Thumbnails implements Serializable, Cloneable {
      *         You specify whether you want Elastic Transcoder to create
      *         thumbnails when you create a job.
      */
+
     public String getFormat() {
         return this.format;
     }
@@ -208,6 +210,7 @@ public class Thumbnails implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Thumbnails withFormat(String format) {
         setFormat(format);
         return this;
@@ -223,6 +226,7 @@ public class Thumbnails implements Serializable, Cloneable {
      *        The approximate number of seconds between thumbnails. Specify an
      *        integer value.
      */
+
     public void setInterval(String interval) {
         this.interval = interval;
     }
@@ -236,6 +240,7 @@ public class Thumbnails implements Serializable, Cloneable {
      * @return The approximate number of seconds between thumbnails. Specify an
      *         integer value.
      */
+
     public String getInterval() {
         return this.interval;
     }
@@ -252,6 +257,7 @@ public class Thumbnails implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Thumbnails withInterval(String interval) {
         setInterval(interval);
         return this;
@@ -291,6 +297,7 @@ public class Thumbnails implements Serializable, Cloneable {
      *        The values cannot exceed the width and height that you specified
      *        in the <code>Video:Resolution</code> object.
      */
+
     public void setResolution(String resolution) {
         this.resolution = resolution;
     }
@@ -328,6 +335,7 @@ public class Thumbnails implements Serializable, Cloneable {
      *         The values cannot exceed the width and height that you specified
      *         in the <code>Video:Resolution</code> object.
      */
+
     public String getResolution() {
         return this.resolution;
     }
@@ -368,6 +376,7 @@ public class Thumbnails implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Thumbnails withResolution(String resolution) {
         setResolution(resolution);
         return this;
@@ -416,6 +425,7 @@ public class Thumbnails implements Serializable, Cloneable {
      *        If you specify <code>auto</code>, Elastic Transcoder tries to
      *        preserve the aspect ratio of the video in the output file.
      */
+
     public void setAspectRatio(String aspectRatio) {
         this.aspectRatio = aspectRatio;
     }
@@ -462,6 +472,7 @@ public class Thumbnails implements Serializable, Cloneable {
      *         If you specify <code>auto</code>, Elastic Transcoder tries to
      *         preserve the aspect ratio of the video in the output file.
      */
+
     public String getAspectRatio() {
         return this.aspectRatio;
     }
@@ -511,6 +522,7 @@ public class Thumbnails implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Thumbnails withAspectRatio(String aspectRatio) {
         setAspectRatio(aspectRatio);
         return this;
@@ -529,6 +541,7 @@ public class Thumbnails implements Serializable, Cloneable {
      *        you specify a numeric value, enter an even integer between 32 and
      *        4096.
      */
+
     public void setMaxWidth(String maxWidth) {
         this.maxWidth = maxWidth;
     }
@@ -545,6 +558,7 @@ public class Thumbnails implements Serializable, Cloneable {
      *         you specify a numeric value, enter an even integer between 32 and
      *         4096.
      */
+
     public String getMaxWidth() {
         return this.maxWidth;
     }
@@ -564,6 +578,7 @@ public class Thumbnails implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Thumbnails withMaxWidth(String maxWidth) {
         setMaxWidth(maxWidth);
         return this;
@@ -582,6 +597,7 @@ public class Thumbnails implements Serializable, Cloneable {
      *        you specify a numeric value, enter an even integer between 32 and
      *        3072.
      */
+
     public void setMaxHeight(String maxHeight) {
         this.maxHeight = maxHeight;
     }
@@ -598,6 +614,7 @@ public class Thumbnails implements Serializable, Cloneable {
      *         you specify a numeric value, enter an even integer between 32 and
      *         3072.
      */
+
     public String getMaxHeight() {
         return this.maxHeight;
     }
@@ -617,6 +634,7 @@ public class Thumbnails implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Thumbnails withMaxHeight(String maxHeight) {
         setMaxHeight(maxHeight);
         return this;
@@ -696,6 +714,7 @@ public class Thumbnails implements Serializable, Cloneable {
      *        up.</li>
      *        </ul>
      */
+
     public void setSizingPolicy(String sizingPolicy) {
         this.sizingPolicy = sizingPolicy;
     }
@@ -773,6 +792,7 @@ public class Thumbnails implements Serializable, Cloneable {
      *         thumbnails up.</li>
      *         </ul>
      */
+
     public String getSizingPolicy() {
         return this.sizingPolicy;
     }
@@ -853,6 +873,7 @@ public class Thumbnails implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Thumbnails withSizingPolicy(String sizingPolicy) {
         setSizingPolicy(sizingPolicy);
         return this;
@@ -874,6 +895,7 @@ public class Thumbnails implements Serializable, Cloneable {
      *        thumbnails match the values that you specified for thumbnail
      *        <code>MaxWidth</code> and <code>MaxHeight</code> settings.
      */
+
     public void setPaddingPolicy(String paddingPolicy) {
         this.paddingPolicy = paddingPolicy;
     }
@@ -894,6 +916,7 @@ public class Thumbnails implements Serializable, Cloneable {
      *         thumbnail <code>MaxWidth</code> and <code>MaxHeight</code>
      *         settings.
      */
+
     public String getPaddingPolicy() {
         return this.paddingPolicy;
     }
@@ -916,6 +939,7 @@ public class Thumbnails implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Thumbnails withPaddingPolicy(String paddingPolicy) {
         setPaddingPolicy(paddingPolicy);
         return this;

@@ -69,6 +69,7 @@ public class TrustedAdvisorCheckSummary implements Serializable, Cloneable {
      * @param checkId
      *        The unique identifier for the Trusted Advisor check.
      */
+
     public void setCheckId(String checkId) {
         this.checkId = checkId;
     }
@@ -80,6 +81,7 @@ public class TrustedAdvisorCheckSummary implements Serializable, Cloneable {
      * 
      * @return The unique identifier for the Trusted Advisor check.
      */
+
     public String getCheckId() {
         return this.checkId;
     }
@@ -94,6 +96,7 @@ public class TrustedAdvisorCheckSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TrustedAdvisorCheckSummary withCheckId(String checkId) {
         setCheckId(checkId);
         return this;
@@ -107,6 +110,7 @@ public class TrustedAdvisorCheckSummary implements Serializable, Cloneable {
      * @param timestamp
      *        The time of the last refresh of the check.
      */
+
     public void setTimestamp(String timestamp) {
         this.timestamp = timestamp;
     }
@@ -118,6 +122,7 @@ public class TrustedAdvisorCheckSummary implements Serializable, Cloneable {
      * 
      * @return The time of the last refresh of the check.
      */
+
     public String getTimestamp() {
         return this.timestamp;
     }
@@ -132,6 +137,7 @@ public class TrustedAdvisorCheckSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TrustedAdvisorCheckSummary withTimestamp(String timestamp) {
         setTimestamp(timestamp);
         return this;
@@ -147,6 +153,7 @@ public class TrustedAdvisorCheckSummary implements Serializable, Cloneable {
      *        The alert status of the check: "ok" (green), "warning" (yellow),
      *        "error" (red), or "not_available".
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -160,6 +167,7 @@ public class TrustedAdvisorCheckSummary implements Serializable, Cloneable {
      * @return The alert status of the check: "ok" (green), "warning" (yellow),
      *         "error" (red), or "not_available".
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -176,6 +184,7 @@ public class TrustedAdvisorCheckSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TrustedAdvisorCheckSummary withStatus(String status) {
         setStatus(status);
         return this;
@@ -189,6 +198,7 @@ public class TrustedAdvisorCheckSummary implements Serializable, Cloneable {
      * @param hasFlaggedResources
      *        Specifies whether the Trusted Advisor check has flagged resources.
      */
+
     public void setHasFlaggedResources(Boolean hasFlaggedResources) {
         this.hasFlaggedResources = hasFlaggedResources;
     }
@@ -201,6 +211,7 @@ public class TrustedAdvisorCheckSummary implements Serializable, Cloneable {
      * @return Specifies whether the Trusted Advisor check has flagged
      *         resources.
      */
+
     public Boolean getHasFlaggedResources() {
         return this.hasFlaggedResources;
     }
@@ -215,6 +226,7 @@ public class TrustedAdvisorCheckSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TrustedAdvisorCheckSummary withHasFlaggedResources(
             Boolean hasFlaggedResources) {
         setHasFlaggedResources(hasFlaggedResources);
@@ -229,6 +241,7 @@ public class TrustedAdvisorCheckSummary implements Serializable, Cloneable {
      * @return Specifies whether the Trusted Advisor check has flagged
      *         resources.
      */
+
     public Boolean isHasFlaggedResources() {
         return this.hasFlaggedResources;
     }
@@ -236,6 +249,7 @@ public class TrustedAdvisorCheckSummary implements Serializable, Cloneable {
     /**
      * @param resourcesSummary
      */
+
     public void setResourcesSummary(
             TrustedAdvisorResourcesSummary resourcesSummary) {
         this.resourcesSummary = resourcesSummary;
@@ -244,6 +258,7 @@ public class TrustedAdvisorCheckSummary implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public TrustedAdvisorResourcesSummary getResourcesSummary() {
         return this.resourcesSummary;
     }
@@ -253,6 +268,7 @@ public class TrustedAdvisorCheckSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TrustedAdvisorCheckSummary withResourcesSummary(
             TrustedAdvisorResourcesSummary resourcesSummary) {
         setResourcesSummary(resourcesSummary);
@@ -269,6 +285,7 @@ public class TrustedAdvisorCheckSummary implements Serializable, Cloneable {
      *        Summary information that relates to the category of the check.
      *        Cost Optimizing is the only category that is currently supported.
      */
+
     public void setCategorySpecificSummary(
             TrustedAdvisorCategorySpecificSummary categorySpecificSummary) {
         this.categorySpecificSummary = categorySpecificSummary;
@@ -283,6 +300,7 @@ public class TrustedAdvisorCheckSummary implements Serializable, Cloneable {
      * @return Summary information that relates to the category of the check.
      *         Cost Optimizing is the only category that is currently supported.
      */
+
     public TrustedAdvisorCategorySpecificSummary getCategorySpecificSummary() {
         return this.categorySpecificSummary;
     }
@@ -299,6 +317,7 @@ public class TrustedAdvisorCheckSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TrustedAdvisorCheckSummary withCategorySpecificSummary(
             TrustedAdvisorCategorySpecificSummary categorySpecificSummary) {
         setCategorySpecificSummary(categorySpecificSummary);

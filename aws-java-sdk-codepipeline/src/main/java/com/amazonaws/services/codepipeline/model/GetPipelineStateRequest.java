@@ -42,6 +42,7 @@ public class GetPipelineStateRequest extends AmazonWebServiceRequest implements
      * @param name
      *        The name of the pipeline about which you want to get information.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -53,6 +54,7 @@ public class GetPipelineStateRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the pipeline about which you want to get information.
      */
+
     public String getName() {
         return this.name;
     }
@@ -67,6 +69,7 @@ public class GetPipelineStateRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetPipelineStateRequest withName(String name) {
         setName(name);
         return this;

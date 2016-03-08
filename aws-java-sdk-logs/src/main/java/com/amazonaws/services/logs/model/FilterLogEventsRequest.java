@@ -96,6 +96,7 @@ public class FilterLogEventsRequest extends AmazonWebServiceRequest implements
      * @param logGroupName
      *        The name of the log group to query.
      */
+
     public void setLogGroupName(String logGroupName) {
         this.logGroupName = logGroupName;
     }
@@ -107,6 +108,7 @@ public class FilterLogEventsRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the log group to query.
      */
+
     public String getLogGroupName() {
         return this.logGroupName;
     }
@@ -121,6 +123,7 @@ public class FilterLogEventsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FilterLogEventsRequest withLogGroupName(String logGroupName) {
         setLogGroupName(logGroupName);
         return this;
@@ -135,6 +138,7 @@ public class FilterLogEventsRequest extends AmazonWebServiceRequest implements
      * @return Optional list of log stream names within the specified log group
      *         to search. Defaults to all the log streams in the log group.
      */
+
     public java.util.List<String> getLogStreamNames() {
         if (logStreamNames == null) {
             logStreamNames = new com.amazonaws.internal.SdkInternalList<String>();
@@ -152,6 +156,7 @@ public class FilterLogEventsRequest extends AmazonWebServiceRequest implements
      *        Optional list of log stream names within the specified log group
      *        to search. Defaults to all the log streams in the log group.
      */
+
     public void setLogStreamNames(java.util.Collection<String> logStreamNames) {
         if (logStreamNames == null) {
             this.logStreamNames = null;
@@ -180,6 +185,7 @@ public class FilterLogEventsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FilterLogEventsRequest withLogStreamNames(String... logStreamNames) {
         if (this.logStreamNames == null) {
             setLogStreamNames(new com.amazonaws.internal.SdkInternalList<String>(
@@ -203,6 +209,7 @@ public class FilterLogEventsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FilterLogEventsRequest withLogStreamNames(
             java.util.Collection<String> logStreamNames) {
         setLogStreamNames(logStreamNames);
@@ -221,6 +228,7 @@ public class FilterLogEventsRequest extends AmazonWebServiceRequest implements
      *        1, 1970 00:00:00 UTC. If provided, events with a timestamp prior
      *        to this time are not returned.
      */
+
     public void setStartTime(Long startTime) {
         this.startTime = startTime;
     }
@@ -236,6 +244,7 @@ public class FilterLogEventsRequest extends AmazonWebServiceRequest implements
      *         1, 1970 00:00:00 UTC. If provided, events with a timestamp prior
      *         to this time are not returned.
      */
+
     public Long getStartTime() {
         return this.startTime;
     }
@@ -254,6 +263,7 @@ public class FilterLogEventsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FilterLogEventsRequest withStartTime(Long startTime) {
         setStartTime(startTime);
         return this;
@@ -271,6 +281,7 @@ public class FilterLogEventsRequest extends AmazonWebServiceRequest implements
      *        1, 1970 00:00:00 UTC. If provided, events with a timestamp later
      *        than this time are not returned.
      */
+
     public void setEndTime(Long endTime) {
         this.endTime = endTime;
     }
@@ -286,6 +297,7 @@ public class FilterLogEventsRequest extends AmazonWebServiceRequest implements
      *         1, 1970 00:00:00 UTC. If provided, events with a timestamp later
      *         than this time are not returned.
      */
+
     public Long getEndTime() {
         return this.endTime;
     }
@@ -304,6 +316,7 @@ public class FilterLogEventsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FilterLogEventsRequest withEndTime(Long endTime) {
         setEndTime(endTime);
         return this;
@@ -319,6 +332,7 @@ public class FilterLogEventsRequest extends AmazonWebServiceRequest implements
      *        A valid CloudWatch Logs filter pattern to use for filtering the
      *        response. If not provided, all the events are matched.
      */
+
     public void setFilterPattern(String filterPattern) {
         this.filterPattern = filterPattern;
     }
@@ -332,6 +346,7 @@ public class FilterLogEventsRequest extends AmazonWebServiceRequest implements
      * @return A valid CloudWatch Logs filter pattern to use for filtering the
      *         response. If not provided, all the events are matched.
      */
+
     public String getFilterPattern() {
         return this.filterPattern;
     }
@@ -348,6 +363,7 @@ public class FilterLogEventsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FilterLogEventsRequest withFilterPattern(String filterPattern) {
         setFilterPattern(filterPattern);
         return this;
@@ -367,6 +383,7 @@ public class FilterLogEventsRequest extends AmazonWebServiceRequest implements
      *        paginating the FilterLogEvents results. This token is omitted from
      *        the response when there are no other events to display.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -384,6 +401,7 @@ public class FilterLogEventsRequest extends AmazonWebServiceRequest implements
      *         paginating the FilterLogEvents results. This token is omitted
      *         from the response when there are no other events to display.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -404,6 +422,7 @@ public class FilterLogEventsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FilterLogEventsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -419,6 +438,7 @@ public class FilterLogEventsRequest extends AmazonWebServiceRequest implements
      *        The maximum number of events to return in a page of results.
      *        Default is 10,000 events.
      */
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -432,6 +452,7 @@ public class FilterLogEventsRequest extends AmazonWebServiceRequest implements
      * @return The maximum number of events to return in a page of results.
      *         Default is 10,000 events.
      */
+
     public Integer getLimit() {
         return this.limit;
     }
@@ -448,6 +469,7 @@ public class FilterLogEventsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FilterLogEventsRequest withLimit(Integer limit) {
         setLimit(limit);
         return this;
@@ -469,6 +491,7 @@ public class FilterLogEventsRequest extends AmazonWebServiceRequest implements
      *        log events in the first log stream will be searched first, then
      *        those in the next log stream, etc.
      */
+
     public void setInterleaved(Boolean interleaved) {
         this.interleaved = interleaved;
     }
@@ -488,6 +511,7 @@ public class FilterLogEventsRequest extends AmazonWebServiceRequest implements
      *         matched log events in the first log stream will be searched
      *         first, then those in the next log stream, etc.
      */
+
     public Boolean getInterleaved() {
         return this.interleaved;
     }
@@ -510,6 +534,7 @@ public class FilterLogEventsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FilterLogEventsRequest withInterleaved(Boolean interleaved) {
         setInterleaved(interleaved);
         return this;
@@ -530,6 +555,7 @@ public class FilterLogEventsRequest extends AmazonWebServiceRequest implements
      *         matched log events in the first log stream will be searched
      *         first, then those in the next log stream, etc.
      */
+
     public Boolean isInterleaved() {
         return this.interleaved;
     }

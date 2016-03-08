@@ -63,6 +63,7 @@ public class CancelBundleTaskRequest extends AmazonWebServiceRequest implements
      * @param bundleId
      *        The ID of the bundle task.
      */
+
     public void setBundleId(String bundleId) {
         this.bundleId = bundleId;
     }
@@ -74,6 +75,7 @@ public class CancelBundleTaskRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ID of the bundle task.
      */
+
     public String getBundleId() {
         return this.bundleId;
     }
@@ -88,6 +90,7 @@ public class CancelBundleTaskRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CancelBundleTaskRequest withBundleId(String bundleId) {
         setBundleId(bundleId);
         return this;

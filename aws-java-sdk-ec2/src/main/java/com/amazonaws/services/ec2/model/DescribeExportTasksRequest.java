@@ -42,6 +42,7 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest
      * 
      * @return One or more export task IDs.
      */
+
     public java.util.List<String> getExportTaskIds() {
         if (exportTaskIds == null) {
             exportTaskIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -57,6 +58,7 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest
      * @param exportTaskIds
      *        One or more export task IDs.
      */
+
     public void setExportTaskIds(java.util.Collection<String> exportTaskIds) {
         if (exportTaskIds == null) {
             this.exportTaskIds = null;
@@ -83,6 +85,7 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeExportTasksRequest withExportTaskIds(String... exportTaskIds) {
         if (this.exportTaskIds == null) {
             setExportTaskIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -104,6 +107,7 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeExportTasksRequest withExportTaskIds(
             java.util.Collection<String> exportTaskIds) {
         setExportTaskIds(exportTaskIds);

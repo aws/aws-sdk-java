@@ -54,6 +54,7 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      * @param topic
      *        The name of the MQTT topic.
      */
+
     public void setTopic(String topic) {
         this.topic = topic;
     }
@@ -65,6 +66,7 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the MQTT topic.
      */
+
     public String getTopic() {
         return this.topic;
     }
@@ -79,6 +81,7 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PublishRequest withTopic(String topic) {
         setTopic(topic);
         return this;
@@ -92,6 +95,7 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      * @param qos
      *        The Quality of Service (QoS) level.
      */
+
     public void setQos(Integer qos) {
         this.qos = qos;
     }
@@ -103,6 +107,7 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      * 
      * @return The Quality of Service (QoS) level.
      */
+
     public Integer getQos() {
         return this.qos;
     }
@@ -117,6 +122,7 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PublishRequest withQos(Integer qos) {
         setQos(qos);
         return this;
@@ -135,6 +141,7 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      * @param payload
      *        The state information, in JSON format.
      */
+
     public void setPayload(java.nio.ByteBuffer payload) {
         this.payload = payload;
     }
@@ -156,6 +163,7 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      * 
      * @return The state information, in JSON format.
      */
+
     public java.nio.ByteBuffer getPayload() {
         return this.payload;
     }
@@ -170,6 +178,7 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PublishRequest withPayload(java.nio.ByteBuffer payload) {
         setPayload(payload);
         return this;

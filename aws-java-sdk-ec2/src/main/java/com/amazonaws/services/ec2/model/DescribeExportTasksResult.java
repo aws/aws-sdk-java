@@ -37,6 +37,7 @@ public class DescribeExportTasksResult implements Serializable, Cloneable {
      * 
      * @return Information about the export tasks.
      */
+
     public java.util.List<ExportTask> getExportTasks() {
         if (exportTasks == null) {
             exportTasks = new com.amazonaws.internal.SdkInternalList<ExportTask>();
@@ -52,6 +53,7 @@ public class DescribeExportTasksResult implements Serializable, Cloneable {
      * @param exportTasks
      *        Information about the export tasks.
      */
+
     public void setExportTasks(java.util.Collection<ExportTask> exportTasks) {
         if (exportTasks == null) {
             this.exportTasks = null;
@@ -78,6 +80,7 @@ public class DescribeExportTasksResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeExportTasksResult withExportTasks(ExportTask... exportTasks) {
         if (this.exportTasks == null) {
             setExportTasks(new com.amazonaws.internal.SdkInternalList<ExportTask>(
@@ -99,6 +102,7 @@ public class DescribeExportTasksResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeExportTasksResult withExportTasks(
             java.util.Collection<ExportTask> exportTasks) {
         setExportTasks(exportTasks);

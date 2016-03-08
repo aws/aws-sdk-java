@@ -53,6 +53,7 @@ public class CreateStorediSCSIVolumeResult implements Serializable, Cloneable {
      * @param volumeARN
      *        The Amazon Resource Name (ARN) of the configured volume.
      */
+
     public void setVolumeARN(String volumeARN) {
         this.volumeARN = volumeARN;
     }
@@ -64,6 +65,7 @@ public class CreateStorediSCSIVolumeResult implements Serializable, Cloneable {
      * 
      * @return The Amazon Resource Name (ARN) of the configured volume.
      */
+
     public String getVolumeARN() {
         return this.volumeARN;
     }
@@ -78,6 +80,7 @@ public class CreateStorediSCSIVolumeResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateStorediSCSIVolumeResult withVolumeARN(String volumeARN) {
         setVolumeARN(volumeARN);
         return this;
@@ -91,6 +94,7 @@ public class CreateStorediSCSIVolumeResult implements Serializable, Cloneable {
      * @param volumeSizeInBytes
      *        The size of the volume in bytes.
      */
+
     public void setVolumeSizeInBytes(Long volumeSizeInBytes) {
         this.volumeSizeInBytes = volumeSizeInBytes;
     }
@@ -102,6 +106,7 @@ public class CreateStorediSCSIVolumeResult implements Serializable, Cloneable {
      * 
      * @return The size of the volume in bytes.
      */
+
     public Long getVolumeSizeInBytes() {
         return this.volumeSizeInBytes;
     }
@@ -116,6 +121,7 @@ public class CreateStorediSCSIVolumeResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateStorediSCSIVolumeResult withVolumeSizeInBytes(
             Long volumeSizeInBytes) {
         setVolumeSizeInBytes(volumeSizeInBytes);
@@ -132,6 +138,7 @@ public class CreateStorediSCSIVolumeResult implements Serializable, Cloneable {
      *        he Amazon Resource Name (ARN) of the volume target that includes
      *        the iSCSI name that initiators can use to connect to the target.
      */
+
     public void setTargetARN(String targetARN) {
         this.targetARN = targetARN;
     }
@@ -145,6 +152,7 @@ public class CreateStorediSCSIVolumeResult implements Serializable, Cloneable {
      * @return he Amazon Resource Name (ARN) of the volume target that includes
      *         the iSCSI name that initiators can use to connect to the target.
      */
+
     public String getTargetARN() {
         return this.targetARN;
     }
@@ -161,6 +169,7 @@ public class CreateStorediSCSIVolumeResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateStorediSCSIVolumeResult withTargetARN(String targetARN) {
         setTargetARN(targetARN);
         return this;

@@ -96,6 +96,7 @@ public class AuthorizeSecurityGroupEgressRequest extends
      * @param groupId
      *        The ID of the security group.
      */
+
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
@@ -107,6 +108,7 @@ public class AuthorizeSecurityGroupEgressRequest extends
      * 
      * @return The ID of the security group.
      */
+
     public String getGroupId() {
         return this.groupId;
     }
@@ -121,6 +123,7 @@ public class AuthorizeSecurityGroupEgressRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AuthorizeSecurityGroupEgressRequest withGroupId(String groupId) {
         setGroupId(groupId);
         return this;
@@ -138,6 +141,7 @@ public class AuthorizeSecurityGroupEgressRequest extends
      *        access to a destination security group, we recommend that you use
      *        a set of IP permissions instead.
      */
+
     public void setSourceSecurityGroupName(String sourceSecurityGroupName) {
         this.sourceSecurityGroupName = sourceSecurityGroupName;
     }
@@ -153,6 +157,7 @@ public class AuthorizeSecurityGroupEgressRequest extends
      *         access to a destination security group, we recommend that you use
      *         a set of IP permissions instead.
      */
+
     public String getSourceSecurityGroupName() {
         return this.sourceSecurityGroupName;
     }
@@ -171,6 +176,7 @@ public class AuthorizeSecurityGroupEgressRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AuthorizeSecurityGroupEgressRequest withSourceSecurityGroupName(
             String sourceSecurityGroupName) {
         setSourceSecurityGroupName(sourceSecurityGroupName);
@@ -189,6 +195,7 @@ public class AuthorizeSecurityGroupEgressRequest extends
      *        authorize outbound access to a destination security group, we
      *        recommend that you use a set of IP permissions instead.
      */
+
     public void setSourceSecurityGroupOwnerId(String sourceSecurityGroupOwnerId) {
         this.sourceSecurityGroupOwnerId = sourceSecurityGroupOwnerId;
     }
@@ -204,6 +211,7 @@ public class AuthorizeSecurityGroupEgressRequest extends
      *         authorize outbound access to a destination security group, we
      *         recommend that you use a set of IP permissions instead.
      */
+
     public String getSourceSecurityGroupOwnerId() {
         return this.sourceSecurityGroupOwnerId;
     }
@@ -222,6 +230,7 @@ public class AuthorizeSecurityGroupEgressRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AuthorizeSecurityGroupEgressRequest withSourceSecurityGroupOwnerId(
             String sourceSecurityGroupOwnerId) {
         setSourceSecurityGroupOwnerId(sourceSecurityGroupOwnerId);
@@ -238,6 +247,7 @@ public class AuthorizeSecurityGroupEgressRequest extends
      *        The IP protocol name or number. We recommend that you specify the
      *        protocol in a set of IP permissions instead.
      */
+
     public void setIpProtocol(String ipProtocol) {
         this.ipProtocol = ipProtocol;
     }
@@ -251,6 +261,7 @@ public class AuthorizeSecurityGroupEgressRequest extends
      * @return The IP protocol name or number. We recommend that you specify the
      *         protocol in a set of IP permissions instead.
      */
+
     public String getIpProtocol() {
         return this.ipProtocol;
     }
@@ -267,6 +278,7 @@ public class AuthorizeSecurityGroupEgressRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AuthorizeSecurityGroupEgressRequest withIpProtocol(String ipProtocol) {
         setIpProtocol(ipProtocol);
         return this;
@@ -284,6 +296,7 @@ public class AuthorizeSecurityGroupEgressRequest extends
      *        type number. We recommend that you specify the port range in a set
      *        of IP permissions instead.
      */
+
     public void setFromPort(Integer fromPort) {
         this.fromPort = fromPort;
     }
@@ -299,6 +312,7 @@ public class AuthorizeSecurityGroupEgressRequest extends
      *         type number. We recommend that you specify the port range in a
      *         set of IP permissions instead.
      */
+
     public Integer getFromPort() {
         return this.fromPort;
     }
@@ -317,6 +331,7 @@ public class AuthorizeSecurityGroupEgressRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AuthorizeSecurityGroupEgressRequest withFromPort(Integer fromPort) {
         setFromPort(fromPort);
         return this;
@@ -334,6 +349,7 @@ public class AuthorizeSecurityGroupEgressRequest extends
      *        type number. We recommend that you specify the port range in a set
      *        of IP permissions instead.
      */
+
     public void setToPort(Integer toPort) {
         this.toPort = toPort;
     }
@@ -349,6 +365,7 @@ public class AuthorizeSecurityGroupEgressRequest extends
      *         type number. We recommend that you specify the port range in a
      *         set of IP permissions instead.
      */
+
     public Integer getToPort() {
         return this.toPort;
     }
@@ -367,6 +384,7 @@ public class AuthorizeSecurityGroupEgressRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AuthorizeSecurityGroupEgressRequest withToPort(Integer toPort) {
         setToPort(toPort);
         return this;
@@ -382,6 +400,7 @@ public class AuthorizeSecurityGroupEgressRequest extends
      *        The CIDR IP address range. We recommend that you specify the CIDR
      *        range in a set of IP permissions instead.
      */
+
     public void setCidrIp(String cidrIp) {
         this.cidrIp = cidrIp;
     }
@@ -395,6 +414,7 @@ public class AuthorizeSecurityGroupEgressRequest extends
      * @return The CIDR IP address range. We recommend that you specify the CIDR
      *         range in a set of IP permissions instead.
      */
+
     public String getCidrIp() {
         return this.cidrIp;
     }
@@ -411,6 +431,7 @@ public class AuthorizeSecurityGroupEgressRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AuthorizeSecurityGroupEgressRequest withCidrIp(String cidrIp) {
         setCidrIp(cidrIp);
         return this;
@@ -425,6 +446,7 @@ public class AuthorizeSecurityGroupEgressRequest extends
      * @return A set of IP permissions. You can't specify a destination security
      *         group and a CIDR IP address range.
      */
+
     public java.util.List<IpPermission> getIpPermissions() {
         if (ipPermissions == null) {
             ipPermissions = new com.amazonaws.internal.SdkInternalList<IpPermission>();
@@ -442,6 +464,7 @@ public class AuthorizeSecurityGroupEgressRequest extends
      *        A set of IP permissions. You can't specify a destination security
      *        group and a CIDR IP address range.
      */
+
     public void setIpPermissions(
             java.util.Collection<IpPermission> ipPermissions) {
         if (ipPermissions == null) {
@@ -471,6 +494,7 @@ public class AuthorizeSecurityGroupEgressRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AuthorizeSecurityGroupEgressRequest withIpPermissions(
             IpPermission... ipPermissions) {
         if (this.ipPermissions == null) {
@@ -495,6 +519,7 @@ public class AuthorizeSecurityGroupEgressRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AuthorizeSecurityGroupEgressRequest withIpPermissions(
             java.util.Collection<IpPermission> ipPermissions) {
         setIpPermissions(ipPermissions);

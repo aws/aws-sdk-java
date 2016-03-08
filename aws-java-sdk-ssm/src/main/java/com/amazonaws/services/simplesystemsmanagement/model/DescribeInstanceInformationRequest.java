@@ -49,6 +49,7 @@ public class DescribeInstanceInformationRequest extends AmazonWebServiceRequest
      * @return One or more filters. Use a filter to return a more specific list
      *         of instances.
      */
+
     public java.util.List<InstanceInformationFilter> getInstanceInformationFilterList() {
         if (instanceInformationFilterList == null) {
             instanceInformationFilterList = new com.amazonaws.internal.SdkInternalList<InstanceInformationFilter>();
@@ -64,6 +65,7 @@ public class DescribeInstanceInformationRequest extends AmazonWebServiceRequest
      *        One or more filters. Use a filter to return a more specific list
      *        of instances.
      */
+
     public void setInstanceInformationFilterList(
             java.util.Collection<InstanceInformationFilter> instanceInformationFilterList) {
         if (instanceInformationFilterList == null) {
@@ -91,6 +93,7 @@ public class DescribeInstanceInformationRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeInstanceInformationRequest withInstanceInformationFilterList(
             InstanceInformationFilter... instanceInformationFilterList) {
         if (this.instanceInformationFilterList == null) {
@@ -113,6 +116,7 @@ public class DescribeInstanceInformationRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeInstanceInformationRequest withInstanceInformationFilterList(
             java.util.Collection<InstanceInformationFilter> instanceInformationFilterList) {
         setInstanceInformationFilterList(instanceInformationFilterList);
@@ -129,6 +133,7 @@ public class DescribeInstanceInformationRequest extends AmazonWebServiceRequest
      *        returns a token that you can specify in a subsequent call to get
      *        the next set of results.
      */
+
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
     }
@@ -142,6 +147,7 @@ public class DescribeInstanceInformationRequest extends AmazonWebServiceRequest
      *         also returns a token that you can specify in a subsequent call to
      *         get the next set of results.
      */
+
     public Integer getMaxResults() {
         return this.maxResults;
     }
@@ -158,6 +164,7 @@ public class DescribeInstanceInformationRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeInstanceInformationRequest withMaxResults(Integer maxResults) {
         setMaxResults(maxResults);
         return this;
@@ -171,6 +178,7 @@ public class DescribeInstanceInformationRequest extends AmazonWebServiceRequest
      *        The token for the next set of items to return. (You received this
      *        token from a previous call.)
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -182,6 +190,7 @@ public class DescribeInstanceInformationRequest extends AmazonWebServiceRequest
      * @return The token for the next set of items to return. (You received this
      *         token from a previous call.)
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -196,6 +205,7 @@ public class DescribeInstanceInformationRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeInstanceInformationRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

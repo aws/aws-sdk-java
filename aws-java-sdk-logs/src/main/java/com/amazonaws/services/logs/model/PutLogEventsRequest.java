@@ -81,6 +81,7 @@ public class PutLogEventsRequest extends AmazonWebServiceRequest implements
      * @param logGroupName
      *        The name of the log group to put log events to.
      */
+
     public void setLogGroupName(String logGroupName) {
         this.logGroupName = logGroupName;
     }
@@ -92,6 +93,7 @@ public class PutLogEventsRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the log group to put log events to.
      */
+
     public String getLogGroupName() {
         return this.logGroupName;
     }
@@ -106,6 +108,7 @@ public class PutLogEventsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutLogEventsRequest withLogGroupName(String logGroupName) {
         setLogGroupName(logGroupName);
         return this;
@@ -119,6 +122,7 @@ public class PutLogEventsRequest extends AmazonWebServiceRequest implements
      * @param logStreamName
      *        The name of the log stream to put log events to.
      */
+
     public void setLogStreamName(String logStreamName) {
         this.logStreamName = logStreamName;
     }
@@ -130,6 +134,7 @@ public class PutLogEventsRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the log stream to put log events to.
      */
+
     public String getLogStreamName() {
         return this.logStreamName;
     }
@@ -144,6 +149,7 @@ public class PutLogEventsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutLogEventsRequest withLogStreamName(String logStreamName) {
         setLogStreamName(logStreamName);
         return this;
@@ -152,6 +158,7 @@ public class PutLogEventsRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public java.util.List<InputLogEvent> getLogEvents() {
         if (logEvents == null) {
             logEvents = new com.amazonaws.internal.SdkInternalList<InputLogEvent>();
@@ -162,6 +169,7 @@ public class PutLogEventsRequest extends AmazonWebServiceRequest implements
     /**
      * @param logEvents
      */
+
     public void setLogEvents(java.util.Collection<InputLogEvent> logEvents) {
         if (logEvents == null) {
             this.logEvents = null;
@@ -184,6 +192,7 @@ public class PutLogEventsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutLogEventsRequest withLogEvents(InputLogEvent... logEvents) {
         if (this.logEvents == null) {
             setLogEvents(new com.amazonaws.internal.SdkInternalList<InputLogEvent>(
@@ -200,6 +209,7 @@ public class PutLogEventsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutLogEventsRequest withLogEvents(
             java.util.Collection<InputLogEvent> logEvents) {
         setLogEvents(logEvents);
@@ -216,6 +226,7 @@ public class PutLogEventsRequest extends AmazonWebServiceRequest implements
      *        A string token that must be obtained from the response of the
      *        previous <code class="code">PutLogEvents</code> request.
      */
+
     public void setSequenceToken(String sequenceToken) {
         this.sequenceToken = sequenceToken;
     }
@@ -229,6 +240,7 @@ public class PutLogEventsRequest extends AmazonWebServiceRequest implements
      * @return A string token that must be obtained from the response of the
      *         previous <code class="code">PutLogEvents</code> request.
      */
+
     public String getSequenceToken() {
         return this.sequenceToken;
     }
@@ -245,6 +257,7 @@ public class PutLogEventsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutLogEventsRequest withSequenceToken(String sequenceToken) {
         setSequenceToken(sequenceToken);
         return this;

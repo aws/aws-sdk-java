@@ -63,6 +63,7 @@ public class StreamingLoggingConfig implements Serializable, Cloneable {
      *        for Enabled but you specify values for Bucket and Prefix, the
      *        values are automatically deleted.
      */
+
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
     }
@@ -83,6 +84,7 @@ public class StreamingLoggingConfig implements Serializable, Cloneable {
      *         specify false for Enabled but you specify values for Bucket and
      *         Prefix, the values are automatically deleted.
      */
+
     public Boolean getEnabled() {
         return this.enabled;
     }
@@ -106,6 +108,7 @@ public class StreamingLoggingConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StreamingLoggingConfig withEnabled(Boolean enabled) {
         setEnabled(enabled);
         return this;
@@ -127,6 +130,7 @@ public class StreamingLoggingConfig implements Serializable, Cloneable {
      *         specify false for Enabled but you specify values for Bucket and
      *         Prefix, the values are automatically deleted.
      */
+
     public Boolean isEnabled() {
         return this.enabled;
     }
@@ -139,6 +143,7 @@ public class StreamingLoggingConfig implements Serializable, Cloneable {
      *        The Amazon S3 bucket to store the access logs in, for example,
      *        myawslogbucket.s3.amazonaws.com.
      */
+
     public void setBucket(String bucket) {
         this.bucket = bucket;
     }
@@ -150,6 +155,7 @@ public class StreamingLoggingConfig implements Serializable, Cloneable {
      * @return The Amazon S3 bucket to store the access logs in, for example,
      *         myawslogbucket.s3.amazonaws.com.
      */
+
     public String getBucket() {
         return this.bucket;
     }
@@ -164,6 +170,7 @@ public class StreamingLoggingConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StreamingLoggingConfig withBucket(String bucket) {
         setBucket(bucket);
         return this;
@@ -182,6 +189,7 @@ public class StreamingLoggingConfig implements Serializable, Cloneable {
      *        specify a prefix, you still must include an empty Prefix element
      *        in the Logging element.
      */
+
     public void setPrefix(String prefix) {
         this.prefix = prefix;
     }
@@ -198,6 +206,7 @@ public class StreamingLoggingConfig implements Serializable, Cloneable {
      *         want to specify a prefix, you still must include an empty Prefix
      *         element in the Logging element.
      */
+
     public String getPrefix() {
         return this.prefix;
     }
@@ -217,6 +226,7 @@ public class StreamingLoggingConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StreamingLoggingConfig withPrefix(String prefix) {
         setPrefix(prefix);
         return this;

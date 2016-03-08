@@ -86,6 +86,7 @@ public class SNSAction implements Serializable, Cloneable {
      *        href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html"
      *        >Amazon SNS Developer Guide</a>.
      */
+
     public void setTopicArn(String topicArn) {
         this.topicArn = topicArn;
     }
@@ -107,6 +108,7 @@ public class SNSAction implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html"
      *         >Amazon SNS Developer Guide</a>.
      */
+
     public String getTopicArn() {
         return this.topicArn;
     }
@@ -131,6 +133,7 @@ public class SNSAction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SNSAction withTopicArn(String topicArn) {
         setTopicArn(topicArn);
         return this;
@@ -152,6 +155,7 @@ public class SNSAction implements Serializable, Cloneable {
      *        default value is Base64.
      * @see SNSActionEncoding
      */
+
     public void setEncoding(String encoding) {
         this.encoding = encoding;
     }
@@ -171,6 +175,7 @@ public class SNSAction implements Serializable, Cloneable {
      *         default value is Base64.
      * @see SNSActionEncoding
      */
+
     public String getEncoding() {
         return this.encoding;
     }
@@ -193,6 +198,7 @@ public class SNSAction implements Serializable, Cloneable {
      *         chained together.
      * @see SNSActionEncoding
      */
+
     public SNSAction withEncoding(String encoding) {
         setEncoding(encoding);
         return this;
@@ -216,6 +222,7 @@ public class SNSAction implements Serializable, Cloneable {
      *         chained together.
      * @see SNSActionEncoding
      */
+
     public void setEncoding(SNSActionEncoding encoding) {
         this.encoding = encoding.toString();
     }
@@ -238,6 +245,7 @@ public class SNSAction implements Serializable, Cloneable {
      *         chained together.
      * @see SNSActionEncoding
      */
+
     public SNSAction withEncoding(SNSActionEncoding encoding) {
         setEncoding(encoding);
         return this;

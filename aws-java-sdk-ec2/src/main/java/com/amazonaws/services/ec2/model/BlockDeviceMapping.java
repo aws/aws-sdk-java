@@ -93,6 +93,7 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
      *        launch an M3 instance, we ignore any instance store volumes
      *        specified in the block device mapping for the AMI.
      */
+
     public void setVirtualName(String virtualName) {
         this.virtualName = virtualName;
     }
@@ -125,6 +126,7 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
      *         launch an M3 instance, we ignore any instance store volumes
      *         specified in the block device mapping for the AMI.
      */
+
     public String getVirtualName() {
         return this.virtualName;
     }
@@ -160,6 +162,7 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BlockDeviceMapping withVirtualName(String virtualName) {
         setVirtualName(virtualName);
         return this;
@@ -175,6 +178,7 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
      *        The device name exposed to the instance (for example,
      *        <code>/dev/sdh</code> or <code>xvdh</code>).
      */
+
     public void setDeviceName(String deviceName) {
         this.deviceName = deviceName;
     }
@@ -188,6 +192,7 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
      * @return The device name exposed to the instance (for example,
      *         <code>/dev/sdh</code> or <code>xvdh</code>).
      */
+
     public String getDeviceName() {
         return this.deviceName;
     }
@@ -204,6 +209,7 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BlockDeviceMapping withDeviceName(String deviceName) {
         setDeviceName(deviceName);
         return this;
@@ -219,6 +225,7 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
      *        Parameters used to automatically set up EBS volumes when the
      *        instance is launched.
      */
+
     public void setEbs(EbsBlockDevice ebs) {
         this.ebs = ebs;
     }
@@ -232,6 +239,7 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
      * @return Parameters used to automatically set up EBS volumes when the
      *         instance is launched.
      */
+
     public EbsBlockDevice getEbs() {
         return this.ebs;
     }
@@ -248,6 +256,7 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BlockDeviceMapping withEbs(EbsBlockDevice ebs) {
         setEbs(ebs);
         return this;
@@ -263,6 +272,7 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
      *        Suppresses the specified device included in the block device
      *        mapping of the AMI.
      */
+
     public void setNoDevice(String noDevice) {
         this.noDevice = noDevice;
     }
@@ -276,6 +286,7 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
      * @return Suppresses the specified device included in the block device
      *         mapping of the AMI.
      */
+
     public String getNoDevice() {
         return this.noDevice;
     }
@@ -292,6 +303,7 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BlockDeviceMapping withNoDevice(String noDevice) {
         setNoDevice(noDevice);
         return this;

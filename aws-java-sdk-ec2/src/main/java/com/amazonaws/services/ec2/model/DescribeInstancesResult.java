@@ -44,6 +44,7 @@ public class DescribeInstancesResult implements Serializable, Cloneable {
      * 
      * @return Zero or more reservations.
      */
+
     public java.util.List<Reservation> getReservations() {
         if (reservations == null) {
             reservations = new com.amazonaws.internal.SdkInternalList<Reservation>();
@@ -59,6 +60,7 @@ public class DescribeInstancesResult implements Serializable, Cloneable {
      * @param reservations
      *        Zero or more reservations.
      */
+
     public void setReservations(java.util.Collection<Reservation> reservations) {
         if (reservations == null) {
             this.reservations = null;
@@ -85,6 +87,7 @@ public class DescribeInstancesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeInstancesResult withReservations(Reservation... reservations) {
         if (this.reservations == null) {
             setReservations(new com.amazonaws.internal.SdkInternalList<Reservation>(
@@ -106,6 +109,7 @@ public class DescribeInstancesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeInstancesResult withReservations(
             java.util.Collection<Reservation> reservations) {
         setReservations(reservations);
@@ -122,6 +126,7 @@ public class DescribeInstancesResult implements Serializable, Cloneable {
      *        The token to use to retrieve the next page of results. This value
      *        is <code>null</code> when there are no more results to return.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -135,6 +140,7 @@ public class DescribeInstancesResult implements Serializable, Cloneable {
      * @return The token to use to retrieve the next page of results. This value
      *         is <code>null</code> when there are no more results to return.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -151,6 +157,7 @@ public class DescribeInstancesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeInstancesResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

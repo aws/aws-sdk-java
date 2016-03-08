@@ -52,6 +52,7 @@ public class BatchGetApplicationRevisionsRequest extends
      *        The name of an existing AWS CodeDeploy application to get revision
      *        information about.
      */
+
     public void setApplicationName(String applicationName) {
         this.applicationName = applicationName;
     }
@@ -65,6 +66,7 @@ public class BatchGetApplicationRevisionsRequest extends
      * @return The name of an existing AWS CodeDeploy application to get
      *         revision information about.
      */
+
     public String getApplicationName() {
         return this.applicationName;
     }
@@ -81,6 +83,7 @@ public class BatchGetApplicationRevisionsRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchGetApplicationRevisionsRequest withApplicationName(
             String applicationName) {
         setApplicationName(applicationName);
@@ -96,6 +99,7 @@ public class BatchGetApplicationRevisionsRequest extends
      * @return Information to get about the application revisions, including
      *         revision type and location.
      */
+
     public java.util.List<RevisionLocation> getRevisions() {
         if (revisions == null) {
             revisions = new com.amazonaws.internal.SdkInternalList<RevisionLocation>();
@@ -113,6 +117,7 @@ public class BatchGetApplicationRevisionsRequest extends
      *        Information to get about the application revisions, including
      *        revision type and location.
      */
+
     public void setRevisions(java.util.Collection<RevisionLocation> revisions) {
         if (revisions == null) {
             this.revisions = null;
@@ -141,6 +146,7 @@ public class BatchGetApplicationRevisionsRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchGetApplicationRevisionsRequest withRevisions(
             RevisionLocation... revisions) {
         if (this.revisions == null) {
@@ -165,6 +171,7 @@ public class BatchGetApplicationRevisionsRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchGetApplicationRevisionsRequest withRevisions(
             java.util.Collection<RevisionLocation> revisions) {
         setRevisions(revisions);

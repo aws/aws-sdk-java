@@ -59,6 +59,7 @@ public class DescribeEC2InstanceLimitsRequest extends AmazonWebServiceRequest
      *        type. Leave this parameter blank to retrieve limits for all types.
      * @see EC2InstanceType
      */
+
     public void setEC2InstanceType(String eC2InstanceType) {
         this.eC2InstanceType = eC2InstanceType;
     }
@@ -83,6 +84,7 @@ public class DescribeEC2InstanceLimitsRequest extends AmazonWebServiceRequest
      *         types.
      * @see EC2InstanceType
      */
+
     public String getEC2InstanceType() {
         return this.eC2InstanceType;
     }
@@ -109,6 +111,7 @@ public class DescribeEC2InstanceLimitsRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see EC2InstanceType
      */
+
     public DescribeEC2InstanceLimitsRequest withEC2InstanceType(
             String eC2InstanceType) {
         setEC2InstanceType(eC2InstanceType);
@@ -137,6 +140,7 @@ public class DescribeEC2InstanceLimitsRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see EC2InstanceType
      */
+
     public void setEC2InstanceType(EC2InstanceType eC2InstanceType) {
         this.eC2InstanceType = eC2InstanceType.toString();
     }
@@ -163,6 +167,7 @@ public class DescribeEC2InstanceLimitsRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see EC2InstanceType
      */
+
     public DescribeEC2InstanceLimitsRequest withEC2InstanceType(
             EC2InstanceType eC2InstanceType) {
         setEC2InstanceType(eC2InstanceType);

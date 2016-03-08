@@ -61,6 +61,7 @@ public class Radios implements Serializable, Cloneable {
      *        True if Wi-Fi is enabled at the beginning of the test; otherwise,
      *        false.
      */
+
     public void setWifi(Boolean wifi) {
         this.wifi = wifi;
     }
@@ -73,6 +74,7 @@ public class Radios implements Serializable, Cloneable {
      * @return True if Wi-Fi is enabled at the beginning of the test; otherwise,
      *         false.
      */
+
     public Boolean getWifi() {
         return this.wifi;
     }
@@ -88,6 +90,7 @@ public class Radios implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Radios withWifi(Boolean wifi) {
         setWifi(wifi);
         return this;
@@ -101,6 +104,7 @@ public class Radios implements Serializable, Cloneable {
      * @return True if Wi-Fi is enabled at the beginning of the test; otherwise,
      *         false.
      */
+
     public Boolean isWifi() {
         return this.wifi;
     }
@@ -115,6 +119,7 @@ public class Radios implements Serializable, Cloneable {
      *        True if Bluetooth is enabled at the beginning of the test;
      *        otherwise, false.
      */
+
     public void setBluetooth(Boolean bluetooth) {
         this.bluetooth = bluetooth;
     }
@@ -128,6 +133,7 @@ public class Radios implements Serializable, Cloneable {
      * @return True if Bluetooth is enabled at the beginning of the test;
      *         otherwise, false.
      */
+
     public Boolean getBluetooth() {
         return this.bluetooth;
     }
@@ -144,6 +150,7 @@ public class Radios implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Radios withBluetooth(Boolean bluetooth) {
         setBluetooth(bluetooth);
         return this;
@@ -158,6 +165,7 @@ public class Radios implements Serializable, Cloneable {
      * @return True if Bluetooth is enabled at the beginning of the test;
      *         otherwise, false.
      */
+
     public Boolean isBluetooth() {
         return this.bluetooth;
     }
@@ -171,6 +179,7 @@ public class Radios implements Serializable, Cloneable {
      *        True if NFC is enabled at the beginning of the test; otherwise,
      *        false.
      */
+
     public void setNfc(Boolean nfc) {
         this.nfc = nfc;
     }
@@ -183,6 +192,7 @@ public class Radios implements Serializable, Cloneable {
      * @return True if NFC is enabled at the beginning of the test; otherwise,
      *         false.
      */
+
     public Boolean getNfc() {
         return this.nfc;
     }
@@ -198,6 +208,7 @@ public class Radios implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Radios withNfc(Boolean nfc) {
         setNfc(nfc);
         return this;
@@ -211,6 +222,7 @@ public class Radios implements Serializable, Cloneable {
      * @return True if NFC is enabled at the beginning of the test; otherwise,
      *         false.
      */
+
     public Boolean isNfc() {
         return this.nfc;
     }
@@ -224,6 +236,7 @@ public class Radios implements Serializable, Cloneable {
      *        True if GPS is enabled at the beginning of the test; otherwise,
      *        false.
      */
+
     public void setGps(Boolean gps) {
         this.gps = gps;
     }
@@ -236,6 +249,7 @@ public class Radios implements Serializable, Cloneable {
      * @return True if GPS is enabled at the beginning of the test; otherwise,
      *         false.
      */
+
     public Boolean getGps() {
         return this.gps;
     }
@@ -251,6 +265,7 @@ public class Radios implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Radios withGps(Boolean gps) {
         setGps(gps);
         return this;
@@ -264,6 +279,7 @@ public class Radios implements Serializable, Cloneable {
      * @return True if GPS is enabled at the beginning of the test; otherwise,
      *         false.
      */
+
     public Boolean isGps() {
         return this.gps;
     }

@@ -70,6 +70,7 @@ public class PatchOperation implements Serializable, Cloneable {
      *        "copy", or "test"; other values are errors.
      * @see Op
      */
+
     public void setOp(String op) {
         this.op = op;
     }
@@ -86,6 +87,7 @@ public class PatchOperation implements Serializable, Cloneable {
      *         "copy", or "test"; other values are errors.
      * @see Op
      */
+
     public String getOp() {
         return this.op;
     }
@@ -105,6 +107,7 @@ public class PatchOperation implements Serializable, Cloneable {
      *         chained together.
      * @see Op
      */
+
     public PatchOperation withOp(String op) {
         setOp(op);
         return this;
@@ -125,6 +128,7 @@ public class PatchOperation implements Serializable, Cloneable {
      *         chained together.
      * @see Op
      */
+
     public void setOp(Op op) {
         this.op = op.toString();
     }
@@ -144,6 +148,7 @@ public class PatchOperation implements Serializable, Cloneable {
      *         chained together.
      * @see Op
      */
+
     public PatchOperation withOp(Op op) {
         setOp(op);
         return this;
@@ -163,6 +168,7 @@ public class PatchOperation implements Serializable, Cloneable {
      *        references a location within the target document (the
      *        "target location") where the operation is performed.
      */
+
     public void setPath(String path) {
         this.path = path;
     }
@@ -180,6 +186,7 @@ public class PatchOperation implements Serializable, Cloneable {
      *         references a location within the target document (the
      *         "target location") where the operation is performed.
      */
+
     public String getPath() {
         return this.path;
     }
@@ -200,6 +207,7 @@ public class PatchOperation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PatchOperation withPath(String path) {
         setPath(path);
         return this;
@@ -213,6 +221,7 @@ public class PatchOperation implements Serializable, Cloneable {
      * @param value
      *        The actual value content.
      */
+
     public void setValue(String value) {
         this.value = value;
     }
@@ -224,6 +233,7 @@ public class PatchOperation implements Serializable, Cloneable {
      * 
      * @return The actual value content.
      */
+
     public String getValue() {
         return this.value;
     }
@@ -238,6 +248,7 @@ public class PatchOperation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PatchOperation withValue(String value) {
         setValue(value);
         return this;
@@ -256,6 +267,7 @@ public class PatchOperation implements Serializable, Cloneable {
      *        value that references the location in the target document to move
      *        the value from.
      */
+
     public void setFrom(String from) {
         this.from = from;
     }
@@ -272,6 +284,7 @@ public class PatchOperation implements Serializable, Cloneable {
      *         value that references the location in the target document to move
      *         the value from.
      */
+
     public String getFrom() {
         return this.from;
     }
@@ -291,6 +304,7 @@ public class PatchOperation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PatchOperation withFrom(String from) {
         setFrom(from);
         return this;

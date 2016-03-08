@@ -99,6 +99,7 @@ public class ListTaskDefinitionsRequest extends AmazonWebServiceRequest
      *        <code>familyPrefix</code> limits the listed task definitions to
      *        task definition revisions that belong to that family.
      */
+
     public void setFamilyPrefix(String familyPrefix) {
         this.familyPrefix = familyPrefix;
     }
@@ -116,6 +117,7 @@ public class ListTaskDefinitionsRequest extends AmazonWebServiceRequest
      *         <code>familyPrefix</code> limits the listed task definitions to
      *         task definition revisions that belong to that family.
      */
+
     public String getFamilyPrefix() {
         return this.familyPrefix;
     }
@@ -136,6 +138,7 @@ public class ListTaskDefinitionsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTaskDefinitionsRequest withFamilyPrefix(String familyPrefix) {
         setFamilyPrefix(familyPrefix);
         return this;
@@ -163,6 +166,7 @@ public class ListTaskDefinitionsRequest extends AmazonWebServiceRequest
      *        each subsequent request.
      * @see TaskDefinitionStatus
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -188,6 +192,7 @@ public class ListTaskDefinitionsRequest extends AmazonWebServiceRequest
      *         each subsequent request.
      * @see TaskDefinitionStatus
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -216,6 +221,7 @@ public class ListTaskDefinitionsRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see TaskDefinitionStatus
      */
+
     public ListTaskDefinitionsRequest withStatus(String status) {
         setStatus(status);
         return this;
@@ -245,6 +251,7 @@ public class ListTaskDefinitionsRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see TaskDefinitionStatus
      */
+
     public void setStatus(TaskDefinitionStatus status) {
         this.status = status.toString();
     }
@@ -273,6 +280,7 @@ public class ListTaskDefinitionsRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see TaskDefinitionStatus
      */
+
     public ListTaskDefinitionsRequest withStatus(TaskDefinitionStatus status) {
         setStatus(status);
         return this;
@@ -300,6 +308,7 @@ public class ListTaskDefinitionsRequest extends AmazonWebServiceRequest
      *        definitions in a family are listed first.
      * @see SortOrder
      */
+
     public void setSort(String sort) {
         this.sort = sort;
     }
@@ -325,6 +334,7 @@ public class ListTaskDefinitionsRequest extends AmazonWebServiceRequest
      *         definitions in a family are listed first.
      * @see SortOrder
      */
+
     public String getSort() {
         return this.sort;
     }
@@ -353,6 +363,7 @@ public class ListTaskDefinitionsRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see SortOrder
      */
+
     public ListTaskDefinitionsRequest withSort(String sort) {
         setSort(sort);
         return this;
@@ -382,6 +393,7 @@ public class ListTaskDefinitionsRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see SortOrder
      */
+
     public void setSort(SortOrder sort) {
         this.sort = sort.toString();
     }
@@ -410,6 +422,7 @@ public class ListTaskDefinitionsRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see SortOrder
      */
+
     public ListTaskDefinitionsRequest withSort(SortOrder sort) {
         setSort(sort);
         return this;
@@ -434,6 +447,7 @@ public class ListTaskDefinitionsRequest extends AmazonWebServiceRequest
      *        This value is <code>null</code> when there are no more results to
      *        return.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -456,6 +470,7 @@ public class ListTaskDefinitionsRequest extends AmazonWebServiceRequest
      *         This value is <code>null</code> when there are no more results to
      *         return.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -481,6 +496,7 @@ public class ListTaskDefinitionsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTaskDefinitionsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -513,6 +529,7 @@ public class ListTaskDefinitionsRequest extends AmazonWebServiceRequest
      *        <code>ListTaskDefinitions</code> returns up to 100 results and a
      *        <code>nextToken</code> value if applicable.
      */
+
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
     }
@@ -543,6 +560,7 @@ public class ListTaskDefinitionsRequest extends AmazonWebServiceRequest
      *         <code>ListTaskDefinitions</code> returns up to 100 results and a
      *         <code>nextToken</code> value if applicable.
      */
+
     public Integer getMaxResults() {
         return this.maxResults;
     }
@@ -576,6 +594,7 @@ public class ListTaskDefinitionsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTaskDefinitionsRequest withMaxResults(Integer maxResults) {
         setMaxResults(maxResults);
         return this;

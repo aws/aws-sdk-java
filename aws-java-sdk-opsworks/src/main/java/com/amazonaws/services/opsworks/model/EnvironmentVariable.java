@@ -67,6 +67,7 @@ public class EnvironmentVariable implements Serializable, Cloneable {
      *        upper- and lowercase letters, numbers, and underscores (_), but it
      *        must start with a letter or underscore.
      */
+
     public void setKey(String key) {
         this.key = key;
     }
@@ -84,6 +85,7 @@ public class EnvironmentVariable implements Serializable, Cloneable {
      *         upper- and lowercase letters, numbers, and underscores (_), but
      *         it must start with a letter or underscore.
      */
+
     public String getKey() {
         return this.key;
     }
@@ -104,6 +106,7 @@ public class EnvironmentVariable implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EnvironmentVariable withKey(String key) {
         setKey(key);
         return this;
@@ -121,6 +124,7 @@ public class EnvironmentVariable implements Serializable, Cloneable {
      *        empty. If you specify a value, it can contain up to 256
      *        characters, which must all be printable.
      */
+
     public void setValue(String value) {
         this.value = value;
     }
@@ -136,6 +140,7 @@ public class EnvironmentVariable implements Serializable, Cloneable {
      *         empty. If you specify a value, it can contain up to 256
      *         characters, which must all be printable.
      */
+
     public String getValue() {
         return this.value;
     }
@@ -154,6 +159,7 @@ public class EnvironmentVariable implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EnvironmentVariable withValue(String value) {
         setValue(value);
         return this;
@@ -176,6 +182,7 @@ public class EnvironmentVariable implements Serializable, Cloneable {
      *        <code>*****FILTERED*****</code> instead of the actual value. The
      *        default value for <code>Secure</code> is <code>false</code>.
      */
+
     public void setSecure(Boolean secure) {
         this.secure = secure;
     }
@@ -196,6 +203,7 @@ public class EnvironmentVariable implements Serializable, Cloneable {
      *         <code>*****FILTERED*****</code> instead of the actual value. The
      *         default value for <code>Secure</code> is <code>false</code>.
      */
+
     public Boolean getSecure() {
         return this.secure;
     }
@@ -219,6 +227,7 @@ public class EnvironmentVariable implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EnvironmentVariable withSecure(Boolean secure) {
         setSecure(secure);
         return this;
@@ -240,6 +249,7 @@ public class EnvironmentVariable implements Serializable, Cloneable {
      *         <code>*****FILTERED*****</code> instead of the actual value. The
      *         default value for <code>Secure</code> is <code>false</code>.
      */
+
     public Boolean isSecure() {
         return this.secure;
     }

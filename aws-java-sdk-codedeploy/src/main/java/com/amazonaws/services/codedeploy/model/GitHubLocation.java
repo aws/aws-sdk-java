@@ -62,6 +62,7 @@ public class GitHubLocation implements Serializable, Cloneable {
      *        <p>
      *        Specified as account/repository.
      */
+
     public void setRepository(String repository) {
         this.repository = repository;
     }
@@ -82,6 +83,7 @@ public class GitHubLocation implements Serializable, Cloneable {
      *         <p>
      *         Specified as account/repository.
      */
+
     public String getRepository() {
         return this.repository;
     }
@@ -105,6 +107,7 @@ public class GitHubLocation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GitHubLocation withRepository(String repository) {
         setRepository(repository);
         return this;
@@ -120,6 +123,7 @@ public class GitHubLocation implements Serializable, Cloneable {
      *        The SHA1 commit ID of the GitHub commit that represents the
      *        bundled artifacts for the application revision.
      */
+
     public void setCommitId(String commitId) {
         this.commitId = commitId;
     }
@@ -133,6 +137,7 @@ public class GitHubLocation implements Serializable, Cloneable {
      * @return The SHA1 commit ID of the GitHub commit that represents the
      *         bundled artifacts for the application revision.
      */
+
     public String getCommitId() {
         return this.commitId;
     }
@@ -149,6 +154,7 @@ public class GitHubLocation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GitHubLocation withCommitId(String commitId) {
         setCommitId(commitId);
         return this;

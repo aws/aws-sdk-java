@@ -61,6 +61,7 @@ public class CreateKeyRequest extends AmazonWebServiceRequest implements
      *        to the account. The key is the root of trust. The policy size
      *        limit is 32 KiB (32768 bytes).
      */
+
     public void setPolicy(String policy) {
         this.policy = policy;
     }
@@ -76,6 +77,7 @@ public class CreateKeyRequest extends AmazonWebServiceRequest implements
      *         to the account. The key is the root of trust. The policy size
      *         limit is 32 KiB (32768 bytes).
      */
+
     public String getPolicy() {
         return this.policy;
     }
@@ -94,6 +96,7 @@ public class CreateKeyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateKeyRequest withPolicy(String policy) {
         setPolicy(policy);
         return this;
@@ -110,6 +113,7 @@ public class CreateKeyRequest extends AmazonWebServiceRequest implements
      *        that helps your customer decide whether the key is appropriate for
      *        a task.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -124,6 +128,7 @@ public class CreateKeyRequest extends AmazonWebServiceRequest implements
      *         description that helps your customer decide whether the key is
      *         appropriate for a task.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -141,6 +146,7 @@ public class CreateKeyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateKeyRequest withDescription(String description) {
         setDescription(description);
         return this;
@@ -159,6 +165,7 @@ public class CreateKeyRequest extends AmazonWebServiceRequest implements
      *        supported.
      * @see KeyUsageType
      */
+
     public void setKeyUsage(String keyUsage) {
         this.keyUsage = keyUsage;
     }
@@ -175,6 +182,7 @@ public class CreateKeyRequest extends AmazonWebServiceRequest implements
      *         supported.
      * @see KeyUsageType
      */
+
     public String getKeyUsage() {
         return this.keyUsage;
     }
@@ -194,6 +202,7 @@ public class CreateKeyRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see KeyUsageType
      */
+
     public CreateKeyRequest withKeyUsage(String keyUsage) {
         setKeyUsage(keyUsage);
         return this;
@@ -214,6 +223,7 @@ public class CreateKeyRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see KeyUsageType
      */
+
     public void setKeyUsage(KeyUsageType keyUsage) {
         this.keyUsage = keyUsage.toString();
     }
@@ -233,6 +243,7 @@ public class CreateKeyRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see KeyUsageType
      */
+
     public CreateKeyRequest withKeyUsage(KeyUsageType keyUsage) {
         setKeyUsage(keyUsage);
         return this;

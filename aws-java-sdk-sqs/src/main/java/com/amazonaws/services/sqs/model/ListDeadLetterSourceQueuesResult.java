@@ -37,6 +37,7 @@ public class ListDeadLetterSourceQueuesResult implements Serializable,
      * @return A list of source queue URLs that have the RedrivePolicy queue
      *         attribute configured with a dead letter queue.
      */
+
     public java.util.List<String> getQueueUrls() {
         if (queueUrls == null) {
             queueUrls = new com.amazonaws.internal.SdkInternalList<String>();
@@ -52,6 +53,7 @@ public class ListDeadLetterSourceQueuesResult implements Serializable,
      *        A list of source queue URLs that have the RedrivePolicy queue
      *        attribute configured with a dead letter queue.
      */
+
     public void setQueueUrls(java.util.Collection<String> queueUrls) {
         if (queueUrls == null) {
             this.queueUrls = null;
@@ -78,6 +80,7 @@ public class ListDeadLetterSourceQueuesResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListDeadLetterSourceQueuesResult withQueueUrls(String... queueUrls) {
         if (this.queueUrls == null) {
             setQueueUrls(new com.amazonaws.internal.SdkInternalList<String>(
@@ -99,6 +102,7 @@ public class ListDeadLetterSourceQueuesResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListDeadLetterSourceQueuesResult withQueueUrls(
             java.util.Collection<String> queueUrls) {
         setQueueUrls(queueUrls);

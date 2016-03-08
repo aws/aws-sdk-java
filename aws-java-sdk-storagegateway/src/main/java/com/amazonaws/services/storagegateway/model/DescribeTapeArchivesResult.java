@@ -61,6 +61,7 @@ public class DescribeTapeArchivesResult implements Serializable, Cloneable {
      *         Resource Names (ARNs) of the tapes, size of the tapes, status of
      *         the tapes, progress of the description and tape barcode.
      */
+
     public java.util.List<TapeArchive> getTapeArchives() {
         if (tapeArchives == null) {
             tapeArchives = new com.amazonaws.internal.SdkInternalList<TapeArchive>();
@@ -84,6 +85,7 @@ public class DescribeTapeArchivesResult implements Serializable, Cloneable {
      *        Resource Names (ARNs) of the tapes, size of the tapes, status of
      *        the tapes, progress of the description and tape barcode.
      */
+
     public void setTapeArchives(java.util.Collection<TapeArchive> tapeArchives) {
         if (tapeArchives == null) {
             this.tapeArchives = null;
@@ -118,6 +120,7 @@ public class DescribeTapeArchivesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTapeArchivesResult withTapeArchives(
             TapeArchive... tapeArchives) {
         if (this.tapeArchives == null) {
@@ -148,6 +151,7 @@ public class DescribeTapeArchivesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTapeArchivesResult withTapeArchives(
             java.util.Collection<TapeArchive> tapeArchives) {
         setTapeArchives(tapeArchives);
@@ -170,6 +174,7 @@ public class DescribeTapeArchivesResult implements Serializable, Cloneable {
      *        virtual tape shelf (VTS). If there are no more virtual tapes to
      *        describe, this field does not appear in the response.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -189,6 +194,7 @@ public class DescribeTapeArchivesResult implements Serializable, Cloneable {
      *         virtual tape shelf (VTS). If there are no more virtual tapes to
      *         describe, this field does not appear in the response.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -211,6 +217,7 @@ public class DescribeTapeArchivesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTapeArchivesResult withMarker(String marker) {
         setMarker(marker);
         return this;

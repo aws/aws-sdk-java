@@ -76,6 +76,7 @@ public class CreateSAMLProviderRequest extends AmazonWebServiceRequest
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html"
      *        >About SAML 2.0-based Federation</a> in the <i>IAM User Guide</i>
      */
+
     public void setSAMLMetadataDocument(String sAMLMetadataDocument) {
         this.sAMLMetadataDocument = sAMLMetadataDocument;
     }
@@ -107,6 +108,7 @@ public class CreateSAMLProviderRequest extends AmazonWebServiceRequest
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html"
      *         >About SAML 2.0-based Federation</a> in the <i>IAM User Guide</i>
      */
+
     public String getSAMLMetadataDocument() {
         return this.sAMLMetadataDocument;
     }
@@ -141,6 +143,7 @@ public class CreateSAMLProviderRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateSAMLProviderRequest withSAMLMetadataDocument(
             String sAMLMetadataDocument) {
         setSAMLMetadataDocument(sAMLMetadataDocument);
@@ -155,6 +158,7 @@ public class CreateSAMLProviderRequest extends AmazonWebServiceRequest
      * @param name
      *        The name of the provider to create.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -166,6 +170,7 @@ public class CreateSAMLProviderRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the provider to create.
      */
+
     public String getName() {
         return this.name;
     }
@@ -180,6 +185,7 @@ public class CreateSAMLProviderRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateSAMLProviderRequest withName(String name) {
         setName(name);
         return this;

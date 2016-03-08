@@ -71,6 +71,7 @@ public class CreateSnapshotRequest extends AmazonWebServiceRequest implements
      * @param volumeId
      *        The ID of the EBS volume.
      */
+
     public void setVolumeId(String volumeId) {
         this.volumeId = volumeId;
     }
@@ -82,6 +83,7 @@ public class CreateSnapshotRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ID of the EBS volume.
      */
+
     public String getVolumeId() {
         return this.volumeId;
     }
@@ -96,6 +98,7 @@ public class CreateSnapshotRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateSnapshotRequest withVolumeId(String volumeId) {
         setVolumeId(volumeId);
         return this;
@@ -109,6 +112,7 @@ public class CreateSnapshotRequest extends AmazonWebServiceRequest implements
      * @param description
      *        A description for the snapshot.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -120,6 +124,7 @@ public class CreateSnapshotRequest extends AmazonWebServiceRequest implements
      * 
      * @return A description for the snapshot.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -134,6 +139,7 @@ public class CreateSnapshotRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateSnapshotRequest withDescription(String description) {
         setDescription(description);
         return this;

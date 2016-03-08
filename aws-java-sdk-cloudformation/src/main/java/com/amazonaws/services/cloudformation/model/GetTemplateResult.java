@@ -49,6 +49,7 @@ public class GetTemplateResult implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html"
      *        >Template Anatomy</a> in the AWS CloudFormation User Guide.)
      */
+
     public void setTemplateBody(String templateBody) {
         this.templateBody = templateBody;
     }
@@ -66,6 +67,7 @@ public class GetTemplateResult implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html"
      *         >Template Anatomy</a> in the AWS CloudFormation User Guide.)
      */
+
     public String getTemplateBody() {
         return this.templateBody;
     }
@@ -86,6 +88,7 @@ public class GetTemplateResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetTemplateResult withTemplateBody(String templateBody) {
         setTemplateBody(templateBody);
         return this;

@@ -38,6 +38,7 @@ public class AttachLoadBalancerToSubnetsResult implements Serializable,
      * 
      * @return The IDs of the subnets attached to the load balancer.
      */
+
     public java.util.List<String> getSubnets() {
         if (subnets == null) {
             subnets = new com.amazonaws.internal.SdkInternalList<String>();
@@ -53,6 +54,7 @@ public class AttachLoadBalancerToSubnetsResult implements Serializable,
      * @param subnets
      *        The IDs of the subnets attached to the load balancer.
      */
+
     public void setSubnets(java.util.Collection<String> subnets) {
         if (subnets == null) {
             this.subnets = null;
@@ -79,6 +81,7 @@ public class AttachLoadBalancerToSubnetsResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AttachLoadBalancerToSubnetsResult withSubnets(String... subnets) {
         if (this.subnets == null) {
             setSubnets(new com.amazonaws.internal.SdkInternalList<String>(
@@ -100,6 +103,7 @@ public class AttachLoadBalancerToSubnetsResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AttachLoadBalancerToSubnetsResult withSubnets(
             java.util.Collection<String> subnets) {
         setSubnets(subnets);

@@ -30,6 +30,7 @@ public class CreateCustomActionTypeResult implements Serializable, Cloneable {
     /**
      * @param actionType
      */
+
     public void setActionType(ActionType actionType) {
         this.actionType = actionType;
     }
@@ -37,6 +38,7 @@ public class CreateCustomActionTypeResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public ActionType getActionType() {
         return this.actionType;
     }
@@ -46,6 +48,7 @@ public class CreateCustomActionTypeResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateCustomActionTypeResult withActionType(ActionType actionType) {
         setActionType(actionType);
         return this;

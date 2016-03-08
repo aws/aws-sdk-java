@@ -41,6 +41,7 @@ public class Monitoring implements Serializable, Cloneable {
      *        Indicates whether monitoring is enabled for the instance.
      * @see MonitoringState
      */
+
     public void setState(String state) {
         this.state = state;
     }
@@ -53,6 +54,7 @@ public class Monitoring implements Serializable, Cloneable {
      * @return Indicates whether monitoring is enabled for the instance.
      * @see MonitoringState
      */
+
     public String getState() {
         return this.state;
     }
@@ -68,6 +70,7 @@ public class Monitoring implements Serializable, Cloneable {
      *         chained together.
      * @see MonitoringState
      */
+
     public Monitoring withState(String state) {
         setState(state);
         return this;
@@ -84,6 +87,7 @@ public class Monitoring implements Serializable, Cloneable {
      *         chained together.
      * @see MonitoringState
      */
+
     public void setState(MonitoringState state) {
         this.state = state.toString();
     }
@@ -99,6 +103,7 @@ public class Monitoring implements Serializable, Cloneable {
      *         chained together.
      * @see MonitoringState
      */
+
     public Monitoring withState(MonitoringState state) {
         setState(state);
         return this;

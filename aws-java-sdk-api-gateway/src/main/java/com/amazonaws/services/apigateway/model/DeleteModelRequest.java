@@ -48,6 +48,7 @@ public class DeleteModelRequest extends AmazonWebServiceRequest implements
      * @param restApiId
      *        The <a>RestApi</a> under which the model will be deleted.
      */
+
     public void setRestApiId(String restApiId) {
         this.restApiId = restApiId;
     }
@@ -59,6 +60,7 @@ public class DeleteModelRequest extends AmazonWebServiceRequest implements
      * 
      * @return The <a>RestApi</a> under which the model will be deleted.
      */
+
     public String getRestApiId() {
         return this.restApiId;
     }
@@ -73,6 +75,7 @@ public class DeleteModelRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteModelRequest withRestApiId(String restApiId) {
         setRestApiId(restApiId);
         return this;
@@ -86,6 +89,7 @@ public class DeleteModelRequest extends AmazonWebServiceRequest implements
      * @param modelName
      *        The name of the model to delete.
      */
+
     public void setModelName(String modelName) {
         this.modelName = modelName;
     }
@@ -97,6 +101,7 @@ public class DeleteModelRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the model to delete.
      */
+
     public String getModelName() {
         return this.modelName;
     }
@@ -111,6 +116,7 @@ public class DeleteModelRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteModelRequest withModelName(String modelName) {
         setModelName(modelName);
         return this;

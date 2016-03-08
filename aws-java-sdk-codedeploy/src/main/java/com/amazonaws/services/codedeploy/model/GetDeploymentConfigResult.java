@@ -40,6 +40,7 @@ public class GetDeploymentConfigResult implements Serializable, Cloneable {
      * @param deploymentConfigInfo
      *        Information about the deployment configuration.
      */
+
     public void setDeploymentConfigInfo(
             DeploymentConfigInfo deploymentConfigInfo) {
         this.deploymentConfigInfo = deploymentConfigInfo;
@@ -52,6 +53,7 @@ public class GetDeploymentConfigResult implements Serializable, Cloneable {
      * 
      * @return Information about the deployment configuration.
      */
+
     public DeploymentConfigInfo getDeploymentConfigInfo() {
         return this.deploymentConfigInfo;
     }
@@ -66,6 +68,7 @@ public class GetDeploymentConfigResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDeploymentConfigResult withDeploymentConfigInfo(
             DeploymentConfigInfo deploymentConfigInfo) {
         setDeploymentConfigInfo(deploymentConfigInfo);

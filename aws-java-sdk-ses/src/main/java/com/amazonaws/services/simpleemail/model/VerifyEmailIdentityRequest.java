@@ -40,6 +40,7 @@ public class VerifyEmailIdentityRequest extends AmazonWebServiceRequest
      * @param emailAddress
      *        The email address to be verified.
      */
+
     public void setEmailAddress(String emailAddress) {
         this.emailAddress = emailAddress;
     }
@@ -51,6 +52,7 @@ public class VerifyEmailIdentityRequest extends AmazonWebServiceRequest
      * 
      * @return The email address to be verified.
      */
+
     public String getEmailAddress() {
         return this.emailAddress;
     }
@@ -65,6 +67,7 @@ public class VerifyEmailIdentityRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VerifyEmailIdentityRequest withEmailAddress(String emailAddress) {
         setEmailAddress(emailAddress);
         return this;

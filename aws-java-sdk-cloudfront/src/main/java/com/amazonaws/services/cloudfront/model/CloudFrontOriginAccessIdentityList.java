@@ -59,6 +59,7 @@ public class CloudFrontOriginAccessIdentityList implements Serializable,
      * @param marker
      *        The value you provided for the Marker request parameter.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -68,6 +69,7 @@ public class CloudFrontOriginAccessIdentityList implements Serializable,
      * 
      * @return The value you provided for the Marker request parameter.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -80,6 +82,7 @@ public class CloudFrontOriginAccessIdentityList implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CloudFrontOriginAccessIdentityList withMarker(String marker) {
         setMarker(marker);
         return this;
@@ -95,6 +98,7 @@ public class CloudFrontOriginAccessIdentityList implements Serializable,
      *        value you can use for the Marker request parameter to continue
      *        listing your origin access identities where they left off.
      */
+
     public void setNextMarker(String nextMarker) {
         this.nextMarker = nextMarker;
     }
@@ -108,6 +112,7 @@ public class CloudFrontOriginAccessIdentityList implements Serializable,
      *         value you can use for the Marker request parameter to continue
      *         listing your origin access identities where they left off.
      */
+
     public String getNextMarker() {
         return this.nextMarker;
     }
@@ -124,6 +129,7 @@ public class CloudFrontOriginAccessIdentityList implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CloudFrontOriginAccessIdentityList withNextMarker(String nextMarker) {
         setNextMarker(nextMarker);
         return this;
@@ -135,6 +141,7 @@ public class CloudFrontOriginAccessIdentityList implements Serializable,
      * @param maxItems
      *        The value you provided for the MaxItems request parameter.
      */
+
     public void setMaxItems(Integer maxItems) {
         this.maxItems = maxItems;
     }
@@ -144,6 +151,7 @@ public class CloudFrontOriginAccessIdentityList implements Serializable,
      * 
      * @return The value you provided for the MaxItems request parameter.
      */
+
     public Integer getMaxItems() {
         return this.maxItems;
     }
@@ -156,6 +164,7 @@ public class CloudFrontOriginAccessIdentityList implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CloudFrontOriginAccessIdentityList withMaxItems(Integer maxItems) {
         setMaxItems(maxItems);
         return this;
@@ -173,6 +182,7 @@ public class CloudFrontOriginAccessIdentityList implements Serializable,
      *        follow-up pagination request using the Marker request parameter to
      *        retrieve more items in the list.
      */
+
     public void setIsTruncated(Boolean isTruncated) {
         this.isTruncated = isTruncated;
     }
@@ -188,6 +198,7 @@ public class CloudFrontOriginAccessIdentityList implements Serializable,
      *         a follow-up pagination request using the Marker request parameter
      *         to retrieve more items in the list.
      */
+
     public Boolean getIsTruncated() {
         return this.isTruncated;
     }
@@ -206,6 +217,7 @@ public class CloudFrontOriginAccessIdentityList implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CloudFrontOriginAccessIdentityList withIsTruncated(
             Boolean isTruncated) {
         setIsTruncated(isTruncated);
@@ -223,6 +235,7 @@ public class CloudFrontOriginAccessIdentityList implements Serializable,
      *         a follow-up pagination request using the Marker request parameter
      *         to retrieve more items in the list.
      */
+
     public Boolean isTruncated() {
         return this.isTruncated;
     }
@@ -235,6 +248,7 @@ public class CloudFrontOriginAccessIdentityList implements Serializable,
      *        The number of CloudFront origin access identities that were
      *        created by the current AWS account.
      */
+
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
@@ -246,6 +260,7 @@ public class CloudFrontOriginAccessIdentityList implements Serializable,
      * @return The number of CloudFront origin access identities that were
      *         created by the current AWS account.
      */
+
     public Integer getQuantity() {
         return this.quantity;
     }
@@ -260,6 +275,7 @@ public class CloudFrontOriginAccessIdentityList implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CloudFrontOriginAccessIdentityList withQuantity(Integer quantity) {
         setQuantity(quantity);
         return this;
@@ -274,6 +290,7 @@ public class CloudFrontOriginAccessIdentityList implements Serializable,
      *         CloudFrontOriginAccessIdentitySummary element for each origin
      *         access identity that was created by the current AWS account.
      */
+
     public java.util.List<CloudFrontOriginAccessIdentitySummary> getItems() {
         if (items == null) {
             items = new com.amazonaws.internal.SdkInternalList<CloudFrontOriginAccessIdentitySummary>();
@@ -291,6 +308,7 @@ public class CloudFrontOriginAccessIdentityList implements Serializable,
      *        CloudFrontOriginAccessIdentitySummary element for each origin
      *        access identity that was created by the current AWS account.
      */
+
     public void setItems(
             java.util.Collection<CloudFrontOriginAccessIdentitySummary> items) {
         if (items == null) {
@@ -320,6 +338,7 @@ public class CloudFrontOriginAccessIdentityList implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CloudFrontOriginAccessIdentityList withItems(
             CloudFrontOriginAccessIdentitySummary... items) {
         if (this.items == null) {
@@ -344,6 +363,7 @@ public class CloudFrontOriginAccessIdentityList implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CloudFrontOriginAccessIdentityList withItems(
             java.util.Collection<CloudFrontOriginAccessIdentitySummary> items) {
         setItems(items);

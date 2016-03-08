@@ -61,6 +61,7 @@ public class NetworkInterfacePrivateIpAddress implements Serializable,
      * @param privateIpAddress
      *        The private IP address.
      */
+
     public void setPrivateIpAddress(String privateIpAddress) {
         this.privateIpAddress = privateIpAddress;
     }
@@ -72,6 +73,7 @@ public class NetworkInterfacePrivateIpAddress implements Serializable,
      * 
      * @return The private IP address.
      */
+
     public String getPrivateIpAddress() {
         return this.privateIpAddress;
     }
@@ -86,6 +88,7 @@ public class NetworkInterfacePrivateIpAddress implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NetworkInterfacePrivateIpAddress withPrivateIpAddress(
             String privateIpAddress) {
         setPrivateIpAddress(privateIpAddress);
@@ -100,6 +103,7 @@ public class NetworkInterfacePrivateIpAddress implements Serializable,
      * @param privateDnsName
      *        The private DNS name.
      */
+
     public void setPrivateDnsName(String privateDnsName) {
         this.privateDnsName = privateDnsName;
     }
@@ -111,6 +115,7 @@ public class NetworkInterfacePrivateIpAddress implements Serializable,
      * 
      * @return The private DNS name.
      */
+
     public String getPrivateDnsName() {
         return this.privateDnsName;
     }
@@ -125,6 +130,7 @@ public class NetworkInterfacePrivateIpAddress implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NetworkInterfacePrivateIpAddress withPrivateDnsName(
             String privateDnsName) {
         setPrivateDnsName(privateDnsName);
@@ -141,6 +147,7 @@ public class NetworkInterfacePrivateIpAddress implements Serializable,
      *        Indicates whether this IP address is the primary private IP
      *        address of the network interface.
      */
+
     public void setPrimary(Boolean primary) {
         this.primary = primary;
     }
@@ -154,6 +161,7 @@ public class NetworkInterfacePrivateIpAddress implements Serializable,
      * @return Indicates whether this IP address is the primary private IP
      *         address of the network interface.
      */
+
     public Boolean getPrimary() {
         return this.primary;
     }
@@ -170,6 +178,7 @@ public class NetworkInterfacePrivateIpAddress implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NetworkInterfacePrivateIpAddress withPrimary(Boolean primary) {
         setPrimary(primary);
         return this;
@@ -184,6 +193,7 @@ public class NetworkInterfacePrivateIpAddress implements Serializable,
      * @return Indicates whether this IP address is the primary private IP
      *         address of the network interface.
      */
+
     public Boolean isPrimary() {
         return this.primary;
     }
@@ -198,6 +208,7 @@ public class NetworkInterfacePrivateIpAddress implements Serializable,
      *        The association information for an Elastic IP address associated
      *        with the network interface.
      */
+
     public void setAssociation(NetworkInterfaceAssociation association) {
         this.association = association;
     }
@@ -211,6 +222,7 @@ public class NetworkInterfacePrivateIpAddress implements Serializable,
      * @return The association information for an Elastic IP address associated
      *         with the network interface.
      */
+
     public NetworkInterfaceAssociation getAssociation() {
         return this.association;
     }
@@ -227,6 +239,7 @@ public class NetworkInterfacePrivateIpAddress implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NetworkInterfacePrivateIpAddress withAssociation(
             NetworkInterfaceAssociation association) {
         setAssociation(association);

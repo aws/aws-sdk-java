@@ -38,6 +38,7 @@ public class CreateNetworkInterfaceResult implements Serializable, Cloneable {
      * @param networkInterface
      *        Information about the network interface.
      */
+
     public void setNetworkInterface(NetworkInterface networkInterface) {
         this.networkInterface = networkInterface;
     }
@@ -49,6 +50,7 @@ public class CreateNetworkInterfaceResult implements Serializable, Cloneable {
      * 
      * @return Information about the network interface.
      */
+
     public NetworkInterface getNetworkInterface() {
         return this.networkInterface;
     }
@@ -63,6 +65,7 @@ public class CreateNetworkInterfaceResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateNetworkInterfaceResult withNetworkInterface(
             NetworkInterface networkInterface) {
         setNetworkInterface(networkInterface);

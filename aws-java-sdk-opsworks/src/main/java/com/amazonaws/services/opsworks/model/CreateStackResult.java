@@ -44,6 +44,7 @@ public class CreateStackResult implements Serializable, Cloneable {
      *        the stack when performing actions such as
      *        <code>DescribeStacks</code>.
      */
+
     public void setStackId(String stackId) {
         this.stackId = stackId;
     }
@@ -58,6 +59,7 @@ public class CreateStackResult implements Serializable, Cloneable {
      *         the stack when performing actions such as
      *         <code>DescribeStacks</code>.
      */
+
     public String getStackId() {
         return this.stackId;
     }
@@ -75,6 +77,7 @@ public class CreateStackResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateStackResult withStackId(String stackId) {
         setStackId(stackId);
         return this;

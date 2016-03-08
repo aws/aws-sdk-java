@@ -113,6 +113,7 @@ public class Integration implements Serializable, Cloneable {
      *        Specifies the integration's type.
      * @see IntegrationType
      */
+
     public void setType(String type) {
         this.type = type;
     }
@@ -125,6 +126,7 @@ public class Integration implements Serializable, Cloneable {
      * @return Specifies the integration's type.
      * @see IntegrationType
      */
+
     public String getType() {
         return this.type;
     }
@@ -140,6 +142,7 @@ public class Integration implements Serializable, Cloneable {
      *         chained together.
      * @see IntegrationType
      */
+
     public Integration withType(String type) {
         setType(type);
         return this;
@@ -156,6 +159,7 @@ public class Integration implements Serializable, Cloneable {
      *         chained together.
      * @see IntegrationType
      */
+
     public void setType(IntegrationType type) {
         this.type = type.toString();
     }
@@ -171,6 +175,7 @@ public class Integration implements Serializable, Cloneable {
      *         chained together.
      * @see IntegrationType
      */
+
     public Integration withType(IntegrationType type) {
         setType(type);
         return this;
@@ -184,6 +189,7 @@ public class Integration implements Serializable, Cloneable {
      * @param httpMethod
      *        Specifies the integration's HTTP method type.
      */
+
     public void setHttpMethod(String httpMethod) {
         this.httpMethod = httpMethod;
     }
@@ -195,6 +201,7 @@ public class Integration implements Serializable, Cloneable {
      * 
      * @return Specifies the integration's HTTP method type.
      */
+
     public String getHttpMethod() {
         return this.httpMethod;
     }
@@ -209,6 +216,7 @@ public class Integration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Integration withHttpMethod(String httpMethod) {
         setHttpMethod(httpMethod);
         return this;
@@ -247,6 +255,7 @@ public class Integration implements Serializable, Cloneable {
      *        in the URI should be treated as the path to the resource,
      *        including the initial <code>/</code>.
      */
+
     public void setUri(String uri) {
         this.uri = uri;
     }
@@ -283,6 +292,7 @@ public class Integration implements Serializable, Cloneable {
      *         substring in the URI should be treated as the path to the
      *         resource, including the initial <code>/</code>.
      */
+
     public String getUri() {
         return this.uri;
     }
@@ -322,6 +332,7 @@ public class Integration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Integration withUri(String uri) {
         setUri(uri);
         return this;
@@ -346,6 +357,7 @@ public class Integration implements Serializable, Cloneable {
      *        <code>arn:aws:iam::\*:user/\*</code>. To use resource-based
      *        permissions on supported AWS services, specify null.
      */
+
     public void setCredentials(String credentials) {
         this.credentials = credentials;
     }
@@ -368,6 +380,7 @@ public class Integration implements Serializable, Cloneable {
      *         <code>arn:aws:iam::\*:user/\*</code>. To use resource-based
      *         permissions on supported AWS services, specify null.
      */
+
     public String getCredentials() {
         return this.credentials;
     }
@@ -393,6 +406,7 @@ public class Integration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Integration withCredentials(String credentials) {
         setCredentials(credentials);
         return this;
@@ -422,6 +436,7 @@ public class Integration implements Serializable, Cloneable {
      *         <code>location</code> is either querystring, path, or header.
      *         <code>name</code> must be a valid, unique parameter name.
      */
+
     public java.util.Map<String, String> getRequestParameters() {
         return requestParameters;
     }
@@ -451,6 +466,7 @@ public class Integration implements Serializable, Cloneable {
      *        <code>location</code> is either querystring, path, or header.
      *        <code>name</code> must be a valid, unique parameter name.
      */
+
     public void setRequestParameters(
             java.util.Map<String, String> requestParameters) {
         this.requestParameters = requestParameters;
@@ -483,6 +499,7 @@ public class Integration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Integration withRequestParameters(
             java.util.Map<String, String> requestParameters) {
         setRequestParameters(requestParameters);
@@ -504,6 +521,7 @@ public class Integration implements Serializable, Cloneable {
      * Removes all the entries added into RequestParameters. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public Integration clearRequestParametersEntries() {
         this.requestParameters = null;
         return this;
@@ -516,6 +534,7 @@ public class Integration implements Serializable, Cloneable {
      * 
      * @return Specifies the integration's request templates.
      */
+
     public java.util.Map<String, String> getRequestTemplates() {
         return requestTemplates;
     }
@@ -528,6 +547,7 @@ public class Integration implements Serializable, Cloneable {
      * @param requestTemplates
      *        Specifies the integration's request templates.
      */
+
     public void setRequestTemplates(
             java.util.Map<String, String> requestTemplates) {
         this.requestTemplates = requestTemplates;
@@ -543,6 +563,7 @@ public class Integration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Integration withRequestTemplates(
             java.util.Map<String, String> requestTemplates) {
         setRequestTemplates(requestTemplates);
@@ -564,6 +585,7 @@ public class Integration implements Serializable, Cloneable {
      * Removes all the entries added into RequestTemplates. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public Integration clearRequestTemplatesEntries() {
         this.requestTemplates = null;
         return this;
@@ -577,6 +599,7 @@ public class Integration implements Serializable, Cloneable {
      * @param cacheNamespace
      *        Specifies the integration's cache namespace.
      */
+
     public void setCacheNamespace(String cacheNamespace) {
         this.cacheNamespace = cacheNamespace;
     }
@@ -588,6 +611,7 @@ public class Integration implements Serializable, Cloneable {
      * 
      * @return Specifies the integration's cache namespace.
      */
+
     public String getCacheNamespace() {
         return this.cacheNamespace;
     }
@@ -602,6 +626,7 @@ public class Integration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Integration withCacheNamespace(String cacheNamespace) {
         setCacheNamespace(cacheNamespace);
         return this;
@@ -614,6 +639,7 @@ public class Integration implements Serializable, Cloneable {
      * 
      * @return Specifies the integration's cache key parameters.
      */
+
     public java.util.List<String> getCacheKeyParameters() {
         return cacheKeyParameters;
     }
@@ -626,6 +652,7 @@ public class Integration implements Serializable, Cloneable {
      * @param cacheKeyParameters
      *        Specifies the integration's cache key parameters.
      */
+
     public void setCacheKeyParameters(
             java.util.Collection<String> cacheKeyParameters) {
         if (cacheKeyParameters == null) {
@@ -653,6 +680,7 @@ public class Integration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Integration withCacheKeyParameters(String... cacheKeyParameters) {
         if (this.cacheKeyParameters == null) {
             setCacheKeyParameters(new java.util.ArrayList<String>(
@@ -674,6 +702,7 @@ public class Integration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Integration withCacheKeyParameters(
             java.util.Collection<String> cacheKeyParameters) {
         setCacheKeyParameters(cacheKeyParameters);
@@ -687,6 +716,7 @@ public class Integration implements Serializable, Cloneable {
      * 
      * @return Specifies the integration's responses.
      */
+
     public java.util.Map<String, IntegrationResponse> getIntegrationResponses() {
         return integrationResponses;
     }
@@ -699,6 +729,7 @@ public class Integration implements Serializable, Cloneable {
      * @param integrationResponses
      *        Specifies the integration's responses.
      */
+
     public void setIntegrationResponses(
             java.util.Map<String, IntegrationResponse> integrationResponses) {
         this.integrationResponses = integrationResponses;
@@ -714,6 +745,7 @@ public class Integration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Integration withIntegrationResponses(
             java.util.Map<String, IntegrationResponse> integrationResponses) {
         setIntegrationResponses(integrationResponses);
@@ -736,6 +768,7 @@ public class Integration implements Serializable, Cloneable {
      * Removes all the entries added into IntegrationResponses. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public Integration clearIntegrationResponsesEntries() {
         this.integrationResponses = null;
         return this;

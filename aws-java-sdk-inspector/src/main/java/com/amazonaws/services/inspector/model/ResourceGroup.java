@@ -61,6 +61,7 @@ public class ResourceGroup implements Serializable, Cloneable {
      * @param resourceGroupArn
      *        The ARN of the resource group.
      */
+
     public void setResourceGroupArn(String resourceGroupArn) {
         this.resourceGroupArn = resourceGroupArn;
     }
@@ -72,6 +73,7 @@ public class ResourceGroup implements Serializable, Cloneable {
      * 
      * @return The ARN of the resource group.
      */
+
     public String getResourceGroupArn() {
         return this.resourceGroupArn;
     }
@@ -86,6 +88,7 @@ public class ResourceGroup implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ResourceGroup withResourceGroupArn(String resourceGroupArn) {
         setResourceGroupArn(resourceGroupArn);
         return this;
@@ -119,6 +122,7 @@ public class ResourceGroup implements Serializable, Cloneable {
      *        For example, [{ "key1" : ["Value1","Value2"]},{"Key2":
      *        ["Value3"]}]
      */
+
     public void setResourceGroupTags(String resourceGroupTags) {
         this.resourceGroupTags = resourceGroupTags;
     }
@@ -150,6 +154,7 @@ public class ResourceGroup implements Serializable, Cloneable {
      *         For example, [{ "key1" : ["Value1","Value2"]},{"Key2":
      *         ["Value3"]}]
      */
+
     public String getResourceGroupTags() {
         return this.resourceGroupTags;
     }
@@ -184,6 +189,7 @@ public class ResourceGroup implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ResourceGroup withResourceGroupTags(String resourceGroupTags) {
         setResourceGroupTags(resourceGroupTags);
         return this;

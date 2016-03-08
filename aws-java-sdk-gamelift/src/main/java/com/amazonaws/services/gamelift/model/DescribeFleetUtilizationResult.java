@@ -50,6 +50,7 @@ public class DescribeFleetUtilizationResult implements Serializable, Cloneable {
      * @return Collection of objects containing utilization information for each
      *         requested fleet ID.
      */
+
     public java.util.List<FleetUtilization> getFleetUtilization() {
         return fleetUtilization;
     }
@@ -64,6 +65,7 @@ public class DescribeFleetUtilizationResult implements Serializable, Cloneable {
      *        Collection of objects containing utilization information for each
      *        requested fleet ID.
      */
+
     public void setFleetUtilization(
             java.util.Collection<FleetUtilization> fleetUtilization) {
         if (fleetUtilization == null) {
@@ -93,6 +95,7 @@ public class DescribeFleetUtilizationResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeFleetUtilizationResult withFleetUtilization(
             FleetUtilization... fleetUtilization) {
         if (this.fleetUtilization == null) {
@@ -117,6 +120,7 @@ public class DescribeFleetUtilizationResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeFleetUtilizationResult withFleetUtilization(
             java.util.Collection<FleetUtilization> fleetUtilization) {
         setFleetUtilization(fleetUtilization);
@@ -135,6 +139,7 @@ public class DescribeFleetUtilizationResult implements Serializable, Cloneable {
      *        call to this action. If no token is returned, these results
      *        represent the end of the list.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -150,6 +155,7 @@ public class DescribeFleetUtilizationResult implements Serializable, Cloneable {
      *         call to this action. If no token is returned, these results
      *         represent the end of the list.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -168,6 +174,7 @@ public class DescribeFleetUtilizationResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeFleetUtilizationResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

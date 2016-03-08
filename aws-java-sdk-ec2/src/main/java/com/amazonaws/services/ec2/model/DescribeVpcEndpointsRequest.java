@@ -90,6 +90,7 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest
      * 
      * @return One or more endpoint IDs.
      */
+
     public java.util.List<String> getVpcEndpointIds() {
         if (vpcEndpointIds == null) {
             vpcEndpointIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -105,6 +106,7 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest
      * @param vpcEndpointIds
      *        One or more endpoint IDs.
      */
+
     public void setVpcEndpointIds(java.util.Collection<String> vpcEndpointIds) {
         if (vpcEndpointIds == null) {
             this.vpcEndpointIds = null;
@@ -131,6 +133,7 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVpcEndpointsRequest withVpcEndpointIds(
             String... vpcEndpointIds) {
         if (this.vpcEndpointIds == null) {
@@ -153,6 +156,7 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVpcEndpointsRequest withVpcEndpointIds(
             java.util.Collection<String> vpcEndpointIds) {
         setVpcEndpointIds(vpcEndpointIds);
@@ -214,6 +218,7 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest
      *         </p>
      *         </li>
      */
+
     public java.util.List<Filter> getFilters() {
         if (filters == null) {
             filters = new com.amazonaws.internal.SdkInternalList<Filter>();
@@ -277,6 +282,7 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest
      *        </p>
      *        </li>
      */
+
     public void setFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
             this.filters = null;
@@ -351,6 +357,7 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVpcEndpointsRequest withFilters(Filter... filters) {
         if (this.filters == null) {
             setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(
@@ -420,6 +427,7 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVpcEndpointsRequest withFilters(
             java.util.Collection<Filter> filters) {
         setFilters(filters);
@@ -444,6 +452,7 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest
      *        Constraint: If the value is greater than 1000, we return only 1000
      *        items.
      */
+
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
     }
@@ -465,6 +474,7 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest
      *         Constraint: If the value is greater than 1000, we return only
      *         1000 items.
      */
+
     public Integer getMaxResults() {
         return this.maxResults;
     }
@@ -489,6 +499,7 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVpcEndpointsRequest withMaxResults(Integer maxResults) {
         setMaxResults(maxResults);
         return this;
@@ -504,6 +515,7 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest
      *        The token for the next set of items to return. (You received this
      *        token from a prior call.)
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -517,6 +529,7 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest
      * @return The token for the next set of items to return. (You received this
      *         token from a prior call.)
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -533,6 +546,7 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVpcEndpointsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

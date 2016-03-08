@@ -69,6 +69,7 @@ public class DeleteMessageRequest extends AmazonWebServiceRequest implements
      * @param queueUrl
      *        The URL of the Amazon SQS queue to take action on.
      */
+
     public void setQueueUrl(String queueUrl) {
         this.queueUrl = queueUrl;
     }
@@ -80,6 +81,7 @@ public class DeleteMessageRequest extends AmazonWebServiceRequest implements
      * 
      * @return The URL of the Amazon SQS queue to take action on.
      */
+
     public String getQueueUrl() {
         return this.queueUrl;
     }
@@ -94,6 +96,7 @@ public class DeleteMessageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteMessageRequest withQueueUrl(String queueUrl) {
         setQueueUrl(queueUrl);
         return this;
@@ -107,6 +110,7 @@ public class DeleteMessageRequest extends AmazonWebServiceRequest implements
      * @param receiptHandle
      *        The receipt handle associated with the message to delete.
      */
+
     public void setReceiptHandle(String receiptHandle) {
         this.receiptHandle = receiptHandle;
     }
@@ -118,6 +122,7 @@ public class DeleteMessageRequest extends AmazonWebServiceRequest implements
      * 
      * @return The receipt handle associated with the message to delete.
      */
+
     public String getReceiptHandle() {
         return this.receiptHandle;
     }
@@ -132,6 +137,7 @@ public class DeleteMessageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteMessageRequest withReceiptHandle(String receiptHandle) {
         setReceiptHandle(receiptHandle);
         return this;

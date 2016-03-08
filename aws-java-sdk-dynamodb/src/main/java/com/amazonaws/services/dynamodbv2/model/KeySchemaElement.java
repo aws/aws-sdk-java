@@ -176,6 +176,7 @@ public class KeySchemaElement implements Serializable, Cloneable {
      * @param attributeName
      *        The name of a key attribute.
      */
+
     public void setAttributeName(String attributeName) {
         this.attributeName = attributeName;
     }
@@ -187,6 +188,7 @@ public class KeySchemaElement implements Serializable, Cloneable {
      * 
      * @return The name of a key attribute.
      */
+
     public String getAttributeName() {
         return this.attributeName;
     }
@@ -201,6 +203,7 @@ public class KeySchemaElement implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public KeySchemaElement withAttributeName(String attributeName) {
         setAttributeName(attributeName);
         return this;
@@ -267,6 +270,7 @@ public class KeySchemaElement implements Serializable, Cloneable {
      *        </p>
      * @see KeyType
      */
+
     public void setKeyType(String keyType) {
         this.keyType = keyType;
     }
@@ -331,6 +335,7 @@ public class KeySchemaElement implements Serializable, Cloneable {
      *         </p>
      * @see KeyType
      */
+
     public String getKeyType() {
         return this.keyType;
     }
@@ -398,6 +403,7 @@ public class KeySchemaElement implements Serializable, Cloneable {
      *         chained together.
      * @see KeyType
      */
+
     public KeySchemaElement withKeyType(String keyType) {
         setKeyType(keyType);
         return this;
@@ -466,6 +472,7 @@ public class KeySchemaElement implements Serializable, Cloneable {
      *         chained together.
      * @see KeyType
      */
+
     public void setKeyType(KeyType keyType) {
         this.keyType = keyType.toString();
     }
@@ -533,6 +540,7 @@ public class KeySchemaElement implements Serializable, Cloneable {
      *         chained together.
      * @see KeyType
      */
+
     public KeySchemaElement withKeyType(KeyType keyType) {
         setKeyType(keyType);
         return this;

@@ -77,6 +77,7 @@ public class NetworkInterfaceAttachment implements Serializable, Cloneable {
      * @param attachmentId
      *        The ID of the network interface attachment.
      */
+
     public void setAttachmentId(String attachmentId) {
         this.attachmentId = attachmentId;
     }
@@ -88,6 +89,7 @@ public class NetworkInterfaceAttachment implements Serializable, Cloneable {
      * 
      * @return The ID of the network interface attachment.
      */
+
     public String getAttachmentId() {
         return this.attachmentId;
     }
@@ -102,6 +104,7 @@ public class NetworkInterfaceAttachment implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NetworkInterfaceAttachment withAttachmentId(String attachmentId) {
         setAttachmentId(attachmentId);
         return this;
@@ -115,6 +118,7 @@ public class NetworkInterfaceAttachment implements Serializable, Cloneable {
      * @param instanceId
      *        The ID of the instance.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -126,6 +130,7 @@ public class NetworkInterfaceAttachment implements Serializable, Cloneable {
      * 
      * @return The ID of the instance.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
@@ -140,6 +145,7 @@ public class NetworkInterfaceAttachment implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NetworkInterfaceAttachment withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;
@@ -153,6 +159,7 @@ public class NetworkInterfaceAttachment implements Serializable, Cloneable {
      * @param instanceOwnerId
      *        The AWS account ID of the owner of the instance.
      */
+
     public void setInstanceOwnerId(String instanceOwnerId) {
         this.instanceOwnerId = instanceOwnerId;
     }
@@ -164,6 +171,7 @@ public class NetworkInterfaceAttachment implements Serializable, Cloneable {
      * 
      * @return The AWS account ID of the owner of the instance.
      */
+
     public String getInstanceOwnerId() {
         return this.instanceOwnerId;
     }
@@ -178,6 +186,7 @@ public class NetworkInterfaceAttachment implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NetworkInterfaceAttachment withInstanceOwnerId(String instanceOwnerId) {
         setInstanceOwnerId(instanceOwnerId);
         return this;
@@ -192,6 +201,7 @@ public class NetworkInterfaceAttachment implements Serializable, Cloneable {
      *        The device index of the network interface attachment on the
      *        instance.
      */
+
     public void setDeviceIndex(Integer deviceIndex) {
         this.deviceIndex = deviceIndex;
     }
@@ -204,6 +214,7 @@ public class NetworkInterfaceAttachment implements Serializable, Cloneable {
      * @return The device index of the network interface attachment on the
      *         instance.
      */
+
     public Integer getDeviceIndex() {
         return this.deviceIndex;
     }
@@ -219,6 +230,7 @@ public class NetworkInterfaceAttachment implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NetworkInterfaceAttachment withDeviceIndex(Integer deviceIndex) {
         setDeviceIndex(deviceIndex);
         return this;
@@ -233,6 +245,7 @@ public class NetworkInterfaceAttachment implements Serializable, Cloneable {
      *        The attachment state.
      * @see AttachmentStatus
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -245,6 +258,7 @@ public class NetworkInterfaceAttachment implements Serializable, Cloneable {
      * @return The attachment state.
      * @see AttachmentStatus
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -260,6 +274,7 @@ public class NetworkInterfaceAttachment implements Serializable, Cloneable {
      *         chained together.
      * @see AttachmentStatus
      */
+
     public NetworkInterfaceAttachment withStatus(String status) {
         setStatus(status);
         return this;
@@ -276,6 +291,7 @@ public class NetworkInterfaceAttachment implements Serializable, Cloneable {
      *         chained together.
      * @see AttachmentStatus
      */
+
     public void setStatus(AttachmentStatus status) {
         this.status = status.toString();
     }
@@ -291,6 +307,7 @@ public class NetworkInterfaceAttachment implements Serializable, Cloneable {
      *         chained together.
      * @see AttachmentStatus
      */
+
     public NetworkInterfaceAttachment withStatus(AttachmentStatus status) {
         setStatus(status);
         return this;
@@ -304,6 +321,7 @@ public class NetworkInterfaceAttachment implements Serializable, Cloneable {
      * @param attachTime
      *        The timestamp indicating when the attachment initiated.
      */
+
     public void setAttachTime(java.util.Date attachTime) {
         this.attachTime = attachTime;
     }
@@ -315,6 +333,7 @@ public class NetworkInterfaceAttachment implements Serializable, Cloneable {
      * 
      * @return The timestamp indicating when the attachment initiated.
      */
+
     public java.util.Date getAttachTime() {
         return this.attachTime;
     }
@@ -329,6 +348,7 @@ public class NetworkInterfaceAttachment implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NetworkInterfaceAttachment withAttachTime(java.util.Date attachTime) {
         setAttachTime(attachTime);
         return this;
@@ -344,6 +364,7 @@ public class NetworkInterfaceAttachment implements Serializable, Cloneable {
      *        Indicates whether the network interface is deleted when the
      *        instance is terminated.
      */
+
     public void setDeleteOnTermination(Boolean deleteOnTermination) {
         this.deleteOnTermination = deleteOnTermination;
     }
@@ -357,6 +378,7 @@ public class NetworkInterfaceAttachment implements Serializable, Cloneable {
      * @return Indicates whether the network interface is deleted when the
      *         instance is terminated.
      */
+
     public Boolean getDeleteOnTermination() {
         return this.deleteOnTermination;
     }
@@ -373,6 +395,7 @@ public class NetworkInterfaceAttachment implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NetworkInterfaceAttachment withDeleteOnTermination(
             Boolean deleteOnTermination) {
         setDeleteOnTermination(deleteOnTermination);
@@ -388,6 +411,7 @@ public class NetworkInterfaceAttachment implements Serializable, Cloneable {
      * @return Indicates whether the network interface is deleted when the
      *         instance is terminated.
      */
+
     public Boolean isDeleteOnTermination() {
         return this.deleteOnTermination;
     }

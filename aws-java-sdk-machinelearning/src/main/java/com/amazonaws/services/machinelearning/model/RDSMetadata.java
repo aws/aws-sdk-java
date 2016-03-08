@@ -78,6 +78,7 @@ public class RDSMetadata implements Serializable, Cloneable {
      * @param database
      *        The database details required to connect to an Amazon RDS.
      */
+
     public void setDatabase(RDSDatabase database) {
         this.database = database;
     }
@@ -89,6 +90,7 @@ public class RDSMetadata implements Serializable, Cloneable {
      * 
      * @return The database details required to connect to an Amazon RDS.
      */
+
     public RDSDatabase getDatabase() {
         return this.database;
     }
@@ -103,6 +105,7 @@ public class RDSMetadata implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RDSMetadata withDatabase(RDSDatabase database) {
         setDatabase(database);
         return this;
@@ -111,6 +114,7 @@ public class RDSMetadata implements Serializable, Cloneable {
     /**
      * @param databaseUserName
      */
+
     public void setDatabaseUserName(String databaseUserName) {
         this.databaseUserName = databaseUserName;
     }
@@ -118,6 +122,7 @@ public class RDSMetadata implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getDatabaseUserName() {
         return this.databaseUserName;
     }
@@ -127,6 +132,7 @@ public class RDSMetadata implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RDSMetadata withDatabaseUserName(String databaseUserName) {
         setDatabaseUserName(databaseUserName);
         return this;
@@ -144,6 +150,7 @@ public class RDSMetadata implements Serializable, Cloneable {
      *        <a>CreateDataSourceFromRDS</a>. Returns only if
      *        <code>Verbose</code> is true in <code>GetDataSourceInput</code>.
      */
+
     public void setSelectSqlQuery(String selectSqlQuery) {
         this.selectSqlQuery = selectSqlQuery;
     }
@@ -159,6 +166,7 @@ public class RDSMetadata implements Serializable, Cloneable {
      *         <a>CreateDataSourceFromRDS</a>. Returns only if
      *         <code>Verbose</code> is true in <code>GetDataSourceInput</code>.
      */
+
     public String getSelectSqlQuery() {
         return this.selectSqlQuery;
     }
@@ -177,6 +185,7 @@ public class RDSMetadata implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RDSMetadata withSelectSqlQuery(String selectSqlQuery) {
         setSelectSqlQuery(selectSqlQuery);
         return this;
@@ -198,6 +207,7 @@ public class RDSMetadata implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html"
      *        >Role templates</a> for data pipelines.
      */
+
     public void setResourceRole(String resourceRole) {
         this.resourceRole = resourceRole;
     }
@@ -217,6 +227,7 @@ public class RDSMetadata implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html"
      *         >Role templates</a> for data pipelines.
      */
+
     public String getResourceRole() {
         return this.resourceRole;
     }
@@ -239,6 +250,7 @@ public class RDSMetadata implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RDSMetadata withResourceRole(String resourceRole) {
         setResourceRole(resourceRole);
         return this;
@@ -260,6 +272,7 @@ public class RDSMetadata implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html"
      *        >Role templates</a> for data pipelines.
      */
+
     public void setServiceRole(String serviceRole) {
         this.serviceRole = serviceRole;
     }
@@ -279,6 +292,7 @@ public class RDSMetadata implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html"
      *         >Role templates</a> for data pipelines.
      */
+
     public String getServiceRole() {
         return this.serviceRole;
     }
@@ -301,6 +315,7 @@ public class RDSMetadata implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RDSMetadata withServiceRole(String serviceRole) {
         setServiceRole(serviceRole);
         return this;
@@ -318,6 +333,7 @@ public class RDSMetadata implements Serializable, Cloneable {
      *        data from Amazon RDS to Amazon S3. You can use the ID to find
      *        details about the instance in the Data Pipeline console.
      */
+
     public void setDataPipelineId(String dataPipelineId) {
         this.dataPipelineId = dataPipelineId;
     }
@@ -333,6 +349,7 @@ public class RDSMetadata implements Serializable, Cloneable {
      *         copy data from Amazon RDS to Amazon S3. You can use the ID to
      *         find details about the instance in the Data Pipeline console.
      */
+
     public String getDataPipelineId() {
         return this.dataPipelineId;
     }
@@ -351,6 +368,7 @@ public class RDSMetadata implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RDSMetadata withDataPipelineId(String dataPipelineId) {
         setDataPipelineId(dataPipelineId);
         return this;

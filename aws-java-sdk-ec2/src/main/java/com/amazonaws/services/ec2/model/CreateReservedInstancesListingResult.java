@@ -38,6 +38,7 @@ public class CreateReservedInstancesListingResult implements Serializable,
      * 
      * @return Information about the Reserved Instance listing.
      */
+
     public java.util.List<ReservedInstancesListing> getReservedInstancesListings() {
         if (reservedInstancesListings == null) {
             reservedInstancesListings = new com.amazonaws.internal.SdkInternalList<ReservedInstancesListing>();
@@ -53,6 +54,7 @@ public class CreateReservedInstancesListingResult implements Serializable,
      * @param reservedInstancesListings
      *        Information about the Reserved Instance listing.
      */
+
     public void setReservedInstancesListings(
             java.util.Collection<ReservedInstancesListing> reservedInstancesListings) {
         if (reservedInstancesListings == null) {
@@ -80,6 +82,7 @@ public class CreateReservedInstancesListingResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateReservedInstancesListingResult withReservedInstancesListings(
             ReservedInstancesListing... reservedInstancesListings) {
         if (this.reservedInstancesListings == null) {
@@ -102,6 +105,7 @@ public class CreateReservedInstancesListingResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateReservedInstancesListingResult withReservedInstancesListings(
             java.util.Collection<ReservedInstancesListing> reservedInstancesListings) {
         setReservedInstancesListings(reservedInstancesListings);

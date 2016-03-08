@@ -75,6 +75,7 @@ public class Tape implements Serializable, Cloneable {
      * @param tapeARN
      *        The Amazon Resource Name (ARN) of the virtual tape.
      */
+
     public void setTapeARN(String tapeARN) {
         this.tapeARN = tapeARN;
     }
@@ -86,6 +87,7 @@ public class Tape implements Serializable, Cloneable {
      * 
      * @return The Amazon Resource Name (ARN) of the virtual tape.
      */
+
     public String getTapeARN() {
         return this.tapeARN;
     }
@@ -100,6 +102,7 @@ public class Tape implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Tape withTapeARN(String tapeARN) {
         setTapeARN(tapeARN);
         return this;
@@ -113,6 +116,7 @@ public class Tape implements Serializable, Cloneable {
      * @param tapeBarcode
      *        The barcode that identifies a specific virtual tape.
      */
+
     public void setTapeBarcode(String tapeBarcode) {
         this.tapeBarcode = tapeBarcode;
     }
@@ -124,6 +128,7 @@ public class Tape implements Serializable, Cloneable {
      * 
      * @return The barcode that identifies a specific virtual tape.
      */
+
     public String getTapeBarcode() {
         return this.tapeBarcode;
     }
@@ -138,6 +143,7 @@ public class Tape implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Tape withTapeBarcode(String tapeBarcode) {
         setTapeBarcode(tapeBarcode);
         return this;
@@ -151,6 +157,7 @@ public class Tape implements Serializable, Cloneable {
      * @param tapeSizeInBytes
      *        The size, in bytes, of the virtual tape.
      */
+
     public void setTapeSizeInBytes(Long tapeSizeInBytes) {
         this.tapeSizeInBytes = tapeSizeInBytes;
     }
@@ -162,6 +169,7 @@ public class Tape implements Serializable, Cloneable {
      * 
      * @return The size, in bytes, of the virtual tape.
      */
+
     public Long getTapeSizeInBytes() {
         return this.tapeSizeInBytes;
     }
@@ -176,6 +184,7 @@ public class Tape implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Tape withTapeSizeInBytes(Long tapeSizeInBytes) {
         setTapeSizeInBytes(tapeSizeInBytes);
         return this;
@@ -189,6 +198,7 @@ public class Tape implements Serializable, Cloneable {
      * @param tapeStatus
      *        The current state of the virtual tape.
      */
+
     public void setTapeStatus(String tapeStatus) {
         this.tapeStatus = tapeStatus;
     }
@@ -200,6 +210,7 @@ public class Tape implements Serializable, Cloneable {
      * 
      * @return The current state of the virtual tape.
      */
+
     public String getTapeStatus() {
         return this.tapeStatus;
     }
@@ -214,6 +225,7 @@ public class Tape implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Tape withTapeStatus(String tapeStatus) {
         setTapeStatus(tapeStatus);
         return this;
@@ -229,6 +241,7 @@ public class Tape implements Serializable, Cloneable {
      *        The virtual tape library (VTL) device that the virtual tape is
      *        associated with.
      */
+
     public void setVTLDevice(String vTLDevice) {
         this.vTLDevice = vTLDevice;
     }
@@ -242,6 +255,7 @@ public class Tape implements Serializable, Cloneable {
      * @return The virtual tape library (VTL) device that the virtual tape is
      *         associated with.
      */
+
     public String getVTLDevice() {
         return this.vTLDevice;
     }
@@ -258,6 +272,7 @@ public class Tape implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Tape withVTLDevice(String vTLDevice) {
         setVTLDevice(vTLDevice);
         return this;
@@ -278,6 +293,7 @@ public class Tape implements Serializable, Cloneable {
      *        <p>
      *        Range: 0 (not started) to 100 (complete).
      */
+
     public void setProgress(Double progress) {
         this.progress = progress;
     }
@@ -296,6 +312,7 @@ public class Tape implements Serializable, Cloneable {
      *         <p>
      *         Range: 0 (not started) to 100 (complete).
      */
+
     public Double getProgress() {
         return this.progress;
     }
@@ -317,6 +334,7 @@ public class Tape implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Tape withProgress(Double progress) {
         setProgress(progress);
         return this;

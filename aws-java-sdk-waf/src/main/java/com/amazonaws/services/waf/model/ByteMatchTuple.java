@@ -254,6 +254,7 @@ public class ByteMatchTuple implements Serializable, Cloneable {
      *        a specified header or a query string. For more information, see
      *        <a>FieldToMatch</a>.
      */
+
     public void setFieldToMatch(FieldToMatch fieldToMatch) {
         this.fieldToMatch = fieldToMatch;
     }
@@ -269,6 +270,7 @@ public class ByteMatchTuple implements Serializable, Cloneable {
      *         as a specified header or a query string. For more information,
      *         see <a>FieldToMatch</a>.
      */
+
     public FieldToMatch getFieldToMatch() {
         return this.fieldToMatch;
     }
@@ -287,6 +289,7 @@ public class ByteMatchTuple implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ByteMatchTuple withFieldToMatch(FieldToMatch fieldToMatch) {
         setFieldToMatch(fieldToMatch);
         return this;
@@ -421,6 +424,7 @@ public class ByteMatchTuple implements Serializable, Cloneable {
      *        The value that you want AWS WAF to search for. The SDK
      *        automatically base64 encodes the value.
      */
+
     public void setTargetString(java.nio.ByteBuffer targetString) {
         this.targetString = targetString;
     }
@@ -558,6 +562,7 @@ public class ByteMatchTuple implements Serializable, Cloneable {
      *         The value that you want AWS WAF to search for. The SDK
      *         automatically base64 encodes the value.
      */
+
     public java.nio.ByteBuffer getTargetString() {
         return this.targetString;
     }
@@ -688,6 +693,7 @@ public class ByteMatchTuple implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ByteMatchTuple withTargetString(java.nio.ByteBuffer targetString) {
         setTargetString(targetString);
         return this;
@@ -856,6 +862,7 @@ public class ByteMatchTuple implements Serializable, Cloneable {
      *        transformations.
      * @see TextTransformation
      */
+
     public void setTextTransformation(String textTransformation) {
         this.textTransformation = textTransformation;
     }
@@ -1023,6 +1030,7 @@ public class ByteMatchTuple implements Serializable, Cloneable {
      *         transformations.
      * @see TextTransformation
      */
+
     public String getTextTransformation() {
         return this.textTransformation;
     }
@@ -1192,6 +1200,7 @@ public class ByteMatchTuple implements Serializable, Cloneable {
      *         chained together.
      * @see TextTransformation
      */
+
     public ByteMatchTuple withTextTransformation(String textTransformation) {
         setTextTransformation(textTransformation);
         return this;
@@ -1362,6 +1371,7 @@ public class ByteMatchTuple implements Serializable, Cloneable {
      *         chained together.
      * @see TextTransformation
      */
+
     public void setTextTransformation(TextTransformation textTransformation) {
         this.textTransformation = textTransformation.toString();
     }
@@ -1531,6 +1541,7 @@ public class ByteMatchTuple implements Serializable, Cloneable {
      *         chained together.
      * @see TextTransformation
      */
+
     public ByteMatchTuple withTextTransformation(
             TextTransformation textTransformation) {
         setTextTransformation(textTransformation);
@@ -1656,6 +1667,7 @@ public class ByteMatchTuple implements Serializable, Cloneable {
      *        the specified part of the web request.
      * @see PositionalConstraint
      */
+
     public void setPositionalConstraint(String positionalConstraint) {
         this.positionalConstraint = positionalConstraint;
     }
@@ -1779,6 +1791,7 @@ public class ByteMatchTuple implements Serializable, Cloneable {
      *         the specified part of the web request.
      * @see PositionalConstraint
      */
+
     public String getPositionalConstraint() {
         return this.positionalConstraint;
     }
@@ -1904,6 +1917,7 @@ public class ByteMatchTuple implements Serializable, Cloneable {
      *         chained together.
      * @see PositionalConstraint
      */
+
     public ByteMatchTuple withPositionalConstraint(String positionalConstraint) {
         setPositionalConstraint(positionalConstraint);
         return this;
@@ -2030,6 +2044,7 @@ public class ByteMatchTuple implements Serializable, Cloneable {
      *         chained together.
      * @see PositionalConstraint
      */
+
     public void setPositionalConstraint(
             PositionalConstraint positionalConstraint) {
         this.positionalConstraint = positionalConstraint.toString();
@@ -2156,6 +2171,7 @@ public class ByteMatchTuple implements Serializable, Cloneable {
      *         chained together.
      * @see PositionalConstraint
      */
+
     public ByteMatchTuple withPositionalConstraint(
             PositionalConstraint positionalConstraint) {
         setPositionalConstraint(positionalConstraint);

@@ -38,6 +38,7 @@ public class MetricFilter implements Serializable, Cloneable {
     /**
      * @param filterName
      */
+
     public void setFilterName(String filterName) {
         this.filterName = filterName;
     }
@@ -45,6 +46,7 @@ public class MetricFilter implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getFilterName() {
         return this.filterName;
     }
@@ -54,6 +56,7 @@ public class MetricFilter implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MetricFilter withFilterName(String filterName) {
         setFilterName(filterName);
         return this;
@@ -62,6 +65,7 @@ public class MetricFilter implements Serializable, Cloneable {
     /**
      * @param filterPattern
      */
+
     public void setFilterPattern(String filterPattern) {
         this.filterPattern = filterPattern;
     }
@@ -69,6 +73,7 @@ public class MetricFilter implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getFilterPattern() {
         return this.filterPattern;
     }
@@ -78,6 +83,7 @@ public class MetricFilter implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MetricFilter withFilterPattern(String filterPattern) {
         setFilterPattern(filterPattern);
         return this;
@@ -86,6 +92,7 @@ public class MetricFilter implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public java.util.List<MetricTransformation> getMetricTransformations() {
         if (metricTransformations == null) {
             metricTransformations = new com.amazonaws.internal.SdkInternalList<MetricTransformation>();
@@ -96,6 +103,7 @@ public class MetricFilter implements Serializable, Cloneable {
     /**
      * @param metricTransformations
      */
+
     public void setMetricTransformations(
             java.util.Collection<MetricTransformation> metricTransformations) {
         if (metricTransformations == null) {
@@ -119,6 +127,7 @@ public class MetricFilter implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MetricFilter withMetricTransformations(
             MetricTransformation... metricTransformations) {
         if (this.metricTransformations == null) {
@@ -136,6 +145,7 @@ public class MetricFilter implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MetricFilter withMetricTransformations(
             java.util.Collection<MetricTransformation> metricTransformations) {
         setMetricTransformations(metricTransformations);
@@ -145,6 +155,7 @@ public class MetricFilter implements Serializable, Cloneable {
     /**
      * @param creationTime
      */
+
     public void setCreationTime(Long creationTime) {
         this.creationTime = creationTime;
     }
@@ -152,6 +163,7 @@ public class MetricFilter implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Long getCreationTime() {
         return this.creationTime;
     }
@@ -161,6 +173,7 @@ public class MetricFilter implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MetricFilter withCreationTime(Long creationTime) {
         setCreationTime(creationTime);
         return this;

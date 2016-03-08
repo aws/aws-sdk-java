@@ -58,6 +58,7 @@ public class CreateVpcPeeringConnectionRequest extends AmazonWebServiceRequest
      * @param vpcId
      *        The ID of the requester VPC.
      */
+
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
@@ -69,6 +70,7 @@ public class CreateVpcPeeringConnectionRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the requester VPC.
      */
+
     public String getVpcId() {
         return this.vpcId;
     }
@@ -83,6 +85,7 @@ public class CreateVpcPeeringConnectionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateVpcPeeringConnectionRequest withVpcId(String vpcId) {
         setVpcId(vpcId);
         return this;
@@ -97,6 +100,7 @@ public class CreateVpcPeeringConnectionRequest extends AmazonWebServiceRequest
      *        The ID of the VPC with which you are creating the VPC peering
      *        connection.
      */
+
     public void setPeerVpcId(String peerVpcId) {
         this.peerVpcId = peerVpcId;
     }
@@ -109,6 +113,7 @@ public class CreateVpcPeeringConnectionRequest extends AmazonWebServiceRequest
      * @return The ID of the VPC with which you are creating the VPC peering
      *         connection.
      */
+
     public String getPeerVpcId() {
         return this.peerVpcId;
     }
@@ -124,6 +129,7 @@ public class CreateVpcPeeringConnectionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateVpcPeeringConnectionRequest withPeerVpcId(String peerVpcId) {
         setPeerVpcId(peerVpcId);
         return this;
@@ -142,6 +148,7 @@ public class CreateVpcPeeringConnectionRequest extends AmazonWebServiceRequest
      *        <p>
      *        Default: Your AWS account ID
      */
+
     public void setPeerOwnerId(String peerOwnerId) {
         this.peerOwnerId = peerOwnerId;
     }
@@ -158,6 +165,7 @@ public class CreateVpcPeeringConnectionRequest extends AmazonWebServiceRequest
      *         <p>
      *         Default: Your AWS account ID
      */
+
     public String getPeerOwnerId() {
         return this.peerOwnerId;
     }
@@ -177,6 +185,7 @@ public class CreateVpcPeeringConnectionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateVpcPeeringConnectionRequest withPeerOwnerId(String peerOwnerId) {
         setPeerOwnerId(peerOwnerId);
         return this;

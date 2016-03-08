@@ -69,6 +69,7 @@ public class ListAssessmentAgentsRequest extends AmazonWebServiceRequest
      * @param assessmentArn
      *        The ARN specifying the assessment whose agents you want to list.
      */
+
     public void setAssessmentArn(String assessmentArn) {
         this.assessmentArn = assessmentArn;
     }
@@ -80,6 +81,7 @@ public class ListAssessmentAgentsRequest extends AmazonWebServiceRequest
      * 
      * @return The ARN specifying the assessment whose agents you want to list.
      */
+
     public String getAssessmentArn() {
         return this.assessmentArn;
     }
@@ -94,6 +96,7 @@ public class ListAssessmentAgentsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListAssessmentAgentsRequest withAssessmentArn(String assessmentArn) {
         setAssessmentArn(assessmentArn);
         return this;
@@ -118,6 +121,7 @@ public class ListAssessmentAgentsRequest extends AmazonWebServiceRequest
      *        must match. When multiple values are specified for a filter
      *        attribute, any of the values can match.
      */
+
     public void setFilter(AgentsFilter filter) {
         this.filter = filter;
     }
@@ -140,6 +144,7 @@ public class ListAssessmentAgentsRequest extends AmazonWebServiceRequest
      *         must match. When multiple values are specified for a filter
      *         attribute, any of the values can match.
      */
+
     public AgentsFilter getFilter() {
         return this.filter;
     }
@@ -165,6 +170,7 @@ public class ListAssessmentAgentsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListAssessmentAgentsRequest withFilter(AgentsFilter filter) {
         setFilter(filter);
         return this;
@@ -186,6 +192,7 @@ public class ListAssessmentAgentsRequest extends AmazonWebServiceRequest
      *        fill <b>nextToken</b> in the request with the value of
      *        <b>NextToken</b> from previous response to continue listing data.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -205,6 +212,7 @@ public class ListAssessmentAgentsRequest extends AmazonWebServiceRequest
      *         action fill <b>nextToken</b> in the request with the value of
      *         <b>NextToken</b> from previous response to continue listing data.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -227,6 +235,7 @@ public class ListAssessmentAgentsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListAssessmentAgentsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -243,6 +252,7 @@ public class ListAssessmentAgentsRequest extends AmazonWebServiceRequest
      *        you want in the response. The default value is 10. The maximum
      *        value is 500.
      */
+
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
     }
@@ -257,6 +267,7 @@ public class ListAssessmentAgentsRequest extends AmazonWebServiceRequest
      *         items you want in the response. The default value is 10. The
      *         maximum value is 500.
      */
+
     public Integer getMaxResults() {
         return this.maxResults;
     }
@@ -274,6 +285,7 @@ public class ListAssessmentAgentsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListAssessmentAgentsRequest withMaxResults(Integer maxResults) {
         setMaxResults(maxResults);
         return this;

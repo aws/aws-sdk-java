@@ -43,6 +43,7 @@ public class DisableVpcClassicLinkRequest extends AmazonWebServiceRequest
      * @param vpcId
      *        The ID of the VPC.
      */
+
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
@@ -54,6 +55,7 @@ public class DisableVpcClassicLinkRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the VPC.
      */
+
     public String getVpcId() {
         return this.vpcId;
     }
@@ -68,6 +70,7 @@ public class DisableVpcClassicLinkRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DisableVpcClassicLinkRequest withVpcId(String vpcId) {
         setVpcId(vpcId);
         return this;

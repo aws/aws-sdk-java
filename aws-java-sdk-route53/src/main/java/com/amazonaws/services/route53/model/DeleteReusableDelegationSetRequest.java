@@ -42,6 +42,7 @@ public class DeleteReusableDelegationSetRequest extends AmazonWebServiceRequest
      * @param id
      *        The ID of the reusable delegation set you want to delete.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -53,6 +54,7 @@ public class DeleteReusableDelegationSetRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the reusable delegation set you want to delete.
      */
+
     public String getId() {
         return this.id;
     }
@@ -67,6 +69,7 @@ public class DeleteReusableDelegationSetRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteReusableDelegationSetRequest withId(String id) {
         setId(id);
         return this;

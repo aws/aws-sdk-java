@@ -59,6 +59,7 @@ public class FileSystemSize implements Serializable, Cloneable {
      *        The latest known metered size, in bytes, of data stored in the
      *        file system.
      */
+
     public void setValue(Long value) {
         this.value = value;
     }
@@ -72,6 +73,7 @@ public class FileSystemSize implements Serializable, Cloneable {
      * @return The latest known metered size, in bytes, of data stored in the
      *         file system.
      */
+
     public Long getValue() {
         return this.value;
     }
@@ -88,6 +90,7 @@ public class FileSystemSize implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FileSystemSize withValue(Long value) {
         setValue(value);
         return this;
@@ -105,6 +108,7 @@ public class FileSystemSize implements Serializable, Cloneable {
      *        <code>Value</code> field, was determined. The value is the integer
      *        number of seconds since 1970-01-01T00:00:00Z.
      */
+
     public void setTimestamp(java.util.Date timestamp) {
         this.timestamp = timestamp;
     }
@@ -120,6 +124,7 @@ public class FileSystemSize implements Serializable, Cloneable {
      *         <code>Value</code> field, was determined. The value is the
      *         integer number of seconds since 1970-01-01T00:00:00Z.
      */
+
     public java.util.Date getTimestamp() {
         return this.timestamp;
     }
@@ -138,6 +143,7 @@ public class FileSystemSize implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FileSystemSize withTimestamp(java.util.Date timestamp) {
         setTimestamp(timestamp);
         return this;

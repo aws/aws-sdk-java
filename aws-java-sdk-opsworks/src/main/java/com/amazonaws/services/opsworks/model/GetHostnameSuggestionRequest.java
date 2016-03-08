@@ -40,6 +40,7 @@ public class GetHostnameSuggestionRequest extends AmazonWebServiceRequest
      * @param layerId
      *        The layer ID.
      */
+
     public void setLayerId(String layerId) {
         this.layerId = layerId;
     }
@@ -51,6 +52,7 @@ public class GetHostnameSuggestionRequest extends AmazonWebServiceRequest
      * 
      * @return The layer ID.
      */
+
     public String getLayerId() {
         return this.layerId;
     }
@@ -65,6 +67,7 @@ public class GetHostnameSuggestionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetHostnameSuggestionRequest withLayerId(String layerId) {
         setLayerId(layerId);
         return this;

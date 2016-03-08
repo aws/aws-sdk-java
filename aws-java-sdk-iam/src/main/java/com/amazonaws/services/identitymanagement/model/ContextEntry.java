@@ -66,6 +66,7 @@ public class ContextEntry implements Serializable, Cloneable {
      *        prefix. For example, <code>aws:SourceIp</code> or
      *        <code>s3:VersionId</code>.
      */
+
     public void setContextKeyName(String contextKeyName) {
         this.contextKeyName = contextKeyName;
     }
@@ -80,6 +81,7 @@ public class ContextEntry implements Serializable, Cloneable {
      *         prefix. For example, <code>aws:SourceIp</code> or
      *         <code>s3:VersionId</code>.
      */
+
     public String getContextKeyName() {
         return this.contextKeyName;
     }
@@ -97,6 +99,7 @@ public class ContextEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContextEntry withContextKeyName(String contextKeyName) {
         setContextKeyName(contextKeyName);
         return this;
@@ -114,6 +117,7 @@ public class ContextEntry implements Serializable, Cloneable {
      *         key is referenced by a <code>Condition</code> element in an input
      *         policy.
      */
+
     public java.util.List<String> getContextKeyValues() {
         if (contextKeyValues == null) {
             contextKeyValues = new com.amazonaws.internal.SdkInternalList<String>();
@@ -134,6 +138,7 @@ public class ContextEntry implements Serializable, Cloneable {
      *        is referenced by a <code>Condition</code> element in an input
      *        policy.
      */
+
     public void setContextKeyValues(
             java.util.Collection<String> contextKeyValues) {
         if (contextKeyValues == null) {
@@ -166,6 +171,7 @@ public class ContextEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContextEntry withContextKeyValues(String... contextKeyValues) {
         if (this.contextKeyValues == null) {
             setContextKeyValues(new com.amazonaws.internal.SdkInternalList<String>(
@@ -192,6 +198,7 @@ public class ContextEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContextEntry withContextKeyValues(
             java.util.Collection<String> contextKeyValues) {
         setContextKeyValues(contextKeyValues);
@@ -209,6 +216,7 @@ public class ContextEntry implements Serializable, Cloneable {
      *        <code>ContextKeyValues</code> parameter.
      * @see ContextKeyTypeEnum
      */
+
     public void setContextKeyType(String contextKeyType) {
         this.contextKeyType = contextKeyType;
     }
@@ -223,6 +231,7 @@ public class ContextEntry implements Serializable, Cloneable {
      *         <code>ContextKeyValues</code> parameter.
      * @see ContextKeyTypeEnum
      */
+
     public String getContextKeyType() {
         return this.contextKeyType;
     }
@@ -240,6 +249,7 @@ public class ContextEntry implements Serializable, Cloneable {
      *         chained together.
      * @see ContextKeyTypeEnum
      */
+
     public ContextEntry withContextKeyType(String contextKeyType) {
         setContextKeyType(contextKeyType);
         return this;
@@ -258,6 +268,7 @@ public class ContextEntry implements Serializable, Cloneable {
      *         chained together.
      * @see ContextKeyTypeEnum
      */
+
     public void setContextKeyType(ContextKeyTypeEnum contextKeyType) {
         this.contextKeyType = contextKeyType.toString();
     }
@@ -275,6 +286,7 @@ public class ContextEntry implements Serializable, Cloneable {
      *         chained together.
      * @see ContextKeyTypeEnum
      */
+
     public ContextEntry withContextKeyType(ContextKeyTypeEnum contextKeyType) {
         setContextKeyType(contextKeyType);
         return this;

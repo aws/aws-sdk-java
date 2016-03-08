@@ -42,6 +42,7 @@ public class DescribeRaidArraysResult implements Serializable, Cloneable {
      * @return A <code>RaidArrays</code> object that describes the specified
      *         RAID arrays.
      */
+
     public java.util.List<RaidArray> getRaidArrays() {
         if (raidArrays == null) {
             raidArrays = new com.amazonaws.internal.SdkInternalList<RaidArray>();
@@ -59,6 +60,7 @@ public class DescribeRaidArraysResult implements Serializable, Cloneable {
      *        A <code>RaidArrays</code> object that describes the specified RAID
      *        arrays.
      */
+
     public void setRaidArrays(java.util.Collection<RaidArray> raidArrays) {
         if (raidArrays == null) {
             this.raidArrays = null;
@@ -87,6 +89,7 @@ public class DescribeRaidArraysResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeRaidArraysResult withRaidArrays(RaidArray... raidArrays) {
         if (this.raidArrays == null) {
             setRaidArrays(new com.amazonaws.internal.SdkInternalList<RaidArray>(
@@ -110,6 +113,7 @@ public class DescribeRaidArraysResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeRaidArraysResult withRaidArrays(
             java.util.Collection<RaidArray> raidArrays) {
         setRaidArrays(raidArrays);

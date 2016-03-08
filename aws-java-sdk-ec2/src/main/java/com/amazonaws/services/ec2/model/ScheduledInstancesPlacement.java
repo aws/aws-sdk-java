@@ -46,6 +46,7 @@ public class ScheduledInstancesPlacement implements Serializable, Cloneable {
      * @param availabilityZone
      *        The Availability Zone.
      */
+
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
@@ -57,6 +58,7 @@ public class ScheduledInstancesPlacement implements Serializable, Cloneable {
      * 
      * @return The Availability Zone.
      */
+
     public String getAvailabilityZone() {
         return this.availabilityZone;
     }
@@ -71,6 +73,7 @@ public class ScheduledInstancesPlacement implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstancesPlacement withAvailabilityZone(
             String availabilityZone) {
         setAvailabilityZone(availabilityZone);
@@ -85,6 +88,7 @@ public class ScheduledInstancesPlacement implements Serializable, Cloneable {
      * @param groupName
      *        The name of the placement group.
      */
+
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
@@ -96,6 +100,7 @@ public class ScheduledInstancesPlacement implements Serializable, Cloneable {
      * 
      * @return The name of the placement group.
      */
+
     public String getGroupName() {
         return this.groupName;
     }
@@ -110,6 +115,7 @@ public class ScheduledInstancesPlacement implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstancesPlacement withGroupName(String groupName) {
         setGroupName(groupName);
         return this;

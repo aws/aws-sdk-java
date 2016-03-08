@@ -112,6 +112,7 @@ public class Command implements Serializable, Cloneable {
      * @param commandId
      *        The command ID.
      */
+
     public void setCommandId(String commandId) {
         this.commandId = commandId;
     }
@@ -123,6 +124,7 @@ public class Command implements Serializable, Cloneable {
      * 
      * @return The command ID.
      */
+
     public String getCommandId() {
         return this.commandId;
     }
@@ -137,6 +139,7 @@ public class Command implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Command withCommandId(String commandId) {
         setCommandId(commandId);
         return this;
@@ -150,6 +153,7 @@ public class Command implements Serializable, Cloneable {
      * @param instanceId
      *        The ID of the instance where the command was executed.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -161,6 +165,7 @@ public class Command implements Serializable, Cloneable {
      * 
      * @return The ID of the instance where the command was executed.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
@@ -175,6 +180,7 @@ public class Command implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Command withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;
@@ -188,6 +194,7 @@ public class Command implements Serializable, Cloneable {
      * @param deploymentId
      *        The command deployment ID.
      */
+
     public void setDeploymentId(String deploymentId) {
         this.deploymentId = deploymentId;
     }
@@ -199,6 +206,7 @@ public class Command implements Serializable, Cloneable {
      * 
      * @return The command deployment ID.
      */
+
     public String getDeploymentId() {
         return this.deploymentId;
     }
@@ -213,6 +221,7 @@ public class Command implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Command withDeploymentId(String deploymentId) {
         setDeploymentId(deploymentId);
         return this;
@@ -226,6 +235,7 @@ public class Command implements Serializable, Cloneable {
      * @param createdAt
      *        Date and time when the command was run.
      */
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -237,6 +247,7 @@ public class Command implements Serializable, Cloneable {
      * 
      * @return Date and time when the command was run.
      */
+
     public String getCreatedAt() {
         return this.createdAt;
     }
@@ -251,6 +262,7 @@ public class Command implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Command withCreatedAt(String createdAt) {
         setCreatedAt(createdAt);
         return this;
@@ -264,6 +276,7 @@ public class Command implements Serializable, Cloneable {
      * @param acknowledgedAt
      *        Date and time when the command was acknowledged.
      */
+
     public void setAcknowledgedAt(String acknowledgedAt) {
         this.acknowledgedAt = acknowledgedAt;
     }
@@ -275,6 +288,7 @@ public class Command implements Serializable, Cloneable {
      * 
      * @return Date and time when the command was acknowledged.
      */
+
     public String getAcknowledgedAt() {
         return this.acknowledgedAt;
     }
@@ -289,6 +303,7 @@ public class Command implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Command withAcknowledgedAt(String acknowledgedAt) {
         setAcknowledgedAt(acknowledgedAt);
         return this;
@@ -302,6 +317,7 @@ public class Command implements Serializable, Cloneable {
      * @param completedAt
      *        Date when the command completed.
      */
+
     public void setCompletedAt(String completedAt) {
         this.completedAt = completedAt;
     }
@@ -313,6 +329,7 @@ public class Command implements Serializable, Cloneable {
      * 
      * @return Date when the command completed.
      */
+
     public String getCompletedAt() {
         return this.completedAt;
     }
@@ -327,6 +344,7 @@ public class Command implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Command withCompletedAt(String completedAt) {
         setCompletedAt(completedAt);
         return this;
@@ -351,6 +369,7 @@ public class Command implements Serializable, Cloneable {
      *        <li>skipped</li>
      *        <li>pending</li>
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -373,6 +392,7 @@ public class Command implements Serializable, Cloneable {
      *         <li>skipped</li>
      *         <li>pending</li>
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -398,6 +418,7 @@ public class Command implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Command withStatus(String status) {
         setStatus(status);
         return this;
@@ -411,6 +432,7 @@ public class Command implements Serializable, Cloneable {
      * @param exitCode
      *        The command exit code.
      */
+
     public void setExitCode(Integer exitCode) {
         this.exitCode = exitCode;
     }
@@ -422,6 +444,7 @@ public class Command implements Serializable, Cloneable {
      * 
      * @return The command exit code.
      */
+
     public Integer getExitCode() {
         return this.exitCode;
     }
@@ -436,6 +459,7 @@ public class Command implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Command withExitCode(Integer exitCode) {
         setExitCode(exitCode);
         return this;
@@ -449,6 +473,7 @@ public class Command implements Serializable, Cloneable {
      * @param logUrl
      *        The URL of the command log.
      */
+
     public void setLogUrl(String logUrl) {
         this.logUrl = logUrl;
     }
@@ -460,6 +485,7 @@ public class Command implements Serializable, Cloneable {
      * 
      * @return The URL of the command log.
      */
+
     public String getLogUrl() {
         return this.logUrl;
     }
@@ -474,6 +500,7 @@ public class Command implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Command withLogUrl(String logUrl) {
         setLogUrl(logUrl);
         return this;
@@ -510,6 +537,7 @@ public class Command implements Serializable, Cloneable {
      *        <li> <code>update_custom_cookbooks</code></li>
      *        <li> <code>execute_recipes</code></li>
      */
+
     public void setType(String type) {
         this.type = type;
     }
@@ -544,6 +572,7 @@ public class Command implements Serializable, Cloneable {
      *         <li> <code>update_custom_cookbooks</code></li>
      *         <li> <code>execute_recipes</code></li>
      */
+
     public String getType() {
         return this.type;
     }
@@ -581,6 +610,7 @@ public class Command implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Command withType(String type) {
         setType(type);
         return this;

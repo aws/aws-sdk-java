@@ -32,6 +32,7 @@ public class GetLogEventsResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public java.util.List<OutputLogEvent> getEvents() {
         if (events == null) {
             events = new com.amazonaws.internal.SdkInternalList<OutputLogEvent>();
@@ -42,6 +43,7 @@ public class GetLogEventsResult implements Serializable, Cloneable {
     /**
      * @param events
      */
+
     public void setEvents(java.util.Collection<OutputLogEvent> events) {
         if (events == null) {
             this.events = null;
@@ -64,6 +66,7 @@ public class GetLogEventsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetLogEventsResult withEvents(OutputLogEvent... events) {
         if (this.events == null) {
             setEvents(new com.amazonaws.internal.SdkInternalList<OutputLogEvent>(
@@ -80,6 +83,7 @@ public class GetLogEventsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetLogEventsResult withEvents(
             java.util.Collection<OutputLogEvent> events) {
         setEvents(events);
@@ -89,6 +93,7 @@ public class GetLogEventsResult implements Serializable, Cloneable {
     /**
      * @param nextForwardToken
      */
+
     public void setNextForwardToken(String nextForwardToken) {
         this.nextForwardToken = nextForwardToken;
     }
@@ -96,6 +101,7 @@ public class GetLogEventsResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getNextForwardToken() {
         return this.nextForwardToken;
     }
@@ -105,6 +111,7 @@ public class GetLogEventsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetLogEventsResult withNextForwardToken(String nextForwardToken) {
         setNextForwardToken(nextForwardToken);
         return this;
@@ -113,6 +120,7 @@ public class GetLogEventsResult implements Serializable, Cloneable {
     /**
      * @param nextBackwardToken
      */
+
     public void setNextBackwardToken(String nextBackwardToken) {
         this.nextBackwardToken = nextBackwardToken;
     }
@@ -120,6 +128,7 @@ public class GetLogEventsResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getNextBackwardToken() {
         return this.nextBackwardToken;
     }
@@ -129,6 +138,7 @@ public class GetLogEventsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetLogEventsResult withNextBackwardToken(String nextBackwardToken) {
         setNextBackwardToken(nextBackwardToken);
         return this;

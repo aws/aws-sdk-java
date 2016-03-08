@@ -55,6 +55,7 @@ public class PutRecordBatchResponseEntry implements Serializable, Cloneable {
      * @param recordId
      *        The ID of the record.
      */
+
     public void setRecordId(String recordId) {
         this.recordId = recordId;
     }
@@ -66,6 +67,7 @@ public class PutRecordBatchResponseEntry implements Serializable, Cloneable {
      * 
      * @return The ID of the record.
      */
+
     public String getRecordId() {
         return this.recordId;
     }
@@ -80,6 +82,7 @@ public class PutRecordBatchResponseEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutRecordBatchResponseEntry withRecordId(String recordId) {
         setRecordId(recordId);
         return this;
@@ -93,6 +96,7 @@ public class PutRecordBatchResponseEntry implements Serializable, Cloneable {
      * @param errorCode
      *        The error code for an individual record result.
      */
+
     public void setErrorCode(String errorCode) {
         this.errorCode = errorCode;
     }
@@ -104,6 +108,7 @@ public class PutRecordBatchResponseEntry implements Serializable, Cloneable {
      * 
      * @return The error code for an individual record result.
      */
+
     public String getErrorCode() {
         return this.errorCode;
     }
@@ -118,6 +123,7 @@ public class PutRecordBatchResponseEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutRecordBatchResponseEntry withErrorCode(String errorCode) {
         setErrorCode(errorCode);
         return this;
@@ -131,6 +137,7 @@ public class PutRecordBatchResponseEntry implements Serializable, Cloneable {
      * @param errorMessage
      *        The error message for an individual record result.
      */
+
     public void setErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;
     }
@@ -142,6 +149,7 @@ public class PutRecordBatchResponseEntry implements Serializable, Cloneable {
      * 
      * @return The error message for an individual record result.
      */
+
     public String getErrorMessage() {
         return this.errorMessage;
     }
@@ -156,6 +164,7 @@ public class PutRecordBatchResponseEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutRecordBatchResponseEntry withErrorMessage(String errorMessage) {
         setErrorMessage(errorMessage);
         return this;

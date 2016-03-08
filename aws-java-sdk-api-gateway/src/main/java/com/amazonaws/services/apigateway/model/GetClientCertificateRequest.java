@@ -30,6 +30,7 @@ public class GetClientCertificateRequest extends AmazonWebServiceRequest
     /**
      * @param clientCertificateId
      */
+
     public void setClientCertificateId(String clientCertificateId) {
         this.clientCertificateId = clientCertificateId;
     }
@@ -37,6 +38,7 @@ public class GetClientCertificateRequest extends AmazonWebServiceRequest
     /**
      * @return
      */
+
     public String getClientCertificateId() {
         return this.clientCertificateId;
     }
@@ -46,6 +48,7 @@ public class GetClientCertificateRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetClientCertificateRequest withClientCertificateId(
             String clientCertificateId) {
         setClientCertificateId(clientCertificateId);

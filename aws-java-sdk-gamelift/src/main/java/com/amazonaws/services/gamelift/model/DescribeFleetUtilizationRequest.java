@@ -63,6 +63,7 @@ public class DescribeFleetUtilizationRequest extends AmazonWebServiceRequest
      *         utilization data for. Leave this parameter empty to retrieve
      *         utilization data for all fleets.
      */
+
     public java.util.List<String> getFleetIds() {
         return fleetIds;
     }
@@ -79,6 +80,7 @@ public class DescribeFleetUtilizationRequest extends AmazonWebServiceRequest
      *        utilization data for. Leave this parameter empty to retrieve
      *        utilization data for all fleets.
      */
+
     public void setFleetIds(java.util.Collection<String> fleetIds) {
         if (fleetIds == null) {
             this.fleetIds = null;
@@ -108,6 +110,7 @@ public class DescribeFleetUtilizationRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeFleetUtilizationRequest withFleetIds(String... fleetIds) {
         if (this.fleetIds == null) {
             setFleetIds(new java.util.ArrayList<String>(fleetIds.length));
@@ -132,6 +135,7 @@ public class DescribeFleetUtilizationRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeFleetUtilizationRequest withFleetIds(
             java.util.Collection<String> fleetIds) {
         setFleetIds(fleetIds);
@@ -148,6 +152,7 @@ public class DescribeFleetUtilizationRequest extends AmazonWebServiceRequest
      *        Maximum number of results to return. You can use this parameter
      *        with <i>NextToken</i> to get results as a set of sequential pages.
      */
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -162,6 +167,7 @@ public class DescribeFleetUtilizationRequest extends AmazonWebServiceRequest
      *         with <i>NextToken</i> to get results as a set of sequential
      *         pages.
      */
+
     public Integer getLimit() {
         return this.limit;
     }
@@ -178,6 +184,7 @@ public class DescribeFleetUtilizationRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeFleetUtilizationRequest withLimit(Integer limit) {
         setLimit(limit);
         return this;
@@ -197,6 +204,7 @@ public class DescribeFleetUtilizationRequest extends AmazonWebServiceRequest
      *        retrieved. To start at the beginning of a result set, do not set
      *        this parameter.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -214,6 +222,7 @@ public class DescribeFleetUtilizationRequest extends AmazonWebServiceRequest
      *         results to be retrieved. To start at the beginning of a result
      *         set, do not set this parameter.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -234,6 +243,7 @@ public class DescribeFleetUtilizationRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeFleetUtilizationRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

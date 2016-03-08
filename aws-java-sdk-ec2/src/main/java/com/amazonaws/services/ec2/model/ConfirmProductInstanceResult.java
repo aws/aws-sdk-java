@@ -49,6 +49,7 @@ public class ConfirmProductInstanceResult implements Serializable, Cloneable {
      *        The AWS account ID of the instance owner. This is only present if
      *        the product code is attached to the instance.
      */
+
     public void setOwnerId(String ownerId) {
         this.ownerId = ownerId;
     }
@@ -62,6 +63,7 @@ public class ConfirmProductInstanceResult implements Serializable, Cloneable {
      * @return The AWS account ID of the instance owner. This is only present if
      *         the product code is attached to the instance.
      */
+
     public String getOwnerId() {
         return this.ownerId;
     }
@@ -78,6 +80,7 @@ public class ConfirmProductInstanceResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfirmProductInstanceResult withOwnerId(String ownerId) {
         setOwnerId(ownerId);
         return this;
@@ -95,6 +98,7 @@ public class ConfirmProductInstanceResult implements Serializable, Cloneable {
      *        specified product code is owned by the requester and associated
      *        with the specified instance.
      */
+
     public void setReturn(Boolean returnValue) {
         this.returnValue = returnValue;
     }
@@ -110,6 +114,7 @@ public class ConfirmProductInstanceResult implements Serializable, Cloneable {
      *         specified product code is owned by the requester and associated
      *         with the specified instance.
      */
+
     public Boolean getReturn() {
         return this.returnValue;
     }
@@ -128,6 +133,7 @@ public class ConfirmProductInstanceResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfirmProductInstanceResult withReturn(Boolean returnValue) {
         setReturn(returnValue);
         return this;
@@ -144,6 +150,7 @@ public class ConfirmProductInstanceResult implements Serializable, Cloneable {
      *         specified product code is owned by the requester and associated
      *         with the specified instance.
      */
+
     public Boolean isReturn() {
         return this.returnValue;
     }

@@ -55,6 +55,7 @@ public class ListRulesRequest extends AmazonWebServiceRequest implements
      * @param namePrefix
      *        The prefix matching the rule name.
      */
+
     public void setNamePrefix(String namePrefix) {
         this.namePrefix = namePrefix;
     }
@@ -66,6 +67,7 @@ public class ListRulesRequest extends AmazonWebServiceRequest implements
      * 
      * @return The prefix matching the rule name.
      */
+
     public String getNamePrefix() {
         return this.namePrefix;
     }
@@ -80,6 +82,7 @@ public class ListRulesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListRulesRequest withNamePrefix(String namePrefix) {
         setNamePrefix(namePrefix);
         return this;
@@ -95,6 +98,7 @@ public class ListRulesRequest extends AmazonWebServiceRequest implements
      *        The token returned by a previous call to indicate that there is
      *        more data available.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -108,6 +112,7 @@ public class ListRulesRequest extends AmazonWebServiceRequest implements
      * @return The token returned by a previous call to indicate that there is
      *         more data available.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -124,6 +129,7 @@ public class ListRulesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListRulesRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -137,6 +143,7 @@ public class ListRulesRequest extends AmazonWebServiceRequest implements
      * @param limit
      *        The maximum number of results to return.
      */
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -148,6 +155,7 @@ public class ListRulesRequest extends AmazonWebServiceRequest implements
      * 
      * @return The maximum number of results to return.
      */
+
     public Integer getLimit() {
         return this.limit;
     }
@@ -162,6 +170,7 @@ public class ListRulesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListRulesRequest withLimit(Integer limit) {
         setLimit(limit);
         return this;

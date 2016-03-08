@@ -92,6 +92,7 @@ public class RdsDbInstance implements Serializable, Cloneable {
      * @param rdsDbInstanceArn
      *        The instance's ARN.
      */
+
     public void setRdsDbInstanceArn(String rdsDbInstanceArn) {
         this.rdsDbInstanceArn = rdsDbInstanceArn;
     }
@@ -103,6 +104,7 @@ public class RdsDbInstance implements Serializable, Cloneable {
      * 
      * @return The instance's ARN.
      */
+
     public String getRdsDbInstanceArn() {
         return this.rdsDbInstanceArn;
     }
@@ -117,6 +119,7 @@ public class RdsDbInstance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RdsDbInstance withRdsDbInstanceArn(String rdsDbInstanceArn) {
         setRdsDbInstanceArn(rdsDbInstanceArn);
         return this;
@@ -130,6 +133,7 @@ public class RdsDbInstance implements Serializable, Cloneable {
      * @param dbInstanceIdentifier
      *        The DB instance identifier.
      */
+
     public void setDbInstanceIdentifier(String dbInstanceIdentifier) {
         this.dbInstanceIdentifier = dbInstanceIdentifier;
     }
@@ -141,6 +145,7 @@ public class RdsDbInstance implements Serializable, Cloneable {
      * 
      * @return The DB instance identifier.
      */
+
     public String getDbInstanceIdentifier() {
         return this.dbInstanceIdentifier;
     }
@@ -155,6 +160,7 @@ public class RdsDbInstance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RdsDbInstance withDbInstanceIdentifier(String dbInstanceIdentifier) {
         setDbInstanceIdentifier(dbInstanceIdentifier);
         return this;
@@ -168,6 +174,7 @@ public class RdsDbInstance implements Serializable, Cloneable {
      * @param dbUser
      *        The master user name.
      */
+
     public void setDbUser(String dbUser) {
         this.dbUser = dbUser;
     }
@@ -179,6 +186,7 @@ public class RdsDbInstance implements Serializable, Cloneable {
      * 
      * @return The master user name.
      */
+
     public String getDbUser() {
         return this.dbUser;
     }
@@ -193,6 +201,7 @@ public class RdsDbInstance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RdsDbInstance withDbUser(String dbUser) {
         setDbUser(dbUser);
         return this;
@@ -208,6 +217,7 @@ public class RdsDbInstance implements Serializable, Cloneable {
      *        AWS OpsWorks returns <code>*****FILTERED*****</code> instead of
      *        the actual value.
      */
+
     public void setDbPassword(String dbPassword) {
         this.dbPassword = dbPassword;
     }
@@ -221,6 +231,7 @@ public class RdsDbInstance implements Serializable, Cloneable {
      * @return AWS OpsWorks returns <code>*****FILTERED*****</code> instead of
      *         the actual value.
      */
+
     public String getDbPassword() {
         return this.dbPassword;
     }
@@ -237,6 +248,7 @@ public class RdsDbInstance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RdsDbInstance withDbPassword(String dbPassword) {
         setDbPassword(dbPassword);
         return this;
@@ -250,6 +262,7 @@ public class RdsDbInstance implements Serializable, Cloneable {
      * @param region
      *        The instance's AWS region.
      */
+
     public void setRegion(String region) {
         this.region = region;
     }
@@ -261,6 +274,7 @@ public class RdsDbInstance implements Serializable, Cloneable {
      * 
      * @return The instance's AWS region.
      */
+
     public String getRegion() {
         return this.region;
     }
@@ -275,6 +289,7 @@ public class RdsDbInstance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RdsDbInstance withRegion(String region) {
         setRegion(region);
         return this;
@@ -288,6 +303,7 @@ public class RdsDbInstance implements Serializable, Cloneable {
      * @param address
      *        The instance's address.
      */
+
     public void setAddress(String address) {
         this.address = address;
     }
@@ -299,6 +315,7 @@ public class RdsDbInstance implements Serializable, Cloneable {
      * 
      * @return The instance's address.
      */
+
     public String getAddress() {
         return this.address;
     }
@@ -313,6 +330,7 @@ public class RdsDbInstance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RdsDbInstance withAddress(String address) {
         setAddress(address);
         return this;
@@ -326,6 +344,7 @@ public class RdsDbInstance implements Serializable, Cloneable {
      * @param engine
      *        The instance's database engine.
      */
+
     public void setEngine(String engine) {
         this.engine = engine;
     }
@@ -337,6 +356,7 @@ public class RdsDbInstance implements Serializable, Cloneable {
      * 
      * @return The instance's database engine.
      */
+
     public String getEngine() {
         return this.engine;
     }
@@ -351,6 +371,7 @@ public class RdsDbInstance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RdsDbInstance withEngine(String engine) {
         setEngine(engine);
         return this;
@@ -364,6 +385,7 @@ public class RdsDbInstance implements Serializable, Cloneable {
      * @param stackId
      *        The ID of the stack that the instance is registered with.
      */
+
     public void setStackId(String stackId) {
         this.stackId = stackId;
     }
@@ -375,6 +397,7 @@ public class RdsDbInstance implements Serializable, Cloneable {
      * 
      * @return The ID of the stack that the instance is registered with.
      */
+
     public String getStackId() {
         return this.stackId;
     }
@@ -389,6 +412,7 @@ public class RdsDbInstance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RdsDbInstance withStackId(String stackId) {
         setStackId(stackId);
         return this;
@@ -408,6 +432,7 @@ public class RdsDbInstance implements Serializable, Cloneable {
      *        instance only once. If this value is set to <code>true</code>, you
      *        must deregister the instance and then register it again.
      */
+
     public void setMissingOnRds(Boolean missingOnRds) {
         this.missingOnRds = missingOnRds;
     }
@@ -425,6 +450,7 @@ public class RdsDbInstance implements Serializable, Cloneable {
      *         instance only once. If this value is set to <code>true</code>,
      *         you must deregister the instance and then register it again.
      */
+
     public Boolean getMissingOnRds() {
         return this.missingOnRds;
     }
@@ -445,6 +471,7 @@ public class RdsDbInstance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RdsDbInstance withMissingOnRds(Boolean missingOnRds) {
         setMissingOnRds(missingOnRds);
         return this;
@@ -463,6 +490,7 @@ public class RdsDbInstance implements Serializable, Cloneable {
      *         instance only once. If this value is set to <code>true</code>,
      *         you must deregister the instance and then register it again.
      */
+
     public Boolean isMissingOnRds() {
         return this.missingOnRds;
     }

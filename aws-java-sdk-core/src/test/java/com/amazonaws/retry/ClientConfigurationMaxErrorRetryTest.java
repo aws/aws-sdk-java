@@ -18,20 +18,19 @@
  */
 package com.amazonaws.retry;
 
-import java.util.Random;
-
-import com.amazonaws.http.response.NullResponseHandler;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
-
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.http.AmazonHttpClient;
 import com.amazonaws.http.ExecutionContext;
-import com.amazonaws.util.AWSRequestMetrics;
+import com.amazonaws.http.response.NullResponseHandler;
+import com.amazonaws.util.RetryTestUtils;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+
+import java.util.Random;
 
 /**
  * Tests the behavior when both
@@ -48,7 +47,7 @@ public class ClientConfigurationMaxErrorRetryTest extends RetryPolicyTestBase {
         testedClient = new AmazonHttpClient(clientConfiguration);
         injectMockHttpClient(testedClient, new ReturnServiceErrorHttpClient(500, "fake 500 service error"));
     }
-    
+
     /**
      * -- No explicit calls on ClientConfiguration#setMaxErrorRetry(int);
      * -- Default RetryPolicy's.
@@ -75,14 +74,14 @@ public class ClientConfigurationMaxErrorRetryTest extends RetryPolicyTestBase {
     public void testClientConfigLevelMaxErrorRetry() {
         int CLIENT_CONFIG_LEVEL_MAX_RETRY = random.nextInt(3);
         clientConfiguration.setMaxErrorRetry(CLIENT_CONFIG_LEVEL_MAX_RETRY);
-        
+
         // SDK default policy should honor the ClientConfig level maxErrorRetry
         testActualRetries(CLIENT_CONFIG_LEVEL_MAX_RETRY);
-        
+
         // DynamoDB default policy should also honor that
         clientConfiguration.setRetryPolicy(PredefinedRetryPolicies.DYNAMODB_DEFAULT);
         testActualRetries(CLIENT_CONFIG_LEVEL_MAX_RETRY);
-        
+
         // A custom policy that honors the ClientConfig level maxErrorRetry
         clientConfiguration.setRetryPolicy(new RetryPolicy(null, null, 5, true));
         testActualRetries(CLIENT_CONFIG_LEVEL_MAX_RETRY);
@@ -145,10 +144,6 @@ public class ClientConfigurationMaxErrorRetryTest extends RetryPolicyTestBase {
             Assert.fail("AmazonServiceException is expected.");
         } catch (AmazonServiceException ase) {}
 
-        // Check the RequestCount metric equals the expected value.
-        Assert.assertEquals(
-                expectedRetryAttempts + 1, // request count = retries + 1
-                context.getAwsRequestMetrics()
-                        .getTimingInfo().getCounter(AWSRequestMetrics.Field.RequestCount.toString()).intValue());
+        RetryTestUtils.assertExpectedRetryCount(expectedRetryAttempts, context);
     }
 }

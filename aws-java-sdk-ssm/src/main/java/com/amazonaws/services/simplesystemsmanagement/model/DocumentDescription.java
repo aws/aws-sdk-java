@@ -65,6 +65,7 @@ public class DocumentDescription implements Serializable, Cloneable {
      *        The SHA1 hash of the document, which you can use for verification
      *        purposes.
      */
+
     public void setSha1(String sha1) {
         this.sha1 = sha1;
     }
@@ -78,6 +79,7 @@ public class DocumentDescription implements Serializable, Cloneable {
      * @return The SHA1 hash of the document, which you can use for verification
      *         purposes.
      */
+
     public String getSha1() {
         return this.sha1;
     }
@@ -94,6 +96,7 @@ public class DocumentDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DocumentDescription withSha1(String sha1) {
         setSha1(sha1);
         return this;
@@ -107,6 +110,7 @@ public class DocumentDescription implements Serializable, Cloneable {
      * @param name
      *        The name of the SSM document.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -118,6 +122,7 @@ public class DocumentDescription implements Serializable, Cloneable {
      * 
      * @return The name of the SSM document.
      */
+
     public String getName() {
         return this.name;
     }
@@ -132,6 +137,7 @@ public class DocumentDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DocumentDescription withName(String name) {
         setName(name);
         return this;
@@ -143,6 +149,7 @@ public class DocumentDescription implements Serializable, Cloneable {
      * @param createdDate
      *        The date when the SSM document was created.
      */
+
     public void setCreatedDate(java.util.Date createdDate) {
         this.createdDate = createdDate;
     }
@@ -152,6 +159,7 @@ public class DocumentDescription implements Serializable, Cloneable {
      * 
      * @return The date when the SSM document was created.
      */
+
     public java.util.Date getCreatedDate() {
         return this.createdDate;
     }
@@ -164,6 +172,7 @@ public class DocumentDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DocumentDescription withCreatedDate(java.util.Date createdDate) {
         setCreatedDate(createdDate);
         return this;
@@ -178,6 +187,7 @@ public class DocumentDescription implements Serializable, Cloneable {
      *        The status of the SSM document.
      * @see DocumentStatus
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -190,6 +200,7 @@ public class DocumentDescription implements Serializable, Cloneable {
      * @return The status of the SSM document.
      * @see DocumentStatus
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -205,6 +216,7 @@ public class DocumentDescription implements Serializable, Cloneable {
      *         chained together.
      * @see DocumentStatus
      */
+
     public DocumentDescription withStatus(String status) {
         setStatus(status);
         return this;
@@ -221,6 +233,7 @@ public class DocumentDescription implements Serializable, Cloneable {
      *         chained together.
      * @see DocumentStatus
      */
+
     public void setStatus(DocumentStatus status) {
         this.status = status.toString();
     }
@@ -236,6 +249,7 @@ public class DocumentDescription implements Serializable, Cloneable {
      *         chained together.
      * @see DocumentStatus
      */
+
     public DocumentDescription withStatus(DocumentStatus status) {
         setStatus(status);
         return this;
@@ -247,6 +261,7 @@ public class DocumentDescription implements Serializable, Cloneable {
      * @param description
      *        A description of the document.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -256,6 +271,7 @@ public class DocumentDescription implements Serializable, Cloneable {
      * 
      * @return A description of the document.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -268,6 +284,7 @@ public class DocumentDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DocumentDescription withDescription(String description) {
         setDescription(description);
         return this;
@@ -280,6 +297,7 @@ public class DocumentDescription implements Serializable, Cloneable {
      * 
      * @return A description of the parameters for a document.
      */
+
     public java.util.List<DocumentParameter> getParameters() {
         if (parameters == null) {
             parameters = new com.amazonaws.internal.SdkInternalList<DocumentParameter>();
@@ -295,6 +313,7 @@ public class DocumentDescription implements Serializable, Cloneable {
      * @param parameters
      *        A description of the parameters for a document.
      */
+
     public void setParameters(java.util.Collection<DocumentParameter> parameters) {
         if (parameters == null) {
             this.parameters = null;
@@ -321,6 +340,7 @@ public class DocumentDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DocumentDescription withParameters(DocumentParameter... parameters) {
         if (this.parameters == null) {
             setParameters(new com.amazonaws.internal.SdkInternalList<DocumentParameter>(
@@ -342,6 +362,7 @@ public class DocumentDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DocumentDescription withParameters(
             java.util.Collection<DocumentParameter> parameters) {
         setParameters(parameters);
@@ -354,6 +375,7 @@ public class DocumentDescription implements Serializable, Cloneable {
      * @return The list of OS platforms compatible with this SSM document.
      * @see PlatformType
      */
+
     public java.util.List<String> getPlatformTypes() {
         if (platformTypes == null) {
             platformTypes = new com.amazonaws.internal.SdkInternalList<String>();
@@ -368,6 +390,7 @@ public class DocumentDescription implements Serializable, Cloneable {
      *        The list of OS platforms compatible with this SSM document.
      * @see PlatformType
      */
+
     public void setPlatformTypes(java.util.Collection<String> platformTypes) {
         if (platformTypes == null) {
             this.platformTypes = null;
@@ -393,6 +416,7 @@ public class DocumentDescription implements Serializable, Cloneable {
      *         chained together.
      * @see PlatformType
      */
+
     public DocumentDescription withPlatformTypes(String... platformTypes) {
         if (this.platformTypes == null) {
             setPlatformTypes(new com.amazonaws.internal.SdkInternalList<String>(
@@ -413,6 +437,7 @@ public class DocumentDescription implements Serializable, Cloneable {
      *         chained together.
      * @see PlatformType
      */
+
     public DocumentDescription withPlatformTypes(
             java.util.Collection<String> platformTypes) {
         setPlatformTypes(platformTypes);
@@ -428,6 +453,7 @@ public class DocumentDescription implements Serializable, Cloneable {
      *         chained together.
      * @see PlatformType
      */
+
     public DocumentDescription withPlatformTypes(PlatformType... platformTypes) {
         com.amazonaws.internal.SdkInternalList<String> platformTypesCopy = new com.amazonaws.internal.SdkInternalList<String>(
                 platformTypes.length);

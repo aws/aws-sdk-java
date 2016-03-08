@@ -56,6 +56,7 @@ public class ListPipelinesRequest extends AmazonWebServiceRequest implements
      *        they were created, enter <code>true</code>. To list pipelines in
      *        reverse chronological order, enter <code>false</code>.
      */
+
     public void setAscending(String ascending) {
         this.ascending = ascending;
     }
@@ -72,6 +73,7 @@ public class ListPipelinesRequest extends AmazonWebServiceRequest implements
      *         pipelines in reverse chronological order, enter
      *         <code>false</code>.
      */
+
     public String getAscending() {
         return this.ascending;
     }
@@ -90,6 +92,7 @@ public class ListPipelinesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListPipelinesRequest withAscending(String ascending) {
         setAscending(ascending);
         return this;
@@ -107,6 +110,7 @@ public class ListPipelinesRequest extends AmazonWebServiceRequest implements
      *        <code>pageToken</code> in subsequent <code>GET</code> requests to
      *        get each successive page of results.
      */
+
     public void setPageToken(String pageToken) {
         this.pageToken = pageToken;
     }
@@ -122,6 +126,7 @@ public class ListPipelinesRequest extends AmazonWebServiceRequest implements
      *         use <code>pageToken</code> in subsequent <code>GET</code>
      *         requests to get each successive page of results.
      */
+
     public String getPageToken() {
         return this.pageToken;
     }
@@ -140,6 +145,7 @@ public class ListPipelinesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListPipelinesRequest withPageToken(String pageToken) {
         setPageToken(pageToken);
         return this;

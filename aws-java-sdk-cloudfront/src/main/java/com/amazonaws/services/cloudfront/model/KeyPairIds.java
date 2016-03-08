@@ -38,6 +38,7 @@ public class KeyPairIds implements Serializable, Cloneable {
      * @param quantity
      *        The number of active CloudFront key pairs for AwsAccountNumber.
      */
+
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
@@ -47,6 +48,7 @@ public class KeyPairIds implements Serializable, Cloneable {
      * 
      * @return The number of active CloudFront key pairs for AwsAccountNumber.
      */
+
     public Integer getQuantity() {
         return this.quantity;
     }
@@ -59,6 +61,7 @@ public class KeyPairIds implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public KeyPairIds withQuantity(Integer quantity) {
         setQuantity(quantity);
         return this;
@@ -71,6 +74,7 @@ public class KeyPairIds implements Serializable, Cloneable {
      * @return A complex type that lists the active CloudFront key pairs, if
      *         any, that are associated with AwsAccountNumber.
      */
+
     public java.util.List<String> getItems() {
         if (items == null) {
             items = new com.amazonaws.internal.SdkInternalList<String>();
@@ -86,6 +90,7 @@ public class KeyPairIds implements Serializable, Cloneable {
      *        A complex type that lists the active CloudFront key pairs, if any,
      *        that are associated with AwsAccountNumber.
      */
+
     public void setItems(java.util.Collection<String> items) {
         if (items == null) {
             this.items = null;
@@ -111,6 +116,7 @@ public class KeyPairIds implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public KeyPairIds withItems(String... items) {
         if (this.items == null) {
             setItems(new com.amazonaws.internal.SdkInternalList<String>(
@@ -132,6 +138,7 @@ public class KeyPairIds implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public KeyPairIds withItems(java.util.Collection<String> items) {
         setItems(items);
         return this;

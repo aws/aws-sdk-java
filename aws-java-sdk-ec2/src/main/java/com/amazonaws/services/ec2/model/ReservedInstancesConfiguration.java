@@ -59,6 +59,7 @@ public class ReservedInstancesConfiguration implements Serializable, Cloneable {
      * @param availabilityZone
      *        The Availability Zone for the modified Reserved Instances.
      */
+
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
@@ -70,6 +71,7 @@ public class ReservedInstancesConfiguration implements Serializable, Cloneable {
      * 
      * @return The Availability Zone for the modified Reserved Instances.
      */
+
     public String getAvailabilityZone() {
         return this.availabilityZone;
     }
@@ -84,6 +86,7 @@ public class ReservedInstancesConfiguration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReservedInstancesConfiguration withAvailabilityZone(
             String availabilityZone) {
         setAvailabilityZone(availabilityZone);
@@ -100,6 +103,7 @@ public class ReservedInstancesConfiguration implements Serializable, Cloneable {
      *        The network platform of the modified Reserved Instances, which is
      *        either EC2-Classic or EC2-VPC.
      */
+
     public void setPlatform(String platform) {
         this.platform = platform;
     }
@@ -113,6 +117,7 @@ public class ReservedInstancesConfiguration implements Serializable, Cloneable {
      * @return The network platform of the modified Reserved Instances, which is
      *         either EC2-Classic or EC2-VPC.
      */
+
     public String getPlatform() {
         return this.platform;
     }
@@ -129,6 +134,7 @@ public class ReservedInstancesConfiguration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReservedInstancesConfiguration withPlatform(String platform) {
         setPlatform(platform);
         return this;
@@ -142,6 +148,7 @@ public class ReservedInstancesConfiguration implements Serializable, Cloneable {
      * @param instanceCount
      *        The number of modified Reserved Instances.
      */
+
     public void setInstanceCount(Integer instanceCount) {
         this.instanceCount = instanceCount;
     }
@@ -153,6 +160,7 @@ public class ReservedInstancesConfiguration implements Serializable, Cloneable {
      * 
      * @return The number of modified Reserved Instances.
      */
+
     public Integer getInstanceCount() {
         return this.instanceCount;
     }
@@ -167,6 +175,7 @@ public class ReservedInstancesConfiguration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReservedInstancesConfiguration withInstanceCount(
             Integer instanceCount) {
         setInstanceCount(instanceCount);
@@ -182,6 +191,7 @@ public class ReservedInstancesConfiguration implements Serializable, Cloneable {
      *        The instance type for the modified Reserved Instances.
      * @see InstanceType
      */
+
     public void setInstanceType(String instanceType) {
         this.instanceType = instanceType;
     }
@@ -194,6 +204,7 @@ public class ReservedInstancesConfiguration implements Serializable, Cloneable {
      * @return The instance type for the modified Reserved Instances.
      * @see InstanceType
      */
+
     public String getInstanceType() {
         return this.instanceType;
     }
@@ -209,6 +220,7 @@ public class ReservedInstancesConfiguration implements Serializable, Cloneable {
      *         chained together.
      * @see InstanceType
      */
+
     public ReservedInstancesConfiguration withInstanceType(String instanceType) {
         setInstanceType(instanceType);
         return this;
@@ -225,6 +237,7 @@ public class ReservedInstancesConfiguration implements Serializable, Cloneable {
      *         chained together.
      * @see InstanceType
      */
+
     public void setInstanceType(InstanceType instanceType) {
         this.instanceType = instanceType.toString();
     }
@@ -240,6 +253,7 @@ public class ReservedInstancesConfiguration implements Serializable, Cloneable {
      *         chained together.
      * @see InstanceType
      */
+
     public ReservedInstancesConfiguration withInstanceType(
             InstanceType instanceType) {
         setInstanceType(instanceType);

@@ -106,6 +106,7 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements
      * @return The IDs of the Dedicated hosts. The IDs are used for targeted
      *         instance launches.
      */
+
     public java.util.List<String> getHostIds() {
         if (hostIds == null) {
             hostIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -123,6 +124,7 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements
      *        The IDs of the Dedicated hosts. The IDs are used for targeted
      *        instance launches.
      */
+
     public void setHostIds(java.util.Collection<String> hostIds) {
         if (hostIds == null) {
             this.hostIds = null;
@@ -151,6 +153,7 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeHostsRequest withHostIds(String... hostIds) {
         if (this.hostIds == null) {
             setHostIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -174,6 +177,7 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeHostsRequest withHostIds(java.util.Collection<String> hostIds) {
         setHostIds(hostIds);
         return this;
@@ -187,6 +191,7 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements
      * @param nextToken
      *        The token to retrieve the next page of results.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -198,6 +203,7 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements
      * 
      * @return The token to retrieve the next page of results.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -212,6 +218,7 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeHostsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -236,6 +243,7 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements
      *        specify this parameter and the host IDs parameter in the same
      *        request.
      */
+
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
     }
@@ -258,6 +266,7 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements
      *         cannot specify this parameter and the host IDs parameter in the
      *         same request.
      */
+
     public Integer getMaxResults() {
         return this.maxResults;
     }
@@ -283,6 +292,7 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeHostsRequest withMaxResults(Integer maxResults) {
         setMaxResults(maxResults);
         return this;
@@ -373,6 +383,7 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements
      *         </p>
      *         </li>
      */
+
     public java.util.List<Filter> getFilter() {
         if (filter == null) {
             filter = new com.amazonaws.internal.SdkInternalList<Filter>();
@@ -466,6 +477,7 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements
      *        </p>
      *        </li>
      */
+
     public void setFilter(java.util.Collection<Filter> filter) {
         if (filter == null) {
             this.filter = null;
@@ -569,6 +581,7 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeHostsRequest withFilter(Filter... filter) {
         if (this.filter == null) {
             setFilter(new com.amazonaws.internal.SdkInternalList<Filter>(
@@ -668,6 +681,7 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeHostsRequest withFilter(java.util.Collection<Filter> filter) {
         setFilter(filter);
         return this;

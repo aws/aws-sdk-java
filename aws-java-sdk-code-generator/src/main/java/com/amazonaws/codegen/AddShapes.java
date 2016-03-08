@@ -15,43 +15,24 @@
 
 package com.amazonaws.codegen;
 
-import static com.amazonaws.codegen.internal.DocumentationUtils.generateGetterDocumentation;
-import static com.amazonaws.codegen.internal.DocumentationUtils.generateSetterDocumentation;
-import static com.amazonaws.codegen.internal.NameUtils.getEnumName;
-import static com.amazonaws.codegen.internal.NameUtils.getVariableName;
-import static com.amazonaws.codegen.internal.TypeUtils.LIST_AUTO_CONSTRUCT_IMPL;
-import static com.amazonaws.codegen.internal.TypeUtils.LIST_DEFAULT_IMPL;
-import static com.amazonaws.codegen.internal.TypeUtils.LIST_INTERFACE;
-import static com.amazonaws.codegen.internal.TypeUtils.MAP_AUTO_CONSTRUCT_IMPL;
-import static com.amazonaws.codegen.internal.TypeUtils.MAP_DEFAULT_IMPL;
-import static com.amazonaws.codegen.internal.TypeUtils.MAP_INTERFACE;
-import static com.amazonaws.codegen.internal.TypeUtils.getDataTypeMapping;
-import static com.amazonaws.codegen.internal.TypeUtils.getJavaDataType;
-import static com.amazonaws.codegen.internal.Utils.capitialize;
-import static com.amazonaws.codegen.internal.Utils.isEnumShape;
-import static com.amazonaws.codegen.internal.Utils.isListShape;
-import static com.amazonaws.codegen.internal.Utils.isMapShape;
-import static com.amazonaws.codegen.internal.Utils.isScalar;
-
-import java.util.List;
-import java.util.Map;
-
 import com.amazonaws.codegen.internal.NameUtils;
 import com.amazonaws.codegen.model.config.customization.CustomizationConfig;
-import com.amazonaws.codegen.model.intermediate.EnumModel;
-import com.amazonaws.codegen.model.intermediate.ListModel;
-import com.amazonaws.codegen.model.intermediate.MapModel;
-import com.amazonaws.codegen.model.intermediate.MemberModel;
-import com.amazonaws.codegen.model.intermediate.ParameterHttpMapping;
+import com.amazonaws.codegen.model.intermediate.*;
 import com.amazonaws.codegen.model.intermediate.ParameterHttpMapping.Location;
-import com.amazonaws.codegen.model.intermediate.Protocol;
-import com.amazonaws.codegen.model.intermediate.ReturnTypeModel;
-import com.amazonaws.codegen.model.intermediate.ShapeModel;
-import com.amazonaws.codegen.model.intermediate.VariableModel;
 import com.amazonaws.codegen.model.service.Member;
 import com.amazonaws.codegen.model.service.ServiceModel;
 import com.amazonaws.codegen.model.service.Shape;
 import com.amazonaws.util.StringUtils;
+
+import java.util.List;
+import java.util.Map;
+
+import static com.amazonaws.codegen.internal.DocumentationUtils.generateGetterDocumentation;
+import static com.amazonaws.codegen.internal.DocumentationUtils.generateSetterDocumentation;
+import static com.amazonaws.codegen.internal.NameUtils.getEnumName;
+import static com.amazonaws.codegen.internal.NameUtils.getVariableName;
+import static com.amazonaws.codegen.internal.TypeUtils.*;
+import static com.amazonaws.codegen.internal.Utils.*;
 
 abstract class AddShapes {
     private final ServiceModel serviceModel;
@@ -71,9 +52,6 @@ abstract class AddShapes {
     }
 
     protected final ShapeModel generateShapeModel(String javaClassName, String shapeName) {
-        // TODO
-        // shapeModel.setDeprecated(deprecated);
-
         final ShapeModel shapeModel = new ShapeModel(shapeName);
         shapeModel.setShapeName(javaClassName);
         final Shape shape = serviceModel.getShapes().get(shapeName);
@@ -84,6 +62,7 @@ abstract class AddShapes {
                 javaClassName));
         // contains the list of c2j member names that are required for this shape.
         shapeModel.setRequired(shape.getRequired());
+        shapeModel.setDeprecated(shape.isDeprecated());
 
         boolean hasHeaderMember = false;
         boolean hasStatusCodeMember = false;
@@ -142,12 +121,11 @@ abstract class AddShapes {
     }
 
     private MemberModel generateMemberModel(
-           String c2jMemberName,
-           Member c2jMemberDefinition,
-           String protocol,
-           Shape parentShape,
-           Map<String, Shape> allC2jShapes)
-    {
+            String c2jMemberName,
+            Member c2jMemberDefinition,
+            String protocol,
+            Shape parentShape,
+            Map<String, Shape> allC2jShapes) {
         final String c2jShapeName = c2jMemberDefinition.getShape();
         final String variableName = getVariableName(c2jMemberName);
         final String variableType = getJavaDataType(allC2jShapes, c2jShapeName);
@@ -165,6 +143,7 @@ abstract class AddShapes {
                    .withGetterModel(new ReturnTypeModel(variableType)
                                            .withDocumentation(generateGetterDocumentation()));
         memberModel.setDocumentation(c2jMemberDefinition.getDocumentation());
+        memberModel.setDeprecated(c2jMemberDefinition.isDeprecated());
 
         // Pass the xmlNameSpace from the member reference
         if (c2jMemberDefinition.getXmlNamespace() != null) {

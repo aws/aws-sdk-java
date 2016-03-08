@@ -68,6 +68,7 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Default: Describes all your key pairs.
      */
+
     public java.util.List<String> getKeyNames() {
         if (keyNames == null) {
             keyNames = new com.amazonaws.internal.SdkInternalList<String>();
@@ -88,6 +89,7 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        Default: Describes all your key pairs.
      */
+
     public void setKeyNames(java.util.Collection<String> keyNames) {
         if (keyNames == null) {
             this.keyNames = null;
@@ -119,6 +121,7 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeKeyPairsRequest withKeyNames(String... keyNames) {
         if (this.keyNames == null) {
             setKeyNames(new com.amazonaws.internal.SdkInternalList<String>(
@@ -145,6 +148,7 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeKeyPairsRequest withKeyNames(
             java.util.Collection<String> keyNames) {
         setKeyNames(keyNames);
@@ -181,6 +185,7 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest implements
      *         </p>
      *         </li>
      */
+
     public java.util.List<Filter> getFilters() {
         if (filters == null) {
             filters = new com.amazonaws.internal.SdkInternalList<Filter>();
@@ -219,6 +224,7 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest implements
      *        </p>
      *        </li>
      */
+
     public void setFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
             this.filters = null;
@@ -268,6 +274,7 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeKeyPairsRequest withFilters(Filter... filters) {
         if (this.filters == null) {
             setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(
@@ -312,6 +319,7 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeKeyPairsRequest withFilters(
             java.util.Collection<Filter> filters) {
         setFilters(filters);

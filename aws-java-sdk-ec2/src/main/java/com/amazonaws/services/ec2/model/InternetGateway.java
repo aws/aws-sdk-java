@@ -52,6 +52,7 @@ public class InternetGateway implements Serializable, Cloneable {
      * @param internetGatewayId
      *        The ID of the Internet gateway.
      */
+
     public void setInternetGatewayId(String internetGatewayId) {
         this.internetGatewayId = internetGatewayId;
     }
@@ -63,6 +64,7 @@ public class InternetGateway implements Serializable, Cloneable {
      * 
      * @return The ID of the Internet gateway.
      */
+
     public String getInternetGatewayId() {
         return this.internetGatewayId;
     }
@@ -77,6 +79,7 @@ public class InternetGateway implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InternetGateway withInternetGatewayId(String internetGatewayId) {
         setInternetGatewayId(internetGatewayId);
         return this;
@@ -89,6 +92,7 @@ public class InternetGateway implements Serializable, Cloneable {
      * 
      * @return Any VPCs attached to the Internet gateway.
      */
+
     public java.util.List<InternetGatewayAttachment> getAttachments() {
         if (attachments == null) {
             attachments = new com.amazonaws.internal.SdkInternalList<InternetGatewayAttachment>();
@@ -104,6 +108,7 @@ public class InternetGateway implements Serializable, Cloneable {
      * @param attachments
      *        Any VPCs attached to the Internet gateway.
      */
+
     public void setAttachments(
             java.util.Collection<InternetGatewayAttachment> attachments) {
         if (attachments == null) {
@@ -131,6 +136,7 @@ public class InternetGateway implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InternetGateway withAttachments(
             InternetGatewayAttachment... attachments) {
         if (this.attachments == null) {
@@ -153,6 +159,7 @@ public class InternetGateway implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InternetGateway withAttachments(
             java.util.Collection<InternetGatewayAttachment> attachments) {
         setAttachments(attachments);
@@ -166,6 +173,7 @@ public class InternetGateway implements Serializable, Cloneable {
      * 
      * @return Any tags assigned to the Internet gateway.
      */
+
     public java.util.List<Tag> getTags() {
         if (tags == null) {
             tags = new com.amazonaws.internal.SdkInternalList<Tag>();
@@ -181,6 +189,7 @@ public class InternetGateway implements Serializable, Cloneable {
      * @param tags
      *        Any tags assigned to the Internet gateway.
      */
+
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
             this.tags = null;
@@ -206,6 +215,7 @@ public class InternetGateway implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InternetGateway withTags(Tag... tags) {
         if (this.tags == null) {
             setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
@@ -226,6 +236,7 @@ public class InternetGateway implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InternetGateway withTags(java.util.Collection<Tag> tags) {
         setTags(tags);
         return this;

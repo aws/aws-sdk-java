@@ -41,6 +41,7 @@ public class BatchGetRepositoriesRequest extends AmazonWebServiceRequest
      * 
      * @return The names of the repositories to get information about.
      */
+
     public java.util.List<String> getRepositoryNames() {
         return repositoryNames;
     }
@@ -53,6 +54,7 @@ public class BatchGetRepositoriesRequest extends AmazonWebServiceRequest
      * @param repositoryNames
      *        The names of the repositories to get information about.
      */
+
     public void setRepositoryNames(java.util.Collection<String> repositoryNames) {
         if (repositoryNames == null) {
             this.repositoryNames = null;
@@ -78,6 +80,7 @@ public class BatchGetRepositoriesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchGetRepositoriesRequest withRepositoryNames(
             String... repositoryNames) {
         if (this.repositoryNames == null) {
@@ -100,6 +103,7 @@ public class BatchGetRepositoriesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchGetRepositoriesRequest withRepositoryNames(
             java.util.Collection<String> repositoryNames) {
         setRepositoryNames(repositoryNames);

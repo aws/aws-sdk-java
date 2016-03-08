@@ -40,6 +40,7 @@ public class DescribeRulesPackageRequest extends AmazonWebServiceRequest
      * @param rulesPackageArn
      *        The ARN specifying the rules package that you want to describe.
      */
+
     public void setRulesPackageArn(String rulesPackageArn) {
         this.rulesPackageArn = rulesPackageArn;
     }
@@ -51,6 +52,7 @@ public class DescribeRulesPackageRequest extends AmazonWebServiceRequest
      * 
      * @return The ARN specifying the rules package that you want to describe.
      */
+
     public String getRulesPackageArn() {
         return this.rulesPackageArn;
     }
@@ -65,6 +67,7 @@ public class DescribeRulesPackageRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeRulesPackageRequest withRulesPackageArn(
             String rulesPackageArn) {
         setRulesPackageArn(rulesPackageArn);

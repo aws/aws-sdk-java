@@ -39,6 +39,7 @@ public class SubmitContainerStateChangeResult implements Serializable,
      * @param acknowledgment
      *        Acknowledgement of the state change.
      */
+
     public void setAcknowledgment(String acknowledgment) {
         this.acknowledgment = acknowledgment;
     }
@@ -50,6 +51,7 @@ public class SubmitContainerStateChangeResult implements Serializable,
      * 
      * @return Acknowledgement of the state change.
      */
+
     public String getAcknowledgment() {
         return this.acknowledgment;
     }
@@ -64,6 +66,7 @@ public class SubmitContainerStateChangeResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SubmitContainerStateChangeResult withAcknowledgment(
             String acknowledgment) {
         setAcknowledgment(acknowledgment);

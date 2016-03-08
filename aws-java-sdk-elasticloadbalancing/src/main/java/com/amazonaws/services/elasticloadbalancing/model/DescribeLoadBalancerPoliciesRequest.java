@@ -46,6 +46,7 @@ public class DescribeLoadBalancerPoliciesRequest extends
      * @param loadBalancerName
      *        The name of the load balancer.
      */
+
     public void setLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
     }
@@ -57,6 +58,7 @@ public class DescribeLoadBalancerPoliciesRequest extends
      * 
      * @return The name of the load balancer.
      */
+
     public String getLoadBalancerName() {
         return this.loadBalancerName;
     }
@@ -71,6 +73,7 @@ public class DescribeLoadBalancerPoliciesRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLoadBalancerPoliciesRequest withLoadBalancerName(
             String loadBalancerName) {
         setLoadBalancerName(loadBalancerName);
@@ -84,6 +87,7 @@ public class DescribeLoadBalancerPoliciesRequest extends
      * 
      * @return The names of the policies.
      */
+
     public java.util.List<String> getPolicyNames() {
         if (policyNames == null) {
             policyNames = new com.amazonaws.internal.SdkInternalList<String>();
@@ -99,6 +103,7 @@ public class DescribeLoadBalancerPoliciesRequest extends
      * @param policyNames
      *        The names of the policies.
      */
+
     public void setPolicyNames(java.util.Collection<String> policyNames) {
         if (policyNames == null) {
             this.policyNames = null;
@@ -125,6 +130,7 @@ public class DescribeLoadBalancerPoliciesRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLoadBalancerPoliciesRequest withPolicyNames(
             String... policyNames) {
         if (this.policyNames == null) {
@@ -147,6 +153,7 @@ public class DescribeLoadBalancerPoliciesRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLoadBalancerPoliciesRequest withPolicyNames(
             java.util.Collection<String> policyNames) {
         setPolicyNames(policyNames);

@@ -46,6 +46,7 @@ public class KeyPair implements Serializable, Cloneable {
      * @param publicKey
      *        The public key.
      */
+
     public void setPublicKey(String publicKey) {
         this.publicKey = publicKey;
     }
@@ -57,6 +58,7 @@ public class KeyPair implements Serializable, Cloneable {
      * 
      * @return The public key.
      */
+
     public String getPublicKey() {
         return this.publicKey;
     }
@@ -71,6 +73,7 @@ public class KeyPair implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public KeyPair withPublicKey(String publicKey) {
         setPublicKey(publicKey);
         return this;
@@ -84,6 +87,7 @@ public class KeyPair implements Serializable, Cloneable {
      * @param privateKey
      *        The private key.
      */
+
     public void setPrivateKey(String privateKey) {
         this.privateKey = privateKey;
     }
@@ -95,6 +99,7 @@ public class KeyPair implements Serializable, Cloneable {
      * 
      * @return The private key.
      */
+
     public String getPrivateKey() {
         return this.privateKey;
     }
@@ -109,6 +114,7 @@ public class KeyPair implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public KeyPair withPrivateKey(String privateKey) {
         setPrivateKey(privateKey);
         return this;

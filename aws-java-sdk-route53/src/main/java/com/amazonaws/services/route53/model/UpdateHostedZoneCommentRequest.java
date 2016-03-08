@@ -49,6 +49,7 @@ public class UpdateHostedZoneCommentRequest extends AmazonWebServiceRequest
      * @param id
      *        The ID of the hosted zone you want to update.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -60,6 +61,7 @@ public class UpdateHostedZoneCommentRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the hosted zone you want to update.
      */
+
     public String getId() {
         return this.id;
     }
@@ -74,6 +76,7 @@ public class UpdateHostedZoneCommentRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateHostedZoneCommentRequest withId(String id) {
         setId(id);
         return this;
@@ -87,6 +90,7 @@ public class UpdateHostedZoneCommentRequest extends AmazonWebServiceRequest
      * @param comment
      *        A comment about your hosted zone.
      */
+
     public void setComment(String comment) {
         this.comment = comment;
     }
@@ -98,6 +102,7 @@ public class UpdateHostedZoneCommentRequest extends AmazonWebServiceRequest
      * 
      * @return A comment about your hosted zone.
      */
+
     public String getComment() {
         return this.comment;
     }
@@ -112,6 +117,7 @@ public class UpdateHostedZoneCommentRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateHostedZoneCommentRequest withComment(String comment) {
         setComment(comment);
         return this;

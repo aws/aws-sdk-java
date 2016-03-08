@@ -173,6 +173,7 @@ public class RDSDataSpec implements Serializable, Cloneable {
      *        Describes the <code>DatabaseName</code> and
      *        <code>InstanceIdentifier</code> of an an Amazon RDS database.
      */
+
     public void setDatabaseInformation(RDSDatabase databaseInformation) {
         this.databaseInformation = databaseInformation;
     }
@@ -186,6 +187,7 @@ public class RDSDataSpec implements Serializable, Cloneable {
      * @return Describes the <code>DatabaseName</code> and
      *         <code>InstanceIdentifier</code> of an an Amazon RDS database.
      */
+
     public RDSDatabase getDatabaseInformation() {
         return this.databaseInformation;
     }
@@ -202,6 +204,7 @@ public class RDSDataSpec implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RDSDataSpec withDatabaseInformation(RDSDatabase databaseInformation) {
         setDatabaseInformation(databaseInformation);
         return this;
@@ -217,6 +220,7 @@ public class RDSDataSpec implements Serializable, Cloneable {
      *        The query that is used to retrieve the observation data for the
      *        <code>DataSource</code>.
      */
+
     public void setSelectSqlQuery(String selectSqlQuery) {
         this.selectSqlQuery = selectSqlQuery;
     }
@@ -230,6 +234,7 @@ public class RDSDataSpec implements Serializable, Cloneable {
      * @return The query that is used to retrieve the observation data for the
      *         <code>DataSource</code>.
      */
+
     public String getSelectSqlQuery() {
         return this.selectSqlQuery;
     }
@@ -246,6 +251,7 @@ public class RDSDataSpec implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RDSDataSpec withSelectSqlQuery(String selectSqlQuery) {
         setSelectSqlQuery(selectSqlQuery);
         return this;
@@ -261,6 +267,7 @@ public class RDSDataSpec implements Serializable, Cloneable {
      *        The AWS Identity and Access Management (IAM) credentials that are
      *        used connect to the Amazon RDS database.
      */
+
     public void setDatabaseCredentials(
             RDSDatabaseCredentials databaseCredentials) {
         this.databaseCredentials = databaseCredentials;
@@ -275,6 +282,7 @@ public class RDSDataSpec implements Serializable, Cloneable {
      * @return The AWS Identity and Access Management (IAM) credentials that are
      *         used connect to the Amazon RDS database.
      */
+
     public RDSDatabaseCredentials getDatabaseCredentials() {
         return this.databaseCredentials;
     }
@@ -291,6 +299,7 @@ public class RDSDataSpec implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RDSDataSpec withDatabaseCredentials(
             RDSDatabaseCredentials databaseCredentials) {
         setDatabaseCredentials(databaseCredentials);
@@ -309,6 +318,7 @@ public class RDSDataSpec implements Serializable, Cloneable {
      *        retrieved from Amazon RDS using <code>SelectSqlQuery</code> is
      *        stored in this location.
      */
+
     public void setS3StagingLocation(String s3StagingLocation) {
         this.s3StagingLocation = s3StagingLocation;
     }
@@ -324,6 +334,7 @@ public class RDSDataSpec implements Serializable, Cloneable {
      *         retrieved from Amazon RDS using <code>SelectSqlQuery</code> is
      *         stored in this location.
      */
+
     public String getS3StagingLocation() {
         return this.s3StagingLocation;
     }
@@ -342,6 +353,7 @@ public class RDSDataSpec implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RDSDataSpec withS3StagingLocation(String s3StagingLocation) {
         setS3StagingLocation(s3StagingLocation);
         return this;
@@ -365,6 +377,7 @@ public class RDSDataSpec implements Serializable, Cloneable {
      *        Sample -
      *        <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
      */
+
     public void setDataRearrangement(String dataRearrangement) {
         this.dataRearrangement = dataRearrangement;
     }
@@ -386,6 +399,7 @@ public class RDSDataSpec implements Serializable, Cloneable {
      *         Sample -
      *         <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
      */
+
     public String getDataRearrangement() {
         return this.dataRearrangement;
     }
@@ -410,6 +424,7 @@ public class RDSDataSpec implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RDSDataSpec withDataRearrangement(String dataRearrangement) {
         setDataRearrangement(dataRearrangement);
         return this;
@@ -516,6 +531,7 @@ public class RDSDataSpec implements Serializable, Cloneable {
      *        "excludedVariableNames": [ "F6" ] }
      *        </p>
      */
+
     public void setDataSchema(String dataSchema) {
         this.dataSchema = dataSchema;
     }
@@ -620,6 +636,7 @@ public class RDSDataSpec implements Serializable, Cloneable {
      *         "excludedVariableNames": [ "F6" ] }
      *         </p>
      */
+
     public String getDataSchema() {
         return this.dataSchema;
     }
@@ -727,6 +744,7 @@ public class RDSDataSpec implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RDSDataSpec withDataSchema(String dataSchema) {
         setDataSchema(dataSchema);
         return this;
@@ -740,6 +758,7 @@ public class RDSDataSpec implements Serializable, Cloneable {
      * @param dataSchemaUri
      *        The Amazon S3 location of the <code>DataSchema</code>.
      */
+
     public void setDataSchemaUri(String dataSchemaUri) {
         this.dataSchemaUri = dataSchemaUri;
     }
@@ -751,6 +770,7 @@ public class RDSDataSpec implements Serializable, Cloneable {
      * 
      * @return The Amazon S3 location of the <code>DataSchema</code>.
      */
+
     public String getDataSchemaUri() {
         return this.dataSchemaUri;
     }
@@ -765,6 +785,7 @@ public class RDSDataSpec implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RDSDataSpec withDataSchemaUri(String dataSchemaUri) {
         setDataSchemaUri(dataSchemaUri);
         return this;
@@ -787,6 +808,7 @@ public class RDSDataSpec implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html"
      *        >Role templates</a> for data pipelines.
      */
+
     public void setResourceRole(String resourceRole) {
         this.resourceRole = resourceRole;
     }
@@ -807,6 +829,7 @@ public class RDSDataSpec implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html"
      *         >Role templates</a> for data pipelines.
      */
+
     public String getResourceRole() {
         return this.resourceRole;
     }
@@ -830,6 +853,7 @@ public class RDSDataSpec implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RDSDataSpec withResourceRole(String resourceRole) {
         setResourceRole(resourceRole);
         return this;
@@ -851,6 +875,7 @@ public class RDSDataSpec implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html"
      *        >Role templates</a> for data pipelines.
      */
+
     public void setServiceRole(String serviceRole) {
         this.serviceRole = serviceRole;
     }
@@ -870,6 +895,7 @@ public class RDSDataSpec implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html"
      *         >Role templates</a> for data pipelines.
      */
+
     public String getServiceRole() {
         return this.serviceRole;
     }
@@ -892,6 +918,7 @@ public class RDSDataSpec implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RDSDataSpec withServiceRole(String serviceRole) {
         setServiceRole(serviceRole);
         return this;
@@ -909,6 +936,7 @@ public class RDSDataSpec implements Serializable, Cloneable {
      *        This attribute is used by Data Pipeline to carry out the copy task
      *        from Amazon RDS to Amazon S3.
      */
+
     public void setSubnetId(String subnetId) {
         this.subnetId = subnetId;
     }
@@ -924,6 +952,7 @@ public class RDSDataSpec implements Serializable, Cloneable {
      *         This attribute is used by Data Pipeline to carry out the copy
      *         task from Amazon RDS to Amazon S3.
      */
+
     public String getSubnetId() {
         return this.subnetId;
     }
@@ -942,6 +971,7 @@ public class RDSDataSpec implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RDSDataSpec withSubnetId(String subnetId) {
         setSubnetId(subnetId);
         return this;
@@ -961,6 +991,7 @@ public class RDSDataSpec implements Serializable, Cloneable {
      *         Data Pipeline to carry out the copy operation from Amazon RDS to
      *         an Amazon S3 task.
      */
+
     public java.util.List<String> getSecurityGroupIds() {
         if (securityGroupIds == null) {
             securityGroupIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -983,6 +1014,7 @@ public class RDSDataSpec implements Serializable, Cloneable {
      *        Data Pipeline to carry out the copy operation from Amazon RDS to
      *        an Amazon S3 task.
      */
+
     public void setSecurityGroupIds(
             java.util.Collection<String> securityGroupIds) {
         if (securityGroupIds == null) {
@@ -1017,6 +1049,7 @@ public class RDSDataSpec implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RDSDataSpec withSecurityGroupIds(String... securityGroupIds) {
         if (this.securityGroupIds == null) {
             setSecurityGroupIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -1045,6 +1078,7 @@ public class RDSDataSpec implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RDSDataSpec withSecurityGroupIds(
             java.util.Collection<String> securityGroupIds) {
         setSecurityGroupIds(securityGroupIds);

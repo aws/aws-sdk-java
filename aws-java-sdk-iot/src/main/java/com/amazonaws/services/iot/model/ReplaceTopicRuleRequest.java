@@ -48,6 +48,7 @@ public class ReplaceTopicRuleRequest extends AmazonWebServiceRequest implements
      * @param ruleName
      *        The name of the rule.
      */
+
     public void setRuleName(String ruleName) {
         this.ruleName = ruleName;
     }
@@ -59,6 +60,7 @@ public class ReplaceTopicRuleRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the rule.
      */
+
     public String getRuleName() {
         return this.ruleName;
     }
@@ -73,6 +75,7 @@ public class ReplaceTopicRuleRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReplaceTopicRuleRequest withRuleName(String ruleName) {
         setRuleName(ruleName);
         return this;
@@ -86,6 +89,7 @@ public class ReplaceTopicRuleRequest extends AmazonWebServiceRequest implements
      * @param topicRulePayload
      *        The rule payload.
      */
+
     public void setTopicRulePayload(TopicRulePayload topicRulePayload) {
         this.topicRulePayload = topicRulePayload;
     }
@@ -97,6 +101,7 @@ public class ReplaceTopicRuleRequest extends AmazonWebServiceRequest implements
      * 
      * @return The rule payload.
      */
+
     public TopicRulePayload getTopicRulePayload() {
         return this.topicRulePayload;
     }
@@ -111,6 +116,7 @@ public class ReplaceTopicRuleRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReplaceTopicRuleRequest withTopicRulePayload(
             TopicRulePayload topicRulePayload) {
         setTopicRulePayload(topicRulePayload);

@@ -77,6 +77,7 @@ public class CreateTrafficPolicyInstanceRequest extends AmazonWebServiceRequest
      *        create resource record sets by using the configuration in a
      *        traffic policy.
      */
+
     public void setHostedZoneId(String hostedZoneId) {
         this.hostedZoneId = hostedZoneId;
     }
@@ -91,6 +92,7 @@ public class CreateTrafficPolicyInstanceRequest extends AmazonWebServiceRequest
      *         create resource record sets by using the configuration in a
      *         traffic policy.
      */
+
     public String getHostedZoneId() {
         return this.hostedZoneId;
     }
@@ -108,6 +110,7 @@ public class CreateTrafficPolicyInstanceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateTrafficPolicyInstanceRequest withHostedZoneId(
             String hostedZoneId) {
         setHostedZoneId(hostedZoneId);
@@ -128,6 +131,7 @@ public class CreateTrafficPolicyInstanceRequest extends AmazonWebServiceRequest
      *        by using the resource record sets that Amazon Route 53 creates for
      *        this traffic policy instance.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -145,6 +149,7 @@ public class CreateTrafficPolicyInstanceRequest extends AmazonWebServiceRequest
      *         queries by using the resource record sets that Amazon Route 53
      *         creates for this traffic policy instance.
      */
+
     public String getName() {
         return this.name;
     }
@@ -165,6 +170,7 @@ public class CreateTrafficPolicyInstanceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateTrafficPolicyInstanceRequest withName(String name) {
         setName(name);
         return this;
@@ -180,6 +186,7 @@ public class CreateTrafficPolicyInstanceRequest extends AmazonWebServiceRequest
      *        The TTL that you want Amazon Route 53 to assign to all of the
      *        resource record sets that it creates in the specified hosted zone.
      */
+
     public void setTTL(Long tTL) {
         this.tTL = tTL;
     }
@@ -194,6 +201,7 @@ public class CreateTrafficPolicyInstanceRequest extends AmazonWebServiceRequest
      *         resource record sets that it creates in the specified hosted
      *         zone.
      */
+
     public Long getTTL() {
         return this.tTL;
     }
@@ -210,6 +218,7 @@ public class CreateTrafficPolicyInstanceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateTrafficPolicyInstanceRequest withTTL(Long tTL) {
         setTTL(tTL);
         return this;
@@ -225,6 +234,7 @@ public class CreateTrafficPolicyInstanceRequest extends AmazonWebServiceRequest
      *        The ID of the traffic policy that you want to use to create
      *        resource record sets in the specified hosted zone.
      */
+
     public void setTrafficPolicyId(String trafficPolicyId) {
         this.trafficPolicyId = trafficPolicyId;
     }
@@ -238,6 +248,7 @@ public class CreateTrafficPolicyInstanceRequest extends AmazonWebServiceRequest
      * @return The ID of the traffic policy that you want to use to create
      *         resource record sets in the specified hosted zone.
      */
+
     public String getTrafficPolicyId() {
         return this.trafficPolicyId;
     }
@@ -254,6 +265,7 @@ public class CreateTrafficPolicyInstanceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateTrafficPolicyInstanceRequest withTrafficPolicyId(
             String trafficPolicyId) {
         setTrafficPolicyId(trafficPolicyId);
@@ -270,6 +282,7 @@ public class CreateTrafficPolicyInstanceRequest extends AmazonWebServiceRequest
      *        The version of the traffic policy that you want to use to create
      *        resource record sets in the specified hosted zone.
      */
+
     public void setTrafficPolicyVersion(Integer trafficPolicyVersion) {
         this.trafficPolicyVersion = trafficPolicyVersion;
     }
@@ -283,6 +296,7 @@ public class CreateTrafficPolicyInstanceRequest extends AmazonWebServiceRequest
      * @return The version of the traffic policy that you want to use to create
      *         resource record sets in the specified hosted zone.
      */
+
     public Integer getTrafficPolicyVersion() {
         return this.trafficPolicyVersion;
     }
@@ -299,6 +313,7 @@ public class CreateTrafficPolicyInstanceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateTrafficPolicyInstanceRequest withTrafficPolicyVersion(
             Integer trafficPolicyVersion) {
         setTrafficPolicyVersion(trafficPolicyVersion);

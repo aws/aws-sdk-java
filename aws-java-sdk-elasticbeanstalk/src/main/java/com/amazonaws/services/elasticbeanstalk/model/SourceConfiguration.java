@@ -46,6 +46,7 @@ public class SourceConfiguration implements Serializable, Cloneable {
      * @param applicationName
      *        The name of the application associated with the configuration.
      */
+
     public void setApplicationName(String applicationName) {
         this.applicationName = applicationName;
     }
@@ -57,6 +58,7 @@ public class SourceConfiguration implements Serializable, Cloneable {
      * 
      * @return The name of the application associated with the configuration.
      */
+
     public String getApplicationName() {
         return this.applicationName;
     }
@@ -71,6 +73,7 @@ public class SourceConfiguration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SourceConfiguration withApplicationName(String applicationName) {
         setApplicationName(applicationName);
         return this;
@@ -84,6 +87,7 @@ public class SourceConfiguration implements Serializable, Cloneable {
      * @param templateName
      *        The name of the configuration template.
      */
+
     public void setTemplateName(String templateName) {
         this.templateName = templateName;
     }
@@ -95,6 +99,7 @@ public class SourceConfiguration implements Serializable, Cloneable {
      * 
      * @return The name of the configuration template.
      */
+
     public String getTemplateName() {
         return this.templateName;
     }
@@ -109,6 +114,7 @@ public class SourceConfiguration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SourceConfiguration withTemplateName(String templateName) {
         setTemplateName(templateName);
         return this;

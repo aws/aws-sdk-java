@@ -56,6 +56,7 @@ public class DescribeThingResult implements Serializable, Cloneable {
      * @param defaultClientId
      *        The default client ID.
      */
+
     public void setDefaultClientId(String defaultClientId) {
         this.defaultClientId = defaultClientId;
     }
@@ -67,6 +68,7 @@ public class DescribeThingResult implements Serializable, Cloneable {
      * 
      * @return The default client ID.
      */
+
     public String getDefaultClientId() {
         return this.defaultClientId;
     }
@@ -81,6 +83,7 @@ public class DescribeThingResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeThingResult withDefaultClientId(String defaultClientId) {
         setDefaultClientId(defaultClientId);
         return this;
@@ -94,6 +97,7 @@ public class DescribeThingResult implements Serializable, Cloneable {
      * @param thingName
      *        The name of the thing.
      */
+
     public void setThingName(String thingName) {
         this.thingName = thingName;
     }
@@ -105,6 +109,7 @@ public class DescribeThingResult implements Serializable, Cloneable {
      * 
      * @return The name of the thing.
      */
+
     public String getThingName() {
         return this.thingName;
     }
@@ -119,6 +124,7 @@ public class DescribeThingResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeThingResult withThingName(String thingName) {
         setThingName(thingName);
         return this;
@@ -140,6 +146,7 @@ public class DescribeThingResult implements Serializable, Cloneable {
      *         {\"some-name2\":\"some-value2\"},
      *         {\"some-name3\":\"some-value3\"}}
      */
+
     public java.util.Map<String, String> getAttributes() {
         return attributes;
     }
@@ -161,6 +168,7 @@ public class DescribeThingResult implements Serializable, Cloneable {
      *        {\"some-name2\":\"some-value2\"},
      *        {\"some-name3\":\"some-value3\"}}
      */
+
     public void setAttributes(java.util.Map<String, String> attributes) {
         this.attributes = attributes;
     }
@@ -184,6 +192,7 @@ public class DescribeThingResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeThingResult withAttributes(
             java.util.Map<String, String> attributes) {
         setAttributes(attributes);
@@ -205,6 +214,7 @@ public class DescribeThingResult implements Serializable, Cloneable {
      * Removes all the entries added into Attributes. &lt;p> Returns a reference
      * to this object so that method calls can be chained together.
      */
+
     public DescribeThingResult clearAttributesEntries() {
         this.attributes = null;
         return this;

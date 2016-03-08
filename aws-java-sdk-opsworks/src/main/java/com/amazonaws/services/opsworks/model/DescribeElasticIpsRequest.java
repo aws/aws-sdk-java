@@ -63,6 +63,7 @@ public class DescribeElasticIpsRequest extends AmazonWebServiceRequest
      *        <code>DescribeElasticIps</code> returns a description of the
      *        Elastic IP addresses associated with the specified instance.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -78,6 +79,7 @@ public class DescribeElasticIpsRequest extends AmazonWebServiceRequest
      *         <code>DescribeElasticIps</code> returns a description of the
      *         Elastic IP addresses associated with the specified instance.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
@@ -96,6 +98,7 @@ public class DescribeElasticIpsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeElasticIpsRequest withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;
@@ -113,6 +116,7 @@ public class DescribeElasticIpsRequest extends AmazonWebServiceRequest
      *        <code>DescribeElasticIps</code> returns a description of the
      *        Elastic IP addresses that are registered with the specified stack.
      */
+
     public void setStackId(String stackId) {
         this.stackId = stackId;
     }
@@ -129,6 +133,7 @@ public class DescribeElasticIpsRequest extends AmazonWebServiceRequest
      *         Elastic IP addresses that are registered with the specified
      *         stack.
      */
+
     public String getStackId() {
         return this.stackId;
     }
@@ -147,6 +152,7 @@ public class DescribeElasticIpsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeElasticIpsRequest withStackId(String stackId) {
         setStackId(stackId);
         return this;
@@ -165,6 +171,7 @@ public class DescribeElasticIpsRequest extends AmazonWebServiceRequest
      *         description of the specified Elastic IP addresses. Otherwise, it
      *         returns a description of every Elastic IP address.
      */
+
     public java.util.List<String> getIps() {
         if (ips == null) {
             ips = new com.amazonaws.internal.SdkInternalList<String>();
@@ -186,6 +193,7 @@ public class DescribeElasticIpsRequest extends AmazonWebServiceRequest
      *        description of the specified Elastic IP addresses. Otherwise, it
      *        returns a description of every Elastic IP address.
      */
+
     public void setIps(java.util.Collection<String> ips) {
         if (ips == null) {
             this.ips = null;
@@ -217,6 +225,7 @@ public class DescribeElasticIpsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeElasticIpsRequest withIps(String... ips) {
         if (this.ips == null) {
             setIps(new com.amazonaws.internal.SdkInternalList<String>(
@@ -244,6 +253,7 @@ public class DescribeElasticIpsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeElasticIpsRequest withIps(java.util.Collection<String> ips) {
         setIps(ips);
         return this;

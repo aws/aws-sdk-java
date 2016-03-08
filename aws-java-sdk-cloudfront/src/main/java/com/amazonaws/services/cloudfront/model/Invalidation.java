@@ -46,6 +46,7 @@ public class Invalidation implements Serializable, Cloneable {
      *        The identifier for the invalidation request. For example:
      *        IDFDVBD632BHDS5.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -57,6 +58,7 @@ public class Invalidation implements Serializable, Cloneable {
      * @return The identifier for the invalidation request. For example:
      *         IDFDVBD632BHDS5.
      */
+
     public String getId() {
         return this.id;
     }
@@ -71,6 +73,7 @@ public class Invalidation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Invalidation withId(String id) {
         setId(id);
         return this;
@@ -84,6 +87,7 @@ public class Invalidation implements Serializable, Cloneable {
      *        The status of the invalidation request. When the invalidation
      *        batch is finished, the status is Completed.
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -95,6 +99,7 @@ public class Invalidation implements Serializable, Cloneable {
      * @return The status of the invalidation request. When the invalidation
      *         batch is finished, the status is Completed.
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -109,6 +114,7 @@ public class Invalidation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Invalidation withStatus(String status) {
         setStatus(status);
         return this;
@@ -120,6 +126,7 @@ public class Invalidation implements Serializable, Cloneable {
      * @param createTime
      *        The date and time the invalidation request was first made.
      */
+
     public void setCreateTime(java.util.Date createTime) {
         this.createTime = createTime;
     }
@@ -129,6 +136,7 @@ public class Invalidation implements Serializable, Cloneable {
      * 
      * @return The date and time the invalidation request was first made.
      */
+
     public java.util.Date getCreateTime() {
         return this.createTime;
     }
@@ -141,6 +149,7 @@ public class Invalidation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Invalidation withCreateTime(java.util.Date createTime) {
         setCreateTime(createTime);
         return this;
@@ -152,6 +161,7 @@ public class Invalidation implements Serializable, Cloneable {
      * @param invalidationBatch
      *        The current invalidation information for the batch request.
      */
+
     public void setInvalidationBatch(InvalidationBatch invalidationBatch) {
         this.invalidationBatch = invalidationBatch;
     }
@@ -161,6 +171,7 @@ public class Invalidation implements Serializable, Cloneable {
      * 
      * @return The current invalidation information for the batch request.
      */
+
     public InvalidationBatch getInvalidationBatch() {
         return this.invalidationBatch;
     }
@@ -173,6 +184,7 @@ public class Invalidation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Invalidation withInvalidationBatch(
             InvalidationBatch invalidationBatch) {
         setInvalidationBatch(invalidationBatch);

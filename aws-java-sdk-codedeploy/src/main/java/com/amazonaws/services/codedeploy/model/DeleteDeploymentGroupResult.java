@@ -55,6 +55,7 @@ public class DeleteDeploymentGroupResult implements Serializable, Cloneable {
      *         some Auto Scaling lifecycle event hooks from the Amazon EC2
      *         instances in the Auto Scaling group.
      */
+
     public java.util.List<AutoScalingGroup> getHooksNotCleanedUp() {
         if (hooksNotCleanedUp == null) {
             hooksNotCleanedUp = new com.amazonaws.internal.SdkInternalList<AutoScalingGroup>();
@@ -81,6 +82,7 @@ public class DeleteDeploymentGroupResult implements Serializable, Cloneable {
      *        Auto Scaling lifecycle event hooks from the Amazon EC2 instances
      *        in the Auto Scaling group.
      */
+
     public void setHooksNotCleanedUp(
             java.util.Collection<AutoScalingGroup> hooksNotCleanedUp) {
         if (hooksNotCleanedUp == null) {
@@ -119,6 +121,7 @@ public class DeleteDeploymentGroupResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteDeploymentGroupResult withHooksNotCleanedUp(
             AutoScalingGroup... hooksNotCleanedUp) {
         if (this.hooksNotCleanedUp == null) {
@@ -152,6 +155,7 @@ public class DeleteDeploymentGroupResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteDeploymentGroupResult withHooksNotCleanedUp(
             java.util.Collection<AutoScalingGroup> hooksNotCleanedUp) {
         setHooksNotCleanedUp(hooksNotCleanedUp);

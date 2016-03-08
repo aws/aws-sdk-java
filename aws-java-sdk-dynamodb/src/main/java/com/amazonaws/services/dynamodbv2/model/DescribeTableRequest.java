@@ -62,6 +62,7 @@ public class DescribeTableRequest extends AmazonWebServiceRequest implements
      * @param tableName
      *        The name of the table to describe.
      */
+
     public void setTableName(String tableName) {
         this.tableName = tableName;
     }
@@ -73,6 +74,7 @@ public class DescribeTableRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the table to describe.
      */
+
     public String getTableName() {
         return this.tableName;
     }
@@ -87,6 +89,7 @@ public class DescribeTableRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTableRequest withTableName(String tableName) {
         setTableName(tableName);
         return this;

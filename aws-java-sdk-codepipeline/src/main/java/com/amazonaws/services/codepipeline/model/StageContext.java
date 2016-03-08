@@ -40,6 +40,7 @@ public class StageContext implements Serializable, Cloneable {
      * @param name
      *        The name of the stage.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -51,6 +52,7 @@ public class StageContext implements Serializable, Cloneable {
      * 
      * @return The name of the stage.
      */
+
     public String getName() {
         return this.name;
     }
@@ -65,6 +67,7 @@ public class StageContext implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StageContext withName(String name) {
         setName(name);
         return this;

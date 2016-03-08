@@ -37,6 +37,7 @@ public class DescribeAdjustmentTypesResult implements Serializable, Cloneable {
      * 
      * @return The policy adjustment types.
      */
+
     public java.util.List<AdjustmentType> getAdjustmentTypes() {
         if (adjustmentTypes == null) {
             adjustmentTypes = new com.amazonaws.internal.SdkInternalList<AdjustmentType>();
@@ -52,6 +53,7 @@ public class DescribeAdjustmentTypesResult implements Serializable, Cloneable {
      * @param adjustmentTypes
      *        The policy adjustment types.
      */
+
     public void setAdjustmentTypes(
             java.util.Collection<AdjustmentType> adjustmentTypes) {
         if (adjustmentTypes == null) {
@@ -79,6 +81,7 @@ public class DescribeAdjustmentTypesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAdjustmentTypesResult withAdjustmentTypes(
             AdjustmentType... adjustmentTypes) {
         if (this.adjustmentTypes == null) {
@@ -101,6 +104,7 @@ public class DescribeAdjustmentTypesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAdjustmentTypesResult withAdjustmentTypes(
             java.util.Collection<AdjustmentType> adjustmentTypes) {
         setAdjustmentTypes(adjustmentTypes);

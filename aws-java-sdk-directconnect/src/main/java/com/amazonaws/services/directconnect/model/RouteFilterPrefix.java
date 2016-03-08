@@ -52,6 +52,7 @@ public class RouteFilterPrefix implements Serializable, Cloneable {
      *        <p>
      *        Example: 10.10.10.0/24,10.10.11.0/24
      */
+
     public void setCidr(String cidr) {
         this.cidr = cidr;
     }
@@ -70,6 +71,7 @@ public class RouteFilterPrefix implements Serializable, Cloneable {
      *         <p>
      *         Example: 10.10.10.0/24,10.10.11.0/24
      */
+
     public String getCidr() {
         return this.cidr;
     }
@@ -91,6 +93,7 @@ public class RouteFilterPrefix implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RouteFilterPrefix withCidr(String cidr) {
         setCidr(cidr);
         return this;

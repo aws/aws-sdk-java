@@ -54,6 +54,7 @@ public class CreateBuildRequest extends AmazonWebServiceRequest implements
      *        need to be unique. A build name can be changed later using
      *        <a>UpdateBuild</a>.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -68,6 +69,7 @@ public class CreateBuildRequest extends AmazonWebServiceRequest implements
      *         need to be unique. A build name can be changed later using
      *         <a>UpdateBuild</a>.
      */
+
     public String getName() {
         return this.name;
     }
@@ -85,6 +87,7 @@ public class CreateBuildRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateBuildRequest withName(String name) {
         setName(name);
         return this;
@@ -102,6 +105,7 @@ public class CreateBuildRequest extends AmazonWebServiceRequest implements
      *        be unique to a build. A build version can be changed later using
      *        <a>UpdateBuild</a>.
      */
+
     public void setVersion(String version) {
         this.version = version;
     }
@@ -117,6 +121,7 @@ public class CreateBuildRequest extends AmazonWebServiceRequest implements
      *         to be unique to a build. A build version can be changed later
      *         using <a>UpdateBuild</a>.
      */
+
     public String getVersion() {
         return this.version;
     }
@@ -135,6 +140,7 @@ public class CreateBuildRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateBuildRequest withVersion(String version) {
         setVersion(version);
         return this;

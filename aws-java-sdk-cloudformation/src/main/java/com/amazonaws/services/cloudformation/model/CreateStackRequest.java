@@ -213,6 +213,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *        sensitive) and hyphens. It must start with an alphabetic character
      *        and cannot be longer than 128 characters.
      */
+
     public void setStackName(String stackName) {
         this.stackName = stackName;
     }
@@ -232,6 +233,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *         sensitive) and hyphens. It must start with an alphabetic
      *         character and cannot be longer than 128 characters.
      */
+
     public String getStackName() {
         return this.stackName;
     }
@@ -254,6 +256,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateStackRequest withStackName(String stackName) {
         setStackName(stackName);
         return this;
@@ -282,6 +285,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *        Conditional: You must specify either the <code>TemplateBody</code>
      *        or the <code>TemplateURL</code> parameter, but not both.
      */
+
     public void setTemplateBody(String templateBody) {
         this.templateBody = templateBody;
     }
@@ -309,6 +313,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *         <code>TemplateBody</code> or the <code>TemplateURL</code>
      *         parameter, but not both.
      */
+
     public String getTemplateBody() {
         return this.templateBody;
     }
@@ -338,6 +343,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateStackRequest withTemplateBody(String templateBody) {
         setTemplateBody(templateBody);
         return this;
@@ -366,6 +372,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *        Conditional: You must specify either the <code>TemplateBody</code>
      *        or the <code>TemplateURL</code> parameter, but not both.
      */
+
     public void setTemplateURL(String templateURL) {
         this.templateURL = templateURL;
     }
@@ -393,6 +400,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *         <code>TemplateBody</code> or the <code>TemplateURL</code>
      *         parameter, but not both.
      */
+
     public String getTemplateURL() {
         return this.templateURL;
     }
@@ -422,6 +430,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateStackRequest withTemplateURL(String templateURL) {
         setTemplateURL(templateURL);
         return this;
@@ -440,6 +449,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *         "http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html"
      *         >Parameter</a> data type.
      */
+
     public java.util.List<Parameter> getParameters() {
         if (parameters == null) {
             parameters = new com.amazonaws.internal.SdkInternalList<Parameter>();
@@ -461,6 +471,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html"
      *        >Parameter</a> data type.
      */
+
     public void setParameters(java.util.Collection<Parameter> parameters) {
         if (parameters == null) {
             this.parameters = null;
@@ -493,6 +504,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateStackRequest withParameters(Parameter... parameters) {
         if (this.parameters == null) {
             setParameters(new com.amazonaws.internal.SdkInternalList<Parameter>(
@@ -520,6 +532,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateStackRequest withParameters(
             java.util.Collection<Parameter> parameters) {
         setParameters(parameters);
@@ -544,6 +557,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        Default: <code>false</code>
      */
+
     public void setDisableRollback(Boolean disableRollback) {
         this.disableRollback = disableRollback;
     }
@@ -565,6 +579,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Default: <code>false</code>
      */
+
     public Boolean getDisableRollback() {
         return this.disableRollback;
     }
@@ -589,6 +604,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateStackRequest withDisableRollback(Boolean disableRollback) {
         setDisableRollback(disableRollback);
         return this;
@@ -611,6 +627,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Default: <code>false</code>
      */
+
     public Boolean isDisableRollback() {
         return this.disableRollback;
     }
@@ -627,6 +644,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *        CREATE_FAILED; if <code>DisableRollback</code> is not set or is
      *        set to <code>false</code>, the stack will be rolled back.
      */
+
     public void setTimeoutInMinutes(Integer timeoutInMinutes) {
         this.timeoutInMinutes = timeoutInMinutes;
     }
@@ -642,6 +660,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *         CREATE_FAILED; if <code>DisableRollback</code> is not set or is
      *         set to <code>false</code>, the stack will be rolled back.
      */
+
     public Integer getTimeoutInMinutes() {
         return this.timeoutInMinutes;
     }
@@ -660,6 +679,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateStackRequest withTimeoutInMinutes(Integer timeoutInMinutes) {
         setTimeoutInMinutes(timeoutInMinutes);
         return this;
@@ -678,6 +698,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *         href="http://console.aws.amazon.com/sns">SNS console</a> or your
      *         Command Line Interface (CLI).
      */
+
     public java.util.List<String> getNotificationARNs() {
         if (notificationARNs == null) {
             notificationARNs = new com.amazonaws.internal.SdkInternalList<String>();
@@ -699,6 +720,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *        href="http://console.aws.amazon.com/sns">SNS console</a> or your
      *        Command Line Interface (CLI).
      */
+
     public void setNotificationARNs(
             java.util.Collection<String> notificationARNs) {
         if (notificationARNs == null) {
@@ -732,6 +754,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateStackRequest withNotificationARNs(String... notificationARNs) {
         if (this.notificationARNs == null) {
             setNotificationARNs(new com.amazonaws.internal.SdkInternalList<String>(
@@ -759,6 +782,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateStackRequest withNotificationARNs(
             java.util.Collection<String> notificationARNs) {
         setNotificationARNs(notificationARNs);
@@ -823,6 +847,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *         <code>InsufficientCapabilities</code> error.
      * @see Capability
      */
+
     public java.util.List<String> getCapabilities() {
         if (capabilities == null) {
             capabilities = new com.amazonaws.internal.SdkInternalList<String>();
@@ -889,6 +914,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *        <code>InsufficientCapabilities</code> error.
      * @see Capability
      */
+
     public void setCapabilities(java.util.Collection<String> capabilities) {
         if (capabilities == null) {
             this.capabilities = null;
@@ -966,6 +992,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see Capability
      */
+
     public CreateStackRequest withCapabilities(String... capabilities) {
         if (this.capabilities == null) {
             setCapabilities(new com.amazonaws.internal.SdkInternalList<String>(
@@ -1038,6 +1065,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see Capability
      */
+
     public CreateStackRequest withCapabilities(
             java.util.Collection<String> capabilities) {
         setCapabilities(capabilities);
@@ -1105,6 +1133,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see Capability
      */
+
     public CreateStackRequest withCapabilities(Capability... capabilities) {
         com.amazonaws.internal.SdkInternalList<String> capabilitiesCopy = new com.amazonaws.internal.SdkInternalList<String>(
                 capabilities.length);
@@ -1163,6 +1192,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *         "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html"
      *         >Controlling Access with AWS Identity and Access Management</a>.
      */
+
     public java.util.List<String> getResourceTypes() {
         if (resourceTypes == null) {
             resourceTypes = new com.amazonaws.internal.SdkInternalList<String>();
@@ -1215,6 +1245,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html"
      *        >Controlling Access with AWS Identity and Access Management</a>.
      */
+
     public void setResourceTypes(java.util.Collection<String> resourceTypes) {
         if (resourceTypes == null) {
             this.resourceTypes = null;
@@ -1278,6 +1309,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateStackRequest withResourceTypes(String... resourceTypes) {
         if (this.resourceTypes == null) {
             setResourceTypes(new com.amazonaws.internal.SdkInternalList<String>(
@@ -1336,6 +1368,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateStackRequest withResourceTypes(
             java.util.Collection<String> resourceTypes) {
         setResourceTypes(resourceTypes);
@@ -1361,6 +1394,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *        Default: <code>ROLLBACK</code>
      * @see OnFailure
      */
+
     public void setOnFailure(String onFailure) {
         this.onFailure = onFailure;
     }
@@ -1383,6 +1417,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *         Default: <code>ROLLBACK</code>
      * @see OnFailure
      */
+
     public String getOnFailure() {
         return this.onFailure;
     }
@@ -1408,6 +1443,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see OnFailure
      */
+
     public CreateStackRequest withOnFailure(String onFailure) {
         setOnFailure(onFailure);
         return this;
@@ -1434,6 +1470,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see OnFailure
      */
+
     public void setOnFailure(OnFailure onFailure) {
         this.onFailure = onFailure.toString();
     }
@@ -1459,6 +1496,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see OnFailure
      */
+
     public CreateStackRequest withOnFailure(OnFailure onFailure) {
         setOnFailure(onFailure);
         return this;
@@ -1483,6 +1521,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *        <code>StackPolicyBody</code> or the <code>StackPolicyURL</code>
      *        parameter, but not both.
      */
+
     public void setStackPolicyBody(String stackPolicyBody) {
         this.stackPolicyBody = stackPolicyBody;
     }
@@ -1505,6 +1544,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *         <code>StackPolicyBody</code> or the <code>StackPolicyURL</code>
      *         parameter, but not both.
      */
+
     public String getStackPolicyBody() {
         return this.stackPolicyBody;
     }
@@ -1530,6 +1570,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateStackRequest withStackPolicyBody(String stackPolicyBody) {
         setStackPolicyBody(stackPolicyBody);
         return this;
@@ -1550,6 +1591,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *        <code>StackPolicyBody</code> or the <code>StackPolicyURL</code>
      *        parameter, but not both.
      */
+
     public void setStackPolicyURL(String stackPolicyURL) {
         this.stackPolicyURL = stackPolicyURL;
     }
@@ -1568,6 +1610,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *         <code>StackPolicyBody</code> or the <code>StackPolicyURL</code>
      *         parameter, but not both.
      */
+
     public String getStackPolicyURL() {
         return this.stackPolicyURL;
     }
@@ -1589,6 +1632,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateStackRequest withStackPolicyURL(String stackPolicyURL) {
         setStackPolicyURL(stackPolicyURL);
         return this;
@@ -1605,6 +1649,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *         also propagates these tags to the resources created in the stack.
      *         A maximum number of 10 tags can be specified.
      */
+
     public java.util.List<Tag> getTags() {
         if (tags == null) {
             tags = new com.amazonaws.internal.SdkInternalList<Tag>();
@@ -1624,6 +1669,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *        also propagates these tags to the resources created in the stack.
      *        A maximum number of 10 tags can be specified.
      */
+
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
             this.tags = null;
@@ -1653,6 +1699,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateStackRequest withTags(Tag... tags) {
         if (this.tags == null) {
             setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
@@ -1677,6 +1724,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateStackRequest withTags(java.util.Collection<Tag> tags) {
         setTags(tags);
         return this;

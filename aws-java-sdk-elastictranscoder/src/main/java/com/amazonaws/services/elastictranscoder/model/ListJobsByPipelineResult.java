@@ -49,6 +49,7 @@ public class ListJobsByPipelineResult implements Serializable, Cloneable {
      * @return An array of <code>Job</code> objects that are in the specified
      *         pipeline.
      */
+
     public java.util.List<Job> getJobs() {
         if (jobs == null) {
             jobs = new com.amazonaws.internal.SdkInternalList<Job>();
@@ -65,6 +66,7 @@ public class ListJobsByPipelineResult implements Serializable, Cloneable {
      *        An array of <code>Job</code> objects that are in the specified
      *        pipeline.
      */
+
     public void setJobs(java.util.Collection<Job> jobs) {
         if (jobs == null) {
             this.jobs = null;
@@ -91,6 +93,7 @@ public class ListJobsByPipelineResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListJobsByPipelineResult withJobs(Job... jobs) {
         if (this.jobs == null) {
             setJobs(new com.amazonaws.internal.SdkInternalList<Job>(jobs.length));
@@ -112,6 +115,7 @@ public class ListJobsByPipelineResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListJobsByPipelineResult withJobs(java.util.Collection<Job> jobs) {
         setJobs(jobs);
         return this;
@@ -131,6 +135,7 @@ public class ListJobsByPipelineResult implements Serializable, Cloneable {
      *        one page or when you've reached the last page of results, the
      *        value of <code>NextPageToken</code> is <code>null</code>.
      */
+
     public void setNextPageToken(String nextPageToken) {
         this.nextPageToken = nextPageToken;
     }
@@ -148,6 +153,7 @@ public class ListJobsByPipelineResult implements Serializable, Cloneable {
      *         one page or when you've reached the last page of results, the
      *         value of <code>NextPageToken</code> is <code>null</code>.
      */
+
     public String getNextPageToken() {
         return this.nextPageToken;
     }
@@ -168,6 +174,7 @@ public class ListJobsByPipelineResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListJobsByPipelineResult withNextPageToken(String nextPageToken) {
         setNextPageToken(nextPageToken);
         return this;

@@ -165,6 +165,7 @@ public class MetricCollectionType implements Serializable, Cloneable {
      *        </p>
      *        </li>
      */
+
     public void setMetric(String metric) {
         this.metric = metric;
     }
@@ -259,6 +260,7 @@ public class MetricCollectionType implements Serializable, Cloneable {
      *         </p>
      *         </li>
      */
+
     public String getMetric() {
         return this.metric;
     }
@@ -356,6 +358,7 @@ public class MetricCollectionType implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MetricCollectionType withMetric(String metric) {
         setMetric(metric);
         return this;

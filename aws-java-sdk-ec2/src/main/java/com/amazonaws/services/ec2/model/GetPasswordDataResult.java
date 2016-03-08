@@ -50,6 +50,7 @@ public class GetPasswordDataResult implements Serializable, Cloneable {
      * @param instanceId
      *        The ID of the Windows instance.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -61,6 +62,7 @@ public class GetPasswordDataResult implements Serializable, Cloneable {
      * 
      * @return The ID of the Windows instance.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
@@ -75,6 +77,7 @@ public class GetPasswordDataResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetPasswordDataResult withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;
@@ -88,6 +91,7 @@ public class GetPasswordDataResult implements Serializable, Cloneable {
      * @param timestamp
      *        The time the data was last updated.
      */
+
     public void setTimestamp(java.util.Date timestamp) {
         this.timestamp = timestamp;
     }
@@ -99,6 +103,7 @@ public class GetPasswordDataResult implements Serializable, Cloneable {
      * 
      * @return The time the data was last updated.
      */
+
     public java.util.Date getTimestamp() {
         return this.timestamp;
     }
@@ -113,6 +118,7 @@ public class GetPasswordDataResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetPasswordDataResult withTimestamp(java.util.Date timestamp) {
         setTimestamp(timestamp);
         return this;
@@ -126,6 +132,7 @@ public class GetPasswordDataResult implements Serializable, Cloneable {
      * @param passwordData
      *        The password of the instance.
      */
+
     public void setPasswordData(String passwordData) {
         this.passwordData = passwordData;
     }
@@ -137,6 +144,7 @@ public class GetPasswordDataResult implements Serializable, Cloneable {
      * 
      * @return The password of the instance.
      */
+
     public String getPasswordData() {
         return this.passwordData;
     }
@@ -151,6 +159,7 @@ public class GetPasswordDataResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetPasswordDataResult withPasswordData(String passwordData) {
         setPasswordData(passwordData);
         return this;

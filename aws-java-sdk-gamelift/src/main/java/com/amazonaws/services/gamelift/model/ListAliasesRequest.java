@@ -79,6 +79,7 @@ public class ListAliasesRequest extends AmazonWebServiceRequest implements
      *        message embedded.lt/ligtlt/ulgt
      * @see RoutingStrategyType
      */
+
     public void setRoutingStrategyType(String routingStrategyType) {
         this.routingStrategyType = routingStrategyType;
     }
@@ -100,6 +101,7 @@ public class ListAliasesRequest extends AmazonWebServiceRequest implements
      *         message embedded.lt/ligtlt/ulgt
      * @see RoutingStrategyType
      */
+
     public String getRoutingStrategyType() {
         return this.routingStrategyType;
     }
@@ -124,6 +126,7 @@ public class ListAliasesRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see RoutingStrategyType
      */
+
     public ListAliasesRequest withRoutingStrategyType(String routingStrategyType) {
         setRoutingStrategyType(routingStrategyType);
         return this;
@@ -149,6 +152,7 @@ public class ListAliasesRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see RoutingStrategyType
      */
+
     public void setRoutingStrategyType(RoutingStrategyType routingStrategyType) {
         this.routingStrategyType = routingStrategyType.toString();
     }
@@ -173,6 +177,7 @@ public class ListAliasesRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see RoutingStrategyType
      */
+
     public ListAliasesRequest withRoutingStrategyType(
             RoutingStrategyType routingStrategyType) {
         setRoutingStrategyType(routingStrategyType);
@@ -189,6 +194,7 @@ public class ListAliasesRequest extends AmazonWebServiceRequest implements
      *        Descriptive label associated with this alias. Alias names do not
      *        need to be unique.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -202,6 +208,7 @@ public class ListAliasesRequest extends AmazonWebServiceRequest implements
      * @return Descriptive label associated with this alias. Alias names do not
      *         need to be unique.
      */
+
     public String getName() {
         return this.name;
     }
@@ -218,6 +225,7 @@ public class ListAliasesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListAliasesRequest withName(String name) {
         setName(name);
         return this;
@@ -233,6 +241,7 @@ public class ListAliasesRequest extends AmazonWebServiceRequest implements
      *        Maximum number of results to return. You can use this parameter
      *        with <i>NextToken</i> to get results as a set of sequential pages.
      */
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -247,6 +256,7 @@ public class ListAliasesRequest extends AmazonWebServiceRequest implements
      *         with <i>NextToken</i> to get results as a set of sequential
      *         pages.
      */
+
     public Integer getLimit() {
         return this.limit;
     }
@@ -263,6 +273,7 @@ public class ListAliasesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListAliasesRequest withLimit(Integer limit) {
         setLimit(limit);
         return this;
@@ -282,6 +293,7 @@ public class ListAliasesRequest extends AmazonWebServiceRequest implements
      *        retrieved. To start at the beginning of a result set, do not set
      *        this parameter.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -299,6 +311,7 @@ public class ListAliasesRequest extends AmazonWebServiceRequest implements
      *         results to be retrieved. To start at the beginning of a result
      *         set, do not set this parameter.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -319,6 +332,7 @@ public class ListAliasesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListAliasesRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

@@ -39,6 +39,7 @@ public class CreateKeyPairResult implements Serializable, Cloneable {
      * @param keyPair
      *        Describes a key pair.
      */
+
     public void setKeyPair(KeyPair keyPair) {
         this.keyPair = keyPair;
     }
@@ -50,6 +51,7 @@ public class CreateKeyPairResult implements Serializable, Cloneable {
      * 
      * @return Describes a key pair.
      */
+
     public KeyPair getKeyPair() {
         return this.keyPair;
     }
@@ -64,6 +66,7 @@ public class CreateKeyPairResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateKeyPairResult withKeyPair(KeyPair keyPair) {
         setKeyPair(keyPair);
         return this;

@@ -53,6 +53,7 @@ public class InstanceGroupStatus implements Serializable, Cloneable {
      *        The current state of the instance group.
      * @see InstanceGroupState
      */
+
     public void setState(String state) {
         this.state = state;
     }
@@ -65,6 +66,7 @@ public class InstanceGroupStatus implements Serializable, Cloneable {
      * @return The current state of the instance group.
      * @see InstanceGroupState
      */
+
     public String getState() {
         return this.state;
     }
@@ -80,6 +82,7 @@ public class InstanceGroupStatus implements Serializable, Cloneable {
      *         chained together.
      * @see InstanceGroupState
      */
+
     public InstanceGroupStatus withState(String state) {
         setState(state);
         return this;
@@ -96,6 +99,7 @@ public class InstanceGroupStatus implements Serializable, Cloneable {
      *         chained together.
      * @see InstanceGroupState
      */
+
     public void setState(InstanceGroupState state) {
         this.state = state.toString();
     }
@@ -111,6 +115,7 @@ public class InstanceGroupStatus implements Serializable, Cloneable {
      *         chained together.
      * @see InstanceGroupState
      */
+
     public InstanceGroupStatus withState(InstanceGroupState state) {
         setState(state);
         return this;
@@ -124,6 +129,7 @@ public class InstanceGroupStatus implements Serializable, Cloneable {
      * @param stateChangeReason
      *        The status change reason details for the instance group.
      */
+
     public void setStateChangeReason(
             InstanceGroupStateChangeReason stateChangeReason) {
         this.stateChangeReason = stateChangeReason;
@@ -136,6 +142,7 @@ public class InstanceGroupStatus implements Serializable, Cloneable {
      * 
      * @return The status change reason details for the instance group.
      */
+
     public InstanceGroupStateChangeReason getStateChangeReason() {
         return this.stateChangeReason;
     }
@@ -150,6 +157,7 @@ public class InstanceGroupStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceGroupStatus withStateChangeReason(
             InstanceGroupStateChangeReason stateChangeReason) {
         setStateChangeReason(stateChangeReason);
@@ -164,6 +172,7 @@ public class InstanceGroupStatus implements Serializable, Cloneable {
      * @param timeline
      *        The timeline of the instance group status over time.
      */
+
     public void setTimeline(InstanceGroupTimeline timeline) {
         this.timeline = timeline;
     }
@@ -175,6 +184,7 @@ public class InstanceGroupStatus implements Serializable, Cloneable {
      * 
      * @return The timeline of the instance group status over time.
      */
+
     public InstanceGroupTimeline getTimeline() {
         return this.timeline;
     }
@@ -189,6 +199,7 @@ public class InstanceGroupStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceGroupStatus withTimeline(InstanceGroupTimeline timeline) {
         setTimeline(timeline);
         return this;

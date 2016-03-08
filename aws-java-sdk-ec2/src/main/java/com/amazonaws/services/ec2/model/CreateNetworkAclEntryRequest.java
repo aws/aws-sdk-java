@@ -92,6 +92,7 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest
      * @param networkAclId
      *        The ID of the network ACL.
      */
+
     public void setNetworkAclId(String networkAclId) {
         this.networkAclId = networkAclId;
     }
@@ -103,6 +104,7 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the network ACL.
      */
+
     public String getNetworkAclId() {
         return this.networkAclId;
     }
@@ -117,6 +119,7 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateNetworkAclEntryRequest withNetworkAclId(String networkAclId) {
         setNetworkAclId(networkAclId);
         return this;
@@ -137,6 +140,7 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest
      *        <p>
      *        Constraints: Positive integer from 1 to 32766
      */
+
     public void setRuleNumber(Integer ruleNumber) {
         this.ruleNumber = ruleNumber;
     }
@@ -155,6 +159,7 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest
      *         <p>
      *         Constraints: Positive integer from 1 to 32766
      */
+
     public Integer getRuleNumber() {
         return this.ruleNumber;
     }
@@ -176,6 +181,7 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateNetworkAclEntryRequest withRuleNumber(Integer ruleNumber) {
         setRuleNumber(ruleNumber);
         return this;
@@ -189,6 +195,7 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest
      * @param protocol
      *        The protocol. A value of -1 means all protocols.
      */
+
     public void setProtocol(String protocol) {
         this.protocol = protocol;
     }
@@ -200,6 +207,7 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest
      * 
      * @return The protocol. A value of -1 means all protocols.
      */
+
     public String getProtocol() {
         return this.protocol;
     }
@@ -214,6 +222,7 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateNetworkAclEntryRequest withProtocol(String protocol) {
         setProtocol(protocol);
         return this;
@@ -229,6 +238,7 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest
      *        rule.
      * @see RuleAction
      */
+
     public void setRuleAction(String ruleAction) {
         this.ruleAction = ruleAction;
     }
@@ -242,6 +252,7 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest
      *         rule.
      * @see RuleAction
      */
+
     public String getRuleAction() {
         return this.ruleAction;
     }
@@ -258,6 +269,7 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see RuleAction
      */
+
     public CreateNetworkAclEntryRequest withRuleAction(String ruleAction) {
         setRuleAction(ruleAction);
         return this;
@@ -275,6 +287,7 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see RuleAction
      */
+
     public void setRuleAction(RuleAction ruleAction) {
         this.ruleAction = ruleAction.toString();
     }
@@ -291,6 +304,7 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see RuleAction
      */
+
     public CreateNetworkAclEntryRequest withRuleAction(RuleAction ruleAction) {
         setRuleAction(ruleAction);
         return this;
@@ -306,6 +320,7 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest
      *        Indicates whether this is an egress rule (rule is applied to
      *        traffic leaving the subnet).
      */
+
     public void setEgress(Boolean egress) {
         this.egress = egress;
     }
@@ -319,6 +334,7 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest
      * @return Indicates whether this is an egress rule (rule is applied to
      *         traffic leaving the subnet).
      */
+
     public Boolean getEgress() {
         return this.egress;
     }
@@ -335,6 +351,7 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateNetworkAclEntryRequest withEgress(Boolean egress) {
         setEgress(egress);
         return this;
@@ -349,6 +366,7 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest
      * @return Indicates whether this is an egress rule (rule is applied to
      *         traffic leaving the subnet).
      */
+
     public Boolean isEgress() {
         return this.egress;
     }
@@ -363,6 +381,7 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest
      *        The network range to allow or deny, in CIDR notation (for example
      *        <code>172.16.0.0/24</code>).
      */
+
     public void setCidrBlock(String cidrBlock) {
         this.cidrBlock = cidrBlock;
     }
@@ -376,6 +395,7 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest
      * @return The network range to allow or deny, in CIDR notation (for example
      *         <code>172.16.0.0/24</code>).
      */
+
     public String getCidrBlock() {
         return this.cidrBlock;
     }
@@ -392,6 +412,7 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateNetworkAclEntryRequest withCidrBlock(String cidrBlock) {
         setCidrBlock(cidrBlock);
         return this;
@@ -407,6 +428,7 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest
      *        ICMP protocol: The ICMP type and code. Required if specifying ICMP
      *        for the protocol.
      */
+
     public void setIcmpTypeCode(IcmpTypeCode icmpTypeCode) {
         this.icmpTypeCode = icmpTypeCode;
     }
@@ -420,6 +442,7 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest
      * @return ICMP protocol: The ICMP type and code. Required if specifying
      *         ICMP for the protocol.
      */
+
     public IcmpTypeCode getIcmpTypeCode() {
         return this.icmpTypeCode;
     }
@@ -436,6 +459,7 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateNetworkAclEntryRequest withIcmpTypeCode(
             IcmpTypeCode icmpTypeCode) {
         setIcmpTypeCode(icmpTypeCode);
@@ -450,6 +474,7 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest
      * @param portRange
      *        TCP or UDP protocols: The range of ports the rule applies to.
      */
+
     public void setPortRange(PortRange portRange) {
         this.portRange = portRange;
     }
@@ -461,6 +486,7 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest
      * 
      * @return TCP or UDP protocols: The range of ports the rule applies to.
      */
+
     public PortRange getPortRange() {
         return this.portRange;
     }
@@ -475,6 +501,7 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateNetworkAclEntryRequest withPortRange(PortRange portRange) {
         setPortRange(portRange);
         return this;

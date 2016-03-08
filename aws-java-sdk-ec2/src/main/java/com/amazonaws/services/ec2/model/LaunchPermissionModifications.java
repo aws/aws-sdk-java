@@ -47,6 +47,7 @@ public class LaunchPermissionModifications implements Serializable, Cloneable {
      * @return The AWS account ID to add to the list of launch permissions for
      *         the AMI.
      */
+
     public java.util.List<LaunchPermission> getAdd() {
         if (add == null) {
             add = new com.amazonaws.internal.SdkInternalList<LaunchPermission>();
@@ -63,6 +64,7 @@ public class LaunchPermissionModifications implements Serializable, Cloneable {
      *        The AWS account ID to add to the list of launch permissions for
      *        the AMI.
      */
+
     public void setAdd(java.util.Collection<LaunchPermission> add) {
         if (add == null) {
             this.add = null;
@@ -90,6 +92,7 @@ public class LaunchPermissionModifications implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LaunchPermissionModifications withAdd(LaunchPermission... add) {
         if (this.add == null) {
             setAdd(new com.amazonaws.internal.SdkInternalList<LaunchPermission>(
@@ -112,6 +115,7 @@ public class LaunchPermissionModifications implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LaunchPermissionModifications withAdd(
             java.util.Collection<LaunchPermission> add) {
         setAdd(add);
@@ -127,6 +131,7 @@ public class LaunchPermissionModifications implements Serializable, Cloneable {
      * @return The AWS account ID to remove from the list of launch permissions
      *         for the AMI.
      */
+
     public java.util.List<LaunchPermission> getRemove() {
         if (remove == null) {
             remove = new com.amazonaws.internal.SdkInternalList<LaunchPermission>();
@@ -144,6 +149,7 @@ public class LaunchPermissionModifications implements Serializable, Cloneable {
      *        The AWS account ID to remove from the list of launch permissions
      *        for the AMI.
      */
+
     public void setRemove(java.util.Collection<LaunchPermission> remove) {
         if (remove == null) {
             this.remove = null;
@@ -172,6 +178,7 @@ public class LaunchPermissionModifications implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LaunchPermissionModifications withRemove(LaunchPermission... remove) {
         if (this.remove == null) {
             setRemove(new com.amazonaws.internal.SdkInternalList<LaunchPermission>(
@@ -195,6 +202,7 @@ public class LaunchPermissionModifications implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LaunchPermissionModifications withRemove(
             java.util.Collection<LaunchPermission> remove) {
         setRemove(remove);

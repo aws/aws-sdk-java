@@ -102,6 +102,7 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements
      *        on which to run your service. If you do not specify a cluster, the
      *        default cluster is assumed.
      */
+
     public void setCluster(String cluster) {
         this.cluster = cluster;
     }
@@ -117,6 +118,7 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements
      *         on which to run your service. If you do not specify a cluster,
      *         the default cluster is assumed.
      */
+
     public String getCluster() {
         return this.cluster;
     }
@@ -135,6 +137,7 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateServiceRequest withCluster(String cluster) {
         setCluster(cluster);
         return this;
@@ -155,6 +158,7 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements
      *        named services in multiple clusters within a region or across
      *        multiple regions.
      */
+
     public void setServiceName(String serviceName) {
         this.serviceName = serviceName;
     }
@@ -173,6 +177,7 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements
      *         similarly named services in multiple clusters within a region or
      *         across multiple regions.
      */
+
     public String getServiceName() {
         return this.serviceName;
     }
@@ -194,6 +199,7 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateServiceRequest withServiceName(String serviceName) {
         setServiceName(serviceName);
         return this;
@@ -214,6 +220,7 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements
      *        <code>revision</code> is not specified, the latest
      *        <code>ACTIVE</code> revision is used.
      */
+
     public void setTaskDefinition(String taskDefinition) {
         this.taskDefinition = taskDefinition;
     }
@@ -232,6 +239,7 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements
      *         <code>revision</code> is not specified, the latest
      *         <code>ACTIVE</code> revision is used.
      */
+
     public String getTaskDefinition() {
         return this.taskDefinition;
     }
@@ -253,6 +261,7 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateServiceRequest withTaskDefinition(String taskDefinition) {
         setTaskDefinition(taskDefinition);
         return this;
@@ -270,6 +279,7 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements
      *         definition), and the container port to access from the load
      *         balancer.
      */
+
     public java.util.List<LoadBalancer> getLoadBalancers() {
         if (loadBalancers == null) {
             loadBalancers = new com.amazonaws.internal.SdkInternalList<LoadBalancer>();
@@ -290,6 +300,7 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements
      *        definition), and the container port to access from the load
      *        balancer.
      */
+
     public void setLoadBalancers(
             java.util.Collection<LoadBalancer> loadBalancers) {
         if (loadBalancers == null) {
@@ -322,6 +333,7 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateServiceRequest withLoadBalancers(LoadBalancer... loadBalancers) {
         if (this.loadBalancers == null) {
             setLoadBalancers(new com.amazonaws.internal.SdkInternalList<LoadBalancer>(
@@ -348,6 +360,7 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateServiceRequest withLoadBalancers(
             java.util.Collection<LoadBalancer> loadBalancers) {
         setLoadBalancers(loadBalancers);
@@ -364,6 +377,7 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements
      *        The number of instantiations of the specified task definition to
      *        place and keep running on your cluster.
      */
+
     public void setDesiredCount(Integer desiredCount) {
         this.desiredCount = desiredCount;
     }
@@ -377,6 +391,7 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements
      * @return The number of instantiations of the specified task definition to
      *         place and keep running on your cluster.
      */
+
     public Integer getDesiredCount() {
         return this.desiredCount;
     }
@@ -393,6 +408,7 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateServiceRequest withDesiredCount(Integer desiredCount) {
         setDesiredCount(desiredCount);
         return this;
@@ -408,6 +424,7 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements
      *        Unique, case-sensitive identifier you provide to ensure the
      *        idempotency of the request. Up to 32 ASCII characters are allowed.
      */
+
     public void setClientToken(String clientToken) {
         this.clientToken = clientToken;
     }
@@ -422,6 +439,7 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements
      *         idempotency of the request. Up to 32 ASCII characters are
      *         allowed.
      */
+
     public String getClientToken() {
         return this.clientToken;
     }
@@ -438,6 +456,7 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateServiceRequest withClientToken(String clientToken) {
         setClientToken(clientToken);
         return this;
@@ -457,6 +476,7 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements
      *        balancer on your behalf. This parameter is only required if you
      *        are using a load balancer with your service.
      */
+
     public void setRole(String role) {
         this.role = role;
     }
@@ -474,6 +494,7 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements
      *         balancer on your behalf. This parameter is only required if you
      *         are using a load balancer with your service.
      */
+
     public String getRole() {
         return this.role;
     }
@@ -494,6 +515,7 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateServiceRequest withRole(String role) {
         setRole(role);
         return this;
@@ -510,6 +532,7 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements
      *        during the deployment and the ordering of stopping and starting
      *        tasks.
      */
+
     public void setDeploymentConfiguration(
             DeploymentConfiguration deploymentConfiguration) {
         this.deploymentConfiguration = deploymentConfiguration;
@@ -525,6 +548,7 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements
      *         during the deployment and the ordering of stopping and starting
      *         tasks.
      */
+
     public DeploymentConfiguration getDeploymentConfiguration() {
         return this.deploymentConfiguration;
     }
@@ -542,6 +566,7 @@ public class CreateServiceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateServiceRequest withDeploymentConfiguration(
             DeploymentConfiguration deploymentConfiguration) {
         setDeploymentConfiguration(deploymentConfiguration);

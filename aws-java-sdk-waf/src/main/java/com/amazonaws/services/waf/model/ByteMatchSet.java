@@ -96,6 +96,7 @@ public class ByteMatchSet implements Serializable, Cloneable {
      *        <code>ByteMatchSetId</code> is returned by
      *        <a>CreateByteMatchSet</a> and by <a>ListByteMatchSets</a>.
      */
+
     public void setByteMatchSetId(String byteMatchSetId) {
         this.byteMatchSetId = byteMatchSetId;
     }
@@ -127,6 +128,7 @@ public class ByteMatchSet implements Serializable, Cloneable {
      *         <code>ByteMatchSetId</code> is returned by
      *         <a>CreateByteMatchSet</a> and by <a>ListByteMatchSets</a>.
      */
+
     public String getByteMatchSetId() {
         return this.byteMatchSetId;
     }
@@ -161,6 +163,7 @@ public class ByteMatchSet implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ByteMatchSet withByteMatchSetId(String byteMatchSetId) {
         setByteMatchSetId(byteMatchSetId);
         return this;
@@ -177,6 +180,7 @@ public class ByteMatchSet implements Serializable, Cloneable {
      *        can't change <code>Name</code> after you create a
      *        <code>ByteMatchSet</code>.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -191,6 +195,7 @@ public class ByteMatchSet implements Serializable, Cloneable {
      *         can't change <code>Name</code> after you create a
      *         <code>ByteMatchSet</code>.
      */
+
     public String getName() {
         return this.name;
     }
@@ -208,6 +213,7 @@ public class ByteMatchSet implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ByteMatchSet withName(String name) {
         setName(name);
         return this;
@@ -225,6 +231,7 @@ public class ByteMatchSet implements Serializable, Cloneable {
      *         requests, the location in requests that you want AWS WAF to
      *         search, and other settings.
      */
+
     public java.util.List<ByteMatchTuple> getByteMatchTuples() {
         return byteMatchTuples;
     }
@@ -242,6 +249,7 @@ public class ByteMatchSet implements Serializable, Cloneable {
      *        requests, the location in requests that you want AWS WAF to
      *        search, and other settings.
      */
+
     public void setByteMatchTuples(
             java.util.Collection<ByteMatchTuple> byteMatchTuples) {
         if (byteMatchTuples == null) {
@@ -274,6 +282,7 @@ public class ByteMatchSet implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ByteMatchSet withByteMatchTuples(ByteMatchTuple... byteMatchTuples) {
         if (this.byteMatchTuples == null) {
             setByteMatchTuples(new java.util.ArrayList<ByteMatchTuple>(
@@ -300,6 +309,7 @@ public class ByteMatchSet implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ByteMatchSet withByteMatchTuples(
             java.util.Collection<ByteMatchTuple> byteMatchTuples) {
         setByteMatchTuples(byteMatchTuples);

@@ -39,6 +39,7 @@ public class DeleteAlarmsRequest extends AmazonWebServiceRequest implements
      * 
      * @return A list of alarms to be deleted.
      */
+
     public java.util.List<String> getAlarmNames() {
         if (alarmNames == null) {
             alarmNames = new com.amazonaws.internal.SdkInternalList<String>();
@@ -54,6 +55,7 @@ public class DeleteAlarmsRequest extends AmazonWebServiceRequest implements
      * @param alarmNames
      *        A list of alarms to be deleted.
      */
+
     public void setAlarmNames(java.util.Collection<String> alarmNames) {
         if (alarmNames == null) {
             this.alarmNames = null;
@@ -80,6 +82,7 @@ public class DeleteAlarmsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteAlarmsRequest withAlarmNames(String... alarmNames) {
         if (this.alarmNames == null) {
             setAlarmNames(new com.amazonaws.internal.SdkInternalList<String>(
@@ -101,6 +104,7 @@ public class DeleteAlarmsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteAlarmsRequest withAlarmNames(
             java.util.Collection<String> alarmNames) {
         setAlarmNames(alarmNames);

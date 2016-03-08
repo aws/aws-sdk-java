@@ -44,6 +44,7 @@ public class DescribeScalingActivitiesResult implements Serializable, Cloneable 
      * 
      * @return The scaling activities.
      */
+
     public java.util.List<Activity> getActivities() {
         if (activities == null) {
             activities = new com.amazonaws.internal.SdkInternalList<Activity>();
@@ -59,6 +60,7 @@ public class DescribeScalingActivitiesResult implements Serializable, Cloneable 
      * @param activities
      *        The scaling activities.
      */
+
     public void setActivities(java.util.Collection<Activity> activities) {
         if (activities == null) {
             this.activities = null;
@@ -85,6 +87,7 @@ public class DescribeScalingActivitiesResult implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeScalingActivitiesResult withActivities(
             Activity... activities) {
         if (this.activities == null) {
@@ -107,6 +110,7 @@ public class DescribeScalingActivitiesResult implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeScalingActivitiesResult withActivities(
             java.util.Collection<Activity> activities) {
         setActivities(activities);
@@ -123,6 +127,7 @@ public class DescribeScalingActivitiesResult implements Serializable, Cloneable 
      *        The token to use when requesting the next set of items. If there
      *        are no additional items to return, the string is empty.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -136,6 +141,7 @@ public class DescribeScalingActivitiesResult implements Serializable, Cloneable 
      * @return The token to use when requesting the next set of items. If there
      *         are no additional items to return, the string is empty.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -152,6 +158,7 @@ public class DescribeScalingActivitiesResult implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeScalingActivitiesResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

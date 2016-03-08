@@ -40,6 +40,7 @@ public class DescribeCertificateResult implements Serializable, Cloneable {
      * @param certificateDescription
      *        The description of the certificate.
      */
+
     public void setCertificateDescription(
             CertificateDescription certificateDescription) {
         this.certificateDescription = certificateDescription;
@@ -52,6 +53,7 @@ public class DescribeCertificateResult implements Serializable, Cloneable {
      * 
      * @return The description of the certificate.
      */
+
     public CertificateDescription getCertificateDescription() {
         return this.certificateDescription;
     }
@@ -66,6 +68,7 @@ public class DescribeCertificateResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeCertificateResult withCertificateDescription(
             CertificateDescription certificateDescription) {
         setCertificateDescription(certificateDescription);

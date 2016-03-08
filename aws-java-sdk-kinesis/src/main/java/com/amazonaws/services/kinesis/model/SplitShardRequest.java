@@ -61,6 +61,7 @@ public class SplitShardRequest extends AmazonWebServiceRequest implements
      * @param streamName
      *        The name of the stream for the shard split.
      */
+
     public void setStreamName(String streamName) {
         this.streamName = streamName;
     }
@@ -72,6 +73,7 @@ public class SplitShardRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the stream for the shard split.
      */
+
     public String getStreamName() {
         return this.streamName;
     }
@@ -86,6 +88,7 @@ public class SplitShardRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SplitShardRequest withStreamName(String streamName) {
         setStreamName(streamName);
         return this;
@@ -99,6 +102,7 @@ public class SplitShardRequest extends AmazonWebServiceRequest implements
      * @param shardToSplit
      *        The shard ID of the shard to split.
      */
+
     public void setShardToSplit(String shardToSplit) {
         this.shardToSplit = shardToSplit;
     }
@@ -110,6 +114,7 @@ public class SplitShardRequest extends AmazonWebServiceRequest implements
      * 
      * @return The shard ID of the shard to split.
      */
+
     public String getShardToSplit() {
         return this.shardToSplit;
     }
@@ -124,6 +129,7 @@ public class SplitShardRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SplitShardRequest withShardToSplit(String shardToSplit) {
         setShardToSplit(shardToSplit);
         return this;
@@ -152,6 +158,7 @@ public class SplitShardRequest extends AmazonWebServiceRequest implements
      *        shards. All the lower hash key values in the range are distributed
      *        to the other child shard.
      */
+
     public void setNewStartingHashKey(String newStartingHashKey) {
         this.newStartingHashKey = newStartingHashKey;
     }
@@ -178,6 +185,7 @@ public class SplitShardRequest extends AmazonWebServiceRequest implements
      *         child shards. All the lower hash key values in the range are
      *         distributed to the other child shard.
      */
+
     public String getNewStartingHashKey() {
         return this.newStartingHashKey;
     }
@@ -207,6 +215,7 @@ public class SplitShardRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SplitShardRequest withNewStartingHashKey(String newStartingHashKey) {
         setNewStartingHashKey(newStartingHashKey);
         return this;

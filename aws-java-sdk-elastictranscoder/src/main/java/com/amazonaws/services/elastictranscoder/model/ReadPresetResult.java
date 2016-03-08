@@ -43,6 +43,7 @@ public class ReadPresetResult implements Serializable, Cloneable {
      *        A section of the response body that provides information about the
      *        preset.
      */
+
     public void setPreset(Preset preset) {
         this.preset = preset;
     }
@@ -56,6 +57,7 @@ public class ReadPresetResult implements Serializable, Cloneable {
      * @return A section of the response body that provides information about
      *         the preset.
      */
+
     public Preset getPreset() {
         return this.preset;
     }
@@ -72,6 +74,7 @@ public class ReadPresetResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReadPresetResult withPreset(Preset preset) {
         setPreset(preset);
         return this;

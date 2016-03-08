@@ -70,6 +70,7 @@ public class DeleteLoadBalancerListenersRequest extends AmazonWebServiceRequest
      * @param loadBalancerName
      *        The name of the load balancer.
      */
+
     public void setLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
     }
@@ -81,6 +82,7 @@ public class DeleteLoadBalancerListenersRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the load balancer.
      */
+
     public String getLoadBalancerName() {
         return this.loadBalancerName;
     }
@@ -95,6 +97,7 @@ public class DeleteLoadBalancerListenersRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteLoadBalancerListenersRequest withLoadBalancerName(
             String loadBalancerName) {
         setLoadBalancerName(loadBalancerName);
@@ -108,6 +111,7 @@ public class DeleteLoadBalancerListenersRequest extends AmazonWebServiceRequest
      * 
      * @return The client port numbers of the listeners.
      */
+
     public java.util.List<Integer> getLoadBalancerPorts() {
         if (loadBalancerPorts == null) {
             loadBalancerPorts = new com.amazonaws.internal.SdkInternalList<Integer>();
@@ -123,6 +127,7 @@ public class DeleteLoadBalancerListenersRequest extends AmazonWebServiceRequest
      * @param loadBalancerPorts
      *        The client port numbers of the listeners.
      */
+
     public void setLoadBalancerPorts(
             java.util.Collection<Integer> loadBalancerPorts) {
         if (loadBalancerPorts == null) {
@@ -150,6 +155,7 @@ public class DeleteLoadBalancerListenersRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteLoadBalancerListenersRequest withLoadBalancerPorts(
             Integer... loadBalancerPorts) {
         if (this.loadBalancerPorts == null) {
@@ -172,6 +178,7 @@ public class DeleteLoadBalancerListenersRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteLoadBalancerListenersRequest withLoadBalancerPorts(
             java.util.Collection<Integer> loadBalancerPorts) {
         setLoadBalancerPorts(loadBalancerPorts);

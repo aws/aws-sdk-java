@@ -88,6 +88,7 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements
      *        Default: Enabled
      * @see AutoPlacement
      */
+
     public void setAutoPlacement(String autoPlacement) {
         this.autoPlacement = autoPlacement;
     }
@@ -109,6 +110,7 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements
      *         Default: Enabled
      * @see AutoPlacement
      */
+
     public String getAutoPlacement() {
         return this.autoPlacement;
     }
@@ -133,6 +135,7 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see AutoPlacement
      */
+
     public AllocateHostsRequest withAutoPlacement(String autoPlacement) {
         setAutoPlacement(autoPlacement);
         return this;
@@ -158,6 +161,7 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see AutoPlacement
      */
+
     public void setAutoPlacement(AutoPlacement autoPlacement) {
         this.autoPlacement = autoPlacement.toString();
     }
@@ -182,6 +186,7 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see AutoPlacement
      */
+
     public AllocateHostsRequest withAutoPlacement(AutoPlacement autoPlacement) {
         setAutoPlacement(autoPlacement);
         return this;
@@ -203,6 +208,7 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements
      *        >How to Ensure Idempotency</a> in the <i>Amazon Elastic Compute
      *        Cloud User Guide</i>.
      */
+
     public void setClientToken(String clientToken) {
         this.clientToken = clientToken;
     }
@@ -222,6 +228,7 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements
      *         >How to Ensure Idempotency</a> in the <i>Amazon Elastic Compute
      *         Cloud User Guide</i>.
      */
+
     public String getClientToken() {
         return this.clientToken;
     }
@@ -244,6 +251,7 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AllocateHostsRequest withClientToken(String clientToken) {
         setClientToken(clientToken);
         return this;
@@ -261,6 +269,7 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements
      *        configured for. When you specify the instance type, that is the
      *        only instance type that you can launch onto that host.
      */
+
     public void setInstanceType(String instanceType) {
         this.instanceType = instanceType;
     }
@@ -276,6 +285,7 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements
      *         be configured for. When you specify the instance type, that is
      *         the only instance type that you can launch onto that host.
      */
+
     public String getInstanceType() {
         return this.instanceType;
     }
@@ -294,6 +304,7 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AllocateHostsRequest withInstanceType(String instanceType) {
         setInstanceType(instanceType);
         return this;
@@ -309,6 +320,7 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements
      *        The number of Dedicated hosts you want to allocate to your account
      *        with these parameters.
      */
+
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
@@ -322,6 +334,7 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements
      * @return The number of Dedicated hosts you want to allocate to your
      *         account with these parameters.
      */
+
     public Integer getQuantity() {
         return this.quantity;
     }
@@ -338,6 +351,7 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AllocateHostsRequest withQuantity(Integer quantity) {
         setQuantity(quantity);
         return this;
@@ -351,6 +365,7 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements
      * @param availabilityZone
      *        The Availability Zone for the Dedicated hosts.
      */
+
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
@@ -362,6 +377,7 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements
      * 
      * @return The Availability Zone for the Dedicated hosts.
      */
+
     public String getAvailabilityZone() {
         return this.availabilityZone;
     }
@@ -376,6 +392,7 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AllocateHostsRequest withAvailabilityZone(String availabilityZone) {
         setAvailabilityZone(availabilityZone);
         return this;

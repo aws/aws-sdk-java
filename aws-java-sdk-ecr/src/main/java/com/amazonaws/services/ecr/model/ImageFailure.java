@@ -50,6 +50,7 @@ public class ImageFailure implements Serializable, Cloneable {
      * @param imageId
      *        The image ID associated with the failure.
      */
+
     public void setImageId(ImageIdentifier imageId) {
         this.imageId = imageId;
     }
@@ -61,6 +62,7 @@ public class ImageFailure implements Serializable, Cloneable {
      * 
      * @return The image ID associated with the failure.
      */
+
     public ImageIdentifier getImageId() {
         return this.imageId;
     }
@@ -75,6 +77,7 @@ public class ImageFailure implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImageFailure withImageId(ImageIdentifier imageId) {
         setImageId(imageId);
         return this;
@@ -89,6 +92,7 @@ public class ImageFailure implements Serializable, Cloneable {
      *        The code associated with the failure.
      * @see ImageFailureCode
      */
+
     public void setFailureCode(String failureCode) {
         this.failureCode = failureCode;
     }
@@ -101,6 +105,7 @@ public class ImageFailure implements Serializable, Cloneable {
      * @return The code associated with the failure.
      * @see ImageFailureCode
      */
+
     public String getFailureCode() {
         return this.failureCode;
     }
@@ -116,6 +121,7 @@ public class ImageFailure implements Serializable, Cloneable {
      *         chained together.
      * @see ImageFailureCode
      */
+
     public ImageFailure withFailureCode(String failureCode) {
         setFailureCode(failureCode);
         return this;
@@ -132,6 +138,7 @@ public class ImageFailure implements Serializable, Cloneable {
      *         chained together.
      * @see ImageFailureCode
      */
+
     public void setFailureCode(ImageFailureCode failureCode) {
         this.failureCode = failureCode.toString();
     }
@@ -147,6 +154,7 @@ public class ImageFailure implements Serializable, Cloneable {
      *         chained together.
      * @see ImageFailureCode
      */
+
     public ImageFailure withFailureCode(ImageFailureCode failureCode) {
         setFailureCode(failureCode);
         return this;
@@ -160,6 +168,7 @@ public class ImageFailure implements Serializable, Cloneable {
      * @param failureReason
      *        The reason for the failure.
      */
+
     public void setFailureReason(String failureReason) {
         this.failureReason = failureReason;
     }
@@ -171,6 +180,7 @@ public class ImageFailure implements Serializable, Cloneable {
      * 
      * @return The reason for the failure.
      */
+
     public String getFailureReason() {
         return this.failureReason;
     }
@@ -185,6 +195,7 @@ public class ImageFailure implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImageFailure withFailureReason(String failureReason) {
         setFailureReason(failureReason);
         return this;

@@ -136,6 +136,7 @@ public class ExtraParam implements Serializable, Cloneable {
      *        Required: Yes
      * @see ExtraParamName
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -198,6 +199,7 @@ public class ExtraParam implements Serializable, Cloneable {
      *         Required: Yes
      * @see ExtraParamName
      */
+
     public String getName() {
         return this.name;
     }
@@ -262,6 +264,7 @@ public class ExtraParam implements Serializable, Cloneable {
      *         chained together.
      * @see ExtraParamName
      */
+
     public ExtraParam withName(String name) {
         setName(name);
         return this;
@@ -327,6 +330,7 @@ public class ExtraParam implements Serializable, Cloneable {
      *         chained together.
      * @see ExtraParamName
      */
+
     public void setName(ExtraParamName name) {
         this.name = name.toString();
     }
@@ -391,6 +395,7 @@ public class ExtraParam implements Serializable, Cloneable {
      *         chained together.
      * @see ExtraParamName
      */
+
     public ExtraParam withName(ExtraParamName name) {
         setName(name);
         return this;
@@ -435,6 +440,7 @@ public class ExtraParam implements Serializable, Cloneable {
      *        <p>
      *        Required: Yes
      */
+
     public void setValue(String value) {
         this.value = value;
     }
@@ -477,6 +483,7 @@ public class ExtraParam implements Serializable, Cloneable {
      *         <p>
      *         Required: Yes
      */
+
     public String getValue() {
         return this.value;
     }
@@ -522,6 +529,7 @@ public class ExtraParam implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ExtraParam withValue(String value) {
         setValue(value);
         return this;

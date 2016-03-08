@@ -40,6 +40,7 @@ public class ExitStandbyResult implements Serializable, Cloneable {
      * @return The activities related to moving instances out of
      *         <code>Standby</code> mode.
      */
+
     public java.util.List<Activity> getActivities() {
         if (activities == null) {
             activities = new com.amazonaws.internal.SdkInternalList<Activity>();
@@ -57,6 +58,7 @@ public class ExitStandbyResult implements Serializable, Cloneable {
      *        The activities related to moving instances out of
      *        <code>Standby</code> mode.
      */
+
     public void setActivities(java.util.Collection<Activity> activities) {
         if (activities == null) {
             this.activities = null;
@@ -85,6 +87,7 @@ public class ExitStandbyResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ExitStandbyResult withActivities(Activity... activities) {
         if (this.activities == null) {
             setActivities(new com.amazonaws.internal.SdkInternalList<Activity>(
@@ -108,6 +111,7 @@ public class ExitStandbyResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ExitStandbyResult withActivities(
             java.util.Collection<Activity> activities) {
         setActivities(activities);

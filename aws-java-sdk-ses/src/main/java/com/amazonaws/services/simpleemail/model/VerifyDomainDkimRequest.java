@@ -40,6 +40,7 @@ public class VerifyDomainDkimRequest extends AmazonWebServiceRequest implements
      * @param domain
      *        The name of the domain to be verified for Easy DKIM signing.
      */
+
     public void setDomain(String domain) {
         this.domain = domain;
     }
@@ -51,6 +52,7 @@ public class VerifyDomainDkimRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the domain to be verified for Easy DKIM signing.
      */
+
     public String getDomain() {
         return this.domain;
     }
@@ -65,6 +67,7 @@ public class VerifyDomainDkimRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VerifyDomainDkimRequest withDomain(String domain) {
         setDomain(domain);
         return this;

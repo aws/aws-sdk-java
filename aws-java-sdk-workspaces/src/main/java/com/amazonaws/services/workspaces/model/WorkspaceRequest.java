@@ -83,6 +83,7 @@ public class WorkspaceRequest implements Serializable, Cloneable {
      *        <a>DescribeWorkspaceDirectories</a> operation to obtain a list of
      *        the directories that are available.
      */
+
     public void setDirectoryId(String directoryId) {
         this.directoryId = directoryId;
     }
@@ -99,6 +100,7 @@ public class WorkspaceRequest implements Serializable, Cloneable {
      *         <a>DescribeWorkspaceDirectories</a> operation to obtain a list of
      *         the directories that are available.
      */
+
     public String getDirectoryId() {
         return this.directoryId;
     }
@@ -118,6 +120,7 @@ public class WorkspaceRequest implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public WorkspaceRequest withDirectoryId(String directoryId) {
         setDirectoryId(directoryId);
         return this;
@@ -135,6 +138,7 @@ public class WorkspaceRequest implements Serializable, Cloneable {
      *        exist in the AWS Directory Service directory specified by the
      *        <code>DirectoryId</code> member.
      */
+
     public void setUserName(String userName) {
         this.userName = userName;
     }
@@ -150,6 +154,7 @@ public class WorkspaceRequest implements Serializable, Cloneable {
      *         must exist in the AWS Directory Service directory specified by
      *         the <code>DirectoryId</code> member.
      */
+
     public String getUserName() {
         return this.userName;
     }
@@ -168,6 +173,7 @@ public class WorkspaceRequest implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public WorkspaceRequest withUserName(String userName) {
         setUserName(userName);
         return this;
@@ -185,6 +191,7 @@ public class WorkspaceRequest implements Serializable, Cloneable {
      *        use the <a>DescribeWorkspaceBundles</a> operation to obtain a list
      *        of the bundles that are available.
      */
+
     public void setBundleId(String bundleId) {
         this.bundleId = bundleId;
     }
@@ -200,6 +207,7 @@ public class WorkspaceRequest implements Serializable, Cloneable {
      *         can use the <a>DescribeWorkspaceBundles</a> operation to obtain a
      *         list of the bundles that are available.
      */
+
     public String getBundleId() {
         return this.bundleId;
     }
@@ -218,6 +226,7 @@ public class WorkspaceRequest implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public WorkspaceRequest withBundleId(String bundleId) {
         setBundleId(bundleId);
         return this;
@@ -231,6 +240,7 @@ public class WorkspaceRequest implements Serializable, Cloneable {
      * @param volumeEncryptionKey
      *        The KMS key used to encrypt data stored on your WorkSpace.
      */
+
     public void setVolumeEncryptionKey(String volumeEncryptionKey) {
         this.volumeEncryptionKey = volumeEncryptionKey;
     }
@@ -242,6 +252,7 @@ public class WorkspaceRequest implements Serializable, Cloneable {
      * 
      * @return The KMS key used to encrypt data stored on your WorkSpace.
      */
+
     public String getVolumeEncryptionKey() {
         return this.volumeEncryptionKey;
     }
@@ -256,6 +267,7 @@ public class WorkspaceRequest implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public WorkspaceRequest withVolumeEncryptionKey(String volumeEncryptionKey) {
         setVolumeEncryptionKey(volumeEncryptionKey);
         return this;
@@ -271,6 +283,7 @@ public class WorkspaceRequest implements Serializable, Cloneable {
      *        Specifies whether the data stored on the user volume, or D: drive,
      *        is encrypted.
      */
+
     public void setUserVolumeEncryptionEnabled(
             Boolean userVolumeEncryptionEnabled) {
         this.userVolumeEncryptionEnabled = userVolumeEncryptionEnabled;
@@ -285,6 +298,7 @@ public class WorkspaceRequest implements Serializable, Cloneable {
      * @return Specifies whether the data stored on the user volume, or D:
      *         drive, is encrypted.
      */
+
     public Boolean getUserVolumeEncryptionEnabled() {
         return this.userVolumeEncryptionEnabled;
     }
@@ -301,6 +315,7 @@ public class WorkspaceRequest implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public WorkspaceRequest withUserVolumeEncryptionEnabled(
             Boolean userVolumeEncryptionEnabled) {
         setUserVolumeEncryptionEnabled(userVolumeEncryptionEnabled);
@@ -316,6 +331,7 @@ public class WorkspaceRequest implements Serializable, Cloneable {
      * @return Specifies whether the data stored on the user volume, or D:
      *         drive, is encrypted.
      */
+
     public Boolean isUserVolumeEncryptionEnabled() {
         return this.userVolumeEncryptionEnabled;
     }
@@ -330,6 +346,7 @@ public class WorkspaceRequest implements Serializable, Cloneable {
      *        Specifies whether the data stored on the root volume, or C: drive,
      *        is encrypted.
      */
+
     public void setRootVolumeEncryptionEnabled(
             Boolean rootVolumeEncryptionEnabled) {
         this.rootVolumeEncryptionEnabled = rootVolumeEncryptionEnabled;
@@ -344,6 +361,7 @@ public class WorkspaceRequest implements Serializable, Cloneable {
      * @return Specifies whether the data stored on the root volume, or C:
      *         drive, is encrypted.
      */
+
     public Boolean getRootVolumeEncryptionEnabled() {
         return this.rootVolumeEncryptionEnabled;
     }
@@ -360,6 +378,7 @@ public class WorkspaceRequest implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public WorkspaceRequest withRootVolumeEncryptionEnabled(
             Boolean rootVolumeEncryptionEnabled) {
         setRootVolumeEncryptionEnabled(rootVolumeEncryptionEnabled);
@@ -375,6 +394,7 @@ public class WorkspaceRequest implements Serializable, Cloneable {
      * @return Specifies whether the data stored on the root volume, or C:
      *         drive, is encrypted.
      */
+
     public Boolean isRootVolumeEncryptionEnabled() {
         return this.rootVolumeEncryptionEnabled;
     }

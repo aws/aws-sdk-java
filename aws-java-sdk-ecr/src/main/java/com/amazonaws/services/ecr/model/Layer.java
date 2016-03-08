@@ -51,6 +51,7 @@ public class Layer implements Serializable, Cloneable {
      * @param layerDigest
      *        The <code>sha256</code> digest of the image layer.
      */
+
     public void setLayerDigest(String layerDigest) {
         this.layerDigest = layerDigest;
     }
@@ -62,6 +63,7 @@ public class Layer implements Serializable, Cloneable {
      * 
      * @return The <code>sha256</code> digest of the image layer.
      */
+
     public String getLayerDigest() {
         return this.layerDigest;
     }
@@ -76,6 +78,7 @@ public class Layer implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Layer withLayerDigest(String layerDigest) {
         setLayerDigest(layerDigest);
         return this;
@@ -92,6 +95,7 @@ public class Layer implements Serializable, Cloneable {
      *        <code>AVAILABLE</code> and <code>UNAVAILABLE</code>.
      * @see LayerAvailability
      */
+
     public void setLayerAvailability(String layerAvailability) {
         this.layerAvailability = layerAvailability;
     }
@@ -106,6 +110,7 @@ public class Layer implements Serializable, Cloneable {
      *         <code>AVAILABLE</code> and <code>UNAVAILABLE</code>.
      * @see LayerAvailability
      */
+
     public String getLayerAvailability() {
         return this.layerAvailability;
     }
@@ -123,6 +128,7 @@ public class Layer implements Serializable, Cloneable {
      *         chained together.
      * @see LayerAvailability
      */
+
     public Layer withLayerAvailability(String layerAvailability) {
         setLayerAvailability(layerAvailability);
         return this;
@@ -141,6 +147,7 @@ public class Layer implements Serializable, Cloneable {
      *         chained together.
      * @see LayerAvailability
      */
+
     public void setLayerAvailability(LayerAvailability layerAvailability) {
         this.layerAvailability = layerAvailability.toString();
     }
@@ -158,6 +165,7 @@ public class Layer implements Serializable, Cloneable {
      *         chained together.
      * @see LayerAvailability
      */
+
     public Layer withLayerAvailability(LayerAvailability layerAvailability) {
         setLayerAvailability(layerAvailability);
         return this;
@@ -171,6 +179,7 @@ public class Layer implements Serializable, Cloneable {
      * @param layerSize
      *        The size, in bytes, of the image layer.
      */
+
     public void setLayerSize(Long layerSize) {
         this.layerSize = layerSize;
     }
@@ -182,6 +191,7 @@ public class Layer implements Serializable, Cloneable {
      * 
      * @return The size, in bytes, of the image layer.
      */
+
     public Long getLayerSize() {
         return this.layerSize;
     }
@@ -196,6 +206,7 @@ public class Layer implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Layer withLayerSize(Long layerSize) {
         setLayerSize(layerSize);
         return this;

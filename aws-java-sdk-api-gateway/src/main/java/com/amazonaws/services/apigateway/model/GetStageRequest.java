@@ -51,6 +51,7 @@ public class GetStageRequest extends AmazonWebServiceRequest implements
      *        The identifier of the <a>RestApi</a> resource for the <a>Stage</a>
      *        resource to get information about.
      */
+
     public void setRestApiId(String restApiId) {
         this.restApiId = restApiId;
     }
@@ -64,6 +65,7 @@ public class GetStageRequest extends AmazonWebServiceRequest implements
      * @return The identifier of the <a>RestApi</a> resource for the
      *         <a>Stage</a> resource to get information about.
      */
+
     public String getRestApiId() {
         return this.restApiId;
     }
@@ -80,6 +82,7 @@ public class GetStageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetStageRequest withRestApiId(String restApiId) {
         setRestApiId(restApiId);
         return this;
@@ -93,6 +96,7 @@ public class GetStageRequest extends AmazonWebServiceRequest implements
      * @param stageName
      *        The name of the <a>Stage</a> resource to get information about.
      */
+
     public void setStageName(String stageName) {
         this.stageName = stageName;
     }
@@ -104,6 +108,7 @@ public class GetStageRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the <a>Stage</a> resource to get information about.
      */
+
     public String getStageName() {
         return this.stageName;
     }
@@ -118,6 +123,7 @@ public class GetStageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetStageRequest withStageName(String stageName) {
         setStageName(stageName);
         return this;

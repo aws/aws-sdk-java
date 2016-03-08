@@ -46,6 +46,7 @@ public class RemoveRoleFromInstanceProfileRequest extends
      * @param instanceProfileName
      *        The name of the instance profile to update.
      */
+
     public void setInstanceProfileName(String instanceProfileName) {
         this.instanceProfileName = instanceProfileName;
     }
@@ -57,6 +58,7 @@ public class RemoveRoleFromInstanceProfileRequest extends
      * 
      * @return The name of the instance profile to update.
      */
+
     public String getInstanceProfileName() {
         return this.instanceProfileName;
     }
@@ -71,6 +73,7 @@ public class RemoveRoleFromInstanceProfileRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RemoveRoleFromInstanceProfileRequest withInstanceProfileName(
             String instanceProfileName) {
         setInstanceProfileName(instanceProfileName);
@@ -85,6 +88,7 @@ public class RemoveRoleFromInstanceProfileRequest extends
      * @param roleName
      *        The name of the role to remove.
      */
+
     public void setRoleName(String roleName) {
         this.roleName = roleName;
     }
@@ -96,6 +100,7 @@ public class RemoveRoleFromInstanceProfileRequest extends
      * 
      * @return The name of the role to remove.
      */
+
     public String getRoleName() {
         return this.roleName;
     }
@@ -110,6 +115,7 @@ public class RemoveRoleFromInstanceProfileRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RemoveRoleFromInstanceProfileRequest withRoleName(String roleName) {
         setRoleName(roleName);
         return this;

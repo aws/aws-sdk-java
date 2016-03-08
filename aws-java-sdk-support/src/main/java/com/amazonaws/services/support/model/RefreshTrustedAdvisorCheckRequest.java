@@ -40,6 +40,7 @@ public class RefreshTrustedAdvisorCheckRequest extends AmazonWebServiceRequest
      * @param checkId
      *        The unique identifier for the Trusted Advisor check.
      */
+
     public void setCheckId(String checkId) {
         this.checkId = checkId;
     }
@@ -51,6 +52,7 @@ public class RefreshTrustedAdvisorCheckRequest extends AmazonWebServiceRequest
      * 
      * @return The unique identifier for the Trusted Advisor check.
      */
+
     public String getCheckId() {
         return this.checkId;
     }
@@ -65,6 +67,7 @@ public class RefreshTrustedAdvisorCheckRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RefreshTrustedAdvisorCheckRequest withCheckId(String checkId) {
         setCheckId(checkId);
         return this;

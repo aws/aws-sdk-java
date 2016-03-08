@@ -46,6 +46,7 @@ public class DescribeSpotFleetRequestsResult implements Serializable, Cloneable 
      * 
      * @return Information about the configuration of your Spot fleet.
      */
+
     public java.util.List<SpotFleetRequestConfig> getSpotFleetRequestConfigs() {
         if (spotFleetRequestConfigs == null) {
             spotFleetRequestConfigs = new com.amazonaws.internal.SdkInternalList<SpotFleetRequestConfig>();
@@ -61,6 +62,7 @@ public class DescribeSpotFleetRequestsResult implements Serializable, Cloneable 
      * @param spotFleetRequestConfigs
      *        Information about the configuration of your Spot fleet.
      */
+
     public void setSpotFleetRequestConfigs(
             java.util.Collection<SpotFleetRequestConfig> spotFleetRequestConfigs) {
         if (spotFleetRequestConfigs == null) {
@@ -88,6 +90,7 @@ public class DescribeSpotFleetRequestsResult implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSpotFleetRequestsResult withSpotFleetRequestConfigs(
             SpotFleetRequestConfig... spotFleetRequestConfigs) {
         if (this.spotFleetRequestConfigs == null) {
@@ -110,6 +113,7 @@ public class DescribeSpotFleetRequestsResult implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSpotFleetRequestsResult withSpotFleetRequestConfigs(
             java.util.Collection<SpotFleetRequestConfig> spotFleetRequestConfigs) {
         setSpotFleetRequestConfigs(spotFleetRequestConfigs);
@@ -126,6 +130,7 @@ public class DescribeSpotFleetRequestsResult implements Serializable, Cloneable 
      *        The token required to retrieve the next set of results. This value
      *        is <code>null</code> when there are no more results to return.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -140,6 +145,7 @@ public class DescribeSpotFleetRequestsResult implements Serializable, Cloneable 
      *         value is <code>null</code> when there are no more results to
      *         return.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -156,6 +162,7 @@ public class DescribeSpotFleetRequestsResult implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSpotFleetRequestsResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

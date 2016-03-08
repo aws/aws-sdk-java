@@ -37,6 +37,7 @@ public class DescribeIdFormatResult implements Serializable, Cloneable {
      * 
      * @return Information about the ID format for the resource.
      */
+
     public java.util.List<IdFormat> getStatuses() {
         if (statuses == null) {
             statuses = new com.amazonaws.internal.SdkInternalList<IdFormat>();
@@ -52,6 +53,7 @@ public class DescribeIdFormatResult implements Serializable, Cloneable {
      * @param statuses
      *        Information about the ID format for the resource.
      */
+
     public void setStatuses(java.util.Collection<IdFormat> statuses) {
         if (statuses == null) {
             this.statuses = null;
@@ -78,6 +80,7 @@ public class DescribeIdFormatResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeIdFormatResult withStatuses(IdFormat... statuses) {
         if (this.statuses == null) {
             setStatuses(new com.amazonaws.internal.SdkInternalList<IdFormat>(
@@ -99,6 +102,7 @@ public class DescribeIdFormatResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeIdFormatResult withStatuses(
             java.util.Collection<IdFormat> statuses) {
         setStatuses(statuses);

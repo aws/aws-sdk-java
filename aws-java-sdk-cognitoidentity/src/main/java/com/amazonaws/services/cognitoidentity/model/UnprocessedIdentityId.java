@@ -47,6 +47,7 @@ public class UnprocessedIdentityId implements Serializable, Cloneable {
      * @param identityId
      *        A unique identifier in the format REGION:GUID.
      */
+
     public void setIdentityId(String identityId) {
         this.identityId = identityId;
     }
@@ -58,6 +59,7 @@ public class UnprocessedIdentityId implements Serializable, Cloneable {
      * 
      * @return A unique identifier in the format REGION:GUID.
      */
+
     public String getIdentityId() {
         return this.identityId;
     }
@@ -72,6 +74,7 @@ public class UnprocessedIdentityId implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UnprocessedIdentityId withIdentityId(String identityId) {
         setIdentityId(identityId);
         return this;
@@ -86,6 +89,7 @@ public class UnprocessedIdentityId implements Serializable, Cloneable {
      *        The error code indicating the type of error that occurred.
      * @see ErrorCode
      */
+
     public void setErrorCode(String errorCode) {
         this.errorCode = errorCode;
     }
@@ -98,6 +102,7 @@ public class UnprocessedIdentityId implements Serializable, Cloneable {
      * @return The error code indicating the type of error that occurred.
      * @see ErrorCode
      */
+
     public String getErrorCode() {
         return this.errorCode;
     }
@@ -113,6 +118,7 @@ public class UnprocessedIdentityId implements Serializable, Cloneable {
      *         chained together.
      * @see ErrorCode
      */
+
     public UnprocessedIdentityId withErrorCode(String errorCode) {
         setErrorCode(errorCode);
         return this;
@@ -129,6 +135,7 @@ public class UnprocessedIdentityId implements Serializable, Cloneable {
      *         chained together.
      * @see ErrorCode
      */
+
     public void setErrorCode(ErrorCode errorCode) {
         this.errorCode = errorCode.toString();
     }
@@ -144,6 +151,7 @@ public class UnprocessedIdentityId implements Serializable, Cloneable {
      *         chained together.
      * @see ErrorCode
      */
+
     public UnprocessedIdentityId withErrorCode(ErrorCode errorCode) {
         setErrorCode(errorCode);
         return this;

@@ -56,6 +56,7 @@ public class GetJobDetailsResult implements Serializable, Cloneable {
      *        GetJobDetails again to obtain new credentials.
      *        </p>
      */
+
     public void setJobDetails(JobDetails jobDetails) {
         this.jobDetails = jobDetails;
     }
@@ -77,6 +78,7 @@ public class GetJobDetailsResult implements Serializable, Cloneable {
      *         GetJobDetails again to obtain new credentials.
      *         </p>
      */
+
     public JobDetails getJobDetails() {
         return this.jobDetails;
     }
@@ -101,6 +103,7 @@ public class GetJobDetailsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetJobDetailsResult withJobDetails(JobDetails jobDetails) {
         setJobDetails(jobDetails);
         return this;

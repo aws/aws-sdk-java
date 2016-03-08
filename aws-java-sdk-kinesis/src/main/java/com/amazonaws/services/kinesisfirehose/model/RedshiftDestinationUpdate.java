@@ -76,6 +76,7 @@ public class RedshiftDestinationUpdate implements Serializable, Cloneable {
      * @param roleARN
      *        The ARN of the AWS credentials.
      */
+
     public void setRoleARN(String roleARN) {
         this.roleARN = roleARN;
     }
@@ -87,6 +88,7 @@ public class RedshiftDestinationUpdate implements Serializable, Cloneable {
      * 
      * @return The ARN of the AWS credentials.
      */
+
     public String getRoleARN() {
         return this.roleARN;
     }
@@ -101,6 +103,7 @@ public class RedshiftDestinationUpdate implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RedshiftDestinationUpdate withRoleARN(String roleARN) {
         setRoleARN(roleARN);
         return this;
@@ -114,6 +117,7 @@ public class RedshiftDestinationUpdate implements Serializable, Cloneable {
      * @param clusterJDBCURL
      *        The database connection string.
      */
+
     public void setClusterJDBCURL(String clusterJDBCURL) {
         this.clusterJDBCURL = clusterJDBCURL;
     }
@@ -125,6 +129,7 @@ public class RedshiftDestinationUpdate implements Serializable, Cloneable {
      * 
      * @return The database connection string.
      */
+
     public String getClusterJDBCURL() {
         return this.clusterJDBCURL;
     }
@@ -139,6 +144,7 @@ public class RedshiftDestinationUpdate implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RedshiftDestinationUpdate withClusterJDBCURL(String clusterJDBCURL) {
         setClusterJDBCURL(clusterJDBCURL);
         return this;
@@ -152,6 +158,7 @@ public class RedshiftDestinationUpdate implements Serializable, Cloneable {
      * @param copyCommand
      *        The <code>COPY</code> command.
      */
+
     public void setCopyCommand(CopyCommand copyCommand) {
         this.copyCommand = copyCommand;
     }
@@ -163,6 +170,7 @@ public class RedshiftDestinationUpdate implements Serializable, Cloneable {
      * 
      * @return The <code>COPY</code> command.
      */
+
     public CopyCommand getCopyCommand() {
         return this.copyCommand;
     }
@@ -177,6 +185,7 @@ public class RedshiftDestinationUpdate implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RedshiftDestinationUpdate withCopyCommand(CopyCommand copyCommand) {
         setCopyCommand(copyCommand);
         return this;
@@ -190,6 +199,7 @@ public class RedshiftDestinationUpdate implements Serializable, Cloneable {
      * @param username
      *        The name of the user.
      */
+
     public void setUsername(String username) {
         this.username = username;
     }
@@ -201,6 +211,7 @@ public class RedshiftDestinationUpdate implements Serializable, Cloneable {
      * 
      * @return The name of the user.
      */
+
     public String getUsername() {
         return this.username;
     }
@@ -215,6 +226,7 @@ public class RedshiftDestinationUpdate implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RedshiftDestinationUpdate withUsername(String username) {
         setUsername(username);
         return this;
@@ -228,6 +240,7 @@ public class RedshiftDestinationUpdate implements Serializable, Cloneable {
      * @param password
      *        The user password.
      */
+
     public void setPassword(String password) {
         this.password = password;
     }
@@ -239,6 +252,7 @@ public class RedshiftDestinationUpdate implements Serializable, Cloneable {
      * 
      * @return The user password.
      */
+
     public String getPassword() {
         return this.password;
     }
@@ -253,6 +267,7 @@ public class RedshiftDestinationUpdate implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RedshiftDestinationUpdate withPassword(String password) {
         setPassword(password);
         return this;
@@ -278,6 +293,7 @@ public class RedshiftDestinationUpdate implements Serializable, Cloneable {
      *        Redshift <code>COPY</code> operation that reads from the S3 bucket
      *        doesn't support these compression formats.
      */
+
     public void setS3Update(S3DestinationUpdate s3Update) {
         this.s3Update = s3Update;
     }
@@ -301,6 +317,7 @@ public class RedshiftDestinationUpdate implements Serializable, Cloneable {
      *         Amazon Redshift <code>COPY</code> operation that reads from the
      *         S3 bucket doesn't support these compression formats.
      */
+
     public S3DestinationUpdate getS3Update() {
         return this.s3Update;
     }
@@ -327,6 +344,7 @@ public class RedshiftDestinationUpdate implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RedshiftDestinationUpdate withS3Update(S3DestinationUpdate s3Update) {
         setS3Update(s3Update);
         return this;

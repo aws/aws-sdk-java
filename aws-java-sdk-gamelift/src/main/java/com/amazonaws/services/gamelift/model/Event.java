@@ -66,6 +66,7 @@ public class Event implements Serializable, Cloneable {
      * @param eventId
      *        Unique identifier for a fleet event.
      */
+
     public void setEventId(String eventId) {
         this.eventId = eventId;
     }
@@ -77,6 +78,7 @@ public class Event implements Serializable, Cloneable {
      * 
      * @return Unique identifier for a fleet event.
      */
+
     public String getEventId() {
         return this.eventId;
     }
@@ -91,6 +93,7 @@ public class Event implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Event withEventId(String eventId) {
         setEventId(eventId);
         return this;
@@ -104,6 +107,7 @@ public class Event implements Serializable, Cloneable {
      * @param resourceId
      *        Unique identifier for the resource, such as a fleet ID.
      */
+
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
     }
@@ -115,6 +119,7 @@ public class Event implements Serializable, Cloneable {
      * 
      * @return Unique identifier for the resource, such as a fleet ID.
      */
+
     public String getResourceId() {
         return this.resourceId;
     }
@@ -129,6 +134,7 @@ public class Event implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Event withResourceId(String resourceId) {
         setResourceId(resourceId);
         return this;
@@ -143,6 +149,7 @@ public class Event implements Serializable, Cloneable {
      *        Type of event being logged.
      * @see EventCode
      */
+
     public void setEventCode(String eventCode) {
         this.eventCode = eventCode;
     }
@@ -155,6 +162,7 @@ public class Event implements Serializable, Cloneable {
      * @return Type of event being logged.
      * @see EventCode
      */
+
     public String getEventCode() {
         return this.eventCode;
     }
@@ -170,6 +178,7 @@ public class Event implements Serializable, Cloneable {
      *         chained together.
      * @see EventCode
      */
+
     public Event withEventCode(String eventCode) {
         setEventCode(eventCode);
         return this;
@@ -186,6 +195,7 @@ public class Event implements Serializable, Cloneable {
      *         chained together.
      * @see EventCode
      */
+
     public void setEventCode(EventCode eventCode) {
         this.eventCode = eventCode.toString();
     }
@@ -201,6 +211,7 @@ public class Event implements Serializable, Cloneable {
      *         chained together.
      * @see EventCode
      */
+
     public Event withEventCode(EventCode eventCode) {
         setEventCode(eventCode);
         return this;
@@ -214,6 +225,7 @@ public class Event implements Serializable, Cloneable {
      * @param message
      *        Additional information related to the event.
      */
+
     public void setMessage(String message) {
         this.message = message;
     }
@@ -225,6 +237,7 @@ public class Event implements Serializable, Cloneable {
      * 
      * @return Additional information related to the event.
      */
+
     public String getMessage() {
         return this.message;
     }
@@ -239,6 +252,7 @@ public class Event implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Event withMessage(String message) {
         setMessage(message);
         return this;
@@ -254,6 +268,7 @@ public class Event implements Serializable, Cloneable {
      *        Time stamp indicating when this event occurred. Format is an
      *        integer representing the number of seconds since epoch.
      */
+
     public void setEventTime(java.util.Date eventTime) {
         this.eventTime = eventTime;
     }
@@ -267,6 +282,7 @@ public class Event implements Serializable, Cloneable {
      * @return Time stamp indicating when this event occurred. Format is an
      *         integer representing the number of seconds since epoch.
      */
+
     public java.util.Date getEventTime() {
         return this.eventTime;
     }
@@ -283,6 +299,7 @@ public class Event implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Event withEventTime(java.util.Date eventTime) {
         setEventTime(eventTime);
         return this;

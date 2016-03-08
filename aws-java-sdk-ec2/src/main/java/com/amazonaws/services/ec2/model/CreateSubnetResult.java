@@ -38,6 +38,7 @@ public class CreateSubnetResult implements Serializable, Cloneable {
      * @param subnet
      *        Information about the subnet.
      */
+
     public void setSubnet(Subnet subnet) {
         this.subnet = subnet;
     }
@@ -49,6 +50,7 @@ public class CreateSubnetResult implements Serializable, Cloneable {
      * 
      * @return Information about the subnet.
      */
+
     public Subnet getSubnet() {
         return this.subnet;
     }
@@ -63,6 +65,7 @@ public class CreateSubnetResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateSubnetResult withSubnet(Subnet subnet) {
         setSubnet(subnet);
         return this;

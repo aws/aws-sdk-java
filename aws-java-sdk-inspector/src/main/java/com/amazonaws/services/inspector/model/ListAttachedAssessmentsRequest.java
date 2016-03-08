@@ -70,6 +70,7 @@ public class ListAttachedAssessmentsRequest extends AmazonWebServiceRequest
      *        The ARN specifying the rules package whose assessments you want to
      *        list.
      */
+
     public void setRulesPackageArn(String rulesPackageArn) {
         this.rulesPackageArn = rulesPackageArn;
     }
@@ -82,6 +83,7 @@ public class ListAttachedAssessmentsRequest extends AmazonWebServiceRequest
      * @return The ARN specifying the rules package whose assessments you want
      *         to list.
      */
+
     public String getRulesPackageArn() {
         return this.rulesPackageArn;
     }
@@ -97,6 +99,7 @@ public class ListAttachedAssessmentsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListAttachedAssessmentsRequest withRulesPackageArn(
             String rulesPackageArn) {
         setRulesPackageArn(rulesPackageArn);
@@ -122,6 +125,7 @@ public class ListAttachedAssessmentsRequest extends AmazonWebServiceRequest
      *        must match. When multiple values are specified for a filter
      *        attribute, any of the values can match.
      */
+
     public void setFilter(AssessmentsFilter filter) {
         this.filter = filter;
     }
@@ -144,6 +148,7 @@ public class ListAttachedAssessmentsRequest extends AmazonWebServiceRequest
      *         must match. When multiple values are specified for a filter
      *         attribute, any of the values can match.
      */
+
     public AssessmentsFilter getFilter() {
         return this.filter;
     }
@@ -169,6 +174,7 @@ public class ListAttachedAssessmentsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListAttachedAssessmentsRequest withFilter(AssessmentsFilter filter) {
         setFilter(filter);
         return this;
@@ -190,6 +196,7 @@ public class ListAttachedAssessmentsRequest extends AmazonWebServiceRequest
      *        action fill <b>nextToken</b> in the request with the value of
      *        <b>NextToken</b> from previous response to continue listing data.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -209,6 +216,7 @@ public class ListAttachedAssessmentsRequest extends AmazonWebServiceRequest
      *         action fill <b>nextToken</b> in the request with the value of
      *         <b>NextToken</b> from previous response to continue listing data.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -231,6 +239,7 @@ public class ListAttachedAssessmentsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListAttachedAssessmentsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -247,6 +256,7 @@ public class ListAttachedAssessmentsRequest extends AmazonWebServiceRequest
      *        you want in the response. The default value is 10. The maximum
      *        value is 500.
      */
+
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
     }
@@ -261,6 +271,7 @@ public class ListAttachedAssessmentsRequest extends AmazonWebServiceRequest
      *         items you want in the response. The default value is 10. The
      *         maximum value is 500.
      */
+
     public Integer getMaxResults() {
         return this.maxResults;
     }
@@ -278,6 +289,7 @@ public class ListAttachedAssessmentsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListAttachedAssessmentsRequest withMaxResults(Integer maxResults) {
         setMaxResults(maxResults);
         return this;

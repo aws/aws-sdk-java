@@ -38,6 +38,7 @@ public class AttachNetworkInterfaceResult implements Serializable, Cloneable {
      * @param attachmentId
      *        The ID of the network interface attachment.
      */
+
     public void setAttachmentId(String attachmentId) {
         this.attachmentId = attachmentId;
     }
@@ -49,6 +50,7 @@ public class AttachNetworkInterfaceResult implements Serializable, Cloneable {
      * 
      * @return The ID of the network interface attachment.
      */
+
     public String getAttachmentId() {
         return this.attachmentId;
     }
@@ -63,6 +65,7 @@ public class AttachNetworkInterfaceResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AttachNetworkInterfaceResult withAttachmentId(String attachmentId) {
         setAttachmentId(attachmentId);
         return this;

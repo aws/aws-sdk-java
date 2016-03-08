@@ -71,6 +71,7 @@ public class ReportTaskRunnerHeartbeatRequest extends AmazonWebServiceRequest
      *        you have written a custom task runner, you should assign a unique
      *        identifier for the task runner.
      */
+
     public void setTaskrunnerId(String taskrunnerId) {
         this.taskrunnerId = taskrunnerId;
     }
@@ -91,6 +92,7 @@ public class ReportTaskRunnerHeartbeatRequest extends AmazonWebServiceRequest
      *         application. If you have written a custom task runner, you should
      *         assign a unique identifier for the task runner.
      */
+
     public String getTaskrunnerId() {
         return this.taskrunnerId;
     }
@@ -114,6 +116,7 @@ public class ReportTaskRunnerHeartbeatRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReportTaskRunnerHeartbeatRequest withTaskrunnerId(String taskrunnerId) {
         setTaskrunnerId(taskrunnerId);
         return this;
@@ -136,6 +139,7 @@ public class ReportTaskRunnerHeartbeatRequest extends AmazonWebServiceRequest
      *        permitted in <code>workerGroup</code>; the string must be an
      *        exact, case-sensitive, match.
      */
+
     public void setWorkerGroup(String workerGroup) {
         this.workerGroup = workerGroup;
     }
@@ -156,6 +160,7 @@ public class ReportTaskRunnerHeartbeatRequest extends AmazonWebServiceRequest
      *         permitted in <code>workerGroup</code>; the string must be an
      *         exact, case-sensitive, match.
      */
+
     public String getWorkerGroup() {
         return this.workerGroup;
     }
@@ -179,6 +184,7 @@ public class ReportTaskRunnerHeartbeatRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReportTaskRunnerHeartbeatRequest withWorkerGroup(String workerGroup) {
         setWorkerGroup(workerGroup);
         return this;
@@ -192,6 +198,7 @@ public class ReportTaskRunnerHeartbeatRequest extends AmazonWebServiceRequest
      * @param hostname
      *        The public DNS name of the task runner.
      */
+
     public void setHostname(String hostname) {
         this.hostname = hostname;
     }
@@ -203,6 +210,7 @@ public class ReportTaskRunnerHeartbeatRequest extends AmazonWebServiceRequest
      * 
      * @return The public DNS name of the task runner.
      */
+
     public String getHostname() {
         return this.hostname;
     }
@@ -217,6 +225,7 @@ public class ReportTaskRunnerHeartbeatRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReportTaskRunnerHeartbeatRequest withHostname(String hostname) {
         setHostname(hostname);
         return this;

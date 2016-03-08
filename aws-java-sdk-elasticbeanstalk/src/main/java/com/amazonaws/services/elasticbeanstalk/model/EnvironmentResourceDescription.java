@@ -76,6 +76,7 @@ public class EnvironmentResourceDescription implements Serializable, Cloneable {
      * @param environmentName
      *        The name of the environment.
      */
+
     public void setEnvironmentName(String environmentName) {
         this.environmentName = environmentName;
     }
@@ -87,6 +88,7 @@ public class EnvironmentResourceDescription implements Serializable, Cloneable {
      * 
      * @return The name of the environment.
      */
+
     public String getEnvironmentName() {
         return this.environmentName;
     }
@@ -101,6 +103,7 @@ public class EnvironmentResourceDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EnvironmentResourceDescription withEnvironmentName(
             String environmentName) {
         setEnvironmentName(environmentName);
@@ -114,6 +117,7 @@ public class EnvironmentResourceDescription implements Serializable, Cloneable {
      * 
      * @return The <code>AutoScalingGroups</code> used by this environment.
      */
+
     public java.util.List<AutoScalingGroup> getAutoScalingGroups() {
         if (autoScalingGroups == null) {
             autoScalingGroups = new com.amazonaws.internal.SdkInternalList<AutoScalingGroup>();
@@ -129,6 +133,7 @@ public class EnvironmentResourceDescription implements Serializable, Cloneable {
      * @param autoScalingGroups
      *        The <code>AutoScalingGroups</code> used by this environment.
      */
+
     public void setAutoScalingGroups(
             java.util.Collection<AutoScalingGroup> autoScalingGroups) {
         if (autoScalingGroups == null) {
@@ -156,6 +161,7 @@ public class EnvironmentResourceDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EnvironmentResourceDescription withAutoScalingGroups(
             AutoScalingGroup... autoScalingGroups) {
         if (this.autoScalingGroups == null) {
@@ -178,6 +184,7 @@ public class EnvironmentResourceDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EnvironmentResourceDescription withAutoScalingGroups(
             java.util.Collection<AutoScalingGroup> autoScalingGroups) {
         setAutoScalingGroups(autoScalingGroups);
@@ -191,6 +198,7 @@ public class EnvironmentResourceDescription implements Serializable, Cloneable {
      * 
      * @return The Amazon EC2 instances used by this environment.
      */
+
     public java.util.List<Instance> getInstances() {
         if (instances == null) {
             instances = new com.amazonaws.internal.SdkInternalList<Instance>();
@@ -206,6 +214,7 @@ public class EnvironmentResourceDescription implements Serializable, Cloneable {
      * @param instances
      *        The Amazon EC2 instances used by this environment.
      */
+
     public void setInstances(java.util.Collection<Instance> instances) {
         if (instances == null) {
             this.instances = null;
@@ -232,6 +241,7 @@ public class EnvironmentResourceDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EnvironmentResourceDescription withInstances(Instance... instances) {
         if (this.instances == null) {
             setInstances(new com.amazonaws.internal.SdkInternalList<Instance>(
@@ -253,6 +263,7 @@ public class EnvironmentResourceDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EnvironmentResourceDescription withInstances(
             java.util.Collection<Instance> instances) {
         setInstances(instances);
@@ -267,6 +278,7 @@ public class EnvironmentResourceDescription implements Serializable, Cloneable {
      * @return The Auto Scaling launch configurations in use by this
      *         environment.
      */
+
     public java.util.List<LaunchConfiguration> getLaunchConfigurations() {
         if (launchConfigurations == null) {
             launchConfigurations = new com.amazonaws.internal.SdkInternalList<LaunchConfiguration>();
@@ -282,6 +294,7 @@ public class EnvironmentResourceDescription implements Serializable, Cloneable {
      * @param launchConfigurations
      *        The Auto Scaling launch configurations in use by this environment.
      */
+
     public void setLaunchConfigurations(
             java.util.Collection<LaunchConfiguration> launchConfigurations) {
         if (launchConfigurations == null) {
@@ -309,6 +322,7 @@ public class EnvironmentResourceDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EnvironmentResourceDescription withLaunchConfigurations(
             LaunchConfiguration... launchConfigurations) {
         if (this.launchConfigurations == null) {
@@ -331,6 +345,7 @@ public class EnvironmentResourceDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EnvironmentResourceDescription withLaunchConfigurations(
             java.util.Collection<LaunchConfiguration> launchConfigurations) {
         setLaunchConfigurations(launchConfigurations);
@@ -344,6 +359,7 @@ public class EnvironmentResourceDescription implements Serializable, Cloneable {
      * 
      * @return The LoadBalancers in use by this environment.
      */
+
     public java.util.List<LoadBalancer> getLoadBalancers() {
         if (loadBalancers == null) {
             loadBalancers = new com.amazonaws.internal.SdkInternalList<LoadBalancer>();
@@ -359,6 +375,7 @@ public class EnvironmentResourceDescription implements Serializable, Cloneable {
      * @param loadBalancers
      *        The LoadBalancers in use by this environment.
      */
+
     public void setLoadBalancers(
             java.util.Collection<LoadBalancer> loadBalancers) {
         if (loadBalancers == null) {
@@ -386,6 +403,7 @@ public class EnvironmentResourceDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EnvironmentResourceDescription withLoadBalancers(
             LoadBalancer... loadBalancers) {
         if (this.loadBalancers == null) {
@@ -408,6 +426,7 @@ public class EnvironmentResourceDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EnvironmentResourceDescription withLoadBalancers(
             java.util.Collection<LoadBalancer> loadBalancers) {
         setLoadBalancers(loadBalancers);
@@ -421,6 +440,7 @@ public class EnvironmentResourceDescription implements Serializable, Cloneable {
      * 
      * @return The <code>AutoScaling</code> triggers in use by this environment.
      */
+
     public java.util.List<Trigger> getTriggers() {
         if (triggers == null) {
             triggers = new com.amazonaws.internal.SdkInternalList<Trigger>();
@@ -436,6 +456,7 @@ public class EnvironmentResourceDescription implements Serializable, Cloneable {
      * @param triggers
      *        The <code>AutoScaling</code> triggers in use by this environment.
      */
+
     public void setTriggers(java.util.Collection<Trigger> triggers) {
         if (triggers == null) {
             this.triggers = null;
@@ -462,6 +483,7 @@ public class EnvironmentResourceDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EnvironmentResourceDescription withTriggers(Trigger... triggers) {
         if (this.triggers == null) {
             setTriggers(new com.amazonaws.internal.SdkInternalList<Trigger>(
@@ -483,6 +505,7 @@ public class EnvironmentResourceDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EnvironmentResourceDescription withTriggers(
             java.util.Collection<Trigger> triggers) {
         setTriggers(triggers);
@@ -496,6 +519,7 @@ public class EnvironmentResourceDescription implements Serializable, Cloneable {
      * 
      * @return The queues used by this environment.
      */
+
     public java.util.List<Queue> getQueues() {
         if (queues == null) {
             queues = new com.amazonaws.internal.SdkInternalList<Queue>();
@@ -511,6 +535,7 @@ public class EnvironmentResourceDescription implements Serializable, Cloneable {
      * @param queues
      *        The queues used by this environment.
      */
+
     public void setQueues(java.util.Collection<Queue> queues) {
         if (queues == null) {
             this.queues = null;
@@ -536,6 +561,7 @@ public class EnvironmentResourceDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EnvironmentResourceDescription withQueues(Queue... queues) {
         if (this.queues == null) {
             setQueues(new com.amazonaws.internal.SdkInternalList<Queue>(
@@ -557,6 +583,7 @@ public class EnvironmentResourceDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EnvironmentResourceDescription withQueues(
             java.util.Collection<Queue> queues) {
         setQueues(queues);

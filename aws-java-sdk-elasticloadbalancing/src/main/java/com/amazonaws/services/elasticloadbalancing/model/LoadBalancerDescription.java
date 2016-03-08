@@ -149,6 +149,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * @param loadBalancerName
      *        The name of the load balancer.
      */
+
     public void setLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
     }
@@ -160,6 +161,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * 
      * @return The name of the load balancer.
      */
+
     public String getLoadBalancerName() {
         return this.loadBalancerName;
     }
@@ -174,6 +176,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LoadBalancerDescription withLoadBalancerName(String loadBalancerName) {
         setLoadBalancerName(loadBalancerName);
         return this;
@@ -187,6 +190,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * @param dNSName
      *        The external DNS name of the load balancer.
      */
+
     public void setDNSName(String dNSName) {
         this.dNSName = dNSName;
     }
@@ -198,6 +202,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * 
      * @return The external DNS name of the load balancer.
      */
+
     public String getDNSName() {
         return this.dNSName;
     }
@@ -212,6 +217,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LoadBalancerDescription withDNSName(String dNSName) {
         setDNSName(dNSName);
         return this;
@@ -237,6 +243,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      *        >Using Domain Names With Elastic Load Balancing</a> in the
      *        <i>Elastic Load Balancing Developer Guide</i>.
      */
+
     public void setCanonicalHostedZoneName(String canonicalHostedZoneName) {
         this.canonicalHostedZoneName = canonicalHostedZoneName;
     }
@@ -260,6 +267,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      *         >Using Domain Names With Elastic Load Balancing</a> in the
      *         <i>Elastic Load Balancing Developer Guide</i>.
      */
+
     public String getCanonicalHostedZoneName() {
         return this.canonicalHostedZoneName;
     }
@@ -286,6 +294,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LoadBalancerDescription withCanonicalHostedZoneName(
             String canonicalHostedZoneName) {
         setCanonicalHostedZoneName(canonicalHostedZoneName);
@@ -302,6 +311,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      *        The ID of the Amazon Route 53 hosted zone name associated with the
      *        load balancer.
      */
+
     public void setCanonicalHostedZoneNameID(String canonicalHostedZoneNameID) {
         this.canonicalHostedZoneNameID = canonicalHostedZoneNameID;
     }
@@ -315,6 +325,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * @return The ID of the Amazon Route 53 hosted zone name associated with
      *         the load balancer.
      */
+
     public String getCanonicalHostedZoneNameID() {
         return this.canonicalHostedZoneNameID;
     }
@@ -331,6 +342,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LoadBalancerDescription withCanonicalHostedZoneNameID(
             String canonicalHostedZoneNameID) {
         setCanonicalHostedZoneNameID(canonicalHostedZoneNameID);
@@ -344,6 +356,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * 
      * @return The listeners for the load balancer.
      */
+
     public java.util.List<ListenerDescription> getListenerDescriptions() {
         if (listenerDescriptions == null) {
             listenerDescriptions = new com.amazonaws.internal.SdkInternalList<ListenerDescription>();
@@ -359,6 +372,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * @param listenerDescriptions
      *        The listeners for the load balancer.
      */
+
     public void setListenerDescriptions(
             java.util.Collection<ListenerDescription> listenerDescriptions) {
         if (listenerDescriptions == null) {
@@ -386,6 +400,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LoadBalancerDescription withListenerDescriptions(
             ListenerDescription... listenerDescriptions) {
         if (this.listenerDescriptions == null) {
@@ -408,6 +423,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LoadBalancerDescription withListenerDescriptions(
             java.util.Collection<ListenerDescription> listenerDescriptions) {
         setListenerDescriptions(listenerDescriptions);
@@ -422,6 +438,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * @param policies
      *        The policies defined for the load balancer.
      */
+
     public void setPolicies(Policies policies) {
         this.policies = policies;
     }
@@ -433,6 +450,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * 
      * @return The policies defined for the load balancer.
      */
+
     public Policies getPolicies() {
         return this.policies;
     }
@@ -447,6 +465,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LoadBalancerDescription withPolicies(Policies policies) {
         setPolicies(policies);
         return this;
@@ -459,6 +478,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * 
      * @return Information about the back-end servers.
      */
+
     public java.util.List<BackendServerDescription> getBackendServerDescriptions() {
         if (backendServerDescriptions == null) {
             backendServerDescriptions = new com.amazonaws.internal.SdkInternalList<BackendServerDescription>();
@@ -474,6 +494,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * @param backendServerDescriptions
      *        Information about the back-end servers.
      */
+
     public void setBackendServerDescriptions(
             java.util.Collection<BackendServerDescription> backendServerDescriptions) {
         if (backendServerDescriptions == null) {
@@ -501,6 +522,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LoadBalancerDescription withBackendServerDescriptions(
             BackendServerDescription... backendServerDescriptions) {
         if (this.backendServerDescriptions == null) {
@@ -523,6 +545,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LoadBalancerDescription withBackendServerDescriptions(
             java.util.Collection<BackendServerDescription> backendServerDescriptions) {
         setBackendServerDescriptions(backendServerDescriptions);
@@ -536,6 +559,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * 
      * @return The Availability Zones for the load balancer.
      */
+
     public java.util.List<String> getAvailabilityZones() {
         if (availabilityZones == null) {
             availabilityZones = new com.amazonaws.internal.SdkInternalList<String>();
@@ -551,6 +575,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * @param availabilityZones
      *        The Availability Zones for the load balancer.
      */
+
     public void setAvailabilityZones(
             java.util.Collection<String> availabilityZones) {
         if (availabilityZones == null) {
@@ -578,6 +603,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LoadBalancerDescription withAvailabilityZones(
             String... availabilityZones) {
         if (this.availabilityZones == null) {
@@ -600,6 +626,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LoadBalancerDescription withAvailabilityZones(
             java.util.Collection<String> availabilityZones) {
         setAvailabilityZones(availabilityZones);
@@ -613,6 +640,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * 
      * @return The IDs of the subnets for the load balancer.
      */
+
     public java.util.List<String> getSubnets() {
         if (subnets == null) {
             subnets = new com.amazonaws.internal.SdkInternalList<String>();
@@ -628,6 +656,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * @param subnets
      *        The IDs of the subnets for the load balancer.
      */
+
     public void setSubnets(java.util.Collection<String> subnets) {
         if (subnets == null) {
             this.subnets = null;
@@ -654,6 +683,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LoadBalancerDescription withSubnets(String... subnets) {
         if (this.subnets == null) {
             setSubnets(new com.amazonaws.internal.SdkInternalList<String>(
@@ -675,6 +705,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LoadBalancerDescription withSubnets(
             java.util.Collection<String> subnets) {
         setSubnets(subnets);
@@ -689,6 +720,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * @param vPCId
      *        The ID of the VPC for the load balancer.
      */
+
     public void setVPCId(String vPCId) {
         this.vPCId = vPCId;
     }
@@ -700,6 +732,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * 
      * @return The ID of the VPC for the load balancer.
      */
+
     public String getVPCId() {
         return this.vPCId;
     }
@@ -714,6 +747,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LoadBalancerDescription withVPCId(String vPCId) {
         setVPCId(vPCId);
         return this;
@@ -726,6 +760,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * 
      * @return The IDs of the instances for the load balancer.
      */
+
     public java.util.List<Instance> getInstances() {
         if (instances == null) {
             instances = new com.amazonaws.internal.SdkInternalList<Instance>();
@@ -741,6 +776,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * @param instances
      *        The IDs of the instances for the load balancer.
      */
+
     public void setInstances(java.util.Collection<Instance> instances) {
         if (instances == null) {
             this.instances = null;
@@ -767,6 +803,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LoadBalancerDescription withInstances(Instance... instances) {
         if (this.instances == null) {
             setInstances(new com.amazonaws.internal.SdkInternalList<Instance>(
@@ -788,6 +825,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LoadBalancerDescription withInstances(
             java.util.Collection<Instance> instances) {
         setInstances(instances);
@@ -803,6 +841,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      *        Information about the health checks conducted on the load
      *        balancer.
      */
+
     public void setHealthCheck(HealthCheck healthCheck) {
         this.healthCheck = healthCheck;
     }
@@ -815,6 +854,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * @return Information about the health checks conducted on the load
      *         balancer.
      */
+
     public HealthCheck getHealthCheck() {
         return this.healthCheck;
     }
@@ -830,6 +870,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LoadBalancerDescription withHealthCheck(HealthCheck healthCheck) {
         setHealthCheck(healthCheck);
         return this;
@@ -850,6 +891,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      *        your back end instance that specifies this source security group
      *        as the inbound source.
      */
+
     public void setSourceSecurityGroup(SourceSecurityGroup sourceSecurityGroup) {
         this.sourceSecurityGroup = sourceSecurityGroup;
     }
@@ -868,6 +910,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      *         your back end instance that specifies this source security group
      *         as the inbound source.
      */
+
     public SourceSecurityGroup getSourceSecurityGroup() {
         return this.sourceSecurityGroup;
     }
@@ -889,6 +932,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LoadBalancerDescription withSourceSecurityGroup(
             SourceSecurityGroup sourceSecurityGroup) {
         setSourceSecurityGroup(sourceSecurityGroup);
@@ -904,6 +948,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * @return The security groups for the load balancer. Valid only for load
      *         balancers in a VPC.
      */
+
     public java.util.List<String> getSecurityGroups() {
         if (securityGroups == null) {
             securityGroups = new com.amazonaws.internal.SdkInternalList<String>();
@@ -921,6 +966,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      *        The security groups for the load balancer. Valid only for load
      *        balancers in a VPC.
      */
+
     public void setSecurityGroups(java.util.Collection<String> securityGroups) {
         if (securityGroups == null) {
             this.securityGroups = null;
@@ -949,6 +995,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LoadBalancerDescription withSecurityGroups(String... securityGroups) {
         if (this.securityGroups == null) {
             setSecurityGroups(new com.amazonaws.internal.SdkInternalList<String>(
@@ -972,6 +1019,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LoadBalancerDescription withSecurityGroups(
             java.util.Collection<String> securityGroups) {
         setSecurityGroups(securityGroups);
@@ -986,6 +1034,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * @param createdTime
      *        The date and time the load balancer was created.
      */
+
     public void setCreatedTime(java.util.Date createdTime) {
         this.createdTime = createdTime;
     }
@@ -997,6 +1046,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * 
      * @return The date and time the load balancer was created.
      */
+
     public java.util.Date getCreatedTime() {
         return this.createdTime;
     }
@@ -1011,6 +1061,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LoadBalancerDescription withCreatedTime(java.util.Date createdTime) {
         setCreatedTime(createdTime);
         return this;
@@ -1041,6 +1092,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      *        If <code>Scheme</code> is <code>internal</code>, the load balancer
      *        has a public DNS name that resolves to a private IP address.
      */
+
     public void setScheme(String scheme) {
         this.scheme = scheme;
     }
@@ -1070,6 +1122,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      *         balancer has a public DNS name that resolves to a private IP
      *         address.
      */
+
     public String getScheme() {
         return this.scheme;
     }
@@ -1101,6 +1154,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LoadBalancerDescription withScheme(String scheme) {
         setScheme(scheme);
         return this;

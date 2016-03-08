@@ -103,6 +103,7 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements
      * @param instanceId
      *        The ID of the instance.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -114,6 +115,7 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ID of the instance.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
@@ -128,6 +130,7 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateImageRequest withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;
@@ -150,6 +153,7 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements
      *        square brackets ([]), spaces ( ), periods (.), slashes (/), dashes
      *        (-), single quotes ('), at-signs (@), or underscores(_)
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -170,6 +174,7 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements
      *         square brackets ([]), spaces ( ), periods (.), slashes (/),
      *         dashes (-), single quotes ('), at-signs (@), or underscores(_)
      */
+
     public String getName() {
         return this.name;
     }
@@ -193,6 +198,7 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateImageRequest withName(String name) {
         setName(name);
         return this;
@@ -206,6 +212,7 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements
      * @param description
      *        A description for the new image.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -217,6 +224,7 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements
      * 
      * @return A description for the new image.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -231,6 +239,7 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateImageRequest withDescription(String description) {
         setDescription(description);
         return this;
@@ -254,6 +263,7 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements
      *        instance before creating the image. When this option is used, file
      *        system integrity on the created image can't be guaranteed.
      */
+
     public void setNoReboot(Boolean noReboot) {
         this.noReboot = noReboot;
     }
@@ -276,6 +286,7 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements
      *         used, file system integrity on the created image can't be
      *         guaranteed.
      */
+
     public Boolean getNoReboot() {
         return this.noReboot;
     }
@@ -300,6 +311,7 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateImageRequest withNoReboot(Boolean noReboot) {
         setNoReboot(noReboot);
         return this;
@@ -323,6 +335,7 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements
      *         used, file system integrity on the created image can't be
      *         guaranteed.
      */
+
     public Boolean isNoReboot() {
         return this.noReboot;
     }
@@ -334,6 +347,7 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements
      * 
      * @return Information about one or more block device mappings.
      */
+
     public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
         if (blockDeviceMappings == null) {
             blockDeviceMappings = new com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>();
@@ -349,6 +363,7 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements
      * @param blockDeviceMappings
      *        Information about one or more block device mappings.
      */
+
     public void setBlockDeviceMappings(
             java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
         if (blockDeviceMappings == null) {
@@ -376,6 +391,7 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateImageRequest withBlockDeviceMappings(
             BlockDeviceMapping... blockDeviceMappings) {
         if (this.blockDeviceMappings == null) {
@@ -398,6 +414,7 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateImageRequest withBlockDeviceMappings(
             java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
         setBlockDeviceMappings(blockDeviceMappings);

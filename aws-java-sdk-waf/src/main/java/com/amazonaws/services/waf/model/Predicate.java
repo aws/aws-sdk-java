@@ -98,6 +98,7 @@ public class Predicate implements Serializable, Cloneable {
      *        allow, block, or count requests based on all IP addresses
      *        <i>except</i> <code>192.0.2.44</code>.
      */
+
     public void setNegated(Boolean negated) {
         this.negated = negated;
     }
@@ -137,6 +138,7 @@ public class Predicate implements Serializable, Cloneable {
      *         requests based on all IP addresses <i>except</i>
      *         <code>192.0.2.44</code>.
      */
+
     public Boolean getNegated() {
         return this.negated;
     }
@@ -177,6 +179,7 @@ public class Predicate implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Predicate withNegated(Boolean negated) {
         setNegated(negated);
         return this;
@@ -217,6 +220,7 @@ public class Predicate implements Serializable, Cloneable {
      *         requests based on all IP addresses <i>except</i>
      *         <code>192.0.2.44</code>.
      */
+
     public Boolean isNegated() {
         return this.negated;
     }
@@ -232,6 +236,7 @@ public class Predicate implements Serializable, Cloneable {
      *        <code>ByteMatchSet</code> or <code>IPSet</code>.
      * @see PredicateType
      */
+
     public void setType(String type) {
         this.type = type;
     }
@@ -246,6 +251,7 @@ public class Predicate implements Serializable, Cloneable {
      *         <code>ByteMatchSet</code> or <code>IPSet</code>.
      * @see PredicateType
      */
+
     public String getType() {
         return this.type;
     }
@@ -263,6 +269,7 @@ public class Predicate implements Serializable, Cloneable {
      *         chained together.
      * @see PredicateType
      */
+
     public Predicate withType(String type) {
         setType(type);
         return this;
@@ -281,6 +288,7 @@ public class Predicate implements Serializable, Cloneable {
      *         chained together.
      * @see PredicateType
      */
+
     public void setType(PredicateType type) {
         this.type = type.toString();
     }
@@ -298,6 +306,7 @@ public class Predicate implements Serializable, Cloneable {
      *         chained together.
      * @see PredicateType
      */
+
     public Predicate withType(PredicateType type) {
         setType(type);
         return this;
@@ -316,6 +325,7 @@ public class Predicate implements Serializable, Cloneable {
      *        returned by the corresponding <code>Create</code> or
      *        <code>List</code> command.
      */
+
     public void setDataId(String dataId) {
         this.dataId = dataId;
     }
@@ -332,6 +342,7 @@ public class Predicate implements Serializable, Cloneable {
      *         returned by the corresponding <code>Create</code> or
      *         <code>List</code> command.
      */
+
     public String getDataId() {
         return this.dataId;
     }
@@ -351,6 +362,7 @@ public class Predicate implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Predicate withDataId(String dataId) {
         setDataId(dataId);
         return this;

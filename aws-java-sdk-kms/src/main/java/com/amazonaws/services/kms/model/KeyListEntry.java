@@ -46,6 +46,7 @@ public class KeyListEntry implements Serializable, Cloneable {
      * @param keyId
      *        Unique identifier of the key.
      */
+
     public void setKeyId(String keyId) {
         this.keyId = keyId;
     }
@@ -57,6 +58,7 @@ public class KeyListEntry implements Serializable, Cloneable {
      * 
      * @return Unique identifier of the key.
      */
+
     public String getKeyId() {
         return this.keyId;
     }
@@ -71,6 +73,7 @@ public class KeyListEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public KeyListEntry withKeyId(String keyId) {
         setKeyId(keyId);
         return this;
@@ -84,6 +87,7 @@ public class KeyListEntry implements Serializable, Cloneable {
      * @param keyArn
      *        ARN of the key.
      */
+
     public void setKeyArn(String keyArn) {
         this.keyArn = keyArn;
     }
@@ -95,6 +99,7 @@ public class KeyListEntry implements Serializable, Cloneable {
      * 
      * @return ARN of the key.
      */
+
     public String getKeyArn() {
         return this.keyArn;
     }
@@ -109,6 +114,7 @@ public class KeyListEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public KeyListEntry withKeyArn(String keyArn) {
         setKeyArn(keyArn);
         return this;

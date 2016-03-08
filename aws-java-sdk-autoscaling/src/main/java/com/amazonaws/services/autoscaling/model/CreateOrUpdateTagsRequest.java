@@ -39,6 +39,7 @@ public class CreateOrUpdateTagsRequest extends AmazonWebServiceRequest
      * 
      * @return One or more tags.
      */
+
     public java.util.List<Tag> getTags() {
         if (tags == null) {
             tags = new com.amazonaws.internal.SdkInternalList<Tag>();
@@ -54,6 +55,7 @@ public class CreateOrUpdateTagsRequest extends AmazonWebServiceRequest
      * @param tags
      *        One or more tags.
      */
+
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
             this.tags = null;
@@ -79,6 +81,7 @@ public class CreateOrUpdateTagsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateOrUpdateTagsRequest withTags(Tag... tags) {
         if (this.tags == null) {
             setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
@@ -99,6 +102,7 @@ public class CreateOrUpdateTagsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateOrUpdateTagsRequest withTags(java.util.Collection<Tag> tags) {
         setTags(tags);
         return this;

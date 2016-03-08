@@ -37,6 +37,7 @@ public class DescribeImagesResult implements Serializable, Cloneable {
      * 
      * @return Information about one or more images.
      */
+
     public java.util.List<Image> getImages() {
         if (images == null) {
             images = new com.amazonaws.internal.SdkInternalList<Image>();
@@ -52,6 +53,7 @@ public class DescribeImagesResult implements Serializable, Cloneable {
      * @param images
      *        Information about one or more images.
      */
+
     public void setImages(java.util.Collection<Image> images) {
         if (images == null) {
             this.images = null;
@@ -77,6 +79,7 @@ public class DescribeImagesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeImagesResult withImages(Image... images) {
         if (this.images == null) {
             setImages(new com.amazonaws.internal.SdkInternalList<Image>(
@@ -98,6 +101,7 @@ public class DescribeImagesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeImagesResult withImages(java.util.Collection<Image> images) {
         setImages(images);
         return this;

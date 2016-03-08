@@ -76,6 +76,7 @@ public class InvalidLayerPartException extends AmazonServiceException {
      * @param registryId
      *        The registry ID associated with the exception.
      */
+
     public void setRegistryId(String registryId) {
         this.registryId = registryId;
     }
@@ -87,6 +88,7 @@ public class InvalidLayerPartException extends AmazonServiceException {
      * 
      * @return The registry ID associated with the exception.
      */
+
     public String getRegistryId() {
         return this.registryId;
     }
@@ -101,6 +103,7 @@ public class InvalidLayerPartException extends AmazonServiceException {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InvalidLayerPartException withRegistryId(String registryId) {
         setRegistryId(registryId);
         return this;
@@ -114,6 +117,7 @@ public class InvalidLayerPartException extends AmazonServiceException {
      * @param repositoryName
      *        The repository name associated with the exception.
      */
+
     public void setRepositoryName(String repositoryName) {
         this.repositoryName = repositoryName;
     }
@@ -125,6 +129,7 @@ public class InvalidLayerPartException extends AmazonServiceException {
      * 
      * @return The repository name associated with the exception.
      */
+
     public String getRepositoryName() {
         return this.repositoryName;
     }
@@ -139,6 +144,7 @@ public class InvalidLayerPartException extends AmazonServiceException {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InvalidLayerPartException withRepositoryName(String repositoryName) {
         setRepositoryName(repositoryName);
         return this;
@@ -152,6 +158,7 @@ public class InvalidLayerPartException extends AmazonServiceException {
      * @param uploadId
      *        The upload ID associated with the exception.
      */
+
     public void setUploadId(String uploadId) {
         this.uploadId = uploadId;
     }
@@ -163,6 +170,7 @@ public class InvalidLayerPartException extends AmazonServiceException {
      * 
      * @return The upload ID associated with the exception.
      */
+
     public String getUploadId() {
         return this.uploadId;
     }
@@ -177,6 +185,7 @@ public class InvalidLayerPartException extends AmazonServiceException {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InvalidLayerPartException withUploadId(String uploadId) {
         setUploadId(uploadId);
         return this;
@@ -192,6 +201,7 @@ public class InvalidLayerPartException extends AmazonServiceException {
      *        The last valid byte received from the layer part upload that is
      *        associated with the exception.
      */
+
     public void setLastValidByteReceived(Long lastValidByteReceived) {
         this.lastValidByteReceived = lastValidByteReceived;
     }
@@ -205,6 +215,7 @@ public class InvalidLayerPartException extends AmazonServiceException {
      * @return The last valid byte received from the layer part upload that is
      *         associated with the exception.
      */
+
     public Long getLastValidByteReceived() {
         return this.lastValidByteReceived;
     }
@@ -221,6 +232,7 @@ public class InvalidLayerPartException extends AmazonServiceException {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InvalidLayerPartException withLastValidByteReceived(
             Long lastValidByteReceived) {
         setLastValidByteReceived(lastValidByteReceived);

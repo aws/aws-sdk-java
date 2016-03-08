@@ -104,6 +104,7 @@ public class Tag implements Serializable, Cloneable {
      *        Constraints: Tag keys are case-sensitive and accept a maximum of
      *        127 Unicode characters. May not begin with <code>aws:</code>
      */
+
     public void setKey(String key) {
         this.key = key;
     }
@@ -122,6 +123,7 @@ public class Tag implements Serializable, Cloneable {
      *         Constraints: Tag keys are case-sensitive and accept a maximum of
      *         127 Unicode characters. May not begin with <code>aws:</code>
      */
+
     public String getKey() {
         return this.key;
     }
@@ -143,6 +145,7 @@ public class Tag implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Tag withKey(String key) {
         setKey(key);
         return this;
@@ -163,6 +166,7 @@ public class Tag implements Serializable, Cloneable {
      *        Constraints: Tag values are case-sensitive and accept a maximum of
      *        255 Unicode characters.
      */
+
     public void setValue(String value) {
         this.value = value;
     }
@@ -181,6 +185,7 @@ public class Tag implements Serializable, Cloneable {
      *         Constraints: Tag values are case-sensitive and accept a maximum
      *         of 255 Unicode characters.
      */
+
     public String getValue() {
         return this.value;
     }
@@ -202,6 +207,7 @@ public class Tag implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Tag withValue(String value) {
         setValue(value);
         return this;

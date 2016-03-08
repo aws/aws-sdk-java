@@ -44,6 +44,7 @@ public class ReleaseHostsResult implements Serializable, Cloneable {
      * 
      * @return The IDs of the Dedicated hosts that were successfully released.
      */
+
     public java.util.List<String> getSuccessful() {
         if (successful == null) {
             successful = new com.amazonaws.internal.SdkInternalList<String>();
@@ -59,6 +60,7 @@ public class ReleaseHostsResult implements Serializable, Cloneable {
      * @param successful
      *        The IDs of the Dedicated hosts that were successfully released.
      */
+
     public void setSuccessful(java.util.Collection<String> successful) {
         if (successful == null) {
             this.successful = null;
@@ -85,6 +87,7 @@ public class ReleaseHostsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReleaseHostsResult withSuccessful(String... successful) {
         if (this.successful == null) {
             setSuccessful(new com.amazonaws.internal.SdkInternalList<String>(
@@ -106,6 +109,7 @@ public class ReleaseHostsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReleaseHostsResult withSuccessful(
             java.util.Collection<String> successful) {
         setSuccessful(successful);
@@ -121,6 +125,7 @@ public class ReleaseHostsResult implements Serializable, Cloneable {
      * @return The IDs of the Dedicated hosts that could not be released,
      *         including an error message.
      */
+
     public java.util.List<UnsuccessfulItem> getUnsuccessful() {
         if (unsuccessful == null) {
             unsuccessful = new com.amazonaws.internal.SdkInternalList<UnsuccessfulItem>();
@@ -138,6 +143,7 @@ public class ReleaseHostsResult implements Serializable, Cloneable {
      *        The IDs of the Dedicated hosts that could not be released,
      *        including an error message.
      */
+
     public void setUnsuccessful(
             java.util.Collection<UnsuccessfulItem> unsuccessful) {
         if (unsuccessful == null) {
@@ -167,6 +173,7 @@ public class ReleaseHostsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReleaseHostsResult withUnsuccessful(UnsuccessfulItem... unsuccessful) {
         if (this.unsuccessful == null) {
             setUnsuccessful(new com.amazonaws.internal.SdkInternalList<UnsuccessfulItem>(
@@ -190,6 +197,7 @@ public class ReleaseHostsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReleaseHostsResult withUnsuccessful(
             java.util.Collection<UnsuccessfulItem> unsuccessful) {
         setUnsuccessful(unsuccessful);

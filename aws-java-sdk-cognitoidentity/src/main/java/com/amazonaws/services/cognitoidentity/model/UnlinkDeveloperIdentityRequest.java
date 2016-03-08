@@ -59,6 +59,7 @@ public class UnlinkDeveloperIdentityRequest extends AmazonWebServiceRequest
      * @param identityId
      *        A unique identifier in the format REGION:GUID.
      */
+
     public void setIdentityId(String identityId) {
         this.identityId = identityId;
     }
@@ -70,6 +71,7 @@ public class UnlinkDeveloperIdentityRequest extends AmazonWebServiceRequest
      * 
      * @return A unique identifier in the format REGION:GUID.
      */
+
     public String getIdentityId() {
         return this.identityId;
     }
@@ -84,6 +86,7 @@ public class UnlinkDeveloperIdentityRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UnlinkDeveloperIdentityRequest withIdentityId(String identityId) {
         setIdentityId(identityId);
         return this;
@@ -97,6 +100,7 @@ public class UnlinkDeveloperIdentityRequest extends AmazonWebServiceRequest
      * @param identityPoolId
      *        An identity pool ID in the format REGION:GUID.
      */
+
     public void setIdentityPoolId(String identityPoolId) {
         this.identityPoolId = identityPoolId;
     }
@@ -108,6 +112,7 @@ public class UnlinkDeveloperIdentityRequest extends AmazonWebServiceRequest
      * 
      * @return An identity pool ID in the format REGION:GUID.
      */
+
     public String getIdentityPoolId() {
         return this.identityPoolId;
     }
@@ -122,6 +127,7 @@ public class UnlinkDeveloperIdentityRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UnlinkDeveloperIdentityRequest withIdentityPoolId(
             String identityPoolId) {
         setIdentityPoolId(identityPoolId);
@@ -136,6 +142,7 @@ public class UnlinkDeveloperIdentityRequest extends AmazonWebServiceRequest
      * @param developerProviderName
      *        The "domain" by which Cognito will refer to your users.
      */
+
     public void setDeveloperProviderName(String developerProviderName) {
         this.developerProviderName = developerProviderName;
     }
@@ -147,6 +154,7 @@ public class UnlinkDeveloperIdentityRequest extends AmazonWebServiceRequest
      * 
      * @return The "domain" by which Cognito will refer to your users.
      */
+
     public String getDeveloperProviderName() {
         return this.developerProviderName;
     }
@@ -161,6 +169,7 @@ public class UnlinkDeveloperIdentityRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UnlinkDeveloperIdentityRequest withDeveloperProviderName(
             String developerProviderName) {
         setDeveloperProviderName(developerProviderName);
@@ -175,6 +184,7 @@ public class UnlinkDeveloperIdentityRequest extends AmazonWebServiceRequest
      *        A unique ID used by your backend authentication process to
      *        identify a user.
      */
+
     public void setDeveloperUserIdentifier(String developerUserIdentifier) {
         this.developerUserIdentifier = developerUserIdentifier;
     }
@@ -186,6 +196,7 @@ public class UnlinkDeveloperIdentityRequest extends AmazonWebServiceRequest
      * @return A unique ID used by your backend authentication process to
      *         identify a user.
      */
+
     public String getDeveloperUserIdentifier() {
         return this.developerUserIdentifier;
     }
@@ -200,6 +211,7 @@ public class UnlinkDeveloperIdentityRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UnlinkDeveloperIdentityRequest withDeveloperUserIdentifier(
             String developerUserIdentifier) {
         setDeveloperUserIdentifier(developerUserIdentifier);

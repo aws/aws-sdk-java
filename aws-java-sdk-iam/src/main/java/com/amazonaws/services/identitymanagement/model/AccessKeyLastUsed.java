@@ -158,6 +158,7 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
      *        </p>
      *        </li>
      */
+
     public void setLastUsedDate(java.util.Date lastUsedDate) {
         this.lastUsedDate = lastUsedDate;
     }
@@ -209,6 +210,7 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
      *         </p>
      *         </li>
      */
+
     public java.util.Date getLastUsedDate() {
         return this.lastUsedDate;
     }
@@ -262,6 +264,7 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AccessKeyLastUsed withLastUsedDate(java.util.Date lastUsedDate) {
         setLastUsedDate(lastUsedDate);
         return this;
@@ -312,6 +315,7 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
      *        </p>
      *        </li>
      */
+
     public void setServiceName(String serviceName) {
         this.serviceName = serviceName;
     }
@@ -360,6 +364,7 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
      *         </p>
      *         </li>
      */
+
     public String getServiceName() {
         return this.serviceName;
     }
@@ -411,6 +416,7 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AccessKeyLastUsed withServiceName(String serviceName) {
         setServiceName(serviceName);
         return this;
@@ -472,6 +478,7 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
      *        >Regions and Endpoints</a> in the Amazon Web Services General
      *        Reference.
      */
+
     public void setRegion(String region) {
         this.region = region;
     }
@@ -531,6 +538,7 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
      *         >Regions and Endpoints</a> in the Amazon Web Services General
      *         Reference.
      */
+
     public String getRegion() {
         return this.region;
     }
@@ -593,6 +601,7 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AccessKeyLastUsed withRegion(String region) {
         setRegion(region);
         return this;

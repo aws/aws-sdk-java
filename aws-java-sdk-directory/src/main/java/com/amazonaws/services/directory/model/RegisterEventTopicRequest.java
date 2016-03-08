@@ -48,6 +48,7 @@ public class RegisterEventTopicRequest extends AmazonWebServiceRequest
      *        The Directory ID that will publish status messages to the SNS
      *        topic.
      */
+
     public void setDirectoryId(String directoryId) {
         this.directoryId = directoryId;
     }
@@ -60,6 +61,7 @@ public class RegisterEventTopicRequest extends AmazonWebServiceRequest
      * @return The Directory ID that will publish status messages to the SNS
      *         topic.
      */
+
     public String getDirectoryId() {
         return this.directoryId;
     }
@@ -75,6 +77,7 @@ public class RegisterEventTopicRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterEventTopicRequest withDirectoryId(String directoryId) {
         setDirectoryId(directoryId);
         return this;
@@ -91,6 +94,7 @@ public class RegisterEventTopicRequest extends AmazonWebServiceRequest
      *        messages. This SNS topic must be in the same region as the
      *        specified Directory ID.
      */
+
     public void setTopicName(String topicName) {
         this.topicName = topicName;
     }
@@ -105,6 +109,7 @@ public class RegisterEventTopicRequest extends AmazonWebServiceRequest
      *         messages. This SNS topic must be in the same region as the
      *         specified Directory ID.
      */
+
     public String getTopicName() {
         return this.topicName;
     }
@@ -122,6 +127,7 @@ public class RegisterEventTopicRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterEventTopicRequest withTopicName(String topicName) {
         setTopicName(topicName);
         return this;

@@ -78,6 +78,7 @@ public class FindingsFilter implements Serializable, Cloneable {
      *         type property must be the exact match of the value of the
      *         <b>rulesPackageArn</b> property of the <a>Finding</a> data type.
      */
+
     public java.util.List<String> getRulesPackageArns() {
         return rulesPackageArns;
     }
@@ -94,6 +95,7 @@ public class FindingsFilter implements Serializable, Cloneable {
      *        type property must be the exact match of the value of the
      *        <b>rulesPackageArn</b> property of the <a>Finding</a> data type.
      */
+
     public void setRulesPackageArns(
             java.util.Collection<String> rulesPackageArns) {
         if (rulesPackageArns == null) {
@@ -125,6 +127,7 @@ public class FindingsFilter implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FindingsFilter withRulesPackageArns(String... rulesPackageArns) {
         if (this.rulesPackageArns == null) {
             setRulesPackageArns(new java.util.ArrayList<String>(
@@ -150,6 +153,7 @@ public class FindingsFilter implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FindingsFilter withRulesPackageArns(
             java.util.Collection<String> rulesPackageArns) {
         setRulesPackageArns(rulesPackageArns);
@@ -167,6 +171,7 @@ public class FindingsFilter implements Serializable, Cloneable {
      *         type property must be the exact match of the value of the
      *         <b>ruleName</b> property of the <a>Finding</a> data type.
      */
+
     public java.util.List<String> getRuleNames() {
         return ruleNames;
     }
@@ -183,6 +188,7 @@ public class FindingsFilter implements Serializable, Cloneable {
      *        type property must be the exact match of the value of the
      *        <b>ruleName</b> property of the <a>Finding</a> data type.
      */
+
     public void setRuleNames(java.util.Collection<String> ruleNames) {
         if (ruleNames == null) {
             this.ruleNames = null;
@@ -212,6 +218,7 @@ public class FindingsFilter implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FindingsFilter withRuleNames(String... ruleNames) {
         if (this.ruleNames == null) {
             setRuleNames(new java.util.ArrayList<String>(ruleNames.length));
@@ -236,6 +243,7 @@ public class FindingsFilter implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FindingsFilter withRuleNames(java.util.Collection<String> ruleNames) {
         setRuleNames(ruleNames);
         return this;
@@ -252,6 +260,7 @@ public class FindingsFilter implements Serializable, Cloneable {
      *         type property must be the exact match of the value of the
      *         <b>severity</b> property of the <a>Finding</a> data type.
      */
+
     public java.util.List<String> getSeverities() {
         return severities;
     }
@@ -268,6 +277,7 @@ public class FindingsFilter implements Serializable, Cloneable {
      *        type property must be the exact match of the value of the
      *        <b>severity</b> property of the <a>Finding</a> data type.
      */
+
     public void setSeverities(java.util.Collection<String> severities) {
         if (severities == null) {
             this.severities = null;
@@ -297,6 +307,7 @@ public class FindingsFilter implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FindingsFilter withSeverities(String... severities) {
         if (this.severities == null) {
             setSeverities(new java.util.ArrayList<String>(severities.length));
@@ -321,6 +332,7 @@ public class FindingsFilter implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FindingsFilter withSeverities(java.util.Collection<String> severities) {
         setSeverities(severities);
         return this;
@@ -337,6 +349,7 @@ public class FindingsFilter implements Serializable, Cloneable {
      *         type property must be the exact match of the value of the
      *         <b>attributes</b> property of the <a>Finding</a> data type.
      */
+
     public java.util.List<Attribute> getAttributes() {
         return attributes;
     }
@@ -353,6 +366,7 @@ public class FindingsFilter implements Serializable, Cloneable {
      *        type property must be the exact match of the value of the
      *        <b>attributes</b> property of the <a>Finding</a> data type.
      */
+
     public void setAttributes(java.util.Collection<Attribute> attributes) {
         if (attributes == null) {
             this.attributes = null;
@@ -382,6 +396,7 @@ public class FindingsFilter implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FindingsFilter withAttributes(Attribute... attributes) {
         if (this.attributes == null) {
             setAttributes(new java.util.ArrayList<Attribute>(attributes.length));
@@ -406,6 +421,7 @@ public class FindingsFilter implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FindingsFilter withAttributes(
             java.util.Collection<Attribute> attributes) {
         setAttributes(attributes);
@@ -423,6 +439,7 @@ public class FindingsFilter implements Serializable, Cloneable {
      *         type property must be the exact match of the value of the
      *         <b>userAttributes</b> property of the <a>Finding</a> data type.
      */
+
     public java.util.List<Attribute> getUserAttributes() {
         return userAttributes;
     }
@@ -439,6 +456,7 @@ public class FindingsFilter implements Serializable, Cloneable {
      *        type property must be the exact match of the value of the
      *        <b>userAttributes</b> property of the <a>Finding</a> data type.
      */
+
     public void setUserAttributes(java.util.Collection<Attribute> userAttributes) {
         if (userAttributes == null) {
             this.userAttributes = null;
@@ -468,6 +486,7 @@ public class FindingsFilter implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FindingsFilter withUserAttributes(Attribute... userAttributes) {
         if (this.userAttributes == null) {
             setUserAttributes(new java.util.ArrayList<Attribute>(
@@ -493,6 +512,7 @@ public class FindingsFilter implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FindingsFilter withUserAttributes(
             java.util.Collection<Attribute> userAttributes) {
         setUserAttributes(userAttributes);

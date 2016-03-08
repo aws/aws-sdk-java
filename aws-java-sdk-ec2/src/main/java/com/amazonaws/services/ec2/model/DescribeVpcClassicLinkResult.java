@@ -37,6 +37,7 @@ public class DescribeVpcClassicLinkResult implements Serializable, Cloneable {
      * 
      * @return The ClassicLink status of one or more VPCs.
      */
+
     public java.util.List<VpcClassicLink> getVpcs() {
         if (vpcs == null) {
             vpcs = new com.amazonaws.internal.SdkInternalList<VpcClassicLink>();
@@ -52,6 +53,7 @@ public class DescribeVpcClassicLinkResult implements Serializable, Cloneable {
      * @param vpcs
      *        The ClassicLink status of one or more VPCs.
      */
+
     public void setVpcs(java.util.Collection<VpcClassicLink> vpcs) {
         if (vpcs == null) {
             this.vpcs = null;
@@ -78,6 +80,7 @@ public class DescribeVpcClassicLinkResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVpcClassicLinkResult withVpcs(VpcClassicLink... vpcs) {
         if (this.vpcs == null) {
             setVpcs(new com.amazonaws.internal.SdkInternalList<VpcClassicLink>(
@@ -99,6 +102,7 @@ public class DescribeVpcClassicLinkResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVpcClassicLinkResult withVpcs(
             java.util.Collection<VpcClassicLink> vpcs) {
         setVpcs(vpcs);

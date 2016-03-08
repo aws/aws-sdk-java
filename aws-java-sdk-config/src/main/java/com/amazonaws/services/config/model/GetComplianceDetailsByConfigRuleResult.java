@@ -48,6 +48,7 @@ public class GetComplianceDetailsByConfigRuleResult implements Serializable,
      * @return Indicates whether the AWS resource complies with the specified
      *         AWS Config rule.
      */
+
     public java.util.List<EvaluationResult> getEvaluationResults() {
         if (evaluationResults == null) {
             evaluationResults = new com.amazonaws.internal.SdkInternalList<EvaluationResult>();
@@ -65,6 +66,7 @@ public class GetComplianceDetailsByConfigRuleResult implements Serializable,
      *        Indicates whether the AWS resource complies with the specified AWS
      *        Config rule.
      */
+
     public void setEvaluationResults(
             java.util.Collection<EvaluationResult> evaluationResults) {
         if (evaluationResults == null) {
@@ -94,6 +96,7 @@ public class GetComplianceDetailsByConfigRuleResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetComplianceDetailsByConfigRuleResult withEvaluationResults(
             EvaluationResult... evaluationResults) {
         if (this.evaluationResults == null) {
@@ -118,6 +121,7 @@ public class GetComplianceDetailsByConfigRuleResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetComplianceDetailsByConfigRuleResult withEvaluationResults(
             java.util.Collection<EvaluationResult> evaluationResults) {
         setEvaluationResults(evaluationResults);
@@ -134,6 +138,7 @@ public class GetComplianceDetailsByConfigRuleResult implements Serializable,
      *        The string that you use in a subsequent request to get the next
      *        page of results in a paginated response.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -147,6 +152,7 @@ public class GetComplianceDetailsByConfigRuleResult implements Serializable,
      * @return The string that you use in a subsequent request to get the next
      *         page of results in a paginated response.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -163,6 +169,7 @@ public class GetComplianceDetailsByConfigRuleResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetComplianceDetailsByConfigRuleResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

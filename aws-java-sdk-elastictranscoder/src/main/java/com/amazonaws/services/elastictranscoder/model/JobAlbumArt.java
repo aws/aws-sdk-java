@@ -92,6 +92,7 @@ public class JobAlbumArt implements Serializable, Cloneable {
      *        will use the specified album art file.</li>
      *        </ul>
      */
+
     public void setMergePolicy(String mergePolicy) {
         this.mergePolicy = mergePolicy;
     }
@@ -132,6 +133,7 @@ public class JobAlbumArt implements Serializable, Cloneable {
      *         Transcoder will use the specified album art file.</li>
      *         </ul>
      */
+
     public String getMergePolicy() {
         return this.mergePolicy;
     }
@@ -175,6 +177,7 @@ public class JobAlbumArt implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobAlbumArt withMergePolicy(String mergePolicy) {
         setMergePolicy(mergePolicy);
         return this;
@@ -191,6 +194,7 @@ public class JobAlbumArt implements Serializable, Cloneable {
      *         associated with an audio file, to a maximum of 20. Valid formats
      *         are <code>.jpg</code> and <code>.png</code>
      */
+
     public java.util.List<Artwork> getArtwork() {
         if (artwork == null) {
             artwork = new com.amazonaws.internal.SdkInternalList<Artwork>();
@@ -210,6 +214,7 @@ public class JobAlbumArt implements Serializable, Cloneable {
      *        associated with an audio file, to a maximum of 20. Valid formats
      *        are <code>.jpg</code> and <code>.png</code>
      */
+
     public void setArtwork(java.util.Collection<Artwork> artwork) {
         if (artwork == null) {
             this.artwork = null;
@@ -240,6 +245,7 @@ public class JobAlbumArt implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobAlbumArt withArtwork(Artwork... artwork) {
         if (this.artwork == null) {
             setArtwork(new com.amazonaws.internal.SdkInternalList<Artwork>(
@@ -265,6 +271,7 @@ public class JobAlbumArt implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobAlbumArt withArtwork(java.util.Collection<Artwork> artwork) {
         setArtwork(artwork);
         return this;

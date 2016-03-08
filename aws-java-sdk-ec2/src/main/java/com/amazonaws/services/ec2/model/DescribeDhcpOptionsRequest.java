@@ -97,6 +97,7 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest
      *         <p>
      *         Default: Describes all your DHCP options sets.
      */
+
     public java.util.List<String> getDhcpOptionsIds() {
         if (dhcpOptionsIds == null) {
             dhcpOptionsIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -117,6 +118,7 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest
      *        <p>
      *        Default: Describes all your DHCP options sets.
      */
+
     public void setDhcpOptionsIds(java.util.Collection<String> dhcpOptionsIds) {
         if (dhcpOptionsIds == null) {
             this.dhcpOptionsIds = null;
@@ -148,6 +150,7 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeDhcpOptionsRequest withDhcpOptionsIds(
             String... dhcpOptionsIds) {
         if (this.dhcpOptionsIds == null) {
@@ -175,6 +178,7 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeDhcpOptionsRequest withDhcpOptionsIds(
             java.util.Collection<String> dhcpOptionsIds) {
         setDhcpOptionsIds(dhcpOptionsIds);
@@ -271,6 +275,7 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest
      *         </p>
      *         </li>
      */
+
     public java.util.List<Filter> getFilters() {
         if (filters == null) {
             filters = new com.amazonaws.internal.SdkInternalList<Filter>();
@@ -369,6 +374,7 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest
      *        </p>
      *        </li>
      */
+
     public void setFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
             this.filters = null;
@@ -478,6 +484,7 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeDhcpOptionsRequest withFilters(Filter... filters) {
         if (this.filters == null) {
             setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(
@@ -582,6 +589,7 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeDhcpOptionsRequest withFilters(
             java.util.Collection<Filter> filters) {
         setFilters(filters);

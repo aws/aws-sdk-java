@@ -54,6 +54,7 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements
      *        Default: The address is for use with instances in EC2-Classic.
      * @see DomainType
      */
+
     public void setDomain(String domain) {
         this.domain = domain;
     }
@@ -73,6 +74,7 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements
      *         Default: The address is for use with instances in EC2-Classic.
      * @see DomainType
      */
+
     public String getDomain() {
         return this.domain;
     }
@@ -95,6 +97,7 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see DomainType
      */
+
     public AllocateAddressRequest withDomain(String domain) {
         setDomain(domain);
         return this;
@@ -118,6 +121,7 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see DomainType
      */
+
     public void setDomain(DomainType domain) {
         this.domain = domain.toString();
     }
@@ -140,6 +144,7 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see DomainType
      */
+
     public AllocateAddressRequest withDomain(DomainType domain) {
         setDomain(domain);
         return this;

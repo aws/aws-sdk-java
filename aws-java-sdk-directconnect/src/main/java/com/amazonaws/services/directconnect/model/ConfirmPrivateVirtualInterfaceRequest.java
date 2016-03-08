@@ -48,6 +48,7 @@ public class ConfirmPrivateVirtualInterfaceRequest extends
     /**
      * @param virtualInterfaceId
      */
+
     public void setVirtualInterfaceId(String virtualInterfaceId) {
         this.virtualInterfaceId = virtualInterfaceId;
     }
@@ -55,6 +56,7 @@ public class ConfirmPrivateVirtualInterfaceRequest extends
     /**
      * @return
      */
+
     public String getVirtualInterfaceId() {
         return this.virtualInterfaceId;
     }
@@ -64,6 +66,7 @@ public class ConfirmPrivateVirtualInterfaceRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfirmPrivateVirtualInterfaceRequest withVirtualInterfaceId(
             String virtualInterfaceId) {
         setVirtualInterfaceId(virtualInterfaceId);
@@ -97,6 +100,7 @@ public class ConfirmPrivateVirtualInterfaceRequest extends
      *        <p>
      *        Default: None
      */
+
     public void setVirtualGatewayId(String virtualGatewayId) {
         this.virtualGatewayId = virtualGatewayId;
     }
@@ -127,6 +131,7 @@ public class ConfirmPrivateVirtualInterfaceRequest extends
      *         <p>
      *         Default: None
      */
+
     public String getVirtualGatewayId() {
         return this.virtualGatewayId;
     }
@@ -160,6 +165,7 @@ public class ConfirmPrivateVirtualInterfaceRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfirmPrivateVirtualInterfaceRequest withVirtualGatewayId(
             String virtualGatewayId) {
         setVirtualGatewayId(virtualGatewayId);

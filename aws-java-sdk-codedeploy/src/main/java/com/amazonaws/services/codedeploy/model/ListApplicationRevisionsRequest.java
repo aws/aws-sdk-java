@@ -118,6 +118,7 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
      *        The name of an existing AWS CodeDeploy application associated with
      *        the applicable IAM user or AWS account.
      */
+
     public void setApplicationName(String applicationName) {
         this.applicationName = applicationName;
     }
@@ -131,6 +132,7 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
      * @return The name of an existing AWS CodeDeploy application associated
      *         with the applicable IAM user or AWS account.
      */
+
     public String getApplicationName() {
         return this.applicationName;
     }
@@ -147,6 +149,7 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListApplicationRevisionsRequest withApplicationName(
             String applicationName) {
         setApplicationName(applicationName);
@@ -185,6 +188,7 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
      *        an arbitrary order.
      * @see ApplicationRevisionSortBy
      */
+
     public void setSortBy(String sortBy) {
         this.sortBy = sortBy;
     }
@@ -220,6 +224,7 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
      *         an arbitrary order.
      * @see ApplicationRevisionSortBy
      */
+
     public String getSortBy() {
         return this.sortBy;
     }
@@ -258,6 +263,7 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see ApplicationRevisionSortBy
      */
+
     public ListApplicationRevisionsRequest withSortBy(String sortBy) {
         setSortBy(sortBy);
         return this;
@@ -297,6 +303,7 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see ApplicationRevisionSortBy
      */
+
     public void setSortBy(ApplicationRevisionSortBy sortBy) {
         this.sortBy = sortBy.toString();
     }
@@ -335,6 +342,7 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see ApplicationRevisionSortBy
      */
+
     public ListApplicationRevisionsRequest withSortBy(
             ApplicationRevisionSortBy sortBy) {
         setSortBy(sortBy);
@@ -369,6 +377,7 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
      *        If set to null, the results will be sorted in an arbitrary order.
      * @see SortOrder
      */
+
     public void setSortOrder(String sortOrder) {
         this.sortOrder = sortOrder;
     }
@@ -400,6 +409,7 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
      *         If set to null, the results will be sorted in an arbitrary order.
      * @see SortOrder
      */
+
     public String getSortOrder() {
         return this.sortOrder;
     }
@@ -434,6 +444,7 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see SortOrder
      */
+
     public ListApplicationRevisionsRequest withSortOrder(String sortOrder) {
         setSortOrder(sortOrder);
         return this;
@@ -469,6 +480,7 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see SortOrder
      */
+
     public void setSortOrder(SortOrder sortOrder) {
         this.sortOrder = sortOrder.toString();
     }
@@ -503,6 +515,7 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see SortOrder
      */
+
     public ListApplicationRevisionsRequest withSortOrder(SortOrder sortOrder) {
         setSortOrder(sortOrder);
         return this;
@@ -522,6 +535,7 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
      *        <p>
      *        If set to null, then all of the user's buckets will be searched.
      */
+
     public void setS3Bucket(String s3Bucket) {
         this.s3Bucket = s3Bucket;
     }
@@ -539,6 +553,7 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
      *         <p>
      *         If set to null, then all of the user's buckets will be searched.
      */
+
     public String getS3Bucket() {
         return this.s3Bucket;
     }
@@ -559,6 +574,7 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListApplicationRevisionsRequest withS3Bucket(String s3Bucket) {
         setS3Bucket(s3Bucket);
         return this;
@@ -574,6 +590,7 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
      *        A specific key prefix for the set of Amazon S3 objects to limit
      *        the search for revisions.
      */
+
     public void setS3KeyPrefix(String s3KeyPrefix) {
         this.s3KeyPrefix = s3KeyPrefix;
     }
@@ -587,6 +604,7 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
      * @return A specific key prefix for the set of Amazon S3 objects to limit
      *         the search for revisions.
      */
+
     public String getS3KeyPrefix() {
         return this.s3KeyPrefix;
     }
@@ -603,6 +621,7 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListApplicationRevisionsRequest withS3KeyPrefix(String s3KeyPrefix) {
         setS3KeyPrefix(s3KeyPrefix);
         return this;
@@ -634,6 +653,7 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
      *        target revisions of a deployment group.</li>
      * @see ListStateFilterAction
      */
+
     public void setDeployed(String deployed) {
         this.deployed = deployed;
     }
@@ -663,6 +683,7 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
      *         target revisions of a deployment group.</li>
      * @see ListStateFilterAction
      */
+
     public String getDeployed() {
         return this.deployed;
     }
@@ -695,6 +716,7 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see ListStateFilterAction
      */
+
     public ListApplicationRevisionsRequest withDeployed(String deployed) {
         setDeployed(deployed);
         return this;
@@ -728,6 +750,7 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see ListStateFilterAction
      */
+
     public void setDeployed(ListStateFilterAction deployed) {
         this.deployed = deployed.toString();
     }
@@ -760,6 +783,7 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see ListStateFilterAction
      */
+
     public ListApplicationRevisionsRequest withDeployed(
             ListStateFilterAction deployed) {
         setDeployed(deployed);
@@ -778,6 +802,7 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
      *        revisions call, which can be used to return the next set of
      *        applications in the list.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -793,6 +818,7 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
      *         application revisions call, which can be used to return the next
      *         set of applications in the list.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -811,6 +837,7 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListApplicationRevisionsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

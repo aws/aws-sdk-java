@@ -167,6 +167,7 @@ public class Job implements Serializable, Cloneable {
      *        The identifier that Elastic Transcoder assigned to the job. You
      *        use this value to get settings for the job or to delete the job.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -180,6 +181,7 @@ public class Job implements Serializable, Cloneable {
      * @return The identifier that Elastic Transcoder assigned to the job. You
      *         use this value to get settings for the job or to delete the job.
      */
+
     public String getId() {
         return this.id;
     }
@@ -196,6 +198,7 @@ public class Job implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Job withId(String id) {
         setId(id);
         return this;
@@ -209,6 +212,7 @@ public class Job implements Serializable, Cloneable {
      * @param arn
      *        The Amazon Resource Name (ARN) for the job.
      */
+
     public void setArn(String arn) {
         this.arn = arn;
     }
@@ -220,6 +224,7 @@ public class Job implements Serializable, Cloneable {
      * 
      * @return The Amazon Resource Name (ARN) for the job.
      */
+
     public String getArn() {
         return this.arn;
     }
@@ -234,6 +239,7 @@ public class Job implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Job withArn(String arn) {
         setArn(arn);
         return this;
@@ -255,6 +261,7 @@ public class Job implements Serializable, Cloneable {
      *        Transcoder gets the files to transcode and the bucket into which
      *        Elastic Transcoder puts the transcoded files.
      */
+
     public void setPipelineId(String pipelineId) {
         this.pipelineId = pipelineId;
     }
@@ -274,6 +281,7 @@ public class Job implements Serializable, Cloneable {
      *         Elastic Transcoder gets the files to transcode and the bucket
      *         into which Elastic Transcoder puts the transcoded files.
      */
+
     public String getPipelineId() {
         return this.pipelineId;
     }
@@ -296,6 +304,7 @@ public class Job implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Job withPipelineId(String pipelineId) {
         setPipelineId(pipelineId);
         return this;
@@ -311,6 +320,7 @@ public class Job implements Serializable, Cloneable {
      *        A section of the request or response body that provides
      *        information about the file that is being transcoded.
      */
+
     public void setInput(JobInput input) {
         this.input = input;
     }
@@ -324,6 +334,7 @@ public class Job implements Serializable, Cloneable {
      * @return A section of the request or response body that provides
      *         information about the file that is being transcoded.
      */
+
     public JobInput getInput() {
         return this.input;
     }
@@ -340,6 +351,7 @@ public class Job implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Job withInput(JobInput input) {
         setInput(input);
         return this;
@@ -369,6 +381,7 @@ public class Job implements Serializable, Cloneable {
      *        the request or response body that provides information about the
      *        transcoded (target) file.
      */
+
     public void setOutput(JobOutput output) {
         this.output = output;
     }
@@ -396,6 +409,7 @@ public class Job implements Serializable, Cloneable {
      *         the request or response body that provides information about the
      *         transcoded (target) file.
      */
+
     public JobOutput getOutput() {
         return this.output;
     }
@@ -426,6 +440,7 @@ public class Job implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Job withOutput(JobOutput output) {
         setOutput(output);
         return this;
@@ -456,6 +471,7 @@ public class Job implements Serializable, Cloneable {
      *         creates the files for each output in the order in which you
      *         specify them in the job.
      */
+
     public java.util.List<JobOutput> getOutputs() {
         if (outputs == null) {
             outputs = new com.amazonaws.internal.SdkInternalList<JobOutput>();
@@ -489,6 +505,7 @@ public class Job implements Serializable, Cloneable {
      *        creates the files for each output in the order in which you
      *        specify them in the job.
      */
+
     public void setOutputs(java.util.Collection<JobOutput> outputs) {
         if (outputs == null) {
             this.outputs = null;
@@ -533,6 +550,7 @@ public class Job implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Job withOutputs(JobOutput... outputs) {
         if (this.outputs == null) {
             setOutputs(new com.amazonaws.internal.SdkInternalList<JobOutput>(
@@ -572,6 +590,7 @@ public class Job implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Job withOutputs(java.util.Collection<JobOutput> outputs) {
         setOutputs(outputs);
         return this;
@@ -592,6 +611,7 @@ public class Job implements Serializable, Cloneable {
      *        some other delimiter to the end of the
      *        <code>OutputKeyPrefix</code>.
      */
+
     public void setOutputKeyPrefix(String outputKeyPrefix) {
         this.outputKeyPrefix = outputKeyPrefix;
     }
@@ -610,6 +630,7 @@ public class Job implements Serializable, Cloneable {
      *         or some other delimiter to the end of the
      *         <code>OutputKeyPrefix</code>.
      */
+
     public String getOutputKeyPrefix() {
         return this.outputKeyPrefix;
     }
@@ -631,6 +652,7 @@ public class Job implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Job withOutputKeyPrefix(String outputKeyPrefix) {
         setOutputKeyPrefix(outputKeyPrefix);
         return this;
@@ -654,6 +676,7 @@ public class Job implements Serializable, Cloneable {
      *         (MPEG-TS), <code>Playlists</code> contains information about the
      *         master playlists that you want Elastic Transcoder to create.</p>
      */
+
     public java.util.List<Playlist> getPlaylists() {
         if (playlists == null) {
             playlists = new com.amazonaws.internal.SdkInternalList<Playlist>();
@@ -680,6 +703,7 @@ public class Job implements Serializable, Cloneable {
      *        (MPEG-TS), <code>Playlists</code> contains information about the
      *        master playlists that you want Elastic Transcoder to create.</p>
      */
+
     public void setPlaylists(java.util.Collection<Playlist> playlists) {
         if (playlists == null) {
             this.playlists = null;
@@ -717,6 +741,7 @@ public class Job implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Job withPlaylists(Playlist... playlists) {
         if (this.playlists == null) {
             setPlaylists(new com.amazonaws.internal.SdkInternalList<Playlist>(
@@ -749,6 +774,7 @@ public class Job implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Job withPlaylists(java.util.Collection<Playlist> playlists) {
         setPlaylists(playlists);
         return this;
@@ -765,6 +791,7 @@ public class Job implements Serializable, Cloneable {
      *        <code>Progressing</code>, <code>Complete</code>,
      *        <code>Canceled</code>, or <code>Error</code>.
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -779,6 +806,7 @@ public class Job implements Serializable, Cloneable {
      *         <code>Progressing</code>, <code>Complete</code>,
      *         <code>Canceled</code>, or <code>Error</code>.
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -796,6 +824,7 @@ public class Job implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Job withStatus(String status) {
         setStatus(status);
         return this;
@@ -868,6 +897,7 @@ public class Job implements Serializable, Cloneable {
      *         </p>
      *         </li>
      */
+
     public java.util.Map<String, String> getUserMetadata() {
         if (userMetadata == null) {
             userMetadata = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -943,6 +973,7 @@ public class Job implements Serializable, Cloneable {
      *        </p>
      *        </li>
      */
+
     public void setUserMetadata(java.util.Map<String, String> userMetadata) {
         this.userMetadata = userMetadata == null ? null
                 : new com.amazonaws.internal.SdkInternalMap<String, String>(
@@ -1019,6 +1050,7 @@ public class Job implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Job withUserMetadata(java.util.Map<String, String> userMetadata) {
         setUserMetadata(userMetadata);
         return this;
@@ -1039,6 +1071,7 @@ public class Job implements Serializable, Cloneable {
      * Removes all the entries added into UserMetadata. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public Job clearUserMetadataEntries() {
         this.userMetadata = null;
         return this;
@@ -1052,6 +1085,7 @@ public class Job implements Serializable, Cloneable {
      * @param timing
      *        Details about the timing of a job.
      */
+
     public void setTiming(Timing timing) {
         this.timing = timing;
     }
@@ -1063,6 +1097,7 @@ public class Job implements Serializable, Cloneable {
      * 
      * @return Details about the timing of a job.
      */
+
     public Timing getTiming() {
         return this.timing;
     }
@@ -1077,6 +1112,7 @@ public class Job implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Job withTiming(Timing timing) {
         setTiming(timing);
         return this;

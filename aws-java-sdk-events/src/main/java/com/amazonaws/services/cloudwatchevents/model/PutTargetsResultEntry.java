@@ -54,6 +54,7 @@ public class PutTargetsResultEntry implements Serializable, Cloneable {
      * @param targetId
      *        The ID of the target submitted to Amazon CloudWatch Events.
      */
+
     public void setTargetId(String targetId) {
         this.targetId = targetId;
     }
@@ -65,6 +66,7 @@ public class PutTargetsResultEntry implements Serializable, Cloneable {
      * 
      * @return The ID of the target submitted to Amazon CloudWatch Events.
      */
+
     public String getTargetId() {
         return this.targetId;
     }
@@ -79,6 +81,7 @@ public class PutTargetsResultEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutTargetsResultEntry withTargetId(String targetId) {
         setTargetId(targetId);
         return this;
@@ -94,6 +97,7 @@ public class PutTargetsResultEntry implements Serializable, Cloneable {
      *        The error code representing why the target submission failed on
      *        this entry.
      */
+
     public void setErrorCode(String errorCode) {
         this.errorCode = errorCode;
     }
@@ -107,6 +111,7 @@ public class PutTargetsResultEntry implements Serializable, Cloneable {
      * @return The error code representing why the target submission failed on
      *         this entry.
      */
+
     public String getErrorCode() {
         return this.errorCode;
     }
@@ -123,6 +128,7 @@ public class PutTargetsResultEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutTargetsResultEntry withErrorCode(String errorCode) {
         setErrorCode(errorCode);
         return this;
@@ -138,6 +144,7 @@ public class PutTargetsResultEntry implements Serializable, Cloneable {
      *        The error message explaining why the target submission failed on
      *        this entry.
      */
+
     public void setErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;
     }
@@ -151,6 +158,7 @@ public class PutTargetsResultEntry implements Serializable, Cloneable {
      * @return The error message explaining why the target submission failed on
      *         this entry.
      */
+
     public String getErrorMessage() {
         return this.errorMessage;
     }
@@ -167,6 +175,7 @@ public class PutTargetsResultEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutTargetsResultEntry withErrorMessage(String errorMessage) {
         setErrorMessage(errorMessage);
         return this;

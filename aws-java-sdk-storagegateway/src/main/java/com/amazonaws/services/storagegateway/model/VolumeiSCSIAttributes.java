@@ -64,6 +64,7 @@ public class VolumeiSCSIAttributes implements Serializable, Cloneable {
      * @param targetARN
      *        The Amazon Resource Name (ARN) of the volume target.
      */
+
     public void setTargetARN(String targetARN) {
         this.targetARN = targetARN;
     }
@@ -75,6 +76,7 @@ public class VolumeiSCSIAttributes implements Serializable, Cloneable {
      * 
      * @return The Amazon Resource Name (ARN) of the volume target.
      */
+
     public String getTargetARN() {
         return this.targetARN;
     }
@@ -89,6 +91,7 @@ public class VolumeiSCSIAttributes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VolumeiSCSIAttributes withTargetARN(String targetARN) {
         setTargetARN(targetARN);
         return this;
@@ -102,6 +105,7 @@ public class VolumeiSCSIAttributes implements Serializable, Cloneable {
      * @param networkInterfaceId
      *        The network interface identifier.
      */
+
     public void setNetworkInterfaceId(String networkInterfaceId) {
         this.networkInterfaceId = networkInterfaceId;
     }
@@ -113,6 +117,7 @@ public class VolumeiSCSIAttributes implements Serializable, Cloneable {
      * 
      * @return The network interface identifier.
      */
+
     public String getNetworkInterfaceId() {
         return this.networkInterfaceId;
     }
@@ -127,6 +132,7 @@ public class VolumeiSCSIAttributes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VolumeiSCSIAttributes withNetworkInterfaceId(
             String networkInterfaceId) {
         setNetworkInterfaceId(networkInterfaceId);
@@ -141,6 +147,7 @@ public class VolumeiSCSIAttributes implements Serializable, Cloneable {
      * @param networkInterfacePort
      *        The port used to communicate with iSCSI targets.
      */
+
     public void setNetworkInterfacePort(Integer networkInterfacePort) {
         this.networkInterfacePort = networkInterfacePort;
     }
@@ -152,6 +159,7 @@ public class VolumeiSCSIAttributes implements Serializable, Cloneable {
      * 
      * @return The port used to communicate with iSCSI targets.
      */
+
     public Integer getNetworkInterfacePort() {
         return this.networkInterfacePort;
     }
@@ -166,6 +174,7 @@ public class VolumeiSCSIAttributes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VolumeiSCSIAttributes withNetworkInterfacePort(
             Integer networkInterfacePort) {
         setNetworkInterfacePort(networkInterfacePort);
@@ -180,6 +189,7 @@ public class VolumeiSCSIAttributes implements Serializable, Cloneable {
      * @param lunNumber
      *        The logical disk number.
      */
+
     public void setLunNumber(Integer lunNumber) {
         this.lunNumber = lunNumber;
     }
@@ -191,6 +201,7 @@ public class VolumeiSCSIAttributes implements Serializable, Cloneable {
      * 
      * @return The logical disk number.
      */
+
     public Integer getLunNumber() {
         return this.lunNumber;
     }
@@ -205,6 +216,7 @@ public class VolumeiSCSIAttributes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VolumeiSCSIAttributes withLunNumber(Integer lunNumber) {
         setLunNumber(lunNumber);
         return this;
@@ -218,6 +230,7 @@ public class VolumeiSCSIAttributes implements Serializable, Cloneable {
      * @param chapEnabled
      *        Indicates whether mutual CHAP is enabled for the iSCSI target.
      */
+
     public void setChapEnabled(Boolean chapEnabled) {
         this.chapEnabled = chapEnabled;
     }
@@ -229,6 +242,7 @@ public class VolumeiSCSIAttributes implements Serializable, Cloneable {
      * 
      * @return Indicates whether mutual CHAP is enabled for the iSCSI target.
      */
+
     public Boolean getChapEnabled() {
         return this.chapEnabled;
     }
@@ -243,6 +257,7 @@ public class VolumeiSCSIAttributes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VolumeiSCSIAttributes withChapEnabled(Boolean chapEnabled) {
         setChapEnabled(chapEnabled);
         return this;
@@ -255,6 +270,7 @@ public class VolumeiSCSIAttributes implements Serializable, Cloneable {
      * 
      * @return Indicates whether mutual CHAP is enabled for the iSCSI target.
      */
+
     public Boolean isChapEnabled() {
         return this.chapEnabled;
     }

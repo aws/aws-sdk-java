@@ -64,6 +64,7 @@ public class CreatePlatformApplicationRequest extends AmazonWebServiceRequest
      *        ASCII letters, numbers, underscores, hyphens, and periods, and
      *        must be between 1 and 256 characters long.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -79,6 +80,7 @@ public class CreatePlatformApplicationRequest extends AmazonWebServiceRequest
      *         ASCII letters, numbers, underscores, hyphens, and periods, and
      *         must be between 1 and 256 characters long.
      */
+
     public String getName() {
         return this.name;
     }
@@ -97,6 +99,7 @@ public class CreatePlatformApplicationRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePlatformApplicationRequest withName(String name) {
         setName(name);
         return this;
@@ -114,6 +117,7 @@ public class CreatePlatformApplicationRequest extends AmazonWebServiceRequest
      *        Messaging), APNS (Apple Push Notification Service), APNS_SANDBOX,
      *        and GCM (Google Cloud Messaging).
      */
+
     public void setPlatform(String platform) {
         this.platform = platform;
     }
@@ -129,6 +133,7 @@ public class CreatePlatformApplicationRequest extends AmazonWebServiceRequest
      *         Messaging), APNS (Apple Push Notification Service), APNS_SANDBOX,
      *         and GCM (Google Cloud Messaging).
      */
+
     public String getPlatform() {
         return this.platform;
     }
@@ -147,6 +152,7 @@ public class CreatePlatformApplicationRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePlatformApplicationRequest withPlatform(String platform) {
         setPlatform(platform);
         return this;
@@ -163,6 +169,7 @@ public class CreatePlatformApplicationRequest extends AmazonWebServiceRequest
      *         "http://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html"
      *         >SetPlatformApplicationAttributes</a>
      */
+
     public java.util.Map<String, String> getAttributes() {
         if (attributes == null) {
             attributes = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -182,6 +189,7 @@ public class CreatePlatformApplicationRequest extends AmazonWebServiceRequest
      *        "http://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html"
      *        >SetPlatformApplicationAttributes</a>
      */
+
     public void setAttributes(java.util.Map<String, String> attributes) {
         this.attributes = attributes == null ? null
                 : new com.amazonaws.internal.SdkInternalMap<String, String>(
@@ -202,6 +210,7 @@ public class CreatePlatformApplicationRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePlatformApplicationRequest withAttributes(
             java.util.Map<String, String> attributes) {
         setAttributes(attributes);
@@ -224,6 +233,7 @@ public class CreatePlatformApplicationRequest extends AmazonWebServiceRequest
      * Removes all the entries added into Attributes. &lt;p> Returns a reference
      * to this object so that method calls can be chained together.
      */
+
     public CreatePlatformApplicationRequest clearAttributesEntries() {
         this.attributes = null;
         return this;

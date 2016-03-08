@@ -71,6 +71,7 @@ public class TrustedAdvisorResourceDetail implements Serializable, Cloneable {
      *        The status code for the resource identified in the Trusted Advisor
      *        check.
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -83,6 +84,7 @@ public class TrustedAdvisorResourceDetail implements Serializable, Cloneable {
      * @return The status code for the resource identified in the Trusted
      *         Advisor check.
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -98,6 +100,7 @@ public class TrustedAdvisorResourceDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TrustedAdvisorResourceDetail withStatus(String status) {
         setStatus(status);
         return this;
@@ -111,6 +114,7 @@ public class TrustedAdvisorResourceDetail implements Serializable, Cloneable {
      * @param region
      *        The AWS region in which the identified resource is located.
      */
+
     public void setRegion(String region) {
         this.region = region;
     }
@@ -122,6 +126,7 @@ public class TrustedAdvisorResourceDetail implements Serializable, Cloneable {
      * 
      * @return The AWS region in which the identified resource is located.
      */
+
     public String getRegion() {
         return this.region;
     }
@@ -136,6 +141,7 @@ public class TrustedAdvisorResourceDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TrustedAdvisorResourceDetail withRegion(String region) {
         setRegion(region);
         return this;
@@ -149,6 +155,7 @@ public class TrustedAdvisorResourceDetail implements Serializable, Cloneable {
      * @param resourceId
      *        The unique identifier for the identified resource.
      */
+
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
     }
@@ -160,6 +167,7 @@ public class TrustedAdvisorResourceDetail implements Serializable, Cloneable {
      * 
      * @return The unique identifier for the identified resource.
      */
+
     public String getResourceId() {
         return this.resourceId;
     }
@@ -174,6 +182,7 @@ public class TrustedAdvisorResourceDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TrustedAdvisorResourceDetail withResourceId(String resourceId) {
         setResourceId(resourceId);
         return this;
@@ -189,6 +198,7 @@ public class TrustedAdvisorResourceDetail implements Serializable, Cloneable {
      *        Specifies whether the AWS resource was ignored by Trusted Advisor
      *        because it was marked as suppressed by the user.
      */
+
     public void setIsSuppressed(Boolean isSuppressed) {
         this.isSuppressed = isSuppressed;
     }
@@ -202,6 +212,7 @@ public class TrustedAdvisorResourceDetail implements Serializable, Cloneable {
      * @return Specifies whether the AWS resource was ignored by Trusted Advisor
      *         because it was marked as suppressed by the user.
      */
+
     public Boolean getIsSuppressed() {
         return this.isSuppressed;
     }
@@ -218,6 +229,7 @@ public class TrustedAdvisorResourceDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TrustedAdvisorResourceDetail withIsSuppressed(Boolean isSuppressed) {
         setIsSuppressed(isSuppressed);
         return this;
@@ -232,6 +244,7 @@ public class TrustedAdvisorResourceDetail implements Serializable, Cloneable {
      * @return Specifies whether the AWS resource was ignored by Trusted Advisor
      *         because it was marked as suppressed by the user.
      */
+
     public Boolean isSuppressed() {
         return this.isSuppressed;
     }
@@ -253,6 +266,7 @@ public class TrustedAdvisorResourceDetail implements Serializable, Cloneable {
      *         all the data that is shown in the Excel download, even in those
      *         cases where the UI shows just summary data.
      */
+
     public java.util.List<String> getMetadata() {
         if (metadata == null) {
             metadata = new com.amazonaws.internal.SdkInternalList<String>();
@@ -278,6 +292,7 @@ public class TrustedAdvisorResourceDetail implements Serializable, Cloneable {
      *        all the data that is shown in the Excel download, even in those
      *        cases where the UI shows just summary data.
      */
+
     public void setMetadata(java.util.Collection<String> metadata) {
         if (metadata == null) {
             this.metadata = null;
@@ -314,6 +329,7 @@ public class TrustedAdvisorResourceDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TrustedAdvisorResourceDetail withMetadata(String... metadata) {
         if (this.metadata == null) {
             setMetadata(new com.amazonaws.internal.SdkInternalList<String>(
@@ -345,6 +361,7 @@ public class TrustedAdvisorResourceDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TrustedAdvisorResourceDetail withMetadata(
             java.util.Collection<String> metadata) {
         setMetadata(metadata);

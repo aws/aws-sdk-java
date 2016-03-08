@@ -42,6 +42,7 @@ public class GetJobDetailsRequest extends AmazonWebServiceRequest implements
      * @param jobId
      *        The unique system-generated ID for the job.
      */
+
     public void setJobId(String jobId) {
         this.jobId = jobId;
     }
@@ -53,6 +54,7 @@ public class GetJobDetailsRequest extends AmazonWebServiceRequest implements
      * 
      * @return The unique system-generated ID for the job.
      */
+
     public String getJobId() {
         return this.jobId;
     }
@@ -67,6 +69,7 @@ public class GetJobDetailsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetJobDetailsRequest withJobId(String jobId) {
         setJobId(jobId);
         return this;

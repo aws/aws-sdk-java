@@ -35,6 +35,7 @@ public class DeleteTrustRequest extends AmazonWebServiceRequest implements
      * @param trustId
      *        The Trust ID of the trust relationship to be deleted.
      */
+
     public void setTrustId(String trustId) {
         this.trustId = trustId;
     }
@@ -44,6 +45,7 @@ public class DeleteTrustRequest extends AmazonWebServiceRequest implements
      * 
      * @return The Trust ID of the trust relationship to be deleted.
      */
+
     public String getTrustId() {
         return this.trustId;
     }
@@ -56,6 +58,7 @@ public class DeleteTrustRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteTrustRequest withTrustId(String trustId) {
         setTrustId(trustId);
         return this;

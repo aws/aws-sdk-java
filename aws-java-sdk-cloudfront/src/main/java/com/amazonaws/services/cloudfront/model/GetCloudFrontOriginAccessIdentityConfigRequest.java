@@ -54,6 +54,7 @@ public class GetCloudFrontOriginAccessIdentityConfigRequest extends
      * @param id
      *        The identity's id.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -63,6 +64,7 @@ public class GetCloudFrontOriginAccessIdentityConfigRequest extends
      * 
      * @return The identity's id.
      */
+
     public String getId() {
         return this.id;
     }
@@ -75,6 +77,7 @@ public class GetCloudFrontOriginAccessIdentityConfigRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetCloudFrontOriginAccessIdentityConfigRequest withId(String id) {
         setId(id);
         return this;

@@ -61,6 +61,7 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest
      * @param instanceId
      *        The ID of the instance that you are modifying.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -72,6 +73,7 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the instance that you are modifying.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
@@ -86,6 +88,7 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyInstancePlacementRequest withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;
@@ -100,6 +103,7 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest
      *        The tenancy of the instance that you are modifying.
      * @see HostTenancy
      */
+
     public void setTenancy(String tenancy) {
         this.tenancy = tenancy;
     }
@@ -112,6 +116,7 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest
      * @return The tenancy of the instance that you are modifying.
      * @see HostTenancy
      */
+
     public String getTenancy() {
         return this.tenancy;
     }
@@ -127,6 +132,7 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see HostTenancy
      */
+
     public ModifyInstancePlacementRequest withTenancy(String tenancy) {
         setTenancy(tenancy);
         return this;
@@ -143,6 +149,7 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see HostTenancy
      */
+
     public void setTenancy(HostTenancy tenancy) {
         this.tenancy = tenancy.toString();
     }
@@ -158,6 +165,7 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see HostTenancy
      */
+
     public ModifyInstancePlacementRequest withTenancy(HostTenancy tenancy) {
         setTenancy(tenancy);
         return this;
@@ -172,6 +180,7 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest
      *        The new affinity setting for the instance.
      * @see Affinity
      */
+
     public void setAffinity(String affinity) {
         this.affinity = affinity;
     }
@@ -184,6 +193,7 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest
      * @return The new affinity setting for the instance.
      * @see Affinity
      */
+
     public String getAffinity() {
         return this.affinity;
     }
@@ -199,6 +209,7 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see Affinity
      */
+
     public ModifyInstancePlacementRequest withAffinity(String affinity) {
         setAffinity(affinity);
         return this;
@@ -215,6 +226,7 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see Affinity
      */
+
     public void setAffinity(Affinity affinity) {
         this.affinity = affinity.toString();
     }
@@ -230,6 +242,7 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see Affinity
      */
+
     public ModifyInstancePlacementRequest withAffinity(Affinity affinity) {
         setAffinity(affinity);
         return this;
@@ -244,6 +257,7 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest
      *        The ID of the Dedicated host that the instance will have affinity
      *        with.
      */
+
     public void setHostId(String hostId) {
         this.hostId = hostId;
     }
@@ -256,6 +270,7 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest
      * @return The ID of the Dedicated host that the instance will have affinity
      *         with.
      */
+
     public String getHostId() {
         return this.hostId;
     }
@@ -271,6 +286,7 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyInstancePlacementRequest withHostId(String hostId) {
         setHostId(hostId);
         return this;

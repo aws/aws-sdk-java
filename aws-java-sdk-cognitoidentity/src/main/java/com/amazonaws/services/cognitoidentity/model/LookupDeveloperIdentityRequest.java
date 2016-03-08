@@ -74,6 +74,7 @@ public class LookupDeveloperIdentityRequest extends AmazonWebServiceRequest
      * @param identityPoolId
      *        An identity pool ID in the format REGION:GUID.
      */
+
     public void setIdentityPoolId(String identityPoolId) {
         this.identityPoolId = identityPoolId;
     }
@@ -85,6 +86,7 @@ public class LookupDeveloperIdentityRequest extends AmazonWebServiceRequest
      * 
      * @return An identity pool ID in the format REGION:GUID.
      */
+
     public String getIdentityPoolId() {
         return this.identityPoolId;
     }
@@ -99,6 +101,7 @@ public class LookupDeveloperIdentityRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LookupDeveloperIdentityRequest withIdentityPoolId(
             String identityPoolId) {
         setIdentityPoolId(identityPoolId);
@@ -113,6 +116,7 @@ public class LookupDeveloperIdentityRequest extends AmazonWebServiceRequest
      * @param identityId
      *        A unique identifier in the format REGION:GUID.
      */
+
     public void setIdentityId(String identityId) {
         this.identityId = identityId;
     }
@@ -124,6 +128,7 @@ public class LookupDeveloperIdentityRequest extends AmazonWebServiceRequest
      * 
      * @return A unique identifier in the format REGION:GUID.
      */
+
     public String getIdentityId() {
         return this.identityId;
     }
@@ -138,6 +143,7 @@ public class LookupDeveloperIdentityRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LookupDeveloperIdentityRequest withIdentityId(String identityId) {
         setIdentityId(identityId);
         return this;
@@ -156,6 +162,7 @@ public class LookupDeveloperIdentityRequest extends AmazonWebServiceRequest
      *        issue many developer user identifiers, in keeping with the number
      *        of users.
      */
+
     public void setDeveloperUserIdentifier(String developerUserIdentifier) {
         this.developerUserIdentifier = developerUserIdentifier;
     }
@@ -172,6 +179,7 @@ public class LookupDeveloperIdentityRequest extends AmazonWebServiceRequest
      *         issue many developer user identifiers, in keeping with the number
      *         of users.
      */
+
     public String getDeveloperUserIdentifier() {
         return this.developerUserIdentifier;
     }
@@ -191,6 +199,7 @@ public class LookupDeveloperIdentityRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LookupDeveloperIdentityRequest withDeveloperUserIdentifier(
             String developerUserIdentifier) {
         setDeveloperUserIdentifier(developerUserIdentifier);
@@ -205,6 +214,7 @@ public class LookupDeveloperIdentityRequest extends AmazonWebServiceRequest
      * @param maxResults
      *        The maximum number of identities to return.
      */
+
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
     }
@@ -216,6 +226,7 @@ public class LookupDeveloperIdentityRequest extends AmazonWebServiceRequest
      * 
      * @return The maximum number of identities to return.
      */
+
     public Integer getMaxResults() {
         return this.maxResults;
     }
@@ -230,6 +241,7 @@ public class LookupDeveloperIdentityRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LookupDeveloperIdentityRequest withMaxResults(Integer maxResults) {
         setMaxResults(maxResults);
         return this;
@@ -256,6 +268,7 @@ public class LookupDeveloperIdentityRequest extends AmazonWebServiceRequest
      *        to call the API again and get results starting from the 11th
      *        match.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -280,6 +293,7 @@ public class LookupDeveloperIdentityRequest extends AmazonWebServiceRequest
      *         can be used to call the API again and get results starting from
      *         the 11th match.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -307,6 +321,7 @@ public class LookupDeveloperIdentityRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LookupDeveloperIdentityRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

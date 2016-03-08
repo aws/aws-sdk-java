@@ -60,6 +60,7 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements
      * @param description
      *        A description for the instance being imported.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -71,6 +72,7 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements
      * 
      * @return A description for the instance being imported.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -85,6 +87,7 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportInstanceRequest withDescription(String description) {
         setDescription(description);
         return this;
@@ -98,6 +101,7 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements
      * @param launchSpecification
      *        The launch specification.
      */
+
     public void setLaunchSpecification(
             ImportInstanceLaunchSpecification launchSpecification) {
         this.launchSpecification = launchSpecification;
@@ -110,6 +114,7 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements
      * 
      * @return The launch specification.
      */
+
     public ImportInstanceLaunchSpecification getLaunchSpecification() {
         return this.launchSpecification;
     }
@@ -124,6 +129,7 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportInstanceRequest withLaunchSpecification(
             ImportInstanceLaunchSpecification launchSpecification) {
         setLaunchSpecification(launchSpecification);
@@ -137,6 +143,7 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements
      * 
      * @return The disk image.
      */
+
     public java.util.List<DiskImage> getDiskImages() {
         if (diskImages == null) {
             diskImages = new com.amazonaws.internal.SdkInternalList<DiskImage>();
@@ -152,6 +159,7 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements
      * @param diskImages
      *        The disk image.
      */
+
     public void setDiskImages(java.util.Collection<DiskImage> diskImages) {
         if (diskImages == null) {
             this.diskImages = null;
@@ -178,6 +186,7 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportInstanceRequest withDiskImages(DiskImage... diskImages) {
         if (this.diskImages == null) {
             setDiskImages(new com.amazonaws.internal.SdkInternalList<DiskImage>(
@@ -199,6 +208,7 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportInstanceRequest withDiskImages(
             java.util.Collection<DiskImage> diskImages) {
         setDiskImages(diskImages);
@@ -214,6 +224,7 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements
      *        The instance operating system.
      * @see PlatformValues
      */
+
     public void setPlatform(String platform) {
         this.platform = platform;
     }
@@ -226,6 +237,7 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements
      * @return The instance operating system.
      * @see PlatformValues
      */
+
     public String getPlatform() {
         return this.platform;
     }
@@ -241,6 +253,7 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see PlatformValues
      */
+
     public ImportInstanceRequest withPlatform(String platform) {
         setPlatform(platform);
         return this;
@@ -257,6 +270,7 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see PlatformValues
      */
+
     public void setPlatform(PlatformValues platform) {
         this.platform = platform.toString();
     }
@@ -272,6 +286,7 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see PlatformValues
      */
+
     public ImportInstanceRequest withPlatform(PlatformValues platform) {
         setPlatform(platform);
         return this;

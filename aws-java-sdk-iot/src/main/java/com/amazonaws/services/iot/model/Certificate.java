@@ -58,6 +58,7 @@ public class Certificate implements Serializable, Cloneable {
      * @param certificateArn
      *        The ARN of the certificate.
      */
+
     public void setCertificateArn(String certificateArn) {
         this.certificateArn = certificateArn;
     }
@@ -69,6 +70,7 @@ public class Certificate implements Serializable, Cloneable {
      * 
      * @return The ARN of the certificate.
      */
+
     public String getCertificateArn() {
         return this.certificateArn;
     }
@@ -83,6 +85,7 @@ public class Certificate implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Certificate withCertificateArn(String certificateArn) {
         setCertificateArn(certificateArn);
         return this;
@@ -96,6 +99,7 @@ public class Certificate implements Serializable, Cloneable {
      * @param certificateId
      *        The ID of the certificate.
      */
+
     public void setCertificateId(String certificateId) {
         this.certificateId = certificateId;
     }
@@ -107,6 +111,7 @@ public class Certificate implements Serializable, Cloneable {
      * 
      * @return The ID of the certificate.
      */
+
     public String getCertificateId() {
         return this.certificateId;
     }
@@ -121,6 +126,7 @@ public class Certificate implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Certificate withCertificateId(String certificateId) {
         setCertificateId(certificateId);
         return this;
@@ -135,6 +141,7 @@ public class Certificate implements Serializable, Cloneable {
      *        The status of the certificate.
      * @see CertificateStatus
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -147,6 +154,7 @@ public class Certificate implements Serializable, Cloneable {
      * @return The status of the certificate.
      * @see CertificateStatus
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -162,6 +170,7 @@ public class Certificate implements Serializable, Cloneable {
      *         chained together.
      * @see CertificateStatus
      */
+
     public Certificate withStatus(String status) {
         setStatus(status);
         return this;
@@ -178,6 +187,7 @@ public class Certificate implements Serializable, Cloneable {
      *         chained together.
      * @see CertificateStatus
      */
+
     public void setStatus(CertificateStatus status) {
         this.status = status.toString();
     }
@@ -193,6 +203,7 @@ public class Certificate implements Serializable, Cloneable {
      *         chained together.
      * @see CertificateStatus
      */
+
     public Certificate withStatus(CertificateStatus status) {
         setStatus(status);
         return this;
@@ -206,6 +217,7 @@ public class Certificate implements Serializable, Cloneable {
      * @param creationDate
      *        The date and time the certificate was created.
      */
+
     public void setCreationDate(java.util.Date creationDate) {
         this.creationDate = creationDate;
     }
@@ -217,6 +229,7 @@ public class Certificate implements Serializable, Cloneable {
      * 
      * @return The date and time the certificate was created.
      */
+
     public java.util.Date getCreationDate() {
         return this.creationDate;
     }
@@ -231,6 +244,7 @@ public class Certificate implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Certificate withCreationDate(java.util.Date creationDate) {
         setCreationDate(creationDate);
         return this;

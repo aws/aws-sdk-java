@@ -42,6 +42,7 @@ public class DeleteHapgRequest extends AmazonWebServiceRequest implements
      * @param hapgArn
      *        The ARN of the high-availability partition group to delete.
      */
+
     public void setHapgArn(String hapgArn) {
         this.hapgArn = hapgArn;
     }
@@ -53,6 +54,7 @@ public class DeleteHapgRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ARN of the high-availability partition group to delete.
      */
+
     public String getHapgArn() {
         return this.hapgArn;
     }
@@ -67,6 +69,7 @@ public class DeleteHapgRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteHapgRequest withHapgArn(String hapgArn) {
         setHapgArn(hapgArn);
         return this;

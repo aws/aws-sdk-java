@@ -80,6 +80,7 @@ public class UpdateElasticsearchDomainConfigRequest extends
      * @param domainName
      *        The name of the Elasticsearch domain that you are updating.
      */
+
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
@@ -91,6 +92,7 @@ public class UpdateElasticsearchDomainConfigRequest extends
      * 
      * @return The name of the Elasticsearch domain that you are updating.
      */
+
     public String getDomainName() {
         return this.domainName;
     }
@@ -105,6 +107,7 @@ public class UpdateElasticsearchDomainConfigRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateElasticsearchDomainConfigRequest withDomainName(
             String domainName) {
         setDomainName(domainName);
@@ -120,6 +123,7 @@ public class UpdateElasticsearchDomainConfigRequest extends
      *        The type and number of instances to instantiate for the domain
      *        cluster.
      */
+
     public void setElasticsearchClusterConfig(
             ElasticsearchClusterConfig elasticsearchClusterConfig) {
         this.elasticsearchClusterConfig = elasticsearchClusterConfig;
@@ -133,6 +137,7 @@ public class UpdateElasticsearchDomainConfigRequest extends
      * @return The type and number of instances to instantiate for the domain
      *         cluster.
      */
+
     public ElasticsearchClusterConfig getElasticsearchClusterConfig() {
         return this.elasticsearchClusterConfig;
     }
@@ -148,6 +153,7 @@ public class UpdateElasticsearchDomainConfigRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateElasticsearchDomainConfigRequest withElasticsearchClusterConfig(
             ElasticsearchClusterConfig elasticsearchClusterConfig) {
         setElasticsearchClusterConfig(elasticsearchClusterConfig);
@@ -162,6 +168,7 @@ public class UpdateElasticsearchDomainConfigRequest extends
      * @param eBSOptions
      *        Specify the type and size of the EBS volume that you want to use.
      */
+
     public void setEBSOptions(EBSOptions eBSOptions) {
         this.eBSOptions = eBSOptions;
     }
@@ -173,6 +180,7 @@ public class UpdateElasticsearchDomainConfigRequest extends
      * 
      * @return Specify the type and size of the EBS volume that you want to use.
      */
+
     public EBSOptions getEBSOptions() {
         return this.eBSOptions;
     }
@@ -187,6 +195,7 @@ public class UpdateElasticsearchDomainConfigRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateElasticsearchDomainConfigRequest withEBSOptions(
             EBSOptions eBSOptions) {
         setEBSOptions(eBSOptions);
@@ -203,6 +212,7 @@ public class UpdateElasticsearchDomainConfigRequest extends
      *        Option to set the time, in UTC format, for the daily automated
      *        snapshot. Default value is <code>0</code> hours.
      */
+
     public void setSnapshotOptions(SnapshotOptions snapshotOptions) {
         this.snapshotOptions = snapshotOptions;
     }
@@ -216,6 +226,7 @@ public class UpdateElasticsearchDomainConfigRequest extends
      * @return Option to set the time, in UTC format, for the daily automated
      *         snapshot. Default value is <code>0</code> hours.
      */
+
     public SnapshotOptions getSnapshotOptions() {
         return this.snapshotOptions;
     }
@@ -232,6 +243,7 @@ public class UpdateElasticsearchDomainConfigRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateElasticsearchDomainConfigRequest withSnapshotOptions(
             SnapshotOptions snapshotOptions) {
         setSnapshotOptions(snapshotOptions);
@@ -256,6 +268,7 @@ public class UpdateElasticsearchDomainConfigRequest extends
      *         target="_blank">Configuration Advanced Options</a> for more
      *         information.
      */
+
     public java.util.Map<String, String> getAdvancedOptions() {
         return advancedOptions;
     }
@@ -279,6 +292,7 @@ public class UpdateElasticsearchDomainConfigRequest extends
      *        target="_blank">Configuration Advanced Options</a> for more
      *        information.
      */
+
     public void setAdvancedOptions(java.util.Map<String, String> advancedOptions) {
         this.advancedOptions = advancedOptions;
     }
@@ -304,6 +318,7 @@ public class UpdateElasticsearchDomainConfigRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateElasticsearchDomainConfigRequest withAdvancedOptions(
             java.util.Map<String, String> advancedOptions) {
         setAdvancedOptions(advancedOptions);
@@ -326,6 +341,7 @@ public class UpdateElasticsearchDomainConfigRequest extends
      * Removes all the entries added into AdvancedOptions. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public UpdateElasticsearchDomainConfigRequest clearAdvancedOptionsEntries() {
         this.advancedOptions = null;
         return this;
@@ -339,6 +355,7 @@ public class UpdateElasticsearchDomainConfigRequest extends
      * @param accessPolicies
      *        IAM access policy as a JSON-formatted string.
      */
+
     public void setAccessPolicies(String accessPolicies) {
         this.accessPolicies = accessPolicies;
     }
@@ -350,6 +367,7 @@ public class UpdateElasticsearchDomainConfigRequest extends
      * 
      * @return IAM access policy as a JSON-formatted string.
      */
+
     public String getAccessPolicies() {
         return this.accessPolicies;
     }
@@ -364,6 +382,7 @@ public class UpdateElasticsearchDomainConfigRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateElasticsearchDomainConfigRequest withAccessPolicies(
             String accessPolicies) {
         setAccessPolicies(accessPolicies);

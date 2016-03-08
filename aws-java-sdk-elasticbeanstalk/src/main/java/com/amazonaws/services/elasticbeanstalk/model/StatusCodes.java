@@ -67,6 +67,7 @@ public class StatusCodes implements Serializable, Cloneable {
      *        The percentage of requests over the last 10 seconds that resulted
      *        in a 2xx (200, 201, etc.) status code.
      */
+
     public void setStatus2xx(Integer status2xx) {
         this.status2xx = status2xx;
     }
@@ -80,6 +81,7 @@ public class StatusCodes implements Serializable, Cloneable {
      * @return The percentage of requests over the last 10 seconds that resulted
      *         in a 2xx (200, 201, etc.) status code.
      */
+
     public Integer getStatus2xx() {
         return this.status2xx;
     }
@@ -96,6 +98,7 @@ public class StatusCodes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StatusCodes withStatus2xx(Integer status2xx) {
         setStatus2xx(status2xx);
         return this;
@@ -111,6 +114,7 @@ public class StatusCodes implements Serializable, Cloneable {
      *        The percentage of requests over the last 10 seconds that resulted
      *        in a 3xx (300, 301, etc.) status code.
      */
+
     public void setStatus3xx(Integer status3xx) {
         this.status3xx = status3xx;
     }
@@ -124,6 +128,7 @@ public class StatusCodes implements Serializable, Cloneable {
      * @return The percentage of requests over the last 10 seconds that resulted
      *         in a 3xx (300, 301, etc.) status code.
      */
+
     public Integer getStatus3xx() {
         return this.status3xx;
     }
@@ -140,6 +145,7 @@ public class StatusCodes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StatusCodes withStatus3xx(Integer status3xx) {
         setStatus3xx(status3xx);
         return this;
@@ -155,6 +161,7 @@ public class StatusCodes implements Serializable, Cloneable {
      *        The percentage of requests over the last 10 seconds that resulted
      *        in a 4xx (400, 401, etc.) status code.
      */
+
     public void setStatus4xx(Integer status4xx) {
         this.status4xx = status4xx;
     }
@@ -168,6 +175,7 @@ public class StatusCodes implements Serializable, Cloneable {
      * @return The percentage of requests over the last 10 seconds that resulted
      *         in a 4xx (400, 401, etc.) status code.
      */
+
     public Integer getStatus4xx() {
         return this.status4xx;
     }
@@ -184,6 +192,7 @@ public class StatusCodes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StatusCodes withStatus4xx(Integer status4xx) {
         setStatus4xx(status4xx);
         return this;
@@ -199,6 +208,7 @@ public class StatusCodes implements Serializable, Cloneable {
      *        The percentage of requests over the last 10 seconds that resulted
      *        in a 5xx (500, 501, etc.) status code.
      */
+
     public void setStatus5xx(Integer status5xx) {
         this.status5xx = status5xx;
     }
@@ -212,6 +222,7 @@ public class StatusCodes implements Serializable, Cloneable {
      * @return The percentage of requests over the last 10 seconds that resulted
      *         in a 5xx (500, 501, etc.) status code.
      */
+
     public Integer getStatus5xx() {
         return this.status5xx;
     }
@@ -228,6 +239,7 @@ public class StatusCodes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StatusCodes withStatus5xx(Integer status5xx) {
         setStatus5xx(status5xx);
         return this;

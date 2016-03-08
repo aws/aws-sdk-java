@@ -48,6 +48,7 @@ public class InstanceCount implements Serializable, Cloneable {
      *        The states of the listed Reserved Instances.
      * @see ListingState
      */
+
     public void setState(String state) {
         this.state = state;
     }
@@ -60,6 +61,7 @@ public class InstanceCount implements Serializable, Cloneable {
      * @return The states of the listed Reserved Instances.
      * @see ListingState
      */
+
     public String getState() {
         return this.state;
     }
@@ -75,6 +77,7 @@ public class InstanceCount implements Serializable, Cloneable {
      *         chained together.
      * @see ListingState
      */
+
     public InstanceCount withState(String state) {
         setState(state);
         return this;
@@ -91,6 +94,7 @@ public class InstanceCount implements Serializable, Cloneable {
      *         chained together.
      * @see ListingState
      */
+
     public void setState(ListingState state) {
         this.state = state.toString();
     }
@@ -106,6 +110,7 @@ public class InstanceCount implements Serializable, Cloneable {
      *         chained together.
      * @see ListingState
      */
+
     public InstanceCount withState(ListingState state) {
         setState(state);
         return this;
@@ -121,6 +126,7 @@ public class InstanceCount implements Serializable, Cloneable {
      *        The number of listed Reserved Instances in the state specified by
      *        the <code>state</code>.
      */
+
     public void setInstanceCount(Integer instanceCount) {
         this.instanceCount = instanceCount;
     }
@@ -134,6 +140,7 @@ public class InstanceCount implements Serializable, Cloneable {
      * @return The number of listed Reserved Instances in the state specified by
      *         the <code>state</code>.
      */
+
     public Integer getInstanceCount() {
         return this.instanceCount;
     }
@@ -150,6 +157,7 @@ public class InstanceCount implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceCount withInstanceCount(Integer instanceCount) {
         setInstanceCount(instanceCount);
         return this;

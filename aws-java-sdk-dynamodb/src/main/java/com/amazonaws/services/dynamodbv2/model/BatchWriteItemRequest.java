@@ -262,6 +262,7 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements
      *         </ul>
      *         </li>
      */
+
     public java.util.Map<String, java.util.List<WriteRequest>> getRequestItems() {
         return requestItems;
     }
@@ -368,6 +369,7 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements
      *        </ul>
      *        </li>
      */
+
     public void setRequestItems(
             java.util.Map<String, java.util.List<WriteRequest>> requestItems) {
         this.requestItems = requestItems;
@@ -477,6 +479,7 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchWriteItemRequest withRequestItems(
             java.util.Map<String, java.util.List<WriteRequest>> requestItems) {
         setRequestItems(requestItems);
@@ -499,6 +502,7 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements
      * Removes all the entries added into RequestItems. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public BatchWriteItemRequest clearRequestItemsEntries() {
         this.requestItems = null;
         return this;
@@ -508,6 +512,7 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements
      * @param returnConsumedCapacity
      * @see ReturnConsumedCapacity
      */
+
     public void setReturnConsumedCapacity(String returnConsumedCapacity) {
         this.returnConsumedCapacity = returnConsumedCapacity;
     }
@@ -516,6 +521,7 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements
      * @return
      * @see ReturnConsumedCapacity
      */
+
     public String getReturnConsumedCapacity() {
         return this.returnConsumedCapacity;
     }
@@ -526,6 +532,7 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ReturnConsumedCapacity
      */
+
     public BatchWriteItemRequest withReturnConsumedCapacity(
             String returnConsumedCapacity) {
         setReturnConsumedCapacity(returnConsumedCapacity);
@@ -538,6 +545,7 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ReturnConsumedCapacity
      */
+
     public void setReturnConsumedCapacity(
             ReturnConsumedCapacity returnConsumedCapacity) {
         this.returnConsumedCapacity = returnConsumedCapacity.toString();
@@ -549,6 +557,7 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ReturnConsumedCapacity
      */
+
     public BatchWriteItemRequest withReturnConsumedCapacity(
             ReturnConsumedCapacity returnConsumedCapacity) {
         setReturnConsumedCapacity(returnConsumedCapacity);
@@ -572,6 +581,7 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements
      *        default), no statistics are returned.
      * @see ReturnItemCollectionMetrics
      */
+
     public void setReturnItemCollectionMetrics(
             String returnItemCollectionMetrics) {
         this.returnItemCollectionMetrics = returnItemCollectionMetrics;
@@ -593,6 +603,7 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements
      *         default), no statistics are returned.
      * @see ReturnItemCollectionMetrics
      */
+
     public String getReturnItemCollectionMetrics() {
         return this.returnItemCollectionMetrics;
     }
@@ -616,6 +627,7 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ReturnItemCollectionMetrics
      */
+
     public BatchWriteItemRequest withReturnItemCollectionMetrics(
             String returnItemCollectionMetrics) {
         setReturnItemCollectionMetrics(returnItemCollectionMetrics);
@@ -641,6 +653,7 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ReturnItemCollectionMetrics
      */
+
     public void setReturnItemCollectionMetrics(
             ReturnItemCollectionMetrics returnItemCollectionMetrics) {
         this.returnItemCollectionMetrics = returnItemCollectionMetrics
@@ -666,6 +679,7 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ReturnItemCollectionMetrics
      */
+
     public BatchWriteItemRequest withReturnItemCollectionMetrics(
             ReturnItemCollectionMetrics returnItemCollectionMetrics) {
         setReturnItemCollectionMetrics(returnItemCollectionMetrics);

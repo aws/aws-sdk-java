@@ -52,6 +52,7 @@ public class DiskImage implements Serializable, Cloneable {
      * @param image
      *        Information about the disk image.
      */
+
     public void setImage(DiskImageDetail image) {
         this.image = image;
     }
@@ -63,6 +64,7 @@ public class DiskImage implements Serializable, Cloneable {
      * 
      * @return Information about the disk image.
      */
+
     public DiskImageDetail getImage() {
         return this.image;
     }
@@ -77,6 +79,7 @@ public class DiskImage implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DiskImage withImage(DiskImageDetail image) {
         setImage(image);
         return this;
@@ -90,6 +93,7 @@ public class DiskImage implements Serializable, Cloneable {
      * @param description
      *        A description of the disk image.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -101,6 +105,7 @@ public class DiskImage implements Serializable, Cloneable {
      * 
      * @return A description of the disk image.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -115,6 +120,7 @@ public class DiskImage implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DiskImage withDescription(String description) {
         setDescription(description);
         return this;
@@ -128,6 +134,7 @@ public class DiskImage implements Serializable, Cloneable {
      * @param volume
      *        Information about the volume.
      */
+
     public void setVolume(VolumeDetail volume) {
         this.volume = volume;
     }
@@ -139,6 +146,7 @@ public class DiskImage implements Serializable, Cloneable {
      * 
      * @return Information about the volume.
      */
+
     public VolumeDetail getVolume() {
         return this.volume;
     }
@@ -153,6 +161,7 @@ public class DiskImage implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DiskImage withVolume(VolumeDetail volume) {
         setVolume(volume);
         return this;

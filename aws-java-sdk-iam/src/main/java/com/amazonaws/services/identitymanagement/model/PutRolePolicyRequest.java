@@ -52,6 +52,7 @@ public class PutRolePolicyRequest extends AmazonWebServiceRequest implements
      * @param roleName
      *        The name of the role to associate the policy with.
      */
+
     public void setRoleName(String roleName) {
         this.roleName = roleName;
     }
@@ -63,6 +64,7 @@ public class PutRolePolicyRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the role to associate the policy with.
      */
+
     public String getRoleName() {
         return this.roleName;
     }
@@ -77,6 +79,7 @@ public class PutRolePolicyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutRolePolicyRequest withRoleName(String roleName) {
         setRoleName(roleName);
         return this;
@@ -90,6 +93,7 @@ public class PutRolePolicyRequest extends AmazonWebServiceRequest implements
      * @param policyName
      *        The name of the policy document.
      */
+
     public void setPolicyName(String policyName) {
         this.policyName = policyName;
     }
@@ -101,6 +105,7 @@ public class PutRolePolicyRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the policy document.
      */
+
     public String getPolicyName() {
         return this.policyName;
     }
@@ -115,6 +120,7 @@ public class PutRolePolicyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutRolePolicyRequest withPolicyName(String policyName) {
         setPolicyName(policyName);
         return this;
@@ -128,6 +134,7 @@ public class PutRolePolicyRequest extends AmazonWebServiceRequest implements
      * @param policyDocument
      *        The policy document.
      */
+
     public void setPolicyDocument(String policyDocument) {
         this.policyDocument = policyDocument;
     }
@@ -139,6 +146,7 @@ public class PutRolePolicyRequest extends AmazonWebServiceRequest implements
      * 
      * @return The policy document.
      */
+
     public String getPolicyDocument() {
         return this.policyDocument;
     }
@@ -153,6 +161,7 @@ public class PutRolePolicyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutRolePolicyRequest withPolicyDocument(String policyDocument) {
         setPolicyDocument(policyDocument);
         return this;

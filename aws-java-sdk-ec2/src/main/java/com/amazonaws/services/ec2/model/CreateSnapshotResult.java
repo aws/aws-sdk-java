@@ -39,6 +39,7 @@ public class CreateSnapshotResult implements Serializable, Cloneable {
      * @param snapshot
      *        Describes a snapshot.
      */
+
     public void setSnapshot(Snapshot snapshot) {
         this.snapshot = snapshot;
     }
@@ -50,6 +51,7 @@ public class CreateSnapshotResult implements Serializable, Cloneable {
      * 
      * @return Describes a snapshot.
      */
+
     public Snapshot getSnapshot() {
         return this.snapshot;
     }
@@ -64,6 +66,7 @@ public class CreateSnapshotResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateSnapshotResult withSnapshot(Snapshot snapshot) {
         setSnapshot(snapshot);
         return this;

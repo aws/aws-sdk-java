@@ -38,6 +38,7 @@ public class CreateRouteTableResult implements Serializable, Cloneable {
      * @param routeTable
      *        Information about the route table.
      */
+
     public void setRouteTable(RouteTable routeTable) {
         this.routeTable = routeTable;
     }
@@ -49,6 +50,7 @@ public class CreateRouteTableResult implements Serializable, Cloneable {
      * 
      * @return Information about the route table.
      */
+
     public RouteTable getRouteTable() {
         return this.routeTable;
     }
@@ -63,6 +65,7 @@ public class CreateRouteTableResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateRouteTableResult withRouteTable(RouteTable routeTable) {
         setRouteTable(routeTable);
         return this;

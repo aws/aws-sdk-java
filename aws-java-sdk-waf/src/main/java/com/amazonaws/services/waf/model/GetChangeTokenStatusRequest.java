@@ -44,6 +44,7 @@ public class GetChangeTokenStatusRequest extends AmazonWebServiceRequest
      *        token was previously returned in the <code>GetChangeToken</code>
      *        response.
      */
+
     public void setChangeToken(String changeToken) {
         this.changeToken = changeToken;
     }
@@ -58,6 +59,7 @@ public class GetChangeTokenStatusRequest extends AmazonWebServiceRequest
      *         change token was previously returned in the
      *         <code>GetChangeToken</code> response.
      */
+
     public String getChangeToken() {
         return this.changeToken;
     }
@@ -75,6 +77,7 @@ public class GetChangeTokenStatusRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetChangeTokenStatusRequest withChangeToken(String changeToken) {
         setChangeToken(changeToken);
         return this;

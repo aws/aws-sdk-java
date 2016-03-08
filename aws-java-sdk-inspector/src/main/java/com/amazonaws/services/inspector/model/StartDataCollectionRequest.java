@@ -43,6 +43,7 @@ public class StartDataCollectionRequest extends AmazonWebServiceRequest
      *        The ARN of the assessment for which you want to start the data
      *        collection process.
      */
+
     public void setAssessmentArn(String assessmentArn) {
         this.assessmentArn = assessmentArn;
     }
@@ -56,6 +57,7 @@ public class StartDataCollectionRequest extends AmazonWebServiceRequest
      * @return The ARN of the assessment for which you want to start the data
      *         collection process.
      */
+
     public String getAssessmentArn() {
         return this.assessmentArn;
     }
@@ -72,6 +74,7 @@ public class StartDataCollectionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StartDataCollectionRequest withAssessmentArn(String assessmentArn) {
         setAssessmentArn(assessmentArn);
         return this;

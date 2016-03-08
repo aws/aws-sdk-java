@@ -43,6 +43,7 @@ public class DetachGroupPolicyRequest extends AmazonWebServiceRequest implements
      *        The name (friendly name, not ARN) of the group to detach the
      *        policy from.
      */
+
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
@@ -55,6 +56,7 @@ public class DetachGroupPolicyRequest extends AmazonWebServiceRequest implements
      * @return The name (friendly name, not ARN) of the group to detach the
      *         policy from.
      */
+
     public String getGroupName() {
         return this.groupName;
     }
@@ -70,6 +72,7 @@ public class DetachGroupPolicyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DetachGroupPolicyRequest withGroupName(String groupName) {
         setGroupName(groupName);
         return this;
@@ -78,6 +81,7 @@ public class DetachGroupPolicyRequest extends AmazonWebServiceRequest implements
     /**
      * @param policyArn
      */
+
     public void setPolicyArn(String policyArn) {
         this.policyArn = policyArn;
     }
@@ -85,6 +89,7 @@ public class DetachGroupPolicyRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public String getPolicyArn() {
         return this.policyArn;
     }
@@ -94,6 +99,7 @@ public class DetachGroupPolicyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DetachGroupPolicyRequest withPolicyArn(String policyArn) {
         setPolicyArn(policyArn);
         return this;

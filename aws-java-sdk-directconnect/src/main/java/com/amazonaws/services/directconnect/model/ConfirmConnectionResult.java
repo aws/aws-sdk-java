@@ -31,6 +31,7 @@ public class ConfirmConnectionResult implements Serializable, Cloneable {
      * @param connectionState
      * @see ConnectionState
      */
+
     public void setConnectionState(String connectionState) {
         this.connectionState = connectionState;
     }
@@ -39,6 +40,7 @@ public class ConfirmConnectionResult implements Serializable, Cloneable {
      * @return
      * @see ConnectionState
      */
+
     public String getConnectionState() {
         return this.connectionState;
     }
@@ -49,6 +51,7 @@ public class ConfirmConnectionResult implements Serializable, Cloneable {
      *         chained together.
      * @see ConnectionState
      */
+
     public ConfirmConnectionResult withConnectionState(String connectionState) {
         setConnectionState(connectionState);
         return this;
@@ -60,6 +63,7 @@ public class ConfirmConnectionResult implements Serializable, Cloneable {
      *         chained together.
      * @see ConnectionState
      */
+
     public void setConnectionState(ConnectionState connectionState) {
         this.connectionState = connectionState.toString();
     }
@@ -70,6 +74,7 @@ public class ConfirmConnectionResult implements Serializable, Cloneable {
      *         chained together.
      * @see ConnectionState
      */
+
     public ConfirmConnectionResult withConnectionState(
             ConnectionState connectionState) {
         setConnectionState(connectionState);

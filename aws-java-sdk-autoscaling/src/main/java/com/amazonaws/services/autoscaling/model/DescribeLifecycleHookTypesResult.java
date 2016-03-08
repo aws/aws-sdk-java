@@ -73,6 +73,7 @@ public class DescribeLifecycleHookTypesResult implements Serializable,
      *         </p>
      *         </li>
      */
+
     public java.util.List<String> getLifecycleHookTypes() {
         if (lifecycleHookTypes == null) {
             lifecycleHookTypes = new com.amazonaws.internal.SdkInternalList<String>();
@@ -111,6 +112,7 @@ public class DescribeLifecycleHookTypesResult implements Serializable,
      *        </p>
      *        </li>
      */
+
     public void setLifecycleHookTypes(
             java.util.Collection<String> lifecycleHookTypes) {
         if (lifecycleHookTypes == null) {
@@ -161,6 +163,7 @@ public class DescribeLifecycleHookTypesResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLifecycleHookTypesResult withLifecycleHookTypes(
             String... lifecycleHookTypes) {
         if (this.lifecycleHookTypes == null) {
@@ -206,6 +209,7 @@ public class DescribeLifecycleHookTypesResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLifecycleHookTypesResult withLifecycleHookTypes(
             java.util.Collection<String> lifecycleHookTypes) {
         setLifecycleHookTypes(lifecycleHookTypes);

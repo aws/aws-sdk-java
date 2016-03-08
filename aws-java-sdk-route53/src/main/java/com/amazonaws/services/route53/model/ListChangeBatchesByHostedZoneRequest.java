@@ -66,6 +66,7 @@ public class ListChangeBatchesByHostedZoneRequest extends
      * @param hostedZoneId
      *        The ID of the hosted zone that you want to see changes for.
      */
+
     public void setHostedZoneId(String hostedZoneId) {
         this.hostedZoneId = hostedZoneId;
     }
@@ -77,6 +78,7 @@ public class ListChangeBatchesByHostedZoneRequest extends
      * 
      * @return The ID of the hosted zone that you want to see changes for.
      */
+
     public String getHostedZoneId() {
         return this.hostedZoneId;
     }
@@ -91,6 +93,7 @@ public class ListChangeBatchesByHostedZoneRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListChangeBatchesByHostedZoneRequest withHostedZoneId(
             String hostedZoneId) {
         setHostedZoneId(hostedZoneId);
@@ -105,6 +108,7 @@ public class ListChangeBatchesByHostedZoneRequest extends
      * @param startDate
      *        The start of the time period you want to see changes for.
      */
+
     public void setStartDate(String startDate) {
         this.startDate = startDate;
     }
@@ -116,6 +120,7 @@ public class ListChangeBatchesByHostedZoneRequest extends
      * 
      * @return The start of the time period you want to see changes for.
      */
+
     public String getStartDate() {
         return this.startDate;
     }
@@ -130,6 +135,7 @@ public class ListChangeBatchesByHostedZoneRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListChangeBatchesByHostedZoneRequest withStartDate(String startDate) {
         setStartDate(startDate);
         return this;
@@ -143,6 +149,7 @@ public class ListChangeBatchesByHostedZoneRequest extends
      * @param endDate
      *        The end of the time period you want to see changes for.
      */
+
     public void setEndDate(String endDate) {
         this.endDate = endDate;
     }
@@ -154,6 +161,7 @@ public class ListChangeBatchesByHostedZoneRequest extends
      * 
      * @return The end of the time period you want to see changes for.
      */
+
     public String getEndDate() {
         return this.endDate;
     }
@@ -168,6 +176,7 @@ public class ListChangeBatchesByHostedZoneRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListChangeBatchesByHostedZoneRequest withEndDate(String endDate) {
         setEndDate(endDate);
         return this;
@@ -181,6 +190,7 @@ public class ListChangeBatchesByHostedZoneRequest extends
      * @param maxItems
      *        The maximum number of items on a page.
      */
+
     public void setMaxItems(String maxItems) {
         this.maxItems = maxItems;
     }
@@ -192,6 +202,7 @@ public class ListChangeBatchesByHostedZoneRequest extends
      * 
      * @return The maximum number of items on a page.
      */
+
     public String getMaxItems() {
         return this.maxItems;
     }
@@ -206,6 +217,7 @@ public class ListChangeBatchesByHostedZoneRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListChangeBatchesByHostedZoneRequest withMaxItems(String maxItems) {
         setMaxItems(maxItems);
         return this;
@@ -219,6 +231,7 @@ public class ListChangeBatchesByHostedZoneRequest extends
      * @param marker
      *        The page marker.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -230,6 +243,7 @@ public class ListChangeBatchesByHostedZoneRequest extends
      * 
      * @return The page marker.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -244,6 +258,7 @@ public class ListChangeBatchesByHostedZoneRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListChangeBatchesByHostedZoneRequest withMarker(String marker) {
         setMarker(marker);
         return this;

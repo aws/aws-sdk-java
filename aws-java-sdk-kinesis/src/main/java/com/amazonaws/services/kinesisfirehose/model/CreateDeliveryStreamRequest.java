@@ -57,6 +57,7 @@ public class CreateDeliveryStreamRequest extends AmazonWebServiceRequest
      * @param deliveryStreamName
      *        The name of the delivery stream.
      */
+
     public void setDeliveryStreamName(String deliveryStreamName) {
         this.deliveryStreamName = deliveryStreamName;
     }
@@ -68,6 +69,7 @@ public class CreateDeliveryStreamRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the delivery stream.
      */
+
     public String getDeliveryStreamName() {
         return this.deliveryStreamName;
     }
@@ -82,6 +84,7 @@ public class CreateDeliveryStreamRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDeliveryStreamRequest withDeliveryStreamName(
             String deliveryStreamName) {
         setDeliveryStreamName(deliveryStreamName);
@@ -100,6 +103,7 @@ public class CreateDeliveryStreamRequest extends AmazonWebServiceRequest
      *        <code>RedshiftDestinationConfiguration</code> is specified (see
      *        restrictions listed above).
      */
+
     public void setS3DestinationConfiguration(
             S3DestinationConfiguration s3DestinationConfiguration) {
         this.s3DestinationConfiguration = s3DestinationConfiguration;
@@ -116,6 +120,7 @@ public class CreateDeliveryStreamRequest extends AmazonWebServiceRequest
      *         <code>RedshiftDestinationConfiguration</code> is specified (see
      *         restrictions listed above).
      */
+
     public S3DestinationConfiguration getS3DestinationConfiguration() {
         return this.s3DestinationConfiguration;
     }
@@ -134,6 +139,7 @@ public class CreateDeliveryStreamRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDeliveryStreamRequest withS3DestinationConfiguration(
             S3DestinationConfiguration s3DestinationConfiguration) {
         setS3DestinationConfiguration(s3DestinationConfiguration);
@@ -151,6 +157,7 @@ public class CreateDeliveryStreamRequest extends AmazonWebServiceRequest
      *        if Amazon S3 is the desired destination (see restrictions listed
      *        above).
      */
+
     public void setRedshiftDestinationConfiguration(
             RedshiftDestinationConfiguration redshiftDestinationConfiguration) {
         this.redshiftDestinationConfiguration = redshiftDestinationConfiguration;
@@ -166,6 +173,7 @@ public class CreateDeliveryStreamRequest extends AmazonWebServiceRequest
      *         specified if Amazon S3 is the desired destination (see
      *         restrictions listed above).
      */
+
     public RedshiftDestinationConfiguration getRedshiftDestinationConfiguration() {
         return this.redshiftDestinationConfiguration;
     }
@@ -183,6 +191,7 @@ public class CreateDeliveryStreamRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDeliveryStreamRequest withRedshiftDestinationConfiguration(
             RedshiftDestinationConfiguration redshiftDestinationConfiguration) {
         setRedshiftDestinationConfiguration(redshiftDestinationConfiguration);

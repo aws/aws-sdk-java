@@ -54,6 +54,7 @@ public class QueryObjectsResult implements Serializable, Cloneable {
      * 
      * @return The identifiers that match the query selectors.
      */
+
     public java.util.List<String> getIds() {
         if (ids == null) {
             ids = new com.amazonaws.internal.SdkInternalList<String>();
@@ -69,6 +70,7 @@ public class QueryObjectsResult implements Serializable, Cloneable {
      * @param ids
      *        The identifiers that match the query selectors.
      */
+
     public void setIds(java.util.Collection<String> ids) {
         if (ids == null) {
             this.ids = null;
@@ -94,6 +96,7 @@ public class QueryObjectsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public QueryObjectsResult withIds(String... ids) {
         if (this.ids == null) {
             setIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -115,6 +118,7 @@ public class QueryObjectsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public QueryObjectsResult withIds(java.util.Collection<String> ids) {
         setIds(ids);
         return this;
@@ -132,6 +136,7 @@ public class QueryObjectsResult implements Serializable, Cloneable {
      *        page of results, call <code>QueryObjects</code> again with this
      *        marker value. If the value is null, there are no more results.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -147,6 +152,7 @@ public class QueryObjectsResult implements Serializable, Cloneable {
      *         page of results, call <code>QueryObjects</code> again with this
      *         marker value. If the value is null, there are no more results.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -165,6 +171,7 @@ public class QueryObjectsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public QueryObjectsResult withMarker(String marker) {
         setMarker(marker);
         return this;
@@ -180,6 +187,7 @@ public class QueryObjectsResult implements Serializable, Cloneable {
      *        Indicates whether there are more results that can be obtained by a
      *        subsequent call.
      */
+
     public void setHasMoreResults(Boolean hasMoreResults) {
         this.hasMoreResults = hasMoreResults;
     }
@@ -193,6 +201,7 @@ public class QueryObjectsResult implements Serializable, Cloneable {
      * @return Indicates whether there are more results that can be obtained by
      *         a subsequent call.
      */
+
     public Boolean getHasMoreResults() {
         return this.hasMoreResults;
     }
@@ -209,6 +218,7 @@ public class QueryObjectsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public QueryObjectsResult withHasMoreResults(Boolean hasMoreResults) {
         setHasMoreResults(hasMoreResults);
         return this;
@@ -223,6 +233,7 @@ public class QueryObjectsResult implements Serializable, Cloneable {
      * @return Indicates whether there are more results that can be obtained by
      *         a subsequent call.
      */
+
     public Boolean isHasMoreResults() {
         return this.hasMoreResults;
     }

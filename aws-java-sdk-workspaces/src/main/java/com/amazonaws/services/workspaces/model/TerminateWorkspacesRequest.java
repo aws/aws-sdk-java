@@ -41,6 +41,7 @@ public class TerminateWorkspacesRequest extends AmazonWebServiceRequest
      * 
      * @return An array of structures that specify the WorkSpaces to terminate.
      */
+
     public java.util.List<TerminateRequest> getTerminateWorkspaceRequests() {
         if (terminateWorkspaceRequests == null) {
             terminateWorkspaceRequests = new com.amazonaws.internal.SdkInternalList<TerminateRequest>();
@@ -56,6 +57,7 @@ public class TerminateWorkspacesRequest extends AmazonWebServiceRequest
      * @param terminateWorkspaceRequests
      *        An array of structures that specify the WorkSpaces to terminate.
      */
+
     public void setTerminateWorkspaceRequests(
             java.util.Collection<TerminateRequest> terminateWorkspaceRequests) {
         if (terminateWorkspaceRequests == null) {
@@ -83,6 +85,7 @@ public class TerminateWorkspacesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TerminateWorkspacesRequest withTerminateWorkspaceRequests(
             TerminateRequest... terminateWorkspaceRequests) {
         if (this.terminateWorkspaceRequests == null) {
@@ -105,6 +108,7 @@ public class TerminateWorkspacesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TerminateWorkspacesRequest withTerminateWorkspaceRequests(
             java.util.Collection<TerminateRequest> terminateWorkspaceRequests) {
         setTerminateWorkspaceRequests(terminateWorkspaceRequests);

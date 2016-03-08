@@ -64,6 +64,7 @@ public class TestInvokeMethodResult implements Serializable, Cloneable {
      * @param status
      *        The HTTP status code.
      */
+
     public void setStatus(Integer status) {
         this.status = status;
     }
@@ -75,6 +76,7 @@ public class TestInvokeMethodResult implements Serializable, Cloneable {
      * 
      * @return The HTTP status code.
      */
+
     public Integer getStatus() {
         return this.status;
     }
@@ -89,6 +91,7 @@ public class TestInvokeMethodResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TestInvokeMethodResult withStatus(Integer status) {
         setStatus(status);
         return this;
@@ -102,6 +105,7 @@ public class TestInvokeMethodResult implements Serializable, Cloneable {
      * @param body
      *        The body of HTTP response.
      */
+
     public void setBody(String body) {
         this.body = body;
     }
@@ -113,6 +117,7 @@ public class TestInvokeMethodResult implements Serializable, Cloneable {
      * 
      * @return The body of HTTP response.
      */
+
     public String getBody() {
         return this.body;
     }
@@ -127,6 +132,7 @@ public class TestInvokeMethodResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TestInvokeMethodResult withBody(String body) {
         setBody(body);
         return this;
@@ -139,6 +145,7 @@ public class TestInvokeMethodResult implements Serializable, Cloneable {
      * 
      * @return The headers of HTTP response.
      */
+
     public java.util.Map<String, String> getHeaders() {
         return headers;
     }
@@ -151,6 +158,7 @@ public class TestInvokeMethodResult implements Serializable, Cloneable {
      * @param headers
      *        The headers of HTTP response.
      */
+
     public void setHeaders(java.util.Map<String, String> headers) {
         this.headers = headers;
     }
@@ -165,6 +173,7 @@ public class TestInvokeMethodResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TestInvokeMethodResult withHeaders(
             java.util.Map<String, String> headers) {
         setHeaders(headers);
@@ -186,6 +195,7 @@ public class TestInvokeMethodResult implements Serializable, Cloneable {
      * Removes all the entries added into Headers. &lt;p> Returns a reference to
      * this object so that method calls can be chained together.
      */
+
     public TestInvokeMethodResult clearHeadersEntries() {
         this.headers = null;
         return this;
@@ -199,6 +209,7 @@ public class TestInvokeMethodResult implements Serializable, Cloneable {
      * @param log
      *        The Amazon API Gateway execution log for the test invoke request.
      */
+
     public void setLog(String log) {
         this.log = log;
     }
@@ -210,6 +221,7 @@ public class TestInvokeMethodResult implements Serializable, Cloneable {
      * 
      * @return The Amazon API Gateway execution log for the test invoke request.
      */
+
     public String getLog() {
         return this.log;
     }
@@ -224,6 +236,7 @@ public class TestInvokeMethodResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TestInvokeMethodResult withLog(String log) {
         setLog(log);
         return this;
@@ -237,6 +250,7 @@ public class TestInvokeMethodResult implements Serializable, Cloneable {
      * @param latency
      *        The execution latency of the test invoke request.
      */
+
     public void setLatency(Long latency) {
         this.latency = latency;
     }
@@ -248,6 +262,7 @@ public class TestInvokeMethodResult implements Serializable, Cloneable {
      * 
      * @return The execution latency of the test invoke request.
      */
+
     public Long getLatency() {
         return this.latency;
     }
@@ -262,6 +277,7 @@ public class TestInvokeMethodResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TestInvokeMethodResult withLatency(Long latency) {
         setLatency(latency);
         return this;

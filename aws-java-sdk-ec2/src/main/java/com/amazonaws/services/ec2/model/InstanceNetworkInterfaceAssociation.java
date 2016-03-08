@@ -56,6 +56,7 @@ public class InstanceNetworkInterfaceAssociation implements Serializable,
      *        The public IP address or Elastic IP address bound to the network
      *        interface.
      */
+
     public void setPublicIp(String publicIp) {
         this.publicIp = publicIp;
     }
@@ -69,6 +70,7 @@ public class InstanceNetworkInterfaceAssociation implements Serializable,
      * @return The public IP address or Elastic IP address bound to the network
      *         interface.
      */
+
     public String getPublicIp() {
         return this.publicIp;
     }
@@ -85,6 +87,7 @@ public class InstanceNetworkInterfaceAssociation implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceNetworkInterfaceAssociation withPublicIp(String publicIp) {
         setPublicIp(publicIp);
         return this;
@@ -98,6 +101,7 @@ public class InstanceNetworkInterfaceAssociation implements Serializable,
      * @param publicDnsName
      *        The public DNS name.
      */
+
     public void setPublicDnsName(String publicDnsName) {
         this.publicDnsName = publicDnsName;
     }
@@ -109,6 +113,7 @@ public class InstanceNetworkInterfaceAssociation implements Serializable,
      * 
      * @return The public DNS name.
      */
+
     public String getPublicDnsName() {
         return this.publicDnsName;
     }
@@ -123,6 +128,7 @@ public class InstanceNetworkInterfaceAssociation implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceNetworkInterfaceAssociation withPublicDnsName(
             String publicDnsName) {
         setPublicDnsName(publicDnsName);
@@ -137,6 +143,7 @@ public class InstanceNetworkInterfaceAssociation implements Serializable,
      * @param ipOwnerId
      *        The ID of the owner of the Elastic IP address.
      */
+
     public void setIpOwnerId(String ipOwnerId) {
         this.ipOwnerId = ipOwnerId;
     }
@@ -148,6 +155,7 @@ public class InstanceNetworkInterfaceAssociation implements Serializable,
      * 
      * @return The ID of the owner of the Elastic IP address.
      */
+
     public String getIpOwnerId() {
         return this.ipOwnerId;
     }
@@ -162,6 +170,7 @@ public class InstanceNetworkInterfaceAssociation implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceNetworkInterfaceAssociation withIpOwnerId(String ipOwnerId) {
         setIpOwnerId(ipOwnerId);
         return this;

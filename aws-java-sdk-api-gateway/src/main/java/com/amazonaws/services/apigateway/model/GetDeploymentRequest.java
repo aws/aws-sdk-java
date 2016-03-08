@@ -53,6 +53,7 @@ public class GetDeploymentRequest extends AmazonWebServiceRequest implements
      *        The identifier of the <a>RestApi</a> resource for the
      *        <a>Deployment</a> resource to get information about.
      */
+
     public void setRestApiId(String restApiId) {
         this.restApiId = restApiId;
     }
@@ -66,6 +67,7 @@ public class GetDeploymentRequest extends AmazonWebServiceRequest implements
      * @return The identifier of the <a>RestApi</a> resource for the
      *         <a>Deployment</a> resource to get information about.
      */
+
     public String getRestApiId() {
         return this.restApiId;
     }
@@ -82,6 +84,7 @@ public class GetDeploymentRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDeploymentRequest withRestApiId(String restApiId) {
         setRestApiId(restApiId);
         return this;
@@ -97,6 +100,7 @@ public class GetDeploymentRequest extends AmazonWebServiceRequest implements
      *        The identifier of the <a>Deployment</a> resource to get
      *        information about.
      */
+
     public void setDeploymentId(String deploymentId) {
         this.deploymentId = deploymentId;
     }
@@ -110,6 +114,7 @@ public class GetDeploymentRequest extends AmazonWebServiceRequest implements
      * @return The identifier of the <a>Deployment</a> resource to get
      *         information about.
      */
+
     public String getDeploymentId() {
         return this.deploymentId;
     }
@@ -126,6 +131,7 @@ public class GetDeploymentRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDeploymentRequest withDeploymentId(String deploymentId) {
         setDeploymentId(deploymentId);
         return this;

@@ -44,6 +44,7 @@ public class BatchGetApplicationsRequest extends AmazonWebServiceRequest
      * @return A list of application names, with multiple application names
      *         separated by spaces.
      */
+
     public java.util.List<String> getApplicationNames() {
         if (applicationNames == null) {
             applicationNames = new com.amazonaws.internal.SdkInternalList<String>();
@@ -61,6 +62,7 @@ public class BatchGetApplicationsRequest extends AmazonWebServiceRequest
      *        A list of application names, with multiple application names
      *        separated by spaces.
      */
+
     public void setApplicationNames(
             java.util.Collection<String> applicationNames) {
         if (applicationNames == null) {
@@ -90,6 +92,7 @@ public class BatchGetApplicationsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchGetApplicationsRequest withApplicationNames(
             String... applicationNames) {
         if (this.applicationNames == null) {
@@ -114,6 +117,7 @@ public class BatchGetApplicationsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchGetApplicationsRequest withApplicationNames(
             java.util.Collection<String> applicationNames) {
         setApplicationNames(applicationNames);

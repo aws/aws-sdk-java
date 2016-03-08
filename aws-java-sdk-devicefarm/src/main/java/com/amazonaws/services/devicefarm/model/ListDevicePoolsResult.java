@@ -47,6 +47,7 @@ public class ListDevicePoolsResult implements Serializable, Cloneable {
      * 
      * @return Information about the device pools.
      */
+
     public java.util.List<DevicePool> getDevicePools() {
         return devicePools;
     }
@@ -59,6 +60,7 @@ public class ListDevicePoolsResult implements Serializable, Cloneable {
      * @param devicePools
      *        Information about the device pools.
      */
+
     public void setDevicePools(java.util.Collection<DevicePool> devicePools) {
         if (devicePools == null) {
             this.devicePools = null;
@@ -84,6 +86,7 @@ public class ListDevicePoolsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListDevicePoolsResult withDevicePools(DevicePool... devicePools) {
         if (this.devicePools == null) {
             setDevicePools(new java.util.ArrayList<DevicePool>(
@@ -105,6 +108,7 @@ public class ListDevicePoolsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListDevicePoolsResult withDevicePools(
             java.util.Collection<DevicePool> devicePools) {
         setDevicePools(devicePools);
@@ -124,6 +128,7 @@ public class ListDevicePoolsResult implements Serializable, Cloneable {
      *        a subsequent call to this operation to return the next set of
      *        items in the list.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -140,6 +145,7 @@ public class ListDevicePoolsResult implements Serializable, Cloneable {
      *         a subsequent call to this operation to return the next set of
      *         items in the list.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -159,6 +165,7 @@ public class ListDevicePoolsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListDevicePoolsResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

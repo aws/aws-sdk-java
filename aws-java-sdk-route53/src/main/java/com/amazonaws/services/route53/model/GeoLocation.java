@@ -93,6 +93,7 @@ public class GeoLocation implements Serializable, Cloneable {
      *        <code>CountryCode</code> or <code>SubdivisionCode</code> returns
      *        an <a>InvalidInput</a> error.
      */
+
     public void setContinentCode(String continentCode) {
         this.continentCode = continentCode;
     }
@@ -124,6 +125,7 @@ public class GeoLocation implements Serializable, Cloneable {
      *         <code>CountryCode</code> or <code>SubdivisionCode</code> returns
      *         an <a>InvalidInput</a> error.
      */
+
     public String getContinentCode() {
         return this.continentCode;
     }
@@ -158,6 +160,7 @@ public class GeoLocation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GeoLocation withContinentCode(String continentCode) {
         setContinentCode(continentCode);
         return this;
@@ -183,6 +186,7 @@ public class GeoLocation implements Serializable, Cloneable {
      *        code. All other country codes follow the ISO 3166 two-character
      *        code.
      */
+
     public void setCountryCode(String countryCode) {
         this.countryCode = countryCode;
     }
@@ -206,6 +210,7 @@ public class GeoLocation implements Serializable, Cloneable {
      *         code. All other country codes follow the ISO 3166 two-character
      *         code.
      */
+
     public String getCountryCode() {
         return this.countryCode;
     }
@@ -232,6 +237,7 @@ public class GeoLocation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GeoLocation withCountryCode(String countryCode) {
         setCountryCode(countryCode);
         return this;
@@ -255,6 +261,7 @@ public class GeoLocation implements Serializable, Cloneable {
      *        Constraint: Specifying <code>SubdivisionCode</code> without
      *        <code>CountryCode</code> returns an <a>InvalidInput</a> error.
      */
+
     public void setSubdivisionCode(String subdivisionCode) {
         this.subdivisionCode = subdivisionCode;
     }
@@ -276,6 +283,7 @@ public class GeoLocation implements Serializable, Cloneable {
      *         Constraint: Specifying <code>SubdivisionCode</code> without
      *         <code>CountryCode</code> returns an <a>InvalidInput</a> error.
      */
+
     public String getSubdivisionCode() {
         return this.subdivisionCode;
     }
@@ -300,6 +308,7 @@ public class GeoLocation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GeoLocation withSubdivisionCode(String subdivisionCode) {
         setSubdivisionCode(subdivisionCode);
         return this;

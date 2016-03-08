@@ -81,6 +81,7 @@ public class SetLoadBalancerPoliciesOfListenerRequest extends
      * @param loadBalancerName
      *        The name of the load balancer.
      */
+
     public void setLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
     }
@@ -92,6 +93,7 @@ public class SetLoadBalancerPoliciesOfListenerRequest extends
      * 
      * @return The name of the load balancer.
      */
+
     public String getLoadBalancerName() {
         return this.loadBalancerName;
     }
@@ -106,6 +108,7 @@ public class SetLoadBalancerPoliciesOfListenerRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetLoadBalancerPoliciesOfListenerRequest withLoadBalancerName(
             String loadBalancerName) {
         setLoadBalancerName(loadBalancerName);
@@ -120,6 +123,7 @@ public class SetLoadBalancerPoliciesOfListenerRequest extends
      * @param loadBalancerPort
      *        The external port of the load balancer for the policy.
      */
+
     public void setLoadBalancerPort(Integer loadBalancerPort) {
         this.loadBalancerPort = loadBalancerPort;
     }
@@ -131,6 +135,7 @@ public class SetLoadBalancerPoliciesOfListenerRequest extends
      * 
      * @return The external port of the load balancer for the policy.
      */
+
     public Integer getLoadBalancerPort() {
         return this.loadBalancerPort;
     }
@@ -145,6 +150,7 @@ public class SetLoadBalancerPoliciesOfListenerRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetLoadBalancerPoliciesOfListenerRequest withLoadBalancerPort(
             Integer loadBalancerPort) {
         setLoadBalancerPort(loadBalancerPort);
@@ -160,6 +166,7 @@ public class SetLoadBalancerPoliciesOfListenerRequest extends
      * @return The names of the policies. If the list is empty, the current
      *         policy is removed from the listener.
      */
+
     public java.util.List<String> getPolicyNames() {
         if (policyNames == null) {
             policyNames = new com.amazonaws.internal.SdkInternalList<String>();
@@ -177,6 +184,7 @@ public class SetLoadBalancerPoliciesOfListenerRequest extends
      *        The names of the policies. If the list is empty, the current
      *        policy is removed from the listener.
      */
+
     public void setPolicyNames(java.util.Collection<String> policyNames) {
         if (policyNames == null) {
             this.policyNames = null;
@@ -205,6 +213,7 @@ public class SetLoadBalancerPoliciesOfListenerRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetLoadBalancerPoliciesOfListenerRequest withPolicyNames(
             String... policyNames) {
         if (this.policyNames == null) {
@@ -229,6 +238,7 @@ public class SetLoadBalancerPoliciesOfListenerRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetLoadBalancerPoliciesOfListenerRequest withPolicyNames(
             java.util.Collection<String> policyNames) {
         setPolicyNames(policyNames);

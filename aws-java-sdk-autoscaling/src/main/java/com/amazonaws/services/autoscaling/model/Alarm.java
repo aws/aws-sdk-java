@@ -46,6 +46,7 @@ public class Alarm implements Serializable, Cloneable {
      * @param alarmName
      *        The name of the alarm.
      */
+
     public void setAlarmName(String alarmName) {
         this.alarmName = alarmName;
     }
@@ -57,6 +58,7 @@ public class Alarm implements Serializable, Cloneable {
      * 
      * @return The name of the alarm.
      */
+
     public String getAlarmName() {
         return this.alarmName;
     }
@@ -71,6 +73,7 @@ public class Alarm implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Alarm withAlarmName(String alarmName) {
         setAlarmName(alarmName);
         return this;
@@ -84,6 +87,7 @@ public class Alarm implements Serializable, Cloneable {
      * @param alarmARN
      *        The Amazon Resource Name (ARN) of the alarm.
      */
+
     public void setAlarmARN(String alarmARN) {
         this.alarmARN = alarmARN;
     }
@@ -95,6 +99,7 @@ public class Alarm implements Serializable, Cloneable {
      * 
      * @return The Amazon Resource Name (ARN) of the alarm.
      */
+
     public String getAlarmARN() {
         return this.alarmARN;
     }
@@ -109,6 +114,7 @@ public class Alarm implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Alarm withAlarmARN(String alarmARN) {
         setAlarmARN(alarmARN);
         return this;

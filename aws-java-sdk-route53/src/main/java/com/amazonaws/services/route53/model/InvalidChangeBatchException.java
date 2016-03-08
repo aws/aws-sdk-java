@@ -54,6 +54,7 @@ public class InvalidChangeBatchException extends AmazonServiceException {
      * 
      * @return Descriptive message for the error response.
      */
+
     public java.util.List<String> getMessages() {
         if (messages == null) {
             messages = new com.amazonaws.internal.SdkInternalList<String>();
@@ -69,6 +70,7 @@ public class InvalidChangeBatchException extends AmazonServiceException {
      * @param messages
      *        Descriptive message for the error response.
      */
+
     public void setMessages(java.util.Collection<String> messages) {
         if (messages == null) {
             this.messages = null;
@@ -95,6 +97,7 @@ public class InvalidChangeBatchException extends AmazonServiceException {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InvalidChangeBatchException withMessages(String... messages) {
         if (this.messages == null) {
             setMessages(new com.amazonaws.internal.SdkInternalList<String>(
@@ -116,6 +119,7 @@ public class InvalidChangeBatchException extends AmazonServiceException {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InvalidChangeBatchException withMessages(
             java.util.Collection<String> messages) {
         setMessages(messages);

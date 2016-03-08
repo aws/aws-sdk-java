@@ -46,6 +46,7 @@ public class CreateThingResult implements Serializable, Cloneable {
      * @param thingName
      *        The name of the thing.
      */
+
     public void setThingName(String thingName) {
         this.thingName = thingName;
     }
@@ -57,6 +58,7 @@ public class CreateThingResult implements Serializable, Cloneable {
      * 
      * @return The name of the thing.
      */
+
     public String getThingName() {
         return this.thingName;
     }
@@ -71,6 +73,7 @@ public class CreateThingResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateThingResult withThingName(String thingName) {
         setThingName(thingName);
         return this;
@@ -84,6 +87,7 @@ public class CreateThingResult implements Serializable, Cloneable {
      * @param thingArn
      *        The thing ARN.
      */
+
     public void setThingArn(String thingArn) {
         this.thingArn = thingArn;
     }
@@ -95,6 +99,7 @@ public class CreateThingResult implements Serializable, Cloneable {
      * 
      * @return The thing ARN.
      */
+
     public String getThingArn() {
         return this.thingArn;
     }
@@ -109,6 +114,7 @@ public class CreateThingResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateThingResult withThingArn(String thingArn) {
         setThingArn(thingArn);
         return this;

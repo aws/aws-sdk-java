@@ -49,6 +49,7 @@ public class ListStacksResult implements Serializable, Cloneable {
      * @return A list of <code>StackSummary</code> structures containing
      *         information about the specified stacks.
      */
+
     public java.util.List<StackSummary> getStackSummaries() {
         if (stackSummaries == null) {
             stackSummaries = new com.amazonaws.internal.SdkInternalList<StackSummary>();
@@ -66,6 +67,7 @@ public class ListStacksResult implements Serializable, Cloneable {
      *        A list of <code>StackSummary</code> structures containing
      *        information about the specified stacks.
      */
+
     public void setStackSummaries(
             java.util.Collection<StackSummary> stackSummaries) {
         if (stackSummaries == null) {
@@ -95,6 +97,7 @@ public class ListStacksResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListStacksResult withStackSummaries(StackSummary... stackSummaries) {
         if (this.stackSummaries == null) {
             setStackSummaries(new com.amazonaws.internal.SdkInternalList<StackSummary>(
@@ -118,6 +121,7 @@ public class ListStacksResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListStacksResult withStackSummaries(
             java.util.Collection<StackSummary> stackSummaries) {
         setStackSummaries(stackSummaries);
@@ -135,6 +139,7 @@ public class ListStacksResult implements Serializable, Cloneable {
      *        next page of stacks. If no additional page exists, this value is
      *        null.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -149,6 +154,7 @@ public class ListStacksResult implements Serializable, Cloneable {
      *         next page of stacks. If no additional page exists, this value is
      *         null.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -166,6 +172,7 @@ public class ListStacksResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListStacksResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

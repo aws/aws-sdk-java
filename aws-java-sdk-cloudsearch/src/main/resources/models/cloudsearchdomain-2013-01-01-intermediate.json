@@ -8153,7 +8153,8 @@
             "documentation" : null,
             "queryName" : null,
             "flattened" : false,
-            "xmlNamespace" : null
+            "xmlNamespace" : null,
+            "deprecated" : false
           }
         } ]
       }

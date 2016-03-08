@@ -46,6 +46,7 @@ public class Policy implements Serializable, Cloneable {
      * @param policyName
      *        The policy name.
      */
+
     public void setPolicyName(String policyName) {
         this.policyName = policyName;
     }
@@ -57,6 +58,7 @@ public class Policy implements Serializable, Cloneable {
      * 
      * @return The policy name.
      */
+
     public String getPolicyName() {
         return this.policyName;
     }
@@ -71,6 +73,7 @@ public class Policy implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Policy withPolicyName(String policyName) {
         setPolicyName(policyName);
         return this;
@@ -84,6 +87,7 @@ public class Policy implements Serializable, Cloneable {
      * @param policyArn
      *        The policy ARN.
      */
+
     public void setPolicyArn(String policyArn) {
         this.policyArn = policyArn;
     }
@@ -95,6 +99,7 @@ public class Policy implements Serializable, Cloneable {
      * 
      * @return The policy ARN.
      */
+
     public String getPolicyArn() {
         return this.policyArn;
     }
@@ -109,6 +114,7 @@ public class Policy implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Policy withPolicyArn(String policyArn) {
         setPolicyArn(policyArn);
         return this;

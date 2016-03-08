@@ -82,6 +82,7 @@ public class WriteRequest implements Serializable, Cloneable {
      * @param putRequest
      *        A request to perform a <i>PutItem</i> operation.
      */
+
     public void setPutRequest(PutRequest putRequest) {
         this.putRequest = putRequest;
     }
@@ -93,6 +94,7 @@ public class WriteRequest implements Serializable, Cloneable {
      * 
      * @return A request to perform a <i>PutItem</i> operation.
      */
+
     public PutRequest getPutRequest() {
         return this.putRequest;
     }
@@ -107,6 +109,7 @@ public class WriteRequest implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public WriteRequest withPutRequest(PutRequest putRequest) {
         setPutRequest(putRequest);
         return this;
@@ -120,6 +123,7 @@ public class WriteRequest implements Serializable, Cloneable {
      * @param deleteRequest
      *        A request to perform a <i>DeleteItem</i> operation.
      */
+
     public void setDeleteRequest(DeleteRequest deleteRequest) {
         this.deleteRequest = deleteRequest;
     }
@@ -131,6 +135,7 @@ public class WriteRequest implements Serializable, Cloneable {
      * 
      * @return A request to perform a <i>DeleteItem</i> operation.
      */
+
     public DeleteRequest getDeleteRequest() {
         return this.deleteRequest;
     }
@@ -145,6 +150,7 @@ public class WriteRequest implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public WriteRequest withDeleteRequest(DeleteRequest deleteRequest) {
         setDeleteRequest(deleteRequest);
         return this;

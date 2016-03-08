@@ -73,6 +73,7 @@ public class ListSizeConstraintSetsRequest extends AmazonWebServiceRequest
      *        information about another batch of <code>SizeConstraintSets</code>
      *        .
      */
+
     public void setNextMarker(String nextMarker) {
         this.nextMarker = nextMarker;
     }
@@ -99,6 +100,7 @@ public class ListSizeConstraintSetsRequest extends AmazonWebServiceRequest
      *         information about another batch of
      *         <code>SizeConstraintSets</code>.
      */
+
     public String getNextMarker() {
         return this.nextMarker;
     }
@@ -128,6 +130,7 @@ public class ListSizeConstraintSetsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListSizeConstraintSetsRequest withNextMarker(String nextMarker) {
         setNextMarker(nextMarker);
         return this;
@@ -151,6 +154,7 @@ public class ListSizeConstraintSetsRequest extends AmazonWebServiceRequest
      *        <code>NextMarker</code> value that you can use to get another
      *        batch of <code>SizeConstraintSet</code> objects.
      */
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -172,6 +176,7 @@ public class ListSizeConstraintSetsRequest extends AmazonWebServiceRequest
      *         <code>NextMarker</code> value that you can use to get another
      *         batch of <code>SizeConstraintSet</code> objects.
      */
+
     public Integer getLimit() {
         return this.limit;
     }
@@ -196,6 +201,7 @@ public class ListSizeConstraintSetsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListSizeConstraintSetsRequest withLimit(Integer limit) {
         setLimit(limit);
         return this;

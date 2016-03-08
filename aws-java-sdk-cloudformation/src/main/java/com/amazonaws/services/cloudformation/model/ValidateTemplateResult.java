@@ -63,6 +63,7 @@ public class ValidateTemplateResult implements Serializable, Cloneable {
      * 
      * @return A list of <code>TemplateParameter</code> structures.
      */
+
     public java.util.List<TemplateParameter> getParameters() {
         if (parameters == null) {
             parameters = new com.amazonaws.internal.SdkInternalList<TemplateParameter>();
@@ -78,6 +79,7 @@ public class ValidateTemplateResult implements Serializable, Cloneable {
      * @param parameters
      *        A list of <code>TemplateParameter</code> structures.
      */
+
     public void setParameters(java.util.Collection<TemplateParameter> parameters) {
         if (parameters == null) {
             this.parameters = null;
@@ -104,6 +106,7 @@ public class ValidateTemplateResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ValidateTemplateResult withParameters(
             TemplateParameter... parameters) {
         if (this.parameters == null) {
@@ -126,6 +129,7 @@ public class ValidateTemplateResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ValidateTemplateResult withParameters(
             java.util.Collection<TemplateParameter> parameters) {
         setParameters(parameters);
@@ -140,6 +144,7 @@ public class ValidateTemplateResult implements Serializable, Cloneable {
      * @param description
      *        The description found within the template.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -151,6 +156,7 @@ public class ValidateTemplateResult implements Serializable, Cloneable {
      * 
      * @return The description found within the template.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -165,6 +171,7 @@ public class ValidateTemplateResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ValidateTemplateResult withDescription(String description) {
         setDescription(description);
         return this;
@@ -189,6 +196,7 @@ public class ValidateTemplateResult implements Serializable, Cloneable {
      *         InsufficientCapabilities error.
      * @see Capability
      */
+
     public java.util.List<String> getCapabilities() {
         if (capabilities == null) {
             capabilities = new com.amazonaws.internal.SdkInternalList<String>();
@@ -216,6 +224,7 @@ public class ValidateTemplateResult implements Serializable, Cloneable {
      *        InsufficientCapabilities error.
      * @see Capability
      */
+
     public void setCapabilities(java.util.Collection<String> capabilities) {
         if (capabilities == null) {
             this.capabilities = null;
@@ -254,6 +263,7 @@ public class ValidateTemplateResult implements Serializable, Cloneable {
      *         chained together.
      * @see Capability
      */
+
     public ValidateTemplateResult withCapabilities(String... capabilities) {
         if (this.capabilities == null) {
             setCapabilities(new com.amazonaws.internal.SdkInternalList<String>(
@@ -287,6 +297,7 @@ public class ValidateTemplateResult implements Serializable, Cloneable {
      *         chained together.
      * @see Capability
      */
+
     public ValidateTemplateResult withCapabilities(
             java.util.Collection<String> capabilities) {
         setCapabilities(capabilities);
@@ -315,6 +326,7 @@ public class ValidateTemplateResult implements Serializable, Cloneable {
      *         chained together.
      * @see Capability
      */
+
     public ValidateTemplateResult withCapabilities(Capability... capabilities) {
         com.amazonaws.internal.SdkInternalList<String> capabilitiesCopy = new com.amazonaws.internal.SdkInternalList<String>(
                 capabilities.length);
@@ -339,6 +351,7 @@ public class ValidateTemplateResult implements Serializable, Cloneable {
      *        The list of resources that generated the values in the
      *        <code>Capabilities</code> response element.
      */
+
     public void setCapabilitiesReason(String capabilitiesReason) {
         this.capabilitiesReason = capabilitiesReason;
     }
@@ -352,6 +365,7 @@ public class ValidateTemplateResult implements Serializable, Cloneable {
      * @return The list of resources that generated the values in the
      *         <code>Capabilities</code> response element.
      */
+
     public String getCapabilitiesReason() {
         return this.capabilitiesReason;
     }
@@ -368,6 +382,7 @@ public class ValidateTemplateResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ValidateTemplateResult withCapabilitiesReason(
             String capabilitiesReason) {
         setCapabilitiesReason(capabilitiesReason);

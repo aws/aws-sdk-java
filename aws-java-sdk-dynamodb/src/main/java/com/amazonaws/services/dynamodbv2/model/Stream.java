@@ -75,6 +75,7 @@ public class Stream implements Serializable, Cloneable {
      * @param streamArn
      *        The Amazon Resource Name (ARN) for the stream.
      */
+
     public void setStreamArn(String streamArn) {
         this.streamArn = streamArn;
     }
@@ -86,6 +87,7 @@ public class Stream implements Serializable, Cloneable {
      * 
      * @return The Amazon Resource Name (ARN) for the stream.
      */
+
     public String getStreamArn() {
         return this.streamArn;
     }
@@ -100,6 +102,7 @@ public class Stream implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Stream withStreamArn(String streamArn) {
         setStreamArn(streamArn);
         return this;
@@ -113,6 +116,7 @@ public class Stream implements Serializable, Cloneable {
      * @param tableName
      *        The DynamoDB table with which the stream is associated.
      */
+
     public void setTableName(String tableName) {
         this.tableName = tableName;
     }
@@ -124,6 +128,7 @@ public class Stream implements Serializable, Cloneable {
      * 
      * @return The DynamoDB table with which the stream is associated.
      */
+
     public String getTableName() {
         return this.tableName;
     }
@@ -138,6 +143,7 @@ public class Stream implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Stream withTableName(String tableName) {
         setTableName(tableName);
         return this;
@@ -196,6 +202,7 @@ public class Stream implements Serializable, Cloneable {
      *        </p>
      *        </li>
      */
+
     public void setStreamLabel(String streamLabel) {
         this.streamLabel = streamLabel;
     }
@@ -252,6 +259,7 @@ public class Stream implements Serializable, Cloneable {
      *         </p>
      *         </li>
      */
+
     public String getStreamLabel() {
         return this.streamLabel;
     }
@@ -311,6 +319,7 @@ public class Stream implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Stream withStreamLabel(String streamLabel) {
         setStreamLabel(streamLabel);
         return this;

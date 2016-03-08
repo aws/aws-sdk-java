@@ -141,6 +141,7 @@ public class CreateApplicationVersionRequest extends AmazonWebServiceRequest
      *        name, and <code>AutoCreateApplication</code> is <code>false</code>
      *        , returns an <code>InvalidParameterValue</code> error.
      */
+
     public void setApplicationName(String applicationName) {
         this.applicationName = applicationName;
     }
@@ -157,6 +158,7 @@ public class CreateApplicationVersionRequest extends AmazonWebServiceRequest
      *         <code>false</code>, returns an <code>InvalidParameterValue</code>
      *         error.
      */
+
     public String getApplicationName() {
         return this.applicationName;
     }
@@ -175,6 +177,7 @@ public class CreateApplicationVersionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateApplicationVersionRequest withApplicationName(
             String applicationName) {
         setApplicationName(applicationName);
@@ -199,6 +202,7 @@ public class CreateApplicationVersionRequest extends AmazonWebServiceRequest
      *        application, AWS Elastic Beanstalk returns an
      *        <code>InvalidParameterValue</code> error.
      */
+
     public void setVersionLabel(String versionLabel) {
         this.versionLabel = versionLabel;
     }
@@ -220,6 +224,7 @@ public class CreateApplicationVersionRequest extends AmazonWebServiceRequest
      *         application, AWS Elastic Beanstalk returns an
      *         <code>InvalidParameterValue</code> error.
      */
+
     public String getVersionLabel() {
         return this.versionLabel;
     }
@@ -244,6 +249,7 @@ public class CreateApplicationVersionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateApplicationVersionRequest withVersionLabel(String versionLabel) {
         setVersionLabel(versionLabel);
         return this;
@@ -257,6 +263,7 @@ public class CreateApplicationVersionRequest extends AmazonWebServiceRequest
      * @param description
      *        Describes this version.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -268,6 +275,7 @@ public class CreateApplicationVersionRequest extends AmazonWebServiceRequest
      * 
      * @return Describes this version.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -282,6 +290,7 @@ public class CreateApplicationVersionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateApplicationVersionRequest withDescription(String description) {
         setDescription(description);
         return this;
@@ -322,6 +331,7 @@ public class CreateApplicationVersionRequest extends AmazonWebServiceRequest
      *        location, AWS Elastic Beanstalk returns an
      *        <code>InvalidParameterCombination</code> error.
      */
+
     public void setSourceBundle(S3Location sourceBundle) {
         this.sourceBundle = sourceBundle;
     }
@@ -360,6 +370,7 @@ public class CreateApplicationVersionRequest extends AmazonWebServiceRequest
      *         S3 location, AWS Elastic Beanstalk returns an
      *         <code>InvalidParameterCombination</code> error.
      */
+
     public S3Location getSourceBundle() {
         return this.sourceBundle;
     }
@@ -401,6 +412,7 @@ public class CreateApplicationVersionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateApplicationVersionRequest withSourceBundle(
             S3Location sourceBundle) {
         setSourceBundle(sourceBundle);
@@ -441,6 +453,7 @@ public class CreateApplicationVersionRequest extends AmazonWebServiceRequest
      *        <p>
      *        Valid Values: <code>true</code> | <code>false</code>
      */
+
     public void setAutoCreateApplication(Boolean autoCreateApplication) {
         this.autoCreateApplication = autoCreateApplication;
     }
@@ -478,6 +491,7 @@ public class CreateApplicationVersionRequest extends AmazonWebServiceRequest
      *         <p>
      *         Valid Values: <code>true</code> | <code>false</code>
      */
+
     public Boolean getAutoCreateApplication() {
         return this.autoCreateApplication;
     }
@@ -518,6 +532,7 @@ public class CreateApplicationVersionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateApplicationVersionRequest withAutoCreateApplication(
             Boolean autoCreateApplication) {
         setAutoCreateApplication(autoCreateApplication);
@@ -557,6 +572,7 @@ public class CreateApplicationVersionRequest extends AmazonWebServiceRequest
      *         <p>
      *         Valid Values: <code>true</code> | <code>false</code>
      */
+
     public Boolean isAutoCreateApplication() {
         return this.autoCreateApplication;
     }
@@ -574,6 +590,7 @@ public class CreateApplicationVersionRequest extends AmazonWebServiceRequest
      *        files can identify issues prior to deploying the application
      *        version to an environment.
      */
+
     public void setProcess(Boolean process) {
         this.process = process;
     }
@@ -590,6 +607,7 @@ public class CreateApplicationVersionRequest extends AmazonWebServiceRequest
      *         configuration files can identify issues prior to deploying the
      *         application version to an environment.
      */
+
     public Boolean getProcess() {
         return this.process;
     }
@@ -609,6 +627,7 @@ public class CreateApplicationVersionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateApplicationVersionRequest withProcess(Boolean process) {
         setProcess(process);
         return this;
@@ -626,6 +645,7 @@ public class CreateApplicationVersionRequest extends AmazonWebServiceRequest
      *         configuration files can identify issues prior to deploying the
      *         application version to an environment.
      */
+
     public Boolean isProcess() {
         return this.process;
     }

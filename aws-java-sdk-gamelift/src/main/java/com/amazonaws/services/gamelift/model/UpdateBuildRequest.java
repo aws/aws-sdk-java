@@ -56,6 +56,7 @@ public class UpdateBuildRequest extends AmazonWebServiceRequest implements
      * @param buildId
      *        Unique identifier for the build you want to update.
      */
+
     public void setBuildId(String buildId) {
         this.buildId = buildId;
     }
@@ -67,6 +68,7 @@ public class UpdateBuildRequest extends AmazonWebServiceRequest implements
      * 
      * @return Unique identifier for the build you want to update.
      */
+
     public String getBuildId() {
         return this.buildId;
     }
@@ -81,6 +83,7 @@ public class UpdateBuildRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateBuildRequest withBuildId(String buildId) {
         setBuildId(buildId);
         return this;
@@ -96,6 +99,7 @@ public class UpdateBuildRequest extends AmazonWebServiceRequest implements
      *        Descriptive label associated with this build. Build names do not
      *        need to be unique.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -109,6 +113,7 @@ public class UpdateBuildRequest extends AmazonWebServiceRequest implements
      * @return Descriptive label associated with this build. Build names do not
      *         need to be unique.
      */
+
     public String getName() {
         return this.name;
     }
@@ -125,6 +130,7 @@ public class UpdateBuildRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateBuildRequest withName(String name) {
         setName(name);
         return this;
@@ -140,6 +146,7 @@ public class UpdateBuildRequest extends AmazonWebServiceRequest implements
      *        Version associated with this build. Version strings do not need to
      *        be unique to a build.
      */
+
     public void setVersion(String version) {
         this.version = version;
     }
@@ -153,6 +160,7 @@ public class UpdateBuildRequest extends AmazonWebServiceRequest implements
      * @return Version associated with this build. Version strings do not need
      *         to be unique to a build.
      */
+
     public String getVersion() {
         return this.version;
     }
@@ -169,6 +177,7 @@ public class UpdateBuildRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateBuildRequest withVersion(String version) {
         setVersion(version);
         return this;

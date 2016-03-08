@@ -48,6 +48,7 @@ public class ListPresetsResult implements Serializable, Cloneable {
      * 
      * @return An array of <code>Preset</code> objects.
      */
+
     public java.util.List<Preset> getPresets() {
         if (presets == null) {
             presets = new com.amazonaws.internal.SdkInternalList<Preset>();
@@ -63,6 +64,7 @@ public class ListPresetsResult implements Serializable, Cloneable {
      * @param presets
      *        An array of <code>Preset</code> objects.
      */
+
     public void setPresets(java.util.Collection<Preset> presets) {
         if (presets == null) {
             this.presets = null;
@@ -89,6 +91,7 @@ public class ListPresetsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListPresetsResult withPresets(Preset... presets) {
         if (this.presets == null) {
             setPresets(new com.amazonaws.internal.SdkInternalList<Preset>(
@@ -110,6 +113,7 @@ public class ListPresetsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListPresetsResult withPresets(java.util.Collection<Preset> presets) {
         setPresets(presets);
         return this;
@@ -129,6 +133,7 @@ public class ListPresetsResult implements Serializable, Cloneable {
      *        reached the last page of results, the value of
      *        <code>NextPageToken</code> is <code>null</code>.
      */
+
     public void setNextPageToken(String nextPageToken) {
         this.nextPageToken = nextPageToken;
     }
@@ -146,6 +151,7 @@ public class ListPresetsResult implements Serializable, Cloneable {
      *         reached the last page of results, the value of
      *         <code>NextPageToken</code> is <code>null</code>.
      */
+
     public String getNextPageToken() {
         return this.nextPageToken;
     }
@@ -166,6 +172,7 @@ public class ListPresetsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListPresetsResult withNextPageToken(String nextPageToken) {
         setNextPageToken(nextPageToken);
         return this;

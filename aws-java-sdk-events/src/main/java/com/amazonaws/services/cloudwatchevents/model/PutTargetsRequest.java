@@ -48,6 +48,7 @@ public class PutTargetsRequest extends AmazonWebServiceRequest implements
      * @param rule
      *        The name of the rule you want to add targets to.
      */
+
     public void setRule(String rule) {
         this.rule = rule;
     }
@@ -59,6 +60,7 @@ public class PutTargetsRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the rule you want to add targets to.
      */
+
     public String getRule() {
         return this.rule;
     }
@@ -73,6 +75,7 @@ public class PutTargetsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutTargetsRequest withRule(String rule) {
         setRule(rule);
         return this;
@@ -85,6 +88,7 @@ public class PutTargetsRequest extends AmazonWebServiceRequest implements
      * 
      * @return List of targets you want to update or add to the rule.
      */
+
     public java.util.List<Target> getTargets() {
         return targets;
     }
@@ -97,6 +101,7 @@ public class PutTargetsRequest extends AmazonWebServiceRequest implements
      * @param targets
      *        List of targets you want to update or add to the rule.
      */
+
     public void setTargets(java.util.Collection<Target> targets) {
         if (targets == null) {
             this.targets = null;
@@ -122,6 +127,7 @@ public class PutTargetsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutTargetsRequest withTargets(Target... targets) {
         if (this.targets == null) {
             setTargets(new java.util.ArrayList<Target>(targets.length));
@@ -142,6 +148,7 @@ public class PutTargetsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutTargetsRequest withTargets(java.util.Collection<Target> targets) {
         setTargets(targets);
         return this;

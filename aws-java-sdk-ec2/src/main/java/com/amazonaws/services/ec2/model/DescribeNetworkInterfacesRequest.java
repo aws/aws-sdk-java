@@ -277,6 +277,7 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest
      *         <p>
      *         Default: Describes all your network interfaces.
      */
+
     public java.util.List<String> getNetworkInterfaceIds() {
         if (networkInterfaceIds == null) {
             networkInterfaceIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -297,6 +298,7 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest
      *        <p>
      *        Default: Describes all your network interfaces.
      */
+
     public void setNetworkInterfaceIds(
             java.util.Collection<String> networkInterfaceIds) {
         if (networkInterfaceIds == null) {
@@ -329,6 +331,7 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeNetworkInterfacesRequest withNetworkInterfaceIds(
             String... networkInterfaceIds) {
         if (this.networkInterfaceIds == null) {
@@ -356,6 +359,7 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeNetworkInterfacesRequest withNetworkInterfaceIds(
             java.util.Collection<String> networkInterfaceIds) {
         setNetworkInterfaceIds(networkInterfaceIds);
@@ -820,6 +824,7 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest
      *         </p>
      *         </li>
      */
+
     public java.util.List<Filter> getFilters() {
         if (filters == null) {
             filters = new com.amazonaws.internal.SdkInternalList<Filter>();
@@ -1285,6 +1290,7 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest
      *        </p>
      *        </li>
      */
+
     public void setFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
             this.filters = null;
@@ -1761,6 +1767,7 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeNetworkInterfacesRequest withFilters(Filter... filters) {
         if (this.filters == null) {
             setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(
@@ -2232,6 +2239,7 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeNetworkInterfacesRequest withFilters(
             java.util.Collection<Filter> filters) {
         setFilters(filters);

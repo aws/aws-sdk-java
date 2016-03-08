@@ -86,6 +86,7 @@ public class ListGroupPoliciesRequest extends AmazonWebServiceRequest implements
      * @param groupName
      *        The name of the group to list policies for.
      */
+
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
@@ -97,6 +98,7 @@ public class ListGroupPoliciesRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the group to list policies for.
      */
+
     public String getGroupName() {
         return this.groupName;
     }
@@ -111,6 +113,7 @@ public class ListGroupPoliciesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListGroupPoliciesRequest withGroupName(String groupName) {
         setGroupName(groupName);
         return this;
@@ -130,6 +133,7 @@ public class ListGroupPoliciesRequest extends AmazonWebServiceRequest implements
      *        it to the value of the <code>Marker</code> element in the response
      *        that you received to indicate where the next call should start.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -148,6 +152,7 @@ public class ListGroupPoliciesRequest extends AmazonWebServiceRequest implements
      *         response that you received to indicate where the next call should
      *         start.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -168,6 +173,7 @@ public class ListGroupPoliciesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListGroupPoliciesRequest withMarker(String marker) {
         setMarker(marker);
         return this;
@@ -203,6 +209,7 @@ public class ListGroupPoliciesRequest extends AmazonWebServiceRequest implements
      *        include in the subsequent call that tells the service where to
      *        continue from.
      */
+
     public void setMaxItems(Integer maxItems) {
         this.maxItems = maxItems;
     }
@@ -237,6 +244,7 @@ public class ListGroupPoliciesRequest extends AmazonWebServiceRequest implements
      *         include in the subsequent call that tells the service where to
      *         continue from.
      */
+
     public Integer getMaxItems() {
         return this.maxItems;
     }
@@ -273,6 +281,7 @@ public class ListGroupPoliciesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListGroupPoliciesRequest withMaxItems(Integer maxItems) {
         setMaxItems(maxItems);
         return this;

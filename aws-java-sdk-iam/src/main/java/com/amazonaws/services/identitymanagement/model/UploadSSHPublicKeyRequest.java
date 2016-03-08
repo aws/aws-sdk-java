@@ -47,6 +47,7 @@ public class UploadSSHPublicKeyRequest extends AmazonWebServiceRequest
      * @param userName
      *        The name of the IAM user to associate the SSH public key with.
      */
+
     public void setUserName(String userName) {
         this.userName = userName;
     }
@@ -58,6 +59,7 @@ public class UploadSSHPublicKeyRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the IAM user to associate the SSH public key with.
      */
+
     public String getUserName() {
         return this.userName;
     }
@@ -72,6 +74,7 @@ public class UploadSSHPublicKeyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UploadSSHPublicKeyRequest withUserName(String userName) {
         setUserName(userName);
         return this;
@@ -87,6 +90,7 @@ public class UploadSSHPublicKeyRequest extends AmazonWebServiceRequest
      *        The SSH public key. The public key must be encoded in ssh-rsa
      *        format or PEM format.
      */
+
     public void setSSHPublicKeyBody(String sSHPublicKeyBody) {
         this.sSHPublicKeyBody = sSHPublicKeyBody;
     }
@@ -100,6 +104,7 @@ public class UploadSSHPublicKeyRequest extends AmazonWebServiceRequest
      * @return The SSH public key. The public key must be encoded in ssh-rsa
      *         format or PEM format.
      */
+
     public String getSSHPublicKeyBody() {
         return this.sSHPublicKeyBody;
     }
@@ -116,6 +121,7 @@ public class UploadSSHPublicKeyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UploadSSHPublicKeyRequest withSSHPublicKeyBody(
             String sSHPublicKeyBody) {
         setSSHPublicKeyBody(sSHPublicKeyBody);

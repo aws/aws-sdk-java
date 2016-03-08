@@ -55,6 +55,7 @@ public class DescribeSpotFleetInstancesResult implements Serializable,
      * @param spotFleetRequestId
      *        The ID of the Spot fleet request.
      */
+
     public void setSpotFleetRequestId(String spotFleetRequestId) {
         this.spotFleetRequestId = spotFleetRequestId;
     }
@@ -66,6 +67,7 @@ public class DescribeSpotFleetInstancesResult implements Serializable,
      * 
      * @return The ID of the Spot fleet request.
      */
+
     public String getSpotFleetRequestId() {
         return this.spotFleetRequestId;
     }
@@ -80,6 +82,7 @@ public class DescribeSpotFleetInstancesResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSpotFleetInstancesResult withSpotFleetRequestId(
             String spotFleetRequestId) {
         setSpotFleetRequestId(spotFleetRequestId);
@@ -95,6 +98,7 @@ public class DescribeSpotFleetInstancesResult implements Serializable,
      * @return The running instances. Note that this list is refreshed
      *         periodically and might be out of date.
      */
+
     public java.util.List<ActiveInstance> getActiveInstances() {
         if (activeInstances == null) {
             activeInstances = new com.amazonaws.internal.SdkInternalList<ActiveInstance>();
@@ -112,6 +116,7 @@ public class DescribeSpotFleetInstancesResult implements Serializable,
      *        The running instances. Note that this list is refreshed
      *        periodically and might be out of date.
      */
+
     public void setActiveInstances(
             java.util.Collection<ActiveInstance> activeInstances) {
         if (activeInstances == null) {
@@ -141,6 +146,7 @@ public class DescribeSpotFleetInstancesResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSpotFleetInstancesResult withActiveInstances(
             ActiveInstance... activeInstances) {
         if (this.activeInstances == null) {
@@ -165,6 +171,7 @@ public class DescribeSpotFleetInstancesResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSpotFleetInstancesResult withActiveInstances(
             java.util.Collection<ActiveInstance> activeInstances) {
         setActiveInstances(activeInstances);
@@ -181,6 +188,7 @@ public class DescribeSpotFleetInstancesResult implements Serializable,
      *        The token required to retrieve the next set of results. This value
      *        is <code>null</code> when there are no more results to return.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -195,6 +203,7 @@ public class DescribeSpotFleetInstancesResult implements Serializable,
      *         value is <code>null</code> when there are no more results to
      *         return.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -211,6 +220,7 @@ public class DescribeSpotFleetInstancesResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSpotFleetInstancesResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

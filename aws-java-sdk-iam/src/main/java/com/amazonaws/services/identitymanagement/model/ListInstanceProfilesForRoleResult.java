@@ -61,6 +61,7 @@ public class ListInstanceProfilesForRoleResult implements Serializable,
      * 
      * @return A list of instance profiles.
      */
+
     public java.util.List<InstanceProfile> getInstanceProfiles() {
         if (instanceProfiles == null) {
             instanceProfiles = new com.amazonaws.internal.SdkInternalList<InstanceProfile>();
@@ -76,6 +77,7 @@ public class ListInstanceProfilesForRoleResult implements Serializable,
      * @param instanceProfiles
      *        A list of instance profiles.
      */
+
     public void setInstanceProfiles(
             java.util.Collection<InstanceProfile> instanceProfiles) {
         if (instanceProfiles == null) {
@@ -103,6 +105,7 @@ public class ListInstanceProfilesForRoleResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListInstanceProfilesForRoleResult withInstanceProfiles(
             InstanceProfile... instanceProfiles) {
         if (this.instanceProfiles == null) {
@@ -125,6 +128,7 @@ public class ListInstanceProfilesForRoleResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListInstanceProfilesForRoleResult withInstanceProfiles(
             java.util.Collection<InstanceProfile> instanceProfiles) {
         setInstanceProfiles(instanceProfiles);
@@ -152,6 +156,7 @@ public class ListInstanceProfilesForRoleResult implements Serializable,
      *        <code>IsTruncated</code> after every call to ensure that you
      *        receive all of your results.
      */
+
     public void setIsTruncated(Boolean isTruncated) {
         this.isTruncated = isTruncated;
     }
@@ -176,6 +181,7 @@ public class ListInstanceProfilesForRoleResult implements Serializable,
      *         <code>IsTruncated</code> after every call to ensure that you
      *         receive all of your results.
      */
+
     public Boolean getIsTruncated() {
         return this.isTruncated;
     }
@@ -203,6 +209,7 @@ public class ListInstanceProfilesForRoleResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListInstanceProfilesForRoleResult withIsTruncated(Boolean isTruncated) {
         setIsTruncated(isTruncated);
         return this;
@@ -228,6 +235,7 @@ public class ListInstanceProfilesForRoleResult implements Serializable,
      *         <code>IsTruncated</code> after every call to ensure that you
      *         receive all of your results.
      */
+
     public Boolean isTruncated() {
         return this.isTruncated;
     }
@@ -244,6 +252,7 @@ public class ListInstanceProfilesForRoleResult implements Serializable,
      *        is present and contains the value to use for the
      *        <code>Marker</code> parameter in a subsequent pagination request.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -259,6 +268,7 @@ public class ListInstanceProfilesForRoleResult implements Serializable,
      *         is present and contains the value to use for the
      *         <code>Marker</code> parameter in a subsequent pagination request.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -277,6 +287,7 @@ public class ListInstanceProfilesForRoleResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListInstanceProfilesForRoleResult withMarker(String marker) {
         setMarker(marker);
         return this;

@@ -99,6 +99,7 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements
      * @param sourceRegion
      *        The name of the region that contains the AMI to copy.
      */
+
     public void setSourceRegion(String sourceRegion) {
         this.sourceRegion = sourceRegion;
     }
@@ -110,6 +111,7 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the region that contains the AMI to copy.
      */
+
     public String getSourceRegion() {
         return this.sourceRegion;
     }
@@ -124,6 +126,7 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CopyImageRequest withSourceRegion(String sourceRegion) {
         setSourceRegion(sourceRegion);
         return this;
@@ -137,6 +140,7 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements
      * @param sourceImageId
      *        The ID of the AMI to copy.
      */
+
     public void setSourceImageId(String sourceImageId) {
         this.sourceImageId = sourceImageId;
     }
@@ -148,6 +152,7 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ID of the AMI to copy.
      */
+
     public String getSourceImageId() {
         return this.sourceImageId;
     }
@@ -162,6 +167,7 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CopyImageRequest withSourceImageId(String sourceImageId) {
         setSourceImageId(sourceImageId);
         return this;
@@ -175,6 +181,7 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements
      * @param name
      *        The name of the new AMI in the destination region.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -186,6 +193,7 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the new AMI in the destination region.
      */
+
     public String getName() {
         return this.name;
     }
@@ -200,6 +208,7 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CopyImageRequest withName(String name) {
         setName(name);
         return this;
@@ -213,6 +222,7 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements
      * @param description
      *        A description for the new AMI in the destination region.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -224,6 +234,7 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements
      * 
      * @return A description for the new AMI in the destination region.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -238,6 +249,7 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CopyImageRequest withDescription(String description) {
         setDescription(description);
         return this;
@@ -259,6 +271,7 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements
      *        >How to Ensure Idempotency</a> in the <i>Amazon Elastic Compute
      *        Cloud User Guide</i>.
      */
+
     public void setClientToken(String clientToken) {
         this.clientToken = clientToken;
     }
@@ -278,6 +291,7 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements
      *         >How to Ensure Idempotency</a> in the <i>Amazon Elastic Compute
      *         Cloud User Guide</i>.
      */
+
     public String getClientToken() {
         return this.clientToken;
     }
@@ -300,6 +314,7 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CopyImageRequest withClientToken(String clientToken) {
         setClientToken(clientToken);
         return this;
@@ -325,6 +340,7 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements
      *        >Amazon EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud
      *        User Guide</i>.
      */
+
     public void setEncrypted(Boolean encrypted) {
         this.encrypted = encrypted;
     }
@@ -348,6 +364,7 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements
      *         >Amazon EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud
      *         User Guide</i>.
      */
+
     public Boolean getEncrypted() {
         return this.encrypted;
     }
@@ -374,6 +391,7 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CopyImageRequest withEncrypted(Boolean encrypted) {
         setEncrypted(encrypted);
         return this;
@@ -398,6 +416,7 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements
      *         >Amazon EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud
      *         User Guide</i>.
      */
+
     public Boolean isEncrypted() {
         return this.encrypted;
     }
@@ -433,6 +452,7 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements
      *        a <code>KmsKeyId</code> is specified, the <code>Encrypted</code>
      *        flag must also be set.
      */
+
     public void setKmsKeyId(String kmsKeyId) {
         this.kmsKeyId = kmsKeyId;
     }
@@ -468,6 +488,7 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements
      *         <code>KmsKeyId</code> is specified, the <code>Encrypted</code>
      *         flag must also be set.
      */
+
     public String getKmsKeyId() {
         return this.kmsKeyId;
     }
@@ -505,6 +526,7 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CopyImageRequest withKmsKeyId(String kmsKeyId) {
         setKmsKeyId(kmsKeyId);
         return this;

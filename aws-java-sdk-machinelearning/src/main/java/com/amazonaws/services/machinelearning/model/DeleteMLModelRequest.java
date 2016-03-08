@@ -41,6 +41,7 @@ public class DeleteMLModelRequest extends AmazonWebServiceRequest implements
      *        A user-supplied ID that uniquely identifies the
      *        <code>MLModel</code>.
      */
+
     public void setMLModelId(String mLModelId) {
         this.mLModelId = mLModelId;
     }
@@ -53,6 +54,7 @@ public class DeleteMLModelRequest extends AmazonWebServiceRequest implements
      * @return A user-supplied ID that uniquely identifies the
      *         <code>MLModel</code>.
      */
+
     public String getMLModelId() {
         return this.mLModelId;
     }
@@ -68,6 +70,7 @@ public class DeleteMLModelRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteMLModelRequest withMLModelId(String mLModelId) {
         setMLModelId(mLModelId);
         return this;

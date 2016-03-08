@@ -42,6 +42,7 @@ public class Record implements Serializable, Cloneable {
      * @param key
      *        The key for the record.
      */
+
     public void setKey(String key) {
         this.key = key;
     }
@@ -51,6 +52,7 @@ public class Record implements Serializable, Cloneable {
      * 
      * @return The key for the record.
      */
+
     public String getKey() {
         return this.key;
     }
@@ -63,6 +65,7 @@ public class Record implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Record withKey(String key) {
         setKey(key);
         return this;
@@ -74,6 +77,7 @@ public class Record implements Serializable, Cloneable {
      * @param value
      *        The value for the record.
      */
+
     public void setValue(String value) {
         this.value = value;
     }
@@ -83,6 +87,7 @@ public class Record implements Serializable, Cloneable {
      * 
      * @return The value for the record.
      */
+
     public String getValue() {
         return this.value;
     }
@@ -95,6 +100,7 @@ public class Record implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Record withValue(String value) {
         setValue(value);
         return this;
@@ -106,6 +112,7 @@ public class Record implements Serializable, Cloneable {
      * @param syncCount
      *        The server sync count for this record.
      */
+
     public void setSyncCount(Long syncCount) {
         this.syncCount = syncCount;
     }
@@ -115,6 +122,7 @@ public class Record implements Serializable, Cloneable {
      * 
      * @return The server sync count for this record.
      */
+
     public Long getSyncCount() {
         return this.syncCount;
     }
@@ -127,6 +135,7 @@ public class Record implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Record withSyncCount(Long syncCount) {
         setSyncCount(syncCount);
         return this;
@@ -138,6 +147,7 @@ public class Record implements Serializable, Cloneable {
      * @param lastModifiedDate
      *        The date on which the record was last modified.
      */
+
     public void setLastModifiedDate(java.util.Date lastModifiedDate) {
         this.lastModifiedDate = lastModifiedDate;
     }
@@ -147,6 +157,7 @@ public class Record implements Serializable, Cloneable {
      * 
      * @return The date on which the record was last modified.
      */
+
     public java.util.Date getLastModifiedDate() {
         return this.lastModifiedDate;
     }
@@ -159,6 +170,7 @@ public class Record implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Record withLastModifiedDate(java.util.Date lastModifiedDate) {
         setLastModifiedDate(lastModifiedDate);
         return this;
@@ -170,6 +182,7 @@ public class Record implements Serializable, Cloneable {
      * @param lastModifiedBy
      *        The user/device that made the last change to this record.
      */
+
     public void setLastModifiedBy(String lastModifiedBy) {
         this.lastModifiedBy = lastModifiedBy;
     }
@@ -179,6 +192,7 @@ public class Record implements Serializable, Cloneable {
      * 
      * @return The user/device that made the last change to this record.
      */
+
     public String getLastModifiedBy() {
         return this.lastModifiedBy;
     }
@@ -191,6 +205,7 @@ public class Record implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Record withLastModifiedBy(String lastModifiedBy) {
         setLastModifiedBy(lastModifiedBy);
         return this;
@@ -202,6 +217,7 @@ public class Record implements Serializable, Cloneable {
      * @param deviceLastModifiedDate
      *        The last modified date of the client device.
      */
+
     public void setDeviceLastModifiedDate(java.util.Date deviceLastModifiedDate) {
         this.deviceLastModifiedDate = deviceLastModifiedDate;
     }
@@ -211,6 +227,7 @@ public class Record implements Serializable, Cloneable {
      * 
      * @return The last modified date of the client device.
      */
+
     public java.util.Date getDeviceLastModifiedDate() {
         return this.deviceLastModifiedDate;
     }
@@ -223,6 +240,7 @@ public class Record implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Record withDeviceLastModifiedDate(
             java.util.Date deviceLastModifiedDate) {
         setDeviceLastModifiedDate(deviceLastModifiedDate);

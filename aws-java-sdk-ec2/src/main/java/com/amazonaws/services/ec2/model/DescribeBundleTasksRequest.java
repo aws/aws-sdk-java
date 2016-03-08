@@ -115,6 +115,7 @@ public class DescribeBundleTasksRequest extends AmazonWebServiceRequest
      *         <p>
      *         Default: Describes all your bundle tasks.
      */
+
     public java.util.List<String> getBundleIds() {
         if (bundleIds == null) {
             bundleIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -135,6 +136,7 @@ public class DescribeBundleTasksRequest extends AmazonWebServiceRequest
      *        <p>
      *        Default: Describes all your bundle tasks.
      */
+
     public void setBundleIds(java.util.Collection<String> bundleIds) {
         if (bundleIds == null) {
             this.bundleIds = null;
@@ -166,6 +168,7 @@ public class DescribeBundleTasksRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeBundleTasksRequest withBundleIds(String... bundleIds) {
         if (this.bundleIds == null) {
             setBundleIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -192,6 +195,7 @@ public class DescribeBundleTasksRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeBundleTasksRequest withBundleIds(
             java.util.Collection<String> bundleIds) {
         setBundleIds(bundleIds);
@@ -323,6 +327,7 @@ public class DescribeBundleTasksRequest extends AmazonWebServiceRequest
      *         </p>
      *         </li>
      */
+
     public java.util.List<Filter> getFilters() {
         if (filters == null) {
             filters = new com.amazonaws.internal.SdkInternalList<Filter>();
@@ -456,6 +461,7 @@ public class DescribeBundleTasksRequest extends AmazonWebServiceRequest
      *        </p>
      *        </li>
      */
+
     public void setFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
             this.filters = null;
@@ -600,6 +606,7 @@ public class DescribeBundleTasksRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeBundleTasksRequest withFilters(Filter... filters) {
         if (this.filters == null) {
             setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(
@@ -739,6 +746,7 @@ public class DescribeBundleTasksRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeBundleTasksRequest withFilters(
             java.util.Collection<Filter> filters) {
         setFilters(filters);

@@ -29,6 +29,34 @@ public class JsonMarshaller<T extends Object> implements DynamoDBMarshaller<T> {
     private static final ObjectMapper mapper = new ObjectMapper();
     private static final ObjectWriter writer = mapper.writer();
 
+    /**
+     * The value type.
+     */
+    private final Class<T> valueType;
+
+    /**
+     * Constructs the JSON marshaller instance.
+     * @param valueType The value type (for generic type erasure).
+     */
+    public JsonMarshaller(final Class<T> valueType) {
+        this.valueType = valueType;
+    }
+
+    /**
+     * Constructs the JSON marshaller instance.
+     */
+    public JsonMarshaller() {
+        this(null);
+    }
+
+    /**
+     * Gets the value type.
+     * @return The value type.
+     */
+    protected final Class<T> getValueType() {
+        return this.valueType;
+    }
+
     @Override
     public String marshall(T obj) {
 
@@ -44,7 +72,7 @@ public class JsonMarshaller<T extends Object> implements DynamoDBMarshaller<T> {
     @Override
     public T unmarshall(Class<T> clazz, String json) {
         try {
-            return mapper.readValue(json, clazz);
+            return mapper.readValue(json, (getValueType() == null ? clazz : getValueType()));
         } catch (Exception e) {
             throw failure(e, "Unable to unmarshall the string " + json
                     + "into " + clazz);

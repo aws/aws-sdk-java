@@ -86,6 +86,7 @@ public class PutIntegrationResponseRequest extends AmazonWebServiceRequest
      * @param restApiId
      *        Specifies a put integration response request's API identifier.
      */
+
     public void setRestApiId(String restApiId) {
         this.restApiId = restApiId;
     }
@@ -97,6 +98,7 @@ public class PutIntegrationResponseRequest extends AmazonWebServiceRequest
      * 
      * @return Specifies a put integration response request's API identifier.
      */
+
     public String getRestApiId() {
         return this.restApiId;
     }
@@ -111,6 +113,7 @@ public class PutIntegrationResponseRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutIntegrationResponseRequest withRestApiId(String restApiId) {
         setRestApiId(restApiId);
         return this;
@@ -125,6 +128,7 @@ public class PutIntegrationResponseRequest extends AmazonWebServiceRequest
      *        Specifies a put integration response request's resource
      *        identifier.
      */
+
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
     }
@@ -137,6 +141,7 @@ public class PutIntegrationResponseRequest extends AmazonWebServiceRequest
      * @return Specifies a put integration response request's resource
      *         identifier.
      */
+
     public String getResourceId() {
         return this.resourceId;
     }
@@ -152,6 +157,7 @@ public class PutIntegrationResponseRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutIntegrationResponseRequest withResourceId(String resourceId) {
         setResourceId(resourceId);
         return this;
@@ -165,6 +171,7 @@ public class PutIntegrationResponseRequest extends AmazonWebServiceRequest
      * @param httpMethod
      *        Specifies a put integration response request's HTTP method.
      */
+
     public void setHttpMethod(String httpMethod) {
         this.httpMethod = httpMethod;
     }
@@ -176,6 +183,7 @@ public class PutIntegrationResponseRequest extends AmazonWebServiceRequest
      * 
      * @return Specifies a put integration response request's HTTP method.
      */
+
     public String getHttpMethod() {
         return this.httpMethod;
     }
@@ -190,6 +198,7 @@ public class PutIntegrationResponseRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutIntegrationResponseRequest withHttpMethod(String httpMethod) {
         setHttpMethod(httpMethod);
         return this;
@@ -205,6 +214,7 @@ public class PutIntegrationResponseRequest extends AmazonWebServiceRequest
      *        Specifies the status code that is used to map the integration
      *        response to an existing <a>MethodResponse</a>.
      */
+
     public void setStatusCode(String statusCode) {
         this.statusCode = statusCode;
     }
@@ -218,6 +228,7 @@ public class PutIntegrationResponseRequest extends AmazonWebServiceRequest
      * @return Specifies the status code that is used to map the integration
      *         response to an existing <a>MethodResponse</a>.
      */
+
     public String getStatusCode() {
         return this.statusCode;
     }
@@ -234,6 +245,7 @@ public class PutIntegrationResponseRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutIntegrationResponseRequest withStatusCode(String statusCode) {
         setStatusCode(statusCode);
         return this;
@@ -247,6 +259,7 @@ public class PutIntegrationResponseRequest extends AmazonWebServiceRequest
      * @param selectionPattern
      *        Specifies the selection pattern of a put integration response.
      */
+
     public void setSelectionPattern(String selectionPattern) {
         this.selectionPattern = selectionPattern;
     }
@@ -258,6 +271,7 @@ public class PutIntegrationResponseRequest extends AmazonWebServiceRequest
      * 
      * @return Specifies the selection pattern of a put integration response.
      */
+
     public String getSelectionPattern() {
         return this.selectionPattern;
     }
@@ -272,6 +286,7 @@ public class PutIntegrationResponseRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutIntegrationResponseRequest withSelectionPattern(
             String selectionPattern) {
         setSelectionPattern(selectionPattern);
@@ -300,6 +315,7 @@ public class PutIntegrationResponseRequest extends AmazonWebServiceRequest
      *         using the pattern <code>integration.response.header.{name}</code>
      *         .
      */
+
     public java.util.Map<String, String> getResponseParameters() {
         return responseParameters;
     }
@@ -326,6 +342,7 @@ public class PutIntegrationResponseRequest extends AmazonWebServiceRequest
      *        enclosing single quotes, and backend response headers can be read
      *        using the pattern <code>integration.response.header.{name}</code>.
      */
+
     public void setResponseParameters(
             java.util.Map<String, String> responseParameters) {
         this.responseParameters = responseParameters;
@@ -355,6 +372,7 @@ public class PutIntegrationResponseRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutIntegrationResponseRequest withResponseParameters(
             java.util.Map<String, String> responseParameters) {
         setResponseParameters(responseParameters);
@@ -377,6 +395,7 @@ public class PutIntegrationResponseRequest extends AmazonWebServiceRequest
      * Removes all the entries added into ResponseParameters. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public PutIntegrationResponseRequest clearResponseParametersEntries() {
         this.responseParameters = null;
         return this;
@@ -389,6 +408,7 @@ public class PutIntegrationResponseRequest extends AmazonWebServiceRequest
      * 
      * @return Specifies a put integration response's templates.
      */
+
     public java.util.Map<String, String> getResponseTemplates() {
         return responseTemplates;
     }
@@ -401,6 +421,7 @@ public class PutIntegrationResponseRequest extends AmazonWebServiceRequest
      * @param responseTemplates
      *        Specifies a put integration response's templates.
      */
+
     public void setResponseTemplates(
             java.util.Map<String, String> responseTemplates) {
         this.responseTemplates = responseTemplates;
@@ -416,6 +437,7 @@ public class PutIntegrationResponseRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutIntegrationResponseRequest withResponseTemplates(
             java.util.Map<String, String> responseTemplates) {
         setResponseTemplates(responseTemplates);
@@ -438,6 +460,7 @@ public class PutIntegrationResponseRequest extends AmazonWebServiceRequest
      * Removes all the entries added into ResponseTemplates. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public PutIntegrationResponseRequest clearResponseTemplatesEntries() {
         this.responseTemplates = null;
         return this;

@@ -50,6 +50,7 @@ public class ComplianceContributorCount implements Serializable, Cloneable {
      *        The number of AWS resources or AWS Config rules responsible for
      *        the current compliance of the item.
      */
+
     public void setCappedCount(Integer cappedCount) {
         this.cappedCount = cappedCount;
     }
@@ -63,6 +64,7 @@ public class ComplianceContributorCount implements Serializable, Cloneable {
      * @return The number of AWS resources or AWS Config rules responsible for
      *         the current compliance of the item.
      */
+
     public Integer getCappedCount() {
         return this.cappedCount;
     }
@@ -79,6 +81,7 @@ public class ComplianceContributorCount implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ComplianceContributorCount withCappedCount(Integer cappedCount) {
         setCappedCount(cappedCount);
         return this;
@@ -92,6 +95,7 @@ public class ComplianceContributorCount implements Serializable, Cloneable {
      * @param capExceeded
      *        Indicates whether the maximum count is reached.
      */
+
     public void setCapExceeded(Boolean capExceeded) {
         this.capExceeded = capExceeded;
     }
@@ -103,6 +107,7 @@ public class ComplianceContributorCount implements Serializable, Cloneable {
      * 
      * @return Indicates whether the maximum count is reached.
      */
+
     public Boolean getCapExceeded() {
         return this.capExceeded;
     }
@@ -117,6 +122,7 @@ public class ComplianceContributorCount implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ComplianceContributorCount withCapExceeded(Boolean capExceeded) {
         setCapExceeded(capExceeded);
         return this;
@@ -129,6 +135,7 @@ public class ComplianceContributorCount implements Serializable, Cloneable {
      * 
      * @return Indicates whether the maximum count is reached.
      */
+
     public Boolean isCapExceeded() {
         return this.capExceeded;
     }

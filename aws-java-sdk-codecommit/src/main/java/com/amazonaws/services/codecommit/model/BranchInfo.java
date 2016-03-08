@@ -46,6 +46,7 @@ public class BranchInfo implements Serializable, Cloneable {
      * @param branchName
      *        The name of the branch.
      */
+
     public void setBranchName(String branchName) {
         this.branchName = branchName;
     }
@@ -57,6 +58,7 @@ public class BranchInfo implements Serializable, Cloneable {
      * 
      * @return The name of the branch.
      */
+
     public String getBranchName() {
         return this.branchName;
     }
@@ -71,6 +73,7 @@ public class BranchInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BranchInfo withBranchName(String branchName) {
         setBranchName(branchName);
         return this;
@@ -84,6 +87,7 @@ public class BranchInfo implements Serializable, Cloneable {
      * @param commitId
      *        The ID of the last commit made to the branch.
      */
+
     public void setCommitId(String commitId) {
         this.commitId = commitId;
     }
@@ -95,6 +99,7 @@ public class BranchInfo implements Serializable, Cloneable {
      * 
      * @return The ID of the last commit made to the branch.
      */
+
     public String getCommitId() {
         return this.commitId;
     }
@@ -109,6 +114,7 @@ public class BranchInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BranchInfo withCommitId(String commitId) {
         setCommitId(commitId);
         return this;

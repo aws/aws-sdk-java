@@ -58,6 +58,7 @@ public class PreviewAgentsForResourceGroupRequest extends
      *        The ARN of the resource group that is used to create an
      *        application.
      */
+
     public void setResourceGroupArn(String resourceGroupArn) {
         this.resourceGroupArn = resourceGroupArn;
     }
@@ -70,6 +71,7 @@ public class PreviewAgentsForResourceGroupRequest extends
      * @return The ARN of the resource group that is used to create an
      *         application.
      */
+
     public String getResourceGroupArn() {
         return this.resourceGroupArn;
     }
@@ -85,6 +87,7 @@ public class PreviewAgentsForResourceGroupRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PreviewAgentsForResourceGroupRequest withResourceGroupArn(
             String resourceGroupArn) {
         setResourceGroupArn(resourceGroupArn);
@@ -107,6 +110,7 @@ public class PreviewAgentsForResourceGroupRequest extends
      *        the action fill <b>nextToken</b> in the request with the value of
      *        <b>NextToken</b> from previous response to continue listing data.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -126,6 +130,7 @@ public class PreviewAgentsForResourceGroupRequest extends
      *         the action fill <b>nextToken</b> in the request with the value of
      *         <b>NextToken</b> from previous response to continue listing data.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -148,6 +153,7 @@ public class PreviewAgentsForResourceGroupRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PreviewAgentsForResourceGroupRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -164,6 +170,7 @@ public class PreviewAgentsForResourceGroupRequest extends
      *        you want in the response. The default value is 10. The maximum
      *        value is 500.
      */
+
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
     }
@@ -178,6 +185,7 @@ public class PreviewAgentsForResourceGroupRequest extends
      *         items you want in the response. The default value is 10. The
      *         maximum value is 500.
      */
+
     public Integer getMaxResults() {
         return this.maxResults;
     }
@@ -195,6 +203,7 @@ public class PreviewAgentsForResourceGroupRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PreviewAgentsForResourceGroupRequest withMaxResults(
             Integer maxResults) {
         setMaxResults(maxResults);

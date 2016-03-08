@@ -38,6 +38,7 @@ public class CreateInternetGatewayResult implements Serializable, Cloneable {
      * @param internetGateway
      *        Information about the Internet gateway.
      */
+
     public void setInternetGateway(InternetGateway internetGateway) {
         this.internetGateway = internetGateway;
     }
@@ -49,6 +50,7 @@ public class CreateInternetGatewayResult implements Serializable, Cloneable {
      * 
      * @return Information about the Internet gateway.
      */
+
     public InternetGateway getInternetGateway() {
         return this.internetGateway;
     }
@@ -63,6 +65,7 @@ public class CreateInternetGatewayResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateInternetGatewayResult withInternetGateway(
             InternetGateway internetGateway) {
         setInternetGateway(internetGateway);

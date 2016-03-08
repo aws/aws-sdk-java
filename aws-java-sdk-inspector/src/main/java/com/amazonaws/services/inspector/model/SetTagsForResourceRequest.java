@@ -47,6 +47,7 @@ public class SetTagsForResourceRequest extends AmazonWebServiceRequest
      * @param resourceArn
      *        The ARN of the assessment that you want to set tags to.
      */
+
     public void setResourceArn(String resourceArn) {
         this.resourceArn = resourceArn;
     }
@@ -58,6 +59,7 @@ public class SetTagsForResourceRequest extends AmazonWebServiceRequest
      * 
      * @return The ARN of the assessment that you want to set tags to.
      */
+
     public String getResourceArn() {
         return this.resourceArn;
     }
@@ -72,6 +74,7 @@ public class SetTagsForResourceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetTagsForResourceRequest withResourceArn(String resourceArn) {
         setResourceArn(resourceArn);
         return this;
@@ -86,6 +89,7 @@ public class SetTagsForResourceRequest extends AmazonWebServiceRequest
      * @return A collection of key and value pairs that you want to set to an
      *         assessment.
      */
+
     public java.util.List<Tag> getTags() {
         return tags;
     }
@@ -100,6 +104,7 @@ public class SetTagsForResourceRequest extends AmazonWebServiceRequest
      *        A collection of key and value pairs that you want to set to an
      *        assessment.
      */
+
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
             this.tags = null;
@@ -127,6 +132,7 @@ public class SetTagsForResourceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetTagsForResourceRequest withTags(Tag... tags) {
         if (this.tags == null) {
             setTags(new java.util.ArrayList<Tag>(tags.length));
@@ -149,6 +155,7 @@ public class SetTagsForResourceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetTagsForResourceRequest withTags(java.util.Collection<Tag> tags) {
         setTags(tags);
         return this;

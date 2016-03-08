@@ -54,6 +54,7 @@ public class InstanceStatusDetails implements Serializable, Cloneable {
      *        The type of instance status.
      * @see StatusName
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -66,6 +67,7 @@ public class InstanceStatusDetails implements Serializable, Cloneable {
      * @return The type of instance status.
      * @see StatusName
      */
+
     public String getName() {
         return this.name;
     }
@@ -81,6 +83,7 @@ public class InstanceStatusDetails implements Serializable, Cloneable {
      *         chained together.
      * @see StatusName
      */
+
     public InstanceStatusDetails withName(String name) {
         setName(name);
         return this;
@@ -97,6 +100,7 @@ public class InstanceStatusDetails implements Serializable, Cloneable {
      *         chained together.
      * @see StatusName
      */
+
     public void setName(StatusName name) {
         this.name = name.toString();
     }
@@ -112,6 +116,7 @@ public class InstanceStatusDetails implements Serializable, Cloneable {
      *         chained together.
      * @see StatusName
      */
+
     public InstanceStatusDetails withName(StatusName name) {
         setName(name);
         return this;
@@ -126,6 +131,7 @@ public class InstanceStatusDetails implements Serializable, Cloneable {
      *        The status.
      * @see StatusType
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -138,6 +144,7 @@ public class InstanceStatusDetails implements Serializable, Cloneable {
      * @return The status.
      * @see StatusType
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -153,6 +160,7 @@ public class InstanceStatusDetails implements Serializable, Cloneable {
      *         chained together.
      * @see StatusType
      */
+
     public InstanceStatusDetails withStatus(String status) {
         setStatus(status);
         return this;
@@ -169,6 +177,7 @@ public class InstanceStatusDetails implements Serializable, Cloneable {
      *         chained together.
      * @see StatusType
      */
+
     public void setStatus(StatusType status) {
         this.status = status.toString();
     }
@@ -184,6 +193,7 @@ public class InstanceStatusDetails implements Serializable, Cloneable {
      *         chained together.
      * @see StatusType
      */
+
     public InstanceStatusDetails withStatus(StatusType status) {
         setStatus(status);
         return this;
@@ -200,6 +210,7 @@ public class InstanceStatusDetails implements Serializable, Cloneable {
      *        launched and impaired, this is the time when the instance was
      *        launched.
      */
+
     public void setImpairedSince(java.util.Date impairedSince) {
         this.impairedSince = impairedSince;
     }
@@ -214,6 +225,7 @@ public class InstanceStatusDetails implements Serializable, Cloneable {
      *         launched and impaired, this is the time when the instance was
      *         launched.
      */
+
     public java.util.Date getImpairedSince() {
         return this.impairedSince;
     }
@@ -231,6 +243,7 @@ public class InstanceStatusDetails implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceStatusDetails withImpairedSince(java.util.Date impairedSince) {
         setImpairedSince(impairedSince);
         return this;

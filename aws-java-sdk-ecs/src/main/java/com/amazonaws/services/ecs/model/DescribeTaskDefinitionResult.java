@@ -38,6 +38,7 @@ public class DescribeTaskDefinitionResult implements Serializable, Cloneable {
      * @param taskDefinition
      *        The full task definition description.
      */
+
     public void setTaskDefinition(TaskDefinition taskDefinition) {
         this.taskDefinition = taskDefinition;
     }
@@ -49,6 +50,7 @@ public class DescribeTaskDefinitionResult implements Serializable, Cloneable {
      * 
      * @return The full task definition description.
      */
+
     public TaskDefinition getTaskDefinition() {
         return this.taskDefinition;
     }
@@ -63,6 +65,7 @@ public class DescribeTaskDefinitionResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTaskDefinitionResult withTaskDefinition(
             TaskDefinition taskDefinition) {
         setTaskDefinition(taskDefinition);

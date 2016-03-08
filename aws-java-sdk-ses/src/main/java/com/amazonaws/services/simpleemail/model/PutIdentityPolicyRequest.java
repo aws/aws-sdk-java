@@ -81,6 +81,7 @@ public class PutIdentityPolicyRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        To successfully call this API, you must own the identity.
      */
+
     public void setIdentity(String identity) {
         this.identity = identity;
     }
@@ -105,6 +106,7 @@ public class PutIdentityPolicyRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         To successfully call this API, you must own the identity.
      */
+
     public String getIdentity() {
         return this.identity;
     }
@@ -132,6 +134,7 @@ public class PutIdentityPolicyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutIdentityPolicyRequest withIdentity(String identity) {
         setIdentity(identity);
         return this;
@@ -152,6 +155,7 @@ public class PutIdentityPolicyRequest extends AmazonWebServiceRequest implements
      *        The policy name cannot exceed 64 characters and can only include
      *        alphanumeric characters, dashes, and underscores.
      */
+
     public void setPolicyName(String policyName) {
         this.policyName = policyName;
     }
@@ -170,6 +174,7 @@ public class PutIdentityPolicyRequest extends AmazonWebServiceRequest implements
      *         The policy name cannot exceed 64 characters and can only include
      *         alphanumeric characters, dashes, and underscores.
      */
+
     public String getPolicyName() {
         return this.policyName;
     }
@@ -191,6 +196,7 @@ public class PutIdentityPolicyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutIdentityPolicyRequest withPolicyName(String policyName) {
         setPolicyName(policyName);
         return this;
@@ -216,6 +222,7 @@ public class PutIdentityPolicyRequest extends AmazonWebServiceRequest implements
      *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html"
      *        >Amazon SES Developer Guide</a>.
      */
+
     public void setPolicy(String policy) {
         this.policy = policy;
     }
@@ -239,6 +246,7 @@ public class PutIdentityPolicyRequest extends AmazonWebServiceRequest implements
      *         "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html"
      *         >Amazon SES Developer Guide</a>.
      */
+
     public String getPolicy() {
         return this.policy;
     }
@@ -265,6 +273,7 @@ public class PutIdentityPolicyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutIdentityPolicyRequest withPolicy(String policy) {
         setPolicy(policy);
         return this;

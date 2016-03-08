@@ -133,6 +133,7 @@ public class AttributeValue implements Serializable, Cloneable {
      * @param s
      *        A String data type.
      */
+
     public void setS(String s) {
         this.s = s;
     }
@@ -144,6 +145,7 @@ public class AttributeValue implements Serializable, Cloneable {
      * 
      * @return A String data type.
      */
+
     public String getS() {
         return this.s;
     }
@@ -158,6 +160,7 @@ public class AttributeValue implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AttributeValue withS(String s) {
         setS(s);
         return this;
@@ -171,6 +174,7 @@ public class AttributeValue implements Serializable, Cloneable {
      * @param n
      *        A Number data type.
      */
+
     public void setN(String n) {
         this.n = n;
     }
@@ -182,6 +186,7 @@ public class AttributeValue implements Serializable, Cloneable {
      * 
      * @return A Number data type.
      */
+
     public String getN() {
         return this.n;
     }
@@ -196,6 +201,7 @@ public class AttributeValue implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AttributeValue withN(String n) {
         setN(n);
         return this;
@@ -214,6 +220,7 @@ public class AttributeValue implements Serializable, Cloneable {
      * @param b
      *        A Binary data type.
      */
+
     public void setB(java.nio.ByteBuffer b) {
         this.b = b;
     }
@@ -235,6 +242,7 @@ public class AttributeValue implements Serializable, Cloneable {
      * 
      * @return A Binary data type.
      */
+
     public java.nio.ByteBuffer getB() {
         return this.b;
     }
@@ -249,6 +257,7 @@ public class AttributeValue implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AttributeValue withB(java.nio.ByteBuffer b) {
         setB(b);
         return this;
@@ -261,6 +270,7 @@ public class AttributeValue implements Serializable, Cloneable {
      * 
      * @return A String Set data type.
      */
+
     public java.util.List<String> getSS() {
         return sS;
     }
@@ -273,6 +283,7 @@ public class AttributeValue implements Serializable, Cloneable {
      * @param sS
      *        A String Set data type.
      */
+
     public void setSS(java.util.Collection<String> sS) {
         if (sS == null) {
             this.sS = null;
@@ -298,6 +309,7 @@ public class AttributeValue implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AttributeValue withSS(String... sS) {
         if (this.sS == null) {
             setSS(new java.util.ArrayList<String>(sS.length));
@@ -318,6 +330,7 @@ public class AttributeValue implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AttributeValue withSS(java.util.Collection<String> sS) {
         setSS(sS);
         return this;
@@ -330,6 +343,7 @@ public class AttributeValue implements Serializable, Cloneable {
      * 
      * @return A Number Set data type.
      */
+
     public java.util.List<String> getNS() {
         return nS;
     }
@@ -342,6 +356,7 @@ public class AttributeValue implements Serializable, Cloneable {
      * @param nS
      *        A Number Set data type.
      */
+
     public void setNS(java.util.Collection<String> nS) {
         if (nS == null) {
             this.nS = null;
@@ -367,6 +382,7 @@ public class AttributeValue implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AttributeValue withNS(String... nS) {
         if (this.nS == null) {
             setNS(new java.util.ArrayList<String>(nS.length));
@@ -387,6 +403,7 @@ public class AttributeValue implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AttributeValue withNS(java.util.Collection<String> nS) {
         setNS(nS);
         return this;
@@ -399,6 +416,7 @@ public class AttributeValue implements Serializable, Cloneable {
      * 
      * @return A Binary Set data type.
      */
+
     public java.util.List<java.nio.ByteBuffer> getBS() {
         return bS;
     }
@@ -411,6 +429,7 @@ public class AttributeValue implements Serializable, Cloneable {
      * @param bS
      *        A Binary Set data type.
      */
+
     public void setBS(java.util.Collection<java.nio.ByteBuffer> bS) {
         if (bS == null) {
             this.bS = null;
@@ -436,6 +455,7 @@ public class AttributeValue implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AttributeValue withBS(java.nio.ByteBuffer... bS) {
         if (this.bS == null) {
             setBS(new java.util.ArrayList<java.nio.ByteBuffer>(bS.length));
@@ -456,6 +476,7 @@ public class AttributeValue implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AttributeValue withBS(java.util.Collection<java.nio.ByteBuffer> bS) {
         setBS(bS);
         return this;
@@ -468,6 +489,7 @@ public class AttributeValue implements Serializable, Cloneable {
      * 
      * @return A Map of attribute values.
      */
+
     public java.util.Map<String, AttributeValue> getM() {
         return m;
     }
@@ -480,6 +502,7 @@ public class AttributeValue implements Serializable, Cloneable {
      * @param m
      *        A Map of attribute values.
      */
+
     public void setM(java.util.Map<String, AttributeValue> m) {
         this.m = m;
     }
@@ -494,6 +517,7 @@ public class AttributeValue implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AttributeValue withM(java.util.Map<String, AttributeValue> m) {
         setM(m);
         return this;
@@ -514,6 +538,7 @@ public class AttributeValue implements Serializable, Cloneable {
      * Removes all the entries added into M. &lt;p> Returns a reference to this
      * object so that method calls can be chained together.
      */
+
     public AttributeValue clearMEntries() {
         this.m = null;
         return this;
@@ -526,6 +551,7 @@ public class AttributeValue implements Serializable, Cloneable {
      * 
      * @return A List of attribute values.
      */
+
     public java.util.List<AttributeValue> getL() {
         return l;
     }
@@ -538,6 +564,7 @@ public class AttributeValue implements Serializable, Cloneable {
      * @param l
      *        A List of attribute values.
      */
+
     public void setL(java.util.Collection<AttributeValue> l) {
         if (l == null) {
             this.l = null;
@@ -563,6 +590,7 @@ public class AttributeValue implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AttributeValue withL(AttributeValue... l) {
         if (this.l == null) {
             setL(new java.util.ArrayList<AttributeValue>(l.length));
@@ -583,6 +611,7 @@ public class AttributeValue implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AttributeValue withL(java.util.Collection<AttributeValue> l) {
         setL(l);
         return this;
@@ -596,6 +625,7 @@ public class AttributeValue implements Serializable, Cloneable {
      * @param nULLValue
      *        A Null data type.
      */
+
     public void setNULL(Boolean nULLValue) {
         this.nULLValue = nULLValue;
     }
@@ -607,6 +637,7 @@ public class AttributeValue implements Serializable, Cloneable {
      * 
      * @return A Null data type.
      */
+
     public Boolean getNULL() {
         return this.nULLValue;
     }
@@ -621,6 +652,7 @@ public class AttributeValue implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AttributeValue withNULL(Boolean nULLValue) {
         setNULL(nULLValue);
         return this;
@@ -633,6 +665,7 @@ public class AttributeValue implements Serializable, Cloneable {
      * 
      * @return A Null data type.
      */
+
     public Boolean isNULL() {
         return this.nULLValue;
     }
@@ -645,6 +678,7 @@ public class AttributeValue implements Serializable, Cloneable {
      * @param bOOL
      *        A Boolean data type.
      */
+
     public void setBOOL(Boolean bOOL) {
         this.bOOL = bOOL;
     }
@@ -656,6 +690,7 @@ public class AttributeValue implements Serializable, Cloneable {
      * 
      * @return A Boolean data type.
      */
+
     public Boolean getBOOL() {
         return this.bOOL;
     }
@@ -670,6 +705,7 @@ public class AttributeValue implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AttributeValue withBOOL(Boolean bOOL) {
         setBOOL(bOOL);
         return this;
@@ -682,6 +718,7 @@ public class AttributeValue implements Serializable, Cloneable {
      * 
      * @return A Boolean data type.
      */
+
     public Boolean isBOOL() {
         return this.bOOL;
     }

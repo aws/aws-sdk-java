@@ -76,6 +76,7 @@ public class ConnectDirectoryRequest extends AmazonWebServiceRequest implements
      *        The fully-qualified name of the on-premises directory, such as
      *        <code>corp.example.com</code>.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -89,6 +90,7 @@ public class ConnectDirectoryRequest extends AmazonWebServiceRequest implements
      * @return The fully-qualified name of the on-premises directory, such as
      *         <code>corp.example.com</code>.
      */
+
     public String getName() {
         return this.name;
     }
@@ -105,6 +107,7 @@ public class ConnectDirectoryRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConnectDirectoryRequest withName(String name) {
         setName(name);
         return this;
@@ -119,6 +122,7 @@ public class ConnectDirectoryRequest extends AmazonWebServiceRequest implements
      *        The NetBIOS name of the on-premises directory, such as
      *        <code>CORP</code>.
      */
+
     public void setShortName(String shortName) {
         this.shortName = shortName;
     }
@@ -131,6 +135,7 @@ public class ConnectDirectoryRequest extends AmazonWebServiceRequest implements
      * @return The NetBIOS name of the on-premises directory, such as
      *         <code>CORP</code>.
      */
+
     public String getShortName() {
         return this.shortName;
     }
@@ -146,6 +151,7 @@ public class ConnectDirectoryRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConnectDirectoryRequest withShortName(String shortName) {
         setShortName(shortName);
         return this;
@@ -159,6 +165,7 @@ public class ConnectDirectoryRequest extends AmazonWebServiceRequest implements
      * @param password
      *        The password for the on-premises user account.
      */
+
     public void setPassword(String password) {
         this.password = password;
     }
@@ -170,6 +177,7 @@ public class ConnectDirectoryRequest extends AmazonWebServiceRequest implements
      * 
      * @return The password for the on-premises user account.
      */
+
     public String getPassword() {
         return this.password;
     }
@@ -184,6 +192,7 @@ public class ConnectDirectoryRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConnectDirectoryRequest withPassword(String password) {
         setPassword(password);
         return this;
@@ -197,6 +206,7 @@ public class ConnectDirectoryRequest extends AmazonWebServiceRequest implements
      * @param description
      *        A textual description for the directory.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -208,6 +218,7 @@ public class ConnectDirectoryRequest extends AmazonWebServiceRequest implements
      * 
      * @return A textual description for the directory.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -222,6 +233,7 @@ public class ConnectDirectoryRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConnectDirectoryRequest withDescription(String description) {
         setDescription(description);
         return this;
@@ -236,6 +248,7 @@ public class ConnectDirectoryRequest extends AmazonWebServiceRequest implements
      *        The size of the directory.
      * @see DirectorySize
      */
+
     public void setSize(String size) {
         this.size = size;
     }
@@ -248,6 +261,7 @@ public class ConnectDirectoryRequest extends AmazonWebServiceRequest implements
      * @return The size of the directory.
      * @see DirectorySize
      */
+
     public String getSize() {
         return this.size;
     }
@@ -263,6 +277,7 @@ public class ConnectDirectoryRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see DirectorySize
      */
+
     public ConnectDirectoryRequest withSize(String size) {
         setSize(size);
         return this;
@@ -279,6 +294,7 @@ public class ConnectDirectoryRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see DirectorySize
      */
+
     public void setSize(DirectorySize size) {
         this.size = size.toString();
     }
@@ -294,6 +310,7 @@ public class ConnectDirectoryRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see DirectorySize
      */
+
     public ConnectDirectoryRequest withSize(DirectorySize size) {
         setSize(size);
         return this;
@@ -309,6 +326,7 @@ public class ConnectDirectoryRequest extends AmazonWebServiceRequest implements
      *        A <a>DirectoryConnectSettings</a> object that contains additional
      *        information for the operation.
      */
+
     public void setConnectSettings(DirectoryConnectSettings connectSettings) {
         this.connectSettings = connectSettings;
     }
@@ -322,6 +340,7 @@ public class ConnectDirectoryRequest extends AmazonWebServiceRequest implements
      * @return A <a>DirectoryConnectSettings</a> object that contains additional
      *         information for the operation.
      */
+
     public DirectoryConnectSettings getConnectSettings() {
         return this.connectSettings;
     }
@@ -338,6 +357,7 @@ public class ConnectDirectoryRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConnectDirectoryRequest withConnectSettings(
             DirectoryConnectSettings connectSettings) {
         setConnectSettings(connectSettings);

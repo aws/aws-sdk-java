@@ -106,6 +106,7 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * @param snapshotId
      *        The ID of the snapshot.
      */
+
     public void setSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
     }
@@ -117,6 +118,7 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * 
      * @return The ID of the snapshot.
      */
+
     public String getSnapshotId() {
         return this.snapshotId;
     }
@@ -131,6 +133,7 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EbsBlockDevice withSnapshotId(String snapshotId) {
         setSnapshotId(snapshotId);
         return this;
@@ -165,6 +168,7 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      *        Default: If you're creating the volume from a snapshot and don't
      *        specify a volume size, the default is the snapshot size.
      */
+
     public void setVolumeSize(Integer volumeSize) {
         this.volumeSize = volumeSize;
     }
@@ -197,6 +201,7 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      *         Default: If you're creating the volume from a snapshot and don't
      *         specify a volume size, the default is the snapshot size.
      */
+
     public Integer getVolumeSize() {
         return this.volumeSize;
     }
@@ -232,6 +237,7 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EbsBlockDevice withVolumeSize(Integer volumeSize) {
         setVolumeSize(volumeSize);
         return this;
@@ -246,6 +252,7 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      *        Indicates whether the EBS volume is deleted on instance
      *        termination.
      */
+
     public void setDeleteOnTermination(Boolean deleteOnTermination) {
         this.deleteOnTermination = deleteOnTermination;
     }
@@ -258,6 +265,7 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * @return Indicates whether the EBS volume is deleted on instance
      *         termination.
      */
+
     public Boolean getDeleteOnTermination() {
         return this.deleteOnTermination;
     }
@@ -273,6 +281,7 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EbsBlockDevice withDeleteOnTermination(Boolean deleteOnTermination) {
         setDeleteOnTermination(deleteOnTermination);
         return this;
@@ -286,6 +295,7 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * @return Indicates whether the EBS volume is deleted on instance
      *         termination.
      */
+
     public Boolean isDeleteOnTermination() {
         return this.deleteOnTermination;
     }
@@ -308,6 +318,7 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      *        Default: <code>standard</code>
      * @see VolumeType
      */
+
     public void setVolumeType(String volumeType) {
         this.volumeType = volumeType;
     }
@@ -329,6 +340,7 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      *         Default: <code>standard</code>
      * @see VolumeType
      */
+
     public String getVolumeType() {
         return this.volumeType;
     }
@@ -353,6 +365,7 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      *         chained together.
      * @see VolumeType
      */
+
     public EbsBlockDevice withVolumeType(String volumeType) {
         setVolumeType(volumeType);
         return this;
@@ -378,6 +391,7 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      *         chained together.
      * @see VolumeType
      */
+
     public void setVolumeType(VolumeType volumeType) {
         this.volumeType = volumeType.toString();
     }
@@ -402,6 +416,7 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      *         chained together.
      * @see VolumeType
      */
+
     public EbsBlockDevice withVolumeType(VolumeType volumeType) {
         setVolumeType(volumeType);
         return this;
@@ -451,6 +466,7 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      *        <code>io1</code> volumes; it is not used in requests to create
      *        <code>standard</code> or <code>gp2</code> volumes.
      */
+
     public void setIops(Integer iops) {
         this.iops = iops;
     }
@@ -498,6 +514,7 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      *         <code>io1</code> volumes; it is not used in requests to create
      *         <code>standard</code> or <code>gp2</code> volumes.
      */
+
     public Integer getIops() {
         return this.iops;
     }
@@ -548,6 +565,7 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EbsBlockDevice withIops(Integer iops) {
         setIops(iops);
         return this;
@@ -565,6 +583,7 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      *        EBS volumes may only be attached to instances that support Amazon
      *        EBS encryption.
      */
+
     public void setEncrypted(Boolean encrypted) {
         this.encrypted = encrypted;
     }
@@ -580,6 +599,7 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      *         EBS volumes may only be attached to instances that support Amazon
      *         EBS encryption.
      */
+
     public Boolean getEncrypted() {
         return this.encrypted;
     }
@@ -598,6 +618,7 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EbsBlockDevice withEncrypted(Boolean encrypted) {
         setEncrypted(encrypted);
         return this;
@@ -614,6 +635,7 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      *         EBS volumes may only be attached to instances that support Amazon
      *         EBS encryption.
      */
+
     public Boolean isEncrypted() {
         return this.encrypted;
     }

@@ -56,7 +56,7 @@ public class Compliance implements Serializable, Cloneable {
     /**
      * <p>
      * The number of AWS resources or AWS Config rules that cause a result of
-     * <code>NON_COMPLIANT</code>, up to a maximum of 25.
+     * <code>NON_COMPLIANT</code>, up to a maximum number.
      * </p>
      */
     private ComplianceContributorCount complianceContributorCount;
@@ -113,6 +113,7 @@ public class Compliance implements Serializable, Cloneable {
      *        <code>Compliance</code> data type.
      * @see ComplianceType
      */
+
     public void setComplianceType(String complianceType) {
         this.complianceType = complianceType;
     }
@@ -168,6 +169,7 @@ public class Compliance implements Serializable, Cloneable {
      *         <code>Compliance</code> data type.
      * @see ComplianceType
      */
+
     public String getComplianceType() {
         return this.complianceType;
     }
@@ -226,6 +228,7 @@ public class Compliance implements Serializable, Cloneable {
      *         chained together.
      * @see ComplianceType
      */
+
     public Compliance withComplianceType(String complianceType) {
         setComplianceType(complianceType);
         return this;
@@ -285,6 +288,7 @@ public class Compliance implements Serializable, Cloneable {
      *         chained together.
      * @see ComplianceType
      */
+
     public void setComplianceType(ComplianceType complianceType) {
         this.complianceType = complianceType.toString();
     }
@@ -343,6 +347,7 @@ public class Compliance implements Serializable, Cloneable {
      *         chained together.
      * @see ComplianceType
      */
+
     public Compliance withComplianceType(ComplianceType complianceType) {
         setComplianceType(complianceType);
         return this;
@@ -351,13 +356,14 @@ public class Compliance implements Serializable, Cloneable {
     /**
      * <p>
      * The number of AWS resources or AWS Config rules that cause a result of
-     * <code>NON_COMPLIANT</code>, up to a maximum of 25.
+     * <code>NON_COMPLIANT</code>, up to a maximum number.
      * </p>
      * 
      * @param complianceContributorCount
      *        The number of AWS resources or AWS Config rules that cause a
-     *        result of <code>NON_COMPLIANT</code>, up to a maximum of 25.
+     *        result of <code>NON_COMPLIANT</code>, up to a maximum number.
      */
+
     public void setComplianceContributorCount(
             ComplianceContributorCount complianceContributorCount) {
         this.complianceContributorCount = complianceContributorCount;
@@ -366,12 +372,13 @@ public class Compliance implements Serializable, Cloneable {
     /**
      * <p>
      * The number of AWS resources or AWS Config rules that cause a result of
-     * <code>NON_COMPLIANT</code>, up to a maximum of 25.
+     * <code>NON_COMPLIANT</code>, up to a maximum number.
      * </p>
      * 
      * @return The number of AWS resources or AWS Config rules that cause a
-     *         result of <code>NON_COMPLIANT</code>, up to a maximum of 25.
+     *         result of <code>NON_COMPLIANT</code>, up to a maximum number.
      */
+
     public ComplianceContributorCount getComplianceContributorCount() {
         return this.complianceContributorCount;
     }
@@ -379,15 +386,16 @@ public class Compliance implements Serializable, Cloneable {
     /**
      * <p>
      * The number of AWS resources or AWS Config rules that cause a result of
-     * <code>NON_COMPLIANT</code>, up to a maximum of 25.
+     * <code>NON_COMPLIANT</code>, up to a maximum number.
      * </p>
      * 
      * @param complianceContributorCount
      *        The number of AWS resources or AWS Config rules that cause a
-     *        result of <code>NON_COMPLIANT</code>, up to a maximum of 25.
+     *        result of <code>NON_COMPLIANT</code>, up to a maximum number.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Compliance withComplianceContributorCount(
             ComplianceContributorCount complianceContributorCount) {
         setComplianceContributorCount(complianceContributorCount);

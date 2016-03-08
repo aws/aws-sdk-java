@@ -76,6 +76,7 @@ public class Counters implements Serializable, Cloneable {
      * @param total
      *        The total number of entities.
      */
+
     public void setTotal(Integer total) {
         this.total = total;
     }
@@ -87,6 +88,7 @@ public class Counters implements Serializable, Cloneable {
      * 
      * @return The total number of entities.
      */
+
     public Integer getTotal() {
         return this.total;
     }
@@ -101,6 +103,7 @@ public class Counters implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Counters withTotal(Integer total) {
         setTotal(total);
         return this;
@@ -114,6 +117,7 @@ public class Counters implements Serializable, Cloneable {
      * @param passed
      *        The number of passed entities.
      */
+
     public void setPassed(Integer passed) {
         this.passed = passed;
     }
@@ -125,6 +129,7 @@ public class Counters implements Serializable, Cloneable {
      * 
      * @return The number of passed entities.
      */
+
     public Integer getPassed() {
         return this.passed;
     }
@@ -139,6 +144,7 @@ public class Counters implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Counters withPassed(Integer passed) {
         setPassed(passed);
         return this;
@@ -152,6 +158,7 @@ public class Counters implements Serializable, Cloneable {
      * @param failed
      *        The number of failed entities.
      */
+
     public void setFailed(Integer failed) {
         this.failed = failed;
     }
@@ -163,6 +170,7 @@ public class Counters implements Serializable, Cloneable {
      * 
      * @return The number of failed entities.
      */
+
     public Integer getFailed() {
         return this.failed;
     }
@@ -177,6 +185,7 @@ public class Counters implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Counters withFailed(Integer failed) {
         setFailed(failed);
         return this;
@@ -190,6 +199,7 @@ public class Counters implements Serializable, Cloneable {
      * @param warned
      *        The number of warned entities.
      */
+
     public void setWarned(Integer warned) {
         this.warned = warned;
     }
@@ -201,6 +211,7 @@ public class Counters implements Serializable, Cloneable {
      * 
      * @return The number of warned entities.
      */
+
     public Integer getWarned() {
         return this.warned;
     }
@@ -215,6 +226,7 @@ public class Counters implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Counters withWarned(Integer warned) {
         setWarned(warned);
         return this;
@@ -228,6 +240,7 @@ public class Counters implements Serializable, Cloneable {
      * @param errored
      *        The number of errored entities.
      */
+
     public void setErrored(Integer errored) {
         this.errored = errored;
     }
@@ -239,6 +252,7 @@ public class Counters implements Serializable, Cloneable {
      * 
      * @return The number of errored entities.
      */
+
     public Integer getErrored() {
         return this.errored;
     }
@@ -253,6 +267,7 @@ public class Counters implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Counters withErrored(Integer errored) {
         setErrored(errored);
         return this;
@@ -266,6 +281,7 @@ public class Counters implements Serializable, Cloneable {
      * @param stopped
      *        The number of stopped entities.
      */
+
     public void setStopped(Integer stopped) {
         this.stopped = stopped;
     }
@@ -277,6 +293,7 @@ public class Counters implements Serializable, Cloneable {
      * 
      * @return The number of stopped entities.
      */
+
     public Integer getStopped() {
         return this.stopped;
     }
@@ -291,6 +308,7 @@ public class Counters implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Counters withStopped(Integer stopped) {
         setStopped(stopped);
         return this;
@@ -304,6 +322,7 @@ public class Counters implements Serializable, Cloneable {
      * @param skipped
      *        The number of skipped entities.
      */
+
     public void setSkipped(Integer skipped) {
         this.skipped = skipped;
     }
@@ -315,6 +334,7 @@ public class Counters implements Serializable, Cloneable {
      * 
      * @return The number of skipped entities.
      */
+
     public Integer getSkipped() {
         return this.skipped;
     }
@@ -329,6 +349,7 @@ public class Counters implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Counters withSkipped(Integer skipped) {
         setSkipped(skipped);
         return this;

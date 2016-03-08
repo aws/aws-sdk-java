@@ -48,6 +48,7 @@ public class DescribeTrustedAdvisorCheckResultRequest extends
      * @param checkId
      *        The unique identifier for the Trusted Advisor check.
      */
+
     public void setCheckId(String checkId) {
         this.checkId = checkId;
     }
@@ -59,6 +60,7 @@ public class DescribeTrustedAdvisorCheckResultRequest extends
      * 
      * @return The unique identifier for the Trusted Advisor check.
      */
+
     public String getCheckId() {
         return this.checkId;
     }
@@ -73,6 +75,7 @@ public class DescribeTrustedAdvisorCheckResultRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTrustedAdvisorCheckResultRequest withCheckId(String checkId) {
         setCheckId(checkId);
         return this;
@@ -91,6 +94,7 @@ public class DescribeTrustedAdvisorCheckResultRequest extends
      *        Language parameters must be passed explicitly for operations that
      *        take them.
      */
+
     public void setLanguage(String language) {
         this.language = language;
     }
@@ -107,6 +111,7 @@ public class DescribeTrustedAdvisorCheckResultRequest extends
      *         Japanese ("ja"). Language parameters must be passed explicitly
      *         for operations that take them.
      */
+
     public String getLanguage() {
         return this.language;
     }
@@ -126,6 +131,7 @@ public class DescribeTrustedAdvisorCheckResultRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTrustedAdvisorCheckResultRequest withLanguage(String language) {
         setLanguage(language);
         return this;

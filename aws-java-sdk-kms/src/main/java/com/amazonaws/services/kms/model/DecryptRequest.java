@@ -67,6 +67,7 @@ public class DecryptRequest extends AmazonWebServiceRequest implements
      * @param ciphertextBlob
      *        Ciphertext to be decrypted. The blob includes metadata.
      */
+
     public void setCiphertextBlob(java.nio.ByteBuffer ciphertextBlob) {
         this.ciphertextBlob = ciphertextBlob;
     }
@@ -88,6 +89,7 @@ public class DecryptRequest extends AmazonWebServiceRequest implements
      * 
      * @return Ciphertext to be decrypted. The blob includes metadata.
      */
+
     public java.nio.ByteBuffer getCiphertextBlob() {
         return this.ciphertextBlob;
     }
@@ -102,6 +104,7 @@ public class DecryptRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DecryptRequest withCiphertextBlob(java.nio.ByteBuffer ciphertextBlob) {
         setCiphertextBlob(ciphertextBlob);
         return this;
@@ -123,6 +126,7 @@ public class DecryptRequest extends AmazonWebServiceRequest implements
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html"
      *         >Encryption Context</a>.
      */
+
     public java.util.Map<String, String> getEncryptionContext() {
         if (encryptionContext == null) {
             encryptionContext = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -146,6 +150,7 @@ public class DecryptRequest extends AmazonWebServiceRequest implements
      *        "http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html"
      *        >Encryption Context</a>.
      */
+
     public void setEncryptionContext(
             java.util.Map<String, String> encryptionContext) {
         this.encryptionContext = encryptionContext == null ? null
@@ -171,6 +176,7 @@ public class DecryptRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DecryptRequest withEncryptionContext(
             java.util.Map<String, String> encryptionContext) {
         setEncryptionContext(encryptionContext);
@@ -192,6 +198,7 @@ public class DecryptRequest extends AmazonWebServiceRequest implements
      * Removes all the entries added into EncryptionContext. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public DecryptRequest clearEncryptionContextEntries() {
         this.encryptionContext = null;
         return this;
@@ -215,6 +222,7 @@ public class DecryptRequest extends AmazonWebServiceRequest implements
      *         >Grant Tokens</a> in the <i>AWS Key Management Service Developer
      *         Guide</i>.
      */
+
     public java.util.List<String> getGrantTokens() {
         if (grantTokens == null) {
             grantTokens = new com.amazonaws.internal.SdkInternalList<String>();
@@ -241,6 +249,7 @@ public class DecryptRequest extends AmazonWebServiceRequest implements
      *        >Grant Tokens</a> in the <i>AWS Key Management Service Developer
      *        Guide</i>.
      */
+
     public void setGrantTokens(java.util.Collection<String> grantTokens) {
         if (grantTokens == null) {
             this.grantTokens = null;
@@ -278,6 +287,7 @@ public class DecryptRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DecryptRequest withGrantTokens(String... grantTokens) {
         if (this.grantTokens == null) {
             setGrantTokens(new com.amazonaws.internal.SdkInternalList<String>(
@@ -310,6 +320,7 @@ public class DecryptRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DecryptRequest withGrantTokens(
             java.util.Collection<String> grantTokens) {
         setGrantTokens(grantTokens);

@@ -62,6 +62,7 @@ public class DeleteKeyPairRequest extends AmazonWebServiceRequest implements
      * @param keyName
      *        The name of the key pair.
      */
+
     public void setKeyName(String keyName) {
         this.keyName = keyName;
     }
@@ -73,6 +74,7 @@ public class DeleteKeyPairRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the key pair.
      */
+
     public String getKeyName() {
         return this.keyName;
     }
@@ -87,6 +89,7 @@ public class DeleteKeyPairRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteKeyPairRequest withKeyName(String keyName) {
         setKeyName(keyName);
         return this;

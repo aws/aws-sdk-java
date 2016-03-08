@@ -67,6 +67,7 @@ public class CreateVirtualMFADeviceRequest extends AmazonWebServiceRequest
      *        This parameter is optional. If it is not included, it defaults to
      *        a slash (/).
      */
+
     public void setPath(String path) {
         this.path = path;
     }
@@ -91,6 +92,7 @@ public class CreateVirtualMFADeviceRequest extends AmazonWebServiceRequest
      *         This parameter is optional. If it is not included, it defaults to
      *         a slash (/).
      */
+
     public String getPath() {
         return this.path;
     }
@@ -118,6 +120,7 @@ public class CreateVirtualMFADeviceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateVirtualMFADeviceRequest withPath(String path) {
         setPath(path);
         return this;
@@ -133,6 +136,7 @@ public class CreateVirtualMFADeviceRequest extends AmazonWebServiceRequest
      *        The name of the virtual MFA device. Use with path to uniquely
      *        identify a virtual MFA device.
      */
+
     public void setVirtualMFADeviceName(String virtualMFADeviceName) {
         this.virtualMFADeviceName = virtualMFADeviceName;
     }
@@ -146,6 +150,7 @@ public class CreateVirtualMFADeviceRequest extends AmazonWebServiceRequest
      * @return The name of the virtual MFA device. Use with path to uniquely
      *         identify a virtual MFA device.
      */
+
     public String getVirtualMFADeviceName() {
         return this.virtualMFADeviceName;
     }
@@ -162,6 +167,7 @@ public class CreateVirtualMFADeviceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateVirtualMFADeviceRequest withVirtualMFADeviceName(
             String virtualMFADeviceName) {
         setVirtualMFADeviceName(virtualMFADeviceName);

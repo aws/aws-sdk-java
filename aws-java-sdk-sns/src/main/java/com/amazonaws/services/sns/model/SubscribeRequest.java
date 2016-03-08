@@ -136,6 +136,7 @@ public class SubscribeRequest extends AmazonWebServiceRequest implements
      * @param topicArn
      *        The ARN of the topic you want to subscribe to.
      */
+
     public void setTopicArn(String topicArn) {
         this.topicArn = topicArn;
     }
@@ -147,6 +148,7 @@ public class SubscribeRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ARN of the topic you want to subscribe to.
      */
+
     public String getTopicArn() {
         return this.topicArn;
     }
@@ -161,6 +163,7 @@ public class SubscribeRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SubscribeRequest withTopicArn(String topicArn) {
         setTopicArn(topicArn);
         return this;
@@ -199,6 +202,7 @@ public class SubscribeRequest extends AmazonWebServiceRequest implements
      *        <li><code>application</code> -- delivery of JSON-encoded message
      *        to an EndpointArn for a mobile app and device.</li>
      */
+
     public void setProtocol(String protocol) {
         this.protocol = protocol;
     }
@@ -235,6 +239,7 @@ public class SubscribeRequest extends AmazonWebServiceRequest implements
      *         <li><code>application</code> -- delivery of JSON-encoded message
      *         to an EndpointArn for a mobile app and device.</li>
      */
+
     public String getProtocol() {
         return this.protocol;
     }
@@ -274,6 +279,7 @@ public class SubscribeRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SubscribeRequest withProtocol(String protocol) {
         setProtocol(protocol);
         return this;
@@ -320,6 +326,7 @@ public class SubscribeRequest extends AmazonWebServiceRequest implements
      *        <li>For the <code>application</code> protocol, the endpoint is the
      *        EndpointArn of a mobile app and device.</li>
      */
+
     public void setEndpoint(String endpoint) {
         this.endpoint = endpoint;
     }
@@ -364,6 +371,7 @@ public class SubscribeRequest extends AmazonWebServiceRequest implements
      *         <li>For the <code>application</code> protocol, the endpoint is
      *         the EndpointArn of a mobile app and device.</li>
      */
+
     public String getEndpoint() {
         return this.endpoint;
     }
@@ -411,6 +419,7 @@ public class SubscribeRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SubscribeRequest withEndpoint(String endpoint) {
         setEndpoint(endpoint);
         return this;

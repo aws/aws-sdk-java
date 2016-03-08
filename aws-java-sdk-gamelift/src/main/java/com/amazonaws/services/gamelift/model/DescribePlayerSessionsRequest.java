@@ -78,6 +78,7 @@ public class DescribePlayerSessionsRequest extends AmazonWebServiceRequest
      * @param gameSessionId
      *        Unique identifier for a game session.
      */
+
     public void setGameSessionId(String gameSessionId) {
         this.gameSessionId = gameSessionId;
     }
@@ -89,6 +90,7 @@ public class DescribePlayerSessionsRequest extends AmazonWebServiceRequest
      * 
      * @return Unique identifier for a game session.
      */
+
     public String getGameSessionId() {
         return this.gameSessionId;
     }
@@ -103,6 +105,7 @@ public class DescribePlayerSessionsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribePlayerSessionsRequest withGameSessionId(String gameSessionId) {
         setGameSessionId(gameSessionId);
         return this;
@@ -116,6 +119,7 @@ public class DescribePlayerSessionsRequest extends AmazonWebServiceRequest
      * @param playerId
      *        Unique identifier for a player.
      */
+
     public void setPlayerId(String playerId) {
         this.playerId = playerId;
     }
@@ -127,6 +131,7 @@ public class DescribePlayerSessionsRequest extends AmazonWebServiceRequest
      * 
      * @return Unique identifier for a player.
      */
+
     public String getPlayerId() {
         return this.playerId;
     }
@@ -141,6 +146,7 @@ public class DescribePlayerSessionsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribePlayerSessionsRequest withPlayerId(String playerId) {
         setPlayerId(playerId);
         return this;
@@ -154,6 +160,7 @@ public class DescribePlayerSessionsRequest extends AmazonWebServiceRequest
      * @param playerSessionId
      *        Unique identifier for a playersession.
      */
+
     public void setPlayerSessionId(String playerSessionId) {
         this.playerSessionId = playerSessionId;
     }
@@ -165,6 +172,7 @@ public class DescribePlayerSessionsRequest extends AmazonWebServiceRequest
      * 
      * @return Unique identifier for a playersession.
      */
+
     public String getPlayerSessionId() {
         return this.playerSessionId;
     }
@@ -179,6 +187,7 @@ public class DescribePlayerSessionsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribePlayerSessionsRequest withPlayerSessionId(
             String playerSessionId) {
         setPlayerSessionId(playerSessionId);
@@ -193,6 +202,7 @@ public class DescribePlayerSessionsRequest extends AmazonWebServiceRequest
      * @param playerSessionStatusFilter
      *        Player session status to filter results on.
      */
+
     public void setPlayerSessionStatusFilter(String playerSessionStatusFilter) {
         this.playerSessionStatusFilter = playerSessionStatusFilter;
     }
@@ -204,6 +214,7 @@ public class DescribePlayerSessionsRequest extends AmazonWebServiceRequest
      * 
      * @return Player session status to filter results on.
      */
+
     public String getPlayerSessionStatusFilter() {
         return this.playerSessionStatusFilter;
     }
@@ -218,6 +229,7 @@ public class DescribePlayerSessionsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribePlayerSessionsRequest withPlayerSessionStatusFilter(
             String playerSessionStatusFilter) {
         setPlayerSessionStatusFilter(playerSessionStatusFilter);
@@ -236,6 +248,7 @@ public class DescribePlayerSessionsRequest extends AmazonWebServiceRequest
      *        with <i>NextToken</i> to get results as a set of sequential pages.
      *        If a player session ID is specified, this parameter is ignored.
      */
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -252,6 +265,7 @@ public class DescribePlayerSessionsRequest extends AmazonWebServiceRequest
      *         pages. If a player session ID is specified, this parameter is
      *         ignored.
      */
+
     public Integer getLimit() {
         return this.limit;
     }
@@ -270,6 +284,7 @@ public class DescribePlayerSessionsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribePlayerSessionsRequest withLimit(Integer limit) {
         setLimit(limit);
         return this;
@@ -291,6 +306,7 @@ public class DescribePlayerSessionsRequest extends AmazonWebServiceRequest
      *        this parameter. If a player session ID is specified, this
      *        parameter is ignored.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -310,6 +326,7 @@ public class DescribePlayerSessionsRequest extends AmazonWebServiceRequest
      *         set, do not set this parameter. If a player session ID is
      *         specified, this parameter is ignored.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -332,6 +349,7 @@ public class DescribePlayerSessionsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribePlayerSessionsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

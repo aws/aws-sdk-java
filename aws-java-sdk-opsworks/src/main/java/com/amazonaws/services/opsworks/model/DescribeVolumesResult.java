@@ -39,6 +39,7 @@ public class DescribeVolumesResult implements Serializable, Cloneable {
      * 
      * @return An array of volume IDs.
      */
+
     public java.util.List<Volume> getVolumes() {
         if (volumes == null) {
             volumes = new com.amazonaws.internal.SdkInternalList<Volume>();
@@ -54,6 +55,7 @@ public class DescribeVolumesResult implements Serializable, Cloneable {
      * @param volumes
      *        An array of volume IDs.
      */
+
     public void setVolumes(java.util.Collection<Volume> volumes) {
         if (volumes == null) {
             this.volumes = null;
@@ -80,6 +82,7 @@ public class DescribeVolumesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVolumesResult withVolumes(Volume... volumes) {
         if (this.volumes == null) {
             setVolumes(new com.amazonaws.internal.SdkInternalList<Volume>(
@@ -101,6 +104,7 @@ public class DescribeVolumesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVolumesResult withVolumes(
             java.util.Collection<Volume> volumes) {
         setVolumes(volumes);

@@ -52,6 +52,7 @@ public class ListTaskDefinitionFamiliesResult implements Serializable,
      * @return The list of task definition family names that match the
      *         <code>ListTaskDefinitionFamilies</code> request.
      */
+
     public java.util.List<String> getFamilies() {
         if (families == null) {
             families = new com.amazonaws.internal.SdkInternalList<String>();
@@ -69,6 +70,7 @@ public class ListTaskDefinitionFamiliesResult implements Serializable,
      *        The list of task definition family names that match the
      *        <code>ListTaskDefinitionFamilies</code> request.
      */
+
     public void setFamilies(java.util.Collection<String> families) {
         if (families == null) {
             this.families = null;
@@ -97,6 +99,7 @@ public class ListTaskDefinitionFamiliesResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTaskDefinitionFamiliesResult withFamilies(String... families) {
         if (this.families == null) {
             setFamilies(new com.amazonaws.internal.SdkInternalList<String>(
@@ -120,6 +123,7 @@ public class ListTaskDefinitionFamiliesResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTaskDefinitionFamiliesResult withFamilies(
             java.util.Collection<String> families) {
         setFamilies(families);
@@ -144,6 +148,7 @@ public class ListTaskDefinitionFamiliesResult implements Serializable,
      *        next page of results. This value is <code>null</code> when there
      *        are no more results to return.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -165,6 +170,7 @@ public class ListTaskDefinitionFamiliesResult implements Serializable,
      *         next page of results. This value is <code>null</code> when there
      *         are no more results to return.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -189,6 +195,7 @@ public class ListTaskDefinitionFamiliesResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTaskDefinitionFamiliesResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

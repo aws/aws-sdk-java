@@ -46,6 +46,7 @@ public class IamInstanceProfile implements Serializable, Cloneable {
      * @param arn
      *        The Amazon Resource Name (ARN) of the instance profile.
      */
+
     public void setArn(String arn) {
         this.arn = arn;
     }
@@ -57,6 +58,7 @@ public class IamInstanceProfile implements Serializable, Cloneable {
      * 
      * @return The Amazon Resource Name (ARN) of the instance profile.
      */
+
     public String getArn() {
         return this.arn;
     }
@@ -71,6 +73,7 @@ public class IamInstanceProfile implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public IamInstanceProfile withArn(String arn) {
         setArn(arn);
         return this;
@@ -84,6 +87,7 @@ public class IamInstanceProfile implements Serializable, Cloneable {
      * @param id
      *        The ID of the instance profile.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -95,6 +99,7 @@ public class IamInstanceProfile implements Serializable, Cloneable {
      * 
      * @return The ID of the instance profile.
      */
+
     public String getId() {
         return this.id;
     }
@@ -109,6 +114,7 @@ public class IamInstanceProfile implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public IamInstanceProfile withId(String id) {
         setId(id);
         return this;

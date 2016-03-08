@@ -44,6 +44,7 @@ public class DescribeFlowLogsResult implements Serializable, Cloneable {
      * 
      * @return Information about the flow logs.
      */
+
     public java.util.List<FlowLog> getFlowLogs() {
         if (flowLogs == null) {
             flowLogs = new com.amazonaws.internal.SdkInternalList<FlowLog>();
@@ -59,6 +60,7 @@ public class DescribeFlowLogsResult implements Serializable, Cloneable {
      * @param flowLogs
      *        Information about the flow logs.
      */
+
     public void setFlowLogs(java.util.Collection<FlowLog> flowLogs) {
         if (flowLogs == null) {
             this.flowLogs = null;
@@ -85,6 +87,7 @@ public class DescribeFlowLogsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeFlowLogsResult withFlowLogs(FlowLog... flowLogs) {
         if (this.flowLogs == null) {
             setFlowLogs(new com.amazonaws.internal.SdkInternalList<FlowLog>(
@@ -106,6 +109,7 @@ public class DescribeFlowLogsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeFlowLogsResult withFlowLogs(
             java.util.Collection<FlowLog> flowLogs) {
         setFlowLogs(flowLogs);
@@ -122,6 +126,7 @@ public class DescribeFlowLogsResult implements Serializable, Cloneable {
      *        The token to use to retrieve the next page of results. This value
      *        is <code>null</code> when there are no more results to return.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -135,6 +140,7 @@ public class DescribeFlowLogsResult implements Serializable, Cloneable {
      * @return The token to use to retrieve the next page of results. This value
      *         is <code>null</code> when there are no more results to return.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -151,6 +157,7 @@ public class DescribeFlowLogsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeFlowLogsResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

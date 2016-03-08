@@ -81,6 +81,7 @@ public class RunsFilter implements Serializable, Cloneable {
      *         match the value of the <b>runName</b> property of the <a>Run</a>
      *         data type.
      */
+
     public java.util.List<String> getRunNamePatterns() {
         return runNamePatterns;
     }
@@ -98,6 +99,7 @@ public class RunsFilter implements Serializable, Cloneable {
      *        match the value of the <b>runName</b> property of the <a>Run</a>
      *        data type.
      */
+
     public void setRunNamePatterns(java.util.Collection<String> runNamePatterns) {
         if (runNamePatterns == null) {
             this.runNamePatterns = null;
@@ -128,6 +130,7 @@ public class RunsFilter implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunsFilter withRunNamePatterns(String... runNamePatterns) {
         if (this.runNamePatterns == null) {
             setRunNamePatterns(new java.util.ArrayList<String>(
@@ -154,6 +157,7 @@ public class RunsFilter implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunsFilter withRunNamePatterns(
             java.util.Collection<String> runNamePatterns) {
         setRunNamePatterns(runNamePatterns);
@@ -171,6 +175,7 @@ public class RunsFilter implements Serializable, Cloneable {
      *         type property must be the exact match of the value of the
      *         <b>runState</b> property of the <a>Run</a> data type.
      */
+
     public java.util.List<String> getRunStates() {
         return runStates;
     }
@@ -187,6 +192,7 @@ public class RunsFilter implements Serializable, Cloneable {
      *        type property must be the exact match of the value of the
      *        <b>runState</b> property of the <a>Run</a> data type.
      */
+
     public void setRunStates(java.util.Collection<String> runStates) {
         if (runStates == null) {
             this.runStates = null;
@@ -216,6 +222,7 @@ public class RunsFilter implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunsFilter withRunStates(String... runStates) {
         if (this.runStates == null) {
             setRunStates(new java.util.ArrayList<String>(runStates.length));
@@ -240,6 +247,7 @@ public class RunsFilter implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunsFilter withRunStates(java.util.Collection<String> runStates) {
         setRunStates(runStates);
         return this;
@@ -256,6 +264,7 @@ public class RunsFilter implements Serializable, Cloneable {
      *         type property must match a list of values of the
      *         <b>rulesPackages</b> property of the <a>Run</a> data type.
      */
+
     public java.util.List<String> getRulesPackages() {
         return rulesPackages;
     }
@@ -272,6 +281,7 @@ public class RunsFilter implements Serializable, Cloneable {
      *        type property must match a list of values of the
      *        <b>rulesPackages</b> property of the <a>Run</a> data type.
      */
+
     public void setRulesPackages(java.util.Collection<String> rulesPackages) {
         if (rulesPackages == null) {
             this.rulesPackages = null;
@@ -301,6 +311,7 @@ public class RunsFilter implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunsFilter withRulesPackages(String... rulesPackages) {
         if (this.rulesPackages == null) {
             setRulesPackages(new java.util.ArrayList<String>(
@@ -326,6 +337,7 @@ public class RunsFilter implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunsFilter withRulesPackages(
             java.util.Collection<String> rulesPackages) {
         setRulesPackages(rulesPackages);
@@ -346,6 +358,7 @@ public class RunsFilter implements Serializable, Cloneable {
      *        specified minimum and maximum values of the <b>creationTime</b>
      *        property of the <a>Run</a> data type.
      */
+
     public void setCreationTime(TimestampRange creationTime) {
         this.creationTime = creationTime;
     }
@@ -363,6 +376,7 @@ public class RunsFilter implements Serializable, Cloneable {
      *         specified minimum and maximum values of the <b>creationTime</b>
      *         property of the <a>Run</a> data type.
      */
+
     public TimestampRange getCreationTime() {
         return this.creationTime;
     }
@@ -383,6 +397,7 @@ public class RunsFilter implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunsFilter withCreationTime(TimestampRange creationTime) {
         setCreationTime(creationTime);
         return this;
@@ -402,6 +417,7 @@ public class RunsFilter implements Serializable, Cloneable {
      *        specified minimum and maximum values of the <b>completionTime</b>
      *        property of the <a>Run</a> data type.
      */
+
     public void setCompletionTime(TimestampRange completionTime) {
         this.completionTime = completionTime;
     }
@@ -419,6 +435,7 @@ public class RunsFilter implements Serializable, Cloneable {
      *         specified minimum and maximum values of the <b>completionTime</b>
      *         property of the <a>Run</a> data type.
      */
+
     public TimestampRange getCompletionTime() {
         return this.completionTime;
     }
@@ -439,6 +456,7 @@ public class RunsFilter implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunsFilter withCompletionTime(TimestampRange completionTime) {
         setCompletionTime(completionTime);
         return this;

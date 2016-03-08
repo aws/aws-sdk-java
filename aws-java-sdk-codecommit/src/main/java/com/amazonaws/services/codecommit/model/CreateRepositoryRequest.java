@@ -31,15 +31,33 @@ public class CreateRepositoryRequest extends AmazonWebServiceRequest implements
      * <p>
      * The name of the new repository to be created.
      * </p>
-     * <note>The repository name must be unique across the calling AWS account.
-     * In addition, repository names are restricted to alphanumeric characters.
-     * The suffix ".git" is prohibited.</note>
+     * <note>
+     * <p>
+     * The repository name must be unique across the calling AWS account. In
+     * addition, repository names are limited to 100 alphanumeric, dash, and
+     * underscore characters, and cannot include certain characters. For a full
+     * description of the limits on repository names, see <a href=
+     * "http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html"
+     * >Limits</a> in the AWS CodeCommit User Guide. The suffix ".git" is
+     * prohibited.
+     * </p>
+     * </note>
      */
     private String repositoryName;
     /**
      * <p>
      * A comment or description about the new repository.
      * </p>
+     * <note>
+     * <p>
+     * The description field for a repository accepts all HTML characters and
+     * all valid Unicode characters. Applications that do not HTML-encode the
+     * description and display it in a web page could expose users to
+     * potentially malicious code. Make sure that you HTML-encode the
+     * description field in any application that uses this API to display the
+     * repository description on a web page.
+     * </p>
+     * </note>
      */
     private String repositoryDescription;
 
@@ -47,16 +65,32 @@ public class CreateRepositoryRequest extends AmazonWebServiceRequest implements
      * <p>
      * The name of the new repository to be created.
      * </p>
-     * <note>The repository name must be unique across the calling AWS account.
-     * In addition, repository names are restricted to alphanumeric characters.
-     * The suffix ".git" is prohibited.</note>
+     * <note>
+     * <p>
+     * The repository name must be unique across the calling AWS account. In
+     * addition, repository names are limited to 100 alphanumeric, dash, and
+     * underscore characters, and cannot include certain characters. For a full
+     * description of the limits on repository names, see <a href=
+     * "http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html"
+     * >Limits</a> in the AWS CodeCommit User Guide. The suffix ".git" is
+     * prohibited.
+     * </p>
+     * </note>
      * 
      * @param repositoryName
-     *        The name of the new repository to be created.</p> <note>The
-     *        repository name must be unique across the calling AWS account. In
-     *        addition, repository names are restricted to alphanumeric
-     *        characters. The suffix ".git" is prohibited.
+     *        The name of the new repository to be created.</p> <note>
+     *        <p>
+     *        The repository name must be unique across the calling AWS account.
+     *        In addition, repository names are limited to 100 alphanumeric,
+     *        dash, and underscore characters, and cannot include certain
+     *        characters. For a full description of the limits on repository
+     *        names, see <a href=
+     *        "http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html"
+     *        >Limits</a> in the AWS CodeCommit User Guide. The suffix ".git" is
+     *        prohibited.
+     *        </p>
      */
+
     public void setRepositoryName(String repositoryName) {
         this.repositoryName = repositoryName;
     }
@@ -65,15 +99,31 @@ public class CreateRepositoryRequest extends AmazonWebServiceRequest implements
      * <p>
      * The name of the new repository to be created.
      * </p>
-     * <note>The repository name must be unique across the calling AWS account.
-     * In addition, repository names are restricted to alphanumeric characters.
-     * The suffix ".git" is prohibited.</note>
+     * <note>
+     * <p>
+     * The repository name must be unique across the calling AWS account. In
+     * addition, repository names are limited to 100 alphanumeric, dash, and
+     * underscore characters, and cannot include certain characters. For a full
+     * description of the limits on repository names, see <a href=
+     * "http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html"
+     * >Limits</a> in the AWS CodeCommit User Guide. The suffix ".git" is
+     * prohibited.
+     * </p>
+     * </note>
      * 
-     * @return The name of the new repository to be created.</p> <note>The
-     *         repository name must be unique across the calling AWS account. In
-     *         addition, repository names are restricted to alphanumeric
-     *         characters. The suffix ".git" is prohibited.
+     * @return The name of the new repository to be created.</p> <note>
+     *         <p>
+     *         The repository name must be unique across the calling AWS
+     *         account. In addition, repository names are limited to 100
+     *         alphanumeric, dash, and underscore characters, and cannot include
+     *         certain characters. For a full description of the limits on
+     *         repository names, see <a href=
+     *         "http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html"
+     *         >Limits</a> in the AWS CodeCommit User Guide. The suffix ".git"
+     *         is prohibited.
+     *         </p>
      */
+
     public String getRepositoryName() {
         return this.repositoryName;
     }
@@ -82,18 +132,34 @@ public class CreateRepositoryRequest extends AmazonWebServiceRequest implements
      * <p>
      * The name of the new repository to be created.
      * </p>
-     * <note>The repository name must be unique across the calling AWS account.
-     * In addition, repository names are restricted to alphanumeric characters.
-     * The suffix ".git" is prohibited.</note>
+     * <note>
+     * <p>
+     * The repository name must be unique across the calling AWS account. In
+     * addition, repository names are limited to 100 alphanumeric, dash, and
+     * underscore characters, and cannot include certain characters. For a full
+     * description of the limits on repository names, see <a href=
+     * "http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html"
+     * >Limits</a> in the AWS CodeCommit User Guide. The suffix ".git" is
+     * prohibited.
+     * </p>
+     * </note>
      * 
      * @param repositoryName
-     *        The name of the new repository to be created.</p> <note>The
-     *        repository name must be unique across the calling AWS account. In
-     *        addition, repository names are restricted to alphanumeric
-     *        characters. The suffix ".git" is prohibited.
+     *        The name of the new repository to be created.</p> <note>
+     *        <p>
+     *        The repository name must be unique across the calling AWS account.
+     *        In addition, repository names are limited to 100 alphanumeric,
+     *        dash, and underscore characters, and cannot include certain
+     *        characters. For a full description of the limits on repository
+     *        names, see <a href=
+     *        "http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html"
+     *        >Limits</a> in the AWS CodeCommit User Guide. The suffix ".git" is
+     *        prohibited.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateRepositoryRequest withRepositoryName(String repositoryName) {
         setRepositoryName(repositoryName);
         return this;
@@ -103,10 +169,29 @@ public class CreateRepositoryRequest extends AmazonWebServiceRequest implements
      * <p>
      * A comment or description about the new repository.
      * </p>
+     * <note>
+     * <p>
+     * The description field for a repository accepts all HTML characters and
+     * all valid Unicode characters. Applications that do not HTML-encode the
+     * description and display it in a web page could expose users to
+     * potentially malicious code. Make sure that you HTML-encode the
+     * description field in any application that uses this API to display the
+     * repository description on a web page.
+     * </p>
+     * </note>
      * 
      * @param repositoryDescription
-     *        A comment or description about the new repository.
+     *        A comment or description about the new repository.</p> <note>
+     *        <p>
+     *        The description field for a repository accepts all HTML characters
+     *        and all valid Unicode characters. Applications that do not
+     *        HTML-encode the description and display it in a web page could
+     *        expose users to potentially malicious code. Make sure that you
+     *        HTML-encode the description field in any application that uses
+     *        this API to display the repository description on a web page.
+     *        </p>
      */
+
     public void setRepositoryDescription(String repositoryDescription) {
         this.repositoryDescription = repositoryDescription;
     }
@@ -115,9 +200,29 @@ public class CreateRepositoryRequest extends AmazonWebServiceRequest implements
      * <p>
      * A comment or description about the new repository.
      * </p>
+     * <note>
+     * <p>
+     * The description field for a repository accepts all HTML characters and
+     * all valid Unicode characters. Applications that do not HTML-encode the
+     * description and display it in a web page could expose users to
+     * potentially malicious code. Make sure that you HTML-encode the
+     * description field in any application that uses this API to display the
+     * repository description on a web page.
+     * </p>
+     * </note>
      * 
-     * @return A comment or description about the new repository.
+     * @return A comment or description about the new repository.</p> <note>
+     *         <p>
+     *         The description field for a repository accepts all HTML
+     *         characters and all valid Unicode characters. Applications that do
+     *         not HTML-encode the description and display it in a web page
+     *         could expose users to potentially malicious code. Make sure that
+     *         you HTML-encode the description field in any application that
+     *         uses this API to display the repository description on a web
+     *         page.
+     *         </p>
      */
+
     public String getRepositoryDescription() {
         return this.repositoryDescription;
     }
@@ -126,12 +231,31 @@ public class CreateRepositoryRequest extends AmazonWebServiceRequest implements
      * <p>
      * A comment or description about the new repository.
      * </p>
+     * <note>
+     * <p>
+     * The description field for a repository accepts all HTML characters and
+     * all valid Unicode characters. Applications that do not HTML-encode the
+     * description and display it in a web page could expose users to
+     * potentially malicious code. Make sure that you HTML-encode the
+     * description field in any application that uses this API to display the
+     * repository description on a web page.
+     * </p>
+     * </note>
      * 
      * @param repositoryDescription
-     *        A comment or description about the new repository.
+     *        A comment or description about the new repository.</p> <note>
+     *        <p>
+     *        The description field for a repository accepts all HTML characters
+     *        and all valid Unicode characters. Applications that do not
+     *        HTML-encode the description and display it in a web page could
+     *        expose users to potentially malicious code. Make sure that you
+     *        HTML-encode the description field in any application that uses
+     *        this API to display the repository description on a web page.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateRepositoryRequest withRepositoryDescription(
             String repositoryDescription) {
         setRepositoryDescription(repositoryDescription);

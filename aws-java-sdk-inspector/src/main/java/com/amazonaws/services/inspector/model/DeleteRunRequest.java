@@ -40,6 +40,7 @@ public class DeleteRunRequest extends AmazonWebServiceRequest implements
      * @param runArn
      *        The ARN specifying the assessment run that you want to delete.
      */
+
     public void setRunArn(String runArn) {
         this.runArn = runArn;
     }
@@ -51,6 +52,7 @@ public class DeleteRunRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ARN specifying the assessment run that you want to delete.
      */
+
     public String getRunArn() {
         return this.runArn;
     }
@@ -65,6 +67,7 @@ public class DeleteRunRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteRunRequest withRunArn(String runArn) {
         setRunArn(runArn);
         return this;

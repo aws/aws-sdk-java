@@ -40,6 +40,7 @@ public class DeleteApplicationRequest extends AmazonWebServiceRequest implements
      * @param applicationArn
      *        The ARN specifying the application that you want to delete.
      */
+
     public void setApplicationArn(String applicationArn) {
         this.applicationArn = applicationArn;
     }
@@ -51,6 +52,7 @@ public class DeleteApplicationRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ARN specifying the application that you want to delete.
      */
+
     public String getApplicationArn() {
         return this.applicationArn;
     }
@@ -65,6 +67,7 @@ public class DeleteApplicationRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteApplicationRequest withApplicationArn(String applicationArn) {
         setApplicationArn(applicationArn);
         return this;

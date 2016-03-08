@@ -48,6 +48,7 @@ public class ListApplicationRevisionsResult implements Serializable, Cloneable {
      * 
      * @return A list of revision locations that contain the matching revisions.
      */
+
     public java.util.List<RevisionLocation> getRevisions() {
         if (revisions == null) {
             revisions = new com.amazonaws.internal.SdkInternalList<RevisionLocation>();
@@ -63,6 +64,7 @@ public class ListApplicationRevisionsResult implements Serializable, Cloneable {
      * @param revisions
      *        A list of revision locations that contain the matching revisions.
      */
+
     public void setRevisions(java.util.Collection<RevisionLocation> revisions) {
         if (revisions == null) {
             this.revisions = null;
@@ -89,6 +91,7 @@ public class ListApplicationRevisionsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListApplicationRevisionsResult withRevisions(
             RevisionLocation... revisions) {
         if (this.revisions == null) {
@@ -111,6 +114,7 @@ public class ListApplicationRevisionsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListApplicationRevisionsResult withRevisions(
             java.util.Collection<RevisionLocation> revisions) {
         setRevisions(revisions);
@@ -131,6 +135,7 @@ public class ListApplicationRevisionsResult implements Serializable, Cloneable {
      *        subsequent list application revisions call to return the next set
      *        of application revisions in the list.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -148,6 +153,7 @@ public class ListApplicationRevisionsResult implements Serializable, Cloneable {
      *         a subsequent list application revisions call to return the next
      *         set of application revisions in the list.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -168,6 +174,7 @@ public class ListApplicationRevisionsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListApplicationRevisionsResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

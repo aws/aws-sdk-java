@@ -50,6 +50,7 @@ public class DescribeFleetEventsResult implements Serializable, Cloneable {
      * @return Collection of objects containing event log entries for the
      *         specified fleet.
      */
+
     public java.util.List<Event> getEvents() {
         return events;
     }
@@ -64,6 +65,7 @@ public class DescribeFleetEventsResult implements Serializable, Cloneable {
      *        Collection of objects containing event log entries for the
      *        specified fleet.
      */
+
     public void setEvents(java.util.Collection<Event> events) {
         if (events == null) {
             this.events = null;
@@ -91,6 +93,7 @@ public class DescribeFleetEventsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeFleetEventsResult withEvents(Event... events) {
         if (this.events == null) {
             setEvents(new java.util.ArrayList<Event>(events.length));
@@ -113,6 +116,7 @@ public class DescribeFleetEventsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeFleetEventsResult withEvents(
             java.util.Collection<Event> events) {
         setEvents(events);
@@ -131,6 +135,7 @@ public class DescribeFleetEventsResult implements Serializable, Cloneable {
      *        call to this action. If no token is returned, these results
      *        represent the end of the list.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -146,6 +151,7 @@ public class DescribeFleetEventsResult implements Serializable, Cloneable {
      *         call to this action. If no token is returned, these results
      *         represent the end of the list.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -164,6 +170,7 @@ public class DescribeFleetEventsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeFleetEventsResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

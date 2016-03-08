@@ -90,6 +90,7 @@ public class AssessmentsFilter implements Serializable, Cloneable {
      *         match the value of the <b>assessmentName</b> property of the
      *         <a>Assessment</a> data type.
      */
+
     public java.util.List<String> getAssessmentNamePatterns() {
         return assessmentNamePatterns;
     }
@@ -107,6 +108,7 @@ public class AssessmentsFilter implements Serializable, Cloneable {
      *        match the value of the <b>assessmentName</b> property of the
      *        <a>Assessment</a> data type.
      */
+
     public void setAssessmentNamePatterns(
             java.util.Collection<String> assessmentNamePatterns) {
         if (assessmentNamePatterns == null) {
@@ -139,6 +141,7 @@ public class AssessmentsFilter implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssessmentsFilter withAssessmentNamePatterns(
             String... assessmentNamePatterns) {
         if (this.assessmentNamePatterns == null) {
@@ -166,6 +169,7 @@ public class AssessmentsFilter implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssessmentsFilter withAssessmentNamePatterns(
             java.util.Collection<String> assessmentNamePatterns) {
         setAssessmentNamePatterns(assessmentNamePatterns);
@@ -184,6 +188,7 @@ public class AssessmentsFilter implements Serializable, Cloneable {
      *         <b>assessmentState</b> property of the <a>Assessment</a> data
      *         type.
      */
+
     public java.util.List<String> getAssessmentStates() {
         return assessmentStates;
     }
@@ -201,6 +206,7 @@ public class AssessmentsFilter implements Serializable, Cloneable {
      *        <b>assessmentState</b> property of the <a>Assessment</a> data
      *        type.
      */
+
     public void setAssessmentStates(
             java.util.Collection<String> assessmentStates) {
         if (assessmentStates == null) {
@@ -233,6 +239,7 @@ public class AssessmentsFilter implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssessmentsFilter withAssessmentStates(String... assessmentStates) {
         if (this.assessmentStates == null) {
             setAssessmentStates(new java.util.ArrayList<String>(
@@ -259,6 +266,7 @@ public class AssessmentsFilter implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssessmentsFilter withAssessmentStates(
             java.util.Collection<String> assessmentStates) {
         setAssessmentStates(assessmentStates);
@@ -277,6 +285,7 @@ public class AssessmentsFilter implements Serializable, Cloneable {
      *        type property must be the exact match of the value of the
      *        <b>dataCollected</b> property of the <a>Assessment</a> data type.
      */
+
     public void setDataCollected(Boolean dataCollected) {
         this.dataCollected = dataCollected;
     }
@@ -292,6 +301,7 @@ public class AssessmentsFilter implements Serializable, Cloneable {
      *         type property must be the exact match of the value of the
      *         <b>dataCollected</b> property of the <a>Assessment</a> data type.
      */
+
     public Boolean getDataCollected() {
         return this.dataCollected;
     }
@@ -310,6 +320,7 @@ public class AssessmentsFilter implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssessmentsFilter withDataCollected(Boolean dataCollected) {
         setDataCollected(dataCollected);
         return this;
@@ -326,6 +337,7 @@ public class AssessmentsFilter implements Serializable, Cloneable {
      *         type property must be the exact match of the value of the
      *         <b>dataCollected</b> property of the <a>Assessment</a> data type.
      */
+
     public Boolean isDataCollected() {
         return this.dataCollected;
     }
@@ -344,6 +356,7 @@ public class AssessmentsFilter implements Serializable, Cloneable {
      *        specified minimum and maximum values of the <b>startTime</b>
      *        property of the <a>Assessment</a> data type.
      */
+
     public void setStartTimeRange(TimestampRange startTimeRange) {
         this.startTimeRange = startTimeRange;
     }
@@ -361,6 +374,7 @@ public class AssessmentsFilter implements Serializable, Cloneable {
      *         specified minimum and maximum values of the <b>startTime</b>
      *         property of the <a>Assessment</a> data type.
      */
+
     public TimestampRange getStartTimeRange() {
         return this.startTimeRange;
     }
@@ -381,6 +395,7 @@ public class AssessmentsFilter implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssessmentsFilter withStartTimeRange(TimestampRange startTimeRange) {
         setStartTimeRange(startTimeRange);
         return this;
@@ -400,6 +415,7 @@ public class AssessmentsFilter implements Serializable, Cloneable {
      *        specified minimum and maximum values of the <b>endTime</b>
      *        property of the <a>Assessment</a> data type.
      */
+
     public void setEndTimeRange(TimestampRange endTimeRange) {
         this.endTimeRange = endTimeRange;
     }
@@ -417,6 +433,7 @@ public class AssessmentsFilter implements Serializable, Cloneable {
      *         specified minimum and maximum values of the <b>endTime</b>
      *         property of the <a>Assessment</a> data type.
      */
+
     public TimestampRange getEndTimeRange() {
         return this.endTimeRange;
     }
@@ -437,6 +454,7 @@ public class AssessmentsFilter implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssessmentsFilter withEndTimeRange(TimestampRange endTimeRange) {
         setEndTimeRange(endTimeRange);
         return this;
@@ -457,6 +475,7 @@ public class AssessmentsFilter implements Serializable, Cloneable {
      *        <b>durationInSeconds</b> property of the <a>Assessment</a> data
      *        type.
      */
+
     public void setDurationRange(DurationRange durationRange) {
         this.durationRange = durationRange;
     }
@@ -475,6 +494,7 @@ public class AssessmentsFilter implements Serializable, Cloneable {
      *         <b>durationInSeconds</b> property of the <a>Assessment</a> data
      *         type.
      */
+
     public DurationRange getDurationRange() {
         return this.durationRange;
     }
@@ -496,6 +516,7 @@ public class AssessmentsFilter implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssessmentsFilter withDurationRange(DurationRange durationRange) {
         setDurationRange(durationRange);
         return this;

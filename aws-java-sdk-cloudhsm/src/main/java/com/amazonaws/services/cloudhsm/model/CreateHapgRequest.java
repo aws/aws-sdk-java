@@ -42,6 +42,7 @@ public class CreateHapgRequest extends AmazonWebServiceRequest implements
      * @param label
      *        The label of the new high-availability partition group.
      */
+
     public void setLabel(String label) {
         this.label = label;
     }
@@ -53,6 +54,7 @@ public class CreateHapgRequest extends AmazonWebServiceRequest implements
      * 
      * @return The label of the new high-availability partition group.
      */
+
     public String getLabel() {
         return this.label;
     }
@@ -67,6 +69,7 @@ public class CreateHapgRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateHapgRequest withLabel(String label) {
         setLabel(label);
         return this;

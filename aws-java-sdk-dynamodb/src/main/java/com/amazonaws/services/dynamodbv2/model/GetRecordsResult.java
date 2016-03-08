@@ -50,6 +50,7 @@ public class GetRecordsResult implements Serializable, Cloneable {
      * @return The stream records from the shard, which were retrieved using the
      *         shard iterator.
      */
+
     public java.util.List<Record> getRecords() {
         return records;
     }
@@ -64,6 +65,7 @@ public class GetRecordsResult implements Serializable, Cloneable {
      *        The stream records from the shard, which were retrieved using the
      *        shard iterator.
      */
+
     public void setRecords(java.util.Collection<Record> records) {
         if (records == null) {
             this.records = null;
@@ -91,6 +93,7 @@ public class GetRecordsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetRecordsResult withRecords(Record... records) {
         if (this.records == null) {
             setRecords(new java.util.ArrayList<Record>(records.length));
@@ -113,6 +116,7 @@ public class GetRecordsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetRecordsResult withRecords(java.util.Collection<Record> records) {
         setRecords(records);
         return this;
@@ -131,6 +135,7 @@ public class GetRecordsResult implements Serializable, Cloneable {
      *        been closed and the requested iterator will not return any more
      *        data.
      */
+
     public void setNextShardIterator(String nextShardIterator) {
         this.nextShardIterator = nextShardIterator;
     }
@@ -147,6 +152,7 @@ public class GetRecordsResult implements Serializable, Cloneable {
      *         has been closed and the requested iterator will not return any
      *         more data.
      */
+
     public String getNextShardIterator() {
         return this.nextShardIterator;
     }
@@ -166,6 +172,7 @@ public class GetRecordsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetRecordsResult withNextShardIterator(String nextShardIterator) {
         setNextShardIterator(nextShardIterator);
         return this;

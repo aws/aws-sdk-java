@@ -233,6 +233,7 @@ public class Pipeline implements Serializable, Cloneable {
      *        the pipeline in which you want to perform a variety of operations,
      *        such as creating a job or a preset.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -248,6 +249,7 @@ public class Pipeline implements Serializable, Cloneable {
      *         the pipeline in which you want to perform a variety of
      *         operations, such as creating a job or a preset.
      */
+
     public String getId() {
         return this.id;
     }
@@ -266,6 +268,7 @@ public class Pipeline implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Pipeline withId(String id) {
         setId(id);
         return this;
@@ -279,6 +282,7 @@ public class Pipeline implements Serializable, Cloneable {
      * @param arn
      *        The Amazon Resource Name (ARN) for the pipeline.
      */
+
     public void setArn(String arn) {
         this.arn = arn;
     }
@@ -290,6 +294,7 @@ public class Pipeline implements Serializable, Cloneable {
      * 
      * @return The Amazon Resource Name (ARN) for the pipeline.
      */
+
     public String getArn() {
         return this.arn;
     }
@@ -304,6 +309,7 @@ public class Pipeline implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Pipeline withArn(String arn) {
         setArn(arn);
         return this;
@@ -324,6 +330,7 @@ public class Pipeline implements Serializable, Cloneable {
      *        <p>
      *        Constraints: Maximum 40 characters
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -342,6 +349,7 @@ public class Pipeline implements Serializable, Cloneable {
      *         <p>
      *         Constraints: Maximum 40 characters
      */
+
     public String getName() {
         return this.name;
     }
@@ -363,6 +371,7 @@ public class Pipeline implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Pipeline withName(String name) {
         setName(name);
         return this;
@@ -384,6 +393,7 @@ public class Pipeline implements Serializable, Cloneable {
      *        <li><code>Paused</code>: The pipeline is not currently processing
      *        jobs.</li>
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -403,6 +413,7 @@ public class Pipeline implements Serializable, Cloneable {
      *         <li><code>Paused</code>: The pipeline is not currently processing
      *         jobs.</li>
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -425,6 +436,7 @@ public class Pipeline implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Pipeline withStatus(String status) {
         setStatus(status);
         return this;
@@ -442,6 +454,7 @@ public class Pipeline implements Serializable, Cloneable {
      *        files for transcoding and the graphics files, if any, that you
      *        want to use for watermarks.
      */
+
     public void setInputBucket(String inputBucket) {
         this.inputBucket = inputBucket;
     }
@@ -457,6 +470,7 @@ public class Pipeline implements Serializable, Cloneable {
      *         files for transcoding and the graphics files, if any, that you
      *         want to use for watermarks.
      */
+
     public String getInputBucket() {
         return this.inputBucket;
     }
@@ -475,6 +489,7 @@ public class Pipeline implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Pipeline withInputBucket(String inputBucket) {
         setInputBucket(inputBucket);
         return this;
@@ -494,6 +509,7 @@ public class Pipeline implements Serializable, Cloneable {
      *        this value, or you specify both <code>ContentConfig</code> and
      *        <code>ThumbnailConfig</code>.
      */
+
     public void setOutputBucket(String outputBucket) {
         this.outputBucket = outputBucket;
     }
@@ -511,6 +527,7 @@ public class Pipeline implements Serializable, Cloneable {
      *         this value, or you specify both <code>ContentConfig</code> and
      *         <code>ThumbnailConfig</code>.
      */
+
     public String getOutputBucket() {
         return this.outputBucket;
     }
@@ -531,6 +548,7 @@ public class Pipeline implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Pipeline withOutputBucket(String outputBucket) {
         setOutputBucket(outputBucket);
         return this;
@@ -546,6 +564,7 @@ public class Pipeline implements Serializable, Cloneable {
      *        The IAM Amazon Resource Name (ARN) for the role that Elastic
      *        Transcoder uses to transcode jobs for this pipeline.
      */
+
     public void setRole(String role) {
         this.role = role;
     }
@@ -559,6 +578,7 @@ public class Pipeline implements Serializable, Cloneable {
      * @return The IAM Amazon Resource Name (ARN) for the role that Elastic
      *         Transcoder uses to transcode jobs for this pipeline.
      */
+
     public String getRole() {
         return this.role;
     }
@@ -575,6 +595,7 @@ public class Pipeline implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Pipeline withRole(String role) {
         setRole(role);
         return this;
@@ -607,6 +628,7 @@ public class Pipeline implements Serializable, Cloneable {
      *        using an <code>Encryption:Mode</code> of <code>AES-PKCS7</code>,
      *        <code>AES-CTR</code>, or <code>AES-GCM</code>.
      */
+
     public void setAwsKmsKeyArn(String awsKmsKeyArn) {
         this.awsKmsKeyArn = awsKmsKeyArn;
     }
@@ -638,6 +660,7 @@ public class Pipeline implements Serializable, Cloneable {
      *         <code>AES-PKCS7</code>, <code>AES-CTR</code>, or
      *         <code>AES-GCM</code>.
      */
+
     public String getAwsKmsKeyArn() {
         return this.awsKmsKeyArn;
     }
@@ -671,6 +694,7 @@ public class Pipeline implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Pipeline withAwsKmsKeyArn(String awsKmsKeyArn) {
         setAwsKmsKeyArn(awsKmsKeyArn);
         return this;
@@ -712,6 +736,7 @@ public class Pipeline implements Serializable, Cloneable {
      *        <li><b>Error</b> (optional): The Amazon SNS topic that you want to
      *        notify when Elastic Transcoder encounters an error condition.</li>
      */
+
     public void setNotifications(Notifications notifications) {
         this.notifications = notifications;
     }
@@ -752,6 +777,7 @@ public class Pipeline implements Serializable, Cloneable {
      *         <li><b>Error</b> (optional): The Amazon SNS topic that you want
      *         to notify when Elastic Transcoder encounters an error condition.</li>
      */
+
     public Notifications getNotifications() {
         return this.notifications;
     }
@@ -794,6 +820,7 @@ public class Pipeline implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Pipeline withNotifications(Notifications notifications) {
         setNotifications(notifications);
         return this;
@@ -899,6 +926,7 @@ public class Pipeline implements Serializable, Cloneable {
      *        the video files and playlists that it stores in your Amazon S3
      *        bucket.</li>
      */
+
     public void setContentConfig(PipelineOutputConfig contentConfig) {
         this.contentConfig = contentConfig;
     }
@@ -1004,6 +1032,7 @@ public class Pipeline implements Serializable, Cloneable {
      *         the video files and playlists that it stores in your Amazon S3
      *         bucket.</li>
      */
+
     public PipelineOutputConfig getContentConfig() {
         return this.contentConfig;
     }
@@ -1110,6 +1139,7 @@ public class Pipeline implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Pipeline withContentConfig(PipelineOutputConfig contentConfig) {
         setContentConfig(contentConfig);
         return this;
@@ -1215,6 +1245,7 @@ public class Pipeline implements Serializable, Cloneable {
      *        want Elastic Transcoder to assign to the thumbnails that it stores
      *        in your Amazon S3 bucket.</li>
      */
+
     public void setThumbnailConfig(PipelineOutputConfig thumbnailConfig) {
         this.thumbnailConfig = thumbnailConfig;
     }
@@ -1319,6 +1350,7 @@ public class Pipeline implements Serializable, Cloneable {
      *         want Elastic Transcoder to assign to the thumbnails that it
      *         stores in your Amazon S3 bucket.</li>
      */
+
     public PipelineOutputConfig getThumbnailConfig() {
         return this.thumbnailConfig;
     }
@@ -1425,6 +1457,7 @@ public class Pipeline implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Pipeline withThumbnailConfig(PipelineOutputConfig thumbnailConfig) {
         setThumbnailConfig(thumbnailConfig);
         return this;

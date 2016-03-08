@@ -43,6 +43,7 @@ public class IncorrectMountTargetStateException extends AmazonServiceException {
     /**
      * @param errorCode
      */
+
     public void setErrorCode(String errorCode) {
         this.errorCode = errorCode;
     }
@@ -50,6 +51,7 @@ public class IncorrectMountTargetStateException extends AmazonServiceException {
     /**
      * @return
      */
+
     public String getErrorCode() {
         return this.errorCode;
     }
@@ -59,6 +61,7 @@ public class IncorrectMountTargetStateException extends AmazonServiceException {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public IncorrectMountTargetStateException withErrorCode(String errorCode) {
         setErrorCode(errorCode);
         return this;

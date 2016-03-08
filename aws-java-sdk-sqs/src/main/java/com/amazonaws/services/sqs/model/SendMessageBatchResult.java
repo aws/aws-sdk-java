@@ -48,6 +48,7 @@ public class SendMessageBatchResult implements Serializable, Cloneable {
      * 
      * @return A list of <a>SendMessageBatchResultEntry</a> items.
      */
+
     public java.util.List<SendMessageBatchResultEntry> getSuccessful() {
         if (successful == null) {
             successful = new com.amazonaws.internal.SdkInternalList<SendMessageBatchResultEntry>();
@@ -63,6 +64,7 @@ public class SendMessageBatchResult implements Serializable, Cloneable {
      * @param successful
      *        A list of <a>SendMessageBatchResultEntry</a> items.
      */
+
     public void setSuccessful(
             java.util.Collection<SendMessageBatchResultEntry> successful) {
         if (successful == null) {
@@ -90,6 +92,7 @@ public class SendMessageBatchResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendMessageBatchResult withSuccessful(
             SendMessageBatchResultEntry... successful) {
         if (this.successful == null) {
@@ -112,6 +115,7 @@ public class SendMessageBatchResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendMessageBatchResult withSuccessful(
             java.util.Collection<SendMessageBatchResultEntry> successful) {
         setSuccessful(successful);
@@ -127,6 +131,7 @@ public class SendMessageBatchResult implements Serializable, Cloneable {
      * @return A list of <a>BatchResultErrorEntry</a> items with the error
      *         detail about each message that could not be enqueued.
      */
+
     public java.util.List<BatchResultErrorEntry> getFailed() {
         if (failed == null) {
             failed = new com.amazonaws.internal.SdkInternalList<BatchResultErrorEntry>();
@@ -144,6 +149,7 @@ public class SendMessageBatchResult implements Serializable, Cloneable {
      *        A list of <a>BatchResultErrorEntry</a> items with the error detail
      *        about each message that could not be enqueued.
      */
+
     public void setFailed(java.util.Collection<BatchResultErrorEntry> failed) {
         if (failed == null) {
             this.failed = null;
@@ -172,6 +178,7 @@ public class SendMessageBatchResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendMessageBatchResult withFailed(BatchResultErrorEntry... failed) {
         if (this.failed == null) {
             setFailed(new com.amazonaws.internal.SdkInternalList<BatchResultErrorEntry>(
@@ -195,6 +202,7 @@ public class SendMessageBatchResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendMessageBatchResult withFailed(
             java.util.Collection<BatchResultErrorEntry> failed) {
         setFailed(failed);

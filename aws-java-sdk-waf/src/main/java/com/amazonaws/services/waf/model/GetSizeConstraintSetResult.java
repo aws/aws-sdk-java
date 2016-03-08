@@ -75,6 +75,7 @@ public class GetSizeConstraintSetResult implements Serializable, Cloneable {
      *        <li><a>FieldToMatch</a>: Contains <code>Data</code> and
      *        <code>Type</code></li>
      */
+
     public void setSizeConstraintSet(SizeConstraintSet sizeConstraintSet) {
         this.sizeConstraintSet = sizeConstraintSet;
     }
@@ -111,6 +112,7 @@ public class GetSizeConstraintSetResult implements Serializable, Cloneable {
      *         <li><a>FieldToMatch</a>: Contains <code>Data</code> and
      *         <code>Type</code></li>
      */
+
     public SizeConstraintSet getSizeConstraintSet() {
         return this.sizeConstraintSet;
     }
@@ -150,6 +152,7 @@ public class GetSizeConstraintSetResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetSizeConstraintSetResult withSizeConstraintSet(
             SizeConstraintSet sizeConstraintSet) {
         setSizeConstraintSet(sizeConstraintSet);

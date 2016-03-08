@@ -83,6 +83,7 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements
      * @param vpcId
      *        The ID of the VPC.
      */
+
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
@@ -94,6 +95,7 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ID of the VPC.
      */
+
     public String getVpcId() {
         return this.vpcId;
     }
@@ -108,6 +110,7 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateSubnetRequest withVpcId(String vpcId) {
         setVpcId(vpcId);
         return this;
@@ -123,6 +126,7 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements
      *        The network range for the subnet, in CIDR notation. For example,
      *        <code>10.0.0.0/24</code>.
      */
+
     public void setCidrBlock(String cidrBlock) {
         this.cidrBlock = cidrBlock;
     }
@@ -136,6 +140,7 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements
      * @return The network range for the subnet, in CIDR notation. For example,
      *         <code>10.0.0.0/24</code>.
      */
+
     public String getCidrBlock() {
         return this.cidrBlock;
     }
@@ -152,6 +157,7 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateSubnetRequest withCidrBlock(String cidrBlock) {
         setCidrBlock(cidrBlock);
         return this;
@@ -173,6 +179,7 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements
      *        subnet in your VPC, we may not necessarily select a different zone
      *        for each subnet.
      */
+
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
@@ -192,6 +199,7 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements
      *         subnet in your VPC, we may not necessarily select a different
      *         zone for each subnet.
      */
+
     public String getAvailabilityZone() {
         return this.availabilityZone;
     }
@@ -214,6 +222,7 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateSubnetRequest withAvailabilityZone(String availabilityZone) {
         setAvailabilityZone(availabilityZone);
         return this;

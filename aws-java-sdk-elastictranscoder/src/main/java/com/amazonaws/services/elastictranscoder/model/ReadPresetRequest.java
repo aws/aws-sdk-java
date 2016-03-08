@@ -45,6 +45,7 @@ public class ReadPresetRequest extends AmazonWebServiceRequest implements
      *        The identifier of the preset for which you want to get detailed
      *        information.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -58,6 +59,7 @@ public class ReadPresetRequest extends AmazonWebServiceRequest implements
      * @return The identifier of the preset for which you want to get detailed
      *         information.
      */
+
     public String getId() {
         return this.id;
     }
@@ -74,6 +76,7 @@ public class ReadPresetRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReadPresetRequest withId(String id) {
         setId(id);
         return this;

@@ -41,6 +41,7 @@ public class DescribeConfigurationRecorderStatusResult implements Serializable,
      * 
      * @return A list that contains status of the specified recorders.
      */
+
     public java.util.List<ConfigurationRecorderStatus> getConfigurationRecordersStatus() {
         if (configurationRecordersStatus == null) {
             configurationRecordersStatus = new com.amazonaws.internal.SdkInternalList<ConfigurationRecorderStatus>();
@@ -56,6 +57,7 @@ public class DescribeConfigurationRecorderStatusResult implements Serializable,
      * @param configurationRecordersStatus
      *        A list that contains status of the specified recorders.
      */
+
     public void setConfigurationRecordersStatus(
             java.util.Collection<ConfigurationRecorderStatus> configurationRecordersStatus) {
         if (configurationRecordersStatus == null) {
@@ -83,6 +85,7 @@ public class DescribeConfigurationRecorderStatusResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeConfigurationRecorderStatusResult withConfigurationRecordersStatus(
             ConfigurationRecorderStatus... configurationRecordersStatus) {
         if (this.configurationRecordersStatus == null) {
@@ -105,6 +108,7 @@ public class DescribeConfigurationRecorderStatusResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeConfigurationRecorderStatusResult withConfigurationRecordersStatus(
             java.util.Collection<ConfigurationRecorderStatus> configurationRecordersStatus) {
         setConfigurationRecordersStatus(configurationRecordersStatus);

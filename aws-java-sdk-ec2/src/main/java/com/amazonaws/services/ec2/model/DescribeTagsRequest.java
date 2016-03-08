@@ -195,6 +195,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements
      *         </p>
      *         </li>
      */
+
     public java.util.List<Filter> getFilters() {
         if (filters == null) {
             filters = new com.amazonaws.internal.SdkInternalList<Filter>();
@@ -269,6 +270,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements
      *        </p>
      *        </li>
      */
+
     public void setFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
             this.filters = null;
@@ -354,6 +356,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTagsRequest withFilters(Filter... filters) {
         if (this.filters == null) {
             setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(
@@ -434,6 +437,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTagsRequest withFilters(java.util.Collection<Filter> filters) {
         setFilters(filters);
         return this;
@@ -456,6 +460,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements
      *        1000; if <code>MaxResults</code> is given a value larger than
      *        1000, only 1000 results are returned.
      */
+
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
     }
@@ -476,6 +481,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements
      *         1000; if <code>MaxResults</code> is given a value larger than
      *         1000, only 1000 results are returned.
      */
+
     public Integer getMaxResults() {
         return this.maxResults;
     }
@@ -499,6 +505,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTagsRequest withMaxResults(Integer maxResults) {
         setMaxResults(maxResults);
         return this;
@@ -512,6 +519,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements
      * @param nextToken
      *        The token to retrieve the next page of results.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -523,6 +531,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements
      * 
      * @return The token to retrieve the next page of results.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -537,6 +546,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTagsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

@@ -38,6 +38,7 @@ public class DescribeScalingProcessTypesResult implements Serializable,
      * 
      * @return The names of the process types.
      */
+
     public java.util.List<ProcessType> getProcesses() {
         if (processes == null) {
             processes = new com.amazonaws.internal.SdkInternalList<ProcessType>();
@@ -53,6 +54,7 @@ public class DescribeScalingProcessTypesResult implements Serializable,
      * @param processes
      *        The names of the process types.
      */
+
     public void setProcesses(java.util.Collection<ProcessType> processes) {
         if (processes == null) {
             this.processes = null;
@@ -79,6 +81,7 @@ public class DescribeScalingProcessTypesResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeScalingProcessTypesResult withProcesses(
             ProcessType... processes) {
         if (this.processes == null) {
@@ -101,6 +104,7 @@ public class DescribeScalingProcessTypesResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeScalingProcessTypesResult withProcesses(
             java.util.Collection<ProcessType> processes) {
         setProcesses(processes);

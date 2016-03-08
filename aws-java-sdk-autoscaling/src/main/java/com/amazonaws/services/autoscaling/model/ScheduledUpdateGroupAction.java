@@ -101,6 +101,7 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
      * @param autoScalingGroupName
      *        The name of the group.
      */
+
     public void setAutoScalingGroupName(String autoScalingGroupName) {
         this.autoScalingGroupName = autoScalingGroupName;
     }
@@ -112,6 +113,7 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
      * 
      * @return The name of the group.
      */
+
     public String getAutoScalingGroupName() {
         return this.autoScalingGroupName;
     }
@@ -126,6 +128,7 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledUpdateGroupAction withAutoScalingGroupName(
             String autoScalingGroupName) {
         setAutoScalingGroupName(autoScalingGroupName);
@@ -140,6 +143,7 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
      * @param scheduledActionName
      *        The name of the scheduled action.
      */
+
     public void setScheduledActionName(String scheduledActionName) {
         this.scheduledActionName = scheduledActionName;
     }
@@ -151,6 +155,7 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
      * 
      * @return The name of the scheduled action.
      */
+
     public String getScheduledActionName() {
         return this.scheduledActionName;
     }
@@ -165,6 +170,7 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledUpdateGroupAction withScheduledActionName(
             String scheduledActionName) {
         setScheduledActionName(scheduledActionName);
@@ -179,6 +185,7 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
      * @param scheduledActionARN
      *        The Amazon Resource Name (ARN) of the scheduled action.
      */
+
     public void setScheduledActionARN(String scheduledActionARN) {
         this.scheduledActionARN = scheduledActionARN;
     }
@@ -190,6 +197,7 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
      * 
      * @return The Amazon Resource Name (ARN) of the scheduled action.
      */
+
     public String getScheduledActionARN() {
         return this.scheduledActionARN;
     }
@@ -204,6 +212,7 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledUpdateGroupAction withScheduledActionARN(
             String scheduledActionARN) {
         setScheduledActionARN(scheduledActionARN);
@@ -218,6 +227,7 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
      * @param time
      *        This parameter is deprecated; use <code>StartTime</code> instead.
      */
+
     public void setTime(java.util.Date time) {
         this.time = time;
     }
@@ -229,6 +239,7 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
      * 
      * @return This parameter is deprecated; use <code>StartTime</code> instead.
      */
+
     public java.util.Date getTime() {
         return this.time;
     }
@@ -243,6 +254,7 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledUpdateGroupAction withTime(java.util.Date time) {
         setTime(time);
         return this;
@@ -267,6 +279,7 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
      *        with <code>Recurrence</code>, they form the boundaries of when the
      *        recurring action will start and stop.
      */
+
     public void setStartTime(java.util.Date startTime) {
         this.startTime = startTime;
     }
@@ -289,6 +302,7 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
      *         specified with <code>Recurrence</code>, they form the boundaries
      *         of when the recurring action will start and stop.
      */
+
     public java.util.Date getStartTime() {
         return this.startTime;
     }
@@ -314,6 +328,7 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledUpdateGroupAction withStartTime(java.util.Date startTime) {
         setStartTime(startTime);
         return this;
@@ -329,6 +344,7 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
      *        The date and time that the action is scheduled to end. This date
      *        and time can be up to one month in the future.
      */
+
     public void setEndTime(java.util.Date endTime) {
         this.endTime = endTime;
     }
@@ -342,6 +358,7 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
      * @return The date and time that the action is scheduled to end. This date
      *         and time can be up to one month in the future.
      */
+
     public java.util.Date getEndTime() {
         return this.endTime;
     }
@@ -358,6 +375,7 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledUpdateGroupAction withEndTime(java.util.Date endTime) {
         setEndTime(endTime);
         return this;
@@ -371,6 +389,7 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
      * @param recurrence
      *        The recurring schedule for the action.
      */
+
     public void setRecurrence(String recurrence) {
         this.recurrence = recurrence;
     }
@@ -382,6 +401,7 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
      * 
      * @return The recurring schedule for the action.
      */
+
     public String getRecurrence() {
         return this.recurrence;
     }
@@ -396,6 +416,7 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledUpdateGroupAction withRecurrence(String recurrence) {
         setRecurrence(recurrence);
         return this;
@@ -409,6 +430,7 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
      * @param minSize
      *        The minimum size of the group.
      */
+
     public void setMinSize(Integer minSize) {
         this.minSize = minSize;
     }
@@ -420,6 +442,7 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
      * 
      * @return The minimum size of the group.
      */
+
     public Integer getMinSize() {
         return this.minSize;
     }
@@ -434,6 +457,7 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledUpdateGroupAction withMinSize(Integer minSize) {
         setMinSize(minSize);
         return this;
@@ -447,6 +471,7 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
      * @param maxSize
      *        The maximum size of the group.
      */
+
     public void setMaxSize(Integer maxSize) {
         this.maxSize = maxSize;
     }
@@ -458,6 +483,7 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
      * 
      * @return The maximum size of the group.
      */
+
     public Integer getMaxSize() {
         return this.maxSize;
     }
@@ -472,6 +498,7 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledUpdateGroupAction withMaxSize(Integer maxSize) {
         setMaxSize(maxSize);
         return this;
@@ -485,6 +512,7 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
      * @param desiredCapacity
      *        The number of instances you prefer to maintain in the group.
      */
+
     public void setDesiredCapacity(Integer desiredCapacity) {
         this.desiredCapacity = desiredCapacity;
     }
@@ -496,6 +524,7 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
      * 
      * @return The number of instances you prefer to maintain in the group.
      */
+
     public Integer getDesiredCapacity() {
         return this.desiredCapacity;
     }
@@ -510,6 +539,7 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledUpdateGroupAction withDesiredCapacity(
             Integer desiredCapacity) {
         setDesiredCapacity(desiredCapacity);

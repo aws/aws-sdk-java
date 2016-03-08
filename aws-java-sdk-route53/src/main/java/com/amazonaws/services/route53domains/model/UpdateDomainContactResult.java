@@ -69,6 +69,7 @@ public class UpdateDomainContactResult implements Serializable, Cloneable {
      *        <p>
      *        Constraints: Maximum 255 characters.
      */
+
     public void setOperationId(String operationId) {
         this.operationId = operationId;
     }
@@ -99,6 +100,7 @@ public class UpdateDomainContactResult implements Serializable, Cloneable {
      *         <p>
      *         Constraints: Maximum 255 characters.
      */
+
     public String getOperationId() {
         return this.operationId;
     }
@@ -132,6 +134,7 @@ public class UpdateDomainContactResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateDomainContactResult withOperationId(String operationId) {
         setOperationId(operationId);
         return this;

@@ -42,6 +42,7 @@ public class DisableTopicRuleRequest extends AmazonWebServiceRequest implements
      * @param ruleName
      *        The name of the rule to disable.
      */
+
     public void setRuleName(String ruleName) {
         this.ruleName = ruleName;
     }
@@ -53,6 +54,7 @@ public class DisableTopicRuleRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the rule to disable.
      */
+
     public String getRuleName() {
         return this.ruleName;
     }
@@ -67,6 +69,7 @@ public class DisableTopicRuleRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DisableTopicRuleRequest withRuleName(String ruleName) {
         setRuleName(ruleName);
         return this;

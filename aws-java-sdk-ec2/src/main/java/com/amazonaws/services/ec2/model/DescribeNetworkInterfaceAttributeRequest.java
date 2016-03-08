@@ -49,6 +49,7 @@ public class DescribeNetworkInterfaceAttributeRequest extends
      * @param networkInterfaceId
      *        The ID of the network interface.
      */
+
     public void setNetworkInterfaceId(String networkInterfaceId) {
         this.networkInterfaceId = networkInterfaceId;
     }
@@ -60,6 +61,7 @@ public class DescribeNetworkInterfaceAttributeRequest extends
      * 
      * @return The ID of the network interface.
      */
+
     public String getNetworkInterfaceId() {
         return this.networkInterfaceId;
     }
@@ -74,6 +76,7 @@ public class DescribeNetworkInterfaceAttributeRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeNetworkInterfaceAttributeRequest withNetworkInterfaceId(
             String networkInterfaceId) {
         setNetworkInterfaceId(networkInterfaceId);
@@ -89,6 +92,7 @@ public class DescribeNetworkInterfaceAttributeRequest extends
      *        The attribute of the network interface.
      * @see NetworkInterfaceAttribute
      */
+
     public void setAttribute(String attribute) {
         this.attribute = attribute;
     }
@@ -101,6 +105,7 @@ public class DescribeNetworkInterfaceAttributeRequest extends
      * @return The attribute of the network interface.
      * @see NetworkInterfaceAttribute
      */
+
     public String getAttribute() {
         return this.attribute;
     }
@@ -116,6 +121,7 @@ public class DescribeNetworkInterfaceAttributeRequest extends
      *         chained together.
      * @see NetworkInterfaceAttribute
      */
+
     public DescribeNetworkInterfaceAttributeRequest withAttribute(
             String attribute) {
         setAttribute(attribute);
@@ -133,6 +139,7 @@ public class DescribeNetworkInterfaceAttributeRequest extends
      *         chained together.
      * @see NetworkInterfaceAttribute
      */
+
     public void setAttribute(NetworkInterfaceAttribute attribute) {
         this.attribute = attribute.toString();
     }
@@ -148,6 +155,7 @@ public class DescribeNetworkInterfaceAttributeRequest extends
      *         chained together.
      * @see NetworkInterfaceAttribute
      */
+
     public DescribeNetworkInterfaceAttributeRequest withAttribute(
             NetworkInterfaceAttribute attribute) {
         setAttribute(attribute);

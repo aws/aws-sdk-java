@@ -54,6 +54,7 @@ public class SeverityLevel implements Serializable, Cloneable {
      *        values correspond to response times returned to the caller in
      *        <code>SeverityLevel.name</code>.
      */
+
     public void setCode(String code) {
         this.code = code;
     }
@@ -69,6 +70,7 @@ public class SeverityLevel implements Serializable, Cloneable {
      *         values correspond to response times returned to the caller in
      *         <code>SeverityLevel.name</code>.
      */
+
     public String getCode() {
         return this.code;
     }
@@ -87,6 +89,7 @@ public class SeverityLevel implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SeverityLevel withCode(String code) {
         setCode(code);
         return this;
@@ -102,6 +105,7 @@ public class SeverityLevel implements Serializable, Cloneable {
      *        The name of the severity level that corresponds to the severity
      *        level code.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -115,6 +119,7 @@ public class SeverityLevel implements Serializable, Cloneable {
      * @return The name of the severity level that corresponds to the severity
      *         level code.
      */
+
     public String getName() {
         return this.name;
     }
@@ -131,6 +136,7 @@ public class SeverityLevel implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SeverityLevel withName(String name) {
         setName(name);
         return this;

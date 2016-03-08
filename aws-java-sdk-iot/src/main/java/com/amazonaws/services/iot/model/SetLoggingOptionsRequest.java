@@ -42,6 +42,7 @@ public class SetLoggingOptionsRequest extends AmazonWebServiceRequest implements
      * @param loggingOptionsPayload
      *        The logging options payload.
      */
+
     public void setLoggingOptionsPayload(
             LoggingOptionsPayload loggingOptionsPayload) {
         this.loggingOptionsPayload = loggingOptionsPayload;
@@ -54,6 +55,7 @@ public class SetLoggingOptionsRequest extends AmazonWebServiceRequest implements
      * 
      * @return The logging options payload.
      */
+
     public LoggingOptionsPayload getLoggingOptionsPayload() {
         return this.loggingOptionsPayload;
     }
@@ -68,6 +70,7 @@ public class SetLoggingOptionsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetLoggingOptionsRequest withLoggingOptionsPayload(
             LoggingOptionsPayload loggingOptionsPayload) {
         setLoggingOptionsPayload(loggingOptionsPayload);

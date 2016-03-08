@@ -69,6 +69,7 @@ public class PolicyAttribute implements Serializable, Cloneable {
      * @param attributeName
      *        The name of the attribute.
      */
+
     public void setAttributeName(String attributeName) {
         this.attributeName = attributeName;
     }
@@ -80,6 +81,7 @@ public class PolicyAttribute implements Serializable, Cloneable {
      * 
      * @return The name of the attribute.
      */
+
     public String getAttributeName() {
         return this.attributeName;
     }
@@ -94,6 +96,7 @@ public class PolicyAttribute implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PolicyAttribute withAttributeName(String attributeName) {
         setAttributeName(attributeName);
         return this;
@@ -107,6 +110,7 @@ public class PolicyAttribute implements Serializable, Cloneable {
      * @param attributeValue
      *        The value of the attribute.
      */
+
     public void setAttributeValue(String attributeValue) {
         this.attributeValue = attributeValue;
     }
@@ -118,6 +122,7 @@ public class PolicyAttribute implements Serializable, Cloneable {
      * 
      * @return The value of the attribute.
      */
+
     public String getAttributeValue() {
         return this.attributeValue;
     }
@@ -132,6 +137,7 @@ public class PolicyAttribute implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PolicyAttribute withAttributeValue(String attributeValue) {
         setAttributeValue(attributeValue);
         return this;

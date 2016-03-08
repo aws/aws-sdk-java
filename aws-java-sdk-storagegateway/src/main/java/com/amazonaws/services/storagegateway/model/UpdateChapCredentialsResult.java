@@ -50,6 +50,7 @@ public class UpdateChapCredentialsResult implements Serializable, Cloneable {
      *        The Amazon Resource Name (ARN) of the target. This is the same
      *        target specified in the request.
      */
+
     public void setTargetARN(String targetARN) {
         this.targetARN = targetARN;
     }
@@ -63,6 +64,7 @@ public class UpdateChapCredentialsResult implements Serializable, Cloneable {
      * @return The Amazon Resource Name (ARN) of the target. This is the same
      *         target specified in the request.
      */
+
     public String getTargetARN() {
         return this.targetARN;
     }
@@ -79,6 +81,7 @@ public class UpdateChapCredentialsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateChapCredentialsResult withTargetARN(String targetARN) {
         setTargetARN(targetARN);
         return this;
@@ -94,6 +97,7 @@ public class UpdateChapCredentialsResult implements Serializable, Cloneable {
      *        The iSCSI initiator that connects to the target. This is the same
      *        initiator name specified in the request.
      */
+
     public void setInitiatorName(String initiatorName) {
         this.initiatorName = initiatorName;
     }
@@ -107,6 +111,7 @@ public class UpdateChapCredentialsResult implements Serializable, Cloneable {
      * @return The iSCSI initiator that connects to the target. This is the same
      *         initiator name specified in the request.
      */
+
     public String getInitiatorName() {
         return this.initiatorName;
     }
@@ -123,6 +128,7 @@ public class UpdateChapCredentialsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateChapCredentialsResult withInitiatorName(String initiatorName) {
         setInitiatorName(initiatorName);
         return this;

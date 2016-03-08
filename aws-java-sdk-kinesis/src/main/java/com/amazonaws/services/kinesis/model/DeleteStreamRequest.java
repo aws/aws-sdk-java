@@ -42,6 +42,7 @@ public class DeleteStreamRequest extends AmazonWebServiceRequest implements
      * @param streamName
      *        The name of the stream to delete.
      */
+
     public void setStreamName(String streamName) {
         this.streamName = streamName;
     }
@@ -53,6 +54,7 @@ public class DeleteStreamRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the stream to delete.
      */
+
     public String getStreamName() {
         return this.streamName;
     }
@@ -67,6 +69,7 @@ public class DeleteStreamRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteStreamRequest withStreamName(String streamName) {
         setStreamName(streamName);
         return this;

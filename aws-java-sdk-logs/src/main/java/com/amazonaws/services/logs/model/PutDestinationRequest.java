@@ -53,6 +53,7 @@ public class PutDestinationRequest extends AmazonWebServiceRequest implements
      * @param destinationName
      *        A name for the destination.
      */
+
     public void setDestinationName(String destinationName) {
         this.destinationName = destinationName;
     }
@@ -64,6 +65,7 @@ public class PutDestinationRequest extends AmazonWebServiceRequest implements
      * 
      * @return A name for the destination.
      */
+
     public String getDestinationName() {
         return this.destinationName;
     }
@@ -78,6 +80,7 @@ public class PutDestinationRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutDestinationRequest withDestinationName(String destinationName) {
         setDestinationName(destinationName);
         return this;
@@ -92,6 +95,7 @@ public class PutDestinationRequest extends AmazonWebServiceRequest implements
      *        The ARN of an Amazon Kinesis stream to deliver matching log events
      *        to.
      */
+
     public void setTargetArn(String targetArn) {
         this.targetArn = targetArn;
     }
@@ -104,6 +108,7 @@ public class PutDestinationRequest extends AmazonWebServiceRequest implements
      * @return The ARN of an Amazon Kinesis stream to deliver matching log
      *         events to.
      */
+
     public String getTargetArn() {
         return this.targetArn;
     }
@@ -119,6 +124,7 @@ public class PutDestinationRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutDestinationRequest withTargetArn(String targetArn) {
         setTargetArn(targetArn);
         return this;
@@ -134,6 +140,7 @@ public class PutDestinationRequest extends AmazonWebServiceRequest implements
      *        The ARN of an IAM role that grants CloudWatch Logs permissions to
      *        do Amazon Kinesis PutRecord requests on the desitnation stream.
      */
+
     public void setRoleArn(String roleArn) {
         this.roleArn = roleArn;
     }
@@ -147,6 +154,7 @@ public class PutDestinationRequest extends AmazonWebServiceRequest implements
      * @return The ARN of an IAM role that grants CloudWatch Logs permissions to
      *         do Amazon Kinesis PutRecord requests on the desitnation stream.
      */
+
     public String getRoleArn() {
         return this.roleArn;
     }
@@ -163,6 +171,7 @@ public class PutDestinationRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutDestinationRequest withRoleArn(String roleArn) {
         setRoleArn(roleArn);
         return this;

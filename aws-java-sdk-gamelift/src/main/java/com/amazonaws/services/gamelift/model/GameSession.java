@@ -104,6 +104,7 @@ public class GameSession implements Serializable, Cloneable {
      * @param gameSessionId
      *        Unique identifier for a game session.
      */
+
     public void setGameSessionId(String gameSessionId) {
         this.gameSessionId = gameSessionId;
     }
@@ -115,6 +116,7 @@ public class GameSession implements Serializable, Cloneable {
      * 
      * @return Unique identifier for a game session.
      */
+
     public String getGameSessionId() {
         return this.gameSessionId;
     }
@@ -129,6 +131,7 @@ public class GameSession implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GameSession withGameSessionId(String gameSessionId) {
         setGameSessionId(gameSessionId);
         return this;
@@ -144,6 +147,7 @@ public class GameSession implements Serializable, Cloneable {
      *        Descriptive label associated with this game session. Session names
      *        do not need to be unique.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -157,6 +161,7 @@ public class GameSession implements Serializable, Cloneable {
      * @return Descriptive label associated with this game session. Session
      *         names do not need to be unique.
      */
+
     public String getName() {
         return this.name;
     }
@@ -173,6 +178,7 @@ public class GameSession implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GameSession withName(String name) {
         setName(name);
         return this;
@@ -186,6 +192,7 @@ public class GameSession implements Serializable, Cloneable {
      * @param fleetId
      *        Unique identifier for a fleet.
      */
+
     public void setFleetId(String fleetId) {
         this.fleetId = fleetId;
     }
@@ -197,6 +204,7 @@ public class GameSession implements Serializable, Cloneable {
      * 
      * @return Unique identifier for a fleet.
      */
+
     public String getFleetId() {
         return this.fleetId;
     }
@@ -211,6 +219,7 @@ public class GameSession implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GameSession withFleetId(String fleetId) {
         setFleetId(fleetId);
         return this;
@@ -226,6 +235,7 @@ public class GameSession implements Serializable, Cloneable {
      *        Time stamp indicating when this object was created. Format is an
      *        integer representing the number of seconds since epoch.
      */
+
     public void setCreationTime(java.util.Date creationTime) {
         this.creationTime = creationTime;
     }
@@ -239,6 +249,7 @@ public class GameSession implements Serializable, Cloneable {
      * @return Time stamp indicating when this object was created. Format is an
      *         integer representing the number of seconds since epoch.
      */
+
     public java.util.Date getCreationTime() {
         return this.creationTime;
     }
@@ -255,6 +266,7 @@ public class GameSession implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GameSession withCreationTime(java.util.Date creationTime) {
         setCreationTime(creationTime);
         return this;
@@ -270,6 +282,7 @@ public class GameSession implements Serializable, Cloneable {
      *        Time stamp indicating when this fleet was terminated. Format is an
      *        integer representing the number of seconds since epoch.
      */
+
     public void setTerminationTime(java.util.Date terminationTime) {
         this.terminationTime = terminationTime;
     }
@@ -283,6 +296,7 @@ public class GameSession implements Serializable, Cloneable {
      * @return Time stamp indicating when this fleet was terminated. Format is
      *         an integer representing the number of seconds since epoch.
      */
+
     public java.util.Date getTerminationTime() {
         return this.terminationTime;
     }
@@ -299,6 +313,7 @@ public class GameSession implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GameSession withTerminationTime(java.util.Date terminationTime) {
         setTerminationTime(terminationTime);
         return this;
@@ -312,6 +327,7 @@ public class GameSession implements Serializable, Cloneable {
      * @param currentPlayerSessionCount
      *        Number of players currently in the game session.
      */
+
     public void setCurrentPlayerSessionCount(Integer currentPlayerSessionCount) {
         this.currentPlayerSessionCount = currentPlayerSessionCount;
     }
@@ -323,6 +339,7 @@ public class GameSession implements Serializable, Cloneable {
      * 
      * @return Number of players currently in the game session.
      */
+
     public Integer getCurrentPlayerSessionCount() {
         return this.currentPlayerSessionCount;
     }
@@ -337,6 +354,7 @@ public class GameSession implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GameSession withCurrentPlayerSessionCount(
             Integer currentPlayerSessionCount) {
         setCurrentPlayerSessionCount(currentPlayerSessionCount);
@@ -351,6 +369,7 @@ public class GameSession implements Serializable, Cloneable {
      * @param maximumPlayerSessionCount
      *        Maximum number of players allowed in the game session.
      */
+
     public void setMaximumPlayerSessionCount(Integer maximumPlayerSessionCount) {
         this.maximumPlayerSessionCount = maximumPlayerSessionCount;
     }
@@ -362,6 +381,7 @@ public class GameSession implements Serializable, Cloneable {
      * 
      * @return Maximum number of players allowed in the game session.
      */
+
     public Integer getMaximumPlayerSessionCount() {
         return this.maximumPlayerSessionCount;
     }
@@ -376,6 +396,7 @@ public class GameSession implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GameSession withMaximumPlayerSessionCount(
             Integer maximumPlayerSessionCount) {
         setMaximumPlayerSessionCount(maximumPlayerSessionCount);
@@ -393,6 +414,7 @@ public class GameSession implements Serializable, Cloneable {
      *        ACTIVE state to have player sessions.
      * @see GameSessionStatus
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -407,6 +429,7 @@ public class GameSession implements Serializable, Cloneable {
      *         ACTIVE state to have player sessions.
      * @see GameSessionStatus
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -424,6 +447,7 @@ public class GameSession implements Serializable, Cloneable {
      *         chained together.
      * @see GameSessionStatus
      */
+
     public GameSession withStatus(String status) {
         setStatus(status);
         return this;
@@ -442,6 +466,7 @@ public class GameSession implements Serializable, Cloneable {
      *         chained together.
      * @see GameSessionStatus
      */
+
     public void setStatus(GameSessionStatus status) {
         this.status = status.toString();
     }
@@ -459,6 +484,7 @@ public class GameSession implements Serializable, Cloneable {
      *         chained together.
      * @see GameSessionStatus
      */
+
     public GameSession withStatus(GameSessionStatus status) {
         setStatus(status);
         return this;
@@ -471,6 +497,7 @@ public class GameSession implements Serializable, Cloneable {
      * 
      * @return Set of custom properties for the game session.
      */
+
     public java.util.List<GameProperty> getGameProperties() {
         return gameProperties;
     }
@@ -483,6 +510,7 @@ public class GameSession implements Serializable, Cloneable {
      * @param gameProperties
      *        Set of custom properties for the game session.
      */
+
     public void setGameProperties(
             java.util.Collection<GameProperty> gameProperties) {
         if (gameProperties == null) {
@@ -510,6 +538,7 @@ public class GameSession implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GameSession withGameProperties(GameProperty... gameProperties) {
         if (this.gameProperties == null) {
             setGameProperties(new java.util.ArrayList<GameProperty>(
@@ -531,6 +560,7 @@ public class GameSession implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GameSession withGameProperties(
             java.util.Collection<GameProperty> gameProperties) {
         setGameProperties(gameProperties);
@@ -545,6 +575,7 @@ public class GameSession implements Serializable, Cloneable {
      * @param ipAddress
      *        IP address of the game session.
      */
+
     public void setIpAddress(String ipAddress) {
         this.ipAddress = ipAddress;
     }
@@ -556,6 +587,7 @@ public class GameSession implements Serializable, Cloneable {
      * 
      * @return IP address of the game session.
      */
+
     public String getIpAddress() {
         return this.ipAddress;
     }
@@ -570,6 +602,7 @@ public class GameSession implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GameSession withIpAddress(String ipAddress) {
         setIpAddress(ipAddress);
         return this;
@@ -585,6 +618,7 @@ public class GameSession implements Serializable, Cloneable {
      *        players.
      * @see PlayerSessionCreationPolicy
      */
+
     public void setPlayerSessionCreationPolicy(
             String playerSessionCreationPolicy) {
         this.playerSessionCreationPolicy = playerSessionCreationPolicy;
@@ -599,6 +633,7 @@ public class GameSession implements Serializable, Cloneable {
      *         players.
      * @see PlayerSessionCreationPolicy
      */
+
     public String getPlayerSessionCreationPolicy() {
         return this.playerSessionCreationPolicy;
     }
@@ -615,6 +650,7 @@ public class GameSession implements Serializable, Cloneable {
      *         chained together.
      * @see PlayerSessionCreationPolicy
      */
+
     public GameSession withPlayerSessionCreationPolicy(
             String playerSessionCreationPolicy) {
         setPlayerSessionCreationPolicy(playerSessionCreationPolicy);
@@ -633,6 +669,7 @@ public class GameSession implements Serializable, Cloneable {
      *         chained together.
      * @see PlayerSessionCreationPolicy
      */
+
     public void setPlayerSessionCreationPolicy(
             PlayerSessionCreationPolicy playerSessionCreationPolicy) {
         this.playerSessionCreationPolicy = playerSessionCreationPolicy
@@ -651,6 +688,7 @@ public class GameSession implements Serializable, Cloneable {
      *         chained together.
      * @see PlayerSessionCreationPolicy
      */
+
     public GameSession withPlayerSessionCreationPolicy(
             PlayerSessionCreationPolicy playerSessionCreationPolicy) {
         setPlayerSessionCreationPolicy(playerSessionCreationPolicy);

@@ -104,6 +104,7 @@ public class ProvisionedThroughput implements Serializable, Cloneable {
      *        >Specifying Read and Write Requirements</a> in the <i>Amazon
      *        DynamoDB Developer Guide</i>.
      */
+
     public void setReadCapacityUnits(Long readCapacityUnits) {
         this.readCapacityUnits = readCapacityUnits;
     }
@@ -125,6 +126,7 @@ public class ProvisionedThroughput implements Serializable, Cloneable {
      *         >Specifying Read and Write Requirements</a> in the <i>Amazon
      *         DynamoDB Developer Guide</i>.
      */
+
     public Long getReadCapacityUnits() {
         return this.readCapacityUnits;
     }
@@ -149,6 +151,7 @@ public class ProvisionedThroughput implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ProvisionedThroughput withReadCapacityUnits(Long readCapacityUnits) {
         setReadCapacityUnits(readCapacityUnits);
         return this;
@@ -171,6 +174,7 @@ public class ProvisionedThroughput implements Serializable, Cloneable {
      *        >Specifying Read and Write Requirements</a> in the <i>Amazon
      *        DynamoDB Developer Guide</i>.
      */
+
     public void setWriteCapacityUnits(Long writeCapacityUnits) {
         this.writeCapacityUnits = writeCapacityUnits;
     }
@@ -191,6 +195,7 @@ public class ProvisionedThroughput implements Serializable, Cloneable {
      *         >Specifying Read and Write Requirements</a> in the <i>Amazon
      *         DynamoDB Developer Guide</i>.
      */
+
     public Long getWriteCapacityUnits() {
         return this.writeCapacityUnits;
     }
@@ -214,6 +219,7 @@ public class ProvisionedThroughput implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ProvisionedThroughput withWriteCapacityUnits(Long writeCapacityUnits) {
         setWriteCapacityUnits(writeCapacityUnits);
         return this;

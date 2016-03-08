@@ -37,6 +37,7 @@ public class DescribeMaintenanceStartTimeResult implements Serializable,
     /**
      * @param gatewayARN
      */
+
     public void setGatewayARN(String gatewayARN) {
         this.gatewayARN = gatewayARN;
     }
@@ -44,6 +45,7 @@ public class DescribeMaintenanceStartTimeResult implements Serializable,
     /**
      * @return
      */
+
     public String getGatewayARN() {
         return this.gatewayARN;
     }
@@ -53,6 +55,7 @@ public class DescribeMaintenanceStartTimeResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeMaintenanceStartTimeResult withGatewayARN(String gatewayARN) {
         setGatewayARN(gatewayARN);
         return this;
@@ -61,6 +64,7 @@ public class DescribeMaintenanceStartTimeResult implements Serializable,
     /**
      * @param hourOfDay
      */
+
     public void setHourOfDay(Integer hourOfDay) {
         this.hourOfDay = hourOfDay;
     }
@@ -68,6 +72,7 @@ public class DescribeMaintenanceStartTimeResult implements Serializable,
     /**
      * @return
      */
+
     public Integer getHourOfDay() {
         return this.hourOfDay;
     }
@@ -77,6 +82,7 @@ public class DescribeMaintenanceStartTimeResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeMaintenanceStartTimeResult withHourOfDay(Integer hourOfDay) {
         setHourOfDay(hourOfDay);
         return this;
@@ -85,6 +91,7 @@ public class DescribeMaintenanceStartTimeResult implements Serializable,
     /**
      * @param minuteOfHour
      */
+
     public void setMinuteOfHour(Integer minuteOfHour) {
         this.minuteOfHour = minuteOfHour;
     }
@@ -92,6 +99,7 @@ public class DescribeMaintenanceStartTimeResult implements Serializable,
     /**
      * @return
      */
+
     public Integer getMinuteOfHour() {
         return this.minuteOfHour;
     }
@@ -101,6 +109,7 @@ public class DescribeMaintenanceStartTimeResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeMaintenanceStartTimeResult withMinuteOfHour(
             Integer minuteOfHour) {
         setMinuteOfHour(minuteOfHour);
@@ -110,6 +119,7 @@ public class DescribeMaintenanceStartTimeResult implements Serializable,
     /**
      * @param dayOfWeek
      */
+
     public void setDayOfWeek(Integer dayOfWeek) {
         this.dayOfWeek = dayOfWeek;
     }
@@ -117,6 +127,7 @@ public class DescribeMaintenanceStartTimeResult implements Serializable,
     /**
      * @return
      */
+
     public Integer getDayOfWeek() {
         return this.dayOfWeek;
     }
@@ -126,6 +137,7 @@ public class DescribeMaintenanceStartTimeResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeMaintenanceStartTimeResult withDayOfWeek(Integer dayOfWeek) {
         setDayOfWeek(dayOfWeek);
         return this;
@@ -134,6 +146,7 @@ public class DescribeMaintenanceStartTimeResult implements Serializable,
     /**
      * @param timezone
      */
+
     public void setTimezone(String timezone) {
         this.timezone = timezone;
     }
@@ -141,6 +154,7 @@ public class DescribeMaintenanceStartTimeResult implements Serializable,
     /**
      * @return
      */
+
     public String getTimezone() {
         return this.timezone;
     }
@@ -150,6 +164,7 @@ public class DescribeMaintenanceStartTimeResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeMaintenanceStartTimeResult withTimezone(String timezone) {
         setTimezone(timezone);
         return this;

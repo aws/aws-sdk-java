@@ -46,6 +46,7 @@ public class SourceSecurityGroup implements Serializable, Cloneable {
      * @param ownerAlias
      *        The owner of the security group.
      */
+
     public void setOwnerAlias(String ownerAlias) {
         this.ownerAlias = ownerAlias;
     }
@@ -57,6 +58,7 @@ public class SourceSecurityGroup implements Serializable, Cloneable {
      * 
      * @return The owner of the security group.
      */
+
     public String getOwnerAlias() {
         return this.ownerAlias;
     }
@@ -71,6 +73,7 @@ public class SourceSecurityGroup implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SourceSecurityGroup withOwnerAlias(String ownerAlias) {
         setOwnerAlias(ownerAlias);
         return this;
@@ -84,6 +87,7 @@ public class SourceSecurityGroup implements Serializable, Cloneable {
      * @param groupName
      *        The name of the security group.
      */
+
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
@@ -95,6 +99,7 @@ public class SourceSecurityGroup implements Serializable, Cloneable {
      * 
      * @return The name of the security group.
      */
+
     public String getGroupName() {
         return this.groupName;
     }
@@ -109,6 +114,7 @@ public class SourceSecurityGroup implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SourceSecurityGroup withGroupName(String groupName) {
         setGroupName(groupName);
         return this;

@@ -48,6 +48,7 @@ public class ListEndpointsByPlatformApplicationResult implements Serializable,
      * 
      * @return Endpoints returned for ListEndpointsByPlatformApplication action.
      */
+
     public java.util.List<Endpoint> getEndpoints() {
         if (endpoints == null) {
             endpoints = new com.amazonaws.internal.SdkInternalList<Endpoint>();
@@ -63,6 +64,7 @@ public class ListEndpointsByPlatformApplicationResult implements Serializable,
      * @param endpoints
      *        Endpoints returned for ListEndpointsByPlatformApplication action.
      */
+
     public void setEndpoints(java.util.Collection<Endpoint> endpoints) {
         if (endpoints == null) {
             this.endpoints = null;
@@ -89,6 +91,7 @@ public class ListEndpointsByPlatformApplicationResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListEndpointsByPlatformApplicationResult withEndpoints(
             Endpoint... endpoints) {
         if (this.endpoints == null) {
@@ -111,6 +114,7 @@ public class ListEndpointsByPlatformApplicationResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListEndpointsByPlatformApplicationResult withEndpoints(
             java.util.Collection<Endpoint> endpoints) {
         setEndpoints(endpoints);
@@ -129,6 +133,7 @@ public class ListEndpointsByPlatformApplicationResult implements Serializable,
      *        ListEndpointsByPlatformApplication action if additional records
      *        are available after the first page results.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -144,6 +149,7 @@ public class ListEndpointsByPlatformApplicationResult implements Serializable,
      *         ListEndpointsByPlatformApplication action if additional records
      *         are available after the first page results.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -162,6 +168,7 @@ public class ListEndpointsByPlatformApplicationResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListEndpointsByPlatformApplicationResult withNextToken(
             String nextToken) {
         setNextToken(nextToken);

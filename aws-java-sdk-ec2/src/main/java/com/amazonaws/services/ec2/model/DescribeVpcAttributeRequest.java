@@ -49,6 +49,7 @@ public class DescribeVpcAttributeRequest extends AmazonWebServiceRequest
      * @param vpcId
      *        The ID of the VPC.
      */
+
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
@@ -60,6 +61,7 @@ public class DescribeVpcAttributeRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the VPC.
      */
+
     public String getVpcId() {
         return this.vpcId;
     }
@@ -74,6 +76,7 @@ public class DescribeVpcAttributeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVpcAttributeRequest withVpcId(String vpcId) {
         setVpcId(vpcId);
         return this;
@@ -88,6 +91,7 @@ public class DescribeVpcAttributeRequest extends AmazonWebServiceRequest
      *        The VPC attribute.
      * @see VpcAttributeName
      */
+
     public void setAttribute(String attribute) {
         this.attribute = attribute;
     }
@@ -100,6 +104,7 @@ public class DescribeVpcAttributeRequest extends AmazonWebServiceRequest
      * @return The VPC attribute.
      * @see VpcAttributeName
      */
+
     public String getAttribute() {
         return this.attribute;
     }
@@ -115,6 +120,7 @@ public class DescribeVpcAttributeRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see VpcAttributeName
      */
+
     public DescribeVpcAttributeRequest withAttribute(String attribute) {
         setAttribute(attribute);
         return this;
@@ -131,6 +137,7 @@ public class DescribeVpcAttributeRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see VpcAttributeName
      */
+
     public void setAttribute(VpcAttributeName attribute) {
         this.attribute = attribute.toString();
     }
@@ -146,6 +153,7 @@ public class DescribeVpcAttributeRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see VpcAttributeName
      */
+
     public DescribeVpcAttributeRequest withAttribute(VpcAttributeName attribute) {
         setAttribute(attribute);
         return this;

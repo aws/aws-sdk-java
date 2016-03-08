@@ -15,24 +15,22 @@
 
 package com.amazonaws.codegen;
 
-import static com.amazonaws.codegen.AddEmptyInputShape.addEmptyInputShapes;
-import static com.amazonaws.codegen.AddMetadata.constructMetadata;
-import static com.amazonaws.codegen.AddOperations.constructOperations;
-import static com.amazonaws.codegen.RemoveUnusedShapes.removeUnusedShapes;
+import com.amazonaws.codegen.customization.CodegenCustomizationProcessor;
+import com.amazonaws.codegen.customization.processors.DefaultCustomizationProcessor;
+import com.amazonaws.codegen.internal.Utils;
+import com.amazonaws.codegen.model.config.BasicCodeGenConfig;
+import com.amazonaws.codegen.model.config.customization.CustomizationConfig;
+import com.amazonaws.codegen.model.intermediate.*;
+import com.amazonaws.codegen.model.service.ServiceModel;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
 
-import com.amazonaws.codegen.customization.CodegenCustomizationProcessor;
-import com.amazonaws.codegen.customization.processors.DefaultCustomizationProcessor;
-import com.amazonaws.codegen.model.config.BasicCodeGenConfig;
-import com.amazonaws.codegen.model.config.customization.CustomizationConfig;
-import com.amazonaws.codegen.model.intermediate.IntermediateModel;
-import com.amazonaws.codegen.model.intermediate.OperationModel;
-import com.amazonaws.codegen.model.intermediate.ServiceExamples;
-import com.amazonaws.codegen.model.intermediate.ShapeModel;
-import com.amazonaws.codegen.model.service.ServiceModel;
+import static com.amazonaws.codegen.AddEmptyInputShape.addEmptyInputShapes;
+import static com.amazonaws.codegen.AddMetadata.constructMetadata;
+import static com.amazonaws.codegen.AddOperations.constructOperations;
+import static com.amazonaws.codegen.RemoveUnusedShapes.removeUnusedShapes;
 
 /**
  * Builds an intermediate model to be used by the templates from the service model and
@@ -98,6 +96,24 @@ public class IntermediateModelBuilder {
                 fullModel.getCustomizationConfig(),
                 fullModel.getExamples());
 
+        linkMembersToShapes(trimmedModel);
+
         return trimmedModel;
+    }
+
+    /**
+     * Link the member to it's corresponding shape (if it exists).
+     *
+     * @param model
+     *         Final IntermediateModel
+     */
+    private void linkMembersToShapes(IntermediateModel model) {
+        for (Map.Entry<String, ShapeModel> entry : model.getShapes().entrySet()) {
+            if (entry.getValue().getMembers() != null) {
+                for (MemberModel member : entry.getValue().getMembers()) {
+                    member.setShape(Utils.findShapeModelByC2jNameIfExists(model, member.getC2jShape()));
+                }
+            }
+        }
     }
 }

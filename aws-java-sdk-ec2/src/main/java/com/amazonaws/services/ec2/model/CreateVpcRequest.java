@@ -85,6 +85,7 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements
      *        The network range for the VPC, in CIDR notation. For example,
      *        <code>10.0.0.0/16</code>.
      */
+
     public void setCidrBlock(String cidrBlock) {
         this.cidrBlock = cidrBlock;
     }
@@ -98,6 +99,7 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements
      * @return The network range for the VPC, in CIDR notation. For example,
      *         <code>10.0.0.0/16</code>.
      */
+
     public String getCidrBlock() {
         return this.cidrBlock;
     }
@@ -114,6 +116,7 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateVpcRequest withCidrBlock(String cidrBlock) {
         setCidrBlock(cidrBlock);
         return this;
@@ -154,6 +157,7 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements
      *        Default: <code>default</code>
      * @see Tenancy
      */
+
     public void setInstanceTenancy(String instanceTenancy) {
         this.instanceTenancy = instanceTenancy;
     }
@@ -192,6 +196,7 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements
      *         Default: <code>default</code>
      * @see Tenancy
      */
+
     public String getInstanceTenancy() {
         return this.instanceTenancy;
     }
@@ -233,6 +238,7 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see Tenancy
      */
+
     public CreateVpcRequest withInstanceTenancy(String instanceTenancy) {
         setInstanceTenancy(instanceTenancy);
         return this;
@@ -275,6 +281,7 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see Tenancy
      */
+
     public void setInstanceTenancy(Tenancy instanceTenancy) {
         this.instanceTenancy = instanceTenancy.toString();
     }
@@ -316,6 +323,7 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see Tenancy
      */
+
     public CreateVpcRequest withInstanceTenancy(Tenancy instanceTenancy) {
         setInstanceTenancy(instanceTenancy);
         return this;

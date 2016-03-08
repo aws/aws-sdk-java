@@ -92,6 +92,7 @@ public class ReservedInstancesModification implements Serializable, Cloneable {
      * @param reservedInstancesModificationId
      *        A unique ID for the Reserved Instance modification.
      */
+
     public void setReservedInstancesModificationId(
             String reservedInstancesModificationId) {
         this.reservedInstancesModificationId = reservedInstancesModificationId;
@@ -104,6 +105,7 @@ public class ReservedInstancesModification implements Serializable, Cloneable {
      * 
      * @return A unique ID for the Reserved Instance modification.
      */
+
     public String getReservedInstancesModificationId() {
         return this.reservedInstancesModificationId;
     }
@@ -118,6 +120,7 @@ public class ReservedInstancesModification implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReservedInstancesModification withReservedInstancesModificationId(
             String reservedInstancesModificationId) {
         setReservedInstancesModificationId(reservedInstancesModificationId);
@@ -131,6 +134,7 @@ public class ReservedInstancesModification implements Serializable, Cloneable {
      * 
      * @return The IDs of one or more Reserved Instances.
      */
+
     public java.util.List<ReservedInstancesId> getReservedInstancesIds() {
         if (reservedInstancesIds == null) {
             reservedInstancesIds = new com.amazonaws.internal.SdkInternalList<ReservedInstancesId>();
@@ -146,6 +150,7 @@ public class ReservedInstancesModification implements Serializable, Cloneable {
      * @param reservedInstancesIds
      *        The IDs of one or more Reserved Instances.
      */
+
     public void setReservedInstancesIds(
             java.util.Collection<ReservedInstancesId> reservedInstancesIds) {
         if (reservedInstancesIds == null) {
@@ -173,6 +178,7 @@ public class ReservedInstancesModification implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReservedInstancesModification withReservedInstancesIds(
             ReservedInstancesId... reservedInstancesIds) {
         if (this.reservedInstancesIds == null) {
@@ -195,6 +201,7 @@ public class ReservedInstancesModification implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReservedInstancesModification withReservedInstancesIds(
             java.util.Collection<ReservedInstancesId> reservedInstancesIds) {
         setReservedInstancesIds(reservedInstancesIds);
@@ -210,6 +217,7 @@ public class ReservedInstancesModification implements Serializable, Cloneable {
      * @return Contains target configurations along with their corresponding new
      *         Reserved Instance IDs.
      */
+
     public java.util.List<ReservedInstancesModificationResult> getModificationResults() {
         if (modificationResults == null) {
             modificationResults = new com.amazonaws.internal.SdkInternalList<ReservedInstancesModificationResult>();
@@ -227,6 +235,7 @@ public class ReservedInstancesModification implements Serializable, Cloneable {
      *        Contains target configurations along with their corresponding new
      *        Reserved Instance IDs.
      */
+
     public void setModificationResults(
             java.util.Collection<ReservedInstancesModificationResult> modificationResults) {
         if (modificationResults == null) {
@@ -256,6 +265,7 @@ public class ReservedInstancesModification implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReservedInstancesModification withModificationResults(
             ReservedInstancesModificationResult... modificationResults) {
         if (this.modificationResults == null) {
@@ -280,6 +290,7 @@ public class ReservedInstancesModification implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReservedInstancesModification withModificationResults(
             java.util.Collection<ReservedInstancesModificationResult> modificationResults) {
         setModificationResults(modificationResults);
@@ -294,6 +305,7 @@ public class ReservedInstancesModification implements Serializable, Cloneable {
      * @param createDate
      *        The time when the modification request was created.
      */
+
     public void setCreateDate(java.util.Date createDate) {
         this.createDate = createDate;
     }
@@ -305,6 +317,7 @@ public class ReservedInstancesModification implements Serializable, Cloneable {
      * 
      * @return The time when the modification request was created.
      */
+
     public java.util.Date getCreateDate() {
         return this.createDate;
     }
@@ -319,6 +332,7 @@ public class ReservedInstancesModification implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReservedInstancesModification withCreateDate(
             java.util.Date createDate) {
         setCreateDate(createDate);
@@ -333,6 +347,7 @@ public class ReservedInstancesModification implements Serializable, Cloneable {
      * @param updateDate
      *        The time when the modification request was last updated.
      */
+
     public void setUpdateDate(java.util.Date updateDate) {
         this.updateDate = updateDate;
     }
@@ -344,6 +359,7 @@ public class ReservedInstancesModification implements Serializable, Cloneable {
      * 
      * @return The time when the modification request was last updated.
      */
+
     public java.util.Date getUpdateDate() {
         return this.updateDate;
     }
@@ -358,6 +374,7 @@ public class ReservedInstancesModification implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReservedInstancesModification withUpdateDate(
             java.util.Date updateDate) {
         setUpdateDate(updateDate);
@@ -372,6 +389,7 @@ public class ReservedInstancesModification implements Serializable, Cloneable {
      * @param effectiveDate
      *        The time for the modification to become effective.
      */
+
     public void setEffectiveDate(java.util.Date effectiveDate) {
         this.effectiveDate = effectiveDate;
     }
@@ -383,6 +401,7 @@ public class ReservedInstancesModification implements Serializable, Cloneable {
      * 
      * @return The time for the modification to become effective.
      */
+
     public java.util.Date getEffectiveDate() {
         return this.effectiveDate;
     }
@@ -397,6 +416,7 @@ public class ReservedInstancesModification implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReservedInstancesModification withEffectiveDate(
             java.util.Date effectiveDate) {
         setEffectiveDate(effectiveDate);
@@ -411,6 +431,7 @@ public class ReservedInstancesModification implements Serializable, Cloneable {
      * @param status
      *        The status of the Reserved Instances modification request.
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -422,6 +443,7 @@ public class ReservedInstancesModification implements Serializable, Cloneable {
      * 
      * @return The status of the Reserved Instances modification request.
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -436,6 +458,7 @@ public class ReservedInstancesModification implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReservedInstancesModification withStatus(String status) {
         setStatus(status);
         return this;
@@ -449,6 +472,7 @@ public class ReservedInstancesModification implements Serializable, Cloneable {
      * @param statusMessage
      *        The reason for the status.
      */
+
     public void setStatusMessage(String statusMessage) {
         this.statusMessage = statusMessage;
     }
@@ -460,6 +484,7 @@ public class ReservedInstancesModification implements Serializable, Cloneable {
      * 
      * @return The reason for the status.
      */
+
     public String getStatusMessage() {
         return this.statusMessage;
     }
@@ -474,6 +499,7 @@ public class ReservedInstancesModification implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReservedInstancesModification withStatusMessage(String statusMessage) {
         setStatusMessage(statusMessage);
         return this;
@@ -493,6 +519,7 @@ public class ReservedInstancesModification implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html"
      *        >Ensuring Idempotency</a>.
      */
+
     public void setClientToken(String clientToken) {
         this.clientToken = clientToken;
     }
@@ -511,6 +538,7 @@ public class ReservedInstancesModification implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html"
      *         >Ensuring Idempotency</a>.
      */
+
     public String getClientToken() {
         return this.clientToken;
     }
@@ -531,6 +559,7 @@ public class ReservedInstancesModification implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReservedInstancesModification withClientToken(String clientToken) {
         setClientToken(clientToken);
         return this;

@@ -53,6 +53,7 @@ public class ListEndpointsByPlatformApplicationRequest extends
      *        PlatformApplicationArn for ListEndpointsByPlatformApplicationInput
      *        action.
      */
+
     public void setPlatformApplicationArn(String platformApplicationArn) {
         this.platformApplicationArn = platformApplicationArn;
     }
@@ -66,6 +67,7 @@ public class ListEndpointsByPlatformApplicationRequest extends
      * @return PlatformApplicationArn for
      *         ListEndpointsByPlatformApplicationInput action.
      */
+
     public String getPlatformApplicationArn() {
         return this.platformApplicationArn;
     }
@@ -82,6 +84,7 @@ public class ListEndpointsByPlatformApplicationRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListEndpointsByPlatformApplicationRequest withPlatformApplicationArn(
             String platformApplicationArn) {
         setPlatformApplicationArn(platformApplicationArn);
@@ -100,6 +103,7 @@ public class ListEndpointsByPlatformApplicationRequest extends
      *        ListEndpointsByPlatformApplication action to retrieve additional
      *        records that are available after the first page results.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -115,6 +119,7 @@ public class ListEndpointsByPlatformApplicationRequest extends
      *         ListEndpointsByPlatformApplication action to retrieve additional
      *         records that are available after the first page results.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -133,6 +138,7 @@ public class ListEndpointsByPlatformApplicationRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListEndpointsByPlatformApplicationRequest withNextToken(
             String nextToken) {
         setNextToken(nextToken);

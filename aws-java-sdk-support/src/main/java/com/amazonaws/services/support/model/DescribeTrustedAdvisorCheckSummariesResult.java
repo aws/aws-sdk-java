@@ -41,6 +41,7 @@ public class DescribeTrustedAdvisorCheckSummariesResult implements
      * 
      * @return The summary information for the requested Trusted Advisor checks.
      */
+
     public java.util.List<TrustedAdvisorCheckSummary> getSummaries() {
         if (summaries == null) {
             summaries = new com.amazonaws.internal.SdkInternalList<TrustedAdvisorCheckSummary>();
@@ -56,6 +57,7 @@ public class DescribeTrustedAdvisorCheckSummariesResult implements
      * @param summaries
      *        The summary information for the requested Trusted Advisor checks.
      */
+
     public void setSummaries(
             java.util.Collection<TrustedAdvisorCheckSummary> summaries) {
         if (summaries == null) {
@@ -83,6 +85,7 @@ public class DescribeTrustedAdvisorCheckSummariesResult implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTrustedAdvisorCheckSummariesResult withSummaries(
             TrustedAdvisorCheckSummary... summaries) {
         if (this.summaries == null) {
@@ -105,6 +108,7 @@ public class DescribeTrustedAdvisorCheckSummariesResult implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTrustedAdvisorCheckSummariesResult withSummaries(
             java.util.Collection<TrustedAdvisorCheckSummary> summaries) {
         setSummaries(summaries);

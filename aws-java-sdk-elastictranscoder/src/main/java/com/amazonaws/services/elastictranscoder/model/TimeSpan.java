@@ -65,6 +65,7 @@ public class TimeSpan implements Serializable, Cloneable {
      *        86399.999). If you don't specify a value, Elastic Transcoder
      *        starts at the beginning of the input file.
      */
+
     public void setStartTime(String startTime) {
         this.startTime = startTime;
     }
@@ -84,6 +85,7 @@ public class TimeSpan implements Serializable, Cloneable {
      *         86399.999). If you don't specify a value, Elastic Transcoder
      *         starts at the beginning of the input file.
      */
+
     public String getStartTime() {
         return this.startTime;
     }
@@ -106,6 +108,7 @@ public class TimeSpan implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TimeSpan withStartTime(String startTime) {
         setStartTime(startTime);
         return this;
@@ -134,6 +137,7 @@ public class TimeSpan implements Serializable, Cloneable {
      *        Elastic Transcoder transcodes the file and returns a warning
      *        message.
      */
+
     public void setDuration(String duration) {
         this.duration = duration;
     }
@@ -160,6 +164,7 @@ public class TimeSpan implements Serializable, Cloneable {
      *         file, Elastic Transcoder transcodes the file and returns a
      *         warning message.
      */
+
     public String getDuration() {
         return this.duration;
     }
@@ -189,6 +194,7 @@ public class TimeSpan implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TimeSpan withDuration(String duration) {
         setDuration(duration);
         return this;

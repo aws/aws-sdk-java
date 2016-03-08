@@ -32,6 +32,7 @@ public class DeleteBandwidthRateLimitRequest extends AmazonWebServiceRequest
     /**
      * @param gatewayARN
      */
+
     public void setGatewayARN(String gatewayARN) {
         this.gatewayARN = gatewayARN;
     }
@@ -39,6 +40,7 @@ public class DeleteBandwidthRateLimitRequest extends AmazonWebServiceRequest
     /**
      * @return
      */
+
     public String getGatewayARN() {
         return this.gatewayARN;
     }
@@ -48,6 +50,7 @@ public class DeleteBandwidthRateLimitRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteBandwidthRateLimitRequest withGatewayARN(String gatewayARN) {
         setGatewayARN(gatewayARN);
         return this;
@@ -56,6 +59,7 @@ public class DeleteBandwidthRateLimitRequest extends AmazonWebServiceRequest
     /**
      * @param bandwidthType
      */
+
     public void setBandwidthType(String bandwidthType) {
         this.bandwidthType = bandwidthType;
     }
@@ -63,6 +67,7 @@ public class DeleteBandwidthRateLimitRequest extends AmazonWebServiceRequest
     /**
      * @return
      */
+
     public String getBandwidthType() {
         return this.bandwidthType;
     }
@@ -72,6 +77,7 @@ public class DeleteBandwidthRateLimitRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteBandwidthRateLimitRequest withBandwidthType(
             String bandwidthType) {
         setBandwidthType(bandwidthType);

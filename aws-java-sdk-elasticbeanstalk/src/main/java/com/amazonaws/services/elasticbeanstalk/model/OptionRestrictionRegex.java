@@ -50,6 +50,7 @@ public class OptionRestrictionRegex implements Serializable, Cloneable {
      *        The regular expression pattern that a string configuration option
      *        value with this restriction must match.
      */
+
     public void setPattern(String pattern) {
         this.pattern = pattern;
     }
@@ -63,6 +64,7 @@ public class OptionRestrictionRegex implements Serializable, Cloneable {
      * @return The regular expression pattern that a string configuration option
      *         value with this restriction must match.
      */
+
     public String getPattern() {
         return this.pattern;
     }
@@ -79,6 +81,7 @@ public class OptionRestrictionRegex implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public OptionRestrictionRegex withPattern(String pattern) {
         setPattern(pattern);
         return this;
@@ -92,6 +95,7 @@ public class OptionRestrictionRegex implements Serializable, Cloneable {
      * @param label
      *        A unique name representing this regular expression.
      */
+
     public void setLabel(String label) {
         this.label = label;
     }
@@ -103,6 +107,7 @@ public class OptionRestrictionRegex implements Serializable, Cloneable {
      * 
      * @return A unique name representing this regular expression.
      */
+
     public String getLabel() {
         return this.label;
     }
@@ -117,6 +122,7 @@ public class OptionRestrictionRegex implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public OptionRestrictionRegex withLabel(String label) {
         setLabel(label);
         return this;

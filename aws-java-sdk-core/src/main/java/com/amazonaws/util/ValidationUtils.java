@@ -21,19 +21,33 @@ public class ValidationUtils {
 
     /**
      * Asserts that the given object is non-null and returns it.
-     * 
+     *
      * @param object
-     *            Object to assert on
+     *         Object to assert on
      * @param fieldName
-     *            Field name to display in exception message if null
+     *         Field name to display in exception message if null
      * @return Object if non null
-     * @throws IllegalStateException
-     *             if object was null
+     * @throws IllegalArgumentException
+     *         If object was null
      */
-    public static <T> T assertNotNull(T object, String fieldName) throws IllegalStateException {
+    public static <T> T assertNotNull(T object, String fieldName) throws IllegalArgumentException {
         if (object == null) {
             throw new IllegalArgumentException(String.format("%s cannot be null", fieldName));
         }
         return object;
+    }
+
+    /**
+     * Asserts that all of the objects are null.
+     *
+     * @throws IllegalArgumentException
+     *         if any object provided was NOT null.
+     */
+    public static void assertAllAreNull(String messageIfNull, Object... objects) throws IllegalArgumentException {
+        for (Object object : objects) {
+            if (object != null) {
+                throw new IllegalArgumentException(messageIfNull);
+            }
+        }
     }
 }

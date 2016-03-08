@@ -52,6 +52,7 @@ public class CreatePolicyVersionRequest extends AmazonWebServiceRequest
     /**
      * @param policyArn
      */
+
     public void setPolicyArn(String policyArn) {
         this.policyArn = policyArn;
     }
@@ -59,6 +60,7 @@ public class CreatePolicyVersionRequest extends AmazonWebServiceRequest
     /**
      * @return
      */
+
     public String getPolicyArn() {
         return this.policyArn;
     }
@@ -68,6 +70,7 @@ public class CreatePolicyVersionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePolicyVersionRequest withPolicyArn(String policyArn) {
         setPolicyArn(policyArn);
         return this;
@@ -81,6 +84,7 @@ public class CreatePolicyVersionRequest extends AmazonWebServiceRequest
      * @param policyDocument
      *        The policy document.
      */
+
     public void setPolicyDocument(String policyDocument) {
         this.policyDocument = policyDocument;
     }
@@ -92,6 +96,7 @@ public class CreatePolicyVersionRequest extends AmazonWebServiceRequest
      * 
      * @return The policy document.
      */
+
     public String getPolicyDocument() {
         return this.policyDocument;
     }
@@ -106,6 +111,7 @@ public class CreatePolicyVersionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePolicyVersionRequest withPolicyDocument(String policyDocument) {
         setPolicyDocument(policyDocument);
         return this;
@@ -140,6 +146,7 @@ public class CreatePolicyVersionRequest extends AmazonWebServiceRequest
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html"
      *        >Versioning for Managed Policies</a> in the <i>IAM User Guide</i>.
      */
+
     public void setSetAsDefault(Boolean setAsDefault) {
         this.setAsDefault = setAsDefault;
     }
@@ -173,6 +180,7 @@ public class CreatePolicyVersionRequest extends AmazonWebServiceRequest
      *         >Versioning for Managed Policies</a> in the <i>IAM User
      *         Guide</i>.
      */
+
     public Boolean getSetAsDefault() {
         return this.setAsDefault;
     }
@@ -208,6 +216,7 @@ public class CreatePolicyVersionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePolicyVersionRequest withSetAsDefault(Boolean setAsDefault) {
         setSetAsDefault(setAsDefault);
         return this;
@@ -242,6 +251,7 @@ public class CreatePolicyVersionRequest extends AmazonWebServiceRequest
      *         >Versioning for Managed Policies</a> in the <i>IAM User
      *         Guide</i>.
      */
+
     public Boolean isSetAsDefault() {
         return this.setAsDefault;
     }

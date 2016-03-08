@@ -41,6 +41,7 @@ public class UploadSigningCertificateResult implements Serializable, Cloneable {
      * @param certificate
      *        Information about the certificate.
      */
+
     public void setCertificate(SigningCertificate certificate) {
         this.certificate = certificate;
     }
@@ -52,6 +53,7 @@ public class UploadSigningCertificateResult implements Serializable, Cloneable {
      * 
      * @return Information about the certificate.
      */
+
     public SigningCertificate getCertificate() {
         return this.certificate;
     }
@@ -66,6 +68,7 @@ public class UploadSigningCertificateResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UploadSigningCertificateResult withCertificate(
             SigningCertificate certificate) {
         setCertificate(certificate);

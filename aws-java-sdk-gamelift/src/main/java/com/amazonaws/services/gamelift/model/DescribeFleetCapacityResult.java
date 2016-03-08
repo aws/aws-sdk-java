@@ -53,6 +53,7 @@ public class DescribeFleetCapacityResult implements Serializable, Cloneable {
      *         requested fleet ID. Leave this parameter empty to retrieve
      *         capacity information for all fleets.
      */
+
     public java.util.List<FleetCapacity> getFleetCapacity() {
         return fleetCapacity;
     }
@@ -69,6 +70,7 @@ public class DescribeFleetCapacityResult implements Serializable, Cloneable {
      *        requested fleet ID. Leave this parameter empty to retrieve
      *        capacity information for all fleets.
      */
+
     public void setFleetCapacity(
             java.util.Collection<FleetCapacity> fleetCapacity) {
         if (fleetCapacity == null) {
@@ -100,6 +102,7 @@ public class DescribeFleetCapacityResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeFleetCapacityResult withFleetCapacity(
             FleetCapacity... fleetCapacity) {
         if (this.fleetCapacity == null) {
@@ -126,6 +129,7 @@ public class DescribeFleetCapacityResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeFleetCapacityResult withFleetCapacity(
             java.util.Collection<FleetCapacity> fleetCapacity) {
         setFleetCapacity(fleetCapacity);
@@ -144,6 +148,7 @@ public class DescribeFleetCapacityResult implements Serializable, Cloneable {
      *        call to this action. If no token is returned, these results
      *        represent the end of the list.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -159,6 +164,7 @@ public class DescribeFleetCapacityResult implements Serializable, Cloneable {
      *         call to this action. If no token is returned, these results
      *         represent the end of the list.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -177,6 +183,7 @@ public class DescribeFleetCapacityResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeFleetCapacityResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

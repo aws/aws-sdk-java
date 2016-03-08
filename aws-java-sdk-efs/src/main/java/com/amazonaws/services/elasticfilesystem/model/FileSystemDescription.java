@@ -102,6 +102,7 @@ public class FileSystemDescription implements Serializable, Cloneable {
      *        was created by an IAM user, the parent account to which the user
      *        belongs is the owner.
      */
+
     public void setOwnerId(String ownerId) {
         this.ownerId = ownerId;
     }
@@ -117,6 +118,7 @@ public class FileSystemDescription implements Serializable, Cloneable {
      *         was created by an IAM user, the parent account to which the user
      *         belongs is the owner.
      */
+
     public String getOwnerId() {
         return this.ownerId;
     }
@@ -135,6 +137,7 @@ public class FileSystemDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FileSystemDescription withOwnerId(String ownerId) {
         setOwnerId(ownerId);
         return this;
@@ -148,6 +151,7 @@ public class FileSystemDescription implements Serializable, Cloneable {
      * @param creationToken
      *        Opaque string specified in the request.
      */
+
     public void setCreationToken(String creationToken) {
         this.creationToken = creationToken;
     }
@@ -159,6 +163,7 @@ public class FileSystemDescription implements Serializable, Cloneable {
      * 
      * @return Opaque string specified in the request.
      */
+
     public String getCreationToken() {
         return this.creationToken;
     }
@@ -173,6 +178,7 @@ public class FileSystemDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FileSystemDescription withCreationToken(String creationToken) {
         setCreationToken(creationToken);
         return this;
@@ -186,6 +192,7 @@ public class FileSystemDescription implements Serializable, Cloneable {
      * @param fileSystemId
      *        The file system ID assigned by Amazon EFS.
      */
+
     public void setFileSystemId(String fileSystemId) {
         this.fileSystemId = fileSystemId;
     }
@@ -197,6 +204,7 @@ public class FileSystemDescription implements Serializable, Cloneable {
      * 
      * @return The file system ID assigned by Amazon EFS.
      */
+
     public String getFileSystemId() {
         return this.fileSystemId;
     }
@@ -211,6 +219,7 @@ public class FileSystemDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FileSystemDescription withFileSystemId(String fileSystemId) {
         setFileSystemId(fileSystemId);
         return this;
@@ -226,6 +235,7 @@ public class FileSystemDescription implements Serializable, Cloneable {
      *        The time at which the file system was created, in seconds, since
      *        1970-01-01T00:00:00Z.
      */
+
     public void setCreationTime(java.util.Date creationTime) {
         this.creationTime = creationTime;
     }
@@ -239,6 +249,7 @@ public class FileSystemDescription implements Serializable, Cloneable {
      * @return The time at which the file system was created, in seconds, since
      *         1970-01-01T00:00:00Z.
      */
+
     public java.util.Date getCreationTime() {
         return this.creationTime;
     }
@@ -255,6 +266,7 @@ public class FileSystemDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FileSystemDescription withCreationTime(java.util.Date creationTime) {
         setCreationTime(creationTime);
         return this;
@@ -271,6 +283,7 @@ public class FileSystemDescription implements Serializable, Cloneable {
      *        the file system.
      * @see LifeCycleState
      */
+
     public void setLifeCycleState(String lifeCycleState) {
         this.lifeCycleState = lifeCycleState;
     }
@@ -285,6 +298,7 @@ public class FileSystemDescription implements Serializable, Cloneable {
      *         the file system.
      * @see LifeCycleState
      */
+
     public String getLifeCycleState() {
         return this.lifeCycleState;
     }
@@ -302,6 +316,7 @@ public class FileSystemDescription implements Serializable, Cloneable {
      *         chained together.
      * @see LifeCycleState
      */
+
     public FileSystemDescription withLifeCycleState(String lifeCycleState) {
         setLifeCycleState(lifeCycleState);
         return this;
@@ -320,6 +335,7 @@ public class FileSystemDescription implements Serializable, Cloneable {
      *         chained together.
      * @see LifeCycleState
      */
+
     public void setLifeCycleState(LifeCycleState lifeCycleState) {
         this.lifeCycleState = lifeCycleState.toString();
     }
@@ -337,6 +353,7 @@ public class FileSystemDescription implements Serializable, Cloneable {
      *         chained together.
      * @see LifeCycleState
      */
+
     public FileSystemDescription withLifeCycleState(
             LifeCycleState lifeCycleState) {
         setLifeCycleState(lifeCycleState);
@@ -355,6 +372,7 @@ public class FileSystemDescription implements Serializable, Cloneable {
      *        including a "Name" tag. If the file system has a "Name" tag,
      *        Amazon EFS returns the value in this field.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -370,6 +388,7 @@ public class FileSystemDescription implements Serializable, Cloneable {
      *         including a "Name" tag. If the file system has a "Name" tag,
      *         Amazon EFS returns the value in this field.
      */
+
     public String getName() {
         return this.name;
     }
@@ -388,6 +407,7 @@ public class FileSystemDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FileSystemDescription withName(String name) {
         setName(name);
         return this;
@@ -403,6 +423,7 @@ public class FileSystemDescription implements Serializable, Cloneable {
      *        The current number of mount targets (see <a>CreateMountTarget</a>)
      *        the file system has.
      */
+
     public void setNumberOfMountTargets(Integer numberOfMountTargets) {
         this.numberOfMountTargets = numberOfMountTargets;
     }
@@ -416,6 +437,7 @@ public class FileSystemDescription implements Serializable, Cloneable {
      * @return The current number of mount targets (see
      *         <a>CreateMountTarget</a>) the file system has.
      */
+
     public Integer getNumberOfMountTargets() {
         return this.numberOfMountTargets;
     }
@@ -432,6 +454,7 @@ public class FileSystemDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FileSystemDescription withNumberOfMountTargets(
             Integer numberOfMountTargets) {
         setNumberOfMountTargets(numberOfMountTargets);
@@ -465,6 +488,7 @@ public class FileSystemDescription implements Serializable, Cloneable {
      *        a period longer than a couple of hours. Otherwise, the value is
      *        not the exact size the file system was at any instant in time.
      */
+
     public void setSizeInBytes(FileSystemSize sizeInBytes) {
         this.sizeInBytes = sizeInBytes;
     }
@@ -495,6 +519,7 @@ public class FileSystemDescription implements Serializable, Cloneable {
      *         a period longer than a couple of hours. Otherwise, the value is
      *         not the exact size the file system was at any instant in time.
      */
+
     public FileSystemSize getSizeInBytes() {
         return this.sizeInBytes;
     }
@@ -528,6 +553,7 @@ public class FileSystemDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FileSystemDescription withSizeInBytes(FileSystemSize sizeInBytes) {
         setSizeInBytes(sizeInBytes);
         return this;

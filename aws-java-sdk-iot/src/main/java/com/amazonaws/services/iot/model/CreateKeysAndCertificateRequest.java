@@ -42,6 +42,7 @@ public class CreateKeysAndCertificateRequest extends AmazonWebServiceRequest
      * @param setAsActive
      *        Specifies whether the certificate is active.
      */
+
     public void setSetAsActive(Boolean setAsActive) {
         this.setAsActive = setAsActive;
     }
@@ -53,6 +54,7 @@ public class CreateKeysAndCertificateRequest extends AmazonWebServiceRequest
      * 
      * @return Specifies whether the certificate is active.
      */
+
     public Boolean getSetAsActive() {
         return this.setAsActive;
     }
@@ -67,6 +69,7 @@ public class CreateKeysAndCertificateRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateKeysAndCertificateRequest withSetAsActive(Boolean setAsActive) {
         setSetAsActive(setAsActive);
         return this;
@@ -79,6 +82,7 @@ public class CreateKeysAndCertificateRequest extends AmazonWebServiceRequest
      * 
      * @return Specifies whether the certificate is active.
      */
+
     public Boolean isSetAsActive() {
         return this.setAsActive;
     }

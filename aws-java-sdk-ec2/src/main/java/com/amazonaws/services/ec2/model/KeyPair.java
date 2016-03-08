@@ -52,6 +52,7 @@ public class KeyPair implements Serializable, Cloneable {
      * @param keyName
      *        The name of the key pair.
      */
+
     public void setKeyName(String keyName) {
         this.keyName = keyName;
     }
@@ -63,6 +64,7 @@ public class KeyPair implements Serializable, Cloneable {
      * 
      * @return The name of the key pair.
      */
+
     public String getKeyName() {
         return this.keyName;
     }
@@ -77,6 +79,7 @@ public class KeyPair implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public KeyPair withKeyName(String keyName) {
         setKeyName(keyName);
         return this;
@@ -90,6 +93,7 @@ public class KeyPair implements Serializable, Cloneable {
      * @param keyFingerprint
      *        The SHA-1 digest of the DER encoded private key.
      */
+
     public void setKeyFingerprint(String keyFingerprint) {
         this.keyFingerprint = keyFingerprint;
     }
@@ -101,6 +105,7 @@ public class KeyPair implements Serializable, Cloneable {
      * 
      * @return The SHA-1 digest of the DER encoded private key.
      */
+
     public String getKeyFingerprint() {
         return this.keyFingerprint;
     }
@@ -115,6 +120,7 @@ public class KeyPair implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public KeyPair withKeyFingerprint(String keyFingerprint) {
         setKeyFingerprint(keyFingerprint);
         return this;
@@ -128,6 +134,7 @@ public class KeyPair implements Serializable, Cloneable {
      * @param keyMaterial
      *        An unencrypted PEM encoded RSA private key.
      */
+
     public void setKeyMaterial(String keyMaterial) {
         this.keyMaterial = keyMaterial;
     }
@@ -139,6 +146,7 @@ public class KeyPair implements Serializable, Cloneable {
      * 
      * @return An unencrypted PEM encoded RSA private key.
      */
+
     public String getKeyMaterial() {
         return this.keyMaterial;
     }
@@ -153,6 +161,7 @@ public class KeyPair implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public KeyPair withKeyMaterial(String keyMaterial) {
         setKeyMaterial(keyMaterial);
         return this;

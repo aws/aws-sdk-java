@@ -48,6 +48,7 @@ public class ScheduledInstancesPrivateIpAddressConfig implements Serializable,
      * @param privateIpAddress
      *        The IP address.
      */
+
     public void setPrivateIpAddress(String privateIpAddress) {
         this.privateIpAddress = privateIpAddress;
     }
@@ -59,6 +60,7 @@ public class ScheduledInstancesPrivateIpAddressConfig implements Serializable,
      * 
      * @return The IP address.
      */
+
     public String getPrivateIpAddress() {
         return this.privateIpAddress;
     }
@@ -73,6 +75,7 @@ public class ScheduledInstancesPrivateIpAddressConfig implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstancesPrivateIpAddressConfig withPrivateIpAddress(
             String privateIpAddress) {
         setPrivateIpAddress(privateIpAddress);
@@ -89,6 +92,7 @@ public class ScheduledInstancesPrivateIpAddressConfig implements Serializable,
      *        Indicates whether this is a primary IP address. Otherwise, this is
      *        a secondary IP address.
      */
+
     public void setPrimary(Boolean primary) {
         this.primary = primary;
     }
@@ -102,6 +106,7 @@ public class ScheduledInstancesPrivateIpAddressConfig implements Serializable,
      * @return Indicates whether this is a primary IP address. Otherwise, this
      *         is a secondary IP address.
      */
+
     public Boolean getPrimary() {
         return this.primary;
     }
@@ -118,6 +123,7 @@ public class ScheduledInstancesPrivateIpAddressConfig implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstancesPrivateIpAddressConfig withPrimary(Boolean primary) {
         setPrimary(primary);
         return this;
@@ -132,6 +138,7 @@ public class ScheduledInstancesPrivateIpAddressConfig implements Serializable,
      * @return Indicates whether this is a primary IP address. Otherwise, this
      *         is a secondary IP address.
      */
+
     public Boolean isPrimary() {
         return this.primary;
     }

@@ -39,6 +39,7 @@ public class AssociateRouteTableResult implements Serializable, Cloneable {
      *        The route table association ID (needed to disassociate the route
      *        table).
      */
+
     public void setAssociationId(String associationId) {
         this.associationId = associationId;
     }
@@ -51,6 +52,7 @@ public class AssociateRouteTableResult implements Serializable, Cloneable {
      * @return The route table association ID (needed to disassociate the route
      *         table).
      */
+
     public String getAssociationId() {
         return this.associationId;
     }
@@ -66,6 +68,7 @@ public class AssociateRouteTableResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssociateRouteTableResult withAssociationId(String associationId) {
         setAssociationId(associationId);
         return this;

@@ -62,6 +62,7 @@ public class DeleteVpcRequest extends AmazonWebServiceRequest implements
      * @param vpcId
      *        The ID of the VPC.
      */
+
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
@@ -73,6 +74,7 @@ public class DeleteVpcRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ID of the VPC.
      */
+
     public String getVpcId() {
         return this.vpcId;
     }
@@ -87,6 +89,7 @@ public class DeleteVpcRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteVpcRequest withVpcId(String vpcId) {
         setVpcId(vpcId);
         return this;

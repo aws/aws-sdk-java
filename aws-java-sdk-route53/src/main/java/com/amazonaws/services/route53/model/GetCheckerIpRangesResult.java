@@ -42,6 +42,7 @@ public class GetCheckerIpRangesResult implements Serializable, Cloneable {
      * @return A complex type that contains sorted list of IP ranges in CIDR
      *         format for Amazon Route 53 health checkers.
      */
+
     public java.util.List<String> getCheckerIpRanges() {
         if (checkerIpRanges == null) {
             checkerIpRanges = new com.amazonaws.internal.SdkInternalList<String>();
@@ -59,6 +60,7 @@ public class GetCheckerIpRangesResult implements Serializable, Cloneable {
      *        A complex type that contains sorted list of IP ranges in CIDR
      *        format for Amazon Route 53 health checkers.
      */
+
     public void setCheckerIpRanges(java.util.Collection<String> checkerIpRanges) {
         if (checkerIpRanges == null) {
             this.checkerIpRanges = null;
@@ -87,6 +89,7 @@ public class GetCheckerIpRangesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetCheckerIpRangesResult withCheckerIpRanges(
             String... checkerIpRanges) {
         if (this.checkerIpRanges == null) {
@@ -111,6 +114,7 @@ public class GetCheckerIpRangesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetCheckerIpRangesResult withCheckerIpRanges(
             java.util.Collection<String> checkerIpRanges) {
         setCheckerIpRanges(checkerIpRanges);

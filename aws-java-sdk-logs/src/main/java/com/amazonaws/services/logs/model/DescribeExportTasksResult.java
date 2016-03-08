@@ -30,6 +30,7 @@ public class DescribeExportTasksResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public java.util.List<ExportTask> getExportTasks() {
         if (exportTasks == null) {
             exportTasks = new com.amazonaws.internal.SdkInternalList<ExportTask>();
@@ -40,6 +41,7 @@ public class DescribeExportTasksResult implements Serializable, Cloneable {
     /**
      * @param exportTasks
      */
+
     public void setExportTasks(java.util.Collection<ExportTask> exportTasks) {
         if (exportTasks == null) {
             this.exportTasks = null;
@@ -62,6 +64,7 @@ public class DescribeExportTasksResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeExportTasksResult withExportTasks(ExportTask... exportTasks) {
         if (this.exportTasks == null) {
             setExportTasks(new com.amazonaws.internal.SdkInternalList<ExportTask>(
@@ -78,6 +81,7 @@ public class DescribeExportTasksResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeExportTasksResult withExportTasks(
             java.util.Collection<ExportTask> exportTasks) {
         setExportTasks(exportTasks);
@@ -87,6 +91,7 @@ public class DescribeExportTasksResult implements Serializable, Cloneable {
     /**
      * @param nextToken
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -94,6 +99,7 @@ public class DescribeExportTasksResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -103,6 +109,7 @@ public class DescribeExportTasksResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeExportTasksResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

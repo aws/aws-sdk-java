@@ -63,6 +63,7 @@ public class ClusterSummary implements Serializable, Cloneable {
      * @param id
      *        The unique identifier for the cluster.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -74,6 +75,7 @@ public class ClusterSummary implements Serializable, Cloneable {
      * 
      * @return The unique identifier for the cluster.
      */
+
     public String getId() {
         return this.id;
     }
@@ -88,6 +90,7 @@ public class ClusterSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ClusterSummary withId(String id) {
         setId(id);
         return this;
@@ -101,6 +104,7 @@ public class ClusterSummary implements Serializable, Cloneable {
      * @param name
      *        The name of the cluster.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -112,6 +116,7 @@ public class ClusterSummary implements Serializable, Cloneable {
      * 
      * @return The name of the cluster.
      */
+
     public String getName() {
         return this.name;
     }
@@ -126,6 +131,7 @@ public class ClusterSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ClusterSummary withName(String name) {
         setName(name);
         return this;
@@ -139,6 +145,7 @@ public class ClusterSummary implements Serializable, Cloneable {
      * @param status
      *        The details about the current status of the cluster.
      */
+
     public void setStatus(ClusterStatus status) {
         this.status = status;
     }
@@ -150,6 +157,7 @@ public class ClusterSummary implements Serializable, Cloneable {
      * 
      * @return The details about the current status of the cluster.
      */
+
     public ClusterStatus getStatus() {
         return this.status;
     }
@@ -164,6 +172,7 @@ public class ClusterSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ClusterSummary withStatus(ClusterStatus status) {
         setStatus(status);
         return this;
@@ -188,6 +197,7 @@ public class ClusterSummary implements Serializable, Cloneable {
      *        This result is only an approximation and does not reflect the
      *        actual billing rate.
      */
+
     public void setNormalizedInstanceHours(Integer normalizedInstanceHours) {
         this.normalizedInstanceHours = normalizedInstanceHours;
     }
@@ -210,6 +220,7 @@ public class ClusterSummary implements Serializable, Cloneable {
      *         four. This result is only an approximation and does not reflect
      *         the actual billing rate.
      */
+
     public Integer getNormalizedInstanceHours() {
         return this.normalizedInstanceHours;
     }
@@ -235,6 +246,7 @@ public class ClusterSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ClusterSummary withNormalizedInstanceHours(
             Integer normalizedInstanceHours) {
         setNormalizedInstanceHours(normalizedInstanceHours);

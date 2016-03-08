@@ -90,6 +90,7 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest implements
      * @param userName
      *        The name of the user for whom you want to enable the MFA device.
      */
+
     public void setUserName(String userName) {
         this.userName = userName;
     }
@@ -101,6 +102,7 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the user for whom you want to enable the MFA device.
      */
+
     public String getUserName() {
         return this.userName;
     }
@@ -115,6 +117,7 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EnableMFADeviceRequest withUserName(String userName) {
         setUserName(userName);
         return this;
@@ -130,6 +133,7 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest implements
      *        The serial number that uniquely identifies the MFA device. For
      *        virtual MFA devices, the serial number is the device ARN.
      */
+
     public void setSerialNumber(String serialNumber) {
         this.serialNumber = serialNumber;
     }
@@ -143,6 +147,7 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest implements
      * @return The serial number that uniquely identifies the MFA device. For
      *         virtual MFA devices, the serial number is the device ARN.
      */
+
     public String getSerialNumber() {
         return this.serialNumber;
     }
@@ -159,6 +164,7 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EnableMFADeviceRequest withSerialNumber(String serialNumber) {
         setSerialNumber(serialNumber);
         return this;
@@ -172,6 +178,7 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest implements
      * @param authenticationCode1
      *        An authentication code emitted by the device.
      */
+
     public void setAuthenticationCode1(String authenticationCode1) {
         this.authenticationCode1 = authenticationCode1;
     }
@@ -183,6 +190,7 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest implements
      * 
      * @return An authentication code emitted by the device.
      */
+
     public String getAuthenticationCode1() {
         return this.authenticationCode1;
     }
@@ -197,6 +205,7 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EnableMFADeviceRequest withAuthenticationCode1(
             String authenticationCode1) {
         setAuthenticationCode1(authenticationCode1);
@@ -211,6 +220,7 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest implements
      * @param authenticationCode2
      *        A subsequent authentication code emitted by the device.
      */
+
     public void setAuthenticationCode2(String authenticationCode2) {
         this.authenticationCode2 = authenticationCode2;
     }
@@ -222,6 +232,7 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest implements
      * 
      * @return A subsequent authentication code emitted by the device.
      */
+
     public String getAuthenticationCode2() {
         return this.authenticationCode2;
     }
@@ -236,6 +247,7 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EnableMFADeviceRequest withAuthenticationCode2(
             String authenticationCode2) {
         setAuthenticationCode2(authenticationCode2);

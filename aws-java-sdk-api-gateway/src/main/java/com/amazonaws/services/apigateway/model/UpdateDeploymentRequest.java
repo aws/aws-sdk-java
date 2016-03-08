@@ -60,6 +60,7 @@ public class UpdateDeploymentRequest extends AmazonWebServiceRequest implements
      *        The replacement identifier of the <a>RestApi</a> resource for the
      *        <a>Deployment</a> resource to change information about.
      */
+
     public void setRestApiId(String restApiId) {
         this.restApiId = restApiId;
     }
@@ -73,6 +74,7 @@ public class UpdateDeploymentRequest extends AmazonWebServiceRequest implements
      * @return The replacement identifier of the <a>RestApi</a> resource for the
      *         <a>Deployment</a> resource to change information about.
      */
+
     public String getRestApiId() {
         return this.restApiId;
     }
@@ -89,6 +91,7 @@ public class UpdateDeploymentRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateDeploymentRequest withRestApiId(String restApiId) {
         setRestApiId(restApiId);
         return this;
@@ -104,6 +107,7 @@ public class UpdateDeploymentRequest extends AmazonWebServiceRequest implements
      *        The replacment identifier for the <a>Deployment</a> resource to
      *        change information about.
      */
+
     public void setDeploymentId(String deploymentId) {
         this.deploymentId = deploymentId;
     }
@@ -117,6 +121,7 @@ public class UpdateDeploymentRequest extends AmazonWebServiceRequest implements
      * @return The replacment identifier for the <a>Deployment</a> resource to
      *         change information about.
      */
+
     public String getDeploymentId() {
         return this.deploymentId;
     }
@@ -133,6 +138,7 @@ public class UpdateDeploymentRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateDeploymentRequest withDeploymentId(String deploymentId) {
         setDeploymentId(deploymentId);
         return this;
@@ -148,6 +154,7 @@ public class UpdateDeploymentRequest extends AmazonWebServiceRequest implements
      *         specified resource. The patches are applied in the order
      *         specified in the list.
      */
+
     public java.util.List<PatchOperation> getPatchOperations() {
         return patchOperations;
     }
@@ -163,6 +170,7 @@ public class UpdateDeploymentRequest extends AmazonWebServiceRequest implements
      *        specified resource. The patches are applied in the order specified
      *        in the list.
      */
+
     public void setPatchOperations(
             java.util.Collection<PatchOperation> patchOperations) {
         if (patchOperations == null) {
@@ -193,6 +201,7 @@ public class UpdateDeploymentRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateDeploymentRequest withPatchOperations(
             PatchOperation... patchOperations) {
         if (this.patchOperations == null) {
@@ -218,6 +227,7 @@ public class UpdateDeploymentRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateDeploymentRequest withPatchOperations(
             java.util.Collection<PatchOperation> patchOperations) {
         setPatchOperations(patchOperations);

@@ -92,6 +92,7 @@ public class ListCertificatesRequest extends AmazonWebServiceRequest implements
      *         </ul>
      * @see CertificateStatus
      */
+
     public java.util.List<String> getCertificateStatuses() {
         return certificateStatuses;
     }
@@ -126,6 +127,7 @@ public class ListCertificatesRequest extends AmazonWebServiceRequest implements
      *        </ul>
      * @see CertificateStatus
      */
+
     public void setCertificateStatuses(
             java.util.Collection<String> certificateStatuses) {
         if (certificateStatuses == null) {
@@ -175,6 +177,7 @@ public class ListCertificatesRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see CertificateStatus
      */
+
     public ListCertificatesRequest withCertificateStatuses(
             String... certificateStatuses) {
         if (this.certificateStatuses == null) {
@@ -219,6 +222,7 @@ public class ListCertificatesRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see CertificateStatus
      */
+
     public ListCertificatesRequest withCertificateStatuses(
             java.util.Collection<String> certificateStatuses) {
         setCertificateStatuses(certificateStatuses);
@@ -257,6 +261,7 @@ public class ListCertificatesRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see CertificateStatus
      */
+
     public ListCertificatesRequest withCertificateStatuses(
             CertificateStatus... certificateStatuses) {
         java.util.ArrayList<String> certificateStatusesCopy = new java.util.ArrayList<String>(
@@ -291,6 +296,7 @@ public class ListCertificatesRequest extends AmazonWebServiceRequest implements
      *        the <code>NextToken</code> element you receive in the response
      *        object for subsequent calls.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -313,6 +319,7 @@ public class ListCertificatesRequest extends AmazonWebServiceRequest implements
      *         the <code>NextToken</code> element you receive in the response
      *         object for subsequent calls.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -338,6 +345,7 @@ public class ListCertificatesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListCertificatesRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -359,6 +367,7 @@ public class ListCertificatesRequest extends AmazonWebServiceRequest implements
      *        maximum you specify, use the <code>NextToken</code> value in your
      *        next call to the <code>ListCertificates</code> action.
      */
+
     public void setMaxItems(Integer maxItems) {
         this.maxItems = maxItems;
     }
@@ -378,6 +387,7 @@ public class ListCertificatesRequest extends AmazonWebServiceRequest implements
      *         maximum you specify, use the <code>NextToken</code> value in your
      *         next call to the <code>ListCertificates</code> action.
      */
+
     public Integer getMaxItems() {
         return this.maxItems;
     }
@@ -400,6 +410,7 @@ public class ListCertificatesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListCertificatesRequest withMaxItems(Integer maxItems) {
         setMaxItems(maxItems);
         return this;

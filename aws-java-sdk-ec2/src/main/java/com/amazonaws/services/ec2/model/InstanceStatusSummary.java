@@ -47,6 +47,7 @@ public class InstanceStatusSummary implements Serializable, Cloneable {
      *        The status.
      * @see SummaryStatus
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -59,6 +60,7 @@ public class InstanceStatusSummary implements Serializable, Cloneable {
      * @return The status.
      * @see SummaryStatus
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -74,6 +76,7 @@ public class InstanceStatusSummary implements Serializable, Cloneable {
      *         chained together.
      * @see SummaryStatus
      */
+
     public InstanceStatusSummary withStatus(String status) {
         setStatus(status);
         return this;
@@ -90,6 +93,7 @@ public class InstanceStatusSummary implements Serializable, Cloneable {
      *         chained together.
      * @see SummaryStatus
      */
+
     public void setStatus(SummaryStatus status) {
         this.status = status.toString();
     }
@@ -105,6 +109,7 @@ public class InstanceStatusSummary implements Serializable, Cloneable {
      *         chained together.
      * @see SummaryStatus
      */
+
     public InstanceStatusSummary withStatus(SummaryStatus status) {
         setStatus(status);
         return this;
@@ -117,6 +122,7 @@ public class InstanceStatusSummary implements Serializable, Cloneable {
      * 
      * @return The system instance health or application instance health.
      */
+
     public java.util.List<InstanceStatusDetails> getDetails() {
         if (details == null) {
             details = new com.amazonaws.internal.SdkInternalList<InstanceStatusDetails>();
@@ -132,6 +138,7 @@ public class InstanceStatusSummary implements Serializable, Cloneable {
      * @param details
      *        The system instance health or application instance health.
      */
+
     public void setDetails(java.util.Collection<InstanceStatusDetails> details) {
         if (details == null) {
             this.details = null;
@@ -158,6 +165,7 @@ public class InstanceStatusSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceStatusSummary withDetails(InstanceStatusDetails... details) {
         if (this.details == null) {
             setDetails(new com.amazonaws.internal.SdkInternalList<InstanceStatusDetails>(
@@ -179,6 +187,7 @@ public class InstanceStatusSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceStatusSummary withDetails(
             java.util.Collection<InstanceStatusDetails> details) {
         setDetails(details);

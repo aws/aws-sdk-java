@@ -64,6 +64,7 @@ public class SpotDatafeedSubscription implements Serializable, Cloneable {
      * @param ownerId
      *        The AWS account ID of the account.
      */
+
     public void setOwnerId(String ownerId) {
         this.ownerId = ownerId;
     }
@@ -75,6 +76,7 @@ public class SpotDatafeedSubscription implements Serializable, Cloneable {
      * 
      * @return The AWS account ID of the account.
      */
+
     public String getOwnerId() {
         return this.ownerId;
     }
@@ -89,6 +91,7 @@ public class SpotDatafeedSubscription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SpotDatafeedSubscription withOwnerId(String ownerId) {
         setOwnerId(ownerId);
         return this;
@@ -102,6 +105,7 @@ public class SpotDatafeedSubscription implements Serializable, Cloneable {
      * @param bucket
      *        The Amazon S3 bucket where the Spot instance data feed is located.
      */
+
     public void setBucket(String bucket) {
         this.bucket = bucket;
     }
@@ -114,6 +118,7 @@ public class SpotDatafeedSubscription implements Serializable, Cloneable {
      * @return The Amazon S3 bucket where the Spot instance data feed is
      *         located.
      */
+
     public String getBucket() {
         return this.bucket;
     }
@@ -128,6 +133,7 @@ public class SpotDatafeedSubscription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SpotDatafeedSubscription withBucket(String bucket) {
         setBucket(bucket);
         return this;
@@ -141,6 +147,7 @@ public class SpotDatafeedSubscription implements Serializable, Cloneable {
      * @param prefix
      *        The prefix that is prepended to data feed files.
      */
+
     public void setPrefix(String prefix) {
         this.prefix = prefix;
     }
@@ -152,6 +159,7 @@ public class SpotDatafeedSubscription implements Serializable, Cloneable {
      * 
      * @return The prefix that is prepended to data feed files.
      */
+
     public String getPrefix() {
         return this.prefix;
     }
@@ -166,6 +174,7 @@ public class SpotDatafeedSubscription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SpotDatafeedSubscription withPrefix(String prefix) {
         setPrefix(prefix);
         return this;
@@ -180,6 +189,7 @@ public class SpotDatafeedSubscription implements Serializable, Cloneable {
      *        The state of the Spot instance data feed subscription.
      * @see DatafeedSubscriptionState
      */
+
     public void setState(String state) {
         this.state = state;
     }
@@ -192,6 +202,7 @@ public class SpotDatafeedSubscription implements Serializable, Cloneable {
      * @return The state of the Spot instance data feed subscription.
      * @see DatafeedSubscriptionState
      */
+
     public String getState() {
         return this.state;
     }
@@ -207,6 +218,7 @@ public class SpotDatafeedSubscription implements Serializable, Cloneable {
      *         chained together.
      * @see DatafeedSubscriptionState
      */
+
     public SpotDatafeedSubscription withState(String state) {
         setState(state);
         return this;
@@ -223,6 +235,7 @@ public class SpotDatafeedSubscription implements Serializable, Cloneable {
      *         chained together.
      * @see DatafeedSubscriptionState
      */
+
     public void setState(DatafeedSubscriptionState state) {
         this.state = state.toString();
     }
@@ -238,6 +251,7 @@ public class SpotDatafeedSubscription implements Serializable, Cloneable {
      *         chained together.
      * @see DatafeedSubscriptionState
      */
+
     public SpotDatafeedSubscription withState(DatafeedSubscriptionState state) {
         setState(state);
         return this;
@@ -251,6 +265,7 @@ public class SpotDatafeedSubscription implements Serializable, Cloneable {
      * @param fault
      *        The fault codes for the Spot instance request, if any.
      */
+
     public void setFault(SpotInstanceStateFault fault) {
         this.fault = fault;
     }
@@ -262,6 +277,7 @@ public class SpotDatafeedSubscription implements Serializable, Cloneable {
      * 
      * @return The fault codes for the Spot instance request, if any.
      */
+
     public SpotInstanceStateFault getFault() {
         return this.fault;
     }
@@ -276,6 +292,7 @@ public class SpotDatafeedSubscription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SpotDatafeedSubscription withFault(SpotInstanceStateFault fault) {
         setFault(fault);
         return this;

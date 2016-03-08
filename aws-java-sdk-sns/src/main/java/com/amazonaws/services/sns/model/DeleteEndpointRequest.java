@@ -42,6 +42,7 @@ public class DeleteEndpointRequest extends AmazonWebServiceRequest implements
      * @param endpointArn
      *        EndpointArn of endpoint to delete.
      */
+
     public void setEndpointArn(String endpointArn) {
         this.endpointArn = endpointArn;
     }
@@ -53,6 +54,7 @@ public class DeleteEndpointRequest extends AmazonWebServiceRequest implements
      * 
      * @return EndpointArn of endpoint to delete.
      */
+
     public String getEndpointArn() {
         return this.endpointArn;
     }
@@ -67,6 +69,7 @@ public class DeleteEndpointRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteEndpointRequest withEndpointArn(String endpointArn) {
         setEndpointArn(endpointArn);
         return this;

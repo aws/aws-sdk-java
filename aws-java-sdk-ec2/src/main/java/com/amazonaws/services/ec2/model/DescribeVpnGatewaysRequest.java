@@ -117,6 +117,7 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest
      *         <p>
      *         Default: Describes all your virtual private gateways.
      */
+
     public java.util.List<String> getVpnGatewayIds() {
         if (vpnGatewayIds == null) {
             vpnGatewayIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -137,6 +138,7 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest
      *        <p>
      *        Default: Describes all your virtual private gateways.
      */
+
     public void setVpnGatewayIds(java.util.Collection<String> vpnGatewayIds) {
         if (vpnGatewayIds == null) {
             this.vpnGatewayIds = null;
@@ -168,6 +170,7 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVpnGatewaysRequest withVpnGatewayIds(String... vpnGatewayIds) {
         if (this.vpnGatewayIds == null) {
             setVpnGatewayIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -194,6 +197,7 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVpnGatewaysRequest withVpnGatewayIds(
             java.util.Collection<String> vpnGatewayIds) {
         setVpnGatewayIds(vpnGatewayIds);
@@ -332,6 +336,7 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest
      *         </p>
      *         </li>
      */
+
     public java.util.List<Filter> getFilters() {
         if (filters == null) {
             filters = new com.amazonaws.internal.SdkInternalList<Filter>();
@@ -472,6 +477,7 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest
      *        </p>
      *        </li>
      */
+
     public void setFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
             this.filters = null;
@@ -623,6 +629,7 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVpnGatewaysRequest withFilters(Filter... filters) {
         if (this.filters == null) {
             setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(
@@ -769,6 +776,7 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVpnGatewaysRequest withFilters(
             java.util.Collection<Filter> filters) {
         setFilters(filters);

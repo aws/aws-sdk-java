@@ -30,6 +30,7 @@ public class DescribeCachediSCSIVolumesRequest extends AmazonWebServiceRequest
     /**
      * @return
      */
+
     public java.util.List<String> getVolumeARNs() {
         if (volumeARNs == null) {
             volumeARNs = new com.amazonaws.internal.SdkInternalList<String>();
@@ -40,6 +41,7 @@ public class DescribeCachediSCSIVolumesRequest extends AmazonWebServiceRequest
     /**
      * @param volumeARNs
      */
+
     public void setVolumeARNs(java.util.Collection<String> volumeARNs) {
         if (volumeARNs == null) {
             this.volumeARNs = null;
@@ -62,6 +64,7 @@ public class DescribeCachediSCSIVolumesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeCachediSCSIVolumesRequest withVolumeARNs(
             String... volumeARNs) {
         if (this.volumeARNs == null) {
@@ -79,6 +82,7 @@ public class DescribeCachediSCSIVolumesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeCachediSCSIVolumesRequest withVolumeARNs(
             java.util.Collection<String> volumeARNs) {
         setVolumeARNs(volumeARNs);

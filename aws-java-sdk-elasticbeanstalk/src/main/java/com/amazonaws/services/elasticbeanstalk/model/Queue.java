@@ -46,6 +46,7 @@ public class Queue implements Serializable, Cloneable {
      * @param name
      *        The name of the queue.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -57,6 +58,7 @@ public class Queue implements Serializable, Cloneable {
      * 
      * @return The name of the queue.
      */
+
     public String getName() {
         return this.name;
     }
@@ -71,6 +73,7 @@ public class Queue implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Queue withName(String name) {
         setName(name);
         return this;
@@ -84,6 +87,7 @@ public class Queue implements Serializable, Cloneable {
      * @param uRL
      *        The URL of the queue.
      */
+
     public void setURL(String uRL) {
         this.uRL = uRL;
     }
@@ -95,6 +99,7 @@ public class Queue implements Serializable, Cloneable {
      * 
      * @return The URL of the queue.
      */
+
     public String getURL() {
         return this.uRL;
     }
@@ -109,6 +114,7 @@ public class Queue implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Queue withURL(String uRL) {
         setURL(uRL);
         return this;

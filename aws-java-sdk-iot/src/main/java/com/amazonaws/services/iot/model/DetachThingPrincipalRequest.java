@@ -48,6 +48,7 @@ public class DetachThingPrincipalRequest extends AmazonWebServiceRequest
      * @param thingName
      *        The name of the thing.
      */
+
     public void setThingName(String thingName) {
         this.thingName = thingName;
     }
@@ -59,6 +60,7 @@ public class DetachThingPrincipalRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the thing.
      */
+
     public String getThingName() {
         return this.thingName;
     }
@@ -73,6 +75,7 @@ public class DetachThingPrincipalRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DetachThingPrincipalRequest withThingName(String thingName) {
         setThingName(thingName);
         return this;
@@ -86,6 +89,7 @@ public class DetachThingPrincipalRequest extends AmazonWebServiceRequest
      * @param principal
      *        The principal.
      */
+
     public void setPrincipal(String principal) {
         this.principal = principal;
     }
@@ -97,6 +101,7 @@ public class DetachThingPrincipalRequest extends AmazonWebServiceRequest
      * 
      * @return The principal.
      */
+
     public String getPrincipal() {
         return this.principal;
     }
@@ -111,6 +116,7 @@ public class DetachThingPrincipalRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DetachThingPrincipalRequest withPrincipal(String principal) {
         setPrincipal(principal);
         return this;

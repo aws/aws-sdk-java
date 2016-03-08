@@ -46,6 +46,7 @@ public class DhcpConfiguration implements Serializable, Cloneable {
      * @param key
      *        The name of a DHCP option.
      */
+
     public void setKey(String key) {
         this.key = key;
     }
@@ -57,6 +58,7 @@ public class DhcpConfiguration implements Serializable, Cloneable {
      * 
      * @return The name of a DHCP option.
      */
+
     public String getKey() {
         return this.key;
     }
@@ -71,6 +73,7 @@ public class DhcpConfiguration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DhcpConfiguration withKey(String key) {
         setKey(key);
         return this;
@@ -83,6 +86,7 @@ public class DhcpConfiguration implements Serializable, Cloneable {
      * 
      * @return One or more values for the DHCP option.
      */
+
     public java.util.List<String> getValues() {
         if (values == null) {
             values = new com.amazonaws.internal.SdkInternalList<String>();
@@ -98,6 +102,7 @@ public class DhcpConfiguration implements Serializable, Cloneable {
      * @param values
      *        One or more values for the DHCP option.
      */
+
     public void setValues(java.util.Collection<String> values) {
         if (values == null) {
             this.values = null;
@@ -123,6 +128,7 @@ public class DhcpConfiguration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DhcpConfiguration withValues(String... values) {
         if (this.values == null) {
             setValues(new com.amazonaws.internal.SdkInternalList<String>(
@@ -144,6 +150,7 @@ public class DhcpConfiguration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DhcpConfiguration withValues(java.util.Collection<String> values) {
         setValues(values);
         return this;

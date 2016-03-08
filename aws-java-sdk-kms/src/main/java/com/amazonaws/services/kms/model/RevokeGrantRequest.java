@@ -73,6 +73,7 @@ public class RevokeGrantRequest extends AmazonWebServiceRequest implements
      *        12345678-1234-1234-1234-123456789012</li>
      *        </ul>
      */
+
     public void setKeyId(String keyId) {
         this.keyId = keyId;
     }
@@ -102,6 +103,7 @@ public class RevokeGrantRequest extends AmazonWebServiceRequest implements
      *         12345678-1234-1234-1234-123456789012</li>
      *         </ul>
      */
+
     public String getKeyId() {
         return this.keyId;
     }
@@ -134,6 +136,7 @@ public class RevokeGrantRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RevokeGrantRequest withKeyId(String keyId) {
         setKeyId(keyId);
         return this;
@@ -147,6 +150,7 @@ public class RevokeGrantRequest extends AmazonWebServiceRequest implements
      * @param grantId
      *        Identifier of the grant to be revoked.
      */
+
     public void setGrantId(String grantId) {
         this.grantId = grantId;
     }
@@ -158,6 +162,7 @@ public class RevokeGrantRequest extends AmazonWebServiceRequest implements
      * 
      * @return Identifier of the grant to be revoked.
      */
+
     public String getGrantId() {
         return this.grantId;
     }
@@ -172,6 +177,7 @@ public class RevokeGrantRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RevokeGrantRequest withGrantId(String grantId) {
         setGrantId(grantId);
         return this;

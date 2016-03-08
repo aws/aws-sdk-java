@@ -61,6 +61,7 @@ public class DescribeConnectionsOnInterconnectRequest extends
      *        <p>
      *        Default: None
      */
+
     public void setInterconnectId(String interconnectId) {
         this.interconnectId = interconnectId;
     }
@@ -84,6 +85,7 @@ public class DescribeConnectionsOnInterconnectRequest extends
      *         <p>
      *         Default: None
      */
+
     public String getInterconnectId() {
         return this.interconnectId;
     }
@@ -110,6 +112,7 @@ public class DescribeConnectionsOnInterconnectRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeConnectionsOnInterconnectRequest withInterconnectId(
             String interconnectId) {
         setInterconnectId(interconnectId);

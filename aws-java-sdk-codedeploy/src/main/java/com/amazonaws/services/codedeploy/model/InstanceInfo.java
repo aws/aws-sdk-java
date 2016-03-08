@@ -71,6 +71,7 @@ public class InstanceInfo implements Serializable, Cloneable {
      * @param instanceName
      *        The name of the on-premises instance.
      */
+
     public void setInstanceName(String instanceName) {
         this.instanceName = instanceName;
     }
@@ -82,6 +83,7 @@ public class InstanceInfo implements Serializable, Cloneable {
      * 
      * @return The name of the on-premises instance.
      */
+
     public String getInstanceName() {
         return this.instanceName;
     }
@@ -96,6 +98,7 @@ public class InstanceInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceInfo withInstanceName(String instanceName) {
         setInstanceName(instanceName);
         return this;
@@ -109,6 +112,7 @@ public class InstanceInfo implements Serializable, Cloneable {
      * @param iamUserArn
      *        The IAM user ARN associated with the on-premises instance.
      */
+
     public void setIamUserArn(String iamUserArn) {
         this.iamUserArn = iamUserArn;
     }
@@ -120,6 +124,7 @@ public class InstanceInfo implements Serializable, Cloneable {
      * 
      * @return The IAM user ARN associated with the on-premises instance.
      */
+
     public String getIamUserArn() {
         return this.iamUserArn;
     }
@@ -134,6 +139,7 @@ public class InstanceInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceInfo withIamUserArn(String iamUserArn) {
         setIamUserArn(iamUserArn);
         return this;
@@ -147,6 +153,7 @@ public class InstanceInfo implements Serializable, Cloneable {
      * @param instanceArn
      *        The ARN of the on-premises instance.
      */
+
     public void setInstanceArn(String instanceArn) {
         this.instanceArn = instanceArn;
     }
@@ -158,6 +165,7 @@ public class InstanceInfo implements Serializable, Cloneable {
      * 
      * @return The ARN of the on-premises instance.
      */
+
     public String getInstanceArn() {
         return this.instanceArn;
     }
@@ -172,6 +180,7 @@ public class InstanceInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceInfo withInstanceArn(String instanceArn) {
         setInstanceArn(instanceArn);
         return this;
@@ -185,6 +194,7 @@ public class InstanceInfo implements Serializable, Cloneable {
      * @param registerTime
      *        The time that the on-premises instance was registered.
      */
+
     public void setRegisterTime(java.util.Date registerTime) {
         this.registerTime = registerTime;
     }
@@ -196,6 +206,7 @@ public class InstanceInfo implements Serializable, Cloneable {
      * 
      * @return The time that the on-premises instance was registered.
      */
+
     public java.util.Date getRegisterTime() {
         return this.registerTime;
     }
@@ -210,6 +221,7 @@ public class InstanceInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceInfo withRegisterTime(java.util.Date registerTime) {
         setRegisterTime(registerTime);
         return this;
@@ -225,6 +237,7 @@ public class InstanceInfo implements Serializable, Cloneable {
      *        If the on-premises instance was deregistered, the time that the
      *        on-premises instance was deregistered.
      */
+
     public void setDeregisterTime(java.util.Date deregisterTime) {
         this.deregisterTime = deregisterTime;
     }
@@ -238,6 +251,7 @@ public class InstanceInfo implements Serializable, Cloneable {
      * @return If the on-premises instance was deregistered, the time that the
      *         on-premises instance was deregistered.
      */
+
     public java.util.Date getDeregisterTime() {
         return this.deregisterTime;
     }
@@ -254,6 +268,7 @@ public class InstanceInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceInfo withDeregisterTime(java.util.Date deregisterTime) {
         setDeregisterTime(deregisterTime);
         return this;
@@ -267,6 +282,7 @@ public class InstanceInfo implements Serializable, Cloneable {
      * @return The tags that are currently associated with the on-premises
      *         instance.
      */
+
     public java.util.List<Tag> getTags() {
         if (tags == null) {
             tags = new com.amazonaws.internal.SdkInternalList<Tag>();
@@ -283,6 +299,7 @@ public class InstanceInfo implements Serializable, Cloneable {
      *        The tags that are currently associated with the on-premises
      *        instance.
      */
+
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
             this.tags = null;
@@ -309,6 +326,7 @@ public class InstanceInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceInfo withTags(Tag... tags) {
         if (this.tags == null) {
             setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
@@ -330,6 +348,7 @@ public class InstanceInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceInfo withTags(java.util.Collection<Tag> tags) {
         setTags(tags);
         return this;

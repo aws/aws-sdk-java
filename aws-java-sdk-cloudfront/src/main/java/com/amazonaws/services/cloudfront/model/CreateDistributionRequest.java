@@ -54,6 +54,7 @@ public class CreateDistributionRequest extends AmazonWebServiceRequest
      * @param distributionConfig
      *        The distribution's configuration information.
      */
+
     public void setDistributionConfig(DistributionConfig distributionConfig) {
         this.distributionConfig = distributionConfig;
     }
@@ -63,6 +64,7 @@ public class CreateDistributionRequest extends AmazonWebServiceRequest
      * 
      * @return The distribution's configuration information.
      */
+
     public DistributionConfig getDistributionConfig() {
         return this.distributionConfig;
     }
@@ -75,6 +77,7 @@ public class CreateDistributionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDistributionRequest withDistributionConfig(
             DistributionConfig distributionConfig) {
         setDistributionConfig(distributionConfig);

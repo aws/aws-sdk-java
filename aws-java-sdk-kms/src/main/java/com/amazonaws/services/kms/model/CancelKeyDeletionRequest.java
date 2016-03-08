@@ -82,6 +82,7 @@ public class CancelKeyDeletionRequest extends AmazonWebServiceRequest implements
      *        To obtain the unique key ID and key ARN for a given CMK, use
      *        <a>ListKeys</a> or <a>DescribeKey</a>.
      */
+
     public void setKeyId(String keyId) {
         this.keyId = keyId;
     }
@@ -121,6 +122,7 @@ public class CancelKeyDeletionRequest extends AmazonWebServiceRequest implements
      *         To obtain the unique key ID and key ARN for a given CMK, use
      *         <a>ListKeys</a> or <a>DescribeKey</a>.
      */
+
     public String getKeyId() {
         return this.keyId;
     }
@@ -163,6 +165,7 @@ public class CancelKeyDeletionRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CancelKeyDeletionRequest withKeyId(String keyId) {
         setKeyId(keyId);
         return this;

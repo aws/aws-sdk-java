@@ -59,6 +59,7 @@ public class UpdateTrafficPolicyCommentRequest extends AmazonWebServiceRequest
      *        The value of <code>Id</code> for the traffic policy for which you
      *        want to update the comment.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -72,6 +73,7 @@ public class UpdateTrafficPolicyCommentRequest extends AmazonWebServiceRequest
      * @return The value of <code>Id</code> for the traffic policy for which you
      *         want to update the comment.
      */
+
     public String getId() {
         return this.id;
     }
@@ -88,6 +90,7 @@ public class UpdateTrafficPolicyCommentRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateTrafficPolicyCommentRequest withId(String id) {
         setId(id);
         return this;
@@ -103,6 +106,7 @@ public class UpdateTrafficPolicyCommentRequest extends AmazonWebServiceRequest
      *        The value of <code>Version</code> for the traffic policy for which
      *        you want to update the comment.
      */
+
     public void setVersion(Integer version) {
         this.version = version;
     }
@@ -116,6 +120,7 @@ public class UpdateTrafficPolicyCommentRequest extends AmazonWebServiceRequest
      * @return The value of <code>Version</code> for the traffic policy for
      *         which you want to update the comment.
      */
+
     public Integer getVersion() {
         return this.version;
     }
@@ -132,6 +137,7 @@ public class UpdateTrafficPolicyCommentRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateTrafficPolicyCommentRequest withVersion(Integer version) {
         setVersion(version);
         return this;
@@ -145,6 +151,7 @@ public class UpdateTrafficPolicyCommentRequest extends AmazonWebServiceRequest
      * @param comment
      *        The new comment for the specified traffic policy and version.
      */
+
     public void setComment(String comment) {
         this.comment = comment;
     }
@@ -156,6 +163,7 @@ public class UpdateTrafficPolicyCommentRequest extends AmazonWebServiceRequest
      * 
      * @return The new comment for the specified traffic policy and version.
      */
+
     public String getComment() {
         return this.comment;
     }
@@ -170,6 +178,7 @@ public class UpdateTrafficPolicyCommentRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateTrafficPolicyCommentRequest withComment(String comment) {
         setComment(comment);
         return this;

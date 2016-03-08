@@ -42,6 +42,7 @@ public class StopDeploymentRequest extends AmazonWebServiceRequest implements
      * @param deploymentId
      *        The unique ID of a deployment.
      */
+
     public void setDeploymentId(String deploymentId) {
         this.deploymentId = deploymentId;
     }
@@ -53,6 +54,7 @@ public class StopDeploymentRequest extends AmazonWebServiceRequest implements
      * 
      * @return The unique ID of a deployment.
      */
+
     public String getDeploymentId() {
         return this.deploymentId;
     }
@@ -67,6 +69,7 @@ public class StopDeploymentRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StopDeploymentRequest withDeploymentId(String deploymentId) {
         setDeploymentId(deploymentId);
         return this;

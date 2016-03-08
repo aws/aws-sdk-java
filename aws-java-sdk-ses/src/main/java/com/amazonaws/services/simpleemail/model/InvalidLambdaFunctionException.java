@@ -46,6 +46,7 @@ public class InvalidLambdaFunctionException extends AmazonServiceException {
     /**
      * @param functionArn
      */
+
     public void setFunctionArn(String functionArn) {
         this.functionArn = functionArn;
     }
@@ -53,6 +54,7 @@ public class InvalidLambdaFunctionException extends AmazonServiceException {
     /**
      * @return
      */
+
     public String getFunctionArn() {
         return this.functionArn;
     }
@@ -62,6 +64,7 @@ public class InvalidLambdaFunctionException extends AmazonServiceException {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InvalidLambdaFunctionException withFunctionArn(String functionArn) {
         setFunctionArn(functionArn);
         return this;

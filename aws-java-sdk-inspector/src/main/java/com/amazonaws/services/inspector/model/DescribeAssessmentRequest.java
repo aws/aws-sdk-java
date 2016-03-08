@@ -40,6 +40,7 @@ public class DescribeAssessmentRequest extends AmazonWebServiceRequest
      * @param assessmentArn
      *        The ARN specifying the assessment that you want to describe.
      */
+
     public void setAssessmentArn(String assessmentArn) {
         this.assessmentArn = assessmentArn;
     }
@@ -51,6 +52,7 @@ public class DescribeAssessmentRequest extends AmazonWebServiceRequest
      * 
      * @return The ARN specifying the assessment that you want to describe.
      */
+
     public String getAssessmentArn() {
         return this.assessmentArn;
     }
@@ -65,6 +67,7 @@ public class DescribeAssessmentRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAssessmentRequest withAssessmentArn(String assessmentArn) {
         setAssessmentArn(assessmentArn);
         return this;

@@ -76,6 +76,7 @@ public class ImportInstanceVolumeDetailItem implements Serializable, Cloneable {
      * @param bytesConverted
      *        The number of bytes converted so far.
      */
+
     public void setBytesConverted(Long bytesConverted) {
         this.bytesConverted = bytesConverted;
     }
@@ -87,6 +88,7 @@ public class ImportInstanceVolumeDetailItem implements Serializable, Cloneable {
      * 
      * @return The number of bytes converted so far.
      */
+
     public Long getBytesConverted() {
         return this.bytesConverted;
     }
@@ -101,6 +103,7 @@ public class ImportInstanceVolumeDetailItem implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportInstanceVolumeDetailItem withBytesConverted(Long bytesConverted) {
         setBytesConverted(bytesConverted);
         return this;
@@ -114,6 +117,7 @@ public class ImportInstanceVolumeDetailItem implements Serializable, Cloneable {
      * @param availabilityZone
      *        The Availability Zone where the resulting instance will reside.
      */
+
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
@@ -125,6 +129,7 @@ public class ImportInstanceVolumeDetailItem implements Serializable, Cloneable {
      * 
      * @return The Availability Zone where the resulting instance will reside.
      */
+
     public String getAvailabilityZone() {
         return this.availabilityZone;
     }
@@ -139,6 +144,7 @@ public class ImportInstanceVolumeDetailItem implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportInstanceVolumeDetailItem withAvailabilityZone(
             String availabilityZone) {
         setAvailabilityZone(availabilityZone);
@@ -153,6 +159,7 @@ public class ImportInstanceVolumeDetailItem implements Serializable, Cloneable {
      * @param image
      *        The image.
      */
+
     public void setImage(DiskImageDescription image) {
         this.image = image;
     }
@@ -164,6 +171,7 @@ public class ImportInstanceVolumeDetailItem implements Serializable, Cloneable {
      * 
      * @return The image.
      */
+
     public DiskImageDescription getImage() {
         return this.image;
     }
@@ -178,6 +186,7 @@ public class ImportInstanceVolumeDetailItem implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportInstanceVolumeDetailItem withImage(DiskImageDescription image) {
         setImage(image);
         return this;
@@ -191,6 +200,7 @@ public class ImportInstanceVolumeDetailItem implements Serializable, Cloneable {
      * @param volume
      *        The volume.
      */
+
     public void setVolume(DiskImageVolumeDescription volume) {
         this.volume = volume;
     }
@@ -202,6 +212,7 @@ public class ImportInstanceVolumeDetailItem implements Serializable, Cloneable {
      * 
      * @return The volume.
      */
+
     public DiskImageVolumeDescription getVolume() {
         return this.volume;
     }
@@ -216,6 +227,7 @@ public class ImportInstanceVolumeDetailItem implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportInstanceVolumeDetailItem withVolume(
             DiskImageVolumeDescription volume) {
         setVolume(volume);
@@ -230,6 +242,7 @@ public class ImportInstanceVolumeDetailItem implements Serializable, Cloneable {
      * @param status
      *        The status of the import of this particular disk image.
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -241,6 +254,7 @@ public class ImportInstanceVolumeDetailItem implements Serializable, Cloneable {
      * 
      * @return The status of the import of this particular disk image.
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -255,6 +269,7 @@ public class ImportInstanceVolumeDetailItem implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportInstanceVolumeDetailItem withStatus(String status) {
         setStatus(status);
         return this;
@@ -268,6 +283,7 @@ public class ImportInstanceVolumeDetailItem implements Serializable, Cloneable {
      * @param statusMessage
      *        The status information or errors related to the disk image.
      */
+
     public void setStatusMessage(String statusMessage) {
         this.statusMessage = statusMessage;
     }
@@ -279,6 +295,7 @@ public class ImportInstanceVolumeDetailItem implements Serializable, Cloneable {
      * 
      * @return The status information or errors related to the disk image.
      */
+
     public String getStatusMessage() {
         return this.statusMessage;
     }
@@ -293,6 +310,7 @@ public class ImportInstanceVolumeDetailItem implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportInstanceVolumeDetailItem withStatusMessage(String statusMessage) {
         setStatusMessage(statusMessage);
         return this;
@@ -306,6 +324,7 @@ public class ImportInstanceVolumeDetailItem implements Serializable, Cloneable {
      * @param description
      *        A description of the task.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -317,6 +336,7 @@ public class ImportInstanceVolumeDetailItem implements Serializable, Cloneable {
      * 
      * @return A description of the task.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -331,6 +351,7 @@ public class ImportInstanceVolumeDetailItem implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportInstanceVolumeDetailItem withDescription(String description) {
         setDescription(description);
         return this;

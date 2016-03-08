@@ -63,6 +63,7 @@ public class SetStackPolicyRequest extends AmazonWebServiceRequest implements
      *        The name or unique stack ID that you want to associate a policy
      *        with.
      */
+
     public void setStackName(String stackName) {
         this.stackName = stackName;
     }
@@ -75,6 +76,7 @@ public class SetStackPolicyRequest extends AmazonWebServiceRequest implements
      * @return The name or unique stack ID that you want to associate a policy
      *         with.
      */
+
     public String getStackName() {
         return this.stackName;
     }
@@ -90,6 +92,7 @@ public class SetStackPolicyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetStackPolicyRequest withStackName(String stackName) {
         setStackName(stackName);
         return this;
@@ -114,6 +117,7 @@ public class SetStackPolicyRequest extends AmazonWebServiceRequest implements
      *        <code>StackPolicyBody</code> or the <code>StackPolicyURL</code>
      *        parameter, but not both.
      */
+
     public void setStackPolicyBody(String stackPolicyBody) {
         this.stackPolicyBody = stackPolicyBody;
     }
@@ -136,6 +140,7 @@ public class SetStackPolicyRequest extends AmazonWebServiceRequest implements
      *         <code>StackPolicyBody</code> or the <code>StackPolicyURL</code>
      *         parameter, but not both.
      */
+
     public String getStackPolicyBody() {
         return this.stackPolicyBody;
     }
@@ -161,6 +166,7 @@ public class SetStackPolicyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetStackPolicyRequest withStackPolicyBody(String stackPolicyBody) {
         setStackPolicyBody(stackPolicyBody);
         return this;
@@ -181,6 +187,7 @@ public class SetStackPolicyRequest extends AmazonWebServiceRequest implements
      *        <code>StackPolicyBody</code> or the <code>StackPolicyURL</code>
      *        parameter, but not both.
      */
+
     public void setStackPolicyURL(String stackPolicyURL) {
         this.stackPolicyURL = stackPolicyURL;
     }
@@ -199,6 +206,7 @@ public class SetStackPolicyRequest extends AmazonWebServiceRequest implements
      *         <code>StackPolicyBody</code> or the <code>StackPolicyURL</code>
      *         parameter, but not both.
      */
+
     public String getStackPolicyURL() {
         return this.stackPolicyURL;
     }
@@ -220,6 +228,7 @@ public class SetStackPolicyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetStackPolicyRequest withStackPolicyURL(String stackPolicyURL) {
         setStackPolicyURL(stackPolicyURL);
         return this;

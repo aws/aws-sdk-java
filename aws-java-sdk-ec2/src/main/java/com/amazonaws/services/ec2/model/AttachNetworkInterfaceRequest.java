@@ -55,6 +55,7 @@ public class AttachNetworkInterfaceRequest extends AmazonWebServiceRequest
      * @param networkInterfaceId
      *        The ID of the network interface.
      */
+
     public void setNetworkInterfaceId(String networkInterfaceId) {
         this.networkInterfaceId = networkInterfaceId;
     }
@@ -66,6 +67,7 @@ public class AttachNetworkInterfaceRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the network interface.
      */
+
     public String getNetworkInterfaceId() {
         return this.networkInterfaceId;
     }
@@ -80,6 +82,7 @@ public class AttachNetworkInterfaceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AttachNetworkInterfaceRequest withNetworkInterfaceId(
             String networkInterfaceId) {
         setNetworkInterfaceId(networkInterfaceId);
@@ -94,6 +97,7 @@ public class AttachNetworkInterfaceRequest extends AmazonWebServiceRequest
      * @param instanceId
      *        The ID of the instance.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -105,6 +109,7 @@ public class AttachNetworkInterfaceRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the instance.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
@@ -119,6 +124,7 @@ public class AttachNetworkInterfaceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AttachNetworkInterfaceRequest withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;
@@ -132,6 +138,7 @@ public class AttachNetworkInterfaceRequest extends AmazonWebServiceRequest
      * @param deviceIndex
      *        The index of the device for the network interface attachment.
      */
+
     public void setDeviceIndex(Integer deviceIndex) {
         this.deviceIndex = deviceIndex;
     }
@@ -143,6 +150,7 @@ public class AttachNetworkInterfaceRequest extends AmazonWebServiceRequest
      * 
      * @return The index of the device for the network interface attachment.
      */
+
     public Integer getDeviceIndex() {
         return this.deviceIndex;
     }
@@ -157,6 +165,7 @@ public class AttachNetworkInterfaceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AttachNetworkInterfaceRequest withDeviceIndex(Integer deviceIndex) {
         setDeviceIndex(deviceIndex);
         return this;

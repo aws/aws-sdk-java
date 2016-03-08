@@ -61,6 +61,7 @@ public class PutPipelineDefinitionRequest extends AmazonWebServiceRequest
      * @param pipelineId
      *        The ID of the pipeline.
      */
+
     public void setPipelineId(String pipelineId) {
         this.pipelineId = pipelineId;
     }
@@ -72,6 +73,7 @@ public class PutPipelineDefinitionRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the pipeline.
      */
+
     public String getPipelineId() {
         return this.pipelineId;
     }
@@ -86,6 +88,7 @@ public class PutPipelineDefinitionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutPipelineDefinitionRequest withPipelineId(String pipelineId) {
         setPipelineId(pipelineId);
         return this;
@@ -100,6 +103,7 @@ public class PutPipelineDefinitionRequest extends AmazonWebServiceRequest
      * @return The objects that define the pipeline. These objects overwrite the
      *         existing pipeline definition.
      */
+
     public java.util.List<PipelineObject> getPipelineObjects() {
         if (pipelineObjects == null) {
             pipelineObjects = new com.amazonaws.internal.SdkInternalList<PipelineObject>();
@@ -117,6 +121,7 @@ public class PutPipelineDefinitionRequest extends AmazonWebServiceRequest
      *        The objects that define the pipeline. These objects overwrite the
      *        existing pipeline definition.
      */
+
     public void setPipelineObjects(
             java.util.Collection<PipelineObject> pipelineObjects) {
         if (pipelineObjects == null) {
@@ -146,6 +151,7 @@ public class PutPipelineDefinitionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutPipelineDefinitionRequest withPipelineObjects(
             PipelineObject... pipelineObjects) {
         if (this.pipelineObjects == null) {
@@ -170,6 +176,7 @@ public class PutPipelineDefinitionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutPipelineDefinitionRequest withPipelineObjects(
             java.util.Collection<PipelineObject> pipelineObjects) {
         setPipelineObjects(pipelineObjects);
@@ -183,6 +190,7 @@ public class PutPipelineDefinitionRequest extends AmazonWebServiceRequest
      * 
      * @return The parameter objects used with the pipeline.
      */
+
     public java.util.List<ParameterObject> getParameterObjects() {
         if (parameterObjects == null) {
             parameterObjects = new com.amazonaws.internal.SdkInternalList<ParameterObject>();
@@ -198,6 +206,7 @@ public class PutPipelineDefinitionRequest extends AmazonWebServiceRequest
      * @param parameterObjects
      *        The parameter objects used with the pipeline.
      */
+
     public void setParameterObjects(
             java.util.Collection<ParameterObject> parameterObjects) {
         if (parameterObjects == null) {
@@ -225,6 +234,7 @@ public class PutPipelineDefinitionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutPipelineDefinitionRequest withParameterObjects(
             ParameterObject... parameterObjects) {
         if (this.parameterObjects == null) {
@@ -247,6 +257,7 @@ public class PutPipelineDefinitionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutPipelineDefinitionRequest withParameterObjects(
             java.util.Collection<ParameterObject> parameterObjects) {
         setParameterObjects(parameterObjects);
@@ -260,6 +271,7 @@ public class PutPipelineDefinitionRequest extends AmazonWebServiceRequest
      * 
      * @return The parameter values used with the pipeline.
      */
+
     public java.util.List<ParameterValue> getParameterValues() {
         if (parameterValues == null) {
             parameterValues = new com.amazonaws.internal.SdkInternalList<ParameterValue>();
@@ -275,6 +287,7 @@ public class PutPipelineDefinitionRequest extends AmazonWebServiceRequest
      * @param parameterValues
      *        The parameter values used with the pipeline.
      */
+
     public void setParameterValues(
             java.util.Collection<ParameterValue> parameterValues) {
         if (parameterValues == null) {
@@ -302,6 +315,7 @@ public class PutPipelineDefinitionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutPipelineDefinitionRequest withParameterValues(
             ParameterValue... parameterValues) {
         if (this.parameterValues == null) {
@@ -324,6 +338,7 @@ public class PutPipelineDefinitionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutPipelineDefinitionRequest withParameterValues(
             java.util.Collection<ParameterValue> parameterValues) {
         setParameterValues(parameterValues);

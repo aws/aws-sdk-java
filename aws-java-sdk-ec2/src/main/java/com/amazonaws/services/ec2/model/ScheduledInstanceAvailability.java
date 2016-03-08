@@ -115,6 +115,7 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
      *        The instance type. You can specify one of the C3, C4, M4, or R3
      *        instance types.
      */
+
     public void setInstanceType(String instanceType) {
         this.instanceType = instanceType;
     }
@@ -128,6 +129,7 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
      * @return The instance type. You can specify one of the C3, C4, M4, or R3
      *         instance types.
      */
+
     public String getInstanceType() {
         return this.instanceType;
     }
@@ -144,6 +146,7 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstanceAvailability withInstanceType(String instanceType) {
         setInstanceType(instanceType);
         return this;
@@ -157,6 +160,7 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
      * @param platform
      *        The platform (<code>Linux/UNIX</code> or <code>Windows</code>).
      */
+
     public void setPlatform(String platform) {
         this.platform = platform;
     }
@@ -168,6 +172,7 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
      * 
      * @return The platform (<code>Linux/UNIX</code> or <code>Windows</code>).
      */
+
     public String getPlatform() {
         return this.platform;
     }
@@ -182,6 +187,7 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstanceAvailability withPlatform(String platform) {
         setPlatform(platform);
         return this;
@@ -196,6 +202,7 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
      *        The network platform (<code>EC2-Classic</code> or
      *        <code>EC2-VPC</code>).
      */
+
     public void setNetworkPlatform(String networkPlatform) {
         this.networkPlatform = networkPlatform;
     }
@@ -208,6 +215,7 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
      * @return The network platform (<code>EC2-Classic</code> or
      *         <code>EC2-VPC</code>).
      */
+
     public String getNetworkPlatform() {
         return this.networkPlatform;
     }
@@ -223,6 +231,7 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstanceAvailability withNetworkPlatform(
             String networkPlatform) {
         setNetworkPlatform(networkPlatform);
@@ -237,6 +246,7 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
      * @param availabilityZone
      *        The Availability Zone.
      */
+
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
@@ -248,6 +258,7 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
      * 
      * @return The Availability Zone.
      */
+
     public String getAvailabilityZone() {
         return this.availabilityZone;
     }
@@ -262,6 +273,7 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstanceAvailability withAvailabilityZone(
             String availabilityZone) {
         setAvailabilityZone(availabilityZone);
@@ -276,6 +288,7 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
      * @param purchaseToken
      *        The purchase token. This token expires in two hours.
      */
+
     public void setPurchaseToken(String purchaseToken) {
         this.purchaseToken = purchaseToken;
     }
@@ -287,6 +300,7 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
      * 
      * @return The purchase token. This token expires in two hours.
      */
+
     public String getPurchaseToken() {
         return this.purchaseToken;
     }
@@ -301,6 +315,7 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstanceAvailability withPurchaseToken(String purchaseToken) {
         setPurchaseToken(purchaseToken);
         return this;
@@ -314,6 +329,7 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
      * @param slotDurationInHours
      *        The number of hours in the schedule.
      */
+
     public void setSlotDurationInHours(Integer slotDurationInHours) {
         this.slotDurationInHours = slotDurationInHours;
     }
@@ -325,6 +341,7 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
      * 
      * @return The number of hours in the schedule.
      */
+
     public Integer getSlotDurationInHours() {
         return this.slotDurationInHours;
     }
@@ -339,6 +356,7 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstanceAvailability withSlotDurationInHours(
             Integer slotDurationInHours) {
         setSlotDurationInHours(slotDurationInHours);
@@ -353,6 +371,7 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
      * @param recurrence
      *        The schedule recurrence.
      */
+
     public void setRecurrence(ScheduledInstanceRecurrence recurrence) {
         this.recurrence = recurrence;
     }
@@ -364,6 +383,7 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
      * 
      * @return The schedule recurrence.
      */
+
     public ScheduledInstanceRecurrence getRecurrence() {
         return this.recurrence;
     }
@@ -378,6 +398,7 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstanceAvailability withRecurrence(
             ScheduledInstanceRecurrence recurrence) {
         setRecurrence(recurrence);
@@ -392,6 +413,7 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
      * @param firstSlotStartTime
      *        The time period for the first schedule to start.
      */
+
     public void setFirstSlotStartTime(java.util.Date firstSlotStartTime) {
         this.firstSlotStartTime = firstSlotStartTime;
     }
@@ -403,6 +425,7 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
      * 
      * @return The time period for the first schedule to start.
      */
+
     public java.util.Date getFirstSlotStartTime() {
         return this.firstSlotStartTime;
     }
@@ -417,6 +440,7 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstanceAvailability withFirstSlotStartTime(
             java.util.Date firstSlotStartTime) {
         setFirstSlotStartTime(firstSlotStartTime);
@@ -431,6 +455,7 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
      * @param hourlyPrice
      *        The hourly price for a single instance.
      */
+
     public void setHourlyPrice(String hourlyPrice) {
         this.hourlyPrice = hourlyPrice;
     }
@@ -442,6 +467,7 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
      * 
      * @return The hourly price for a single instance.
      */
+
     public String getHourlyPrice() {
         return this.hourlyPrice;
     }
@@ -456,6 +482,7 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstanceAvailability withHourlyPrice(String hourlyPrice) {
         setHourlyPrice(hourlyPrice);
         return this;
@@ -470,6 +497,7 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
      *        The total number of hours for a single instance for the entire
      *        term.
      */
+
     public void setTotalScheduledInstanceHours(
             Integer totalScheduledInstanceHours) {
         this.totalScheduledInstanceHours = totalScheduledInstanceHours;
@@ -483,6 +511,7 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
      * @return The total number of hours for a single instance for the entire
      *         term.
      */
+
     public Integer getTotalScheduledInstanceHours() {
         return this.totalScheduledInstanceHours;
     }
@@ -498,6 +527,7 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstanceAvailability withTotalScheduledInstanceHours(
             Integer totalScheduledInstanceHours) {
         setTotalScheduledInstanceHours(totalScheduledInstanceHours);
@@ -512,6 +542,7 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
      * @param availableInstanceCount
      *        The number of available instances.
      */
+
     public void setAvailableInstanceCount(Integer availableInstanceCount) {
         this.availableInstanceCount = availableInstanceCount;
     }
@@ -523,6 +554,7 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
      * 
      * @return The number of available instances.
      */
+
     public Integer getAvailableInstanceCount() {
         return this.availableInstanceCount;
     }
@@ -537,6 +569,7 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstanceAvailability withAvailableInstanceCount(
             Integer availableInstanceCount) {
         setAvailableInstanceCount(availableInstanceCount);
@@ -551,6 +584,7 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
      * @param minTermDurationInDays
      *        The minimum term. The only possible value is 365 days.
      */
+
     public void setMinTermDurationInDays(Integer minTermDurationInDays) {
         this.minTermDurationInDays = minTermDurationInDays;
     }
@@ -562,6 +596,7 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
      * 
      * @return The minimum term. The only possible value is 365 days.
      */
+
     public Integer getMinTermDurationInDays() {
         return this.minTermDurationInDays;
     }
@@ -576,6 +611,7 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstanceAvailability withMinTermDurationInDays(
             Integer minTermDurationInDays) {
         setMinTermDurationInDays(minTermDurationInDays);
@@ -590,6 +626,7 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
      * @param maxTermDurationInDays
      *        The maximum term. The only possible value is 365 days.
      */
+
     public void setMaxTermDurationInDays(Integer maxTermDurationInDays) {
         this.maxTermDurationInDays = maxTermDurationInDays;
     }
@@ -601,6 +638,7 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
      * 
      * @return The maximum term. The only possible value is 365 days.
      */
+
     public Integer getMaxTermDurationInDays() {
         return this.maxTermDurationInDays;
     }
@@ -615,6 +653,7 @@ public class ScheduledInstanceAvailability implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstanceAvailability withMaxTermDurationInDays(
             Integer maxTermDurationInDays) {
         setMaxTermDurationInDays(maxTermDurationInDays);

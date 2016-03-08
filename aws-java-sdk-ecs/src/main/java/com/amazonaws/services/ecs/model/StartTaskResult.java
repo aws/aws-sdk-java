@@ -47,6 +47,7 @@ public class StartTaskResult implements Serializable, Cloneable {
      *         was successfully placed on your container instances are described
      *         here.
      */
+
     public java.util.List<Task> getTasks() {
         if (tasks == null) {
             tasks = new com.amazonaws.internal.SdkInternalList<Task>();
@@ -65,6 +66,7 @@ public class StartTaskResult implements Serializable, Cloneable {
      *        was successfully placed on your container instances are described
      *        here.
      */
+
     public void setTasks(java.util.Collection<Task> tasks) {
         if (tasks == null) {
             this.tasks = null;
@@ -93,6 +95,7 @@ public class StartTaskResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StartTaskResult withTasks(Task... tasks) {
         if (this.tasks == null) {
             setTasks(new com.amazonaws.internal.SdkInternalList<Task>(
@@ -117,6 +120,7 @@ public class StartTaskResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StartTaskResult withTasks(java.util.Collection<Task> tasks) {
         setTasks(tasks);
         return this;
@@ -129,6 +133,7 @@ public class StartTaskResult implements Serializable, Cloneable {
      * 
      * @return Any failures associated with the call.
      */
+
     public java.util.List<Failure> getFailures() {
         if (failures == null) {
             failures = new com.amazonaws.internal.SdkInternalList<Failure>();
@@ -144,6 +149,7 @@ public class StartTaskResult implements Serializable, Cloneable {
      * @param failures
      *        Any failures associated with the call.
      */
+
     public void setFailures(java.util.Collection<Failure> failures) {
         if (failures == null) {
             this.failures = null;
@@ -170,6 +176,7 @@ public class StartTaskResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StartTaskResult withFailures(Failure... failures) {
         if (this.failures == null) {
             setFailures(new com.amazonaws.internal.SdkInternalList<Failure>(
@@ -191,6 +198,7 @@ public class StartTaskResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StartTaskResult withFailures(java.util.Collection<Failure> failures) {
         setFailures(failures);
         return this;

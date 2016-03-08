@@ -56,6 +56,7 @@ public class CancelJobRequest extends AmazonWebServiceRequest implements
      *        that have a status of <code>Submitted</code>, use the
      *        <a>ListJobsByStatus</a> API action.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -76,6 +77,7 @@ public class CancelJobRequest extends AmazonWebServiceRequest implements
      *         that have a status of <code>Submitted</code>, use the
      *         <a>ListJobsByStatus</a> API action.
      */
+
     public String getId() {
         return this.id;
     }
@@ -99,6 +101,7 @@ public class CancelJobRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CancelJobRequest withId(String id) {
         setId(id);
         return this;

@@ -68,6 +68,7 @@ public class GetPipelineStateResult implements Serializable, Cloneable {
      * @param pipelineName
      *        The name of the pipeline for which you want to get the state.
      */
+
     public void setPipelineName(String pipelineName) {
         this.pipelineName = pipelineName;
     }
@@ -79,6 +80,7 @@ public class GetPipelineStateResult implements Serializable, Cloneable {
      * 
      * @return The name of the pipeline for which you want to get the state.
      */
+
     public String getPipelineName() {
         return this.pipelineName;
     }
@@ -93,6 +95,7 @@ public class GetPipelineStateResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetPipelineStateResult withPipelineName(String pipelineName) {
         setPipelineName(pipelineName);
         return this;
@@ -109,6 +112,7 @@ public class GetPipelineStateResult implements Serializable, Cloneable {
      *        The version number of the pipeline.</p> <note>A newly-created
      *        pipeline is always assigned a version number of <code>1</code>.
      */
+
     public void setPipelineVersion(Integer pipelineVersion) {
         this.pipelineVersion = pipelineVersion;
     }
@@ -123,6 +127,7 @@ public class GetPipelineStateResult implements Serializable, Cloneable {
      * @return The version number of the pipeline.</p> <note>A newly-created
      *         pipeline is always assigned a version number of <code>1</code>.
      */
+
     public Integer getPipelineVersion() {
         return this.pipelineVersion;
     }
@@ -140,6 +145,7 @@ public class GetPipelineStateResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetPipelineStateResult withPipelineVersion(Integer pipelineVersion) {
         setPipelineVersion(pipelineVersion);
         return this;
@@ -156,6 +162,7 @@ public class GetPipelineStateResult implements Serializable, Cloneable {
      *         name, state, most recent run details, whether the stage is
      *         disabled, and other data.
      */
+
     public java.util.List<StageState> getStageStates() {
         return stageStates;
     }
@@ -172,6 +179,7 @@ public class GetPipelineStateResult implements Serializable, Cloneable {
      *        name, state, most recent run details, whether the stage is
      *        disabled, and other data.
      */
+
     public void setStageStates(java.util.Collection<StageState> stageStates) {
         if (stageStates == null) {
             this.stageStates = null;
@@ -201,6 +209,7 @@ public class GetPipelineStateResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetPipelineStateResult withStageStates(StageState... stageStates) {
         if (this.stageStates == null) {
             setStageStates(new java.util.ArrayList<StageState>(
@@ -226,6 +235,7 @@ public class GetPipelineStateResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetPipelineStateResult withStageStates(
             java.util.Collection<StageState> stageStates) {
         setStageStates(stageStates);
@@ -240,6 +250,7 @@ public class GetPipelineStateResult implements Serializable, Cloneable {
      * @param created
      *        The date and time the pipeline was created, in timestamp format.
      */
+
     public void setCreated(java.util.Date created) {
         this.created = created;
     }
@@ -251,6 +262,7 @@ public class GetPipelineStateResult implements Serializable, Cloneable {
      * 
      * @return The date and time the pipeline was created, in timestamp format.
      */
+
     public java.util.Date getCreated() {
         return this.created;
     }
@@ -265,6 +277,7 @@ public class GetPipelineStateResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetPipelineStateResult withCreated(java.util.Date created) {
         setCreated(created);
         return this;
@@ -279,6 +292,7 @@ public class GetPipelineStateResult implements Serializable, Cloneable {
      *        The date and time the pipeline was last updated, in timestamp
      *        format.
      */
+
     public void setUpdated(java.util.Date updated) {
         this.updated = updated;
     }
@@ -291,6 +305,7 @@ public class GetPipelineStateResult implements Serializable, Cloneable {
      * @return The date and time the pipeline was last updated, in timestamp
      *         format.
      */
+
     public java.util.Date getUpdated() {
         return this.updated;
     }
@@ -306,6 +321,7 @@ public class GetPipelineStateResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetPipelineStateResult withUpdated(java.util.Date updated) {
         setUpdated(updated);
         return this;

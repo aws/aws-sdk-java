@@ -52,6 +52,7 @@ public class ServiceEvent implements Serializable, Cloneable {
      * @param id
      *        The ID string of the event.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -63,6 +64,7 @@ public class ServiceEvent implements Serializable, Cloneable {
      * 
      * @return The ID string of the event.
      */
+
     public String getId() {
         return this.id;
     }
@@ -77,6 +79,7 @@ public class ServiceEvent implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ServiceEvent withId(String id) {
         setId(id);
         return this;
@@ -91,6 +94,7 @@ public class ServiceEvent implements Serializable, Cloneable {
      *        The Unix time in seconds and milliseconds when the event was
      *        triggered.
      */
+
     public void setCreatedAt(java.util.Date createdAt) {
         this.createdAt = createdAt;
     }
@@ -103,6 +107,7 @@ public class ServiceEvent implements Serializable, Cloneable {
      * @return The Unix time in seconds and milliseconds when the event was
      *         triggered.
      */
+
     public java.util.Date getCreatedAt() {
         return this.createdAt;
     }
@@ -118,6 +123,7 @@ public class ServiceEvent implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ServiceEvent withCreatedAt(java.util.Date createdAt) {
         setCreatedAt(createdAt);
         return this;
@@ -131,6 +137,7 @@ public class ServiceEvent implements Serializable, Cloneable {
      * @param message
      *        The event message.
      */
+
     public void setMessage(String message) {
         this.message = message;
     }
@@ -142,6 +149,7 @@ public class ServiceEvent implements Serializable, Cloneable {
      * 
      * @return The event message.
      */
+
     public String getMessage() {
         return this.message;
     }
@@ -156,6 +164,7 @@ public class ServiceEvent implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ServiceEvent withMessage(String message) {
         setMessage(message);
         return this;

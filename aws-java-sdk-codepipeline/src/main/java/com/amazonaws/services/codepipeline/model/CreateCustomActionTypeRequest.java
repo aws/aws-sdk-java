@@ -73,6 +73,7 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
      *        build action.
      * @see ActionCategory
      */
+
     public void setCategory(String category) {
         this.category = category;
     }
@@ -87,6 +88,7 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
      *         build action.
      * @see ActionCategory
      */
+
     public String getCategory() {
         return this.category;
     }
@@ -104,6 +106,7 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see ActionCategory
      */
+
     public CreateCustomActionTypeRequest withCategory(String category) {
         setCategory(category);
         return this;
@@ -122,6 +125,7 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see ActionCategory
      */
+
     public void setCategory(ActionCategory category) {
         this.category = category.toString();
     }
@@ -139,6 +143,7 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see ActionCategory
      */
+
     public CreateCustomActionTypeRequest withCategory(ActionCategory category) {
         setCategory(category);
         return this;
@@ -154,6 +159,7 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
      *        The provider of the service used in the custom action, such as AWS
      *        CodeDeploy.
      */
+
     public void setProvider(String provider) {
         this.provider = provider;
     }
@@ -167,6 +173,7 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
      * @return The provider of the service used in the custom action, such as
      *         AWS CodeDeploy.
      */
+
     public String getProvider() {
         return this.provider;
     }
@@ -183,6 +190,7 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateCustomActionTypeRequest withProvider(String provider) {
         setProvider(provider);
         return this;
@@ -200,6 +208,7 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
      *        newly-created custom action is always assigned a version number of
      *        <code>1</code>. This is required.
      */
+
     public void setVersion(String version) {
         this.version = version;
     }
@@ -215,6 +224,7 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
      *         newly-created custom action is always assigned a version number
      *         of <code>1</code>. This is required.
      */
+
     public String getVersion() {
         return this.version;
     }
@@ -233,6 +243,7 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateCustomActionTypeRequest withVersion(String version) {
         setVersion(version);
         return this;
@@ -241,6 +252,7 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
     /**
      * @param settings
      */
+
     public void setSettings(ActionTypeSettings settings) {
         this.settings = settings;
     }
@@ -248,6 +260,7 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
     /**
      * @return
      */
+
     public ActionTypeSettings getSettings() {
         return this.settings;
     }
@@ -257,6 +270,7 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateCustomActionTypeRequest withSettings(
             ActionTypeSettings settings) {
         setSettings(settings);
@@ -270,6 +284,7 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
      * 
      * @return The configuration properties for the custom action.
      */
+
     public java.util.List<ActionConfigurationProperty> getConfigurationProperties() {
         return configurationProperties;
     }
@@ -282,6 +297,7 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
      * @param configurationProperties
      *        The configuration properties for the custom action.
      */
+
     public void setConfigurationProperties(
             java.util.Collection<ActionConfigurationProperty> configurationProperties) {
         if (configurationProperties == null) {
@@ -309,6 +325,7 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateCustomActionTypeRequest withConfigurationProperties(
             ActionConfigurationProperty... configurationProperties) {
         if (this.configurationProperties == null) {
@@ -331,6 +348,7 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateCustomActionTypeRequest withConfigurationProperties(
             java.util.Collection<ActionConfigurationProperty> configurationProperties) {
         setConfigurationProperties(configurationProperties);
@@ -340,6 +358,7 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
     /**
      * @param inputArtifactDetails
      */
+
     public void setInputArtifactDetails(ArtifactDetails inputArtifactDetails) {
         this.inputArtifactDetails = inputArtifactDetails;
     }
@@ -347,6 +366,7 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
     /**
      * @return
      */
+
     public ArtifactDetails getInputArtifactDetails() {
         return this.inputArtifactDetails;
     }
@@ -356,6 +376,7 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateCustomActionTypeRequest withInputArtifactDetails(
             ArtifactDetails inputArtifactDetails) {
         setInputArtifactDetails(inputArtifactDetails);
@@ -365,6 +386,7 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
     /**
      * @param outputArtifactDetails
      */
+
     public void setOutputArtifactDetails(ArtifactDetails outputArtifactDetails) {
         this.outputArtifactDetails = outputArtifactDetails;
     }
@@ -372,6 +394,7 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
     /**
      * @return
      */
+
     public ArtifactDetails getOutputArtifactDetails() {
         return this.outputArtifactDetails;
     }
@@ -381,6 +404,7 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateCustomActionTypeRequest withOutputArtifactDetails(
             ArtifactDetails outputArtifactDetails) {
         setOutputArtifactDetails(outputArtifactDetails);

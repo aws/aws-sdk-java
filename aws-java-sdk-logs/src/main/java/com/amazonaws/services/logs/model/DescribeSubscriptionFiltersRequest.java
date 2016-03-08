@@ -53,6 +53,7 @@ public class DescribeSubscriptionFiltersRequest extends AmazonWebServiceRequest
      *        The log group name for which subscription filters are to be
      *        listed.
      */
+
     public void setLogGroupName(String logGroupName) {
         this.logGroupName = logGroupName;
     }
@@ -65,6 +66,7 @@ public class DescribeSubscriptionFiltersRequest extends AmazonWebServiceRequest
      * @return The log group name for which subscription filters are to be
      *         listed.
      */
+
     public String getLogGroupName() {
         return this.logGroupName;
     }
@@ -80,6 +82,7 @@ public class DescribeSubscriptionFiltersRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSubscriptionFiltersRequest withLogGroupName(
             String logGroupName) {
         setLogGroupName(logGroupName);
@@ -98,6 +101,7 @@ public class DescribeSubscriptionFiltersRequest extends AmazonWebServiceRequest
      *        filterNamePrefix. If you don't specify a value, no prefix filter
      *        is applied.
      */
+
     public void setFilterNamePrefix(String filterNamePrefix) {
         this.filterNamePrefix = filterNamePrefix;
     }
@@ -113,6 +117,7 @@ public class DescribeSubscriptionFiltersRequest extends AmazonWebServiceRequest
      *         filterNamePrefix. If you don't specify a value, no prefix filter
      *         is applied.
      */
+
     public String getFilterNamePrefix() {
         return this.filterNamePrefix;
     }
@@ -131,6 +136,7 @@ public class DescribeSubscriptionFiltersRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSubscriptionFiltersRequest withFilterNamePrefix(
             String filterNamePrefix) {
         setFilterNamePrefix(filterNamePrefix);
@@ -140,6 +146,7 @@ public class DescribeSubscriptionFiltersRequest extends AmazonWebServiceRequest
     /**
      * @param nextToken
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -147,6 +154,7 @@ public class DescribeSubscriptionFiltersRequest extends AmazonWebServiceRequest
     /**
      * @return
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -156,6 +164,7 @@ public class DescribeSubscriptionFiltersRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSubscriptionFiltersRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -164,6 +173,7 @@ public class DescribeSubscriptionFiltersRequest extends AmazonWebServiceRequest
     /**
      * @param limit
      */
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -171,6 +181,7 @@ public class DescribeSubscriptionFiltersRequest extends AmazonWebServiceRequest
     /**
      * @return
      */
+
     public Integer getLimit() {
         return this.limit;
     }
@@ -180,6 +191,7 @@ public class DescribeSubscriptionFiltersRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSubscriptionFiltersRequest withLimit(Integer limit) {
         setLimit(limit);
         return this;

@@ -52,6 +52,7 @@ public class Command implements Serializable, Cloneable {
      * @param name
      *        The name of the command.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -63,6 +64,7 @@ public class Command implements Serializable, Cloneable {
      * 
      * @return The name of the command.
      */
+
     public String getName() {
         return this.name;
     }
@@ -77,6 +79,7 @@ public class Command implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Command withName(String name) {
         setName(name);
         return this;
@@ -90,6 +93,7 @@ public class Command implements Serializable, Cloneable {
      * @param scriptPath
      *        The Amazon S3 location of the command script.
      */
+
     public void setScriptPath(String scriptPath) {
         this.scriptPath = scriptPath;
     }
@@ -101,6 +105,7 @@ public class Command implements Serializable, Cloneable {
      * 
      * @return The Amazon S3 location of the command script.
      */
+
     public String getScriptPath() {
         return this.scriptPath;
     }
@@ -115,6 +120,7 @@ public class Command implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Command withScriptPath(String scriptPath) {
         setScriptPath(scriptPath);
         return this;
@@ -127,6 +133,7 @@ public class Command implements Serializable, Cloneable {
      * 
      * @return Arguments for Amazon EMR to pass to the command for execution.
      */
+
     public java.util.List<String> getArgs() {
         if (args == null) {
             args = new com.amazonaws.internal.SdkInternalList<String>();
@@ -142,6 +149,7 @@ public class Command implements Serializable, Cloneable {
      * @param args
      *        Arguments for Amazon EMR to pass to the command for execution.
      */
+
     public void setArgs(java.util.Collection<String> args) {
         if (args == null) {
             this.args = null;
@@ -167,6 +175,7 @@ public class Command implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Command withArgs(String... args) {
         if (this.args == null) {
             setArgs(new com.amazonaws.internal.SdkInternalList<String>(
@@ -188,6 +197,7 @@ public class Command implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Command withArgs(java.util.Collection<String> args) {
         setArgs(args);
         return this;

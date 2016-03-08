@@ -48,6 +48,7 @@ public class ForwardedValues implements Serializable, Cloneable {
      *        the origin that is associated with this cache behavior. If so,
      *        specify true; if not, specify false.
      */
+
     public void setQueryString(Boolean queryString) {
         this.queryString = queryString;
     }
@@ -61,6 +62,7 @@ public class ForwardedValues implements Serializable, Cloneable {
      *         the origin that is associated with this cache behavior. If so,
      *         specify true; if not, specify false.
      */
+
     public Boolean getQueryString() {
         return this.queryString;
     }
@@ -77,6 +79,7 @@ public class ForwardedValues implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ForwardedValues withQueryString(Boolean queryString) {
         setQueryString(queryString);
         return this;
@@ -91,6 +94,7 @@ public class ForwardedValues implements Serializable, Cloneable {
      *         the origin that is associated with this cache behavior. If so,
      *         specify true; if not, specify false.
      */
+
     public Boolean isQueryString() {
         return this.queryString;
     }
@@ -101,6 +105,7 @@ public class ForwardedValues implements Serializable, Cloneable {
      * @param cookies
      *        A complex type that specifies how CloudFront handles cookies.
      */
+
     public void setCookies(CookiePreference cookies) {
         this.cookies = cookies;
     }
@@ -110,6 +115,7 @@ public class ForwardedValues implements Serializable, Cloneable {
      * 
      * @return A complex type that specifies how CloudFront handles cookies.
      */
+
     public CookiePreference getCookies() {
         return this.cookies;
     }
@@ -122,6 +128,7 @@ public class ForwardedValues implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ForwardedValues withCookies(CookiePreference cookies) {
         setCookies(cookies);
         return this;
@@ -135,6 +142,7 @@ public class ForwardedValues implements Serializable, Cloneable {
      *        A complex type that specifies the Headers, if any, that you want
      *        CloudFront to vary upon for this cache behavior.
      */
+
     public void setHeaders(Headers headers) {
         this.headers = headers;
     }
@@ -146,6 +154,7 @@ public class ForwardedValues implements Serializable, Cloneable {
      * @return A complex type that specifies the Headers, if any, that you want
      *         CloudFront to vary upon for this cache behavior.
      */
+
     public Headers getHeaders() {
         return this.headers;
     }
@@ -160,6 +169,7 @@ public class ForwardedValues implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ForwardedValues withHeaders(Headers headers) {
         setHeaders(headers);
         return this;

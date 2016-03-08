@@ -72,6 +72,7 @@ public class JobWatermark implements Serializable, Cloneable {
      *        preset, the value of Watermarks Id tells Elastic Transcoder which
      *        settings to use.
      */
+
     public void setPresetWatermarkId(String presetWatermarkId) {
         this.presetWatermarkId = presetWatermarkId;
     }
@@ -90,6 +91,7 @@ public class JobWatermark implements Serializable, Cloneable {
      *         preset, the value of Watermarks Id tells Elastic Transcoder which
      *         settings to use.
      */
+
     public String getPresetWatermarkId() {
         return this.presetWatermarkId;
     }
@@ -111,6 +113,7 @@ public class JobWatermark implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobWatermark withPresetWatermarkId(String presetWatermarkId) {
         setPresetWatermarkId(presetWatermarkId);
         return this;
@@ -141,6 +144,7 @@ public class JobWatermark implements Serializable, Cloneable {
      *        file isn't in the specified bucket, Elastic Transcoder returns an
      *        error.
      */
+
     public void setInputKey(String inputKey) {
         this.inputKey = inputKey;
     }
@@ -169,6 +173,7 @@ public class JobWatermark implements Serializable, Cloneable {
      *         file isn't in the specified bucket, Elastic Transcoder returns an
      *         error.
      */
+
     public String getInputKey() {
         return this.inputKey;
     }
@@ -200,6 +205,7 @@ public class JobWatermark implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobWatermark withInputKey(String inputKey) {
         setInputKey(inputKey);
         return this;
@@ -215,6 +221,7 @@ public class JobWatermark implements Serializable, Cloneable {
      *        The encryption settings, if any, that you want Elastic Transcoder
      *        to apply to your watermarks.
      */
+
     public void setEncryption(Encryption encryption) {
         this.encryption = encryption;
     }
@@ -228,6 +235,7 @@ public class JobWatermark implements Serializable, Cloneable {
      * @return The encryption settings, if any, that you want Elastic Transcoder
      *         to apply to your watermarks.
      */
+
     public Encryption getEncryption() {
         return this.encryption;
     }
@@ -244,6 +252,7 @@ public class JobWatermark implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobWatermark withEncryption(Encryption encryption) {
         setEncryption(encryption);
         return this;

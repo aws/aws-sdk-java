@@ -37,6 +37,7 @@ public class DescribeBundleTasksResult implements Serializable, Cloneable {
      * 
      * @return Information about one or more bundle tasks.
      */
+
     public java.util.List<BundleTask> getBundleTasks() {
         if (bundleTasks == null) {
             bundleTasks = new com.amazonaws.internal.SdkInternalList<BundleTask>();
@@ -52,6 +53,7 @@ public class DescribeBundleTasksResult implements Serializable, Cloneable {
      * @param bundleTasks
      *        Information about one or more bundle tasks.
      */
+
     public void setBundleTasks(java.util.Collection<BundleTask> bundleTasks) {
         if (bundleTasks == null) {
             this.bundleTasks = null;
@@ -78,6 +80,7 @@ public class DescribeBundleTasksResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeBundleTasksResult withBundleTasks(BundleTask... bundleTasks) {
         if (this.bundleTasks == null) {
             setBundleTasks(new com.amazonaws.internal.SdkInternalList<BundleTask>(
@@ -99,6 +102,7 @@ public class DescribeBundleTasksResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeBundleTasksResult withBundleTasks(
             java.util.Collection<BundleTask> bundleTasks) {
         setBundleTasks(bundleTasks);

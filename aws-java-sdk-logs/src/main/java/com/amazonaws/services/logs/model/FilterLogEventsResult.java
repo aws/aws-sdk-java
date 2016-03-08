@@ -57,6 +57,7 @@ public class FilterLogEventsResult implements Serializable, Cloneable {
      * @return A list of <code class="code">FilteredLogEvent</code> objects
      *         representing the matched events from the request.
      */
+
     public java.util.List<FilteredLogEvent> getEvents() {
         if (events == null) {
             events = new com.amazonaws.internal.SdkInternalList<FilteredLogEvent>();
@@ -74,6 +75,7 @@ public class FilterLogEventsResult implements Serializable, Cloneable {
      *        A list of <code class="code">FilteredLogEvent</code> objects
      *        representing the matched events from the request.
      */
+
     public void setEvents(java.util.Collection<FilteredLogEvent> events) {
         if (events == null) {
             this.events = null;
@@ -102,6 +104,7 @@ public class FilterLogEventsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FilterLogEventsResult withEvents(FilteredLogEvent... events) {
         if (this.events == null) {
             setEvents(new com.amazonaws.internal.SdkInternalList<FilteredLogEvent>(
@@ -125,6 +128,7 @@ public class FilterLogEventsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FilterLogEventsResult withEvents(
             java.util.Collection<FilteredLogEvent> events) {
         setEvents(events);
@@ -143,6 +147,7 @@ public class FilterLogEventsResult implements Serializable, Cloneable {
      *         and whether each has been searched completely or still has more
      *         to be paginated.
      */
+
     public java.util.List<SearchedLogStream> getSearchedLogStreams() {
         if (searchedLogStreams == null) {
             searchedLogStreams = new com.amazonaws.internal.SdkInternalList<SearchedLogStream>();
@@ -163,6 +168,7 @@ public class FilterLogEventsResult implements Serializable, Cloneable {
      *        and whether each has been searched completely or still has more to
      *        be paginated.
      */
+
     public void setSearchedLogStreams(
             java.util.Collection<SearchedLogStream> searchedLogStreams) {
         if (searchedLogStreams == null) {
@@ -195,6 +201,7 @@ public class FilterLogEventsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FilterLogEventsResult withSearchedLogStreams(
             SearchedLogStream... searchedLogStreams) {
         if (this.searchedLogStreams == null) {
@@ -222,6 +229,7 @@ public class FilterLogEventsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FilterLogEventsResult withSearchedLogStreams(
             java.util.Collection<SearchedLogStream> searchedLogStreams) {
         setSearchedLogStreams(searchedLogStreams);
@@ -242,6 +250,7 @@ public class FilterLogEventsResult implements Serializable, Cloneable {
      *        paginating the FilterLogEvents results. This token is omitted from
      *        the response when there are no other events to display.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -259,6 +268,7 @@ public class FilterLogEventsResult implements Serializable, Cloneable {
      *         paginating the FilterLogEvents results. This token is omitted
      *         from the response when there are no other events to display.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -279,6 +289,7 @@ public class FilterLogEventsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FilterLogEventsResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

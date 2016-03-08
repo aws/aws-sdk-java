@@ -40,6 +40,7 @@ public class GenerateDataSetResult implements Serializable, Cloneable {
      *        GenerateDataSet operation. This identifier can be used to
      *        correlate a request with notifications from the SNS topic.
      */
+
     public void setDataSetRequestId(String dataSetRequestId) {
         this.dataSetRequestId = dataSetRequestId;
     }
@@ -53,6 +54,7 @@ public class GenerateDataSetResult implements Serializable, Cloneable {
      *         GenerateDataSet operation. This identifier can be used to
      *         correlate a request with notifications from the SNS topic.
      */
+
     public String getDataSetRequestId() {
         return this.dataSetRequestId;
     }
@@ -69,6 +71,7 @@ public class GenerateDataSetResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GenerateDataSetResult withDataSetRequestId(String dataSetRequestId) {
         setDataSetRequestId(dataSetRequestId);
         return this;

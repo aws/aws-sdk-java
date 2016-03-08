@@ -52,6 +52,7 @@ public class DescribeLaunchConfigurationsRequest extends
      * 
      * @return The launch configuration names.
      */
+
     public java.util.List<String> getLaunchConfigurationNames() {
         if (launchConfigurationNames == null) {
             launchConfigurationNames = new com.amazonaws.internal.SdkInternalList<String>();
@@ -67,6 +68,7 @@ public class DescribeLaunchConfigurationsRequest extends
      * @param launchConfigurationNames
      *        The launch configuration names.
      */
+
     public void setLaunchConfigurationNames(
             java.util.Collection<String> launchConfigurationNames) {
         if (launchConfigurationNames == null) {
@@ -94,6 +96,7 @@ public class DescribeLaunchConfigurationsRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLaunchConfigurationsRequest withLaunchConfigurationNames(
             String... launchConfigurationNames) {
         if (this.launchConfigurationNames == null) {
@@ -116,6 +119,7 @@ public class DescribeLaunchConfigurationsRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLaunchConfigurationsRequest withLaunchConfigurationNames(
             java.util.Collection<String> launchConfigurationNames) {
         setLaunchConfigurationNames(launchConfigurationNames);
@@ -132,6 +136,7 @@ public class DescribeLaunchConfigurationsRequest extends
      *        The token for the next set of items to return. (You received this
      *        token from a previous call.)
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -145,6 +150,7 @@ public class DescribeLaunchConfigurationsRequest extends
      * @return The token for the next set of items to return. (You received this
      *         token from a previous call.)
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -161,6 +167,7 @@ public class DescribeLaunchConfigurationsRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLaunchConfigurationsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -175,6 +182,7 @@ public class DescribeLaunchConfigurationsRequest extends
      *        The maximum number of items to return with this call. The default
      *        is 100.
      */
+
     public void setMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
     }
@@ -187,6 +195,7 @@ public class DescribeLaunchConfigurationsRequest extends
      * @return The maximum number of items to return with this call. The default
      *         is 100.
      */
+
     public Integer getMaxRecords() {
         return this.maxRecords;
     }
@@ -202,6 +211,7 @@ public class DescribeLaunchConfigurationsRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLaunchConfigurationsRequest withMaxRecords(Integer maxRecords) {
         setMaxRecords(maxRecords);
         return this;

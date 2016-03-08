@@ -47,6 +47,7 @@ public class CreateRuleResult implements Serializable, Cloneable {
      * @param rule
      *        The <a>Rule</a> returned in the <code>CreateRule</code> response.
      */
+
     public void setRule(Rule rule) {
         this.rule = rule;
     }
@@ -58,6 +59,7 @@ public class CreateRuleResult implements Serializable, Cloneable {
      * 
      * @return The <a>Rule</a> returned in the <code>CreateRule</code> response.
      */
+
     public Rule getRule() {
         return this.rule;
     }
@@ -72,6 +74,7 @@ public class CreateRuleResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateRuleResult withRule(Rule rule) {
         setRule(rule);
         return this;
@@ -91,6 +94,7 @@ public class CreateRuleResult implements Serializable, Cloneable {
      *        query the status of the request. For more information, see
      *        <a>GetChangeTokenStatus</a>.
      */
+
     public void setChangeToken(String changeToken) {
         this.changeToken = changeToken;
     }
@@ -108,6 +112,7 @@ public class CreateRuleResult implements Serializable, Cloneable {
      *         query the status of the request. For more information, see
      *         <a>GetChangeTokenStatus</a>.
      */
+
     public String getChangeToken() {
         return this.changeToken;
     }
@@ -128,6 +133,7 @@ public class CreateRuleResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateRuleResult withChangeToken(String changeToken) {
         setChangeToken(changeToken);
         return this;

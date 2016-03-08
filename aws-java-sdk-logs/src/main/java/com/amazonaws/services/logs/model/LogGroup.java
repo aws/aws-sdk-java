@@ -38,6 +38,7 @@ public class LogGroup implements Serializable, Cloneable {
     /**
      * @param logGroupName
      */
+
     public void setLogGroupName(String logGroupName) {
         this.logGroupName = logGroupName;
     }
@@ -45,6 +46,7 @@ public class LogGroup implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getLogGroupName() {
         return this.logGroupName;
     }
@@ -54,6 +56,7 @@ public class LogGroup implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LogGroup withLogGroupName(String logGroupName) {
         setLogGroupName(logGroupName);
         return this;
@@ -62,6 +65,7 @@ public class LogGroup implements Serializable, Cloneable {
     /**
      * @param creationTime
      */
+
     public void setCreationTime(Long creationTime) {
         this.creationTime = creationTime;
     }
@@ -69,6 +73,7 @@ public class LogGroup implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Long getCreationTime() {
         return this.creationTime;
     }
@@ -78,6 +83,7 @@ public class LogGroup implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LogGroup withCreationTime(Long creationTime) {
         setCreationTime(creationTime);
         return this;
@@ -86,6 +92,7 @@ public class LogGroup implements Serializable, Cloneable {
     /**
      * @param retentionInDays
      */
+
     public void setRetentionInDays(Integer retentionInDays) {
         this.retentionInDays = retentionInDays;
     }
@@ -93,6 +100,7 @@ public class LogGroup implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Integer getRetentionInDays() {
         return this.retentionInDays;
     }
@@ -102,6 +110,7 @@ public class LogGroup implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LogGroup withRetentionInDays(Integer retentionInDays) {
         setRetentionInDays(retentionInDays);
         return this;
@@ -110,6 +119,7 @@ public class LogGroup implements Serializable, Cloneable {
     /**
      * @param metricFilterCount
      */
+
     public void setMetricFilterCount(Integer metricFilterCount) {
         this.metricFilterCount = metricFilterCount;
     }
@@ -117,6 +127,7 @@ public class LogGroup implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Integer getMetricFilterCount() {
         return this.metricFilterCount;
     }
@@ -126,6 +137,7 @@ public class LogGroup implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LogGroup withMetricFilterCount(Integer metricFilterCount) {
         setMetricFilterCount(metricFilterCount);
         return this;
@@ -134,6 +146,7 @@ public class LogGroup implements Serializable, Cloneable {
     /**
      * @param arn
      */
+
     public void setArn(String arn) {
         this.arn = arn;
     }
@@ -141,6 +154,7 @@ public class LogGroup implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getArn() {
         return this.arn;
     }
@@ -150,6 +164,7 @@ public class LogGroup implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LogGroup withArn(String arn) {
         setArn(arn);
         return this;
@@ -158,6 +173,7 @@ public class LogGroup implements Serializable, Cloneable {
     /**
      * @param storedBytes
      */
+
     public void setStoredBytes(Long storedBytes) {
         this.storedBytes = storedBytes;
     }
@@ -165,6 +181,7 @@ public class LogGroup implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Long getStoredBytes() {
         return this.storedBytes;
     }
@@ -174,6 +191,7 @@ public class LogGroup implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LogGroup withStoredBytes(Long storedBytes) {
         setStoredBytes(storedBytes);
         return this;

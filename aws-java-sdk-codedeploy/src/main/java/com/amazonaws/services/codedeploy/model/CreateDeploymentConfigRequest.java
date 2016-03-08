@@ -69,6 +69,7 @@ public class CreateDeploymentConfigRequest extends AmazonWebServiceRequest
      * @param deploymentConfigName
      *        The name of the deployment configuration to create.
      */
+
     public void setDeploymentConfigName(String deploymentConfigName) {
         this.deploymentConfigName = deploymentConfigName;
     }
@@ -80,6 +81,7 @@ public class CreateDeploymentConfigRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the deployment configuration to create.
      */
+
     public String getDeploymentConfigName() {
         return this.deploymentConfigName;
     }
@@ -94,6 +96,7 @@ public class CreateDeploymentConfigRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDeploymentConfigRequest withDeploymentConfigName(
             String deploymentConfigName) {
         setDeploymentConfigName(deploymentConfigName);
@@ -150,6 +153,7 @@ public class CreateDeploymentConfigRequest extends AmazonWebServiceRequest
      *        For example, to set a minimum of 95% healthy instances, specify a
      *        type of FLEET_PERCENT and a value of 95.
      */
+
     public void setMinimumHealthyHosts(MinimumHealthyHosts minimumHealthyHosts) {
         this.minimumHealthyHosts = minimumHealthyHosts;
     }
@@ -203,6 +207,7 @@ public class CreateDeploymentConfigRequest extends AmazonWebServiceRequest
      *         For example, to set a minimum of 95% healthy instances, specify a
      *         type of FLEET_PERCENT and a value of 95.
      */
+
     public MinimumHealthyHosts getMinimumHealthyHosts() {
         return this.minimumHealthyHosts;
     }
@@ -259,6 +264,7 @@ public class CreateDeploymentConfigRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDeploymentConfigRequest withMinimumHealthyHosts(
             MinimumHealthyHosts minimumHealthyHosts) {
         setMinimumHealthyHosts(minimumHealthyHosts);

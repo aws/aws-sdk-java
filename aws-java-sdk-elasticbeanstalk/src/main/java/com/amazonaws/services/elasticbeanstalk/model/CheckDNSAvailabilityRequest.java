@@ -62,6 +62,7 @@ public class CheckDNSAvailabilityRequest extends AmazonWebServiceRequest
      * @param cNAMEPrefix
      *        The prefix used when this CNAME is reserved.
      */
+
     public void setCNAMEPrefix(String cNAMEPrefix) {
         this.cNAMEPrefix = cNAMEPrefix;
     }
@@ -73,6 +74,7 @@ public class CheckDNSAvailabilityRequest extends AmazonWebServiceRequest
      * 
      * @return The prefix used when this CNAME is reserved.
      */
+
     public String getCNAMEPrefix() {
         return this.cNAMEPrefix;
     }
@@ -87,6 +89,7 @@ public class CheckDNSAvailabilityRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CheckDNSAvailabilityRequest withCNAMEPrefix(String cNAMEPrefix) {
         setCNAMEPrefix(cNAMEPrefix);
         return this;

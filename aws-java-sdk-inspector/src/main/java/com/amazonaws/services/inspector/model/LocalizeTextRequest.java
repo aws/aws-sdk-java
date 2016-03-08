@@ -45,6 +45,7 @@ public class LocalizeTextRequest extends AmazonWebServiceRequest implements
      * 
      * @return A list of textual identifiers.
      */
+
     public java.util.List<LocalizedText> getLocalizedTexts() {
         return localizedTexts;
     }
@@ -57,6 +58,7 @@ public class LocalizeTextRequest extends AmazonWebServiceRequest implements
      * @param localizedTexts
      *        A list of textual identifiers.
      */
+
     public void setLocalizedTexts(
             java.util.Collection<LocalizedText> localizedTexts) {
         if (localizedTexts == null) {
@@ -84,6 +86,7 @@ public class LocalizeTextRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LocalizeTextRequest withLocalizedTexts(
             LocalizedText... localizedTexts) {
         if (this.localizedTexts == null) {
@@ -106,6 +109,7 @@ public class LocalizeTextRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LocalizeTextRequest withLocalizedTexts(
             java.util.Collection<LocalizedText> localizedTexts) {
         setLocalizedTexts(localizedTexts);
@@ -120,6 +124,7 @@ public class LocalizeTextRequest extends AmazonWebServiceRequest implements
      * @param locale
      *        The locale that you want to translate a textual identifier into.
      */
+
     public void setLocale(String locale) {
         this.locale = locale;
     }
@@ -131,6 +136,7 @@ public class LocalizeTextRequest extends AmazonWebServiceRequest implements
      * 
      * @return The locale that you want to translate a textual identifier into.
      */
+
     public String getLocale() {
         return this.locale;
     }
@@ -145,6 +151,7 @@ public class LocalizeTextRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LocalizeTextRequest withLocale(String locale) {
         setLocale(locale);
         return this;

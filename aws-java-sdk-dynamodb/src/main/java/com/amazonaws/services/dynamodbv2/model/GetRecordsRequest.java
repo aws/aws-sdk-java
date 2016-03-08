@@ -55,6 +55,7 @@ public class GetRecordsRequest extends AmazonWebServiceRequest implements
      *        GetShardIterator operation. This iterator can be used to access
      *        the stream records in this shard.
      */
+
     public void setShardIterator(String shardIterator) {
         this.shardIterator = shardIterator;
     }
@@ -70,6 +71,7 @@ public class GetRecordsRequest extends AmazonWebServiceRequest implements
      *         GetShardIterator operation. This iterator can be used to access
      *         the stream records in this shard.
      */
+
     public String getShardIterator() {
         return this.shardIterator;
     }
@@ -88,6 +90,7 @@ public class GetRecordsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetRecordsRequest withShardIterator(String shardIterator) {
         setShardIterator(shardIterator);
         return this;
@@ -103,6 +106,7 @@ public class GetRecordsRequest extends AmazonWebServiceRequest implements
      *        The maximum number of records to return from the shard. The upper
      *        limit is 1000.
      */
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -116,6 +120,7 @@ public class GetRecordsRequest extends AmazonWebServiceRequest implements
      * @return The maximum number of records to return from the shard. The upper
      *         limit is 1000.
      */
+
     public Integer getLimit() {
         return this.limit;
     }
@@ -132,6 +137,7 @@ public class GetRecordsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetRecordsRequest withLimit(Integer limit) {
         setLimit(limit);
         return this;

@@ -41,6 +41,7 @@ public class ModifyVpcEndpointResult implements Serializable, Cloneable {
      *        Returns <code>true</code> if the request succeeds; otherwise, it
      *        returns an error.
      */
+
     public void setReturn(Boolean returnValue) {
         this.returnValue = returnValue;
     }
@@ -54,6 +55,7 @@ public class ModifyVpcEndpointResult implements Serializable, Cloneable {
      * @return Returns <code>true</code> if the request succeeds; otherwise, it
      *         returns an error.
      */
+
     public Boolean getReturn() {
         return this.returnValue;
     }
@@ -70,6 +72,7 @@ public class ModifyVpcEndpointResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyVpcEndpointResult withReturn(Boolean returnValue) {
         setReturn(returnValue);
         return this;
@@ -84,6 +87,7 @@ public class ModifyVpcEndpointResult implements Serializable, Cloneable {
      * @return Returns <code>true</code> if the request succeeds; otherwise, it
      *         returns an error.
      */
+
     public Boolean isReturn() {
         return this.returnValue;
     }

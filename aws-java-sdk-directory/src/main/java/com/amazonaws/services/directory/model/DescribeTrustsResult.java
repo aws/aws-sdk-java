@@ -63,6 +63,7 @@ public class DescribeTrustsResult implements Serializable, Cloneable {
      *         to retrieve, or if the limitations of the operation have been
      *         exceeded.
      */
+
     public java.util.List<Trust> getTrusts() {
         if (trusts == null) {
             trusts = new com.amazonaws.internal.SdkInternalList<Trust>();
@@ -90,6 +91,7 @@ public class DescribeTrustsResult implements Serializable, Cloneable {
      *        to retrieve, or if the limitations of the operation have been
      *        exceeded.
      */
+
     public void setTrusts(java.util.Collection<Trust> trusts) {
         if (trusts == null) {
             this.trusts = null;
@@ -127,6 +129,7 @@ public class DescribeTrustsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTrustsResult withTrusts(Trust... trusts) {
         if (this.trusts == null) {
             setTrusts(new com.amazonaws.internal.SdkInternalList<Trust>(
@@ -160,6 +163,7 @@ public class DescribeTrustsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTrustsResult withTrusts(java.util.Collection<Trust> trusts) {
         setTrusts(trusts);
         return this;
@@ -177,6 +181,7 @@ public class DescribeTrustsResult implements Serializable, Cloneable {
      *        <i>NextToken</i> parameter in a subsequent call to
      *        <a>DescribeTrusts</a> to retrieve the next set of items.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -192,6 +197,7 @@ public class DescribeTrustsResult implements Serializable, Cloneable {
      *         <i>NextToken</i> parameter in a subsequent call to
      *         <a>DescribeTrusts</a> to retrieve the next set of items.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -210,6 +216,7 @@ public class DescribeTrustsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTrustsResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

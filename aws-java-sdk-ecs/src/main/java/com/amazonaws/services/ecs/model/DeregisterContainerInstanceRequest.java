@@ -73,6 +73,7 @@ public class DeregisterContainerInstanceRequest extends AmazonWebServiceRequest
      *        that hosts the container instance to deregister. If you do not
      *        specify a cluster, the default cluster is assumed.
      */
+
     public void setCluster(String cluster) {
         this.cluster = cluster;
     }
@@ -88,6 +89,7 @@ public class DeregisterContainerInstanceRequest extends AmazonWebServiceRequest
      *         that hosts the container instance to deregister. If you do not
      *         specify a cluster, the default cluster is assumed.
      */
+
     public String getCluster() {
         return this.cluster;
     }
@@ -106,6 +108,7 @@ public class DeregisterContainerInstanceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeregisterContainerInstanceRequest withCluster(String cluster) {
         setCluster(cluster);
         return this;
@@ -133,6 +136,7 @@ public class DeregisterContainerInstanceRequest extends AmazonWebServiceRequest
      *        arn:aws:ecs:<i>region</i>:<i>aws_account_id
      *        </i>:container-instance/<i>container_instance_ID</i>.
      */
+
     public void setContainerInstance(String containerInstance) {
         this.containerInstance = containerInstance;
     }
@@ -159,6 +163,7 @@ public class DeregisterContainerInstanceRequest extends AmazonWebServiceRequest
      *         <i>aws_account_id</i>:container-instance
      *         /<i>container_instance_ID</i>.
      */
+
     public String getContainerInstance() {
         return this.containerInstance;
     }
@@ -187,6 +192,7 @@ public class DeregisterContainerInstanceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeregisterContainerInstanceRequest withContainerInstance(
             String containerInstance) {
         setContainerInstance(containerInstance);
@@ -218,6 +224,7 @@ public class DeregisterContainerInstanceRequest extends AmazonWebServiceRequest
      *        service scheduler starts another copy of that task, on a different
      *        container instance if possible.
      */
+
     public void setForce(Boolean force) {
         this.force = force;
     }
@@ -246,6 +253,7 @@ public class DeregisterContainerInstanceRequest extends AmazonWebServiceRequest
      *         the service scheduler starts another copy of that task, on a
      *         different container instance if possible.
      */
+
     public Boolean getForce() {
         return this.force;
     }
@@ -277,6 +285,7 @@ public class DeregisterContainerInstanceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeregisterContainerInstanceRequest withForce(Boolean force) {
         setForce(force);
         return this;
@@ -306,6 +315,7 @@ public class DeregisterContainerInstanceRequest extends AmazonWebServiceRequest
      *         the service scheduler starts another copy of that task, on a
      *         different container instance if possible.
      */
+
     public Boolean isForce() {
         return this.force;
     }

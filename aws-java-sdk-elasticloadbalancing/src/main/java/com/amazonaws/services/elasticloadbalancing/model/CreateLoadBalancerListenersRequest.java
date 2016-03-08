@@ -70,6 +70,7 @@ public class CreateLoadBalancerListenersRequest extends AmazonWebServiceRequest
      * @param loadBalancerName
      *        The name of the load balancer.
      */
+
     public void setLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
     }
@@ -81,6 +82,7 @@ public class CreateLoadBalancerListenersRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the load balancer.
      */
+
     public String getLoadBalancerName() {
         return this.loadBalancerName;
     }
@@ -95,6 +97,7 @@ public class CreateLoadBalancerListenersRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateLoadBalancerListenersRequest withLoadBalancerName(
             String loadBalancerName) {
         setLoadBalancerName(loadBalancerName);
@@ -108,6 +111,7 @@ public class CreateLoadBalancerListenersRequest extends AmazonWebServiceRequest
      * 
      * @return The listeners.
      */
+
     public java.util.List<Listener> getListeners() {
         if (listeners == null) {
             listeners = new com.amazonaws.internal.SdkInternalList<Listener>();
@@ -123,6 +127,7 @@ public class CreateLoadBalancerListenersRequest extends AmazonWebServiceRequest
      * @param listeners
      *        The listeners.
      */
+
     public void setListeners(java.util.Collection<Listener> listeners) {
         if (listeners == null) {
             this.listeners = null;
@@ -149,6 +154,7 @@ public class CreateLoadBalancerListenersRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateLoadBalancerListenersRequest withListeners(
             Listener... listeners) {
         if (this.listeners == null) {
@@ -171,6 +177,7 @@ public class CreateLoadBalancerListenersRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateLoadBalancerListenersRequest withListeners(
             java.util.Collection<Listener> listeners) {
         setListeners(listeners);

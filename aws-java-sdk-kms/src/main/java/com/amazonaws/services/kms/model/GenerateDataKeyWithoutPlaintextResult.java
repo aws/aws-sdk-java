@@ -68,6 +68,7 @@ public class GenerateDataKeyWithoutPlaintextResult implements Serializable,
      *        If you are using the CLI, the value is Base64 encoded. Otherwise,
      *        it is not encoded.
      */
+
     public void setCiphertextBlob(java.nio.ByteBuffer ciphertextBlob) {
         this.ciphertextBlob = ciphertextBlob;
     }
@@ -100,6 +101,7 @@ public class GenerateDataKeyWithoutPlaintextResult implements Serializable,
      *         If you are using the CLI, the value is Base64 encoded. Otherwise,
      *         it is not encoded.
      */
+
     public java.nio.ByteBuffer getCiphertextBlob() {
         return this.ciphertextBlob;
     }
@@ -125,6 +127,7 @@ public class GenerateDataKeyWithoutPlaintextResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GenerateDataKeyWithoutPlaintextResult withCiphertextBlob(
             java.nio.ByteBuffer ciphertextBlob) {
         setCiphertextBlob(ciphertextBlob);
@@ -141,6 +144,7 @@ public class GenerateDataKeyWithoutPlaintextResult implements Serializable,
      *        System generated unique identifier of the key to be used to
      *        decrypt the encrypted copy of the data key.
      */
+
     public void setKeyId(String keyId) {
         this.keyId = keyId;
     }
@@ -154,6 +158,7 @@ public class GenerateDataKeyWithoutPlaintextResult implements Serializable,
      * @return System generated unique identifier of the key to be used to
      *         decrypt the encrypted copy of the data key.
      */
+
     public String getKeyId() {
         return this.keyId;
     }
@@ -170,6 +175,7 @@ public class GenerateDataKeyWithoutPlaintextResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GenerateDataKeyWithoutPlaintextResult withKeyId(String keyId) {
         setKeyId(keyId);
         return this;

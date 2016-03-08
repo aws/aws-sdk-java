@@ -118,6 +118,7 @@ public class Volume implements Serializable, Cloneable {
      * @param volumeId
      *        The volume ID.
      */
+
     public void setVolumeId(String volumeId) {
         this.volumeId = volumeId;
     }
@@ -129,6 +130,7 @@ public class Volume implements Serializable, Cloneable {
      * 
      * @return The volume ID.
      */
+
     public String getVolumeId() {
         return this.volumeId;
     }
@@ -143,6 +145,7 @@ public class Volume implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Volume withVolumeId(String volumeId) {
         setVolumeId(volumeId);
         return this;
@@ -156,6 +159,7 @@ public class Volume implements Serializable, Cloneable {
      * @param ec2VolumeId
      *        The Amazon EC2 volume ID.
      */
+
     public void setEc2VolumeId(String ec2VolumeId) {
         this.ec2VolumeId = ec2VolumeId;
     }
@@ -167,6 +171,7 @@ public class Volume implements Serializable, Cloneable {
      * 
      * @return The Amazon EC2 volume ID.
      */
+
     public String getEc2VolumeId() {
         return this.ec2VolumeId;
     }
@@ -181,6 +186,7 @@ public class Volume implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Volume withEc2VolumeId(String ec2VolumeId) {
         setEc2VolumeId(ec2VolumeId);
         return this;
@@ -194,6 +200,7 @@ public class Volume implements Serializable, Cloneable {
      * @param name
      *        The volume name.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -205,6 +212,7 @@ public class Volume implements Serializable, Cloneable {
      * 
      * @return The volume name.
      */
+
     public String getName() {
         return this.name;
     }
@@ -219,6 +227,7 @@ public class Volume implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Volume withName(String name) {
         setName(name);
         return this;
@@ -232,6 +241,7 @@ public class Volume implements Serializable, Cloneable {
      * @param raidArrayId
      *        The RAID array ID.
      */
+
     public void setRaidArrayId(String raidArrayId) {
         this.raidArrayId = raidArrayId;
     }
@@ -243,6 +253,7 @@ public class Volume implements Serializable, Cloneable {
      * 
      * @return The RAID array ID.
      */
+
     public String getRaidArrayId() {
         return this.raidArrayId;
     }
@@ -257,6 +268,7 @@ public class Volume implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Volume withRaidArrayId(String raidArrayId) {
         setRaidArrayId(raidArrayId);
         return this;
@@ -270,6 +282,7 @@ public class Volume implements Serializable, Cloneable {
      * @param instanceId
      *        The instance ID.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -281,6 +294,7 @@ public class Volume implements Serializable, Cloneable {
      * 
      * @return The instance ID.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
@@ -295,6 +309,7 @@ public class Volume implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Volume withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;
@@ -312,6 +327,7 @@ public class Volume implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeVolumes.html"
      *        >DescribeVolumes</a>.
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -327,6 +343,7 @@ public class Volume implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeVolumes.html"
      *         >DescribeVolumes</a>.
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -345,6 +362,7 @@ public class Volume implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Volume withStatus(String status) {
         setStatus(status);
         return this;
@@ -358,6 +376,7 @@ public class Volume implements Serializable, Cloneable {
      * @param size
      *        The volume size.
      */
+
     public void setSize(Integer size) {
         this.size = size;
     }
@@ -369,6 +388,7 @@ public class Volume implements Serializable, Cloneable {
      * 
      * @return The volume size.
      */
+
     public Integer getSize() {
         return this.size;
     }
@@ -383,6 +403,7 @@ public class Volume implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Volume withSize(Integer size) {
         setSize(size);
         return this;
@@ -396,6 +417,7 @@ public class Volume implements Serializable, Cloneable {
      * @param device
      *        The device name.
      */
+
     public void setDevice(String device) {
         this.device = device;
     }
@@ -407,6 +429,7 @@ public class Volume implements Serializable, Cloneable {
      * 
      * @return The device name.
      */
+
     public String getDevice() {
         return this.device;
     }
@@ -421,6 +444,7 @@ public class Volume implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Volume withDevice(String device) {
         setDevice(device);
         return this;
@@ -434,6 +458,7 @@ public class Volume implements Serializable, Cloneable {
      * @param mountPoint
      *        The volume mount point. For example "/dev/sdh".
      */
+
     public void setMountPoint(String mountPoint) {
         this.mountPoint = mountPoint;
     }
@@ -445,6 +470,7 @@ public class Volume implements Serializable, Cloneable {
      * 
      * @return The volume mount point. For example "/dev/sdh".
      */
+
     public String getMountPoint() {
         return this.mountPoint;
     }
@@ -459,6 +485,7 @@ public class Volume implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Volume withMountPoint(String mountPoint) {
         setMountPoint(mountPoint);
         return this;
@@ -476,6 +503,7 @@ public class Volume implements Serializable, Cloneable {
      *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html">
      *        Regions and Endpoints</a>.
      */
+
     public void setRegion(String region) {
         this.region = region;
     }
@@ -491,6 +519,7 @@ public class Volume implements Serializable, Cloneable {
      *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html">
      *         Regions and Endpoints</a>.
      */
+
     public String getRegion() {
         return this.region;
     }
@@ -509,6 +538,7 @@ public class Volume implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Volume withRegion(String region) {
         setRegion(region);
         return this;
@@ -526,6 +556,7 @@ public class Volume implements Serializable, Cloneable {
      *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html"
      *        >Regions and Endpoints</a>.
      */
+
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
@@ -541,6 +572,7 @@ public class Volume implements Serializable, Cloneable {
      *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html"
      *         >Regions and Endpoints</a>.
      */
+
     public String getAvailabilityZone() {
         return this.availabilityZone;
     }
@@ -559,6 +591,7 @@ public class Volume implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Volume withAvailabilityZone(String availabilityZone) {
         setAvailabilityZone(availabilityZone);
         return this;
@@ -572,6 +605,7 @@ public class Volume implements Serializable, Cloneable {
      * @param volumeType
      *        The volume type, standard or PIOPS.
      */
+
     public void setVolumeType(String volumeType) {
         this.volumeType = volumeType;
     }
@@ -583,6 +617,7 @@ public class Volume implements Serializable, Cloneable {
      * 
      * @return The volume type, standard or PIOPS.
      */
+
     public String getVolumeType() {
         return this.volumeType;
     }
@@ -597,6 +632,7 @@ public class Volume implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Volume withVolumeType(String volumeType) {
         setVolumeType(volumeType);
         return this;
@@ -610,6 +646,7 @@ public class Volume implements Serializable, Cloneable {
      * @param iops
      *        For PIOPS volumes, the IOPS per disk.
      */
+
     public void setIops(Integer iops) {
         this.iops = iops;
     }
@@ -621,6 +658,7 @@ public class Volume implements Serializable, Cloneable {
      * 
      * @return For PIOPS volumes, the IOPS per disk.
      */
+
     public Integer getIops() {
         return this.iops;
     }
@@ -635,6 +673,7 @@ public class Volume implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Volume withIops(Integer iops) {
         setIops(iops);
         return this;

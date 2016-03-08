@@ -105,6 +105,7 @@ public class Preset implements Serializable, Cloneable {
      *        Identifier for the new preset. You use this value to get settings
      *        for the preset or to delete it.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -118,6 +119,7 @@ public class Preset implements Serializable, Cloneable {
      * @return Identifier for the new preset. You use this value to get settings
      *         for the preset or to delete it.
      */
+
     public String getId() {
         return this.id;
     }
@@ -134,6 +136,7 @@ public class Preset implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Preset withId(String id) {
         setId(id);
         return this;
@@ -147,6 +150,7 @@ public class Preset implements Serializable, Cloneable {
      * @param arn
      *        The Amazon Resource Name (ARN) for the preset.
      */
+
     public void setArn(String arn) {
         this.arn = arn;
     }
@@ -158,6 +162,7 @@ public class Preset implements Serializable, Cloneable {
      * 
      * @return The Amazon Resource Name (ARN) for the preset.
      */
+
     public String getArn() {
         return this.arn;
     }
@@ -172,6 +177,7 @@ public class Preset implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Preset withArn(String arn) {
         setArn(arn);
         return this;
@@ -185,6 +191,7 @@ public class Preset implements Serializable, Cloneable {
      * @param name
      *        The name of the preset.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -196,6 +203,7 @@ public class Preset implements Serializable, Cloneable {
      * 
      * @return The name of the preset.
      */
+
     public String getName() {
         return this.name;
     }
@@ -210,6 +218,7 @@ public class Preset implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Preset withName(String name) {
         setName(name);
         return this;
@@ -223,6 +232,7 @@ public class Preset implements Serializable, Cloneable {
      * @param description
      *        A description of the preset.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -234,6 +244,7 @@ public class Preset implements Serializable, Cloneable {
      * 
      * @return A description of the preset.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -248,6 +259,7 @@ public class Preset implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Preset withDescription(String description) {
         setDescription(description);
         return this;
@@ -269,6 +281,7 @@ public class Preset implements Serializable, Cloneable {
      *        <code>mpg</code>, <code>mxf</code>, <code>oga</code>,
      *        <code>ogg</code>, <code>ts</code>, and <code>webm</code>.
      */
+
     public void setContainer(String container) {
         this.container = container;
     }
@@ -288,6 +301,7 @@ public class Preset implements Serializable, Cloneable {
      *         <code>mpg</code>, <code>mxf</code>, <code>oga</code>,
      *         <code>ogg</code>, <code>ts</code>, and <code>webm</code>.
      */
+
     public String getContainer() {
         return this.container;
     }
@@ -310,6 +324,7 @@ public class Preset implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Preset withContainer(String container) {
         setContainer(container);
         return this;
@@ -325,6 +340,7 @@ public class Preset implements Serializable, Cloneable {
      *        A section of the response body that provides information about the
      *        audio preset values.
      */
+
     public void setAudio(AudioParameters audio) {
         this.audio = audio;
     }
@@ -338,6 +354,7 @@ public class Preset implements Serializable, Cloneable {
      * @return A section of the response body that provides information about
      *         the audio preset values.
      */
+
     public AudioParameters getAudio() {
         return this.audio;
     }
@@ -354,6 +371,7 @@ public class Preset implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Preset withAudio(AudioParameters audio) {
         setAudio(audio);
         return this;
@@ -369,6 +387,7 @@ public class Preset implements Serializable, Cloneable {
      *        A section of the response body that provides information about the
      *        video preset values.
      */
+
     public void setVideo(VideoParameters video) {
         this.video = video;
     }
@@ -382,6 +401,7 @@ public class Preset implements Serializable, Cloneable {
      * @return A section of the response body that provides information about
      *         the video preset values.
      */
+
     public VideoParameters getVideo() {
         return this.video;
     }
@@ -398,6 +418,7 @@ public class Preset implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Preset withVideo(VideoParameters video) {
         setVideo(video);
         return this;
@@ -413,6 +434,7 @@ public class Preset implements Serializable, Cloneable {
      *        A section of the response body that provides information about the
      *        thumbnail preset values, if any.
      */
+
     public void setThumbnails(Thumbnails thumbnails) {
         this.thumbnails = thumbnails;
     }
@@ -426,6 +448,7 @@ public class Preset implements Serializable, Cloneable {
      * @return A section of the response body that provides information about
      *         the thumbnail preset values, if any.
      */
+
     public Thumbnails getThumbnails() {
         return this.thumbnails;
     }
@@ -442,6 +465,7 @@ public class Preset implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Preset withThumbnails(Thumbnails thumbnails) {
         setThumbnails(thumbnails);
         return this;
@@ -459,6 +483,7 @@ public class Preset implements Serializable, Cloneable {
      *        Transcoder (<code>System</code>) or a preset that you have defined
      *        (<code>Custom</code>).
      */
+
     public void setType(String type) {
         this.type = type;
     }
@@ -474,6 +499,7 @@ public class Preset implements Serializable, Cloneable {
      *         Transcoder (<code>System</code>) or a preset that you have
      *         defined (<code>Custom</code>).
      */
+
     public String getType() {
         return this.type;
     }
@@ -492,6 +518,7 @@ public class Preset implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Preset withType(String type) {
         setType(type);
         return this;

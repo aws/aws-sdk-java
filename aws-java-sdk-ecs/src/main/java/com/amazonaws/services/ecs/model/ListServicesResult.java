@@ -50,6 +50,7 @@ public class ListServicesResult implements Serializable, Cloneable {
      * @return The list of full Amazon Resource Name (ARN) entries for each
      *         service associated with the specified cluster.
      */
+
     public java.util.List<String> getServiceArns() {
         if (serviceArns == null) {
             serviceArns = new com.amazonaws.internal.SdkInternalList<String>();
@@ -67,6 +68,7 @@ public class ListServicesResult implements Serializable, Cloneable {
      *        The list of full Amazon Resource Name (ARN) entries for each
      *        service associated with the specified cluster.
      */
+
     public void setServiceArns(java.util.Collection<String> serviceArns) {
         if (serviceArns == null) {
             this.serviceArns = null;
@@ -95,6 +97,7 @@ public class ListServicesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListServicesResult withServiceArns(String... serviceArns) {
         if (this.serviceArns == null) {
             setServiceArns(new com.amazonaws.internal.SdkInternalList<String>(
@@ -118,6 +121,7 @@ public class ListServicesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListServicesResult withServiceArns(
             java.util.Collection<String> serviceArns) {
         setServiceArns(serviceArns);
@@ -141,6 +145,7 @@ public class ListServicesResult implements Serializable, Cloneable {
      *        value is <code>null</code> when there are no more results to
      *        return.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -161,6 +166,7 @@ public class ListServicesResult implements Serializable, Cloneable {
      *         value is <code>null</code> when there are no more results to
      *         return.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -184,6 +190,7 @@ public class ListServicesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListServicesResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

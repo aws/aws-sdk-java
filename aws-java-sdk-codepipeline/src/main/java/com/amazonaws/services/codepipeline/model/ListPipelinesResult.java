@@ -47,6 +47,7 @@ public class ListPipelinesResult implements Serializable, Cloneable {
      * 
      * @return The list of pipelines.
      */
+
     public java.util.List<PipelineSummary> getPipelines() {
         return pipelines;
     }
@@ -59,6 +60,7 @@ public class ListPipelinesResult implements Serializable, Cloneable {
      * @param pipelines
      *        The list of pipelines.
      */
+
     public void setPipelines(java.util.Collection<PipelineSummary> pipelines) {
         if (pipelines == null) {
             this.pipelines = null;
@@ -84,6 +86,7 @@ public class ListPipelinesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListPipelinesResult withPipelines(PipelineSummary... pipelines) {
         if (this.pipelines == null) {
             setPipelines(new java.util.ArrayList<PipelineSummary>(
@@ -105,6 +108,7 @@ public class ListPipelinesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListPipelinesResult withPipelines(
             java.util.Collection<PipelineSummary> pipelines) {
         setPipelines(pipelines);
@@ -123,6 +127,7 @@ public class ListPipelinesResult implements Serializable, Cloneable {
      *        identifier is also returned which can be used in a subsequent list
      *        pipelines call to return the next set of pipelines in the list.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -139,6 +144,7 @@ public class ListPipelinesResult implements Serializable, Cloneable {
      *         list pipelines call to return the next set of pipelines in the
      *         list.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -157,6 +163,7 @@ public class ListPipelinesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListPipelinesResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

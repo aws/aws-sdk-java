@@ -95,6 +95,7 @@ public class FlowLog implements Serializable, Cloneable {
      * @param creationTime
      *        The date and time the flow log was created.
      */
+
     public void setCreationTime(java.util.Date creationTime) {
         this.creationTime = creationTime;
     }
@@ -106,6 +107,7 @@ public class FlowLog implements Serializable, Cloneable {
      * 
      * @return The date and time the flow log was created.
      */
+
     public java.util.Date getCreationTime() {
         return this.creationTime;
     }
@@ -120,6 +122,7 @@ public class FlowLog implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FlowLog withCreationTime(java.util.Date creationTime) {
         setCreationTime(creationTime);
         return this;
@@ -133,6 +136,7 @@ public class FlowLog implements Serializable, Cloneable {
      * @param flowLogId
      *        The flow log ID.
      */
+
     public void setFlowLogId(String flowLogId) {
         this.flowLogId = flowLogId;
     }
@@ -144,6 +148,7 @@ public class FlowLog implements Serializable, Cloneable {
      * 
      * @return The flow log ID.
      */
+
     public String getFlowLogId() {
         return this.flowLogId;
     }
@@ -158,6 +163,7 @@ public class FlowLog implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FlowLog withFlowLogId(String flowLogId) {
         setFlowLogId(flowLogId);
         return this;
@@ -171,6 +177,7 @@ public class FlowLog implements Serializable, Cloneable {
      * @param flowLogStatus
      *        The status of the flow log (<code>ACTIVE</code>).
      */
+
     public void setFlowLogStatus(String flowLogStatus) {
         this.flowLogStatus = flowLogStatus;
     }
@@ -182,6 +189,7 @@ public class FlowLog implements Serializable, Cloneable {
      * 
      * @return The status of the flow log (<code>ACTIVE</code>).
      */
+
     public String getFlowLogStatus() {
         return this.flowLogStatus;
     }
@@ -196,6 +204,7 @@ public class FlowLog implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FlowLog withFlowLogStatus(String flowLogStatus) {
         setFlowLogStatus(flowLogStatus);
         return this;
@@ -209,6 +218,7 @@ public class FlowLog implements Serializable, Cloneable {
      * @param resourceId
      *        The ID of the resource on which the flow log was created.
      */
+
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
     }
@@ -220,6 +230,7 @@ public class FlowLog implements Serializable, Cloneable {
      * 
      * @return The ID of the resource on which the flow log was created.
      */
+
     public String getResourceId() {
         return this.resourceId;
     }
@@ -234,6 +245,7 @@ public class FlowLog implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FlowLog withResourceId(String resourceId) {
         setResourceId(resourceId);
         return this;
@@ -248,6 +260,7 @@ public class FlowLog implements Serializable, Cloneable {
      *        The type of traffic captured for the flow log.
      * @see TrafficType
      */
+
     public void setTrafficType(String trafficType) {
         this.trafficType = trafficType;
     }
@@ -260,6 +273,7 @@ public class FlowLog implements Serializable, Cloneable {
      * @return The type of traffic captured for the flow log.
      * @see TrafficType
      */
+
     public String getTrafficType() {
         return this.trafficType;
     }
@@ -275,6 +289,7 @@ public class FlowLog implements Serializable, Cloneable {
      *         chained together.
      * @see TrafficType
      */
+
     public FlowLog withTrafficType(String trafficType) {
         setTrafficType(trafficType);
         return this;
@@ -291,6 +306,7 @@ public class FlowLog implements Serializable, Cloneable {
      *         chained together.
      * @see TrafficType
      */
+
     public void setTrafficType(TrafficType trafficType) {
         this.trafficType = trafficType.toString();
     }
@@ -306,6 +322,7 @@ public class FlowLog implements Serializable, Cloneable {
      *         chained together.
      * @see TrafficType
      */
+
     public FlowLog withTrafficType(TrafficType trafficType) {
         setTrafficType(trafficType);
         return this;
@@ -319,6 +336,7 @@ public class FlowLog implements Serializable, Cloneable {
      * @param logGroupName
      *        The name of the flow log group.
      */
+
     public void setLogGroupName(String logGroupName) {
         this.logGroupName = logGroupName;
     }
@@ -330,6 +348,7 @@ public class FlowLog implements Serializable, Cloneable {
      * 
      * @return The name of the flow log group.
      */
+
     public String getLogGroupName() {
         return this.logGroupName;
     }
@@ -344,6 +363,7 @@ public class FlowLog implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FlowLog withLogGroupName(String logGroupName) {
         setLogGroupName(logGroupName);
         return this;
@@ -359,6 +379,7 @@ public class FlowLog implements Serializable, Cloneable {
      *        The status of the logs delivery (<code>SUCCESS</code> |
      *        <code>FAILED</code>).
      */
+
     public void setDeliverLogsStatus(String deliverLogsStatus) {
         this.deliverLogsStatus = deliverLogsStatus;
     }
@@ -372,6 +393,7 @@ public class FlowLog implements Serializable, Cloneable {
      * @return The status of the logs delivery (<code>SUCCESS</code> |
      *         <code>FAILED</code>).
      */
+
     public String getDeliverLogsStatus() {
         return this.deliverLogsStatus;
     }
@@ -388,6 +410,7 @@ public class FlowLog implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FlowLog withDeliverLogsStatus(String deliverLogsStatus) {
         setDeliverLogsStatus(deliverLogsStatus);
         return this;
@@ -414,6 +437,7 @@ public class FlowLog implements Serializable, Cloneable {
      *        sufficient permissions to publish to CloudWatch Logs.
      *        <code>Unknown error</code> indicates an internal error.
      */
+
     public void setDeliverLogsErrorMessage(String deliverLogsErrorMessage) {
         this.deliverLogsErrorMessage = deliverLogsErrorMessage;
     }
@@ -438,6 +462,7 @@ public class FlowLog implements Serializable, Cloneable {
      *         have sufficient permissions to publish to CloudWatch Logs.
      *         <code>Unknown error</code> indicates an internal error.
      */
+
     public String getDeliverLogsErrorMessage() {
         return this.deliverLogsErrorMessage;
     }
@@ -465,6 +490,7 @@ public class FlowLog implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FlowLog withDeliverLogsErrorMessage(String deliverLogsErrorMessage) {
         setDeliverLogsErrorMessage(deliverLogsErrorMessage);
         return this;
@@ -478,6 +504,7 @@ public class FlowLog implements Serializable, Cloneable {
      * @param deliverLogsPermissionArn
      *        The ARN of the IAM role that posts logs to CloudWatch Logs.
      */
+
     public void setDeliverLogsPermissionArn(String deliverLogsPermissionArn) {
         this.deliverLogsPermissionArn = deliverLogsPermissionArn;
     }
@@ -489,6 +516,7 @@ public class FlowLog implements Serializable, Cloneable {
      * 
      * @return The ARN of the IAM role that posts logs to CloudWatch Logs.
      */
+
     public String getDeliverLogsPermissionArn() {
         return this.deliverLogsPermissionArn;
     }
@@ -503,6 +531,7 @@ public class FlowLog implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FlowLog withDeliverLogsPermissionArn(String deliverLogsPermissionArn) {
         setDeliverLogsPermissionArn(deliverLogsPermissionArn);
         return this;

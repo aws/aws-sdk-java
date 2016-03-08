@@ -112,6 +112,7 @@ public class ListPoliciesRequest extends AmazonWebServiceRequest implements
      *        to <code>All</code>, all policies are returned.
      * @see PolicyScopeType
      */
+
     public void setScope(String scope) {
         this.scope = scope;
     }
@@ -141,6 +142,7 @@ public class ListPoliciesRequest extends AmazonWebServiceRequest implements
      *         set to <code>All</code>, all policies are returned.
      * @see PolicyScopeType
      */
+
     public String getScope() {
         return this.scope;
     }
@@ -173,6 +175,7 @@ public class ListPoliciesRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see PolicyScopeType
      */
+
     public ListPoliciesRequest withScope(String scope) {
         setScope(scope);
         return this;
@@ -206,6 +209,7 @@ public class ListPoliciesRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see PolicyScopeType
      */
+
     public void setScope(PolicyScopeType scope) {
         this.scope = scope.toString();
     }
@@ -238,6 +242,7 @@ public class ListPoliciesRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see PolicyScopeType
      */
+
     public ListPoliciesRequest withScope(PolicyScopeType scope) {
         setScope(scope);
         return this;
@@ -263,6 +268,7 @@ public class ListPoliciesRequest extends AmazonWebServiceRequest implements
      *        <code>false</code>, or when the parameter is not included, all
      *        policies are returned.
      */
+
     public void setOnlyAttached(Boolean onlyAttached) {
         this.onlyAttached = onlyAttached;
     }
@@ -286,6 +292,7 @@ public class ListPoliciesRequest extends AmazonWebServiceRequest implements
      *         <code>false</code>, or when the parameter is not included, all
      *         policies are returned.
      */
+
     public Boolean getOnlyAttached() {
         return this.onlyAttached;
     }
@@ -312,6 +319,7 @@ public class ListPoliciesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListPoliciesRequest withOnlyAttached(Boolean onlyAttached) {
         setOnlyAttached(onlyAttached);
         return this;
@@ -336,6 +344,7 @@ public class ListPoliciesRequest extends AmazonWebServiceRequest implements
      *         <code>false</code>, or when the parameter is not included, all
      *         policies are returned.
      */
+
     public Boolean isOnlyAttached() {
         return this.onlyAttached;
     }
@@ -351,6 +360,7 @@ public class ListPoliciesRequest extends AmazonWebServiceRequest implements
      *        optional. If it is not included, it defaults to a slash (/),
      *        listing all policies.
      */
+
     public void setPathPrefix(String pathPrefix) {
         this.pathPrefix = pathPrefix;
     }
@@ -365,6 +375,7 @@ public class ListPoliciesRequest extends AmazonWebServiceRequest implements
      *         optional. If it is not included, it defaults to a slash (/),
      *         listing all policies.
      */
+
     public String getPathPrefix() {
         return this.pathPrefix;
     }
@@ -382,6 +393,7 @@ public class ListPoliciesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListPoliciesRequest withPathPrefix(String pathPrefix) {
         setPathPrefix(pathPrefix);
         return this;
@@ -401,6 +413,7 @@ public class ListPoliciesRequest extends AmazonWebServiceRequest implements
      *        it to the value of the <code>Marker</code> element in the response
      *        that you received to indicate where the next call should start.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -419,6 +432,7 @@ public class ListPoliciesRequest extends AmazonWebServiceRequest implements
      *         response that you received to indicate where the next call should
      *         start.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -439,6 +453,7 @@ public class ListPoliciesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListPoliciesRequest withMarker(String marker) {
         setMarker(marker);
         return this;
@@ -474,6 +489,7 @@ public class ListPoliciesRequest extends AmazonWebServiceRequest implements
      *        include in the subsequent call that tells the service where to
      *        continue from.
      */
+
     public void setMaxItems(Integer maxItems) {
         this.maxItems = maxItems;
     }
@@ -508,6 +524,7 @@ public class ListPoliciesRequest extends AmazonWebServiceRequest implements
      *         include in the subsequent call that tells the service where to
      *         continue from.
      */
+
     public Integer getMaxItems() {
         return this.maxItems;
     }
@@ -544,6 +561,7 @@ public class ListPoliciesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListPoliciesRequest withMaxItems(Integer maxItems) {
         setMaxItems(maxItems);
         return this;

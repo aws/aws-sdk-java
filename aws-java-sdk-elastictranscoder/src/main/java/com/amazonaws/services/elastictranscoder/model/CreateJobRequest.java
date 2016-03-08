@@ -101,6 +101,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements
      *        Transcoder gets the files to transcode and the bucket into which
      *        Elastic Transcoder puts the transcoded files.
      */
+
     public void setPipelineId(String pipelineId) {
         this.pipelineId = pipelineId;
     }
@@ -120,6 +121,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements
      *         Elastic Transcoder gets the files to transcode and the bucket
      *         into which Elastic Transcoder puts the transcoded files.
      */
+
     public String getPipelineId() {
         return this.pipelineId;
     }
@@ -142,6 +144,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateJobRequest withPipelineId(String pipelineId) {
         setPipelineId(pipelineId);
         return this;
@@ -157,6 +160,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements
      *        A section of the request body that provides information about the
      *        file that is being transcoded.
      */
+
     public void setInput(JobInput input) {
         this.input = input;
     }
@@ -170,6 +174,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements
      * @return A section of the request body that provides information about the
      *         file that is being transcoded.
      */
+
     public JobInput getInput() {
         return this.input;
     }
@@ -186,6 +191,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateJobRequest withInput(JobInput input) {
         setInput(input);
         return this;
@@ -194,6 +200,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements
     /**
      * @param output
      */
+
     public void setOutput(CreateJobOutput output) {
         this.output = output;
     }
@@ -201,6 +208,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public CreateJobOutput getOutput() {
         return this.output;
     }
@@ -210,6 +218,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateJobRequest withOutput(CreateJobOutput output) {
         setOutput(output);
         return this;
@@ -227,6 +236,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements
      *         <code>Outputs</code> syntax instead of the <code>Output</code>
      *         syntax.
      */
+
     public java.util.List<CreateJobOutput> getOutputs() {
         if (outputs == null) {
             outputs = new com.amazonaws.internal.SdkInternalList<CreateJobOutput>();
@@ -247,6 +257,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements
      *        <code>Outputs</code> syntax instead of the <code>Output</code>
      *        syntax.
      */
+
     public void setOutputs(java.util.Collection<CreateJobOutput> outputs) {
         if (outputs == null) {
             this.outputs = null;
@@ -278,6 +289,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateJobRequest withOutputs(CreateJobOutput... outputs) {
         if (this.outputs == null) {
             setOutputs(new com.amazonaws.internal.SdkInternalList<CreateJobOutput>(
@@ -304,6 +316,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateJobRequest withOutputs(
             java.util.Collection<CreateJobOutput> outputs) {
         setOutputs(outputs);
@@ -322,6 +335,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements
      *        the names of all files that this job creates, including output
      *        files, thumbnails, and playlists.
      */
+
     public void setOutputKeyPrefix(String outputKeyPrefix) {
         this.outputKeyPrefix = outputKeyPrefix;
     }
@@ -337,6 +351,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements
      *         the names of all files that this job creates, including output
      *         files, thumbnails, and playlists.
      */
+
     public String getOutputKeyPrefix() {
         return this.outputKeyPrefix;
     }
@@ -355,6 +370,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateJobRequest withOutputKeyPrefix(String outputKeyPrefix) {
         setOutputKeyPrefix(outputKeyPrefix);
         return this;
@@ -378,6 +394,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         The maximum number of master playlists in a job is 30.
      */
+
     public java.util.List<CreateJobPlaylist> getPlaylists() {
         if (playlists == null) {
             playlists = new com.amazonaws.internal.SdkInternalList<CreateJobPlaylist>();
@@ -404,6 +421,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        The maximum number of master playlists in a job is 30.
      */
+
     public void setPlaylists(java.util.Collection<CreateJobPlaylist> playlists) {
         if (playlists == null) {
             this.playlists = null;
@@ -441,6 +459,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateJobRequest withPlaylists(CreateJobPlaylist... playlists) {
         if (this.playlists == null) {
             setPlaylists(new com.amazonaws.internal.SdkInternalList<CreateJobPlaylist>(
@@ -473,6 +492,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateJobRequest withPlaylists(
             java.util.Collection<CreateJobPlaylist> playlists) {
         setPlaylists(playlists);
@@ -495,6 +515,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements
      *         <code>key/value</code> pairs will be returned in the same order
      *         in which you specify them.
      */
+
     public java.util.Map<String, String> getUserMetadata() {
         if (userMetadata == null) {
             userMetadata = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -519,6 +540,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements
      *        <code>key/value</code> pairs will be returned in the same order in
      *        which you specify them.
      */
+
     public void setUserMetadata(java.util.Map<String, String> userMetadata) {
         this.userMetadata = userMetadata == null ? null
                 : new com.amazonaws.internal.SdkInternalMap<String, String>(
@@ -544,6 +566,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateJobRequest withUserMetadata(
             java.util.Map<String, String> userMetadata) {
         setUserMetadata(userMetadata);
@@ -565,6 +588,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements
      * Removes all the entries added into UserMetadata. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public CreateJobRequest clearUserMetadataEntries() {
         this.userMetadata = null;
         return this;

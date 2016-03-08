@@ -43,6 +43,7 @@ public class LifecycleEventConfiguration implements Serializable, Cloneable {
      *        A <code>ShutdownEventConfiguration</code> object that specifies
      *        the Shutdown event configuration.
      */
+
     public void setShutdown(ShutdownEventConfiguration shutdown) {
         this.shutdown = shutdown;
     }
@@ -56,6 +57,7 @@ public class LifecycleEventConfiguration implements Serializable, Cloneable {
      * @return A <code>ShutdownEventConfiguration</code> object that specifies
      *         the Shutdown event configuration.
      */
+
     public ShutdownEventConfiguration getShutdown() {
         return this.shutdown;
     }
@@ -72,6 +74,7 @@ public class LifecycleEventConfiguration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LifecycleEventConfiguration withShutdown(
             ShutdownEventConfiguration shutdown) {
         setShutdown(shutdown);

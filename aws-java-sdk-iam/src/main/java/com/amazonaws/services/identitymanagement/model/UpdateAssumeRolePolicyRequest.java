@@ -46,6 +46,7 @@ public class UpdateAssumeRolePolicyRequest extends AmazonWebServiceRequest
      * @param roleName
      *        The name of the role to update.
      */
+
     public void setRoleName(String roleName) {
         this.roleName = roleName;
     }
@@ -57,6 +58,7 @@ public class UpdateAssumeRolePolicyRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the role to update.
      */
+
     public String getRoleName() {
         return this.roleName;
     }
@@ -71,6 +73,7 @@ public class UpdateAssumeRolePolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateAssumeRolePolicyRequest withRoleName(String roleName) {
         setRoleName(roleName);
         return this;
@@ -84,6 +87,7 @@ public class UpdateAssumeRolePolicyRequest extends AmazonWebServiceRequest
      * @param policyDocument
      *        The policy that grants an entity permission to assume the role.
      */
+
     public void setPolicyDocument(String policyDocument) {
         this.policyDocument = policyDocument;
     }
@@ -95,6 +99,7 @@ public class UpdateAssumeRolePolicyRequest extends AmazonWebServiceRequest
      * 
      * @return The policy that grants an entity permission to assume the role.
      */
+
     public String getPolicyDocument() {
         return this.policyDocument;
     }
@@ -109,6 +114,7 @@ public class UpdateAssumeRolePolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateAssumeRolePolicyRequest withPolicyDocument(
             String policyDocument) {
         setPolicyDocument(policyDocument);

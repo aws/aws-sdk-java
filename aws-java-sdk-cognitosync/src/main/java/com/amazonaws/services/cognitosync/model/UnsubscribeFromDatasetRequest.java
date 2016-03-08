@@ -66,6 +66,7 @@ public class UnsubscribeFromDatasetRequest extends AmazonWebServiceRequest
      *        us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
      *        Cognito. The ID of the pool to which this identity belongs.
      */
+
     public void setIdentityPoolId(String identityPoolId) {
         this.identityPoolId = identityPoolId;
     }
@@ -81,6 +82,7 @@ public class UnsubscribeFromDatasetRequest extends AmazonWebServiceRequest
      *         us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
      *         Cognito. The ID of the pool to which this identity belongs.
      */
+
     public String getIdentityPoolId() {
         return this.identityPoolId;
     }
@@ -99,6 +101,7 @@ public class UnsubscribeFromDatasetRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UnsubscribeFromDatasetRequest withIdentityPoolId(
             String identityPoolId) {
         setIdentityPoolId(identityPoolId);
@@ -113,6 +116,7 @@ public class UnsubscribeFromDatasetRequest extends AmazonWebServiceRequest
      * @param identityId
      *        Unique ID for this identity.
      */
+
     public void setIdentityId(String identityId) {
         this.identityId = identityId;
     }
@@ -124,6 +128,7 @@ public class UnsubscribeFromDatasetRequest extends AmazonWebServiceRequest
      * 
      * @return Unique ID for this identity.
      */
+
     public String getIdentityId() {
         return this.identityId;
     }
@@ -138,6 +143,7 @@ public class UnsubscribeFromDatasetRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UnsubscribeFromDatasetRequest withIdentityId(String identityId) {
         setIdentityId(identityId);
         return this;
@@ -151,6 +157,7 @@ public class UnsubscribeFromDatasetRequest extends AmazonWebServiceRequest
      * @param datasetName
      *        The name of the dataset from which to unsubcribe.
      */
+
     public void setDatasetName(String datasetName) {
         this.datasetName = datasetName;
     }
@@ -162,6 +169,7 @@ public class UnsubscribeFromDatasetRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the dataset from which to unsubcribe.
      */
+
     public String getDatasetName() {
         return this.datasetName;
     }
@@ -176,6 +184,7 @@ public class UnsubscribeFromDatasetRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UnsubscribeFromDatasetRequest withDatasetName(String datasetName) {
         setDatasetName(datasetName);
         return this;
@@ -189,6 +198,7 @@ public class UnsubscribeFromDatasetRequest extends AmazonWebServiceRequest
      * @param deviceId
      *        The unique ID generated for this device by Cognito.
      */
+
     public void setDeviceId(String deviceId) {
         this.deviceId = deviceId;
     }
@@ -200,6 +210,7 @@ public class UnsubscribeFromDatasetRequest extends AmazonWebServiceRequest
      * 
      * @return The unique ID generated for this device by Cognito.
      */
+
     public String getDeviceId() {
         return this.deviceId;
     }
@@ -214,6 +225,7 @@ public class UnsubscribeFromDatasetRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UnsubscribeFromDatasetRequest withDeviceId(String deviceId) {
         setDeviceId(deviceId);
         return this;

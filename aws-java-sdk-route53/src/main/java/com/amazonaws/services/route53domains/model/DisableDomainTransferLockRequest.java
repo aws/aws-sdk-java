@@ -83,6 +83,7 @@ public class DisableDomainTransferLockRequest extends AmazonWebServiceRequest
      *        <p>
      *        Required: Yes
      */
+
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
@@ -121,6 +122,7 @@ public class DisableDomainTransferLockRequest extends AmazonWebServiceRequest
      *         <p>
      *         Required: Yes
      */
+
     public String getDomainName() {
         return this.domainName;
     }
@@ -162,6 +164,7 @@ public class DisableDomainTransferLockRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DisableDomainTransferLockRequest withDomainName(String domainName) {
         setDomainName(domainName);
         return this;

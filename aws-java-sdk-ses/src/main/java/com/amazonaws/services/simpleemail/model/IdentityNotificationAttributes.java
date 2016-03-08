@@ -71,6 +71,7 @@ public class IdentityNotificationAttributes implements Serializable, Cloneable {
      *        The Amazon Resource Name (ARN) of the Amazon SNS topic where
      *        Amazon SES will publish bounce notifications.
      */
+
     public void setBounceTopic(String bounceTopic) {
         this.bounceTopic = bounceTopic;
     }
@@ -84,6 +85,7 @@ public class IdentityNotificationAttributes implements Serializable, Cloneable {
      * @return The Amazon Resource Name (ARN) of the Amazon SNS topic where
      *         Amazon SES will publish bounce notifications.
      */
+
     public String getBounceTopic() {
         return this.bounceTopic;
     }
@@ -100,6 +102,7 @@ public class IdentityNotificationAttributes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public IdentityNotificationAttributes withBounceTopic(String bounceTopic) {
         setBounceTopic(bounceTopic);
         return this;
@@ -115,6 +118,7 @@ public class IdentityNotificationAttributes implements Serializable, Cloneable {
      *        The Amazon Resource Name (ARN) of the Amazon SNS topic where
      *        Amazon SES will publish complaint notifications.
      */
+
     public void setComplaintTopic(String complaintTopic) {
         this.complaintTopic = complaintTopic;
     }
@@ -128,6 +132,7 @@ public class IdentityNotificationAttributes implements Serializable, Cloneable {
      * @return The Amazon Resource Name (ARN) of the Amazon SNS topic where
      *         Amazon SES will publish complaint notifications.
      */
+
     public String getComplaintTopic() {
         return this.complaintTopic;
     }
@@ -144,6 +149,7 @@ public class IdentityNotificationAttributes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public IdentityNotificationAttributes withComplaintTopic(
             String complaintTopic) {
         setComplaintTopic(complaintTopic);
@@ -160,6 +166,7 @@ public class IdentityNotificationAttributes implements Serializable, Cloneable {
      *        The Amazon Resource Name (ARN) of the Amazon SNS topic where
      *        Amazon SES will publish delivery notifications.
      */
+
     public void setDeliveryTopic(String deliveryTopic) {
         this.deliveryTopic = deliveryTopic;
     }
@@ -173,6 +180,7 @@ public class IdentityNotificationAttributes implements Serializable, Cloneable {
      * @return The Amazon Resource Name (ARN) of the Amazon SNS topic where
      *         Amazon SES will publish delivery notifications.
      */
+
     public String getDeliveryTopic() {
         return this.deliveryTopic;
     }
@@ -189,6 +197,7 @@ public class IdentityNotificationAttributes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public IdentityNotificationAttributes withDeliveryTopic(String deliveryTopic) {
         setDeliveryTopic(deliveryTopic);
         return this;
@@ -212,6 +221,7 @@ public class IdentityNotificationAttributes implements Serializable, Cloneable {
      *        notifications will be published only to the specified bounce and
      *        complaint Amazon SNS topics.
      */
+
     public void setForwardingEnabled(Boolean forwardingEnabled) {
         this.forwardingEnabled = forwardingEnabled;
     }
@@ -233,6 +243,7 @@ public class IdentityNotificationAttributes implements Serializable, Cloneable {
      *         notifications will be published only to the specified bounce and
      *         complaint Amazon SNS topics.
      */
+
     public Boolean getForwardingEnabled() {
         return this.forwardingEnabled;
     }
@@ -257,6 +268,7 @@ public class IdentityNotificationAttributes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public IdentityNotificationAttributes withForwardingEnabled(
             Boolean forwardingEnabled) {
         setForwardingEnabled(forwardingEnabled);
@@ -280,6 +292,7 @@ public class IdentityNotificationAttributes implements Serializable, Cloneable {
      *         notifications will be published only to the specified bounce and
      *         complaint Amazon SNS topics.
      */
+
     public Boolean isForwardingEnabled() {
         return this.forwardingEnabled;
     }

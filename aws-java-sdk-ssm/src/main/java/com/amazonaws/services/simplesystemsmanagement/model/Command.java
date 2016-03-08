@@ -67,6 +67,7 @@ public class Command implements Serializable, Cloneable {
      * @param commandId
      *        A unique identifier for this command.
      */
+
     public void setCommandId(String commandId) {
         this.commandId = commandId;
     }
@@ -76,6 +77,7 @@ public class Command implements Serializable, Cloneable {
      * 
      * @return A unique identifier for this command.
      */
+
     public String getCommandId() {
         return this.commandId;
     }
@@ -88,6 +90,7 @@ public class Command implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Command withCommandId(String commandId) {
         setCommandId(commandId);
         return this;
@@ -99,6 +102,7 @@ public class Command implements Serializable, Cloneable {
      * @param documentName
      *        The name of the SSM document requested for execution.
      */
+
     public void setDocumentName(String documentName) {
         this.documentName = documentName;
     }
@@ -108,6 +112,7 @@ public class Command implements Serializable, Cloneable {
      * 
      * @return The name of the SSM document requested for execution.
      */
+
     public String getDocumentName() {
         return this.documentName;
     }
@@ -120,6 +125,7 @@ public class Command implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Command withDocumentName(String documentName) {
         setDocumentName(documentName);
         return this;
@@ -133,6 +139,7 @@ public class Command implements Serializable, Cloneable {
      *        User-specified information about the command, such as a brief
      *        description of what the command should do.
      */
+
     public void setComment(String comment) {
         this.comment = comment;
     }
@@ -144,6 +151,7 @@ public class Command implements Serializable, Cloneable {
      * @return User-specified information about the command, such as a brief
      *         description of what the command should do.
      */
+
     public String getComment() {
         return this.comment;
     }
@@ -158,6 +166,7 @@ public class Command implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Command withComment(String comment) {
         setComment(comment);
         return this;
@@ -173,6 +182,7 @@ public class Command implements Serializable, Cloneable {
      *        executing, it will not execute. Calculated based on the
      *        ExpiresAfter user input provided as part of the SendCommand API.
      */
+
     public void setExpiresAfter(java.util.Date expiresAfter) {
         this.expiresAfter = expiresAfter;
     }
@@ -186,6 +196,7 @@ public class Command implements Serializable, Cloneable {
      *         executing, it will not execute. Calculated based on the
      *         ExpiresAfter user input provided as part of the SendCommand API.
      */
+
     public java.util.Date getExpiresAfter() {
         return this.expiresAfter;
     }
@@ -202,6 +213,7 @@ public class Command implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Command withExpiresAfter(java.util.Date expiresAfter) {
         setExpiresAfter(expiresAfter);
         return this;
@@ -214,6 +226,7 @@ public class Command implements Serializable, Cloneable {
      * @return The parameter values to be inserted in the SSM document when
      *         executing the command.
      */
+
     public java.util.Map<String, java.util.List<String>> getParameters() {
         return parameters;
     }
@@ -226,6 +239,7 @@ public class Command implements Serializable, Cloneable {
      *        The parameter values to be inserted in the SSM document when
      *        executing the command.
      */
+
     public void setParameters(
             java.util.Map<String, java.util.List<String>> parameters) {
         this.parameters = parameters;
@@ -241,6 +255,7 @@ public class Command implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Command withParameters(
             java.util.Map<String, java.util.List<String>> parameters) {
         setParameters(parameters);
@@ -262,6 +277,7 @@ public class Command implements Serializable, Cloneable {
      * Removes all the entries added into Parameters. &lt;p> Returns a reference
      * to this object so that method calls can be chained together.
      */
+
     public Command clearParametersEntries() {
         this.parameters = null;
         return this;
@@ -272,6 +288,7 @@ public class Command implements Serializable, Cloneable {
      * 
      * @return The instance IDs against which this command was requested.
      */
+
     public java.util.List<String> getInstanceIds() {
         if (instanceIds == null) {
             instanceIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -285,6 +302,7 @@ public class Command implements Serializable, Cloneable {
      * @param instanceIds
      *        The instance IDs against which this command was requested.
      */
+
     public void setInstanceIds(java.util.Collection<String> instanceIds) {
         if (instanceIds == null) {
             this.instanceIds = null;
@@ -309,6 +327,7 @@ public class Command implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Command withInstanceIds(String... instanceIds) {
         if (this.instanceIds == null) {
             setInstanceIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -328,6 +347,7 @@ public class Command implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Command withInstanceIds(java.util.Collection<String> instanceIds) {
         setInstanceIds(instanceIds);
         return this;
@@ -339,6 +359,7 @@ public class Command implements Serializable, Cloneable {
      * @param requestedDateTime
      *        The date and time the command was requested.
      */
+
     public void setRequestedDateTime(java.util.Date requestedDateTime) {
         this.requestedDateTime = requestedDateTime;
     }
@@ -348,6 +369,7 @@ public class Command implements Serializable, Cloneable {
      * 
      * @return The date and time the command was requested.
      */
+
     public java.util.Date getRequestedDateTime() {
         return this.requestedDateTime;
     }
@@ -360,6 +382,7 @@ public class Command implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Command withRequestedDateTime(java.util.Date requestedDateTime) {
         setRequestedDateTime(requestedDateTime);
         return this;
@@ -372,6 +395,7 @@ public class Command implements Serializable, Cloneable {
      *        The status of the command.
      * @see CommandStatus
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -382,6 +406,7 @@ public class Command implements Serializable, Cloneable {
      * @return The status of the command.
      * @see CommandStatus
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -395,6 +420,7 @@ public class Command implements Serializable, Cloneable {
      *         chained together.
      * @see CommandStatus
      */
+
     public Command withStatus(String status) {
         setStatus(status);
         return this;
@@ -409,6 +435,7 @@ public class Command implements Serializable, Cloneable {
      *         chained together.
      * @see CommandStatus
      */
+
     public void setStatus(CommandStatus status) {
         this.status = status.toString();
     }
@@ -422,6 +449,7 @@ public class Command implements Serializable, Cloneable {
      *         chained together.
      * @see CommandStatus
      */
+
     public Command withStatus(CommandStatus status) {
         setStatus(status);
         return this;
@@ -435,6 +463,7 @@ public class Command implements Serializable, Cloneable {
      *        The S3 bucket where the responses to the command executions should
      *        be stored. This was requested when issuing the command.
      */
+
     public void setOutputS3BucketName(String outputS3BucketName) {
         this.outputS3BucketName = outputS3BucketName;
     }
@@ -446,6 +475,7 @@ public class Command implements Serializable, Cloneable {
      * @return The S3 bucket where the responses to the command executions
      *         should be stored. This was requested when issuing the command.
      */
+
     public String getOutputS3BucketName() {
         return this.outputS3BucketName;
     }
@@ -460,6 +490,7 @@ public class Command implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Command withOutputS3BucketName(String outputS3BucketName) {
         setOutputS3BucketName(outputS3BucketName);
         return this;
@@ -475,6 +506,7 @@ public class Command implements Serializable, Cloneable {
      *        command executions should be stored. This was requested when
      *        issuing the command.
      */
+
     public void setOutputS3KeyPrefix(String outputS3KeyPrefix) {
         this.outputS3KeyPrefix = outputS3KeyPrefix;
     }
@@ -488,6 +520,7 @@ public class Command implements Serializable, Cloneable {
      *         the command executions should be stored. This was requested when
      *         issuing the command.
      */
+
     public String getOutputS3KeyPrefix() {
         return this.outputS3KeyPrefix;
     }
@@ -504,6 +537,7 @@ public class Command implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Command withOutputS3KeyPrefix(String outputS3KeyPrefix) {
         setOutputS3KeyPrefix(outputS3KeyPrefix);
         return this;

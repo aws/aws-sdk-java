@@ -39,6 +39,7 @@ public class RegisterCrossAccountAccessRoleRequest extends
      *        The ARN of the IAM role that Inspector uses to list your EC2
      *        instances during the assessment.
      */
+
     public void setRoleArn(String roleArn) {
         this.roleArn = roleArn;
     }
@@ -50,6 +51,7 @@ public class RegisterCrossAccountAccessRoleRequest extends
      * @return The ARN of the IAM role that Inspector uses to list your EC2
      *         instances during the assessment.
      */
+
     public String getRoleArn() {
         return this.roleArn;
     }
@@ -64,6 +66,7 @@ public class RegisterCrossAccountAccessRoleRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterCrossAccountAccessRoleRequest withRoleArn(String roleArn) {
         setRoleArn(roleArn);
         return this;

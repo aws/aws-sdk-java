@@ -82,6 +82,7 @@ public class SendMessageBatchRequest extends AmazonWebServiceRequest implements
      * @param queueUrl
      *        The URL of the Amazon SQS queue to take action on.
      */
+
     public void setQueueUrl(String queueUrl) {
         this.queueUrl = queueUrl;
     }
@@ -93,6 +94,7 @@ public class SendMessageBatchRequest extends AmazonWebServiceRequest implements
      * 
      * @return The URL of the Amazon SQS queue to take action on.
      */
+
     public String getQueueUrl() {
         return this.queueUrl;
     }
@@ -107,6 +109,7 @@ public class SendMessageBatchRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendMessageBatchRequest withQueueUrl(String queueUrl) {
         setQueueUrl(queueUrl);
         return this;
@@ -119,6 +122,7 @@ public class SendMessageBatchRequest extends AmazonWebServiceRequest implements
      * 
      * @return A list of <a>SendMessageBatchRequestEntry</a> items.
      */
+
     public java.util.List<SendMessageBatchRequestEntry> getEntries() {
         if (entries == null) {
             entries = new com.amazonaws.internal.SdkInternalList<SendMessageBatchRequestEntry>();
@@ -134,6 +138,7 @@ public class SendMessageBatchRequest extends AmazonWebServiceRequest implements
      * @param entries
      *        A list of <a>SendMessageBatchRequestEntry</a> items.
      */
+
     public void setEntries(
             java.util.Collection<SendMessageBatchRequestEntry> entries) {
         if (entries == null) {
@@ -161,6 +166,7 @@ public class SendMessageBatchRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendMessageBatchRequest withEntries(
             SendMessageBatchRequestEntry... entries) {
         if (this.entries == null) {
@@ -183,6 +189,7 @@ public class SendMessageBatchRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendMessageBatchRequest withEntries(
             java.util.Collection<SendMessageBatchRequestEntry> entries) {
         setEntries(entries);

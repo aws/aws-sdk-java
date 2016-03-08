@@ -111,6 +111,7 @@ public class BundleInstanceRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        Required: Yes
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -139,6 +140,7 @@ public class BundleInstanceRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Required: Yes
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
@@ -170,6 +172,7 @@ public class BundleInstanceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BundleInstanceRequest withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;
@@ -189,6 +192,7 @@ public class BundleInstanceRequest extends AmazonWebServiceRequest implements
      *        your behalf. If you specify a bucket that belongs to someone else,
      *        Amazon EC2 returns an error.
      */
+
     public void setStorage(Storage storage) {
         this.storage = storage;
     }
@@ -206,6 +210,7 @@ public class BundleInstanceRequest extends AmazonWebServiceRequest implements
      *         your behalf. If you specify a bucket that belongs to someone
      *         else, Amazon EC2 returns an error.
      */
+
     public Storage getStorage() {
         return this.storage;
     }
@@ -226,6 +231,7 @@ public class BundleInstanceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BundleInstanceRequest withStorage(Storage storage) {
         setStorage(storage);
         return this;

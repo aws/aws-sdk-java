@@ -56,6 +56,7 @@ public class DescribeVTLDevicesRequest extends AmazonWebServiceRequest
     /**
      * @param gatewayARN
      */
+
     public void setGatewayARN(String gatewayARN) {
         this.gatewayARN = gatewayARN;
     }
@@ -63,6 +64,7 @@ public class DescribeVTLDevicesRequest extends AmazonWebServiceRequest
     /**
      * @return
      */
+
     public String getGatewayARN() {
         return this.gatewayARN;
     }
@@ -72,6 +74,7 @@ public class DescribeVTLDevicesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVTLDevicesRequest withGatewayARN(String gatewayARN) {
         setGatewayARN(gatewayARN);
         return this;
@@ -92,6 +95,7 @@ public class DescribeVTLDevicesRequest extends AmazonWebServiceRequest
      *         devices are specified, the result will contain all devices on the
      *         specified gateway.
      */
+
     public java.util.List<String> getVTLDeviceARNs() {
         if (vTLDeviceARNs == null) {
             vTLDeviceARNs = new com.amazonaws.internal.SdkInternalList<String>();
@@ -115,6 +119,7 @@ public class DescribeVTLDevicesRequest extends AmazonWebServiceRequest
      *        devices are specified, the result will contain all devices on the
      *        specified gateway.
      */
+
     public void setVTLDeviceARNs(java.util.Collection<String> vTLDeviceARNs) {
         if (vTLDeviceARNs == null) {
             this.vTLDeviceARNs = null;
@@ -149,6 +154,7 @@ public class DescribeVTLDevicesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVTLDevicesRequest withVTLDeviceARNs(String... vTLDeviceARNs) {
         if (this.vTLDeviceARNs == null) {
             setVTLDeviceARNs(new com.amazonaws.internal.SdkInternalList<String>(
@@ -178,6 +184,7 @@ public class DescribeVTLDevicesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVTLDevicesRequest withVTLDeviceARNs(
             java.util.Collection<String> vTLDeviceARNs) {
         setVTLDeviceARNs(vTLDeviceARNs);
@@ -194,6 +201,7 @@ public class DescribeVTLDevicesRequest extends AmazonWebServiceRequest
      *        An opaque string that indicates the position at which to begin
      *        describing the VTL devices.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -207,6 +215,7 @@ public class DescribeVTLDevicesRequest extends AmazonWebServiceRequest
      * @return An opaque string that indicates the position at which to begin
      *         describing the VTL devices.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -223,6 +232,7 @@ public class DescribeVTLDevicesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVTLDevicesRequest withMarker(String marker) {
         setMarker(marker);
         return this;
@@ -238,6 +248,7 @@ public class DescribeVTLDevicesRequest extends AmazonWebServiceRequest
      *        Specifies that the number of VTL devices described be limited to
      *        the specified number.
      */
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -251,6 +262,7 @@ public class DescribeVTLDevicesRequest extends AmazonWebServiceRequest
      * @return Specifies that the number of VTL devices described be limited to
      *         the specified number.
      */
+
     public Integer getLimit() {
         return this.limit;
     }
@@ -267,6 +279,7 @@ public class DescribeVTLDevicesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVTLDevicesRequest withLimit(Integer limit) {
         setLimit(limit);
         return this;

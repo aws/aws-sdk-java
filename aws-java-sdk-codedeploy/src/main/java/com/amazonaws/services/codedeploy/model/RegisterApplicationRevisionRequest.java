@@ -58,6 +58,7 @@ public class RegisterApplicationRevisionRequest extends AmazonWebServiceRequest
      *        The name of an existing AWS CodeDeploy application associated with
      *        the applicable IAM user or AWS account.
      */
+
     public void setApplicationName(String applicationName) {
         this.applicationName = applicationName;
     }
@@ -71,6 +72,7 @@ public class RegisterApplicationRevisionRequest extends AmazonWebServiceRequest
      * @return The name of an existing AWS CodeDeploy application associated
      *         with the applicable IAM user or AWS account.
      */
+
     public String getApplicationName() {
         return this.applicationName;
     }
@@ -87,6 +89,7 @@ public class RegisterApplicationRevisionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterApplicationRevisionRequest withApplicationName(
             String applicationName) {
         setApplicationName(applicationName);
@@ -101,6 +104,7 @@ public class RegisterApplicationRevisionRequest extends AmazonWebServiceRequest
      * @param description
      *        A comment about the revision.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -112,6 +116,7 @@ public class RegisterApplicationRevisionRequest extends AmazonWebServiceRequest
      * 
      * @return A comment about the revision.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -126,6 +131,7 @@ public class RegisterApplicationRevisionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterApplicationRevisionRequest withDescription(String description) {
         setDescription(description);
         return this;
@@ -141,6 +147,7 @@ public class RegisterApplicationRevisionRequest extends AmazonWebServiceRequest
      *        Information about the application revision to register, including
      *        the revision's type and its location.
      */
+
     public void setRevision(RevisionLocation revision) {
         this.revision = revision;
     }
@@ -154,6 +161,7 @@ public class RegisterApplicationRevisionRequest extends AmazonWebServiceRequest
      * @return Information about the application revision to register, including
      *         the revision's type and its location.
      */
+
     public RevisionLocation getRevision() {
         return this.revision;
     }
@@ -170,6 +178,7 @@ public class RegisterApplicationRevisionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterApplicationRevisionRequest withRevision(
             RevisionLocation revision) {
         setRevision(revision);

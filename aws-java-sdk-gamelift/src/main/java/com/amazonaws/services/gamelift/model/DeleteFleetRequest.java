@@ -42,6 +42,7 @@ public class DeleteFleetRequest extends AmazonWebServiceRequest implements
      * @param fleetId
      *        Unique identifier for the fleet you want to delete.
      */
+
     public void setFleetId(String fleetId) {
         this.fleetId = fleetId;
     }
@@ -53,6 +54,7 @@ public class DeleteFleetRequest extends AmazonWebServiceRequest implements
      * 
      * @return Unique identifier for the fleet you want to delete.
      */
+
     public String getFleetId() {
         return this.fleetId;
     }
@@ -67,6 +69,7 @@ public class DeleteFleetRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteFleetRequest withFleetId(String fleetId) {
         setFleetId(fleetId);
         return this;

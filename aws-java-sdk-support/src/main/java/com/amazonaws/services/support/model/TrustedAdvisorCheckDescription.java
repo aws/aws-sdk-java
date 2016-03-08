@@ -69,6 +69,7 @@ public class TrustedAdvisorCheckDescription implements Serializable, Cloneable {
      * @param id
      *        The unique identifier for the Trusted Advisor check.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -80,6 +81,7 @@ public class TrustedAdvisorCheckDescription implements Serializable, Cloneable {
      * 
      * @return The unique identifier for the Trusted Advisor check.
      */
+
     public String getId() {
         return this.id;
     }
@@ -94,6 +96,7 @@ public class TrustedAdvisorCheckDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TrustedAdvisorCheckDescription withId(String id) {
         setId(id);
         return this;
@@ -107,6 +110,7 @@ public class TrustedAdvisorCheckDescription implements Serializable, Cloneable {
      * @param name
      *        The display name for the Trusted Advisor check.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -118,6 +122,7 @@ public class TrustedAdvisorCheckDescription implements Serializable, Cloneable {
      * 
      * @return The display name for the Trusted Advisor check.
      */
+
     public String getName() {
         return this.name;
     }
@@ -132,6 +137,7 @@ public class TrustedAdvisorCheckDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TrustedAdvisorCheckDescription withName(String name) {
         setName(name);
         return this;
@@ -147,6 +153,7 @@ public class TrustedAdvisorCheckDescription implements Serializable, Cloneable {
      *        The description of the Trusted Advisor check, which includes the
      *        alert criteria and recommended actions (contains HTML markup).
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -160,6 +167,7 @@ public class TrustedAdvisorCheckDescription implements Serializable, Cloneable {
      * @return The description of the Trusted Advisor check, which includes the
      *         alert criteria and recommended actions (contains HTML markup).
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -176,6 +184,7 @@ public class TrustedAdvisorCheckDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TrustedAdvisorCheckDescription withDescription(String description) {
         setDescription(description);
         return this;
@@ -189,6 +198,7 @@ public class TrustedAdvisorCheckDescription implements Serializable, Cloneable {
      * @param category
      *        The category of the Trusted Advisor check.
      */
+
     public void setCategory(String category) {
         this.category = category;
     }
@@ -200,6 +210,7 @@ public class TrustedAdvisorCheckDescription implements Serializable, Cloneable {
      * 
      * @return The category of the Trusted Advisor check.
      */
+
     public String getCategory() {
         return this.category;
     }
@@ -214,6 +225,7 @@ public class TrustedAdvisorCheckDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TrustedAdvisorCheckDescription withCategory(String category) {
         setCategory(category);
         return this;
@@ -236,6 +248,7 @@ public class TrustedAdvisorCheckDescription implements Serializable, Cloneable {
      *         download, even in those cases where the UI shows just summary
      *         data.
      */
+
     public java.util.List<String> getMetadata() {
         if (metadata == null) {
             metadata = new com.amazonaws.internal.SdkInternalList<String>();
@@ -260,6 +273,7 @@ public class TrustedAdvisorCheckDescription implements Serializable, Cloneable {
      *        contains all the data that is shown in the Excel download, even in
      *        those cases where the UI shows just summary data.
      */
+
     public void setMetadata(java.util.Collection<String> metadata) {
         if (metadata == null) {
             this.metadata = null;
@@ -295,6 +309,7 @@ public class TrustedAdvisorCheckDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TrustedAdvisorCheckDescription withMetadata(String... metadata) {
         if (this.metadata == null) {
             setMetadata(new com.amazonaws.internal.SdkInternalList<String>(
@@ -325,6 +340,7 @@ public class TrustedAdvisorCheckDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TrustedAdvisorCheckDescription withMetadata(
             java.util.Collection<String> metadata) {
         setMetadata(metadata);

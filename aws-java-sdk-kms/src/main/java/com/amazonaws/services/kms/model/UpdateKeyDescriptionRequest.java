@@ -70,6 +70,7 @@ public class UpdateKeyDescriptionRequest extends AmazonWebServiceRequest
      *        12345678-1234-1234-1234-123456789012</li>
      *        </ul>
      */
+
     public void setKeyId(String keyId) {
         this.keyId = keyId;
     }
@@ -98,6 +99,7 @@ public class UpdateKeyDescriptionRequest extends AmazonWebServiceRequest
      *         12345678-1234-1234-1234-123456789012</li>
      *         </ul>
      */
+
     public String getKeyId() {
         return this.keyId;
     }
@@ -128,6 +130,7 @@ public class UpdateKeyDescriptionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateKeyDescriptionRequest withKeyId(String keyId) {
         setKeyId(keyId);
         return this;
@@ -141,6 +144,7 @@ public class UpdateKeyDescriptionRequest extends AmazonWebServiceRequest
      * @param description
      *        New description for the key.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -152,6 +156,7 @@ public class UpdateKeyDescriptionRequest extends AmazonWebServiceRequest
      * 
      * @return New description for the key.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -166,6 +171,7 @@ public class UpdateKeyDescriptionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateKeyDescriptionRequest withDescription(String description) {
         setDescription(description);
         return this;

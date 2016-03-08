@@ -46,6 +46,7 @@ public class GetByteMatchSetRequest extends AmazonWebServiceRequest implements
      *        you want to get. <code>ByteMatchSetId</code> is returned by
      *        <a>CreateByteMatchSet</a> and by <a>ListByteMatchSets</a>.
      */
+
     public void setByteMatchSetId(String byteMatchSetId) {
         this.byteMatchSetId = byteMatchSetId;
     }
@@ -61,6 +62,7 @@ public class GetByteMatchSetRequest extends AmazonWebServiceRequest implements
      *         you want to get. <code>ByteMatchSetId</code> is returned by
      *         <a>CreateByteMatchSet</a> and by <a>ListByteMatchSets</a>.
      */
+
     public String getByteMatchSetId() {
         return this.byteMatchSetId;
     }
@@ -79,6 +81,7 @@ public class GetByteMatchSetRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetByteMatchSetRequest withByteMatchSetId(String byteMatchSetId) {
         setByteMatchSetId(byteMatchSetId);
         return this;

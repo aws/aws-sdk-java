@@ -34,6 +34,7 @@ public class CustomHeaders implements Serializable, Cloneable {
      * @param quantity
      *        The number of custom headers for this origin.
      */
+
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
@@ -43,6 +44,7 @@ public class CustomHeaders implements Serializable, Cloneable {
      * 
      * @return The number of custom headers for this origin.
      */
+
     public Integer getQuantity() {
         return this.quantity;
     }
@@ -55,6 +57,7 @@ public class CustomHeaders implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CustomHeaders withQuantity(Integer quantity) {
         setQuantity(quantity);
         return this;
@@ -65,6 +68,7 @@ public class CustomHeaders implements Serializable, Cloneable {
      * 
      * @return A complex type that contains the custom headers for this Origin.
      */
+
     public java.util.List<OriginCustomHeader> getItems() {
         if (items == null) {
             items = new com.amazonaws.internal.SdkInternalList<OriginCustomHeader>();
@@ -78,6 +82,7 @@ public class CustomHeaders implements Serializable, Cloneable {
      * @param items
      *        A complex type that contains the custom headers for this Origin.
      */
+
     public void setItems(java.util.Collection<OriginCustomHeader> items) {
         if (items == null) {
             this.items = null;
@@ -102,6 +107,7 @@ public class CustomHeaders implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CustomHeaders withItems(OriginCustomHeader... items) {
         if (this.items == null) {
             setItems(new com.amazonaws.internal.SdkInternalList<OriginCustomHeader>(
@@ -121,6 +127,7 @@ public class CustomHeaders implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CustomHeaders withItems(
             java.util.Collection<OriginCustomHeader> items) {
         setItems(items);

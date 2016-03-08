@@ -93,6 +93,7 @@ public class Latency implements Serializable, Cloneable {
      *        The average latency for the slowest 0.1 percent of requests over
      *        the last 10 seconds.
      */
+
     public void setP999(Double p999) {
         this.p999 = p999;
     }
@@ -106,6 +107,7 @@ public class Latency implements Serializable, Cloneable {
      * @return The average latency for the slowest 0.1 percent of requests over
      *         the last 10 seconds.
      */
+
     public Double getP999() {
         return this.p999;
     }
@@ -122,6 +124,7 @@ public class Latency implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Latency withP999(Double p999) {
         setP999(p999);
         return this;
@@ -137,6 +140,7 @@ public class Latency implements Serializable, Cloneable {
      *        The average latency for the slowest 1 percent of requests over the
      *        last 10 seconds.
      */
+
     public void setP99(Double p99) {
         this.p99 = p99;
     }
@@ -150,6 +154,7 @@ public class Latency implements Serializable, Cloneable {
      * @return The average latency for the slowest 1 percent of requests over
      *         the last 10 seconds.
      */
+
     public Double getP99() {
         return this.p99;
     }
@@ -166,6 +171,7 @@ public class Latency implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Latency withP99(Double p99) {
         setP99(p99);
         return this;
@@ -181,6 +187,7 @@ public class Latency implements Serializable, Cloneable {
      *        The average latency for the slowest 5 percent of requests over the
      *        last 10 seconds.
      */
+
     public void setP95(Double p95) {
         this.p95 = p95;
     }
@@ -194,6 +201,7 @@ public class Latency implements Serializable, Cloneable {
      * @return The average latency for the slowest 5 percent of requests over
      *         the last 10 seconds.
      */
+
     public Double getP95() {
         return this.p95;
     }
@@ -210,6 +218,7 @@ public class Latency implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Latency withP95(Double p95) {
         setP95(p95);
         return this;
@@ -225,6 +234,7 @@ public class Latency implements Serializable, Cloneable {
      *        The average latency for the slowest 10 percent of requests over
      *        the last 10 seconds.
      */
+
     public void setP90(Double p90) {
         this.p90 = p90;
     }
@@ -238,6 +248,7 @@ public class Latency implements Serializable, Cloneable {
      * @return The average latency for the slowest 10 percent of requests over
      *         the last 10 seconds.
      */
+
     public Double getP90() {
         return this.p90;
     }
@@ -254,6 +265,7 @@ public class Latency implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Latency withP90(Double p90) {
         setP90(p90);
         return this;
@@ -269,6 +281,7 @@ public class Latency implements Serializable, Cloneable {
      *        The average latency for the slowest 15 percent of requests over
      *        the last 10 seconds.
      */
+
     public void setP85(Double p85) {
         this.p85 = p85;
     }
@@ -282,6 +295,7 @@ public class Latency implements Serializable, Cloneable {
      * @return The average latency for the slowest 15 percent of requests over
      *         the last 10 seconds.
      */
+
     public Double getP85() {
         return this.p85;
     }
@@ -298,6 +312,7 @@ public class Latency implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Latency withP85(Double p85) {
         setP85(p85);
         return this;
@@ -313,6 +328,7 @@ public class Latency implements Serializable, Cloneable {
      *        The average latency for the slowest 25 percent of requests over
      *        the last 10 seconds.
      */
+
     public void setP75(Double p75) {
         this.p75 = p75;
     }
@@ -326,6 +342,7 @@ public class Latency implements Serializable, Cloneable {
      * @return The average latency for the slowest 25 percent of requests over
      *         the last 10 seconds.
      */
+
     public Double getP75() {
         return this.p75;
     }
@@ -342,6 +359,7 @@ public class Latency implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Latency withP75(Double p75) {
         setP75(p75);
         return this;
@@ -357,6 +375,7 @@ public class Latency implements Serializable, Cloneable {
      *        The average latency for the slowest 50 percent of requests over
      *        the last 10 seconds.
      */
+
     public void setP50(Double p50) {
         this.p50 = p50;
     }
@@ -370,6 +389,7 @@ public class Latency implements Serializable, Cloneable {
      * @return The average latency for the slowest 50 percent of requests over
      *         the last 10 seconds.
      */
+
     public Double getP50() {
         return this.p50;
     }
@@ -386,6 +406,7 @@ public class Latency implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Latency withP50(Double p50) {
         setP50(p50);
         return this;
@@ -401,6 +422,7 @@ public class Latency implements Serializable, Cloneable {
      *        The average latency for the slowest 90 percent of requests over
      *        the last 10 seconds.
      */
+
     public void setP10(Double p10) {
         this.p10 = p10;
     }
@@ -414,6 +436,7 @@ public class Latency implements Serializable, Cloneable {
      * @return The average latency for the slowest 90 percent of requests over
      *         the last 10 seconds.
      */
+
     public Double getP10() {
         return this.p10;
     }
@@ -430,6 +453,7 @@ public class Latency implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Latency withP10(Double p10) {
         setP10(p10);
         return this;

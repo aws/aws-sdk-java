@@ -43,6 +43,7 @@ public class RestoreFromSnapshotRequest extends AmazonWebServiceRequest
      * @param snapshotId
      *        The identifier of the snapshot to restore from.
      */
+
     public void setSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
     }
@@ -54,6 +55,7 @@ public class RestoreFromSnapshotRequest extends AmazonWebServiceRequest
      * 
      * @return The identifier of the snapshot to restore from.
      */
+
     public String getSnapshotId() {
         return this.snapshotId;
     }
@@ -68,6 +70,7 @@ public class RestoreFromSnapshotRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RestoreFromSnapshotRequest withSnapshotId(String snapshotId) {
         setSnapshotId(snapshotId);
         return this;

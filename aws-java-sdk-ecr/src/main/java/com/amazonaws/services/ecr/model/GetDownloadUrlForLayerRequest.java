@@ -59,6 +59,7 @@ public class GetDownloadUrlForLayerRequest extends AmazonWebServiceRequest
      *        image layer to download. If you do not specify a registry, the
      *        default registry is assumed.
      */
+
     public void setRegistryId(String registryId) {
         this.registryId = registryId;
     }
@@ -74,6 +75,7 @@ public class GetDownloadUrlForLayerRequest extends AmazonWebServiceRequest
      *         image layer to download. If you do not specify a registry, the
      *         default registry is assumed.
      */
+
     public String getRegistryId() {
         return this.registryId;
     }
@@ -92,6 +94,7 @@ public class GetDownloadUrlForLayerRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDownloadUrlForLayerRequest withRegistryId(String registryId) {
         setRegistryId(registryId);
         return this;
@@ -107,6 +110,7 @@ public class GetDownloadUrlForLayerRequest extends AmazonWebServiceRequest
      *        The name of the repository that is associated with the image layer
      *        to download.
      */
+
     public void setRepositoryName(String repositoryName) {
         this.repositoryName = repositoryName;
     }
@@ -120,6 +124,7 @@ public class GetDownloadUrlForLayerRequest extends AmazonWebServiceRequest
      * @return The name of the repository that is associated with the image
      *         layer to download.
      */
+
     public String getRepositoryName() {
         return this.repositoryName;
     }
@@ -136,6 +141,7 @@ public class GetDownloadUrlForLayerRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDownloadUrlForLayerRequest withRepositoryName(
             String repositoryName) {
         setRepositoryName(repositoryName);
@@ -150,6 +156,7 @@ public class GetDownloadUrlForLayerRequest extends AmazonWebServiceRequest
      * @param layerDigest
      *        The digest of the image layer to download.
      */
+
     public void setLayerDigest(String layerDigest) {
         this.layerDigest = layerDigest;
     }
@@ -161,6 +168,7 @@ public class GetDownloadUrlForLayerRequest extends AmazonWebServiceRequest
      * 
      * @return The digest of the image layer to download.
      */
+
     public String getLayerDigest() {
         return this.layerDigest;
     }
@@ -175,6 +183,7 @@ public class GetDownloadUrlForLayerRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDownloadUrlForLayerRequest withLayerDigest(String layerDigest) {
         setLayerDigest(layerDigest);
         return this;

@@ -32,6 +32,7 @@ public class DeleteTrustResult implements Serializable, Cloneable {
      * @param trustId
      *        The Trust ID of the trust relationship that was deleted.
      */
+
     public void setTrustId(String trustId) {
         this.trustId = trustId;
     }
@@ -41,6 +42,7 @@ public class DeleteTrustResult implements Serializable, Cloneable {
      * 
      * @return The Trust ID of the trust relationship that was deleted.
      */
+
     public String getTrustId() {
         return this.trustId;
     }
@@ -53,6 +55,7 @@ public class DeleteTrustResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteTrustResult withTrustId(String trustId) {
         setTrustId(trustId);
         return this;

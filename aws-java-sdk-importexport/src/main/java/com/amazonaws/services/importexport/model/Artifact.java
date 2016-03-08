@@ -31,6 +31,7 @@ public class Artifact implements Serializable, Cloneable {
     /**
      * @param description
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -38,6 +39,7 @@ public class Artifact implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -47,6 +49,7 @@ public class Artifact implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Artifact withDescription(String description) {
         setDescription(description);
         return this;
@@ -55,6 +58,7 @@ public class Artifact implements Serializable, Cloneable {
     /**
      * @param uRL
      */
+
     public void setURL(String uRL) {
         this.uRL = uRL;
     }
@@ -62,6 +66,7 @@ public class Artifact implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getURL() {
         return this.uRL;
     }
@@ -71,6 +76,7 @@ public class Artifact implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Artifact withURL(String uRL) {
         setURL(uRL);
         return this;

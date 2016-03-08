@@ -70,6 +70,7 @@ public class ConfigureHealthCheckRequest extends AmazonWebServiceRequest
      * @param loadBalancerName
      *        The name of the load balancer.
      */
+
     public void setLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
     }
@@ -81,6 +82,7 @@ public class ConfigureHealthCheckRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the load balancer.
      */
+
     public String getLoadBalancerName() {
         return this.loadBalancerName;
     }
@@ -95,6 +97,7 @@ public class ConfigureHealthCheckRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigureHealthCheckRequest withLoadBalancerName(
             String loadBalancerName) {
         setLoadBalancerName(loadBalancerName);
@@ -109,6 +112,7 @@ public class ConfigureHealthCheckRequest extends AmazonWebServiceRequest
      * @param healthCheck
      *        The configuration information for the new health check.
      */
+
     public void setHealthCheck(HealthCheck healthCheck) {
         this.healthCheck = healthCheck;
     }
@@ -120,6 +124,7 @@ public class ConfigureHealthCheckRequest extends AmazonWebServiceRequest
      * 
      * @return The configuration information for the new health check.
      */
+
     public HealthCheck getHealthCheck() {
         return this.healthCheck;
     }
@@ -134,6 +139,7 @@ public class ConfigureHealthCheckRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigureHealthCheckRequest withHealthCheck(HealthCheck healthCheck) {
         setHealthCheck(healthCheck);
         return this;

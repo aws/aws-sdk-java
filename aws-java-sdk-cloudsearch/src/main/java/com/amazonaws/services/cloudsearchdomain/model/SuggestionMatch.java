@@ -56,6 +56,7 @@ public class SuggestionMatch implements Serializable, Cloneable {
      *        The string that matches the query string specified in the
      *        <code>SuggestRequest</code>.
      */
+
     public void setSuggestion(String suggestion) {
         this.suggestion = suggestion;
     }
@@ -69,6 +70,7 @@ public class SuggestionMatch implements Serializable, Cloneable {
      * @return The string that matches the query string specified in the
      *         <code>SuggestRequest</code>.
      */
+
     public String getSuggestion() {
         return this.suggestion;
     }
@@ -85,6 +87,7 @@ public class SuggestionMatch implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SuggestionMatch withSuggestion(String suggestion) {
         setSuggestion(suggestion);
         return this;
@@ -98,6 +101,7 @@ public class SuggestionMatch implements Serializable, Cloneable {
      * @param score
      *        The relevance score of a suggested match.
      */
+
     public void setScore(Long score) {
         this.score = score;
     }
@@ -109,6 +113,7 @@ public class SuggestionMatch implements Serializable, Cloneable {
      * 
      * @return The relevance score of a suggested match.
      */
+
     public Long getScore() {
         return this.score;
     }
@@ -123,6 +128,7 @@ public class SuggestionMatch implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SuggestionMatch withScore(Long score) {
         setScore(score);
         return this;
@@ -136,6 +142,7 @@ public class SuggestionMatch implements Serializable, Cloneable {
      * @param id
      *        The document ID of the suggested document.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -147,6 +154,7 @@ public class SuggestionMatch implements Serializable, Cloneable {
      * 
      * @return The document ID of the suggested document.
      */
+
     public String getId() {
         return this.id;
     }
@@ -161,6 +169,7 @@ public class SuggestionMatch implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SuggestionMatch withId(String id) {
         setId(id);
         return this;

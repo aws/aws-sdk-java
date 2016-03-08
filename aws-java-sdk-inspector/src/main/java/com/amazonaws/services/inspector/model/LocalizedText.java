@@ -49,6 +49,7 @@ public class LocalizedText implements Serializable, Cloneable {
      *        The facility and id properties of the <a>LocalizedTextKey</a> data
      *        type.
      */
+
     public void setKey(LocalizedTextKey key) {
         this.key = key;
     }
@@ -61,6 +62,7 @@ public class LocalizedText implements Serializable, Cloneable {
      * @return The facility and id properties of the <a>LocalizedTextKey</a>
      *         data type.
      */
+
     public LocalizedTextKey getKey() {
         return this.key;
     }
@@ -76,6 +78,7 @@ public class LocalizedText implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LocalizedText withKey(LocalizedTextKey key) {
         setKey(key);
         return this;
@@ -90,6 +93,7 @@ public class LocalizedText implements Serializable, Cloneable {
      * @return Values for the dynamic elements of the string specified by the
      *         textual identifier.
      */
+
     public java.util.List<Parameter> getParameters() {
         return parameters;
     }
@@ -104,6 +108,7 @@ public class LocalizedText implements Serializable, Cloneable {
      *        Values for the dynamic elements of the string specified by the
      *        textual identifier.
      */
+
     public void setParameters(java.util.Collection<Parameter> parameters) {
         if (parameters == null) {
             this.parameters = null;
@@ -131,6 +136,7 @@ public class LocalizedText implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LocalizedText withParameters(Parameter... parameters) {
         if (this.parameters == null) {
             setParameters(new java.util.ArrayList<Parameter>(parameters.length));
@@ -153,6 +159,7 @@ public class LocalizedText implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LocalizedText withParameters(
             java.util.Collection<Parameter> parameters) {
         setParameters(parameters);

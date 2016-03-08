@@ -71,6 +71,7 @@ public class DeleteLogStreamRequest extends AmazonWebServiceRequest implements
      *        The name of the log group under which the log stream to delete
      *        belongs.
      */
+
     public void setLogGroupName(String logGroupName) {
         this.logGroupName = logGroupName;
     }
@@ -83,6 +84,7 @@ public class DeleteLogStreamRequest extends AmazonWebServiceRequest implements
      * @return The name of the log group under which the log stream to delete
      *         belongs.
      */
+
     public String getLogGroupName() {
         return this.logGroupName;
     }
@@ -98,6 +100,7 @@ public class DeleteLogStreamRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteLogStreamRequest withLogGroupName(String logGroupName) {
         setLogGroupName(logGroupName);
         return this;
@@ -111,6 +114,7 @@ public class DeleteLogStreamRequest extends AmazonWebServiceRequest implements
      * @param logStreamName
      *        The name of the log stream to delete.
      */
+
     public void setLogStreamName(String logStreamName) {
         this.logStreamName = logStreamName;
     }
@@ -122,6 +126,7 @@ public class DeleteLogStreamRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the log stream to delete.
      */
+
     public String getLogStreamName() {
         return this.logStreamName;
     }
@@ -136,6 +141,7 @@ public class DeleteLogStreamRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteLogStreamRequest withLogStreamName(String logStreamName) {
         setLogStreamName(logStreamName);
         return this;

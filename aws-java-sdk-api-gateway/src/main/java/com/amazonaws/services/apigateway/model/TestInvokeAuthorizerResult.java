@@ -70,6 +70,7 @@ public class TestInvokeAuthorizerResult implements Serializable, Cloneable {
      *        The HTTP status code that the client would have received. Value is
      *        0 if the authorizer succeeded.
      */
+
     public void setClientStatus(Integer clientStatus) {
         this.clientStatus = clientStatus;
     }
@@ -83,6 +84,7 @@ public class TestInvokeAuthorizerResult implements Serializable, Cloneable {
      * @return The HTTP status code that the client would have received. Value
      *         is 0 if the authorizer succeeded.
      */
+
     public Integer getClientStatus() {
         return this.clientStatus;
     }
@@ -99,6 +101,7 @@ public class TestInvokeAuthorizerResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TestInvokeAuthorizerResult withClientStatus(Integer clientStatus) {
         setClientStatus(clientStatus);
         return this;
@@ -113,6 +116,7 @@ public class TestInvokeAuthorizerResult implements Serializable, Cloneable {
      *        The Amazon API Gateway execution log for the test authorizer
      *        request.
      */
+
     public void setLog(String log) {
         this.log = log;
     }
@@ -125,6 +129,7 @@ public class TestInvokeAuthorizerResult implements Serializable, Cloneable {
      * @return The Amazon API Gateway execution log for the test authorizer
      *         request.
      */
+
     public String getLog() {
         return this.log;
     }
@@ -140,6 +145,7 @@ public class TestInvokeAuthorizerResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TestInvokeAuthorizerResult withLog(String log) {
         setLog(log);
         return this;
@@ -153,6 +159,7 @@ public class TestInvokeAuthorizerResult implements Serializable, Cloneable {
      * @param latency
      *        The execution latency of the test authorizer request
      */
+
     public void setLatency(Long latency) {
         this.latency = latency;
     }
@@ -164,6 +171,7 @@ public class TestInvokeAuthorizerResult implements Serializable, Cloneable {
      * 
      * @return The execution latency of the test authorizer request
      */
+
     public Long getLatency() {
         return this.latency;
     }
@@ -178,6 +186,7 @@ public class TestInvokeAuthorizerResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TestInvokeAuthorizerResult withLatency(Long latency) {
         setLatency(latency);
         return this;
@@ -191,6 +200,7 @@ public class TestInvokeAuthorizerResult implements Serializable, Cloneable {
      * @param principalId
      *        The principal identity returned by the <a>Authorizer</a>
      */
+
     public void setPrincipalId(String principalId) {
         this.principalId = principalId;
     }
@@ -202,6 +212,7 @@ public class TestInvokeAuthorizerResult implements Serializable, Cloneable {
      * 
      * @return The principal identity returned by the <a>Authorizer</a>
      */
+
     public String getPrincipalId() {
         return this.principalId;
     }
@@ -216,6 +227,7 @@ public class TestInvokeAuthorizerResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TestInvokeAuthorizerResult withPrincipalId(String principalId) {
         setPrincipalId(principalId);
         return this;
@@ -229,6 +241,7 @@ public class TestInvokeAuthorizerResult implements Serializable, Cloneable {
      * @param policy
      *        The policy JSON document returned by the <a>Authorizer</a>
      */
+
     public void setPolicy(String policy) {
         this.policy = policy;
     }
@@ -240,6 +253,7 @@ public class TestInvokeAuthorizerResult implements Serializable, Cloneable {
      * 
      * @return The policy JSON document returned by the <a>Authorizer</a>
      */
+
     public String getPolicy() {
         return this.policy;
     }
@@ -254,6 +268,7 @@ public class TestInvokeAuthorizerResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TestInvokeAuthorizerResult withPolicy(String policy) {
         setPolicy(policy);
         return this;
@@ -262,6 +277,7 @@ public class TestInvokeAuthorizerResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public java.util.Map<String, java.util.List<String>> getAuthorization() {
         return authorization;
     }
@@ -269,6 +285,7 @@ public class TestInvokeAuthorizerResult implements Serializable, Cloneable {
     /**
      * @param authorization
      */
+
     public void setAuthorization(
             java.util.Map<String, java.util.List<String>> authorization) {
         this.authorization = authorization;
@@ -279,6 +296,7 @@ public class TestInvokeAuthorizerResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TestInvokeAuthorizerResult withAuthorization(
             java.util.Map<String, java.util.List<String>> authorization) {
         setAuthorization(authorization);
@@ -301,6 +319,7 @@ public class TestInvokeAuthorizerResult implements Serializable, Cloneable {
      * Removes all the entries added into Authorization. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public TestInvokeAuthorizerResult clearAuthorizationEntries() {
         this.authorization = null;
         return this;

@@ -37,6 +37,7 @@ public class DescribeSecurityGroupsResult implements Serializable, Cloneable {
      * 
      * @return Information about one or more security groups.
      */
+
     public java.util.List<SecurityGroup> getSecurityGroups() {
         if (securityGroups == null) {
             securityGroups = new com.amazonaws.internal.SdkInternalList<SecurityGroup>();
@@ -52,6 +53,7 @@ public class DescribeSecurityGroupsResult implements Serializable, Cloneable {
      * @param securityGroups
      *        Information about one or more security groups.
      */
+
     public void setSecurityGroups(
             java.util.Collection<SecurityGroup> securityGroups) {
         if (securityGroups == null) {
@@ -79,6 +81,7 @@ public class DescribeSecurityGroupsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSecurityGroupsResult withSecurityGroups(
             SecurityGroup... securityGroups) {
         if (this.securityGroups == null) {
@@ -101,6 +104,7 @@ public class DescribeSecurityGroupsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSecurityGroupsResult withSecurityGroups(
             java.util.Collection<SecurityGroup> securityGroups) {
         setSecurityGroups(securityGroups);

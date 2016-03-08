@@ -41,6 +41,7 @@ public class DescribeTrustedAdvisorChecksResult implements Serializable,
      * 
      * @return Information about all available Trusted Advisor checks.
      */
+
     public java.util.List<TrustedAdvisorCheckDescription> getChecks() {
         if (checks == null) {
             checks = new com.amazonaws.internal.SdkInternalList<TrustedAdvisorCheckDescription>();
@@ -56,6 +57,7 @@ public class DescribeTrustedAdvisorChecksResult implements Serializable,
      * @param checks
      *        Information about all available Trusted Advisor checks.
      */
+
     public void setChecks(
             java.util.Collection<TrustedAdvisorCheckDescription> checks) {
         if (checks == null) {
@@ -83,6 +85,7 @@ public class DescribeTrustedAdvisorChecksResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTrustedAdvisorChecksResult withChecks(
             TrustedAdvisorCheckDescription... checks) {
         if (this.checks == null) {
@@ -105,6 +108,7 @@ public class DescribeTrustedAdvisorChecksResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTrustedAdvisorChecksResult withChecks(
             java.util.Collection<TrustedAdvisorCheckDescription> checks) {
         setChecks(checks);

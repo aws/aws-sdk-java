@@ -57,6 +57,7 @@ public class HostProperties implements Serializable, Cloneable {
      * @param sockets
      *        The number of sockets on the Dedicated host.
      */
+
     public void setSockets(Integer sockets) {
         this.sockets = sockets;
     }
@@ -68,6 +69,7 @@ public class HostProperties implements Serializable, Cloneable {
      * 
      * @return The number of sockets on the Dedicated host.
      */
+
     public Integer getSockets() {
         return this.sockets;
     }
@@ -82,6 +84,7 @@ public class HostProperties implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HostProperties withSockets(Integer sockets) {
         setSockets(sockets);
         return this;
@@ -95,6 +98,7 @@ public class HostProperties implements Serializable, Cloneable {
      * @param cores
      *        The number of cores on the Dedicated host.
      */
+
     public void setCores(Integer cores) {
         this.cores = cores;
     }
@@ -106,6 +110,7 @@ public class HostProperties implements Serializable, Cloneable {
      * 
      * @return The number of cores on the Dedicated host.
      */
+
     public Integer getCores() {
         return this.cores;
     }
@@ -120,6 +125,7 @@ public class HostProperties implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HostProperties withCores(Integer cores) {
         setCores(cores);
         return this;
@@ -133,6 +139,7 @@ public class HostProperties implements Serializable, Cloneable {
      * @param totalVCpus
      *        The number of vCPUs on the Dedicated host.
      */
+
     public void setTotalVCpus(Integer totalVCpus) {
         this.totalVCpus = totalVCpus;
     }
@@ -144,6 +151,7 @@ public class HostProperties implements Serializable, Cloneable {
      * 
      * @return The number of vCPUs on the Dedicated host.
      */
+
     public Integer getTotalVCpus() {
         return this.totalVCpus;
     }
@@ -158,6 +166,7 @@ public class HostProperties implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HostProperties withTotalVCpus(Integer totalVCpus) {
         setTotalVCpus(totalVCpus);
         return this;
@@ -173,6 +182,7 @@ public class HostProperties implements Serializable, Cloneable {
      *        The instance type size that the Dedicated host supports (e.g.,
      *        m3.medium).
      */
+
     public void setInstanceType(String instanceType) {
         this.instanceType = instanceType;
     }
@@ -186,6 +196,7 @@ public class HostProperties implements Serializable, Cloneable {
      * @return The instance type size that the Dedicated host supports (e.g.,
      *         m3.medium).
      */
+
     public String getInstanceType() {
         return this.instanceType;
     }
@@ -202,6 +213,7 @@ public class HostProperties implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HostProperties withInstanceType(String instanceType) {
         setInstanceType(instanceType);
         return this;

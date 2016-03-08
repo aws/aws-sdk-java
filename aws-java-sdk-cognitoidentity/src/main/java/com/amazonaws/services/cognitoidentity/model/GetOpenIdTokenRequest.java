@@ -42,6 +42,7 @@ public class GetOpenIdTokenRequest extends AmazonWebServiceRequest implements
      * @param identityId
      *        A unique identifier in the format REGION:GUID.
      */
+
     public void setIdentityId(String identityId) {
         this.identityId = identityId;
     }
@@ -51,6 +52,7 @@ public class GetOpenIdTokenRequest extends AmazonWebServiceRequest implements
      * 
      * @return A unique identifier in the format REGION:GUID.
      */
+
     public String getIdentityId() {
         return this.identityId;
     }
@@ -63,6 +65,7 @@ public class GetOpenIdTokenRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetOpenIdTokenRequest withIdentityId(String identityId) {
         setIdentityId(identityId);
         return this;
@@ -81,6 +84,7 @@ public class GetOpenIdTokenRequest extends AmazonWebServiceRequest implements
      *         provider's authflow. For accounts.google.com or any other OpenId
      *         Connect provider, always include the id_token.
      */
+
     public java.util.Map<String, String> getLogins() {
         return logins;
     }
@@ -99,6 +103,7 @@ public class GetOpenIdTokenRequest extends AmazonWebServiceRequest implements
      *        accounts.google.com or any other OpenId Connect provider, always
      *        include the id_token.
      */
+
     public void setLogins(java.util.Map<String, String> logins) {
         this.logins = logins;
     }
@@ -119,6 +124,7 @@ public class GetOpenIdTokenRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetOpenIdTokenRequest withLogins(java.util.Map<String, String> logins) {
         setLogins(logins);
         return this;
@@ -139,6 +145,7 @@ public class GetOpenIdTokenRequest extends AmazonWebServiceRequest implements
      * Removes all the entries added into Logins. &lt;p> Returns a reference to
      * this object so that method calls can be chained together.
      */
+
     public GetOpenIdTokenRequest clearLoginsEntries() {
         this.logins = null;
         return this;

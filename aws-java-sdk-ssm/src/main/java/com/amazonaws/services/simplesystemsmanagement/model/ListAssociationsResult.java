@@ -44,6 +44,7 @@ public class ListAssociationsResult implements Serializable, Cloneable {
      * 
      * @return The associations.
      */
+
     public java.util.List<Association> getAssociations() {
         if (associations == null) {
             associations = new com.amazonaws.internal.SdkInternalList<Association>();
@@ -59,6 +60,7 @@ public class ListAssociationsResult implements Serializable, Cloneable {
      * @param associations
      *        The associations.
      */
+
     public void setAssociations(java.util.Collection<Association> associations) {
         if (associations == null) {
             this.associations = null;
@@ -85,6 +87,7 @@ public class ListAssociationsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListAssociationsResult withAssociations(Association... associations) {
         if (this.associations == null) {
             setAssociations(new com.amazonaws.internal.SdkInternalList<Association>(
@@ -106,6 +109,7 @@ public class ListAssociationsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListAssociationsResult withAssociations(
             java.util.Collection<Association> associations) {
         setAssociations(associations);
@@ -122,6 +126,7 @@ public class ListAssociationsResult implements Serializable, Cloneable {
      *        The token to use when requesting the next set of items. If there
      *        are no additional items to return, the string is empty.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -135,6 +140,7 @@ public class ListAssociationsResult implements Serializable, Cloneable {
      * @return The token to use when requesting the next set of items. If there
      *         are no additional items to return, the string is empty.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -151,6 +157,7 @@ public class ListAssociationsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListAssociationsResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

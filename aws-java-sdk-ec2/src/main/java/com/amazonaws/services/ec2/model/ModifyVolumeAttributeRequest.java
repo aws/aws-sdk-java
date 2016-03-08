@@ -49,6 +49,7 @@ public class ModifyVolumeAttributeRequest extends AmazonWebServiceRequest
      * @param volumeId
      *        The ID of the volume.
      */
+
     public void setVolumeId(String volumeId) {
         this.volumeId = volumeId;
     }
@@ -60,6 +61,7 @@ public class ModifyVolumeAttributeRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the volume.
      */
+
     public String getVolumeId() {
         return this.volumeId;
     }
@@ -74,6 +76,7 @@ public class ModifyVolumeAttributeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyVolumeAttributeRequest withVolumeId(String volumeId) {
         setVolumeId(volumeId);
         return this;
@@ -88,6 +91,7 @@ public class ModifyVolumeAttributeRequest extends AmazonWebServiceRequest
      *        Indicates whether the volume should be auto-enabled for I/O
      *        operations.
      */
+
     public void setAutoEnableIO(Boolean autoEnableIO) {
         this.autoEnableIO = autoEnableIO;
     }
@@ -100,6 +104,7 @@ public class ModifyVolumeAttributeRequest extends AmazonWebServiceRequest
      * @return Indicates whether the volume should be auto-enabled for I/O
      *         operations.
      */
+
     public Boolean getAutoEnableIO() {
         return this.autoEnableIO;
     }
@@ -115,6 +120,7 @@ public class ModifyVolumeAttributeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyVolumeAttributeRequest withAutoEnableIO(Boolean autoEnableIO) {
         setAutoEnableIO(autoEnableIO);
         return this;
@@ -128,6 +134,7 @@ public class ModifyVolumeAttributeRequest extends AmazonWebServiceRequest
      * @return Indicates whether the volume should be auto-enabled for I/O
      *         operations.
      */
+
     public Boolean isAutoEnableIO() {
         return this.autoEnableIO;
     }

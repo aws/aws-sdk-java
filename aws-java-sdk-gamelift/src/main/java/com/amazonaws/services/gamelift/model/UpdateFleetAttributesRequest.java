@@ -58,6 +58,7 @@ public class UpdateFleetAttributesRequest extends AmazonWebServiceRequest
      *        Unique identifier for the fleet you want to update attribute
      *        metadata for.
      */
+
     public void setFleetId(String fleetId) {
         this.fleetId = fleetId;
     }
@@ -71,6 +72,7 @@ public class UpdateFleetAttributesRequest extends AmazonWebServiceRequest
      * @return Unique identifier for the fleet you want to update attribute
      *         metadata for.
      */
+
     public String getFleetId() {
         return this.fleetId;
     }
@@ -87,6 +89,7 @@ public class UpdateFleetAttributesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateFleetAttributesRequest withFleetId(String fleetId) {
         setFleetId(fleetId);
         return this;
@@ -102,6 +105,7 @@ public class UpdateFleetAttributesRequest extends AmazonWebServiceRequest
      *        Descriptive label associated with this fleet. Fleet names do not
      *        need to be unique.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -115,6 +119,7 @@ public class UpdateFleetAttributesRequest extends AmazonWebServiceRequest
      * @return Descriptive label associated with this fleet. Fleet names do not
      *         need to be unique.
      */
+
     public String getName() {
         return this.name;
     }
@@ -131,6 +136,7 @@ public class UpdateFleetAttributesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateFleetAttributesRequest withName(String name) {
         setName(name);
         return this;
@@ -144,6 +150,7 @@ public class UpdateFleetAttributesRequest extends AmazonWebServiceRequest
      * @param description
      *        Human-readable description of the fleet.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -155,6 +162,7 @@ public class UpdateFleetAttributesRequest extends AmazonWebServiceRequest
      * 
      * @return Human-readable description of the fleet.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -169,6 +177,7 @@ public class UpdateFleetAttributesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateFleetAttributesRequest withDescription(String description) {
         setDescription(description);
         return this;

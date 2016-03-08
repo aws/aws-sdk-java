@@ -39,6 +39,7 @@ public class RequestSpotInstancesResult implements Serializable, Cloneable {
      * 
      * @return One or more Spot instance requests.
      */
+
     public java.util.List<SpotInstanceRequest> getSpotInstanceRequests() {
         if (spotInstanceRequests == null) {
             spotInstanceRequests = new com.amazonaws.internal.SdkInternalList<SpotInstanceRequest>();
@@ -54,6 +55,7 @@ public class RequestSpotInstancesResult implements Serializable, Cloneable {
      * @param spotInstanceRequests
      *        One or more Spot instance requests.
      */
+
     public void setSpotInstanceRequests(
             java.util.Collection<SpotInstanceRequest> spotInstanceRequests) {
         if (spotInstanceRequests == null) {
@@ -81,6 +83,7 @@ public class RequestSpotInstancesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RequestSpotInstancesResult withSpotInstanceRequests(
             SpotInstanceRequest... spotInstanceRequests) {
         if (this.spotInstanceRequests == null) {
@@ -103,6 +106,7 @@ public class RequestSpotInstancesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RequestSpotInstancesResult withSpotInstanceRequests(
             java.util.Collection<SpotInstanceRequest> spotInstanceRequests) {
         setSpotInstanceRequests(spotInstanceRequests);

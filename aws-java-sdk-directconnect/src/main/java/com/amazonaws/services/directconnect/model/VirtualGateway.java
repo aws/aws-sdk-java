@@ -39,6 +39,7 @@ public class VirtualGateway implements Serializable, Cloneable {
     /**
      * @param virtualGatewayId
      */
+
     public void setVirtualGatewayId(String virtualGatewayId) {
         this.virtualGatewayId = virtualGatewayId;
     }
@@ -46,6 +47,7 @@ public class VirtualGateway implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getVirtualGatewayId() {
         return this.virtualGatewayId;
     }
@@ -55,6 +57,7 @@ public class VirtualGateway implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VirtualGateway withVirtualGatewayId(String virtualGatewayId) {
         setVirtualGatewayId(virtualGatewayId);
         return this;
@@ -63,6 +66,7 @@ public class VirtualGateway implements Serializable, Cloneable {
     /**
      * @param virtualGatewayState
      */
+
     public void setVirtualGatewayState(String virtualGatewayState) {
         this.virtualGatewayState = virtualGatewayState;
     }
@@ -70,6 +74,7 @@ public class VirtualGateway implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getVirtualGatewayState() {
         return this.virtualGatewayState;
     }
@@ -79,6 +84,7 @@ public class VirtualGateway implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VirtualGateway withVirtualGatewayState(String virtualGatewayState) {
         setVirtualGatewayState(virtualGatewayState);
         return this;

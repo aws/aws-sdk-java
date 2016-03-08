@@ -30,6 +30,7 @@ public class GetSuiteResult implements Serializable, Cloneable {
     /**
      * @param suite
      */
+
     public void setSuite(Suite suite) {
         this.suite = suite;
     }
@@ -37,6 +38,7 @@ public class GetSuiteResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Suite getSuite() {
         return this.suite;
     }
@@ -46,6 +48,7 @@ public class GetSuiteResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetSuiteResult withSuite(Suite suite) {
         setSuite(suite);
         return this;

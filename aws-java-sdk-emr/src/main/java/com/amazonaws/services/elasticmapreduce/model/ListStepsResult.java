@@ -45,6 +45,7 @@ public class ListStepsResult implements Serializable, Cloneable {
      * 
      * @return The filtered list of steps for the cluster.
      */
+
     public java.util.List<StepSummary> getSteps() {
         if (steps == null) {
             steps = new com.amazonaws.internal.SdkInternalList<StepSummary>();
@@ -60,6 +61,7 @@ public class ListStepsResult implements Serializable, Cloneable {
      * @param steps
      *        The filtered list of steps for the cluster.
      */
+
     public void setSteps(java.util.Collection<StepSummary> steps) {
         if (steps == null) {
             this.steps = null;
@@ -86,6 +88,7 @@ public class ListStepsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListStepsResult withSteps(StepSummary... steps) {
         if (this.steps == null) {
             setSteps(new com.amazonaws.internal.SdkInternalList<StepSummary>(
@@ -107,6 +110,7 @@ public class ListStepsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListStepsResult withSteps(java.util.Collection<StepSummary> steps) {
         setSteps(steps);
         return this;
@@ -121,6 +125,7 @@ public class ListStepsResult implements Serializable, Cloneable {
      *        The pagination token that indicates the next set of results to
      *        retrieve.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -133,6 +138,7 @@ public class ListStepsResult implements Serializable, Cloneable {
      * @return The pagination token that indicates the next set of results to
      *         retrieve.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -148,6 +154,7 @@ public class ListStepsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListStepsResult withMarker(String marker) {
         setMarker(marker);
         return this;

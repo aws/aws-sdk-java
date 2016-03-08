@@ -15,10 +15,10 @@
 
 package com.amazonaws.codegen.model.service;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.List;
 import java.util.Map;
-
-import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Shape {
 
@@ -58,6 +58,8 @@ public class Shape {
     private String pattern;
 
     private boolean fault;
+
+    private boolean deprecated;
 
     public boolean isFault() {
         return fault;
@@ -197,5 +199,13 @@ public class Shape {
 
     public void setErrorTrait(ErrorTrait errorTrait) {
         this.errorTrait = errorTrait;
+    }
+
+    public boolean isDeprecated() {
+        return deprecated;
+    }
+
+    public void setDeprecated(boolean deprecated) {
+        this.deprecated = deprecated;
     }
 }

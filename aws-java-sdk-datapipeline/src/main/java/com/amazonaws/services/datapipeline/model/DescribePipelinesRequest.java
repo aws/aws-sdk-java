@@ -47,6 +47,7 @@ public class DescribePipelinesRequest extends AmazonWebServiceRequest implements
      *         identifiers in a single call. To obtain pipeline IDs, call
      *         <a>ListPipelines</a>.
      */
+
     public java.util.List<String> getPipelineIds() {
         if (pipelineIds == null) {
             pipelineIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -66,6 +67,7 @@ public class DescribePipelinesRequest extends AmazonWebServiceRequest implements
      *        identifiers in a single call. To obtain pipeline IDs, call
      *        <a>ListPipelines</a>.
      */
+
     public void setPipelineIds(java.util.Collection<String> pipelineIds) {
         if (pipelineIds == null) {
             this.pipelineIds = null;
@@ -96,6 +98,7 @@ public class DescribePipelinesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribePipelinesRequest withPipelineIds(String... pipelineIds) {
         if (this.pipelineIds == null) {
             setPipelineIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -121,6 +124,7 @@ public class DescribePipelinesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribePipelinesRequest withPipelineIds(
             java.util.Collection<String> pipelineIds) {
         setPipelineIds(pipelineIds);

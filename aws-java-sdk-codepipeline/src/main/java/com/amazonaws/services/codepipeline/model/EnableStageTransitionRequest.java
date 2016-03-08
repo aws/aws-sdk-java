@@ -62,6 +62,7 @@ public class EnableStageTransitionRequest extends AmazonWebServiceRequest
      *        The name of the pipeline in which you want to enable the flow of
      *        artifacts from one stage to another.
      */
+
     public void setPipelineName(String pipelineName) {
         this.pipelineName = pipelineName;
     }
@@ -75,6 +76,7 @@ public class EnableStageTransitionRequest extends AmazonWebServiceRequest
      * @return The name of the pipeline in which you want to enable the flow of
      *         artifacts from one stage to another.
      */
+
     public String getPipelineName() {
         return this.pipelineName;
     }
@@ -91,6 +93,7 @@ public class EnableStageTransitionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EnableStageTransitionRequest withPipelineName(String pipelineName) {
         setPipelineName(pipelineName);
         return this;
@@ -108,6 +111,7 @@ public class EnableStageTransitionRequest extends AmazonWebServiceRequest
      *        artifacts, either into the stage (inbound) or from that stage to
      *        the next stage (outbound).
      */
+
     public void setStageName(String stageName) {
         this.stageName = stageName;
     }
@@ -123,6 +127,7 @@ public class EnableStageTransitionRequest extends AmazonWebServiceRequest
      *         artifacts, either into the stage (inbound) or from that stage to
      *         the next stage (outbound).
      */
+
     public String getStageName() {
         return this.stageName;
     }
@@ -141,6 +146,7 @@ public class EnableStageTransitionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EnableStageTransitionRequest withStageName(String stageName) {
         setStageName(stageName);
         return this;
@@ -161,6 +167,7 @@ public class EnableStageTransitionRequest extends AmazonWebServiceRequest
      *        next stage (outbound).
      * @see StageTransitionType
      */
+
     public void setTransitionType(String transitionType) {
         this.transitionType = transitionType;
     }
@@ -179,6 +186,7 @@ public class EnableStageTransitionRequest extends AmazonWebServiceRequest
      *         to the next stage (outbound).
      * @see StageTransitionType
      */
+
     public String getTransitionType() {
         return this.transitionType;
     }
@@ -200,6 +208,7 @@ public class EnableStageTransitionRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see StageTransitionType
      */
+
     public EnableStageTransitionRequest withTransitionType(String transitionType) {
         setTransitionType(transitionType);
         return this;
@@ -222,6 +231,7 @@ public class EnableStageTransitionRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see StageTransitionType
      */
+
     public void setTransitionType(StageTransitionType transitionType) {
         this.transitionType = transitionType.toString();
     }
@@ -243,6 +253,7 @@ public class EnableStageTransitionRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see StageTransitionType
      */
+
     public EnableStageTransitionRequest withTransitionType(
             StageTransitionType transitionType) {
         setTransitionType(transitionType);

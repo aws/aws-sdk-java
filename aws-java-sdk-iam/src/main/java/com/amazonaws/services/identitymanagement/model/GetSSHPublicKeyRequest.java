@@ -54,6 +54,7 @@ public class GetSSHPublicKeyRequest extends AmazonWebServiceRequest implements
      * @param userName
      *        The name of the IAM user associated with the SSH public key.
      */
+
     public void setUserName(String userName) {
         this.userName = userName;
     }
@@ -65,6 +66,7 @@ public class GetSSHPublicKeyRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the IAM user associated with the SSH public key.
      */
+
     public String getUserName() {
         return this.userName;
     }
@@ -79,6 +81,7 @@ public class GetSSHPublicKeyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetSSHPublicKeyRequest withUserName(String userName) {
         setUserName(userName);
         return this;
@@ -92,6 +95,7 @@ public class GetSSHPublicKeyRequest extends AmazonWebServiceRequest implements
      * @param sSHPublicKeyId
      *        The unique identifier for the SSH public key.
      */
+
     public void setSSHPublicKeyId(String sSHPublicKeyId) {
         this.sSHPublicKeyId = sSHPublicKeyId;
     }
@@ -103,6 +107,7 @@ public class GetSSHPublicKeyRequest extends AmazonWebServiceRequest implements
      * 
      * @return The unique identifier for the SSH public key.
      */
+
     public String getSSHPublicKeyId() {
         return this.sSHPublicKeyId;
     }
@@ -117,6 +122,7 @@ public class GetSSHPublicKeyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetSSHPublicKeyRequest withSSHPublicKeyId(String sSHPublicKeyId) {
         setSSHPublicKeyId(sSHPublicKeyId);
         return this;
@@ -135,6 +141,7 @@ public class GetSSHPublicKeyRequest extends AmazonWebServiceRequest implements
      *        . To retrieve the public key in PEM format, use <code>PEM</code>.
      * @see EncodingType
      */
+
     public void setEncoding(String encoding) {
         this.encoding = encoding;
     }
@@ -152,6 +159,7 @@ public class GetSSHPublicKeyRequest extends AmazonWebServiceRequest implements
      *         <code>PEM</code>.
      * @see EncodingType
      */
+
     public String getEncoding() {
         return this.encoding;
     }
@@ -171,6 +179,7 @@ public class GetSSHPublicKeyRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see EncodingType
      */
+
     public GetSSHPublicKeyRequest withEncoding(String encoding) {
         setEncoding(encoding);
         return this;
@@ -191,6 +200,7 @@ public class GetSSHPublicKeyRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see EncodingType
      */
+
     public void setEncoding(EncodingType encoding) {
         this.encoding = encoding.toString();
     }
@@ -210,6 +220,7 @@ public class GetSSHPublicKeyRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see EncodingType
      */
+
     public GetSSHPublicKeyRequest withEncoding(EncodingType encoding) {
         setEncoding(encoding);
         return this;

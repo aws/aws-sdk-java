@@ -38,6 +38,7 @@ public class CreateVpnGatewayResult implements Serializable, Cloneable {
      * @param vpnGateway
      *        Information about the virtual private gateway.
      */
+
     public void setVpnGateway(VpnGateway vpnGateway) {
         this.vpnGateway = vpnGateway;
     }
@@ -49,6 +50,7 @@ public class CreateVpnGatewayResult implements Serializable, Cloneable {
      * 
      * @return Information about the virtual private gateway.
      */
+
     public VpnGateway getVpnGateway() {
         return this.vpnGateway;
     }
@@ -63,6 +65,7 @@ public class CreateVpnGatewayResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateVpnGatewayResult withVpnGateway(VpnGateway vpnGateway) {
         setVpnGateway(vpnGateway);
         return this;

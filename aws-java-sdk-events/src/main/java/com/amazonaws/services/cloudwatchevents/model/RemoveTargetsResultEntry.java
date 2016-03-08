@@ -54,6 +54,7 @@ public class RemoveTargetsResultEntry implements Serializable, Cloneable {
      *        The ID of the target requested to be removed by Amazon CloudWatch
      *        Events.
      */
+
     public void setTargetId(String targetId) {
         this.targetId = targetId;
     }
@@ -66,6 +67,7 @@ public class RemoveTargetsResultEntry implements Serializable, Cloneable {
      * @return The ID of the target requested to be removed by Amazon CloudWatch
      *         Events.
      */
+
     public String getTargetId() {
         return this.targetId;
     }
@@ -81,6 +83,7 @@ public class RemoveTargetsResultEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RemoveTargetsResultEntry withTargetId(String targetId) {
         setTargetId(targetId);
         return this;
@@ -95,6 +98,7 @@ public class RemoveTargetsResultEntry implements Serializable, Cloneable {
      *        The error code representing why the target removal failed on this
      *        entry.
      */
+
     public void setErrorCode(String errorCode) {
         this.errorCode = errorCode;
     }
@@ -107,6 +111,7 @@ public class RemoveTargetsResultEntry implements Serializable, Cloneable {
      * @return The error code representing why the target removal failed on this
      *         entry.
      */
+
     public String getErrorCode() {
         return this.errorCode;
     }
@@ -122,6 +127,7 @@ public class RemoveTargetsResultEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RemoveTargetsResultEntry withErrorCode(String errorCode) {
         setErrorCode(errorCode);
         return this;
@@ -136,6 +142,7 @@ public class RemoveTargetsResultEntry implements Serializable, Cloneable {
      *        The error message explaining why the target removal failed on this
      *        entry.
      */
+
     public void setErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;
     }
@@ -148,6 +155,7 @@ public class RemoveTargetsResultEntry implements Serializable, Cloneable {
      * @return The error message explaining why the target removal failed on
      *         this entry.
      */
+
     public String getErrorMessage() {
         return this.errorMessage;
     }
@@ -163,6 +171,7 @@ public class RemoveTargetsResultEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RemoveTargetsResultEntry withErrorMessage(String errorMessage) {
         setErrorMessage(errorMessage);
         return this;

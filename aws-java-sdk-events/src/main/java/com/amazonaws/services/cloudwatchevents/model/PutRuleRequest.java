@@ -73,6 +73,7 @@ public class PutRuleRequest extends AmazonWebServiceRequest implements
      * @param name
      *        The name of the rule that you are creating or updating.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -84,6 +85,7 @@ public class PutRuleRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the rule that you are creating or updating.
      */
+
     public String getName() {
         return this.name;
     }
@@ -98,6 +100,7 @@ public class PutRuleRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutRuleRequest withName(String name) {
         setName(name);
         return this;
@@ -113,6 +116,7 @@ public class PutRuleRequest extends AmazonWebServiceRequest implements
      *        The scheduling expression. For example, "cron(0 20 * * ? *)",
      *        "rate(5 minutes)".
      */
+
     public void setScheduleExpression(String scheduleExpression) {
         this.scheduleExpression = scheduleExpression;
     }
@@ -126,6 +130,7 @@ public class PutRuleRequest extends AmazonWebServiceRequest implements
      * @return The scheduling expression. For example, "cron(0 20 * * ? *)",
      *         "rate(5 minutes)".
      */
+
     public String getScheduleExpression() {
         return this.scheduleExpression;
     }
@@ -142,6 +147,7 @@ public class PutRuleRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutRuleRequest withScheduleExpression(String scheduleExpression) {
         setScheduleExpression(scheduleExpression);
         return this;
@@ -155,6 +161,7 @@ public class PutRuleRequest extends AmazonWebServiceRequest implements
      * @param eventPattern
      *        The event pattern.
      */
+
     public void setEventPattern(String eventPattern) {
         this.eventPattern = eventPattern;
     }
@@ -166,6 +173,7 @@ public class PutRuleRequest extends AmazonWebServiceRequest implements
      * 
      * @return The event pattern.
      */
+
     public String getEventPattern() {
         return this.eventPattern;
     }
@@ -180,6 +188,7 @@ public class PutRuleRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutRuleRequest withEventPattern(String eventPattern) {
         setEventPattern(eventPattern);
         return this;
@@ -194,6 +203,7 @@ public class PutRuleRequest extends AmazonWebServiceRequest implements
      *        Indicates whether the rule is enabled or disabled.
      * @see RuleState
      */
+
     public void setState(String state) {
         this.state = state;
     }
@@ -206,6 +216,7 @@ public class PutRuleRequest extends AmazonWebServiceRequest implements
      * @return Indicates whether the rule is enabled or disabled.
      * @see RuleState
      */
+
     public String getState() {
         return this.state;
     }
@@ -221,6 +232,7 @@ public class PutRuleRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see RuleState
      */
+
     public PutRuleRequest withState(String state) {
         setState(state);
         return this;
@@ -237,6 +249,7 @@ public class PutRuleRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see RuleState
      */
+
     public void setState(RuleState state) {
         this.state = state.toString();
     }
@@ -252,6 +265,7 @@ public class PutRuleRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see RuleState
      */
+
     public PutRuleRequest withState(RuleState state) {
         setState(state);
         return this;
@@ -265,6 +279,7 @@ public class PutRuleRequest extends AmazonWebServiceRequest implements
      * @param description
      *        A description of the rule.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -276,6 +291,7 @@ public class PutRuleRequest extends AmazonWebServiceRequest implements
      * 
      * @return A description of the rule.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -290,6 +306,7 @@ public class PutRuleRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutRuleRequest withDescription(String description) {
         setDescription(description);
         return this;
@@ -304,6 +321,7 @@ public class PutRuleRequest extends AmazonWebServiceRequest implements
      *        The Amazon Resource Name (ARN) of the IAM role associated with the
      *        rule.
      */
+
     public void setRoleArn(String roleArn) {
         this.roleArn = roleArn;
     }
@@ -316,6 +334,7 @@ public class PutRuleRequest extends AmazonWebServiceRequest implements
      * @return The Amazon Resource Name (ARN) of the IAM role associated with
      *         the rule.
      */
+
     public String getRoleArn() {
         return this.roleArn;
     }
@@ -331,6 +350,7 @@ public class PutRuleRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutRuleRequest withRoleArn(String roleArn) {
         setRoleArn(roleArn);
         return this;

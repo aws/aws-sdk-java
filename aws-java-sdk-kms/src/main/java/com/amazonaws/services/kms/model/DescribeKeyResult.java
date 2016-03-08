@@ -38,6 +38,7 @@ public class DescribeKeyResult implements Serializable, Cloneable {
      * @param keyMetadata
      *        Metadata associated with the key.
      */
+
     public void setKeyMetadata(KeyMetadata keyMetadata) {
         this.keyMetadata = keyMetadata;
     }
@@ -49,6 +50,7 @@ public class DescribeKeyResult implements Serializable, Cloneable {
      * 
      * @return Metadata associated with the key.
      */
+
     public KeyMetadata getKeyMetadata() {
         return this.keyMetadata;
     }
@@ -63,6 +65,7 @@ public class DescribeKeyResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeKeyResult withKeyMetadata(KeyMetadata keyMetadata) {
         setKeyMetadata(keyMetadata);
         return this;

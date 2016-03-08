@@ -42,6 +42,7 @@ public class ResolveAliasRequest extends AmazonWebServiceRequest implements
      * @param aliasId
      *        Unique identifier for the alias you want to resolve.
      */
+
     public void setAliasId(String aliasId) {
         this.aliasId = aliasId;
     }
@@ -53,6 +54,7 @@ public class ResolveAliasRequest extends AmazonWebServiceRequest implements
      * 
      * @return Unique identifier for the alias you want to resolve.
      */
+
     public String getAliasId() {
         return this.aliasId;
     }
@@ -67,6 +69,7 @@ public class ResolveAliasRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ResolveAliasRequest withAliasId(String aliasId) {
         setAliasId(aliasId);
         return this;

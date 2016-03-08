@@ -60,6 +60,7 @@ public class ListTopicRulesRequest extends AmazonWebServiceRequest implements
      * @param topic
      *        The topic.
      */
+
     public void setTopic(String topic) {
         this.topic = topic;
     }
@@ -71,6 +72,7 @@ public class ListTopicRulesRequest extends AmazonWebServiceRequest implements
      * 
      * @return The topic.
      */
+
     public String getTopic() {
         return this.topic;
     }
@@ -85,6 +87,7 @@ public class ListTopicRulesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTopicRulesRequest withTopic(String topic) {
         setTopic(topic);
         return this;
@@ -98,6 +101,7 @@ public class ListTopicRulesRequest extends AmazonWebServiceRequest implements
      * @param maxResults
      *        The maximum number of results to return.
      */
+
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
     }
@@ -109,6 +113,7 @@ public class ListTopicRulesRequest extends AmazonWebServiceRequest implements
      * 
      * @return The maximum number of results to return.
      */
+
     public Integer getMaxResults() {
         return this.maxResults;
     }
@@ -123,6 +128,7 @@ public class ListTopicRulesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTopicRulesRequest withMaxResults(Integer maxResults) {
         setMaxResults(maxResults);
         return this;
@@ -136,6 +142,7 @@ public class ListTopicRulesRequest extends AmazonWebServiceRequest implements
      * @param nextToken
      *        A token used to retrieve the next value.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -147,6 +154,7 @@ public class ListTopicRulesRequest extends AmazonWebServiceRequest implements
      * 
      * @return A token used to retrieve the next value.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -161,6 +169,7 @@ public class ListTopicRulesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTopicRulesRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -174,6 +183,7 @@ public class ListTopicRulesRequest extends AmazonWebServiceRequest implements
      * @param ruleDisabled
      *        Specifies whether the rule is disabled.
      */
+
     public void setRuleDisabled(Boolean ruleDisabled) {
         this.ruleDisabled = ruleDisabled;
     }
@@ -185,6 +195,7 @@ public class ListTopicRulesRequest extends AmazonWebServiceRequest implements
      * 
      * @return Specifies whether the rule is disabled.
      */
+
     public Boolean getRuleDisabled() {
         return this.ruleDisabled;
     }
@@ -199,6 +210,7 @@ public class ListTopicRulesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTopicRulesRequest withRuleDisabled(Boolean ruleDisabled) {
         setRuleDisabled(ruleDisabled);
         return this;
@@ -211,6 +223,7 @@ public class ListTopicRulesRequest extends AmazonWebServiceRequest implements
      * 
      * @return Specifies whether the rule is disabled.
      */
+
     public Boolean isRuleDisabled() {
         return this.ruleDisabled;
     }

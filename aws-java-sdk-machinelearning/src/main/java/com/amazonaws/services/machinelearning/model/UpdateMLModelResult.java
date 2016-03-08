@@ -49,6 +49,7 @@ public class UpdateMLModelResult implements Serializable, Cloneable {
      *        value should be identical to the value of the
      *        <code>MLModelID</code> in the request.
      */
+
     public void setMLModelId(String mLModelId) {
         this.mLModelId = mLModelId;
     }
@@ -64,6 +65,7 @@ public class UpdateMLModelResult implements Serializable, Cloneable {
      *         value should be identical to the value of the
      *         <code>MLModelID</code> in the request.
      */
+
     public String getMLModelId() {
         return this.mLModelId;
     }
@@ -82,6 +84,7 @@ public class UpdateMLModelResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateMLModelResult withMLModelId(String mLModelId) {
         setMLModelId(mLModelId);
         return this;

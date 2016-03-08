@@ -91,6 +91,7 @@ public class ResetImageAttributeRequest extends AmazonWebServiceRequest
      * @param imageId
      *        The ID of the AMI.
      */
+
     public void setImageId(String imageId) {
         this.imageId = imageId;
     }
@@ -102,6 +103,7 @@ public class ResetImageAttributeRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the AMI.
      */
+
     public String getImageId() {
         return this.imageId;
     }
@@ -116,6 +118,7 @@ public class ResetImageAttributeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ResetImageAttributeRequest withImageId(String imageId) {
         setImageId(imageId);
         return this;
@@ -132,6 +135,7 @@ public class ResetImageAttributeRequest extends AmazonWebServiceRequest
      *        permission attribute).
      * @see ResetImageAttributeName
      */
+
     public void setAttribute(String attribute) {
         this.attribute = attribute;
     }
@@ -146,6 +150,7 @@ public class ResetImageAttributeRequest extends AmazonWebServiceRequest
      *         permission attribute).
      * @see ResetImageAttributeName
      */
+
     public String getAttribute() {
         return this.attribute;
     }
@@ -163,6 +168,7 @@ public class ResetImageAttributeRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see ResetImageAttributeName
      */
+
     public ResetImageAttributeRequest withAttribute(String attribute) {
         setAttribute(attribute);
         return this;
@@ -181,6 +187,7 @@ public class ResetImageAttributeRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see ResetImageAttributeName
      */
+
     public void setAttribute(ResetImageAttributeName attribute) {
         this.attribute = attribute.toString();
     }
@@ -198,6 +205,7 @@ public class ResetImageAttributeRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see ResetImageAttributeName
      */
+
     public ResetImageAttributeRequest withAttribute(
             ResetImageAttributeName attribute) {
         setAttribute(attribute);

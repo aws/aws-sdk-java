@@ -73,6 +73,7 @@ public class CreateSpotDatafeedSubscriptionRequest extends
      *        The Amazon S3 bucket in which to store the Spot instance data
      *        feed.
      */
+
     public void setBucket(String bucket) {
         this.bucket = bucket;
     }
@@ -85,6 +86,7 @@ public class CreateSpotDatafeedSubscriptionRequest extends
      * @return The Amazon S3 bucket in which to store the Spot instance data
      *         feed.
      */
+
     public String getBucket() {
         return this.bucket;
     }
@@ -100,6 +102,7 @@ public class CreateSpotDatafeedSubscriptionRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateSpotDatafeedSubscriptionRequest withBucket(String bucket) {
         setBucket(bucket);
         return this;
@@ -113,6 +116,7 @@ public class CreateSpotDatafeedSubscriptionRequest extends
      * @param prefix
      *        A prefix for the data feed file names.
      */
+
     public void setPrefix(String prefix) {
         this.prefix = prefix;
     }
@@ -124,6 +128,7 @@ public class CreateSpotDatafeedSubscriptionRequest extends
      * 
      * @return A prefix for the data feed file names.
      */
+
     public String getPrefix() {
         return this.prefix;
     }
@@ -138,6 +143,7 @@ public class CreateSpotDatafeedSubscriptionRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateSpotDatafeedSubscriptionRequest withPrefix(String prefix) {
         setPrefix(prefix);
         return this;

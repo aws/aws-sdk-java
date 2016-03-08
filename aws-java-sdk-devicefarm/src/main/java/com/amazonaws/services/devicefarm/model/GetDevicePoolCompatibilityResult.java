@@ -46,6 +46,7 @@ public class GetDevicePoolCompatibilityResult implements Serializable,
      * 
      * @return Information about compatible devices.
      */
+
     public java.util.List<DevicePoolCompatibilityResult> getCompatibleDevices() {
         return compatibleDevices;
     }
@@ -58,6 +59,7 @@ public class GetDevicePoolCompatibilityResult implements Serializable,
      * @param compatibleDevices
      *        Information about compatible devices.
      */
+
     public void setCompatibleDevices(
             java.util.Collection<DevicePoolCompatibilityResult> compatibleDevices) {
         if (compatibleDevices == null) {
@@ -85,6 +87,7 @@ public class GetDevicePoolCompatibilityResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDevicePoolCompatibilityResult withCompatibleDevices(
             DevicePoolCompatibilityResult... compatibleDevices) {
         if (this.compatibleDevices == null) {
@@ -107,6 +110,7 @@ public class GetDevicePoolCompatibilityResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDevicePoolCompatibilityResult withCompatibleDevices(
             java.util.Collection<DevicePoolCompatibilityResult> compatibleDevices) {
         setCompatibleDevices(compatibleDevices);
@@ -120,6 +124,7 @@ public class GetDevicePoolCompatibilityResult implements Serializable,
      * 
      * @return Information about incompatible devices.
      */
+
     public java.util.List<DevicePoolCompatibilityResult> getIncompatibleDevices() {
         return incompatibleDevices;
     }
@@ -132,6 +137,7 @@ public class GetDevicePoolCompatibilityResult implements Serializable,
      * @param incompatibleDevices
      *        Information about incompatible devices.
      */
+
     public void setIncompatibleDevices(
             java.util.Collection<DevicePoolCompatibilityResult> incompatibleDevices) {
         if (incompatibleDevices == null) {
@@ -159,6 +165,7 @@ public class GetDevicePoolCompatibilityResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDevicePoolCompatibilityResult withIncompatibleDevices(
             DevicePoolCompatibilityResult... incompatibleDevices) {
         if (this.incompatibleDevices == null) {
@@ -181,6 +188,7 @@ public class GetDevicePoolCompatibilityResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDevicePoolCompatibilityResult withIncompatibleDevices(
             java.util.Collection<DevicePoolCompatibilityResult> incompatibleDevices) {
         setIncompatibleDevices(incompatibleDevices);

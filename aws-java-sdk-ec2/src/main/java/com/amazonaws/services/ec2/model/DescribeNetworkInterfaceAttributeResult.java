@@ -63,6 +63,7 @@ public class DescribeNetworkInterfaceAttributeResult implements Serializable,
      * @param networkInterfaceId
      *        The ID of the network interface.
      */
+
     public void setNetworkInterfaceId(String networkInterfaceId) {
         this.networkInterfaceId = networkInterfaceId;
     }
@@ -74,6 +75,7 @@ public class DescribeNetworkInterfaceAttributeResult implements Serializable,
      * 
      * @return The ID of the network interface.
      */
+
     public String getNetworkInterfaceId() {
         return this.networkInterfaceId;
     }
@@ -88,6 +90,7 @@ public class DescribeNetworkInterfaceAttributeResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeNetworkInterfaceAttributeResult withNetworkInterfaceId(
             String networkInterfaceId) {
         setNetworkInterfaceId(networkInterfaceId);
@@ -102,6 +105,7 @@ public class DescribeNetworkInterfaceAttributeResult implements Serializable,
      * @param description
      *        The description of the network interface.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -113,6 +117,7 @@ public class DescribeNetworkInterfaceAttributeResult implements Serializable,
      * 
      * @return The description of the network interface.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -127,6 +132,7 @@ public class DescribeNetworkInterfaceAttributeResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeNetworkInterfaceAttributeResult withDescription(
             String description) {
         setDescription(description);
@@ -141,6 +147,7 @@ public class DescribeNetworkInterfaceAttributeResult implements Serializable,
      * @param sourceDestCheck
      *        Indicates whether source/destination checking is enabled.
      */
+
     public void setSourceDestCheck(Boolean sourceDestCheck) {
         this.sourceDestCheck = sourceDestCheck;
     }
@@ -152,6 +159,7 @@ public class DescribeNetworkInterfaceAttributeResult implements Serializable,
      * 
      * @return Indicates whether source/destination checking is enabled.
      */
+
     public Boolean getSourceDestCheck() {
         return this.sourceDestCheck;
     }
@@ -166,6 +174,7 @@ public class DescribeNetworkInterfaceAttributeResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeNetworkInterfaceAttributeResult withSourceDestCheck(
             Boolean sourceDestCheck) {
         setSourceDestCheck(sourceDestCheck);
@@ -179,6 +188,7 @@ public class DescribeNetworkInterfaceAttributeResult implements Serializable,
      * 
      * @return Indicates whether source/destination checking is enabled.
      */
+
     public Boolean isSourceDestCheck() {
         return this.sourceDestCheck;
     }
@@ -190,6 +200,7 @@ public class DescribeNetworkInterfaceAttributeResult implements Serializable,
      * 
      * @return The security groups associated with the network interface.
      */
+
     public java.util.List<GroupIdentifier> getGroups() {
         if (groups == null) {
             groups = new com.amazonaws.internal.SdkInternalList<GroupIdentifier>();
@@ -205,6 +216,7 @@ public class DescribeNetworkInterfaceAttributeResult implements Serializable,
      * @param groups
      *        The security groups associated with the network interface.
      */
+
     public void setGroups(java.util.Collection<GroupIdentifier> groups) {
         if (groups == null) {
             this.groups = null;
@@ -231,6 +243,7 @@ public class DescribeNetworkInterfaceAttributeResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeNetworkInterfaceAttributeResult withGroups(
             GroupIdentifier... groups) {
         if (this.groups == null) {
@@ -253,6 +266,7 @@ public class DescribeNetworkInterfaceAttributeResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeNetworkInterfaceAttributeResult withGroups(
             java.util.Collection<GroupIdentifier> groups) {
         setGroups(groups);
@@ -267,6 +281,7 @@ public class DescribeNetworkInterfaceAttributeResult implements Serializable,
      * @param attachment
      *        The attachment (if any) of the network interface.
      */
+
     public void setAttachment(NetworkInterfaceAttachment attachment) {
         this.attachment = attachment;
     }
@@ -278,6 +293,7 @@ public class DescribeNetworkInterfaceAttributeResult implements Serializable,
      * 
      * @return The attachment (if any) of the network interface.
      */
+
     public NetworkInterfaceAttachment getAttachment() {
         return this.attachment;
     }
@@ -292,6 +308,7 @@ public class DescribeNetworkInterfaceAttributeResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeNetworkInterfaceAttributeResult withAttachment(
             NetworkInterfaceAttachment attachment) {
         setAttachment(attachment);

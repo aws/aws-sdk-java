@@ -90,6 +90,7 @@ public class Subnet implements Serializable, Cloneable {
      * @param subnetId
      *        The ID of the subnet.
      */
+
     public void setSubnetId(String subnetId) {
         this.subnetId = subnetId;
     }
@@ -101,6 +102,7 @@ public class Subnet implements Serializable, Cloneable {
      * 
      * @return The ID of the subnet.
      */
+
     public String getSubnetId() {
         return this.subnetId;
     }
@@ -115,6 +117,7 @@ public class Subnet implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Subnet withSubnetId(String subnetId) {
         setSubnetId(subnetId);
         return this;
@@ -129,6 +132,7 @@ public class Subnet implements Serializable, Cloneable {
      *        The current state of the subnet.
      * @see SubnetState
      */
+
     public void setState(String state) {
         this.state = state;
     }
@@ -141,6 +145,7 @@ public class Subnet implements Serializable, Cloneable {
      * @return The current state of the subnet.
      * @see SubnetState
      */
+
     public String getState() {
         return this.state;
     }
@@ -156,6 +161,7 @@ public class Subnet implements Serializable, Cloneable {
      *         chained together.
      * @see SubnetState
      */
+
     public Subnet withState(String state) {
         setState(state);
         return this;
@@ -172,6 +178,7 @@ public class Subnet implements Serializable, Cloneable {
      *         chained together.
      * @see SubnetState
      */
+
     public void setState(SubnetState state) {
         this.state = state.toString();
     }
@@ -187,6 +194,7 @@ public class Subnet implements Serializable, Cloneable {
      *         chained together.
      * @see SubnetState
      */
+
     public Subnet withState(SubnetState state) {
         setState(state);
         return this;
@@ -200,6 +208,7 @@ public class Subnet implements Serializable, Cloneable {
      * @param vpcId
      *        The ID of the VPC the subnet is in.
      */
+
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
@@ -211,6 +220,7 @@ public class Subnet implements Serializable, Cloneable {
      * 
      * @return The ID of the VPC the subnet is in.
      */
+
     public String getVpcId() {
         return this.vpcId;
     }
@@ -225,6 +235,7 @@ public class Subnet implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Subnet withVpcId(String vpcId) {
         setVpcId(vpcId);
         return this;
@@ -238,6 +249,7 @@ public class Subnet implements Serializable, Cloneable {
      * @param cidrBlock
      *        The CIDR block assigned to the subnet.
      */
+
     public void setCidrBlock(String cidrBlock) {
         this.cidrBlock = cidrBlock;
     }
@@ -249,6 +261,7 @@ public class Subnet implements Serializable, Cloneable {
      * 
      * @return The CIDR block assigned to the subnet.
      */
+
     public String getCidrBlock() {
         return this.cidrBlock;
     }
@@ -263,6 +276,7 @@ public class Subnet implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Subnet withCidrBlock(String cidrBlock) {
         setCidrBlock(cidrBlock);
         return this;
@@ -278,6 +292,7 @@ public class Subnet implements Serializable, Cloneable {
      *        The number of unused IP addresses in the subnet. Note that the IP
      *        addresses for any stopped instances are considered unavailable.
      */
+
     public void setAvailableIpAddressCount(Integer availableIpAddressCount) {
         this.availableIpAddressCount = availableIpAddressCount;
     }
@@ -291,6 +306,7 @@ public class Subnet implements Serializable, Cloneable {
      * @return The number of unused IP addresses in the subnet. Note that the IP
      *         addresses for any stopped instances are considered unavailable.
      */
+
     public Integer getAvailableIpAddressCount() {
         return this.availableIpAddressCount;
     }
@@ -307,6 +323,7 @@ public class Subnet implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Subnet withAvailableIpAddressCount(Integer availableIpAddressCount) {
         setAvailableIpAddressCount(availableIpAddressCount);
         return this;
@@ -320,6 +337,7 @@ public class Subnet implements Serializable, Cloneable {
      * @param availabilityZone
      *        The Availability Zone of the subnet.
      */
+
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
@@ -331,6 +349,7 @@ public class Subnet implements Serializable, Cloneable {
      * 
      * @return The Availability Zone of the subnet.
      */
+
     public String getAvailabilityZone() {
         return this.availabilityZone;
     }
@@ -345,6 +364,7 @@ public class Subnet implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Subnet withAvailabilityZone(String availabilityZone) {
         setAvailabilityZone(availabilityZone);
         return this;
@@ -359,6 +379,7 @@ public class Subnet implements Serializable, Cloneable {
      *        Indicates whether this is the default subnet for the Availability
      *        Zone.
      */
+
     public void setDefaultForAz(Boolean defaultForAz) {
         this.defaultForAz = defaultForAz;
     }
@@ -371,6 +392,7 @@ public class Subnet implements Serializable, Cloneable {
      * @return Indicates whether this is the default subnet for the Availability
      *         Zone.
      */
+
     public Boolean getDefaultForAz() {
         return this.defaultForAz;
     }
@@ -386,6 +408,7 @@ public class Subnet implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Subnet withDefaultForAz(Boolean defaultForAz) {
         setDefaultForAz(defaultForAz);
         return this;
@@ -399,6 +422,7 @@ public class Subnet implements Serializable, Cloneable {
      * @return Indicates whether this is the default subnet for the Availability
      *         Zone.
      */
+
     public Boolean isDefaultForAz() {
         return this.defaultForAz;
     }
@@ -413,6 +437,7 @@ public class Subnet implements Serializable, Cloneable {
      *        Indicates whether instances launched in this subnet receive a
      *        public IP address.
      */
+
     public void setMapPublicIpOnLaunch(Boolean mapPublicIpOnLaunch) {
         this.mapPublicIpOnLaunch = mapPublicIpOnLaunch;
     }
@@ -426,6 +451,7 @@ public class Subnet implements Serializable, Cloneable {
      * @return Indicates whether instances launched in this subnet receive a
      *         public IP address.
      */
+
     public Boolean getMapPublicIpOnLaunch() {
         return this.mapPublicIpOnLaunch;
     }
@@ -442,6 +468,7 @@ public class Subnet implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Subnet withMapPublicIpOnLaunch(Boolean mapPublicIpOnLaunch) {
         setMapPublicIpOnLaunch(mapPublicIpOnLaunch);
         return this;
@@ -456,6 +483,7 @@ public class Subnet implements Serializable, Cloneable {
      * @return Indicates whether instances launched in this subnet receive a
      *         public IP address.
      */
+
     public Boolean isMapPublicIpOnLaunch() {
         return this.mapPublicIpOnLaunch;
     }
@@ -467,6 +495,7 @@ public class Subnet implements Serializable, Cloneable {
      * 
      * @return Any tags assigned to the subnet.
      */
+
     public java.util.List<Tag> getTags() {
         if (tags == null) {
             tags = new com.amazonaws.internal.SdkInternalList<Tag>();
@@ -482,6 +511,7 @@ public class Subnet implements Serializable, Cloneable {
      * @param tags
      *        Any tags assigned to the subnet.
      */
+
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
             this.tags = null;
@@ -507,6 +537,7 @@ public class Subnet implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Subnet withTags(Tag... tags) {
         if (this.tags == null) {
             setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
@@ -527,6 +558,7 @@ public class Subnet implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Subnet withTags(java.util.Collection<Tag> tags) {
         setTags(tags);
         return this;

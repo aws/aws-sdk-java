@@ -69,6 +69,7 @@ public class EC2InstanceLimit implements Serializable, Cloneable {
      *        type.
      * @see EC2InstanceType
      */
+
     public void setEC2InstanceType(String eC2InstanceType) {
         this.eC2InstanceType = eC2InstanceType;
     }
@@ -91,6 +92,7 @@ public class EC2InstanceLimit implements Serializable, Cloneable {
      *         type.
      * @see EC2InstanceType
      */
+
     public String getEC2InstanceType() {
         return this.eC2InstanceType;
     }
@@ -116,6 +118,7 @@ public class EC2InstanceLimit implements Serializable, Cloneable {
      *         chained together.
      * @see EC2InstanceType
      */
+
     public EC2InstanceLimit withEC2InstanceType(String eC2InstanceType) {
         setEC2InstanceType(eC2InstanceType);
         return this;
@@ -142,6 +145,7 @@ public class EC2InstanceLimit implements Serializable, Cloneable {
      *         chained together.
      * @see EC2InstanceType
      */
+
     public void setEC2InstanceType(EC2InstanceType eC2InstanceType) {
         this.eC2InstanceType = eC2InstanceType.toString();
     }
@@ -167,6 +171,7 @@ public class EC2InstanceLimit implements Serializable, Cloneable {
      *         chained together.
      * @see EC2InstanceType
      */
+
     public EC2InstanceLimit withEC2InstanceType(EC2InstanceType eC2InstanceType) {
         setEC2InstanceType(eC2InstanceType);
         return this;
@@ -182,6 +187,7 @@ public class EC2InstanceLimit implements Serializable, Cloneable {
      *        Number of instances of the specified type that are currently in
      *        use by this AWS account.
      */
+
     public void setCurrentInstances(Integer currentInstances) {
         this.currentInstances = currentInstances;
     }
@@ -195,6 +201,7 @@ public class EC2InstanceLimit implements Serializable, Cloneable {
      * @return Number of instances of the specified type that are currently in
      *         use by this AWS account.
      */
+
     public Integer getCurrentInstances() {
         return this.currentInstances;
     }
@@ -211,6 +218,7 @@ public class EC2InstanceLimit implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EC2InstanceLimit withCurrentInstances(Integer currentInstances) {
         setCurrentInstances(currentInstances);
         return this;
@@ -224,6 +232,7 @@ public class EC2InstanceLimit implements Serializable, Cloneable {
      * @param instanceLimit
      *        Number of instances allowed.
      */
+
     public void setInstanceLimit(Integer instanceLimit) {
         this.instanceLimit = instanceLimit;
     }
@@ -235,6 +244,7 @@ public class EC2InstanceLimit implements Serializable, Cloneable {
      * 
      * @return Number of instances allowed.
      */
+
     public Integer getInstanceLimit() {
         return this.instanceLimit;
     }
@@ -249,6 +259,7 @@ public class EC2InstanceLimit implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EC2InstanceLimit withInstanceLimit(Integer instanceLimit) {
         setInstanceLimit(instanceLimit);
         return this;

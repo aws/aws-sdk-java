@@ -176,6 +176,7 @@ public class User implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *        >IAM Identifiers</a> in the <i>Using IAM</i> guide.
      */
+
     public void setPath(String path) {
         this.path = path;
     }
@@ -192,6 +193,7 @@ public class User implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *         >IAM Identifiers</a> in the <i>Using IAM</i> guide.
      */
+
     public String getPath() {
         return this.path;
     }
@@ -211,6 +213,7 @@ public class User implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public User withPath(String path) {
         setPath(path);
         return this;
@@ -224,6 +227,7 @@ public class User implements Serializable, Cloneable {
      * @param userName
      *        The friendly name identifying the user.
      */
+
     public void setUserName(String userName) {
         this.userName = userName;
     }
@@ -235,6 +239,7 @@ public class User implements Serializable, Cloneable {
      * 
      * @return The friendly name identifying the user.
      */
+
     public String getUserName() {
         return this.userName;
     }
@@ -249,6 +254,7 @@ public class User implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public User withUserName(String userName) {
         setUserName(userName);
         return this;
@@ -268,6 +274,7 @@ public class User implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *        >IAM Identifiers</a> in the <i>Using IAM</i> guide.
      */
+
     public void setUserId(String userId) {
         this.userId = userId;
     }
@@ -285,6 +292,7 @@ public class User implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *         >IAM Identifiers</a> in the <i>Using IAM</i> guide.
      */
+
     public String getUserId() {
         return this.userId;
     }
@@ -305,6 +313,7 @@ public class User implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public User withUserId(String userId) {
         setUserId(userId);
         return this;
@@ -325,6 +334,7 @@ public class User implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *        >IAM Identifiers</a> in the <i>Using IAM</i> guide.
      */
+
     public void setArn(String arn) {
         this.arn = arn;
     }
@@ -343,6 +353,7 @@ public class User implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *         >IAM Identifiers</a> in the <i>Using IAM</i> guide.
      */
+
     public String getArn() {
         return this.arn;
     }
@@ -364,6 +375,7 @@ public class User implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public User withArn(String arn) {
         setArn(arn);
         return this;
@@ -379,6 +391,7 @@ public class User implements Serializable, Cloneable {
      *        The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO
      *        8601 date-time format</a>, when the user was created.
      */
+
     public void setCreateDate(java.util.Date createDate) {
         this.createDate = createDate;
     }
@@ -393,6 +406,7 @@ public class User implements Serializable, Cloneable {
      *         href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
      *         format</a>, when the user was created.
      */
+
     public java.util.Date getCreateDate() {
         return this.createDate;
     }
@@ -409,6 +423,7 @@ public class User implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public User withCreateDate(java.util.Date createDate) {
         setCreateDate(createDate);
         return this;
@@ -480,6 +495,7 @@ public class User implements Serializable, Cloneable {
      *        This value is returned only in the <a>GetUser</a> and
      *        <a>ListUsers</a> actions.
      */
+
     public void setPasswordLastUsed(java.util.Date passwordLastUsed) {
         this.passwordLastUsed = passwordLastUsed;
     }
@@ -550,6 +566,7 @@ public class User implements Serializable, Cloneable {
      *         This value is returned only in the <a>GetUser</a> and
      *         <a>ListUsers</a> actions.
      */
+
     public java.util.Date getPasswordLastUsed() {
         return this.passwordLastUsed;
     }
@@ -622,6 +639,7 @@ public class User implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public User withPasswordLastUsed(java.util.Date passwordLastUsed) {
         setPasswordLastUsed(passwordLastUsed);
         return this;

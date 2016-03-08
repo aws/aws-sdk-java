@@ -70,6 +70,7 @@ public class ServiceError implements Serializable, Cloneable {
      * @param serviceErrorId
      *        The error ID.
      */
+
     public void setServiceErrorId(String serviceErrorId) {
         this.serviceErrorId = serviceErrorId;
     }
@@ -81,6 +82,7 @@ public class ServiceError implements Serializable, Cloneable {
      * 
      * @return The error ID.
      */
+
     public String getServiceErrorId() {
         return this.serviceErrorId;
     }
@@ -95,6 +97,7 @@ public class ServiceError implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ServiceError withServiceErrorId(String serviceErrorId) {
         setServiceErrorId(serviceErrorId);
         return this;
@@ -108,6 +111,7 @@ public class ServiceError implements Serializable, Cloneable {
      * @param stackId
      *        The stack ID.
      */
+
     public void setStackId(String stackId) {
         this.stackId = stackId;
     }
@@ -119,6 +123,7 @@ public class ServiceError implements Serializable, Cloneable {
      * 
      * @return The stack ID.
      */
+
     public String getStackId() {
         return this.stackId;
     }
@@ -133,6 +138,7 @@ public class ServiceError implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ServiceError withStackId(String stackId) {
         setStackId(stackId);
         return this;
@@ -146,6 +152,7 @@ public class ServiceError implements Serializable, Cloneable {
      * @param instanceId
      *        The instance ID.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -157,6 +164,7 @@ public class ServiceError implements Serializable, Cloneable {
      * 
      * @return The instance ID.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
@@ -171,6 +179,7 @@ public class ServiceError implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ServiceError withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;
@@ -184,6 +193,7 @@ public class ServiceError implements Serializable, Cloneable {
      * @param type
      *        The error type.
      */
+
     public void setType(String type) {
         this.type = type;
     }
@@ -195,6 +205,7 @@ public class ServiceError implements Serializable, Cloneable {
      * 
      * @return The error type.
      */
+
     public String getType() {
         return this.type;
     }
@@ -209,6 +220,7 @@ public class ServiceError implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ServiceError withType(String type) {
         setType(type);
         return this;
@@ -222,6 +234,7 @@ public class ServiceError implements Serializable, Cloneable {
      * @param message
      *        A message that describes the error.
      */
+
     public void setMessage(String message) {
         this.message = message;
     }
@@ -233,6 +246,7 @@ public class ServiceError implements Serializable, Cloneable {
      * 
      * @return A message that describes the error.
      */
+
     public String getMessage() {
         return this.message;
     }
@@ -247,6 +261,7 @@ public class ServiceError implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ServiceError withMessage(String message) {
         setMessage(message);
         return this;
@@ -260,6 +275,7 @@ public class ServiceError implements Serializable, Cloneable {
      * @param createdAt
      *        When the error occurred.
      */
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -271,6 +287,7 @@ public class ServiceError implements Serializable, Cloneable {
      * 
      * @return When the error occurred.
      */
+
     public String getCreatedAt() {
         return this.createdAt;
     }
@@ -285,6 +302,7 @@ public class ServiceError implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ServiceError withCreatedAt(String createdAt) {
         setCreatedAt(createdAt);
         return this;

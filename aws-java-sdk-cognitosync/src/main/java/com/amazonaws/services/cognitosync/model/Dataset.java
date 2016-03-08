@@ -59,6 +59,7 @@ public class Dataset implements Serializable, Cloneable {
      *        us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
      *        Cognito. GUID generation is unique within a region.
      */
+
     public void setIdentityId(String identityId) {
         this.identityId = identityId;
     }
@@ -72,6 +73,7 @@ public class Dataset implements Serializable, Cloneable {
      *         us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
      *         Cognito. GUID generation is unique within a region.
      */
+
     public String getIdentityId() {
         return this.identityId;
     }
@@ -88,6 +90,7 @@ public class Dataset implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Dataset withIdentityId(String identityId) {
         setIdentityId(identityId);
         return this;
@@ -101,6 +104,7 @@ public class Dataset implements Serializable, Cloneable {
      *        A string of up to 128 characters. Allowed characters are a-z, A-Z,
      *        0-9, '_' (underscore), '-' (dash), and '.' (dot).
      */
+
     public void setDatasetName(String datasetName) {
         this.datasetName = datasetName;
     }
@@ -112,6 +116,7 @@ public class Dataset implements Serializable, Cloneable {
      * @return A string of up to 128 characters. Allowed characters are a-z,
      *         A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
      */
+
     public String getDatasetName() {
         return this.datasetName;
     }
@@ -126,6 +131,7 @@ public class Dataset implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Dataset withDatasetName(String datasetName) {
         setDatasetName(datasetName);
         return this;
@@ -137,6 +143,7 @@ public class Dataset implements Serializable, Cloneable {
      * @param creationDate
      *        Date on which the dataset was created.
      */
+
     public void setCreationDate(java.util.Date creationDate) {
         this.creationDate = creationDate;
     }
@@ -146,6 +153,7 @@ public class Dataset implements Serializable, Cloneable {
      * 
      * @return Date on which the dataset was created.
      */
+
     public java.util.Date getCreationDate() {
         return this.creationDate;
     }
@@ -158,6 +166,7 @@ public class Dataset implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Dataset withCreationDate(java.util.Date creationDate) {
         setCreationDate(creationDate);
         return this;
@@ -169,6 +178,7 @@ public class Dataset implements Serializable, Cloneable {
      * @param lastModifiedDate
      *        Date when the dataset was last modified.
      */
+
     public void setLastModifiedDate(java.util.Date lastModifiedDate) {
         this.lastModifiedDate = lastModifiedDate;
     }
@@ -178,6 +188,7 @@ public class Dataset implements Serializable, Cloneable {
      * 
      * @return Date when the dataset was last modified.
      */
+
     public java.util.Date getLastModifiedDate() {
         return this.lastModifiedDate;
     }
@@ -190,6 +201,7 @@ public class Dataset implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Dataset withLastModifiedDate(java.util.Date lastModifiedDate) {
         setLastModifiedDate(lastModifiedDate);
         return this;
@@ -201,6 +213,7 @@ public class Dataset implements Serializable, Cloneable {
      * @param lastModifiedBy
      *        The device that made the last change to this dataset.
      */
+
     public void setLastModifiedBy(String lastModifiedBy) {
         this.lastModifiedBy = lastModifiedBy;
     }
@@ -210,6 +223,7 @@ public class Dataset implements Serializable, Cloneable {
      * 
      * @return The device that made the last change to this dataset.
      */
+
     public String getLastModifiedBy() {
         return this.lastModifiedBy;
     }
@@ -222,6 +236,7 @@ public class Dataset implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Dataset withLastModifiedBy(String lastModifiedBy) {
         setLastModifiedBy(lastModifiedBy);
         return this;
@@ -233,6 +248,7 @@ public class Dataset implements Serializable, Cloneable {
      * @param dataStorage
      *        Total size in bytes of the records in this dataset.
      */
+
     public void setDataStorage(Long dataStorage) {
         this.dataStorage = dataStorage;
     }
@@ -242,6 +258,7 @@ public class Dataset implements Serializable, Cloneable {
      * 
      * @return Total size in bytes of the records in this dataset.
      */
+
     public Long getDataStorage() {
         return this.dataStorage;
     }
@@ -254,6 +271,7 @@ public class Dataset implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Dataset withDataStorage(Long dataStorage) {
         setDataStorage(dataStorage);
         return this;
@@ -265,6 +283,7 @@ public class Dataset implements Serializable, Cloneable {
      * @param numRecords
      *        Number of records in this dataset.
      */
+
     public void setNumRecords(Long numRecords) {
         this.numRecords = numRecords;
     }
@@ -274,6 +293,7 @@ public class Dataset implements Serializable, Cloneable {
      * 
      * @return Number of records in this dataset.
      */
+
     public Long getNumRecords() {
         return this.numRecords;
     }
@@ -286,6 +306,7 @@ public class Dataset implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Dataset withNumRecords(Long numRecords) {
         setNumRecords(numRecords);
         return this;

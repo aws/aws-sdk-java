@@ -49,6 +49,7 @@ public class DescribeRdsDbInstancesRequest extends AmazonWebServiceRequest
      *        The stack ID that the instances are registered with. The operation
      *        returns descriptions of all registered Amazon RDS instances.
      */
+
     public void setStackId(String stackId) {
         this.stackId = stackId;
     }
@@ -63,6 +64,7 @@ public class DescribeRdsDbInstancesRequest extends AmazonWebServiceRequest
      *         operation returns descriptions of all registered Amazon RDS
      *         instances.
      */
+
     public String getStackId() {
         return this.stackId;
     }
@@ -79,6 +81,7 @@ public class DescribeRdsDbInstancesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeRdsDbInstancesRequest withStackId(String stackId) {
         setStackId(stackId);
         return this;
@@ -91,6 +94,7 @@ public class DescribeRdsDbInstancesRequest extends AmazonWebServiceRequest
      * 
      * @return An array containing the ARNs of the instances to be described.
      */
+
     public java.util.List<String> getRdsDbInstanceArns() {
         if (rdsDbInstanceArns == null) {
             rdsDbInstanceArns = new com.amazonaws.internal.SdkInternalList<String>();
@@ -106,6 +110,7 @@ public class DescribeRdsDbInstancesRequest extends AmazonWebServiceRequest
      * @param rdsDbInstanceArns
      *        An array containing the ARNs of the instances to be described.
      */
+
     public void setRdsDbInstanceArns(
             java.util.Collection<String> rdsDbInstanceArns) {
         if (rdsDbInstanceArns == null) {
@@ -133,6 +138,7 @@ public class DescribeRdsDbInstancesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeRdsDbInstancesRequest withRdsDbInstanceArns(
             String... rdsDbInstanceArns) {
         if (this.rdsDbInstanceArns == null) {
@@ -155,6 +161,7 @@ public class DescribeRdsDbInstancesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeRdsDbInstancesRequest withRdsDbInstanceArns(
             java.util.Collection<String> rdsDbInstanceArns) {
         setRdsDbInstanceArns(rdsDbInstanceArns);

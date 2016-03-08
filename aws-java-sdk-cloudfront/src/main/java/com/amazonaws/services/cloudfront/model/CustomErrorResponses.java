@@ -37,6 +37,7 @@ public class CustomErrorResponses implements Serializable, Cloneable {
      * @param quantity
      *        The number of custom error responses for this distribution.
      */
+
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
@@ -46,6 +47,7 @@ public class CustomErrorResponses implements Serializable, Cloneable {
      * 
      * @return The number of custom error responses for this distribution.
      */
+
     public Integer getQuantity() {
         return this.quantity;
     }
@@ -58,6 +60,7 @@ public class CustomErrorResponses implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CustomErrorResponses withQuantity(Integer quantity) {
         setQuantity(quantity);
         return this;
@@ -70,6 +73,7 @@ public class CustomErrorResponses implements Serializable, Cloneable {
      * @return Optional: A complex type that contains custom error responses for
      *         this distribution. If Quantity is 0, you can omit Items.
      */
+
     public java.util.List<CustomErrorResponse> getItems() {
         if (items == null) {
             items = new com.amazonaws.internal.SdkInternalList<CustomErrorResponse>();
@@ -85,6 +89,7 @@ public class CustomErrorResponses implements Serializable, Cloneable {
      *        Optional: A complex type that contains custom error responses for
      *        this distribution. If Quantity is 0, you can omit Items.
      */
+
     public void setItems(java.util.Collection<CustomErrorResponse> items) {
         if (items == null) {
             this.items = null;
@@ -111,6 +116,7 @@ public class CustomErrorResponses implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CustomErrorResponses withItems(CustomErrorResponse... items) {
         if (this.items == null) {
             setItems(new com.amazonaws.internal.SdkInternalList<CustomErrorResponse>(
@@ -132,6 +138,7 @@ public class CustomErrorResponses implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CustomErrorResponses withItems(
             java.util.Collection<CustomErrorResponse> items) {
         setItems(items);

@@ -46,6 +46,7 @@ public class InstanceExportDetails implements Serializable, Cloneable {
      * @param instanceId
      *        The ID of the resource being exported.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -57,6 +58,7 @@ public class InstanceExportDetails implements Serializable, Cloneable {
      * 
      * @return The ID of the resource being exported.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
@@ -71,6 +73,7 @@ public class InstanceExportDetails implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceExportDetails withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;
@@ -85,6 +88,7 @@ public class InstanceExportDetails implements Serializable, Cloneable {
      *        The target virtualization environment.
      * @see ExportEnvironment
      */
+
     public void setTargetEnvironment(String targetEnvironment) {
         this.targetEnvironment = targetEnvironment;
     }
@@ -97,6 +101,7 @@ public class InstanceExportDetails implements Serializable, Cloneable {
      * @return The target virtualization environment.
      * @see ExportEnvironment
      */
+
     public String getTargetEnvironment() {
         return this.targetEnvironment;
     }
@@ -112,6 +117,7 @@ public class InstanceExportDetails implements Serializable, Cloneable {
      *         chained together.
      * @see ExportEnvironment
      */
+
     public InstanceExportDetails withTargetEnvironment(String targetEnvironment) {
         setTargetEnvironment(targetEnvironment);
         return this;
@@ -128,6 +134,7 @@ public class InstanceExportDetails implements Serializable, Cloneable {
      *         chained together.
      * @see ExportEnvironment
      */
+
     public void setTargetEnvironment(ExportEnvironment targetEnvironment) {
         this.targetEnvironment = targetEnvironment.toString();
     }
@@ -143,6 +150,7 @@ public class InstanceExportDetails implements Serializable, Cloneable {
      *         chained together.
      * @see ExportEnvironment
      */
+
     public InstanceExportDetails withTargetEnvironment(
             ExportEnvironment targetEnvironment) {
         setTargetEnvironment(targetEnvironment);

@@ -63,6 +63,7 @@ public class CreateRestApiResult implements Serializable, Cloneable {
      *        The API's identifier. This identifier is unique across all of your
      *        APIs in Amazon API Gateway.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -76,6 +77,7 @@ public class CreateRestApiResult implements Serializable, Cloneable {
      * @return The API's identifier. This identifier is unique across all of
      *         your APIs in Amazon API Gateway.
      */
+
     public String getId() {
         return this.id;
     }
@@ -92,6 +94,7 @@ public class CreateRestApiResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateRestApiResult withId(String id) {
         setId(id);
         return this;
@@ -105,6 +108,7 @@ public class CreateRestApiResult implements Serializable, Cloneable {
      * @param name
      *        The API's name.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -116,6 +120,7 @@ public class CreateRestApiResult implements Serializable, Cloneable {
      * 
      * @return The API's name.
      */
+
     public String getName() {
         return this.name;
     }
@@ -130,6 +135,7 @@ public class CreateRestApiResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateRestApiResult withName(String name) {
         setName(name);
         return this;
@@ -143,6 +149,7 @@ public class CreateRestApiResult implements Serializable, Cloneable {
      * @param description
      *        The API's description.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -154,6 +161,7 @@ public class CreateRestApiResult implements Serializable, Cloneable {
      * 
      * @return The API's description.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -168,6 +176,7 @@ public class CreateRestApiResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateRestApiResult withDescription(String description) {
         setDescription(description);
         return this;
@@ -185,6 +194,7 @@ public class CreateRestApiResult implements Serializable, Cloneable {
      *        href="http://www.iso.org/iso/home/standards/iso8601.htm"
      *        target="_blank">ISO 8601 format</a>.
      */
+
     public void setCreatedDate(java.util.Date createdDate) {
         this.createdDate = createdDate;
     }
@@ -200,6 +210,7 @@ public class CreateRestApiResult implements Serializable, Cloneable {
      *         href="http://www.iso.org/iso/home/standards/iso8601.htm"
      *         target="_blank">ISO 8601 format</a>.
      */
+
     public java.util.Date getCreatedDate() {
         return this.createdDate;
     }
@@ -218,6 +229,7 @@ public class CreateRestApiResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateRestApiResult withCreatedDate(java.util.Date createdDate) {
         setCreatedDate(createdDate);
         return this;

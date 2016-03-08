@@ -51,6 +51,7 @@ public class DeleteMLModelResult implements Serializable, Cloneable {
      *        <code>MLModel</code>. This value should be identical to the value
      *        of the <code>MLModelID</code> in the request.
      */
+
     public void setMLModelId(String mLModelId) {
         this.mLModelId = mLModelId;
     }
@@ -66,6 +67,7 @@ public class DeleteMLModelResult implements Serializable, Cloneable {
      *         <code>MLModel</code>. This value should be identical to the value
      *         of the <code>MLModelID</code> in the request.
      */
+
     public String getMLModelId() {
         return this.mLModelId;
     }
@@ -84,6 +86,7 @@ public class DeleteMLModelResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteMLModelResult withMLModelId(String mLModelId) {
         setMLModelId(mLModelId);
         return this;

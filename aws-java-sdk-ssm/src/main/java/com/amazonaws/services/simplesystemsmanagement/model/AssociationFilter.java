@@ -47,6 +47,7 @@ public class AssociationFilter implements Serializable, Cloneable {
      *        The name of the filter.
      * @see AssociationFilterKey
      */
+
     public void setKey(String key) {
         this.key = key;
     }
@@ -59,6 +60,7 @@ public class AssociationFilter implements Serializable, Cloneable {
      * @return The name of the filter.
      * @see AssociationFilterKey
      */
+
     public String getKey() {
         return this.key;
     }
@@ -74,6 +76,7 @@ public class AssociationFilter implements Serializable, Cloneable {
      *         chained together.
      * @see AssociationFilterKey
      */
+
     public AssociationFilter withKey(String key) {
         setKey(key);
         return this;
@@ -90,6 +93,7 @@ public class AssociationFilter implements Serializable, Cloneable {
      *         chained together.
      * @see AssociationFilterKey
      */
+
     public void setKey(AssociationFilterKey key) {
         this.key = key.toString();
     }
@@ -105,6 +109,7 @@ public class AssociationFilter implements Serializable, Cloneable {
      *         chained together.
      * @see AssociationFilterKey
      */
+
     public AssociationFilter withKey(AssociationFilterKey key) {
         setKey(key);
         return this;
@@ -118,6 +123,7 @@ public class AssociationFilter implements Serializable, Cloneable {
      * @param value
      *        The filter value.
      */
+
     public void setValue(String value) {
         this.value = value;
     }
@@ -129,6 +135,7 @@ public class AssociationFilter implements Serializable, Cloneable {
      * 
      * @return The filter value.
      */
+
     public String getValue() {
         return this.value;
     }
@@ -143,6 +150,7 @@ public class AssociationFilter implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssociationFilter withValue(String value) {
         setValue(value);
         return this;

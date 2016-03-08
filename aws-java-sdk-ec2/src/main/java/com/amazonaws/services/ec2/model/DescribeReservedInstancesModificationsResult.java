@@ -45,6 +45,7 @@ public class DescribeReservedInstancesModificationsResult implements
      * 
      * @return The Reserved Instance modification information.
      */
+
     public java.util.List<ReservedInstancesModification> getReservedInstancesModifications() {
         if (reservedInstancesModifications == null) {
             reservedInstancesModifications = new com.amazonaws.internal.SdkInternalList<ReservedInstancesModification>();
@@ -60,6 +61,7 @@ public class DescribeReservedInstancesModificationsResult implements
      * @param reservedInstancesModifications
      *        The Reserved Instance modification information.
      */
+
     public void setReservedInstancesModifications(
             java.util.Collection<ReservedInstancesModification> reservedInstancesModifications) {
         if (reservedInstancesModifications == null) {
@@ -88,6 +90,7 @@ public class DescribeReservedInstancesModificationsResult implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeReservedInstancesModificationsResult withReservedInstancesModifications(
             ReservedInstancesModification... reservedInstancesModifications) {
         if (this.reservedInstancesModifications == null) {
@@ -110,6 +113,7 @@ public class DescribeReservedInstancesModificationsResult implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeReservedInstancesModificationsResult withReservedInstancesModifications(
             java.util.Collection<ReservedInstancesModification> reservedInstancesModifications) {
         setReservedInstancesModifications(reservedInstancesModifications);
@@ -126,6 +130,7 @@ public class DescribeReservedInstancesModificationsResult implements
      *        The token to use to retrieve the next page of results. This value
      *        is <code>null</code> when there are no more results to return.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -139,6 +144,7 @@ public class DescribeReservedInstancesModificationsResult implements
      * @return The token to use to retrieve the next page of results. This value
      *         is <code>null</code> when there are no more results to return.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -155,6 +161,7 @@ public class DescribeReservedInstancesModificationsResult implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeReservedInstancesModificationsResult withNextToken(
             String nextToken) {
         setNextToken(nextToken);

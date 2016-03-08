@@ -79,6 +79,7 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
      * @param id
      *        The identifier for the distribution. For example: EDFDVBD632BHDS5.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -89,6 +90,7 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
      * @return The identifier for the distribution. For example:
      *         EDFDVBD632BHDS5.
      */
+
     public String getId() {
         return this.id;
     }
@@ -101,6 +103,7 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StreamingDistributionSummary withId(String id) {
         setId(id);
         return this;
@@ -116,6 +119,7 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
      *        is Deployed, the distribution's information is fully propagated
      *        throughout the Amazon CloudFront system.
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -129,6 +133,7 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
      *         is Deployed, the distribution's information is fully propagated
      *         throughout the Amazon CloudFront system.
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -145,6 +150,7 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StreamingDistributionSummary withStatus(String status) {
         setStatus(status);
         return this;
@@ -156,6 +162,7 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
      * @param lastModifiedTime
      *        The date and time the distribution was last modified.
      */
+
     public void setLastModifiedTime(java.util.Date lastModifiedTime) {
         this.lastModifiedTime = lastModifiedTime;
     }
@@ -165,6 +172,7 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
      * 
      * @return The date and time the distribution was last modified.
      */
+
     public java.util.Date getLastModifiedTime() {
         return this.lastModifiedTime;
     }
@@ -177,6 +185,7 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StreamingDistributionSummary withLastModifiedTime(
             java.util.Date lastModifiedTime) {
         setLastModifiedTime(lastModifiedTime);
@@ -191,6 +200,7 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
      *        The domain name corresponding to the distribution. For example:
      *        d604721fxaaqy9.cloudfront.net.
      */
+
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
@@ -202,6 +212,7 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
      * @return The domain name corresponding to the distribution. For example:
      *         d604721fxaaqy9.cloudfront.net.
      */
+
     public String getDomainName() {
         return this.domainName;
     }
@@ -216,6 +227,7 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StreamingDistributionSummary withDomainName(String domainName) {
         setDomainName(domainName);
         return this;
@@ -230,6 +242,7 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
      *        bucket from which you want CloudFront to get your media files for
      *        distribution.
      */
+
     public void setS3Origin(S3Origin s3Origin) {
         this.s3Origin = s3Origin;
     }
@@ -242,6 +255,7 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
      *         bucket from which you want CloudFront to get your media files for
      *         distribution.
      */
+
     public S3Origin getS3Origin() {
         return this.s3Origin;
     }
@@ -257,6 +271,7 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StreamingDistributionSummary withS3Origin(S3Origin s3Origin) {
         setS3Origin(s3Origin);
         return this;
@@ -270,6 +285,7 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
      *        A complex type that contains information about CNAMEs (alternate
      *        domain names), if any, for this streaming distribution.
      */
+
     public void setAliases(Aliases aliases) {
         this.aliases = aliases;
     }
@@ -281,6 +297,7 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
      * @return A complex type that contains information about CNAMEs (alternate
      *         domain names), if any, for this streaming distribution.
      */
+
     public Aliases getAliases() {
         return this.aliases;
     }
@@ -295,6 +312,7 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StreamingDistributionSummary withAliases(Aliases aliases) {
         setAliases(aliases);
         return this;
@@ -329,6 +347,7 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
      *        as applicable, and specify all of the trusted signers that you
      *        want to include in the updated distribution.
      */
+
     public void setTrustedSigners(TrustedSigners trustedSigners) {
         this.trustedSigners = trustedSigners;
     }
@@ -362,6 +381,7 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
      *         trusted signers that you want to include in the updated
      *         distribution.
      */
+
     public TrustedSigners getTrustedSigners() {
         return this.trustedSigners;
     }
@@ -397,6 +417,7 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StreamingDistributionSummary withTrustedSigners(
             TrustedSigners trustedSigners) {
         setTrustedSigners(trustedSigners);
@@ -410,6 +431,7 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
      *        The comment originally specified when this distribution was
      *        created.
      */
+
     public void setComment(String comment) {
         this.comment = comment;
     }
@@ -420,6 +442,7 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
      * @return The comment originally specified when this distribution was
      *         created.
      */
+
     public String getComment() {
         return this.comment;
     }
@@ -433,6 +456,7 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StreamingDistributionSummary withComment(String comment) {
         setComment(comment);
         return this;
@@ -442,6 +466,7 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
      * @param priceClass
      * @see PriceClass
      */
+
     public void setPriceClass(String priceClass) {
         this.priceClass = priceClass;
     }
@@ -450,6 +475,7 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
      * @return
      * @see PriceClass
      */
+
     public String getPriceClass() {
         return this.priceClass;
     }
@@ -460,6 +486,7 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
      *         chained together.
      * @see PriceClass
      */
+
     public StreamingDistributionSummary withPriceClass(String priceClass) {
         setPriceClass(priceClass);
         return this;
@@ -471,6 +498,7 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
      *         chained together.
      * @see PriceClass
      */
+
     public void setPriceClass(PriceClass priceClass) {
         this.priceClass = priceClass.toString();
     }
@@ -481,6 +509,7 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
      *         chained together.
      * @see PriceClass
      */
+
     public StreamingDistributionSummary withPriceClass(PriceClass priceClass) {
         setPriceClass(priceClass);
         return this;
@@ -494,6 +523,7 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
      *        Whether the distribution is enabled to accept end user requests
      *        for content.
      */
+
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
     }
@@ -505,6 +535,7 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
      * @return Whether the distribution is enabled to accept end user requests
      *         for content.
      */
+
     public Boolean getEnabled() {
         return this.enabled;
     }
@@ -519,6 +550,7 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StreamingDistributionSummary withEnabled(Boolean enabled) {
         setEnabled(enabled);
         return this;
@@ -531,6 +563,7 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
      * @return Whether the distribution is enabled to accept end user requests
      *         for content.
      */
+
     public Boolean isEnabled() {
         return this.enabled;
     }

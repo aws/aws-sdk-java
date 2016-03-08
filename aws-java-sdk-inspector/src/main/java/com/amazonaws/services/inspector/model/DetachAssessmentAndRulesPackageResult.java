@@ -39,6 +39,7 @@ public class DetachAssessmentAndRulesPackageResult implements Serializable,
      * @param message
      *        Confirmation details of the action performed.
      */
+
     public void setMessage(String message) {
         this.message = message;
     }
@@ -50,6 +51,7 @@ public class DetachAssessmentAndRulesPackageResult implements Serializable,
      * 
      * @return Confirmation details of the action performed.
      */
+
     public String getMessage() {
         return this.message;
     }
@@ -64,6 +66,7 @@ public class DetachAssessmentAndRulesPackageResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DetachAssessmentAndRulesPackageResult withMessage(String message) {
         setMessage(message);
         return this;

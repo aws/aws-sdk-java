@@ -59,6 +59,7 @@ public class FleetCapacity implements Serializable, Cloneable {
      * @param fleetId
      *        Unique identifier for a fleet.
      */
+
     public void setFleetId(String fleetId) {
         this.fleetId = fleetId;
     }
@@ -70,6 +71,7 @@ public class FleetCapacity implements Serializable, Cloneable {
      * 
      * @return Unique identifier for a fleet.
      */
+
     public String getFleetId() {
         return this.fleetId;
     }
@@ -84,6 +86,7 @@ public class FleetCapacity implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FleetCapacity withFleetId(String fleetId) {
         setFleetId(fleetId);
         return this;
@@ -108,6 +111,7 @@ public class FleetCapacity implements Serializable, Cloneable {
      *        type.
      * @see EC2InstanceType
      */
+
     public void setInstanceType(String instanceType) {
         this.instanceType = instanceType;
     }
@@ -130,6 +134,7 @@ public class FleetCapacity implements Serializable, Cloneable {
      *         type.
      * @see EC2InstanceType
      */
+
     public String getInstanceType() {
         return this.instanceType;
     }
@@ -155,6 +160,7 @@ public class FleetCapacity implements Serializable, Cloneable {
      *         chained together.
      * @see EC2InstanceType
      */
+
     public FleetCapacity withInstanceType(String instanceType) {
         setInstanceType(instanceType);
         return this;
@@ -181,6 +187,7 @@ public class FleetCapacity implements Serializable, Cloneable {
      *         chained together.
      * @see EC2InstanceType
      */
+
     public void setInstanceType(EC2InstanceType instanceType) {
         this.instanceType = instanceType.toString();
     }
@@ -206,6 +213,7 @@ public class FleetCapacity implements Serializable, Cloneable {
      *         chained together.
      * @see EC2InstanceType
      */
+
     public FleetCapacity withInstanceType(EC2InstanceType instanceType) {
         setInstanceType(instanceType);
         return this;
@@ -219,6 +227,7 @@ public class FleetCapacity implements Serializable, Cloneable {
      * @param instanceCounts
      *        Current status of fleet capacity.
      */
+
     public void setInstanceCounts(EC2InstanceCounts instanceCounts) {
         this.instanceCounts = instanceCounts;
     }
@@ -230,6 +239,7 @@ public class FleetCapacity implements Serializable, Cloneable {
      * 
      * @return Current status of fleet capacity.
      */
+
     public EC2InstanceCounts getInstanceCounts() {
         return this.instanceCounts;
     }
@@ -244,6 +254,7 @@ public class FleetCapacity implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FleetCapacity withInstanceCounts(EC2InstanceCounts instanceCounts) {
         setInstanceCounts(instanceCounts);
         return this;

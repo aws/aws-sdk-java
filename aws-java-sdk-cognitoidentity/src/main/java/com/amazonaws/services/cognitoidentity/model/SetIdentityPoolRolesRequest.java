@@ -50,6 +50,7 @@ public class SetIdentityPoolRolesRequest extends AmazonWebServiceRequest
      * @param identityPoolId
      *        An identity pool ID in the format REGION:GUID.
      */
+
     public void setIdentityPoolId(String identityPoolId) {
         this.identityPoolId = identityPoolId;
     }
@@ -61,6 +62,7 @@ public class SetIdentityPoolRolesRequest extends AmazonWebServiceRequest
      * 
      * @return An identity pool ID in the format REGION:GUID.
      */
+
     public String getIdentityPoolId() {
         return this.identityPoolId;
     }
@@ -75,6 +77,7 @@ public class SetIdentityPoolRolesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetIdentityPoolRolesRequest withIdentityPoolId(String identityPoolId) {
         setIdentityPoolId(identityPoolId);
         return this;
@@ -91,6 +94,7 @@ public class SetIdentityPoolRolesRequest extends AmazonWebServiceRequest
      *         key will be either "authenticated" or "unauthenticated" and the
      *         value will be the Role ARN.
      */
+
     public java.util.Map<String, String> getRoles() {
         return roles;
     }
@@ -107,6 +111,7 @@ public class SetIdentityPoolRolesRequest extends AmazonWebServiceRequest
      *        key will be either "authenticated" or "unauthenticated" and the
      *        value will be the Role ARN.
      */
+
     public void setRoles(java.util.Map<String, String> roles) {
         this.roles = roles;
     }
@@ -125,6 +130,7 @@ public class SetIdentityPoolRolesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetIdentityPoolRolesRequest withRoles(
             java.util.Map<String, String> roles) {
         setRoles(roles);
@@ -146,6 +152,7 @@ public class SetIdentityPoolRolesRequest extends AmazonWebServiceRequest
      * Removes all the entries added into Roles. &lt;p> Returns a reference to
      * this object so that method calls can be chained together.
      */
+
     public SetIdentityPoolRolesRequest clearRolesEntries() {
         this.roles = null;
         return this;

@@ -67,6 +67,7 @@ public class SpotPrice implements Serializable, Cloneable {
      *        The instance type.
      * @see InstanceType
      */
+
     public void setInstanceType(String instanceType) {
         this.instanceType = instanceType;
     }
@@ -79,6 +80,7 @@ public class SpotPrice implements Serializable, Cloneable {
      * @return The instance type.
      * @see InstanceType
      */
+
     public String getInstanceType() {
         return this.instanceType;
     }
@@ -94,6 +96,7 @@ public class SpotPrice implements Serializable, Cloneable {
      *         chained together.
      * @see InstanceType
      */
+
     public SpotPrice withInstanceType(String instanceType) {
         setInstanceType(instanceType);
         return this;
@@ -110,6 +113,7 @@ public class SpotPrice implements Serializable, Cloneable {
      *         chained together.
      * @see InstanceType
      */
+
     public void setInstanceType(InstanceType instanceType) {
         this.instanceType = instanceType.toString();
     }
@@ -125,6 +129,7 @@ public class SpotPrice implements Serializable, Cloneable {
      *         chained together.
      * @see InstanceType
      */
+
     public SpotPrice withInstanceType(InstanceType instanceType) {
         setInstanceType(instanceType);
         return this;
@@ -139,6 +144,7 @@ public class SpotPrice implements Serializable, Cloneable {
      *        A general description of the AMI.
      * @see RIProductDescription
      */
+
     public void setProductDescription(String productDescription) {
         this.productDescription = productDescription;
     }
@@ -151,6 +157,7 @@ public class SpotPrice implements Serializable, Cloneable {
      * @return A general description of the AMI.
      * @see RIProductDescription
      */
+
     public String getProductDescription() {
         return this.productDescription;
     }
@@ -166,6 +173,7 @@ public class SpotPrice implements Serializable, Cloneable {
      *         chained together.
      * @see RIProductDescription
      */
+
     public SpotPrice withProductDescription(String productDescription) {
         setProductDescription(productDescription);
         return this;
@@ -182,6 +190,7 @@ public class SpotPrice implements Serializable, Cloneable {
      *         chained together.
      * @see RIProductDescription
      */
+
     public void setProductDescription(RIProductDescription productDescription) {
         this.productDescription = productDescription.toString();
     }
@@ -197,6 +206,7 @@ public class SpotPrice implements Serializable, Cloneable {
      *         chained together.
      * @see RIProductDescription
      */
+
     public SpotPrice withProductDescription(
             RIProductDescription productDescription) {
         setProductDescription(productDescription);
@@ -212,6 +222,7 @@ public class SpotPrice implements Serializable, Cloneable {
      *        The maximum price (bid) that you are willing to pay for a Spot
      *        instance.
      */
+
     public void setSpotPrice(String spotPrice) {
         this.spotPrice = spotPrice;
     }
@@ -224,6 +235,7 @@ public class SpotPrice implements Serializable, Cloneable {
      * @return The maximum price (bid) that you are willing to pay for a Spot
      *         instance.
      */
+
     public String getSpotPrice() {
         return this.spotPrice;
     }
@@ -239,6 +251,7 @@ public class SpotPrice implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SpotPrice withSpotPrice(String spotPrice) {
         setSpotPrice(spotPrice);
         return this;
@@ -255,6 +268,7 @@ public class SpotPrice implements Serializable, Cloneable {
      *        example,
      *        <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      */
+
     public void setTimestamp(java.util.Date timestamp) {
         this.timestamp = timestamp;
     }
@@ -269,6 +283,7 @@ public class SpotPrice implements Serializable, Cloneable {
      *         example,
      *         <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      */
+
     public java.util.Date getTimestamp() {
         return this.timestamp;
     }
@@ -286,6 +301,7 @@ public class SpotPrice implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SpotPrice withTimestamp(java.util.Date timestamp) {
         setTimestamp(timestamp);
         return this;
@@ -299,6 +315,7 @@ public class SpotPrice implements Serializable, Cloneable {
      * @param availabilityZone
      *        The Availability Zone.
      */
+
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
@@ -310,6 +327,7 @@ public class SpotPrice implements Serializable, Cloneable {
      * 
      * @return The Availability Zone.
      */
+
     public String getAvailabilityZone() {
         return this.availabilityZone;
     }
@@ -324,6 +342,7 @@ public class SpotPrice implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SpotPrice withAvailabilityZone(String availabilityZone) {
         setAvailabilityZone(availabilityZone);
         return this;

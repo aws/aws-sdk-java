@@ -48,6 +48,7 @@ public class DescribeComplianceByResourceResult implements Serializable,
      * @return Indicates whether the specified AWS resource complies with all of
      *         the AWS Config rules that evaluate it.
      */
+
     public java.util.List<ComplianceByResource> getComplianceByResources() {
         if (complianceByResources == null) {
             complianceByResources = new com.amazonaws.internal.SdkInternalList<ComplianceByResource>();
@@ -65,6 +66,7 @@ public class DescribeComplianceByResourceResult implements Serializable,
      *        Indicates whether the specified AWS resource complies with all of
      *        the AWS Config rules that evaluate it.
      */
+
     public void setComplianceByResources(
             java.util.Collection<ComplianceByResource> complianceByResources) {
         if (complianceByResources == null) {
@@ -94,6 +96,7 @@ public class DescribeComplianceByResourceResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeComplianceByResourceResult withComplianceByResources(
             ComplianceByResource... complianceByResources) {
         if (this.complianceByResources == null) {
@@ -118,6 +121,7 @@ public class DescribeComplianceByResourceResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeComplianceByResourceResult withComplianceByResources(
             java.util.Collection<ComplianceByResource> complianceByResources) {
         setComplianceByResources(complianceByResources);
@@ -134,6 +138,7 @@ public class DescribeComplianceByResourceResult implements Serializable,
      *        The string that you use in a subsequent request to get the next
      *        page of results in a paginated response.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -147,6 +152,7 @@ public class DescribeComplianceByResourceResult implements Serializable,
      * @return The string that you use in a subsequent request to get the next
      *         page of results in a paginated response.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -163,6 +169,7 @@ public class DescribeComplianceByResourceResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeComplianceByResourceResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

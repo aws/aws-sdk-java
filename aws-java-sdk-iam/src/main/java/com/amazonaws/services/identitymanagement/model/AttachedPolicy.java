@@ -54,6 +54,7 @@ public class AttachedPolicy implements Serializable, Cloneable {
      * @param policyName
      *        The friendly name of the attached policy.
      */
+
     public void setPolicyName(String policyName) {
         this.policyName = policyName;
     }
@@ -65,6 +66,7 @@ public class AttachedPolicy implements Serializable, Cloneable {
      * 
      * @return The friendly name of the attached policy.
      */
+
     public String getPolicyName() {
         return this.policyName;
     }
@@ -79,6 +81,7 @@ public class AttachedPolicy implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AttachedPolicy withPolicyName(String policyName) {
         setPolicyName(policyName);
         return this;
@@ -87,6 +90,7 @@ public class AttachedPolicy implements Serializable, Cloneable {
     /**
      * @param policyArn
      */
+
     public void setPolicyArn(String policyArn) {
         this.policyArn = policyArn;
     }
@@ -94,6 +98,7 @@ public class AttachedPolicy implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getPolicyArn() {
         return this.policyArn;
     }
@@ -103,6 +108,7 @@ public class AttachedPolicy implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AttachedPolicy withPolicyArn(String policyArn) {
         setPolicyArn(policyArn);
         return this;

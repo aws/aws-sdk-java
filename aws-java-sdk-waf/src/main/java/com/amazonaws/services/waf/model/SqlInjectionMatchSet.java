@@ -98,6 +98,7 @@ public class SqlInjectionMatchSet implements Serializable, Cloneable {
      *        <a>CreateSqlInjectionMatchSet</a> and by
      *        <a>ListSqlInjectionMatchSets</a>.
      */
+
     public void setSqlInjectionMatchSetId(String sqlInjectionMatchSetId) {
         this.sqlInjectionMatchSetId = sqlInjectionMatchSetId;
     }
@@ -135,6 +136,7 @@ public class SqlInjectionMatchSet implements Serializable, Cloneable {
      *         <a>CreateSqlInjectionMatchSet</a> and by
      *         <a>ListSqlInjectionMatchSets</a>.
      */
+
     public String getSqlInjectionMatchSetId() {
         return this.sqlInjectionMatchSetId;
     }
@@ -175,6 +177,7 @@ public class SqlInjectionMatchSet implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SqlInjectionMatchSet withSqlInjectionMatchSetId(
             String sqlInjectionMatchSetId) {
         setSqlInjectionMatchSetId(sqlInjectionMatchSetId);
@@ -189,6 +192,7 @@ public class SqlInjectionMatchSet implements Serializable, Cloneable {
      * @param name
      *        The name, if any, of the <code>SqlInjectionMatchSet</code>.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -200,6 +204,7 @@ public class SqlInjectionMatchSet implements Serializable, Cloneable {
      * 
      * @return The name, if any, of the <code>SqlInjectionMatchSet</code>.
      */
+
     public String getName() {
         return this.name;
     }
@@ -214,6 +219,7 @@ public class SqlInjectionMatchSet implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SqlInjectionMatchSet withName(String name) {
         setName(name);
         return this;
@@ -228,6 +234,7 @@ public class SqlInjectionMatchSet implements Serializable, Cloneable {
      * @return Specifies the parts of web requests that you want to inspect for
      *         snippets of malicious SQL code.
      */
+
     public java.util.List<SqlInjectionMatchTuple> getSqlInjectionMatchTuples() {
         return sqlInjectionMatchTuples;
     }
@@ -242,6 +249,7 @@ public class SqlInjectionMatchSet implements Serializable, Cloneable {
      *        Specifies the parts of web requests that you want to inspect for
      *        snippets of malicious SQL code.
      */
+
     public void setSqlInjectionMatchTuples(
             java.util.Collection<SqlInjectionMatchTuple> sqlInjectionMatchTuples) {
         if (sqlInjectionMatchTuples == null) {
@@ -271,6 +279,7 @@ public class SqlInjectionMatchSet implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SqlInjectionMatchSet withSqlInjectionMatchTuples(
             SqlInjectionMatchTuple... sqlInjectionMatchTuples) {
         if (this.sqlInjectionMatchTuples == null) {
@@ -295,6 +304,7 @@ public class SqlInjectionMatchSet implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SqlInjectionMatchSet withSqlInjectionMatchTuples(
             java.util.Collection<SqlInjectionMatchTuple> sqlInjectionMatchTuples) {
         setSqlInjectionMatchTuples(sqlInjectionMatchTuples);

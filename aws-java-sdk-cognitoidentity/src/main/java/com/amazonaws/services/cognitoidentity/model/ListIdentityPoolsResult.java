@@ -33,6 +33,7 @@ public class ListIdentityPoolsResult implements Serializable, Cloneable {
      * 
      * @return The identity pools returned by the ListIdentityPools action.
      */
+
     public java.util.List<IdentityPoolShortDescription> getIdentityPools() {
         return identityPools;
     }
@@ -43,6 +44,7 @@ public class ListIdentityPoolsResult implements Serializable, Cloneable {
      * @param identityPools
      *        The identity pools returned by the ListIdentityPools action.
      */
+
     public void setIdentityPools(
             java.util.Collection<IdentityPoolShortDescription> identityPools) {
         if (identityPools == null) {
@@ -68,6 +70,7 @@ public class ListIdentityPoolsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListIdentityPoolsResult withIdentityPools(
             IdentityPoolShortDescription... identityPools) {
         if (this.identityPools == null) {
@@ -88,6 +91,7 @@ public class ListIdentityPoolsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListIdentityPoolsResult withIdentityPools(
             java.util.Collection<IdentityPoolShortDescription> identityPools) {
         setIdentityPools(identityPools);
@@ -100,6 +104,7 @@ public class ListIdentityPoolsResult implements Serializable, Cloneable {
      * @param nextToken
      *        A pagination token.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -109,6 +114,7 @@ public class ListIdentityPoolsResult implements Serializable, Cloneable {
      * 
      * @return A pagination token.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -121,6 +127,7 @@ public class ListIdentityPoolsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListIdentityPoolsResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

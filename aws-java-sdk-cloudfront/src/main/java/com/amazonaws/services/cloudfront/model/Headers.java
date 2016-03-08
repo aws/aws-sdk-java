@@ -66,6 +66,7 @@ public class Headers implements Serializable, Cloneable {
      *        origin or to vary on any headers, specify 0 for Quantity and omit
      *        Items.
      */
+
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
@@ -88,6 +89,7 @@ public class Headers implements Serializable, Cloneable {
      *         origin or to vary on any headers, specify 0 for Quantity and omit
      *         Items.
      */
+
     public Integer getQuantity() {
         return this.quantity;
     }
@@ -113,6 +115,7 @@ public class Headers implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Headers withQuantity(Integer quantity) {
         setQuantity(quantity);
         return this;
@@ -127,6 +130,7 @@ public class Headers implements Serializable, Cloneable {
      *         header that you want CloudFront to forward to the origin and to
      *         vary on for this cache behavior. If Quantity is 0, omit Items.
      */
+
     public java.util.List<String> getItems() {
         if (items == null) {
             items = new com.amazonaws.internal.SdkInternalList<String>();
@@ -144,6 +148,7 @@ public class Headers implements Serializable, Cloneable {
      *        header that you want CloudFront to forward to the origin and to
      *        vary on for this cache behavior. If Quantity is 0, omit Items.
      */
+
     public void setItems(java.util.Collection<String> items) {
         if (items == null) {
             this.items = null;
@@ -171,6 +176,7 @@ public class Headers implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Headers withItems(String... items) {
         if (this.items == null) {
             setItems(new com.amazonaws.internal.SdkInternalList<String>(
@@ -194,6 +200,7 @@ public class Headers implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Headers withItems(java.util.Collection<String> items) {
         setItems(items);
         return this;

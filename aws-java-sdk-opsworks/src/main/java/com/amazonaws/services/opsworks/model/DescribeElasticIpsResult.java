@@ -42,6 +42,7 @@ public class DescribeElasticIpsResult implements Serializable, Cloneable {
      * @return An <code>ElasticIps</code> object that describes the specified
      *         Elastic IP addresses.
      */
+
     public java.util.List<ElasticIp> getElasticIps() {
         if (elasticIps == null) {
             elasticIps = new com.amazonaws.internal.SdkInternalList<ElasticIp>();
@@ -59,6 +60,7 @@ public class DescribeElasticIpsResult implements Serializable, Cloneable {
      *        An <code>ElasticIps</code> object that describes the specified
      *        Elastic IP addresses.
      */
+
     public void setElasticIps(java.util.Collection<ElasticIp> elasticIps) {
         if (elasticIps == null) {
             this.elasticIps = null;
@@ -87,6 +89,7 @@ public class DescribeElasticIpsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeElasticIpsResult withElasticIps(ElasticIp... elasticIps) {
         if (this.elasticIps == null) {
             setElasticIps(new com.amazonaws.internal.SdkInternalList<ElasticIp>(
@@ -110,6 +113,7 @@ public class DescribeElasticIpsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeElasticIpsResult withElasticIps(
             java.util.Collection<ElasticIp> elasticIps) {
         setElasticIps(elasticIps);

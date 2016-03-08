@@ -53,6 +53,7 @@ public class ThirdPartyJob implements Serializable, Cloneable {
      *        to verify that the calling entity is allowed access to the job and
      *        its details.
      */
+
     public void setClientId(String clientId) {
         this.clientId = clientId;
     }
@@ -68,6 +69,7 @@ public class ThirdPartyJob implements Serializable, Cloneable {
      *         to verify that the calling entity is allowed access to the job
      *         and its details.
      */
+
     public String getClientId() {
         return this.clientId;
     }
@@ -86,6 +88,7 @@ public class ThirdPartyJob implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ThirdPartyJob withClientId(String clientId) {
         setClientId(clientId);
         return this;
@@ -99,6 +102,7 @@ public class ThirdPartyJob implements Serializable, Cloneable {
      * @param jobId
      *        The identifier used to identify the job in AWS CodePipeline.
      */
+
     public void setJobId(String jobId) {
         this.jobId = jobId;
     }
@@ -110,6 +114,7 @@ public class ThirdPartyJob implements Serializable, Cloneable {
      * 
      * @return The identifier used to identify the job in AWS CodePipeline.
      */
+
     public String getJobId() {
         return this.jobId;
     }
@@ -124,6 +129,7 @@ public class ThirdPartyJob implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ThirdPartyJob withJobId(String jobId) {
         setJobId(jobId);
         return this;

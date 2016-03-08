@@ -79,6 +79,7 @@ public class DescribePrefixListsRequest extends AmazonWebServiceRequest
      * 
      * @return One or more prefix list IDs.
      */
+
     public java.util.List<String> getPrefixListIds() {
         if (prefixListIds == null) {
             prefixListIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -94,6 +95,7 @@ public class DescribePrefixListsRequest extends AmazonWebServiceRequest
      * @param prefixListIds
      *        One or more prefix list IDs.
      */
+
     public void setPrefixListIds(java.util.Collection<String> prefixListIds) {
         if (prefixListIds == null) {
             this.prefixListIds = null;
@@ -120,6 +122,7 @@ public class DescribePrefixListsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribePrefixListsRequest withPrefixListIds(String... prefixListIds) {
         if (this.prefixListIds == null) {
             setPrefixListIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -141,6 +144,7 @@ public class DescribePrefixListsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribePrefixListsRequest withPrefixListIds(
             java.util.Collection<String> prefixListIds) {
         setPrefixListIds(prefixListIds);
@@ -177,6 +181,7 @@ public class DescribePrefixListsRequest extends AmazonWebServiceRequest
      *         </p>
      *         </li>
      */
+
     public java.util.List<Filter> getFilters() {
         if (filters == null) {
             filters = new com.amazonaws.internal.SdkInternalList<Filter>();
@@ -215,6 +220,7 @@ public class DescribePrefixListsRequest extends AmazonWebServiceRequest
      *        </p>
      *        </li>
      */
+
     public void setFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
             this.filters = null;
@@ -264,6 +270,7 @@ public class DescribePrefixListsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribePrefixListsRequest withFilters(Filter... filters) {
         if (this.filters == null) {
             setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(
@@ -308,6 +315,7 @@ public class DescribePrefixListsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribePrefixListsRequest withFilters(
             java.util.Collection<Filter> filters) {
         setFilters(filters);
@@ -333,6 +341,7 @@ public class DescribePrefixListsRequest extends AmazonWebServiceRequest
      *        Constraint: If the value specified is greater than 1000, we return
      *        only 1000 items.
      */
+
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
     }
@@ -355,6 +364,7 @@ public class DescribePrefixListsRequest extends AmazonWebServiceRequest
      *         Constraint: If the value specified is greater than 1000, we
      *         return only 1000 items.
      */
+
     public Integer getMaxResults() {
         return this.maxResults;
     }
@@ -380,6 +390,7 @@ public class DescribePrefixListsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribePrefixListsRequest withMaxResults(Integer maxResults) {
         setMaxResults(maxResults);
         return this;
@@ -395,6 +406,7 @@ public class DescribePrefixListsRequest extends AmazonWebServiceRequest
      *        The token for the next set of items to return. (You received this
      *        token from a prior call.)
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -408,6 +420,7 @@ public class DescribePrefixListsRequest extends AmazonWebServiceRequest
      * @return The token for the next set of items to return. (You received this
      *         token from a prior call.)
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -424,6 +437,7 @@ public class DescribePrefixListsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribePrefixListsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

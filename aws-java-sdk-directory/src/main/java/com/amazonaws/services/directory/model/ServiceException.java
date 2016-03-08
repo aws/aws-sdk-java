@@ -42,6 +42,7 @@ public class ServiceException extends AmazonServiceException {
     /**
      * @param requestId
      */
+
     public void setRequestId(String requestId) {
         this.requestId = requestId;
     }
@@ -49,6 +50,7 @@ public class ServiceException extends AmazonServiceException {
     /**
      * @return
      */
+
     public String getRequestId() {
         return this.requestId;
     }
@@ -58,6 +60,7 @@ public class ServiceException extends AmazonServiceException {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ServiceException withRequestId(String requestId) {
         setRequestId(requestId);
         return this;

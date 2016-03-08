@@ -38,6 +38,7 @@ public class DescribeConfigRuleEvaluationStatusResult implements Serializable,
      * 
      * @return Status information about your AWS managed Config rules.
      */
+
     public java.util.List<ConfigRuleEvaluationStatus> getConfigRulesEvaluationStatus() {
         if (configRulesEvaluationStatus == null) {
             configRulesEvaluationStatus = new com.amazonaws.internal.SdkInternalList<ConfigRuleEvaluationStatus>();
@@ -53,6 +54,7 @@ public class DescribeConfigRuleEvaluationStatusResult implements Serializable,
      * @param configRulesEvaluationStatus
      *        Status information about your AWS managed Config rules.
      */
+
     public void setConfigRulesEvaluationStatus(
             java.util.Collection<ConfigRuleEvaluationStatus> configRulesEvaluationStatus) {
         if (configRulesEvaluationStatus == null) {
@@ -80,6 +82,7 @@ public class DescribeConfigRuleEvaluationStatusResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeConfigRuleEvaluationStatusResult withConfigRulesEvaluationStatus(
             ConfigRuleEvaluationStatus... configRulesEvaluationStatus) {
         if (this.configRulesEvaluationStatus == null) {
@@ -102,6 +105,7 @@ public class DescribeConfigRuleEvaluationStatusResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeConfigRuleEvaluationStatusResult withConfigRulesEvaluationStatus(
             java.util.Collection<ConfigRuleEvaluationStatus> configRulesEvaluationStatus) {
         setConfigRulesEvaluationStatus(configRulesEvaluationStatus);

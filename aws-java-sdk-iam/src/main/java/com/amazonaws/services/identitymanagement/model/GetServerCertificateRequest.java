@@ -64,6 +64,7 @@ public class GetServerCertificateRequest extends AmazonWebServiceRequest
      *        The name of the server certificate you want to retrieve
      *        information about.
      */
+
     public void setServerCertificateName(String serverCertificateName) {
         this.serverCertificateName = serverCertificateName;
     }
@@ -77,6 +78,7 @@ public class GetServerCertificateRequest extends AmazonWebServiceRequest
      * @return The name of the server certificate you want to retrieve
      *         information about.
      */
+
     public String getServerCertificateName() {
         return this.serverCertificateName;
     }
@@ -93,6 +95,7 @@ public class GetServerCertificateRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetServerCertificateRequest withServerCertificateName(
             String serverCertificateName) {
         setServerCertificateName(serverCertificateName);

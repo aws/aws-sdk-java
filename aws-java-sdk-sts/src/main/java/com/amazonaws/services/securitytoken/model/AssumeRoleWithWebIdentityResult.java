@@ -114,6 +114,7 @@ public class AssumeRoleWithWebIdentityResult implements Serializable, Cloneable 
      *        less than 4096 bytes, but that can vary. Also, future updates to
      *        AWS might require larger sizes.
      */
+
     public void setCredentials(Credentials credentials) {
         this.credentials = credentials;
     }
@@ -140,6 +141,7 @@ public class AssumeRoleWithWebIdentityResult implements Serializable, Cloneable 
      *         less than 4096 bytes, but that can vary. Also, future updates to
      *         AWS might require larger sizes.
      */
+
     public Credentials getCredentials() {
         return this.credentials;
     }
@@ -169,6 +171,7 @@ public class AssumeRoleWithWebIdentityResult implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssumeRoleWithWebIdentityResult withCredentials(
             Credentials credentials) {
         setCredentials(credentials);
@@ -196,6 +199,7 @@ public class AssumeRoleWithWebIdentityResult implements Serializable, Cloneable 
      *        Connect ID tokens, this field contains the value returned by the
      *        identity provider as the token's <code>sub</code> (Subject) claim.
      */
+
     public void setSubjectFromWebIdentityToken(
             String subjectFromWebIdentityToken) {
         this.subjectFromWebIdentityToken = subjectFromWebIdentityToken;
@@ -222,6 +226,7 @@ public class AssumeRoleWithWebIdentityResult implements Serializable, Cloneable 
      *         by the identity provider as the token's <code>sub</code>
      *         (Subject) claim.
      */
+
     public String getSubjectFromWebIdentityToken() {
         return this.subjectFromWebIdentityToken;
     }
@@ -249,6 +254,7 @@ public class AssumeRoleWithWebIdentityResult implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssumeRoleWithWebIdentityResult withSubjectFromWebIdentityToken(
             String subjectFromWebIdentityToken) {
         setSubjectFromWebIdentityToken(subjectFromWebIdentityToken);
@@ -274,6 +280,7 @@ public class AssumeRoleWithWebIdentityResult implements Serializable, Cloneable 
      *        <code>RoleSessionName</code> that you specified when you called
      *        <code>AssumeRole</code>.
      */
+
     public void setAssumedRoleUser(AssumedRoleUser assumedRoleUser) {
         this.assumedRoleUser = assumedRoleUser;
     }
@@ -296,6 +303,7 @@ public class AssumeRoleWithWebIdentityResult implements Serializable, Cloneable 
      *         <code>RoleSessionName</code> that you specified when you called
      *         <code>AssumeRole</code>.
      */
+
     public AssumedRoleUser getAssumedRoleUser() {
         return this.assumedRoleUser;
     }
@@ -321,6 +329,7 @@ public class AssumeRoleWithWebIdentityResult implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssumeRoleWithWebIdentityResult withAssumedRoleUser(
             AssumedRoleUser assumedRoleUser) {
         setAssumedRoleUser(assumedRoleUser);
@@ -340,6 +349,7 @@ public class AssumeRoleWithWebIdentityResult implements Serializable, Cloneable 
      *        than 100 percent, which means the policy exceeded the allowed
      *        space.
      */
+
     public void setPackedPolicySize(Integer packedPolicySize) {
         this.packedPolicySize = packedPolicySize;
     }
@@ -356,6 +366,7 @@ public class AssumeRoleWithWebIdentityResult implements Serializable, Cloneable 
      *         greater than 100 percent, which means the policy exceeded the
      *         allowed space.
      */
+
     public Integer getPackedPolicySize() {
         return this.packedPolicySize;
     }
@@ -375,6 +386,7 @@ public class AssumeRoleWithWebIdentityResult implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssumeRoleWithWebIdentityResult withPackedPolicySize(
             Integer packedPolicySize) {
         setPackedPolicySize(packedPolicySize);
@@ -397,6 +409,7 @@ public class AssumeRoleWithWebIdentityResult implements Serializable, Cloneable 
      *        the value of the <code>ProviderId</code> parameter that was passed
      *        in the <code>AssumeRoleWithWebIdentity</code> request.
      */
+
     public void setProvider(String provider) {
         this.provider = provider;
     }
@@ -416,6 +429,7 @@ public class AssumeRoleWithWebIdentityResult implements Serializable, Cloneable 
      *         contains the value of the <code>ProviderId</code> parameter that
      *         was passed in the <code>AssumeRoleWithWebIdentity</code> request.
      */
+
     public String getProvider() {
         return this.provider;
     }
@@ -438,6 +452,7 @@ public class AssumeRoleWithWebIdentityResult implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssumeRoleWithWebIdentityResult withProvider(String provider) {
         setProvider(provider);
         return this;
@@ -455,6 +470,7 @@ public class AssumeRoleWithWebIdentityResult implements Serializable, Cloneable 
      *        identity token. This is traditionally the client identifier issued
      *        to the application that requested the web identity token.
      */
+
     public void setAudience(String audience) {
         this.audience = audience;
     }
@@ -470,6 +486,7 @@ public class AssumeRoleWithWebIdentityResult implements Serializable, Cloneable 
      *         identity token. This is traditionally the client identifier
      *         issued to the application that requested the web identity token.
      */
+
     public String getAudience() {
         return this.audience;
     }
@@ -488,6 +505,7 @@ public class AssumeRoleWithWebIdentityResult implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssumeRoleWithWebIdentityResult withAudience(String audience) {
         setAudience(audience);
         return this;

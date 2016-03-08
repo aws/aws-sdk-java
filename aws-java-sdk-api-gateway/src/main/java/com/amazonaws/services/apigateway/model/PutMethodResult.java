@@ -96,6 +96,7 @@ public class PutMethodResult implements Serializable, Cloneable {
      * @param httpMethod
      *        The HTTP method.
      */
+
     public void setHttpMethod(String httpMethod) {
         this.httpMethod = httpMethod;
     }
@@ -107,6 +108,7 @@ public class PutMethodResult implements Serializable, Cloneable {
      * 
      * @return The HTTP method.
      */
+
     public String getHttpMethod() {
         return this.httpMethod;
     }
@@ -121,6 +123,7 @@ public class PutMethodResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutMethodResult withHttpMethod(String httpMethod) {
         setHttpMethod(httpMethod);
         return this;
@@ -134,6 +137,7 @@ public class PutMethodResult implements Serializable, Cloneable {
      * @param authorizationType
      *        The method's authorization type.
      */
+
     public void setAuthorizationType(String authorizationType) {
         this.authorizationType = authorizationType;
     }
@@ -145,6 +149,7 @@ public class PutMethodResult implements Serializable, Cloneable {
      * 
      * @return The method's authorization type.
      */
+
     public String getAuthorizationType() {
         return this.authorizationType;
     }
@@ -159,6 +164,7 @@ public class PutMethodResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutMethodResult withAuthorizationType(String authorizationType) {
         setAuthorizationType(authorizationType);
         return this;
@@ -174,6 +180,7 @@ public class PutMethodResult implements Serializable, Cloneable {
      *        Specifies the identifier of an <a>Authorizer</a> to use on this
      *        Method. The authorizationType must be CUSTOM.
      */
+
     public void setAuthorizerId(String authorizerId) {
         this.authorizerId = authorizerId;
     }
@@ -187,6 +194,7 @@ public class PutMethodResult implements Serializable, Cloneable {
      * @return Specifies the identifier of an <a>Authorizer</a> to use on this
      *         Method. The authorizationType must be CUSTOM.
      */
+
     public String getAuthorizerId() {
         return this.authorizerId;
     }
@@ -203,6 +211,7 @@ public class PutMethodResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutMethodResult withAuthorizerId(String authorizerId) {
         setAuthorizerId(authorizerId);
         return this;
@@ -216,6 +225,7 @@ public class PutMethodResult implements Serializable, Cloneable {
      * @param apiKeyRequired
      *        Specifies whether the method requires a valid <a>ApiKey</a>.
      */
+
     public void setApiKeyRequired(Boolean apiKeyRequired) {
         this.apiKeyRequired = apiKeyRequired;
     }
@@ -227,6 +237,7 @@ public class PutMethodResult implements Serializable, Cloneable {
      * 
      * @return Specifies whether the method requires a valid <a>ApiKey</a>.
      */
+
     public Boolean getApiKeyRequired() {
         return this.apiKeyRequired;
     }
@@ -241,6 +252,7 @@ public class PutMethodResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutMethodResult withApiKeyRequired(Boolean apiKeyRequired) {
         setApiKeyRequired(apiKeyRequired);
         return this;
@@ -253,6 +265,7 @@ public class PutMethodResult implements Serializable, Cloneable {
      * 
      * @return Specifies whether the method requires a valid <a>ApiKey</a>.
      */
+
     public Boolean isApiKeyRequired() {
         return this.apiKeyRequired;
     }
@@ -281,6 +294,7 @@ public class PutMethodResult implements Serializable, Cloneable {
      *         specified here are available to the integration for mapping to
      *         integration request parameters or templates.
      */
+
     public java.util.Map<String, Boolean> getRequestParameters() {
         return requestParameters;
     }
@@ -310,6 +324,7 @@ public class PutMethodResult implements Serializable, Cloneable {
      *        specified here are available to the integration for mapping to
      *        integration request parameters or templates.
      */
+
     public void setRequestParameters(
             java.util.Map<String, Boolean> requestParameters) {
         this.requestParameters = requestParameters;
@@ -342,6 +357,7 @@ public class PutMethodResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutMethodResult withRequestParameters(
             java.util.Map<String, Boolean> requestParameters) {
         setRequestParameters(requestParameters);
@@ -363,6 +379,7 @@ public class PutMethodResult implements Serializable, Cloneable {
      * Removes all the entries added into RequestParameters. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public PutMethodResult clearRequestParametersEntries() {
         this.requestParameters = null;
         return this;
@@ -380,6 +397,7 @@ public class PutMethodResult implements Serializable, Cloneable {
      *         with a content type as the key and a <a>Model</a> name as the
      *         value.
      */
+
     public java.util.Map<String, String> getRequestModels() {
         return requestModels;
     }
@@ -397,6 +415,7 @@ public class PutMethodResult implements Serializable, Cloneable {
      *        with a content type as the key and a <a>Model</a> name as the
      *        value.
      */
+
     public void setRequestModels(java.util.Map<String, String> requestModels) {
         this.requestModels = requestModels;
     }
@@ -416,6 +435,7 @@ public class PutMethodResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutMethodResult withRequestModels(
             java.util.Map<String, String> requestModels) {
         setRequestModels(requestModels);
@@ -437,6 +457,7 @@ public class PutMethodResult implements Serializable, Cloneable {
      * Removes all the entries added into RequestModels. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public PutMethodResult clearRequestModelsEntries() {
         this.requestModels = null;
         return this;
@@ -456,6 +477,7 @@ public class PutMethodResult implements Serializable, Cloneable {
      *         The status codes are available for the <a>Integration</a>
      *         responses to map to.
      */
+
     public java.util.Map<String, MethodResponse> getMethodResponses() {
         return methodResponses;
     }
@@ -475,6 +497,7 @@ public class PutMethodResult implements Serializable, Cloneable {
      *        The status codes are available for the <a>Integration</a>
      *        responses to map to.
      */
+
     public void setMethodResponses(
             java.util.Map<String, MethodResponse> methodResponses) {
         this.methodResponses = methodResponses;
@@ -497,6 +520,7 @@ public class PutMethodResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutMethodResult withMethodResponses(
             java.util.Map<String, MethodResponse> methodResponses) {
         setMethodResponses(methodResponses);
@@ -519,6 +543,7 @@ public class PutMethodResult implements Serializable, Cloneable {
      * Removes all the entries added into MethodResponses. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public PutMethodResult clearMethodResponsesEntries() {
         this.methodResponses = null;
         return this;
@@ -532,6 +557,7 @@ public class PutMethodResult implements Serializable, Cloneable {
      * @param methodIntegration
      *        The method's integration.
      */
+
     public void setMethodIntegration(Integration methodIntegration) {
         this.methodIntegration = methodIntegration;
     }
@@ -543,6 +569,7 @@ public class PutMethodResult implements Serializable, Cloneable {
      * 
      * @return The method's integration.
      */
+
     public Integration getMethodIntegration() {
         return this.methodIntegration;
     }
@@ -557,6 +584,7 @@ public class PutMethodResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutMethodResult withMethodIntegration(Integration methodIntegration) {
         setMethodIntegration(methodIntegration);
         return this;

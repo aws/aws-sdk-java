@@ -75,6 +75,7 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements
      * 
      * @return One or more subnet, network interface, or VPC IDs.
      */
+
     public java.util.List<String> getResourceIds() {
         if (resourceIds == null) {
             resourceIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -90,6 +91,7 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements
      * @param resourceIds
      *        One or more subnet, network interface, or VPC IDs.
      */
+
     public void setResourceIds(java.util.Collection<String> resourceIds) {
         if (resourceIds == null) {
             this.resourceIds = null;
@@ -116,6 +118,7 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateFlowLogsRequest withResourceIds(String... resourceIds) {
         if (this.resourceIds == null) {
             setResourceIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -137,6 +140,7 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateFlowLogsRequest withResourceIds(
             java.util.Collection<String> resourceIds) {
         setResourceIds(resourceIds);
@@ -152,6 +156,7 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements
      *        The type of resource on which to create the flow log.
      * @see FlowLogsResourceType
      */
+
     public void setResourceType(String resourceType) {
         this.resourceType = resourceType;
     }
@@ -164,6 +169,7 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements
      * @return The type of resource on which to create the flow log.
      * @see FlowLogsResourceType
      */
+
     public String getResourceType() {
         return this.resourceType;
     }
@@ -179,6 +185,7 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see FlowLogsResourceType
      */
+
     public CreateFlowLogsRequest withResourceType(String resourceType) {
         setResourceType(resourceType);
         return this;
@@ -195,6 +202,7 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see FlowLogsResourceType
      */
+
     public void setResourceType(FlowLogsResourceType resourceType) {
         this.resourceType = resourceType.toString();
     }
@@ -210,6 +218,7 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see FlowLogsResourceType
      */
+
     public CreateFlowLogsRequest withResourceType(
             FlowLogsResourceType resourceType) {
         setResourceType(resourceType);
@@ -225,6 +234,7 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements
      *        The type of traffic to log.
      * @see TrafficType
      */
+
     public void setTrafficType(String trafficType) {
         this.trafficType = trafficType;
     }
@@ -237,6 +247,7 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements
      * @return The type of traffic to log.
      * @see TrafficType
      */
+
     public String getTrafficType() {
         return this.trafficType;
     }
@@ -252,6 +263,7 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see TrafficType
      */
+
     public CreateFlowLogsRequest withTrafficType(String trafficType) {
         setTrafficType(trafficType);
         return this;
@@ -268,6 +280,7 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see TrafficType
      */
+
     public void setTrafficType(TrafficType trafficType) {
         this.trafficType = trafficType.toString();
     }
@@ -283,6 +296,7 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see TrafficType
      */
+
     public CreateFlowLogsRequest withTrafficType(TrafficType trafficType) {
         setTrafficType(trafficType);
         return this;
@@ -296,6 +310,7 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements
      * @param logGroupName
      *        The name of the CloudWatch log group.
      */
+
     public void setLogGroupName(String logGroupName) {
         this.logGroupName = logGroupName;
     }
@@ -307,6 +322,7 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the CloudWatch log group.
      */
+
     public String getLogGroupName() {
         return this.logGroupName;
     }
@@ -321,6 +337,7 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateFlowLogsRequest withLogGroupName(String logGroupName) {
         setLogGroupName(logGroupName);
         return this;
@@ -336,6 +353,7 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements
      *        The ARN for the IAM role that's used to post flow logs to a
      *        CloudWatch Logs log group.
      */
+
     public void setDeliverLogsPermissionArn(String deliverLogsPermissionArn) {
         this.deliverLogsPermissionArn = deliverLogsPermissionArn;
     }
@@ -349,6 +367,7 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements
      * @return The ARN for the IAM role that's used to post flow logs to a
      *         CloudWatch Logs log group.
      */
+
     public String getDeliverLogsPermissionArn() {
         return this.deliverLogsPermissionArn;
     }
@@ -365,6 +384,7 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateFlowLogsRequest withDeliverLogsPermissionArn(
             String deliverLogsPermissionArn) {
         setDeliverLogsPermissionArn(deliverLogsPermissionArn);
@@ -385,6 +405,7 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements
      *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html"
      *        >How to Ensure Idempotency</a>.
      */
+
     public void setClientToken(String clientToken) {
         this.clientToken = clientToken;
     }
@@ -402,6 +423,7 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements
      *         "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html"
      *         >How to Ensure Idempotency</a>.
      */
+
     public String getClientToken() {
         return this.clientToken;
     }
@@ -422,6 +444,7 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateFlowLogsRequest withClientToken(String clientToken) {
         setClientToken(clientToken);
         return this;

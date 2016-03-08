@@ -37,6 +37,7 @@ public class GetAssessmentTelemetryResult implements Serializable, Cloneable {
      * 
      * @return Telemetry details.
      */
+
     public java.util.List<Telemetry> getTelemetry() {
         return telemetry;
     }
@@ -49,6 +50,7 @@ public class GetAssessmentTelemetryResult implements Serializable, Cloneable {
      * @param telemetry
      *        Telemetry details.
      */
+
     public void setTelemetry(java.util.Collection<Telemetry> telemetry) {
         if (telemetry == null) {
             this.telemetry = null;
@@ -74,6 +76,7 @@ public class GetAssessmentTelemetryResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetAssessmentTelemetryResult withTelemetry(Telemetry... telemetry) {
         if (this.telemetry == null) {
             setTelemetry(new java.util.ArrayList<Telemetry>(telemetry.length));
@@ -94,6 +97,7 @@ public class GetAssessmentTelemetryResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetAssessmentTelemetryResult withTelemetry(
             java.util.Collection<Telemetry> telemetry) {
         setTelemetry(telemetry);

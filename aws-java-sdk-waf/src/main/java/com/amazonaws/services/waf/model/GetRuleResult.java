@@ -62,6 +62,7 @@ public class GetRuleResult implements Serializable, Cloneable {
      *        <li><a>Predicate</a>: Each <code>Predicate</code> object contains
      *        <code>DataId</code>, <code>Negated</code>, and <code>Type</code></li>
      */
+
     public void setRule(Rule rule) {
         this.rule = rule;
     }
@@ -89,6 +90,7 @@ public class GetRuleResult implements Serializable, Cloneable {
      *         <li><a>Predicate</a>: Each <code>Predicate</code> object contains
      *         <code>DataId</code>, <code>Negated</code>, and <code>Type</code></li>
      */
+
     public Rule getRule() {
         return this.rule;
     }
@@ -119,6 +121,7 @@ public class GetRuleResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetRuleResult withRule(Rule rule) {
         setRule(rule);
         return this;

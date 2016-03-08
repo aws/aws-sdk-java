@@ -45,6 +45,7 @@ public class ContinueUpdateRollbackRequest extends AmazonWebServiceRequest
      *        The name or the unique ID of the stack that you want to continue
      *        rolling back.
      */
+
     public void setStackName(String stackName) {
         this.stackName = stackName;
     }
@@ -58,6 +59,7 @@ public class ContinueUpdateRollbackRequest extends AmazonWebServiceRequest
      * @return The name or the unique ID of the stack that you want to continue
      *         rolling back.
      */
+
     public String getStackName() {
         return this.stackName;
     }
@@ -74,6 +76,7 @@ public class ContinueUpdateRollbackRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContinueUpdateRollbackRequest withStackName(String stackName) {
         setStackName(stackName);
         return this;

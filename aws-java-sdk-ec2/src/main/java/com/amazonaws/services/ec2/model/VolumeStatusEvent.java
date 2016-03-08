@@ -64,6 +64,7 @@ public class VolumeStatusEvent implements Serializable, Cloneable {
      * @param eventType
      *        The type of this event.
      */
+
     public void setEventType(String eventType) {
         this.eventType = eventType;
     }
@@ -75,6 +76,7 @@ public class VolumeStatusEvent implements Serializable, Cloneable {
      * 
      * @return The type of this event.
      */
+
     public String getEventType() {
         return this.eventType;
     }
@@ -89,6 +91,7 @@ public class VolumeStatusEvent implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VolumeStatusEvent withEventType(String eventType) {
         setEventType(eventType);
         return this;
@@ -102,6 +105,7 @@ public class VolumeStatusEvent implements Serializable, Cloneable {
      * @param description
      *        A description of the event.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -113,6 +117,7 @@ public class VolumeStatusEvent implements Serializable, Cloneable {
      * 
      * @return A description of the event.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -127,6 +132,7 @@ public class VolumeStatusEvent implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VolumeStatusEvent withDescription(String description) {
         setDescription(description);
         return this;
@@ -140,6 +146,7 @@ public class VolumeStatusEvent implements Serializable, Cloneable {
      * @param notBefore
      *        The earliest start time of the event.
      */
+
     public void setNotBefore(java.util.Date notBefore) {
         this.notBefore = notBefore;
     }
@@ -151,6 +158,7 @@ public class VolumeStatusEvent implements Serializable, Cloneable {
      * 
      * @return The earliest start time of the event.
      */
+
     public java.util.Date getNotBefore() {
         return this.notBefore;
     }
@@ -165,6 +173,7 @@ public class VolumeStatusEvent implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VolumeStatusEvent withNotBefore(java.util.Date notBefore) {
         setNotBefore(notBefore);
         return this;
@@ -178,6 +187,7 @@ public class VolumeStatusEvent implements Serializable, Cloneable {
      * @param notAfter
      *        The latest end time of the event.
      */
+
     public void setNotAfter(java.util.Date notAfter) {
         this.notAfter = notAfter;
     }
@@ -189,6 +199,7 @@ public class VolumeStatusEvent implements Serializable, Cloneable {
      * 
      * @return The latest end time of the event.
      */
+
     public java.util.Date getNotAfter() {
         return this.notAfter;
     }
@@ -203,6 +214,7 @@ public class VolumeStatusEvent implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VolumeStatusEvent withNotAfter(java.util.Date notAfter) {
         setNotAfter(notAfter);
         return this;
@@ -216,6 +228,7 @@ public class VolumeStatusEvent implements Serializable, Cloneable {
      * @param eventId
      *        The ID of this event.
      */
+
     public void setEventId(String eventId) {
         this.eventId = eventId;
     }
@@ -227,6 +240,7 @@ public class VolumeStatusEvent implements Serializable, Cloneable {
      * 
      * @return The ID of this event.
      */
+
     public String getEventId() {
         return this.eventId;
     }
@@ -241,6 +255,7 @@ public class VolumeStatusEvent implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VolumeStatusEvent withEventId(String eventId) {
         setEventId(eventId);
         return this;

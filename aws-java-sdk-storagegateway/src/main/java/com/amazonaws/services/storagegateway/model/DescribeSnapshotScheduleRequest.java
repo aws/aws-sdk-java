@@ -46,6 +46,7 @@ public class DescribeSnapshotScheduleRequest extends AmazonWebServiceRequest
      *        The Amazon Resource Name (ARN) of the volume. Use the
      *        <a>ListVolumes</a> operation to return a list of gateway volumes.
      */
+
     public void setVolumeARN(String volumeARN) {
         this.volumeARN = volumeARN;
     }
@@ -59,6 +60,7 @@ public class DescribeSnapshotScheduleRequest extends AmazonWebServiceRequest
      * @return The Amazon Resource Name (ARN) of the volume. Use the
      *         <a>ListVolumes</a> operation to return a list of gateway volumes.
      */
+
     public String getVolumeARN() {
         return this.volumeARN;
     }
@@ -75,6 +77,7 @@ public class DescribeSnapshotScheduleRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSnapshotScheduleRequest withVolumeARN(String volumeARN) {
         setVolumeARN(volumeARN);
         return this;

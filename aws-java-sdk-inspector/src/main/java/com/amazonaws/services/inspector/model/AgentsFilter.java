@@ -46,6 +46,7 @@ public class AgentsFilter implements Serializable, Cloneable {
      *         type property must be the exact match of the value of the
      *         <b>agentHealth</b> property of the <a>Agent</a> data type.
      */
+
     public java.util.List<String> getAgentHealthList() {
         return agentHealthList;
     }
@@ -62,6 +63,7 @@ public class AgentsFilter implements Serializable, Cloneable {
      *        type property must be the exact match of the value of the
      *        <b>agentHealth</b> property of the <a>Agent</a> data type.
      */
+
     public void setAgentHealthList(java.util.Collection<String> agentHealthList) {
         if (agentHealthList == null) {
             this.agentHealthList = null;
@@ -91,6 +93,7 @@ public class AgentsFilter implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AgentsFilter withAgentHealthList(String... agentHealthList) {
         if (this.agentHealthList == null) {
             setAgentHealthList(new java.util.ArrayList<String>(
@@ -116,6 +119,7 @@ public class AgentsFilter implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AgentsFilter withAgentHealthList(
             java.util.Collection<String> agentHealthList) {
         setAgentHealthList(agentHealthList);

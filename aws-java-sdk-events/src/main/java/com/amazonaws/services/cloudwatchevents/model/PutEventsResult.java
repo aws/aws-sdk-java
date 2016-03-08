@@ -49,6 +49,7 @@ public class PutEventsResult implements Serializable, Cloneable {
      * @param failedEntryCount
      *        The number of failed entries.
      */
+
     public void setFailedEntryCount(Integer failedEntryCount) {
         this.failedEntryCount = failedEntryCount;
     }
@@ -60,6 +61,7 @@ public class PutEventsResult implements Serializable, Cloneable {
      * 
      * @return The number of failed entries.
      */
+
     public Integer getFailedEntryCount() {
         return this.failedEntryCount;
     }
@@ -74,6 +76,7 @@ public class PutEventsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutEventsResult withFailedEntryCount(Integer failedEntryCount) {
         setFailedEntryCount(failedEntryCount);
         return this;
@@ -92,6 +95,7 @@ public class PutEventsResult implements Serializable, Cloneable {
      *         event ID in it. If not, then the ErrorCode and ErrorMessage can
      *         be used to identify the problem with the entry.
      */
+
     public java.util.List<PutEventsResultEntry> getEntries() {
         return entries;
     }
@@ -110,6 +114,7 @@ public class PutEventsResult implements Serializable, Cloneable {
      *        in it. If not, then the ErrorCode and ErrorMessage can be used to
      *        identify the problem with the entry.
      */
+
     public void setEntries(java.util.Collection<PutEventsResultEntry> entries) {
         if (entries == null) {
             this.entries = null;
@@ -141,6 +146,7 @@ public class PutEventsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutEventsResult withEntries(PutEventsResultEntry... entries) {
         if (this.entries == null) {
             setEntries(new java.util.ArrayList<PutEventsResultEntry>(
@@ -168,6 +174,7 @@ public class PutEventsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutEventsResult withEntries(
             java.util.Collection<PutEventsResultEntry> entries) {
         setEntries(entries);

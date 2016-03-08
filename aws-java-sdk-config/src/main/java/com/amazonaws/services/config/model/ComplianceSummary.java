@@ -57,6 +57,7 @@ public class ComplianceSummary implements Serializable, Cloneable {
      *        The number of AWS Config rules or AWS resources that are
      *        compliant, up to a maximum of 25 for rules and 100 for resources.
      */
+
     public void setCompliantResourceCount(
             ComplianceContributorCount compliantResourceCount) {
         this.compliantResourceCount = compliantResourceCount;
@@ -71,6 +72,7 @@ public class ComplianceSummary implements Serializable, Cloneable {
      * @return The number of AWS Config rules or AWS resources that are
      *         compliant, up to a maximum of 25 for rules and 100 for resources.
      */
+
     public ComplianceContributorCount getCompliantResourceCount() {
         return this.compliantResourceCount;
     }
@@ -87,6 +89,7 @@ public class ComplianceSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ComplianceSummary withCompliantResourceCount(
             ComplianceContributorCount compliantResourceCount) {
         setCompliantResourceCount(compliantResourceCount);
@@ -104,6 +107,7 @@ public class ComplianceSummary implements Serializable, Cloneable {
      *        noncompliant, up to a maximum of 25 for rules and 100 for
      *        resources.
      */
+
     public void setNonCompliantResourceCount(
             ComplianceContributorCount nonCompliantResourceCount) {
         this.nonCompliantResourceCount = nonCompliantResourceCount;
@@ -119,6 +123,7 @@ public class ComplianceSummary implements Serializable, Cloneable {
      *         noncompliant, up to a maximum of 25 for rules and 100 for
      *         resources.
      */
+
     public ComplianceContributorCount getNonCompliantResourceCount() {
         return this.nonCompliantResourceCount;
     }
@@ -136,6 +141,7 @@ public class ComplianceSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ComplianceSummary withNonCompliantResourceCount(
             ComplianceContributorCount nonCompliantResourceCount) {
         setNonCompliantResourceCount(nonCompliantResourceCount);
@@ -150,6 +156,7 @@ public class ComplianceSummary implements Serializable, Cloneable {
      * @param complianceSummaryTimestamp
      *        The time that AWS Config created the compliance summary.
      */
+
     public void setComplianceSummaryTimestamp(
             java.util.Date complianceSummaryTimestamp) {
         this.complianceSummaryTimestamp = complianceSummaryTimestamp;
@@ -162,6 +169,7 @@ public class ComplianceSummary implements Serializable, Cloneable {
      * 
      * @return The time that AWS Config created the compliance summary.
      */
+
     public java.util.Date getComplianceSummaryTimestamp() {
         return this.complianceSummaryTimestamp;
     }
@@ -176,6 +184,7 @@ public class ComplianceSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ComplianceSummary withComplianceSummaryTimestamp(
             java.util.Date complianceSummaryTimestamp) {
         setComplianceSummaryTimestamp(complianceSummaryTimestamp);

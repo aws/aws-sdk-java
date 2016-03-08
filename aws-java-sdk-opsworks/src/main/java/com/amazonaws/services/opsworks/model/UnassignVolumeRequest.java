@@ -40,6 +40,7 @@ public class UnassignVolumeRequest extends AmazonWebServiceRequest implements
      * @param volumeId
      *        The volume ID.
      */
+
     public void setVolumeId(String volumeId) {
         this.volumeId = volumeId;
     }
@@ -51,6 +52,7 @@ public class UnassignVolumeRequest extends AmazonWebServiceRequest implements
      * 
      * @return The volume ID.
      */
+
     public String getVolumeId() {
         return this.volumeId;
     }
@@ -65,6 +67,7 @@ public class UnassignVolumeRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UnassignVolumeRequest withVolumeId(String volumeId) {
         setVolumeId(volumeId);
         return this;

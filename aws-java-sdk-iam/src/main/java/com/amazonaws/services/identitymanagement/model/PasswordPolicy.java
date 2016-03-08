@@ -102,6 +102,7 @@ public class PasswordPolicy implements Serializable, Cloneable {
      * @param minimumPasswordLength
      *        Minimum length to require for IAM user passwords.
      */
+
     public void setMinimumPasswordLength(Integer minimumPasswordLength) {
         this.minimumPasswordLength = minimumPasswordLength;
     }
@@ -113,6 +114,7 @@ public class PasswordPolicy implements Serializable, Cloneable {
      * 
      * @return Minimum length to require for IAM user passwords.
      */
+
     public Integer getMinimumPasswordLength() {
         return this.minimumPasswordLength;
     }
@@ -127,6 +129,7 @@ public class PasswordPolicy implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PasswordPolicy withMinimumPasswordLength(
             Integer minimumPasswordLength) {
         setMinimumPasswordLength(minimumPasswordLength);
@@ -141,6 +144,7 @@ public class PasswordPolicy implements Serializable, Cloneable {
      * @param requireSymbols
      *        Specifies whether to require symbols for IAM user passwords.
      */
+
     public void setRequireSymbols(Boolean requireSymbols) {
         this.requireSymbols = requireSymbols;
     }
@@ -152,6 +156,7 @@ public class PasswordPolicy implements Serializable, Cloneable {
      * 
      * @return Specifies whether to require symbols for IAM user passwords.
      */
+
     public Boolean getRequireSymbols() {
         return this.requireSymbols;
     }
@@ -166,6 +171,7 @@ public class PasswordPolicy implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PasswordPolicy withRequireSymbols(Boolean requireSymbols) {
         setRequireSymbols(requireSymbols);
         return this;
@@ -178,6 +184,7 @@ public class PasswordPolicy implements Serializable, Cloneable {
      * 
      * @return Specifies whether to require symbols for IAM user passwords.
      */
+
     public Boolean isRequireSymbols() {
         return this.requireSymbols;
     }
@@ -190,6 +197,7 @@ public class PasswordPolicy implements Serializable, Cloneable {
      * @param requireNumbers
      *        Specifies whether to require numbers for IAM user passwords.
      */
+
     public void setRequireNumbers(Boolean requireNumbers) {
         this.requireNumbers = requireNumbers;
     }
@@ -201,6 +209,7 @@ public class PasswordPolicy implements Serializable, Cloneable {
      * 
      * @return Specifies whether to require numbers for IAM user passwords.
      */
+
     public Boolean getRequireNumbers() {
         return this.requireNumbers;
     }
@@ -215,6 +224,7 @@ public class PasswordPolicy implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PasswordPolicy withRequireNumbers(Boolean requireNumbers) {
         setRequireNumbers(requireNumbers);
         return this;
@@ -227,6 +237,7 @@ public class PasswordPolicy implements Serializable, Cloneable {
      * 
      * @return Specifies whether to require numbers for IAM user passwords.
      */
+
     public Boolean isRequireNumbers() {
         return this.requireNumbers;
     }
@@ -240,6 +251,7 @@ public class PasswordPolicy implements Serializable, Cloneable {
      *        Specifies whether to require uppercase characters for IAM user
      *        passwords.
      */
+
     public void setRequireUppercaseCharacters(Boolean requireUppercaseCharacters) {
         this.requireUppercaseCharacters = requireUppercaseCharacters;
     }
@@ -252,6 +264,7 @@ public class PasswordPolicy implements Serializable, Cloneable {
      * @return Specifies whether to require uppercase characters for IAM user
      *         passwords.
      */
+
     public Boolean getRequireUppercaseCharacters() {
         return this.requireUppercaseCharacters;
     }
@@ -267,6 +280,7 @@ public class PasswordPolicy implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PasswordPolicy withRequireUppercaseCharacters(
             Boolean requireUppercaseCharacters) {
         setRequireUppercaseCharacters(requireUppercaseCharacters);
@@ -281,6 +295,7 @@ public class PasswordPolicy implements Serializable, Cloneable {
      * @return Specifies whether to require uppercase characters for IAM user
      *         passwords.
      */
+
     public Boolean isRequireUppercaseCharacters() {
         return this.requireUppercaseCharacters;
     }
@@ -294,6 +309,7 @@ public class PasswordPolicy implements Serializable, Cloneable {
      *        Specifies whether to require lowercase characters for IAM user
      *        passwords.
      */
+
     public void setRequireLowercaseCharacters(Boolean requireLowercaseCharacters) {
         this.requireLowercaseCharacters = requireLowercaseCharacters;
     }
@@ -306,6 +322,7 @@ public class PasswordPolicy implements Serializable, Cloneable {
      * @return Specifies whether to require lowercase characters for IAM user
      *         passwords.
      */
+
     public Boolean getRequireLowercaseCharacters() {
         return this.requireLowercaseCharacters;
     }
@@ -321,6 +338,7 @@ public class PasswordPolicy implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PasswordPolicy withRequireLowercaseCharacters(
             Boolean requireLowercaseCharacters) {
         setRequireLowercaseCharacters(requireLowercaseCharacters);
@@ -335,6 +353,7 @@ public class PasswordPolicy implements Serializable, Cloneable {
      * @return Specifies whether to require lowercase characters for IAM user
      *         passwords.
      */
+
     public Boolean isRequireLowercaseCharacters() {
         return this.requireLowercaseCharacters;
     }
@@ -348,6 +367,7 @@ public class PasswordPolicy implements Serializable, Cloneable {
      *        Specifies whether IAM users are allowed to change their own
      *        password.
      */
+
     public void setAllowUsersToChangePassword(Boolean allowUsersToChangePassword) {
         this.allowUsersToChangePassword = allowUsersToChangePassword;
     }
@@ -360,6 +380,7 @@ public class PasswordPolicy implements Serializable, Cloneable {
      * @return Specifies whether IAM users are allowed to change their own
      *         password.
      */
+
     public Boolean getAllowUsersToChangePassword() {
         return this.allowUsersToChangePassword;
     }
@@ -375,6 +396,7 @@ public class PasswordPolicy implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PasswordPolicy withAllowUsersToChangePassword(
             Boolean allowUsersToChangePassword) {
         setAllowUsersToChangePassword(allowUsersToChangePassword);
@@ -389,6 +411,7 @@ public class PasswordPolicy implements Serializable, Cloneable {
      * @return Specifies whether IAM users are allowed to change their own
      *         password.
      */
+
     public Boolean isAllowUsersToChangePassword() {
         return this.allowUsersToChangePassword;
     }
@@ -405,6 +428,7 @@ public class PasswordPolicy implements Serializable, Cloneable {
      *        MaxPasswordAge is contains a value greater than 0. Returns false
      *        if MaxPasswordAge is 0 or not present.
      */
+
     public void setExpirePasswords(Boolean expirePasswords) {
         this.expirePasswords = expirePasswords;
     }
@@ -420,6 +444,7 @@ public class PasswordPolicy implements Serializable, Cloneable {
      *         if MaxPasswordAge is contains a value greater than 0. Returns
      *         false if MaxPasswordAge is 0 or not present.
      */
+
     public Boolean getExpirePasswords() {
         return this.expirePasswords;
     }
@@ -438,6 +463,7 @@ public class PasswordPolicy implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PasswordPolicy withExpirePasswords(Boolean expirePasswords) {
         setExpirePasswords(expirePasswords);
         return this;
@@ -454,6 +480,7 @@ public class PasswordPolicy implements Serializable, Cloneable {
      *         if MaxPasswordAge is contains a value greater than 0. Returns
      *         false if MaxPasswordAge is 0 or not present.
      */
+
     public Boolean isExpirePasswords() {
         return this.expirePasswords;
     }
@@ -466,6 +493,7 @@ public class PasswordPolicy implements Serializable, Cloneable {
      * @param maxPasswordAge
      *        The number of days that an IAM user password is valid.
      */
+
     public void setMaxPasswordAge(Integer maxPasswordAge) {
         this.maxPasswordAge = maxPasswordAge;
     }
@@ -477,6 +505,7 @@ public class PasswordPolicy implements Serializable, Cloneable {
      * 
      * @return The number of days that an IAM user password is valid.
      */
+
     public Integer getMaxPasswordAge() {
         return this.maxPasswordAge;
     }
@@ -491,6 +520,7 @@ public class PasswordPolicy implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PasswordPolicy withMaxPasswordAge(Integer maxPasswordAge) {
         setMaxPasswordAge(maxPasswordAge);
         return this;
@@ -506,6 +536,7 @@ public class PasswordPolicy implements Serializable, Cloneable {
      *        Specifies the number of previous passwords that IAM users are
      *        prevented from reusing.
      */
+
     public void setPasswordReusePrevention(Integer passwordReusePrevention) {
         this.passwordReusePrevention = passwordReusePrevention;
     }
@@ -519,6 +550,7 @@ public class PasswordPolicy implements Serializable, Cloneable {
      * @return Specifies the number of previous passwords that IAM users are
      *         prevented from reusing.
      */
+
     public Integer getPasswordReusePrevention() {
         return this.passwordReusePrevention;
     }
@@ -535,6 +567,7 @@ public class PasswordPolicy implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PasswordPolicy withPasswordReusePrevention(
             Integer passwordReusePrevention) {
         setPasswordReusePrevention(passwordReusePrevention);
@@ -551,6 +584,7 @@ public class PasswordPolicy implements Serializable, Cloneable {
      *        Specifies whether IAM users are prevented from setting a new
      *        password after their password has expired.
      */
+
     public void setHardExpiry(Boolean hardExpiry) {
         this.hardExpiry = hardExpiry;
     }
@@ -564,6 +598,7 @@ public class PasswordPolicy implements Serializable, Cloneable {
      * @return Specifies whether IAM users are prevented from setting a new
      *         password after their password has expired.
      */
+
     public Boolean getHardExpiry() {
         return this.hardExpiry;
     }
@@ -580,6 +615,7 @@ public class PasswordPolicy implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PasswordPolicy withHardExpiry(Boolean hardExpiry) {
         setHardExpiry(hardExpiry);
         return this;
@@ -594,6 +630,7 @@ public class PasswordPolicy implements Serializable, Cloneable {
      * @return Specifies whether IAM users are prevented from setting a new
      *         password after their password has expired.
      */
+
     public Boolean isHardExpiry() {
         return this.hardExpiry;
     }

@@ -93,6 +93,7 @@ public class PutMetricFilterRequest extends AmazonWebServiceRequest implements
      * @param logGroupName
      *        The name of the log group to associate the metric filter with.
      */
+
     public void setLogGroupName(String logGroupName) {
         this.logGroupName = logGroupName;
     }
@@ -104,6 +105,7 @@ public class PutMetricFilterRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the log group to associate the metric filter with.
      */
+
     public String getLogGroupName() {
         return this.logGroupName;
     }
@@ -118,6 +120,7 @@ public class PutMetricFilterRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutMetricFilterRequest withLogGroupName(String logGroupName) {
         setLogGroupName(logGroupName);
         return this;
@@ -131,6 +134,7 @@ public class PutMetricFilterRequest extends AmazonWebServiceRequest implements
      * @param filterName
      *        A name for the metric filter.
      */
+
     public void setFilterName(String filterName) {
         this.filterName = filterName;
     }
@@ -142,6 +146,7 @@ public class PutMetricFilterRequest extends AmazonWebServiceRequest implements
      * 
      * @return A name for the metric filter.
      */
+
     public String getFilterName() {
         return this.filterName;
     }
@@ -156,6 +161,7 @@ public class PutMetricFilterRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutMetricFilterRequest withFilterName(String filterName) {
         setFilterName(filterName);
         return this;
@@ -171,6 +177,7 @@ public class PutMetricFilterRequest extends AmazonWebServiceRequest implements
      *        A valid CloudWatch Logs filter pattern for extracting metric data
      *        out of ingested log events.
      */
+
     public void setFilterPattern(String filterPattern) {
         this.filterPattern = filterPattern;
     }
@@ -184,6 +191,7 @@ public class PutMetricFilterRequest extends AmazonWebServiceRequest implements
      * @return A valid CloudWatch Logs filter pattern for extracting metric data
      *         out of ingested log events.
      */
+
     public String getFilterPattern() {
         return this.filterPattern;
     }
@@ -200,6 +208,7 @@ public class PutMetricFilterRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutMetricFilterRequest withFilterPattern(String filterPattern) {
         setFilterPattern(filterPattern);
         return this;
@@ -214,6 +223,7 @@ public class PutMetricFilterRequest extends AmazonWebServiceRequest implements
      * @return A collection of information needed to define how metric data gets
      *         emitted.
      */
+
     public java.util.List<MetricTransformation> getMetricTransformations() {
         if (metricTransformations == null) {
             metricTransformations = new com.amazonaws.internal.SdkInternalList<MetricTransformation>();
@@ -231,6 +241,7 @@ public class PutMetricFilterRequest extends AmazonWebServiceRequest implements
      *        A collection of information needed to define how metric data gets
      *        emitted.
      */
+
     public void setMetricTransformations(
             java.util.Collection<MetricTransformation> metricTransformations) {
         if (metricTransformations == null) {
@@ -260,6 +271,7 @@ public class PutMetricFilterRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutMetricFilterRequest withMetricTransformations(
             MetricTransformation... metricTransformations) {
         if (this.metricTransformations == null) {
@@ -284,6 +296,7 @@ public class PutMetricFilterRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutMetricFilterRequest withMetricTransformations(
             java.util.Collection<MetricTransformation> metricTransformations) {
         setMetricTransformations(metricTransformations);

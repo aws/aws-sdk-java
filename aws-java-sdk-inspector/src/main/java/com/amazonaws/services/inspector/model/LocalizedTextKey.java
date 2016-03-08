@@ -46,6 +46,7 @@ public class LocalizedTextKey implements Serializable, Cloneable {
      * @param facility
      *        The module response source of the text.
      */
+
     public void setFacility(String facility) {
         this.facility = facility;
     }
@@ -57,6 +58,7 @@ public class LocalizedTextKey implements Serializable, Cloneable {
      * 
      * @return The module response source of the text.
      */
+
     public String getFacility() {
         return this.facility;
     }
@@ -71,6 +73,7 @@ public class LocalizedTextKey implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LocalizedTextKey withFacility(String facility) {
         setFacility(facility);
         return this;
@@ -84,6 +87,7 @@ public class LocalizedTextKey implements Serializable, Cloneable {
      * @param id
      *        Part of the module response source of the text.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -95,6 +99,7 @@ public class LocalizedTextKey implements Serializable, Cloneable {
      * 
      * @return Part of the module response source of the text.
      */
+
     public String getId() {
         return this.id;
     }
@@ -109,6 +114,7 @@ public class LocalizedTextKey implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LocalizedTextKey withId(String id) {
         setId(id);
         return this;

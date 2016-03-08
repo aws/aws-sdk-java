@@ -48,6 +48,7 @@ public class FlushStageAuthorizersCacheRequest extends AmazonWebServiceRequest
      * @param restApiId
      *        The API identifier of the stage to flush.
      */
+
     public void setRestApiId(String restApiId) {
         this.restApiId = restApiId;
     }
@@ -59,6 +60,7 @@ public class FlushStageAuthorizersCacheRequest extends AmazonWebServiceRequest
      * 
      * @return The API identifier of the stage to flush.
      */
+
     public String getRestApiId() {
         return this.restApiId;
     }
@@ -73,6 +75,7 @@ public class FlushStageAuthorizersCacheRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FlushStageAuthorizersCacheRequest withRestApiId(String restApiId) {
         setRestApiId(restApiId);
         return this;
@@ -86,6 +89,7 @@ public class FlushStageAuthorizersCacheRequest extends AmazonWebServiceRequest
      * @param stageName
      *        The name of the stage to flush.
      */
+
     public void setStageName(String stageName) {
         this.stageName = stageName;
     }
@@ -97,6 +101,7 @@ public class FlushStageAuthorizersCacheRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the stage to flush.
      */
+
     public String getStageName() {
         return this.stageName;
     }
@@ -111,6 +116,7 @@ public class FlushStageAuthorizersCacheRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FlushStageAuthorizersCacheRequest withStageName(String stageName) {
         setStageName(stageName);
         return this;

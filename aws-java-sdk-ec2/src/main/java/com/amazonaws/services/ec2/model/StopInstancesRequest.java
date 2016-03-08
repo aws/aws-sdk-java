@@ -73,6 +73,7 @@ public class StopInstancesRequest extends AmazonWebServiceRequest implements
      * 
      * @return One or more instance IDs.
      */
+
     public java.util.List<String> getInstanceIds() {
         if (instanceIds == null) {
             instanceIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -88,6 +89,7 @@ public class StopInstancesRequest extends AmazonWebServiceRequest implements
      * @param instanceIds
      *        One or more instance IDs.
      */
+
     public void setInstanceIds(java.util.Collection<String> instanceIds) {
         if (instanceIds == null) {
             this.instanceIds = null;
@@ -114,6 +116,7 @@ public class StopInstancesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StopInstancesRequest withInstanceIds(String... instanceIds) {
         if (this.instanceIds == null) {
             setInstanceIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -135,6 +138,7 @@ public class StopInstancesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StopInstancesRequest withInstanceIds(
             java.util.Collection<String> instanceIds) {
         setInstanceIds(instanceIds);
@@ -161,6 +165,7 @@ public class StopInstancesRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        Default: <code>false</code>
      */
+
     public void setForce(Boolean force) {
         this.force = force;
     }
@@ -184,6 +189,7 @@ public class StopInstancesRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Default: <code>false</code>
      */
+
     public Boolean getForce() {
         return this.force;
     }
@@ -210,6 +216,7 @@ public class StopInstancesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StopInstancesRequest withForce(Boolean force) {
         setForce(force);
         return this;
@@ -234,6 +241,7 @@ public class StopInstancesRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Default: <code>false</code>
      */
+
     public Boolean isForce() {
         return this.force;
     }

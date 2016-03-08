@@ -52,6 +52,7 @@ public class UpdateApplicationRequest extends AmazonWebServiceRequest implements
      * @param applicationArn
      *        Application ARN that you want to update.
      */
+
     public void setApplicationArn(String applicationArn) {
         this.applicationArn = applicationArn;
     }
@@ -63,6 +64,7 @@ public class UpdateApplicationRequest extends AmazonWebServiceRequest implements
      * 
      * @return Application ARN that you want to update.
      */
+
     public String getApplicationArn() {
         return this.applicationArn;
     }
@@ -77,6 +79,7 @@ public class UpdateApplicationRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateApplicationRequest withApplicationArn(String applicationArn) {
         setApplicationArn(applicationArn);
         return this;
@@ -90,6 +93,7 @@ public class UpdateApplicationRequest extends AmazonWebServiceRequest implements
      * @param applicationName
      *        Application name that you want to update.
      */
+
     public void setApplicationName(String applicationName) {
         this.applicationName = applicationName;
     }
@@ -101,6 +105,7 @@ public class UpdateApplicationRequest extends AmazonWebServiceRequest implements
      * 
      * @return Application name that you want to update.
      */
+
     public String getApplicationName() {
         return this.applicationName;
     }
@@ -115,6 +120,7 @@ public class UpdateApplicationRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateApplicationRequest withApplicationName(String applicationName) {
         setApplicationName(applicationName);
         return this;
@@ -128,6 +134,7 @@ public class UpdateApplicationRequest extends AmazonWebServiceRequest implements
      * @param resourceGroupArn
      *        The resource group ARN that you want to update.
      */
+
     public void setResourceGroupArn(String resourceGroupArn) {
         this.resourceGroupArn = resourceGroupArn;
     }
@@ -139,6 +146,7 @@ public class UpdateApplicationRequest extends AmazonWebServiceRequest implements
      * 
      * @return The resource group ARN that you want to update.
      */
+
     public String getResourceGroupArn() {
         return this.resourceGroupArn;
     }
@@ -153,6 +161,7 @@ public class UpdateApplicationRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateApplicationRequest withResourceGroupArn(String resourceGroupArn) {
         setResourceGroupArn(resourceGroupArn);
         return this;

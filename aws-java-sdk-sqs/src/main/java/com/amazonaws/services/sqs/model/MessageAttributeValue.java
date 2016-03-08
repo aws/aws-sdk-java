@@ -89,6 +89,7 @@ public class MessageAttributeValue implements Serializable, Cloneable {
      *        >http
      *        ://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      */
+
     public void setStringValue(String stringValue) {
         this.stringValue = stringValue;
     }
@@ -107,6 +108,7 @@ public class MessageAttributeValue implements Serializable, Cloneable {
      *         >http
      *         ://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      */
+
     public String getStringValue() {
         return this.stringValue;
     }
@@ -128,6 +130,7 @@ public class MessageAttributeValue implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MessageAttributeValue withStringValue(String stringValue) {
         setStringValue(stringValue);
         return this;
@@ -148,6 +151,7 @@ public class MessageAttributeValue implements Serializable, Cloneable {
      *        Binary type attributes can store any binary data, for example,
      *        compressed data, encrypted data, or images.
      */
+
     public void setBinaryValue(java.nio.ByteBuffer binaryValue) {
         this.binaryValue = binaryValue;
     }
@@ -171,6 +175,7 @@ public class MessageAttributeValue implements Serializable, Cloneable {
      * @return Binary type attributes can store any binary data, for example,
      *         compressed data, encrypted data, or images.
      */
+
     public java.nio.ByteBuffer getBinaryValue() {
         return this.binaryValue;
     }
@@ -187,6 +192,7 @@ public class MessageAttributeValue implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MessageAttributeValue withBinaryValue(java.nio.ByteBuffer binaryValue) {
         setBinaryValue(binaryValue);
         return this;
@@ -199,6 +205,7 @@ public class MessageAttributeValue implements Serializable, Cloneable {
      * 
      * @return Not implemented. Reserved for future use.
      */
+
     public java.util.List<String> getStringListValues() {
         if (stringListValues == null) {
             stringListValues = new com.amazonaws.internal.SdkInternalList<String>();
@@ -214,6 +221,7 @@ public class MessageAttributeValue implements Serializable, Cloneable {
      * @param stringListValues
      *        Not implemented. Reserved for future use.
      */
+
     public void setStringListValues(
             java.util.Collection<String> stringListValues) {
         if (stringListValues == null) {
@@ -241,6 +249,7 @@ public class MessageAttributeValue implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MessageAttributeValue withStringListValues(
             String... stringListValues) {
         if (this.stringListValues == null) {
@@ -263,6 +272,7 @@ public class MessageAttributeValue implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MessageAttributeValue withStringListValues(
             java.util.Collection<String> stringListValues) {
         setStringListValues(stringListValues);
@@ -276,6 +286,7 @@ public class MessageAttributeValue implements Serializable, Cloneable {
      * 
      * @return Not implemented. Reserved for future use.
      */
+
     public java.util.List<java.nio.ByteBuffer> getBinaryListValues() {
         if (binaryListValues == null) {
             binaryListValues = new com.amazonaws.internal.SdkInternalList<java.nio.ByteBuffer>();
@@ -291,6 +302,7 @@ public class MessageAttributeValue implements Serializable, Cloneable {
      * @param binaryListValues
      *        Not implemented. Reserved for future use.
      */
+
     public void setBinaryListValues(
             java.util.Collection<java.nio.ByteBuffer> binaryListValues) {
         if (binaryListValues == null) {
@@ -318,6 +330,7 @@ public class MessageAttributeValue implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MessageAttributeValue withBinaryListValues(
             java.nio.ByteBuffer... binaryListValues) {
         if (this.binaryListValues == null) {
@@ -340,6 +353,7 @@ public class MessageAttributeValue implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MessageAttributeValue withBinaryListValues(
             java.util.Collection<java.nio.ByteBuffer> binaryListValues) {
         setBinaryListValues(binaryListValues);
@@ -362,6 +376,7 @@ public class MessageAttributeValue implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributes.DataTypes"
      *        >Message Attribute Data Types</a>.
      */
+
     public void setDataType(String dataType) {
         this.dataType = dataType;
     }
@@ -381,6 +396,7 @@ public class MessageAttributeValue implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributes.DataTypes"
      *         >Message Attribute Data Types</a>.
      */
+
     public String getDataType() {
         return this.dataType;
     }
@@ -403,6 +419,7 @@ public class MessageAttributeValue implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MessageAttributeValue withDataType(String dataType) {
         setDataType(dataType);
         return this;

@@ -39,6 +39,7 @@ public class EnableAlarmActionsRequest extends AmazonWebServiceRequest
      * 
      * @return The names of the alarms to enable actions for.
      */
+
     public java.util.List<String> getAlarmNames() {
         if (alarmNames == null) {
             alarmNames = new com.amazonaws.internal.SdkInternalList<String>();
@@ -54,6 +55,7 @@ public class EnableAlarmActionsRequest extends AmazonWebServiceRequest
      * @param alarmNames
      *        The names of the alarms to enable actions for.
      */
+
     public void setAlarmNames(java.util.Collection<String> alarmNames) {
         if (alarmNames == null) {
             this.alarmNames = null;
@@ -80,6 +82,7 @@ public class EnableAlarmActionsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EnableAlarmActionsRequest withAlarmNames(String... alarmNames) {
         if (this.alarmNames == null) {
             setAlarmNames(new com.amazonaws.internal.SdkInternalList<String>(
@@ -101,6 +104,7 @@ public class EnableAlarmActionsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EnableAlarmActionsRequest withAlarmNames(
             java.util.Collection<String> alarmNames) {
         setAlarmNames(alarmNames);

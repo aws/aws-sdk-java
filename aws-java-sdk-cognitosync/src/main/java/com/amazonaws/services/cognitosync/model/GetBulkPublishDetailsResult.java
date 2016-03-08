@@ -70,6 +70,7 @@ public class GetBulkPublishDetailsResult implements Serializable, Cloneable {
      *        us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
      *        Cognito. GUID generation is unique within a region.
      */
+
     public void setIdentityPoolId(String identityPoolId) {
         this.identityPoolId = identityPoolId;
     }
@@ -83,6 +84,7 @@ public class GetBulkPublishDetailsResult implements Serializable, Cloneable {
      *         us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
      *         Cognito. GUID generation is unique within a region.
      */
+
     public String getIdentityPoolId() {
         return this.identityPoolId;
     }
@@ -99,6 +101,7 @@ public class GetBulkPublishDetailsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetBulkPublishDetailsResult withIdentityPoolId(String identityPoolId) {
         setIdentityPoolId(identityPoolId);
         return this;
@@ -110,6 +113,7 @@ public class GetBulkPublishDetailsResult implements Serializable, Cloneable {
      * @param bulkPublishStartTime
      *        The date/time at which the last bulk publish was initiated.
      */
+
     public void setBulkPublishStartTime(java.util.Date bulkPublishStartTime) {
         this.bulkPublishStartTime = bulkPublishStartTime;
     }
@@ -119,6 +123,7 @@ public class GetBulkPublishDetailsResult implements Serializable, Cloneable {
      * 
      * @return The date/time at which the last bulk publish was initiated.
      */
+
     public java.util.Date getBulkPublishStartTime() {
         return this.bulkPublishStartTime;
     }
@@ -131,6 +136,7 @@ public class GetBulkPublishDetailsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetBulkPublishDetailsResult withBulkPublishStartTime(
             java.util.Date bulkPublishStartTime) {
         setBulkPublishStartTime(bulkPublishStartTime);
@@ -145,6 +151,7 @@ public class GetBulkPublishDetailsResult implements Serializable, Cloneable {
      *        If BulkPublishStatus is SUCCEEDED, the time the last bulk publish
      *        operation completed.
      */
+
     public void setBulkPublishCompleteTime(
             java.util.Date bulkPublishCompleteTime) {
         this.bulkPublishCompleteTime = bulkPublishCompleteTime;
@@ -157,6 +164,7 @@ public class GetBulkPublishDetailsResult implements Serializable, Cloneable {
      * @return If BulkPublishStatus is SUCCEEDED, the time the last bulk publish
      *         operation completed.
      */
+
     public java.util.Date getBulkPublishCompleteTime() {
         return this.bulkPublishCompleteTime;
     }
@@ -171,6 +179,7 @@ public class GetBulkPublishDetailsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetBulkPublishDetailsResult withBulkPublishCompleteTime(
             java.util.Date bulkPublishCompleteTime) {
         setBulkPublishCompleteTime(bulkPublishCompleteTime);
@@ -213,6 +222,7 @@ public class GetBulkPublishDetailsResult implements Serializable, Cloneable {
      *        </p>
      * @see BulkPublishStatus
      */
+
     public void setBulkPublishStatus(String bulkPublishStatus) {
         this.bulkPublishStatus = bulkPublishStatus;
     }
@@ -252,6 +262,7 @@ public class GetBulkPublishDetailsResult implements Serializable, Cloneable {
      *         </p>
      * @see BulkPublishStatus
      */
+
     public String getBulkPublishStatus() {
         return this.bulkPublishStatus;
     }
@@ -294,6 +305,7 @@ public class GetBulkPublishDetailsResult implements Serializable, Cloneable {
      *         chained together.
      * @see BulkPublishStatus
      */
+
     public GetBulkPublishDetailsResult withBulkPublishStatus(
             String bulkPublishStatus) {
         setBulkPublishStatus(bulkPublishStatus);
@@ -338,6 +350,7 @@ public class GetBulkPublishDetailsResult implements Serializable, Cloneable {
      *         chained together.
      * @see BulkPublishStatus
      */
+
     public void setBulkPublishStatus(BulkPublishStatus bulkPublishStatus) {
         this.bulkPublishStatus = bulkPublishStatus.toString();
     }
@@ -380,6 +393,7 @@ public class GetBulkPublishDetailsResult implements Serializable, Cloneable {
      *         chained together.
      * @see BulkPublishStatus
      */
+
     public GetBulkPublishDetailsResult withBulkPublishStatus(
             BulkPublishStatus bulkPublishStatus) {
         setBulkPublishStatus(bulkPublishStatus);
@@ -394,6 +408,7 @@ public class GetBulkPublishDetailsResult implements Serializable, Cloneable {
      *        If BulkPublishStatus is FAILED this field will contain the error
      *        message that caused the bulk publish to fail.
      */
+
     public void setFailureMessage(String failureMessage) {
         this.failureMessage = failureMessage;
     }
@@ -405,6 +420,7 @@ public class GetBulkPublishDetailsResult implements Serializable, Cloneable {
      * @return If BulkPublishStatus is FAILED this field will contain the error
      *         message that caused the bulk publish to fail.
      */
+
     public String getFailureMessage() {
         return this.failureMessage;
     }
@@ -419,6 +435,7 @@ public class GetBulkPublishDetailsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetBulkPublishDetailsResult withFailureMessage(String failureMessage) {
         setFailureMessage(failureMessage);
         return this;

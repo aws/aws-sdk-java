@@ -38,6 +38,7 @@ public class GetKeyPolicyResult implements Serializable, Cloneable {
      * @param policy
      *        A policy document in JSON format.
      */
+
     public void setPolicy(String policy) {
         this.policy = policy;
     }
@@ -49,6 +50,7 @@ public class GetKeyPolicyResult implements Serializable, Cloneable {
      * 
      * @return A policy document in JSON format.
      */
+
     public String getPolicy() {
         return this.policy;
     }
@@ -63,6 +65,7 @@ public class GetKeyPolicyResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetKeyPolicyResult withPolicy(String policy) {
         setPolicy(policy);
         return this;

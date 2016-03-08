@@ -38,6 +38,7 @@ public class DescribeFindingResult implements Serializable, Cloneable {
      * @param finding
      *        Information about the finding.
      */
+
     public void setFinding(Finding finding) {
         this.finding = finding;
     }
@@ -49,6 +50,7 @@ public class DescribeFindingResult implements Serializable, Cloneable {
      * 
      * @return Information about the finding.
      */
+
     public Finding getFinding() {
         return this.finding;
     }
@@ -63,6 +65,7 @@ public class DescribeFindingResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeFindingResult withFinding(Finding finding) {
         setFinding(finding);
         return this;

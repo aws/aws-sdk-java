@@ -80,6 +80,7 @@ public class CreateTopicRequest extends AmazonWebServiceRequest implements
      *        lowercase ASCII letters, numbers, underscores, and hyphens, and
      *        must be between 1 and 256 characters long.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -100,6 +101,7 @@ public class CreateTopicRequest extends AmazonWebServiceRequest implements
      *         lowercase ASCII letters, numbers, underscores, and hyphens, and
      *         must be between 1 and 256 characters long.
      */
+
     public String getName() {
         return this.name;
     }
@@ -123,6 +125,7 @@ public class CreateTopicRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateTopicRequest withName(String name) {
         setName(name);
         return this;

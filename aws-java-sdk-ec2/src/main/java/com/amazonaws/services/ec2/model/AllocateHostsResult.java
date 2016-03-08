@@ -40,6 +40,7 @@ public class AllocateHostsResult implements Serializable, Cloneable {
      * @return The ID of the allocated Dedicated host. This is used when you
      *         want to launch an instance onto a specific host.
      */
+
     public java.util.List<String> getHostIds() {
         if (hostIds == null) {
             hostIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -57,6 +58,7 @@ public class AllocateHostsResult implements Serializable, Cloneable {
      *        The ID of the allocated Dedicated host. This is used when you want
      *        to launch an instance onto a specific host.
      */
+
     public void setHostIds(java.util.Collection<String> hostIds) {
         if (hostIds == null) {
             this.hostIds = null;
@@ -85,6 +87,7 @@ public class AllocateHostsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AllocateHostsResult withHostIds(String... hostIds) {
         if (this.hostIds == null) {
             setHostIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -108,6 +111,7 @@ public class AllocateHostsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AllocateHostsResult withHostIds(java.util.Collection<String> hostIds) {
         setHostIds(hostIds);
         return this;

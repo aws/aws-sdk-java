@@ -90,6 +90,7 @@ public class SizeConstraintSet implements Serializable, Cloneable {
      *        <a>CreateSizeConstraintSet</a> and by
      *        <a>ListSizeConstraintSets</a>.
      */
+
     public void setSizeConstraintSetId(String sizeConstraintSetId) {
         this.sizeConstraintSetId = sizeConstraintSetId;
     }
@@ -124,6 +125,7 @@ public class SizeConstraintSet implements Serializable, Cloneable {
      *         <a>CreateSizeConstraintSet</a> and by
      *         <a>ListSizeConstraintSets</a>.
      */
+
     public String getSizeConstraintSetId() {
         return this.sizeConstraintSetId;
     }
@@ -161,6 +163,7 @@ public class SizeConstraintSet implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SizeConstraintSet withSizeConstraintSetId(String sizeConstraintSetId) {
         setSizeConstraintSetId(sizeConstraintSetId);
         return this;
@@ -174,6 +177,7 @@ public class SizeConstraintSet implements Serializable, Cloneable {
      * @param name
      *        The name, if any, of the <code>SizeConstraintSet</code>.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -185,6 +189,7 @@ public class SizeConstraintSet implements Serializable, Cloneable {
      * 
      * @return The name, if any, of the <code>SizeConstraintSet</code>.
      */
+
     public String getName() {
         return this.name;
     }
@@ -199,6 +204,7 @@ public class SizeConstraintSet implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SizeConstraintSet withName(String name) {
         setName(name);
         return this;
@@ -212,6 +218,7 @@ public class SizeConstraintSet implements Serializable, Cloneable {
      * @return Specifies the parts of web requests that you want to inspect the
      *         size of.
      */
+
     public java.util.List<SizeConstraint> getSizeConstraints() {
         return sizeConstraints;
     }
@@ -225,6 +232,7 @@ public class SizeConstraintSet implements Serializable, Cloneable {
      *        Specifies the parts of web requests that you want to inspect the
      *        size of.
      */
+
     public void setSizeConstraints(
             java.util.Collection<SizeConstraint> sizeConstraints) {
         if (sizeConstraints == null) {
@@ -253,6 +261,7 @@ public class SizeConstraintSet implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SizeConstraintSet withSizeConstraints(
             SizeConstraint... sizeConstraints) {
         if (this.sizeConstraints == null) {
@@ -276,6 +285,7 @@ public class SizeConstraintSet implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SizeConstraintSet withSizeConstraints(
             java.util.Collection<SizeConstraint> sizeConstraints) {
         setSizeConstraints(sizeConstraints);

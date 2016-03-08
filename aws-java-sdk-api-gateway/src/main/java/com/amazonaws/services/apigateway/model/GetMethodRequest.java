@@ -54,6 +54,7 @@ public class GetMethodRequest extends AmazonWebServiceRequest implements
      * @param restApiId
      *        The <a>RestApi</a> identifier for the <a>Method</a> resource.
      */
+
     public void setRestApiId(String restApiId) {
         this.restApiId = restApiId;
     }
@@ -65,6 +66,7 @@ public class GetMethodRequest extends AmazonWebServiceRequest implements
      * 
      * @return The <a>RestApi</a> identifier for the <a>Method</a> resource.
      */
+
     public String getRestApiId() {
         return this.restApiId;
     }
@@ -79,6 +81,7 @@ public class GetMethodRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetMethodRequest withRestApiId(String restApiId) {
         setRestApiId(restApiId);
         return this;
@@ -92,6 +95,7 @@ public class GetMethodRequest extends AmazonWebServiceRequest implements
      * @param resourceId
      *        The <a>Resource</a> identifier for the <a>Method</a> resource.
      */
+
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
     }
@@ -103,6 +107,7 @@ public class GetMethodRequest extends AmazonWebServiceRequest implements
      * 
      * @return The <a>Resource</a> identifier for the <a>Method</a> resource.
      */
+
     public String getResourceId() {
         return this.resourceId;
     }
@@ -117,6 +122,7 @@ public class GetMethodRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetMethodRequest withResourceId(String resourceId) {
         setResourceId(resourceId);
         return this;
@@ -130,6 +136,7 @@ public class GetMethodRequest extends AmazonWebServiceRequest implements
      * @param httpMethod
      *        Specifies the put method request's HTTP method type.
      */
+
     public void setHttpMethod(String httpMethod) {
         this.httpMethod = httpMethod;
     }
@@ -141,6 +148,7 @@ public class GetMethodRequest extends AmazonWebServiceRequest implements
      * 
      * @return Specifies the put method request's HTTP method type.
      */
+
     public String getHttpMethod() {
         return this.httpMethod;
     }
@@ -155,6 +163,7 @@ public class GetMethodRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetMethodRequest withHttpMethod(String httpMethod) {
         setHttpMethod(httpMethod);
         return this;

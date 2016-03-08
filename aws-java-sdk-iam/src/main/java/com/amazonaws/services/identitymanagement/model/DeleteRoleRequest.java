@@ -40,6 +40,7 @@ public class DeleteRoleRequest extends AmazonWebServiceRequest implements
      * @param roleName
      *        The name of the role to delete.
      */
+
     public void setRoleName(String roleName) {
         this.roleName = roleName;
     }
@@ -51,6 +52,7 @@ public class DeleteRoleRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the role to delete.
      */
+
     public String getRoleName() {
         return this.roleName;
     }
@@ -65,6 +67,7 @@ public class DeleteRoleRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteRoleRequest withRoleName(String roleName) {
         setRoleName(roleName);
         return this;

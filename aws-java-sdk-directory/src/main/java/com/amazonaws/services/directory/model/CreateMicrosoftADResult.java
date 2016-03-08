@@ -32,6 +32,7 @@ public class CreateMicrosoftADResult implements Serializable, Cloneable {
      * @param directoryId
      *        The identifier of the directory that was created.
      */
+
     public void setDirectoryId(String directoryId) {
         this.directoryId = directoryId;
     }
@@ -41,6 +42,7 @@ public class CreateMicrosoftADResult implements Serializable, Cloneable {
      * 
      * @return The identifier of the directory that was created.
      */
+
     public String getDirectoryId() {
         return this.directoryId;
     }
@@ -53,6 +55,7 @@ public class CreateMicrosoftADResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateMicrosoftADResult withDirectoryId(String directoryId) {
         setDirectoryId(directoryId);
         return this;

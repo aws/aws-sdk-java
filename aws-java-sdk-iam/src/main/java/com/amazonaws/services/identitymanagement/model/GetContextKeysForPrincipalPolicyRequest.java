@@ -69,6 +69,7 @@ public class GetContextKeysForPrincipalPolicyRequest extends
      *        must be URL encoded to be included as a part of a real HTML
      *        request.
      */
+
     public void setPolicySourceArn(String policySourceArn) {
         this.policySourceArn = policySourceArn;
     }
@@ -95,6 +96,7 @@ public class GetContextKeysForPrincipalPolicyRequest extends
      *         for clarity, but must be URL encoded to be included as a part of
      *         a real HTML request.
      */
+
     public String getPolicySourceArn() {
         return this.policySourceArn;
     }
@@ -124,6 +126,7 @@ public class GetContextKeysForPrincipalPolicyRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetContextKeysForPrincipalPolicyRequest withPolicySourceArn(
             String policySourceArn) {
         setPolicySourceArn(policySourceArn);
@@ -139,6 +142,7 @@ public class GetContextKeysForPrincipalPolicyRequest extends
      * @return A optional list of additional policies for which you want list of
      *         context keys used in <code>Condition</code> elements.
      */
+
     public java.util.List<String> getPolicyInputList() {
         if (policyInputList == null) {
             policyInputList = new com.amazonaws.internal.SdkInternalList<String>();
@@ -156,6 +160,7 @@ public class GetContextKeysForPrincipalPolicyRequest extends
      *        A optional list of additional policies for which you want list of
      *        context keys used in <code>Condition</code> elements.
      */
+
     public void setPolicyInputList(java.util.Collection<String> policyInputList) {
         if (policyInputList == null) {
             this.policyInputList = null;
@@ -184,6 +189,7 @@ public class GetContextKeysForPrincipalPolicyRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetContextKeysForPrincipalPolicyRequest withPolicyInputList(
             String... policyInputList) {
         if (this.policyInputList == null) {
@@ -208,6 +214,7 @@ public class GetContextKeysForPrincipalPolicyRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetContextKeysForPrincipalPolicyRequest withPolicyInputList(
             java.util.Collection<String> policyInputList) {
         setPolicyInputList(policyInputList);

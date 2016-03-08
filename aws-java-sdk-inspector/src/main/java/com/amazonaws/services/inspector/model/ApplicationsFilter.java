@@ -47,6 +47,7 @@ public class ApplicationsFilter implements Serializable, Cloneable {
      *         match the value of the <b>applicationName</b> property of the
      *         <a>Application</a> data type.
      */
+
     public java.util.List<String> getApplicationNamePatterns() {
         return applicationNamePatterns;
     }
@@ -64,6 +65,7 @@ public class ApplicationsFilter implements Serializable, Cloneable {
      *        match the value of the <b>applicationName</b> property of the
      *        <a>Application</a> data type.
      */
+
     public void setApplicationNamePatterns(
             java.util.Collection<String> applicationNamePatterns) {
         if (applicationNamePatterns == null) {
@@ -96,6 +98,7 @@ public class ApplicationsFilter implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ApplicationsFilter withApplicationNamePatterns(
             String... applicationNamePatterns) {
         if (this.applicationNamePatterns == null) {
@@ -123,6 +126,7 @@ public class ApplicationsFilter implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ApplicationsFilter withApplicationNamePatterns(
             java.util.Collection<String> applicationNamePatterns) {
         setApplicationNamePatterns(applicationNamePatterns);

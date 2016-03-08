@@ -41,6 +41,7 @@ public class DescribeTrustedAdvisorCheckRefreshStatusesResult implements
      * 
      * @return The refresh status of the specified Trusted Advisor checks.
      */
+
     public java.util.List<TrustedAdvisorCheckRefreshStatus> getStatuses() {
         if (statuses == null) {
             statuses = new com.amazonaws.internal.SdkInternalList<TrustedAdvisorCheckRefreshStatus>();
@@ -56,6 +57,7 @@ public class DescribeTrustedAdvisorCheckRefreshStatusesResult implements
      * @param statuses
      *        The refresh status of the specified Trusted Advisor checks.
      */
+
     public void setStatuses(
             java.util.Collection<TrustedAdvisorCheckRefreshStatus> statuses) {
         if (statuses == null) {
@@ -83,6 +85,7 @@ public class DescribeTrustedAdvisorCheckRefreshStatusesResult implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTrustedAdvisorCheckRefreshStatusesResult withStatuses(
             TrustedAdvisorCheckRefreshStatus... statuses) {
         if (this.statuses == null) {
@@ -105,6 +108,7 @@ public class DescribeTrustedAdvisorCheckRefreshStatusesResult implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTrustedAdvisorCheckRefreshStatusesResult withStatuses(
             java.util.Collection<TrustedAdvisorCheckRefreshStatus> statuses) {
         setStatuses(statuses);

@@ -40,6 +40,7 @@ public class PutRecordResult implements Serializable, Cloneable {
      * @param recordId
      *        The ID of the record.
      */
+
     public void setRecordId(String recordId) {
         this.recordId = recordId;
     }
@@ -51,6 +52,7 @@ public class PutRecordResult implements Serializable, Cloneable {
      * 
      * @return The ID of the record.
      */
+
     public String getRecordId() {
         return this.recordId;
     }
@@ -65,6 +67,7 @@ public class PutRecordResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutRecordResult withRecordId(String recordId) {
         setRecordId(recordId);
         return this;

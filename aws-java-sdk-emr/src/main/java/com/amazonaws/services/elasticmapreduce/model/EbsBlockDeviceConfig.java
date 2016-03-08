@@ -54,6 +54,7 @@ public class EbsBlockDeviceConfig implements Serializable, Cloneable {
      *        that will be requested for the EBS volume attached to an EC2
      *        instance in the cluster.
      */
+
     public void setVolumeSpecification(VolumeSpecification volumeSpecification) {
         this.volumeSpecification = volumeSpecification;
     }
@@ -69,6 +70,7 @@ public class EbsBlockDeviceConfig implements Serializable, Cloneable {
      *         size(GiB) that will be requested for the EBS volume attached to
      *         an EC2 instance in the cluster.
      */
+
     public VolumeSpecification getVolumeSpecification() {
         return this.volumeSpecification;
     }
@@ -87,6 +89,7 @@ public class EbsBlockDeviceConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EbsBlockDeviceConfig withVolumeSpecification(
             VolumeSpecification volumeSpecification) {
         setVolumeSpecification(volumeSpecification);
@@ -103,6 +106,7 @@ public class EbsBlockDeviceConfig implements Serializable, Cloneable {
      *        Number of EBS volumes with specific volume configuration, that
      *        will be associated with every instance in the instance group
      */
+
     public void setVolumesPerInstance(Integer volumesPerInstance) {
         this.volumesPerInstance = volumesPerInstance;
     }
@@ -116,6 +120,7 @@ public class EbsBlockDeviceConfig implements Serializable, Cloneable {
      * @return Number of EBS volumes with specific volume configuration, that
      *         will be associated with every instance in the instance group
      */
+
     public Integer getVolumesPerInstance() {
         return this.volumesPerInstance;
     }
@@ -132,6 +137,7 @@ public class EbsBlockDeviceConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EbsBlockDeviceConfig withVolumesPerInstance(
             Integer volumesPerInstance) {
         setVolumesPerInstance(volumesPerInstance);

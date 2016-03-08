@@ -49,6 +49,7 @@ public class GetApplicationRevisionRequest extends AmazonWebServiceRequest
      * @param applicationName
      *        The name of the application that corresponds to the revision.
      */
+
     public void setApplicationName(String applicationName) {
         this.applicationName = applicationName;
     }
@@ -60,6 +61,7 @@ public class GetApplicationRevisionRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the application that corresponds to the revision.
      */
+
     public String getApplicationName() {
         return this.applicationName;
     }
@@ -74,6 +76,7 @@ public class GetApplicationRevisionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetApplicationRevisionRequest withApplicationName(
             String applicationName) {
         setApplicationName(applicationName);
@@ -90,6 +93,7 @@ public class GetApplicationRevisionRequest extends AmazonWebServiceRequest
      *        Information about the application revision to get, including the
      *        revision's type and its location.
      */
+
     public void setRevision(RevisionLocation revision) {
         this.revision = revision;
     }
@@ -103,6 +107,7 @@ public class GetApplicationRevisionRequest extends AmazonWebServiceRequest
      * @return Information about the application revision to get, including the
      *         revision's type and its location.
      */
+
     public RevisionLocation getRevision() {
         return this.revision;
     }
@@ -119,6 +124,7 @@ public class GetApplicationRevisionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetApplicationRevisionRequest withRevision(RevisionLocation revision) {
         setRevision(revision);
         return this;

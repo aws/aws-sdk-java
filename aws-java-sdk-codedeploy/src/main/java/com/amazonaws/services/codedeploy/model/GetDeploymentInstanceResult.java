@@ -40,6 +40,7 @@ public class GetDeploymentInstanceResult implements Serializable, Cloneable {
      * @param instanceSummary
      *        Information about the instance.
      */
+
     public void setInstanceSummary(InstanceSummary instanceSummary) {
         this.instanceSummary = instanceSummary;
     }
@@ -51,6 +52,7 @@ public class GetDeploymentInstanceResult implements Serializable, Cloneable {
      * 
      * @return Information about the instance.
      */
+
     public InstanceSummary getInstanceSummary() {
         return this.instanceSummary;
     }
@@ -65,6 +67,7 @@ public class GetDeploymentInstanceResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDeploymentInstanceResult withInstanceSummary(
             InstanceSummary instanceSummary) {
         setInstanceSummary(instanceSummary);

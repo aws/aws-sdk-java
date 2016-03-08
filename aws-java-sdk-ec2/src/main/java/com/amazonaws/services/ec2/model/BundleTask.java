@@ -82,6 +82,7 @@ public class BundleTask implements Serializable, Cloneable {
      * @param instanceId
      *        The ID of the instance associated with this bundle task.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -93,6 +94,7 @@ public class BundleTask implements Serializable, Cloneable {
      * 
      * @return The ID of the instance associated with this bundle task.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
@@ -107,6 +109,7 @@ public class BundleTask implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BundleTask withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;
@@ -120,6 +123,7 @@ public class BundleTask implements Serializable, Cloneable {
      * @param bundleId
      *        The ID of the bundle task.
      */
+
     public void setBundleId(String bundleId) {
         this.bundleId = bundleId;
     }
@@ -131,6 +135,7 @@ public class BundleTask implements Serializable, Cloneable {
      * 
      * @return The ID of the bundle task.
      */
+
     public String getBundleId() {
         return this.bundleId;
     }
@@ -145,6 +150,7 @@ public class BundleTask implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BundleTask withBundleId(String bundleId) {
         setBundleId(bundleId);
         return this;
@@ -159,6 +165,7 @@ public class BundleTask implements Serializable, Cloneable {
      *        The state of the task.
      * @see BundleTaskState
      */
+
     public void setState(String state) {
         this.state = state;
     }
@@ -171,6 +178,7 @@ public class BundleTask implements Serializable, Cloneable {
      * @return The state of the task.
      * @see BundleTaskState
      */
+
     public String getState() {
         return this.state;
     }
@@ -186,6 +194,7 @@ public class BundleTask implements Serializable, Cloneable {
      *         chained together.
      * @see BundleTaskState
      */
+
     public BundleTask withState(String state) {
         setState(state);
         return this;
@@ -202,6 +211,7 @@ public class BundleTask implements Serializable, Cloneable {
      *         chained together.
      * @see BundleTaskState
      */
+
     public void setState(BundleTaskState state) {
         this.state = state.toString();
     }
@@ -217,6 +227,7 @@ public class BundleTask implements Serializable, Cloneable {
      *         chained together.
      * @see BundleTaskState
      */
+
     public BundleTask withState(BundleTaskState state) {
         setState(state);
         return this;
@@ -230,6 +241,7 @@ public class BundleTask implements Serializable, Cloneable {
      * @param startTime
      *        The time this task started.
      */
+
     public void setStartTime(java.util.Date startTime) {
         this.startTime = startTime;
     }
@@ -241,6 +253,7 @@ public class BundleTask implements Serializable, Cloneable {
      * 
      * @return The time this task started.
      */
+
     public java.util.Date getStartTime() {
         return this.startTime;
     }
@@ -255,6 +268,7 @@ public class BundleTask implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BundleTask withStartTime(java.util.Date startTime) {
         setStartTime(startTime);
         return this;
@@ -268,6 +282,7 @@ public class BundleTask implements Serializable, Cloneable {
      * @param updateTime
      *        The time of the most recent update for the task.
      */
+
     public void setUpdateTime(java.util.Date updateTime) {
         this.updateTime = updateTime;
     }
@@ -279,6 +294,7 @@ public class BundleTask implements Serializable, Cloneable {
      * 
      * @return The time of the most recent update for the task.
      */
+
     public java.util.Date getUpdateTime() {
         return this.updateTime;
     }
@@ -293,6 +309,7 @@ public class BundleTask implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BundleTask withUpdateTime(java.util.Date updateTime) {
         setUpdateTime(updateTime);
         return this;
@@ -306,6 +323,7 @@ public class BundleTask implements Serializable, Cloneable {
      * @param storage
      *        The Amazon S3 storage locations.
      */
+
     public void setStorage(Storage storage) {
         this.storage = storage;
     }
@@ -317,6 +335,7 @@ public class BundleTask implements Serializable, Cloneable {
      * 
      * @return The Amazon S3 storage locations.
      */
+
     public Storage getStorage() {
         return this.storage;
     }
@@ -331,6 +350,7 @@ public class BundleTask implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BundleTask withStorage(Storage storage) {
         setStorage(storage);
         return this;
@@ -344,6 +364,7 @@ public class BundleTask implements Serializable, Cloneable {
      * @param progress
      *        The level of task completion, as a percent (for example, 20%).
      */
+
     public void setProgress(String progress) {
         this.progress = progress;
     }
@@ -355,6 +376,7 @@ public class BundleTask implements Serializable, Cloneable {
      * 
      * @return The level of task completion, as a percent (for example, 20%).
      */
+
     public String getProgress() {
         return this.progress;
     }
@@ -369,6 +391,7 @@ public class BundleTask implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BundleTask withProgress(String progress) {
         setProgress(progress);
         return this;
@@ -382,6 +405,7 @@ public class BundleTask implements Serializable, Cloneable {
      * @param bundleTaskError
      *        If the task fails, a description of the error.
      */
+
     public void setBundleTaskError(BundleTaskError bundleTaskError) {
         this.bundleTaskError = bundleTaskError;
     }
@@ -393,6 +417,7 @@ public class BundleTask implements Serializable, Cloneable {
      * 
      * @return If the task fails, a description of the error.
      */
+
     public BundleTaskError getBundleTaskError() {
         return this.bundleTaskError;
     }
@@ -407,6 +432,7 @@ public class BundleTask implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BundleTask withBundleTaskError(BundleTaskError bundleTaskError) {
         setBundleTaskError(bundleTaskError);
         return this;

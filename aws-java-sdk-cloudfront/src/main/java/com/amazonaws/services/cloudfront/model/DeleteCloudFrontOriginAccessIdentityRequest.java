@@ -63,6 +63,7 @@ public class DeleteCloudFrontOriginAccessIdentityRequest extends
      * @param id
      *        The origin access identity's id.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -72,6 +73,7 @@ public class DeleteCloudFrontOriginAccessIdentityRequest extends
      * 
      * @return The origin access identity's id.
      */
+
     public String getId() {
         return this.id;
     }
@@ -84,6 +86,7 @@ public class DeleteCloudFrontOriginAccessIdentityRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteCloudFrontOriginAccessIdentityRequest withId(String id) {
         setId(id);
         return this;
@@ -97,6 +100,7 @@ public class DeleteCloudFrontOriginAccessIdentityRequest extends
      *        The value of the ETag header you received from a previous GET or
      *        PUT request. For example: E2QWRUHAPOMQZL.
      */
+
     public void setIfMatch(String ifMatch) {
         this.ifMatch = ifMatch;
     }
@@ -108,6 +112,7 @@ public class DeleteCloudFrontOriginAccessIdentityRequest extends
      * @return The value of the ETag header you received from a previous GET or
      *         PUT request. For example: E2QWRUHAPOMQZL.
      */
+
     public String getIfMatch() {
         return this.ifMatch;
     }
@@ -122,6 +127,7 @@ public class DeleteCloudFrontOriginAccessIdentityRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteCloudFrontOriginAccessIdentityRequest withIfMatch(
             String ifMatch) {
         setIfMatch(ifMatch);

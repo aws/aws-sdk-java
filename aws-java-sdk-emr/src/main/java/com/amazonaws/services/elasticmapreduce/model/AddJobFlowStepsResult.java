@@ -39,6 +39,7 @@ public class AddJobFlowStepsResult implements Serializable, Cloneable {
      * 
      * @return The identifiers of the list of steps added to the job flow.
      */
+
     public java.util.List<String> getStepIds() {
         if (stepIds == null) {
             stepIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -54,6 +55,7 @@ public class AddJobFlowStepsResult implements Serializable, Cloneable {
      * @param stepIds
      *        The identifiers of the list of steps added to the job flow.
      */
+
     public void setStepIds(java.util.Collection<String> stepIds) {
         if (stepIds == null) {
             this.stepIds = null;
@@ -80,6 +82,7 @@ public class AddJobFlowStepsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddJobFlowStepsResult withStepIds(String... stepIds) {
         if (this.stepIds == null) {
             setStepIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -101,6 +104,7 @@ public class AddJobFlowStepsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddJobFlowStepsResult withStepIds(
             java.util.Collection<String> stepIds) {
         setStepIds(stepIds);

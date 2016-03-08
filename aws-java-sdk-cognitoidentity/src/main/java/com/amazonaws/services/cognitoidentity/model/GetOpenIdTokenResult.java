@@ -39,6 +39,7 @@ public class GetOpenIdTokenResult implements Serializable, Cloneable {
      *        A unique identifier in the format REGION:GUID. Note that the
      *        IdentityId returned may not match the one passed on input.
      */
+
     public void setIdentityId(String identityId) {
         this.identityId = identityId;
     }
@@ -50,6 +51,7 @@ public class GetOpenIdTokenResult implements Serializable, Cloneable {
      * @return A unique identifier in the format REGION:GUID. Note that the
      *         IdentityId returned may not match the one passed on input.
      */
+
     public String getIdentityId() {
         return this.identityId;
     }
@@ -64,6 +66,7 @@ public class GetOpenIdTokenResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetOpenIdTokenResult withIdentityId(String identityId) {
         setIdentityId(identityId);
         return this;
@@ -75,6 +78,7 @@ public class GetOpenIdTokenResult implements Serializable, Cloneable {
      * @param token
      *        An OpenID token, valid for 15 minutes.
      */
+
     public void setToken(String token) {
         this.token = token;
     }
@@ -84,6 +88,7 @@ public class GetOpenIdTokenResult implements Serializable, Cloneable {
      * 
      * @return An OpenID token, valid for 15 minutes.
      */
+
     public String getToken() {
         return this.token;
     }
@@ -96,6 +101,7 @@ public class GetOpenIdTokenResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetOpenIdTokenResult withToken(String token) {
         setToken(token);
         return this;

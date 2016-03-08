@@ -50,6 +50,7 @@ public class DescribeVolumeAttributeResult implements Serializable, Cloneable {
      * @param volumeId
      *        The ID of the volume.
      */
+
     public void setVolumeId(String volumeId) {
         this.volumeId = volumeId;
     }
@@ -61,6 +62,7 @@ public class DescribeVolumeAttributeResult implements Serializable, Cloneable {
      * 
      * @return The ID of the volume.
      */
+
     public String getVolumeId() {
         return this.volumeId;
     }
@@ -75,6 +77,7 @@ public class DescribeVolumeAttributeResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVolumeAttributeResult withVolumeId(String volumeId) {
         setVolumeId(volumeId);
         return this;
@@ -88,6 +91,7 @@ public class DescribeVolumeAttributeResult implements Serializable, Cloneable {
      * @param autoEnableIO
      *        The state of <code>autoEnableIO</code> attribute.
      */
+
     public void setAutoEnableIO(Boolean autoEnableIO) {
         this.autoEnableIO = autoEnableIO;
     }
@@ -99,6 +103,7 @@ public class DescribeVolumeAttributeResult implements Serializable, Cloneable {
      * 
      * @return The state of <code>autoEnableIO</code> attribute.
      */
+
     public Boolean getAutoEnableIO() {
         return this.autoEnableIO;
     }
@@ -113,6 +118,7 @@ public class DescribeVolumeAttributeResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVolumeAttributeResult withAutoEnableIO(Boolean autoEnableIO) {
         setAutoEnableIO(autoEnableIO);
         return this;
@@ -125,6 +131,7 @@ public class DescribeVolumeAttributeResult implements Serializable, Cloneable {
      * 
      * @return The state of <code>autoEnableIO</code> attribute.
      */
+
     public Boolean isAutoEnableIO() {
         return this.autoEnableIO;
     }
@@ -136,6 +143,7 @@ public class DescribeVolumeAttributeResult implements Serializable, Cloneable {
      * 
      * @return A list of product codes.
      */
+
     public java.util.List<ProductCode> getProductCodes() {
         if (productCodes == null) {
             productCodes = new com.amazonaws.internal.SdkInternalList<ProductCode>();
@@ -151,6 +159,7 @@ public class DescribeVolumeAttributeResult implements Serializable, Cloneable {
      * @param productCodes
      *        A list of product codes.
      */
+
     public void setProductCodes(java.util.Collection<ProductCode> productCodes) {
         if (productCodes == null) {
             this.productCodes = null;
@@ -177,6 +186,7 @@ public class DescribeVolumeAttributeResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVolumeAttributeResult withProductCodes(
             ProductCode... productCodes) {
         if (this.productCodes == null) {
@@ -199,6 +209,7 @@ public class DescribeVolumeAttributeResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVolumeAttributeResult withProductCodes(
             java.util.Collection<ProductCode> productCodes) {
         setProductCodes(productCodes);

@@ -65,6 +65,7 @@ public class CreateUserProfileRequest extends AmazonWebServiceRequest implements
      * @param iamUserArn
      *        The user's IAM ARN.
      */
+
     public void setIamUserArn(String iamUserArn) {
         this.iamUserArn = iamUserArn;
     }
@@ -76,6 +77,7 @@ public class CreateUserProfileRequest extends AmazonWebServiceRequest implements
      * 
      * @return The user's IAM ARN.
      */
+
     public String getIamUserArn() {
         return this.iamUserArn;
     }
@@ -90,6 +92,7 @@ public class CreateUserProfileRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateUserProfileRequest withIamUserArn(String iamUserArn) {
         setIamUserArn(iamUserArn);
         return this;
@@ -112,6 +115,7 @@ public class CreateUserProfileRequest extends AmazonWebServiceRequest implements
      *        you do not specify an SSH user name, AWS OpsWorks generates one
      *        from the IAM user name.
      */
+
     public void setSshUsername(String sshUsername) {
         this.sshUsername = sshUsername;
     }
@@ -132,6 +136,7 @@ public class CreateUserProfileRequest extends AmazonWebServiceRequest implements
      *         you do not specify an SSH user name, AWS OpsWorks generates one
      *         from the IAM user name.
      */
+
     public String getSshUsername() {
         return this.sshUsername;
     }
@@ -155,6 +160,7 @@ public class CreateUserProfileRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateUserProfileRequest withSshUsername(String sshUsername) {
         setSshUsername(sshUsername);
         return this;
@@ -168,6 +174,7 @@ public class CreateUserProfileRequest extends AmazonWebServiceRequest implements
      * @param sshPublicKey
      *        The user's public SSH key.
      */
+
     public void setSshPublicKey(String sshPublicKey) {
         this.sshPublicKey = sshPublicKey;
     }
@@ -179,6 +186,7 @@ public class CreateUserProfileRequest extends AmazonWebServiceRequest implements
      * 
      * @return The user's public SSH key.
      */
+
     public String getSshPublicKey() {
         return this.sshPublicKey;
     }
@@ -193,6 +201,7 @@ public class CreateUserProfileRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateUserProfileRequest withSshPublicKey(String sshPublicKey) {
         setSshPublicKey(sshPublicKey);
         return this;
@@ -212,6 +221,7 @@ public class CreateUserProfileRequest extends AmazonWebServiceRequest implements
      *        "http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html"
      *        >Setting an IAM User's Public SSH Key</a>.
      */
+
     public void setAllowSelfManagement(Boolean allowSelfManagement) {
         this.allowSelfManagement = allowSelfManagement;
     }
@@ -229,6 +239,7 @@ public class CreateUserProfileRequest extends AmazonWebServiceRequest implements
      *         "http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html"
      *         >Setting an IAM User's Public SSH Key</a>.
      */
+
     public Boolean getAllowSelfManagement() {
         return this.allowSelfManagement;
     }
@@ -249,6 +260,7 @@ public class CreateUserProfileRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateUserProfileRequest withAllowSelfManagement(
             Boolean allowSelfManagement) {
         setAllowSelfManagement(allowSelfManagement);
@@ -268,6 +280,7 @@ public class CreateUserProfileRequest extends AmazonWebServiceRequest implements
      *         "http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html"
      *         >Setting an IAM User's Public SSH Key</a>.
      */
+
     public Boolean isAllowSelfManagement() {
         return this.allowSelfManagement;
     }

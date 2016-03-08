@@ -132,6 +132,7 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements
      * @param queueUrl
      *        The URL of the Amazon SQS queue to take action on.
      */
+
     public void setQueueUrl(String queueUrl) {
         this.queueUrl = queueUrl;
     }
@@ -143,6 +144,7 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements
      * 
      * @return The URL of the Amazon SQS queue to take action on.
      */
+
     public String getQueueUrl() {
         return this.queueUrl;
     }
@@ -157,6 +159,7 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddPermissionRequest withQueueUrl(String queueUrl) {
         setQueueUrl(queueUrl);
         return this;
@@ -175,6 +178,7 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements
      *        characters; alphanumeric characters, hyphens (-), and underscores
      *        (_) are allowed.
      */
+
     public void setLabel(String label) {
         this.label = label;
     }
@@ -191,6 +195,7 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements
      *         characters; alphanumeric characters, hyphens (-), and underscores
      *         (_) are allowed.
      */
+
     public String getLabel() {
         return this.label;
     }
@@ -210,6 +215,7 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddPermissionRequest withLabel(String label) {
         setLabel(label);
         return this;
@@ -236,6 +242,7 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements
      *         >Your AWS Identifiers</a> in the <i>Amazon SQS Developer
      *         Guide</i>.
      */
+
     public java.util.List<String> getAWSAccountIds() {
         if (aWSAccountIds == null) {
             aWSAccountIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -265,6 +272,7 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements
      *        >Your AWS Identifiers</a> in the <i>Amazon SQS Developer
      *        Guide</i>.
      */
+
     public void setAWSAccountIds(java.util.Collection<String> aWSAccountIds) {
         if (aWSAccountIds == null) {
             this.aWSAccountIds = null;
@@ -305,6 +313,7 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddPermissionRequest withAWSAccountIds(String... aWSAccountIds) {
         if (this.aWSAccountIds == null) {
             setAWSAccountIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -340,6 +349,7 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddPermissionRequest withAWSAccountIds(
             java.util.Collection<String> aWSAccountIds) {
         setAWSAccountIds(aWSAccountIds);
@@ -378,6 +388,7 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements
      *         <code>SendMessageBatch</code>, <code>DeleteMessageBatch</code>,
      *         and <code>ChangeMessageVisibilityBatch</code>.
      */
+
     public java.util.List<String> getActions() {
         if (actions == null) {
             actions = new com.amazonaws.internal.SdkInternalList<String>();
@@ -418,6 +429,7 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements
      *        <code>SendMessageBatch</code>, <code>DeleteMessageBatch</code>,
      *        and <code>ChangeMessageVisibilityBatch</code>.
      */
+
     public void setActions(java.util.Collection<String> actions) {
         if (actions == null) {
             this.actions = null;
@@ -469,6 +481,7 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddPermissionRequest withActions(String... actions) {
         if (this.actions == null) {
             setActions(new com.amazonaws.internal.SdkInternalList<String>(
@@ -515,6 +528,7 @@ public class AddPermissionRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddPermissionRequest withActions(java.util.Collection<String> actions) {
         setActions(actions);
         return this;

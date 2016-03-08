@@ -48,6 +48,7 @@ public class GetChangeDetailsRequest extends AmazonWebServiceRequest implements
      *        here is the value that <code>ChangeResourceRecordSets</code>
      *        returned in the Id element when you submitted the request.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -63,6 +64,7 @@ public class GetChangeDetailsRequest extends AmazonWebServiceRequest implements
      *         here is the value that <code>ChangeResourceRecordSets</code>
      *         returned in the Id element when you submitted the request.
      */
+
     public String getId() {
         return this.id;
     }
@@ -81,6 +83,7 @@ public class GetChangeDetailsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetChangeDetailsRequest withId(String id) {
         setId(id);
         return this;

@@ -37,6 +37,7 @@ public class StartInstancesResult implements Serializable, Cloneable {
      * 
      * @return Information about one or more started instances.
      */
+
     public java.util.List<InstanceStateChange> getStartingInstances() {
         if (startingInstances == null) {
             startingInstances = new com.amazonaws.internal.SdkInternalList<InstanceStateChange>();
@@ -52,6 +53,7 @@ public class StartInstancesResult implements Serializable, Cloneable {
      * @param startingInstances
      *        Information about one or more started instances.
      */
+
     public void setStartingInstances(
             java.util.Collection<InstanceStateChange> startingInstances) {
         if (startingInstances == null) {
@@ -79,6 +81,7 @@ public class StartInstancesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StartInstancesResult withStartingInstances(
             InstanceStateChange... startingInstances) {
         if (this.startingInstances == null) {
@@ -101,6 +104,7 @@ public class StartInstancesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StartInstancesResult withStartingInstances(
             java.util.Collection<InstanceStateChange> startingInstances) {
         setStartingInstances(startingInstances);

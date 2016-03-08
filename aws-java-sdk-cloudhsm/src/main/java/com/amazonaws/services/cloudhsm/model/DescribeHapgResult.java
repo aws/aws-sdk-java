@@ -78,6 +78,7 @@ public class DescribeHapgResult implements Serializable, Cloneable {
      * @param hapgArn
      *        The ARN of the high-availability partition group.
      */
+
     public void setHapgArn(String hapgArn) {
         this.hapgArn = hapgArn;
     }
@@ -89,6 +90,7 @@ public class DescribeHapgResult implements Serializable, Cloneable {
      * 
      * @return The ARN of the high-availability partition group.
      */
+
     public String getHapgArn() {
         return this.hapgArn;
     }
@@ -103,6 +105,7 @@ public class DescribeHapgResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeHapgResult withHapgArn(String hapgArn) {
         setHapgArn(hapgArn);
         return this;
@@ -116,6 +119,7 @@ public class DescribeHapgResult implements Serializable, Cloneable {
      * @param hapgSerial
      *        The serial number of the high-availability partition group.
      */
+
     public void setHapgSerial(String hapgSerial) {
         this.hapgSerial = hapgSerial;
     }
@@ -127,6 +131,7 @@ public class DescribeHapgResult implements Serializable, Cloneable {
      * 
      * @return The serial number of the high-availability partition group.
      */
+
     public String getHapgSerial() {
         return this.hapgSerial;
     }
@@ -141,6 +146,7 @@ public class DescribeHapgResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeHapgResult withHapgSerial(String hapgSerial) {
         setHapgSerial(hapgSerial);
         return this;
@@ -149,6 +155,7 @@ public class DescribeHapgResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public java.util.List<String> getHsmsLastActionFailed() {
         if (hsmsLastActionFailed == null) {
             hsmsLastActionFailed = new com.amazonaws.internal.SdkInternalList<String>();
@@ -159,6 +166,7 @@ public class DescribeHapgResult implements Serializable, Cloneable {
     /**
      * @param hsmsLastActionFailed
      */
+
     public void setHsmsLastActionFailed(
             java.util.Collection<String> hsmsLastActionFailed) {
         if (hsmsLastActionFailed == null) {
@@ -182,6 +190,7 @@ public class DescribeHapgResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeHapgResult withHsmsLastActionFailed(
             String... hsmsLastActionFailed) {
         if (this.hsmsLastActionFailed == null) {
@@ -199,6 +208,7 @@ public class DescribeHapgResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeHapgResult withHsmsLastActionFailed(
             java.util.Collection<String> hsmsLastActionFailed) {
         setHsmsLastActionFailed(hsmsLastActionFailed);
@@ -208,6 +218,7 @@ public class DescribeHapgResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public java.util.List<String> getHsmsPendingDeletion() {
         if (hsmsPendingDeletion == null) {
             hsmsPendingDeletion = new com.amazonaws.internal.SdkInternalList<String>();
@@ -218,6 +229,7 @@ public class DescribeHapgResult implements Serializable, Cloneable {
     /**
      * @param hsmsPendingDeletion
      */
+
     public void setHsmsPendingDeletion(
             java.util.Collection<String> hsmsPendingDeletion) {
         if (hsmsPendingDeletion == null) {
@@ -241,6 +253,7 @@ public class DescribeHapgResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeHapgResult withHsmsPendingDeletion(
             String... hsmsPendingDeletion) {
         if (this.hsmsPendingDeletion == null) {
@@ -258,6 +271,7 @@ public class DescribeHapgResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeHapgResult withHsmsPendingDeletion(
             java.util.Collection<String> hsmsPendingDeletion) {
         setHsmsPendingDeletion(hsmsPendingDeletion);
@@ -267,6 +281,7 @@ public class DescribeHapgResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public java.util.List<String> getHsmsPendingRegistration() {
         if (hsmsPendingRegistration == null) {
             hsmsPendingRegistration = new com.amazonaws.internal.SdkInternalList<String>();
@@ -277,6 +292,7 @@ public class DescribeHapgResult implements Serializable, Cloneable {
     /**
      * @param hsmsPendingRegistration
      */
+
     public void setHsmsPendingRegistration(
             java.util.Collection<String> hsmsPendingRegistration) {
         if (hsmsPendingRegistration == null) {
@@ -300,6 +316,7 @@ public class DescribeHapgResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeHapgResult withHsmsPendingRegistration(
             String... hsmsPendingRegistration) {
         if (this.hsmsPendingRegistration == null) {
@@ -317,6 +334,7 @@ public class DescribeHapgResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeHapgResult withHsmsPendingRegistration(
             java.util.Collection<String> hsmsPendingRegistration) {
         setHsmsPendingRegistration(hsmsPendingRegistration);
@@ -331,6 +349,7 @@ public class DescribeHapgResult implements Serializable, Cloneable {
      * @param label
      *        The label for the high-availability partition group.
      */
+
     public void setLabel(String label) {
         this.label = label;
     }
@@ -342,6 +361,7 @@ public class DescribeHapgResult implements Serializable, Cloneable {
      * 
      * @return The label for the high-availability partition group.
      */
+
     public String getLabel() {
         return this.label;
     }
@@ -356,6 +376,7 @@ public class DescribeHapgResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeHapgResult withLabel(String label) {
         setLabel(label);
         return this;
@@ -371,6 +392,7 @@ public class DescribeHapgResult implements Serializable, Cloneable {
      *        The date and time the high-availability partition group was last
      *        modified.
      */
+
     public void setLastModifiedTimestamp(String lastModifiedTimestamp) {
         this.lastModifiedTimestamp = lastModifiedTimestamp;
     }
@@ -384,6 +406,7 @@ public class DescribeHapgResult implements Serializable, Cloneable {
      * @return The date and time the high-availability partition group was last
      *         modified.
      */
+
     public String getLastModifiedTimestamp() {
         return this.lastModifiedTimestamp;
     }
@@ -400,6 +423,7 @@ public class DescribeHapgResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeHapgResult withLastModifiedTimestamp(
             String lastModifiedTimestamp) {
         setLastModifiedTimestamp(lastModifiedTimestamp);
@@ -415,6 +439,7 @@ public class DescribeHapgResult implements Serializable, Cloneable {
      * @return The list of partition serial numbers that belong to the
      *         high-availability partition group.
      */
+
     public java.util.List<String> getPartitionSerialList() {
         if (partitionSerialList == null) {
             partitionSerialList = new com.amazonaws.internal.SdkInternalList<String>();
@@ -432,6 +457,7 @@ public class DescribeHapgResult implements Serializable, Cloneable {
      *        The list of partition serial numbers that belong to the
      *        high-availability partition group.
      */
+
     public void setPartitionSerialList(
             java.util.Collection<String> partitionSerialList) {
         if (partitionSerialList == null) {
@@ -461,6 +487,7 @@ public class DescribeHapgResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeHapgResult withPartitionSerialList(
             String... partitionSerialList) {
         if (this.partitionSerialList == null) {
@@ -485,6 +512,7 @@ public class DescribeHapgResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeHapgResult withPartitionSerialList(
             java.util.Collection<String> partitionSerialList) {
         setPartitionSerialList(partitionSerialList);
@@ -500,6 +528,7 @@ public class DescribeHapgResult implements Serializable, Cloneable {
      *        The state of the high-availability partition group.
      * @see CloudHsmObjectState
      */
+
     public void setState(String state) {
         this.state = state;
     }
@@ -512,6 +541,7 @@ public class DescribeHapgResult implements Serializable, Cloneable {
      * @return The state of the high-availability partition group.
      * @see CloudHsmObjectState
      */
+
     public String getState() {
         return this.state;
     }
@@ -527,6 +557,7 @@ public class DescribeHapgResult implements Serializable, Cloneable {
      *         chained together.
      * @see CloudHsmObjectState
      */
+
     public DescribeHapgResult withState(String state) {
         setState(state);
         return this;
@@ -543,6 +574,7 @@ public class DescribeHapgResult implements Serializable, Cloneable {
      *         chained together.
      * @see CloudHsmObjectState
      */
+
     public void setState(CloudHsmObjectState state) {
         this.state = state.toString();
     }
@@ -558,6 +590,7 @@ public class DescribeHapgResult implements Serializable, Cloneable {
      *         chained together.
      * @see CloudHsmObjectState
      */
+
     public DescribeHapgResult withState(CloudHsmObjectState state) {
         setState(state);
         return this;

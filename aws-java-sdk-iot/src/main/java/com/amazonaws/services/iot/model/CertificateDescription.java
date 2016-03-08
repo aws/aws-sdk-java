@@ -76,6 +76,7 @@ public class CertificateDescription implements Serializable, Cloneable {
      * @param certificateArn
      *        The ARN of the certificate.
      */
+
     public void setCertificateArn(String certificateArn) {
         this.certificateArn = certificateArn;
     }
@@ -87,6 +88,7 @@ public class CertificateDescription implements Serializable, Cloneable {
      * 
      * @return The ARN of the certificate.
      */
+
     public String getCertificateArn() {
         return this.certificateArn;
     }
@@ -101,6 +103,7 @@ public class CertificateDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CertificateDescription withCertificateArn(String certificateArn) {
         setCertificateArn(certificateArn);
         return this;
@@ -114,6 +117,7 @@ public class CertificateDescription implements Serializable, Cloneable {
      * @param certificateId
      *        The ID of the certificate.
      */
+
     public void setCertificateId(String certificateId) {
         this.certificateId = certificateId;
     }
@@ -125,6 +129,7 @@ public class CertificateDescription implements Serializable, Cloneable {
      * 
      * @return The ID of the certificate.
      */
+
     public String getCertificateId() {
         return this.certificateId;
     }
@@ -139,6 +144,7 @@ public class CertificateDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CertificateDescription withCertificateId(String certificateId) {
         setCertificateId(certificateId);
         return this;
@@ -153,6 +159,7 @@ public class CertificateDescription implements Serializable, Cloneable {
      *        The status of the certificate.
      * @see CertificateStatus
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -165,6 +172,7 @@ public class CertificateDescription implements Serializable, Cloneable {
      * @return The status of the certificate.
      * @see CertificateStatus
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -180,6 +188,7 @@ public class CertificateDescription implements Serializable, Cloneable {
      *         chained together.
      * @see CertificateStatus
      */
+
     public CertificateDescription withStatus(String status) {
         setStatus(status);
         return this;
@@ -196,6 +205,7 @@ public class CertificateDescription implements Serializable, Cloneable {
      *         chained together.
      * @see CertificateStatus
      */
+
     public void setStatus(CertificateStatus status) {
         this.status = status.toString();
     }
@@ -211,6 +221,7 @@ public class CertificateDescription implements Serializable, Cloneable {
      *         chained together.
      * @see CertificateStatus
      */
+
     public CertificateDescription withStatus(CertificateStatus status) {
         setStatus(status);
         return this;
@@ -224,6 +235,7 @@ public class CertificateDescription implements Serializable, Cloneable {
      * @param certificatePem
      *        The certificate data, in PEM format.
      */
+
     public void setCertificatePem(String certificatePem) {
         this.certificatePem = certificatePem;
     }
@@ -235,6 +247,7 @@ public class CertificateDescription implements Serializable, Cloneable {
      * 
      * @return The certificate data, in PEM format.
      */
+
     public String getCertificatePem() {
         return this.certificatePem;
     }
@@ -249,6 +262,7 @@ public class CertificateDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CertificateDescription withCertificatePem(String certificatePem) {
         setCertificatePem(certificatePem);
         return this;
@@ -262,6 +276,7 @@ public class CertificateDescription implements Serializable, Cloneable {
      * @param ownedBy
      *        The ID of the AWS account that owns the certificate.
      */
+
     public void setOwnedBy(String ownedBy) {
         this.ownedBy = ownedBy;
     }
@@ -273,6 +288,7 @@ public class CertificateDescription implements Serializable, Cloneable {
      * 
      * @return The ID of the AWS account that owns the certificate.
      */
+
     public String getOwnedBy() {
         return this.ownedBy;
     }
@@ -287,6 +303,7 @@ public class CertificateDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CertificateDescription withOwnedBy(String ownedBy) {
         setOwnedBy(ownedBy);
         return this;
@@ -300,6 +317,7 @@ public class CertificateDescription implements Serializable, Cloneable {
      * @param creationDate
      *        The date and time the certificate was created.
      */
+
     public void setCreationDate(java.util.Date creationDate) {
         this.creationDate = creationDate;
     }
@@ -311,6 +329,7 @@ public class CertificateDescription implements Serializable, Cloneable {
      * 
      * @return The date and time the certificate was created.
      */
+
     public java.util.Date getCreationDate() {
         return this.creationDate;
     }
@@ -325,6 +344,7 @@ public class CertificateDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CertificateDescription withCreationDate(java.util.Date creationDate) {
         setCreationDate(creationDate);
         return this;
@@ -338,6 +358,7 @@ public class CertificateDescription implements Serializable, Cloneable {
      * @param lastModifiedDate
      *        The date and time the certificate was last modified.
      */
+
     public void setLastModifiedDate(java.util.Date lastModifiedDate) {
         this.lastModifiedDate = lastModifiedDate;
     }
@@ -349,6 +370,7 @@ public class CertificateDescription implements Serializable, Cloneable {
      * 
      * @return The date and time the certificate was last modified.
      */
+
     public java.util.Date getLastModifiedDate() {
         return this.lastModifiedDate;
     }
@@ -363,6 +385,7 @@ public class CertificateDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CertificateDescription withLastModifiedDate(
             java.util.Date lastModifiedDate) {
         setLastModifiedDate(lastModifiedDate);

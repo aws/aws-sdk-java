@@ -38,6 +38,7 @@ public class DescribeRulesPackageResult implements Serializable, Cloneable {
      * @param rulesPackage
      *        Information about the rules package.
      */
+
     public void setRulesPackage(RulesPackage rulesPackage) {
         this.rulesPackage = rulesPackage;
     }
@@ -49,6 +50,7 @@ public class DescribeRulesPackageResult implements Serializable, Cloneable {
      * 
      * @return Information about the rules package.
      */
+
     public RulesPackage getRulesPackage() {
         return this.rulesPackage;
     }
@@ -63,6 +65,7 @@ public class DescribeRulesPackageResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeRulesPackageResult withRulesPackage(RulesPackage rulesPackage) {
         setRulesPackage(rulesPackage);
         return this;

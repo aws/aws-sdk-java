@@ -44,6 +44,7 @@ public class DescribeMovingAddressesResult implements Serializable, Cloneable {
      * 
      * @return The status for each Elastic IP address.
      */
+
     public java.util.List<MovingAddressStatus> getMovingAddressStatuses() {
         if (movingAddressStatuses == null) {
             movingAddressStatuses = new com.amazonaws.internal.SdkInternalList<MovingAddressStatus>();
@@ -59,6 +60,7 @@ public class DescribeMovingAddressesResult implements Serializable, Cloneable {
      * @param movingAddressStatuses
      *        The status for each Elastic IP address.
      */
+
     public void setMovingAddressStatuses(
             java.util.Collection<MovingAddressStatus> movingAddressStatuses) {
         if (movingAddressStatuses == null) {
@@ -86,6 +88,7 @@ public class DescribeMovingAddressesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeMovingAddressesResult withMovingAddressStatuses(
             MovingAddressStatus... movingAddressStatuses) {
         if (this.movingAddressStatuses == null) {
@@ -108,6 +111,7 @@ public class DescribeMovingAddressesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeMovingAddressesResult withMovingAddressStatuses(
             java.util.Collection<MovingAddressStatus> movingAddressStatuses) {
         setMovingAddressStatuses(movingAddressStatuses);
@@ -124,6 +128,7 @@ public class DescribeMovingAddressesResult implements Serializable, Cloneable {
      *        The token to use to retrieve the next page of results. This value
      *        is <code>null</code> when there are no more results to return.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -137,6 +142,7 @@ public class DescribeMovingAddressesResult implements Serializable, Cloneable {
      * @return The token to use to retrieve the next page of results. This value
      *         is <code>null</code> when there are no more results to return.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -153,6 +159,7 @@ public class DescribeMovingAddressesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeMovingAddressesResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

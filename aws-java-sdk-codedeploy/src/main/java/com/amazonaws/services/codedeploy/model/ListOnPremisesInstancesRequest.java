@@ -76,6 +76,7 @@ public class ListOnPremisesInstancesRequest extends AmazonWebServiceRequest
      *        on-premises instances.</li>
      * @see RegistrationStatus
      */
+
     public void setRegistrationStatus(String registrationStatus) {
         this.registrationStatus = registrationStatus;
     }
@@ -99,6 +100,7 @@ public class ListOnPremisesInstancesRequest extends AmazonWebServiceRequest
      *         on-premises instances.</li>
      * @see RegistrationStatus
      */
+
     public String getRegistrationStatus() {
         return this.registrationStatus;
     }
@@ -125,6 +127,7 @@ public class ListOnPremisesInstancesRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see RegistrationStatus
      */
+
     public ListOnPremisesInstancesRequest withRegistrationStatus(
             String registrationStatus) {
         setRegistrationStatus(registrationStatus);
@@ -153,6 +156,7 @@ public class ListOnPremisesInstancesRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see RegistrationStatus
      */
+
     public void setRegistrationStatus(RegistrationStatus registrationStatus) {
         this.registrationStatus = registrationStatus.toString();
     }
@@ -179,6 +183,7 @@ public class ListOnPremisesInstancesRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see RegistrationStatus
      */
+
     public ListOnPremisesInstancesRequest withRegistrationStatus(
             RegistrationStatus registrationStatus) {
         setRegistrationStatus(registrationStatus);
@@ -194,6 +199,7 @@ public class ListOnPremisesInstancesRequest extends AmazonWebServiceRequest
      * @return The on-premises instance tags that will be used to restrict the
      *         corresponding on-premises instance names that are returned.
      */
+
     public java.util.List<TagFilter> getTagFilters() {
         if (tagFilters == null) {
             tagFilters = new com.amazonaws.internal.SdkInternalList<TagFilter>();
@@ -211,6 +217,7 @@ public class ListOnPremisesInstancesRequest extends AmazonWebServiceRequest
      *        The on-premises instance tags that will be used to restrict the
      *        corresponding on-premises instance names that are returned.
      */
+
     public void setTagFilters(java.util.Collection<TagFilter> tagFilters) {
         if (tagFilters == null) {
             this.tagFilters = null;
@@ -239,6 +246,7 @@ public class ListOnPremisesInstancesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListOnPremisesInstancesRequest withTagFilters(
             TagFilter... tagFilters) {
         if (this.tagFilters == null) {
@@ -263,6 +271,7 @@ public class ListOnPremisesInstancesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListOnPremisesInstancesRequest withTagFilters(
             java.util.Collection<TagFilter> tagFilters) {
         setTagFilters(tagFilters);
@@ -281,6 +290,7 @@ public class ListOnPremisesInstancesRequest extends AmazonWebServiceRequest
      *        instances call, which can be used to return the next set of
      *        on-premises instances in the list.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -296,6 +306,7 @@ public class ListOnPremisesInstancesRequest extends AmazonWebServiceRequest
      *         on-premises instances call, which can be used to return the next
      *         set of on-premises instances in the list.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -314,6 +325,7 @@ public class ListOnPremisesInstancesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListOnPremisesInstancesRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

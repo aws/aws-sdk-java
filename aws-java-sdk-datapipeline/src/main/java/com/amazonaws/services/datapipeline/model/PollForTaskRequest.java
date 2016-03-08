@@ -78,6 +78,7 @@ public class PollForTaskRequest extends AmazonWebServiceRequest implements
      *        in <code>workerGroup</code>; the string must be an exact,
      *        case-sensitive, match.
      */
+
     public void setWorkerGroup(String workerGroup) {
         this.workerGroup = workerGroup;
     }
@@ -100,6 +101,7 @@ public class PollForTaskRequest extends AmazonWebServiceRequest implements
      *         in <code>workerGroup</code>; the string must be an exact,
      *         case-sensitive, match.
      */
+
     public String getWorkerGroup() {
         return this.workerGroup;
     }
@@ -125,6 +127,7 @@ public class PollForTaskRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PollForTaskRequest withWorkerGroup(String workerGroup) {
         setWorkerGroup(workerGroup);
         return this;
@@ -138,6 +141,7 @@ public class PollForTaskRequest extends AmazonWebServiceRequest implements
      * @param hostname
      *        The public DNS name of the calling task runner.
      */
+
     public void setHostname(String hostname) {
         this.hostname = hostname;
     }
@@ -149,6 +153,7 @@ public class PollForTaskRequest extends AmazonWebServiceRequest implements
      * 
      * @return The public DNS name of the calling task runner.
      */
+
     public String getHostname() {
         return this.hostname;
     }
@@ -163,6 +168,7 @@ public class PollForTaskRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PollForTaskRequest withHostname(String hostname) {
         setHostname(hostname);
         return this;
@@ -192,6 +198,7 @@ public class PollForTaskRequest extends AmazonWebServiceRequest implements
      *        running on an EC2 instance, and ensures the proper AWS Data
      *        Pipeline service charges are applied to your pipeline.
      */
+
     public void setInstanceIdentity(InstanceIdentity instanceIdentity) {
         this.instanceIdentity = instanceIdentity;
     }
@@ -219,6 +226,7 @@ public class PollForTaskRequest extends AmazonWebServiceRequest implements
      *         runner is running on an EC2 instance, and ensures the proper AWS
      *         Data Pipeline service charges are applied to your pipeline.
      */
+
     public InstanceIdentity getInstanceIdentity() {
         return this.instanceIdentity;
     }
@@ -249,6 +257,7 @@ public class PollForTaskRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PollForTaskRequest withInstanceIdentity(
             InstanceIdentity instanceIdentity) {
         setInstanceIdentity(instanceIdentity);

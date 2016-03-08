@@ -97,6 +97,7 @@ public class LocalSecondaryIndexDescription implements Serializable, Cloneable {
      * @param indexName
      *        Represents the name of the local secondary index.
      */
+
     public void setIndexName(String indexName) {
         this.indexName = indexName;
     }
@@ -108,6 +109,7 @@ public class LocalSecondaryIndexDescription implements Serializable, Cloneable {
      * 
      * @return Represents the name of the local secondary index.
      */
+
     public String getIndexName() {
         return this.indexName;
     }
@@ -122,6 +124,7 @@ public class LocalSecondaryIndexDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LocalSecondaryIndexDescription withIndexName(String indexName) {
         setIndexName(indexName);
         return this;
@@ -188,6 +191,7 @@ public class LocalSecondaryIndexDescription implements Serializable, Cloneable {
      *         close together, in sorted order by the sort key value.
      *         </p>
      */
+
     public java.util.List<KeySchemaElement> getKeySchema() {
         return keySchema;
     }
@@ -254,6 +258,7 @@ public class LocalSecondaryIndexDescription implements Serializable, Cloneable {
      *        together, in sorted order by the sort key value.
      *        </p>
      */
+
     public void setKeySchema(java.util.Collection<KeySchemaElement> keySchema) {
         if (keySchema == null) {
             this.keySchema = null;
@@ -333,6 +338,7 @@ public class LocalSecondaryIndexDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LocalSecondaryIndexDescription withKeySchema(
             KeySchemaElement... keySchema) {
         if (this.keySchema == null) {
@@ -409,6 +415,7 @@ public class LocalSecondaryIndexDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LocalSecondaryIndexDescription withKeySchema(
             java.util.Collection<KeySchemaElement> keySchema) {
         setKeySchema(keySchema);
@@ -418,6 +425,7 @@ public class LocalSecondaryIndexDescription implements Serializable, Cloneable {
     /**
      * @param projection
      */
+
     public void setProjection(Projection projection) {
         this.projection = projection;
     }
@@ -425,6 +433,7 @@ public class LocalSecondaryIndexDescription implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Projection getProjection() {
         return this.projection;
     }
@@ -434,6 +443,7 @@ public class LocalSecondaryIndexDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LocalSecondaryIndexDescription withProjection(Projection projection) {
         setProjection(projection);
         return this;
@@ -451,6 +461,7 @@ public class LocalSecondaryIndexDescription implements Serializable, Cloneable {
      *        this value approximately every six hours. Recent changes might not
      *        be reflected in this value.
      */
+
     public void setIndexSizeBytes(Long indexSizeBytes) {
         this.indexSizeBytes = indexSizeBytes;
     }
@@ -466,6 +477,7 @@ public class LocalSecondaryIndexDescription implements Serializable, Cloneable {
      *         this value approximately every six hours. Recent changes might
      *         not be reflected in this value.
      */
+
     public Long getIndexSizeBytes() {
         return this.indexSizeBytes;
     }
@@ -484,6 +496,7 @@ public class LocalSecondaryIndexDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LocalSecondaryIndexDescription withIndexSizeBytes(Long indexSizeBytes) {
         setIndexSizeBytes(indexSizeBytes);
         return this;
@@ -501,6 +514,7 @@ public class LocalSecondaryIndexDescription implements Serializable, Cloneable {
      *        value approximately every six hours. Recent changes might not be
      *        reflected in this value.
      */
+
     public void setItemCount(Long itemCount) {
         this.itemCount = itemCount;
     }
@@ -516,6 +530,7 @@ public class LocalSecondaryIndexDescription implements Serializable, Cloneable {
      *         value approximately every six hours. Recent changes might not be
      *         reflected in this value.
      */
+
     public Long getItemCount() {
         return this.itemCount;
     }
@@ -534,6 +549,7 @@ public class LocalSecondaryIndexDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LocalSecondaryIndexDescription withItemCount(Long itemCount) {
         setItemCount(itemCount);
         return this;
@@ -547,6 +563,7 @@ public class LocalSecondaryIndexDescription implements Serializable, Cloneable {
      * @param indexArn
      *        The Amazon Resource Name (ARN) that uniquely identifies the index.
      */
+
     public void setIndexArn(String indexArn) {
         this.indexArn = indexArn;
     }
@@ -559,6 +576,7 @@ public class LocalSecondaryIndexDescription implements Serializable, Cloneable {
      * @return The Amazon Resource Name (ARN) that uniquely identifies the
      *         index.
      */
+
     public String getIndexArn() {
         return this.indexArn;
     }
@@ -573,6 +591,7 @@ public class LocalSecondaryIndexDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LocalSecondaryIndexDescription withIndexArn(String indexArn) {
         setIndexArn(indexArn);
         return this;

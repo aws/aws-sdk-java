@@ -40,6 +40,7 @@ public class CreatePlatformApplicationResult implements Serializable, Cloneable 
      * @param platformApplicationArn
      *        PlatformApplicationArn is returned.
      */
+
     public void setPlatformApplicationArn(String platformApplicationArn) {
         this.platformApplicationArn = platformApplicationArn;
     }
@@ -51,6 +52,7 @@ public class CreatePlatformApplicationResult implements Serializable, Cloneable 
      * 
      * @return PlatformApplicationArn is returned.
      */
+
     public String getPlatformApplicationArn() {
         return this.platformApplicationArn;
     }
@@ -65,6 +67,7 @@ public class CreatePlatformApplicationResult implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePlatformApplicationResult withPlatformApplicationArn(
             String platformApplicationArn) {
         setPlatformApplicationArn(platformApplicationArn);

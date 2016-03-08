@@ -61,6 +61,7 @@ public class ConfigurationRecorder implements Serializable, Cloneable {
      *        assigns the name &quot;default&quot; when creating the
      *        configuration recorder. You cannot change the assigned name.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -76,6 +77,7 @@ public class ConfigurationRecorder implements Serializable, Cloneable {
      *         assigns the name &quot;default&quot; when creating the
      *         configuration recorder. You cannot change the assigned name.
      */
+
     public String getName() {
         return this.name;
     }
@@ -94,6 +96,7 @@ public class ConfigurationRecorder implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigurationRecorder withName(String name) {
         setName(name);
         return this;
@@ -109,6 +112,7 @@ public class ConfigurationRecorder implements Serializable, Cloneable {
      *        Amazon Resource Name (ARN) of the IAM role used to describe the
      *        AWS resources associated with the account.
      */
+
     public void setRoleARN(String roleARN) {
         this.roleARN = roleARN;
     }
@@ -122,6 +126,7 @@ public class ConfigurationRecorder implements Serializable, Cloneable {
      * @return Amazon Resource Name (ARN) of the IAM role used to describe the
      *         AWS resources associated with the account.
      */
+
     public String getRoleARN() {
         return this.roleARN;
     }
@@ -138,6 +143,7 @@ public class ConfigurationRecorder implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigurationRecorder withRoleARN(String roleARN) {
         setRoleARN(roleARN);
         return this;
@@ -153,6 +159,7 @@ public class ConfigurationRecorder implements Serializable, Cloneable {
      *        Specifies the types of AWS resource for which AWS Config records
      *        configuration changes.
      */
+
     public void setRecordingGroup(RecordingGroup recordingGroup) {
         this.recordingGroup = recordingGroup;
     }
@@ -166,6 +173,7 @@ public class ConfigurationRecorder implements Serializable, Cloneable {
      * @return Specifies the types of AWS resource for which AWS Config records
      *         configuration changes.
      */
+
     public RecordingGroup getRecordingGroup() {
         return this.recordingGroup;
     }
@@ -182,6 +190,7 @@ public class ConfigurationRecorder implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigurationRecorder withRecordingGroup(
             RecordingGroup recordingGroup) {
         setRecordingGroup(recordingGroup);

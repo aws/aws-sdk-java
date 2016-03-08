@@ -52,6 +52,7 @@ public class DeleteTrafficPolicyInstanceRequest extends AmazonWebServiceRequest
      *        Route 53 also deletes all of the resource record sets that were
      *        created when you created the traffic policy instance.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -69,6 +70,7 @@ public class DeleteTrafficPolicyInstanceRequest extends AmazonWebServiceRequest
      *         Route 53 also deletes all of the resource record sets that were
      *         created when you created the traffic policy instance.
      */
+
     public String getId() {
         return this.id;
     }
@@ -89,6 +91,7 @@ public class DeleteTrafficPolicyInstanceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteTrafficPolicyInstanceRequest withId(String id) {
         setId(id);
         return this;

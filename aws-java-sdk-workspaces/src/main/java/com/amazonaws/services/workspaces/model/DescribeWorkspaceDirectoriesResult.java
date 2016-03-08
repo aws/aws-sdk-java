@@ -50,6 +50,7 @@ public class DescribeWorkspaceDirectoriesResult implements Serializable,
      * @return An array of structures that contain information about the
      *         directories.
      */
+
     public java.util.List<WorkspaceDirectory> getDirectories() {
         if (directories == null) {
             directories = new com.amazonaws.internal.SdkInternalList<WorkspaceDirectory>();
@@ -66,6 +67,7 @@ public class DescribeWorkspaceDirectoriesResult implements Serializable,
      *        An array of structures that contain information about the
      *        directories.
      */
+
     public void setDirectories(
             java.util.Collection<WorkspaceDirectory> directories) {
         if (directories == null) {
@@ -94,6 +96,7 @@ public class DescribeWorkspaceDirectoriesResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeWorkspaceDirectoriesResult withDirectories(
             WorkspaceDirectory... directories) {
         if (this.directories == null) {
@@ -117,6 +120,7 @@ public class DescribeWorkspaceDirectoriesResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeWorkspaceDirectoriesResult withDirectories(
             java.util.Collection<WorkspaceDirectory> directories) {
         setDirectories(directories);
@@ -137,6 +141,7 @@ public class DescribeWorkspaceDirectoriesResult implements Serializable,
      *        operation to retrieve the next set of items. This token is valid
      *        for one day and must be used within that timeframe.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -154,6 +159,7 @@ public class DescribeWorkspaceDirectoriesResult implements Serializable,
      *         operation to retrieve the next set of items. This token is valid
      *         for one day and must be used within that timeframe.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -174,6 +180,7 @@ public class DescribeWorkspaceDirectoriesResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeWorkspaceDirectoriesResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

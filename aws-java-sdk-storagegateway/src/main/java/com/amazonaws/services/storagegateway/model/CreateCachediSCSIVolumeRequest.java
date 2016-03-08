@@ -40,6 +40,7 @@ public class CreateCachediSCSIVolumeRequest extends AmazonWebServiceRequest
     /**
      * @param gatewayARN
      */
+
     public void setGatewayARN(String gatewayARN) {
         this.gatewayARN = gatewayARN;
     }
@@ -47,6 +48,7 @@ public class CreateCachediSCSIVolumeRequest extends AmazonWebServiceRequest
     /**
      * @return
      */
+
     public String getGatewayARN() {
         return this.gatewayARN;
     }
@@ -56,6 +58,7 @@ public class CreateCachediSCSIVolumeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateCachediSCSIVolumeRequest withGatewayARN(String gatewayARN) {
         setGatewayARN(gatewayARN);
         return this;
@@ -64,6 +67,7 @@ public class CreateCachediSCSIVolumeRequest extends AmazonWebServiceRequest
     /**
      * @param volumeSizeInBytes
      */
+
     public void setVolumeSizeInBytes(Long volumeSizeInBytes) {
         this.volumeSizeInBytes = volumeSizeInBytes;
     }
@@ -71,6 +75,7 @@ public class CreateCachediSCSIVolumeRequest extends AmazonWebServiceRequest
     /**
      * @return
      */
+
     public Long getVolumeSizeInBytes() {
         return this.volumeSizeInBytes;
     }
@@ -80,6 +85,7 @@ public class CreateCachediSCSIVolumeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateCachediSCSIVolumeRequest withVolumeSizeInBytes(
             Long volumeSizeInBytes) {
         setVolumeSizeInBytes(volumeSizeInBytes);
@@ -89,6 +95,7 @@ public class CreateCachediSCSIVolumeRequest extends AmazonWebServiceRequest
     /**
      * @param snapshotId
      */
+
     public void setSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
     }
@@ -96,6 +103,7 @@ public class CreateCachediSCSIVolumeRequest extends AmazonWebServiceRequest
     /**
      * @return
      */
+
     public String getSnapshotId() {
         return this.snapshotId;
     }
@@ -105,6 +113,7 @@ public class CreateCachediSCSIVolumeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateCachediSCSIVolumeRequest withSnapshotId(String snapshotId) {
         setSnapshotId(snapshotId);
         return this;
@@ -113,6 +122,7 @@ public class CreateCachediSCSIVolumeRequest extends AmazonWebServiceRequest
     /**
      * @param targetName
      */
+
     public void setTargetName(String targetName) {
         this.targetName = targetName;
     }
@@ -120,6 +130,7 @@ public class CreateCachediSCSIVolumeRequest extends AmazonWebServiceRequest
     /**
      * @return
      */
+
     public String getTargetName() {
         return this.targetName;
     }
@@ -129,6 +140,7 @@ public class CreateCachediSCSIVolumeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateCachediSCSIVolumeRequest withTargetName(String targetName) {
         setTargetName(targetName);
         return this;
@@ -137,6 +149,7 @@ public class CreateCachediSCSIVolumeRequest extends AmazonWebServiceRequest
     /**
      * @param networkInterfaceId
      */
+
     public void setNetworkInterfaceId(String networkInterfaceId) {
         this.networkInterfaceId = networkInterfaceId;
     }
@@ -144,6 +157,7 @@ public class CreateCachediSCSIVolumeRequest extends AmazonWebServiceRequest
     /**
      * @return
      */
+
     public String getNetworkInterfaceId() {
         return this.networkInterfaceId;
     }
@@ -153,6 +167,7 @@ public class CreateCachediSCSIVolumeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateCachediSCSIVolumeRequest withNetworkInterfaceId(
             String networkInterfaceId) {
         setNetworkInterfaceId(networkInterfaceId);
@@ -162,6 +177,7 @@ public class CreateCachediSCSIVolumeRequest extends AmazonWebServiceRequest
     /**
      * @param clientToken
      */
+
     public void setClientToken(String clientToken) {
         this.clientToken = clientToken;
     }
@@ -169,6 +185,7 @@ public class CreateCachediSCSIVolumeRequest extends AmazonWebServiceRequest
     /**
      * @return
      */
+
     public String getClientToken() {
         return this.clientToken;
     }
@@ -178,6 +195,7 @@ public class CreateCachediSCSIVolumeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateCachediSCSIVolumeRequest withClientToken(String clientToken) {
         setClientToken(clientToken);
         return this;

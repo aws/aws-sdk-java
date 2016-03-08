@@ -53,6 +53,7 @@ public class ListDeploymentGroupsRequest extends AmazonWebServiceRequest
      *        The name of an existing AWS CodeDeploy application associated with
      *        the applicable IAM user or AWS account.
      */
+
     public void setApplicationName(String applicationName) {
         this.applicationName = applicationName;
     }
@@ -66,6 +67,7 @@ public class ListDeploymentGroupsRequest extends AmazonWebServiceRequest
      * @return The name of an existing AWS CodeDeploy application associated
      *         with the applicable IAM user or AWS account.
      */
+
     public String getApplicationName() {
         return this.applicationName;
     }
@@ -82,6 +84,7 @@ public class ListDeploymentGroupsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListDeploymentGroupsRequest withApplicationName(
             String applicationName) {
         setApplicationName(applicationName);
@@ -100,6 +103,7 @@ public class ListDeploymentGroupsRequest extends AmazonWebServiceRequest
      *        groups call, which can be used to return the next set of
      *        deployment groups in the list.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -115,6 +119,7 @@ public class ListDeploymentGroupsRequest extends AmazonWebServiceRequest
      *         groups call, which can be used to return the next set of
      *         deployment groups in the list.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -133,6 +138,7 @@ public class ListDeploymentGroupsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListDeploymentGroupsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

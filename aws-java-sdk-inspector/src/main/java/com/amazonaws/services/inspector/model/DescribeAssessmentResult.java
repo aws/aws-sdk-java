@@ -38,6 +38,7 @@ public class DescribeAssessmentResult implements Serializable, Cloneable {
      * @param assessment
      *        Information about the assessment.
      */
+
     public void setAssessment(Assessment assessment) {
         this.assessment = assessment;
     }
@@ -49,6 +50,7 @@ public class DescribeAssessmentResult implements Serializable, Cloneable {
      * 
      * @return Information about the assessment.
      */
+
     public Assessment getAssessment() {
         return this.assessment;
     }
@@ -63,6 +65,7 @@ public class DescribeAssessmentResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAssessmentResult withAssessment(Assessment assessment) {
         setAssessment(assessment);
         return this;

@@ -37,6 +37,7 @@ public class PutEvaluationsResult implements Serializable, Cloneable {
      * 
      * @return Requests that failed because of a client or server error.
      */
+
     public java.util.List<Evaluation> getFailedEvaluations() {
         if (failedEvaluations == null) {
             failedEvaluations = new com.amazonaws.internal.SdkInternalList<Evaluation>();
@@ -52,6 +53,7 @@ public class PutEvaluationsResult implements Serializable, Cloneable {
      * @param failedEvaluations
      *        Requests that failed because of a client or server error.
      */
+
     public void setFailedEvaluations(
             java.util.Collection<Evaluation> failedEvaluations) {
         if (failedEvaluations == null) {
@@ -79,6 +81,7 @@ public class PutEvaluationsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutEvaluationsResult withFailedEvaluations(
             Evaluation... failedEvaluations) {
         if (this.failedEvaluations == null) {
@@ -101,6 +104,7 @@ public class PutEvaluationsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutEvaluationsResult withFailedEvaluations(
             java.util.Collection<Evaluation> failedEvaluations) {
         setFailedEvaluations(failedEvaluations);

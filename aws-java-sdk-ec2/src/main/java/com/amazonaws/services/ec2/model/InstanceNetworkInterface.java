@@ -120,6 +120,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * @param networkInterfaceId
      *        The ID of the network interface.
      */
+
     public void setNetworkInterfaceId(String networkInterfaceId) {
         this.networkInterfaceId = networkInterfaceId;
     }
@@ -131,6 +132,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * 
      * @return The ID of the network interface.
      */
+
     public String getNetworkInterfaceId() {
         return this.networkInterfaceId;
     }
@@ -145,6 +147,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceNetworkInterface withNetworkInterfaceId(
             String networkInterfaceId) {
         setNetworkInterfaceId(networkInterfaceId);
@@ -159,6 +162,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * @param subnetId
      *        The ID of the subnet.
      */
+
     public void setSubnetId(String subnetId) {
         this.subnetId = subnetId;
     }
@@ -170,6 +174,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * 
      * @return The ID of the subnet.
      */
+
     public String getSubnetId() {
         return this.subnetId;
     }
@@ -184,6 +189,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceNetworkInterface withSubnetId(String subnetId) {
         setSubnetId(subnetId);
         return this;
@@ -197,6 +203,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * @param vpcId
      *        The ID of the VPC.
      */
+
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
@@ -208,6 +215,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * 
      * @return The ID of the VPC.
      */
+
     public String getVpcId() {
         return this.vpcId;
     }
@@ -222,6 +230,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceNetworkInterface withVpcId(String vpcId) {
         setVpcId(vpcId);
         return this;
@@ -235,6 +244,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * @param description
      *        The description.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -246,6 +256,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * 
      * @return The description.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -260,6 +271,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceNetworkInterface withDescription(String description) {
         setDescription(description);
         return this;
@@ -273,6 +285,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * @param ownerId
      *        The ID of the AWS account that created the network interface.
      */
+
     public void setOwnerId(String ownerId) {
         this.ownerId = ownerId;
     }
@@ -284,6 +297,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * 
      * @return The ID of the AWS account that created the network interface.
      */
+
     public String getOwnerId() {
         return this.ownerId;
     }
@@ -298,6 +312,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceNetworkInterface withOwnerId(String ownerId) {
         setOwnerId(ownerId);
         return this;
@@ -312,6 +327,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      *        The status of the network interface.
      * @see NetworkInterfaceStatus
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -324,6 +340,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * @return The status of the network interface.
      * @see NetworkInterfaceStatus
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -339,6 +356,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      *         chained together.
      * @see NetworkInterfaceStatus
      */
+
     public InstanceNetworkInterface withStatus(String status) {
         setStatus(status);
         return this;
@@ -355,6 +373,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      *         chained together.
      * @see NetworkInterfaceStatus
      */
+
     public void setStatus(NetworkInterfaceStatus status) {
         this.status = status.toString();
     }
@@ -370,6 +389,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      *         chained together.
      * @see NetworkInterfaceStatus
      */
+
     public InstanceNetworkInterface withStatus(NetworkInterfaceStatus status) {
         setStatus(status);
         return this;
@@ -383,6 +403,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * @param macAddress
      *        The MAC address.
      */
+
     public void setMacAddress(String macAddress) {
         this.macAddress = macAddress;
     }
@@ -394,6 +415,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * 
      * @return The MAC address.
      */
+
     public String getMacAddress() {
         return this.macAddress;
     }
@@ -408,6 +430,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceNetworkInterface withMacAddress(String macAddress) {
         setMacAddress(macAddress);
         return this;
@@ -421,6 +444,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * @param privateIpAddress
      *        The IP address of the network interface within the subnet.
      */
+
     public void setPrivateIpAddress(String privateIpAddress) {
         this.privateIpAddress = privateIpAddress;
     }
@@ -432,6 +456,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * 
      * @return The IP address of the network interface within the subnet.
      */
+
     public String getPrivateIpAddress() {
         return this.privateIpAddress;
     }
@@ -446,6 +471,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceNetworkInterface withPrivateIpAddress(String privateIpAddress) {
         setPrivateIpAddress(privateIpAddress);
         return this;
@@ -459,6 +485,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * @param privateDnsName
      *        The private DNS name.
      */
+
     public void setPrivateDnsName(String privateDnsName) {
         this.privateDnsName = privateDnsName;
     }
@@ -470,6 +497,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * 
      * @return The private DNS name.
      */
+
     public String getPrivateDnsName() {
         return this.privateDnsName;
     }
@@ -484,6 +512,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceNetworkInterface withPrivateDnsName(String privateDnsName) {
         setPrivateDnsName(privateDnsName);
         return this;
@@ -499,6 +528,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      *        Indicates whether to validate network traffic to or from this
      *        network interface.
      */
+
     public void setSourceDestCheck(Boolean sourceDestCheck) {
         this.sourceDestCheck = sourceDestCheck;
     }
@@ -512,6 +542,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * @return Indicates whether to validate network traffic to or from this
      *         network interface.
      */
+
     public Boolean getSourceDestCheck() {
         return this.sourceDestCheck;
     }
@@ -528,6 +559,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceNetworkInterface withSourceDestCheck(Boolean sourceDestCheck) {
         setSourceDestCheck(sourceDestCheck);
         return this;
@@ -542,6 +574,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * @return Indicates whether to validate network traffic to or from this
      *         network interface.
      */
+
     public Boolean isSourceDestCheck() {
         return this.sourceDestCheck;
     }
@@ -553,6 +586,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * 
      * @return One or more security groups.
      */
+
     public java.util.List<GroupIdentifier> getGroups() {
         if (groups == null) {
             groups = new com.amazonaws.internal.SdkInternalList<GroupIdentifier>();
@@ -568,6 +602,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * @param groups
      *        One or more security groups.
      */
+
     public void setGroups(java.util.Collection<GroupIdentifier> groups) {
         if (groups == null) {
             this.groups = null;
@@ -594,6 +629,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceNetworkInterface withGroups(GroupIdentifier... groups) {
         if (this.groups == null) {
             setGroups(new com.amazonaws.internal.SdkInternalList<GroupIdentifier>(
@@ -615,6 +651,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceNetworkInterface withGroups(
             java.util.Collection<GroupIdentifier> groups) {
         setGroups(groups);
@@ -629,6 +666,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * @param attachment
      *        The network interface attachment.
      */
+
     public void setAttachment(InstanceNetworkInterfaceAttachment attachment) {
         this.attachment = attachment;
     }
@@ -640,6 +678,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * 
      * @return The network interface attachment.
      */
+
     public InstanceNetworkInterfaceAttachment getAttachment() {
         return this.attachment;
     }
@@ -654,6 +693,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceNetworkInterface withAttachment(
             InstanceNetworkInterfaceAttachment attachment) {
         setAttachment(attachment);
@@ -670,6 +710,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      *        The association information for an Elastic IP associated with the
      *        network interface.
      */
+
     public void setAssociation(InstanceNetworkInterfaceAssociation association) {
         this.association = association;
     }
@@ -683,6 +724,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * @return The association information for an Elastic IP associated with the
      *         network interface.
      */
+
     public InstanceNetworkInterfaceAssociation getAssociation() {
         return this.association;
     }
@@ -699,6 +741,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceNetworkInterface withAssociation(
             InstanceNetworkInterfaceAssociation association) {
         setAssociation(association);
@@ -712,6 +755,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * 
      * @return The private IP addresses associated with the network interface.
      */
+
     public java.util.List<InstancePrivateIpAddress> getPrivateIpAddresses() {
         if (privateIpAddresses == null) {
             privateIpAddresses = new com.amazonaws.internal.SdkInternalList<InstancePrivateIpAddress>();
@@ -727,6 +771,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * @param privateIpAddresses
      *        The private IP addresses associated with the network interface.
      */
+
     public void setPrivateIpAddresses(
             java.util.Collection<InstancePrivateIpAddress> privateIpAddresses) {
         if (privateIpAddresses == null) {
@@ -754,6 +799,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceNetworkInterface withPrivateIpAddresses(
             InstancePrivateIpAddress... privateIpAddresses) {
         if (this.privateIpAddresses == null) {
@@ -776,6 +822,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceNetworkInterface withPrivateIpAddresses(
             java.util.Collection<InstancePrivateIpAddress> privateIpAddresses) {
         setPrivateIpAddresses(privateIpAddresses);

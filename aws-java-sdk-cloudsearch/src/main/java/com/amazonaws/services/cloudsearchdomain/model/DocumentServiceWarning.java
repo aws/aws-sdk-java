@@ -41,6 +41,7 @@ public class DocumentServiceWarning implements Serializable, Cloneable {
      * @param message
      *        The description for a warning returned by the document service.
      */
+
     public void setMessage(String message) {
         this.message = message;
     }
@@ -52,6 +53,7 @@ public class DocumentServiceWarning implements Serializable, Cloneable {
      * 
      * @return The description for a warning returned by the document service.
      */
+
     public String getMessage() {
         return this.message;
     }
@@ -66,6 +68,7 @@ public class DocumentServiceWarning implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DocumentServiceWarning withMessage(String message) {
         setMessage(message);
         return this;

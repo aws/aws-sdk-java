@@ -38,6 +38,7 @@ public class EnableAvailabilityZonesForLoadBalancerResult implements
      * 
      * @return The updated list of Availability Zones for the load balancer.
      */
+
     public java.util.List<String> getAvailabilityZones() {
         if (availabilityZones == null) {
             availabilityZones = new com.amazonaws.internal.SdkInternalList<String>();
@@ -53,6 +54,7 @@ public class EnableAvailabilityZonesForLoadBalancerResult implements
      * @param availabilityZones
      *        The updated list of Availability Zones for the load balancer.
      */
+
     public void setAvailabilityZones(
             java.util.Collection<String> availabilityZones) {
         if (availabilityZones == null) {
@@ -80,6 +82,7 @@ public class EnableAvailabilityZonesForLoadBalancerResult implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EnableAvailabilityZonesForLoadBalancerResult withAvailabilityZones(
             String... availabilityZones) {
         if (this.availabilityZones == null) {
@@ -102,6 +105,7 @@ public class EnableAvailabilityZonesForLoadBalancerResult implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EnableAvailabilityZonesForLoadBalancerResult withAvailabilityZones(
             java.util.Collection<String> availabilityZones) {
         setAvailabilityZones(availabilityZones);

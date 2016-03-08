@@ -72,6 +72,7 @@ public class CreateAuthorizerRequest extends AmazonWebServiceRequest implements
     /**
      * @param restApiId
      */
+
     public void setRestApiId(String restApiId) {
         this.restApiId = restApiId;
     }
@@ -79,6 +80,7 @@ public class CreateAuthorizerRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public String getRestApiId() {
         return this.restApiId;
     }
@@ -88,6 +90,7 @@ public class CreateAuthorizerRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateAuthorizerRequest withRestApiId(String restApiId) {
         setRestApiId(restApiId);
         return this;
@@ -101,6 +104,7 @@ public class CreateAuthorizerRequest extends AmazonWebServiceRequest implements
      * @param name
      *        [Required] The name of the authorizer.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -112,6 +116,7 @@ public class CreateAuthorizerRequest extends AmazonWebServiceRequest implements
      * 
      * @return [Required] The name of the authorizer.
      */
+
     public String getName() {
         return this.name;
     }
@@ -126,6 +131,7 @@ public class CreateAuthorizerRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateAuthorizerRequest withName(String name) {
         setName(name);
         return this;
@@ -140,6 +146,7 @@ public class CreateAuthorizerRequest extends AmazonWebServiceRequest implements
      *        [Required] The type of the authorizer.
      * @see AuthorizerType
      */
+
     public void setType(String type) {
         this.type = type;
     }
@@ -152,6 +159,7 @@ public class CreateAuthorizerRequest extends AmazonWebServiceRequest implements
      * @return [Required] The type of the authorizer.
      * @see AuthorizerType
      */
+
     public String getType() {
         return this.type;
     }
@@ -167,6 +175,7 @@ public class CreateAuthorizerRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see AuthorizerType
      */
+
     public CreateAuthorizerRequest withType(String type) {
         setType(type);
         return this;
@@ -183,6 +192,7 @@ public class CreateAuthorizerRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see AuthorizerType
      */
+
     public void setType(AuthorizerType type) {
         this.type = type.toString();
     }
@@ -198,6 +208,7 @@ public class CreateAuthorizerRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see AuthorizerType
      */
+
     public CreateAuthorizerRequest withType(AuthorizerType type) {
         setType(type);
         return this;
@@ -212,6 +223,7 @@ public class CreateAuthorizerRequest extends AmazonWebServiceRequest implements
      *        [Required] Specifies the authorizer's Uniform Resource Identifier
      *        (URI).
      */
+
     public void setAuthorizerUri(String authorizerUri) {
         this.authorizerUri = authorizerUri;
     }
@@ -224,6 +236,7 @@ public class CreateAuthorizerRequest extends AmazonWebServiceRequest implements
      * @return [Required] Specifies the authorizer's Uniform Resource Identifier
      *         (URI).
      */
+
     public String getAuthorizerUri() {
         return this.authorizerUri;
     }
@@ -239,6 +252,7 @@ public class CreateAuthorizerRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateAuthorizerRequest withAuthorizerUri(String authorizerUri) {
         setAuthorizerUri(authorizerUri);
         return this;
@@ -252,6 +266,7 @@ public class CreateAuthorizerRequest extends AmazonWebServiceRequest implements
      * @param authorizerCredentials
      *        Specifies the credentials required for the authorizer, if any.
      */
+
     public void setAuthorizerCredentials(String authorizerCredentials) {
         this.authorizerCredentials = authorizerCredentials;
     }
@@ -263,6 +278,7 @@ public class CreateAuthorizerRequest extends AmazonWebServiceRequest implements
      * 
      * @return Specifies the credentials required for the authorizer, if any.
      */
+
     public String getAuthorizerCredentials() {
         return this.authorizerCredentials;
     }
@@ -277,6 +293,7 @@ public class CreateAuthorizerRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateAuthorizerRequest withAuthorizerCredentials(
             String authorizerCredentials) {
         setAuthorizerCredentials(authorizerCredentials);
@@ -291,6 +308,7 @@ public class CreateAuthorizerRequest extends AmazonWebServiceRequest implements
      * @param identitySource
      *        [Required] The source of the identity in an incoming request.
      */
+
     public void setIdentitySource(String identitySource) {
         this.identitySource = identitySource;
     }
@@ -302,6 +320,7 @@ public class CreateAuthorizerRequest extends AmazonWebServiceRequest implements
      * 
      * @return [Required] The source of the identity in an incoming request.
      */
+
     public String getIdentitySource() {
         return this.identitySource;
     }
@@ -316,6 +335,7 @@ public class CreateAuthorizerRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateAuthorizerRequest withIdentitySource(String identitySource) {
         setIdentitySource(identitySource);
         return this;
@@ -329,6 +349,7 @@ public class CreateAuthorizerRequest extends AmazonWebServiceRequest implements
      * @param identityValidationExpression
      *        A validation expression for the incoming identity.
      */
+
     public void setIdentityValidationExpression(
             String identityValidationExpression) {
         this.identityValidationExpression = identityValidationExpression;
@@ -341,6 +362,7 @@ public class CreateAuthorizerRequest extends AmazonWebServiceRequest implements
      * 
      * @return A validation expression for the incoming identity.
      */
+
     public String getIdentityValidationExpression() {
         return this.identityValidationExpression;
     }
@@ -355,6 +377,7 @@ public class CreateAuthorizerRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateAuthorizerRequest withIdentityValidationExpression(
             String identityValidationExpression) {
         setIdentityValidationExpression(identityValidationExpression);
@@ -369,6 +392,7 @@ public class CreateAuthorizerRequest extends AmazonWebServiceRequest implements
      * @param authorizerResultTtlInSeconds
      *        The TTL of cached authorizer results.
      */
+
     public void setAuthorizerResultTtlInSeconds(
             Integer authorizerResultTtlInSeconds) {
         this.authorizerResultTtlInSeconds = authorizerResultTtlInSeconds;
@@ -381,6 +405,7 @@ public class CreateAuthorizerRequest extends AmazonWebServiceRequest implements
      * 
      * @return The TTL of cached authorizer results.
      */
+
     public Integer getAuthorizerResultTtlInSeconds() {
         return this.authorizerResultTtlInSeconds;
     }
@@ -395,6 +420,7 @@ public class CreateAuthorizerRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateAuthorizerRequest withAuthorizerResultTtlInSeconds(
             Integer authorizerResultTtlInSeconds) {
         setAuthorizerResultTtlInSeconds(authorizerResultTtlInSeconds);

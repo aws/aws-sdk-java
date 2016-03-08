@@ -48,6 +48,7 @@ public class DescribeStackProvisioningParametersResult implements Serializable,
      * @param agentInstallerUrl
      *        The AWS OpsWorks agent installer's URL.
      */
+
     public void setAgentInstallerUrl(String agentInstallerUrl) {
         this.agentInstallerUrl = agentInstallerUrl;
     }
@@ -59,6 +60,7 @@ public class DescribeStackProvisioningParametersResult implements Serializable,
      * 
      * @return The AWS OpsWorks agent installer's URL.
      */
+
     public String getAgentInstallerUrl() {
         return this.agentInstallerUrl;
     }
@@ -73,6 +75,7 @@ public class DescribeStackProvisioningParametersResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeStackProvisioningParametersResult withAgentInstallerUrl(
             String agentInstallerUrl) {
         setAgentInstallerUrl(agentInstallerUrl);
@@ -86,6 +89,7 @@ public class DescribeStackProvisioningParametersResult implements Serializable,
      * 
      * @return An embedded object that contains the provisioning parameters.
      */
+
     public java.util.Map<String, String> getParameters() {
         if (parameters == null) {
             parameters = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -101,6 +105,7 @@ public class DescribeStackProvisioningParametersResult implements Serializable,
      * @param parameters
      *        An embedded object that contains the provisioning parameters.
      */
+
     public void setParameters(java.util.Map<String, String> parameters) {
         this.parameters = parameters == null ? null
                 : new com.amazonaws.internal.SdkInternalMap<String, String>(
@@ -117,6 +122,7 @@ public class DescribeStackProvisioningParametersResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeStackProvisioningParametersResult withParameters(
             java.util.Map<String, String> parameters) {
         setParameters(parameters);
@@ -139,6 +145,7 @@ public class DescribeStackProvisioningParametersResult implements Serializable,
      * Removes all the entries added into Parameters. &lt;p> Returns a reference
      * to this object so that method calls can be chained together.
      */
+
     public DescribeStackProvisioningParametersResult clearParametersEntries() {
         this.parameters = null;
         return this;

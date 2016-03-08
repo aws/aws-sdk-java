@@ -102,6 +102,7 @@ public class AutoScalingThresholds implements Serializable, Cloneable {
      *        The number of instances to add or remove when the load exceeds a
      *        threshold.
      */
+
     public void setInstanceCount(Integer instanceCount) {
         this.instanceCount = instanceCount;
     }
@@ -115,6 +116,7 @@ public class AutoScalingThresholds implements Serializable, Cloneable {
      * @return The number of instances to add or remove when the load exceeds a
      *         threshold.
      */
+
     public Integer getInstanceCount() {
         return this.instanceCount;
     }
@@ -131,6 +133,7 @@ public class AutoScalingThresholds implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AutoScalingThresholds withInstanceCount(Integer instanceCount) {
         setInstanceCount(instanceCount);
         return this;
@@ -146,6 +149,7 @@ public class AutoScalingThresholds implements Serializable, Cloneable {
      *        The amount of time, in minutes, that the load must exceed a
      *        threshold before more instances are added or removed.
      */
+
     public void setThresholdsWaitTime(Integer thresholdsWaitTime) {
         this.thresholdsWaitTime = thresholdsWaitTime;
     }
@@ -159,6 +163,7 @@ public class AutoScalingThresholds implements Serializable, Cloneable {
      * @return The amount of time, in minutes, that the load must exceed a
      *         threshold before more instances are added or removed.
      */
+
     public Integer getThresholdsWaitTime() {
         return this.thresholdsWaitTime;
     }
@@ -175,6 +180,7 @@ public class AutoScalingThresholds implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AutoScalingThresholds withThresholdsWaitTime(
             Integer thresholdsWaitTime) {
         setThresholdsWaitTime(thresholdsWaitTime);
@@ -204,6 +210,7 @@ public class AutoScalingThresholds implements Serializable, Cloneable {
      *        allows you to direct AWS OpsWorks to suppress scaling events long
      *        enough to get the new instances online.
      */
+
     public void setIgnoreMetricsTime(Integer ignoreMetricsTime) {
         this.ignoreMetricsTime = ignoreMetricsTime;
     }
@@ -231,6 +238,7 @@ public class AutoScalingThresholds implements Serializable, Cloneable {
      *         to suppress scaling events long enough to get the new instances
      *         online.
      */
+
     public Integer getIgnoreMetricsTime() {
         return this.ignoreMetricsTime;
     }
@@ -260,6 +268,7 @@ public class AutoScalingThresholds implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AutoScalingThresholds withIgnoreMetricsTime(Integer ignoreMetricsTime) {
         setIgnoreMetricsTime(ignoreMetricsTime);
         return this;
@@ -275,6 +284,7 @@ public class AutoScalingThresholds implements Serializable, Cloneable {
      *        The CPU utilization threshold, as a percent of the available CPU.
      *        A value of -1 disables the threshold.
      */
+
     public void setCpuThreshold(Double cpuThreshold) {
         this.cpuThreshold = cpuThreshold;
     }
@@ -288,6 +298,7 @@ public class AutoScalingThresholds implements Serializable, Cloneable {
      * @return The CPU utilization threshold, as a percent of the available CPU.
      *         A value of -1 disables the threshold.
      */
+
     public Double getCpuThreshold() {
         return this.cpuThreshold;
     }
@@ -304,6 +315,7 @@ public class AutoScalingThresholds implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AutoScalingThresholds withCpuThreshold(Double cpuThreshold) {
         setCpuThreshold(cpuThreshold);
         return this;
@@ -319,6 +331,7 @@ public class AutoScalingThresholds implements Serializable, Cloneable {
      *        The memory utilization threshold, as a percent of the available
      *        memory. A value of -1 disables the threshold.
      */
+
     public void setMemoryThreshold(Double memoryThreshold) {
         this.memoryThreshold = memoryThreshold;
     }
@@ -332,6 +345,7 @@ public class AutoScalingThresholds implements Serializable, Cloneable {
      * @return The memory utilization threshold, as a percent of the available
      *         memory. A value of -1 disables the threshold.
      */
+
     public Double getMemoryThreshold() {
         return this.memoryThreshold;
     }
@@ -348,6 +362,7 @@ public class AutoScalingThresholds implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AutoScalingThresholds withMemoryThreshold(Double memoryThreshold) {
         setMemoryThreshold(memoryThreshold);
         return this;
@@ -367,6 +382,7 @@ public class AutoScalingThresholds implements Serializable, Cloneable {
      *        href="http://en.wikipedia.org/wiki/Load_%28computing%29">Load
      *        (computing)</a>.
      */
+
     public void setLoadThreshold(Double loadThreshold) {
         this.loadThreshold = loadThreshold;
     }
@@ -384,6 +400,7 @@ public class AutoScalingThresholds implements Serializable, Cloneable {
      *         href="http://en.wikipedia.org/wiki/Load_%28computing%29">Load
      *         (computing)</a>.
      */
+
     public Double getLoadThreshold() {
         return this.loadThreshold;
     }
@@ -404,6 +421,7 @@ public class AutoScalingThresholds implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AutoScalingThresholds withLoadThreshold(Double loadThreshold) {
         setLoadThreshold(loadThreshold);
         return this;
@@ -433,6 +451,7 @@ public class AutoScalingThresholds implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html"
      *         >Allowing AWS OpsWorks to Act on Your Behalf</a>.
      */
+
     public java.util.List<String> getAlarms() {
         if (alarms == null) {
             alarms = new com.amazonaws.internal.SdkInternalList<String>();
@@ -465,6 +484,7 @@ public class AutoScalingThresholds implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html"
      *        >Allowing AWS OpsWorks to Act on Your Behalf</a>.
      */
+
     public void setAlarms(java.util.Collection<String> alarms) {
         if (alarms == null) {
             this.alarms = null;
@@ -507,6 +527,7 @@ public class AutoScalingThresholds implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AutoScalingThresholds withAlarms(String... alarms) {
         if (this.alarms == null) {
             setAlarms(new com.amazonaws.internal.SdkInternalList<String>(
@@ -545,6 +566,7 @@ public class AutoScalingThresholds implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AutoScalingThresholds withAlarms(java.util.Collection<String> alarms) {
         setAlarms(alarms);
         return this;

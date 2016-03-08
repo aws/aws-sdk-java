@@ -38,6 +38,7 @@ public class GetExportRequest extends AmazonWebServiceRequest implements
     /**
      * @param restApiId
      */
+
     public void setRestApiId(String restApiId) {
         this.restApiId = restApiId;
     }
@@ -45,6 +46,7 @@ public class GetExportRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public String getRestApiId() {
         return this.restApiId;
     }
@@ -54,6 +56,7 @@ public class GetExportRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetExportRequest withRestApiId(String restApiId) {
         setRestApiId(restApiId);
         return this;
@@ -62,6 +65,7 @@ public class GetExportRequest extends AmazonWebServiceRequest implements
     /**
      * @param stageName
      */
+
     public void setStageName(String stageName) {
         this.stageName = stageName;
     }
@@ -69,6 +73,7 @@ public class GetExportRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public String getStageName() {
         return this.stageName;
     }
@@ -78,6 +83,7 @@ public class GetExportRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetExportRequest withStageName(String stageName) {
         setStageName(stageName);
         return this;
@@ -86,6 +92,7 @@ public class GetExportRequest extends AmazonWebServiceRequest implements
     /**
      * @param exportType
      */
+
     public void setExportType(String exportType) {
         this.exportType = exportType;
     }
@@ -93,6 +100,7 @@ public class GetExportRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public String getExportType() {
         return this.exportType;
     }
@@ -102,6 +110,7 @@ public class GetExportRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetExportRequest withExportType(String exportType) {
         setExportType(exportType);
         return this;
@@ -110,6 +119,7 @@ public class GetExportRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public java.util.Map<String, String> getParameters() {
         return parameters;
     }
@@ -117,6 +127,7 @@ public class GetExportRequest extends AmazonWebServiceRequest implements
     /**
      * @param parameters
      */
+
     public void setParameters(java.util.Map<String, String> parameters) {
         this.parameters = parameters;
     }
@@ -126,6 +137,7 @@ public class GetExportRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetExportRequest withParameters(
             java.util.Map<String, String> parameters) {
         setParameters(parameters);
@@ -147,6 +159,7 @@ public class GetExportRequest extends AmazonWebServiceRequest implements
      * Removes all the entries added into Parameters. &lt;p> Returns a reference
      * to this object so that method calls can be chained together.
      */
+
     public GetExportRequest clearParametersEntries() {
         this.parameters = null;
         return this;
@@ -155,6 +168,7 @@ public class GetExportRequest extends AmazonWebServiceRequest implements
     /**
      * @param accepts
      */
+
     public void setAccepts(String accepts) {
         this.accepts = accepts;
     }
@@ -162,6 +176,7 @@ public class GetExportRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public String getAccepts() {
         return this.accepts;
     }
@@ -171,6 +186,7 @@ public class GetExportRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetExportRequest withAccepts(String accepts) {
         setAccepts(accepts);
         return this;

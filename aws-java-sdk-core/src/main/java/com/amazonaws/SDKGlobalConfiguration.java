@@ -58,6 +58,27 @@ public class SDKGlobalConfiguration {
         "com.amazonaws.sdk.ec2MetadataServiceEndpointOverride";
 
     /**
+     * System property for enabling retry throttling.
+     * <p>
+     * Retry throttling is a feature which intelligently throttles retry attempts when a
+     * large percentage of requests are failing and retries are unsuccessful, particularly
+     * in scenarios of degraded service health.  In these situations the client will drain its
+     * internal retry capacity and slowly roll off from retry attempts until requests begin
+     * to succeed again.  At that point the retry capacity pool will begin to refill and
+     * retries will once again be permitted
+     * </p>
+     * <p>
+     * In situations where retries have been throttled this feature will effectively result in
+     * fail-fast behavior from the client.  Because retries are circumvented exceptions will
+     * be immediately returned to the caller if the initial request is unsuccessful.  This
+     * will result in a greater number of exceptions being returned up front but prevents
+     * requests being tied up attempting subsequent retries which are also likely to fail.
+     * </p>
+     */
+    public static final String RETRY_THROTTLING_SYSTEM_PROPERTY =
+            "com.amazonaws.sdk.enableThrottledRetry";
+
+    /**
      * Path to an override file for the region metadata loaded by the SDK
      * that maps service/region pairs to endpoints and vice versa.
      */

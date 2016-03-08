@@ -63,6 +63,7 @@ public class StopAction implements Serializable, Cloneable {
      *        stopped.
      * @see StopScope
      */
+
     public void setScope(String scope) {
         this.scope = scope;
     }
@@ -77,6 +78,7 @@ public class StopAction implements Serializable, Cloneable {
      *         being stopped.
      * @see StopScope
      */
+
     public String getScope() {
         return this.scope;
     }
@@ -94,6 +96,7 @@ public class StopAction implements Serializable, Cloneable {
      *         chained together.
      * @see StopScope
      */
+
     public StopAction withScope(String scope) {
         setScope(scope);
         return this;
@@ -112,6 +115,7 @@ public class StopAction implements Serializable, Cloneable {
      *         chained together.
      * @see StopScope
      */
+
     public void setScope(StopScope scope) {
         this.scope = scope.toString();
     }
@@ -129,6 +133,7 @@ public class StopAction implements Serializable, Cloneable {
      *         chained together.
      * @see StopScope
      */
+
     public StopAction withScope(StopScope scope) {
         setScope(scope);
         return this;
@@ -152,6 +157,7 @@ public class StopAction implements Serializable, Cloneable {
      *        href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html"
      *        >Amazon SNS Developer Guide</a>.
      */
+
     public void setTopicArn(String topicArn) {
         this.topicArn = topicArn;
     }
@@ -173,6 +179,7 @@ public class StopAction implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html"
      *         >Amazon SNS Developer Guide</a>.
      */
+
     public String getTopicArn() {
         return this.topicArn;
     }
@@ -197,6 +204,7 @@ public class StopAction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StopAction withTopicArn(String topicArn) {
         setTopicArn(topicArn);
         return this;

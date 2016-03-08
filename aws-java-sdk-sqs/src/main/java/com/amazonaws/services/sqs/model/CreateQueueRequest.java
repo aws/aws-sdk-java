@@ -97,6 +97,7 @@ public class CreateQueueRequest extends AmazonWebServiceRequest implements
      * @param queueName
      *        The name for the queue to be created.
      */
+
     public void setQueueName(String queueName) {
         this.queueName = queueName;
     }
@@ -108,6 +109,7 @@ public class CreateQueueRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name for the queue to be created.
      */
+
     public String getQueueName() {
         return this.queueName;
     }
@@ -122,6 +124,7 @@ public class CreateQueueRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateQueueRequest withQueueName(String queueName) {
         setQueueName(queueName);
         return this;
@@ -201,6 +204,7 @@ public class CreateQueueRequest extends AmazonWebServiceRequest implements
      *         </li>
      *         </ul>
      */
+
     public java.util.Map<String, String> getAttributes() {
         if (attributes == null) {
             attributes = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -282,6 +286,7 @@ public class CreateQueueRequest extends AmazonWebServiceRequest implements
      *        >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</li>
      *        </ul>
      */
+
     public void setAttributes(java.util.Map<String, String> attributes) {
         this.attributes = attributes == null ? null
                 : new com.amazonaws.internal.SdkInternalMap<String, String>(
@@ -364,6 +369,7 @@ public class CreateQueueRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateQueueRequest withAttributes(
             java.util.Map<String, String> attributes) {
         setAttributes(attributes);
@@ -385,6 +391,7 @@ public class CreateQueueRequest extends AmazonWebServiceRequest implements
      * Removes all the entries added into Attributes. &lt;p> Returns a reference
      * to this object so that method calls can be chained together.
      */
+
     public CreateQueueRequest clearAttributesEntries() {
         this.attributes = null;
         return this;

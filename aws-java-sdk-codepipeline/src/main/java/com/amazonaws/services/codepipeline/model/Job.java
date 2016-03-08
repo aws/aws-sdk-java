@@ -60,6 +60,7 @@ public class Job implements Serializable, Cloneable {
      * @param id
      *        The unique system-generated ID of the job.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -71,6 +72,7 @@ public class Job implements Serializable, Cloneable {
      * 
      * @return The unique system-generated ID of the job.
      */
+
     public String getId() {
         return this.id;
     }
@@ -85,6 +87,7 @@ public class Job implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Job withId(String id) {
         setId(id);
         return this;
@@ -98,6 +101,7 @@ public class Job implements Serializable, Cloneable {
      * @param data
      *        Additional data about a job.
      */
+
     public void setData(JobData data) {
         this.data = data;
     }
@@ -109,6 +113,7 @@ public class Job implements Serializable, Cloneable {
      * 
      * @return Additional data about a job.
      */
+
     public JobData getData() {
         return this.data;
     }
@@ -123,6 +128,7 @@ public class Job implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Job withData(JobData data) {
         setData(data);
         return this;
@@ -140,6 +146,7 @@ public class Job implements Serializable, Cloneable {
      *        ensure that the job is being worked on by only one job worker.
      *        This number must be returned in the response.
      */
+
     public void setNonce(String nonce) {
         this.nonce = nonce;
     }
@@ -155,6 +162,7 @@ public class Job implements Serializable, Cloneable {
      *         ensure that the job is being worked on by only one job worker.
      *         This number must be returned in the response.
      */
+
     public String getNonce() {
         return this.nonce;
     }
@@ -173,6 +181,7 @@ public class Job implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Job withNonce(String nonce) {
         setNonce(nonce);
         return this;
@@ -186,6 +195,7 @@ public class Job implements Serializable, Cloneable {
      * @param accountId
      *        The ID of the AWS account to use when performing the job.
      */
+
     public void setAccountId(String accountId) {
         this.accountId = accountId;
     }
@@ -197,6 +207,7 @@ public class Job implements Serializable, Cloneable {
      * 
      * @return The ID of the AWS account to use when performing the job.
      */
+
     public String getAccountId() {
         return this.accountId;
     }
@@ -211,6 +222,7 @@ public class Job implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Job withAccountId(String accountId) {
         setAccountId(accountId);
         return this;

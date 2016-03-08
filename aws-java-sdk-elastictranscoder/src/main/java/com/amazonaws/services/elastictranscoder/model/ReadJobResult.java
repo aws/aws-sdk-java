@@ -41,6 +41,7 @@ public class ReadJobResult implements Serializable, Cloneable {
      *        A section of the response body that provides information about the
      *        job.
      */
+
     public void setJob(Job job) {
         this.job = job;
     }
@@ -53,6 +54,7 @@ public class ReadJobResult implements Serializable, Cloneable {
      * @return A section of the response body that provides information about
      *         the job.
      */
+
     public Job getJob() {
         return this.job;
     }
@@ -68,6 +70,7 @@ public class ReadJobResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReadJobResult withJob(Job job) {
         setJob(job);
         return this;

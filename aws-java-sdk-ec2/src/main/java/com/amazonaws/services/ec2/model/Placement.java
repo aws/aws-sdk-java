@@ -90,6 +90,7 @@ public class Placement implements Serializable, Cloneable {
      * @param availabilityZone
      *        The Availability Zone of the instance.
      */
+
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
@@ -101,6 +102,7 @@ public class Placement implements Serializable, Cloneable {
      * 
      * @return The Availability Zone of the instance.
      */
+
     public String getAvailabilityZone() {
         return this.availabilityZone;
     }
@@ -115,6 +117,7 @@ public class Placement implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Placement withAvailabilityZone(String availabilityZone) {
         setAvailabilityZone(availabilityZone);
         return this;
@@ -130,6 +133,7 @@ public class Placement implements Serializable, Cloneable {
      *        The name of the placement group the instance is in (for cluster
      *        compute instances).
      */
+
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
@@ -143,6 +147,7 @@ public class Placement implements Serializable, Cloneable {
      * @return The name of the placement group the instance is in (for cluster
      *         compute instances).
      */
+
     public String getGroupName() {
         return this.groupName;
     }
@@ -159,6 +164,7 @@ public class Placement implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Placement withGroupName(String groupName) {
         setGroupName(groupName);
         return this;
@@ -179,6 +185,7 @@ public class Placement implements Serializable, Cloneable {
      *        supported for the <a>ImportInstance</a> command.
      * @see Tenancy
      */
+
     public void setTenancy(String tenancy) {
         this.tenancy = tenancy;
     }
@@ -197,6 +204,7 @@ public class Placement implements Serializable, Cloneable {
      *         supported for the <a>ImportInstance</a> command.
      * @see Tenancy
      */
+
     public String getTenancy() {
         return this.tenancy;
     }
@@ -218,6 +226,7 @@ public class Placement implements Serializable, Cloneable {
      *         chained together.
      * @see Tenancy
      */
+
     public Placement withTenancy(String tenancy) {
         setTenancy(tenancy);
         return this;
@@ -240,6 +249,7 @@ public class Placement implements Serializable, Cloneable {
      *         chained together.
      * @see Tenancy
      */
+
     public void setTenancy(Tenancy tenancy) {
         this.tenancy = tenancy.toString();
     }
@@ -261,6 +271,7 @@ public class Placement implements Serializable, Cloneable {
      *         chained together.
      * @see Tenancy
      */
+
     public Placement withTenancy(Tenancy tenancy) {
         setTenancy(tenancy);
         return this;
@@ -276,6 +287,7 @@ public class Placement implements Serializable, Cloneable {
      *        The ID of the Dedicted host on which the instance resides. This
      *        parameter is not support for the <a>ImportInstance</a> command.
      */
+
     public void setHostId(String hostId) {
         this.hostId = hostId;
     }
@@ -289,6 +301,7 @@ public class Placement implements Serializable, Cloneable {
      * @return The ID of the Dedicted host on which the instance resides. This
      *         parameter is not support for the <a>ImportInstance</a> command.
      */
+
     public String getHostId() {
         return this.hostId;
     }
@@ -305,6 +318,7 @@ public class Placement implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Placement withHostId(String hostId) {
         setHostId(hostId);
         return this;
@@ -320,6 +334,7 @@ public class Placement implements Serializable, Cloneable {
      *        The affinity setting for the instance on the Dedicated host. This
      *        parameter is not supported for the <a>ImportInstance</a> command.
      */
+
     public void setAffinity(String affinity) {
         this.affinity = affinity;
     }
@@ -333,6 +348,7 @@ public class Placement implements Serializable, Cloneable {
      * @return The affinity setting for the instance on the Dedicated host. This
      *         parameter is not supported for the <a>ImportInstance</a> command.
      */
+
     public String getAffinity() {
         return this.affinity;
     }
@@ -349,6 +365,7 @@ public class Placement implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Placement withAffinity(String affinity) {
         setAffinity(affinity);
         return this;

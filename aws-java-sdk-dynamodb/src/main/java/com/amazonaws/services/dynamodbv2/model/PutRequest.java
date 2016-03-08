@@ -80,6 +80,7 @@ public class PutRequest implements Serializable, Cloneable {
      *         schema for the table, their types must match the index key
      *         schema.
      */
+
     public java.util.Map<String, AttributeValue> getItem() {
         return item;
     }
@@ -102,6 +103,7 @@ public class PutRequest implements Serializable, Cloneable {
      *        attributes are present in the item which are part of an index key
      *        schema for the table, their types must match the index key schema.
      */
+
     public void setItem(java.util.Map<String, AttributeValue> item) {
         this.item = item;
     }
@@ -126,6 +128,7 @@ public class PutRequest implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutRequest withItem(java.util.Map<String, AttributeValue> item) {
         setItem(item);
         return this;
@@ -146,6 +149,7 @@ public class PutRequest implements Serializable, Cloneable {
      * Removes all the entries added into Item. &lt;p> Returns a reference to
      * this object so that method calls can be chained together.
      */
+
     public PutRequest clearItemEntries() {
         this.item = null;
         return this;

@@ -50,6 +50,7 @@ public class StatusReport implements Serializable, Cloneable {
      * @param status
      *        The observed health check status.
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -61,6 +62,7 @@ public class StatusReport implements Serializable, Cloneable {
      * 
      * @return The observed health check status.
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -75,6 +77,7 @@ public class StatusReport implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StatusReport withStatus(String status) {
         setStatus(status);
         return this;
@@ -95,6 +98,7 @@ public class StatusReport implements Serializable, Cloneable {
      *        <code>Z</code> after the time indicates that the time is listed in
      *        Coordinated Universal Time (UTC).
      */
+
     public void setCheckedTime(java.util.Date checkedTime) {
         this.checkedTime = checkedTime;
     }
@@ -113,6 +117,7 @@ public class StatusReport implements Serializable, Cloneable {
      *         <code>Z</code> after the time indicates that the time is listed
      *         in Coordinated Universal Time (UTC).
      */
+
     public java.util.Date getCheckedTime() {
         return this.checkedTime;
     }
@@ -134,6 +139,7 @@ public class StatusReport implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StatusReport withCheckedTime(java.util.Date checkedTime) {
         setCheckedTime(checkedTime);
         return this;

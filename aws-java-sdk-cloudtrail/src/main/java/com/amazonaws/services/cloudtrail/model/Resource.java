@@ -68,6 +68,7 @@ public class Resource implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/lookup_supported_resourcetypes.html"
      *        >Resource Types Supported for Event Lookup</a>.
      */
+
     public void setResourceType(String resourceType) {
         this.resourceType = resourceType;
     }
@@ -92,6 +93,7 @@ public class Resource implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/lookup_supported_resourcetypes.html"
      *         >Resource Types Supported for Event Lookup</a>.
      */
+
     public String getResourceType() {
         return this.resourceType;
     }
@@ -119,6 +121,7 @@ public class Resource implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Resource withResourceType(String resourceType) {
         setResourceType(resourceType);
         return this;
@@ -139,6 +142,7 @@ public class Resource implements Serializable, Cloneable {
      *        "auto-scaling-test-group" for an Auto Scaling Group or "i-1234567"
      *        for an EC2 Instance.
      */
+
     public void setResourceName(String resourceName) {
         this.resourceName = resourceName;
     }
@@ -157,6 +161,7 @@ public class Resource implements Serializable, Cloneable {
      *         "auto-scaling-test-group" for an Auto Scaling Group or
      *         "i-1234567" for an EC2 Instance.
      */
+
     public String getResourceName() {
         return this.resourceName;
     }
@@ -178,6 +183,7 @@ public class Resource implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Resource withResourceName(String resourceName) {
         setResourceName(resourceName);
         return this;

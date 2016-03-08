@@ -61,6 +61,7 @@ public class TerminateJobFlowsRequest extends AmazonWebServiceRequest implements
      * 
      * @return A list of job flows to be shutdown.
      */
+
     public java.util.List<String> getJobFlowIds() {
         if (jobFlowIds == null) {
             jobFlowIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -76,6 +77,7 @@ public class TerminateJobFlowsRequest extends AmazonWebServiceRequest implements
      * @param jobFlowIds
      *        A list of job flows to be shutdown.
      */
+
     public void setJobFlowIds(java.util.Collection<String> jobFlowIds) {
         if (jobFlowIds == null) {
             this.jobFlowIds = null;
@@ -102,6 +104,7 @@ public class TerminateJobFlowsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TerminateJobFlowsRequest withJobFlowIds(String... jobFlowIds) {
         if (this.jobFlowIds == null) {
             setJobFlowIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -123,6 +126,7 @@ public class TerminateJobFlowsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TerminateJobFlowsRequest withJobFlowIds(
             java.util.Collection<String> jobFlowIds) {
         setJobFlowIds(jobFlowIds);

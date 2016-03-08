@@ -31,6 +31,7 @@ public class DeleteBandwidthRateLimitResult implements Serializable, Cloneable {
     /**
      * @param gatewayARN
      */
+
     public void setGatewayARN(String gatewayARN) {
         this.gatewayARN = gatewayARN;
     }
@@ -38,6 +39,7 @@ public class DeleteBandwidthRateLimitResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getGatewayARN() {
         return this.gatewayARN;
     }
@@ -47,6 +49,7 @@ public class DeleteBandwidthRateLimitResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteBandwidthRateLimitResult withGatewayARN(String gatewayARN) {
         setGatewayARN(gatewayARN);
         return this;

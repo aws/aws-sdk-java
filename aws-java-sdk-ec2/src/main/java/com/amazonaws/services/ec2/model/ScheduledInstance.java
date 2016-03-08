@@ -124,6 +124,7 @@ public class ScheduledInstance implements Serializable, Cloneable {
      * @param scheduledInstanceId
      *        The Scheduled Instance ID.
      */
+
     public void setScheduledInstanceId(String scheduledInstanceId) {
         this.scheduledInstanceId = scheduledInstanceId;
     }
@@ -135,6 +136,7 @@ public class ScheduledInstance implements Serializable, Cloneable {
      * 
      * @return The Scheduled Instance ID.
      */
+
     public String getScheduledInstanceId() {
         return this.scheduledInstanceId;
     }
@@ -149,6 +151,7 @@ public class ScheduledInstance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstance withScheduledInstanceId(String scheduledInstanceId) {
         setScheduledInstanceId(scheduledInstanceId);
         return this;
@@ -162,6 +165,7 @@ public class ScheduledInstance implements Serializable, Cloneable {
      * @param instanceType
      *        The instance type.
      */
+
     public void setInstanceType(String instanceType) {
         this.instanceType = instanceType;
     }
@@ -173,6 +177,7 @@ public class ScheduledInstance implements Serializable, Cloneable {
      * 
      * @return The instance type.
      */
+
     public String getInstanceType() {
         return this.instanceType;
     }
@@ -187,6 +192,7 @@ public class ScheduledInstance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstance withInstanceType(String instanceType) {
         setInstanceType(instanceType);
         return this;
@@ -200,6 +206,7 @@ public class ScheduledInstance implements Serializable, Cloneable {
      * @param platform
      *        The platform (<code>Linux/UNIX</code> or <code>Windows</code>).
      */
+
     public void setPlatform(String platform) {
         this.platform = platform;
     }
@@ -211,6 +218,7 @@ public class ScheduledInstance implements Serializable, Cloneable {
      * 
      * @return The platform (<code>Linux/UNIX</code> or <code>Windows</code>).
      */
+
     public String getPlatform() {
         return this.platform;
     }
@@ -225,6 +233,7 @@ public class ScheduledInstance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstance withPlatform(String platform) {
         setPlatform(platform);
         return this;
@@ -239,6 +248,7 @@ public class ScheduledInstance implements Serializable, Cloneable {
      *        The network platform (<code>EC2-Classic</code> or
      *        <code>EC2-VPC</code>).
      */
+
     public void setNetworkPlatform(String networkPlatform) {
         this.networkPlatform = networkPlatform;
     }
@@ -251,6 +261,7 @@ public class ScheduledInstance implements Serializable, Cloneable {
      * @return The network platform (<code>EC2-Classic</code> or
      *         <code>EC2-VPC</code>).
      */
+
     public String getNetworkPlatform() {
         return this.networkPlatform;
     }
@@ -266,6 +277,7 @@ public class ScheduledInstance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstance withNetworkPlatform(String networkPlatform) {
         setNetworkPlatform(networkPlatform);
         return this;
@@ -279,6 +291,7 @@ public class ScheduledInstance implements Serializable, Cloneable {
      * @param availabilityZone
      *        The Availability Zone.
      */
+
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
@@ -290,6 +303,7 @@ public class ScheduledInstance implements Serializable, Cloneable {
      * 
      * @return The Availability Zone.
      */
+
     public String getAvailabilityZone() {
         return this.availabilityZone;
     }
@@ -304,6 +318,7 @@ public class ScheduledInstance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstance withAvailabilityZone(String availabilityZone) {
         setAvailabilityZone(availabilityZone);
         return this;
@@ -317,6 +332,7 @@ public class ScheduledInstance implements Serializable, Cloneable {
      * @param slotDurationInHours
      *        The number of hours in the schedule.
      */
+
     public void setSlotDurationInHours(Integer slotDurationInHours) {
         this.slotDurationInHours = slotDurationInHours;
     }
@@ -328,6 +344,7 @@ public class ScheduledInstance implements Serializable, Cloneable {
      * 
      * @return The number of hours in the schedule.
      */
+
     public Integer getSlotDurationInHours() {
         return this.slotDurationInHours;
     }
@@ -342,6 +359,7 @@ public class ScheduledInstance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstance withSlotDurationInHours(Integer slotDurationInHours) {
         setSlotDurationInHours(slotDurationInHours);
         return this;
@@ -355,6 +373,7 @@ public class ScheduledInstance implements Serializable, Cloneable {
      * @param recurrence
      *        The schedule recurrence.
      */
+
     public void setRecurrence(ScheduledInstanceRecurrence recurrence) {
         this.recurrence = recurrence;
     }
@@ -366,6 +385,7 @@ public class ScheduledInstance implements Serializable, Cloneable {
      * 
      * @return The schedule recurrence.
      */
+
     public ScheduledInstanceRecurrence getRecurrence() {
         return this.recurrence;
     }
@@ -380,6 +400,7 @@ public class ScheduledInstance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstance withRecurrence(
             ScheduledInstanceRecurrence recurrence) {
         setRecurrence(recurrence);
@@ -394,6 +415,7 @@ public class ScheduledInstance implements Serializable, Cloneable {
      * @param previousSlotEndTime
      *        The time that the previous schedule ended or will end.
      */
+
     public void setPreviousSlotEndTime(java.util.Date previousSlotEndTime) {
         this.previousSlotEndTime = previousSlotEndTime;
     }
@@ -405,6 +427,7 @@ public class ScheduledInstance implements Serializable, Cloneable {
      * 
      * @return The time that the previous schedule ended or will end.
      */
+
     public java.util.Date getPreviousSlotEndTime() {
         return this.previousSlotEndTime;
     }
@@ -419,6 +442,7 @@ public class ScheduledInstance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstance withPreviousSlotEndTime(
             java.util.Date previousSlotEndTime) {
         setPreviousSlotEndTime(previousSlotEndTime);
@@ -433,6 +457,7 @@ public class ScheduledInstance implements Serializable, Cloneable {
      * @param nextSlotStartTime
      *        The time for the next schedule to start.
      */
+
     public void setNextSlotStartTime(java.util.Date nextSlotStartTime) {
         this.nextSlotStartTime = nextSlotStartTime;
     }
@@ -444,6 +469,7 @@ public class ScheduledInstance implements Serializable, Cloneable {
      * 
      * @return The time for the next schedule to start.
      */
+
     public java.util.Date getNextSlotStartTime() {
         return this.nextSlotStartTime;
     }
@@ -458,6 +484,7 @@ public class ScheduledInstance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstance withNextSlotStartTime(
             java.util.Date nextSlotStartTime) {
         setNextSlotStartTime(nextSlotStartTime);
@@ -472,6 +499,7 @@ public class ScheduledInstance implements Serializable, Cloneable {
      * @param hourlyPrice
      *        The hourly price for a single instance.
      */
+
     public void setHourlyPrice(String hourlyPrice) {
         this.hourlyPrice = hourlyPrice;
     }
@@ -483,6 +511,7 @@ public class ScheduledInstance implements Serializable, Cloneable {
      * 
      * @return The hourly price for a single instance.
      */
+
     public String getHourlyPrice() {
         return this.hourlyPrice;
     }
@@ -497,6 +526,7 @@ public class ScheduledInstance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstance withHourlyPrice(String hourlyPrice) {
         setHourlyPrice(hourlyPrice);
         return this;
@@ -511,6 +541,7 @@ public class ScheduledInstance implements Serializable, Cloneable {
      *        The total number of hours for a single instance for the entire
      *        term.
      */
+
     public void setTotalScheduledInstanceHours(
             Integer totalScheduledInstanceHours) {
         this.totalScheduledInstanceHours = totalScheduledInstanceHours;
@@ -524,6 +555,7 @@ public class ScheduledInstance implements Serializable, Cloneable {
      * @return The total number of hours for a single instance for the entire
      *         term.
      */
+
     public Integer getTotalScheduledInstanceHours() {
         return this.totalScheduledInstanceHours;
     }
@@ -539,6 +571,7 @@ public class ScheduledInstance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstance withTotalScheduledInstanceHours(
             Integer totalScheduledInstanceHours) {
         setTotalScheduledInstanceHours(totalScheduledInstanceHours);
@@ -553,6 +586,7 @@ public class ScheduledInstance implements Serializable, Cloneable {
      * @param instanceCount
      *        The number of instances.
      */
+
     public void setInstanceCount(Integer instanceCount) {
         this.instanceCount = instanceCount;
     }
@@ -564,6 +598,7 @@ public class ScheduledInstance implements Serializable, Cloneable {
      * 
      * @return The number of instances.
      */
+
     public Integer getInstanceCount() {
         return this.instanceCount;
     }
@@ -578,6 +613,7 @@ public class ScheduledInstance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstance withInstanceCount(Integer instanceCount) {
         setInstanceCount(instanceCount);
         return this;
@@ -591,6 +627,7 @@ public class ScheduledInstance implements Serializable, Cloneable {
      * @param termStartDate
      *        The start date for the Scheduled Instance.
      */
+
     public void setTermStartDate(java.util.Date termStartDate) {
         this.termStartDate = termStartDate;
     }
@@ -602,6 +639,7 @@ public class ScheduledInstance implements Serializable, Cloneable {
      * 
      * @return The start date for the Scheduled Instance.
      */
+
     public java.util.Date getTermStartDate() {
         return this.termStartDate;
     }
@@ -616,6 +654,7 @@ public class ScheduledInstance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstance withTermStartDate(java.util.Date termStartDate) {
         setTermStartDate(termStartDate);
         return this;
@@ -629,6 +668,7 @@ public class ScheduledInstance implements Serializable, Cloneable {
      * @param termEndDate
      *        The end date for the Scheduled Instance.
      */
+
     public void setTermEndDate(java.util.Date termEndDate) {
         this.termEndDate = termEndDate;
     }
@@ -640,6 +680,7 @@ public class ScheduledInstance implements Serializable, Cloneable {
      * 
      * @return The end date for the Scheduled Instance.
      */
+
     public java.util.Date getTermEndDate() {
         return this.termEndDate;
     }
@@ -654,6 +695,7 @@ public class ScheduledInstance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstance withTermEndDate(java.util.Date termEndDate) {
         setTermEndDate(termEndDate);
         return this;
@@ -667,6 +709,7 @@ public class ScheduledInstance implements Serializable, Cloneable {
      * @param createDate
      *        The date when the Scheduled Instance was purchased.
      */
+
     public void setCreateDate(java.util.Date createDate) {
         this.createDate = createDate;
     }
@@ -678,6 +721,7 @@ public class ScheduledInstance implements Serializable, Cloneable {
      * 
      * @return The date when the Scheduled Instance was purchased.
      */
+
     public java.util.Date getCreateDate() {
         return this.createDate;
     }
@@ -692,6 +736,7 @@ public class ScheduledInstance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstance withCreateDate(java.util.Date createDate) {
         setCreateDate(createDate);
         return this;

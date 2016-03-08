@@ -74,6 +74,7 @@ public class GetOperationDetailRequest extends AmazonWebServiceRequest
      *        <p>
      *        Required: Yes
      */
+
     public void setOperationId(String operationId) {
         this.operationId = operationId;
     }
@@ -106,6 +107,7 @@ public class GetOperationDetailRequest extends AmazonWebServiceRequest
      *         <p>
      *         Required: Yes
      */
+
     public String getOperationId() {
         return this.operationId;
     }
@@ -141,6 +143,7 @@ public class GetOperationDetailRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetOperationDetailRequest withOperationId(String operationId) {
         setOperationId(operationId);
         return this;

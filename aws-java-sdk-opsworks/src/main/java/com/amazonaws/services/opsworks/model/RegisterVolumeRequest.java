@@ -46,6 +46,7 @@ public class RegisterVolumeRequest extends AmazonWebServiceRequest implements
      * @param ec2VolumeId
      *        The Amazon EBS volume ID.
      */
+
     public void setEc2VolumeId(String ec2VolumeId) {
         this.ec2VolumeId = ec2VolumeId;
     }
@@ -57,6 +58,7 @@ public class RegisterVolumeRequest extends AmazonWebServiceRequest implements
      * 
      * @return The Amazon EBS volume ID.
      */
+
     public String getEc2VolumeId() {
         return this.ec2VolumeId;
     }
@@ -71,6 +73,7 @@ public class RegisterVolumeRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterVolumeRequest withEc2VolumeId(String ec2VolumeId) {
         setEc2VolumeId(ec2VolumeId);
         return this;
@@ -84,6 +87,7 @@ public class RegisterVolumeRequest extends AmazonWebServiceRequest implements
      * @param stackId
      *        The stack ID.
      */
+
     public void setStackId(String stackId) {
         this.stackId = stackId;
     }
@@ -95,6 +99,7 @@ public class RegisterVolumeRequest extends AmazonWebServiceRequest implements
      * 
      * @return The stack ID.
      */
+
     public String getStackId() {
         return this.stackId;
     }
@@ -109,6 +114,7 @@ public class RegisterVolumeRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterVolumeRequest withStackId(String stackId) {
         setStackId(stackId);
         return this;

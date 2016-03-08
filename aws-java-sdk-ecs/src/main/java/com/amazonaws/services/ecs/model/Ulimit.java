@@ -53,6 +53,7 @@ public class Ulimit implements Serializable, Cloneable {
      *        The <code>type</code> of the <code>ulimit</code>.
      * @see UlimitName
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -65,6 +66,7 @@ public class Ulimit implements Serializable, Cloneable {
      * @return The <code>type</code> of the <code>ulimit</code>.
      * @see UlimitName
      */
+
     public String getName() {
         return this.name;
     }
@@ -80,6 +82,7 @@ public class Ulimit implements Serializable, Cloneable {
      *         chained together.
      * @see UlimitName
      */
+
     public Ulimit withName(String name) {
         setName(name);
         return this;
@@ -96,6 +99,7 @@ public class Ulimit implements Serializable, Cloneable {
      *         chained together.
      * @see UlimitName
      */
+
     public void setName(UlimitName name) {
         this.name = name.toString();
     }
@@ -111,6 +115,7 @@ public class Ulimit implements Serializable, Cloneable {
      *         chained together.
      * @see UlimitName
      */
+
     public Ulimit withName(UlimitName name) {
         setName(name);
         return this;
@@ -124,6 +129,7 @@ public class Ulimit implements Serializable, Cloneable {
      * @param softLimit
      *        The soft limit for the ulimit type.
      */
+
     public void setSoftLimit(Integer softLimit) {
         this.softLimit = softLimit;
     }
@@ -135,6 +141,7 @@ public class Ulimit implements Serializable, Cloneable {
      * 
      * @return The soft limit for the ulimit type.
      */
+
     public Integer getSoftLimit() {
         return this.softLimit;
     }
@@ -149,6 +156,7 @@ public class Ulimit implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Ulimit withSoftLimit(Integer softLimit) {
         setSoftLimit(softLimit);
         return this;
@@ -162,6 +170,7 @@ public class Ulimit implements Serializable, Cloneable {
      * @param hardLimit
      *        The hard limit for the ulimit type.
      */
+
     public void setHardLimit(Integer hardLimit) {
         this.hardLimit = hardLimit;
     }
@@ -173,6 +182,7 @@ public class Ulimit implements Serializable, Cloneable {
      * 
      * @return The hard limit for the ulimit type.
      */
+
     public Integer getHardLimit() {
         return this.hardLimit;
     }
@@ -187,6 +197,7 @@ public class Ulimit implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Ulimit withHardLimit(Integer hardLimit) {
         setHardLimit(hardLimit);
         return this;

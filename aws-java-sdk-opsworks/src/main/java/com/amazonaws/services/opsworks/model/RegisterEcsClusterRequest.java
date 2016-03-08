@@ -46,6 +46,7 @@ public class RegisterEcsClusterRequest extends AmazonWebServiceRequest
      * @param ecsClusterArn
      *        The cluster's ARN.
      */
+
     public void setEcsClusterArn(String ecsClusterArn) {
         this.ecsClusterArn = ecsClusterArn;
     }
@@ -57,6 +58,7 @@ public class RegisterEcsClusterRequest extends AmazonWebServiceRequest
      * 
      * @return The cluster's ARN.
      */
+
     public String getEcsClusterArn() {
         return this.ecsClusterArn;
     }
@@ -71,6 +73,7 @@ public class RegisterEcsClusterRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterEcsClusterRequest withEcsClusterArn(String ecsClusterArn) {
         setEcsClusterArn(ecsClusterArn);
         return this;
@@ -84,6 +87,7 @@ public class RegisterEcsClusterRequest extends AmazonWebServiceRequest
      * @param stackId
      *        The stack ID.
      */
+
     public void setStackId(String stackId) {
         this.stackId = stackId;
     }
@@ -95,6 +99,7 @@ public class RegisterEcsClusterRequest extends AmazonWebServiceRequest
      * 
      * @return The stack ID.
      */
+
     public String getStackId() {
         return this.stackId;
     }
@@ -109,6 +114,7 @@ public class RegisterEcsClusterRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterEcsClusterRequest withStackId(String stackId) {
         setStackId(stackId);
         return this;

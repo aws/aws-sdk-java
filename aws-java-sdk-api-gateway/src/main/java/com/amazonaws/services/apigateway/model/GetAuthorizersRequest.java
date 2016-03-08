@@ -46,6 +46,7 @@ public class GetAuthorizersRequest extends AmazonWebServiceRequest implements
      * @param restApiId
      *        The <a>RestApi</a> identifier for the <a>Authorizers</a> resource.
      */
+
     public void setRestApiId(String restApiId) {
         this.restApiId = restApiId;
     }
@@ -58,6 +59,7 @@ public class GetAuthorizersRequest extends AmazonWebServiceRequest implements
      * @return The <a>RestApi</a> identifier for the <a>Authorizers</a>
      *         resource.
      */
+
     public String getRestApiId() {
         return this.restApiId;
     }
@@ -72,6 +74,7 @@ public class GetAuthorizersRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetAuthorizersRequest withRestApiId(String restApiId) {
         setRestApiId(restApiId);
         return this;
@@ -80,6 +83,7 @@ public class GetAuthorizersRequest extends AmazonWebServiceRequest implements
     /**
      * @param position
      */
+
     public void setPosition(String position) {
         this.position = position;
     }
@@ -87,6 +91,7 @@ public class GetAuthorizersRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public String getPosition() {
         return this.position;
     }
@@ -96,6 +101,7 @@ public class GetAuthorizersRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetAuthorizersRequest withPosition(String position) {
         setPosition(position);
         return this;
@@ -104,6 +110,7 @@ public class GetAuthorizersRequest extends AmazonWebServiceRequest implements
     /**
      * @param limit
      */
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -111,6 +118,7 @@ public class GetAuthorizersRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public Integer getLimit() {
         return this.limit;
     }
@@ -120,6 +128,7 @@ public class GetAuthorizersRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetAuthorizersRequest withLimit(Integer limit) {
         setLimit(limit);
         return this;

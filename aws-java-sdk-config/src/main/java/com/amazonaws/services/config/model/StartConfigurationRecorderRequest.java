@@ -45,6 +45,7 @@ public class StartConfigurationRecorderRequest extends AmazonWebServiceRequest
      *        The name of the recorder object that records each configuration
      *        change made to the resources.
      */
+
     public void setConfigurationRecorderName(String configurationRecorderName) {
         this.configurationRecorderName = configurationRecorderName;
     }
@@ -58,6 +59,7 @@ public class StartConfigurationRecorderRequest extends AmazonWebServiceRequest
      * @return The name of the recorder object that records each configuration
      *         change made to the resources.
      */
+
     public String getConfigurationRecorderName() {
         return this.configurationRecorderName;
     }
@@ -74,6 +76,7 @@ public class StartConfigurationRecorderRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StartConfigurationRecorderRequest withConfigurationRecorderName(
             String configurationRecorderName) {
         setConfigurationRecorderName(configurationRecorderName);

@@ -46,6 +46,7 @@ public class UnsuccessfulItem implements Serializable, Cloneable {
      * @param resourceId
      *        The ID of the resource.
      */
+
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
     }
@@ -57,6 +58,7 @@ public class UnsuccessfulItem implements Serializable, Cloneable {
      * 
      * @return The ID of the resource.
      */
+
     public String getResourceId() {
         return this.resourceId;
     }
@@ -71,6 +73,7 @@ public class UnsuccessfulItem implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UnsuccessfulItem withResourceId(String resourceId) {
         setResourceId(resourceId);
         return this;
@@ -84,6 +87,7 @@ public class UnsuccessfulItem implements Serializable, Cloneable {
      * @param error
      *        Information about the error.
      */
+
     public void setError(UnsuccessfulItemError error) {
         this.error = error;
     }
@@ -95,6 +99,7 @@ public class UnsuccessfulItem implements Serializable, Cloneable {
      * 
      * @return Information about the error.
      */
+
     public UnsuccessfulItemError getError() {
         return this.error;
     }
@@ -109,6 +114,7 @@ public class UnsuccessfulItem implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UnsuccessfulItem withError(UnsuccessfulItemError error) {
         setError(error);
         return this;

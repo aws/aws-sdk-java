@@ -46,6 +46,7 @@ public class InternetGatewayAttachment implements Serializable, Cloneable {
      * @param vpcId
      *        The ID of the VPC.
      */
+
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
@@ -57,6 +58,7 @@ public class InternetGatewayAttachment implements Serializable, Cloneable {
      * 
      * @return The ID of the VPC.
      */
+
     public String getVpcId() {
         return this.vpcId;
     }
@@ -71,6 +73,7 @@ public class InternetGatewayAttachment implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InternetGatewayAttachment withVpcId(String vpcId) {
         setVpcId(vpcId);
         return this;
@@ -85,6 +88,7 @@ public class InternetGatewayAttachment implements Serializable, Cloneable {
      *        The current state of the attachment.
      * @see AttachmentStatus
      */
+
     public void setState(String state) {
         this.state = state;
     }
@@ -97,6 +101,7 @@ public class InternetGatewayAttachment implements Serializable, Cloneable {
      * @return The current state of the attachment.
      * @see AttachmentStatus
      */
+
     public String getState() {
         return this.state;
     }
@@ -112,6 +117,7 @@ public class InternetGatewayAttachment implements Serializable, Cloneable {
      *         chained together.
      * @see AttachmentStatus
      */
+
     public InternetGatewayAttachment withState(String state) {
         setState(state);
         return this;
@@ -128,6 +134,7 @@ public class InternetGatewayAttachment implements Serializable, Cloneable {
      *         chained together.
      * @see AttachmentStatus
      */
+
     public void setState(AttachmentStatus state) {
         this.state = state.toString();
     }
@@ -143,6 +150,7 @@ public class InternetGatewayAttachment implements Serializable, Cloneable {
      *         chained together.
      * @see AttachmentStatus
      */
+
     public InternetGatewayAttachment withState(AttachmentStatus state) {
         setState(state);
         return this;

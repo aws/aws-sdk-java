@@ -109,6 +109,7 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest
      *        The Amazon Resource Name (ARN) of the role that the caller is
      *        assuming.
      */
+
     public void setRoleArn(String roleArn) {
         this.roleArn = roleArn;
     }
@@ -121,6 +122,7 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest
      * @return The Amazon Resource Name (ARN) of the role that the caller is
      *         assuming.
      */
+
     public String getRoleArn() {
         return this.roleArn;
     }
@@ -136,6 +138,7 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssumeRoleWithWebIdentityRequest withRoleArn(String roleArn) {
         setRoleArn(roleArn);
         return this;
@@ -160,6 +163,7 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest
      *        assumed role ID in the <code>AssumedRoleUser</code> response
      *        element.
      */
+
     public void setRoleSessionName(String roleSessionName) {
         this.roleSessionName = roleSessionName;
     }
@@ -182,6 +186,7 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest
      *         assumed role ID in the <code>AssumedRoleUser</code> response
      *         element.
      */
+
     public String getRoleSessionName() {
         return this.roleSessionName;
     }
@@ -207,6 +212,7 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssumeRoleWithWebIdentityRequest withRoleSessionName(
             String roleSessionName) {
         setRoleSessionName(roleSessionName);
@@ -229,6 +235,7 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest
      *        with a web identity provider before the application makes an
      *        <code>AssumeRoleWithWebIdentity</code> call.
      */
+
     public void setWebIdentityToken(String webIdentityToken) {
         this.webIdentityToken = webIdentityToken;
     }
@@ -248,6 +255,7 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest
      *         with a web identity provider before the application makes an
      *         <code>AssumeRoleWithWebIdentity</code> call.
      */
+
     public String getWebIdentityToken() {
         return this.webIdentityToken;
     }
@@ -270,6 +278,7 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssumeRoleWithWebIdentityRequest withWebIdentityToken(
             String webIdentityToken) {
         setWebIdentityToken(webIdentityToken);
@@ -303,6 +312,7 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest
      *        <p>
      *        Do not specify this value for OpenID Connect ID tokens.
      */
+
     public void setProviderId(String providerId) {
         this.providerId = providerId;
     }
@@ -333,6 +343,7 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest
      *         <p>
      *         Do not specify this value for OpenID Connect ID tokens.
      */
+
     public String getProviderId() {
         return this.providerId;
     }
@@ -366,6 +377,7 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssumeRoleWithWebIdentityRequest withProviderId(String providerId) {
         setProviderId(providerId);
         return this;
@@ -415,6 +427,7 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest
      *        element indicates by percentage how close to the upper size limit
      *        the policy is, with 100% equaling the maximum allowed size.
      */
+
     public void setPolicy(String policy) {
         this.policy = policy;
     }
@@ -463,6 +476,7 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest
      *         size limit the policy is, with 100% equaling the maximum allowed
      *         size.
      */
+
     public String getPolicy() {
         return this.policy;
     }
@@ -513,6 +527,7 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssumeRoleWithWebIdentityRequest withPolicy(String policy) {
         setPolicy(policy);
         return this;
@@ -530,6 +545,7 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest
      *        from 900 seconds (15 minutes) to 3600 seconds (1 hour). By
      *        default, the value is set to 3600 seconds.
      */
+
     public void setDurationSeconds(Integer durationSeconds) {
         this.durationSeconds = durationSeconds;
     }
@@ -545,6 +561,7 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest
      *         range from 900 seconds (15 minutes) to 3600 seconds (1 hour). By
      *         default, the value is set to 3600 seconds.
      */
+
     public Integer getDurationSeconds() {
         return this.durationSeconds;
     }
@@ -563,6 +580,7 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssumeRoleWithWebIdentityRequest withDurationSeconds(
             Integer durationSeconds) {
         setDurationSeconds(durationSeconds);

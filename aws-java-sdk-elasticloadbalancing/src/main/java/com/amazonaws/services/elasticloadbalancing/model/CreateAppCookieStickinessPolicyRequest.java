@@ -83,6 +83,7 @@ public class CreateAppCookieStickinessPolicyRequest extends
      * @param loadBalancerName
      *        The name of the load balancer.
      */
+
     public void setLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
     }
@@ -94,6 +95,7 @@ public class CreateAppCookieStickinessPolicyRequest extends
      * 
      * @return The name of the load balancer.
      */
+
     public String getLoadBalancerName() {
         return this.loadBalancerName;
     }
@@ -108,6 +110,7 @@ public class CreateAppCookieStickinessPolicyRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateAppCookieStickinessPolicyRequest withLoadBalancerName(
             String loadBalancerName) {
         setLoadBalancerName(loadBalancerName);
@@ -126,6 +129,7 @@ public class CreateAppCookieStickinessPolicyRequest extends
      *        alphanumeric characters and dashes (-). This name must be unique
      *        within the set of policies for this load balancer.
      */
+
     public void setPolicyName(String policyName) {
         this.policyName = policyName;
     }
@@ -141,6 +145,7 @@ public class CreateAppCookieStickinessPolicyRequest extends
      *         of alphanumeric characters and dashes (-). This name must be
      *         unique within the set of policies for this load balancer.
      */
+
     public String getPolicyName() {
         return this.policyName;
     }
@@ -159,6 +164,7 @@ public class CreateAppCookieStickinessPolicyRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateAppCookieStickinessPolicyRequest withPolicyName(
             String policyName) {
         setPolicyName(policyName);
@@ -173,6 +179,7 @@ public class CreateAppCookieStickinessPolicyRequest extends
      * @param cookieName
      *        The name of the application cookie used for stickiness.
      */
+
     public void setCookieName(String cookieName) {
         this.cookieName = cookieName;
     }
@@ -184,6 +191,7 @@ public class CreateAppCookieStickinessPolicyRequest extends
      * 
      * @return The name of the application cookie used for stickiness.
      */
+
     public String getCookieName() {
         return this.cookieName;
     }
@@ -198,6 +206,7 @@ public class CreateAppCookieStickinessPolicyRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateAppCookieStickinessPolicyRequest withCookieName(
             String cookieName) {
         setCookieName(cookieName);

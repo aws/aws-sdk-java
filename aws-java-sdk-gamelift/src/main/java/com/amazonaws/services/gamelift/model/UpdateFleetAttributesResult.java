@@ -40,6 +40,7 @@ public class UpdateFleetAttributesResult implements Serializable, Cloneable {
      * @param fleetId
      *        Unique identifier for the updated fleet.
      */
+
     public void setFleetId(String fleetId) {
         this.fleetId = fleetId;
     }
@@ -51,6 +52,7 @@ public class UpdateFleetAttributesResult implements Serializable, Cloneable {
      * 
      * @return Unique identifier for the updated fleet.
      */
+
     public String getFleetId() {
         return this.fleetId;
     }
@@ -65,6 +67,7 @@ public class UpdateFleetAttributesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateFleetAttributesResult withFleetId(String fleetId) {
         setFleetId(fleetId);
         return this;

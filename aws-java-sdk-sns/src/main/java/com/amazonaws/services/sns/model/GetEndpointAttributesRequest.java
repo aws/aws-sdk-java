@@ -42,6 +42,7 @@ public class GetEndpointAttributesRequest extends AmazonWebServiceRequest
      * @param endpointArn
      *        EndpointArn for GetEndpointAttributes input.
      */
+
     public void setEndpointArn(String endpointArn) {
         this.endpointArn = endpointArn;
     }
@@ -53,6 +54,7 @@ public class GetEndpointAttributesRequest extends AmazonWebServiceRequest
      * 
      * @return EndpointArn for GetEndpointAttributes input.
      */
+
     public String getEndpointArn() {
         return this.endpointArn;
     }
@@ -67,6 +69,7 @@ public class GetEndpointAttributesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetEndpointAttributesRequest withEndpointArn(String endpointArn) {
         setEndpointArn(endpointArn);
         return this;

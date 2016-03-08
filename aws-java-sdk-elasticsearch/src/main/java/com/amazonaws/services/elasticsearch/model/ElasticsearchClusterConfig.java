@@ -79,6 +79,7 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable {
      *        The instance type for an Elasticsearch cluster.
      * @see ESPartitionInstanceType
      */
+
     public void setInstanceType(String instanceType) {
         this.instanceType = instanceType;
     }
@@ -91,6 +92,7 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable {
      * @return The instance type for an Elasticsearch cluster.
      * @see ESPartitionInstanceType
      */
+
     public String getInstanceType() {
         return this.instanceType;
     }
@@ -106,6 +108,7 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable {
      *         chained together.
      * @see ESPartitionInstanceType
      */
+
     public ElasticsearchClusterConfig withInstanceType(String instanceType) {
         setInstanceType(instanceType);
         return this;
@@ -122,6 +125,7 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable {
      *         chained together.
      * @see ESPartitionInstanceType
      */
+
     public void setInstanceType(ESPartitionInstanceType instanceType) {
         this.instanceType = instanceType.toString();
     }
@@ -137,6 +141,7 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable {
      *         chained together.
      * @see ESPartitionInstanceType
      */
+
     public ElasticsearchClusterConfig withInstanceType(
             ESPartitionInstanceType instanceType) {
         setInstanceType(instanceType);
@@ -151,6 +156,7 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable {
      * @param instanceCount
      *        The number of instances in the specified domain cluster.
      */
+
     public void setInstanceCount(Integer instanceCount) {
         this.instanceCount = instanceCount;
     }
@@ -162,6 +168,7 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable {
      * 
      * @return The number of instances in the specified domain cluster.
      */
+
     public Integer getInstanceCount() {
         return this.instanceCount;
     }
@@ -176,6 +183,7 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ElasticsearchClusterConfig withInstanceCount(Integer instanceCount) {
         setInstanceCount(instanceCount);
         return this;
@@ -196,6 +204,7 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable {
      *        target="_blank">About Dedicated Master Nodes</a> for more
      *        information.
      */
+
     public void setDedicatedMasterEnabled(Boolean dedicatedMasterEnabled) {
         this.dedicatedMasterEnabled = dedicatedMasterEnabled;
     }
@@ -214,6 +223,7 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable {
      *         target="_blank">About Dedicated Master Nodes</a> for more
      *         information.
      */
+
     public Boolean getDedicatedMasterEnabled() {
         return this.dedicatedMasterEnabled;
     }
@@ -235,6 +245,7 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ElasticsearchClusterConfig withDedicatedMasterEnabled(
             Boolean dedicatedMasterEnabled) {
         setDedicatedMasterEnabled(dedicatedMasterEnabled);
@@ -255,6 +266,7 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable {
      *         target="_blank">About Dedicated Master Nodes</a> for more
      *         information.
      */
+
     public Boolean isDedicatedMasterEnabled() {
         return this.dedicatedMasterEnabled;
     }
@@ -273,6 +285,7 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-zoneawareness"
      *        target="_blank">About Zone Awareness</a> for more information.
      */
+
     public void setZoneAwarenessEnabled(Boolean zoneAwarenessEnabled) {
         this.zoneAwarenessEnabled = zoneAwarenessEnabled;
     }
@@ -290,6 +303,7 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-zoneawareness"
      *         target="_blank">About Zone Awareness</a> for more information.
      */
+
     public Boolean getZoneAwarenessEnabled() {
         return this.zoneAwarenessEnabled;
     }
@@ -310,6 +324,7 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ElasticsearchClusterConfig withZoneAwarenessEnabled(
             Boolean zoneAwarenessEnabled) {
         setZoneAwarenessEnabled(zoneAwarenessEnabled);
@@ -329,6 +344,7 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-zoneawareness"
      *         target="_blank">About Zone Awareness</a> for more information.
      */
+
     public Boolean isZoneAwarenessEnabled() {
         return this.zoneAwarenessEnabled;
     }
@@ -342,6 +358,7 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable {
      *        The instance type for a dedicated master node.
      * @see ESPartitionInstanceType
      */
+
     public void setDedicatedMasterType(String dedicatedMasterType) {
         this.dedicatedMasterType = dedicatedMasterType;
     }
@@ -354,6 +371,7 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable {
      * @return The instance type for a dedicated master node.
      * @see ESPartitionInstanceType
      */
+
     public String getDedicatedMasterType() {
         return this.dedicatedMasterType;
     }
@@ -369,6 +387,7 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable {
      *         chained together.
      * @see ESPartitionInstanceType
      */
+
     public ElasticsearchClusterConfig withDedicatedMasterType(
             String dedicatedMasterType) {
         setDedicatedMasterType(dedicatedMasterType);
@@ -386,6 +405,7 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable {
      *         chained together.
      * @see ESPartitionInstanceType
      */
+
     public void setDedicatedMasterType(
             ESPartitionInstanceType dedicatedMasterType) {
         this.dedicatedMasterType = dedicatedMasterType.toString();
@@ -402,6 +422,7 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable {
      *         chained together.
      * @see ESPartitionInstanceType
      */
+
     public ElasticsearchClusterConfig withDedicatedMasterType(
             ESPartitionInstanceType dedicatedMasterType) {
         setDedicatedMasterType(dedicatedMasterType);
@@ -418,6 +439,7 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable {
      *        Total number of dedicated master nodes, active and on standby, for
      *        the cluster.
      */
+
     public void setDedicatedMasterCount(Integer dedicatedMasterCount) {
         this.dedicatedMasterCount = dedicatedMasterCount;
     }
@@ -431,6 +453,7 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable {
      * @return Total number of dedicated master nodes, active and on standby,
      *         for the cluster.
      */
+
     public Integer getDedicatedMasterCount() {
         return this.dedicatedMasterCount;
     }
@@ -447,6 +470,7 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ElasticsearchClusterConfig withDedicatedMasterCount(
             Integer dedicatedMasterCount) {
         setDedicatedMasterCount(dedicatedMasterCount);

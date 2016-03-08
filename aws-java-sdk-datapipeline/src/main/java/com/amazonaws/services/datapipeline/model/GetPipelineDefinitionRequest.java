@@ -51,6 +51,7 @@ public class GetPipelineDefinitionRequest extends AmazonWebServiceRequest
      * @param pipelineId
      *        The ID of the pipeline.
      */
+
     public void setPipelineId(String pipelineId) {
         this.pipelineId = pipelineId;
     }
@@ -62,6 +63,7 @@ public class GetPipelineDefinitionRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the pipeline.
      */
+
     public String getPipelineId() {
         return this.pipelineId;
     }
@@ -76,6 +78,7 @@ public class GetPipelineDefinitionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetPipelineDefinitionRequest withPipelineId(String pipelineId) {
         setPipelineId(pipelineId);
         return this;
@@ -95,6 +98,7 @@ public class GetPipelineDefinitionRequest extends AmazonWebServiceRequest
      *        definition saved to the pipeline or <code>active</code> to use the
      *        last definition that was activated.
      */
+
     public void setVersion(String version) {
         this.version = version;
     }
@@ -112,6 +116,7 @@ public class GetPipelineDefinitionRequest extends AmazonWebServiceRequest
      *         definition saved to the pipeline or <code>active</code> to use
      *         the last definition that was activated.
      */
+
     public String getVersion() {
         return this.version;
     }
@@ -132,6 +137,7 @@ public class GetPipelineDefinitionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetPipelineDefinitionRequest withVersion(String version) {
         setVersion(version);
         return this;

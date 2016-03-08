@@ -50,6 +50,7 @@ public class GetDomainNamesRequest extends AmazonWebServiceRequest implements
      * @param position
      *        The position of the current domain names to get information about.
      */
+
     public void setPosition(String position) {
         this.position = position;
     }
@@ -62,6 +63,7 @@ public class GetDomainNamesRequest extends AmazonWebServiceRequest implements
      * @return The position of the current domain names to get information
      *         about.
      */
+
     public String getPosition() {
         return this.position;
     }
@@ -76,6 +78,7 @@ public class GetDomainNamesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDomainNamesRequest withPosition(String position) {
         setPosition(position);
         return this;
@@ -93,6 +96,7 @@ public class GetDomainNamesRequest extends AmazonWebServiceRequest implements
      *        collection to get information about. The default limit is 25. It
      *        should be an integer between 1 - 500.
      */
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -108,6 +112,7 @@ public class GetDomainNamesRequest extends AmazonWebServiceRequest implements
      *         collection to get information about. The default limit is 25. It
      *         should be an integer between 1 - 500.
      */
+
     public Integer getLimit() {
         return this.limit;
     }
@@ -126,6 +131,7 @@ public class GetDomainNamesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDomainNamesRequest withLimit(Integer limit) {
         setLimit(limit);
         return this;

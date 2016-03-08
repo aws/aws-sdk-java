@@ -249,6 +249,7 @@ public class GetItemRequest extends AmazonWebServiceRequest implements
      * @param tableName
      *        The name of the table containing the requested item.
      */
+
     public void setTableName(String tableName) {
         this.tableName = tableName;
     }
@@ -260,6 +261,7 @@ public class GetItemRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the table containing the requested item.
      */
+
     public String getTableName() {
         return this.tableName;
     }
@@ -274,6 +276,7 @@ public class GetItemRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetItemRequest withTableName(String tableName) {
         setTableName(tableName);
         return this;
@@ -299,6 +302,7 @@ public class GetItemRequest extends AmazonWebServiceRequest implements
      *         value for the partition key. For a composite primary key, you
      *         must provide values for both the partition key and the sort key.
      */
+
     public java.util.Map<String, AttributeValue> getKey() {
         return key;
     }
@@ -324,6 +328,7 @@ public class GetItemRequest extends AmazonWebServiceRequest implements
      *        value for the partition key. For a composite primary key, you must
      *        provide values for both the partition key and the sort key.
      */
+
     public void setKey(java.util.Map<String, AttributeValue> key) {
         this.key = key;
     }
@@ -351,6 +356,7 @@ public class GetItemRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetItemRequest withKey(java.util.Map<String, AttributeValue> key) {
         setKey(key);
         return this;
@@ -371,6 +377,7 @@ public class GetItemRequest extends AmazonWebServiceRequest implements
      * Removes all the entries added into Key. &lt;p> Returns a reference to
      * this object so that method calls can be chained together.
      */
+
     public GetItemRequest clearKeyEntries() {
         this.key = null;
         return this;
@@ -420,6 +427,7 @@ public class GetItemRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Note that <i>AttributesToGet
      */
+
     public java.util.List<String> getAttributesToGet() {
         return attributesToGet;
     }
@@ -469,6 +477,7 @@ public class GetItemRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        Note that <i>AttributesToGet
      */
+
     public void setAttributesToGet(java.util.Collection<String> attributesToGet) {
         if (attributesToGet == null) {
             this.attributesToGet = null;
@@ -531,6 +540,7 @@ public class GetItemRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetItemRequest withAttributesToGet(String... attributesToGet) {
         if (this.attributesToGet == null) {
             setAttributesToGet(new java.util.ArrayList<String>(
@@ -589,6 +599,7 @@ public class GetItemRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetItemRequest withAttributesToGet(
             java.util.Collection<String> attributesToGet) {
         setAttributesToGet(attributesToGet);
@@ -607,6 +618,7 @@ public class GetItemRequest extends AmazonWebServiceRequest implements
      *        , then the operation uses strongly consistent reads; otherwise,
      *        the operation uses eventually consistent reads.
      */
+
     public void setConsistentRead(Boolean consistentRead) {
         this.consistentRead = consistentRead;
     }
@@ -622,6 +634,7 @@ public class GetItemRequest extends AmazonWebServiceRequest implements
      *         <code>true</code>, then the operation uses strongly consistent
      *         reads; otherwise, the operation uses eventually consistent reads.
      */
+
     public Boolean getConsistentRead() {
         return this.consistentRead;
     }
@@ -640,6 +653,7 @@ public class GetItemRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetItemRequest withConsistentRead(Boolean consistentRead) {
         setConsistentRead(consistentRead);
         return this;
@@ -656,6 +670,7 @@ public class GetItemRequest extends AmazonWebServiceRequest implements
      *         <code>true</code>, then the operation uses strongly consistent
      *         reads; otherwise, the operation uses eventually consistent reads.
      */
+
     public Boolean isConsistentRead() {
         return this.consistentRead;
     }
@@ -664,6 +679,7 @@ public class GetItemRequest extends AmazonWebServiceRequest implements
      * @param returnConsumedCapacity
      * @see ReturnConsumedCapacity
      */
+
     public void setReturnConsumedCapacity(String returnConsumedCapacity) {
         this.returnConsumedCapacity = returnConsumedCapacity;
     }
@@ -672,6 +688,7 @@ public class GetItemRequest extends AmazonWebServiceRequest implements
      * @return
      * @see ReturnConsumedCapacity
      */
+
     public String getReturnConsumedCapacity() {
         return this.returnConsumedCapacity;
     }
@@ -682,6 +699,7 @@ public class GetItemRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ReturnConsumedCapacity
      */
+
     public GetItemRequest withReturnConsumedCapacity(
             String returnConsumedCapacity) {
         setReturnConsumedCapacity(returnConsumedCapacity);
@@ -694,6 +712,7 @@ public class GetItemRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ReturnConsumedCapacity
      */
+
     public void setReturnConsumedCapacity(
             ReturnConsumedCapacity returnConsumedCapacity) {
         this.returnConsumedCapacity = returnConsumedCapacity.toString();
@@ -705,6 +724,7 @@ public class GetItemRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ReturnConsumedCapacity
      */
+
     public GetItemRequest withReturnConsumedCapacity(
             ReturnConsumedCapacity returnConsumedCapacity) {
         setReturnConsumedCapacity(returnConsumedCapacity);
@@ -757,6 +777,7 @@ public class GetItemRequest extends AmazonWebServiceRequest implements
      *        <i>AttributesToGet</i> parameter.
      *        </p>
      */
+
     public void setProjectionExpression(String projectionExpression) {
         this.projectionExpression = projectionExpression;
     }
@@ -806,6 +827,7 @@ public class GetItemRequest extends AmazonWebServiceRequest implements
      *         <i>AttributesToGet</i> parameter.
      *         </p>
      */
+
     public String getProjectionExpression() {
         return this.projectionExpression;
     }
@@ -858,6 +880,7 @@ public class GetItemRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetItemRequest withProjectionExpression(String projectionExpression) {
         setProjectionExpression(projectionExpression);
         return this;
@@ -1014,6 +1037,7 @@ public class GetItemRequest extends AmazonWebServiceRequest implements
      *         >Accessing Item Attributes</a> in the <i>Amazon DynamoDB
      *         Developer Guide</i>.
      */
+
     public java.util.Map<String, String> getExpressionAttributeNames() {
         return expressionAttributeNames;
     }
@@ -1170,6 +1194,7 @@ public class GetItemRequest extends AmazonWebServiceRequest implements
      *        >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer
      *        Guide</i>.
      */
+
     public void setExpressionAttributeNames(
             java.util.Map<String, String> expressionAttributeNames) {
         this.expressionAttributeNames = expressionAttributeNames;
@@ -1329,6 +1354,7 @@ public class GetItemRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetItemRequest withExpressionAttributeNames(
             java.util.Map<String, String> expressionAttributeNames) {
         setExpressionAttributeNames(expressionAttributeNames);
@@ -1352,6 +1378,7 @@ public class GetItemRequest extends AmazonWebServiceRequest implements
      * Returns a reference to this object so that method calls can be chained
      * together.
      */
+
     public GetItemRequest clearExpressionAttributeNamesEntries() {
         this.expressionAttributeNames = null;
         return this;

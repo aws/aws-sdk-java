@@ -69,6 +69,7 @@ public class ElasticsearchDomainConfig implements Serializable, Cloneable {
      *        Specifies the <code>ElasticsearchClusterConfig</code> for the
      *        Elasticsearch domain.
      */
+
     public void setElasticsearchClusterConfig(
             ElasticsearchClusterConfigStatus elasticsearchClusterConfig) {
         this.elasticsearchClusterConfig = elasticsearchClusterConfig;
@@ -83,6 +84,7 @@ public class ElasticsearchDomainConfig implements Serializable, Cloneable {
      * @return Specifies the <code>ElasticsearchClusterConfig</code> for the
      *         Elasticsearch domain.
      */
+
     public ElasticsearchClusterConfigStatus getElasticsearchClusterConfig() {
         return this.elasticsearchClusterConfig;
     }
@@ -99,6 +101,7 @@ public class ElasticsearchDomainConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ElasticsearchDomainConfig withElasticsearchClusterConfig(
             ElasticsearchClusterConfigStatus elasticsearchClusterConfig) {
         setElasticsearchClusterConfig(elasticsearchClusterConfig);
@@ -114,6 +117,7 @@ public class ElasticsearchDomainConfig implements Serializable, Cloneable {
      *        Specifies the <code>EBSOptions</code> for the Elasticsearch
      *        domain.
      */
+
     public void setEBSOptions(EBSOptionsStatus eBSOptions) {
         this.eBSOptions = eBSOptions;
     }
@@ -126,6 +130,7 @@ public class ElasticsearchDomainConfig implements Serializable, Cloneable {
      * @return Specifies the <code>EBSOptions</code> for the Elasticsearch
      *         domain.
      */
+
     public EBSOptionsStatus getEBSOptions() {
         return this.eBSOptions;
     }
@@ -141,6 +146,7 @@ public class ElasticsearchDomainConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ElasticsearchDomainConfig withEBSOptions(EBSOptionsStatus eBSOptions) {
         setEBSOptions(eBSOptions);
         return this;
@@ -154,6 +160,7 @@ public class ElasticsearchDomainConfig implements Serializable, Cloneable {
      * @param accessPolicies
      *        IAM access policy as a JSON-formatted string.
      */
+
     public void setAccessPolicies(AccessPoliciesStatus accessPolicies) {
         this.accessPolicies = accessPolicies;
     }
@@ -165,6 +172,7 @@ public class ElasticsearchDomainConfig implements Serializable, Cloneable {
      * 
      * @return IAM access policy as a JSON-formatted string.
      */
+
     public AccessPoliciesStatus getAccessPolicies() {
         return this.accessPolicies;
     }
@@ -179,6 +187,7 @@ public class ElasticsearchDomainConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ElasticsearchDomainConfig withAccessPolicies(
             AccessPoliciesStatus accessPolicies) {
         setAccessPolicies(accessPolicies);
@@ -194,6 +203,7 @@ public class ElasticsearchDomainConfig implements Serializable, Cloneable {
      *        Specifies the <code>SnapshotOptions</code> for the Elasticsearch
      *        domain.
      */
+
     public void setSnapshotOptions(SnapshotOptionsStatus snapshotOptions) {
         this.snapshotOptions = snapshotOptions;
     }
@@ -206,6 +216,7 @@ public class ElasticsearchDomainConfig implements Serializable, Cloneable {
      * @return Specifies the <code>SnapshotOptions</code> for the Elasticsearch
      *         domain.
      */
+
     public SnapshotOptionsStatus getSnapshotOptions() {
         return this.snapshotOptions;
     }
@@ -221,6 +232,7 @@ public class ElasticsearchDomainConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ElasticsearchDomainConfig withSnapshotOptions(
             SnapshotOptionsStatus snapshotOptions) {
         setSnapshotOptions(snapshotOptions);
@@ -241,6 +253,7 @@ public class ElasticsearchDomainConfig implements Serializable, Cloneable {
      *        target="_blank">Configuring Advanced Options</a> for more
      *        information.
      */
+
     public void setAdvancedOptions(AdvancedOptionsStatus advancedOptions) {
         this.advancedOptions = advancedOptions;
     }
@@ -258,6 +271,7 @@ public class ElasticsearchDomainConfig implements Serializable, Cloneable {
      *         target="_blank">Configuring Advanced Options</a> for more
      *         information.
      */
+
     public AdvancedOptionsStatus getAdvancedOptions() {
         return this.advancedOptions;
     }
@@ -278,6 +292,7 @@ public class ElasticsearchDomainConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ElasticsearchDomainConfig withAdvancedOptions(
             AdvancedOptionsStatus advancedOptions) {
         setAdvancedOptions(advancedOptions);

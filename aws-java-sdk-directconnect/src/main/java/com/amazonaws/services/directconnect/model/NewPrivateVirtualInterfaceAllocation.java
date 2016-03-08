@@ -42,6 +42,7 @@ public class NewPrivateVirtualInterfaceAllocation implements Serializable,
     /**
      * @param virtualInterfaceName
      */
+
     public void setVirtualInterfaceName(String virtualInterfaceName) {
         this.virtualInterfaceName = virtualInterfaceName;
     }
@@ -49,6 +50,7 @@ public class NewPrivateVirtualInterfaceAllocation implements Serializable,
     /**
      * @return
      */
+
     public String getVirtualInterfaceName() {
         return this.virtualInterfaceName;
     }
@@ -58,6 +60,7 @@ public class NewPrivateVirtualInterfaceAllocation implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NewPrivateVirtualInterfaceAllocation withVirtualInterfaceName(
             String virtualInterfaceName) {
         setVirtualInterfaceName(virtualInterfaceName);
@@ -67,6 +70,7 @@ public class NewPrivateVirtualInterfaceAllocation implements Serializable,
     /**
      * @param vlan
      */
+
     public void setVlan(Integer vlan) {
         this.vlan = vlan;
     }
@@ -74,6 +78,7 @@ public class NewPrivateVirtualInterfaceAllocation implements Serializable,
     /**
      * @return
      */
+
     public Integer getVlan() {
         return this.vlan;
     }
@@ -83,6 +88,7 @@ public class NewPrivateVirtualInterfaceAllocation implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NewPrivateVirtualInterfaceAllocation withVlan(Integer vlan) {
         setVlan(vlan);
         return this;
@@ -91,6 +97,7 @@ public class NewPrivateVirtualInterfaceAllocation implements Serializable,
     /**
      * @param asn
      */
+
     public void setAsn(Integer asn) {
         this.asn = asn;
     }
@@ -98,6 +105,7 @@ public class NewPrivateVirtualInterfaceAllocation implements Serializable,
     /**
      * @return
      */
+
     public Integer getAsn() {
         return this.asn;
     }
@@ -107,6 +115,7 @@ public class NewPrivateVirtualInterfaceAllocation implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NewPrivateVirtualInterfaceAllocation withAsn(Integer asn) {
         setAsn(asn);
         return this;
@@ -115,6 +124,7 @@ public class NewPrivateVirtualInterfaceAllocation implements Serializable,
     /**
      * @param authKey
      */
+
     public void setAuthKey(String authKey) {
         this.authKey = authKey;
     }
@@ -122,6 +132,7 @@ public class NewPrivateVirtualInterfaceAllocation implements Serializable,
     /**
      * @return
      */
+
     public String getAuthKey() {
         return this.authKey;
     }
@@ -131,6 +142,7 @@ public class NewPrivateVirtualInterfaceAllocation implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NewPrivateVirtualInterfaceAllocation withAuthKey(String authKey) {
         setAuthKey(authKey);
         return this;
@@ -139,6 +151,7 @@ public class NewPrivateVirtualInterfaceAllocation implements Serializable,
     /**
      * @param amazonAddress
      */
+
     public void setAmazonAddress(String amazonAddress) {
         this.amazonAddress = amazonAddress;
     }
@@ -146,6 +159,7 @@ public class NewPrivateVirtualInterfaceAllocation implements Serializable,
     /**
      * @return
      */
+
     public String getAmazonAddress() {
         return this.amazonAddress;
     }
@@ -155,6 +169,7 @@ public class NewPrivateVirtualInterfaceAllocation implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NewPrivateVirtualInterfaceAllocation withAmazonAddress(
             String amazonAddress) {
         setAmazonAddress(amazonAddress);
@@ -164,6 +179,7 @@ public class NewPrivateVirtualInterfaceAllocation implements Serializable,
     /**
      * @param customerAddress
      */
+
     public void setCustomerAddress(String customerAddress) {
         this.customerAddress = customerAddress;
     }
@@ -171,6 +187,7 @@ public class NewPrivateVirtualInterfaceAllocation implements Serializable,
     /**
      * @return
      */
+
     public String getCustomerAddress() {
         return this.customerAddress;
     }
@@ -180,6 +197,7 @@ public class NewPrivateVirtualInterfaceAllocation implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NewPrivateVirtualInterfaceAllocation withCustomerAddress(
             String customerAddress) {
         setCustomerAddress(customerAddress);

@@ -63,6 +63,7 @@ public class TransitionState implements Serializable, Cloneable {
      *        Whether the transition between stages is enabled (true) or
      *        disabled (false).
      */
+
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
     }
@@ -76,6 +77,7 @@ public class TransitionState implements Serializable, Cloneable {
      * @return Whether the transition between stages is enabled (true) or
      *         disabled (false).
      */
+
     public Boolean getEnabled() {
         return this.enabled;
     }
@@ -92,6 +94,7 @@ public class TransitionState implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TransitionState withEnabled(Boolean enabled) {
         setEnabled(enabled);
         return this;
@@ -106,6 +109,7 @@ public class TransitionState implements Serializable, Cloneable {
      * @return Whether the transition between stages is enabled (true) or
      *         disabled (false).
      */
+
     public Boolean isEnabled() {
         return this.enabled;
     }
@@ -118,6 +122,7 @@ public class TransitionState implements Serializable, Cloneable {
      * @param lastChangedBy
      *        The ID of the user who last changed the transition state.
      */
+
     public void setLastChangedBy(String lastChangedBy) {
         this.lastChangedBy = lastChangedBy;
     }
@@ -129,6 +134,7 @@ public class TransitionState implements Serializable, Cloneable {
      * 
      * @return The ID of the user who last changed the transition state.
      */
+
     public String getLastChangedBy() {
         return this.lastChangedBy;
     }
@@ -143,6 +149,7 @@ public class TransitionState implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TransitionState withLastChangedBy(String lastChangedBy) {
         setLastChangedBy(lastChangedBy);
         return this;
@@ -156,6 +163,7 @@ public class TransitionState implements Serializable, Cloneable {
      * @param lastChangedAt
      *        The timestamp when the transition state was last changed.
      */
+
     public void setLastChangedAt(java.util.Date lastChangedAt) {
         this.lastChangedAt = lastChangedAt;
     }
@@ -167,6 +175,7 @@ public class TransitionState implements Serializable, Cloneable {
      * 
      * @return The timestamp when the transition state was last changed.
      */
+
     public java.util.Date getLastChangedAt() {
         return this.lastChangedAt;
     }
@@ -181,6 +190,7 @@ public class TransitionState implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TransitionState withLastChangedAt(java.util.Date lastChangedAt) {
         setLastChangedAt(lastChangedAt);
         return this;
@@ -196,6 +206,7 @@ public class TransitionState implements Serializable, Cloneable {
      *        The user-specified reason why the transition between two stages of
      *        a pipeline was disabled.
      */
+
     public void setDisabledReason(String disabledReason) {
         this.disabledReason = disabledReason;
     }
@@ -209,6 +220,7 @@ public class TransitionState implements Serializable, Cloneable {
      * @return The user-specified reason why the transition between two stages
      *         of a pipeline was disabled.
      */
+
     public String getDisabledReason() {
         return this.disabledReason;
     }
@@ -225,6 +237,7 @@ public class TransitionState implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TransitionState withDisabledReason(String disabledReason) {
         setDisabledReason(disabledReason);
         return this;

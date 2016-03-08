@@ -63,6 +63,7 @@ public class ListVirtualMFADevicesResult implements Serializable, Cloneable {
      *         the <code>AssignmentStatus</code> value that was passed in the
      *         request.
      */
+
     public java.util.List<VirtualMFADevice> getVirtualMFADevices() {
         if (virtualMFADevices == null) {
             virtualMFADevices = new com.amazonaws.internal.SdkInternalList<VirtualMFADevice>();
@@ -81,6 +82,7 @@ public class ListVirtualMFADevicesResult implements Serializable, Cloneable {
      *        the <code>AssignmentStatus</code> value that was passed in the
      *        request.
      */
+
     public void setVirtualMFADevices(
             java.util.Collection<VirtualMFADevice> virtualMFADevices) {
         if (virtualMFADevices == null) {
@@ -111,6 +113,7 @@ public class ListVirtualMFADevicesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListVirtualMFADevicesResult withVirtualMFADevices(
             VirtualMFADevice... virtualMFADevices) {
         if (this.virtualMFADevices == null) {
@@ -136,6 +139,7 @@ public class ListVirtualMFADevicesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListVirtualMFADevicesResult withVirtualMFADevices(
             java.util.Collection<VirtualMFADevice> virtualMFADevices) {
         setVirtualMFADevices(virtualMFADevices);
@@ -163,6 +167,7 @@ public class ListVirtualMFADevicesResult implements Serializable, Cloneable {
      *        <code>IsTruncated</code> after every call to ensure that you
      *        receive all of your results.
      */
+
     public void setIsTruncated(Boolean isTruncated) {
         this.isTruncated = isTruncated;
     }
@@ -187,6 +192,7 @@ public class ListVirtualMFADevicesResult implements Serializable, Cloneable {
      *         <code>IsTruncated</code> after every call to ensure that you
      *         receive all of your results.
      */
+
     public Boolean getIsTruncated() {
         return this.isTruncated;
     }
@@ -214,6 +220,7 @@ public class ListVirtualMFADevicesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListVirtualMFADevicesResult withIsTruncated(Boolean isTruncated) {
         setIsTruncated(isTruncated);
         return this;
@@ -239,6 +246,7 @@ public class ListVirtualMFADevicesResult implements Serializable, Cloneable {
      *         <code>IsTruncated</code> after every call to ensure that you
      *         receive all of your results.
      */
+
     public Boolean isTruncated() {
         return this.isTruncated;
     }
@@ -255,6 +263,7 @@ public class ListVirtualMFADevicesResult implements Serializable, Cloneable {
      *        is present and contains the value to use for the
      *        <code>Marker</code> parameter in a subsequent pagination request.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -270,6 +279,7 @@ public class ListVirtualMFADevicesResult implements Serializable, Cloneable {
      *         is present and contains the value to use for the
      *         <code>Marker</code> parameter in a subsequent pagination request.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -288,6 +298,7 @@ public class ListVirtualMFADevicesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListVirtualMFADevicesResult withMarker(String marker) {
         setMarker(marker);
         return this;

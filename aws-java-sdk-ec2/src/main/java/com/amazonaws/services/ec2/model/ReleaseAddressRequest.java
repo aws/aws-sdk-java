@@ -68,6 +68,7 @@ public class ReleaseAddressRequest extends AmazonWebServiceRequest implements
      * @param publicIp
      *        [EC2-Classic] The Elastic IP address. Required for EC2-Classic.
      */
+
     public void setPublicIp(String publicIp) {
         this.publicIp = publicIp;
     }
@@ -79,6 +80,7 @@ public class ReleaseAddressRequest extends AmazonWebServiceRequest implements
      * 
      * @return [EC2-Classic] The Elastic IP address. Required for EC2-Classic.
      */
+
     public String getPublicIp() {
         return this.publicIp;
     }
@@ -93,6 +95,7 @@ public class ReleaseAddressRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReleaseAddressRequest withPublicIp(String publicIp) {
         setPublicIp(publicIp);
         return this;
@@ -106,6 +109,7 @@ public class ReleaseAddressRequest extends AmazonWebServiceRequest implements
      * @param allocationId
      *        [EC2-VPC] The allocation ID. Required for EC2-VPC.
      */
+
     public void setAllocationId(String allocationId) {
         this.allocationId = allocationId;
     }
@@ -117,6 +121,7 @@ public class ReleaseAddressRequest extends AmazonWebServiceRequest implements
      * 
      * @return [EC2-VPC] The allocation ID. Required for EC2-VPC.
      */
+
     public String getAllocationId() {
         return this.allocationId;
     }
@@ -131,6 +136,7 @@ public class ReleaseAddressRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReleaseAddressRequest withAllocationId(String allocationId) {
         setAllocationId(allocationId);
         return this;

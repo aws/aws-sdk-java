@@ -50,6 +50,7 @@ public class Position implements Serializable, Cloneable {
      * @param line
      *        The line containing the specified position in the document.
      */
+
     public void setLine(Integer line) {
         this.line = line;
     }
@@ -61,6 +62,7 @@ public class Position implements Serializable, Cloneable {
      * 
      * @return The line containing the specified position in the document.
      */
+
     public Integer getLine() {
         return this.line;
     }
@@ -75,6 +77,7 @@ public class Position implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Position withLine(Integer line) {
         setLine(line);
         return this;
@@ -89,6 +92,7 @@ public class Position implements Serializable, Cloneable {
      *        The column in the line containing the specified position in the
      *        document.
      */
+
     public void setColumn(Integer column) {
         this.column = column;
     }
@@ -101,6 +105,7 @@ public class Position implements Serializable, Cloneable {
      * @return The column in the line containing the specified position in the
      *         document.
      */
+
     public Integer getColumn() {
         return this.column;
     }
@@ -116,6 +121,7 @@ public class Position implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Position withColumn(Integer column) {
         setColumn(column);
         return this;

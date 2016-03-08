@@ -69,6 +69,7 @@ public class UpdateDistributionRequest extends AmazonWebServiceRequest
      * @param distributionConfig
      *        The distribution's configuration information.
      */
+
     public void setDistributionConfig(DistributionConfig distributionConfig) {
         this.distributionConfig = distributionConfig;
     }
@@ -78,6 +79,7 @@ public class UpdateDistributionRequest extends AmazonWebServiceRequest
      * 
      * @return The distribution's configuration information.
      */
+
     public DistributionConfig getDistributionConfig() {
         return this.distributionConfig;
     }
@@ -90,6 +92,7 @@ public class UpdateDistributionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateDistributionRequest withDistributionConfig(
             DistributionConfig distributionConfig) {
         setDistributionConfig(distributionConfig);
@@ -102,6 +105,7 @@ public class UpdateDistributionRequest extends AmazonWebServiceRequest
      * @param id
      *        The distribution's id.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -111,6 +115,7 @@ public class UpdateDistributionRequest extends AmazonWebServiceRequest
      * 
      * @return The distribution's id.
      */
+
     public String getId() {
         return this.id;
     }
@@ -123,6 +128,7 @@ public class UpdateDistributionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateDistributionRequest withId(String id) {
         setId(id);
         return this;
@@ -136,6 +142,7 @@ public class UpdateDistributionRequest extends AmazonWebServiceRequest
      *        The value of the ETag header you received when retrieving the
      *        distribution's configuration. For example: E2QWRUHAPOMQZL.
      */
+
     public void setIfMatch(String ifMatch) {
         this.ifMatch = ifMatch;
     }
@@ -147,6 +154,7 @@ public class UpdateDistributionRequest extends AmazonWebServiceRequest
      * @return The value of the ETag header you received when retrieving the
      *         distribution's configuration. For example: E2QWRUHAPOMQZL.
      */
+
     public String getIfMatch() {
         return this.ifMatch;
     }
@@ -161,6 +169,7 @@ public class UpdateDistributionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateDistributionRequest withIfMatch(String ifMatch) {
         setIfMatch(ifMatch);
         return this;

@@ -46,6 +46,7 @@ public class RemoveTargetsResult implements Serializable, Cloneable {
      * @param failedEntryCount
      *        The number of failed entries.
      */
+
     public void setFailedEntryCount(Integer failedEntryCount) {
         this.failedEntryCount = failedEntryCount;
     }
@@ -57,6 +58,7 @@ public class RemoveTargetsResult implements Serializable, Cloneable {
      * 
      * @return The number of failed entries.
      */
+
     public Integer getFailedEntryCount() {
         return this.failedEntryCount;
     }
@@ -71,6 +73,7 @@ public class RemoveTargetsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RemoveTargetsResult withFailedEntryCount(Integer failedEntryCount) {
         setFailedEntryCount(failedEntryCount);
         return this;
@@ -83,6 +86,7 @@ public class RemoveTargetsResult implements Serializable, Cloneable {
      * 
      * @return An array of failed target entries.
      */
+
     public java.util.List<RemoveTargetsResultEntry> getFailedEntries() {
         return failedEntries;
     }
@@ -95,6 +99,7 @@ public class RemoveTargetsResult implements Serializable, Cloneable {
      * @param failedEntries
      *        An array of failed target entries.
      */
+
     public void setFailedEntries(
             java.util.Collection<RemoveTargetsResultEntry> failedEntries) {
         if (failedEntries == null) {
@@ -122,6 +127,7 @@ public class RemoveTargetsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RemoveTargetsResult withFailedEntries(
             RemoveTargetsResultEntry... failedEntries) {
         if (this.failedEntries == null) {
@@ -144,6 +150,7 @@ public class RemoveTargetsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RemoveTargetsResult withFailedEntries(
             java.util.Collection<RemoveTargetsResultEntry> failedEntries) {
         setFailedEntries(failedEntries);

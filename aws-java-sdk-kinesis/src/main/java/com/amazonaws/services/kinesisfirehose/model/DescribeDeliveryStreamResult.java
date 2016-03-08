@@ -40,6 +40,7 @@ public class DescribeDeliveryStreamResult implements Serializable, Cloneable {
      * @param deliveryStreamDescription
      *        Information about the delivery stream.
      */
+
     public void setDeliveryStreamDescription(
             DeliveryStreamDescription deliveryStreamDescription) {
         this.deliveryStreamDescription = deliveryStreamDescription;
@@ -52,6 +53,7 @@ public class DescribeDeliveryStreamResult implements Serializable, Cloneable {
      * 
      * @return Information about the delivery stream.
      */
+
     public DeliveryStreamDescription getDeliveryStreamDescription() {
         return this.deliveryStreamDescription;
     }
@@ -66,6 +68,7 @@ public class DescribeDeliveryStreamResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeDeliveryStreamResult withDeliveryStreamDescription(
             DeliveryStreamDescription deliveryStreamDescription) {
         setDeliveryStreamDescription(deliveryStreamDescription);

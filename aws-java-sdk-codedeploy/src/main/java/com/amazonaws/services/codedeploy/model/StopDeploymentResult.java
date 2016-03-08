@@ -58,6 +58,7 @@ public class StopDeploymentResult implements Serializable, Cloneable {
      *        <li>Succeeded: The stop operation succeeded.</li>
      * @see StopStatus
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -77,6 +78,7 @@ public class StopDeploymentResult implements Serializable, Cloneable {
      *         <li>Succeeded: The stop operation succeeded.</li>
      * @see StopStatus
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -99,6 +101,7 @@ public class StopDeploymentResult implements Serializable, Cloneable {
      *         chained together.
      * @see StopStatus
      */
+
     public StopDeploymentResult withStatus(String status) {
         setStatus(status);
         return this;
@@ -122,6 +125,7 @@ public class StopDeploymentResult implements Serializable, Cloneable {
      *         chained together.
      * @see StopStatus
      */
+
     public void setStatus(StopStatus status) {
         this.status = status.toString();
     }
@@ -144,6 +148,7 @@ public class StopDeploymentResult implements Serializable, Cloneable {
      *         chained together.
      * @see StopStatus
      */
+
     public StopDeploymentResult withStatus(StopStatus status) {
         setStatus(status);
         return this;
@@ -157,6 +162,7 @@ public class StopDeploymentResult implements Serializable, Cloneable {
      * @param statusMessage
      *        An accompanying status message.
      */
+
     public void setStatusMessage(String statusMessage) {
         this.statusMessage = statusMessage;
     }
@@ -168,6 +174,7 @@ public class StopDeploymentResult implements Serializable, Cloneable {
      * 
      * @return An accompanying status message.
      */
+
     public String getStatusMessage() {
         return this.statusMessage;
     }
@@ -182,6 +189,7 @@ public class StopDeploymentResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StopDeploymentResult withStatusMessage(String statusMessage) {
         setStatusMessage(statusMessage);
         return this;

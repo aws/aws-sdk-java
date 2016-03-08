@@ -45,6 +45,7 @@ public class AvailableCapacity implements Serializable, Cloneable {
      * 
      * @return The total number of instances that the Dedicated host supports.
      */
+
     public java.util.List<InstanceCapacity> getAvailableInstanceCapacity() {
         if (availableInstanceCapacity == null) {
             availableInstanceCapacity = new com.amazonaws.internal.SdkInternalList<InstanceCapacity>();
@@ -60,6 +61,7 @@ public class AvailableCapacity implements Serializable, Cloneable {
      * @param availableInstanceCapacity
      *        The total number of instances that the Dedicated host supports.
      */
+
     public void setAvailableInstanceCapacity(
             java.util.Collection<InstanceCapacity> availableInstanceCapacity) {
         if (availableInstanceCapacity == null) {
@@ -87,6 +89,7 @@ public class AvailableCapacity implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AvailableCapacity withAvailableInstanceCapacity(
             InstanceCapacity... availableInstanceCapacity) {
         if (this.availableInstanceCapacity == null) {
@@ -109,6 +112,7 @@ public class AvailableCapacity implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AvailableCapacity withAvailableInstanceCapacity(
             java.util.Collection<InstanceCapacity> availableInstanceCapacity) {
         setAvailableInstanceCapacity(availableInstanceCapacity);
@@ -123,6 +127,7 @@ public class AvailableCapacity implements Serializable, Cloneable {
      * @param availableVCpus
      *        The number of vCPUs available on the Dedicated host.
      */
+
     public void setAvailableVCpus(Integer availableVCpus) {
         this.availableVCpus = availableVCpus;
     }
@@ -134,6 +139,7 @@ public class AvailableCapacity implements Serializable, Cloneable {
      * 
      * @return The number of vCPUs available on the Dedicated host.
      */
+
     public Integer getAvailableVCpus() {
         return this.availableVCpus;
     }
@@ -148,6 +154,7 @@ public class AvailableCapacity implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AvailableCapacity withAvailableVCpus(Integer availableVCpus) {
         setAvailableVCpus(availableVCpus);
         return this;
