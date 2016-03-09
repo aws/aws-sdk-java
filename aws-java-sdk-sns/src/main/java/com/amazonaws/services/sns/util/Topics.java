@@ -187,7 +187,7 @@ public class Topics {
         String sqsQueueArn = sqsAttrs.get(QueueAttributeName.QueueArn.toString());
 
         String policyJson = sqsAttrs.get(QueueAttributeName.Policy.toString());
-        Policy policy = extendPolicy || policyJson == null || policyJson.length() == 0
+        Policy policy = extendPolicy && policyJson != null && policyJson.length() > 0
                         ? Policy.fromJson(policyJson) : new Policy();
         policy.getStatements().add(new Statement(Effect.Allow)
                 .withId("topic-subscription-" + snsTopicArn)
