@@ -218,7 +218,7 @@ final class DynamoDBAutoGeneratorRegistry {
         }
 
         public AbstractGenerator(final Class<T> generatedType, final DynamoDBAutoGenerateStrategy strategy) {
-            this(generatedType, (DynamoDBAutoGenerateStrategy.CREATE == strategy ? CreateGeneratable.<T>instance() : AlwaysGeneratable.<T>instance()));
+            this(generatedType, (DynamoDBAutoGenerateStrategy.CREATE == strategy) ? CreateGeneratable.<T>instance() : AlwaysGeneratable.<T>instance());
         }
 
         private final Class<T> getGeneratedType() {
