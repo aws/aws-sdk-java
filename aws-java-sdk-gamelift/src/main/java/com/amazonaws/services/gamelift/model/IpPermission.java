@@ -44,9 +44,10 @@ public class IpPermission implements Serializable, Cloneable {
     /**
      * <p>
      * Range of allowed IP addresses. This value must be expressed in <a
-     * href="https://tools.ietf.org/id/cidr">CIDR notation</a>. Example:
-     * "000.000.000.000/[subnet mask]" or optionally the shortened version
-     * "0.0.0.0/[subnet mask]".
+     * href="https://tools.ietf.org/id/cidr">CIDR notation</a>. Example: "
+     * <code>000.000.000.000/[subnet mask]</code>
+     * " or optionally the shortened version "<code>0.0.0.0/[subnet mask]</code>
+     * ".
      * </p>
      */
     private String ipRange;
@@ -149,16 +150,18 @@ public class IpPermission implements Serializable, Cloneable {
     /**
      * <p>
      * Range of allowed IP addresses. This value must be expressed in <a
-     * href="https://tools.ietf.org/id/cidr">CIDR notation</a>. Example:
-     * "000.000.000.000/[subnet mask]" or optionally the shortened version
-     * "0.0.0.0/[subnet mask]".
+     * href="https://tools.ietf.org/id/cidr">CIDR notation</a>. Example: "
+     * <code>000.000.000.000/[subnet mask]</code>
+     * " or optionally the shortened version "<code>0.0.0.0/[subnet mask]</code>
+     * ".
      * </p>
      * 
      * @param ipRange
      *        Range of allowed IP addresses. This value must be expressed in <a
      *        href="https://tools.ietf.org/id/cidr">CIDR notation</a>. Example:
-     *        "000.000.000.000/[subnet mask]" or optionally the shortened
-     *        version "0.0.0.0/[subnet mask]".
+     *        "<code>000.000.000.000/[subnet mask]</code>
+     *        " or optionally the shortened version "
+     *        <code>0.0.0.0/[subnet mask]</code>".
      */
 
     public void setIpRange(String ipRange) {
@@ -168,15 +171,17 @@ public class IpPermission implements Serializable, Cloneable {
     /**
      * <p>
      * Range of allowed IP addresses. This value must be expressed in <a
-     * href="https://tools.ietf.org/id/cidr">CIDR notation</a>. Example:
-     * "000.000.000.000/[subnet mask]" or optionally the shortened version
-     * "0.0.0.0/[subnet mask]".
+     * href="https://tools.ietf.org/id/cidr">CIDR notation</a>. Example: "
+     * <code>000.000.000.000/[subnet mask]</code>
+     * " or optionally the shortened version "<code>0.0.0.0/[subnet mask]</code>
+     * ".
      * </p>
      * 
      * @return Range of allowed IP addresses. This value must be expressed in <a
      *         href="https://tools.ietf.org/id/cidr">CIDR notation</a>. Example:
-     *         "000.000.000.000/[subnet mask]" or optionally the shortened
-     *         version "0.0.0.0/[subnet mask]".
+     *         "<code>000.000.000.000/[subnet mask]</code>
+     *         " or optionally the shortened version "
+     *         <code>0.0.0.0/[subnet mask]</code>".
      */
 
     public String getIpRange() {
@@ -186,16 +191,18 @@ public class IpPermission implements Serializable, Cloneable {
     /**
      * <p>
      * Range of allowed IP addresses. This value must be expressed in <a
-     * href="https://tools.ietf.org/id/cidr">CIDR notation</a>. Example:
-     * "000.000.000.000/[subnet mask]" or optionally the shortened version
-     * "0.0.0.0/[subnet mask]".
+     * href="https://tools.ietf.org/id/cidr">CIDR notation</a>. Example: "
+     * <code>000.000.000.000/[subnet mask]</code>
+     * " or optionally the shortened version "<code>0.0.0.0/[subnet mask]</code>
+     * ".
      * </p>
      * 
      * @param ipRange
      *        Range of allowed IP addresses. This value must be expressed in <a
      *        href="https://tools.ietf.org/id/cidr">CIDR notation</a>. Example:
-     *        "000.000.000.000/[subnet mask]" or optionally the shortened
-     *        version "0.0.0.0/[subnet mask]".
+     *        "<code>000.000.000.000/[subnet mask]</code>
+     *        " or optionally the shortened version "
+     *        <code>0.0.0.0/[subnet mask]</code>".
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

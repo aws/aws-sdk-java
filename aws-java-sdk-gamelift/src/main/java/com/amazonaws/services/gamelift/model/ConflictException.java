@@ -20,10 +20,9 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Exception thrown when performing the requested operation would cause a
- * conflict with the current state of a service resource associated with the
- * request. Requests that result in failures of this type should not be retried
- * by clients without resolving the conflict.
+ * The requested operation would cause a conflict with the current state of a
+ * service resource associated with the request. Please resolve the conflict
+ * before retrying this request.
  * </p>
  */
 public class ConflictException extends AmazonServiceException {

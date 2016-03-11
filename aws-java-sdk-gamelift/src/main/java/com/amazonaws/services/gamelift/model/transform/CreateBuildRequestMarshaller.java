@@ -77,6 +77,12 @@ public class CreateBuildRequestMarshaller implements
                         .value(createBuildRequest.getVersion());
             }
 
+            if (createBuildRequest.getStorageLocation() != null) {
+                jsonWriter.key("StorageLocation");
+                S3LocationJsonMarshaller.getInstance().marshall(
+                        createBuildRequest.getStorageLocation(), jsonWriter);
+            }
+
             jsonWriter.endObject();
 
             String snippet = stringWriter.toString();

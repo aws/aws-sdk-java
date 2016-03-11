@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the output from the DescribeReservedNodeOfferings action.
+ * 
  * </p>
  */
 public class DescribeReservedNodeOfferingsResult implements Serializable, Cloneable {
@@ -34,7 +34,7 @@ public class DescribeReservedNodeOfferingsResult implements Serializable, Clonea
     private String marker;
 
     /**
-     * A list of reserved node offerings.
+     * A list of <code>ReservedNodeOffering</code> objects.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<ReservedNodeOffering> reservedNodeOfferings;
 
@@ -102,9 +102,9 @@ public class DescribeReservedNodeOfferingsResult implements Serializable, Clonea
     }
 
     /**
-     * A list of reserved node offerings.
+     * A list of <code>ReservedNodeOffering</code> objects.
      *
-     * @return A list of reserved node offerings.
+     * @return A list of <code>ReservedNodeOffering</code> objects.
      */
     public java.util.List<ReservedNodeOffering> getReservedNodeOfferings() {
         if (reservedNodeOfferings == null) {
@@ -115,9 +115,9 @@ public class DescribeReservedNodeOfferingsResult implements Serializable, Clonea
     }
     
     /**
-     * A list of reserved node offerings.
+     * A list of <code>ReservedNodeOffering</code> objects.
      *
-     * @param reservedNodeOfferings A list of reserved node offerings.
+     * @param reservedNodeOfferings A list of <code>ReservedNodeOffering</code> objects.
      */
     public void setReservedNodeOfferings(java.util.Collection<ReservedNodeOffering> reservedNodeOfferings) {
         if (reservedNodeOfferings == null) {
@@ -130,7 +130,7 @@ public class DescribeReservedNodeOfferingsResult implements Serializable, Clonea
     }
     
     /**
-     * A list of reserved node offerings.
+     * A list of <code>ReservedNodeOffering</code> objects.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setReservedNodeOfferings(java.util.Collection)} or
@@ -139,7 +139,7 @@ public class DescribeReservedNodeOfferingsResult implements Serializable, Clonea
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservedNodeOfferings A list of reserved node offerings.
+     * @param reservedNodeOfferings A list of <code>ReservedNodeOffering</code> objects.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -153,11 +153,11 @@ public class DescribeReservedNodeOfferingsResult implements Serializable, Clonea
     }
     
     /**
-     * A list of reserved node offerings.
+     * A list of <code>ReservedNodeOffering</code> objects.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservedNodeOfferings A list of reserved node offerings.
+     * @param reservedNodeOfferings A list of <code>ReservedNodeOffering</code> objects.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

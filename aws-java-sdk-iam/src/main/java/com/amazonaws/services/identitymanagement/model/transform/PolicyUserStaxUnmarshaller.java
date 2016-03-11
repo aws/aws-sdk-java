@@ -54,6 +54,12 @@ public class PolicyUserStaxUnmarshaller implements
                             .unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("UserId", targetDepth)) {
+                    policyUser.setUserId(StringStaxUnmarshaller.getInstance()
+                            .unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return policyUser;

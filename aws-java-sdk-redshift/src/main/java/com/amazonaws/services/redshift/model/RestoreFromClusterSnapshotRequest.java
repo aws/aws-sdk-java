@@ -203,6 +203,11 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest i
     private String nodeType;
 
     /**
+     * Reserved.
+     */
+    private String additionalInfo;
+
+    /**
      * The identifier of the cluster that will be created from restoring the
      * snapshot. <p> <p>Constraints: <ul> <li>Must contain from 1 to 63
      * alphanumeric characters or hyphens.</li> <li>Alphabetic characters
@@ -1316,6 +1321,39 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest i
     }
 
     /**
+     * Reserved.
+     *
+     * @return Reserved.
+     */
+    public String getAdditionalInfo() {
+        return additionalInfo;
+    }
+    
+    /**
+     * Reserved.
+     *
+     * @param additionalInfo Reserved.
+     */
+    public void setAdditionalInfo(String additionalInfo) {
+        this.additionalInfo = additionalInfo;
+    }
+    
+    /**
+     * Reserved.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param additionalInfo Reserved.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public RestoreFromClusterSnapshotRequest withAdditionalInfo(String additionalInfo) {
+        this.additionalInfo = additionalInfo;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1345,7 +1383,8 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest i
         if (getPreferredMaintenanceWindow() != null) sb.append("PreferredMaintenanceWindow: " + getPreferredMaintenanceWindow() + ",");
         if (getAutomatedSnapshotRetentionPeriod() != null) sb.append("AutomatedSnapshotRetentionPeriod: " + getAutomatedSnapshotRetentionPeriod() + ",");
         if (getKmsKeyId() != null) sb.append("KmsKeyId: " + getKmsKeyId() + ",");
-        if (getNodeType() != null) sb.append("NodeType: " + getNodeType() );
+        if (getNodeType() != null) sb.append("NodeType: " + getNodeType() + ",");
+        if (getAdditionalInfo() != null) sb.append("AdditionalInfo: " + getAdditionalInfo() );
         sb.append("}");
         return sb.toString();
     }
@@ -1374,6 +1413,7 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getAutomatedSnapshotRetentionPeriod() == null) ? 0 : getAutomatedSnapshotRetentionPeriod().hashCode()); 
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode()); 
         hashCode = prime * hashCode + ((getNodeType() == null) ? 0 : getNodeType().hashCode()); 
+        hashCode = prime * hashCode + ((getAdditionalInfo() == null) ? 0 : getAdditionalInfo().hashCode()); 
         return hashCode;
     }
     
@@ -1423,6 +1463,8 @@ public class RestoreFromClusterSnapshotRequest extends AmazonWebServiceRequest i
         if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false) return false; 
         if (other.getNodeType() == null ^ this.getNodeType() == null) return false;
         if (other.getNodeType() != null && other.getNodeType().equals(this.getNodeType()) == false) return false; 
+        if (other.getAdditionalInfo() == null ^ this.getAdditionalInfo() == null) return false;
+        if (other.getAdditionalInfo() != null && other.getAdditionalInfo().equals(this.getAdditionalInfo()) == false) return false; 
         return true;
     }
     

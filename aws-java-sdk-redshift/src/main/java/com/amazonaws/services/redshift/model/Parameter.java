@@ -54,8 +54,14 @@ public class Parameter implements Serializable, Cloneable {
     private String allowedValues;
 
     /**
-     * Specifies how to apply the parameter. Supported value:
-     * <code>static</code>.
+     * Specifies how to apply the WLM configuration parameter. Some
+     * properties can be applied dynamically, while other properties require
+     * that any associated clusters be rebooted for the configuration changes
+     * to be applied. For more information about parameters and parameter
+     * groups, go to <a
+     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
+     * Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster
+     * Management Guide</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>static, dynamic
@@ -273,14 +279,26 @@ public class Parameter implements Serializable, Cloneable {
     }
 
     /**
-     * Specifies how to apply the parameter. Supported value:
-     * <code>static</code>.
+     * Specifies how to apply the WLM configuration parameter. Some
+     * properties can be applied dynamically, while other properties require
+     * that any associated clusters be rebooted for the configuration changes
+     * to be applied. For more information about parameters and parameter
+     * groups, go to <a
+     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
+     * Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster
+     * Management Guide</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>static, dynamic
      *
-     * @return Specifies how to apply the parameter. Supported value:
-     *         <code>static</code>.
+     * @return Specifies how to apply the WLM configuration parameter. Some
+     *         properties can be applied dynamically, while other properties require
+     *         that any associated clusters be rebooted for the configuration changes
+     *         to be applied. For more information about parameters and parameter
+     *         groups, go to <a
+     *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
+     *         Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster
+     *         Management Guide</i>.
      *
      * @see ParameterApplyType
      */
@@ -289,14 +307,26 @@ public class Parameter implements Serializable, Cloneable {
     }
     
     /**
-     * Specifies how to apply the parameter. Supported value:
-     * <code>static</code>.
+     * Specifies how to apply the WLM configuration parameter. Some
+     * properties can be applied dynamically, while other properties require
+     * that any associated clusters be rebooted for the configuration changes
+     * to be applied. For more information about parameters and parameter
+     * groups, go to <a
+     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
+     * Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster
+     * Management Guide</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>static, dynamic
      *
-     * @param applyType Specifies how to apply the parameter. Supported value:
-     *         <code>static</code>.
+     * @param applyType Specifies how to apply the WLM configuration parameter. Some
+     *         properties can be applied dynamically, while other properties require
+     *         that any associated clusters be rebooted for the configuration changes
+     *         to be applied. For more information about parameters and parameter
+     *         groups, go to <a
+     *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
+     *         Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster
+     *         Management Guide</i>.
      *
      * @see ParameterApplyType
      */
@@ -305,16 +335,28 @@ public class Parameter implements Serializable, Cloneable {
     }
     
     /**
-     * Specifies how to apply the parameter. Supported value:
-     * <code>static</code>.
+     * Specifies how to apply the WLM configuration parameter. Some
+     * properties can be applied dynamically, while other properties require
+     * that any associated clusters be rebooted for the configuration changes
+     * to be applied. For more information about parameters and parameter
+     * groups, go to <a
+     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
+     * Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster
+     * Management Guide</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>static, dynamic
      *
-     * @param applyType Specifies how to apply the parameter. Supported value:
-     *         <code>static</code>.
+     * @param applyType Specifies how to apply the WLM configuration parameter. Some
+     *         properties can be applied dynamically, while other properties require
+     *         that any associated clusters be rebooted for the configuration changes
+     *         to be applied. For more information about parameters and parameter
+     *         groups, go to <a
+     *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
+     *         Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster
+     *         Management Guide</i>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -327,14 +369,26 @@ public class Parameter implements Serializable, Cloneable {
     }
 
     /**
-     * Specifies how to apply the parameter. Supported value:
-     * <code>static</code>.
+     * Specifies how to apply the WLM configuration parameter. Some
+     * properties can be applied dynamically, while other properties require
+     * that any associated clusters be rebooted for the configuration changes
+     * to be applied. For more information about parameters and parameter
+     * groups, go to <a
+     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
+     * Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster
+     * Management Guide</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>static, dynamic
      *
-     * @param applyType Specifies how to apply the parameter. Supported value:
-     *         <code>static</code>.
+     * @param applyType Specifies how to apply the WLM configuration parameter. Some
+     *         properties can be applied dynamically, while other properties require
+     *         that any associated clusters be rebooted for the configuration changes
+     *         to be applied. For more information about parameters and parameter
+     *         groups, go to <a
+     *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
+     *         Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster
+     *         Management Guide</i>.
      *
      * @see ParameterApplyType
      */
@@ -343,16 +397,28 @@ public class Parameter implements Serializable, Cloneable {
     }
     
     /**
-     * Specifies how to apply the parameter. Supported value:
-     * <code>static</code>.
+     * Specifies how to apply the WLM configuration parameter. Some
+     * properties can be applied dynamically, while other properties require
+     * that any associated clusters be rebooted for the configuration changes
+     * to be applied. For more information about parameters and parameter
+     * groups, go to <a
+     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
+     * Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster
+     * Management Guide</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>static, dynamic
      *
-     * @param applyType Specifies how to apply the parameter. Supported value:
-     *         <code>static</code>.
+     * @param applyType Specifies how to apply the WLM configuration parameter. Some
+     *         properties can be applied dynamically, while other properties require
+     *         that any associated clusters be rebooted for the configuration changes
+     *         to be applied. For more information about parameters and parameter
+     *         groups, go to <a
+     *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
+     *         Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster
+     *         Management Guide</i>.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

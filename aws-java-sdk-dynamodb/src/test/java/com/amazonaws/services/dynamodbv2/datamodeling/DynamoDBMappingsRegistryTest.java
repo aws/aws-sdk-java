@@ -104,11 +104,39 @@ public class DynamoDBMappingsRegistryTest {
     public void testVersion() {
         final DynamoDBMappingsRegistry.Mappings mappings = DynamoDBMappingsRegistry.instance().mappingsOf(TestObject.class);
 
-        assertNotNull(mappings.getVersion());
-        assertTrue(mappings.hasVersion());
+        assertNotNull(mappings.getVersionAttribute());
+        assertTrue(mappings.hasVersionAttribute());
 
         for (final DynamoDBMappingsRegistry.Mapping m : mappings.getMappings()) {
-            assertEquals((mappings.getVersion() == m), m.isVersion());
+            assertEquals((mappings.getVersionAttribute() == m), m.isVersionAttribute());
+        }
+    }
+
+    @Test
+    public void testNonMappedInheritedProperties() {
+        final DynamoDBMappingsRegistry.Mappings mappings = DynamoDBMappingsRegistry.instance().mappingsOf(NonMappedInheritedProperties.class);
+        assertEquals(1, mappings.getMappings().size());
+        assertEquals("doUse", mappings.getMappings().iterator().next().getAttributeName());
+    }
+
+    public abstract class AbstractNonMappedInheritedProperties {
+        private String doNotUse;
+        public String getDoNotUse() {
+            return this.doNotUse;
+        }
+        public void setDoNotUse(final String doNotUse) {
+            this.doNotUse = doNotUse;
+        }
+    }
+
+    @DynamoDBTable(tableName="aws-java-sdk-test")
+    public class NonMappedInheritedProperties {
+        private String doUse;
+        public String getDoUse() {
+            return this.doUse;
+        }
+        public void setDoUse(final String doUse) {
+            this.doUse = doUse;
         }
     }
 

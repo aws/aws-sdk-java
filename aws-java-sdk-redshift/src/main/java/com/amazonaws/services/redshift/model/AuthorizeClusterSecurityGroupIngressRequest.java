@@ -23,17 +23,21 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Adds an inbound (ingress) rule to an Amazon Redshift security group.
  * Depending on whether the application accessing your cluster is running
- * on the Internet or an EC2 instance, you can authorize inbound access
- * to either a Classless Interdomain Routing (CIDR) IP address range or
- * an EC2 security group. You can add as many as 20 ingress rules to an
- * Amazon Redshift security group.
+ * on the Internet or an Amazon EC2 instance, you can authorize inbound
+ * access to either a Classless Interdomain Routing (CIDR)/Internet
+ * Protocol (IP) range or to an Amazon EC2 security group. You can add as
+ * many as 20 ingress rules to an Amazon Redshift security group.
  * </p>
  * <p>
- * <b>NOTE:</b> The EC2 security group must be defined in the AWS region
- * where the cluster resides.
+ * If you authorize access to an Amazon EC2 security group, specify
+ * <i>EC2SecurityGroupName</i> and <i>EC2SecurityGroupOwnerId</i> .
+ * The Amazon EC2 security group and Amazon Redshift cluster
+ * must be in the same AWS region.
  * </p>
  * <p>
- * For an overview of CIDR blocks, see the Wikipedia article on
+ * If you authorize access to a CIDR/IP address range, specify
+ * <i>CIDRIP</i> . For an overview of CIDR blocks, see the Wikipedia
+ * article on
  * <a href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing"> Classless Inter-Domain Routing </a>
  * .
  * </p>

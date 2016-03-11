@@ -20,9 +20,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Exception thrown when one or more parameters specified as part of the request
- * are invalid. Requests that result in failures of this type should not be
- * retried by clients without correcting the invalid parameters.
+ * One or more parameters specified as part of the request are invalid. Please
+ * correct the invalid parameters before retrying.
  * </p>
  */
 public class InvalidRequestException extends AmazonServiceException {

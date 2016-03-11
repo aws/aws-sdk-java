@@ -18,7 +18,6 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The result of the snapshot copy grant.
  * </p>
  */
 public class DescribeSnapshotCopyGrantsResult implements Serializable, Cloneable {
@@ -37,7 +36,7 @@ public class DescribeSnapshotCopyGrantsResult implements Serializable, Cloneable
     private String marker;
 
     /**
-     * The list of snapshot copy grants.
+     * The list of <code>SnapshotCopyGrant</code> objects.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<SnapshotCopyGrant> snapshotCopyGrants;
 
@@ -123,9 +122,9 @@ public class DescribeSnapshotCopyGrantsResult implements Serializable, Cloneable
     }
 
     /**
-     * The list of snapshot copy grants.
+     * The list of <code>SnapshotCopyGrant</code> objects.
      *
-     * @return The list of snapshot copy grants.
+     * @return The list of <code>SnapshotCopyGrant</code> objects.
      */
     public java.util.List<SnapshotCopyGrant> getSnapshotCopyGrants() {
         if (snapshotCopyGrants == null) {
@@ -136,9 +135,9 @@ public class DescribeSnapshotCopyGrantsResult implements Serializable, Cloneable
     }
     
     /**
-     * The list of snapshot copy grants.
+     * The list of <code>SnapshotCopyGrant</code> objects.
      *
-     * @param snapshotCopyGrants The list of snapshot copy grants.
+     * @param snapshotCopyGrants The list of <code>SnapshotCopyGrant</code> objects.
      */
     public void setSnapshotCopyGrants(java.util.Collection<SnapshotCopyGrant> snapshotCopyGrants) {
         if (snapshotCopyGrants == null) {
@@ -151,7 +150,7 @@ public class DescribeSnapshotCopyGrantsResult implements Serializable, Cloneable
     }
     
     /**
-     * The list of snapshot copy grants.
+     * The list of <code>SnapshotCopyGrant</code> objects.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setSnapshotCopyGrants(java.util.Collection)} or
@@ -160,7 +159,7 @@ public class DescribeSnapshotCopyGrantsResult implements Serializable, Cloneable
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param snapshotCopyGrants The list of snapshot copy grants.
+     * @param snapshotCopyGrants The list of <code>SnapshotCopyGrant</code> objects.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -174,11 +173,11 @@ public class DescribeSnapshotCopyGrantsResult implements Serializable, Cloneable
     }
     
     /**
-     * The list of snapshot copy grants.
+     * The list of <code>SnapshotCopyGrant</code> objects.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param snapshotCopyGrants The list of snapshot copy grants.
+     * @param snapshotCopyGrants The list of <code>SnapshotCopyGrant</code> objects.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

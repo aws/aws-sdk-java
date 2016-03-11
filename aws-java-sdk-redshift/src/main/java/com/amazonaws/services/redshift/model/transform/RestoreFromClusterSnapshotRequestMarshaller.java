@@ -114,6 +114,9 @@ public class RestoreFromClusterSnapshotRequestMarshaller implements Marshaller<R
         if (restoreFromClusterSnapshotRequest.getNodeType() != null) {
             request.addParameter("NodeType", StringUtils.fromString(restoreFromClusterSnapshotRequest.getNodeType()));
         }
+        if (restoreFromClusterSnapshotRequest.getAdditionalInfo() != null) {
+            request.addParameter("AdditionalInfo", StringUtils.fromString(restoreFromClusterSnapshotRequest.getAdditionalInfo()));
+        }
 
         return request;
     }

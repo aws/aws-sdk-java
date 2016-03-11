@@ -136,6 +136,16 @@ public class SDKGlobalConfiguration {
         "com.amazonaws.services.s3.enforceV4";
 
     /**
+     * Overrides the client default {@link ClientConfiguration} to use
+     * configuration with values tailored towards clients operating in the
+     * same AWS region as the service endpoint they call.  Timeouts in
+     * in-region optimized configurations are generally set much lower than
+     * the client standard configuration.
+     */
+    public static final String ENABLE_IN_REGION_OPTIMIZED_MODE =
+            "com.amazonaws.sdk.enableInRegionOptimizedMode";
+
+    /**
      * @deprecated with {@link AmazonWebServiceRequest#getRequestClientOptions()}
      * and {@link RequestClientOptions#setReadLimit(int)}.
      * <p>
@@ -192,8 +202,15 @@ public class SDKGlobalConfiguration {
         return SDKGlobalTime.getGlobalTimeOffset();
     }
 
+    public static boolean isInRegionOptimizedModeEnabled() {
+        return isPropertyEnabled(System.getProperty(ENABLE_IN_REGION_OPTIMIZED_MODE));
+    }
+
     public static boolean isCertCheckingDisabled() {
-        final String property = System.getProperty(DISABLE_CERT_CHECKING_SYSTEM_PROPERTY);
+        return isPropertyEnabled(System.getProperty(DISABLE_CERT_CHECKING_SYSTEM_PROPERTY));
+    }
+
+    private static boolean isPropertyEnabled(final String property) {
         if (property == null || property.equalsIgnoreCase("false")) {
             return false;
         } else {

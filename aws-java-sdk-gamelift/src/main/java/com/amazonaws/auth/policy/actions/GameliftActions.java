@@ -45,6 +45,8 @@ public enum GameliftActions implements Action {
     DeleteBuild("gamelift:DeleteBuild"),
     /** Action for the DeleteFleet operation. */
     DeleteFleet("gamelift:DeleteFleet"),
+    /** Action for the DeleteScalingPolicy operation. */
+    DeleteScalingPolicy("gamelift:DeleteScalingPolicy"),
     /** Action for the DescribeAlias operation. */
     DescribeAlias("gamelift:DescribeAlias"),
     /** Action for the DescribeBuild operation. */
@@ -61,10 +63,14 @@ public enum GameliftActions implements Action {
     DescribeFleetPortSettings("gamelift:DescribeFleetPortSettings"),
     /** Action for the DescribeFleetUtilization operation. */
     DescribeFleetUtilization("gamelift:DescribeFleetUtilization"),
+    /** Action for the DescribeGameSessionDetails operation. */
+    DescribeGameSessionDetails("gamelift:DescribeGameSessionDetails"),
     /** Action for the DescribeGameSessions operation. */
     DescribeGameSessions("gamelift:DescribeGameSessions"),
     /** Action for the DescribePlayerSessions operation. */
     DescribePlayerSessions("gamelift:DescribePlayerSessions"),
+    /** Action for the DescribeScalingPolicies operation. */
+    DescribeScalingPolicies("gamelift:DescribeScalingPolicies"),
     /** Action for the GetGameSessionLogUrl operation. */
     GetGameSessionLogUrl("gamelift:GetGameSessionLogUrl"),
     /** Action for the ListAliases operation. */
@@ -73,6 +79,8 @@ public enum GameliftActions implements Action {
     ListBuilds("gamelift:ListBuilds"),
     /** Action for the ListFleets operation. */
     ListFleets("gamelift:ListFleets"),
+    /** Action for the PutScalingPolicy operation. */
+    PutScalingPolicy("gamelift:PutScalingPolicy"),
     /** Action for the RequestUploadCredentials operation. */
     RequestUploadCredentials("gamelift:RequestUploadCredentials"),
     /** Action for the ResolveAlias operation. */

@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the output from the DescribeEvents action.
+ * 
  * </p>
  */
 public class DescribeEventsResult implements Serializable, Cloneable {
@@ -34,7 +34,7 @@ public class DescribeEventsResult implements Serializable, Cloneable {
     private String marker;
 
     /**
-     * A list of <a>Event</a> instances.
+     * A list of <code>Event</code> instances.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Event> events;
 
@@ -102,9 +102,9 @@ public class DescribeEventsResult implements Serializable, Cloneable {
     }
 
     /**
-     * A list of <a>Event</a> instances.
+     * A list of <code>Event</code> instances.
      *
-     * @return A list of <a>Event</a> instances.
+     * @return A list of <code>Event</code> instances.
      */
     public java.util.List<Event> getEvents() {
         if (events == null) {
@@ -115,9 +115,9 @@ public class DescribeEventsResult implements Serializable, Cloneable {
     }
     
     /**
-     * A list of <a>Event</a> instances.
+     * A list of <code>Event</code> instances.
      *
-     * @param events A list of <a>Event</a> instances.
+     * @param events A list of <code>Event</code> instances.
      */
     public void setEvents(java.util.Collection<Event> events) {
         if (events == null) {
@@ -130,7 +130,7 @@ public class DescribeEventsResult implements Serializable, Cloneable {
     }
     
     /**
-     * A list of <a>Event</a> instances.
+     * A list of <code>Event</code> instances.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setEvents(java.util.Collection)} or {@link
@@ -139,7 +139,7 @@ public class DescribeEventsResult implements Serializable, Cloneable {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param events A list of <a>Event</a> instances.
+     * @param events A list of <code>Event</code> instances.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -153,11 +153,11 @@ public class DescribeEventsResult implements Serializable, Cloneable {
     }
     
     /**
-     * A list of <a>Event</a> instances.
+     * A list of <code>Event</code> instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param events A list of <a>Event</a> instances.
+     * @param events A list of <code>Event</code> instances.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

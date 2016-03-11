@@ -72,6 +72,12 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
     private static final String DEFAULT_ENDPOINT_PREFIX = "iot";
 
     /**
+     * Client configuration factory providing ClientConfigurations tailored to
+     * this client
+     */
+    protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
+
+    /**
      * List of exception unmarshallers for all AWS IoT exceptions.
      */
     protected List<JsonErrorUnmarshallerV2> jsonErrorUnmarshallers = new ArrayList<JsonErrorUnmarshallerV2>();
@@ -94,8 +100,8 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSIotClient() {
-        this(new DefaultAWSCredentialsProviderChain(),
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
+        this(new DefaultAWSCredentialsProviderChain(), configFactory
+                .getConfig());
     }
 
     /**
@@ -136,8 +142,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      *        authenticating with AWS services.
      */
     public AWSIotClient(AWSCredentials awsCredentials) {
-        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
-                .defaultConfig());
+        this(awsCredentials, configFactory.getConfig());
     }
 
     /**
@@ -176,8 +181,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      *        authenticate requests with AWS services.
      */
     public AWSIotClient(AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider,
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
+        this(awsCredentialsProvider, configFactory.getConfig());
     }
 
     /**

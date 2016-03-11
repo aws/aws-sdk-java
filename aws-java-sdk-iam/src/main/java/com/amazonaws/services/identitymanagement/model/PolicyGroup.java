@@ -41,6 +41,8 @@ public class PolicyGroup implements Serializable, Cloneable {
      */
     private String groupName;
 
+    private String groupId;
+
     /**
      * <p>
      * The name (friendly name, not ARN) identifying the group.
@@ -83,6 +85,33 @@ public class PolicyGroup implements Serializable, Cloneable {
     }
 
     /**
+     * @param groupId
+     */
+
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getGroupId() {
+        return this.groupId;
+    }
+
+    /**
+     * @param groupId
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public PolicyGroup withGroupId(String groupId) {
+        setGroupId(groupId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -95,7 +124,9 @@ public class PolicyGroup implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGroupName() != null)
-            sb.append("GroupName: " + getGroupName());
+            sb.append("GroupName: " + getGroupName() + ",");
+        if (getGroupId() != null)
+            sb.append("GroupId: " + getGroupId());
         sb.append("}");
         return sb.toString();
     }
@@ -115,6 +146,11 @@ public class PolicyGroup implements Serializable, Cloneable {
         if (other.getGroupName() != null
                 && other.getGroupName().equals(this.getGroupName()) == false)
             return false;
+        if (other.getGroupId() == null ^ this.getGroupId() == null)
+            return false;
+        if (other.getGroupId() != null
+                && other.getGroupId().equals(this.getGroupId()) == false)
+            return false;
         return true;
     }
 
@@ -125,6 +161,8 @@ public class PolicyGroup implements Serializable, Cloneable {
 
         hashCode = prime * hashCode
                 + ((getGroupName() == null) ? 0 : getGroupName().hashCode());
+        hashCode = prime * hashCode
+                + ((getGroupId() == null) ? 0 : getGroupId().hashCode());
         return hashCode;
     }
 

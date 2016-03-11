@@ -104,6 +104,13 @@ public class FleetAttributesJsonUnmarshaller implements
                             StringJsonUnmarshaller.getInstance())
                             .unmarshall(context));
                 }
+                if (context.testExpression("NewGameSessionProtectionPolicy",
+                        targetDepth)) {
+                    context.nextToken();
+                    fleetAttributes
+                            .setNewGameSessionProtectionPolicy(StringJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null
                         || context.getLastParsedParentElement().equals(

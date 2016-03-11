@@ -39,7 +39,9 @@ public enum EventCode {
             "FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE"),
     FLEET_VALIDATION_TIMED_OUT("FLEET_VALIDATION_TIMED_OUT"),
     FLEET_ACTIVATION_FAILED("FLEET_ACTIVATION_FAILED"),
-    FLEET_ACTIVATION_FAILED_NO_INSTANCES("FLEET_ACTIVATION_FAILED_NO_INSTANCES");
+    FLEET_ACTIVATION_FAILED_NO_INSTANCES("FLEET_ACTIVATION_FAILED_NO_INSTANCES"),
+    FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED(
+            "FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED");
 
     private String value;
 
@@ -96,6 +98,9 @@ public enum EventCode {
             return FLEET_ACTIVATION_FAILED;
         } else if ("FLEET_ACTIVATION_FAILED_NO_INSTANCES".equals(value)) {
             return FLEET_ACTIVATION_FAILED_NO_INSTANCES;
+        } else if ("FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED"
+                .equals(value)) {
+            return FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED;
         } else {
             throw new IllegalArgumentException("Cannot create enum from "
                     + value + " value!");

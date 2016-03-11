@@ -49,13 +49,16 @@ public class Build implements Serializable, Cloneable {
     /**
      * <p>
      * Current status of the build. Possible build states include:
-     * ltulgtltligtINITIALIZED: A new build has been defined, but no files have
-     * been uploaded. You cannot create fleets for builds that are in this
-     * state. When a build is successfully created, the build state is set to
-     * this value. lt/ligtltligtREADY: The game build has been successfully
-     * uploaded. You can now create new fleets for this
-     * build.lt/ligtltligtFAILED: The game build upload failed. You cannot
-     * create new fleets for this build. lt/ligtlt/ulgt
+     * <ul>
+     * <li>INITIALIZED: A new build has been defined, but no files have been
+     * uploaded. You cannot create fleets for builds that are in this state.
+     * When a build is successfully created, the build state is set to this
+     * value.</li>
+     * <li>READY: The game build has been successfully uploaded. You can now
+     * create new fleets for this build.</li>
+     * <li>FAILED: The game build upload failed. You cannot create new fleets
+     * for this build.</li>
+     * </ul>
      * </p>
      */
     private String status;
@@ -69,7 +72,7 @@ public class Build implements Serializable, Cloneable {
     /**
      * <p>
      * Time stamp indicating when this object was created. Format is an integer
-     * representing the number of seconds since epoch.
+     * representing the number of seconds since the Unix epoch (Unix time).
      * </p>
      */
     private java.util.Date creationTime;
@@ -221,24 +224,30 @@ public class Build implements Serializable, Cloneable {
     /**
      * <p>
      * Current status of the build. Possible build states include:
-     * ltulgtltligtINITIALIZED: A new build has been defined, but no files have
-     * been uploaded. You cannot create fleets for builds that are in this
-     * state. When a build is successfully created, the build state is set to
-     * this value. lt/ligtltligtREADY: The game build has been successfully
-     * uploaded. You can now create new fleets for this
-     * build.lt/ligtltligtFAILED: The game build upload failed. You cannot
-     * create new fleets for this build. lt/ligtlt/ulgt
+     * <ul>
+     * <li>INITIALIZED: A new build has been defined, but no files have been
+     * uploaded. You cannot create fleets for builds that are in this state.
+     * When a build is successfully created, the build state is set to this
+     * value.</li>
+     * <li>READY: The game build has been successfully uploaded. You can now
+     * create new fleets for this build.</li>
+     * <li>FAILED: The game build upload failed. You cannot create new fleets
+     * for this build.</li>
+     * </ul>
      * </p>
      * 
      * @param status
      *        Current status of the build. Possible build states include:
-     *        ltulgtltligtINITIALIZED: A new build has been defined, but no
-     *        files have been uploaded. You cannot create fleets for builds that
-     *        are in this state. When a build is successfully created, the build
-     *        state is set to this value. lt/ligtltligtREADY: The game build has
-     *        been successfully uploaded. You can now create new fleets for this
-     *        build.lt/ligtltligtFAILED: The game build upload failed. You
-     *        cannot create new fleets for this build. lt/ligtlt/ulgt
+     *        <ul>
+     *        <li>INITIALIZED: A new build has been defined, but no files have
+     *        been uploaded. You cannot create fleets for builds that are in
+     *        this state. When a build is successfully created, the build state
+     *        is set to this value.</li>
+     *        <li>READY: The game build has been successfully uploaded. You can
+     *        now create new fleets for this build.</li>
+     *        <li>FAILED: The game build upload failed. You cannot create new
+     *        fleets for this build.</li>
+     *        </ul>
      * @see BuildStatus
      */
 
@@ -249,24 +258,29 @@ public class Build implements Serializable, Cloneable {
     /**
      * <p>
      * Current status of the build. Possible build states include:
-     * ltulgtltligtINITIALIZED: A new build has been defined, but no files have
-     * been uploaded. You cannot create fleets for builds that are in this
-     * state. When a build is successfully created, the build state is set to
-     * this value. lt/ligtltligtREADY: The game build has been successfully
-     * uploaded. You can now create new fleets for this
-     * build.lt/ligtltligtFAILED: The game build upload failed. You cannot
-     * create new fleets for this build. lt/ligtlt/ulgt
+     * <ul>
+     * <li>INITIALIZED: A new build has been defined, but no files have been
+     * uploaded. You cannot create fleets for builds that are in this state.
+     * When a build is successfully created, the build state is set to this
+     * value.</li>
+     * <li>READY: The game build has been successfully uploaded. You can now
+     * create new fleets for this build.</li>
+     * <li>FAILED: The game build upload failed. You cannot create new fleets
+     * for this build.</li>
+     * </ul>
      * </p>
      * 
      * @return Current status of the build. Possible build states include:
-     *         ltulgtltligtINITIALIZED: A new build has been defined, but no
-     *         files have been uploaded. You cannot create fleets for builds
-     *         that are in this state. When a build is successfully created, the
-     *         build state is set to this value. lt/ligtltligtREADY: The game
-     *         build has been successfully uploaded. You can now create new
-     *         fleets for this build.lt/ligtltligtFAILED: The game build upload
-     *         failed. You cannot create new fleets for this build.
-     *         lt/ligtlt/ulgt
+     *         <ul>
+     *         <li>INITIALIZED: A new build has been defined, but no files have
+     *         been uploaded. You cannot create fleets for builds that are in
+     *         this state. When a build is successfully created, the build state
+     *         is set to this value.</li>
+     *         <li>READY: The game build has been successfully uploaded. You can
+     *         now create new fleets for this build.</li>
+     *         <li>FAILED: The game build upload failed. You cannot create new
+     *         fleets for this build.</li>
+     *         </ul>
      * @see BuildStatus
      */
 
@@ -277,24 +291,30 @@ public class Build implements Serializable, Cloneable {
     /**
      * <p>
      * Current status of the build. Possible build states include:
-     * ltulgtltligtINITIALIZED: A new build has been defined, but no files have
-     * been uploaded. You cannot create fleets for builds that are in this
-     * state. When a build is successfully created, the build state is set to
-     * this value. lt/ligtltligtREADY: The game build has been successfully
-     * uploaded. You can now create new fleets for this
-     * build.lt/ligtltligtFAILED: The game build upload failed. You cannot
-     * create new fleets for this build. lt/ligtlt/ulgt
+     * <ul>
+     * <li>INITIALIZED: A new build has been defined, but no files have been
+     * uploaded. You cannot create fleets for builds that are in this state.
+     * When a build is successfully created, the build state is set to this
+     * value.</li>
+     * <li>READY: The game build has been successfully uploaded. You can now
+     * create new fleets for this build.</li>
+     * <li>FAILED: The game build upload failed. You cannot create new fleets
+     * for this build.</li>
+     * </ul>
      * </p>
      * 
      * @param status
      *        Current status of the build. Possible build states include:
-     *        ltulgtltligtINITIALIZED: A new build has been defined, but no
-     *        files have been uploaded. You cannot create fleets for builds that
-     *        are in this state. When a build is successfully created, the build
-     *        state is set to this value. lt/ligtltligtREADY: The game build has
-     *        been successfully uploaded. You can now create new fleets for this
-     *        build.lt/ligtltligtFAILED: The game build upload failed. You
-     *        cannot create new fleets for this build. lt/ligtlt/ulgt
+     *        <ul>
+     *        <li>INITIALIZED: A new build has been defined, but no files have
+     *        been uploaded. You cannot create fleets for builds that are in
+     *        this state. When a build is successfully created, the build state
+     *        is set to this value.</li>
+     *        <li>READY: The game build has been successfully uploaded. You can
+     *        now create new fleets for this build.</li>
+     *        <li>FAILED: The game build upload failed. You cannot create new
+     *        fleets for this build.</li>
+     *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see BuildStatus
@@ -308,24 +328,30 @@ public class Build implements Serializable, Cloneable {
     /**
      * <p>
      * Current status of the build. Possible build states include:
-     * ltulgtltligtINITIALIZED: A new build has been defined, but no files have
-     * been uploaded. You cannot create fleets for builds that are in this
-     * state. When a build is successfully created, the build state is set to
-     * this value. lt/ligtltligtREADY: The game build has been successfully
-     * uploaded. You can now create new fleets for this
-     * build.lt/ligtltligtFAILED: The game build upload failed. You cannot
-     * create new fleets for this build. lt/ligtlt/ulgt
+     * <ul>
+     * <li>INITIALIZED: A new build has been defined, but no files have been
+     * uploaded. You cannot create fleets for builds that are in this state.
+     * When a build is successfully created, the build state is set to this
+     * value.</li>
+     * <li>READY: The game build has been successfully uploaded. You can now
+     * create new fleets for this build.</li>
+     * <li>FAILED: The game build upload failed. You cannot create new fleets
+     * for this build.</li>
+     * </ul>
      * </p>
      * 
      * @param status
      *        Current status of the build. Possible build states include:
-     *        ltulgtltligtINITIALIZED: A new build has been defined, but no
-     *        files have been uploaded. You cannot create fleets for builds that
-     *        are in this state. When a build is successfully created, the build
-     *        state is set to this value. lt/ligtltligtREADY: The game build has
-     *        been successfully uploaded. You can now create new fleets for this
-     *        build.lt/ligtltligtFAILED: The game build upload failed. You
-     *        cannot create new fleets for this build. lt/ligtlt/ulgt
+     *        <ul>
+     *        <li>INITIALIZED: A new build has been defined, but no files have
+     *        been uploaded. You cannot create fleets for builds that are in
+     *        this state. When a build is successfully created, the build state
+     *        is set to this value.</li>
+     *        <li>READY: The game build has been successfully uploaded. You can
+     *        now create new fleets for this build.</li>
+     *        <li>FAILED: The game build upload failed. You cannot create new
+     *        fleets for this build.</li>
+     *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see BuildStatus
@@ -338,24 +364,30 @@ public class Build implements Serializable, Cloneable {
     /**
      * <p>
      * Current status of the build. Possible build states include:
-     * ltulgtltligtINITIALIZED: A new build has been defined, but no files have
-     * been uploaded. You cannot create fleets for builds that are in this
-     * state. When a build is successfully created, the build state is set to
-     * this value. lt/ligtltligtREADY: The game build has been successfully
-     * uploaded. You can now create new fleets for this
-     * build.lt/ligtltligtFAILED: The game build upload failed. You cannot
-     * create new fleets for this build. lt/ligtlt/ulgt
+     * <ul>
+     * <li>INITIALIZED: A new build has been defined, but no files have been
+     * uploaded. You cannot create fleets for builds that are in this state.
+     * When a build is successfully created, the build state is set to this
+     * value.</li>
+     * <li>READY: The game build has been successfully uploaded. You can now
+     * create new fleets for this build.</li>
+     * <li>FAILED: The game build upload failed. You cannot create new fleets
+     * for this build.</li>
+     * </ul>
      * </p>
      * 
      * @param status
      *        Current status of the build. Possible build states include:
-     *        ltulgtltligtINITIALIZED: A new build has been defined, but no
-     *        files have been uploaded. You cannot create fleets for builds that
-     *        are in this state. When a build is successfully created, the build
-     *        state is set to this value. lt/ligtltligtREADY: The game build has
-     *        been successfully uploaded. You can now create new fleets for this
-     *        build.lt/ligtltligtFAILED: The game build upload failed. You
-     *        cannot create new fleets for this build. lt/ligtlt/ulgt
+     *        <ul>
+     *        <li>INITIALIZED: A new build has been defined, but no files have
+     *        been uploaded. You cannot create fleets for builds that are in
+     *        this state. When a build is successfully created, the build state
+     *        is set to this value.</li>
+     *        <li>READY: The game build has been successfully uploaded. You can
+     *        now create new fleets for this build.</li>
+     *        <li>FAILED: The game build upload failed. You cannot create new
+     *        fleets for this build.</li>
+     *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see BuildStatus
@@ -416,12 +448,13 @@ public class Build implements Serializable, Cloneable {
     /**
      * <p>
      * Time stamp indicating when this object was created. Format is an integer
-     * representing the number of seconds since epoch.
+     * representing the number of seconds since the Unix epoch (Unix time).
      * </p>
      * 
      * @param creationTime
      *        Time stamp indicating when this object was created. Format is an
-     *        integer representing the number of seconds since epoch.
+     *        integer representing the number of seconds since the Unix epoch
+     *        (Unix time).
      */
 
     public void setCreationTime(java.util.Date creationTime) {
@@ -431,11 +464,12 @@ public class Build implements Serializable, Cloneable {
     /**
      * <p>
      * Time stamp indicating when this object was created. Format is an integer
-     * representing the number of seconds since epoch.
+     * representing the number of seconds since the Unix epoch (Unix time).
      * </p>
      * 
      * @return Time stamp indicating when this object was created. Format is an
-     *         integer representing the number of seconds since epoch.
+     *         integer representing the number of seconds since the Unix epoch
+     *         (Unix time).
      */
 
     public java.util.Date getCreationTime() {
@@ -445,12 +479,13 @@ public class Build implements Serializable, Cloneable {
     /**
      * <p>
      * Time stamp indicating when this object was created. Format is an integer
-     * representing the number of seconds since epoch.
+     * representing the number of seconds since the Unix epoch (Unix time).
      * </p>
      * 
      * @param creationTime
      *        Time stamp indicating when this object was created. Format is an
-     *        integer representing the number of seconds since epoch.
+     *        integer representing the number of seconds since the Unix epoch
+     *        (Unix time).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

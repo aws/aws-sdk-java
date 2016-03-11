@@ -265,6 +265,11 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
     private String kmsKeyId;
 
     /**
+     * Reserved.
+     */
+    private String additionalInfo;
+
+    /**
      * The name of the first database to be created when the cluster is
      * created. <p>To create additional databases after the cluster is
      * created, connect to the cluster with a SQL client and use SQL commands
@@ -1878,6 +1883,39 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
     }
 
     /**
+     * Reserved.
+     *
+     * @return Reserved.
+     */
+    public String getAdditionalInfo() {
+        return additionalInfo;
+    }
+    
+    /**
+     * Reserved.
+     *
+     * @param additionalInfo Reserved.
+     */
+    public void setAdditionalInfo(String additionalInfo) {
+        this.additionalInfo = additionalInfo;
+    }
+    
+    /**
+     * Reserved.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param additionalInfo Reserved.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public CreateClusterRequest withAdditionalInfo(String additionalInfo) {
+        this.additionalInfo = additionalInfo;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1912,7 +1950,8 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
         if (getHsmConfigurationIdentifier() != null) sb.append("HsmConfigurationIdentifier: " + getHsmConfigurationIdentifier() + ",");
         if (getElasticIp() != null) sb.append("ElasticIp: " + getElasticIp() + ",");
         if (getTags() != null) sb.append("Tags: " + getTags() + ",");
-        if (getKmsKeyId() != null) sb.append("KmsKeyId: " + getKmsKeyId() );
+        if (getKmsKeyId() != null) sb.append("KmsKeyId: " + getKmsKeyId() + ",");
+        if (getAdditionalInfo() != null) sb.append("AdditionalInfo: " + getAdditionalInfo() );
         sb.append("}");
         return sb.toString();
     }
@@ -1946,6 +1985,7 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
         hashCode = prime * hashCode + ((getElasticIp() == null) ? 0 : getElasticIp().hashCode()); 
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode()); 
+        hashCode = prime * hashCode + ((getAdditionalInfo() == null) ? 0 : getAdditionalInfo().hashCode()); 
         return hashCode;
     }
     
@@ -2005,6 +2045,8 @@ public class CreateClusterRequest extends AmazonWebServiceRequest implements Ser
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false) return false; 
         if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null) return false;
         if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false) return false; 
+        if (other.getAdditionalInfo() == null ^ this.getAdditionalInfo() == null) return false;
+        if (other.getAdditionalInfo() != null && other.getAdditionalInfo().equals(this.getAdditionalInfo()) == false) return false; 
         return true;
     }
     

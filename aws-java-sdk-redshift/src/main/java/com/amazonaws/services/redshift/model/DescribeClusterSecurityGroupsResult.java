@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the output from the DescribeClusterSecurityGroups action.
+ * 
  * </p>
  */
 public class DescribeClusterSecurityGroupsResult implements Serializable, Cloneable {

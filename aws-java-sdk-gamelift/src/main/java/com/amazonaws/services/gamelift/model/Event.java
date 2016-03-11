@@ -20,8 +20,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Log entry describing an event involving a GameLift resource (such as a
- * fleet).
+ * Log entry describing an event involving an Amazon GameLift resource (such as
+ * a fleet).
  * </p>
  */
 public class Event implements Serializable, Cloneable {
@@ -53,7 +53,7 @@ public class Event implements Serializable, Cloneable {
     /**
      * <p>
      * Time stamp indicating when this event occurred. Format is an integer
-     * representing the number of seconds since epoch.
+     * representing the number of seconds since the Unix epoch (Unix time).
      * </p>
      */
     private java.util.Date eventTime;
@@ -261,12 +261,13 @@ public class Event implements Serializable, Cloneable {
     /**
      * <p>
      * Time stamp indicating when this event occurred. Format is an integer
-     * representing the number of seconds since epoch.
+     * representing the number of seconds since the Unix epoch (Unix time).
      * </p>
      * 
      * @param eventTime
      *        Time stamp indicating when this event occurred. Format is an
-     *        integer representing the number of seconds since epoch.
+     *        integer representing the number of seconds since the Unix epoch
+     *        (Unix time).
      */
 
     public void setEventTime(java.util.Date eventTime) {
@@ -276,11 +277,12 @@ public class Event implements Serializable, Cloneable {
     /**
      * <p>
      * Time stamp indicating when this event occurred. Format is an integer
-     * representing the number of seconds since epoch.
+     * representing the number of seconds since the Unix epoch (Unix time).
      * </p>
      * 
      * @return Time stamp indicating when this event occurred. Format is an
-     *         integer representing the number of seconds since epoch.
+     *         integer representing the number of seconds since the Unix epoch
+     *         (Unix time).
      */
 
     public java.util.Date getEventTime() {
@@ -290,12 +292,13 @@ public class Event implements Serializable, Cloneable {
     /**
      * <p>
      * Time stamp indicating when this event occurred. Format is an integer
-     * representing the number of seconds since epoch.
+     * representing the number of seconds since the Unix epoch (Unix time).
      * </p>
      * 
      * @param eventTime
      *        Time stamp indicating when this event occurred. Format is an
-     *        integer representing the number of seconds since epoch.
+     *        integer representing the number of seconds since the Unix epoch
+     *        (Unix time).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

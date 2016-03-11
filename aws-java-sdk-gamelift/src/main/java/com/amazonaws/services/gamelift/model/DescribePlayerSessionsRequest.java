@@ -41,13 +41,24 @@ public class DescribePlayerSessionsRequest extends AmazonWebServiceRequest
     private String playerId;
     /**
      * <p>
-     * Unique identifier for a playersession.
+     * Unique identifier for a player session.
      * </p>
      */
     private String playerSessionId;
     /**
      * <p>
-     * Player session status to filter results on.
+     * Player session status to filter results on. Possible player session
+     * states include:
+     * <ul>
+     * <li>RESERVED: The player session request has been received, but the
+     * player has not yet connected to the game server and/or been validated.</li>
+     * <li>ACTIVE: The player has been validated by the game server and is
+     * currently connected.</li>
+     * <li>COMPLETED: The player connection has been dropped.</li>
+     * <li>TIMEDOUT: A player session request was received, but the player did
+     * not connect and/or was not validated within the time-out limit (60
+     * seconds).</li>
+     * </ul>
      * </p>
      */
     private String playerSessionStatusFilter;
@@ -61,11 +72,10 @@ public class DescribePlayerSessionsRequest extends AmazonWebServiceRequest
     private Integer limit;
     /**
      * <p>
-     * Token indicating the start of the next sequential page of results. A
-     * token is returned any time there may be additional results to be
-     * retrieved. To start at the beginning of a result set, do not set this
-     * parameter. If a player session ID is specified, this parameter is
-     * ignored.
+     * Token indicating the start of the next sequential page of results. Use
+     * the token that is returned with a previous call to this action. To
+     * specify the start of the result set, do not specify a value. If a player
+     * session ID is specified, this parameter is ignored.
      * </p>
      */
     private String nextToken;
@@ -154,11 +164,11 @@ public class DescribePlayerSessionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Unique identifier for a playersession.
+     * Unique identifier for a player session.
      * </p>
      * 
      * @param playerSessionId
-     *        Unique identifier for a playersession.
+     *        Unique identifier for a player session.
      */
 
     public void setPlayerSessionId(String playerSessionId) {
@@ -167,10 +177,10 @@ public class DescribePlayerSessionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Unique identifier for a playersession.
+     * Unique identifier for a player session.
      * </p>
      * 
-     * @return Unique identifier for a playersession.
+     * @return Unique identifier for a player session.
      */
 
     public String getPlayerSessionId() {
@@ -179,11 +189,11 @@ public class DescribePlayerSessionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Unique identifier for a playersession.
+     * Unique identifier for a player session.
      * </p>
      * 
      * @param playerSessionId
-     *        Unique identifier for a playersession.
+     *        Unique identifier for a player session.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -196,11 +206,34 @@ public class DescribePlayerSessionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Player session status to filter results on.
+     * Player session status to filter results on. Possible player session
+     * states include:
+     * <ul>
+     * <li>RESERVED: The player session request has been received, but the
+     * player has not yet connected to the game server and/or been validated.</li>
+     * <li>ACTIVE: The player has been validated by the game server and is
+     * currently connected.</li>
+     * <li>COMPLETED: The player connection has been dropped.</li>
+     * <li>TIMEDOUT: A player session request was received, but the player did
+     * not connect and/or was not validated within the time-out limit (60
+     * seconds).</li>
+     * </ul>
      * </p>
      * 
      * @param playerSessionStatusFilter
-     *        Player session status to filter results on.
+     *        Player session status to filter results on. Possible player
+     *        session states include:
+     *        <ul>
+     *        <li>RESERVED: The player session request has been received, but
+     *        the player has not yet connected to the game server and/or been
+     *        validated.</li>
+     *        <li>ACTIVE: The player has been validated by the game server and
+     *        is currently connected.</li>
+     *        <li>COMPLETED: The player connection has been dropped.</li>
+     *        <li>TIMEDOUT: A player session request was received, but the
+     *        player did not connect and/or was not validated within the
+     *        time-out limit (60 seconds).</li>
+     *        </ul>
      */
 
     public void setPlayerSessionStatusFilter(String playerSessionStatusFilter) {
@@ -209,10 +242,33 @@ public class DescribePlayerSessionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Player session status to filter results on.
+     * Player session status to filter results on. Possible player session
+     * states include:
+     * <ul>
+     * <li>RESERVED: The player session request has been received, but the
+     * player has not yet connected to the game server and/or been validated.</li>
+     * <li>ACTIVE: The player has been validated by the game server and is
+     * currently connected.</li>
+     * <li>COMPLETED: The player connection has been dropped.</li>
+     * <li>TIMEDOUT: A player session request was received, but the player did
+     * not connect and/or was not validated within the time-out limit (60
+     * seconds).</li>
+     * </ul>
      * </p>
      * 
-     * @return Player session status to filter results on.
+     * @return Player session status to filter results on. Possible player
+     *         session states include:
+     *         <ul>
+     *         <li>RESERVED: The player session request has been received, but
+     *         the player has not yet connected to the game server and/or been
+     *         validated.</li>
+     *         <li>ACTIVE: The player has been validated by the game server and
+     *         is currently connected.</li>
+     *         <li>COMPLETED: The player connection has been dropped.</li>
+     *         <li>TIMEDOUT: A player session request was received, but the
+     *         player did not connect and/or was not validated within the
+     *         time-out limit (60 seconds).</li>
+     *         </ul>
      */
 
     public String getPlayerSessionStatusFilter() {
@@ -221,11 +277,34 @@ public class DescribePlayerSessionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Player session status to filter results on.
+     * Player session status to filter results on. Possible player session
+     * states include:
+     * <ul>
+     * <li>RESERVED: The player session request has been received, but the
+     * player has not yet connected to the game server and/or been validated.</li>
+     * <li>ACTIVE: The player has been validated by the game server and is
+     * currently connected.</li>
+     * <li>COMPLETED: The player connection has been dropped.</li>
+     * <li>TIMEDOUT: A player session request was received, but the player did
+     * not connect and/or was not validated within the time-out limit (60
+     * seconds).</li>
+     * </ul>
      * </p>
      * 
      * @param playerSessionStatusFilter
-     *        Player session status to filter results on.
+     *        Player session status to filter results on. Possible player
+     *        session states include:
+     *        <ul>
+     *        <li>RESERVED: The player session request has been received, but
+     *        the player has not yet connected to the game server and/or been
+     *        validated.</li>
+     *        <li>ACTIVE: The player has been validated by the game server and
+     *        is currently connected.</li>
+     *        <li>COMPLETED: The player connection has been dropped.</li>
+     *        <li>TIMEDOUT: A player session request was received, but the
+     *        player did not connect and/or was not validated within the
+     *        time-out limit (60 seconds).</li>
+     *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -292,19 +371,18 @@ public class DescribePlayerSessionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Token indicating the start of the next sequential page of results. A
-     * token is returned any time there may be additional results to be
-     * retrieved. To start at the beginning of a result set, do not set this
-     * parameter. If a player session ID is specified, this parameter is
-     * ignored.
+     * Token indicating the start of the next sequential page of results. Use
+     * the token that is returned with a previous call to this action. To
+     * specify the start of the result set, do not specify a value. If a player
+     * session ID is specified, this parameter is ignored.
      * </p>
      * 
      * @param nextToken
      *        Token indicating the start of the next sequential page of results.
-     *        A token is returned any time there may be additional results to be
-     *        retrieved. To start at the beginning of a result set, do not set
-     *        this parameter. If a player session ID is specified, this
-     *        parameter is ignored.
+     *        Use the token that is returned with a previous call to this
+     *        action. To specify the start of the result set, do not specify a
+     *        value. If a player session ID is specified, this parameter is
+     *        ignored.
      */
 
     public void setNextToken(String nextToken) {
@@ -313,18 +391,17 @@ public class DescribePlayerSessionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Token indicating the start of the next sequential page of results. A
-     * token is returned any time there may be additional results to be
-     * retrieved. To start at the beginning of a result set, do not set this
-     * parameter. If a player session ID is specified, this parameter is
-     * ignored.
+     * Token indicating the start of the next sequential page of results. Use
+     * the token that is returned with a previous call to this action. To
+     * specify the start of the result set, do not specify a value. If a player
+     * session ID is specified, this parameter is ignored.
      * </p>
      * 
      * @return Token indicating the start of the next sequential page of
-     *         results. A token is returned any time there may be additional
-     *         results to be retrieved. To start at the beginning of a result
-     *         set, do not set this parameter. If a player session ID is
-     *         specified, this parameter is ignored.
+     *         results. Use the token that is returned with a previous call to
+     *         this action. To specify the start of the result set, do not
+     *         specify a value. If a player session ID is specified, this
+     *         parameter is ignored.
      */
 
     public String getNextToken() {
@@ -333,19 +410,18 @@ public class DescribePlayerSessionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Token indicating the start of the next sequential page of results. A
-     * token is returned any time there may be additional results to be
-     * retrieved. To start at the beginning of a result set, do not set this
-     * parameter. If a player session ID is specified, this parameter is
-     * ignored.
+     * Token indicating the start of the next sequential page of results. Use
+     * the token that is returned with a previous call to this action. To
+     * specify the start of the result set, do not specify a value. If a player
+     * session ID is specified, this parameter is ignored.
      * </p>
      * 
      * @param nextToken
      *        Token indicating the start of the next sequential page of results.
-     *        A token is returned any time there may be additional results to be
-     *        retrieved. To start at the beginning of a result set, do not set
-     *        this parameter. If a player session ID is specified, this
-     *        parameter is ignored.
+     *        Use the token that is returned with a previous call to this
+     *        action. To specify the start of the result set, do not specify a
+     *        value. If a player session ID is specified, this parameter is
+     *        ignored.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

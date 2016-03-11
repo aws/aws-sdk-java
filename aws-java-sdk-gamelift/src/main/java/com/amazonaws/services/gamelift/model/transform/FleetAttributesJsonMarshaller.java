@@ -103,6 +103,11 @@ public class FleetAttributesJsonMarshaller {
                 jsonWriter.endArray();
             }
 
+            if (fleetAttributes.getNewGameSessionProtectionPolicy() != null) {
+                jsonWriter.key("NewGameSessionProtectionPolicy").value(
+                        fleetAttributes.getNewGameSessionProtectionPolicy());
+            }
+
             jsonWriter.endObject();
         } catch (Throwable t) {
             throw new AmazonClientException(

@@ -102,6 +102,12 @@ public class ModifyClusterRequestMarshaller implements Marshaller<Request<Modify
         if (modifyClusterRequest.getNewClusterIdentifier() != null) {
             request.addParameter("NewClusterIdentifier", StringUtils.fromString(modifyClusterRequest.getNewClusterIdentifier()));
         }
+        if (modifyClusterRequest.isPubliclyAccessible() != null) {
+            request.addParameter("PubliclyAccessible", StringUtils.fromBoolean(modifyClusterRequest.isPubliclyAccessible()));
+        }
+        if (modifyClusterRequest.getElasticIp() != null) {
+            request.addParameter("ElasticIp", StringUtils.fromString(modifyClusterRequest.getElasticIp()));
+        }
 
         return request;
     }

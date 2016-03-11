@@ -40,7 +40,7 @@ public class EnableLoggingResult implements Serializable, Cloneable {
     private String s3KeyPrefix;
 
     /**
-     * The last time when logs were delivered.
+     * The last time that logs were delivered.
      */
     private java.util.Date lastSuccessfulDeliveryTime;
 
@@ -171,29 +171,29 @@ public class EnableLoggingResult implements Serializable, Cloneable {
     }
 
     /**
-     * The last time when logs were delivered.
+     * The last time that logs were delivered.
      *
-     * @return The last time when logs were delivered.
+     * @return The last time that logs were delivered.
      */
     public java.util.Date getLastSuccessfulDeliveryTime() {
         return lastSuccessfulDeliveryTime;
     }
     
     /**
-     * The last time when logs were delivered.
+     * The last time that logs were delivered.
      *
-     * @param lastSuccessfulDeliveryTime The last time when logs were delivered.
+     * @param lastSuccessfulDeliveryTime The last time that logs were delivered.
      */
     public void setLastSuccessfulDeliveryTime(java.util.Date lastSuccessfulDeliveryTime) {
         this.lastSuccessfulDeliveryTime = lastSuccessfulDeliveryTime;
     }
     
     /**
-     * The last time when logs were delivered.
+     * The last time that logs were delivered.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param lastSuccessfulDeliveryTime The last time when logs were delivered.
+     * @param lastSuccessfulDeliveryTime The last time that logs were delivered.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

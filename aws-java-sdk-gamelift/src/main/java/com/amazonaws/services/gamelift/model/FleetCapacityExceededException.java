@@ -20,10 +20,9 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Exception thrown when the specified fleet has no available instances to
- * fulfill a request to create a new game session. Requests that result in
- * failures of this type should only be retried once the fleet capacity has been
- * increased.
+ * The specified fleet has no available instances to fulfill a request to create
+ * a new game session. Such requests should only be retried once the fleet
+ * capacity has been increased.
  * </p>
  */
 public class FleetCapacityExceededException extends AmazonServiceException {

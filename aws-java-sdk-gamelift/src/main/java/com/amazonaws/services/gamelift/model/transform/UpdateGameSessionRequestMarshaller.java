@@ -90,6 +90,11 @@ public class UpdateGameSessionRequestMarshaller implements
                                 .getPlayerSessionCreationPolicy());
             }
 
+            if (updateGameSessionRequest.getProtectionPolicy() != null) {
+                jsonWriter.key("ProtectionPolicy").value(
+                        updateGameSessionRequest.getProtectionPolicy());
+            }
+
             jsonWriter.endObject();
 
             String snippet = stringWriter.toString();

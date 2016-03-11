@@ -34,8 +34,8 @@ public class DescribeClustersResult implements Serializable, Cloneable {
     private String marker;
 
     /**
-     * A list of <a>Cluster</a> objects, where each object describes one
-     * cluster.
+     * A list of <code>Cluster</code> objects, where each object describes
+     * one cluster.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<Cluster> clusters;
 
@@ -103,11 +103,11 @@ public class DescribeClustersResult implements Serializable, Cloneable {
     }
 
     /**
-     * A list of <a>Cluster</a> objects, where each object describes one
-     * cluster.
+     * A list of <code>Cluster</code> objects, where each object describes
+     * one cluster.
      *
-     * @return A list of <a>Cluster</a> objects, where each object describes one
-     *         cluster.
+     * @return A list of <code>Cluster</code> objects, where each object describes
+     *         one cluster.
      */
     public java.util.List<Cluster> getClusters() {
         if (clusters == null) {
@@ -118,11 +118,11 @@ public class DescribeClustersResult implements Serializable, Cloneable {
     }
     
     /**
-     * A list of <a>Cluster</a> objects, where each object describes one
-     * cluster.
+     * A list of <code>Cluster</code> objects, where each object describes
+     * one cluster.
      *
-     * @param clusters A list of <a>Cluster</a> objects, where each object describes one
-     *         cluster.
+     * @param clusters A list of <code>Cluster</code> objects, where each object describes
+     *         one cluster.
      */
     public void setClusters(java.util.Collection<Cluster> clusters) {
         if (clusters == null) {
@@ -135,8 +135,8 @@ public class DescribeClustersResult implements Serializable, Cloneable {
     }
     
     /**
-     * A list of <a>Cluster</a> objects, where each object describes one
-     * cluster.
+     * A list of <code>Cluster</code> objects, where each object describes
+     * one cluster.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setClusters(java.util.Collection)} or {@link
@@ -145,8 +145,8 @@ public class DescribeClustersResult implements Serializable, Cloneable {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param clusters A list of <a>Cluster</a> objects, where each object describes one
-     *         cluster.
+     * @param clusters A list of <code>Cluster</code> objects, where each object describes
+     *         one cluster.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -160,13 +160,13 @@ public class DescribeClustersResult implements Serializable, Cloneable {
     }
     
     /**
-     * A list of <a>Cluster</a> objects, where each object describes one
-     * cluster.
+     * A list of <code>Cluster</code> objects, where each object describes
+     * one cluster.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param clusters A list of <a>Cluster</a> objects, where each object describes one
-     *         cluster.
+     * @param clusters A list of <code>Cluster</code> objects, where each object describes
+     *         one cluster.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

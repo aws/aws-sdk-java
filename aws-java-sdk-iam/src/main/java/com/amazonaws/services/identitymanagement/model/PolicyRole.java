@@ -41,6 +41,8 @@ public class PolicyRole implements Serializable, Cloneable {
      */
     private String roleName;
 
+    private String roleId;
+
     /**
      * <p>
      * The name (friendly name, not ARN) identifying the role.
@@ -83,6 +85,33 @@ public class PolicyRole implements Serializable, Cloneable {
     }
 
     /**
+     * @param roleId
+     */
+
+    public void setRoleId(String roleId) {
+        this.roleId = roleId;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getRoleId() {
+        return this.roleId;
+    }
+
+    /**
+     * @param roleId
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public PolicyRole withRoleId(String roleId) {
+        setRoleId(roleId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -95,7 +124,9 @@ public class PolicyRole implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRoleName() != null)
-            sb.append("RoleName: " + getRoleName());
+            sb.append("RoleName: " + getRoleName() + ",");
+        if (getRoleId() != null)
+            sb.append("RoleId: " + getRoleId());
         sb.append("}");
         return sb.toString();
     }
@@ -115,6 +146,11 @@ public class PolicyRole implements Serializable, Cloneable {
         if (other.getRoleName() != null
                 && other.getRoleName().equals(this.getRoleName()) == false)
             return false;
+        if (other.getRoleId() == null ^ this.getRoleId() == null)
+            return false;
+        if (other.getRoleId() != null
+                && other.getRoleId().equals(this.getRoleId()) == false)
+            return false;
         return true;
     }
 
@@ -125,6 +161,8 @@ public class PolicyRole implements Serializable, Cloneable {
 
         hashCode = prime * hashCode
                 + ((getRoleName() == null) ? 0 : getRoleName().hashCode());
+        hashCode = prime * hashCode
+                + ((getRoleId() == null) ? 0 : getRoleId().hashCode());
         return hashCode;
     }
 

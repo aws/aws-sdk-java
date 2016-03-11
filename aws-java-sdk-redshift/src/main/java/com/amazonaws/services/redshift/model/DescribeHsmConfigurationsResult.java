@@ -33,7 +33,7 @@ public class DescribeHsmConfigurationsResult implements Serializable, Cloneable 
     private String marker;
 
     /**
-     * A list of Amazon Redshift HSM configurations.
+     * A list of <code>HsmConfiguration</code> objects.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<HsmConfiguration> hsmConfigurations;
 
@@ -101,9 +101,9 @@ public class DescribeHsmConfigurationsResult implements Serializable, Cloneable 
     }
 
     /**
-     * A list of Amazon Redshift HSM configurations.
+     * A list of <code>HsmConfiguration</code> objects.
      *
-     * @return A list of Amazon Redshift HSM configurations.
+     * @return A list of <code>HsmConfiguration</code> objects.
      */
     public java.util.List<HsmConfiguration> getHsmConfigurations() {
         if (hsmConfigurations == null) {
@@ -114,9 +114,9 @@ public class DescribeHsmConfigurationsResult implements Serializable, Cloneable 
     }
     
     /**
-     * A list of Amazon Redshift HSM configurations.
+     * A list of <code>HsmConfiguration</code> objects.
      *
-     * @param hsmConfigurations A list of Amazon Redshift HSM configurations.
+     * @param hsmConfigurations A list of <code>HsmConfiguration</code> objects.
      */
     public void setHsmConfigurations(java.util.Collection<HsmConfiguration> hsmConfigurations) {
         if (hsmConfigurations == null) {
@@ -129,7 +129,7 @@ public class DescribeHsmConfigurationsResult implements Serializable, Cloneable 
     }
     
     /**
-     * A list of Amazon Redshift HSM configurations.
+     * A list of <code>HsmConfiguration</code> objects.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setHsmConfigurations(java.util.Collection)} or
@@ -138,7 +138,7 @@ public class DescribeHsmConfigurationsResult implements Serializable, Cloneable 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param hsmConfigurations A list of Amazon Redshift HSM configurations.
+     * @param hsmConfigurations A list of <code>HsmConfiguration</code> objects.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -152,11 +152,11 @@ public class DescribeHsmConfigurationsResult implements Serializable, Cloneable 
     }
     
     /**
-     * A list of Amazon Redshift HSM configurations.
+     * A list of <code>HsmConfiguration</code> objects.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param hsmConfigurations A list of Amazon Redshift HSM configurations.
+     * @param hsmConfigurations A list of <code>HsmConfiguration</code> objects.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

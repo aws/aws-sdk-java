@@ -125,6 +125,11 @@ public class CreateFleetRequestMarshaller implements
                 jsonWriter.endArray();
             }
 
+            if (createFleetRequest.getNewGameSessionProtectionPolicy() != null) {
+                jsonWriter.key("NewGameSessionProtectionPolicy").value(
+                        createFleetRequest.getNewGameSessionProtectionPolicy());
+            }
+
             jsonWriter.endObject();
 
             String snippet = stringWriter.toString();

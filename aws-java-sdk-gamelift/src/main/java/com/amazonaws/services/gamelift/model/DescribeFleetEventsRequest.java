@@ -38,7 +38,7 @@ public class DescribeFleetEventsRequest extends AmazonWebServiceRequest
      * Earliest date to retrieve event logs for. If no start time is specified,
      * this call returns entries starting from when the fleet was created to the
      * specified end time. Format is an integer representing the number of
-     * seconds since epoch.
+     * seconds since the Unix epoch (Unix time).
      * </p>
      */
     private java.util.Date startTime;
@@ -47,7 +47,7 @@ public class DescribeFleetEventsRequest extends AmazonWebServiceRequest
      * Most recent date to retrieve event logs for. If no end time is specified,
      * this call returns entries from the specified start time up to the
      * present. Format is an integer representing the number of seconds since
-     * epoch.
+     * the Unix epoch (Unix time).
      * </p>
      */
     private java.util.Date endTime;
@@ -60,10 +60,9 @@ public class DescribeFleetEventsRequest extends AmazonWebServiceRequest
     private Integer limit;
     /**
      * <p>
-     * Token indicating the start of the next sequential page of results. A
-     * token is returned any time there may be additional results to be
-     * retrieved. To start at the beginning of a result set, do not set this
-     * parameter.
+     * Token indicating the start of the next sequential page of results. Use
+     * the token that is returned with a previous call to this action. To
+     * specify the start of the result set, do not specify a value.
      * </p>
      */
     private String nextToken;
@@ -114,14 +113,15 @@ public class DescribeFleetEventsRequest extends AmazonWebServiceRequest
      * Earliest date to retrieve event logs for. If no start time is specified,
      * this call returns entries starting from when the fleet was created to the
      * specified end time. Format is an integer representing the number of
-     * seconds since epoch.
+     * seconds since the Unix epoch (Unix time).
      * </p>
      * 
      * @param startTime
      *        Earliest date to retrieve event logs for. If no start time is
      *        specified, this call returns entries starting from when the fleet
      *        was created to the specified end time. Format is an integer
-     *        representing the number of seconds since epoch.
+     *        representing the number of seconds since the Unix epoch (Unix
+     *        time).
      */
 
     public void setStartTime(java.util.Date startTime) {
@@ -133,13 +133,14 @@ public class DescribeFleetEventsRequest extends AmazonWebServiceRequest
      * Earliest date to retrieve event logs for. If no start time is specified,
      * this call returns entries starting from when the fleet was created to the
      * specified end time. Format is an integer representing the number of
-     * seconds since epoch.
+     * seconds since the Unix epoch (Unix time).
      * </p>
      * 
      * @return Earliest date to retrieve event logs for. If no start time is
      *         specified, this call returns entries starting from when the fleet
      *         was created to the specified end time. Format is an integer
-     *         representing the number of seconds since epoch.
+     *         representing the number of seconds since the Unix epoch (Unix
+     *         time).
      */
 
     public java.util.Date getStartTime() {
@@ -151,14 +152,15 @@ public class DescribeFleetEventsRequest extends AmazonWebServiceRequest
      * Earliest date to retrieve event logs for. If no start time is specified,
      * this call returns entries starting from when the fleet was created to the
      * specified end time. Format is an integer representing the number of
-     * seconds since epoch.
+     * seconds since the Unix epoch (Unix time).
      * </p>
      * 
      * @param startTime
      *        Earliest date to retrieve event logs for. If no start time is
      *        specified, this call returns entries starting from when the fleet
      *        was created to the specified end time. Format is an integer
-     *        representing the number of seconds since epoch.
+     *        representing the number of seconds since the Unix epoch (Unix
+     *        time).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -173,14 +175,14 @@ public class DescribeFleetEventsRequest extends AmazonWebServiceRequest
      * Most recent date to retrieve event logs for. If no end time is specified,
      * this call returns entries from the specified start time up to the
      * present. Format is an integer representing the number of seconds since
-     * epoch.
+     * the Unix epoch (Unix time).
      * </p>
      * 
      * @param endTime
      *        Most recent date to retrieve event logs for. If no end time is
      *        specified, this call returns entries from the specified start time
      *        up to the present. Format is an integer representing the number of
-     *        seconds since epoch.
+     *        seconds since the Unix epoch (Unix time).
      */
 
     public void setEndTime(java.util.Date endTime) {
@@ -192,13 +194,13 @@ public class DescribeFleetEventsRequest extends AmazonWebServiceRequest
      * Most recent date to retrieve event logs for. If no end time is specified,
      * this call returns entries from the specified start time up to the
      * present. Format is an integer representing the number of seconds since
-     * epoch.
+     * the Unix epoch (Unix time).
      * </p>
      * 
      * @return Most recent date to retrieve event logs for. If no end time is
      *         specified, this call returns entries from the specified start
      *         time up to the present. Format is an integer representing the
-     *         number of seconds since epoch.
+     *         number of seconds since the Unix epoch (Unix time).
      */
 
     public java.util.Date getEndTime() {
@@ -210,14 +212,14 @@ public class DescribeFleetEventsRequest extends AmazonWebServiceRequest
      * Most recent date to retrieve event logs for. If no end time is specified,
      * this call returns entries from the specified start time up to the
      * present. Format is an integer representing the number of seconds since
-     * epoch.
+     * the Unix epoch (Unix time).
      * </p>
      * 
      * @param endTime
      *        Most recent date to retrieve event logs for. If no end time is
      *        specified, this call returns entries from the specified start time
      *        up to the present. Format is an integer representing the number of
-     *        seconds since epoch.
+     *        seconds since the Unix epoch (Unix time).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -277,17 +279,16 @@ public class DescribeFleetEventsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Token indicating the start of the next sequential page of results. A
-     * token is returned any time there may be additional results to be
-     * retrieved. To start at the beginning of a result set, do not set this
-     * parameter.
+     * Token indicating the start of the next sequential page of results. Use
+     * the token that is returned with a previous call to this action. To
+     * specify the start of the result set, do not specify a value.
      * </p>
      * 
      * @param nextToken
      *        Token indicating the start of the next sequential page of results.
-     *        A token is returned any time there may be additional results to be
-     *        retrieved. To start at the beginning of a result set, do not set
-     *        this parameter.
+     *        Use the token that is returned with a previous call to this
+     *        action. To specify the start of the result set, do not specify a
+     *        value.
      */
 
     public void setNextToken(String nextToken) {
@@ -296,16 +297,15 @@ public class DescribeFleetEventsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Token indicating the start of the next sequential page of results. A
-     * token is returned any time there may be additional results to be
-     * retrieved. To start at the beginning of a result set, do not set this
-     * parameter.
+     * Token indicating the start of the next sequential page of results. Use
+     * the token that is returned with a previous call to this action. To
+     * specify the start of the result set, do not specify a value.
      * </p>
      * 
      * @return Token indicating the start of the next sequential page of
-     *         results. A token is returned any time there may be additional
-     *         results to be retrieved. To start at the beginning of a result
-     *         set, do not set this parameter.
+     *         results. Use the token that is returned with a previous call to
+     *         this action. To specify the start of the result set, do not
+     *         specify a value.
      */
 
     public String getNextToken() {
@@ -314,17 +314,16 @@ public class DescribeFleetEventsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Token indicating the start of the next sequential page of results. A
-     * token is returned any time there may be additional results to be
-     * retrieved. To start at the beginning of a result set, do not set this
-     * parameter.
+     * Token indicating the start of the next sequential page of results. Use
+     * the token that is returned with a previous call to this action. To
+     * specify the start of the result set, do not specify a value.
      * </p>
      * 
      * @param nextToken
      *        Token indicating the start of the next sequential page of results.
-     *        A token is returned any time there may be additional results to be
-     *        retrieved. To start at the beginning of a result set, do not set
-     *        this parameter.
+     *        Use the token that is returned with a previous call to this
+     *        action. To specify the start of the result set, do not specify a
+     *        value.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -54,6 +54,12 @@ public class PolicyGroupStaxUnmarshaller implements
                             .getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("GroupId", targetDepth)) {
+                    policyGroup.setGroupId(StringStaxUnmarshaller.getInstance()
+                            .unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return policyGroup;

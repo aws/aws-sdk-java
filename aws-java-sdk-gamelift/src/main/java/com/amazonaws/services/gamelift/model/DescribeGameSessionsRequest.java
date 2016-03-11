@@ -29,29 +29,30 @@ public class DescribeGameSessionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Unique identifier for a fleet. Specify only one fleet ID, alias ID or
-     * game session ID.
+     * Unique identifier for a fleet. Specify a fleet to retrieve information on
+     * all game sessions active on the fleet.
      * </p>
      */
     private String fleetId;
     /**
      * <p>
-     * Unique identifier for a game session. Specify only one fleet ID, alias ID
-     * or game session ID.
+     * Unique identifier for a game session. Specify the game session to
+     * retrieve information on.
      * </p>
      */
     private String gameSessionId;
     /**
      * <p>
-     * Unique identifier for a fleet alias. Specify only one fleet ID, alias ID
-     * or game session ID.
+     * Unique identifier for a fleet alias. Specify an alias to retrieve
+     * information on all game sessions active on the fleet.
      * </p>
      */
     private String aliasId;
     /**
      * <p>
-     * Indicate a game session status to filter results on. (Note: ACTIVATING
-     * and TERMINATING are short-term transitory states only.)
+     * Game session status to filter results on. Possible game session states
+     * include ACTIVE, TERMINATED, ACTIVATING and TERMINATING (the last two are
+     * transitory).
      * </p>
      */
     private String statusFilter;
@@ -64,23 +65,22 @@ public class DescribeGameSessionsRequest extends AmazonWebServiceRequest
     private Integer limit;
     /**
      * <p>
-     * Token indicating the start of the next sequential page of results. A
-     * token is returned any time there may be additional results to be
-     * retrieved. To start at the beginning of a result set, do not set this
-     * parameter.
+     * Token indicating the start of the next sequential page of results. Use
+     * the token that is returned with a previous call to this action. To
+     * specify the start of the result set, do not specify a value.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * Unique identifier for a fleet. Specify only one fleet ID, alias ID or
-     * game session ID.
+     * Unique identifier for a fleet. Specify a fleet to retrieve information on
+     * all game sessions active on the fleet.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for a fleet. Specify only one fleet ID, alias ID
-     *        or game session ID.
+     *        Unique identifier for a fleet. Specify a fleet to retrieve
+     *        information on all game sessions active on the fleet.
      */
 
     public void setFleetId(String fleetId) {
@@ -89,12 +89,12 @@ public class DescribeGameSessionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Unique identifier for a fleet. Specify only one fleet ID, alias ID or
-     * game session ID.
+     * Unique identifier for a fleet. Specify a fleet to retrieve information on
+     * all game sessions active on the fleet.
      * </p>
      * 
-     * @return Unique identifier for a fleet. Specify only one fleet ID, alias
-     *         ID or game session ID.
+     * @return Unique identifier for a fleet. Specify a fleet to retrieve
+     *         information on all game sessions active on the fleet.
      */
 
     public String getFleetId() {
@@ -103,13 +103,13 @@ public class DescribeGameSessionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Unique identifier for a fleet. Specify only one fleet ID, alias ID or
-     * game session ID.
+     * Unique identifier for a fleet. Specify a fleet to retrieve information on
+     * all game sessions active on the fleet.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for a fleet. Specify only one fleet ID, alias ID
-     *        or game session ID.
+     *        Unique identifier for a fleet. Specify a fleet to retrieve
+     *        information on all game sessions active on the fleet.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -121,13 +121,13 @@ public class DescribeGameSessionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Unique identifier for a game session. Specify only one fleet ID, alias ID
-     * or game session ID.
+     * Unique identifier for a game session. Specify the game session to
+     * retrieve information on.
      * </p>
      * 
      * @param gameSessionId
-     *        Unique identifier for a game session. Specify only one fleet ID,
-     *        alias ID or game session ID.
+     *        Unique identifier for a game session. Specify the game session to
+     *        retrieve information on.
      */
 
     public void setGameSessionId(String gameSessionId) {
@@ -136,12 +136,12 @@ public class DescribeGameSessionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Unique identifier for a game session. Specify only one fleet ID, alias ID
-     * or game session ID.
+     * Unique identifier for a game session. Specify the game session to
+     * retrieve information on.
      * </p>
      * 
-     * @return Unique identifier for a game session. Specify only one fleet ID,
-     *         alias ID or game session ID.
+     * @return Unique identifier for a game session. Specify the game session to
+     *         retrieve information on.
      */
 
     public String getGameSessionId() {
@@ -150,13 +150,13 @@ public class DescribeGameSessionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Unique identifier for a game session. Specify only one fleet ID, alias ID
-     * or game session ID.
+     * Unique identifier for a game session. Specify the game session to
+     * retrieve information on.
      * </p>
      * 
      * @param gameSessionId
-     *        Unique identifier for a game session. Specify only one fleet ID,
-     *        alias ID or game session ID.
+     *        Unique identifier for a game session. Specify the game session to
+     *        retrieve information on.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -168,13 +168,13 @@ public class DescribeGameSessionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Unique identifier for a fleet alias. Specify only one fleet ID, alias ID
-     * or game session ID.
+     * Unique identifier for a fleet alias. Specify an alias to retrieve
+     * information on all game sessions active on the fleet.
      * </p>
      * 
      * @param aliasId
-     *        Unique identifier for a fleet alias. Specify only one fleet ID,
-     *        alias ID or game session ID.
+     *        Unique identifier for a fleet alias. Specify an alias to retrieve
+     *        information on all game sessions active on the fleet.
      */
 
     public void setAliasId(String aliasId) {
@@ -183,12 +183,12 @@ public class DescribeGameSessionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Unique identifier for a fleet alias. Specify only one fleet ID, alias ID
-     * or game session ID.
+     * Unique identifier for a fleet alias. Specify an alias to retrieve
+     * information on all game sessions active on the fleet.
      * </p>
      * 
-     * @return Unique identifier for a fleet alias. Specify only one fleet ID,
-     *         alias ID or game session ID.
+     * @return Unique identifier for a fleet alias. Specify an alias to retrieve
+     *         information on all game sessions active on the fleet.
      */
 
     public String getAliasId() {
@@ -197,13 +197,13 @@ public class DescribeGameSessionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Unique identifier for a fleet alias. Specify only one fleet ID, alias ID
-     * or game session ID.
+     * Unique identifier for a fleet alias. Specify an alias to retrieve
+     * information on all game sessions active on the fleet.
      * </p>
      * 
      * @param aliasId
-     *        Unique identifier for a fleet alias. Specify only one fleet ID,
-     *        alias ID or game session ID.
+     *        Unique identifier for a fleet alias. Specify an alias to retrieve
+     *        information on all game sessions active on the fleet.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -215,13 +215,15 @@ public class DescribeGameSessionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Indicate a game session status to filter results on. (Note: ACTIVATING
-     * and TERMINATING are short-term transitory states only.)
+     * Game session status to filter results on. Possible game session states
+     * include ACTIVE, TERMINATED, ACTIVATING and TERMINATING (the last two are
+     * transitory).
      * </p>
      * 
      * @param statusFilter
-     *        Indicate a game session status to filter results on. (Note:
-     *        ACTIVATING and TERMINATING are short-term transitory states only.)
+     *        Game session status to filter results on. Possible game session
+     *        states include ACTIVE, TERMINATED, ACTIVATING and TERMINATING (the
+     *        last two are transitory).
      */
 
     public void setStatusFilter(String statusFilter) {
@@ -230,13 +232,14 @@ public class DescribeGameSessionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Indicate a game session status to filter results on. (Note: ACTIVATING
-     * and TERMINATING are short-term transitory states only.)
+     * Game session status to filter results on. Possible game session states
+     * include ACTIVE, TERMINATED, ACTIVATING and TERMINATING (the last two are
+     * transitory).
      * </p>
      * 
-     * @return Indicate a game session status to filter results on. (Note:
-     *         ACTIVATING and TERMINATING are short-term transitory states
-     *         only.)
+     * @return Game session status to filter results on. Possible game session
+     *         states include ACTIVE, TERMINATED, ACTIVATING and TERMINATING
+     *         (the last two are transitory).
      */
 
     public String getStatusFilter() {
@@ -245,13 +248,15 @@ public class DescribeGameSessionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Indicate a game session status to filter results on. (Note: ACTIVATING
-     * and TERMINATING are short-term transitory states only.)
+     * Game session status to filter results on. Possible game session states
+     * include ACTIVE, TERMINATED, ACTIVATING and TERMINATING (the last two are
+     * transitory).
      * </p>
      * 
      * @param statusFilter
-     *        Indicate a game session status to filter results on. (Note:
-     *        ACTIVATING and TERMINATING are short-term transitory states only.)
+     *        Game session status to filter results on. Possible game session
+     *        states include ACTIVE, TERMINATED, ACTIVATING and TERMINATING (the
+     *        last two are transitory).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -311,17 +316,16 @@ public class DescribeGameSessionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Token indicating the start of the next sequential page of results. A
-     * token is returned any time there may be additional results to be
-     * retrieved. To start at the beginning of a result set, do not set this
-     * parameter.
+     * Token indicating the start of the next sequential page of results. Use
+     * the token that is returned with a previous call to this action. To
+     * specify the start of the result set, do not specify a value.
      * </p>
      * 
      * @param nextToken
      *        Token indicating the start of the next sequential page of results.
-     *        A token is returned any time there may be additional results to be
-     *        retrieved. To start at the beginning of a result set, do not set
-     *        this parameter.
+     *        Use the token that is returned with a previous call to this
+     *        action. To specify the start of the result set, do not specify a
+     *        value.
      */
 
     public void setNextToken(String nextToken) {
@@ -330,16 +334,15 @@ public class DescribeGameSessionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Token indicating the start of the next sequential page of results. A
-     * token is returned any time there may be additional results to be
-     * retrieved. To start at the beginning of a result set, do not set this
-     * parameter.
+     * Token indicating the start of the next sequential page of results. Use
+     * the token that is returned with a previous call to this action. To
+     * specify the start of the result set, do not specify a value.
      * </p>
      * 
      * @return Token indicating the start of the next sequential page of
-     *         results. A token is returned any time there may be additional
-     *         results to be retrieved. To start at the beginning of a result
-     *         set, do not set this parameter.
+     *         results. Use the token that is returned with a previous call to
+     *         this action. To specify the start of the result set, do not
+     *         specify a value.
      */
 
     public String getNextToken() {
@@ -348,17 +351,16 @@ public class DescribeGameSessionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Token indicating the start of the next sequential page of results. A
-     * token is returned any time there may be additional results to be
-     * retrieved. To start at the beginning of a result set, do not set this
-     * parameter.
+     * Token indicating the start of the next sequential page of results. Use
+     * the token that is returned with a previous call to this action. To
+     * specify the start of the result set, do not specify a value.
      * </p>
      * 
      * @param nextToken
      *        Token indicating the start of the next sequential page of results.
-     *        A token is returned any time there may be additional results to be
-     *        retrieved. To start at the beginning of a result set, do not set
-     *        this parameter.
+     *        Use the token that is returned with a previous call to this
+     *        action. To specify the start of the result set, do not specify a
+     *        value.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

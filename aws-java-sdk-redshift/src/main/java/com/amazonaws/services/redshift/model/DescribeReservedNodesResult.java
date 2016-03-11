@@ -18,7 +18,6 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the output from the DescribeReservedNodes action.
  * </p>
  */
 public class DescribeReservedNodesResult implements Serializable, Cloneable {
@@ -34,7 +33,7 @@ public class DescribeReservedNodesResult implements Serializable, Cloneable {
     private String marker;
 
     /**
-     * The list of reserved nodes.
+     * The list of <code>ReservedNode</code> objects.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<ReservedNode> reservedNodes;
 
@@ -102,9 +101,9 @@ public class DescribeReservedNodesResult implements Serializable, Cloneable {
     }
 
     /**
-     * The list of reserved nodes.
+     * The list of <code>ReservedNode</code> objects.
      *
-     * @return The list of reserved nodes.
+     * @return The list of <code>ReservedNode</code> objects.
      */
     public java.util.List<ReservedNode> getReservedNodes() {
         if (reservedNodes == null) {
@@ -115,9 +114,9 @@ public class DescribeReservedNodesResult implements Serializable, Cloneable {
     }
     
     /**
-     * The list of reserved nodes.
+     * The list of <code>ReservedNode</code> objects.
      *
-     * @param reservedNodes The list of reserved nodes.
+     * @param reservedNodes The list of <code>ReservedNode</code> objects.
      */
     public void setReservedNodes(java.util.Collection<ReservedNode> reservedNodes) {
         if (reservedNodes == null) {
@@ -130,7 +129,7 @@ public class DescribeReservedNodesResult implements Serializable, Cloneable {
     }
     
     /**
-     * The list of reserved nodes.
+     * The list of <code>ReservedNode</code> objects.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setReservedNodes(java.util.Collection)} or {@link
@@ -139,7 +138,7 @@ public class DescribeReservedNodesResult implements Serializable, Cloneable {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservedNodes The list of reserved nodes.
+     * @param reservedNodes The list of <code>ReservedNode</code> objects.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -153,11 +152,11 @@ public class DescribeReservedNodesResult implements Serializable, Cloneable {
     }
     
     /**
-     * The list of reserved nodes.
+     * The list of <code>ReservedNode</code> objects.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservedNodes The list of reserved nodes.
+     * @param reservedNodes The list of <code>ReservedNode</code> objects.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

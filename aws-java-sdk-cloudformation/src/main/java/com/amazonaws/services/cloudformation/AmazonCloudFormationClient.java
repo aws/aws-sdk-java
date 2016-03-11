@@ -85,6 +85,12 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient
     private static final String DEFAULT_ENDPOINT_PREFIX = "cloudformation";
 
     /**
+     * Client configuration factory providing ClientConfigurations tailored to
+     * this client
+     */
+    protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
+
+    /**
      * List of exception unmarshallers for all AWS CloudFormation exceptions.
      */
     protected final List<Unmarshaller<AmazonServiceException, Node>> exceptionUnmarshallers = new ArrayList<Unmarshaller<AmazonServiceException, Node>>();
@@ -107,8 +113,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonCloudFormationClient() {
-        this(new DefaultAWSCredentialsProviderChain(),
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
+        this(new DefaultAWSCredentialsProviderChain(), configFactory
+                .getConfig());
     }
 
     /**
@@ -150,8 +156,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient
      *        authenticating with AWS services.
      */
     public AmazonCloudFormationClient(AWSCredentials awsCredentials) {
-        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
-                .defaultConfig());
+        this(awsCredentials, configFactory.getConfig());
     }
 
     /**
@@ -193,8 +198,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient
      */
     public AmazonCloudFormationClient(
             AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider,
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
+        this(awsCredentialsProvider, configFactory.getConfig());
     }
 
     /**

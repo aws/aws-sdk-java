@@ -35,7 +35,8 @@ public class RequestUploadCredentialsResult implements Serializable, Cloneable {
     private Credentials uploadCredentials;
     /**
      * <p>
-     * S3 path and key, identifying where the game build files are stored.
+     * Amazon S3 path and key, identifying where the game build files are
+     * stored.
      * </p>
      */
     private S3Location storageLocation;
@@ -96,11 +97,12 @@ public class RequestUploadCredentialsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * S3 path and key, identifying where the game build files are stored.
+     * Amazon S3 path and key, identifying where the game build files are
+     * stored.
      * </p>
      * 
      * @param storageLocation
-     *        S3 path and key, identifying where the game build files are
+     *        Amazon S3 path and key, identifying where the game build files are
      *        stored.
      */
 
@@ -110,11 +112,12 @@ public class RequestUploadCredentialsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * S3 path and key, identifying where the game build files are stored.
+     * Amazon S3 path and key, identifying where the game build files are
+     * stored.
      * </p>
      * 
-     * @return S3 path and key, identifying where the game build files are
-     *         stored.
+     * @return Amazon S3 path and key, identifying where the game build files
+     *         are stored.
      */
 
     public S3Location getStorageLocation() {
@@ -123,11 +126,12 @@ public class RequestUploadCredentialsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * S3 path and key, identifying where the game build files are stored.
+     * Amazon S3 path and key, identifying where the game build files are
+     * stored.
      * </p>
      * 
      * @param storageLocation
-     *        S3 path and key, identifying where the game build files are
+     *        Amazon S3 path and key, identifying where the game build files are
      *        stored.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.

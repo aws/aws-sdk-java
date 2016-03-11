@@ -257,6 +257,12 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
     private static final String DEFAULT_ENDPOINT_PREFIX = "dynamodb";
 
     /**
+     * Client configuration factory providing ClientConfigurations tailored to
+     * this client
+     */
+    protected static final com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientConfigurationFactory configFactory = new com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientConfigurationFactory();
+
+    /**
      * List of exception unmarshallers for all DynamoDB exceptions.
      */
     protected List<JsonErrorUnmarshallerV2> jsonErrorUnmarshallers = new ArrayList<JsonErrorUnmarshallerV2>();
@@ -279,8 +285,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonDynamoDBClient() {
-        this(new DefaultAWSCredentialsProviderChain(),
-                com.amazonaws.PredefinedClientConfigurations.dynamoDefault());
+        this(new DefaultAWSCredentialsProviderChain(), configFactory
+                .getConfig());
     }
 
     /**
@@ -321,8 +327,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
      *        authenticating with AWS services.
      */
     public AmazonDynamoDBClient(AWSCredentials awsCredentials) {
-        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
-                .dynamoDefault());
+        this(awsCredentials, configFactory.getConfig());
     }
 
     /**
@@ -361,8 +366,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements
      *        authenticate requests with AWS services.
      */
     public AmazonDynamoDBClient(AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider,
-                com.amazonaws.PredefinedClientConfigurations.dynamoDefault());
+        this(awsCredentialsProvider, configFactory.getConfig());
     }
 
     /**

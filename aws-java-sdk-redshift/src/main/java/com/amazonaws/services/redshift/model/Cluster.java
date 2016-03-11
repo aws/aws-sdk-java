@@ -34,10 +34,18 @@ public class Cluster implements Serializable, Cloneable {
     private String nodeType;
 
     /**
-     * The current state of this cluster. Possible values include
-     * <code>available</code>, <code>creating</code>, <code>deleting</code>,
-     * <code>rebooting</code>, <code>renaming</code>, and
-     * <code>resizing</code>.
+     * The current state of the cluster. Possible values are: <ul>
+     * <li><code>available</code></li> <li><code>creating</code></li>
+     * <li><code>deleting</code></li> <li><code>final-snapshot</code></li>
+     * <li><code>hardware-failure</code></li>
+     * <li><code>incompatible-hsm</code></li>
+     * <li><code>incompatible-network</code></li>
+     * <li><code>incompatible-parameters</code></li>
+     * <li><code>incompatible-restore</code></li>
+     * <li><code>modifying</code></li> <li><code>rebooting</code></li>
+     * <li><code>renaming</code></li> <li><code>resizing</code></li>
+     * <li><code>rotating-keys</code></li> <li><code>storage-full</code></li>
+     * <li><code>updating-hsm</code></li> </ul>
      */
     private String clusterStatus;
 
@@ -186,7 +194,7 @@ public class Cluster implements Serializable, Cloneable {
     private com.amazonaws.internal.ListWithAutoConstructFlag<ClusterNode> clusterNodes;
 
     /**
-     * Describes the status of the elastic IP (EIP) address.
+     * The status of the elastic IP (EIP) address.
      */
     private ElasticIpStatus elasticIpStatus;
 
@@ -273,47 +281,95 @@ public class Cluster implements Serializable, Cloneable {
     }
 
     /**
-     * The current state of this cluster. Possible values include
-     * <code>available</code>, <code>creating</code>, <code>deleting</code>,
-     * <code>rebooting</code>, <code>renaming</code>, and
-     * <code>resizing</code>.
+     * The current state of the cluster. Possible values are: <ul>
+     * <li><code>available</code></li> <li><code>creating</code></li>
+     * <li><code>deleting</code></li> <li><code>final-snapshot</code></li>
+     * <li><code>hardware-failure</code></li>
+     * <li><code>incompatible-hsm</code></li>
+     * <li><code>incompatible-network</code></li>
+     * <li><code>incompatible-parameters</code></li>
+     * <li><code>incompatible-restore</code></li>
+     * <li><code>modifying</code></li> <li><code>rebooting</code></li>
+     * <li><code>renaming</code></li> <li><code>resizing</code></li>
+     * <li><code>rotating-keys</code></li> <li><code>storage-full</code></li>
+     * <li><code>updating-hsm</code></li> </ul>
      *
-     * @return The current state of this cluster. Possible values include
-     *         <code>available</code>, <code>creating</code>, <code>deleting</code>,
-     *         <code>rebooting</code>, <code>renaming</code>, and
-     *         <code>resizing</code>.
+     * @return The current state of the cluster. Possible values are: <ul>
+     *         <li><code>available</code></li> <li><code>creating</code></li>
+     *         <li><code>deleting</code></li> <li><code>final-snapshot</code></li>
+     *         <li><code>hardware-failure</code></li>
+     *         <li><code>incompatible-hsm</code></li>
+     *         <li><code>incompatible-network</code></li>
+     *         <li><code>incompatible-parameters</code></li>
+     *         <li><code>incompatible-restore</code></li>
+     *         <li><code>modifying</code></li> <li><code>rebooting</code></li>
+     *         <li><code>renaming</code></li> <li><code>resizing</code></li>
+     *         <li><code>rotating-keys</code></li> <li><code>storage-full</code></li>
+     *         <li><code>updating-hsm</code></li> </ul>
      */
     public String getClusterStatus() {
         return clusterStatus;
     }
     
     /**
-     * The current state of this cluster. Possible values include
-     * <code>available</code>, <code>creating</code>, <code>deleting</code>,
-     * <code>rebooting</code>, <code>renaming</code>, and
-     * <code>resizing</code>.
+     * The current state of the cluster. Possible values are: <ul>
+     * <li><code>available</code></li> <li><code>creating</code></li>
+     * <li><code>deleting</code></li> <li><code>final-snapshot</code></li>
+     * <li><code>hardware-failure</code></li>
+     * <li><code>incompatible-hsm</code></li>
+     * <li><code>incompatible-network</code></li>
+     * <li><code>incompatible-parameters</code></li>
+     * <li><code>incompatible-restore</code></li>
+     * <li><code>modifying</code></li> <li><code>rebooting</code></li>
+     * <li><code>renaming</code></li> <li><code>resizing</code></li>
+     * <li><code>rotating-keys</code></li> <li><code>storage-full</code></li>
+     * <li><code>updating-hsm</code></li> </ul>
      *
-     * @param clusterStatus The current state of this cluster. Possible values include
-     *         <code>available</code>, <code>creating</code>, <code>deleting</code>,
-     *         <code>rebooting</code>, <code>renaming</code>, and
-     *         <code>resizing</code>.
+     * @param clusterStatus The current state of the cluster. Possible values are: <ul>
+     *         <li><code>available</code></li> <li><code>creating</code></li>
+     *         <li><code>deleting</code></li> <li><code>final-snapshot</code></li>
+     *         <li><code>hardware-failure</code></li>
+     *         <li><code>incompatible-hsm</code></li>
+     *         <li><code>incompatible-network</code></li>
+     *         <li><code>incompatible-parameters</code></li>
+     *         <li><code>incompatible-restore</code></li>
+     *         <li><code>modifying</code></li> <li><code>rebooting</code></li>
+     *         <li><code>renaming</code></li> <li><code>resizing</code></li>
+     *         <li><code>rotating-keys</code></li> <li><code>storage-full</code></li>
+     *         <li><code>updating-hsm</code></li> </ul>
      */
     public void setClusterStatus(String clusterStatus) {
         this.clusterStatus = clusterStatus;
     }
     
     /**
-     * The current state of this cluster. Possible values include
-     * <code>available</code>, <code>creating</code>, <code>deleting</code>,
-     * <code>rebooting</code>, <code>renaming</code>, and
-     * <code>resizing</code>.
+     * The current state of the cluster. Possible values are: <ul>
+     * <li><code>available</code></li> <li><code>creating</code></li>
+     * <li><code>deleting</code></li> <li><code>final-snapshot</code></li>
+     * <li><code>hardware-failure</code></li>
+     * <li><code>incompatible-hsm</code></li>
+     * <li><code>incompatible-network</code></li>
+     * <li><code>incompatible-parameters</code></li>
+     * <li><code>incompatible-restore</code></li>
+     * <li><code>modifying</code></li> <li><code>rebooting</code></li>
+     * <li><code>renaming</code></li> <li><code>resizing</code></li>
+     * <li><code>rotating-keys</code></li> <li><code>storage-full</code></li>
+     * <li><code>updating-hsm</code></li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param clusterStatus The current state of this cluster. Possible values include
-     *         <code>available</code>, <code>creating</code>, <code>deleting</code>,
-     *         <code>rebooting</code>, <code>renaming</code>, and
-     *         <code>resizing</code>.
+     * @param clusterStatus The current state of the cluster. Possible values are: <ul>
+     *         <li><code>available</code></li> <li><code>creating</code></li>
+     *         <li><code>deleting</code></li> <li><code>final-snapshot</code></li>
+     *         <li><code>hardware-failure</code></li>
+     *         <li><code>incompatible-hsm</code></li>
+     *         <li><code>incompatible-network</code></li>
+     *         <li><code>incompatible-parameters</code></li>
+     *         <li><code>incompatible-restore</code></li>
+     *         <li><code>modifying</code></li> <li><code>rebooting</code></li>
+     *         <li><code>renaming</code></li> <li><code>resizing</code></li>
+     *         <li><code>rotating-keys</code></li> <li><code>storage-full</code></li>
+     *         <li><code>updating-hsm</code></li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -1469,29 +1525,29 @@ public class Cluster implements Serializable, Cloneable {
     }
 
     /**
-     * Describes the status of the elastic IP (EIP) address.
+     * The status of the elastic IP (EIP) address.
      *
-     * @return Describes the status of the elastic IP (EIP) address.
+     * @return The status of the elastic IP (EIP) address.
      */
     public ElasticIpStatus getElasticIpStatus() {
         return elasticIpStatus;
     }
     
     /**
-     * Describes the status of the elastic IP (EIP) address.
+     * The status of the elastic IP (EIP) address.
      *
-     * @param elasticIpStatus Describes the status of the elastic IP (EIP) address.
+     * @param elasticIpStatus The status of the elastic IP (EIP) address.
      */
     public void setElasticIpStatus(ElasticIpStatus elasticIpStatus) {
         this.elasticIpStatus = elasticIpStatus;
     }
     
     /**
-     * Describes the status of the elastic IP (EIP) address.
+     * The status of the elastic IP (EIP) address.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param elasticIpStatus Describes the status of the elastic IP (EIP) address.
+     * @param elasticIpStatus The status of the elastic IP (EIP) address.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -49,14 +49,15 @@ public class Alias implements Serializable, Cloneable {
     /**
      * <p>
      * Time stamp indicating when this object was created. Format is an integer
-     * representing the number of seconds since epoch.
+     * representing the number of seconds since the Unix epoch (Unix time).
      * </p>
      */
     private java.util.Date creationTime;
     /**
      * <p>
      * Time stamp indicating when this object was last modified. Format is an
-     * integer representing the number of seconds since epoch.
+     * integer representing the number of seconds since the Unix epoch (Unix
+     * time).
      * </p>
      */
     private java.util.Date lastUpdatedTime;
@@ -220,12 +221,13 @@ public class Alias implements Serializable, Cloneable {
     /**
      * <p>
      * Time stamp indicating when this object was created. Format is an integer
-     * representing the number of seconds since epoch.
+     * representing the number of seconds since the Unix epoch (Unix time).
      * </p>
      * 
      * @param creationTime
      *        Time stamp indicating when this object was created. Format is an
-     *        integer representing the number of seconds since epoch.
+     *        integer representing the number of seconds since the Unix epoch
+     *        (Unix time).
      */
 
     public void setCreationTime(java.util.Date creationTime) {
@@ -235,11 +237,12 @@ public class Alias implements Serializable, Cloneable {
     /**
      * <p>
      * Time stamp indicating when this object was created. Format is an integer
-     * representing the number of seconds since epoch.
+     * representing the number of seconds since the Unix epoch (Unix time).
      * </p>
      * 
      * @return Time stamp indicating when this object was created. Format is an
-     *         integer representing the number of seconds since epoch.
+     *         integer representing the number of seconds since the Unix epoch
+     *         (Unix time).
      */
 
     public java.util.Date getCreationTime() {
@@ -249,12 +252,13 @@ public class Alias implements Serializable, Cloneable {
     /**
      * <p>
      * Time stamp indicating when this object was created. Format is an integer
-     * representing the number of seconds since epoch.
+     * representing the number of seconds since the Unix epoch (Unix time).
      * </p>
      * 
      * @param creationTime
      *        Time stamp indicating when this object was created. Format is an
-     *        integer representing the number of seconds since epoch.
+     *        integer representing the number of seconds since the Unix epoch
+     *        (Unix time).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -267,12 +271,14 @@ public class Alias implements Serializable, Cloneable {
     /**
      * <p>
      * Time stamp indicating when this object was last modified. Format is an
-     * integer representing the number of seconds since epoch.
+     * integer representing the number of seconds since the Unix epoch (Unix
+     * time).
      * </p>
      * 
      * @param lastUpdatedTime
      *        Time stamp indicating when this object was last modified. Format
-     *        is an integer representing the number of seconds since epoch.
+     *        is an integer representing the number of seconds since the Unix
+     *        epoch (Unix time).
      */
 
     public void setLastUpdatedTime(java.util.Date lastUpdatedTime) {
@@ -282,11 +288,13 @@ public class Alias implements Serializable, Cloneable {
     /**
      * <p>
      * Time stamp indicating when this object was last modified. Format is an
-     * integer representing the number of seconds since epoch.
+     * integer representing the number of seconds since the Unix epoch (Unix
+     * time).
      * </p>
      * 
      * @return Time stamp indicating when this object was last modified. Format
-     *         is an integer representing the number of seconds since epoch.
+     *         is an integer representing the number of seconds since the Unix
+     *         epoch (Unix time).
      */
 
     public java.util.Date getLastUpdatedTime() {
@@ -296,12 +304,14 @@ public class Alias implements Serializable, Cloneable {
     /**
      * <p>
      * Time stamp indicating when this object was last modified. Format is an
-     * integer representing the number of seconds since epoch.
+     * integer representing the number of seconds since the Unix epoch (Unix
+     * time).
      * </p>
      * 
      * @param lastUpdatedTime
      *        Time stamp indicating when this object was last modified. Format
-     *        is an integer representing the number of seconds since epoch.
+     *        is an integer representing the number of seconds since the Unix
+     *        epoch (Unix time).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

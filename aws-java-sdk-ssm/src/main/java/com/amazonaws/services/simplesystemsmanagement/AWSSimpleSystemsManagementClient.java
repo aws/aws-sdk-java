@@ -246,6 +246,12 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
     private static final String DEFAULT_ENDPOINT_PREFIX = "ssm";
 
     /**
+     * Client configuration factory providing ClientConfigurations tailored to
+     * this client
+     */
+    protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
+
+    /**
      * List of exception unmarshallers for all Amazon SSM exceptions.
      */
     protected List<JsonErrorUnmarshallerV2> jsonErrorUnmarshallers = new ArrayList<JsonErrorUnmarshallerV2>();
@@ -268,8 +274,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSSimpleSystemsManagementClient() {
-        this(new DefaultAWSCredentialsProviderChain(),
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
+        this(new DefaultAWSCredentialsProviderChain(), configFactory
+                .getConfig());
     }
 
     /**
@@ -311,8 +317,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
      *        authenticating with AWS services.
      */
     public AWSSimpleSystemsManagementClient(AWSCredentials awsCredentials) {
-        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
-                .defaultConfig());
+        this(awsCredentials, configFactory.getConfig());
     }
 
     /**
@@ -352,8 +357,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
      */
     public AWSSimpleSystemsManagementClient(
             AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider,
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
+        this(awsCredentialsProvider, configFactory.getConfig());
     }
 
     /**

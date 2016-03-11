@@ -20,10 +20,9 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Exception thrown when performing the requested operation would cause a
- * conflict with the current state of a resource associated with the request
- * and/or the fleet. Requests that result in failures of this type should not be
- * retried by clients without resolving the conflict.
+ * The requested operation would cause a conflict with the current state of a
+ * resource associated with the request and/or the fleet. Please resolve the
+ * conflict before retrying.
  * </p>
  */
 public class InvalidFleetStatusException extends AmazonServiceException {

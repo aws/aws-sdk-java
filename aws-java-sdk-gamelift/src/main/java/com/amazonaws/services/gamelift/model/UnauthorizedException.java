@@ -20,9 +20,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Exception thrown when the client fails authentication. Requests that result
- * in failures of this type should not be retried by clients without correctly
- * authenticating.
+ * The client failed authentication. Such requests should not be retried without
+ * valid authentication credentials.
  * </p>
  */
 public class UnauthorizedException extends AmazonServiceException {

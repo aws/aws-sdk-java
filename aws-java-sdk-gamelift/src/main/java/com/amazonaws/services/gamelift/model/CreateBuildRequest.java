@@ -43,6 +43,8 @@ public class CreateBuildRequest extends AmazonWebServiceRequest implements
      */
     private String version;
 
+    private S3Location storageLocation;
+
     /**
      * <p>
      * Descriptive label associated with this build. Build names do not need to
@@ -147,6 +149,33 @@ public class CreateBuildRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * @param storageLocation
+     */
+
+    public void setStorageLocation(S3Location storageLocation) {
+        this.storageLocation = storageLocation;
+    }
+
+    /**
+     * @return
+     */
+
+    public S3Location getStorageLocation() {
+        return this.storageLocation;
+    }
+
+    /**
+     * @param storageLocation
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public CreateBuildRequest withStorageLocation(S3Location storageLocation) {
+        setStorageLocation(storageLocation);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -161,7 +190,9 @@ public class CreateBuildRequest extends AmazonWebServiceRequest implements
         if (getName() != null)
             sb.append("Name: " + getName() + ",");
         if (getVersion() != null)
-            sb.append("Version: " + getVersion());
+            sb.append("Version: " + getVersion() + ",");
+        if (getStorageLocation() != null)
+            sb.append("StorageLocation: " + getStorageLocation());
         sb.append("}");
         return sb.toString();
     }
@@ -186,6 +217,12 @@ public class CreateBuildRequest extends AmazonWebServiceRequest implements
         if (other.getVersion() != null
                 && other.getVersion().equals(this.getVersion()) == false)
             return false;
+        if (other.getStorageLocation() == null
+                ^ this.getStorageLocation() == null)
+            return false;
+        if (other.getStorageLocation() != null
+                && other.getStorageLocation().equals(this.getStorageLocation()) == false)
+            return false;
         return true;
     }
 
@@ -198,6 +235,10 @@ public class CreateBuildRequest extends AmazonWebServiceRequest implements
                 + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode
                 + ((getVersion() == null) ? 0 : getVersion().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getStorageLocation() == null) ? 0 : getStorageLocation()
+                        .hashCode());
         return hashCode;
     }
 

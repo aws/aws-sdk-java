@@ -47,14 +47,15 @@ public class GameSession implements Serializable, Cloneable {
     /**
      * <p>
      * Time stamp indicating when this object was created. Format is an integer
-     * representing the number of seconds since epoch.
+     * representing the number of seconds since the Unix epoch (Unix time).
      * </p>
      */
     private java.util.Date creationTime;
     /**
      * <p>
      * Time stamp indicating when this fleet was terminated. Format is an
-     * integer representing the number of seconds since epoch.
+     * integer representing the number of seconds since the Unix epoch (Unix
+     * time).
      * </p>
      */
     private java.util.Date terminationTime;
@@ -228,12 +229,13 @@ public class GameSession implements Serializable, Cloneable {
     /**
      * <p>
      * Time stamp indicating when this object was created. Format is an integer
-     * representing the number of seconds since epoch.
+     * representing the number of seconds since the Unix epoch (Unix time).
      * </p>
      * 
      * @param creationTime
      *        Time stamp indicating when this object was created. Format is an
-     *        integer representing the number of seconds since epoch.
+     *        integer representing the number of seconds since the Unix epoch
+     *        (Unix time).
      */
 
     public void setCreationTime(java.util.Date creationTime) {
@@ -243,11 +245,12 @@ public class GameSession implements Serializable, Cloneable {
     /**
      * <p>
      * Time stamp indicating when this object was created. Format is an integer
-     * representing the number of seconds since epoch.
+     * representing the number of seconds since the Unix epoch (Unix time).
      * </p>
      * 
      * @return Time stamp indicating when this object was created. Format is an
-     *         integer representing the number of seconds since epoch.
+     *         integer representing the number of seconds since the Unix epoch
+     *         (Unix time).
      */
 
     public java.util.Date getCreationTime() {
@@ -257,12 +260,13 @@ public class GameSession implements Serializable, Cloneable {
     /**
      * <p>
      * Time stamp indicating when this object was created. Format is an integer
-     * representing the number of seconds since epoch.
+     * representing the number of seconds since the Unix epoch (Unix time).
      * </p>
      * 
      * @param creationTime
      *        Time stamp indicating when this object was created. Format is an
-     *        integer representing the number of seconds since epoch.
+     *        integer representing the number of seconds since the Unix epoch
+     *        (Unix time).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -275,12 +279,14 @@ public class GameSession implements Serializable, Cloneable {
     /**
      * <p>
      * Time stamp indicating when this fleet was terminated. Format is an
-     * integer representing the number of seconds since epoch.
+     * integer representing the number of seconds since the Unix epoch (Unix
+     * time).
      * </p>
      * 
      * @param terminationTime
      *        Time stamp indicating when this fleet was terminated. Format is an
-     *        integer representing the number of seconds since epoch.
+     *        integer representing the number of seconds since the Unix epoch
+     *        (Unix time).
      */
 
     public void setTerminationTime(java.util.Date terminationTime) {
@@ -290,11 +296,13 @@ public class GameSession implements Serializable, Cloneable {
     /**
      * <p>
      * Time stamp indicating when this fleet was terminated. Format is an
-     * integer representing the number of seconds since epoch.
+     * integer representing the number of seconds since the Unix epoch (Unix
+     * time).
      * </p>
      * 
      * @return Time stamp indicating when this fleet was terminated. Format is
-     *         an integer representing the number of seconds since epoch.
+     *         an integer representing the number of seconds since the Unix
+     *         epoch (Unix time).
      */
 
     public java.util.Date getTerminationTime() {
@@ -304,12 +312,14 @@ public class GameSession implements Serializable, Cloneable {
     /**
      * <p>
      * Time stamp indicating when this fleet was terminated. Format is an
-     * integer representing the number of seconds since epoch.
+     * integer representing the number of seconds since the Unix epoch (Unix
+     * time).
      * </p>
      * 
      * @param terminationTime
      *        Time stamp indicating when this fleet was terminated. Format is an
-     *        integer representing the number of seconds since epoch.
+     *        integer representing the number of seconds since the Unix epoch
+     *        (Unix time).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -20,9 +20,11 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Set of key:value pairs containing information your game server requires to
+ * Set of key-value pairs containing information your game server requires to
  * set up sessions. This object allows you to pass in any set of data needed for
- * your game. For more information, see the GameLift Developer Guide.
+ * your game. For more information, see the <a
+ * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/">Amazon
+ * GameLift Developer Guide</a>.
  * </p>
  */
 public class GameProperty implements Serializable, Cloneable {

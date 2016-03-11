@@ -25,22 +25,56 @@ import com.amazonaws.services.gamelift.model.*;
  * <p>
  * <fullname>Amazon GameLift Service</fullname>
  * <p>
- * This is the reference guide for the Amazon GameLift service. GameLift is a
- * managed AWS service for developers who need a scalable, server-based solution
- * for multiplayer games. GameLift provides setup and deployment of game
- * servers, and handles infrastructure scaling and session management. For more
- * information about the GameLift service, including a feature overview, getting
- * started guide, and tutorial, see the accompanying GameLift Developer Guide.
+ * Welcome to the <i>Amazon GameLift API Reference</i>. Amazon GameLift is a
+ * managed Amazon Web Services (AWS) service for developers who need a scalable,
+ * server-based solution for multiplayer games. Amazon GameLift provides setup
+ * and deployment of game servers, and handles infrastructure scaling and
+ * session management. For more information about the GameLift service,
+ * including a feature overview, getting started guide, and tutorial, see the
+ * accompanying <a
+ * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/">Amazon
+ * GameLift Developer Guide</a>.
  * </p>
  * <p>
  * This reference describes the low-level service API for GameLift. You can call
- * this API directly or use the AWS SDK for your preferred language. The AWS SDK
- * includes a set of high-level GameLiftactions for. Alternatively, use the AWS
- * command-line interface (CLI) tool, which includes commands for GameLift. For
- * administrative actions, you can use the Amazon GameLift console.
+ * this API directly or use the <a href="https://aws.amazon.com/tools/">AWS
+ * SDK</a> for your preferred language. The AWS SDK includes a set of high-level
+ * GameLift actions multiplayer game sessions. Alternatively, you can use the <a
+ * href="https://aws.amazon.com/cli/">AWS command-line interface</a> (CLI) tool,
+ * which includes commands for GameLift. For administrative actions, you can use
+ * the Amazon GameLift console.
  * </p>
  * <p>
- * <b>Setting Up Your Game Servers</b>
+ * <b>Managing Game and Player Sessions Through GameLift</b>
+ * </p>
+ * <p>
+ * Call these actions from your game clients and/or services to create and
+ * manage multiplayer game sessions.
+ * </p>
+ * <ul>
+ * <li><b>Game sessions</b>
+ * <ul>
+ * <li><a>CreateGameSession</a></li>
+ * <li><a>DescribeGameSessions</a></li>
+ * <li><a>DescribeGameSessionDetails</a></li>
+ * <li><a>UpdateGameSession</a></li>
+ * </ul>
+ * </li>
+ * <li><b>Player sessions</b>
+ * <ul>
+ * <li><a>CreatePlayerSession</a></li>
+ * <li><a>CreatePlayerSessions</a></li>
+ * <li><a>DescribePlayerSessions</a></li>
+ * </ul>
+ * </li>
+ * <li><b>Other actions:</b>
+ * <ul>
+ * <li><a>GetGameSessionLogUrl</a></li>
+ * </ul>
+ * </li>
+ * </ul>
+ * <p>
+ * <b>Setting Up Game Servers</b>
  * </p>
  * <p>
  * Use these administrative actions to configure GameLift to host your game
@@ -93,32 +127,11 @@ import com.amazonaws.services.gamelift.model.*;
  * <li><a>ResolveAlias</a></li>
  * </ul>
  * </li>
- * <li><b>Other actions:</b>
+ * <li><b>Scaling policy actions:</b>
  * <ul>
- * <li><a>GetGameSessionLogUrl</a></li>
- * </ul>
- * </li>
- * </ul>
- * <p>
- * <b>Managing Game and Player Sessions Through GameLift</b>
- * </p>
- * <p>
- * Call these actions from your game clients and/or services to create and
- * manage multiplayer game sessions.
- * </p>
- * <ul>
- * <li><b>Game sessions</b>
- * <ul>
- * <li><a>CreateGameSession</a></li>
- * <li><a>DescribeGameSessions</a></li>
- * <li><a>UpdateGameSession</a></li>
- * </ul>
- * </li>
- * <li><b>Player sessions</b>
- * <ul>
- * <li><a>CreatePlayerSession</a></li>
- * <li><a>CreatePlayerSessions</a></li>
- * <li><a>DescribePlayerSessions</a></li>
+ * <li><a>PutScalingPolicy</a></li>
+ * <li><a>DescribeScalingPolicies</a></li>
+ * <li><a>DeleteScalingPolicy</a></li>
  * </ul>
  * </li>
  * </ul>
@@ -127,22 +140,20 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
 
     /**
      * <p>
-     * Creates an alias for a fleet. An alias allows you to anonymize your fleet
-     * by referencing an alias instead of a specific fleet when you create game
-     * sessions. GameLift supports two types of routing strategies for aliases.
-     * Use a simple route to point to an active fleet.
+     * Creates an alias for a fleet. You can use an alias to anonymize your
+     * fleet by referencing an alias instead of a specific fleet when you create
+     * game sessions. Amazon GameLift supports two types of routing strategies
+     * for aliases: simple and terminal. Use a simple alias to point to an
+     * active fleet. Use a terminal alias to display a message to incoming
+     * traffic instead of routing players to an active fleet. This option is
+     * useful when a game server is no longer supported but you want to provide
+     * better messaging than a standard 404 error.
      * </p>
      * <p>
-     * Alternatively, a terminal routing strategy allows you to display a
-     * message to incoming traffic instead of routing players to an active
-     * fleet. This option is useful when a game server is no longer supported
-     * but you want to provide better messaging than a standard 404 error.
-     * </p>
-     * <p>
-     * To create a fleet alias, specify an alias name and routing strategy.
-     * Optionally, add a description. If successful, a new alias record is
-     * returned, including an alias ID, which you'll reference when creating a
-     * game session. To reassign the alias to another fleet ID, call
+     * To create a fleet alias, specify an alias name, routing strategy, and
+     * optional description. If successful, a new alias record is returned,
+     * including an alias ID, which you can reference when creating a game
+     * session. To reassign the alias to another fleet ID, call
      * <a>UpdateAlias</a>.
      * </p>
      * 
@@ -157,22 +168,20 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
 
     /**
      * <p>
-     * Creates an alias for a fleet. An alias allows you to anonymize your fleet
-     * by referencing an alias instead of a specific fleet when you create game
-     * sessions. GameLift supports two types of routing strategies for aliases.
-     * Use a simple route to point to an active fleet.
+     * Creates an alias for a fleet. You can use an alias to anonymize your
+     * fleet by referencing an alias instead of a specific fleet when you create
+     * game sessions. Amazon GameLift supports two types of routing strategies
+     * for aliases: simple and terminal. Use a simple alias to point to an
+     * active fleet. Use a terminal alias to display a message to incoming
+     * traffic instead of routing players to an active fleet. This option is
+     * useful when a game server is no longer supported but you want to provide
+     * better messaging than a standard 404 error.
      * </p>
      * <p>
-     * Alternatively, a terminal routing strategy allows you to display a
-     * message to incoming traffic instead of routing players to an active
-     * fleet. This option is useful when a game server is no longer supported
-     * but you want to provide better messaging than a standard 404 error.
-     * </p>
-     * <p>
-     * To create a fleet alias, specify an alias name and routing strategy.
-     * Optionally, add a description. If successful, a new alias record is
-     * returned, including an alias ID, which you'll reference when creating a
-     * game session. To reassign the alias to another fleet ID, call
+     * To create a fleet alias, specify an alias name, routing strategy, and
+     * optional description. If successful, a new alias record is returned,
+     * including an alias ID, which you can reference when creating a game
+     * session. To reassign the alias to another fleet ID, call
      * <a>UpdateAlias</a>.
      * </p>
      * 
@@ -192,27 +201,29 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
             com.amazonaws.handlers.AsyncHandler<CreateAliasRequest, CreateAliasResult> asyncHandler);
 
     /**
-     * <note>
+     * <p>
+     * Initializes a new build record and generates information required to
+     * upload a game build to Amazon GameLift. Once the build record has been
+     * created and is in an INITIALIZED state, you can upload your game build.
+     * </p>
+     * <important>
      * <p>
      * To create a build, use the CLI command <code>upload-build</code>, which
      * creates a new build record and uploads the build files in one step. (See
-     * the GameLift Developer Guide for more details on CLI and on the upload
-     * process.) Call this CreateBuild action only if you have your own S3
-     * client and need to manually upload your build files.
+     * the <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/">
+     * Amazon GameLift Developer Guide</a> for more details on the CLI and the
+     * upload process.) Call the <code>CreateBuild</code> action only if you
+     * have your own Amazon Simple Storage Service (Amazon S3) client and need
+     * to manually upload your build files.
      * </p>
-     * </note>
-     * <p>
-     * Initializes a new build record and generates information required to
-     * upload a game build to GameLift. Once the build record has been created
-     * and is in an INITIALIZED state, you can upload your game build.
-     * </p>
+     * </important>
      * <p>
      * To create a new build, optionally specify a build name and version. This
      * metadata is stored with other properties in the build record and is
-     * displayed in the Amazon GameLift console (it is not surfaced to players).
-     * If successful, this action returns the newly created build record along
-     * with an S3 storage location and AWS account credentials. Use the location
-     * and credentials to upload your game build.
+     * displayed in the GameLift console (but not visible to players). If
+     * successful, this action returns the newly created build record along with
+     * an Amazon S3 storage location and AWS account credentials. Use the
+     * location and credentials to upload your game build.
      * </p>
      * 
      * @param createBuildRequest
@@ -225,27 +236,29 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
             CreateBuildRequest createBuildRequest);
 
     /**
-     * <note>
+     * <p>
+     * Initializes a new build record and generates information required to
+     * upload a game build to Amazon GameLift. Once the build record has been
+     * created and is in an INITIALIZED state, you can upload your game build.
+     * </p>
+     * <important>
      * <p>
      * To create a build, use the CLI command <code>upload-build</code>, which
      * creates a new build record and uploads the build files in one step. (See
-     * the GameLift Developer Guide for more details on CLI and on the upload
-     * process.) Call this CreateBuild action only if you have your own S3
-     * client and need to manually upload your build files.
+     * the <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/">
+     * Amazon GameLift Developer Guide</a> for more details on the CLI and the
+     * upload process.) Call the <code>CreateBuild</code> action only if you
+     * have your own Amazon Simple Storage Service (Amazon S3) client and need
+     * to manually upload your build files.
      * </p>
-     * </note>
-     * <p>
-     * Initializes a new build record and generates information required to
-     * upload a game build to GameLift. Once the build record has been created
-     * and is in an INITIALIZED state, you can upload your game build.
-     * </p>
+     * </important>
      * <p>
      * To create a new build, optionally specify a build name and version. This
      * metadata is stored with other properties in the build record and is
-     * displayed in the Amazon GameLift console (it is not surfaced to players).
-     * If successful, this action returns the newly created build record along
-     * with an S3 storage location and AWS account credentials. Use the location
-     * and credentials to upload your game build.
+     * displayed in the GameLift console (but not visible to players). If
+     * successful, this action returns the newly created build record along with
+     * an Amazon S3 storage location and AWS account credentials. Use the
+     * location and credentials to upload your game build.
      * </p>
      * 
      * @param createBuildRequest
@@ -266,12 +279,13 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
     /**
      * <p>
      * Creates a new fleet to host game servers. A fleet consists of a set of
-     * EC2 instances of a certain type, which defines the CPU, memory, storage,
-     * networking capacity, etc., of each host in the fleet. See the <a
-     * href="https://aws.amazon.com/ec2/instance-types/">EC2 documentation</a>
-     * for more information on instance types. Each instance in the fleet hosts
-     * a game server from the specified game build. Once a fleet is ACTIVE, it
-     * can begin hosting game sessions.
+     * Amazon Elastic Compute Cloud (Amazon EC2) instances of a certain type,
+     * which defines the CPU, memory, storage, and networking capacity of each
+     * host in the fleet. See <a
+     * href="https://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance
+     * Types</a> for more information. Each instance in the fleet hosts a game
+     * server created from the specified game build. Once a fleet is in an
+     * ACTIVE state, it can begin hosting game sessions.
      * </p>
      * <p>
      * To create a new fleet, provide a name and the EC2 instance type for the
@@ -280,9 +294,10 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * configuring the new fleet, you can optionally (1) provide a set of launch
      * parameters to be passed to a game server when activated; (2) limit
      * incoming traffic to a specified range of IP addresses and port numbers;
-     * and (3) configure GameLift to store game session logs by specifying the
+     * (3) set game session protection for all instances in the fleet, and (4)
+     * configure Amazon GameLift to store game session logs by specifying the
      * path to the logs stored in your game server files. If the call is
-     * successful, GameLift performs the following tasks:
+     * successful, Amazon GameLift performs the following tasks:
      * </p>
      * <ul>
      * <li>Creates a fleet record and sets the state to NEW.</li>
@@ -290,8 +305,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * count.</li>
      * <li>Creates an EC2 instance and begins the process of initializing the
      * fleet and activating a game server on the instance.</li>
-     * <li>Writes events to the fleet event log, which can be accessed in the
-     * Amazon GameLift console.</li>
+     * <li>Begins writing events to the fleet event log, which can be accessed
+     * in the GameLift console.</li>
      * </ul>
      * <p>
      * Once a fleet is created, use the following actions to change certain
@@ -319,12 +334,13 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
     /**
      * <p>
      * Creates a new fleet to host game servers. A fleet consists of a set of
-     * EC2 instances of a certain type, which defines the CPU, memory, storage,
-     * networking capacity, etc., of each host in the fleet. See the <a
-     * href="https://aws.amazon.com/ec2/instance-types/">EC2 documentation</a>
-     * for more information on instance types. Each instance in the fleet hosts
-     * a game server from the specified game build. Once a fleet is ACTIVE, it
-     * can begin hosting game sessions.
+     * Amazon Elastic Compute Cloud (Amazon EC2) instances of a certain type,
+     * which defines the CPU, memory, storage, and networking capacity of each
+     * host in the fleet. See <a
+     * href="https://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance
+     * Types</a> for more information. Each instance in the fleet hosts a game
+     * server created from the specified game build. Once a fleet is in an
+     * ACTIVE state, it can begin hosting game sessions.
      * </p>
      * <p>
      * To create a new fleet, provide a name and the EC2 instance type for the
@@ -333,9 +349,10 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * configuring the new fleet, you can optionally (1) provide a set of launch
      * parameters to be passed to a game server when activated; (2) limit
      * incoming traffic to a specified range of IP addresses and port numbers;
-     * and (3) configure GameLift to store game session logs by specifying the
+     * (3) set game session protection for all instances in the fleet, and (4)
+     * configure Amazon GameLift to store game session logs by specifying the
      * path to the logs stored in your game server files. If the call is
-     * successful, GameLift performs the following tasks:
+     * successful, Amazon GameLift performs the following tasks:
      * </p>
      * <ul>
      * <li>Creates a fleet record and sets the state to NEW.</li>
@@ -343,8 +360,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * count.</li>
      * <li>Creates an EC2 instance and begins the process of initializing the
      * fleet and activating a game server on the instance.</li>
-     * <li>Writes events to the fleet event log, which can be accessed in the
-     * Amazon GameLift console.</li>
+     * <li>Begins writing events to the fleet event log, which can be accessed
+     * in the GameLift console.</li>
      * </ul>
      * <p>
      * Once a fleet is created, use the following actions to change certain
@@ -385,8 +402,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * </p>
      * <p>
      * To create a game session, specify either a fleet ID or an alias ID and
-     * indicate the maximum number of players the game session will allow.
-     * Optionally, provide a name and a set of properties for your game. If
+     * indicate the maximum number of players the game session allows. You can
+     * also provide a name and a set of properties for your game (optional). If
      * successful, a <a>GameSession</a> object is returned containing session
      * properties, including an IP address. By default, newly created game
      * sessions are set to accept adding any new players to the game session.
@@ -412,8 +429,8 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * </p>
      * <p>
      * To create a game session, specify either a fleet ID or an alias ID and
-     * indicate the maximum number of players the game session will allow.
-     * Optionally, provide a name and a set of properties for your game. If
+     * indicate the maximum number of players the game session allows. You can
+     * also provide a name and a set of properties for your game (optional). If
      * successful, a <a>GameSession</a> object is returned containing session
      * properties, including an IP address. By default, newly created game
      * sessions are set to accept adding any new players to the game session.
@@ -542,7 +559,7 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
     /**
      * <p>
      * Deletes an alias. This action removes all record of the alias; game
-     * clients attempting to access a game server using the deleted alias will
+     * clients attempting to access a game server using the deleted alias
      * receive an error. To delete an alias, specify the alias ID to be deleted.
      * </p>
      * 
@@ -556,7 +573,7 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
     /**
      * <p>
      * Deletes an alias. This action removes all record of the alias; game
-     * clients attempting to access a game server using the deleted alias will
+     * clients attempting to access a game server using the deleted alias
      * receive an error. To delete an alias, specify the alias ID to be deleted.
      * </p>
      * 
@@ -579,9 +596,9 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * uploaded build files.
      * </p>
      * <p>
-     * To delete a build, specify the build's ID. Deleting a build does not
-     * affect the status of any active fleets, but you can no longer create new
-     * fleets for the deleted build.
+     * To delete a build, specify its ID. Deleting a build does not affect the
+     * status of any active fleets, but you can no longer create new fleets for
+     * the deleted build.
      * </p>
      * 
      * @param deleteBuildRequest
@@ -597,9 +614,9 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * uploaded build files.
      * </p>
      * <p>
-     * To delete a build, specify the build's ID. Deleting a build does not
-     * affect the status of any active fleets, but you can no longer create new
-     * fleets for the deleted build.
+     * To delete a build, specify its ID. Deleting a build does not affect the
+     * status of any active fleets, but you can no longer create new fleets for
+     * the deleted build.
      * </p>
      * 
      * @param deleteBuildRequest
@@ -618,11 +635,11 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
     /**
      * <p>
      * Deletes everything related to a fleet. Before deleting a fleet, you must
-     * set the fleet's desired capacity to zero (<a>UpdateFleetCapacity</a>).
+     * set the fleet's desired capacity to zero. See <a>UpdateFleetCapacity</a>.
      * </p>
      * <p>
-     * This action deallocates the fleet's resources and the fleet record. Once
-     * a fleet is deleted, you will no longer be able to use a fleet.
+     * This action removes the fleet's resources and the fleet record. Once a
+     * fleet is deleted, you can no longer use that fleet.
      * </p>
      * 
      * @param deleteFleetRequest
@@ -635,11 +652,11 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
     /**
      * <p>
      * Deletes everything related to a fleet. Before deleting a fleet, you must
-     * set the fleet's desired capacity to zero (<a>UpdateFleetCapacity</a>).
+     * set the fleet's desired capacity to zero. See <a>UpdateFleetCapacity</a>.
      * </p>
      * <p>
-     * This action deallocates the fleet's resources and the fleet record. Once
-     * a fleet is deleted, you will no longer be able to use a fleet.
+     * This action removes the fleet's resources and the fleet record. Once a
+     * fleet is deleted, you can no longer use that fleet.
      * </p>
      * 
      * @param deleteFleetRequest
@@ -654,6 +671,42 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
     java.util.concurrent.Future<Void> deleteFleetAsync(
             DeleteFleetRequest deleteFleetRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteFleetRequest, Void> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a fleet scaling policy. This action means that the policy is no
+     * longer in force and removes all record of it. To delete a scaling policy,
+     * specify both the scaling policy name and the fleet ID it is associated
+     * with.
+     * </p>
+     * 
+     * @param deleteScalingPolicyRequest
+     *        Represents the input for a request action.
+     * @sample AmazonGameLiftAsync.DeleteScalingPolicy
+     */
+    java.util.concurrent.Future<Void> deleteScalingPolicyAsync(
+            DeleteScalingPolicyRequest deleteScalingPolicyRequest);
+
+    /**
+     * <p>
+     * Deletes a fleet scaling policy. This action means that the policy is no
+     * longer in force and removes all record of it. To delete a scaling policy,
+     * specify both the scaling policy name and the fleet ID it is associated
+     * with.
+     * </p>
+     * 
+     * @param deleteScalingPolicyRequest
+     *        Represents the input for a request action.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @sample AmazonGameLiftAsyncHandler.DeleteScalingPolicy
+     */
+    java.util.concurrent.Future<Void> deleteScalingPolicyAsync(
+            DeleteScalingPolicyRequest deleteScalingPolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteScalingPolicyRequest, Void> asyncHandler);
 
     /**
      * <p>
@@ -729,8 +782,16 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
 
     /**
      * <p>
-     * Retrieves the maximum number of instances by EC2 instance type for an AWS
-     * account, and includes the current usage level for the account.
+     * Retrieves the following information for the specified EC2 instance type:
+     * </p>
+     * <ul>
+     * <li>maximum number of instances allowed per AWS account (service limit)</li>
+     * <li>current usage level for the AWS account</li>
+     * </ul>
+     * <p>
+     * Service limits vary depending on region. Available regions for GameLift
+     * can be found in the AWS Management Console for GameLift (see the
+     * drop-down list in the upper right corner).
      * </p>
      * 
      * @param describeEC2InstanceLimitsRequest
@@ -744,8 +805,16 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
 
     /**
      * <p>
-     * Retrieves the maximum number of instances by EC2 instance type for an AWS
-     * account, and includes the current usage level for the account.
+     * Retrieves the following information for the specified EC2 instance type:
+     * </p>
+     * <ul>
+     * <li>maximum number of instances allowed per AWS account (service limit)</li>
+     * <li>current usage level for the AWS account</li>
+     * </ul>
+     * <p>
+     * Service limits vary depending on region. Available regions for GameLift
+     * can be found in the AWS Management Console for GameLift (see the
+     * drop-down list in the upper right corner).
      * </p>
      * 
      * @param describeEC2InstanceLimitsRequest
@@ -767,18 +836,17 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * <p>
      * Retrieves fleet properties, including metadata, status, and
      * configuration, for one or more fleets. You can request attributes for all
-     * fleets, or specify a list of one or more fleet IDs. If successful, a
-     * <a>FleetAttributes</a> object is returned for each requested fleet ID.
-     * When requesting all fleets, use the pagination parameters to retrieve
-     * results as a set of sequential pages. When specifying a list of fleet
-     * IDs, an attribute object will only be returned for fleets that currently
-     * exist.
+     * fleets, or specify a list of one or more fleet IDs. When requesting all
+     * fleets, use the pagination parameters to retrieve results as a set of
+     * sequential pages. If successful, a <a>FleetAttributes</a> object is
+     * returned for each requested fleet ID. When specifying a list of fleet
+     * IDs, attribute objects are returned only for fleets that currently exist.
      * </p>
      * <note>
      * <p>
-     * There may be a maximum number of fleet IDs you can specify in one
-     * request. If a request exceeds this maximum, the request will fail and the
-     * error message will include the maximum allowed.
+     * Some API actions may limit the number of fleet IDs allowed in one
+     * request. If a request exceeds this limit, the request fails and the error
+     * message includes the maximum allowed.
      * </p>
      * </note>
      * 
@@ -795,18 +863,17 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * <p>
      * Retrieves fleet properties, including metadata, status, and
      * configuration, for one or more fleets. You can request attributes for all
-     * fleets, or specify a list of one or more fleet IDs. If successful, a
-     * <a>FleetAttributes</a> object is returned for each requested fleet ID.
-     * When requesting all fleets, use the pagination parameters to retrieve
-     * results as a set of sequential pages. When specifying a list of fleet
-     * IDs, an attribute object will only be returned for fleets that currently
-     * exist.
+     * fleets, or specify a list of one or more fleet IDs. When requesting all
+     * fleets, use the pagination parameters to retrieve results as a set of
+     * sequential pages. If successful, a <a>FleetAttributes</a> object is
+     * returned for each requested fleet ID. When specifying a list of fleet
+     * IDs, attribute objects are returned only for fleets that currently exist.
      * </p>
      * <note>
      * <p>
-     * There may be a maximum number of fleet IDs you can specify in one
-     * request. If a request exceeds this maximum, the request will fail and the
-     * error message will include the maximum allowed.
+     * Some API actions may limit the number of fleet IDs allowed in one
+     * request. If a request exceeds this limit, the request fails and the error
+     * message includes the maximum allowed.
      * </p>
      * </note>
      * 
@@ -830,18 +897,18 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * Retrieves the current status of fleet capacity for one or more fleets.
      * This information includes the number of instances that have been
      * requested for the fleet and the number currently active. You can request
-     * capacity for all fleets, or specify a list of one or more fleet IDs. If
-     * successful, an <a>FleetCapacity</a> object is returned for each requested
-     * fleet ID. When requesting all fleets, use the pagination parameters to
-     * retrieve results as a set of sequential pages. When specifying a list of
-     * fleet IDs, an attribute object will only be returned for fleets that
-     * currently exist.
+     * capacity for all fleets, or specify a list of one or more fleet IDs. When
+     * requesting all fleets, use the pagination parameters to retrieve results
+     * as a set of sequential pages. If successful, a <a>FleetCapacity</a>
+     * object is returned for each requested fleet ID. When specifying a list of
+     * fleet IDs, attribute objects are returned only for fleets that currently
+     * exist.
      * </p>
      * <note>
      * <p>
-     * There may be a maximum number of fleet IDs you can specify in one
-     * request. If a request exceeds this maximum, the request will fail and the
-     * error message will include the maximum allowed.
+     * Some API actions may limit the number of fleet IDs allowed in one
+     * request. If a request exceeds this limit, the request fails and the error
+     * message includes the maximum allowed.
      * </p>
      * </note>
      * 
@@ -859,18 +926,18 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * Retrieves the current status of fleet capacity for one or more fleets.
      * This information includes the number of instances that have been
      * requested for the fleet and the number currently active. You can request
-     * capacity for all fleets, or specify a list of one or more fleet IDs. If
-     * successful, an <a>FleetCapacity</a> object is returned for each requested
-     * fleet ID. When requesting all fleets, use the pagination parameters to
-     * retrieve results as a set of sequential pages. When specifying a list of
-     * fleet IDs, an attribute object will only be returned for fleets that
-     * currently exist.
+     * capacity for all fleets, or specify a list of one or more fleet IDs. When
+     * requesting all fleets, use the pagination parameters to retrieve results
+     * as a set of sequential pages. If successful, a <a>FleetCapacity</a>
+     * object is returned for each requested fleet ID. When specifying a list of
+     * fleet IDs, attribute objects are returned only for fleets that currently
+     * exist.
      * </p>
      * <note>
      * <p>
-     * There may be a maximum number of fleet IDs you can specify in one
-     * request. If a request exceeds this maximum, the request will fail and the
-     * error message will include the maximum allowed.
+     * Some API actions may limit the number of fleet IDs allowed in one
+     * request. If a request exceeds this limit, the request fails and the error
+     * message includes the maximum allowed.
      * </p>
      * </note>
      * 
@@ -892,10 +959,9 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
     /**
      * <p>
      * Retrieves entries from the fleet event log. You can specify a time range
-     * to limit the result set. This action provides pagination parameters, so
-     * you can opt to retrieve results as a set of sequential pages. If
-     * successful, a collection of event log entries matching the request are
-     * returned.
+     * to limit the result set. Use the pagination parameters to retrieve
+     * results as a set of sequential pages. If successful, a collection of
+     * event log entries matching the request are returned.
      * </p>
      * 
      * @param describeFleetEventsRequest
@@ -910,10 +976,9 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
     /**
      * <p>
      * Retrieves entries from the fleet event log. You can specify a time range
-     * to limit the result set. This action provides pagination parameters, so
-     * you can opt to retrieve results as a set of sequential pages. If
-     * successful, a collection of event log entries matching the request are
-     * returned.
+     * to limit the result set. Use the pagination parameters to retrieve
+     * results as a set of sequential pages. If successful, a collection of
+     * event log entries matching the request are returned.
      * </p>
      * 
      * @param describeFleetEventsRequest
@@ -977,17 +1042,17 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * <p>
      * Retrieves utilization statistics for one or more fleets. You can request
      * utilization data for all fleets, or specify a list of one or more fleet
-     * IDs. If successful, a <a>FleetUtilization</a> object is returned for each
-     * requested fleet ID. When requesting all fleets, use the pagination
-     * parameters to retrieve results as a set of sequential pages. When
-     * specifying a list of fleet IDs, a utilization object will only be
-     * returned for fleets that currently exist.
+     * IDs. When requesting all fleets, use the pagination parameters to
+     * retrieve results as a set of sequential pages. If successful, a
+     * <a>FleetUtilization</a> object is returned for each requested fleet ID.
+     * When specifying a list of fleet IDs, utilization objects are returned
+     * only for fleets that currently exist.
      * </p>
      * <note>
      * <p>
-     * There may be a maximum number of fleet IDs you can specify in one
-     * request. If a request exceeds this maximum, the request will fail and the
-     * error message will include the maximum allowed.
+     * Some API actions may limit the number of fleet IDs allowed in one
+     * request. If a request exceeds this limit, the request fails and the error
+     * message includes the maximum allowed.
      * </p>
      * </note>
      * 
@@ -1004,17 +1069,17 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * <p>
      * Retrieves utilization statistics for one or more fleets. You can request
      * utilization data for all fleets, or specify a list of one or more fleet
-     * IDs. If successful, a <a>FleetUtilization</a> object is returned for each
-     * requested fleet ID. When requesting all fleets, use the pagination
-     * parameters to retrieve results as a set of sequential pages. When
-     * specifying a list of fleet IDs, a utilization object will only be
-     * returned for fleets that currently exist.
+     * IDs. When requesting all fleets, use the pagination parameters to
+     * retrieve results as a set of sequential pages. If successful, a
+     * <a>FleetUtilization</a> object is returned for each requested fleet ID.
+     * When specifying a list of fleet IDs, utilization objects are returned
+     * only for fleets that currently exist.
      * </p>
      * <note>
      * <p>
-     * There may be a maximum number of fleet IDs you can specify in one
-     * request. If a request exceeds this maximum, the request will fail and the
-     * error message will include the maximum allowed.
+     * Some API actions may limit the number of fleet IDs allowed in one
+     * request. If a request exceeds this limit, the request fails and the error
+     * message includes the maximum allowed.
      * </p>
      * </note>
      * 
@@ -1035,17 +1100,74 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
 
     /**
      * <p>
-     * Retrieves properties for a game session. You can request properties for a
-     * single game session or for all sessions currently running on a fleet.
+     * Retrieves properties, including the protection policy in force, for one
+     * or more game sessions. This action can be used in several ways: (1)
+     * provide a <i>GameSessionId</i> to request details for a specific game
+     * session; (2) provide either a <i>FleetId</i> or an <i>AliasId</i> to
+     * request properties for all game sessions running on a fleet.
      * </p>
      * <p>
-     * To get a game session record, specify a single game session ID.
-     * Alternatively, you can retrieve properties for all game sessions on a
-     * fleet by providing either a fleet ID or alias ID. You can optionally
-     * filter this request by game session status. This action provides
-     * pagination parameters, so you can opt to retrieve results in sequential
-     * chunks. If successful, a <a>GameSession</a> object is returned for each
-     * session matching the request.
+     * To get game session record(s), specify just one of the following: game
+     * session ID, fleet ID, or alias ID. You can filter this request by game
+     * session status. Use the pagination parameters to retrieve results as a
+     * set of sequential pages. If successful, a <a>GameSessionDetail</a> object
+     * is returned for each session matching the request.
+     * </p>
+     * 
+     * @param describeGameSessionDetailsRequest
+     *        Represents the input for a request action.
+     * @return A Java Future containing the result of the
+     *         DescribeGameSessionDetails operation returned by the service.
+     * @sample AmazonGameLiftAsync.DescribeGameSessionDetails
+     */
+    java.util.concurrent.Future<DescribeGameSessionDetailsResult> describeGameSessionDetailsAsync(
+            DescribeGameSessionDetailsRequest describeGameSessionDetailsRequest);
+
+    /**
+     * <p>
+     * Retrieves properties, including the protection policy in force, for one
+     * or more game sessions. This action can be used in several ways: (1)
+     * provide a <i>GameSessionId</i> to request details for a specific game
+     * session; (2) provide either a <i>FleetId</i> or an <i>AliasId</i> to
+     * request properties for all game sessions running on a fleet.
+     * </p>
+     * <p>
+     * To get game session record(s), specify just one of the following: game
+     * session ID, fleet ID, or alias ID. You can filter this request by game
+     * session status. Use the pagination parameters to retrieve results as a
+     * set of sequential pages. If successful, a <a>GameSessionDetail</a> object
+     * is returned for each session matching the request.
+     * </p>
+     * 
+     * @param describeGameSessionDetailsRequest
+     *        Represents the input for a request action.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         DescribeGameSessionDetails operation returned by the service.
+     * @sample AmazonGameLiftAsyncHandler.DescribeGameSessionDetails
+     */
+    java.util.concurrent.Future<DescribeGameSessionDetailsResult> describeGameSessionDetailsAsync(
+            DescribeGameSessionDetailsRequest describeGameSessionDetailsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeGameSessionDetailsRequest, DescribeGameSessionDetailsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves properties for one or more game sessions. This action can be
+     * used in several ways: (1) provide a <i>GameSessionId</i> to request
+     * properties for a specific game session; (2) provide a <i>FleetId</i> or
+     * an <i>AliasId</i> to request properties for all game sessions running on
+     * a fleet.
+     * </p>
+     * <p>
+     * To get game session record(s), specify just one of the following: game
+     * session ID, fleet ID, or alias ID. You can filter this request by game
+     * session status. Use the pagination parameters to retrieve results as a
+     * set of sequential pages. If successful, a <a>GameSession</a> object is
+     * returned for each session matching the request.
      * </p>
      * 
      * @param describeGameSessionsRequest
@@ -1059,17 +1181,18 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
 
     /**
      * <p>
-     * Retrieves properties for a game session. You can request properties for a
-     * single game session or for all sessions currently running on a fleet.
+     * Retrieves properties for one or more game sessions. This action can be
+     * used in several ways: (1) provide a <i>GameSessionId</i> to request
+     * properties for a specific game session; (2) provide a <i>FleetId</i> or
+     * an <i>AliasId</i> to request properties for all game sessions running on
+     * a fleet.
      * </p>
      * <p>
-     * To get a game session record, specify a single game session ID.
-     * Alternatively, you can retrieve properties for all game sessions on a
-     * fleet by providing either a fleet ID or alias ID. You can optionally
-     * filter this request by game session status. This action provides
-     * pagination parameters, so you can opt to retrieve results in sequential
-     * chunks. If successful, a <a>GameSession</a> object is returned for each
-     * session matching the request.
+     * To get game session record(s), specify just one of the following: game
+     * session ID, fleet ID, or alias ID. You can filter this request by game
+     * session status. Use the pagination parameters to retrieve results as a
+     * set of sequential pages. If successful, a <a>GameSession</a> object is
+     * returned for each session matching the request.
      * </p>
      * 
      * @param describeGameSessionsRequest
@@ -1090,19 +1213,20 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
     /**
      * <p>
      * Retrieves properties for one or more player sessions. This action can be
-     * used for several purposes: (1) provide a <i>PlayerSessionId</i> to
+     * used in several ways: (1) provide a <i>PlayerSessionId</i> parameter to
      * request properties for a specific player session; (2) provide a
-     * <i>GameSessionId</i> to request properties for all player sessions in the
-     * specified game session; (3) provide a <i>PlayerId</i> to request
-     * properties for all player sessions of a specified player.
+     * <i>GameSessionId</i> parameter to request properties for all player
+     * sessions in the specified game session; (3) provide a <i>PlayerId</i>
+     * parameter to request properties for all player sessions of a specified
+     * player.
      * </p>
      * <p>
      * To get game session record(s), specify only one of the following: a
-     * player session ID, a game session ID, or a player ID. You can optionally
-     * filter this request by player session status. This action provides
-     * pagination parameters, so you can opt to retrieve results as a set of
-     * sequential pages. If successful, a <a>PlayerSession</a> object is
-     * returned for each session matching the request.
+     * player session ID, a game session ID, or a player ID. You can filter this
+     * request by player session status. Use the pagination parameters to
+     * retrieve results as a set of sequential pages. If successful, a
+     * <a>PlayerSession</a> object is returned for each session matching the
+     * request.
      * </p>
      * 
      * @param describePlayerSessionsRequest
@@ -1117,19 +1241,20 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
     /**
      * <p>
      * Retrieves properties for one or more player sessions. This action can be
-     * used for several purposes: (1) provide a <i>PlayerSessionId</i> to
+     * used in several ways: (1) provide a <i>PlayerSessionId</i> parameter to
      * request properties for a specific player session; (2) provide a
-     * <i>GameSessionId</i> to request properties for all player sessions in the
-     * specified game session; (3) provide a <i>PlayerId</i> to request
-     * properties for all player sessions of a specified player.
+     * <i>GameSessionId</i> parameter to request properties for all player
+     * sessions in the specified game session; (3) provide a <i>PlayerId</i>
+     * parameter to request properties for all player sessions of a specified
+     * player.
      * </p>
      * <p>
      * To get game session record(s), specify only one of the following: a
-     * player session ID, a game session ID, or a player ID. You can optionally
-     * filter this request by player session status. This action provides
-     * pagination parameters, so you can opt to retrieve results as a set of
-     * sequential pages. If successful, a <a>PlayerSession</a> object is
-     * returned for each session matching the request.
+     * player session ID, a game session ID, or a player ID. You can filter this
+     * request by player session status. Use the pagination parameters to
+     * retrieve results as a set of sequential pages. If successful, a
+     * <a>PlayerSession</a> object is returned for each session matching the
+     * request.
      * </p>
      * 
      * @param describePlayerSessionsRequest
@@ -1149,16 +1274,64 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
 
     /**
      * <p>
+     * Retrieves all scaling policies applied to a fleet.
+     * </p>
+     * <p>
+     * To get a fleet's scaling policies, specify the fleet ID. You can filter
+     * this request by policy status, such as to retrieve only active scaling
+     * policies. Use the pagination parameters to retrieve results as a set of
+     * sequential pages. If successful, set of <a>ScalingPolicy</a> objects is
+     * returned for the fleet.
+     * </p>
+     * 
+     * @param describeScalingPoliciesRequest
+     *        Represents the input for a request action.
+     * @return A Java Future containing the result of the
+     *         DescribeScalingPolicies operation returned by the service.
+     * @sample AmazonGameLiftAsync.DescribeScalingPolicies
+     */
+    java.util.concurrent.Future<DescribeScalingPoliciesResult> describeScalingPoliciesAsync(
+            DescribeScalingPoliciesRequest describeScalingPoliciesRequest);
+
+    /**
+     * <p>
+     * Retrieves all scaling policies applied to a fleet.
+     * </p>
+     * <p>
+     * To get a fleet's scaling policies, specify the fleet ID. You can filter
+     * this request by policy status, such as to retrieve only active scaling
+     * policies. Use the pagination parameters to retrieve results as a set of
+     * sequential pages. If successful, set of <a>ScalingPolicy</a> objects is
+     * returned for the fleet.
+     * </p>
+     * 
+     * @param describeScalingPoliciesRequest
+     *        Represents the input for a request action.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         DescribeScalingPolicies operation returned by the service.
+     * @sample AmazonGameLiftAsyncHandler.DescribeScalingPolicies
+     */
+    java.util.concurrent.Future<DescribeScalingPoliciesResult> describeScalingPoliciesAsync(
+            DescribeScalingPoliciesRequest describeScalingPoliciesRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeScalingPoliciesRequest, DescribeScalingPoliciesResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves the location of stored game session logs for a specified game
-     * session. When a game session is terminated, GameLift automatically stores
-     * the logs in S3. Use this URL to download the logs.
+     * session. When a game session is terminated, Amazon GameLift automatically
+     * stores the logs in Amazon S3. Use this URL to download the logs.
      * </p>
      * <note>
      * <p>
      * See the <a href=
      * "http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_gamelift"
      * >AWS Service Limits</a> page for maximum log file sizes. Log files that
-     * exceed this limit will not be saved.
+     * exceed this limit are not saved.
      * </p>
      * </note>
      * 
@@ -1174,15 +1347,15 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
     /**
      * <p>
      * Retrieves the location of stored game session logs for a specified game
-     * session. When a game session is terminated, GameLift automatically stores
-     * the logs in S3. Use this URL to download the logs.
+     * session. When a game session is terminated, Amazon GameLift automatically
+     * stores the logs in Amazon S3. Use this URL to download the logs.
      * </p>
      * <note>
      * <p>
      * See the <a href=
      * "http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_gamelift"
      * >AWS Service Limits</a> page for maximum log file sizes. Log files that
-     * exceed this limit will not be saved.
+     * exceed this limit are not saved.
      * </p>
      * </note>
      * 
@@ -1203,10 +1376,9 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
 
     /**
      * <p>
-     * Retrieves a collection of alias records for this AWS account. You can opt
-     * to filter the result set by alias name and/or routing strategy type. This
-     * action provides pagination parameters, so you can opt to retrieve results
-     * in sequential chunks.
+     * Retrieves a collection of alias records for this AWS account. You can
+     * filter the result set by alias name and/or routing strategy type. Use the
+     * pagination parameters to retrieve results in sequential pages.
      * </p>
      * <note>
      * <p>
@@ -1225,10 +1397,9 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
 
     /**
      * <p>
-     * Retrieves a collection of alias records for this AWS account. You can opt
-     * to filter the result set by alias name and/or routing strategy type. This
-     * action provides pagination parameters, so you can opt to retrieve results
-     * in sequential chunks.
+     * Retrieves a collection of alias records for this AWS account. You can
+     * filter the result set by alias name and/or routing strategy type. Use the
+     * pagination parameters to retrieve results in sequential pages.
      * </p>
      * <note>
      * <p>
@@ -1253,10 +1424,9 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
 
     /**
      * <p>
-     * Retrieves build records all builds associated with an AWS account. You
-     * can filter the result set by build status. This action provides
-     * pagination parameters, so you can opt to retrieve the results in a set of
-     * sequential pages.
+     * Retrieves build records for all builds associated with an AWS account.
+     * You can filter the result set by build status. Use the pagination
+     * parameters to retrieve results in a set of sequential pages.
      * </p>
      * <note>
      * <p>
@@ -1275,10 +1445,9 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
 
     /**
      * <p>
-     * Retrieves build records all builds associated with an AWS account. You
-     * can filter the result set by build status. This action provides
-     * pagination parameters, so you can opt to retrieve the results in a set of
-     * sequential pages.
+     * Retrieves build records for all builds associated with an AWS account.
+     * You can filter the result set by build status. Use the pagination
+     * parameters to retrieve results in a set of sequential pages.
      * </p>
      * <note>
      * <p>
@@ -1303,9 +1472,9 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
 
     /**
      * <p>
-     * Retrieves a collection of fleet records for this AWS account. You can opt
-     * to filter the result set by build ID. This action provides pagination
-     * parameters, so you can opt to retrieve results in sequential chunks.
+     * Retrieves a collection of fleet records for this AWS account. You can
+     * filter the result set by build ID. Use the pagination parameters to
+     * retrieve results in sequential pages.
      * </p>
      * <note>
      * <p>
@@ -1324,9 +1493,9 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
 
     /**
      * <p>
-     * Retrieves a collection of fleet records for this AWS account. You can opt
-     * to filter the result set by build ID. This action provides pagination
-     * parameters, so you can opt to retrieve results in sequential chunks.
+     * Retrieves a collection of fleet records for this AWS account. You can
+     * filter the result set by build ID. Use the pagination parameters to
+     * retrieve results in sequential pages.
      * </p>
      * <note>
      * <p>
@@ -1350,22 +1519,114 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
             com.amazonaws.handlers.AsyncHandler<ListFleetsRequest, ListFleetsResult> asyncHandler);
 
     /**
-     * <note>
+     * <p>
+     * Creates or updates a scaling policy for a fleet. An active scaling policy
+     * prompts GameLift to track a certain metric for a fleet and automatically
+     * change the fleet's capacity in specific circumstances. Each scaling
+     * policy contains one rule statement. Fleets can have multiple scaling
+     * policies in force simultaneously.
+     * </p>
+     * <p>
+     * A scaling policy rule statement has the following structure:
+     * </p>
+     * <p>
+     * If <i>[MetricName]</i> is <i>[ComparisonOperator]</i> <i>[Threshold]</i>
+     * for <i>[EvaluationPeriods]</i> minutes, then
+     * <i>[ScalingAdjustmentType]</i> to/by <i>[ScalingAdjustment]</i>.
+     * </p>
+     * <p>
+     * For example, this policy:
+     * "If the number of idle instances exceeds 20 for more than 15 minutes, then reduce the fleet capacity by 10 instances"
+     * could be implemented as the following rule statement:
+     * </p>
+     * <p>
+     * If [IdleInstances] is [GreaterThanOrEqualToThreshold] [20] for [15]
+     * minutes, then [ChangeInCapacity] by [-10].
+     * </p>
+     * <p>
+     * To create or update a scaling policy, specify a unique combination of
+     * name and fleet ID, and set the rule values. All parameters for this
+     * action are required. If successful, the policy name is returned. Scaling
+     * policies cannot be suspended or made inactive. To stop enforcing a
+     * scaling policy, call <a>DeleteScalingPolicy</a>.
+     * </p>
+     * 
+     * @param putScalingPolicyRequest
+     *        Represents the input for a request action.
+     * @return A Java Future containing the result of the PutScalingPolicy
+     *         operation returned by the service.
+     * @sample AmazonGameLiftAsync.PutScalingPolicy
+     */
+    java.util.concurrent.Future<PutScalingPolicyResult> putScalingPolicyAsync(
+            PutScalingPolicyRequest putScalingPolicyRequest);
+
+    /**
+     * <p>
+     * Creates or updates a scaling policy for a fleet. An active scaling policy
+     * prompts GameLift to track a certain metric for a fleet and automatically
+     * change the fleet's capacity in specific circumstances. Each scaling
+     * policy contains one rule statement. Fleets can have multiple scaling
+     * policies in force simultaneously.
+     * </p>
+     * <p>
+     * A scaling policy rule statement has the following structure:
+     * </p>
+     * <p>
+     * If <i>[MetricName]</i> is <i>[ComparisonOperator]</i> <i>[Threshold]</i>
+     * for <i>[EvaluationPeriods]</i> minutes, then
+     * <i>[ScalingAdjustmentType]</i> to/by <i>[ScalingAdjustment]</i>.
+     * </p>
+     * <p>
+     * For example, this policy:
+     * "If the number of idle instances exceeds 20 for more than 15 minutes, then reduce the fleet capacity by 10 instances"
+     * could be implemented as the following rule statement:
+     * </p>
+     * <p>
+     * If [IdleInstances] is [GreaterThanOrEqualToThreshold] [20] for [15]
+     * minutes, then [ChangeInCapacity] by [-10].
+     * </p>
+     * <p>
+     * To create or update a scaling policy, specify a unique combination of
+     * name and fleet ID, and set the rule values. All parameters for this
+     * action are required. If successful, the policy name is returned. Scaling
+     * policies cannot be suspended or made inactive. To stop enforcing a
+     * scaling policy, call <a>DeleteScalingPolicy</a>.
+     * </p>
+     * 
+     * @param putScalingPolicyRequest
+     *        Represents the input for a request action.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutScalingPolicy
+     *         operation returned by the service.
+     * @sample AmazonGameLiftAsyncHandler.PutScalingPolicy
+     */
+    java.util.concurrent.Future<PutScalingPolicyResult> putScalingPolicyAsync(
+            PutScalingPolicyRequest putScalingPolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<PutScalingPolicyRequest, PutScalingPolicyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves a fresh set of upload credentials and the assigned Amazon S3
+     * storage location for a specific build. Valid credentials are required to
+     * upload your game build files to Amazon S3.
+     * </p>
+     * <important>
      * <p>
      * Call this action only if you need credentials for a build created with
      * <a>CreateBuild</a>. This is a rare situation; in most cases, builds are
      * created using the CLI command <code>upload-build</code>, which creates a
      * build record and also uploads build files.
      * </p>
-     * </note>
+     * </important>
      * <p>
-     * Retrieves a fresh set of upload credentials and the assigned S3 storage
-     * location for a specific build. Valid credentials are required to upload
-     * your game build files to S3. These credentials are returned when you
-     * create the build, but they have a limited lifespan. You can get fresh
-     * credentials and use them to re-upload game files as until the build state
-     * moves to READY. After this point, you'll need to create a brand new
-     * build.
+     * Upload credentials are returned when you create the build, but they have
+     * a limited lifespan. You can get fresh credentials and use them to
+     * re-upload game files until the state of that build changes to READY. Once
+     * this happens, you must create a brand new build.
      * </p>
      * 
      * @param requestUploadCredentialsRequest
@@ -1378,22 +1639,24 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
             RequestUploadCredentialsRequest requestUploadCredentialsRequest);
 
     /**
-     * <note>
+     * <p>
+     * Retrieves a fresh set of upload credentials and the assigned Amazon S3
+     * storage location for a specific build. Valid credentials are required to
+     * upload your game build files to Amazon S3.
+     * </p>
+     * <important>
      * <p>
      * Call this action only if you need credentials for a build created with
      * <a>CreateBuild</a>. This is a rare situation; in most cases, builds are
      * created using the CLI command <code>upload-build</code>, which creates a
      * build record and also uploads build files.
      * </p>
-     * </note>
+     * </important>
      * <p>
-     * Retrieves a fresh set of upload credentials and the assigned S3 storage
-     * location for a specific build. Valid credentials are required to upload
-     * your game build files to S3. These credentials are returned when you
-     * create the build, but they have a limited lifespan. You can get fresh
-     * credentials and use them to re-upload game files as until the build state
-     * moves to READY. After this point, you'll need to create a brand new
-     * build.
+     * Upload credentials are returned when you create the build, but they have
+     * a limited lifespan. You can get fresh credentials and use them to
+     * re-upload game files until the state of that build changes to READY. Once
+     * this happens, you must create a brand new build.
      * </p>
      * 
      * @param requestUploadCredentialsRequest
@@ -1572,13 +1835,21 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * fleet's EC2 instance type.
      * </p>
      * <p>
+     * If you're using auto-scaling (see <a>PutScalingPolicy</a>), you may want
+     * to specify a minimum and/or maximum capacity. If you don't provide these
+     * boundaries, auto-scaling can set capacity anywhere between zero and the
+     * <a href=
+     * "http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_gamelift"
+     * >service limits</a>.
+     * </p>
+     * <p>
      * To update fleet capacity, specify the fleet ID and the desired number of
-     * instances. If successful, GameLift will spin up or terminate instances so
-     * that the fleet's active instance count matches the desired instance
+     * instances. If successful, Amazon GameLift starts or terminates instances
+     * so that the fleet's active instance count matches the desired instance
      * count. You can view a fleet's current capacity information by calling
      * <a>DescribeFleetCapacity</a>. If the desired instance count is higher
-     * than the instance type's limit, the call will throw "Limit Exceeded"
-     * exception.
+     * than the instance type's limit, the "Limit Exceeded" exception will
+     * occur.
      * </p>
      * 
      * @param updateFleetCapacityRequest
@@ -1599,13 +1870,21 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
      * fleet's EC2 instance type.
      * </p>
      * <p>
+     * If you're using auto-scaling (see <a>PutScalingPolicy</a>), you may want
+     * to specify a minimum and/or maximum capacity. If you don't provide these
+     * boundaries, auto-scaling can set capacity anywhere between zero and the
+     * <a href=
+     * "http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_gamelift"
+     * >service limits</a>.
+     * </p>
+     * <p>
      * To update fleet capacity, specify the fleet ID and the desired number of
-     * instances. If successful, GameLift will spin up or terminate instances so
-     * that the fleet's active instance count matches the desired instance
+     * instances. If successful, Amazon GameLift starts or terminates instances
+     * so that the fleet's active instance count matches the desired instance
      * count. You can view a fleet's current capacity information by calling
      * <a>DescribeFleetCapacity</a>. If the desired instance count is higher
-     * than the instance type's limit, the call will throw "Limit Exceeded"
-     * exception.
+     * than the instance type's limit, the "Limit Exceeded" exception will
+     * occur.
      * </p>
      * 
      * @param updateFleetCapacityRequest
@@ -1672,10 +1951,12 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
     /**
      * <p>
      * Updates game session properties. This includes the session name, maximum
-     * player count and the player session creation policy, which either allows
-     * or denies new players from joining the session. To update a game session,
-     * specify the game session ID and the values you want to change. If
-     * successful, an updated <a>GameSession</a> object is returned.
+     * player count, protection policy, which controls whether or not an active
+     * game session can be terminated during a scale-down event, and the player
+     * session creation policy, which controls whether or not new players can
+     * join the session. To update a game session, specify the game session ID
+     * and the values you want to change. If successful, an updated
+     * <a>GameSession</a> object is returned.
      * </p>
      * 
      * @param updateGameSessionRequest
@@ -1690,10 +1971,12 @@ public interface AmazonGameLiftAsync extends AmazonGameLift {
     /**
      * <p>
      * Updates game session properties. This includes the session name, maximum
-     * player count and the player session creation policy, which either allows
-     * or denies new players from joining the session. To update a game session,
-     * specify the game session ID and the values you want to change. If
-     * successful, an updated <a>GameSession</a> object is returned.
+     * player count, protection policy, which controls whether or not an active
+     * game session can be terminated during a scale-down event, and the player
+     * session creation policy, which controls whether or not new players can
+     * join the session. To update a game session, specify the game session ID
+     * and the values you want to change. If successful, an updated
+     * <a>GameSession</a> object is returned.
      * </p>
      * 
      * @param updateGameSessionRequest

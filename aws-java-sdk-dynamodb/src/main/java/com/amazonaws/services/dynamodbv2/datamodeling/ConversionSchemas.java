@@ -386,7 +386,7 @@ public final class ConversionSchemas {
             }
 
             Class<?> clazz = (Class<?>) localType;
-            if (clazz.getAnnotation(DynamoDBDocument.class) == null) {
+            if (!registry.mappingsOf(clazz).isDocument()) {
                 throw new DynamoDBMappingException(
                         "Cannot marshall type " + type
                         + " without a custom marshaler or @DynamoDBDocument "
@@ -571,7 +571,7 @@ public final class ConversionSchemas {
             }
 
             Class<?> clazz = (Class<?>) localType;
-            if (clazz.getAnnotation(DynamoDBDocument.class) == null) {
+            if (!registry.mappingsOf(clazz).isDocument()) {
                 throw new DynamoDBMappingException(
                         "Cannot unmarshall to type " + type
                         + " without a custom marshaler or @DynamoDBDocument "

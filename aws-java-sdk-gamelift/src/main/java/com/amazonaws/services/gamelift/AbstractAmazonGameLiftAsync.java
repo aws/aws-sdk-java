@@ -165,6 +165,21 @@ public class AbstractAmazonGameLiftAsync extends AbstractAmazonGameLift
     }
 
     @Override
+    public java.util.concurrent.Future<Void> deleteScalingPolicyAsync(
+            DeleteScalingPolicyRequest request) {
+
+        return deleteScalingPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<Void> deleteScalingPolicyAsync(
+            DeleteScalingPolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteScalingPolicyRequest, Void> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeAliasResult> describeAliasAsync(
             DescribeAliasRequest request) {
 
@@ -285,6 +300,21 @@ public class AbstractAmazonGameLiftAsync extends AbstractAmazonGameLift
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeGameSessionDetailsResult> describeGameSessionDetailsAsync(
+            DescribeGameSessionDetailsRequest request) {
+
+        return describeGameSessionDetailsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeGameSessionDetailsResult> describeGameSessionDetailsAsync(
+            DescribeGameSessionDetailsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeGameSessionDetailsRequest, DescribeGameSessionDetailsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeGameSessionsResult> describeGameSessionsAsync(
             DescribeGameSessionsRequest request) {
 
@@ -310,6 +340,21 @@ public class AbstractAmazonGameLiftAsync extends AbstractAmazonGameLift
     public java.util.concurrent.Future<DescribePlayerSessionsResult> describePlayerSessionsAsync(
             DescribePlayerSessionsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribePlayerSessionsRequest, DescribePlayerSessionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeScalingPoliciesResult> describeScalingPoliciesAsync(
+            DescribeScalingPoliciesRequest request) {
+
+        return describeScalingPoliciesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeScalingPoliciesResult> describeScalingPoliciesAsync(
+            DescribeScalingPoliciesRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeScalingPoliciesRequest, DescribeScalingPoliciesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -370,6 +415,21 @@ public class AbstractAmazonGameLiftAsync extends AbstractAmazonGameLift
     public java.util.concurrent.Future<ListFleetsResult> listFleetsAsync(
             ListFleetsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListFleetsRequest, ListFleetsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutScalingPolicyResult> putScalingPolicyAsync(
+            PutScalingPolicyRequest request) {
+
+        return putScalingPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutScalingPolicyResult> putScalingPolicyAsync(
+            PutScalingPolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutScalingPolicyRequest, PutScalingPolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

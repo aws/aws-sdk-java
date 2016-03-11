@@ -43,7 +43,7 @@ public class CreateGameSessionRequest extends AmazonWebServiceRequest implements
     private String aliasId;
     /**
      * <p>
-     * Maximum number of players that can be simultaneously connected to the
+     * Maximum number of players that can be connected simultaneously to the
      * game session.
      * </p>
      */
@@ -159,12 +159,12 @@ public class CreateGameSessionRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Maximum number of players that can be simultaneously connected to the
+     * Maximum number of players that can be connected simultaneously to the
      * game session.
      * </p>
      * 
      * @param maximumPlayerSessionCount
-     *        Maximum number of players that can be simultaneously connected to
+     *        Maximum number of players that can be connected simultaneously to
      *        the game session.
      */
 
@@ -174,11 +174,11 @@ public class CreateGameSessionRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Maximum number of players that can be simultaneously connected to the
+     * Maximum number of players that can be connected simultaneously to the
      * game session.
      * </p>
      * 
-     * @return Maximum number of players that can be simultaneously connected to
+     * @return Maximum number of players that can be connected simultaneously to
      *         the game session.
      */
 
@@ -188,12 +188,12 @@ public class CreateGameSessionRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Maximum number of players that can be simultaneously connected to the
+     * Maximum number of players that can be connected simultaneously to the
      * game session.
      * </p>
      * 
      * @param maximumPlayerSessionCount
-     *        Maximum number of players that can be simultaneously connected to
+     *        Maximum number of players that can be connected simultaneously to
      *        the game session.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.

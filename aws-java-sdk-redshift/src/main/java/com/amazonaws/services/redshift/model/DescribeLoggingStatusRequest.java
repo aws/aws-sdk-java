@@ -30,16 +30,16 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DescribeLoggingStatusRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * The identifier of the cluster to get the logging status from.
+     * The identifier of the cluster from which to get the logging status.
      * <p>Example: <code>examplecluster</code>
      */
     private String clusterIdentifier;
 
     /**
-     * The identifier of the cluster to get the logging status from.
+     * The identifier of the cluster from which to get the logging status.
      * <p>Example: <code>examplecluster</code>
      *
-     * @return The identifier of the cluster to get the logging status from.
+     * @return The identifier of the cluster from which to get the logging status.
      *         <p>Example: <code>examplecluster</code>
      */
     public String getClusterIdentifier() {
@@ -47,10 +47,10 @@ public class DescribeLoggingStatusRequest extends AmazonWebServiceRequest implem
     }
     
     /**
-     * The identifier of the cluster to get the logging status from.
+     * The identifier of the cluster from which to get the logging status.
      * <p>Example: <code>examplecluster</code>
      *
-     * @param clusterIdentifier The identifier of the cluster to get the logging status from.
+     * @param clusterIdentifier The identifier of the cluster from which to get the logging status.
      *         <p>Example: <code>examplecluster</code>
      */
     public void setClusterIdentifier(String clusterIdentifier) {
@@ -58,12 +58,12 @@ public class DescribeLoggingStatusRequest extends AmazonWebServiceRequest implem
     }
     
     /**
-     * The identifier of the cluster to get the logging status from.
+     * The identifier of the cluster from which to get the logging status.
      * <p>Example: <code>examplecluster</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param clusterIdentifier The identifier of the cluster to get the logging status from.
+     * @param clusterIdentifier The identifier of the cluster from which to get the logging status.
      *         <p>Example: <code>examplecluster</code>
      *
      * @return A reference to this updated object so that method calls can be chained

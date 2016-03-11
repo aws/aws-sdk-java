@@ -72,6 +72,12 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient
     private static final String DEFAULT_ENDPOINT_PREFIX = "acm";
 
     /**
+     * Client configuration factory providing ClientConfigurations tailored to
+     * this client
+     */
+    protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
+
+    /**
      * List of exception unmarshallers for all ACM exceptions.
      */
     protected List<JsonErrorUnmarshallerV2> jsonErrorUnmarshallers = new ArrayList<JsonErrorUnmarshallerV2>();
@@ -93,8 +99,8 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSCertificateManagerClient() {
-        this(new DefaultAWSCredentialsProviderChain(),
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
+        this(new DefaultAWSCredentialsProviderChain(), configFactory
+                .getConfig());
     }
 
     /**
@@ -134,8 +140,7 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient
      *        authenticating with AWS services.
      */
     public AWSCertificateManagerClient(AWSCredentials awsCredentials) {
-        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
-                .defaultConfig());
+        this(awsCredentials, configFactory.getConfig());
     }
 
     /**
@@ -175,8 +180,7 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient
      */
     public AWSCertificateManagerClient(
             AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider,
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
+        this(awsCredentialsProvider, configFactory.getConfig());
     }
 
     /**

@@ -10512,10 +10512,10 @@
             "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValue(java.util.Collection)} or {@link #withValue(java.util.Collection)} if you want to override the existing values.</p>\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
           },
           "templateType" : "java.util.Map<String,java.util.List<UniqueProblem>>",
+          "templateImplType" : "java.util.HashMap<String,java.util.List<UniqueProblem>>",
           "keySimple" : true,
           "valueSimple" : false,
-          "valueList" : true,
-          "templateImplType" : "java.util.HashMap<String,java.util.List<UniqueProblem>>"
+          "valueList" : true
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -10818,10 +10818,10 @@
               "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValue(java.util.Collection)} or {@link #withValue(java.util.Collection)} if you want to override the existing values.</p>\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/"
             },
             "templateType" : "java.util.Map<String,java.util.List<UniqueProblem>>",
+            "templateImplType" : "java.util.HashMap<String,java.util.List<UniqueProblem>>",
             "keySimple" : true,
             "valueSimple" : false,
-            "valueList" : true,
-            "templateImplType" : "java.util.HashMap<String,java.util.List<UniqueProblem>>"
+            "valueList" : true
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -15040,10 +15040,10 @@
           "valueLocationName" : "value",
           "valueModel" : null,
           "templateType" : "java.util.Map<String,String>",
+          "templateImplType" : "java.util.HashMap<String,String>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false,
-          "templateImplType" : "java.util.HashMap<String,String>"
+          "valueList" : false
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -15180,10 +15180,10 @@
             "valueLocationName" : "value",
             "valueModel" : null,
             "templateType" : "java.util.Map<String,String>",
+            "templateImplType" : "java.util.HashMap<String,String>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false,
-            "templateImplType" : "java.util.HashMap<String,String>"
+            "valueList" : false
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -31831,10 +31831,10 @@
           "valueLocationName" : "value",
           "valueModel" : null,
           "templateType" : "java.util.Map<String,Integer>",
+          "templateImplType" : "java.util.HashMap<String,Integer>",
           "keySimple" : true,
           "valueSimple" : true,
-          "valueList" : false,
-          "templateImplType" : "java.util.HashMap<String,Integer>"
+          "valueList" : false
         },
         "enumType" : null,
         "xmlNameSpaceUri" : null,
@@ -31970,10 +31970,10 @@
             "valueLocationName" : "value",
             "valueModel" : null,
             "templateType" : "java.util.Map<String,Integer>",
+            "templateImplType" : "java.util.HashMap<String,Integer>",
             "keySimple" : true,
             "valueSimple" : true,
-            "valueList" : false,
-            "templateImplType" : "java.util.HashMap<String,Integer>"
+            "valueList" : false
           },
           "enumType" : null,
           "xmlNameSpaceUri" : null,
@@ -32808,7 +32808,7 @@
     "serviceClientHoldInputStream" : false,
     "operationsWithResponseStreamContentLengthValidation" : null,
     "customExceptionUnmarshallerImpl" : null,
-    "customClientConfiguration" : null,
+    "customClientConfigFactory" : null,
     "customResponseMetadataClassName" : null,
     "skipInterfaceAdditions" : false,
     "customServiceNameForRequest" : null,
@@ -32827,5 +32827,5 @@
     "version" : "1.0",
     "operationExamples" : { }
   },
-  "defaultClientConfiguration" : "com.amazonaws.PredefinedClientConfigurations.defaultConfig()"
+  "clientConfigFactory" : "ClientConfigurationFactory"
 }

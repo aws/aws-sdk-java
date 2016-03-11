@@ -50,11 +50,22 @@ public class UpdateGameSessionRequest extends AmazonWebServiceRequest implements
     private String name;
     /**
      * <p>
-     * Policy determining whether or not the game session will accept new
-     * players.
+     * Policy determining whether or not the game session accepts new players.
      * </p>
      */
     private String playerSessionCreationPolicy;
+    /**
+     * <p>
+     * Game session protection policy to apply to this game session only.
+     * <ul>
+     * <li>NoProtection: The game session can be terminated during a scale-down
+     * event.</li>
+     * <li>FullProtection: If the game session is in an ACTIVE status, it cannot
+     * be terminated during a scale-down event.</li>
+     * </ul>
+     * </p>
+     */
+    private String protectionPolicy;
 
     /**
      * <p>
@@ -200,12 +211,11 @@ public class UpdateGameSessionRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Policy determining whether or not the game session will accept new
-     * players.
+     * Policy determining whether or not the game session accepts new players.
      * </p>
      * 
      * @param playerSessionCreationPolicy
-     *        Policy determining whether or not the game session will accept new
+     *        Policy determining whether or not the game session accepts new
      *        players.
      * @see PlayerSessionCreationPolicy
      */
@@ -217,12 +227,11 @@ public class UpdateGameSessionRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Policy determining whether or not the game session will accept new
-     * players.
+     * Policy determining whether or not the game session accepts new players.
      * </p>
      * 
-     * @return Policy determining whether or not the game session will accept
-     *         new players.
+     * @return Policy determining whether or not the game session accepts new
+     *         players.
      * @see PlayerSessionCreationPolicy
      */
 
@@ -232,12 +241,11 @@ public class UpdateGameSessionRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Policy determining whether or not the game session will accept new
-     * players.
+     * Policy determining whether or not the game session accepts new players.
      * </p>
      * 
      * @param playerSessionCreationPolicy
-     *        Policy determining whether or not the game session will accept new
+     *        Policy determining whether or not the game session accepts new
      *        players.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -252,12 +260,11 @@ public class UpdateGameSessionRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Policy determining whether or not the game session will accept new
-     * players.
+     * Policy determining whether or not the game session accepts new players.
      * </p>
      * 
      * @param playerSessionCreationPolicy
-     *        Policy determining whether or not the game session will accept new
+     *        Policy determining whether or not the game session accepts new
      *        players.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -272,12 +279,11 @@ public class UpdateGameSessionRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Policy determining whether or not the game session will accept new
-     * players.
+     * Policy determining whether or not the game session accepts new players.
      * </p>
      * 
      * @param playerSessionCreationPolicy
-     *        Policy determining whether or not the game session will accept new
+     *        Policy determining whether or not the game session accepts new
      *        players.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -287,6 +293,145 @@ public class UpdateGameSessionRequest extends AmazonWebServiceRequest implements
     public UpdateGameSessionRequest withPlayerSessionCreationPolicy(
             PlayerSessionCreationPolicy playerSessionCreationPolicy) {
         setPlayerSessionCreationPolicy(playerSessionCreationPolicy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Game session protection policy to apply to this game session only.
+     * <ul>
+     * <li>NoProtection: The game session can be terminated during a scale-down
+     * event.</li>
+     * <li>FullProtection: If the game session is in an ACTIVE status, it cannot
+     * be terminated during a scale-down event.</li>
+     * </ul>
+     * </p>
+     * 
+     * @param protectionPolicy
+     *        Game session protection policy to apply to this game session only.
+     *        <ul>
+     *        <li>NoProtection: The game session can be terminated during a
+     *        scale-down event.</li>
+     *        <li>FullProtection: If the game session is in an ACTIVE status, it
+     *        cannot be terminated during a scale-down event.</li>
+     *        </ul>
+     * @see ProtectionPolicy
+     */
+
+    public void setProtectionPolicy(String protectionPolicy) {
+        this.protectionPolicy = protectionPolicy;
+    }
+
+    /**
+     * <p>
+     * Game session protection policy to apply to this game session only.
+     * <ul>
+     * <li>NoProtection: The game session can be terminated during a scale-down
+     * event.</li>
+     * <li>FullProtection: If the game session is in an ACTIVE status, it cannot
+     * be terminated during a scale-down event.</li>
+     * </ul>
+     * </p>
+     * 
+     * @return Game session protection policy to apply to this game session
+     *         only.
+     *         <ul>
+     *         <li>NoProtection: The game session can be terminated during a
+     *         scale-down event.</li>
+     *         <li>FullProtection: If the game session is in an ACTIVE status,
+     *         it cannot be terminated during a scale-down event.</li>
+     *         </ul>
+     * @see ProtectionPolicy
+     */
+
+    public String getProtectionPolicy() {
+        return this.protectionPolicy;
+    }
+
+    /**
+     * <p>
+     * Game session protection policy to apply to this game session only.
+     * <ul>
+     * <li>NoProtection: The game session can be terminated during a scale-down
+     * event.</li>
+     * <li>FullProtection: If the game session is in an ACTIVE status, it cannot
+     * be terminated during a scale-down event.</li>
+     * </ul>
+     * </p>
+     * 
+     * @param protectionPolicy
+     *        Game session protection policy to apply to this game session only.
+     *        <ul>
+     *        <li>NoProtection: The game session can be terminated during a
+     *        scale-down event.</li>
+     *        <li>FullProtection: If the game session is in an ACTIVE status, it
+     *        cannot be terminated during a scale-down event.</li>
+     *        </ul>
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see ProtectionPolicy
+     */
+
+    public UpdateGameSessionRequest withProtectionPolicy(String protectionPolicy) {
+        setProtectionPolicy(protectionPolicy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Game session protection policy to apply to this game session only.
+     * <ul>
+     * <li>NoProtection: The game session can be terminated during a scale-down
+     * event.</li>
+     * <li>FullProtection: If the game session is in an ACTIVE status, it cannot
+     * be terminated during a scale-down event.</li>
+     * </ul>
+     * </p>
+     * 
+     * @param protectionPolicy
+     *        Game session protection policy to apply to this game session only.
+     *        <ul>
+     *        <li>NoProtection: The game session can be terminated during a
+     *        scale-down event.</li>
+     *        <li>FullProtection: If the game session is in an ACTIVE status, it
+     *        cannot be terminated during a scale-down event.</li>
+     *        </ul>
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see ProtectionPolicy
+     */
+
+    public void setProtectionPolicy(ProtectionPolicy protectionPolicy) {
+        this.protectionPolicy = protectionPolicy.toString();
+    }
+
+    /**
+     * <p>
+     * Game session protection policy to apply to this game session only.
+     * <ul>
+     * <li>NoProtection: The game session can be terminated during a scale-down
+     * event.</li>
+     * <li>FullProtection: If the game session is in an ACTIVE status, it cannot
+     * be terminated during a scale-down event.</li>
+     * </ul>
+     * </p>
+     * 
+     * @param protectionPolicy
+     *        Game session protection policy to apply to this game session only.
+     *        <ul>
+     *        <li>NoProtection: The game session can be terminated during a
+     *        scale-down event.</li>
+     *        <li>FullProtection: If the game session is in an ACTIVE status, it
+     *        cannot be terminated during a scale-down event.</li>
+     *        </ul>
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see ProtectionPolicy
+     */
+
+    public UpdateGameSessionRequest withProtectionPolicy(
+            ProtectionPolicy protectionPolicy) {
+        setProtectionPolicy(protectionPolicy);
         return this;
     }
 
@@ -311,7 +456,9 @@ public class UpdateGameSessionRequest extends AmazonWebServiceRequest implements
             sb.append("Name: " + getName() + ",");
         if (getPlayerSessionCreationPolicy() != null)
             sb.append("PlayerSessionCreationPolicy: "
-                    + getPlayerSessionCreationPolicy());
+                    + getPlayerSessionCreationPolicy() + ",");
+        if (getProtectionPolicy() != null)
+            sb.append("ProtectionPolicy: " + getProtectionPolicy());
         sb.append("}");
         return sb.toString();
     }
@@ -350,6 +497,13 @@ public class UpdateGameSessionRequest extends AmazonWebServiceRequest implements
                 && other.getPlayerSessionCreationPolicy().equals(
                         this.getPlayerSessionCreationPolicy()) == false)
             return false;
+        if (other.getProtectionPolicy() == null
+                ^ this.getProtectionPolicy() == null)
+            return false;
+        if (other.getProtectionPolicy() != null
+                && other.getProtectionPolicy().equals(
+                        this.getProtectionPolicy()) == false)
+            return false;
         return true;
     }
 
@@ -372,6 +526,10 @@ public class UpdateGameSessionRequest extends AmazonWebServiceRequest implements
                 * hashCode
                 + ((getPlayerSessionCreationPolicy() == null) ? 0
                         : getPlayerSessionCreationPolicy().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getProtectionPolicy() == null) ? 0 : getProtectionPolicy()
+                        .hashCode());
         return hashCode;
     }
 

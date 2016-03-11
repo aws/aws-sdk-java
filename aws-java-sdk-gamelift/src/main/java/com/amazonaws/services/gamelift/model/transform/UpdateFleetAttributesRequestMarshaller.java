@@ -84,6 +84,13 @@ public class UpdateFleetAttributesRequestMarshaller
                         updateFleetAttributesRequest.getDescription());
             }
 
+            if (updateFleetAttributesRequest
+                    .getNewGameSessionProtectionPolicy() != null) {
+                jsonWriter.key("NewGameSessionProtectionPolicy").value(
+                        updateFleetAttributesRequest
+                                .getNewGameSessionProtectionPolicy());
+            }
+
             jsonWriter.endObject();
 
             String snippet = stringWriter.toString();

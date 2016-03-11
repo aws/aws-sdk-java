@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes a security group.
+ * Describes a cluster security group.
  * </p>
  */
 public class ClusterSecurityGroupMembership implements Serializable, Cloneable {

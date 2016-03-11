@@ -29,15 +29,19 @@ public class ListBuildsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Build state to filter results on. Use this parameter retrieve builds in a
-     * certain state. To retrieve all builds, leave this parameter empty.
-     * Possible build states include: ltulgtltligtINITIALIZED: A new build has
-     * been defined, but no files have been uploaded. You cannot create fleets
-     * for builds that are in this state. When a build is successfully created,
-     * the build state is set to this value. lt/ligtltligtREADY: The game build
-     * has been successfully uploaded. You can now create new fleets for this
-     * build.lt/ligtltligtFAILED: The game build upload failed. You cannot
-     * create new fleets for this build. lt/ligtlt/ulgt
+     * Build state to filter results on. Use this parameter to retrieve builds
+     * in a certain state. To retrieve all builds, leave this parameter empty.
+     * Possible build states include:
+     * <ul>
+     * <li>INITIALIZED: A new build has been defined, but no files have been
+     * uploaded. You cannot create fleets for builds that are in this state.
+     * When a build is successfully created, the build state is set to this
+     * value.</li>
+     * <li>READY: The game build has been successfully uploaded. You can now
+     * create new fleets for this build.</li>
+     * <li>FAILED: The game build upload failed. You cannot create new fleets
+     * for this build.</li>
+     * </ul>
      * </p>
      */
     private String status;
@@ -50,38 +54,44 @@ public class ListBuildsRequest extends AmazonWebServiceRequest implements
     private Integer limit;
     /**
      * <p>
-     * Token indicating the start of the next sequential page of results. A
-     * token is returned any time there may be additional results to be
-     * retrieved. To start at the beginning of a result set, do not set this
-     * parameter.
+     * Token indicating the start of the next sequential page of results. Use
+     * the token that is returned with a previous call to this action. To
+     * specify the start of the result set, do not specify a value.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * Build state to filter results on. Use this parameter retrieve builds in a
-     * certain state. To retrieve all builds, leave this parameter empty.
-     * Possible build states include: ltulgtltligtINITIALIZED: A new build has
-     * been defined, but no files have been uploaded. You cannot create fleets
-     * for builds that are in this state. When a build is successfully created,
-     * the build state is set to this value. lt/ligtltligtREADY: The game build
-     * has been successfully uploaded. You can now create new fleets for this
-     * build.lt/ligtltligtFAILED: The game build upload failed. You cannot
-     * create new fleets for this build. lt/ligtlt/ulgt
+     * Build state to filter results on. Use this parameter to retrieve builds
+     * in a certain state. To retrieve all builds, leave this parameter empty.
+     * Possible build states include:
+     * <ul>
+     * <li>INITIALIZED: A new build has been defined, but no files have been
+     * uploaded. You cannot create fleets for builds that are in this state.
+     * When a build is successfully created, the build state is set to this
+     * value.</li>
+     * <li>READY: The game build has been successfully uploaded. You can now
+     * create new fleets for this build.</li>
+     * <li>FAILED: The game build upload failed. You cannot create new fleets
+     * for this build.</li>
+     * </ul>
      * </p>
      * 
      * @param status
-     *        Build state to filter results on. Use this parameter retrieve
+     *        Build state to filter results on. Use this parameter to retrieve
      *        builds in a certain state. To retrieve all builds, leave this
      *        parameter empty. Possible build states include:
-     *        ltulgtltligtINITIALIZED: A new build has been defined, but no
-     *        files have been uploaded. You cannot create fleets for builds that
-     *        are in this state. When a build is successfully created, the build
-     *        state is set to this value. lt/ligtltligtREADY: The game build has
-     *        been successfully uploaded. You can now create new fleets for this
-     *        build.lt/ligtltligtFAILED: The game build upload failed. You
-     *        cannot create new fleets for this build. lt/ligtlt/ulgt
+     *        <ul>
+     *        <li>INITIALIZED: A new build has been defined, but no files have
+     *        been uploaded. You cannot create fleets for builds that are in
+     *        this state. When a build is successfully created, the build state
+     *        is set to this value.</li>
+     *        <li>READY: The game build has been successfully uploaded. You can
+     *        now create new fleets for this build.</li>
+     *        <li>FAILED: The game build upload failed. You cannot create new
+     *        fleets for this build.</li>
+     *        </ul>
      * @see BuildStatus
      */
 
@@ -91,28 +101,34 @@ public class ListBuildsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Build state to filter results on. Use this parameter retrieve builds in a
-     * certain state. To retrieve all builds, leave this parameter empty.
-     * Possible build states include: ltulgtltligtINITIALIZED: A new build has
-     * been defined, but no files have been uploaded. You cannot create fleets
-     * for builds that are in this state. When a build is successfully created,
-     * the build state is set to this value. lt/ligtltligtREADY: The game build
-     * has been successfully uploaded. You can now create new fleets for this
-     * build.lt/ligtltligtFAILED: The game build upload failed. You cannot
-     * create new fleets for this build. lt/ligtlt/ulgt
+     * Build state to filter results on. Use this parameter to retrieve builds
+     * in a certain state. To retrieve all builds, leave this parameter empty.
+     * Possible build states include:
+     * <ul>
+     * <li>INITIALIZED: A new build has been defined, but no files have been
+     * uploaded. You cannot create fleets for builds that are in this state.
+     * When a build is successfully created, the build state is set to this
+     * value.</li>
+     * <li>READY: The game build has been successfully uploaded. You can now
+     * create new fleets for this build.</li>
+     * <li>FAILED: The game build upload failed. You cannot create new fleets
+     * for this build.</li>
+     * </ul>
      * </p>
      * 
-     * @return Build state to filter results on. Use this parameter retrieve
+     * @return Build state to filter results on. Use this parameter to retrieve
      *         builds in a certain state. To retrieve all builds, leave this
      *         parameter empty. Possible build states include:
-     *         ltulgtltligtINITIALIZED: A new build has been defined, but no
-     *         files have been uploaded. You cannot create fleets for builds
-     *         that are in this state. When a build is successfully created, the
-     *         build state is set to this value. lt/ligtltligtREADY: The game
-     *         build has been successfully uploaded. You can now create new
-     *         fleets for this build.lt/ligtltligtFAILED: The game build upload
-     *         failed. You cannot create new fleets for this build.
-     *         lt/ligtlt/ulgt
+     *         <ul>
+     *         <li>INITIALIZED: A new build has been defined, but no files have
+     *         been uploaded. You cannot create fleets for builds that are in
+     *         this state. When a build is successfully created, the build state
+     *         is set to this value.</li>
+     *         <li>READY: The game build has been successfully uploaded. You can
+     *         now create new fleets for this build.</li>
+     *         <li>FAILED: The game build upload failed. You cannot create new
+     *         fleets for this build.</li>
+     *         </ul>
      * @see BuildStatus
      */
 
@@ -122,28 +138,35 @@ public class ListBuildsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Build state to filter results on. Use this parameter retrieve builds in a
-     * certain state. To retrieve all builds, leave this parameter empty.
-     * Possible build states include: ltulgtltligtINITIALIZED: A new build has
-     * been defined, but no files have been uploaded. You cannot create fleets
-     * for builds that are in this state. When a build is successfully created,
-     * the build state is set to this value. lt/ligtltligtREADY: The game build
-     * has been successfully uploaded. You can now create new fleets for this
-     * build.lt/ligtltligtFAILED: The game build upload failed. You cannot
-     * create new fleets for this build. lt/ligtlt/ulgt
+     * Build state to filter results on. Use this parameter to retrieve builds
+     * in a certain state. To retrieve all builds, leave this parameter empty.
+     * Possible build states include:
+     * <ul>
+     * <li>INITIALIZED: A new build has been defined, but no files have been
+     * uploaded. You cannot create fleets for builds that are in this state.
+     * When a build is successfully created, the build state is set to this
+     * value.</li>
+     * <li>READY: The game build has been successfully uploaded. You can now
+     * create new fleets for this build.</li>
+     * <li>FAILED: The game build upload failed. You cannot create new fleets
+     * for this build.</li>
+     * </ul>
      * </p>
      * 
      * @param status
-     *        Build state to filter results on. Use this parameter retrieve
+     *        Build state to filter results on. Use this parameter to retrieve
      *        builds in a certain state. To retrieve all builds, leave this
      *        parameter empty. Possible build states include:
-     *        ltulgtltligtINITIALIZED: A new build has been defined, but no
-     *        files have been uploaded. You cannot create fleets for builds that
-     *        are in this state. When a build is successfully created, the build
-     *        state is set to this value. lt/ligtltligtREADY: The game build has
-     *        been successfully uploaded. You can now create new fleets for this
-     *        build.lt/ligtltligtFAILED: The game build upload failed. You
-     *        cannot create new fleets for this build. lt/ligtlt/ulgt
+     *        <ul>
+     *        <li>INITIALIZED: A new build has been defined, but no files have
+     *        been uploaded. You cannot create fleets for builds that are in
+     *        this state. When a build is successfully created, the build state
+     *        is set to this value.</li>
+     *        <li>READY: The game build has been successfully uploaded. You can
+     *        now create new fleets for this build.</li>
+     *        <li>FAILED: The game build upload failed. You cannot create new
+     *        fleets for this build.</li>
+     *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see BuildStatus
@@ -156,28 +179,35 @@ public class ListBuildsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Build state to filter results on. Use this parameter retrieve builds in a
-     * certain state. To retrieve all builds, leave this parameter empty.
-     * Possible build states include: ltulgtltligtINITIALIZED: A new build has
-     * been defined, but no files have been uploaded. You cannot create fleets
-     * for builds that are in this state. When a build is successfully created,
-     * the build state is set to this value. lt/ligtltligtREADY: The game build
-     * has been successfully uploaded. You can now create new fleets for this
-     * build.lt/ligtltligtFAILED: The game build upload failed. You cannot
-     * create new fleets for this build. lt/ligtlt/ulgt
+     * Build state to filter results on. Use this parameter to retrieve builds
+     * in a certain state. To retrieve all builds, leave this parameter empty.
+     * Possible build states include:
+     * <ul>
+     * <li>INITIALIZED: A new build has been defined, but no files have been
+     * uploaded. You cannot create fleets for builds that are in this state.
+     * When a build is successfully created, the build state is set to this
+     * value.</li>
+     * <li>READY: The game build has been successfully uploaded. You can now
+     * create new fleets for this build.</li>
+     * <li>FAILED: The game build upload failed. You cannot create new fleets
+     * for this build.</li>
+     * </ul>
      * </p>
      * 
      * @param status
-     *        Build state to filter results on. Use this parameter retrieve
+     *        Build state to filter results on. Use this parameter to retrieve
      *        builds in a certain state. To retrieve all builds, leave this
      *        parameter empty. Possible build states include:
-     *        ltulgtltligtINITIALIZED: A new build has been defined, but no
-     *        files have been uploaded. You cannot create fleets for builds that
-     *        are in this state. When a build is successfully created, the build
-     *        state is set to this value. lt/ligtltligtREADY: The game build has
-     *        been successfully uploaded. You can now create new fleets for this
-     *        build.lt/ligtltligtFAILED: The game build upload failed. You
-     *        cannot create new fleets for this build. lt/ligtlt/ulgt
+     *        <ul>
+     *        <li>INITIALIZED: A new build has been defined, but no files have
+     *        been uploaded. You cannot create fleets for builds that are in
+     *        this state. When a build is successfully created, the build state
+     *        is set to this value.</li>
+     *        <li>READY: The game build has been successfully uploaded. You can
+     *        now create new fleets for this build.</li>
+     *        <li>FAILED: The game build upload failed. You cannot create new
+     *        fleets for this build.</li>
+     *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see BuildStatus
@@ -189,28 +219,35 @@ public class ListBuildsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Build state to filter results on. Use this parameter retrieve builds in a
-     * certain state. To retrieve all builds, leave this parameter empty.
-     * Possible build states include: ltulgtltligtINITIALIZED: A new build has
-     * been defined, but no files have been uploaded. You cannot create fleets
-     * for builds that are in this state. When a build is successfully created,
-     * the build state is set to this value. lt/ligtltligtREADY: The game build
-     * has been successfully uploaded. You can now create new fleets for this
-     * build.lt/ligtltligtFAILED: The game build upload failed. You cannot
-     * create new fleets for this build. lt/ligtlt/ulgt
+     * Build state to filter results on. Use this parameter to retrieve builds
+     * in a certain state. To retrieve all builds, leave this parameter empty.
+     * Possible build states include:
+     * <ul>
+     * <li>INITIALIZED: A new build has been defined, but no files have been
+     * uploaded. You cannot create fleets for builds that are in this state.
+     * When a build is successfully created, the build state is set to this
+     * value.</li>
+     * <li>READY: The game build has been successfully uploaded. You can now
+     * create new fleets for this build.</li>
+     * <li>FAILED: The game build upload failed. You cannot create new fleets
+     * for this build.</li>
+     * </ul>
      * </p>
      * 
      * @param status
-     *        Build state to filter results on. Use this parameter retrieve
+     *        Build state to filter results on. Use this parameter to retrieve
      *        builds in a certain state. To retrieve all builds, leave this
      *        parameter empty. Possible build states include:
-     *        ltulgtltligtINITIALIZED: A new build has been defined, but no
-     *        files have been uploaded. You cannot create fleets for builds that
-     *        are in this state. When a build is successfully created, the build
-     *        state is set to this value. lt/ligtltligtREADY: The game build has
-     *        been successfully uploaded. You can now create new fleets for this
-     *        build.lt/ligtltligtFAILED: The game build upload failed. You
-     *        cannot create new fleets for this build. lt/ligtlt/ulgt
+     *        <ul>
+     *        <li>INITIALIZED: A new build has been defined, but no files have
+     *        been uploaded. You cannot create fleets for builds that are in
+     *        this state. When a build is successfully created, the build state
+     *        is set to this value.</li>
+     *        <li>READY: The game build has been successfully uploaded. You can
+     *        now create new fleets for this build.</li>
+     *        <li>FAILED: The game build upload failed. You cannot create new
+     *        fleets for this build.</li>
+     *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see BuildStatus
@@ -271,17 +308,16 @@ public class ListBuildsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Token indicating the start of the next sequential page of results. A
-     * token is returned any time there may be additional results to be
-     * retrieved. To start at the beginning of a result set, do not set this
-     * parameter.
+     * Token indicating the start of the next sequential page of results. Use
+     * the token that is returned with a previous call to this action. To
+     * specify the start of the result set, do not specify a value.
      * </p>
      * 
      * @param nextToken
      *        Token indicating the start of the next sequential page of results.
-     *        A token is returned any time there may be additional results to be
-     *        retrieved. To start at the beginning of a result set, do not set
-     *        this parameter.
+     *        Use the token that is returned with a previous call to this
+     *        action. To specify the start of the result set, do not specify a
+     *        value.
      */
 
     public void setNextToken(String nextToken) {
@@ -290,16 +326,15 @@ public class ListBuildsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Token indicating the start of the next sequential page of results. A
-     * token is returned any time there may be additional results to be
-     * retrieved. To start at the beginning of a result set, do not set this
-     * parameter.
+     * Token indicating the start of the next sequential page of results. Use
+     * the token that is returned with a previous call to this action. To
+     * specify the start of the result set, do not specify a value.
      * </p>
      * 
      * @return Token indicating the start of the next sequential page of
-     *         results. A token is returned any time there may be additional
-     *         results to be retrieved. To start at the beginning of a result
-     *         set, do not set this parameter.
+     *         results. Use the token that is returned with a previous call to
+     *         this action. To specify the start of the result set, do not
+     *         specify a value.
      */
 
     public String getNextToken() {
@@ -308,17 +343,16 @@ public class ListBuildsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Token indicating the start of the next sequential page of results. A
-     * token is returned any time there may be additional results to be
-     * retrieved. To start at the beginning of a result set, do not set this
-     * parameter.
+     * Token indicating the start of the next sequential page of results. Use
+     * the token that is returned with a previous call to this action. To
+     * specify the start of the result set, do not specify a value.
      * </p>
      * 
      * @param nextToken
      *        Token indicating the start of the next sequential page of results.
-     *        A token is returned any time there may be additional results to be
-     *        retrieved. To start at the beginning of a result set, do not set
-     *        this parameter.
+     *        Use the token that is returned with a previous call to this
+     *        action. To specify the start of the result set, do not specify a
+     *        value.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
