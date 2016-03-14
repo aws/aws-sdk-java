@@ -489,22 +489,21 @@ public class ClientConfiguration {
         return this;
     }
 
-    private void mylog(String s) {
-        System.out.println(s);
-    }
-
     /**
-     * Returns the value for the given system property.
+     * Returns the value for the given system property or from
+     * http_proxy variable if set in system and the system property is null.
      */
-    private String getSystemProperty(String property) {
+    private String getSystemRelatedInfo(String property) {
         if (null == System.getProperty(property)) {
             if (null != System.getenv(HTTPS_PROXY) && this.protocol.equals(Protocol.HTTPS)) {
                 return getProxyPropertyFromHttpProxyVar(System.getenv(HTTPS_PROXY), property, SYSPROPKEY_HTTPS_PROXY_USER, SYSPROPKEY_HTTPS_PROXY_PWD);
             } else if (null != System.getenv(HTTP_PROXY) && this.protocol.equals(Protocol.HTTP)) {
                 return getProxyPropertyFromHttpProxyVar(System.getenv(HTTP_PROXY), property, SYSPROPKEY_HTTP_PROXY_USER, SYSPROPKEY_HTTP_PROXY_PWD);
             }
+        }else{
+            return System.getProperty(property);
         }
-        return System.getProperty(property);
+        return null;
     }
 
     private String getProxyPropertyFromHttpProxyVar(String httpsProxyUrl, String property, String syspropkeyProxyUser, String syspropkeyProxyPwd) {
@@ -569,8 +568,8 @@ public class ClientConfiguration {
      */
     private String getProxyHostProperty() {
         return getProtocol() == Protocol.HTTPS
-                ? getSystemProperty(SYSPROPKEY_HTTPS_PROXY_HOST)
-                : getSystemProperty(SYSPROPKEY_HTTP_PROXY_HOST);
+                ? getSystemRelatedInfo(SYSPROPKEY_HTTPS_PROXY_HOST)
+                : getSystemRelatedInfo(SYSPROPKEY_HTTP_PROXY_HOST);
     }
 
     /**
@@ -618,8 +617,8 @@ public class ClientConfiguration {
     private int getProxyPortProperty() {
 
         final String proxyPortString = (getProtocol() == Protocol.HTTPS)
-                ? getSystemProperty(SYSPROPKEY_HTTPS_PROXY_PORT)
-                : getSystemProperty(SYSPROPKEY_HTTP_PROXY_PORT);
+                ? getSystemRelatedInfo(SYSPROPKEY_HTTPS_PROXY_PORT)
+                : getSystemRelatedInfo(SYSPROPKEY_HTTP_PROXY_PORT);
         try {
             return Integer.parseInt(proxyPortString);
         } catch (NumberFormatException e) {
@@ -670,8 +669,8 @@ public class ClientConfiguration {
      */
     private String getProxyUsernameProperty() {
         return (getProtocol() == Protocol.HTTPS)
-                ? getSystemProperty(SYSPROPKEY_HTTPS_PROXY_USER)
-                : getSystemProperty(SYSPROPKEY_HTTP_PROXY_USER);
+                ? getSystemRelatedInfo(SYSPROPKEY_HTTPS_PROXY_USER)
+                : getSystemRelatedInfo(SYSPROPKEY_HTTP_PROXY_USER);
     }
 
     /**
@@ -718,8 +717,8 @@ public class ClientConfiguration {
      */
     private String getProxyPasswordProperty() {
         return (getProtocol() == Protocol.HTTPS)
-                ? getSystemProperty(SYSPROPKEY_HTTPS_PROXY_PWD)
-                : getSystemProperty(SYSPROPKEY_HTTP_PROXY_PWD);
+                ? getSystemRelatedInfo(SYSPROPKEY_HTTPS_PROXY_PWD)
+                : getSystemRelatedInfo(SYSPROPKEY_HTTP_PROXY_PWD);
     }
 
     /**
@@ -1210,7 +1209,7 @@ public class ClientConfiguration {
      * @return true if retry throttling will be used
      */
     public boolean useThrottledRetries() {
-        return throttleRetries || getSystemProperty(
+        return throttleRetries || getSystemRelatedInfo(
                 SDKGlobalConfiguration.RETRY_THROTTLING_SYSTEM_PROPERTY) != null;
     }
 
