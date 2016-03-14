@@ -46,6 +46,7 @@ public class PricingDetail implements Serializable, Cloneable {
      * @param price
      *        The price per instance.
      */
+
     public void setPrice(Double price) {
         this.price = price;
     }
@@ -57,6 +58,7 @@ public class PricingDetail implements Serializable, Cloneable {
      * 
      * @return The price per instance.
      */
+
     public Double getPrice() {
         return this.price;
     }
@@ -71,6 +73,7 @@ public class PricingDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PricingDetail withPrice(Double price) {
         setPrice(price);
         return this;
@@ -84,6 +87,7 @@ public class PricingDetail implements Serializable, Cloneable {
      * @param count
      *        The number of reservations available for the price.
      */
+
     public void setCount(Integer count) {
         this.count = count;
     }
@@ -95,6 +99,7 @@ public class PricingDetail implements Serializable, Cloneable {
      * 
      * @return The number of reservations available for the price.
      */
+
     public Integer getCount() {
         return this.count;
     }
@@ -109,6 +114,7 @@ public class PricingDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PricingDetail withCount(Integer count) {
         setCount(count);
         return this;

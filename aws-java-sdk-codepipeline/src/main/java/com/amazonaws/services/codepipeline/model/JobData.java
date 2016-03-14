@@ -58,6 +58,7 @@ public class JobData implements Serializable, Cloneable {
     /**
      * @param actionTypeId
      */
+
     public void setActionTypeId(ActionTypeId actionTypeId) {
         this.actionTypeId = actionTypeId;
     }
@@ -65,6 +66,7 @@ public class JobData implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public ActionTypeId getActionTypeId() {
         return this.actionTypeId;
     }
@@ -74,6 +76,7 @@ public class JobData implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobData withActionTypeId(ActionTypeId actionTypeId) {
         setActionTypeId(actionTypeId);
         return this;
@@ -82,6 +85,7 @@ public class JobData implements Serializable, Cloneable {
     /**
      * @param actionConfiguration
      */
+
     public void setActionConfiguration(ActionConfiguration actionConfiguration) {
         this.actionConfiguration = actionConfiguration;
     }
@@ -89,6 +93,7 @@ public class JobData implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public ActionConfiguration getActionConfiguration() {
         return this.actionConfiguration;
     }
@@ -98,6 +103,7 @@ public class JobData implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobData withActionConfiguration(
             ActionConfiguration actionConfiguration) {
         setActionConfiguration(actionConfiguration);
@@ -107,6 +113,7 @@ public class JobData implements Serializable, Cloneable {
     /**
      * @param pipelineContext
      */
+
     public void setPipelineContext(PipelineContext pipelineContext) {
         this.pipelineContext = pipelineContext;
     }
@@ -114,6 +121,7 @@ public class JobData implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public PipelineContext getPipelineContext() {
         return this.pipelineContext;
     }
@@ -123,6 +131,7 @@ public class JobData implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobData withPipelineContext(PipelineContext pipelineContext) {
         setPipelineContext(pipelineContext);
         return this;
@@ -135,6 +144,7 @@ public class JobData implements Serializable, Cloneable {
      * 
      * @return The artifact supplied to the job.
      */
+
     public java.util.List<Artifact> getInputArtifacts() {
         return inputArtifacts;
     }
@@ -147,6 +157,7 @@ public class JobData implements Serializable, Cloneable {
      * @param inputArtifacts
      *        The artifact supplied to the job.
      */
+
     public void setInputArtifacts(java.util.Collection<Artifact> inputArtifacts) {
         if (inputArtifacts == null) {
             this.inputArtifacts = null;
@@ -172,6 +183,7 @@ public class JobData implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobData withInputArtifacts(Artifact... inputArtifacts) {
         if (this.inputArtifacts == null) {
             setInputArtifacts(new java.util.ArrayList<Artifact>(
@@ -193,6 +205,7 @@ public class JobData implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobData withInputArtifacts(
             java.util.Collection<Artifact> inputArtifacts) {
         setInputArtifacts(inputArtifacts);
@@ -206,6 +219,7 @@ public class JobData implements Serializable, Cloneable {
      * 
      * @return The output of the job.
      */
+
     public java.util.List<Artifact> getOutputArtifacts() {
         return outputArtifacts;
     }
@@ -218,6 +232,7 @@ public class JobData implements Serializable, Cloneable {
      * @param outputArtifacts
      *        The output of the job.
      */
+
     public void setOutputArtifacts(
             java.util.Collection<Artifact> outputArtifacts) {
         if (outputArtifacts == null) {
@@ -245,6 +260,7 @@ public class JobData implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobData withOutputArtifacts(Artifact... outputArtifacts) {
         if (this.outputArtifacts == null) {
             setOutputArtifacts(new java.util.ArrayList<Artifact>(
@@ -266,6 +282,7 @@ public class JobData implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobData withOutputArtifacts(
             java.util.Collection<Artifact> outputArtifacts) {
         setOutputArtifacts(outputArtifacts);
@@ -275,6 +292,7 @@ public class JobData implements Serializable, Cloneable {
     /**
      * @param artifactCredentials
      */
+
     public void setArtifactCredentials(AWSSessionCredentials artifactCredentials) {
         this.artifactCredentials = artifactCredentials;
     }
@@ -282,6 +300,7 @@ public class JobData implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public AWSSessionCredentials getArtifactCredentials() {
         return this.artifactCredentials;
     }
@@ -291,6 +310,7 @@ public class JobData implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobData withArtifactCredentials(
             AWSSessionCredentials artifactCredentials) {
         setArtifactCredentials(artifactCredentials);
@@ -307,6 +327,7 @@ public class JobData implements Serializable, Cloneable {
      *        A system-generated token, such as a AWS CodeDeploy deployment ID,
      *        that a job requires in order to continue the job asynchronously.
      */
+
     public void setContinuationToken(String continuationToken) {
         this.continuationToken = continuationToken;
     }
@@ -320,6 +341,7 @@ public class JobData implements Serializable, Cloneable {
      * @return A system-generated token, such as a AWS CodeDeploy deployment ID,
      *         that a job requires in order to continue the job asynchronously.
      */
+
     public String getContinuationToken() {
         return this.continuationToken;
     }
@@ -336,6 +358,7 @@ public class JobData implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobData withContinuationToken(String continuationToken) {
         setContinuationToken(continuationToken);
         return this;
@@ -344,6 +367,7 @@ public class JobData implements Serializable, Cloneable {
     /**
      * @param encryptionKey
      */
+
     public void setEncryptionKey(EncryptionKey encryptionKey) {
         this.encryptionKey = encryptionKey;
     }
@@ -351,6 +375,7 @@ public class JobData implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public EncryptionKey getEncryptionKey() {
         return this.encryptionKey;
     }
@@ -360,6 +385,7 @@ public class JobData implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobData withEncryptionKey(EncryptionKey encryptionKey) {
         setEncryptionKey(encryptionKey);
         return this;

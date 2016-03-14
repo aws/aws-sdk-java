@@ -28,6 +28,7 @@ public class TestMetricFilterResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public java.util.List<MetricFilterMatchRecord> getMatches() {
         if (matches == null) {
             matches = new com.amazonaws.internal.SdkInternalList<MetricFilterMatchRecord>();
@@ -38,6 +39,7 @@ public class TestMetricFilterResult implements Serializable, Cloneable {
     /**
      * @param matches
      */
+
     public void setMatches(java.util.Collection<MetricFilterMatchRecord> matches) {
         if (matches == null) {
             this.matches = null;
@@ -60,6 +62,7 @@ public class TestMetricFilterResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TestMetricFilterResult withMatches(
             MetricFilterMatchRecord... matches) {
         if (this.matches == null) {
@@ -77,6 +80,7 @@ public class TestMetricFilterResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TestMetricFilterResult withMatches(
             java.util.Collection<MetricFilterMatchRecord> matches) {
         setMatches(matches);

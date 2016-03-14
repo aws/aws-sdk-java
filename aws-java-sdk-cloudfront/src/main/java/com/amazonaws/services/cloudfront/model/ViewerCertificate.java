@@ -80,11 +80,13 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * Note: this field is deprecated. Please use one of [ACMCertificateArn,
      * IAMCertificateId, CloudFrontDefaultCertificate].
      */
+    @Deprecated
     private String certificate;
     /**
      * Note: this field is deprecated. Please use one of [ACMCertificateArn,
      * IAMCertificateId, CloudFrontDefaultCertificate].
      */
+    @Deprecated
     private String certificateSource;
 
     /**
@@ -102,6 +104,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *        this value if you are setting an ACMCertificateArn or
      *        IAMCertificateId.
      */
+
     public void setCloudFrontDefaultCertificate(
             Boolean cloudFrontDefaultCertificate) {
         this.cloudFrontDefaultCertificate = cloudFrontDefaultCertificate;
@@ -121,6 +124,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *         Omit this value if you are setting an ACMCertificateArn or
      *         IAMCertificateId.
      */
+
     public Boolean getCloudFrontDefaultCertificate() {
         return this.cloudFrontDefaultCertificate;
     }
@@ -142,6 +146,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ViewerCertificate withCloudFrontDefaultCertificate(
             Boolean cloudFrontDefaultCertificate) {
         setCloudFrontDefaultCertificate(cloudFrontDefaultCertificate);
@@ -162,6 +167,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *         Omit this value if you are setting an ACMCertificateArn or
      *         IAMCertificateId.
      */
+
     public Boolean isCloudFrontDefaultCertificate() {
         return this.cloudFrontDefaultCertificate;
     }
@@ -181,6 +187,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *        distribution. Specify either this value, ACMCertificateArn, or
      *        CloudFrontDefaultCertificate.
      */
+
     public void setIAMCertificateId(String iAMCertificateId) {
         this.iAMCertificateId = iAMCertificateId;
     }
@@ -199,6 +206,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *         distribution. Specify either this value, ACMCertificateArn, or
      *         CloudFrontDefaultCertificate.
      */
+
     public String getIAMCertificateId() {
         return this.iAMCertificateId;
     }
@@ -220,6 +228,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ViewerCertificate withIAMCertificateId(String iAMCertificateId) {
         setIAMCertificateId(iAMCertificateId);
         return this;
@@ -240,6 +249,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *        distribution. Specify either this value, IAMCertificateId, or
      *        CloudFrontDefaultCertificate.
      */
+
     public void setACMCertificateArn(String aCMCertificateArn) {
         this.aCMCertificateArn = aCMCertificateArn;
     }
@@ -258,6 +268,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *         distribution. Specify either this value, IAMCertificateId, or
      *         CloudFrontDefaultCertificate.
      */
+
     public String getACMCertificateArn() {
         return this.aCMCertificateArn;
     }
@@ -279,6 +290,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ViewerCertificate withACMCertificateArn(String aCMCertificateArn) {
         setACMCertificateArn(aCMCertificateArn);
         return this;
@@ -310,6 +322,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *        true for CloudFrontDefaultCertificate.
      * @see SSLSupportMethod
      */
+
     public void setSSLSupportMethod(String sSLSupportMethod) {
         this.sSLSupportMethod = sSLSupportMethod;
     }
@@ -339,6 +352,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *         you specified true for CloudFrontDefaultCertificate.
      * @see SSLSupportMethod
      */
+
     public String getSSLSupportMethod() {
         return this.sSLSupportMethod;
     }
@@ -371,6 +385,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *         chained together.
      * @see SSLSupportMethod
      */
+
     public ViewerCertificate withSSLSupportMethod(String sSLSupportMethod) {
         setSSLSupportMethod(sSLSupportMethod);
         return this;
@@ -404,6 +419,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *         chained together.
      * @see SSLSupportMethod
      */
+
     public void setSSLSupportMethod(SSLSupportMethod sSLSupportMethod) {
         this.sSLSupportMethod = sSLSupportMethod.toString();
     }
@@ -436,6 +452,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *         chained together.
      * @see SSLSupportMethod
      */
+
     public ViewerCertificate withSSLSupportMethod(
             SSLSupportMethod sSLSupportMethod) {
         setSSLSupportMethod(sSLSupportMethod);
@@ -473,6 +490,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *        MinimumProtocolVersion.
      * @see MinimumProtocolVersion
      */
+
     public void setMinimumProtocolVersion(String minimumProtocolVersion) {
         this.minimumProtocolVersion = minimumProtocolVersion;
     }
@@ -507,6 +525,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *         MinimumProtocolVersion.
      * @see MinimumProtocolVersion
      */
+
     public String getMinimumProtocolVersion() {
         return this.minimumProtocolVersion;
     }
@@ -544,6 +563,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *         chained together.
      * @see MinimumProtocolVersion
      */
+
     public ViewerCertificate withMinimumProtocolVersion(
             String minimumProtocolVersion) {
         setMinimumProtocolVersion(minimumProtocolVersion);
@@ -583,6 +603,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *         chained together.
      * @see MinimumProtocolVersion
      */
+
     public void setMinimumProtocolVersion(
             MinimumProtocolVersion minimumProtocolVersion) {
         this.minimumProtocolVersion = minimumProtocolVersion.toString();
@@ -621,6 +642,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *         chained together.
      * @see MinimumProtocolVersion
      */
+
     public ViewerCertificate withMinimumProtocolVersion(
             MinimumProtocolVersion minimumProtocolVersion) {
         setMinimumProtocolVersion(minimumProtocolVersion);
@@ -636,6 +658,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *        [ACMCertificateArn, IAMCertificateId,
      *        CloudFrontDefaultCertificate].
      */
+    @Deprecated
     public void setCertificate(String certificate) {
         this.certificate = certificate;
     }
@@ -648,6 +671,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *         [ACMCertificateArn, IAMCertificateId,
      *         CloudFrontDefaultCertificate].
      */
+    @Deprecated
     public String getCertificate() {
         return this.certificate;
     }
@@ -663,6 +687,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+    @Deprecated
     public ViewerCertificate withCertificate(String certificate) {
         setCertificate(certificate);
         return this;
@@ -678,6 +703,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *        CloudFrontDefaultCertificate].
      * @see CertificateSource
      */
+    @Deprecated
     public void setCertificateSource(String certificateSource) {
         this.certificateSource = certificateSource;
     }
@@ -691,6 +717,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *         CloudFrontDefaultCertificate].
      * @see CertificateSource
      */
+    @Deprecated
     public String getCertificateSource() {
         return this.certificateSource;
     }
@@ -707,6 +734,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *         chained together.
      * @see CertificateSource
      */
+    @Deprecated
     public ViewerCertificate withCertificateSource(String certificateSource) {
         setCertificateSource(certificateSource);
         return this;
@@ -724,6 +752,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *         chained together.
      * @see CertificateSource
      */
+    @Deprecated
     public void setCertificateSource(CertificateSource certificateSource) {
         this.certificateSource = certificateSource.toString();
     }
@@ -740,6 +769,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *         chained together.
      * @see CertificateSource
      */
+    @Deprecated
     public ViewerCertificate withCertificateSource(
             CertificateSource certificateSource) {
         setCertificateSource(certificateSource);

@@ -37,6 +37,7 @@ public class DescribeKeyPairsResult implements Serializable, Cloneable {
      * 
      * @return Information about one or more key pairs.
      */
+
     public java.util.List<KeyPairInfo> getKeyPairs() {
         if (keyPairs == null) {
             keyPairs = new com.amazonaws.internal.SdkInternalList<KeyPairInfo>();
@@ -52,6 +53,7 @@ public class DescribeKeyPairsResult implements Serializable, Cloneable {
      * @param keyPairs
      *        Information about one or more key pairs.
      */
+
     public void setKeyPairs(java.util.Collection<KeyPairInfo> keyPairs) {
         if (keyPairs == null) {
             this.keyPairs = null;
@@ -78,6 +80,7 @@ public class DescribeKeyPairsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeKeyPairsResult withKeyPairs(KeyPairInfo... keyPairs) {
         if (this.keyPairs == null) {
             setKeyPairs(new com.amazonaws.internal.SdkInternalList<KeyPairInfo>(
@@ -99,6 +102,7 @@ public class DescribeKeyPairsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeKeyPairsResult withKeyPairs(
             java.util.Collection<KeyPairInfo> keyPairs) {
         setKeyPairs(keyPairs);

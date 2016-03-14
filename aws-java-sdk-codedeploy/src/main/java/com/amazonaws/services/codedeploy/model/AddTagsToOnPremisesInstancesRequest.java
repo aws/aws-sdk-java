@@ -58,6 +58,7 @@ public class AddTagsToOnPremisesInstancesRequest extends
      *         Keys and values are both required. Keys cannot be nulls or empty
      *         strings. Value-only tags are not allowed.
      */
+
     public java.util.List<Tag> getTags() {
         if (tags == null) {
             tags = new com.amazonaws.internal.SdkInternalList<Tag>();
@@ -80,6 +81,7 @@ public class AddTagsToOnPremisesInstancesRequest extends
      *        Keys and values are both required. Keys cannot be nulls or empty
      *        strings. Value-only tags are not allowed.
      */
+
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
             this.tags = null;
@@ -112,6 +114,7 @@ public class AddTagsToOnPremisesInstancesRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddTagsToOnPremisesInstancesRequest withTags(Tag... tags) {
         if (this.tags == null) {
             setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
@@ -139,6 +142,7 @@ public class AddTagsToOnPremisesInstancesRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddTagsToOnPremisesInstancesRequest withTags(
             java.util.Collection<Tag> tags) {
         setTags(tags);
@@ -152,6 +156,7 @@ public class AddTagsToOnPremisesInstancesRequest extends
      * 
      * @return The names of the on-premises instances to add tags to.
      */
+
     public java.util.List<String> getInstanceNames() {
         if (instanceNames == null) {
             instanceNames = new com.amazonaws.internal.SdkInternalList<String>();
@@ -167,6 +172,7 @@ public class AddTagsToOnPremisesInstancesRequest extends
      * @param instanceNames
      *        The names of the on-premises instances to add tags to.
      */
+
     public void setInstanceNames(java.util.Collection<String> instanceNames) {
         if (instanceNames == null) {
             this.instanceNames = null;
@@ -193,6 +199,7 @@ public class AddTagsToOnPremisesInstancesRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddTagsToOnPremisesInstancesRequest withInstanceNames(
             String... instanceNames) {
         if (this.instanceNames == null) {
@@ -215,6 +222,7 @@ public class AddTagsToOnPremisesInstancesRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddTagsToOnPremisesInstancesRequest withInstanceNames(
             java.util.Collection<String> instanceNames) {
         setInstanceNames(instanceNames);

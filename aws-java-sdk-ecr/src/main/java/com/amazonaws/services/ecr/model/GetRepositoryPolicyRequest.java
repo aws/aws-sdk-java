@@ -52,6 +52,7 @@ public class GetRepositoryPolicyRequest extends AmazonWebServiceRequest
      *        repository. If you do not specify a registry, the default registry
      *        is assumed.
      */
+
     public void setRegistryId(String registryId) {
         this.registryId = registryId;
     }
@@ -67,6 +68,7 @@ public class GetRepositoryPolicyRequest extends AmazonWebServiceRequest
      *         repository. If you do not specify a registry, the default
      *         registry is assumed.
      */
+
     public String getRegistryId() {
         return this.registryId;
     }
@@ -85,6 +87,7 @@ public class GetRepositoryPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetRepositoryPolicyRequest withRegistryId(String registryId) {
         setRegistryId(registryId);
         return this;
@@ -98,6 +101,7 @@ public class GetRepositoryPolicyRequest extends AmazonWebServiceRequest
      * @param repositoryName
      *        The name of the repository whose policy you want to retrieve.
      */
+
     public void setRepositoryName(String repositoryName) {
         this.repositoryName = repositoryName;
     }
@@ -109,6 +113,7 @@ public class GetRepositoryPolicyRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the repository whose policy you want to retrieve.
      */
+
     public String getRepositoryName() {
         return this.repositoryName;
     }
@@ -123,6 +128,7 @@ public class GetRepositoryPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetRepositoryPolicyRequest withRepositoryName(String repositoryName) {
         setRepositoryName(repositoryName);
         return this;

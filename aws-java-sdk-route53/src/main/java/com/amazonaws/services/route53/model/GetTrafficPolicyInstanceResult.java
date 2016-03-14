@@ -42,6 +42,7 @@ public class GetTrafficPolicyInstanceResult implements Serializable, Cloneable {
      *        A complex type that contains settings for the traffic policy
      *        instance.
      */
+
     public void setTrafficPolicyInstance(
             TrafficPolicyInstance trafficPolicyInstance) {
         this.trafficPolicyInstance = trafficPolicyInstance;
@@ -55,6 +56,7 @@ public class GetTrafficPolicyInstanceResult implements Serializable, Cloneable {
      * @return A complex type that contains settings for the traffic policy
      *         instance.
      */
+
     public TrafficPolicyInstance getTrafficPolicyInstance() {
         return this.trafficPolicyInstance;
     }
@@ -70,6 +72,7 @@ public class GetTrafficPolicyInstanceResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetTrafficPolicyInstanceResult withTrafficPolicyInstance(
             TrafficPolicyInstance trafficPolicyInstance) {
         setTrafficPolicyInstance(trafficPolicyInstance);

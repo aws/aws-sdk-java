@@ -38,6 +38,7 @@ public class CreateDhcpOptionsResult implements Serializable, Cloneable {
      * @param dhcpOptions
      *        A set of DHCP options.
      */
+
     public void setDhcpOptions(DhcpOptions dhcpOptions) {
         this.dhcpOptions = dhcpOptions;
     }
@@ -49,6 +50,7 @@ public class CreateDhcpOptionsResult implements Serializable, Cloneable {
      * 
      * @return A set of DHCP options.
      */
+
     public DhcpOptions getDhcpOptions() {
         return this.dhcpOptions;
     }
@@ -63,6 +65,7 @@ public class CreateDhcpOptionsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDhcpOptionsResult withDhcpOptions(DhcpOptions dhcpOptions) {
         setDhcpOptions(dhcpOptions);
         return this;

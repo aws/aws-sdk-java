@@ -84,6 +84,7 @@ public class CreateStageRequest extends AmazonWebServiceRequest implements
      *        The identifier of the <a>RestApi</a> resource for the <a>Stage</a>
      *        resource to create.
      */
+
     public void setRestApiId(String restApiId) {
         this.restApiId = restApiId;
     }
@@ -97,6 +98,7 @@ public class CreateStageRequest extends AmazonWebServiceRequest implements
      * @return The identifier of the <a>RestApi</a> resource for the
      *         <a>Stage</a> resource to create.
      */
+
     public String getRestApiId() {
         return this.restApiId;
     }
@@ -113,6 +115,7 @@ public class CreateStageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateStageRequest withRestApiId(String restApiId) {
         setRestApiId(restApiId);
         return this;
@@ -126,6 +129,7 @@ public class CreateStageRequest extends AmazonWebServiceRequest implements
      * @param stageName
      *        The name for the <a>Stage</a> resource.
      */
+
     public void setStageName(String stageName) {
         this.stageName = stageName;
     }
@@ -137,6 +141,7 @@ public class CreateStageRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name for the <a>Stage</a> resource.
      */
+
     public String getStageName() {
         return this.stageName;
     }
@@ -151,6 +156,7 @@ public class CreateStageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateStageRequest withStageName(String stageName) {
         setStageName(stageName);
         return this;
@@ -166,6 +172,7 @@ public class CreateStageRequest extends AmazonWebServiceRequest implements
      *        The identifier of the <a>Deployment</a> resource for the
      *        <a>Stage</a> resource.
      */
+
     public void setDeploymentId(String deploymentId) {
         this.deploymentId = deploymentId;
     }
@@ -179,6 +186,7 @@ public class CreateStageRequest extends AmazonWebServiceRequest implements
      * @return The identifier of the <a>Deployment</a> resource for the
      *         <a>Stage</a> resource.
      */
+
     public String getDeploymentId() {
         return this.deploymentId;
     }
@@ -195,6 +203,7 @@ public class CreateStageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateStageRequest withDeploymentId(String deploymentId) {
         setDeploymentId(deploymentId);
         return this;
@@ -208,6 +217,7 @@ public class CreateStageRequest extends AmazonWebServiceRequest implements
      * @param description
      *        The description of the <a>Stage</a> resource.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -219,6 +229,7 @@ public class CreateStageRequest extends AmazonWebServiceRequest implements
      * 
      * @return The description of the <a>Stage</a> resource.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -233,6 +244,7 @@ public class CreateStageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateStageRequest withDescription(String description) {
         setDescription(description);
         return this;
@@ -246,6 +258,7 @@ public class CreateStageRequest extends AmazonWebServiceRequest implements
      * @param cacheClusterEnabled
      *        Whether cache clustering is enabled for the stage.
      */
+
     public void setCacheClusterEnabled(Boolean cacheClusterEnabled) {
         this.cacheClusterEnabled = cacheClusterEnabled;
     }
@@ -257,6 +270,7 @@ public class CreateStageRequest extends AmazonWebServiceRequest implements
      * 
      * @return Whether cache clustering is enabled for the stage.
      */
+
     public Boolean getCacheClusterEnabled() {
         return this.cacheClusterEnabled;
     }
@@ -271,6 +285,7 @@ public class CreateStageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateStageRequest withCacheClusterEnabled(
             Boolean cacheClusterEnabled) {
         setCacheClusterEnabled(cacheClusterEnabled);
@@ -284,6 +299,7 @@ public class CreateStageRequest extends AmazonWebServiceRequest implements
      * 
      * @return Whether cache clustering is enabled for the stage.
      */
+
     public Boolean isCacheClusterEnabled() {
         return this.cacheClusterEnabled;
     }
@@ -296,6 +312,7 @@ public class CreateStageRequest extends AmazonWebServiceRequest implements
      * @param cacheClusterSize
      *        The stage's cache cluster size.
      */
+
     public void setCacheClusterSize(String cacheClusterSize) {
         this.cacheClusterSize = cacheClusterSize;
     }
@@ -307,6 +324,7 @@ public class CreateStageRequest extends AmazonWebServiceRequest implements
      * 
      * @return The stage's cache cluster size.
      */
+
     public String getCacheClusterSize() {
         return this.cacheClusterSize;
     }
@@ -321,6 +339,7 @@ public class CreateStageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateStageRequest withCacheClusterSize(String cacheClusterSize) {
         setCacheClusterSize(cacheClusterSize);
         return this;
@@ -337,6 +356,7 @@ public class CreateStageRequest extends AmazonWebServiceRequest implements
      *         resource. Variable names can have alphanumeric characters, and
      *         the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
      */
+
     public java.util.Map<String, String> getVariables() {
         return variables;
     }
@@ -353,6 +373,7 @@ public class CreateStageRequest extends AmazonWebServiceRequest implements
      *        resource. Variable names can have alphanumeric characters, and the
      *        values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
      */
+
     public void setVariables(java.util.Map<String, String> variables) {
         this.variables = variables;
     }
@@ -371,6 +392,7 @@ public class CreateStageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateStageRequest withVariables(
             java.util.Map<String, String> variables) {
         setVariables(variables);
@@ -392,6 +414,7 @@ public class CreateStageRequest extends AmazonWebServiceRequest implements
      * Removes all the entries added into Variables. &lt;p> Returns a reference
      * to this object so that method calls can be chained together.
      */
+
     public CreateStageRequest clearVariablesEntries() {
         this.variables = null;
         return this;

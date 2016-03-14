@@ -60,6 +60,7 @@ public class ListWebACLsResult implements Serializable, Cloneable {
      *        <code>NextMarker</code> value from the response in the
      *        <code>NextMarker</code> value in the next request.
      */
+
     public void setNextMarker(String nextMarker) {
         this.nextMarker = nextMarker;
     }
@@ -82,6 +83,7 @@ public class ListWebACLsResult implements Serializable, Cloneable {
      *         <code>NextMarker</code> value from the response in the
      *         <code>NextMarker</code> value in the next request.
      */
+
     public String getNextMarker() {
         return this.nextMarker;
     }
@@ -107,6 +109,7 @@ public class ListWebACLsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListWebACLsResult withNextMarker(String nextMarker) {
         setNextMarker(nextMarker);
         return this;
@@ -119,6 +122,7 @@ public class ListWebACLsResult implements Serializable, Cloneable {
      * 
      * @return An array of <a>WebACLSummary</a> objects.
      */
+
     public java.util.List<WebACLSummary> getWebACLs() {
         return webACLs;
     }
@@ -131,6 +135,7 @@ public class ListWebACLsResult implements Serializable, Cloneable {
      * @param webACLs
      *        An array of <a>WebACLSummary</a> objects.
      */
+
     public void setWebACLs(java.util.Collection<WebACLSummary> webACLs) {
         if (webACLs == null) {
             this.webACLs = null;
@@ -156,6 +161,7 @@ public class ListWebACLsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListWebACLsResult withWebACLs(WebACLSummary... webACLs) {
         if (this.webACLs == null) {
             setWebACLs(new java.util.ArrayList<WebACLSummary>(webACLs.length));
@@ -176,6 +182,7 @@ public class ListWebACLsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListWebACLsResult withWebACLs(
             java.util.Collection<WebACLSummary> webACLs) {
         setWebACLs(webACLs);

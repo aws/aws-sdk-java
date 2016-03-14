@@ -68,6 +68,7 @@ public class Configuration implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/ElasticMapReduce/latest/API/EmrConfigurations.html"
      *        >Amazon EMR Configurations</a>.
      */
+
     public void setClassification(String classification) {
         this.classification = classification;
     }
@@ -84,6 +85,7 @@ public class Configuration implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/ElasticMapReduce/latest/API/EmrConfigurations.html"
      *         >Amazon EMR Configurations</a>.
      */
+
     public String getClassification() {
         return this.classification;
     }
@@ -103,6 +105,7 @@ public class Configuration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Configuration withClassification(String classification) {
         setClassification(classification);
         return this;
@@ -115,6 +118,7 @@ public class Configuration implements Serializable, Cloneable {
      * 
      * @return A list of configurations you apply to this configuration object.
      */
+
     public java.util.List<Configuration> getConfigurations() {
         if (configurations == null) {
             configurations = new com.amazonaws.internal.SdkInternalList<Configuration>();
@@ -130,6 +134,7 @@ public class Configuration implements Serializable, Cloneable {
      * @param configurations
      *        A list of configurations you apply to this configuration object.
      */
+
     public void setConfigurations(
             java.util.Collection<Configuration> configurations) {
         if (configurations == null) {
@@ -157,6 +162,7 @@ public class Configuration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Configuration withConfigurations(Configuration... configurations) {
         if (this.configurations == null) {
             setConfigurations(new com.amazonaws.internal.SdkInternalList<Configuration>(
@@ -178,6 +184,7 @@ public class Configuration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Configuration withConfigurations(
             java.util.Collection<Configuration> configurations) {
         setConfigurations(configurations);
@@ -191,6 +198,7 @@ public class Configuration implements Serializable, Cloneable {
      * 
      * @return A set of properties supplied to the Configuration object.
      */
+
     public java.util.Map<String, String> getProperties() {
         if (properties == null) {
             properties = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -206,6 +214,7 @@ public class Configuration implements Serializable, Cloneable {
      * @param properties
      *        A set of properties supplied to the Configuration object.
      */
+
     public void setProperties(java.util.Map<String, String> properties) {
         this.properties = properties == null ? null
                 : new com.amazonaws.internal.SdkInternalMap<String, String>(
@@ -222,6 +231,7 @@ public class Configuration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Configuration withProperties(java.util.Map<String, String> properties) {
         setProperties(properties);
         return this;
@@ -242,6 +252,7 @@ public class Configuration implements Serializable, Cloneable {
      * Removes all the entries added into Properties. &lt;p> Returns a reference
      * to this object so that method calls can be chained together.
      */
+
     public Configuration clearPropertiesEntries() {
         this.properties = null;
         return this;

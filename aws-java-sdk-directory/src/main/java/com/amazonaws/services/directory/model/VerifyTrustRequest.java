@@ -35,6 +35,7 @@ public class VerifyTrustRequest extends AmazonWebServiceRequest implements
      * @param trustId
      *        The unique Trust ID of the trust relationship to verify.
      */
+
     public void setTrustId(String trustId) {
         this.trustId = trustId;
     }
@@ -44,6 +45,7 @@ public class VerifyTrustRequest extends AmazonWebServiceRequest implements
      * 
      * @return The unique Trust ID of the trust relationship to verify.
      */
+
     public String getTrustId() {
         return this.trustId;
     }
@@ -56,6 +58,7 @@ public class VerifyTrustRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VerifyTrustRequest withTrustId(String trustId) {
         setTrustId(trustId);
         return this;

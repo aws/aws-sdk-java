@@ -40,6 +40,7 @@ public class RegisterInstanceResult implements Serializable, Cloneable {
      * @param instanceId
      *        The registered instance's AWS OpsWorks ID.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -51,6 +52,7 @@ public class RegisterInstanceResult implements Serializable, Cloneable {
      * 
      * @return The registered instance's AWS OpsWorks ID.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
@@ -65,6 +67,7 @@ public class RegisterInstanceResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterInstanceResult withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;

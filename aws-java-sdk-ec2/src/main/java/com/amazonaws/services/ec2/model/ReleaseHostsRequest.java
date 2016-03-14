@@ -41,6 +41,7 @@ public class ReleaseHostsRequest extends AmazonWebServiceRequest implements
      * 
      * @return The IDs of the Dedicated hosts you want to release.
      */
+
     public java.util.List<String> getHostIds() {
         if (hostIds == null) {
             hostIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -56,6 +57,7 @@ public class ReleaseHostsRequest extends AmazonWebServiceRequest implements
      * @param hostIds
      *        The IDs of the Dedicated hosts you want to release.
      */
+
     public void setHostIds(java.util.Collection<String> hostIds) {
         if (hostIds == null) {
             this.hostIds = null;
@@ -82,6 +84,7 @@ public class ReleaseHostsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReleaseHostsRequest withHostIds(String... hostIds) {
         if (this.hostIds == null) {
             setHostIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -103,6 +106,7 @@ public class ReleaseHostsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReleaseHostsRequest withHostIds(java.util.Collection<String> hostIds) {
         setHostIds(hostIds);
         return this;

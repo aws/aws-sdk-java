@@ -57,6 +57,7 @@ public class ListAssociationsRequest extends AmazonWebServiceRequest implements
      * @return One or more filters. Use a filter to return a more specific list
      *         of results.
      */
+
     public java.util.List<AssociationFilter> getAssociationFilterList() {
         if (associationFilterList == null) {
             associationFilterList = new com.amazonaws.internal.SdkInternalList<AssociationFilter>();
@@ -74,6 +75,7 @@ public class ListAssociationsRequest extends AmazonWebServiceRequest implements
      *        One or more filters. Use a filter to return a more specific list
      *        of results.
      */
+
     public void setAssociationFilterList(
             java.util.Collection<AssociationFilter> associationFilterList) {
         if (associationFilterList == null) {
@@ -103,6 +105,7 @@ public class ListAssociationsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListAssociationsRequest withAssociationFilterList(
             AssociationFilter... associationFilterList) {
         if (this.associationFilterList == null) {
@@ -127,6 +130,7 @@ public class ListAssociationsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListAssociationsRequest withAssociationFilterList(
             java.util.Collection<AssociationFilter> associationFilterList) {
         setAssociationFilterList(associationFilterList);
@@ -145,6 +149,7 @@ public class ListAssociationsRequest extends AmazonWebServiceRequest implements
      *        returns a token that you can specify in a subsequent call to get
      *        the next set of results.
      */
+
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
     }
@@ -160,6 +165,7 @@ public class ListAssociationsRequest extends AmazonWebServiceRequest implements
      *         also returns a token that you can specify in a subsequent call to
      *         get the next set of results.
      */
+
     public Integer getMaxResults() {
         return this.maxResults;
     }
@@ -178,6 +184,7 @@ public class ListAssociationsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListAssociationsRequest withMaxResults(Integer maxResults) {
         setMaxResults(maxResults);
         return this;
@@ -193,6 +200,7 @@ public class ListAssociationsRequest extends AmazonWebServiceRequest implements
      *        The token for the next set of items to return. (You received this
      *        token from a previous call.)
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -206,6 +214,7 @@ public class ListAssociationsRequest extends AmazonWebServiceRequest implements
      * @return The token for the next set of items to return. (You received this
      *         token from a previous call.)
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -222,6 +231,7 @@ public class ListAssociationsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListAssociationsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

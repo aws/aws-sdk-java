@@ -58,6 +58,7 @@ public class CreateSnapshotRequest extends AmazonWebServiceRequest implements
      *        The Amazon Resource Name (ARN) of the volume. Use the
      *        <a>ListVolumes</a> operation to return a list of gateway volumes.
      */
+
     public void setVolumeARN(String volumeARN) {
         this.volumeARN = volumeARN;
     }
@@ -71,6 +72,7 @@ public class CreateSnapshotRequest extends AmazonWebServiceRequest implements
      * @return The Amazon Resource Name (ARN) of the volume. Use the
      *         <a>ListVolumes</a> operation to return a list of gateway volumes.
      */
+
     public String getVolumeARN() {
         return this.volumeARN;
     }
@@ -87,6 +89,7 @@ public class CreateSnapshotRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateSnapshotRequest withVolumeARN(String volumeARN) {
         setVolumeARN(volumeARN);
         return this;
@@ -106,6 +109,7 @@ public class CreateSnapshotRequest extends AmazonWebServiceRequest implements
      *        <b>Description</b> field, and in the AWS Storage Gateway snapshot
      *        <b>Details</b> pane, <b>Description</b> field
      */
+
     public void setSnapshotDescription(String snapshotDescription) {
         this.snapshotDescription = snapshotDescription;
     }
@@ -123,6 +127,7 @@ public class CreateSnapshotRequest extends AmazonWebServiceRequest implements
      *         <b>Description</b> field, and in the AWS Storage Gateway snapshot
      *         <b>Details</b> pane, <b>Description</b> field
      */
+
     public String getSnapshotDescription() {
         return this.snapshotDescription;
     }
@@ -143,6 +148,7 @@ public class CreateSnapshotRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateSnapshotRequest withSnapshotDescription(
             String snapshotDescription) {
         setSnapshotDescription(snapshotDescription);

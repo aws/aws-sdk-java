@@ -43,6 +43,7 @@ public class DeleteNetworkInterfaceRequest extends AmazonWebServiceRequest
      * @param networkInterfaceId
      *        The ID of the network interface.
      */
+
     public void setNetworkInterfaceId(String networkInterfaceId) {
         this.networkInterfaceId = networkInterfaceId;
     }
@@ -54,6 +55,7 @@ public class DeleteNetworkInterfaceRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the network interface.
      */
+
     public String getNetworkInterfaceId() {
         return this.networkInterfaceId;
     }
@@ -68,6 +70,7 @@ public class DeleteNetworkInterfaceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteNetworkInterfaceRequest withNetworkInterfaceId(
             String networkInterfaceId) {
         setNetworkInterfaceId(networkInterfaceId);

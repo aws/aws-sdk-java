@@ -65,6 +65,12 @@ public class PendingModifiedValues implements Serializable, Cloneable {
     private String clusterIdentifier;
 
     /**
+     * The pending or in-progress change of the ability to connect to the
+     * cluster from the public network.
+     */
+    private Boolean publiclyAccessible;
+
+    /**
      * The pending or in-progress change of the master user password for the
      * cluster.
      *
@@ -320,6 +326,56 @@ public class PendingModifiedValues implements Serializable, Cloneable {
     }
 
     /**
+     * The pending or in-progress change of the ability to connect to the
+     * cluster from the public network.
+     *
+     * @return The pending or in-progress change of the ability to connect to the
+     *         cluster from the public network.
+     */
+    public Boolean isPubliclyAccessible() {
+        return publiclyAccessible;
+    }
+    
+    /**
+     * The pending or in-progress change of the ability to connect to the
+     * cluster from the public network.
+     *
+     * @param publiclyAccessible The pending or in-progress change of the ability to connect to the
+     *         cluster from the public network.
+     */
+    public void setPubliclyAccessible(Boolean publiclyAccessible) {
+        this.publiclyAccessible = publiclyAccessible;
+    }
+    
+    /**
+     * The pending or in-progress change of the ability to connect to the
+     * cluster from the public network.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param publiclyAccessible The pending or in-progress change of the ability to connect to the
+     *         cluster from the public network.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public PendingModifiedValues withPubliclyAccessible(Boolean publiclyAccessible) {
+        this.publiclyAccessible = publiclyAccessible;
+        return this;
+    }
+
+    /**
+     * The pending or in-progress change of the ability to connect to the
+     * cluster from the public network.
+     *
+     * @return The pending or in-progress change of the ability to connect to the
+     *         cluster from the public network.
+     */
+    public Boolean getPubliclyAccessible() {
+        return publiclyAccessible;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -337,7 +393,8 @@ public class PendingModifiedValues implements Serializable, Cloneable {
         if (getClusterType() != null) sb.append("ClusterType: " + getClusterType() + ",");
         if (getClusterVersion() != null) sb.append("ClusterVersion: " + getClusterVersion() + ",");
         if (getAutomatedSnapshotRetentionPeriod() != null) sb.append("AutomatedSnapshotRetentionPeriod: " + getAutomatedSnapshotRetentionPeriod() + ",");
-        if (getClusterIdentifier() != null) sb.append("ClusterIdentifier: " + getClusterIdentifier() );
+        if (getClusterIdentifier() != null) sb.append("ClusterIdentifier: " + getClusterIdentifier() + ",");
+        if (isPubliclyAccessible() != null) sb.append("PubliclyAccessible: " + isPubliclyAccessible() );
         sb.append("}");
         return sb.toString();
     }
@@ -354,6 +411,7 @@ public class PendingModifiedValues implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getClusterVersion() == null) ? 0 : getClusterVersion().hashCode()); 
         hashCode = prime * hashCode + ((getAutomatedSnapshotRetentionPeriod() == null) ? 0 : getAutomatedSnapshotRetentionPeriod().hashCode()); 
         hashCode = prime * hashCode + ((getClusterIdentifier() == null) ? 0 : getClusterIdentifier().hashCode()); 
+        hashCode = prime * hashCode + ((isPubliclyAccessible() == null) ? 0 : isPubliclyAccessible().hashCode()); 
         return hashCode;
     }
     
@@ -379,6 +437,8 @@ public class PendingModifiedValues implements Serializable, Cloneable {
         if (other.getAutomatedSnapshotRetentionPeriod() != null && other.getAutomatedSnapshotRetentionPeriod().equals(this.getAutomatedSnapshotRetentionPeriod()) == false) return false; 
         if (other.getClusterIdentifier() == null ^ this.getClusterIdentifier() == null) return false;
         if (other.getClusterIdentifier() != null && other.getClusterIdentifier().equals(this.getClusterIdentifier()) == false) return false; 
+        if (other.isPubliclyAccessible() == null ^ this.isPubliclyAccessible() == null) return false;
+        if (other.isPubliclyAccessible() != null && other.isPubliclyAccessible().equals(this.isPubliclyAccessible()) == false) return false; 
         return true;
     }
     

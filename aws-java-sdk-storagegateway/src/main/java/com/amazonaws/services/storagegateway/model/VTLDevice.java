@@ -55,6 +55,7 @@ public class VTLDevice implements Serializable, Cloneable {
      *        Specifies the unique Amazon Resource Name (ARN) of the device
      *        (tape drive or media changer).
      */
+
     public void setVTLDeviceARN(String vTLDeviceARN) {
         this.vTLDeviceARN = vTLDeviceARN;
     }
@@ -68,6 +69,7 @@ public class VTLDevice implements Serializable, Cloneable {
      * @return Specifies the unique Amazon Resource Name (ARN) of the device
      *         (tape drive or media changer).
      */
+
     public String getVTLDeviceARN() {
         return this.vTLDeviceARN;
     }
@@ -84,6 +86,7 @@ public class VTLDevice implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VTLDevice withVTLDeviceARN(String vTLDeviceARN) {
         setVTLDeviceARN(vTLDeviceARN);
         return this;
@@ -92,6 +95,7 @@ public class VTLDevice implements Serializable, Cloneable {
     /**
      * @param vTLDeviceType
      */
+
     public void setVTLDeviceType(String vTLDeviceType) {
         this.vTLDeviceType = vTLDeviceType;
     }
@@ -99,6 +103,7 @@ public class VTLDevice implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getVTLDeviceType() {
         return this.vTLDeviceType;
     }
@@ -108,6 +113,7 @@ public class VTLDevice implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VTLDevice withVTLDeviceType(String vTLDeviceType) {
         setVTLDeviceType(vTLDeviceType);
         return this;
@@ -116,6 +122,7 @@ public class VTLDevice implements Serializable, Cloneable {
     /**
      * @param vTLDeviceVendor
      */
+
     public void setVTLDeviceVendor(String vTLDeviceVendor) {
         this.vTLDeviceVendor = vTLDeviceVendor;
     }
@@ -123,6 +130,7 @@ public class VTLDevice implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getVTLDeviceVendor() {
         return this.vTLDeviceVendor;
     }
@@ -132,6 +140,7 @@ public class VTLDevice implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VTLDevice withVTLDeviceVendor(String vTLDeviceVendor) {
         setVTLDeviceVendor(vTLDeviceVendor);
         return this;
@@ -140,6 +149,7 @@ public class VTLDevice implements Serializable, Cloneable {
     /**
      * @param vTLDeviceProductIdentifier
      */
+
     public void setVTLDeviceProductIdentifier(String vTLDeviceProductIdentifier) {
         this.vTLDeviceProductIdentifier = vTLDeviceProductIdentifier;
     }
@@ -147,6 +157,7 @@ public class VTLDevice implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getVTLDeviceProductIdentifier() {
         return this.vTLDeviceProductIdentifier;
     }
@@ -156,6 +167,7 @@ public class VTLDevice implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VTLDevice withVTLDeviceProductIdentifier(
             String vTLDeviceProductIdentifier) {
         setVTLDeviceProductIdentifier(vTLDeviceProductIdentifier);
@@ -170,6 +182,7 @@ public class VTLDevice implements Serializable, Cloneable {
      * @param deviceiSCSIAttributes
      *        A list of iSCSI information about a VTL device.
      */
+
     public void setDeviceiSCSIAttributes(
             DeviceiSCSIAttributes deviceiSCSIAttributes) {
         this.deviceiSCSIAttributes = deviceiSCSIAttributes;
@@ -182,6 +195,7 @@ public class VTLDevice implements Serializable, Cloneable {
      * 
      * @return A list of iSCSI information about a VTL device.
      */
+
     public DeviceiSCSIAttributes getDeviceiSCSIAttributes() {
         return this.deviceiSCSIAttributes;
     }
@@ -196,6 +210,7 @@ public class VTLDevice implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VTLDevice withDeviceiSCSIAttributes(
             DeviceiSCSIAttributes deviceiSCSIAttributes) {
         setDeviceiSCSIAttributes(deviceiSCSIAttributes);

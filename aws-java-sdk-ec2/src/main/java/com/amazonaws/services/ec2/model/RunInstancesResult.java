@@ -39,6 +39,7 @@ public class RunInstancesResult implements Serializable, Cloneable {
      * @param reservation
      *        Describes a reservation.
      */
+
     public void setReservation(Reservation reservation) {
         this.reservation = reservation;
     }
@@ -50,6 +51,7 @@ public class RunInstancesResult implements Serializable, Cloneable {
      * 
      * @return Describes a reservation.
      */
+
     public Reservation getReservation() {
         return this.reservation;
     }
@@ -64,6 +66,7 @@ public class RunInstancesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunInstancesResult withReservation(Reservation reservation) {
         setReservation(reservation);
         return this;

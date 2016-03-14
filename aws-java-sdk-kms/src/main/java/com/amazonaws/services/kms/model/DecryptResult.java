@@ -48,6 +48,7 @@ public class DecryptResult implements Serializable, Cloneable {
      *        ARN of the key used to perform the decryption. This value is
      *        returned if no errors are encountered during the operation.
      */
+
     public void setKeyId(String keyId) {
         this.keyId = keyId;
     }
@@ -61,6 +62,7 @@ public class DecryptResult implements Serializable, Cloneable {
      * @return ARN of the key used to perform the decryption. This value is
      *         returned if no errors are encountered during the operation.
      */
+
     public String getKeyId() {
         return this.keyId;
     }
@@ -77,6 +79,7 @@ public class DecryptResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DecryptResult withKeyId(String keyId) {
         setKeyId(keyId);
         return this;
@@ -98,6 +101,7 @@ public class DecryptResult implements Serializable, Cloneable {
      *        customer master key is not available or if you didn't have
      *        permission to use it.
      */
+
     public void setPlaintext(java.nio.ByteBuffer plaintext) {
         this.plaintext = plaintext;
     }
@@ -122,6 +126,7 @@ public class DecryptResult implements Serializable, Cloneable {
      *         customer master key is not available or if you didn't have
      *         permission to use it.
      */
+
     public java.nio.ByteBuffer getPlaintext() {
         return this.plaintext;
     }
@@ -139,6 +144,7 @@ public class DecryptResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DecryptResult withPlaintext(java.nio.ByteBuffer plaintext) {
         setPlaintext(plaintext);
         return this;

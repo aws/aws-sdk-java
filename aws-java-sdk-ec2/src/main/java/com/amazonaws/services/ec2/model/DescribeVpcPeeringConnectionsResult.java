@@ -38,6 +38,7 @@ public class DescribeVpcPeeringConnectionsResult implements Serializable,
      * 
      * @return Information about the VPC peering connections.
      */
+
     public java.util.List<VpcPeeringConnection> getVpcPeeringConnections() {
         if (vpcPeeringConnections == null) {
             vpcPeeringConnections = new com.amazonaws.internal.SdkInternalList<VpcPeeringConnection>();
@@ -53,6 +54,7 @@ public class DescribeVpcPeeringConnectionsResult implements Serializable,
      * @param vpcPeeringConnections
      *        Information about the VPC peering connections.
      */
+
     public void setVpcPeeringConnections(
             java.util.Collection<VpcPeeringConnection> vpcPeeringConnections) {
         if (vpcPeeringConnections == null) {
@@ -80,6 +82,7 @@ public class DescribeVpcPeeringConnectionsResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVpcPeeringConnectionsResult withVpcPeeringConnections(
             VpcPeeringConnection... vpcPeeringConnections) {
         if (this.vpcPeeringConnections == null) {
@@ -102,6 +105,7 @@ public class DescribeVpcPeeringConnectionsResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVpcPeeringConnectionsResult withVpcPeeringConnections(
             java.util.Collection<VpcPeeringConnection> vpcPeeringConnections) {
         setVpcPeeringConnections(vpcPeeringConnections);

@@ -146,6 +146,7 @@ public class Captions implements Serializable, Cloneable {
      *        <p>
      *        <code>MergePolicy</code> cannot be null.
      */
+
     public void setMergePolicy(String mergePolicy) {
         this.mergePolicy = mergePolicy;
     }
@@ -218,6 +219,7 @@ public class Captions implements Serializable, Cloneable {
      *         <p>
      *         <code>MergePolicy</code> cannot be null.
      */
+
     public String getMergePolicy() {
         return this.mergePolicy;
     }
@@ -293,6 +295,7 @@ public class Captions implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Captions withMergePolicy(String mergePolicy) {
         setMergePolicy(mergePolicy);
         return this;
@@ -309,6 +312,7 @@ public class Captions implements Serializable, Cloneable {
      *         transcoding process. To omit all sidecar captions, leave
      *         <code>CaptionSources</code> blank.
      */
+
     public java.util.List<CaptionSource> getCaptionSources() {
         if (captionSources == null) {
             captionSources = new com.amazonaws.internal.SdkInternalList<CaptionSource>();
@@ -328,6 +332,7 @@ public class Captions implements Serializable, Cloneable {
      *        transcoding process. To omit all sidecar captions, leave
      *        <code>CaptionSources</code> blank.
      */
+
     public void setCaptionSources(
             java.util.Collection<CaptionSource> captionSources) {
         if (captionSources == null) {
@@ -359,6 +364,7 @@ public class Captions implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Captions withCaptionSources(CaptionSource... captionSources) {
         if (this.captionSources == null) {
             setCaptionSources(new com.amazonaws.internal.SdkInternalList<CaptionSource>(
@@ -384,6 +390,7 @@ public class Captions implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Captions withCaptionSources(
             java.util.Collection<CaptionSource> captionSources) {
         setCaptionSources(captionSources);
@@ -399,6 +406,7 @@ public class Captions implements Serializable, Cloneable {
      * @return The array of file formats for the output captions. If you leave
      *         this value blank, Elastic Transcoder returns an error.
      */
+
     public java.util.List<CaptionFormat> getCaptionFormats() {
         if (captionFormats == null) {
             captionFormats = new com.amazonaws.internal.SdkInternalList<CaptionFormat>();
@@ -416,6 +424,7 @@ public class Captions implements Serializable, Cloneable {
      *        The array of file formats for the output captions. If you leave
      *        this value blank, Elastic Transcoder returns an error.
      */
+
     public void setCaptionFormats(
             java.util.Collection<CaptionFormat> captionFormats) {
         if (captionFormats == null) {
@@ -445,6 +454,7 @@ public class Captions implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Captions withCaptionFormats(CaptionFormat... captionFormats) {
         if (this.captionFormats == null) {
             setCaptionFormats(new com.amazonaws.internal.SdkInternalList<CaptionFormat>(
@@ -468,6 +478,7 @@ public class Captions implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Captions withCaptionFormats(
             java.util.Collection<CaptionFormat> captionFormats) {
         setCaptionFormats(captionFormats);

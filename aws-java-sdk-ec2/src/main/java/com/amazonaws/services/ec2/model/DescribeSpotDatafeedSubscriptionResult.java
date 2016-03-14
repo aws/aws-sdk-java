@@ -41,6 +41,7 @@ public class DescribeSpotDatafeedSubscriptionResult implements Serializable,
      * @param spotDatafeedSubscription
      *        The Spot instance data feed subscription.
      */
+
     public void setSpotDatafeedSubscription(
             SpotDatafeedSubscription spotDatafeedSubscription) {
         this.spotDatafeedSubscription = spotDatafeedSubscription;
@@ -53,6 +54,7 @@ public class DescribeSpotDatafeedSubscriptionResult implements Serializable,
      * 
      * @return The Spot instance data feed subscription.
      */
+
     public SpotDatafeedSubscription getSpotDatafeedSubscription() {
         return this.spotDatafeedSubscription;
     }
@@ -67,6 +69,7 @@ public class DescribeSpotDatafeedSubscriptionResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSpotDatafeedSubscriptionResult withSpotDatafeedSubscription(
             SpotDatafeedSubscription spotDatafeedSubscription) {
         setSpotDatafeedSubscription(spotDatafeedSubscription);

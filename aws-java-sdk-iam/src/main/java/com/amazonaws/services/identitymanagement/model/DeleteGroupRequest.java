@@ -60,6 +60,7 @@ public class DeleteGroupRequest extends AmazonWebServiceRequest implements
      * @param groupName
      *        The name of the group to delete.
      */
+
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
@@ -71,6 +72,7 @@ public class DeleteGroupRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the group to delete.
      */
+
     public String getGroupName() {
         return this.groupName;
     }
@@ -85,6 +87,7 @@ public class DeleteGroupRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteGroupRequest withGroupName(String groupName) {
         setGroupName(groupName);
         return this;

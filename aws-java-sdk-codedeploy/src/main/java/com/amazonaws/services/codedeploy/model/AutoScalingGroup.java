@@ -46,6 +46,7 @@ public class AutoScalingGroup implements Serializable, Cloneable {
      * @param name
      *        The Auto Scaling group name.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -57,6 +58,7 @@ public class AutoScalingGroup implements Serializable, Cloneable {
      * 
      * @return The Auto Scaling group name.
      */
+
     public String getName() {
         return this.name;
     }
@@ -71,6 +73,7 @@ public class AutoScalingGroup implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AutoScalingGroup withName(String name) {
         setName(name);
         return this;
@@ -84,6 +87,7 @@ public class AutoScalingGroup implements Serializable, Cloneable {
      * @param hook
      *        An Auto Scaling lifecycle event hook name.
      */
+
     public void setHook(String hook) {
         this.hook = hook;
     }
@@ -95,6 +99,7 @@ public class AutoScalingGroup implements Serializable, Cloneable {
      * 
      * @return An Auto Scaling lifecycle event hook name.
      */
+
     public String getHook() {
         return this.hook;
     }
@@ -109,6 +114,7 @@ public class AutoScalingGroup implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AutoScalingGroup withHook(String hook) {
         setHook(hook);
         return this;

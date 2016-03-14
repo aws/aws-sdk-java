@@ -46,6 +46,7 @@ public class PurchaseRequest implements Serializable, Cloneable {
      * @param purchaseToken
      *        The purchase token.
      */
+
     public void setPurchaseToken(String purchaseToken) {
         this.purchaseToken = purchaseToken;
     }
@@ -57,6 +58,7 @@ public class PurchaseRequest implements Serializable, Cloneable {
      * 
      * @return The purchase token.
      */
+
     public String getPurchaseToken() {
         return this.purchaseToken;
     }
@@ -71,6 +73,7 @@ public class PurchaseRequest implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PurchaseRequest withPurchaseToken(String purchaseToken) {
         setPurchaseToken(purchaseToken);
         return this;
@@ -84,6 +87,7 @@ public class PurchaseRequest implements Serializable, Cloneable {
      * @param instanceCount
      *        The number of instances.
      */
+
     public void setInstanceCount(Integer instanceCount) {
         this.instanceCount = instanceCount;
     }
@@ -95,6 +99,7 @@ public class PurchaseRequest implements Serializable, Cloneable {
      * 
      * @return The number of instances.
      */
+
     public Integer getInstanceCount() {
         return this.instanceCount;
     }
@@ -109,6 +114,7 @@ public class PurchaseRequest implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PurchaseRequest withInstanceCount(Integer instanceCount) {
         setInstanceCount(instanceCount);
         return this;

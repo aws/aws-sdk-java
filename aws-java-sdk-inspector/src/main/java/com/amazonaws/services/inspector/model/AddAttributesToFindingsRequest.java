@@ -46,6 +46,7 @@ public class AddAttributesToFindingsRequest extends AmazonWebServiceRequest
      * @return The ARNs specifying the findings that you want to assign
      *         attributes to.
      */
+
     public java.util.List<String> getFindingArns() {
         return findingArns;
     }
@@ -59,6 +60,7 @@ public class AddAttributesToFindingsRequest extends AmazonWebServiceRequest
      *        The ARNs specifying the findings that you want to assign
      *        attributes to.
      */
+
     public void setFindingArns(java.util.Collection<String> findingArns) {
         if (findingArns == null) {
             this.findingArns = null;
@@ -85,6 +87,7 @@ public class AddAttributesToFindingsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddAttributesToFindingsRequest withFindingArns(String... findingArns) {
         if (this.findingArns == null) {
             setFindingArns(new java.util.ArrayList<String>(findingArns.length));
@@ -106,6 +109,7 @@ public class AddAttributesToFindingsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddAttributesToFindingsRequest withFindingArns(
             java.util.Collection<String> findingArns) {
         setFindingArns(findingArns);
@@ -120,6 +124,7 @@ public class AddAttributesToFindingsRequest extends AmazonWebServiceRequest
      * @return The array of attributes that you want to assign to specified
      *         findings.
      */
+
     public java.util.List<Attribute> getAttributes() {
         return attributes;
     }
@@ -133,6 +138,7 @@ public class AddAttributesToFindingsRequest extends AmazonWebServiceRequest
      *        The array of attributes that you want to assign to specified
      *        findings.
      */
+
     public void setAttributes(java.util.Collection<Attribute> attributes) {
         if (attributes == null) {
             this.attributes = null;
@@ -159,6 +165,7 @@ public class AddAttributesToFindingsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddAttributesToFindingsRequest withAttributes(
             Attribute... attributes) {
         if (this.attributes == null) {
@@ -181,6 +188,7 @@ public class AddAttributesToFindingsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddAttributesToFindingsRequest withAttributes(
             java.util.Collection<Attribute> attributes) {
         setAttributes(attributes);

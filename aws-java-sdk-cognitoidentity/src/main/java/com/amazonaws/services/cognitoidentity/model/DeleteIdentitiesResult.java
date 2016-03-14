@@ -42,6 +42,7 @@ public class DeleteIdentitiesResult implements Serializable, Cloneable {
      * @return An array of UnprocessedIdentityId objects, each of which contains
      *         an ErrorCode and IdentityId.
      */
+
     public java.util.List<UnprocessedIdentityId> getUnprocessedIdentityIds() {
         return unprocessedIdentityIds;
     }
@@ -56,6 +57,7 @@ public class DeleteIdentitiesResult implements Serializable, Cloneable {
      *        An array of UnprocessedIdentityId objects, each of which contains
      *        an ErrorCode and IdentityId.
      */
+
     public void setUnprocessedIdentityIds(
             java.util.Collection<UnprocessedIdentityId> unprocessedIdentityIds) {
         if (unprocessedIdentityIds == null) {
@@ -85,6 +87,7 @@ public class DeleteIdentitiesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteIdentitiesResult withUnprocessedIdentityIds(
             UnprocessedIdentityId... unprocessedIdentityIds) {
         if (this.unprocessedIdentityIds == null) {
@@ -109,6 +112,7 @@ public class DeleteIdentitiesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteIdentitiesResult withUnprocessedIdentityIds(
             java.util.Collection<UnprocessedIdentityId> unprocessedIdentityIds) {
         setUnprocessedIdentityIds(unprocessedIdentityIds);

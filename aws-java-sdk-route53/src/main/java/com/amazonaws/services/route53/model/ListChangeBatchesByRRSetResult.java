@@ -23,6 +23,7 @@ import java.io.Serializable;
  * The input for a ListChangeBatchesByRRSet request.
  * </p>
  */
+@Deprecated
 public class ListChangeBatchesByRRSetResult implements Serializable, Cloneable {
 
     /**
@@ -64,6 +65,7 @@ public class ListChangeBatchesByRRSetResult implements Serializable, Cloneable {
      * @param maxItems
      *        The maximum number of items on a page.
      */
+
     public void setMaxItems(String maxItems) {
         this.maxItems = maxItems;
     }
@@ -75,6 +77,7 @@ public class ListChangeBatchesByRRSetResult implements Serializable, Cloneable {
      * 
      * @return The maximum number of items on a page.
      */
+
     public String getMaxItems() {
         return this.maxItems;
     }
@@ -89,6 +92,7 @@ public class ListChangeBatchesByRRSetResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListChangeBatchesByRRSetResult withMaxItems(String maxItems) {
         setMaxItems(maxItems);
         return this;
@@ -102,6 +106,7 @@ public class ListChangeBatchesByRRSetResult implements Serializable, Cloneable {
      * @param marker
      *        The page marker.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -113,6 +118,7 @@ public class ListChangeBatchesByRRSetResult implements Serializable, Cloneable {
      * 
      * @return The page marker.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -127,6 +133,7 @@ public class ListChangeBatchesByRRSetResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListChangeBatchesByRRSetResult withMarker(String marker) {
         setMarker(marker);
         return this;
@@ -140,6 +147,7 @@ public class ListChangeBatchesByRRSetResult implements Serializable, Cloneable {
      * @param isTruncated
      *        A flag that indicates if there are more change batches to list.
      */
+
     public void setIsTruncated(Boolean isTruncated) {
         this.isTruncated = isTruncated;
     }
@@ -151,6 +159,7 @@ public class ListChangeBatchesByRRSetResult implements Serializable, Cloneable {
      * 
      * @return A flag that indicates if there are more change batches to list.
      */
+
     public Boolean getIsTruncated() {
         return this.isTruncated;
     }
@@ -165,6 +174,7 @@ public class ListChangeBatchesByRRSetResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListChangeBatchesByRRSetResult withIsTruncated(Boolean isTruncated) {
         setIsTruncated(isTruncated);
         return this;
@@ -177,6 +187,7 @@ public class ListChangeBatchesByRRSetResult implements Serializable, Cloneable {
      * 
      * @return A flag that indicates if there are more change batches to list.
      */
+
     public Boolean isTruncated() {
         return this.isTruncated;
     }
@@ -188,6 +199,7 @@ public class ListChangeBatchesByRRSetResult implements Serializable, Cloneable {
      * 
      * @return The change batches within the given hosted zone and time period.
      */
+
     public java.util.List<ChangeBatchRecord> getChangeBatchRecords() {
         if (changeBatchRecords == null) {
             changeBatchRecords = new com.amazonaws.internal.SdkInternalList<ChangeBatchRecord>();
@@ -203,6 +215,7 @@ public class ListChangeBatchesByRRSetResult implements Serializable, Cloneable {
      * @param changeBatchRecords
      *        The change batches within the given hosted zone and time period.
      */
+
     public void setChangeBatchRecords(
             java.util.Collection<ChangeBatchRecord> changeBatchRecords) {
         if (changeBatchRecords == null) {
@@ -230,6 +243,7 @@ public class ListChangeBatchesByRRSetResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListChangeBatchesByRRSetResult withChangeBatchRecords(
             ChangeBatchRecord... changeBatchRecords) {
         if (this.changeBatchRecords == null) {
@@ -252,6 +266,7 @@ public class ListChangeBatchesByRRSetResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListChangeBatchesByRRSetResult withChangeBatchRecords(
             java.util.Collection<ChangeBatchRecord> changeBatchRecords) {
         setChangeBatchRecords(changeBatchRecords);
@@ -266,6 +281,7 @@ public class ListChangeBatchesByRRSetResult implements Serializable, Cloneable {
      * @param nextMarker
      *        The next page marker.
      */
+
     public void setNextMarker(String nextMarker) {
         this.nextMarker = nextMarker;
     }
@@ -277,6 +293,7 @@ public class ListChangeBatchesByRRSetResult implements Serializable, Cloneable {
      * 
      * @return The next page marker.
      */
+
     public String getNextMarker() {
         return this.nextMarker;
     }
@@ -291,6 +308,7 @@ public class ListChangeBatchesByRRSetResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListChangeBatchesByRRSetResult withNextMarker(String nextMarker) {
         setNextMarker(nextMarker);
         return this;

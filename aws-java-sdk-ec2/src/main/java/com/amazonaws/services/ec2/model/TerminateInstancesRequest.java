@@ -62,6 +62,7 @@ public class TerminateInstancesRequest extends AmazonWebServiceRequest
      * 
      * @return One or more instance IDs.
      */
+
     public java.util.List<String> getInstanceIds() {
         if (instanceIds == null) {
             instanceIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -77,6 +78,7 @@ public class TerminateInstancesRequest extends AmazonWebServiceRequest
      * @param instanceIds
      *        One or more instance IDs.
      */
+
     public void setInstanceIds(java.util.Collection<String> instanceIds) {
         if (instanceIds == null) {
             this.instanceIds = null;
@@ -103,6 +105,7 @@ public class TerminateInstancesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TerminateInstancesRequest withInstanceIds(String... instanceIds) {
         if (this.instanceIds == null) {
             setInstanceIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -124,6 +127,7 @@ public class TerminateInstancesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TerminateInstancesRequest withInstanceIds(
             java.util.Collection<String> instanceIds) {
         setInstanceIds(instanceIds);

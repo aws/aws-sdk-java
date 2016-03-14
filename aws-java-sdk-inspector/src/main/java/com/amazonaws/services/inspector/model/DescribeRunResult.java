@@ -38,6 +38,7 @@ public class DescribeRunResult implements Serializable, Cloneable {
      * @param run
      *        Information about the assessment run.
      */
+
     public void setRun(Run run) {
         this.run = run;
     }
@@ -49,6 +50,7 @@ public class DescribeRunResult implements Serializable, Cloneable {
      * 
      * @return Information about the assessment run.
      */
+
     public Run getRun() {
         return this.run;
     }
@@ -63,6 +65,7 @@ public class DescribeRunResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeRunResult withRun(Run run) {
         setRun(run);
         return this;

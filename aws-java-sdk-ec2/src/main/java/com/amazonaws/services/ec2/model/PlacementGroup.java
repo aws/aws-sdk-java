@@ -72,6 +72,7 @@ public class PlacementGroup implements Serializable, Cloneable {
      * @param groupName
      *        The name of the placement group.
      */
+
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
@@ -83,6 +84,7 @@ public class PlacementGroup implements Serializable, Cloneable {
      * 
      * @return The name of the placement group.
      */
+
     public String getGroupName() {
         return this.groupName;
     }
@@ -97,6 +99,7 @@ public class PlacementGroup implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PlacementGroup withGroupName(String groupName) {
         setGroupName(groupName);
         return this;
@@ -111,6 +114,7 @@ public class PlacementGroup implements Serializable, Cloneable {
      *        The placement strategy.
      * @see PlacementStrategy
      */
+
     public void setStrategy(String strategy) {
         this.strategy = strategy;
     }
@@ -123,6 +127,7 @@ public class PlacementGroup implements Serializable, Cloneable {
      * @return The placement strategy.
      * @see PlacementStrategy
      */
+
     public String getStrategy() {
         return this.strategy;
     }
@@ -138,6 +143,7 @@ public class PlacementGroup implements Serializable, Cloneable {
      *         chained together.
      * @see PlacementStrategy
      */
+
     public PlacementGroup withStrategy(String strategy) {
         setStrategy(strategy);
         return this;
@@ -154,6 +160,7 @@ public class PlacementGroup implements Serializable, Cloneable {
      *         chained together.
      * @see PlacementStrategy
      */
+
     public void setStrategy(PlacementStrategy strategy) {
         this.strategy = strategy.toString();
     }
@@ -169,6 +176,7 @@ public class PlacementGroup implements Serializable, Cloneable {
      *         chained together.
      * @see PlacementStrategy
      */
+
     public PlacementGroup withStrategy(PlacementStrategy strategy) {
         setStrategy(strategy);
         return this;
@@ -183,6 +191,7 @@ public class PlacementGroup implements Serializable, Cloneable {
      *        The state of the placement group.
      * @see PlacementGroupState
      */
+
     public void setState(String state) {
         this.state = state;
     }
@@ -195,6 +204,7 @@ public class PlacementGroup implements Serializable, Cloneable {
      * @return The state of the placement group.
      * @see PlacementGroupState
      */
+
     public String getState() {
         return this.state;
     }
@@ -210,6 +220,7 @@ public class PlacementGroup implements Serializable, Cloneable {
      *         chained together.
      * @see PlacementGroupState
      */
+
     public PlacementGroup withState(String state) {
         setState(state);
         return this;
@@ -226,6 +237,7 @@ public class PlacementGroup implements Serializable, Cloneable {
      *         chained together.
      * @see PlacementGroupState
      */
+
     public void setState(PlacementGroupState state) {
         this.state = state.toString();
     }
@@ -241,6 +253,7 @@ public class PlacementGroup implements Serializable, Cloneable {
      *         chained together.
      * @see PlacementGroupState
      */
+
     public PlacementGroup withState(PlacementGroupState state) {
         setState(state);
         return this;

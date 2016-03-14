@@ -99,6 +99,7 @@ public class VpnConnection implements Serializable, Cloneable {
      * @param vpnConnectionId
      *        The ID of the VPN connection.
      */
+
     public void setVpnConnectionId(String vpnConnectionId) {
         this.vpnConnectionId = vpnConnectionId;
     }
@@ -110,6 +111,7 @@ public class VpnConnection implements Serializable, Cloneable {
      * 
      * @return The ID of the VPN connection.
      */
+
     public String getVpnConnectionId() {
         return this.vpnConnectionId;
     }
@@ -124,6 +126,7 @@ public class VpnConnection implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VpnConnection withVpnConnectionId(String vpnConnectionId) {
         setVpnConnectionId(vpnConnectionId);
         return this;
@@ -138,6 +141,7 @@ public class VpnConnection implements Serializable, Cloneable {
      *        The current state of the VPN connection.
      * @see VpnState
      */
+
     public void setState(String state) {
         this.state = state;
     }
@@ -150,6 +154,7 @@ public class VpnConnection implements Serializable, Cloneable {
      * @return The current state of the VPN connection.
      * @see VpnState
      */
+
     public String getState() {
         return this.state;
     }
@@ -165,6 +170,7 @@ public class VpnConnection implements Serializable, Cloneable {
      *         chained together.
      * @see VpnState
      */
+
     public VpnConnection withState(String state) {
         setState(state);
         return this;
@@ -181,6 +187,7 @@ public class VpnConnection implements Serializable, Cloneable {
      *         chained together.
      * @see VpnState
      */
+
     public void setState(VpnState state) {
         this.state = state.toString();
     }
@@ -196,6 +203,7 @@ public class VpnConnection implements Serializable, Cloneable {
      *         chained together.
      * @see VpnState
      */
+
     public VpnConnection withState(VpnState state) {
         setState(state);
         return this;
@@ -218,6 +226,7 @@ public class VpnConnection implements Serializable, Cloneable {
      *        connection is in the <code>pending</code> or
      *        <code>available</code> state.
      */
+
     public void setCustomerGatewayConfiguration(
             String customerGatewayConfiguration) {
         this.customerGatewayConfiguration = customerGatewayConfiguration;
@@ -239,6 +248,7 @@ public class VpnConnection implements Serializable, Cloneable {
      *         VPN connection is in the <code>pending</code> or
      *         <code>available</code> state.
      */
+
     public String getCustomerGatewayConfiguration() {
         return this.customerGatewayConfiguration;
     }
@@ -262,6 +272,7 @@ public class VpnConnection implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VpnConnection withCustomerGatewayConfiguration(
             String customerGatewayConfiguration) {
         setCustomerGatewayConfiguration(customerGatewayConfiguration);
@@ -277,6 +288,7 @@ public class VpnConnection implements Serializable, Cloneable {
      *        The type of VPN connection.
      * @see GatewayType
      */
+
     public void setType(String type) {
         this.type = type;
     }
@@ -289,6 +301,7 @@ public class VpnConnection implements Serializable, Cloneable {
      * @return The type of VPN connection.
      * @see GatewayType
      */
+
     public String getType() {
         return this.type;
     }
@@ -304,6 +317,7 @@ public class VpnConnection implements Serializable, Cloneable {
      *         chained together.
      * @see GatewayType
      */
+
     public VpnConnection withType(String type) {
         setType(type);
         return this;
@@ -320,6 +334,7 @@ public class VpnConnection implements Serializable, Cloneable {
      *         chained together.
      * @see GatewayType
      */
+
     public void setType(GatewayType type) {
         this.type = type.toString();
     }
@@ -335,6 +350,7 @@ public class VpnConnection implements Serializable, Cloneable {
      *         chained together.
      * @see GatewayType
      */
+
     public VpnConnection withType(GatewayType type) {
         setType(type);
         return this;
@@ -348,6 +364,7 @@ public class VpnConnection implements Serializable, Cloneable {
      * @param customerGatewayId
      *        The ID of the customer gateway at your end of the VPN connection.
      */
+
     public void setCustomerGatewayId(String customerGatewayId) {
         this.customerGatewayId = customerGatewayId;
     }
@@ -359,6 +376,7 @@ public class VpnConnection implements Serializable, Cloneable {
      * 
      * @return The ID of the customer gateway at your end of the VPN connection.
      */
+
     public String getCustomerGatewayId() {
         return this.customerGatewayId;
     }
@@ -373,6 +391,7 @@ public class VpnConnection implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VpnConnection withCustomerGatewayId(String customerGatewayId) {
         setCustomerGatewayId(customerGatewayId);
         return this;
@@ -388,6 +407,7 @@ public class VpnConnection implements Serializable, Cloneable {
      *        The ID of the virtual private gateway at the AWS side of the VPN
      *        connection.
      */
+
     public void setVpnGatewayId(String vpnGatewayId) {
         this.vpnGatewayId = vpnGatewayId;
     }
@@ -401,6 +421,7 @@ public class VpnConnection implements Serializable, Cloneable {
      * @return The ID of the virtual private gateway at the AWS side of the VPN
      *         connection.
      */
+
     public String getVpnGatewayId() {
         return this.vpnGatewayId;
     }
@@ -417,6 +438,7 @@ public class VpnConnection implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VpnConnection withVpnGatewayId(String vpnGatewayId) {
         setVpnGatewayId(vpnGatewayId);
         return this;
@@ -429,6 +451,7 @@ public class VpnConnection implements Serializable, Cloneable {
      * 
      * @return Any tags assigned to the VPN connection.
      */
+
     public java.util.List<Tag> getTags() {
         if (tags == null) {
             tags = new com.amazonaws.internal.SdkInternalList<Tag>();
@@ -444,6 +467,7 @@ public class VpnConnection implements Serializable, Cloneable {
      * @param tags
      *        Any tags assigned to the VPN connection.
      */
+
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
             this.tags = null;
@@ -469,6 +493,7 @@ public class VpnConnection implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VpnConnection withTags(Tag... tags) {
         if (this.tags == null) {
             setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
@@ -489,6 +514,7 @@ public class VpnConnection implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VpnConnection withTags(java.util.Collection<Tag> tags) {
         setTags(tags);
         return this;
@@ -501,6 +527,7 @@ public class VpnConnection implements Serializable, Cloneable {
      * 
      * @return Information about the VPN tunnel.
      */
+
     public java.util.List<VgwTelemetry> getVgwTelemetry() {
         if (vgwTelemetry == null) {
             vgwTelemetry = new com.amazonaws.internal.SdkInternalList<VgwTelemetry>();
@@ -516,6 +543,7 @@ public class VpnConnection implements Serializable, Cloneable {
      * @param vgwTelemetry
      *        Information about the VPN tunnel.
      */
+
     public void setVgwTelemetry(java.util.Collection<VgwTelemetry> vgwTelemetry) {
         if (vgwTelemetry == null) {
             this.vgwTelemetry = null;
@@ -542,6 +570,7 @@ public class VpnConnection implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VpnConnection withVgwTelemetry(VgwTelemetry... vgwTelemetry) {
         if (this.vgwTelemetry == null) {
             setVgwTelemetry(new com.amazonaws.internal.SdkInternalList<VgwTelemetry>(
@@ -563,6 +592,7 @@ public class VpnConnection implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VpnConnection withVgwTelemetry(
             java.util.Collection<VgwTelemetry> vgwTelemetry) {
         setVgwTelemetry(vgwTelemetry);
@@ -577,6 +607,7 @@ public class VpnConnection implements Serializable, Cloneable {
      * @param options
      *        The VPN connection options.
      */
+
     public void setOptions(VpnConnectionOptions options) {
         this.options = options;
     }
@@ -588,6 +619,7 @@ public class VpnConnection implements Serializable, Cloneable {
      * 
      * @return The VPN connection options.
      */
+
     public VpnConnectionOptions getOptions() {
         return this.options;
     }
@@ -602,6 +634,7 @@ public class VpnConnection implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VpnConnection withOptions(VpnConnectionOptions options) {
         setOptions(options);
         return this;
@@ -614,6 +647,7 @@ public class VpnConnection implements Serializable, Cloneable {
      * 
      * @return The static routes associated with the VPN connection.
      */
+
     public java.util.List<VpnStaticRoute> getRoutes() {
         if (routes == null) {
             routes = new com.amazonaws.internal.SdkInternalList<VpnStaticRoute>();
@@ -629,6 +663,7 @@ public class VpnConnection implements Serializable, Cloneable {
      * @param routes
      *        The static routes associated with the VPN connection.
      */
+
     public void setRoutes(java.util.Collection<VpnStaticRoute> routes) {
         if (routes == null) {
             this.routes = null;
@@ -655,6 +690,7 @@ public class VpnConnection implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VpnConnection withRoutes(VpnStaticRoute... routes) {
         if (this.routes == null) {
             setRoutes(new com.amazonaws.internal.SdkInternalList<VpnStaticRoute>(
@@ -676,6 +712,7 @@ public class VpnConnection implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VpnConnection withRoutes(java.util.Collection<VpnStaticRoute> routes) {
         setRoutes(routes);
         return this;

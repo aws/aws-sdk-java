@@ -56,6 +56,7 @@ public class SetIdentityPoolConfigurationRequest extends
      *        us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
      *        Cognito. This is the ID of the pool to modify.
      */
+
     public void setIdentityPoolId(String identityPoolId) {
         this.identityPoolId = identityPoolId;
     }
@@ -71,6 +72,7 @@ public class SetIdentityPoolConfigurationRequest extends
      *         us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
      *         Cognito. This is the ID of the pool to modify.
      */
+
     public String getIdentityPoolId() {
         return this.identityPoolId;
     }
@@ -89,6 +91,7 @@ public class SetIdentityPoolConfigurationRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetIdentityPoolConfigurationRequest withIdentityPoolId(
             String identityPoolId) {
         setIdentityPoolId(identityPoolId);
@@ -103,6 +106,7 @@ public class SetIdentityPoolConfigurationRequest extends
      * @param pushSync
      *        Options to apply to this identity pool for push synchronization.
      */
+
     public void setPushSync(PushSync pushSync) {
         this.pushSync = pushSync;
     }
@@ -114,6 +118,7 @@ public class SetIdentityPoolConfigurationRequest extends
      * 
      * @return Options to apply to this identity pool for push synchronization.
      */
+
     public PushSync getPushSync() {
         return this.pushSync;
     }
@@ -128,6 +133,7 @@ public class SetIdentityPoolConfigurationRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetIdentityPoolConfigurationRequest withPushSync(PushSync pushSync) {
         setPushSync(pushSync);
         return this;
@@ -139,6 +145,7 @@ public class SetIdentityPoolConfigurationRequest extends
      * @param cognitoStreams
      *        Options to apply to this identity pool for Amazon Cognito streams.
      */
+
     public void setCognitoStreams(CognitoStreams cognitoStreams) {
         this.cognitoStreams = cognitoStreams;
     }
@@ -149,6 +156,7 @@ public class SetIdentityPoolConfigurationRequest extends
      * @return Options to apply to this identity pool for Amazon Cognito
      *         streams.
      */
+
     public CognitoStreams getCognitoStreams() {
         return this.cognitoStreams;
     }
@@ -161,6 +169,7 @@ public class SetIdentityPoolConfigurationRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetIdentityPoolConfigurationRequest withCognitoStreams(
             CognitoStreams cognitoStreams) {
         setCognitoStreams(cognitoStreams);

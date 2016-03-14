@@ -70,6 +70,7 @@ public class CreateComputerRequest extends AmazonWebServiceRequest implements
      *        The identifier of the directory in which to create the computer
      *        account.
      */
+
     public void setDirectoryId(String directoryId) {
         this.directoryId = directoryId;
     }
@@ -82,6 +83,7 @@ public class CreateComputerRequest extends AmazonWebServiceRequest implements
      * @return The identifier of the directory in which to create the computer
      *         account.
      */
+
     public String getDirectoryId() {
         return this.directoryId;
     }
@@ -97,6 +99,7 @@ public class CreateComputerRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateComputerRequest withDirectoryId(String directoryId) {
         setDirectoryId(directoryId);
         return this;
@@ -110,6 +113,7 @@ public class CreateComputerRequest extends AmazonWebServiceRequest implements
      * @param computerName
      *        The name of the computer account.
      */
+
     public void setComputerName(String computerName) {
         this.computerName = computerName;
     }
@@ -121,6 +125,7 @@ public class CreateComputerRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the computer account.
      */
+
     public String getComputerName() {
         return this.computerName;
     }
@@ -135,6 +140,7 @@ public class CreateComputerRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateComputerRequest withComputerName(String computerName) {
         setComputerName(computerName);
         return this;
@@ -151,6 +157,7 @@ public class CreateComputerRequest extends AmazonWebServiceRequest implements
      *        directory. You should generate a random, strong password to use
      *        for this parameter.
      */
+
     public void setPassword(String password) {
         this.password = password;
     }
@@ -165,6 +172,7 @@ public class CreateComputerRequest extends AmazonWebServiceRequest implements
      *         directory. You should generate a random, strong password to use
      *         for this parameter.
      */
+
     public String getPassword() {
         return this.password;
     }
@@ -182,6 +190,7 @@ public class CreateComputerRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateComputerRequest withPassword(String password) {
         setPassword(password);
         return this;
@@ -197,6 +206,7 @@ public class CreateComputerRequest extends AmazonWebServiceRequest implements
      *        The fully-qualified distinguished name of the organizational unit
      *        to place the computer account in.
      */
+
     public void setOrganizationalUnitDistinguishedName(
             String organizationalUnitDistinguishedName) {
         this.organizationalUnitDistinguishedName = organizationalUnitDistinguishedName;
@@ -211,6 +221,7 @@ public class CreateComputerRequest extends AmazonWebServiceRequest implements
      * @return The fully-qualified distinguished name of the organizational unit
      *         to place the computer account in.
      */
+
     public String getOrganizationalUnitDistinguishedName() {
         return this.organizationalUnitDistinguishedName;
     }
@@ -227,6 +238,7 @@ public class CreateComputerRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateComputerRequest withOrganizationalUnitDistinguishedName(
             String organizationalUnitDistinguishedName) {
         setOrganizationalUnitDistinguishedName(organizationalUnitDistinguishedName);
@@ -242,6 +254,7 @@ public class CreateComputerRequest extends AmazonWebServiceRequest implements
      * @return An array of <a>Attribute</a> objects that contain any LDAP
      *         attributes to apply to the computer account.
      */
+
     public java.util.List<Attribute> getComputerAttributes() {
         if (computerAttributes == null) {
             computerAttributes = new com.amazonaws.internal.SdkInternalList<Attribute>();
@@ -259,6 +272,7 @@ public class CreateComputerRequest extends AmazonWebServiceRequest implements
      *        An array of <a>Attribute</a> objects that contain any LDAP
      *        attributes to apply to the computer account.
      */
+
     public void setComputerAttributes(
             java.util.Collection<Attribute> computerAttributes) {
         if (computerAttributes == null) {
@@ -288,6 +302,7 @@ public class CreateComputerRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateComputerRequest withComputerAttributes(
             Attribute... computerAttributes) {
         if (this.computerAttributes == null) {
@@ -312,6 +327,7 @@ public class CreateComputerRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateComputerRequest withComputerAttributes(
             java.util.Collection<Attribute> computerAttributes) {
         setComputerAttributes(computerAttributes);

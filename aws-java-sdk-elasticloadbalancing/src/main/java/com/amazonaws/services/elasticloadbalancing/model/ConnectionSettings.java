@@ -46,6 +46,7 @@ public class ConnectionSettings implements Serializable, Cloneable {
      *        (no data has been sent over the connection) before it is closed by
      *        the load balancer.
      */
+
     public void setIdleTimeout(Integer idleTimeout) {
         this.idleTimeout = idleTimeout;
     }
@@ -61,6 +62,7 @@ public class ConnectionSettings implements Serializable, Cloneable {
      *         (no data has been sent over the connection) before it is closed
      *         by the load balancer.
      */
+
     public Integer getIdleTimeout() {
         return this.idleTimeout;
     }
@@ -79,6 +81,7 @@ public class ConnectionSettings implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConnectionSettings withIdleTimeout(Integer idleTimeout) {
         setIdleTimeout(idleTimeout);
         return this;

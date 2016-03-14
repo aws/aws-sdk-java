@@ -70,6 +70,7 @@ public class DeleteLoadBalancerPolicyRequest extends AmazonWebServiceRequest
      * @param loadBalancerName
      *        The name of the load balancer.
      */
+
     public void setLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
     }
@@ -81,6 +82,7 @@ public class DeleteLoadBalancerPolicyRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the load balancer.
      */
+
     public String getLoadBalancerName() {
         return this.loadBalancerName;
     }
@@ -95,6 +97,7 @@ public class DeleteLoadBalancerPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteLoadBalancerPolicyRequest withLoadBalancerName(
             String loadBalancerName) {
         setLoadBalancerName(loadBalancerName);
@@ -109,6 +112,7 @@ public class DeleteLoadBalancerPolicyRequest extends AmazonWebServiceRequest
      * @param policyName
      *        The name of the policy.
      */
+
     public void setPolicyName(String policyName) {
         this.policyName = policyName;
     }
@@ -120,6 +124,7 @@ public class DeleteLoadBalancerPolicyRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the policy.
      */
+
     public String getPolicyName() {
         return this.policyName;
     }
@@ -134,6 +139,7 @@ public class DeleteLoadBalancerPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteLoadBalancerPolicyRequest withPolicyName(String policyName) {
         setPolicyName(policyName);
         return this;

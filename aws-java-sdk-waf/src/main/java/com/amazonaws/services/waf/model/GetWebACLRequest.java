@@ -46,6 +46,7 @@ public class GetWebACLRequest extends AmazonWebServiceRequest implements
      *        get. <code>WebACLId</code> is returned by <a>CreateWebACL</a> and
      *        by <a>ListWebACLs</a>.
      */
+
     public void setWebACLId(String webACLId) {
         this.webACLId = webACLId;
     }
@@ -61,6 +62,7 @@ public class GetWebACLRequest extends AmazonWebServiceRequest implements
      *         get. <code>WebACLId</code> is returned by <a>CreateWebACL</a> and
      *         by <a>ListWebACLs</a>.
      */
+
     public String getWebACLId() {
         return this.webACLId;
     }
@@ -79,6 +81,7 @@ public class GetWebACLRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetWebACLRequest withWebACLId(String webACLId) {
         setWebACLId(webACLId);
         return this;

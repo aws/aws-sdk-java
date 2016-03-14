@@ -48,6 +48,7 @@ public class ListStreamsResult implements Serializable, Cloneable {
      * @return The names of the streams that are associated with the AWS account
      *         making the <code>ListStreams</code> request.
      */
+
     public java.util.List<String> getStreamNames() {
         if (streamNames == null) {
             streamNames = new com.amazonaws.internal.SdkInternalList<String>();
@@ -65,6 +66,7 @@ public class ListStreamsResult implements Serializable, Cloneable {
      *        The names of the streams that are associated with the AWS account
      *        making the <code>ListStreams</code> request.
      */
+
     public void setStreamNames(java.util.Collection<String> streamNames) {
         if (streamNames == null) {
             this.streamNames = null;
@@ -93,6 +95,7 @@ public class ListStreamsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListStreamsResult withStreamNames(String... streamNames) {
         if (this.streamNames == null) {
             setStreamNames(new com.amazonaws.internal.SdkInternalList<String>(
@@ -116,6 +119,7 @@ public class ListStreamsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListStreamsResult withStreamNames(
             java.util.Collection<String> streamNames) {
         setStreamNames(streamNames);
@@ -131,6 +135,7 @@ public class ListStreamsResult implements Serializable, Cloneable {
      *        If set to <code>true</code>, there are more streams available to
      *        list.
      */
+
     public void setHasMoreStreams(Boolean hasMoreStreams) {
         this.hasMoreStreams = hasMoreStreams;
     }
@@ -143,6 +148,7 @@ public class ListStreamsResult implements Serializable, Cloneable {
      * @return If set to <code>true</code>, there are more streams available to
      *         list.
      */
+
     public Boolean getHasMoreStreams() {
         return this.hasMoreStreams;
     }
@@ -158,6 +164,7 @@ public class ListStreamsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListStreamsResult withHasMoreStreams(Boolean hasMoreStreams) {
         setHasMoreStreams(hasMoreStreams);
         return this;
@@ -171,6 +178,7 @@ public class ListStreamsResult implements Serializable, Cloneable {
      * @return If set to <code>true</code>, there are more streams available to
      *         list.
      */
+
     public Boolean isHasMoreStreams() {
         return this.hasMoreStreams;
     }

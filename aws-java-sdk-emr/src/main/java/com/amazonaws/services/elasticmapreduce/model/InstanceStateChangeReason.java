@@ -47,6 +47,7 @@ public class InstanceStateChangeReason implements Serializable, Cloneable {
      *        The programmable code for the state change reason.
      * @see InstanceStateChangeReasonCode
      */
+
     public void setCode(String code) {
         this.code = code;
     }
@@ -59,6 +60,7 @@ public class InstanceStateChangeReason implements Serializable, Cloneable {
      * @return The programmable code for the state change reason.
      * @see InstanceStateChangeReasonCode
      */
+
     public String getCode() {
         return this.code;
     }
@@ -74,6 +76,7 @@ public class InstanceStateChangeReason implements Serializable, Cloneable {
      *         chained together.
      * @see InstanceStateChangeReasonCode
      */
+
     public InstanceStateChangeReason withCode(String code) {
         setCode(code);
         return this;
@@ -90,6 +93,7 @@ public class InstanceStateChangeReason implements Serializable, Cloneable {
      *         chained together.
      * @see InstanceStateChangeReasonCode
      */
+
     public void setCode(InstanceStateChangeReasonCode code) {
         this.code = code.toString();
     }
@@ -105,6 +109,7 @@ public class InstanceStateChangeReason implements Serializable, Cloneable {
      *         chained together.
      * @see InstanceStateChangeReasonCode
      */
+
     public InstanceStateChangeReason withCode(InstanceStateChangeReasonCode code) {
         setCode(code);
         return this;
@@ -118,6 +123,7 @@ public class InstanceStateChangeReason implements Serializable, Cloneable {
      * @param message
      *        The status change reason description.
      */
+
     public void setMessage(String message) {
         this.message = message;
     }
@@ -129,6 +135,7 @@ public class InstanceStateChangeReason implements Serializable, Cloneable {
      * 
      * @return The status change reason description.
      */
+
     public String getMessage() {
         return this.message;
     }
@@ -143,6 +150,7 @@ public class InstanceStateChangeReason implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceStateChangeReason withMessage(String message) {
         setMessage(message);
         return this;

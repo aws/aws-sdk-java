@@ -43,6 +43,7 @@ public class DescribeFleetPortSettingsRequest extends AmazonWebServiceRequest
      *        Unique identifier for the fleet you want to retrieve port settings
      *        for.
      */
+
     public void setFleetId(String fleetId) {
         this.fleetId = fleetId;
     }
@@ -55,6 +56,7 @@ public class DescribeFleetPortSettingsRequest extends AmazonWebServiceRequest
      * @return Unique identifier for the fleet you want to retrieve port
      *         settings for.
      */
+
     public String getFleetId() {
         return this.fleetId;
     }
@@ -70,6 +72,7 @@ public class DescribeFleetPortSettingsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeFleetPortSettingsRequest withFleetId(String fleetId) {
         setFleetId(fleetId);
         return this;

@@ -43,8 +43,6 @@ public class CreateBranchRequest extends AmazonWebServiceRequest implements
      * <p>
      * The ID of the commit to point the new branch to.
      * </p>
-     * <note>If this commit ID is not specified, the new branch will point to
-     * the commit that is pointed to by the repository's default branch.</note>
      */
     private String commitId;
 
@@ -57,6 +55,7 @@ public class CreateBranchRequest extends AmazonWebServiceRequest implements
      *        The name of the repository in which you want to create the new
      *        branch.
      */
+
     public void setRepositoryName(String repositoryName) {
         this.repositoryName = repositoryName;
     }
@@ -69,6 +68,7 @@ public class CreateBranchRequest extends AmazonWebServiceRequest implements
      * @return The name of the repository in which you want to create the new
      *         branch.
      */
+
     public String getRepositoryName() {
         return this.repositoryName;
     }
@@ -84,6 +84,7 @@ public class CreateBranchRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateBranchRequest withRepositoryName(String repositoryName) {
         setRepositoryName(repositoryName);
         return this;
@@ -97,6 +98,7 @@ public class CreateBranchRequest extends AmazonWebServiceRequest implements
      * @param branchName
      *        The name of the new branch to create.
      */
+
     public void setBranchName(String branchName) {
         this.branchName = branchName;
     }
@@ -108,6 +110,7 @@ public class CreateBranchRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the new branch to create.
      */
+
     public String getBranchName() {
         return this.branchName;
     }
@@ -122,6 +125,7 @@ public class CreateBranchRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateBranchRequest withBranchName(String branchName) {
         setBranchName(branchName);
         return this;
@@ -131,14 +135,11 @@ public class CreateBranchRequest extends AmazonWebServiceRequest implements
      * <p>
      * The ID of the commit to point the new branch to.
      * </p>
-     * <note>If this commit ID is not specified, the new branch will point to
-     * the commit that is pointed to by the repository's default branch.</note>
      * 
      * @param commitId
-     *        The ID of the commit to point the new branch to.</p> <note>If this
-     *        commit ID is not specified, the new branch will point to the
-     *        commit that is pointed to by the repository's default branch.
+     *        The ID of the commit to point the new branch to.
      */
+
     public void setCommitId(String commitId) {
         this.commitId = commitId;
     }
@@ -147,13 +148,10 @@ public class CreateBranchRequest extends AmazonWebServiceRequest implements
      * <p>
      * The ID of the commit to point the new branch to.
      * </p>
-     * <note>If this commit ID is not specified, the new branch will point to
-     * the commit that is pointed to by the repository's default branch.</note>
      * 
-     * @return The ID of the commit to point the new branch to.</p> <note>If
-     *         this commit ID is not specified, the new branch will point to the
-     *         commit that is pointed to by the repository's default branch.
+     * @return The ID of the commit to point the new branch to.
      */
+
     public String getCommitId() {
         return this.commitId;
     }
@@ -162,16 +160,13 @@ public class CreateBranchRequest extends AmazonWebServiceRequest implements
      * <p>
      * The ID of the commit to point the new branch to.
      * </p>
-     * <note>If this commit ID is not specified, the new branch will point to
-     * the commit that is pointed to by the repository's default branch.</note>
      * 
      * @param commitId
-     *        The ID of the commit to point the new branch to.</p> <note>If this
-     *        commit ID is not specified, the new branch will point to the
-     *        commit that is pointed to by the repository's default branch.
+     *        The ID of the commit to point the new branch to.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateBranchRequest withCommitId(String commitId) {
         setCommitId(commitId);
         return this;

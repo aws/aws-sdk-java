@@ -75,6 +75,7 @@ public class RunScheduledInstancesRequest extends AmazonWebServiceRequest
      *        "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html"
      *        >Ensuring Idempotency</a>.
      */
+
     public void setClientToken(String clientToken) {
         this.clientToken = clientToken;
     }
@@ -92,6 +93,7 @@ public class RunScheduledInstancesRequest extends AmazonWebServiceRequest
      *         "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html"
      *         >Ensuring Idempotency</a>.
      */
+
     public String getClientToken() {
         return this.clientToken;
     }
@@ -112,6 +114,7 @@ public class RunScheduledInstancesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunScheduledInstancesRequest withClientToken(String clientToken) {
         setClientToken(clientToken);
         return this;
@@ -130,6 +133,7 @@ public class RunScheduledInstancesRequest extends AmazonWebServiceRequest
      *        <p>
      *        Default: 1
      */
+
     public void setInstanceCount(Integer instanceCount) {
         this.instanceCount = instanceCount;
     }
@@ -146,6 +150,7 @@ public class RunScheduledInstancesRequest extends AmazonWebServiceRequest
      *         <p>
      *         Default: 1
      */
+
     public Integer getInstanceCount() {
         return this.instanceCount;
     }
@@ -165,6 +170,7 @@ public class RunScheduledInstancesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunScheduledInstancesRequest withInstanceCount(Integer instanceCount) {
         setInstanceCount(instanceCount);
         return this;
@@ -178,6 +184,7 @@ public class RunScheduledInstancesRequest extends AmazonWebServiceRequest
      * @param scheduledInstanceId
      *        The Scheduled Instance ID.
      */
+
     public void setScheduledInstanceId(String scheduledInstanceId) {
         this.scheduledInstanceId = scheduledInstanceId;
     }
@@ -189,6 +196,7 @@ public class RunScheduledInstancesRequest extends AmazonWebServiceRequest
      * 
      * @return The Scheduled Instance ID.
      */
+
     public String getScheduledInstanceId() {
         return this.scheduledInstanceId;
     }
@@ -203,6 +211,7 @@ public class RunScheduledInstancesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunScheduledInstancesRequest withScheduledInstanceId(
             String scheduledInstanceId) {
         setScheduledInstanceId(scheduledInstanceId);
@@ -217,6 +226,7 @@ public class RunScheduledInstancesRequest extends AmazonWebServiceRequest
      * @param launchSpecification
      *        The launch specification.
      */
+
     public void setLaunchSpecification(
             ScheduledInstancesLaunchSpecification launchSpecification) {
         this.launchSpecification = launchSpecification;
@@ -229,6 +239,7 @@ public class RunScheduledInstancesRequest extends AmazonWebServiceRequest
      * 
      * @return The launch specification.
      */
+
     public ScheduledInstancesLaunchSpecification getLaunchSpecification() {
         return this.launchSpecification;
     }
@@ -243,6 +254,7 @@ public class RunScheduledInstancesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunScheduledInstancesRequest withLaunchSpecification(
             ScheduledInstancesLaunchSpecification launchSpecification) {
         setLaunchSpecification(launchSpecification);

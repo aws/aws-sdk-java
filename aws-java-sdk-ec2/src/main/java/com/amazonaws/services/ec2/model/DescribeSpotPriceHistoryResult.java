@@ -46,6 +46,7 @@ public class DescribeSpotPriceHistoryResult implements Serializable, Cloneable {
      * 
      * @return The historical Spot prices.
      */
+
     public java.util.List<SpotPrice> getSpotPriceHistory() {
         if (spotPriceHistory == null) {
             spotPriceHistory = new com.amazonaws.internal.SdkInternalList<SpotPrice>();
@@ -61,6 +62,7 @@ public class DescribeSpotPriceHistoryResult implements Serializable, Cloneable {
      * @param spotPriceHistory
      *        The historical Spot prices.
      */
+
     public void setSpotPriceHistory(
             java.util.Collection<SpotPrice> spotPriceHistory) {
         if (spotPriceHistory == null) {
@@ -88,6 +90,7 @@ public class DescribeSpotPriceHistoryResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSpotPriceHistoryResult withSpotPriceHistory(
             SpotPrice... spotPriceHistory) {
         if (this.spotPriceHistory == null) {
@@ -110,6 +113,7 @@ public class DescribeSpotPriceHistoryResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSpotPriceHistoryResult withSpotPriceHistory(
             java.util.Collection<SpotPrice> spotPriceHistory) {
         setSpotPriceHistory(spotPriceHistory);
@@ -126,6 +130,7 @@ public class DescribeSpotPriceHistoryResult implements Serializable, Cloneable {
      *        The token required to retrieve the next set of results. This value
      *        is <code>null</code> when there are no more results to return.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -140,6 +145,7 @@ public class DescribeSpotPriceHistoryResult implements Serializable, Cloneable {
      *         value is <code>null</code> when there are no more results to
      *         return.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -156,6 +162,7 @@ public class DescribeSpotPriceHistoryResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSpotPriceHistoryResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

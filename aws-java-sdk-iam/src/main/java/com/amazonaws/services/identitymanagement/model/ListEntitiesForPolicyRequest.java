@@ -75,6 +75,7 @@ public class ListEntitiesForPolicyRequest extends AmazonWebServiceRequest
     /**
      * @param policyArn
      */
+
     public void setPolicyArn(String policyArn) {
         this.policyArn = policyArn;
     }
@@ -82,6 +83,7 @@ public class ListEntitiesForPolicyRequest extends AmazonWebServiceRequest
     /**
      * @return
      */
+
     public String getPolicyArn() {
         return this.policyArn;
     }
@@ -91,6 +93,7 @@ public class ListEntitiesForPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListEntitiesForPolicyRequest withPolicyArn(String policyArn) {
         setPolicyArn(policyArn);
         return this;
@@ -116,6 +119,7 @@ public class ListEntitiesForPolicyRequest extends AmazonWebServiceRequest
      *        attached entities (users, groups, and roles) are returned.
      * @see EntityType
      */
+
     public void setEntityFilter(String entityFilter) {
         this.entityFilter = entityFilter;
     }
@@ -139,6 +143,7 @@ public class ListEntitiesForPolicyRequest extends AmazonWebServiceRequest
      *         attached entities (users, groups, and roles) are returned.
      * @see EntityType
      */
+
     public String getEntityFilter() {
         return this.entityFilter;
     }
@@ -165,6 +170,7 @@ public class ListEntitiesForPolicyRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see EntityType
      */
+
     public ListEntitiesForPolicyRequest withEntityFilter(String entityFilter) {
         setEntityFilter(entityFilter);
         return this;
@@ -192,6 +198,7 @@ public class ListEntitiesForPolicyRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see EntityType
      */
+
     public void setEntityFilter(EntityType entityFilter) {
         this.entityFilter = entityFilter.toString();
     }
@@ -218,6 +225,7 @@ public class ListEntitiesForPolicyRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see EntityType
      */
+
     public ListEntitiesForPolicyRequest withEntityFilter(EntityType entityFilter) {
         setEntityFilter(entityFilter);
         return this;
@@ -234,6 +242,7 @@ public class ListEntitiesForPolicyRequest extends AmazonWebServiceRequest
      *        optional. If it is not included, it defaults to a slash (/),
      *        listing all entities.
      */
+
     public void setPathPrefix(String pathPrefix) {
         this.pathPrefix = pathPrefix;
     }
@@ -248,6 +257,7 @@ public class ListEntitiesForPolicyRequest extends AmazonWebServiceRequest
      *         optional. If it is not included, it defaults to a slash (/),
      *         listing all entities.
      */
+
     public String getPathPrefix() {
         return this.pathPrefix;
     }
@@ -265,6 +275,7 @@ public class ListEntitiesForPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListEntitiesForPolicyRequest withPathPrefix(String pathPrefix) {
         setPathPrefix(pathPrefix);
         return this;
@@ -284,6 +295,7 @@ public class ListEntitiesForPolicyRequest extends AmazonWebServiceRequest
      *        it to the value of the <code>Marker</code> element in the response
      *        that you received to indicate where the next call should start.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -302,6 +314,7 @@ public class ListEntitiesForPolicyRequest extends AmazonWebServiceRequest
      *         response that you received to indicate where the next call should
      *         start.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -322,6 +335,7 @@ public class ListEntitiesForPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListEntitiesForPolicyRequest withMarker(String marker) {
         setMarker(marker);
         return this;
@@ -357,6 +371,7 @@ public class ListEntitiesForPolicyRequest extends AmazonWebServiceRequest
      *        include in the subsequent call that tells the service where to
      *        continue from.
      */
+
     public void setMaxItems(Integer maxItems) {
         this.maxItems = maxItems;
     }
@@ -391,6 +406,7 @@ public class ListEntitiesForPolicyRequest extends AmazonWebServiceRequest
      *         include in the subsequent call that tells the service where to
      *         continue from.
      */
+
     public Integer getMaxItems() {
         return this.maxItems;
     }
@@ -427,6 +443,7 @@ public class ListEntitiesForPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListEntitiesForPolicyRequest withMaxItems(Integer maxItems) {
         setMaxItems(maxItems);
         return this;

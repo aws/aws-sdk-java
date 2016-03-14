@@ -80,6 +80,7 @@ public class SpotPlacement implements Serializable, Cloneable {
      *        [Spot fleet only] To specify multiple Availability Zones, separate
      *        them using commas; for example, "us-west-2a, us-west-2b".
      */
+
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
@@ -99,6 +100,7 @@ public class SpotPlacement implements Serializable, Cloneable {
      *         separate them using commas; for example,
      *         "us-west-2a, us-west-2b".
      */
+
     public String getAvailabilityZone() {
         return this.availabilityZone;
     }
@@ -120,6 +122,7 @@ public class SpotPlacement implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SpotPlacement withAvailabilityZone(String availabilityZone) {
         setAvailabilityZone(availabilityZone);
         return this;
@@ -133,6 +136,7 @@ public class SpotPlacement implements Serializable, Cloneable {
      * @param groupName
      *        The name of the placement group (for cluster instances).
      */
+
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
@@ -144,6 +148,7 @@ public class SpotPlacement implements Serializable, Cloneable {
      * 
      * @return The name of the placement group (for cluster instances).
      */
+
     public String getGroupName() {
         return this.groupName;
     }
@@ -158,6 +163,7 @@ public class SpotPlacement implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SpotPlacement withGroupName(String groupName) {
         setGroupName(groupName);
         return this;

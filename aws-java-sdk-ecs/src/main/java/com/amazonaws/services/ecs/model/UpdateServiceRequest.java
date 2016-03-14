@@ -78,6 +78,7 @@ public class UpdateServiceRequest extends AmazonWebServiceRequest implements
      *        that your service is running on. If you do not specify a cluster,
      *        the default cluster is assumed.
      */
+
     public void setCluster(String cluster) {
         this.cluster = cluster;
     }
@@ -93,6 +94,7 @@ public class UpdateServiceRequest extends AmazonWebServiceRequest implements
      *         that your service is running on. If you do not specify a cluster,
      *         the default cluster is assumed.
      */
+
     public String getCluster() {
         return this.cluster;
     }
@@ -111,6 +113,7 @@ public class UpdateServiceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateServiceRequest withCluster(String cluster) {
         setCluster(cluster);
         return this;
@@ -124,6 +127,7 @@ public class UpdateServiceRequest extends AmazonWebServiceRequest implements
      * @param service
      *        The name of the service to update.
      */
+
     public void setService(String service) {
         this.service = service;
     }
@@ -135,6 +139,7 @@ public class UpdateServiceRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the service to update.
      */
+
     public String getService() {
         return this.service;
     }
@@ -149,6 +154,7 @@ public class UpdateServiceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateServiceRequest withService(String service) {
         setService(service);
         return this;
@@ -164,6 +170,7 @@ public class UpdateServiceRequest extends AmazonWebServiceRequest implements
      *        The number of instantiations of the task to place and keep running
      *        in your service.
      */
+
     public void setDesiredCount(Integer desiredCount) {
         this.desiredCount = desiredCount;
     }
@@ -177,6 +184,7 @@ public class UpdateServiceRequest extends AmazonWebServiceRequest implements
      * @return The number of instantiations of the task to place and keep
      *         running in your service.
      */
+
     public Integer getDesiredCount() {
         return this.desiredCount;
     }
@@ -193,6 +201,7 @@ public class UpdateServiceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateServiceRequest withDesiredCount(Integer desiredCount) {
         setDesiredCount(desiredCount);
         return this;
@@ -219,6 +228,7 @@ public class UpdateServiceRequest extends AmazonWebServiceRequest implements
      *        task with the new version of the task definition and then stops an
      *        old task after the new version is running.
      */
+
     public void setTaskDefinition(String taskDefinition) {
         this.taskDefinition = taskDefinition;
     }
@@ -243,6 +253,7 @@ public class UpdateServiceRequest extends AmazonWebServiceRequest implements
      *         task with the new version of the task definition and then stops
      *         an old task after the new version is running.
      */
+
     public String getTaskDefinition() {
         return this.taskDefinition;
     }
@@ -270,6 +281,7 @@ public class UpdateServiceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateServiceRequest withTaskDefinition(String taskDefinition) {
         setTaskDefinition(taskDefinition);
         return this;
@@ -286,6 +298,7 @@ public class UpdateServiceRequest extends AmazonWebServiceRequest implements
      *        during the deployment and the ordering of stopping and starting
      *        tasks.
      */
+
     public void setDeploymentConfiguration(
             DeploymentConfiguration deploymentConfiguration) {
         this.deploymentConfiguration = deploymentConfiguration;
@@ -301,6 +314,7 @@ public class UpdateServiceRequest extends AmazonWebServiceRequest implements
      *         during the deployment and the ordering of stopping and starting
      *         tasks.
      */
+
     public DeploymentConfiguration getDeploymentConfiguration() {
         return this.deploymentConfiguration;
     }
@@ -318,6 +332,7 @@ public class UpdateServiceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateServiceRequest withDeploymentConfiguration(
             DeploymentConfiguration deploymentConfiguration) {
         setDeploymentConfiguration(deploymentConfiguration);

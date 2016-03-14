@@ -40,6 +40,7 @@ public class CreatePolicyResult implements Serializable, Cloneable {
      * @param policy
      *        Information about the policy.
      */
+
     public void setPolicy(Policy policy) {
         this.policy = policy;
     }
@@ -51,6 +52,7 @@ public class CreatePolicyResult implements Serializable, Cloneable {
      * 
      * @return Information about the policy.
      */
+
     public Policy getPolicy() {
         return this.policy;
     }
@@ -65,6 +67,7 @@ public class CreatePolicyResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePolicyResult withPolicy(Policy policy) {
         setPolicy(policy);
         return this;

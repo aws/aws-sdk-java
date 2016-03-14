@@ -63,6 +63,7 @@ public class AccessKeyMetadata implements Serializable, Cloneable {
      * @param userName
      *        The name of the IAM user that the key is associated with.
      */
+
     public void setUserName(String userName) {
         this.userName = userName;
     }
@@ -74,6 +75,7 @@ public class AccessKeyMetadata implements Serializable, Cloneable {
      * 
      * @return The name of the IAM user that the key is associated with.
      */
+
     public String getUserName() {
         return this.userName;
     }
@@ -88,6 +90,7 @@ public class AccessKeyMetadata implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AccessKeyMetadata withUserName(String userName) {
         setUserName(userName);
         return this;
@@ -101,6 +104,7 @@ public class AccessKeyMetadata implements Serializable, Cloneable {
      * @param accessKeyId
      *        The ID for this access key.
      */
+
     public void setAccessKeyId(String accessKeyId) {
         this.accessKeyId = accessKeyId;
     }
@@ -112,6 +116,7 @@ public class AccessKeyMetadata implements Serializable, Cloneable {
      * 
      * @return The ID for this access key.
      */
+
     public String getAccessKeyId() {
         return this.accessKeyId;
     }
@@ -126,6 +131,7 @@ public class AccessKeyMetadata implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AccessKeyMetadata withAccessKeyId(String accessKeyId) {
         setAccessKeyId(accessKeyId);
         return this;
@@ -142,6 +148,7 @@ public class AccessKeyMetadata implements Serializable, Cloneable {
      *        valid for API calls; <code>Inactive</code> means it is not.
      * @see StatusType
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -156,6 +163,7 @@ public class AccessKeyMetadata implements Serializable, Cloneable {
      *         is valid for API calls; <code>Inactive</code> means it is not.
      * @see StatusType
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -173,6 +181,7 @@ public class AccessKeyMetadata implements Serializable, Cloneable {
      *         chained together.
      * @see StatusType
      */
+
     public AccessKeyMetadata withStatus(String status) {
         setStatus(status);
         return this;
@@ -191,6 +200,7 @@ public class AccessKeyMetadata implements Serializable, Cloneable {
      *         chained together.
      * @see StatusType
      */
+
     public void setStatus(StatusType status) {
         this.status = status.toString();
     }
@@ -208,6 +218,7 @@ public class AccessKeyMetadata implements Serializable, Cloneable {
      *         chained together.
      * @see StatusType
      */
+
     public AccessKeyMetadata withStatus(StatusType status) {
         setStatus(status);
         return this;
@@ -221,6 +232,7 @@ public class AccessKeyMetadata implements Serializable, Cloneable {
      * @param createDate
      *        The date when the access key was created.
      */
+
     public void setCreateDate(java.util.Date createDate) {
         this.createDate = createDate;
     }
@@ -232,6 +244,7 @@ public class AccessKeyMetadata implements Serializable, Cloneable {
      * 
      * @return The date when the access key was created.
      */
+
     public java.util.Date getCreateDate() {
         return this.createDate;
     }
@@ -246,6 +259,7 @@ public class AccessKeyMetadata implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AccessKeyMetadata withCreateDate(java.util.Date createDate) {
         setCreateDate(createDate);
         return this;

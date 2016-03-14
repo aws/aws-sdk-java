@@ -47,6 +47,7 @@ public class GetResourceConfigHistoryResult implements Serializable, Cloneable {
      * @return A list that contains the configuration history of one or more
      *         resources.
      */
+
     public java.util.List<ConfigurationItem> getConfigurationItems() {
         if (configurationItems == null) {
             configurationItems = new com.amazonaws.internal.SdkInternalList<ConfigurationItem>();
@@ -63,6 +64,7 @@ public class GetResourceConfigHistoryResult implements Serializable, Cloneable {
      *        A list that contains the configuration history of one or more
      *        resources.
      */
+
     public void setConfigurationItems(
             java.util.Collection<ConfigurationItem> configurationItems) {
         if (configurationItems == null) {
@@ -91,6 +93,7 @@ public class GetResourceConfigHistoryResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetResourceConfigHistoryResult withConfigurationItems(
             ConfigurationItem... configurationItems) {
         if (this.configurationItems == null) {
@@ -114,6 +117,7 @@ public class GetResourceConfigHistoryResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetResourceConfigHistoryResult withConfigurationItems(
             java.util.Collection<ConfigurationItem> configurationItems) {
         setConfigurationItems(configurationItems);
@@ -130,6 +134,7 @@ public class GetResourceConfigHistoryResult implements Serializable, Cloneable {
      *        The string that you use in a subsequent request to get the next
      *        page of results in a paginated response.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -143,6 +148,7 @@ public class GetResourceConfigHistoryResult implements Serializable, Cloneable {
      * @return The string that you use in a subsequent request to get the next
      *         page of results in a paginated response.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -159,6 +165,7 @@ public class GetResourceConfigHistoryResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetResourceConfigHistoryResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

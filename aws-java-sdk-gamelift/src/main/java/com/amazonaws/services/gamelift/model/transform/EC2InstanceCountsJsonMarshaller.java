@@ -55,12 +55,24 @@ public class EC2InstanceCountsJsonMarshaller {
                 jsonWriter.key("DESIRED").value(eC2InstanceCounts.getDESIRED());
             }
 
+            if (eC2InstanceCounts.getMINIMUM() != null) {
+                jsonWriter.key("MINIMUM").value(eC2InstanceCounts.getMINIMUM());
+            }
+
+            if (eC2InstanceCounts.getMAXIMUM() != null) {
+                jsonWriter.key("MAXIMUM").value(eC2InstanceCounts.getMAXIMUM());
+            }
+
             if (eC2InstanceCounts.getPENDING() != null) {
                 jsonWriter.key("PENDING").value(eC2InstanceCounts.getPENDING());
             }
 
             if (eC2InstanceCounts.getACTIVE() != null) {
                 jsonWriter.key("ACTIVE").value(eC2InstanceCounts.getACTIVE());
+            }
+
+            if (eC2InstanceCounts.getIDLE() != null) {
+                jsonWriter.key("IDLE").value(eC2InstanceCounts.getIDLE());
             }
 
             if (eC2InstanceCounts.getTERMINATING() != null) {

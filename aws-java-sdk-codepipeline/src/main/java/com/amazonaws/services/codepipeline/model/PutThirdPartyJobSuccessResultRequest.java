@@ -64,6 +64,7 @@ public class PutThirdPartyJobSuccessResultRequest extends
      *        The ID of the job that successfully completed. This is the same ID
      *        returned from PollForThirdPartyJobs.
      */
+
     public void setJobId(String jobId) {
         this.jobId = jobId;
     }
@@ -77,6 +78,7 @@ public class PutThirdPartyJobSuccessResultRequest extends
      * @return The ID of the job that successfully completed. This is the same
      *         ID returned from PollForThirdPartyJobs.
      */
+
     public String getJobId() {
         return this.jobId;
     }
@@ -93,6 +95,7 @@ public class PutThirdPartyJobSuccessResultRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutThirdPartyJobSuccessResultRequest withJobId(String jobId) {
         setJobId(jobId);
         return this;
@@ -110,6 +113,7 @@ public class PutThirdPartyJobSuccessResultRequest extends
      *        to verify that the calling entity is allowed access to the job and
      *        its details.
      */
+
     public void setClientToken(String clientToken) {
         this.clientToken = clientToken;
     }
@@ -125,6 +129,7 @@ public class PutThirdPartyJobSuccessResultRequest extends
      *         to verify that the calling entity is allowed access to the job
      *         and its details.
      */
+
     public String getClientToken() {
         return this.clientToken;
     }
@@ -143,6 +148,7 @@ public class PutThirdPartyJobSuccessResultRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutThirdPartyJobSuccessResultRequest withClientToken(
             String clientToken) {
         setClientToken(clientToken);
@@ -152,6 +158,7 @@ public class PutThirdPartyJobSuccessResultRequest extends
     /**
      * @param currentRevision
      */
+
     public void setCurrentRevision(CurrentRevision currentRevision) {
         this.currentRevision = currentRevision;
     }
@@ -159,6 +166,7 @@ public class PutThirdPartyJobSuccessResultRequest extends
     /**
      * @return
      */
+
     public CurrentRevision getCurrentRevision() {
         return this.currentRevision;
     }
@@ -168,6 +176,7 @@ public class PutThirdPartyJobSuccessResultRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutThirdPartyJobSuccessResultRequest withCurrentRevision(
             CurrentRevision currentRevision) {
         setCurrentRevision(currentRevision);
@@ -184,6 +193,7 @@ public class PutThirdPartyJobSuccessResultRequest extends
      *        A system-generated token, such as a AWS CodeDeploy deployment ID,
      *        that a job uses in order to continue the job asynchronously.
      */
+
     public void setContinuationToken(String continuationToken) {
         this.continuationToken = continuationToken;
     }
@@ -197,6 +207,7 @@ public class PutThirdPartyJobSuccessResultRequest extends
      * @return A system-generated token, such as a AWS CodeDeploy deployment ID,
      *         that a job uses in order to continue the job asynchronously.
      */
+
     public String getContinuationToken() {
         return this.continuationToken;
     }
@@ -213,6 +224,7 @@ public class PutThirdPartyJobSuccessResultRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutThirdPartyJobSuccessResultRequest withContinuationToken(
             String continuationToken) {
         setContinuationToken(continuationToken);
@@ -222,6 +234,7 @@ public class PutThirdPartyJobSuccessResultRequest extends
     /**
      * @param executionDetails
      */
+
     public void setExecutionDetails(ExecutionDetails executionDetails) {
         this.executionDetails = executionDetails;
     }
@@ -229,6 +242,7 @@ public class PutThirdPartyJobSuccessResultRequest extends
     /**
      * @return
      */
+
     public ExecutionDetails getExecutionDetails() {
         return this.executionDetails;
     }
@@ -238,6 +252,7 @@ public class PutThirdPartyJobSuccessResultRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutThirdPartyJobSuccessResultRequest withExecutionDetails(
             ExecutionDetails executionDetails) {
         setExecutionDetails(executionDetails);

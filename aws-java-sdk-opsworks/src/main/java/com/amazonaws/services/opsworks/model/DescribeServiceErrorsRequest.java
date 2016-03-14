@@ -62,6 +62,7 @@ public class DescribeServiceErrorsRequest extends AmazonWebServiceRequest
      *        <code>DescribeServiceErrors</code> returns descriptions of the
      *        errors associated with the specified stack.
      */
+
     public void setStackId(String stackId) {
         this.stackId = stackId;
     }
@@ -77,6 +78,7 @@ public class DescribeServiceErrorsRequest extends AmazonWebServiceRequest
      *         <code>DescribeServiceErrors</code> returns descriptions of the
      *         errors associated with the specified stack.
      */
+
     public String getStackId() {
         return this.stackId;
     }
@@ -95,6 +97,7 @@ public class DescribeServiceErrorsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeServiceErrorsRequest withStackId(String stackId) {
         setStackId(stackId);
         return this;
@@ -112,6 +115,7 @@ public class DescribeServiceErrorsRequest extends AmazonWebServiceRequest
      *        <code>DescribeServiceErrors</code> returns descriptions of the
      *        errors associated with the specified instance.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -127,6 +131,7 @@ public class DescribeServiceErrorsRequest extends AmazonWebServiceRequest
      *         <code>DescribeServiceErrors</code> returns descriptions of the
      *         errors associated with the specified instance.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
@@ -145,6 +150,7 @@ public class DescribeServiceErrorsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeServiceErrorsRequest withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;
@@ -162,6 +168,7 @@ public class DescribeServiceErrorsRequest extends AmazonWebServiceRequest
      *         specified errors. Otherwise, it returns a description of every
      *         error.
      */
+
     public java.util.List<String> getServiceErrorIds() {
         if (serviceErrorIds == null) {
             serviceErrorIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -182,6 +189,7 @@ public class DescribeServiceErrorsRequest extends AmazonWebServiceRequest
      *        specified errors. Otherwise, it returns a description of every
      *        error.
      */
+
     public void setServiceErrorIds(java.util.Collection<String> serviceErrorIds) {
         if (serviceErrorIds == null) {
             this.serviceErrorIds = null;
@@ -213,6 +221,7 @@ public class DescribeServiceErrorsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeServiceErrorsRequest withServiceErrorIds(
             String... serviceErrorIds) {
         if (this.serviceErrorIds == null) {
@@ -240,6 +249,7 @@ public class DescribeServiceErrorsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeServiceErrorsRequest withServiceErrorIds(
             java.util.Collection<String> serviceErrorIds) {
         setServiceErrorIds(serviceErrorIds);

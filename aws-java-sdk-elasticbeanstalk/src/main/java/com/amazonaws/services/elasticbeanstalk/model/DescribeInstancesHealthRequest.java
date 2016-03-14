@@ -62,6 +62,7 @@ public class DescribeInstancesHealthRequest extends AmazonWebServiceRequest
      * @param environmentName
      *        Specifies the AWS Elastic Beanstalk environment name.
      */
+
     public void setEnvironmentName(String environmentName) {
         this.environmentName = environmentName;
     }
@@ -73,6 +74,7 @@ public class DescribeInstancesHealthRequest extends AmazonWebServiceRequest
      * 
      * @return Specifies the AWS Elastic Beanstalk environment name.
      */
+
     public String getEnvironmentName() {
         return this.environmentName;
     }
@@ -87,6 +89,7 @@ public class DescribeInstancesHealthRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeInstancesHealthRequest withEnvironmentName(
             String environmentName) {
         setEnvironmentName(environmentName);
@@ -101,6 +104,7 @@ public class DescribeInstancesHealthRequest extends AmazonWebServiceRequest
      * @param environmentId
      *        Specifies the AWS Elastic Beanstalk environment ID.
      */
+
     public void setEnvironmentId(String environmentId) {
         this.environmentId = environmentId;
     }
@@ -112,6 +116,7 @@ public class DescribeInstancesHealthRequest extends AmazonWebServiceRequest
      * 
      * @return Specifies the AWS Elastic Beanstalk environment ID.
      */
+
     public String getEnvironmentId() {
         return this.environmentId;
     }
@@ -126,6 +131,7 @@ public class DescribeInstancesHealthRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeInstancesHealthRequest withEnvironmentId(String environmentId) {
         setEnvironmentId(environmentId);
         return this;
@@ -143,6 +149,7 @@ public class DescribeInstancesHealthRequest extends AmazonWebServiceRequest
      *         a list of instances.
      * @see InstancesHealthAttribute
      */
+
     public java.util.List<String> getAttributeNames() {
         if (attributeNames == null) {
             attributeNames = new com.amazonaws.internal.SdkInternalList<String>();
@@ -163,6 +170,7 @@ public class DescribeInstancesHealthRequest extends AmazonWebServiceRequest
      *        a list of instances.
      * @see InstancesHealthAttribute
      */
+
     public void setAttributeNames(java.util.Collection<String> attributeNames) {
         if (attributeNames == null) {
             this.attributeNames = null;
@@ -194,6 +202,7 @@ public class DescribeInstancesHealthRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see InstancesHealthAttribute
      */
+
     public DescribeInstancesHealthRequest withAttributeNames(
             String... attributeNames) {
         if (this.attributeNames == null) {
@@ -221,6 +230,7 @@ public class DescribeInstancesHealthRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see InstancesHealthAttribute
      */
+
     public DescribeInstancesHealthRequest withAttributeNames(
             java.util.Collection<String> attributeNames) {
         setAttributeNames(attributeNames);
@@ -242,6 +252,7 @@ public class DescribeInstancesHealthRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see InstancesHealthAttribute
      */
+
     public DescribeInstancesHealthRequest withAttributeNames(
             InstancesHealthAttribute... attributeNames) {
         com.amazonaws.internal.SdkInternalList<String> attributeNamesCopy = new com.amazonaws.internal.SdkInternalList<String>(
@@ -265,6 +276,7 @@ public class DescribeInstancesHealthRequest extends AmazonWebServiceRequest
      * @param nextToken
      *        Specifies the next token of the request.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -276,6 +288,7 @@ public class DescribeInstancesHealthRequest extends AmazonWebServiceRequest
      * 
      * @return Specifies the next token of the request.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -290,6 +303,7 @@ public class DescribeInstancesHealthRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeInstancesHealthRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

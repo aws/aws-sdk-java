@@ -78,6 +78,7 @@ public class MessageAttributeValue implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes"
      *        >Message Attribute Data Types</a>.
      */
+
     public void setDataType(String dataType) {
         this.dataType = dataType;
     }
@@ -95,6 +96,7 @@ public class MessageAttributeValue implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes"
      *         >Message Attribute Data Types</a>.
      */
+
     public String getDataType() {
         return this.dataType;
     }
@@ -115,6 +117,7 @@ public class MessageAttributeValue implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MessageAttributeValue withDataType(String dataType) {
         setDataType(dataType);
         return this;
@@ -135,6 +138,7 @@ public class MessageAttributeValue implements Serializable, Cloneable {
      *        >http
      *        ://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      */
+
     public void setStringValue(String stringValue) {
         this.stringValue = stringValue;
     }
@@ -153,6 +157,7 @@ public class MessageAttributeValue implements Serializable, Cloneable {
      *         >http
      *         ://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      */
+
     public String getStringValue() {
         return this.stringValue;
     }
@@ -174,6 +179,7 @@ public class MessageAttributeValue implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MessageAttributeValue withStringValue(String stringValue) {
         setStringValue(stringValue);
         return this;
@@ -194,6 +200,7 @@ public class MessageAttributeValue implements Serializable, Cloneable {
      *        Binary type attributes can store any binary data, for example,
      *        compressed data, encrypted data, or images.
      */
+
     public void setBinaryValue(java.nio.ByteBuffer binaryValue) {
         this.binaryValue = binaryValue;
     }
@@ -217,6 +224,7 @@ public class MessageAttributeValue implements Serializable, Cloneable {
      * @return Binary type attributes can store any binary data, for example,
      *         compressed data, encrypted data, or images.
      */
+
     public java.nio.ByteBuffer getBinaryValue() {
         return this.binaryValue;
     }
@@ -233,6 +241,7 @@ public class MessageAttributeValue implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MessageAttributeValue withBinaryValue(java.nio.ByteBuffer binaryValue) {
         setBinaryValue(binaryValue);
         return this;

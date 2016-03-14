@@ -66,6 +66,7 @@ public class ImportSnapshotRequest extends AmazonWebServiceRequest implements
      * @param description
      *        The description string for the import snapshot task.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -77,6 +78,7 @@ public class ImportSnapshotRequest extends AmazonWebServiceRequest implements
      * 
      * @return The description string for the import snapshot task.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -91,6 +93,7 @@ public class ImportSnapshotRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportSnapshotRequest withDescription(String description) {
         setDescription(description);
         return this;
@@ -104,6 +107,7 @@ public class ImportSnapshotRequest extends AmazonWebServiceRequest implements
      * @param diskContainer
      *        Information about the disk container.
      */
+
     public void setDiskContainer(SnapshotDiskContainer diskContainer) {
         this.diskContainer = diskContainer;
     }
@@ -115,6 +119,7 @@ public class ImportSnapshotRequest extends AmazonWebServiceRequest implements
      * 
      * @return Information about the disk container.
      */
+
     public SnapshotDiskContainer getDiskContainer() {
         return this.diskContainer;
     }
@@ -129,6 +134,7 @@ public class ImportSnapshotRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportSnapshotRequest withDiskContainer(
             SnapshotDiskContainer diskContainer) {
         setDiskContainer(diskContainer);
@@ -143,6 +149,7 @@ public class ImportSnapshotRequest extends AmazonWebServiceRequest implements
      * @param clientData
      *        The client-specific data.
      */
+
     public void setClientData(ClientData clientData) {
         this.clientData = clientData;
     }
@@ -154,6 +161,7 @@ public class ImportSnapshotRequest extends AmazonWebServiceRequest implements
      * 
      * @return The client-specific data.
      */
+
     public ClientData getClientData() {
         return this.clientData;
     }
@@ -168,6 +176,7 @@ public class ImportSnapshotRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportSnapshotRequest withClientData(ClientData clientData) {
         setClientData(clientData);
         return this;
@@ -181,6 +190,7 @@ public class ImportSnapshotRequest extends AmazonWebServiceRequest implements
      * @param clientToken
      *        Token to enable idempotency for VM import requests.
      */
+
     public void setClientToken(String clientToken) {
         this.clientToken = clientToken;
     }
@@ -192,6 +202,7 @@ public class ImportSnapshotRequest extends AmazonWebServiceRequest implements
      * 
      * @return Token to enable idempotency for VM import requests.
      */
+
     public String getClientToken() {
         return this.clientToken;
     }
@@ -206,6 +217,7 @@ public class ImportSnapshotRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportSnapshotRequest withClientToken(String clientToken) {
         setClientToken(clientToken);
         return this;
@@ -220,6 +232,7 @@ public class ImportSnapshotRequest extends AmazonWebServiceRequest implements
      *        The name of the role to use when not using the default role,
      *        'vmimport'.
      */
+
     public void setRoleName(String roleName) {
         this.roleName = roleName;
     }
@@ -232,6 +245,7 @@ public class ImportSnapshotRequest extends AmazonWebServiceRequest implements
      * @return The name of the role to use when not using the default role,
      *         'vmimport'.
      */
+
     public String getRoleName() {
         return this.roleName;
     }
@@ -247,6 +261,7 @@ public class ImportSnapshotRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportSnapshotRequest withRoleName(String roleName) {
         setRoleName(roleName);
         return this;

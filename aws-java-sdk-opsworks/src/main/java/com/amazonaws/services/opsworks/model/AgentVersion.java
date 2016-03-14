@@ -46,6 +46,7 @@ public class AgentVersion implements Serializable, Cloneable {
      * @param version
      *        The agent version.
      */
+
     public void setVersion(String version) {
         this.version = version;
     }
@@ -57,6 +58,7 @@ public class AgentVersion implements Serializable, Cloneable {
      * 
      * @return The agent version.
      */
+
     public String getVersion() {
         return this.version;
     }
@@ -71,6 +73,7 @@ public class AgentVersion implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AgentVersion withVersion(String version) {
         setVersion(version);
         return this;
@@ -84,6 +87,7 @@ public class AgentVersion implements Serializable, Cloneable {
      * @param configurationManager
      *        The configuration manager.
      */
+
     public void setConfigurationManager(
             StackConfigurationManager configurationManager) {
         this.configurationManager = configurationManager;
@@ -96,6 +100,7 @@ public class AgentVersion implements Serializable, Cloneable {
      * 
      * @return The configuration manager.
      */
+
     public StackConfigurationManager getConfigurationManager() {
         return this.configurationManager;
     }
@@ -110,6 +115,7 @@ public class AgentVersion implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AgentVersion withConfigurationManager(
             StackConfigurationManager configurationManager) {
         setConfigurationManager(configurationManager);

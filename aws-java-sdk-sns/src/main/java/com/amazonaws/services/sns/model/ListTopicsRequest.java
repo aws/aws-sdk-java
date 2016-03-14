@@ -60,6 +60,7 @@ public class ListTopicsRequest extends AmazonWebServiceRequest implements
      * @param nextToken
      *        Token returned by the previous <code>ListTopics</code> request.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -71,6 +72,7 @@ public class ListTopicsRequest extends AmazonWebServiceRequest implements
      * 
      * @return Token returned by the previous <code>ListTopics</code> request.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -85,6 +87,7 @@ public class ListTopicsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTopicsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

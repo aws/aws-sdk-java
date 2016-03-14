@@ -39,6 +39,7 @@ public class ActionConfiguration implements Serializable, Cloneable {
      * 
      * @return The configuration data for the action.
      */
+
     public java.util.Map<String, String> getConfiguration() {
         return configuration;
     }
@@ -51,6 +52,7 @@ public class ActionConfiguration implements Serializable, Cloneable {
      * @param configuration
      *        The configuration data for the action.
      */
+
     public void setConfiguration(java.util.Map<String, String> configuration) {
         this.configuration = configuration;
     }
@@ -65,6 +67,7 @@ public class ActionConfiguration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActionConfiguration withConfiguration(
             java.util.Map<String, String> configuration) {
         setConfiguration(configuration);
@@ -86,6 +89,7 @@ public class ActionConfiguration implements Serializable, Cloneable {
      * Removes all the entries added into Configuration. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public ActionConfiguration clearConfigurationEntries() {
         this.configuration = null;
         return this;

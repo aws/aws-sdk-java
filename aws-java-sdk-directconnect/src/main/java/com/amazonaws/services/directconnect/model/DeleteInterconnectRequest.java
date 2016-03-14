@@ -32,6 +32,7 @@ public class DeleteInterconnectRequest extends AmazonWebServiceRequest
     /**
      * @param interconnectId
      */
+
     public void setInterconnectId(String interconnectId) {
         this.interconnectId = interconnectId;
     }
@@ -39,6 +40,7 @@ public class DeleteInterconnectRequest extends AmazonWebServiceRequest
     /**
      * @return
      */
+
     public String getInterconnectId() {
         return this.interconnectId;
     }
@@ -48,6 +50,7 @@ public class DeleteInterconnectRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteInterconnectRequest withInterconnectId(String interconnectId) {
         setInterconnectId(interconnectId);
         return this;

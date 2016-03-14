@@ -83,6 +83,12 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient
     private static final String DEFAULT_ENDPOINT_PREFIX = "elasticloadbalancing";
 
     /**
+     * Client configuration factory providing ClientConfigurations tailored to
+     * this client
+     */
+    protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
+
+    /**
      * List of exception unmarshallers for all Elastic Load Balancing
      * exceptions.
      */
@@ -106,8 +112,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonElasticLoadBalancingClient() {
-        this(new DefaultAWSCredentialsProviderChain(),
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
+        this(new DefaultAWSCredentialsProviderChain(), configFactory
+                .getConfig());
     }
 
     /**
@@ -150,8 +156,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient
      *        authenticating with AWS services.
      */
     public AmazonElasticLoadBalancingClient(AWSCredentials awsCredentials) {
-        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
-                .defaultConfig());
+        this(awsCredentials, configFactory.getConfig());
     }
 
     /**
@@ -193,8 +198,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient
      */
     public AmazonElasticLoadBalancingClient(
             AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider,
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
+        this(awsCredentialsProvider, configFactory.getConfig());
     }
 
     /**

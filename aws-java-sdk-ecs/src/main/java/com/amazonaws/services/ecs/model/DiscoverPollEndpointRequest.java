@@ -67,6 +67,7 @@ public class DiscoverPollEndpointRequest extends AmazonWebServiceRequest
      *        arn:aws:ecs:<i>region</i>:<i>aws_account_id
      *        </i>:container-instance/<i>container_instance_ID</i>.
      */
+
     public void setContainerInstance(String containerInstance) {
         this.containerInstance = containerInstance;
     }
@@ -93,6 +94,7 @@ public class DiscoverPollEndpointRequest extends AmazonWebServiceRequest
      *         <i>aws_account_id</i>:container-instance
      *         /<i>container_instance_ID</i>.
      */
+
     public String getContainerInstance() {
         return this.containerInstance;
     }
@@ -121,6 +123,7 @@ public class DiscoverPollEndpointRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DiscoverPollEndpointRequest withContainerInstance(
             String containerInstance) {
         setContainerInstance(containerInstance);
@@ -135,6 +138,7 @@ public class DiscoverPollEndpointRequest extends AmazonWebServiceRequest
      * @param cluster
      *        The cluster that the container instance belongs to.
      */
+
     public void setCluster(String cluster) {
         this.cluster = cluster;
     }
@@ -146,6 +150,7 @@ public class DiscoverPollEndpointRequest extends AmazonWebServiceRequest
      * 
      * @return The cluster that the container instance belongs to.
      */
+
     public String getCluster() {
         return this.cluster;
     }
@@ -160,6 +165,7 @@ public class DiscoverPollEndpointRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DiscoverPollEndpointRequest withCluster(String cluster) {
         setCluster(cluster);
         return this;

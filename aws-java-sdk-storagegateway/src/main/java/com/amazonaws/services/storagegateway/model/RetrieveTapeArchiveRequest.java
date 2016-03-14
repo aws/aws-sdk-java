@@ -57,6 +57,7 @@ public class RetrieveTapeArchiveRequest extends AmazonWebServiceRequest
      *        The Amazon Resource Name (ARN) of the virtual tape you want to
      *        retrieve from the virtual tape shelf (VTS).
      */
+
     public void setTapeARN(String tapeARN) {
         this.tapeARN = tapeARN;
     }
@@ -70,6 +71,7 @@ public class RetrieveTapeArchiveRequest extends AmazonWebServiceRequest
      * @return The Amazon Resource Name (ARN) of the virtual tape you want to
      *         retrieve from the virtual tape shelf (VTS).
      */
+
     public String getTapeARN() {
         return this.tapeARN;
     }
@@ -86,6 +88,7 @@ public class RetrieveTapeArchiveRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RetrieveTapeArchiveRequest withTapeARN(String tapeARN) {
         setTapeARN(tapeARN);
         return this;
@@ -110,6 +113,7 @@ public class RetrieveTapeArchiveRequest extends AmazonWebServiceRequest
      *        You retrieve archived virtual tapes to only one gateway and the
      *        gateway must be a gateway-VTL.
      */
+
     public void setGatewayARN(String gatewayARN) {
         this.gatewayARN = gatewayARN;
     }
@@ -133,6 +137,7 @@ public class RetrieveTapeArchiveRequest extends AmazonWebServiceRequest
      *         You retrieve archived virtual tapes to only one gateway and the
      *         gateway must be a gateway-VTL.
      */
+
     public String getGatewayARN() {
         return this.gatewayARN;
     }
@@ -158,6 +163,7 @@ public class RetrieveTapeArchiveRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RetrieveTapeArchiveRequest withGatewayARN(String gatewayARN) {
         setGatewayARN(gatewayARN);
         return this;

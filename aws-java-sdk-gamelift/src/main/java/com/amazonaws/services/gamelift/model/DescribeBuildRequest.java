@@ -43,6 +43,7 @@ public class DescribeBuildRequest extends AmazonWebServiceRequest implements
      *        Unique identifier for the build you want to retrieve properties
      *        for.
      */
+
     public void setBuildId(String buildId) {
         this.buildId = buildId;
     }
@@ -55,6 +56,7 @@ public class DescribeBuildRequest extends AmazonWebServiceRequest implements
      * @return Unique identifier for the build you want to retrieve properties
      *         for.
      */
+
     public String getBuildId() {
         return this.buildId;
     }
@@ -70,6 +72,7 @@ public class DescribeBuildRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeBuildRequest withBuildId(String buildId) {
         setBuildId(buildId);
         return this;

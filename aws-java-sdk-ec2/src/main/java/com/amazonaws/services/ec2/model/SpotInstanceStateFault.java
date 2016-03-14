@@ -46,6 +46,7 @@ public class SpotInstanceStateFault implements Serializable, Cloneable {
      * @param code
      *        The reason code for the Spot instance state change.
      */
+
     public void setCode(String code) {
         this.code = code;
     }
@@ -57,6 +58,7 @@ public class SpotInstanceStateFault implements Serializable, Cloneable {
      * 
      * @return The reason code for the Spot instance state change.
      */
+
     public String getCode() {
         return this.code;
     }
@@ -71,6 +73,7 @@ public class SpotInstanceStateFault implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SpotInstanceStateFault withCode(String code) {
         setCode(code);
         return this;
@@ -84,6 +87,7 @@ public class SpotInstanceStateFault implements Serializable, Cloneable {
      * @param message
      *        The message for the Spot instance state change.
      */
+
     public void setMessage(String message) {
         this.message = message;
     }
@@ -95,6 +99,7 @@ public class SpotInstanceStateFault implements Serializable, Cloneable {
      * 
      * @return The message for the Spot instance state change.
      */
+
     public String getMessage() {
         return this.message;
     }
@@ -109,6 +114,7 @@ public class SpotInstanceStateFault implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SpotInstanceStateFault withMessage(String message) {
         setMessage(message);
         return this;

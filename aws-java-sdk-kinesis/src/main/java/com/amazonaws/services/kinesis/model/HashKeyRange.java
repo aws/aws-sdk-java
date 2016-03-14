@@ -47,6 +47,7 @@ public class HashKeyRange implements Serializable, Cloneable {
      * @param startingHashKey
      *        The starting hash key of the hash key range.
      */
+
     public void setStartingHashKey(String startingHashKey) {
         this.startingHashKey = startingHashKey;
     }
@@ -58,6 +59,7 @@ public class HashKeyRange implements Serializable, Cloneable {
      * 
      * @return The starting hash key of the hash key range.
      */
+
     public String getStartingHashKey() {
         return this.startingHashKey;
     }
@@ -72,6 +74,7 @@ public class HashKeyRange implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HashKeyRange withStartingHashKey(String startingHashKey) {
         setStartingHashKey(startingHashKey);
         return this;
@@ -85,6 +88,7 @@ public class HashKeyRange implements Serializable, Cloneable {
      * @param endingHashKey
      *        The ending hash key of the hash key range.
      */
+
     public void setEndingHashKey(String endingHashKey) {
         this.endingHashKey = endingHashKey;
     }
@@ -96,6 +100,7 @@ public class HashKeyRange implements Serializable, Cloneable {
      * 
      * @return The ending hash key of the hash key range.
      */
+
     public String getEndingHashKey() {
         return this.endingHashKey;
     }
@@ -110,6 +115,7 @@ public class HashKeyRange implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HashKeyRange withEndingHashKey(String endingHashKey) {
         setEndingHashKey(endingHashKey);
         return this;

@@ -42,6 +42,7 @@ public class DescribeElasticsearchDomainResult implements Serializable,
      * @param domainStatus
      *        The current status of the Elasticsearch domain.
      */
+
     public void setDomainStatus(ElasticsearchDomainStatus domainStatus) {
         this.domainStatus = domainStatus;
     }
@@ -53,6 +54,7 @@ public class DescribeElasticsearchDomainResult implements Serializable,
      * 
      * @return The current status of the Elasticsearch domain.
      */
+
     public ElasticsearchDomainStatus getDomainStatus() {
         return this.domainStatus;
     }
@@ -67,6 +69,7 @@ public class DescribeElasticsearchDomainResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeElasticsearchDomainResult withDomainStatus(
             ElasticsearchDomainStatus domainStatus) {
         setDomainStatus(domainStatus);

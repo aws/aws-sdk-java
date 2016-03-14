@@ -126,6 +126,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      * @param roleArn
      *        The Amazon Resource Name (ARN) of the role to assume.
      */
+
     public void setRoleArn(String roleArn) {
         this.roleArn = roleArn;
     }
@@ -137,6 +138,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      * 
      * @return The Amazon Resource Name (ARN) of the role to assume.
      */
+
     public String getRoleArn() {
         return this.roleArn;
     }
@@ -151,6 +153,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssumeRoleRequest withRoleArn(String roleArn) {
         setRoleArn(roleArn);
         return this;
@@ -183,6 +186,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      *        using the temporary security credentials will expose the role
      *        session name to the external account in their CloudTrail logs.
      */
+
     public void setRoleSessionName(String roleSessionName) {
         this.roleSessionName = roleSessionName;
     }
@@ -213,6 +217,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      *         using the temporary security credentials will expose the role
      *         session name to the external account in their CloudTrail logs.
      */
+
     public String getRoleSessionName() {
         return this.roleSessionName;
     }
@@ -246,6 +251,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssumeRoleRequest withRoleSessionName(String roleSessionName) {
         setRoleSessionName(roleSessionName);
         return this;
@@ -296,6 +302,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      *        element indicates by percentage how close to the upper size limit
      *        the policy is, with 100% equaling the maximum allowed size.
      */
+
     public void setPolicy(String policy) {
         this.policy = policy;
     }
@@ -345,6 +352,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      *         size limit the policy is, with 100% equaling the maximum allowed
      *         size.
      */
+
     public String getPolicy() {
         return this.policy;
     }
@@ -396,6 +404,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssumeRoleRequest withPolicy(String policy) {
         setPolicy(policy);
         return this;
@@ -413,6 +422,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      *        from 900 seconds (15 minutes) to 3600 seconds (1 hour). By
      *        default, the value is set to 3600 seconds.
      */
+
     public void setDurationSeconds(Integer durationSeconds) {
         this.durationSeconds = durationSeconds;
     }
@@ -428,6 +438,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      *         range from 900 seconds (15 minutes) to 3600 seconds (1 hour). By
      *         default, the value is set to 3600 seconds.
      */
+
     public Integer getDurationSeconds() {
         return this.durationSeconds;
     }
@@ -446,6 +457,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssumeRoleRequest withDurationSeconds(Integer durationSeconds) {
         setDurationSeconds(durationSeconds);
         return this;
@@ -480,6 +492,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      *        >How to Use an External ID When Granting Access to Your AWS
      *        Resources to a Third Party</a> in the <i>Using IAM</i>.
      */
+
     public void setExternalId(String externalId) {
         this.externalId = externalId;
     }
@@ -512,6 +525,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      *         >How to Use an External ID When Granting Access to Your AWS
      *         Resources to a Third Party</a> in the <i>Using IAM</i>.
      */
+
     public String getExternalId() {
         return this.externalId;
     }
@@ -547,6 +561,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssumeRoleRequest withExternalId(String externalId) {
         setExternalId(externalId);
         return this;
@@ -573,6 +588,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      *        virtual device (such as
      *        <code>arn:aws:iam::123456789012:mfa/user</code>).
      */
+
     public void setSerialNumber(String serialNumber) {
         this.serialNumber = serialNumber;
     }
@@ -597,6 +613,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      *         virtual device (such as
      *         <code>arn:aws:iam::123456789012:mfa/user</code>).
      */
+
     public String getSerialNumber() {
         return this.serialNumber;
     }
@@ -624,6 +641,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssumeRoleRequest withSerialNumber(String serialNumber) {
         setSerialNumber(serialNumber);
         return this;
@@ -645,6 +663,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      *        MFA and if the <code>TokenCode</code> value is missing or expired,
      *        the <code>AssumeRole</code> call returns an "access denied" error.
      */
+
     public void setTokenCode(String tokenCode) {
         this.tokenCode = tokenCode;
     }
@@ -665,6 +684,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      *         or expired, the <code>AssumeRole</code> call returns an
      *         "access denied" error.
      */
+
     public String getTokenCode() {
         return this.tokenCode;
     }
@@ -687,6 +707,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssumeRoleRequest withTokenCode(String tokenCode) {
         setTokenCode(tokenCode);
         return this;

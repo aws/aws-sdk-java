@@ -370,6 +370,7 @@ public class JobOutput implements Serializable, Cloneable {
      *        among the outputs from the current job. In the Output syntax, this
      *        value is always 1.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -385,6 +386,7 @@ public class JobOutput implements Serializable, Cloneable {
      *         among the outputs from the current job. In the Output syntax,
      *         this value is always 1.
      */
+
     public String getId() {
         return this.id;
     }
@@ -403,6 +405,7 @@ public class JobOutput implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobOutput withId(String id) {
         setId(id);
         return this;
@@ -421,6 +424,7 @@ public class JobOutput implements Serializable, Cloneable {
      *        <code>OutputBucket</code> object in the pipeline that is specified
      *        by the pipeline ID.
      */
+
     public void setKey(String key) {
         this.key = key;
     }
@@ -437,6 +441,7 @@ public class JobOutput implements Serializable, Cloneable {
      *         <code>OutputBucket</code> object in the pipeline that is
      *         specified by the pipeline ID.
      */
+
     public String getKey() {
         return this.key;
     }
@@ -456,6 +461,7 @@ public class JobOutput implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobOutput withKey(String key) {
         setKey(key);
         return this;
@@ -565,6 +571,7 @@ public class JobOutput implements Serializable, Cloneable {
      *        <code>CreateJobOutput</code>. Elastic Transcoder also appends the
      *        applicable file name extension.
      */
+
     public void setThumbnailPattern(String thumbnailPattern) {
         this.thumbnailPattern = thumbnailPattern;
     }
@@ -674,6 +681,7 @@ public class JobOutput implements Serializable, Cloneable {
      *         <code>CreateJobOutput</code>. Elastic Transcoder also appends the
      *         applicable file name extension.
      */
+
     public String getThumbnailPattern() {
         return this.thumbnailPattern;
     }
@@ -784,6 +792,7 @@ public class JobOutput implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobOutput withThumbnailPattern(String thumbnailPattern) {
         setThumbnailPattern(thumbnailPattern);
         return this;
@@ -799,6 +808,7 @@ public class JobOutput implements Serializable, Cloneable {
      *        The encryption settings, if any, that you want Elastic Transcoder
      *        to apply to your thumbnail.
      */
+
     public void setThumbnailEncryption(Encryption thumbnailEncryption) {
         this.thumbnailEncryption = thumbnailEncryption;
     }
@@ -812,6 +822,7 @@ public class JobOutput implements Serializable, Cloneable {
      * @return The encryption settings, if any, that you want Elastic Transcoder
      *         to apply to your thumbnail.
      */
+
     public Encryption getThumbnailEncryption() {
         return this.thumbnailEncryption;
     }
@@ -828,6 +839,7 @@ public class JobOutput implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobOutput withThumbnailEncryption(Encryption thumbnailEncryption) {
         setThumbnailEncryption(thumbnailEncryption);
         return this;
@@ -860,6 +872,7 @@ public class JobOutput implements Serializable, Cloneable {
      *        The value <code>auto</code> generally works only if the file that
      *        you're transcoding contains rotation metadata.
      */
+
     public void setRotate(String rotate) {
         this.rotate = rotate;
     }
@@ -890,6 +903,7 @@ public class JobOutput implements Serializable, Cloneable {
      *         The value <code>auto</code> generally works only if the file that
      *         you're transcoding contains rotation metadata.
      */
+
     public String getRotate() {
         return this.rotate;
     }
@@ -923,6 +937,7 @@ public class JobOutput implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobOutput withRotate(String rotate) {
         setRotate(rotate);
         return this;
@@ -948,6 +963,7 @@ public class JobOutput implements Serializable, Cloneable {
      *        created the preset. You can also use the Elastic Transcoder system
      *        presets, which you can get with <code>ListPresets</code>.
      */
+
     public void setPresetId(String presetId) {
         this.presetId = presetId;
     }
@@ -971,6 +987,7 @@ public class JobOutput implements Serializable, Cloneable {
      *         created the preset. You can also use the Elastic Transcoder
      *         system presets, which you can get with <code>ListPresets</code>.
      */
+
     public String getPresetId() {
         return this.presetId;
     }
@@ -997,6 +1014,7 @@ public class JobOutput implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobOutput withPresetId(String presetId) {
         setPresetId(presetId);
         return this;
@@ -1053,6 +1071,7 @@ public class JobOutput implements Serializable, Cloneable {
      *        add an output to the master playlist for this job, include it in
      *        the <code>OutputKeys
      */
+
     public void setSegmentDuration(String segmentDuration) {
         this.segmentDuration = segmentDuration;
     }
@@ -1107,6 +1126,7 @@ public class JobOutput implements Serializable, Cloneable {
      *         add an output to the master playlist for this job, include it in
      *         the <code>OutputKeys
      */
+
     public String getSegmentDuration() {
         return this.segmentDuration;
     }
@@ -1164,6 +1184,7 @@ public class JobOutput implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobOutput withSegmentDuration(String segmentDuration) {
         setSegmentDuration(segmentDuration);
         return this;
@@ -1224,6 +1245,7 @@ public class JobOutput implements Serializable, Cloneable {
      *        <code>Complete</code>, <code>Canceled</code>, or
      *        <code>Error</code>.
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -1283,6 +1305,7 @@ public class JobOutput implements Serializable, Cloneable {
      *         <code>Complete</code>, <code>Canceled</code>, or
      *         <code>Error</code>.
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -1344,6 +1367,7 @@ public class JobOutput implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobOutput withStatus(String status) {
         setStatus(status);
         return this;
@@ -1357,6 +1381,7 @@ public class JobOutput implements Serializable, Cloneable {
      * @param statusDetail
      *        Information that further explains <code>Status</code>.
      */
+
     public void setStatusDetail(String statusDetail) {
         this.statusDetail = statusDetail;
     }
@@ -1368,6 +1393,7 @@ public class JobOutput implements Serializable, Cloneable {
      * 
      * @return Information that further explains <code>Status</code>.
      */
+
     public String getStatusDetail() {
         return this.statusDetail;
     }
@@ -1382,6 +1408,7 @@ public class JobOutput implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobOutput withStatusDetail(String statusDetail) {
         setStatusDetail(statusDetail);
         return this;
@@ -1395,6 +1422,7 @@ public class JobOutput implements Serializable, Cloneable {
      * @param duration
      *        Duration of the output file, in seconds.
      */
+
     public void setDuration(Long duration) {
         this.duration = duration;
     }
@@ -1406,6 +1434,7 @@ public class JobOutput implements Serializable, Cloneable {
      * 
      * @return Duration of the output file, in seconds.
      */
+
     public Long getDuration() {
         return this.duration;
     }
@@ -1420,6 +1449,7 @@ public class JobOutput implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobOutput withDuration(Long duration) {
         setDuration(duration);
         return this;
@@ -1433,6 +1463,7 @@ public class JobOutput implements Serializable, Cloneable {
      * @param width
      *        Specifies the width of the output file in pixels.
      */
+
     public void setWidth(Integer width) {
         this.width = width;
     }
@@ -1444,6 +1475,7 @@ public class JobOutput implements Serializable, Cloneable {
      * 
      * @return Specifies the width of the output file in pixels.
      */
+
     public Integer getWidth() {
         return this.width;
     }
@@ -1458,6 +1490,7 @@ public class JobOutput implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobOutput withWidth(Integer width) {
         setWidth(width);
         return this;
@@ -1471,6 +1504,7 @@ public class JobOutput implements Serializable, Cloneable {
      * @param height
      *        Height of the output file, in pixels.
      */
+
     public void setHeight(Integer height) {
         this.height = height;
     }
@@ -1482,6 +1516,7 @@ public class JobOutput implements Serializable, Cloneable {
      * 
      * @return Height of the output file, in pixels.
      */
+
     public Integer getHeight() {
         return this.height;
     }
@@ -1496,6 +1531,7 @@ public class JobOutput implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobOutput withHeight(Integer height) {
         setHeight(height);
         return this;
@@ -1509,6 +1545,7 @@ public class JobOutput implements Serializable, Cloneable {
      * @param frameRate
      *        Frame rate of the output file, in frames per second.
      */
+
     public void setFrameRate(String frameRate) {
         this.frameRate = frameRate;
     }
@@ -1520,6 +1557,7 @@ public class JobOutput implements Serializable, Cloneable {
      * 
      * @return Frame rate of the output file, in frames per second.
      */
+
     public String getFrameRate() {
         return this.frameRate;
     }
@@ -1534,6 +1572,7 @@ public class JobOutput implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobOutput withFrameRate(String frameRate) {
         setFrameRate(frameRate);
         return this;
@@ -1547,6 +1586,7 @@ public class JobOutput implements Serializable, Cloneable {
      * @param fileSize
      *        File size of the output file, in bytes.
      */
+
     public void setFileSize(Long fileSize) {
         this.fileSize = fileSize;
     }
@@ -1558,6 +1598,7 @@ public class JobOutput implements Serializable, Cloneable {
      * 
      * @return File size of the output file, in bytes.
      */
+
     public Long getFileSize() {
         return this.fileSize;
     }
@@ -1572,6 +1613,7 @@ public class JobOutput implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobOutput withFileSize(Long fileSize) {
         setFileSize(fileSize);
         return this;
@@ -1585,6 +1627,7 @@ public class JobOutput implements Serializable, Cloneable {
      * @param durationMillis
      *        Duration of the output file, in milliseconds.
      */
+
     public void setDurationMillis(Long durationMillis) {
         this.durationMillis = durationMillis;
     }
@@ -1596,6 +1639,7 @@ public class JobOutput implements Serializable, Cloneable {
      * 
      * @return Duration of the output file, in milliseconds.
      */
+
     public Long getDurationMillis() {
         return this.durationMillis;
     }
@@ -1610,6 +1654,7 @@ public class JobOutput implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobOutput withDurationMillis(Long durationMillis) {
         setDurationMillis(durationMillis);
         return this;
@@ -1647,6 +1692,7 @@ public class JobOutput implements Serializable, Cloneable {
      *         first one, the third one will cover the second, and the fourth
      *         one will cover the third.
      */
+
     public java.util.List<JobWatermark> getWatermarks() {
         if (watermarks == null) {
             watermarks = new com.amazonaws.internal.SdkInternalList<JobWatermark>();
@@ -1687,6 +1733,7 @@ public class JobOutput implements Serializable, Cloneable {
      *        one, the third one will cover the second, and the fourth one will
      *        cover the third.
      */
+
     public void setWatermarks(java.util.Collection<JobWatermark> watermarks) {
         if (watermarks == null) {
             this.watermarks = null;
@@ -1738,6 +1785,7 @@ public class JobOutput implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobOutput withWatermarks(JobWatermark... watermarks) {
         if (this.watermarks == null) {
             setWatermarks(new com.amazonaws.internal.SdkInternalList<JobWatermark>(
@@ -1784,6 +1832,7 @@ public class JobOutput implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobOutput withWatermarks(
             java.util.Collection<JobWatermark> watermarks) {
         setWatermarks(watermarks);
@@ -1798,6 +1847,7 @@ public class JobOutput implements Serializable, Cloneable {
      * @param albumArt
      *        The album art to be associated with the output file, if any.
      */
+
     public void setAlbumArt(JobAlbumArt albumArt) {
         this.albumArt = albumArt;
     }
@@ -1809,6 +1859,7 @@ public class JobOutput implements Serializable, Cloneable {
      * 
      * @return The album art to be associated with the output file, if any.
      */
+
     public JobAlbumArt getAlbumArt() {
         return this.albumArt;
     }
@@ -1823,6 +1874,7 @@ public class JobOutput implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobOutput withAlbumArt(JobAlbumArt albumArt) {
         setAlbumArt(albumArt);
         return this;
@@ -1845,6 +1897,7 @@ public class JobOutput implements Serializable, Cloneable {
      *         the current release, you can only specify settings for a single
      *         clip per output file. The Composition object cannot be null.
      */
+
     public java.util.List<Clip> getComposition() {
         if (composition == null) {
             composition = new com.amazonaws.internal.SdkInternalList<Clip>();
@@ -1870,6 +1923,7 @@ public class JobOutput implements Serializable, Cloneable {
      *        the current release, you can only specify settings for a single
      *        clip per output file. The Composition object cannot be null.
      */
+
     public void setComposition(java.util.Collection<Clip> composition) {
         if (composition == null) {
             this.composition = null;
@@ -1906,6 +1960,7 @@ public class JobOutput implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobOutput withComposition(Clip... composition) {
         if (this.composition == null) {
             setComposition(new com.amazonaws.internal.SdkInternalList<Clip>(
@@ -1937,6 +1992,7 @@ public class JobOutput implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobOutput withComposition(java.util.Collection<Clip> composition) {
         setComposition(composition);
         return this;
@@ -2084,6 +2140,7 @@ public class JobOutput implements Serializable, Cloneable {
      *        For more information on sidecar files, see the Extensible Metadata
      *        Platform and Sidecar file Wikipedia pages.
      */
+
     public void setCaptions(Captions captions) {
         this.captions = captions;
     }
@@ -2230,6 +2287,7 @@ public class JobOutput implements Serializable, Cloneable {
      *         For more information on sidecar files, see the Extensible
      *         Metadata Platform and Sidecar file Wikipedia pages.
      */
+
     public Captions getCaptions() {
         return this.captions;
     }
@@ -2378,6 +2436,7 @@ public class JobOutput implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobOutput withCaptions(Captions captions) {
         setCaptions(captions);
         return this;
@@ -2398,6 +2457,7 @@ public class JobOutput implements Serializable, Cloneable {
      *        encryption, Elastic Transcoder will write an unencrypted file to
      *        your Amazon S3 bucket.
      */
+
     public void setEncryption(Encryption encryption) {
         this.encryption = encryption;
     }
@@ -2416,6 +2476,7 @@ public class JobOutput implements Serializable, Cloneable {
      *         encryption, Elastic Transcoder will write an unencrypted file to
      *         your Amazon S3 bucket.
      */
+
     public Encryption getEncryption() {
         return this.encryption;
     }
@@ -2437,6 +2498,7 @@ public class JobOutput implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobOutput withEncryption(Encryption encryption) {
         setEncryption(encryption);
         return this;
@@ -2459,6 +2521,7 @@ public class JobOutput implements Serializable, Cloneable {
      *        was defined in the preset, this parameter will not be included in
      *        the job response.
      */
+
     public void setAppliedColorSpaceConversion(
             String appliedColorSpaceConversion) {
         this.appliedColorSpaceConversion = appliedColorSpaceConversion;
@@ -2480,6 +2543,7 @@ public class JobOutput implements Serializable, Cloneable {
      *         <code>ColorSpaceConversionMode</code> was defined in the preset,
      *         this parameter will not be included in the job response.
      */
+
     public String getAppliedColorSpaceConversion() {
         return this.appliedColorSpaceConversion;
     }
@@ -2503,6 +2567,7 @@ public class JobOutput implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobOutput withAppliedColorSpaceConversion(
             String appliedColorSpaceConversion) {
         setAppliedColorSpaceConversion(appliedColorSpaceConversion);

@@ -173,6 +173,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * @param alarmName
      *        The name of the alarm.
      */
+
     public void setAlarmName(String alarmName) {
         this.alarmName = alarmName;
     }
@@ -184,6 +185,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * 
      * @return The name of the alarm.
      */
+
     public String getAlarmName() {
         return this.alarmName;
     }
@@ -198,6 +200,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MetricAlarm withAlarmName(String alarmName) {
         setAlarmName(alarmName);
         return this;
@@ -211,6 +214,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * @param alarmArn
      *        The Amazon Resource Name (ARN) of the alarm.
      */
+
     public void setAlarmArn(String alarmArn) {
         this.alarmArn = alarmArn;
     }
@@ -222,6 +226,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * 
      * @return The Amazon Resource Name (ARN) of the alarm.
      */
+
     public String getAlarmArn() {
         return this.alarmArn;
     }
@@ -236,6 +241,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MetricAlarm withAlarmArn(String alarmArn) {
         setAlarmArn(alarmArn);
         return this;
@@ -249,6 +255,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * @param alarmDescription
      *        The description for the alarm.
      */
+
     public void setAlarmDescription(String alarmDescription) {
         this.alarmDescription = alarmDescription;
     }
@@ -260,6 +267,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * 
      * @return The description for the alarm.
      */
+
     public String getAlarmDescription() {
         return this.alarmDescription;
     }
@@ -274,6 +282,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MetricAlarm withAlarmDescription(String alarmDescription) {
         setAlarmDescription(alarmDescription);
         return this;
@@ -287,6 +296,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * @param alarmConfigurationUpdatedTimestamp
      *        The time stamp of the last update to the alarm configuration.
      */
+
     public void setAlarmConfigurationUpdatedTimestamp(
             java.util.Date alarmConfigurationUpdatedTimestamp) {
         this.alarmConfigurationUpdatedTimestamp = alarmConfigurationUpdatedTimestamp;
@@ -299,6 +309,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * 
      * @return The time stamp of the last update to the alarm configuration.
      */
+
     public java.util.Date getAlarmConfigurationUpdatedTimestamp() {
         return this.alarmConfigurationUpdatedTimestamp;
     }
@@ -313,6 +324,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MetricAlarm withAlarmConfigurationUpdatedTimestamp(
             java.util.Date alarmConfigurationUpdatedTimestamp) {
         setAlarmConfigurationUpdatedTimestamp(alarmConfigurationUpdatedTimestamp);
@@ -329,6 +341,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      *        Indicates whether actions should be executed during any changes to
      *        the alarm's state.
      */
+
     public void setActionsEnabled(Boolean actionsEnabled) {
         this.actionsEnabled = actionsEnabled;
     }
@@ -342,6 +355,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * @return Indicates whether actions should be executed during any changes
      *         to the alarm's state.
      */
+
     public Boolean getActionsEnabled() {
         return this.actionsEnabled;
     }
@@ -358,6 +372,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MetricAlarm withActionsEnabled(Boolean actionsEnabled) {
         setActionsEnabled(actionsEnabled);
         return this;
@@ -372,6 +387,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * @return Indicates whether actions should be executed during any changes
      *         to the alarm's state.
      */
+
     public Boolean isActionsEnabled() {
         return this.actionsEnabled;
     }
@@ -387,6 +403,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      *         an <code>OK</code> state from any other state. Each action is
      *         specified as an Amazon Resource Name (ARN).
      */
+
     public java.util.List<String> getOKActions() {
         if (oKActions == null) {
             oKActions = new com.amazonaws.internal.SdkInternalList<String>();
@@ -406,6 +423,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      *        <code>OK</code> state from any other state. Each action is
      *        specified as an Amazon Resource Name (ARN).
      */
+
     public void setOKActions(java.util.Collection<String> oKActions) {
         if (oKActions == null) {
             this.oKActions = null;
@@ -436,6 +454,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MetricAlarm withOKActions(String... oKActions) {
         if (this.oKActions == null) {
             setOKActions(new com.amazonaws.internal.SdkInternalList<String>(
@@ -461,6 +480,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MetricAlarm withOKActions(java.util.Collection<String> oKActions) {
         setOKActions(oKActions);
         return this;
@@ -477,6 +497,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      *         an <code>ALARM</code> state from any other state. Each action is
      *         specified as an Amazon Resource Name (ARN).
      */
+
     public java.util.List<String> getAlarmActions() {
         if (alarmActions == null) {
             alarmActions = new com.amazonaws.internal.SdkInternalList<String>();
@@ -496,6 +517,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      *        <code>ALARM</code> state from any other state. Each action is
      *        specified as an Amazon Resource Name (ARN).
      */
+
     public void setAlarmActions(java.util.Collection<String> alarmActions) {
         if (alarmActions == null) {
             this.alarmActions = null;
@@ -526,6 +548,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MetricAlarm withAlarmActions(String... alarmActions) {
         if (this.alarmActions == null) {
             setAlarmActions(new com.amazonaws.internal.SdkInternalList<String>(
@@ -551,6 +574,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MetricAlarm withAlarmActions(
             java.util.Collection<String> alarmActions) {
         setAlarmActions(alarmActions);
@@ -572,6 +596,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      *         <important>The current WSDL lists this attribute as
      *         <code>UnknownActions</code>.
      */
+
     public java.util.List<String> getInsufficientDataActions() {
         if (insufficientDataActions == null) {
             insufficientDataActions = new com.amazonaws.internal.SdkInternalList<String>();
@@ -595,6 +620,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      *        <important>The current WSDL lists this attribute as
      *        <code>UnknownActions</code>.
      */
+
     public void setInsufficientDataActions(
             java.util.Collection<String> insufficientDataActions) {
         if (insufficientDataActions == null) {
@@ -630,6 +656,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MetricAlarm withInsufficientDataActions(
             String... insufficientDataActions) {
         if (this.insufficientDataActions == null) {
@@ -660,6 +687,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MetricAlarm withInsufficientDataActions(
             java.util.Collection<String> insufficientDataActions) {
         setInsufficientDataActions(insufficientDataActions);
@@ -675,6 +703,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      *        The state value for the alarm.
      * @see StateValue
      */
+
     public void setStateValue(String stateValue) {
         this.stateValue = stateValue;
     }
@@ -687,6 +716,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * @return The state value for the alarm.
      * @see StateValue
      */
+
     public String getStateValue() {
         return this.stateValue;
     }
@@ -702,6 +732,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      *         chained together.
      * @see StateValue
      */
+
     public MetricAlarm withStateValue(String stateValue) {
         setStateValue(stateValue);
         return this;
@@ -718,6 +749,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      *         chained together.
      * @see StateValue
      */
+
     public void setStateValue(StateValue stateValue) {
         this.stateValue = stateValue.toString();
     }
@@ -733,6 +765,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      *         chained together.
      * @see StateValue
      */
+
     public MetricAlarm withStateValue(StateValue stateValue) {
         setStateValue(stateValue);
         return this;
@@ -746,6 +779,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * @param stateReason
      *        A human-readable explanation for the alarm's state.
      */
+
     public void setStateReason(String stateReason) {
         this.stateReason = stateReason;
     }
@@ -757,6 +791,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * 
      * @return A human-readable explanation for the alarm's state.
      */
+
     public String getStateReason() {
         return this.stateReason;
     }
@@ -771,6 +806,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MetricAlarm withStateReason(String stateReason) {
         setStateReason(stateReason);
         return this;
@@ -785,6 +821,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      *        An explanation for the alarm's state in machine-readable JSON
      *        format
      */
+
     public void setStateReasonData(String stateReasonData) {
         this.stateReasonData = stateReasonData;
     }
@@ -797,6 +834,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * @return An explanation for the alarm's state in machine-readable JSON
      *         format
      */
+
     public String getStateReasonData() {
         return this.stateReasonData;
     }
@@ -812,6 +850,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MetricAlarm withStateReasonData(String stateReasonData) {
         setStateReasonData(stateReasonData);
         return this;
@@ -825,6 +864,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * @param stateUpdatedTimestamp
      *        The time stamp of the last update to the alarm's state.
      */
+
     public void setStateUpdatedTimestamp(java.util.Date stateUpdatedTimestamp) {
         this.stateUpdatedTimestamp = stateUpdatedTimestamp;
     }
@@ -836,6 +876,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * 
      * @return The time stamp of the last update to the alarm's state.
      */
+
     public java.util.Date getStateUpdatedTimestamp() {
         return this.stateUpdatedTimestamp;
     }
@@ -850,6 +891,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MetricAlarm withStateUpdatedTimestamp(
             java.util.Date stateUpdatedTimestamp) {
         setStateUpdatedTimestamp(stateUpdatedTimestamp);
@@ -864,6 +906,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * @param metricName
      *        The name of the alarm's metric.
      */
+
     public void setMetricName(String metricName) {
         this.metricName = metricName;
     }
@@ -875,6 +918,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * 
      * @return The name of the alarm's metric.
      */
+
     public String getMetricName() {
         return this.metricName;
     }
@@ -889,6 +933,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MetricAlarm withMetricName(String metricName) {
         setMetricName(metricName);
         return this;
@@ -902,6 +947,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * @param namespace
      *        The namespace of alarm's associated metric.
      */
+
     public void setNamespace(String namespace) {
         this.namespace = namespace;
     }
@@ -913,6 +959,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * 
      * @return The namespace of alarm's associated metric.
      */
+
     public String getNamespace() {
         return this.namespace;
     }
@@ -927,6 +974,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MetricAlarm withNamespace(String namespace) {
         setNamespace(namespace);
         return this;
@@ -941,6 +989,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      *        The statistic to apply to the alarm's associated metric.
      * @see Statistic
      */
+
     public void setStatistic(String statistic) {
         this.statistic = statistic;
     }
@@ -953,6 +1002,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * @return The statistic to apply to the alarm's associated metric.
      * @see Statistic
      */
+
     public String getStatistic() {
         return this.statistic;
     }
@@ -968,6 +1018,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      *         chained together.
      * @see Statistic
      */
+
     public MetricAlarm withStatistic(String statistic) {
         setStatistic(statistic);
         return this;
@@ -984,6 +1035,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      *         chained together.
      * @see Statistic
      */
+
     public void setStatistic(Statistic statistic) {
         this.statistic = statistic.toString();
     }
@@ -999,6 +1051,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      *         chained together.
      * @see Statistic
      */
+
     public MetricAlarm withStatistic(Statistic statistic) {
         setStatistic(statistic);
         return this;
@@ -1012,6 +1065,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * @return The list of dimensions associated with the alarm's associated
      *         metric.
      */
+
     public java.util.List<Dimension> getDimensions() {
         if (dimensions == null) {
             dimensions = new com.amazonaws.internal.SdkInternalList<Dimension>();
@@ -1028,6 +1082,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      *        The list of dimensions associated with the alarm's associated
      *        metric.
      */
+
     public void setDimensions(java.util.Collection<Dimension> dimensions) {
         if (dimensions == null) {
             this.dimensions = null;
@@ -1055,6 +1110,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MetricAlarm withDimensions(Dimension... dimensions) {
         if (this.dimensions == null) {
             setDimensions(new com.amazonaws.internal.SdkInternalList<Dimension>(
@@ -1077,6 +1133,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MetricAlarm withDimensions(java.util.Collection<Dimension> dimensions) {
         setDimensions(dimensions);
         return this;
@@ -1090,6 +1147,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * @param period
      *        The period in seconds over which the statistic is applied.
      */
+
     public void setPeriod(Integer period) {
         this.period = period;
     }
@@ -1101,6 +1159,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * 
      * @return The period in seconds over which the statistic is applied.
      */
+
     public Integer getPeriod() {
         return this.period;
     }
@@ -1115,6 +1174,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MetricAlarm withPeriod(Integer period) {
         setPeriod(period);
         return this;
@@ -1129,6 +1189,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      *        The unit of the alarm's associated metric.
      * @see StandardUnit
      */
+
     public void setUnit(String unit) {
         this.unit = unit;
     }
@@ -1141,6 +1202,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * @return The unit of the alarm's associated metric.
      * @see StandardUnit
      */
+
     public String getUnit() {
         return this.unit;
     }
@@ -1156,6 +1218,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      *         chained together.
      * @see StandardUnit
      */
+
     public MetricAlarm withUnit(String unit) {
         setUnit(unit);
         return this;
@@ -1172,6 +1235,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      *         chained together.
      * @see StandardUnit
      */
+
     public void setUnit(StandardUnit unit) {
         this.unit = unit.toString();
     }
@@ -1187,6 +1251,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      *         chained together.
      * @see StandardUnit
      */
+
     public MetricAlarm withUnit(StandardUnit unit) {
         setUnit(unit);
         return this;
@@ -1202,6 +1267,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      *        The number of periods over which data is compared to the specified
      *        threshold.
      */
+
     public void setEvaluationPeriods(Integer evaluationPeriods) {
         this.evaluationPeriods = evaluationPeriods;
     }
@@ -1215,6 +1281,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * @return The number of periods over which data is compared to the
      *         specified threshold.
      */
+
     public Integer getEvaluationPeriods() {
         return this.evaluationPeriods;
     }
@@ -1231,6 +1298,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MetricAlarm withEvaluationPeriods(Integer evaluationPeriods) {
         setEvaluationPeriods(evaluationPeriods);
         return this;
@@ -1244,6 +1312,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * @param threshold
      *        The value against which the specified statistic is compared.
      */
+
     public void setThreshold(Double threshold) {
         this.threshold = threshold;
     }
@@ -1255,6 +1324,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * 
      * @return The value against which the specified statistic is compared.
      */
+
     public Double getThreshold() {
         return this.threshold;
     }
@@ -1269,6 +1339,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MetricAlarm withThreshold(Double threshold) {
         setThreshold(threshold);
         return this;
@@ -1287,6 +1358,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      *        <code>Statistic</code> value is used as the first operand.
      * @see ComparisonOperator
      */
+
     public void setComparisonOperator(String comparisonOperator) {
         this.comparisonOperator = comparisonOperator;
     }
@@ -1303,6 +1375,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      *         <code>Statistic</code> value is used as the first operand.
      * @see ComparisonOperator
      */
+
     public String getComparisonOperator() {
         return this.comparisonOperator;
     }
@@ -1322,6 +1395,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      *         chained together.
      * @see ComparisonOperator
      */
+
     public MetricAlarm withComparisonOperator(String comparisonOperator) {
         setComparisonOperator(comparisonOperator);
         return this;
@@ -1342,6 +1416,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      *         chained together.
      * @see ComparisonOperator
      */
+
     public void setComparisonOperator(ComparisonOperator comparisonOperator) {
         this.comparisonOperator = comparisonOperator.toString();
     }
@@ -1361,6 +1436,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      *         chained together.
      * @see ComparisonOperator
      */
+
     public MetricAlarm withComparisonOperator(
             ComparisonOperator comparisonOperator) {
         setComparisonOperator(comparisonOperator);

@@ -54,6 +54,7 @@ public class ListContainerInstancesResult implements Serializable, Cloneable {
      *         (ARN) entries for each container instance associated with the
      *         specified cluster.
      */
+
     public java.util.List<String> getContainerInstanceArns() {
         if (containerInstanceArns == null) {
             containerInstanceArns = new com.amazonaws.internal.SdkInternalList<String>();
@@ -73,6 +74,7 @@ public class ListContainerInstancesResult implements Serializable, Cloneable {
      *        (ARN) entries for each container instance associated with the
      *        specified cluster.
      */
+
     public void setContainerInstanceArns(
             java.util.Collection<String> containerInstanceArns) {
         if (containerInstanceArns == null) {
@@ -104,6 +106,7 @@ public class ListContainerInstancesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListContainerInstancesResult withContainerInstanceArns(
             String... containerInstanceArns) {
         if (this.containerInstanceArns == null) {
@@ -130,6 +133,7 @@ public class ListContainerInstancesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListContainerInstancesResult withContainerInstanceArns(
             java.util.Collection<String> containerInstanceArns) {
         setContainerInstanceArns(containerInstanceArns);
@@ -154,6 +158,7 @@ public class ListContainerInstancesResult implements Serializable, Cloneable {
      *        next page of results. This value is <code>null</code> when there
      *        are no more results to return.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -175,6 +180,7 @@ public class ListContainerInstancesResult implements Serializable, Cloneable {
      *         next page of results. This value is <code>null</code> when there
      *         are no more results to return.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -199,6 +205,7 @@ public class ListContainerInstancesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListContainerInstancesResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

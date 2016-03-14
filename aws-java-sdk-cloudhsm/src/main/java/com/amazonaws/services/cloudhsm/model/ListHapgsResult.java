@@ -44,6 +44,7 @@ public class ListHapgsResult implements Serializable, Cloneable {
      * 
      * @return The list of high-availability partition groups.
      */
+
     public java.util.List<String> getHapgList() {
         if (hapgList == null) {
             hapgList = new com.amazonaws.internal.SdkInternalList<String>();
@@ -59,6 +60,7 @@ public class ListHapgsResult implements Serializable, Cloneable {
      * @param hapgList
      *        The list of high-availability partition groups.
      */
+
     public void setHapgList(java.util.Collection<String> hapgList) {
         if (hapgList == null) {
             this.hapgList = null;
@@ -85,6 +87,7 @@ public class ListHapgsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListHapgsResult withHapgList(String... hapgList) {
         if (this.hapgList == null) {
             setHapgList(new com.amazonaws.internal.SdkInternalList<String>(
@@ -106,6 +109,7 @@ public class ListHapgsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListHapgsResult withHapgList(java.util.Collection<String> hapgList) {
         setHapgList(hapgList);
         return this;
@@ -121,6 +125,7 @@ public class ListHapgsResult implements Serializable, Cloneable {
      *        If not null, more results are available. Pass this value to
      *        <a>ListHapgs</a> to retrieve the next set of items.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -134,6 +139,7 @@ public class ListHapgsResult implements Serializable, Cloneable {
      * @return If not null, more results are available. Pass this value to
      *         <a>ListHapgs</a> to retrieve the next set of items.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -150,6 +156,7 @@ public class ListHapgsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListHapgsResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

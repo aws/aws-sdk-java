@@ -64,6 +64,7 @@ public class PurgeQueueRequest extends AmazonWebServiceRequest implements
      *        The queue URL of the queue to delete the messages from when using
      *        the <code>PurgeQueue</code> API.
      */
+
     public void setQueueUrl(String queueUrl) {
         this.queueUrl = queueUrl;
     }
@@ -77,6 +78,7 @@ public class PurgeQueueRequest extends AmazonWebServiceRequest implements
      * @return The queue URL of the queue to delete the messages from when using
      *         the <code>PurgeQueue</code> API.
      */
+
     public String getQueueUrl() {
         return this.queueUrl;
     }
@@ -93,6 +95,7 @@ public class PurgeQueueRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PurgeQueueRequest withQueueUrl(String queueUrl) {
         setQueueUrl(queueUrl);
         return this;

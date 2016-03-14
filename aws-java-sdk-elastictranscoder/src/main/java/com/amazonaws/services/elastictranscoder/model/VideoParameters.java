@@ -554,6 +554,7 @@ public class VideoParameters implements Serializable, Cloneable {
      *        container type is <code>gif</code>, and <code>mpeg2</code> when
      *        the container type is <code>mpg</code>.
      */
+
     public void setCodec(String codec) {
         this.codec = codec;
     }
@@ -575,6 +576,7 @@ public class VideoParameters implements Serializable, Cloneable {
      *         container type is <code>gif</code>, and <code>mpeg2</code> when
      *         the container type is <code>mpg</code>.
      */
+
     public String getCodec() {
         return this.codec;
     }
@@ -599,6 +601,7 @@ public class VideoParameters implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VideoParameters withCodec(String codec) {
         setCodec(codec);
         return this;
@@ -957,6 +960,7 @@ public class VideoParameters implements Serializable, Cloneable {
      *         include <code>Infinite</code> and integers between <code>0</code>
      *         and <code>100</code>, inclusive.
      */
+
     public java.util.Map<String, String> getCodecOptions() {
         if (codecOptions == null) {
             codecOptions = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -1318,6 +1322,7 @@ public class VideoParameters implements Serializable, Cloneable {
      *        include <code>Infinite</code> and integers between <code>0</code>
      *        and <code>100</code>, inclusive.
      */
+
     public void setCodecOptions(java.util.Map<String, String> codecOptions) {
         this.codecOptions = codecOptions == null ? null
                 : new com.amazonaws.internal.SdkInternalMap<String, String>(
@@ -1680,6 +1685,7 @@ public class VideoParameters implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VideoParameters withCodecOptions(
             java.util.Map<String, String> codecOptions) {
         setCodecOptions(codecOptions);
@@ -1701,6 +1707,7 @@ public class VideoParameters implements Serializable, Cloneable {
      * Removes all the entries added into CodecOptions. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public VideoParameters clearCodecOptionsEntries() {
         this.codecOptions = null;
         return this;
@@ -1768,6 +1775,7 @@ public class VideoParameters implements Serializable, Cloneable {
      *        <code>FrameRate</code> to auto and having the same values for
      *        <code>MaxFrameRate</code> and <code>KeyframesMaxDist</code>.
      */
+
     public void setKeyframesMaxDist(String keyframesMaxDist) {
         this.keyframesMaxDist = keyframesMaxDist;
     }
@@ -1833,6 +1841,7 @@ public class VideoParameters implements Serializable, Cloneable {
      *         <code>FrameRate</code> to auto and having the same values for
      *         <code>MaxFrameRate</code> and <code>KeyframesMaxDist</code>.
      */
+
     public String getKeyframesMaxDist() {
         return this.keyframesMaxDist;
     }
@@ -1901,6 +1910,7 @@ public class VideoParameters implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VideoParameters withKeyframesMaxDist(String keyframesMaxDist) {
         setKeyframesMaxDist(keyframesMaxDist);
         return this;
@@ -1947,6 +1957,7 @@ public class VideoParameters implements Serializable, Cloneable {
      *        <code>fmp4</code> containers.
      *        </p>
      */
+
     public void setFixedGOP(String fixedGOP) {
         this.fixedGOP = fixedGOP;
     }
@@ -1992,6 +2003,7 @@ public class VideoParameters implements Serializable, Cloneable {
      *         <code>fmp4</code> containers.
      *         </p>
      */
+
     public String getFixedGOP() {
         return this.fixedGOP;
     }
@@ -2039,6 +2051,7 @@ public class VideoParameters implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VideoParameters withFixedGOP(String fixedGOP) {
         setFixedGOP(fixedGOP);
         return this;
@@ -2099,6 +2112,7 @@ public class VideoParameters implements Serializable, Cloneable {
      *        <li>4 - 20000 : 25000</li>
      *        <li>4.1 - 50000 : 62500</li>
      */
+
     public void setBitRate(String bitRate) {
         this.bitRate = bitRate;
     }
@@ -2157,6 +2171,7 @@ public class VideoParameters implements Serializable, Cloneable {
      *         <li>4 - 20000 : 25000</li>
      *         <li>4.1 - 50000 : 62500</li>
      */
+
     public String getBitRate() {
         return this.bitRate;
     }
@@ -2218,6 +2233,7 @@ public class VideoParameters implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VideoParameters withBitRate(String bitRate) {
         setBitRate(bitRate);
         return this;
@@ -2318,6 +2334,7 @@ public class VideoParameters implements Serializable, Cloneable {
      *        <li>4 - 62914560</li>
      *        <li>4.1 - 62914560</li>
      */
+
     public void setFrameRate(String frameRate) {
         this.frameRate = frameRate;
     }
@@ -2416,6 +2433,7 @@ public class VideoParameters implements Serializable, Cloneable {
      *         <li>4 - 62914560</li>
      *         <li>4.1 - 62914560</li>
      */
+
     public String getFrameRate() {
         return this.frameRate;
     }
@@ -2517,6 +2535,7 @@ public class VideoParameters implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VideoParameters withFrameRate(String frameRate) {
         setFrameRate(frameRate);
         return this;
@@ -2544,6 +2563,7 @@ public class VideoParameters implements Serializable, Cloneable {
      *        <code>25</code>, <code>29.97</code>, <code>30</code>,
      *        <code>60</code>.
      */
+
     public void setMaxFrameRate(String maxFrameRate) {
         this.maxFrameRate = maxFrameRate;
     }
@@ -2569,6 +2589,7 @@ public class VideoParameters implements Serializable, Cloneable {
      *         <code>25</code>, <code>29.97</code>, <code>30</code>,
      *         <code>60</code>.
      */
+
     public String getMaxFrameRate() {
         return this.maxFrameRate;
     }
@@ -2597,6 +2618,7 @@ public class VideoParameters implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VideoParameters withMaxFrameRate(String maxFrameRate) {
         setMaxFrameRate(maxFrameRate);
         return this;
@@ -2712,6 +2734,7 @@ public class VideoParameters implements Serializable, Cloneable {
      *        <li>4.1 - 2097152</li>
      *        </ul>
      */
+
     public void setResolution(String resolution) {
         this.resolution = resolution;
     }
@@ -2825,6 +2848,7 @@ public class VideoParameters implements Serializable, Cloneable {
      *         <li>4.1 - 2097152</li>
      *         </ul>
      */
+
     public String getResolution() {
         return this.resolution;
     }
@@ -2941,6 +2965,7 @@ public class VideoParameters implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VideoParameters withResolution(String resolution) {
         setResolution(resolution);
         return this;
@@ -3006,6 +3031,7 @@ public class VideoParameters implements Serializable, Cloneable {
      *        on the top and bottom) to maintain the aspect ratio of the active
      *        region of the video.
      */
+
     public void setAspectRatio(String aspectRatio) {
         this.aspectRatio = aspectRatio;
     }
@@ -3069,6 +3095,7 @@ public class VideoParameters implements Serializable, Cloneable {
      *         bars on the top and bottom) to maintain the aspect ratio of the
      *         active region of the video.
      */
+
     public String getAspectRatio() {
         return this.aspectRatio;
     }
@@ -3135,6 +3162,7 @@ public class VideoParameters implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VideoParameters withAspectRatio(String aspectRatio) {
         setAspectRatio(aspectRatio);
         return this;
@@ -3154,6 +3182,7 @@ public class VideoParameters implements Serializable, Cloneable {
      *        default value. If you specify a numeric value, enter an even
      *        integer between 128 and 4096.
      */
+
     public void setMaxWidth(String maxWidth) {
         this.maxWidth = maxWidth;
     }
@@ -3171,6 +3200,7 @@ public class VideoParameters implements Serializable, Cloneable {
      *         default value. If you specify a numeric value, enter an even
      *         integer between 128 and 4096.
      */
+
     public String getMaxWidth() {
         return this.maxWidth;
     }
@@ -3191,6 +3221,7 @@ public class VideoParameters implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VideoParameters withMaxWidth(String maxWidth) {
         setMaxWidth(maxWidth);
         return this;
@@ -3210,6 +3241,7 @@ public class VideoParameters implements Serializable, Cloneable {
      *        default value. If you specify a numeric value, enter an even
      *        integer between 96 and 3072.
      */
+
     public void setMaxHeight(String maxHeight) {
         this.maxHeight = maxHeight;
     }
@@ -3227,6 +3259,7 @@ public class VideoParameters implements Serializable, Cloneable {
      *         default value. If you specify a numeric value, enter an even
      *         integer between 96 and 3072.
      */
+
     public String getMaxHeight() {
         return this.maxHeight;
     }
@@ -3247,6 +3280,7 @@ public class VideoParameters implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VideoParameters withMaxHeight(String maxHeight) {
         setMaxHeight(maxHeight);
         return this;
@@ -3262,6 +3296,7 @@ public class VideoParameters implements Serializable, Cloneable {
      *        The value that Elastic Transcoder adds to the metadata in the
      *        output file.
      */
+
     public void setDisplayAspectRatio(String displayAspectRatio) {
         this.displayAspectRatio = displayAspectRatio;
     }
@@ -3275,6 +3310,7 @@ public class VideoParameters implements Serializable, Cloneable {
      * @return The value that Elastic Transcoder adds to the metadata in the
      *         output file.
      */
+
     public String getDisplayAspectRatio() {
         return this.displayAspectRatio;
     }
@@ -3291,6 +3327,7 @@ public class VideoParameters implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VideoParameters withDisplayAspectRatio(String displayAspectRatio) {
         setDisplayAspectRatio(displayAspectRatio);
         return this;
@@ -3371,6 +3408,7 @@ public class VideoParameters implements Serializable, Cloneable {
      *        up.</li>
      *        </ul>
      */
+
     public void setSizingPolicy(String sizingPolicy) {
         this.sizingPolicy = sizingPolicy;
     }
@@ -3449,6 +3487,7 @@ public class VideoParameters implements Serializable, Cloneable {
      *         video up.</li>
      *         </ul>
      */
+
     public String getSizingPolicy() {
         return this.sizingPolicy;
     }
@@ -3530,6 +3569,7 @@ public class VideoParameters implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VideoParameters withSizingPolicy(String sizingPolicy) {
         setSizingPolicy(sizingPolicy);
         return this;
@@ -3551,6 +3591,7 @@ public class VideoParameters implements Serializable, Cloneable {
      *        the output video match the values that you specified for
      *        <code>MaxWidth</code> and <code>MaxHeight</code>.
      */
+
     public void setPaddingPolicy(String paddingPolicy) {
         this.paddingPolicy = paddingPolicy;
     }
@@ -3570,6 +3611,7 @@ public class VideoParameters implements Serializable, Cloneable {
      *         size of the output video match the values that you specified for
      *         <code>MaxWidth</code> and <code>MaxHeight</code>.
      */
+
     public String getPaddingPolicy() {
         return this.paddingPolicy;
     }
@@ -3592,6 +3634,7 @@ public class VideoParameters implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VideoParameters withPaddingPolicy(String paddingPolicy) {
         setPaddingPolicy(paddingPolicy);
         return this;
@@ -3637,6 +3680,7 @@ public class VideoParameters implements Serializable, Cloneable {
      *         you to use the same preset for up to four watermarks that have
      *         different dimensions.
      */
+
     public java.util.List<PresetWatermark> getWatermarks() {
         if (watermarks == null) {
             watermarks = new com.amazonaws.internal.SdkInternalList<PresetWatermark>();
@@ -3685,6 +3729,7 @@ public class VideoParameters implements Serializable, Cloneable {
      *        you to use the same preset for up to four watermarks that have
      *        different dimensions.
      */
+
     public void setWatermarks(java.util.Collection<PresetWatermark> watermarks) {
         if (watermarks == null) {
             this.watermarks = null;
@@ -3744,6 +3789,7 @@ public class VideoParameters implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VideoParameters withWatermarks(PresetWatermark... watermarks) {
         if (this.watermarks == null) {
             setWatermarks(new com.amazonaws.internal.SdkInternalList<PresetWatermark>(
@@ -3798,6 +3844,7 @@ public class VideoParameters implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VideoParameters withWatermarks(
             java.util.Collection<PresetWatermark> watermarks) {
         setWatermarks(watermarks);

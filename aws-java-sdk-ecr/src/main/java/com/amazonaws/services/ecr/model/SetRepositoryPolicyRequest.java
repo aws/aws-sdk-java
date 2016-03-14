@@ -67,6 +67,7 @@ public class SetRepositoryPolicyRequest extends AmazonWebServiceRequest
      *        repository. If you do not specify a registry, the default registry
      *        is assumed.
      */
+
     public void setRegistryId(String registryId) {
         this.registryId = registryId;
     }
@@ -82,6 +83,7 @@ public class SetRepositoryPolicyRequest extends AmazonWebServiceRequest
      *         repository. If you do not specify a registry, the default
      *         registry is assumed.
      */
+
     public String getRegistryId() {
         return this.registryId;
     }
@@ -100,6 +102,7 @@ public class SetRepositoryPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetRepositoryPolicyRequest withRegistryId(String registryId) {
         setRegistryId(registryId);
         return this;
@@ -113,6 +116,7 @@ public class SetRepositoryPolicyRequest extends AmazonWebServiceRequest
      * @param repositoryName
      *        The name of the repository to receive the policy.
      */
+
     public void setRepositoryName(String repositoryName) {
         this.repositoryName = repositoryName;
     }
@@ -124,6 +128,7 @@ public class SetRepositoryPolicyRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the repository to receive the policy.
      */
+
     public String getRepositoryName() {
         return this.repositoryName;
     }
@@ -138,6 +143,7 @@ public class SetRepositoryPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetRepositoryPolicyRequest withRepositoryName(String repositoryName) {
         setRepositoryName(repositoryName);
         return this;
@@ -151,6 +157,7 @@ public class SetRepositoryPolicyRequest extends AmazonWebServiceRequest
      * @param policyText
      *        The JSON repository policy text to apply to the repository.
      */
+
     public void setPolicyText(String policyText) {
         this.policyText = policyText;
     }
@@ -162,6 +169,7 @@ public class SetRepositoryPolicyRequest extends AmazonWebServiceRequest
      * 
      * @return The JSON repository policy text to apply to the repository.
      */
+
     public String getPolicyText() {
         return this.policyText;
     }
@@ -176,6 +184,7 @@ public class SetRepositoryPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetRepositoryPolicyRequest withPolicyText(String policyText) {
         setPolicyText(policyText);
         return this;
@@ -195,6 +204,7 @@ public class SetRepositoryPolicyRequest extends AmazonWebServiceRequest
      *        must force the <a>SetRepositoryPolicy</a> operation. This is
      *        intended to prevent accidental repository lock outs.
      */
+
     public void setForce(Boolean force) {
         this.force = force;
     }
@@ -212,6 +222,7 @@ public class SetRepositoryPolicyRequest extends AmazonWebServiceRequest
      *         must force the <a>SetRepositoryPolicy</a> operation. This is
      *         intended to prevent accidental repository lock outs.
      */
+
     public Boolean getForce() {
         return this.force;
     }
@@ -232,6 +243,7 @@ public class SetRepositoryPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetRepositoryPolicyRequest withForce(Boolean force) {
         setForce(force);
         return this;
@@ -250,6 +262,7 @@ public class SetRepositoryPolicyRequest extends AmazonWebServiceRequest
      *         must force the <a>SetRepositoryPolicy</a> operation. This is
      *         intended to prevent accidental repository lock outs.
      */
+
     public Boolean isForce() {
         return this.force;
     }

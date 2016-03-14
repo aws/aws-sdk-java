@@ -66,6 +66,7 @@ public class CreateModelResult implements Serializable, Cloneable {
      * @param id
      *        The identifier for the model resource.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -77,6 +78,7 @@ public class CreateModelResult implements Serializable, Cloneable {
      * 
      * @return The identifier for the model resource.
      */
+
     public String getId() {
         return this.id;
     }
@@ -91,6 +93,7 @@ public class CreateModelResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateModelResult withId(String id) {
         setId(id);
         return this;
@@ -104,6 +107,7 @@ public class CreateModelResult implements Serializable, Cloneable {
      * @param name
      *        The name of the model.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -115,6 +119,7 @@ public class CreateModelResult implements Serializable, Cloneable {
      * 
      * @return The name of the model.
      */
+
     public String getName() {
         return this.name;
     }
@@ -129,6 +134,7 @@ public class CreateModelResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateModelResult withName(String name) {
         setName(name);
         return this;
@@ -142,6 +148,7 @@ public class CreateModelResult implements Serializable, Cloneable {
      * @param description
      *        The description of the model.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -153,6 +160,7 @@ public class CreateModelResult implements Serializable, Cloneable {
      * 
      * @return The description of the model.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -167,6 +175,7 @@ public class CreateModelResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateModelResult withDescription(String description) {
         setDescription(description);
         return this;
@@ -185,6 +194,7 @@ public class CreateModelResult implements Serializable, Cloneable {
      *        href="http://json-schema.org/documentation.html"
      *        target="_blank">JSON-schema draft v4</a> model.
      */
+
     public void setSchema(String schema) {
         this.schema = schema;
     }
@@ -201,6 +211,7 @@ public class CreateModelResult implements Serializable, Cloneable {
      *         href="http://json-schema.org/documentation.html"
      *         target="_blank">JSON-schema draft v4</a> model.
      */
+
     public String getSchema() {
         return this.schema;
     }
@@ -220,6 +231,7 @@ public class CreateModelResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateModelResult withSchema(String schema) {
         setSchema(schema);
         return this;
@@ -233,6 +245,7 @@ public class CreateModelResult implements Serializable, Cloneable {
      * @param contentType
      *        The content-type for the model.
      */
+
     public void setContentType(String contentType) {
         this.contentType = contentType;
     }
@@ -244,6 +257,7 @@ public class CreateModelResult implements Serializable, Cloneable {
      * 
      * @return The content-type for the model.
      */
+
     public String getContentType() {
         return this.contentType;
     }
@@ -258,6 +272,7 @@ public class CreateModelResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateModelResult withContentType(String contentType) {
         setContentType(contentType);
         return this;

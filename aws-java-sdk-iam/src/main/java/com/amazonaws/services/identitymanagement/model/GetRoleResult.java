@@ -40,6 +40,7 @@ public class GetRoleResult implements Serializable, Cloneable {
      * @param role
      *        Information about the role.
      */
+
     public void setRole(Role role) {
         this.role = role;
     }
@@ -51,6 +52,7 @@ public class GetRoleResult implements Serializable, Cloneable {
      * 
      * @return Information about the role.
      */
+
     public Role getRole() {
         return this.role;
     }
@@ -65,6 +67,7 @@ public class GetRoleResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetRoleResult withRole(Role role) {
         setRole(role);
         return this;

@@ -117,6 +117,7 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements
      *        interface ID, but not both. The operation fails if you specify an
      *        instance ID unless exactly one network interface is attached.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -134,6 +135,7 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements
      *         interface ID, but not both. The operation fails if you specify an
      *         instance ID unless exactly one network interface is attached.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
@@ -154,6 +156,7 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssociateAddressRequest withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;
@@ -167,6 +170,7 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements
      * @param publicIp
      *        The Elastic IP address. This is required for EC2-Classic.
      */
+
     public void setPublicIp(String publicIp) {
         this.publicIp = publicIp;
     }
@@ -178,6 +182,7 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements
      * 
      * @return The Elastic IP address. This is required for EC2-Classic.
      */
+
     public String getPublicIp() {
         return this.publicIp;
     }
@@ -192,6 +197,7 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssociateAddressRequest withPublicIp(String publicIp) {
         setPublicIp(publicIp);
         return this;
@@ -205,6 +211,7 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements
      * @param allocationId
      *        [EC2-VPC] The allocation ID. This is required for EC2-VPC.
      */
+
     public void setAllocationId(String allocationId) {
         this.allocationId = allocationId;
     }
@@ -216,6 +223,7 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements
      * 
      * @return [EC2-VPC] The allocation ID. This is required for EC2-VPC.
      */
+
     public String getAllocationId() {
         return this.allocationId;
     }
@@ -230,6 +238,7 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssociateAddressRequest withAllocationId(String allocationId) {
         setAllocationId(allocationId);
         return this;
@@ -246,6 +255,7 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements
      *        more than one network interface, you must specify a network
      *        interface ID.
      */
+
     public void setNetworkInterfaceId(String networkInterfaceId) {
         this.networkInterfaceId = networkInterfaceId;
     }
@@ -260,6 +270,7 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements
      *         more than one network interface, you must specify a network
      *         interface ID.
      */
+
     public String getNetworkInterfaceId() {
         return this.networkInterfaceId;
     }
@@ -277,6 +288,7 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssociateAddressRequest withNetworkInterfaceId(
             String networkInterfaceId) {
         setNetworkInterfaceId(networkInterfaceId);
@@ -296,6 +308,7 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements
      *        specified, the Elastic IP address is associated with the primary
      *        private IP address.
      */
+
     public void setPrivateIpAddress(String privateIpAddress) {
         this.privateIpAddress = privateIpAddress;
     }
@@ -312,6 +325,7 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements
      *         is specified, the Elastic IP address is associated with the
      *         primary private IP address.
      */
+
     public String getPrivateIpAddress() {
         return this.privateIpAddress;
     }
@@ -331,6 +345,7 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssociateAddressRequest withPrivateIpAddress(String privateIpAddress) {
         setPrivateIpAddress(privateIpAddress);
         return this;
@@ -357,6 +372,7 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements
      *        fails if the Elastic IP address is already associated with another
      *        resource.
      */
+
     public void setAllowReassociation(Boolean allowReassociation) {
         this.allowReassociation = allowReassociation;
     }
@@ -381,6 +397,7 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements
      *         operation fails if the Elastic IP address is already associated
      *         with another resource.
      */
+
     public Boolean getAllowReassociation() {
         return this.allowReassociation;
     }
@@ -408,6 +425,7 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssociateAddressRequest withAllowReassociation(
             Boolean allowReassociation) {
         setAllowReassociation(allowReassociation);
@@ -434,6 +452,7 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements
      *         operation fails if the Elastic IP address is already associated
      *         with another resource.
      */
+
     public Boolean isAllowReassociation() {
         return this.allowReassociation;
     }

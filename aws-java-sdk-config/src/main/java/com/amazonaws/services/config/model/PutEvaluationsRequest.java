@@ -53,6 +53,7 @@ public class PutEvaluationsRequest extends AmazonWebServiceRequest implements
      *         complies with the AWS Config rule that invokes the AWS Lambda
      *         function.
      */
+
     public java.util.List<Evaluation> getEvaluations() {
         if (evaluations == null) {
             evaluations = new com.amazonaws.internal.SdkInternalList<Evaluation>();
@@ -73,6 +74,7 @@ public class PutEvaluationsRequest extends AmazonWebServiceRequest implements
      *        complies with the AWS Config rule that invokes the AWS Lambda
      *        function.
      */
+
     public void setEvaluations(java.util.Collection<Evaluation> evaluations) {
         if (evaluations == null) {
             this.evaluations = null;
@@ -104,6 +106,7 @@ public class PutEvaluationsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutEvaluationsRequest withEvaluations(Evaluation... evaluations) {
         if (this.evaluations == null) {
             setEvaluations(new com.amazonaws.internal.SdkInternalList<Evaluation>(
@@ -130,6 +133,7 @@ public class PutEvaluationsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutEvaluationsRequest withEvaluations(
             java.util.Collection<Evaluation> evaluations) {
         setEvaluations(evaluations);
@@ -147,6 +151,7 @@ public class PutEvaluationsRequest extends AmazonWebServiceRequest implements
      *        Config rule. Identifies the rule and the event that triggered the
      *        evaluation
      */
+
     public void setResultToken(String resultToken) {
         this.resultToken = resultToken;
     }
@@ -161,6 +166,7 @@ public class PutEvaluationsRequest extends AmazonWebServiceRequest implements
      *         Config rule. Identifies the rule and the event that triggered the
      *         evaluation
      */
+
     public String getResultToken() {
         return this.resultToken;
     }
@@ -178,6 +184,7 @@ public class PutEvaluationsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutEvaluationsRequest withResultToken(String resultToken) {
         setResultToken(resultToken);
         return this;

@@ -42,6 +42,7 @@ public class GetApiKeyRequest extends AmazonWebServiceRequest implements
      * @param apiKey
      *        The identifier of the <a>ApiKey</a> resource.
      */
+
     public void setApiKey(String apiKey) {
         this.apiKey = apiKey;
     }
@@ -53,6 +54,7 @@ public class GetApiKeyRequest extends AmazonWebServiceRequest implements
      * 
      * @return The identifier of the <a>ApiKey</a> resource.
      */
+
     public String getApiKey() {
         return this.apiKey;
     }
@@ -67,6 +69,7 @@ public class GetApiKeyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetApiKeyRequest withApiKey(String apiKey) {
         setApiKey(apiKey);
         return this;

@@ -40,6 +40,7 @@ public class RunJobFlowResult implements Serializable, Cloneable {
      * @param jobFlowId
      *        An unique identifier for the job flow.
      */
+
     public void setJobFlowId(String jobFlowId) {
         this.jobFlowId = jobFlowId;
     }
@@ -51,6 +52,7 @@ public class RunJobFlowResult implements Serializable, Cloneable {
      * 
      * @return An unique identifier for the job flow.
      */
+
     public String getJobFlowId() {
         return this.jobFlowId;
     }
@@ -65,6 +67,7 @@ public class RunJobFlowResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunJobFlowResult withJobFlowId(String jobFlowId) {
         setJobFlowId(jobFlowId);
         return this;

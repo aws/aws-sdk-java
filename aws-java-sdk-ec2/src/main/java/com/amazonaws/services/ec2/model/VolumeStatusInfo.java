@@ -47,6 +47,7 @@ public class VolumeStatusInfo implements Serializable, Cloneable {
      *        The status of the volume.
      * @see VolumeStatusInfoStatus
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -59,6 +60,7 @@ public class VolumeStatusInfo implements Serializable, Cloneable {
      * @return The status of the volume.
      * @see VolumeStatusInfoStatus
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -74,6 +76,7 @@ public class VolumeStatusInfo implements Serializable, Cloneable {
      *         chained together.
      * @see VolumeStatusInfoStatus
      */
+
     public VolumeStatusInfo withStatus(String status) {
         setStatus(status);
         return this;
@@ -90,6 +93,7 @@ public class VolumeStatusInfo implements Serializable, Cloneable {
      *         chained together.
      * @see VolumeStatusInfoStatus
      */
+
     public void setStatus(VolumeStatusInfoStatus status) {
         this.status = status.toString();
     }
@@ -105,6 +109,7 @@ public class VolumeStatusInfo implements Serializable, Cloneable {
      *         chained together.
      * @see VolumeStatusInfoStatus
      */
+
     public VolumeStatusInfo withStatus(VolumeStatusInfoStatus status) {
         setStatus(status);
         return this;
@@ -117,6 +122,7 @@ public class VolumeStatusInfo implements Serializable, Cloneable {
      * 
      * @return The details of the volume status.
      */
+
     public java.util.List<VolumeStatusDetails> getDetails() {
         if (details == null) {
             details = new com.amazonaws.internal.SdkInternalList<VolumeStatusDetails>();
@@ -132,6 +138,7 @@ public class VolumeStatusInfo implements Serializable, Cloneable {
      * @param details
      *        The details of the volume status.
      */
+
     public void setDetails(java.util.Collection<VolumeStatusDetails> details) {
         if (details == null) {
             this.details = null;
@@ -158,6 +165,7 @@ public class VolumeStatusInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VolumeStatusInfo withDetails(VolumeStatusDetails... details) {
         if (this.details == null) {
             setDetails(new com.amazonaws.internal.SdkInternalList<VolumeStatusDetails>(
@@ -179,6 +187,7 @@ public class VolumeStatusInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VolumeStatusInfo withDetails(
             java.util.Collection<VolumeStatusDetails> details) {
         setDetails(details);

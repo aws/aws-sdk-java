@@ -46,6 +46,7 @@ public class DescribeLunaClientRequest extends AmazonWebServiceRequest
      * @param clientArn
      *        The ARN of the client.
      */
+
     public void setClientArn(String clientArn) {
         this.clientArn = clientArn;
     }
@@ -57,6 +58,7 @@ public class DescribeLunaClientRequest extends AmazonWebServiceRequest
      * 
      * @return The ARN of the client.
      */
+
     public String getClientArn() {
         return this.clientArn;
     }
@@ -71,6 +73,7 @@ public class DescribeLunaClientRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLunaClientRequest withClientArn(String clientArn) {
         setClientArn(clientArn);
         return this;
@@ -84,6 +87,7 @@ public class DescribeLunaClientRequest extends AmazonWebServiceRequest
      * @param certificateFingerprint
      *        The certificate fingerprint.
      */
+
     public void setCertificateFingerprint(String certificateFingerprint) {
         this.certificateFingerprint = certificateFingerprint;
     }
@@ -95,6 +99,7 @@ public class DescribeLunaClientRequest extends AmazonWebServiceRequest
      * 
      * @return The certificate fingerprint.
      */
+
     public String getCertificateFingerprint() {
         return this.certificateFingerprint;
     }
@@ -109,6 +114,7 @@ public class DescribeLunaClientRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLunaClientRequest withCertificateFingerprint(
             String certificateFingerprint) {
         setCertificateFingerprint(certificateFingerprint);

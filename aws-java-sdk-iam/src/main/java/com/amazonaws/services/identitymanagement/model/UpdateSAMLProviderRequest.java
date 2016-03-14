@@ -62,6 +62,7 @@ public class UpdateSAMLProviderRequest extends AmazonWebServiceRequest
      *        identity management software that is used as your organization's
      *        IdP.
      */
+
     public void setSAMLMetadataDocument(String sAMLMetadataDocument) {
         this.sAMLMetadataDocument = sAMLMetadataDocument;
     }
@@ -84,6 +85,7 @@ public class UpdateSAMLProviderRequest extends AmazonWebServiceRequest
      *         identity management software that is used as your organization's
      *         IdP.
      */
+
     public String getSAMLMetadataDocument() {
         return this.sAMLMetadataDocument;
     }
@@ -109,6 +111,7 @@ public class UpdateSAMLProviderRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateSAMLProviderRequest withSAMLMetadataDocument(
             String sAMLMetadataDocument) {
         setSAMLMetadataDocument(sAMLMetadataDocument);
@@ -123,6 +126,7 @@ public class UpdateSAMLProviderRequest extends AmazonWebServiceRequest
      * @param sAMLProviderArn
      *        The Amazon Resource Name (ARN) of the SAML provider to update.
      */
+
     public void setSAMLProviderArn(String sAMLProviderArn) {
         this.sAMLProviderArn = sAMLProviderArn;
     }
@@ -134,6 +138,7 @@ public class UpdateSAMLProviderRequest extends AmazonWebServiceRequest
      * 
      * @return The Amazon Resource Name (ARN) of the SAML provider to update.
      */
+
     public String getSAMLProviderArn() {
         return this.sAMLProviderArn;
     }
@@ -148,6 +153,7 @@ public class UpdateSAMLProviderRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateSAMLProviderRequest withSAMLProviderArn(String sAMLProviderArn) {
         setSAMLProviderArn(sAMLProviderArn);
         return this;

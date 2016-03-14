@@ -45,6 +45,7 @@ public class DeleteDeploymentConfigRequest extends AmazonWebServiceRequest
      *        The name of an existing deployment configuration associated with
      *        the applicable IAM user or AWS account.
      */
+
     public void setDeploymentConfigName(String deploymentConfigName) {
         this.deploymentConfigName = deploymentConfigName;
     }
@@ -58,6 +59,7 @@ public class DeleteDeploymentConfigRequest extends AmazonWebServiceRequest
      * @return The name of an existing deployment configuration associated with
      *         the applicable IAM user or AWS account.
      */
+
     public String getDeploymentConfigName() {
         return this.deploymentConfigName;
     }
@@ -74,6 +76,7 @@ public class DeleteDeploymentConfigRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteDeploymentConfigRequest withDeploymentConfigName(
             String deploymentConfigName) {
         setDeploymentConfigName(deploymentConfigName);

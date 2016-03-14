@@ -47,6 +47,7 @@ public class CancelSpotFleetRequestsErrorItem implements Serializable,
      * @param spotFleetRequestId
      *        The ID of the Spot fleet request.
      */
+
     public void setSpotFleetRequestId(String spotFleetRequestId) {
         this.spotFleetRequestId = spotFleetRequestId;
     }
@@ -58,6 +59,7 @@ public class CancelSpotFleetRequestsErrorItem implements Serializable,
      * 
      * @return The ID of the Spot fleet request.
      */
+
     public String getSpotFleetRequestId() {
         return this.spotFleetRequestId;
     }
@@ -72,6 +74,7 @@ public class CancelSpotFleetRequestsErrorItem implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CancelSpotFleetRequestsErrorItem withSpotFleetRequestId(
             String spotFleetRequestId) {
         setSpotFleetRequestId(spotFleetRequestId);
@@ -86,6 +89,7 @@ public class CancelSpotFleetRequestsErrorItem implements Serializable,
      * @param error
      *        The error.
      */
+
     public void setError(CancelSpotFleetRequestsError error) {
         this.error = error;
     }
@@ -97,6 +101,7 @@ public class CancelSpotFleetRequestsErrorItem implements Serializable,
      * 
      * @return The error.
      */
+
     public CancelSpotFleetRequestsError getError() {
         return this.error;
     }
@@ -111,6 +116,7 @@ public class CancelSpotFleetRequestsErrorItem implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CancelSpotFleetRequestsErrorItem withError(
             CancelSpotFleetRequestsError error) {
         setError(error);

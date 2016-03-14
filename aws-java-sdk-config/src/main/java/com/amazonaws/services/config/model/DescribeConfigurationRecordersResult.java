@@ -43,6 +43,7 @@ public class DescribeConfigurationRecordersResult implements Serializable,
      * @return A list that contains the descriptions of the specified
      *         configuration recorders.
      */
+
     public java.util.List<ConfigurationRecorder> getConfigurationRecorders() {
         if (configurationRecorders == null) {
             configurationRecorders = new com.amazonaws.internal.SdkInternalList<ConfigurationRecorder>();
@@ -60,6 +61,7 @@ public class DescribeConfigurationRecordersResult implements Serializable,
      *        A list that contains the descriptions of the specified
      *        configuration recorders.
      */
+
     public void setConfigurationRecorders(
             java.util.Collection<ConfigurationRecorder> configurationRecorders) {
         if (configurationRecorders == null) {
@@ -89,6 +91,7 @@ public class DescribeConfigurationRecordersResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeConfigurationRecordersResult withConfigurationRecorders(
             ConfigurationRecorder... configurationRecorders) {
         if (this.configurationRecorders == null) {
@@ -113,6 +116,7 @@ public class DescribeConfigurationRecordersResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeConfigurationRecordersResult withConfigurationRecorders(
             java.util.Collection<ConfigurationRecorder> configurationRecorders) {
         setConfigurationRecorders(configurationRecorders);

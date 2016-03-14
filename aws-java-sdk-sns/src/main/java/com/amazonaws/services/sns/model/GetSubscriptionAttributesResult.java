@@ -81,6 +81,7 @@ public class GetSubscriptionAttributesResult implements Serializable, Cloneable 
      *         serialization of the effective delivery policy that takes into
      *         account the topic delivery policy and account system defaults</li>
      */
+
     public java.util.Map<String, String> getAttributes() {
         if (attributes == null) {
             attributes = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -124,6 +125,7 @@ public class GetSubscriptionAttributesResult implements Serializable, Cloneable 
      *        of the effective delivery policy that takes into account the topic
      *        delivery policy and account system defaults</li>
      */
+
     public void setAttributes(java.util.Map<String, String> attributes) {
         this.attributes = attributes == null ? null
                 : new com.amazonaws.internal.SdkInternalMap<String, String>(
@@ -168,6 +170,7 @@ public class GetSubscriptionAttributesResult implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetSubscriptionAttributesResult withAttributes(
             java.util.Map<String, String> attributes) {
         setAttributes(attributes);
@@ -190,6 +193,7 @@ public class GetSubscriptionAttributesResult implements Serializable, Cloneable 
      * Removes all the entries added into Attributes. &lt;p> Returns a reference
      * to this object so that method calls can be chained together.
      */
+
     public GetSubscriptionAttributesResult clearAttributesEntries() {
         this.attributes = null;
         return this;

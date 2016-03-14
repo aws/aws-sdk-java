@@ -79,6 +79,7 @@ public class CreateBatchPredictionRequest extends AmazonWebServiceRequest
      *        A user-supplied ID that uniquely identifies the
      *        <code>BatchPrediction</code>.
      */
+
     public void setBatchPredictionId(String batchPredictionId) {
         this.batchPredictionId = batchPredictionId;
     }
@@ -92,6 +93,7 @@ public class CreateBatchPredictionRequest extends AmazonWebServiceRequest
      * @return A user-supplied ID that uniquely identifies the
      *         <code>BatchPrediction</code>.
      */
+
     public String getBatchPredictionId() {
         return this.batchPredictionId;
     }
@@ -108,6 +110,7 @@ public class CreateBatchPredictionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateBatchPredictionRequest withBatchPredictionId(
             String batchPredictionId) {
         setBatchPredictionId(batchPredictionId);
@@ -125,6 +128,7 @@ public class CreateBatchPredictionRequest extends AmazonWebServiceRequest
      *        <code>BatchPrediction</code>. <code>BatchPredictionName</code> can
      *        only use the UTF-8 character set.
      */
+
     public void setBatchPredictionName(String batchPredictionName) {
         this.batchPredictionName = batchPredictionName;
     }
@@ -139,6 +143,7 @@ public class CreateBatchPredictionRequest extends AmazonWebServiceRequest
      *         <code>BatchPrediction</code>. <code>BatchPredictionName</code>
      *         can only use the UTF-8 character set.
      */
+
     public String getBatchPredictionName() {
         return this.batchPredictionName;
     }
@@ -156,6 +161,7 @@ public class CreateBatchPredictionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateBatchPredictionRequest withBatchPredictionName(
             String batchPredictionName) {
         setBatchPredictionName(batchPredictionName);
@@ -172,6 +178,7 @@ public class CreateBatchPredictionRequest extends AmazonWebServiceRequest
      *        The ID of the <code>MLModel</code> that will generate predictions
      *        for the group of observations.
      */
+
     public void setMLModelId(String mLModelId) {
         this.mLModelId = mLModelId;
     }
@@ -185,6 +192,7 @@ public class CreateBatchPredictionRequest extends AmazonWebServiceRequest
      * @return The ID of the <code>MLModel</code> that will generate predictions
      *         for the group of observations.
      */
+
     public String getMLModelId() {
         return this.mLModelId;
     }
@@ -201,6 +209,7 @@ public class CreateBatchPredictionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateBatchPredictionRequest withMLModelId(String mLModelId) {
         setMLModelId(mLModelId);
         return this;
@@ -216,6 +225,7 @@ public class CreateBatchPredictionRequest extends AmazonWebServiceRequest
      *        The ID of the <code>DataSource</code> that points to the group of
      *        observations to predict.
      */
+
     public void setBatchPredictionDataSourceId(
             String batchPredictionDataSourceId) {
         this.batchPredictionDataSourceId = batchPredictionDataSourceId;
@@ -230,6 +240,7 @@ public class CreateBatchPredictionRequest extends AmazonWebServiceRequest
      * @return The ID of the <code>DataSource</code> that points to the group of
      *         observations to predict.
      */
+
     public String getBatchPredictionDataSourceId() {
         return this.batchPredictionDataSourceId;
     }
@@ -246,6 +257,7 @@ public class CreateBatchPredictionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateBatchPredictionRequest withBatchPredictionDataSourceId(
             String batchPredictionDataSourceId) {
         setBatchPredictionDataSourceId(batchPredictionDataSourceId);
@@ -278,6 +290,7 @@ public class CreateBatchPredictionRequest extends AmazonWebServiceRequest
      *        ="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon
      *        Machine Learning Developer Guide</a>.
      */
+
     public void setOutputUri(String outputUri) {
         this.outputUri = outputUri;
     }
@@ -307,6 +320,7 @@ public class CreateBatchPredictionRequest extends AmazonWebServiceRequest
      *         href="http://docs.aws.amazon.com/machine-learning/latest/dg"
      *         >Amazon Machine Learning Developer Guide</a>.
      */
+
     public String getOutputUri() {
         return this.outputUri;
     }
@@ -339,6 +353,7 @@ public class CreateBatchPredictionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateBatchPredictionRequest withOutputUri(String outputUri) {
         setOutputUri(outputUri);
         return this;

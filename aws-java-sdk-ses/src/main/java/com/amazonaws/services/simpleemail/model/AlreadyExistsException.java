@@ -41,6 +41,7 @@ public class AlreadyExistsException extends AmazonServiceException {
     /**
      * @param name
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -48,6 +49,7 @@ public class AlreadyExistsException extends AmazonServiceException {
     /**
      * @return
      */
+
     public String getName() {
         return this.name;
     }
@@ -57,6 +59,7 @@ public class AlreadyExistsException extends AmazonServiceException {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AlreadyExistsException withName(String name) {
         setName(name);
         return this;

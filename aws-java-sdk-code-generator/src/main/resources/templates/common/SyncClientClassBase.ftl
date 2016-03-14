@@ -60,6 +60,9 @@ public class ${metadata.syncClient} extends AmazonWebServiceClient implements ${
     /** The region metadata service name for computing region endpoints. */
     private static final String DEFAULT_ENDPOINT_PREFIX = "${metadata.endpointPrefix}";
 
+    /** Client configuration factory providing ClientConfigurations tailored to this client */
+    protected static final ${clientConfigFactory} configFactory = new ${clientConfigFactory}();
+
     /**
      * List of exception unmarshallers for all ${serviceAbbreviation} exceptions.
      */
@@ -82,7 +85,7 @@ public class ${metadata.syncClient} extends AmazonWebServiceClient implements ${
      * @see DefaultAWSCredentialsProviderChain
      */
     public ${metadata.syncClient}() {
-        this(new DefaultAWSCredentialsProviderChain(), ${defaultClientConfiguration});
+        this(new DefaultAWSCredentialsProviderChain(), configFactory.getConfig());
     }
 
     /**
@@ -121,7 +124,7 @@ public class ${metadata.syncClient} extends AmazonWebServiceClient implements ${
      *                       when authenticating with AWS services.
      */
     public ${metadata.syncClient}(AWSCredentials awsCredentials) {
-        this(awsCredentials, ${defaultClientConfiguration});
+        this(awsCredentials, configFactory.getConfig());
     }
 
     /**
@@ -158,7 +161,7 @@ public class ${metadata.syncClient} extends AmazonWebServiceClient implements ${
      *            to authenticate requests with AWS services.
      */
     public ${metadata.syncClient}(AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider, ${defaultClientConfiguration});
+        this(awsCredentialsProvider, configFactory.getConfig());
     }
 
     /**

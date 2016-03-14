@@ -87,6 +87,7 @@ public class ListTrafficPolicyInstancesByHostedZoneResult implements
      *         element for each traffic policy instance that matches the
      *         elements in the request.
      */
+
     public java.util.List<TrafficPolicyInstance> getTrafficPolicyInstances() {
         if (trafficPolicyInstances == null) {
             trafficPolicyInstances = new com.amazonaws.internal.SdkInternalList<TrafficPolicyInstance>();
@@ -105,6 +106,7 @@ public class ListTrafficPolicyInstancesByHostedZoneResult implements
      *        element for each traffic policy instance that matches the elements
      *        in the request.
      */
+
     public void setTrafficPolicyInstances(
             java.util.Collection<TrafficPolicyInstance> trafficPolicyInstances) {
         if (trafficPolicyInstances == null) {
@@ -135,6 +137,7 @@ public class ListTrafficPolicyInstancesByHostedZoneResult implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTrafficPolicyInstancesByHostedZoneResult withTrafficPolicyInstances(
             TrafficPolicyInstance... trafficPolicyInstances) {
         if (this.trafficPolicyInstances == null) {
@@ -160,6 +163,7 @@ public class ListTrafficPolicyInstancesByHostedZoneResult implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTrafficPolicyInstancesByHostedZoneResult withTrafficPolicyInstances(
             java.util.Collection<TrafficPolicyInstance> trafficPolicyInstances) {
         setTrafficPolicyInstances(trafficPolicyInstances);
@@ -180,6 +184,7 @@ public class ListTrafficPolicyInstancesByHostedZoneResult implements
      *        first traffic policy instance in the next group of
      *        <code>MaxItems</code> traffic policy instances.
      */
+
     public void setTrafficPolicyInstanceNameMarker(
             String trafficPolicyInstanceNameMarker) {
         this.trafficPolicyInstanceNameMarker = trafficPolicyInstanceNameMarker;
@@ -198,6 +203,7 @@ public class ListTrafficPolicyInstancesByHostedZoneResult implements
      *         first traffic policy instance in the next group of
      *         <code>MaxItems</code> traffic policy instances.
      */
+
     public String getTrafficPolicyInstanceNameMarker() {
         return this.trafficPolicyInstanceNameMarker;
     }
@@ -218,6 +224,7 @@ public class ListTrafficPolicyInstancesByHostedZoneResult implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTrafficPolicyInstancesByHostedZoneResult withTrafficPolicyInstanceNameMarker(
             String trafficPolicyInstanceNameMarker) {
         setTrafficPolicyInstanceNameMarker(trafficPolicyInstanceNameMarker);
@@ -241,6 +248,7 @@ public class ListTrafficPolicyInstancesByHostedZoneResult implements
      *        traffic policy instances.
      * @see RRType
      */
+
     public void setTrafficPolicyInstanceTypeMarker(
             String trafficPolicyInstanceTypeMarker) {
         this.trafficPolicyInstanceTypeMarker = trafficPolicyInstanceTypeMarker;
@@ -262,6 +270,7 @@ public class ListTrafficPolicyInstancesByHostedZoneResult implements
      *         <code>MaxItems</code> traffic policy instances.
      * @see RRType
      */
+
     public String getTrafficPolicyInstanceTypeMarker() {
         return this.trafficPolicyInstanceTypeMarker;
     }
@@ -285,6 +294,7 @@ public class ListTrafficPolicyInstancesByHostedZoneResult implements
      *         chained together.
      * @see RRType
      */
+
     public ListTrafficPolicyInstancesByHostedZoneResult withTrafficPolicyInstanceTypeMarker(
             String trafficPolicyInstanceTypeMarker) {
         setTrafficPolicyInstanceTypeMarker(trafficPolicyInstanceTypeMarker);
@@ -310,6 +320,7 @@ public class ListTrafficPolicyInstancesByHostedZoneResult implements
      *         chained together.
      * @see RRType
      */
+
     public void setTrafficPolicyInstanceTypeMarker(
             RRType trafficPolicyInstanceTypeMarker) {
         this.trafficPolicyInstanceTypeMarker = trafficPolicyInstanceTypeMarker
@@ -335,6 +346,7 @@ public class ListTrafficPolicyInstancesByHostedZoneResult implements
      *         chained together.
      * @see RRType
      */
+
     public ListTrafficPolicyInstancesByHostedZoneResult withTrafficPolicyInstanceTypeMarker(
             RRType trafficPolicyInstanceTypeMarker) {
         setTrafficPolicyInstanceTypeMarker(trafficPolicyInstanceTypeMarker);
@@ -369,6 +381,7 @@ public class ListTrafficPolicyInstancesByHostedZoneResult implements
      *        <p>
      *        Valid Values: <code>true</code> | <code>false</code>
      */
+
     public void setIsTruncated(Boolean isTruncated) {
         this.isTruncated = isTruncated;
     }
@@ -400,6 +413,7 @@ public class ListTrafficPolicyInstancesByHostedZoneResult implements
      *         <p>
      *         Valid Values: <code>true</code> | <code>false</code>
      */
+
     public Boolean getIsTruncated() {
         return this.isTruncated;
     }
@@ -434,6 +448,7 @@ public class ListTrafficPolicyInstancesByHostedZoneResult implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTrafficPolicyInstancesByHostedZoneResult withIsTruncated(
             Boolean isTruncated) {
         setIsTruncated(isTruncated);
@@ -467,6 +482,7 @@ public class ListTrafficPolicyInstancesByHostedZoneResult implements
      *         <p>
      *         Valid Values: <code>true</code> | <code>false</code>
      */
+
     public Boolean isTruncated() {
         return this.isTruncated;
     }
@@ -484,6 +500,7 @@ public class ListTrafficPolicyInstancesByHostedZoneResult implements
      *        <code>ListTrafficPolicyInstancesByHostedZone</code> that produced
      *        the current response.
      */
+
     public void setMaxItems(String maxItems) {
         this.maxItems = maxItems;
     }
@@ -500,6 +517,7 @@ public class ListTrafficPolicyInstancesByHostedZoneResult implements
      *         <code>ListTrafficPolicyInstancesByHostedZone</code> that produced
      *         the current response.
      */
+
     public String getMaxItems() {
         return this.maxItems;
     }
@@ -519,6 +537,7 @@ public class ListTrafficPolicyInstancesByHostedZoneResult implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTrafficPolicyInstancesByHostedZoneResult withMaxItems(
             String maxItems) {
         setMaxItems(maxItems);

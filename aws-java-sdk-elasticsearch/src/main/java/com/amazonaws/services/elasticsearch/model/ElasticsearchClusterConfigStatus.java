@@ -51,6 +51,7 @@ public class ElasticsearchClusterConfigStatus implements Serializable,
      *        Specifies the cluster configuration for the specified
      *        Elasticsearch domain.
      */
+
     public void setOptions(ElasticsearchClusterConfig options) {
         this.options = options;
     }
@@ -64,6 +65,7 @@ public class ElasticsearchClusterConfigStatus implements Serializable,
      * @return Specifies the cluster configuration for the specified
      *         Elasticsearch domain.
      */
+
     public ElasticsearchClusterConfig getOptions() {
         return this.options;
     }
@@ -80,6 +82,7 @@ public class ElasticsearchClusterConfigStatus implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ElasticsearchClusterConfigStatus withOptions(
             ElasticsearchClusterConfig options) {
         setOptions(options);
@@ -96,6 +99,7 @@ public class ElasticsearchClusterConfigStatus implements Serializable,
      *        Specifies the status of the configuration for the specified
      *        Elasticsearch domain.
      */
+
     public void setStatus(OptionStatus status) {
         this.status = status;
     }
@@ -109,6 +113,7 @@ public class ElasticsearchClusterConfigStatus implements Serializable,
      * @return Specifies the status of the configuration for the specified
      *         Elasticsearch domain.
      */
+
     public OptionStatus getStatus() {
         return this.status;
     }
@@ -125,6 +130,7 @@ public class ElasticsearchClusterConfigStatus implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ElasticsearchClusterConfigStatus withStatus(OptionStatus status) {
         setStatus(status);
         return this;

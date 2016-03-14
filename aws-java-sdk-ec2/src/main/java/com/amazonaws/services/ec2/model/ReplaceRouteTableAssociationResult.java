@@ -39,6 +39,7 @@ public class ReplaceRouteTableAssociationResult implements Serializable,
      * @param newAssociationId
      *        The ID of the new association.
      */
+
     public void setNewAssociationId(String newAssociationId) {
         this.newAssociationId = newAssociationId;
     }
@@ -50,6 +51,7 @@ public class ReplaceRouteTableAssociationResult implements Serializable,
      * 
      * @return The ID of the new association.
      */
+
     public String getNewAssociationId() {
         return this.newAssociationId;
     }
@@ -64,6 +66,7 @@ public class ReplaceRouteTableAssociationResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReplaceRouteTableAssociationResult withNewAssociationId(
             String newAssociationId) {
         setNewAssociationId(newAssociationId);

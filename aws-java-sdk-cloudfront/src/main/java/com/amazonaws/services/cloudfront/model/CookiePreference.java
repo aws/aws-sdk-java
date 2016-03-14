@@ -52,6 +52,7 @@ public class CookiePreference implements Serializable, Cloneable {
      *        application uses.
      * @see ItemSelection
      */
+
     public void setForward(String forward) {
         this.forward = forward;
     }
@@ -69,6 +70,7 @@ public class CookiePreference implements Serializable, Cloneable {
      *         application uses.
      * @see ItemSelection
      */
+
     public String getForward() {
         return this.forward;
     }
@@ -89,6 +91,7 @@ public class CookiePreference implements Serializable, Cloneable {
      *         chained together.
      * @see ItemSelection
      */
+
     public CookiePreference withForward(String forward) {
         setForward(forward);
         return this;
@@ -110,6 +113,7 @@ public class CookiePreference implements Serializable, Cloneable {
      *         chained together.
      * @see ItemSelection
      */
+
     public void setForward(ItemSelection forward) {
         this.forward = forward.toString();
     }
@@ -130,6 +134,7 @@ public class CookiePreference implements Serializable, Cloneable {
      *         chained together.
      * @see ItemSelection
      */
+
     public CookiePreference withForward(ItemSelection forward) {
         setForward(forward);
         return this;
@@ -145,6 +150,7 @@ public class CookiePreference implements Serializable, Cloneable {
      *        that you want CloudFront to forward to your origin that is
      *        associated with this cache behavior.
      */
+
     public void setWhitelistedNames(CookieNames whitelistedNames) {
         this.whitelistedNames = whitelistedNames;
     }
@@ -158,6 +164,7 @@ public class CookiePreference implements Serializable, Cloneable {
      *         that you want CloudFront to forward to your origin that is
      *         associated with this cache behavior.
      */
+
     public CookieNames getWhitelistedNames() {
         return this.whitelistedNames;
     }
@@ -174,6 +181,7 @@ public class CookiePreference implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CookiePreference withWhitelistedNames(CookieNames whitelistedNames) {
         setWhitelistedNames(whitelistedNames);
         return this;

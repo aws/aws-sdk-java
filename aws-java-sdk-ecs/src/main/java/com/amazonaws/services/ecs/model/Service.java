@@ -144,6 +144,7 @@ public class Service implements Serializable, Cloneable {
      *        arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service
      *        /<i>my-service</i>.
      */
+
     public void setServiceArn(String serviceArn) {
         this.serviceArn = serviceArn;
     }
@@ -165,6 +166,7 @@ public class Service implements Serializable, Cloneable {
      *         arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service
      *         /<i>my-service</i>.
      */
+
     public String getServiceArn() {
         return this.serviceArn;
     }
@@ -189,6 +191,7 @@ public class Service implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Service withServiceArn(String serviceArn) {
         setServiceArn(serviceArn);
         return this;
@@ -209,6 +212,7 @@ public class Service implements Serializable, Cloneable {
      *        named services in multiple clusters within a region or across
      *        multiple regions.
      */
+
     public void setServiceName(String serviceName) {
         this.serviceName = serviceName;
     }
@@ -227,6 +231,7 @@ public class Service implements Serializable, Cloneable {
      *         similarly named services in multiple clusters within a region or
      *         across multiple regions.
      */
+
     public String getServiceName() {
         return this.serviceName;
     }
@@ -248,6 +253,7 @@ public class Service implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Service withServiceName(String serviceName) {
         setServiceName(serviceName);
         return this;
@@ -263,6 +269,7 @@ public class Service implements Serializable, Cloneable {
      *        The Amazon Resource Name (ARN) of the of the cluster that hosts
      *        the service.
      */
+
     public void setClusterArn(String clusterArn) {
         this.clusterArn = clusterArn;
     }
@@ -276,6 +283,7 @@ public class Service implements Serializable, Cloneable {
      * @return The Amazon Resource Name (ARN) of the of the cluster that hosts
      *         the service.
      */
+
     public String getClusterArn() {
         return this.clusterArn;
     }
@@ -292,6 +300,7 @@ public class Service implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Service withClusterArn(String clusterArn) {
         setClusterArn(clusterArn);
         return this;
@@ -309,6 +318,7 @@ public class Service implements Serializable, Cloneable {
      *         definition), and the container port to access from the load
      *         balancer.
      */
+
     public java.util.List<LoadBalancer> getLoadBalancers() {
         if (loadBalancers == null) {
             loadBalancers = new com.amazonaws.internal.SdkInternalList<LoadBalancer>();
@@ -329,6 +339,7 @@ public class Service implements Serializable, Cloneable {
      *        definition), and the container port to access from the load
      *        balancer.
      */
+
     public void setLoadBalancers(
             java.util.Collection<LoadBalancer> loadBalancers) {
         if (loadBalancers == null) {
@@ -361,6 +372,7 @@ public class Service implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Service withLoadBalancers(LoadBalancer... loadBalancers) {
         if (this.loadBalancers == null) {
             setLoadBalancers(new com.amazonaws.internal.SdkInternalList<LoadBalancer>(
@@ -387,6 +399,7 @@ public class Service implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Service withLoadBalancers(
             java.util.Collection<LoadBalancer> loadBalancers) {
         setLoadBalancers(loadBalancers);
@@ -404,6 +417,7 @@ public class Service implements Serializable, Cloneable {
      *        <code>ACTIVE</code>, <code>DRAINING</code>, or
      *        <code>INACTIVE</code>.
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -418,6 +432,7 @@ public class Service implements Serializable, Cloneable {
      *         <code>ACTIVE</code>, <code>DRAINING</code>, or
      *         <code>INACTIVE</code>.
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -435,6 +450,7 @@ public class Service implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Service withStatus(String status) {
         setStatus(status);
         return this;
@@ -454,6 +470,7 @@ public class Service implements Serializable, Cloneable {
      *        service is created with <a>CreateService</a>, and it can be
      *        modified with <a>UpdateService</a>.
      */
+
     public void setDesiredCount(Integer desiredCount) {
         this.desiredCount = desiredCount;
     }
@@ -471,6 +488,7 @@ public class Service implements Serializable, Cloneable {
      *         service is created with <a>CreateService</a>, and it can be
      *         modified with <a>UpdateService</a>.
      */
+
     public Integer getDesiredCount() {
         return this.desiredCount;
     }
@@ -491,6 +509,7 @@ public class Service implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Service withDesiredCount(Integer desiredCount) {
         setDesiredCount(desiredCount);
         return this;
@@ -506,6 +525,7 @@ public class Service implements Serializable, Cloneable {
      *        The number of tasks in the cluster that are in the
      *        <code>RUNNING</code> state.
      */
+
     public void setRunningCount(Integer runningCount) {
         this.runningCount = runningCount;
     }
@@ -519,6 +539,7 @@ public class Service implements Serializable, Cloneable {
      * @return The number of tasks in the cluster that are in the
      *         <code>RUNNING</code> state.
      */
+
     public Integer getRunningCount() {
         return this.runningCount;
     }
@@ -535,6 +556,7 @@ public class Service implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Service withRunningCount(Integer runningCount) {
         setRunningCount(runningCount);
         return this;
@@ -550,6 +572,7 @@ public class Service implements Serializable, Cloneable {
      *        The number of tasks in the cluster that are in the
      *        <code>PENDING</code> state.
      */
+
     public void setPendingCount(Integer pendingCount) {
         this.pendingCount = pendingCount;
     }
@@ -563,6 +586,7 @@ public class Service implements Serializable, Cloneable {
      * @return The number of tasks in the cluster that are in the
      *         <code>PENDING</code> state.
      */
+
     public Integer getPendingCount() {
         return this.pendingCount;
     }
@@ -579,6 +603,7 @@ public class Service implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Service withPendingCount(Integer pendingCount) {
         setPendingCount(pendingCount);
         return this;
@@ -596,6 +621,7 @@ public class Service implements Serializable, Cloneable {
      *        specified when the service is created with <a>CreateService</a>,
      *        and it can be modified with <a>UpdateService</a>.
      */
+
     public void setTaskDefinition(String taskDefinition) {
         this.taskDefinition = taskDefinition;
     }
@@ -612,6 +638,7 @@ public class Service implements Serializable, Cloneable {
      *         <a>CreateService</a>, and it can be modified with
      *         <a>UpdateService</a>.
      */
+
     public String getTaskDefinition() {
         return this.taskDefinition;
     }
@@ -630,6 +657,7 @@ public class Service implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Service withTaskDefinition(String taskDefinition) {
         setTaskDefinition(taskDefinition);
         return this;
@@ -646,6 +674,7 @@ public class Service implements Serializable, Cloneable {
      *        during the deployment and the ordering of stopping and starting
      *        tasks.
      */
+
     public void setDeploymentConfiguration(
             DeploymentConfiguration deploymentConfiguration) {
         this.deploymentConfiguration = deploymentConfiguration;
@@ -661,6 +690,7 @@ public class Service implements Serializable, Cloneable {
      *         during the deployment and the ordering of stopping and starting
      *         tasks.
      */
+
     public DeploymentConfiguration getDeploymentConfiguration() {
         return this.deploymentConfiguration;
     }
@@ -678,6 +708,7 @@ public class Service implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Service withDeploymentConfiguration(
             DeploymentConfiguration deploymentConfiguration) {
         setDeploymentConfiguration(deploymentConfiguration);
@@ -691,6 +722,7 @@ public class Service implements Serializable, Cloneable {
      * 
      * @return The current state of deployments for the service.
      */
+
     public java.util.List<Deployment> getDeployments() {
         if (deployments == null) {
             deployments = new com.amazonaws.internal.SdkInternalList<Deployment>();
@@ -706,6 +738,7 @@ public class Service implements Serializable, Cloneable {
      * @param deployments
      *        The current state of deployments for the service.
      */
+
     public void setDeployments(java.util.Collection<Deployment> deployments) {
         if (deployments == null) {
             this.deployments = null;
@@ -732,6 +765,7 @@ public class Service implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Service withDeployments(Deployment... deployments) {
         if (this.deployments == null) {
             setDeployments(new com.amazonaws.internal.SdkInternalList<Deployment>(
@@ -753,6 +787,7 @@ public class Service implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Service withDeployments(java.util.Collection<Deployment> deployments) {
         setDeployments(deployments);
         return this;
@@ -770,6 +805,7 @@ public class Service implements Serializable, Cloneable {
      *        service that allows the Amazon ECS container agent to register
      *        container instances with a load balancer.
      */
+
     public void setRoleArn(String roleArn) {
         this.roleArn = roleArn;
     }
@@ -785,6 +821,7 @@ public class Service implements Serializable, Cloneable {
      *         the service that allows the Amazon ECS container agent to
      *         register container instances with a load balancer.
      */
+
     public String getRoleArn() {
         return this.roleArn;
     }
@@ -803,6 +840,7 @@ public class Service implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Service withRoleArn(String roleArn) {
         setRoleArn(roleArn);
         return this;
@@ -817,6 +855,7 @@ public class Service implements Serializable, Cloneable {
      * @return The event stream for your service. A maximum of 100 of the latest
      *         events are displayed.
      */
+
     public java.util.List<ServiceEvent> getEvents() {
         if (events == null) {
             events = new com.amazonaws.internal.SdkInternalList<ServiceEvent>();
@@ -834,6 +873,7 @@ public class Service implements Serializable, Cloneable {
      *        The event stream for your service. A maximum of 100 of the latest
      *        events are displayed.
      */
+
     public void setEvents(java.util.Collection<ServiceEvent> events) {
         if (events == null) {
             this.events = null;
@@ -862,6 +902,7 @@ public class Service implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Service withEvents(ServiceEvent... events) {
         if (this.events == null) {
             setEvents(new com.amazonaws.internal.SdkInternalList<ServiceEvent>(
@@ -885,6 +926,7 @@ public class Service implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Service withEvents(java.util.Collection<ServiceEvent> events) {
         setEvents(events);
         return this;

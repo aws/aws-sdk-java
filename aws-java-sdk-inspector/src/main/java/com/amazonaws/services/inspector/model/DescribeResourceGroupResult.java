@@ -38,6 +38,7 @@ public class DescribeResourceGroupResult implements Serializable, Cloneable {
      * @param resourceGroup
      *        Information about the resource group.
      */
+
     public void setResourceGroup(ResourceGroup resourceGroup) {
         this.resourceGroup = resourceGroup;
     }
@@ -49,6 +50,7 @@ public class DescribeResourceGroupResult implements Serializable, Cloneable {
      * 
      * @return Information about the resource group.
      */
+
     public ResourceGroup getResourceGroup() {
         return this.resourceGroup;
     }
@@ -63,6 +65,7 @@ public class DescribeResourceGroupResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeResourceGroupResult withResourceGroup(
             ResourceGroup resourceGroup) {
         setResourceGroup(resourceGroup);

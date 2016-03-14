@@ -118,6 +118,7 @@ public class DescribeAutoScalingNotificationTypesResult implements
      *         </p>
      *         </li>
      */
+
     public java.util.List<String> getAutoScalingNotificationTypes() {
         if (autoScalingNotificationTypes == null) {
             autoScalingNotificationTypes = new com.amazonaws.internal.SdkInternalList<String>();
@@ -186,6 +187,7 @@ public class DescribeAutoScalingNotificationTypesResult implements
      *        </p>
      *        </li>
      */
+
     public void setAutoScalingNotificationTypes(
             java.util.Collection<String> autoScalingNotificationTypes) {
         if (autoScalingNotificationTypes == null) {
@@ -266,6 +268,7 @@ public class DescribeAutoScalingNotificationTypesResult implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAutoScalingNotificationTypesResult withAutoScalingNotificationTypes(
             String... autoScalingNotificationTypes) {
         if (this.autoScalingNotificationTypes == null) {
@@ -341,6 +344,7 @@ public class DescribeAutoScalingNotificationTypesResult implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAutoScalingNotificationTypesResult withAutoScalingNotificationTypes(
             java.util.Collection<String> autoScalingNotificationTypes) {
         setAutoScalingNotificationTypes(autoScalingNotificationTypes);

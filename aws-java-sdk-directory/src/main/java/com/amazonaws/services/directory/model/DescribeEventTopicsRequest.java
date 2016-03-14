@@ -56,6 +56,7 @@ public class DescribeEventTopicsRequest extends AmazonWebServiceRequest
      *        topics. If this member is null, associations for all Directory IDs
      *        are returned.
      */
+
     public void setDirectoryId(String directoryId) {
         this.directoryId = directoryId;
     }
@@ -70,6 +71,7 @@ public class DescribeEventTopicsRequest extends AmazonWebServiceRequest
      *         topics. If this member is null, associations for all Directory
      *         IDs are returned.
      */
+
     public String getDirectoryId() {
         return this.directoryId;
     }
@@ -87,6 +89,7 @@ public class DescribeEventTopicsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeEventTopicsRequest withDirectoryId(String directoryId) {
         setDirectoryId(directoryId);
         return this;
@@ -110,6 +113,7 @@ public class DescribeEventTopicsRequest extends AmazonWebServiceRequest
      *         An empty list results in an
      *         <code>InvalidParameterException</code> being thrown.
      */
+
     public java.util.List<String> getTopicNames() {
         if (topicNames == null) {
             topicNames = new com.amazonaws.internal.SdkInternalList<String>();
@@ -136,6 +140,7 @@ public class DescribeEventTopicsRequest extends AmazonWebServiceRequest
      *        An empty list results in an <code>InvalidParameterException</code>
      *        being thrown.
      */
+
     public void setTopicNames(java.util.Collection<String> topicNames) {
         if (topicNames == null) {
             this.topicNames = null;
@@ -173,6 +178,7 @@ public class DescribeEventTopicsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeEventTopicsRequest withTopicNames(String... topicNames) {
         if (this.topicNames == null) {
             setTopicNames(new com.amazonaws.internal.SdkInternalList<String>(
@@ -205,6 +211,7 @@ public class DescribeEventTopicsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeEventTopicsRequest withTopicNames(
             java.util.Collection<String> topicNames) {
         setTopicNames(topicNames);

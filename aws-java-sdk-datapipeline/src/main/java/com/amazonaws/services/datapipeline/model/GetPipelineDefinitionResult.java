@@ -51,6 +51,7 @@ public class GetPipelineDefinitionResult implements Serializable, Cloneable {
      * 
      * @return The objects defined in the pipeline.
      */
+
     public java.util.List<PipelineObject> getPipelineObjects() {
         if (pipelineObjects == null) {
             pipelineObjects = new com.amazonaws.internal.SdkInternalList<PipelineObject>();
@@ -66,6 +67,7 @@ public class GetPipelineDefinitionResult implements Serializable, Cloneable {
      * @param pipelineObjects
      *        The objects defined in the pipeline.
      */
+
     public void setPipelineObjects(
             java.util.Collection<PipelineObject> pipelineObjects) {
         if (pipelineObjects == null) {
@@ -93,6 +95,7 @@ public class GetPipelineDefinitionResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetPipelineDefinitionResult withPipelineObjects(
             PipelineObject... pipelineObjects) {
         if (this.pipelineObjects == null) {
@@ -115,6 +118,7 @@ public class GetPipelineDefinitionResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetPipelineDefinitionResult withPipelineObjects(
             java.util.Collection<PipelineObject> pipelineObjects) {
         setPipelineObjects(pipelineObjects);
@@ -128,6 +132,7 @@ public class GetPipelineDefinitionResult implements Serializable, Cloneable {
      * 
      * @return The parameter objects used in the pipeline definition.
      */
+
     public java.util.List<ParameterObject> getParameterObjects() {
         if (parameterObjects == null) {
             parameterObjects = new com.amazonaws.internal.SdkInternalList<ParameterObject>();
@@ -143,6 +148,7 @@ public class GetPipelineDefinitionResult implements Serializable, Cloneable {
      * @param parameterObjects
      *        The parameter objects used in the pipeline definition.
      */
+
     public void setParameterObjects(
             java.util.Collection<ParameterObject> parameterObjects) {
         if (parameterObjects == null) {
@@ -170,6 +176,7 @@ public class GetPipelineDefinitionResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetPipelineDefinitionResult withParameterObjects(
             ParameterObject... parameterObjects) {
         if (this.parameterObjects == null) {
@@ -192,6 +199,7 @@ public class GetPipelineDefinitionResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetPipelineDefinitionResult withParameterObjects(
             java.util.Collection<ParameterObject> parameterObjects) {
         setParameterObjects(parameterObjects);
@@ -205,6 +213,7 @@ public class GetPipelineDefinitionResult implements Serializable, Cloneable {
      * 
      * @return The parameter values used in the pipeline definition.
      */
+
     public java.util.List<ParameterValue> getParameterValues() {
         if (parameterValues == null) {
             parameterValues = new com.amazonaws.internal.SdkInternalList<ParameterValue>();
@@ -220,6 +229,7 @@ public class GetPipelineDefinitionResult implements Serializable, Cloneable {
      * @param parameterValues
      *        The parameter values used in the pipeline definition.
      */
+
     public void setParameterValues(
             java.util.Collection<ParameterValue> parameterValues) {
         if (parameterValues == null) {
@@ -247,6 +257,7 @@ public class GetPipelineDefinitionResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetPipelineDefinitionResult withParameterValues(
             ParameterValue... parameterValues) {
         if (this.parameterValues == null) {
@@ -269,6 +280,7 @@ public class GetPipelineDefinitionResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetPipelineDefinitionResult withParameterValues(
             java.util.Collection<ParameterValue> parameterValues) {
         setParameterValues(parameterValues);

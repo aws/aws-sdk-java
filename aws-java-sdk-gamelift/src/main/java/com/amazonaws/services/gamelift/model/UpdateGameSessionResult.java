@@ -40,6 +40,7 @@ public class UpdateGameSessionResult implements Serializable, Cloneable {
      * @param gameSession
      *        Object containing the updated game session metadata.
      */
+
     public void setGameSession(GameSession gameSession) {
         this.gameSession = gameSession;
     }
@@ -51,6 +52,7 @@ public class UpdateGameSessionResult implements Serializable, Cloneable {
      * 
      * @return Object containing the updated game session metadata.
      */
+
     public GameSession getGameSession() {
         return this.gameSession;
     }
@@ -65,6 +67,7 @@ public class UpdateGameSessionResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateGameSessionResult withGameSession(GameSession gameSession) {
         setGameSession(gameSession);
         return this;

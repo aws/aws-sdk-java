@@ -46,6 +46,7 @@ public class GetHealthCheckLastFailureReasonRequest extends
      *        The ID of the health check for which you want to retrieve the
      *        reason for the most recent failure.
      */
+
     public void setHealthCheckId(String healthCheckId) {
         this.healthCheckId = healthCheckId;
     }
@@ -59,6 +60,7 @@ public class GetHealthCheckLastFailureReasonRequest extends
      * @return The ID of the health check for which you want to retrieve the
      *         reason for the most recent failure.
      */
+
     public String getHealthCheckId() {
         return this.healthCheckId;
     }
@@ -75,6 +77,7 @@ public class GetHealthCheckLastFailureReasonRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetHealthCheckLastFailureReasonRequest withHealthCheckId(
             String healthCheckId) {
         setHealthCheckId(healthCheckId);

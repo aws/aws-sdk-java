@@ -65,6 +65,7 @@ public class CreateStreamRequest extends AmazonWebServiceRequest implements
      *        accounts can have the same name, and two streams in the same AWS
      *        account, but in two different regions, can have the same name.
      */
+
     public void setStreamName(String streamName) {
         this.streamName = streamName;
     }
@@ -85,6 +86,7 @@ public class CreateStreamRequest extends AmazonWebServiceRequest implements
      *         AWS account, but in two different regions, can have the same
      *         name.
      */
+
     public String getStreamName() {
         return this.streamName;
     }
@@ -107,6 +109,7 @@ public class CreateStreamRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateStreamRequest withStreamName(String streamName) {
         setStreamName(streamName);
         return this;
@@ -129,6 +132,7 @@ public class CreateStreamRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        DefaultShardLimit;
      */
+
     public void setShardCount(Integer shardCount) {
         this.shardCount = shardCount;
     }
@@ -149,6 +153,7 @@ public class CreateStreamRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         DefaultShardLimit;
      */
+
     public Integer getShardCount() {
         return this.shardCount;
     }
@@ -172,6 +177,7 @@ public class CreateStreamRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateStreamRequest withShardCount(Integer shardCount) {
         setShardCount(shardCount);
         return this;

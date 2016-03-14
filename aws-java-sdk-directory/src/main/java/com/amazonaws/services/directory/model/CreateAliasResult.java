@@ -46,6 +46,7 @@ public class CreateAliasResult implements Serializable, Cloneable {
      * @param directoryId
      *        The identifier of the directory.
      */
+
     public void setDirectoryId(String directoryId) {
         this.directoryId = directoryId;
     }
@@ -57,6 +58,7 @@ public class CreateAliasResult implements Serializable, Cloneable {
      * 
      * @return The identifier of the directory.
      */
+
     public String getDirectoryId() {
         return this.directoryId;
     }
@@ -71,6 +73,7 @@ public class CreateAliasResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateAliasResult withDirectoryId(String directoryId) {
         setDirectoryId(directoryId);
         return this;
@@ -84,6 +87,7 @@ public class CreateAliasResult implements Serializable, Cloneable {
      * @param alias
      *        The alias for the directory.
      */
+
     public void setAlias(String alias) {
         this.alias = alias;
     }
@@ -95,6 +99,7 @@ public class CreateAliasResult implements Serializable, Cloneable {
      * 
      * @return The alias for the directory.
      */
+
     public String getAlias() {
         return this.alias;
     }
@@ -109,6 +114,7 @@ public class CreateAliasResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateAliasResult withAlias(String alias) {
         setAlias(alias);
         return this;

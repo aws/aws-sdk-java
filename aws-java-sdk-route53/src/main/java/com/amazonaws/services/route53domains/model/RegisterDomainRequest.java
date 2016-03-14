@@ -252,6 +252,7 @@ public class RegisterDomainRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        Required: Yes
      */
+
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
@@ -290,6 +291,7 @@ public class RegisterDomainRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Required: Yes
      */
+
     public String getDomainName() {
         return this.domainName;
     }
@@ -331,6 +333,7 @@ public class RegisterDomainRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterDomainRequest withDomainName(String domainName) {
         setDomainName(domainName);
         return this;
@@ -344,6 +347,7 @@ public class RegisterDomainRequest extends AmazonWebServiceRequest implements
      * @param idnLangCode
      *        Reserved for future use.
      */
+
     public void setIdnLangCode(String idnLangCode) {
         this.idnLangCode = idnLangCode;
     }
@@ -355,6 +359,7 @@ public class RegisterDomainRequest extends AmazonWebServiceRequest implements
      * 
      * @return Reserved for future use.
      */
+
     public String getIdnLangCode() {
         return this.idnLangCode;
     }
@@ -369,6 +374,7 @@ public class RegisterDomainRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterDomainRequest withIdnLangCode(String idnLangCode) {
         setIdnLangCode(idnLangCode);
         return this;
@@ -409,6 +415,7 @@ public class RegisterDomainRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        Required: Yes
      */
+
     public void setDurationInYears(Integer durationInYears) {
         this.durationInYears = durationInYears;
     }
@@ -447,6 +454,7 @@ public class RegisterDomainRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Required: Yes
      */
+
     public Integer getDurationInYears() {
         return this.durationInYears;
     }
@@ -488,6 +496,7 @@ public class RegisterDomainRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterDomainRequest withDurationInYears(Integer durationInYears) {
         setDurationInYears(durationInYears);
         return this;
@@ -528,6 +537,7 @@ public class RegisterDomainRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        Required: No
      */
+
     public void setAutoRenew(Boolean autoRenew) {
         this.autoRenew = autoRenew;
     }
@@ -566,6 +576,7 @@ public class RegisterDomainRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Required: No
      */
+
     public Boolean getAutoRenew() {
         return this.autoRenew;
     }
@@ -607,6 +618,7 @@ public class RegisterDomainRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterDomainRequest withAutoRenew(Boolean autoRenew) {
         setAutoRenew(autoRenew);
         return this;
@@ -646,6 +658,7 @@ public class RegisterDomainRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Required: No
      */
+
     public Boolean isAutoRenew() {
         return this.autoRenew;
     }
@@ -686,6 +699,7 @@ public class RegisterDomainRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        Required: Yes
      */
+
     public void setAdminContact(ContactDetail adminContact) {
         this.adminContact = adminContact;
     }
@@ -725,6 +739,7 @@ public class RegisterDomainRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Required: Yes
      */
+
     public ContactDetail getAdminContact() {
         return this.adminContact;
     }
@@ -767,6 +782,7 @@ public class RegisterDomainRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterDomainRequest withAdminContact(ContactDetail adminContact) {
         setAdminContact(adminContact);
         return this;
@@ -808,6 +824,7 @@ public class RegisterDomainRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        Required: Yes
      */
+
     public void setRegistrantContact(ContactDetail registrantContact) {
         this.registrantContact = registrantContact;
     }
@@ -847,6 +864,7 @@ public class RegisterDomainRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Required: Yes
      */
+
     public ContactDetail getRegistrantContact() {
         return this.registrantContact;
     }
@@ -889,6 +907,7 @@ public class RegisterDomainRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterDomainRequest withRegistrantContact(
             ContactDetail registrantContact) {
         setRegistrantContact(registrantContact);
@@ -931,6 +950,7 @@ public class RegisterDomainRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        Required: Yes
      */
+
     public void setTechContact(ContactDetail techContact) {
         this.techContact = techContact;
     }
@@ -970,6 +990,7 @@ public class RegisterDomainRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Required: Yes
      */
+
     public ContactDetail getTechContact() {
         return this.techContact;
     }
@@ -1012,6 +1033,7 @@ public class RegisterDomainRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterDomainRequest withTechContact(ContactDetail techContact) {
         setTechContact(techContact);
         return this;
@@ -1054,6 +1076,7 @@ public class RegisterDomainRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        Required: No
      */
+
     public void setPrivacyProtectAdminContact(Boolean privacyProtectAdminContact) {
         this.privacyProtectAdminContact = privacyProtectAdminContact;
     }
@@ -1094,6 +1117,7 @@ public class RegisterDomainRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Required: No
      */
+
     public Boolean getPrivacyProtectAdminContact() {
         return this.privacyProtectAdminContact;
     }
@@ -1137,6 +1161,7 @@ public class RegisterDomainRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterDomainRequest withPrivacyProtectAdminContact(
             Boolean privacyProtectAdminContact) {
         setPrivacyProtectAdminContact(privacyProtectAdminContact);
@@ -1179,6 +1204,7 @@ public class RegisterDomainRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Required: No
      */
+
     public Boolean isPrivacyProtectAdminContact() {
         return this.privacyProtectAdminContact;
     }
@@ -1220,6 +1246,7 @@ public class RegisterDomainRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        Required: No
      */
+
     public void setPrivacyProtectRegistrantContact(
             Boolean privacyProtectRegistrantContact) {
         this.privacyProtectRegistrantContact = privacyProtectRegistrantContact;
@@ -1261,6 +1288,7 @@ public class RegisterDomainRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Required: No
      */
+
     public Boolean getPrivacyProtectRegistrantContact() {
         return this.privacyProtectRegistrantContact;
     }
@@ -1304,6 +1332,7 @@ public class RegisterDomainRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterDomainRequest withPrivacyProtectRegistrantContact(
             Boolean privacyProtectRegistrantContact) {
         setPrivacyProtectRegistrantContact(privacyProtectRegistrantContact);
@@ -1346,6 +1375,7 @@ public class RegisterDomainRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Required: No
      */
+
     public Boolean isPrivacyProtectRegistrantContact() {
         return this.privacyProtectRegistrantContact;
     }
@@ -1387,6 +1417,7 @@ public class RegisterDomainRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        Required: No
      */
+
     public void setPrivacyProtectTechContact(Boolean privacyProtectTechContact) {
         this.privacyProtectTechContact = privacyProtectTechContact;
     }
@@ -1427,6 +1458,7 @@ public class RegisterDomainRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Required: No
      */
+
     public Boolean getPrivacyProtectTechContact() {
         return this.privacyProtectTechContact;
     }
@@ -1470,6 +1502,7 @@ public class RegisterDomainRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterDomainRequest withPrivacyProtectTechContact(
             Boolean privacyProtectTechContact) {
         setPrivacyProtectTechContact(privacyProtectTechContact);
@@ -1512,6 +1545,7 @@ public class RegisterDomainRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Required: No
      */
+
     public Boolean isPrivacyProtectTechContact() {
         return this.privacyProtectTechContact;
     }

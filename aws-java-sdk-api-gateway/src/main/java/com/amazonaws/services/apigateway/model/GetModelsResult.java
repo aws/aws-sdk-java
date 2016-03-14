@@ -36,6 +36,7 @@ public class GetModelsResult implements Serializable, Cloneable {
     /**
      * @param position
      */
+
     public void setPosition(String position) {
         this.position = position;
     }
@@ -43,6 +44,7 @@ public class GetModelsResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getPosition() {
         return this.position;
     }
@@ -52,6 +54,7 @@ public class GetModelsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetModelsResult withPosition(String position) {
         setPosition(position);
         return this;
@@ -64,6 +67,7 @@ public class GetModelsResult implements Serializable, Cloneable {
      * 
      * @return Gets the current <a>Model</a> resource in the collection.
      */
+
     public java.util.List<Model> getItems() {
         return items;
     }
@@ -76,6 +80,7 @@ public class GetModelsResult implements Serializable, Cloneable {
      * @param items
      *        Gets the current <a>Model</a> resource in the collection.
      */
+
     public void setItems(java.util.Collection<Model> items) {
         if (items == null) {
             this.items = null;
@@ -101,6 +106,7 @@ public class GetModelsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetModelsResult withItems(Model... items) {
         if (this.items == null) {
             setItems(new java.util.ArrayList<Model>(items.length));
@@ -121,6 +127,7 @@ public class GetModelsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetModelsResult withItems(java.util.Collection<Model> items) {
         setItems(items);
         return this;

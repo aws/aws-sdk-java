@@ -211,6 +211,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * @param stackName
      *        The name or unique stack ID of the stack to update.
      */
+
     public void setStackName(String stackName) {
         this.stackName = stackName;
     }
@@ -222,6 +223,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name or unique stack ID of the stack to update.
      */
+
     public String getStackName() {
         return this.stackName;
     }
@@ -236,6 +238,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateStackRequest withStackName(String stackName) {
         setStackName(stackName);
         return this;
@@ -264,6 +267,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *        Conditional: You must specify either the <code>TemplateBody</code>
      *        or the <code>TemplateURL</code> parameter, but not both.
      */
+
     public void setTemplateBody(String templateBody) {
         this.templateBody = templateBody;
     }
@@ -291,6 +295,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *         <code>TemplateBody</code> or the <code>TemplateURL</code>
      *         parameter, but not both.
      */
+
     public String getTemplateBody() {
         return this.templateBody;
     }
@@ -320,6 +325,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateStackRequest withTemplateBody(String templateBody) {
         setTemplateBody(templateBody);
         return this;
@@ -348,6 +354,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *        Conditional: You must specify either the <code>TemplateBody</code>
      *        or the <code>TemplateURL</code> parameter, but not both.
      */
+
     public void setTemplateURL(String templateURL) {
         this.templateURL = templateURL;
     }
@@ -375,6 +382,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *         <code>TemplateBody</code> or the <code>TemplateURL</code>
      *         parameter, but not both.
      */
+
     public String getTemplateURL() {
         return this.templateURL;
     }
@@ -404,6 +412,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateStackRequest withTemplateURL(String templateURL) {
         setTemplateURL(templateURL);
         return this;
@@ -419,6 +428,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *        Reuse the existing template that is associated with the stack that
      *        you are updating.
      */
+
     public void setUsePreviousTemplate(Boolean usePreviousTemplate) {
         this.usePreviousTemplate = usePreviousTemplate;
     }
@@ -432,6 +442,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * @return Reuse the existing template that is associated with the stack
      *         that you are updating.
      */
+
     public Boolean getUsePreviousTemplate() {
         return this.usePreviousTemplate;
     }
@@ -448,6 +459,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateStackRequest withUsePreviousTemplate(
             Boolean usePreviousTemplate) {
         setUsePreviousTemplate(usePreviousTemplate);
@@ -463,6 +475,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * @return Reuse the existing template that is associated with the stack
      *         that you are updating.
      */
+
     public Boolean isUsePreviousTemplate() {
         return this.usePreviousTemplate;
     }
@@ -491,6 +504,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *        a stack policy, the current policy that is associated with the
      *        stack will be used.
      */
+
     public void setStackPolicyDuringUpdateBody(
             String stackPolicyDuringUpdateBody) {
         this.stackPolicyDuringUpdateBody = stackPolicyDuringUpdateBody;
@@ -519,6 +533,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *         a stack policy, the current policy that is associated with the
      *         stack will be used.
      */
+
     public String getStackPolicyDuringUpdateBody() {
         return this.stackPolicyDuringUpdateBody;
     }
@@ -549,6 +564,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateStackRequest withStackPolicyDuringUpdateBody(
             String stackPolicyDuringUpdateBody) {
         setStackPolicyDuringUpdateBody(stackPolicyDuringUpdateBody);
@@ -582,6 +598,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *        a stack policy, the current policy that is associated with the
      *        stack will be used.
      */
+
     public void setStackPolicyDuringUpdateURL(String stackPolicyDuringUpdateURL) {
         this.stackPolicyDuringUpdateURL = stackPolicyDuringUpdateURL;
     }
@@ -612,6 +629,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *         a stack policy, the current policy that is associated with the
      *         stack will be used.
      */
+
     public String getStackPolicyDuringUpdateURL() {
         return this.stackPolicyDuringUpdateURL;
     }
@@ -645,6 +663,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateStackRequest withStackPolicyDuringUpdateURL(
             String stackPolicyDuringUpdateURL) {
         setStackPolicyDuringUpdateURL(stackPolicyDuringUpdateURL);
@@ -664,6 +683,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *         "http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html"
      *         >Parameter</a> data type.
      */
+
     public java.util.List<Parameter> getParameters() {
         if (parameters == null) {
             parameters = new com.amazonaws.internal.SdkInternalList<Parameter>();
@@ -685,6 +705,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html"
      *        >Parameter</a> data type.
      */
+
     public void setParameters(java.util.Collection<Parameter> parameters) {
         if (parameters == null) {
             this.parameters = null;
@@ -717,6 +738,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateStackRequest withParameters(Parameter... parameters) {
         if (this.parameters == null) {
             setParameters(new com.amazonaws.internal.SdkInternalList<Parameter>(
@@ -744,6 +766,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateStackRequest withParameters(
             java.util.Collection<Parameter> parameters) {
         setParameters(parameters);
@@ -804,6 +827,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *         parameter, this action returns an InsufficientCapabilities error.
      * @see Capability
      */
+
     public java.util.List<String> getCapabilities() {
         if (capabilities == null) {
             capabilities = new com.amazonaws.internal.SdkInternalList<String>();
@@ -866,6 +890,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *        parameter, this action returns an InsufficientCapabilities error.
      * @see Capability
      */
+
     public void setCapabilities(java.util.Collection<String> capabilities) {
         if (capabilities == null) {
             this.capabilities = null;
@@ -939,6 +964,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see Capability
      */
+
     public UpdateStackRequest withCapabilities(String... capabilities) {
         if (this.capabilities == null) {
             setCapabilities(new com.amazonaws.internal.SdkInternalList<String>(
@@ -1007,6 +1033,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see Capability
      */
+
     public UpdateStackRequest withCapabilities(
             java.util.Collection<String> capabilities) {
         setCapabilities(capabilities);
@@ -1070,6 +1097,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see Capability
      */
+
     public UpdateStackRequest withCapabilities(Capability... capabilities) {
         com.amazonaws.internal.SdkInternalList<String> capabilitiesCopy = new com.amazonaws.internal.SdkInternalList<String>(
                 capabilities.length);
@@ -1114,6 +1142,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *         "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html"
      *         >Controlling Access with AWS Identity and Access Management</a>.
      */
+
     public java.util.List<String> getResourceTypes() {
         if (resourceTypes == null) {
             resourceTypes = new com.amazonaws.internal.SdkInternalList<String>();
@@ -1152,6 +1181,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html"
      *        >Controlling Access with AWS Identity and Access Management</a>.
      */
+
     public void setResourceTypes(java.util.Collection<String> resourceTypes) {
         if (resourceTypes == null) {
             this.resourceTypes = null;
@@ -1201,6 +1231,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateStackRequest withResourceTypes(String... resourceTypes) {
         if (this.resourceTypes == null) {
             setResourceTypes(new com.amazonaws.internal.SdkInternalList<String>(
@@ -1245,6 +1276,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateStackRequest withResourceTypes(
             java.util.Collection<String> resourceTypes) {
         setResourceTypes(resourceTypes);
@@ -1274,6 +1306,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *        you do not specify a stack policy, the current policy that is
      *        associated with the stack is unchanged.
      */
+
     public void setStackPolicyBody(String stackPolicyBody) {
         this.stackPolicyBody = stackPolicyBody;
     }
@@ -1300,6 +1333,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *         you do not specify a stack policy, the current policy that is
      *         associated with the stack is unchanged.
      */
+
     public String getStackPolicyBody() {
         return this.stackPolicyBody;
     }
@@ -1329,6 +1363,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateStackRequest withStackPolicyBody(String stackPolicyBody) {
         setStackPolicyBody(stackPolicyBody);
         return this;
@@ -1361,6 +1396,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *        you do not specify a stack policy, the current policy that is
      *        associated with the stack is unchanged.
      */
+
     public void setStackPolicyURL(String stackPolicyURL) {
         this.stackPolicyURL = stackPolicyURL;
     }
@@ -1391,6 +1427,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *         you do not specify a stack policy, the current policy that is
      *         associated with the stack is unchanged.
      */
+
     public String getStackPolicyURL() {
         return this.stackPolicyURL;
     }
@@ -1424,6 +1461,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateStackRequest withStackPolicyURL(String stackPolicyURL) {
         setStackPolicyURL(stackPolicyURL);
         return this;
@@ -1440,6 +1478,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *         (ARNs) that AWS CloudFormation associates with the stack. Specify
      *         an empty list to remove all notification topics.
      */
+
     public java.util.List<String> getNotificationARNs() {
         if (notificationARNs == null) {
             notificationARNs = new com.amazonaws.internal.SdkInternalList<String>();
@@ -1459,6 +1498,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *        (ARNs) that AWS CloudFormation associates with the stack. Specify
      *        an empty list to remove all notification topics.
      */
+
     public void setNotificationARNs(
             java.util.Collection<String> notificationARNs) {
         if (notificationARNs == null) {
@@ -1490,6 +1530,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateStackRequest withNotificationARNs(String... notificationARNs) {
         if (this.notificationARNs == null) {
             setNotificationARNs(new com.amazonaws.internal.SdkInternalList<String>(
@@ -1515,6 +1556,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateStackRequest withNotificationARNs(
             java.util.Collection<String> notificationARNs) {
         setNotificationARNs(notificationARNs);
@@ -1541,6 +1583,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *         modify the stack's tags. If you specify an empty value, AWS
      *         CloudFormation removes all associated tags.
      */
+
     public java.util.List<Tag> getTags() {
         if (tags == null) {
             tags = new com.amazonaws.internal.SdkInternalList<Tag>();
@@ -1569,6 +1612,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *        modify the stack's tags. If you specify an empty value, AWS
      *        CloudFormation removes all associated tags.
      */
+
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
             this.tags = null;
@@ -1607,6 +1651,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateStackRequest withTags(Tag... tags) {
         if (this.tags == null) {
             setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
@@ -1640,6 +1685,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateStackRequest withTags(java.util.Collection<Tag> tags) {
         setTags(tags);
         return this;

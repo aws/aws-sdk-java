@@ -143,6 +143,9 @@ public class CreateClusterRequestMarshaller implements Marshaller<Request<Create
         if (createClusterRequest.getKmsKeyId() != null) {
             request.addParameter("KmsKeyId", StringUtils.fromString(createClusterRequest.getKmsKeyId()));
         }
+        if (createClusterRequest.getAdditionalInfo() != null) {
+            request.addParameter("AdditionalInfo", StringUtils.fromString(createClusterRequest.getAdditionalInfo()));
+        }
 
         return request;
     }

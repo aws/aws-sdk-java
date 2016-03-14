@@ -73,6 +73,7 @@ public class DescribeSpotFleetRequestHistoryRequest extends
      * @param spotFleetRequestId
      *        The ID of the Spot fleet request.
      */
+
     public void setSpotFleetRequestId(String spotFleetRequestId) {
         this.spotFleetRequestId = spotFleetRequestId;
     }
@@ -84,6 +85,7 @@ public class DescribeSpotFleetRequestHistoryRequest extends
      * 
      * @return The ID of the Spot fleet request.
      */
+
     public String getSpotFleetRequestId() {
         return this.spotFleetRequestId;
     }
@@ -98,6 +100,7 @@ public class DescribeSpotFleetRequestHistoryRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSpotFleetRequestHistoryRequest withSpotFleetRequestId(
             String spotFleetRequestId) {
         setSpotFleetRequestId(spotFleetRequestId);
@@ -114,6 +117,7 @@ public class DescribeSpotFleetRequestHistoryRequest extends
      *        described.
      * @see EventType
      */
+
     public void setEventType(String eventType) {
         this.eventType = eventType;
     }
@@ -127,6 +131,7 @@ public class DescribeSpotFleetRequestHistoryRequest extends
      *         described.
      * @see EventType
      */
+
     public String getEventType() {
         return this.eventType;
     }
@@ -143,6 +148,7 @@ public class DescribeSpotFleetRequestHistoryRequest extends
      *         chained together.
      * @see EventType
      */
+
     public DescribeSpotFleetRequestHistoryRequest withEventType(String eventType) {
         setEventType(eventType);
         return this;
@@ -160,6 +166,7 @@ public class DescribeSpotFleetRequestHistoryRequest extends
      *         chained together.
      * @see EventType
      */
+
     public void setEventType(EventType eventType) {
         this.eventType = eventType.toString();
     }
@@ -176,6 +183,7 @@ public class DescribeSpotFleetRequestHistoryRequest extends
      *         chained together.
      * @see EventType
      */
+
     public DescribeSpotFleetRequestHistoryRequest withEventType(
             EventType eventType) {
         setEventType(eventType);
@@ -193,6 +201,7 @@ public class DescribeSpotFleetRequestHistoryRequest extends
      *        example,
      *        <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      */
+
     public void setStartTime(java.util.Date startTime) {
         this.startTime = startTime;
     }
@@ -207,6 +216,7 @@ public class DescribeSpotFleetRequestHistoryRequest extends
      *         example,
      *         <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      */
+
     public java.util.Date getStartTime() {
         return this.startTime;
     }
@@ -224,6 +234,7 @@ public class DescribeSpotFleetRequestHistoryRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSpotFleetRequestHistoryRequest withStartTime(
             java.util.Date startTime) {
         setStartTime(startTime);
@@ -238,6 +249,7 @@ public class DescribeSpotFleetRequestHistoryRequest extends
      * @param nextToken
      *        The token for the next set of results.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -249,6 +261,7 @@ public class DescribeSpotFleetRequestHistoryRequest extends
      * 
      * @return The token for the next set of results.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -263,6 +276,7 @@ public class DescribeSpotFleetRequestHistoryRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSpotFleetRequestHistoryRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -282,6 +296,7 @@ public class DescribeSpotFleetRequestHistoryRequest extends
      *        the remaining results, make another call with the returned
      *        <code>NextToken</code> value.
      */
+
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
     }
@@ -299,6 +314,7 @@ public class DescribeSpotFleetRequestHistoryRequest extends
      *         retrieve the remaining results, make another call with the
      *         returned <code>NextToken</code> value.
      */
+
     public Integer getMaxResults() {
         return this.maxResults;
     }
@@ -319,6 +335,7 @@ public class DescribeSpotFleetRequestHistoryRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSpotFleetRequestHistoryRequest withMaxResults(
             Integer maxResults) {
         setMaxResults(maxResults);

@@ -50,6 +50,7 @@ public class GetIdentityNotificationAttributesRequest extends
      *         <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>
      *         .
      */
+
     public java.util.List<String> getIdentities() {
         if (identities == null) {
             identities = new com.amazonaws.internal.SdkInternalList<String>();
@@ -72,6 +73,7 @@ public class GetIdentityNotificationAttributesRequest extends
      *        <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>
      *        .
      */
+
     public void setIdentities(java.util.Collection<String> identities) {
         if (identities == null) {
             this.identities = null;
@@ -105,6 +107,7 @@ public class GetIdentityNotificationAttributesRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetIdentityNotificationAttributesRequest withIdentities(
             String... identities) {
         if (this.identities == null) {
@@ -134,6 +137,7 @@ public class GetIdentityNotificationAttributesRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetIdentityNotificationAttributesRequest withIdentities(
             java.util.Collection<String> identities) {
         setIdentities(identities);

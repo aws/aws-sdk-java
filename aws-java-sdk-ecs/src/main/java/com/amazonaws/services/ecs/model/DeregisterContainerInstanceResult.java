@@ -29,6 +29,7 @@ public class DeregisterContainerInstanceResult implements Serializable,
     /**
      * @param containerInstance
      */
+
     public void setContainerInstance(ContainerInstance containerInstance) {
         this.containerInstance = containerInstance;
     }
@@ -36,6 +37,7 @@ public class DeregisterContainerInstanceResult implements Serializable,
     /**
      * @return
      */
+
     public ContainerInstance getContainerInstance() {
         return this.containerInstance;
     }
@@ -45,6 +47,7 @@ public class DeregisterContainerInstanceResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeregisterContainerInstanceResult withContainerInstance(
             ContainerInstance containerInstance) {
         setContainerInstance(containerInstance);

@@ -53,6 +53,7 @@ public class CancelSpotFleetRequestsSuccessItem implements Serializable,
      * @param spotFleetRequestId
      *        The ID of the Spot fleet request.
      */
+
     public void setSpotFleetRequestId(String spotFleetRequestId) {
         this.spotFleetRequestId = spotFleetRequestId;
     }
@@ -64,6 +65,7 @@ public class CancelSpotFleetRequestsSuccessItem implements Serializable,
      * 
      * @return The ID of the Spot fleet request.
      */
+
     public String getSpotFleetRequestId() {
         return this.spotFleetRequestId;
     }
@@ -78,6 +80,7 @@ public class CancelSpotFleetRequestsSuccessItem implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CancelSpotFleetRequestsSuccessItem withSpotFleetRequestId(
             String spotFleetRequestId) {
         setSpotFleetRequestId(spotFleetRequestId);
@@ -93,6 +96,7 @@ public class CancelSpotFleetRequestsSuccessItem implements Serializable,
      *        The current state of the Spot fleet request.
      * @see BatchState
      */
+
     public void setCurrentSpotFleetRequestState(
             String currentSpotFleetRequestState) {
         this.currentSpotFleetRequestState = currentSpotFleetRequestState;
@@ -106,6 +110,7 @@ public class CancelSpotFleetRequestsSuccessItem implements Serializable,
      * @return The current state of the Spot fleet request.
      * @see BatchState
      */
+
     public String getCurrentSpotFleetRequestState() {
         return this.currentSpotFleetRequestState;
     }
@@ -121,6 +126,7 @@ public class CancelSpotFleetRequestsSuccessItem implements Serializable,
      *         chained together.
      * @see BatchState
      */
+
     public CancelSpotFleetRequestsSuccessItem withCurrentSpotFleetRequestState(
             String currentSpotFleetRequestState) {
         setCurrentSpotFleetRequestState(currentSpotFleetRequestState);
@@ -138,6 +144,7 @@ public class CancelSpotFleetRequestsSuccessItem implements Serializable,
      *         chained together.
      * @see BatchState
      */
+
     public void setCurrentSpotFleetRequestState(
             BatchState currentSpotFleetRequestState) {
         this.currentSpotFleetRequestState = currentSpotFleetRequestState
@@ -155,6 +162,7 @@ public class CancelSpotFleetRequestsSuccessItem implements Serializable,
      *         chained together.
      * @see BatchState
      */
+
     public CancelSpotFleetRequestsSuccessItem withCurrentSpotFleetRequestState(
             BatchState currentSpotFleetRequestState) {
         setCurrentSpotFleetRequestState(currentSpotFleetRequestState);
@@ -170,6 +178,7 @@ public class CancelSpotFleetRequestsSuccessItem implements Serializable,
      *        The previous state of the Spot fleet request.
      * @see BatchState
      */
+
     public void setPreviousSpotFleetRequestState(
             String previousSpotFleetRequestState) {
         this.previousSpotFleetRequestState = previousSpotFleetRequestState;
@@ -183,6 +192,7 @@ public class CancelSpotFleetRequestsSuccessItem implements Serializable,
      * @return The previous state of the Spot fleet request.
      * @see BatchState
      */
+
     public String getPreviousSpotFleetRequestState() {
         return this.previousSpotFleetRequestState;
     }
@@ -198,6 +208,7 @@ public class CancelSpotFleetRequestsSuccessItem implements Serializable,
      *         chained together.
      * @see BatchState
      */
+
     public CancelSpotFleetRequestsSuccessItem withPreviousSpotFleetRequestState(
             String previousSpotFleetRequestState) {
         setPreviousSpotFleetRequestState(previousSpotFleetRequestState);
@@ -215,6 +226,7 @@ public class CancelSpotFleetRequestsSuccessItem implements Serializable,
      *         chained together.
      * @see BatchState
      */
+
     public void setPreviousSpotFleetRequestState(
             BatchState previousSpotFleetRequestState) {
         this.previousSpotFleetRequestState = previousSpotFleetRequestState
@@ -232,6 +244,7 @@ public class CancelSpotFleetRequestsSuccessItem implements Serializable,
      *         chained together.
      * @see BatchState
      */
+
     public CancelSpotFleetRequestsSuccessItem withPreviousSpotFleetRequestState(
             BatchState previousSpotFleetRequestState) {
         setPreviousSpotFleetRequestState(previousSpotFleetRequestState);

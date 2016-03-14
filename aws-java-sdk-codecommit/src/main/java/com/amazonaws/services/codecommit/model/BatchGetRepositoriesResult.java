@@ -47,6 +47,7 @@ public class BatchGetRepositoriesResult implements Serializable, Cloneable {
      * @return A list of repositories returned by the batch get repositories
      *         operation.
      */
+
     public java.util.List<RepositoryMetadata> getRepositories() {
         return repositories;
     }
@@ -60,6 +61,7 @@ public class BatchGetRepositoriesResult implements Serializable, Cloneable {
      *        A list of repositories returned by the batch get repositories
      *        operation.
      */
+
     public void setRepositories(
             java.util.Collection<RepositoryMetadata> repositories) {
         if (repositories == null) {
@@ -88,6 +90,7 @@ public class BatchGetRepositoriesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchGetRepositoriesResult withRepositories(
             RepositoryMetadata... repositories) {
         if (this.repositories == null) {
@@ -111,6 +114,7 @@ public class BatchGetRepositoriesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchGetRepositoriesResult withRepositories(
             java.util.Collection<RepositoryMetadata> repositories) {
         setRepositories(repositories);
@@ -126,6 +130,7 @@ public class BatchGetRepositoriesResult implements Serializable, Cloneable {
      * @return Returns a list of repository names for which information could
      *         not be found.
      */
+
     public java.util.List<String> getRepositoriesNotFound() {
         return repositoriesNotFound;
     }
@@ -140,6 +145,7 @@ public class BatchGetRepositoriesResult implements Serializable, Cloneable {
      *        Returns a list of repository names for which information could not
      *        be found.
      */
+
     public void setRepositoriesNotFound(
             java.util.Collection<String> repositoriesNotFound) {
         if (repositoriesNotFound == null) {
@@ -169,6 +175,7 @@ public class BatchGetRepositoriesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchGetRepositoriesResult withRepositoriesNotFound(
             String... repositoriesNotFound) {
         if (this.repositoriesNotFound == null) {
@@ -193,6 +200,7 @@ public class BatchGetRepositoriesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchGetRepositoriesResult withRepositoriesNotFound(
             java.util.Collection<String> repositoriesNotFound) {
         setRepositoriesNotFound(repositoriesNotFound);

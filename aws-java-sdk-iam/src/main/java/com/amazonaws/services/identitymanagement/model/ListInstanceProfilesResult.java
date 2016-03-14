@@ -59,6 +59,7 @@ public class ListInstanceProfilesResult implements Serializable, Cloneable {
      * 
      * @return A list of instance profiles.
      */
+
     public java.util.List<InstanceProfile> getInstanceProfiles() {
         if (instanceProfiles == null) {
             instanceProfiles = new com.amazonaws.internal.SdkInternalList<InstanceProfile>();
@@ -74,6 +75,7 @@ public class ListInstanceProfilesResult implements Serializable, Cloneable {
      * @param instanceProfiles
      *        A list of instance profiles.
      */
+
     public void setInstanceProfiles(
             java.util.Collection<InstanceProfile> instanceProfiles) {
         if (instanceProfiles == null) {
@@ -101,6 +103,7 @@ public class ListInstanceProfilesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListInstanceProfilesResult withInstanceProfiles(
             InstanceProfile... instanceProfiles) {
         if (this.instanceProfiles == null) {
@@ -123,6 +126,7 @@ public class ListInstanceProfilesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListInstanceProfilesResult withInstanceProfiles(
             java.util.Collection<InstanceProfile> instanceProfiles) {
         setInstanceProfiles(instanceProfiles);
@@ -150,6 +154,7 @@ public class ListInstanceProfilesResult implements Serializable, Cloneable {
      *        <code>IsTruncated</code> after every call to ensure that you
      *        receive all of your results.
      */
+
     public void setIsTruncated(Boolean isTruncated) {
         this.isTruncated = isTruncated;
     }
@@ -174,6 +179,7 @@ public class ListInstanceProfilesResult implements Serializable, Cloneable {
      *         <code>IsTruncated</code> after every call to ensure that you
      *         receive all of your results.
      */
+
     public Boolean getIsTruncated() {
         return this.isTruncated;
     }
@@ -201,6 +207,7 @@ public class ListInstanceProfilesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListInstanceProfilesResult withIsTruncated(Boolean isTruncated) {
         setIsTruncated(isTruncated);
         return this;
@@ -226,6 +233,7 @@ public class ListInstanceProfilesResult implements Serializable, Cloneable {
      *         <code>IsTruncated</code> after every call to ensure that you
      *         receive all of your results.
      */
+
     public Boolean isTruncated() {
         return this.isTruncated;
     }
@@ -242,6 +250,7 @@ public class ListInstanceProfilesResult implements Serializable, Cloneable {
      *        is present and contains the value to use for the
      *        <code>Marker</code> parameter in a subsequent pagination request.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -257,6 +266,7 @@ public class ListInstanceProfilesResult implements Serializable, Cloneable {
      *         is present and contains the value to use for the
      *         <code>Marker</code> parameter in a subsequent pagination request.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -275,6 +285,7 @@ public class ListInstanceProfilesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListInstanceProfilesResult withMarker(String marker) {
         setMarker(marker);
         return this;

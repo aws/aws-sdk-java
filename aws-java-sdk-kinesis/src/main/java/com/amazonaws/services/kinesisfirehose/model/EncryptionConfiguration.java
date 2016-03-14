@@ -50,6 +50,7 @@ public class EncryptionConfiguration implements Serializable, Cloneable {
      *        encryption is used.
      * @see NoEncryptionConfig
      */
+
     public void setNoEncryptionConfig(String noEncryptionConfig) {
         this.noEncryptionConfig = noEncryptionConfig;
     }
@@ -64,6 +65,7 @@ public class EncryptionConfiguration implements Serializable, Cloneable {
      *         no encryption is used.
      * @see NoEncryptionConfig
      */
+
     public String getNoEncryptionConfig() {
         return this.noEncryptionConfig;
     }
@@ -81,6 +83,7 @@ public class EncryptionConfiguration implements Serializable, Cloneable {
      *         chained together.
      * @see NoEncryptionConfig
      */
+
     public EncryptionConfiguration withNoEncryptionConfig(
             String noEncryptionConfig) {
         setNoEncryptionConfig(noEncryptionConfig);
@@ -100,6 +103,7 @@ public class EncryptionConfiguration implements Serializable, Cloneable {
      *         chained together.
      * @see NoEncryptionConfig
      */
+
     public void setNoEncryptionConfig(NoEncryptionConfig noEncryptionConfig) {
         this.noEncryptionConfig = noEncryptionConfig.toString();
     }
@@ -117,6 +121,7 @@ public class EncryptionConfiguration implements Serializable, Cloneable {
      *         chained together.
      * @see NoEncryptionConfig
      */
+
     public EncryptionConfiguration withNoEncryptionConfig(
             NoEncryptionConfig noEncryptionConfig) {
         setNoEncryptionConfig(noEncryptionConfig);
@@ -131,6 +136,7 @@ public class EncryptionConfiguration implements Serializable, Cloneable {
      * @param kMSEncryptionConfig
      *        The encryption key.
      */
+
     public void setKMSEncryptionConfig(KMSEncryptionConfig kMSEncryptionConfig) {
         this.kMSEncryptionConfig = kMSEncryptionConfig;
     }
@@ -142,6 +148,7 @@ public class EncryptionConfiguration implements Serializable, Cloneable {
      * 
      * @return The encryption key.
      */
+
     public KMSEncryptionConfig getKMSEncryptionConfig() {
         return this.kMSEncryptionConfig;
     }
@@ -156,6 +163,7 @@ public class EncryptionConfiguration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EncryptionConfiguration withKMSEncryptionConfig(
             KMSEncryptionConfig kMSEncryptionConfig) {
         setKMSEncryptionConfig(kMSEncryptionConfig);

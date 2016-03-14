@@ -59,6 +59,7 @@ public class ModifySpotFleetRequestRequest extends AmazonWebServiceRequest
      * @param spotFleetRequestId
      *        The ID of the Spot fleet request.
      */
+
     public void setSpotFleetRequestId(String spotFleetRequestId) {
         this.spotFleetRequestId = spotFleetRequestId;
     }
@@ -70,6 +71,7 @@ public class ModifySpotFleetRequestRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the Spot fleet request.
      */
+
     public String getSpotFleetRequestId() {
         return this.spotFleetRequestId;
     }
@@ -84,6 +86,7 @@ public class ModifySpotFleetRequestRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifySpotFleetRequestRequest withSpotFleetRequestId(
             String spotFleetRequestId) {
         setSpotFleetRequestId(spotFleetRequestId);
@@ -98,6 +101,7 @@ public class ModifySpotFleetRequestRequest extends AmazonWebServiceRequest
      * @param targetCapacity
      *        The size of the fleet.
      */
+
     public void setTargetCapacity(Integer targetCapacity) {
         this.targetCapacity = targetCapacity;
     }
@@ -109,6 +113,7 @@ public class ModifySpotFleetRequestRequest extends AmazonWebServiceRequest
      * 
      * @return The size of the fleet.
      */
+
     public Integer getTargetCapacity() {
         return this.targetCapacity;
     }
@@ -123,6 +128,7 @@ public class ModifySpotFleetRequestRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifySpotFleetRequestRequest withTargetCapacity(
             Integer targetCapacity) {
         setTargetCapacity(targetCapacity);
@@ -142,6 +148,7 @@ public class ModifySpotFleetRequestRequest extends AmazonWebServiceRequest
      *        the current size of the Spot fleet.
      * @see ExcessCapacityTerminationPolicy
      */
+
     public void setExcessCapacityTerminationPolicy(
             String excessCapacityTerminationPolicy) {
         this.excessCapacityTerminationPolicy = excessCapacityTerminationPolicy;
@@ -159,6 +166,7 @@ public class ModifySpotFleetRequestRequest extends AmazonWebServiceRequest
      *         the current size of the Spot fleet.
      * @see ExcessCapacityTerminationPolicy
      */
+
     public String getExcessCapacityTerminationPolicy() {
         return this.excessCapacityTerminationPolicy;
     }
@@ -178,6 +186,7 @@ public class ModifySpotFleetRequestRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see ExcessCapacityTerminationPolicy
      */
+
     public ModifySpotFleetRequestRequest withExcessCapacityTerminationPolicy(
             String excessCapacityTerminationPolicy) {
         setExcessCapacityTerminationPolicy(excessCapacityTerminationPolicy);
@@ -199,6 +208,7 @@ public class ModifySpotFleetRequestRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see ExcessCapacityTerminationPolicy
      */
+
     public void setExcessCapacityTerminationPolicy(
             ExcessCapacityTerminationPolicy excessCapacityTerminationPolicy) {
         this.excessCapacityTerminationPolicy = excessCapacityTerminationPolicy
@@ -220,6 +230,7 @@ public class ModifySpotFleetRequestRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see ExcessCapacityTerminationPolicy
      */
+
     public ModifySpotFleetRequestRequest withExcessCapacityTerminationPolicy(
             ExcessCapacityTerminationPolicy excessCapacityTerminationPolicy) {
         setExcessCapacityTerminationPolicy(excessCapacityTerminationPolicy);

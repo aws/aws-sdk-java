@@ -94,6 +94,7 @@ public class UserDetail implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *        >IAM Identifiers</a> in the <i>Using IAM</i> guide.
      */
+
     public void setPath(String path) {
         this.path = path;
     }
@@ -110,6 +111,7 @@ public class UserDetail implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *         >IAM Identifiers</a> in the <i>Using IAM</i> guide.
      */
+
     public String getPath() {
         return this.path;
     }
@@ -129,6 +131,7 @@ public class UserDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UserDetail withPath(String path) {
         setPath(path);
         return this;
@@ -142,6 +145,7 @@ public class UserDetail implements Serializable, Cloneable {
      * @param userName
      *        The friendly name identifying the user.
      */
+
     public void setUserName(String userName) {
         this.userName = userName;
     }
@@ -153,6 +157,7 @@ public class UserDetail implements Serializable, Cloneable {
      * 
      * @return The friendly name identifying the user.
      */
+
     public String getUserName() {
         return this.userName;
     }
@@ -167,6 +172,7 @@ public class UserDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UserDetail withUserName(String userName) {
         setUserName(userName);
         return this;
@@ -186,6 +192,7 @@ public class UserDetail implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *        >IAM Identifiers</a> in the <i>Using IAM</i> guide.
      */
+
     public void setUserId(String userId) {
         this.userId = userId;
     }
@@ -203,6 +210,7 @@ public class UserDetail implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *         >IAM Identifiers</a> in the <i>Using IAM</i> guide.
      */
+
     public String getUserId() {
         return this.userId;
     }
@@ -223,6 +231,7 @@ public class UserDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UserDetail withUserId(String userId) {
         setUserId(userId);
         return this;
@@ -231,6 +240,7 @@ public class UserDetail implements Serializable, Cloneable {
     /**
      * @param arn
      */
+
     public void setArn(String arn) {
         this.arn = arn;
     }
@@ -238,6 +248,7 @@ public class UserDetail implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getArn() {
         return this.arn;
     }
@@ -247,6 +258,7 @@ public class UserDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UserDetail withArn(String arn) {
         setArn(arn);
         return this;
@@ -262,6 +274,7 @@ public class UserDetail implements Serializable, Cloneable {
      *        The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO
      *        8601 date-time format</a>, when the user was created.
      */
+
     public void setCreateDate(java.util.Date createDate) {
         this.createDate = createDate;
     }
@@ -276,6 +289,7 @@ public class UserDetail implements Serializable, Cloneable {
      *         href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
      *         format</a>, when the user was created.
      */
+
     public java.util.Date getCreateDate() {
         return this.createDate;
     }
@@ -292,6 +306,7 @@ public class UserDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UserDetail withCreateDate(java.util.Date createDate) {
         setCreateDate(createDate);
         return this;
@@ -304,6 +319,7 @@ public class UserDetail implements Serializable, Cloneable {
      * 
      * @return A list of the inline policies embedded in the user.
      */
+
     public java.util.List<PolicyDetail> getUserPolicyList() {
         if (userPolicyList == null) {
             userPolicyList = new com.amazonaws.internal.SdkInternalList<PolicyDetail>();
@@ -319,6 +335,7 @@ public class UserDetail implements Serializable, Cloneable {
      * @param userPolicyList
      *        A list of the inline policies embedded in the user.
      */
+
     public void setUserPolicyList(
             java.util.Collection<PolicyDetail> userPolicyList) {
         if (userPolicyList == null) {
@@ -346,6 +363,7 @@ public class UserDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UserDetail withUserPolicyList(PolicyDetail... userPolicyList) {
         if (this.userPolicyList == null) {
             setUserPolicyList(new com.amazonaws.internal.SdkInternalList<PolicyDetail>(
@@ -367,6 +385,7 @@ public class UserDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UserDetail withUserPolicyList(
             java.util.Collection<PolicyDetail> userPolicyList) {
         setUserPolicyList(userPolicyList);
@@ -380,6 +399,7 @@ public class UserDetail implements Serializable, Cloneable {
      * 
      * @return A list of IAM groups that the user is in.
      */
+
     public java.util.List<String> getGroupList() {
         if (groupList == null) {
             groupList = new com.amazonaws.internal.SdkInternalList<String>();
@@ -395,6 +415,7 @@ public class UserDetail implements Serializable, Cloneable {
      * @param groupList
      *        A list of IAM groups that the user is in.
      */
+
     public void setGroupList(java.util.Collection<String> groupList) {
         if (groupList == null) {
             this.groupList = null;
@@ -421,6 +442,7 @@ public class UserDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UserDetail withGroupList(String... groupList) {
         if (this.groupList == null) {
             setGroupList(new com.amazonaws.internal.SdkInternalList<String>(
@@ -442,6 +464,7 @@ public class UserDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UserDetail withGroupList(java.util.Collection<String> groupList) {
         setGroupList(groupList);
         return this;
@@ -454,6 +477,7 @@ public class UserDetail implements Serializable, Cloneable {
      * 
      * @return A list of the managed policies attached to the user.
      */
+
     public java.util.List<AttachedPolicy> getAttachedManagedPolicies() {
         if (attachedManagedPolicies == null) {
             attachedManagedPolicies = new com.amazonaws.internal.SdkInternalList<AttachedPolicy>();
@@ -469,6 +493,7 @@ public class UserDetail implements Serializable, Cloneable {
      * @param attachedManagedPolicies
      *        A list of the managed policies attached to the user.
      */
+
     public void setAttachedManagedPolicies(
             java.util.Collection<AttachedPolicy> attachedManagedPolicies) {
         if (attachedManagedPolicies == null) {
@@ -496,6 +521,7 @@ public class UserDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UserDetail withAttachedManagedPolicies(
             AttachedPolicy... attachedManagedPolicies) {
         if (this.attachedManagedPolicies == null) {
@@ -518,6 +544,7 @@ public class UserDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UserDetail withAttachedManagedPolicies(
             java.util.Collection<AttachedPolicy> attachedManagedPolicies) {
         setAttachedManagedPolicies(attachedManagedPolicies);

@@ -73,6 +73,7 @@ public class AppCookieStickinessPolicy implements Serializable, Cloneable {
      *        The mnemonic name for the policy being created. The name must be
      *        unique within a set of policies for this load balancer.
      */
+
     public void setPolicyName(String policyName) {
         this.policyName = policyName;
     }
@@ -86,6 +87,7 @@ public class AppCookieStickinessPolicy implements Serializable, Cloneable {
      * @return The mnemonic name for the policy being created. The name must be
      *         unique within a set of policies for this load balancer.
      */
+
     public String getPolicyName() {
         return this.policyName;
     }
@@ -102,6 +104,7 @@ public class AppCookieStickinessPolicy implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AppCookieStickinessPolicy withPolicyName(String policyName) {
         setPolicyName(policyName);
         return this;
@@ -115,6 +118,7 @@ public class AppCookieStickinessPolicy implements Serializable, Cloneable {
      * @param cookieName
      *        The name of the application cookie used for stickiness.
      */
+
     public void setCookieName(String cookieName) {
         this.cookieName = cookieName;
     }
@@ -126,6 +130,7 @@ public class AppCookieStickinessPolicy implements Serializable, Cloneable {
      * 
      * @return The name of the application cookie used for stickiness.
      */
+
     public String getCookieName() {
         return this.cookieName;
     }
@@ -140,6 +145,7 @@ public class AppCookieStickinessPolicy implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AppCookieStickinessPolicy withCookieName(String cookieName) {
         setCookieName(cookieName);
         return this;

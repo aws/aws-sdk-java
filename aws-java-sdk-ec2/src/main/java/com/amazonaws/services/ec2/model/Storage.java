@@ -40,6 +40,7 @@ public class Storage implements Serializable, Cloneable {
      * @param s3
      *        An Amazon S3 storage location.
      */
+
     public void setS3(S3Storage s3) {
         this.s3 = s3;
     }
@@ -51,6 +52,7 @@ public class Storage implements Serializable, Cloneable {
      * 
      * @return An Amazon S3 storage location.
      */
+
     public S3Storage getS3() {
         return this.s3;
     }
@@ -65,6 +67,7 @@ public class Storage implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Storage withS3(S3Storage s3) {
         setS3(s3);
         return this;

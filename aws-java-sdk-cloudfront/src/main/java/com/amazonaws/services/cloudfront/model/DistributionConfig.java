@@ -158,6 +158,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      *        original request, CloudFront returns a DistributionAlreadyExists
      *        error.
      */
+
     public void setCallerReference(String callerReference) {
         this.callerReference = callerReference;
     }
@@ -187,6 +188,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      *         original request, CloudFront returns a DistributionAlreadyExists
      *         error.
      */
+
     public String getCallerReference() {
         return this.callerReference;
     }
@@ -219,6 +221,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DistributionConfig withCallerReference(String callerReference) {
         setCallerReference(callerReference);
         return this;
@@ -232,6 +235,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      *        A complex type that contains information about CNAMEs (alternate
      *        domain names), if any, for this distribution.
      */
+
     public void setAliases(Aliases aliases) {
         this.aliases = aliases;
     }
@@ -243,6 +247,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * @return A complex type that contains information about CNAMEs (alternate
      *         domain names), if any, for this distribution.
      */
+
     public Aliases getAliases() {
         return this.aliases;
     }
@@ -257,6 +262,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DistributionConfig withAliases(Aliases aliases) {
         setAliases(aliases);
         return this;
@@ -288,6 +294,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      *        object, update the distribution configuration and specify the new
      *        object.
      */
+
     public void setDefaultRootObject(String defaultRootObject) {
         this.defaultRootObject = defaultRootObject;
     }
@@ -317,6 +324,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      *         default root object, update the distribution configuration and
      *         specify the new object.
      */
+
     public String getDefaultRootObject() {
         return this.defaultRootObject;
     }
@@ -349,6 +357,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DistributionConfig withDefaultRootObject(String defaultRootObject) {
         setDefaultRootObject(defaultRootObject);
         return this;
@@ -362,6 +371,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      *        A complex type that contains information about origins for this
      *        distribution.
      */
+
     public void setOrigins(Origins origins) {
         this.origins = origins;
     }
@@ -373,6 +383,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * @return A complex type that contains information about origins for this
      *         distribution.
      */
+
     public Origins getOrigins() {
         return this.origins;
     }
@@ -387,6 +398,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DistributionConfig withOrigins(Origins origins) {
         setOrigins(origins);
         return this;
@@ -404,6 +416,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      *        the values of PathPattern in CacheBehavior elements.You must
      *        create exactly one default cache behavior.
      */
+
     public void setDefaultCacheBehavior(
             DefaultCacheBehavior defaultCacheBehavior) {
         this.defaultCacheBehavior = defaultCacheBehavior;
@@ -420,6 +433,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      *         any of the values of PathPattern in CacheBehavior elements.You
      *         must create exactly one default cache behavior.
      */
+
     public DefaultCacheBehavior getDefaultCacheBehavior() {
         return this.defaultCacheBehavior;
     }
@@ -438,6 +452,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DistributionConfig withDefaultCacheBehavior(
             DefaultCacheBehavior defaultCacheBehavior) {
         setDefaultCacheBehavior(defaultCacheBehavior);
@@ -450,6 +465,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * @param cacheBehaviors
      *        A complex type that contains zero or more CacheBehavior elements.
      */
+
     public void setCacheBehaviors(CacheBehaviors cacheBehaviors) {
         this.cacheBehaviors = cacheBehaviors;
     }
@@ -459,6 +475,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * 
      * @return A complex type that contains zero or more CacheBehavior elements.
      */
+
     public CacheBehaviors getCacheBehaviors() {
         return this.cacheBehaviors;
     }
@@ -471,6 +488,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DistributionConfig withCacheBehaviors(CacheBehaviors cacheBehaviors) {
         setCacheBehaviors(cacheBehaviors);
         return this;
@@ -483,6 +501,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      *        A complex type that contains zero or more CustomErrorResponse
      *        elements.
      */
+
     public void setCustomErrorResponses(
             CustomErrorResponses customErrorResponses) {
         this.customErrorResponses = customErrorResponses;
@@ -494,6 +513,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * @return A complex type that contains zero or more CustomErrorResponse
      *         elements.
      */
+
     public CustomErrorResponses getCustomErrorResponses() {
         return this.customErrorResponses;
     }
@@ -507,6 +527,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DistributionConfig withCustomErrorResponses(
             CustomErrorResponses customErrorResponses) {
         setCustomErrorResponses(customErrorResponses);
@@ -519,6 +540,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * @param comment
      *        Any comments you want to include about the distribution.
      */
+
     public void setComment(String comment) {
         this.comment = comment;
     }
@@ -528,6 +550,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * 
      * @return Any comments you want to include about the distribution.
      */
+
     public String getComment() {
         return this.comment;
     }
@@ -540,6 +563,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DistributionConfig withComment(String comment) {
         setComment(comment);
         return this;
@@ -553,6 +577,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      *        A complex type that controls whether access logs are written for
      *        the distribution.
      */
+
     public void setLogging(LoggingConfig logging) {
         this.logging = logging;
     }
@@ -564,6 +589,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * @return A complex type that controls whether access logs are written for
      *         the distribution.
      */
+
     public LoggingConfig getLogging() {
         return this.logging;
     }
@@ -578,6 +604,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DistributionConfig withLogging(LoggingConfig logging) {
         setLogging(logging);
         return this;
@@ -592,6 +619,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      *        this distribution.
      * @see PriceClass
      */
+
     public void setPriceClass(String priceClass) {
         this.priceClass = priceClass;
     }
@@ -604,6 +632,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      *         this distribution.
      * @see PriceClass
      */
+
     public String getPriceClass() {
         return this.priceClass;
     }
@@ -619,6 +648,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      *         chained together.
      * @see PriceClass
      */
+
     public DistributionConfig withPriceClass(String priceClass) {
         setPriceClass(priceClass);
         return this;
@@ -635,6 +665,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      *         chained together.
      * @see PriceClass
      */
+
     public void setPriceClass(PriceClass priceClass) {
         this.priceClass = priceClass.toString();
     }
@@ -650,6 +681,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      *         chained together.
      * @see PriceClass
      */
+
     public DistributionConfig withPriceClass(PriceClass priceClass) {
         setPriceClass(priceClass);
         return this;
@@ -663,6 +695,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      *        Whether the distribution is enabled to accept end user requests
      *        for content.
      */
+
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
     }
@@ -674,6 +707,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * @return Whether the distribution is enabled to accept end user requests
      *         for content.
      */
+
     public Boolean getEnabled() {
         return this.enabled;
     }
@@ -688,6 +722,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DistributionConfig withEnabled(Boolean enabled) {
         setEnabled(enabled);
         return this;
@@ -700,6 +735,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * @return Whether the distribution is enabled to accept end user requests
      *         for content.
      */
+
     public Boolean isEnabled() {
         return this.enabled;
     }
@@ -707,6 +743,7 @@ public class DistributionConfig implements Serializable, Cloneable {
     /**
      * @param viewerCertificate
      */
+
     public void setViewerCertificate(ViewerCertificate viewerCertificate) {
         this.viewerCertificate = viewerCertificate;
     }
@@ -714,6 +751,7 @@ public class DistributionConfig implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public ViewerCertificate getViewerCertificate() {
         return this.viewerCertificate;
     }
@@ -723,6 +761,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DistributionConfig withViewerCertificate(
             ViewerCertificate viewerCertificate) {
         setViewerCertificate(viewerCertificate);
@@ -732,6 +771,7 @@ public class DistributionConfig implements Serializable, Cloneable {
     /**
      * @param restrictions
      */
+
     public void setRestrictions(Restrictions restrictions) {
         this.restrictions = restrictions;
     }
@@ -739,6 +779,7 @@ public class DistributionConfig implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Restrictions getRestrictions() {
         return this.restrictions;
     }
@@ -748,6 +789,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DistributionConfig withRestrictions(Restrictions restrictions) {
         setRestrictions(restrictions);
         return this;
@@ -762,6 +804,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      *        the Id of the AWS WAF web ACL that is associated with the
      *        distribution.
      */
+
     public void setWebACLId(String webACLId) {
         this.webACLId = webACLId;
     }
@@ -774,6 +817,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      *         the Id of the AWS WAF web ACL that is associated with the
      *         distribution.
      */
+
     public String getWebACLId() {
         return this.webACLId;
     }
@@ -789,6 +833,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DistributionConfig withWebACLId(String webACLId) {
         setWebACLId(webACLId);
         return this;

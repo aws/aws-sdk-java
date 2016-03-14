@@ -44,6 +44,7 @@ public class DiscoverPollEndpointResult implements Serializable, Cloneable {
      * @param endpoint
      *        The endpoint for the Amazon ECS agent to poll.
      */
+
     public void setEndpoint(String endpoint) {
         this.endpoint = endpoint;
     }
@@ -55,6 +56,7 @@ public class DiscoverPollEndpointResult implements Serializable, Cloneable {
      * 
      * @return The endpoint for the Amazon ECS agent to poll.
      */
+
     public String getEndpoint() {
         return this.endpoint;
     }
@@ -69,6 +71,7 @@ public class DiscoverPollEndpointResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DiscoverPollEndpointResult withEndpoint(String endpoint) {
         setEndpoint(endpoint);
         return this;
@@ -82,6 +85,7 @@ public class DiscoverPollEndpointResult implements Serializable, Cloneable {
      * @param telemetryEndpoint
      *        The telemetry endpoint for the Amazon ECS agent.
      */
+
     public void setTelemetryEndpoint(String telemetryEndpoint) {
         this.telemetryEndpoint = telemetryEndpoint;
     }
@@ -93,6 +97,7 @@ public class DiscoverPollEndpointResult implements Serializable, Cloneable {
      * 
      * @return The telemetry endpoint for the Amazon ECS agent.
      */
+
     public String getTelemetryEndpoint() {
         return this.telemetryEndpoint;
     }
@@ -107,6 +112,7 @@ public class DiscoverPollEndpointResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DiscoverPollEndpointResult withTelemetryEndpoint(
             String telemetryEndpoint) {
         setTelemetryEndpoint(telemetryEndpoint);

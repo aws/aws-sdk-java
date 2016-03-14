@@ -43,6 +43,7 @@ public class CreateFileSystemRequest extends AmazonWebServiceRequest implements
      *        String of up to 64 ASCII characters. Amazon EFS uses this to
      *        ensure idempotent creation.
      */
+
     public void setCreationToken(String creationToken) {
         this.creationToken = creationToken;
     }
@@ -56,6 +57,7 @@ public class CreateFileSystemRequest extends AmazonWebServiceRequest implements
      * @return String of up to 64 ASCII characters. Amazon EFS uses this to
      *         ensure idempotent creation.
      */
+
     public String getCreationToken() {
         return this.creationToken;
     }
@@ -72,6 +74,7 @@ public class CreateFileSystemRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateFileSystemRequest withCreationToken(String creationToken) {
         setCreationToken(creationToken);
         return this;

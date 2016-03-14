@@ -68,6 +68,7 @@ public class RulesPackage implements Serializable, Cloneable {
      * @param rulesPackageArn
      *        The ARN of the rules package.
      */
+
     public void setRulesPackageArn(String rulesPackageArn) {
         this.rulesPackageArn = rulesPackageArn;
     }
@@ -79,6 +80,7 @@ public class RulesPackage implements Serializable, Cloneable {
      * 
      * @return The ARN of the rules package.
      */
+
     public String getRulesPackageArn() {
         return this.rulesPackageArn;
     }
@@ -93,6 +95,7 @@ public class RulesPackage implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RulesPackage withRulesPackageArn(String rulesPackageArn) {
         setRulesPackageArn(rulesPackageArn);
         return this;
@@ -106,6 +109,7 @@ public class RulesPackage implements Serializable, Cloneable {
      * @param rulesPackageName
      *        The name of the rules package.
      */
+
     public void setRulesPackageName(String rulesPackageName) {
         this.rulesPackageName = rulesPackageName;
     }
@@ -117,6 +121,7 @@ public class RulesPackage implements Serializable, Cloneable {
      * 
      * @return The name of the rules package.
      */
+
     public String getRulesPackageName() {
         return this.rulesPackageName;
     }
@@ -131,6 +136,7 @@ public class RulesPackage implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RulesPackage withRulesPackageName(String rulesPackageName) {
         setRulesPackageName(rulesPackageName);
         return this;
@@ -144,6 +150,7 @@ public class RulesPackage implements Serializable, Cloneable {
      * @param version
      *        The version id of the rules package.
      */
+
     public void setVersion(String version) {
         this.version = version;
     }
@@ -155,6 +162,7 @@ public class RulesPackage implements Serializable, Cloneable {
      * 
      * @return The version id of the rules package.
      */
+
     public String getVersion() {
         return this.version;
     }
@@ -169,6 +177,7 @@ public class RulesPackage implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RulesPackage withVersion(String version) {
         setVersion(version);
         return this;
@@ -182,6 +191,7 @@ public class RulesPackage implements Serializable, Cloneable {
      * @param provider
      *        The provider of the rules package.
      */
+
     public void setProvider(String provider) {
         this.provider = provider;
     }
@@ -193,6 +203,7 @@ public class RulesPackage implements Serializable, Cloneable {
      * 
      * @return The provider of the rules package.
      */
+
     public String getProvider() {
         return this.provider;
     }
@@ -207,6 +218,7 @@ public class RulesPackage implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RulesPackage withProvider(String provider) {
         setProvider(provider);
         return this;
@@ -220,6 +232,7 @@ public class RulesPackage implements Serializable, Cloneable {
      * @param description
      *        The description of the rules package.
      */
+
     public void setDescription(LocalizedText description) {
         this.description = description;
     }
@@ -231,6 +244,7 @@ public class RulesPackage implements Serializable, Cloneable {
      * 
      * @return The description of the rules package.
      */
+
     public LocalizedText getDescription() {
         return this.description;
     }
@@ -245,6 +259,7 @@ public class RulesPackage implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RulesPackage withDescription(LocalizedText description) {
         setDescription(description);
         return this;

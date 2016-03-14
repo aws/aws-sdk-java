@@ -65,6 +65,7 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
      *        The name of the virtual device (for example,
      *        <code>ephemeral0</code>).
      */
+
     public void setVirtualName(String virtualName) {
         this.virtualName = virtualName;
     }
@@ -77,6 +78,7 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
      * @return The name of the virtual device (for example,
      *         <code>ephemeral0</code>).
      */
+
     public String getVirtualName() {
         return this.virtualName;
     }
@@ -92,6 +94,7 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BlockDeviceMapping withVirtualName(String virtualName) {
         setVirtualName(virtualName);
         return this;
@@ -107,6 +110,7 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
      *        The device name exposed to the EC2 instance (for example,
      *        <code>/dev/sdh</code> or <code>xvdh</code>).
      */
+
     public void setDeviceName(String deviceName) {
         this.deviceName = deviceName;
     }
@@ -120,6 +124,7 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
      * @return The device name exposed to the EC2 instance (for example,
      *         <code>/dev/sdh</code> or <code>xvdh</code>).
      */
+
     public String getDeviceName() {
         return this.deviceName;
     }
@@ -136,6 +141,7 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BlockDeviceMapping withDeviceName(String deviceName) {
         setDeviceName(deviceName);
         return this;
@@ -149,6 +155,7 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
      * @param ebs
      *        The information about the Amazon EBS volume.
      */
+
     public void setEbs(Ebs ebs) {
         this.ebs = ebs;
     }
@@ -160,6 +167,7 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
      * 
      * @return The information about the Amazon EBS volume.
      */
+
     public Ebs getEbs() {
         return this.ebs;
     }
@@ -174,6 +182,7 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BlockDeviceMapping withEbs(Ebs ebs) {
         setEbs(ebs);
         return this;
@@ -196,6 +205,7 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
      *        fail the EC2 health check. Auto Scaling launches a replacement
      *        instance if the instance fails the health check.
      */
+
     public void setNoDevice(Boolean noDevice) {
         this.noDevice = noDevice;
     }
@@ -216,6 +226,7 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
      *         fail the EC2 health check. Auto Scaling launches a replacement
      *         instance if the instance fails the health check.
      */
+
     public Boolean getNoDevice() {
         return this.noDevice;
     }
@@ -239,6 +250,7 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BlockDeviceMapping withNoDevice(Boolean noDevice) {
         setNoDevice(noDevice);
         return this;
@@ -260,6 +272,7 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
      *         fail the EC2 health check. Auto Scaling launches a replacement
      *         instance if the instance fails the health check.
      */
+
     public Boolean isNoDevice() {
         return this.noDevice;
     }

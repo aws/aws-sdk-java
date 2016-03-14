@@ -54,6 +54,7 @@ public class PutRecordsResult implements Serializable, Cloneable {
      *        The number of unsuccessfully processed records in a
      *        <code>PutRecords</code> request.
      */
+
     public void setFailedRecordCount(Integer failedRecordCount) {
         this.failedRecordCount = failedRecordCount;
     }
@@ -67,6 +68,7 @@ public class PutRecordsResult implements Serializable, Cloneable {
      * @return The number of unsuccessfully processed records in a
      *         <code>PutRecords</code> request.
      */
+
     public Integer getFailedRecordCount() {
         return this.failedRecordCount;
     }
@@ -83,6 +85,7 @@ public class PutRecordsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutRecordsResult withFailedRecordCount(Integer failedRecordCount) {
         setFailedRecordCount(failedRecordCount);
         return this;
@@ -106,6 +109,7 @@ public class PutRecordsResult implements Serializable, Cloneable {
      *         Kinesis stream includes <code>ErrorCode</code> and
      *         <code>ErrorMessage</code> in the result.
      */
+
     public java.util.List<PutRecordsResultEntry> getRecords() {
         if (records == null) {
             records = new com.amazonaws.internal.SdkInternalList<PutRecordsResultEntry>();
@@ -132,6 +136,7 @@ public class PutRecordsResult implements Serializable, Cloneable {
      *        stream includes <code>ErrorCode</code> and
      *        <code>ErrorMessage</code> in the result.
      */
+
     public void setRecords(java.util.Collection<PutRecordsResultEntry> records) {
         if (records == null) {
             this.records = null;
@@ -169,6 +174,7 @@ public class PutRecordsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutRecordsResult withRecords(PutRecordsResultEntry... records) {
         if (this.records == null) {
             setRecords(new com.amazonaws.internal.SdkInternalList<PutRecordsResultEntry>(
@@ -201,6 +207,7 @@ public class PutRecordsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutRecordsResult withRecords(
             java.util.Collection<PutRecordsResultEntry> records) {
         setRecords(records);

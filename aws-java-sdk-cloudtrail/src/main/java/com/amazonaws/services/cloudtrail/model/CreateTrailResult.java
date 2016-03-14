@@ -110,6 +110,7 @@ public class CreateTrailResult implements Serializable, Cloneable {
      * @param name
      *        Specifies the name of the trail.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -121,6 +122,7 @@ public class CreateTrailResult implements Serializable, Cloneable {
      * 
      * @return Specifies the name of the trail.
      */
+
     public String getName() {
         return this.name;
     }
@@ -135,6 +137,7 @@ public class CreateTrailResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateTrailResult withName(String name) {
         setName(name);
         return this;
@@ -150,6 +153,7 @@ public class CreateTrailResult implements Serializable, Cloneable {
      *        Specifies the name of the Amazon S3 bucket designated for
      *        publishing log files.
      */
+
     public void setS3BucketName(String s3BucketName) {
         this.s3BucketName = s3BucketName;
     }
@@ -163,6 +167,7 @@ public class CreateTrailResult implements Serializable, Cloneable {
      * @return Specifies the name of the Amazon S3 bucket designated for
      *         publishing log files.
      */
+
     public String getS3BucketName() {
         return this.s3BucketName;
     }
@@ -179,6 +184,7 @@ public class CreateTrailResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateTrailResult withS3BucketName(String s3BucketName) {
         setS3BucketName(s3BucketName);
         return this;
@@ -200,6 +206,7 @@ public class CreateTrailResult implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html"
      *        >Finding Your CloudTrail Log Files</a>.
      */
+
     public void setS3KeyPrefix(String s3KeyPrefix) {
         this.s3KeyPrefix = s3KeyPrefix;
     }
@@ -219,6 +226,7 @@ public class CreateTrailResult implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html"
      *         >Finding Your CloudTrail Log Files</a>.
      */
+
     public String getS3KeyPrefix() {
         return this.s3KeyPrefix;
     }
@@ -241,6 +249,7 @@ public class CreateTrailResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateTrailResult withS3KeyPrefix(String s3KeyPrefix) {
         setS3KeyPrefix(s3KeyPrefix);
         return this;
@@ -256,6 +265,7 @@ public class CreateTrailResult implements Serializable, Cloneable {
      *        Specifies the name of the Amazon SNS topic defined for
      *        notification of log file delivery.
      */
+
     public void setSnsTopicName(String snsTopicName) {
         this.snsTopicName = snsTopicName;
     }
@@ -269,6 +279,7 @@ public class CreateTrailResult implements Serializable, Cloneable {
      * @return Specifies the name of the Amazon SNS topic defined for
      *         notification of log file delivery.
      */
+
     public String getSnsTopicName() {
         return this.snsTopicName;
     }
@@ -285,6 +296,7 @@ public class CreateTrailResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateTrailResult withSnsTopicName(String snsTopicName) {
         setSnsTopicName(snsTopicName);
         return this;
@@ -300,6 +312,7 @@ public class CreateTrailResult implements Serializable, Cloneable {
      *        Specifies whether the trail is publishing events from global
      *        services such as IAM to the log files.
      */
+
     public void setIncludeGlobalServiceEvents(Boolean includeGlobalServiceEvents) {
         this.includeGlobalServiceEvents = includeGlobalServiceEvents;
     }
@@ -313,6 +326,7 @@ public class CreateTrailResult implements Serializable, Cloneable {
      * @return Specifies whether the trail is publishing events from global
      *         services such as IAM to the log files.
      */
+
     public Boolean getIncludeGlobalServiceEvents() {
         return this.includeGlobalServiceEvents;
     }
@@ -329,6 +343,7 @@ public class CreateTrailResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateTrailResult withIncludeGlobalServiceEvents(
             Boolean includeGlobalServiceEvents) {
         setIncludeGlobalServiceEvents(includeGlobalServiceEvents);
@@ -344,6 +359,7 @@ public class CreateTrailResult implements Serializable, Cloneable {
      * @return Specifies whether the trail is publishing events from global
      *         services such as IAM to the log files.
      */
+
     public Boolean isIncludeGlobalServiceEvents() {
         return this.includeGlobalServiceEvents;
     }
@@ -357,6 +373,7 @@ public class CreateTrailResult implements Serializable, Cloneable {
      *        Specifies whether the trail exists in one region or in all
      *        regions.
      */
+
     public void setIsMultiRegionTrail(Boolean isMultiRegionTrail) {
         this.isMultiRegionTrail = isMultiRegionTrail;
     }
@@ -369,6 +386,7 @@ public class CreateTrailResult implements Serializable, Cloneable {
      * @return Specifies whether the trail exists in one region or in all
      *         regions.
      */
+
     public Boolean getIsMultiRegionTrail() {
         return this.isMultiRegionTrail;
     }
@@ -384,6 +402,7 @@ public class CreateTrailResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateTrailResult withIsMultiRegionTrail(Boolean isMultiRegionTrail) {
         setIsMultiRegionTrail(isMultiRegionTrail);
         return this;
@@ -397,6 +416,7 @@ public class CreateTrailResult implements Serializable, Cloneable {
      * @return Specifies whether the trail exists in one region or in all
      *         regions.
      */
+
     public Boolean isMultiRegionTrail() {
         return this.isMultiRegionTrail;
     }
@@ -409,6 +429,7 @@ public class CreateTrailResult implements Serializable, Cloneable {
      * @param trailARN
      *        Specifies the ARN of the trail that was created.
      */
+
     public void setTrailARN(String trailARN) {
         this.trailARN = trailARN;
     }
@@ -420,6 +441,7 @@ public class CreateTrailResult implements Serializable, Cloneable {
      * 
      * @return Specifies the ARN of the trail that was created.
      */
+
     public String getTrailARN() {
         return this.trailARN;
     }
@@ -434,6 +456,7 @@ public class CreateTrailResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateTrailResult withTrailARN(String trailARN) {
         setTrailARN(trailARN);
         return this;
@@ -447,6 +470,7 @@ public class CreateTrailResult implements Serializable, Cloneable {
      * @param logFileValidationEnabled
      *        Specifies whether log file integrity validation is enabled.
      */
+
     public void setLogFileValidationEnabled(Boolean logFileValidationEnabled) {
         this.logFileValidationEnabled = logFileValidationEnabled;
     }
@@ -458,6 +482,7 @@ public class CreateTrailResult implements Serializable, Cloneable {
      * 
      * @return Specifies whether log file integrity validation is enabled.
      */
+
     public Boolean getLogFileValidationEnabled() {
         return this.logFileValidationEnabled;
     }
@@ -472,6 +497,7 @@ public class CreateTrailResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateTrailResult withLogFileValidationEnabled(
             Boolean logFileValidationEnabled) {
         setLogFileValidationEnabled(logFileValidationEnabled);
@@ -485,6 +511,7 @@ public class CreateTrailResult implements Serializable, Cloneable {
      * 
      * @return Specifies whether log file integrity validation is enabled.
      */
+
     public Boolean isLogFileValidationEnabled() {
         return this.logFileValidationEnabled;
     }
@@ -499,6 +526,7 @@ public class CreateTrailResult implements Serializable, Cloneable {
      *        Specifies the Amazon Resource Name (ARN) of the log group to which
      *        CloudTrail logs will be delivered.
      */
+
     public void setCloudWatchLogsLogGroupArn(String cloudWatchLogsLogGroupArn) {
         this.cloudWatchLogsLogGroupArn = cloudWatchLogsLogGroupArn;
     }
@@ -512,6 +540,7 @@ public class CreateTrailResult implements Serializable, Cloneable {
      * @return Specifies the Amazon Resource Name (ARN) of the log group to
      *         which CloudTrail logs will be delivered.
      */
+
     public String getCloudWatchLogsLogGroupArn() {
         return this.cloudWatchLogsLogGroupArn;
     }
@@ -528,6 +557,7 @@ public class CreateTrailResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateTrailResult withCloudWatchLogsLogGroupArn(
             String cloudWatchLogsLogGroupArn) {
         setCloudWatchLogsLogGroupArn(cloudWatchLogsLogGroupArn);
@@ -544,6 +574,7 @@ public class CreateTrailResult implements Serializable, Cloneable {
      *        Specifies the role for the CloudWatch Logs endpoint to assume to
      *        write to a user's log group.
      */
+
     public void setCloudWatchLogsRoleArn(String cloudWatchLogsRoleArn) {
         this.cloudWatchLogsRoleArn = cloudWatchLogsRoleArn;
     }
@@ -557,6 +588,7 @@ public class CreateTrailResult implements Serializable, Cloneable {
      * @return Specifies the role for the CloudWatch Logs endpoint to assume to
      *         write to a user's log group.
      */
+
     public String getCloudWatchLogsRoleArn() {
         return this.cloudWatchLogsRoleArn;
     }
@@ -573,6 +605,7 @@ public class CreateTrailResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateTrailResult withCloudWatchLogsRoleArn(
             String cloudWatchLogsRoleArn) {
         setCloudWatchLogsRoleArn(cloudWatchLogsRoleArn);
@@ -592,6 +625,7 @@ public class CreateTrailResult implements Serializable, Cloneable {
      *        format:</p>
      *        <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
      */
+
     public void setKmsKeyId(String kmsKeyId) {
         this.kmsKeyId = kmsKeyId;
     }
@@ -608,6 +642,7 @@ public class CreateTrailResult implements Serializable, Cloneable {
      *         the format:</p>
      *         <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
      */
+
     public String getKmsKeyId() {
         return this.kmsKeyId;
     }
@@ -627,6 +662,7 @@ public class CreateTrailResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateTrailResult withKmsKeyId(String kmsKeyId) {
         setKmsKeyId(kmsKeyId);
         return this;

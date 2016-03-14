@@ -41,6 +41,7 @@ public class DescribeConfigurationSettingsResult implements Serializable,
      * 
      * @return A list of <a>ConfigurationSettingsDescription</a>.
      */
+
     public java.util.List<ConfigurationSettingsDescription> getConfigurationSettings() {
         if (configurationSettings == null) {
             configurationSettings = new com.amazonaws.internal.SdkInternalList<ConfigurationSettingsDescription>();
@@ -56,6 +57,7 @@ public class DescribeConfigurationSettingsResult implements Serializable,
      * @param configurationSettings
      *        A list of <a>ConfigurationSettingsDescription</a>.
      */
+
     public void setConfigurationSettings(
             java.util.Collection<ConfigurationSettingsDescription> configurationSettings) {
         if (configurationSettings == null) {
@@ -83,6 +85,7 @@ public class DescribeConfigurationSettingsResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeConfigurationSettingsResult withConfigurationSettings(
             ConfigurationSettingsDescription... configurationSettings) {
         if (this.configurationSettings == null) {
@@ -105,6 +108,7 @@ public class DescribeConfigurationSettingsResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeConfigurationSettingsResult withConfigurationSettings(
             java.util.Collection<ConfigurationSettingsDescription> configurationSettings) {
         setConfigurationSettings(configurationSettings);

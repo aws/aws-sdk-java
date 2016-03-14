@@ -59,6 +59,7 @@ public class TriggerConfig implements Serializable, Cloneable {
      * @param triggerName
      *        The name of the notification trigger.
      */
+
     public void setTriggerName(String triggerName) {
         this.triggerName = triggerName;
     }
@@ -68,6 +69,7 @@ public class TriggerConfig implements Serializable, Cloneable {
      * 
      * @return The name of the notification trigger.
      */
+
     public String getTriggerName() {
         return this.triggerName;
     }
@@ -80,6 +82,7 @@ public class TriggerConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TriggerConfig withTriggerName(String triggerName) {
         setTriggerName(triggerName);
         return this;
@@ -95,6 +98,7 @@ public class TriggerConfig implements Serializable, Cloneable {
      *        The arn of the Amazon Simple Notification Service topic through
      *        which notifications about deployment or instance events are sent.
      */
+
     public void setTriggerTargetArn(String triggerTargetArn) {
         this.triggerTargetArn = triggerTargetArn;
     }
@@ -108,6 +112,7 @@ public class TriggerConfig implements Serializable, Cloneable {
      * @return The arn of the Amazon Simple Notification Service topic through
      *         which notifications about deployment or instance events are sent.
      */
+
     public String getTriggerTargetArn() {
         return this.triggerTargetArn;
     }
@@ -124,6 +129,7 @@ public class TriggerConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TriggerConfig withTriggerTargetArn(String triggerTargetArn) {
         setTriggerTargetArn(triggerTargetArn);
         return this;
@@ -161,6 +167,7 @@ public class TriggerConfig implements Serializable, Cloneable {
      *         <li>INSTANCE_FAILURE</li>
      * @see TriggerEventType
      */
+
     public java.util.List<String> getTriggerEvents() {
         if (triggerEvents == null) {
             triggerEvents = new com.amazonaws.internal.SdkInternalList<String>();
@@ -200,6 +207,7 @@ public class TriggerConfig implements Serializable, Cloneable {
      *        <li>INSTANCE_FAILURE</li>
      * @see TriggerEventType
      */
+
     public void setTriggerEvents(java.util.Collection<String> triggerEvents) {
         if (triggerEvents == null) {
             this.triggerEvents = null;
@@ -250,6 +258,7 @@ public class TriggerConfig implements Serializable, Cloneable {
      *         chained together.
      * @see TriggerEventType
      */
+
     public TriggerConfig withTriggerEvents(String... triggerEvents) {
         if (this.triggerEvents == null) {
             setTriggerEvents(new com.amazonaws.internal.SdkInternalList<String>(
@@ -295,6 +304,7 @@ public class TriggerConfig implements Serializable, Cloneable {
      *         chained together.
      * @see TriggerEventType
      */
+
     public TriggerConfig withTriggerEvents(
             java.util.Collection<String> triggerEvents) {
         setTriggerEvents(triggerEvents);
@@ -335,6 +345,7 @@ public class TriggerConfig implements Serializable, Cloneable {
      *         chained together.
      * @see TriggerEventType
      */
+
     public TriggerConfig withTriggerEvents(TriggerEventType... triggerEvents) {
         com.amazonaws.internal.SdkInternalList<String> triggerEventsCopy = new com.amazonaws.internal.SdkInternalList<String>(
                 triggerEvents.length);

@@ -61,6 +61,12 @@ public class AWSMarketplaceCommerceAnalyticsClient extends
     private static final String DEFAULT_ENDPOINT_PREFIX = "marketplacecommerceanalytics";
 
     /**
+     * Client configuration factory providing ClientConfigurations tailored to
+     * this client
+     */
+    protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
+
+    /**
      * List of exception unmarshallers for all AWS Marketplace Commerce
      * Analytics exceptions.
      */
@@ -84,8 +90,8 @@ public class AWSMarketplaceCommerceAnalyticsClient extends
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSMarketplaceCommerceAnalyticsClient() {
-        this(new DefaultAWSCredentialsProviderChain(),
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
+        this(new DefaultAWSCredentialsProviderChain(), configFactory
+                .getConfig());
     }
 
     /**
@@ -128,8 +134,7 @@ public class AWSMarketplaceCommerceAnalyticsClient extends
      *        authenticating with AWS services.
      */
     public AWSMarketplaceCommerceAnalyticsClient(AWSCredentials awsCredentials) {
-        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
-                .defaultConfig());
+        this(awsCredentials, configFactory.getConfig());
     }
 
     /**
@@ -171,8 +176,7 @@ public class AWSMarketplaceCommerceAnalyticsClient extends
      */
     public AWSMarketplaceCommerceAnalyticsClient(
             AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider,
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
+        this(awsCredentialsProvider, configFactory.getConfig());
     }
 
     /**

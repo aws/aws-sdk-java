@@ -70,6 +70,7 @@ public class BootstrapActionConfig implements Serializable, Cloneable {
      * @param name
      *        The name of the bootstrap action.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -81,6 +82,7 @@ public class BootstrapActionConfig implements Serializable, Cloneable {
      * 
      * @return The name of the bootstrap action.
      */
+
     public String getName() {
         return this.name;
     }
@@ -95,6 +97,7 @@ public class BootstrapActionConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BootstrapActionConfig withName(String name) {
         setName(name);
         return this;
@@ -108,6 +111,7 @@ public class BootstrapActionConfig implements Serializable, Cloneable {
      * @param scriptBootstrapAction
      *        The script run by the bootstrap action.
      */
+
     public void setScriptBootstrapAction(
             ScriptBootstrapActionConfig scriptBootstrapAction) {
         this.scriptBootstrapAction = scriptBootstrapAction;
@@ -120,6 +124,7 @@ public class BootstrapActionConfig implements Serializable, Cloneable {
      * 
      * @return The script run by the bootstrap action.
      */
+
     public ScriptBootstrapActionConfig getScriptBootstrapAction() {
         return this.scriptBootstrapAction;
     }
@@ -134,6 +139,7 @@ public class BootstrapActionConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BootstrapActionConfig withScriptBootstrapAction(
             ScriptBootstrapActionConfig scriptBootstrapAction) {
         setScriptBootstrapAction(scriptBootstrapAction);

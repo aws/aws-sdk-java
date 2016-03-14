@@ -62,6 +62,7 @@ public class DeleteSubnetRequest extends AmazonWebServiceRequest implements
      * @param subnetId
      *        The ID of the subnet.
      */
+
     public void setSubnetId(String subnetId) {
         this.subnetId = subnetId;
     }
@@ -73,6 +74,7 @@ public class DeleteSubnetRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ID of the subnet.
      */
+
     public String getSubnetId() {
         return this.subnetId;
     }
@@ -87,6 +89,7 @@ public class DeleteSubnetRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteSubnetRequest withSubnetId(String subnetId) {
         setSubnetId(subnetId);
         return this;

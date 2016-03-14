@@ -46,6 +46,7 @@ public class LaunchPermission implements Serializable, Cloneable {
      * @param userId
      *        The AWS account ID.
      */
+
     public void setUserId(String userId) {
         this.userId = userId;
     }
@@ -57,6 +58,7 @@ public class LaunchPermission implements Serializable, Cloneable {
      * 
      * @return The AWS account ID.
      */
+
     public String getUserId() {
         return this.userId;
     }
@@ -71,6 +73,7 @@ public class LaunchPermission implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LaunchPermission withUserId(String userId) {
         setUserId(userId);
         return this;
@@ -85,6 +88,7 @@ public class LaunchPermission implements Serializable, Cloneable {
      *        The name of the group.
      * @see PermissionGroup
      */
+
     public void setGroup(String group) {
         this.group = group;
     }
@@ -97,6 +101,7 @@ public class LaunchPermission implements Serializable, Cloneable {
      * @return The name of the group.
      * @see PermissionGroup
      */
+
     public String getGroup() {
         return this.group;
     }
@@ -112,6 +117,7 @@ public class LaunchPermission implements Serializable, Cloneable {
      *         chained together.
      * @see PermissionGroup
      */
+
     public LaunchPermission withGroup(String group) {
         setGroup(group);
         return this;
@@ -128,6 +134,7 @@ public class LaunchPermission implements Serializable, Cloneable {
      *         chained together.
      * @see PermissionGroup
      */
+
     public void setGroup(PermissionGroup group) {
         this.group = group.toString();
     }
@@ -143,6 +150,7 @@ public class LaunchPermission implements Serializable, Cloneable {
      *         chained together.
      * @see PermissionGroup
      */
+
     public LaunchPermission withGroup(PermissionGroup group) {
         setGroup(group);
         return this;

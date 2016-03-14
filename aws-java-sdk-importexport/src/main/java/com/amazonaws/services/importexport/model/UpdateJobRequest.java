@@ -38,6 +38,7 @@ public class UpdateJobRequest extends AmazonWebServiceRequest implements
     /**
      * @param jobId
      */
+
     public void setJobId(String jobId) {
         this.jobId = jobId;
     }
@@ -45,6 +46,7 @@ public class UpdateJobRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public String getJobId() {
         return this.jobId;
     }
@@ -54,6 +56,7 @@ public class UpdateJobRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateJobRequest withJobId(String jobId) {
         setJobId(jobId);
         return this;
@@ -62,6 +65,7 @@ public class UpdateJobRequest extends AmazonWebServiceRequest implements
     /**
      * @param manifest
      */
+
     public void setManifest(String manifest) {
         this.manifest = manifest;
     }
@@ -69,6 +73,7 @@ public class UpdateJobRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public String getManifest() {
         return this.manifest;
     }
@@ -78,6 +83,7 @@ public class UpdateJobRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateJobRequest withManifest(String manifest) {
         setManifest(manifest);
         return this;
@@ -87,6 +93,7 @@ public class UpdateJobRequest extends AmazonWebServiceRequest implements
      * @param jobType
      * @see JobType
      */
+
     public void setJobType(String jobType) {
         this.jobType = jobType;
     }
@@ -95,6 +102,7 @@ public class UpdateJobRequest extends AmazonWebServiceRequest implements
      * @return
      * @see JobType
      */
+
     public String getJobType() {
         return this.jobType;
     }
@@ -105,6 +113,7 @@ public class UpdateJobRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see JobType
      */
+
     public UpdateJobRequest withJobType(String jobType) {
         setJobType(jobType);
         return this;
@@ -116,6 +125,7 @@ public class UpdateJobRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see JobType
      */
+
     public void setJobType(JobType jobType) {
         this.jobType = jobType.toString();
     }
@@ -126,6 +136,7 @@ public class UpdateJobRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see JobType
      */
+
     public UpdateJobRequest withJobType(JobType jobType) {
         setJobType(jobType);
         return this;
@@ -134,6 +145,7 @@ public class UpdateJobRequest extends AmazonWebServiceRequest implements
     /**
      * @param validateOnly
      */
+
     public void setValidateOnly(Boolean validateOnly) {
         this.validateOnly = validateOnly;
     }
@@ -141,6 +153,7 @@ public class UpdateJobRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public Boolean getValidateOnly() {
         return this.validateOnly;
     }
@@ -150,6 +163,7 @@ public class UpdateJobRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateJobRequest withValidateOnly(Boolean validateOnly) {
         setValidateOnly(validateOnly);
         return this;
@@ -158,6 +172,7 @@ public class UpdateJobRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public Boolean isValidateOnly() {
         return this.validateOnly;
     }
@@ -165,6 +180,7 @@ public class UpdateJobRequest extends AmazonWebServiceRequest implements
     /**
      * @param aPIVersion
      */
+
     public void setAPIVersion(String aPIVersion) {
         this.aPIVersion = aPIVersion;
     }
@@ -172,6 +188,7 @@ public class UpdateJobRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public String getAPIVersion() {
         return this.aPIVersion;
     }
@@ -181,6 +198,7 @@ public class UpdateJobRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateJobRequest withAPIVersion(String aPIVersion) {
         setAPIVersion(aPIVersion);
         return this;

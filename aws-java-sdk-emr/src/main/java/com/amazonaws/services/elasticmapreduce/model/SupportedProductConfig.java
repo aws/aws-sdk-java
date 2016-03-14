@@ -48,6 +48,7 @@ public class SupportedProductConfig implements Serializable, Cloneable {
      * @param name
      *        The name of the product configuration.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -59,6 +60,7 @@ public class SupportedProductConfig implements Serializable, Cloneable {
      * 
      * @return The name of the product configuration.
      */
+
     public String getName() {
         return this.name;
     }
@@ -73,6 +75,7 @@ public class SupportedProductConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SupportedProductConfig withName(String name) {
         setName(name);
         return this;
@@ -85,6 +88,7 @@ public class SupportedProductConfig implements Serializable, Cloneable {
      * 
      * @return The list of user-supplied arguments.
      */
+
     public java.util.List<String> getArgs() {
         if (args == null) {
             args = new com.amazonaws.internal.SdkInternalList<String>();
@@ -100,6 +104,7 @@ public class SupportedProductConfig implements Serializable, Cloneable {
      * @param args
      *        The list of user-supplied arguments.
      */
+
     public void setArgs(java.util.Collection<String> args) {
         if (args == null) {
             this.args = null;
@@ -125,6 +130,7 @@ public class SupportedProductConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SupportedProductConfig withArgs(String... args) {
         if (this.args == null) {
             setArgs(new com.amazonaws.internal.SdkInternalList<String>(
@@ -146,6 +152,7 @@ public class SupportedProductConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SupportedProductConfig withArgs(java.util.Collection<String> args) {
         setArgs(args);
         return this;

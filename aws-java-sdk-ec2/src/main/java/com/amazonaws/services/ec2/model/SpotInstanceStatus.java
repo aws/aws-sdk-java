@@ -62,6 +62,7 @@ public class SpotInstanceStatus implements Serializable, Cloneable {
      *        >Spot Bid Status Codes</a> in the <i>Amazon Elastic Compute Cloud
      *        User Guide</i>.
      */
+
     public void setCode(String code) {
         this.code = code;
     }
@@ -79,6 +80,7 @@ public class SpotInstanceStatus implements Serializable, Cloneable {
      *         >Spot Bid Status Codes</a> in the <i>Amazon Elastic Compute Cloud
      *         User Guide</i>.
      */
+
     public String getCode() {
         return this.code;
     }
@@ -99,6 +101,7 @@ public class SpotInstanceStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SpotInstanceStatus withCode(String code) {
         setCode(code);
         return this;
@@ -115,6 +118,7 @@ public class SpotInstanceStatus implements Serializable, Cloneable {
      *        (for example,
      *        <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      */
+
     public void setUpdateTime(java.util.Date updateTime) {
         this.updateTime = updateTime;
     }
@@ -129,6 +133,7 @@ public class SpotInstanceStatus implements Serializable, Cloneable {
      *         (for example,
      *         <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      */
+
     public java.util.Date getUpdateTime() {
         return this.updateTime;
     }
@@ -146,6 +151,7 @@ public class SpotInstanceStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SpotInstanceStatus withUpdateTime(java.util.Date updateTime) {
         setUpdateTime(updateTime);
         return this;
@@ -159,6 +165,7 @@ public class SpotInstanceStatus implements Serializable, Cloneable {
      * @param message
      *        The description for the status code.
      */
+
     public void setMessage(String message) {
         this.message = message;
     }
@@ -170,6 +177,7 @@ public class SpotInstanceStatus implements Serializable, Cloneable {
      * 
      * @return The description for the status code.
      */
+
     public String getMessage() {
         return this.message;
     }
@@ -184,6 +192,7 @@ public class SpotInstanceStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SpotInstanceStatus withMessage(String message) {
         setMessage(message);
         return this;

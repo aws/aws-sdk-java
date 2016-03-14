@@ -117,6 +117,7 @@ public class ListDomainsRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        Required: No
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -166,6 +167,7 @@ public class ListDomainsRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Required: No
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -218,6 +220,7 @@ public class ListDomainsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListDomainsRequest withMarker(String marker) {
         setMarker(marker);
         return this;
@@ -254,6 +257,7 @@ public class ListDomainsRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        Required: No
      */
+
     public void setMaxItems(Integer maxItems) {
         this.maxItems = maxItems;
     }
@@ -288,6 +292,7 @@ public class ListDomainsRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Required: No
      */
+
     public Integer getMaxItems() {
         return this.maxItems;
     }
@@ -325,6 +330,7 @@ public class ListDomainsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListDomainsRequest withMaxItems(Integer maxItems) {
         setMaxItems(maxItems);
         return this;

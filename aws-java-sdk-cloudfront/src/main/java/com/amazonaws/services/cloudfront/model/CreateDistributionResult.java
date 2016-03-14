@@ -40,6 +40,7 @@ public class CreateDistributionResult implements Serializable, Cloneable {
      * @param distribution
      *        The distribution's information.
      */
+
     public void setDistribution(Distribution distribution) {
         this.distribution = distribution;
     }
@@ -49,6 +50,7 @@ public class CreateDistributionResult implements Serializable, Cloneable {
      * 
      * @return The distribution's information.
      */
+
     public Distribution getDistribution() {
         return this.distribution;
     }
@@ -61,6 +63,7 @@ public class CreateDistributionResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDistributionResult withDistribution(Distribution distribution) {
         setDistribution(distribution);
         return this;
@@ -77,6 +80,7 @@ public class CreateDistributionResult implements Serializable, Cloneable {
      *        https://cloudfront.amazonaws.com/2010-11-01/distribution
      *        /EDFDVBD632BHDS5.
      */
+
     public void setLocation(String location) {
         this.location = location;
     }
@@ -91,6 +95,7 @@ public class CreateDistributionResult implements Serializable, Cloneable {
      *         https://cloudfront.amazonaws.com/2010-11-01/
      *         distribution/EDFDVBD632BHDS5.
      */
+
     public String getLocation() {
         return this.location;
     }
@@ -108,6 +113,7 @@ public class CreateDistributionResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDistributionResult withLocation(String location) {
         setLocation(location);
         return this;
@@ -119,6 +125,7 @@ public class CreateDistributionResult implements Serializable, Cloneable {
      * @param eTag
      *        The current version of the distribution created.
      */
+
     public void setETag(String eTag) {
         this.eTag = eTag;
     }
@@ -128,6 +135,7 @@ public class CreateDistributionResult implements Serializable, Cloneable {
      * 
      * @return The current version of the distribution created.
      */
+
     public String getETag() {
         return this.eTag;
     }
@@ -140,6 +148,7 @@ public class CreateDistributionResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDistributionResult withETag(String eTag) {
         setETag(eTag);
         return this;

@@ -66,6 +66,7 @@ public class Repository implements Serializable, Cloneable {
      *        example,
      *        <code>arn:aws:ecr:region:012345678910:repository/test</code>.
      */
+
     public void setRepositoryArn(String repositoryArn) {
         this.repositoryArn = repositoryArn;
     }
@@ -86,6 +87,7 @@ public class Repository implements Serializable, Cloneable {
      *         repository name. For example,
      *         <code>arn:aws:ecr:region:012345678910:repository/test</code>.
      */
+
     public String getRepositoryArn() {
         return this.repositoryArn;
     }
@@ -109,6 +111,7 @@ public class Repository implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Repository withRepositoryArn(String repositoryArn) {
         setRepositoryArn(repositoryArn);
         return this;
@@ -124,6 +127,7 @@ public class Repository implements Serializable, Cloneable {
      *        The AWS account ID associated with the registry that contains the
      *        repository.
      */
+
     public void setRegistryId(String registryId) {
         this.registryId = registryId;
     }
@@ -137,6 +141,7 @@ public class Repository implements Serializable, Cloneable {
      * @return The AWS account ID associated with the registry that contains the
      *         repository.
      */
+
     public String getRegistryId() {
         return this.registryId;
     }
@@ -153,6 +158,7 @@ public class Repository implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Repository withRegistryId(String registryId) {
         setRegistryId(registryId);
         return this;
@@ -166,6 +172,7 @@ public class Repository implements Serializable, Cloneable {
      * @param repositoryName
      *        The name of the repository.
      */
+
     public void setRepositoryName(String repositoryName) {
         this.repositoryName = repositoryName;
     }
@@ -177,6 +184,7 @@ public class Repository implements Serializable, Cloneable {
      * 
      * @return The name of the repository.
      */
+
     public String getRepositoryName() {
         return this.repositoryName;
     }
@@ -191,6 +199,7 @@ public class Repository implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Repository withRepositoryName(String repositoryName) {
         setRepositoryName(repositoryName);
         return this;

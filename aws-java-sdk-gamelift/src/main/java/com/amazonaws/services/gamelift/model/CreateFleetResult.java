@@ -40,6 +40,7 @@ public class CreateFleetResult implements Serializable, Cloneable {
      * @param fleetAttributes
      *        Properties for the newly created fleet.
      */
+
     public void setFleetAttributes(FleetAttributes fleetAttributes) {
         this.fleetAttributes = fleetAttributes;
     }
@@ -51,6 +52,7 @@ public class CreateFleetResult implements Serializable, Cloneable {
      * 
      * @return Properties for the newly created fleet.
      */
+
     public FleetAttributes getFleetAttributes() {
         return this.fleetAttributes;
     }
@@ -65,6 +67,7 @@ public class CreateFleetResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateFleetResult withFleetAttributes(FleetAttributes fleetAttributes) {
         setFleetAttributes(fleetAttributes);
         return this;

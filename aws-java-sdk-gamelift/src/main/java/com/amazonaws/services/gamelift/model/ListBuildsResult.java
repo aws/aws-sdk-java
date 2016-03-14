@@ -37,6 +37,13 @@ public class ListBuildsResult implements Serializable, Cloneable {
      * this action. If no token is returned, these results represent the end of
      * the list.
      * </p>
+     * <note>
+     * <p>
+     * If a request has a limit that exactly matches the number of remaining
+     * results, a token is returned even though there are no more results to
+     * retrieve.
+     * </p>
+     * </note>
      */
     private String nextToken;
 
@@ -47,6 +54,7 @@ public class ListBuildsResult implements Serializable, Cloneable {
      * 
      * @return Collection of build records that match the request.
      */
+
     public java.util.List<Build> getBuilds() {
         return builds;
     }
@@ -59,6 +67,7 @@ public class ListBuildsResult implements Serializable, Cloneable {
      * @param builds
      *        Collection of build records that match the request.
      */
+
     public void setBuilds(java.util.Collection<Build> builds) {
         if (builds == null) {
             this.builds = null;
@@ -84,6 +93,7 @@ public class ListBuildsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListBuildsResult withBuilds(Build... builds) {
         if (this.builds == null) {
             setBuilds(new java.util.ArrayList<Build>(builds.length));
@@ -104,6 +114,7 @@ public class ListBuildsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListBuildsResult withBuilds(java.util.Collection<Build> builds) {
         setBuilds(builds);
         return this;
@@ -115,12 +126,25 @@ public class ListBuildsResult implements Serializable, Cloneable {
      * this action. If no token is returned, these results represent the end of
      * the list.
      * </p>
+     * <note>
+     * <p>
+     * If a request has a limit that exactly matches the number of remaining
+     * results, a token is returned even though there are no more results to
+     * retrieve.
+     * </p>
+     * </note>
      * 
      * @param nextToken
      *        Token indicating where to resume retrieving results on the next
      *        call to this action. If no token is returned, these results
-     *        represent the end of the list.
+     *        represent the end of the list.</p> <note>
+     *        <p>
+     *        If a request has a limit that exactly matches the number of
+     *        remaining results, a token is returned even though there are no
+     *        more results to retrieve.
+     *        </p>
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -131,11 +155,24 @@ public class ListBuildsResult implements Serializable, Cloneable {
      * this action. If no token is returned, these results represent the end of
      * the list.
      * </p>
+     * <note>
+     * <p>
+     * If a request has a limit that exactly matches the number of remaining
+     * results, a token is returned even though there are no more results to
+     * retrieve.
+     * </p>
+     * </note>
      * 
      * @return Token indicating where to resume retrieving results on the next
      *         call to this action. If no token is returned, these results
-     *         represent the end of the list.
+     *         represent the end of the list.</p> <note>
+     *         <p>
+     *         If a request has a limit that exactly matches the number of
+     *         remaining results, a token is returned even though there are no
+     *         more results to retrieve.
+     *         </p>
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -146,14 +183,27 @@ public class ListBuildsResult implements Serializable, Cloneable {
      * this action. If no token is returned, these results represent the end of
      * the list.
      * </p>
+     * <note>
+     * <p>
+     * If a request has a limit that exactly matches the number of remaining
+     * results, a token is returned even though there are no more results to
+     * retrieve.
+     * </p>
+     * </note>
      * 
      * @param nextToken
      *        Token indicating where to resume retrieving results on the next
      *        call to this action. If no token is returned, these results
-     *        represent the end of the list.
+     *        represent the end of the list.</p> <note>
+     *        <p>
+     *        If a request has a limit that exactly matches the number of
+     *        remaining results, a token is returned even though there are no
+     *        more results to retrieve.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListBuildsResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

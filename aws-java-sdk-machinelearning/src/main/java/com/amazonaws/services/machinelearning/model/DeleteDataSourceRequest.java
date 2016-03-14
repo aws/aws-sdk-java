@@ -41,6 +41,7 @@ public class DeleteDataSourceRequest extends AmazonWebServiceRequest implements
      *        A user-supplied ID that uniquely identifies the
      *        <code>DataSource</code>.
      */
+
     public void setDataSourceId(String dataSourceId) {
         this.dataSourceId = dataSourceId;
     }
@@ -53,6 +54,7 @@ public class DeleteDataSourceRequest extends AmazonWebServiceRequest implements
      * @return A user-supplied ID that uniquely identifies the
      *         <code>DataSource</code>.
      */
+
     public String getDataSourceId() {
         return this.dataSourceId;
     }
@@ -68,6 +70,7 @@ public class DeleteDataSourceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteDataSourceRequest withDataSourceId(String dataSourceId) {
         setDataSourceId(dataSourceId);
         return this;

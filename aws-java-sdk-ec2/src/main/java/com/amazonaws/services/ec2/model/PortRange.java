@@ -46,6 +46,7 @@ public class PortRange implements Serializable, Cloneable {
      * @param from
      *        The first port in the range.
      */
+
     public void setFrom(Integer from) {
         this.from = from;
     }
@@ -57,6 +58,7 @@ public class PortRange implements Serializable, Cloneable {
      * 
      * @return The first port in the range.
      */
+
     public Integer getFrom() {
         return this.from;
     }
@@ -71,6 +73,7 @@ public class PortRange implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PortRange withFrom(Integer from) {
         setFrom(from);
         return this;
@@ -84,6 +87,7 @@ public class PortRange implements Serializable, Cloneable {
      * @param to
      *        The last port in the range.
      */
+
     public void setTo(Integer to) {
         this.to = to;
     }
@@ -95,6 +99,7 @@ public class PortRange implements Serializable, Cloneable {
      * 
      * @return The last port in the range.
      */
+
     public Integer getTo() {
         return this.to;
     }
@@ -109,6 +114,7 @@ public class PortRange implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PortRange withTo(Integer to) {
         setTo(to);
         return this;

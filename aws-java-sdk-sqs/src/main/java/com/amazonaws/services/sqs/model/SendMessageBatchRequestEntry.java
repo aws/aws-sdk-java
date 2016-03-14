@@ -93,6 +93,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      *        communicate the result. Note that the <code>Id</code>s of a batch
      *        request need to be unique within the request.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -108,6 +109,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      *         communicate the result. Note that the <code>Id</code>s of a batch
      *         request need to be unique within the request.
      */
+
     public String getId() {
         return this.id;
     }
@@ -126,6 +128,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendMessageBatchRequestEntry withId(String id) {
         setId(id);
         return this;
@@ -139,6 +142,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * @param messageBody
      *        Body of the message.
      */
+
     public void setMessageBody(String messageBody) {
         this.messageBody = messageBody;
     }
@@ -150,6 +154,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * 
      * @return Body of the message.
      */
+
     public String getMessageBody() {
         return this.messageBody;
     }
@@ -164,6 +169,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendMessageBatchRequestEntry withMessageBody(String messageBody) {
         setMessageBody(messageBody);
         return this;
@@ -177,6 +183,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * @param delaySeconds
      *        The number of seconds for which the message has to be delayed.
      */
+
     public void setDelaySeconds(Integer delaySeconds) {
         this.delaySeconds = delaySeconds;
     }
@@ -188,6 +195,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * 
      * @return The number of seconds for which the message has to be delayed.
      */
+
     public Integer getDelaySeconds() {
         return this.delaySeconds;
     }
@@ -202,6 +210,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendMessageBatchRequestEntry withDelaySeconds(Integer delaySeconds) {
         setDelaySeconds(delaySeconds);
         return this;
@@ -220,6 +229,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributesNTV"
      *         >Message Attribute Items</a>.
      */
+
     public java.util.Map<String, MessageAttributeValue> getMessageAttributes() {
         if (messageAttributes == null) {
             messageAttributes = new com.amazonaws.internal.SdkInternalMap<String, MessageAttributeValue>();
@@ -241,6 +251,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributesNTV"
      *        >Message Attribute Items</a>.
      */
+
     public void setMessageAttributes(
             java.util.Map<String, MessageAttributeValue> messageAttributes) {
         this.messageAttributes = messageAttributes == null ? null
@@ -264,6 +275,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendMessageBatchRequestEntry withMessageAttributes(
             java.util.Map<String, MessageAttributeValue> messageAttributes) {
         setMessageAttributes(messageAttributes);
@@ -286,6 +298,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * Removes all the entries added into MessageAttributes. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public SendMessageBatchRequestEntry clearMessageAttributesEntries() {
         this.messageAttributes = null;
         return this;

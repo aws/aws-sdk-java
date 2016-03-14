@@ -55,6 +55,7 @@ public class AWSSessionCredentials implements Serializable, Cloneable {
      * @param accessKeyId
      *        The access key for the session.
      */
+
     public void setAccessKeyId(String accessKeyId) {
         this.accessKeyId = accessKeyId;
     }
@@ -66,6 +67,7 @@ public class AWSSessionCredentials implements Serializable, Cloneable {
      * 
      * @return The access key for the session.
      */
+
     public String getAccessKeyId() {
         return this.accessKeyId;
     }
@@ -80,6 +82,7 @@ public class AWSSessionCredentials implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AWSSessionCredentials withAccessKeyId(String accessKeyId) {
         setAccessKeyId(accessKeyId);
         return this;
@@ -93,6 +96,7 @@ public class AWSSessionCredentials implements Serializable, Cloneable {
      * @param secretAccessKey
      *        The secret access key for the session.
      */
+
     public void setSecretAccessKey(String secretAccessKey) {
         this.secretAccessKey = secretAccessKey;
     }
@@ -104,6 +108,7 @@ public class AWSSessionCredentials implements Serializable, Cloneable {
      * 
      * @return The secret access key for the session.
      */
+
     public String getSecretAccessKey() {
         return this.secretAccessKey;
     }
@@ -118,6 +123,7 @@ public class AWSSessionCredentials implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AWSSessionCredentials withSecretAccessKey(String secretAccessKey) {
         setSecretAccessKey(secretAccessKey);
         return this;
@@ -131,6 +137,7 @@ public class AWSSessionCredentials implements Serializable, Cloneable {
      * @param sessionToken
      *        The token for the session.
      */
+
     public void setSessionToken(String sessionToken) {
         this.sessionToken = sessionToken;
     }
@@ -142,6 +149,7 @@ public class AWSSessionCredentials implements Serializable, Cloneable {
      * 
      * @return The token for the session.
      */
+
     public String getSessionToken() {
         return this.sessionToken;
     }
@@ -156,6 +164,7 @@ public class AWSSessionCredentials implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AWSSessionCredentials withSessionToken(String sessionToken) {
         setSessionToken(sessionToken);
         return this;

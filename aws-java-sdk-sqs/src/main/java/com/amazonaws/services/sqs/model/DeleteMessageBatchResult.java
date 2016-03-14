@@ -47,6 +47,7 @@ public class DeleteMessageBatchResult implements Serializable, Cloneable {
      * 
      * @return A list of <a>DeleteMessageBatchResultEntry</a> items.
      */
+
     public java.util.List<DeleteMessageBatchResultEntry> getSuccessful() {
         if (successful == null) {
             successful = new com.amazonaws.internal.SdkInternalList<DeleteMessageBatchResultEntry>();
@@ -62,6 +63,7 @@ public class DeleteMessageBatchResult implements Serializable, Cloneable {
      * @param successful
      *        A list of <a>DeleteMessageBatchResultEntry</a> items.
      */
+
     public void setSuccessful(
             java.util.Collection<DeleteMessageBatchResultEntry> successful) {
         if (successful == null) {
@@ -89,6 +91,7 @@ public class DeleteMessageBatchResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteMessageBatchResult withSuccessful(
             DeleteMessageBatchResultEntry... successful) {
         if (this.successful == null) {
@@ -111,6 +114,7 @@ public class DeleteMessageBatchResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteMessageBatchResult withSuccessful(
             java.util.Collection<DeleteMessageBatchResultEntry> successful) {
         setSuccessful(successful);
@@ -124,6 +128,7 @@ public class DeleteMessageBatchResult implements Serializable, Cloneable {
      * 
      * @return A list of <a>BatchResultErrorEntry</a> items.
      */
+
     public java.util.List<BatchResultErrorEntry> getFailed() {
         if (failed == null) {
             failed = new com.amazonaws.internal.SdkInternalList<BatchResultErrorEntry>();
@@ -139,6 +144,7 @@ public class DeleteMessageBatchResult implements Serializable, Cloneable {
      * @param failed
      *        A list of <a>BatchResultErrorEntry</a> items.
      */
+
     public void setFailed(java.util.Collection<BatchResultErrorEntry> failed) {
         if (failed == null) {
             this.failed = null;
@@ -165,6 +171,7 @@ public class DeleteMessageBatchResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteMessageBatchResult withFailed(BatchResultErrorEntry... failed) {
         if (this.failed == null) {
             setFailed(new com.amazonaws.internal.SdkInternalList<BatchResultErrorEntry>(
@@ -186,6 +193,7 @@ public class DeleteMessageBatchResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteMessageBatchResult withFailed(
             java.util.Collection<BatchResultErrorEntry> failed) {
         setFailed(failed);

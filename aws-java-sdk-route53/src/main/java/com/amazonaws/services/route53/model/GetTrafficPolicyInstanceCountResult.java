@@ -45,6 +45,7 @@ public class GetTrafficPolicyInstanceCountResult implements Serializable,
      *        The number of traffic policy instances that are associated with
      *        the current AWS account.
      */
+
     public void setTrafficPolicyInstanceCount(Integer trafficPolicyInstanceCount) {
         this.trafficPolicyInstanceCount = trafficPolicyInstanceCount;
     }
@@ -58,6 +59,7 @@ public class GetTrafficPolicyInstanceCountResult implements Serializable,
      * @return The number of traffic policy instances that are associated with
      *         the current AWS account.
      */
+
     public Integer getTrafficPolicyInstanceCount() {
         return this.trafficPolicyInstanceCount;
     }
@@ -74,6 +76,7 @@ public class GetTrafficPolicyInstanceCountResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetTrafficPolicyInstanceCountResult withTrafficPolicyInstanceCount(
             Integer trafficPolicyInstanceCount) {
         setTrafficPolicyInstanceCount(trafficPolicyInstanceCount);

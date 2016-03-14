@@ -172,6 +172,7 @@ public class EnabledMetric implements Serializable, Cloneable {
      *        </p>
      *        </li>
      */
+
     public void setMetric(String metric) {
         this.metric = metric;
     }
@@ -266,6 +267,7 @@ public class EnabledMetric implements Serializable, Cloneable {
      *         </p>
      *         </li>
      */
+
     public String getMetric() {
         return this.metric;
     }
@@ -363,6 +365,7 @@ public class EnabledMetric implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EnabledMetric withMetric(String metric) {
         setMetric(metric);
         return this;
@@ -378,6 +381,7 @@ public class EnabledMetric implements Serializable, Cloneable {
      *        The granularity of the metric. The only valid value is
      *        <code>1Minute</code>.
      */
+
     public void setGranularity(String granularity) {
         this.granularity = granularity;
     }
@@ -391,6 +395,7 @@ public class EnabledMetric implements Serializable, Cloneable {
      * @return The granularity of the metric. The only valid value is
      *         <code>1Minute</code>.
      */
+
     public String getGranularity() {
         return this.granularity;
     }
@@ -407,6 +412,7 @@ public class EnabledMetric implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EnabledMetric withGranularity(String granularity) {
         setGranularity(granularity);
         return this;

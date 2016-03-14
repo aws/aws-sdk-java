@@ -40,6 +40,7 @@ public class DeleteAppRequest extends AmazonWebServiceRequest implements
      * @param appId
      *        The app ID.
      */
+
     public void setAppId(String appId) {
         this.appId = appId;
     }
@@ -51,6 +52,7 @@ public class DeleteAppRequest extends AmazonWebServiceRequest implements
      * 
      * @return The app ID.
      */
+
     public String getAppId() {
         return this.appId;
     }
@@ -65,6 +67,7 @@ public class DeleteAppRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteAppRequest withAppId(String appId) {
         setAppId(appId);
         return this;

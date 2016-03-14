@@ -40,6 +40,7 @@ public class DescribeAppsResult implements Serializable, Cloneable {
      * @return An array of <code>App</code> objects that describe the specified
      *         apps.
      */
+
     public java.util.List<App> getApps() {
         if (apps == null) {
             apps = new com.amazonaws.internal.SdkInternalList<App>();
@@ -56,6 +57,7 @@ public class DescribeAppsResult implements Serializable, Cloneable {
      *        An array of <code>App</code> objects that describe the specified
      *        apps.
      */
+
     public void setApps(java.util.Collection<App> apps) {
         if (apps == null) {
             this.apps = null;
@@ -82,6 +84,7 @@ public class DescribeAppsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAppsResult withApps(App... apps) {
         if (this.apps == null) {
             setApps(new com.amazonaws.internal.SdkInternalList<App>(apps.length));
@@ -103,6 +106,7 @@ public class DescribeAppsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAppsResult withApps(java.util.Collection<App> apps) {
         setApps(apps);
         return this;

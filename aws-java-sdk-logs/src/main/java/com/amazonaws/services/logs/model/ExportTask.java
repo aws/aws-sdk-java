@@ -93,6 +93,7 @@ public class ExportTask implements Serializable, Cloneable {
      * @param taskId
      *        Id of the export task.
      */
+
     public void setTaskId(String taskId) {
         this.taskId = taskId;
     }
@@ -104,6 +105,7 @@ public class ExportTask implements Serializable, Cloneable {
      * 
      * @return Id of the export task.
      */
+
     public String getTaskId() {
         return this.taskId;
     }
@@ -118,6 +120,7 @@ public class ExportTask implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ExportTask withTaskId(String taskId) {
         setTaskId(taskId);
         return this;
@@ -131,6 +134,7 @@ public class ExportTask implements Serializable, Cloneable {
      * @param taskName
      *        The name of the export task.
      */
+
     public void setTaskName(String taskName) {
         this.taskName = taskName;
     }
@@ -142,6 +146,7 @@ public class ExportTask implements Serializable, Cloneable {
      * 
      * @return The name of the export task.
      */
+
     public String getTaskName() {
         return this.taskName;
     }
@@ -156,6 +161,7 @@ public class ExportTask implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ExportTask withTaskName(String taskName) {
         setTaskName(taskName);
         return this;
@@ -169,6 +175,7 @@ public class ExportTask implements Serializable, Cloneable {
      * @param logGroupName
      *        The name of the log group from which logs data was exported.
      */
+
     public void setLogGroupName(String logGroupName) {
         this.logGroupName = logGroupName;
     }
@@ -180,6 +187,7 @@ public class ExportTask implements Serializable, Cloneable {
      * 
      * @return The name of the log group from which logs data was exported.
      */
+
     public String getLogGroupName() {
         return this.logGroupName;
     }
@@ -194,6 +202,7 @@ public class ExportTask implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ExportTask withLogGroupName(String logGroupName) {
         setLogGroupName(logGroupName);
         return this;
@@ -211,6 +220,7 @@ public class ExportTask implements Serializable, Cloneable {
      *        1, 1970 00:00:00 UTC. Events with a timestamp prior to this time
      *        are not exported.
      */
+
     public void setFrom(Long from) {
         this.from = from;
     }
@@ -226,6 +236,7 @@ public class ExportTask implements Serializable, Cloneable {
      *         1, 1970 00:00:00 UTC. Events with a timestamp prior to this time
      *         are not exported.
      */
+
     public Long getFrom() {
         return this.from;
     }
@@ -244,6 +255,7 @@ public class ExportTask implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ExportTask withFrom(Long from) {
         setFrom(from);
         return this;
@@ -261,6 +273,7 @@ public class ExportTask implements Serializable, Cloneable {
      *        1, 1970 00:00:00 UTC. Events with a timestamp later than this time
      *        are not exported.
      */
+
     public void setTo(Long to) {
         this.to = to;
     }
@@ -276,6 +289,7 @@ public class ExportTask implements Serializable, Cloneable {
      *         1, 1970 00:00:00 UTC. Events with a timestamp later than this
      *         time are not exported.
      */
+
     public Long getTo() {
         return this.to;
     }
@@ -294,6 +308,7 @@ public class ExportTask implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ExportTask withTo(Long to) {
         setTo(to);
         return this;
@@ -307,6 +322,7 @@ public class ExportTask implements Serializable, Cloneable {
      * @param destination
      *        Name of Amazon S3 bucket to which the log data was exported.
      */
+
     public void setDestination(String destination) {
         this.destination = destination;
     }
@@ -318,6 +334,7 @@ public class ExportTask implements Serializable, Cloneable {
      * 
      * @return Name of Amazon S3 bucket to which the log data was exported.
      */
+
     public String getDestination() {
         return this.destination;
     }
@@ -332,6 +349,7 @@ public class ExportTask implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ExportTask withDestination(String destination) {
         setDestination(destination);
         return this;
@@ -347,6 +365,7 @@ public class ExportTask implements Serializable, Cloneable {
      *        Prefix that was used as the start of Amazon S3 key for every
      *        object exported.
      */
+
     public void setDestinationPrefix(String destinationPrefix) {
         this.destinationPrefix = destinationPrefix;
     }
@@ -360,6 +379,7 @@ public class ExportTask implements Serializable, Cloneable {
      * @return Prefix that was used as the start of Amazon S3 key for every
      *         object exported.
      */
+
     public String getDestinationPrefix() {
         return this.destinationPrefix;
     }
@@ -376,6 +396,7 @@ public class ExportTask implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ExportTask withDestinationPrefix(String destinationPrefix) {
         setDestinationPrefix(destinationPrefix);
         return this;
@@ -389,6 +410,7 @@ public class ExportTask implements Serializable, Cloneable {
      * @param status
      *        Status of the export task.
      */
+
     public void setStatus(ExportTaskStatus status) {
         this.status = status;
     }
@@ -400,6 +422,7 @@ public class ExportTask implements Serializable, Cloneable {
      * 
      * @return Status of the export task.
      */
+
     public ExportTaskStatus getStatus() {
         return this.status;
     }
@@ -414,6 +437,7 @@ public class ExportTask implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ExportTask withStatus(ExportTaskStatus status) {
         setStatus(status);
         return this;
@@ -427,6 +451,7 @@ public class ExportTask implements Serializable, Cloneable {
      * @param executionInfo
      *        Execution info about the export task.
      */
+
     public void setExecutionInfo(ExportTaskExecutionInfo executionInfo) {
         this.executionInfo = executionInfo;
     }
@@ -438,6 +463,7 @@ public class ExportTask implements Serializable, Cloneable {
      * 
      * @return Execution info about the export task.
      */
+
     public ExportTaskExecutionInfo getExecutionInfo() {
         return this.executionInfo;
     }
@@ -452,6 +478,7 @@ public class ExportTask implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ExportTask withExecutionInfo(ExportTaskExecutionInfo executionInfo) {
         setExecutionInfo(executionInfo);
         return this;

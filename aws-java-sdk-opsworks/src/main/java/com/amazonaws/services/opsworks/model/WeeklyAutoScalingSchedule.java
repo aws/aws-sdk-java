@@ -95,6 +95,7 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable {
      * 
      * @return The schedule for Monday.
      */
+
     public java.util.Map<String, String> getMonday() {
         if (monday == null) {
             monday = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -110,6 +111,7 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable {
      * @param monday
      *        The schedule for Monday.
      */
+
     public void setMonday(java.util.Map<String, String> monday) {
         this.monday = monday == null ? null
                 : new com.amazonaws.internal.SdkInternalMap<String, String>(
@@ -126,6 +128,7 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public WeeklyAutoScalingSchedule withMonday(
             java.util.Map<String, String> monday) {
         setMonday(monday);
@@ -147,6 +150,7 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable {
      * Removes all the entries added into Monday. &lt;p> Returns a reference to
      * this object so that method calls can be chained together.
      */
+
     public WeeklyAutoScalingSchedule clearMondayEntries() {
         this.monday = null;
         return this;
@@ -159,6 +163,7 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable {
      * 
      * @return The schedule for Tuesday.
      */
+
     public java.util.Map<String, String> getTuesday() {
         if (tuesday == null) {
             tuesday = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -174,6 +179,7 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable {
      * @param tuesday
      *        The schedule for Tuesday.
      */
+
     public void setTuesday(java.util.Map<String, String> tuesday) {
         this.tuesday = tuesday == null ? null
                 : new com.amazonaws.internal.SdkInternalMap<String, String>(
@@ -190,6 +196,7 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public WeeklyAutoScalingSchedule withTuesday(
             java.util.Map<String, String> tuesday) {
         setTuesday(tuesday);
@@ -211,6 +218,7 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable {
      * Removes all the entries added into Tuesday. &lt;p> Returns a reference to
      * this object so that method calls can be chained together.
      */
+
     public WeeklyAutoScalingSchedule clearTuesdayEntries() {
         this.tuesday = null;
         return this;
@@ -223,6 +231,7 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable {
      * 
      * @return The schedule for Wednesday.
      */
+
     public java.util.Map<String, String> getWednesday() {
         if (wednesday == null) {
             wednesday = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -238,6 +247,7 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable {
      * @param wednesday
      *        The schedule for Wednesday.
      */
+
     public void setWednesday(java.util.Map<String, String> wednesday) {
         this.wednesday = wednesday == null ? null
                 : new com.amazonaws.internal.SdkInternalMap<String, String>(
@@ -254,6 +264,7 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public WeeklyAutoScalingSchedule withWednesday(
             java.util.Map<String, String> wednesday) {
         setWednesday(wednesday);
@@ -275,6 +286,7 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable {
      * Removes all the entries added into Wednesday. &lt;p> Returns a reference
      * to this object so that method calls can be chained together.
      */
+
     public WeeklyAutoScalingSchedule clearWednesdayEntries() {
         this.wednesday = null;
         return this;
@@ -287,6 +299,7 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable {
      * 
      * @return The schedule for Thursday.
      */
+
     public java.util.Map<String, String> getThursday() {
         if (thursday == null) {
             thursday = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -302,6 +315,7 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable {
      * @param thursday
      *        The schedule for Thursday.
      */
+
     public void setThursday(java.util.Map<String, String> thursday) {
         this.thursday = thursday == null ? null
                 : new com.amazonaws.internal.SdkInternalMap<String, String>(
@@ -318,6 +332,7 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public WeeklyAutoScalingSchedule withThursday(
             java.util.Map<String, String> thursday) {
         setThursday(thursday);
@@ -339,6 +354,7 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable {
      * Removes all the entries added into Thursday. &lt;p> Returns a reference
      * to this object so that method calls can be chained together.
      */
+
     public WeeklyAutoScalingSchedule clearThursdayEntries() {
         this.thursday = null;
         return this;
@@ -351,6 +367,7 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable {
      * 
      * @return The schedule for Friday.
      */
+
     public java.util.Map<String, String> getFriday() {
         if (friday == null) {
             friday = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -366,6 +383,7 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable {
      * @param friday
      *        The schedule for Friday.
      */
+
     public void setFriday(java.util.Map<String, String> friday) {
         this.friday = friday == null ? null
                 : new com.amazonaws.internal.SdkInternalMap<String, String>(
@@ -382,6 +400,7 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public WeeklyAutoScalingSchedule withFriday(
             java.util.Map<String, String> friday) {
         setFriday(friday);
@@ -403,6 +422,7 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable {
      * Removes all the entries added into Friday. &lt;p> Returns a reference to
      * this object so that method calls can be chained together.
      */
+
     public WeeklyAutoScalingSchedule clearFridayEntries() {
         this.friday = null;
         return this;
@@ -415,6 +435,7 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable {
      * 
      * @return The schedule for Saturday.
      */
+
     public java.util.Map<String, String> getSaturday() {
         if (saturday == null) {
             saturday = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -430,6 +451,7 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable {
      * @param saturday
      *        The schedule for Saturday.
      */
+
     public void setSaturday(java.util.Map<String, String> saturday) {
         this.saturday = saturday == null ? null
                 : new com.amazonaws.internal.SdkInternalMap<String, String>(
@@ -446,6 +468,7 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public WeeklyAutoScalingSchedule withSaturday(
             java.util.Map<String, String> saturday) {
         setSaturday(saturday);
@@ -467,6 +490,7 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable {
      * Removes all the entries added into Saturday. &lt;p> Returns a reference
      * to this object so that method calls can be chained together.
      */
+
     public WeeklyAutoScalingSchedule clearSaturdayEntries() {
         this.saturday = null;
         return this;
@@ -479,6 +503,7 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable {
      * 
      * @return The schedule for Sunday.
      */
+
     public java.util.Map<String, String> getSunday() {
         if (sunday == null) {
             sunday = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -494,6 +519,7 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable {
      * @param sunday
      *        The schedule for Sunday.
      */
+
     public void setSunday(java.util.Map<String, String> sunday) {
         this.sunday = sunday == null ? null
                 : new com.amazonaws.internal.SdkInternalMap<String, String>(
@@ -510,6 +536,7 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public WeeklyAutoScalingSchedule withSunday(
             java.util.Map<String, String> sunday) {
         setSunday(sunday);
@@ -531,6 +558,7 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable {
      * Removes all the entries added into Sunday. &lt;p> Returns a reference to
      * this object so that method calls can be chained together.
      */
+
     public WeeklyAutoScalingSchedule clearSundayEntries() {
         this.sunday = null;
         return this;

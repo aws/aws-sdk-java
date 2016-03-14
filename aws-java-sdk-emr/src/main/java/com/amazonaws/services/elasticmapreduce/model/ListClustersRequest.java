@@ -62,6 +62,7 @@ public class ListClustersRequest extends AmazonWebServiceRequest implements
      *        The creation date and time beginning value filter for listing
      *        clusters .
      */
+
     public void setCreatedAfter(java.util.Date createdAfter) {
         this.createdAfter = createdAfter;
     }
@@ -74,6 +75,7 @@ public class ListClustersRequest extends AmazonWebServiceRequest implements
      * @return The creation date and time beginning value filter for listing
      *         clusters .
      */
+
     public java.util.Date getCreatedAfter() {
         return this.createdAfter;
     }
@@ -89,6 +91,7 @@ public class ListClustersRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListClustersRequest withCreatedAfter(java.util.Date createdAfter) {
         setCreatedAfter(createdAfter);
         return this;
@@ -102,6 +105,7 @@ public class ListClustersRequest extends AmazonWebServiceRequest implements
      * @param createdBefore
      *        The creation date and time end value filter for listing clusters .
      */
+
     public void setCreatedBefore(java.util.Date createdBefore) {
         this.createdBefore = createdBefore;
     }
@@ -114,6 +118,7 @@ public class ListClustersRequest extends AmazonWebServiceRequest implements
      * @return The creation date and time end value filter for listing clusters
      *         .
      */
+
     public java.util.Date getCreatedBefore() {
         return this.createdBefore;
     }
@@ -128,6 +133,7 @@ public class ListClustersRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListClustersRequest withCreatedBefore(java.util.Date createdBefore) {
         setCreatedBefore(createdBefore);
         return this;
@@ -141,6 +147,7 @@ public class ListClustersRequest extends AmazonWebServiceRequest implements
      * @return The cluster state filters to apply when listing clusters.
      * @see ClusterState
      */
+
     public java.util.List<String> getClusterStates() {
         if (clusterStates == null) {
             clusterStates = new com.amazonaws.internal.SdkInternalList<String>();
@@ -157,6 +164,7 @@ public class ListClustersRequest extends AmazonWebServiceRequest implements
      *        The cluster state filters to apply when listing clusters.
      * @see ClusterState
      */
+
     public void setClusterStates(java.util.Collection<String> clusterStates) {
         if (clusterStates == null) {
             this.clusterStates = null;
@@ -184,6 +192,7 @@ public class ListClustersRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ClusterState
      */
+
     public ListClustersRequest withClusterStates(String... clusterStates) {
         if (this.clusterStates == null) {
             setClusterStates(new com.amazonaws.internal.SdkInternalList<String>(
@@ -206,6 +215,7 @@ public class ListClustersRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ClusterState
      */
+
     public ListClustersRequest withClusterStates(
             java.util.Collection<String> clusterStates) {
         setClusterStates(clusterStates);
@@ -223,6 +233,7 @@ public class ListClustersRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ClusterState
      */
+
     public ListClustersRequest withClusterStates(ClusterState... clusterStates) {
         com.amazonaws.internal.SdkInternalList<String> clusterStatesCopy = new com.amazonaws.internal.SdkInternalList<String>(
                 clusterStates.length);
@@ -246,6 +257,7 @@ public class ListClustersRequest extends AmazonWebServiceRequest implements
      *        The pagination token that indicates the next set of results to
      *        retrieve.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -258,6 +270,7 @@ public class ListClustersRequest extends AmazonWebServiceRequest implements
      * @return The pagination token that indicates the next set of results to
      *         retrieve.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -273,6 +286,7 @@ public class ListClustersRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListClustersRequest withMarker(String marker) {
         setMarker(marker);
         return this;

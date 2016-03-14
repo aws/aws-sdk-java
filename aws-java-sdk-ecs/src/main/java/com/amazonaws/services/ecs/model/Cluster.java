@@ -99,6 +99,7 @@ public class Cluster implements Serializable, Cloneable {
      *        name. For example,
      *        arn:aws:ecs:<i>region</i>:<i>012345678910</i>:cluster/<i>test</i>.
      */
+
     public void setClusterArn(String clusterArn) {
         this.clusterArn = clusterArn;
     }
@@ -120,6 +121,7 @@ public class Cluster implements Serializable, Cloneable {
      *         arn:aws:ecs:<i>region</i>:<i>012345678910</i>:cluster
      *         /<i>test</i>.
      */
+
     public String getClusterArn() {
         return this.clusterArn;
     }
@@ -143,6 +145,7 @@ public class Cluster implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Cluster withClusterArn(String clusterArn) {
         setClusterArn(clusterArn);
         return this;
@@ -156,6 +159,7 @@ public class Cluster implements Serializable, Cloneable {
      * @param clusterName
      *        A user-generated string that you use to identify your cluster.
      */
+
     public void setClusterName(String clusterName) {
         this.clusterName = clusterName;
     }
@@ -167,6 +171,7 @@ public class Cluster implements Serializable, Cloneable {
      * 
      * @return A user-generated string that you use to identify your cluster.
      */
+
     public String getClusterName() {
         return this.clusterName;
     }
@@ -181,6 +186,7 @@ public class Cluster implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Cluster withClusterName(String clusterName) {
         setClusterName(clusterName);
         return this;
@@ -200,6 +206,7 @@ public class Cluster implements Serializable, Cloneable {
      *        indicates that you can register container instances with the
      *        cluster and the associated instances can accept tasks.
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -217,6 +224,7 @@ public class Cluster implements Serializable, Cloneable {
      *         indicates that you can register container instances with the
      *         cluster and the associated instances can accept tasks.
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -237,6 +245,7 @@ public class Cluster implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Cluster withStatus(String status) {
         setStatus(status);
         return this;
@@ -250,6 +259,7 @@ public class Cluster implements Serializable, Cloneable {
      * @param registeredContainerInstancesCount
      *        The number of container instances registered into the cluster.
      */
+
     public void setRegisteredContainerInstancesCount(
             Integer registeredContainerInstancesCount) {
         this.registeredContainerInstancesCount = registeredContainerInstancesCount;
@@ -262,6 +272,7 @@ public class Cluster implements Serializable, Cloneable {
      * 
      * @return The number of container instances registered into the cluster.
      */
+
     public Integer getRegisteredContainerInstancesCount() {
         return this.registeredContainerInstancesCount;
     }
@@ -276,6 +287,7 @@ public class Cluster implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Cluster withRegisteredContainerInstancesCount(
             Integer registeredContainerInstancesCount) {
         setRegisteredContainerInstancesCount(registeredContainerInstancesCount);
@@ -292,6 +304,7 @@ public class Cluster implements Serializable, Cloneable {
      *        The number of tasks in the cluster that are in the
      *        <code>RUNNING</code> state.
      */
+
     public void setRunningTasksCount(Integer runningTasksCount) {
         this.runningTasksCount = runningTasksCount;
     }
@@ -305,6 +318,7 @@ public class Cluster implements Serializable, Cloneable {
      * @return The number of tasks in the cluster that are in the
      *         <code>RUNNING</code> state.
      */
+
     public Integer getRunningTasksCount() {
         return this.runningTasksCount;
     }
@@ -321,6 +335,7 @@ public class Cluster implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Cluster withRunningTasksCount(Integer runningTasksCount) {
         setRunningTasksCount(runningTasksCount);
         return this;
@@ -336,6 +351,7 @@ public class Cluster implements Serializable, Cloneable {
      *        The number of tasks in the cluster that are in the
      *        <code>PENDING</code> state.
      */
+
     public void setPendingTasksCount(Integer pendingTasksCount) {
         this.pendingTasksCount = pendingTasksCount;
     }
@@ -349,6 +365,7 @@ public class Cluster implements Serializable, Cloneable {
      * @return The number of tasks in the cluster that are in the
      *         <code>PENDING</code> state.
      */
+
     public Integer getPendingTasksCount() {
         return this.pendingTasksCount;
     }
@@ -365,6 +382,7 @@ public class Cluster implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Cluster withPendingTasksCount(Integer pendingTasksCount) {
         setPendingTasksCount(pendingTasksCount);
         return this;
@@ -382,6 +400,7 @@ public class Cluster implements Serializable, Cloneable {
      *        <code>ACTIVE</code> state. You can view these services with
      *        <a>ListServices</a>.
      */
+
     public void setActiveServicesCount(Integer activeServicesCount) {
         this.activeServicesCount = activeServicesCount;
     }
@@ -397,6 +416,7 @@ public class Cluster implements Serializable, Cloneable {
      *         <code>ACTIVE</code> state. You can view these services with
      *         <a>ListServices</a>.
      */
+
     public Integer getActiveServicesCount() {
         return this.activeServicesCount;
     }
@@ -415,6 +435,7 @@ public class Cluster implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Cluster withActiveServicesCount(Integer activeServicesCount) {
         setActiveServicesCount(activeServicesCount);
         return this;

@@ -39,6 +39,7 @@ public class RunScheduledInstancesResult implements Serializable, Cloneable {
      * 
      * @return The IDs of the newly launched instances.
      */
+
     public java.util.List<String> getInstanceIdSet() {
         if (instanceIdSet == null) {
             instanceIdSet = new com.amazonaws.internal.SdkInternalList<String>();
@@ -54,6 +55,7 @@ public class RunScheduledInstancesResult implements Serializable, Cloneable {
      * @param instanceIdSet
      *        The IDs of the newly launched instances.
      */
+
     public void setInstanceIdSet(java.util.Collection<String> instanceIdSet) {
         if (instanceIdSet == null) {
             this.instanceIdSet = null;
@@ -80,6 +82,7 @@ public class RunScheduledInstancesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunScheduledInstancesResult withInstanceIdSet(
             String... instanceIdSet) {
         if (this.instanceIdSet == null) {
@@ -102,6 +105,7 @@ public class RunScheduledInstancesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunScheduledInstancesResult withInstanceIdSet(
             java.util.Collection<String> instanceIdSet) {
         setInstanceIdSet(instanceIdSet);

@@ -61,6 +61,7 @@ public class EBSOptions implements Serializable, Cloneable {
      * @param eBSEnabled
      *        Specifies whether EBS-based storage is enabled.
      */
+
     public void setEBSEnabled(Boolean eBSEnabled) {
         this.eBSEnabled = eBSEnabled;
     }
@@ -72,6 +73,7 @@ public class EBSOptions implements Serializable, Cloneable {
      * 
      * @return Specifies whether EBS-based storage is enabled.
      */
+
     public Boolean getEBSEnabled() {
         return this.eBSEnabled;
     }
@@ -86,6 +88,7 @@ public class EBSOptions implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EBSOptions withEBSEnabled(Boolean eBSEnabled) {
         setEBSEnabled(eBSEnabled);
         return this;
@@ -98,6 +101,7 @@ public class EBSOptions implements Serializable, Cloneable {
      * 
      * @return Specifies whether EBS-based storage is enabled.
      */
+
     public Boolean isEBSEnabled() {
         return this.eBSEnabled;
     }
@@ -111,6 +115,7 @@ public class EBSOptions implements Serializable, Cloneable {
      *        Specifies the volume type for EBS-based storage.
      * @see VolumeType
      */
+
     public void setVolumeType(String volumeType) {
         this.volumeType = volumeType;
     }
@@ -123,6 +128,7 @@ public class EBSOptions implements Serializable, Cloneable {
      * @return Specifies the volume type for EBS-based storage.
      * @see VolumeType
      */
+
     public String getVolumeType() {
         return this.volumeType;
     }
@@ -138,6 +144,7 @@ public class EBSOptions implements Serializable, Cloneable {
      *         chained together.
      * @see VolumeType
      */
+
     public EBSOptions withVolumeType(String volumeType) {
         setVolumeType(volumeType);
         return this;
@@ -154,6 +161,7 @@ public class EBSOptions implements Serializable, Cloneable {
      *         chained together.
      * @see VolumeType
      */
+
     public void setVolumeType(VolumeType volumeType) {
         this.volumeType = volumeType.toString();
     }
@@ -169,6 +177,7 @@ public class EBSOptions implements Serializable, Cloneable {
      *         chained together.
      * @see VolumeType
      */
+
     public EBSOptions withVolumeType(VolumeType volumeType) {
         setVolumeType(volumeType);
         return this;
@@ -182,6 +191,7 @@ public class EBSOptions implements Serializable, Cloneable {
      * @param volumeSize
      *        Integer to specify the size of an EBS volume.
      */
+
     public void setVolumeSize(Integer volumeSize) {
         this.volumeSize = volumeSize;
     }
@@ -193,6 +203,7 @@ public class EBSOptions implements Serializable, Cloneable {
      * 
      * @return Integer to specify the size of an EBS volume.
      */
+
     public Integer getVolumeSize() {
         return this.volumeSize;
     }
@@ -207,6 +218,7 @@ public class EBSOptions implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EBSOptions withVolumeSize(Integer volumeSize) {
         setVolumeSize(volumeSize);
         return this;
@@ -220,6 +232,7 @@ public class EBSOptions implements Serializable, Cloneable {
      * @param iops
      *        Specifies the IOPD for a Provisioned IOPS EBS volume (SSD).
      */
+
     public void setIops(Integer iops) {
         this.iops = iops;
     }
@@ -231,6 +244,7 @@ public class EBSOptions implements Serializable, Cloneable {
      * 
      * @return Specifies the IOPD for a Provisioned IOPS EBS volume (SSD).
      */
+
     public Integer getIops() {
         return this.iops;
     }
@@ -245,6 +259,7 @@ public class EBSOptions implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EBSOptions withIops(Integer iops) {
         setIops(iops);
         return this;

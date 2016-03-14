@@ -39,6 +39,7 @@ public class BatchGetApplicationsResult implements Serializable, Cloneable {
      * 
      * @return Information about the applications.
      */
+
     public java.util.List<ApplicationInfo> getApplicationsInfo() {
         if (applicationsInfo == null) {
             applicationsInfo = new com.amazonaws.internal.SdkInternalList<ApplicationInfo>();
@@ -54,6 +55,7 @@ public class BatchGetApplicationsResult implements Serializable, Cloneable {
      * @param applicationsInfo
      *        Information about the applications.
      */
+
     public void setApplicationsInfo(
             java.util.Collection<ApplicationInfo> applicationsInfo) {
         if (applicationsInfo == null) {
@@ -81,6 +83,7 @@ public class BatchGetApplicationsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchGetApplicationsResult withApplicationsInfo(
             ApplicationInfo... applicationsInfo) {
         if (this.applicationsInfo == null) {
@@ -103,6 +106,7 @@ public class BatchGetApplicationsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchGetApplicationsResult withApplicationsInfo(
             java.util.Collection<ApplicationInfo> applicationsInfo) {
         setApplicationsInfo(applicationsInfo);

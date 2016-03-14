@@ -46,6 +46,7 @@ public class CancelledSpotInstanceRequest implements Serializable, Cloneable {
      * @param spotInstanceRequestId
      *        The ID of the Spot instance request.
      */
+
     public void setSpotInstanceRequestId(String spotInstanceRequestId) {
         this.spotInstanceRequestId = spotInstanceRequestId;
     }
@@ -57,6 +58,7 @@ public class CancelledSpotInstanceRequest implements Serializable, Cloneable {
      * 
      * @return The ID of the Spot instance request.
      */
+
     public String getSpotInstanceRequestId() {
         return this.spotInstanceRequestId;
     }
@@ -71,6 +73,7 @@ public class CancelledSpotInstanceRequest implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CancelledSpotInstanceRequest withSpotInstanceRequestId(
             String spotInstanceRequestId) {
         setSpotInstanceRequestId(spotInstanceRequestId);
@@ -86,6 +89,7 @@ public class CancelledSpotInstanceRequest implements Serializable, Cloneable {
      *        The state of the Spot instance request.
      * @see CancelSpotInstanceRequestState
      */
+
     public void setState(String state) {
         this.state = state;
     }
@@ -98,6 +102,7 @@ public class CancelledSpotInstanceRequest implements Serializable, Cloneable {
      * @return The state of the Spot instance request.
      * @see CancelSpotInstanceRequestState
      */
+
     public String getState() {
         return this.state;
     }
@@ -113,6 +118,7 @@ public class CancelledSpotInstanceRequest implements Serializable, Cloneable {
      *         chained together.
      * @see CancelSpotInstanceRequestState
      */
+
     public CancelledSpotInstanceRequest withState(String state) {
         setState(state);
         return this;
@@ -129,6 +135,7 @@ public class CancelledSpotInstanceRequest implements Serializable, Cloneable {
      *         chained together.
      * @see CancelSpotInstanceRequestState
      */
+
     public void setState(CancelSpotInstanceRequestState state) {
         this.state = state.toString();
     }
@@ -144,6 +151,7 @@ public class CancelledSpotInstanceRequest implements Serializable, Cloneable {
      *         chained together.
      * @see CancelSpotInstanceRequestState
      */
+
     public CancelledSpotInstanceRequest withState(
             CancelSpotInstanceRequestState state) {
         setState(state);

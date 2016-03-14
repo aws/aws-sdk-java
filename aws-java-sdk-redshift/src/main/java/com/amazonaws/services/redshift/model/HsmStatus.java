@@ -18,6 +18,7 @@ import java.io.Serializable;
 
 /**
  * <p>
+ * Describes the status of changes to HSM settings.
  * </p>
  */
 public class HsmStatus implements Serializable, Cloneable {

@@ -47,6 +47,7 @@ public class ListImagesResult implements Serializable, Cloneable {
      * 
      * @return The list of image IDs for the requested repository.
      */
+
     public java.util.List<ImageIdentifier> getImageIds() {
         return imageIds;
     }
@@ -59,6 +60,7 @@ public class ListImagesResult implements Serializable, Cloneable {
      * @param imageIds
      *        The list of image IDs for the requested repository.
      */
+
     public void setImageIds(java.util.Collection<ImageIdentifier> imageIds) {
         if (imageIds == null) {
             this.imageIds = null;
@@ -84,6 +86,7 @@ public class ListImagesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListImagesResult withImageIds(ImageIdentifier... imageIds) {
         if (this.imageIds == null) {
             setImageIds(new java.util.ArrayList<ImageIdentifier>(
@@ -105,6 +108,7 @@ public class ListImagesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListImagesResult withImageIds(
             java.util.Collection<ImageIdentifier> imageIds) {
         setImageIds(imageIds);
@@ -128,6 +132,7 @@ public class ListImagesResult implements Serializable, Cloneable {
      *        value is <code>null</code> when there are no more results to
      *        return.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -148,6 +153,7 @@ public class ListImagesResult implements Serializable, Cloneable {
      *         value is <code>null</code> when there are no more results to
      *         return.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -171,6 +177,7 @@ public class ListImagesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListImagesResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

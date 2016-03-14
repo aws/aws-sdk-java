@@ -71,6 +71,7 @@ public class DeleteRequest implements Serializable, Cloneable {
      *         attributes must be specified, and their data types must match
      *         those of the table's key schema.
      */
+
     public java.util.Map<String, AttributeValue> getKey() {
         return key;
     }
@@ -89,6 +90,7 @@ public class DeleteRequest implements Serializable, Cloneable {
      *        attributes must be specified, and their data types must match
      *        those of the table's key schema.
      */
+
     public void setKey(java.util.Map<String, AttributeValue> key) {
         this.key = key;
     }
@@ -109,6 +111,7 @@ public class DeleteRequest implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteRequest withKey(java.util.Map<String, AttributeValue> key) {
         setKey(key);
         return this;
@@ -129,6 +132,7 @@ public class DeleteRequest implements Serializable, Cloneable {
      * Removes all the entries added into Key. &lt;p> Returns a reference to
      * this object so that method calls can be chained together.
      */
+
     public DeleteRequest clearKeyEntries() {
         this.key = null;
         return this;

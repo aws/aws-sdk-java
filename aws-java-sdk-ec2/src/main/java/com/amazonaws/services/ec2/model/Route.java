@@ -105,6 +105,7 @@ public class Route implements Serializable, Cloneable {
      * @param destinationCidrBlock
      *        The CIDR block used for the destination match.
      */
+
     public void setDestinationCidrBlock(String destinationCidrBlock) {
         this.destinationCidrBlock = destinationCidrBlock;
     }
@@ -116,6 +117,7 @@ public class Route implements Serializable, Cloneable {
      * 
      * @return The CIDR block used for the destination match.
      */
+
     public String getDestinationCidrBlock() {
         return this.destinationCidrBlock;
     }
@@ -130,6 +132,7 @@ public class Route implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Route withDestinationCidrBlock(String destinationCidrBlock) {
         setDestinationCidrBlock(destinationCidrBlock);
         return this;
@@ -143,6 +146,7 @@ public class Route implements Serializable, Cloneable {
      * @param destinationPrefixListId
      *        The prefix of the AWS service.
      */
+
     public void setDestinationPrefixListId(String destinationPrefixListId) {
         this.destinationPrefixListId = destinationPrefixListId;
     }
@@ -154,6 +158,7 @@ public class Route implements Serializable, Cloneable {
      * 
      * @return The prefix of the AWS service.
      */
+
     public String getDestinationPrefixListId() {
         return this.destinationPrefixListId;
     }
@@ -168,6 +173,7 @@ public class Route implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Route withDestinationPrefixListId(String destinationPrefixListId) {
         setDestinationPrefixListId(destinationPrefixListId);
         return this;
@@ -181,6 +187,7 @@ public class Route implements Serializable, Cloneable {
      * @param gatewayId
      *        The ID of a gateway attached to your VPC.
      */
+
     public void setGatewayId(String gatewayId) {
         this.gatewayId = gatewayId;
     }
@@ -192,6 +199,7 @@ public class Route implements Serializable, Cloneable {
      * 
      * @return The ID of a gateway attached to your VPC.
      */
+
     public String getGatewayId() {
         return this.gatewayId;
     }
@@ -206,6 +214,7 @@ public class Route implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Route withGatewayId(String gatewayId) {
         setGatewayId(gatewayId);
         return this;
@@ -219,6 +228,7 @@ public class Route implements Serializable, Cloneable {
      * @param instanceId
      *        The ID of a NAT instance in your VPC.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -230,6 +240,7 @@ public class Route implements Serializable, Cloneable {
      * 
      * @return The ID of a NAT instance in your VPC.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
@@ -244,6 +255,7 @@ public class Route implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Route withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;
@@ -257,6 +269,7 @@ public class Route implements Serializable, Cloneable {
      * @param instanceOwnerId
      *        The AWS account ID of the owner of the instance.
      */
+
     public void setInstanceOwnerId(String instanceOwnerId) {
         this.instanceOwnerId = instanceOwnerId;
     }
@@ -268,6 +281,7 @@ public class Route implements Serializable, Cloneable {
      * 
      * @return The AWS account ID of the owner of the instance.
      */
+
     public String getInstanceOwnerId() {
         return this.instanceOwnerId;
     }
@@ -282,6 +296,7 @@ public class Route implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Route withInstanceOwnerId(String instanceOwnerId) {
         setInstanceOwnerId(instanceOwnerId);
         return this;
@@ -295,6 +310,7 @@ public class Route implements Serializable, Cloneable {
      * @param networkInterfaceId
      *        The ID of the network interface.
      */
+
     public void setNetworkInterfaceId(String networkInterfaceId) {
         this.networkInterfaceId = networkInterfaceId;
     }
@@ -306,6 +322,7 @@ public class Route implements Serializable, Cloneable {
      * 
      * @return The ID of the network interface.
      */
+
     public String getNetworkInterfaceId() {
         return this.networkInterfaceId;
     }
@@ -320,6 +337,7 @@ public class Route implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Route withNetworkInterfaceId(String networkInterfaceId) {
         setNetworkInterfaceId(networkInterfaceId);
         return this;
@@ -333,6 +351,7 @@ public class Route implements Serializable, Cloneable {
      * @param vpcPeeringConnectionId
      *        The ID of the VPC peering connection.
      */
+
     public void setVpcPeeringConnectionId(String vpcPeeringConnectionId) {
         this.vpcPeeringConnectionId = vpcPeeringConnectionId;
     }
@@ -344,6 +363,7 @@ public class Route implements Serializable, Cloneable {
      * 
      * @return The ID of the VPC peering connection.
      */
+
     public String getVpcPeeringConnectionId() {
         return this.vpcPeeringConnectionId;
     }
@@ -358,6 +378,7 @@ public class Route implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Route withVpcPeeringConnectionId(String vpcPeeringConnectionId) {
         setVpcPeeringConnectionId(vpcPeeringConnectionId);
         return this;
@@ -371,6 +392,7 @@ public class Route implements Serializable, Cloneable {
      * @param natGatewayId
      *        The ID of a NAT gateway.
      */
+
     public void setNatGatewayId(String natGatewayId) {
         this.natGatewayId = natGatewayId;
     }
@@ -382,6 +404,7 @@ public class Route implements Serializable, Cloneable {
      * 
      * @return The ID of a NAT gateway.
      */
+
     public String getNatGatewayId() {
         return this.natGatewayId;
     }
@@ -396,6 +419,7 @@ public class Route implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Route withNatGatewayId(String natGatewayId) {
         setNatGatewayId(natGatewayId);
         return this;
@@ -416,6 +440,7 @@ public class Route implements Serializable, Cloneable {
      *        instance has been terminated).
      * @see RouteState
      */
+
     public void setState(String state) {
         this.state = state;
     }
@@ -434,6 +459,7 @@ public class Route implements Serializable, Cloneable {
      *         NAT instance has been terminated).
      * @see RouteState
      */
+
     public String getState() {
         return this.state;
     }
@@ -455,6 +481,7 @@ public class Route implements Serializable, Cloneable {
      *         chained together.
      * @see RouteState
      */
+
     public Route withState(String state) {
         setState(state);
         return this;
@@ -477,6 +504,7 @@ public class Route implements Serializable, Cloneable {
      *         chained together.
      * @see RouteState
      */
+
     public void setState(RouteState state) {
         this.state = state.toString();
     }
@@ -498,6 +526,7 @@ public class Route implements Serializable, Cloneable {
      *         chained together.
      * @see RouteState
      */
+
     public Route withState(RouteState state) {
         setState(state);
         return this;
@@ -527,6 +556,7 @@ public class Route implements Serializable, Cloneable {
      *        route was propagated by route propagation.</li>
      * @see RouteOrigin
      */
+
     public void setOrigin(String origin) {
         this.origin = origin;
     }
@@ -554,6 +584,7 @@ public class Route implements Serializable, Cloneable {
      *         route was propagated by route propagation.</li>
      * @see RouteOrigin
      */
+
     public String getOrigin() {
         return this.origin;
     }
@@ -584,6 +615,7 @@ public class Route implements Serializable, Cloneable {
      *         chained together.
      * @see RouteOrigin
      */
+
     public Route withOrigin(String origin) {
         setOrigin(origin);
         return this;
@@ -615,6 +647,7 @@ public class Route implements Serializable, Cloneable {
      *         chained together.
      * @see RouteOrigin
      */
+
     public void setOrigin(RouteOrigin origin) {
         this.origin = origin.toString();
     }
@@ -645,6 +678,7 @@ public class Route implements Serializable, Cloneable {
      *         chained together.
      * @see RouteOrigin
      */
+
     public Route withOrigin(RouteOrigin origin) {
         setOrigin(origin);
         return this;

@@ -59,6 +59,7 @@ public class Instance implements Serializable, Cloneable {
      * @param instanceId
      *        The ID of the instance.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -70,6 +71,7 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @return The ID of the instance.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
@@ -84,6 +86,7 @@ public class Instance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Instance withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;

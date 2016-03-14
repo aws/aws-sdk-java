@@ -62,6 +62,7 @@ public class ExportToS3Task implements Serializable, Cloneable {
      *        The format for the exported image.
      * @see DiskImageFormat
      */
+
     public void setDiskImageFormat(String diskImageFormat) {
         this.diskImageFormat = diskImageFormat;
     }
@@ -74,6 +75,7 @@ public class ExportToS3Task implements Serializable, Cloneable {
      * @return The format for the exported image.
      * @see DiskImageFormat
      */
+
     public String getDiskImageFormat() {
         return this.diskImageFormat;
     }
@@ -89,6 +91,7 @@ public class ExportToS3Task implements Serializable, Cloneable {
      *         chained together.
      * @see DiskImageFormat
      */
+
     public ExportToS3Task withDiskImageFormat(String diskImageFormat) {
         setDiskImageFormat(diskImageFormat);
         return this;
@@ -105,6 +108,7 @@ public class ExportToS3Task implements Serializable, Cloneable {
      *         chained together.
      * @see DiskImageFormat
      */
+
     public void setDiskImageFormat(DiskImageFormat diskImageFormat) {
         this.diskImageFormat = diskImageFormat.toString();
     }
@@ -120,6 +124,7 @@ public class ExportToS3Task implements Serializable, Cloneable {
      *         chained together.
      * @see DiskImageFormat
      */
+
     public ExportToS3Task withDiskImageFormat(DiskImageFormat diskImageFormat) {
         setDiskImageFormat(diskImageFormat);
         return this;
@@ -136,6 +141,7 @@ public class ExportToS3Task implements Serializable, Cloneable {
      *        (such as OVF). If absent, only the disk image is exported.
      * @see ContainerFormat
      */
+
     public void setContainerFormat(String containerFormat) {
         this.containerFormat = containerFormat;
     }
@@ -150,6 +156,7 @@ public class ExportToS3Task implements Serializable, Cloneable {
      *         (such as OVF). If absent, only the disk image is exported.
      * @see ContainerFormat
      */
+
     public String getContainerFormat() {
         return this.containerFormat;
     }
@@ -167,6 +174,7 @@ public class ExportToS3Task implements Serializable, Cloneable {
      *         chained together.
      * @see ContainerFormat
      */
+
     public ExportToS3Task withContainerFormat(String containerFormat) {
         setContainerFormat(containerFormat);
         return this;
@@ -185,6 +193,7 @@ public class ExportToS3Task implements Serializable, Cloneable {
      *         chained together.
      * @see ContainerFormat
      */
+
     public void setContainerFormat(ContainerFormat containerFormat) {
         this.containerFormat = containerFormat.toString();
     }
@@ -202,6 +211,7 @@ public class ExportToS3Task implements Serializable, Cloneable {
      *         chained together.
      * @see ContainerFormat
      */
+
     public ExportToS3Task withContainerFormat(ContainerFormat containerFormat) {
         setContainerFormat(containerFormat);
         return this;
@@ -219,6 +229,7 @@ public class ExportToS3Task implements Serializable, Cloneable {
      *        must exist and grant WRITE and READ_ACP permissions to the AWS
      *        account <code>vm-import-export@amazon.com</code>.
      */
+
     public void setS3Bucket(String s3Bucket) {
         this.s3Bucket = s3Bucket;
     }
@@ -234,6 +245,7 @@ public class ExportToS3Task implements Serializable, Cloneable {
      *         must exist and grant WRITE and READ_ACP permissions to the AWS
      *         account <code>vm-import-export@amazon.com</code>.
      */
+
     public String getS3Bucket() {
         return this.s3Bucket;
     }
@@ -252,6 +264,7 @@ public class ExportToS3Task implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ExportToS3Task withS3Bucket(String s3Bucket) {
         setS3Bucket(s3Bucket);
         return this;
@@ -265,6 +278,7 @@ public class ExportToS3Task implements Serializable, Cloneable {
      * @param s3Key
      *        The encryption key for your S3 bucket.
      */
+
     public void setS3Key(String s3Key) {
         this.s3Key = s3Key;
     }
@@ -276,6 +290,7 @@ public class ExportToS3Task implements Serializable, Cloneable {
      * 
      * @return The encryption key for your S3 bucket.
      */
+
     public String getS3Key() {
         return this.s3Key;
     }
@@ -290,6 +305,7 @@ public class ExportToS3Task implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ExportToS3Task withS3Key(String s3Key) {
         setS3Key(s3Key);
         return this;

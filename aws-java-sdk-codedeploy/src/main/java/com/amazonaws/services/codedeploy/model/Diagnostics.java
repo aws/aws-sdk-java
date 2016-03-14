@@ -99,6 +99,7 @@ public class Diagnostics implements Serializable, Cloneable {
      *        reason.</li>
      * @see LifecycleErrorCode
      */
+
     public void setErrorCode(String errorCode) {
         this.errorCode = errorCode;
     }
@@ -135,6 +136,7 @@ public class Diagnostics implements Serializable, Cloneable {
      *         reason.</li>
      * @see LifecycleErrorCode
      */
+
     public String getErrorCode() {
         return this.errorCode;
     }
@@ -173,6 +175,7 @@ public class Diagnostics implements Serializable, Cloneable {
      *         chained together.
      * @see LifecycleErrorCode
      */
+
     public Diagnostics withErrorCode(String errorCode) {
         setErrorCode(errorCode);
         return this;
@@ -212,6 +215,7 @@ public class Diagnostics implements Serializable, Cloneable {
      *         chained together.
      * @see LifecycleErrorCode
      */
+
     public void setErrorCode(LifecycleErrorCode errorCode) {
         this.errorCode = errorCode.toString();
     }
@@ -250,6 +254,7 @@ public class Diagnostics implements Serializable, Cloneable {
      *         chained together.
      * @see LifecycleErrorCode
      */
+
     public Diagnostics withErrorCode(LifecycleErrorCode errorCode) {
         setErrorCode(errorCode);
         return this;
@@ -263,6 +268,7 @@ public class Diagnostics implements Serializable, Cloneable {
      * @param scriptName
      *        The name of the script.
      */
+
     public void setScriptName(String scriptName) {
         this.scriptName = scriptName;
     }
@@ -274,6 +280,7 @@ public class Diagnostics implements Serializable, Cloneable {
      * 
      * @return The name of the script.
      */
+
     public String getScriptName() {
         return this.scriptName;
     }
@@ -288,6 +295,7 @@ public class Diagnostics implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Diagnostics withScriptName(String scriptName) {
         setScriptName(scriptName);
         return this;
@@ -301,6 +309,7 @@ public class Diagnostics implements Serializable, Cloneable {
      * @param message
      *        The message associated with the error.
      */
+
     public void setMessage(String message) {
         this.message = message;
     }
@@ -312,6 +321,7 @@ public class Diagnostics implements Serializable, Cloneable {
      * 
      * @return The message associated with the error.
      */
+
     public String getMessage() {
         return this.message;
     }
@@ -326,6 +336,7 @@ public class Diagnostics implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Diagnostics withMessage(String message) {
         setMessage(message);
         return this;
@@ -346,6 +357,7 @@ public class Diagnostics implements Serializable, Cloneable {
      *        If available, AWS CodeDeploy returns up to the last 4 KB of the
      *        associated diagnostic log.
      */
+
     public void setLogTail(String logTail) {
         this.logTail = logTail;
     }
@@ -364,6 +376,7 @@ public class Diagnostics implements Serializable, Cloneable {
      *         If available, AWS CodeDeploy returns up to the last 4 KB of the
      *         associated diagnostic log.
      */
+
     public String getLogTail() {
         return this.logTail;
     }
@@ -385,6 +398,7 @@ public class Diagnostics implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Diagnostics withLogTail(String logTail) {
         setLogTail(logTail);
         return this;

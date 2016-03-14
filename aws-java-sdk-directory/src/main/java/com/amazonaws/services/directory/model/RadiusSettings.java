@@ -90,6 +90,7 @@ public class RadiusSettings implements Serializable, Cloneable {
      *         server endpoints, or the IP addresses of your RADIUS server load
      *         balancer.
      */
+
     public java.util.List<String> getRadiusServers() {
         if (radiusServers == null) {
             radiusServers = new com.amazonaws.internal.SdkInternalList<String>();
@@ -108,6 +109,7 @@ public class RadiusSettings implements Serializable, Cloneable {
      *        server endpoints, or the IP addresses of your RADIUS server load
      *        balancer.
      */
+
     public void setRadiusServers(java.util.Collection<String> radiusServers) {
         if (radiusServers == null) {
             this.radiusServers = null;
@@ -137,6 +139,7 @@ public class RadiusSettings implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RadiusSettings withRadiusServers(String... radiusServers) {
         if (this.radiusServers == null) {
             setRadiusServers(new com.amazonaws.internal.SdkInternalList<String>(
@@ -161,6 +164,7 @@ public class RadiusSettings implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RadiusSettings withRadiusServers(
             java.util.Collection<String> radiusServers) {
         setRadiusServers(radiusServers);
@@ -179,6 +183,7 @@ public class RadiusSettings implements Serializable, Cloneable {
      *        on-premises network must allow inbound traffic over this port from
      *        the AWS Directory Service servers.
      */
+
     public void setRadiusPort(Integer radiusPort) {
         this.radiusPort = radiusPort;
     }
@@ -194,6 +199,7 @@ public class RadiusSettings implements Serializable, Cloneable {
      *         Your on-premises network must allow inbound traffic over this
      *         port from the AWS Directory Service servers.
      */
+
     public Integer getRadiusPort() {
         return this.radiusPort;
     }
@@ -212,6 +218,7 @@ public class RadiusSettings implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RadiusSettings withRadiusPort(Integer radiusPort) {
         setRadiusPort(radiusPort);
         return this;
@@ -226,6 +233,7 @@ public class RadiusSettings implements Serializable, Cloneable {
      *        The amount of time, in seconds, to wait for the RADIUS server to
      *        respond.
      */
+
     public void setRadiusTimeout(Integer radiusTimeout) {
         this.radiusTimeout = radiusTimeout;
     }
@@ -238,6 +246,7 @@ public class RadiusSettings implements Serializable, Cloneable {
      * @return The amount of time, in seconds, to wait for the RADIUS server to
      *         respond.
      */
+
     public Integer getRadiusTimeout() {
         return this.radiusTimeout;
     }
@@ -253,6 +262,7 @@ public class RadiusSettings implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RadiusSettings withRadiusTimeout(Integer radiusTimeout) {
         setRadiusTimeout(radiusTimeout);
         return this;
@@ -268,6 +278,7 @@ public class RadiusSettings implements Serializable, Cloneable {
      *        The maximum number of times that communication with the RADIUS
      *        server is attempted.
      */
+
     public void setRadiusRetries(Integer radiusRetries) {
         this.radiusRetries = radiusRetries;
     }
@@ -281,6 +292,7 @@ public class RadiusSettings implements Serializable, Cloneable {
      * @return The maximum number of times that communication with the RADIUS
      *         server is attempted.
      */
+
     public Integer getRadiusRetries() {
         return this.radiusRetries;
     }
@@ -297,6 +309,7 @@ public class RadiusSettings implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RadiusSettings withRadiusRetries(Integer radiusRetries) {
         setRadiusRetries(radiusRetries);
         return this;
@@ -312,6 +325,7 @@ public class RadiusSettings implements Serializable, Cloneable {
      *        The shared secret code that was specified when your RADIUS
      *        endpoints were created.
      */
+
     public void setSharedSecret(String sharedSecret) {
         this.sharedSecret = sharedSecret;
     }
@@ -325,6 +339,7 @@ public class RadiusSettings implements Serializable, Cloneable {
      * @return The shared secret code that was specified when your RADIUS
      *         endpoints were created.
      */
+
     public String getSharedSecret() {
         return this.sharedSecret;
     }
@@ -341,6 +356,7 @@ public class RadiusSettings implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RadiusSettings withSharedSecret(String sharedSecret) {
         setSharedSecret(sharedSecret);
         return this;
@@ -355,6 +371,7 @@ public class RadiusSettings implements Serializable, Cloneable {
      *        The protocol specified for your RADIUS endpoints.
      * @see RadiusAuthenticationProtocol
      */
+
     public void setAuthenticationProtocol(String authenticationProtocol) {
         this.authenticationProtocol = authenticationProtocol;
     }
@@ -367,6 +384,7 @@ public class RadiusSettings implements Serializable, Cloneable {
      * @return The protocol specified for your RADIUS endpoints.
      * @see RadiusAuthenticationProtocol
      */
+
     public String getAuthenticationProtocol() {
         return this.authenticationProtocol;
     }
@@ -382,6 +400,7 @@ public class RadiusSettings implements Serializable, Cloneable {
      *         chained together.
      * @see RadiusAuthenticationProtocol
      */
+
     public RadiusSettings withAuthenticationProtocol(
             String authenticationProtocol) {
         setAuthenticationProtocol(authenticationProtocol);
@@ -399,6 +418,7 @@ public class RadiusSettings implements Serializable, Cloneable {
      *         chained together.
      * @see RadiusAuthenticationProtocol
      */
+
     public void setAuthenticationProtocol(
             RadiusAuthenticationProtocol authenticationProtocol) {
         this.authenticationProtocol = authenticationProtocol.toString();
@@ -415,6 +435,7 @@ public class RadiusSettings implements Serializable, Cloneable {
      *         chained together.
      * @see RadiusAuthenticationProtocol
      */
+
     public RadiusSettings withAuthenticationProtocol(
             RadiusAuthenticationProtocol authenticationProtocol) {
         setAuthenticationProtocol(authenticationProtocol);
@@ -429,6 +450,7 @@ public class RadiusSettings implements Serializable, Cloneable {
      * @param displayLabel
      *        Not currently used.
      */
+
     public void setDisplayLabel(String displayLabel) {
         this.displayLabel = displayLabel;
     }
@@ -440,6 +462,7 @@ public class RadiusSettings implements Serializable, Cloneable {
      * 
      * @return Not currently used.
      */
+
     public String getDisplayLabel() {
         return this.displayLabel;
     }
@@ -454,6 +477,7 @@ public class RadiusSettings implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RadiusSettings withDisplayLabel(String displayLabel) {
         setDisplayLabel(displayLabel);
         return this;
@@ -467,6 +491,7 @@ public class RadiusSettings implements Serializable, Cloneable {
      * @param useSameUsername
      *        Not currently used.
      */
+
     public void setUseSameUsername(Boolean useSameUsername) {
         this.useSameUsername = useSameUsername;
     }
@@ -478,6 +503,7 @@ public class RadiusSettings implements Serializable, Cloneable {
      * 
      * @return Not currently used.
      */
+
     public Boolean getUseSameUsername() {
         return this.useSameUsername;
     }
@@ -492,6 +518,7 @@ public class RadiusSettings implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RadiusSettings withUseSameUsername(Boolean useSameUsername) {
         setUseSameUsername(useSameUsername);
         return this;
@@ -504,6 +531,7 @@ public class RadiusSettings implements Serializable, Cloneable {
      * 
      * @return Not currently used.
      */
+
     public Boolean isUseSameUsername() {
         return this.useSameUsername;
     }

@@ -39,6 +39,7 @@ public class DescribeInstanceAttributeResult implements Serializable, Cloneable 
      * @param instanceAttribute
      *        Describes an instance attribute.
      */
+
     public void setInstanceAttribute(InstanceAttribute instanceAttribute) {
         this.instanceAttribute = instanceAttribute;
     }
@@ -50,6 +51,7 @@ public class DescribeInstanceAttributeResult implements Serializable, Cloneable 
      * 
      * @return Describes an instance attribute.
      */
+
     public InstanceAttribute getInstanceAttribute() {
         return this.instanceAttribute;
     }
@@ -64,6 +66,7 @@ public class DescribeInstanceAttributeResult implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeInstanceAttributeResult withInstanceAttribute(
             InstanceAttribute instanceAttribute) {
         setInstanceAttribute(instanceAttribute);

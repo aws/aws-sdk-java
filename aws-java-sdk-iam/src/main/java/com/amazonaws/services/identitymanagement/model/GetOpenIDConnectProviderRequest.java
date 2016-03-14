@@ -47,6 +47,7 @@ public class GetOpenIDConnectProviderRequest extends AmazonWebServiceRequest
      *        provider ARNs by using the <a>ListOpenIDConnectProviders</a>
      *        action.
      */
+
     public void setOpenIDConnectProviderArn(String openIDConnectProviderArn) {
         this.openIDConnectProviderArn = openIDConnectProviderArn;
     }
@@ -63,6 +64,7 @@ public class GetOpenIDConnectProviderRequest extends AmazonWebServiceRequest
      *         provider ARNs by using the <a>ListOpenIDConnectProviders</a>
      *         action.
      */
+
     public String getOpenIDConnectProviderArn() {
         return this.openIDConnectProviderArn;
     }
@@ -82,6 +84,7 @@ public class GetOpenIDConnectProviderRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetOpenIDConnectProviderRequest withOpenIDConnectProviderArn(
             String openIDConnectProviderArn) {
         setOpenIDConnectProviderArn(openIDConnectProviderArn);

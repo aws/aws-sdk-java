@@ -52,6 +52,7 @@ public class DescribeNotificationConfigurationsRequest extends
      * 
      * @return The name of the group.
      */
+
     public java.util.List<String> getAutoScalingGroupNames() {
         if (autoScalingGroupNames == null) {
             autoScalingGroupNames = new com.amazonaws.internal.SdkInternalList<String>();
@@ -67,6 +68,7 @@ public class DescribeNotificationConfigurationsRequest extends
      * @param autoScalingGroupNames
      *        The name of the group.
      */
+
     public void setAutoScalingGroupNames(
             java.util.Collection<String> autoScalingGroupNames) {
         if (autoScalingGroupNames == null) {
@@ -94,6 +96,7 @@ public class DescribeNotificationConfigurationsRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeNotificationConfigurationsRequest withAutoScalingGroupNames(
             String... autoScalingGroupNames) {
         if (this.autoScalingGroupNames == null) {
@@ -116,6 +119,7 @@ public class DescribeNotificationConfigurationsRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeNotificationConfigurationsRequest withAutoScalingGroupNames(
             java.util.Collection<String> autoScalingGroupNames) {
         setAutoScalingGroupNames(autoScalingGroupNames);
@@ -132,6 +136,7 @@ public class DescribeNotificationConfigurationsRequest extends
      *        The token for the next set of items to return. (You received this
      *        token from a previous call.)
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -145,6 +150,7 @@ public class DescribeNotificationConfigurationsRequest extends
      * @return The token for the next set of items to return. (You received this
      *         token from a previous call.)
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -161,6 +167,7 @@ public class DescribeNotificationConfigurationsRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeNotificationConfigurationsRequest withNextToken(
             String nextToken) {
         setNextToken(nextToken);
@@ -175,6 +182,7 @@ public class DescribeNotificationConfigurationsRequest extends
      * @param maxRecords
      *        The maximum number of items to return with this call.
      */
+
     public void setMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
     }
@@ -186,6 +194,7 @@ public class DescribeNotificationConfigurationsRequest extends
      * 
      * @return The maximum number of items to return with this call.
      */
+
     public Integer getMaxRecords() {
         return this.maxRecords;
     }
@@ -200,6 +209,7 @@ public class DescribeNotificationConfigurationsRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeNotificationConfigurationsRequest withMaxRecords(
             Integer maxRecords) {
         setMaxRecords(maxRecords);

@@ -46,6 +46,7 @@ public class SnsAction implements Serializable, Cloneable {
      * @param targetArn
      *        The ARN of the SNS topic.
      */
+
     public void setTargetArn(String targetArn) {
         this.targetArn = targetArn;
     }
@@ -57,6 +58,7 @@ public class SnsAction implements Serializable, Cloneable {
      * 
      * @return The ARN of the SNS topic.
      */
+
     public String getTargetArn() {
         return this.targetArn;
     }
@@ -71,6 +73,7 @@ public class SnsAction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SnsAction withTargetArn(String targetArn) {
         setTargetArn(targetArn);
         return this;
@@ -84,6 +87,7 @@ public class SnsAction implements Serializable, Cloneable {
      * @param roleArn
      *        The ARN of the IAM role that grants access.
      */
+
     public void setRoleArn(String roleArn) {
         this.roleArn = roleArn;
     }
@@ -95,6 +99,7 @@ public class SnsAction implements Serializable, Cloneable {
      * 
      * @return The ARN of the IAM role that grants access.
      */
+
     public String getRoleArn() {
         return this.roleArn;
     }
@@ -109,6 +114,7 @@ public class SnsAction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SnsAction withRoleArn(String roleArn) {
         setRoleArn(roleArn);
         return this;

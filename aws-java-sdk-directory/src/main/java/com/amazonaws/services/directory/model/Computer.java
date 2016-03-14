@@ -53,6 +53,7 @@ public class Computer implements Serializable, Cloneable {
      * @param computerId
      *        The identifier of the computer.
      */
+
     public void setComputerId(String computerId) {
         this.computerId = computerId;
     }
@@ -64,6 +65,7 @@ public class Computer implements Serializable, Cloneable {
      * 
      * @return The identifier of the computer.
      */
+
     public String getComputerId() {
         return this.computerId;
     }
@@ -78,6 +80,7 @@ public class Computer implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Computer withComputerId(String computerId) {
         setComputerId(computerId);
         return this;
@@ -91,6 +94,7 @@ public class Computer implements Serializable, Cloneable {
      * @param computerName
      *        The computer name.
      */
+
     public void setComputerName(String computerName) {
         this.computerName = computerName;
     }
@@ -102,6 +106,7 @@ public class Computer implements Serializable, Cloneable {
      * 
      * @return The computer name.
      */
+
     public String getComputerName() {
         return this.computerName;
     }
@@ -116,6 +121,7 @@ public class Computer implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Computer withComputerName(String computerName) {
         setComputerName(computerName);
         return this;
@@ -130,6 +136,7 @@ public class Computer implements Serializable, Cloneable {
      * @return An array of <a>Attribute</a> objects containing the LDAP
      *         attributes that belong to the computer account.
      */
+
     public java.util.List<Attribute> getComputerAttributes() {
         if (computerAttributes == null) {
             computerAttributes = new com.amazonaws.internal.SdkInternalList<Attribute>();
@@ -147,6 +154,7 @@ public class Computer implements Serializable, Cloneable {
      *        An array of <a>Attribute</a> objects containing the LDAP
      *        attributes that belong to the computer account.
      */
+
     public void setComputerAttributes(
             java.util.Collection<Attribute> computerAttributes) {
         if (computerAttributes == null) {
@@ -176,6 +184,7 @@ public class Computer implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Computer withComputerAttributes(Attribute... computerAttributes) {
         if (this.computerAttributes == null) {
             setComputerAttributes(new com.amazonaws.internal.SdkInternalList<Attribute>(
@@ -199,6 +208,7 @@ public class Computer implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Computer withComputerAttributes(
             java.util.Collection<Attribute> computerAttributes) {
         setComputerAttributes(computerAttributes);

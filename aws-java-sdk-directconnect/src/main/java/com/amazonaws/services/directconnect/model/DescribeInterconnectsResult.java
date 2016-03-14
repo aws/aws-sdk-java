@@ -39,6 +39,7 @@ public class DescribeInterconnectsResult implements Serializable, Cloneable {
      * 
      * @return A list of interconnects.
      */
+
     public java.util.List<Interconnect> getInterconnects() {
         if (interconnects == null) {
             interconnects = new com.amazonaws.internal.SdkInternalList<Interconnect>();
@@ -54,6 +55,7 @@ public class DescribeInterconnectsResult implements Serializable, Cloneable {
      * @param interconnects
      *        A list of interconnects.
      */
+
     public void setInterconnects(
             java.util.Collection<Interconnect> interconnects) {
         if (interconnects == null) {
@@ -81,6 +83,7 @@ public class DescribeInterconnectsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeInterconnectsResult withInterconnects(
             Interconnect... interconnects) {
         if (this.interconnects == null) {
@@ -103,6 +106,7 @@ public class DescribeInterconnectsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeInterconnectsResult withInterconnects(
             java.util.Collection<Interconnect> interconnects) {
         setInterconnects(interconnects);

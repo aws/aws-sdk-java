@@ -47,6 +47,7 @@ public class DeregisterTaskDefinitionRequest extends AmazonWebServiceRequest
      *        of the task definition to deregister. You must specify a
      *        <code>revision</code>.
      */
+
     public void setTaskDefinition(String taskDefinition) {
         this.taskDefinition = taskDefinition;
     }
@@ -63,6 +64,7 @@ public class DeregisterTaskDefinitionRequest extends AmazonWebServiceRequest
      *         of the task definition to deregister. You must specify a
      *         <code>revision</code>.
      */
+
     public String getTaskDefinition() {
         return this.taskDefinition;
     }
@@ -82,6 +84,7 @@ public class DeregisterTaskDefinitionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeregisterTaskDefinitionRequest withTaskDefinition(
             String taskDefinition) {
         setTaskDefinition(taskDefinition);

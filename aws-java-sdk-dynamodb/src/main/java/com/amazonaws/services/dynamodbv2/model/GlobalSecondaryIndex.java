@@ -80,6 +80,7 @@ public class GlobalSecondaryIndex implements Serializable, Cloneable {
      *        The name of the global secondary index. The name must be unique
      *        among all other indexes on this table.
      */
+
     public void setIndexName(String indexName) {
         this.indexName = indexName;
     }
@@ -93,6 +94,7 @@ public class GlobalSecondaryIndex implements Serializable, Cloneable {
      * @return The name of the global secondary index. The name must be unique
      *         among all other indexes on this table.
      */
+
     public String getIndexName() {
         return this.indexName;
     }
@@ -109,6 +111,7 @@ public class GlobalSecondaryIndex implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GlobalSecondaryIndex withIndexName(String indexName) {
         setIndexName(indexName);
         return this;
@@ -176,6 +179,7 @@ public class GlobalSecondaryIndex implements Serializable, Cloneable {
      *         close together, in sorted order by the sort key value.
      *         </p>
      */
+
     public java.util.List<KeySchemaElement> getKeySchema() {
         return keySchema;
     }
@@ -243,6 +247,7 @@ public class GlobalSecondaryIndex implements Serializable, Cloneable {
      *        together, in sorted order by the sort key value.
      *        </p>
      */
+
     public void setKeySchema(java.util.Collection<KeySchemaElement> keySchema) {
         if (keySchema == null) {
             this.keySchema = null;
@@ -323,6 +328,7 @@ public class GlobalSecondaryIndex implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GlobalSecondaryIndex withKeySchema(KeySchemaElement... keySchema) {
         if (this.keySchema == null) {
             setKeySchema(new java.util.ArrayList<KeySchemaElement>(
@@ -399,6 +405,7 @@ public class GlobalSecondaryIndex implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GlobalSecondaryIndex withKeySchema(
             java.util.Collection<KeySchemaElement> keySchema) {
         setKeySchema(keySchema);
@@ -408,6 +415,7 @@ public class GlobalSecondaryIndex implements Serializable, Cloneable {
     /**
      * @param projection
      */
+
     public void setProjection(Projection projection) {
         this.projection = projection;
     }
@@ -415,6 +423,7 @@ public class GlobalSecondaryIndex implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Projection getProjection() {
         return this.projection;
     }
@@ -424,6 +433,7 @@ public class GlobalSecondaryIndex implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GlobalSecondaryIndex withProjection(Projection projection) {
         setProjection(projection);
         return this;
@@ -432,6 +442,7 @@ public class GlobalSecondaryIndex implements Serializable, Cloneable {
     /**
      * @param provisionedThroughput
      */
+
     public void setProvisionedThroughput(
             ProvisionedThroughput provisionedThroughput) {
         this.provisionedThroughput = provisionedThroughput;
@@ -440,6 +451,7 @@ public class GlobalSecondaryIndex implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public ProvisionedThroughput getProvisionedThroughput() {
         return this.provisionedThroughput;
     }
@@ -449,6 +461,7 @@ public class GlobalSecondaryIndex implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GlobalSecondaryIndex withProvisionedThroughput(
             ProvisionedThroughput provisionedThroughput) {
         setProvisionedThroughput(provisionedThroughput);

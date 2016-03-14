@@ -44,6 +44,7 @@ public class DisassociateVPCFromHostedZoneResult implements Serializable,
      *        A complex type that contains the ID, the status, and the date and
      *        time of your <code>DisassociateVPCFromHostedZoneRequest</code>.
      */
+
     public void setChangeInfo(ChangeInfo changeInfo) {
         this.changeInfo = changeInfo;
     }
@@ -57,6 +58,7 @@ public class DisassociateVPCFromHostedZoneResult implements Serializable,
      * @return A complex type that contains the ID, the status, and the date and
      *         time of your <code>DisassociateVPCFromHostedZoneRequest</code>.
      */
+
     public ChangeInfo getChangeInfo() {
         return this.changeInfo;
     }
@@ -73,6 +75,7 @@ public class DisassociateVPCFromHostedZoneResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DisassociateVPCFromHostedZoneResult withChangeInfo(
             ChangeInfo changeInfo) {
         setChangeInfo(changeInfo);

@@ -17,13 +17,15 @@ package com.amazonaws.services.redshift.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Describes event categories.
+ * </p>
  */
 public class EventCategoriesMap implements Serializable, Cloneable {
 
     /**
-     * The Amazon Redshift source type, such as cluster or cluster-snapshot,
-     * that the returned categories belong to.
+     * The source type, such as cluster or cluster-snapshot, that the
+     * returned categories belong to.
      */
     private String sourceType;
 
@@ -33,35 +35,35 @@ public class EventCategoriesMap implements Serializable, Cloneable {
     private com.amazonaws.internal.ListWithAutoConstructFlag<EventInfoMap> events;
 
     /**
-     * The Amazon Redshift source type, such as cluster or cluster-snapshot,
-     * that the returned categories belong to.
+     * The source type, such as cluster or cluster-snapshot, that the
+     * returned categories belong to.
      *
-     * @return The Amazon Redshift source type, such as cluster or cluster-snapshot,
-     *         that the returned categories belong to.
+     * @return The source type, such as cluster or cluster-snapshot, that the
+     *         returned categories belong to.
      */
     public String getSourceType() {
         return sourceType;
     }
     
     /**
-     * The Amazon Redshift source type, such as cluster or cluster-snapshot,
-     * that the returned categories belong to.
+     * The source type, such as cluster or cluster-snapshot, that the
+     * returned categories belong to.
      *
-     * @param sourceType The Amazon Redshift source type, such as cluster or cluster-snapshot,
-     *         that the returned categories belong to.
+     * @param sourceType The source type, such as cluster or cluster-snapshot, that the
+     *         returned categories belong to.
      */
     public void setSourceType(String sourceType) {
         this.sourceType = sourceType;
     }
     
     /**
-     * The Amazon Redshift source type, such as cluster or cluster-snapshot,
-     * that the returned categories belong to.
+     * The source type, such as cluster or cluster-snapshot, that the
+     * returned categories belong to.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param sourceType The Amazon Redshift source type, such as cluster or cluster-snapshot,
-     *         that the returned categories belong to.
+     * @param sourceType The source type, such as cluster or cluster-snapshot, that the
+     *         returned categories belong to.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

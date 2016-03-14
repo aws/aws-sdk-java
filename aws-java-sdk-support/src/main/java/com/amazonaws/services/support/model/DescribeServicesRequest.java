@@ -48,6 +48,7 @@ public class DescribeServicesRequest extends AmazonWebServiceRequest implements
      * @return A JSON-formatted list of service codes available for AWS
      *         services.
      */
+
     public java.util.List<String> getServiceCodeList() {
         if (serviceCodeList == null) {
             serviceCodeList = new com.amazonaws.internal.SdkInternalList<String>();
@@ -63,6 +64,7 @@ public class DescribeServicesRequest extends AmazonWebServiceRequest implements
      * @param serviceCodeList
      *        A JSON-formatted list of service codes available for AWS services.
      */
+
     public void setServiceCodeList(java.util.Collection<String> serviceCodeList) {
         if (serviceCodeList == null) {
             this.serviceCodeList = null;
@@ -89,6 +91,7 @@ public class DescribeServicesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeServicesRequest withServiceCodeList(
             String... serviceCodeList) {
         if (this.serviceCodeList == null) {
@@ -111,6 +114,7 @@ public class DescribeServicesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeServicesRequest withServiceCodeList(
             java.util.Collection<String> serviceCodeList) {
         setServiceCodeList(serviceCodeList);
@@ -130,6 +134,7 @@ public class DescribeServicesRequest extends AmazonWebServiceRequest implements
      *        Language parameters must be passed explicitly for operations that
      *        take them.
      */
+
     public void setLanguage(String language) {
         this.language = language;
     }
@@ -146,6 +151,7 @@ public class DescribeServicesRequest extends AmazonWebServiceRequest implements
      *         Japanese ("ja"). Language parameters must be passed explicitly
      *         for operations that take them.
      */
+
     public String getLanguage() {
         return this.language;
     }
@@ -165,6 +171,7 @@ public class DescribeServicesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeServicesRequest withLanguage(String language) {
         setLanguage(language);
         return this;

@@ -44,6 +44,7 @@ public class PredictRequest extends AmazonWebServiceRequest implements
      * @param mLModelId
      *        A unique identifier of the <code>MLModel</code>.
      */
+
     public void setMLModelId(String mLModelId) {
         this.mLModelId = mLModelId;
     }
@@ -55,6 +56,7 @@ public class PredictRequest extends AmazonWebServiceRequest implements
      * 
      * @return A unique identifier of the <code>MLModel</code>.
      */
+
     public String getMLModelId() {
         return this.mLModelId;
     }
@@ -69,6 +71,7 @@ public class PredictRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PredictRequest withMLModelId(String mLModelId) {
         setMLModelId(mLModelId);
         return this;
@@ -77,6 +80,7 @@ public class PredictRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public java.util.Map<String, String> getRecord() {
         if (record == null) {
             record = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -87,6 +91,7 @@ public class PredictRequest extends AmazonWebServiceRequest implements
     /**
      * @param record
      */
+
     public void setRecord(java.util.Map<String, String> record) {
         this.record = record == null ? null
                 : new com.amazonaws.internal.SdkInternalMap<String, String>(
@@ -98,6 +103,7 @@ public class PredictRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PredictRequest withRecord(java.util.Map<String, String> record) {
         setRecord(record);
         return this;
@@ -118,6 +124,7 @@ public class PredictRequest extends AmazonWebServiceRequest implements
      * Removes all the entries added into Record. &lt;p> Returns a reference to
      * this object so that method calls can be chained together.
      */
+
     public PredictRequest clearRecordEntries() {
         this.record = null;
         return this;
@@ -126,6 +133,7 @@ public class PredictRequest extends AmazonWebServiceRequest implements
     /**
      * @param predictEndpoint
      */
+
     public void setPredictEndpoint(String predictEndpoint) {
         this.predictEndpoint = predictEndpoint;
     }
@@ -133,6 +141,7 @@ public class PredictRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public String getPredictEndpoint() {
         return this.predictEndpoint;
     }
@@ -142,6 +151,7 @@ public class PredictRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PredictRequest withPredictEndpoint(String predictEndpoint) {
         setPredictEndpoint(predictEndpoint);
         return this;

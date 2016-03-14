@@ -78,6 +78,7 @@ public class SetPermissionRequest extends AmazonWebServiceRequest implements
      * @param stackId
      *        The stack ID.
      */
+
     public void setStackId(String stackId) {
         this.stackId = stackId;
     }
@@ -89,6 +90,7 @@ public class SetPermissionRequest extends AmazonWebServiceRequest implements
      * 
      * @return The stack ID.
      */
+
     public String getStackId() {
         return this.stackId;
     }
@@ -103,6 +105,7 @@ public class SetPermissionRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetPermissionRequest withStackId(String stackId) {
         setStackId(stackId);
         return this;
@@ -116,6 +119,7 @@ public class SetPermissionRequest extends AmazonWebServiceRequest implements
      * @param iamUserArn
      *        The user's IAM ARN.
      */
+
     public void setIamUserArn(String iamUserArn) {
         this.iamUserArn = iamUserArn;
     }
@@ -127,6 +131,7 @@ public class SetPermissionRequest extends AmazonWebServiceRequest implements
      * 
      * @return The user's IAM ARN.
      */
+
     public String getIamUserArn() {
         return this.iamUserArn;
     }
@@ -141,6 +146,7 @@ public class SetPermissionRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetPermissionRequest withIamUserArn(String iamUserArn) {
         setIamUserArn(iamUserArn);
         return this;
@@ -154,6 +160,7 @@ public class SetPermissionRequest extends AmazonWebServiceRequest implements
      * @param allowSsh
      *        The user is allowed to use SSH to communicate with the instance.
      */
+
     public void setAllowSsh(Boolean allowSsh) {
         this.allowSsh = allowSsh;
     }
@@ -165,6 +172,7 @@ public class SetPermissionRequest extends AmazonWebServiceRequest implements
      * 
      * @return The user is allowed to use SSH to communicate with the instance.
      */
+
     public Boolean getAllowSsh() {
         return this.allowSsh;
     }
@@ -179,6 +187,7 @@ public class SetPermissionRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetPermissionRequest withAllowSsh(Boolean allowSsh) {
         setAllowSsh(allowSsh);
         return this;
@@ -191,6 +200,7 @@ public class SetPermissionRequest extends AmazonWebServiceRequest implements
      * 
      * @return The user is allowed to use SSH to communicate with the instance.
      */
+
     public Boolean isAllowSsh() {
         return this.allowSsh;
     }
@@ -203,6 +213,7 @@ public class SetPermissionRequest extends AmazonWebServiceRequest implements
      * @param allowSudo
      *        The user is allowed to use <b>sudo</b> to elevate privileges.
      */
+
     public void setAllowSudo(Boolean allowSudo) {
         this.allowSudo = allowSudo;
     }
@@ -214,6 +225,7 @@ public class SetPermissionRequest extends AmazonWebServiceRequest implements
      * 
      * @return The user is allowed to use <b>sudo</b> to elevate privileges.
      */
+
     public Boolean getAllowSudo() {
         return this.allowSudo;
     }
@@ -228,6 +240,7 @@ public class SetPermissionRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetPermissionRequest withAllowSudo(Boolean allowSudo) {
         setAllowSudo(allowSudo);
         return this;
@@ -240,6 +253,7 @@ public class SetPermissionRequest extends AmazonWebServiceRequest implements
      * 
      * @return The user is allowed to use <b>sudo</b> to elevate privileges.
      */
+
     public Boolean isAllowSudo() {
         return this.allowSudo;
     }
@@ -279,6 +293,7 @@ public class SetPermissionRequest extends AmazonWebServiceRequest implements
      *        "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
      *        >Managing User Permissions</a>.
      */
+
     public void setLevel(String level) {
         this.level = level;
     }
@@ -317,6 +332,7 @@ public class SetPermissionRequest extends AmazonWebServiceRequest implements
      *         "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
      *         >Managing User Permissions</a>.
      */
+
     public String getLevel() {
         return this.level;
     }
@@ -358,6 +374,7 @@ public class SetPermissionRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetPermissionRequest withLevel(String level) {
         setLevel(level);
         return this;

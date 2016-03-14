@@ -68,6 +68,7 @@ public class ListHealthChecksRequest extends AmazonWebServiceRequest implements
      *        from the last response in the <code>marker</code> parameter to get
      *        the next page of results.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -85,6 +86,7 @@ public class ListHealthChecksRequest extends AmazonWebServiceRequest implements
      *         from the last response in the <code>marker</code> parameter to
      *         get the next page of results.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -105,6 +107,7 @@ public class ListHealthChecksRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListHealthChecksRequest withMarker(String marker) {
         setMarker(marker);
         return this;
@@ -120,6 +123,7 @@ public class ListHealthChecksRequest extends AmazonWebServiceRequest implements
      *        Specify the maximum number of health checks to return per page of
      *        results.
      */
+
     public void setMaxItems(String maxItems) {
         this.maxItems = maxItems;
     }
@@ -133,6 +137,7 @@ public class ListHealthChecksRequest extends AmazonWebServiceRequest implements
      * @return Specify the maximum number of health checks to return per page of
      *         results.
      */
+
     public String getMaxItems() {
         return this.maxItems;
     }
@@ -149,6 +154,7 @@ public class ListHealthChecksRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListHealthChecksRequest withMaxItems(String maxItems) {
         setMaxItems(maxItems);
         return this;

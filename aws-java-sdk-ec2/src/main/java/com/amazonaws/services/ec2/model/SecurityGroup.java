@@ -82,6 +82,7 @@ public class SecurityGroup implements Serializable, Cloneable {
      * @param ownerId
      *        The AWS account ID of the owner of the security group.
      */
+
     public void setOwnerId(String ownerId) {
         this.ownerId = ownerId;
     }
@@ -93,6 +94,7 @@ public class SecurityGroup implements Serializable, Cloneable {
      * 
      * @return The AWS account ID of the owner of the security group.
      */
+
     public String getOwnerId() {
         return this.ownerId;
     }
@@ -107,6 +109,7 @@ public class SecurityGroup implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SecurityGroup withOwnerId(String ownerId) {
         setOwnerId(ownerId);
         return this;
@@ -120,6 +123,7 @@ public class SecurityGroup implements Serializable, Cloneable {
      * @param groupName
      *        The name of the security group.
      */
+
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
@@ -131,6 +135,7 @@ public class SecurityGroup implements Serializable, Cloneable {
      * 
      * @return The name of the security group.
      */
+
     public String getGroupName() {
         return this.groupName;
     }
@@ -145,6 +150,7 @@ public class SecurityGroup implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SecurityGroup withGroupName(String groupName) {
         setGroupName(groupName);
         return this;
@@ -158,6 +164,7 @@ public class SecurityGroup implements Serializable, Cloneable {
      * @param groupId
      *        The ID of the security group.
      */
+
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
@@ -169,6 +176,7 @@ public class SecurityGroup implements Serializable, Cloneable {
      * 
      * @return The ID of the security group.
      */
+
     public String getGroupId() {
         return this.groupId;
     }
@@ -183,6 +191,7 @@ public class SecurityGroup implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SecurityGroup withGroupId(String groupId) {
         setGroupId(groupId);
         return this;
@@ -196,6 +205,7 @@ public class SecurityGroup implements Serializable, Cloneable {
      * @param description
      *        A description of the security group.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -207,6 +217,7 @@ public class SecurityGroup implements Serializable, Cloneable {
      * 
      * @return A description of the security group.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -221,6 +232,7 @@ public class SecurityGroup implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SecurityGroup withDescription(String description) {
         setDescription(description);
         return this;
@@ -233,6 +245,7 @@ public class SecurityGroup implements Serializable, Cloneable {
      * 
      * @return One or more inbound rules associated with the security group.
      */
+
     public java.util.List<IpPermission> getIpPermissions() {
         if (ipPermissions == null) {
             ipPermissions = new com.amazonaws.internal.SdkInternalList<IpPermission>();
@@ -248,6 +261,7 @@ public class SecurityGroup implements Serializable, Cloneable {
      * @param ipPermissions
      *        One or more inbound rules associated with the security group.
      */
+
     public void setIpPermissions(
             java.util.Collection<IpPermission> ipPermissions) {
         if (ipPermissions == null) {
@@ -275,6 +289,7 @@ public class SecurityGroup implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SecurityGroup withIpPermissions(IpPermission... ipPermissions) {
         if (this.ipPermissions == null) {
             setIpPermissions(new com.amazonaws.internal.SdkInternalList<IpPermission>(
@@ -296,6 +311,7 @@ public class SecurityGroup implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SecurityGroup withIpPermissions(
             java.util.Collection<IpPermission> ipPermissions) {
         setIpPermissions(ipPermissions);
@@ -310,6 +326,7 @@ public class SecurityGroup implements Serializable, Cloneable {
      * @return [EC2-VPC] One or more outbound rules associated with the security
      *         group.
      */
+
     public java.util.List<IpPermission> getIpPermissionsEgress() {
         if (ipPermissionsEgress == null) {
             ipPermissionsEgress = new com.amazonaws.internal.SdkInternalList<IpPermission>();
@@ -326,6 +343,7 @@ public class SecurityGroup implements Serializable, Cloneable {
      *        [EC2-VPC] One or more outbound rules associated with the security
      *        group.
      */
+
     public void setIpPermissionsEgress(
             java.util.Collection<IpPermission> ipPermissionsEgress) {
         if (ipPermissionsEgress == null) {
@@ -354,6 +372,7 @@ public class SecurityGroup implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SecurityGroup withIpPermissionsEgress(
             IpPermission... ipPermissionsEgress) {
         if (this.ipPermissionsEgress == null) {
@@ -377,6 +396,7 @@ public class SecurityGroup implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SecurityGroup withIpPermissionsEgress(
             java.util.Collection<IpPermission> ipPermissionsEgress) {
         setIpPermissionsEgress(ipPermissionsEgress);
@@ -391,6 +411,7 @@ public class SecurityGroup implements Serializable, Cloneable {
      * @param vpcId
      *        [EC2-VPC] The ID of the VPC for the security group.
      */
+
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
@@ -402,6 +423,7 @@ public class SecurityGroup implements Serializable, Cloneable {
      * 
      * @return [EC2-VPC] The ID of the VPC for the security group.
      */
+
     public String getVpcId() {
         return this.vpcId;
     }
@@ -416,6 +438,7 @@ public class SecurityGroup implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SecurityGroup withVpcId(String vpcId) {
         setVpcId(vpcId);
         return this;
@@ -428,6 +451,7 @@ public class SecurityGroup implements Serializable, Cloneable {
      * 
      * @return Any tags assigned to the security group.
      */
+
     public java.util.List<Tag> getTags() {
         if (tags == null) {
             tags = new com.amazonaws.internal.SdkInternalList<Tag>();
@@ -443,6 +467,7 @@ public class SecurityGroup implements Serializable, Cloneable {
      * @param tags
      *        Any tags assigned to the security group.
      */
+
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
             this.tags = null;
@@ -468,6 +493,7 @@ public class SecurityGroup implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SecurityGroup withTags(Tag... tags) {
         if (this.tags == null) {
             setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
@@ -488,6 +514,7 @@ public class SecurityGroup implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SecurityGroup withTags(java.util.Collection<Tag> tags) {
         setTags(tags);
         return this;

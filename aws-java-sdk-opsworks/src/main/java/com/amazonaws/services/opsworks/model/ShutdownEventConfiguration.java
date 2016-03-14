@@ -52,6 +52,7 @@ public class ShutdownEventConfiguration implements Serializable, Cloneable {
      *        The time, in seconds, that AWS OpsWorks will wait after triggering
      *        a Shutdown event before shutting down an instance.
      */
+
     public void setExecutionTimeout(Integer executionTimeout) {
         this.executionTimeout = executionTimeout;
     }
@@ -65,6 +66,7 @@ public class ShutdownEventConfiguration implements Serializable, Cloneable {
      * @return The time, in seconds, that AWS OpsWorks will wait after
      *         triggering a Shutdown event before shutting down an instance.
      */
+
     public Integer getExecutionTimeout() {
         return this.executionTimeout;
     }
@@ -81,6 +83,7 @@ public class ShutdownEventConfiguration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ShutdownEventConfiguration withExecutionTimeout(
             Integer executionTimeout) {
         setExecutionTimeout(executionTimeout);
@@ -101,6 +104,7 @@ public class ShutdownEventConfiguration implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain"
      *        >Connection Draining</a>
      */
+
     public void setDelayUntilElbConnectionsDrained(
             Boolean delayUntilElbConnectionsDrained) {
         this.delayUntilElbConnectionsDrained = delayUntilElbConnectionsDrained;
@@ -119,6 +123,7 @@ public class ShutdownEventConfiguration implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain"
      *         >Connection Draining</a>
      */
+
     public Boolean getDelayUntilElbConnectionsDrained() {
         return this.delayUntilElbConnectionsDrained;
     }
@@ -139,6 +144,7 @@ public class ShutdownEventConfiguration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ShutdownEventConfiguration withDelayUntilElbConnectionsDrained(
             Boolean delayUntilElbConnectionsDrained) {
         setDelayUntilElbConnectionsDrained(delayUntilElbConnectionsDrained);
@@ -158,6 +164,7 @@ public class ShutdownEventConfiguration implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain"
      *         >Connection Draining</a>
      */
+
     public Boolean isDelayUntilElbConnectionsDrained() {
         return this.delayUntilElbConnectionsDrained;
     }

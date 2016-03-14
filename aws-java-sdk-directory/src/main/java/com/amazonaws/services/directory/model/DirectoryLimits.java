@@ -76,6 +76,7 @@ public class DirectoryLimits implements Serializable, Cloneable {
      * @param cloudOnlyDirectoriesLimit
      *        The maximum number of cloud directories allowed in the region.
      */
+
     public void setCloudOnlyDirectoriesLimit(Integer cloudOnlyDirectoriesLimit) {
         this.cloudOnlyDirectoriesLimit = cloudOnlyDirectoriesLimit;
     }
@@ -87,6 +88,7 @@ public class DirectoryLimits implements Serializable, Cloneable {
      * 
      * @return The maximum number of cloud directories allowed in the region.
      */
+
     public Integer getCloudOnlyDirectoriesLimit() {
         return this.cloudOnlyDirectoriesLimit;
     }
@@ -101,6 +103,7 @@ public class DirectoryLimits implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DirectoryLimits withCloudOnlyDirectoriesLimit(
             Integer cloudOnlyDirectoriesLimit) {
         setCloudOnlyDirectoriesLimit(cloudOnlyDirectoriesLimit);
@@ -115,6 +118,7 @@ public class DirectoryLimits implements Serializable, Cloneable {
      * @param cloudOnlyDirectoriesCurrentCount
      *        The current number of cloud directories in the region.
      */
+
     public void setCloudOnlyDirectoriesCurrentCount(
             Integer cloudOnlyDirectoriesCurrentCount) {
         this.cloudOnlyDirectoriesCurrentCount = cloudOnlyDirectoriesCurrentCount;
@@ -127,6 +131,7 @@ public class DirectoryLimits implements Serializable, Cloneable {
      * 
      * @return The current number of cloud directories in the region.
      */
+
     public Integer getCloudOnlyDirectoriesCurrentCount() {
         return this.cloudOnlyDirectoriesCurrentCount;
     }
@@ -141,6 +146,7 @@ public class DirectoryLimits implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DirectoryLimits withCloudOnlyDirectoriesCurrentCount(
             Integer cloudOnlyDirectoriesCurrentCount) {
         setCloudOnlyDirectoriesCurrentCount(cloudOnlyDirectoriesCurrentCount);
@@ -155,6 +161,7 @@ public class DirectoryLimits implements Serializable, Cloneable {
      * @param cloudOnlyDirectoriesLimitReached
      *        Indicates if the cloud directory limit has been reached.
      */
+
     public void setCloudOnlyDirectoriesLimitReached(
             Boolean cloudOnlyDirectoriesLimitReached) {
         this.cloudOnlyDirectoriesLimitReached = cloudOnlyDirectoriesLimitReached;
@@ -167,6 +174,7 @@ public class DirectoryLimits implements Serializable, Cloneable {
      * 
      * @return Indicates if the cloud directory limit has been reached.
      */
+
     public Boolean getCloudOnlyDirectoriesLimitReached() {
         return this.cloudOnlyDirectoriesLimitReached;
     }
@@ -181,6 +189,7 @@ public class DirectoryLimits implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DirectoryLimits withCloudOnlyDirectoriesLimitReached(
             Boolean cloudOnlyDirectoriesLimitReached) {
         setCloudOnlyDirectoriesLimitReached(cloudOnlyDirectoriesLimitReached);
@@ -194,6 +203,7 @@ public class DirectoryLimits implements Serializable, Cloneable {
      * 
      * @return Indicates if the cloud directory limit has been reached.
      */
+
     public Boolean isCloudOnlyDirectoriesLimitReached() {
         return this.cloudOnlyDirectoriesLimitReached;
     }
@@ -205,6 +215,7 @@ public class DirectoryLimits implements Serializable, Cloneable {
      *        The maximum number of Microsoft AD directories allowed in the
      *        region.
      */
+
     public void setCloudOnlyMicrosoftADLimit(Integer cloudOnlyMicrosoftADLimit) {
         this.cloudOnlyMicrosoftADLimit = cloudOnlyMicrosoftADLimit;
     }
@@ -215,6 +226,7 @@ public class DirectoryLimits implements Serializable, Cloneable {
      * @return The maximum number of Microsoft AD directories allowed in the
      *         region.
      */
+
     public Integer getCloudOnlyMicrosoftADLimit() {
         return this.cloudOnlyMicrosoftADLimit;
     }
@@ -228,6 +240,7 @@ public class DirectoryLimits implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DirectoryLimits withCloudOnlyMicrosoftADLimit(
             Integer cloudOnlyMicrosoftADLimit) {
         setCloudOnlyMicrosoftADLimit(cloudOnlyMicrosoftADLimit);
@@ -240,6 +253,7 @@ public class DirectoryLimits implements Serializable, Cloneable {
      * @param cloudOnlyMicrosoftADCurrentCount
      *        The current number of Microsoft AD directories in the region.
      */
+
     public void setCloudOnlyMicrosoftADCurrentCount(
             Integer cloudOnlyMicrosoftADCurrentCount) {
         this.cloudOnlyMicrosoftADCurrentCount = cloudOnlyMicrosoftADCurrentCount;
@@ -250,6 +264,7 @@ public class DirectoryLimits implements Serializable, Cloneable {
      * 
      * @return The current number of Microsoft AD directories in the region.
      */
+
     public Integer getCloudOnlyMicrosoftADCurrentCount() {
         return this.cloudOnlyMicrosoftADCurrentCount;
     }
@@ -262,6 +277,7 @@ public class DirectoryLimits implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DirectoryLimits withCloudOnlyMicrosoftADCurrentCount(
             Integer cloudOnlyMicrosoftADCurrentCount) {
         setCloudOnlyMicrosoftADCurrentCount(cloudOnlyMicrosoftADCurrentCount);
@@ -274,6 +290,7 @@ public class DirectoryLimits implements Serializable, Cloneable {
      * @param cloudOnlyMicrosoftADLimitReached
      *        Indicates if the Microsoft AD directory limit has been reached.
      */
+
     public void setCloudOnlyMicrosoftADLimitReached(
             Boolean cloudOnlyMicrosoftADLimitReached) {
         this.cloudOnlyMicrosoftADLimitReached = cloudOnlyMicrosoftADLimitReached;
@@ -284,6 +301,7 @@ public class DirectoryLimits implements Serializable, Cloneable {
      * 
      * @return Indicates if the Microsoft AD directory limit has been reached.
      */
+
     public Boolean getCloudOnlyMicrosoftADLimitReached() {
         return this.cloudOnlyMicrosoftADLimitReached;
     }
@@ -296,6 +314,7 @@ public class DirectoryLimits implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DirectoryLimits withCloudOnlyMicrosoftADLimitReached(
             Boolean cloudOnlyMicrosoftADLimitReached) {
         setCloudOnlyMicrosoftADLimitReached(cloudOnlyMicrosoftADLimitReached);
@@ -307,6 +326,7 @@ public class DirectoryLimits implements Serializable, Cloneable {
      * 
      * @return Indicates if the Microsoft AD directory limit has been reached.
      */
+
     public Boolean isCloudOnlyMicrosoftADLimitReached() {
         return this.cloudOnlyMicrosoftADLimitReached;
     }
@@ -319,6 +339,7 @@ public class DirectoryLimits implements Serializable, Cloneable {
      * @param connectedDirectoriesLimit
      *        The maximum number of connected directories allowed in the region.
      */
+
     public void setConnectedDirectoriesLimit(Integer connectedDirectoriesLimit) {
         this.connectedDirectoriesLimit = connectedDirectoriesLimit;
     }
@@ -331,6 +352,7 @@ public class DirectoryLimits implements Serializable, Cloneable {
      * @return The maximum number of connected directories allowed in the
      *         region.
      */
+
     public Integer getConnectedDirectoriesLimit() {
         return this.connectedDirectoriesLimit;
     }
@@ -345,6 +367,7 @@ public class DirectoryLimits implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DirectoryLimits withConnectedDirectoriesLimit(
             Integer connectedDirectoriesLimit) {
         setConnectedDirectoriesLimit(connectedDirectoriesLimit);
@@ -359,6 +382,7 @@ public class DirectoryLimits implements Serializable, Cloneable {
      * @param connectedDirectoriesCurrentCount
      *        The current number of connected directories in the region.
      */
+
     public void setConnectedDirectoriesCurrentCount(
             Integer connectedDirectoriesCurrentCount) {
         this.connectedDirectoriesCurrentCount = connectedDirectoriesCurrentCount;
@@ -371,6 +395,7 @@ public class DirectoryLimits implements Serializable, Cloneable {
      * 
      * @return The current number of connected directories in the region.
      */
+
     public Integer getConnectedDirectoriesCurrentCount() {
         return this.connectedDirectoriesCurrentCount;
     }
@@ -385,6 +410,7 @@ public class DirectoryLimits implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DirectoryLimits withConnectedDirectoriesCurrentCount(
             Integer connectedDirectoriesCurrentCount) {
         setConnectedDirectoriesCurrentCount(connectedDirectoriesCurrentCount);
@@ -399,6 +425,7 @@ public class DirectoryLimits implements Serializable, Cloneable {
      * @param connectedDirectoriesLimitReached
      *        Indicates if the connected directory limit has been reached.
      */
+
     public void setConnectedDirectoriesLimitReached(
             Boolean connectedDirectoriesLimitReached) {
         this.connectedDirectoriesLimitReached = connectedDirectoriesLimitReached;
@@ -411,6 +438,7 @@ public class DirectoryLimits implements Serializable, Cloneable {
      * 
      * @return Indicates if the connected directory limit has been reached.
      */
+
     public Boolean getConnectedDirectoriesLimitReached() {
         return this.connectedDirectoriesLimitReached;
     }
@@ -425,6 +453,7 @@ public class DirectoryLimits implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DirectoryLimits withConnectedDirectoriesLimitReached(
             Boolean connectedDirectoriesLimitReached) {
         setConnectedDirectoriesLimitReached(connectedDirectoriesLimitReached);
@@ -438,6 +467,7 @@ public class DirectoryLimits implements Serializable, Cloneable {
      * 
      * @return Indicates if the connected directory limit has been reached.
      */
+
     public Boolean isConnectedDirectoriesLimitReached() {
         return this.connectedDirectoriesLimitReached;
     }

@@ -43,6 +43,7 @@ public class CreateJobResult implements Serializable, Cloneable {
      *        A section of the response body that provides information about the
      *        job that is created.
      */
+
     public void setJob(Job job) {
         this.job = job;
     }
@@ -56,6 +57,7 @@ public class CreateJobResult implements Serializable, Cloneable {
      * @return A section of the response body that provides information about
      *         the job that is created.
      */
+
     public Job getJob() {
         return this.job;
     }
@@ -72,6 +74,7 @@ public class CreateJobResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateJobResult withJob(Job job) {
         setJob(job);
         return this;

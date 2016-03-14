@@ -41,6 +41,7 @@ public class BatchGetOnPremisesInstancesRequest extends AmazonWebServiceRequest
      * 
      * @return The names of the on-premises instances to get information about.
      */
+
     public java.util.List<String> getInstanceNames() {
         if (instanceNames == null) {
             instanceNames = new com.amazonaws.internal.SdkInternalList<String>();
@@ -56,6 +57,7 @@ public class BatchGetOnPremisesInstancesRequest extends AmazonWebServiceRequest
      * @param instanceNames
      *        The names of the on-premises instances to get information about.
      */
+
     public void setInstanceNames(java.util.Collection<String> instanceNames) {
         if (instanceNames == null) {
             this.instanceNames = null;
@@ -82,6 +84,7 @@ public class BatchGetOnPremisesInstancesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchGetOnPremisesInstancesRequest withInstanceNames(
             String... instanceNames) {
         if (this.instanceNames == null) {
@@ -104,6 +107,7 @@ public class BatchGetOnPremisesInstancesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchGetOnPremisesInstancesRequest withInstanceNames(
             java.util.Collection<String> instanceNames) {
         setInstanceNames(instanceNames);

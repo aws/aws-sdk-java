@@ -44,6 +44,7 @@ public class DescribeTagsResult implements Serializable, Cloneable {
      * 
      * @return The tags.
      */
+
     public java.util.List<TagDescription> getTags() {
         if (tags == null) {
             tags = new com.amazonaws.internal.SdkInternalList<TagDescription>();
@@ -59,6 +60,7 @@ public class DescribeTagsResult implements Serializable, Cloneable {
      * @param tags
      *        The tags.
      */
+
     public void setTags(java.util.Collection<TagDescription> tags) {
         if (tags == null) {
             this.tags = null;
@@ -85,6 +87,7 @@ public class DescribeTagsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTagsResult withTags(TagDescription... tags) {
         if (this.tags == null) {
             setTags(new com.amazonaws.internal.SdkInternalList<TagDescription>(
@@ -106,6 +109,7 @@ public class DescribeTagsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTagsResult withTags(java.util.Collection<TagDescription> tags) {
         setTags(tags);
         return this;
@@ -121,6 +125,7 @@ public class DescribeTagsResult implements Serializable, Cloneable {
      *        The token to use when requesting the next set of items. If there
      *        are no additional items to return, the string is empty.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -134,6 +139,7 @@ public class DescribeTagsResult implements Serializable, Cloneable {
      * @return The token to use when requesting the next set of items. If there
      *         are no additional items to return, the string is empty.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -150,6 +156,7 @@ public class DescribeTagsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTagsResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

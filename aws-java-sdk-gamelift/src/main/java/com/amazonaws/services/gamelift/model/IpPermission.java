@@ -44,9 +44,10 @@ public class IpPermission implements Serializable, Cloneable {
     /**
      * <p>
      * Range of allowed IP addresses. This value must be expressed in <a
-     * href="https://tools.ietf.org/id/cidr">CIDR notation</a>. Example:
-     * "000.000.000.000/[subnet mask]" or optionally the shortened version
-     * "0.0.0.0/[subnet mask]".
+     * href="https://tools.ietf.org/id/cidr">CIDR notation</a>. Example: "
+     * <code>000.000.000.000/[subnet mask]</code>
+     * " or optionally the shortened version "<code>0.0.0.0/[subnet mask]</code>
+     * ".
      * </p>
      */
     private String ipRange;
@@ -65,6 +66,7 @@ public class IpPermission implements Serializable, Cloneable {
      * @param fromPort
      *        Starting value for a range of allowed port numbers.
      */
+
     public void setFromPort(Integer fromPort) {
         this.fromPort = fromPort;
     }
@@ -76,6 +78,7 @@ public class IpPermission implements Serializable, Cloneable {
      * 
      * @return Starting value for a range of allowed port numbers.
      */
+
     public Integer getFromPort() {
         return this.fromPort;
     }
@@ -90,6 +93,7 @@ public class IpPermission implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public IpPermission withFromPort(Integer fromPort) {
         setFromPort(fromPort);
         return this;
@@ -105,6 +109,7 @@ public class IpPermission implements Serializable, Cloneable {
      *        Ending value for a range of allowed port numbers. Port numbers are
      *        end-inclusive. This value must be higher than <i>FromPort</i>.
      */
+
     public void setToPort(Integer toPort) {
         this.toPort = toPort;
     }
@@ -119,6 +124,7 @@ public class IpPermission implements Serializable, Cloneable {
      *         are end-inclusive. This value must be higher than
      *         <i>FromPort</i>.
      */
+
     public Integer getToPort() {
         return this.toPort;
     }
@@ -135,6 +141,7 @@ public class IpPermission implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public IpPermission withToPort(Integer toPort) {
         setToPort(toPort);
         return this;
@@ -143,17 +150,20 @@ public class IpPermission implements Serializable, Cloneable {
     /**
      * <p>
      * Range of allowed IP addresses. This value must be expressed in <a
-     * href="https://tools.ietf.org/id/cidr">CIDR notation</a>. Example:
-     * "000.000.000.000/[subnet mask]" or optionally the shortened version
-     * "0.0.0.0/[subnet mask]".
+     * href="https://tools.ietf.org/id/cidr">CIDR notation</a>. Example: "
+     * <code>000.000.000.000/[subnet mask]</code>
+     * " or optionally the shortened version "<code>0.0.0.0/[subnet mask]</code>
+     * ".
      * </p>
      * 
      * @param ipRange
      *        Range of allowed IP addresses. This value must be expressed in <a
      *        href="https://tools.ietf.org/id/cidr">CIDR notation</a>. Example:
-     *        "000.000.000.000/[subnet mask]" or optionally the shortened
-     *        version "0.0.0.0/[subnet mask]".
+     *        "<code>000.000.000.000/[subnet mask]</code>
+     *        " or optionally the shortened version "
+     *        <code>0.0.0.0/[subnet mask]</code>".
      */
+
     public void setIpRange(String ipRange) {
         this.ipRange = ipRange;
     }
@@ -161,16 +171,19 @@ public class IpPermission implements Serializable, Cloneable {
     /**
      * <p>
      * Range of allowed IP addresses. This value must be expressed in <a
-     * href="https://tools.ietf.org/id/cidr">CIDR notation</a>. Example:
-     * "000.000.000.000/[subnet mask]" or optionally the shortened version
-     * "0.0.0.0/[subnet mask]".
+     * href="https://tools.ietf.org/id/cidr">CIDR notation</a>. Example: "
+     * <code>000.000.000.000/[subnet mask]</code>
+     * " or optionally the shortened version "<code>0.0.0.0/[subnet mask]</code>
+     * ".
      * </p>
      * 
      * @return Range of allowed IP addresses. This value must be expressed in <a
      *         href="https://tools.ietf.org/id/cidr">CIDR notation</a>. Example:
-     *         "000.000.000.000/[subnet mask]" or optionally the shortened
-     *         version "0.0.0.0/[subnet mask]".
+     *         "<code>000.000.000.000/[subnet mask]</code>
+     *         " or optionally the shortened version "
+     *         <code>0.0.0.0/[subnet mask]</code>".
      */
+
     public String getIpRange() {
         return this.ipRange;
     }
@@ -178,19 +191,22 @@ public class IpPermission implements Serializable, Cloneable {
     /**
      * <p>
      * Range of allowed IP addresses. This value must be expressed in <a
-     * href="https://tools.ietf.org/id/cidr">CIDR notation</a>. Example:
-     * "000.000.000.000/[subnet mask]" or optionally the shortened version
-     * "0.0.0.0/[subnet mask]".
+     * href="https://tools.ietf.org/id/cidr">CIDR notation</a>. Example: "
+     * <code>000.000.000.000/[subnet mask]</code>
+     * " or optionally the shortened version "<code>0.0.0.0/[subnet mask]</code>
+     * ".
      * </p>
      * 
      * @param ipRange
      *        Range of allowed IP addresses. This value must be expressed in <a
      *        href="https://tools.ietf.org/id/cidr">CIDR notation</a>. Example:
-     *        "000.000.000.000/[subnet mask]" or optionally the shortened
-     *        version "0.0.0.0/[subnet mask]".
+     *        "<code>000.000.000.000/[subnet mask]</code>
+     *        " or optionally the shortened version "
+     *        <code>0.0.0.0/[subnet mask]</code>".
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public IpPermission withIpRange(String ipRange) {
         setIpRange(ipRange);
         return this;
@@ -205,6 +221,7 @@ public class IpPermission implements Serializable, Cloneable {
      *        Network communication protocol used by the fleet.
      * @see IpProtocol
      */
+
     public void setProtocol(String protocol) {
         this.protocol = protocol;
     }
@@ -217,6 +234,7 @@ public class IpPermission implements Serializable, Cloneable {
      * @return Network communication protocol used by the fleet.
      * @see IpProtocol
      */
+
     public String getProtocol() {
         return this.protocol;
     }
@@ -232,6 +250,7 @@ public class IpPermission implements Serializable, Cloneable {
      *         chained together.
      * @see IpProtocol
      */
+
     public IpPermission withProtocol(String protocol) {
         setProtocol(protocol);
         return this;
@@ -248,6 +267,7 @@ public class IpPermission implements Serializable, Cloneable {
      *         chained together.
      * @see IpProtocol
      */
+
     public void setProtocol(IpProtocol protocol) {
         this.protocol = protocol.toString();
     }
@@ -263,6 +283,7 @@ public class IpPermission implements Serializable, Cloneable {
      *         chained together.
      * @see IpProtocol
      */
+
     public IpPermission withProtocol(IpProtocol protocol) {
         setProtocol(protocol);
         return this;

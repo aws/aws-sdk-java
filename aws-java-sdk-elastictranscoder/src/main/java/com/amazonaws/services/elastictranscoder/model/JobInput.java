@@ -151,6 +151,7 @@ public class JobInput implements Serializable, Cloneable {
      *        If the file isn't in the specified bucket, Elastic Transcoder
      *        returns an error.
      */
+
     public void setKey(String key) {
         this.key = key;
     }
@@ -179,6 +180,7 @@ public class JobInput implements Serializable, Cloneable {
      *         If the file isn't in the specified bucket, Elastic Transcoder
      *         returns an error.
      */
+
     public String getKey() {
         return this.key;
     }
@@ -210,6 +212,7 @@ public class JobInput implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobInput withKey(String key) {
         setKey(key);
         return this;
@@ -245,6 +248,7 @@ public class JobInput implements Serializable, Cloneable {
      *        If you specify a value other than <code>auto</code>, Elastic
      *        Transcoder disables automatic detection of the frame rate.
      */
+
     public void setFrameRate(String frameRate) {
         this.frameRate = frameRate;
     }
@@ -278,6 +282,7 @@ public class JobInput implements Serializable, Cloneable {
      *         If you specify a value other than <code>auto</code>, Elastic
      *         Transcoder disables automatic detection of the frame rate.
      */
+
     public String getFrameRate() {
         return this.frameRate;
     }
@@ -314,6 +319,7 @@ public class JobInput implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobInput withFrameRate(String frameRate) {
         setFrameRate(frameRate);
         return this;
@@ -330,6 +336,7 @@ public class JobInput implements Serializable, Cloneable {
      *        Transcoder to automatically detect the resolution of the input
      *        file.
      */
+
     public void setResolution(String resolution) {
         this.resolution = resolution;
     }
@@ -344,6 +351,7 @@ public class JobInput implements Serializable, Cloneable {
      *         Transcoder to automatically detect the resolution of the input
      *         file.
      */
+
     public String getResolution() {
         return this.resolution;
     }
@@ -361,6 +369,7 @@ public class JobInput implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobInput withResolution(String resolution) {
         setResolution(resolution);
         return this;
@@ -394,6 +403,7 @@ public class JobInput implements Serializable, Cloneable {
      *        If you specify a value other than <code>auto</code>, Elastic
      *        Transcoder disables automatic detection of the aspect ratio.
      */
+
     public void setAspectRatio(String aspectRatio) {
         this.aspectRatio = aspectRatio;
     }
@@ -426,6 +436,7 @@ public class JobInput implements Serializable, Cloneable {
      *         If you specify a value other than <code>auto</code>, Elastic
      *         Transcoder disables automatic detection of the aspect ratio.
      */
+
     public String getAspectRatio() {
         return this.aspectRatio;
     }
@@ -460,6 +471,7 @@ public class JobInput implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobInput withAspectRatio(String aspectRatio) {
         setAspectRatio(aspectRatio);
         return this;
@@ -493,6 +505,7 @@ public class JobInput implements Serializable, Cloneable {
      *        If you specify a value other than <code>auto</code>, Elastic
      *        Transcoder disables automatic detection of interlacing.
      */
+
     public void setInterlaced(String interlaced) {
         this.interlaced = interlaced;
     }
@@ -524,6 +537,7 @@ public class JobInput implements Serializable, Cloneable {
      *         If you specify a value other than <code>auto</code>, Elastic
      *         Transcoder disables automatic detection of interlacing.
      */
+
     public String getInterlaced() {
         return this.interlaced;
     }
@@ -558,6 +572,7 @@ public class JobInput implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobInput withInterlaced(String interlaced) {
         setInterlaced(interlaced);
         return this;
@@ -593,6 +608,7 @@ public class JobInput implements Serializable, Cloneable {
      *        <code>ogg</code>, <code>vob</code>, <code>wav</code>,
      *        <code>webm</code>
      */
+
     public void setContainer(String container) {
         this.container = container;
     }
@@ -626,6 +642,7 @@ public class JobInput implements Serializable, Cloneable {
      *         <code>ogg</code>, <code>vob</code>, <code>wav</code>,
      *         <code>webm</code>
      */
+
     public String getContainer() {
         return this.container;
     }
@@ -662,6 +679,7 @@ public class JobInput implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobInput withContainer(String container) {
         setContainer(container);
         return this;
@@ -679,6 +697,7 @@ public class JobInput implements Serializable, Cloneable {
      *        input files. If your input file is encrypted, you must specify the
      *        mode that Elastic Transcoder will use to decrypt your file.
      */
+
     public void setEncryption(Encryption encryption) {
         this.encryption = encryption;
     }
@@ -695,6 +714,7 @@ public class JobInput implements Serializable, Cloneable {
      *         specify the mode that Elastic Transcoder will use to decrypt your
      *         file.
      */
+
     public Encryption getEncryption() {
         return this.encryption;
     }
@@ -713,6 +733,7 @@ public class JobInput implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobInput withEncryption(Encryption encryption) {
         setEncryption(encryption);
         return this;
@@ -726,6 +747,7 @@ public class JobInput implements Serializable, Cloneable {
      * @param detectedProperties
      *        The detected properties of the input file.
      */
+
     public void setDetectedProperties(DetectedProperties detectedProperties) {
         this.detectedProperties = detectedProperties;
     }
@@ -737,6 +759,7 @@ public class JobInput implements Serializable, Cloneable {
      * 
      * @return The detected properties of the input file.
      */
+
     public DetectedProperties getDetectedProperties() {
         return this.detectedProperties;
     }
@@ -751,6 +774,7 @@ public class JobInput implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobInput withDetectedProperties(DetectedProperties detectedProperties) {
         setDetectedProperties(detectedProperties);
         return this;

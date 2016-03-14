@@ -43,6 +43,7 @@ public class RemoveTagsFromResourceResult implements Serializable, Cloneable {
      *        The Amazon Resource Name (ARN) of the resource that the tags were
      *        removed from.
      */
+
     public void setResourceARN(String resourceARN) {
         this.resourceARN = resourceARN;
     }
@@ -56,6 +57,7 @@ public class RemoveTagsFromResourceResult implements Serializable, Cloneable {
      * @return The Amazon Resource Name (ARN) of the resource that the tags were
      *         removed from.
      */
+
     public String getResourceARN() {
         return this.resourceARN;
     }
@@ -72,6 +74,7 @@ public class RemoveTagsFromResourceResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RemoveTagsFromResourceResult withResourceARN(String resourceARN) {
         setResourceARN(resourceARN);
         return this;

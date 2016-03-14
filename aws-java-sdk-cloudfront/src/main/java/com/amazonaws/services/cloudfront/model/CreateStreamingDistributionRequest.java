@@ -55,6 +55,7 @@ public class CreateStreamingDistributionRequest extends AmazonWebServiceRequest
      * @param streamingDistributionConfig
      *        The streaming distribution's configuration information.
      */
+
     public void setStreamingDistributionConfig(
             StreamingDistributionConfig streamingDistributionConfig) {
         this.streamingDistributionConfig = streamingDistributionConfig;
@@ -65,6 +66,7 @@ public class CreateStreamingDistributionRequest extends AmazonWebServiceRequest
      * 
      * @return The streaming distribution's configuration information.
      */
+
     public StreamingDistributionConfig getStreamingDistributionConfig() {
         return this.streamingDistributionConfig;
     }
@@ -77,6 +79,7 @@ public class CreateStreamingDistributionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateStreamingDistributionRequest withStreamingDistributionConfig(
             StreamingDistributionConfig streamingDistributionConfig) {
         setStreamingDistributionConfig(streamingDistributionConfig);

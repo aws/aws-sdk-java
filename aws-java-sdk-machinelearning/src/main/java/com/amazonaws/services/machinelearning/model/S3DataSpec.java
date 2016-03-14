@@ -106,6 +106,7 @@ public class S3DataSpec implements Serializable, Cloneable {
      *        . The URI specifies a data file or an Amazon Simple Storage
      *        Service (Amazon S3) directory or bucket containing data files.
      */
+
     public void setDataLocationS3(String dataLocationS3) {
         this.dataLocationS3 = dataLocationS3;
     }
@@ -122,6 +123,7 @@ public class S3DataSpec implements Serializable, Cloneable {
      *         Amazon Simple Storage Service (Amazon S3) directory or bucket
      *         containing data files.
      */
+
     public String getDataLocationS3() {
         return this.dataLocationS3;
     }
@@ -140,6 +142,7 @@ public class S3DataSpec implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public S3DataSpec withDataLocationS3(String dataLocationS3) {
         setDataLocationS3(dataLocationS3);
         return this;
@@ -153,6 +156,7 @@ public class S3DataSpec implements Serializable, Cloneable {
      * @param dataRearrangement
      *        Describes the splitting requirement of a <code>Datasource</code>.
      */
+
     public void setDataRearrangement(String dataRearrangement) {
         this.dataRearrangement = dataRearrangement;
     }
@@ -164,6 +168,7 @@ public class S3DataSpec implements Serializable, Cloneable {
      * 
      * @return Describes the splitting requirement of a <code>Datasource</code>.
      */
+
     public String getDataRearrangement() {
         return this.dataRearrangement;
     }
@@ -178,6 +183,7 @@ public class S3DataSpec implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public S3DataSpec withDataRearrangement(String dataRearrangement) {
         setDataRearrangement(dataRearrangement);
         return this;
@@ -276,6 +282,7 @@ public class S3DataSpec implements Serializable, Cloneable {
      *        "excludedVariableNames": [ "F6" ] }
      *        </p>
      */
+
     public void setDataSchema(String dataSchema) {
         this.dataSchema = dataSchema;
     }
@@ -372,6 +379,7 @@ public class S3DataSpec implements Serializable, Cloneable {
      *         "excludedVariableNames": [ "F6" ] }
      *         </p>
      */
+
     public String getDataSchema() {
         return this.dataSchema;
     }
@@ -471,6 +479,7 @@ public class S3DataSpec implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public S3DataSpec withDataSchema(String dataSchema) {
         setDataSchema(dataSchema);
         return this;
@@ -484,6 +493,7 @@ public class S3DataSpec implements Serializable, Cloneable {
      * @param dataSchemaLocationS3
      *        Describes the schema Location in Amazon S3.
      */
+
     public void setDataSchemaLocationS3(String dataSchemaLocationS3) {
         this.dataSchemaLocationS3 = dataSchemaLocationS3;
     }
@@ -495,6 +505,7 @@ public class S3DataSpec implements Serializable, Cloneable {
      * 
      * @return Describes the schema Location in Amazon S3.
      */
+
     public String getDataSchemaLocationS3() {
         return this.dataSchemaLocationS3;
     }
@@ -509,6 +520,7 @@ public class S3DataSpec implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public S3DataSpec withDataSchemaLocationS3(String dataSchemaLocationS3) {
         setDataSchemaLocationS3(dataSchemaLocationS3);
         return this;

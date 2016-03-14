@@ -73,6 +73,7 @@ public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest
      * 
      * @return The names of the load balancers.
      */
+
     public java.util.List<String> getLoadBalancerNames() {
         if (loadBalancerNames == null) {
             loadBalancerNames = new com.amazonaws.internal.SdkInternalList<String>();
@@ -88,6 +89,7 @@ public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest
      * @param loadBalancerNames
      *        The names of the load balancers.
      */
+
     public void setLoadBalancerNames(
             java.util.Collection<String> loadBalancerNames) {
         if (loadBalancerNames == null) {
@@ -115,6 +117,7 @@ public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLoadBalancersRequest withLoadBalancerNames(
             String... loadBalancerNames) {
         if (this.loadBalancerNames == null) {
@@ -137,6 +140,7 @@ public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLoadBalancersRequest withLoadBalancerNames(
             java.util.Collection<String> loadBalancerNames) {
         setLoadBalancerNames(loadBalancerNames);
@@ -153,6 +157,7 @@ public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest
      *        The marker for the next set of results. (You received this marker
      *        from a previous call.)
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -166,6 +171,7 @@ public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest
      * @return The marker for the next set of results. (You received this marker
      *         from a previous call.)
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -182,6 +188,7 @@ public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLoadBalancersRequest withMarker(String marker) {
         setMarker(marker);
         return this;
@@ -197,6 +204,7 @@ public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest
      *        The maximum number of results to return with this call (a number
      *        from 1 to 400). The default is 400.
      */
+
     public void setPageSize(Integer pageSize) {
         this.pageSize = pageSize;
     }
@@ -210,6 +218,7 @@ public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest
      * @return The maximum number of results to return with this call (a number
      *         from 1 to 400). The default is 400.
      */
+
     public Integer getPageSize() {
         return this.pageSize;
     }
@@ -226,6 +235,7 @@ public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLoadBalancersRequest withPageSize(Integer pageSize) {
         setPageSize(pageSize);
         return this;

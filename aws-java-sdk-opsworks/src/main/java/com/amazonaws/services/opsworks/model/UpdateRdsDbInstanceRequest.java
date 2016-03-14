@@ -52,6 +52,7 @@ public class UpdateRdsDbInstanceRequest extends AmazonWebServiceRequest
      * @param rdsDbInstanceArn
      *        The Amazon RDS instance's ARN.
      */
+
     public void setRdsDbInstanceArn(String rdsDbInstanceArn) {
         this.rdsDbInstanceArn = rdsDbInstanceArn;
     }
@@ -63,6 +64,7 @@ public class UpdateRdsDbInstanceRequest extends AmazonWebServiceRequest
      * 
      * @return The Amazon RDS instance's ARN.
      */
+
     public String getRdsDbInstanceArn() {
         return this.rdsDbInstanceArn;
     }
@@ -77,6 +79,7 @@ public class UpdateRdsDbInstanceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateRdsDbInstanceRequest withRdsDbInstanceArn(
             String rdsDbInstanceArn) {
         setRdsDbInstanceArn(rdsDbInstanceArn);
@@ -91,6 +94,7 @@ public class UpdateRdsDbInstanceRequest extends AmazonWebServiceRequest
      * @param dbUser
      *        The master user name.
      */
+
     public void setDbUser(String dbUser) {
         this.dbUser = dbUser;
     }
@@ -102,6 +106,7 @@ public class UpdateRdsDbInstanceRequest extends AmazonWebServiceRequest
      * 
      * @return The master user name.
      */
+
     public String getDbUser() {
         return this.dbUser;
     }
@@ -116,6 +121,7 @@ public class UpdateRdsDbInstanceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateRdsDbInstanceRequest withDbUser(String dbUser) {
         setDbUser(dbUser);
         return this;
@@ -129,6 +135,7 @@ public class UpdateRdsDbInstanceRequest extends AmazonWebServiceRequest
      * @param dbPassword
      *        The database password.
      */
+
     public void setDbPassword(String dbPassword) {
         this.dbPassword = dbPassword;
     }
@@ -140,6 +147,7 @@ public class UpdateRdsDbInstanceRequest extends AmazonWebServiceRequest
      * 
      * @return The database password.
      */
+
     public String getDbPassword() {
         return this.dbPassword;
     }
@@ -154,6 +162,7 @@ public class UpdateRdsDbInstanceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateRdsDbInstanceRequest withDbPassword(String dbPassword) {
         setDbPassword(dbPassword);
         return this;

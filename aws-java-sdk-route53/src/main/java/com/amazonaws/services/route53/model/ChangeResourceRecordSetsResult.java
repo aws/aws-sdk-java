@@ -55,6 +55,7 @@ public class ChangeResourceRecordSetsResult implements Serializable, Cloneable {
      *        <a>GetChange</a> action to get detailed information about the
      *        change.
      */
+
     public void setChangeInfo(ChangeInfo changeInfo) {
         this.changeInfo = changeInfo;
     }
@@ -76,6 +77,7 @@ public class ChangeResourceRecordSetsResult implements Serializable, Cloneable {
      *         <a>GetChange</a> action to get detailed information about the
      *         change.
      */
+
     public ChangeInfo getChangeInfo() {
         return this.changeInfo;
     }
@@ -100,6 +102,7 @@ public class ChangeResourceRecordSetsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ChangeResourceRecordSetsResult withChangeInfo(ChangeInfo changeInfo) {
         setChangeInfo(changeInfo);
         return this;

@@ -46,6 +46,7 @@ public class Listener implements Serializable, Cloneable {
      * @param protocol
      *        The protocol that is used by the Listener.
      */
+
     public void setProtocol(String protocol) {
         this.protocol = protocol;
     }
@@ -57,6 +58,7 @@ public class Listener implements Serializable, Cloneable {
      * 
      * @return The protocol that is used by the Listener.
      */
+
     public String getProtocol() {
         return this.protocol;
     }
@@ -71,6 +73,7 @@ public class Listener implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Listener withProtocol(String protocol) {
         setProtocol(protocol);
         return this;
@@ -84,6 +87,7 @@ public class Listener implements Serializable, Cloneable {
      * @param port
      *        The port that is used by the Listener.
      */
+
     public void setPort(Integer port) {
         this.port = port;
     }
@@ -95,6 +99,7 @@ public class Listener implements Serializable, Cloneable {
      * 
      * @return The port that is used by the Listener.
      */
+
     public Integer getPort() {
         return this.port;
     }
@@ -109,6 +114,7 @@ public class Listener implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Listener withPort(Integer port) {
         setPort(port);
         return this;

@@ -40,6 +40,7 @@ public class LambdaAction implements Serializable, Cloneable {
      * @param functionArn
      *        The ARN of the Lambda function.
      */
+
     public void setFunctionArn(String functionArn) {
         this.functionArn = functionArn;
     }
@@ -51,6 +52,7 @@ public class LambdaAction implements Serializable, Cloneable {
      * 
      * @return The ARN of the Lambda function.
      */
+
     public String getFunctionArn() {
         return this.functionArn;
     }
@@ -65,6 +67,7 @@ public class LambdaAction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LambdaAction withFunctionArn(String functionArn) {
         setFunctionArn(functionArn);
         return this;

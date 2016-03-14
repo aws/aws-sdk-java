@@ -54,12 +54,12 @@
         "documentation" : "<p>The specified job was specified in an invalid format or cannot be found.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "acknowledgeJob",
       "syncReturnType" : "AcknowledgeJobResult",
       "asyncReturnType" : "AcknowledgeJobResult",
       "asyncFutureType" : "java.util.concurrent.Future<AcknowledgeJobResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AcknowledgeJobResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AcknowledgeJobRequest, AcknowledgeJobResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AcknowledgeJobRequest, AcknowledgeJobResult>",
+      "methodName" : "acknowledgeJob"
     },
     "AcknowledgeThirdPartyJob" : {
       "documentation" : "<p>Confirms a job worker has received the specified job. Only used for partner actions.</p>",
@@ -92,12 +92,12 @@
         "documentation" : "<p>The client token was specified in an invalid format</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "acknowledgeThirdPartyJob",
       "syncReturnType" : "AcknowledgeThirdPartyJobResult",
       "asyncReturnType" : "AcknowledgeThirdPartyJobResult",
       "asyncFutureType" : "java.util.concurrent.Future<AcknowledgeThirdPartyJobResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<AcknowledgeThirdPartyJobResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AcknowledgeThirdPartyJobRequest, AcknowledgeThirdPartyJobResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AcknowledgeThirdPartyJobRequest, AcknowledgeThirdPartyJobResult>",
+      "methodName" : "acknowledgeThirdPartyJob"
     },
     "CreateCustomActionType" : {
       "documentation" : "<p>Creates a new custom action that can be used in all pipelines associated with the AWS account. Only used for custom actions.</p>",
@@ -124,12 +124,12 @@
         "documentation" : "<p>The number of pipelines associated with the AWS account has exceeded the limit allowed for the account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "createCustomActionType",
       "syncReturnType" : "CreateCustomActionTypeResult",
       "asyncReturnType" : "CreateCustomActionTypeResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreateCustomActionTypeResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreateCustomActionTypeResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateCustomActionTypeRequest, CreateCustomActionTypeResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreateCustomActionTypeRequest, CreateCustomActionTypeResult>",
+      "methodName" : "createCustomActionType"
     },
     "CreatePipeline" : {
       "documentation" : "<p>Creates a pipeline.</p>",
@@ -171,12 +171,12 @@
         "documentation" : "<p>The number of pipelines associated with the AWS account has exceeded the limit allowed for the account.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "createPipeline",
       "syncReturnType" : "CreatePipelineResult",
       "asyncReturnType" : "CreatePipelineResult",
       "asyncFutureType" : "java.util.concurrent.Future<CreatePipelineResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<CreatePipelineResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreatePipelineRequest, CreatePipelineResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<CreatePipelineRequest, CreatePipelineResult>",
+      "methodName" : "createPipeline"
     },
     "DeleteCustomActionType" : {
       "documentation" : "<p>Marks a custom action as deleted. PollForJobs for the custom action will fail after the action is marked for deletion. Only used for custom actions.</p> <important><p>You cannot recreate a custom action after it has been deleted unless you increase the version number of the action.</p></important>",
@@ -197,12 +197,12 @@
         "documentation" : "<p>The validation was specified in an invalid format.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "deleteCustomActionType",
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteCustomActionTypeRequest, Void>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteCustomActionTypeRequest, Void>",
+      "methodName" : "deleteCustomActionType"
     },
     "DeletePipeline" : {
       "documentation" : "<p>Deletes the specified pipeline.</p>",
@@ -223,12 +223,12 @@
         "documentation" : "<p>The validation was specified in an invalid format.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "deletePipeline",
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeletePipelineRequest, Void>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeletePipelineRequest, Void>",
+      "methodName" : "deletePipeline"
     },
     "DisableStageTransition" : {
       "documentation" : "<p>Prevents artifacts in a pipeline from transitioning to the next stage in the pipeline. </p>",
@@ -255,12 +255,12 @@
         "documentation" : "<p>The specified stage was specified in an invalid format or cannot be found.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "disableStageTransition",
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DisableStageTransitionRequest, Void>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DisableStageTransitionRequest, Void>",
+      "methodName" : "disableStageTransition"
     },
     "EnableStageTransition" : {
       "documentation" : "<p>Enables artifacts in a pipeline to transition to a stage in a pipeline.</p>",
@@ -287,12 +287,12 @@
         "documentation" : "<p>The specified stage was specified in an invalid format or cannot be found.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "enableStageTransition",
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<EnableStageTransitionRequest, Void>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<EnableStageTransitionRequest, Void>",
+      "methodName" : "enableStageTransition"
     },
     "GetJobDetails" : {
       "documentation" : "<p>Returns information about a job. Only used for custom actions.</p> <important><p>When this API is called, AWS CodePipeline returns temporary credentials for the Amazon S3 bucket used to store artifacts for the pipeline, if the action requires access to that Amazon S3 bucket for input or output artifacts. Additionally, this API returns any secret values defined for the action.</p></important>",
@@ -319,12 +319,12 @@
         "documentation" : "<p>The specified job was specified in an invalid format or cannot be found.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "getJobDetails",
       "syncReturnType" : "GetJobDetailsResult",
       "asyncReturnType" : "GetJobDetailsResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetJobDetailsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetJobDetailsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetJobDetailsRequest, GetJobDetailsResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetJobDetailsRequest, GetJobDetailsResult>",
+      "methodName" : "getJobDetails"
     },
     "GetPipeline" : {
       "documentation" : "<p>Returns the metadata, structure, stages, and actions of a pipeline. Can be used to return the entire structure of a pipeline in JSON format, which can then be modified and used to update the pipeline structure with <a>UpdatePipeline</a>.</p>",
@@ -354,12 +354,12 @@
         "documentation" : "<p>The specified pipeline version was specified in an invalid format or cannot be found.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "getPipeline",
       "syncReturnType" : "GetPipelineResult",
       "asyncReturnType" : "GetPipelineResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetPipelineResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetPipelineResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetPipelineRequest, GetPipelineResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetPipelineRequest, GetPipelineResult>",
+      "methodName" : "getPipeline"
     },
     "GetPipelineState" : {
       "documentation" : "<p>Returns information about the state of a pipeline, including the stages, actions, and details about the last run of the pipeline.</p>",
@@ -386,12 +386,12 @@
         "documentation" : "<p>The specified pipeline was specified in an invalid format or cannot be found.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "getPipelineState",
       "syncReturnType" : "GetPipelineStateResult",
       "asyncReturnType" : "GetPipelineStateResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetPipelineStateResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetPipelineStateResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetPipelineStateRequest, GetPipelineStateResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetPipelineStateRequest, GetPipelineStateResult>",
+      "methodName" : "getPipelineState"
     },
     "GetThirdPartyJobDetails" : {
       "documentation" : "<p>Requests the details of a job for a third party action. Only used for partner actions.</p> <important><p>When this API is called, AWS CodePipeline returns temporary credentials for the Amazon S3 bucket used to store artifacts for the pipeline, if the action requires access to that Amazon S3 bucket for input or output artifacts. Additionally, this API returns any secret values defined for the action.</p></important>",
@@ -424,12 +424,12 @@
         "documentation" : "<p>The specified job was specified in an invalid format or cannot be found.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "getThirdPartyJobDetails",
       "syncReturnType" : "GetThirdPartyJobDetailsResult",
       "asyncReturnType" : "GetThirdPartyJobDetailsResult",
       "asyncFutureType" : "java.util.concurrent.Future<GetThirdPartyJobDetailsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetThirdPartyJobDetailsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetThirdPartyJobDetailsRequest, GetThirdPartyJobDetailsResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetThirdPartyJobDetailsRequest, GetThirdPartyJobDetailsResult>",
+      "methodName" : "getThirdPartyJobDetails"
     },
     "ListActionTypes" : {
       "documentation" : "<p>Gets a summary of all AWS CodePipeline action types associated with your account.</p>",
@@ -456,12 +456,12 @@
         "documentation" : "<p>The next token was specified in an invalid format. Make sure that the next token you provided is the token returned by a previous call.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "listActionTypes",
       "syncReturnType" : "ListActionTypesResult",
       "asyncReturnType" : "ListActionTypesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListActionTypesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListActionTypesResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListActionTypesRequest, ListActionTypesResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListActionTypesRequest, ListActionTypesResult>",
+      "methodName" : "listActionTypes"
     },
     "ListPipelines" : {
       "documentation" : "<p>Gets a summary of all of the pipelines associated with your account.</p>",
@@ -485,12 +485,12 @@
         "documentation" : "<p>The next token was specified in an invalid format. Make sure that the next token you provided is the token returned by a previous call.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "listPipelines",
       "syncReturnType" : "ListPipelinesResult",
       "asyncReturnType" : "ListPipelinesResult",
       "asyncFutureType" : "java.util.concurrent.Future<ListPipelinesResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<ListPipelinesResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListPipelinesRequest, ListPipelinesResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListPipelinesRequest, ListPipelinesResult>",
+      "methodName" : "listPipelines"
     },
     "PollForJobs" : {
       "documentation" : "<p>Returns information about any jobs for AWS CodePipeline to act upon.</p> <important><p>When this API is called, AWS CodePipeline returns temporary credentials for the Amazon S3 bucket used to store artifacts for the pipeline, if the action requires access to that Amazon S3 bucket for input or output artifacts. Additionally, this API returns any secret values defined for the action.</p></important>",
@@ -517,12 +517,12 @@
         "documentation" : "<p>The specified action type cannot be found.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "pollForJobs",
       "syncReturnType" : "PollForJobsResult",
       "asyncReturnType" : "PollForJobsResult",
       "asyncFutureType" : "java.util.concurrent.Future<PollForJobsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<PollForJobsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PollForJobsRequest, PollForJobsResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PollForJobsRequest, PollForJobsResult>",
+      "methodName" : "pollForJobs"
     },
     "PollForThirdPartyJobs" : {
       "documentation" : "<p>Determines whether there are any third party jobs for a job worker to act on. Only used for partner actions.</p> <important><p>When this API is called, AWS CodePipeline returns temporary credentials for the Amazon S3 bucket used to store artifacts for the pipeline, if the action requires access to that Amazon S3 bucket for input or output artifacts.</p></important>",
@@ -549,12 +549,12 @@
         "documentation" : "<p>The validation was specified in an invalid format.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "pollForThirdPartyJobs",
       "syncReturnType" : "PollForThirdPartyJobsResult",
       "asyncReturnType" : "PollForThirdPartyJobsResult",
       "asyncFutureType" : "java.util.concurrent.Future<PollForThirdPartyJobsResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<PollForThirdPartyJobsResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PollForThirdPartyJobsRequest, PollForThirdPartyJobsResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PollForThirdPartyJobsRequest, PollForThirdPartyJobsResult>",
+      "methodName" : "pollForThirdPartyJobs"
     },
     "PutActionRevision" : {
       "documentation" : "<p>Provides information to AWS CodePipeline about new revisions to a source.</p>",
@@ -587,12 +587,12 @@
         "documentation" : "<p>The validation was specified in an invalid format.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "putActionRevision",
       "syncReturnType" : "PutActionRevisionResult",
       "asyncReturnType" : "PutActionRevisionResult",
       "asyncFutureType" : "java.util.concurrent.Future<PutActionRevisionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<PutActionRevisionResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutActionRevisionRequest, PutActionRevisionResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutActionRevisionRequest, PutActionRevisionResult>",
+      "methodName" : "putActionRevision"
     },
     "PutJobFailureResult" : {
       "documentation" : "<p>Represents the failure of a job as returned to the pipeline by a job worker. Only used for custom actions.</p>",
@@ -619,12 +619,12 @@
         "documentation" : "<p>The specified job state was specified in an invalid format.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "putJobFailureResult",
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutJobFailureResultRequest, Void>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutJobFailureResultRequest, Void>",
+      "methodName" : "putJobFailureResult"
     },
     "PutJobSuccessResult" : {
       "documentation" : "<p>Represents the success of a job as returned to the pipeline by a job worker. Only used for custom actions.</p>",
@@ -651,12 +651,12 @@
         "documentation" : "<p>The specified job state was specified in an invalid format.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "putJobSuccessResult",
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutJobSuccessResultRequest, Void>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutJobSuccessResultRequest, Void>",
+      "methodName" : "putJobSuccessResult"
     },
     "PutThirdPartyJobFailureResult" : {
       "documentation" : "<p>Represents the failure of a third party job as returned to the pipeline by a job worker. Only used for partner actions.</p>",
@@ -686,12 +686,12 @@
         "documentation" : "<p>The client token was specified in an invalid format</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "putThirdPartyJobFailureResult",
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutThirdPartyJobFailureResultRequest, Void>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutThirdPartyJobFailureResultRequest, Void>",
+      "methodName" : "putThirdPartyJobFailureResult"
     },
     "PutThirdPartyJobSuccessResult" : {
       "documentation" : "<p>Represents the success of a third party job as returned to the pipeline by a job worker. Only used for partner actions.</p>",
@@ -721,12 +721,12 @@
         "documentation" : "<p>The client token was specified in an invalid format</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "putThirdPartyJobSuccessResult",
       "syncReturnType" : "void",
       "asyncReturnType" : "Void",
       "asyncFutureType" : "java.util.concurrent.Future<Void>",
       "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutThirdPartyJobSuccessResultRequest, Void>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutThirdPartyJobSuccessResultRequest, Void>",
+      "methodName" : "putThirdPartyJobSuccessResult"
     },
     "StartPipelineExecution" : {
       "documentation" : "<p>Starts the specified pipeline. Specifically, it begins processing the latest commit to the source location specified as part of the pipeline.</p>",
@@ -753,12 +753,12 @@
         "documentation" : "<p>The specified pipeline was specified in an invalid format or cannot be found.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "startPipelineExecution",
       "syncReturnType" : "StartPipelineExecutionResult",
       "asyncReturnType" : "StartPipelineExecutionResult",
       "asyncFutureType" : "java.util.concurrent.Future<StartPipelineExecutionResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<StartPipelineExecutionResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<StartPipelineExecutionRequest, StartPipelineExecutionResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<StartPipelineExecutionRequest, StartPipelineExecutionResult>",
+      "methodName" : "startPipelineExecution"
     },
     "UpdatePipeline" : {
       "documentation" : "<p>Updates a specified pipeline with edits or changes to its structure. Use a JSON file with the pipeline structure in conjunction with UpdatePipeline to provide the full structure of the pipeline. Updating the pipeline increases the version number of the pipeline by 1.</p>",
@@ -794,12 +794,12 @@
         "documentation" : "<p>The specified structure was specified in an invalid format.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "methodName" : "updatePipeline",
       "syncReturnType" : "UpdatePipelineResult",
       "asyncReturnType" : "UpdatePipelineResult",
       "asyncFutureType" : "java.util.concurrent.Future<UpdatePipelineResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdatePipelineResult>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdatePipelineRequest, UpdatePipelineResult>"
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdatePipelineRequest, UpdatePipelineResult>",
+      "methodName" : "updatePipeline"
     }
   },
   "shapes" : {
@@ -1181,8 +1181,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "ActionState",
           "simple" : false,
+          "simpleType" : "ActionState",
           "map" : false,
           "templateType" : "java.util.List<ActionState>",
           "templateImplType" : "java.util.ArrayList<ActionState>"
@@ -1424,8 +1424,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "ActionState",
             "simple" : false,
+            "simpleType" : "ActionState",
             "map" : false,
             "templateType" : "java.util.List<ActionState>",
             "templateImplType" : "java.util.ArrayList<ActionState>"
@@ -6396,8 +6396,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "ActionConfigurationProperty",
           "simple" : false,
+          "simpleType" : "ActionConfigurationProperty",
           "map" : false,
           "templateType" : "java.util.List<ActionConfigurationProperty>",
           "templateImplType" : "java.util.ArrayList<ActionConfigurationProperty>"
@@ -6845,8 +6845,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "ActionConfigurationProperty",
             "simple" : false,
+            "simpleType" : "ActionConfigurationProperty",
             "map" : false,
             "templateType" : "java.util.List<ActionConfigurationProperty>",
             "templateImplType" : "java.util.ArrayList<ActionConfigurationProperty>"
@@ -11432,8 +11432,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "ThirdPartyJob",
           "simple" : false,
+          "simpleType" : "ThirdPartyJob",
           "map" : false,
           "templateType" : "java.util.List<ThirdPartyJob>",
           "templateImplType" : "java.util.ArrayList<ThirdPartyJob>"
@@ -11571,8 +11571,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "ThirdPartyJob",
             "simple" : false,
+            "simpleType" : "ThirdPartyJob",
             "map" : false,
             "templateType" : "java.util.List<ThirdPartyJob>",
             "templateImplType" : "java.util.ArrayList<ThirdPartyJob>"
@@ -13707,8 +13707,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "StageDeclaration",
           "simple" : false,
+          "simpleType" : "StageDeclaration",
           "map" : false,
           "templateType" : "java.util.List<StageDeclaration>",
           "templateImplType" : "java.util.ArrayList<StageDeclaration>"
@@ -13949,8 +13949,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "StageDeclaration",
             "simple" : false,
+            "simpleType" : "StageDeclaration",
             "map" : false,
             "templateType" : "java.util.List<StageDeclaration>",
             "templateImplType" : "java.util.ArrayList<StageDeclaration>"
@@ -14285,8 +14285,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "BlockerDeclaration",
           "simple" : false,
+          "simpleType" : "BlockerDeclaration",
           "map" : false,
           "templateType" : "java.util.List<BlockerDeclaration>",
           "templateImplType" : "java.util.ArrayList<BlockerDeclaration>"
@@ -14401,8 +14401,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "ActionDeclaration",
           "simple" : false,
+          "simpleType" : "ActionDeclaration",
           "map" : false,
           "templateType" : "java.util.List<ActionDeclaration>",
           "templateImplType" : "java.util.ArrayList<ActionDeclaration>"
@@ -14592,8 +14592,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "BlockerDeclaration",
             "simple" : false,
+            "simpleType" : "BlockerDeclaration",
             "map" : false,
             "templateType" : "java.util.List<BlockerDeclaration>",
             "templateImplType" : "java.util.ArrayList<BlockerDeclaration>"
@@ -14709,8 +14709,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "ActionDeclaration",
             "simple" : false,
+            "simpleType" : "ActionDeclaration",
             "map" : false,
             "templateType" : "java.util.List<ActionDeclaration>",
             "templateImplType" : "java.util.ArrayList<ActionDeclaration>"
@@ -15555,8 +15555,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "Job",
           "simple" : false,
+          "simpleType" : "Job",
           "map" : false,
           "templateType" : "java.util.List<Job>",
           "templateImplType" : "java.util.ArrayList<Job>"
@@ -15694,8 +15694,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "Job",
             "simple" : false,
+            "simpleType" : "Job",
             "map" : false,
             "templateType" : "java.util.List<Job>",
             "templateImplType" : "java.util.ArrayList<Job>"
@@ -15976,8 +15976,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "Artifact",
           "simple" : false,
+          "simpleType" : "Artifact",
           "map" : false,
           "templateType" : "java.util.List<Artifact>",
           "templateImplType" : "java.util.ArrayList<Artifact>"
@@ -16092,8 +16092,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "Artifact",
           "simple" : false,
+          "simpleType" : "Artifact",
           "map" : false,
           "templateType" : "java.util.List<Artifact>",
           "templateImplType" : "java.util.ArrayList<Artifact>"
@@ -16644,8 +16644,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "Artifact",
             "simple" : false,
+            "simpleType" : "Artifact",
             "map" : false,
             "templateType" : "java.util.List<Artifact>",
             "templateImplType" : "java.util.ArrayList<Artifact>"
@@ -16761,8 +16761,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "Artifact",
             "simple" : false,
+            "simpleType" : "Artifact",
             "map" : false,
             "templateType" : "java.util.List<Artifact>",
             "templateImplType" : "java.util.ArrayList<Artifact>"
@@ -20227,8 +20227,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "PipelineSummary",
           "simple" : false,
+          "simpleType" : "PipelineSummary",
           "map" : false,
           "templateType" : "java.util.List<PipelineSummary>",
           "templateImplType" : "java.util.ArrayList<PipelineSummary>"
@@ -20469,8 +20469,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "PipelineSummary",
             "simple" : false,
+            "simpleType" : "PipelineSummary",
             "map" : false,
             "templateType" : "java.util.List<PipelineSummary>",
             "templateImplType" : "java.util.ArrayList<PipelineSummary>"
@@ -20883,8 +20883,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "Artifact",
           "simple" : false,
+          "simpleType" : "Artifact",
           "map" : false,
           "templateType" : "java.util.List<Artifact>",
           "templateImplType" : "java.util.ArrayList<Artifact>"
@@ -20999,8 +20999,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "Artifact",
           "simple" : false,
+          "simpleType" : "Artifact",
           "map" : false,
           "templateType" : "java.util.List<Artifact>",
           "templateImplType" : "java.util.ArrayList<Artifact>"
@@ -21551,8 +21551,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "Artifact",
             "simple" : false,
+            "simpleType" : "Artifact",
             "map" : false,
             "templateType" : "java.util.List<Artifact>",
             "templateImplType" : "java.util.ArrayList<Artifact>"
@@ -21668,8 +21668,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "Artifact",
             "simple" : false,
+            "simpleType" : "Artifact",
             "map" : false,
             "templateType" : "java.util.List<Artifact>",
             "templateImplType" : "java.util.ArrayList<Artifact>"
@@ -22667,8 +22667,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "OutputArtifact",
           "simple" : false,
+          "simpleType" : "OutputArtifact",
           "map" : false,
           "templateType" : "java.util.List<OutputArtifact>",
           "templateImplType" : "java.util.ArrayList<OutputArtifact>"
@@ -22783,8 +22783,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "InputArtifact",
           "simple" : false,
+          "simpleType" : "InputArtifact",
           "map" : false,
           "templateType" : "java.util.List<InputArtifact>",
           "templateImplType" : "java.util.ArrayList<InputArtifact>"
@@ -23077,8 +23077,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "OutputArtifact",
             "simple" : false,
+            "simpleType" : "OutputArtifact",
             "map" : false,
             "templateType" : "java.util.List<OutputArtifact>",
             "templateImplType" : "java.util.ArrayList<OutputArtifact>"
@@ -23246,8 +23246,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "InputArtifact",
             "simple" : false,
+            "simpleType" : "InputArtifact",
             "map" : false,
             "templateType" : "java.util.List<InputArtifact>",
             "templateImplType" : "java.util.ArrayList<InputArtifact>"
@@ -23734,8 +23734,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "ActionConfigurationProperty",
           "simple" : false,
+          "simpleType" : "ActionConfigurationProperty",
           "map" : false,
           "templateType" : "java.util.List<ActionConfigurationProperty>",
           "templateImplType" : "java.util.ArrayList<ActionConfigurationProperty>"
@@ -24291,8 +24291,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "ActionConfigurationProperty",
             "simple" : false,
+            "simpleType" : "ActionConfigurationProperty",
             "map" : false,
             "templateType" : "java.util.List<ActionConfigurationProperty>",
             "templateImplType" : "java.util.ArrayList<ActionConfigurationProperty>"
@@ -25353,8 +25353,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "ActionType",
           "simple" : false,
+          "simpleType" : "ActionType",
           "map" : false,
           "templateType" : "java.util.List<ActionType>",
           "templateImplType" : "java.util.ArrayList<ActionType>"
@@ -25595,8 +25595,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "ActionType",
             "simple" : false,
+            "simpleType" : "ActionType",
             "map" : false,
             "templateType" : "java.util.List<ActionType>",
             "templateImplType" : "java.util.ArrayList<ActionType>"
@@ -26903,8 +26903,8 @@
           "memberAdditionalMarshallingPath" : null,
           "memberAdditionalUnmarshallingPath" : null,
           "sendEmptyQueryString" : false,
-          "simpleType" : "StageState",
           "simple" : false,
+          "simpleType" : "StageState",
           "map" : false,
           "templateType" : "java.util.List<StageState>",
           "templateImplType" : "java.util.ArrayList<StageState>"
@@ -27196,8 +27196,8 @@
             "memberAdditionalMarshallingPath" : null,
             "memberAdditionalUnmarshallingPath" : null,
             "sendEmptyQueryString" : false,
-            "simpleType" : "StageState",
             "simple" : false,
+            "simpleType" : "StageState",
             "map" : false,
             "templateType" : "java.util.List<StageState>",
             "templateImplType" : "java.util.ArrayList<StageState>"
@@ -28071,7 +28071,7 @@
     "serviceClientHoldInputStream" : false,
     "operationsWithResponseStreamContentLengthValidation" : null,
     "customExceptionUnmarshallerImpl" : null,
-    "customClientConfiguration" : null,
+    "customClientConfigFactory" : null,
     "customResponseMetadataClassName" : null,
     "skipInterfaceAdditions" : false,
     "customServiceNameForRequest" : null,
@@ -28090,5 +28090,5 @@
     "version" : "1.0",
     "operationExamples" : { }
   },
-  "defaultClientConfiguration" : "com.amazonaws.PredefinedClientConfigurations.defaultConfig()"
+  "clientConfigFactory" : "ClientConfigurationFactory"
 }

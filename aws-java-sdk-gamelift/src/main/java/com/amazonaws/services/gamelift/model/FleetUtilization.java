@@ -62,6 +62,7 @@ public class FleetUtilization implements Serializable, Cloneable {
      * @param fleetId
      *        Unique identifier for a fleet.
      */
+
     public void setFleetId(String fleetId) {
         this.fleetId = fleetId;
     }
@@ -73,6 +74,7 @@ public class FleetUtilization implements Serializable, Cloneable {
      * 
      * @return Unique identifier for a fleet.
      */
+
     public String getFleetId() {
         return this.fleetId;
     }
@@ -87,6 +89,7 @@ public class FleetUtilization implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FleetUtilization withFleetId(String fleetId) {
         setFleetId(fleetId);
         return this;
@@ -102,6 +105,7 @@ public class FleetUtilization implements Serializable, Cloneable {
      *        Number of active game sessions currently being hosted on fleet
      *        game servers.
      */
+
     public void setActiveGameSessionCount(Integer activeGameSessionCount) {
         this.activeGameSessionCount = activeGameSessionCount;
     }
@@ -115,6 +119,7 @@ public class FleetUtilization implements Serializable, Cloneable {
      * @return Number of active game sessions currently being hosted on fleet
      *         game servers.
      */
+
     public Integer getActiveGameSessionCount() {
         return this.activeGameSessionCount;
     }
@@ -131,6 +136,7 @@ public class FleetUtilization implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FleetUtilization withActiveGameSessionCount(
             Integer activeGameSessionCount) {
         setActiveGameSessionCount(activeGameSessionCount);
@@ -147,6 +153,7 @@ public class FleetUtilization implements Serializable, Cloneable {
      *        Number of active player sessions currently being hosted on fleet
      *        game servers.
      */
+
     public void setCurrentPlayerSessionCount(Integer currentPlayerSessionCount) {
         this.currentPlayerSessionCount = currentPlayerSessionCount;
     }
@@ -160,6 +167,7 @@ public class FleetUtilization implements Serializable, Cloneable {
      * @return Number of active player sessions currently being hosted on fleet
      *         game servers.
      */
+
     public Integer getCurrentPlayerSessionCount() {
         return this.currentPlayerSessionCount;
     }
@@ -176,6 +184,7 @@ public class FleetUtilization implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FleetUtilization withCurrentPlayerSessionCount(
             Integer currentPlayerSessionCount) {
         setCurrentPlayerSessionCount(currentPlayerSessionCount);
@@ -192,6 +201,7 @@ public class FleetUtilization implements Serializable, Cloneable {
      *        Maximum players allowed across all game sessions currently hosted
      *        in the fleet.
      */
+
     public void setMaximumPlayerSessionCount(Integer maximumPlayerSessionCount) {
         this.maximumPlayerSessionCount = maximumPlayerSessionCount;
     }
@@ -205,6 +215,7 @@ public class FleetUtilization implements Serializable, Cloneable {
      * @return Maximum players allowed across all game sessions currently hosted
      *         in the fleet.
      */
+
     public Integer getMaximumPlayerSessionCount() {
         return this.maximumPlayerSessionCount;
     }
@@ -221,6 +232,7 @@ public class FleetUtilization implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FleetUtilization withMaximumPlayerSessionCount(
             Integer maximumPlayerSessionCount) {
         setMaximumPlayerSessionCount(maximumPlayerSessionCount);

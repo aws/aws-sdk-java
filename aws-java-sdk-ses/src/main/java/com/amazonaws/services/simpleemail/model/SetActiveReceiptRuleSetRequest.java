@@ -43,6 +43,7 @@ public class SetActiveReceiptRuleSetRequest extends AmazonWebServiceRequest
      *        The name of the receipt rule set to make active. Setting this
      *        value to null disables all email receiving.
      */
+
     public void setRuleSetName(String ruleSetName) {
         this.ruleSetName = ruleSetName;
     }
@@ -56,6 +57,7 @@ public class SetActiveReceiptRuleSetRequest extends AmazonWebServiceRequest
      * @return The name of the receipt rule set to make active. Setting this
      *         value to null disables all email receiving.
      */
+
     public String getRuleSetName() {
         return this.ruleSetName;
     }
@@ -72,6 +74,7 @@ public class SetActiveReceiptRuleSetRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetActiveReceiptRuleSetRequest withRuleSetName(String ruleSetName) {
         setRuleSetName(ruleSetName);
         return this;

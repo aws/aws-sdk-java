@@ -47,6 +47,7 @@ public class Bucket implements Serializable, Cloneable {
      * @param value
      *        The facet value being counted.
      */
+
     public void setValue(String value) {
         this.value = value;
     }
@@ -58,6 +59,7 @@ public class Bucket implements Serializable, Cloneable {
      * 
      * @return The facet value being counted.
      */
+
     public String getValue() {
         return this.value;
     }
@@ -72,6 +74,7 @@ public class Bucket implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Bucket withValue(String value) {
         setValue(value);
         return this;
@@ -87,6 +90,7 @@ public class Bucket implements Serializable, Cloneable {
      *        The number of hits that contain the facet value in the specified
      *        facet field.
      */
+
     public void setCount(Long count) {
         this.count = count;
     }
@@ -100,6 +104,7 @@ public class Bucket implements Serializable, Cloneable {
      * @return The number of hits that contain the facet value in the specified
      *         facet field.
      */
+
     public Long getCount() {
         return this.count;
     }
@@ -116,6 +121,7 @@ public class Bucket implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Bucket withCount(Long count) {
         setCount(count);
         return this;

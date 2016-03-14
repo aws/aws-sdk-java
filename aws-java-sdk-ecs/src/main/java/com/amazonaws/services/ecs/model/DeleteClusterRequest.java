@@ -43,6 +43,7 @@ public class DeleteClusterRequest extends AmazonWebServiceRequest implements
      *        The short name or full Amazon Resource Name (ARN) of the cluster
      *        to delete.
      */
+
     public void setCluster(String cluster) {
         this.cluster = cluster;
     }
@@ -56,6 +57,7 @@ public class DeleteClusterRequest extends AmazonWebServiceRequest implements
      * @return The short name or full Amazon Resource Name (ARN) of the cluster
      *         to delete.
      */
+
     public String getCluster() {
         return this.cluster;
     }
@@ -72,6 +74,7 @@ public class DeleteClusterRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteClusterRequest withCluster(String cluster) {
         setCluster(cluster);
         return this;

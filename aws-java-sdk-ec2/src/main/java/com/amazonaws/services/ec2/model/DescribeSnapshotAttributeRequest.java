@@ -88,6 +88,7 @@ public class DescribeSnapshotAttributeRequest extends AmazonWebServiceRequest
      * @param snapshotId
      *        The ID of the EBS snapshot.
      */
+
     public void setSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
     }
@@ -99,6 +100,7 @@ public class DescribeSnapshotAttributeRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the EBS snapshot.
      */
+
     public String getSnapshotId() {
         return this.snapshotId;
     }
@@ -113,6 +115,7 @@ public class DescribeSnapshotAttributeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSnapshotAttributeRequest withSnapshotId(String snapshotId) {
         setSnapshotId(snapshotId);
         return this;
@@ -127,6 +130,7 @@ public class DescribeSnapshotAttributeRequest extends AmazonWebServiceRequest
      *        The snapshot attribute you would like to view.
      * @see SnapshotAttributeName
      */
+
     public void setAttribute(String attribute) {
         this.attribute = attribute;
     }
@@ -139,6 +143,7 @@ public class DescribeSnapshotAttributeRequest extends AmazonWebServiceRequest
      * @return The snapshot attribute you would like to view.
      * @see SnapshotAttributeName
      */
+
     public String getAttribute() {
         return this.attribute;
     }
@@ -154,6 +159,7 @@ public class DescribeSnapshotAttributeRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see SnapshotAttributeName
      */
+
     public DescribeSnapshotAttributeRequest withAttribute(String attribute) {
         setAttribute(attribute);
         return this;
@@ -170,6 +176,7 @@ public class DescribeSnapshotAttributeRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see SnapshotAttributeName
      */
+
     public void setAttribute(SnapshotAttributeName attribute) {
         this.attribute = attribute.toString();
     }
@@ -185,6 +192,7 @@ public class DescribeSnapshotAttributeRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see SnapshotAttributeName
      */
+
     public DescribeSnapshotAttributeRequest withAttribute(
             SnapshotAttributeName attribute) {
         setAttribute(attribute);

@@ -60,6 +60,7 @@ public class DeleteAccountAliasRequest extends AmazonWebServiceRequest
      * @param accountAlias
      *        The name of the account alias to delete.
      */
+
     public void setAccountAlias(String accountAlias) {
         this.accountAlias = accountAlias;
     }
@@ -71,6 +72,7 @@ public class DeleteAccountAliasRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the account alias to delete.
      */
+
     public String getAccountAlias() {
         return this.accountAlias;
     }
@@ -85,6 +87,7 @@ public class DeleteAccountAliasRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteAccountAliasRequest withAccountAlias(String accountAlias) {
         setAccountAlias(accountAlias);
         return this;

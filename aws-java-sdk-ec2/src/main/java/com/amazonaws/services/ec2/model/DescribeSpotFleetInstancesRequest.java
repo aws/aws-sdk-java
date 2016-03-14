@@ -60,6 +60,7 @@ public class DescribeSpotFleetInstancesRequest extends AmazonWebServiceRequest
      * @param spotFleetRequestId
      *        The ID of the Spot fleet request.
      */
+
     public void setSpotFleetRequestId(String spotFleetRequestId) {
         this.spotFleetRequestId = spotFleetRequestId;
     }
@@ -71,6 +72,7 @@ public class DescribeSpotFleetInstancesRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the Spot fleet request.
      */
+
     public String getSpotFleetRequestId() {
         return this.spotFleetRequestId;
     }
@@ -85,6 +87,7 @@ public class DescribeSpotFleetInstancesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSpotFleetInstancesRequest withSpotFleetRequestId(
             String spotFleetRequestId) {
         setSpotFleetRequestId(spotFleetRequestId);
@@ -99,6 +102,7 @@ public class DescribeSpotFleetInstancesRequest extends AmazonWebServiceRequest
      * @param nextToken
      *        The token for the next set of results.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -110,6 +114,7 @@ public class DescribeSpotFleetInstancesRequest extends AmazonWebServiceRequest
      * 
      * @return The token for the next set of results.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -124,6 +129,7 @@ public class DescribeSpotFleetInstancesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSpotFleetInstancesRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -143,6 +149,7 @@ public class DescribeSpotFleetInstancesRequest extends AmazonWebServiceRequest
      *        the remaining results, make another call with the returned
      *        <code>NextToken</code> value.
      */
+
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
     }
@@ -160,6 +167,7 @@ public class DescribeSpotFleetInstancesRequest extends AmazonWebServiceRequest
      *         retrieve the remaining results, make another call with the
      *         returned <code>NextToken</code> value.
      */
+
     public Integer getMaxResults() {
         return this.maxResults;
     }
@@ -180,6 +188,7 @@ public class DescribeSpotFleetInstancesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSpotFleetInstancesRequest withMaxResults(Integer maxResults) {
         setMaxResults(maxResults);
         return this;

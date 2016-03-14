@@ -43,6 +43,7 @@ public class GetHealthCheckStatusResult implements Serializable, Cloneable {
      * @return A list that contains one <code>HealthCheckObservation</code>
      *         element for each Amazon Route 53 health checker.
      */
+
     public java.util.List<HealthCheckObservation> getHealthCheckObservations() {
         if (healthCheckObservations == null) {
             healthCheckObservations = new com.amazonaws.internal.SdkInternalList<HealthCheckObservation>();
@@ -60,6 +61,7 @@ public class GetHealthCheckStatusResult implements Serializable, Cloneable {
      *        A list that contains one <code>HealthCheckObservation</code>
      *        element for each Amazon Route 53 health checker.
      */
+
     public void setHealthCheckObservations(
             java.util.Collection<HealthCheckObservation> healthCheckObservations) {
         if (healthCheckObservations == null) {
@@ -89,6 +91,7 @@ public class GetHealthCheckStatusResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetHealthCheckStatusResult withHealthCheckObservations(
             HealthCheckObservation... healthCheckObservations) {
         if (this.healthCheckObservations == null) {
@@ -113,6 +116,7 @@ public class GetHealthCheckStatusResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetHealthCheckStatusResult withHealthCheckObservations(
             java.util.Collection<HealthCheckObservation> healthCheckObservations) {
         setHealthCheckObservations(healthCheckObservations);

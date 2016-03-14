@@ -40,6 +40,7 @@ public class Disk implements Serializable, Cloneable {
     /**
      * @param diskId
      */
+
     public void setDiskId(String diskId) {
         this.diskId = diskId;
     }
@@ -47,6 +48,7 @@ public class Disk implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getDiskId() {
         return this.diskId;
     }
@@ -56,6 +58,7 @@ public class Disk implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Disk withDiskId(String diskId) {
         setDiskId(diskId);
         return this;
@@ -64,6 +67,7 @@ public class Disk implements Serializable, Cloneable {
     /**
      * @param diskPath
      */
+
     public void setDiskPath(String diskPath) {
         this.diskPath = diskPath;
     }
@@ -71,6 +75,7 @@ public class Disk implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getDiskPath() {
         return this.diskPath;
     }
@@ -80,6 +85,7 @@ public class Disk implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Disk withDiskPath(String diskPath) {
         setDiskPath(diskPath);
         return this;
@@ -88,6 +94,7 @@ public class Disk implements Serializable, Cloneable {
     /**
      * @param diskNode
      */
+
     public void setDiskNode(String diskNode) {
         this.diskNode = diskNode;
     }
@@ -95,6 +102,7 @@ public class Disk implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getDiskNode() {
         return this.diskNode;
     }
@@ -104,6 +112,7 @@ public class Disk implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Disk withDiskNode(String diskNode) {
         setDiskNode(diskNode);
         return this;
@@ -112,6 +121,7 @@ public class Disk implements Serializable, Cloneable {
     /**
      * @param diskStatus
      */
+
     public void setDiskStatus(String diskStatus) {
         this.diskStatus = diskStatus;
     }
@@ -119,6 +129,7 @@ public class Disk implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getDiskStatus() {
         return this.diskStatus;
     }
@@ -128,6 +139,7 @@ public class Disk implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Disk withDiskStatus(String diskStatus) {
         setDiskStatus(diskStatus);
         return this;
@@ -136,6 +148,7 @@ public class Disk implements Serializable, Cloneable {
     /**
      * @param diskSizeInBytes
      */
+
     public void setDiskSizeInBytes(Long diskSizeInBytes) {
         this.diskSizeInBytes = diskSizeInBytes;
     }
@@ -143,6 +156,7 @@ public class Disk implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Long getDiskSizeInBytes() {
         return this.diskSizeInBytes;
     }
@@ -152,6 +166,7 @@ public class Disk implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Disk withDiskSizeInBytes(Long diskSizeInBytes) {
         setDiskSizeInBytes(diskSizeInBytes);
         return this;
@@ -160,6 +175,7 @@ public class Disk implements Serializable, Cloneable {
     /**
      * @param diskAllocationType
      */
+
     public void setDiskAllocationType(String diskAllocationType) {
         this.diskAllocationType = diskAllocationType;
     }
@@ -167,6 +183,7 @@ public class Disk implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getDiskAllocationType() {
         return this.diskAllocationType;
     }
@@ -176,6 +193,7 @@ public class Disk implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Disk withDiskAllocationType(String diskAllocationType) {
         setDiskAllocationType(diskAllocationType);
         return this;
@@ -184,6 +202,7 @@ public class Disk implements Serializable, Cloneable {
     /**
      * @param diskAllocationResource
      */
+
     public void setDiskAllocationResource(String diskAllocationResource) {
         this.diskAllocationResource = diskAllocationResource;
     }
@@ -191,6 +210,7 @@ public class Disk implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getDiskAllocationResource() {
         return this.diskAllocationResource;
     }
@@ -200,6 +220,7 @@ public class Disk implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Disk withDiskAllocationResource(String diskAllocationResource) {
         setDiskAllocationResource(diskAllocationResource);
         return this;

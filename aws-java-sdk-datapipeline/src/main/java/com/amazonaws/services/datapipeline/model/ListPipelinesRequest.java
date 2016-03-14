@@ -52,6 +52,7 @@ public class ListPipelinesRequest extends AmazonWebServiceRequest implements
      *        marker value from the previous call to retrieve the next set of
      *        results.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -70,6 +71,7 @@ public class ListPipelinesRequest extends AmazonWebServiceRequest implements
      *         marker value from the previous call to retrieve the next set of
      *         results.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -91,6 +93,7 @@ public class ListPipelinesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListPipelinesRequest withMarker(String marker) {
         setMarker(marker);
         return this;

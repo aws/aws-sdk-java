@@ -40,6 +40,7 @@ public class DescribeInstancesResult implements Serializable, Cloneable {
      * @return An array of <code>Instance</code> objects that describe the
      *         instances.
      */
+
     public java.util.List<Instance> getInstances() {
         if (instances == null) {
             instances = new com.amazonaws.internal.SdkInternalList<Instance>();
@@ -56,6 +57,7 @@ public class DescribeInstancesResult implements Serializable, Cloneable {
      *        An array of <code>Instance</code> objects that describe the
      *        instances.
      */
+
     public void setInstances(java.util.Collection<Instance> instances) {
         if (instances == null) {
             this.instances = null;
@@ -83,6 +85,7 @@ public class DescribeInstancesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeInstancesResult withInstances(Instance... instances) {
         if (this.instances == null) {
             setInstances(new com.amazonaws.internal.SdkInternalList<Instance>(
@@ -105,6 +108,7 @@ public class DescribeInstancesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeInstancesResult withInstances(
             java.util.Collection<Instance> instances) {
         setInstances(instances);

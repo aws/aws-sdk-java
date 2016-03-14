@@ -58,6 +58,7 @@ public class GetBasePathMappingsRequest extends AmazonWebServiceRequest
      * @param domainName
      *        The domain name of a <a>BasePathMapping</a> resource.
      */
+
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
@@ -69,6 +70,7 @@ public class GetBasePathMappingsRequest extends AmazonWebServiceRequest
      * 
      * @return The domain name of a <a>BasePathMapping</a> resource.
      */
+
     public String getDomainName() {
         return this.domainName;
     }
@@ -83,6 +85,7 @@ public class GetBasePathMappingsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetBasePathMappingsRequest withDomainName(String domainName) {
         setDomainName(domainName);
         return this;
@@ -98,6 +101,7 @@ public class GetBasePathMappingsRequest extends AmazonWebServiceRequest
      *        The position of the current <a>BasePathMapping</a> resource in the
      *        collection to get information about.
      */
+
     public void setPosition(String position) {
         this.position = position;
     }
@@ -111,6 +115,7 @@ public class GetBasePathMappingsRequest extends AmazonWebServiceRequest
      * @return The position of the current <a>BasePathMapping</a> resource in
      *         the collection to get information about.
      */
+
     public String getPosition() {
         return this.position;
     }
@@ -127,6 +132,7 @@ public class GetBasePathMappingsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetBasePathMappingsRequest withPosition(String position) {
         setPosition(position);
         return this;
@@ -144,6 +150,7 @@ public class GetBasePathMappingsRequest extends AmazonWebServiceRequest
      *        collection to get information about. The default limit is 25. It
      *        should be an integer between 1 - 500.
      */
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -159,6 +166,7 @@ public class GetBasePathMappingsRequest extends AmazonWebServiceRequest
      *         collection to get information about. The default limit is 25. It
      *         should be an integer between 1 - 500.
      */
+
     public Integer getLimit() {
         return this.limit;
     }
@@ -177,6 +185,7 @@ public class GetBasePathMappingsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetBasePathMappingsRequest withLimit(Integer limit) {
         setLimit(limit);
         return this;

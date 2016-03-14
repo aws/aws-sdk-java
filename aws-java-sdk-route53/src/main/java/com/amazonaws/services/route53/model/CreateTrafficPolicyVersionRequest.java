@@ -59,6 +59,7 @@ public class CreateTrafficPolicyVersionRequest extends AmazonWebServiceRequest
      *        The ID of the traffic policy for which you want to create a new
      *        version.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -71,6 +72,7 @@ public class CreateTrafficPolicyVersionRequest extends AmazonWebServiceRequest
      * @return The ID of the traffic policy for which you want to create a new
      *         version.
      */
+
     public String getId() {
         return this.id;
     }
@@ -86,6 +88,7 @@ public class CreateTrafficPolicyVersionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateTrafficPolicyVersionRequest withId(String id) {
         setId(id);
         return this;
@@ -104,6 +107,7 @@ public class CreateTrafficPolicyVersionRequest extends AmazonWebServiceRequest
      *        You cannot specify just the differences between the new version
      *        and a previous version.
      */
+
     public void setDocument(String document) {
         this.document = document;
     }
@@ -120,6 +124,7 @@ public class CreateTrafficPolicyVersionRequest extends AmazonWebServiceRequest
      *         You cannot specify just the differences between the new version
      *         and a previous version.
      */
+
     public String getDocument() {
         return this.document;
     }
@@ -139,6 +144,7 @@ public class CreateTrafficPolicyVersionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateTrafficPolicyVersionRequest withDocument(String document) {
         setDocument(document);
         return this;
@@ -154,6 +160,7 @@ public class CreateTrafficPolicyVersionRequest extends AmazonWebServiceRequest
      *        Any comments that you want to include about the new traffic policy
      *        version.
      */
+
     public void setComment(String comment) {
         this.comment = comment;
     }
@@ -167,6 +174,7 @@ public class CreateTrafficPolicyVersionRequest extends AmazonWebServiceRequest
      * @return Any comments that you want to include about the new traffic
      *         policy version.
      */
+
     public String getComment() {
         return this.comment;
     }
@@ -183,6 +191,7 @@ public class CreateTrafficPolicyVersionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateTrafficPolicyVersionRequest withComment(String comment) {
         setComment(comment);
         return this;

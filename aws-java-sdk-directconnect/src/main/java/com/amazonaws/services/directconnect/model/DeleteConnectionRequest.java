@@ -32,6 +32,7 @@ public class DeleteConnectionRequest extends AmazonWebServiceRequest implements
     /**
      * @param connectionId
      */
+
     public void setConnectionId(String connectionId) {
         this.connectionId = connectionId;
     }
@@ -39,6 +40,7 @@ public class DeleteConnectionRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public String getConnectionId() {
         return this.connectionId;
     }
@@ -48,6 +50,7 @@ public class DeleteConnectionRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteConnectionRequest withConnectionId(String connectionId) {
         setConnectionId(connectionId);
         return this;

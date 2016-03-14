@@ -54,6 +54,7 @@ public class SuggestRequest extends AmazonWebServiceRequest implements
      * @param query
      *        Specifies the string for which you want to get suggestions.
      */
+
     public void setQuery(String query) {
         this.query = query;
     }
@@ -65,6 +66,7 @@ public class SuggestRequest extends AmazonWebServiceRequest implements
      * 
      * @return Specifies the string for which you want to get suggestions.
      */
+
     public String getQuery() {
         return this.query;
     }
@@ -79,6 +81,7 @@ public class SuggestRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SuggestRequest withQuery(String query) {
         setQuery(query);
         return this;
@@ -93,6 +96,7 @@ public class SuggestRequest extends AmazonWebServiceRequest implements
      *        Specifies the name of the suggester to use to find suggested
      *        matches.
      */
+
     public void setSuggester(String suggester) {
         this.suggester = suggester;
     }
@@ -105,6 +109,7 @@ public class SuggestRequest extends AmazonWebServiceRequest implements
      * @return Specifies the name of the suggester to use to find suggested
      *         matches.
      */
+
     public String getSuggester() {
         return this.suggester;
     }
@@ -120,6 +125,7 @@ public class SuggestRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SuggestRequest withSuggester(String suggester) {
         setSuggester(suggester);
         return this;
@@ -133,6 +139,7 @@ public class SuggestRequest extends AmazonWebServiceRequest implements
      * @param size
      *        Specifies the maximum number of suggestions to return.
      */
+
     public void setSize(Long size) {
         this.size = size;
     }
@@ -144,6 +151,7 @@ public class SuggestRequest extends AmazonWebServiceRequest implements
      * 
      * @return Specifies the maximum number of suggestions to return.
      */
+
     public Long getSize() {
         return this.size;
     }
@@ -158,6 +166,7 @@ public class SuggestRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SuggestRequest withSize(Long size) {
         setSize(size);
         return this;

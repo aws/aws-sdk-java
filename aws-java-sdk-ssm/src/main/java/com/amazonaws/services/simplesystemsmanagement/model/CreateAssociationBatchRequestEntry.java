@@ -37,6 +37,7 @@ public class CreateAssociationBatchRequestEntry implements Serializable,
      * @param name
      *        The name of the configuration document.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -46,6 +47,7 @@ public class CreateAssociationBatchRequestEntry implements Serializable,
      * 
      * @return The name of the configuration document.
      */
+
     public String getName() {
         return this.name;
     }
@@ -58,6 +60,7 @@ public class CreateAssociationBatchRequestEntry implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateAssociationBatchRequestEntry withName(String name) {
         setName(name);
         return this;
@@ -69,6 +72,7 @@ public class CreateAssociationBatchRequestEntry implements Serializable,
      * @param instanceId
      *        The ID of the instance.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -78,6 +82,7 @@ public class CreateAssociationBatchRequestEntry implements Serializable,
      * 
      * @return The ID of the instance.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
@@ -90,6 +95,7 @@ public class CreateAssociationBatchRequestEntry implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateAssociationBatchRequestEntry withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;
@@ -100,6 +106,7 @@ public class CreateAssociationBatchRequestEntry implements Serializable,
      * 
      * @return A description of the parameters for a document.
      */
+
     public java.util.Map<String, java.util.List<String>> getParameters() {
         return parameters;
     }
@@ -110,6 +117,7 @@ public class CreateAssociationBatchRequestEntry implements Serializable,
      * @param parameters
      *        A description of the parameters for a document.
      */
+
     public void setParameters(
             java.util.Map<String, java.util.List<String>> parameters) {
         this.parameters = parameters;
@@ -123,6 +131,7 @@ public class CreateAssociationBatchRequestEntry implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateAssociationBatchRequestEntry withParameters(
             java.util.Map<String, java.util.List<String>> parameters) {
         setParameters(parameters);
@@ -145,6 +154,7 @@ public class CreateAssociationBatchRequestEntry implements Serializable,
      * Removes all the entries added into Parameters. &lt;p> Returns a reference
      * to this object so that method calls can be chained together.
      */
+
     public CreateAssociationBatchRequestEntry clearParametersEntries() {
         this.parameters = null;
         return this;

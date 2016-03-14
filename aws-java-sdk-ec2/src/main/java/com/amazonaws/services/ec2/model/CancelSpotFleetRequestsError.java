@@ -47,6 +47,7 @@ public class CancelSpotFleetRequestsError implements Serializable, Cloneable {
      *        The error code.
      * @see CancelBatchErrorCode
      */
+
     public void setCode(String code) {
         this.code = code;
     }
@@ -59,6 +60,7 @@ public class CancelSpotFleetRequestsError implements Serializable, Cloneable {
      * @return The error code.
      * @see CancelBatchErrorCode
      */
+
     public String getCode() {
         return this.code;
     }
@@ -74,6 +76,7 @@ public class CancelSpotFleetRequestsError implements Serializable, Cloneable {
      *         chained together.
      * @see CancelBatchErrorCode
      */
+
     public CancelSpotFleetRequestsError withCode(String code) {
         setCode(code);
         return this;
@@ -90,6 +93,7 @@ public class CancelSpotFleetRequestsError implements Serializable, Cloneable {
      *         chained together.
      * @see CancelBatchErrorCode
      */
+
     public void setCode(CancelBatchErrorCode code) {
         this.code = code.toString();
     }
@@ -105,6 +109,7 @@ public class CancelSpotFleetRequestsError implements Serializable, Cloneable {
      *         chained together.
      * @see CancelBatchErrorCode
      */
+
     public CancelSpotFleetRequestsError withCode(CancelBatchErrorCode code) {
         setCode(code);
         return this;
@@ -118,6 +123,7 @@ public class CancelSpotFleetRequestsError implements Serializable, Cloneable {
      * @param message
      *        The description for the error code.
      */
+
     public void setMessage(String message) {
         this.message = message;
     }
@@ -129,6 +135,7 @@ public class CancelSpotFleetRequestsError implements Serializable, Cloneable {
      * 
      * @return The description for the error code.
      */
+
     public String getMessage() {
         return this.message;
     }
@@ -143,6 +150,7 @@ public class CancelSpotFleetRequestsError implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CancelSpotFleetRequestsError withMessage(String message) {
         setMessage(message);
         return this;

@@ -88,6 +88,7 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest
      * @param subnetId
      *        The ID of the subnet to associate with the network interface.
      */
+
     public void setSubnetId(String subnetId) {
         this.subnetId = subnetId;
     }
@@ -99,6 +100,7 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the subnet to associate with the network interface.
      */
+
     public String getSubnetId() {
         return this.subnetId;
     }
@@ -113,6 +115,7 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateNetworkInterfaceRequest withSubnetId(String subnetId) {
         setSubnetId(subnetId);
         return this;
@@ -126,6 +129,7 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest
      * @param description
      *        A description for the network interface.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -137,6 +141,7 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest
      * 
      * @return A description for the network interface.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -151,6 +156,7 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateNetworkInterfaceRequest withDescription(String description) {
         setDescription(description);
         return this;
@@ -173,6 +179,7 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest
      *        <code>privateIpAddresses</code> as primary (only one IP address
      *        can be designated as primary).
      */
+
     public void setPrivateIpAddress(String privateIpAddress) {
         this.privateIpAddress = privateIpAddress;
     }
@@ -193,6 +200,7 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest
      *         <code>privateIpAddresses</code> as primary (only one IP address
      *         can be designated as primary).
      */
+
     public String getPrivateIpAddress() {
         return this.privateIpAddress;
     }
@@ -216,6 +224,7 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateNetworkInterfaceRequest withPrivateIpAddress(
             String privateIpAddress) {
         setPrivateIpAddress(privateIpAddress);
@@ -229,6 +238,7 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest
      * 
      * @return The IDs of one or more security groups.
      */
+
     public java.util.List<String> getGroups() {
         if (groups == null) {
             groups = new com.amazonaws.internal.SdkInternalList<String>();
@@ -244,6 +254,7 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest
      * @param groups
      *        The IDs of one or more security groups.
      */
+
     public void setGroups(java.util.Collection<String> groups) {
         if (groups == null) {
             this.groups = null;
@@ -269,6 +280,7 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateNetworkInterfaceRequest withGroups(String... groups) {
         if (this.groups == null) {
             setGroups(new com.amazonaws.internal.SdkInternalList<String>(
@@ -290,6 +302,7 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateNetworkInterfaceRequest withGroups(
             java.util.Collection<String> groups) {
         setGroups(groups);
@@ -303,6 +316,7 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest
      * 
      * @return One or more private IP addresses.
      */
+
     public java.util.List<PrivateIpAddressSpecification> getPrivateIpAddresses() {
         if (privateIpAddresses == null) {
             privateIpAddresses = new com.amazonaws.internal.SdkInternalList<PrivateIpAddressSpecification>();
@@ -318,6 +332,7 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest
      * @param privateIpAddresses
      *        One or more private IP addresses.
      */
+
     public void setPrivateIpAddresses(
             java.util.Collection<PrivateIpAddressSpecification> privateIpAddresses) {
         if (privateIpAddresses == null) {
@@ -345,6 +360,7 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateNetworkInterfaceRequest withPrivateIpAddresses(
             PrivateIpAddressSpecification... privateIpAddresses) {
         if (this.privateIpAddresses == null) {
@@ -367,6 +383,7 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateNetworkInterfaceRequest withPrivateIpAddresses(
             java.util.Collection<PrivateIpAddressSpecification> privateIpAddresses) {
         setPrivateIpAddresses(privateIpAddresses);
@@ -402,6 +419,7 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest
      *        >Private IP Addresses Per ENI Per Instance Type</a> in the
      *        <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
+
     public void setSecondaryPrivateIpAddressCount(
             Integer secondaryPrivateIpAddressCount) {
         this.secondaryPrivateIpAddressCount = secondaryPrivateIpAddressCount;
@@ -435,6 +453,7 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest
      *         >Private IP Addresses Per ENI Per Instance Type</a> in the
      *         <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
+
     public Integer getSecondaryPrivateIpAddressCount() {
         return this.secondaryPrivateIpAddressCount;
     }
@@ -470,6 +489,7 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateNetworkInterfaceRequest withSecondaryPrivateIpAddressCount(
             Integer secondaryPrivateIpAddressCount) {
         setSecondaryPrivateIpAddressCount(secondaryPrivateIpAddressCount);

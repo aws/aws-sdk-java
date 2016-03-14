@@ -206,6 +206,23 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
     private String newClusterIdentifier;
 
     /**
+     * If <code>true</code>, the cluster can be accessed from a public
+     * network. Only clusters in VPCs can be set to be publicly available.
+     */
+    private Boolean publiclyAccessible;
+
+    /**
+     * The Elastic IP (EIP) address for the cluster. <p>Constraints: The
+     * cluster must be provisioned in EC2-VPC and publicly-accessible through
+     * an Internet gateway. For more information about provisioning clusters
+     * in EC2-VPC, go to <a
+     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
+     * Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster
+     * Management Guide.
+     */
+    private String elasticIp;
+
+    /**
      * The unique identifier of the cluster to be modified. <p>Example:
      * <code>examplecluster</code>
      *
@@ -1336,6 +1353,125 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
     }
 
     /**
+     * If <code>true</code>, the cluster can be accessed from a public
+     * network. Only clusters in VPCs can be set to be publicly available.
+     *
+     * @return If <code>true</code>, the cluster can be accessed from a public
+     *         network. Only clusters in VPCs can be set to be publicly available.
+     */
+    public Boolean isPubliclyAccessible() {
+        return publiclyAccessible;
+    }
+    
+    /**
+     * If <code>true</code>, the cluster can be accessed from a public
+     * network. Only clusters in VPCs can be set to be publicly available.
+     *
+     * @param publiclyAccessible If <code>true</code>, the cluster can be accessed from a public
+     *         network. Only clusters in VPCs can be set to be publicly available.
+     */
+    public void setPubliclyAccessible(Boolean publiclyAccessible) {
+        this.publiclyAccessible = publiclyAccessible;
+    }
+    
+    /**
+     * If <code>true</code>, the cluster can be accessed from a public
+     * network. Only clusters in VPCs can be set to be publicly available.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param publiclyAccessible If <code>true</code>, the cluster can be accessed from a public
+     *         network. Only clusters in VPCs can be set to be publicly available.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public ModifyClusterRequest withPubliclyAccessible(Boolean publiclyAccessible) {
+        this.publiclyAccessible = publiclyAccessible;
+        return this;
+    }
+
+    /**
+     * If <code>true</code>, the cluster can be accessed from a public
+     * network. Only clusters in VPCs can be set to be publicly available.
+     *
+     * @return If <code>true</code>, the cluster can be accessed from a public
+     *         network. Only clusters in VPCs can be set to be publicly available.
+     */
+    public Boolean getPubliclyAccessible() {
+        return publiclyAccessible;
+    }
+
+    /**
+     * The Elastic IP (EIP) address for the cluster. <p>Constraints: The
+     * cluster must be provisioned in EC2-VPC and publicly-accessible through
+     * an Internet gateway. For more information about provisioning clusters
+     * in EC2-VPC, go to <a
+     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
+     * Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster
+     * Management Guide.
+     *
+     * @return The Elastic IP (EIP) address for the cluster. <p>Constraints: The
+     *         cluster must be provisioned in EC2-VPC and publicly-accessible through
+     *         an Internet gateway. For more information about provisioning clusters
+     *         in EC2-VPC, go to <a
+     *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
+     *         Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster
+     *         Management Guide.
+     */
+    public String getElasticIp() {
+        return elasticIp;
+    }
+    
+    /**
+     * The Elastic IP (EIP) address for the cluster. <p>Constraints: The
+     * cluster must be provisioned in EC2-VPC and publicly-accessible through
+     * an Internet gateway. For more information about provisioning clusters
+     * in EC2-VPC, go to <a
+     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
+     * Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster
+     * Management Guide.
+     *
+     * @param elasticIp The Elastic IP (EIP) address for the cluster. <p>Constraints: The
+     *         cluster must be provisioned in EC2-VPC and publicly-accessible through
+     *         an Internet gateway. For more information about provisioning clusters
+     *         in EC2-VPC, go to <a
+     *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
+     *         Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster
+     *         Management Guide.
+     */
+    public void setElasticIp(String elasticIp) {
+        this.elasticIp = elasticIp;
+    }
+    
+    /**
+     * The Elastic IP (EIP) address for the cluster. <p>Constraints: The
+     * cluster must be provisioned in EC2-VPC and publicly-accessible through
+     * an Internet gateway. For more information about provisioning clusters
+     * in EC2-VPC, go to <a
+     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
+     * Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster
+     * Management Guide.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param elasticIp The Elastic IP (EIP) address for the cluster. <p>Constraints: The
+     *         cluster must be provisioned in EC2-VPC and publicly-accessible through
+     *         an Internet gateway. For more information about provisioning clusters
+     *         in EC2-VPC, go to <a
+     *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
+     *         Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster
+     *         Management Guide.
+     *
+     * @return A reference to this updated object so that method calls can be chained
+     *         together.
+     */
+    public ModifyClusterRequest withElasticIp(String elasticIp) {
+        this.elasticIp = elasticIp;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1361,7 +1497,9 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
         if (isAllowVersionUpgrade() != null) sb.append("AllowVersionUpgrade: " + isAllowVersionUpgrade() + ",");
         if (getHsmClientCertificateIdentifier() != null) sb.append("HsmClientCertificateIdentifier: " + getHsmClientCertificateIdentifier() + ",");
         if (getHsmConfigurationIdentifier() != null) sb.append("HsmConfigurationIdentifier: " + getHsmConfigurationIdentifier() + ",");
-        if (getNewClusterIdentifier() != null) sb.append("NewClusterIdentifier: " + getNewClusterIdentifier() );
+        if (getNewClusterIdentifier() != null) sb.append("NewClusterIdentifier: " + getNewClusterIdentifier() + ",");
+        if (isPubliclyAccessible() != null) sb.append("PubliclyAccessible: " + isPubliclyAccessible() + ",");
+        if (getElasticIp() != null) sb.append("ElasticIp: " + getElasticIp() );
         sb.append("}");
         return sb.toString();
     }
@@ -1386,6 +1524,8 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
         hashCode = prime * hashCode + ((getHsmClientCertificateIdentifier() == null) ? 0 : getHsmClientCertificateIdentifier().hashCode()); 
         hashCode = prime * hashCode + ((getHsmConfigurationIdentifier() == null) ? 0 : getHsmConfigurationIdentifier().hashCode()); 
         hashCode = prime * hashCode + ((getNewClusterIdentifier() == null) ? 0 : getNewClusterIdentifier().hashCode()); 
+        hashCode = prime * hashCode + ((isPubliclyAccessible() == null) ? 0 : isPubliclyAccessible().hashCode()); 
+        hashCode = prime * hashCode + ((getElasticIp() == null) ? 0 : getElasticIp().hashCode()); 
         return hashCode;
     }
     
@@ -1427,6 +1567,10 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest implements Ser
         if (other.getHsmConfigurationIdentifier() != null && other.getHsmConfigurationIdentifier().equals(this.getHsmConfigurationIdentifier()) == false) return false; 
         if (other.getNewClusterIdentifier() == null ^ this.getNewClusterIdentifier() == null) return false;
         if (other.getNewClusterIdentifier() != null && other.getNewClusterIdentifier().equals(this.getNewClusterIdentifier()) == false) return false; 
+        if (other.isPubliclyAccessible() == null ^ this.isPubliclyAccessible() == null) return false;
+        if (other.isPubliclyAccessible() != null && other.isPubliclyAccessible().equals(this.isPubliclyAccessible()) == false) return false; 
+        if (other.getElasticIp() == null ^ this.getElasticIp() == null) return false;
+        if (other.getElasticIp() != null && other.getElasticIp().equals(this.getElasticIp()) == false) return false; 
         return true;
     }
     

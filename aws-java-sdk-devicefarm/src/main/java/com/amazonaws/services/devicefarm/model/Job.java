@@ -69,6 +69,26 @@ public class Job implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * APPIUM_PYTHON: The Appium Python type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * CALABASH: The Calabash type.
      * </p>
      * </li>
@@ -90,6 +110,11 @@ public class Job implements Serializable, Cloneable {
      * <li>
      * <p>
      * XCTEST: The XCode test type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_UI: The XCode UI test type.
      * </p>
      * </li>
      * </ul>
@@ -224,6 +249,7 @@ public class Job implements Serializable, Cloneable {
      * @param arn
      *        The job's ARN.
      */
+
     public void setArn(String arn) {
         this.arn = arn;
     }
@@ -235,6 +261,7 @@ public class Job implements Serializable, Cloneable {
      * 
      * @return The job's ARN.
      */
+
     public String getArn() {
         return this.arn;
     }
@@ -249,6 +276,7 @@ public class Job implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Job withArn(String arn) {
         setArn(arn);
         return this;
@@ -262,6 +290,7 @@ public class Job implements Serializable, Cloneable {
      * @param name
      *        The job's name.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -273,6 +302,7 @@ public class Job implements Serializable, Cloneable {
      * 
      * @return The job's name.
      */
+
     public String getName() {
         return this.name;
     }
@@ -287,6 +317,7 @@ public class Job implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Job withName(String name) {
         setName(name);
         return this;
@@ -324,6 +355,26 @@ public class Job implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * APPIUM_PYTHON: The Appium Python type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * CALABASH: The Calabash type.
      * </p>
      * </li>
@@ -345,6 +396,11 @@ public class Job implements Serializable, Cloneable {
      * <li>
      * <p>
      * XCTEST: The XCode test type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_UI: The XCode UI test type.
      * </p>
      * </li>
      * </ul>
@@ -379,6 +435,26 @@ public class Job implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
+     *        APPIUM_PYTHON: The Appium Python type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        CALABASH: The Calabash type.
      *        </p>
      *        </li>
@@ -402,8 +478,14 @@ public class Job implements Serializable, Cloneable {
      *        XCTEST: The XCode test type.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST_UI: The XCode UI test type.
+     *        </p>
+     *        </li>
      * @see TestType
      */
+
     public void setType(String type) {
         this.type = type;
     }
@@ -440,6 +522,26 @@ public class Job implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * APPIUM_PYTHON: The Appium Python type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * CALABASH: The Calabash type.
      * </p>
      * </li>
@@ -461,6 +563,11 @@ public class Job implements Serializable, Cloneable {
      * <li>
      * <p>
      * XCTEST: The XCode test type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_UI: The XCode UI test type.
      * </p>
      * </li>
      * </ul>
@@ -494,6 +601,26 @@ public class Job implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
+     *         APPIUM_PYTHON: The Appium Python type.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         CALABASH: The Calabash type.
      *         </p>
      *         </li>
@@ -517,8 +644,14 @@ public class Job implements Serializable, Cloneable {
      *         XCTEST: The XCode test type.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         XCTEST_UI: The XCode UI test type.
+     *         </p>
+     *         </li>
      * @see TestType
      */
+
     public String getType() {
         return this.type;
     }
@@ -555,6 +688,26 @@ public class Job implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * APPIUM_PYTHON: The Appium Python type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * CALABASH: The Calabash type.
      * </p>
      * </li>
@@ -576,6 +729,11 @@ public class Job implements Serializable, Cloneable {
      * <li>
      * <p>
      * XCTEST: The XCode test type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_UI: The XCode UI test type.
      * </p>
      * </li>
      * </ul>
@@ -610,6 +768,26 @@ public class Job implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
+     *        APPIUM_PYTHON: The Appium Python type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        CALABASH: The Calabash type.
      *        </p>
      *        </li>
@@ -633,10 +811,16 @@ public class Job implements Serializable, Cloneable {
      *        XCTEST: The XCode test type.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST_UI: The XCode UI test type.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see TestType
      */
+
     public Job withType(String type) {
         setType(type);
         return this;
@@ -674,6 +858,26 @@ public class Job implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * APPIUM_PYTHON: The Appium Python type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * CALABASH: The Calabash type.
      * </p>
      * </li>
@@ -695,6 +899,11 @@ public class Job implements Serializable, Cloneable {
      * <li>
      * <p>
      * XCTEST: The XCode test type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_UI: The XCode UI test type.
      * </p>
      * </li>
      * </ul>
@@ -729,6 +938,26 @@ public class Job implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
+     *        APPIUM_PYTHON: The Appium Python type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        CALABASH: The Calabash type.
      *        </p>
      *        </li>
@@ -752,10 +981,16 @@ public class Job implements Serializable, Cloneable {
      *        XCTEST: The XCode test type.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST_UI: The XCode UI test type.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see TestType
      */
+
     public void setType(TestType type) {
         this.type = type.toString();
     }
@@ -792,6 +1027,26 @@ public class Job implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * APPIUM_PYTHON: The Appium Python type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * CALABASH: The Calabash type.
      * </p>
      * </li>
@@ -813,6 +1068,11 @@ public class Job implements Serializable, Cloneable {
      * <li>
      * <p>
      * XCTEST: The XCode test type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_UI: The XCode UI test type.
      * </p>
      * </li>
      * </ul>
@@ -847,6 +1107,26 @@ public class Job implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
+     *        APPIUM_PYTHON: The Appium Python type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        CALABASH: The Calabash type.
      *        </p>
      *        </li>
@@ -870,10 +1150,16 @@ public class Job implements Serializable, Cloneable {
      *        XCTEST: The XCode test type.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST_UI: The XCode UI test type.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see TestType
      */
+
     public Job withType(TestType type) {
         setType(type);
         return this;
@@ -887,6 +1173,7 @@ public class Job implements Serializable, Cloneable {
      * @param created
      *        When the job was created.
      */
+
     public void setCreated(java.util.Date created) {
         this.created = created;
     }
@@ -898,6 +1185,7 @@ public class Job implements Serializable, Cloneable {
      * 
      * @return When the job was created.
      */
+
     public java.util.Date getCreated() {
         return this.created;
     }
@@ -912,6 +1200,7 @@ public class Job implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Job withCreated(java.util.Date created) {
         setCreated(created);
         return this;
@@ -985,6 +1274,7 @@ public class Job implements Serializable, Cloneable {
      *        </li>
      * @see ExecutionStatus
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -1056,6 +1346,7 @@ public class Job implements Serializable, Cloneable {
      *         </li>
      * @see ExecutionStatus
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -1130,6 +1421,7 @@ public class Job implements Serializable, Cloneable {
      *         chained together.
      * @see ExecutionStatus
      */
+
     public Job withStatus(String status) {
         setStatus(status);
         return this;
@@ -1205,6 +1497,7 @@ public class Job implements Serializable, Cloneable {
      *         chained together.
      * @see ExecutionStatus
      */
+
     public void setStatus(ExecutionStatus status) {
         this.status = status.toString();
     }
@@ -1279,6 +1572,7 @@ public class Job implements Serializable, Cloneable {
      *         chained together.
      * @see ExecutionStatus
      */
+
     public Job withStatus(ExecutionStatus status) {
         setStatus(status);
         return this;
@@ -1372,6 +1666,7 @@ public class Job implements Serializable, Cloneable {
      *        </li>
      * @see ExecutionResult
      */
+
     public void setResult(String result) {
         this.result = result;
     }
@@ -1463,6 +1758,7 @@ public class Job implements Serializable, Cloneable {
      *         </li>
      * @see ExecutionResult
      */
+
     public String getResult() {
         return this.result;
     }
@@ -1557,6 +1853,7 @@ public class Job implements Serializable, Cloneable {
      *         chained together.
      * @see ExecutionResult
      */
+
     public Job withResult(String result) {
         setResult(result);
         return this;
@@ -1652,6 +1949,7 @@ public class Job implements Serializable, Cloneable {
      *         chained together.
      * @see ExecutionResult
      */
+
     public void setResult(ExecutionResult result) {
         this.result = result.toString();
     }
@@ -1746,6 +2044,7 @@ public class Job implements Serializable, Cloneable {
      *         chained together.
      * @see ExecutionResult
      */
+
     public Job withResult(ExecutionResult result) {
         setResult(result);
         return this;
@@ -1759,6 +2058,7 @@ public class Job implements Serializable, Cloneable {
      * @param started
      *        The job's start time.
      */
+
     public void setStarted(java.util.Date started) {
         this.started = started;
     }
@@ -1770,6 +2070,7 @@ public class Job implements Serializable, Cloneable {
      * 
      * @return The job's start time.
      */
+
     public java.util.Date getStarted() {
         return this.started;
     }
@@ -1784,6 +2085,7 @@ public class Job implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Job withStarted(java.util.Date started) {
         setStarted(started);
         return this;
@@ -1797,6 +2099,7 @@ public class Job implements Serializable, Cloneable {
      * @param stopped
      *        The job's stop time.
      */
+
     public void setStopped(java.util.Date stopped) {
         this.stopped = stopped;
     }
@@ -1808,6 +2111,7 @@ public class Job implements Serializable, Cloneable {
      * 
      * @return The job's stop time.
      */
+
     public java.util.Date getStopped() {
         return this.stopped;
     }
@@ -1822,6 +2126,7 @@ public class Job implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Job withStopped(java.util.Date stopped) {
         setStopped(stopped);
         return this;
@@ -1835,6 +2140,7 @@ public class Job implements Serializable, Cloneable {
      * @param counters
      *        The job's result counters.
      */
+
     public void setCounters(Counters counters) {
         this.counters = counters;
     }
@@ -1846,6 +2152,7 @@ public class Job implements Serializable, Cloneable {
      * 
      * @return The job's result counters.
      */
+
     public Counters getCounters() {
         return this.counters;
     }
@@ -1860,6 +2167,7 @@ public class Job implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Job withCounters(Counters counters) {
         setCounters(counters);
         return this;
@@ -1873,6 +2181,7 @@ public class Job implements Serializable, Cloneable {
      * @param message
      *        A message about the job's result.
      */
+
     public void setMessage(String message) {
         this.message = message;
     }
@@ -1884,6 +2193,7 @@ public class Job implements Serializable, Cloneable {
      * 
      * @return A message about the job's result.
      */
+
     public String getMessage() {
         return this.message;
     }
@@ -1898,6 +2208,7 @@ public class Job implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Job withMessage(String message) {
         setMessage(message);
         return this;
@@ -1906,6 +2217,7 @@ public class Job implements Serializable, Cloneable {
     /**
      * @param device
      */
+
     public void setDevice(Device device) {
         this.device = device;
     }
@@ -1913,6 +2225,7 @@ public class Job implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Device getDevice() {
         return this.device;
     }
@@ -1922,6 +2235,7 @@ public class Job implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Job withDevice(Device device) {
         setDevice(device);
         return this;
@@ -1936,6 +2250,7 @@ public class Job implements Serializable, Cloneable {
      *        Represents the total (metered or unmetered) minutes used by the
      *        job.
      */
+
     public void setDeviceMinutes(DeviceMinutes deviceMinutes) {
         this.deviceMinutes = deviceMinutes;
     }
@@ -1948,6 +2263,7 @@ public class Job implements Serializable, Cloneable {
      * @return Represents the total (metered or unmetered) minutes used by the
      *         job.
      */
+
     public DeviceMinutes getDeviceMinutes() {
         return this.deviceMinutes;
     }
@@ -1963,6 +2279,7 @@ public class Job implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Job withDeviceMinutes(DeviceMinutes deviceMinutes) {
         setDeviceMinutes(deviceMinutes);
         return this;

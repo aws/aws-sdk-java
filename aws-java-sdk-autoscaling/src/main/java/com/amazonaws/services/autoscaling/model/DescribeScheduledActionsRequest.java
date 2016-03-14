@@ -81,6 +81,7 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest
      * @param autoScalingGroupName
      *        The name of the group.
      */
+
     public void setAutoScalingGroupName(String autoScalingGroupName) {
         this.autoScalingGroupName = autoScalingGroupName;
     }
@@ -92,6 +93,7 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the group.
      */
+
     public String getAutoScalingGroupName() {
         return this.autoScalingGroupName;
     }
@@ -106,6 +108,7 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeScheduledActionsRequest withAutoScalingGroupName(
             String autoScalingGroupName) {
         setAutoScalingGroupName(autoScalingGroupName);
@@ -134,6 +137,7 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest
      *         token. To get the next set of items, repeat the call with the
      *         returned token in the <code>NextToken</code> parameter.
      */
+
     public java.util.List<String> getScheduledActionNames() {
         if (scheduledActionNames == null) {
             scheduledActionNames = new com.amazonaws.internal.SdkInternalList<String>();
@@ -164,6 +168,7 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest
      *        To get the next set of items, repeat the call with the returned
      *        token in the <code>NextToken</code> parameter.
      */
+
     public void setScheduledActionNames(
             java.util.Collection<String> scheduledActionNames) {
         if (scheduledActionNames == null) {
@@ -206,6 +211,7 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeScheduledActionsRequest withScheduledActionNames(
             String... scheduledActionNames) {
         if (this.scheduledActionNames == null) {
@@ -243,6 +249,7 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeScheduledActionsRequest withScheduledActionNames(
             java.util.Collection<String> scheduledActionNames) {
         setScheduledActionNames(scheduledActionNames);
@@ -259,6 +266,7 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest
      *        The earliest scheduled start time to return. If scheduled action
      *        names are provided, this parameter is ignored.
      */
+
     public void setStartTime(java.util.Date startTime) {
         this.startTime = startTime;
     }
@@ -272,6 +280,7 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest
      * @return The earliest scheduled start time to return. If scheduled action
      *         names are provided, this parameter is ignored.
      */
+
     public java.util.Date getStartTime() {
         return this.startTime;
     }
@@ -288,6 +297,7 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeScheduledActionsRequest withStartTime(
             java.util.Date startTime) {
         setStartTime(startTime);
@@ -304,6 +314,7 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest
      *        The latest scheduled start time to return. If scheduled action
      *        names are provided, this parameter is ignored.
      */
+
     public void setEndTime(java.util.Date endTime) {
         this.endTime = endTime;
     }
@@ -317,6 +328,7 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest
      * @return The latest scheduled start time to return. If scheduled action
      *         names are provided, this parameter is ignored.
      */
+
     public java.util.Date getEndTime() {
         return this.endTime;
     }
@@ -333,6 +345,7 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeScheduledActionsRequest withEndTime(java.util.Date endTime) {
         setEndTime(endTime);
         return this;
@@ -348,6 +361,7 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest
      *        The token for the next set of items to return. (You received this
      *        token from a previous call.)
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -361,6 +375,7 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest
      * @return The token for the next set of items to return. (You received this
      *         token from a previous call.)
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -377,6 +392,7 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeScheduledActionsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -390,6 +406,7 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest
      * @param maxRecords
      *        The maximum number of items to return with this call.
      */
+
     public void setMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
     }
@@ -401,6 +418,7 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest
      * 
      * @return The maximum number of items to return with this call.
      */
+
     public Integer getMaxRecords() {
         return this.maxRecords;
     }
@@ -415,6 +433,7 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeScheduledActionsRequest withMaxRecords(Integer maxRecords) {
         setMaxRecords(maxRecords);
         return this;

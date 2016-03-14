@@ -49,6 +49,7 @@ public class UnsuccessfulItemError implements Serializable, Cloneable {
      * @param code
      *        The error code.
      */
+
     public void setCode(String code) {
         this.code = code;
     }
@@ -60,6 +61,7 @@ public class UnsuccessfulItemError implements Serializable, Cloneable {
      * 
      * @return The error code.
      */
+
     public String getCode() {
         return this.code;
     }
@@ -74,6 +76,7 @@ public class UnsuccessfulItemError implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UnsuccessfulItemError withCode(String code) {
         setCode(code);
         return this;
@@ -87,6 +90,7 @@ public class UnsuccessfulItemError implements Serializable, Cloneable {
      * @param message
      *        The error message accompanying the error code.
      */
+
     public void setMessage(String message) {
         this.message = message;
     }
@@ -98,6 +102,7 @@ public class UnsuccessfulItemError implements Serializable, Cloneable {
      * 
      * @return The error message accompanying the error code.
      */
+
     public String getMessage() {
         return this.message;
     }
@@ -112,6 +117,7 @@ public class UnsuccessfulItemError implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UnsuccessfulItemError withMessage(String message) {
         setMessage(message);
         return this;

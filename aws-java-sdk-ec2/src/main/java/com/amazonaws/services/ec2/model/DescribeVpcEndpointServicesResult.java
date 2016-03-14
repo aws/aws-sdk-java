@@ -45,6 +45,7 @@ public class DescribeVpcEndpointServicesResult implements Serializable,
      * 
      * @return A list of supported AWS services.
      */
+
     public java.util.List<String> getServiceNames() {
         if (serviceNames == null) {
             serviceNames = new com.amazonaws.internal.SdkInternalList<String>();
@@ -60,6 +61,7 @@ public class DescribeVpcEndpointServicesResult implements Serializable,
      * @param serviceNames
      *        A list of supported AWS services.
      */
+
     public void setServiceNames(java.util.Collection<String> serviceNames) {
         if (serviceNames == null) {
             this.serviceNames = null;
@@ -86,6 +88,7 @@ public class DescribeVpcEndpointServicesResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVpcEndpointServicesResult withServiceNames(
             String... serviceNames) {
         if (this.serviceNames == null) {
@@ -108,6 +111,7 @@ public class DescribeVpcEndpointServicesResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVpcEndpointServicesResult withServiceNames(
             java.util.Collection<String> serviceNames) {
         setServiceNames(serviceNames);
@@ -124,6 +128,7 @@ public class DescribeVpcEndpointServicesResult implements Serializable,
      *        The token to use when requesting the next set of items. If there
      *        are no additional items to return, the string is empty.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -137,6 +142,7 @@ public class DescribeVpcEndpointServicesResult implements Serializable,
      * @return The token to use when requesting the next set of items. If there
      *         are no additional items to return, the string is empty.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -153,6 +159,7 @@ public class DescribeVpcEndpointServicesResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVpcEndpointServicesResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

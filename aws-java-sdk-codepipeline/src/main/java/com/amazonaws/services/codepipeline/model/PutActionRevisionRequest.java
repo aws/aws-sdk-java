@@ -60,6 +60,7 @@ public class PutActionRevisionRequest extends AmazonWebServiceRequest implements
      *        The name of the pipeline that will start processing the revision
      *        to the source.
      */
+
     public void setPipelineName(String pipelineName) {
         this.pipelineName = pipelineName;
     }
@@ -73,6 +74,7 @@ public class PutActionRevisionRequest extends AmazonWebServiceRequest implements
      * @return The name of the pipeline that will start processing the revision
      *         to the source.
      */
+
     public String getPipelineName() {
         return this.pipelineName;
     }
@@ -89,6 +91,7 @@ public class PutActionRevisionRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutActionRevisionRequest withPipelineName(String pipelineName) {
         setPipelineName(pipelineName);
         return this;
@@ -104,6 +107,7 @@ public class PutActionRevisionRequest extends AmazonWebServiceRequest implements
      *        The name of the stage that contains the action that will act upon
      *        the revision.
      */
+
     public void setStageName(String stageName) {
         this.stageName = stageName;
     }
@@ -117,6 +121,7 @@ public class PutActionRevisionRequest extends AmazonWebServiceRequest implements
      * @return The name of the stage that contains the action that will act upon
      *         the revision.
      */
+
     public String getStageName() {
         return this.stageName;
     }
@@ -133,6 +138,7 @@ public class PutActionRevisionRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutActionRevisionRequest withStageName(String stageName) {
         setStageName(stageName);
         return this;
@@ -146,6 +152,7 @@ public class PutActionRevisionRequest extends AmazonWebServiceRequest implements
      * @param actionName
      *        The name of the action that will process the revision.
      */
+
     public void setActionName(String actionName) {
         this.actionName = actionName;
     }
@@ -157,6 +164,7 @@ public class PutActionRevisionRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the action that will process the revision.
      */
+
     public String getActionName() {
         return this.actionName;
     }
@@ -171,6 +179,7 @@ public class PutActionRevisionRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutActionRevisionRequest withActionName(String actionName) {
         setActionName(actionName);
         return this;
@@ -179,6 +188,7 @@ public class PutActionRevisionRequest extends AmazonWebServiceRequest implements
     /**
      * @param actionRevision
      */
+
     public void setActionRevision(ActionRevision actionRevision) {
         this.actionRevision = actionRevision;
     }
@@ -186,6 +196,7 @@ public class PutActionRevisionRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public ActionRevision getActionRevision() {
         return this.actionRevision;
     }
@@ -195,6 +206,7 @@ public class PutActionRevisionRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutActionRevisionRequest withActionRevision(
             ActionRevision actionRevision) {
         setActionRevision(actionRevision);

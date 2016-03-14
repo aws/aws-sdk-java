@@ -40,6 +40,7 @@ public class DeregisterRdsDbInstanceRequest extends AmazonWebServiceRequest
      * @param rdsDbInstanceArn
      *        The Amazon RDS instance's ARN.
      */
+
     public void setRdsDbInstanceArn(String rdsDbInstanceArn) {
         this.rdsDbInstanceArn = rdsDbInstanceArn;
     }
@@ -51,6 +52,7 @@ public class DeregisterRdsDbInstanceRequest extends AmazonWebServiceRequest
      * 
      * @return The Amazon RDS instance's ARN.
      */
+
     public String getRdsDbInstanceArn() {
         return this.rdsDbInstanceArn;
     }
@@ -65,6 +67,7 @@ public class DeregisterRdsDbInstanceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeregisterRdsDbInstanceRequest withRdsDbInstanceArn(
             String rdsDbInstanceArn) {
         setRdsDbInstanceArn(rdsDbInstanceArn);

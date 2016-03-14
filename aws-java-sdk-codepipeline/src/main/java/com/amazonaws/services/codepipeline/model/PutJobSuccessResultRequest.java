@@ -66,6 +66,7 @@ public class PutJobSuccessResultRequest extends AmazonWebServiceRequest
      *        The unique system-generated ID of the job that succeeded. This is
      *        the same ID returned from PollForJobs.
      */
+
     public void setJobId(String jobId) {
         this.jobId = jobId;
     }
@@ -79,6 +80,7 @@ public class PutJobSuccessResultRequest extends AmazonWebServiceRequest
      * @return The unique system-generated ID of the job that succeeded. This is
      *         the same ID returned from PollForJobs.
      */
+
     public String getJobId() {
         return this.jobId;
     }
@@ -95,6 +97,7 @@ public class PutJobSuccessResultRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutJobSuccessResultRequest withJobId(String jobId) {
         setJobId(jobId);
         return this;
@@ -110,6 +113,7 @@ public class PutJobSuccessResultRequest extends AmazonWebServiceRequest
      *        The ID of the current revision of the artifact successfully worked
      *        upon by the job.
      */
+
     public void setCurrentRevision(CurrentRevision currentRevision) {
         this.currentRevision = currentRevision;
     }
@@ -123,6 +127,7 @@ public class PutJobSuccessResultRequest extends AmazonWebServiceRequest
      * @return The ID of the current revision of the artifact successfully
      *         worked upon by the job.
      */
+
     public CurrentRevision getCurrentRevision() {
         return this.currentRevision;
     }
@@ -139,6 +144,7 @@ public class PutJobSuccessResultRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutJobSuccessResultRequest withCurrentRevision(
             CurrentRevision currentRevision) {
         setCurrentRevision(currentRevision);
@@ -155,6 +161,7 @@ public class PutJobSuccessResultRequest extends AmazonWebServiceRequest
      *        A system-generated token, such as a AWS CodeDeploy deployment ID,
      *        that the successful job used to complete a job asynchronously.
      */
+
     public void setContinuationToken(String continuationToken) {
         this.continuationToken = continuationToken;
     }
@@ -168,6 +175,7 @@ public class PutJobSuccessResultRequest extends AmazonWebServiceRequest
      * @return A system-generated token, such as a AWS CodeDeploy deployment ID,
      *         that the successful job used to complete a job asynchronously.
      */
+
     public String getContinuationToken() {
         return this.continuationToken;
     }
@@ -184,6 +192,7 @@ public class PutJobSuccessResultRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutJobSuccessResultRequest withContinuationToken(
             String continuationToken) {
         setContinuationToken(continuationToken);
@@ -200,6 +209,7 @@ public class PutJobSuccessResultRequest extends AmazonWebServiceRequest
      *        The execution details of the successful job, such as the actions
      *        taken by the job worker.
      */
+
     public void setExecutionDetails(ExecutionDetails executionDetails) {
         this.executionDetails = executionDetails;
     }
@@ -213,6 +223,7 @@ public class PutJobSuccessResultRequest extends AmazonWebServiceRequest
      * @return The execution details of the successful job, such as the actions
      *         taken by the job worker.
      */
+
     public ExecutionDetails getExecutionDetails() {
         return this.executionDetails;
     }
@@ -229,6 +240,7 @@ public class PutJobSuccessResultRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutJobSuccessResultRequest withExecutionDetails(
             ExecutionDetails executionDetails) {
         setExecutionDetails(executionDetails);

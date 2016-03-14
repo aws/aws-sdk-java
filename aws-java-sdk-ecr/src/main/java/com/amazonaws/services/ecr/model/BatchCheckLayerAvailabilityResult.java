@@ -47,6 +47,7 @@ public class BatchCheckLayerAvailabilityResult implements Serializable,
      * @return A list of image layer objects corresponding to the image layer
      *         references in the request.
      */
+
     public java.util.List<Layer> getLayers() {
         return layers;
     }
@@ -61,6 +62,7 @@ public class BatchCheckLayerAvailabilityResult implements Serializable,
      *        A list of image layer objects corresponding to the image layer
      *        references in the request.
      */
+
     public void setLayers(java.util.Collection<Layer> layers) {
         if (layers == null) {
             this.layers = null;
@@ -88,6 +90,7 @@ public class BatchCheckLayerAvailabilityResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchCheckLayerAvailabilityResult withLayers(Layer... layers) {
         if (this.layers == null) {
             setLayers(new java.util.ArrayList<Layer>(layers.length));
@@ -110,6 +113,7 @@ public class BatchCheckLayerAvailabilityResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchCheckLayerAvailabilityResult withLayers(
             java.util.Collection<Layer> layers) {
         setLayers(layers);
@@ -123,6 +127,7 @@ public class BatchCheckLayerAvailabilityResult implements Serializable,
      * 
      * @return Any failures associated with the call.
      */
+
     public java.util.List<LayerFailure> getFailures() {
         return failures;
     }
@@ -135,6 +140,7 @@ public class BatchCheckLayerAvailabilityResult implements Serializable,
      * @param failures
      *        Any failures associated with the call.
      */
+
     public void setFailures(java.util.Collection<LayerFailure> failures) {
         if (failures == null) {
             this.failures = null;
@@ -160,6 +166,7 @@ public class BatchCheckLayerAvailabilityResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchCheckLayerAvailabilityResult withFailures(
             LayerFailure... failures) {
         if (this.failures == null) {
@@ -181,6 +188,7 @@ public class BatchCheckLayerAvailabilityResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchCheckLayerAvailabilityResult withFailures(
             java.util.Collection<LayerFailure> failures) {
         setFailures(failures);

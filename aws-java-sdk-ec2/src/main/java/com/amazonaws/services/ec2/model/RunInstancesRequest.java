@@ -323,6 +323,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      *        The ID of the AMI, which you can get by calling
      *        <a>DescribeImages</a>.
      */
+
     public void setImageId(String imageId) {
         this.imageId = imageId;
     }
@@ -335,6 +336,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * @return The ID of the AMI, which you can get by calling
      *         <a>DescribeImages</a>.
      */
+
     public String getImageId() {
         return this.imageId;
     }
@@ -350,6 +352,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunInstancesRequest withImageId(String imageId) {
         setImageId(imageId);
         return this;
@@ -382,6 +385,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      *        >How many instances can I run in Amazon EC2</a> in the Amazon EC2
      *        General FAQ.
      */
+
     public void setMinCount(Integer minCount) {
         this.minCount = minCount;
     }
@@ -412,6 +416,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      *         >How many instances can I run in Amazon EC2</a> in the Amazon EC2
      *         General FAQ.
      */
+
     public Integer getMinCount() {
         return this.minCount;
     }
@@ -445,6 +450,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunInstancesRequest withMinCount(Integer minCount) {
         setMinCount(minCount);
         return this;
@@ -478,6 +484,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      *        >How many instances can I run in Amazon EC2</a> in the Amazon EC2
      *        FAQ.
      */
+
     public void setMaxCount(Integer maxCount) {
         this.maxCount = maxCount;
     }
@@ -509,6 +516,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      *         >How many instances can I run in Amazon EC2</a> in the Amazon EC2
      *         FAQ.
      */
+
     public Integer getMaxCount() {
         return this.maxCount;
     }
@@ -543,6 +551,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunInstancesRequest withMaxCount(Integer maxCount) {
         setMaxCount(maxCount);
         return this;
@@ -570,6 +579,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      *        users another way to log in.
      *        </p>
      */
+
     public void setKeyName(String keyName) {
         this.keyName = keyName;
     }
@@ -595,6 +605,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      *         users another way to log in.
      *         </p>
      */
+
     public String getKeyName() {
         return this.keyName;
     }
@@ -623,6 +634,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunInstancesRequest withKeyName(String keyName) {
         setKeyName(keyName);
         return this;
@@ -642,6 +654,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Default: Amazon EC2 uses the default security group.
      */
+
     public java.util.List<String> getSecurityGroups() {
         if (securityGroups == null) {
             securityGroups = new com.amazonaws.internal.SdkInternalList<String>();
@@ -664,6 +677,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        Default: Amazon EC2 uses the default security group.
      */
+
     public void setSecurityGroups(java.util.Collection<String> securityGroups) {
         if (securityGroups == null) {
             this.securityGroups = null;
@@ -697,6 +711,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunInstancesRequest withSecurityGroups(String... securityGroups) {
         if (this.securityGroups == null) {
             setSecurityGroups(new com.amazonaws.internal.SdkInternalList<String>(
@@ -725,6 +740,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunInstancesRequest withSecurityGroups(
             java.util.Collection<String> securityGroups) {
         setSecurityGroups(securityGroups);
@@ -745,6 +761,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Default: Amazon EC2 uses the default security group.
      */
+
     public java.util.List<String> getSecurityGroupIds() {
         if (securityGroupIds == null) {
             securityGroupIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -767,6 +784,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        Default: Amazon EC2 uses the default security group.
      */
+
     public void setSecurityGroupIds(
             java.util.Collection<String> securityGroupIds) {
         if (securityGroupIds == null) {
@@ -801,6 +819,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunInstancesRequest withSecurityGroupIds(String... securityGroupIds) {
         if (this.securityGroupIds == null) {
             setSecurityGroupIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -829,6 +848,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunInstancesRequest withSecurityGroupIds(
             java.util.Collection<String> securityGroupIds) {
         setSecurityGroupIds(securityGroupIds);
@@ -859,6 +879,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      *        base64-encoded. For command line tools, the encoding is performed
      *        for you, and you can load the text from a file.
      */
+
     public void setUserData(String userData) {
         this.userData = userData;
     }
@@ -886,6 +907,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      *         base64-encoded. For command line tools, the encoding is performed
      *         for you, and you can load the text from a file.
      */
+
     public String getUserData() {
         return this.userData;
     }
@@ -916,6 +938,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunInstancesRequest withUserData(String userData) {
         setUserData(userData);
         return this;
@@ -941,6 +964,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      *        Default: <code>m1.small</code>
      * @see InstanceType
      */
+
     public void setInstanceType(String instanceType) {
         this.instanceType = instanceType;
     }
@@ -964,6 +988,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      *         Default: <code>m1.small</code>
      * @see InstanceType
      */
+
     public String getInstanceType() {
         return this.instanceType;
     }
@@ -990,6 +1015,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see InstanceType
      */
+
     public RunInstancesRequest withInstanceType(String instanceType) {
         setInstanceType(instanceType);
         return this;
@@ -1017,6 +1043,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see InstanceType
      */
+
     public void setInstanceType(InstanceType instanceType) {
         this.instanceType = instanceType.toString();
     }
@@ -1043,6 +1070,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see InstanceType
      */
+
     public RunInstancesRequest withInstanceType(InstanceType instanceType) {
         setInstanceType(instanceType);
         return this;
@@ -1056,6 +1084,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * @param placement
      *        The placement for the instance.
      */
+
     public void setPlacement(Placement placement) {
         this.placement = placement;
     }
@@ -1067,6 +1096,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * 
      * @return The placement for the instance.
      */
+
     public Placement getPlacement() {
         return this.placement;
     }
@@ -1081,6 +1111,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunInstancesRequest withPlacement(Placement placement) {
         setPlacement(placement);
         return this;
@@ -1109,6 +1140,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      *        Guide</i>.
      *        </p>
      */
+
     public void setKernelId(String kernelId) {
         this.kernelId = kernelId;
     }
@@ -1135,6 +1167,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      *         Guide</i>.
      *         </p>
      */
+
     public String getKernelId() {
         return this.kernelId;
     }
@@ -1164,6 +1197,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunInstancesRequest withKernelId(String kernelId) {
         setKernelId(kernelId);
         return this;
@@ -1192,6 +1226,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      *        Guide</i>.
      *        </p>
      */
+
     public void setRamdiskId(String ramdiskId) {
         this.ramdiskId = ramdiskId;
     }
@@ -1218,6 +1253,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      *         Guide</i>.
      *         </p>
      */
+
     public String getRamdiskId() {
         return this.ramdiskId;
     }
@@ -1247,6 +1283,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunInstancesRequest withRamdiskId(String ramdiskId) {
         setRamdiskId(ramdiskId);
         return this;
@@ -1259,6 +1296,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * 
      * @return The block device mapping.
      */
+
     public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
         if (blockDeviceMappings == null) {
             blockDeviceMappings = new com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>();
@@ -1274,6 +1312,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * @param blockDeviceMappings
      *        The block device mapping.
      */
+
     public void setBlockDeviceMappings(
             java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
         if (blockDeviceMappings == null) {
@@ -1301,6 +1340,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunInstancesRequest withBlockDeviceMappings(
             BlockDeviceMapping... blockDeviceMappings) {
         if (this.blockDeviceMappings == null) {
@@ -1323,6 +1363,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunInstancesRequest withBlockDeviceMappings(
             java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
         setBlockDeviceMappings(blockDeviceMappings);
@@ -1337,6 +1378,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * @param monitoring
      *        The monitoring for the instance.
      */
+
     public void setMonitoring(Boolean monitoring) {
         this.monitoring = monitoring;
     }
@@ -1348,6 +1390,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * 
      * @return The monitoring for the instance.
      */
+
     public Boolean getMonitoring() {
         return this.monitoring;
     }
@@ -1362,6 +1405,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunInstancesRequest withMonitoring(Boolean monitoring) {
         setMonitoring(monitoring);
         return this;
@@ -1374,6 +1418,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * 
      * @return The monitoring for the instance.
      */
+
     public Boolean isMonitoring() {
         return this.monitoring;
     }
@@ -1386,6 +1431,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * @param subnetId
      *        [EC2-VPC] The ID of the subnet to launch the instance into.
      */
+
     public void setSubnetId(String subnetId) {
         this.subnetId = subnetId;
     }
@@ -1397,6 +1443,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * 
      * @return [EC2-VPC] The ID of the subnet to launch the instance into.
      */
+
     public String getSubnetId() {
         return this.subnetId;
     }
@@ -1411,6 +1458,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunInstancesRequest withSubnetId(String subnetId) {
         setSubnetId(subnetId);
         return this;
@@ -1446,6 +1494,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        Default: <code>false</code>
      */
+
     public void setDisableApiTermination(Boolean disableApiTermination) {
         this.disableApiTermination = disableApiTermination;
     }
@@ -1480,6 +1529,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Default: <code>false</code>
      */
+
     public Boolean getDisableApiTermination() {
         return this.disableApiTermination;
     }
@@ -1516,6 +1566,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunInstancesRequest withDisableApiTermination(
             Boolean disableApiTermination) {
         setDisableApiTermination(disableApiTermination);
@@ -1552,6 +1603,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Default: <code>false</code>
      */
+
     public Boolean isDisableApiTermination() {
         return this.disableApiTermination;
     }
@@ -1574,6 +1626,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      *        Default: <code>stop</code>
      * @see ShutdownBehavior
      */
+
     public void setInstanceInitiatedShutdownBehavior(
             String instanceInitiatedShutdownBehavior) {
         this.instanceInitiatedShutdownBehavior = instanceInitiatedShutdownBehavior;
@@ -1596,6 +1649,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      *         Default: <code>stop</code>
      * @see ShutdownBehavior
      */
+
     public String getInstanceInitiatedShutdownBehavior() {
         return this.instanceInitiatedShutdownBehavior;
     }
@@ -1620,6 +1674,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ShutdownBehavior
      */
+
     public RunInstancesRequest withInstanceInitiatedShutdownBehavior(
             String instanceInitiatedShutdownBehavior) {
         setInstanceInitiatedShutdownBehavior(instanceInitiatedShutdownBehavior);
@@ -1646,6 +1701,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ShutdownBehavior
      */
+
     public void setInstanceInitiatedShutdownBehavior(
             ShutdownBehavior instanceInitiatedShutdownBehavior) {
         this.instanceInitiatedShutdownBehavior = instanceInitiatedShutdownBehavior
@@ -1672,6 +1728,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ShutdownBehavior
      */
+
     public RunInstancesRequest withInstanceInitiatedShutdownBehavior(
             ShutdownBehavior instanceInitiatedShutdownBehavior) {
         setInstanceInitiatedShutdownBehavior(instanceInitiatedShutdownBehavior);
@@ -1709,6 +1766,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      *        Default: We select an IP address from the IP address range of the
      *        subnet.
      */
+
     public void setPrivateIpAddress(String privateIpAddress) {
         this.privateIpAddress = privateIpAddress;
     }
@@ -1743,6 +1801,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      *         Default: We select an IP address from the IP address range of the
      *         subnet.
      */
+
     public String getPrivateIpAddress() {
         return this.privateIpAddress;
     }
@@ -1780,6 +1839,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunInstancesRequest withPrivateIpAddress(String privateIpAddress) {
         setPrivateIpAddress(privateIpAddress);
         return this;
@@ -1804,6 +1864,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        Constraints: Maximum 64 ASCII characters
      */
+
     public void setClientToken(String clientToken) {
         this.clientToken = clientToken;
     }
@@ -1826,6 +1887,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Constraints: Maximum 64 ASCII characters
      */
+
     public String getClientToken() {
         return this.clientToken;
     }
@@ -1851,6 +1913,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunInstancesRequest withClientToken(String clientToken) {
         setClientToken(clientToken);
         return this;
@@ -1864,6 +1927,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * @param additionalInfo
      *        Reserved.
      */
+
     public void setAdditionalInfo(String additionalInfo) {
         this.additionalInfo = additionalInfo;
     }
@@ -1875,6 +1939,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * 
      * @return Reserved.
      */
+
     public String getAdditionalInfo() {
         return this.additionalInfo;
     }
@@ -1889,6 +1954,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunInstancesRequest withAdditionalInfo(String additionalInfo) {
         setAdditionalInfo(additionalInfo);
         return this;
@@ -1901,6 +1967,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * 
      * @return One or more network interfaces.
      */
+
     public java.util.List<InstanceNetworkInterfaceSpecification> getNetworkInterfaces() {
         if (networkInterfaces == null) {
             networkInterfaces = new com.amazonaws.internal.SdkInternalList<InstanceNetworkInterfaceSpecification>();
@@ -1916,6 +1983,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * @param networkInterfaces
      *        One or more network interfaces.
      */
+
     public void setNetworkInterfaces(
             java.util.Collection<InstanceNetworkInterfaceSpecification> networkInterfaces) {
         if (networkInterfaces == null) {
@@ -1943,6 +2011,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunInstancesRequest withNetworkInterfaces(
             InstanceNetworkInterfaceSpecification... networkInterfaces) {
         if (this.networkInterfaces == null) {
@@ -1965,6 +2034,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunInstancesRequest withNetworkInterfaces(
             java.util.Collection<InstanceNetworkInterfaceSpecification> networkInterfaces) {
         setNetworkInterfaces(networkInterfaces);
@@ -1979,6 +2049,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * @param iamInstanceProfile
      *        The IAM instance profile.
      */
+
     public void setIamInstanceProfile(
             IamInstanceProfileSpecification iamInstanceProfile) {
         this.iamInstanceProfile = iamInstanceProfile;
@@ -1991,6 +2062,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * 
      * @return The IAM instance profile.
      */
+
     public IamInstanceProfileSpecification getIamInstanceProfile() {
         return this.iamInstanceProfile;
     }
@@ -2005,6 +2077,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunInstancesRequest withIamInstanceProfile(
             IamInstanceProfileSpecification iamInstanceProfile) {
         setIamInstanceProfile(iamInstanceProfile);
@@ -2033,6 +2106,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        Default: <code>false</code>
      */
+
     public void setEbsOptimized(Boolean ebsOptimized) {
         this.ebsOptimized = ebsOptimized;
     }
@@ -2058,6 +2132,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Default: <code>false</code>
      */
+
     public Boolean getEbsOptimized() {
         return this.ebsOptimized;
     }
@@ -2086,6 +2161,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunInstancesRequest withEbsOptimized(Boolean ebsOptimized) {
         setEbsOptimized(ebsOptimized);
         return this;
@@ -2112,6 +2188,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Default: <code>false</code>
      */
+
     public Boolean isEbsOptimized() {
         return this.ebsOptimized;
     }

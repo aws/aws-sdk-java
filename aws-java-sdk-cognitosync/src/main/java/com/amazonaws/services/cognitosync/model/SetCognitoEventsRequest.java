@@ -49,6 +49,7 @@ public class SetCognitoEventsRequest extends AmazonWebServiceRequest implements
      * @param identityPoolId
      *        The Cognito Identity Pool to use when configuring Cognito Events
      */
+
     public void setIdentityPoolId(String identityPoolId) {
         this.identityPoolId = identityPoolId;
     }
@@ -60,6 +61,7 @@ public class SetCognitoEventsRequest extends AmazonWebServiceRequest implements
      * 
      * @return The Cognito Identity Pool to use when configuring Cognito Events
      */
+
     public String getIdentityPoolId() {
         return this.identityPoolId;
     }
@@ -74,6 +76,7 @@ public class SetCognitoEventsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetCognitoEventsRequest withIdentityPoolId(String identityPoolId) {
         setIdentityPoolId(identityPoolId);
         return this;
@@ -86,6 +89,7 @@ public class SetCognitoEventsRequest extends AmazonWebServiceRequest implements
      * 
      * @return The events to configure
      */
+
     public java.util.Map<String, String> getEvents() {
         if (events == null) {
             events = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -101,6 +105,7 @@ public class SetCognitoEventsRequest extends AmazonWebServiceRequest implements
      * @param events
      *        The events to configure
      */
+
     public void setEvents(java.util.Map<String, String> events) {
         this.events = events == null ? null
                 : new com.amazonaws.internal.SdkInternalMap<String, String>(
@@ -117,6 +122,7 @@ public class SetCognitoEventsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetCognitoEventsRequest withEvents(
             java.util.Map<String, String> events) {
         setEvents(events);
@@ -138,6 +144,7 @@ public class SetCognitoEventsRequest extends AmazonWebServiceRequest implements
      * Removes all the entries added into Events. &lt;p> Returns a reference to
      * this object so that method calls can be chained together.
      */
+
     public SetCognitoEventsRequest clearEventsEntries() {
         this.events = null;
         return this;

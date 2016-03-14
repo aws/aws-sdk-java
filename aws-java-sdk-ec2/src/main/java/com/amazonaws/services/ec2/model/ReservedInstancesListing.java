@@ -98,6 +98,7 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
      * @param reservedInstancesListingId
      *        The ID of the Reserved Instance listing.
      */
+
     public void setReservedInstancesListingId(String reservedInstancesListingId) {
         this.reservedInstancesListingId = reservedInstancesListingId;
     }
@@ -109,6 +110,7 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
      * 
      * @return The ID of the Reserved Instance listing.
      */
+
     public String getReservedInstancesListingId() {
         return this.reservedInstancesListingId;
     }
@@ -123,6 +125,7 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReservedInstancesListing withReservedInstancesListingId(
             String reservedInstancesListingId) {
         setReservedInstancesListingId(reservedInstancesListingId);
@@ -137,6 +140,7 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
      * @param reservedInstancesId
      *        The ID of the Reserved Instance.
      */
+
     public void setReservedInstancesId(String reservedInstancesId) {
         this.reservedInstancesId = reservedInstancesId;
     }
@@ -148,6 +152,7 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
      * 
      * @return The ID of the Reserved Instance.
      */
+
     public String getReservedInstancesId() {
         return this.reservedInstancesId;
     }
@@ -162,6 +167,7 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReservedInstancesListing withReservedInstancesId(
             String reservedInstancesId) {
         setReservedInstancesId(reservedInstancesId);
@@ -176,6 +182,7 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
      * @param createDate
      *        The time the listing was created.
      */
+
     public void setCreateDate(java.util.Date createDate) {
         this.createDate = createDate;
     }
@@ -187,6 +194,7 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
      * 
      * @return The time the listing was created.
      */
+
     public java.util.Date getCreateDate() {
         return this.createDate;
     }
@@ -201,6 +209,7 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReservedInstancesListing withCreateDate(java.util.Date createDate) {
         setCreateDate(createDate);
         return this;
@@ -214,6 +223,7 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
      * @param updateDate
      *        The last modified timestamp of the listing.
      */
+
     public void setUpdateDate(java.util.Date updateDate) {
         this.updateDate = updateDate;
     }
@@ -225,6 +235,7 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
      * 
      * @return The last modified timestamp of the listing.
      */
+
     public java.util.Date getUpdateDate() {
         return this.updateDate;
     }
@@ -239,6 +250,7 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReservedInstancesListing withUpdateDate(java.util.Date updateDate) {
         setUpdateDate(updateDate);
         return this;
@@ -253,6 +265,7 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
      *        The status of the Reserved Instance listing.
      * @see ListingStatus
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -265,6 +278,7 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
      * @return The status of the Reserved Instance listing.
      * @see ListingStatus
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -280,6 +294,7 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
      *         chained together.
      * @see ListingStatus
      */
+
     public ReservedInstancesListing withStatus(String status) {
         setStatus(status);
         return this;
@@ -296,6 +311,7 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
      *         chained together.
      * @see ListingStatus
      */
+
     public void setStatus(ListingStatus status) {
         this.status = status.toString();
     }
@@ -311,6 +327,7 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
      *         chained together.
      * @see ListingStatus
      */
+
     public ReservedInstancesListing withStatus(ListingStatus status) {
         setStatus(status);
         return this;
@@ -326,6 +343,7 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
      *        The reason for the current status of the Reserved Instance
      *        listing. The response can be blank.
      */
+
     public void setStatusMessage(String statusMessage) {
         this.statusMessage = statusMessage;
     }
@@ -339,6 +357,7 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
      * @return The reason for the current status of the Reserved Instance
      *         listing. The response can be blank.
      */
+
     public String getStatusMessage() {
         return this.statusMessage;
     }
@@ -355,6 +374,7 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReservedInstancesListing withStatusMessage(String statusMessage) {
         setStatusMessage(statusMessage);
         return this;
@@ -367,6 +387,7 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
      * 
      * @return The number of instances in this state.
      */
+
     public java.util.List<InstanceCount> getInstanceCounts() {
         if (instanceCounts == null) {
             instanceCounts = new com.amazonaws.internal.SdkInternalList<InstanceCount>();
@@ -382,6 +403,7 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
      * @param instanceCounts
      *        The number of instances in this state.
      */
+
     public void setInstanceCounts(
             java.util.Collection<InstanceCount> instanceCounts) {
         if (instanceCounts == null) {
@@ -409,6 +431,7 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReservedInstancesListing withInstanceCounts(
             InstanceCount... instanceCounts) {
         if (this.instanceCounts == null) {
@@ -431,6 +454,7 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReservedInstancesListing withInstanceCounts(
             java.util.Collection<InstanceCount> instanceCounts) {
         setInstanceCounts(instanceCounts);
@@ -444,6 +468,7 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
      * 
      * @return The price of the Reserved Instance listing.
      */
+
     public java.util.List<PriceSchedule> getPriceSchedules() {
         if (priceSchedules == null) {
             priceSchedules = new com.amazonaws.internal.SdkInternalList<PriceSchedule>();
@@ -459,6 +484,7 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
      * @param priceSchedules
      *        The price of the Reserved Instance listing.
      */
+
     public void setPriceSchedules(
             java.util.Collection<PriceSchedule> priceSchedules) {
         if (priceSchedules == null) {
@@ -486,6 +512,7 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReservedInstancesListing withPriceSchedules(
             PriceSchedule... priceSchedules) {
         if (this.priceSchedules == null) {
@@ -508,6 +535,7 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReservedInstancesListing withPriceSchedules(
             java.util.Collection<PriceSchedule> priceSchedules) {
         setPriceSchedules(priceSchedules);
@@ -521,6 +549,7 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
      * 
      * @return Any tags assigned to the resource.
      */
+
     public java.util.List<Tag> getTags() {
         if (tags == null) {
             tags = new com.amazonaws.internal.SdkInternalList<Tag>();
@@ -536,6 +565,7 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
      * @param tags
      *        Any tags assigned to the resource.
      */
+
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
             this.tags = null;
@@ -561,6 +591,7 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReservedInstancesListing withTags(Tag... tags) {
         if (this.tags == null) {
             setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
@@ -581,6 +612,7 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReservedInstancesListing withTags(java.util.Collection<Tag> tags) {
         setTags(tags);
         return this;
@@ -600,6 +632,7 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html"
      *        >Ensuring Idempotency</a>.
      */
+
     public void setClientToken(String clientToken) {
         this.clientToken = clientToken;
     }
@@ -618,6 +651,7 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html"
      *         >Ensuring Idempotency</a>.
      */
+
     public String getClientToken() {
         return this.clientToken;
     }
@@ -638,6 +672,7 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReservedInstancesListing withClientToken(String clientToken) {
         setClientToken(clientToken);
         return this;

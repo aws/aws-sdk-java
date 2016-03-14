@@ -164,6 +164,7 @@ public class CreateJobPlaylist implements Serializable, Cloneable {
      *        playlists). If you include a file extension in <code>Name</code>,
      *        the file name will have two extensions.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -200,6 +201,7 @@ public class CreateJobPlaylist implements Serializable, Cloneable {
      *         playlists). If you include a file extension in <code>Name</code>,
      *         the file name will have two extensions.
      */
+
     public String getName() {
         return this.name;
     }
@@ -239,6 +241,7 @@ public class CreateJobPlaylist implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateJobPlaylist withName(String name) {
         setName(name);
         return this;
@@ -254,6 +257,7 @@ public class CreateJobPlaylist implements Serializable, Cloneable {
      *        The format of the output playlist. Valid formats include
      *        <code>HLSv3</code>, <code>HLSv4</code>, and <code>Smooth</code>.
      */
+
     public void setFormat(String format) {
         this.format = format;
     }
@@ -267,6 +271,7 @@ public class CreateJobPlaylist implements Serializable, Cloneable {
      * @return The format of the output playlist. Valid formats include
      *         <code>HLSv3</code>, <code>HLSv4</code>, and <code>Smooth</code>.
      */
+
     public String getFormat() {
         return this.format;
     }
@@ -283,6 +288,7 @@ public class CreateJobPlaylist implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateJobPlaylist withFormat(String format) {
         setFormat(format);
         return this;
@@ -414,6 +420,7 @@ public class CreateJobPlaylist implements Serializable, Cloneable {
      *         <code>Video:KeyframesMaxDist</code> ratio must be the same for
      *         all outputs.
      */
+
     public java.util.List<String> getOutputKeys() {
         if (outputKeys == null) {
             outputKeys = new com.amazonaws.internal.SdkInternalList<String>();
@@ -548,6 +555,7 @@ public class CreateJobPlaylist implements Serializable, Cloneable {
      *        <code>Video:KeyframesMaxDist</code> ratio must be the same for all
      *        outputs.
      */
+
     public void setOutputKeys(java.util.Collection<String> outputKeys) {
         if (outputKeys == null) {
             this.outputKeys = null;
@@ -693,6 +701,7 @@ public class CreateJobPlaylist implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateJobPlaylist withOutputKeys(String... outputKeys) {
         if (this.outputKeys == null) {
             setOutputKeys(new com.amazonaws.internal.SdkInternalList<String>(
@@ -833,6 +842,7 @@ public class CreateJobPlaylist implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateJobPlaylist withOutputKeys(
             java.util.Collection<String> outputKeys) {
         setOutputKeys(outputKeys);
@@ -850,6 +860,7 @@ public class CreateJobPlaylist implements Serializable, Cloneable {
      *        Transcoder to apply to the output files associated with this
      *        playlist.
      */
+
     public void setHlsContentProtection(
             HlsContentProtection hlsContentProtection) {
         this.hlsContentProtection = hlsContentProtection;
@@ -865,6 +876,7 @@ public class CreateJobPlaylist implements Serializable, Cloneable {
      *         Elastic Transcoder to apply to the output files associated with
      *         this playlist.
      */
+
     public HlsContentProtection getHlsContentProtection() {
         return this.hlsContentProtection;
     }
@@ -882,6 +894,7 @@ public class CreateJobPlaylist implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateJobPlaylist withHlsContentProtection(
             HlsContentProtection hlsContentProtection) {
         setHlsContentProtection(hlsContentProtection);
@@ -898,6 +911,7 @@ public class CreateJobPlaylist implements Serializable, Cloneable {
      *        The DRM settings, if any, that you want Elastic Transcoder to
      *        apply to the output files associated with this playlist.
      */
+
     public void setPlayReadyDrm(PlayReadyDrm playReadyDrm) {
         this.playReadyDrm = playReadyDrm;
     }
@@ -911,6 +925,7 @@ public class CreateJobPlaylist implements Serializable, Cloneable {
      * @return The DRM settings, if any, that you want Elastic Transcoder to
      *         apply to the output files associated with this playlist.
      */
+
     public PlayReadyDrm getPlayReadyDrm() {
         return this.playReadyDrm;
     }
@@ -927,6 +942,7 @@ public class CreateJobPlaylist implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateJobPlaylist withPlayReadyDrm(PlayReadyDrm playReadyDrm) {
         setPlayReadyDrm(playReadyDrm);
         return this;

@@ -52,6 +52,7 @@ public class TrustedAdvisorCostOptimizingSummary implements Serializable,
      *        The estimated monthly savings that might be realized if the
      *        recommended actions are taken.
      */
+
     public void setEstimatedMonthlySavings(Double estimatedMonthlySavings) {
         this.estimatedMonthlySavings = estimatedMonthlySavings;
     }
@@ -65,6 +66,7 @@ public class TrustedAdvisorCostOptimizingSummary implements Serializable,
      * @return The estimated monthly savings that might be realized if the
      *         recommended actions are taken.
      */
+
     public Double getEstimatedMonthlySavings() {
         return this.estimatedMonthlySavings;
     }
@@ -81,6 +83,7 @@ public class TrustedAdvisorCostOptimizingSummary implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TrustedAdvisorCostOptimizingSummary withEstimatedMonthlySavings(
             Double estimatedMonthlySavings) {
         setEstimatedMonthlySavings(estimatedMonthlySavings);
@@ -97,6 +100,7 @@ public class TrustedAdvisorCostOptimizingSummary implements Serializable,
      *        The estimated percentage of savings that might be realized if the
      *        recommended actions are taken.
      */
+
     public void setEstimatedPercentMonthlySavings(
             Double estimatedPercentMonthlySavings) {
         this.estimatedPercentMonthlySavings = estimatedPercentMonthlySavings;
@@ -111,6 +115,7 @@ public class TrustedAdvisorCostOptimizingSummary implements Serializable,
      * @return The estimated percentage of savings that might be realized if the
      *         recommended actions are taken.
      */
+
     public Double getEstimatedPercentMonthlySavings() {
         return this.estimatedPercentMonthlySavings;
     }
@@ -127,6 +132,7 @@ public class TrustedAdvisorCostOptimizingSummary implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TrustedAdvisorCostOptimizingSummary withEstimatedPercentMonthlySavings(
             Double estimatedPercentMonthlySavings) {
         setEstimatedPercentMonthlySavings(estimatedPercentMonthlySavings);

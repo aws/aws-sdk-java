@@ -72,6 +72,7 @@ public class Prediction implements Serializable, Cloneable {
      *        The prediction label for either a BINARY or MULTICLASS
      *        <code>MLModel</code>.
      */
+
     public void setPredictedLabel(String predictedLabel) {
         this.predictedLabel = predictedLabel;
     }
@@ -83,6 +84,7 @@ public class Prediction implements Serializable, Cloneable {
      * @return The prediction label for either a BINARY or MULTICLASS
      *         <code>MLModel</code>.
      */
+
     public String getPredictedLabel() {
         return this.predictedLabel;
     }
@@ -97,6 +99,7 @@ public class Prediction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Prediction withPredictedLabel(String predictedLabel) {
         setPredictedLabel(predictedLabel);
         return this;
@@ -108,6 +111,7 @@ public class Prediction implements Serializable, Cloneable {
      * @param predictedValue
      *        The prediction value for REGRESSION <code>MLModel</code>.
      */
+
     public void setPredictedValue(Float predictedValue) {
         this.predictedValue = predictedValue;
     }
@@ -117,6 +121,7 @@ public class Prediction implements Serializable, Cloneable {
      * 
      * @return The prediction value for REGRESSION <code>MLModel</code>.
      */
+
     public Float getPredictedValue() {
         return this.predictedValue;
     }
@@ -129,6 +134,7 @@ public class Prediction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Prediction withPredictedValue(Float predictedValue) {
         setPredictedValue(predictedValue);
         return this;
@@ -137,6 +143,7 @@ public class Prediction implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public java.util.Map<String, Float> getPredictedScores() {
         if (predictedScores == null) {
             predictedScores = new com.amazonaws.internal.SdkInternalMap<String, Float>();
@@ -147,6 +154,7 @@ public class Prediction implements Serializable, Cloneable {
     /**
      * @param predictedScores
      */
+
     public void setPredictedScores(java.util.Map<String, Float> predictedScores) {
         this.predictedScores = predictedScores == null ? null
                 : new com.amazonaws.internal.SdkInternalMap<String, Float>(
@@ -158,6 +166,7 @@ public class Prediction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Prediction withPredictedScores(
             java.util.Map<String, Float> predictedScores) {
         setPredictedScores(predictedScores);
@@ -179,6 +188,7 @@ public class Prediction implements Serializable, Cloneable {
      * Removes all the entries added into PredictedScores. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public Prediction clearPredictedScoresEntries() {
         this.predictedScores = null;
         return this;
@@ -187,6 +197,7 @@ public class Prediction implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public java.util.Map<String, String> getDetails() {
         if (details == null) {
             details = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -197,6 +208,7 @@ public class Prediction implements Serializable, Cloneable {
     /**
      * @param details
      */
+
     public void setDetails(java.util.Map<String, String> details) {
         this.details = details == null ? null
                 : new com.amazonaws.internal.SdkInternalMap<String, String>(
@@ -208,6 +220,7 @@ public class Prediction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Prediction withDetails(java.util.Map<String, String> details) {
         setDetails(details);
         return this;
@@ -228,6 +241,7 @@ public class Prediction implements Serializable, Cloneable {
      * Removes all the entries added into Details. &lt;p> Returns a reference to
      * this object so that method calls can be chained together.
      */
+
     public Prediction clearDetailsEntries() {
         this.details = null;
         return this;

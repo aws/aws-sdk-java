@@ -30,6 +30,7 @@ public class ListGatewaysResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public java.util.List<GatewayInfo> getGateways() {
         if (gateways == null) {
             gateways = new com.amazonaws.internal.SdkInternalList<GatewayInfo>();
@@ -40,6 +41,7 @@ public class ListGatewaysResult implements Serializable, Cloneable {
     /**
      * @param gateways
      */
+
     public void setGateways(java.util.Collection<GatewayInfo> gateways) {
         if (gateways == null) {
             this.gateways = null;
@@ -62,6 +64,7 @@ public class ListGatewaysResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListGatewaysResult withGateways(GatewayInfo... gateways) {
         if (this.gateways == null) {
             setGateways(new com.amazonaws.internal.SdkInternalList<GatewayInfo>(
@@ -78,6 +81,7 @@ public class ListGatewaysResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListGatewaysResult withGateways(
             java.util.Collection<GatewayInfo> gateways) {
         setGateways(gateways);
@@ -87,6 +91,7 @@ public class ListGatewaysResult implements Serializable, Cloneable {
     /**
      * @param marker
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -94,6 +99,7 @@ public class ListGatewaysResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -103,6 +109,7 @@ public class ListGatewaysResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListGatewaysResult withMarker(String marker) {
         setMarker(marker);
         return this;

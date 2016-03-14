@@ -57,6 +57,7 @@ public class DescribeVpcClassicLinkDnsSupportRequest extends
      * 
      * @return One or more VPC IDs.
      */
+
     public java.util.List<String> getVpcIds() {
         if (vpcIds == null) {
             vpcIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -72,6 +73,7 @@ public class DescribeVpcClassicLinkDnsSupportRequest extends
      * @param vpcIds
      *        One or more VPC IDs.
      */
+
     public void setVpcIds(java.util.Collection<String> vpcIds) {
         if (vpcIds == null) {
             this.vpcIds = null;
@@ -97,6 +99,7 @@ public class DescribeVpcClassicLinkDnsSupportRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVpcClassicLinkDnsSupportRequest withVpcIds(String... vpcIds) {
         if (this.vpcIds == null) {
             setVpcIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -118,6 +121,7 @@ public class DescribeVpcClassicLinkDnsSupportRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVpcClassicLinkDnsSupportRequest withVpcIds(
             java.util.Collection<String> vpcIds) {
         setVpcIds(vpcIds);
@@ -136,6 +140,7 @@ public class DescribeVpcClassicLinkDnsSupportRequest extends
      *        request returns a token that you can specify in a subsequent call
      *        to get the next set of results.
      */
+
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
     }
@@ -151,6 +156,7 @@ public class DescribeVpcClassicLinkDnsSupportRequest extends
      *         request returns a token that you can specify in a subsequent call
      *         to get the next set of results.
      */
+
     public Integer getMaxResults() {
         return this.maxResults;
     }
@@ -169,6 +175,7 @@ public class DescribeVpcClassicLinkDnsSupportRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVpcClassicLinkDnsSupportRequest withMaxResults(
             Integer maxResults) {
         setMaxResults(maxResults);
@@ -185,6 +192,7 @@ public class DescribeVpcClassicLinkDnsSupportRequest extends
      *        The token for the next set of items to return. (You received this
      *        token from a prior call.)
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -198,6 +206,7 @@ public class DescribeVpcClassicLinkDnsSupportRequest extends
      * @return The token for the next set of items to return. (You received this
      *         token from a prior call.)
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -214,6 +223,7 @@ public class DescribeVpcClassicLinkDnsSupportRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVpcClassicLinkDnsSupportRequest withNextToken(
             String nextToken) {
         setNextToken(nextToken);

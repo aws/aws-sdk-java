@@ -60,6 +60,7 @@ public class DeleteQueueRequest extends AmazonWebServiceRequest implements
      * @param queueUrl
      *        The URL of the Amazon SQS queue to take action on.
      */
+
     public void setQueueUrl(String queueUrl) {
         this.queueUrl = queueUrl;
     }
@@ -71,6 +72,7 @@ public class DeleteQueueRequest extends AmazonWebServiceRequest implements
      * 
      * @return The URL of the Amazon SQS queue to take action on.
      */
+
     public String getQueueUrl() {
         return this.queueUrl;
     }
@@ -85,6 +87,7 @@ public class DeleteQueueRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteQueueRequest withQueueUrl(String queueUrl) {
         setQueueUrl(queueUrl);
         return this;

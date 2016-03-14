@@ -66,6 +66,7 @@ public class DescribeInstanceHealthRequest extends AmazonWebServiceRequest
      * @param loadBalancerName
      *        The name of the load balancer.
      */
+
     public void setLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
     }
@@ -77,6 +78,7 @@ public class DescribeInstanceHealthRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the load balancer.
      */
+
     public String getLoadBalancerName() {
         return this.loadBalancerName;
     }
@@ -91,6 +93,7 @@ public class DescribeInstanceHealthRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeInstanceHealthRequest withLoadBalancerName(
             String loadBalancerName) {
         setLoadBalancerName(loadBalancerName);
@@ -104,6 +107,7 @@ public class DescribeInstanceHealthRequest extends AmazonWebServiceRequest
      * 
      * @return The IDs of the instances.
      */
+
     public java.util.List<Instance> getInstances() {
         if (instances == null) {
             instances = new com.amazonaws.internal.SdkInternalList<Instance>();
@@ -119,6 +123,7 @@ public class DescribeInstanceHealthRequest extends AmazonWebServiceRequest
      * @param instances
      *        The IDs of the instances.
      */
+
     public void setInstances(java.util.Collection<Instance> instances) {
         if (instances == null) {
             this.instances = null;
@@ -145,6 +150,7 @@ public class DescribeInstanceHealthRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeInstanceHealthRequest withInstances(Instance... instances) {
         if (this.instances == null) {
             setInstances(new com.amazonaws.internal.SdkInternalList<Instance>(
@@ -166,6 +172,7 @@ public class DescribeInstanceHealthRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeInstanceHealthRequest withInstances(
             java.util.Collection<Instance> instances) {
         setInstances(instances);

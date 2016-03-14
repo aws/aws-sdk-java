@@ -51,6 +51,7 @@ public class DescribeActiveReceiptRuleSetResult implements Serializable,
      *        metadata consists of the rule set name and a timestamp of when the
      *        rule set was created.
      */
+
     public void setMetadata(ReceiptRuleSetMetadata metadata) {
         this.metadata = metadata;
     }
@@ -66,6 +67,7 @@ public class DescribeActiveReceiptRuleSetResult implements Serializable,
      *         metadata consists of the rule set name and a timestamp of when
      *         the rule set was created.
      */
+
     public ReceiptRuleSetMetadata getMetadata() {
         return this.metadata;
     }
@@ -84,6 +86,7 @@ public class DescribeActiveReceiptRuleSetResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeActiveReceiptRuleSetResult withMetadata(
             ReceiptRuleSetMetadata metadata) {
         setMetadata(metadata);
@@ -97,6 +100,7 @@ public class DescribeActiveReceiptRuleSetResult implements Serializable,
      * 
      * @return The receipt rules that belong to the active rule set.
      */
+
     public java.util.List<ReceiptRule> getRules() {
         if (rules == null) {
             rules = new com.amazonaws.internal.SdkInternalList<ReceiptRule>();
@@ -112,6 +116,7 @@ public class DescribeActiveReceiptRuleSetResult implements Serializable,
      * @param rules
      *        The receipt rules that belong to the active rule set.
      */
+
     public void setRules(java.util.Collection<ReceiptRule> rules) {
         if (rules == null) {
             this.rules = null;
@@ -138,6 +143,7 @@ public class DescribeActiveReceiptRuleSetResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeActiveReceiptRuleSetResult withRules(ReceiptRule... rules) {
         if (this.rules == null) {
             setRules(new com.amazonaws.internal.SdkInternalList<ReceiptRule>(
@@ -159,6 +165,7 @@ public class DescribeActiveReceiptRuleSetResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeActiveReceiptRuleSetResult withRules(
             java.util.Collection<ReceiptRule> rules) {
         setRules(rules);

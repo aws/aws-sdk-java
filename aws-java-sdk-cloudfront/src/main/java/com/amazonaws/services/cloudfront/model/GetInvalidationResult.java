@@ -32,6 +32,7 @@ public class GetInvalidationResult implements Serializable, Cloneable {
      * @param invalidation
      *        The invalidation's information.
      */
+
     public void setInvalidation(Invalidation invalidation) {
         this.invalidation = invalidation;
     }
@@ -41,6 +42,7 @@ public class GetInvalidationResult implements Serializable, Cloneable {
      * 
      * @return The invalidation's information.
      */
+
     public Invalidation getInvalidation() {
         return this.invalidation;
     }
@@ -53,6 +55,7 @@ public class GetInvalidationResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetInvalidationResult withInvalidation(Invalidation invalidation) {
         setInvalidation(invalidation);
         return this;

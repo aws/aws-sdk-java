@@ -50,6 +50,7 @@ public class DescribeScheduledInstancesResult implements Serializable,
      *        The token required to retrieve the next set of results. This value
      *        is <code>null</code> when there are no more results to return.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -64,6 +65,7 @@ public class DescribeScheduledInstancesResult implements Serializable,
      *         value is <code>null</code> when there are no more results to
      *         return.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -80,6 +82,7 @@ public class DescribeScheduledInstancesResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeScheduledInstancesResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -92,6 +95,7 @@ public class DescribeScheduledInstancesResult implements Serializable,
      * 
      * @return Information about the Scheduled Instances.
      */
+
     public java.util.List<ScheduledInstance> getScheduledInstanceSet() {
         if (scheduledInstanceSet == null) {
             scheduledInstanceSet = new com.amazonaws.internal.SdkInternalList<ScheduledInstance>();
@@ -107,6 +111,7 @@ public class DescribeScheduledInstancesResult implements Serializable,
      * @param scheduledInstanceSet
      *        Information about the Scheduled Instances.
      */
+
     public void setScheduledInstanceSet(
             java.util.Collection<ScheduledInstance> scheduledInstanceSet) {
         if (scheduledInstanceSet == null) {
@@ -134,6 +139,7 @@ public class DescribeScheduledInstancesResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeScheduledInstancesResult withScheduledInstanceSet(
             ScheduledInstance... scheduledInstanceSet) {
         if (this.scheduledInstanceSet == null) {
@@ -156,6 +162,7 @@ public class DescribeScheduledInstancesResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeScheduledInstancesResult withScheduledInstanceSet(
             java.util.Collection<ScheduledInstance> scheduledInstanceSet) {
         setScheduledInstanceSet(scheduledInstanceSet);

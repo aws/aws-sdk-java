@@ -47,6 +47,7 @@ public class UpdateWebACLResult implements Serializable, Cloneable {
      *        query the status of the request. For more information, see
      *        <a>GetChangeTokenStatus</a>.
      */
+
     public void setChangeToken(String changeToken) {
         this.changeToken = changeToken;
     }
@@ -64,6 +65,7 @@ public class UpdateWebACLResult implements Serializable, Cloneable {
      *         query the status of the request. For more information, see
      *         <a>GetChangeTokenStatus</a>.
      */
+
     public String getChangeToken() {
         return this.changeToken;
     }
@@ -84,6 +86,7 @@ public class UpdateWebACLResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateWebACLResult withChangeToken(String changeToken) {
         setChangeToken(changeToken);
         return this;

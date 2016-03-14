@@ -40,6 +40,7 @@ public class DescribeEventTopicsResult implements Serializable, Cloneable {
      * @return A list of SNS topic names that receive status messages from the
      *         specified Directory ID.
      */
+
     public java.util.List<EventTopic> getEventTopics() {
         if (eventTopics == null) {
             eventTopics = new com.amazonaws.internal.SdkInternalList<EventTopic>();
@@ -57,6 +58,7 @@ public class DescribeEventTopicsResult implements Serializable, Cloneable {
      *        A list of SNS topic names that receive status messages from the
      *        specified Directory ID.
      */
+
     public void setEventTopics(java.util.Collection<EventTopic> eventTopics) {
         if (eventTopics == null) {
             this.eventTopics = null;
@@ -85,6 +87,7 @@ public class DescribeEventTopicsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeEventTopicsResult withEventTopics(EventTopic... eventTopics) {
         if (this.eventTopics == null) {
             setEventTopics(new com.amazonaws.internal.SdkInternalList<EventTopic>(
@@ -108,6 +111,7 @@ public class DescribeEventTopicsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeEventTopicsResult withEventTopics(
             java.util.Collection<EventTopic> eventTopics) {
         setEventTopics(eventTopics);

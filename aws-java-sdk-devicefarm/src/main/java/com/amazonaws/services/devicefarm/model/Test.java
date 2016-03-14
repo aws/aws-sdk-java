@@ -69,6 +69,26 @@ public class Test implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * APPIUM_PYTHON: The Appium Python type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * CALABASH: The Calabash type.
      * </p>
      * </li>
@@ -90,6 +110,11 @@ public class Test implements Serializable, Cloneable {
      * <li>
      * <p>
      * XCTEST: The XCode test type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_UI: The XCode UI test type.
      * </p>
      * </li>
      * </ul>
@@ -222,6 +247,7 @@ public class Test implements Serializable, Cloneable {
      * @param arn
      *        The test's ARN.
      */
+
     public void setArn(String arn) {
         this.arn = arn;
     }
@@ -233,6 +259,7 @@ public class Test implements Serializable, Cloneable {
      * 
      * @return The test's ARN.
      */
+
     public String getArn() {
         return this.arn;
     }
@@ -247,6 +274,7 @@ public class Test implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Test withArn(String arn) {
         setArn(arn);
         return this;
@@ -260,6 +288,7 @@ public class Test implements Serializable, Cloneable {
      * @param name
      *        The test's name.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -271,6 +300,7 @@ public class Test implements Serializable, Cloneable {
      * 
      * @return The test's name.
      */
+
     public String getName() {
         return this.name;
     }
@@ -285,6 +315,7 @@ public class Test implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Test withName(String name) {
         setName(name);
         return this;
@@ -322,6 +353,26 @@ public class Test implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * APPIUM_PYTHON: The Appium Python type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * CALABASH: The Calabash type.
      * </p>
      * </li>
@@ -343,6 +394,11 @@ public class Test implements Serializable, Cloneable {
      * <li>
      * <p>
      * XCTEST: The XCode test type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_UI: The XCode UI test type.
      * </p>
      * </li>
      * </ul>
@@ -377,6 +433,26 @@ public class Test implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
+     *        APPIUM_PYTHON: The Appium Python type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        CALABASH: The Calabash type.
      *        </p>
      *        </li>
@@ -400,8 +476,14 @@ public class Test implements Serializable, Cloneable {
      *        XCTEST: The XCode test type.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST_UI: The XCode UI test type.
+     *        </p>
+     *        </li>
      * @see TestType
      */
+
     public void setType(String type) {
         this.type = type;
     }
@@ -438,6 +520,26 @@ public class Test implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * APPIUM_PYTHON: The Appium Python type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * CALABASH: The Calabash type.
      * </p>
      * </li>
@@ -459,6 +561,11 @@ public class Test implements Serializable, Cloneable {
      * <li>
      * <p>
      * XCTEST: The XCode test type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_UI: The XCode UI test type.
      * </p>
      * </li>
      * </ul>
@@ -492,6 +599,26 @@ public class Test implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
+     *         APPIUM_PYTHON: The Appium Python type.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         CALABASH: The Calabash type.
      *         </p>
      *         </li>
@@ -515,8 +642,14 @@ public class Test implements Serializable, Cloneable {
      *         XCTEST: The XCode test type.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         XCTEST_UI: The XCode UI test type.
+     *         </p>
+     *         </li>
      * @see TestType
      */
+
     public String getType() {
         return this.type;
     }
@@ -553,6 +686,26 @@ public class Test implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * APPIUM_PYTHON: The Appium Python type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * CALABASH: The Calabash type.
      * </p>
      * </li>
@@ -574,6 +727,11 @@ public class Test implements Serializable, Cloneable {
      * <li>
      * <p>
      * XCTEST: The XCode test type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_UI: The XCode UI test type.
      * </p>
      * </li>
      * </ul>
@@ -608,6 +766,26 @@ public class Test implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
+     *        APPIUM_PYTHON: The Appium Python type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        CALABASH: The Calabash type.
      *        </p>
      *        </li>
@@ -631,10 +809,16 @@ public class Test implements Serializable, Cloneable {
      *        XCTEST: The XCode test type.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST_UI: The XCode UI test type.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see TestType
      */
+
     public Test withType(String type) {
         setType(type);
         return this;
@@ -672,6 +856,26 @@ public class Test implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * APPIUM_PYTHON: The Appium Python type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * CALABASH: The Calabash type.
      * </p>
      * </li>
@@ -693,6 +897,11 @@ public class Test implements Serializable, Cloneable {
      * <li>
      * <p>
      * XCTEST: The XCode test type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_UI: The XCode UI test type.
      * </p>
      * </li>
      * </ul>
@@ -727,6 +936,26 @@ public class Test implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
+     *        APPIUM_PYTHON: The Appium Python type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        CALABASH: The Calabash type.
      *        </p>
      *        </li>
@@ -750,10 +979,16 @@ public class Test implements Serializable, Cloneable {
      *        XCTEST: The XCode test type.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST_UI: The XCode UI test type.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see TestType
      */
+
     public void setType(TestType type) {
         this.type = type.toString();
     }
@@ -790,6 +1025,26 @@ public class Test implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * APPIUM_PYTHON: The Appium Python type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * CALABASH: The Calabash type.
      * </p>
      * </li>
@@ -811,6 +1066,11 @@ public class Test implements Serializable, Cloneable {
      * <li>
      * <p>
      * XCTEST: The XCode test type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_UI: The XCode UI test type.
      * </p>
      * </li>
      * </ul>
@@ -845,6 +1105,26 @@ public class Test implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
+     *        APPIUM_PYTHON: The Appium Python type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        CALABASH: The Calabash type.
      *        </p>
      *        </li>
@@ -868,10 +1148,16 @@ public class Test implements Serializable, Cloneable {
      *        XCTEST: The XCode test type.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST_UI: The XCode UI test type.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see TestType
      */
+
     public Test withType(TestType type) {
         setType(type);
         return this;
@@ -885,6 +1171,7 @@ public class Test implements Serializable, Cloneable {
      * @param created
      *        When the test was created.
      */
+
     public void setCreated(java.util.Date created) {
         this.created = created;
     }
@@ -896,6 +1183,7 @@ public class Test implements Serializable, Cloneable {
      * 
      * @return When the test was created.
      */
+
     public java.util.Date getCreated() {
         return this.created;
     }
@@ -910,6 +1198,7 @@ public class Test implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Test withCreated(java.util.Date created) {
         setCreated(created);
         return this;
@@ -983,6 +1272,7 @@ public class Test implements Serializable, Cloneable {
      *        </li>
      * @see ExecutionStatus
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -1054,6 +1344,7 @@ public class Test implements Serializable, Cloneable {
      *         </li>
      * @see ExecutionStatus
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -1128,6 +1419,7 @@ public class Test implements Serializable, Cloneable {
      *         chained together.
      * @see ExecutionStatus
      */
+
     public Test withStatus(String status) {
         setStatus(status);
         return this;
@@ -1203,6 +1495,7 @@ public class Test implements Serializable, Cloneable {
      *         chained together.
      * @see ExecutionStatus
      */
+
     public void setStatus(ExecutionStatus status) {
         this.status = status.toString();
     }
@@ -1277,6 +1570,7 @@ public class Test implements Serializable, Cloneable {
      *         chained together.
      * @see ExecutionStatus
      */
+
     public Test withStatus(ExecutionStatus status) {
         setStatus(status);
         return this;
@@ -1370,6 +1664,7 @@ public class Test implements Serializable, Cloneable {
      *        </li>
      * @see ExecutionResult
      */
+
     public void setResult(String result) {
         this.result = result;
     }
@@ -1461,6 +1756,7 @@ public class Test implements Serializable, Cloneable {
      *         </li>
      * @see ExecutionResult
      */
+
     public String getResult() {
         return this.result;
     }
@@ -1555,6 +1851,7 @@ public class Test implements Serializable, Cloneable {
      *         chained together.
      * @see ExecutionResult
      */
+
     public Test withResult(String result) {
         setResult(result);
         return this;
@@ -1650,6 +1947,7 @@ public class Test implements Serializable, Cloneable {
      *         chained together.
      * @see ExecutionResult
      */
+
     public void setResult(ExecutionResult result) {
         this.result = result.toString();
     }
@@ -1744,6 +2042,7 @@ public class Test implements Serializable, Cloneable {
      *         chained together.
      * @see ExecutionResult
      */
+
     public Test withResult(ExecutionResult result) {
         setResult(result);
         return this;
@@ -1757,6 +2056,7 @@ public class Test implements Serializable, Cloneable {
      * @param started
      *        The test's start time.
      */
+
     public void setStarted(java.util.Date started) {
         this.started = started;
     }
@@ -1768,6 +2068,7 @@ public class Test implements Serializable, Cloneable {
      * 
      * @return The test's start time.
      */
+
     public java.util.Date getStarted() {
         return this.started;
     }
@@ -1782,6 +2083,7 @@ public class Test implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Test withStarted(java.util.Date started) {
         setStarted(started);
         return this;
@@ -1795,6 +2097,7 @@ public class Test implements Serializable, Cloneable {
      * @param stopped
      *        The test's stop time.
      */
+
     public void setStopped(java.util.Date stopped) {
         this.stopped = stopped;
     }
@@ -1806,6 +2109,7 @@ public class Test implements Serializable, Cloneable {
      * 
      * @return The test's stop time.
      */
+
     public java.util.Date getStopped() {
         return this.stopped;
     }
@@ -1820,6 +2124,7 @@ public class Test implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Test withStopped(java.util.Date stopped) {
         setStopped(stopped);
         return this;
@@ -1833,6 +2138,7 @@ public class Test implements Serializable, Cloneable {
      * @param counters
      *        The test's result counters.
      */
+
     public void setCounters(Counters counters) {
         this.counters = counters;
     }
@@ -1844,6 +2150,7 @@ public class Test implements Serializable, Cloneable {
      * 
      * @return The test's result counters.
      */
+
     public Counters getCounters() {
         return this.counters;
     }
@@ -1858,6 +2165,7 @@ public class Test implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Test withCounters(Counters counters) {
         setCounters(counters);
         return this;
@@ -1871,6 +2179,7 @@ public class Test implements Serializable, Cloneable {
      * @param message
      *        A message about the test's result.
      */
+
     public void setMessage(String message) {
         this.message = message;
     }
@@ -1882,6 +2191,7 @@ public class Test implements Serializable, Cloneable {
      * 
      * @return A message about the test's result.
      */
+
     public String getMessage() {
         return this.message;
     }
@@ -1896,6 +2206,7 @@ public class Test implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Test withMessage(String message) {
         setMessage(message);
         return this;
@@ -1910,6 +2221,7 @@ public class Test implements Serializable, Cloneable {
      *        Represents the total (metered or unmetered) minutes used by the
      *        test.
      */
+
     public void setDeviceMinutes(DeviceMinutes deviceMinutes) {
         this.deviceMinutes = deviceMinutes;
     }
@@ -1922,6 +2234,7 @@ public class Test implements Serializable, Cloneable {
      * @return Represents the total (metered or unmetered) minutes used by the
      *         test.
      */
+
     public DeviceMinutes getDeviceMinutes() {
         return this.deviceMinutes;
     }
@@ -1937,6 +2250,7 @@ public class Test implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Test withDeviceMinutes(DeviceMinutes deviceMinutes) {
         setDeviceMinutes(deviceMinutes);
         return this;

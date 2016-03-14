@@ -58,6 +58,7 @@ public class DeleteRepositoryRequest extends AmazonWebServiceRequest implements
      *        repository to delete. If you do not specify a registry, the
      *        default registry is assumed.
      */
+
     public void setRegistryId(String registryId) {
         this.registryId = registryId;
     }
@@ -73,6 +74,7 @@ public class DeleteRepositoryRequest extends AmazonWebServiceRequest implements
      *         repository to delete. If you do not specify a registry, the
      *         default registry is assumed.
      */
+
     public String getRegistryId() {
         return this.registryId;
     }
@@ -91,6 +93,7 @@ public class DeleteRepositoryRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteRepositoryRequest withRegistryId(String registryId) {
         setRegistryId(registryId);
         return this;
@@ -104,6 +107,7 @@ public class DeleteRepositoryRequest extends AmazonWebServiceRequest implements
      * @param repositoryName
      *        The name of the repository to delete.
      */
+
     public void setRepositoryName(String repositoryName) {
         this.repositoryName = repositoryName;
     }
@@ -115,6 +119,7 @@ public class DeleteRepositoryRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the repository to delete.
      */
+
     public String getRepositoryName() {
         return this.repositoryName;
     }
@@ -129,6 +134,7 @@ public class DeleteRepositoryRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteRepositoryRequest withRepositoryName(String repositoryName) {
         setRepositoryName(repositoryName);
         return this;
@@ -142,6 +148,7 @@ public class DeleteRepositoryRequest extends AmazonWebServiceRequest implements
      * @param force
      *        Force the deletion of the repository if it contains images.
      */
+
     public void setForce(Boolean force) {
         this.force = force;
     }
@@ -153,6 +160,7 @@ public class DeleteRepositoryRequest extends AmazonWebServiceRequest implements
      * 
      * @return Force the deletion of the repository if it contains images.
      */
+
     public Boolean getForce() {
         return this.force;
     }
@@ -167,6 +175,7 @@ public class DeleteRepositoryRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteRepositoryRequest withForce(Boolean force) {
         setForce(force);
         return this;
@@ -179,6 +188,7 @@ public class DeleteRepositoryRequest extends AmazonWebServiceRequest implements
      * 
      * @return Force the deletion of the repository if it contains images.
      */
+
     public Boolean isForce() {
         return this.force;
     }

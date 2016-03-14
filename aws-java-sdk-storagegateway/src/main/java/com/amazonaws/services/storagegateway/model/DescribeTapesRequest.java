@@ -60,6 +60,7 @@ public class DescribeTapesRequest extends AmazonWebServiceRequest implements
     /**
      * @param gatewayARN
      */
+
     public void setGatewayARN(String gatewayARN) {
         this.gatewayARN = gatewayARN;
     }
@@ -67,6 +68,7 @@ public class DescribeTapesRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public String getGatewayARN() {
         return this.gatewayARN;
     }
@@ -76,6 +78,7 @@ public class DescribeTapesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTapesRequest withGatewayARN(String gatewayARN) {
         setGatewayARN(gatewayARN);
         return this;
@@ -95,6 +98,7 @@ public class DescribeTapesRequest extends AmazonWebServiceRequest implements
      *         description of all virtual tapes associated with the specified
      *         gateway.
      */
+
     public java.util.List<String> getTapeARNs() {
         if (tapeARNs == null) {
             tapeARNs = new com.amazonaws.internal.SdkInternalList<String>();
@@ -117,6 +121,7 @@ public class DescribeTapesRequest extends AmazonWebServiceRequest implements
      *        description of all virtual tapes associated with the specified
      *        gateway.
      */
+
     public void setTapeARNs(java.util.Collection<String> tapeARNs) {
         if (tapeARNs == null) {
             this.tapeARNs = null;
@@ -150,6 +155,7 @@ public class DescribeTapesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTapesRequest withTapeARNs(String... tapeARNs) {
         if (this.tapeARNs == null) {
             setTapeARNs(new com.amazonaws.internal.SdkInternalList<String>(
@@ -178,6 +184,7 @@ public class DescribeTapesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTapesRequest withTapeARNs(
             java.util.Collection<String> tapeARNs) {
         setTapeARNs(tapeARNs);
@@ -200,6 +207,7 @@ public class DescribeTapesRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        If not specified, the first page of results is retrieved.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -219,6 +227,7 @@ public class DescribeTapesRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         If not specified, the first page of results is retrieved.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -241,6 +250,7 @@ public class DescribeTapesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTapesRequest withMarker(String marker) {
         setMarker(marker);
         return this;
@@ -259,6 +269,7 @@ public class DescribeTapesRequest extends AmazonWebServiceRequest implements
      *        the specified number.</p> <note>Amazon Web Services may impose its
      *        own limit, if this field is not set.
      */
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -275,6 +286,7 @@ public class DescribeTapesRequest extends AmazonWebServiceRequest implements
      *         to the specified number.</p> <note>Amazon Web Services may impose
      *         its own limit, if this field is not set.
      */
+
     public Integer getLimit() {
         return this.limit;
     }
@@ -294,6 +306,7 @@ public class DescribeTapesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTapesRequest withLimit(Integer limit) {
         setLimit(limit);
         return this;

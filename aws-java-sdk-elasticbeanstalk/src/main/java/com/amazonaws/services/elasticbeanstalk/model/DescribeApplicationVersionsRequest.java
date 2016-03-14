@@ -53,6 +53,7 @@ public class DescribeApplicationVersionsRequest extends AmazonWebServiceRequest
      *        descriptions to only include ones that are associated with the
      *        specified application.
      */
+
     public void setApplicationName(String applicationName) {
         this.applicationName = applicationName;
     }
@@ -67,6 +68,7 @@ public class DescribeApplicationVersionsRequest extends AmazonWebServiceRequest
      *         descriptions to only include ones that are associated with the
      *         specified application.
      */
+
     public String getApplicationName() {
         return this.applicationName;
     }
@@ -84,6 +86,7 @@ public class DescribeApplicationVersionsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeApplicationVersionsRequest withApplicationName(
             String applicationName) {
         setApplicationName(applicationName);
@@ -99,6 +102,7 @@ public class DescribeApplicationVersionsRequest extends AmazonWebServiceRequest
      * @return If specified, restricts the returned descriptions to only include
      *         ones that have the specified version labels.
      */
+
     public java.util.List<String> getVersionLabels() {
         if (versionLabels == null) {
             versionLabels = new com.amazonaws.internal.SdkInternalList<String>();
@@ -116,6 +120,7 @@ public class DescribeApplicationVersionsRequest extends AmazonWebServiceRequest
      *        If specified, restricts the returned descriptions to only include
      *        ones that have the specified version labels.
      */
+
     public void setVersionLabels(java.util.Collection<String> versionLabels) {
         if (versionLabels == null) {
             this.versionLabels = null;
@@ -144,6 +149,7 @@ public class DescribeApplicationVersionsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeApplicationVersionsRequest withVersionLabels(
             String... versionLabels) {
         if (this.versionLabels == null) {
@@ -168,6 +174,7 @@ public class DescribeApplicationVersionsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeApplicationVersionsRequest withVersionLabels(
             java.util.Collection<String> versionLabels) {
         setVersionLabels(versionLabels);

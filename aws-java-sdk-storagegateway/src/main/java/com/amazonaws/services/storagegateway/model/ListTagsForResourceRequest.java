@@ -59,6 +59,7 @@ public class ListTagsForResourceRequest extends AmazonWebServiceRequest
      *        The Amazon Resource Name (ARN) of the resource for which you want
      *        to list tags.
      */
+
     public void setResourceARN(String resourceARN) {
         this.resourceARN = resourceARN;
     }
@@ -72,6 +73,7 @@ public class ListTagsForResourceRequest extends AmazonWebServiceRequest
      * @return The Amazon Resource Name (ARN) of the resource for which you want
      *         to list tags.
      */
+
     public String getResourceARN() {
         return this.resourceARN;
     }
@@ -88,6 +90,7 @@ public class ListTagsForResourceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTagsForResourceRequest withResourceARN(String resourceARN) {
         setResourceARN(resourceARN);
         return this;
@@ -103,6 +106,7 @@ public class ListTagsForResourceRequest extends AmazonWebServiceRequest
      *        An opaque string that indicates the position at which to begin
      *        returning the list of tags.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -116,6 +120,7 @@ public class ListTagsForResourceRequest extends AmazonWebServiceRequest
      * @return An opaque string that indicates the position at which to begin
      *         returning the list of tags.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -132,6 +137,7 @@ public class ListTagsForResourceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTagsForResourceRequest withMarker(String marker) {
         setMarker(marker);
         return this;
@@ -147,6 +153,7 @@ public class ListTagsForResourceRequest extends AmazonWebServiceRequest
      *        Specifies that the list of tags returned be limited to the
      *        specified number of items.
      */
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -160,6 +167,7 @@ public class ListTagsForResourceRequest extends AmazonWebServiceRequest
      * @return Specifies that the list of tags returned be limited to the
      *         specified number of items.
      */
+
     public Integer getLimit() {
         return this.limit;
     }
@@ -176,6 +184,7 @@ public class ListTagsForResourceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTagsForResourceRequest withLimit(Integer limit) {
         setLimit(limit);
         return this;

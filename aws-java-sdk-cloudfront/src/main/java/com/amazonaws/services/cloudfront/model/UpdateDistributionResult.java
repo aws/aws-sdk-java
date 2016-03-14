@@ -34,6 +34,7 @@ public class UpdateDistributionResult implements Serializable, Cloneable {
      * @param distribution
      *        The distribution's information.
      */
+
     public void setDistribution(Distribution distribution) {
         this.distribution = distribution;
     }
@@ -43,6 +44,7 @@ public class UpdateDistributionResult implements Serializable, Cloneable {
      * 
      * @return The distribution's information.
      */
+
     public Distribution getDistribution() {
         return this.distribution;
     }
@@ -55,6 +57,7 @@ public class UpdateDistributionResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateDistributionResult withDistribution(Distribution distribution) {
         setDistribution(distribution);
         return this;
@@ -67,6 +70,7 @@ public class UpdateDistributionResult implements Serializable, Cloneable {
      *        The current version of the configuration. For example:
      *        E2QWRUHAPOMQZL.
      */
+
     public void setETag(String eTag) {
         this.eTag = eTag;
     }
@@ -77,6 +81,7 @@ public class UpdateDistributionResult implements Serializable, Cloneable {
      * @return The current version of the configuration. For example:
      *         E2QWRUHAPOMQZL.
      */
+
     public String getETag() {
         return this.eTag;
     }
@@ -90,6 +95,7 @@ public class UpdateDistributionResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateDistributionResult withETag(String eTag) {
         setETag(eTag);
         return this;

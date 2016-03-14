@@ -76,6 +76,7 @@ public class PutIntegrationResponseResult implements Serializable, Cloneable {
      *        Specifies the status code that is used to map the integration
      *        response to an existing <a>MethodResponse</a>.
      */
+
     public void setStatusCode(String statusCode) {
         this.statusCode = statusCode;
     }
@@ -89,6 +90,7 @@ public class PutIntegrationResponseResult implements Serializable, Cloneable {
      * @return Specifies the status code that is used to map the integration
      *         response to an existing <a>MethodResponse</a>.
      */
+
     public String getStatusCode() {
         return this.statusCode;
     }
@@ -105,6 +107,7 @@ public class PutIntegrationResponseResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutIntegrationResponseResult withStatusCode(String statusCode) {
         setStatusCode(statusCode);
         return this;
@@ -126,6 +129,7 @@ public class PutIntegrationResponseResult implements Serializable, Cloneable {
      *        error header is matched. For all other HTTP and AWS backends, the
      *        HTTP status code is matched.
      */
+
     public void setSelectionPattern(String selectionPattern) {
         this.selectionPattern = selectionPattern;
     }
@@ -145,6 +149,7 @@ public class PutIntegrationResponseResult implements Serializable, Cloneable {
      *         error header is matched. For all other HTTP and AWS backends, the
      *         HTTP status code is matched.
      */
+
     public String getSelectionPattern() {
         return this.selectionPattern;
     }
@@ -167,6 +172,7 @@ public class PutIntegrationResponseResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutIntegrationResponseResult withSelectionPattern(
             String selectionPattern) {
         setSelectionPattern(selectionPattern);
@@ -195,6 +201,7 @@ public class PutIntegrationResponseResult implements Serializable, Cloneable {
      *         be read using the pattern
      *         <code>integration.response.header.{name}</code>.
      */
+
     public java.util.Map<String, String> getResponseParameters() {
         return responseParameters;
     }
@@ -221,6 +228,7 @@ public class PutIntegrationResponseResult implements Serializable, Cloneable {
      *        enclosing single quotes, and backend response headers can be read
      *        using the pattern <code>integration.response.header.{name}</code>.
      */
+
     public void setResponseParameters(
             java.util.Map<String, String> responseParameters) {
         this.responseParameters = responseParameters;
@@ -250,6 +258,7 @@ public class PutIntegrationResponseResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutIntegrationResponseResult withResponseParameters(
             java.util.Map<String, String> responseParameters) {
         setResponseParameters(responseParameters);
@@ -272,6 +281,7 @@ public class PutIntegrationResponseResult implements Serializable, Cloneable {
      * Removes all the entries added into ResponseParameters. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public PutIntegrationResponseResult clearResponseParametersEntries() {
         this.responseParameters = null;
         return this;
@@ -288,6 +298,7 @@ public class PutIntegrationResponseResult implements Serializable, Cloneable {
      *         response body. Response templates are represented as a key/value
      *         map, with a content-type as the key and a template as the value.
      */
+
     public java.util.Map<String, String> getResponseTemplates() {
         return responseTemplates;
     }
@@ -304,6 +315,7 @@ public class PutIntegrationResponseResult implements Serializable, Cloneable {
      *        body. Response templates are represented as a key/value map, with
      *        a content-type as the key and a template as the value.
      */
+
     public void setResponseTemplates(
             java.util.Map<String, String> responseTemplates) {
         this.responseTemplates = responseTemplates;
@@ -323,6 +335,7 @@ public class PutIntegrationResponseResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutIntegrationResponseResult withResponseTemplates(
             java.util.Map<String, String> responseTemplates) {
         setResponseTemplates(responseTemplates);
@@ -345,6 +358,7 @@ public class PutIntegrationResponseResult implements Serializable, Cloneable {
      * Removes all the entries added into ResponseTemplates. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public PutIntegrationResponseResult clearResponseTemplatesEntries() {
         this.responseTemplates = null;
         return this;

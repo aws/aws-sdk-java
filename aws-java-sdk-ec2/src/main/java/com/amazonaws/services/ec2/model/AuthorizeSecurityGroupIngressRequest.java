@@ -135,6 +135,7 @@ public class AuthorizeSecurityGroupIngressRequest extends
      * @param groupName
      *        [EC2-Classic, default VPC] The name of the security group.
      */
+
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
@@ -146,6 +147,7 @@ public class AuthorizeSecurityGroupIngressRequest extends
      * 
      * @return [EC2-Classic, default VPC] The name of the security group.
      */
+
     public String getGroupName() {
         return this.groupName;
     }
@@ -160,6 +162,7 @@ public class AuthorizeSecurityGroupIngressRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AuthorizeSecurityGroupIngressRequest withGroupName(String groupName) {
         setGroupName(groupName);
         return this;
@@ -173,6 +176,7 @@ public class AuthorizeSecurityGroupIngressRequest extends
      * @param groupId
      *        The ID of the security group. Required for a nondefault VPC.
      */
+
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
@@ -184,6 +188,7 @@ public class AuthorizeSecurityGroupIngressRequest extends
      * 
      * @return The ID of the security group. Required for a nondefault VPC.
      */
+
     public String getGroupId() {
         return this.groupId;
     }
@@ -198,6 +203,7 @@ public class AuthorizeSecurityGroupIngressRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AuthorizeSecurityGroupIngressRequest withGroupId(String groupId) {
         setGroupId(groupId);
         return this;
@@ -219,6 +225,7 @@ public class AuthorizeSecurityGroupIngressRequest extends
      *        range, the IP protocol, and the end of the port range. For
      *        EC2-VPC, the source security group must be in the same VPC.
      */
+
     public void setSourceSecurityGroupName(String sourceSecurityGroupName) {
         this.sourceSecurityGroupName = sourceSecurityGroupName;
     }
@@ -238,6 +245,7 @@ public class AuthorizeSecurityGroupIngressRequest extends
      *         port range, the IP protocol, and the end of the port range. For
      *         EC2-VPC, the source security group must be in the same VPC.
      */
+
     public String getSourceSecurityGroupName() {
         return this.sourceSecurityGroupName;
     }
@@ -260,6 +268,7 @@ public class AuthorizeSecurityGroupIngressRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AuthorizeSecurityGroupIngressRequest withSourceSecurityGroupName(
             String sourceSecurityGroupName) {
         setSourceSecurityGroupName(sourceSecurityGroupName);
@@ -287,6 +296,7 @@ public class AuthorizeSecurityGroupIngressRequest extends
      *        create a rule with a specific IP protocol and port range, use a
      *        set of IP permissions instead.
      */
+
     public void setSourceSecurityGroupOwnerId(String sourceSecurityGroupOwnerId) {
         this.sourceSecurityGroupOwnerId = sourceSecurityGroupOwnerId;
     }
@@ -311,6 +321,7 @@ public class AuthorizeSecurityGroupIngressRequest extends
      *         To create a rule with a specific IP protocol and port range, use
      *         a set of IP permissions instead.
      */
+
     public String getSourceSecurityGroupOwnerId() {
         return this.sourceSecurityGroupOwnerId;
     }
@@ -338,6 +349,7 @@ public class AuthorizeSecurityGroupIngressRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AuthorizeSecurityGroupIngressRequest withSourceSecurityGroupOwnerId(
             String sourceSecurityGroupOwnerId) {
         setSourceSecurityGroupOwnerId(sourceSecurityGroupOwnerId);
@@ -359,6 +371,7 @@ public class AuthorizeSecurityGroupIngressRequest extends
      *        >Protocol Numbers</a>). (VPC only) Use <code>-1</code> to specify
      *        all.
      */
+
     public void setIpProtocol(String ipProtocol) {
         this.ipProtocol = ipProtocol;
     }
@@ -377,6 +390,7 @@ public class AuthorizeSecurityGroupIngressRequest extends
      *         >Protocol Numbers</a>). (VPC only) Use <code>-1</code> to specify
      *         all.
      */
+
     public String getIpProtocol() {
         return this.ipProtocol;
     }
@@ -398,6 +412,7 @@ public class AuthorizeSecurityGroupIngressRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AuthorizeSecurityGroupIngressRequest withIpProtocol(String ipProtocol) {
         setIpProtocol(ipProtocol);
         return this;
@@ -415,6 +430,7 @@ public class AuthorizeSecurityGroupIngressRequest extends
      *        type number. For the ICMP type number, use <code>-1</code> to
      *        specify all ICMP types.
      */
+
     public void setFromPort(Integer fromPort) {
         this.fromPort = fromPort;
     }
@@ -430,6 +446,7 @@ public class AuthorizeSecurityGroupIngressRequest extends
      *         type number. For the ICMP type number, use <code>-1</code> to
      *         specify all ICMP types.
      */
+
     public Integer getFromPort() {
         return this.fromPort;
     }
@@ -448,6 +465,7 @@ public class AuthorizeSecurityGroupIngressRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AuthorizeSecurityGroupIngressRequest withFromPort(Integer fromPort) {
         setFromPort(fromPort);
         return this;
@@ -465,6 +483,7 @@ public class AuthorizeSecurityGroupIngressRequest extends
      *        code number. For the ICMP code number, use <code>-1</code> to
      *        specify all ICMP codes for the ICMP type.
      */
+
     public void setToPort(Integer toPort) {
         this.toPort = toPort;
     }
@@ -480,6 +499,7 @@ public class AuthorizeSecurityGroupIngressRequest extends
      *         code number. For the ICMP code number, use <code>-1</code> to
      *         specify all ICMP codes for the ICMP type.
      */
+
     public Integer getToPort() {
         return this.toPort;
     }
@@ -498,6 +518,7 @@ public class AuthorizeSecurityGroupIngressRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AuthorizeSecurityGroupIngressRequest withToPort(Integer toPort) {
         setToPort(toPort);
         return this;
@@ -513,6 +534,7 @@ public class AuthorizeSecurityGroupIngressRequest extends
      *        The CIDR IP address range. You can't specify this parameter when
      *        specifying a source security group.
      */
+
     public void setCidrIp(String cidrIp) {
         this.cidrIp = cidrIp;
     }
@@ -526,6 +548,7 @@ public class AuthorizeSecurityGroupIngressRequest extends
      * @return The CIDR IP address range. You can't specify this parameter when
      *         specifying a source security group.
      */
+
     public String getCidrIp() {
         return this.cidrIp;
     }
@@ -542,6 +565,7 @@ public class AuthorizeSecurityGroupIngressRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AuthorizeSecurityGroupIngressRequest withCidrIp(String cidrIp) {
         setCidrIp(cidrIp);
         return this;
@@ -556,6 +580,7 @@ public class AuthorizeSecurityGroupIngressRequest extends
      * @return A set of IP permissions. Can be used to specify multiple rules in
      *         a single command.
      */
+
     public java.util.List<IpPermission> getIpPermissions() {
         if (ipPermissions == null) {
             ipPermissions = new com.amazonaws.internal.SdkInternalList<IpPermission>();
@@ -573,6 +598,7 @@ public class AuthorizeSecurityGroupIngressRequest extends
      *        A set of IP permissions. Can be used to specify multiple rules in
      *        a single command.
      */
+
     public void setIpPermissions(
             java.util.Collection<IpPermission> ipPermissions) {
         if (ipPermissions == null) {
@@ -602,6 +628,7 @@ public class AuthorizeSecurityGroupIngressRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AuthorizeSecurityGroupIngressRequest withIpPermissions(
             IpPermission... ipPermissions) {
         if (this.ipPermissions == null) {
@@ -626,6 +653,7 @@ public class AuthorizeSecurityGroupIngressRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AuthorizeSecurityGroupIngressRequest withIpPermissions(
             java.util.Collection<IpPermission> ipPermissions) {
         setIpPermissions(ipPermissions);

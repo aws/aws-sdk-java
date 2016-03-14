@@ -59,6 +59,7 @@ public class AccessPoliciesStatus implements Serializable, Cloneable {
      *        target="_blank"> Configuring Access Policies</a>for more
      *        information.
      */
+
     public void setOptions(String options) {
         this.options = options;
     }
@@ -78,6 +79,7 @@ public class AccessPoliciesStatus implements Serializable, Cloneable {
      *         target="_blank"> Configuring Access Policies</a>for more
      *         information.
      */
+
     public String getOptions() {
         return this.options;
     }
@@ -100,6 +102,7 @@ public class AccessPoliciesStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AccessPoliciesStatus withOptions(String options) {
         setOptions(options);
         return this;
@@ -116,6 +119,7 @@ public class AccessPoliciesStatus implements Serializable, Cloneable {
      *        <code>OptionStatus</code> for the status information that's
      *        included.
      */
+
     public void setStatus(OptionStatus status) {
         this.status = status;
     }
@@ -130,6 +134,7 @@ public class AccessPoliciesStatus implements Serializable, Cloneable {
      *         <code>OptionStatus</code> for the status information that's
      *         included.
      */
+
     public OptionStatus getStatus() {
         return this.status;
     }
@@ -147,6 +152,7 @@ public class AccessPoliciesStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AccessPoliciesStatus withStatus(OptionStatus status) {
         setStatus(status);
         return this;

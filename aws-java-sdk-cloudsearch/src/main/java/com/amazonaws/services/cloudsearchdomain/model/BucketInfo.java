@@ -39,6 +39,7 @@ public class BucketInfo implements Serializable, Cloneable {
      * 
      * @return A list of the calculated facet values and counts.
      */
+
     public java.util.List<Bucket> getBuckets() {
         if (buckets == null) {
             buckets = new com.amazonaws.internal.SdkInternalList<Bucket>();
@@ -54,6 +55,7 @@ public class BucketInfo implements Serializable, Cloneable {
      * @param buckets
      *        A list of the calculated facet values and counts.
      */
+
     public void setBuckets(java.util.Collection<Bucket> buckets) {
         if (buckets == null) {
             this.buckets = null;
@@ -80,6 +82,7 @@ public class BucketInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BucketInfo withBuckets(Bucket... buckets) {
         if (this.buckets == null) {
             setBuckets(new com.amazonaws.internal.SdkInternalList<Bucket>(
@@ -101,6 +104,7 @@ public class BucketInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BucketInfo withBuckets(java.util.Collection<Bucket> buckets) {
         setBuckets(buckets);
         return this;

@@ -44,6 +44,7 @@ public class DescribeSeverityLevelsResult implements Serializable, Cloneable {
      *         severity levels are defined by your service level agreement with
      *         AWS.
      */
+
     public java.util.List<SeverityLevel> getSeverityLevels() {
         if (severityLevels == null) {
             severityLevels = new com.amazonaws.internal.SdkInternalList<SeverityLevel>();
@@ -62,6 +63,7 @@ public class DescribeSeverityLevelsResult implements Serializable, Cloneable {
      *        severity levels are defined by your service level agreement with
      *        AWS.
      */
+
     public void setSeverityLevels(
             java.util.Collection<SeverityLevel> severityLevels) {
         if (severityLevels == null) {
@@ -92,6 +94,7 @@ public class DescribeSeverityLevelsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSeverityLevelsResult withSeverityLevels(
             SeverityLevel... severityLevels) {
         if (this.severityLevels == null) {
@@ -117,6 +120,7 @@ public class DescribeSeverityLevelsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSeverityLevelsResult withSeverityLevels(
             java.util.Collection<SeverityLevel> severityLevels) {
         setSeverityLevels(severityLevels);

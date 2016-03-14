@@ -24,39 +24,39 @@ import java.io.Serializable;
 public class VpcSecurityGroupMembership implements Serializable, Cloneable {
 
     /**
-     * 
+     * The identifier of the VPC security group.
      */
     private String vpcSecurityGroupId;
 
     /**
-     * 
+     * The status of the VPC security group.
      */
     private String status;
 
     /**
-     * 
+     * The identifier of the VPC security group.
      *
-     * @return 
+     * @return The identifier of the VPC security group.
      */
     public String getVpcSecurityGroupId() {
         return vpcSecurityGroupId;
     }
     
     /**
-     * 
+     * The identifier of the VPC security group.
      *
-     * @param vpcSecurityGroupId 
+     * @param vpcSecurityGroupId The identifier of the VPC security group.
      */
     public void setVpcSecurityGroupId(String vpcSecurityGroupId) {
         this.vpcSecurityGroupId = vpcSecurityGroupId;
     }
     
     /**
-     * 
+     * The identifier of the VPC security group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpcSecurityGroupId 
+     * @param vpcSecurityGroupId The identifier of the VPC security group.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -67,29 +67,29 @@ public class VpcSecurityGroupMembership implements Serializable, Cloneable {
     }
 
     /**
-     * 
+     * The status of the VPC security group.
      *
-     * @return 
+     * @return The status of the VPC security group.
      */
     public String getStatus() {
         return status;
     }
     
     /**
-     * 
+     * The status of the VPC security group.
      *
-     * @param status 
+     * @param status The status of the VPC security group.
      */
     public void setStatus(String status) {
         this.status = status;
     }
     
     /**
-     * 
+     * The status of the VPC security group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param status 
+     * @param status The status of the VPC security group.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

@@ -49,6 +49,7 @@ public class DescribeWorkspaceBundlesResult implements Serializable, Cloneable {
      * @return An array of structures that contain information about the
      *         bundles.
      */
+
     public java.util.List<WorkspaceBundle> getBundles() {
         if (bundles == null) {
             bundles = new com.amazonaws.internal.SdkInternalList<WorkspaceBundle>();
@@ -64,6 +65,7 @@ public class DescribeWorkspaceBundlesResult implements Serializable, Cloneable {
      * @param bundles
      *        An array of structures that contain information about the bundles.
      */
+
     public void setBundles(java.util.Collection<WorkspaceBundle> bundles) {
         if (bundles == null) {
             this.bundles = null;
@@ -90,6 +92,7 @@ public class DescribeWorkspaceBundlesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeWorkspaceBundlesResult withBundles(
             WorkspaceBundle... bundles) {
         if (this.bundles == null) {
@@ -112,6 +115,7 @@ public class DescribeWorkspaceBundlesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeWorkspaceBundlesResult withBundles(
             java.util.Collection<WorkspaceBundle> bundles) {
         setBundles(bundles);
@@ -132,6 +136,7 @@ public class DescribeWorkspaceBundlesResult implements Serializable, Cloneable {
      *        operation to retrieve the next set of items. This token is valid
      *        for one day and must be used within that timeframe.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -149,6 +154,7 @@ public class DescribeWorkspaceBundlesResult implements Serializable, Cloneable {
      *         operation to retrieve the next set of items. This token is valid
      *         for one day and must be used within that timeframe.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -169,6 +175,7 @@ public class DescribeWorkspaceBundlesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeWorkspaceBundlesResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

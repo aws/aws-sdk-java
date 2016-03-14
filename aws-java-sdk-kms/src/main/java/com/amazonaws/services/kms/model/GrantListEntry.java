@@ -93,6 +93,7 @@ public class GrantListEntry implements Serializable, Cloneable {
      *        The unique identifier for the customer master key (CMK) to which
      *        the grant applies.
      */
+
     public void setKeyId(String keyId) {
         this.keyId = keyId;
     }
@@ -106,6 +107,7 @@ public class GrantListEntry implements Serializable, Cloneable {
      * @return The unique identifier for the customer master key (CMK) to which
      *         the grant applies.
      */
+
     public String getKeyId() {
         return this.keyId;
     }
@@ -122,6 +124,7 @@ public class GrantListEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GrantListEntry withKeyId(String keyId) {
         setKeyId(keyId);
         return this;
@@ -135,6 +138,7 @@ public class GrantListEntry implements Serializable, Cloneable {
      * @param grantId
      *        The unique identifier for the grant.
      */
+
     public void setGrantId(String grantId) {
         this.grantId = grantId;
     }
@@ -146,6 +150,7 @@ public class GrantListEntry implements Serializable, Cloneable {
      * 
      * @return The unique identifier for the grant.
      */
+
     public String getGrantId() {
         return this.grantId;
     }
@@ -160,6 +165,7 @@ public class GrantListEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GrantListEntry withGrantId(String grantId) {
         setGrantId(grantId);
         return this;
@@ -177,6 +183,7 @@ public class GrantListEntry implements Serializable, Cloneable {
      *        provided in the <a>CreateGrant</a> request, that name is returned.
      *        Otherwise this value is null.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -192,6 +199,7 @@ public class GrantListEntry implements Serializable, Cloneable {
      *         provided in the <a>CreateGrant</a> request, that name is
      *         returned. Otherwise this value is null.
      */
+
     public String getName() {
         return this.name;
     }
@@ -210,6 +218,7 @@ public class GrantListEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GrantListEntry withName(String name) {
         setName(name);
         return this;
@@ -223,6 +232,7 @@ public class GrantListEntry implements Serializable, Cloneable {
      * @param creationDate
      *        The date and time when the grant was created.
      */
+
     public void setCreationDate(java.util.Date creationDate) {
         this.creationDate = creationDate;
     }
@@ -234,6 +244,7 @@ public class GrantListEntry implements Serializable, Cloneable {
      * 
      * @return The date and time when the grant was created.
      */
+
     public java.util.Date getCreationDate() {
         return this.creationDate;
     }
@@ -248,6 +259,7 @@ public class GrantListEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GrantListEntry withCreationDate(java.util.Date creationDate) {
         setCreationDate(creationDate);
         return this;
@@ -261,6 +273,7 @@ public class GrantListEntry implements Serializable, Cloneable {
      * @param granteePrincipal
      *        The principal that receives the grant's permissions.
      */
+
     public void setGranteePrincipal(String granteePrincipal) {
         this.granteePrincipal = granteePrincipal;
     }
@@ -272,6 +285,7 @@ public class GrantListEntry implements Serializable, Cloneable {
      * 
      * @return The principal that receives the grant's permissions.
      */
+
     public String getGranteePrincipal() {
         return this.granteePrincipal;
     }
@@ -286,6 +300,7 @@ public class GrantListEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GrantListEntry withGranteePrincipal(String granteePrincipal) {
         setGranteePrincipal(granteePrincipal);
         return this;
@@ -299,6 +314,7 @@ public class GrantListEntry implements Serializable, Cloneable {
      * @param retiringPrincipal
      *        The principal that can retire the grant.
      */
+
     public void setRetiringPrincipal(String retiringPrincipal) {
         this.retiringPrincipal = retiringPrincipal;
     }
@@ -310,6 +326,7 @@ public class GrantListEntry implements Serializable, Cloneable {
      * 
      * @return The principal that can retire the grant.
      */
+
     public String getRetiringPrincipal() {
         return this.retiringPrincipal;
     }
@@ -324,6 +341,7 @@ public class GrantListEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GrantListEntry withRetiringPrincipal(String retiringPrincipal) {
         setRetiringPrincipal(retiringPrincipal);
         return this;
@@ -337,6 +355,7 @@ public class GrantListEntry implements Serializable, Cloneable {
      * @param issuingAccount
      *        The AWS account under which the grant was issued.
      */
+
     public void setIssuingAccount(String issuingAccount) {
         this.issuingAccount = issuingAccount;
     }
@@ -348,6 +367,7 @@ public class GrantListEntry implements Serializable, Cloneable {
      * 
      * @return The AWS account under which the grant was issued.
      */
+
     public String getIssuingAccount() {
         return this.issuingAccount;
     }
@@ -362,6 +382,7 @@ public class GrantListEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GrantListEntry withIssuingAccount(String issuingAccount) {
         setIssuingAccount(issuingAccount);
         return this;
@@ -375,6 +396,7 @@ public class GrantListEntry implements Serializable, Cloneable {
      * @return The list of operations permitted by the grant.
      * @see GrantOperation
      */
+
     public java.util.List<String> getOperations() {
         if (operations == null) {
             operations = new com.amazonaws.internal.SdkInternalList<String>();
@@ -391,6 +413,7 @@ public class GrantListEntry implements Serializable, Cloneable {
      *        The list of operations permitted by the grant.
      * @see GrantOperation
      */
+
     public void setOperations(java.util.Collection<String> operations) {
         if (operations == null) {
             this.operations = null;
@@ -418,6 +441,7 @@ public class GrantListEntry implements Serializable, Cloneable {
      *         chained together.
      * @see GrantOperation
      */
+
     public GrantListEntry withOperations(String... operations) {
         if (this.operations == null) {
             setOperations(new com.amazonaws.internal.SdkInternalList<String>(
@@ -440,6 +464,7 @@ public class GrantListEntry implements Serializable, Cloneable {
      *         chained together.
      * @see GrantOperation
      */
+
     public GrantListEntry withOperations(java.util.Collection<String> operations) {
         setOperations(operations);
         return this;
@@ -456,6 +481,7 @@ public class GrantListEntry implements Serializable, Cloneable {
      *         chained together.
      * @see GrantOperation
      */
+
     public GrantListEntry withOperations(GrantOperation... operations) {
         com.amazonaws.internal.SdkInternalList<String> operationsCopy = new com.amazonaws.internal.SdkInternalList<String>(
                 operations.length);
@@ -478,6 +504,7 @@ public class GrantListEntry implements Serializable, Cloneable {
      * @param constraints
      *        The conditions under which the grant's operations are allowed.
      */
+
     public void setConstraints(GrantConstraints constraints) {
         this.constraints = constraints;
     }
@@ -489,6 +516,7 @@ public class GrantListEntry implements Serializable, Cloneable {
      * 
      * @return The conditions under which the grant's operations are allowed.
      */
+
     public GrantConstraints getConstraints() {
         return this.constraints;
     }
@@ -503,6 +531,7 @@ public class GrantListEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GrantListEntry withConstraints(GrantConstraints constraints) {
         setConstraints(constraints);
         return this;

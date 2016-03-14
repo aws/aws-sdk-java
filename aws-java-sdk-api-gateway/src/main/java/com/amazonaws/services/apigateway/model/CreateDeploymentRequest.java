@@ -88,6 +88,7 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
      *        The <a>RestApi</a> resource identifier for the <a>Deployment</a>
      *        resource to create.
      */
+
     public void setRestApiId(String restApiId) {
         this.restApiId = restApiId;
     }
@@ -101,6 +102,7 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
      * @return The <a>RestApi</a> resource identifier for the <a>Deployment</a>
      *         resource to create.
      */
+
     public String getRestApiId() {
         return this.restApiId;
     }
@@ -117,6 +119,7 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDeploymentRequest withRestApiId(String restApiId) {
         setRestApiId(restApiId);
         return this;
@@ -132,6 +135,7 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
      *        The name of the <a>Stage</a> resource for the <a>Deployment</a>
      *        resource to create.
      */
+
     public void setStageName(String stageName) {
         this.stageName = stageName;
     }
@@ -145,6 +149,7 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
      * @return The name of the <a>Stage</a> resource for the <a>Deployment</a>
      *         resource to create.
      */
+
     public String getStageName() {
         return this.stageName;
     }
@@ -161,6 +166,7 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDeploymentRequest withStageName(String stageName) {
         setStageName(stageName);
         return this;
@@ -176,6 +182,7 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
      *        The description of the <a>Stage</a> resource for the
      *        <a>Deployment</a> resource to create.
      */
+
     public void setStageDescription(String stageDescription) {
         this.stageDescription = stageDescription;
     }
@@ -189,6 +196,7 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
      * @return The description of the <a>Stage</a> resource for the
      *         <a>Deployment</a> resource to create.
      */
+
     public String getStageDescription() {
         return this.stageDescription;
     }
@@ -205,6 +213,7 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDeploymentRequest withStageDescription(String stageDescription) {
         setStageDescription(stageDescription);
         return this;
@@ -218,6 +227,7 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
      * @param description
      *        The description for the <a>Deployment</a> resource to create.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -229,6 +239,7 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
      * 
      * @return The description for the <a>Deployment</a> resource to create.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -243,6 +254,7 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDeploymentRequest withDescription(String description) {
         setDescription(description);
         return this;
@@ -258,6 +270,7 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
      *        Enables a cache cluster for the <a>Stage</a> resource specified in
      *        the input.
      */
+
     public void setCacheClusterEnabled(Boolean cacheClusterEnabled) {
         this.cacheClusterEnabled = cacheClusterEnabled;
     }
@@ -271,6 +284,7 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
      * @return Enables a cache cluster for the <a>Stage</a> resource specified
      *         in the input.
      */
+
     public Boolean getCacheClusterEnabled() {
         return this.cacheClusterEnabled;
     }
@@ -287,6 +301,7 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDeploymentRequest withCacheClusterEnabled(
             Boolean cacheClusterEnabled) {
         setCacheClusterEnabled(cacheClusterEnabled);
@@ -302,6 +317,7 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
      * @return Enables a cache cluster for the <a>Stage</a> resource specified
      *         in the input.
      */
+
     public Boolean isCacheClusterEnabled() {
         return this.cacheClusterEnabled;
     }
@@ -316,6 +332,7 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
      *        Specifies the cache cluster size for the <a>Stage</a> resource
      *        specified in the input, if a cache cluster is enabled.
      */
+
     public void setCacheClusterSize(String cacheClusterSize) {
         this.cacheClusterSize = cacheClusterSize;
     }
@@ -329,6 +346,7 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
      * @return Specifies the cache cluster size for the <a>Stage</a> resource
      *         specified in the input, if a cache cluster is enabled.
      */
+
     public String getCacheClusterSize() {
         return this.cacheClusterSize;
     }
@@ -345,6 +363,7 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDeploymentRequest withCacheClusterSize(String cacheClusterSize) {
         setCacheClusterSize(cacheClusterSize);
         return this;
@@ -363,6 +382,7 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
      *         names can have alphanumeric characters, and the values must match
      *         <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
      */
+
     public java.util.Map<String, String> getVariables() {
         return variables;
     }
@@ -381,6 +401,7 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
      *        names can have alphanumeric characters, and the values must match
      *        <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
      */
+
     public void setVariables(java.util.Map<String, String> variables) {
         this.variables = variables;
     }
@@ -401,6 +422,7 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDeploymentRequest withVariables(
             java.util.Map<String, String> variables) {
         setVariables(variables);
@@ -422,6 +444,7 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
      * Removes all the entries added into Variables. &lt;p> Returns a reference
      * to this object so that method calls can be chained together.
      */
+
     public CreateDeploymentRequest clearVariablesEntries() {
         this.variables = null;
         return this;

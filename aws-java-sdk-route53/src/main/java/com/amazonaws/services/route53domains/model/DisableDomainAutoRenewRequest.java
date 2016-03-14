@@ -30,6 +30,7 @@ public class DisableDomainAutoRenewRequest extends AmazonWebServiceRequest
     /**
      * @param domainName
      */
+
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
@@ -37,6 +38,7 @@ public class DisableDomainAutoRenewRequest extends AmazonWebServiceRequest
     /**
      * @return
      */
+
     public String getDomainName() {
         return this.domainName;
     }
@@ -46,6 +48,7 @@ public class DisableDomainAutoRenewRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DisableDomainAutoRenewRequest withDomainName(String domainName) {
         setDomainName(domainName);
         return this;

@@ -43,6 +43,7 @@ public class GetSnapshotLimitsResult implements Serializable, Cloneable {
      *        A <a>SnapshotLimits</a> object that contains the manual snapshot
      *        limits for the specified directory.
      */
+
     public void setSnapshotLimits(SnapshotLimits snapshotLimits) {
         this.snapshotLimits = snapshotLimits;
     }
@@ -56,6 +57,7 @@ public class GetSnapshotLimitsResult implements Serializable, Cloneable {
      * @return A <a>SnapshotLimits</a> object that contains the manual snapshot
      *         limits for the specified directory.
      */
+
     public SnapshotLimits getSnapshotLimits() {
         return this.snapshotLimits;
     }
@@ -72,6 +74,7 @@ public class GetSnapshotLimitsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetSnapshotLimitsResult withSnapshotLimits(
             SnapshotLimits snapshotLimits) {
         setSnapshotLimits(snapshotLimits);

@@ -80,6 +80,7 @@ public class DomainSummary implements Serializable, Cloneable {
      *        <p>
      *        Type: String
      */
+
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
@@ -96,6 +97,7 @@ public class DomainSummary implements Serializable, Cloneable {
      *         <p>
      *         Type: String
      */
+
     public String getDomainName() {
         return this.domainName;
     }
@@ -115,6 +117,7 @@ public class DomainSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DomainSummary withDomainName(String domainName) {
         setDomainName(domainName);
         return this;
@@ -140,6 +143,7 @@ public class DomainSummary implements Serializable, Cloneable {
      *        <p>
      *        Valid values: <code>True</code> | <code>False</code>
      */
+
     public void setAutoRenew(Boolean autoRenew) {
         this.autoRenew = autoRenew;
     }
@@ -163,6 +167,7 @@ public class DomainSummary implements Serializable, Cloneable {
      *         <p>
      *         Valid values: <code>True</code> | <code>False</code>
      */
+
     public Boolean getAutoRenew() {
         return this.autoRenew;
     }
@@ -189,6 +194,7 @@ public class DomainSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DomainSummary withAutoRenew(Boolean autoRenew) {
         setAutoRenew(autoRenew);
         return this;
@@ -213,6 +219,7 @@ public class DomainSummary implements Serializable, Cloneable {
      *         <p>
      *         Valid values: <code>True</code> | <code>False</code>
      */
+
     public Boolean isAutoRenew() {
         return this.autoRenew;
     }
@@ -238,6 +245,7 @@ public class DomainSummary implements Serializable, Cloneable {
      *        <p>
      *        Valid values: <code>True</code> | <code>False</code>
      */
+
     public void setTransferLock(Boolean transferLock) {
         this.transferLock = transferLock;
     }
@@ -262,6 +270,7 @@ public class DomainSummary implements Serializable, Cloneable {
      *         <p>
      *         Valid values: <code>True</code> | <code>False</code>
      */
+
     public Boolean getTransferLock() {
         return this.transferLock;
     }
@@ -289,6 +298,7 @@ public class DomainSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DomainSummary withTransferLock(Boolean transferLock) {
         setTransferLock(transferLock);
         return this;
@@ -314,6 +324,7 @@ public class DomainSummary implements Serializable, Cloneable {
      *         <p>
      *         Valid values: <code>True</code> | <code>False</code>
      */
+
     public Boolean isTransferLock() {
         return this.transferLock;
     }
@@ -332,6 +343,7 @@ public class DomainSummary implements Serializable, Cloneable {
      *        <p>
      *        Type: Long
      */
+
     public void setExpiry(java.util.Date expiry) {
         this.expiry = expiry;
     }
@@ -349,6 +361,7 @@ public class DomainSummary implements Serializable, Cloneable {
      *         <p>
      *         Type: Long
      */
+
     public java.util.Date getExpiry() {
         return this.expiry;
     }
@@ -369,6 +382,7 @@ public class DomainSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DomainSummary withExpiry(java.util.Date expiry) {
         setExpiry(expiry);
         return this;

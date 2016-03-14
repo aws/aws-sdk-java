@@ -75,6 +75,7 @@ public class GetSqlInjectionMatchSetResult implements Serializable, Cloneable {
      *        <li><a>FieldToMatch</a>: Contains <code>Data</code> and
      *        <code>Type</code></li>
      */
+
     public void setSqlInjectionMatchSet(
             SqlInjectionMatchSet sqlInjectionMatchSet) {
         this.sqlInjectionMatchSet = sqlInjectionMatchSet;
@@ -110,6 +111,7 @@ public class GetSqlInjectionMatchSetResult implements Serializable, Cloneable {
      *         <li><a>FieldToMatch</a>: Contains <code>Data</code> and
      *         <code>Type</code></li>
      */
+
     public SqlInjectionMatchSet getSqlInjectionMatchSet() {
         return this.sqlInjectionMatchSet;
     }
@@ -147,6 +149,7 @@ public class GetSqlInjectionMatchSetResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetSqlInjectionMatchSetResult withSqlInjectionMatchSet(
             SqlInjectionMatchSet sqlInjectionMatchSet) {
         setSqlInjectionMatchSet(sqlInjectionMatchSet);

@@ -75,6 +75,7 @@ public class DescribeMovingAddressesRequest extends AmazonWebServiceRequest
      * 
      * @return One or more Elastic IP addresses.
      */
+
     public java.util.List<String> getPublicIps() {
         if (publicIps == null) {
             publicIps = new com.amazonaws.internal.SdkInternalList<String>();
@@ -90,6 +91,7 @@ public class DescribeMovingAddressesRequest extends AmazonWebServiceRequest
      * @param publicIps
      *        One or more Elastic IP addresses.
      */
+
     public void setPublicIps(java.util.Collection<String> publicIps) {
         if (publicIps == null) {
             this.publicIps = null;
@@ -116,6 +118,7 @@ public class DescribeMovingAddressesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeMovingAddressesRequest withPublicIps(String... publicIps) {
         if (this.publicIps == null) {
             setPublicIps(new com.amazonaws.internal.SdkInternalList<String>(
@@ -137,6 +140,7 @@ public class DescribeMovingAddressesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeMovingAddressesRequest withPublicIps(
             java.util.Collection<String> publicIps) {
         setPublicIps(publicIps);
@@ -151,6 +155,7 @@ public class DescribeMovingAddressesRequest extends AmazonWebServiceRequest
      * @param nextToken
      *        The token to use to retrieve the next page of results.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -162,6 +167,7 @@ public class DescribeMovingAddressesRequest extends AmazonWebServiceRequest
      * 
      * @return The token to use to retrieve the next page of results.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -176,6 +182,7 @@ public class DescribeMovingAddressesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeMovingAddressesRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -203,6 +210,7 @@ public class DescribeMovingAddressesRequest extends AmazonWebServiceRequest
      *         </p>
      *         </li>
      */
+
     public java.util.List<Filter> getFilters() {
         if (filters == null) {
             filters = new com.amazonaws.internal.SdkInternalList<Filter>();
@@ -233,6 +241,7 @@ public class DescribeMovingAddressesRequest extends AmazonWebServiceRequest
      *        </p>
      *        </li>
      */
+
     public void setFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
             this.filters = null;
@@ -274,6 +283,7 @@ public class DescribeMovingAddressesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeMovingAddressesRequest withFilters(Filter... filters) {
         if (this.filters == null) {
             setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(
@@ -310,6 +320,7 @@ public class DescribeMovingAddressesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeMovingAddressesRequest withFilters(
             java.util.Collection<Filter> filters) {
         setFilters(filters);
@@ -338,6 +349,7 @@ public class DescribeMovingAddressesRequest extends AmazonWebServiceRequest
      *        <p>
      *        Default: If no value is provided, the default is 1000.
      */
+
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
     }
@@ -363,6 +375,7 @@ public class DescribeMovingAddressesRequest extends AmazonWebServiceRequest
      *         <p>
      *         Default: If no value is provided, the default is 1000.
      */
+
     public Integer getMaxResults() {
         return this.maxResults;
     }
@@ -391,6 +404,7 @@ public class DescribeMovingAddressesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeMovingAddressesRequest withMaxResults(Integer maxResults) {
         setMaxResults(maxResults);
         return this;

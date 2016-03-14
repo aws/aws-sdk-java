@@ -46,7 +46,7 @@ public class PurchaseReservedNodeOfferingRequest extends AmazonWebServiceRequest
     private String reservedNodeOfferingId;
 
     /**
-     * The number of reserved nodes you want to purchase. <p>Default:
+     * The number of reserved nodes that you want to purchase. <p>Default:
      * <code>1</code>
      */
     private Integer nodeCount;
@@ -91,10 +91,10 @@ public class PurchaseReservedNodeOfferingRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * The number of reserved nodes you want to purchase. <p>Default:
+     * The number of reserved nodes that you want to purchase. <p>Default:
      * <code>1</code>
      *
-     * @return The number of reserved nodes you want to purchase. <p>Default:
+     * @return The number of reserved nodes that you want to purchase. <p>Default:
      *         <code>1</code>
      */
     public Integer getNodeCount() {
@@ -102,10 +102,10 @@ public class PurchaseReservedNodeOfferingRequest extends AmazonWebServiceRequest
     }
     
     /**
-     * The number of reserved nodes you want to purchase. <p>Default:
+     * The number of reserved nodes that you want to purchase. <p>Default:
      * <code>1</code>
      *
-     * @param nodeCount The number of reserved nodes you want to purchase. <p>Default:
+     * @param nodeCount The number of reserved nodes that you want to purchase. <p>Default:
      *         <code>1</code>
      */
     public void setNodeCount(Integer nodeCount) {
@@ -113,12 +113,12 @@ public class PurchaseReservedNodeOfferingRequest extends AmazonWebServiceRequest
     }
     
     /**
-     * The number of reserved nodes you want to purchase. <p>Default:
+     * The number of reserved nodes that you want to purchase. <p>Default:
      * <code>1</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param nodeCount The number of reserved nodes you want to purchase. <p>Default:
+     * @param nodeCount The number of reserved nodes that you want to purchase. <p>Default:
      *         <code>1</code>
      *
      * @return A reference to this updated object so that method calls can be chained

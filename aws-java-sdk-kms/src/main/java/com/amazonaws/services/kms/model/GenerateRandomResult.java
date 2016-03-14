@@ -43,6 +43,7 @@ public class GenerateRandomResult implements Serializable, Cloneable {
      * @param plaintext
      *        Plaintext that contains the unpredictable byte string.
      */
+
     public void setPlaintext(java.nio.ByteBuffer plaintext) {
         this.plaintext = plaintext;
     }
@@ -64,6 +65,7 @@ public class GenerateRandomResult implements Serializable, Cloneable {
      * 
      * @return Plaintext that contains the unpredictable byte string.
      */
+
     public java.nio.ByteBuffer getPlaintext() {
         return this.plaintext;
     }
@@ -78,6 +80,7 @@ public class GenerateRandomResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GenerateRandomResult withPlaintext(java.nio.ByteBuffer plaintext) {
         setPlaintext(plaintext);
         return this;

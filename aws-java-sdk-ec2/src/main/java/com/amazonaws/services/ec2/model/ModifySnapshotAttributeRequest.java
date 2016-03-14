@@ -132,6 +132,7 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest
      * @param snapshotId
      *        The ID of the snapshot.
      */
+
     public void setSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
     }
@@ -143,6 +144,7 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the snapshot.
      */
+
     public String getSnapshotId() {
         return this.snapshotId;
     }
@@ -157,6 +159,7 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifySnapshotAttributeRequest withSnapshotId(String snapshotId) {
         setSnapshotId(snapshotId);
         return this;
@@ -180,6 +183,7 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest
      *        </p>
      * @see SnapshotAttributeName
      */
+
     public void setAttribute(String attribute) {
         this.attribute = attribute;
     }
@@ -201,6 +205,7 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest
      *         </p>
      * @see SnapshotAttributeName
      */
+
     public String getAttribute() {
         return this.attribute;
     }
@@ -225,6 +230,7 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see SnapshotAttributeName
      */
+
     public ModifySnapshotAttributeRequest withAttribute(String attribute) {
         setAttribute(attribute);
         return this;
@@ -250,6 +256,7 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see SnapshotAttributeName
      */
+
     public void setAttribute(SnapshotAttributeName attribute) {
         this.attribute = attribute.toString();
     }
@@ -274,6 +281,7 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see SnapshotAttributeName
      */
+
     public ModifySnapshotAttributeRequest withAttribute(
             SnapshotAttributeName attribute) {
         setAttribute(attribute);
@@ -289,6 +297,7 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest
      *        The type of operation to perform to the attribute.
      * @see OperationType
      */
+
     public void setOperationType(String operationType) {
         this.operationType = operationType;
     }
@@ -301,6 +310,7 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest
      * @return The type of operation to perform to the attribute.
      * @see OperationType
      */
+
     public String getOperationType() {
         return this.operationType;
     }
@@ -316,6 +326,7 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see OperationType
      */
+
     public ModifySnapshotAttributeRequest withOperationType(String operationType) {
         setOperationType(operationType);
         return this;
@@ -332,6 +343,7 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see OperationType
      */
+
     public void setOperationType(OperationType operationType) {
         this.operationType = operationType.toString();
     }
@@ -347,6 +359,7 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see OperationType
      */
+
     public ModifySnapshotAttributeRequest withOperationType(
             OperationType operationType) {
         setOperationType(operationType);
@@ -360,6 +373,7 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest
      * 
      * @return The account ID to modify for the snapshot.
      */
+
     public java.util.List<String> getUserIds() {
         if (userIds == null) {
             userIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -375,6 +389,7 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest
      * @param userIds
      *        The account ID to modify for the snapshot.
      */
+
     public void setUserIds(java.util.Collection<String> userIds) {
         if (userIds == null) {
             this.userIds = null;
@@ -401,6 +416,7 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifySnapshotAttributeRequest withUserIds(String... userIds) {
         if (this.userIds == null) {
             setUserIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -422,6 +438,7 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifySnapshotAttributeRequest withUserIds(
             java.util.Collection<String> userIds) {
         setUserIds(userIds);
@@ -435,6 +452,7 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest
      * 
      * @return The group to modify for the snapshot.
      */
+
     public java.util.List<String> getGroupNames() {
         if (groupNames == null) {
             groupNames = new com.amazonaws.internal.SdkInternalList<String>();
@@ -450,6 +468,7 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest
      * @param groupNames
      *        The group to modify for the snapshot.
      */
+
     public void setGroupNames(java.util.Collection<String> groupNames) {
         if (groupNames == null) {
             this.groupNames = null;
@@ -476,6 +495,7 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifySnapshotAttributeRequest withGroupNames(String... groupNames) {
         if (this.groupNames == null) {
             setGroupNames(new com.amazonaws.internal.SdkInternalList<String>(
@@ -497,6 +517,7 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifySnapshotAttributeRequest withGroupNames(
             java.util.Collection<String> groupNames) {
         setGroupNames(groupNames);
@@ -511,6 +532,7 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest
      * @param createVolumePermission
      *        A JSON representation of the snapshot attribute modification.
      */
+
     public void setCreateVolumePermission(
             CreateVolumePermissionModifications createVolumePermission) {
         this.createVolumePermission = createVolumePermission;
@@ -523,6 +545,7 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest
      * 
      * @return A JSON representation of the snapshot attribute modification.
      */
+
     public CreateVolumePermissionModifications getCreateVolumePermission() {
         return this.createVolumePermission;
     }
@@ -537,6 +560,7 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifySnapshotAttributeRequest withCreateVolumePermission(
             CreateVolumePermissionModifications createVolumePermission) {
         setCreateVolumePermission(createVolumePermission);

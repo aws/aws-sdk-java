@@ -41,6 +41,7 @@ public class ListOpenIDConnectProvidersResult implements Serializable,
      * 
      * @return The list of IAM OpenID Connect providers in the AWS account.
      */
+
     public java.util.List<OpenIDConnectProviderListEntry> getOpenIDConnectProviderList() {
         if (openIDConnectProviderList == null) {
             openIDConnectProviderList = new com.amazonaws.internal.SdkInternalList<OpenIDConnectProviderListEntry>();
@@ -56,6 +57,7 @@ public class ListOpenIDConnectProvidersResult implements Serializable,
      * @param openIDConnectProviderList
      *        The list of IAM OpenID Connect providers in the AWS account.
      */
+
     public void setOpenIDConnectProviderList(
             java.util.Collection<OpenIDConnectProviderListEntry> openIDConnectProviderList) {
         if (openIDConnectProviderList == null) {
@@ -83,6 +85,7 @@ public class ListOpenIDConnectProvidersResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListOpenIDConnectProvidersResult withOpenIDConnectProviderList(
             OpenIDConnectProviderListEntry... openIDConnectProviderList) {
         if (this.openIDConnectProviderList == null) {
@@ -105,6 +108,7 @@ public class ListOpenIDConnectProvidersResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListOpenIDConnectProvidersResult withOpenIDConnectProviderList(
             java.util.Collection<OpenIDConnectProviderListEntry> openIDConnectProviderList) {
         setOpenIDConnectProviderList(openIDConnectProviderList);

@@ -53,6 +53,7 @@ public class PolicyTypeDescription implements Serializable, Cloneable {
      * @param policyTypeName
      *        The name of the policy type.
      */
+
     public void setPolicyTypeName(String policyTypeName) {
         this.policyTypeName = policyTypeName;
     }
@@ -64,6 +65,7 @@ public class PolicyTypeDescription implements Serializable, Cloneable {
      * 
      * @return The name of the policy type.
      */
+
     public String getPolicyTypeName() {
         return this.policyTypeName;
     }
@@ -78,6 +80,7 @@ public class PolicyTypeDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PolicyTypeDescription withPolicyTypeName(String policyTypeName) {
         setPolicyTypeName(policyTypeName);
         return this;
@@ -91,6 +94,7 @@ public class PolicyTypeDescription implements Serializable, Cloneable {
      * @param description
      *        A description of the policy type.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -102,6 +106,7 @@ public class PolicyTypeDescription implements Serializable, Cloneable {
      * 
      * @return A description of the policy type.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -116,6 +121,7 @@ public class PolicyTypeDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PolicyTypeDescription withDescription(String description) {
         setDescription(description);
         return this;
@@ -130,6 +136,7 @@ public class PolicyTypeDescription implements Serializable, Cloneable {
      * @return The description of the policy attributes associated with the
      *         policies defined by Elastic Load Balancing.
      */
+
     public java.util.List<PolicyAttributeTypeDescription> getPolicyAttributeTypeDescriptions() {
         if (policyAttributeTypeDescriptions == null) {
             policyAttributeTypeDescriptions = new com.amazonaws.internal.SdkInternalList<PolicyAttributeTypeDescription>();
@@ -147,6 +154,7 @@ public class PolicyTypeDescription implements Serializable, Cloneable {
      *        The description of the policy attributes associated with the
      *        policies defined by Elastic Load Balancing.
      */
+
     public void setPolicyAttributeTypeDescriptions(
             java.util.Collection<PolicyAttributeTypeDescription> policyAttributeTypeDescriptions) {
         if (policyAttributeTypeDescriptions == null) {
@@ -177,6 +185,7 @@ public class PolicyTypeDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PolicyTypeDescription withPolicyAttributeTypeDescriptions(
             PolicyAttributeTypeDescription... policyAttributeTypeDescriptions) {
         if (this.policyAttributeTypeDescriptions == null) {
@@ -201,6 +210,7 @@ public class PolicyTypeDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PolicyTypeDescription withPolicyAttributeTypeDescriptions(
             java.util.Collection<PolicyAttributeTypeDescription> policyAttributeTypeDescriptions) {
         setPolicyAttributeTypeDescriptions(policyAttributeTypeDescriptions);

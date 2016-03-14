@@ -44,6 +44,7 @@ public class ImageIdentifier implements Serializable, Cloneable {
      * @param imageDigest
      *        The <code>sha256</code> digest of the image manifest.
      */
+
     public void setImageDigest(String imageDigest) {
         this.imageDigest = imageDigest;
     }
@@ -55,6 +56,7 @@ public class ImageIdentifier implements Serializable, Cloneable {
      * 
      * @return The <code>sha256</code> digest of the image manifest.
      */
+
     public String getImageDigest() {
         return this.imageDigest;
     }
@@ -69,6 +71,7 @@ public class ImageIdentifier implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImageIdentifier withImageDigest(String imageDigest) {
         setImageDigest(imageDigest);
         return this;
@@ -82,6 +85,7 @@ public class ImageIdentifier implements Serializable, Cloneable {
      * @param imageTag
      *        The tag used for the image.
      */
+
     public void setImageTag(String imageTag) {
         this.imageTag = imageTag;
     }
@@ -93,6 +97,7 @@ public class ImageIdentifier implements Serializable, Cloneable {
      * 
      * @return The tag used for the image.
      */
+
     public String getImageTag() {
         return this.imageTag;
     }
@@ -107,6 +112,7 @@ public class ImageIdentifier implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImageIdentifier withImageTag(String imageTag) {
         setImageTag(imageTag);
         return this;

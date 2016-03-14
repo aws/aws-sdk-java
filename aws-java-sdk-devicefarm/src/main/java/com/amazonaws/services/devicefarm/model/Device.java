@@ -144,6 +144,7 @@ public class Device implements Serializable, Cloneable {
      * @param arn
      *        The device's ARN.
      */
+
     public void setArn(String arn) {
         this.arn = arn;
     }
@@ -155,6 +156,7 @@ public class Device implements Serializable, Cloneable {
      * 
      * @return The device's ARN.
      */
+
     public String getArn() {
         return this.arn;
     }
@@ -169,6 +171,7 @@ public class Device implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Device withArn(String arn) {
         setArn(arn);
         return this;
@@ -182,6 +185,7 @@ public class Device implements Serializable, Cloneable {
      * @param name
      *        The device's display name.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -193,6 +197,7 @@ public class Device implements Serializable, Cloneable {
      * 
      * @return The device's display name.
      */
+
     public String getName() {
         return this.name;
     }
@@ -207,6 +212,7 @@ public class Device implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Device withName(String name) {
         setName(name);
         return this;
@@ -220,6 +226,7 @@ public class Device implements Serializable, Cloneable {
      * @param manufacturer
      *        The device's manufacturer name.
      */
+
     public void setManufacturer(String manufacturer) {
         this.manufacturer = manufacturer;
     }
@@ -231,6 +238,7 @@ public class Device implements Serializable, Cloneable {
      * 
      * @return The device's manufacturer name.
      */
+
     public String getManufacturer() {
         return this.manufacturer;
     }
@@ -245,6 +253,7 @@ public class Device implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Device withManufacturer(String manufacturer) {
         setManufacturer(manufacturer);
         return this;
@@ -258,6 +267,7 @@ public class Device implements Serializable, Cloneable {
      * @param model
      *        The device's model name.
      */
+
     public void setModel(String model) {
         this.model = model;
     }
@@ -269,6 +279,7 @@ public class Device implements Serializable, Cloneable {
      * 
      * @return The device's model name.
      */
+
     public String getModel() {
         return this.model;
     }
@@ -283,6 +294,7 @@ public class Device implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Device withModel(String model) {
         setModel(model);
         return this;
@@ -326,6 +338,7 @@ public class Device implements Serializable, Cloneable {
      *        </li>
      * @see DeviceFormFactor
      */
+
     public void setFormFactor(String formFactor) {
         this.formFactor = formFactor;
     }
@@ -367,6 +380,7 @@ public class Device implements Serializable, Cloneable {
      *         </li>
      * @see DeviceFormFactor
      */
+
     public String getFormFactor() {
         return this.formFactor;
     }
@@ -411,6 +425,7 @@ public class Device implements Serializable, Cloneable {
      *         chained together.
      * @see DeviceFormFactor
      */
+
     public Device withFormFactor(String formFactor) {
         setFormFactor(formFactor);
         return this;
@@ -456,6 +471,7 @@ public class Device implements Serializable, Cloneable {
      *         chained together.
      * @see DeviceFormFactor
      */
+
     public void setFormFactor(DeviceFormFactor formFactor) {
         this.formFactor = formFactor.toString();
     }
@@ -500,6 +516,7 @@ public class Device implements Serializable, Cloneable {
      *         chained together.
      * @see DeviceFormFactor
      */
+
     public Device withFormFactor(DeviceFormFactor formFactor) {
         setFormFactor(formFactor);
         return this;
@@ -543,6 +560,7 @@ public class Device implements Serializable, Cloneable {
      *        </li>
      * @see DevicePlatform
      */
+
     public void setPlatform(String platform) {
         this.platform = platform;
     }
@@ -584,6 +602,7 @@ public class Device implements Serializable, Cloneable {
      *         </li>
      * @see DevicePlatform
      */
+
     public String getPlatform() {
         return this.platform;
     }
@@ -628,6 +647,7 @@ public class Device implements Serializable, Cloneable {
      *         chained together.
      * @see DevicePlatform
      */
+
     public Device withPlatform(String platform) {
         setPlatform(platform);
         return this;
@@ -673,6 +693,7 @@ public class Device implements Serializable, Cloneable {
      *         chained together.
      * @see DevicePlatform
      */
+
     public void setPlatform(DevicePlatform platform) {
         this.platform = platform.toString();
     }
@@ -717,6 +738,7 @@ public class Device implements Serializable, Cloneable {
      *         chained together.
      * @see DevicePlatform
      */
+
     public Device withPlatform(DevicePlatform platform) {
         setPlatform(platform);
         return this;
@@ -730,6 +752,7 @@ public class Device implements Serializable, Cloneable {
      * @param os
      *        The device's operating system type.
      */
+
     public void setOs(String os) {
         this.os = os;
     }
@@ -741,6 +764,7 @@ public class Device implements Serializable, Cloneable {
      * 
      * @return The device's operating system type.
      */
+
     public String getOs() {
         return this.os;
     }
@@ -755,6 +779,7 @@ public class Device implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Device withOs(String os) {
         setOs(os);
         return this;
@@ -768,6 +793,7 @@ public class Device implements Serializable, Cloneable {
      * @param cpu
      *        Information about the device's CPU.
      */
+
     public void setCpu(CPU cpu) {
         this.cpu = cpu;
     }
@@ -779,6 +805,7 @@ public class Device implements Serializable, Cloneable {
      * 
      * @return Information about the device's CPU.
      */
+
     public CPU getCpu() {
         return this.cpu;
     }
@@ -793,6 +820,7 @@ public class Device implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Device withCpu(CPU cpu) {
         setCpu(cpu);
         return this;
@@ -801,6 +829,7 @@ public class Device implements Serializable, Cloneable {
     /**
      * @param resolution
      */
+
     public void setResolution(Resolution resolution) {
         this.resolution = resolution;
     }
@@ -808,6 +837,7 @@ public class Device implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Resolution getResolution() {
         return this.resolution;
     }
@@ -817,6 +847,7 @@ public class Device implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Device withResolution(Resolution resolution) {
         setResolution(resolution);
         return this;
@@ -830,6 +861,7 @@ public class Device implements Serializable, Cloneable {
      * @param heapSize
      *        The device's heap size, expressed in bytes.
      */
+
     public void setHeapSize(Long heapSize) {
         this.heapSize = heapSize;
     }
@@ -841,6 +873,7 @@ public class Device implements Serializable, Cloneable {
      * 
      * @return The device's heap size, expressed in bytes.
      */
+
     public Long getHeapSize() {
         return this.heapSize;
     }
@@ -855,6 +888,7 @@ public class Device implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Device withHeapSize(Long heapSize) {
         setHeapSize(heapSize);
         return this;
@@ -868,6 +902,7 @@ public class Device implements Serializable, Cloneable {
      * @param memory
      *        The device's total memory size, expressed in bytes.
      */
+
     public void setMemory(Long memory) {
         this.memory = memory;
     }
@@ -879,6 +914,7 @@ public class Device implements Serializable, Cloneable {
      * 
      * @return The device's total memory size, expressed in bytes.
      */
+
     public Long getMemory() {
         return this.memory;
     }
@@ -893,6 +929,7 @@ public class Device implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Device withMemory(Long memory) {
         setMemory(memory);
         return this;
@@ -906,6 +943,7 @@ public class Device implements Serializable, Cloneable {
      * @param image
      *        The device's image name.
      */
+
     public void setImage(String image) {
         this.image = image;
     }
@@ -917,6 +955,7 @@ public class Device implements Serializable, Cloneable {
      * 
      * @return The device's image name.
      */
+
     public String getImage() {
         return this.image;
     }
@@ -931,6 +970,7 @@ public class Device implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Device withImage(String image) {
         setImage(image);
         return this;
@@ -944,6 +984,7 @@ public class Device implements Serializable, Cloneable {
      * @param carrier
      *        The device's carrier.
      */
+
     public void setCarrier(String carrier) {
         this.carrier = carrier;
     }
@@ -955,6 +996,7 @@ public class Device implements Serializable, Cloneable {
      * 
      * @return The device's carrier.
      */
+
     public String getCarrier() {
         return this.carrier;
     }
@@ -969,6 +1011,7 @@ public class Device implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Device withCarrier(String carrier) {
         setCarrier(carrier);
         return this;
@@ -982,6 +1025,7 @@ public class Device implements Serializable, Cloneable {
      * @param radio
      *        The device's radio.
      */
+
     public void setRadio(String radio) {
         this.radio = radio;
     }
@@ -993,6 +1037,7 @@ public class Device implements Serializable, Cloneable {
      * 
      * @return The device's radio.
      */
+
     public String getRadio() {
         return this.radio;
     }
@@ -1007,6 +1052,7 @@ public class Device implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Device withRadio(String radio) {
         setRadio(radio);
         return this;

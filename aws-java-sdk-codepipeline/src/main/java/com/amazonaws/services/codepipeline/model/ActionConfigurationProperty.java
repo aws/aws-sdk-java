@@ -93,6 +93,7 @@ public class ActionConfigurationProperty implements Serializable, Cloneable {
      * @param name
      *        The name of the action configuration property.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -104,6 +105,7 @@ public class ActionConfigurationProperty implements Serializable, Cloneable {
      * 
      * @return The name of the action configuration property.
      */
+
     public String getName() {
         return this.name;
     }
@@ -118,6 +120,7 @@ public class ActionConfigurationProperty implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActionConfigurationProperty withName(String name) {
         setName(name);
         return this;
@@ -131,6 +134,7 @@ public class ActionConfigurationProperty implements Serializable, Cloneable {
      * @param required
      *        Whether the configuration property is a required value.
      */
+
     public void setRequired(Boolean required) {
         this.required = required;
     }
@@ -142,6 +146,7 @@ public class ActionConfigurationProperty implements Serializable, Cloneable {
      * 
      * @return Whether the configuration property is a required value.
      */
+
     public Boolean getRequired() {
         return this.required;
     }
@@ -156,6 +161,7 @@ public class ActionConfigurationProperty implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActionConfigurationProperty withRequired(Boolean required) {
         setRequired(required);
         return this;
@@ -168,6 +174,7 @@ public class ActionConfigurationProperty implements Serializable, Cloneable {
      * 
      * @return Whether the configuration property is a required value.
      */
+
     public Boolean isRequired() {
         return this.required;
     }
@@ -180,6 +187,7 @@ public class ActionConfigurationProperty implements Serializable, Cloneable {
      * @param key
      *        Whether the configuration property is a key.
      */
+
     public void setKey(Boolean key) {
         this.key = key;
     }
@@ -191,6 +199,7 @@ public class ActionConfigurationProperty implements Serializable, Cloneable {
      * 
      * @return Whether the configuration property is a key.
      */
+
     public Boolean getKey() {
         return this.key;
     }
@@ -205,6 +214,7 @@ public class ActionConfigurationProperty implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActionConfigurationProperty withKey(Boolean key) {
         setKey(key);
         return this;
@@ -217,6 +227,7 @@ public class ActionConfigurationProperty implements Serializable, Cloneable {
      * 
      * @return Whether the configuration property is a key.
      */
+
     public Boolean isKey() {
         return this.key;
     }
@@ -241,6 +252,7 @@ public class ActionConfigurationProperty implements Serializable, Cloneable {
      *        other values of the action will preserve the prior value of the
      *        secret.
      */
+
     public void setSecret(Boolean secret) {
         this.secret = secret;
     }
@@ -264,6 +276,7 @@ public class ActionConfigurationProperty implements Serializable, Cloneable {
      *         other values of the action will preserve the prior value of the
      *         secret.
      */
+
     public Boolean getSecret() {
         return this.secret;
     }
@@ -290,6 +303,7 @@ public class ActionConfigurationProperty implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActionConfigurationProperty withSecret(Boolean secret) {
         setSecret(secret);
         return this;
@@ -314,6 +328,7 @@ public class ActionConfigurationProperty implements Serializable, Cloneable {
      *         other values of the action will preserve the prior value of the
      *         secret.
      */
+
     public Boolean isSecret() {
         return this.secret;
     }
@@ -346,6 +361,7 @@ public class ActionConfigurationProperty implements Serializable, Cloneable {
      *        value can contain only alphanumeric characters, underscores, and
      *        hyphens.
      */
+
     public void setQueryable(Boolean queryable) {
         this.queryable = queryable;
     }
@@ -377,6 +393,7 @@ public class ActionConfigurationProperty implements Serializable, Cloneable {
      *         value can contain only alphanumeric characters, underscores, and
      *         hyphens.
      */
+
     public Boolean getQueryable() {
         return this.queryable;
     }
@@ -411,6 +428,7 @@ public class ActionConfigurationProperty implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActionConfigurationProperty withQueryable(Boolean queryable) {
         setQueryable(queryable);
         return this;
@@ -443,6 +461,7 @@ public class ActionConfigurationProperty implements Serializable, Cloneable {
      *         value can contain only alphanumeric characters, underscores, and
      *         hyphens.
      */
+
     public Boolean isQueryable() {
         return this.queryable;
     }
@@ -457,6 +476,7 @@ public class ActionConfigurationProperty implements Serializable, Cloneable {
      *        The description of the action configuration property that will be
      *        displayed to users.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -470,6 +490,7 @@ public class ActionConfigurationProperty implements Serializable, Cloneable {
      * @return The description of the action configuration property that will be
      *         displayed to users.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -486,6 +507,7 @@ public class ActionConfigurationProperty implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActionConfigurationProperty withDescription(String description) {
         setDescription(description);
         return this;
@@ -500,6 +522,7 @@ public class ActionConfigurationProperty implements Serializable, Cloneable {
      *        The type of the configuration property.
      * @see ActionConfigurationPropertyType
      */
+
     public void setType(String type) {
         this.type = type;
     }
@@ -512,6 +535,7 @@ public class ActionConfigurationProperty implements Serializable, Cloneable {
      * @return The type of the configuration property.
      * @see ActionConfigurationPropertyType
      */
+
     public String getType() {
         return this.type;
     }
@@ -527,6 +551,7 @@ public class ActionConfigurationProperty implements Serializable, Cloneable {
      *         chained together.
      * @see ActionConfigurationPropertyType
      */
+
     public ActionConfigurationProperty withType(String type) {
         setType(type);
         return this;
@@ -543,6 +568,7 @@ public class ActionConfigurationProperty implements Serializable, Cloneable {
      *         chained together.
      * @see ActionConfigurationPropertyType
      */
+
     public void setType(ActionConfigurationPropertyType type) {
         this.type = type.toString();
     }
@@ -558,6 +584,7 @@ public class ActionConfigurationProperty implements Serializable, Cloneable {
      *         chained together.
      * @see ActionConfigurationPropertyType
      */
+
     public ActionConfigurationProperty withType(
             ActionConfigurationPropertyType type) {
         setType(type);

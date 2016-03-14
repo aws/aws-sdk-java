@@ -70,6 +70,7 @@ public class ListClustersRequest extends AmazonWebServiceRequest implements
      *        This value is <code>null</code> when there are no more results to
      *        return.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -92,6 +93,7 @@ public class ListClustersRequest extends AmazonWebServiceRequest implements
      *         This value is <code>null</code> when there are no more results to
      *         return.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -117,6 +119,7 @@ public class ListClustersRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListClustersRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -148,6 +151,7 @@ public class ListClustersRequest extends AmazonWebServiceRequest implements
      *        returns up to 100 results and a <code>nextToken</code> value if
      *        applicable.
      */
+
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
     }
@@ -177,6 +181,7 @@ public class ListClustersRequest extends AmazonWebServiceRequest implements
      *         <code>ListClusters</code> returns up to 100 results and a
      *         <code>nextToken</code> value if applicable.
      */
+
     public Integer getMaxResults() {
         return this.maxResults;
     }
@@ -209,6 +214,7 @@ public class ListClustersRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListClustersRequest withMaxResults(Integer maxResults) {
         setMaxResults(maxResults);
         return this;

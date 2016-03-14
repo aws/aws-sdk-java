@@ -68,6 +68,7 @@ public class GetComplianceDetailsByConfigRuleRequest extends
      *        The name of the AWS Config rule for which you want compliance
      *        information.
      */
+
     public void setConfigRuleName(String configRuleName) {
         this.configRuleName = configRuleName;
     }
@@ -81,6 +82,7 @@ public class GetComplianceDetailsByConfigRuleRequest extends
      * @return The name of the AWS Config rule for which you want compliance
      *         information.
      */
+
     public String getConfigRuleName() {
         return this.configRuleName;
     }
@@ -97,6 +99,7 @@ public class GetComplianceDetailsByConfigRuleRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetComplianceDetailsByConfigRuleRequest withConfigRuleName(
             String configRuleName) {
         setConfigRuleName(configRuleName);
@@ -118,6 +121,7 @@ public class GetComplianceDetailsByConfigRuleRequest extends
      *         <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.
      * @see ComplianceType
      */
+
     public java.util.List<String> getComplianceTypes() {
         if (complianceTypes == null) {
             complianceTypes = new com.amazonaws.internal.SdkInternalList<String>();
@@ -141,6 +145,7 @@ public class GetComplianceDetailsByConfigRuleRequest extends
      *        <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.
      * @see ComplianceType
      */
+
     public void setComplianceTypes(java.util.Collection<String> complianceTypes) {
         if (complianceTypes == null) {
             this.complianceTypes = null;
@@ -175,6 +180,7 @@ public class GetComplianceDetailsByConfigRuleRequest extends
      *         chained together.
      * @see ComplianceType
      */
+
     public GetComplianceDetailsByConfigRuleRequest withComplianceTypes(
             String... complianceTypes) {
         if (this.complianceTypes == null) {
@@ -205,6 +211,7 @@ public class GetComplianceDetailsByConfigRuleRequest extends
      *         chained together.
      * @see ComplianceType
      */
+
     public GetComplianceDetailsByConfigRuleRequest withComplianceTypes(
             java.util.Collection<String> complianceTypes) {
         setComplianceTypes(complianceTypes);
@@ -229,6 +236,7 @@ public class GetComplianceDetailsByConfigRuleRequest extends
      *         chained together.
      * @see ComplianceType
      */
+
     public GetComplianceDetailsByConfigRuleRequest withComplianceTypes(
             ComplianceType... complianceTypes) {
         com.amazonaws.internal.SdkInternalList<String> complianceTypesCopy = new com.amazonaws.internal.SdkInternalList<String>(
@@ -256,6 +264,7 @@ public class GetComplianceDetailsByConfigRuleRequest extends
      *        The default is 10. You cannot specify a limit greater than 100. If
      *        you specify 0, AWS Config uses the default.
      */
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -271,6 +280,7 @@ public class GetComplianceDetailsByConfigRuleRequest extends
      *         The default is 10. You cannot specify a limit greater than 100.
      *         If you specify 0, AWS Config uses the default.
      */
+
     public Integer getLimit() {
         return this.limit;
     }
@@ -289,6 +299,7 @@ public class GetComplianceDetailsByConfigRuleRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetComplianceDetailsByConfigRuleRequest withLimit(Integer limit) {
         setLimit(limit);
         return this;
@@ -304,6 +315,7 @@ public class GetComplianceDetailsByConfigRuleRequest extends
      *        The <code>nextToken</code> string returned on a previous page that
      *        you use to get the next page of results in a paginated response.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -318,6 +330,7 @@ public class GetComplianceDetailsByConfigRuleRequest extends
      *         that you use to get the next page of results in a paginated
      *         response.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -334,6 +347,7 @@ public class GetComplianceDetailsByConfigRuleRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetComplianceDetailsByConfigRuleRequest withNextToken(
             String nextToken) {
         setNextToken(nextToken);

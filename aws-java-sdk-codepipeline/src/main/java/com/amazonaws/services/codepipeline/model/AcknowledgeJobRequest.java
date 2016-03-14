@@ -53,6 +53,7 @@ public class AcknowledgeJobRequest extends AmazonWebServiceRequest implements
      *        The unique system-generated ID of the job for which you want to
      *        confirm receipt.
      */
+
     public void setJobId(String jobId) {
         this.jobId = jobId;
     }
@@ -66,6 +67,7 @@ public class AcknowledgeJobRequest extends AmazonWebServiceRequest implements
      * @return The unique system-generated ID of the job for which you want to
      *         confirm receipt.
      */
+
     public String getJobId() {
         return this.jobId;
     }
@@ -82,6 +84,7 @@ public class AcknowledgeJobRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AcknowledgeJobRequest withJobId(String jobId) {
         setJobId(jobId);
         return this;
@@ -99,6 +102,7 @@ public class AcknowledgeJobRequest extends AmazonWebServiceRequest implements
      *        ensure that the job is being worked on by only one job worker.
      *        This number must be returned in the response.
      */
+
     public void setNonce(String nonce) {
         this.nonce = nonce;
     }
@@ -114,6 +118,7 @@ public class AcknowledgeJobRequest extends AmazonWebServiceRequest implements
      *         ensure that the job is being worked on by only one job worker.
      *         This number must be returned in the response.
      */
+
     public String getNonce() {
         return this.nonce;
     }
@@ -132,6 +137,7 @@ public class AcknowledgeJobRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AcknowledgeJobRequest withNonce(String nonce) {
         setNonce(nonce);
         return this;

@@ -90,6 +90,7 @@ public class SetSubscriptionAttributesRequest extends AmazonWebServiceRequest
      * @param subscriptionArn
      *        The ARN of the subscription to modify.
      */
+
     public void setSubscriptionArn(String subscriptionArn) {
         this.subscriptionArn = subscriptionArn;
     }
@@ -101,6 +102,7 @@ public class SetSubscriptionAttributesRequest extends AmazonWebServiceRequest
      * 
      * @return The ARN of the subscription to modify.
      */
+
     public String getSubscriptionArn() {
         return this.subscriptionArn;
     }
@@ -115,6 +117,7 @@ public class SetSubscriptionAttributesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetSubscriptionAttributesRequest withSubscriptionArn(
             String subscriptionArn) {
         setSubscriptionArn(subscriptionArn);
@@ -138,6 +141,7 @@ public class SetSubscriptionAttributesRequest extends AmazonWebServiceRequest
      *        Valid values: <code>DeliveryPolicy</code> |
      *        <code>RawMessageDelivery</code>
      */
+
     public void setAttributeName(String attributeName) {
         this.attributeName = attributeName;
     }
@@ -158,6 +162,7 @@ public class SetSubscriptionAttributesRequest extends AmazonWebServiceRequest
      *         Valid values: <code>DeliveryPolicy</code> |
      *         <code>RawMessageDelivery</code>
      */
+
     public String getAttributeName() {
         return this.attributeName;
     }
@@ -181,6 +186,7 @@ public class SetSubscriptionAttributesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetSubscriptionAttributesRequest withAttributeName(
             String attributeName) {
         setAttributeName(attributeName);
@@ -195,6 +201,7 @@ public class SetSubscriptionAttributesRequest extends AmazonWebServiceRequest
      * @param attributeValue
      *        The new value for the attribute in JSON format.
      */
+
     public void setAttributeValue(String attributeValue) {
         this.attributeValue = attributeValue;
     }
@@ -206,6 +213,7 @@ public class SetSubscriptionAttributesRequest extends AmazonWebServiceRequest
      * 
      * @return The new value for the attribute in JSON format.
      */
+
     public String getAttributeValue() {
         return this.attributeValue;
     }
@@ -220,6 +228,7 @@ public class SetSubscriptionAttributesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetSubscriptionAttributesRequest withAttributeValue(
             String attributeValue) {
         setAttributeValue(attributeValue);

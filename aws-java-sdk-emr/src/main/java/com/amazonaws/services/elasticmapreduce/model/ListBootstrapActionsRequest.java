@@ -48,6 +48,7 @@ public class ListBootstrapActionsRequest extends AmazonWebServiceRequest
      * @param clusterId
      *        The cluster identifier for the bootstrap actions to list .
      */
+
     public void setClusterId(String clusterId) {
         this.clusterId = clusterId;
     }
@@ -59,6 +60,7 @@ public class ListBootstrapActionsRequest extends AmazonWebServiceRequest
      * 
      * @return The cluster identifier for the bootstrap actions to list .
      */
+
     public String getClusterId() {
         return this.clusterId;
     }
@@ -73,6 +75,7 @@ public class ListBootstrapActionsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListBootstrapActionsRequest withClusterId(String clusterId) {
         setClusterId(clusterId);
         return this;
@@ -87,6 +90,7 @@ public class ListBootstrapActionsRequest extends AmazonWebServiceRequest
      *        The pagination token that indicates the next set of results to
      *        retrieve .
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -99,6 +103,7 @@ public class ListBootstrapActionsRequest extends AmazonWebServiceRequest
      * @return The pagination token that indicates the next set of results to
      *         retrieve .
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -114,6 +119,7 @@ public class ListBootstrapActionsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListBootstrapActionsRequest withMarker(String marker) {
         setMarker(marker);
         return this;

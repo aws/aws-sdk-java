@@ -53,6 +53,7 @@ public class GetTrafficPolicyRequest extends AmazonWebServiceRequest implements
      *        The ID of the traffic policy that you want to get information
      *        about.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -65,6 +66,7 @@ public class GetTrafficPolicyRequest extends AmazonWebServiceRequest implements
      * @return The ID of the traffic policy that you want to get information
      *         about.
      */
+
     public String getId() {
         return this.id;
     }
@@ -80,6 +82,7 @@ public class GetTrafficPolicyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetTrafficPolicyRequest withId(String id) {
         setId(id);
         return this;
@@ -95,6 +98,7 @@ public class GetTrafficPolicyRequest extends AmazonWebServiceRequest implements
      *        The version number of the traffic policy that you want to get
      *        information about.
      */
+
     public void setVersion(Integer version) {
         this.version = version;
     }
@@ -108,6 +112,7 @@ public class GetTrafficPolicyRequest extends AmazonWebServiceRequest implements
      * @return The version number of the traffic policy that you want to get
      *         information about.
      */
+
     public Integer getVersion() {
         return this.version;
     }
@@ -124,6 +129,7 @@ public class GetTrafficPolicyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetTrafficPolicyRequest withVersion(Integer version) {
         setVersion(version);
         return this;

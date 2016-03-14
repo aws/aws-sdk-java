@@ -45,6 +45,7 @@ public class DescribeClassicLinkInstancesResult implements Serializable,
      * 
      * @return Information about one or more linked EC2-Classic instances.
      */
+
     public java.util.List<ClassicLinkInstance> getInstances() {
         if (instances == null) {
             instances = new com.amazonaws.internal.SdkInternalList<ClassicLinkInstance>();
@@ -60,6 +61,7 @@ public class DescribeClassicLinkInstancesResult implements Serializable,
      * @param instances
      *        Information about one or more linked EC2-Classic instances.
      */
+
     public void setInstances(java.util.Collection<ClassicLinkInstance> instances) {
         if (instances == null) {
             this.instances = null;
@@ -86,6 +88,7 @@ public class DescribeClassicLinkInstancesResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeClassicLinkInstancesResult withInstances(
             ClassicLinkInstance... instances) {
         if (this.instances == null) {
@@ -108,6 +111,7 @@ public class DescribeClassicLinkInstancesResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeClassicLinkInstancesResult withInstances(
             java.util.Collection<ClassicLinkInstance> instances) {
         setInstances(instances);
@@ -124,6 +128,7 @@ public class DescribeClassicLinkInstancesResult implements Serializable,
      *        The token to use to retrieve the next page of results. This value
      *        is <code>null</code> when there are no more results to return.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -137,6 +142,7 @@ public class DescribeClassicLinkInstancesResult implements Serializable,
      * @return The token to use to retrieve the next page of results. This value
      *         is <code>null</code> when there are no more results to return.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -153,6 +159,7 @@ public class DescribeClassicLinkInstancesResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeClassicLinkInstancesResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

@@ -63,6 +63,7 @@ public class DescribeDeploymentsRequest extends AmazonWebServiceRequest
      *        <code>DescribeDeployments</code> returns a description of the
      *        commands associated with the specified stack.
      */
+
     public void setStackId(String stackId) {
         this.stackId = stackId;
     }
@@ -78,6 +79,7 @@ public class DescribeDeploymentsRequest extends AmazonWebServiceRequest
      *         <code>DescribeDeployments</code> returns a description of the
      *         commands associated with the specified stack.
      */
+
     public String getStackId() {
         return this.stackId;
     }
@@ -96,6 +98,7 @@ public class DescribeDeploymentsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeDeploymentsRequest withStackId(String stackId) {
         setStackId(stackId);
         return this;
@@ -113,6 +116,7 @@ public class DescribeDeploymentsRequest extends AmazonWebServiceRequest
      *        <code>DescribeDeployments</code> returns a description of the
      *        commands associated with the specified app.
      */
+
     public void setAppId(String appId) {
         this.appId = appId;
     }
@@ -128,6 +132,7 @@ public class DescribeDeploymentsRequest extends AmazonWebServiceRequest
      *         <code>DescribeDeployments</code> returns a description of the
      *         commands associated with the specified app.
      */
+
     public String getAppId() {
         return this.appId;
     }
@@ -146,6 +151,7 @@ public class DescribeDeploymentsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeDeploymentsRequest withAppId(String appId) {
         setAppId(appId);
         return this;
@@ -164,6 +170,7 @@ public class DescribeDeploymentsRequest extends AmazonWebServiceRequest
      *         of the specified deployments. Otherwise, it returns a description
      *         of every deployment.
      */
+
     public java.util.List<String> getDeploymentIds() {
         if (deploymentIds == null) {
             deploymentIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -185,6 +192,7 @@ public class DescribeDeploymentsRequest extends AmazonWebServiceRequest
      *        of the specified deployments. Otherwise, it returns a description
      *        of every deployment.
      */
+
     public void setDeploymentIds(java.util.Collection<String> deploymentIds) {
         if (deploymentIds == null) {
             this.deploymentIds = null;
@@ -217,6 +225,7 @@ public class DescribeDeploymentsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeDeploymentsRequest withDeploymentIds(String... deploymentIds) {
         if (this.deploymentIds == null) {
             setDeploymentIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -244,6 +253,7 @@ public class DescribeDeploymentsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeDeploymentsRequest withDeploymentIds(
             java.util.Collection<String> deploymentIds) {
         setDeploymentIds(deploymentIds);

@@ -96,6 +96,7 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest implements
      * @return A list of ID numbers of the support cases you want returned. The
      *         maximum number of cases is 100.
      */
+
     public java.util.List<String> getCaseIdList() {
         if (caseIdList == null) {
             caseIdList = new com.amazonaws.internal.SdkInternalList<String>();
@@ -113,6 +114,7 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest implements
      *        A list of ID numbers of the support cases you want returned. The
      *        maximum number of cases is 100.
      */
+
     public void setCaseIdList(java.util.Collection<String> caseIdList) {
         if (caseIdList == null) {
             this.caseIdList = null;
@@ -141,6 +143,7 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeCasesRequest withCaseIdList(String... caseIdList) {
         if (this.caseIdList == null) {
             setCaseIdList(new com.amazonaws.internal.SdkInternalList<String>(
@@ -164,6 +167,7 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeCasesRequest withCaseIdList(
             java.util.Collection<String> caseIdList) {
         setCaseIdList(caseIdList);
@@ -179,6 +183,7 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest implements
      *        The ID displayed for a case in the AWS Support Center user
      *        interface.
      */
+
     public void setDisplayId(String displayId) {
         this.displayId = displayId;
     }
@@ -191,6 +196,7 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest implements
      * @return The ID displayed for a case in the AWS Support Center user
      *         interface.
      */
+
     public String getDisplayId() {
         return this.displayId;
     }
@@ -206,6 +212,7 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeCasesRequest withDisplayId(String displayId) {
         setDisplayId(displayId);
         return this;
@@ -222,6 +229,7 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest implements
      *        communications. Case communications are available for 12 months
      *        after creation.
      */
+
     public void setAfterTime(String afterTime) {
         this.afterTime = afterTime;
     }
@@ -236,6 +244,7 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest implements
      *         communications. Case communications are available for 12 months
      *         after creation.
      */
+
     public String getAfterTime() {
         return this.afterTime;
     }
@@ -253,6 +262,7 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeCasesRequest withAfterTime(String afterTime) {
         setAfterTime(afterTime);
         return this;
@@ -269,6 +279,7 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest implements
      *        communications. Case communications are available for 12 months
      *        after creation.
      */
+
     public void setBeforeTime(String beforeTime) {
         this.beforeTime = beforeTime;
     }
@@ -283,6 +294,7 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest implements
      *         communications. Case communications are available for 12 months
      *         after creation.
      */
+
     public String getBeforeTime() {
         return this.beforeTime;
     }
@@ -300,6 +312,7 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeCasesRequest withBeforeTime(String beforeTime) {
         setBeforeTime(beforeTime);
         return this;
@@ -315,6 +328,7 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest implements
      *        Specifies whether resolved support cases should be included in the
      *        <a>DescribeCases</a> results. The default is <i>false</i>.
      */
+
     public void setIncludeResolvedCases(Boolean includeResolvedCases) {
         this.includeResolvedCases = includeResolvedCases;
     }
@@ -328,6 +342,7 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest implements
      * @return Specifies whether resolved support cases should be included in
      *         the <a>DescribeCases</a> results. The default is <i>false</i>.
      */
+
     public Boolean getIncludeResolvedCases() {
         return this.includeResolvedCases;
     }
@@ -344,6 +359,7 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeCasesRequest withIncludeResolvedCases(
             Boolean includeResolvedCases) {
         setIncludeResolvedCases(includeResolvedCases);
@@ -359,6 +375,7 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest implements
      * @return Specifies whether resolved support cases should be included in
      *         the <a>DescribeCases</a> results. The default is <i>false</i>.
      */
+
     public Boolean isIncludeResolvedCases() {
         return this.includeResolvedCases;
     }
@@ -371,6 +388,7 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest implements
      * @param nextToken
      *        A resumption point for pagination.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -382,6 +400,7 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest implements
      * 
      * @return A resumption point for pagination.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -396,6 +415,7 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeCasesRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -409,6 +429,7 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest implements
      * @param maxResults
      *        The maximum number of results to return before paginating.
      */
+
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
     }
@@ -420,6 +441,7 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest implements
      * 
      * @return The maximum number of results to return before paginating.
      */
+
     public Integer getMaxResults() {
         return this.maxResults;
     }
@@ -434,6 +456,7 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeCasesRequest withMaxResults(Integer maxResults) {
         setMaxResults(maxResults);
         return this;
@@ -452,6 +475,7 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest implements
      *        Language parameters must be passed explicitly for operations that
      *        take them.
      */
+
     public void setLanguage(String language) {
         this.language = language;
     }
@@ -468,6 +492,7 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest implements
      *         Japanese ("ja"). Language parameters must be passed explicitly
      *         for operations that take them.
      */
+
     public String getLanguage() {
         return this.language;
     }
@@ -487,6 +512,7 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeCasesRequest withLanguage(String language) {
         setLanguage(language);
         return this;
@@ -502,6 +528,7 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest implements
      *        Specifies whether communications should be included in the
      *        <a>DescribeCases</a> results. The default is <i>true</i>.
      */
+
     public void setIncludeCommunications(Boolean includeCommunications) {
         this.includeCommunications = includeCommunications;
     }
@@ -515,6 +542,7 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest implements
      * @return Specifies whether communications should be included in the
      *         <a>DescribeCases</a> results. The default is <i>true</i>.
      */
+
     public Boolean getIncludeCommunications() {
         return this.includeCommunications;
     }
@@ -531,6 +559,7 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeCasesRequest withIncludeCommunications(
             Boolean includeCommunications) {
         setIncludeCommunications(includeCommunications);
@@ -546,6 +575,7 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest implements
      * @return Specifies whether communications should be included in the
      *         <a>DescribeCases</a> results. The default is <i>true</i>.
      */
+
     public Boolean isIncludeCommunications() {
         return this.includeCommunications;
     }

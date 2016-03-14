@@ -61,6 +61,7 @@ public class CreateAliasRequest extends AmazonWebServiceRequest implements
      *        the word "alias" followed by a forward slash (alias/). Aliases
      *        that begin with "alias/AWS" are reserved.
      */
+
     public void setAliasName(String aliasName) {
         this.aliasName = aliasName;
     }
@@ -76,6 +77,7 @@ public class CreateAliasRequest extends AmazonWebServiceRequest implements
      *         the word "alias" followed by a forward slash (alias/). Aliases
      *         that begin with "alias/AWS" are reserved.
      */
+
     public String getAliasName() {
         return this.aliasName;
     }
@@ -94,6 +96,7 @@ public class CreateAliasRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateAliasRequest withAliasName(String aliasName) {
         setAliasName(aliasName);
         return this;
@@ -125,6 +128,7 @@ public class CreateAliasRequest extends AmazonWebServiceRequest implements
      *        12345678-1234-1234-1234-123456789012</li>
      *        </ul>
      */
+
     public void setTargetKeyId(String targetKeyId) {
         this.targetKeyId = targetKeyId;
     }
@@ -154,6 +158,7 @@ public class CreateAliasRequest extends AmazonWebServiceRequest implements
      *         12345678-1234-1234-1234-123456789012</li>
      *         </ul>
      */
+
     public String getTargetKeyId() {
         return this.targetKeyId;
     }
@@ -186,6 +191,7 @@ public class CreateAliasRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateAliasRequest withTargetKeyId(String targetKeyId) {
         setTargetKeyId(targetKeyId);
         return this;

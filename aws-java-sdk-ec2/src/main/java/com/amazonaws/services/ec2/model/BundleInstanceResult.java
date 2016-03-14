@@ -38,6 +38,7 @@ public class BundleInstanceResult implements Serializable, Cloneable {
      * @param bundleTask
      *        Information about the bundle task.
      */
+
     public void setBundleTask(BundleTask bundleTask) {
         this.bundleTask = bundleTask;
     }
@@ -49,6 +50,7 @@ public class BundleInstanceResult implements Serializable, Cloneable {
      * 
      * @return Information about the bundle task.
      */
+
     public BundleTask getBundleTask() {
         return this.bundleTask;
     }
@@ -63,6 +65,7 @@ public class BundleInstanceResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BundleInstanceResult withBundleTask(BundleTask bundleTask) {
         setBundleTask(bundleTask);
         return this;

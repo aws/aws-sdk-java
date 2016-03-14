@@ -40,6 +40,7 @@ public class CreatePlayerSessionsResult implements Serializable, Cloneable {
      * @return Collection of player session objects created for the added
      *         players.
      */
+
     public java.util.List<PlayerSession> getPlayerSessions() {
         return playerSessions;
     }
@@ -53,6 +54,7 @@ public class CreatePlayerSessionsResult implements Serializable, Cloneable {
      *        Collection of player session objects created for the added
      *        players.
      */
+
     public void setPlayerSessions(
             java.util.Collection<PlayerSession> playerSessions) {
         if (playerSessions == null) {
@@ -81,6 +83,7 @@ public class CreatePlayerSessionsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePlayerSessionsResult withPlayerSessions(
             PlayerSession... playerSessions) {
         if (this.playerSessions == null) {
@@ -104,6 +107,7 @@ public class CreatePlayerSessionsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePlayerSessionsResult withPlayerSessions(
             java.util.Collection<PlayerSession> playerSessions) {
         setPlayerSessions(playerSessions);

@@ -46,6 +46,7 @@ public class DetachLoadBalancerFromSubnetsRequest extends
      * @param loadBalancerName
      *        The name of the load balancer.
      */
+
     public void setLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
     }
@@ -57,6 +58,7 @@ public class DetachLoadBalancerFromSubnetsRequest extends
      * 
      * @return The name of the load balancer.
      */
+
     public String getLoadBalancerName() {
         return this.loadBalancerName;
     }
@@ -71,6 +73,7 @@ public class DetachLoadBalancerFromSubnetsRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DetachLoadBalancerFromSubnetsRequest withLoadBalancerName(
             String loadBalancerName) {
         setLoadBalancerName(loadBalancerName);
@@ -84,6 +87,7 @@ public class DetachLoadBalancerFromSubnetsRequest extends
      * 
      * @return The IDs of the subnets.
      */
+
     public java.util.List<String> getSubnets() {
         if (subnets == null) {
             subnets = new com.amazonaws.internal.SdkInternalList<String>();
@@ -99,6 +103,7 @@ public class DetachLoadBalancerFromSubnetsRequest extends
      * @param subnets
      *        The IDs of the subnets.
      */
+
     public void setSubnets(java.util.Collection<String> subnets) {
         if (subnets == null) {
             this.subnets = null;
@@ -125,6 +130,7 @@ public class DetachLoadBalancerFromSubnetsRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DetachLoadBalancerFromSubnetsRequest withSubnets(String... subnets) {
         if (this.subnets == null) {
             setSubnets(new com.amazonaws.internal.SdkInternalList<String>(
@@ -146,6 +152,7 @@ public class DetachLoadBalancerFromSubnetsRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DetachLoadBalancerFromSubnetsRequest withSubnets(
             java.util.Collection<String> subnets) {
         setSubnets(subnets);

@@ -40,6 +40,7 @@ public class DeleteDestinationRequest extends AmazonWebServiceRequest implements
      * @param destinationName
      *        The name of destination to delete.
      */
+
     public void setDestinationName(String destinationName) {
         this.destinationName = destinationName;
     }
@@ -51,6 +52,7 @@ public class DeleteDestinationRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of destination to delete.
      */
+
     public String getDestinationName() {
         return this.destinationName;
     }
@@ -65,6 +67,7 @@ public class DeleteDestinationRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteDestinationRequest withDestinationName(String destinationName) {
         setDestinationName(destinationName);
         return this;

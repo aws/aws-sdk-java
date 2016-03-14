@@ -37,6 +37,7 @@ public class DescribeTagsResult implements Serializable, Cloneable {
      * 
      * @return Information about the tags.
      */
+
     public java.util.List<TagDescription> getTagDescriptions() {
         if (tagDescriptions == null) {
             tagDescriptions = new com.amazonaws.internal.SdkInternalList<TagDescription>();
@@ -52,6 +53,7 @@ public class DescribeTagsResult implements Serializable, Cloneable {
      * @param tagDescriptions
      *        Information about the tags.
      */
+
     public void setTagDescriptions(
             java.util.Collection<TagDescription> tagDescriptions) {
         if (tagDescriptions == null) {
@@ -79,6 +81,7 @@ public class DescribeTagsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTagsResult withTagDescriptions(
             TagDescription... tagDescriptions) {
         if (this.tagDescriptions == null) {
@@ -101,6 +104,7 @@ public class DescribeTagsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTagsResult withTagDescriptions(
             java.util.Collection<TagDescription> tagDescriptions) {
         setTagDescriptions(tagDescriptions);

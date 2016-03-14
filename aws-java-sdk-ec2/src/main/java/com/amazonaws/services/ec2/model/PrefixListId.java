@@ -40,6 +40,7 @@ public class PrefixListId implements Serializable, Cloneable {
      * @param prefixListId
      *        The ID of the prefix.
      */
+
     public void setPrefixListId(String prefixListId) {
         this.prefixListId = prefixListId;
     }
@@ -51,6 +52,7 @@ public class PrefixListId implements Serializable, Cloneable {
      * 
      * @return The ID of the prefix.
      */
+
     public String getPrefixListId() {
         return this.prefixListId;
     }
@@ -65,6 +67,7 @@ public class PrefixListId implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PrefixListId withPrefixListId(String prefixListId) {
         setPrefixListId(prefixListId);
         return this;

@@ -58,6 +58,10 @@ public class S3LocationJsonMarshaller {
                 jsonWriter.key("Key").value(s3Location.getKey());
             }
 
+            if (s3Location.getRoleArn() != null) {
+                jsonWriter.key("RoleArn").value(s3Location.getRoleArn());
+            }
+
             jsonWriter.endObject();
         } catch (Throwable t) {
             throw new AmazonClientException(

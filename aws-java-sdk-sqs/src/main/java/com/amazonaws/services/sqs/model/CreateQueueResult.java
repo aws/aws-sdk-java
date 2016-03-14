@@ -40,6 +40,7 @@ public class CreateQueueResult implements Serializable, Cloneable {
      * @param queueUrl
      *        The URL for the created Amazon SQS queue.
      */
+
     public void setQueueUrl(String queueUrl) {
         this.queueUrl = queueUrl;
     }
@@ -51,6 +52,7 @@ public class CreateQueueResult implements Serializable, Cloneable {
      * 
      * @return The URL for the created Amazon SQS queue.
      */
+
     public String getQueueUrl() {
         return this.queueUrl;
     }
@@ -65,6 +67,7 @@ public class CreateQueueResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateQueueResult withQueueUrl(String queueUrl) {
         setQueueUrl(queueUrl);
         return this;

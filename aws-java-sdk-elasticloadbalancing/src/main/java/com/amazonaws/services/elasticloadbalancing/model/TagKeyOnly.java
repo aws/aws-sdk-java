@@ -40,6 +40,7 @@ public class TagKeyOnly implements Serializable, Cloneable {
      * @param key
      *        The name of the key.
      */
+
     public void setKey(String key) {
         this.key = key;
     }
@@ -51,6 +52,7 @@ public class TagKeyOnly implements Serializable, Cloneable {
      * 
      * @return The name of the key.
      */
+
     public String getKey() {
         return this.key;
     }
@@ -65,6 +67,7 @@ public class TagKeyOnly implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TagKeyOnly withKey(String key) {
         setKey(key);
         return this;

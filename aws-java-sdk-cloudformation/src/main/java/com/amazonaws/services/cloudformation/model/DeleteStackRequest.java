@@ -55,6 +55,7 @@ public class DeleteStackRequest extends AmazonWebServiceRequest implements
      * @param stackName
      *        The name or the unique stack ID that is associated with the stack.
      */
+
     public void setStackName(String stackName) {
         this.stackName = stackName;
     }
@@ -67,6 +68,7 @@ public class DeleteStackRequest extends AmazonWebServiceRequest implements
      * @return The name or the unique stack ID that is associated with the
      *         stack.
      */
+
     public String getStackName() {
         return this.stackName;
     }
@@ -81,6 +83,7 @@ public class DeleteStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteStackRequest withStackName(String stackName) {
         setStackName(stackName);
         return this;
@@ -106,6 +109,7 @@ public class DeleteStackRequest extends AmazonWebServiceRequest implements
      *         Retaining resources is useful when you cannot delete a resource,
      *         such as a non-empty S3 bucket, but you want to delete the stack.
      */
+
     public java.util.List<String> getRetainResources() {
         if (retainResources == null) {
             retainResources = new com.amazonaws.internal.SdkInternalList<String>();
@@ -134,6 +138,7 @@ public class DeleteStackRequest extends AmazonWebServiceRequest implements
      *        Retaining resources is useful when you cannot delete a resource,
      *        such as a non-empty S3 bucket, but you want to delete the stack.
      */
+
     public void setRetainResources(java.util.Collection<String> retainResources) {
         if (retainResources == null) {
             this.retainResources = null;
@@ -173,6 +178,7 @@ public class DeleteStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteStackRequest withRetainResources(String... retainResources) {
         if (this.retainResources == null) {
             setRetainResources(new com.amazonaws.internal.SdkInternalList<String>(
@@ -207,6 +213,7 @@ public class DeleteStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteStackRequest withRetainResources(
             java.util.Collection<String> retainResources) {
         setRetainResources(retainResources);

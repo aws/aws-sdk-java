@@ -40,6 +40,7 @@ public class DescribeDeliveryChannelsResult implements Serializable, Cloneable {
      * @return A list that contains the descriptions of the specified delivery
      *         channel.
      */
+
     public java.util.List<DeliveryChannel> getDeliveryChannels() {
         if (deliveryChannels == null) {
             deliveryChannels = new com.amazonaws.internal.SdkInternalList<DeliveryChannel>();
@@ -56,6 +57,7 @@ public class DescribeDeliveryChannelsResult implements Serializable, Cloneable {
      *        A list that contains the descriptions of the specified delivery
      *        channel.
      */
+
     public void setDeliveryChannels(
             java.util.Collection<DeliveryChannel> deliveryChannels) {
         if (deliveryChannels == null) {
@@ -84,6 +86,7 @@ public class DescribeDeliveryChannelsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeDeliveryChannelsResult withDeliveryChannels(
             DeliveryChannel... deliveryChannels) {
         if (this.deliveryChannels == null) {
@@ -107,6 +110,7 @@ public class DescribeDeliveryChannelsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeDeliveryChannelsResult withDeliveryChannels(
             java.util.Collection<DeliveryChannel> deliveryChannels) {
         setDeliveryChannels(deliveryChannels);

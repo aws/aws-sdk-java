@@ -113,6 +113,7 @@ public class Finding implements Serializable, Cloneable {
      * @param findingArn
      *        The ARN specifying the finding.
      */
+
     public void setFindingArn(String findingArn) {
         this.findingArn = findingArn;
     }
@@ -124,6 +125,7 @@ public class Finding implements Serializable, Cloneable {
      * 
      * @return The ARN specifying the finding.
      */
+
     public String getFindingArn() {
         return this.findingArn;
     }
@@ -138,6 +140,7 @@ public class Finding implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Finding withFindingArn(String findingArn) {
         setFindingArn(findingArn);
         return this;
@@ -151,6 +154,7 @@ public class Finding implements Serializable, Cloneable {
      * @param runArn
      *        The ARN of the assessment run that generated the finding.
      */
+
     public void setRunArn(String runArn) {
         this.runArn = runArn;
     }
@@ -162,6 +166,7 @@ public class Finding implements Serializable, Cloneable {
      * 
      * @return The ARN of the assessment run that generated the finding.
      */
+
     public String getRunArn() {
         return this.runArn;
     }
@@ -176,6 +181,7 @@ public class Finding implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Finding withRunArn(String runArn) {
         setRunArn(runArn);
         return this;
@@ -189,6 +195,7 @@ public class Finding implements Serializable, Cloneable {
      * @param rulesPackageArn
      *        The ARN of the rules package that is used to generate the finding.
      */
+
     public void setRulesPackageArn(String rulesPackageArn) {
         this.rulesPackageArn = rulesPackageArn;
     }
@@ -201,6 +208,7 @@ public class Finding implements Serializable, Cloneable {
      * @return The ARN of the rules package that is used to generate the
      *         finding.
      */
+
     public String getRulesPackageArn() {
         return this.rulesPackageArn;
     }
@@ -215,6 +223,7 @@ public class Finding implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Finding withRulesPackageArn(String rulesPackageArn) {
         setRulesPackageArn(rulesPackageArn);
         return this;
@@ -228,6 +237,7 @@ public class Finding implements Serializable, Cloneable {
      * @param ruleName
      *        The rule name that is used to generate the finding.
      */
+
     public void setRuleName(String ruleName) {
         this.ruleName = ruleName;
     }
@@ -239,6 +249,7 @@ public class Finding implements Serializable, Cloneable {
      * 
      * @return The rule name that is used to generate the finding.
      */
+
     public String getRuleName() {
         return this.ruleName;
     }
@@ -253,6 +264,7 @@ public class Finding implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Finding withRuleName(String ruleName) {
         setRuleName(ruleName);
         return this;
@@ -268,6 +280,7 @@ public class Finding implements Serializable, Cloneable {
      *        The EC2 instance ID where the agent is installed that is used
      *        during the assessment that generates the finding.
      */
+
     public void setAgentId(String agentId) {
         this.agentId = agentId;
     }
@@ -281,6 +294,7 @@ public class Finding implements Serializable, Cloneable {
      * @return The EC2 instance ID where the agent is installed that is used
      *         during the assessment that generates the finding.
      */
+
     public String getAgentId() {
         return this.agentId;
     }
@@ -297,6 +311,7 @@ public class Finding implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Finding withAgentId(String agentId) {
         setAgentId(agentId);
         return this;
@@ -313,6 +328,7 @@ public class Finding implements Serializable, Cloneable {
      *        installed that is used during the assessment that generates the
      *        finding.
      */
+
     public void setAutoScalingGroup(String autoScalingGroup) {
         this.autoScalingGroup = autoScalingGroup;
     }
@@ -327,6 +343,7 @@ public class Finding implements Serializable, Cloneable {
      *         installed that is used during the assessment that generates the
      *         finding.
      */
+
     public String getAutoScalingGroup() {
         return this.autoScalingGroup;
     }
@@ -344,6 +361,7 @@ public class Finding implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Finding withAutoScalingGroup(String autoScalingGroup) {
         setAutoScalingGroup(autoScalingGroup);
         return this;
@@ -359,6 +377,7 @@ public class Finding implements Serializable, Cloneable {
      *        The finding severity. Values can be set to <i>High</i>,
      *        <i>Medium</i>, <i>Low</i>, and <i>Informational</i>.
      */
+
     public void setSeverity(String severity) {
         this.severity = severity;
     }
@@ -372,6 +391,7 @@ public class Finding implements Serializable, Cloneable {
      * @return The finding severity. Values can be set to <i>High</i>,
      *         <i>Medium</i>, <i>Low</i>, and <i>Informational</i>.
      */
+
     public String getSeverity() {
         return this.severity;
     }
@@ -388,6 +408,7 @@ public class Finding implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Finding withSeverity(String severity) {
         setSeverity(severity);
         return this;
@@ -401,6 +422,7 @@ public class Finding implements Serializable, Cloneable {
      * @param finding
      *        A short description that identifies the finding.
      */
+
     public void setFinding(LocalizedText finding) {
         this.finding = finding;
     }
@@ -412,6 +434,7 @@ public class Finding implements Serializable, Cloneable {
      * 
      * @return A short description that identifies the finding.
      */
+
     public LocalizedText getFinding() {
         return this.finding;
     }
@@ -426,6 +449,7 @@ public class Finding implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Finding withFinding(LocalizedText finding) {
         setFinding(finding);
         return this;
@@ -439,6 +463,7 @@ public class Finding implements Serializable, Cloneable {
      * @param description
      *        The description of the finding.
      */
+
     public void setDescription(LocalizedText description) {
         this.description = description;
     }
@@ -450,6 +475,7 @@ public class Finding implements Serializable, Cloneable {
      * 
      * @return The description of the finding.
      */
+
     public LocalizedText getDescription() {
         return this.description;
     }
@@ -464,6 +490,7 @@ public class Finding implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Finding withDescription(LocalizedText description) {
         setDescription(description);
         return this;
@@ -477,6 +504,7 @@ public class Finding implements Serializable, Cloneable {
      * @param recommendation
      *        The recommendation for the finding.
      */
+
     public void setRecommendation(LocalizedText recommendation) {
         this.recommendation = recommendation;
     }
@@ -488,6 +516,7 @@ public class Finding implements Serializable, Cloneable {
      * 
      * @return The recommendation for the finding.
      */
+
     public LocalizedText getRecommendation() {
         return this.recommendation;
     }
@@ -502,6 +531,7 @@ public class Finding implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Finding withRecommendation(LocalizedText recommendation) {
         setRecommendation(recommendation);
         return this;
@@ -514,6 +544,7 @@ public class Finding implements Serializable, Cloneable {
      * 
      * @return The system-defined attributes for the finding.
      */
+
     public java.util.List<Attribute> getAttributes() {
         return attributes;
     }
@@ -526,6 +557,7 @@ public class Finding implements Serializable, Cloneable {
      * @param attributes
      *        The system-defined attributes for the finding.
      */
+
     public void setAttributes(java.util.Collection<Attribute> attributes) {
         if (attributes == null) {
             this.attributes = null;
@@ -551,6 +583,7 @@ public class Finding implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Finding withAttributes(Attribute... attributes) {
         if (this.attributes == null) {
             setAttributes(new java.util.ArrayList<Attribute>(attributes.length));
@@ -571,6 +604,7 @@ public class Finding implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Finding withAttributes(java.util.Collection<Attribute> attributes) {
         setAttributes(attributes);
         return this;
@@ -583,6 +617,7 @@ public class Finding implements Serializable, Cloneable {
      * 
      * @return The user-defined attributes that are assigned to the finding.
      */
+
     public java.util.List<Attribute> getUserAttributes() {
         return userAttributes;
     }
@@ -595,6 +630,7 @@ public class Finding implements Serializable, Cloneable {
      * @param userAttributes
      *        The user-defined attributes that are assigned to the finding.
      */
+
     public void setUserAttributes(java.util.Collection<Attribute> userAttributes) {
         if (userAttributes == null) {
             this.userAttributes = null;
@@ -620,6 +656,7 @@ public class Finding implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Finding withUserAttributes(Attribute... userAttributes) {
         if (this.userAttributes == null) {
             setUserAttributes(new java.util.ArrayList<Attribute>(
@@ -641,6 +678,7 @@ public class Finding implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Finding withUserAttributes(
             java.util.Collection<Attribute> userAttributes) {
         setUserAttributes(userAttributes);

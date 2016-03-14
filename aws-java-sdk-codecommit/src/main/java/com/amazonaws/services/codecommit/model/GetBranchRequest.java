@@ -27,6 +27,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class GetBranchRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The name of the repository that contains the branch for which you want to
+     * retrieve information.
+     * </p>
+     */
     private String repositoryName;
     /**
      * <p>
@@ -36,24 +42,47 @@ public class GetBranchRequest extends AmazonWebServiceRequest implements
     private String branchName;
 
     /**
+     * <p>
+     * The name of the repository that contains the branch for which you want to
+     * retrieve information.
+     * </p>
+     * 
      * @param repositoryName
+     *        The name of the repository that contains the branch for which you
+     *        want to retrieve information.
      */
+
     public void setRepositoryName(String repositoryName) {
         this.repositoryName = repositoryName;
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the repository that contains the branch for which you want to
+     * retrieve information.
+     * </p>
+     * 
+     * @return The name of the repository that contains the branch for which you
+     *         want to retrieve information.
      */
+
     public String getRepositoryName() {
         return this.repositoryName;
     }
 
     /**
+     * <p>
+     * The name of the repository that contains the branch for which you want to
+     * retrieve information.
+     * </p>
+     * 
      * @param repositoryName
+     *        The name of the repository that contains the branch for which you
+     *        want to retrieve information.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetBranchRequest withRepositoryName(String repositoryName) {
         setRepositoryName(repositoryName);
         return this;
@@ -67,6 +96,7 @@ public class GetBranchRequest extends AmazonWebServiceRequest implements
      * @param branchName
      *        The name of the branch for which you want to retrieve information.
      */
+
     public void setBranchName(String branchName) {
         this.branchName = branchName;
     }
@@ -79,6 +109,7 @@ public class GetBranchRequest extends AmazonWebServiceRequest implements
      * @return The name of the branch for which you want to retrieve
      *         information.
      */
+
     public String getBranchName() {
         return this.branchName;
     }
@@ -93,6 +124,7 @@ public class GetBranchRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetBranchRequest withBranchName(String branchName) {
         setBranchName(branchName);
         return this;

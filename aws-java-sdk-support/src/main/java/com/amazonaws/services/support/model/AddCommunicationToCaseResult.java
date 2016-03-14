@@ -43,6 +43,7 @@ public class AddCommunicationToCaseResult implements Serializable, Cloneable {
      *        True if <a>AddCommunicationToCase</a> succeeds. Otherwise, returns
      *        an error.
      */
+
     public void setResult(Boolean result) {
         this.result = result;
     }
@@ -56,6 +57,7 @@ public class AddCommunicationToCaseResult implements Serializable, Cloneable {
      * @return True if <a>AddCommunicationToCase</a> succeeds. Otherwise,
      *         returns an error.
      */
+
     public Boolean getResult() {
         return this.result;
     }
@@ -72,6 +74,7 @@ public class AddCommunicationToCaseResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddCommunicationToCaseResult withResult(Boolean result) {
         setResult(result);
         return this;
@@ -86,6 +89,7 @@ public class AddCommunicationToCaseResult implements Serializable, Cloneable {
      * @return True if <a>AddCommunicationToCase</a> succeeds. Otherwise,
      *         returns an error.
      */
+
     public Boolean isResult() {
         return this.result;
     }

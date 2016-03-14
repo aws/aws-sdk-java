@@ -278,6 +278,7 @@ public class Instance implements Serializable, Cloneable {
      * @param instanceId
      *        The ID of the instance.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -289,6 +290,7 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @return The ID of the instance.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
@@ -303,6 +305,7 @@ public class Instance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Instance withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;
@@ -316,6 +319,7 @@ public class Instance implements Serializable, Cloneable {
      * @param imageId
      *        The ID of the AMI used to launch the instance.
      */
+
     public void setImageId(String imageId) {
         this.imageId = imageId;
     }
@@ -327,6 +331,7 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @return The ID of the AMI used to launch the instance.
      */
+
     public String getImageId() {
         return this.imageId;
     }
@@ -341,6 +346,7 @@ public class Instance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Instance withImageId(String imageId) {
         setImageId(imageId);
         return this;
@@ -354,6 +360,7 @@ public class Instance implements Serializable, Cloneable {
      * @param state
      *        The current state of the instance.
      */
+
     public void setState(InstanceState state) {
         this.state = state;
     }
@@ -365,6 +372,7 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @return The current state of the instance.
      */
+
     public InstanceState getState() {
         return this.state;
     }
@@ -379,6 +387,7 @@ public class Instance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Instance withState(InstanceState state) {
         setState(state);
         return this;
@@ -399,6 +408,7 @@ public class Instance implements Serializable, Cloneable {
      *        state. For EC2-VPC, this name is only available if you've enabled
      *        DNS hostnames for your VPC.
      */
+
     public void setPrivateDnsName(String privateDnsName) {
         this.privateDnsName = privateDnsName;
     }
@@ -417,6 +427,7 @@ public class Instance implements Serializable, Cloneable {
      *         state. For EC2-VPC, this name is only available if you've enabled
      *         DNS hostnames for your VPC.
      */
+
     public String getPrivateDnsName() {
         return this.privateDnsName;
     }
@@ -438,6 +449,7 @@ public class Instance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Instance withPrivateDnsName(String privateDnsName) {
         setPrivateDnsName(privateDnsName);
         return this;
@@ -456,6 +468,7 @@ public class Instance implements Serializable, Cloneable {
      *        state. For EC2-VPC, this name is only available if you've enabled
      *        DNS hostnames for your VPC.
      */
+
     public void setPublicDnsName(String publicDnsName) {
         this.publicDnsName = publicDnsName;
     }
@@ -472,6 +485,7 @@ public class Instance implements Serializable, Cloneable {
      *         state. For EC2-VPC, this name is only available if you've enabled
      *         DNS hostnames for your VPC.
      */
+
     public String getPublicDnsName() {
         return this.publicDnsName;
     }
@@ -491,6 +505,7 @@ public class Instance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Instance withPublicDnsName(String publicDnsName) {
         setPublicDnsName(publicDnsName);
         return this;
@@ -506,6 +521,7 @@ public class Instance implements Serializable, Cloneable {
      *        The reason for the most recent state transition. This might be an
      *        empty string.
      */
+
     public void setStateTransitionReason(String stateTransitionReason) {
         this.stateTransitionReason = stateTransitionReason;
     }
@@ -519,6 +535,7 @@ public class Instance implements Serializable, Cloneable {
      * @return The reason for the most recent state transition. This might be an
      *         empty string.
      */
+
     public String getStateTransitionReason() {
         return this.stateTransitionReason;
     }
@@ -535,6 +552,7 @@ public class Instance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Instance withStateTransitionReason(String stateTransitionReason) {
         setStateTransitionReason(stateTransitionReason);
         return this;
@@ -550,6 +568,7 @@ public class Instance implements Serializable, Cloneable {
      *        The name of the key pair, if this instance was launched with an
      *        associated key pair.
      */
+
     public void setKeyName(String keyName) {
         this.keyName = keyName;
     }
@@ -563,6 +582,7 @@ public class Instance implements Serializable, Cloneable {
      * @return The name of the key pair, if this instance was launched with an
      *         associated key pair.
      */
+
     public String getKeyName() {
         return this.keyName;
     }
@@ -579,6 +599,7 @@ public class Instance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Instance withKeyName(String keyName) {
         setKeyName(keyName);
         return this;
@@ -594,6 +615,7 @@ public class Instance implements Serializable, Cloneable {
      *        The AMI launch index, which can be used to find this instance in
      *        the launch group.
      */
+
     public void setAmiLaunchIndex(Integer amiLaunchIndex) {
         this.amiLaunchIndex = amiLaunchIndex;
     }
@@ -607,6 +629,7 @@ public class Instance implements Serializable, Cloneable {
      * @return The AMI launch index, which can be used to find this instance in
      *         the launch group.
      */
+
     public Integer getAmiLaunchIndex() {
         return this.amiLaunchIndex;
     }
@@ -623,6 +646,7 @@ public class Instance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Instance withAmiLaunchIndex(Integer amiLaunchIndex) {
         setAmiLaunchIndex(amiLaunchIndex);
         return this;
@@ -635,6 +659,7 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @return The product codes attached to this instance, if applicable.
      */
+
     public java.util.List<ProductCode> getProductCodes() {
         if (productCodes == null) {
             productCodes = new com.amazonaws.internal.SdkInternalList<ProductCode>();
@@ -650,6 +675,7 @@ public class Instance implements Serializable, Cloneable {
      * @param productCodes
      *        The product codes attached to this instance, if applicable.
      */
+
     public void setProductCodes(java.util.Collection<ProductCode> productCodes) {
         if (productCodes == null) {
             this.productCodes = null;
@@ -676,6 +702,7 @@ public class Instance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Instance withProductCodes(ProductCode... productCodes) {
         if (this.productCodes == null) {
             setProductCodes(new com.amazonaws.internal.SdkInternalList<ProductCode>(
@@ -697,6 +724,7 @@ public class Instance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Instance withProductCodes(
             java.util.Collection<ProductCode> productCodes) {
         setProductCodes(productCodes);
@@ -712,6 +740,7 @@ public class Instance implements Serializable, Cloneable {
      *        The instance type.
      * @see InstanceType
      */
+
     public void setInstanceType(String instanceType) {
         this.instanceType = instanceType;
     }
@@ -724,6 +753,7 @@ public class Instance implements Serializable, Cloneable {
      * @return The instance type.
      * @see InstanceType
      */
+
     public String getInstanceType() {
         return this.instanceType;
     }
@@ -739,6 +769,7 @@ public class Instance implements Serializable, Cloneable {
      *         chained together.
      * @see InstanceType
      */
+
     public Instance withInstanceType(String instanceType) {
         setInstanceType(instanceType);
         return this;
@@ -755,6 +786,7 @@ public class Instance implements Serializable, Cloneable {
      *         chained together.
      * @see InstanceType
      */
+
     public void setInstanceType(InstanceType instanceType) {
         this.instanceType = instanceType.toString();
     }
@@ -770,6 +802,7 @@ public class Instance implements Serializable, Cloneable {
      *         chained together.
      * @see InstanceType
      */
+
     public Instance withInstanceType(InstanceType instanceType) {
         setInstanceType(instanceType);
         return this;
@@ -783,6 +816,7 @@ public class Instance implements Serializable, Cloneable {
      * @param launchTime
      *        The time the instance was launched.
      */
+
     public void setLaunchTime(java.util.Date launchTime) {
         this.launchTime = launchTime;
     }
@@ -794,6 +828,7 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @return The time the instance was launched.
      */
+
     public java.util.Date getLaunchTime() {
         return this.launchTime;
     }
@@ -808,6 +843,7 @@ public class Instance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Instance withLaunchTime(java.util.Date launchTime) {
         setLaunchTime(launchTime);
         return this;
@@ -821,6 +857,7 @@ public class Instance implements Serializable, Cloneable {
      * @param placement
      *        The location where the instance launched, if applicable.
      */
+
     public void setPlacement(Placement placement) {
         this.placement = placement;
     }
@@ -832,6 +869,7 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @return The location where the instance launched, if applicable.
      */
+
     public Placement getPlacement() {
         return this.placement;
     }
@@ -846,6 +884,7 @@ public class Instance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Instance withPlacement(Placement placement) {
         setPlacement(placement);
         return this;
@@ -859,6 +898,7 @@ public class Instance implements Serializable, Cloneable {
      * @param kernelId
      *        The kernel associated with this instance, if applicable.
      */
+
     public void setKernelId(String kernelId) {
         this.kernelId = kernelId;
     }
@@ -870,6 +910,7 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @return The kernel associated with this instance, if applicable.
      */
+
     public String getKernelId() {
         return this.kernelId;
     }
@@ -884,6 +925,7 @@ public class Instance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Instance withKernelId(String kernelId) {
         setKernelId(kernelId);
         return this;
@@ -897,6 +939,7 @@ public class Instance implements Serializable, Cloneable {
      * @param ramdiskId
      *        The RAM disk associated with this instance, if applicable.
      */
+
     public void setRamdiskId(String ramdiskId) {
         this.ramdiskId = ramdiskId;
     }
@@ -908,6 +951,7 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @return The RAM disk associated with this instance, if applicable.
      */
+
     public String getRamdiskId() {
         return this.ramdiskId;
     }
@@ -922,6 +966,7 @@ public class Instance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Instance withRamdiskId(String ramdiskId) {
         setRamdiskId(ramdiskId);
         return this;
@@ -937,6 +982,7 @@ public class Instance implements Serializable, Cloneable {
      *        blank.
      * @see PlatformValues
      */
+
     public void setPlatform(String platform) {
         this.platform = platform;
     }
@@ -950,6 +996,7 @@ public class Instance implements Serializable, Cloneable {
      *         otherwise blank.
      * @see PlatformValues
      */
+
     public String getPlatform() {
         return this.platform;
     }
@@ -966,6 +1013,7 @@ public class Instance implements Serializable, Cloneable {
      *         chained together.
      * @see PlatformValues
      */
+
     public Instance withPlatform(String platform) {
         setPlatform(platform);
         return this;
@@ -983,6 +1031,7 @@ public class Instance implements Serializable, Cloneable {
      *         chained together.
      * @see PlatformValues
      */
+
     public void setPlatform(PlatformValues platform) {
         this.platform = platform.toString();
     }
@@ -999,6 +1048,7 @@ public class Instance implements Serializable, Cloneable {
      *         chained together.
      * @see PlatformValues
      */
+
     public Instance withPlatform(PlatformValues platform) {
         setPlatform(platform);
         return this;
@@ -1012,6 +1062,7 @@ public class Instance implements Serializable, Cloneable {
      * @param monitoring
      *        The monitoring information for the instance.
      */
+
     public void setMonitoring(Monitoring monitoring) {
         this.monitoring = monitoring;
     }
@@ -1023,6 +1074,7 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @return The monitoring information for the instance.
      */
+
     public Monitoring getMonitoring() {
         return this.monitoring;
     }
@@ -1037,6 +1089,7 @@ public class Instance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Instance withMonitoring(Monitoring monitoring) {
         setMonitoring(monitoring);
         return this;
@@ -1050,6 +1103,7 @@ public class Instance implements Serializable, Cloneable {
      * @param subnetId
      *        [EC2-VPC] The ID of the subnet in which the instance is running.
      */
+
     public void setSubnetId(String subnetId) {
         this.subnetId = subnetId;
     }
@@ -1061,6 +1115,7 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @return [EC2-VPC] The ID of the subnet in which the instance is running.
      */
+
     public String getSubnetId() {
         return this.subnetId;
     }
@@ -1075,6 +1130,7 @@ public class Instance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Instance withSubnetId(String subnetId) {
         setSubnetId(subnetId);
         return this;
@@ -1088,6 +1144,7 @@ public class Instance implements Serializable, Cloneable {
      * @param vpcId
      *        [EC2-VPC] The ID of the VPC in which the instance is running.
      */
+
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
@@ -1099,6 +1156,7 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @return [EC2-VPC] The ID of the VPC in which the instance is running.
      */
+
     public String getVpcId() {
         return this.vpcId;
     }
@@ -1113,6 +1171,7 @@ public class Instance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Instance withVpcId(String vpcId) {
         setVpcId(vpcId);
         return this;
@@ -1126,6 +1185,7 @@ public class Instance implements Serializable, Cloneable {
      * @param privateIpAddress
      *        The private IP address assigned to the instance.
      */
+
     public void setPrivateIpAddress(String privateIpAddress) {
         this.privateIpAddress = privateIpAddress;
     }
@@ -1137,6 +1197,7 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @return The private IP address assigned to the instance.
      */
+
     public String getPrivateIpAddress() {
         return this.privateIpAddress;
     }
@@ -1151,6 +1212,7 @@ public class Instance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Instance withPrivateIpAddress(String privateIpAddress) {
         setPrivateIpAddress(privateIpAddress);
         return this;
@@ -1164,6 +1226,7 @@ public class Instance implements Serializable, Cloneable {
      * @param publicIpAddress
      *        The public IP address assigned to the instance, if applicable.
      */
+
     public void setPublicIpAddress(String publicIpAddress) {
         this.publicIpAddress = publicIpAddress;
     }
@@ -1175,6 +1238,7 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @return The public IP address assigned to the instance, if applicable.
      */
+
     public String getPublicIpAddress() {
         return this.publicIpAddress;
     }
@@ -1189,6 +1253,7 @@ public class Instance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Instance withPublicIpAddress(String publicIpAddress) {
         setPublicIpAddress(publicIpAddress);
         return this;
@@ -1202,6 +1267,7 @@ public class Instance implements Serializable, Cloneable {
      * @param stateReason
      *        The reason for the most recent state transition.
      */
+
     public void setStateReason(StateReason stateReason) {
         this.stateReason = stateReason;
     }
@@ -1213,6 +1279,7 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @return The reason for the most recent state transition.
      */
+
     public StateReason getStateReason() {
         return this.stateReason;
     }
@@ -1227,6 +1294,7 @@ public class Instance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Instance withStateReason(StateReason stateReason) {
         setStateReason(stateReason);
         return this;
@@ -1241,6 +1309,7 @@ public class Instance implements Serializable, Cloneable {
      *        The architecture of the image.
      * @see ArchitectureValues
      */
+
     public void setArchitecture(String architecture) {
         this.architecture = architecture;
     }
@@ -1253,6 +1322,7 @@ public class Instance implements Serializable, Cloneable {
      * @return The architecture of the image.
      * @see ArchitectureValues
      */
+
     public String getArchitecture() {
         return this.architecture;
     }
@@ -1268,6 +1338,7 @@ public class Instance implements Serializable, Cloneable {
      *         chained together.
      * @see ArchitectureValues
      */
+
     public Instance withArchitecture(String architecture) {
         setArchitecture(architecture);
         return this;
@@ -1284,6 +1355,7 @@ public class Instance implements Serializable, Cloneable {
      *         chained together.
      * @see ArchitectureValues
      */
+
     public void setArchitecture(ArchitectureValues architecture) {
         this.architecture = architecture.toString();
     }
@@ -1299,6 +1371,7 @@ public class Instance implements Serializable, Cloneable {
      *         chained together.
      * @see ArchitectureValues
      */
+
     public Instance withArchitecture(ArchitectureValues architecture) {
         setArchitecture(architecture);
         return this;
@@ -1315,6 +1388,7 @@ public class Instance implements Serializable, Cloneable {
      *        volume or an instance store volume.
      * @see DeviceType
      */
+
     public void setRootDeviceType(String rootDeviceType) {
         this.rootDeviceType = rootDeviceType;
     }
@@ -1329,6 +1403,7 @@ public class Instance implements Serializable, Cloneable {
      *         volume or an instance store volume.
      * @see DeviceType
      */
+
     public String getRootDeviceType() {
         return this.rootDeviceType;
     }
@@ -1346,6 +1421,7 @@ public class Instance implements Serializable, Cloneable {
      *         chained together.
      * @see DeviceType
      */
+
     public Instance withRootDeviceType(String rootDeviceType) {
         setRootDeviceType(rootDeviceType);
         return this;
@@ -1364,6 +1440,7 @@ public class Instance implements Serializable, Cloneable {
      *         chained together.
      * @see DeviceType
      */
+
     public void setRootDeviceType(DeviceType rootDeviceType) {
         this.rootDeviceType = rootDeviceType.toString();
     }
@@ -1381,6 +1458,7 @@ public class Instance implements Serializable, Cloneable {
      *         chained together.
      * @see DeviceType
      */
+
     public Instance withRootDeviceType(DeviceType rootDeviceType) {
         setRootDeviceType(rootDeviceType);
         return this;
@@ -1396,6 +1474,7 @@ public class Instance implements Serializable, Cloneable {
      *        The root device name (for example, <code>/dev/sda1</code> or
      *        <code>/dev/xvda</code>).
      */
+
     public void setRootDeviceName(String rootDeviceName) {
         this.rootDeviceName = rootDeviceName;
     }
@@ -1409,6 +1488,7 @@ public class Instance implements Serializable, Cloneable {
      * @return The root device name (for example, <code>/dev/sda1</code> or
      *         <code>/dev/xvda</code>).
      */
+
     public String getRootDeviceName() {
         return this.rootDeviceName;
     }
@@ -1425,6 +1505,7 @@ public class Instance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Instance withRootDeviceName(String rootDeviceName) {
         setRootDeviceName(rootDeviceName);
         return this;
@@ -1437,6 +1518,7 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @return Any block device mapping entries for the instance.
      */
+
     public java.util.List<InstanceBlockDeviceMapping> getBlockDeviceMappings() {
         if (blockDeviceMappings == null) {
             blockDeviceMappings = new com.amazonaws.internal.SdkInternalList<InstanceBlockDeviceMapping>();
@@ -1452,6 +1534,7 @@ public class Instance implements Serializable, Cloneable {
      * @param blockDeviceMappings
      *        Any block device mapping entries for the instance.
      */
+
     public void setBlockDeviceMappings(
             java.util.Collection<InstanceBlockDeviceMapping> blockDeviceMappings) {
         if (blockDeviceMappings == null) {
@@ -1479,6 +1562,7 @@ public class Instance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Instance withBlockDeviceMappings(
             InstanceBlockDeviceMapping... blockDeviceMappings) {
         if (this.blockDeviceMappings == null) {
@@ -1501,6 +1585,7 @@ public class Instance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Instance withBlockDeviceMappings(
             java.util.Collection<InstanceBlockDeviceMapping> blockDeviceMappings) {
         setBlockDeviceMappings(blockDeviceMappings);
@@ -1516,6 +1601,7 @@ public class Instance implements Serializable, Cloneable {
      *        The virtualization type of the instance.
      * @see VirtualizationType
      */
+
     public void setVirtualizationType(String virtualizationType) {
         this.virtualizationType = virtualizationType;
     }
@@ -1528,6 +1614,7 @@ public class Instance implements Serializable, Cloneable {
      * @return The virtualization type of the instance.
      * @see VirtualizationType
      */
+
     public String getVirtualizationType() {
         return this.virtualizationType;
     }
@@ -1543,6 +1630,7 @@ public class Instance implements Serializable, Cloneable {
      *         chained together.
      * @see VirtualizationType
      */
+
     public Instance withVirtualizationType(String virtualizationType) {
         setVirtualizationType(virtualizationType);
         return this;
@@ -1559,6 +1647,7 @@ public class Instance implements Serializable, Cloneable {
      *         chained together.
      * @see VirtualizationType
      */
+
     public void setVirtualizationType(VirtualizationType virtualizationType) {
         this.virtualizationType = virtualizationType.toString();
     }
@@ -1574,6 +1663,7 @@ public class Instance implements Serializable, Cloneable {
      *         chained together.
      * @see VirtualizationType
      */
+
     public Instance withVirtualizationType(VirtualizationType virtualizationType) {
         setVirtualizationType(virtualizationType);
         return this;
@@ -1588,6 +1678,7 @@ public class Instance implements Serializable, Cloneable {
      *        Indicates whether this is a Spot instance or a Scheduled Instance.
      * @see InstanceLifecycleType
      */
+
     public void setInstanceLifecycle(String instanceLifecycle) {
         this.instanceLifecycle = instanceLifecycle;
     }
@@ -1601,6 +1692,7 @@ public class Instance implements Serializable, Cloneable {
      *         Instance.
      * @see InstanceLifecycleType
      */
+
     public String getInstanceLifecycle() {
         return this.instanceLifecycle;
     }
@@ -1616,6 +1708,7 @@ public class Instance implements Serializable, Cloneable {
      *         chained together.
      * @see InstanceLifecycleType
      */
+
     public Instance withInstanceLifecycle(String instanceLifecycle) {
         setInstanceLifecycle(instanceLifecycle);
         return this;
@@ -1632,6 +1725,7 @@ public class Instance implements Serializable, Cloneable {
      *         chained together.
      * @see InstanceLifecycleType
      */
+
     public void setInstanceLifecycle(InstanceLifecycleType instanceLifecycle) {
         this.instanceLifecycle = instanceLifecycle.toString();
     }
@@ -1647,6 +1741,7 @@ public class Instance implements Serializable, Cloneable {
      *         chained together.
      * @see InstanceLifecycleType
      */
+
     public Instance withInstanceLifecycle(
             InstanceLifecycleType instanceLifecycle) {
         setInstanceLifecycle(instanceLifecycle);
@@ -1661,6 +1756,7 @@ public class Instance implements Serializable, Cloneable {
      * @param spotInstanceRequestId
      *        If the request is a Spot instance request, the ID of the request.
      */
+
     public void setSpotInstanceRequestId(String spotInstanceRequestId) {
         this.spotInstanceRequestId = spotInstanceRequestId;
     }
@@ -1672,6 +1768,7 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @return If the request is a Spot instance request, the ID of the request.
      */
+
     public String getSpotInstanceRequestId() {
         return this.spotInstanceRequestId;
     }
@@ -1686,6 +1783,7 @@ public class Instance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Instance withSpotInstanceRequestId(String spotInstanceRequestId) {
         setSpotInstanceRequestId(spotInstanceRequestId);
         return this;
@@ -1701,6 +1799,7 @@ public class Instance implements Serializable, Cloneable {
      *        The idempotency token you provided when you launched the instance,
      *        if applicable.
      */
+
     public void setClientToken(String clientToken) {
         this.clientToken = clientToken;
     }
@@ -1714,6 +1813,7 @@ public class Instance implements Serializable, Cloneable {
      * @return The idempotency token you provided when you launched the
      *         instance, if applicable.
      */
+
     public String getClientToken() {
         return this.clientToken;
     }
@@ -1730,6 +1830,7 @@ public class Instance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Instance withClientToken(String clientToken) {
         setClientToken(clientToken);
         return this;
@@ -1742,6 +1843,7 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @return Any tags assigned to the instance.
      */
+
     public java.util.List<Tag> getTags() {
         if (tags == null) {
             tags = new com.amazonaws.internal.SdkInternalList<Tag>();
@@ -1757,6 +1859,7 @@ public class Instance implements Serializable, Cloneable {
      * @param tags
      *        Any tags assigned to the instance.
      */
+
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
             this.tags = null;
@@ -1782,6 +1885,7 @@ public class Instance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Instance withTags(Tag... tags) {
         if (this.tags == null) {
             setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
@@ -1802,6 +1906,7 @@ public class Instance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Instance withTags(java.util.Collection<Tag> tags) {
         setTags(tags);
         return this;
@@ -1814,6 +1919,7 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @return One or more security groups for the instance.
      */
+
     public java.util.List<GroupIdentifier> getSecurityGroups() {
         if (securityGroups == null) {
             securityGroups = new com.amazonaws.internal.SdkInternalList<GroupIdentifier>();
@@ -1829,6 +1935,7 @@ public class Instance implements Serializable, Cloneable {
      * @param securityGroups
      *        One or more security groups for the instance.
      */
+
     public void setSecurityGroups(
             java.util.Collection<GroupIdentifier> securityGroups) {
         if (securityGroups == null) {
@@ -1856,6 +1963,7 @@ public class Instance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Instance withSecurityGroups(GroupIdentifier... securityGroups) {
         if (this.securityGroups == null) {
             setSecurityGroups(new com.amazonaws.internal.SdkInternalList<GroupIdentifier>(
@@ -1877,6 +1985,7 @@ public class Instance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Instance withSecurityGroups(
             java.util.Collection<GroupIdentifier> securityGroups) {
         setSecurityGroups(securityGroups);
@@ -1906,6 +2015,7 @@ public class Instance implements Serializable, Cloneable {
      *        >NAT Instances</a> in the <i>Amazon Virtual Private Cloud User
      *        Guide</i>.
      */
+
     public void setSourceDestCheck(Boolean sourceDestCheck) {
         this.sourceDestCheck = sourceDestCheck;
     }
@@ -1932,6 +2042,7 @@ public class Instance implements Serializable, Cloneable {
      *         >NAT Instances</a> in the <i>Amazon Virtual Private Cloud User
      *         Guide</i>.
      */
+
     public Boolean getSourceDestCheck() {
         return this.sourceDestCheck;
     }
@@ -1961,6 +2072,7 @@ public class Instance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Instance withSourceDestCheck(Boolean sourceDestCheck) {
         setSourceDestCheck(sourceDestCheck);
         return this;
@@ -1988,6 +2100,7 @@ public class Instance implements Serializable, Cloneable {
      *         >NAT Instances</a> in the <i>Amazon Virtual Private Cloud User
      *         Guide</i>.
      */
+
     public Boolean isSourceDestCheck() {
         return this.sourceDestCheck;
     }
@@ -2001,6 +2114,7 @@ public class Instance implements Serializable, Cloneable {
      *        The hypervisor type of the instance.
      * @see HypervisorType
      */
+
     public void setHypervisor(String hypervisor) {
         this.hypervisor = hypervisor;
     }
@@ -2013,6 +2127,7 @@ public class Instance implements Serializable, Cloneable {
      * @return The hypervisor type of the instance.
      * @see HypervisorType
      */
+
     public String getHypervisor() {
         return this.hypervisor;
     }
@@ -2028,6 +2143,7 @@ public class Instance implements Serializable, Cloneable {
      *         chained together.
      * @see HypervisorType
      */
+
     public Instance withHypervisor(String hypervisor) {
         setHypervisor(hypervisor);
         return this;
@@ -2044,6 +2160,7 @@ public class Instance implements Serializable, Cloneable {
      *         chained together.
      * @see HypervisorType
      */
+
     public void setHypervisor(HypervisorType hypervisor) {
         this.hypervisor = hypervisor.toString();
     }
@@ -2059,6 +2176,7 @@ public class Instance implements Serializable, Cloneable {
      *         chained together.
      * @see HypervisorType
      */
+
     public Instance withHypervisor(HypervisorType hypervisor) {
         setHypervisor(hypervisor);
         return this;
@@ -2071,6 +2189,7 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @return [EC2-VPC] One or more network interfaces for the instance.
      */
+
     public java.util.List<InstanceNetworkInterface> getNetworkInterfaces() {
         if (networkInterfaces == null) {
             networkInterfaces = new com.amazonaws.internal.SdkInternalList<InstanceNetworkInterface>();
@@ -2086,6 +2205,7 @@ public class Instance implements Serializable, Cloneable {
      * @param networkInterfaces
      *        [EC2-VPC] One or more network interfaces for the instance.
      */
+
     public void setNetworkInterfaces(
             java.util.Collection<InstanceNetworkInterface> networkInterfaces) {
         if (networkInterfaces == null) {
@@ -2113,6 +2233,7 @@ public class Instance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Instance withNetworkInterfaces(
             InstanceNetworkInterface... networkInterfaces) {
         if (this.networkInterfaces == null) {
@@ -2135,6 +2256,7 @@ public class Instance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Instance withNetworkInterfaces(
             java.util.Collection<InstanceNetworkInterface> networkInterfaces) {
         setNetworkInterfaces(networkInterfaces);
@@ -2150,6 +2272,7 @@ public class Instance implements Serializable, Cloneable {
      *        The IAM instance profile associated with the instance, if
      *        applicable.
      */
+
     public void setIamInstanceProfile(IamInstanceProfile iamInstanceProfile) {
         this.iamInstanceProfile = iamInstanceProfile;
     }
@@ -2162,6 +2285,7 @@ public class Instance implements Serializable, Cloneable {
      * @return The IAM instance profile associated with the instance, if
      *         applicable.
      */
+
     public IamInstanceProfile getIamInstanceProfile() {
         return this.iamInstanceProfile;
     }
@@ -2177,6 +2301,7 @@ public class Instance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Instance withIamInstanceProfile(IamInstanceProfile iamInstanceProfile) {
         setIamInstanceProfile(iamInstanceProfile);
         return this;
@@ -2199,6 +2324,7 @@ public class Instance implements Serializable, Cloneable {
      *        Additional usage charges apply when using an EBS Optimized
      *        instance.
      */
+
     public void setEbsOptimized(Boolean ebsOptimized) {
         this.ebsOptimized = ebsOptimized;
     }
@@ -2219,6 +2345,7 @@ public class Instance implements Serializable, Cloneable {
      *         Additional usage charges apply when using an EBS Optimized
      *         instance.
      */
+
     public Boolean getEbsOptimized() {
         return this.ebsOptimized;
     }
@@ -2242,6 +2369,7 @@ public class Instance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Instance withEbsOptimized(Boolean ebsOptimized) {
         setEbsOptimized(ebsOptimized);
         return this;
@@ -2263,6 +2391,7 @@ public class Instance implements Serializable, Cloneable {
      *         Additional usage charges apply when using an EBS Optimized
      *         instance.
      */
+
     public Boolean isEbsOptimized() {
         return this.ebsOptimized;
     }
@@ -2275,6 +2404,7 @@ public class Instance implements Serializable, Cloneable {
      * @param sriovNetSupport
      *        Specifies whether enhanced networking is enabled.
      */
+
     public void setSriovNetSupport(String sriovNetSupport) {
         this.sriovNetSupport = sriovNetSupport;
     }
@@ -2286,6 +2416,7 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @return Specifies whether enhanced networking is enabled.
      */
+
     public String getSriovNetSupport() {
         return this.sriovNetSupport;
     }
@@ -2300,6 +2431,7 @@ public class Instance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Instance withSriovNetSupport(String sriovNetSupport) {
         setSriovNetSupport(sriovNetSupport);
         return this;

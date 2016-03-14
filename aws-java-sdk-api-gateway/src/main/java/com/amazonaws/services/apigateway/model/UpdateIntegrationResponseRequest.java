@@ -67,6 +67,7 @@ public class UpdateIntegrationResponseRequest extends AmazonWebServiceRequest
      * @param restApiId
      *        Specifies an update integration response request's API identifier.
      */
+
     public void setRestApiId(String restApiId) {
         this.restApiId = restApiId;
     }
@@ -79,6 +80,7 @@ public class UpdateIntegrationResponseRequest extends AmazonWebServiceRequest
      * @return Specifies an update integration response request's API
      *         identifier.
      */
+
     public String getRestApiId() {
         return this.restApiId;
     }
@@ -93,6 +95,7 @@ public class UpdateIntegrationResponseRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateIntegrationResponseRequest withRestApiId(String restApiId) {
         setRestApiId(restApiId);
         return this;
@@ -107,6 +110,7 @@ public class UpdateIntegrationResponseRequest extends AmazonWebServiceRequest
      *        Specifies an update integration response request's resource
      *        identifier.
      */
+
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
     }
@@ -119,6 +123,7 @@ public class UpdateIntegrationResponseRequest extends AmazonWebServiceRequest
      * @return Specifies an update integration response request's resource
      *         identifier.
      */
+
     public String getResourceId() {
         return this.resourceId;
     }
@@ -134,6 +139,7 @@ public class UpdateIntegrationResponseRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateIntegrationResponseRequest withResourceId(String resourceId) {
         setResourceId(resourceId);
         return this;
@@ -147,6 +153,7 @@ public class UpdateIntegrationResponseRequest extends AmazonWebServiceRequest
      * @param httpMethod
      *        Specifies an update integration response request's HTTP method.
      */
+
     public void setHttpMethod(String httpMethod) {
         this.httpMethod = httpMethod;
     }
@@ -158,6 +165,7 @@ public class UpdateIntegrationResponseRequest extends AmazonWebServiceRequest
      * 
      * @return Specifies an update integration response request's HTTP method.
      */
+
     public String getHttpMethod() {
         return this.httpMethod;
     }
@@ -172,6 +180,7 @@ public class UpdateIntegrationResponseRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateIntegrationResponseRequest withHttpMethod(String httpMethod) {
         setHttpMethod(httpMethod);
         return this;
@@ -185,6 +194,7 @@ public class UpdateIntegrationResponseRequest extends AmazonWebServiceRequest
      * @param statusCode
      *        Specifies an update integration response request's status code.
      */
+
     public void setStatusCode(String statusCode) {
         this.statusCode = statusCode;
     }
@@ -196,6 +206,7 @@ public class UpdateIntegrationResponseRequest extends AmazonWebServiceRequest
      * 
      * @return Specifies an update integration response request's status code.
      */
+
     public String getStatusCode() {
         return this.statusCode;
     }
@@ -210,6 +221,7 @@ public class UpdateIntegrationResponseRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateIntegrationResponseRequest withStatusCode(String statusCode) {
         setStatusCode(statusCode);
         return this;
@@ -225,6 +237,7 @@ public class UpdateIntegrationResponseRequest extends AmazonWebServiceRequest
      *         specified resource. The patches are applied in the order
      *         specified in the list.
      */
+
     public java.util.List<PatchOperation> getPatchOperations() {
         return patchOperations;
     }
@@ -240,6 +253,7 @@ public class UpdateIntegrationResponseRequest extends AmazonWebServiceRequest
      *        specified resource. The patches are applied in the order specified
      *        in the list.
      */
+
     public void setPatchOperations(
             java.util.Collection<PatchOperation> patchOperations) {
         if (patchOperations == null) {
@@ -270,6 +284,7 @@ public class UpdateIntegrationResponseRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateIntegrationResponseRequest withPatchOperations(
             PatchOperation... patchOperations) {
         if (this.patchOperations == null) {
@@ -295,6 +310,7 @@ public class UpdateIntegrationResponseRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateIntegrationResponseRequest withPatchOperations(
             java.util.Collection<PatchOperation> patchOperations) {
         setPatchOperations(patchOperations);

@@ -76,6 +76,7 @@ public class WafAction implements Serializable, Cloneable {
      *        default action for a <code>WebACL</code>.</li>
      * @see WafActionType
      */
+
     public void setType(String type) {
         this.type = type;
     }
@@ -108,6 +109,7 @@ public class WafAction implements Serializable, Cloneable {
      *         the default action for a <code>WebACL</code>.</li>
      * @see WafActionType
      */
+
     public String getType() {
         return this.type;
     }
@@ -143,6 +145,7 @@ public class WafAction implements Serializable, Cloneable {
      *         chained together.
      * @see WafActionType
      */
+
     public WafAction withType(String type) {
         setType(type);
         return this;
@@ -179,6 +182,7 @@ public class WafAction implements Serializable, Cloneable {
      *         chained together.
      * @see WafActionType
      */
+
     public void setType(WafActionType type) {
         this.type = type.toString();
     }
@@ -214,6 +218,7 @@ public class WafAction implements Serializable, Cloneable {
      *         chained together.
      * @see WafActionType
      */
+
     public WafAction withType(WafActionType type) {
         setType(type);
         return this;

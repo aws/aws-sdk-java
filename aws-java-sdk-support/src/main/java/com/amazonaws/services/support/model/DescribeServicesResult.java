@@ -39,6 +39,7 @@ public class DescribeServicesResult implements Serializable, Cloneable {
      * 
      * @return A JSON-formatted list of AWS services.
      */
+
     public java.util.List<Service> getServices() {
         if (services == null) {
             services = new com.amazonaws.internal.SdkInternalList<Service>();
@@ -54,6 +55,7 @@ public class DescribeServicesResult implements Serializable, Cloneable {
      * @param services
      *        A JSON-formatted list of AWS services.
      */
+
     public void setServices(java.util.Collection<Service> services) {
         if (services == null) {
             this.services = null;
@@ -80,6 +82,7 @@ public class DescribeServicesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeServicesResult withServices(Service... services) {
         if (this.services == null) {
             setServices(new com.amazonaws.internal.SdkInternalList<Service>(
@@ -101,6 +104,7 @@ public class DescribeServicesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeServicesResult withServices(
             java.util.Collection<Service> services) {
         setServices(services);

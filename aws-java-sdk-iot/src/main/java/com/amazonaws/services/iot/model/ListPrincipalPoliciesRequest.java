@@ -61,6 +61,7 @@ public class ListPrincipalPoliciesRequest extends AmazonWebServiceRequest
      * @param principal
      *        The principal.
      */
+
     public void setPrincipal(String principal) {
         this.principal = principal;
     }
@@ -72,6 +73,7 @@ public class ListPrincipalPoliciesRequest extends AmazonWebServiceRequest
      * 
      * @return The principal.
      */
+
     public String getPrincipal() {
         return this.principal;
     }
@@ -86,6 +88,7 @@ public class ListPrincipalPoliciesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListPrincipalPoliciesRequest withPrincipal(String principal) {
         setPrincipal(principal);
         return this;
@@ -99,6 +102,7 @@ public class ListPrincipalPoliciesRequest extends AmazonWebServiceRequest
      * @param marker
      *        The marker for the next set of results.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -110,6 +114,7 @@ public class ListPrincipalPoliciesRequest extends AmazonWebServiceRequest
      * 
      * @return The marker for the next set of results.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -124,6 +129,7 @@ public class ListPrincipalPoliciesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListPrincipalPoliciesRequest withMarker(String marker) {
         setMarker(marker);
         return this;
@@ -137,6 +143,7 @@ public class ListPrincipalPoliciesRequest extends AmazonWebServiceRequest
      * @param pageSize
      *        The result page size.
      */
+
     public void setPageSize(Integer pageSize) {
         this.pageSize = pageSize;
     }
@@ -148,6 +155,7 @@ public class ListPrincipalPoliciesRequest extends AmazonWebServiceRequest
      * 
      * @return The result page size.
      */
+
     public Integer getPageSize() {
         return this.pageSize;
     }
@@ -162,6 +170,7 @@ public class ListPrincipalPoliciesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListPrincipalPoliciesRequest withPageSize(Integer pageSize) {
         setPageSize(pageSize);
         return this;
@@ -177,6 +186,7 @@ public class ListPrincipalPoliciesRequest extends AmazonWebServiceRequest
      *        Specifies the order for results. If true, results are returned in
      *        ascending creation order.
      */
+
     public void setAscendingOrder(Boolean ascendingOrder) {
         this.ascendingOrder = ascendingOrder;
     }
@@ -190,6 +200,7 @@ public class ListPrincipalPoliciesRequest extends AmazonWebServiceRequest
      * @return Specifies the order for results. If true, results are returned in
      *         ascending creation order.
      */
+
     public Boolean getAscendingOrder() {
         return this.ascendingOrder;
     }
@@ -206,6 +217,7 @@ public class ListPrincipalPoliciesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListPrincipalPoliciesRequest withAscendingOrder(
             Boolean ascendingOrder) {
         setAscendingOrder(ascendingOrder);
@@ -221,6 +233,7 @@ public class ListPrincipalPoliciesRequest extends AmazonWebServiceRequest
      * @return Specifies the order for results. If true, results are returned in
      *         ascending creation order.
      */
+
     public Boolean isAscendingOrder() {
         return this.ascendingOrder;
     }

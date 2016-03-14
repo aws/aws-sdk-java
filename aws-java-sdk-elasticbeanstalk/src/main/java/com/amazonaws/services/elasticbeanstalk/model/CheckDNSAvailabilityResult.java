@@ -58,6 +58,7 @@ public class CheckDNSAvailabilityResult implements Serializable, Cloneable {
      *        <li> <code>true</code> : The CNAME is available.</li>
      *        <li> <code>false</code> : The CNAME is not available.</li>
      */
+
     public void setAvailable(Boolean available) {
         this.available = available;
     }
@@ -76,6 +77,7 @@ public class CheckDNSAvailabilityResult implements Serializable, Cloneable {
      *         <li> <code>true</code> : The CNAME is available.</li>
      *         <li> <code>false</code> : The CNAME is not available.</li>
      */
+
     public Boolean getAvailable() {
         return this.available;
     }
@@ -97,6 +99,7 @@ public class CheckDNSAvailabilityResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CheckDNSAvailabilityResult withAvailable(Boolean available) {
         setAvailable(available);
         return this;
@@ -116,6 +119,7 @@ public class CheckDNSAvailabilityResult implements Serializable, Cloneable {
      *         <li> <code>true</code> : The CNAME is available.</li>
      *         <li> <code>false</code> : The CNAME is not available.</li>
      */
+
     public Boolean isAvailable() {
         return this.available;
     }
@@ -130,6 +134,7 @@ public class CheckDNSAvailabilityResult implements Serializable, Cloneable {
      *        The fully qualified CNAME to reserve when <a>CreateEnvironment</a>
      *        is called with the provided prefix.
      */
+
     public void setFullyQualifiedCNAME(String fullyQualifiedCNAME) {
         this.fullyQualifiedCNAME = fullyQualifiedCNAME;
     }
@@ -143,6 +148,7 @@ public class CheckDNSAvailabilityResult implements Serializable, Cloneable {
      * @return The fully qualified CNAME to reserve when
      *         <a>CreateEnvironment</a> is called with the provided prefix.
      */
+
     public String getFullyQualifiedCNAME() {
         return this.fullyQualifiedCNAME;
     }
@@ -159,6 +165,7 @@ public class CheckDNSAvailabilityResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CheckDNSAvailabilityResult withFullyQualifiedCNAME(
             String fullyQualifiedCNAME) {
         setFullyQualifiedCNAME(fullyQualifiedCNAME);

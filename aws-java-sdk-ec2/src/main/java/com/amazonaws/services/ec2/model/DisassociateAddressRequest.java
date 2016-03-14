@@ -69,6 +69,7 @@ public class DisassociateAddressRequest extends AmazonWebServiceRequest
      * @param publicIp
      *        [EC2-Classic] The Elastic IP address. Required for EC2-Classic.
      */
+
     public void setPublicIp(String publicIp) {
         this.publicIp = publicIp;
     }
@@ -80,6 +81,7 @@ public class DisassociateAddressRequest extends AmazonWebServiceRequest
      * 
      * @return [EC2-Classic] The Elastic IP address. Required for EC2-Classic.
      */
+
     public String getPublicIp() {
         return this.publicIp;
     }
@@ -94,6 +96,7 @@ public class DisassociateAddressRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DisassociateAddressRequest withPublicIp(String publicIp) {
         setPublicIp(publicIp);
         return this;
@@ -107,6 +110,7 @@ public class DisassociateAddressRequest extends AmazonWebServiceRequest
      * @param associationId
      *        [EC2-VPC] The association ID. Required for EC2-VPC.
      */
+
     public void setAssociationId(String associationId) {
         this.associationId = associationId;
     }
@@ -118,6 +122,7 @@ public class DisassociateAddressRequest extends AmazonWebServiceRequest
      * 
      * @return [EC2-VPC] The association ID. Required for EC2-VPC.
      */
+
     public String getAssociationId() {
         return this.associationId;
     }
@@ -132,6 +137,7 @@ public class DisassociateAddressRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DisassociateAddressRequest withAssociationId(String associationId) {
         setAssociationId(associationId);
         return this;

@@ -850,6 +850,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      * @param tableName
      *        The name of the table containing the requested items.
      */
+
     public void setTableName(String tableName) {
         this.tableName = tableName;
     }
@@ -861,6 +862,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the table containing the requested items.
      */
+
     public String getTableName() {
         return this.tableName;
     }
@@ -875,6 +877,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public QueryRequest withTableName(String tableName) {
         setTableName(tableName);
         return this;
@@ -893,6 +896,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *        if you use the <i>IndexName</i> parameter, you must also provide
      *        <i>TableName.</i>
      */
+
     public void setIndexName(String indexName) {
         this.indexName = indexName;
     }
@@ -909,6 +913,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *         if you use the <i>IndexName</i> parameter, you must also provide
      *         <i>TableName.</i>
      */
+
     public String getIndexName() {
         return this.indexName;
     }
@@ -928,6 +933,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public QueryRequest withIndexName(String indexName) {
         setIndexName(indexName);
         return this;
@@ -1076,6 +1082,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *        </p>
      * @see Select
      */
+
     public void setSelect(String select) {
         this.select = select;
     }
@@ -1222,6 +1229,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *         </p>
      * @see Select
      */
+
     public String getSelect() {
         return this.select;
     }
@@ -1371,6 +1379,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see Select
      */
+
     public QueryRequest withSelect(String select) {
         setSelect(select);
         return this;
@@ -1521,6 +1530,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see Select
      */
+
     public void setSelect(Select select) {
         this.select = select.toString();
     }
@@ -1670,6 +1680,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see Select
      */
+
     public QueryRequest withSelect(Select select) {
         setSelect(select);
         return this;
@@ -1757,6 +1768,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *         fetching incurs additional throughput cost and latency.
      *         </p>
      */
+
     public java.util.List<String> getAttributesToGet() {
         return attributesToGet;
     }
@@ -1844,6 +1856,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *        fetching incurs additional throughput cost and latency.
      *        </p>
      */
+
     public void setAttributesToGet(java.util.Collection<String> attributesToGet) {
         if (attributesToGet == null) {
             this.attributesToGet = null;
@@ -1944,6 +1957,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public QueryRequest withAttributesToGet(String... attributesToGet) {
         if (this.attributesToGet == null) {
             setAttributesToGet(new java.util.ArrayList<String>(
@@ -2040,6 +2054,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public QueryRequest withAttributesToGet(
             java.util.Collection<String> attributesToGet) {
         setAttributesToGet(attributesToGet);
@@ -2077,6 +2092,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html"
      *        >Query and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -2112,6 +2128,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *         >Query and Scan</a> in the <i>Amazon DynamoDB Developer
      *         Guide</i>.
      */
+
     public Integer getLimit() {
         return this.limit;
     }
@@ -2149,6 +2166,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public QueryRequest withLimit(Integer limit) {
         setLimit(limit);
         return this;
@@ -2176,6 +2194,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *        <i>ConsistentRead</i> set to <code>true</code>, you will receive a
      *        <i>ValidationException</i>.
      */
+
     public void setConsistentRead(Boolean consistentRead) {
         this.consistentRead = consistentRead;
     }
@@ -2202,6 +2221,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *         <i>ConsistentRead</i> set to <code>true</code>, you will receive
      *         a <i>ValidationException</i>.
      */
+
     public Boolean getConsistentRead() {
         return this.consistentRead;
     }
@@ -2230,6 +2250,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public QueryRequest withConsistentRead(Boolean consistentRead) {
         setConsistentRead(consistentRead);
         return this;
@@ -2257,6 +2278,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *         <i>ConsistentRead</i> set to <code>true</code>, you will receive
      *         a <i>ValidationException</i>.
      */
+
     public Boolean isConsistentRead() {
         return this.consistentRead;
     }
@@ -2630,6 +2652,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *         >Legacy Conditional Parameters</a> in the <i>Amazon DynamoDB
      *         Developer Guide</i>.
      */
+
     public java.util.Map<String, Condition> getKeyConditions() {
         return keyConditions;
     }
@@ -3000,6 +3023,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *        >Legacy Conditional Parameters</a> in the <i>Amazon DynamoDB
      *        Developer Guide</i>.
      */
+
     public void setKeyConditions(java.util.Map<String, Condition> keyConditions) {
         this.keyConditions = keyConditions;
     }
@@ -3372,6 +3396,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public QueryRequest withKeyConditions(
             java.util.Map<String, Condition> keyConditions) {
         setKeyConditions(keyConditions);
@@ -3393,6 +3418,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      * Removes all the entries added into KeyConditions. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public QueryRequest clearKeyConditionsEntries() {
         this.keyConditions = null;
         return this;
@@ -3573,6 +3599,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *         </p>
      *         </li>
      */
+
     public java.util.Map<String, Condition> getQueryFilter() {
         return queryFilter;
     }
@@ -3752,6 +3779,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *        </p>
      *        </li>
      */
+
     public void setQueryFilter(java.util.Map<String, Condition> queryFilter) {
         this.queryFilter = queryFilter;
     }
@@ -3933,6 +3961,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public QueryRequest withQueryFilter(
             java.util.Map<String, Condition> queryFilter) {
         setQueryFilter(queryFilter);
@@ -3954,6 +3983,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      * Removes all the entries added into QueryFilter. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public QueryRequest clearQueryFilterEntries() {
         this.queryFilter = null;
         return this;
@@ -4040,6 +4070,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *        </p>
      * @see ConditionalOperator
      */
+
     public void setConditionalOperator(String conditionalOperator) {
         this.conditionalOperator = conditionalOperator;
     }
@@ -4124,6 +4155,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *         </p>
      * @see ConditionalOperator
      */
+
     public String getConditionalOperator() {
         return this.conditionalOperator;
     }
@@ -4211,6 +4243,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ConditionalOperator
      */
+
     public QueryRequest withConditionalOperator(String conditionalOperator) {
         setConditionalOperator(conditionalOperator);
         return this;
@@ -4299,6 +4332,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ConditionalOperator
      */
+
     public void setConditionalOperator(ConditionalOperator conditionalOperator) {
         this.conditionalOperator = conditionalOperator.toString();
     }
@@ -4386,6 +4420,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ConditionalOperator
      */
+
     public QueryRequest withConditionalOperator(
             ConditionalOperator conditionalOperator) {
         setConditionalOperator(conditionalOperator);
@@ -4432,6 +4467,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *        is <code>false</code>, DynamoDB reads the results in reverse order
      *        by sort key value, and then returns the results to the client.
      */
+
     public void setScanIndexForward(Boolean scanIndexForward) {
         this.scanIndexForward = scanIndexForward;
     }
@@ -4476,6 +4512,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *         order by sort key value, and then returns the results to the
      *         client.
      */
+
     public Boolean getScanIndexForward() {
         return this.scanIndexForward;
     }
@@ -4522,6 +4559,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public QueryRequest withScanIndexForward(Boolean scanIndexForward) {
         setScanIndexForward(scanIndexForward);
         return this;
@@ -4567,6 +4605,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *         order by sort key value, and then returns the results to the
      *         client.
      */
+
     public Boolean isScanIndexForward() {
         return this.scanIndexForward;
     }
@@ -4589,6 +4628,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *         The data type for <i>ExclusiveStartKey</i> must be String, Number
      *         or Binary. No set data types are allowed.
      */
+
     public java.util.Map<String, AttributeValue> getExclusiveStartKey() {
         return exclusiveStartKey;
     }
@@ -4612,6 +4652,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *        The data type for <i>ExclusiveStartKey</i> must be String, Number
      *        or Binary. No set data types are allowed.
      */
+
     public void setExclusiveStartKey(
             java.util.Map<String, AttributeValue> exclusiveStartKey) {
         this.exclusiveStartKey = exclusiveStartKey;
@@ -4638,6 +4679,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public QueryRequest withExclusiveStartKey(
             java.util.Map<String, AttributeValue> exclusiveStartKey) {
         setExclusiveStartKey(exclusiveStartKey);
@@ -4660,6 +4702,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      * Removes all the entries added into ExclusiveStartKey. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public QueryRequest clearExclusiveStartKeyEntries() {
         this.exclusiveStartKey = null;
         return this;
@@ -4669,6 +4712,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      * @param returnConsumedCapacity
      * @see ReturnConsumedCapacity
      */
+
     public void setReturnConsumedCapacity(String returnConsumedCapacity) {
         this.returnConsumedCapacity = returnConsumedCapacity;
     }
@@ -4677,6 +4721,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      * @return
      * @see ReturnConsumedCapacity
      */
+
     public String getReturnConsumedCapacity() {
         return this.returnConsumedCapacity;
     }
@@ -4687,6 +4732,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ReturnConsumedCapacity
      */
+
     public QueryRequest withReturnConsumedCapacity(String returnConsumedCapacity) {
         setReturnConsumedCapacity(returnConsumedCapacity);
         return this;
@@ -4698,6 +4744,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ReturnConsumedCapacity
      */
+
     public void setReturnConsumedCapacity(
             ReturnConsumedCapacity returnConsumedCapacity) {
         this.returnConsumedCapacity = returnConsumedCapacity.toString();
@@ -4709,6 +4756,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ReturnConsumedCapacity
      */
+
     public QueryRequest withReturnConsumedCapacity(
             ReturnConsumedCapacity returnConsumedCapacity) {
         setReturnConsumedCapacity(returnConsumedCapacity);
@@ -4761,6 +4809,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *        <i>AttributesToGet</i> parameter.
      *        </p>
      */
+
     public void setProjectionExpression(String projectionExpression) {
         this.projectionExpression = projectionExpression;
     }
@@ -4810,6 +4859,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *         <i>AttributesToGet</i> parameter.
      *         </p>
      */
+
     public String getProjectionExpression() {
         return this.projectionExpression;
     }
@@ -4862,6 +4912,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public QueryRequest withProjectionExpression(String projectionExpression) {
         setProjectionExpression(projectionExpression);
         return this;
@@ -4916,6 +4967,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *        <i>ConditionalOperator</i> parameters.
      *        </p>
      */
+
     public void setFilterExpression(String filterExpression) {
         this.filterExpression = filterExpression;
     }
@@ -4968,6 +5020,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *         and <i>ConditionalOperator</i> parameters.
      *         </p>
      */
+
     public String getFilterExpression() {
         return this.filterExpression;
     }
@@ -5023,6 +5076,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public QueryRequest withFilterExpression(String filterExpression) {
         setFilterExpression(filterExpression);
         return this;
@@ -5283,6 +5337,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *        <i>KeyConditions</i> parameter.
      *        </p>
      */
+
     public void setKeyConditionExpression(String keyConditionExpression) {
         this.keyConditionExpression = keyConditionExpression;
     }
@@ -5542,6 +5597,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *         <i>KeyConditions</i> parameter.
      *         </p>
      */
+
     public String getKeyConditionExpression() {
         return this.keyConditionExpression;
     }
@@ -5803,6 +5859,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public QueryRequest withKeyConditionExpression(String keyConditionExpression) {
         setKeyConditionExpression(keyConditionExpression);
         return this;
@@ -5959,6 +6016,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *         >Accessing Item Attributes</a> in the <i>Amazon DynamoDB
      *         Developer Guide</i>.
      */
+
     public java.util.Map<String, String> getExpressionAttributeNames() {
         return expressionAttributeNames;
     }
@@ -6115,6 +6173,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *        >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer
      *        Guide</i>.
      */
+
     public void setExpressionAttributeNames(
             java.util.Map<String, String> expressionAttributeNames) {
         this.expressionAttributeNames = expressionAttributeNames;
@@ -6274,6 +6333,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public QueryRequest withExpressionAttributeNames(
             java.util.Map<String, String> expressionAttributeNames) {
         setExpressionAttributeNames(expressionAttributeNames);
@@ -6297,6 +6357,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      * Returns a reference to this object so that method calls can be chained
      * together.
      */
+
     public QueryRequest clearExpressionAttributeNamesEntries() {
         this.expressionAttributeNames = null;
         return this;
@@ -6362,6 +6423,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *         >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer
      *         Guide</i>.
      */
+
     public java.util.Map<String, AttributeValue> getExpressionAttributeValues() {
         return expressionAttributeValues;
     }
@@ -6427,6 +6489,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      *        >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer
      *        Guide</i>.
      */
+
     public void setExpressionAttributeValues(
             java.util.Map<String, AttributeValue> expressionAttributeValues) {
         this.expressionAttributeValues = expressionAttributeValues;
@@ -6495,6 +6558,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public QueryRequest withExpressionAttributeValues(
             java.util.Map<String, AttributeValue> expressionAttributeValues) {
         setExpressionAttributeValues(expressionAttributeValues);
@@ -6518,6 +6582,7 @@ public class QueryRequest extends AmazonWebServiceRequest implements
      * Returns a reference to this object so that method calls can be chained
      * together.
      */
+
     public QueryRequest clearExpressionAttributeValuesEntries() {
         this.expressionAttributeValues = null;
         return this;

@@ -65,6 +65,7 @@ public class UpdateAliasRequest extends AmazonWebServiceRequest implements
      *        name must start with the word "alias" followed by a forward slash
      *        (alias/). Aliases that begin with "alias/aws" are reserved.
      */
+
     public void setAliasName(String aliasName) {
         this.aliasName = aliasName;
     }
@@ -80,6 +81,7 @@ public class UpdateAliasRequest extends AmazonWebServiceRequest implements
      *         name must start with the word "alias" followed by a forward slash
      *         (alias/). Aliases that begin with "alias/aws" are reserved.
      */
+
     public String getAliasName() {
         return this.aliasName;
     }
@@ -98,6 +100,7 @@ public class UpdateAliasRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateAliasRequest withAliasName(String aliasName) {
         setAliasName(aliasName);
         return this;
@@ -137,6 +140,7 @@ public class UpdateAliasRequest extends AmazonWebServiceRequest implements
      *        You can call <a>ListAliases</a> to verify that the alias is mapped
      *        to the correct <code>TargetKeyId</code>.
      */
+
     public void setTargetKeyId(String targetKeyId) {
         this.targetKeyId = targetKeyId;
     }
@@ -174,6 +178,7 @@ public class UpdateAliasRequest extends AmazonWebServiceRequest implements
      *         You can call <a>ListAliases</a> to verify that the alias is
      *         mapped to the correct <code>TargetKeyId</code>.
      */
+
     public String getTargetKeyId() {
         return this.targetKeyId;
     }
@@ -214,6 +219,7 @@ public class UpdateAliasRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateAliasRequest withTargetKeyId(String targetKeyId) {
         setTargetKeyId(targetKeyId);
         return this;

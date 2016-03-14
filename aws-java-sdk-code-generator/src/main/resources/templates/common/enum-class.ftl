@@ -5,6 +5,9 @@ package ${metadata.packageName}.model;
 /**
  * <#if shape.documentation?has_content>${shape.documentation}</#if>
  */
+<#if shape.deprecated>
+@Deprecated
+</#if>
 public enum ${shape.shapeName} {
 
 <#assign enums = shape.enums/>

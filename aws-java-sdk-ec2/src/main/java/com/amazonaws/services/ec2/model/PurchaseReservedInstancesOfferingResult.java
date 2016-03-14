@@ -39,6 +39,7 @@ public class PurchaseReservedInstancesOfferingResult implements Serializable,
      * @param reservedInstancesId
      *        The IDs of the purchased Reserved Instances.
      */
+
     public void setReservedInstancesId(String reservedInstancesId) {
         this.reservedInstancesId = reservedInstancesId;
     }
@@ -50,6 +51,7 @@ public class PurchaseReservedInstancesOfferingResult implements Serializable,
      * 
      * @return The IDs of the purchased Reserved Instances.
      */
+
     public String getReservedInstancesId() {
         return this.reservedInstancesId;
     }
@@ -64,6 +66,7 @@ public class PurchaseReservedInstancesOfferingResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PurchaseReservedInstancesOfferingResult withReservedInstancesId(
             String reservedInstancesId) {
         setReservedInstancesId(reservedInstancesId);

@@ -39,6 +39,7 @@ public class DescribeConnectionsResult implements Serializable, Cloneable {
      * 
      * @return A list of connections.
      */
+
     public java.util.List<Connection> getConnections() {
         if (connections == null) {
             connections = new com.amazonaws.internal.SdkInternalList<Connection>();
@@ -54,6 +55,7 @@ public class DescribeConnectionsResult implements Serializable, Cloneable {
      * @param connections
      *        A list of connections.
      */
+
     public void setConnections(java.util.Collection<Connection> connections) {
         if (connections == null) {
             this.connections = null;
@@ -80,6 +82,7 @@ public class DescribeConnectionsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeConnectionsResult withConnections(Connection... connections) {
         if (this.connections == null) {
             setConnections(new com.amazonaws.internal.SdkInternalList<Connection>(
@@ -101,6 +104,7 @@ public class DescribeConnectionsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeConnectionsResult withConnections(
             java.util.Collection<Connection> connections) {
         setConnections(connections);

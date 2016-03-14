@@ -38,6 +38,7 @@ public class DeleteVpcEndpointsResult implements Serializable, Cloneable {
      * @return Information about the endpoints that were not successfully
      *         deleted.
      */
+
     public java.util.List<UnsuccessfulItem> getUnsuccessful() {
         if (unsuccessful == null) {
             unsuccessful = new com.amazonaws.internal.SdkInternalList<UnsuccessfulItem>();
@@ -54,6 +55,7 @@ public class DeleteVpcEndpointsResult implements Serializable, Cloneable {
      *        Information about the endpoints that were not successfully
      *        deleted.
      */
+
     public void setUnsuccessful(
             java.util.Collection<UnsuccessfulItem> unsuccessful) {
         if (unsuccessful == null) {
@@ -82,6 +84,7 @@ public class DeleteVpcEndpointsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteVpcEndpointsResult withUnsuccessful(
             UnsuccessfulItem... unsuccessful) {
         if (this.unsuccessful == null) {
@@ -105,6 +108,7 @@ public class DeleteVpcEndpointsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteVpcEndpointsResult withUnsuccessful(
             java.util.Collection<UnsuccessfulItem> unsuccessful) {
         setUnsuccessful(unsuccessful);

@@ -46,6 +46,7 @@ public class ModifyLunaClientRequest extends AmazonWebServiceRequest implements
      * @param clientArn
      *        The ARN of the client.
      */
+
     public void setClientArn(String clientArn) {
         this.clientArn = clientArn;
     }
@@ -57,6 +58,7 @@ public class ModifyLunaClientRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ARN of the client.
      */
+
     public String getClientArn() {
         return this.clientArn;
     }
@@ -71,6 +73,7 @@ public class ModifyLunaClientRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyLunaClientRequest withClientArn(String clientArn) {
         setClientArn(clientArn);
         return this;
@@ -84,6 +87,7 @@ public class ModifyLunaClientRequest extends AmazonWebServiceRequest implements
      * @param certificate
      *        The new certificate for the client.
      */
+
     public void setCertificate(String certificate) {
         this.certificate = certificate;
     }
@@ -95,6 +99,7 @@ public class ModifyLunaClientRequest extends AmazonWebServiceRequest implements
      * 
      * @return The new certificate for the client.
      */
+
     public String getCertificate() {
         return this.certificate;
     }
@@ -109,6 +114,7 @@ public class ModifyLunaClientRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyLunaClientRequest withCertificate(String certificate) {
         setCertificate(certificate);
         return this;

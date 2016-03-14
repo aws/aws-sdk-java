@@ -37,12 +37,20 @@ public enum CodecommitActions implements Action {
     DeleteRepository("codecommit:DeleteRepository"),
     /** Action for the GetBranch operation. */
     GetBranch("codecommit:GetBranch"),
+    /** Action for the GetCommit operation. */
+    GetCommit("codecommit:GetCommit"),
     /** Action for the GetRepository operation. */
     GetRepository("codecommit:GetRepository"),
+    /** Action for the GetRepositoryTriggers operation. */
+    GetRepositoryTriggers("codecommit:GetRepositoryTriggers"),
     /** Action for the ListBranches operation. */
     ListBranches("codecommit:ListBranches"),
     /** Action for the ListRepositories operation. */
     ListRepositories("codecommit:ListRepositories"),
+    /** Action for the PutRepositoryTriggers operation. */
+    PutRepositoryTriggers("codecommit:PutRepositoryTriggers"),
+    /** Action for the TestRepositoryTriggers operation. */
+    TestRepositoryTriggers("codecommit:TestRepositoryTriggers"),
     /** Action for the UpdateDefaultBranch operation. */
     UpdateDefaultBranch("codecommit:UpdateDefaultBranch"),
     /** Action for the UpdateRepositoryDescription operation. */

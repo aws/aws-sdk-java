@@ -58,6 +58,7 @@ public class EbsInstanceBlockDevice implements Serializable, Cloneable {
      * @param volumeId
      *        The ID of the EBS volume.
      */
+
     public void setVolumeId(String volumeId) {
         this.volumeId = volumeId;
     }
@@ -69,6 +70,7 @@ public class EbsInstanceBlockDevice implements Serializable, Cloneable {
      * 
      * @return The ID of the EBS volume.
      */
+
     public String getVolumeId() {
         return this.volumeId;
     }
@@ -83,6 +85,7 @@ public class EbsInstanceBlockDevice implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EbsInstanceBlockDevice withVolumeId(String volumeId) {
         setVolumeId(volumeId);
         return this;
@@ -97,6 +100,7 @@ public class EbsInstanceBlockDevice implements Serializable, Cloneable {
      *        The attachment state.
      * @see AttachmentStatus
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -109,6 +113,7 @@ public class EbsInstanceBlockDevice implements Serializable, Cloneable {
      * @return The attachment state.
      * @see AttachmentStatus
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -124,6 +129,7 @@ public class EbsInstanceBlockDevice implements Serializable, Cloneable {
      *         chained together.
      * @see AttachmentStatus
      */
+
     public EbsInstanceBlockDevice withStatus(String status) {
         setStatus(status);
         return this;
@@ -140,6 +146,7 @@ public class EbsInstanceBlockDevice implements Serializable, Cloneable {
      *         chained together.
      * @see AttachmentStatus
      */
+
     public void setStatus(AttachmentStatus status) {
         this.status = status.toString();
     }
@@ -155,6 +162,7 @@ public class EbsInstanceBlockDevice implements Serializable, Cloneable {
      *         chained together.
      * @see AttachmentStatus
      */
+
     public EbsInstanceBlockDevice withStatus(AttachmentStatus status) {
         setStatus(status);
         return this;
@@ -168,6 +176,7 @@ public class EbsInstanceBlockDevice implements Serializable, Cloneable {
      * @param attachTime
      *        The time stamp when the attachment initiated.
      */
+
     public void setAttachTime(java.util.Date attachTime) {
         this.attachTime = attachTime;
     }
@@ -179,6 +188,7 @@ public class EbsInstanceBlockDevice implements Serializable, Cloneable {
      * 
      * @return The time stamp when the attachment initiated.
      */
+
     public java.util.Date getAttachTime() {
         return this.attachTime;
     }
@@ -193,6 +203,7 @@ public class EbsInstanceBlockDevice implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EbsInstanceBlockDevice withAttachTime(java.util.Date attachTime) {
         setAttachTime(attachTime);
         return this;
@@ -206,6 +217,7 @@ public class EbsInstanceBlockDevice implements Serializable, Cloneable {
      * @param deleteOnTermination
      *        Indicates whether the volume is deleted on instance termination.
      */
+
     public void setDeleteOnTermination(Boolean deleteOnTermination) {
         this.deleteOnTermination = deleteOnTermination;
     }
@@ -217,6 +229,7 @@ public class EbsInstanceBlockDevice implements Serializable, Cloneable {
      * 
      * @return Indicates whether the volume is deleted on instance termination.
      */
+
     public Boolean getDeleteOnTermination() {
         return this.deleteOnTermination;
     }
@@ -231,6 +244,7 @@ public class EbsInstanceBlockDevice implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EbsInstanceBlockDevice withDeleteOnTermination(
             Boolean deleteOnTermination) {
         setDeleteOnTermination(deleteOnTermination);
@@ -244,6 +258,7 @@ public class EbsInstanceBlockDevice implements Serializable, Cloneable {
      * 
      * @return Indicates whether the volume is deleted on instance termination.
      */
+
     public Boolean isDeleteOnTermination() {
         return this.deleteOnTermination;
     }

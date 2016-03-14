@@ -102,7 +102,7 @@ public class ${metadata.asyncClient} extends ${metadata.syncClient}
             com.amazonaws.auth.AWSCredentials awsCredentials,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentials, ${defaultClientConfiguration}, executorService);
+        this(awsCredentials, configFactory.getConfig(), executorService);
     }
 
     /**
@@ -186,7 +186,7 @@ public class ${metadata.asyncClient} extends ${metadata.syncClient}
             com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentialsProvider, ${defaultClientConfiguration}, executorService);
+        this(awsCredentialsProvider, configFactory.getConfig(), executorService);
     }
 
     /**

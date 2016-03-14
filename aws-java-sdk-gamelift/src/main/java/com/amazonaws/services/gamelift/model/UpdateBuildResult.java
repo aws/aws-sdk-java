@@ -40,6 +40,7 @@ public class UpdateBuildResult implements Serializable, Cloneable {
      * @param build
      *        Object containing the updated build record.
      */
+
     public void setBuild(Build build) {
         this.build = build;
     }
@@ -51,6 +52,7 @@ public class UpdateBuildResult implements Serializable, Cloneable {
      * 
      * @return Object containing the updated build record.
      */
+
     public Build getBuild() {
         return this.build;
     }
@@ -65,6 +67,7 @@ public class UpdateBuildResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateBuildResult withBuild(Build build) {
         setBuild(build);
         return this;

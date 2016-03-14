@@ -212,6 +212,7 @@ public class GenerateDataSetRequest extends AmazonWebServiceRequest implements
      *        </ul>
      * @see DataSetType
      */
+
     public void setDataSetType(String dataSetType) {
         this.dataSetType = dataSetType;
     }
@@ -314,6 +315,7 @@ public class GenerateDataSetRequest extends AmazonWebServiceRequest implements
      *         </ul>
      * @see DataSetType
      */
+
     public String getDataSetType() {
         return this.dataSetType;
     }
@@ -418,6 +420,7 @@ public class GenerateDataSetRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see DataSetType
      */
+
     public GenerateDataSetRequest withDataSetType(String dataSetType) {
         setDataSetType(dataSetType);
         return this;
@@ -523,6 +526,7 @@ public class GenerateDataSetRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see DataSetType
      */
+
     public void setDataSetType(DataSetType dataSetType) {
         this.dataSetType = dataSetType.toString();
     }
@@ -627,6 +631,7 @@ public class GenerateDataSetRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see DataSetType
      */
+
     public GenerateDataSetRequest withDataSetType(DataSetType dataSetType) {
         setDataSetType(dataSetType);
         return this;
@@ -648,6 +653,7 @@ public class GenerateDataSetRequest extends AmazonWebServiceRequest implements
      *        sets, provide a date with month-level granularity for the desired
      *        month (the day value will be ignored).
      */
+
     public void setDataSetPublicationDate(java.util.Date dataSetPublicationDate) {
         this.dataSetPublicationDate = dataSetPublicationDate;
     }
@@ -667,6 +673,7 @@ public class GenerateDataSetRequest extends AmazonWebServiceRequest implements
      *         sets, provide a date with month-level granularity for the desired
      *         month (the day value will be ignored).
      */
+
     public java.util.Date getDataSetPublicationDate() {
         return this.dataSetPublicationDate;
     }
@@ -689,6 +696,7 @@ public class GenerateDataSetRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GenerateDataSetRequest withDataSetPublicationDate(
             java.util.Date dataSetPublicationDate) {
         setDataSetPublicationDate(dataSetPublicationDate);
@@ -703,6 +711,7 @@ public class GenerateDataSetRequest extends AmazonWebServiceRequest implements
      *        The Amazon Resource Name (ARN) of the Role with an attached
      *        permissions policy to interact with the provided AWS services.
      */
+
     public void setRoleNameArn(String roleNameArn) {
         this.roleNameArn = roleNameArn;
     }
@@ -714,6 +723,7 @@ public class GenerateDataSetRequest extends AmazonWebServiceRequest implements
      * @return The Amazon Resource Name (ARN) of the Role with an attached
      *         permissions policy to interact with the provided AWS services.
      */
+
     public String getRoleNameArn() {
         return this.roleNameArn;
     }
@@ -728,6 +738,7 @@ public class GenerateDataSetRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GenerateDataSetRequest withRoleNameArn(String roleNameArn) {
         setRoleNameArn(roleNameArn);
         return this;
@@ -739,6 +750,7 @@ public class GenerateDataSetRequest extends AmazonWebServiceRequest implements
      * @param destinationS3BucketName
      *        The name (friendly name, not ARN) of the destination S3 bucket.
      */
+
     public void setDestinationS3BucketName(String destinationS3BucketName) {
         this.destinationS3BucketName = destinationS3BucketName;
     }
@@ -748,6 +760,7 @@ public class GenerateDataSetRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name (friendly name, not ARN) of the destination S3 bucket.
      */
+
     public String getDestinationS3BucketName() {
         return this.destinationS3BucketName;
     }
@@ -760,6 +773,7 @@ public class GenerateDataSetRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GenerateDataSetRequest withDestinationS3BucketName(
             String destinationS3BucketName) {
         setDestinationS3BucketName(destinationS3BucketName);
@@ -785,6 +799,7 @@ public class GenerateDataSetRequest extends AmazonWebServiceRequest implements
      *        If no prefix is provided, the data set will be published to the S3
      *        bucket root.
      */
+
     public void setDestinationS3Prefix(String destinationS3Prefix) {
         this.destinationS3Prefix = destinationS3Prefix;
     }
@@ -807,6 +822,7 @@ public class GenerateDataSetRequest extends AmazonWebServiceRequest implements
      *         created. If no prefix is provided, the data set will be published
      *         to the S3 bucket root.
      */
+
     public String getDestinationS3Prefix() {
         return this.destinationS3Prefix;
     }
@@ -832,6 +848,7 @@ public class GenerateDataSetRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GenerateDataSetRequest withDestinationS3Prefix(
             String destinationS3Prefix) {
         setDestinationS3Prefix(destinationS3Prefix);
@@ -846,6 +863,7 @@ public class GenerateDataSetRequest extends AmazonWebServiceRequest implements
      *        Amazon Resource Name (ARN) for the SNS Topic that will be notified
      *        when the data set has been published or if an error has occurred.
      */
+
     public void setSnsTopicArn(String snsTopicArn) {
         this.snsTopicArn = snsTopicArn;
     }
@@ -858,6 +876,7 @@ public class GenerateDataSetRequest extends AmazonWebServiceRequest implements
      *         notified when the data set has been published or if an error has
      *         occurred.
      */
+
     public String getSnsTopicArn() {
         return this.snsTopicArn;
     }
@@ -872,6 +891,7 @@ public class GenerateDataSetRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GenerateDataSetRequest withSnsTopicArn(String snsTopicArn) {
         setSnsTopicArn(snsTopicArn);
         return this;
@@ -888,6 +908,7 @@ public class GenerateDataSetRequest extends AmazonWebServiceRequest implements
      *         file. These key-value pairs can be used to correlated responses
      *         with tracking information from other systems.
      */
+
     public java.util.Map<String, String> getCustomerDefinedValues() {
         return customerDefinedValues;
     }
@@ -904,6 +925,7 @@ public class GenerateDataSetRequest extends AmazonWebServiceRequest implements
      *        file. These key-value pairs can be used to correlated responses
      *        with tracking information from other systems.
      */
+
     public void setCustomerDefinedValues(
             java.util.Map<String, String> customerDefinedValues) {
         this.customerDefinedValues = customerDefinedValues;
@@ -923,6 +945,7 @@ public class GenerateDataSetRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GenerateDataSetRequest withCustomerDefinedValues(
             java.util.Map<String, String> customerDefinedValues) {
         setCustomerDefinedValues(customerDefinedValues);
@@ -945,6 +968,7 @@ public class GenerateDataSetRequest extends AmazonWebServiceRequest implements
      * Removes all the entries added into CustomerDefinedValues. &lt;p> Returns
      * a reference to this object so that method calls can be chained together.
      */
+
     public GenerateDataSetRequest clearCustomerDefinedValuesEntries() {
         this.customerDefinedValues = null;
         return this;

@@ -42,6 +42,7 @@ public class DeleteVpcEndpointsRequest extends AmazonWebServiceRequest
      * 
      * @return One or more endpoint IDs.
      */
+
     public java.util.List<String> getVpcEndpointIds() {
         if (vpcEndpointIds == null) {
             vpcEndpointIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -57,6 +58,7 @@ public class DeleteVpcEndpointsRequest extends AmazonWebServiceRequest
      * @param vpcEndpointIds
      *        One or more endpoint IDs.
      */
+
     public void setVpcEndpointIds(java.util.Collection<String> vpcEndpointIds) {
         if (vpcEndpointIds == null) {
             this.vpcEndpointIds = null;
@@ -83,6 +85,7 @@ public class DeleteVpcEndpointsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteVpcEndpointsRequest withVpcEndpointIds(
             String... vpcEndpointIds) {
         if (this.vpcEndpointIds == null) {
@@ -105,6 +108,7 @@ public class DeleteVpcEndpointsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteVpcEndpointsRequest withVpcEndpointIds(
             java.util.Collection<String> vpcEndpointIds) {
         setVpcEndpointIds(vpcEndpointIds);

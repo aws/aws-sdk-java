@@ -52,6 +52,7 @@ public class SAMLProviderListEntry implements Serializable, Cloneable {
      * @param arn
      *        The Amazon Resource Name (ARN) of the SAML provider.
      */
+
     public void setArn(String arn) {
         this.arn = arn;
     }
@@ -63,6 +64,7 @@ public class SAMLProviderListEntry implements Serializable, Cloneable {
      * 
      * @return The Amazon Resource Name (ARN) of the SAML provider.
      */
+
     public String getArn() {
         return this.arn;
     }
@@ -77,6 +79,7 @@ public class SAMLProviderListEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SAMLProviderListEntry withArn(String arn) {
         setArn(arn);
         return this;
@@ -90,6 +93,7 @@ public class SAMLProviderListEntry implements Serializable, Cloneable {
      * @param validUntil
      *        The expiration date and time for the SAML provider.
      */
+
     public void setValidUntil(java.util.Date validUntil) {
         this.validUntil = validUntil;
     }
@@ -101,6 +105,7 @@ public class SAMLProviderListEntry implements Serializable, Cloneable {
      * 
      * @return The expiration date and time for the SAML provider.
      */
+
     public java.util.Date getValidUntil() {
         return this.validUntil;
     }
@@ -115,6 +120,7 @@ public class SAMLProviderListEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SAMLProviderListEntry withValidUntil(java.util.Date validUntil) {
         setValidUntil(validUntil);
         return this;
@@ -128,6 +134,7 @@ public class SAMLProviderListEntry implements Serializable, Cloneable {
      * @param createDate
      *        The date and time when the SAML provider was created.
      */
+
     public void setCreateDate(java.util.Date createDate) {
         this.createDate = createDate;
     }
@@ -139,6 +146,7 @@ public class SAMLProviderListEntry implements Serializable, Cloneable {
      * 
      * @return The date and time when the SAML provider was created.
      */
+
     public java.util.Date getCreateDate() {
         return this.createDate;
     }
@@ -153,6 +161,7 @@ public class SAMLProviderListEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SAMLProviderListEntry withCreateDate(java.util.Date createDate) {
         setCreateDate(createDate);
         return this;

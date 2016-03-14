@@ -126,6 +126,12 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
     private static final String DEFAULT_ENDPOINT_PREFIX = "iam";
 
     /**
+     * Client configuration factory providing ClientConfigurations tailored to
+     * this client
+     */
+    protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
+
+    /**
      * List of exception unmarshallers for all IAM exceptions.
      */
     protected final List<Unmarshaller<AmazonServiceException, Node>> exceptionUnmarshallers = new ArrayList<Unmarshaller<AmazonServiceException, Node>>();
@@ -147,8 +153,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonIdentityManagementClient() {
-        this(new DefaultAWSCredentialsProviderChain(),
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
+        this(new DefaultAWSCredentialsProviderChain(), configFactory
+                .getConfig());
     }
 
     /**
@@ -189,8 +195,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      *        authenticating with AWS services.
      */
     public AmazonIdentityManagementClient(AWSCredentials awsCredentials) {
-        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
-                .defaultConfig());
+        this(awsCredentials, configFactory.getConfig());
     }
 
     /**
@@ -230,8 +235,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient
      */
     public AmazonIdentityManagementClient(
             AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider,
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
+        this(awsCredentialsProvider, configFactory.getConfig());
     }
 
     /**

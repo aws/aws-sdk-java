@@ -213,6 +213,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      *        The descriptive name for the alarm. This name must be unique
      *        within the user's AWS account
      */
+
     public void setAlarmName(String alarmName) {
         this.alarmName = alarmName;
     }
@@ -226,6 +227,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      * @return The descriptive name for the alarm. This name must be unique
      *         within the user's AWS account
      */
+
     public String getAlarmName() {
         return this.alarmName;
     }
@@ -242,6 +244,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutMetricAlarmRequest withAlarmName(String alarmName) {
         setAlarmName(alarmName);
         return this;
@@ -255,6 +258,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      * @param alarmDescription
      *        The description for the alarm.
      */
+
     public void setAlarmDescription(String alarmDescription) {
         this.alarmDescription = alarmDescription;
     }
@@ -266,6 +270,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      * 
      * @return The description for the alarm.
      */
+
     public String getAlarmDescription() {
         return this.alarmDescription;
     }
@@ -280,6 +285,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutMetricAlarmRequest withAlarmDescription(String alarmDescription) {
         setAlarmDescription(alarmDescription);
         return this;
@@ -295,6 +301,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      *        Indicates whether or not actions should be executed during any
      *        changes to the alarm's state.
      */
+
     public void setActionsEnabled(Boolean actionsEnabled) {
         this.actionsEnabled = actionsEnabled;
     }
@@ -308,6 +315,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      * @return Indicates whether or not actions should be executed during any
      *         changes to the alarm's state.
      */
+
     public Boolean getActionsEnabled() {
         return this.actionsEnabled;
     }
@@ -324,6 +332,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutMetricAlarmRequest withActionsEnabled(Boolean actionsEnabled) {
         setActionsEnabled(actionsEnabled);
         return this;
@@ -338,6 +347,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      * @return Indicates whether or not actions should be executed during any
      *         changes to the alarm's state.
      */
+
     public Boolean isActionsEnabled() {
         return this.actionsEnabled;
     }
@@ -397,6 +407,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      *         this IAM role is created, you can create stop, terminate, or
      *         reboot alarms using the CLI.
      */
+
     public java.util.List<String> getOKActions() {
         if (oKActions == null) {
             oKActions = new com.amazonaws.internal.SdkInternalList<String>();
@@ -460,6 +471,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      *        this IAM role is created, you can create stop, terminate, or
      *        reboot alarms using the CLI.
      */
+
     public void setOKActions(java.util.Collection<String> oKActions) {
         if (oKActions == null) {
             this.oKActions = null;
@@ -534,6 +546,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutMetricAlarmRequest withOKActions(String... oKActions) {
         if (this.oKActions == null) {
             setOKActions(new com.amazonaws.internal.SdkInternalList<String>(
@@ -603,6 +616,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutMetricAlarmRequest withOKActions(
             java.util.Collection<String> oKActions) {
         setOKActions(oKActions);
@@ -664,6 +678,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      *         this IAM role is created, you can create stop, terminate, or
      *         reboot alarms using the CLI.
      */
+
     public java.util.List<String> getAlarmActions() {
         if (alarmActions == null) {
             alarmActions = new com.amazonaws.internal.SdkInternalList<String>();
@@ -727,6 +742,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      *        this IAM role is created, you can create stop, terminate, or
      *        reboot alarms using the CLI.
      */
+
     public void setAlarmActions(java.util.Collection<String> alarmActions) {
         if (alarmActions == null) {
             this.alarmActions = null;
@@ -801,6 +817,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutMetricAlarmRequest withAlarmActions(String... alarmActions) {
         if (this.alarmActions == null) {
             setAlarmActions(new com.amazonaws.internal.SdkInternalList<String>(
@@ -870,6 +887,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutMetricAlarmRequest withAlarmActions(
             java.util.Collection<String> alarmActions) {
         setAlarmActions(alarmActions);
@@ -931,6 +949,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      *         this IAM role is created, you can create stop, terminate, or
      *         reboot alarms using the CLI.
      */
+
     public java.util.List<String> getInsufficientDataActions() {
         if (insufficientDataActions == null) {
             insufficientDataActions = new com.amazonaws.internal.SdkInternalList<String>();
@@ -994,6 +1013,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      *        this IAM role is created, you can create stop, terminate, or
      *        reboot alarms using the CLI.
      */
+
     public void setInsufficientDataActions(
             java.util.Collection<String> insufficientDataActions) {
         if (insufficientDataActions == null) {
@@ -1069,6 +1089,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutMetricAlarmRequest withInsufficientDataActions(
             String... insufficientDataActions) {
         if (this.insufficientDataActions == null) {
@@ -1139,6 +1160,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutMetricAlarmRequest withInsufficientDataActions(
             java.util.Collection<String> insufficientDataActions) {
         setInsufficientDataActions(insufficientDataActions);
@@ -1153,6 +1175,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      * @param metricName
      *        The name for the alarm's associated metric.
      */
+
     public void setMetricName(String metricName) {
         this.metricName = metricName;
     }
@@ -1164,6 +1187,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name for the alarm's associated metric.
      */
+
     public String getMetricName() {
         return this.metricName;
     }
@@ -1178,6 +1202,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutMetricAlarmRequest withMetricName(String metricName) {
         setMetricName(metricName);
         return this;
@@ -1191,6 +1216,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      * @param namespace
      *        The namespace for the alarm's associated metric.
      */
+
     public void setNamespace(String namespace) {
         this.namespace = namespace;
     }
@@ -1202,6 +1228,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      * 
      * @return The namespace for the alarm's associated metric.
      */
+
     public String getNamespace() {
         return this.namespace;
     }
@@ -1216,6 +1243,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutMetricAlarmRequest withNamespace(String namespace) {
         setNamespace(namespace);
         return this;
@@ -1230,6 +1258,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      *        The statistic to apply to the alarm's associated metric.
      * @see Statistic
      */
+
     public void setStatistic(String statistic) {
         this.statistic = statistic;
     }
@@ -1242,6 +1271,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      * @return The statistic to apply to the alarm's associated metric.
      * @see Statistic
      */
+
     public String getStatistic() {
         return this.statistic;
     }
@@ -1257,6 +1287,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see Statistic
      */
+
     public PutMetricAlarmRequest withStatistic(String statistic) {
         setStatistic(statistic);
         return this;
@@ -1273,6 +1304,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see Statistic
      */
+
     public void setStatistic(Statistic statistic) {
         this.statistic = statistic.toString();
     }
@@ -1288,6 +1320,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see Statistic
      */
+
     public PutMetricAlarmRequest withStatistic(Statistic statistic) {
         setStatistic(statistic);
         return this;
@@ -1300,6 +1333,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      * 
      * @return The dimensions for the alarm's associated metric.
      */
+
     public java.util.List<Dimension> getDimensions() {
         if (dimensions == null) {
             dimensions = new com.amazonaws.internal.SdkInternalList<Dimension>();
@@ -1315,6 +1349,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      * @param dimensions
      *        The dimensions for the alarm's associated metric.
      */
+
     public void setDimensions(java.util.Collection<Dimension> dimensions) {
         if (dimensions == null) {
             this.dimensions = null;
@@ -1341,6 +1376,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutMetricAlarmRequest withDimensions(Dimension... dimensions) {
         if (this.dimensions == null) {
             setDimensions(new com.amazonaws.internal.SdkInternalList<Dimension>(
@@ -1362,6 +1398,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutMetricAlarmRequest withDimensions(
             java.util.Collection<Dimension> dimensions) {
         setDimensions(dimensions);
@@ -1377,6 +1414,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      *        The period in seconds over which the specified statistic is
      *        applied.
      */
+
     public void setPeriod(Integer period) {
         this.period = period;
     }
@@ -1389,6 +1427,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      * @return The period in seconds over which the specified statistic is
      *         applied.
      */
+
     public Integer getPeriod() {
         return this.period;
     }
@@ -1404,6 +1443,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutMetricAlarmRequest withPeriod(Integer period) {
         setPeriod(period);
         return this;
@@ -1438,6 +1478,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      *        CloudWatch alarm to get stuck in the INSUFFICIENT DATA state.
      * @see StandardUnit
      */
+
     public void setUnit(String unit) {
         this.unit = unit;
     }
@@ -1470,6 +1511,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      *         CloudWatch alarm to get stuck in the INSUFFICIENT DATA state.
      * @see StandardUnit
      */
+
     public String getUnit() {
         return this.unit;
     }
@@ -1505,6 +1547,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see StandardUnit
      */
+
     public PutMetricAlarmRequest withUnit(String unit) {
         setUnit(unit);
         return this;
@@ -1541,6 +1584,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see StandardUnit
      */
+
     public void setUnit(StandardUnit unit) {
         this.unit = unit.toString();
     }
@@ -1576,6 +1620,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see StandardUnit
      */
+
     public PutMetricAlarmRequest withUnit(StandardUnit unit) {
         setUnit(unit);
         return this;
@@ -1591,6 +1636,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      *        The number of periods over which data is compared to the specified
      *        threshold.
      */
+
     public void setEvaluationPeriods(Integer evaluationPeriods) {
         this.evaluationPeriods = evaluationPeriods;
     }
@@ -1604,6 +1650,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      * @return The number of periods over which data is compared to the
      *         specified threshold.
      */
+
     public Integer getEvaluationPeriods() {
         return this.evaluationPeriods;
     }
@@ -1620,6 +1667,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutMetricAlarmRequest withEvaluationPeriods(Integer evaluationPeriods) {
         setEvaluationPeriods(evaluationPeriods);
         return this;
@@ -1633,6 +1681,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      * @param threshold
      *        The value against which the specified statistic is compared.
      */
+
     public void setThreshold(Double threshold) {
         this.threshold = threshold;
     }
@@ -1644,6 +1693,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      * 
      * @return The value against which the specified statistic is compared.
      */
+
     public Double getThreshold() {
         return this.threshold;
     }
@@ -1658,6 +1708,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutMetricAlarmRequest withThreshold(Double threshold) {
         setThreshold(threshold);
         return this;
@@ -1676,6 +1727,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      *        <code>Statistic</code> value is used as the first operand.
      * @see ComparisonOperator
      */
+
     public void setComparisonOperator(String comparisonOperator) {
         this.comparisonOperator = comparisonOperator;
     }
@@ -1692,6 +1744,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      *         <code>Statistic</code> value is used as the first operand.
      * @see ComparisonOperator
      */
+
     public String getComparisonOperator() {
         return this.comparisonOperator;
     }
@@ -1711,6 +1764,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ComparisonOperator
      */
+
     public PutMetricAlarmRequest withComparisonOperator(
             String comparisonOperator) {
         setComparisonOperator(comparisonOperator);
@@ -1732,6 +1786,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ComparisonOperator
      */
+
     public void setComparisonOperator(ComparisonOperator comparisonOperator) {
         this.comparisonOperator = comparisonOperator.toString();
     }
@@ -1751,6 +1806,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ComparisonOperator
      */
+
     public PutMetricAlarmRequest withComparisonOperator(
             ComparisonOperator comparisonOperator) {
         setComparisonOperator(comparisonOperator);

@@ -79,6 +79,7 @@ public class GetAccountAuthorizationDetailsResult implements Serializable,
      * 
      * @return A list containing information about IAM users.
      */
+
     public java.util.List<UserDetail> getUserDetailList() {
         if (userDetailList == null) {
             userDetailList = new com.amazonaws.internal.SdkInternalList<UserDetail>();
@@ -94,6 +95,7 @@ public class GetAccountAuthorizationDetailsResult implements Serializable,
      * @param userDetailList
      *        A list containing information about IAM users.
      */
+
     public void setUserDetailList(
             java.util.Collection<UserDetail> userDetailList) {
         if (userDetailList == null) {
@@ -121,6 +123,7 @@ public class GetAccountAuthorizationDetailsResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetAccountAuthorizationDetailsResult withUserDetailList(
             UserDetail... userDetailList) {
         if (this.userDetailList == null) {
@@ -143,6 +146,7 @@ public class GetAccountAuthorizationDetailsResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetAccountAuthorizationDetailsResult withUserDetailList(
             java.util.Collection<UserDetail> userDetailList) {
         setUserDetailList(userDetailList);
@@ -156,6 +160,7 @@ public class GetAccountAuthorizationDetailsResult implements Serializable,
      * 
      * @return A list containing information about IAM groups.
      */
+
     public java.util.List<GroupDetail> getGroupDetailList() {
         if (groupDetailList == null) {
             groupDetailList = new com.amazonaws.internal.SdkInternalList<GroupDetail>();
@@ -171,6 +176,7 @@ public class GetAccountAuthorizationDetailsResult implements Serializable,
      * @param groupDetailList
      *        A list containing information about IAM groups.
      */
+
     public void setGroupDetailList(
             java.util.Collection<GroupDetail> groupDetailList) {
         if (groupDetailList == null) {
@@ -198,6 +204,7 @@ public class GetAccountAuthorizationDetailsResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetAccountAuthorizationDetailsResult withGroupDetailList(
             GroupDetail... groupDetailList) {
         if (this.groupDetailList == null) {
@@ -220,6 +227,7 @@ public class GetAccountAuthorizationDetailsResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetAccountAuthorizationDetailsResult withGroupDetailList(
             java.util.Collection<GroupDetail> groupDetailList) {
         setGroupDetailList(groupDetailList);
@@ -233,6 +241,7 @@ public class GetAccountAuthorizationDetailsResult implements Serializable,
      * 
      * @return A list containing information about IAM roles.
      */
+
     public java.util.List<RoleDetail> getRoleDetailList() {
         if (roleDetailList == null) {
             roleDetailList = new com.amazonaws.internal.SdkInternalList<RoleDetail>();
@@ -248,6 +257,7 @@ public class GetAccountAuthorizationDetailsResult implements Serializable,
      * @param roleDetailList
      *        A list containing information about IAM roles.
      */
+
     public void setRoleDetailList(
             java.util.Collection<RoleDetail> roleDetailList) {
         if (roleDetailList == null) {
@@ -275,6 +285,7 @@ public class GetAccountAuthorizationDetailsResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetAccountAuthorizationDetailsResult withRoleDetailList(
             RoleDetail... roleDetailList) {
         if (this.roleDetailList == null) {
@@ -297,6 +308,7 @@ public class GetAccountAuthorizationDetailsResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetAccountAuthorizationDetailsResult withRoleDetailList(
             java.util.Collection<RoleDetail> roleDetailList) {
         setRoleDetailList(roleDetailList);
@@ -310,6 +322,7 @@ public class GetAccountAuthorizationDetailsResult implements Serializable,
      * 
      * @return A list containing information about managed policies.
      */
+
     public java.util.List<ManagedPolicyDetail> getPolicies() {
         if (policies == null) {
             policies = new com.amazonaws.internal.SdkInternalList<ManagedPolicyDetail>();
@@ -325,6 +338,7 @@ public class GetAccountAuthorizationDetailsResult implements Serializable,
      * @param policies
      *        A list containing information about managed policies.
      */
+
     public void setPolicies(java.util.Collection<ManagedPolicyDetail> policies) {
         if (policies == null) {
             this.policies = null;
@@ -351,6 +365,7 @@ public class GetAccountAuthorizationDetailsResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetAccountAuthorizationDetailsResult withPolicies(
             ManagedPolicyDetail... policies) {
         if (this.policies == null) {
@@ -373,6 +388,7 @@ public class GetAccountAuthorizationDetailsResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetAccountAuthorizationDetailsResult withPolicies(
             java.util.Collection<ManagedPolicyDetail> policies) {
         setPolicies(policies);
@@ -400,6 +416,7 @@ public class GetAccountAuthorizationDetailsResult implements Serializable,
      *        <code>IsTruncated</code> after every call to ensure that you
      *        receive all of your results.
      */
+
     public void setIsTruncated(Boolean isTruncated) {
         this.isTruncated = isTruncated;
     }
@@ -424,6 +441,7 @@ public class GetAccountAuthorizationDetailsResult implements Serializable,
      *         <code>IsTruncated</code> after every call to ensure that you
      *         receive all of your results.
      */
+
     public Boolean getIsTruncated() {
         return this.isTruncated;
     }
@@ -451,6 +469,7 @@ public class GetAccountAuthorizationDetailsResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetAccountAuthorizationDetailsResult withIsTruncated(
             Boolean isTruncated) {
         setIsTruncated(isTruncated);
@@ -477,6 +496,7 @@ public class GetAccountAuthorizationDetailsResult implements Serializable,
      *         <code>IsTruncated</code> after every call to ensure that you
      *         receive all of your results.
      */
+
     public Boolean isTruncated() {
         return this.isTruncated;
     }
@@ -493,6 +513,7 @@ public class GetAccountAuthorizationDetailsResult implements Serializable,
      *        is present and contains the value to use for the
      *        <code>Marker</code> parameter in a subsequent pagination request.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -508,6 +529,7 @@ public class GetAccountAuthorizationDetailsResult implements Serializable,
      *         is present and contains the value to use for the
      *         <code>Marker</code> parameter in a subsequent pagination request.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -526,6 +548,7 @@ public class GetAccountAuthorizationDetailsResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetAccountAuthorizationDetailsResult withMarker(String marker) {
         setMarker(marker);
         return this;

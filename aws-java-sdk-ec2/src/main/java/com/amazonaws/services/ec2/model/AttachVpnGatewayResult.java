@@ -38,6 +38,7 @@ public class AttachVpnGatewayResult implements Serializable, Cloneable {
      * @param vpcAttachment
      *        Information about the attachment.
      */
+
     public void setVpcAttachment(VpcAttachment vpcAttachment) {
         this.vpcAttachment = vpcAttachment;
     }
@@ -49,6 +50,7 @@ public class AttachVpnGatewayResult implements Serializable, Cloneable {
      * 
      * @return Information about the attachment.
      */
+
     public VpcAttachment getVpcAttachment() {
         return this.vpcAttachment;
     }
@@ -63,6 +65,7 @@ public class AttachVpnGatewayResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AttachVpnGatewayResult withVpcAttachment(VpcAttachment vpcAttachment) {
         setVpcAttachment(vpcAttachment);
         return this;

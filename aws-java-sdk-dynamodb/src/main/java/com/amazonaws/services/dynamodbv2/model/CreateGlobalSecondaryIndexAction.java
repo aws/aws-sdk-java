@@ -51,6 +51,7 @@ public class CreateGlobalSecondaryIndexAction implements Serializable,
      * @param indexName
      *        The name of the global secondary index to be created.
      */
+
     public void setIndexName(String indexName) {
         this.indexName = indexName;
     }
@@ -62,6 +63,7 @@ public class CreateGlobalSecondaryIndexAction implements Serializable,
      * 
      * @return The name of the global secondary index to be created.
      */
+
     public String getIndexName() {
         return this.indexName;
     }
@@ -76,6 +78,7 @@ public class CreateGlobalSecondaryIndexAction implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateGlobalSecondaryIndexAction withIndexName(String indexName) {
         setIndexName(indexName);
         return this;
@@ -88,6 +91,7 @@ public class CreateGlobalSecondaryIndexAction implements Serializable,
      * 
      * @return The key schema for the global secondary index.
      */
+
     public java.util.List<KeySchemaElement> getKeySchema() {
         return keySchema;
     }
@@ -100,6 +104,7 @@ public class CreateGlobalSecondaryIndexAction implements Serializable,
      * @param keySchema
      *        The key schema for the global secondary index.
      */
+
     public void setKeySchema(java.util.Collection<KeySchemaElement> keySchema) {
         if (keySchema == null) {
             this.keySchema = null;
@@ -125,6 +130,7 @@ public class CreateGlobalSecondaryIndexAction implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateGlobalSecondaryIndexAction withKeySchema(
             KeySchemaElement... keySchema) {
         if (this.keySchema == null) {
@@ -147,6 +153,7 @@ public class CreateGlobalSecondaryIndexAction implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateGlobalSecondaryIndexAction withKeySchema(
             java.util.Collection<KeySchemaElement> keySchema) {
         setKeySchema(keySchema);
@@ -156,6 +163,7 @@ public class CreateGlobalSecondaryIndexAction implements Serializable,
     /**
      * @param projection
      */
+
     public void setProjection(Projection projection) {
         this.projection = projection;
     }
@@ -163,6 +171,7 @@ public class CreateGlobalSecondaryIndexAction implements Serializable,
     /**
      * @return
      */
+
     public Projection getProjection() {
         return this.projection;
     }
@@ -172,6 +181,7 @@ public class CreateGlobalSecondaryIndexAction implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateGlobalSecondaryIndexAction withProjection(Projection projection) {
         setProjection(projection);
         return this;
@@ -180,6 +190,7 @@ public class CreateGlobalSecondaryIndexAction implements Serializable,
     /**
      * @param provisionedThroughput
      */
+
     public void setProvisionedThroughput(
             ProvisionedThroughput provisionedThroughput) {
         this.provisionedThroughput = provisionedThroughput;
@@ -188,6 +199,7 @@ public class CreateGlobalSecondaryIndexAction implements Serializable,
     /**
      * @return
      */
+
     public ProvisionedThroughput getProvisionedThroughput() {
         return this.provisionedThroughput;
     }
@@ -197,6 +209,7 @@ public class CreateGlobalSecondaryIndexAction implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateGlobalSecondaryIndexAction withProvisionedThroughput(
             ProvisionedThroughput provisionedThroughput) {
         setProvisionedThroughput(provisionedThroughput);

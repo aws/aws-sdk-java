@@ -66,6 +66,7 @@ public class GetHostedZoneRequest extends AmazonWebServiceRequest implements
      *        The ID of the hosted zone for which you want to get a list of the
      *        name servers in the delegation set.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -79,6 +80,7 @@ public class GetHostedZoneRequest extends AmazonWebServiceRequest implements
      * @return The ID of the hosted zone for which you want to get a list of the
      *         name servers in the delegation set.
      */
+
     public String getId() {
         return this.id;
     }
@@ -95,6 +97,7 @@ public class GetHostedZoneRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetHostedZoneRequest withId(String id) {
         setId(id);
         return this;

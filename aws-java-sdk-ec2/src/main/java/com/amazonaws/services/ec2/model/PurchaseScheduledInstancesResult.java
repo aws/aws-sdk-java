@@ -40,6 +40,7 @@ public class PurchaseScheduledInstancesResult implements Serializable,
      * 
      * @return Information about the Scheduled Instances.
      */
+
     public java.util.List<ScheduledInstance> getScheduledInstanceSet() {
         if (scheduledInstanceSet == null) {
             scheduledInstanceSet = new com.amazonaws.internal.SdkInternalList<ScheduledInstance>();
@@ -55,6 +56,7 @@ public class PurchaseScheduledInstancesResult implements Serializable,
      * @param scheduledInstanceSet
      *        Information about the Scheduled Instances.
      */
+
     public void setScheduledInstanceSet(
             java.util.Collection<ScheduledInstance> scheduledInstanceSet) {
         if (scheduledInstanceSet == null) {
@@ -82,6 +84,7 @@ public class PurchaseScheduledInstancesResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PurchaseScheduledInstancesResult withScheduledInstanceSet(
             ScheduledInstance... scheduledInstanceSet) {
         if (this.scheduledInstanceSet == null) {
@@ -104,6 +107,7 @@ public class PurchaseScheduledInstancesResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PurchaseScheduledInstancesResult withScheduledInstanceSet(
             java.util.Collection<ScheduledInstance> scheduledInstanceSet) {
         setScheduledInstanceSet(scheduledInstanceSet);

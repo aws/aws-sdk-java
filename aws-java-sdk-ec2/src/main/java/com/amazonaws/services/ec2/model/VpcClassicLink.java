@@ -52,6 +52,7 @@ public class VpcClassicLink implements Serializable, Cloneable {
      * @param vpcId
      *        The ID of the VPC.
      */
+
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
@@ -63,6 +64,7 @@ public class VpcClassicLink implements Serializable, Cloneable {
      * 
      * @return The ID of the VPC.
      */
+
     public String getVpcId() {
         return this.vpcId;
     }
@@ -77,6 +79,7 @@ public class VpcClassicLink implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VpcClassicLink withVpcId(String vpcId) {
         setVpcId(vpcId);
         return this;
@@ -90,6 +93,7 @@ public class VpcClassicLink implements Serializable, Cloneable {
      * @param classicLinkEnabled
      *        Indicates whether the VPC is enabled for ClassicLink.
      */
+
     public void setClassicLinkEnabled(Boolean classicLinkEnabled) {
         this.classicLinkEnabled = classicLinkEnabled;
     }
@@ -101,6 +105,7 @@ public class VpcClassicLink implements Serializable, Cloneable {
      * 
      * @return Indicates whether the VPC is enabled for ClassicLink.
      */
+
     public Boolean getClassicLinkEnabled() {
         return this.classicLinkEnabled;
     }
@@ -115,6 +120,7 @@ public class VpcClassicLink implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VpcClassicLink withClassicLinkEnabled(Boolean classicLinkEnabled) {
         setClassicLinkEnabled(classicLinkEnabled);
         return this;
@@ -127,6 +133,7 @@ public class VpcClassicLink implements Serializable, Cloneable {
      * 
      * @return Indicates whether the VPC is enabled for ClassicLink.
      */
+
     public Boolean isClassicLinkEnabled() {
         return this.classicLinkEnabled;
     }
@@ -138,6 +145,7 @@ public class VpcClassicLink implements Serializable, Cloneable {
      * 
      * @return Any tags assigned to the VPC.
      */
+
     public java.util.List<Tag> getTags() {
         if (tags == null) {
             tags = new com.amazonaws.internal.SdkInternalList<Tag>();
@@ -153,6 +161,7 @@ public class VpcClassicLink implements Serializable, Cloneable {
      * @param tags
      *        Any tags assigned to the VPC.
      */
+
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
             this.tags = null;
@@ -178,6 +187,7 @@ public class VpcClassicLink implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VpcClassicLink withTags(Tag... tags) {
         if (this.tags == null) {
             setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
@@ -198,6 +208,7 @@ public class VpcClassicLink implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VpcClassicLink withTags(java.util.Collection<Tag> tags) {
         setTags(tags);
         return this;

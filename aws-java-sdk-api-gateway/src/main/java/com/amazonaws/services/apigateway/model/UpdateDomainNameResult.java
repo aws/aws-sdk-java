@@ -64,6 +64,7 @@ public class UpdateDomainNameResult implements Serializable, Cloneable {
      * @param domainName
      *        The name of the <a>DomainName</a> resource.
      */
+
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
@@ -75,6 +76,7 @@ public class UpdateDomainNameResult implements Serializable, Cloneable {
      * 
      * @return The name of the <a>DomainName</a> resource.
      */
+
     public String getDomainName() {
         return this.domainName;
     }
@@ -89,6 +91,7 @@ public class UpdateDomainNameResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateDomainNameResult withDomainName(String domainName) {
         setDomainName(domainName);
         return this;
@@ -102,6 +105,7 @@ public class UpdateDomainNameResult implements Serializable, Cloneable {
      * @param certificateName
      *        The name of the certificate.
      */
+
     public void setCertificateName(String certificateName) {
         this.certificateName = certificateName;
     }
@@ -113,6 +117,7 @@ public class UpdateDomainNameResult implements Serializable, Cloneable {
      * 
      * @return The name of the certificate.
      */
+
     public String getCertificateName() {
         return this.certificateName;
     }
@@ -127,6 +132,7 @@ public class UpdateDomainNameResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateDomainNameResult withCertificateName(String certificateName) {
         setCertificateName(certificateName);
         return this;
@@ -144,6 +150,7 @@ public class UpdateDomainNameResult implements Serializable, Cloneable {
      *        href="http://www.iso.org/iso/home/standards/iso8601.htm"
      *        target="_blank">ISO 8601 format</a>.
      */
+
     public void setCertificateUploadDate(java.util.Date certificateUploadDate) {
         this.certificateUploadDate = certificateUploadDate;
     }
@@ -159,6 +166,7 @@ public class UpdateDomainNameResult implements Serializable, Cloneable {
      *         href="http://www.iso.org/iso/home/standards/iso8601.htm"
      *         target="_blank">ISO 8601 format</a>.
      */
+
     public java.util.Date getCertificateUploadDate() {
         return this.certificateUploadDate;
     }
@@ -177,6 +185,7 @@ public class UpdateDomainNameResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateDomainNameResult withCertificateUploadDate(
             java.util.Date certificateUploadDate) {
         setCertificateUploadDate(certificateUploadDate);
@@ -197,6 +206,7 @@ public class UpdateDomainNameResult implements Serializable, Cloneable {
      *        href="http://aws.amazon.com/documentation/cloudfront/"
      *        target="_blank">Amazon CloudFront documentation</a>.
      */
+
     public void setDistributionDomainName(String distributionDomainName) {
         this.distributionDomainName = distributionDomainName;
     }
@@ -214,6 +224,7 @@ public class UpdateDomainNameResult implements Serializable, Cloneable {
      *         href="http://aws.amazon.com/documentation/cloudfront/"
      *         target="_blank">Amazon CloudFront documentation</a>.
      */
+
     public String getDistributionDomainName() {
         return this.distributionDomainName;
     }
@@ -234,6 +245,7 @@ public class UpdateDomainNameResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateDomainNameResult withDistributionDomainName(
             String distributionDomainName) {
         setDistributionDomainName(distributionDomainName);

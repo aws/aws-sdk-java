@@ -66,6 +66,7 @@ public class TestRoleRequest extends AmazonWebServiceRequest implements
      *        The IAM Amazon Resource Name (ARN) for the role that you want
      *        Elastic Transcoder to test.
      */
+
     public void setRole(String role) {
         this.role = role;
     }
@@ -79,6 +80,7 @@ public class TestRoleRequest extends AmazonWebServiceRequest implements
      * @return The IAM Amazon Resource Name (ARN) for the role that you want
      *         Elastic Transcoder to test.
      */
+
     public String getRole() {
         return this.role;
     }
@@ -95,6 +97,7 @@ public class TestRoleRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TestRoleRequest withRole(String role) {
         setRole(role);
         return this;
@@ -110,6 +113,7 @@ public class TestRoleRequest extends AmazonWebServiceRequest implements
      *        The Amazon S3 bucket that contains media files to be transcoded.
      *        The action attempts to read from this bucket.
      */
+
     public void setInputBucket(String inputBucket) {
         this.inputBucket = inputBucket;
     }
@@ -123,6 +127,7 @@ public class TestRoleRequest extends AmazonWebServiceRequest implements
      * @return The Amazon S3 bucket that contains media files to be transcoded.
      *         The action attempts to read from this bucket.
      */
+
     public String getInputBucket() {
         return this.inputBucket;
     }
@@ -139,6 +144,7 @@ public class TestRoleRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TestRoleRequest withInputBucket(String inputBucket) {
         setInputBucket(inputBucket);
         return this;
@@ -154,6 +160,7 @@ public class TestRoleRequest extends AmazonWebServiceRequest implements
      *        The Amazon S3 bucket that Elastic Transcoder will write transcoded
      *        media files to. The action attempts to read from this bucket.
      */
+
     public void setOutputBucket(String outputBucket) {
         this.outputBucket = outputBucket;
     }
@@ -168,6 +175,7 @@ public class TestRoleRequest extends AmazonWebServiceRequest implements
      *         transcoded media files to. The action attempts to read from this
      *         bucket.
      */
+
     public String getOutputBucket() {
         return this.outputBucket;
     }
@@ -184,6 +192,7 @@ public class TestRoleRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TestRoleRequest withOutputBucket(String outputBucket) {
         setOutputBucket(outputBucket);
         return this;
@@ -199,6 +208,7 @@ public class TestRoleRequest extends AmazonWebServiceRequest implements
      *         (Amazon SNS) topics that you want the action to send a test
      *         notification to.
      */
+
     public java.util.List<String> getTopics() {
         if (topics == null) {
             topics = new com.amazonaws.internal.SdkInternalList<String>();
@@ -217,6 +227,7 @@ public class TestRoleRequest extends AmazonWebServiceRequest implements
      *        SNS) topics that you want the action to send a test notification
      *        to.
      */
+
     public void setTopics(java.util.Collection<String> topics) {
         if (topics == null) {
             this.topics = null;
@@ -245,6 +256,7 @@ public class TestRoleRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TestRoleRequest withTopics(String... topics) {
         if (this.topics == null) {
             setTopics(new com.amazonaws.internal.SdkInternalList<String>(
@@ -269,6 +281,7 @@ public class TestRoleRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TestRoleRequest withTopics(java.util.Collection<String> topics) {
         setTopics(topics);
         return this;

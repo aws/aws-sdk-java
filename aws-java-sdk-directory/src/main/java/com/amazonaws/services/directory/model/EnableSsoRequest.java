@@ -66,6 +66,7 @@ public class EnableSsoRequest extends AmazonWebServiceRequest implements
      *        The identifier of the directory for which to enable single-sign
      *        on.
      */
+
     public void setDirectoryId(String directoryId) {
         this.directoryId = directoryId;
     }
@@ -78,6 +79,7 @@ public class EnableSsoRequest extends AmazonWebServiceRequest implements
      * @return The identifier of the directory for which to enable single-sign
      *         on.
      */
+
     public String getDirectoryId() {
         return this.directoryId;
     }
@@ -93,6 +95,7 @@ public class EnableSsoRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EnableSsoRequest withDirectoryId(String directoryId) {
         setDirectoryId(directoryId);
         return this;
@@ -124,6 +127,7 @@ public class EnableSsoRequest extends AmazonWebServiceRequest implements
      *        stored by the service. The AD Connector service account is not
      *        changed.
      */
+
     public void setUserName(String userName) {
         this.userName = userName;
     }
@@ -153,6 +157,7 @@ public class EnableSsoRequest extends AmazonWebServiceRequest implements
      *         not stored by the service. The AD Connector service account is
      *         not changed.
      */
+
     public String getUserName() {
         return this.userName;
     }
@@ -185,6 +190,7 @@ public class EnableSsoRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EnableSsoRequest withUserName(String userName) {
         setUserName(userName);
         return this;
@@ -202,6 +208,7 @@ public class EnableSsoRequest extends AmazonWebServiceRequest implements
      *        on. This is only used for AD Connector directories. For more
      *        information, see the <i>UserName</i> parameter.
      */
+
     public void setPassword(String password) {
         this.password = password;
     }
@@ -217,6 +224,7 @@ public class EnableSsoRequest extends AmazonWebServiceRequest implements
      *         on. This is only used for AD Connector directories. For more
      *         information, see the <i>UserName</i> parameter.
      */
+
     public String getPassword() {
         return this.password;
     }
@@ -235,6 +243,7 @@ public class EnableSsoRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EnableSsoRequest withPassword(String password) {
         setPassword(password);
         return this;

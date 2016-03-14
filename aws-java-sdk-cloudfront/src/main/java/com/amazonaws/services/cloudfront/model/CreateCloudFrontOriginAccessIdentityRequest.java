@@ -55,6 +55,7 @@ public class CreateCloudFrontOriginAccessIdentityRequest extends
      * @param cloudFrontOriginAccessIdentityConfig
      *        The origin access identity's configuration information.
      */
+
     public void setCloudFrontOriginAccessIdentityConfig(
             CloudFrontOriginAccessIdentityConfig cloudFrontOriginAccessIdentityConfig) {
         this.cloudFrontOriginAccessIdentityConfig = cloudFrontOriginAccessIdentityConfig;
@@ -65,6 +66,7 @@ public class CreateCloudFrontOriginAccessIdentityRequest extends
      * 
      * @return The origin access identity's configuration information.
      */
+
     public CloudFrontOriginAccessIdentityConfig getCloudFrontOriginAccessIdentityConfig() {
         return this.cloudFrontOriginAccessIdentityConfig;
     }
@@ -77,6 +79,7 @@ public class CreateCloudFrontOriginAccessIdentityRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateCloudFrontOriginAccessIdentityRequest withCloudFrontOriginAccessIdentityConfig(
             CloudFrontOriginAccessIdentityConfig cloudFrontOriginAccessIdentityConfig) {
         setCloudFrontOriginAccessIdentityConfig(cloudFrontOriginAccessIdentityConfig);

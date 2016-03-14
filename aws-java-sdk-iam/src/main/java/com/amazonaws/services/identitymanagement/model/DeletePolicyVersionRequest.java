@@ -41,6 +41,7 @@ public class DeletePolicyVersionRequest extends AmazonWebServiceRequest
     /**
      * @param policyArn
      */
+
     public void setPolicyArn(String policyArn) {
         this.policyArn = policyArn;
     }
@@ -48,6 +49,7 @@ public class DeletePolicyVersionRequest extends AmazonWebServiceRequest
     /**
      * @return
      */
+
     public String getPolicyArn() {
         return this.policyArn;
     }
@@ -57,6 +59,7 @@ public class DeletePolicyVersionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeletePolicyVersionRequest withPolicyArn(String policyArn) {
         setPolicyArn(policyArn);
         return this;
@@ -79,6 +82,7 @@ public class DeletePolicyVersionRequest extends AmazonWebServiceRequest
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html"
      *        >Versioning for Managed Policies</a> in the <i>IAM User Guide</i>.
      */
+
     public void setVersionId(String versionId) {
         this.versionId = versionId;
     }
@@ -100,6 +104,7 @@ public class DeletePolicyVersionRequest extends AmazonWebServiceRequest
      *         >Versioning for Managed Policies</a> in the <i>IAM User
      *         Guide</i>.
      */
+
     public String getVersionId() {
         return this.versionId;
     }
@@ -123,6 +128,7 @@ public class DeletePolicyVersionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeletePolicyVersionRequest withVersionId(String versionId) {
         setVersionId(versionId);
         return this;

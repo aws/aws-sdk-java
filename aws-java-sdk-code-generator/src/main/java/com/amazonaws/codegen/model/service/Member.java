@@ -35,6 +35,8 @@ public class Member {
 
     private XmlNamespace xmlNamespace;
 
+    private boolean deprecated;
+
     public String getShape() {
         return shape;
     }
@@ -107,4 +109,11 @@ public class Member {
         this.xmlNamespace = xmlNamespace;
     }
 
+    public boolean isDeprecated() {
+        return deprecated;
+    }
+
+    public void setDeprecated(boolean deprecated) {
+        this.deprecated = deprecated;
+    }
 }

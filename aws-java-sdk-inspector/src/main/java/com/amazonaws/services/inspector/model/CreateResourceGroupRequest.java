@@ -55,6 +55,7 @@ public class CreateResourceGroupRequest extends AmazonWebServiceRequest
      *        [{"key":"key1","values":["Value1","Value2"]},{"key":"Key2"
      *        ,"values":["Value3"]}]
      */
+
     public void setResourceGroupTags(String resourceGroupTags) {
         this.resourceGroupTags = resourceGroupTags;
     }
@@ -76,6 +77,7 @@ public class CreateResourceGroupRequest extends AmazonWebServiceRequest
      *         [{"key":"key1","values":["Value1","Value2"]},{"key":"Key2"
      *         ,"values":["Value3"]}]
      */
+
     public String getResourceGroupTags() {
         return this.resourceGroupTags;
     }
@@ -100,6 +102,7 @@ public class CreateResourceGroupRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateResourceGroupRequest withResourceGroupTags(
             String resourceGroupTags) {
         setResourceGroupTags(resourceGroupTags);

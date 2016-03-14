@@ -48,6 +48,7 @@ public class GetModelTemplateRequest extends AmazonWebServiceRequest implements
      * @param restApiId
      *        The ID of the <a>RestApi</a> under which the model exists.
      */
+
     public void setRestApiId(String restApiId) {
         this.restApiId = restApiId;
     }
@@ -59,6 +60,7 @@ public class GetModelTemplateRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ID of the <a>RestApi</a> under which the model exists.
      */
+
     public String getRestApiId() {
         return this.restApiId;
     }
@@ -73,6 +75,7 @@ public class GetModelTemplateRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetModelTemplateRequest withRestApiId(String restApiId) {
         setRestApiId(restApiId);
         return this;
@@ -86,6 +89,7 @@ public class GetModelTemplateRequest extends AmazonWebServiceRequest implements
      * @param modelName
      *        The name of the model for which to generate a template.
      */
+
     public void setModelName(String modelName) {
         this.modelName = modelName;
     }
@@ -97,6 +101,7 @@ public class GetModelTemplateRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the model for which to generate a template.
      */
+
     public String getModelName() {
         return this.modelName;
     }
@@ -111,6 +116,7 @@ public class GetModelTemplateRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetModelTemplateRequest withModelName(String modelName) {
         setModelName(modelName);
         return this;

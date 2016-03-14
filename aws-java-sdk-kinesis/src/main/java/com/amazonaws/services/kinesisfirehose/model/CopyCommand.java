@@ -85,6 +85,7 @@ public class CopyCommand implements Serializable, Cloneable {
      *        The name of the target table. The table must already exist in the
      *        database.
      */
+
     public void setDataTableName(String dataTableName) {
         this.dataTableName = dataTableName;
     }
@@ -98,6 +99,7 @@ public class CopyCommand implements Serializable, Cloneable {
      * @return The name of the target table. The table must already exist in the
      *         database.
      */
+
     public String getDataTableName() {
         return this.dataTableName;
     }
@@ -114,6 +116,7 @@ public class CopyCommand implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CopyCommand withDataTableName(String dataTableName) {
         setDataTableName(dataTableName);
         return this;
@@ -127,6 +130,7 @@ public class CopyCommand implements Serializable, Cloneable {
      * @param dataTableColumns
      *        A comma-separated list of column names.
      */
+
     public void setDataTableColumns(String dataTableColumns) {
         this.dataTableColumns = dataTableColumns;
     }
@@ -138,6 +142,7 @@ public class CopyCommand implements Serializable, Cloneable {
      * 
      * @return A comma-separated list of column names.
      */
+
     public String getDataTableColumns() {
         return this.dataTableColumns;
     }
@@ -152,6 +157,7 @@ public class CopyCommand implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CopyCommand withDataTableColumns(String dataTableColumns) {
         setDataTableColumns(dataTableColumns);
         return this;
@@ -225,6 +231,7 @@ public class CopyCommand implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/redshift/latest/dg/r_COPY_command_examples.html"
      *        >Amazon Redshift COPY command exmaples</a>.
      */
+
     public void setCopyOptions(String copyOptions) {
         this.copyOptions = copyOptions;
     }
@@ -296,6 +303,7 @@ public class CopyCommand implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/redshift/latest/dg/r_COPY_command_examples.html"
      *         >Amazon Redshift COPY command exmaples</a>.
      */
+
     public String getCopyOptions() {
         return this.copyOptions;
     }
@@ -370,6 +378,7 @@ public class CopyCommand implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CopyCommand withCopyOptions(String copyOptions) {
         setCopyOptions(copyOptions);
         return this;

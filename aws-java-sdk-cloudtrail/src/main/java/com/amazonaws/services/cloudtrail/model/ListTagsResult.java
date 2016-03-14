@@ -37,6 +37,7 @@ public class ListTagsResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public java.util.List<ResourceTag> getResourceTagList() {
         if (resourceTagList == null) {
             resourceTagList = new com.amazonaws.internal.SdkInternalList<ResourceTag>();
@@ -47,6 +48,7 @@ public class ListTagsResult implements Serializable, Cloneable {
     /**
      * @param resourceTagList
      */
+
     public void setResourceTagList(
             java.util.Collection<ResourceTag> resourceTagList) {
         if (resourceTagList == null) {
@@ -70,6 +72,7 @@ public class ListTagsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTagsResult withResourceTagList(ResourceTag... resourceTagList) {
         if (this.resourceTagList == null) {
             setResourceTagList(new com.amazonaws.internal.SdkInternalList<ResourceTag>(
@@ -86,6 +89,7 @@ public class ListTagsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTagsResult withResourceTagList(
             java.util.Collection<ResourceTag> resourceTagList) {
         setResourceTagList(resourceTagList);
@@ -100,6 +104,7 @@ public class ListTagsResult implements Serializable, Cloneable {
      * @param nextToken
      *        Reserved for future use.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -111,6 +116,7 @@ public class ListTagsResult implements Serializable, Cloneable {
      * 
      * @return Reserved for future use.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -125,6 +131,7 @@ public class ListTagsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTagsResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

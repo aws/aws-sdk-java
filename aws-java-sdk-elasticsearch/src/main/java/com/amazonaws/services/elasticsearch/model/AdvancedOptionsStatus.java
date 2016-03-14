@@ -64,6 +64,7 @@ public class AdvancedOptionsStatus implements Serializable, Cloneable {
      * @return Specifies the status of advanced options for the specified
      *         Elasticsearch domain.
      */
+
     public java.util.Map<String, String> getOptions() {
         return options;
     }
@@ -78,6 +79,7 @@ public class AdvancedOptionsStatus implements Serializable, Cloneable {
      *        Specifies the status of advanced options for the specified
      *        Elasticsearch domain.
      */
+
     public void setOptions(java.util.Map<String, String> options) {
         this.options = options;
     }
@@ -94,6 +96,7 @@ public class AdvancedOptionsStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AdvancedOptionsStatus withOptions(
             java.util.Map<String, String> options) {
         setOptions(options);
@@ -115,6 +118,7 @@ public class AdvancedOptionsStatus implements Serializable, Cloneable {
      * Removes all the entries added into Options. &lt;p> Returns a reference to
      * this object so that method calls can be chained together.
      */
+
     public AdvancedOptionsStatus clearOptionsEntries() {
         this.options = null;
         return this;
@@ -130,6 +134,7 @@ public class AdvancedOptionsStatus implements Serializable, Cloneable {
      *        Specifies the status of <code>OptionStatus</code> for advanced
      *        options for the specified Elasticsearch domain.
      */
+
     public void setStatus(OptionStatus status) {
         this.status = status;
     }
@@ -143,6 +148,7 @@ public class AdvancedOptionsStatus implements Serializable, Cloneable {
      * @return Specifies the status of <code>OptionStatus</code> for advanced
      *         options for the specified Elasticsearch domain.
      */
+
     public OptionStatus getStatus() {
         return this.status;
     }
@@ -159,6 +165,7 @@ public class AdvancedOptionsStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AdvancedOptionsStatus withStatus(OptionStatus status) {
         setStatus(status);
         return this;

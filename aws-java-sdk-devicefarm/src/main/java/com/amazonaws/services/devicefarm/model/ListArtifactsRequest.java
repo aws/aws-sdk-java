@@ -63,6 +63,7 @@ public class ListArtifactsRequest extends AmazonWebServiceRequest implements
      * @param arn
      *        The Run, Job, Suite, or Test ARN.
      */
+
     public void setArn(String arn) {
         this.arn = arn;
     }
@@ -74,6 +75,7 @@ public class ListArtifactsRequest extends AmazonWebServiceRequest implements
      * 
      * @return The Run, Job, Suite, or Test ARN.
      */
+
     public String getArn() {
         return this.arn;
     }
@@ -88,6 +90,7 @@ public class ListArtifactsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListArtifactsRequest withArn(String arn) {
         setArn(arn);
         return this;
@@ -117,6 +120,7 @@ public class ListArtifactsRequest extends AmazonWebServiceRequest implements
      *        <li>SCREENSHOT: The artifacts are screenshots.</li>
      * @see ArtifactCategory
      */
+
     public void setType(String type) {
         this.type = type;
     }
@@ -144,6 +148,7 @@ public class ListArtifactsRequest extends AmazonWebServiceRequest implements
      *         <li>SCREENSHOT: The artifacts are screenshots.</li>
      * @see ArtifactCategory
      */
+
     public String getType() {
         return this.type;
     }
@@ -174,6 +179,7 @@ public class ListArtifactsRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ArtifactCategory
      */
+
     public ListArtifactsRequest withType(String type) {
         setType(type);
         return this;
@@ -205,6 +211,7 @@ public class ListArtifactsRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ArtifactCategory
      */
+
     public void setType(ArtifactCategory type) {
         this.type = type.toString();
     }
@@ -235,6 +242,7 @@ public class ListArtifactsRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ArtifactCategory
      */
+
     public ListArtifactsRequest withType(ArtifactCategory type) {
         setType(type);
         return this;
@@ -251,6 +259,7 @@ public class ListArtifactsRequest extends AmazonWebServiceRequest implements
      *        operation, which can be used to return the next set of items in
      *        the list.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -265,6 +274,7 @@ public class ListArtifactsRequest extends AmazonWebServiceRequest implements
      *         operation, which can be used to return the next set of items in
      *         the list.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -282,6 +292,7 @@ public class ListArtifactsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListArtifactsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

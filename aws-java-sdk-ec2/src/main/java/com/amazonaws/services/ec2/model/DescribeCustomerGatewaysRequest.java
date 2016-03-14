@@ -111,6 +111,7 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest
      *         <p>
      *         Default: Describes all your customer gateways.
      */
+
     public java.util.List<String> getCustomerGatewayIds() {
         if (customerGatewayIds == null) {
             customerGatewayIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -131,6 +132,7 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest
      *        <p>
      *        Default: Describes all your customer gateways.
      */
+
     public void setCustomerGatewayIds(
             java.util.Collection<String> customerGatewayIds) {
         if (customerGatewayIds == null) {
@@ -163,6 +165,7 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeCustomerGatewaysRequest withCustomerGatewayIds(
             String... customerGatewayIds) {
         if (this.customerGatewayIds == null) {
@@ -190,6 +193,7 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeCustomerGatewaysRequest withCustomerGatewayIds(
             java.util.Collection<String> customerGatewayIds) {
         setCustomerGatewayIds(customerGatewayIds);
@@ -315,6 +319,7 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest
      *         </p>
      *         </li>
      */
+
     public java.util.List<Filter> getFilters() {
         if (filters == null) {
             filters = new com.amazonaws.internal.SdkInternalList<Filter>();
@@ -441,6 +446,7 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest
      *        </p>
      *        </li>
      */
+
     public void setFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
             this.filters = null;
@@ -578,6 +584,7 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeCustomerGatewaysRequest withFilters(Filter... filters) {
         if (this.filters == null) {
             setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(
@@ -710,6 +717,7 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeCustomerGatewaysRequest withFilters(
             java.util.Collection<Filter> filters) {
         setFilters(filters);

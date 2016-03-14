@@ -40,6 +40,7 @@ public class CreateTopicResult implements Serializable, Cloneable {
      * @param topicArn
      *        The Amazon Resource Name (ARN) assigned to the created topic.
      */
+
     public void setTopicArn(String topicArn) {
         this.topicArn = topicArn;
     }
@@ -51,6 +52,7 @@ public class CreateTopicResult implements Serializable, Cloneable {
      * 
      * @return The Amazon Resource Name (ARN) assigned to the created topic.
      */
+
     public String getTopicArn() {
         return this.topicArn;
     }
@@ -65,6 +67,7 @@ public class CreateTopicResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateTopicResult withTopicArn(String topicArn) {
         setTopicArn(topicArn);
         return this;

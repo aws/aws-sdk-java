@@ -63,6 +63,7 @@ public class DeletePlacementGroupRequest extends AmazonWebServiceRequest
      * @param groupName
      *        The name of the placement group.
      */
+
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
@@ -74,6 +75,7 @@ public class DeletePlacementGroupRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the placement group.
      */
+
     public String getGroupName() {
         return this.groupName;
     }
@@ -88,6 +90,7 @@ public class DeletePlacementGroupRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeletePlacementGroupRequest withGroupName(String groupName) {
         setGroupName(groupName);
         return this;

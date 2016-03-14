@@ -130,6 +130,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest
      *        <code>/cloudfront</code> and must include a trailing slash (for
      *        example, <code>/cloudfront/test/</code>).
      */
+
     public void setPath(String path) {
         this.path = path;
     }
@@ -165,6 +166,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest
      *         <code>/cloudfront</code> and must include a trailing slash (for
      *         example, <code>/cloudfront/test/</code>).
      */
+
     public String getPath() {
         return this.path;
     }
@@ -203,6 +205,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UploadServerCertificateRequest withPath(String path) {
         setPath(path);
         return this;
@@ -218,6 +221,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest
      *        The name for the server certificate. Do not include the path in
      *        this value. The name of the certificate cannot contain any spaces.
      */
+
     public void setServerCertificateName(String serverCertificateName) {
         this.serverCertificateName = serverCertificateName;
     }
@@ -232,6 +236,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest
      *         this value. The name of the certificate cannot contain any
      *         spaces.
      */
+
     public String getServerCertificateName() {
         return this.serverCertificateName;
     }
@@ -248,6 +253,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UploadServerCertificateRequest withServerCertificateName(
             String serverCertificateName) {
         setServerCertificateName(serverCertificateName);
@@ -262,6 +268,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest
      * @param certificateBody
      *        The contents of the public key certificate in PEM-encoded format.
      */
+
     public void setCertificateBody(String certificateBody) {
         this.certificateBody = certificateBody;
     }
@@ -273,6 +280,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest
      * 
      * @return The contents of the public key certificate in PEM-encoded format.
      */
+
     public String getCertificateBody() {
         return this.certificateBody;
     }
@@ -287,6 +295,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UploadServerCertificateRequest withCertificateBody(
             String certificateBody) {
         setCertificateBody(certificateBody);
@@ -301,6 +310,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest
      * @param privateKey
      *        The contents of the private key in PEM-encoded format.
      */
+
     public void setPrivateKey(String privateKey) {
         this.privateKey = privateKey;
     }
@@ -312,6 +322,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest
      * 
      * @return The contents of the private key in PEM-encoded format.
      */
+
     public String getPrivateKey() {
         return this.privateKey;
     }
@@ -326,6 +337,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UploadServerCertificateRequest withPrivateKey(String privateKey) {
         setPrivateKey(privateKey);
         return this;
@@ -342,6 +354,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest
      *        concatenation of the PEM-encoded public key certificates of the
      *        chain.
      */
+
     public void setCertificateChain(String certificateChain) {
         this.certificateChain = certificateChain;
     }
@@ -356,6 +369,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest
      *         concatenation of the PEM-encoded public key certificates of the
      *         chain.
      */
+
     public String getCertificateChain() {
         return this.certificateChain;
     }
@@ -373,6 +387,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UploadServerCertificateRequest withCertificateChain(
             String certificateChain) {
         setCertificateChain(certificateChain);

@@ -79,6 +79,16 @@ public class UpdateFleetCapacityRequestMarshaller
                         updateFleetCapacityRequest.getDesiredInstances());
             }
 
+            if (updateFleetCapacityRequest.getMinSize() != null) {
+                jsonWriter.key("MinSize").value(
+                        updateFleetCapacityRequest.getMinSize());
+            }
+
+            if (updateFleetCapacityRequest.getMaxSize() != null) {
+                jsonWriter.key("MaxSize").value(
+                        updateFleetCapacityRequest.getMaxSize());
+            }
+
             jsonWriter.endObject();
 
             String snippet = stringWriter.toString();

@@ -68,6 +68,7 @@ public class GetTemplateRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        Default: There is no default value.
      */
+
     public void setStackName(String stackName) {
         this.stackName = stackName;
     }
@@ -96,6 +97,7 @@ public class GetTemplateRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Default: There is no default value.
      */
+
     public String getStackName() {
         return this.stackName;
     }
@@ -127,6 +129,7 @@ public class GetTemplateRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetTemplateRequest withStackName(String stackName) {
         setStackName(stackName);
         return this;

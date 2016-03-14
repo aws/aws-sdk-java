@@ -90,6 +90,7 @@ public class SetTopicAttributesRequest extends AmazonWebServiceRequest
      * @param topicArn
      *        The ARN of the topic to modify.
      */
+
     public void setTopicArn(String topicArn) {
         this.topicArn = topicArn;
     }
@@ -101,6 +102,7 @@ public class SetTopicAttributesRequest extends AmazonWebServiceRequest
      * 
      * @return The ARN of the topic to modify.
      */
+
     public String getTopicArn() {
         return this.topicArn;
     }
@@ -115,6 +117,7 @@ public class SetTopicAttributesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetTopicAttributesRequest withTopicArn(String topicArn) {
         setTopicArn(topicArn);
         return this;
@@ -137,6 +140,7 @@ public class SetTopicAttributesRequest extends AmazonWebServiceRequest
      *        Valid values: <code>Policy</code> | <code>DisplayName</code> |
      *        <code>DeliveryPolicy</code>
      */
+
     public void setAttributeName(String attributeName) {
         this.attributeName = attributeName;
     }
@@ -157,6 +161,7 @@ public class SetTopicAttributesRequest extends AmazonWebServiceRequest
      *         Valid values: <code>Policy</code> | <code>DisplayName</code> |
      *         <code>DeliveryPolicy</code>
      */
+
     public String getAttributeName() {
         return this.attributeName;
     }
@@ -180,6 +185,7 @@ public class SetTopicAttributesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetTopicAttributesRequest withAttributeName(String attributeName) {
         setAttributeName(attributeName);
         return this;
@@ -193,6 +199,7 @@ public class SetTopicAttributesRequest extends AmazonWebServiceRequest
      * @param attributeValue
      *        The new value for the attribute.
      */
+
     public void setAttributeValue(String attributeValue) {
         this.attributeValue = attributeValue;
     }
@@ -204,6 +211,7 @@ public class SetTopicAttributesRequest extends AmazonWebServiceRequest
      * 
      * @return The new value for the attribute.
      */
+
     public String getAttributeValue() {
         return this.attributeValue;
     }
@@ -218,6 +226,7 @@ public class SetTopicAttributesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetTopicAttributesRequest withAttributeValue(String attributeValue) {
         setAttributeValue(attributeValue);
         return this;

@@ -61,6 +61,7 @@ public class DirectoryVpcSettingsDescription implements Serializable, Cloneable 
      * @param vpcId
      *        The identifier of the VPC that the directory is in.
      */
+
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
@@ -72,6 +73,7 @@ public class DirectoryVpcSettingsDescription implements Serializable, Cloneable 
      * 
      * @return The identifier of the VPC that the directory is in.
      */
+
     public String getVpcId() {
         return this.vpcId;
     }
@@ -86,6 +88,7 @@ public class DirectoryVpcSettingsDescription implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DirectoryVpcSettingsDescription withVpcId(String vpcId) {
         setVpcId(vpcId);
         return this;
@@ -98,6 +101,7 @@ public class DirectoryVpcSettingsDescription implements Serializable, Cloneable 
      * 
      * @return The identifiers of the subnets for the directory servers.
      */
+
     public java.util.List<String> getSubnetIds() {
         if (subnetIds == null) {
             subnetIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -113,6 +117,7 @@ public class DirectoryVpcSettingsDescription implements Serializable, Cloneable 
      * @param subnetIds
      *        The identifiers of the subnets for the directory servers.
      */
+
     public void setSubnetIds(java.util.Collection<String> subnetIds) {
         if (subnetIds == null) {
             this.subnetIds = null;
@@ -139,6 +144,7 @@ public class DirectoryVpcSettingsDescription implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DirectoryVpcSettingsDescription withSubnetIds(String... subnetIds) {
         if (this.subnetIds == null) {
             setSubnetIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -160,6 +166,7 @@ public class DirectoryVpcSettingsDescription implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DirectoryVpcSettingsDescription withSubnetIds(
             java.util.Collection<String> subnetIds) {
         setSubnetIds(subnetIds);
@@ -181,6 +188,7 @@ public class DirectoryVpcSettingsDescription implements Serializable, Cloneable 
      *        directory was created. If the directory was created after this
      *        date, this value is null.
      */
+
     public void setSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
     }
@@ -199,6 +207,7 @@ public class DirectoryVpcSettingsDescription implements Serializable, Cloneable 
      *         directory was created. If the directory was created after this
      *         date, this value is null.
      */
+
     public String getSecurityGroupId() {
         return this.securityGroupId;
     }
@@ -220,6 +229,7 @@ public class DirectoryVpcSettingsDescription implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DirectoryVpcSettingsDescription withSecurityGroupId(
             String securityGroupId) {
         setSecurityGroupId(securityGroupId);
@@ -233,6 +243,7 @@ public class DirectoryVpcSettingsDescription implements Serializable, Cloneable 
      * 
      * @return The list of Availability Zones that the directory is in.
      */
+
     public java.util.List<String> getAvailabilityZones() {
         if (availabilityZones == null) {
             availabilityZones = new com.amazonaws.internal.SdkInternalList<String>();
@@ -248,6 +259,7 @@ public class DirectoryVpcSettingsDescription implements Serializable, Cloneable 
      * @param availabilityZones
      *        The list of Availability Zones that the directory is in.
      */
+
     public void setAvailabilityZones(
             java.util.Collection<String> availabilityZones) {
         if (availabilityZones == null) {
@@ -275,6 +287,7 @@ public class DirectoryVpcSettingsDescription implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DirectoryVpcSettingsDescription withAvailabilityZones(
             String... availabilityZones) {
         if (this.availabilityZones == null) {
@@ -297,6 +310,7 @@ public class DirectoryVpcSettingsDescription implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DirectoryVpcSettingsDescription withAvailabilityZones(
             java.util.Collection<String> availabilityZones) {
         setAvailabilityZones(availabilityZones);

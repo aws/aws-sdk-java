@@ -46,6 +46,7 @@ public class ListPrincipalPoliciesResult implements Serializable, Cloneable {
      * 
      * @return The policies.
      */
+
     public java.util.List<Policy> getPolicies() {
         return policies;
     }
@@ -58,6 +59,7 @@ public class ListPrincipalPoliciesResult implements Serializable, Cloneable {
      * @param policies
      *        The policies.
      */
+
     public void setPolicies(java.util.Collection<Policy> policies) {
         if (policies == null) {
             this.policies = null;
@@ -83,6 +85,7 @@ public class ListPrincipalPoliciesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListPrincipalPoliciesResult withPolicies(Policy... policies) {
         if (this.policies == null) {
             setPolicies(new java.util.ArrayList<Policy>(policies.length));
@@ -103,6 +106,7 @@ public class ListPrincipalPoliciesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListPrincipalPoliciesResult withPolicies(
             java.util.Collection<Policy> policies) {
         setPolicies(policies);
@@ -119,6 +123,7 @@ public class ListPrincipalPoliciesResult implements Serializable, Cloneable {
      *        The marker for the next set of results, or null if there are no
      *        additional results.
      */
+
     public void setNextMarker(String nextMarker) {
         this.nextMarker = nextMarker;
     }
@@ -132,6 +137,7 @@ public class ListPrincipalPoliciesResult implements Serializable, Cloneable {
      * @return The marker for the next set of results, or null if there are no
      *         additional results.
      */
+
     public String getNextMarker() {
         return this.nextMarker;
     }
@@ -148,6 +154,7 @@ public class ListPrincipalPoliciesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListPrincipalPoliciesResult withNextMarker(String nextMarker) {
         setNextMarker(nextMarker);
         return this;

@@ -35,6 +35,7 @@ public class InstanceInformationFilter implements Serializable, Cloneable {
      *        The name of the filter.
      * @see InstanceInformationFilterKey
      */
+
     public void setKey(String key) {
         this.key = key;
     }
@@ -45,6 +46,7 @@ public class InstanceInformationFilter implements Serializable, Cloneable {
      * @return The name of the filter.
      * @see InstanceInformationFilterKey
      */
+
     public String getKey() {
         return this.key;
     }
@@ -58,6 +60,7 @@ public class InstanceInformationFilter implements Serializable, Cloneable {
      *         chained together.
      * @see InstanceInformationFilterKey
      */
+
     public InstanceInformationFilter withKey(String key) {
         setKey(key);
         return this;
@@ -72,6 +75,7 @@ public class InstanceInformationFilter implements Serializable, Cloneable {
      *         chained together.
      * @see InstanceInformationFilterKey
      */
+
     public void setKey(InstanceInformationFilterKey key) {
         this.key = key.toString();
     }
@@ -85,6 +89,7 @@ public class InstanceInformationFilter implements Serializable, Cloneable {
      *         chained together.
      * @see InstanceInformationFilterKey
      */
+
     public InstanceInformationFilter withKey(InstanceInformationFilterKey key) {
         setKey(key);
         return this;
@@ -95,6 +100,7 @@ public class InstanceInformationFilter implements Serializable, Cloneable {
      * 
      * @return The filter values.
      */
+
     public java.util.List<String> getValueSet() {
         if (valueSet == null) {
             valueSet = new com.amazonaws.internal.SdkInternalList<String>();
@@ -108,6 +114,7 @@ public class InstanceInformationFilter implements Serializable, Cloneable {
      * @param valueSet
      *        The filter values.
      */
+
     public void setValueSet(java.util.Collection<String> valueSet) {
         if (valueSet == null) {
             this.valueSet = null;
@@ -132,6 +139,7 @@ public class InstanceInformationFilter implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceInformationFilter withValueSet(String... valueSet) {
         if (this.valueSet == null) {
             setValueSet(new com.amazonaws.internal.SdkInternalList<String>(
@@ -151,6 +159,7 @@ public class InstanceInformationFilter implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceInformationFilter withValueSet(
             java.util.Collection<String> valueSet) {
         setValueSet(valueSet);

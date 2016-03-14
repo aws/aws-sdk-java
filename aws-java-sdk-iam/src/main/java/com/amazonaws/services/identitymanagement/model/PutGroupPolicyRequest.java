@@ -79,6 +79,7 @@ public class PutGroupPolicyRequest extends AmazonWebServiceRequest implements
      * @param groupName
      *        The name of the group to associate the policy with.
      */
+
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
@@ -90,6 +91,7 @@ public class PutGroupPolicyRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the group to associate the policy with.
      */
+
     public String getGroupName() {
         return this.groupName;
     }
@@ -104,6 +106,7 @@ public class PutGroupPolicyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutGroupPolicyRequest withGroupName(String groupName) {
         setGroupName(groupName);
         return this;
@@ -117,6 +120,7 @@ public class PutGroupPolicyRequest extends AmazonWebServiceRequest implements
      * @param policyName
      *        The name of the policy document.
      */
+
     public void setPolicyName(String policyName) {
         this.policyName = policyName;
     }
@@ -128,6 +132,7 @@ public class PutGroupPolicyRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the policy document.
      */
+
     public String getPolicyName() {
         return this.policyName;
     }
@@ -142,6 +147,7 @@ public class PutGroupPolicyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutGroupPolicyRequest withPolicyName(String policyName) {
         setPolicyName(policyName);
         return this;
@@ -155,6 +161,7 @@ public class PutGroupPolicyRequest extends AmazonWebServiceRequest implements
      * @param policyDocument
      *        The policy document.
      */
+
     public void setPolicyDocument(String policyDocument) {
         this.policyDocument = policyDocument;
     }
@@ -166,6 +173,7 @@ public class PutGroupPolicyRequest extends AmazonWebServiceRequest implements
      * 
      * @return The policy document.
      */
+
     public String getPolicyDocument() {
         return this.policyDocument;
     }
@@ -180,6 +188,7 @@ public class PutGroupPolicyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutGroupPolicyRequest withPolicyDocument(String policyDocument) {
         setPolicyDocument(policyDocument);
         return this;

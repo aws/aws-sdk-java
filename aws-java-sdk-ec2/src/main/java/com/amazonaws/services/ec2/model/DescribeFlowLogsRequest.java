@@ -95,6 +95,7 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements
      * 
      * @return One or more flow log IDs.
      */
+
     public java.util.List<String> getFlowLogIds() {
         if (flowLogIds == null) {
             flowLogIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -110,6 +111,7 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements
      * @param flowLogIds
      *        One or more flow log IDs.
      */
+
     public void setFlowLogIds(java.util.Collection<String> flowLogIds) {
         if (flowLogIds == null) {
             this.flowLogIds = null;
@@ -136,6 +138,7 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeFlowLogsRequest withFlowLogIds(String... flowLogIds) {
         if (this.flowLogIds == null) {
             setFlowLogIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -157,6 +160,7 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeFlowLogsRequest withFlowLogIds(
             java.util.Collection<String> flowLogIds) {
         setFlowLogIds(flowLogIds);
@@ -229,6 +233,7 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements
      *         </p>
      *         </li>
      */
+
     public java.util.List<Filter> getFilter() {
         if (filter == null) {
             filter = new com.amazonaws.internal.SdkInternalList<Filter>();
@@ -303,6 +308,7 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements
      *        </p>
      *        </li>
      */
+
     public void setFilter(java.util.Collection<Filter> filter) {
         if (filter == null) {
             this.filter = null;
@@ -387,6 +393,7 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeFlowLogsRequest withFilter(Filter... filter) {
         if (this.filter == null) {
             setFilter(new com.amazonaws.internal.SdkInternalList<Filter>(
@@ -467,6 +474,7 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeFlowLogsRequest withFilter(
             java.util.Collection<Filter> filter) {
         setFilter(filter);
@@ -481,6 +489,7 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements
      * @param nextToken
      *        The token to retrieve the next page of results.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -492,6 +501,7 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements
      * 
      * @return The token to retrieve the next page of results.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -506,6 +516,7 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeFlowLogsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -530,6 +541,7 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements
      *        specify this parameter and the flow log IDs parameter in the same
      *        request.
      */
+
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
     }
@@ -552,6 +564,7 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements
      *         You cannot specify this parameter and the flow log IDs parameter
      *         in the same request.
      */
+
     public Integer getMaxResults() {
         return this.maxResults;
     }
@@ -577,6 +590,7 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeFlowLogsRequest withMaxResults(Integer maxResults) {
         setMaxResults(maxResults);
         return this;

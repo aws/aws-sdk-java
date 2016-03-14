@@ -137,6 +137,7 @@ public class ListTrafficPolicyInstancesRequest extends AmazonWebServiceRequest
      *        was <code>false</code>, there are no more traffic policy instances
      *        to get.
      */
+
     public void setHostedZoneIdMarker(String hostedZoneIdMarker) {
         this.hostedZoneIdMarker = hostedZoneIdMarker;
     }
@@ -179,6 +180,7 @@ public class ListTrafficPolicyInstancesRequest extends AmazonWebServiceRequest
      *         was <code>false</code>, there are no more traffic policy
      *         instances to get.
      */
+
     public String getHostedZoneIdMarker() {
         return this.hostedZoneIdMarker;
     }
@@ -224,6 +226,7 @@ public class ListTrafficPolicyInstancesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTrafficPolicyInstancesRequest withHostedZoneIdMarker(
             String hostedZoneIdMarker) {
         setHostedZoneIdMarker(hostedZoneIdMarker);
@@ -261,6 +264,7 @@ public class ListTrafficPolicyInstancesRequest extends AmazonWebServiceRequest
      *        was <code>false</code>, there are no more traffic policy instances
      *        to get.
      */
+
     public void setTrafficPolicyInstanceNameMarker(
             String trafficPolicyInstanceNameMarker) {
         this.trafficPolicyInstanceNameMarker = trafficPolicyInstanceNameMarker;
@@ -296,6 +300,7 @@ public class ListTrafficPolicyInstancesRequest extends AmazonWebServiceRequest
      *         was <code>false</code>, there are no more traffic policy
      *         instances to get.
      */
+
     public String getTrafficPolicyInstanceNameMarker() {
         return this.trafficPolicyInstanceNameMarker;
     }
@@ -333,6 +338,7 @@ public class ListTrafficPolicyInstancesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTrafficPolicyInstancesRequest withTrafficPolicyInstanceNameMarker(
             String trafficPolicyInstanceNameMarker) {
         setTrafficPolicyInstanceNameMarker(trafficPolicyInstanceNameMarker);
@@ -371,6 +377,7 @@ public class ListTrafficPolicyInstancesRequest extends AmazonWebServiceRequest
      *        to get.
      * @see RRType
      */
+
     public void setTrafficPolicyInstanceTypeMarker(
             String trafficPolicyInstanceTypeMarker) {
         this.trafficPolicyInstanceTypeMarker = trafficPolicyInstanceTypeMarker;
@@ -407,6 +414,7 @@ public class ListTrafficPolicyInstancesRequest extends AmazonWebServiceRequest
      *         instances to get.
      * @see RRType
      */
+
     public String getTrafficPolicyInstanceTypeMarker() {
         return this.trafficPolicyInstanceTypeMarker;
     }
@@ -445,6 +453,7 @@ public class ListTrafficPolicyInstancesRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see RRType
      */
+
     public ListTrafficPolicyInstancesRequest withTrafficPolicyInstanceTypeMarker(
             String trafficPolicyInstanceTypeMarker) {
         setTrafficPolicyInstanceTypeMarker(trafficPolicyInstanceTypeMarker);
@@ -485,6 +494,7 @@ public class ListTrafficPolicyInstancesRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see RRType
      */
+
     public void setTrafficPolicyInstanceTypeMarker(
             RRType trafficPolicyInstanceTypeMarker) {
         this.trafficPolicyInstanceTypeMarker = trafficPolicyInstanceTypeMarker
@@ -525,6 +535,7 @@ public class ListTrafficPolicyInstancesRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see RRType
      */
+
     public ListTrafficPolicyInstancesRequest withTrafficPolicyInstanceTypeMarker(
             RRType trafficPolicyInstanceTypeMarker) {
         setTrafficPolicyInstanceTypeMarker(trafficPolicyInstanceTypeMarker);
@@ -556,6 +567,7 @@ public class ListTrafficPolicyInstancesRequest extends AmazonWebServiceRequest
      *        traffic policy instance in the next group of <code>MaxItems</code>
      *        traffic policy instances.
      */
+
     public void setMaxItems(String maxItems) {
         this.maxItems = maxItems;
     }
@@ -584,6 +596,7 @@ public class ListTrafficPolicyInstancesRequest extends AmazonWebServiceRequest
      *         traffic policy instance in the next group of
      *         <code>MaxItems</code> traffic policy instances.
      */
+
     public String getMaxItems() {
         return this.maxItems;
     }
@@ -615,6 +628,7 @@ public class ListTrafficPolicyInstancesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTrafficPolicyInstancesRequest withMaxItems(String maxItems) {
         setMaxItems(maxItems);
         return this;

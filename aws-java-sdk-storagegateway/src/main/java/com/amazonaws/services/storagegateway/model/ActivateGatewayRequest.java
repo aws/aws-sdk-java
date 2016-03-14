@@ -132,6 +132,7 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements
      *        <code>ActivateGateway</code> API call determine the actual
      *        configuration of your gateway.
      */
+
     public void setActivationKey(String activationKey) {
         this.activationKey = activationKey;
     }
@@ -158,6 +159,7 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements
      *         <code>ActivateGateway</code> API call determine the actual
      *         configuration of your gateway.
      */
+
     public String getActivationKey() {
         return this.activationKey;
     }
@@ -187,6 +189,7 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActivateGatewayRequest withActivationKey(String activationKey) {
         setActivationKey(activationKey);
         return this;
@@ -200,6 +203,7 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements
      * @param gatewayName
      *        The name you configured for your gateway.
      */
+
     public void setGatewayName(String gatewayName) {
         this.gatewayName = gatewayName;
     }
@@ -211,6 +215,7 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name you configured for your gateway.
      */
+
     public String getGatewayName() {
         return this.gatewayName;
     }
@@ -225,6 +230,7 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActivateGatewayRequest withGatewayName(String gatewayName) {
         setGatewayName(gatewayName);
         return this;
@@ -242,6 +248,7 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements
      *        gateway. The time zone is used, for example, for scheduling
      *        snapshots and your gateway's maintenance schedule.
      */
+
     public void setGatewayTimezone(String gatewayTimezone) {
         this.gatewayTimezone = gatewayTimezone;
     }
@@ -257,6 +264,7 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements
      *         gateway. The time zone is used, for example, for scheduling
      *         snapshots and your gateway's maintenance schedule.
      */
+
     public String getGatewayTimezone() {
         return this.gatewayTimezone;
     }
@@ -275,6 +283,7 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActivateGatewayRequest withGatewayTimezone(String gatewayTimezone) {
         setGatewayTimezone(gatewayTimezone);
         return this;
@@ -310,6 +319,7 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements
      *        "eu-west-1", "eu-central-1", "ap-northeast-1", "ap-southeast-1",
      *        "ap-southeast-2", "sa-east-1"
      */
+
     public void setGatewayRegion(String gatewayRegion) {
         this.gatewayRegion = gatewayRegion;
     }
@@ -343,6 +353,7 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements
      *         "eu-west-1", "eu-central-1", "ap-northeast-1", "ap-southeast-1",
      *         "ap-southeast-2", "sa-east-1"
      */
+
     public String getGatewayRegion() {
         return this.gatewayRegion;
     }
@@ -379,6 +390,7 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActivateGatewayRequest withGatewayRegion(String gatewayRegion) {
         setGatewayRegion(gatewayRegion);
         return this;
@@ -397,6 +409,7 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements
      *        cannot be changed after activation. The default value is
      *        <code>STORED</code>.
      */
+
     public void setGatewayType(String gatewayType) {
         this.gatewayType = gatewayType;
     }
@@ -413,6 +426,7 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements
      *         cannot be changed after activation. The default value is
      *         <code>STORED</code>.
      */
+
     public String getGatewayType() {
         return this.gatewayType;
     }
@@ -432,6 +446,7 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActivateGatewayRequest withGatewayType(String gatewayType) {
         setGatewayType(gatewayType);
         return this;
@@ -452,6 +467,7 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        <i>Valid Values</i>: "IBM-ULT3580-TD5"
      */
+
     public void setTapeDriveType(String tapeDriveType) {
         this.tapeDriveType = tapeDriveType;
     }
@@ -470,6 +486,7 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         <i>Valid Values</i>: "IBM-ULT3580-TD5"
      */
+
     public String getTapeDriveType() {
         return this.tapeDriveType;
     }
@@ -491,6 +508,7 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActivateGatewayRequest withTapeDriveType(String tapeDriveType) {
         setTapeDriveType(tapeDriveType);
         return this;
@@ -511,6 +529,7 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        <i>Valid Values</i>: "STK-L700", "AWS-Gateway-VTL"
      */
+
     public void setMediumChangerType(String mediumChangerType) {
         this.mediumChangerType = mediumChangerType;
     }
@@ -529,6 +548,7 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         <i>Valid Values</i>: "STK-L700", "AWS-Gateway-VTL"
      */
+
     public String getMediumChangerType() {
         return this.mediumChangerType;
     }
@@ -550,6 +570,7 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActivateGatewayRequest withMediumChangerType(String mediumChangerType) {
         setMediumChangerType(mediumChangerType);
         return this;

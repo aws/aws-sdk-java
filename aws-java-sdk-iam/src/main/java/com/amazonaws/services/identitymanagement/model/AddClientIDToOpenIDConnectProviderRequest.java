@@ -54,6 +54,7 @@ public class AddClientIDToOpenIDConnectProviderRequest extends
      *        provider ARNs by using the <a>ListOpenIDConnectProviders</a>
      *        action.
      */
+
     public void setOpenIDConnectProviderArn(String openIDConnectProviderArn) {
         this.openIDConnectProviderArn = openIDConnectProviderArn;
     }
@@ -70,6 +71,7 @@ public class AddClientIDToOpenIDConnectProviderRequest extends
      *         provider ARNs by using the <a>ListOpenIDConnectProviders</a>
      *         action.
      */
+
     public String getOpenIDConnectProviderArn() {
         return this.openIDConnectProviderArn;
     }
@@ -89,6 +91,7 @@ public class AddClientIDToOpenIDConnectProviderRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddClientIDToOpenIDConnectProviderRequest withOpenIDConnectProviderArn(
             String openIDConnectProviderArn) {
         setOpenIDConnectProviderArn(openIDConnectProviderArn);
@@ -105,6 +108,7 @@ public class AddClientIDToOpenIDConnectProviderRequest extends
      *        The client ID (also known as audience) to add to the IAM OpenID
      *        Connect provider.
      */
+
     public void setClientID(String clientID) {
         this.clientID = clientID;
     }
@@ -118,6 +122,7 @@ public class AddClientIDToOpenIDConnectProviderRequest extends
      * @return The client ID (also known as audience) to add to the IAM OpenID
      *         Connect provider.
      */
+
     public String getClientID() {
         return this.clientID;
     }
@@ -134,6 +139,7 @@ public class AddClientIDToOpenIDConnectProviderRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddClientIDToOpenIDConnectProviderRequest withClientID(
             String clientID) {
         setClientID(clientID);

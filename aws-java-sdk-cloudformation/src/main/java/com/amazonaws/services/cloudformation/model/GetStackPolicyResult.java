@@ -52,6 +52,7 @@ public class GetStackPolicyResult implements Serializable, Cloneable {
      *        > Prevent Updates to Stack Resources</a> in the AWS CloudFormation
      *        User Guide.)
      */
+
     public void setStackPolicyBody(String stackPolicyBody) {
         this.stackPolicyBody = stackPolicyBody;
     }
@@ -71,6 +72,7 @@ public class GetStackPolicyResult implements Serializable, Cloneable {
      *         > Prevent Updates to Stack Resources</a> in the AWS
      *         CloudFormation User Guide.)
      */
+
     public String getStackPolicyBody() {
         return this.stackPolicyBody;
     }
@@ -93,6 +95,7 @@ public class GetStackPolicyResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetStackPolicyResult withStackPolicyBody(String stackPolicyBody) {
         setStackPolicyBody(stackPolicyBody);
         return this;

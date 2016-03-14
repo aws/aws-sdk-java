@@ -71,6 +71,7 @@ public class CreateRoleRequest extends AmazonWebServiceRequest implements
      *        This parameter is optional. If it is not included, it defaults to
      *        a slash (/).
      */
+
     public void setPath(String path) {
         this.path = path;
     }
@@ -94,6 +95,7 @@ public class CreateRoleRequest extends AmazonWebServiceRequest implements
      *         This parameter is optional. If it is not included, it defaults to
      *         a slash (/).
      */
+
     public String getPath() {
         return this.path;
     }
@@ -120,6 +122,7 @@ public class CreateRoleRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateRoleRequest withPath(String path) {
         setPath(path);
         return this;
@@ -133,6 +136,7 @@ public class CreateRoleRequest extends AmazonWebServiceRequest implements
      * @param roleName
      *        The name of the role to create.
      */
+
     public void setRoleName(String roleName) {
         this.roleName = roleName;
     }
@@ -144,6 +148,7 @@ public class CreateRoleRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the role to create.
      */
+
     public String getRoleName() {
         return this.roleName;
     }
@@ -158,6 +163,7 @@ public class CreateRoleRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateRoleRequest withRoleName(String roleName) {
         setRoleName(roleName);
         return this;
@@ -173,6 +179,7 @@ public class CreateRoleRequest extends AmazonWebServiceRequest implements
      *        The trust relationship policy document that grants an entity
      *        permission to assume the role.
      */
+
     public void setAssumeRolePolicyDocument(String assumeRolePolicyDocument) {
         this.assumeRolePolicyDocument = assumeRolePolicyDocument;
     }
@@ -186,6 +193,7 @@ public class CreateRoleRequest extends AmazonWebServiceRequest implements
      * @return The trust relationship policy document that grants an entity
      *         permission to assume the role.
      */
+
     public String getAssumeRolePolicyDocument() {
         return this.assumeRolePolicyDocument;
     }
@@ -202,6 +210,7 @@ public class CreateRoleRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateRoleRequest withAssumeRolePolicyDocument(
             String assumeRolePolicyDocument) {
         setAssumeRolePolicyDocument(assumeRolePolicyDocument);

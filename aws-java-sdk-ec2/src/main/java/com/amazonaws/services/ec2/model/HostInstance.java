@@ -44,6 +44,7 @@ public class HostInstance implements Serializable, Cloneable {
      * @param instanceId
      *        the IDs of instances that are running on the Dedicated host.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -55,6 +56,7 @@ public class HostInstance implements Serializable, Cloneable {
      * 
      * @return the IDs of instances that are running on the Dedicated host.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
@@ -69,6 +71,7 @@ public class HostInstance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HostInstance withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;
@@ -82,6 +85,7 @@ public class HostInstance implements Serializable, Cloneable {
      * @param instanceType
      *        The instance type size (e.g., m3.medium) of the running instance.
      */
+
     public void setInstanceType(String instanceType) {
         this.instanceType = instanceType;
     }
@@ -93,6 +97,7 @@ public class HostInstance implements Serializable, Cloneable {
      * 
      * @return The instance type size (e.g., m3.medium) of the running instance.
      */
+
     public String getInstanceType() {
         return this.instanceType;
     }
@@ -107,6 +112,7 @@ public class HostInstance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HostInstance withInstanceType(String instanceType) {
         setInstanceType(instanceType);
         return this;

@@ -163,6 +163,7 @@ public class Operator implements Serializable, Cloneable {
      *        a pipeline should prefix their name with the string "my".
      * @see OperatorType
      */
+
     public void setType(String type) {
         this.type = type;
     }
@@ -252,6 +253,7 @@ public class Operator implements Serializable, Cloneable {
      *         to a pipeline should prefix their name with the string "my".
      * @see OperatorType
      */
+
     public String getType() {
         return this.type;
     }
@@ -344,6 +346,7 @@ public class Operator implements Serializable, Cloneable {
      *         chained together.
      * @see OperatorType
      */
+
     public Operator withType(String type) {
         setType(type);
         return this;
@@ -437,6 +440,7 @@ public class Operator implements Serializable, Cloneable {
      *         chained together.
      * @see OperatorType
      */
+
     public void setType(OperatorType type) {
         this.type = type.toString();
     }
@@ -529,6 +533,7 @@ public class Operator implements Serializable, Cloneable {
      *         chained together.
      * @see OperatorType
      */
+
     public Operator withType(OperatorType type) {
         setType(type);
         return this;
@@ -541,6 +546,7 @@ public class Operator implements Serializable, Cloneable {
      * 
      * @return The value that the actual field value will be compared with.
      */
+
     public java.util.List<String> getValues() {
         if (values == null) {
             values = new com.amazonaws.internal.SdkInternalList<String>();
@@ -556,6 +562,7 @@ public class Operator implements Serializable, Cloneable {
      * @param values
      *        The value that the actual field value will be compared with.
      */
+
     public void setValues(java.util.Collection<String> values) {
         if (values == null) {
             this.values = null;
@@ -581,6 +588,7 @@ public class Operator implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Operator withValues(String... values) {
         if (this.values == null) {
             setValues(new com.amazonaws.internal.SdkInternalList<String>(
@@ -602,6 +610,7 @@ public class Operator implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Operator withValues(java.util.Collection<String> values) {
         setValues(values);
         return this;

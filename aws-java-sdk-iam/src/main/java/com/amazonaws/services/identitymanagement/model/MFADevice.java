@@ -85,6 +85,7 @@ public class MFADevice implements Serializable, Cloneable {
      * @param userName
      *        The user with whom the MFA device is associated.
      */
+
     public void setUserName(String userName) {
         this.userName = userName;
     }
@@ -96,6 +97,7 @@ public class MFADevice implements Serializable, Cloneable {
      * 
      * @return The user with whom the MFA device is associated.
      */
+
     public String getUserName() {
         return this.userName;
     }
@@ -110,6 +112,7 @@ public class MFADevice implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MFADevice withUserName(String userName) {
         setUserName(userName);
         return this;
@@ -125,6 +128,7 @@ public class MFADevice implements Serializable, Cloneable {
      *        The serial number that uniquely identifies the MFA device. For
      *        virtual MFA devices, the serial number is the device ARN.
      */
+
     public void setSerialNumber(String serialNumber) {
         this.serialNumber = serialNumber;
     }
@@ -138,6 +142,7 @@ public class MFADevice implements Serializable, Cloneable {
      * @return The serial number that uniquely identifies the MFA device. For
      *         virtual MFA devices, the serial number is the device ARN.
      */
+
     public String getSerialNumber() {
         return this.serialNumber;
     }
@@ -154,6 +159,7 @@ public class MFADevice implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MFADevice withSerialNumber(String serialNumber) {
         setSerialNumber(serialNumber);
         return this;
@@ -167,6 +173,7 @@ public class MFADevice implements Serializable, Cloneable {
      * @param enableDate
      *        The date when the MFA device was enabled for the user.
      */
+
     public void setEnableDate(java.util.Date enableDate) {
         this.enableDate = enableDate;
     }
@@ -178,6 +185,7 @@ public class MFADevice implements Serializable, Cloneable {
      * 
      * @return The date when the MFA device was enabled for the user.
      */
+
     public java.util.Date getEnableDate() {
         return this.enableDate;
     }
@@ -192,6 +200,7 @@ public class MFADevice implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MFADevice withEnableDate(java.util.Date enableDate) {
         setEnableDate(enableDate);
         return this;

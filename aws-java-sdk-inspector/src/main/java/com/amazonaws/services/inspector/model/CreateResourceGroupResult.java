@@ -38,6 +38,7 @@ public class CreateResourceGroupResult implements Serializable, Cloneable {
      * @param resourceGroupArn
      *        The ARN specifying the resource group that is created.
      */
+
     public void setResourceGroupArn(String resourceGroupArn) {
         this.resourceGroupArn = resourceGroupArn;
     }
@@ -49,6 +50,7 @@ public class CreateResourceGroupResult implements Serializable, Cloneable {
      * 
      * @return The ARN specifying the resource group that is created.
      */
+
     public String getResourceGroupArn() {
         return this.resourceGroupArn;
     }
@@ -63,6 +65,7 @@ public class CreateResourceGroupResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateResourceGroupResult withResourceGroupArn(
             String resourceGroupArn) {
         setResourceGroupArn(resourceGroupArn);

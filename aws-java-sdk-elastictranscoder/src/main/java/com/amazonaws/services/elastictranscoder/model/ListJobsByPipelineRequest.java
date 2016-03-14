@@ -58,6 +58,7 @@ public class ListJobsByPipelineRequest extends AmazonWebServiceRequest
      * @param pipelineId
      *        The ID of the pipeline for which you want to get job information.
      */
+
     public void setPipelineId(String pipelineId) {
         this.pipelineId = pipelineId;
     }
@@ -69,6 +70,7 @@ public class ListJobsByPipelineRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the pipeline for which you want to get job information.
      */
+
     public String getPipelineId() {
         return this.pipelineId;
     }
@@ -83,6 +85,7 @@ public class ListJobsByPipelineRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListJobsByPipelineRequest withPipelineId(String pipelineId) {
         setPipelineId(pipelineId);
         return this;
@@ -100,6 +103,7 @@ public class ListJobsByPipelineRequest extends AmazonWebServiceRequest
      *        were submitted, enter <code>true</code>. To list jobs in reverse
      *        chronological order, enter <code>false</code>.
      */
+
     public void setAscending(String ascending) {
         this.ascending = ascending;
     }
@@ -115,6 +119,7 @@ public class ListJobsByPipelineRequest extends AmazonWebServiceRequest
      *         they were submitted, enter <code>true</code>. To list jobs in
      *         reverse chronological order, enter <code>false</code>.
      */
+
     public String getAscending() {
         return this.ascending;
     }
@@ -133,6 +138,7 @@ public class ListJobsByPipelineRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListJobsByPipelineRequest withAscending(String ascending) {
         setAscending(ascending);
         return this;
@@ -150,6 +156,7 @@ public class ListJobsByPipelineRequest extends AmazonWebServiceRequest
      *        <code>pageToken</code> in subsequent <code>GET</code> requests to
      *        get each successive page of results.
      */
+
     public void setPageToken(String pageToken) {
         this.pageToken = pageToken;
     }
@@ -165,6 +172,7 @@ public class ListJobsByPipelineRequest extends AmazonWebServiceRequest
      *         use <code>pageToken</code> in subsequent <code>GET</code>
      *         requests to get each successive page of results.
      */
+
     public String getPageToken() {
         return this.pageToken;
     }
@@ -183,6 +191,7 @@ public class ListJobsByPipelineRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListJobsByPipelineRequest withPageToken(String pageToken) {
         setPageToken(pageToken);
         return this;

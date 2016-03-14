@@ -84,6 +84,7 @@ public class Nameserver implements Serializable, Cloneable {
      *        <p>
      *        Parent: <code>Nameservers</code>
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -112,6 +113,7 @@ public class Nameserver implements Serializable, Cloneable {
      *         <p>
      *         Parent: <code>Nameservers</code>
      */
+
     public String getName() {
         return this.name;
     }
@@ -143,6 +145,7 @@ public class Nameserver implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Nameserver withName(String name) {
         setName(name);
         return this;
@@ -180,6 +183,7 @@ public class Nameserver implements Serializable, Cloneable {
      *         <p>
      *         Parent: <code>Nameservers</code>
      */
+
     public java.util.List<String> getGlueIps() {
         if (glueIps == null) {
             glueIps = new com.amazonaws.internal.SdkInternalList<String>();
@@ -220,6 +224,7 @@ public class Nameserver implements Serializable, Cloneable {
      *        <p>
      *        Parent: <code>Nameservers</code>
      */
+
     public void setGlueIps(java.util.Collection<String> glueIps) {
         if (glueIps == null) {
             this.glueIps = null;
@@ -271,6 +276,7 @@ public class Nameserver implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Nameserver withGlueIps(String... glueIps) {
         if (this.glueIps == null) {
             setGlueIps(new com.amazonaws.internal.SdkInternalList<String>(
@@ -317,6 +323,7 @@ public class Nameserver implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Nameserver withGlueIps(java.util.Collection<String> glueIps) {
         setGlueIps(glueIps);
         return this;

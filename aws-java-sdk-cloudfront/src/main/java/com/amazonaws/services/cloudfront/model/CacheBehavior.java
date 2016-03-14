@@ -159,6 +159,7 @@ public class CacheBehavior implements Serializable, Cloneable {
      *        match the path pattern for any cache behaviors, CloudFront applies
      *        the behavior in the default cache behavior.
      */
+
     public void setPathPattern(String pathPattern) {
         this.pathPattern = pathPattern;
     }
@@ -181,6 +182,7 @@ public class CacheBehavior implements Serializable, Cloneable {
      *         object does not match the path pattern for any cache behaviors,
      *         CloudFront applies the behavior in the default cache behavior.
      */
+
     public String getPathPattern() {
         return this.pathPattern;
     }
@@ -206,6 +208,7 @@ public class CacheBehavior implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CacheBehavior withPathPattern(String pathPattern) {
         setPathPattern(pathPattern);
         return this;
@@ -221,6 +224,7 @@ public class CacheBehavior implements Serializable, Cloneable {
      *        requests to when a request matches the path pattern either for a
      *        cache behavior or for the default cache behavior.
      */
+
     public void setTargetOriginId(String targetOriginId) {
         this.targetOriginId = targetOriginId;
     }
@@ -234,6 +238,7 @@ public class CacheBehavior implements Serializable, Cloneable {
      *         requests to when a request matches the path pattern either for a
      *         cache behavior or for the default cache behavior.
      */
+
     public String getTargetOriginId() {
         return this.targetOriginId;
     }
@@ -250,6 +255,7 @@ public class CacheBehavior implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CacheBehavior withTargetOriginId(String targetOriginId) {
         setTargetOriginId(targetOriginId);
         return this;
@@ -263,6 +269,7 @@ public class CacheBehavior implements Serializable, Cloneable {
      *        A complex type that specifies how CloudFront handles query
      *        strings, cookies and headers.
      */
+
     public void setForwardedValues(ForwardedValues forwardedValues) {
         this.forwardedValues = forwardedValues;
     }
@@ -274,6 +281,7 @@ public class CacheBehavior implements Serializable, Cloneable {
      * @return A complex type that specifies how CloudFront handles query
      *         strings, cookies and headers.
      */
+
     public ForwardedValues getForwardedValues() {
         return this.forwardedValues;
     }
@@ -288,6 +296,7 @@ public class CacheBehavior implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CacheBehavior withForwardedValues(ForwardedValues forwardedValues) {
         setForwardedValues(forwardedValues);
         return this;
@@ -322,6 +331,7 @@ public class CacheBehavior implements Serializable, Cloneable {
      *        as applicable, and specify all of the trusted signers that you
      *        want to include in the updated distribution.
      */
+
     public void setTrustedSigners(TrustedSigners trustedSigners) {
         this.trustedSigners = trustedSigners;
     }
@@ -355,6 +365,7 @@ public class CacheBehavior implements Serializable, Cloneable {
      *         trusted signers that you want to include in the updated
      *         distribution.
      */
+
     public TrustedSigners getTrustedSigners() {
         return this.trustedSigners;
     }
@@ -390,6 +401,7 @@ public class CacheBehavior implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CacheBehavior withTrustedSigners(TrustedSigners trustedSigners) {
         setTrustedSigners(trustedSigners);
         return this;
@@ -417,6 +429,7 @@ public class CacheBehavior implements Serializable, Cloneable {
      *        resubmits the request using the HTTPS URL.
      * @see ViewerProtocolPolicy
      */
+
     public void setViewerProtocolPolicy(String viewerProtocolPolicy) {
         this.viewerProtocolPolicy = viewerProtocolPolicy;
     }
@@ -442,6 +455,7 @@ public class CacheBehavior implements Serializable, Cloneable {
      *         resubmits the request using the HTTPS URL.
      * @see ViewerProtocolPolicy
      */
+
     public String getViewerProtocolPolicy() {
         return this.viewerProtocolPolicy;
     }
@@ -470,6 +484,7 @@ public class CacheBehavior implements Serializable, Cloneable {
      *         chained together.
      * @see ViewerProtocolPolicy
      */
+
     public CacheBehavior withViewerProtocolPolicy(String viewerProtocolPolicy) {
         setViewerProtocolPolicy(viewerProtocolPolicy);
         return this;
@@ -499,6 +514,7 @@ public class CacheBehavior implements Serializable, Cloneable {
      *         chained together.
      * @see ViewerProtocolPolicy
      */
+
     public void setViewerProtocolPolicy(
             ViewerProtocolPolicy viewerProtocolPolicy) {
         this.viewerProtocolPolicy = viewerProtocolPolicy.toString();
@@ -528,6 +544,7 @@ public class CacheBehavior implements Serializable, Cloneable {
      *         chained together.
      * @see ViewerProtocolPolicy
      */
+
     public CacheBehavior withViewerProtocolPolicy(
             ViewerProtocolPolicy viewerProtocolPolicy) {
         setViewerProtocolPolicy(viewerProtocolPolicy);
@@ -546,6 +563,7 @@ public class CacheBehavior implements Serializable, Cloneable {
      *        whether the object has been updated.You can specify a value from 0
      *        to 3,153,600,000 seconds (100 years).
      */
+
     public void setMinTTL(Long minTTL) {
         this.minTTL = minTTL;
     }
@@ -561,6 +579,7 @@ public class CacheBehavior implements Serializable, Cloneable {
      *         whether the object has been updated.You can specify a value from
      *         0 to 3,153,600,000 seconds (100 years).
      */
+
     public Long getMinTTL() {
         return this.minTTL;
     }
@@ -579,6 +598,7 @@ public class CacheBehavior implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CacheBehavior withMinTTL(Long minTTL) {
         setMinTTL(minTTL);
         return this;
@@ -587,6 +607,7 @@ public class CacheBehavior implements Serializable, Cloneable {
     /**
      * @param allowedMethods
      */
+
     public void setAllowedMethods(AllowedMethods allowedMethods) {
         this.allowedMethods = allowedMethods;
     }
@@ -594,6 +615,7 @@ public class CacheBehavior implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public AllowedMethods getAllowedMethods() {
         return this.allowedMethods;
     }
@@ -603,6 +625,7 @@ public class CacheBehavior implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CacheBehavior withAllowedMethods(AllowedMethods allowedMethods) {
         setAllowedMethods(allowedMethods);
         return this;
@@ -618,6 +641,7 @@ public class CacheBehavior implements Serializable, Cloneable {
      *        Smooth Streaming format using the origin that is associated with
      *        this cache behavior. If so, specify true; if not, specify false.
      */
+
     public void setSmoothStreaming(Boolean smoothStreaming) {
         this.smoothStreaming = smoothStreaming;
     }
@@ -631,6 +655,7 @@ public class CacheBehavior implements Serializable, Cloneable {
      *         Smooth Streaming format using the origin that is associated with
      *         this cache behavior. If so, specify true; if not, specify false.
      */
+
     public Boolean getSmoothStreaming() {
         return this.smoothStreaming;
     }
@@ -647,6 +672,7 @@ public class CacheBehavior implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CacheBehavior withSmoothStreaming(Boolean smoothStreaming) {
         setSmoothStreaming(smoothStreaming);
         return this;
@@ -661,6 +687,7 @@ public class CacheBehavior implements Serializable, Cloneable {
      *         Smooth Streaming format using the origin that is associated with
      *         this cache behavior. If so, specify true; if not, specify false.
      */
+
     public Boolean isSmoothStreaming() {
         return this.smoothStreaming;
     }
@@ -686,6 +713,7 @@ public class CacheBehavior implements Serializable, Cloneable {
      *        to objects. You can specify a value from 0 to 3,153,600,000
      *        seconds (100 years).
      */
+
     public void setDefaultTTL(Long defaultTTL) {
         this.defaultTTL = defaultTTL;
     }
@@ -710,6 +738,7 @@ public class CacheBehavior implements Serializable, Cloneable {
      *         Expires to objects. You can specify a value from 0 to
      *         3,153,600,000 seconds (100 years).
      */
+
     public Long getDefaultTTL() {
         return this.defaultTTL;
     }
@@ -737,6 +766,7 @@ public class CacheBehavior implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CacheBehavior withDefaultTTL(Long defaultTTL) {
         setDefaultTTL(defaultTTL);
         return this;
@@ -759,6 +789,7 @@ public class CacheBehavior implements Serializable, Cloneable {
      *        Expires to objects. You can specify a value from 0 to
      *        3,153,600,000 seconds (100 years).
      */
+
     public void setMaxTTL(Long maxTTL) {
         this.maxTTL = maxTTL;
     }
@@ -779,6 +810,7 @@ public class CacheBehavior implements Serializable, Cloneable {
      *         and Expires to objects. You can specify a value from 0 to
      *         3,153,600,000 seconds (100 years).
      */
+
     public Long getMaxTTL() {
         return this.maxTTL;
     }
@@ -802,6 +834,7 @@ public class CacheBehavior implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CacheBehavior withMaxTTL(Long maxTTL) {
         setMaxTTL(maxTTL);
         return this;
@@ -847,6 +880,7 @@ public class CacheBehavior implements Serializable, Cloneable {
      *        use the ETag header to determine whether an expired object in the
      *        CloudFront edge cache is still the latest version.
      */
+
     public void setCompress(Boolean compress) {
         this.compress = compress;
     }
@@ -890,6 +924,7 @@ public class CacheBehavior implements Serializable, Cloneable {
      *         use the ETag header to determine whether an expired object in the
      *         CloudFront edge cache is still the latest version.
      */
+
     public Boolean getCompress() {
         return this.compress;
     }
@@ -936,6 +971,7 @@ public class CacheBehavior implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CacheBehavior withCompress(Boolean compress) {
         setCompress(compress);
         return this;
@@ -980,6 +1016,7 @@ public class CacheBehavior implements Serializable, Cloneable {
      *         use the ETag header to determine whether an expired object in the
      *         CloudFront edge cache is still the latest version.
      */
+
     public Boolean isCompress() {
         return this.compress;
     }

@@ -39,6 +39,7 @@ public class DescribeTimeBasedAutoScalingRequest extends
      * 
      * @return An array of instance IDs.
      */
+
     public java.util.List<String> getInstanceIds() {
         if (instanceIds == null) {
             instanceIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -54,6 +55,7 @@ public class DescribeTimeBasedAutoScalingRequest extends
      * @param instanceIds
      *        An array of instance IDs.
      */
+
     public void setInstanceIds(java.util.Collection<String> instanceIds) {
         if (instanceIds == null) {
             this.instanceIds = null;
@@ -80,6 +82,7 @@ public class DescribeTimeBasedAutoScalingRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTimeBasedAutoScalingRequest withInstanceIds(
             String... instanceIds) {
         if (this.instanceIds == null) {
@@ -102,6 +105,7 @@ public class DescribeTimeBasedAutoScalingRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTimeBasedAutoScalingRequest withInstanceIds(
             java.util.Collection<String> instanceIds) {
         setInstanceIds(instanceIds);

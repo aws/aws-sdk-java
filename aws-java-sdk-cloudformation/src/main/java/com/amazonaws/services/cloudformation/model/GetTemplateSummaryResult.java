@@ -90,6 +90,7 @@ public class GetTemplateSummaryResult implements Serializable, Cloneable {
      * @return A list of parameter declarations that describe various properties
      *         for each parameter.
      */
+
     public java.util.List<ParameterDeclaration> getParameters() {
         if (parameters == null) {
             parameters = new com.amazonaws.internal.SdkInternalList<ParameterDeclaration>();
@@ -107,6 +108,7 @@ public class GetTemplateSummaryResult implements Serializable, Cloneable {
      *        A list of parameter declarations that describe various properties
      *        for each parameter.
      */
+
     public void setParameters(
             java.util.Collection<ParameterDeclaration> parameters) {
         if (parameters == null) {
@@ -136,6 +138,7 @@ public class GetTemplateSummaryResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetTemplateSummaryResult withParameters(
             ParameterDeclaration... parameters) {
         if (this.parameters == null) {
@@ -160,6 +163,7 @@ public class GetTemplateSummaryResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetTemplateSummaryResult withParameters(
             java.util.Collection<ParameterDeclaration> parameters) {
         setParameters(parameters);
@@ -176,6 +180,7 @@ public class GetTemplateSummaryResult implements Serializable, Cloneable {
      *        The value that is defined in the <code>Description</code> property
      *        of the template.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -189,6 +194,7 @@ public class GetTemplateSummaryResult implements Serializable, Cloneable {
      * @return The value that is defined in the <code>Description</code>
      *         property of the template.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -205,6 +211,7 @@ public class GetTemplateSummaryResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetTemplateSummaryResult withDescription(String description) {
         setDescription(description);
         return this;
@@ -229,6 +236,7 @@ public class GetTemplateSummaryResult implements Serializable, Cloneable {
      *         InsufficientCapabilities error.
      * @see Capability
      */
+
     public java.util.List<String> getCapabilities() {
         if (capabilities == null) {
             capabilities = new com.amazonaws.internal.SdkInternalList<String>();
@@ -256,6 +264,7 @@ public class GetTemplateSummaryResult implements Serializable, Cloneable {
      *        InsufficientCapabilities error.
      * @see Capability
      */
+
     public void setCapabilities(java.util.Collection<String> capabilities) {
         if (capabilities == null) {
             this.capabilities = null;
@@ -294,6 +303,7 @@ public class GetTemplateSummaryResult implements Serializable, Cloneable {
      *         chained together.
      * @see Capability
      */
+
     public GetTemplateSummaryResult withCapabilities(String... capabilities) {
         if (this.capabilities == null) {
             setCapabilities(new com.amazonaws.internal.SdkInternalList<String>(
@@ -327,6 +337,7 @@ public class GetTemplateSummaryResult implements Serializable, Cloneable {
      *         chained together.
      * @see Capability
      */
+
     public GetTemplateSummaryResult withCapabilities(
             java.util.Collection<String> capabilities) {
         setCapabilities(capabilities);
@@ -355,6 +366,7 @@ public class GetTemplateSummaryResult implements Serializable, Cloneable {
      *         chained together.
      * @see Capability
      */
+
     public GetTemplateSummaryResult withCapabilities(Capability... capabilities) {
         com.amazonaws.internal.SdkInternalList<String> capabilitiesCopy = new com.amazonaws.internal.SdkInternalList<String>(
                 capabilities.length);
@@ -379,6 +391,7 @@ public class GetTemplateSummaryResult implements Serializable, Cloneable {
      *        The list of resources that generated the values in the
      *        <code>Capabilities</code> response element.
      */
+
     public void setCapabilitiesReason(String capabilitiesReason) {
         this.capabilitiesReason = capabilitiesReason;
     }
@@ -392,6 +405,7 @@ public class GetTemplateSummaryResult implements Serializable, Cloneable {
      * @return The list of resources that generated the values in the
      *         <code>Capabilities</code> response element.
      */
+
     public String getCapabilitiesReason() {
         return this.capabilitiesReason;
     }
@@ -408,6 +422,7 @@ public class GetTemplateSummaryResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetTemplateSummaryResult withCapabilitiesReason(
             String capabilitiesReason) {
         setCapabilitiesReason(capabilitiesReason);
@@ -427,6 +442,7 @@ public class GetTemplateSummaryResult implements Serializable, Cloneable {
      *         <code>AWS::Dynamo::Table</code>, and
      *         <code>Custom::MyCustomInstance</code>.
      */
+
     public java.util.List<String> getResourceTypes() {
         if (resourceTypes == null) {
             resourceTypes = new com.amazonaws.internal.SdkInternalList<String>();
@@ -448,6 +464,7 @@ public class GetTemplateSummaryResult implements Serializable, Cloneable {
      *        <code>AWS::Dynamo::Table</code>, and
      *        <code>Custom::MyCustomInstance</code>.
      */
+
     public void setResourceTypes(java.util.Collection<String> resourceTypes) {
         if (resourceTypes == null) {
             this.resourceTypes = null;
@@ -480,6 +497,7 @@ public class GetTemplateSummaryResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetTemplateSummaryResult withResourceTypes(String... resourceTypes) {
         if (this.resourceTypes == null) {
             setResourceTypes(new com.amazonaws.internal.SdkInternalList<String>(
@@ -507,6 +525,7 @@ public class GetTemplateSummaryResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetTemplateSummaryResult withResourceTypes(
             java.util.Collection<String> resourceTypes) {
         setResourceTypes(resourceTypes);
@@ -523,6 +542,7 @@ public class GetTemplateSummaryResult implements Serializable, Cloneable {
      *        The AWS template format version, which identifies the capabilities
      *        of the template.
      */
+
     public void setVersion(String version) {
         this.version = version;
     }
@@ -536,6 +556,7 @@ public class GetTemplateSummaryResult implements Serializable, Cloneable {
      * @return The AWS template format version, which identifies the
      *         capabilities of the template.
      */
+
     public String getVersion() {
         return this.version;
     }
@@ -552,6 +573,7 @@ public class GetTemplateSummaryResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetTemplateSummaryResult withVersion(String version) {
         setVersion(version);
         return this;
@@ -567,6 +589,7 @@ public class GetTemplateSummaryResult implements Serializable, Cloneable {
      *        The value that is defined for the <code>Metadata</code> property
      *        of the template.
      */
+
     public void setMetadata(String metadata) {
         this.metadata = metadata;
     }
@@ -580,6 +603,7 @@ public class GetTemplateSummaryResult implements Serializable, Cloneable {
      * @return The value that is defined for the <code>Metadata</code> property
      *         of the template.
      */
+
     public String getMetadata() {
         return this.metadata;
     }
@@ -596,6 +620,7 @@ public class GetTemplateSummaryResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetTemplateSummaryResult withMetadata(String metadata) {
         setMetadata(metadata);
         return this;

@@ -87,6 +87,7 @@ public class CreateElasticsearchDomainRequest extends AmazonWebServiceRequest
      *        can contain the following characters: a-z (lowercase), 0-9, and -
      *        (hyphen).
      */
+
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
@@ -105,6 +106,7 @@ public class CreateElasticsearchDomainRequest extends AmazonWebServiceRequest
      *         number and can contain the following characters: a-z (lowercase),
      *         0-9, and - (hyphen).
      */
+
     public String getDomainName() {
         return this.domainName;
     }
@@ -126,6 +128,7 @@ public class CreateElasticsearchDomainRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateElasticsearchDomainRequest withDomainName(String domainName) {
         setDomainName(domainName);
         return this;
@@ -141,6 +144,7 @@ public class CreateElasticsearchDomainRequest extends AmazonWebServiceRequest
      *        Configuration options for an Elasticsearch domain. Specifies the
      *        instance type and number of instances in the domain cluster.
      */
+
     public void setElasticsearchClusterConfig(
             ElasticsearchClusterConfig elasticsearchClusterConfig) {
         this.elasticsearchClusterConfig = elasticsearchClusterConfig;
@@ -155,6 +159,7 @@ public class CreateElasticsearchDomainRequest extends AmazonWebServiceRequest
      * @return Configuration options for an Elasticsearch domain. Specifies the
      *         instance type and number of instances in the domain cluster.
      */
+
     public ElasticsearchClusterConfig getElasticsearchClusterConfig() {
         return this.elasticsearchClusterConfig;
     }
@@ -171,6 +176,7 @@ public class CreateElasticsearchDomainRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateElasticsearchDomainRequest withElasticsearchClusterConfig(
             ElasticsearchClusterConfig elasticsearchClusterConfig) {
         setElasticsearchClusterConfig(elasticsearchClusterConfig);
@@ -187,6 +193,7 @@ public class CreateElasticsearchDomainRequest extends AmazonWebServiceRequest
      *        Options to enable, disable and specify the type and size of EBS
      *        storage volumes.
      */
+
     public void setEBSOptions(EBSOptions eBSOptions) {
         this.eBSOptions = eBSOptions;
     }
@@ -200,6 +207,7 @@ public class CreateElasticsearchDomainRequest extends AmazonWebServiceRequest
      * @return Options to enable, disable and specify the type and size of EBS
      *         storage volumes.
      */
+
     public EBSOptions getEBSOptions() {
         return this.eBSOptions;
     }
@@ -216,6 +224,7 @@ public class CreateElasticsearchDomainRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateElasticsearchDomainRequest withEBSOptions(EBSOptions eBSOptions) {
         setEBSOptions(eBSOptions);
         return this;
@@ -229,6 +238,7 @@ public class CreateElasticsearchDomainRequest extends AmazonWebServiceRequest
      * @param accessPolicies
      *        IAM access policy as a JSON-formatted string.
      */
+
     public void setAccessPolicies(String accessPolicies) {
         this.accessPolicies = accessPolicies;
     }
@@ -240,6 +250,7 @@ public class CreateElasticsearchDomainRequest extends AmazonWebServiceRequest
      * 
      * @return IAM access policy as a JSON-formatted string.
      */
+
     public String getAccessPolicies() {
         return this.accessPolicies;
     }
@@ -254,6 +265,7 @@ public class CreateElasticsearchDomainRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateElasticsearchDomainRequest withAccessPolicies(
             String accessPolicies) {
         setAccessPolicies(accessPolicies);
@@ -270,6 +282,7 @@ public class CreateElasticsearchDomainRequest extends AmazonWebServiceRequest
      *        Option to set time, in UTC format, of the daily automated
      *        snapshot. Default value is 0 hours.
      */
+
     public void setSnapshotOptions(SnapshotOptions snapshotOptions) {
         this.snapshotOptions = snapshotOptions;
     }
@@ -283,6 +296,7 @@ public class CreateElasticsearchDomainRequest extends AmazonWebServiceRequest
      * @return Option to set time, in UTC format, of the daily automated
      *         snapshot. Default value is 0 hours.
      */
+
     public SnapshotOptions getSnapshotOptions() {
         return this.snapshotOptions;
     }
@@ -299,6 +313,7 @@ public class CreateElasticsearchDomainRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateElasticsearchDomainRequest withSnapshotOptions(
             SnapshotOptions snapshotOptions) {
         setSnapshotOptions(snapshotOptions);
@@ -322,6 +337,7 @@ public class CreateElasticsearchDomainRequest extends AmazonWebServiceRequest
      *         target="_blank">Configuration Advanced Options</a> for more
      *         information.
      */
+
     public java.util.Map<String, String> getAdvancedOptions() {
         return advancedOptions;
     }
@@ -344,6 +360,7 @@ public class CreateElasticsearchDomainRequest extends AmazonWebServiceRequest
      *        target="_blank">Configuration Advanced Options</a> for more
      *        information.
      */
+
     public void setAdvancedOptions(java.util.Map<String, String> advancedOptions) {
         this.advancedOptions = advancedOptions;
     }
@@ -368,6 +385,7 @@ public class CreateElasticsearchDomainRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateElasticsearchDomainRequest withAdvancedOptions(
             java.util.Map<String, String> advancedOptions) {
         setAdvancedOptions(advancedOptions);
@@ -390,6 +408,7 @@ public class CreateElasticsearchDomainRequest extends AmazonWebServiceRequest
      * Removes all the entries added into AdvancedOptions. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public CreateElasticsearchDomainRequest clearAdvancedOptionsEntries() {
         this.advancedOptions = null;
         return this;

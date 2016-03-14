@@ -24,8 +24,8 @@ import com.amazonaws.AmazonServiceException;
  * than are allowed or you've requested too many certificates for your account.
  * See the exception message returned by ACM to determine which limit you have
  * violated. For more information about ACM limits, see the <a
- * href="http://docs.amazon.com/acm/latest/userguide/limits.html">Limits</a>
- * topic.
+ * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html"
+ * >Limits</a> topic.
  * </p>
  */
 public class LimitExceededException extends AmazonServiceException {

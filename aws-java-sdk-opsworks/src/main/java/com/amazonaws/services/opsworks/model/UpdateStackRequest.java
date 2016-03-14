@@ -266,6 +266,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * @param stackId
      *        The stack ID.
      */
+
     public void setStackId(String stackId) {
         this.stackId = stackId;
     }
@@ -277,6 +278,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * 
      * @return The stack ID.
      */
+
     public String getStackId() {
         return this.stackId;
     }
@@ -291,6 +293,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateStackRequest withStackId(String stackId) {
         setStackId(stackId);
         return this;
@@ -304,6 +307,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * @param name
      *        The stack's new name.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -315,6 +319,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * 
      * @return The stack's new name.
      */
+
     public String getName() {
         return this.name;
     }
@@ -329,6 +334,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateStackRequest withName(String name) {
         setName(name);
         return this;
@@ -343,6 +349,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * @return One or more user-defined key-value pairs to be added to the stack
      *         attributes.
      */
+
     public java.util.Map<String, String> getAttributes() {
         if (attributes == null) {
             attributes = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -360,6 +367,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *        One or more user-defined key-value pairs to be added to the stack
      *        attributes.
      */
+
     public void setAttributes(java.util.Map<String, String> attributes) {
         this.attributes = attributes == null ? null
                 : new com.amazonaws.internal.SdkInternalMap<String, String>(
@@ -378,6 +386,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateStackRequest withAttributes(
             java.util.Map<String, String> attributes) {
         setAttributes(attributes);
@@ -399,6 +408,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * Removes all the entries added into Attributes. &lt;p> Returns a reference
      * to this object so that method calls can be chained together.
      */
+
     public UpdateStackRequest clearAttributesEntries() {
         this.attributes = null;
         return this;
@@ -413,6 +423,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *        Do not use this parameter. You cannot update a stack's service
      *        role.
      */
+
     public void setServiceRoleArn(String serviceRoleArn) {
         this.serviceRoleArn = serviceRoleArn;
     }
@@ -425,6 +436,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * @return Do not use this parameter. You cannot update a stack's service
      *         role.
      */
+
     public String getServiceRoleArn() {
         return this.serviceRoleArn;
     }
@@ -440,6 +452,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateStackRequest withServiceRoleArn(String serviceRoleArn) {
         setServiceRoleArn(serviceRoleArn);
         return this;
@@ -460,6 +473,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *        >Using Identifiers</a>.
      */
+
     public void setDefaultInstanceProfileArn(String defaultInstanceProfileArn) {
         this.defaultInstanceProfileArn = defaultInstanceProfileArn;
     }
@@ -478,6 +492,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *         >Using Identifiers</a>.
      */
+
     public String getDefaultInstanceProfileArn() {
         return this.defaultInstanceProfileArn;
     }
@@ -499,6 +514,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateStackRequest withDefaultInstanceProfileArn(
             String defaultInstanceProfileArn) {
         setDefaultInstanceProfileArn(defaultInstanceProfileArn);
@@ -549,6 +565,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html"
      *        >AWS OpsWorks Operating Systems</a>.
      */
+
     public void setDefaultOs(String defaultOs) {
         this.defaultOs = defaultOs;
     }
@@ -596,6 +613,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *         "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html"
      *         >AWS OpsWorks Operating Systems</a>.
      */
+
     public String getDefaultOs() {
         return this.defaultOs;
     }
@@ -646,6 +664,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateStackRequest withDefaultOs(String defaultOs) {
         setDefaultOs(defaultOs);
         return this;
@@ -702,6 +721,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *        <code>GetHostNameSuggestion</code>, which returns a host name
      *        based on the current theme.
      */
+
     public void setHostnameTheme(String hostnameTheme) {
         this.hostnameTheme = hostnameTheme;
     }
@@ -756,6 +776,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *         <code>GetHostNameSuggestion</code>, which returns a host name
      *         based on the current theme.
      */
+
     public String getHostnameTheme() {
         return this.hostnameTheme;
     }
@@ -813,6 +834,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateStackRequest withHostnameTheme(String hostnameTheme) {
         setHostnameTheme(hostnameTheme);
         return this;
@@ -836,6 +858,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *        <code>DefaultSubnetId</code>, the subnet must be in the same zone.
      *        For more information, see <a>CreateStack</a>.
      */
+
     public void setDefaultAvailabilityZone(String defaultAvailabilityZone) {
         this.defaultAvailabilityZone = defaultAvailabilityZone;
     }
@@ -857,6 +880,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *         <code>DefaultSubnetId</code>, the subnet must be in the same
      *         zone. For more information, see <a>CreateStack</a>.
      */
+
     public String getDefaultAvailabilityZone() {
         return this.defaultAvailabilityZone;
     }
@@ -881,6 +905,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateStackRequest withDefaultAvailabilityZone(
             String defaultAvailabilityZone) {
         setDefaultAvailabilityZone(defaultAvailabilityZone);
@@ -908,6 +933,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *        parameter is required, see the <code>VpcId</code> parameter
      *        description.
      */
+
     public void setDefaultSubnetId(String defaultSubnetId) {
         this.defaultSubnetId = defaultSubnetId;
     }
@@ -932,6 +958,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *         parameter is required, see the <code>VpcId</code> parameter
      *         description.
      */
+
     public String getDefaultSubnetId() {
         return this.defaultSubnetId;
     }
@@ -959,6 +986,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateStackRequest withDefaultSubnetId(String defaultSubnetId) {
         setDefaultSubnetId(defaultSubnetId);
         return this;
@@ -993,6 +1021,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html"
      *        >Use Custom JSON to Modify the Stack Configuration Attributes</a>.
      */
+
     public void setCustomJson(String customJson) {
         this.customJson = customJson;
     }
@@ -1026,6 +1055,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *         >Use Custom JSON to Modify the Stack Configuration
      *         Attributes</a>.
      */
+
     public String getCustomJson() {
         return this.customJson;
     }
@@ -1061,6 +1091,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateStackRequest withCustomJson(String customJson) {
         setCustomJson(customJson);
         return this;
@@ -1080,6 +1111,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *        version: 12, 11.10, or 11.4 for Linux stacks, or 12.2 for Windows
      *        stacks. The default value for Linux stacks is currently 11.4.
      */
+
     public void setConfigurationManager(
             StackConfigurationManager configurationManager) {
         this.configurationManager = configurationManager;
@@ -1098,6 +1130,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *         version: 12, 11.10, or 11.4 for Linux stacks, or 12.2 for Windows
      *         stacks. The default value for Linux stacks is currently 11.4.
      */
+
     public StackConfigurationManager getConfigurationManager() {
         return this.configurationManager;
     }
@@ -1118,6 +1151,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateStackRequest withConfigurationManager(
             StackConfigurationManager configurationManager) {
         setConfigurationManager(configurationManager);
@@ -1140,6 +1174,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html"
      *        >Create a New Stack</a>.
      */
+
     public void setChefConfiguration(ChefConfiguration chefConfiguration) {
         this.chefConfiguration = chefConfiguration;
     }
@@ -1159,6 +1194,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *         "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html"
      *         >Create a New Stack</a>.
      */
+
     public ChefConfiguration getChefConfiguration() {
         return this.chefConfiguration;
     }
@@ -1181,6 +1217,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateStackRequest withChefConfiguration(
             ChefConfiguration chefConfiguration) {
         setChefConfiguration(chefConfiguration);
@@ -1195,6 +1232,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * @param useCustomCookbooks
      *        Whether the stack uses custom cookbooks.
      */
+
     public void setUseCustomCookbooks(Boolean useCustomCookbooks) {
         this.useCustomCookbooks = useCustomCookbooks;
     }
@@ -1206,6 +1244,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * 
      * @return Whether the stack uses custom cookbooks.
      */
+
     public Boolean getUseCustomCookbooks() {
         return this.useCustomCookbooks;
     }
@@ -1220,6 +1259,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateStackRequest withUseCustomCookbooks(Boolean useCustomCookbooks) {
         setUseCustomCookbooks(useCustomCookbooks);
         return this;
@@ -1232,6 +1272,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * 
      * @return Whether the stack uses custom cookbooks.
      */
+
     public Boolean isUseCustomCookbooks() {
         return this.useCustomCookbooks;
     }
@@ -1239,6 +1280,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
     /**
      * @param customCookbooksSource
      */
+
     public void setCustomCookbooksSource(Source customCookbooksSource) {
         this.customCookbooksSource = customCookbooksSource;
     }
@@ -1246,6 +1288,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public Source getCustomCookbooksSource() {
         return this.customCookbooksSource;
     }
@@ -1255,6 +1298,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateStackRequest withCustomCookbooksSource(
             Source customCookbooksSource) {
         setCustomCookbooksSource(customCookbooksSource);
@@ -1290,6 +1334,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html"
      *        > create an instance</a>.
      */
+
     public void setDefaultSshKeyName(String defaultSshKeyName) {
         this.defaultSshKeyName = defaultSshKeyName;
     }
@@ -1323,6 +1368,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *         "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html"
      *         > create an instance</a>.
      */
+
     public String getDefaultSshKeyName() {
         return this.defaultSshKeyName;
     }
@@ -1358,6 +1404,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateStackRequest withDefaultSshKeyName(String defaultSshKeyName) {
         setDefaultSshKeyName(defaultSshKeyName);
         return this;
@@ -1380,6 +1427,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *        >Storage for the Root Device</a>.
      * @see RootDeviceType
      */
+
     public void setDefaultRootDeviceType(String defaultRootDeviceType) {
         this.defaultRootDeviceType = defaultRootDeviceType;
     }
@@ -1400,6 +1448,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *         >Storage for the Root Device</a>.
      * @see RootDeviceType
      */
+
     public String getDefaultRootDeviceType() {
         return this.defaultRootDeviceType;
     }
@@ -1423,6 +1472,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see RootDeviceType
      */
+
     public UpdateStackRequest withDefaultRootDeviceType(
             String defaultRootDeviceType) {
         setDefaultRootDeviceType(defaultRootDeviceType);
@@ -1448,6 +1498,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see RootDeviceType
      */
+
     public void setDefaultRootDeviceType(RootDeviceType defaultRootDeviceType) {
         this.defaultRootDeviceType = defaultRootDeviceType.toString();
     }
@@ -1471,6 +1522,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see RootDeviceType
      */
+
     public UpdateStackRequest withDefaultRootDeviceType(
             RootDeviceType defaultRootDeviceType) {
         setDefaultRootDeviceType(defaultRootDeviceType);
@@ -1534,6 +1586,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html"
      *        >Create a New Stack</a>.
      */
+
     public void setUseOpsworksSecurityGroups(Boolean useOpsworksSecurityGroups) {
         this.useOpsworksSecurityGroups = useOpsworksSecurityGroups;
     }
@@ -1595,6 +1648,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *         "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html"
      *         >Create a New Stack</a>.
      */
+
     public Boolean getUseOpsworksSecurityGroups() {
         return this.useOpsworksSecurityGroups;
     }
@@ -1658,6 +1712,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateStackRequest withUseOpsworksSecurityGroups(
             Boolean useOpsworksSecurityGroups) {
         setUseOpsworksSecurityGroups(useOpsworksSecurityGroups);
@@ -1721,6 +1776,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *         "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html"
      *         >Create a New Stack</a>.
      */
+
     public Boolean isUseOpsworksSecurityGroups() {
         return this.useOpsworksSecurityGroups;
     }
@@ -1768,6 +1824,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *        <note>You can also specify an agent version when you create or
      *        update an instance, which overrides the stack's default setting.
      */
+
     public void setAgentVersion(String agentVersion) {
         this.agentVersion = agentVersion;
     }
@@ -1814,6 +1871,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *         <note>You can also specify an agent version when you create or
      *         update an instance, which overrides the stack's default setting.
      */
+
     public String getAgentVersion() {
         return this.agentVersion;
     }
@@ -1863,6 +1921,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateStackRequest withAgentVersion(String agentVersion) {
         setAgentVersion(agentVersion);
         return this;

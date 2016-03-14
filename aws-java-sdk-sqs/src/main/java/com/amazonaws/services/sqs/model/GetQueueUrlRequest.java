@@ -72,6 +72,7 @@ public class GetQueueUrlRequest extends AmazonWebServiceRequest implements
      *        characters; alphanumeric characters, hyphens (-), and underscores
      *        (_) are allowed.
      */
+
     public void setQueueName(String queueName) {
         this.queueName = queueName;
     }
@@ -86,6 +87,7 @@ public class GetQueueUrlRequest extends AmazonWebServiceRequest implements
      *         characters; alphanumeric characters, hyphens (-), and underscores
      *         (_) are allowed.
      */
+
     public String getQueueName() {
         return this.queueName;
     }
@@ -103,6 +105,7 @@ public class GetQueueUrlRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetQueueUrlRequest withQueueName(String queueName) {
         setQueueName(queueName);
         return this;
@@ -116,6 +119,7 @@ public class GetQueueUrlRequest extends AmazonWebServiceRequest implements
      * @param queueOwnerAWSAccountId
      *        The AWS account ID of the account that created the queue.
      */
+
     public void setQueueOwnerAWSAccountId(String queueOwnerAWSAccountId) {
         this.queueOwnerAWSAccountId = queueOwnerAWSAccountId;
     }
@@ -127,6 +131,7 @@ public class GetQueueUrlRequest extends AmazonWebServiceRequest implements
      * 
      * @return The AWS account ID of the account that created the queue.
      */
+
     public String getQueueOwnerAWSAccountId() {
         return this.queueOwnerAWSAccountId;
     }
@@ -141,6 +146,7 @@ public class GetQueueUrlRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetQueueUrlRequest withQueueOwnerAWSAccountId(
             String queueOwnerAWSAccountId) {
         setQueueOwnerAWSAccountId(queueOwnerAWSAccountId);

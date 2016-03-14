@@ -47,6 +47,7 @@ public class MovingAddressStatus implements Serializable, Cloneable {
      * @param publicIp
      *        The Elastic IP address.
      */
+
     public void setPublicIp(String publicIp) {
         this.publicIp = publicIp;
     }
@@ -58,6 +59,7 @@ public class MovingAddressStatus implements Serializable, Cloneable {
      * 
      * @return The Elastic IP address.
      */
+
     public String getPublicIp() {
         return this.publicIp;
     }
@@ -72,6 +74,7 @@ public class MovingAddressStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MovingAddressStatus withPublicIp(String publicIp) {
         setPublicIp(publicIp);
         return this;
@@ -88,6 +91,7 @@ public class MovingAddressStatus implements Serializable, Cloneable {
      *        EC2-VPC platform, or restored to the EC2-Classic platform.
      * @see MoveStatus
      */
+
     public void setMoveStatus(String moveStatus) {
         this.moveStatus = moveStatus;
     }
@@ -102,6 +106,7 @@ public class MovingAddressStatus implements Serializable, Cloneable {
      *         EC2-VPC platform, or restored to the EC2-Classic platform.
      * @see MoveStatus
      */
+
     public String getMoveStatus() {
         return this.moveStatus;
     }
@@ -119,6 +124,7 @@ public class MovingAddressStatus implements Serializable, Cloneable {
      *         chained together.
      * @see MoveStatus
      */
+
     public MovingAddressStatus withMoveStatus(String moveStatus) {
         setMoveStatus(moveStatus);
         return this;
@@ -137,6 +143,7 @@ public class MovingAddressStatus implements Serializable, Cloneable {
      *         chained together.
      * @see MoveStatus
      */
+
     public void setMoveStatus(MoveStatus moveStatus) {
         this.moveStatus = moveStatus.toString();
     }
@@ -154,6 +161,7 @@ public class MovingAddressStatus implements Serializable, Cloneable {
      *         chained together.
      * @see MoveStatus
      */
+
     public MovingAddressStatus withMoveStatus(MoveStatus moveStatus) {
         setMoveStatus(moveStatus);
         return this;

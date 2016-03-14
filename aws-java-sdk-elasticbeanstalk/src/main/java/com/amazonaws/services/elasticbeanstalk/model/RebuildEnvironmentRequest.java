@@ -65,6 +65,7 @@ public class RebuildEnvironmentRequest extends AmazonWebServiceRequest
      *        both. If you do not specify either, AWS Elastic Beanstalk returns
      *        <code>MissingRequiredParameter</code> error.
      */
+
     public void setEnvironmentId(String environmentId) {
         this.environmentId = environmentId;
     }
@@ -85,6 +86,7 @@ public class RebuildEnvironmentRequest extends AmazonWebServiceRequest
      *         both. If you do not specify either, AWS Elastic Beanstalk returns
      *         <code>MissingRequiredParameter</code> error.
      */
+
     public String getEnvironmentId() {
         return this.environmentId;
     }
@@ -108,6 +110,7 @@ public class RebuildEnvironmentRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RebuildEnvironmentRequest withEnvironmentId(String environmentId) {
         setEnvironmentId(environmentId);
         return this;
@@ -130,6 +133,7 @@ public class RebuildEnvironmentRequest extends AmazonWebServiceRequest
      *        both. If you do not specify either, AWS Elastic Beanstalk returns
      *        <code>MissingRequiredParameter</code> error.
      */
+
     public void setEnvironmentName(String environmentName) {
         this.environmentName = environmentName;
     }
@@ -150,6 +154,7 @@ public class RebuildEnvironmentRequest extends AmazonWebServiceRequest
      *         both. If you do not specify either, AWS Elastic Beanstalk returns
      *         <code>MissingRequiredParameter</code> error.
      */
+
     public String getEnvironmentName() {
         return this.environmentName;
     }
@@ -173,6 +178,7 @@ public class RebuildEnvironmentRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RebuildEnvironmentRequest withEnvironmentName(String environmentName) {
         setEnvironmentName(environmentName);
         return this;

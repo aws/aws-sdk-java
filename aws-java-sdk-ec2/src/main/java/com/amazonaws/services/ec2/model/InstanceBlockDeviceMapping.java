@@ -50,6 +50,7 @@ public class InstanceBlockDeviceMapping implements Serializable, Cloneable {
      *        The device name exposed to the instance (for example,
      *        <code>/dev/sdh</code> or <code>xvdh</code>).
      */
+
     public void setDeviceName(String deviceName) {
         this.deviceName = deviceName;
     }
@@ -63,6 +64,7 @@ public class InstanceBlockDeviceMapping implements Serializable, Cloneable {
      * @return The device name exposed to the instance (for example,
      *         <code>/dev/sdh</code> or <code>xvdh</code>).
      */
+
     public String getDeviceName() {
         return this.deviceName;
     }
@@ -79,6 +81,7 @@ public class InstanceBlockDeviceMapping implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceBlockDeviceMapping withDeviceName(String deviceName) {
         setDeviceName(deviceName);
         return this;
@@ -94,6 +97,7 @@ public class InstanceBlockDeviceMapping implements Serializable, Cloneable {
      *        Parameters used to automatically set up EBS volumes when the
      *        instance is launched.
      */
+
     public void setEbs(EbsInstanceBlockDevice ebs) {
         this.ebs = ebs;
     }
@@ -107,6 +111,7 @@ public class InstanceBlockDeviceMapping implements Serializable, Cloneable {
      * @return Parameters used to automatically set up EBS volumes when the
      *         instance is launched.
      */
+
     public EbsInstanceBlockDevice getEbs() {
         return this.ebs;
     }
@@ -123,6 +128,7 @@ public class InstanceBlockDeviceMapping implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceBlockDeviceMapping withEbs(EbsInstanceBlockDevice ebs) {
         setEbs(ebs);
         return this;

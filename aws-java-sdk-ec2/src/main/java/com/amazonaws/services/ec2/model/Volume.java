@@ -128,6 +128,7 @@ public class Volume implements Serializable, Cloneable {
      * @param volumeId
      *        The ID of the volume.
      */
+
     public void setVolumeId(String volumeId) {
         this.volumeId = volumeId;
     }
@@ -139,6 +140,7 @@ public class Volume implements Serializable, Cloneable {
      * 
      * @return The ID of the volume.
      */
+
     public String getVolumeId() {
         return this.volumeId;
     }
@@ -153,6 +155,7 @@ public class Volume implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Volume withVolumeId(String volumeId) {
         setVolumeId(volumeId);
         return this;
@@ -166,6 +169,7 @@ public class Volume implements Serializable, Cloneable {
      * @param size
      *        The size of the volume, in GiBs.
      */
+
     public void setSize(Integer size) {
         this.size = size;
     }
@@ -177,6 +181,7 @@ public class Volume implements Serializable, Cloneable {
      * 
      * @return The size of the volume, in GiBs.
      */
+
     public Integer getSize() {
         return this.size;
     }
@@ -191,6 +196,7 @@ public class Volume implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Volume withSize(Integer size) {
         setSize(size);
         return this;
@@ -204,6 +210,7 @@ public class Volume implements Serializable, Cloneable {
      * @param snapshotId
      *        The snapshot from which the volume was created, if applicable.
      */
+
     public void setSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
     }
@@ -215,6 +222,7 @@ public class Volume implements Serializable, Cloneable {
      * 
      * @return The snapshot from which the volume was created, if applicable.
      */
+
     public String getSnapshotId() {
         return this.snapshotId;
     }
@@ -229,6 +237,7 @@ public class Volume implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Volume withSnapshotId(String snapshotId) {
         setSnapshotId(snapshotId);
         return this;
@@ -242,6 +251,7 @@ public class Volume implements Serializable, Cloneable {
      * @param availabilityZone
      *        The Availability Zone for the volume.
      */
+
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
@@ -253,6 +263,7 @@ public class Volume implements Serializable, Cloneable {
      * 
      * @return The Availability Zone for the volume.
      */
+
     public String getAvailabilityZone() {
         return this.availabilityZone;
     }
@@ -267,6 +278,7 @@ public class Volume implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Volume withAvailabilityZone(String availabilityZone) {
         setAvailabilityZone(availabilityZone);
         return this;
@@ -281,6 +293,7 @@ public class Volume implements Serializable, Cloneable {
      *        The volume state.
      * @see VolumeState
      */
+
     public void setState(String state) {
         this.state = state;
     }
@@ -293,6 +306,7 @@ public class Volume implements Serializable, Cloneable {
      * @return The volume state.
      * @see VolumeState
      */
+
     public String getState() {
         return this.state;
     }
@@ -308,6 +322,7 @@ public class Volume implements Serializable, Cloneable {
      *         chained together.
      * @see VolumeState
      */
+
     public Volume withState(String state) {
         setState(state);
         return this;
@@ -324,6 +339,7 @@ public class Volume implements Serializable, Cloneable {
      *         chained together.
      * @see VolumeState
      */
+
     public void setState(VolumeState state) {
         this.state = state.toString();
     }
@@ -339,6 +355,7 @@ public class Volume implements Serializable, Cloneable {
      *         chained together.
      * @see VolumeState
      */
+
     public Volume withState(VolumeState state) {
         setState(state);
         return this;
@@ -352,6 +369,7 @@ public class Volume implements Serializable, Cloneable {
      * @param createTime
      *        The time stamp when volume creation was initiated.
      */
+
     public void setCreateTime(java.util.Date createTime) {
         this.createTime = createTime;
     }
@@ -363,6 +381,7 @@ public class Volume implements Serializable, Cloneable {
      * 
      * @return The time stamp when volume creation was initiated.
      */
+
     public java.util.Date getCreateTime() {
         return this.createTime;
     }
@@ -377,6 +396,7 @@ public class Volume implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Volume withCreateTime(java.util.Date createTime) {
         setCreateTime(createTime);
         return this;
@@ -389,6 +409,7 @@ public class Volume implements Serializable, Cloneable {
      * 
      * @return Information about the volume attachments.
      */
+
     public java.util.List<VolumeAttachment> getAttachments() {
         if (attachments == null) {
             attachments = new com.amazonaws.internal.SdkInternalList<VolumeAttachment>();
@@ -404,6 +425,7 @@ public class Volume implements Serializable, Cloneable {
      * @param attachments
      *        Information about the volume attachments.
      */
+
     public void setAttachments(
             java.util.Collection<VolumeAttachment> attachments) {
         if (attachments == null) {
@@ -431,6 +453,7 @@ public class Volume implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Volume withAttachments(VolumeAttachment... attachments) {
         if (this.attachments == null) {
             setAttachments(new com.amazonaws.internal.SdkInternalList<VolumeAttachment>(
@@ -452,6 +475,7 @@ public class Volume implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Volume withAttachments(
             java.util.Collection<VolumeAttachment> attachments) {
         setAttachments(attachments);
@@ -465,6 +489,7 @@ public class Volume implements Serializable, Cloneable {
      * 
      * @return Any tags assigned to the volume.
      */
+
     public java.util.List<Tag> getTags() {
         if (tags == null) {
             tags = new com.amazonaws.internal.SdkInternalList<Tag>();
@@ -480,6 +505,7 @@ public class Volume implements Serializable, Cloneable {
      * @param tags
      *        Any tags assigned to the volume.
      */
+
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
             this.tags = null;
@@ -505,6 +531,7 @@ public class Volume implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Volume withTags(Tag... tags) {
         if (this.tags == null) {
             setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
@@ -525,6 +552,7 @@ public class Volume implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Volume withTags(java.util.Collection<Tag> tags) {
         setTags(tags);
         return this;
@@ -543,6 +571,7 @@ public class Volume implements Serializable, Cloneable {
      *        volumes, or <code>standard</code> for Magnetic volumes.
      * @see VolumeType
      */
+
     public void setVolumeType(String volumeType) {
         this.volumeType = volumeType;
     }
@@ -559,6 +588,7 @@ public class Volume implements Serializable, Cloneable {
      *         volumes, or <code>standard</code> for Magnetic volumes.
      * @see VolumeType
      */
+
     public String getVolumeType() {
         return this.volumeType;
     }
@@ -578,6 +608,7 @@ public class Volume implements Serializable, Cloneable {
      *         chained together.
      * @see VolumeType
      */
+
     public Volume withVolumeType(String volumeType) {
         setVolumeType(volumeType);
         return this;
@@ -598,6 +629,7 @@ public class Volume implements Serializable, Cloneable {
      *         chained together.
      * @see VolumeType
      */
+
     public void setVolumeType(VolumeType volumeType) {
         this.volumeType = volumeType.toString();
     }
@@ -617,6 +649,7 @@ public class Volume implements Serializable, Cloneable {
      *         chained together.
      * @see VolumeType
      */
+
     public Volume withVolumeType(VolumeType volumeType) {
         setVolumeType(volumeType);
         return this;
@@ -666,6 +699,7 @@ public class Volume implements Serializable, Cloneable {
      *        <code>io1</code> volumes; it is not used in requests to create
      *        <code>standard</code> or <code>gp2</code> volumes.
      */
+
     public void setIops(Integer iops) {
         this.iops = iops;
     }
@@ -713,6 +747,7 @@ public class Volume implements Serializable, Cloneable {
      *         <code>io1</code> volumes; it is not used in requests to create
      *         <code>standard</code> or <code>gp2</code> volumes.
      */
+
     public Integer getIops() {
         return this.iops;
     }
@@ -763,6 +798,7 @@ public class Volume implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Volume withIops(Integer iops) {
         setIops(iops);
         return this;
@@ -776,6 +812,7 @@ public class Volume implements Serializable, Cloneable {
      * @param encrypted
      *        Indicates whether the volume will be encrypted.
      */
+
     public void setEncrypted(Boolean encrypted) {
         this.encrypted = encrypted;
     }
@@ -787,6 +824,7 @@ public class Volume implements Serializable, Cloneable {
      * 
      * @return Indicates whether the volume will be encrypted.
      */
+
     public Boolean getEncrypted() {
         return this.encrypted;
     }
@@ -801,6 +839,7 @@ public class Volume implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Volume withEncrypted(Boolean encrypted) {
         setEncrypted(encrypted);
         return this;
@@ -813,6 +852,7 @@ public class Volume implements Serializable, Cloneable {
      * 
      * @return Indicates whether the volume will be encrypted.
      */
+
     public Boolean isEncrypted() {
         return this.encrypted;
     }
@@ -829,6 +869,7 @@ public class Volume implements Serializable, Cloneable {
      *        master key (CMK) that was used to protect the volume encryption
      *        key for the volume.
      */
+
     public void setKmsKeyId(String kmsKeyId) {
         this.kmsKeyId = kmsKeyId;
     }
@@ -844,6 +885,7 @@ public class Volume implements Serializable, Cloneable {
      *         master key (CMK) that was used to protect the volume encryption
      *         key for the volume.
      */
+
     public String getKmsKeyId() {
         return this.kmsKeyId;
     }
@@ -862,6 +904,7 @@ public class Volume implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Volume withKmsKeyId(String kmsKeyId) {
         setKmsKeyId(kmsKeyId);
         return this;

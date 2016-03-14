@@ -20,9 +20,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Exception thrown when performing the requested operation would cause a
- * conflict with the current state of a resource associated with the request
- * and/or the game instance. Requests that result in failures of this type
+ * The requested operation would cause a conflict with the current state of a
+ * resource associated with the request and/or the game instance. Such requests
  * should not be retried by clients without resolving the conflict.
  * </p>
  */

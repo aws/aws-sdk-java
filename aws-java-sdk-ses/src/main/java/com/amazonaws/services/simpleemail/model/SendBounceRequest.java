@@ -82,6 +82,7 @@ public class SendBounceRequest extends AmazonWebServiceRequest implements
      * @param originalMessageId
      *        The message ID of the message to be bounced.
      */
+
     public void setOriginalMessageId(String originalMessageId) {
         this.originalMessageId = originalMessageId;
     }
@@ -93,6 +94,7 @@ public class SendBounceRequest extends AmazonWebServiceRequest implements
      * 
      * @return The message ID of the message to be bounced.
      */
+
     public String getOriginalMessageId() {
         return this.originalMessageId;
     }
@@ -107,6 +109,7 @@ public class SendBounceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendBounceRequest withOriginalMessageId(String originalMessageId) {
         setOriginalMessageId(originalMessageId);
         return this;
@@ -122,6 +125,7 @@ public class SendBounceRequest extends AmazonWebServiceRequest implements
      *        The address to use in the "From" header of the bounce message.
      *        This must be an identity that you have verified with Amazon SES.
      */
+
     public void setBounceSender(String bounceSender) {
         this.bounceSender = bounceSender;
     }
@@ -135,6 +139,7 @@ public class SendBounceRequest extends AmazonWebServiceRequest implements
      * @return The address to use in the "From" header of the bounce message.
      *         This must be an identity that you have verified with Amazon SES.
      */
+
     public String getBounceSender() {
         return this.bounceSender;
     }
@@ -151,6 +156,7 @@ public class SendBounceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendBounceRequest withBounceSender(String bounceSender) {
         setBounceSender(bounceSender);
         return this;
@@ -168,6 +174,7 @@ public class SendBounceRequest extends AmazonWebServiceRequest implements
      *        If not specified, the text will be auto-generated based on the
      *        bounced recipient information.
      */
+
     public void setExplanation(String explanation) {
         this.explanation = explanation;
     }
@@ -183,6 +190,7 @@ public class SendBounceRequest extends AmazonWebServiceRequest implements
      *         failure. If not specified, the text will be auto-generated based
      *         on the bounced recipient information.
      */
+
     public String getExplanation() {
         return this.explanation;
     }
@@ -201,6 +209,7 @@ public class SendBounceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendBounceRequest withExplanation(String explanation) {
         setExplanation(explanation);
         return this;
@@ -216,6 +225,7 @@ public class SendBounceRequest extends AmazonWebServiceRequest implements
      *        Message-related DSN fields. If not specified, Amazon SES will
      *        choose the values.
      */
+
     public void setMessageDsn(MessageDsn messageDsn) {
         this.messageDsn = messageDsn;
     }
@@ -229,6 +239,7 @@ public class SendBounceRequest extends AmazonWebServiceRequest implements
      * @return Message-related DSN fields. If not specified, Amazon SES will
      *         choose the values.
      */
+
     public MessageDsn getMessageDsn() {
         return this.messageDsn;
     }
@@ -245,6 +256,7 @@ public class SendBounceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendBounceRequest withMessageDsn(MessageDsn messageDsn) {
         setMessageDsn(messageDsn);
         return this;
@@ -263,6 +275,7 @@ public class SendBounceRequest extends AmazonWebServiceRequest implements
      *         (DSNs) for the recipients. You must specify at least one
      *         <code>BouncedRecipientInfo</code> in the list.
      */
+
     public java.util.List<BouncedRecipientInfo> getBouncedRecipientInfoList() {
         if (bouncedRecipientInfoList == null) {
             bouncedRecipientInfoList = new com.amazonaws.internal.SdkInternalList<BouncedRecipientInfo>();
@@ -284,6 +297,7 @@ public class SendBounceRequest extends AmazonWebServiceRequest implements
      *        (DSNs) for the recipients. You must specify at least one
      *        <code>BouncedRecipientInfo</code> in the list.
      */
+
     public void setBouncedRecipientInfoList(
             java.util.Collection<BouncedRecipientInfo> bouncedRecipientInfoList) {
         if (bouncedRecipientInfoList == null) {
@@ -317,6 +331,7 @@ public class SendBounceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendBounceRequest withBouncedRecipientInfoList(
             BouncedRecipientInfo... bouncedRecipientInfoList) {
         if (this.bouncedRecipientInfoList == null) {
@@ -345,6 +360,7 @@ public class SendBounceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendBounceRequest withBouncedRecipientInfoList(
             java.util.Collection<BouncedRecipientInfo> bouncedRecipientInfoList) {
         setBouncedRecipientInfoList(bouncedRecipientInfoList);
@@ -370,6 +386,7 @@ public class SendBounceRequest extends AmazonWebServiceRequest implements
      *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html"
      *        >Amazon SES Developer Guide</a>.
      */
+
     public void setBounceSenderArn(String bounceSenderArn) {
         this.bounceSenderArn = bounceSenderArn;
     }
@@ -392,6 +409,7 @@ public class SendBounceRequest extends AmazonWebServiceRequest implements
      *         "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html"
      *         >Amazon SES Developer Guide</a>.
      */
+
     public String getBounceSenderArn() {
         return this.bounceSenderArn;
     }
@@ -417,6 +435,7 @@ public class SendBounceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendBounceRequest withBounceSenderArn(String bounceSenderArn) {
         setBounceSenderArn(bounceSenderArn);
         return this;

@@ -64,6 +64,7 @@ public class AccessLog implements Serializable, Cloneable {
      * @param enabled
      *        Specifies whether access log is enabled for the load balancer.
      */
+
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
     }
@@ -75,6 +76,7 @@ public class AccessLog implements Serializable, Cloneable {
      * 
      * @return Specifies whether access log is enabled for the load balancer.
      */
+
     public Boolean getEnabled() {
         return this.enabled;
     }
@@ -89,6 +91,7 @@ public class AccessLog implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AccessLog withEnabled(Boolean enabled) {
         setEnabled(enabled);
         return this;
@@ -101,6 +104,7 @@ public class AccessLog implements Serializable, Cloneable {
      * 
      * @return Specifies whether access log is enabled for the load balancer.
      */
+
     public Boolean isEnabled() {
         return this.enabled;
     }
@@ -113,6 +117,7 @@ public class AccessLog implements Serializable, Cloneable {
      * @param s3BucketName
      *        The name of the Amazon S3 bucket where the access logs are stored.
      */
+
     public void setS3BucketName(String s3BucketName) {
         this.s3BucketName = s3BucketName;
     }
@@ -125,6 +130,7 @@ public class AccessLog implements Serializable, Cloneable {
      * @return The name of the Amazon S3 bucket where the access logs are
      *         stored.
      */
+
     public String getS3BucketName() {
         return this.s3BucketName;
     }
@@ -139,6 +145,7 @@ public class AccessLog implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AccessLog withS3BucketName(String s3BucketName) {
         setS3BucketName(s3BucketName);
         return this;
@@ -159,6 +166,7 @@ public class AccessLog implements Serializable, Cloneable {
      *        <p>
      *        Default: 60 minutes
      */
+
     public void setEmitInterval(Integer emitInterval) {
         this.emitInterval = emitInterval;
     }
@@ -177,6 +185,7 @@ public class AccessLog implements Serializable, Cloneable {
      *         <p>
      *         Default: 60 minutes
      */
+
     public Integer getEmitInterval() {
         return this.emitInterval;
     }
@@ -198,6 +207,7 @@ public class AccessLog implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AccessLog withEmitInterval(Integer emitInterval) {
         setEmitInterval(emitInterval);
         return this;
@@ -215,6 +225,7 @@ public class AccessLog implements Serializable, Cloneable {
      *        example <code>my-bucket-prefix/prod</code>. If the prefix is not
      *        provided, the log is placed at the root level of the bucket.
      */
+
     public void setS3BucketPrefix(String s3BucketPrefix) {
         this.s3BucketPrefix = s3BucketPrefix;
     }
@@ -230,6 +241,7 @@ public class AccessLog implements Serializable, Cloneable {
      *         example <code>my-bucket-prefix/prod</code>. If the prefix is not
      *         provided, the log is placed at the root level of the bucket.
      */
+
     public String getS3BucketPrefix() {
         return this.s3BucketPrefix;
     }
@@ -248,6 +260,7 @@ public class AccessLog implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AccessLog withS3BucketPrefix(String s3BucketPrefix) {
         setS3BucketPrefix(s3BucketPrefix);
         return this;

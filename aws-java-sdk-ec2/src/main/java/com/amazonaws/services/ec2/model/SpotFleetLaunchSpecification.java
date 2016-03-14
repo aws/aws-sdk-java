@@ -158,6 +158,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * @param imageId
      *        The ID of the AMI.
      */
+
     public void setImageId(String imageId) {
         this.imageId = imageId;
     }
@@ -169,6 +170,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * 
      * @return The ID of the AMI.
      */
+
     public String getImageId() {
         return this.imageId;
     }
@@ -183,6 +185,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SpotFleetLaunchSpecification withImageId(String imageId) {
         setImageId(imageId);
         return this;
@@ -196,6 +199,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * @param keyName
      *        The name of the key pair.
      */
+
     public void setKeyName(String keyName) {
         this.keyName = keyName;
     }
@@ -207,6 +211,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * 
      * @return The name of the key pair.
      */
+
     public String getKeyName() {
         return this.keyName;
     }
@@ -221,6 +226,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SpotFleetLaunchSpecification withKeyName(String keyName) {
         setKeyName(keyName);
         return this;
@@ -238,6 +244,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      *         instances in EC2-Classic, you can specify the names or the IDs of
      *         the security groups.
      */
+
     public java.util.List<GroupIdentifier> getSecurityGroups() {
         if (securityGroups == null) {
             securityGroups = new com.amazonaws.internal.SdkInternalList<GroupIdentifier>();
@@ -258,6 +265,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      *        instances in EC2-Classic, you can specify the names or the IDs of
      *        the security groups.
      */
+
     public void setSecurityGroups(
             java.util.Collection<GroupIdentifier> securityGroups) {
         if (securityGroups == null) {
@@ -290,6 +298,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SpotFleetLaunchSpecification withSecurityGroups(
             GroupIdentifier... securityGroups) {
         if (this.securityGroups == null) {
@@ -317,6 +326,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SpotFleetLaunchSpecification withSecurityGroups(
             java.util.Collection<GroupIdentifier> securityGroups) {
         setSecurityGroups(securityGroups);
@@ -332,6 +342,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      *        The Base64-encoded MIME user data to make available to the
      *        instances.
      */
+
     public void setUserData(String userData) {
         this.userData = userData;
     }
@@ -344,6 +355,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * @return The Base64-encoded MIME user data to make available to the
      *         instances.
      */
+
     public String getUserData() {
         return this.userData;
     }
@@ -359,6 +371,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SpotFleetLaunchSpecification withUserData(String userData) {
         setUserData(userData);
         return this;
@@ -372,6 +385,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * @param addressingType
      *        Deprecated.
      */
+
     public void setAddressingType(String addressingType) {
         this.addressingType = addressingType;
     }
@@ -383,6 +397,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * 
      * @return Deprecated.
      */
+
     public String getAddressingType() {
         return this.addressingType;
     }
@@ -397,6 +412,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SpotFleetLaunchSpecification withAddressingType(String addressingType) {
         setAddressingType(addressingType);
         return this;
@@ -411,6 +427,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      *        The instance type.
      * @see InstanceType
      */
+
     public void setInstanceType(String instanceType) {
         this.instanceType = instanceType;
     }
@@ -423,6 +440,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * @return The instance type.
      * @see InstanceType
      */
+
     public String getInstanceType() {
         return this.instanceType;
     }
@@ -438,6 +456,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      *         chained together.
      * @see InstanceType
      */
+
     public SpotFleetLaunchSpecification withInstanceType(String instanceType) {
         setInstanceType(instanceType);
         return this;
@@ -454,6 +473,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      *         chained together.
      * @see InstanceType
      */
+
     public void setInstanceType(InstanceType instanceType) {
         this.instanceType = instanceType.toString();
     }
@@ -469,6 +489,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      *         chained together.
      * @see InstanceType
      */
+
     public SpotFleetLaunchSpecification withInstanceType(
             InstanceType instanceType) {
         setInstanceType(instanceType);
@@ -483,6 +504,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * @param placement
      *        The placement information.
      */
+
     public void setPlacement(SpotPlacement placement) {
         this.placement = placement;
     }
@@ -494,6 +516,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * 
      * @return The placement information.
      */
+
     public SpotPlacement getPlacement() {
         return this.placement;
     }
@@ -508,6 +531,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SpotFleetLaunchSpecification withPlacement(SpotPlacement placement) {
         setPlacement(placement);
         return this;
@@ -521,6 +545,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * @param kernelId
      *        The ID of the kernel.
      */
+
     public void setKernelId(String kernelId) {
         this.kernelId = kernelId;
     }
@@ -532,6 +557,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * 
      * @return The ID of the kernel.
      */
+
     public String getKernelId() {
         return this.kernelId;
     }
@@ -546,6 +572,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SpotFleetLaunchSpecification withKernelId(String kernelId) {
         setKernelId(kernelId);
         return this;
@@ -559,6 +586,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * @param ramdiskId
      *        The ID of the RAM disk.
      */
+
     public void setRamdiskId(String ramdiskId) {
         this.ramdiskId = ramdiskId;
     }
@@ -570,6 +598,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * 
      * @return The ID of the RAM disk.
      */
+
     public String getRamdiskId() {
         return this.ramdiskId;
     }
@@ -584,6 +613,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SpotFleetLaunchSpecification withRamdiskId(String ramdiskId) {
         setRamdiskId(ramdiskId);
         return this;
@@ -596,6 +626,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * 
      * @return One or more block device mapping entries.
      */
+
     public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
         if (blockDeviceMappings == null) {
             blockDeviceMappings = new com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>();
@@ -611,6 +642,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * @param blockDeviceMappings
      *        One or more block device mapping entries.
      */
+
     public void setBlockDeviceMappings(
             java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
         if (blockDeviceMappings == null) {
@@ -638,6 +670,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SpotFleetLaunchSpecification withBlockDeviceMappings(
             BlockDeviceMapping... blockDeviceMappings) {
         if (this.blockDeviceMappings == null) {
@@ -660,6 +693,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SpotFleetLaunchSpecification withBlockDeviceMappings(
             java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
         setBlockDeviceMappings(blockDeviceMappings);
@@ -674,6 +708,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * @param monitoring
      *        Enable or disable monitoring for the instances.
      */
+
     public void setMonitoring(SpotFleetMonitoring monitoring) {
         this.monitoring = monitoring;
     }
@@ -685,6 +720,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * 
      * @return Enable or disable monitoring for the instances.
      */
+
     public SpotFleetMonitoring getMonitoring() {
         return this.monitoring;
     }
@@ -699,6 +735,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SpotFleetLaunchSpecification withMonitoring(
             SpotFleetMonitoring monitoring) {
         setMonitoring(monitoring);
@@ -717,6 +754,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      *        multiple subnets, separate them using commas; for example,
      *        "subnet-a61dafcf, subnet-65ea5f08".
      */
+
     public void setSubnetId(String subnetId) {
         this.subnetId = subnetId;
     }
@@ -732,6 +770,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      *         multiple subnets, separate them using commas; for example,
      *         "subnet-a61dafcf, subnet-65ea5f08".
      */
+
     public String getSubnetId() {
         return this.subnetId;
     }
@@ -750,6 +789,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SpotFleetLaunchSpecification withSubnetId(String subnetId) {
         setSubnetId(subnetId);
         return this;
@@ -762,6 +802,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * 
      * @return One or more network interfaces.
      */
+
     public java.util.List<InstanceNetworkInterfaceSpecification> getNetworkInterfaces() {
         if (networkInterfaces == null) {
             networkInterfaces = new com.amazonaws.internal.SdkInternalList<InstanceNetworkInterfaceSpecification>();
@@ -777,6 +818,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * @param networkInterfaces
      *        One or more network interfaces.
      */
+
     public void setNetworkInterfaces(
             java.util.Collection<InstanceNetworkInterfaceSpecification> networkInterfaces) {
         if (networkInterfaces == null) {
@@ -804,6 +846,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SpotFleetLaunchSpecification withNetworkInterfaces(
             InstanceNetworkInterfaceSpecification... networkInterfaces) {
         if (this.networkInterfaces == null) {
@@ -826,6 +869,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SpotFleetLaunchSpecification withNetworkInterfaces(
             java.util.Collection<InstanceNetworkInterfaceSpecification> networkInterfaces) {
         setNetworkInterfaces(networkInterfaces);
@@ -840,6 +884,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * @param iamInstanceProfile
      *        The IAM instance profile.
      */
+
     public void setIamInstanceProfile(
             IamInstanceProfileSpecification iamInstanceProfile) {
         this.iamInstanceProfile = iamInstanceProfile;
@@ -852,6 +897,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * 
      * @return The IAM instance profile.
      */
+
     public IamInstanceProfileSpecification getIamInstanceProfile() {
         return this.iamInstanceProfile;
     }
@@ -866,6 +912,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SpotFleetLaunchSpecification withIamInstanceProfile(
             IamInstanceProfileSpecification iamInstanceProfile) {
         setIamInstanceProfile(iamInstanceProfile);
@@ -894,6 +941,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      *        <p>
      *        Default: <code>false</code>
      */
+
     public void setEbsOptimized(Boolean ebsOptimized) {
         this.ebsOptimized = ebsOptimized;
     }
@@ -919,6 +967,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      *         <p>
      *         Default: <code>false</code>
      */
+
     public Boolean getEbsOptimized() {
         return this.ebsOptimized;
     }
@@ -947,6 +996,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SpotFleetLaunchSpecification withEbsOptimized(Boolean ebsOptimized) {
         setEbsOptimized(ebsOptimized);
         return this;
@@ -973,6 +1023,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      *         <p>
      *         Default: <code>false</code>
      */
+
     public Boolean isEbsOptimized() {
         return this.ebsOptimized;
     }
@@ -1000,6 +1051,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      *        number, we round the number of instances to the next whole number.
      *        If this value is not specified, the default is 1.
      */
+
     public void setWeightedCapacity(Double weightedCapacity) {
         this.weightedCapacity = weightedCapacity;
     }
@@ -1026,6 +1078,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      *         number, we round the number of instances to the next whole
      *         number. If this value is not specified, the default is 1.
      */
+
     public Double getWeightedCapacity() {
         return this.weightedCapacity;
     }
@@ -1055,6 +1108,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SpotFleetLaunchSpecification withWeightedCapacity(
             Double weightedCapacity) {
         setWeightedCapacity(weightedCapacity);
@@ -1076,6 +1130,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      *        divide the Spot bid price by the value of
      *        <code>WeightedCapacity</code>.
      */
+
     public void setSpotPrice(String spotPrice) {
         this.spotPrice = spotPrice;
     }
@@ -1094,6 +1149,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      *         hour, divide the Spot bid price by the value of
      *         <code>WeightedCapacity</code>.
      */
+
     public String getSpotPrice() {
         return this.spotPrice;
     }
@@ -1115,6 +1171,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SpotFleetLaunchSpecification withSpotPrice(String spotPrice) {
         setSpotPrice(spotPrice);
         return this;

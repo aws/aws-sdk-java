@@ -43,6 +43,7 @@ public class DeleteNatGatewayRequest extends AmazonWebServiceRequest implements
      * @param natGatewayId
      *        The ID of the NAT gateway.
      */
+
     public void setNatGatewayId(String natGatewayId) {
         this.natGatewayId = natGatewayId;
     }
@@ -54,6 +55,7 @@ public class DeleteNatGatewayRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ID of the NAT gateway.
      */
+
     public String getNatGatewayId() {
         return this.natGatewayId;
     }
@@ -68,6 +70,7 @@ public class DeleteNatGatewayRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteNatGatewayRequest withNatGatewayId(String natGatewayId) {
         setNatGatewayId(natGatewayId);
         return this;

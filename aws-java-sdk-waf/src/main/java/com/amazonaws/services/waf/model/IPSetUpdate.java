@@ -52,6 +52,7 @@ public class IPSetUpdate implements Serializable, Cloneable {
      *        <a>UpdateIPSet</a>.
      * @see ChangeAction
      */
+
     public void setAction(String action) {
         this.action = action;
     }
@@ -66,6 +67,7 @@ public class IPSetUpdate implements Serializable, Cloneable {
      *         <a>UpdateIPSet</a>.
      * @see ChangeAction
      */
+
     public String getAction() {
         return this.action;
     }
@@ -83,6 +85,7 @@ public class IPSetUpdate implements Serializable, Cloneable {
      *         chained together.
      * @see ChangeAction
      */
+
     public IPSetUpdate withAction(String action) {
         setAction(action);
         return this;
@@ -101,6 +104,7 @@ public class IPSetUpdate implements Serializable, Cloneable {
      *         chained together.
      * @see ChangeAction
      */
+
     public void setAction(ChangeAction action) {
         this.action = action.toString();
     }
@@ -118,6 +122,7 @@ public class IPSetUpdate implements Serializable, Cloneable {
      *         chained together.
      * @see ChangeAction
      */
+
     public IPSetUpdate withAction(ChangeAction action) {
         setAction(action);
         return this;
@@ -133,6 +138,7 @@ public class IPSetUpdate implements Serializable, Cloneable {
      *        The IP address type (<code>IPV4</code>) and the IP address range
      *        (in CIDR notation) that web requests originate from.
      */
+
     public void setIPSetDescriptor(IPSetDescriptor iPSetDescriptor) {
         this.iPSetDescriptor = iPSetDescriptor;
     }
@@ -146,6 +152,7 @@ public class IPSetUpdate implements Serializable, Cloneable {
      * @return The IP address type (<code>IPV4</code>) and the IP address range
      *         (in CIDR notation) that web requests originate from.
      */
+
     public IPSetDescriptor getIPSetDescriptor() {
         return this.iPSetDescriptor;
     }
@@ -162,6 +169,7 @@ public class IPSetUpdate implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public IPSetUpdate withIPSetDescriptor(IPSetDescriptor iPSetDescriptor) {
         setIPSetDescriptor(iPSetDescriptor);
         return this;

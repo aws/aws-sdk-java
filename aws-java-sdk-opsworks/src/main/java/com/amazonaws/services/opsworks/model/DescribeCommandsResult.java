@@ -42,6 +42,7 @@ public class DescribeCommandsResult implements Serializable, Cloneable {
      * @return An array of <code>Command</code> objects that describe each of
      *         the specified commands.
      */
+
     public java.util.List<Command> getCommands() {
         if (commands == null) {
             commands = new com.amazonaws.internal.SdkInternalList<Command>();
@@ -59,6 +60,7 @@ public class DescribeCommandsResult implements Serializable, Cloneable {
      *        An array of <code>Command</code> objects that describe each of the
      *        specified commands.
      */
+
     public void setCommands(java.util.Collection<Command> commands) {
         if (commands == null) {
             this.commands = null;
@@ -87,6 +89,7 @@ public class DescribeCommandsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeCommandsResult withCommands(Command... commands) {
         if (this.commands == null) {
             setCommands(new com.amazonaws.internal.SdkInternalList<Command>(
@@ -110,6 +113,7 @@ public class DescribeCommandsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeCommandsResult withCommands(
             java.util.Collection<Command> commands) {
         setCommands(commands);

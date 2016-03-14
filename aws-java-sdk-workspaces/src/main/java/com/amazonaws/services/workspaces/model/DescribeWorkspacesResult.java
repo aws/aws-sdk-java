@@ -61,6 +61,7 @@ public class DescribeWorkspacesResult implements Serializable, Cloneable {
      *         some of this information may be incomplete for a newly-created
      *         WorkSpace.
      */
+
     public java.util.List<Workspace> getWorkspaces() {
         if (workspaces == null) {
             workspaces = new com.amazonaws.internal.SdkInternalList<Workspace>();
@@ -85,6 +86,7 @@ public class DescribeWorkspacesResult implements Serializable, Cloneable {
      *        some of this information may be incomplete for a newly-created
      *        WorkSpace.
      */
+
     public void setWorkspaces(java.util.Collection<Workspace> workspaces) {
         if (workspaces == null) {
             this.workspaces = null;
@@ -120,6 +122,7 @@ public class DescribeWorkspacesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeWorkspacesResult withWorkspaces(Workspace... workspaces) {
         if (this.workspaces == null) {
             setWorkspaces(new com.amazonaws.internal.SdkInternalList<Workspace>(
@@ -150,6 +153,7 @@ public class DescribeWorkspacesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeWorkspacesResult withWorkspaces(
             java.util.Collection<Workspace> workspaces) {
         setWorkspaces(workspaces);
@@ -170,6 +174,7 @@ public class DescribeWorkspacesResult implements Serializable, Cloneable {
      *        operation to retrieve the next set of items. This token is valid
      *        for one day and must be used within that timeframe.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -187,6 +192,7 @@ public class DescribeWorkspacesResult implements Serializable, Cloneable {
      *         operation to retrieve the next set of items. This token is valid
      *         for one day and must be used within that timeframe.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -207,6 +213,7 @@ public class DescribeWorkspacesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeWorkspacesResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

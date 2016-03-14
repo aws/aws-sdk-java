@@ -157,6 +157,7 @@ public class GetDataSourceResult implements Serializable, Cloneable {
      *        value should be identical to the value of the
      *        <code>DataSourceId</code> in the request.
      */
+
     public void setDataSourceId(String dataSourceId) {
         this.dataSourceId = dataSourceId;
     }
@@ -172,6 +173,7 @@ public class GetDataSourceResult implements Serializable, Cloneable {
      *         value should be identical to the value of the
      *         <code>DataSourceId</code> in the request.
      */
+
     public String getDataSourceId() {
         return this.dataSourceId;
     }
@@ -190,6 +192,7 @@ public class GetDataSourceResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDataSourceResult withDataSourceId(String dataSourceId) {
         setDataSourceId(dataSourceId);
         return this;
@@ -205,6 +208,7 @@ public class GetDataSourceResult implements Serializable, Cloneable {
      *        The location of the data file or directory in Amazon Simple
      *        Storage Service (Amazon S3).
      */
+
     public void setDataLocationS3(String dataLocationS3) {
         this.dataLocationS3 = dataLocationS3;
     }
@@ -218,6 +222,7 @@ public class GetDataSourceResult implements Serializable, Cloneable {
      * @return The location of the data file or directory in Amazon Simple
      *         Storage Service (Amazon S3).
      */
+
     public String getDataLocationS3() {
         return this.dataLocationS3;
     }
@@ -234,6 +239,7 @@ public class GetDataSourceResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDataSourceResult withDataLocationS3(String dataLocationS3) {
         setDataLocationS3(dataLocationS3);
         return this;
@@ -249,6 +255,7 @@ public class GetDataSourceResult implements Serializable, Cloneable {
      *        A JSON string that captures the splitting rearrangement
      *        requirement of the <code>DataSource</code>.
      */
+
     public void setDataRearrangement(String dataRearrangement) {
         this.dataRearrangement = dataRearrangement;
     }
@@ -262,6 +269,7 @@ public class GetDataSourceResult implements Serializable, Cloneable {
      * @return A JSON string that captures the splitting rearrangement
      *         requirement of the <code>DataSource</code>.
      */
+
     public String getDataRearrangement() {
         return this.dataRearrangement;
     }
@@ -278,6 +286,7 @@ public class GetDataSourceResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDataSourceResult withDataRearrangement(String dataRearrangement) {
         setDataRearrangement(dataRearrangement);
         return this;
@@ -295,6 +304,7 @@ public class GetDataSourceResult implements Serializable, Cloneable {
      *        created. The account type can be either an AWS root account or an
      *        AWS Identity and Access Management (IAM) user account.
      */
+
     public void setCreatedByIamUser(String createdByIamUser) {
         this.createdByIamUser = createdByIamUser;
     }
@@ -310,6 +320,7 @@ public class GetDataSourceResult implements Serializable, Cloneable {
      *         created. The account type can be either an AWS root account or an
      *         AWS Identity and Access Management (IAM) user account.
      */
+
     public String getCreatedByIamUser() {
         return this.createdByIamUser;
     }
@@ -328,6 +339,7 @@ public class GetDataSourceResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDataSourceResult withCreatedByIamUser(String createdByIamUser) {
         setCreatedByIamUser(createdByIamUser);
         return this;
@@ -343,6 +355,7 @@ public class GetDataSourceResult implements Serializable, Cloneable {
      *        The time that the <code>DataSource</code> was created. The time is
      *        expressed in epoch time.
      */
+
     public void setCreatedAt(java.util.Date createdAt) {
         this.createdAt = createdAt;
     }
@@ -356,6 +369,7 @@ public class GetDataSourceResult implements Serializable, Cloneable {
      * @return The time that the <code>DataSource</code> was created. The time
      *         is expressed in epoch time.
      */
+
     public java.util.Date getCreatedAt() {
         return this.createdAt;
     }
@@ -372,6 +386,7 @@ public class GetDataSourceResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDataSourceResult withCreatedAt(java.util.Date createdAt) {
         setCreatedAt(createdAt);
         return this;
@@ -387,6 +402,7 @@ public class GetDataSourceResult implements Serializable, Cloneable {
      *        The time of the most recent edit to the <code>DataSource</code>.
      *        The time is expressed in epoch time.
      */
+
     public void setLastUpdatedAt(java.util.Date lastUpdatedAt) {
         this.lastUpdatedAt = lastUpdatedAt;
     }
@@ -400,6 +416,7 @@ public class GetDataSourceResult implements Serializable, Cloneable {
      * @return The time of the most recent edit to the <code>DataSource</code>.
      *         The time is expressed in epoch time.
      */
+
     public java.util.Date getLastUpdatedAt() {
         return this.lastUpdatedAt;
     }
@@ -416,6 +433,7 @@ public class GetDataSourceResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDataSourceResult withLastUpdatedAt(java.util.Date lastUpdatedAt) {
         setLastUpdatedAt(lastUpdatedAt);
         return this;
@@ -429,6 +447,7 @@ public class GetDataSourceResult implements Serializable, Cloneable {
      * @param dataSizeInBytes
      *        The total size of observations in the data files.
      */
+
     public void setDataSizeInBytes(Long dataSizeInBytes) {
         this.dataSizeInBytes = dataSizeInBytes;
     }
@@ -440,6 +459,7 @@ public class GetDataSourceResult implements Serializable, Cloneable {
      * 
      * @return The total size of observations in the data files.
      */
+
     public Long getDataSizeInBytes() {
         return this.dataSizeInBytes;
     }
@@ -454,6 +474,7 @@ public class GetDataSourceResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDataSourceResult withDataSizeInBytes(Long dataSizeInBytes) {
         setDataSizeInBytes(dataSizeInBytes);
         return this;
@@ -468,6 +489,7 @@ public class GetDataSourceResult implements Serializable, Cloneable {
      *        The number of data files referenced by the <code>DataSource</code>
      *        .
      */
+
     public void setNumberOfFiles(Long numberOfFiles) {
         this.numberOfFiles = numberOfFiles;
     }
@@ -480,6 +502,7 @@ public class GetDataSourceResult implements Serializable, Cloneable {
      * @return The number of data files referenced by the
      *         <code>DataSource</code>.
      */
+
     public Long getNumberOfFiles() {
         return this.numberOfFiles;
     }
@@ -495,6 +518,7 @@ public class GetDataSourceResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDataSourceResult withNumberOfFiles(Long numberOfFiles) {
         setNumberOfFiles(numberOfFiles);
         return this;
@@ -509,6 +533,7 @@ public class GetDataSourceResult implements Serializable, Cloneable {
      *        A user-supplied name or description of the <code>DataSource</code>
      *        .
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -521,6 +546,7 @@ public class GetDataSourceResult implements Serializable, Cloneable {
      * @return A user-supplied name or description of the
      *         <code>DataSource</code>.
      */
+
     public String getName() {
         return this.name;
     }
@@ -536,6 +562,7 @@ public class GetDataSourceResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDataSourceResult withName(String name) {
         setName(name);
         return this;
@@ -574,6 +601,7 @@ public class GetDataSourceResult implements Serializable, Cloneable {
      *        as deleted. It is not usable.</li>
      * @see EntityStatus
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -610,6 +638,7 @@ public class GetDataSourceResult implements Serializable, Cloneable {
      *         as deleted. It is not usable.</li>
      * @see EntityStatus
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -649,6 +678,7 @@ public class GetDataSourceResult implements Serializable, Cloneable {
      *         chained together.
      * @see EntityStatus
      */
+
     public GetDataSourceResult withStatus(String status) {
         setStatus(status);
         return this;
@@ -689,6 +719,7 @@ public class GetDataSourceResult implements Serializable, Cloneable {
      *         chained together.
      * @see EntityStatus
      */
+
     public void setStatus(EntityStatus status) {
         this.status = status.toString();
     }
@@ -728,6 +759,7 @@ public class GetDataSourceResult implements Serializable, Cloneable {
      *         chained together.
      * @see EntityStatus
      */
+
     public GetDataSourceResult withStatus(EntityStatus status) {
         setStatus(status);
         return this;
@@ -743,6 +775,7 @@ public class GetDataSourceResult implements Serializable, Cloneable {
      *        A link to the file containining logs of either create
      *        <code>DataSource</code> operation.
      */
+
     public void setLogUri(String logUri) {
         this.logUri = logUri;
     }
@@ -756,6 +789,7 @@ public class GetDataSourceResult implements Serializable, Cloneable {
      * @return A link to the file containining logs of either create
      *         <code>DataSource</code> operation.
      */
+
     public String getLogUri() {
         return this.logUri;
     }
@@ -772,6 +806,7 @@ public class GetDataSourceResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDataSourceResult withLogUri(String logUri) {
         setLogUri(logUri);
         return this;
@@ -787,6 +822,7 @@ public class GetDataSourceResult implements Serializable, Cloneable {
      *        The description of the most recent details about creating the
      *        <code>DataSource</code>.
      */
+
     public void setMessage(String message) {
         this.message = message;
     }
@@ -800,6 +836,7 @@ public class GetDataSourceResult implements Serializable, Cloneable {
      * @return The description of the most recent details about creating the
      *         <code>DataSource</code>.
      */
+
     public String getMessage() {
         return this.message;
     }
@@ -816,6 +853,7 @@ public class GetDataSourceResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDataSourceResult withMessage(String message) {
         setMessage(message);
         return this;
@@ -824,6 +862,7 @@ public class GetDataSourceResult implements Serializable, Cloneable {
     /**
      * @param redshiftMetadata
      */
+
     public void setRedshiftMetadata(RedshiftMetadata redshiftMetadata) {
         this.redshiftMetadata = redshiftMetadata;
     }
@@ -831,6 +870,7 @@ public class GetDataSourceResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public RedshiftMetadata getRedshiftMetadata() {
         return this.redshiftMetadata;
     }
@@ -840,6 +880,7 @@ public class GetDataSourceResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDataSourceResult withRedshiftMetadata(
             RedshiftMetadata redshiftMetadata) {
         setRedshiftMetadata(redshiftMetadata);
@@ -849,6 +890,7 @@ public class GetDataSourceResult implements Serializable, Cloneable {
     /**
      * @param rDSMetadata
      */
+
     public void setRDSMetadata(RDSMetadata rDSMetadata) {
         this.rDSMetadata = rDSMetadata;
     }
@@ -856,6 +898,7 @@ public class GetDataSourceResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public RDSMetadata getRDSMetadata() {
         return this.rDSMetadata;
     }
@@ -865,6 +908,7 @@ public class GetDataSourceResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDataSourceResult withRDSMetadata(RDSMetadata rDSMetadata) {
         setRDSMetadata(rDSMetadata);
         return this;
@@ -873,6 +917,7 @@ public class GetDataSourceResult implements Serializable, Cloneable {
     /**
      * @param roleARN
      */
+
     public void setRoleARN(String roleARN) {
         this.roleARN = roleARN;
     }
@@ -880,6 +925,7 @@ public class GetDataSourceResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getRoleARN() {
         return this.roleARN;
     }
@@ -889,6 +935,7 @@ public class GetDataSourceResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDataSourceResult withRoleARN(String roleARN) {
         setRoleARN(roleARN);
         return this;
@@ -904,6 +951,7 @@ public class GetDataSourceResult implements Serializable, Cloneable {
      *        The parameter is <code>true</code> if statistics need to be
      *        generated from the observation data.
      */
+
     public void setComputeStatistics(Boolean computeStatistics) {
         this.computeStatistics = computeStatistics;
     }
@@ -917,6 +965,7 @@ public class GetDataSourceResult implements Serializable, Cloneable {
      * @return The parameter is <code>true</code> if statistics need to be
      *         generated from the observation data.
      */
+
     public Boolean getComputeStatistics() {
         return this.computeStatistics;
     }
@@ -933,6 +982,7 @@ public class GetDataSourceResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDataSourceResult withComputeStatistics(Boolean computeStatistics) {
         setComputeStatistics(computeStatistics);
         return this;
@@ -947,6 +997,7 @@ public class GetDataSourceResult implements Serializable, Cloneable {
      * @return The parameter is <code>true</code> if statistics need to be
      *         generated from the observation data.
      */
+
     public Boolean isComputeStatistics() {
         return this.computeStatistics;
     }
@@ -968,6 +1019,7 @@ public class GetDataSourceResult implements Serializable, Cloneable {
      *        This parameter is provided as part of the verbose format.
      *        </p>
      */
+
     public void setDataSourceSchema(String dataSourceSchema) {
         this.dataSourceSchema = dataSourceSchema;
     }
@@ -988,6 +1040,7 @@ public class GetDataSourceResult implements Serializable, Cloneable {
      *         This parameter is provided as part of the verbose format.
      *         </p>
      */
+
     public String getDataSourceSchema() {
         return this.dataSourceSchema;
     }
@@ -1011,6 +1064,7 @@ public class GetDataSourceResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDataSourceResult withDataSourceSchema(String dataSourceSchema) {
         setDataSourceSchema(dataSourceSchema);
         return this;

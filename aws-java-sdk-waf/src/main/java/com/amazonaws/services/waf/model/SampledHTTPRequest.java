@@ -69,6 +69,7 @@ public class SampledHTTPRequest implements Serializable, Cloneable {
      *        A complex type that contains detailed information about the
      *        request.
      */
+
     public void setRequest(HTTPRequest request) {
         this.request = request;
     }
@@ -81,6 +82,7 @@ public class SampledHTTPRequest implements Serializable, Cloneable {
      * @return A complex type that contains detailed information about the
      *         request.
      */
+
     public HTTPRequest getRequest() {
         return this.request;
     }
@@ -96,6 +98,7 @@ public class SampledHTTPRequest implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SampledHTTPRequest withRequest(HTTPRequest request) {
         setRequest(request);
         return this;
@@ -116,6 +119,7 @@ public class SampledHTTPRequest implements Serializable, Cloneable {
      *        CloudFront web requests as a result that has a weight of
      *        <code>1</code>.
      */
+
     public void setWeight(Long weight) {
         this.weight = weight;
     }
@@ -134,6 +138,7 @@ public class SampledHTTPRequest implements Serializable, Cloneable {
      *         CloudFront web requests as a result that has a weight of
      *         <code>1</code>.
      */
+
     public Long getWeight() {
         return this.weight;
     }
@@ -155,6 +160,7 @@ public class SampledHTTPRequest implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SampledHTTPRequest withWeight(Long weight) {
         setWeight(weight);
         return this;
@@ -170,6 +176,7 @@ public class SampledHTTPRequest implements Serializable, Cloneable {
      *        The time at which AWS WAF received the request from your AWS
      *        resource, in Unix time format (in seconds).
      */
+
     public void setTimestamp(java.util.Date timestamp) {
         this.timestamp = timestamp;
     }
@@ -183,6 +190,7 @@ public class SampledHTTPRequest implements Serializable, Cloneable {
      * @return The time at which AWS WAF received the request from your AWS
      *         resource, in Unix time format (in seconds).
      */
+
     public java.util.Date getTimestamp() {
         return this.timestamp;
     }
@@ -199,6 +207,7 @@ public class SampledHTTPRequest implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SampledHTTPRequest withTimestamp(java.util.Date timestamp) {
         setTimestamp(timestamp);
         return this;
@@ -214,6 +223,7 @@ public class SampledHTTPRequest implements Serializable, Cloneable {
      *        The action for the <code>Rule</code> that the request matched:
      *        <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
      */
+
     public void setAction(String action) {
         this.action = action;
     }
@@ -227,6 +237,7 @@ public class SampledHTTPRequest implements Serializable, Cloneable {
      * @return The action for the <code>Rule</code> that the request matched:
      *         <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
      */
+
     public String getAction() {
         return this.action;
     }
@@ -243,6 +254,7 @@ public class SampledHTTPRequest implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SampledHTTPRequest withAction(String action) {
         setAction(action);
         return this;

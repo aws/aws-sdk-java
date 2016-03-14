@@ -42,6 +42,7 @@ public class CancelCommandRequest extends AmazonWebServiceRequest implements
      * @param commandId
      *        The ID of the command you want to cancel.
      */
+
     public void setCommandId(String commandId) {
         this.commandId = commandId;
     }
@@ -51,6 +52,7 @@ public class CancelCommandRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ID of the command you want to cancel.
      */
+
     public String getCommandId() {
         return this.commandId;
     }
@@ -63,6 +65,7 @@ public class CancelCommandRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CancelCommandRequest withCommandId(String commandId) {
         setCommandId(commandId);
         return this;
@@ -79,6 +82,7 @@ public class CancelCommandRequest extends AmazonWebServiceRequest implements
      *         command. If not provided, the command is canceled on every
      *         instance on which it was requested.
      */
+
     public java.util.List<String> getInstanceIds() {
         if (instanceIds == null) {
             instanceIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -98,6 +102,7 @@ public class CancelCommandRequest extends AmazonWebServiceRequest implements
      *        command. If not provided, the command is canceled on every
      *        instance on which it was requested.
      */
+
     public void setInstanceIds(java.util.Collection<String> instanceIds) {
         if (instanceIds == null) {
             this.instanceIds = null;
@@ -128,6 +133,7 @@ public class CancelCommandRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CancelCommandRequest withInstanceIds(String... instanceIds) {
         if (this.instanceIds == null) {
             setInstanceIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -153,6 +159,7 @@ public class CancelCommandRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CancelCommandRequest withInstanceIds(
             java.util.Collection<String> instanceIds) {
         setInstanceIds(instanceIds);

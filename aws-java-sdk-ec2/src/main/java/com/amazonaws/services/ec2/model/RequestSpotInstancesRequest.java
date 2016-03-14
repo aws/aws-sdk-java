@@ -180,6 +180,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest
      *        The maximum hourly price (bid) for any Spot instance launched to
      *        fulfill the request.
      */
+
     public void setSpotPrice(String spotPrice) {
         this.spotPrice = spotPrice;
     }
@@ -193,6 +194,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest
      * @return The maximum hourly price (bid) for any Spot instance launched to
      *         fulfill the request.
      */
+
     public String getSpotPrice() {
         return this.spotPrice;
     }
@@ -209,6 +211,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RequestSpotInstancesRequest withSpotPrice(String spotPrice) {
         setSpotPrice(spotPrice);
         return this;
@@ -230,6 +233,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest
      *        >How to Ensure Idempotency</a> in the <i>Amazon Elastic Compute
      *        Cloud User Guide</i>.
      */
+
     public void setClientToken(String clientToken) {
         this.clientToken = clientToken;
     }
@@ -249,6 +253,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest
      *         >How to Ensure Idempotency</a> in the <i>Amazon Elastic Compute
      *         Cloud User Guide</i>.
      */
+
     public String getClientToken() {
         return this.clientToken;
     }
@@ -271,6 +276,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RequestSpotInstancesRequest withClientToken(String clientToken) {
         setClientToken(clientToken);
         return this;
@@ -289,6 +295,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest
      *        <p>
      *        Default: 1
      */
+
     public void setInstanceCount(Integer instanceCount) {
         this.instanceCount = instanceCount;
     }
@@ -305,6 +312,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest
      *         <p>
      *         Default: 1
      */
+
     public Integer getInstanceCount() {
         return this.instanceCount;
     }
@@ -324,6 +332,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RequestSpotInstancesRequest withInstanceCount(Integer instanceCount) {
         setInstanceCount(instanceCount);
         return this;
@@ -343,6 +352,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest
      *        Default: <code>one-time</code>
      * @see SpotInstanceType
      */
+
     public void setType(String type) {
         this.type = type;
     }
@@ -360,6 +370,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest
      *         Default: <code>one-time</code>
      * @see SpotInstanceType
      */
+
     public String getType() {
         return this.type;
     }
@@ -380,6 +391,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see SpotInstanceType
      */
+
     public RequestSpotInstancesRequest withType(String type) {
         setType(type);
         return this;
@@ -401,6 +413,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see SpotInstanceType
      */
+
     public void setType(SpotInstanceType type) {
         this.type = type.toString();
     }
@@ -421,6 +434,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see SpotInstanceType
      */
+
     public RequestSpotInstancesRequest withType(SpotInstanceType type) {
         setType(type);
         return this;
@@ -448,6 +462,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest
      *        <p>
      *        Default: The request is effective indefinitely.
      */
+
     public void setValidFrom(java.util.Date validFrom) {
         this.validFrom = validFrom;
     }
@@ -473,6 +488,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest
      *         <p>
      *         Default: The request is effective indefinitely.
      */
+
     public java.util.Date getValidFrom() {
         return this.validFrom;
     }
@@ -501,6 +517,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RequestSpotInstancesRequest withValidFrom(java.util.Date validFrom) {
         setValidFrom(validFrom);
         return this;
@@ -526,6 +543,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest
      *        <p>
      *        Default: The request is effective indefinitely.
      */
+
     public void setValidUntil(java.util.Date validUntil) {
         this.validUntil = validUntil;
     }
@@ -549,6 +567,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest
      *         <p>
      *         Default: The request is effective indefinitely.
      */
+
     public java.util.Date getValidUntil() {
         return this.validUntil;
     }
@@ -575,6 +594,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RequestSpotInstancesRequest withValidUntil(java.util.Date validUntil) {
         setValidUntil(validUntil);
         return this;
@@ -595,6 +615,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest
      *        <p>
      *        Default: Instances are launched and terminated individually
      */
+
     public void setLaunchGroup(String launchGroup) {
         this.launchGroup = launchGroup;
     }
@@ -613,6 +634,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest
      *         <p>
      *         Default: Instances are launched and terminated individually
      */
+
     public String getLaunchGroup() {
         return this.launchGroup;
     }
@@ -634,6 +656,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RequestSpotInstancesRequest withLaunchGroup(String launchGroup) {
         setLaunchGroup(launchGroup);
         return this;
@@ -693,6 +716,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest
      *        Default: Instances are launched in any available Availability
      *        Zone.
      */
+
     public void setAvailabilityZoneGroup(String availabilityZoneGroup) {
         this.availabilityZoneGroup = availabilityZoneGroup;
     }
@@ -750,6 +774,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest
      *         Default: Instances are launched in any available Availability
      *         Zone.
      */
+
     public String getAvailabilityZoneGroup() {
         return this.availabilityZoneGroup;
     }
@@ -810,6 +835,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RequestSpotInstancesRequest withAvailabilityZoneGroup(
             String availabilityZoneGroup) {
         setAvailabilityZoneGroup(availabilityZoneGroup);
@@ -848,6 +874,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest
      *        Note that you can't specify an Availability Zone group or a launch
      *        group if you specify a duration.
      */
+
     public void setBlockDurationMinutes(Integer blockDurationMinutes) {
         this.blockDurationMinutes = blockDurationMinutes;
     }
@@ -883,6 +910,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest
      *         Note that you can't specify an Availability Zone group or a
      *         launch group if you specify a duration.
      */
+
     public Integer getBlockDurationMinutes() {
         return this.blockDurationMinutes;
     }
@@ -921,6 +949,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RequestSpotInstancesRequest withBlockDurationMinutes(
             Integer blockDurationMinutes) {
         setBlockDurationMinutes(blockDurationMinutes);
@@ -930,6 +959,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest
     /**
      * @param launchSpecification
      */
+
     public void setLaunchSpecification(LaunchSpecification launchSpecification) {
         this.launchSpecification = launchSpecification;
     }
@@ -937,6 +967,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest
     /**
      * @return
      */
+
     public LaunchSpecification getLaunchSpecification() {
         return this.launchSpecification;
     }
@@ -946,6 +977,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RequestSpotInstancesRequest withLaunchSpecification(
             LaunchSpecification launchSpecification) {
         setLaunchSpecification(launchSpecification);

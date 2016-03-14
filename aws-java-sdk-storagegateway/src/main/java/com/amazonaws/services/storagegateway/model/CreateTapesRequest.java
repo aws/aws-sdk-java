@@ -81,6 +81,7 @@ public class CreateTapesRequest extends AmazonWebServiceRequest implements
      *        operation to return a list of gateways for your account and
      *        region.
      */
+
     public void setGatewayARN(String gatewayARN) {
         this.gatewayARN = gatewayARN;
     }
@@ -97,6 +98,7 @@ public class CreateTapesRequest extends AmazonWebServiceRequest implements
      *         operation to return a list of gateways for your account and
      *         region.
      */
+
     public String getGatewayARN() {
         return this.gatewayARN;
     }
@@ -116,6 +118,7 @@ public class CreateTapesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateTapesRequest withGatewayARN(String gatewayARN) {
         setGatewayARN(gatewayARN);
         return this;
@@ -132,6 +135,7 @@ public class CreateTapesRequest extends AmazonWebServiceRequest implements
      *        create.</p> <note>The size must be aligned by gigabyte
      *        (1024*1024*1024 byte).
      */
+
     public void setTapeSizeInBytes(Long tapeSizeInBytes) {
         this.tapeSizeInBytes = tapeSizeInBytes;
     }
@@ -146,6 +150,7 @@ public class CreateTapesRequest extends AmazonWebServiceRequest implements
      *         create.</p> <note>The size must be aligned by gigabyte
      *         (1024*1024*1024 byte).
      */
+
     public Long getTapeSizeInBytes() {
         return this.tapeSizeInBytes;
     }
@@ -163,6 +168,7 @@ public class CreateTapesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateTapesRequest withTapeSizeInBytes(Long tapeSizeInBytes) {
         setTapeSizeInBytes(tapeSizeInBytes);
         return this;
@@ -184,6 +190,7 @@ public class CreateTapesRequest extends AmazonWebServiceRequest implements
      *        <code>ClientToken</code> prevents creating the tape multiple
      *        times.
      */
+
     public void setClientToken(String clientToken) {
         this.clientToken = clientToken;
     }
@@ -203,6 +210,7 @@ public class CreateTapesRequest extends AmazonWebServiceRequest implements
      *         <code>ClientToken</code> prevents creating the tape multiple
      *         times.
      */
+
     public String getClientToken() {
         return this.clientToken;
     }
@@ -225,6 +233,7 @@ public class CreateTapesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateTapesRequest withClientToken(String clientToken) {
         setClientToken(clientToken);
         return this;
@@ -238,6 +247,7 @@ public class CreateTapesRequest extends AmazonWebServiceRequest implements
      * @param numTapesToCreate
      *        The number of virtual tapes that you want to create.
      */
+
     public void setNumTapesToCreate(Integer numTapesToCreate) {
         this.numTapesToCreate = numTapesToCreate;
     }
@@ -249,6 +259,7 @@ public class CreateTapesRequest extends AmazonWebServiceRequest implements
      * 
      * @return The number of virtual tapes that you want to create.
      */
+
     public Integer getNumTapesToCreate() {
         return this.numTapesToCreate;
     }
@@ -263,6 +274,7 @@ public class CreateTapesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateTapesRequest withNumTapesToCreate(Integer numTapesToCreate) {
         setNumTapesToCreate(numTapesToCreate);
         return this;
@@ -282,6 +294,7 @@ public class CreateTapesRequest extends AmazonWebServiceRequest implements
      *        prefix must be 1 to 4 characters in length and must be one of the
      *        uppercase letters from A to Z.
      */
+
     public void setTapeBarcodePrefix(String tapeBarcodePrefix) {
         this.tapeBarcodePrefix = tapeBarcodePrefix;
     }
@@ -299,6 +312,7 @@ public class CreateTapesRequest extends AmazonWebServiceRequest implements
      *         prefix must be 1 to 4 characters in length and must be one of the
      *         uppercase letters from A to Z.
      */
+
     public String getTapeBarcodePrefix() {
         return this.tapeBarcodePrefix;
     }
@@ -319,6 +333,7 @@ public class CreateTapesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateTapesRequest withTapeBarcodePrefix(String tapeBarcodePrefix) {
         setTapeBarcodePrefix(tapeBarcodePrefix);
         return this;

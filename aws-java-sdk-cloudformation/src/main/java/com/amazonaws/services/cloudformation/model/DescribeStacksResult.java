@@ -46,6 +46,7 @@ public class DescribeStacksResult implements Serializable, Cloneable {
      * 
      * @return A list of stack structures.
      */
+
     public java.util.List<Stack> getStacks() {
         if (stacks == null) {
             stacks = new com.amazonaws.internal.SdkInternalList<Stack>();
@@ -61,6 +62,7 @@ public class DescribeStacksResult implements Serializable, Cloneable {
      * @param stacks
      *        A list of stack structures.
      */
+
     public void setStacks(java.util.Collection<Stack> stacks) {
         if (stacks == null) {
             this.stacks = null;
@@ -86,6 +88,7 @@ public class DescribeStacksResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeStacksResult withStacks(Stack... stacks) {
         if (this.stacks == null) {
             setStacks(new com.amazonaws.internal.SdkInternalList<Stack>(
@@ -107,6 +110,7 @@ public class DescribeStacksResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeStacksResult withStacks(java.util.Collection<Stack> stacks) {
         setStacks(stacks);
         return this;
@@ -123,6 +127,7 @@ public class DescribeStacksResult implements Serializable, Cloneable {
      *        next page of stacks. If no additional page exists, this value is
      *        null.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -137,6 +142,7 @@ public class DescribeStacksResult implements Serializable, Cloneable {
      *         next page of stacks. If no additional page exists, this value is
      *         null.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -154,6 +160,7 @@ public class DescribeStacksResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeStacksResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

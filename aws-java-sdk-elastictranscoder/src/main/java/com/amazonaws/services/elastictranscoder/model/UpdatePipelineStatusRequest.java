@@ -52,6 +52,7 @@ public class UpdatePipelineStatusRequest extends AmazonWebServiceRequest
      * @param id
      *        The identifier of the pipeline to update.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -63,6 +64,7 @@ public class UpdatePipelineStatusRequest extends AmazonWebServiceRequest
      * 
      * @return The identifier of the pipeline to update.
      */
+
     public String getId() {
         return this.id;
     }
@@ -77,6 +79,7 @@ public class UpdatePipelineStatusRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdatePipelineStatusRequest withId(String id) {
         setId(id);
         return this;
@@ -98,6 +101,7 @@ public class UpdatePipelineStatusRequest extends AmazonWebServiceRequest
      *        <li> <code>Paused</code>: The pipeline is not currently processing
      *        jobs.</li>
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -117,6 +121,7 @@ public class UpdatePipelineStatusRequest extends AmazonWebServiceRequest
      *         <li> <code>Paused</code>: The pipeline is not currently processing
      *         jobs.</li>
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -139,6 +144,7 @@ public class UpdatePipelineStatusRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdatePipelineStatusRequest withStatus(String status) {
         setStatus(status);
         return this;

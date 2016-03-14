@@ -42,6 +42,7 @@ public class UpdatePipelineStatusResult implements Serializable, Cloneable {
      *        A section of the response body that provides information about the
      *        pipeline.
      */
+
     public void setPipeline(Pipeline pipeline) {
         this.pipeline = pipeline;
     }
@@ -55,6 +56,7 @@ public class UpdatePipelineStatusResult implements Serializable, Cloneable {
      * @return A section of the response body that provides information about
      *         the pipeline.
      */
+
     public Pipeline getPipeline() {
         return this.pipeline;
     }
@@ -71,6 +73,7 @@ public class UpdatePipelineStatusResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdatePipelineStatusResult withPipeline(Pipeline pipeline) {
         setPipeline(pipeline);
         return this;

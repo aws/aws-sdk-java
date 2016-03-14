@@ -171,6 +171,7 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      * @param healthCheckId
      *        The ID of the health check to update.
      */
+
     public void setHealthCheckId(String healthCheckId) {
         this.healthCheckId = healthCheckId;
     }
@@ -182,6 +183,7 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ID of the health check to update.
      */
+
     public String getHealthCheckId() {
         return this.healthCheckId;
     }
@@ -196,6 +198,7 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateHealthCheckRequest withHealthCheckId(String healthCheckId) {
         setHealthCheckId(healthCheckId);
         return this;
@@ -217,6 +220,7 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      *        versions don't match. Using <code>HealthCheckVersion</code> lets
      *        you prevent overwriting another change to the health check.
      */
+
     public void setHealthCheckVersion(Long healthCheckVersion) {
         this.healthCheckVersion = healthCheckVersion;
     }
@@ -236,6 +240,7 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      *         versions don't match. Using <code>HealthCheckVersion</code> lets
      *         you prevent overwriting another change to the health check.
      */
+
     public Long getHealthCheckVersion() {
         return this.healthCheckVersion;
     }
@@ -258,6 +263,7 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateHealthCheckRequest withHealthCheckVersion(
             Long healthCheckVersion) {
         setHealthCheckVersion(healthCheckVersion);
@@ -277,6 +283,7 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        Specify this value only if you want to change it.
      */
+
     public void setIPAddress(String iPAddress) {
         this.iPAddress = iPAddress;
     }
@@ -293,6 +300,7 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Specify this value only if you want to change it.
      */
+
     public String getIPAddress() {
         return this.iPAddress;
     }
@@ -312,6 +320,7 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateHealthCheckRequest withIPAddress(String iPAddress) {
         setIPAddress(iPAddress);
         return this;
@@ -332,6 +341,7 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        Specify this value only if you want to change it.
      */
+
     public void setPort(Integer port) {
         this.port = port;
     }
@@ -350,6 +360,7 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Specify this value only if you want to change it.
      */
+
     public Integer getPort() {
         return this.port;
     }
@@ -371,6 +382,7 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateHealthCheckRequest withPort(Integer port) {
         setPort(port);
         return this;
@@ -396,6 +408,7 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        Specify this value only if you want to change it.
      */
+
     public void setResourcePath(String resourcePath) {
         this.resourcePath = resourcePath;
     }
@@ -419,6 +432,7 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Specify this value only if you want to change it.
      */
+
     public String getResourcePath() {
         return this.resourcePath;
     }
@@ -445,6 +459,7 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateHealthCheckRequest withResourcePath(String resourcePath) {
         setResourcePath(resourcePath);
         return this;
@@ -464,6 +479,7 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        Specify this value only if you want to change it.
      */
+
     public void setFullyQualifiedDomainName(String fullyQualifiedDomainName) {
         this.fullyQualifiedDomainName = fullyQualifiedDomainName;
     }
@@ -481,6 +497,7 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Specify this value only if you want to change it.
      */
+
     public String getFullyQualifiedDomainName() {
         return this.fullyQualifiedDomainName;
     }
@@ -501,6 +518,7 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateHealthCheckRequest withFullyQualifiedDomainName(
             String fullyQualifiedDomainName) {
         setFullyQualifiedDomainName(fullyQualifiedDomainName);
@@ -531,6 +549,7 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        Specify this value only if you want to change it.
      */
+
     public void setSearchString(String searchString) {
         this.searchString = searchString;
     }
@@ -558,6 +577,7 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Specify this value only if you want to change it.
      */
+
     public String getSearchString() {
         return this.searchString;
     }
@@ -588,6 +608,7 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateHealthCheckRequest withSearchString(String searchString) {
         setSearchString(searchString);
         return this;
@@ -621,6 +642,7 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        Specify this value only if you want to change it.
      */
+
     public void setFailureThreshold(Integer failureThreshold) {
         this.failureThreshold = failureThreshold;
     }
@@ -652,6 +674,7 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Specify this value only if you want to change it.
      */
+
     public Integer getFailureThreshold() {
         return this.failureThreshold;
     }
@@ -686,6 +709,7 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateHealthCheckRequest withFailureThreshold(
             Integer failureThreshold) {
         setFailureThreshold(failureThreshold);
@@ -711,6 +735,7 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        Specify this value only if you want to change it.
      */
+
     public void setInverted(Boolean inverted) {
         this.inverted = inverted;
     }
@@ -733,6 +758,7 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Specify this value only if you want to change it.
      */
+
     public Boolean getInverted() {
         return this.inverted;
     }
@@ -758,6 +784,7 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateHealthCheckRequest withInverted(Boolean inverted) {
         setInverted(inverted);
         return this;
@@ -781,6 +808,7 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Specify this value only if you want to change it.
      */
+
     public Boolean isInverted() {
         return this.inverted;
     }
@@ -802,6 +830,7 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        Specify this value only if you want to change it.
      */
+
     public void setHealthThreshold(Integer healthThreshold) {
         this.healthThreshold = healthThreshold;
     }
@@ -823,6 +852,7 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Specify this value only if you want to change it.
      */
+
     public Integer getHealthThreshold() {
         return this.healthThreshold;
     }
@@ -846,6 +876,7 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateHealthCheckRequest withHealthThreshold(Integer healthThreshold) {
         setHealthThreshold(healthThreshold);
         return this;
@@ -866,6 +897,7 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Specify this value only if you want to change it.
      */
+
     public java.util.List<String> getChildHealthChecks() {
         if (childHealthChecks == null) {
             childHealthChecks = new com.amazonaws.internal.SdkInternalList<String>();
@@ -889,6 +921,7 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        Specify this value only if you want to change it.
      */
+
     public void setChildHealthChecks(
             java.util.Collection<String> childHealthChecks) {
         if (childHealthChecks == null) {
@@ -924,6 +957,7 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateHealthCheckRequest withChildHealthChecks(
             String... childHealthChecks) {
         if (this.childHealthChecks == null) {
@@ -954,6 +988,7 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateHealthCheckRequest withChildHealthChecks(
             java.util.Collection<String> childHealthChecks) {
         setChildHealthChecks(childHealthChecks);
@@ -985,6 +1020,7 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        Specify this value only if you want to change it.
      */
+
     public void setEnableSNI(Boolean enableSNI) {
         this.enableSNI = enableSNI;
     }
@@ -1014,6 +1050,7 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Specify this value only if you want to change it.
      */
+
     public Boolean getEnableSNI() {
         return this.enableSNI;
     }
@@ -1045,6 +1082,7 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateHealthCheckRequest withEnableSNI(Boolean enableSNI) {
         setEnableSNI(enableSNI);
         return this;
@@ -1075,6 +1113,7 @@ public class UpdateHealthCheckRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Specify this value only if you want to change it.
      */
+
     public Boolean isEnableSNI() {
         return this.enableSNI;
     }

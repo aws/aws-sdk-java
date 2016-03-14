@@ -97,6 +97,7 @@ public class StateReason implements Serializable, Cloneable {
      * @param code
      *        The reason code for the state change.
      */
+
     public void setCode(String code) {
         this.code = code;
     }
@@ -108,6 +109,7 @@ public class StateReason implements Serializable, Cloneable {
      * 
      * @return The reason code for the state change.
      */
+
     public String getCode() {
         return this.code;
     }
@@ -122,6 +124,7 @@ public class StateReason implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StateReason withCode(String code) {
         setCode(code);
         return this;
@@ -237,6 +240,7 @@ public class StateReason implements Serializable, Cloneable {
      *        </p>
      *        </li>
      */
+
     public void setMessage(String message) {
         this.message = message;
     }
@@ -350,6 +354,7 @@ public class StateReason implements Serializable, Cloneable {
      *         </p>
      *         </li>
      */
+
     public String getMessage() {
         return this.message;
     }
@@ -466,6 +471,7 @@ public class StateReason implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StateReason withMessage(String message) {
         setMessage(message);
         return this;

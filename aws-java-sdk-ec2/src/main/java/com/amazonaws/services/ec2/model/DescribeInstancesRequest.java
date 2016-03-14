@@ -585,6 +585,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Default: Describes all your instances.
      */
+
     public java.util.List<String> getInstanceIds() {
         if (instanceIds == null) {
             instanceIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -605,6 +606,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        Default: Describes all your instances.
      */
+
     public void setInstanceIds(java.util.Collection<String> instanceIds) {
         if (instanceIds == null) {
             this.instanceIds = null;
@@ -636,6 +638,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeInstancesRequest withInstanceIds(String... instanceIds) {
         if (this.instanceIds == null) {
             setInstanceIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -662,6 +665,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeInstancesRequest withInstanceIds(
             java.util.Collection<String> instanceIds) {
         setInstanceIds(instanceIds);
@@ -1721,6 +1725,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         </p>
      *         </li>
      */
+
     public java.util.List<Filter> getFilters() {
         if (filters == null) {
             filters = new com.amazonaws.internal.SdkInternalList<Filter>();
@@ -2780,6 +2785,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </p>
      *        </li>
      */
+
     public void setFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
             this.filters = null;
@@ -3850,6 +3856,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeInstancesRequest withFilters(Filter... filters) {
         if (this.filters == null) {
             setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(
@@ -4915,6 +4922,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeInstancesRequest withFilters(
             java.util.Collection<Filter> filters) {
         setFilters(filters);
@@ -4929,6 +4937,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * @param nextToken
      *        The token to request the next page of results.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -4940,6 +4949,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * 
      * @return The token to request the next page of results.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -4954,6 +4964,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeInstancesRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -4979,6 +4990,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        1000, only 1000 results are returned. You cannot specify this
      *        parameter and the instance IDs parameter in the same request.
      */
+
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
     }
@@ -5002,6 +5014,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         1000, only 1000 results are returned. You cannot specify this
      *         parameter and the instance IDs parameter in the same request.
      */
+
     public Integer getMaxResults() {
         return this.maxResults;
     }
@@ -5028,6 +5041,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeInstancesRequest withMaxResults(Integer maxResults) {
         setMaxResults(maxResults);
         return this;

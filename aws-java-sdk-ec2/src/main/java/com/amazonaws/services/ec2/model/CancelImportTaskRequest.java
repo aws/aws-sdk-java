@@ -49,6 +49,7 @@ public class CancelImportTaskRequest extends AmazonWebServiceRequest implements
      * @param importTaskId
      *        The ID of the import image or import snapshot task to be canceled.
      */
+
     public void setImportTaskId(String importTaskId) {
         this.importTaskId = importTaskId;
     }
@@ -61,6 +62,7 @@ public class CancelImportTaskRequest extends AmazonWebServiceRequest implements
      * @return The ID of the import image or import snapshot task to be
      *         canceled.
      */
+
     public String getImportTaskId() {
         return this.importTaskId;
     }
@@ -75,6 +77,7 @@ public class CancelImportTaskRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CancelImportTaskRequest withImportTaskId(String importTaskId) {
         setImportTaskId(importTaskId);
         return this;
@@ -88,6 +91,7 @@ public class CancelImportTaskRequest extends AmazonWebServiceRequest implements
      * @param cancelReason
      *        The reason for canceling the task.
      */
+
     public void setCancelReason(String cancelReason) {
         this.cancelReason = cancelReason;
     }
@@ -99,6 +103,7 @@ public class CancelImportTaskRequest extends AmazonWebServiceRequest implements
      * 
      * @return The reason for canceling the task.
      */
+
     public String getCancelReason() {
         return this.cancelReason;
     }
@@ -113,6 +118,7 @@ public class CancelImportTaskRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CancelImportTaskRequest withCancelReason(String cancelReason) {
         setCancelReason(cancelReason);
         return this;

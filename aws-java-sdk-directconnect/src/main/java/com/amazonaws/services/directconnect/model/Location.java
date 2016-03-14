@@ -48,6 +48,7 @@ public class Location implements Serializable, Cloneable {
      * @param locationCode
      *        The code used to indicate the AWS Direct Connect location.
      */
+
     public void setLocationCode(String locationCode) {
         this.locationCode = locationCode;
     }
@@ -59,6 +60,7 @@ public class Location implements Serializable, Cloneable {
      * 
      * @return The code used to indicate the AWS Direct Connect location.
      */
+
     public String getLocationCode() {
         return this.locationCode;
     }
@@ -73,6 +75,7 @@ public class Location implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Location withLocationCode(String locationCode) {
         setLocationCode(locationCode);
         return this;
@@ -88,6 +91,7 @@ public class Location implements Serializable, Cloneable {
      *        The name of the AWS Direct Connect location. The name includes the
      *        colocation partner name and the physical site of the lit building.
      */
+
     public void setLocationName(String locationName) {
         this.locationName = locationName;
     }
@@ -102,6 +106,7 @@ public class Location implements Serializable, Cloneable {
      *         the colocation partner name and the physical site of the lit
      *         building.
      */
+
     public String getLocationName() {
         return this.locationName;
     }
@@ -118,6 +123,7 @@ public class Location implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Location withLocationName(String locationName) {
         setLocationName(locationName);
         return this;

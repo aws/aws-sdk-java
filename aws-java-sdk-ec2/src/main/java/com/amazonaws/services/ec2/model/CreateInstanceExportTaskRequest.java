@@ -64,6 +64,7 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest
      *        A description for the conversion task or the resource being
      *        exported. The maximum length is 255 bytes.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -77,6 +78,7 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest
      * @return A description for the conversion task or the resource being
      *         exported. The maximum length is 255 bytes.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -93,6 +95,7 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateInstanceExportTaskRequest withDescription(String description) {
         setDescription(description);
         return this;
@@ -106,6 +109,7 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest
      * @param instanceId
      *        The ID of the instance.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -117,6 +121,7 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the instance.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
@@ -131,6 +136,7 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateInstanceExportTaskRequest withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;
@@ -145,6 +151,7 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest
      *        The target virtualization environment.
      * @see ExportEnvironment
      */
+
     public void setTargetEnvironment(String targetEnvironment) {
         this.targetEnvironment = targetEnvironment;
     }
@@ -157,6 +164,7 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest
      * @return The target virtualization environment.
      * @see ExportEnvironment
      */
+
     public String getTargetEnvironment() {
         return this.targetEnvironment;
     }
@@ -172,6 +180,7 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see ExportEnvironment
      */
+
     public CreateInstanceExportTaskRequest withTargetEnvironment(
             String targetEnvironment) {
         setTargetEnvironment(targetEnvironment);
@@ -189,6 +198,7 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see ExportEnvironment
      */
+
     public void setTargetEnvironment(ExportEnvironment targetEnvironment) {
         this.targetEnvironment = targetEnvironment.toString();
     }
@@ -204,6 +214,7 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see ExportEnvironment
      */
+
     public CreateInstanceExportTaskRequest withTargetEnvironment(
             ExportEnvironment targetEnvironment) {
         setTargetEnvironment(targetEnvironment);
@@ -218,6 +229,7 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest
      * @param exportToS3Task
      *        The format and location for an instance export task.
      */
+
     public void setExportToS3Task(ExportToS3TaskSpecification exportToS3Task) {
         this.exportToS3Task = exportToS3Task;
     }
@@ -229,6 +241,7 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest
      * 
      * @return The format and location for an instance export task.
      */
+
     public ExportToS3TaskSpecification getExportToS3Task() {
         return this.exportToS3Task;
     }
@@ -243,6 +256,7 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateInstanceExportTaskRequest withExportToS3Task(
             ExportToS3TaskSpecification exportToS3Task) {
         setExportToS3Task(exportToS3Task);

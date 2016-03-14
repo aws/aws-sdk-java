@@ -46,6 +46,7 @@ public class DescribeTapeRecoveryPointsRequest extends AmazonWebServiceRequest
     /**
      * @param gatewayARN
      */
+
     public void setGatewayARN(String gatewayARN) {
         this.gatewayARN = gatewayARN;
     }
@@ -53,6 +54,7 @@ public class DescribeTapeRecoveryPointsRequest extends AmazonWebServiceRequest
     /**
      * @return
      */
+
     public String getGatewayARN() {
         return this.gatewayARN;
     }
@@ -62,6 +64,7 @@ public class DescribeTapeRecoveryPointsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTapeRecoveryPointsRequest withGatewayARN(String gatewayARN) {
         setGatewayARN(gatewayARN);
         return this;
@@ -77,6 +80,7 @@ public class DescribeTapeRecoveryPointsRequest extends AmazonWebServiceRequest
      *        An opaque string that indicates the position at which to begin
      *        describing the virtual tape recovery points.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -90,6 +94,7 @@ public class DescribeTapeRecoveryPointsRequest extends AmazonWebServiceRequest
      * @return An opaque string that indicates the position at which to begin
      *         describing the virtual tape recovery points.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -106,6 +111,7 @@ public class DescribeTapeRecoveryPointsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTapeRecoveryPointsRequest withMarker(String marker) {
         setMarker(marker);
         return this;
@@ -121,6 +127,7 @@ public class DescribeTapeRecoveryPointsRequest extends AmazonWebServiceRequest
      *        Specifies that the number of virtual tape recovery points that are
      *        described be limited to the specified number.
      */
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -134,6 +141,7 @@ public class DescribeTapeRecoveryPointsRequest extends AmazonWebServiceRequest
      * @return Specifies that the number of virtual tape recovery points that
      *         are described be limited to the specified number.
      */
+
     public Integer getLimit() {
         return this.limit;
     }
@@ -150,6 +158,7 @@ public class DescribeTapeRecoveryPointsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTapeRecoveryPointsRequest withLimit(Integer limit) {
         setLimit(limit);
         return this;

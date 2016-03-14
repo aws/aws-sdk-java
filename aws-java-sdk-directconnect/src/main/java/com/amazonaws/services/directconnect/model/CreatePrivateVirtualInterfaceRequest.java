@@ -41,6 +41,7 @@ public class CreatePrivateVirtualInterfaceRequest extends
     /**
      * @param connectionId
      */
+
     public void setConnectionId(String connectionId) {
         this.connectionId = connectionId;
     }
@@ -48,6 +49,7 @@ public class CreatePrivateVirtualInterfaceRequest extends
     /**
      * @return
      */
+
     public String getConnectionId() {
         return this.connectionId;
     }
@@ -57,6 +59,7 @@ public class CreatePrivateVirtualInterfaceRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePrivateVirtualInterfaceRequest withConnectionId(
             String connectionId) {
         setConnectionId(connectionId);
@@ -77,6 +80,7 @@ public class CreatePrivateVirtualInterfaceRequest extends
      *        <p>
      *        Default: None
      */
+
     public void setNewPrivateVirtualInterface(
             NewPrivateVirtualInterface newPrivateVirtualInterface) {
         this.newPrivateVirtualInterface = newPrivateVirtualInterface;
@@ -95,6 +99,7 @@ public class CreatePrivateVirtualInterfaceRequest extends
      *         <p>
      *         Default: None
      */
+
     public NewPrivateVirtualInterface getNewPrivateVirtualInterface() {
         return this.newPrivateVirtualInterface;
     }
@@ -115,6 +120,7 @@ public class CreatePrivateVirtualInterfaceRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePrivateVirtualInterfaceRequest withNewPrivateVirtualInterface(
             NewPrivateVirtualInterface newPrivateVirtualInterface) {
         setNewPrivateVirtualInterface(newPrivateVirtualInterface);

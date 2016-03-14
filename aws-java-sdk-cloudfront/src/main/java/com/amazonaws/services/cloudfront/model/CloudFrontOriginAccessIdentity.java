@@ -67,6 +67,7 @@ public class CloudFrontOriginAccessIdentity implements Serializable, Cloneable {
      *        The ID for the origin access identity. For example:
      *        E74FTE3AJFJ256A.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -77,6 +78,7 @@ public class CloudFrontOriginAccessIdentity implements Serializable, Cloneable {
      * @return The ID for the origin access identity. For example:
      *         E74FTE3AJFJ256A.
      */
+
     public String getId() {
         return this.id;
     }
@@ -90,6 +92,7 @@ public class CloudFrontOriginAccessIdentity implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CloudFrontOriginAccessIdentity withId(String id) {
         setId(id);
         return this;
@@ -105,6 +108,7 @@ public class CloudFrontOriginAccessIdentity implements Serializable, Cloneable {
      *        which you use when giving the origin access identity read
      *        permission to an object in Amazon S3.
      */
+
     public void setS3CanonicalUserId(String s3CanonicalUserId) {
         this.s3CanonicalUserId = s3CanonicalUserId;
     }
@@ -118,6 +122,7 @@ public class CloudFrontOriginAccessIdentity implements Serializable, Cloneable {
      *         which you use when giving the origin access identity read
      *         permission to an object in Amazon S3.
      */
+
     public String getS3CanonicalUserId() {
         return this.s3CanonicalUserId;
     }
@@ -134,6 +139,7 @@ public class CloudFrontOriginAccessIdentity implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CloudFrontOriginAccessIdentity withS3CanonicalUserId(
             String s3CanonicalUserId) {
         setS3CanonicalUserId(s3CanonicalUserId);
@@ -146,6 +152,7 @@ public class CloudFrontOriginAccessIdentity implements Serializable, Cloneable {
      * @param cloudFrontOriginAccessIdentityConfig
      *        The current configuration information for the identity.
      */
+
     public void setCloudFrontOriginAccessIdentityConfig(
             CloudFrontOriginAccessIdentityConfig cloudFrontOriginAccessIdentityConfig) {
         this.cloudFrontOriginAccessIdentityConfig = cloudFrontOriginAccessIdentityConfig;
@@ -156,6 +163,7 @@ public class CloudFrontOriginAccessIdentity implements Serializable, Cloneable {
      * 
      * @return The current configuration information for the identity.
      */
+
     public CloudFrontOriginAccessIdentityConfig getCloudFrontOriginAccessIdentityConfig() {
         return this.cloudFrontOriginAccessIdentityConfig;
     }
@@ -168,6 +176,7 @@ public class CloudFrontOriginAccessIdentity implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CloudFrontOriginAccessIdentity withCloudFrontOriginAccessIdentityConfig(
             CloudFrontOriginAccessIdentityConfig cloudFrontOriginAccessIdentityConfig) {
         setCloudFrontOriginAccessIdentityConfig(cloudFrontOriginAccessIdentityConfig);

@@ -47,6 +47,7 @@ public class LookupAttribute implements Serializable, Cloneable {
      *        Specifies an attribute on which to filter the events returned.
      * @see LookupAttributeKey
      */
+
     public void setAttributeKey(String attributeKey) {
         this.attributeKey = attributeKey;
     }
@@ -59,6 +60,7 @@ public class LookupAttribute implements Serializable, Cloneable {
      * @return Specifies an attribute on which to filter the events returned.
      * @see LookupAttributeKey
      */
+
     public String getAttributeKey() {
         return this.attributeKey;
     }
@@ -74,6 +76,7 @@ public class LookupAttribute implements Serializable, Cloneable {
      *         chained together.
      * @see LookupAttributeKey
      */
+
     public LookupAttribute withAttributeKey(String attributeKey) {
         setAttributeKey(attributeKey);
         return this;
@@ -90,6 +93,7 @@ public class LookupAttribute implements Serializable, Cloneable {
      *         chained together.
      * @see LookupAttributeKey
      */
+
     public void setAttributeKey(LookupAttributeKey attributeKey) {
         this.attributeKey = attributeKey.toString();
     }
@@ -105,6 +109,7 @@ public class LookupAttribute implements Serializable, Cloneable {
      *         chained together.
      * @see LookupAttributeKey
      */
+
     public LookupAttribute withAttributeKey(LookupAttributeKey attributeKey) {
         setAttributeKey(attributeKey);
         return this;
@@ -118,6 +123,7 @@ public class LookupAttribute implements Serializable, Cloneable {
      * @param attributeValue
      *        Specifies a value for the specified AttributeKey.
      */
+
     public void setAttributeValue(String attributeValue) {
         this.attributeValue = attributeValue;
     }
@@ -129,6 +135,7 @@ public class LookupAttribute implements Serializable, Cloneable {
      * 
      * @return Specifies a value for the specified AttributeKey.
      */
+
     public String getAttributeValue() {
         return this.attributeValue;
     }
@@ -143,6 +150,7 @@ public class LookupAttribute implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LookupAttribute withAttributeValue(String attributeValue) {
         setAttributeValue(attributeValue);
         return this;

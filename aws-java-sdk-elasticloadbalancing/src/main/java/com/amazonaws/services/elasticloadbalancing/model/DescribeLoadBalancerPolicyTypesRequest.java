@@ -42,6 +42,7 @@ public class DescribeLoadBalancerPolicyTypesRequest extends
      * @return The names of the policy types. If no names are specified,
      *         describes all policy types defined by Elastic Load Balancing.
      */
+
     public java.util.List<String> getPolicyTypeNames() {
         if (policyTypeNames == null) {
             policyTypeNames = new com.amazonaws.internal.SdkInternalList<String>();
@@ -59,6 +60,7 @@ public class DescribeLoadBalancerPolicyTypesRequest extends
      *        The names of the policy types. If no names are specified,
      *        describes all policy types defined by Elastic Load Balancing.
      */
+
     public void setPolicyTypeNames(java.util.Collection<String> policyTypeNames) {
         if (policyTypeNames == null) {
             this.policyTypeNames = null;
@@ -87,6 +89,7 @@ public class DescribeLoadBalancerPolicyTypesRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLoadBalancerPolicyTypesRequest withPolicyTypeNames(
             String... policyTypeNames) {
         if (this.policyTypeNames == null) {
@@ -111,6 +114,7 @@ public class DescribeLoadBalancerPolicyTypesRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLoadBalancerPolicyTypesRequest withPolicyTypeNames(
             java.util.Collection<String> policyTypeNames) {
         setPolicyTypeNames(policyTypeNames);

@@ -55,6 +55,7 @@ public class ThirdPartyJobDetails implements Serializable, Cloneable {
      *        The identifier used to identify the job details in AWS
      *        CodePipeline.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -67,6 +68,7 @@ public class ThirdPartyJobDetails implements Serializable, Cloneable {
      * @return The identifier used to identify the job details in AWS
      *         CodePipeline.
      */
+
     public String getId() {
         return this.id;
     }
@@ -82,6 +84,7 @@ public class ThirdPartyJobDetails implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ThirdPartyJobDetails withId(String id) {
         setId(id);
         return this;
@@ -95,6 +98,7 @@ public class ThirdPartyJobDetails implements Serializable, Cloneable {
      * @param data
      *        The data to be returned by the third party job worker.
      */
+
     public void setData(ThirdPartyJobData data) {
         this.data = data;
     }
@@ -106,6 +110,7 @@ public class ThirdPartyJobDetails implements Serializable, Cloneable {
      * 
      * @return The data to be returned by the third party job worker.
      */
+
     public ThirdPartyJobData getData() {
         return this.data;
     }
@@ -120,6 +125,7 @@ public class ThirdPartyJobDetails implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ThirdPartyJobDetails withData(ThirdPartyJobData data) {
         setData(data);
         return this;
@@ -137,6 +143,7 @@ public class ThirdPartyJobDetails implements Serializable, Cloneable {
      *        ensure that the job is being worked on by only one job worker.
      *        This number must be returned in the response.
      */
+
     public void setNonce(String nonce) {
         this.nonce = nonce;
     }
@@ -152,6 +159,7 @@ public class ThirdPartyJobDetails implements Serializable, Cloneable {
      *         ensure that the job is being worked on by only one job worker.
      *         This number must be returned in the response.
      */
+
     public String getNonce() {
         return this.nonce;
     }
@@ -170,6 +178,7 @@ public class ThirdPartyJobDetails implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ThirdPartyJobDetails withNonce(String nonce) {
         setNonce(nonce);
         return this;

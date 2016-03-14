@@ -66,6 +66,7 @@ public class ListSigningCertificatesRequest extends AmazonWebServiceRequest
      * @param userName
      *        The name of the user.
      */
+
     public void setUserName(String userName) {
         this.userName = userName;
     }
@@ -77,6 +78,7 @@ public class ListSigningCertificatesRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the user.
      */
+
     public String getUserName() {
         return this.userName;
     }
@@ -91,6 +93,7 @@ public class ListSigningCertificatesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListSigningCertificatesRequest withUserName(String userName) {
         setUserName(userName);
         return this;
@@ -110,6 +113,7 @@ public class ListSigningCertificatesRequest extends AmazonWebServiceRequest
      *        it to the value of the <code>Marker</code> element in the response
      *        that you received to indicate where the next call should start.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -128,6 +132,7 @@ public class ListSigningCertificatesRequest extends AmazonWebServiceRequest
      *         response that you received to indicate where the next call should
      *         start.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -148,6 +153,7 @@ public class ListSigningCertificatesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListSigningCertificatesRequest withMarker(String marker) {
         setMarker(marker);
         return this;
@@ -183,6 +189,7 @@ public class ListSigningCertificatesRequest extends AmazonWebServiceRequest
      *        include in the subsequent call that tells the service where to
      *        continue from.
      */
+
     public void setMaxItems(Integer maxItems) {
         this.maxItems = maxItems;
     }
@@ -217,6 +224,7 @@ public class ListSigningCertificatesRequest extends AmazonWebServiceRequest
      *         include in the subsequent call that tells the service where to
      *         continue from.
      */
+
     public Integer getMaxItems() {
         return this.maxItems;
     }
@@ -253,6 +261,7 @@ public class ListSigningCertificatesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListSigningCertificatesRequest withMaxItems(Integer maxItems) {
         setMaxItems(maxItems);
         return this;

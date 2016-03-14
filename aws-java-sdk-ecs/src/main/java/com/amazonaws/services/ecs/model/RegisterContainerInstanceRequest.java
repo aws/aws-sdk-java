@@ -89,6 +89,7 @@ public class RegisterContainerInstanceRequest extends AmazonWebServiceRequest
      *        with which to register your container instance. If you do not
      *        specify a cluster, the default cluster is assumed..
      */
+
     public void setCluster(String cluster) {
         this.cluster = cluster;
     }
@@ -104,6 +105,7 @@ public class RegisterContainerInstanceRequest extends AmazonWebServiceRequest
      *         with which to register your container instance. If you do not
      *         specify a cluster, the default cluster is assumed..
      */
+
     public String getCluster() {
         return this.cluster;
     }
@@ -122,6 +124,7 @@ public class RegisterContainerInstanceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterContainerInstanceRequest withCluster(String cluster) {
         setCluster(cluster);
         return this;
@@ -140,6 +143,7 @@ public class RegisterContainerInstanceRequest extends AmazonWebServiceRequest
      *        the instance:
      *        <code>curl http://169.254.169.254/latest/dynamic/instance-identity/document/</code>
      */
+
     public void setInstanceIdentityDocument(String instanceIdentityDocument) {
         this.instanceIdentityDocument = instanceIdentityDocument;
     }
@@ -156,6 +160,7 @@ public class RegisterContainerInstanceRequest extends AmazonWebServiceRequest
      *         the instance:
      *         <code>curl http://169.254.169.254/latest/dynamic/instance-identity/document/</code>
      */
+
     public String getInstanceIdentityDocument() {
         return this.instanceIdentityDocument;
     }
@@ -175,6 +180,7 @@ public class RegisterContainerInstanceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterContainerInstanceRequest withInstanceIdentityDocument(
             String instanceIdentityDocument) {
         setInstanceIdentityDocument(instanceIdentityDocument);
@@ -195,6 +201,7 @@ public class RegisterContainerInstanceRequest extends AmazonWebServiceRequest
      *        command from the instance:
      *        <code>curl http://169.254.169.254/latest/dynamic/instance-identity/signature/</code>
      */
+
     public void setInstanceIdentityDocumentSignature(
             String instanceIdentityDocumentSignature) {
         this.instanceIdentityDocumentSignature = instanceIdentityDocumentSignature;
@@ -213,6 +220,7 @@ public class RegisterContainerInstanceRequest extends AmazonWebServiceRequest
      *         command from the instance:
      *         <code>curl http://169.254.169.254/latest/dynamic/instance-identity/signature/</code>
      */
+
     public String getInstanceIdentityDocumentSignature() {
         return this.instanceIdentityDocumentSignature;
     }
@@ -233,6 +241,7 @@ public class RegisterContainerInstanceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterContainerInstanceRequest withInstanceIdentityDocumentSignature(
             String instanceIdentityDocumentSignature) {
         setInstanceIdentityDocumentSignature(instanceIdentityDocumentSignature);
@@ -246,6 +255,7 @@ public class RegisterContainerInstanceRequest extends AmazonWebServiceRequest
      * 
      * @return The resources available on the instance.
      */
+
     public java.util.List<Resource> getTotalResources() {
         if (totalResources == null) {
             totalResources = new com.amazonaws.internal.SdkInternalList<Resource>();
@@ -261,6 +271,7 @@ public class RegisterContainerInstanceRequest extends AmazonWebServiceRequest
      * @param totalResources
      *        The resources available on the instance.
      */
+
     public void setTotalResources(java.util.Collection<Resource> totalResources) {
         if (totalResources == null) {
             this.totalResources = null;
@@ -287,6 +298,7 @@ public class RegisterContainerInstanceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterContainerInstanceRequest withTotalResources(
             Resource... totalResources) {
         if (this.totalResources == null) {
@@ -309,6 +321,7 @@ public class RegisterContainerInstanceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterContainerInstanceRequest withTotalResources(
             java.util.Collection<Resource> totalResources) {
         setTotalResources(totalResources);
@@ -325,6 +338,7 @@ public class RegisterContainerInstanceRequest extends AmazonWebServiceRequest
      *        The version information for the Amazon ECS container agent and
      *        Docker daemon running on the container instance.
      */
+
     public void setVersionInfo(VersionInfo versionInfo) {
         this.versionInfo = versionInfo;
     }
@@ -338,6 +352,7 @@ public class RegisterContainerInstanceRequest extends AmazonWebServiceRequest
      * @return The version information for the Amazon ECS container agent and
      *         Docker daemon running on the container instance.
      */
+
     public VersionInfo getVersionInfo() {
         return this.versionInfo;
     }
@@ -354,6 +369,7 @@ public class RegisterContainerInstanceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterContainerInstanceRequest withVersionInfo(
             VersionInfo versionInfo) {
         setVersionInfo(versionInfo);
@@ -370,6 +386,7 @@ public class RegisterContainerInstanceRequest extends AmazonWebServiceRequest
      *        The Amazon Resource Name (ARN) of the container instance (if it
      *        was previously registered).
      */
+
     public void setContainerInstanceArn(String containerInstanceArn) {
         this.containerInstanceArn = containerInstanceArn;
     }
@@ -383,6 +400,7 @@ public class RegisterContainerInstanceRequest extends AmazonWebServiceRequest
      * @return The Amazon Resource Name (ARN) of the container instance (if it
      *         was previously registered).
      */
+
     public String getContainerInstanceArn() {
         return this.containerInstanceArn;
     }
@@ -399,6 +417,7 @@ public class RegisterContainerInstanceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterContainerInstanceRequest withContainerInstanceArn(
             String containerInstanceArn) {
         setContainerInstanceArn(containerInstanceArn);
@@ -413,6 +432,7 @@ public class RegisterContainerInstanceRequest extends AmazonWebServiceRequest
      * @return The container instance attributes that this container instance
      *         supports.
      */
+
     public java.util.List<Attribute> getAttributes() {
         if (attributes == null) {
             attributes = new com.amazonaws.internal.SdkInternalList<Attribute>();
@@ -429,6 +449,7 @@ public class RegisterContainerInstanceRequest extends AmazonWebServiceRequest
      *        The container instance attributes that this container instance
      *        supports.
      */
+
     public void setAttributes(java.util.Collection<Attribute> attributes) {
         if (attributes == null) {
             this.attributes = null;
@@ -456,6 +477,7 @@ public class RegisterContainerInstanceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterContainerInstanceRequest withAttributes(
             Attribute... attributes) {
         if (this.attributes == null) {
@@ -479,6 +501,7 @@ public class RegisterContainerInstanceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterContainerInstanceRequest withAttributes(
             java.util.Collection<Attribute> attributes) {
         setAttributes(attributes);

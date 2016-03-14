@@ -41,6 +41,7 @@ public class DeleteFlowLogsRequest extends AmazonWebServiceRequest implements
      * 
      * @return One or more flow log IDs.
      */
+
     public java.util.List<String> getFlowLogIds() {
         if (flowLogIds == null) {
             flowLogIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -56,6 +57,7 @@ public class DeleteFlowLogsRequest extends AmazonWebServiceRequest implements
      * @param flowLogIds
      *        One or more flow log IDs.
      */
+
     public void setFlowLogIds(java.util.Collection<String> flowLogIds) {
         if (flowLogIds == null) {
             this.flowLogIds = null;
@@ -82,6 +84,7 @@ public class DeleteFlowLogsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteFlowLogsRequest withFlowLogIds(String... flowLogIds) {
         if (this.flowLogIds == null) {
             setFlowLogIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -103,6 +106,7 @@ public class DeleteFlowLogsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteFlowLogsRequest withFlowLogIds(
             java.util.Collection<String> flowLogIds) {
         setFlowLogIds(flowLogIds);

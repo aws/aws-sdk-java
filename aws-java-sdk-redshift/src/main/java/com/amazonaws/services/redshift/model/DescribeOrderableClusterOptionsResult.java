@@ -24,8 +24,8 @@ import java.io.Serializable;
 public class DescribeOrderableClusterOptionsResult implements Serializable, Cloneable {
 
     /**
-     * An <a>OrderableClusterOption</a> structure containing information
-     * about orderable options for the Cluster.
+     * An <code>OrderableClusterOption</code> structure containing
+     * information about orderable options for the cluster.
      */
     private com.amazonaws.internal.ListWithAutoConstructFlag<OrderableClusterOption> orderableClusterOptions;
 
@@ -40,11 +40,11 @@ public class DescribeOrderableClusterOptionsResult implements Serializable, Clon
     private String marker;
 
     /**
-     * An <a>OrderableClusterOption</a> structure containing information
-     * about orderable options for the Cluster.
+     * An <code>OrderableClusterOption</code> structure containing
+     * information about orderable options for the cluster.
      *
-     * @return An <a>OrderableClusterOption</a> structure containing information
-     *         about orderable options for the Cluster.
+     * @return An <code>OrderableClusterOption</code> structure containing
+     *         information about orderable options for the cluster.
      */
     public java.util.List<OrderableClusterOption> getOrderableClusterOptions() {
         if (orderableClusterOptions == null) {
@@ -55,11 +55,11 @@ public class DescribeOrderableClusterOptionsResult implements Serializable, Clon
     }
     
     /**
-     * An <a>OrderableClusterOption</a> structure containing information
-     * about orderable options for the Cluster.
+     * An <code>OrderableClusterOption</code> structure containing
+     * information about orderable options for the cluster.
      *
-     * @param orderableClusterOptions An <a>OrderableClusterOption</a> structure containing information
-     *         about orderable options for the Cluster.
+     * @param orderableClusterOptions An <code>OrderableClusterOption</code> structure containing
+     *         information about orderable options for the cluster.
      */
     public void setOrderableClusterOptions(java.util.Collection<OrderableClusterOption> orderableClusterOptions) {
         if (orderableClusterOptions == null) {
@@ -72,8 +72,8 @@ public class DescribeOrderableClusterOptionsResult implements Serializable, Clon
     }
     
     /**
-     * An <a>OrderableClusterOption</a> structure containing information
-     * about orderable options for the Cluster.
+     * An <code>OrderableClusterOption</code> structure containing
+     * information about orderable options for the cluster.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setOrderableClusterOptions(java.util.Collection)} or
@@ -82,8 +82,8 @@ public class DescribeOrderableClusterOptionsResult implements Serializable, Clon
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param orderableClusterOptions An <a>OrderableClusterOption</a> structure containing information
-     *         about orderable options for the Cluster.
+     * @param orderableClusterOptions An <code>OrderableClusterOption</code> structure containing
+     *         information about orderable options for the cluster.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.
@@ -97,13 +97,13 @@ public class DescribeOrderableClusterOptionsResult implements Serializable, Clon
     }
     
     /**
-     * An <a>OrderableClusterOption</a> structure containing information
-     * about orderable options for the Cluster.
+     * An <code>OrderableClusterOption</code> structure containing
+     * information about orderable options for the cluster.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param orderableClusterOptions An <a>OrderableClusterOption</a> structure containing information
-     *         about orderable options for the Cluster.
+     * @param orderableClusterOptions An <code>OrderableClusterOption</code> structure containing
+     *         information about orderable options for the cluster.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

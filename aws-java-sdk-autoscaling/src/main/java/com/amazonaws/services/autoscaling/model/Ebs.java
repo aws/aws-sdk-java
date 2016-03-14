@@ -104,6 +104,7 @@ public class Ebs implements Serializable, Cloneable {
      * @param snapshotId
      *        The ID of the snapshot.
      */
+
     public void setSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
     }
@@ -115,6 +116,7 @@ public class Ebs implements Serializable, Cloneable {
      * 
      * @return The ID of the snapshot.
      */
+
     public String getSnapshotId() {
         return this.snapshotId;
     }
@@ -129,6 +131,7 @@ public class Ebs implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Ebs withSnapshotId(String snapshotId) {
         setSnapshotId(snapshotId);
         return this;
@@ -168,6 +171,7 @@ public class Ebs implements Serializable, Cloneable {
      *        <p>
      *        Required: Required when the volume type is <code>io1</code>.
      */
+
     public void setVolumeSize(Integer volumeSize) {
         this.volumeSize = volumeSize;
     }
@@ -205,6 +209,7 @@ public class Ebs implements Serializable, Cloneable {
      *         <p>
      *         Required: Required when the volume type is <code>io1</code>.
      */
+
     public Integer getVolumeSize() {
         return this.volumeSize;
     }
@@ -245,6 +250,7 @@ public class Ebs implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Ebs withVolumeSize(Integer volumeSize) {
         setVolumeSize(volumeSize);
         return this;
@@ -269,6 +275,7 @@ public class Ebs implements Serializable, Cloneable {
      *        <p>
      *        Default: <code>standard</code>
      */
+
     public void setVolumeType(String volumeType) {
         this.volumeType = volumeType;
     }
@@ -291,6 +298,7 @@ public class Ebs implements Serializable, Cloneable {
      *         <p>
      *         Default: <code>standard</code>
      */
+
     public String getVolumeType() {
         return this.volumeType;
     }
@@ -316,6 +324,7 @@ public class Ebs implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Ebs withVolumeType(String volumeType) {
         setVolumeType(volumeType);
         return this;
@@ -335,6 +344,7 @@ public class Ebs implements Serializable, Cloneable {
      *        <p>
      *        Default: <code>true</code>
      */
+
     public void setDeleteOnTermination(Boolean deleteOnTermination) {
         this.deleteOnTermination = deleteOnTermination;
     }
@@ -352,6 +362,7 @@ public class Ebs implements Serializable, Cloneable {
      *         <p>
      *         Default: <code>true</code>
      */
+
     public Boolean getDeleteOnTermination() {
         return this.deleteOnTermination;
     }
@@ -372,6 +383,7 @@ public class Ebs implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Ebs withDeleteOnTermination(Boolean deleteOnTermination) {
         setDeleteOnTermination(deleteOnTermination);
         return this;
@@ -390,6 +402,7 @@ public class Ebs implements Serializable, Cloneable {
      *         <p>
      *         Default: <code>true</code>
      */
+
     public Boolean isDeleteOnTermination() {
         return this.deleteOnTermination;
     }
@@ -409,6 +422,7 @@ public class Ebs implements Serializable, Cloneable {
      *        <p>
      *        Default: None
      */
+
     public void setIops(Integer iops) {
         this.iops = iops;
     }
@@ -427,6 +441,7 @@ public class Ebs implements Serializable, Cloneable {
      *         <p>
      *         Default: None
      */
+
     public Integer getIops() {
         return this.iops;
     }
@@ -448,6 +463,7 @@ public class Ebs implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Ebs withIops(Integer iops) {
         setIops(iops);
         return this;
@@ -477,6 +493,7 @@ public class Ebs implements Serializable, Cloneable {
      *        >Amazon EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud
      *        User Guide</i>.
      */
+
     public void setEncrypted(Boolean encrypted) {
         this.encrypted = encrypted;
     }
@@ -504,6 +521,7 @@ public class Ebs implements Serializable, Cloneable {
      *         >Amazon EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud
      *         User Guide</i>.
      */
+
     public Boolean getEncrypted() {
         return this.encrypted;
     }
@@ -534,6 +552,7 @@ public class Ebs implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Ebs withEncrypted(Boolean encrypted) {
         setEncrypted(encrypted);
         return this;
@@ -562,6 +581,7 @@ public class Ebs implements Serializable, Cloneable {
      *         >Amazon EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud
      *         User Guide</i>.
      */
+
     public Boolean isEncrypted() {
         return this.encrypted;
     }

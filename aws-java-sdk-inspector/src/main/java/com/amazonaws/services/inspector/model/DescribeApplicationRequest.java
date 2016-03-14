@@ -40,6 +40,7 @@ public class DescribeApplicationRequest extends AmazonWebServiceRequest
      * @param applicationArn
      *        The ARN specifying the application that you want to describe.
      */
+
     public void setApplicationArn(String applicationArn) {
         this.applicationArn = applicationArn;
     }
@@ -51,6 +52,7 @@ public class DescribeApplicationRequest extends AmazonWebServiceRequest
      * 
      * @return The ARN specifying the application that you want to describe.
      */
+
     public String getApplicationArn() {
         return this.applicationArn;
     }
@@ -65,6 +67,7 @@ public class DescribeApplicationRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeApplicationRequest withApplicationArn(String applicationArn) {
         setApplicationArn(applicationArn);
         return this;

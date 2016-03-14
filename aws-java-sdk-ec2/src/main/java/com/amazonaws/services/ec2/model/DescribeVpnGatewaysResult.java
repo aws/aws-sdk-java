@@ -37,6 +37,7 @@ public class DescribeVpnGatewaysResult implements Serializable, Cloneable {
      * 
      * @return Information about one or more virtual private gateways.
      */
+
     public java.util.List<VpnGateway> getVpnGateways() {
         if (vpnGateways == null) {
             vpnGateways = new com.amazonaws.internal.SdkInternalList<VpnGateway>();
@@ -52,6 +53,7 @@ public class DescribeVpnGatewaysResult implements Serializable, Cloneable {
      * @param vpnGateways
      *        Information about one or more virtual private gateways.
      */
+
     public void setVpnGateways(java.util.Collection<VpnGateway> vpnGateways) {
         if (vpnGateways == null) {
             this.vpnGateways = null;
@@ -78,6 +80,7 @@ public class DescribeVpnGatewaysResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVpnGatewaysResult withVpnGateways(VpnGateway... vpnGateways) {
         if (this.vpnGateways == null) {
             setVpnGateways(new com.amazonaws.internal.SdkInternalList<VpnGateway>(
@@ -99,6 +102,7 @@ public class DescribeVpnGatewaysResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVpnGatewaysResult withVpnGateways(
             java.util.Collection<VpnGateway> vpnGateways) {
         setVpnGateways(vpnGateways);

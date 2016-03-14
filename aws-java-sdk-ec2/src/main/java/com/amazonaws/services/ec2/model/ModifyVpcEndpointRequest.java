@@ -69,6 +69,7 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
      * @param vpcEndpointId
      *        The ID of the endpoint.
      */
+
     public void setVpcEndpointId(String vpcEndpointId) {
         this.vpcEndpointId = vpcEndpointId;
     }
@@ -80,6 +81,7 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ID of the endpoint.
      */
+
     public String getVpcEndpointId() {
         return this.vpcEndpointId;
     }
@@ -94,6 +96,7 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyVpcEndpointRequest withVpcEndpointId(String vpcEndpointId) {
         setVpcEndpointId(vpcEndpointId);
         return this;
@@ -109,6 +112,7 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
      *        Specify <code>true</code> to reset the policy document to the
      *        default policy. The default policy allows access to the service.
      */
+
     public void setResetPolicy(Boolean resetPolicy) {
         this.resetPolicy = resetPolicy;
     }
@@ -122,6 +126,7 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
      * @return Specify <code>true</code> to reset the policy document to the
      *         default policy. The default policy allows access to the service.
      */
+
     public Boolean getResetPolicy() {
         return this.resetPolicy;
     }
@@ -138,6 +143,7 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyVpcEndpointRequest withResetPolicy(Boolean resetPolicy) {
         setResetPolicy(resetPolicy);
         return this;
@@ -152,6 +158,7 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
      * @return Specify <code>true</code> to reset the policy document to the
      *         default policy. The default policy allows access to the service.
      */
+
     public Boolean isResetPolicy() {
         return this.resetPolicy;
     }
@@ -166,6 +173,7 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
      *        A policy document to attach to the endpoint. The policy must be in
      *        valid JSON format.
      */
+
     public void setPolicyDocument(String policyDocument) {
         this.policyDocument = policyDocument;
     }
@@ -179,6 +187,7 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
      * @return A policy document to attach to the endpoint. The policy must be
      *         in valid JSON format.
      */
+
     public String getPolicyDocument() {
         return this.policyDocument;
     }
@@ -195,6 +204,7 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyVpcEndpointRequest withPolicyDocument(String policyDocument) {
         setPolicyDocument(policyDocument);
         return this;
@@ -207,6 +217,7 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
      * 
      * @return One or more route tables IDs to associate with the endpoint.
      */
+
     public java.util.List<String> getAddRouteTableIds() {
         if (addRouteTableIds == null) {
             addRouteTableIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -222,6 +233,7 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
      * @param addRouteTableIds
      *        One or more route tables IDs to associate with the endpoint.
      */
+
     public void setAddRouteTableIds(
             java.util.Collection<String> addRouteTableIds) {
         if (addRouteTableIds == null) {
@@ -249,6 +261,7 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyVpcEndpointRequest withAddRouteTableIds(
             String... addRouteTableIds) {
         if (this.addRouteTableIds == null) {
@@ -271,6 +284,7 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyVpcEndpointRequest withAddRouteTableIds(
             java.util.Collection<String> addRouteTableIds) {
         setAddRouteTableIds(addRouteTableIds);
@@ -284,6 +298,7 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
      * 
      * @return One or more route table IDs to disassociate from the endpoint.
      */
+
     public java.util.List<String> getRemoveRouteTableIds() {
         if (removeRouteTableIds == null) {
             removeRouteTableIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -299,6 +314,7 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
      * @param removeRouteTableIds
      *        One or more route table IDs to disassociate from the endpoint.
      */
+
     public void setRemoveRouteTableIds(
             java.util.Collection<String> removeRouteTableIds) {
         if (removeRouteTableIds == null) {
@@ -326,6 +342,7 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyVpcEndpointRequest withRemoveRouteTableIds(
             String... removeRouteTableIds) {
         if (this.removeRouteTableIds == null) {
@@ -348,6 +365,7 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyVpcEndpointRequest withRemoveRouteTableIds(
             java.util.Collection<String> removeRouteTableIds) {
         setRemoveRouteTableIds(removeRouteTableIds);

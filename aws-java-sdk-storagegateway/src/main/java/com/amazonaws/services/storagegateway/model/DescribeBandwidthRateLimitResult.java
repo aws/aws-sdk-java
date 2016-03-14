@@ -45,6 +45,7 @@ public class DescribeBandwidthRateLimitResult implements Serializable,
     /**
      * @param gatewayARN
      */
+
     public void setGatewayARN(String gatewayARN) {
         this.gatewayARN = gatewayARN;
     }
@@ -52,6 +53,7 @@ public class DescribeBandwidthRateLimitResult implements Serializable,
     /**
      * @return
      */
+
     public String getGatewayARN() {
         return this.gatewayARN;
     }
@@ -61,6 +63,7 @@ public class DescribeBandwidthRateLimitResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeBandwidthRateLimitResult withGatewayARN(String gatewayARN) {
         setGatewayARN(gatewayARN);
         return this;
@@ -77,6 +80,7 @@ public class DescribeBandwidthRateLimitResult implements Serializable,
      *        field does not appear in the response if the upload rate limit is
      *        not set.
      */
+
     public void setAverageUploadRateLimitInBitsPerSec(
             Long averageUploadRateLimitInBitsPerSec) {
         this.averageUploadRateLimitInBitsPerSec = averageUploadRateLimitInBitsPerSec;
@@ -92,6 +96,7 @@ public class DescribeBandwidthRateLimitResult implements Serializable,
      *         field does not appear in the response if the upload rate limit is
      *         not set.
      */
+
     public Long getAverageUploadRateLimitInBitsPerSec() {
         return this.averageUploadRateLimitInBitsPerSec;
     }
@@ -109,6 +114,7 @@ public class DescribeBandwidthRateLimitResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeBandwidthRateLimitResult withAverageUploadRateLimitInBitsPerSec(
             Long averageUploadRateLimitInBitsPerSec) {
         setAverageUploadRateLimitInBitsPerSec(averageUploadRateLimitInBitsPerSec);
@@ -126,6 +132,7 @@ public class DescribeBandwidthRateLimitResult implements Serializable,
      *        field does not appear in the response if the download rate limit
      *        is not set.
      */
+
     public void setAverageDownloadRateLimitInBitsPerSec(
             Long averageDownloadRateLimitInBitsPerSec) {
         this.averageDownloadRateLimitInBitsPerSec = averageDownloadRateLimitInBitsPerSec;
@@ -141,6 +148,7 @@ public class DescribeBandwidthRateLimitResult implements Serializable,
      *         This field does not appear in the response if the download rate
      *         limit is not set.
      */
+
     public Long getAverageDownloadRateLimitInBitsPerSec() {
         return this.averageDownloadRateLimitInBitsPerSec;
     }
@@ -158,6 +166,7 @@ public class DescribeBandwidthRateLimitResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeBandwidthRateLimitResult withAverageDownloadRateLimitInBitsPerSec(
             Long averageDownloadRateLimitInBitsPerSec) {
         setAverageDownloadRateLimitInBitsPerSec(averageDownloadRateLimitInBitsPerSec);

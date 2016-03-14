@@ -61,6 +61,7 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements
      * 
      * @return The names of one or more regions.
      */
+
     public java.util.List<String> getRegionNames() {
         if (regionNames == null) {
             regionNames = new com.amazonaws.internal.SdkInternalList<String>();
@@ -76,6 +77,7 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements
      * @param regionNames
      *        The names of one or more regions.
      */
+
     public void setRegionNames(java.util.Collection<String> regionNames) {
         if (regionNames == null) {
             this.regionNames = null;
@@ -102,6 +104,7 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeRegionsRequest withRegionNames(String... regionNames) {
         if (this.regionNames == null) {
             setRegionNames(new com.amazonaws.internal.SdkInternalList<String>(
@@ -123,6 +126,7 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeRegionsRequest withRegionNames(
             java.util.Collection<String> regionNames) {
         setRegionNames(regionNames);
@@ -163,6 +167,7 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements
      *         </p>
      *         </li>
      */
+
     public java.util.List<Filter> getFilters() {
         if (filters == null) {
             filters = new com.amazonaws.internal.SdkInternalList<Filter>();
@@ -205,6 +210,7 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements
      *        </p>
      *        </li>
      */
+
     public void setFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
             this.filters = null;
@@ -258,6 +264,7 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeRegionsRequest withFilters(Filter... filters) {
         if (this.filters == null) {
             setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(
@@ -306,6 +313,7 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeRegionsRequest withFilters(
             java.util.Collection<Filter> filters) {
         setFilters(filters);

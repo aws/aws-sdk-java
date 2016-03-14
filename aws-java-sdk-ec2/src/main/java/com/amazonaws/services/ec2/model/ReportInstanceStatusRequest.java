@@ -126,6 +126,7 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest
      * 
      * @return One or more instances.
      */
+
     public java.util.List<String> getInstances() {
         if (instances == null) {
             instances = new com.amazonaws.internal.SdkInternalList<String>();
@@ -141,6 +142,7 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest
      * @param instances
      *        One or more instances.
      */
+
     public void setInstances(java.util.Collection<String> instances) {
         if (instances == null) {
             this.instances = null;
@@ -167,6 +169,7 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReportInstanceStatusRequest withInstances(String... instances) {
         if (this.instances == null) {
             setInstances(new com.amazonaws.internal.SdkInternalList<String>(
@@ -188,6 +191,7 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReportInstanceStatusRequest withInstances(
             java.util.Collection<String> instances) {
         setInstances(instances);
@@ -203,6 +207,7 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest
      *        The status of all instances listed.
      * @see ReportStatusType
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -215,6 +220,7 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest
      * @return The status of all instances listed.
      * @see ReportStatusType
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -230,6 +236,7 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see ReportStatusType
      */
+
     public ReportInstanceStatusRequest withStatus(String status) {
         setStatus(status);
         return this;
@@ -246,6 +253,7 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see ReportStatusType
      */
+
     public void setStatus(ReportStatusType status) {
         this.status = status.toString();
     }
@@ -261,6 +269,7 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see ReportStatusType
      */
+
     public ReportInstanceStatusRequest withStatus(ReportStatusType status) {
         setStatus(status);
         return this;
@@ -274,6 +283,7 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest
      * @param startTime
      *        The time at which the reported instance health state began.
      */
+
     public void setStartTime(java.util.Date startTime) {
         this.startTime = startTime;
     }
@@ -285,6 +295,7 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest
      * 
      * @return The time at which the reported instance health state began.
      */
+
     public java.util.Date getStartTime() {
         return this.startTime;
     }
@@ -299,6 +310,7 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReportInstanceStatusRequest withStartTime(java.util.Date startTime) {
         setStartTime(startTime);
         return this;
@@ -312,6 +324,7 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest
      * @param endTime
      *        The time at which the reported instance health state ended.
      */
+
     public void setEndTime(java.util.Date endTime) {
         this.endTime = endTime;
     }
@@ -323,6 +336,7 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest
      * 
      * @return The time at which the reported instance health state ended.
      */
+
     public java.util.Date getEndTime() {
         return this.endTime;
     }
@@ -337,6 +351,7 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReportInstanceStatusRequest withEndTime(java.util.Date endTime) {
         setEndTime(endTime);
         return this;
@@ -460,6 +475,7 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest
      *         </li>
      * @see ReportInstanceReasonCodes
      */
+
     public java.util.List<String> getReasonCodes() {
         if (reasonCodes == null) {
             reasonCodes = new com.amazonaws.internal.SdkInternalList<String>();
@@ -585,6 +601,7 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest
      *        </li>
      * @see ReportInstanceReasonCodes
      */
+
     public void setReasonCodes(java.util.Collection<String> reasonCodes) {
         if (reasonCodes == null) {
             this.reasonCodes = null;
@@ -721,6 +738,7 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see ReportInstanceReasonCodes
      */
+
     public ReportInstanceStatusRequest withReasonCodes(String... reasonCodes) {
         if (this.reasonCodes == null) {
             setReasonCodes(new com.amazonaws.internal.SdkInternalList<String>(
@@ -852,6 +870,7 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see ReportInstanceReasonCodes
      */
+
     public ReportInstanceStatusRequest withReasonCodes(
             java.util.Collection<String> reasonCodes) {
         setReasonCodes(reasonCodes);
@@ -978,6 +997,7 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see ReportInstanceReasonCodes
      */
+
     public ReportInstanceStatusRequest withReasonCodes(
             ReportInstanceReasonCodes... reasonCodes) {
         com.amazonaws.internal.SdkInternalList<String> reasonCodesCopy = new com.amazonaws.internal.SdkInternalList<String>(
@@ -1001,6 +1021,7 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest
      * @param description
      *        Descriptive text about the health state of your instance.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -1012,6 +1033,7 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest
      * 
      * @return Descriptive text about the health state of your instance.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -1026,6 +1048,7 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReportInstanceStatusRequest withDescription(String description) {
         setDescription(description);
         return this;

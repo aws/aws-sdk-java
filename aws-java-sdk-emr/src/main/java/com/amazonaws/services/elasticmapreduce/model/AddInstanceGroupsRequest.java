@@ -71,6 +71,7 @@ public class AddInstanceGroupsRequest extends AmazonWebServiceRequest implements
      * 
      * @return Instance Groups to add.
      */
+
     public java.util.List<InstanceGroupConfig> getInstanceGroups() {
         if (instanceGroups == null) {
             instanceGroups = new com.amazonaws.internal.SdkInternalList<InstanceGroupConfig>();
@@ -86,6 +87,7 @@ public class AddInstanceGroupsRequest extends AmazonWebServiceRequest implements
      * @param instanceGroups
      *        Instance Groups to add.
      */
+
     public void setInstanceGroups(
             java.util.Collection<InstanceGroupConfig> instanceGroups) {
         if (instanceGroups == null) {
@@ -113,6 +115,7 @@ public class AddInstanceGroupsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddInstanceGroupsRequest withInstanceGroups(
             InstanceGroupConfig... instanceGroups) {
         if (this.instanceGroups == null) {
@@ -135,6 +138,7 @@ public class AddInstanceGroupsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddInstanceGroupsRequest withInstanceGroups(
             java.util.Collection<InstanceGroupConfig> instanceGroups) {
         setInstanceGroups(instanceGroups);
@@ -149,6 +153,7 @@ public class AddInstanceGroupsRequest extends AmazonWebServiceRequest implements
      * @param jobFlowId
      *        Job flow in which to add the instance groups.
      */
+
     public void setJobFlowId(String jobFlowId) {
         this.jobFlowId = jobFlowId;
     }
@@ -160,6 +165,7 @@ public class AddInstanceGroupsRequest extends AmazonWebServiceRequest implements
      * 
      * @return Job flow in which to add the instance groups.
      */
+
     public String getJobFlowId() {
         return this.jobFlowId;
     }
@@ -174,6 +180,7 @@ public class AddInstanceGroupsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddInstanceGroupsRequest withJobFlowId(String jobFlowId) {
         setJobFlowId(jobFlowId);
         return this;

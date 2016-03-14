@@ -46,6 +46,7 @@ public class CancelExportTaskRequest extends AmazonWebServiceRequest implements
      *        The ID of the export task. This is the ID returned by
      *        <code>CreateInstanceExportTask</code>.
      */
+
     public void setExportTaskId(String exportTaskId) {
         this.exportTaskId = exportTaskId;
     }
@@ -59,6 +60,7 @@ public class CancelExportTaskRequest extends AmazonWebServiceRequest implements
      * @return The ID of the export task. This is the ID returned by
      *         <code>CreateInstanceExportTask</code>.
      */
+
     public String getExportTaskId() {
         return this.exportTaskId;
     }
@@ -75,6 +77,7 @@ public class CancelExportTaskRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CancelExportTaskRequest withExportTaskId(String exportTaskId) {
         setExportTaskId(exportTaskId);
         return this;

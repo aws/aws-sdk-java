@@ -95,6 +95,7 @@ public class ValidateConfigurationSettingsRequest extends
      *        The name of the application that the configuration template or
      *        environment belongs to.
      */
+
     public void setApplicationName(String applicationName) {
         this.applicationName = applicationName;
     }
@@ -108,6 +109,7 @@ public class ValidateConfigurationSettingsRequest extends
      * @return The name of the application that the configuration template or
      *         environment belongs to.
      */
+
     public String getApplicationName() {
         return this.applicationName;
     }
@@ -124,6 +126,7 @@ public class ValidateConfigurationSettingsRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ValidateConfigurationSettingsRequest withApplicationName(
             String applicationName) {
         setApplicationName(applicationName);
@@ -144,6 +147,7 @@ public class ValidateConfigurationSettingsRequest extends
      *        <p>
      *        Condition: You cannot specify both this and an environment name.
      */
+
     public void setTemplateName(String templateName) {
         this.templateName = templateName;
     }
@@ -161,6 +165,7 @@ public class ValidateConfigurationSettingsRequest extends
      *         <p>
      *         Condition: You cannot specify both this and an environment name.
      */
+
     public String getTemplateName() {
         return this.templateName;
     }
@@ -181,6 +186,7 @@ public class ValidateConfigurationSettingsRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ValidateConfigurationSettingsRequest withTemplateName(
             String templateName) {
         setTemplateName(templateName);
@@ -202,6 +208,7 @@ public class ValidateConfigurationSettingsRequest extends
      *        Condition: You cannot specify both this and a configuration
      *        template name.
      */
+
     public void setEnvironmentName(String environmentName) {
         this.environmentName = environmentName;
     }
@@ -221,6 +228,7 @@ public class ValidateConfigurationSettingsRequest extends
      *         Condition: You cannot specify both this and a configuration
      *         template name.
      */
+
     public String getEnvironmentName() {
         return this.environmentName;
     }
@@ -242,6 +250,7 @@ public class ValidateConfigurationSettingsRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ValidateConfigurationSettingsRequest withEnvironmentName(
             String environmentName) {
         setEnvironmentName(environmentName);
@@ -255,6 +264,7 @@ public class ValidateConfigurationSettingsRequest extends
      * 
      * @return A list of the options and desired values to evaluate.
      */
+
     public java.util.List<ConfigurationOptionSetting> getOptionSettings() {
         if (optionSettings == null) {
             optionSettings = new com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>();
@@ -270,6 +280,7 @@ public class ValidateConfigurationSettingsRequest extends
      * @param optionSettings
      *        A list of the options and desired values to evaluate.
      */
+
     public void setOptionSettings(
             java.util.Collection<ConfigurationOptionSetting> optionSettings) {
         if (optionSettings == null) {
@@ -297,6 +308,7 @@ public class ValidateConfigurationSettingsRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ValidateConfigurationSettingsRequest withOptionSettings(
             ConfigurationOptionSetting... optionSettings) {
         if (this.optionSettings == null) {
@@ -319,6 +331,7 @@ public class ValidateConfigurationSettingsRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ValidateConfigurationSettingsRequest withOptionSettings(
             java.util.Collection<ConfigurationOptionSetting> optionSettings) {
         setOptionSettings(optionSettings);

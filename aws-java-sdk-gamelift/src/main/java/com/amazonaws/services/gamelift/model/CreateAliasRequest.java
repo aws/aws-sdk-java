@@ -57,6 +57,7 @@ public class CreateAliasRequest extends AmazonWebServiceRequest implements
      *        Descriptive label associated with this alias. Alias names do not
      *        need to be unique.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -70,6 +71,7 @@ public class CreateAliasRequest extends AmazonWebServiceRequest implements
      * @return Descriptive label associated with this alias. Alias names do not
      *         need to be unique.
      */
+
     public String getName() {
         return this.name;
     }
@@ -86,6 +88,7 @@ public class CreateAliasRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateAliasRequest withName(String name) {
         setName(name);
         return this;
@@ -99,6 +102,7 @@ public class CreateAliasRequest extends AmazonWebServiceRequest implements
      * @param description
      *        Human-readable description of the alias.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -110,6 +114,7 @@ public class CreateAliasRequest extends AmazonWebServiceRequest implements
      * 
      * @return Human-readable description of the alias.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -124,6 +129,7 @@ public class CreateAliasRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateAliasRequest withDescription(String description) {
         setDescription(description);
         return this;
@@ -137,6 +143,7 @@ public class CreateAliasRequest extends AmazonWebServiceRequest implements
      * @param routingStrategy
      *        Object specifying the fleet and routing type to use for the alias.
      */
+
     public void setRoutingStrategy(RoutingStrategy routingStrategy) {
         this.routingStrategy = routingStrategy;
     }
@@ -149,6 +156,7 @@ public class CreateAliasRequest extends AmazonWebServiceRequest implements
      * @return Object specifying the fleet and routing type to use for the
      *         alias.
      */
+
     public RoutingStrategy getRoutingStrategy() {
         return this.routingStrategy;
     }
@@ -163,6 +171,7 @@ public class CreateAliasRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateAliasRequest withRoutingStrategy(
             RoutingStrategy routingStrategy) {
         setRoutingStrategy(routingStrategy);

@@ -132,6 +132,7 @@ public class MethodSetting implements Serializable, Cloneable {
      *        <code>/{method_setting_key}/metrics/enabled</code>, and the value
      *        is a Boolean.
      */
+
     public void setMetricsEnabled(Boolean metricsEnabled) {
         this.metricsEnabled = metricsEnabled;
     }
@@ -149,6 +150,7 @@ public class MethodSetting implements Serializable, Cloneable {
      *         <code>/{method_setting_key}/metrics/enabled</code>, and the value
      *         is a Boolean.
      */
+
     public Boolean getMetricsEnabled() {
         return this.metricsEnabled;
     }
@@ -169,6 +171,7 @@ public class MethodSetting implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MethodSetting withMetricsEnabled(Boolean metricsEnabled) {
         setMetricsEnabled(metricsEnabled);
         return this;
@@ -187,6 +190,7 @@ public class MethodSetting implements Serializable, Cloneable {
      *         <code>/{method_setting_key}/metrics/enabled</code>, and the value
      *         is a Boolean.
      */
+
     public Boolean isMetricsEnabled() {
         return this.metricsEnabled;
     }
@@ -206,6 +210,7 @@ public class MethodSetting implements Serializable, Cloneable {
      *        and the available levels are <code>OFF</code>, <code>ERROR</code>,
      *        and <code>INFO</code>.
      */
+
     public void setLoggingLevel(String loggingLevel) {
         this.loggingLevel = loggingLevel;
     }
@@ -225,6 +230,7 @@ public class MethodSetting implements Serializable, Cloneable {
      *         available levels are <code>OFF</code>, <code>ERROR</code>, and
      *         <code>INFO</code>.
      */
+
     public String getLoggingLevel() {
         return this.loggingLevel;
     }
@@ -246,6 +252,7 @@ public class MethodSetting implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MethodSetting withLoggingLevel(String loggingLevel) {
         setLoggingLevel(loggingLevel);
         return this;
@@ -267,6 +274,7 @@ public class MethodSetting implements Serializable, Cloneable {
      *        <code>/{method_setting_key}/logging/dataTrace</code>, and the
      *        value is a Boolean.
      */
+
     public void setDataTraceEnabled(Boolean dataTraceEnabled) {
         this.dataTraceEnabled = dataTraceEnabled;
     }
@@ -286,6 +294,7 @@ public class MethodSetting implements Serializable, Cloneable {
      *         <code>/{method_setting_key}/logging/dataTrace</code>, and the
      *         value is a Boolean.
      */
+
     public Boolean getDataTraceEnabled() {
         return this.dataTraceEnabled;
     }
@@ -308,6 +317,7 @@ public class MethodSetting implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MethodSetting withDataTraceEnabled(Boolean dataTraceEnabled) {
         setDataTraceEnabled(dataTraceEnabled);
         return this;
@@ -328,6 +338,7 @@ public class MethodSetting implements Serializable, Cloneable {
      *         <code>/{method_setting_key}/logging/dataTrace</code>, and the
      *         value is a Boolean.
      */
+
     public Boolean isDataTraceEnabled() {
         return this.dataTraceEnabled;
     }
@@ -345,6 +356,7 @@ public class MethodSetting implements Serializable, Cloneable {
      *        <code>/{method_setting_key}/throttling/burstLimit</code>, and the
      *        value is an integer.
      */
+
     public void setThrottlingBurstLimit(Integer throttlingBurstLimit) {
         this.throttlingBurstLimit = throttlingBurstLimit;
     }
@@ -361,6 +373,7 @@ public class MethodSetting implements Serializable, Cloneable {
      *         <code>/{method_setting_key}/throttling/burstLimit</code>, and the
      *         value is an integer.
      */
+
     public Integer getThrottlingBurstLimit() {
         return this.throttlingBurstLimit;
     }
@@ -380,6 +393,7 @@ public class MethodSetting implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MethodSetting withThrottlingBurstLimit(Integer throttlingBurstLimit) {
         setThrottlingBurstLimit(throttlingBurstLimit);
         return this;
@@ -397,6 +411,7 @@ public class MethodSetting implements Serializable, Cloneable {
      *        setting is <code>/{method_setting_key}/throttling/rateLimit</code>
      *        , and the value is a double.
      */
+
     public void setThrottlingRateLimit(Double throttlingRateLimit) {
         this.throttlingRateLimit = throttlingRateLimit;
     }
@@ -413,6 +428,7 @@ public class MethodSetting implements Serializable, Cloneable {
      *         <code>/{method_setting_key}/throttling/rateLimit</code>, and the
      *         value is a double.
      */
+
     public Double getThrottlingRateLimit() {
         return this.throttlingRateLimit;
     }
@@ -431,6 +447,7 @@ public class MethodSetting implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MethodSetting withThrottlingRateLimit(Double throttlingRateLimit) {
         setThrottlingRateLimit(throttlingRateLimit);
         return this;
@@ -452,6 +469,7 @@ public class MethodSetting implements Serializable, Cloneable {
      *        <code>/{method_setting_key}/caching/enabled</code>, and the value
      *        is a Boolean.
      */
+
     public void setCachingEnabled(Boolean cachingEnabled) {
         this.cachingEnabled = cachingEnabled;
     }
@@ -471,6 +489,7 @@ public class MethodSetting implements Serializable, Cloneable {
      *         <code>/{method_setting_key}/caching/enabled</code>, and the value
      *         is a Boolean.
      */
+
     public Boolean getCachingEnabled() {
         return this.cachingEnabled;
     }
@@ -493,6 +512,7 @@ public class MethodSetting implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MethodSetting withCachingEnabled(Boolean cachingEnabled) {
         setCachingEnabled(cachingEnabled);
         return this;
@@ -513,6 +533,7 @@ public class MethodSetting implements Serializable, Cloneable {
      *         <code>/{method_setting_key}/caching/enabled</code>, and the value
      *         is a Boolean.
      */
+
     public Boolean isCachingEnabled() {
         return this.cachingEnabled;
     }
@@ -533,6 +554,7 @@ public class MethodSetting implements Serializable, Cloneable {
      *        <code>/{method_setting_key}/caching/ttlInSeconds</code>, and the
      *        value is an integer.
      */
+
     public void setCacheTtlInSeconds(Integer cacheTtlInSeconds) {
         this.cacheTtlInSeconds = cacheTtlInSeconds;
     }
@@ -552,6 +574,7 @@ public class MethodSetting implements Serializable, Cloneable {
      *         <code>/{method_setting_key}/caching/ttlInSeconds</code>, and the
      *         value is an integer.
      */
+
     public Integer getCacheTtlInSeconds() {
         return this.cacheTtlInSeconds;
     }
@@ -574,6 +597,7 @@ public class MethodSetting implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MethodSetting withCacheTtlInSeconds(Integer cacheTtlInSeconds) {
         setCacheTtlInSeconds(cacheTtlInSeconds);
         return this;
@@ -592,6 +616,7 @@ public class MethodSetting implements Serializable, Cloneable {
      *        <code>/{method_setting_key}/caching/dataEncrypted</code>, and the
      *        value is a Boolean.
      */
+
     public void setCacheDataEncrypted(Boolean cacheDataEncrypted) {
         this.cacheDataEncrypted = cacheDataEncrypted;
     }
@@ -608,6 +633,7 @@ public class MethodSetting implements Serializable, Cloneable {
      *         <code>/{method_setting_key}/caching/dataEncrypted</code>, and the
      *         value is a Boolean.
      */
+
     public Boolean getCacheDataEncrypted() {
         return this.cacheDataEncrypted;
     }
@@ -627,6 +653,7 @@ public class MethodSetting implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MethodSetting withCacheDataEncrypted(Boolean cacheDataEncrypted) {
         setCacheDataEncrypted(cacheDataEncrypted);
         return this;
@@ -644,6 +671,7 @@ public class MethodSetting implements Serializable, Cloneable {
      *         <code>/{method_setting_key}/caching/dataEncrypted</code>, and the
      *         value is a Boolean.
      */
+
     public Boolean isCacheDataEncrypted() {
         return this.cacheDataEncrypted;
     }
@@ -662,6 +690,7 @@ public class MethodSetting implements Serializable, Cloneable {
      *        <code>/{method_setting_key}/caching/requireAuthorizationForCacheControl</code>
      *        , and the value is a Boolean.
      */
+
     public void setRequireAuthorizationForCacheControl(
             Boolean requireAuthorizationForCacheControl) {
         this.requireAuthorizationForCacheControl = requireAuthorizationForCacheControl;
@@ -680,6 +709,7 @@ public class MethodSetting implements Serializable, Cloneable {
      *         <code>/{method_setting_key}/caching/requireAuthorizationForCacheControl</code>
      *         , and the value is a Boolean.
      */
+
     public Boolean getRequireAuthorizationForCacheControl() {
         return this.requireAuthorizationForCacheControl;
     }
@@ -700,6 +730,7 @@ public class MethodSetting implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MethodSetting withRequireAuthorizationForCacheControl(
             Boolean requireAuthorizationForCacheControl) {
         setRequireAuthorizationForCacheControl(requireAuthorizationForCacheControl);
@@ -719,6 +750,7 @@ public class MethodSetting implements Serializable, Cloneable {
      *         <code>/{method_setting_key}/caching/requireAuthorizationForCacheControl</code>
      *         , and the value is a Boolean.
      */
+
     public Boolean isRequireAuthorizationForCacheControl() {
         return this.requireAuthorizationForCacheControl;
     }
@@ -742,6 +774,7 @@ public class MethodSetting implements Serializable, Cloneable {
      *        <code>SUCCEED_WITHOUT_RESPONSE_HEADER</code>.
      * @see UnauthorizedCacheControlHeaderStrategy
      */
+
     public void setUnauthorizedCacheControlHeaderStrategy(
             String unauthorizedCacheControlHeaderStrategy) {
         this.unauthorizedCacheControlHeaderStrategy = unauthorizedCacheControlHeaderStrategy;
@@ -765,6 +798,7 @@ public class MethodSetting implements Serializable, Cloneable {
      *         <code>SUCCEED_WITHOUT_RESPONSE_HEADER</code>.
      * @see UnauthorizedCacheControlHeaderStrategy
      */
+
     public String getUnauthorizedCacheControlHeaderStrategy() {
         return this.unauthorizedCacheControlHeaderStrategy;
     }
@@ -790,6 +824,7 @@ public class MethodSetting implements Serializable, Cloneable {
      *         chained together.
      * @see UnauthorizedCacheControlHeaderStrategy
      */
+
     public MethodSetting withUnauthorizedCacheControlHeaderStrategy(
             String unauthorizedCacheControlHeaderStrategy) {
         setUnauthorizedCacheControlHeaderStrategy(unauthorizedCacheControlHeaderStrategy);
@@ -817,6 +852,7 @@ public class MethodSetting implements Serializable, Cloneable {
      *         chained together.
      * @see UnauthorizedCacheControlHeaderStrategy
      */
+
     public void setUnauthorizedCacheControlHeaderStrategy(
             UnauthorizedCacheControlHeaderStrategy unauthorizedCacheControlHeaderStrategy) {
         this.unauthorizedCacheControlHeaderStrategy = unauthorizedCacheControlHeaderStrategy
@@ -844,6 +880,7 @@ public class MethodSetting implements Serializable, Cloneable {
      *         chained together.
      * @see UnauthorizedCacheControlHeaderStrategy
      */
+
     public MethodSetting withUnauthorizedCacheControlHeaderStrategy(
             UnauthorizedCacheControlHeaderStrategy unauthorizedCacheControlHeaderStrategy) {
         setUnauthorizedCacheControlHeaderStrategy(unauthorizedCacheControlHeaderStrategy);

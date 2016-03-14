@@ -46,6 +46,7 @@ public class DiskImageVolumeDescription implements Serializable, Cloneable {
      * @param size
      *        The size of the volume, in GiB.
      */
+
     public void setSize(Long size) {
         this.size = size;
     }
@@ -57,6 +58,7 @@ public class DiskImageVolumeDescription implements Serializable, Cloneable {
      * 
      * @return The size of the volume, in GiB.
      */
+
     public Long getSize() {
         return this.size;
     }
@@ -71,6 +73,7 @@ public class DiskImageVolumeDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DiskImageVolumeDescription withSize(Long size) {
         setSize(size);
         return this;
@@ -84,6 +87,7 @@ public class DiskImageVolumeDescription implements Serializable, Cloneable {
      * @param id
      *        The volume identifier.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -95,6 +99,7 @@ public class DiskImageVolumeDescription implements Serializable, Cloneable {
      * 
      * @return The volume identifier.
      */
+
     public String getId() {
         return this.id;
     }
@@ -109,6 +114,7 @@ public class DiskImageVolumeDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DiskImageVolumeDescription withId(String id) {
         setId(id);
         return this;

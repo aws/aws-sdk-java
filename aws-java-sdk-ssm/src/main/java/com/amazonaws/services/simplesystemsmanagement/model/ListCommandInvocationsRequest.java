@@ -57,6 +57,7 @@ public class ListCommandInvocationsRequest extends AmazonWebServiceRequest
      * @param commandId
      *        (Optional) The invocations for a specific command ID.
      */
+
     public void setCommandId(String commandId) {
         this.commandId = commandId;
     }
@@ -66,6 +67,7 @@ public class ListCommandInvocationsRequest extends AmazonWebServiceRequest
      * 
      * @return (Optional) The invocations for a specific command ID.
      */
+
     public String getCommandId() {
         return this.commandId;
     }
@@ -78,6 +80,7 @@ public class ListCommandInvocationsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListCommandInvocationsRequest withCommandId(String commandId) {
         setCommandId(commandId);
         return this;
@@ -90,6 +93,7 @@ public class ListCommandInvocationsRequest extends AmazonWebServiceRequest
      *        (Optional) The command execution details for a specific instance
      *        ID.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -100,6 +104,7 @@ public class ListCommandInvocationsRequest extends AmazonWebServiceRequest
      * @return (Optional) The command execution details for a specific instance
      *         ID.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
@@ -113,6 +118,7 @@ public class ListCommandInvocationsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListCommandInvocationsRequest withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;
@@ -128,6 +134,7 @@ public class ListCommandInvocationsRequest extends AmazonWebServiceRequest
      *        The call also returns a token that you can specify in a subsequent
      *        call to get the next set of results.
      */
+
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
     }
@@ -141,6 +148,7 @@ public class ListCommandInvocationsRequest extends AmazonWebServiceRequest
      *         The call also returns a token that you can specify in a
      *         subsequent call to get the next set of results.
      */
+
     public Integer getMaxResults() {
         return this.maxResults;
     }
@@ -157,6 +165,7 @@ public class ListCommandInvocationsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListCommandInvocationsRequest withMaxResults(Integer maxResults) {
         setMaxResults(maxResults);
         return this;
@@ -170,6 +179,7 @@ public class ListCommandInvocationsRequest extends AmazonWebServiceRequest
      *        (Optional) The token for the next set of items to return. (You
      *        received this token from a previous call.)
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -181,6 +191,7 @@ public class ListCommandInvocationsRequest extends AmazonWebServiceRequest
      * @return (Optional) The token for the next set of items to return. (You
      *         received this token from a previous call.)
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -195,6 +206,7 @@ public class ListCommandInvocationsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListCommandInvocationsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -207,6 +219,7 @@ public class ListCommandInvocationsRequest extends AmazonWebServiceRequest
      * @return (Optional) One or more filters. Use a filter to return a more
      *         specific list of results.
      */
+
     public java.util.List<CommandFilter> getFilters() {
         if (filters == null) {
             filters = new com.amazonaws.internal.SdkInternalList<CommandFilter>();
@@ -222,6 +235,7 @@ public class ListCommandInvocationsRequest extends AmazonWebServiceRequest
      *        (Optional) One or more filters. Use a filter to return a more
      *        specific list of results.
      */
+
     public void setFilters(java.util.Collection<CommandFilter> filters) {
         if (filters == null) {
             this.filters = null;
@@ -248,6 +262,7 @@ public class ListCommandInvocationsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListCommandInvocationsRequest withFilters(CommandFilter... filters) {
         if (this.filters == null) {
             setFilters(new com.amazonaws.internal.SdkInternalList<CommandFilter>(
@@ -269,6 +284,7 @@ public class ListCommandInvocationsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListCommandInvocationsRequest withFilters(
             java.util.Collection<CommandFilter> filters) {
         setFilters(filters);
@@ -284,6 +300,7 @@ public class ListCommandInvocationsRequest extends AmazonWebServiceRequest
      *        executions and any command output. By default this is set to
      *        False.
      */
+
     public void setDetails(Boolean details) {
         this.details = details;
     }
@@ -296,6 +313,7 @@ public class ListCommandInvocationsRequest extends AmazonWebServiceRequest
      *         executions and any command output. By default this is set to
      *         False.
      */
+
     public Boolean getDetails() {
         return this.details;
     }
@@ -311,6 +329,7 @@ public class ListCommandInvocationsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListCommandInvocationsRequest withDetails(Boolean details) {
         setDetails(details);
         return this;
@@ -324,6 +343,7 @@ public class ListCommandInvocationsRequest extends AmazonWebServiceRequest
      *         executions and any command output. By default this is set to
      *         False.
      */
+
     public Boolean isDetails() {
         return this.details;
     }

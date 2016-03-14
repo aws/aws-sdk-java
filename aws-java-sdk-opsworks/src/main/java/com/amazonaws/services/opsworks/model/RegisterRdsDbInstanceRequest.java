@@ -58,6 +58,7 @@ public class RegisterRdsDbInstanceRequest extends AmazonWebServiceRequest
      * @param stackId
      *        The stack ID.
      */
+
     public void setStackId(String stackId) {
         this.stackId = stackId;
     }
@@ -69,6 +70,7 @@ public class RegisterRdsDbInstanceRequest extends AmazonWebServiceRequest
      * 
      * @return The stack ID.
      */
+
     public String getStackId() {
         return this.stackId;
     }
@@ -83,6 +85,7 @@ public class RegisterRdsDbInstanceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterRdsDbInstanceRequest withStackId(String stackId) {
         setStackId(stackId);
         return this;
@@ -96,6 +99,7 @@ public class RegisterRdsDbInstanceRequest extends AmazonWebServiceRequest
      * @param rdsDbInstanceArn
      *        The Amazon RDS instance's ARN.
      */
+
     public void setRdsDbInstanceArn(String rdsDbInstanceArn) {
         this.rdsDbInstanceArn = rdsDbInstanceArn;
     }
@@ -107,6 +111,7 @@ public class RegisterRdsDbInstanceRequest extends AmazonWebServiceRequest
      * 
      * @return The Amazon RDS instance's ARN.
      */
+
     public String getRdsDbInstanceArn() {
         return this.rdsDbInstanceArn;
     }
@@ -121,6 +126,7 @@ public class RegisterRdsDbInstanceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterRdsDbInstanceRequest withRdsDbInstanceArn(
             String rdsDbInstanceArn) {
         setRdsDbInstanceArn(rdsDbInstanceArn);
@@ -135,6 +141,7 @@ public class RegisterRdsDbInstanceRequest extends AmazonWebServiceRequest
      * @param dbUser
      *        The database's master user name.
      */
+
     public void setDbUser(String dbUser) {
         this.dbUser = dbUser;
     }
@@ -146,6 +153,7 @@ public class RegisterRdsDbInstanceRequest extends AmazonWebServiceRequest
      * 
      * @return The database's master user name.
      */
+
     public String getDbUser() {
         return this.dbUser;
     }
@@ -160,6 +168,7 @@ public class RegisterRdsDbInstanceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterRdsDbInstanceRequest withDbUser(String dbUser) {
         setDbUser(dbUser);
         return this;
@@ -173,6 +182,7 @@ public class RegisterRdsDbInstanceRequest extends AmazonWebServiceRequest
      * @param dbPassword
      *        The database password.
      */
+
     public void setDbPassword(String dbPassword) {
         this.dbPassword = dbPassword;
     }
@@ -184,6 +194,7 @@ public class RegisterRdsDbInstanceRequest extends AmazonWebServiceRequest
      * 
      * @return The database password.
      */
+
     public String getDbPassword() {
         return this.dbPassword;
     }
@@ -198,6 +209,7 @@ public class RegisterRdsDbInstanceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterRdsDbInstanceRequest withDbPassword(String dbPassword) {
         setDbPassword(dbPassword);
         return this;

@@ -72,6 +72,7 @@ public class DescribeAlarmsForMetricRequest extends AmazonWebServiceRequest
      * @param metricName
      *        The name of the metric.
      */
+
     public void setMetricName(String metricName) {
         this.metricName = metricName;
     }
@@ -83,6 +84,7 @@ public class DescribeAlarmsForMetricRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the metric.
      */
+
     public String getMetricName() {
         return this.metricName;
     }
@@ -97,6 +99,7 @@ public class DescribeAlarmsForMetricRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAlarmsForMetricRequest withMetricName(String metricName) {
         setMetricName(metricName);
         return this;
@@ -110,6 +113,7 @@ public class DescribeAlarmsForMetricRequest extends AmazonWebServiceRequest
      * @param namespace
      *        The namespace of the metric.
      */
+
     public void setNamespace(String namespace) {
         this.namespace = namespace;
     }
@@ -121,6 +125,7 @@ public class DescribeAlarmsForMetricRequest extends AmazonWebServiceRequest
      * 
      * @return The namespace of the metric.
      */
+
     public String getNamespace() {
         return this.namespace;
     }
@@ -135,6 +140,7 @@ public class DescribeAlarmsForMetricRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAlarmsForMetricRequest withNamespace(String namespace) {
         setNamespace(namespace);
         return this;
@@ -149,6 +155,7 @@ public class DescribeAlarmsForMetricRequest extends AmazonWebServiceRequest
      *        The statistic for the metric.
      * @see Statistic
      */
+
     public void setStatistic(String statistic) {
         this.statistic = statistic;
     }
@@ -161,6 +168,7 @@ public class DescribeAlarmsForMetricRequest extends AmazonWebServiceRequest
      * @return The statistic for the metric.
      * @see Statistic
      */
+
     public String getStatistic() {
         return this.statistic;
     }
@@ -176,6 +184,7 @@ public class DescribeAlarmsForMetricRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see Statistic
      */
+
     public DescribeAlarmsForMetricRequest withStatistic(String statistic) {
         setStatistic(statistic);
         return this;
@@ -192,6 +201,7 @@ public class DescribeAlarmsForMetricRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see Statistic
      */
+
     public void setStatistic(Statistic statistic) {
         this.statistic = statistic.toString();
     }
@@ -207,6 +217,7 @@ public class DescribeAlarmsForMetricRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see Statistic
      */
+
     public DescribeAlarmsForMetricRequest withStatistic(Statistic statistic) {
         setStatistic(statistic);
         return this;
@@ -223,6 +234,7 @@ public class DescribeAlarmsForMetricRequest extends AmazonWebServiceRequest
      *         has any associated dimensions, you must specify them in order for
      *         the DescribeAlarmsForMetric to succeed.
      */
+
     public java.util.List<Dimension> getDimensions() {
         if (dimensions == null) {
             dimensions = new com.amazonaws.internal.SdkInternalList<Dimension>();
@@ -242,6 +254,7 @@ public class DescribeAlarmsForMetricRequest extends AmazonWebServiceRequest
      *        has any associated dimensions, you must specify them in order for
      *        the DescribeAlarmsForMetric to succeed.
      */
+
     public void setDimensions(java.util.Collection<Dimension> dimensions) {
         if (dimensions == null) {
             this.dimensions = null;
@@ -272,6 +285,7 @@ public class DescribeAlarmsForMetricRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAlarmsForMetricRequest withDimensions(
             Dimension... dimensions) {
         if (this.dimensions == null) {
@@ -298,6 +312,7 @@ public class DescribeAlarmsForMetricRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAlarmsForMetricRequest withDimensions(
             java.util.Collection<Dimension> dimensions) {
         setDimensions(dimensions);
@@ -312,6 +327,7 @@ public class DescribeAlarmsForMetricRequest extends AmazonWebServiceRequest
      * @param period
      *        The period in seconds over which the statistic is applied.
      */
+
     public void setPeriod(Integer period) {
         this.period = period;
     }
@@ -323,6 +339,7 @@ public class DescribeAlarmsForMetricRequest extends AmazonWebServiceRequest
      * 
      * @return The period in seconds over which the statistic is applied.
      */
+
     public Integer getPeriod() {
         return this.period;
     }
@@ -337,6 +354,7 @@ public class DescribeAlarmsForMetricRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAlarmsForMetricRequest withPeriod(Integer period) {
         setPeriod(period);
         return this;
@@ -351,6 +369,7 @@ public class DescribeAlarmsForMetricRequest extends AmazonWebServiceRequest
      *        The unit for the metric.
      * @see StandardUnit
      */
+
     public void setUnit(String unit) {
         this.unit = unit;
     }
@@ -363,6 +382,7 @@ public class DescribeAlarmsForMetricRequest extends AmazonWebServiceRequest
      * @return The unit for the metric.
      * @see StandardUnit
      */
+
     public String getUnit() {
         return this.unit;
     }
@@ -378,6 +398,7 @@ public class DescribeAlarmsForMetricRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see StandardUnit
      */
+
     public DescribeAlarmsForMetricRequest withUnit(String unit) {
         setUnit(unit);
         return this;
@@ -394,6 +415,7 @@ public class DescribeAlarmsForMetricRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see StandardUnit
      */
+
     public void setUnit(StandardUnit unit) {
         this.unit = unit.toString();
     }
@@ -409,6 +431,7 @@ public class DescribeAlarmsForMetricRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see StandardUnit
      */
+
     public DescribeAlarmsForMetricRequest withUnit(StandardUnit unit) {
         setUnit(unit);
         return this;

@@ -110,6 +110,7 @@ public class ReceiptRule implements Serializable, Cloneable {
      *        <li>Start and end with a letter or number.</li>
      *        <li>Contain less than 64 characters.</li>
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -132,6 +133,7 @@ public class ReceiptRule implements Serializable, Cloneable {
      *         <li>Start and end with a letter or number.</li>
      *         <li>Contain less than 64 characters.</li>
      */
+
     public String getName() {
         return this.name;
     }
@@ -157,6 +159,7 @@ public class ReceiptRule implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReceiptRule withName(String name) {
         setName(name);
         return this;
@@ -172,6 +175,7 @@ public class ReceiptRule implements Serializable, Cloneable {
      *        If <code>true</code>, the receipt rule is active. The default
      *        value is true.
      */
+
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
     }
@@ -185,6 +189,7 @@ public class ReceiptRule implements Serializable, Cloneable {
      * @return If <code>true</code>, the receipt rule is active. The default
      *         value is true.
      */
+
     public Boolean getEnabled() {
         return this.enabled;
     }
@@ -201,6 +206,7 @@ public class ReceiptRule implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReceiptRule withEnabled(Boolean enabled) {
         setEnabled(enabled);
         return this;
@@ -215,6 +221,7 @@ public class ReceiptRule implements Serializable, Cloneable {
      * @return If <code>true</code>, the receipt rule is active. The default
      *         value is true.
      */
+
     public Boolean isEnabled() {
         return this.enabled;
     }
@@ -236,6 +243,7 @@ public class ReceiptRule implements Serializable, Cloneable {
      *        default is <code>Optional</code>.
      * @see TlsPolicy
      */
+
     public void setTlsPolicy(String tlsPolicy) {
         this.tlsPolicy = tlsPolicy;
     }
@@ -256,6 +264,7 @@ public class ReceiptRule implements Serializable, Cloneable {
      *         default is <code>Optional</code>.
      * @see TlsPolicy
      */
+
     public String getTlsPolicy() {
         return this.tlsPolicy;
     }
@@ -279,6 +288,7 @@ public class ReceiptRule implements Serializable, Cloneable {
      *         chained together.
      * @see TlsPolicy
      */
+
     public ReceiptRule withTlsPolicy(String tlsPolicy) {
         setTlsPolicy(tlsPolicy);
         return this;
@@ -303,6 +313,7 @@ public class ReceiptRule implements Serializable, Cloneable {
      *         chained together.
      * @see TlsPolicy
      */
+
     public void setTlsPolicy(TlsPolicy tlsPolicy) {
         this.tlsPolicy = tlsPolicy.toString();
     }
@@ -326,6 +337,7 @@ public class ReceiptRule implements Serializable, Cloneable {
      *         chained together.
      * @see TlsPolicy
      */
+
     public ReceiptRule withTlsPolicy(TlsPolicy tlsPolicy) {
         setTlsPolicy(tlsPolicy);
         return this;
@@ -342,6 +354,7 @@ public class ReceiptRule implements Serializable, Cloneable {
      *         rule applies. If this field is not specified, this rule will
      *         match all recipients under all verified domains.
      */
+
     public java.util.List<String> getRecipients() {
         if (recipients == null) {
             recipients = new com.amazonaws.internal.SdkInternalList<String>();
@@ -361,6 +374,7 @@ public class ReceiptRule implements Serializable, Cloneable {
      *        rule applies. If this field is not specified, this rule will match
      *        all recipients under all verified domains.
      */
+
     public void setRecipients(java.util.Collection<String> recipients) {
         if (recipients == null) {
             this.recipients = null;
@@ -391,6 +405,7 @@ public class ReceiptRule implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReceiptRule withRecipients(String... recipients) {
         if (this.recipients == null) {
             setRecipients(new com.amazonaws.internal.SdkInternalList<String>(
@@ -416,6 +431,7 @@ public class ReceiptRule implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReceiptRule withRecipients(java.util.Collection<String> recipients) {
         setRecipients(recipients);
         return this;
@@ -432,6 +448,7 @@ public class ReceiptRule implements Serializable, Cloneable {
      *         least one of the recipient email addresses or domains specified
      *         in the receipt rule.
      */
+
     public java.util.List<ReceiptAction> getActions() {
         if (actions == null) {
             actions = new com.amazonaws.internal.SdkInternalList<ReceiptAction>();
@@ -451,6 +468,7 @@ public class ReceiptRule implements Serializable, Cloneable {
      *        least one of the recipient email addresses or domains specified in
      *        the receipt rule.
      */
+
     public void setActions(java.util.Collection<ReceiptAction> actions) {
         if (actions == null) {
             this.actions = null;
@@ -481,6 +499,7 @@ public class ReceiptRule implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReceiptRule withActions(ReceiptAction... actions) {
         if (this.actions == null) {
             setActions(new com.amazonaws.internal.SdkInternalList<ReceiptAction>(
@@ -506,6 +525,7 @@ public class ReceiptRule implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReceiptRule withActions(java.util.Collection<ReceiptAction> actions) {
         setActions(actions);
         return this;
@@ -522,6 +542,7 @@ public class ReceiptRule implements Serializable, Cloneable {
      *        applies are scanned for spam and viruses. The default value is
      *        <code>true</code>.
      */
+
     public void setScanEnabled(Boolean scanEnabled) {
         this.scanEnabled = scanEnabled;
     }
@@ -536,6 +557,7 @@ public class ReceiptRule implements Serializable, Cloneable {
      *         applies are scanned for spam and viruses. The default value is
      *         <code>true</code>.
      */
+
     public Boolean getScanEnabled() {
         return this.scanEnabled;
     }
@@ -553,6 +575,7 @@ public class ReceiptRule implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReceiptRule withScanEnabled(Boolean scanEnabled) {
         setScanEnabled(scanEnabled);
         return this;
@@ -568,6 +591,7 @@ public class ReceiptRule implements Serializable, Cloneable {
      *         applies are scanned for spam and viruses. The default value is
      *         <code>true</code>.
      */
+
     public Boolean isScanEnabled() {
         return this.scanEnabled;
     }

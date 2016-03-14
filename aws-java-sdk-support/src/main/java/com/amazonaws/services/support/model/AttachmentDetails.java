@@ -48,6 +48,7 @@ public class AttachmentDetails implements Serializable, Cloneable {
      * @param attachmentId
      *        The ID of the attachment.
      */
+
     public void setAttachmentId(String attachmentId) {
         this.attachmentId = attachmentId;
     }
@@ -59,6 +60,7 @@ public class AttachmentDetails implements Serializable, Cloneable {
      * 
      * @return The ID of the attachment.
      */
+
     public String getAttachmentId() {
         return this.attachmentId;
     }
@@ -73,6 +75,7 @@ public class AttachmentDetails implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AttachmentDetails withAttachmentId(String attachmentId) {
         setAttachmentId(attachmentId);
         return this;
@@ -86,6 +89,7 @@ public class AttachmentDetails implements Serializable, Cloneable {
      * @param fileName
      *        The file name of the attachment.
      */
+
     public void setFileName(String fileName) {
         this.fileName = fileName;
     }
@@ -97,6 +101,7 @@ public class AttachmentDetails implements Serializable, Cloneable {
      * 
      * @return The file name of the attachment.
      */
+
     public String getFileName() {
         return this.fileName;
     }
@@ -111,6 +116,7 @@ public class AttachmentDetails implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AttachmentDetails withFileName(String fileName) {
         setFileName(fileName);
         return this;

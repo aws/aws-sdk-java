@@ -132,6 +132,7 @@ public class FieldStats implements Serializable, Cloneable {
      *        <a href="http://tools.ietf.org/html/rfc3339">IETF RFC3339</a>:
      *        yyyy-mm-ddTHH:mm:ss.SSSZ.
      */
+
     public void setMin(String min) {
         this.min = min;
     }
@@ -161,6 +162,7 @@ public class FieldStats implements Serializable, Cloneable {
      *         <a href="http://tools.ietf.org/html/rfc3339">IETF RFC3339</a>:
      *         yyyy-mm-ddTHH:mm:ss.SSSZ.
      */
+
     public String getMin() {
         return this.min;
     }
@@ -194,6 +196,7 @@ public class FieldStats implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FieldStats withMin(String min) {
         setMin(min);
         return this;
@@ -226,6 +229,7 @@ public class FieldStats implements Serializable, Cloneable {
      *        <a href="http://tools.ietf.org/html/rfc3339">IETF RFC3339</a>:
      *        yyyy-mm-ddTHH:mm:ss.SSSZ.
      */
+
     public void setMax(String max) {
         this.max = max;
     }
@@ -255,6 +259,7 @@ public class FieldStats implements Serializable, Cloneable {
      *         <a href="http://tools.ietf.org/html/rfc3339">IETF RFC3339</a>:
      *         yyyy-mm-ddTHH:mm:ss.SSSZ.
      */
+
     public String getMax() {
         return this.max;
     }
@@ -288,6 +293,7 @@ public class FieldStats implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FieldStats withMax(String max) {
         setMax(max);
         return this;
@@ -303,6 +309,7 @@ public class FieldStats implements Serializable, Cloneable {
      *        The number of documents that contain a value in the specified
      *        field in the result set.
      */
+
     public void setCount(Long count) {
         this.count = count;
     }
@@ -316,6 +323,7 @@ public class FieldStats implements Serializable, Cloneable {
      * @return The number of documents that contain a value in the specified
      *         field in the result set.
      */
+
     public Long getCount() {
         return this.count;
     }
@@ -332,6 +340,7 @@ public class FieldStats implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FieldStats withCount(Long count) {
         setCount(count);
         return this;
@@ -347,6 +356,7 @@ public class FieldStats implements Serializable, Cloneable {
      *        The number of documents that do not contain a value in the
      *        specified field in the result set.
      */
+
     public void setMissing(Long missing) {
         this.missing = missing;
     }
@@ -360,6 +370,7 @@ public class FieldStats implements Serializable, Cloneable {
      * @return The number of documents that do not contain a value in the
      *         specified field in the result set.
      */
+
     public Long getMissing() {
         return this.missing;
     }
@@ -376,6 +387,7 @@ public class FieldStats implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FieldStats withMissing(Long missing) {
         setMissing(missing);
         return this;
@@ -391,6 +403,7 @@ public class FieldStats implements Serializable, Cloneable {
      *        The sum of the field values across the documents in the result
      *        set. <code>null</code> for date fields.
      */
+
     public void setSum(Double sum) {
         this.sum = sum;
     }
@@ -404,6 +417,7 @@ public class FieldStats implements Serializable, Cloneable {
      * @return The sum of the field values across the documents in the result
      *         set. <code>null</code> for date fields.
      */
+
     public Double getSum() {
         return this.sum;
     }
@@ -420,6 +434,7 @@ public class FieldStats implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FieldStats withSum(Double sum) {
         setSum(sum);
         return this;
@@ -433,6 +448,7 @@ public class FieldStats implements Serializable, Cloneable {
      * @param sumOfSquares
      *        The sum of all field values in the result set squared.
      */
+
     public void setSumOfSquares(Double sumOfSquares) {
         this.sumOfSquares = sumOfSquares;
     }
@@ -444,6 +460,7 @@ public class FieldStats implements Serializable, Cloneable {
      * 
      * @return The sum of all field values in the result set squared.
      */
+
     public Double getSumOfSquares() {
         return this.sumOfSquares;
     }
@@ -458,6 +475,7 @@ public class FieldStats implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FieldStats withSumOfSquares(Double sumOfSquares) {
         setSumOfSquares(sumOfSquares);
         return this;
@@ -490,6 +508,7 @@ public class FieldStats implements Serializable, Cloneable {
      *        <a href="http://tools.ietf.org/html/rfc3339">IETF RFC3339</a>:
      *        yyyy-mm-ddTHH:mm:ss.SSSZ.
      */
+
     public void setMean(String mean) {
         this.mean = mean;
     }
@@ -519,6 +538,7 @@ public class FieldStats implements Serializable, Cloneable {
      *         in <a href="http://tools.ietf.org/html/rfc3339">IETF RFC3339</a>:
      *         yyyy-mm-ddTHH:mm:ss.SSSZ.
      */
+
     public String getMean() {
         return this.mean;
     }
@@ -552,6 +572,7 @@ public class FieldStats implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FieldStats withMean(String mean) {
         setMean(mean);
         return this;
@@ -567,6 +588,7 @@ public class FieldStats implements Serializable, Cloneable {
      *        The standard deviation of the values in the specified field in the
      *        result set.
      */
+
     public void setStddev(Double stddev) {
         this.stddev = stddev;
     }
@@ -580,6 +602,7 @@ public class FieldStats implements Serializable, Cloneable {
      * @return The standard deviation of the values in the specified field in
      *         the result set.
      */
+
     public Double getStddev() {
         return this.stddev;
     }
@@ -596,6 +619,7 @@ public class FieldStats implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FieldStats withStddev(Double stddev) {
         setStddev(stddev);
         return this;

@@ -38,6 +38,7 @@ public class DescribeApplicationResult implements Serializable, Cloneable {
      * @param application
      *        Information about the application.
      */
+
     public void setApplication(Application application) {
         this.application = application;
     }
@@ -49,6 +50,7 @@ public class DescribeApplicationResult implements Serializable, Cloneable {
      * 
      * @return Information about the application.
      */
+
     public Application getApplication() {
         return this.application;
     }
@@ -63,6 +65,7 @@ public class DescribeApplicationResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeApplicationResult withApplication(Application application) {
         setApplication(application);
         return this;

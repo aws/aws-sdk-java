@@ -40,6 +40,7 @@ public class BulkPublishResult implements Serializable, Cloneable {
      *        us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
      *        Cognito. GUID generation is unique within a region.
      */
+
     public void setIdentityPoolId(String identityPoolId) {
         this.identityPoolId = identityPoolId;
     }
@@ -53,6 +54,7 @@ public class BulkPublishResult implements Serializable, Cloneable {
      *         us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
      *         Cognito. GUID generation is unique within a region.
      */
+
     public String getIdentityPoolId() {
         return this.identityPoolId;
     }
@@ -69,6 +71,7 @@ public class BulkPublishResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BulkPublishResult withIdentityPoolId(String identityPoolId) {
         setIdentityPoolId(identityPoolId);
         return this;

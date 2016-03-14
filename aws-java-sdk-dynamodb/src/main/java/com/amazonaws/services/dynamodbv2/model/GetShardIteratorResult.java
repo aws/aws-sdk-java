@@ -46,6 +46,7 @@ public class GetShardIteratorResult implements Serializable, Cloneable {
      *        records sequentially. A shard iterator specifies this position
      *        using the sequence number of a stream record in a shard.
      */
+
     public void setShardIterator(String shardIterator) {
         this.shardIterator = shardIterator;
     }
@@ -61,6 +62,7 @@ public class GetShardIteratorResult implements Serializable, Cloneable {
      *         records sequentially. A shard iterator specifies this position
      *         using the sequence number of a stream record in a shard.
      */
+
     public String getShardIterator() {
         return this.shardIterator;
     }
@@ -79,6 +81,7 @@ public class GetShardIteratorResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetShardIteratorResult withShardIterator(String shardIterator) {
         setShardIterator(shardIterator);
         return this;

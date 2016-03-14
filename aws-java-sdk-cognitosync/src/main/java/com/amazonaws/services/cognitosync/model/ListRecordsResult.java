@@ -47,6 +47,7 @@ public class ListRecordsResult implements Serializable, Cloneable {
      * 
      * @return A list of all records.
      */
+
     public java.util.List<Record> getRecords() {
         if (records == null) {
             records = new com.amazonaws.internal.SdkInternalList<Record>();
@@ -60,6 +61,7 @@ public class ListRecordsResult implements Serializable, Cloneable {
      * @param records
      *        A list of all records.
      */
+
     public void setRecords(java.util.Collection<Record> records) {
         if (records == null) {
             this.records = null;
@@ -84,6 +86,7 @@ public class ListRecordsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListRecordsResult withRecords(Record... records) {
         if (this.records == null) {
             setRecords(new com.amazonaws.internal.SdkInternalList<Record>(
@@ -103,6 +106,7 @@ public class ListRecordsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListRecordsResult withRecords(java.util.Collection<Record> records) {
         setRecords(records);
         return this;
@@ -114,6 +118,7 @@ public class ListRecordsResult implements Serializable, Cloneable {
      * @param nextToken
      *        A pagination token for obtaining the next page of results.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -123,6 +128,7 @@ public class ListRecordsResult implements Serializable, Cloneable {
      * 
      * @return A pagination token for obtaining the next page of results.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -135,6 +141,7 @@ public class ListRecordsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListRecordsResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -146,6 +153,7 @@ public class ListRecordsResult implements Serializable, Cloneable {
      * @param count
      *        Total number of records.
      */
+
     public void setCount(Integer count) {
         this.count = count;
     }
@@ -155,6 +163,7 @@ public class ListRecordsResult implements Serializable, Cloneable {
      * 
      * @return Total number of records.
      */
+
     public Integer getCount() {
         return this.count;
     }
@@ -167,6 +176,7 @@ public class ListRecordsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListRecordsResult withCount(Integer count) {
         setCount(count);
         return this;
@@ -178,6 +188,7 @@ public class ListRecordsResult implements Serializable, Cloneable {
      * @param datasetSyncCount
      *        Server sync count for this dataset.
      */
+
     public void setDatasetSyncCount(Long datasetSyncCount) {
         this.datasetSyncCount = datasetSyncCount;
     }
@@ -187,6 +198,7 @@ public class ListRecordsResult implements Serializable, Cloneable {
      * 
      * @return Server sync count for this dataset.
      */
+
     public Long getDatasetSyncCount() {
         return this.datasetSyncCount;
     }
@@ -199,6 +211,7 @@ public class ListRecordsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListRecordsResult withDatasetSyncCount(Long datasetSyncCount) {
         setDatasetSyncCount(datasetSyncCount);
         return this;
@@ -210,6 +223,7 @@ public class ListRecordsResult implements Serializable, Cloneable {
      * @param lastModifiedBy
      *        The user/device that made the last change to this record.
      */
+
     public void setLastModifiedBy(String lastModifiedBy) {
         this.lastModifiedBy = lastModifiedBy;
     }
@@ -219,6 +233,7 @@ public class ListRecordsResult implements Serializable, Cloneable {
      * 
      * @return The user/device that made the last change to this record.
      */
+
     public String getLastModifiedBy() {
         return this.lastModifiedBy;
     }
@@ -231,6 +246,7 @@ public class ListRecordsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListRecordsResult withLastModifiedBy(String lastModifiedBy) {
         setLastModifiedBy(lastModifiedBy);
         return this;
@@ -241,6 +257,7 @@ public class ListRecordsResult implements Serializable, Cloneable {
      * 
      * @return Names of merged datasets.
      */
+
     public java.util.List<String> getMergedDatasetNames() {
         if (mergedDatasetNames == null) {
             mergedDatasetNames = new com.amazonaws.internal.SdkInternalList<String>();
@@ -254,6 +271,7 @@ public class ListRecordsResult implements Serializable, Cloneable {
      * @param mergedDatasetNames
      *        Names of merged datasets.
      */
+
     public void setMergedDatasetNames(
             java.util.Collection<String> mergedDatasetNames) {
         if (mergedDatasetNames == null) {
@@ -279,6 +297,7 @@ public class ListRecordsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListRecordsResult withMergedDatasetNames(
             String... mergedDatasetNames) {
         if (this.mergedDatasetNames == null) {
@@ -299,6 +318,7 @@ public class ListRecordsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListRecordsResult withMergedDatasetNames(
             java.util.Collection<String> mergedDatasetNames) {
         setMergedDatasetNames(mergedDatasetNames);
@@ -311,6 +331,7 @@ public class ListRecordsResult implements Serializable, Cloneable {
      * @param datasetExists
      *        Indicates whether the dataset exists.
      */
+
     public void setDatasetExists(Boolean datasetExists) {
         this.datasetExists = datasetExists;
     }
@@ -320,6 +341,7 @@ public class ListRecordsResult implements Serializable, Cloneable {
      * 
      * @return Indicates whether the dataset exists.
      */
+
     public Boolean getDatasetExists() {
         return this.datasetExists;
     }
@@ -332,6 +354,7 @@ public class ListRecordsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListRecordsResult withDatasetExists(Boolean datasetExists) {
         setDatasetExists(datasetExists);
         return this;
@@ -342,6 +365,7 @@ public class ListRecordsResult implements Serializable, Cloneable {
      * 
      * @return Indicates whether the dataset exists.
      */
+
     public Boolean isDatasetExists() {
         return this.datasetExists;
     }
@@ -352,6 +376,7 @@ public class ListRecordsResult implements Serializable, Cloneable {
      * @param datasetDeletedAfterRequestedSyncCount
      *        A boolean value specifying whether to delete the dataset locally.
      */
+
     public void setDatasetDeletedAfterRequestedSyncCount(
             Boolean datasetDeletedAfterRequestedSyncCount) {
         this.datasetDeletedAfterRequestedSyncCount = datasetDeletedAfterRequestedSyncCount;
@@ -362,6 +387,7 @@ public class ListRecordsResult implements Serializable, Cloneable {
      * 
      * @return A boolean value specifying whether to delete the dataset locally.
      */
+
     public Boolean getDatasetDeletedAfterRequestedSyncCount() {
         return this.datasetDeletedAfterRequestedSyncCount;
     }
@@ -374,6 +400,7 @@ public class ListRecordsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListRecordsResult withDatasetDeletedAfterRequestedSyncCount(
             Boolean datasetDeletedAfterRequestedSyncCount) {
         setDatasetDeletedAfterRequestedSyncCount(datasetDeletedAfterRequestedSyncCount);
@@ -385,6 +412,7 @@ public class ListRecordsResult implements Serializable, Cloneable {
      * 
      * @return A boolean value specifying whether to delete the dataset locally.
      */
+
     public Boolean isDatasetDeletedAfterRequestedSyncCount() {
         return this.datasetDeletedAfterRequestedSyncCount;
     }
@@ -395,6 +423,7 @@ public class ListRecordsResult implements Serializable, Cloneable {
      * @param syncSessionToken
      *        A token containing a session ID, identity ID, and expiration.
      */
+
     public void setSyncSessionToken(String syncSessionToken) {
         this.syncSessionToken = syncSessionToken;
     }
@@ -404,6 +433,7 @@ public class ListRecordsResult implements Serializable, Cloneable {
      * 
      * @return A token containing a session ID, identity ID, and expiration.
      */
+
     public String getSyncSessionToken() {
         return this.syncSessionToken;
     }
@@ -416,6 +446,7 @@ public class ListRecordsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListRecordsResult withSyncSessionToken(String syncSessionToken) {
         setSyncSessionToken(syncSessionToken);
         return this;

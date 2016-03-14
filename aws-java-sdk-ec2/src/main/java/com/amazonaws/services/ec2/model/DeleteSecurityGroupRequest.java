@@ -73,6 +73,7 @@ public class DeleteSecurityGroupRequest extends AmazonWebServiceRequest
      *        [EC2-Classic, default VPC] The name of the security group. You can
      *        specify either the security group name or the security group ID.
      */
+
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
@@ -87,6 +88,7 @@ public class DeleteSecurityGroupRequest extends AmazonWebServiceRequest
      *         can specify either the security group name or the security group
      *         ID.
      */
+
     public String getGroupName() {
         return this.groupName;
     }
@@ -103,6 +105,7 @@ public class DeleteSecurityGroupRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteSecurityGroupRequest withGroupName(String groupName) {
         setGroupName(groupName);
         return this;
@@ -116,6 +119,7 @@ public class DeleteSecurityGroupRequest extends AmazonWebServiceRequest
      * @param groupId
      *        The ID of the security group. Required for a nondefault VPC.
      */
+
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
@@ -127,6 +131,7 @@ public class DeleteSecurityGroupRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the security group. Required for a nondefault VPC.
      */
+
     public String getGroupId() {
         return this.groupId;
     }
@@ -141,6 +146,7 @@ public class DeleteSecurityGroupRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteSecurityGroupRequest withGroupId(String groupId) {
         setGroupId(groupId);
         return this;

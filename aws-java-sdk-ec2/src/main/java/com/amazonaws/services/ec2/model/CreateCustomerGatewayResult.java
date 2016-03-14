@@ -38,6 +38,7 @@ public class CreateCustomerGatewayResult implements Serializable, Cloneable {
      * @param customerGateway
      *        Information about the customer gateway.
      */
+
     public void setCustomerGateway(CustomerGateway customerGateway) {
         this.customerGateway = customerGateway;
     }
@@ -49,6 +50,7 @@ public class CreateCustomerGatewayResult implements Serializable, Cloneable {
      * 
      * @return Information about the customer gateway.
      */
+
     public CustomerGateway getCustomerGateway() {
         return this.customerGateway;
     }
@@ -63,6 +65,7 @@ public class CreateCustomerGatewayResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateCustomerGatewayResult withCustomerGateway(
             CustomerGateway customerGateway) {
         setCustomerGateway(customerGateway);

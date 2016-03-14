@@ -106,6 +106,7 @@ public class CreateAuthorizerResult implements Serializable, Cloneable {
      * @param id
      *        The identifier for the authorizer resource.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -117,6 +118,7 @@ public class CreateAuthorizerResult implements Serializable, Cloneable {
      * 
      * @return The identifier for the authorizer resource.
      */
+
     public String getId() {
         return this.id;
     }
@@ -131,6 +133,7 @@ public class CreateAuthorizerResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateAuthorizerResult withId(String id) {
         setId(id);
         return this;
@@ -144,6 +147,7 @@ public class CreateAuthorizerResult implements Serializable, Cloneable {
      * @param name
      *        [Required] The name of the authorizer.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -155,6 +159,7 @@ public class CreateAuthorizerResult implements Serializable, Cloneable {
      * 
      * @return [Required] The name of the authorizer.
      */
+
     public String getName() {
         return this.name;
     }
@@ -169,6 +174,7 @@ public class CreateAuthorizerResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateAuthorizerResult withName(String name) {
         setName(name);
         return this;
@@ -185,6 +191,7 @@ public class CreateAuthorizerResult implements Serializable, Cloneable {
      *        type is TOKEN.
      * @see AuthorizerType
      */
+
     public void setType(String type) {
         this.type = type;
     }
@@ -199,6 +206,7 @@ public class CreateAuthorizerResult implements Serializable, Cloneable {
      *         type is TOKEN.
      * @see AuthorizerType
      */
+
     public String getType() {
         return this.type;
     }
@@ -216,6 +224,7 @@ public class CreateAuthorizerResult implements Serializable, Cloneable {
      *         chained together.
      * @see AuthorizerType
      */
+
     public CreateAuthorizerResult withType(String type) {
         setType(type);
         return this;
@@ -234,6 +243,7 @@ public class CreateAuthorizerResult implements Serializable, Cloneable {
      *         chained together.
      * @see AuthorizerType
      */
+
     public void setType(AuthorizerType type) {
         this.type = type.toString();
     }
@@ -251,6 +261,7 @@ public class CreateAuthorizerResult implements Serializable, Cloneable {
      *         chained together.
      * @see AuthorizerType
      */
+
     public CreateAuthorizerResult withType(AuthorizerType type) {
         setType(type);
         return this;
@@ -281,6 +292,7 @@ public class CreateAuthorizerResult implements Serializable, Cloneable {
      *        functions, this is usually of the form
      *        /2015-03-31/functions/[FunctionARN]/invocations
      */
+
     public void setAuthorizerUri(String authorizerUri) {
         this.authorizerUri = authorizerUri;
     }
@@ -309,6 +321,7 @@ public class CreateAuthorizerResult implements Serializable, Cloneable {
      *         functions, this is usually of the form
      *         /2015-03-31/functions/[FunctionARN]/invocations
      */
+
     public String getAuthorizerUri() {
         return this.authorizerUri;
     }
@@ -340,6 +353,7 @@ public class CreateAuthorizerResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateAuthorizerResult withAuthorizerUri(String authorizerUri) {
         setAuthorizerUri(authorizerUri);
         return this;
@@ -360,6 +374,7 @@ public class CreateAuthorizerResult implements Serializable, Cloneable {
      *        use resource-based permissions on the Lambda function, specify
      *        null.
      */
+
     public void setAuthorizerCredentials(String authorizerCredentials) {
         this.authorizerCredentials = authorizerCredentials;
     }
@@ -378,6 +393,7 @@ public class CreateAuthorizerResult implements Serializable, Cloneable {
      *         use resource-based permissions on the Lambda function, specify
      *         null.
      */
+
     public String getAuthorizerCredentials() {
         return this.authorizerCredentials;
     }
@@ -399,6 +415,7 @@ public class CreateAuthorizerResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateAuthorizerResult withAuthorizerCredentials(
             String authorizerCredentials) {
         setAuthorizerCredentials(authorizerCredentials);
@@ -423,6 +440,7 @@ public class CreateAuthorizerResult implements Serializable, Cloneable {
      *        'method.request.header.[headerName]'. The value of the header
      *        '[headerName]' will be interpreted as the incoming token.
      */
+
     public void setIdentitySource(String identitySource) {
         this.identitySource = identitySource;
     }
@@ -444,6 +462,7 @@ public class CreateAuthorizerResult implements Serializable, Cloneable {
      *         'method.request.header.[headerName]'. The value of the header
      *         '[headerName]' will be interpreted as the incoming token.
      */
+
     public String getIdentitySource() {
         return this.identitySource;
     }
@@ -468,6 +487,7 @@ public class CreateAuthorizerResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateAuthorizerResult withIdentitySource(String identitySource) {
         setIdentitySource(identitySource);
         return this;
@@ -489,6 +509,7 @@ public class CreateAuthorizerResult implements Serializable, Cloneable {
      *        and will proceed if the token matches. If the token doesn't match,
      *        the client receives a 401 Unauthorized response.
      */
+
     public void setIdentityValidationExpression(
             String identityValidationExpression) {
         this.identityValidationExpression = identityValidationExpression;
@@ -509,6 +530,7 @@ public class CreateAuthorizerResult implements Serializable, Cloneable {
      *         expression, and will proceed if the token matches. If the token
      *         doesn't match, the client receives a 401 Unauthorized response.
      */
+
     public String getIdentityValidationExpression() {
         return this.identityValidationExpression;
     }
@@ -531,6 +553,7 @@ public class CreateAuthorizerResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateAuthorizerResult withIdentityValidationExpression(
             String identityValidationExpression) {
         setIdentityValidationExpression(identityValidationExpression);
@@ -550,6 +573,7 @@ public class CreateAuthorizerResult implements Serializable, Cloneable {
      *        not set, the default value is 300. The maximum value is 3600, or 1
      *        hour.
      */
+
     public void setAuthorizerResultTtlInSeconds(
             Integer authorizerResultTtlInSeconds) {
         this.authorizerResultTtlInSeconds = authorizerResultTtlInSeconds;
@@ -567,6 +591,7 @@ public class CreateAuthorizerResult implements Serializable, Cloneable {
      *         not set, the default value is 300. The maximum value is 3600, or
      *         1 hour.
      */
+
     public Integer getAuthorizerResultTtlInSeconds() {
         return this.authorizerResultTtlInSeconds;
     }
@@ -586,6 +611,7 @@ public class CreateAuthorizerResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateAuthorizerResult withAuthorizerResultTtlInSeconds(
             Integer authorizerResultTtlInSeconds) {
         setAuthorizerResultTtlInSeconds(authorizerResultTtlInSeconds);

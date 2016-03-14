@@ -40,6 +40,7 @@ public class ReservedInstancesId implements Serializable, Cloneable {
      * @param reservedInstancesId
      *        The ID of the Reserved Instance.
      */
+
     public void setReservedInstancesId(String reservedInstancesId) {
         this.reservedInstancesId = reservedInstancesId;
     }
@@ -51,6 +52,7 @@ public class ReservedInstancesId implements Serializable, Cloneable {
      * 
      * @return The ID of the Reserved Instance.
      */
+
     public String getReservedInstancesId() {
         return this.reservedInstancesId;
     }
@@ -65,6 +67,7 @@ public class ReservedInstancesId implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReservedInstancesId withReservedInstancesId(
             String reservedInstancesId) {
         setReservedInstancesId(reservedInstancesId);

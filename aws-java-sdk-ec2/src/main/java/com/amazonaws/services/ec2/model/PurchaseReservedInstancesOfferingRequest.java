@@ -81,6 +81,7 @@ public class PurchaseReservedInstancesOfferingRequest extends
      * @param reservedInstancesOfferingId
      *        The ID of the Reserved Instance offering to purchase.
      */
+
     public void setReservedInstancesOfferingId(
             String reservedInstancesOfferingId) {
         this.reservedInstancesOfferingId = reservedInstancesOfferingId;
@@ -93,6 +94,7 @@ public class PurchaseReservedInstancesOfferingRequest extends
      * 
      * @return The ID of the Reserved Instance offering to purchase.
      */
+
     public String getReservedInstancesOfferingId() {
         return this.reservedInstancesOfferingId;
     }
@@ -107,6 +109,7 @@ public class PurchaseReservedInstancesOfferingRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PurchaseReservedInstancesOfferingRequest withReservedInstancesOfferingId(
             String reservedInstancesOfferingId) {
         setReservedInstancesOfferingId(reservedInstancesOfferingId);
@@ -121,6 +124,7 @@ public class PurchaseReservedInstancesOfferingRequest extends
      * @param instanceCount
      *        The number of Reserved Instances to purchase.
      */
+
     public void setInstanceCount(Integer instanceCount) {
         this.instanceCount = instanceCount;
     }
@@ -132,6 +136,7 @@ public class PurchaseReservedInstancesOfferingRequest extends
      * 
      * @return The number of Reserved Instances to purchase.
      */
+
     public Integer getInstanceCount() {
         return this.instanceCount;
     }
@@ -146,6 +151,7 @@ public class PurchaseReservedInstancesOfferingRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PurchaseReservedInstancesOfferingRequest withInstanceCount(
             Integer instanceCount) {
         setInstanceCount(instanceCount);
@@ -164,6 +170,7 @@ public class PurchaseReservedInstancesOfferingRequest extends
      *        total order and ensure that the Reserved Instances are not
      *        purchased at unexpected prices.
      */
+
     public void setLimitPrice(ReservedInstanceLimitPrice limitPrice) {
         this.limitPrice = limitPrice;
     }
@@ -179,6 +186,7 @@ public class PurchaseReservedInstancesOfferingRequest extends
      *         the total order and ensure that the Reserved Instances are not
      *         purchased at unexpected prices.
      */
+
     public ReservedInstanceLimitPrice getLimitPrice() {
         return this.limitPrice;
     }
@@ -197,6 +205,7 @@ public class PurchaseReservedInstancesOfferingRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PurchaseReservedInstancesOfferingRequest withLimitPrice(
             ReservedInstanceLimitPrice limitPrice) {
         setLimitPrice(limitPrice);

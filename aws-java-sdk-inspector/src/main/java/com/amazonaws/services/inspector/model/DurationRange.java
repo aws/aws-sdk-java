@@ -48,6 +48,7 @@ public class DurationRange implements Serializable, Cloneable {
      *        The minimum value of the duration range. Must be greater than
      *        zero.
      */
+
     public void setMinimum(Integer minimum) {
         this.minimum = minimum;
     }
@@ -60,6 +61,7 @@ public class DurationRange implements Serializable, Cloneable {
      * @return The minimum value of the duration range. Must be greater than
      *         zero.
      */
+
     public Integer getMinimum() {
         return this.minimum;
     }
@@ -75,6 +77,7 @@ public class DurationRange implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DurationRange withMinimum(Integer minimum) {
         setMinimum(minimum);
         return this;
@@ -90,6 +93,7 @@ public class DurationRange implements Serializable, Cloneable {
      *        The maximum value of the duration range. Must be less than or
      *        equal to 604800 seconds (1 week).
      */
+
     public void setMaximum(Integer maximum) {
         this.maximum = maximum;
     }
@@ -103,6 +107,7 @@ public class DurationRange implements Serializable, Cloneable {
      * @return The maximum value of the duration range. Must be less than or
      *         equal to 604800 seconds (1 week).
      */
+
     public Integer getMaximum() {
         return this.maximum;
     }
@@ -119,6 +124,7 @@ public class DurationRange implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DurationRange withMaximum(Integer maximum) {
         setMaximum(maximum);
         return this;

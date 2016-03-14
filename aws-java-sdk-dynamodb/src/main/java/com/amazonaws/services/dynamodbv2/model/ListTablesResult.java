@@ -69,6 +69,7 @@ public class ListTablesResult implements Serializable, Cloneable {
      *         parameter in a subsequent <i>ListTables</i> request and obtain
      *         the next page of results.
      */
+
     public java.util.List<String> getTableNames() {
         return tableNames;
     }
@@ -93,6 +94,7 @@ public class ListTablesResult implements Serializable, Cloneable {
      *        in a subsequent <i>ListTables</i> request and obtain the next page
      *        of results.
      */
+
     public void setTableNames(java.util.Collection<String> tableNames) {
         if (tableNames == null) {
             this.tableNames = null;
@@ -130,6 +132,7 @@ public class ListTablesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTablesResult withTableNames(String... tableNames) {
         if (this.tableNames == null) {
             setTableNames(new java.util.ArrayList<String>(tableNames.length));
@@ -162,6 +165,7 @@ public class ListTablesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTablesResult withTableNames(
             java.util.Collection<String> tableNames) {
         setTableNames(tableNames);
@@ -189,6 +193,7 @@ public class ListTablesResult implements Serializable, Cloneable {
      *        response, this means that there are no more table names to be
      *        retrieved.
      */
+
     public void setLastEvaluatedTableName(String lastEvaluatedTableName) {
         this.lastEvaluatedTableName = lastEvaluatedTableName;
     }
@@ -213,6 +218,7 @@ public class ListTablesResult implements Serializable, Cloneable {
      *         the response, this means that there are no more table names to be
      *         retrieved.
      */
+
     public String getLastEvaluatedTableName() {
         return this.lastEvaluatedTableName;
     }
@@ -240,6 +246,7 @@ public class ListTablesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTablesResult withLastEvaluatedTableName(
             String lastEvaluatedTableName) {
         setLastEvaluatedTableName(lastEvaluatedTableName);

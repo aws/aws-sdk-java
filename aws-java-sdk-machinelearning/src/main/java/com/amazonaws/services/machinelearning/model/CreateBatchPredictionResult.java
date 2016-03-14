@@ -52,6 +52,7 @@ public class CreateBatchPredictionResult implements Serializable, Cloneable {
      *        <code>BatchPrediction</code>. This value is identical to the value
      *        of the <code>BatchPredictionId</code> in the request.
      */
+
     public void setBatchPredictionId(String batchPredictionId) {
         this.batchPredictionId = batchPredictionId;
     }
@@ -67,6 +68,7 @@ public class CreateBatchPredictionResult implements Serializable, Cloneable {
      *         <code>BatchPrediction</code>. This value is identical to the
      *         value of the <code>BatchPredictionId</code> in the request.
      */
+
     public String getBatchPredictionId() {
         return this.batchPredictionId;
     }
@@ -85,6 +87,7 @@ public class CreateBatchPredictionResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateBatchPredictionResult withBatchPredictionId(
             String batchPredictionId) {
         setBatchPredictionId(batchPredictionId);

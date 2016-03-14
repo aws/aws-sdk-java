@@ -98,6 +98,7 @@ public class GetLogEventsRequest extends AmazonWebServiceRequest implements
      * @param logGroupName
      *        The name of the log group to query.
      */
+
     public void setLogGroupName(String logGroupName) {
         this.logGroupName = logGroupName;
     }
@@ -109,6 +110,7 @@ public class GetLogEventsRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the log group to query.
      */
+
     public String getLogGroupName() {
         return this.logGroupName;
     }
@@ -123,6 +125,7 @@ public class GetLogEventsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetLogEventsRequest withLogGroupName(String logGroupName) {
         setLogGroupName(logGroupName);
         return this;
@@ -136,6 +139,7 @@ public class GetLogEventsRequest extends AmazonWebServiceRequest implements
      * @param logStreamName
      *        The name of the log stream to query.
      */
+
     public void setLogStreamName(String logStreamName) {
         this.logStreamName = logStreamName;
     }
@@ -147,6 +151,7 @@ public class GetLogEventsRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the log stream to query.
      */
+
     public String getLogStreamName() {
         return this.logStreamName;
     }
@@ -161,6 +166,7 @@ public class GetLogEventsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetLogEventsRequest withLogStreamName(String logStreamName) {
         setLogStreamName(logStreamName);
         return this;
@@ -169,6 +175,7 @@ public class GetLogEventsRequest extends AmazonWebServiceRequest implements
     /**
      * @param startTime
      */
+
     public void setStartTime(Long startTime) {
         this.startTime = startTime;
     }
@@ -176,6 +183,7 @@ public class GetLogEventsRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public Long getStartTime() {
         return this.startTime;
     }
@@ -185,6 +193,7 @@ public class GetLogEventsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetLogEventsRequest withStartTime(Long startTime) {
         setStartTime(startTime);
         return this;
@@ -193,6 +202,7 @@ public class GetLogEventsRequest extends AmazonWebServiceRequest implements
     /**
      * @param endTime
      */
+
     public void setEndTime(Long endTime) {
         this.endTime = endTime;
     }
@@ -200,6 +210,7 @@ public class GetLogEventsRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public Long getEndTime() {
         return this.endTime;
     }
@@ -209,6 +220,7 @@ public class GetLogEventsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetLogEventsRequest withEndTime(Long endTime) {
         setEndTime(endTime);
         return this;
@@ -230,6 +242,7 @@ public class GetLogEventsRequest extends AmazonWebServiceRequest implements
      *        <code class="code">nextBackwardToken</code> fields in the response
      *        of the previous <code class="code">GetLogEvents</code> request.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -250,6 +263,7 @@ public class GetLogEventsRequest extends AmazonWebServiceRequest implements
      *         response of the previous <code class="code">GetLogEvents</code>
      *         request.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -272,6 +286,7 @@ public class GetLogEventsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetLogEventsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -289,6 +304,7 @@ public class GetLogEventsRequest extends AmazonWebServiceRequest implements
      *        don't specify a value, the request would return as many log events
      *        as can fit in a response size of 1MB, up to 10,000 log events.
      */
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -305,6 +321,7 @@ public class GetLogEventsRequest extends AmazonWebServiceRequest implements
      *         events as can fit in a response size of 1MB, up to 10,000 log
      *         events.
      */
+
     public Integer getLimit() {
         return this.limit;
     }
@@ -323,6 +340,7 @@ public class GetLogEventsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetLogEventsRequest withLimit(Integer limit) {
         setLimit(limit);
         return this;
@@ -338,6 +356,7 @@ public class GetLogEventsRequest extends AmazonWebServiceRequest implements
      *        If set to true, the earliest log events would be returned first.
      *        The default is false (the latest log events are returned first).
      */
+
     public void setStartFromHead(Boolean startFromHead) {
         this.startFromHead = startFromHead;
     }
@@ -351,6 +370,7 @@ public class GetLogEventsRequest extends AmazonWebServiceRequest implements
      * @return If set to true, the earliest log events would be returned first.
      *         The default is false (the latest log events are returned first).
      */
+
     public Boolean getStartFromHead() {
         return this.startFromHead;
     }
@@ -367,6 +387,7 @@ public class GetLogEventsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetLogEventsRequest withStartFromHead(Boolean startFromHead) {
         setStartFromHead(startFromHead);
         return this;
@@ -381,6 +402,7 @@ public class GetLogEventsRequest extends AmazonWebServiceRequest implements
      * @return If set to true, the earliest log events would be returned first.
      *         The default is false (the latest log events are returned first).
      */
+
     public Boolean isStartFromHead() {
         return this.startFromHead;
     }

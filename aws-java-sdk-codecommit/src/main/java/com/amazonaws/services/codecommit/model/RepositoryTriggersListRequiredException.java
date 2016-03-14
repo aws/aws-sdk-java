@@ -14,27 +14,27 @@
  * permissions and limitations under the License.
  */
 
-package com.amazonaws.services.gamelift.model;
+package com.amazonaws.services.codecommit.model;
 
 import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Exception thrown when the client does not have permission to access the
- * specified resource. Requests that result in failures of this type should not
- * be retried by clients.
+ * The list of triggers for the repository is required but was not specified.
  * </p>
  */
-public class AccessDeniedException extends AmazonServiceException {
+public class RepositoryTriggersListRequiredException extends
+        AmazonServiceException {
     private static final long serialVersionUID = 1L;
 
     /**
-     * Constructs a new AccessDeniedException with the specified error message.
+     * Constructs a new RepositoryTriggersListRequiredException with the
+     * specified error message.
      *
      * @param message
      *        Describes the error encountered.
      */
-    public AccessDeniedException(String message) {
+    public RepositoryTriggersListRequiredException(String message) {
         super(message);
     }
 

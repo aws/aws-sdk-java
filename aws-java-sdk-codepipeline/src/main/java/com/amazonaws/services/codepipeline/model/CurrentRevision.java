@@ -46,6 +46,7 @@ public class CurrentRevision implements Serializable, Cloneable {
      * @param revision
      *        The revision ID of the current version of an artifact.
      */
+
     public void setRevision(String revision) {
         this.revision = revision;
     }
@@ -57,6 +58,7 @@ public class CurrentRevision implements Serializable, Cloneable {
      * 
      * @return The revision ID of the current version of an artifact.
      */
+
     public String getRevision() {
         return this.revision;
     }
@@ -71,6 +73,7 @@ public class CurrentRevision implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CurrentRevision withRevision(String revision) {
         setRevision(revision);
         return this;
@@ -84,6 +87,7 @@ public class CurrentRevision implements Serializable, Cloneable {
      * @param changeIdentifier
      *        The change identifier for the current revision.
      */
+
     public void setChangeIdentifier(String changeIdentifier) {
         this.changeIdentifier = changeIdentifier;
     }
@@ -95,6 +99,7 @@ public class CurrentRevision implements Serializable, Cloneable {
      * 
      * @return The change identifier for the current revision.
      */
+
     public String getChangeIdentifier() {
         return this.changeIdentifier;
     }
@@ -109,6 +114,7 @@ public class CurrentRevision implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CurrentRevision withChangeIdentifier(String changeIdentifier) {
         setChangeIdentifier(changeIdentifier);
         return this;

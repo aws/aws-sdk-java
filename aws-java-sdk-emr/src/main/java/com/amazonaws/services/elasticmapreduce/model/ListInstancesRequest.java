@@ -60,6 +60,7 @@ public class ListInstancesRequest extends AmazonWebServiceRequest implements
      * @param clusterId
      *        The identifier of the cluster for which to list the instances.
      */
+
     public void setClusterId(String clusterId) {
         this.clusterId = clusterId;
     }
@@ -71,6 +72,7 @@ public class ListInstancesRequest extends AmazonWebServiceRequest implements
      * 
      * @return The identifier of the cluster for which to list the instances.
      */
+
     public String getClusterId() {
         return this.clusterId;
     }
@@ -85,6 +87,7 @@ public class ListInstancesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListInstancesRequest withClusterId(String clusterId) {
         setClusterId(clusterId);
         return this;
@@ -99,6 +102,7 @@ public class ListInstancesRequest extends AmazonWebServiceRequest implements
      *        The identifier of the instance group for which to list the
      *        instances.
      */
+
     public void setInstanceGroupId(String instanceGroupId) {
         this.instanceGroupId = instanceGroupId;
     }
@@ -111,6 +115,7 @@ public class ListInstancesRequest extends AmazonWebServiceRequest implements
      * @return The identifier of the instance group for which to list the
      *         instances.
      */
+
     public String getInstanceGroupId() {
         return this.instanceGroupId;
     }
@@ -126,6 +131,7 @@ public class ListInstancesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListInstancesRequest withInstanceGroupId(String instanceGroupId) {
         setInstanceGroupId(instanceGroupId);
         return this;
@@ -139,6 +145,7 @@ public class ListInstancesRequest extends AmazonWebServiceRequest implements
      * @return The type of instance group for which to list the instances.
      * @see InstanceGroupType
      */
+
     public java.util.List<String> getInstanceGroupTypes() {
         if (instanceGroupTypes == null) {
             instanceGroupTypes = new com.amazonaws.internal.SdkInternalList<String>();
@@ -155,6 +162,7 @@ public class ListInstancesRequest extends AmazonWebServiceRequest implements
      *        The type of instance group for which to list the instances.
      * @see InstanceGroupType
      */
+
     public void setInstanceGroupTypes(
             java.util.Collection<String> instanceGroupTypes) {
         if (instanceGroupTypes == null) {
@@ -183,6 +191,7 @@ public class ListInstancesRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see InstanceGroupType
      */
+
     public ListInstancesRequest withInstanceGroupTypes(
             String... instanceGroupTypes) {
         if (this.instanceGroupTypes == null) {
@@ -206,6 +215,7 @@ public class ListInstancesRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see InstanceGroupType
      */
+
     public ListInstancesRequest withInstanceGroupTypes(
             java.util.Collection<String> instanceGroupTypes) {
         setInstanceGroupTypes(instanceGroupTypes);
@@ -223,6 +233,7 @@ public class ListInstancesRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see InstanceGroupType
      */
+
     public ListInstancesRequest withInstanceGroupTypes(
             InstanceGroupType... instanceGroupTypes) {
         com.amazonaws.internal.SdkInternalList<String> instanceGroupTypesCopy = new com.amazonaws.internal.SdkInternalList<String>(
@@ -247,6 +258,7 @@ public class ListInstancesRequest extends AmazonWebServiceRequest implements
      *        The pagination token that indicates the next set of results to
      *        retrieve.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -259,6 +271,7 @@ public class ListInstancesRequest extends AmazonWebServiceRequest implements
      * @return The pagination token that indicates the next set of results to
      *         retrieve.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -274,6 +287,7 @@ public class ListInstancesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListInstancesRequest withMarker(String marker) {
         setMarker(marker);
         return this;

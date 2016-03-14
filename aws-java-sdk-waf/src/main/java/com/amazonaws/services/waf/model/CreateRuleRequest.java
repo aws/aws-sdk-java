@@ -58,6 +58,7 @@ public class CreateRuleRequest extends AmazonWebServiceRequest implements
      *        A friendly name or description of the <a>Rule</a>. You can't
      *        change the name of a <code>Rule</code> after you create it.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -71,6 +72,7 @@ public class CreateRuleRequest extends AmazonWebServiceRequest implements
      * @return A friendly name or description of the <a>Rule</a>. You can't
      *         change the name of a <code>Rule</code> after you create it.
      */
+
     public String getName() {
         return this.name;
     }
@@ -87,6 +89,7 @@ public class CreateRuleRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateRuleRequest withName(String name) {
         setName(name);
         return this;
@@ -107,6 +110,7 @@ public class CreateRuleRequest extends AmazonWebServiceRequest implements
      *        can't change the name of the metric after you create the
      *        <code>Rule</code>.
      */
+
     public void setMetricName(String metricName) {
         this.metricName = metricName;
     }
@@ -125,6 +129,7 @@ public class CreateRuleRequest extends AmazonWebServiceRequest implements
      *         You can't change the name of the metric after you create the
      *         <code>Rule</code>.
      */
+
     public String getMetricName() {
         return this.metricName;
     }
@@ -146,6 +151,7 @@ public class CreateRuleRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateRuleRequest withMetricName(String metricName) {
         setMetricName(metricName);
         return this;
@@ -160,6 +166,7 @@ public class CreateRuleRequest extends AmazonWebServiceRequest implements
      *        The value returned by the most recent call to
      *        <a>GetChangeToken</a>.
      */
+
     public void setChangeToken(String changeToken) {
         this.changeToken = changeToken;
     }
@@ -172,6 +179,7 @@ public class CreateRuleRequest extends AmazonWebServiceRequest implements
      * @return The value returned by the most recent call to
      *         <a>GetChangeToken</a>.
      */
+
     public String getChangeToken() {
         return this.changeToken;
     }
@@ -187,6 +195,7 @@ public class CreateRuleRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateRuleRequest withChangeToken(String changeToken) {
         setChangeToken(changeToken);
         return this;

@@ -45,6 +45,7 @@ public class DescribeAutoScalingInstancesResult implements Serializable,
      * 
      * @return The instances.
      */
+
     public java.util.List<AutoScalingInstanceDetails> getAutoScalingInstances() {
         if (autoScalingInstances == null) {
             autoScalingInstances = new com.amazonaws.internal.SdkInternalList<AutoScalingInstanceDetails>();
@@ -60,6 +61,7 @@ public class DescribeAutoScalingInstancesResult implements Serializable,
      * @param autoScalingInstances
      *        The instances.
      */
+
     public void setAutoScalingInstances(
             java.util.Collection<AutoScalingInstanceDetails> autoScalingInstances) {
         if (autoScalingInstances == null) {
@@ -87,6 +89,7 @@ public class DescribeAutoScalingInstancesResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAutoScalingInstancesResult withAutoScalingInstances(
             AutoScalingInstanceDetails... autoScalingInstances) {
         if (this.autoScalingInstances == null) {
@@ -109,6 +112,7 @@ public class DescribeAutoScalingInstancesResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAutoScalingInstancesResult withAutoScalingInstances(
             java.util.Collection<AutoScalingInstanceDetails> autoScalingInstances) {
         setAutoScalingInstances(autoScalingInstances);
@@ -125,6 +129,7 @@ public class DescribeAutoScalingInstancesResult implements Serializable,
      *        The token to use when requesting the next set of items. If there
      *        are no additional items to return, the string is empty.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -138,6 +143,7 @@ public class DescribeAutoScalingInstancesResult implements Serializable,
      * @return The token to use when requesting the next set of items. If there
      *         are no additional items to return, the string is empty.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -154,6 +160,7 @@ public class DescribeAutoScalingInstancesResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAutoScalingInstancesResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

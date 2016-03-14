@@ -14,15 +14,6 @@
  */
 package com.amazonaws;
 
-import static com.amazonaws.SDKGlobalConfiguration.PROFILING_SYSTEM_PROPERTY;
-
-import java.net.URI;
-import java.util.List;
-import java.util.concurrent.CopyOnWriteArrayList;
-
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import com.amazonaws.auth.RegionAwareSigner;
 import com.amazonaws.auth.Signer;
 import com.amazonaws.auth.SignerFactory;
@@ -42,6 +33,14 @@ import com.amazonaws.util.AwsHostNameUtils;
 import com.amazonaws.util.Classes;
 import com.amazonaws.util.HttpUtils;
 import com.amazonaws.util.StringUtils;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
+import java.net.URI;
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
+
+import static com.amazonaws.SDKGlobalConfiguration.PROFILING_SYSTEM_PROPERTY;
 
 /**
  * Abstract base class for Amazon Web Service Java clients.

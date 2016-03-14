@@ -64,6 +64,7 @@ public class UpdateAliasRequest extends AmazonWebServiceRequest implements
      *        Unique identifier for a fleet alias. Specify the alias you want to
      *        update.
      */
+
     public void setAliasId(String aliasId) {
         this.aliasId = aliasId;
     }
@@ -77,6 +78,7 @@ public class UpdateAliasRequest extends AmazonWebServiceRequest implements
      * @return Unique identifier for a fleet alias. Specify the alias you want
      *         to update.
      */
+
     public String getAliasId() {
         return this.aliasId;
     }
@@ -93,6 +95,7 @@ public class UpdateAliasRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateAliasRequest withAliasId(String aliasId) {
         setAliasId(aliasId);
         return this;
@@ -108,6 +111,7 @@ public class UpdateAliasRequest extends AmazonWebServiceRequest implements
      *        Descriptive label associated with this alias. Alias names do not
      *        need to be unique.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -121,6 +125,7 @@ public class UpdateAliasRequest extends AmazonWebServiceRequest implements
      * @return Descriptive label associated with this alias. Alias names do not
      *         need to be unique.
      */
+
     public String getName() {
         return this.name;
     }
@@ -137,6 +142,7 @@ public class UpdateAliasRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateAliasRequest withName(String name) {
         setName(name);
         return this;
@@ -150,6 +156,7 @@ public class UpdateAliasRequest extends AmazonWebServiceRequest implements
      * @param description
      *        Human-readable description of the alias.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -161,6 +168,7 @@ public class UpdateAliasRequest extends AmazonWebServiceRequest implements
      * 
      * @return Human-readable description of the alias.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -175,6 +183,7 @@ public class UpdateAliasRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateAliasRequest withDescription(String description) {
         setDescription(description);
         return this;
@@ -188,6 +197,7 @@ public class UpdateAliasRequest extends AmazonWebServiceRequest implements
      * @param routingStrategy
      *        Object specifying the fleet and routing type to use for the alias.
      */
+
     public void setRoutingStrategy(RoutingStrategy routingStrategy) {
         this.routingStrategy = routingStrategy;
     }
@@ -200,6 +210,7 @@ public class UpdateAliasRequest extends AmazonWebServiceRequest implements
      * @return Object specifying the fleet and routing type to use for the
      *         alias.
      */
+
     public RoutingStrategy getRoutingStrategy() {
         return this.routingStrategy;
     }
@@ -214,6 +225,7 @@ public class UpdateAliasRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateAliasRequest withRoutingStrategy(
             RoutingStrategy routingStrategy) {
         setRoutingStrategy(routingStrategy);

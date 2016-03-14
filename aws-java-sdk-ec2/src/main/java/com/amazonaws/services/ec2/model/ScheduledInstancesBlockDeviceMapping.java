@@ -75,6 +75,7 @@ public class ScheduledInstancesBlockDeviceMapping implements Serializable,
      *        The device name exposed to the instance (for example,
      *        <code>/dev/sdh</code> or <code>xvdh</code>).
      */
+
     public void setDeviceName(String deviceName) {
         this.deviceName = deviceName;
     }
@@ -88,6 +89,7 @@ public class ScheduledInstancesBlockDeviceMapping implements Serializable,
      * @return The device name exposed to the instance (for example,
      *         <code>/dev/sdh</code> or <code>xvdh</code>).
      */
+
     public String getDeviceName() {
         return this.deviceName;
     }
@@ -104,6 +106,7 @@ public class ScheduledInstancesBlockDeviceMapping implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstancesBlockDeviceMapping withDeviceName(String deviceName) {
         setDeviceName(deviceName);
         return this;
@@ -119,6 +122,7 @@ public class ScheduledInstancesBlockDeviceMapping implements Serializable,
      *        Suppresses the specified device included in the block device
      *        mapping of the AMI.
      */
+
     public void setNoDevice(String noDevice) {
         this.noDevice = noDevice;
     }
@@ -132,6 +136,7 @@ public class ScheduledInstancesBlockDeviceMapping implements Serializable,
      * @return Suppresses the specified device included in the block device
      *         mapping of the AMI.
      */
+
     public String getNoDevice() {
         return this.noDevice;
     }
@@ -148,6 +153,7 @@ public class ScheduledInstancesBlockDeviceMapping implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstancesBlockDeviceMapping withNoDevice(String noDevice) {
         setNoDevice(noDevice);
         return this;
@@ -182,6 +188,7 @@ public class ScheduledInstancesBlockDeviceMapping implements Serializable,
      *        launch an M3 instance, we ignore any instance store volumes
      *        specified in the block device mapping for the AMI.
      */
+
     public void setVirtualName(String virtualName) {
         this.virtualName = virtualName;
     }
@@ -214,6 +221,7 @@ public class ScheduledInstancesBlockDeviceMapping implements Serializable,
      *         launch an M3 instance, we ignore any instance store volumes
      *         specified in the block device mapping for the AMI.
      */
+
     public String getVirtualName() {
         return this.virtualName;
     }
@@ -249,6 +257,7 @@ public class ScheduledInstancesBlockDeviceMapping implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstancesBlockDeviceMapping withVirtualName(
             String virtualName) {
         setVirtualName(virtualName);
@@ -265,6 +274,7 @@ public class ScheduledInstancesBlockDeviceMapping implements Serializable,
      *        Parameters used to set up EBS volumes automatically when the
      *        instance is launched.
      */
+
     public void setEbs(ScheduledInstancesEbs ebs) {
         this.ebs = ebs;
     }
@@ -278,6 +288,7 @@ public class ScheduledInstancesBlockDeviceMapping implements Serializable,
      * @return Parameters used to set up EBS volumes automatically when the
      *         instance is launched.
      */
+
     public ScheduledInstancesEbs getEbs() {
         return this.ebs;
     }
@@ -294,6 +305,7 @@ public class ScheduledInstancesBlockDeviceMapping implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstancesBlockDeviceMapping withEbs(
             ScheduledInstancesEbs ebs) {
         setEbs(ebs);

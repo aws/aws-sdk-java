@@ -62,6 +62,7 @@ public class GetSubscriptionAttributesRequest extends AmazonWebServiceRequest
      * @param subscriptionArn
      *        The ARN of the subscription whose properties you want to get.
      */
+
     public void setSubscriptionArn(String subscriptionArn) {
         this.subscriptionArn = subscriptionArn;
     }
@@ -73,6 +74,7 @@ public class GetSubscriptionAttributesRequest extends AmazonWebServiceRequest
      * 
      * @return The ARN of the subscription whose properties you want to get.
      */
+
     public String getSubscriptionArn() {
         return this.subscriptionArn;
     }
@@ -87,6 +89,7 @@ public class GetSubscriptionAttributesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetSubscriptionAttributesRequest withSubscriptionArn(
             String subscriptionArn) {
         setSubscriptionArn(subscriptionArn);

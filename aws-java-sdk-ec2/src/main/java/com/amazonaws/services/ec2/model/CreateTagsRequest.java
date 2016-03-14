@@ -77,6 +77,7 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements
      * @return The IDs of one or more resources to tag. For example,
      *         ami-1a2b3c4d.
      */
+
     public java.util.List<String> getResources() {
         if (resources == null) {
             resources = new com.amazonaws.internal.SdkInternalList<String>();
@@ -93,6 +94,7 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements
      *        The IDs of one or more resources to tag. For example,
      *        ami-1a2b3c4d.
      */
+
     public void setResources(java.util.Collection<String> resources) {
         if (resources == null) {
             this.resources = null;
@@ -120,6 +122,7 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateTagsRequest withResources(String... resources) {
         if (this.resources == null) {
             setResources(new com.amazonaws.internal.SdkInternalList<String>(
@@ -142,6 +145,7 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateTagsRequest withResources(
             java.util.Collection<String> resources) {
         setResources(resources);
@@ -159,6 +163,7 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements
      *         but if you don't want the tag to have a value, specify the
      *         parameter with no value, and we set the value to an empty string.
      */
+
     public java.util.List<Tag> getTags() {
         if (tags == null) {
             tags = new com.amazonaws.internal.SdkInternalList<Tag>();
@@ -178,6 +183,7 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements
      *        but if you don't want the tag to have a value, specify the
      *        parameter with no value, and we set the value to an empty string.
      */
+
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
             this.tags = null;
@@ -207,6 +213,7 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateTagsRequest withTags(Tag... tags) {
         if (this.tags == null) {
             setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
@@ -231,6 +238,7 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateTagsRequest withTags(java.util.Collection<Tag> tags) {
         setTags(tags);
         return this;

@@ -74,6 +74,7 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest implements
      * @return The ID of the resource. For example, ami-1a2b3c4d. You can
      *         specify more than one resource ID.
      */
+
     public java.util.List<String> getResources() {
         if (resources == null) {
             resources = new com.amazonaws.internal.SdkInternalList<String>();
@@ -91,6 +92,7 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest implements
      *        The ID of the resource. For example, ami-1a2b3c4d. You can specify
      *        more than one resource ID.
      */
+
     public void setResources(java.util.Collection<String> resources) {
         if (resources == null) {
             this.resources = null;
@@ -119,6 +121,7 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteTagsRequest withResources(String... resources) {
         if (this.resources == null) {
             setResources(new com.amazonaws.internal.SdkInternalList<String>(
@@ -142,6 +145,7 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteTagsRequest withResources(
             java.util.Collection<String> resources) {
         setResources(resources);
@@ -161,6 +165,7 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest implements
      *         specify this parameter with an empty string as the value, we
      *         delete the key only if its value is an empty string.
      */
+
     public java.util.List<Tag> getTags() {
         if (tags == null) {
             tags = new com.amazonaws.internal.SdkInternalList<Tag>();
@@ -182,6 +187,7 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest implements
      *        specify this parameter with an empty string as the value, we
      *        delete the key only if its value is an empty string.
      */
+
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
             this.tags = null;
@@ -213,6 +219,7 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteTagsRequest withTags(Tag... tags) {
         if (this.tags == null) {
             setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
@@ -239,6 +246,7 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteTagsRequest withTags(java.util.Collection<Tag> tags) {
         setTags(tags);
         return this;

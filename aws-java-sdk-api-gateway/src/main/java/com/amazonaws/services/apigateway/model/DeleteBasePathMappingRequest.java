@@ -48,6 +48,7 @@ public class DeleteBasePathMappingRequest extends AmazonWebServiceRequest
      * @param domainName
      *        The domain name of the <a>BasePathMapping</a> resource to delete.
      */
+
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
@@ -59,6 +60,7 @@ public class DeleteBasePathMappingRequest extends AmazonWebServiceRequest
      * 
      * @return The domain name of the <a>BasePathMapping</a> resource to delete.
      */
+
     public String getDomainName() {
         return this.domainName;
     }
@@ -73,6 +75,7 @@ public class DeleteBasePathMappingRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteBasePathMappingRequest withDomainName(String domainName) {
         setDomainName(domainName);
         return this;
@@ -87,6 +90,7 @@ public class DeleteBasePathMappingRequest extends AmazonWebServiceRequest
      *        The base path name of the <a>BasePathMapping</a> resource to
      *        delete.
      */
+
     public void setBasePath(String basePath) {
         this.basePath = basePath;
     }
@@ -99,6 +103,7 @@ public class DeleteBasePathMappingRequest extends AmazonWebServiceRequest
      * @return The base path name of the <a>BasePathMapping</a> resource to
      *         delete.
      */
+
     public String getBasePath() {
         return this.basePath;
     }
@@ -114,6 +119,7 @@ public class DeleteBasePathMappingRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteBasePathMappingRequest withBasePath(String basePath) {
         setBasePath(basePath);
         return this;

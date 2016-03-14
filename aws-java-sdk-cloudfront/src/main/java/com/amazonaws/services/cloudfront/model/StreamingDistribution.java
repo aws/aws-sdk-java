@@ -63,6 +63,7 @@ public class StreamingDistribution implements Serializable, Cloneable {
      *        The identifier for the streaming distribution. For example:
      *        EGTXBD79H29TRA8.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -74,6 +75,7 @@ public class StreamingDistribution implements Serializable, Cloneable {
      * @return The identifier for the streaming distribution. For example:
      *         EGTXBD79H29TRA8.
      */
+
     public String getId() {
         return this.id;
     }
@@ -88,6 +90,7 @@ public class StreamingDistribution implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StreamingDistribution withId(String id) {
         setId(id);
         return this;
@@ -103,6 +106,7 @@ public class StreamingDistribution implements Serializable, Cloneable {
      *        is Deployed, the distribution's information is fully propagated
      *        throughout the Amazon CloudFront system.
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -116,6 +120,7 @@ public class StreamingDistribution implements Serializable, Cloneable {
      *         is Deployed, the distribution's information is fully propagated
      *         throughout the Amazon CloudFront system.
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -132,6 +137,7 @@ public class StreamingDistribution implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StreamingDistribution withStatus(String status) {
         setStatus(status);
         return this;
@@ -143,6 +149,7 @@ public class StreamingDistribution implements Serializable, Cloneable {
      * @param lastModifiedTime
      *        The date and time the distribution was last modified.
      */
+
     public void setLastModifiedTime(java.util.Date lastModifiedTime) {
         this.lastModifiedTime = lastModifiedTime;
     }
@@ -152,6 +159,7 @@ public class StreamingDistribution implements Serializable, Cloneable {
      * 
      * @return The date and time the distribution was last modified.
      */
+
     public java.util.Date getLastModifiedTime() {
         return this.lastModifiedTime;
     }
@@ -164,6 +172,7 @@ public class StreamingDistribution implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StreamingDistribution withLastModifiedTime(
             java.util.Date lastModifiedTime) {
         setLastModifiedTime(lastModifiedTime);
@@ -178,6 +187,7 @@ public class StreamingDistribution implements Serializable, Cloneable {
      *        The domain name corresponding to the streaming distribution. For
      *        example: s5c39gqb8ow64r.cloudfront.net.
      */
+
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
@@ -189,6 +199,7 @@ public class StreamingDistribution implements Serializable, Cloneable {
      * @return The domain name corresponding to the streaming distribution. For
      *         example: s5c39gqb8ow64r.cloudfront.net.
      */
+
     public String getDomainName() {
         return this.domainName;
     }
@@ -203,6 +214,7 @@ public class StreamingDistribution implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StreamingDistribution withDomainName(String domainName) {
         setDomainName(domainName);
         return this;
@@ -229,6 +241,7 @@ public class StreamingDistribution implements Serializable, Cloneable {
      *        signer's AWS account. If no KeyPairId element appears for a
      *        Signer, that signer can't create working signed URLs.
      */
+
     public void setActiveTrustedSigners(
             ActiveTrustedSigners activeTrustedSigners) {
         this.activeTrustedSigners = activeTrustedSigners;
@@ -254,6 +267,7 @@ public class StreamingDistribution implements Serializable, Cloneable {
      *         trusted signer's AWS account. If no KeyPairId element appears for
      *         a Signer, that signer can't create working signed URLs.
      */
+
     public ActiveTrustedSigners getActiveTrustedSigners() {
         return this.activeTrustedSigners;
     }
@@ -281,6 +295,7 @@ public class StreamingDistribution implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StreamingDistribution withActiveTrustedSigners(
             ActiveTrustedSigners activeTrustedSigners) {
         setActiveTrustedSigners(activeTrustedSigners);
@@ -294,6 +309,7 @@ public class StreamingDistribution implements Serializable, Cloneable {
      *        The current configuration information for the streaming
      *        distribution.
      */
+
     public void setStreamingDistributionConfig(
             StreamingDistributionConfig streamingDistributionConfig) {
         this.streamingDistributionConfig = streamingDistributionConfig;
@@ -305,6 +321,7 @@ public class StreamingDistribution implements Serializable, Cloneable {
      * @return The current configuration information for the streaming
      *         distribution.
      */
+
     public StreamingDistributionConfig getStreamingDistributionConfig() {
         return this.streamingDistributionConfig;
     }
@@ -318,6 +335,7 @@ public class StreamingDistribution implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StreamingDistribution withStreamingDistributionConfig(
             StreamingDistributionConfig streamingDistributionConfig) {
         setStreamingDistributionConfig(streamingDistributionConfig);

@@ -37,6 +37,7 @@ public class DescribeVpcsResult implements Serializable, Cloneable {
      * 
      * @return Information about one or more VPCs.
      */
+
     public java.util.List<Vpc> getVpcs() {
         if (vpcs == null) {
             vpcs = new com.amazonaws.internal.SdkInternalList<Vpc>();
@@ -52,6 +53,7 @@ public class DescribeVpcsResult implements Serializable, Cloneable {
      * @param vpcs
      *        Information about one or more VPCs.
      */
+
     public void setVpcs(java.util.Collection<Vpc> vpcs) {
         if (vpcs == null) {
             this.vpcs = null;
@@ -77,6 +79,7 @@ public class DescribeVpcsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVpcsResult withVpcs(Vpc... vpcs) {
         if (this.vpcs == null) {
             setVpcs(new com.amazonaws.internal.SdkInternalList<Vpc>(vpcs.length));
@@ -97,6 +100,7 @@ public class DescribeVpcsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVpcsResult withVpcs(java.util.Collection<Vpc> vpcs) {
         setVpcs(vpcs);
         return this;

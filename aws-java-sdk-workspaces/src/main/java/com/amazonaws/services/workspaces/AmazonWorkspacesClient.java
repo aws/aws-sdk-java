@@ -64,6 +64,12 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements
     private static final String DEFAULT_ENDPOINT_PREFIX = "workspaces";
 
     /**
+     * Client configuration factory providing ClientConfigurations tailored to
+     * this client
+     */
+    protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
+
+    /**
      * List of exception unmarshallers for all Amazon WorkSpaces exceptions.
      */
     protected List<JsonErrorUnmarshallerV2> jsonErrorUnmarshallers = new ArrayList<JsonErrorUnmarshallerV2>();
@@ -86,8 +92,8 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonWorkspacesClient() {
-        this(new DefaultAWSCredentialsProviderChain(),
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
+        this(new DefaultAWSCredentialsProviderChain(), configFactory
+                .getConfig());
     }
 
     /**
@@ -129,8 +135,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements
      *        authenticating with AWS services.
      */
     public AmazonWorkspacesClient(AWSCredentials awsCredentials) {
-        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
-                .defaultConfig());
+        this(awsCredentials, configFactory.getConfig());
     }
 
     /**
@@ -171,8 +176,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements
      *        authenticate requests with AWS services.
      */
     public AmazonWorkspacesClient(AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider,
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
+        this(awsCredentialsProvider, configFactory.getConfig());
     }
 
     /**

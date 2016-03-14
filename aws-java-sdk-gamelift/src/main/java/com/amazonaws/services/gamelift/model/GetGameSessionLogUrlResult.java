@@ -41,6 +41,7 @@ public class GetGameSessionLogUrlResult implements Serializable, Cloneable {
      *        Location of the requested game session logs, available for
      *        download.
      */
+
     public void setPreSignedUrl(String preSignedUrl) {
         this.preSignedUrl = preSignedUrl;
     }
@@ -53,6 +54,7 @@ public class GetGameSessionLogUrlResult implements Serializable, Cloneable {
      * @return Location of the requested game session logs, available for
      *         download.
      */
+
     public String getPreSignedUrl() {
         return this.preSignedUrl;
     }
@@ -68,6 +70,7 @@ public class GetGameSessionLogUrlResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetGameSessionLogUrlResult withPreSignedUrl(String preSignedUrl) {
         setPreSignedUrl(preSignedUrl);
         return this;

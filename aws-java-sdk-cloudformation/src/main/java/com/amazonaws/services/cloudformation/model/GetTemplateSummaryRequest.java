@@ -97,6 +97,7 @@ public class GetTemplateSummaryRequest extends AmazonWebServiceRequest
      *        parameters: <code>StackName</code>, <code>TemplateBody</code>, or
      *        <code>TemplateURL</code>.
      */
+
     public void setTemplateBody(String templateBody) {
         this.templateBody = templateBody;
     }
@@ -125,6 +126,7 @@ public class GetTemplateSummaryRequest extends AmazonWebServiceRequest
      *         parameters: <code>StackName</code>, <code>TemplateBody</code>, or
      *         <code>TemplateURL</code>.
      */
+
     public String getTemplateBody() {
         return this.templateBody;
     }
@@ -156,6 +158,7 @@ public class GetTemplateSummaryRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetTemplateSummaryRequest withTemplateBody(String templateBody) {
         setTemplateBody(templateBody);
         return this;
@@ -187,6 +190,7 @@ public class GetTemplateSummaryRequest extends AmazonWebServiceRequest
      *        parameters: <code>StackName</code>, <code>TemplateBody</code>, or
      *        <code>TemplateURL</code>.
      */
+
     public void setTemplateURL(String templateURL) {
         this.templateURL = templateURL;
     }
@@ -216,6 +220,7 @@ public class GetTemplateSummaryRequest extends AmazonWebServiceRequest
      *         parameters: <code>StackName</code>, <code>TemplateBody</code>, or
      *         <code>TemplateURL</code>.
      */
+
     public String getTemplateURL() {
         return this.templateURL;
     }
@@ -248,6 +253,7 @@ public class GetTemplateSummaryRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetTemplateSummaryRequest withTemplateURL(String templateURL) {
         setTemplateURL(templateURL);
         return this;
@@ -276,6 +282,7 @@ public class GetTemplateSummaryRequest extends AmazonWebServiceRequest
      *        parameters: <code>StackName</code>, <code>TemplateBody</code>, or
      *        <code>TemplateURL</code>.
      */
+
     public void setStackName(String stackName) {
         this.stackName = stackName;
     }
@@ -302,6 +309,7 @@ public class GetTemplateSummaryRequest extends AmazonWebServiceRequest
      *         parameters: <code>StackName</code>, <code>TemplateBody</code>, or
      *         <code>TemplateURL</code>.
      */
+
     public String getStackName() {
         return this.stackName;
     }
@@ -331,6 +339,7 @@ public class GetTemplateSummaryRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetTemplateSummaryRequest withStackName(String stackName) {
         setStackName(stackName);
         return this;

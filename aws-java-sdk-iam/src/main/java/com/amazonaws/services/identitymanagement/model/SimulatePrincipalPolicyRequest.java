@@ -242,6 +242,7 @@ public class SimulatePrincipalPolicyRequest extends AmazonWebServiceRequest
      *        simulation also includes all policies that are attached to any
      *        groups the user belongs to.
      */
+
     public void setPolicySourceArn(String policySourceArn) {
         this.policySourceArn = policySourceArn;
     }
@@ -262,6 +263,7 @@ public class SimulatePrincipalPolicyRequest extends AmazonWebServiceRequest
      *         simulation also includes all policies that are attached to any
      *         groups the user belongs to.
      */
+
     public String getPolicySourceArn() {
         return this.policySourceArn;
     }
@@ -285,6 +287,7 @@ public class SimulatePrincipalPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SimulatePrincipalPolicyRequest withPolicySourceArn(
             String policySourceArn) {
         setPolicySourceArn(policySourceArn);
@@ -302,6 +305,7 @@ public class SimulatePrincipalPolicyRequest extends AmazonWebServiceRequest
      *         simulation. Each document is specified as a string containing the
      *         complete, valid JSON text of an IAM policy.
      */
+
     public java.util.List<String> getPolicyInputList() {
         if (policyInputList == null) {
             policyInputList = new com.amazonaws.internal.SdkInternalList<String>();
@@ -321,6 +325,7 @@ public class SimulatePrincipalPolicyRequest extends AmazonWebServiceRequest
      *        simulation. Each document is specified as a string containing the
      *        complete, valid JSON text of an IAM policy.
      */
+
     public void setPolicyInputList(java.util.Collection<String> policyInputList) {
         if (policyInputList == null) {
             this.policyInputList = null;
@@ -351,6 +356,7 @@ public class SimulatePrincipalPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SimulatePrincipalPolicyRequest withPolicyInputList(
             String... policyInputList) {
         if (this.policyInputList == null) {
@@ -377,6 +383,7 @@ public class SimulatePrincipalPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SimulatePrincipalPolicyRequest withPolicyInputList(
             java.util.Collection<String> policyInputList) {
         setPolicyInputList(policyInputList);
@@ -395,6 +402,7 @@ public class SimulatePrincipalPolicyRequest extends AmazonWebServiceRequest
      *         include the service identifier, such as
      *         <code>iam:CreateUser</code>.
      */
+
     public java.util.List<String> getActionNames() {
         if (actionNames == null) {
             actionNames = new com.amazonaws.internal.SdkInternalList<String>();
@@ -414,6 +422,7 @@ public class SimulatePrincipalPolicyRequest extends AmazonWebServiceRequest
      *        action is evaluated for each resource. Each action must include
      *        the service identifier, such as <code>iam:CreateUser</code>.
      */
+
     public void setActionNames(java.util.Collection<String> actionNames) {
         if (actionNames == null) {
             this.actionNames = null;
@@ -444,6 +453,7 @@ public class SimulatePrincipalPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SimulatePrincipalPolicyRequest withActionNames(String... actionNames) {
         if (this.actionNames == null) {
             setActionNames(new com.amazonaws.internal.SdkInternalList<String>(
@@ -469,6 +479,7 @@ public class SimulatePrincipalPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SimulatePrincipalPolicyRequest withActionNames(
             java.util.Collection<String> actionNames) {
         setActionNames(actionNames);
@@ -504,6 +515,7 @@ public class SimulatePrincipalPolicyRequest extends AmazonWebServiceRequest
      *         the simulation, then you must include the policy as a string in
      *         the <code>ResourcePolicy</code> parameter.
      */
+
     public java.util.List<String> getResourceArns() {
         if (resourceArns == null) {
             resourceArns = new com.amazonaws.internal.SdkInternalList<String>();
@@ -540,6 +552,7 @@ public class SimulatePrincipalPolicyRequest extends AmazonWebServiceRequest
      *        the simulation, then you must include the policy as a string in
      *        the <code>ResourcePolicy</code> parameter.
      */
+
     public void setResourceArns(java.util.Collection<String> resourceArns) {
         if (resourceArns == null) {
             this.resourceArns = null;
@@ -587,6 +600,7 @@ public class SimulatePrincipalPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SimulatePrincipalPolicyRequest withResourceArns(
             String... resourceArns) {
         if (this.resourceArns == null) {
@@ -630,6 +644,7 @@ public class SimulatePrincipalPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SimulatePrincipalPolicyRequest withResourceArns(
             java.util.Collection<String> resourceArns) {
         setResourceArns(resourceArns);
@@ -650,6 +665,7 @@ public class SimulatePrincipalPolicyRequest extends AmazonWebServiceRequest
      *        this policy attached. You can include only one resource-based
      *        policy in a simulation.
      */
+
     public void setResourcePolicy(String resourcePolicy) {
         this.resourcePolicy = resourcePolicy;
     }
@@ -667,6 +683,7 @@ public class SimulatePrincipalPolicyRequest extends AmazonWebServiceRequest
      *         this policy attached. You can include only one resource-based
      *         policy in a simulation.
      */
+
     public String getResourcePolicy() {
         return this.resourcePolicy;
     }
@@ -687,6 +704,7 @@ public class SimulatePrincipalPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SimulatePrincipalPolicyRequest withResourcePolicy(
             String resourcePolicy) {
         setResourcePolicy(resourcePolicy);
@@ -720,6 +738,7 @@ public class SimulatePrincipalPolicyRequest extends AmazonWebServiceRequest
      *        and account that owns the resource is different from the account
      *        that owns the simulated calling user <code>CallerArn</code>.
      */
+
     public void setResourceOwner(String resourceOwner) {
         this.resourceOwner = resourceOwner;
     }
@@ -750,6 +769,7 @@ public class SimulatePrincipalPolicyRequest extends AmazonWebServiceRequest
      *         and account that owns the resource is different from the account
      *         that owns the simulated calling user <code>CallerArn</code>.
      */
+
     public String getResourceOwner() {
         return this.resourceOwner;
     }
@@ -783,6 +803,7 @@ public class SimulatePrincipalPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SimulatePrincipalPolicyRequest withResourceOwner(String resourceOwner) {
         setResourceOwner(resourceOwner);
         return this;
@@ -834,6 +855,7 @@ public class SimulatePrincipalPolicyRequest extends AmazonWebServiceRequest
      *        resource-based policy's <code>Principal</code> element has a value
      *        to use in evaluating the policy.
      */
+
     public void setCallerArn(String callerArn) {
         this.callerArn = callerArn;
     }
@@ -883,6 +905,7 @@ public class SimulatePrincipalPolicyRequest extends AmazonWebServiceRequest
      *         resource-based policy's <code>Principal</code> element has a
      *         value to use in evaluating the policy.
      */
+
     public String getCallerArn() {
         return this.callerArn;
     }
@@ -935,6 +958,7 @@ public class SimulatePrincipalPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SimulatePrincipalPolicyRequest withCallerArn(String callerArn) {
         setCallerArn(callerArn);
         return this;
@@ -953,6 +977,7 @@ public class SimulatePrincipalPolicyRequest extends AmazonWebServiceRequest
      *         <code>Condition</code> element in one of the simulated policies,
      *         the corresponding value is supplied.
      */
+
     public java.util.List<ContextEntry> getContextEntries() {
         if (contextEntries == null) {
             contextEntries = new com.amazonaws.internal.SdkInternalList<ContextEntry>();
@@ -974,6 +999,7 @@ public class SimulatePrincipalPolicyRequest extends AmazonWebServiceRequest
      *        <code>Condition</code> element in one of the simulated policies,
      *        the corresponding value is supplied.
      */
+
     public void setContextEntries(
             java.util.Collection<ContextEntry> contextEntries) {
         if (contextEntries == null) {
@@ -1007,6 +1033,7 @@ public class SimulatePrincipalPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SimulatePrincipalPolicyRequest withContextEntries(
             ContextEntry... contextEntries) {
         if (this.contextEntries == null) {
@@ -1035,6 +1062,7 @@ public class SimulatePrincipalPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SimulatePrincipalPolicyRequest withContextEntries(
             java.util.Collection<ContextEntry> contextEntries) {
         setContextEntries(contextEntries);
@@ -1184,6 +1212,7 @@ public class SimulatePrincipalPolicyRequest extends AmazonWebServiceRequest
      *        </p>
      *        </li>
      */
+
     public void setResourceHandlingOption(String resourceHandlingOption) {
         this.resourceHandlingOption = resourceHandlingOption;
     }
@@ -1331,6 +1360,7 @@ public class SimulatePrincipalPolicyRequest extends AmazonWebServiceRequest
      *         </p>
      *         </li>
      */
+
     public String getResourceHandlingOption() {
         return this.resourceHandlingOption;
     }
@@ -1480,6 +1510,7 @@ public class SimulatePrincipalPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SimulatePrincipalPolicyRequest withResourceHandlingOption(
             String resourceHandlingOption) {
         setResourceHandlingOption(resourceHandlingOption);
@@ -1516,6 +1547,7 @@ public class SimulatePrincipalPolicyRequest extends AmazonWebServiceRequest
      *        include in the subsequent call that tells the service where to
      *        continue from.
      */
+
     public void setMaxItems(Integer maxItems) {
         this.maxItems = maxItems;
     }
@@ -1550,6 +1582,7 @@ public class SimulatePrincipalPolicyRequest extends AmazonWebServiceRequest
      *         include in the subsequent call that tells the service where to
      *         continue from.
      */
+
     public Integer getMaxItems() {
         return this.maxItems;
     }
@@ -1586,6 +1619,7 @@ public class SimulatePrincipalPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SimulatePrincipalPolicyRequest withMaxItems(Integer maxItems) {
         setMaxItems(maxItems);
         return this;
@@ -1605,6 +1639,7 @@ public class SimulatePrincipalPolicyRequest extends AmazonWebServiceRequest
      *        it to the value of the <code>Marker</code> element in the response
      *        that you received to indicate where the next call should start.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -1623,6 +1658,7 @@ public class SimulatePrincipalPolicyRequest extends AmazonWebServiceRequest
      *         response that you received to indicate where the next call should
      *         start.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -1643,6 +1679,7 @@ public class SimulatePrincipalPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SimulatePrincipalPolicyRequest withMarker(String marker) {
         setMarker(marker);
         return this;

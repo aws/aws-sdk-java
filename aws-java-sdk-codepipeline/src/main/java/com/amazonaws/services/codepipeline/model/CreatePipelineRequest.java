@@ -32,6 +32,7 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements
     /**
      * @param pipeline
      */
+
     public void setPipeline(PipelineDeclaration pipeline) {
         this.pipeline = pipeline;
     }
@@ -39,6 +40,7 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public PipelineDeclaration getPipeline() {
         return this.pipeline;
     }
@@ -48,6 +50,7 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePipelineRequest withPipeline(PipelineDeclaration pipeline) {
         setPipeline(pipeline);
         return this;

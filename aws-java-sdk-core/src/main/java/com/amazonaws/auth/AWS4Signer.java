@@ -14,32 +14,6 @@
  */
 package com.amazonaws.auth;
 
-import static com.amazonaws.auth.internal.SignerConstants.AUTHORIZATION;
-import static com.amazonaws.auth.internal.SignerConstants.AWS4_SIGNING_ALGORITHM;
-import static com.amazonaws.auth.internal.SignerConstants.AWS4_TERMINATOR;
-import static com.amazonaws.auth.internal.SignerConstants.HOST;
-import static com.amazonaws.auth.internal.SignerConstants.LINE_SEPARATOR;
-import static com.amazonaws.auth.internal.SignerConstants.PRESIGN_URL_MAX_EXPIRATION_SECONDS;
-import static com.amazonaws.auth.internal.SignerConstants.X_AMZ_ALGORITHM;
-import static com.amazonaws.auth.internal.SignerConstants.X_AMZ_CONTENT_SHA256;
-import static com.amazonaws.auth.internal.SignerConstants.X_AMZ_CREDENTIAL;
-import static com.amazonaws.auth.internal.SignerConstants.X_AMZ_DATE;
-import static com.amazonaws.auth.internal.SignerConstants.X_AMZ_EXPIRES;
-import static com.amazonaws.auth.internal.SignerConstants.X_AMZ_SECURITY_TOKEN;
-import static com.amazonaws.auth.internal.SignerConstants.X_AMZ_SIGNATURE;
-import static com.amazonaws.auth.internal.SignerConstants.X_AMZ_SIGNED_HEADER;
-
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.URI;
-import java.nio.charset.Charset;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.TimeUnit;
-
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.ReadLimitInfo;
 import com.amazonaws.SignableRequest;
@@ -53,6 +27,15 @@ import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.DateUtils;
 import com.amazonaws.util.SdkHttpUtils;
 import com.amazonaws.util.StringUtils;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URI;
+import java.nio.charset.Charset;
+import java.util.*;
+import java.util.concurrent.TimeUnit;
+
+import static com.amazonaws.auth.internal.SignerConstants.*;
 
 /**
  * Signer implementation that signs requests with the AWS4 signing protocol.
@@ -451,6 +434,9 @@ public class AWS4Signer extends AbstractAWSSigner implements
         final Map<String, String> requestHeaders = request.getHeaders();
         StringBuilder buffer = new StringBuilder();
         for (String header : sortedHeaders) {
+            if (shouldExcludeHeaderFromSigning(header)) {
+                continue;
+            }
             String key = StringUtils.lowerCase(header).replaceAll("\\s+", " ");
             String value = requestHeaders.get(header);
 
@@ -472,12 +458,22 @@ public class AWS4Signer extends AbstractAWSSigner implements
 
         StringBuilder buffer = new StringBuilder();
         for (String header : sortedHeaders) {
+            if (shouldExcludeHeaderFromSigning(header)) {
+                continue;
+            }
             if (buffer.length() > 0)
                 buffer.append(";");
             buffer.append(StringUtils.lowerCase(header));
         }
 
         return buffer.toString();
+    }
+
+    /**
+     * Hook to allow subclasses to skip headers during signing.
+     */
+    protected boolean shouldExcludeHeaderFromSigning(String header) {
+        return false;
     }
 
     protected void addHostHeader(SignableRequest<?> request) {

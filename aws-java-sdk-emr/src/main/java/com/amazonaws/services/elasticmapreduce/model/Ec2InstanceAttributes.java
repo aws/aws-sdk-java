@@ -102,6 +102,7 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
      *        The name of the Amazon EC2 key pair to use when connecting with
      *        SSH into the master node as a user named "hadoop".
      */
+
     public void setEc2KeyName(String ec2KeyName) {
         this.ec2KeyName = ec2KeyName;
     }
@@ -115,6 +116,7 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
      * @return The name of the Amazon EC2 key pair to use when connecting with
      *         SSH into the master node as a user named "hadoop".
      */
+
     public String getEc2KeyName() {
         return this.ec2KeyName;
     }
@@ -131,6 +133,7 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Ec2InstanceAttributes withEc2KeyName(String ec2KeyName) {
         setEc2KeyName(ec2KeyName);
         return this;
@@ -160,6 +163,7 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
      *        cc1.4xlarge instance type for nodes of a job flow launched in a
      *        VPC.
      */
+
     public void setEc2SubnetId(String ec2SubnetId) {
         this.ec2SubnetId = ec2SubnetId;
     }
@@ -187,6 +191,7 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
      *         cc1.4xlarge instance type for nodes of a job flow launched in a
      *         VPC.
      */
+
     public String getEc2SubnetId() {
         return this.ec2SubnetId;
     }
@@ -217,6 +222,7 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Ec2InstanceAttributes withEc2SubnetId(String ec2SubnetId) {
         setEc2SubnetId(ec2SubnetId);
         return this;
@@ -230,6 +236,7 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
      * @param ec2AvailabilityZone
      *        The Availability Zone in which the cluster will run.
      */
+
     public void setEc2AvailabilityZone(String ec2AvailabilityZone) {
         this.ec2AvailabilityZone = ec2AvailabilityZone;
     }
@@ -241,6 +248,7 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
      * 
      * @return The Availability Zone in which the cluster will run.
      */
+
     public String getEc2AvailabilityZone() {
         return this.ec2AvailabilityZone;
     }
@@ -255,6 +263,7 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Ec2InstanceAttributes withEc2AvailabilityZone(
             String ec2AvailabilityZone) {
         setEc2AvailabilityZone(ec2AvailabilityZone);
@@ -271,6 +280,7 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
      *        The IAM role that was specified when the job flow was launched.
      *        The EC2 instances of the job flow assume this role.
      */
+
     public void setIamInstanceProfile(String iamInstanceProfile) {
         this.iamInstanceProfile = iamInstanceProfile;
     }
@@ -284,6 +294,7 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
      * @return The IAM role that was specified when the job flow was launched.
      *         The EC2 instances of the job flow assume this role.
      */
+
     public String getIamInstanceProfile() {
         return this.iamInstanceProfile;
     }
@@ -300,6 +311,7 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Ec2InstanceAttributes withIamInstanceProfile(
             String iamInstanceProfile) {
         setIamInstanceProfile(iamInstanceProfile);
@@ -315,6 +327,7 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
      *        The identifier of the Amazon EC2 security group for the master
      *        node.
      */
+
     public void setEmrManagedMasterSecurityGroup(
             String emrManagedMasterSecurityGroup) {
         this.emrManagedMasterSecurityGroup = emrManagedMasterSecurityGroup;
@@ -328,6 +341,7 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
      * @return The identifier of the Amazon EC2 security group for the master
      *         node.
      */
+
     public String getEmrManagedMasterSecurityGroup() {
         return this.emrManagedMasterSecurityGroup;
     }
@@ -343,6 +357,7 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Ec2InstanceAttributes withEmrManagedMasterSecurityGroup(
             String emrManagedMasterSecurityGroup) {
         setEmrManagedMasterSecurityGroup(emrManagedMasterSecurityGroup);
@@ -358,6 +373,7 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
      *        The identifier of the Amazon EC2 security group for the slave
      *        nodes.
      */
+
     public void setEmrManagedSlaveSecurityGroup(
             String emrManagedSlaveSecurityGroup) {
         this.emrManagedSlaveSecurityGroup = emrManagedSlaveSecurityGroup;
@@ -371,6 +387,7 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
      * @return The identifier of the Amazon EC2 security group for the slave
      *         nodes.
      */
+
     public String getEmrManagedSlaveSecurityGroup() {
         return this.emrManagedSlaveSecurityGroup;
     }
@@ -386,6 +403,7 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Ec2InstanceAttributes withEmrManagedSlaveSecurityGroup(
             String emrManagedSlaveSecurityGroup) {
         setEmrManagedSlaveSecurityGroup(emrManagedSlaveSecurityGroup);
@@ -402,6 +420,7 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
      *        The identifier of the Amazon EC2 security group for the Amazon EMR
      *        service to access clusters in VPC private subnets.
      */
+
     public void setServiceAccessSecurityGroup(String serviceAccessSecurityGroup) {
         this.serviceAccessSecurityGroup = serviceAccessSecurityGroup;
     }
@@ -415,6 +434,7 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
      * @return The identifier of the Amazon EC2 security group for the Amazon
      *         EMR service to access clusters in VPC private subnets.
      */
+
     public String getServiceAccessSecurityGroup() {
         return this.serviceAccessSecurityGroup;
     }
@@ -431,6 +451,7 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Ec2InstanceAttributes withServiceAccessSecurityGroup(
             String serviceAccessSecurityGroup) {
         setServiceAccessSecurityGroup(serviceAccessSecurityGroup);
@@ -445,6 +466,7 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
      * @return A list of additional Amazon EC2 security group IDs for the master
      *         node.
      */
+
     public java.util.List<String> getAdditionalMasterSecurityGroups() {
         if (additionalMasterSecurityGroups == null) {
             additionalMasterSecurityGroups = new com.amazonaws.internal.SdkInternalList<String>();
@@ -461,6 +483,7 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
      *        A list of additional Amazon EC2 security group IDs for the master
      *        node.
      */
+
     public void setAdditionalMasterSecurityGroups(
             java.util.Collection<String> additionalMasterSecurityGroups) {
         if (additionalMasterSecurityGroups == null) {
@@ -490,6 +513,7 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Ec2InstanceAttributes withAdditionalMasterSecurityGroups(
             String... additionalMasterSecurityGroups) {
         if (this.additionalMasterSecurityGroups == null) {
@@ -513,6 +537,7 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Ec2InstanceAttributes withAdditionalMasterSecurityGroups(
             java.util.Collection<String> additionalMasterSecurityGroups) {
         setAdditionalMasterSecurityGroups(additionalMasterSecurityGroups);
@@ -527,6 +552,7 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
      * @return A list of additional Amazon EC2 security group IDs for the slave
      *         nodes.
      */
+
     public java.util.List<String> getAdditionalSlaveSecurityGroups() {
         if (additionalSlaveSecurityGroups == null) {
             additionalSlaveSecurityGroups = new com.amazonaws.internal.SdkInternalList<String>();
@@ -543,6 +569,7 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
      *        A list of additional Amazon EC2 security group IDs for the slave
      *        nodes.
      */
+
     public void setAdditionalSlaveSecurityGroups(
             java.util.Collection<String> additionalSlaveSecurityGroups) {
         if (additionalSlaveSecurityGroups == null) {
@@ -571,6 +598,7 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Ec2InstanceAttributes withAdditionalSlaveSecurityGroups(
             String... additionalSlaveSecurityGroups) {
         if (this.additionalSlaveSecurityGroups == null) {
@@ -594,6 +622,7 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Ec2InstanceAttributes withAdditionalSlaveSecurityGroups(
             java.util.Collection<String> additionalSlaveSecurityGroups) {
         setAdditionalSlaveSecurityGroups(additionalSlaveSecurityGroups);

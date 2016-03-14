@@ -82,6 +82,7 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements
      *        pipelines associated with your AWS account, because AWS Data
      *        Pipeline assigns each pipeline a unique pipeline identifier.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -97,6 +98,7 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements
      *         pipelines associated with your AWS account, because AWS Data
      *         Pipeline assigns each pipeline a unique pipeline identifier.
      */
+
     public String getName() {
         return this.name;
     }
@@ -115,6 +117,7 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePipelineRequest withName(String name) {
         setName(name);
         return this;
@@ -153,6 +156,7 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements
      *        identifier combination is scoped to the AWS account or IAM user
      *        credentials.
      */
+
     public void setUniqueId(String uniqueId) {
         this.uniqueId = uniqueId;
     }
@@ -189,6 +193,7 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements
      *         uniqueness of the name and unique identifier combination is
      *         scoped to the AWS account or IAM user credentials.
      */
+
     public String getUniqueId() {
         return this.uniqueId;
     }
@@ -228,6 +233,7 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePipelineRequest withUniqueId(String uniqueId) {
         setUniqueId(uniqueId);
         return this;
@@ -241,6 +247,7 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements
      * @param description
      *        The description for the pipeline.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -252,6 +259,7 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements
      * 
      * @return The description for the pipeline.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -266,6 +274,7 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePipelineRequest withDescription(String description) {
         setDescription(description);
         return this;
@@ -287,6 +296,7 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements
      *         >Controlling User Access to Pipelines</a> in the <i>AWS Data
      *         Pipeline Developer Guide</i>.
      */
+
     public java.util.List<Tag> getTags() {
         if (tags == null) {
             tags = new com.amazonaws.internal.SdkInternalList<Tag>();
@@ -311,6 +321,7 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements
      *        >Controlling User Access to Pipelines</a> in the <i>AWS Data
      *        Pipeline Developer Guide</i>.
      */
+
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
             this.tags = null;
@@ -345,6 +356,7 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePipelineRequest withTags(Tag... tags) {
         if (this.tags == null) {
             setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
@@ -374,6 +386,7 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePipelineRequest withTags(java.util.Collection<Tag> tags) {
         setTags(tags);
         return this;

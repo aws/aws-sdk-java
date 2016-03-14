@@ -65,6 +65,7 @@ public class CreateGrantResult implements Serializable, Cloneable {
      *        >Grant Tokens</a> in the <i>AWS Key Management Service Developer
      *        Guide</i>.
      */
+
     public void setGrantToken(String grantToken) {
         this.grantToken = grantToken;
     }
@@ -87,6 +88,7 @@ public class CreateGrantResult implements Serializable, Cloneable {
      *         >Grant Tokens</a> in the <i>AWS Key Management Service Developer
      *         Guide</i>.
      */
+
     public String getGrantToken() {
         return this.grantToken;
     }
@@ -112,6 +114,7 @@ public class CreateGrantResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateGrantResult withGrantToken(String grantToken) {
         setGrantToken(grantToken);
         return this;
@@ -132,6 +135,7 @@ public class CreateGrantResult implements Serializable, Cloneable {
      *        You can use the <code>GrantId</code> in a subsequent
      *        <a>RetireGrant</a> or <a>RevokeGrant</a> operation.
      */
+
     public void setGrantId(String grantId) {
         this.grantId = grantId;
     }
@@ -150,6 +154,7 @@ public class CreateGrantResult implements Serializable, Cloneable {
      *         You can use the <code>GrantId</code> in a subsequent
      *         <a>RetireGrant</a> or <a>RevokeGrant</a> operation.
      */
+
     public String getGrantId() {
         return this.grantId;
     }
@@ -171,6 +176,7 @@ public class CreateGrantResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateGrantResult withGrantId(String grantId) {
         setGrantId(grantId);
         return this;

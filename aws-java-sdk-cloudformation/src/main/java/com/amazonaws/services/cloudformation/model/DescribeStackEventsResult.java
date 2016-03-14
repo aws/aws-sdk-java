@@ -46,6 +46,7 @@ public class DescribeStackEventsResult implements Serializable, Cloneable {
      * 
      * @return A list of <code>StackEvents</code> structures.
      */
+
     public java.util.List<StackEvent> getStackEvents() {
         if (stackEvents == null) {
             stackEvents = new com.amazonaws.internal.SdkInternalList<StackEvent>();
@@ -61,6 +62,7 @@ public class DescribeStackEventsResult implements Serializable, Cloneable {
      * @param stackEvents
      *        A list of <code>StackEvents</code> structures.
      */
+
     public void setStackEvents(java.util.Collection<StackEvent> stackEvents) {
         if (stackEvents == null) {
             this.stackEvents = null;
@@ -87,6 +89,7 @@ public class DescribeStackEventsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeStackEventsResult withStackEvents(StackEvent... stackEvents) {
         if (this.stackEvents == null) {
             setStackEvents(new com.amazonaws.internal.SdkInternalList<StackEvent>(
@@ -108,6 +111,7 @@ public class DescribeStackEventsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeStackEventsResult withStackEvents(
             java.util.Collection<StackEvent> stackEvents) {
         setStackEvents(stackEvents);
@@ -125,6 +129,7 @@ public class DescribeStackEventsResult implements Serializable, Cloneable {
      *        next page of events. If no additional page exists, this value is
      *        null.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -139,6 +144,7 @@ public class DescribeStackEventsResult implements Serializable, Cloneable {
      *         next page of events. If no additional page exists, this value is
      *         null.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -156,6 +162,7 @@ public class DescribeStackEventsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeStackEventsResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

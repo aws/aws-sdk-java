@@ -44,6 +44,7 @@ public class GetChangeTokenResult implements Serializable, Cloneable {
      *        this value in a <code>GetChangeTokenStatus</code> request to get
      *        the current status of the request.
      */
+
     public void setChangeToken(String changeToken) {
         this.changeToken = changeToken;
     }
@@ -59,6 +60,7 @@ public class GetChangeTokenResult implements Serializable, Cloneable {
      *         this value in a <code>GetChangeTokenStatus</code> request to get
      *         the current status of the request.
      */
+
     public String getChangeToken() {
         return this.changeToken;
     }
@@ -77,6 +79,7 @@ public class GetChangeTokenResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetChangeTokenResult withChangeToken(String changeToken) {
         setChangeToken(changeToken);
         return this;

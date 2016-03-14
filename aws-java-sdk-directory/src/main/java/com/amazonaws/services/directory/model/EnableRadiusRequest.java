@@ -49,6 +49,7 @@ public class EnableRadiusRequest extends AmazonWebServiceRequest implements
      * @param directoryId
      *        The identifier of the directory for which to enable MFA.
      */
+
     public void setDirectoryId(String directoryId) {
         this.directoryId = directoryId;
     }
@@ -60,6 +61,7 @@ public class EnableRadiusRequest extends AmazonWebServiceRequest implements
      * 
      * @return The identifier of the directory for which to enable MFA.
      */
+
     public String getDirectoryId() {
         return this.directoryId;
     }
@@ -74,6 +76,7 @@ public class EnableRadiusRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EnableRadiusRequest withDirectoryId(String directoryId) {
         setDirectoryId(directoryId);
         return this;
@@ -89,6 +92,7 @@ public class EnableRadiusRequest extends AmazonWebServiceRequest implements
      *        A <a>RadiusSettings</a> object that contains information about the
      *        RADIUS server.
      */
+
     public void setRadiusSettings(RadiusSettings radiusSettings) {
         this.radiusSettings = radiusSettings;
     }
@@ -102,6 +106,7 @@ public class EnableRadiusRequest extends AmazonWebServiceRequest implements
      * @return A <a>RadiusSettings</a> object that contains information about
      *         the RADIUS server.
      */
+
     public RadiusSettings getRadiusSettings() {
         return this.radiusSettings;
     }
@@ -118,6 +123,7 @@ public class EnableRadiusRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EnableRadiusRequest withRadiusSettings(RadiusSettings radiusSettings) {
         setRadiusSettings(radiusSettings);
         return this;

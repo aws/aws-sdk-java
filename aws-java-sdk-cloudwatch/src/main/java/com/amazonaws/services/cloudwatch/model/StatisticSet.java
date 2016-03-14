@@ -60,6 +60,7 @@ public class StatisticSet implements Serializable, Cloneable {
      * @param sampleCount
      *        The number of samples used for the statistic set.
      */
+
     public void setSampleCount(Double sampleCount) {
         this.sampleCount = sampleCount;
     }
@@ -71,6 +72,7 @@ public class StatisticSet implements Serializable, Cloneable {
      * 
      * @return The number of samples used for the statistic set.
      */
+
     public Double getSampleCount() {
         return this.sampleCount;
     }
@@ -85,6 +87,7 @@ public class StatisticSet implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StatisticSet withSampleCount(Double sampleCount) {
         setSampleCount(sampleCount);
         return this;
@@ -98,6 +101,7 @@ public class StatisticSet implements Serializable, Cloneable {
      * @param sum
      *        The sum of values for the sample set.
      */
+
     public void setSum(Double sum) {
         this.sum = sum;
     }
@@ -109,6 +113,7 @@ public class StatisticSet implements Serializable, Cloneable {
      * 
      * @return The sum of values for the sample set.
      */
+
     public Double getSum() {
         return this.sum;
     }
@@ -123,6 +128,7 @@ public class StatisticSet implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StatisticSet withSum(Double sum) {
         setSum(sum);
         return this;
@@ -136,6 +142,7 @@ public class StatisticSet implements Serializable, Cloneable {
      * @param minimum
      *        The minimum value of the sample set.
      */
+
     public void setMinimum(Double minimum) {
         this.minimum = minimum;
     }
@@ -147,6 +154,7 @@ public class StatisticSet implements Serializable, Cloneable {
      * 
      * @return The minimum value of the sample set.
      */
+
     public Double getMinimum() {
         return this.minimum;
     }
@@ -161,6 +169,7 @@ public class StatisticSet implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StatisticSet withMinimum(Double minimum) {
         setMinimum(minimum);
         return this;
@@ -174,6 +183,7 @@ public class StatisticSet implements Serializable, Cloneable {
      * @param maximum
      *        The maximum value of the sample set.
      */
+
     public void setMaximum(Double maximum) {
         this.maximum = maximum;
     }
@@ -185,6 +195,7 @@ public class StatisticSet implements Serializable, Cloneable {
      * 
      * @return The maximum value of the sample set.
      */
+
     public Double getMaximum() {
         return this.maximum;
     }
@@ -199,6 +210,7 @@ public class StatisticSet implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StatisticSet withMaximum(Double maximum) {
         setMaximum(maximum);
         return this;

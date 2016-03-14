@@ -57,6 +57,7 @@ public class PriceScheduleSpecification implements Serializable, Cloneable {
      *        is the second to the last month before the capacity reservation
      *        expires.
      */
+
     public void setTerm(Long term) {
         this.term = term;
     }
@@ -71,6 +72,7 @@ public class PriceScheduleSpecification implements Serializable, Cloneable {
      *         is the second to the last month before the capacity reservation
      *         expires.
      */
+
     public Long getTerm() {
         return this.term;
     }
@@ -88,6 +90,7 @@ public class PriceScheduleSpecification implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PriceScheduleSpecification withTerm(Long term) {
         setTerm(term);
         return this;
@@ -101,6 +104,7 @@ public class PriceScheduleSpecification implements Serializable, Cloneable {
      * @param price
      *        The fixed price for the term.
      */
+
     public void setPrice(Double price) {
         this.price = price;
     }
@@ -112,6 +116,7 @@ public class PriceScheduleSpecification implements Serializable, Cloneable {
      * 
      * @return The fixed price for the term.
      */
+
     public Double getPrice() {
         return this.price;
     }
@@ -126,6 +131,7 @@ public class PriceScheduleSpecification implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PriceScheduleSpecification withPrice(Double price) {
         setPrice(price);
         return this;
@@ -142,6 +148,7 @@ public class PriceScheduleSpecification implements Serializable, Cloneable {
      *        time, the only supported currency is <code>USD</code>.
      * @see CurrencyCodeValues
      */
+
     public void setCurrencyCode(String currencyCode) {
         this.currencyCode = currencyCode;
     }
@@ -156,6 +163,7 @@ public class PriceScheduleSpecification implements Serializable, Cloneable {
      *         this time, the only supported currency is <code>USD</code>.
      * @see CurrencyCodeValues
      */
+
     public String getCurrencyCode() {
         return this.currencyCode;
     }
@@ -173,6 +181,7 @@ public class PriceScheduleSpecification implements Serializable, Cloneable {
      *         chained together.
      * @see CurrencyCodeValues
      */
+
     public PriceScheduleSpecification withCurrencyCode(String currencyCode) {
         setCurrencyCode(currencyCode);
         return this;
@@ -191,6 +200,7 @@ public class PriceScheduleSpecification implements Serializable, Cloneable {
      *         chained together.
      * @see CurrencyCodeValues
      */
+
     public void setCurrencyCode(CurrencyCodeValues currencyCode) {
         this.currencyCode = currencyCode.toString();
     }
@@ -208,6 +218,7 @@ public class PriceScheduleSpecification implements Serializable, Cloneable {
      *         chained together.
      * @see CurrencyCodeValues
      */
+
     public PriceScheduleSpecification withCurrencyCode(
             CurrencyCodeValues currencyCode) {
         setCurrencyCode(currencyCode);

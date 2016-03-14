@@ -55,6 +55,7 @@ public class Policies implements Serializable, Cloneable {
      * @return The stickiness policies created using
      *         <a>CreateAppCookieStickinessPolicy</a>.
      */
+
     public java.util.List<AppCookieStickinessPolicy> getAppCookieStickinessPolicies() {
         if (appCookieStickinessPolicies == null) {
             appCookieStickinessPolicies = new com.amazonaws.internal.SdkInternalList<AppCookieStickinessPolicy>();
@@ -72,6 +73,7 @@ public class Policies implements Serializable, Cloneable {
      *        The stickiness policies created using
      *        <a>CreateAppCookieStickinessPolicy</a>.
      */
+
     public void setAppCookieStickinessPolicies(
             java.util.Collection<AppCookieStickinessPolicy> appCookieStickinessPolicies) {
         if (appCookieStickinessPolicies == null) {
@@ -101,6 +103,7 @@ public class Policies implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Policies withAppCookieStickinessPolicies(
             AppCookieStickinessPolicy... appCookieStickinessPolicies) {
         if (this.appCookieStickinessPolicies == null) {
@@ -125,6 +128,7 @@ public class Policies implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Policies withAppCookieStickinessPolicies(
             java.util.Collection<AppCookieStickinessPolicy> appCookieStickinessPolicies) {
         setAppCookieStickinessPolicies(appCookieStickinessPolicies);
@@ -140,6 +144,7 @@ public class Policies implements Serializable, Cloneable {
      * @return The stickiness policies created using
      *         <a>CreateLBCookieStickinessPolicy</a>.
      */
+
     public java.util.List<LBCookieStickinessPolicy> getLBCookieStickinessPolicies() {
         if (lBCookieStickinessPolicies == null) {
             lBCookieStickinessPolicies = new com.amazonaws.internal.SdkInternalList<LBCookieStickinessPolicy>();
@@ -157,6 +162,7 @@ public class Policies implements Serializable, Cloneable {
      *        The stickiness policies created using
      *        <a>CreateLBCookieStickinessPolicy</a>.
      */
+
     public void setLBCookieStickinessPolicies(
             java.util.Collection<LBCookieStickinessPolicy> lBCookieStickinessPolicies) {
         if (lBCookieStickinessPolicies == null) {
@@ -186,6 +192,7 @@ public class Policies implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Policies withLBCookieStickinessPolicies(
             LBCookieStickinessPolicy... lBCookieStickinessPolicies) {
         if (this.lBCookieStickinessPolicies == null) {
@@ -210,6 +217,7 @@ public class Policies implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Policies withLBCookieStickinessPolicies(
             java.util.Collection<LBCookieStickinessPolicy> lBCookieStickinessPolicies) {
         setLBCookieStickinessPolicies(lBCookieStickinessPolicies);
@@ -223,6 +231,7 @@ public class Policies implements Serializable, Cloneable {
      * 
      * @return The policies other than the stickiness policies.
      */
+
     public java.util.List<String> getOtherPolicies() {
         if (otherPolicies == null) {
             otherPolicies = new com.amazonaws.internal.SdkInternalList<String>();
@@ -238,6 +247,7 @@ public class Policies implements Serializable, Cloneable {
      * @param otherPolicies
      *        The policies other than the stickiness policies.
      */
+
     public void setOtherPolicies(java.util.Collection<String> otherPolicies) {
         if (otherPolicies == null) {
             this.otherPolicies = null;
@@ -264,6 +274,7 @@ public class Policies implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Policies withOtherPolicies(String... otherPolicies) {
         if (this.otherPolicies == null) {
             setOtherPolicies(new com.amazonaws.internal.SdkInternalList<String>(
@@ -285,6 +296,7 @@ public class Policies implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Policies withOtherPolicies(java.util.Collection<String> otherPolicies) {
         setOtherPolicies(otherPolicies);
         return this;

@@ -85,6 +85,7 @@ public class Run implements Serializable, Cloneable {
      * @param runArn
      *        The ARN of the run.
      */
+
     public void setRunArn(String runArn) {
         this.runArn = runArn;
     }
@@ -96,6 +97,7 @@ public class Run implements Serializable, Cloneable {
      * 
      * @return The ARN of the run.
      */
+
     public String getRunArn() {
         return this.runArn;
     }
@@ -110,6 +112,7 @@ public class Run implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Run withRunArn(String runArn) {
         setRunArn(runArn);
         return this;
@@ -123,6 +126,7 @@ public class Run implements Serializable, Cloneable {
      * @param runName
      *        The auto-generated name for the run.
      */
+
     public void setRunName(String runName) {
         this.runName = runName;
     }
@@ -134,6 +138,7 @@ public class Run implements Serializable, Cloneable {
      * 
      * @return The auto-generated name for the run.
      */
+
     public String getRunName() {
         return this.runName;
     }
@@ -148,6 +153,7 @@ public class Run implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Run withRunName(String runName) {
         setRunName(runName);
         return this;
@@ -161,6 +167,7 @@ public class Run implements Serializable, Cloneable {
      * @param assessmentArn
      *        The ARN of the assessment that is associated with the run.
      */
+
     public void setAssessmentArn(String assessmentArn) {
         this.assessmentArn = assessmentArn;
     }
@@ -172,6 +179,7 @@ public class Run implements Serializable, Cloneable {
      * 
      * @return The ARN of the assessment that is associated with the run.
      */
+
     public String getAssessmentArn() {
         return this.assessmentArn;
     }
@@ -186,6 +194,7 @@ public class Run implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Run withAssessmentArn(String assessmentArn) {
         setAssessmentArn(assessmentArn);
         return this;
@@ -204,6 +213,7 @@ public class Run implements Serializable, Cloneable {
      *        <i>EvaluatingPoliciesErrorCanRetry</i>, <i>Completed</i>,
      *        <i>Failed</i>, <i>TombStoned</i>.
      */
+
     public void setRunState(String runState) {
         this.runState = runState;
     }
@@ -220,6 +230,7 @@ public class Run implements Serializable, Cloneable {
      *         <i>EvaluatingPoliciesErrorCanRetry</i>, <i>Completed</i>,
      *         <i>Failed</i>, <i>TombStoned</i>.
      */
+
     public String getRunState() {
         return this.runState;
     }
@@ -239,6 +250,7 @@ public class Run implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Run withRunState(String runState) {
         setRunState(runState);
         return this;
@@ -251,6 +263,7 @@ public class Run implements Serializable, Cloneable {
      * 
      * @return Rules packages selected for the run of the assessment.
      */
+
     public java.util.List<String> getRulesPackages() {
         return rulesPackages;
     }
@@ -263,6 +276,7 @@ public class Run implements Serializable, Cloneable {
      * @param rulesPackages
      *        Rules packages selected for the run of the assessment.
      */
+
     public void setRulesPackages(java.util.Collection<String> rulesPackages) {
         if (rulesPackages == null) {
             this.rulesPackages = null;
@@ -288,6 +302,7 @@ public class Run implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Run withRulesPackages(String... rulesPackages) {
         if (this.rulesPackages == null) {
             setRulesPackages(new java.util.ArrayList<String>(
@@ -309,6 +324,7 @@ public class Run implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Run withRulesPackages(java.util.Collection<String> rulesPackages) {
         setRulesPackages(rulesPackages);
         return this;
@@ -324,6 +340,7 @@ public class Run implements Serializable, Cloneable {
      *        Run creation time that corresponds to the data collection
      *        completion time or failure.
      */
+
     public void setCreationTime(java.util.Date creationTime) {
         this.creationTime = creationTime;
     }
@@ -337,6 +354,7 @@ public class Run implements Serializable, Cloneable {
      * @return Run creation time that corresponds to the data collection
      *         completion time or failure.
      */
+
     public java.util.Date getCreationTime() {
         return this.creationTime;
     }
@@ -353,6 +371,7 @@ public class Run implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Run withCreationTime(java.util.Date creationTime) {
         setCreationTime(creationTime);
         return this;
@@ -368,6 +387,7 @@ public class Run implements Serializable, Cloneable {
      *        Run completion time that corresponds to the rules packages
      *        evaluation completion time or failure.
      */
+
     public void setCompletionTime(java.util.Date completionTime) {
         this.completionTime = completionTime;
     }
@@ -381,6 +401,7 @@ public class Run implements Serializable, Cloneable {
      * @return Run completion time that corresponds to the rules packages
      *         evaluation completion time or failure.
      */
+
     public java.util.Date getCompletionTime() {
         return this.completionTime;
     }
@@ -397,6 +418,7 @@ public class Run implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Run withCompletionTime(java.util.Date completionTime) {
         setCompletionTime(completionTime);
         return this;

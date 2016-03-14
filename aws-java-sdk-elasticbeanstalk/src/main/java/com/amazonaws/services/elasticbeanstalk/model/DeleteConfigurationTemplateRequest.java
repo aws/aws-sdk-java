@@ -72,6 +72,7 @@ public class DeleteConfigurationTemplateRequest extends AmazonWebServiceRequest
      *        The name of the application to delete the configuration template
      *        from.
      */
+
     public void setApplicationName(String applicationName) {
         this.applicationName = applicationName;
     }
@@ -84,6 +85,7 @@ public class DeleteConfigurationTemplateRequest extends AmazonWebServiceRequest
      * @return The name of the application to delete the configuration template
      *         from.
      */
+
     public String getApplicationName() {
         return this.applicationName;
     }
@@ -99,6 +101,7 @@ public class DeleteConfigurationTemplateRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteConfigurationTemplateRequest withApplicationName(
             String applicationName) {
         setApplicationName(applicationName);
@@ -113,6 +116,7 @@ public class DeleteConfigurationTemplateRequest extends AmazonWebServiceRequest
      * @param templateName
      *        The name of the configuration template to delete.
      */
+
     public void setTemplateName(String templateName) {
         this.templateName = templateName;
     }
@@ -124,6 +128,7 @@ public class DeleteConfigurationTemplateRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the configuration template to delete.
      */
+
     public String getTemplateName() {
         return this.templateName;
     }
@@ -138,6 +143,7 @@ public class DeleteConfigurationTemplateRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteConfigurationTemplateRequest withTemplateName(
             String templateName) {
         setTemplateName(templateName);

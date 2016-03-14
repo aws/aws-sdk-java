@@ -45,6 +45,7 @@ public class ListInstancesResult implements Serializable, Cloneable {
      * 
      * @return The list of instances for the cluster and given filters.
      */
+
     public java.util.List<Instance> getInstances() {
         if (instances == null) {
             instances = new com.amazonaws.internal.SdkInternalList<Instance>();
@@ -60,6 +61,7 @@ public class ListInstancesResult implements Serializable, Cloneable {
      * @param instances
      *        The list of instances for the cluster and given filters.
      */
+
     public void setInstances(java.util.Collection<Instance> instances) {
         if (instances == null) {
             this.instances = null;
@@ -86,6 +88,7 @@ public class ListInstancesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListInstancesResult withInstances(Instance... instances) {
         if (this.instances == null) {
             setInstances(new com.amazonaws.internal.SdkInternalList<Instance>(
@@ -107,6 +110,7 @@ public class ListInstancesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListInstancesResult withInstances(
             java.util.Collection<Instance> instances) {
         setInstances(instances);
@@ -122,6 +126,7 @@ public class ListInstancesResult implements Serializable, Cloneable {
      *        The pagination token that indicates the next set of results to
      *        retrieve.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -134,6 +139,7 @@ public class ListInstancesResult implements Serializable, Cloneable {
      * @return The pagination token that indicates the next set of results to
      *         retrieve.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -149,6 +155,7 @@ public class ListInstancesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListInstancesResult withMarker(String marker) {
         setMarker(marker);
         return this;

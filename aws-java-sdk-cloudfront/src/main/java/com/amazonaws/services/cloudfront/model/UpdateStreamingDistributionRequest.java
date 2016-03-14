@@ -71,6 +71,7 @@ public class UpdateStreamingDistributionRequest extends AmazonWebServiceRequest
      * @param streamingDistributionConfig
      *        The streaming distribution's configuration information.
      */
+
     public void setStreamingDistributionConfig(
             StreamingDistributionConfig streamingDistributionConfig) {
         this.streamingDistributionConfig = streamingDistributionConfig;
@@ -81,6 +82,7 @@ public class UpdateStreamingDistributionRequest extends AmazonWebServiceRequest
      * 
      * @return The streaming distribution's configuration information.
      */
+
     public StreamingDistributionConfig getStreamingDistributionConfig() {
         return this.streamingDistributionConfig;
     }
@@ -93,6 +95,7 @@ public class UpdateStreamingDistributionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateStreamingDistributionRequest withStreamingDistributionConfig(
             StreamingDistributionConfig streamingDistributionConfig) {
         setStreamingDistributionConfig(streamingDistributionConfig);
@@ -105,6 +108,7 @@ public class UpdateStreamingDistributionRequest extends AmazonWebServiceRequest
      * @param id
      *        The streaming distribution's id.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -114,6 +118,7 @@ public class UpdateStreamingDistributionRequest extends AmazonWebServiceRequest
      * 
      * @return The streaming distribution's id.
      */
+
     public String getId() {
         return this.id;
     }
@@ -126,6 +131,7 @@ public class UpdateStreamingDistributionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateStreamingDistributionRequest withId(String id) {
         setId(id);
         return this;
@@ -140,6 +146,7 @@ public class UpdateStreamingDistributionRequest extends AmazonWebServiceRequest
      *        streaming distribution's configuration. For example:
      *        E2QWRUHAPOMQZL.
      */
+
     public void setIfMatch(String ifMatch) {
         this.ifMatch = ifMatch;
     }
@@ -152,6 +159,7 @@ public class UpdateStreamingDistributionRequest extends AmazonWebServiceRequest
      *         streaming distribution's configuration. For example:
      *         E2QWRUHAPOMQZL.
      */
+
     public String getIfMatch() {
         return this.ifMatch;
     }
@@ -167,6 +175,7 @@ public class UpdateStreamingDistributionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateStreamingDistributionRequest withIfMatch(String ifMatch) {
         setIfMatch(ifMatch);
         return this;

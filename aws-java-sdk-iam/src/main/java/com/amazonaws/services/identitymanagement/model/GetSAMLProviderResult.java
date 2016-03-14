@@ -55,6 +55,7 @@ public class GetSAMLProviderResult implements Serializable, Cloneable {
      *        The XML metadata document that includes information about an
      *        identity provider.
      */
+
     public void setSAMLMetadataDocument(String sAMLMetadataDocument) {
         this.sAMLMetadataDocument = sAMLMetadataDocument;
     }
@@ -68,6 +69,7 @@ public class GetSAMLProviderResult implements Serializable, Cloneable {
      * @return The XML metadata document that includes information about an
      *         identity provider.
      */
+
     public String getSAMLMetadataDocument() {
         return this.sAMLMetadataDocument;
     }
@@ -84,6 +86,7 @@ public class GetSAMLProviderResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetSAMLProviderResult withSAMLMetadataDocument(
             String sAMLMetadataDocument) {
         setSAMLMetadataDocument(sAMLMetadataDocument);
@@ -98,6 +101,7 @@ public class GetSAMLProviderResult implements Serializable, Cloneable {
      * @param createDate
      *        The date and time when the SAML provider was created.
      */
+
     public void setCreateDate(java.util.Date createDate) {
         this.createDate = createDate;
     }
@@ -109,6 +113,7 @@ public class GetSAMLProviderResult implements Serializable, Cloneable {
      * 
      * @return The date and time when the SAML provider was created.
      */
+
     public java.util.Date getCreateDate() {
         return this.createDate;
     }
@@ -123,6 +128,7 @@ public class GetSAMLProviderResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetSAMLProviderResult withCreateDate(java.util.Date createDate) {
         setCreateDate(createDate);
         return this;
@@ -136,6 +142,7 @@ public class GetSAMLProviderResult implements Serializable, Cloneable {
      * @param validUntil
      *        The expiration date and time for the SAML provider.
      */
+
     public void setValidUntil(java.util.Date validUntil) {
         this.validUntil = validUntil;
     }
@@ -147,6 +154,7 @@ public class GetSAMLProviderResult implements Serializable, Cloneable {
      * 
      * @return The expiration date and time for the SAML provider.
      */
+
     public java.util.Date getValidUntil() {
         return this.validUntil;
     }
@@ -161,6 +169,7 @@ public class GetSAMLProviderResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetSAMLProviderResult withValidUntil(java.util.Date validUntil) {
         setValidUntil(validUntil);
         return this;

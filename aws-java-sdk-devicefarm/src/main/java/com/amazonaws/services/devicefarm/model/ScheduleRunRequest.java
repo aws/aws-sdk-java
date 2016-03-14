@@ -72,6 +72,7 @@ public class ScheduleRunRequest extends AmazonWebServiceRequest implements
      * @param projectArn
      *        The ARN of the project for the run to be scheduled.
      */
+
     public void setProjectArn(String projectArn) {
         this.projectArn = projectArn;
     }
@@ -83,6 +84,7 @@ public class ScheduleRunRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ARN of the project for the run to be scheduled.
      */
+
     public String getProjectArn() {
         return this.projectArn;
     }
@@ -97,6 +99,7 @@ public class ScheduleRunRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduleRunRequest withProjectArn(String projectArn) {
         setProjectArn(projectArn);
         return this;
@@ -110,6 +113,7 @@ public class ScheduleRunRequest extends AmazonWebServiceRequest implements
      * @param appArn
      *        The ARN of the app to schedule a run.
      */
+
     public void setAppArn(String appArn) {
         this.appArn = appArn;
     }
@@ -121,6 +125,7 @@ public class ScheduleRunRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ARN of the app to schedule a run.
      */
+
     public String getAppArn() {
         return this.appArn;
     }
@@ -135,6 +140,7 @@ public class ScheduleRunRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduleRunRequest withAppArn(String appArn) {
         setAppArn(appArn);
         return this;
@@ -148,6 +154,7 @@ public class ScheduleRunRequest extends AmazonWebServiceRequest implements
      * @param devicePoolArn
      *        The ARN of the device pool for the run to be scheduled.
      */
+
     public void setDevicePoolArn(String devicePoolArn) {
         this.devicePoolArn = devicePoolArn;
     }
@@ -159,6 +166,7 @@ public class ScheduleRunRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ARN of the device pool for the run to be scheduled.
      */
+
     public String getDevicePoolArn() {
         return this.devicePoolArn;
     }
@@ -173,6 +181,7 @@ public class ScheduleRunRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduleRunRequest withDevicePoolArn(String devicePoolArn) {
         setDevicePoolArn(devicePoolArn);
         return this;
@@ -186,6 +195,7 @@ public class ScheduleRunRequest extends AmazonWebServiceRequest implements
      * @param name
      *        The name for the run to be scheduled.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -197,6 +207,7 @@ public class ScheduleRunRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name for the run to be scheduled.
      */
+
     public String getName() {
         return this.name;
     }
@@ -211,6 +222,7 @@ public class ScheduleRunRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduleRunRequest withName(String name) {
         setName(name);
         return this;
@@ -224,6 +236,7 @@ public class ScheduleRunRequest extends AmazonWebServiceRequest implements
      * @param test
      *        Information about the test for the run to be scheduled.
      */
+
     public void setTest(ScheduleRunTest test) {
         this.test = test;
     }
@@ -235,6 +248,7 @@ public class ScheduleRunRequest extends AmazonWebServiceRequest implements
      * 
      * @return Information about the test for the run to be scheduled.
      */
+
     public ScheduleRunTest getTest() {
         return this.test;
     }
@@ -249,6 +263,7 @@ public class ScheduleRunRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduleRunRequest withTest(ScheduleRunTest test) {
         setTest(test);
         return this;
@@ -262,6 +277,7 @@ public class ScheduleRunRequest extends AmazonWebServiceRequest implements
      * @param configuration
      *        Information about the settings for the run to be scheduled.
      */
+
     public void setConfiguration(ScheduleRunConfiguration configuration) {
         this.configuration = configuration;
     }
@@ -273,6 +289,7 @@ public class ScheduleRunRequest extends AmazonWebServiceRequest implements
      * 
      * @return Information about the settings for the run to be scheduled.
      */
+
     public ScheduleRunConfiguration getConfiguration() {
         return this.configuration;
     }
@@ -287,6 +304,7 @@ public class ScheduleRunRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduleRunRequest withConfiguration(
             ScheduleRunConfiguration configuration) {
         setConfiguration(configuration);

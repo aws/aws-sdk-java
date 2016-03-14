@@ -109,6 +109,7 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Default: Describes all your VPCs.
      */
+
     public java.util.List<String> getVpcIds() {
         if (vpcIds == null) {
             vpcIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -129,6 +130,7 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        Default: Describes all your VPCs.
      */
+
     public void setVpcIds(java.util.Collection<String> vpcIds) {
         if (vpcIds == null) {
             this.vpcIds = null;
@@ -159,6 +161,7 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVpcsRequest withVpcIds(String... vpcIds) {
         if (this.vpcIds == null) {
             setVpcIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -185,6 +188,7 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVpcsRequest withVpcIds(java.util.Collection<String> vpcIds) {
         setVpcIds(vpcIds);
         return this;
@@ -307,6 +311,7 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements
      *         </p>
      *         </li>
      */
+
     public java.util.List<Filter> getFilters() {
         if (filters == null) {
             filters = new com.amazonaws.internal.SdkInternalList<Filter>();
@@ -432,6 +437,7 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements
      *        </p>
      *        </li>
      */
+
     public void setFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
             this.filters = null;
@@ -568,6 +574,7 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVpcsRequest withFilters(Filter... filters) {
         if (this.filters == null) {
             setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(
@@ -699,6 +706,7 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVpcsRequest withFilters(java.util.Collection<Filter> filters) {
         setFilters(filters);
         return this;

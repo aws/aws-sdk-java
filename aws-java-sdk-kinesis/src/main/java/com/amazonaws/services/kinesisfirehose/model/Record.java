@@ -49,6 +49,7 @@ public class Record implements Serializable, Cloneable {
      *        serialized. The maximum size of the data blob, before
      *        base64-encoding, is 1,000 KB.
      */
+
     public void setData(java.nio.ByteBuffer data) {
         this.data = data;
     }
@@ -73,6 +74,7 @@ public class Record implements Serializable, Cloneable {
      *         serialized. The maximum size of the data blob, before
      *         base64-encoding, is 1,000 KB.
      */
+
     public java.nio.ByteBuffer getData() {
         return this.data;
     }
@@ -90,6 +92,7 @@ public class Record implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Record withData(java.nio.ByteBuffer data) {
         setData(data);
         return this;

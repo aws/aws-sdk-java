@@ -88,6 +88,7 @@ public class RemoveTagsRequest extends AmazonWebServiceRequest implements
      *        The Amazon EMR resource identifier from which tags will be
      *        removed. This value must be a cluster identifier.
      */
+
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
     }
@@ -101,6 +102,7 @@ public class RemoveTagsRequest extends AmazonWebServiceRequest implements
      * @return The Amazon EMR resource identifier from which tags will be
      *         removed. This value must be a cluster identifier.
      */
+
     public String getResourceId() {
         return this.resourceId;
     }
@@ -117,6 +119,7 @@ public class RemoveTagsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RemoveTagsRequest withResourceId(String resourceId) {
         setResourceId(resourceId);
         return this;
@@ -129,6 +132,7 @@ public class RemoveTagsRequest extends AmazonWebServiceRequest implements
      * 
      * @return A list of tag keys to remove from a resource.
      */
+
     public java.util.List<String> getTagKeys() {
         if (tagKeys == null) {
             tagKeys = new com.amazonaws.internal.SdkInternalList<String>();
@@ -144,6 +148,7 @@ public class RemoveTagsRequest extends AmazonWebServiceRequest implements
      * @param tagKeys
      *        A list of tag keys to remove from a resource.
      */
+
     public void setTagKeys(java.util.Collection<String> tagKeys) {
         if (tagKeys == null) {
             this.tagKeys = null;
@@ -170,6 +175,7 @@ public class RemoveTagsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RemoveTagsRequest withTagKeys(String... tagKeys) {
         if (this.tagKeys == null) {
             setTagKeys(new com.amazonaws.internal.SdkInternalList<String>(
@@ -191,6 +197,7 @@ public class RemoveTagsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RemoveTagsRequest withTagKeys(java.util.Collection<String> tagKeys) {
         setTagKeys(tagKeys);
         return this;

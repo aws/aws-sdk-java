@@ -85,6 +85,7 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest
      *        descriptions to include only those that are associated with this
      *        application.
      */
+
     public void setApplicationName(String applicationName) {
         this.applicationName = applicationName;
     }
@@ -99,6 +100,7 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest
      *         descriptions to include only those that are associated with this
      *         application.
      */
+
     public String getApplicationName() {
         return this.applicationName;
     }
@@ -116,6 +118,7 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeEnvironmentsRequest withApplicationName(
             String applicationName) {
         setApplicationName(applicationName);
@@ -133,6 +136,7 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest
      *        descriptions to include only those that are associated with this
      *        application version.
      */
+
     public void setVersionLabel(String versionLabel) {
         this.versionLabel = versionLabel;
     }
@@ -147,6 +151,7 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest
      *         descriptions to include only those that are associated with this
      *         application version.
      */
+
     public String getVersionLabel() {
         return this.versionLabel;
     }
@@ -164,6 +169,7 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeEnvironmentsRequest withVersionLabel(String versionLabel) {
         setVersionLabel(versionLabel);
         return this;
@@ -178,6 +184,7 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest
      * @return If specified, AWS Elastic Beanstalk restricts the returned
      *         descriptions to include only those that have the specified IDs.
      */
+
     public java.util.List<String> getEnvironmentIds() {
         if (environmentIds == null) {
             environmentIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -195,6 +202,7 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest
      *        If specified, AWS Elastic Beanstalk restricts the returned
      *        descriptions to include only those that have the specified IDs.
      */
+
     public void setEnvironmentIds(java.util.Collection<String> environmentIds) {
         if (environmentIds == null) {
             this.environmentIds = null;
@@ -223,6 +231,7 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeEnvironmentsRequest withEnvironmentIds(
             String... environmentIds) {
         if (this.environmentIds == null) {
@@ -247,6 +256,7 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeEnvironmentsRequest withEnvironmentIds(
             java.util.Collection<String> environmentIds) {
         setEnvironmentIds(environmentIds);
@@ -262,6 +272,7 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest
      * @return If specified, AWS Elastic Beanstalk restricts the returned
      *         descriptions to include only those that have the specified names.
      */
+
     public java.util.List<String> getEnvironmentNames() {
         if (environmentNames == null) {
             environmentNames = new com.amazonaws.internal.SdkInternalList<String>();
@@ -279,6 +290,7 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest
      *        If specified, AWS Elastic Beanstalk restricts the returned
      *        descriptions to include only those that have the specified names.
      */
+
     public void setEnvironmentNames(
             java.util.Collection<String> environmentNames) {
         if (environmentNames == null) {
@@ -308,6 +320,7 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeEnvironmentsRequest withEnvironmentNames(
             String... environmentNames) {
         if (this.environmentNames == null) {
@@ -332,6 +345,7 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeEnvironmentsRequest withEnvironmentNames(
             java.util.Collection<String> environmentNames) {
         setEnvironmentNames(environmentNames);
@@ -359,6 +373,7 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest
      *        <p>
      *        <code>false</code>: Do not include deleted environments.
      */
+
     public void setIncludeDeleted(Boolean includeDeleted) {
         this.includeDeleted = includeDeleted;
     }
@@ -383,6 +398,7 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest
      *         <p>
      *         <code>false</code>: Do not include deleted environments.
      */
+
     public Boolean getIncludeDeleted() {
         return this.includeDeleted;
     }
@@ -410,6 +426,7 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeEnvironmentsRequest withIncludeDeleted(Boolean includeDeleted) {
         setIncludeDeleted(includeDeleted);
         return this;
@@ -435,6 +452,7 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest
      *         <p>
      *         <code>false</code>: Do not include deleted environments.
      */
+
     public Boolean isIncludeDeleted() {
         return this.includeDeleted;
     }
@@ -450,6 +468,7 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest
      *        <code>true</code>, then environments deleted after this date are
      *        displayed.
      */
+
     public void setIncludedDeletedBackTo(java.util.Date includedDeletedBackTo) {
         this.includedDeletedBackTo = includedDeletedBackTo;
     }
@@ -464,6 +483,7 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest
      *         <code>true</code>, then environments deleted after this date are
      *         displayed.
      */
+
     public java.util.Date getIncludedDeletedBackTo() {
         return this.includedDeletedBackTo;
     }
@@ -481,6 +501,7 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeEnvironmentsRequest withIncludedDeletedBackTo(
             java.util.Date includedDeletedBackTo) {
         setIncludedDeletedBackTo(includedDeletedBackTo);

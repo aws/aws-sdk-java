@@ -98,6 +98,7 @@ public class IpPermission implements Serializable, Cloneable {
      *        [EC2-VPC only] When you authorize or revoke security group rules,
      *        you can use <code>-1</code> to specify all.
      */
+
     public void setIpProtocol(String ipProtocol) {
         this.ipProtocol = ipProtocol;
     }
@@ -122,6 +123,7 @@ public class IpPermission implements Serializable, Cloneable {
      *         [EC2-VPC only] When you authorize or revoke security group rules,
      *         you can use <code>-1</code> to specify all.
      */
+
     public String getIpProtocol() {
         return this.ipProtocol;
     }
@@ -149,6 +151,7 @@ public class IpPermission implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public IpPermission withIpProtocol(String ipProtocol) {
         setIpProtocol(ipProtocol);
         return this;
@@ -164,6 +167,7 @@ public class IpPermission implements Serializable, Cloneable {
      *        The start of port range for the TCP and UDP protocols, or an ICMP
      *        type number. A value of <code>-1</code> indicates all ICMP types.
      */
+
     public void setFromPort(Integer fromPort) {
         this.fromPort = fromPort;
     }
@@ -177,6 +181,7 @@ public class IpPermission implements Serializable, Cloneable {
      * @return The start of port range for the TCP and UDP protocols, or an ICMP
      *         type number. A value of <code>-1</code> indicates all ICMP types.
      */
+
     public Integer getFromPort() {
         return this.fromPort;
     }
@@ -193,6 +198,7 @@ public class IpPermission implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public IpPermission withFromPort(Integer fromPort) {
         setFromPort(fromPort);
         return this;
@@ -210,6 +216,7 @@ public class IpPermission implements Serializable, Cloneable {
      *        code. A value of <code>-1</code> indicates all ICMP codes for the
      *        specified ICMP type.
      */
+
     public void setToPort(Integer toPort) {
         this.toPort = toPort;
     }
@@ -225,6 +232,7 @@ public class IpPermission implements Serializable, Cloneable {
      *         code. A value of <code>-1</code> indicates all ICMP codes for the
      *         specified ICMP type.
      */
+
     public Integer getToPort() {
         return this.toPort;
     }
@@ -243,6 +251,7 @@ public class IpPermission implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public IpPermission withToPort(Integer toPort) {
         setToPort(toPort);
         return this;
@@ -255,6 +264,7 @@ public class IpPermission implements Serializable, Cloneable {
      * 
      * @return One or more security group and AWS account ID pairs.
      */
+
     public java.util.List<UserIdGroupPair> getUserIdGroupPairs() {
         if (userIdGroupPairs == null) {
             userIdGroupPairs = new com.amazonaws.internal.SdkInternalList<UserIdGroupPair>();
@@ -270,6 +280,7 @@ public class IpPermission implements Serializable, Cloneable {
      * @param userIdGroupPairs
      *        One or more security group and AWS account ID pairs.
      */
+
     public void setUserIdGroupPairs(
             java.util.Collection<UserIdGroupPair> userIdGroupPairs) {
         if (userIdGroupPairs == null) {
@@ -297,6 +308,7 @@ public class IpPermission implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public IpPermission withUserIdGroupPairs(
             UserIdGroupPair... userIdGroupPairs) {
         if (this.userIdGroupPairs == null) {
@@ -319,6 +331,7 @@ public class IpPermission implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public IpPermission withUserIdGroupPairs(
             java.util.Collection<UserIdGroupPair> userIdGroupPairs) {
         setUserIdGroupPairs(userIdGroupPairs);
@@ -332,6 +345,7 @@ public class IpPermission implements Serializable, Cloneable {
      * 
      * @return One or more IP ranges.
      */
+
     public java.util.List<String> getIpRanges() {
         if (ipRanges == null) {
             ipRanges = new com.amazonaws.internal.SdkInternalList<String>();
@@ -347,6 +361,7 @@ public class IpPermission implements Serializable, Cloneable {
      * @param ipRanges
      *        One or more IP ranges.
      */
+
     public void setIpRanges(java.util.Collection<String> ipRanges) {
         if (ipRanges == null) {
             this.ipRanges = null;
@@ -373,6 +388,7 @@ public class IpPermission implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public IpPermission withIpRanges(String... ipRanges) {
         if (this.ipRanges == null) {
             setIpRanges(new com.amazonaws.internal.SdkInternalList<String>(
@@ -394,6 +410,7 @@ public class IpPermission implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public IpPermission withIpRanges(java.util.Collection<String> ipRanges) {
         setIpRanges(ipRanges);
         return this;
@@ -416,6 +433,7 @@ public class IpPermission implements Serializable, Cloneable {
      *         request, this is the AWS service that you want to access through
      *         a VPC endpoint from instances associated with the security group.
      */
+
     public java.util.List<PrefixListId> getPrefixListIds() {
         if (prefixListIds == null) {
             prefixListIds = new com.amazonaws.internal.SdkInternalList<PrefixListId>();
@@ -441,6 +459,7 @@ public class IpPermission implements Serializable, Cloneable {
      *        service that you want to access through a VPC endpoint from
      *        instances associated with the security group.
      */
+
     public void setPrefixListIds(
             java.util.Collection<PrefixListId> prefixListIds) {
         if (prefixListIds == null) {
@@ -478,6 +497,7 @@ public class IpPermission implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public IpPermission withPrefixListIds(PrefixListId... prefixListIds) {
         if (this.prefixListIds == null) {
             setPrefixListIds(new com.amazonaws.internal.SdkInternalList<PrefixListId>(
@@ -509,6 +529,7 @@ public class IpPermission implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public IpPermission withPrefixListIds(
             java.util.Collection<PrefixListId> prefixListIds) {
         setPrefixListIds(prefixListIds);

@@ -30,6 +30,7 @@ public class GetUploadResult implements Serializable, Cloneable {
     /**
      * @param upload
      */
+
     public void setUpload(Upload upload) {
         this.upload = upload;
     }
@@ -37,6 +38,7 @@ public class GetUploadResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Upload getUpload() {
         return this.upload;
     }
@@ -46,6 +48,7 @@ public class GetUploadResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetUploadResult withUpload(Upload upload) {
         setUpload(upload);
         return this;

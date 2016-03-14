@@ -100,6 +100,7 @@ public class CreatePlacementGroupRequest extends AmazonWebServiceRequest
      *        <p>
      *        Constraints: Up to 255 ASCII characters
      */
+
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
@@ -116,6 +117,7 @@ public class CreatePlacementGroupRequest extends AmazonWebServiceRequest
      *         <p>
      *         Constraints: Up to 255 ASCII characters
      */
+
     public String getGroupName() {
         return this.groupName;
     }
@@ -135,6 +137,7 @@ public class CreatePlacementGroupRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePlacementGroupRequest withGroupName(String groupName) {
         setGroupName(groupName);
         return this;
@@ -149,6 +152,7 @@ public class CreatePlacementGroupRequest extends AmazonWebServiceRequest
      *        The placement strategy.
      * @see PlacementStrategy
      */
+
     public void setStrategy(String strategy) {
         this.strategy = strategy;
     }
@@ -161,6 +165,7 @@ public class CreatePlacementGroupRequest extends AmazonWebServiceRequest
      * @return The placement strategy.
      * @see PlacementStrategy
      */
+
     public String getStrategy() {
         return this.strategy;
     }
@@ -176,6 +181,7 @@ public class CreatePlacementGroupRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see PlacementStrategy
      */
+
     public CreatePlacementGroupRequest withStrategy(String strategy) {
         setStrategy(strategy);
         return this;
@@ -192,6 +198,7 @@ public class CreatePlacementGroupRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see PlacementStrategy
      */
+
     public void setStrategy(PlacementStrategy strategy) {
         this.strategy = strategy.toString();
     }
@@ -207,6 +214,7 @@ public class CreatePlacementGroupRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see PlacementStrategy
      */
+
     public CreatePlacementGroupRequest withStrategy(PlacementStrategy strategy) {
         setStrategy(strategy);
         return this;

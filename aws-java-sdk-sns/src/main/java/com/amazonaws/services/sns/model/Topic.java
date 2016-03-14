@@ -41,6 +41,7 @@ public class Topic implements Serializable, Cloneable {
      * @param topicArn
      *        The topic's ARN.
      */
+
     public void setTopicArn(String topicArn) {
         this.topicArn = topicArn;
     }
@@ -52,6 +53,7 @@ public class Topic implements Serializable, Cloneable {
      * 
      * @return The topic's ARN.
      */
+
     public String getTopicArn() {
         return this.topicArn;
     }
@@ -66,6 +68,7 @@ public class Topic implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Topic withTopicArn(String topicArn) {
         setTopicArn(topicArn);
         return this;

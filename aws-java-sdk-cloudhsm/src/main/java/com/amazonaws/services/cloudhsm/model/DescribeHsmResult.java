@@ -161,6 +161,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      * @param hsmArn
      *        The ARN of the HSM.
      */
+
     public void setHsmArn(String hsmArn) {
         this.hsmArn = hsmArn;
     }
@@ -172,6 +173,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      * 
      * @return The ARN of the HSM.
      */
+
     public String getHsmArn() {
         return this.hsmArn;
     }
@@ -186,6 +188,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeHsmResult withHsmArn(String hsmArn) {
         setHsmArn(hsmArn);
         return this;
@@ -200,6 +203,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      *        The status of the HSM.
      * @see HsmStatus
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -212,6 +216,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      * @return The status of the HSM.
      * @see HsmStatus
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -227,6 +232,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      *         chained together.
      * @see HsmStatus
      */
+
     public DescribeHsmResult withStatus(String status) {
         setStatus(status);
         return this;
@@ -243,6 +249,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      *         chained together.
      * @see HsmStatus
      */
+
     public void setStatus(HsmStatus status) {
         this.status = status.toString();
     }
@@ -258,6 +265,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      *         chained together.
      * @see HsmStatus
      */
+
     public DescribeHsmResult withStatus(HsmStatus status) {
         setStatus(status);
         return this;
@@ -271,6 +279,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      * @param statusDetails
      *        Contains additional information about the status of the HSM.
      */
+
     public void setStatusDetails(String statusDetails) {
         this.statusDetails = statusDetails;
     }
@@ -282,6 +291,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      * 
      * @return Contains additional information about the status of the HSM.
      */
+
     public String getStatusDetails() {
         return this.statusDetails;
     }
@@ -296,6 +306,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeHsmResult withStatusDetails(String statusDetails) {
         setStatusDetails(statusDetails);
         return this;
@@ -309,6 +320,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      * @param availabilityZone
      *        The Availability Zone that the HSM is in.
      */
+
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
@@ -320,6 +332,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      * 
      * @return The Availability Zone that the HSM is in.
      */
+
     public String getAvailabilityZone() {
         return this.availabilityZone;
     }
@@ -334,6 +347,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeHsmResult withAvailabilityZone(String availabilityZone) {
         setAvailabilityZone(availabilityZone);
         return this;
@@ -349,6 +363,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      *        The identifier of the elastic network interface (ENI) attached to
      *        the HSM.
      */
+
     public void setEniId(String eniId) {
         this.eniId = eniId;
     }
@@ -362,6 +377,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      * @return The identifier of the elastic network interface (ENI) attached to
      *         the HSM.
      */
+
     public String getEniId() {
         return this.eniId;
     }
@@ -378,6 +394,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeHsmResult withEniId(String eniId) {
         setEniId(eniId);
         return this;
@@ -391,6 +408,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      * @param eniIp
      *        The IP address assigned to the HSM's ENI.
      */
+
     public void setEniIp(String eniIp) {
         this.eniIp = eniIp;
     }
@@ -402,6 +420,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      * 
      * @return The IP address assigned to the HSM's ENI.
      */
+
     public String getEniIp() {
         return this.eniIp;
     }
@@ -416,6 +435,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeHsmResult withEniIp(String eniIp) {
         setEniIp(eniIp);
         return this;
@@ -430,6 +450,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      *        The subscription type.
      * @see SubscriptionType
      */
+
     public void setSubscriptionType(String subscriptionType) {
         this.subscriptionType = subscriptionType;
     }
@@ -442,6 +463,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      * @return The subscription type.
      * @see SubscriptionType
      */
+
     public String getSubscriptionType() {
         return this.subscriptionType;
     }
@@ -457,6 +479,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      *         chained together.
      * @see SubscriptionType
      */
+
     public DescribeHsmResult withSubscriptionType(String subscriptionType) {
         setSubscriptionType(subscriptionType);
         return this;
@@ -473,6 +496,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      *         chained together.
      * @see SubscriptionType
      */
+
     public void setSubscriptionType(SubscriptionType subscriptionType) {
         this.subscriptionType = subscriptionType.toString();
     }
@@ -488,6 +512,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      *         chained together.
      * @see SubscriptionType
      */
+
     public DescribeHsmResult withSubscriptionType(
             SubscriptionType subscriptionType) {
         setSubscriptionType(subscriptionType);
@@ -502,6 +527,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      * @param subscriptionStartDate
      *        The subscription start date.
      */
+
     public void setSubscriptionStartDate(String subscriptionStartDate) {
         this.subscriptionStartDate = subscriptionStartDate;
     }
@@ -513,6 +539,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      * 
      * @return The subscription start date.
      */
+
     public String getSubscriptionStartDate() {
         return this.subscriptionStartDate;
     }
@@ -527,6 +554,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeHsmResult withSubscriptionStartDate(
             String subscriptionStartDate) {
         setSubscriptionStartDate(subscriptionStartDate);
@@ -541,6 +569,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      * @param subscriptionEndDate
      *        The subscription end date.
      */
+
     public void setSubscriptionEndDate(String subscriptionEndDate) {
         this.subscriptionEndDate = subscriptionEndDate;
     }
@@ -552,6 +581,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      * 
      * @return The subscription end date.
      */
+
     public String getSubscriptionEndDate() {
         return this.subscriptionEndDate;
     }
@@ -566,6 +596,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeHsmResult withSubscriptionEndDate(String subscriptionEndDate) {
         setSubscriptionEndDate(subscriptionEndDate);
         return this;
@@ -579,6 +610,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      * @param vpcId
      *        The identifier of the VPC that the HSM is in.
      */
+
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
@@ -590,6 +622,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      * 
      * @return The identifier of the VPC that the HSM is in.
      */
+
     public String getVpcId() {
         return this.vpcId;
     }
@@ -604,6 +637,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeHsmResult withVpcId(String vpcId) {
         setVpcId(vpcId);
         return this;
@@ -617,6 +651,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      * @param subnetId
      *        The identifier of the subnet the HSM is in.
      */
+
     public void setSubnetId(String subnetId) {
         this.subnetId = subnetId;
     }
@@ -628,6 +663,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      * 
      * @return The identifier of the subnet the HSM is in.
      */
+
     public String getSubnetId() {
         return this.subnetId;
     }
@@ -642,6 +678,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeHsmResult withSubnetId(String subnetId) {
         setSubnetId(subnetId);
         return this;
@@ -655,6 +692,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      * @param iamRoleArn
      *        The ARN of the IAM role assigned to the HSM.
      */
+
     public void setIamRoleArn(String iamRoleArn) {
         this.iamRoleArn = iamRoleArn;
     }
@@ -666,6 +704,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      * 
      * @return The ARN of the IAM role assigned to the HSM.
      */
+
     public String getIamRoleArn() {
         return this.iamRoleArn;
     }
@@ -680,6 +719,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeHsmResult withIamRoleArn(String iamRoleArn) {
         setIamRoleArn(iamRoleArn);
         return this;
@@ -693,6 +733,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      * @param serialNumber
      *        The serial number of the HSM.
      */
+
     public void setSerialNumber(String serialNumber) {
         this.serialNumber = serialNumber;
     }
@@ -704,6 +745,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      * 
      * @return The serial number of the HSM.
      */
+
     public String getSerialNumber() {
         return this.serialNumber;
     }
@@ -718,6 +760,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeHsmResult withSerialNumber(String serialNumber) {
         setSerialNumber(serialNumber);
         return this;
@@ -731,6 +774,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      * @param vendorName
      *        The name of the HSM vendor.
      */
+
     public void setVendorName(String vendorName) {
         this.vendorName = vendorName;
     }
@@ -742,6 +786,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      * 
      * @return The name of the HSM vendor.
      */
+
     public String getVendorName() {
         return this.vendorName;
     }
@@ -756,6 +801,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeHsmResult withVendorName(String vendorName) {
         setVendorName(vendorName);
         return this;
@@ -769,6 +815,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      * @param hsmType
      *        The HSM model type.
      */
+
     public void setHsmType(String hsmType) {
         this.hsmType = hsmType;
     }
@@ -780,6 +827,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      * 
      * @return The HSM model type.
      */
+
     public String getHsmType() {
         return this.hsmType;
     }
@@ -794,6 +842,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeHsmResult withHsmType(String hsmType) {
         setHsmType(hsmType);
         return this;
@@ -807,6 +856,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      * @param softwareVersion
      *        The HSM software version.
      */
+
     public void setSoftwareVersion(String softwareVersion) {
         this.softwareVersion = softwareVersion;
     }
@@ -818,6 +868,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      * 
      * @return The HSM software version.
      */
+
     public String getSoftwareVersion() {
         return this.softwareVersion;
     }
@@ -832,6 +883,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeHsmResult withSoftwareVersion(String softwareVersion) {
         setSoftwareVersion(softwareVersion);
         return this;
@@ -845,6 +897,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      * @param sshPublicKey
      *        The public SSH key.
      */
+
     public void setSshPublicKey(String sshPublicKey) {
         this.sshPublicKey = sshPublicKey;
     }
@@ -856,6 +909,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      * 
      * @return The public SSH key.
      */
+
     public String getSshPublicKey() {
         return this.sshPublicKey;
     }
@@ -870,6 +924,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeHsmResult withSshPublicKey(String sshPublicKey) {
         setSshPublicKey(sshPublicKey);
         return this;
@@ -883,6 +938,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      * @param sshKeyLastUpdated
      *        The date and time the SSH key was last updated.
      */
+
     public void setSshKeyLastUpdated(String sshKeyLastUpdated) {
         this.sshKeyLastUpdated = sshKeyLastUpdated;
     }
@@ -894,6 +950,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      * 
      * @return The date and time the SSH key was last updated.
      */
+
     public String getSshKeyLastUpdated() {
         return this.sshKeyLastUpdated;
     }
@@ -908,6 +965,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeHsmResult withSshKeyLastUpdated(String sshKeyLastUpdated) {
         setSshKeyLastUpdated(sshKeyLastUpdated);
         return this;
@@ -921,6 +979,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      * @param serverCertUri
      *        The URI of the certificate server.
      */
+
     public void setServerCertUri(String serverCertUri) {
         this.serverCertUri = serverCertUri;
     }
@@ -932,6 +991,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      * 
      * @return The URI of the certificate server.
      */
+
     public String getServerCertUri() {
         return this.serverCertUri;
     }
@@ -946,6 +1006,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeHsmResult withServerCertUri(String serverCertUri) {
         setServerCertUri(serverCertUri);
         return this;
@@ -959,6 +1020,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      * @param serverCertLastUpdated
      *        The date and time the server certificate was last updated.
      */
+
     public void setServerCertLastUpdated(String serverCertLastUpdated) {
         this.serverCertLastUpdated = serverCertLastUpdated;
     }
@@ -970,6 +1032,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      * 
      * @return The date and time the server certificate was last updated.
      */
+
     public String getServerCertLastUpdated() {
         return this.serverCertLastUpdated;
     }
@@ -984,6 +1047,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeHsmResult withServerCertLastUpdated(
             String serverCertLastUpdated) {
         setServerCertLastUpdated(serverCertLastUpdated);
@@ -997,6 +1061,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      * 
      * @return The list of partitions on the HSM.
      */
+
     public java.util.List<String> getPartitions() {
         if (partitions == null) {
             partitions = new com.amazonaws.internal.SdkInternalList<String>();
@@ -1012,6 +1077,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      * @param partitions
      *        The list of partitions on the HSM.
      */
+
     public void setPartitions(java.util.Collection<String> partitions) {
         if (partitions == null) {
             this.partitions = null;
@@ -1038,6 +1104,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeHsmResult withPartitions(String... partitions) {
         if (this.partitions == null) {
             setPartitions(new com.amazonaws.internal.SdkInternalList<String>(
@@ -1059,6 +1126,7 @@ public class DescribeHsmResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeHsmResult withPartitions(
             java.util.Collection<String> partitions) {
         setPartitions(partitions);

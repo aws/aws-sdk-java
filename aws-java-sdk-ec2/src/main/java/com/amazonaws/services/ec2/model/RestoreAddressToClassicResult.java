@@ -45,6 +45,7 @@ public class RestoreAddressToClassicResult implements Serializable, Cloneable {
      *        The move status for the IP address.
      * @see Status
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -57,6 +58,7 @@ public class RestoreAddressToClassicResult implements Serializable, Cloneable {
      * @return The move status for the IP address.
      * @see Status
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -72,6 +74,7 @@ public class RestoreAddressToClassicResult implements Serializable, Cloneable {
      *         chained together.
      * @see Status
      */
+
     public RestoreAddressToClassicResult withStatus(String status) {
         setStatus(status);
         return this;
@@ -88,6 +91,7 @@ public class RestoreAddressToClassicResult implements Serializable, Cloneable {
      *         chained together.
      * @see Status
      */
+
     public void setStatus(Status status) {
         this.status = status.toString();
     }
@@ -103,6 +107,7 @@ public class RestoreAddressToClassicResult implements Serializable, Cloneable {
      *         chained together.
      * @see Status
      */
+
     public RestoreAddressToClassicResult withStatus(Status status) {
         setStatus(status);
         return this;
@@ -116,6 +121,7 @@ public class RestoreAddressToClassicResult implements Serializable, Cloneable {
      * @param publicIp
      *        The Elastic IP address.
      */
+
     public void setPublicIp(String publicIp) {
         this.publicIp = publicIp;
     }
@@ -127,6 +133,7 @@ public class RestoreAddressToClassicResult implements Serializable, Cloneable {
      * 
      * @return The Elastic IP address.
      */
+
     public String getPublicIp() {
         return this.publicIp;
     }
@@ -141,6 +148,7 @@ public class RestoreAddressToClassicResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RestoreAddressToClassicResult withPublicIp(String publicIp) {
         setPublicIp(publicIp);
         return this;

@@ -49,6 +49,7 @@ public class PutRecordResult implements Serializable, Cloneable {
      * @param shardId
      *        The shard ID of the shard where the data record was placed.
      */
+
     public void setShardId(String shardId) {
         this.shardId = shardId;
     }
@@ -60,6 +61,7 @@ public class PutRecordResult implements Serializable, Cloneable {
      * 
      * @return The shard ID of the shard where the data record was placed.
      */
+
     public String getShardId() {
         return this.shardId;
     }
@@ -74,6 +76,7 @@ public class PutRecordResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutRecordResult withShardId(String shardId) {
         setShardId(shardId);
         return this;
@@ -93,6 +96,7 @@ public class PutRecordResult implements Serializable, Cloneable {
      *        records in the stream. A sequence number is the identifier
      *        associated with every record put into the stream.
      */
+
     public void setSequenceNumber(String sequenceNumber) {
         this.sequenceNumber = sequenceNumber;
     }
@@ -110,6 +114,7 @@ public class PutRecordResult implements Serializable, Cloneable {
      *         records in the stream. A sequence number is the identifier
      *         associated with every record put into the stream.
      */
+
     public String getSequenceNumber() {
         return this.sequenceNumber;
     }
@@ -130,6 +135,7 @@ public class PutRecordResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutRecordResult withSequenceNumber(String sequenceNumber) {
         setSequenceNumber(sequenceNumber);
         return this;

@@ -32,6 +32,7 @@ public class ListInvalidationsResult implements Serializable, Cloneable {
      * @param invalidationList
      *        Information about invalidation batches.
      */
+
     public void setInvalidationList(InvalidationList invalidationList) {
         this.invalidationList = invalidationList;
     }
@@ -41,6 +42,7 @@ public class ListInvalidationsResult implements Serializable, Cloneable {
      * 
      * @return Information about invalidation batches.
      */
+
     public InvalidationList getInvalidationList() {
         return this.invalidationList;
     }
@@ -53,6 +55,7 @@ public class ListInvalidationsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListInvalidationsResult withInvalidationList(
             InvalidationList invalidationList) {
         setInvalidationList(invalidationList);

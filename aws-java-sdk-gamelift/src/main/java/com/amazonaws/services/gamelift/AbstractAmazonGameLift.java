@@ -87,6 +87,11 @@ public class AbstractAmazonGameLift implements AmazonGameLift {
     }
 
     @Override
+    public void deleteScalingPolicy(DeleteScalingPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeAliasResult describeAlias(DescribeAliasRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -133,6 +138,12 @@ public class AbstractAmazonGameLift implements AmazonGameLift {
     }
 
     @Override
+    public DescribeGameSessionDetailsResult describeGameSessionDetails(
+            DescribeGameSessionDetailsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeGameSessionsResult describeGameSessions(
             DescribeGameSessionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
@@ -141,6 +152,12 @@ public class AbstractAmazonGameLift implements AmazonGameLift {
     @Override
     public DescribePlayerSessionsResult describePlayerSessions(
             DescribePlayerSessionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeScalingPoliciesResult describeScalingPolicies(
+            DescribeScalingPoliciesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -162,6 +179,12 @@ public class AbstractAmazonGameLift implements AmazonGameLift {
 
     @Override
     public ListFleetsResult listFleets(ListFleetsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutScalingPolicyResult putScalingPolicy(
+            PutScalingPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

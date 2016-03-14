@@ -88,6 +88,7 @@ public class DescribeKeyRequest extends AmazonWebServiceRequest implements
      *        <li>Alias Name Example - alias/MyAliasName</li>
      *        </ul>
      */
+
     public void setKeyId(String keyId) {
         this.keyId = keyId;
     }
@@ -123,6 +124,7 @@ public class DescribeKeyRequest extends AmazonWebServiceRequest implements
      *         <li>Alias Name Example - alias/MyAliasName</li>
      *         </ul>
      */
+
     public String getKeyId() {
         return this.keyId;
     }
@@ -161,6 +163,7 @@ public class DescribeKeyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeKeyRequest withKeyId(String keyId) {
         setKeyId(keyId);
         return this;
@@ -184,6 +187,7 @@ public class DescribeKeyRequest extends AmazonWebServiceRequest implements
      *         >Grant Tokens</a> in the <i>AWS Key Management Service Developer
      *         Guide</i>.
      */
+
     public java.util.List<String> getGrantTokens() {
         if (grantTokens == null) {
             grantTokens = new com.amazonaws.internal.SdkInternalList<String>();
@@ -210,6 +214,7 @@ public class DescribeKeyRequest extends AmazonWebServiceRequest implements
      *        >Grant Tokens</a> in the <i>AWS Key Management Service Developer
      *        Guide</i>.
      */
+
     public void setGrantTokens(java.util.Collection<String> grantTokens) {
         if (grantTokens == null) {
             this.grantTokens = null;
@@ -247,6 +252,7 @@ public class DescribeKeyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeKeyRequest withGrantTokens(String... grantTokens) {
         if (this.grantTokens == null) {
             setGrantTokens(new com.amazonaws.internal.SdkInternalList<String>(
@@ -279,6 +285,7 @@ public class DescribeKeyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeKeyRequest withGrantTokens(
             java.util.Collection<String> grantTokens) {
         setGrantTokens(grantTokens);

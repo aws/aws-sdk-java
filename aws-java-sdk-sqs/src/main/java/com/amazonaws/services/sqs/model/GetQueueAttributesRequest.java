@@ -82,6 +82,7 @@ public class GetQueueAttributesRequest extends AmazonWebServiceRequest
      * @param queueUrl
      *        The URL of the Amazon SQS queue to take action on.
      */
+
     public void setQueueUrl(String queueUrl) {
         this.queueUrl = queueUrl;
     }
@@ -93,6 +94,7 @@ public class GetQueueAttributesRequest extends AmazonWebServiceRequest
      * 
      * @return The URL of the Amazon SQS queue to take action on.
      */
+
     public String getQueueUrl() {
         return this.queueUrl;
     }
@@ -107,6 +109,7 @@ public class GetQueueAttributesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetQueueAttributesRequest withQueueUrl(String queueUrl) {
         setQueueUrl(queueUrl);
         return this;
@@ -120,6 +123,7 @@ public class GetQueueAttributesRequest extends AmazonWebServiceRequest
      * @return A list of attributes to retrieve information for.
      * @see QueueAttributeName
      */
+
     public java.util.List<String> getAttributeNames() {
         if (attributeNames == null) {
             attributeNames = new com.amazonaws.internal.SdkInternalList<String>();
@@ -136,6 +140,7 @@ public class GetQueueAttributesRequest extends AmazonWebServiceRequest
      *        A list of attributes to retrieve information for.
      * @see QueueAttributeName
      */
+
     public void setAttributeNames(java.util.Collection<String> attributeNames) {
         if (attributeNames == null) {
             this.attributeNames = null;
@@ -163,6 +168,7 @@ public class GetQueueAttributesRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see QueueAttributeName
      */
+
     public GetQueueAttributesRequest withAttributeNames(
             String... attributeNames) {
         if (this.attributeNames == null) {
@@ -186,6 +192,7 @@ public class GetQueueAttributesRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see QueueAttributeName
      */
+
     public GetQueueAttributesRequest withAttributeNames(
             java.util.Collection<String> attributeNames) {
         setAttributeNames(attributeNames);
@@ -203,6 +210,7 @@ public class GetQueueAttributesRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see QueueAttributeName
      */
+
     public GetQueueAttributesRequest withAttributeNames(
             QueueAttributeName... attributeNames) {
         com.amazonaws.internal.SdkInternalList<String> attributeNamesCopy = new com.amazonaws.internal.SdkInternalList<String>(

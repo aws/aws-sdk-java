@@ -47,6 +47,7 @@ public class ModifyMountTargetSecurityGroupsRequest extends
      *        The ID of the mount target whose security groups you want to
      *        modify.
      */
+
     public void setMountTargetId(String mountTargetId) {
         this.mountTargetId = mountTargetId;
     }
@@ -59,6 +60,7 @@ public class ModifyMountTargetSecurityGroupsRequest extends
      * @return The ID of the mount target whose security groups you want to
      *         modify.
      */
+
     public String getMountTargetId() {
         return this.mountTargetId;
     }
@@ -74,6 +76,7 @@ public class ModifyMountTargetSecurityGroupsRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyMountTargetSecurityGroupsRequest withMountTargetId(
             String mountTargetId) {
         setMountTargetId(mountTargetId);
@@ -87,6 +90,7 @@ public class ModifyMountTargetSecurityGroupsRequest extends
      * 
      * @return An array of up to five VPC security group IDs.
      */
+
     public java.util.List<String> getSecurityGroups() {
         if (securityGroups == null) {
             securityGroups = new com.amazonaws.internal.SdkInternalList<String>();
@@ -102,6 +106,7 @@ public class ModifyMountTargetSecurityGroupsRequest extends
      * @param securityGroups
      *        An array of up to five VPC security group IDs.
      */
+
     public void setSecurityGroups(java.util.Collection<String> securityGroups) {
         if (securityGroups == null) {
             this.securityGroups = null;
@@ -128,6 +133,7 @@ public class ModifyMountTargetSecurityGroupsRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyMountTargetSecurityGroupsRequest withSecurityGroups(
             String... securityGroups) {
         if (this.securityGroups == null) {
@@ -150,6 +156,7 @@ public class ModifyMountTargetSecurityGroupsRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyMountTargetSecurityGroupsRequest withSecurityGroups(
             java.util.Collection<String> securityGroups) {
         setSecurityGroups(securityGroups);

@@ -48,6 +48,7 @@ public class ListBranchesRequest extends AmazonWebServiceRequest implements
      * @param repositoryName
      *        The name of the repository that contains the branches.
      */
+
     public void setRepositoryName(String repositoryName) {
         this.repositoryName = repositoryName;
     }
@@ -59,6 +60,7 @@ public class ListBranchesRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the repository that contains the branches.
      */
+
     public String getRepositoryName() {
         return this.repositoryName;
     }
@@ -73,6 +75,7 @@ public class ListBranchesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListBranchesRequest withRepositoryName(String repositoryName) {
         setRepositoryName(repositoryName);
         return this;
@@ -87,6 +90,7 @@ public class ListBranchesRequest extends AmazonWebServiceRequest implements
      *        An enumeration token that allows the operation to batch the
      *        results.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -99,6 +103,7 @@ public class ListBranchesRequest extends AmazonWebServiceRequest implements
      * @return An enumeration token that allows the operation to batch the
      *         results.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -114,6 +119,7 @@ public class ListBranchesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListBranchesRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

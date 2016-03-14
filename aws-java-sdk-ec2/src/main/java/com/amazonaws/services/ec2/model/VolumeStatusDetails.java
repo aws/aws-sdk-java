@@ -47,6 +47,7 @@ public class VolumeStatusDetails implements Serializable, Cloneable {
      *        The name of the volume status.
      * @see VolumeStatusName
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -59,6 +60,7 @@ public class VolumeStatusDetails implements Serializable, Cloneable {
      * @return The name of the volume status.
      * @see VolumeStatusName
      */
+
     public String getName() {
         return this.name;
     }
@@ -74,6 +76,7 @@ public class VolumeStatusDetails implements Serializable, Cloneable {
      *         chained together.
      * @see VolumeStatusName
      */
+
     public VolumeStatusDetails withName(String name) {
         setName(name);
         return this;
@@ -90,6 +93,7 @@ public class VolumeStatusDetails implements Serializable, Cloneable {
      *         chained together.
      * @see VolumeStatusName
      */
+
     public void setName(VolumeStatusName name) {
         this.name = name.toString();
     }
@@ -105,6 +109,7 @@ public class VolumeStatusDetails implements Serializable, Cloneable {
      *         chained together.
      * @see VolumeStatusName
      */
+
     public VolumeStatusDetails withName(VolumeStatusName name) {
         setName(name);
         return this;
@@ -118,6 +123,7 @@ public class VolumeStatusDetails implements Serializable, Cloneable {
      * @param status
      *        The intended status of the volume status.
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -129,6 +135,7 @@ public class VolumeStatusDetails implements Serializable, Cloneable {
      * 
      * @return The intended status of the volume status.
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -143,6 +150,7 @@ public class VolumeStatusDetails implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VolumeStatusDetails withStatus(String status) {
         setStatus(status);
         return this;

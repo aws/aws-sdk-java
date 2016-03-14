@@ -30,6 +30,7 @@ public class ResetCacheRequest extends AmazonWebServiceRequest implements
     /**
      * @param gatewayARN
      */
+
     public void setGatewayARN(String gatewayARN) {
         this.gatewayARN = gatewayARN;
     }
@@ -37,6 +38,7 @@ public class ResetCacheRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public String getGatewayARN() {
         return this.gatewayARN;
     }
@@ -46,6 +48,7 @@ public class ResetCacheRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ResetCacheRequest withGatewayARN(String gatewayARN) {
         setGatewayARN(gatewayARN);
         return this;

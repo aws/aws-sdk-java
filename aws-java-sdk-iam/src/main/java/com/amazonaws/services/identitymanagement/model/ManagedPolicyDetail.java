@@ -133,6 +133,7 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      * @param policyName
      *        The friendly name (not ARN) identifying the policy.
      */
+
     public void setPolicyName(String policyName) {
         this.policyName = policyName;
     }
@@ -144,6 +145,7 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      * 
      * @return The friendly name (not ARN) identifying the policy.
      */
+
     public String getPolicyName() {
         return this.policyName;
     }
@@ -158,6 +160,7 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ManagedPolicyDetail withPolicyName(String policyName) {
         setPolicyName(policyName);
         return this;
@@ -180,6 +183,7 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *        >IAM Identifiers</a> in the <i>Using IAM</i> guide.
      */
+
     public void setPolicyId(String policyId) {
         this.policyId = policyId;
     }
@@ -200,6 +204,7 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *         >IAM Identifiers</a> in the <i>Using IAM</i> guide.
      */
+
     public String getPolicyId() {
         return this.policyId;
     }
@@ -223,6 +228,7 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ManagedPolicyDetail withPolicyId(String policyId) {
         setPolicyId(policyId);
         return this;
@@ -231,6 +237,7 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
     /**
      * @param arn
      */
+
     public void setArn(String arn) {
         this.arn = arn;
     }
@@ -238,6 +245,7 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getArn() {
         return this.arn;
     }
@@ -247,6 +255,7 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ManagedPolicyDetail withArn(String arn) {
         setArn(arn);
         return this;
@@ -269,6 +278,7 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *        >IAM Identifiers</a> in the <i>Using IAM</i> guide.
      */
+
     public void setPath(String path) {
         this.path = path;
     }
@@ -289,6 +299,7 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *         >IAM Identifiers</a> in the <i>Using IAM</i> guide.
      */
+
     public String getPath() {
         return this.path;
     }
@@ -312,6 +323,7 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ManagedPolicyDetail withPath(String path) {
         setPath(path);
         return this;
@@ -337,6 +349,7 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      *        >Versioning for Managed Policies</a> in the <i>Using IAM</i>
      *        guide.
      */
+
     public void setDefaultVersionId(String defaultVersionId) {
         this.defaultVersionId = defaultVersionId;
     }
@@ -360,6 +373,7 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      *         >Versioning for Managed Policies</a> in the <i>Using IAM</i>
      *         guide.
      */
+
     public String getDefaultVersionId() {
         return this.defaultVersionId;
     }
@@ -386,6 +400,7 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ManagedPolicyDetail withDefaultVersionId(String defaultVersionId) {
         setDefaultVersionId(defaultVersionId);
         return this;
@@ -401,6 +416,7 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      *        The number of principal entities (users, groups, and roles) that
      *        the policy is attached to.
      */
+
     public void setAttachmentCount(Integer attachmentCount) {
         this.attachmentCount = attachmentCount;
     }
@@ -414,6 +430,7 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      * @return The number of principal entities (users, groups, and roles) that
      *         the policy is attached to.
      */
+
     public Integer getAttachmentCount() {
         return this.attachmentCount;
     }
@@ -430,6 +447,7 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ManagedPolicyDetail withAttachmentCount(Integer attachmentCount) {
         setAttachmentCount(attachmentCount);
         return this;
@@ -445,6 +463,7 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      *        Specifies whether the policy can be attached to an IAM user,
      *        group, or role.
      */
+
     public void setIsAttachable(Boolean isAttachable) {
         this.isAttachable = isAttachable;
     }
@@ -458,6 +477,7 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      * @return Specifies whether the policy can be attached to an IAM user,
      *         group, or role.
      */
+
     public Boolean getIsAttachable() {
         return this.isAttachable;
     }
@@ -474,6 +494,7 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ManagedPolicyDetail withIsAttachable(Boolean isAttachable) {
         setIsAttachable(isAttachable);
         return this;
@@ -488,6 +509,7 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      * @return Specifies whether the policy can be attached to an IAM user,
      *         group, or role.
      */
+
     public Boolean isAttachable() {
         return this.isAttachable;
     }
@@ -500,6 +522,7 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      * @param description
      *        A friendly description of the policy.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -511,6 +534,7 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      * 
      * @return A friendly description of the policy.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -525,6 +549,7 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ManagedPolicyDetail withDescription(String description) {
         setDescription(description);
         return this;
@@ -540,6 +565,7 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      *        The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO
      *        8601 date-time format</a>, when the policy was created.
      */
+
     public void setCreateDate(java.util.Date createDate) {
         this.createDate = createDate;
     }
@@ -554,6 +580,7 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      *         href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
      *         format</a>, when the policy was created.
      */
+
     public java.util.Date getCreateDate() {
         return this.createDate;
     }
@@ -570,6 +597,7 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ManagedPolicyDetail withCreateDate(java.util.Date createDate) {
         setCreateDate(createDate);
         return this;
@@ -596,6 +624,7 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      *        one version, this field contains the date and time when the most
      *        recent policy version was created.
      */
+
     public void setUpdateDate(java.util.Date updateDate) {
         this.updateDate = updateDate;
     }
@@ -621,6 +650,7 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      *         one version, this field contains the date and time when the most
      *         recent policy version was created.
      */
+
     public java.util.Date getUpdateDate() {
         return this.updateDate;
     }
@@ -648,6 +678,7 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ManagedPolicyDetail withUpdateDate(java.util.Date updateDate) {
         setUpdateDate(updateDate);
         return this;
@@ -660,6 +691,7 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      * 
      * @return A list containing information about the versions of the policy.
      */
+
     public java.util.List<PolicyVersion> getPolicyVersionList() {
         if (policyVersionList == null) {
             policyVersionList = new com.amazonaws.internal.SdkInternalList<PolicyVersion>();
@@ -675,6 +707,7 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      * @param policyVersionList
      *        A list containing information about the versions of the policy.
      */
+
     public void setPolicyVersionList(
             java.util.Collection<PolicyVersion> policyVersionList) {
         if (policyVersionList == null) {
@@ -702,6 +735,7 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ManagedPolicyDetail withPolicyVersionList(
             PolicyVersion... policyVersionList) {
         if (this.policyVersionList == null) {
@@ -724,6 +758,7 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ManagedPolicyDetail withPolicyVersionList(
             java.util.Collection<PolicyVersion> policyVersionList) {
         setPolicyVersionList(policyVersionList);

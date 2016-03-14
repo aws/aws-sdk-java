@@ -112,6 +112,7 @@ public class GenerateDataKeyRequest extends AmazonWebServiceRequest implements
      *        <li>Alias Name Example - alias/MyAliasName</li>
      *        </ul>
      */
+
     public void setKeyId(String keyId) {
         this.keyId = keyId;
     }
@@ -147,6 +148,7 @@ public class GenerateDataKeyRequest extends AmazonWebServiceRequest implements
      *         <li>Alias Name Example - alias/MyAliasName</li>
      *         </ul>
      */
+
     public String getKeyId() {
         return this.keyId;
     }
@@ -185,6 +187,7 @@ public class GenerateDataKeyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GenerateDataKeyRequest withKeyId(String keyId) {
         setKeyId(keyId);
         return this;
@@ -203,6 +206,7 @@ public class GenerateDataKeyRequest extends AmazonWebServiceRequest implements
      *         This value is logged by AWS CloudTrail to provide context around
      *         the data encrypted by the key.
      */
+
     public java.util.Map<String, String> getEncryptionContext() {
         if (encryptionContext == null) {
             encryptionContext = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -224,6 +228,7 @@ public class GenerateDataKeyRequest extends AmazonWebServiceRequest implements
      *        This value is logged by AWS CloudTrail to provide context around
      *        the data encrypted by the key.
      */
+
     public void setEncryptionContext(
             java.util.Map<String, String> encryptionContext) {
         this.encryptionContext = encryptionContext == null ? null
@@ -247,6 +252,7 @@ public class GenerateDataKeyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GenerateDataKeyRequest withEncryptionContext(
             java.util.Map<String, String> encryptionContext) {
         setEncryptionContext(encryptionContext);
@@ -269,6 +275,7 @@ public class GenerateDataKeyRequest extends AmazonWebServiceRequest implements
      * Removes all the entries added into EncryptionContext. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public GenerateDataKeyRequest clearEncryptionContextEntries() {
         this.encryptionContext = null;
         return this;
@@ -286,6 +293,7 @@ public class GenerateDataKeyRequest extends AmazonWebServiceRequest implements
      *        values are 128, 256, 512, and 1024. 1024 is the current limit. We
      *        recommend that you use the <code>KeySpec</code> parameter instead.
      */
+
     public void setNumberOfBytes(Integer numberOfBytes) {
         this.numberOfBytes = numberOfBytes;
     }
@@ -302,6 +310,7 @@ public class GenerateDataKeyRequest extends AmazonWebServiceRequest implements
      *         recommend that you use the <code>KeySpec</code> parameter
      *         instead.
      */
+
     public Integer getNumberOfBytes() {
         return this.numberOfBytes;
     }
@@ -320,6 +329,7 @@ public class GenerateDataKeyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GenerateDataKeyRequest withNumberOfBytes(Integer numberOfBytes) {
         setNumberOfBytes(numberOfBytes);
         return this;
@@ -336,6 +346,7 @@ public class GenerateDataKeyRequest extends AmazonWebServiceRequest implements
      *        generate a data key for. Currently this can be AES_128 or AES_256.
      * @see DataKeySpec
      */
+
     public void setKeySpec(String keySpec) {
         this.keySpec = keySpec;
     }
@@ -351,6 +362,7 @@ public class GenerateDataKeyRequest extends AmazonWebServiceRequest implements
      *         AES_256.
      * @see DataKeySpec
      */
+
     public String getKeySpec() {
         return this.keySpec;
     }
@@ -368,6 +380,7 @@ public class GenerateDataKeyRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see DataKeySpec
      */
+
     public GenerateDataKeyRequest withKeySpec(String keySpec) {
         setKeySpec(keySpec);
         return this;
@@ -386,6 +399,7 @@ public class GenerateDataKeyRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see DataKeySpec
      */
+
     public void setKeySpec(DataKeySpec keySpec) {
         this.keySpec = keySpec.toString();
     }
@@ -403,6 +417,7 @@ public class GenerateDataKeyRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see DataKeySpec
      */
+
     public GenerateDataKeyRequest withKeySpec(DataKeySpec keySpec) {
         setKeySpec(keySpec);
         return this;
@@ -426,6 +441,7 @@ public class GenerateDataKeyRequest extends AmazonWebServiceRequest implements
      *         >Grant Tokens</a> in the <i>AWS Key Management Service Developer
      *         Guide</i>.
      */
+
     public java.util.List<String> getGrantTokens() {
         if (grantTokens == null) {
             grantTokens = new com.amazonaws.internal.SdkInternalList<String>();
@@ -452,6 +468,7 @@ public class GenerateDataKeyRequest extends AmazonWebServiceRequest implements
      *        >Grant Tokens</a> in the <i>AWS Key Management Service Developer
      *        Guide</i>.
      */
+
     public void setGrantTokens(java.util.Collection<String> grantTokens) {
         if (grantTokens == null) {
             this.grantTokens = null;
@@ -489,6 +506,7 @@ public class GenerateDataKeyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GenerateDataKeyRequest withGrantTokens(String... grantTokens) {
         if (this.grantTokens == null) {
             setGrantTokens(new com.amazonaws.internal.SdkInternalList<String>(
@@ -521,6 +539,7 @@ public class GenerateDataKeyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GenerateDataKeyRequest withGrantTokens(
             java.util.Collection<String> grantTokens) {
         setGrantTokens(grantTokens);

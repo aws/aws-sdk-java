@@ -34,19 +34,19 @@ public class DescribeEventCategoriesRequest extends AmazonWebServiceRequest impl
 
     /**
      * The source type, such as cluster or parameter group, to which the
-     * described event categories apply. <p> Valid values: cluster, snapshot,
-     * parameter group, and security group.
+     * described event categories apply. <p> Valid values: cluster,
+     * cluster-snapshot, cluster-parameter-group, and cluster-security-group.
      */
     private String sourceType;
 
     /**
      * The source type, such as cluster or parameter group, to which the
-     * described event categories apply. <p> Valid values: cluster, snapshot,
-     * parameter group, and security group.
+     * described event categories apply. <p> Valid values: cluster,
+     * cluster-snapshot, cluster-parameter-group, and cluster-security-group.
      *
      * @return The source type, such as cluster or parameter group, to which the
-     *         described event categories apply. <p> Valid values: cluster, snapshot,
-     *         parameter group, and security group.
+     *         described event categories apply. <p> Valid values: cluster,
+     *         cluster-snapshot, cluster-parameter-group, and cluster-security-group.
      */
     public String getSourceType() {
         return sourceType;
@@ -54,12 +54,12 @@ public class DescribeEventCategoriesRequest extends AmazonWebServiceRequest impl
     
     /**
      * The source type, such as cluster or parameter group, to which the
-     * described event categories apply. <p> Valid values: cluster, snapshot,
-     * parameter group, and security group.
+     * described event categories apply. <p> Valid values: cluster,
+     * cluster-snapshot, cluster-parameter-group, and cluster-security-group.
      *
      * @param sourceType The source type, such as cluster or parameter group, to which the
-     *         described event categories apply. <p> Valid values: cluster, snapshot,
-     *         parameter group, and security group.
+     *         described event categories apply. <p> Valid values: cluster,
+     *         cluster-snapshot, cluster-parameter-group, and cluster-security-group.
      */
     public void setSourceType(String sourceType) {
         this.sourceType = sourceType;
@@ -67,14 +67,14 @@ public class DescribeEventCategoriesRequest extends AmazonWebServiceRequest impl
     
     /**
      * The source type, such as cluster or parameter group, to which the
-     * described event categories apply. <p> Valid values: cluster, snapshot,
-     * parameter group, and security group.
+     * described event categories apply. <p> Valid values: cluster,
+     * cluster-snapshot, cluster-parameter-group, and cluster-security-group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param sourceType The source type, such as cluster or parameter group, to which the
-     *         described event categories apply. <p> Valid values: cluster, snapshot,
-     *         parameter group, and security group.
+     *         described event categories apply. <p> Valid values: cluster,
+     *         cluster-snapshot, cluster-parameter-group, and cluster-security-group.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

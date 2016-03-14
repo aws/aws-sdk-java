@@ -65,6 +65,7 @@ public class DescribeVpcEndpointServicesRequest extends AmazonWebServiceRequest
      *        Constraint: If the value is greater than 1000, we return only 1000
      *        items.
      */
+
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
     }
@@ -86,6 +87,7 @@ public class DescribeVpcEndpointServicesRequest extends AmazonWebServiceRequest
      *         Constraint: If the value is greater than 1000, we return only
      *         1000 items.
      */
+
     public Integer getMaxResults() {
         return this.maxResults;
     }
@@ -110,6 +112,7 @@ public class DescribeVpcEndpointServicesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVpcEndpointServicesRequest withMaxResults(Integer maxResults) {
         setMaxResults(maxResults);
         return this;
@@ -125,6 +128,7 @@ public class DescribeVpcEndpointServicesRequest extends AmazonWebServiceRequest
      *        The token for the next set of items to return. (You received this
      *        token from a prior call.)
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -138,6 +142,7 @@ public class DescribeVpcEndpointServicesRequest extends AmazonWebServiceRequest
      * @return The token for the next set of items to return. (You received this
      *         token from a prior call.)
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -154,6 +159,7 @@ public class DescribeVpcEndpointServicesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVpcEndpointServicesRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

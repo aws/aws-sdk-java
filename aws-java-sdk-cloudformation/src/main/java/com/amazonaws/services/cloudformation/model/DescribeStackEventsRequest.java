@@ -75,6 +75,7 @@ public class DescribeStackEventsRequest extends AmazonWebServiceRequest
      *        <p>
      *        Default: There is no default value.
      */
+
     public void setStackName(String stackName) {
         this.stackName = stackName;
     }
@@ -103,6 +104,7 @@ public class DescribeStackEventsRequest extends AmazonWebServiceRequest
      *         <p>
      *         Default: There is no default value.
      */
+
     public String getStackName() {
         return this.stackName;
     }
@@ -134,6 +136,7 @@ public class DescribeStackEventsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeStackEventsRequest withStackName(String stackName) {
         setStackName(stackName);
         return this;
@@ -149,6 +152,7 @@ public class DescribeStackEventsRequest extends AmazonWebServiceRequest
      *        A string that identifies the next page of events that you want to
      *        retrieve.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -162,6 +166,7 @@ public class DescribeStackEventsRequest extends AmazonWebServiceRequest
      * @return A string that identifies the next page of events that you want to
      *         retrieve.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -178,6 +183,7 @@ public class DescribeStackEventsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeStackEventsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

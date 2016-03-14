@@ -69,6 +69,7 @@ public class AddUserToGroupRequest extends AmazonWebServiceRequest implements
      * @param groupName
      *        The name of the group to update.
      */
+
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
@@ -80,6 +81,7 @@ public class AddUserToGroupRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the group to update.
      */
+
     public String getGroupName() {
         return this.groupName;
     }
@@ -94,6 +96,7 @@ public class AddUserToGroupRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddUserToGroupRequest withGroupName(String groupName) {
         setGroupName(groupName);
         return this;
@@ -107,6 +110,7 @@ public class AddUserToGroupRequest extends AmazonWebServiceRequest implements
      * @param userName
      *        The name of the user to add.
      */
+
     public void setUserName(String userName) {
         this.userName = userName;
     }
@@ -118,6 +122,7 @@ public class AddUserToGroupRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the user to add.
      */
+
     public String getUserName() {
         return this.userName;
     }
@@ -132,6 +137,7 @@ public class AddUserToGroupRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddUserToGroupRequest withUserName(String userName) {
         setUserName(userName);
         return this;

@@ -72,6 +72,7 @@ public class DescribeCommunicationsRequest extends AmazonWebServiceRequest
      *        case ID is an alphanumeric string formatted as shown in this
      *        example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
      */
+
     public void setCaseId(String caseId) {
         this.caseId = caseId;
     }
@@ -87,6 +88,7 @@ public class DescribeCommunicationsRequest extends AmazonWebServiceRequest
      *         case ID is an alphanumeric string formatted as shown in this
      *         example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
      */
+
     public String getCaseId() {
         return this.caseId;
     }
@@ -105,6 +107,7 @@ public class DescribeCommunicationsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeCommunicationsRequest withCaseId(String caseId) {
         setCaseId(caseId);
         return this;
@@ -121,6 +124,7 @@ public class DescribeCommunicationsRequest extends AmazonWebServiceRequest
      *        communications. Case communications are available for 12 months
      *        after creation.
      */
+
     public void setBeforeTime(String beforeTime) {
         this.beforeTime = beforeTime;
     }
@@ -135,6 +139,7 @@ public class DescribeCommunicationsRequest extends AmazonWebServiceRequest
      *         communications. Case communications are available for 12 months
      *         after creation.
      */
+
     public String getBeforeTime() {
         return this.beforeTime;
     }
@@ -152,6 +157,7 @@ public class DescribeCommunicationsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeCommunicationsRequest withBeforeTime(String beforeTime) {
         setBeforeTime(beforeTime);
         return this;
@@ -168,6 +174,7 @@ public class DescribeCommunicationsRequest extends AmazonWebServiceRequest
      *        communications. Case communications are available for 12 months
      *        after creation.
      */
+
     public void setAfterTime(String afterTime) {
         this.afterTime = afterTime;
     }
@@ -182,6 +189,7 @@ public class DescribeCommunicationsRequest extends AmazonWebServiceRequest
      *         communications. Case communications are available for 12 months
      *         after creation.
      */
+
     public String getAfterTime() {
         return this.afterTime;
     }
@@ -199,6 +207,7 @@ public class DescribeCommunicationsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeCommunicationsRequest withAfterTime(String afterTime) {
         setAfterTime(afterTime);
         return this;
@@ -212,6 +221,7 @@ public class DescribeCommunicationsRequest extends AmazonWebServiceRequest
      * @param nextToken
      *        A resumption point for pagination.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -223,6 +233,7 @@ public class DescribeCommunicationsRequest extends AmazonWebServiceRequest
      * 
      * @return A resumption point for pagination.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -237,6 +248,7 @@ public class DescribeCommunicationsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeCommunicationsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -250,6 +262,7 @@ public class DescribeCommunicationsRequest extends AmazonWebServiceRequest
      * @param maxResults
      *        The maximum number of results to return before paginating.
      */
+
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
     }
@@ -261,6 +274,7 @@ public class DescribeCommunicationsRequest extends AmazonWebServiceRequest
      * 
      * @return The maximum number of results to return before paginating.
      */
+
     public Integer getMaxResults() {
         return this.maxResults;
     }
@@ -275,6 +289,7 @@ public class DescribeCommunicationsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeCommunicationsRequest withMaxResults(Integer maxResults) {
         setMaxResults(maxResults);
         return this;

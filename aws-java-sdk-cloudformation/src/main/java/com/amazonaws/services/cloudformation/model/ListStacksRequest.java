@@ -54,6 +54,7 @@ public class ListStacksRequest extends AmazonWebServiceRequest implements
      *        A string that identifies the next page of stacks that you want to
      *        retrieve.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -67,6 +68,7 @@ public class ListStacksRequest extends AmazonWebServiceRequest implements
      * @return A string that identifies the next page of stacks that you want to
      *         retrieve.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -83,6 +85,7 @@ public class ListStacksRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListStacksRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -102,6 +105,7 @@ public class ListStacksRequest extends AmazonWebServiceRequest implements
      *         <code>StackStatus</code> parameter of the <a>Stack</a> data type.
      * @see StackStatus
      */
+
     public java.util.List<String> getStackStatusFilters() {
         if (stackStatusFilters == null) {
             stackStatusFilters = new com.amazonaws.internal.SdkInternalList<String>();
@@ -124,6 +128,7 @@ public class ListStacksRequest extends AmazonWebServiceRequest implements
      *        <code>StackStatus</code> parameter of the <a>Stack</a> data type.
      * @see StackStatus
      */
+
     public void setStackStatusFilters(
             java.util.Collection<String> stackStatusFilters) {
         if (stackStatusFilters == null) {
@@ -158,6 +163,7 @@ public class ListStacksRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see StackStatus
      */
+
     public ListStacksRequest withStackStatusFilters(
             String... stackStatusFilters) {
         if (this.stackStatusFilters == null) {
@@ -187,6 +193,7 @@ public class ListStacksRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see StackStatus
      */
+
     public ListStacksRequest withStackStatusFilters(
             java.util.Collection<String> stackStatusFilters) {
         setStackStatusFilters(stackStatusFilters);
@@ -210,6 +217,7 @@ public class ListStacksRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see StackStatus
      */
+
     public ListStacksRequest withStackStatusFilters(
             StackStatus... stackStatusFilters) {
         com.amazonaws.internal.SdkInternalList<String> stackStatusFiltersCopy = new com.amazonaws.internal.SdkInternalList<String>(

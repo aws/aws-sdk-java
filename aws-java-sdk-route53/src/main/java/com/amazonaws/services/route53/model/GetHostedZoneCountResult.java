@@ -42,6 +42,7 @@ public class GetHostedZoneCountResult implements Serializable, Cloneable {
      *        The number of hosted zones associated with the current AWS
      *        account.
      */
+
     public void setHostedZoneCount(Long hostedZoneCount) {
         this.hostedZoneCount = hostedZoneCount;
     }
@@ -54,6 +55,7 @@ public class GetHostedZoneCountResult implements Serializable, Cloneable {
      * @return The number of hosted zones associated with the current AWS
      *         account.
      */
+
     public Long getHostedZoneCount() {
         return this.hostedZoneCount;
     }
@@ -69,6 +71,7 @@ public class GetHostedZoneCountResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetHostedZoneCountResult withHostedZoneCount(Long hostedZoneCount) {
         setHostedZoneCount(hostedZoneCount);
         return this;

@@ -66,6 +66,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      *        The identifier of the directory for which to retrieve snapshot
      *        information.
      */
+
     public void setDirectoryId(String directoryId) {
         this.directoryId = directoryId;
     }
@@ -79,6 +80,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      * @return The identifier of the directory for which to retrieve snapshot
      *         information.
      */
+
     public String getDirectoryId() {
         return this.directoryId;
     }
@@ -95,6 +97,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSnapshotsRequest withDirectoryId(String directoryId) {
         setDirectoryId(directoryId);
         return this;
@@ -111,6 +114,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      *         for. If this member is null or empty, all snapshots are returned
      *         using the <i>Limit</i> and <i>NextToken</i> members.
      */
+
     public java.util.List<String> getSnapshotIds() {
         if (snapshotIds == null) {
             snapshotIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -130,6 +134,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      *        for. If this member is null or empty, all snapshots are returned
      *        using the <i>Limit</i> and <i>NextToken</i> members.
      */
+
     public void setSnapshotIds(java.util.Collection<String> snapshotIds) {
         if (snapshotIds == null) {
             this.snapshotIds = null;
@@ -160,6 +165,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSnapshotsRequest withSnapshotIds(String... snapshotIds) {
         if (this.snapshotIds == null) {
             setSnapshotIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -185,6 +191,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSnapshotsRequest withSnapshotIds(
             java.util.Collection<String> snapshotIds) {
         setSnapshotIds(snapshotIds);
@@ -202,6 +209,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      *        call to <a>DescribeSnapshots</a>. Pass null if this is the first
      *        call.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -216,6 +224,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      *         previous call to <a>DescribeSnapshots</a>. Pass null if this is
      *         the first call.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -233,6 +242,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSnapshotsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -246,6 +256,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      * @param limit
      *        The maximum number of objects to return.
      */
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -257,6 +268,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      * 
      * @return The maximum number of objects to return.
      */
+
     public Integer getLimit() {
         return this.limit;
     }
@@ -271,6 +283,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSnapshotsRequest withLimit(Integer limit) {
         setLimit(limit);
         return this;

@@ -51,6 +51,7 @@ public class GetTrafficPolicyInstanceRequest extends AmazonWebServiceRequest
      *        The ID of the traffic policy instance that you want to get
      *        information about.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -64,6 +65,7 @@ public class GetTrafficPolicyInstanceRequest extends AmazonWebServiceRequest
      * @return The ID of the traffic policy instance that you want to get
      *         information about.
      */
+
     public String getId() {
         return this.id;
     }
@@ -80,6 +82,7 @@ public class GetTrafficPolicyInstanceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetTrafficPolicyInstanceRequest withId(String id) {
         setId(id);
         return this;

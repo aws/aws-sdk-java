@@ -70,6 +70,7 @@ public class TimeWindow implements Serializable, Cloneable {
      *        that your AWS resource received. You can specify any time range in
      *        the previous three hours.
      */
+
     public void setStartTime(java.util.Date startTime) {
         this.startTime = startTime;
     }
@@ -87,6 +88,7 @@ public class TimeWindow implements Serializable, Cloneable {
      *         requests that your AWS resource received. You can specify any
      *         time range in the previous three hours.
      */
+
     public java.util.Date getStartTime() {
         return this.startTime;
     }
@@ -107,6 +109,7 @@ public class TimeWindow implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TimeWindow withStartTime(java.util.Date startTime) {
         setStartTime(startTime);
         return this;
@@ -126,6 +129,7 @@ public class TimeWindow implements Serializable, Cloneable {
      *        that your AWS resource received. You can specify any time range in
      *        the previous three hours.
      */
+
     public void setEndTime(java.util.Date endTime) {
         this.endTime = endTime;
     }
@@ -143,6 +147,7 @@ public class TimeWindow implements Serializable, Cloneable {
      *         requests that your AWS resource received. You can specify any
      *         time range in the previous three hours.
      */
+
     public java.util.Date getEndTime() {
         return this.endTime;
     }
@@ -163,6 +168,7 @@ public class TimeWindow implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TimeWindow withEndTime(java.util.Date endTime) {
         setEndTime(endTime);
         return this;

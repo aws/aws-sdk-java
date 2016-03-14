@@ -52,6 +52,7 @@ public class PrefixList implements Serializable, Cloneable {
      * @param prefixListId
      *        The ID of the prefix.
      */
+
     public void setPrefixListId(String prefixListId) {
         this.prefixListId = prefixListId;
     }
@@ -63,6 +64,7 @@ public class PrefixList implements Serializable, Cloneable {
      * 
      * @return The ID of the prefix.
      */
+
     public String getPrefixListId() {
         return this.prefixListId;
     }
@@ -77,6 +79,7 @@ public class PrefixList implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PrefixList withPrefixListId(String prefixListId) {
         setPrefixListId(prefixListId);
         return this;
@@ -90,6 +93,7 @@ public class PrefixList implements Serializable, Cloneable {
      * @param prefixListName
      *        The name of the prefix.
      */
+
     public void setPrefixListName(String prefixListName) {
         this.prefixListName = prefixListName;
     }
@@ -101,6 +105,7 @@ public class PrefixList implements Serializable, Cloneable {
      * 
      * @return The name of the prefix.
      */
+
     public String getPrefixListName() {
         return this.prefixListName;
     }
@@ -115,6 +120,7 @@ public class PrefixList implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PrefixList withPrefixListName(String prefixListName) {
         setPrefixListName(prefixListName);
         return this;
@@ -127,6 +133,7 @@ public class PrefixList implements Serializable, Cloneable {
      * 
      * @return The IP address range of the AWS service.
      */
+
     public java.util.List<String> getCidrs() {
         if (cidrs == null) {
             cidrs = new com.amazonaws.internal.SdkInternalList<String>();
@@ -142,6 +149,7 @@ public class PrefixList implements Serializable, Cloneable {
      * @param cidrs
      *        The IP address range of the AWS service.
      */
+
     public void setCidrs(java.util.Collection<String> cidrs) {
         if (cidrs == null) {
             this.cidrs = null;
@@ -167,6 +175,7 @@ public class PrefixList implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PrefixList withCidrs(String... cidrs) {
         if (this.cidrs == null) {
             setCidrs(new com.amazonaws.internal.SdkInternalList<String>(
@@ -188,6 +197,7 @@ public class PrefixList implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PrefixList withCidrs(java.util.Collection<String> cidrs) {
         setCidrs(cidrs);
         return this;

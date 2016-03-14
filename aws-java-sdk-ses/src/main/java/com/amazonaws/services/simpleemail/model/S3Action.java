@@ -130,6 +130,7 @@ public class S3Action implements Serializable, Cloneable {
      *        href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html"
      *        >Amazon SNS Developer Guide</a>.
      */
+
     public void setTopicArn(String topicArn) {
         this.topicArn = topicArn;
     }
@@ -151,6 +152,7 @@ public class S3Action implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html"
      *         >Amazon SNS Developer Guide</a>.
      */
+
     public String getTopicArn() {
         return this.topicArn;
     }
@@ -175,6 +177,7 @@ public class S3Action implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public S3Action withTopicArn(String topicArn) {
         setTopicArn(topicArn);
         return this;
@@ -189,6 +192,7 @@ public class S3Action implements Serializable, Cloneable {
      *        The name of the Amazon S3 bucket to which to save the received
      *        email.
      */
+
     public void setBucketName(String bucketName) {
         this.bucketName = bucketName;
     }
@@ -201,6 +205,7 @@ public class S3Action implements Serializable, Cloneable {
      * @return The name of the Amazon S3 bucket to which to save the received
      *         email.
      */
+
     public String getBucketName() {
         return this.bucketName;
     }
@@ -216,6 +221,7 @@ public class S3Action implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public S3Action withBucketName(String bucketName) {
         setBucketName(bucketName);
         return this;
@@ -233,6 +239,7 @@ public class S3Action implements Serializable, Cloneable {
      *        to a directory name that enables you to store similar data under
      *        the same directory in a bucket.
      */
+
     public void setObjectKeyPrefix(String objectKeyPrefix) {
         this.objectKeyPrefix = objectKeyPrefix;
     }
@@ -248,6 +255,7 @@ public class S3Action implements Serializable, Cloneable {
      *         to a directory name that enables you to store similar data under
      *         the same directory in a bucket.
      */
+
     public String getObjectKeyPrefix() {
         return this.objectKeyPrefix;
     }
@@ -266,6 +274,7 @@ public class S3Action implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public S3Action withObjectKeyPrefix(String objectKeyPrefix) {
         setObjectKeyPrefix(objectKeyPrefix);
         return this;
@@ -353,6 +362,7 @@ public class S3Action implements Serializable, Cloneable {
      *        "http://alpha-docs-aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html"
      *        >Amazon S3 Developer Guide</a>.
      */
+
     public void setKmsKeyArn(String kmsKeyArn) {
         this.kmsKeyArn = kmsKeyArn;
     }
@@ -438,6 +448,7 @@ public class S3Action implements Serializable, Cloneable {
      *         "http://alpha-docs-aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html"
      *         >Amazon S3 Developer Guide</a>.
      */
+
     public String getKmsKeyArn() {
         return this.kmsKeyArn;
     }
@@ -526,6 +537,7 @@ public class S3Action implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public S3Action withKmsKeyArn(String kmsKeyArn) {
         setKmsKeyArn(kmsKeyArn);
         return this;

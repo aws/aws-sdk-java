@@ -65,6 +65,7 @@ public class CancelSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      * 
      * @return One or more Spot instance request IDs.
      */
+
     public java.util.List<String> getSpotInstanceRequestIds() {
         if (spotInstanceRequestIds == null) {
             spotInstanceRequestIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -80,6 +81,7 @@ public class CancelSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      * @param spotInstanceRequestIds
      *        One or more Spot instance request IDs.
      */
+
     public void setSpotInstanceRequestIds(
             java.util.Collection<String> spotInstanceRequestIds) {
         if (spotInstanceRequestIds == null) {
@@ -107,6 +109,7 @@ public class CancelSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CancelSpotInstanceRequestsRequest withSpotInstanceRequestIds(
             String... spotInstanceRequestIds) {
         if (this.spotInstanceRequestIds == null) {
@@ -129,6 +132,7 @@ public class CancelSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CancelSpotInstanceRequestsRequest withSpotInstanceRequestIds(
             java.util.Collection<String> spotInstanceRequestIds) {
         setSpotInstanceRequestIds(spotInstanceRequestIds);

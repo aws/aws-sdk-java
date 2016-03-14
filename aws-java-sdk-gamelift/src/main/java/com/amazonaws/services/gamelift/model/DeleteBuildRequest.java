@@ -42,6 +42,7 @@ public class DeleteBuildRequest extends AmazonWebServiceRequest implements
      * @param buildId
      *        Unique identifier for the build you want to delete.
      */
+
     public void setBuildId(String buildId) {
         this.buildId = buildId;
     }
@@ -53,6 +54,7 @@ public class DeleteBuildRequest extends AmazonWebServiceRequest implements
      * 
      * @return Unique identifier for the build you want to delete.
      */
+
     public String getBuildId() {
         return this.buildId;
     }
@@ -67,6 +69,7 @@ public class DeleteBuildRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteBuildRequest withBuildId(String buildId) {
         setBuildId(buildId);
         return this;

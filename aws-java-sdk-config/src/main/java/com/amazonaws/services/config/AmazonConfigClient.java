@@ -93,6 +93,12 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
     private static final String DEFAULT_ENDPOINT_PREFIX = "config";
 
     /**
+     * Client configuration factory providing ClientConfigurations tailored to
+     * this client
+     */
+    protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
+
+    /**
      * List of exception unmarshallers for all Config Service exceptions.
      */
     protected List<JsonErrorUnmarshallerV2> jsonErrorUnmarshallers = new ArrayList<JsonErrorUnmarshallerV2>();
@@ -115,8 +121,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonConfigClient() {
-        this(new DefaultAWSCredentialsProviderChain(),
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
+        this(new DefaultAWSCredentialsProviderChain(), configFactory
+                .getConfig());
     }
 
     /**
@@ -158,8 +164,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
      *        authenticating with AWS services.
      */
     public AmazonConfigClient(AWSCredentials awsCredentials) {
-        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
-                .defaultConfig());
+        this(awsCredentials, configFactory.getConfig());
     }
 
     /**
@@ -199,8 +204,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
      *        authenticate requests with AWS services.
      */
     public AmazonConfigClient(AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider,
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
+        this(awsCredentialsProvider, configFactory.getConfig());
     }
 
     /**
@@ -382,8 +386,9 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements
      * <p>
      * AWS Config sets the state of a rule to <code>DELETING</code> until the
      * deletion is complete. You cannot update a rule while it is in this state.
-     * If you make a <code>PutConfigRule</code> request for the rule, you will
-     * receive a <code>ResourceInUseException</code>.
+     * If you make a <code>PutConfigRule</code> or <code>DeleteConfigRule</code>
+     * request for the rule, you will receive a
+     * <code>ResourceInUseException</code>.
      * </p>
      * <p>
      * You can check the state of a rule by using the

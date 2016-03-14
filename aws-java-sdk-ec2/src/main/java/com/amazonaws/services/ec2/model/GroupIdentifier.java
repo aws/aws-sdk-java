@@ -46,6 +46,7 @@ public class GroupIdentifier implements Serializable, Cloneable {
      * @param groupName
      *        The name of the security group.
      */
+
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
@@ -57,6 +58,7 @@ public class GroupIdentifier implements Serializable, Cloneable {
      * 
      * @return The name of the security group.
      */
+
     public String getGroupName() {
         return this.groupName;
     }
@@ -71,6 +73,7 @@ public class GroupIdentifier implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GroupIdentifier withGroupName(String groupName) {
         setGroupName(groupName);
         return this;
@@ -84,6 +87,7 @@ public class GroupIdentifier implements Serializable, Cloneable {
      * @param groupId
      *        The ID of the security group.
      */
+
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
@@ -95,6 +99,7 @@ public class GroupIdentifier implements Serializable, Cloneable {
      * 
      * @return The ID of the security group.
      */
+
     public String getGroupId() {
         return this.groupId;
     }
@@ -109,6 +114,7 @@ public class GroupIdentifier implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GroupIdentifier withGroupId(String groupId) {
         setGroupId(groupId);
         return this;

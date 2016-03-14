@@ -32,6 +32,7 @@ public class ListDistributionsResult implements Serializable, Cloneable {
      * @param distributionList
      *        The DistributionList type.
      */
+
     public void setDistributionList(DistributionList distributionList) {
         this.distributionList = distributionList;
     }
@@ -41,6 +42,7 @@ public class ListDistributionsResult implements Serializable, Cloneable {
      * 
      * @return The DistributionList type.
      */
+
     public DistributionList getDistributionList() {
         return this.distributionList;
     }
@@ -53,6 +55,7 @@ public class ListDistributionsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListDistributionsResult withDistributionList(
             DistributionList distributionList) {
         setDistributionList(distributionList);

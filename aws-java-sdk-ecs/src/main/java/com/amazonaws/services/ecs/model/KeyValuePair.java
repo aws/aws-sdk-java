@@ -50,6 +50,7 @@ public class KeyValuePair implements Serializable, Cloneable {
      *        The name of the key value pair. For environment variables, this is
      *        the name of the environment variable.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -63,6 +64,7 @@ public class KeyValuePair implements Serializable, Cloneable {
      * @return The name of the key value pair. For environment variables, this
      *         is the name of the environment variable.
      */
+
     public String getName() {
         return this.name;
     }
@@ -79,6 +81,7 @@ public class KeyValuePair implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public KeyValuePair withName(String name) {
         setName(name);
         return this;
@@ -94,6 +97,7 @@ public class KeyValuePair implements Serializable, Cloneable {
      *        The value of the key value pair. For environment variables, this
      *        is the value of the environment variable.
      */
+
     public void setValue(String value) {
         this.value = value;
     }
@@ -107,6 +111,7 @@ public class KeyValuePair implements Serializable, Cloneable {
      * @return The value of the key value pair. For environment variables, this
      *         is the value of the environment variable.
      */
+
     public String getValue() {
         return this.value;
     }
@@ -123,6 +128,7 @@ public class KeyValuePair implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public KeyValuePair withValue(String value) {
         setValue(value);
         return this;

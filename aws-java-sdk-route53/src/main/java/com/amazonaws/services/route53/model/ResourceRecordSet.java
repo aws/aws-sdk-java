@@ -586,6 +586,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        <important>You can't use the * wildcard for resource records sets
      *        that have a type of NS.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -652,6 +653,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *         <important>You can't use the * wildcard for resource records sets
      *         that have a type of NS.
      */
+
     public String getName() {
         return this.name;
     }
@@ -721,6 +723,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ResourceRecordSet withName(String name) {
         setName(name);
         return this;
@@ -814,6 +817,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        <code>SOA</code>.</li>
      * @see RRType
      */
+
     public void setType(String type) {
         this.type = type;
     }
@@ -906,6 +910,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *         <code>SOA</code>.</li>
      * @see RRType
      */
+
     public String getType() {
         return this.type;
     }
@@ -1000,6 +1005,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *         chained together.
      * @see RRType
      */
+
     public ResourceRecordSet withType(String type) {
         setType(type);
         return this;
@@ -1095,6 +1101,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *         chained together.
      * @see RRType
      */
+
     public void setType(RRType type) {
         this.type = type.toString();
     }
@@ -1189,6 +1196,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *         chained together.
      * @see RRType
      */
+
     public ResourceRecordSet withType(RRType type) {
         setType(type);
         return this;
@@ -1209,6 +1217,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        resource record sets that have the same combination of DNS name
      *        and type. The value of <code>SetIdentifier
      */
+
     public void setSetIdentifier(String setIdentifier) {
         this.setIdentifier = setIdentifier;
     }
@@ -1227,6 +1236,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *         resource record sets that have the same combination of DNS name
      *         and type. The value of <code>SetIdentifier
      */
+
     public String getSetIdentifier() {
         return this.setIdentifier;
     }
@@ -1248,6 +1258,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ResourceRecordSet withSetIdentifier(String setIdentifier) {
         setSetIdentifier(setIdentifier);
         return this;
@@ -1336,6 +1347,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        Guide</i>.
      *        </p>
      */
+
     public void setWeight(Long weight) {
         this.weight = weight;
     }
@@ -1422,6 +1434,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *         Guide</i>.
      *         </p>
      */
+
     public Long getWeight() {
         return this.weight;
     }
@@ -1511,6 +1524,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ResourceRecordSet withWeight(Long weight) {
         setWeight(weight);
         return this;
@@ -1584,6 +1598,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        elements as latency resource record sets.
      * @see ResourceRecordSetRegion
      */
+
     public void setRegion(String region) {
         this.region = region;
     }
@@ -1655,6 +1670,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *         elements as latency resource record sets.
      * @see ResourceRecordSetRegion
      */
+
     public String getRegion() {
         return this.region;
     }
@@ -1729,6 +1745,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *         chained together.
      * @see ResourceRecordSetRegion
      */
+
     public ResourceRecordSet withRegion(String region) {
         setRegion(region);
         return this;
@@ -1804,6 +1821,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *         chained together.
      * @see ResourceRecordSetRegion
      */
+
     public void setRegion(ResourceRecordSetRegion region) {
         this.region = region.toString();
     }
@@ -1878,6 +1896,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *         chained together.
      * @see ResourceRecordSetRegion
      */
+
     public ResourceRecordSet withRegion(ResourceRecordSetRegion region) {
         setRegion(region);
         return this;
@@ -1974,6 +1993,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        You cannot create non-geolocation resource record sets that have
      *        the same values for the <code>Name</code> and <code>Type
      */
+
     public void setGeoLocation(GeoLocation geoLocation) {
         this.geoLocation = geoLocation;
     }
@@ -2069,6 +2089,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *         You cannot create non-geolocation resource record sets that have
      *         the same values for the <code>Name</code> and <code>Type
      */
+
     public GeoLocation getGeoLocation() {
         return this.geoLocation;
     }
@@ -2166,6 +2187,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ResourceRecordSet withGeoLocation(GeoLocation geoLocation) {
         setGeoLocation(geoLocation);
         return this;
@@ -2281,6 +2303,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        Valid values: <code>PRIMARY</code> | <code>SECONDARY
      * @see ResourceRecordSetFailover
      */
+
     public void setFailover(String failover) {
         this.failover = failover;
     }
@@ -2396,6 +2419,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *         Valid values: <code>PRIMARY</code> | <code>SECONDARY
      * @see ResourceRecordSetFailover
      */
+
     public String getFailover() {
         return this.failover;
     }
@@ -2512,6 +2536,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *         chained together.
      * @see ResourceRecordSetFailover
      */
+
     public ResourceRecordSet withFailover(String failover) {
         setFailover(failover);
         return this;
@@ -2629,6 +2654,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *         chained together.
      * @see ResourceRecordSetFailover
      */
+
     public void setFailover(ResourceRecordSetFailover failover) {
         this.failover = failover.toString();
     }
@@ -2745,6 +2771,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *         chained together.
      * @see ResourceRecordSetFailover
      */
+
     public ResourceRecordSet withFailover(ResourceRecordSetFailover failover) {
         setFailover(failover);
         return this;
@@ -2797,6 +2824,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        other than 60 seconds (the TTL for load balancers) will change the
      *        effect of the values that you specify for <code>Weight</code>.</li>
      */
+
     public void setTTL(Long tTL) {
         this.tTL = tTL;
     }
@@ -2848,6 +2876,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *         the effect of the values that you specify for <code>Weight</code>
      *         .</li>
      */
+
     public Long getTTL() {
         return this.tTL;
     }
@@ -2901,6 +2930,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ResourceRecordSet withTTL(Long tTL) {
         setTTL(tTL);
         return this;
@@ -2915,6 +2945,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * @return A complex type that contains the resource records for the current
      *         resource record set.
      */
+
     public java.util.List<ResourceRecord> getResourceRecords() {
         if (resourceRecords == null) {
             resourceRecords = new com.amazonaws.internal.SdkInternalList<ResourceRecord>();
@@ -2932,6 +2963,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        A complex type that contains the resource records for the current
      *        resource record set.
      */
+
     public void setResourceRecords(
             java.util.Collection<ResourceRecord> resourceRecords) {
         if (resourceRecords == null) {
@@ -2961,6 +2993,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ResourceRecordSet withResourceRecords(
             ResourceRecord... resourceRecords) {
         if (this.resourceRecords == null) {
@@ -2985,6 +3018,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ResourceRecordSet withResourceRecords(
             java.util.Collection<ResourceRecord> resourceRecords) {
         setResourceRecords(resourceRecords);
@@ -3000,6 +3034,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * @param aliasTarget
      *        Alias resource record sets only:
      */
+
     public void setAliasTarget(AliasTarget aliasTarget) {
         this.aliasTarget = aliasTarget;
     }
@@ -3012,6 +3047,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * 
      * @return Alias resource record sets only:
      */
+
     public AliasTarget getAliasTarget() {
         return this.aliasTarget;
     }
@@ -3027,6 +3063,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ResourceRecordSet withAliasTarget(AliasTarget aliasTarget) {
         setAliasTarget(aliasTarget);
         return this;
@@ -3043,6 +3080,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        Health Check resource record sets only, not required for alias
      *        resource record sets:
      */
+
     public void setHealthCheckId(String healthCheckId) {
         this.healthCheckId = healthCheckId;
     }
@@ -3057,6 +3095,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * @return Health Check resource record sets only, not required for alias
      *         resource record sets:
      */
+
     public String getHealthCheckId() {
         return this.healthCheckId;
     }
@@ -3074,6 +3113,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ResourceRecordSet withHealthCheckId(String healthCheckId) {
         setHealthCheckId(healthCheckId);
         return this;
@@ -3082,6 +3122,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
     /**
      * @param trafficPolicyInstanceId
      */
+
     public void setTrafficPolicyInstanceId(String trafficPolicyInstanceId) {
         this.trafficPolicyInstanceId = trafficPolicyInstanceId;
     }
@@ -3089,6 +3130,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getTrafficPolicyInstanceId() {
         return this.trafficPolicyInstanceId;
     }
@@ -3098,6 +3140,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ResourceRecordSet withTrafficPolicyInstanceId(
             String trafficPolicyInstanceId) {
         setTrafficPolicyInstanceId(trafficPolicyInstanceId);

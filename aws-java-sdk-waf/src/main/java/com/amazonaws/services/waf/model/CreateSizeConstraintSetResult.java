@@ -50,6 +50,7 @@ public class CreateSizeConstraintSetResult implements Serializable, Cloneable {
      *        A <a>SizeConstraintSet</a> that contains no
      *        <code>SizeConstraint</code> objects.
      */
+
     public void setSizeConstraintSet(SizeConstraintSet sizeConstraintSet) {
         this.sizeConstraintSet = sizeConstraintSet;
     }
@@ -63,6 +64,7 @@ public class CreateSizeConstraintSetResult implements Serializable, Cloneable {
      * @return A <a>SizeConstraintSet</a> that contains no
      *         <code>SizeConstraint</code> objects.
      */
+
     public SizeConstraintSet getSizeConstraintSet() {
         return this.sizeConstraintSet;
     }
@@ -79,6 +81,7 @@ public class CreateSizeConstraintSetResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateSizeConstraintSetResult withSizeConstraintSet(
             SizeConstraintSet sizeConstraintSet) {
         setSizeConstraintSet(sizeConstraintSet);
@@ -99,6 +102,7 @@ public class CreateSizeConstraintSetResult implements Serializable, Cloneable {
      *        this value to query the status of the request. For more
      *        information, see <a>GetChangeTokenStatus</a>.
      */
+
     public void setChangeToken(String changeToken) {
         this.changeToken = changeToken;
     }
@@ -116,6 +120,7 @@ public class CreateSizeConstraintSetResult implements Serializable, Cloneable {
      *         this value to query the status of the request. For more
      *         information, see <a>GetChangeTokenStatus</a>.
      */
+
     public String getChangeToken() {
         return this.changeToken;
     }
@@ -136,6 +141,7 @@ public class CreateSizeConstraintSetResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateSizeConstraintSetResult withChangeToken(String changeToken) {
         setChangeToken(changeToken);
         return this;

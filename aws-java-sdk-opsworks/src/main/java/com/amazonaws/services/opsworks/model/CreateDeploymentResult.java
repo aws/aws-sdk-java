@@ -43,6 +43,7 @@ public class CreateDeploymentResult implements Serializable, Cloneable {
      *        The deployment ID, which can be used with other requests to
      *        identify the deployment.
      */
+
     public void setDeploymentId(String deploymentId) {
         this.deploymentId = deploymentId;
     }
@@ -56,6 +57,7 @@ public class CreateDeploymentResult implements Serializable, Cloneable {
      * @return The deployment ID, which can be used with other requests to
      *         identify the deployment.
      */
+
     public String getDeploymentId() {
         return this.deploymentId;
     }
@@ -72,6 +74,7 @@ public class CreateDeploymentResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDeploymentResult withDeploymentId(String deploymentId) {
         setDeploymentId(deploymentId);
         return this;

@@ -121,6 +121,7 @@ public class RecipientDsnFields implements Serializable, Cloneable {
      *        <code>rfc 822;</code>, as described in <a
      *        href="https://tools.ietf.org/html/rfc3798">RFC 3798</a>.
      */
+
     public void setFinalRecipient(String finalRecipient) {
         this.finalRecipient = finalRecipient;
     }
@@ -151,6 +152,7 @@ public class RecipientDsnFields implements Serializable, Cloneable {
      *         <code>rfc 822;</code>, as described in <a
      *         href="https://tools.ietf.org/html/rfc3798">RFC 3798</a>.
      */
+
     public String getFinalRecipient() {
         return this.finalRecipient;
     }
@@ -184,6 +186,7 @@ public class RecipientDsnFields implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RecipientDsnFields withFinalRecipient(String finalRecipient) {
         setFinalRecipient(finalRecipient);
         return this;
@@ -204,6 +207,7 @@ public class RecipientDsnFields implements Serializable, Cloneable {
      *        href="https://tools.ietf.org/html/rfc3464">RFC 3464</a>.
      * @see DsnAction
      */
+
     public void setAction(String action) {
         this.action = action;
     }
@@ -222,6 +226,7 @@ public class RecipientDsnFields implements Serializable, Cloneable {
      *         href="https://tools.ietf.org/html/rfc3464">RFC 3464</a>.
      * @see DsnAction
      */
+
     public String getAction() {
         return this.action;
     }
@@ -243,6 +248,7 @@ public class RecipientDsnFields implements Serializable, Cloneable {
      *         chained together.
      * @see DsnAction
      */
+
     public RecipientDsnFields withAction(String action) {
         setAction(action);
         return this;
@@ -265,6 +271,7 @@ public class RecipientDsnFields implements Serializable, Cloneable {
      *         chained together.
      * @see DsnAction
      */
+
     public void setAction(DsnAction action) {
         this.action = action.toString();
     }
@@ -286,6 +293,7 @@ public class RecipientDsnFields implements Serializable, Cloneable {
      *         chained together.
      * @see DsnAction
      */
+
     public RecipientDsnFields withAction(DsnAction action) {
         setAction(action);
         return this;
@@ -307,6 +315,7 @@ public class RecipientDsnFields implements Serializable, Cloneable {
      *        <code>mta-name-type; mta-name</code>). This parameter typically
      *        applies only to propagating synchronous bounces.
      */
+
     public void setRemoteMta(String remoteMta) {
         this.remoteMta = remoteMta;
     }
@@ -326,6 +335,7 @@ public class RecipientDsnFields implements Serializable, Cloneable {
      *         <code>mta-name-type; mta-name</code>). This parameter typically
      *         applies only to propagating synchronous bounces.
      */
+
     public String getRemoteMta() {
         return this.remoteMta;
     }
@@ -348,6 +358,7 @@ public class RecipientDsnFields implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RecipientDsnFields withRemoteMta(String remoteMta) {
         setRemoteMta(remoteMta);
         return this;
@@ -363,6 +374,7 @@ public class RecipientDsnFields implements Serializable, Cloneable {
      *        The status code that indicates what went wrong. This is required
      *        by <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a>.
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -376,6 +388,7 @@ public class RecipientDsnFields implements Serializable, Cloneable {
      * @return The status code that indicates what went wrong. This is required
      *         by <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a>.
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -392,6 +405,7 @@ public class RecipientDsnFields implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RecipientDsnFields withStatus(String status) {
         setStatus(status);
         return this;
@@ -410,6 +424,7 @@ public class RecipientDsnFields implements Serializable, Cloneable {
      *        href="https://tools.ietf.org/html/rfc3463">RFC 3463</a> for the
      *        correct formatting of this parameter.
      */
+
     public void setDiagnosticCode(String diagnosticCode) {
         this.diagnosticCode = diagnosticCode;
     }
@@ -426,6 +441,7 @@ public class RecipientDsnFields implements Serializable, Cloneable {
      *         href="https://tools.ietf.org/html/rfc3463">RFC 3463</a> for the
      *         correct formatting of this parameter.
      */
+
     public String getDiagnosticCode() {
         return this.diagnosticCode;
     }
@@ -445,6 +461,7 @@ public class RecipientDsnFields implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RecipientDsnFields withDiagnosticCode(String diagnosticCode) {
         setDiagnosticCode(diagnosticCode);
         return this;
@@ -461,6 +478,7 @@ public class RecipientDsnFields implements Serializable, Cloneable {
      *        href="https://www.ietf.org/rfc/rfc0822.txt">RFC 822</a> date-time
      *        format.
      */
+
     public void setLastAttemptDate(java.util.Date lastAttemptDate) {
         this.lastAttemptDate = lastAttemptDate;
     }
@@ -475,6 +493,7 @@ public class RecipientDsnFields implements Serializable, Cloneable {
      *         href="https://www.ietf.org/rfc/rfc0822.txt">RFC 822</a> date-time
      *         format.
      */
+
     public java.util.Date getLastAttemptDate() {
         return this.lastAttemptDate;
     }
@@ -492,6 +511,7 @@ public class RecipientDsnFields implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RecipientDsnFields withLastAttemptDate(java.util.Date lastAttemptDate) {
         setLastAttemptDate(lastAttemptDate);
         return this;
@@ -504,6 +524,7 @@ public class RecipientDsnFields implements Serializable, Cloneable {
      * 
      * @return Additional X-headers to include in the DSN.
      */
+
     public java.util.List<ExtensionField> getExtensionFields() {
         if (extensionFields == null) {
             extensionFields = new com.amazonaws.internal.SdkInternalList<ExtensionField>();
@@ -519,6 +540,7 @@ public class RecipientDsnFields implements Serializable, Cloneable {
      * @param extensionFields
      *        Additional X-headers to include in the DSN.
      */
+
     public void setExtensionFields(
             java.util.Collection<ExtensionField> extensionFields) {
         if (extensionFields == null) {
@@ -546,6 +568,7 @@ public class RecipientDsnFields implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RecipientDsnFields withExtensionFields(
             ExtensionField... extensionFields) {
         if (this.extensionFields == null) {
@@ -568,6 +591,7 @@ public class RecipientDsnFields implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RecipientDsnFields withExtensionFields(
             java.util.Collection<ExtensionField> extensionFields) {
         setExtensionFields(extensionFields);

@@ -53,6 +53,7 @@ public class EvaluationResultIdentifier implements Serializable, Cloneable {
      *        Identifies an AWS Config rule used to evaluate an AWS resource,
      *        and provides the type and ID of the evaluated resource.
      */
+
     public void setEvaluationResultQualifier(
             EvaluationResultQualifier evaluationResultQualifier) {
         this.evaluationResultQualifier = evaluationResultQualifier;
@@ -67,6 +68,7 @@ public class EvaluationResultIdentifier implements Serializable, Cloneable {
      * @return Identifies an AWS Config rule used to evaluate an AWS resource,
      *         and provides the type and ID of the evaluated resource.
      */
+
     public EvaluationResultQualifier getEvaluationResultQualifier() {
         return this.evaluationResultQualifier;
     }
@@ -83,6 +85,7 @@ public class EvaluationResultIdentifier implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EvaluationResultIdentifier withEvaluationResultQualifier(
             EvaluationResultQualifier evaluationResultQualifier) {
         setEvaluationResultQualifier(evaluationResultQualifier);
@@ -105,6 +108,7 @@ public class EvaluationResultIdentifier implements Serializable, Cloneable {
      *        AWS Config delivered the configuration snapshot, depending on
      *        which event triggered the evaluation.
      */
+
     public void setOrderingTimestamp(java.util.Date orderingTimestamp) {
         this.orderingTimestamp = orderingTimestamp;
     }
@@ -124,6 +128,7 @@ public class EvaluationResultIdentifier implements Serializable, Cloneable {
      *         AWS Config delivered the configuration snapshot, depending on
      *         which event triggered the evaluation.
      */
+
     public java.util.Date getOrderingTimestamp() {
         return this.orderingTimestamp;
     }
@@ -146,6 +151,7 @@ public class EvaluationResultIdentifier implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EvaluationResultIdentifier withOrderingTimestamp(
             java.util.Date orderingTimestamp) {
         setOrderingTimestamp(orderingTimestamp);

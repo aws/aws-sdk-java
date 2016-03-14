@@ -42,6 +42,7 @@ public class SubscribeResult implements Serializable, Cloneable {
      *        subscription immediately (without requiring endpoint owner
      *        confirmation).
      */
+
     public void setSubscriptionArn(String subscriptionArn) {
         this.subscriptionArn = subscriptionArn;
     }
@@ -56,6 +57,7 @@ public class SubscribeResult implements Serializable, Cloneable {
      *         subscription immediately (without requiring endpoint owner
      *         confirmation).
      */
+
     public String getSubscriptionArn() {
         return this.subscriptionArn;
     }
@@ -73,6 +75,7 @@ public class SubscribeResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SubscribeResult withSubscriptionArn(String subscriptionArn) {
         setSubscriptionArn(subscriptionArn);
         return this;

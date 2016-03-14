@@ -42,6 +42,7 @@ public class RejectCertificateTransferRequest extends AmazonWebServiceRequest
      * @param certificateId
      *        The ID of the certificate.
      */
+
     public void setCertificateId(String certificateId) {
         this.certificateId = certificateId;
     }
@@ -53,6 +54,7 @@ public class RejectCertificateTransferRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the certificate.
      */
+
     public String getCertificateId() {
         return this.certificateId;
     }
@@ -67,6 +69,7 @@ public class RejectCertificateTransferRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RejectCertificateTransferRequest withCertificateId(
             String certificateId) {
         setCertificateId(certificateId);

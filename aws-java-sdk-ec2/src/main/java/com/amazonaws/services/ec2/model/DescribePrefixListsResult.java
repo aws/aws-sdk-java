@@ -44,6 +44,7 @@ public class DescribePrefixListsResult implements Serializable, Cloneable {
      * 
      * @return All available prefix lists.
      */
+
     public java.util.List<PrefixList> getPrefixLists() {
         if (prefixLists == null) {
             prefixLists = new com.amazonaws.internal.SdkInternalList<PrefixList>();
@@ -59,6 +60,7 @@ public class DescribePrefixListsResult implements Serializable, Cloneable {
      * @param prefixLists
      *        All available prefix lists.
      */
+
     public void setPrefixLists(java.util.Collection<PrefixList> prefixLists) {
         if (prefixLists == null) {
             this.prefixLists = null;
@@ -85,6 +87,7 @@ public class DescribePrefixListsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribePrefixListsResult withPrefixLists(PrefixList... prefixLists) {
         if (this.prefixLists == null) {
             setPrefixLists(new com.amazonaws.internal.SdkInternalList<PrefixList>(
@@ -106,6 +109,7 @@ public class DescribePrefixListsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribePrefixListsResult withPrefixLists(
             java.util.Collection<PrefixList> prefixLists) {
         setPrefixLists(prefixLists);
@@ -122,6 +126,7 @@ public class DescribePrefixListsResult implements Serializable, Cloneable {
      *        The token to use when requesting the next set of items. If there
      *        are no additional items to return, the string is empty.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -135,6 +140,7 @@ public class DescribePrefixListsResult implements Serializable, Cloneable {
      * @return The token to use when requesting the next set of items. If there
      *         are no additional items to return, the string is empty.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -151,6 +157,7 @@ public class DescribePrefixListsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribePrefixListsResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

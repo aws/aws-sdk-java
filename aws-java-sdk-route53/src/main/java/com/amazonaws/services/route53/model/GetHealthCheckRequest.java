@@ -43,6 +43,7 @@ public class GetHealthCheckRequest extends AmazonWebServiceRequest implements
      * @param healthCheckId
      *        The ID of the health check to retrieve.
      */
+
     public void setHealthCheckId(String healthCheckId) {
         this.healthCheckId = healthCheckId;
     }
@@ -54,6 +55,7 @@ public class GetHealthCheckRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ID of the health check to retrieve.
      */
+
     public String getHealthCheckId() {
         return this.healthCheckId;
     }
@@ -68,6 +70,7 @@ public class GetHealthCheckRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetHealthCheckRequest withHealthCheckId(String healthCheckId) {
         setHealthCheckId(healthCheckId);
         return this;

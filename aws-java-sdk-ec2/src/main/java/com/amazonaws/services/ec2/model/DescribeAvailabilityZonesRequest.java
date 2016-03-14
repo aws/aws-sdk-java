@@ -74,6 +74,7 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest
      * 
      * @return The names of one or more Availability Zones.
      */
+
     public java.util.List<String> getZoneNames() {
         if (zoneNames == null) {
             zoneNames = new com.amazonaws.internal.SdkInternalList<String>();
@@ -89,6 +90,7 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest
      * @param zoneNames
      *        The names of one or more Availability Zones.
      */
+
     public void setZoneNames(java.util.Collection<String> zoneNames) {
         if (zoneNames == null) {
             this.zoneNames = null;
@@ -115,6 +117,7 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAvailabilityZonesRequest withZoneNames(String... zoneNames) {
         if (this.zoneNames == null) {
             setZoneNames(new com.amazonaws.internal.SdkInternalList<String>(
@@ -136,6 +139,7 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAvailabilityZonesRequest withZoneNames(
             java.util.Collection<String> zoneNames) {
         setZoneNames(zoneNames);
@@ -200,6 +204,7 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest
      *         </p>
      *         </li>
      */
+
     public java.util.List<Filter> getFilters() {
         if (filters == null) {
             filters = new com.amazonaws.internal.SdkInternalList<Filter>();
@@ -266,6 +271,7 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest
      *        </p>
      *        </li>
      */
+
     public void setFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
             this.filters = null;
@@ -343,6 +349,7 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAvailabilityZonesRequest withFilters(Filter... filters) {
         if (this.filters == null) {
             setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(
@@ -415,6 +422,7 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAvailabilityZonesRequest withFilters(
             java.util.Collection<Filter> filters) {
         setFilters(filters);

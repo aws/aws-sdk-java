@@ -59,6 +59,7 @@ public class DescribeLogGroupsRequest extends AmazonWebServiceRequest implements
      *        logGroupNamePrefix. If you don't specify a value, no prefix filter
      *        is applied.
      */
+
     public void setLogGroupNamePrefix(String logGroupNamePrefix) {
         this.logGroupNamePrefix = logGroupNamePrefix;
     }
@@ -73,6 +74,7 @@ public class DescribeLogGroupsRequest extends AmazonWebServiceRequest implements
      *         logGroupNamePrefix. If you don't specify a value, no prefix
      *         filter is applied.
      */
+
     public String getLogGroupNamePrefix() {
         return this.logGroupNamePrefix;
     }
@@ -90,6 +92,7 @@ public class DescribeLogGroupsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLogGroupsRequest withLogGroupNamePrefix(
             String logGroupNamePrefix) {
         setLogGroupNamePrefix(logGroupNamePrefix);
@@ -108,6 +111,7 @@ public class DescribeLogGroupsRequest extends AmazonWebServiceRequest implements
      *        results. It must be a value obtained from the response of the
      *        previous <code class="code">DescribeLogGroups</code> request.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -123,6 +127,7 @@ public class DescribeLogGroupsRequest extends AmazonWebServiceRequest implements
      *         of results. It must be a value obtained from the response of the
      *         previous <code class="code">DescribeLogGroups</code> request.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -141,6 +146,7 @@ public class DescribeLogGroupsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLogGroupsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -156,6 +162,7 @@ public class DescribeLogGroupsRequest extends AmazonWebServiceRequest implements
      *        The maximum number of items returned in the response. If you don't
      *        specify a value, the request would return up to 50 items.
      */
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -169,6 +176,7 @@ public class DescribeLogGroupsRequest extends AmazonWebServiceRequest implements
      * @return The maximum number of items returned in the response. If you
      *         don't specify a value, the request would return up to 50 items.
      */
+
     public Integer getLimit() {
         return this.limit;
     }
@@ -185,6 +193,7 @@ public class DescribeLogGroupsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLogGroupsRequest withLimit(Integer limit) {
         setLimit(limit);
         return this;

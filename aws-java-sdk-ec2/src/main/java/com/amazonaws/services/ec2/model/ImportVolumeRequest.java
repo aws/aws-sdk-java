@@ -60,6 +60,7 @@ public class ImportVolumeRequest extends AmazonWebServiceRequest implements
      * @param availabilityZone
      *        The Availability Zone for the resulting EBS volume.
      */
+
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
@@ -71,6 +72,7 @@ public class ImportVolumeRequest extends AmazonWebServiceRequest implements
      * 
      * @return The Availability Zone for the resulting EBS volume.
      */
+
     public String getAvailabilityZone() {
         return this.availabilityZone;
     }
@@ -85,6 +87,7 @@ public class ImportVolumeRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportVolumeRequest withAvailabilityZone(String availabilityZone) {
         setAvailabilityZone(availabilityZone);
         return this;
@@ -98,6 +101,7 @@ public class ImportVolumeRequest extends AmazonWebServiceRequest implements
      * @param image
      *        The disk image.
      */
+
     public void setImage(DiskImageDetail image) {
         this.image = image;
     }
@@ -109,6 +113,7 @@ public class ImportVolumeRequest extends AmazonWebServiceRequest implements
      * 
      * @return The disk image.
      */
+
     public DiskImageDetail getImage() {
         return this.image;
     }
@@ -123,6 +128,7 @@ public class ImportVolumeRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportVolumeRequest withImage(DiskImageDetail image) {
         setImage(image);
         return this;
@@ -136,6 +142,7 @@ public class ImportVolumeRequest extends AmazonWebServiceRequest implements
      * @param description
      *        A description of the volume.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -147,6 +154,7 @@ public class ImportVolumeRequest extends AmazonWebServiceRequest implements
      * 
      * @return A description of the volume.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -161,6 +169,7 @@ public class ImportVolumeRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportVolumeRequest withDescription(String description) {
         setDescription(description);
         return this;
@@ -174,6 +183,7 @@ public class ImportVolumeRequest extends AmazonWebServiceRequest implements
      * @param volume
      *        The volume size.
      */
+
     public void setVolume(VolumeDetail volume) {
         this.volume = volume;
     }
@@ -185,6 +195,7 @@ public class ImportVolumeRequest extends AmazonWebServiceRequest implements
      * 
      * @return The volume size.
      */
+
     public VolumeDetail getVolume() {
         return this.volume;
     }
@@ -199,6 +210,7 @@ public class ImportVolumeRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportVolumeRequest withVolume(VolumeDetail volume) {
         setVolume(volume);
         return this;

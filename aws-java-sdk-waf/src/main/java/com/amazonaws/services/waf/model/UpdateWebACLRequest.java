@@ -72,6 +72,7 @@ public class UpdateWebACLRequest extends AmazonWebServiceRequest implements
      *        update. <code>WebACLId</code> is returned by <a>CreateWebACL</a>
      *        and by <a>ListWebACLs</a>.
      */
+
     public void setWebACLId(String webACLId) {
         this.webACLId = webACLId;
     }
@@ -87,6 +88,7 @@ public class UpdateWebACLRequest extends AmazonWebServiceRequest implements
      *         update. <code>WebACLId</code> is returned by <a>CreateWebACL</a>
      *         and by <a>ListWebACLs</a>.
      */
+
     public String getWebACLId() {
         return this.webACLId;
     }
@@ -105,6 +107,7 @@ public class UpdateWebACLRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateWebACLRequest withWebACLId(String webACLId) {
         setWebACLId(webACLId);
         return this;
@@ -119,6 +122,7 @@ public class UpdateWebACLRequest extends AmazonWebServiceRequest implements
      *        The value returned by the most recent call to
      *        <a>GetChangeToken</a>.
      */
+
     public void setChangeToken(String changeToken) {
         this.changeToken = changeToken;
     }
@@ -131,6 +135,7 @@ public class UpdateWebACLRequest extends AmazonWebServiceRequest implements
      * @return The value returned by the most recent call to
      *         <a>GetChangeToken</a>.
      */
+
     public String getChangeToken() {
         return this.changeToken;
     }
@@ -146,6 +151,7 @@ public class UpdateWebACLRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateWebACLRequest withChangeToken(String changeToken) {
         setChangeToken(changeToken);
         return this;
@@ -181,6 +187,7 @@ public class UpdateWebACLRequest extends AmazonWebServiceRequest implements
      *         <code>Priority</code>, and <code>RuleId</code></li>
      *         <li><a>WafAction</a>: Contains <code>Type</code></li>
      */
+
     public java.util.List<WebACLUpdate> getUpdates() {
         return updates;
     }
@@ -216,6 +223,7 @@ public class UpdateWebACLRequest extends AmazonWebServiceRequest implements
      *        <code>Priority</code>, and <code>RuleId</code></li>
      *        <li><a>WafAction</a>: Contains <code>Type</code></li>
      */
+
     public void setUpdates(java.util.Collection<WebACLUpdate> updates) {
         if (updates == null) {
             this.updates = null;
@@ -264,6 +272,7 @@ public class UpdateWebACLRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateWebACLRequest withUpdates(WebACLUpdate... updates) {
         if (this.updates == null) {
             setUpdates(new java.util.ArrayList<WebACLUpdate>(updates.length));
@@ -307,6 +316,7 @@ public class UpdateWebACLRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateWebACLRequest withUpdates(
             java.util.Collection<WebACLUpdate> updates) {
         setUpdates(updates);
@@ -316,6 +326,7 @@ public class UpdateWebACLRequest extends AmazonWebServiceRequest implements
     /**
      * @param defaultAction
      */
+
     public void setDefaultAction(WafAction defaultAction) {
         this.defaultAction = defaultAction;
     }
@@ -323,6 +334,7 @@ public class UpdateWebACLRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public WafAction getDefaultAction() {
         return this.defaultAction;
     }
@@ -332,6 +344,7 @@ public class UpdateWebACLRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateWebACLRequest withDefaultAction(WafAction defaultAction) {
         setDefaultAction(defaultAction);
         return this;

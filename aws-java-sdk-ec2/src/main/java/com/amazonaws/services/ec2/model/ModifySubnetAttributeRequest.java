@@ -50,6 +50,7 @@ public class ModifySubnetAttributeRequest extends AmazonWebServiceRequest
      * @param subnetId
      *        The ID of the subnet.
      */
+
     public void setSubnetId(String subnetId) {
         this.subnetId = subnetId;
     }
@@ -61,6 +62,7 @@ public class ModifySubnetAttributeRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the subnet.
      */
+
     public String getSubnetId() {
         return this.subnetId;
     }
@@ -75,6 +77,7 @@ public class ModifySubnetAttributeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifySubnetAttributeRequest withSubnetId(String subnetId) {
         setSubnetId(subnetId);
         return this;
@@ -90,6 +93,7 @@ public class ModifySubnetAttributeRequest extends AmazonWebServiceRequest
      *        Specify <code>true</code> to indicate that instances launched into
      *        the specified subnet should be assigned public IP address.
      */
+
     public void setMapPublicIpOnLaunch(Boolean mapPublicIpOnLaunch) {
         this.mapPublicIpOnLaunch = mapPublicIpOnLaunch;
     }
@@ -103,6 +107,7 @@ public class ModifySubnetAttributeRequest extends AmazonWebServiceRequest
      * @return Specify <code>true</code> to indicate that instances launched
      *         into the specified subnet should be assigned public IP address.
      */
+
     public Boolean getMapPublicIpOnLaunch() {
         return this.mapPublicIpOnLaunch;
     }
@@ -119,6 +124,7 @@ public class ModifySubnetAttributeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifySubnetAttributeRequest withMapPublicIpOnLaunch(
             Boolean mapPublicIpOnLaunch) {
         setMapPublicIpOnLaunch(mapPublicIpOnLaunch);
@@ -134,6 +140,7 @@ public class ModifySubnetAttributeRequest extends AmazonWebServiceRequest
      * @return Specify <code>true</code> to indicate that instances launched
      *         into the specified subnet should be assigned public IP address.
      */
+
     public Boolean isMapPublicIpOnLaunch() {
         return this.mapPublicIpOnLaunch;
     }

@@ -46,6 +46,7 @@ public class GrantAccessResult implements Serializable, Cloneable {
      *        needed to log in to the instance by RDP clients, such as the
      *        Microsoft Remote Desktop Connection.
      */
+
     public void setTemporaryCredential(TemporaryCredential temporaryCredential) {
         this.temporaryCredential = temporaryCredential;
     }
@@ -61,6 +62,7 @@ public class GrantAccessResult implements Serializable, Cloneable {
      *         needed to log in to the instance by RDP clients, such as the
      *         Microsoft Remote Desktop Connection.
      */
+
     public TemporaryCredential getTemporaryCredential() {
         return this.temporaryCredential;
     }
@@ -79,6 +81,7 @@ public class GrantAccessResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GrantAccessResult withTemporaryCredential(
             TemporaryCredential temporaryCredential) {
         setTemporaryCredential(temporaryCredential);

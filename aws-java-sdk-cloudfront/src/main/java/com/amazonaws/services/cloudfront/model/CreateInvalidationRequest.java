@@ -60,6 +60,7 @@ public class CreateInvalidationRequest extends AmazonWebServiceRequest
      * @param distributionId
      *        The distribution's id.
      */
+
     public void setDistributionId(String distributionId) {
         this.distributionId = distributionId;
     }
@@ -69,6 +70,7 @@ public class CreateInvalidationRequest extends AmazonWebServiceRequest
      * 
      * @return The distribution's id.
      */
+
     public String getDistributionId() {
         return this.distributionId;
     }
@@ -81,6 +83,7 @@ public class CreateInvalidationRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateInvalidationRequest withDistributionId(String distributionId) {
         setDistributionId(distributionId);
         return this;
@@ -92,6 +95,7 @@ public class CreateInvalidationRequest extends AmazonWebServiceRequest
      * @param invalidationBatch
      *        The batch information for the invalidation.
      */
+
     public void setInvalidationBatch(InvalidationBatch invalidationBatch) {
         this.invalidationBatch = invalidationBatch;
     }
@@ -101,6 +105,7 @@ public class CreateInvalidationRequest extends AmazonWebServiceRequest
      * 
      * @return The batch information for the invalidation.
      */
+
     public InvalidationBatch getInvalidationBatch() {
         return this.invalidationBatch;
     }
@@ -113,6 +118,7 @@ public class CreateInvalidationRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateInvalidationRequest withInvalidationBatch(
             InvalidationBatch invalidationBatch) {
         setInvalidationBatch(invalidationBatch);

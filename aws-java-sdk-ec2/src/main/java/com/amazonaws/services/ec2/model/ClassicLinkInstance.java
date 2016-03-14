@@ -58,6 +58,7 @@ public class ClassicLinkInstance implements Serializable, Cloneable {
      * @param instanceId
      *        The ID of the instance.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -69,6 +70,7 @@ public class ClassicLinkInstance implements Serializable, Cloneable {
      * 
      * @return The ID of the instance.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
@@ -83,6 +85,7 @@ public class ClassicLinkInstance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ClassicLinkInstance withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;
@@ -96,6 +99,7 @@ public class ClassicLinkInstance implements Serializable, Cloneable {
      * @param vpcId
      *        The ID of the VPC.
      */
+
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
@@ -107,6 +111,7 @@ public class ClassicLinkInstance implements Serializable, Cloneable {
      * 
      * @return The ID of the VPC.
      */
+
     public String getVpcId() {
         return this.vpcId;
     }
@@ -121,6 +126,7 @@ public class ClassicLinkInstance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ClassicLinkInstance withVpcId(String vpcId) {
         setVpcId(vpcId);
         return this;
@@ -133,6 +139,7 @@ public class ClassicLinkInstance implements Serializable, Cloneable {
      * 
      * @return A list of security groups.
      */
+
     public java.util.List<GroupIdentifier> getGroups() {
         if (groups == null) {
             groups = new com.amazonaws.internal.SdkInternalList<GroupIdentifier>();
@@ -148,6 +155,7 @@ public class ClassicLinkInstance implements Serializable, Cloneable {
      * @param groups
      *        A list of security groups.
      */
+
     public void setGroups(java.util.Collection<GroupIdentifier> groups) {
         if (groups == null) {
             this.groups = null;
@@ -174,6 +182,7 @@ public class ClassicLinkInstance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ClassicLinkInstance withGroups(GroupIdentifier... groups) {
         if (this.groups == null) {
             setGroups(new com.amazonaws.internal.SdkInternalList<GroupIdentifier>(
@@ -195,6 +204,7 @@ public class ClassicLinkInstance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ClassicLinkInstance withGroups(
             java.util.Collection<GroupIdentifier> groups) {
         setGroups(groups);
@@ -208,6 +218,7 @@ public class ClassicLinkInstance implements Serializable, Cloneable {
      * 
      * @return Any tags assigned to the instance.
      */
+
     public java.util.List<Tag> getTags() {
         if (tags == null) {
             tags = new com.amazonaws.internal.SdkInternalList<Tag>();
@@ -223,6 +234,7 @@ public class ClassicLinkInstance implements Serializable, Cloneable {
      * @param tags
      *        Any tags assigned to the instance.
      */
+
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
             this.tags = null;
@@ -248,6 +260,7 @@ public class ClassicLinkInstance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ClassicLinkInstance withTags(Tag... tags) {
         if (this.tags == null) {
             setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
@@ -268,6 +281,7 @@ public class ClassicLinkInstance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ClassicLinkInstance withTags(java.util.Collection<Tag> tags) {
         setTags(tags);
         return this;

@@ -52,6 +52,7 @@ public class GetUserPolicyResult implements Serializable, Cloneable {
      * @param userName
      *        The user the policy is associated with.
      */
+
     public void setUserName(String userName) {
         this.userName = userName;
     }
@@ -63,6 +64,7 @@ public class GetUserPolicyResult implements Serializable, Cloneable {
      * 
      * @return The user the policy is associated with.
      */
+
     public String getUserName() {
         return this.userName;
     }
@@ -77,6 +79,7 @@ public class GetUserPolicyResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetUserPolicyResult withUserName(String userName) {
         setUserName(userName);
         return this;
@@ -90,6 +93,7 @@ public class GetUserPolicyResult implements Serializable, Cloneable {
      * @param policyName
      *        The name of the policy.
      */
+
     public void setPolicyName(String policyName) {
         this.policyName = policyName;
     }
@@ -101,6 +105,7 @@ public class GetUserPolicyResult implements Serializable, Cloneable {
      * 
      * @return The name of the policy.
      */
+
     public String getPolicyName() {
         return this.policyName;
     }
@@ -115,6 +120,7 @@ public class GetUserPolicyResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetUserPolicyResult withPolicyName(String policyName) {
         setPolicyName(policyName);
         return this;
@@ -128,6 +134,7 @@ public class GetUserPolicyResult implements Serializable, Cloneable {
      * @param policyDocument
      *        The policy document.
      */
+
     public void setPolicyDocument(String policyDocument) {
         this.policyDocument = policyDocument;
     }
@@ -139,6 +146,7 @@ public class GetUserPolicyResult implements Serializable, Cloneable {
      * 
      * @return The policy document.
      */
+
     public String getPolicyDocument() {
         return this.policyDocument;
     }
@@ -153,6 +161,7 @@ public class GetUserPolicyResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetUserPolicyResult withPolicyDocument(String policyDocument) {
         setPolicyDocument(policyDocument);
         return this;

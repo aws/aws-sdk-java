@@ -83,6 +83,7 @@ public class PutRecordRequest extends AmazonWebServiceRequest implements
      * @param streamName
      *        The name of the stream to put the data record into.
      */
+
     public void setStreamName(String streamName) {
         this.streamName = streamName;
     }
@@ -94,6 +95,7 @@ public class PutRecordRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the stream to put the data record into.
      */
+
     public String getStreamName() {
         return this.streamName;
     }
@@ -108,6 +110,7 @@ public class PutRecordRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutRecordRequest withStreamName(String streamName) {
         setStreamName(streamName);
         return this;
@@ -132,6 +135,7 @@ public class PutRecordRequest extends AmazonWebServiceRequest implements
      *        base64-encoding) is added to the partition key size, the total
      *        size must not exceed the maximum record size (1 MB).
      */
+
     public void setData(java.nio.ByteBuffer data) {
         this.data = data;
     }
@@ -159,6 +163,7 @@ public class PutRecordRequest extends AmazonWebServiceRequest implements
      *         before base64-encoding) is added to the partition key size, the
      *         total size must not exceed the maximum record size (1 MB).
      */
+
     public java.nio.ByteBuffer getData() {
         return this.data;
     }
@@ -179,6 +184,7 @@ public class PutRecordRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutRecordRequest withData(java.nio.ByteBuffer data) {
         setData(data);
         return this;
@@ -208,6 +214,7 @@ public class PutRecordRequest extends AmazonWebServiceRequest implements
      *        hashing mechanism, all data records with the same partition key
      *        will map to the same shard within the stream.
      */
+
     public void setPartitionKey(String partitionKey) {
         this.partitionKey = partitionKey;
     }
@@ -235,6 +242,7 @@ public class PutRecordRequest extends AmazonWebServiceRequest implements
      *         of this hashing mechanism, all data records with the same
      *         partition key will map to the same shard within the stream.
      */
+
     public String getPartitionKey() {
         return this.partitionKey;
     }
@@ -265,6 +273,7 @@ public class PutRecordRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutRecordRequest withPartitionKey(String partitionKey) {
         setPartitionKey(partitionKey);
         return this;
@@ -280,6 +289,7 @@ public class PutRecordRequest extends AmazonWebServiceRequest implements
      *        The hash value used to explicitly determine the shard the data
      *        record is assigned to by overriding the partition key hash.
      */
+
     public void setExplicitHashKey(String explicitHashKey) {
         this.explicitHashKey = explicitHashKey;
     }
@@ -293,6 +303,7 @@ public class PutRecordRequest extends AmazonWebServiceRequest implements
      * @return The hash value used to explicitly determine the shard the data
      *         record is assigned to by overriding the partition key hash.
      */
+
     public String getExplicitHashKey() {
         return this.explicitHashKey;
     }
@@ -309,6 +320,7 @@ public class PutRecordRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutRecordRequest withExplicitHashKey(String explicitHashKey) {
         setExplicitHashKey(explicitHashKey);
         return this;
@@ -332,6 +344,7 @@ public class PutRecordRequest extends AmazonWebServiceRequest implements
      *        when putting record <i>n-1</i>). If this parameter is not set,
      *        records will be coarsely ordered based on arrival time.
      */
+
     public void setSequenceNumberForOrdering(String sequenceNumberForOrdering) {
         this.sequenceNumberForOrdering = sequenceNumberForOrdering;
     }
@@ -353,6 +366,7 @@ public class PutRecordRequest extends AmazonWebServiceRequest implements
      *         when putting record <i>n-1</i>). If this parameter is not set,
      *         records will be coarsely ordered based on arrival time.
      */
+
     public String getSequenceNumberForOrdering() {
         return this.sequenceNumberForOrdering;
     }
@@ -377,6 +391,7 @@ public class PutRecordRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutRecordRequest withSequenceNumberForOrdering(
             String sequenceNumberForOrdering) {
         setSequenceNumberForOrdering(sequenceNumberForOrdering);

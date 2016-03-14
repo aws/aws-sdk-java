@@ -89,6 +89,7 @@ public class DescribeConfigurationSettingsRequest extends
      * @param applicationName
      *        The application for the environment or configuration template.
      */
+
     public void setApplicationName(String applicationName) {
         this.applicationName = applicationName;
     }
@@ -100,6 +101,7 @@ public class DescribeConfigurationSettingsRequest extends
      * 
      * @return The application for the environment or configuration template.
      */
+
     public String getApplicationName() {
         return this.applicationName;
     }
@@ -114,6 +116,7 @@ public class DescribeConfigurationSettingsRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeConfigurationSettingsRequest withApplicationName(
             String applicationName) {
         setApplicationName(applicationName);
@@ -141,6 +144,7 @@ public class DescribeConfigurationSettingsRequest extends
      *        error. If you do not specify either, AWS Elastic Beanstalk returns
      *        a <code>MissingRequiredParameter</code> error.
      */
+
     public void setTemplateName(String templateName) {
         this.templateName = templateName;
     }
@@ -165,6 +169,7 @@ public class DescribeConfigurationSettingsRequest extends
      *         error. If you do not specify either, AWS Elastic Beanstalk
      *         returns a <code>MissingRequiredParameter</code> error.
      */
+
     public String getTemplateName() {
         return this.templateName;
     }
@@ -192,6 +197,7 @@ public class DescribeConfigurationSettingsRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeConfigurationSettingsRequest withTemplateName(
             String templateName) {
         setTemplateName(templateName);
@@ -219,6 +225,7 @@ public class DescribeConfigurationSettingsRequest extends
      *        specify either, AWS Elastic Beanstalk returns
      *        <code>MissingRequiredParameter</code> error.
      */
+
     public void setEnvironmentName(String environmentName) {
         this.environmentName = environmentName;
     }
@@ -243,6 +250,7 @@ public class DescribeConfigurationSettingsRequest extends
      *         specify either, AWS Elastic Beanstalk returns
      *         <code>MissingRequiredParameter</code> error.
      */
+
     public String getEnvironmentName() {
         return this.environmentName;
     }
@@ -270,6 +278,7 @@ public class DescribeConfigurationSettingsRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeConfigurationSettingsRequest withEnvironmentName(
             String environmentName) {
         setEnvironmentName(environmentName);

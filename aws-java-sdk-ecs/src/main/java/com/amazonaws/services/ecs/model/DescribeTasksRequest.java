@@ -53,6 +53,7 @@ public class DescribeTasksRequest extends AmazonWebServiceRequest implements
      *        that hosts the task to describe. If you do not specify a cluster,
      *        the default cluster is assumed.
      */
+
     public void setCluster(String cluster) {
         this.cluster = cluster;
     }
@@ -68,6 +69,7 @@ public class DescribeTasksRequest extends AmazonWebServiceRequest implements
      *         that hosts the task to describe. If you do not specify a cluster,
      *         the default cluster is assumed.
      */
+
     public String getCluster() {
         return this.cluster;
     }
@@ -86,6 +88,7 @@ public class DescribeTasksRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTasksRequest withCluster(String cluster) {
         setCluster(cluster);
         return this;
@@ -100,6 +103,7 @@ public class DescribeTasksRequest extends AmazonWebServiceRequest implements
      * @return A space-separated list of task IDs or full Amazon Resource Name
      *         (ARN) entries.
      */
+
     public java.util.List<String> getTasks() {
         if (tasks == null) {
             tasks = new com.amazonaws.internal.SdkInternalList<String>();
@@ -117,6 +121,7 @@ public class DescribeTasksRequest extends AmazonWebServiceRequest implements
      *        A space-separated list of task IDs or full Amazon Resource Name
      *        (ARN) entries.
      */
+
     public void setTasks(java.util.Collection<String> tasks) {
         if (tasks == null) {
             this.tasks = null;
@@ -144,6 +149,7 @@ public class DescribeTasksRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTasksRequest withTasks(String... tasks) {
         if (this.tasks == null) {
             setTasks(new com.amazonaws.internal.SdkInternalList<String>(
@@ -167,6 +173,7 @@ public class DescribeTasksRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTasksRequest withTasks(java.util.Collection<String> tasks) {
         setTasks(tasks);
         return this;

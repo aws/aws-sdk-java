@@ -128,6 +128,7 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements
      * @param queueUrl
      *        The URL of the Amazon SQS queue to take action on.
      */
+
     public void setQueueUrl(String queueUrl) {
         this.queueUrl = queueUrl;
     }
@@ -139,6 +140,7 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements
      * 
      * @return The URL of the Amazon SQS queue to take action on.
      */
+
     public String getQueueUrl() {
         return this.queueUrl;
     }
@@ -153,6 +155,7 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReceiveMessageRequest withQueueUrl(String queueUrl) {
         setQueueUrl(queueUrl);
         return this;
@@ -199,6 +202,7 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements
      *         message was sent to the queue (epoch time in milliseconds).</li>
      * @see QueueAttributeName
      */
+
     public java.util.List<String> getAttributeNames() {
         if (attributeNames == null) {
             attributeNames = new com.amazonaws.internal.SdkInternalList<String>();
@@ -247,6 +251,7 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements
      *        was sent to the queue (epoch time in milliseconds).</li>
      * @see QueueAttributeName
      */
+
     public void setAttributeNames(java.util.Collection<String> attributeNames) {
         if (attributeNames == null) {
             this.attributeNames = null;
@@ -306,6 +311,7 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see QueueAttributeName
      */
+
     public ReceiveMessageRequest withAttributeNames(String... attributeNames) {
         if (this.attributeNames == null) {
             setAttributeNames(new com.amazonaws.internal.SdkInternalList<String>(
@@ -360,6 +366,7 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see QueueAttributeName
      */
+
     public ReceiveMessageRequest withAttributeNames(
             java.util.Collection<String> attributeNames) {
         setAttributeNames(attributeNames);
@@ -409,6 +416,7 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see QueueAttributeName
      */
+
     public ReceiveMessageRequest withAttributeNames(
             QueueAttributeName... attributeNames) {
         com.amazonaws.internal.SdkInternalList<String> attributeNamesCopy = new com.amazonaws.internal.SdkInternalList<String>(
@@ -458,6 +466,7 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements
      *         also use "foo.*" to return all message attributes starting with
      *         the "foo" prefix.
      */
+
     public java.util.List<String> getMessageAttributeNames() {
         if (messageAttributeNames == null) {
             messageAttributeNames = new com.amazonaws.internal.SdkInternalList<String>();
@@ -500,6 +509,7 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements
      *        also use "foo.*" to return all message attributes starting with
      *        the "foo" prefix.
      */
+
     public void setMessageAttributeNames(
             java.util.Collection<String> messageAttributeNames) {
         if (messageAttributeNames == null) {
@@ -554,6 +564,7 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReceiveMessageRequest withMessageAttributeNames(
             String... messageAttributeNames) {
         if (this.messageAttributeNames == null) {
@@ -603,6 +614,7 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReceiveMessageRequest withMessageAttributeNames(
             java.util.Collection<String> messageAttributeNames) {
         setMessageAttributeNames(messageAttributeNames);
@@ -626,6 +638,7 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        All of the messages are not necessarily returned.
      */
+
     public void setMaxNumberOfMessages(Integer maxNumberOfMessages) {
         this.maxNumberOfMessages = maxNumberOfMessages;
     }
@@ -646,6 +659,7 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         All of the messages are not necessarily returned.
      */
+
     public Integer getMaxNumberOfMessages() {
         return this.maxNumberOfMessages;
     }
@@ -669,6 +683,7 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReceiveMessageRequest withMaxNumberOfMessages(
             Integer maxNumberOfMessages) {
         setMaxNumberOfMessages(maxNumberOfMessages);
@@ -687,6 +702,7 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements
      *        from subsequent retrieve requests after being retrieved by a
      *        <code>ReceiveMessage</code> request.
      */
+
     public void setVisibilityTimeout(Integer visibilityTimeout) {
         this.visibilityTimeout = visibilityTimeout;
     }
@@ -702,6 +718,7 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements
      *         from subsequent retrieve requests after being retrieved by a
      *         <code>ReceiveMessage</code> request.
      */
+
     public Integer getVisibilityTimeout() {
         return this.visibilityTimeout;
     }
@@ -720,6 +737,7 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReceiveMessageRequest withVisibilityTimeout(Integer visibilityTimeout) {
         setVisibilityTimeout(visibilityTimeout);
         return this;
@@ -737,6 +755,7 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements
      *        message to arrive in the queue before returning. If a message is
      *        available, the call will return sooner than WaitTimeSeconds.
      */
+
     public void setWaitTimeSeconds(Integer waitTimeSeconds) {
         this.waitTimeSeconds = waitTimeSeconds;
     }
@@ -752,6 +771,7 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements
      *         message to arrive in the queue before returning. If a message is
      *         available, the call will return sooner than WaitTimeSeconds.
      */
+
     public Integer getWaitTimeSeconds() {
         return this.waitTimeSeconds;
     }
@@ -770,6 +790,7 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReceiveMessageRequest withWaitTimeSeconds(Integer waitTimeSeconds) {
         setWaitTimeSeconds(waitTimeSeconds);
         return this;

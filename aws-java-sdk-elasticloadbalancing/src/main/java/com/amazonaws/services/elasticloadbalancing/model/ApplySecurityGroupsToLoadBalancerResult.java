@@ -38,6 +38,7 @@ public class ApplySecurityGroupsToLoadBalancerResult implements Serializable,
      * 
      * @return The IDs of the security groups associated with the load balancer.
      */
+
     public java.util.List<String> getSecurityGroups() {
         if (securityGroups == null) {
             securityGroups = new com.amazonaws.internal.SdkInternalList<String>();
@@ -53,6 +54,7 @@ public class ApplySecurityGroupsToLoadBalancerResult implements Serializable,
      * @param securityGroups
      *        The IDs of the security groups associated with the load balancer.
      */
+
     public void setSecurityGroups(java.util.Collection<String> securityGroups) {
         if (securityGroups == null) {
             this.securityGroups = null;
@@ -79,6 +81,7 @@ public class ApplySecurityGroupsToLoadBalancerResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ApplySecurityGroupsToLoadBalancerResult withSecurityGroups(
             String... securityGroups) {
         if (this.securityGroups == null) {
@@ -101,6 +104,7 @@ public class ApplySecurityGroupsToLoadBalancerResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ApplySecurityGroupsToLoadBalancerResult withSecurityGroups(
             java.util.Collection<String> securityGroups) {
         setSecurityGroups(securityGroups);

@@ -51,6 +51,7 @@ public class ListDeploymentConfigsResult implements Serializable, Cloneable {
      * @return A list of deployment configurations, including the built-in
      *         configurations such as CodeDeployDefault.OneAtATime.
      */
+
     public java.util.List<String> getDeploymentConfigsList() {
         if (deploymentConfigsList == null) {
             deploymentConfigsList = new com.amazonaws.internal.SdkInternalList<String>();
@@ -68,6 +69,7 @@ public class ListDeploymentConfigsResult implements Serializable, Cloneable {
      *        A list of deployment configurations, including the built-in
      *        configurations such as CodeDeployDefault.OneAtATime.
      */
+
     public void setDeploymentConfigsList(
             java.util.Collection<String> deploymentConfigsList) {
         if (deploymentConfigsList == null) {
@@ -97,6 +99,7 @@ public class ListDeploymentConfigsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListDeploymentConfigsResult withDeploymentConfigsList(
             String... deploymentConfigsList) {
         if (this.deploymentConfigsList == null) {
@@ -121,6 +124,7 @@ public class ListDeploymentConfigsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListDeploymentConfigsResult withDeploymentConfigsList(
             java.util.Collection<String> deploymentConfigsList) {
         setDeploymentConfigsList(deploymentConfigsList);
@@ -141,6 +145,7 @@ public class ListDeploymentConfigsResult implements Serializable, Cloneable {
      *        subsequent list deployment configurations call to return the next
      *        set of deployment configurations in the list.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -158,6 +163,7 @@ public class ListDeploymentConfigsResult implements Serializable, Cloneable {
      *         a subsequent list deployment configurations call to return the
      *         next set of deployment configurations in the list.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -178,6 +184,7 @@ public class ListDeploymentConfigsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListDeploymentConfigsResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

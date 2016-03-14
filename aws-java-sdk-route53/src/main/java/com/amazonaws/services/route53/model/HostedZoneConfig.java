@@ -51,6 +51,7 @@ public class HostedZoneConfig implements Serializable, Cloneable {
      *        specify a comment, you can omit the <code>HostedZoneConfig</code>
      *        and <code>Comment</code> elements from the XML document.
      */
+
     public void setComment(String comment) {
         this.comment = comment;
     }
@@ -66,6 +67,7 @@ public class HostedZoneConfig implements Serializable, Cloneable {
      *         specify a comment, you can omit the <code>HostedZoneConfig</code>
      *         and <code>Comment</code> elements from the XML document.
      */
+
     public String getComment() {
         return this.comment;
     }
@@ -84,6 +86,7 @@ public class HostedZoneConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HostedZoneConfig withComment(String comment) {
         setComment(comment);
         return this;
@@ -92,6 +95,7 @@ public class HostedZoneConfig implements Serializable, Cloneable {
     /**
      * @param privateZone
      */
+
     public void setPrivateZone(Boolean privateZone) {
         this.privateZone = privateZone;
     }
@@ -99,6 +103,7 @@ public class HostedZoneConfig implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Boolean getPrivateZone() {
         return this.privateZone;
     }
@@ -108,6 +113,7 @@ public class HostedZoneConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HostedZoneConfig withPrivateZone(Boolean privateZone) {
         setPrivateZone(privateZone);
         return this;
@@ -116,6 +122,7 @@ public class HostedZoneConfig implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Boolean isPrivateZone() {
         return this.privateZone;
     }

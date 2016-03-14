@@ -49,6 +49,7 @@ public class UpdateBandwidthRateLimitRequest extends AmazonWebServiceRequest
     /**
      * @param gatewayARN
      */
+
     public void setGatewayARN(String gatewayARN) {
         this.gatewayARN = gatewayARN;
     }
@@ -56,6 +57,7 @@ public class UpdateBandwidthRateLimitRequest extends AmazonWebServiceRequest
     /**
      * @return
      */
+
     public String getGatewayARN() {
         return this.gatewayARN;
     }
@@ -65,6 +67,7 @@ public class UpdateBandwidthRateLimitRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateBandwidthRateLimitRequest withGatewayARN(String gatewayARN) {
         setGatewayARN(gatewayARN);
         return this;
@@ -78,6 +81,7 @@ public class UpdateBandwidthRateLimitRequest extends AmazonWebServiceRequest
      * @param averageUploadRateLimitInBitsPerSec
      *        The average upload bandwidth rate limit in bits per second.
      */
+
     public void setAverageUploadRateLimitInBitsPerSec(
             Long averageUploadRateLimitInBitsPerSec) {
         this.averageUploadRateLimitInBitsPerSec = averageUploadRateLimitInBitsPerSec;
@@ -90,6 +94,7 @@ public class UpdateBandwidthRateLimitRequest extends AmazonWebServiceRequest
      * 
      * @return The average upload bandwidth rate limit in bits per second.
      */
+
     public Long getAverageUploadRateLimitInBitsPerSec() {
         return this.averageUploadRateLimitInBitsPerSec;
     }
@@ -104,6 +109,7 @@ public class UpdateBandwidthRateLimitRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateBandwidthRateLimitRequest withAverageUploadRateLimitInBitsPerSec(
             Long averageUploadRateLimitInBitsPerSec) {
         setAverageUploadRateLimitInBitsPerSec(averageUploadRateLimitInBitsPerSec);
@@ -118,6 +124,7 @@ public class UpdateBandwidthRateLimitRequest extends AmazonWebServiceRequest
      * @param averageDownloadRateLimitInBitsPerSec
      *        The average download bandwidth rate limit in bits per second.
      */
+
     public void setAverageDownloadRateLimitInBitsPerSec(
             Long averageDownloadRateLimitInBitsPerSec) {
         this.averageDownloadRateLimitInBitsPerSec = averageDownloadRateLimitInBitsPerSec;
@@ -130,6 +137,7 @@ public class UpdateBandwidthRateLimitRequest extends AmazonWebServiceRequest
      * 
      * @return The average download bandwidth rate limit in bits per second.
      */
+
     public Long getAverageDownloadRateLimitInBitsPerSec() {
         return this.averageDownloadRateLimitInBitsPerSec;
     }
@@ -144,6 +152,7 @@ public class UpdateBandwidthRateLimitRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateBandwidthRateLimitRequest withAverageDownloadRateLimitInBitsPerSec(
             Long averageDownloadRateLimitInBitsPerSec) {
         setAverageDownloadRateLimitInBitsPerSec(averageDownloadRateLimitInBitsPerSec);

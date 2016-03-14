@@ -123,6 +123,7 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements
      * @param sourceRegion
      *        The ID of the region that contains the snapshot to be copied.
      */
+
     public void setSourceRegion(String sourceRegion) {
         this.sourceRegion = sourceRegion;
     }
@@ -134,6 +135,7 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ID of the region that contains the snapshot to be copied.
      */
+
     public String getSourceRegion() {
         return this.sourceRegion;
     }
@@ -148,6 +150,7 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CopySnapshotRequest withSourceRegion(String sourceRegion) {
         setSourceRegion(sourceRegion);
         return this;
@@ -161,6 +164,7 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements
      * @param sourceSnapshotId
      *        The ID of the EBS snapshot to copy.
      */
+
     public void setSourceSnapshotId(String sourceSnapshotId) {
         this.sourceSnapshotId = sourceSnapshotId;
     }
@@ -172,6 +176,7 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ID of the EBS snapshot to copy.
      */
+
     public String getSourceSnapshotId() {
         return this.sourceSnapshotId;
     }
@@ -186,6 +191,7 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CopySnapshotRequest withSourceSnapshotId(String sourceSnapshotId) {
         setSourceSnapshotId(sourceSnapshotId);
         return this;
@@ -199,6 +205,7 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements
      * @param description
      *        A description for the EBS snapshot.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -210,6 +217,7 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements
      * 
      * @return A description for the EBS snapshot.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -224,6 +232,7 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CopySnapshotRequest withDescription(String description) {
         setDescription(description);
         return this;
@@ -260,6 +269,7 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements
      *        region in your AWS configuration file).
      *        </p>
      */
+
     public void setDestinationRegion(String destinationRegion) {
         this.destinationRegion = destinationRegion;
     }
@@ -294,6 +304,7 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements
      *         region in your AWS configuration file).
      *         </p>
      */
+
     public String getDestinationRegion() {
         return this.destinationRegion;
     }
@@ -331,6 +342,7 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CopySnapshotRequest withDestinationRegion(String destinationRegion) {
         setDestinationRegion(destinationRegion);
         return this;
@@ -376,6 +388,7 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements
      *        asynchronously, and the snapshot will move to an
      *        <code>error</code> state.
      */
+
     public void setPresignedUrl(String presignedUrl) {
         this.presignedUrl = presignedUrl;
     }
@@ -420,6 +433,7 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements
      *         asynchronously, and the snapshot will move to an
      *         <code>error</code> state.
      */
+
     public String getPresignedUrl() {
         return this.presignedUrl;
     }
@@ -466,6 +480,7 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CopySnapshotRequest withPresignedUrl(String presignedUrl) {
         setPresignedUrl(presignedUrl);
         return this;
@@ -496,6 +511,7 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements
      *        >Amazon EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud
      *        User Guide</i>.
      */
+
     public void setEncrypted(Boolean encrypted) {
         this.encrypted = encrypted;
     }
@@ -524,6 +540,7 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements
      *         >Amazon EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud
      *         User Guide</i>.
      */
+
     public Boolean getEncrypted() {
         return this.encrypted;
     }
@@ -555,6 +572,7 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CopySnapshotRequest withEncrypted(Boolean encrypted) {
         setEncrypted(encrypted);
         return this;
@@ -584,6 +602,7 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements
      *         >Amazon EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud
      *         User Guide</i>.
      */
+
     public Boolean isEncrypted() {
         return this.encrypted;
     }
@@ -618,6 +637,7 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements
      *        <code>KmsKeyId</code> is specified, the <code>Encrypted</code>
      *        flag must also be set.
      */
+
     public void setKmsKeyId(String kmsKeyId) {
         this.kmsKeyId = kmsKeyId;
     }
@@ -650,6 +670,7 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements
      *         <code>KmsKeyId</code> is specified, the <code>Encrypted</code>
      *         flag must also be set.
      */
+
     public String getKmsKeyId() {
         return this.kmsKeyId;
     }
@@ -686,6 +707,7 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CopySnapshotRequest withKmsKeyId(String kmsKeyId) {
         setKmsKeyId(kmsKeyId);
         return this;

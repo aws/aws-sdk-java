@@ -68,6 +68,7 @@ public class ListIPSetsRequest extends AmazonWebServiceRequest implements
      *        the value of <code>NextMarker</code> from the previous response to
      *        get information about another batch of <code>ByteMatchSets</code>.
      */
+
     public void setNextMarker(String nextMarker) {
         this.nextMarker = nextMarker;
     }
@@ -92,6 +93,7 @@ public class ListIPSetsRequest extends AmazonWebServiceRequest implements
      *         to get information about another batch of
      *         <code>ByteMatchSets</code>.
      */
+
     public String getNextMarker() {
         return this.nextMarker;
     }
@@ -118,6 +120,7 @@ public class ListIPSetsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListIPSetsRequest withNextMarker(String nextMarker) {
         setNextMarker(nextMarker);
         return this;
@@ -140,6 +143,7 @@ public class ListIPSetsRequest extends AmazonWebServiceRequest implements
      *        <code>NextMarker</code> value that you can use to get another
      *        batch of <code>IPSet</code> objects.
      */
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -160,6 +164,7 @@ public class ListIPSetsRequest extends AmazonWebServiceRequest implements
      *         <code>NextMarker</code> value that you can use to get another
      *         batch of <code>IPSet</code> objects.
      */
+
     public Integer getLimit() {
         return this.limit;
     }
@@ -183,6 +188,7 @@ public class ListIPSetsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListIPSetsRequest withLimit(Integer limit) {
         setLimit(limit);
         return this;

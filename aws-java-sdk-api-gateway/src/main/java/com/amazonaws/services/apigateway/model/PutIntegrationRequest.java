@@ -114,6 +114,7 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      * @param restApiId
      *        Specifies a put integration request's API identifier.
      */
+
     public void setRestApiId(String restApiId) {
         this.restApiId = restApiId;
     }
@@ -125,6 +126,7 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      * 
      * @return Specifies a put integration request's API identifier.
      */
+
     public String getRestApiId() {
         return this.restApiId;
     }
@@ -139,6 +141,7 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutIntegrationRequest withRestApiId(String restApiId) {
         setRestApiId(restApiId);
         return this;
@@ -152,6 +155,7 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      * @param resourceId
      *        Specifies a put integration request's resource ID.
      */
+
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
     }
@@ -163,6 +167,7 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      * 
      * @return Specifies a put integration request's resource ID.
      */
+
     public String getResourceId() {
         return this.resourceId;
     }
@@ -177,6 +182,7 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutIntegrationRequest withResourceId(String resourceId) {
         setResourceId(resourceId);
         return this;
@@ -190,6 +196,7 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      * @param httpMethod
      *        Specifies a put integration request's HTTP method.
      */
+
     public void setHttpMethod(String httpMethod) {
         this.httpMethod = httpMethod;
     }
@@ -201,6 +208,7 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      * 
      * @return Specifies a put integration request's HTTP method.
      */
+
     public String getHttpMethod() {
         return this.httpMethod;
     }
@@ -215,6 +223,7 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutIntegrationRequest withHttpMethod(String httpMethod) {
         setHttpMethod(httpMethod);
         return this;
@@ -229,6 +238,7 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      *        Specifies a put integration input's type.
      * @see IntegrationType
      */
+
     public void setType(String type) {
         this.type = type;
     }
@@ -241,6 +251,7 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      * @return Specifies a put integration input's type.
      * @see IntegrationType
      */
+
     public String getType() {
         return this.type;
     }
@@ -256,6 +267,7 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see IntegrationType
      */
+
     public PutIntegrationRequest withType(String type) {
         setType(type);
         return this;
@@ -272,6 +284,7 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see IntegrationType
      */
+
     public void setType(IntegrationType type) {
         this.type = type.toString();
     }
@@ -287,6 +300,7 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see IntegrationType
      */
+
     public PutIntegrationRequest withType(IntegrationType type) {
         setType(type);
         return this;
@@ -302,6 +316,7 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      *        Specifies a put integration HTTP method. When the integration type
      *        is HTTP or AWS, this field is required.
      */
+
     public void setIntegrationHttpMethod(String integrationHttpMethod) {
         this.integrationHttpMethod = integrationHttpMethod;
     }
@@ -315,6 +330,7 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      * @return Specifies a put integration HTTP method. When the integration
      *         type is HTTP or AWS, this field is required.
      */
+
     public String getIntegrationHttpMethod() {
         return this.integrationHttpMethod;
     }
@@ -331,6 +347,7 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutIntegrationRequest withIntegrationHttpMethod(
             String integrationHttpMethod) {
         setIntegrationHttpMethod(integrationHttpMethod);
@@ -348,6 +365,7 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      *        (URI). When the integration type is HTTP or AWS, this field is
      *        required.
      */
+
     public void setUri(String uri) {
         this.uri = uri;
     }
@@ -362,6 +380,7 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      *         (URI). When the integration type is HTTP or AWS, this field is
      *         required.
      */
+
     public String getUri() {
         return this.uri;
     }
@@ -379,6 +398,7 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutIntegrationRequest withUri(String uri) {
         setUri(uri);
         return this;
@@ -392,6 +412,7 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      * @param credentials
      *        Specifies whether credentials are required for a put integration.
      */
+
     public void setCredentials(String credentials) {
         this.credentials = credentials;
     }
@@ -403,6 +424,7 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      * 
      * @return Specifies whether credentials are required for a put integration.
      */
+
     public String getCredentials() {
         return this.credentials;
     }
@@ -417,6 +439,7 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutIntegrationRequest withCredentials(String credentials) {
         setCredentials(credentials);
         return this;
@@ -446,6 +469,7 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      *         <code>location</code> is either querystring, path, or header.
      *         <code>name</code> must be a valid, unique parameter name.
      */
+
     public java.util.Map<String, String> getRequestParameters() {
         return requestParameters;
     }
@@ -475,6 +499,7 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      *        <code>location</code> is either querystring, path, or header.
      *        <code>name</code> must be a valid, unique parameter name.
      */
+
     public void setRequestParameters(
             java.util.Map<String, String> requestParameters) {
         this.requestParameters = requestParameters;
@@ -507,6 +532,7 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutIntegrationRequest withRequestParameters(
             java.util.Map<String, String> requestParameters) {
         setRequestParameters(requestParameters);
@@ -529,6 +555,7 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      * Removes all the entries added into RequestParameters. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public PutIntegrationRequest clearRequestParametersEntries() {
         this.requestParameters = null;
         return this;
@@ -545,6 +572,7 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      *         body. Request templates are represented as a key/value map, with
      *         a content-type as the key and a template as the value.
      */
+
     public java.util.Map<String, String> getRequestTemplates() {
         return requestTemplates;
     }
@@ -561,6 +589,7 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      *        Request templates are represented as a key/value map, with a
      *        content-type as the key and a template as the value.
      */
+
     public void setRequestTemplates(
             java.util.Map<String, String> requestTemplates) {
         this.requestTemplates = requestTemplates;
@@ -580,6 +609,7 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutIntegrationRequest withRequestTemplates(
             java.util.Map<String, String> requestTemplates) {
         setRequestTemplates(requestTemplates);
@@ -602,6 +632,7 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      * Removes all the entries added into RequestTemplates. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public PutIntegrationRequest clearRequestTemplatesEntries() {
         this.requestTemplates = null;
         return this;
@@ -615,6 +646,7 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      * @param cacheNamespace
      *        Specifies a put integration input's cache namespace.
      */
+
     public void setCacheNamespace(String cacheNamespace) {
         this.cacheNamespace = cacheNamespace;
     }
@@ -626,6 +658,7 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      * 
      * @return Specifies a put integration input's cache namespace.
      */
+
     public String getCacheNamespace() {
         return this.cacheNamespace;
     }
@@ -640,6 +673,7 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutIntegrationRequest withCacheNamespace(String cacheNamespace) {
         setCacheNamespace(cacheNamespace);
         return this;
@@ -652,6 +686,7 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      * 
      * @return Specifies a put integration input's cache key parameters.
      */
+
     public java.util.List<String> getCacheKeyParameters() {
         return cacheKeyParameters;
     }
@@ -664,6 +699,7 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      * @param cacheKeyParameters
      *        Specifies a put integration input's cache key parameters.
      */
+
     public void setCacheKeyParameters(
             java.util.Collection<String> cacheKeyParameters) {
         if (cacheKeyParameters == null) {
@@ -691,6 +727,7 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutIntegrationRequest withCacheKeyParameters(
             String... cacheKeyParameters) {
         if (this.cacheKeyParameters == null) {
@@ -713,6 +750,7 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutIntegrationRequest withCacheKeyParameters(
             java.util.Collection<String> cacheKeyParameters) {
         setCacheKeyParameters(cacheKeyParameters);

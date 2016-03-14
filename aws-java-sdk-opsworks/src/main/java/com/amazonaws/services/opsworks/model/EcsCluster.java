@@ -58,6 +58,7 @@ public class EcsCluster implements Serializable, Cloneable {
      * @param ecsClusterArn
      *        The cluster's ARN.
      */
+
     public void setEcsClusterArn(String ecsClusterArn) {
         this.ecsClusterArn = ecsClusterArn;
     }
@@ -69,6 +70,7 @@ public class EcsCluster implements Serializable, Cloneable {
      * 
      * @return The cluster's ARN.
      */
+
     public String getEcsClusterArn() {
         return this.ecsClusterArn;
     }
@@ -83,6 +85,7 @@ public class EcsCluster implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EcsCluster withEcsClusterArn(String ecsClusterArn) {
         setEcsClusterArn(ecsClusterArn);
         return this;
@@ -96,6 +99,7 @@ public class EcsCluster implements Serializable, Cloneable {
      * @param ecsClusterName
      *        The cluster name.
      */
+
     public void setEcsClusterName(String ecsClusterName) {
         this.ecsClusterName = ecsClusterName;
     }
@@ -107,6 +111,7 @@ public class EcsCluster implements Serializable, Cloneable {
      * 
      * @return The cluster name.
      */
+
     public String getEcsClusterName() {
         return this.ecsClusterName;
     }
@@ -121,6 +126,7 @@ public class EcsCluster implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EcsCluster withEcsClusterName(String ecsClusterName) {
         setEcsClusterName(ecsClusterName);
         return this;
@@ -134,6 +140,7 @@ public class EcsCluster implements Serializable, Cloneable {
      * @param stackId
      *        The stack ID.
      */
+
     public void setStackId(String stackId) {
         this.stackId = stackId;
     }
@@ -145,6 +152,7 @@ public class EcsCluster implements Serializable, Cloneable {
      * 
      * @return The stack ID.
      */
+
     public String getStackId() {
         return this.stackId;
     }
@@ -159,6 +167,7 @@ public class EcsCluster implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EcsCluster withStackId(String stackId) {
         setStackId(stackId);
         return this;
@@ -172,6 +181,7 @@ public class EcsCluster implements Serializable, Cloneable {
      * @param registeredAt
      *        The time and date that the cluster was registered with the stack.
      */
+
     public void setRegisteredAt(String registeredAt) {
         this.registeredAt = registeredAt;
     }
@@ -183,6 +193,7 @@ public class EcsCluster implements Serializable, Cloneable {
      * 
      * @return The time and date that the cluster was registered with the stack.
      */
+
     public String getRegisteredAt() {
         return this.registeredAt;
     }
@@ -197,6 +208,7 @@ public class EcsCluster implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EcsCluster withRegisteredAt(String registeredAt) {
         setRegisteredAt(registeredAt);
         return this;

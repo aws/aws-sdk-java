@@ -58,6 +58,7 @@ public class CreatePolicyVersionRequest extends AmazonWebServiceRequest
      * @param policyName
      *        The policy name.
      */
+
     public void setPolicyName(String policyName) {
         this.policyName = policyName;
     }
@@ -69,6 +70,7 @@ public class CreatePolicyVersionRequest extends AmazonWebServiceRequest
      * 
      * @return The policy name.
      */
+
     public String getPolicyName() {
         return this.policyName;
     }
@@ -83,6 +85,7 @@ public class CreatePolicyVersionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePolicyVersionRequest withPolicyName(String policyName) {
         setPolicyName(policyName);
         return this;
@@ -98,6 +101,7 @@ public class CreatePolicyVersionRequest extends AmazonWebServiceRequest
      *        The JSON document that describes the policy. Minimum length of 1.
      *        Maximum length of 2048 excluding whitespaces
      */
+
     public void setPolicyDocument(String policyDocument) {
         this.policyDocument = policyDocument;
     }
@@ -111,6 +115,7 @@ public class CreatePolicyVersionRequest extends AmazonWebServiceRequest
      * @return The JSON document that describes the policy. Minimum length of 1.
      *         Maximum length of 2048 excluding whitespaces
      */
+
     public String getPolicyDocument() {
         return this.policyDocument;
     }
@@ -127,6 +132,7 @@ public class CreatePolicyVersionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePolicyVersionRequest withPolicyDocument(String policyDocument) {
         setPolicyDocument(policyDocument);
         return this;
@@ -146,6 +152,7 @@ public class CreatePolicyVersionRequest extends AmazonWebServiceRequest
      *        operative version; that is, the version that is in effect for the
      *        certificates that the policy is attached to.
      */
+
     public void setSetAsDefault(Boolean setAsDefault) {
         this.setAsDefault = setAsDefault;
     }
@@ -163,6 +170,7 @@ public class CreatePolicyVersionRequest extends AmazonWebServiceRequest
      *         operative version; that is, the version that is in effect for the
      *         certificates that the policy is attached to.
      */
+
     public Boolean getSetAsDefault() {
         return this.setAsDefault;
     }
@@ -183,6 +191,7 @@ public class CreatePolicyVersionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePolicyVersionRequest withSetAsDefault(Boolean setAsDefault) {
         setSetAsDefault(setAsDefault);
         return this;
@@ -201,6 +210,7 @@ public class CreatePolicyVersionRequest extends AmazonWebServiceRequest
      *         operative version; that is, the version that is in effect for the
      *         certificates that the policy is attached to.
      */
+
     public Boolean isSetAsDefault() {
         return this.setAsDefault;
     }

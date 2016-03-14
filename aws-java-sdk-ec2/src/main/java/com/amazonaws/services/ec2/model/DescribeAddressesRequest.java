@@ -113,6 +113,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Default: Describes all your Elastic IP addresses.
      */
+
     public java.util.List<String> getPublicIps() {
         if (publicIps == null) {
             publicIps = new com.amazonaws.internal.SdkInternalList<String>();
@@ -133,6 +134,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        Default: Describes all your Elastic IP addresses.
      */
+
     public void setPublicIps(java.util.Collection<String> publicIps) {
         if (publicIps == null) {
             this.publicIps = null;
@@ -164,6 +166,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAddressesRequest withPublicIps(String... publicIps) {
         if (this.publicIps == null) {
             setPublicIps(new com.amazonaws.internal.SdkInternalList<String>(
@@ -190,6 +193,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAddressesRequest withPublicIps(
             java.util.Collection<String> publicIps) {
         setPublicIps(publicIps);
@@ -301,6 +305,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      *         </p>
      *         </li>
      */
+
     public java.util.List<Filter> getFilters() {
         if (filters == null) {
             filters = new com.amazonaws.internal.SdkInternalList<Filter>();
@@ -414,6 +419,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      *        </p>
      *        </li>
      */
+
     public void setFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
             this.filters = null;
@@ -538,6 +544,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAddressesRequest withFilters(Filter... filters) {
         if (this.filters == null) {
             setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(
@@ -657,6 +664,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAddressesRequest withFilters(
             java.util.Collection<Filter> filters) {
         setFilters(filters);
@@ -675,6 +683,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Default: Describes all your Elastic IP addresses.
      */
+
     public java.util.List<String> getAllocationIds() {
         if (allocationIds == null) {
             allocationIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -695,6 +704,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        Default: Describes all your Elastic IP addresses.
      */
+
     public void setAllocationIds(java.util.Collection<String> allocationIds) {
         if (allocationIds == null) {
             this.allocationIds = null;
@@ -726,6 +736,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAddressesRequest withAllocationIds(String... allocationIds) {
         if (this.allocationIds == null) {
             setAllocationIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -752,6 +763,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAddressesRequest withAllocationIds(
             java.util.Collection<String> allocationIds) {
         setAllocationIds(allocationIds);

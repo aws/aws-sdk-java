@@ -74,6 +74,7 @@ public class PolicyAttributeTypeDescription implements Serializable, Cloneable {
      * @param attributeName
      *        The name of the attribute.
      */
+
     public void setAttributeName(String attributeName) {
         this.attributeName = attributeName;
     }
@@ -85,6 +86,7 @@ public class PolicyAttributeTypeDescription implements Serializable, Cloneable {
      * 
      * @return The name of the attribute.
      */
+
     public String getAttributeName() {
         return this.attributeName;
     }
@@ -99,6 +101,7 @@ public class PolicyAttributeTypeDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PolicyAttributeTypeDescription withAttributeName(String attributeName) {
         setAttributeName(attributeName);
         return this;
@@ -114,6 +117,7 @@ public class PolicyAttributeTypeDescription implements Serializable, Cloneable {
      *        The type of the attribute. For example, <code>Boolean</code> or
      *        <code>Integer</code>.
      */
+
     public void setAttributeType(String attributeType) {
         this.attributeType = attributeType;
     }
@@ -127,6 +131,7 @@ public class PolicyAttributeTypeDescription implements Serializable, Cloneable {
      * @return The type of the attribute. For example, <code>Boolean</code> or
      *         <code>Integer</code>.
      */
+
     public String getAttributeType() {
         return this.attributeType;
     }
@@ -143,6 +148,7 @@ public class PolicyAttributeTypeDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PolicyAttributeTypeDescription withAttributeType(String attributeType) {
         setAttributeType(attributeType);
         return this;
@@ -156,6 +162,7 @@ public class PolicyAttributeTypeDescription implements Serializable, Cloneable {
      * @param description
      *        A description of the attribute.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -167,6 +174,7 @@ public class PolicyAttributeTypeDescription implements Serializable, Cloneable {
      * 
      * @return A description of the attribute.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -181,6 +189,7 @@ public class PolicyAttributeTypeDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PolicyAttributeTypeDescription withDescription(String description) {
         setDescription(description);
         return this;
@@ -194,6 +203,7 @@ public class PolicyAttributeTypeDescription implements Serializable, Cloneable {
      * @param defaultValue
      *        The default value of the attribute, if applicable.
      */
+
     public void setDefaultValue(String defaultValue) {
         this.defaultValue = defaultValue;
     }
@@ -205,6 +215,7 @@ public class PolicyAttributeTypeDescription implements Serializable, Cloneable {
      * 
      * @return The default value of the attribute, if applicable.
      */
+
     public String getDefaultValue() {
         return this.defaultValue;
     }
@@ -219,6 +230,7 @@ public class PolicyAttributeTypeDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PolicyAttributeTypeDescription withDefaultValue(String defaultValue) {
         setDefaultValue(defaultValue);
         return this;
@@ -249,6 +261,7 @@ public class PolicyAttributeTypeDescription implements Serializable, Cloneable {
      *        <li>ZERO_OR_MORE(0..*) : Optional. Multiple values are allowed</li>
      *        <li>ONE_OR_MORE(1..*0) : Required. Multiple values are allowed</li>
      */
+
     public void setCardinality(String cardinality) {
         this.cardinality = cardinality;
     }
@@ -277,6 +290,7 @@ public class PolicyAttributeTypeDescription implements Serializable, Cloneable {
      *         <li>ZERO_OR_MORE(0..*) : Optional. Multiple values are allowed</li>
      *         <li>ONE_OR_MORE(1..*0) : Required. Multiple values are allowed</li>
      */
+
     public String getCardinality() {
         return this.cardinality;
     }
@@ -308,6 +322,7 @@ public class PolicyAttributeTypeDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PolicyAttributeTypeDescription withCardinality(String cardinality) {
         setCardinality(cardinality);
         return this;

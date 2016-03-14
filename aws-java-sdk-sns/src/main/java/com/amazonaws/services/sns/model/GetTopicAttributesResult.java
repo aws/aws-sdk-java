@@ -98,6 +98,7 @@ public class GetTopicAttributesResult implements Serializable, Cloneable {
      *         serialization of the effective delivery policy that takes into
      *         account system defaults</li>
      */
+
     public java.util.Map<String, String> getAttributes() {
         if (attributes == null) {
             attributes = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -152,6 +153,7 @@ public class GetTopicAttributesResult implements Serializable, Cloneable {
      *        of the effective delivery policy that takes into account system
      *        defaults</li>
      */
+
     public void setAttributes(java.util.Map<String, String> attributes) {
         this.attributes = attributes == null ? null
                 : new com.amazonaws.internal.SdkInternalMap<String, String>(
@@ -207,6 +209,7 @@ public class GetTopicAttributesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetTopicAttributesResult withAttributes(
             java.util.Map<String, String> attributes) {
         setAttributes(attributes);
@@ -228,6 +231,7 @@ public class GetTopicAttributesResult implements Serializable, Cloneable {
      * Removes all the entries added into Attributes. &lt;p> Returns a reference
      * to this object so that method calls can be chained together.
      */
+
     public GetTopicAttributesResult clearAttributesEntries() {
         this.attributes = null;
         return this;

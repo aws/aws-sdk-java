@@ -60,6 +60,7 @@ public class AssociationDescription implements Serializable, Cloneable {
      * @param name
      *        The name of the SSM document.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -71,6 +72,7 @@ public class AssociationDescription implements Serializable, Cloneable {
      * 
      * @return The name of the SSM document.
      */
+
     public String getName() {
         return this.name;
     }
@@ -85,6 +87,7 @@ public class AssociationDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssociationDescription withName(String name) {
         setName(name);
         return this;
@@ -98,6 +101,7 @@ public class AssociationDescription implements Serializable, Cloneable {
      * @param instanceId
      *        The ID of the instance.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -109,6 +113,7 @@ public class AssociationDescription implements Serializable, Cloneable {
      * 
      * @return The ID of the instance.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
@@ -123,6 +128,7 @@ public class AssociationDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssociationDescription withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;
@@ -136,6 +142,7 @@ public class AssociationDescription implements Serializable, Cloneable {
      * @param dateValue
      *        The date when the association was made.
      */
+
     public void setDate(java.util.Date dateValue) {
         this.dateValue = dateValue;
     }
@@ -147,6 +154,7 @@ public class AssociationDescription implements Serializable, Cloneable {
      * 
      * @return The date when the association was made.
      */
+
     public java.util.Date getDate() {
         return this.dateValue;
     }
@@ -161,6 +169,7 @@ public class AssociationDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssociationDescription withDate(java.util.Date dateValue) {
         setDate(dateValue);
         return this;
@@ -174,6 +183,7 @@ public class AssociationDescription implements Serializable, Cloneable {
      * @param status
      *        The association status.
      */
+
     public void setStatus(AssociationStatus status) {
         this.status = status;
     }
@@ -185,6 +195,7 @@ public class AssociationDescription implements Serializable, Cloneable {
      * 
      * @return The association status.
      */
+
     public AssociationStatus getStatus() {
         return this.status;
     }
@@ -199,6 +210,7 @@ public class AssociationDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssociationDescription withStatus(AssociationStatus status) {
         setStatus(status);
         return this;
@@ -209,6 +221,7 @@ public class AssociationDescription implements Serializable, Cloneable {
      * 
      * @return A description of the parameters for a document.
      */
+
     public java.util.Map<String, java.util.List<String>> getParameters() {
         return parameters;
     }
@@ -219,6 +232,7 @@ public class AssociationDescription implements Serializable, Cloneable {
      * @param parameters
      *        A description of the parameters for a document.
      */
+
     public void setParameters(
             java.util.Map<String, java.util.List<String>> parameters) {
         this.parameters = parameters;
@@ -232,6 +246,7 @@ public class AssociationDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssociationDescription withParameters(
             java.util.Map<String, java.util.List<String>> parameters) {
         setParameters(parameters);
@@ -254,6 +269,7 @@ public class AssociationDescription implements Serializable, Cloneable {
      * Removes all the entries added into Parameters. &lt;p> Returns a reference
      * to this object so that method calls can be chained together.
      */
+
     public AssociationDescription clearParametersEntries() {
         this.parameters = null;
         return this;

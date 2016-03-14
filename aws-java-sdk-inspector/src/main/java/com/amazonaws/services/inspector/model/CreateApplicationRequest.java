@@ -50,6 +50,7 @@ public class CreateApplicationRequest extends AmazonWebServiceRequest implements
      *        The user-defined name identifying the application that you want to
      *        create. The name must be unique within the AWS account.
      */
+
     public void setApplicationName(String applicationName) {
         this.applicationName = applicationName;
     }
@@ -63,6 +64,7 @@ public class CreateApplicationRequest extends AmazonWebServiceRequest implements
      * @return The user-defined name identifying the application that you want
      *         to create. The name must be unique within the AWS account.
      */
+
     public String getApplicationName() {
         return this.applicationName;
     }
@@ -79,6 +81,7 @@ public class CreateApplicationRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateApplicationRequest withApplicationName(String applicationName) {
         setApplicationName(applicationName);
         return this;
@@ -94,6 +97,7 @@ public class CreateApplicationRequest extends AmazonWebServiceRequest implements
      *        The ARN specifying the resource group that is used to create the
      *        application.
      */
+
     public void setResourceGroupArn(String resourceGroupArn) {
         this.resourceGroupArn = resourceGroupArn;
     }
@@ -107,6 +111,7 @@ public class CreateApplicationRequest extends AmazonWebServiceRequest implements
      * @return The ARN specifying the resource group that is used to create the
      *         application.
      */
+
     public String getResourceGroupArn() {
         return this.resourceGroupArn;
     }
@@ -123,6 +128,7 @@ public class CreateApplicationRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateApplicationRequest withResourceGroupArn(String resourceGroupArn) {
         setResourceGroupArn(resourceGroupArn);
         return this;

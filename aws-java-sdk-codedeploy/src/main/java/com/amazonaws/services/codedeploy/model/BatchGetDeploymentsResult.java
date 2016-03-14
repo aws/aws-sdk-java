@@ -39,6 +39,7 @@ public class BatchGetDeploymentsResult implements Serializable, Cloneable {
      * 
      * @return Information about the deployments.
      */
+
     public java.util.List<DeploymentInfo> getDeploymentsInfo() {
         if (deploymentsInfo == null) {
             deploymentsInfo = new com.amazonaws.internal.SdkInternalList<DeploymentInfo>();
@@ -54,6 +55,7 @@ public class BatchGetDeploymentsResult implements Serializable, Cloneable {
      * @param deploymentsInfo
      *        Information about the deployments.
      */
+
     public void setDeploymentsInfo(
             java.util.Collection<DeploymentInfo> deploymentsInfo) {
         if (deploymentsInfo == null) {
@@ -81,6 +83,7 @@ public class BatchGetDeploymentsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchGetDeploymentsResult withDeploymentsInfo(
             DeploymentInfo... deploymentsInfo) {
         if (this.deploymentsInfo == null) {
@@ -103,6 +106,7 @@ public class BatchGetDeploymentsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchGetDeploymentsResult withDeploymentsInfo(
             java.util.Collection<DeploymentInfo> deploymentsInfo) {
         setDeploymentsInfo(deploymentsInfo);

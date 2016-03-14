@@ -74,6 +74,7 @@ public class CreateIdentityPoolRequest extends AmazonWebServiceRequest
      * @param identityPoolName
      *        A string that you provide.
      */
+
     public void setIdentityPoolName(String identityPoolName) {
         this.identityPoolName = identityPoolName;
     }
@@ -85,6 +86,7 @@ public class CreateIdentityPoolRequest extends AmazonWebServiceRequest
      * 
      * @return A string that you provide.
      */
+
     public String getIdentityPoolName() {
         return this.identityPoolName;
     }
@@ -99,6 +101,7 @@ public class CreateIdentityPoolRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateIdentityPoolRequest withIdentityPoolName(
             String identityPoolName) {
         setIdentityPoolName(identityPoolName);
@@ -113,6 +116,7 @@ public class CreateIdentityPoolRequest extends AmazonWebServiceRequest
      * @param allowUnauthenticatedIdentities
      *        TRUE if the identity pool supports unauthenticated logins.
      */
+
     public void setAllowUnauthenticatedIdentities(
             Boolean allowUnauthenticatedIdentities) {
         this.allowUnauthenticatedIdentities = allowUnauthenticatedIdentities;
@@ -125,6 +129,7 @@ public class CreateIdentityPoolRequest extends AmazonWebServiceRequest
      * 
      * @return TRUE if the identity pool supports unauthenticated logins.
      */
+
     public Boolean getAllowUnauthenticatedIdentities() {
         return this.allowUnauthenticatedIdentities;
     }
@@ -139,6 +144,7 @@ public class CreateIdentityPoolRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateIdentityPoolRequest withAllowUnauthenticatedIdentities(
             Boolean allowUnauthenticatedIdentities) {
         setAllowUnauthenticatedIdentities(allowUnauthenticatedIdentities);
@@ -152,6 +158,7 @@ public class CreateIdentityPoolRequest extends AmazonWebServiceRequest
      * 
      * @return TRUE if the identity pool supports unauthenticated logins.
      */
+
     public Boolean isAllowUnauthenticatedIdentities() {
         return this.allowUnauthenticatedIdentities;
     }
@@ -164,6 +171,7 @@ public class CreateIdentityPoolRequest extends AmazonWebServiceRequest
      * @return Optional key:value pairs mapping provider names to provider app
      *         IDs.
      */
+
     public java.util.Map<String, String> getSupportedLoginProviders() {
         return supportedLoginProviders;
     }
@@ -177,6 +185,7 @@ public class CreateIdentityPoolRequest extends AmazonWebServiceRequest
      *        Optional key:value pairs mapping provider names to provider app
      *        IDs.
      */
+
     public void setSupportedLoginProviders(
             java.util.Map<String, String> supportedLoginProviders) {
         this.supportedLoginProviders = supportedLoginProviders;
@@ -193,6 +202,7 @@ public class CreateIdentityPoolRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateIdentityPoolRequest withSupportedLoginProviders(
             java.util.Map<String, String> supportedLoginProviders) {
         setSupportedLoginProviders(supportedLoginProviders);
@@ -216,6 +226,7 @@ public class CreateIdentityPoolRequest extends AmazonWebServiceRequest
      * Returns a reference to this object so that method calls can be chained
      * together.
      */
+
     public CreateIdentityPoolRequest clearSupportedLoginProvidersEntries() {
         this.supportedLoginProviders = null;
         return this;
@@ -245,6 +256,7 @@ public class CreateIdentityPoolRequest extends AmazonWebServiceRequest
      *        Once you have set a developer provider name, you cannot change it.
      *        Please take care in setting this parameter.
      */
+
     public void setDeveloperProviderName(String developerProviderName) {
         this.developerProviderName = developerProviderName;
     }
@@ -272,6 +284,7 @@ public class CreateIdentityPoolRequest extends AmazonWebServiceRequest
      *         Once you have set a developer provider name, you cannot change
      *         it. Please take care in setting this parameter.
      */
+
     public String getDeveloperProviderName() {
         return this.developerProviderName;
     }
@@ -302,6 +315,7 @@ public class CreateIdentityPoolRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateIdentityPoolRequest withDeveloperProviderName(
             String developerProviderName) {
         setDeveloperProviderName(developerProviderName);
@@ -315,6 +329,7 @@ public class CreateIdentityPoolRequest extends AmazonWebServiceRequest
      * 
      * @return A list of OpendID Connect provider ARNs.
      */
+
     public java.util.List<String> getOpenIdConnectProviderARNs() {
         return openIdConnectProviderARNs;
     }
@@ -327,6 +342,7 @@ public class CreateIdentityPoolRequest extends AmazonWebServiceRequest
      * @param openIdConnectProviderARNs
      *        A list of OpendID Connect provider ARNs.
      */
+
     public void setOpenIdConnectProviderARNs(
             java.util.Collection<String> openIdConnectProviderARNs) {
         if (openIdConnectProviderARNs == null) {
@@ -354,6 +370,7 @@ public class CreateIdentityPoolRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateIdentityPoolRequest withOpenIdConnectProviderARNs(
             String... openIdConnectProviderARNs) {
         if (this.openIdConnectProviderARNs == null) {
@@ -376,6 +393,7 @@ public class CreateIdentityPoolRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateIdentityPoolRequest withOpenIdConnectProviderARNs(
             java.util.Collection<String> openIdConnectProviderARNs) {
         setOpenIdConnectProviderARNs(openIdConnectProviderARNs);

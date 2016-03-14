@@ -41,6 +41,8 @@ public class PolicyUser implements Serializable, Cloneable {
      */
     private String userName;
 
+    private String userId;
+
     /**
      * <p>
      * The name (friendly name, not ARN) identifying the user.
@@ -49,6 +51,7 @@ public class PolicyUser implements Serializable, Cloneable {
      * @param userName
      *        The name (friendly name, not ARN) identifying the user.
      */
+
     public void setUserName(String userName) {
         this.userName = userName;
     }
@@ -60,6 +63,7 @@ public class PolicyUser implements Serializable, Cloneable {
      * 
      * @return The name (friendly name, not ARN) identifying the user.
      */
+
     public String getUserName() {
         return this.userName;
     }
@@ -74,8 +78,36 @@ public class PolicyUser implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PolicyUser withUserName(String userName) {
         setUserName(userName);
+        return this;
+    }
+
+    /**
+     * @param userId
+     */
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getUserId() {
+        return this.userId;
+    }
+
+    /**
+     * @param userId
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public PolicyUser withUserId(String userId) {
+        setUserId(userId);
         return this;
     }
 
@@ -92,7 +124,9 @@ public class PolicyUser implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserName() != null)
-            sb.append("UserName: " + getUserName());
+            sb.append("UserName: " + getUserName() + ",");
+        if (getUserId() != null)
+            sb.append("UserId: " + getUserId());
         sb.append("}");
         return sb.toString();
     }
@@ -112,6 +146,11 @@ public class PolicyUser implements Serializable, Cloneable {
         if (other.getUserName() != null
                 && other.getUserName().equals(this.getUserName()) == false)
             return false;
+        if (other.getUserId() == null ^ this.getUserId() == null)
+            return false;
+        if (other.getUserId() != null
+                && other.getUserId().equals(this.getUserId()) == false)
+            return false;
         return true;
     }
 
@@ -122,6 +161,8 @@ public class PolicyUser implements Serializable, Cloneable {
 
         hashCode = prime * hashCode
                 + ((getUserName() == null) ? 0 : getUserName().hashCode());
+        hashCode = prime * hashCode
+                + ((getUserId() == null) ? 0 : getUserId().hashCode());
         return hashCode;
     }
 

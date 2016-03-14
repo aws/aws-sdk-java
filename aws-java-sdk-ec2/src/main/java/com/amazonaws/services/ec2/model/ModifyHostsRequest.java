@@ -47,6 +47,7 @@ public class ModifyHostsRequest extends AmazonWebServiceRequest implements
      * 
      * @return The host IDs of the Dedicated hosts you want to modify.
      */
+
     public java.util.List<String> getHostIds() {
         if (hostIds == null) {
             hostIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -62,6 +63,7 @@ public class ModifyHostsRequest extends AmazonWebServiceRequest implements
      * @param hostIds
      *        The host IDs of the Dedicated hosts you want to modify.
      */
+
     public void setHostIds(java.util.Collection<String> hostIds) {
         if (hostIds == null) {
             this.hostIds = null;
@@ -88,6 +90,7 @@ public class ModifyHostsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyHostsRequest withHostIds(String... hostIds) {
         if (this.hostIds == null) {
             setHostIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -109,6 +112,7 @@ public class ModifyHostsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyHostsRequest withHostIds(java.util.Collection<String> hostIds) {
         setHostIds(hostIds);
         return this;
@@ -123,6 +127,7 @@ public class ModifyHostsRequest extends AmazonWebServiceRequest implements
      *        Specify whether to enable or disable auto-placement.
      * @see AutoPlacement
      */
+
     public void setAutoPlacement(String autoPlacement) {
         this.autoPlacement = autoPlacement;
     }
@@ -135,6 +140,7 @@ public class ModifyHostsRequest extends AmazonWebServiceRequest implements
      * @return Specify whether to enable or disable auto-placement.
      * @see AutoPlacement
      */
+
     public String getAutoPlacement() {
         return this.autoPlacement;
     }
@@ -150,6 +156,7 @@ public class ModifyHostsRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see AutoPlacement
      */
+
     public ModifyHostsRequest withAutoPlacement(String autoPlacement) {
         setAutoPlacement(autoPlacement);
         return this;
@@ -166,6 +173,7 @@ public class ModifyHostsRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see AutoPlacement
      */
+
     public void setAutoPlacement(AutoPlacement autoPlacement) {
         this.autoPlacement = autoPlacement.toString();
     }
@@ -181,6 +189,7 @@ public class ModifyHostsRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see AutoPlacement
      */
+
     public ModifyHostsRequest withAutoPlacement(AutoPlacement autoPlacement) {
         setAutoPlacement(autoPlacement);
         return this;

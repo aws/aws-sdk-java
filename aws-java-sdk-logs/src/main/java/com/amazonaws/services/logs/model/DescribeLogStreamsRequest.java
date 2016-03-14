@@ -99,6 +99,7 @@ public class DescribeLogStreamsRequest extends AmazonWebServiceRequest
      * @param logGroupName
      *        The log group name for which log streams are to be listed.
      */
+
     public void setLogGroupName(String logGroupName) {
         this.logGroupName = logGroupName;
     }
@@ -110,6 +111,7 @@ public class DescribeLogStreamsRequest extends AmazonWebServiceRequest
      * 
      * @return The log group name for which log streams are to be listed.
      */
+
     public String getLogGroupName() {
         return this.logGroupName;
     }
@@ -124,6 +126,7 @@ public class DescribeLogStreamsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLogStreamsRequest withLogGroupName(String logGroupName) {
         setLogGroupName(logGroupName);
         return this;
@@ -140,6 +143,7 @@ public class DescribeLogStreamsRequest extends AmazonWebServiceRequest
      *        logStreamNamePrefix. If you don't specify a value, no prefix
      *        filter is applied.
      */
+
     public void setLogStreamNamePrefix(String logStreamNamePrefix) {
         this.logStreamNamePrefix = logStreamNamePrefix;
     }
@@ -154,6 +158,7 @@ public class DescribeLogStreamsRequest extends AmazonWebServiceRequest
      *         logStreamNamePrefix. If you don't specify a value, no prefix
      *         filter is applied.
      */
+
     public String getLogStreamNamePrefix() {
         return this.logStreamNamePrefix;
     }
@@ -171,6 +176,7 @@ public class DescribeLogStreamsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLogStreamsRequest withLogStreamNamePrefix(
             String logStreamNamePrefix) {
         setLogStreamNamePrefix(logStreamNamePrefix);
@@ -193,6 +199,7 @@ public class DescribeLogStreamsRequest extends AmazonWebServiceRequest
      *        logStreamNamePrefix.
      * @see OrderBy
      */
+
     public void setOrderBy(String orderBy) {
         this.orderBy = orderBy;
     }
@@ -212,6 +219,7 @@ public class DescribeLogStreamsRequest extends AmazonWebServiceRequest
      *         logStreamNamePrefix.
      * @see OrderBy
      */
+
     public String getOrderBy() {
         return this.orderBy;
     }
@@ -234,6 +242,7 @@ public class DescribeLogStreamsRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see OrderBy
      */
+
     public DescribeLogStreamsRequest withOrderBy(String orderBy) {
         setOrderBy(orderBy);
         return this;
@@ -257,6 +266,7 @@ public class DescribeLogStreamsRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see OrderBy
      */
+
     public void setOrderBy(OrderBy orderBy) {
         this.orderBy = orderBy.toString();
     }
@@ -279,6 +289,7 @@ public class DescribeLogStreamsRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see OrderBy
      */
+
     public DescribeLogStreamsRequest withOrderBy(OrderBy orderBy) {
         setOrderBy(orderBy);
         return this;
@@ -296,6 +307,7 @@ public class DescribeLogStreamsRequest extends AmazonWebServiceRequest
      *        don't specify a value or set it to false, results are returned in
      *        ascending order.
      */
+
     public void setDescending(Boolean descending) {
         this.descending = descending;
     }
@@ -311,6 +323,7 @@ public class DescribeLogStreamsRequest extends AmazonWebServiceRequest
      *         don't specify a value or set it to false, results are returned in
      *         ascending order.
      */
+
     public Boolean getDescending() {
         return this.descending;
     }
@@ -329,6 +342,7 @@ public class DescribeLogStreamsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLogStreamsRequest withDescending(Boolean descending) {
         setDescending(descending);
         return this;
@@ -345,6 +359,7 @@ public class DescribeLogStreamsRequest extends AmazonWebServiceRequest
      *         don't specify a value or set it to false, results are returned in
      *         ascending order.
      */
+
     public Boolean isDescending() {
         return this.descending;
     }
@@ -361,6 +376,7 @@ public class DescribeLogStreamsRequest extends AmazonWebServiceRequest
      *        results. It must be a value obtained from the response of the
      *        previous <code class="code">DescribeLogStreams</code> request.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -376,6 +392,7 @@ public class DescribeLogStreamsRequest extends AmazonWebServiceRequest
      *         of results. It must be a value obtained from the response of the
      *         previous <code class="code">DescribeLogStreams</code> request.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -394,6 +411,7 @@ public class DescribeLogStreamsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLogStreamsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -409,6 +427,7 @@ public class DescribeLogStreamsRequest extends AmazonWebServiceRequest
      *        The maximum number of items returned in the response. If you don't
      *        specify a value, the request would return up to 50 items.
      */
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -422,6 +441,7 @@ public class DescribeLogStreamsRequest extends AmazonWebServiceRequest
      * @return The maximum number of items returned in the response. If you
      *         don't specify a value, the request would return up to 50 items.
      */
+
     public Integer getLimit() {
         return this.limit;
     }
@@ -438,6 +458,7 @@ public class DescribeLogStreamsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLogStreamsRequest withLimit(Integer limit) {
         setLimit(limit);
         return this;

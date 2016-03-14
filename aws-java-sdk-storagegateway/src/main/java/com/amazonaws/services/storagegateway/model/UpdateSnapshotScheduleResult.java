@@ -30,6 +30,7 @@ public class UpdateSnapshotScheduleResult implements Serializable, Cloneable {
     /**
      * @param volumeARN
      */
+
     public void setVolumeARN(String volumeARN) {
         this.volumeARN = volumeARN;
     }
@@ -37,6 +38,7 @@ public class UpdateSnapshotScheduleResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getVolumeARN() {
         return this.volumeARN;
     }
@@ -46,6 +48,7 @@ public class UpdateSnapshotScheduleResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateSnapshotScheduleResult withVolumeARN(String volumeARN) {
         setVolumeARN(volumeARN);
         return this;

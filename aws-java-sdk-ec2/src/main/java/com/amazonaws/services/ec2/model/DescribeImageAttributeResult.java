@@ -39,6 +39,7 @@ public class DescribeImageAttributeResult implements Serializable, Cloneable {
      * @param imageAttribute
      *        Describes an image attribute.
      */
+
     public void setImageAttribute(ImageAttribute imageAttribute) {
         this.imageAttribute = imageAttribute;
     }
@@ -50,6 +51,7 @@ public class DescribeImageAttributeResult implements Serializable, Cloneable {
      * 
      * @return Describes an image attribute.
      */
+
     public ImageAttribute getImageAttribute() {
         return this.imageAttribute;
     }
@@ -64,6 +66,7 @@ public class DescribeImageAttributeResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeImageAttributeResult withImageAttribute(
             ImageAttribute imageAttribute) {
         setImageAttribute(imageAttribute);

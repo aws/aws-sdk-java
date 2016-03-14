@@ -75,6 +75,7 @@ public class ImageDiskContainer implements Serializable, Cloneable {
      * @param description
      *        The description of the disk image.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -86,6 +87,7 @@ public class ImageDiskContainer implements Serializable, Cloneable {
      * 
      * @return The description of the disk image.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -100,6 +102,7 @@ public class ImageDiskContainer implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImageDiskContainer withDescription(String description) {
         setDescription(description);
         return this;
@@ -120,6 +123,7 @@ public class ImageDiskContainer implements Serializable, Cloneable {
      *        Valid values: <code>RAW</code> | <code>VHD</code> |
      *        <code>VMDK</code> | <code>OVA</code>
      */
+
     public void setFormat(String format) {
         this.format = format;
     }
@@ -138,6 +142,7 @@ public class ImageDiskContainer implements Serializable, Cloneable {
      *         Valid values: <code>RAW</code> | <code>VHD</code> |
      *         <code>VMDK</code> | <code>OVA</code>
      */
+
     public String getFormat() {
         return this.format;
     }
@@ -159,6 +164,7 @@ public class ImageDiskContainer implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImageDiskContainer withFormat(String format) {
         setFormat(format);
         return this;
@@ -175,6 +181,7 @@ public class ImageDiskContainer implements Serializable, Cloneable {
      *        can either be a https URL (https://..) or an Amazon S3 URL
      *        (s3://..)
      */
+
     public void setUrl(String url) {
         this.url = url;
     }
@@ -189,6 +196,7 @@ public class ImageDiskContainer implements Serializable, Cloneable {
      *         can either be a https URL (https://..) or an Amazon S3 URL
      *         (s3://..)
      */
+
     public String getUrl() {
         return this.url;
     }
@@ -206,6 +214,7 @@ public class ImageDiskContainer implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImageDiskContainer withUrl(String url) {
         setUrl(url);
         return this;
@@ -219,6 +228,7 @@ public class ImageDiskContainer implements Serializable, Cloneable {
      * @param userBucket
      *        The S3 bucket for the disk image.
      */
+
     public void setUserBucket(UserBucket userBucket) {
         this.userBucket = userBucket;
     }
@@ -230,6 +240,7 @@ public class ImageDiskContainer implements Serializable, Cloneable {
      * 
      * @return The S3 bucket for the disk image.
      */
+
     public UserBucket getUserBucket() {
         return this.userBucket;
     }
@@ -244,6 +255,7 @@ public class ImageDiskContainer implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImageDiskContainer withUserBucket(UserBucket userBucket) {
         setUserBucket(userBucket);
         return this;
@@ -257,6 +269,7 @@ public class ImageDiskContainer implements Serializable, Cloneable {
      * @param deviceName
      *        The block device mapping for the disk.
      */
+
     public void setDeviceName(String deviceName) {
         this.deviceName = deviceName;
     }
@@ -268,6 +281,7 @@ public class ImageDiskContainer implements Serializable, Cloneable {
      * 
      * @return The block device mapping for the disk.
      */
+
     public String getDeviceName() {
         return this.deviceName;
     }
@@ -282,6 +296,7 @@ public class ImageDiskContainer implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImageDiskContainer withDeviceName(String deviceName) {
         setDeviceName(deviceName);
         return this;
@@ -295,6 +310,7 @@ public class ImageDiskContainer implements Serializable, Cloneable {
      * @param snapshotId
      *        The ID of the EBS snapshot to be used for importing the snapshot.
      */
+
     public void setSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
     }
@@ -306,6 +322,7 @@ public class ImageDiskContainer implements Serializable, Cloneable {
      * 
      * @return The ID of the EBS snapshot to be used for importing the snapshot.
      */
+
     public String getSnapshotId() {
         return this.snapshotId;
     }
@@ -320,6 +337,7 @@ public class ImageDiskContainer implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImageDiskContainer withSnapshotId(String snapshotId) {
         setSnapshotId(snapshotId);
         return this;

@@ -62,6 +62,7 @@ public class CreateTapeWithBarcodeRequest extends AmazonWebServiceRequest
      *        operation to return a list of gateways for your account and
      *        region.
      */
+
     public void setGatewayARN(String gatewayARN) {
         this.gatewayARN = gatewayARN;
     }
@@ -78,6 +79,7 @@ public class CreateTapeWithBarcodeRequest extends AmazonWebServiceRequest
      *         operation to return a list of gateways for your account and
      *         region.
      */
+
     public String getGatewayARN() {
         return this.gatewayARN;
     }
@@ -97,6 +99,7 @@ public class CreateTapeWithBarcodeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateTapeWithBarcodeRequest withGatewayARN(String gatewayARN) {
         setGatewayARN(gatewayARN);
         return this;
@@ -113,6 +116,7 @@ public class CreateTapeWithBarcodeRequest extends AmazonWebServiceRequest
      *        create.</p> <note>The size must be aligned by gigabyte
      *        (1024*1024*1024 byte).
      */
+
     public void setTapeSizeInBytes(Long tapeSizeInBytes) {
         this.tapeSizeInBytes = tapeSizeInBytes;
     }
@@ -127,6 +131,7 @@ public class CreateTapeWithBarcodeRequest extends AmazonWebServiceRequest
      *         create.</p> <note>The size must be aligned by gigabyte
      *         (1024*1024*1024 byte).
      */
+
     public Long getTapeSizeInBytes() {
         return this.tapeSizeInBytes;
     }
@@ -144,6 +149,7 @@ public class CreateTapeWithBarcodeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateTapeWithBarcodeRequest withTapeSizeInBytes(Long tapeSizeInBytes) {
         setTapeSizeInBytes(tapeSizeInBytes);
         return this;
@@ -157,6 +163,7 @@ public class CreateTapeWithBarcodeRequest extends AmazonWebServiceRequest
      * @param tapeBarcode
      *        The barcode that you want to assign to the tape.
      */
+
     public void setTapeBarcode(String tapeBarcode) {
         this.tapeBarcode = tapeBarcode;
     }
@@ -168,6 +175,7 @@ public class CreateTapeWithBarcodeRequest extends AmazonWebServiceRequest
      * 
      * @return The barcode that you want to assign to the tape.
      */
+
     public String getTapeBarcode() {
         return this.tapeBarcode;
     }
@@ -182,6 +190,7 @@ public class CreateTapeWithBarcodeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateTapeWithBarcodeRequest withTapeBarcode(String tapeBarcode) {
         setTapeBarcode(tapeBarcode);
         return this;

@@ -44,6 +44,7 @@ public class BatchGetDeploymentsRequest extends AmazonWebServiceRequest
      * @return A list of deployment IDs, with multiple deployment IDs separated
      *         by spaces.
      */
+
     public java.util.List<String> getDeploymentIds() {
         if (deploymentIds == null) {
             deploymentIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -61,6 +62,7 @@ public class BatchGetDeploymentsRequest extends AmazonWebServiceRequest
      *        A list of deployment IDs, with multiple deployment IDs separated
      *        by spaces.
      */
+
     public void setDeploymentIds(java.util.Collection<String> deploymentIds) {
         if (deploymentIds == null) {
             this.deploymentIds = null;
@@ -89,6 +91,7 @@ public class BatchGetDeploymentsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchGetDeploymentsRequest withDeploymentIds(String... deploymentIds) {
         if (this.deploymentIds == null) {
             setDeploymentIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -112,6 +115,7 @@ public class BatchGetDeploymentsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchGetDeploymentsRequest withDeploymentIds(
             java.util.Collection<String> deploymentIds) {
         setDeploymentIds(deploymentIds);

@@ -50,6 +50,7 @@ public class CreateVolumePermissionModifications implements Serializable,
      * @return Adds a specific AWS account ID or group to a volume's list of
      *         create volume permissions.
      */
+
     public java.util.List<CreateVolumePermission> getAdd() {
         if (add == null) {
             add = new com.amazonaws.internal.SdkInternalList<CreateVolumePermission>();
@@ -67,6 +68,7 @@ public class CreateVolumePermissionModifications implements Serializable,
      *        Adds a specific AWS account ID or group to a volume's list of
      *        create volume permissions.
      */
+
     public void setAdd(java.util.Collection<CreateVolumePermission> add) {
         if (add == null) {
             this.add = null;
@@ -95,6 +97,7 @@ public class CreateVolumePermissionModifications implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateVolumePermissionModifications withAdd(
             CreateVolumePermission... add) {
         if (this.add == null) {
@@ -119,6 +122,7 @@ public class CreateVolumePermissionModifications implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateVolumePermissionModifications withAdd(
             java.util.Collection<CreateVolumePermission> add) {
         setAdd(add);
@@ -134,6 +138,7 @@ public class CreateVolumePermissionModifications implements Serializable,
      * @return Removes a specific AWS account ID or group from a volume's list
      *         of create volume permissions.
      */
+
     public java.util.List<CreateVolumePermission> getRemove() {
         if (remove == null) {
             remove = new com.amazonaws.internal.SdkInternalList<CreateVolumePermission>();
@@ -151,6 +156,7 @@ public class CreateVolumePermissionModifications implements Serializable,
      *        Removes a specific AWS account ID or group from a volume's list of
      *        create volume permissions.
      */
+
     public void setRemove(java.util.Collection<CreateVolumePermission> remove) {
         if (remove == null) {
             this.remove = null;
@@ -179,6 +185,7 @@ public class CreateVolumePermissionModifications implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateVolumePermissionModifications withRemove(
             CreateVolumePermission... remove) {
         if (this.remove == null) {
@@ -203,6 +210,7 @@ public class CreateVolumePermissionModifications implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateVolumePermissionModifications withRemove(
             java.util.Collection<CreateVolumePermission> remove) {
         setRemove(remove);

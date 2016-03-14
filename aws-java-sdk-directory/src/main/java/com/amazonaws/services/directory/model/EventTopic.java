@@ -69,6 +69,7 @@ public class EventTopic implements Serializable, Cloneable {
      *        The Directory ID of an AWS Directory Service directory that will
      *        publish status messages to an SNS topic.
      */
+
     public void setDirectoryId(String directoryId) {
         this.directoryId = directoryId;
     }
@@ -82,6 +83,7 @@ public class EventTopic implements Serializable, Cloneable {
      * @return The Directory ID of an AWS Directory Service directory that will
      *         publish status messages to an SNS topic.
      */
+
     public String getDirectoryId() {
         return this.directoryId;
     }
@@ -98,6 +100,7 @@ public class EventTopic implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EventTopic withDirectoryId(String directoryId) {
         setDirectoryId(directoryId);
         return this;
@@ -113,6 +116,7 @@ public class EventTopic implements Serializable, Cloneable {
      *        The name of an AWS SNS topic the receives status messages from the
      *        directory.
      */
+
     public void setTopicName(String topicName) {
         this.topicName = topicName;
     }
@@ -126,6 +130,7 @@ public class EventTopic implements Serializable, Cloneable {
      * @return The name of an AWS SNS topic the receives status messages from
      *         the directory.
      */
+
     public String getTopicName() {
         return this.topicName;
     }
@@ -142,6 +147,7 @@ public class EventTopic implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EventTopic withTopicName(String topicName) {
         setTopicName(topicName);
         return this;
@@ -155,6 +161,7 @@ public class EventTopic implements Serializable, Cloneable {
      * @param topicArn
      *        The SNS topic ARN (Amazon Resource Name).
      */
+
     public void setTopicArn(String topicArn) {
         this.topicArn = topicArn;
     }
@@ -166,6 +173,7 @@ public class EventTopic implements Serializable, Cloneable {
      * 
      * @return The SNS topic ARN (Amazon Resource Name).
      */
+
     public String getTopicArn() {
         return this.topicArn;
     }
@@ -180,6 +188,7 @@ public class EventTopic implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EventTopic withTopicArn(String topicArn) {
         setTopicArn(topicArn);
         return this;
@@ -195,6 +204,7 @@ public class EventTopic implements Serializable, Cloneable {
      *        The date and time of when you associated your directory with the
      *        SNS topic.
      */
+
     public void setCreatedDateTime(java.util.Date createdDateTime) {
         this.createdDateTime = createdDateTime;
     }
@@ -208,6 +218,7 @@ public class EventTopic implements Serializable, Cloneable {
      * @return The date and time of when you associated your directory with the
      *         SNS topic.
      */
+
     public java.util.Date getCreatedDateTime() {
         return this.createdDateTime;
     }
@@ -224,6 +235,7 @@ public class EventTopic implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EventTopic withCreatedDateTime(java.util.Date createdDateTime) {
         setCreatedDateTime(createdDateTime);
         return this;
@@ -238,6 +250,7 @@ public class EventTopic implements Serializable, Cloneable {
      *        The topic registration status.
      * @see TopicStatus
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -250,6 +263,7 @@ public class EventTopic implements Serializable, Cloneable {
      * @return The topic registration status.
      * @see TopicStatus
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -265,6 +279,7 @@ public class EventTopic implements Serializable, Cloneable {
      *         chained together.
      * @see TopicStatus
      */
+
     public EventTopic withStatus(String status) {
         setStatus(status);
         return this;
@@ -281,6 +296,7 @@ public class EventTopic implements Serializable, Cloneable {
      *         chained together.
      * @see TopicStatus
      */
+
     public void setStatus(TopicStatus status) {
         this.status = status.toString();
     }
@@ -296,6 +312,7 @@ public class EventTopic implements Serializable, Cloneable {
      *         chained together.
      * @see TopicStatus
      */
+
     public EventTopic withStatus(TopicStatus status) {
         setStatus(status);
         return this;

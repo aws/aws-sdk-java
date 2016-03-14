@@ -46,6 +46,7 @@ public class InvalidSnsTopicException extends AmazonServiceException {
     /**
      * @param topic
      */
+
     public void setTopic(String topic) {
         this.topic = topic;
     }
@@ -53,6 +54,7 @@ public class InvalidSnsTopicException extends AmazonServiceException {
     /**
      * @return
      */
+
     public String getTopic() {
         return this.topic;
     }
@@ -62,6 +64,7 @@ public class InvalidSnsTopicException extends AmazonServiceException {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InvalidSnsTopicException withTopic(String topic) {
         setTopic(topic);
         return this;

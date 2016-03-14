@@ -15,23 +15,19 @@
 
 package com.amazonaws.codegen.internal;
 
-import static com.amazonaws.codegen.internal.Constants.LOGGER;
+import com.amazonaws.codegen.model.intermediate.IntermediateModel;
+import com.amazonaws.codegen.model.intermediate.Protocol;
+import com.amazonaws.codegen.model.intermediate.ShapeMarshaller;
+import com.amazonaws.codegen.model.intermediate.ShapeModel;
+import com.amazonaws.codegen.model.service.*;
+import com.amazonaws.util.StringUtils;
 
 import java.io.Closeable;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 
-import com.amazonaws.codegen.model.intermediate.IntermediateModel;
-import com.amazonaws.codegen.model.intermediate.Protocol;
-import com.amazonaws.codegen.model.intermediate.ShapeMarshaller;
-import com.amazonaws.codegen.model.intermediate.ShapeModel;
-import com.amazonaws.codegen.model.service.Input;
-import com.amazonaws.codegen.model.service.Operation;
-import com.amazonaws.codegen.model.service.ServiceMetadata;
-import com.amazonaws.codegen.model.service.Shape;
-import com.amazonaws.codegen.model.service.XmlNamespace;
-import com.amazonaws.util.StringUtils;
+import static com.amazonaws.codegen.internal.Constants.LOGGER;
 
 public class Utils {
 
@@ -236,21 +232,33 @@ public class Utils {
     /**
      * Search for intermediate shape model by its c2j name.
      *
+     * @return ShapeModel
      * @throws IllegalArgumentException
-     *             if the specified c2j name is not found in the intermediate
-     *             model.
+     *         if the specified c2j name is not found in the intermediate model.
      */
-    public static ShapeModel findShapeModelByC2jName(
-            IntermediateModel intermediateModel, String shapeC2jName) {
+    public static ShapeModel findShapeModelByC2jName(IntermediateModel intermediateModel, String shapeC2jName)
+            throws IllegalArgumentException {
+        ShapeModel shapeModel = findShapeModelByC2jNameIfExists(intermediateModel, shapeC2jName);
+        if (shapeModel != null) {
+            return shapeModel;
+        } else {
+            throw new IllegalArgumentException(
+                    shapeC2jName + " shape (c2j name) does not exist in the intermediate model.");
+        }
+    }
 
+    /**
+     * Search for intermediate shape model by its c2j name.
+     *
+     * @return ShapeModel or null if the shape doesn't exist (if it's primitive or container type for example)
+     */
+    public static ShapeModel findShapeModelByC2jNameIfExists(IntermediateModel intermediateModel, String shapeC2jName) {
         for (ShapeModel shape : intermediateModel.getShapes().values()) {
             if (shape.getC2jName().equals(shapeC2jName)) {
                 return shape;
             }
         }
-
-        throw new IllegalArgumentException(shapeC2jName
-                + " shape (c2j name) does not exist in the intermediate model.");
+        return null;
     }
 
     /**

@@ -44,6 +44,7 @@ public class DescribeReceiptRuleResult implements Serializable, Cloneable {
      *        actions, recipients, domains, enabled status, scan status, and
      *        Transport Layer Security (TLS) policy.
      */
+
     public void setRule(ReceiptRule rule) {
         this.rule = rule;
     }
@@ -59,6 +60,7 @@ public class DescribeReceiptRuleResult implements Serializable, Cloneable {
      *         actions, recipients, domains, enabled status, scan status, and
      *         Transport Layer Security (TLS) policy.
      */
+
     public ReceiptRule getRule() {
         return this.rule;
     }
@@ -77,6 +79,7 @@ public class DescribeReceiptRuleResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeReceiptRuleResult withRule(ReceiptRule rule) {
         setRule(rule);
         return this;

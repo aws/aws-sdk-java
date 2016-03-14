@@ -48,6 +48,7 @@ public class ValidationError implements Serializable, Cloneable {
      * @param id
      *        The identifier of the object that contains the validation error.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -59,6 +60,7 @@ public class ValidationError implements Serializable, Cloneable {
      * 
      * @return The identifier of the object that contains the validation error.
      */
+
     public String getId() {
         return this.id;
     }
@@ -73,6 +75,7 @@ public class ValidationError implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ValidationError withId(String id) {
         setId(id);
         return this;
@@ -85,6 +88,7 @@ public class ValidationError implements Serializable, Cloneable {
      * 
      * @return A description of the validation error.
      */
+
     public java.util.List<String> getErrors() {
         if (errors == null) {
             errors = new com.amazonaws.internal.SdkInternalList<String>();
@@ -100,6 +104,7 @@ public class ValidationError implements Serializable, Cloneable {
      * @param errors
      *        A description of the validation error.
      */
+
     public void setErrors(java.util.Collection<String> errors) {
         if (errors == null) {
             this.errors = null;
@@ -125,6 +130,7 @@ public class ValidationError implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ValidationError withErrors(String... errors) {
         if (this.errors == null) {
             setErrors(new com.amazonaws.internal.SdkInternalList<String>(
@@ -146,6 +152,7 @@ public class ValidationError implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ValidationError withErrors(java.util.Collection<String> errors) {
         setErrors(errors);
         return this;

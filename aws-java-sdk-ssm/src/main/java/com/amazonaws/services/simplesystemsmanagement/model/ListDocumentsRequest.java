@@ -57,6 +57,7 @@ public class ListDocumentsRequest extends AmazonWebServiceRequest implements
      * @return One or more filters. Use a filter to return a more specific list
      *         of results.
      */
+
     public java.util.List<DocumentFilter> getDocumentFilterList() {
         if (documentFilterList == null) {
             documentFilterList = new com.amazonaws.internal.SdkInternalList<DocumentFilter>();
@@ -74,6 +75,7 @@ public class ListDocumentsRequest extends AmazonWebServiceRequest implements
      *        One or more filters. Use a filter to return a more specific list
      *        of results.
      */
+
     public void setDocumentFilterList(
             java.util.Collection<DocumentFilter> documentFilterList) {
         if (documentFilterList == null) {
@@ -103,6 +105,7 @@ public class ListDocumentsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListDocumentsRequest withDocumentFilterList(
             DocumentFilter... documentFilterList) {
         if (this.documentFilterList == null) {
@@ -127,6 +130,7 @@ public class ListDocumentsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListDocumentsRequest withDocumentFilterList(
             java.util.Collection<DocumentFilter> documentFilterList) {
         setDocumentFilterList(documentFilterList);
@@ -145,6 +149,7 @@ public class ListDocumentsRequest extends AmazonWebServiceRequest implements
      *        returns a token that you can specify in a subsequent call to get
      *        the next set of results.
      */
+
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
     }
@@ -160,6 +165,7 @@ public class ListDocumentsRequest extends AmazonWebServiceRequest implements
      *         also returns a token that you can specify in a subsequent call to
      *         get the next set of results.
      */
+
     public Integer getMaxResults() {
         return this.maxResults;
     }
@@ -178,6 +184,7 @@ public class ListDocumentsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListDocumentsRequest withMaxResults(Integer maxResults) {
         setMaxResults(maxResults);
         return this;
@@ -193,6 +200,7 @@ public class ListDocumentsRequest extends AmazonWebServiceRequest implements
      *        The token for the next set of items to return. (You received this
      *        token from a previous call.)
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -206,6 +214,7 @@ public class ListDocumentsRequest extends AmazonWebServiceRequest implements
      * @return The token for the next set of items to return. (You received this
      *         token from a previous call.)
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -222,6 +231,7 @@ public class ListDocumentsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListDocumentsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

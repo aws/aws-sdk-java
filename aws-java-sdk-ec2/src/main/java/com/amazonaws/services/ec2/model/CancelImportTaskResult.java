@@ -50,6 +50,7 @@ public class CancelImportTaskResult implements Serializable, Cloneable {
      * @param importTaskId
      *        The ID of the task being canceled.
      */
+
     public void setImportTaskId(String importTaskId) {
         this.importTaskId = importTaskId;
     }
@@ -61,6 +62,7 @@ public class CancelImportTaskResult implements Serializable, Cloneable {
      * 
      * @return The ID of the task being canceled.
      */
+
     public String getImportTaskId() {
         return this.importTaskId;
     }
@@ -75,6 +77,7 @@ public class CancelImportTaskResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CancelImportTaskResult withImportTaskId(String importTaskId) {
         setImportTaskId(importTaskId);
         return this;
@@ -88,6 +91,7 @@ public class CancelImportTaskResult implements Serializable, Cloneable {
      * @param state
      *        The current state of the task being canceled.
      */
+
     public void setState(String state) {
         this.state = state;
     }
@@ -99,6 +103,7 @@ public class CancelImportTaskResult implements Serializable, Cloneable {
      * 
      * @return The current state of the task being canceled.
      */
+
     public String getState() {
         return this.state;
     }
@@ -113,6 +118,7 @@ public class CancelImportTaskResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CancelImportTaskResult withState(String state) {
         setState(state);
         return this;
@@ -126,6 +132,7 @@ public class CancelImportTaskResult implements Serializable, Cloneable {
      * @param previousState
      *        The current state of the task being canceled.
      */
+
     public void setPreviousState(String previousState) {
         this.previousState = previousState;
     }
@@ -137,6 +144,7 @@ public class CancelImportTaskResult implements Serializable, Cloneable {
      * 
      * @return The current state of the task being canceled.
      */
+
     public String getPreviousState() {
         return this.previousState;
     }
@@ -151,6 +159,7 @@ public class CancelImportTaskResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CancelImportTaskResult withPreviousState(String previousState) {
         setPreviousState(previousState);
         return this;

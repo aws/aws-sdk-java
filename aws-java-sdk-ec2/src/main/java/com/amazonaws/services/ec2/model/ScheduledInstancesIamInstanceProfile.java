@@ -47,6 +47,7 @@ public class ScheduledInstancesIamInstanceProfile implements Serializable,
      * @param arn
      *        The Amazon Resource Name (ARN).
      */
+
     public void setArn(String arn) {
         this.arn = arn;
     }
@@ -58,6 +59,7 @@ public class ScheduledInstancesIamInstanceProfile implements Serializable,
      * 
      * @return The Amazon Resource Name (ARN).
      */
+
     public String getArn() {
         return this.arn;
     }
@@ -72,6 +74,7 @@ public class ScheduledInstancesIamInstanceProfile implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstancesIamInstanceProfile withArn(String arn) {
         setArn(arn);
         return this;
@@ -85,6 +88,7 @@ public class ScheduledInstancesIamInstanceProfile implements Serializable,
      * @param name
      *        The name.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -96,6 +100,7 @@ public class ScheduledInstancesIamInstanceProfile implements Serializable,
      * 
      * @return The name.
      */
+
     public String getName() {
         return this.name;
     }
@@ -110,6 +115,7 @@ public class ScheduledInstancesIamInstanceProfile implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstancesIamInstanceProfile withName(String name) {
         setName(name);
         return this;

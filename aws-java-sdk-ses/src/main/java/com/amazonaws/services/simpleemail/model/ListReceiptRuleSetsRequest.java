@@ -44,6 +44,7 @@ public class ListReceiptRuleSetsRequest extends AmazonWebServiceRequest
      *        <code>ListReceiptRuleSets</code> to indicate the position in the
      *        receipt rule set list.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -58,6 +59,7 @@ public class ListReceiptRuleSetsRequest extends AmazonWebServiceRequest
      *         <code>ListReceiptRuleSets</code> to indicate the position in the
      *         receipt rule set list.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -75,6 +77,7 @@ public class ListReceiptRuleSetsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListReceiptRuleSetsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

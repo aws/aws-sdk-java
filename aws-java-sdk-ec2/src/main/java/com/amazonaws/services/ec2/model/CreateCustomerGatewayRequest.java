@@ -117,6 +117,7 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest
      *        <code>ipsec.1</code>).
      * @see GatewayType
      */
+
     public void setType(String type) {
         this.type = type;
     }
@@ -131,6 +132,7 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest
      *         <code>ipsec.1</code>).
      * @see GatewayType
      */
+
     public String getType() {
         return this.type;
     }
@@ -148,6 +150,7 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see GatewayType
      */
+
     public CreateCustomerGatewayRequest withType(String type) {
         setType(type);
         return this;
@@ -166,6 +169,7 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see GatewayType
      */
+
     public void setType(GatewayType type) {
         this.type = type.toString();
     }
@@ -183,6 +187,7 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see GatewayType
      */
+
     public CreateCustomerGatewayRequest withType(GatewayType type) {
         setType(type);
         return this;
@@ -198,6 +203,7 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest
      *        The Internet-routable IP address for the customer gateway's
      *        outside interface. The address must be static.
      */
+
     public void setPublicIp(String publicIp) {
         this.publicIp = publicIp;
     }
@@ -211,6 +217,7 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest
      * @return The Internet-routable IP address for the customer gateway's
      *         outside interface. The address must be static.
      */
+
     public String getPublicIp() {
         return this.publicIp;
     }
@@ -227,6 +234,7 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateCustomerGatewayRequest withPublicIp(String publicIp) {
         setPublicIp(publicIp);
         return this;
@@ -245,6 +253,7 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest
      *        <p>
      *        Default: 65000
      */
+
     public void setBgpAsn(Integer bgpAsn) {
         this.bgpAsn = bgpAsn;
     }
@@ -261,6 +270,7 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest
      *         <p>
      *         Default: 65000
      */
+
     public Integer getBgpAsn() {
         return this.bgpAsn;
     }
@@ -280,6 +290,7 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateCustomerGatewayRequest withBgpAsn(Integer bgpAsn) {
         setBgpAsn(bgpAsn);
         return this;

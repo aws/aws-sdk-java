@@ -38,6 +38,7 @@ public class AddAttributesToFindingsResult implements Serializable, Cloneable {
      * @param message
      *        Confirmation details of the action performed.
      */
+
     public void setMessage(String message) {
         this.message = message;
     }
@@ -49,6 +50,7 @@ public class AddAttributesToFindingsResult implements Serializable, Cloneable {
      * 
      * @return Confirmation details of the action performed.
      */
+
     public String getMessage() {
         return this.message;
     }
@@ -63,6 +65,7 @@ public class AddAttributesToFindingsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddAttributesToFindingsResult withMessage(String message) {
         setMessage(message);
         return this;

@@ -47,6 +47,7 @@ public class ArtifactLocation implements Serializable, Cloneable {
      *        The type of artifact in the location.
      * @see ArtifactLocationType
      */
+
     public void setType(String type) {
         this.type = type;
     }
@@ -59,6 +60,7 @@ public class ArtifactLocation implements Serializable, Cloneable {
      * @return The type of artifact in the location.
      * @see ArtifactLocationType
      */
+
     public String getType() {
         return this.type;
     }
@@ -74,6 +76,7 @@ public class ArtifactLocation implements Serializable, Cloneable {
      *         chained together.
      * @see ArtifactLocationType
      */
+
     public ArtifactLocation withType(String type) {
         setType(type);
         return this;
@@ -90,6 +93,7 @@ public class ArtifactLocation implements Serializable, Cloneable {
      *         chained together.
      * @see ArtifactLocationType
      */
+
     public void setType(ArtifactLocationType type) {
         this.type = type.toString();
     }
@@ -105,6 +109,7 @@ public class ArtifactLocation implements Serializable, Cloneable {
      *         chained together.
      * @see ArtifactLocationType
      */
+
     public ArtifactLocation withType(ArtifactLocationType type) {
         setType(type);
         return this;
@@ -118,6 +123,7 @@ public class ArtifactLocation implements Serializable, Cloneable {
      * @param s3Location
      *        The Amazon S3 bucket that contains the artifact.
      */
+
     public void setS3Location(S3ArtifactLocation s3Location) {
         this.s3Location = s3Location;
     }
@@ -129,6 +135,7 @@ public class ArtifactLocation implements Serializable, Cloneable {
      * 
      * @return The Amazon S3 bucket that contains the artifact.
      */
+
     public S3ArtifactLocation getS3Location() {
         return this.s3Location;
     }
@@ -143,6 +150,7 @@ public class ArtifactLocation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ArtifactLocation withS3Location(S3ArtifactLocation s3Location) {
         setS3Location(s3Location);
         return this;

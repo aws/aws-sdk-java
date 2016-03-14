@@ -28,6 +28,7 @@ public class StopTaskResult implements Serializable, Cloneable {
     /**
      * @param task
      */
+
     public void setTask(Task task) {
         this.task = task;
     }
@@ -35,6 +36,7 @@ public class StopTaskResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Task getTask() {
         return this.task;
     }
@@ -44,6 +46,7 @@ public class StopTaskResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StopTaskResult withTask(Task task) {
         setTask(task);
         return this;

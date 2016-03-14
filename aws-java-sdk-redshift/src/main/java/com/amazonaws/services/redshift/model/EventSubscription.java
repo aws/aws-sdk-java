@@ -17,7 +17,9 @@ package com.amazonaws.services.redshift.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Describes event subscriptions.
+ * </p>
  */
 public class EventSubscription implements Serializable, Cloneable {
 

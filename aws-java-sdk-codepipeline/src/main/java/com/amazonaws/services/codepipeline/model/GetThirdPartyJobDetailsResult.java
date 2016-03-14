@@ -43,6 +43,7 @@ public class GetThirdPartyJobDetailsResult implements Serializable, Cloneable {
      *        The details of the job, including any protected values defined for
      *        the job.
      */
+
     public void setJobDetails(ThirdPartyJobDetails jobDetails) {
         this.jobDetails = jobDetails;
     }
@@ -56,6 +57,7 @@ public class GetThirdPartyJobDetailsResult implements Serializable, Cloneable {
      * @return The details of the job, including any protected values defined
      *         for the job.
      */
+
     public ThirdPartyJobDetails getJobDetails() {
         return this.jobDetails;
     }
@@ -72,6 +74,7 @@ public class GetThirdPartyJobDetailsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetThirdPartyJobDetailsResult withJobDetails(
             ThirdPartyJobDetails jobDetails) {
         setJobDetails(jobDetails);

@@ -67,6 +67,7 @@ public class ListTagsForResourceRequest extends AmazonWebServiceRequest
      *        - The resource type for hosted zones is <code>hostedzone</code>.
      * @see TagResourceType
      */
+
     public void setResourceType(String resourceType) {
         this.resourceType = resourceType;
     }
@@ -91,6 +92,7 @@ public class ListTagsForResourceRequest extends AmazonWebServiceRequest
      *         - The resource type for hosted zones is <code>hostedzone</code>.
      * @see TagResourceType
      */
+
     public String getResourceType() {
         return this.resourceType;
     }
@@ -117,6 +119,7 @@ public class ListTagsForResourceRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see TagResourceType
      */
+
     public ListTagsForResourceRequest withResourceType(String resourceType) {
         setResourceType(resourceType);
         return this;
@@ -144,6 +147,7 @@ public class ListTagsForResourceRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see TagResourceType
      */
+
     public void setResourceType(TagResourceType resourceType) {
         this.resourceType = resourceType.toString();
     }
@@ -170,6 +174,7 @@ public class ListTagsForResourceRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see TagResourceType
      */
+
     public ListTagsForResourceRequest withResourceType(
             TagResourceType resourceType) {
         setResourceType(resourceType);
@@ -184,6 +189,7 @@ public class ListTagsForResourceRequest extends AmazonWebServiceRequest
      * @param resourceId
      *        The ID of the resource for which you want to retrieve tags.
      */
+
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
     }
@@ -195,6 +201,7 @@ public class ListTagsForResourceRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the resource for which you want to retrieve tags.
      */
+
     public String getResourceId() {
         return this.resourceId;
     }
@@ -209,6 +216,7 @@ public class ListTagsForResourceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTagsForResourceRequest withResourceId(String resourceId) {
         setResourceId(resourceId);
         return this;

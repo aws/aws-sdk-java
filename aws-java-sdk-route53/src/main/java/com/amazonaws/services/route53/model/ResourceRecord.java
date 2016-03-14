@@ -101,6 +101,7 @@ public class ResourceRecord implements Serializable, Cloneable {
      *        You can specify more than one value for all record types except
      *        <code>CNAME</code> and <code>SOA</code>.
      */
+
     public void setValue(String value) {
         this.value = value;
     }
@@ -132,6 +133,7 @@ public class ResourceRecord implements Serializable, Cloneable {
      *         You can specify more than one value for all record types except
      *         <code>CNAME</code> and <code>SOA</code>.
      */
+
     public String getValue() {
         return this.value;
     }
@@ -166,6 +168,7 @@ public class ResourceRecord implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ResourceRecord withValue(String value) {
         setValue(value);
         return this;

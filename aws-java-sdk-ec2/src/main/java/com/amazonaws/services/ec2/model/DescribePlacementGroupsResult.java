@@ -37,6 +37,7 @@ public class DescribePlacementGroupsResult implements Serializable, Cloneable {
      * 
      * @return One or more placement groups.
      */
+
     public java.util.List<PlacementGroup> getPlacementGroups() {
         if (placementGroups == null) {
             placementGroups = new com.amazonaws.internal.SdkInternalList<PlacementGroup>();
@@ -52,6 +53,7 @@ public class DescribePlacementGroupsResult implements Serializable, Cloneable {
      * @param placementGroups
      *        One or more placement groups.
      */
+
     public void setPlacementGroups(
             java.util.Collection<PlacementGroup> placementGroups) {
         if (placementGroups == null) {
@@ -79,6 +81,7 @@ public class DescribePlacementGroupsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribePlacementGroupsResult withPlacementGroups(
             PlacementGroup... placementGroups) {
         if (this.placementGroups == null) {
@@ -101,6 +104,7 @@ public class DescribePlacementGroupsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribePlacementGroupsResult withPlacementGroups(
             java.util.Collection<PlacementGroup> placementGroups) {
         setPlacementGroups(placementGroups);

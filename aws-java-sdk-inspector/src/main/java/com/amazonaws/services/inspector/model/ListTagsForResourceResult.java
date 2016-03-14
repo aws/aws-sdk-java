@@ -37,6 +37,7 @@ public class ListTagsForResourceResult implements Serializable, Cloneable {
      * 
      * @return A collection of key and value pairs.
      */
+
     public java.util.List<Tag> getTagList() {
         return tagList;
     }
@@ -49,6 +50,7 @@ public class ListTagsForResourceResult implements Serializable, Cloneable {
      * @param tagList
      *        A collection of key and value pairs.
      */
+
     public void setTagList(java.util.Collection<Tag> tagList) {
         if (tagList == null) {
             this.tagList = null;
@@ -74,6 +76,7 @@ public class ListTagsForResourceResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTagsForResourceResult withTagList(Tag... tagList) {
         if (this.tagList == null) {
             setTagList(new java.util.ArrayList<Tag>(tagList.length));
@@ -94,6 +97,7 @@ public class ListTagsForResourceResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTagsForResourceResult withTagList(
             java.util.Collection<Tag> tagList) {
         setTagList(tagList);

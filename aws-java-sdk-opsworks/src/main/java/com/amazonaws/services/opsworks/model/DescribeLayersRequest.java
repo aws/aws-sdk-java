@@ -48,6 +48,7 @@ public class DescribeLayersRequest extends AmazonWebServiceRequest implements
      * @param stackId
      *        The stack ID.
      */
+
     public void setStackId(String stackId) {
         this.stackId = stackId;
     }
@@ -59,6 +60,7 @@ public class DescribeLayersRequest extends AmazonWebServiceRequest implements
      * 
      * @return The stack ID.
      */
+
     public String getStackId() {
         return this.stackId;
     }
@@ -73,6 +75,7 @@ public class DescribeLayersRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLayersRequest withStackId(String stackId) {
         setStackId(stackId);
         return this;
@@ -89,6 +92,7 @@ public class DescribeLayersRequest extends AmazonWebServiceRequest implements
      *         you omit this parameter, <code>DescribeLayers</code> returns a
      *         description of every layer in the specified stack.
      */
+
     public java.util.List<String> getLayerIds() {
         if (layerIds == null) {
             layerIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -108,6 +112,7 @@ public class DescribeLayersRequest extends AmazonWebServiceRequest implements
      *        you omit this parameter, <code>DescribeLayers</code> returns a
      *        description of every layer in the specified stack.
      */
+
     public void setLayerIds(java.util.Collection<String> layerIds) {
         if (layerIds == null) {
             this.layerIds = null;
@@ -138,6 +143,7 @@ public class DescribeLayersRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLayersRequest withLayerIds(String... layerIds) {
         if (this.layerIds == null) {
             setLayerIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -163,6 +169,7 @@ public class DescribeLayersRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLayersRequest withLayerIds(
             java.util.Collection<String> layerIds) {
         setLayerIds(layerIds);

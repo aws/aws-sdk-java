@@ -37,6 +37,7 @@ public class DescribeInstanceHealthResult implements Serializable, Cloneable {
      * 
      * @return Information about the health of the instances.
      */
+
     public java.util.List<InstanceState> getInstanceStates() {
         if (instanceStates == null) {
             instanceStates = new com.amazonaws.internal.SdkInternalList<InstanceState>();
@@ -52,6 +53,7 @@ public class DescribeInstanceHealthResult implements Serializable, Cloneable {
      * @param instanceStates
      *        Information about the health of the instances.
      */
+
     public void setInstanceStates(
             java.util.Collection<InstanceState> instanceStates) {
         if (instanceStates == null) {
@@ -79,6 +81,7 @@ public class DescribeInstanceHealthResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeInstanceHealthResult withInstanceStates(
             InstanceState... instanceStates) {
         if (this.instanceStates == null) {
@@ -101,6 +104,7 @@ public class DescribeInstanceHealthResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeInstanceHealthResult withInstanceStates(
             java.util.Collection<InstanceState> instanceStates) {
         setInstanceStates(instanceStates);

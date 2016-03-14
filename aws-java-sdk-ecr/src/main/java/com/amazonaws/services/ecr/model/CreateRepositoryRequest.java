@@ -49,6 +49,7 @@ public class CreateRepositoryRequest extends AmazonWebServiceRequest implements
      *        can be prepended with a namespace to group the repository into a
      *        category (such as <code>project-a/nginx-web-app</code>).
      */
+
     public void setRepositoryName(String repositoryName) {
         this.repositoryName = repositoryName;
     }
@@ -66,6 +67,7 @@ public class CreateRepositoryRequest extends AmazonWebServiceRequest implements
      *         can be prepended with a namespace to group the repository into a
      *         category (such as <code>project-a/nginx-web-app</code>).
      */
+
     public String getRepositoryName() {
         return this.repositoryName;
     }
@@ -86,6 +88,7 @@ public class CreateRepositoryRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateRepositoryRequest withRepositoryName(String repositoryName) {
         setRepositoryName(repositoryName);
         return this;

@@ -40,6 +40,7 @@ public class RegisterEcsClusterResult implements Serializable, Cloneable {
      * @param ecsClusterArn
      *        The cluster's ARN.
      */
+
     public void setEcsClusterArn(String ecsClusterArn) {
         this.ecsClusterArn = ecsClusterArn;
     }
@@ -51,6 +52,7 @@ public class RegisterEcsClusterResult implements Serializable, Cloneable {
      * 
      * @return The cluster's ARN.
      */
+
     public String getEcsClusterArn() {
         return this.ecsClusterArn;
     }
@@ -65,6 +67,7 @@ public class RegisterEcsClusterResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterEcsClusterResult withEcsClusterArn(String ecsClusterArn) {
         setEcsClusterArn(ecsClusterArn);
         return this;

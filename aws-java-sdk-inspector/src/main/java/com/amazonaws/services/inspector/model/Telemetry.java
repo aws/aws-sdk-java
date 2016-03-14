@@ -54,6 +54,7 @@ public class Telemetry implements Serializable, Cloneable {
      *        The category of the individual metrics that together constitute
      *        the telemetry that Inspector received from the agent.
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -67,6 +68,7 @@ public class Telemetry implements Serializable, Cloneable {
      * @return The category of the individual metrics that together constitute
      *         the telemetry that Inspector received from the agent.
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -83,6 +85,7 @@ public class Telemetry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Telemetry withStatus(String status) {
         setStatus(status);
         return this;
@@ -96,6 +99,7 @@ public class Telemetry implements Serializable, Cloneable {
      * @return Counts of individual metrics received by Inspector from the
      *         agent.
      */
+
     public java.util.List<MessageTypeTelemetry> getMessageTypeTelemetries() {
         return messageTypeTelemetries;
     }
@@ -108,6 +112,7 @@ public class Telemetry implements Serializable, Cloneable {
      * @param messageTypeTelemetries
      *        Counts of individual metrics received by Inspector from the agent.
      */
+
     public void setMessageTypeTelemetries(
             java.util.Collection<MessageTypeTelemetry> messageTypeTelemetries) {
         if (messageTypeTelemetries == null) {
@@ -135,6 +140,7 @@ public class Telemetry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Telemetry withMessageTypeTelemetries(
             MessageTypeTelemetry... messageTypeTelemetries) {
         if (this.messageTypeTelemetries == null) {
@@ -157,6 +163,7 @@ public class Telemetry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Telemetry withMessageTypeTelemetries(
             java.util.Collection<MessageTypeTelemetry> messageTypeTelemetries) {
         setMessageTypeTelemetries(messageTypeTelemetries);

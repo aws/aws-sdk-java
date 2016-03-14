@@ -67,6 +67,7 @@ public class InstanceNetworkInterfaceAttachment implements Serializable,
      * @param attachmentId
      *        The ID of the network interface attachment.
      */
+
     public void setAttachmentId(String attachmentId) {
         this.attachmentId = attachmentId;
     }
@@ -78,6 +79,7 @@ public class InstanceNetworkInterfaceAttachment implements Serializable,
      * 
      * @return The ID of the network interface attachment.
      */
+
     public String getAttachmentId() {
         return this.attachmentId;
     }
@@ -92,6 +94,7 @@ public class InstanceNetworkInterfaceAttachment implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceNetworkInterfaceAttachment withAttachmentId(
             String attachmentId) {
         setAttachmentId(attachmentId);
@@ -108,6 +111,7 @@ public class InstanceNetworkInterfaceAttachment implements Serializable,
      *        The index of the device on the instance for the network interface
      *        attachment.
      */
+
     public void setDeviceIndex(Integer deviceIndex) {
         this.deviceIndex = deviceIndex;
     }
@@ -121,6 +125,7 @@ public class InstanceNetworkInterfaceAttachment implements Serializable,
      * @return The index of the device on the instance for the network interface
      *         attachment.
      */
+
     public Integer getDeviceIndex() {
         return this.deviceIndex;
     }
@@ -137,6 +142,7 @@ public class InstanceNetworkInterfaceAttachment implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceNetworkInterfaceAttachment withDeviceIndex(
             Integer deviceIndex) {
         setDeviceIndex(deviceIndex);
@@ -152,6 +158,7 @@ public class InstanceNetworkInterfaceAttachment implements Serializable,
      *        The attachment state.
      * @see AttachmentStatus
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -164,6 +171,7 @@ public class InstanceNetworkInterfaceAttachment implements Serializable,
      * @return The attachment state.
      * @see AttachmentStatus
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -179,6 +187,7 @@ public class InstanceNetworkInterfaceAttachment implements Serializable,
      *         chained together.
      * @see AttachmentStatus
      */
+
     public InstanceNetworkInterfaceAttachment withStatus(String status) {
         setStatus(status);
         return this;
@@ -195,6 +204,7 @@ public class InstanceNetworkInterfaceAttachment implements Serializable,
      *         chained together.
      * @see AttachmentStatus
      */
+
     public void setStatus(AttachmentStatus status) {
         this.status = status.toString();
     }
@@ -210,6 +220,7 @@ public class InstanceNetworkInterfaceAttachment implements Serializable,
      *         chained together.
      * @see AttachmentStatus
      */
+
     public InstanceNetworkInterfaceAttachment withStatus(AttachmentStatus status) {
         setStatus(status);
         return this;
@@ -223,6 +234,7 @@ public class InstanceNetworkInterfaceAttachment implements Serializable,
      * @param attachTime
      *        The time stamp when the attachment initiated.
      */
+
     public void setAttachTime(java.util.Date attachTime) {
         this.attachTime = attachTime;
     }
@@ -234,6 +246,7 @@ public class InstanceNetworkInterfaceAttachment implements Serializable,
      * 
      * @return The time stamp when the attachment initiated.
      */
+
     public java.util.Date getAttachTime() {
         return this.attachTime;
     }
@@ -248,6 +261,7 @@ public class InstanceNetworkInterfaceAttachment implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceNetworkInterfaceAttachment withAttachTime(
             java.util.Date attachTime) {
         setAttachTime(attachTime);
@@ -264,6 +278,7 @@ public class InstanceNetworkInterfaceAttachment implements Serializable,
      *        Indicates whether the network interface is deleted when the
      *        instance is terminated.
      */
+
     public void setDeleteOnTermination(Boolean deleteOnTermination) {
         this.deleteOnTermination = deleteOnTermination;
     }
@@ -277,6 +292,7 @@ public class InstanceNetworkInterfaceAttachment implements Serializable,
      * @return Indicates whether the network interface is deleted when the
      *         instance is terminated.
      */
+
     public Boolean getDeleteOnTermination() {
         return this.deleteOnTermination;
     }
@@ -293,6 +309,7 @@ public class InstanceNetworkInterfaceAttachment implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceNetworkInterfaceAttachment withDeleteOnTermination(
             Boolean deleteOnTermination) {
         setDeleteOnTermination(deleteOnTermination);
@@ -308,6 +325,7 @@ public class InstanceNetworkInterfaceAttachment implements Serializable,
      * @return Indicates whether the network interface is deleted when the
      *         instance is terminated.
      */
+
     public Boolean isDeleteOnTermination() {
         return this.deleteOnTermination;
     }

@@ -32,6 +32,7 @@ public class RevisionInfo implements Serializable, Cloneable {
     /**
      * @param revisionLocation
      */
+
     public void setRevisionLocation(RevisionLocation revisionLocation) {
         this.revisionLocation = revisionLocation;
     }
@@ -39,6 +40,7 @@ public class RevisionInfo implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public RevisionLocation getRevisionLocation() {
         return this.revisionLocation;
     }
@@ -48,6 +50,7 @@ public class RevisionInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RevisionInfo withRevisionLocation(RevisionLocation revisionLocation) {
         setRevisionLocation(revisionLocation);
         return this;
@@ -56,6 +59,7 @@ public class RevisionInfo implements Serializable, Cloneable {
     /**
      * @param genericRevisionInfo
      */
+
     public void setGenericRevisionInfo(GenericRevisionInfo genericRevisionInfo) {
         this.genericRevisionInfo = genericRevisionInfo;
     }
@@ -63,6 +67,7 @@ public class RevisionInfo implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public GenericRevisionInfo getGenericRevisionInfo() {
         return this.genericRevisionInfo;
     }
@@ -72,6 +77,7 @@ public class RevisionInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RevisionInfo withGenericRevisionInfo(
             GenericRevisionInfo genericRevisionInfo) {
         setGenericRevisionInfo(genericRevisionInfo);

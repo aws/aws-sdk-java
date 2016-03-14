@@ -193,6 +193,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements
      *        Default: If you're creating the volume from a snapshot and don't
      *        specify a volume size, the default is the snapshot size.
      */
+
     public void setSize(Integer size) {
         this.size = size;
     }
@@ -225,6 +226,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements
      *         Default: If you're creating the volume from a snapshot and don't
      *         specify a volume size, the default is the snapshot size.
      */
+
     public Integer getSize() {
         return this.size;
     }
@@ -260,6 +262,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateVolumeRequest withSize(Integer size) {
         setSize(size);
         return this;
@@ -273,6 +276,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements
      * @param snapshotId
      *        The snapshot from which to create the volume.
      */
+
     public void setSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
     }
@@ -284,6 +288,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements
      * 
      * @return The snapshot from which to create the volume.
      */
+
     public String getSnapshotId() {
         return this.snapshotId;
     }
@@ -298,6 +303,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateVolumeRequest withSnapshotId(String snapshotId) {
         setSnapshotId(snapshotId);
         return this;
@@ -315,6 +321,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements
      *        <a>DescribeAvailabilityZones</a> to list the Availability Zones
      *        that are currently available to you.
      */
+
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
@@ -330,6 +337,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements
      *         <a>DescribeAvailabilityZones</a> to list the Availability Zones
      *         that are currently available to you.
      */
+
     public String getAvailabilityZone() {
         return this.availabilityZone;
     }
@@ -348,6 +356,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateVolumeRequest withAvailabilityZone(String availabilityZone) {
         setAvailabilityZone(availabilityZone);
         return this;
@@ -371,6 +380,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements
      *        Default: <code>standard</code>
      * @see VolumeType
      */
+
     public void setVolumeType(String volumeType) {
         this.volumeType = volumeType;
     }
@@ -392,6 +402,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements
      *         Default: <code>standard</code>
      * @see VolumeType
      */
+
     public String getVolumeType() {
         return this.volumeType;
     }
@@ -416,6 +427,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see VolumeType
      */
+
     public CreateVolumeRequest withVolumeType(String volumeType) {
         setVolumeType(volumeType);
         return this;
@@ -441,6 +453,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see VolumeType
      */
+
     public void setVolumeType(VolumeType volumeType) {
         this.volumeType = volumeType.toString();
     }
@@ -465,6 +478,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see VolumeType
      */
+
     public CreateVolumeRequest withVolumeType(VolumeType volumeType) {
         setVolumeType(volumeType);
         return this;
@@ -488,6 +502,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements
      *        Constraint: Range is 100 to 20000 for Provisioned IOPS (SSD)
      *        volumes
      */
+
     public void setIops(Integer iops) {
         this.iops = iops;
     }
@@ -509,6 +524,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements
      *         Constraint: Range is 100 to 20000 for Provisioned IOPS (SSD)
      *         volumes
      */
+
     public Integer getIops() {
         return this.iops;
     }
@@ -533,6 +549,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateVolumeRequest withIops(Integer iops) {
         setIops(iops);
         return this;
@@ -564,6 +581,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements
      *        >Amazon EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud
      *        User Guide</i>.
      */
+
     public void setEncrypted(Boolean encrypted) {
         this.encrypted = encrypted;
     }
@@ -593,6 +611,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements
      *         >Amazon EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud
      *         User Guide</i>.
      */
+
     public Boolean getEncrypted() {
         return this.encrypted;
     }
@@ -625,6 +644,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateVolumeRequest withEncrypted(Boolean encrypted) {
         setEncrypted(encrypted);
         return this;
@@ -655,6 +675,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements
      *         >Amazon EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud
      *         User Guide</i>.
      */
+
     public Boolean isEncrypted() {
         return this.encrypted;
     }
@@ -687,6 +708,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements
      *        -a123-456a-a12b-a123b4cd56ef</i>. If a <code>KmsKeyId</code> is
      *        specified, the <code>Encrypted</code> flag must also be set.
      */
+
     public void setKmsKeyId(String kmsKeyId) {
         this.kmsKeyId = kmsKeyId;
     }
@@ -718,6 +740,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements
      *         <code>KmsKeyId</code> is specified, the <code>Encrypted</code>
      *         flag must also be set.
      */
+
     public String getKmsKeyId() {
         return this.kmsKeyId;
     }
@@ -752,6 +775,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateVolumeRequest withKmsKeyId(String kmsKeyId) {
         setKmsKeyId(kmsKeyId);
         return this;

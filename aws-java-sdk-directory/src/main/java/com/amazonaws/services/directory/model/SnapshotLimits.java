@@ -52,6 +52,7 @@ public class SnapshotLimits implements Serializable, Cloneable {
      * @param manualSnapshotsLimit
      *        The maximum number of manual snapshots allowed.
      */
+
     public void setManualSnapshotsLimit(Integer manualSnapshotsLimit) {
         this.manualSnapshotsLimit = manualSnapshotsLimit;
     }
@@ -63,6 +64,7 @@ public class SnapshotLimits implements Serializable, Cloneable {
      * 
      * @return The maximum number of manual snapshots allowed.
      */
+
     public Integer getManualSnapshotsLimit() {
         return this.manualSnapshotsLimit;
     }
@@ -77,6 +79,7 @@ public class SnapshotLimits implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SnapshotLimits withManualSnapshotsLimit(Integer manualSnapshotsLimit) {
         setManualSnapshotsLimit(manualSnapshotsLimit);
         return this;
@@ -90,6 +93,7 @@ public class SnapshotLimits implements Serializable, Cloneable {
      * @param manualSnapshotsCurrentCount
      *        The current number of manual snapshots of the directory.
      */
+
     public void setManualSnapshotsCurrentCount(
             Integer manualSnapshotsCurrentCount) {
         this.manualSnapshotsCurrentCount = manualSnapshotsCurrentCount;
@@ -102,6 +106,7 @@ public class SnapshotLimits implements Serializable, Cloneable {
      * 
      * @return The current number of manual snapshots of the directory.
      */
+
     public Integer getManualSnapshotsCurrentCount() {
         return this.manualSnapshotsCurrentCount;
     }
@@ -116,6 +121,7 @@ public class SnapshotLimits implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SnapshotLimits withManualSnapshotsCurrentCount(
             Integer manualSnapshotsCurrentCount) {
         setManualSnapshotsCurrentCount(manualSnapshotsCurrentCount);
@@ -130,6 +136,7 @@ public class SnapshotLimits implements Serializable, Cloneable {
      * @param manualSnapshotsLimitReached
      *        Indicates if the manual snapshot limit has been reached.
      */
+
     public void setManualSnapshotsLimitReached(
             Boolean manualSnapshotsLimitReached) {
         this.manualSnapshotsLimitReached = manualSnapshotsLimitReached;
@@ -142,6 +149,7 @@ public class SnapshotLimits implements Serializable, Cloneable {
      * 
      * @return Indicates if the manual snapshot limit has been reached.
      */
+
     public Boolean getManualSnapshotsLimitReached() {
         return this.manualSnapshotsLimitReached;
     }
@@ -156,6 +164,7 @@ public class SnapshotLimits implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SnapshotLimits withManualSnapshotsLimitReached(
             Boolean manualSnapshotsLimitReached) {
         setManualSnapshotsLimitReached(manualSnapshotsLimitReached);
@@ -169,6 +178,7 @@ public class SnapshotLimits implements Serializable, Cloneable {
      * 
      * @return Indicates if the manual snapshot limit has been reached.
      */
+
     public Boolean isManualSnapshotsLimitReached() {
         return this.manualSnapshotsLimitReached;
     }

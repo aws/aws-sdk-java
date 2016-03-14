@@ -68,6 +68,7 @@ public class ListRunsRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ARNs specifying the assessments whose runs you want to list.
      */
+
     public java.util.List<String> getAssessmentArns() {
         return assessmentArns;
     }
@@ -80,6 +81,7 @@ public class ListRunsRequest extends AmazonWebServiceRequest implements
      * @param assessmentArns
      *        The ARNs specifying the assessments whose runs you want to list.
      */
+
     public void setAssessmentArns(java.util.Collection<String> assessmentArns) {
         if (assessmentArns == null) {
             this.assessmentArns = null;
@@ -105,6 +107,7 @@ public class ListRunsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListRunsRequest withAssessmentArns(String... assessmentArns) {
         if (this.assessmentArns == null) {
             setAssessmentArns(new java.util.ArrayList<String>(
@@ -126,6 +129,7 @@ public class ListRunsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListRunsRequest withAssessmentArns(
             java.util.Collection<String> assessmentArns) {
         setAssessmentArns(assessmentArns);
@@ -151,6 +155,7 @@ public class ListRunsRequest extends AmazonWebServiceRequest implements
      *        must match. When multiple values are specified for a filter
      *        attribute, any of the values can match.
      */
+
     public void setFilter(RunsFilter filter) {
         this.filter = filter;
     }
@@ -173,6 +178,7 @@ public class ListRunsRequest extends AmazonWebServiceRequest implements
      *         must match. When multiple values are specified for a filter
      *         attribute, any of the values can match.
      */
+
     public RunsFilter getFilter() {
         return this.filter;
     }
@@ -198,6 +204,7 @@ public class ListRunsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListRunsRequest withFilter(RunsFilter filter) {
         setFilter(filter);
         return this;
@@ -219,6 +226,7 @@ public class ListRunsRequest extends AmazonWebServiceRequest implements
      *        <b>nextToken</b> in the request with the value of <b>NextToken</b>
      *        from previous response to continue listing data.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -238,6 +246,7 @@ public class ListRunsRequest extends AmazonWebServiceRequest implements
      *         <b>nextToken</b> in the request with the value of
      *         <b>NextToken</b> from previous response to continue listing data.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -260,6 +269,7 @@ public class ListRunsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListRunsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -276,6 +286,7 @@ public class ListRunsRequest extends AmazonWebServiceRequest implements
      *        you want in the response. The default value is 10. The maximum
      *        value is 500.
      */
+
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
     }
@@ -290,6 +301,7 @@ public class ListRunsRequest extends AmazonWebServiceRequest implements
      *         items you want in the response. The default value is 10. The
      *         maximum value is 500.
      */
+
     public Integer getMaxResults() {
         return this.maxResults;
     }
@@ -307,6 +319,7 @@ public class ListRunsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListRunsRequest withMaxResults(Integer maxResults) {
         setMaxResults(maxResults);
         return this;

@@ -20,9 +20,9 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Exception thrown in response to a <a>CreatePlayerSession</a> request. This
- * exception indicates that the game instance is currently full and cannot allow
- * the requested player(s) to join.
+ * The game instance is currently full and cannot allow the requested player(s)
+ * to join. This exception occurs in response to a <a>CreatePlayerSession</a>
+ * request.
  * </p>
  */
 public class GameSessionFullException extends AmazonServiceException {

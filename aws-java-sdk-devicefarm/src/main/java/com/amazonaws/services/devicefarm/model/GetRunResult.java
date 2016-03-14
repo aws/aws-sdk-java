@@ -30,6 +30,7 @@ public class GetRunResult implements Serializable, Cloneable {
     /**
      * @param run
      */
+
     public void setRun(Run run) {
         this.run = run;
     }
@@ -37,6 +38,7 @@ public class GetRunResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Run getRun() {
         return this.run;
     }
@@ -46,6 +48,7 @@ public class GetRunResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetRunResult withRun(Run run) {
         setRun(run);
         return this;

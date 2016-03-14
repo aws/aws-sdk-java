@@ -17,7 +17,9 @@ package com.amazonaws.services.redshift.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Describes event information.
+ * </p>
  */
 public class EventInfoMap implements Serializable, Cloneable {
 

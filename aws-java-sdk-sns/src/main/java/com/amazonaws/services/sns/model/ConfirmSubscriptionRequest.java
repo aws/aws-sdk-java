@@ -105,6 +105,7 @@ public class ConfirmSubscriptionRequest extends AmazonWebServiceRequest
      * @param topicArn
      *        The ARN of the topic for which you wish to confirm a subscription.
      */
+
     public void setTopicArn(String topicArn) {
         this.topicArn = topicArn;
     }
@@ -117,6 +118,7 @@ public class ConfirmSubscriptionRequest extends AmazonWebServiceRequest
      * @return The ARN of the topic for which you wish to confirm a
      *         subscription.
      */
+
     public String getTopicArn() {
         return this.topicArn;
     }
@@ -131,6 +133,7 @@ public class ConfirmSubscriptionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfirmSubscriptionRequest withTopicArn(String topicArn) {
         setTopicArn(topicArn);
         return this;
@@ -146,6 +149,7 @@ public class ConfirmSubscriptionRequest extends AmazonWebServiceRequest
      *        Short-lived token sent to an endpoint during the
      *        <code>Subscribe</code> action.
      */
+
     public void setToken(String token) {
         this.token = token;
     }
@@ -159,6 +163,7 @@ public class ConfirmSubscriptionRequest extends AmazonWebServiceRequest
      * @return Short-lived token sent to an endpoint during the
      *         <code>Subscribe</code> action.
      */
+
     public String getToken() {
         return this.token;
     }
@@ -175,6 +180,7 @@ public class ConfirmSubscriptionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfirmSubscriptionRequest withToken(String token) {
         setToken(token);
         return this;
@@ -196,6 +202,7 @@ public class ConfirmSubscriptionRequest extends AmazonWebServiceRequest
      *        owner can unsubscribe the endpoint. The unsubscribe action
      *        requires AWS authentication.
      */
+
     public void setAuthenticateOnUnsubscribe(String authenticateOnUnsubscribe) {
         this.authenticateOnUnsubscribe = authenticateOnUnsubscribe;
     }
@@ -215,6 +222,7 @@ public class ConfirmSubscriptionRequest extends AmazonWebServiceRequest
      *         subscription owner can unsubscribe the endpoint. The unsubscribe
      *         action requires AWS authentication.
      */
+
     public String getAuthenticateOnUnsubscribe() {
         return this.authenticateOnUnsubscribe;
     }
@@ -237,6 +245,7 @@ public class ConfirmSubscriptionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfirmSubscriptionRequest withAuthenticateOnUnsubscribe(
             String authenticateOnUnsubscribe) {
         setAuthenticateOnUnsubscribe(authenticateOnUnsubscribe);

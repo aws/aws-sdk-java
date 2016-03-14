@@ -76,6 +76,7 @@ public class SendMessageResult implements Serializable, Cloneable {
      *        href="http://www.faqs.org/rfcs/rfc1321.html"
      *        >http://www.faqs.org/rfcs/rfc1321.html</a>.
      */
+
     public void setMD5OfMessageBody(String mD5OfMessageBody) {
         this.mD5OfMessageBody = mD5OfMessageBody;
     }
@@ -98,6 +99,7 @@ public class SendMessageResult implements Serializable, Cloneable {
      *         "http://www.faqs.org/rfcs/rfc1321.html">http://www.faqs.org/rfcs
      *         /rfc1321.html</a>.
      */
+
     public String getMD5OfMessageBody() {
         return this.mD5OfMessageBody;
     }
@@ -122,6 +124,7 @@ public class SendMessageResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendMessageResult withMD5OfMessageBody(String mD5OfMessageBody) {
         setMD5OfMessageBody(mD5OfMessageBody);
         return this;
@@ -145,6 +148,7 @@ public class SendMessageResult implements Serializable, Cloneable {
      *        href="http://www.faqs.org/rfcs/rfc1321.html"
      *        >http://www.faqs.org/rfcs/rfc1321.html</a>.
      */
+
     public void setMD5OfMessageAttributes(String mD5OfMessageAttributes) {
         this.mD5OfMessageAttributes = mD5OfMessageAttributes;
     }
@@ -167,6 +171,7 @@ public class SendMessageResult implements Serializable, Cloneable {
      *         "http://www.faqs.org/rfcs/rfc1321.html">http://www.faqs.org/rfcs
      *         /rfc1321.html</a>.
      */
+
     public String getMD5OfMessageAttributes() {
         return this.mD5OfMessageAttributes;
     }
@@ -191,6 +196,7 @@ public class SendMessageResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendMessageResult withMD5OfMessageAttributes(
             String mD5OfMessageAttributes) {
         setMD5OfMessageAttributes(mD5OfMessageAttributes);
@@ -213,6 +219,7 @@ public class SendMessageResult implements Serializable, Cloneable {
      *        >Queue and Message Identifiers</a> in the <i>Amazon SQS Developer
      *        Guide</i>.
      */
+
     public void setMessageId(String messageId) {
         this.messageId = messageId;
     }
@@ -232,6 +239,7 @@ public class SendMessageResult implements Serializable, Cloneable {
      *         >Queue and Message Identifiers</a> in the <i>Amazon SQS Developer
      *         Guide</i>.
      */
+
     public String getMessageId() {
         return this.messageId;
     }
@@ -254,6 +262,7 @@ public class SendMessageResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendMessageResult withMessageId(String messageId) {
         setMessageId(messageId);
         return this;

@@ -59,6 +59,7 @@ public class MessageTypeTelemetry implements Serializable, Cloneable {
      * @param messageType
      *        A specific type of behavioral data that is collected by the agent.
      */
+
     public void setMessageType(String messageType) {
         this.messageType = messageType;
     }
@@ -71,6 +72,7 @@ public class MessageTypeTelemetry implements Serializable, Cloneable {
      * @return A specific type of behavioral data that is collected by the
      *         agent.
      */
+
     public String getMessageType() {
         return this.messageType;
     }
@@ -85,6 +87,7 @@ public class MessageTypeTelemetry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MessageTypeTelemetry withMessageType(String messageType) {
         setMessageType(messageType);
         return this;
@@ -100,6 +103,7 @@ public class MessageTypeTelemetry implements Serializable, Cloneable {
      *        The number of times that the behavioral data is collected by the
      *        agent during an assessment.
      */
+
     public void setCount(Long count) {
         this.count = count;
     }
@@ -113,6 +117,7 @@ public class MessageTypeTelemetry implements Serializable, Cloneable {
      * @return The number of times that the behavioral data is collected by the
      *         agent during an assessment.
      */
+
     public Long getCount() {
         return this.count;
     }
@@ -129,6 +134,7 @@ public class MessageTypeTelemetry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MessageTypeTelemetry withCount(Long count) {
         setCount(count);
         return this;
@@ -144,6 +150,7 @@ public class MessageTypeTelemetry implements Serializable, Cloneable {
      *        The total size of the behavioral data that is collected by the
      *        agent during an assessment.
      */
+
     public void setDataSize(Long dataSize) {
         this.dataSize = dataSize;
     }
@@ -157,6 +164,7 @@ public class MessageTypeTelemetry implements Serializable, Cloneable {
      * @return The total size of the behavioral data that is collected by the
      *         agent during an assessment.
      */
+
     public Long getDataSize() {
         return this.dataSize;
     }
@@ -173,6 +181,7 @@ public class MessageTypeTelemetry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MessageTypeTelemetry withDataSize(Long dataSize) {
         setDataSize(dataSize);
         return this;

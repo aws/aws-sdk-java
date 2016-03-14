@@ -40,6 +40,13 @@ public class ListFleetsResult implements Serializable, Cloneable {
      * this action. If no token is returned, these results represent the end of
      * the list.
      * </p>
+     * <note>
+     * <p>
+     * If a request has a limit that exactly matches the number of remaining
+     * results, a token is returned even though there are no more results to
+     * retrieve.
+     * </p>
+     * </note>
      */
     private String nextToken;
 
@@ -57,6 +64,7 @@ public class ListFleetsResult implements Serializable, Cloneable {
      *         <a>DescribeFleetCapacity</a>, and
      *         <a>DescribeFleetUtilization</a>.
      */
+
     public java.util.List<String> getFleetIds() {
         return fleetIds;
     }
@@ -75,6 +83,7 @@ public class ListFleetsResult implements Serializable, Cloneable {
      *        result set to a call to <a>DescribeFleetAttributes</a>,
      *        <a>DescribeFleetCapacity</a>, and <a>DescribeFleetUtilization</a>.
      */
+
     public void setFleetIds(java.util.Collection<String> fleetIds) {
         if (fleetIds == null) {
             this.fleetIds = null;
@@ -106,6 +115,7 @@ public class ListFleetsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListFleetsResult withFleetIds(String... fleetIds) {
         if (this.fleetIds == null) {
             setFleetIds(new java.util.ArrayList<String>(fleetIds.length));
@@ -132,6 +142,7 @@ public class ListFleetsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListFleetsResult withFleetIds(java.util.Collection<String> fleetIds) {
         setFleetIds(fleetIds);
         return this;
@@ -143,12 +154,25 @@ public class ListFleetsResult implements Serializable, Cloneable {
      * this action. If no token is returned, these results represent the end of
      * the list.
      * </p>
+     * <note>
+     * <p>
+     * If a request has a limit that exactly matches the number of remaining
+     * results, a token is returned even though there are no more results to
+     * retrieve.
+     * </p>
+     * </note>
      * 
      * @param nextToken
      *        Token indicating where to resume retrieving results on the next
      *        call to this action. If no token is returned, these results
-     *        represent the end of the list.
+     *        represent the end of the list.</p> <note>
+     *        <p>
+     *        If a request has a limit that exactly matches the number of
+     *        remaining results, a token is returned even though there are no
+     *        more results to retrieve.
+     *        </p>
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -159,11 +183,24 @@ public class ListFleetsResult implements Serializable, Cloneable {
      * this action. If no token is returned, these results represent the end of
      * the list.
      * </p>
+     * <note>
+     * <p>
+     * If a request has a limit that exactly matches the number of remaining
+     * results, a token is returned even though there are no more results to
+     * retrieve.
+     * </p>
+     * </note>
      * 
      * @return Token indicating where to resume retrieving results on the next
      *         call to this action. If no token is returned, these results
-     *         represent the end of the list.
+     *         represent the end of the list.</p> <note>
+     *         <p>
+     *         If a request has a limit that exactly matches the number of
+     *         remaining results, a token is returned even though there are no
+     *         more results to retrieve.
+     *         </p>
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -174,14 +211,27 @@ public class ListFleetsResult implements Serializable, Cloneable {
      * this action. If no token is returned, these results represent the end of
      * the list.
      * </p>
+     * <note>
+     * <p>
+     * If a request has a limit that exactly matches the number of remaining
+     * results, a token is returned even though there are no more results to
+     * retrieve.
+     * </p>
+     * </note>
      * 
      * @param nextToken
      *        Token indicating where to resume retrieving results on the next
      *        call to this action. If no token is returned, these results
-     *        represent the end of the list.
+     *        represent the end of the list.</p> <note>
+     *        <p>
+     *        If a request has a limit that exactly matches the number of
+     *        remaining results, a token is returned even though there are no
+     *        more results to retrieve.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListFleetsResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

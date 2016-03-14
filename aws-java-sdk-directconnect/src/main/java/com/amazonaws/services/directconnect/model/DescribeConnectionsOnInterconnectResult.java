@@ -40,6 +40,7 @@ public class DescribeConnectionsOnInterconnectResult implements Serializable,
      * 
      * @return A list of connections.
      */
+
     public java.util.List<Connection> getConnections() {
         if (connections == null) {
             connections = new com.amazonaws.internal.SdkInternalList<Connection>();
@@ -55,6 +56,7 @@ public class DescribeConnectionsOnInterconnectResult implements Serializable,
      * @param connections
      *        A list of connections.
      */
+
     public void setConnections(java.util.Collection<Connection> connections) {
         if (connections == null) {
             this.connections = null;
@@ -81,6 +83,7 @@ public class DescribeConnectionsOnInterconnectResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeConnectionsOnInterconnectResult withConnections(
             Connection... connections) {
         if (this.connections == null) {
@@ -103,6 +106,7 @@ public class DescribeConnectionsOnInterconnectResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeConnectionsOnInterconnectResult withConnections(
             java.util.Collection<Connection> connections) {
         setConnections(connections);

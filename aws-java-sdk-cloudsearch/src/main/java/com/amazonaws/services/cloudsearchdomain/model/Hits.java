@@ -59,6 +59,7 @@ public class Hits implements Serializable, Cloneable {
      * @param found
      *        The total number of documents that match the search request.
      */
+
     public void setFound(Long found) {
         this.found = found;
     }
@@ -70,6 +71,7 @@ public class Hits implements Serializable, Cloneable {
      * 
      * @return The total number of documents that match the search request.
      */
+
     public Long getFound() {
         return this.found;
     }
@@ -84,6 +86,7 @@ public class Hits implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Hits withFound(Long found) {
         setFound(found);
         return this;
@@ -97,6 +100,7 @@ public class Hits implements Serializable, Cloneable {
      * @param start
      *        The index of the first matching document.
      */
+
     public void setStart(Long start) {
         this.start = start;
     }
@@ -108,6 +112,7 @@ public class Hits implements Serializable, Cloneable {
      * 
      * @return The index of the first matching document.
      */
+
     public Long getStart() {
         return this.start;
     }
@@ -122,6 +127,7 @@ public class Hits implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Hits withStart(Long start) {
         setStart(start);
         return this;
@@ -137,6 +143,7 @@ public class Hits implements Serializable, Cloneable {
      *        A cursor that can be used to retrieve the next set of matching
      *        documents when you want to page through a large result set.
      */
+
     public void setCursor(String cursor) {
         this.cursor = cursor;
     }
@@ -150,6 +157,7 @@ public class Hits implements Serializable, Cloneable {
      * @return A cursor that can be used to retrieve the next set of matching
      *         documents when you want to page through a large result set.
      */
+
     public String getCursor() {
         return this.cursor;
     }
@@ -166,6 +174,7 @@ public class Hits implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Hits withCursor(String cursor) {
         setCursor(cursor);
         return this;
@@ -178,6 +187,7 @@ public class Hits implements Serializable, Cloneable {
      * 
      * @return A document that matches the search request.
      */
+
     public java.util.List<Hit> getHit() {
         if (hit == null) {
             hit = new com.amazonaws.internal.SdkInternalList<Hit>();
@@ -193,6 +203,7 @@ public class Hits implements Serializable, Cloneable {
      * @param hit
      *        A document that matches the search request.
      */
+
     public void setHit(java.util.Collection<Hit> hit) {
         if (hit == null) {
             this.hit = null;
@@ -218,6 +229,7 @@ public class Hits implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Hits withHit(Hit... hit) {
         if (this.hit == null) {
             setHit(new com.amazonaws.internal.SdkInternalList<Hit>(hit.length));
@@ -238,6 +250,7 @@ public class Hits implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Hits withHit(java.util.Collection<Hit> hit) {
         setHit(hit);
         return this;

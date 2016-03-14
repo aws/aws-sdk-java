@@ -40,6 +40,7 @@ public class GetAccessKeyLastUsedRequest extends AmazonWebServiceRequest
      * @param accessKeyId
      *        The identifier of an access key.
      */
+
     public void setAccessKeyId(String accessKeyId) {
         this.accessKeyId = accessKeyId;
     }
@@ -51,6 +52,7 @@ public class GetAccessKeyLastUsedRequest extends AmazonWebServiceRequest
      * 
      * @return The identifier of an access key.
      */
+
     public String getAccessKeyId() {
         return this.accessKeyId;
     }
@@ -65,6 +67,7 @@ public class GetAccessKeyLastUsedRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetAccessKeyLastUsedRequest withAccessKeyId(String accessKeyId) {
         setAccessKeyId(accessKeyId);
         return this;

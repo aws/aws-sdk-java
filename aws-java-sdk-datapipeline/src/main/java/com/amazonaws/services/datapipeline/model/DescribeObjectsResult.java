@@ -53,6 +53,7 @@ public class DescribeObjectsResult implements Serializable, Cloneable {
      * 
      * @return An array of object definitions.
      */
+
     public java.util.List<PipelineObject> getPipelineObjects() {
         if (pipelineObjects == null) {
             pipelineObjects = new com.amazonaws.internal.SdkInternalList<PipelineObject>();
@@ -68,6 +69,7 @@ public class DescribeObjectsResult implements Serializable, Cloneable {
      * @param pipelineObjects
      *        An array of object definitions.
      */
+
     public void setPipelineObjects(
             java.util.Collection<PipelineObject> pipelineObjects) {
         if (pipelineObjects == null) {
@@ -95,6 +97,7 @@ public class DescribeObjectsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeObjectsResult withPipelineObjects(
             PipelineObject... pipelineObjects) {
         if (this.pipelineObjects == null) {
@@ -117,6 +120,7 @@ public class DescribeObjectsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeObjectsResult withPipelineObjects(
             java.util.Collection<PipelineObject> pipelineObjects) {
         setPipelineObjects(pipelineObjects);
@@ -135,6 +139,7 @@ public class DescribeObjectsResult implements Serializable, Cloneable {
      *        page of results, call <code>DescribeObjects</code> again with this
      *        marker value. If the value is null, there are no more results.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -151,6 +156,7 @@ public class DescribeObjectsResult implements Serializable, Cloneable {
      *         this marker value. If the value is null, there are no more
      *         results.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -169,6 +175,7 @@ public class DescribeObjectsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeObjectsResult withMarker(String marker) {
         setMarker(marker);
         return this;
@@ -182,6 +189,7 @@ public class DescribeObjectsResult implements Serializable, Cloneable {
      * @param hasMoreResults
      *        Indicates whether there are more results to return.
      */
+
     public void setHasMoreResults(Boolean hasMoreResults) {
         this.hasMoreResults = hasMoreResults;
     }
@@ -193,6 +201,7 @@ public class DescribeObjectsResult implements Serializable, Cloneable {
      * 
      * @return Indicates whether there are more results to return.
      */
+
     public Boolean getHasMoreResults() {
         return this.hasMoreResults;
     }
@@ -207,6 +216,7 @@ public class DescribeObjectsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeObjectsResult withHasMoreResults(Boolean hasMoreResults) {
         setHasMoreResults(hasMoreResults);
         return this;
@@ -219,6 +229,7 @@ public class DescribeObjectsResult implements Serializable, Cloneable {
      * 
      * @return Indicates whether there are more results to return.
      */
+
     public Boolean isHasMoreResults() {
         return this.hasMoreResults;
     }

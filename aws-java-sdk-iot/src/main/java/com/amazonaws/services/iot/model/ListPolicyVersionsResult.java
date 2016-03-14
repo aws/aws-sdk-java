@@ -39,6 +39,7 @@ public class ListPolicyVersionsResult implements Serializable, Cloneable {
      * 
      * @return The policy versions.
      */
+
     public java.util.List<PolicyVersion> getPolicyVersions() {
         return policyVersions;
     }
@@ -51,6 +52,7 @@ public class ListPolicyVersionsResult implements Serializable, Cloneable {
      * @param policyVersions
      *        The policy versions.
      */
+
     public void setPolicyVersions(
             java.util.Collection<PolicyVersion> policyVersions) {
         if (policyVersions == null) {
@@ -78,6 +80,7 @@ public class ListPolicyVersionsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListPolicyVersionsResult withPolicyVersions(
             PolicyVersion... policyVersions) {
         if (this.policyVersions == null) {
@@ -100,6 +103,7 @@ public class ListPolicyVersionsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListPolicyVersionsResult withPolicyVersions(
             java.util.Collection<PolicyVersion> policyVersions) {
         setPolicyVersions(policyVersions);

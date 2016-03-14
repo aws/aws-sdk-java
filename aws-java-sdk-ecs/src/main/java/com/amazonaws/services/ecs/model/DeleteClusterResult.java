@@ -38,6 +38,7 @@ public class DeleteClusterResult implements Serializable, Cloneable {
      * @param cluster
      *        The full description of the deleted cluster.
      */
+
     public void setCluster(Cluster cluster) {
         this.cluster = cluster;
     }
@@ -49,6 +50,7 @@ public class DeleteClusterResult implements Serializable, Cloneable {
      * 
      * @return The full description of the deleted cluster.
      */
+
     public Cluster getCluster() {
         return this.cluster;
     }
@@ -63,6 +65,7 @@ public class DeleteClusterResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteClusterResult withCluster(Cluster cluster) {
         setCluster(cluster);
         return this;

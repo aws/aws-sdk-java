@@ -57,6 +57,7 @@ public class GetResourcesRequest extends AmazonWebServiceRequest implements
      * @param restApiId
      *        The <a>RestApi</a> identifier for the Resource.
      */
+
     public void setRestApiId(String restApiId) {
         this.restApiId = restApiId;
     }
@@ -68,6 +69,7 @@ public class GetResourcesRequest extends AmazonWebServiceRequest implements
      * 
      * @return The <a>RestApi</a> identifier for the Resource.
      */
+
     public String getRestApiId() {
         return this.restApiId;
     }
@@ -82,6 +84,7 @@ public class GetResourcesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetResourcesRequest withRestApiId(String restApiId) {
         setRestApiId(restApiId);
         return this;
@@ -97,6 +100,7 @@ public class GetResourcesRequest extends AmazonWebServiceRequest implements
      *        The position of the next set of results in the current
      *        <a>Resources</a> resource to get information about.
      */
+
     public void setPosition(String position) {
         this.position = position;
     }
@@ -110,6 +114,7 @@ public class GetResourcesRequest extends AmazonWebServiceRequest implements
      * @return The position of the next set of results in the current
      *         <a>Resources</a> resource to get information about.
      */
+
     public String getPosition() {
         return this.position;
     }
@@ -126,6 +131,7 @@ public class GetResourcesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetResourcesRequest withPosition(String position) {
         setPosition(position);
         return this;
@@ -143,6 +149,7 @@ public class GetResourcesRequest extends AmazonWebServiceRequest implements
      *        to get information about. The default limit is 25. It should be an
      *        integer between 1 - 500.
      */
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -158,6 +165,7 @@ public class GetResourcesRequest extends AmazonWebServiceRequest implements
      *         to get information about. The default limit is 25. It should be
      *         an integer between 1 - 500.
      */
+
     public Integer getLimit() {
         return this.limit;
     }
@@ -176,6 +184,7 @@ public class GetResourcesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetResourcesRequest withLimit(Integer limit) {
         setLimit(limit);
         return this;

@@ -41,6 +41,7 @@ public class ParameterConstraints implements Serializable, Cloneable {
      * 
      * @return A list of values that are permitted for a parameter.
      */
+
     public java.util.List<String> getAllowedValues() {
         if (allowedValues == null) {
             allowedValues = new com.amazonaws.internal.SdkInternalList<String>();
@@ -56,6 +57,7 @@ public class ParameterConstraints implements Serializable, Cloneable {
      * @param allowedValues
      *        A list of values that are permitted for a parameter.
      */
+
     public void setAllowedValues(java.util.Collection<String> allowedValues) {
         if (allowedValues == null) {
             this.allowedValues = null;
@@ -82,6 +84,7 @@ public class ParameterConstraints implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ParameterConstraints withAllowedValues(String... allowedValues) {
         if (this.allowedValues == null) {
             setAllowedValues(new com.amazonaws.internal.SdkInternalList<String>(
@@ -103,6 +106,7 @@ public class ParameterConstraints implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ParameterConstraints withAllowedValues(
             java.util.Collection<String> allowedValues) {
         setAllowedValues(allowedValues);

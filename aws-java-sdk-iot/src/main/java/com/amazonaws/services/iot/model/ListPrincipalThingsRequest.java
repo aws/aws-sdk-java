@@ -54,6 +54,7 @@ public class ListPrincipalThingsRequest extends AmazonWebServiceRequest
      * @param nextToken
      *        A token used to retrieve the next value.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -65,6 +66,7 @@ public class ListPrincipalThingsRequest extends AmazonWebServiceRequest
      * 
      * @return A token used to retrieve the next value.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -79,6 +81,7 @@ public class ListPrincipalThingsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListPrincipalThingsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -92,6 +95,7 @@ public class ListPrincipalThingsRequest extends AmazonWebServiceRequest
      * @param maxResults
      *        The maximum number of principals to return.
      */
+
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
     }
@@ -103,6 +107,7 @@ public class ListPrincipalThingsRequest extends AmazonWebServiceRequest
      * 
      * @return The maximum number of principals to return.
      */
+
     public Integer getMaxResults() {
         return this.maxResults;
     }
@@ -117,6 +122,7 @@ public class ListPrincipalThingsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListPrincipalThingsRequest withMaxResults(Integer maxResults) {
         setMaxResults(maxResults);
         return this;
@@ -130,6 +136,7 @@ public class ListPrincipalThingsRequest extends AmazonWebServiceRequest
      * @param principal
      *        The principal.
      */
+
     public void setPrincipal(String principal) {
         this.principal = principal;
     }
@@ -141,6 +148,7 @@ public class ListPrincipalThingsRequest extends AmazonWebServiceRequest
      * 
      * @return The principal.
      */
+
     public String getPrincipal() {
         return this.principal;
     }
@@ -155,6 +163,7 @@ public class ListPrincipalThingsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListPrincipalThingsRequest withPrincipal(String principal) {
         setPrincipal(principal);
         return this;

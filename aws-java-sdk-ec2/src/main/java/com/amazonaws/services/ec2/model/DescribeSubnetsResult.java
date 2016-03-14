@@ -37,6 +37,7 @@ public class DescribeSubnetsResult implements Serializable, Cloneable {
      * 
      * @return Information about one or more subnets.
      */
+
     public java.util.List<Subnet> getSubnets() {
         if (subnets == null) {
             subnets = new com.amazonaws.internal.SdkInternalList<Subnet>();
@@ -52,6 +53,7 @@ public class DescribeSubnetsResult implements Serializable, Cloneable {
      * @param subnets
      *        Information about one or more subnets.
      */
+
     public void setSubnets(java.util.Collection<Subnet> subnets) {
         if (subnets == null) {
             this.subnets = null;
@@ -78,6 +80,7 @@ public class DescribeSubnetsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSubnetsResult withSubnets(Subnet... subnets) {
         if (this.subnets == null) {
             setSubnets(new com.amazonaws.internal.SdkInternalList<Subnet>(
@@ -99,6 +102,7 @@ public class DescribeSubnetsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSubnetsResult withSubnets(
             java.util.Collection<Subnet> subnets) {
         setSubnets(subnets);

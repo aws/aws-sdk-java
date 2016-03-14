@@ -20,60 +20,66 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Location where a build's files are stored. This location is assigned in
- * response to a <a>CreateBuild</a> call, and is always in the same region as
- * the service used to create the build. For more details see the <a
- * href="http://aws.amazon.com/documentation/s3/">AWS S3 documentation</a>.
+ * Location in Amazon Simple Storage Service (Amazon S3) where a build's files
+ * are stored. This location is assigned in response to a <a>CreateBuild</a>
+ * call, and is always in the same region as the service used to create the
+ * build. For more details see the <a
+ * href="http://aws.amazon.com/documentation/s3/">Amazon S3 documentation</a>.
  * </p>
  */
 public class S3Location implements Serializable, Cloneable {
 
     /**
      * <p>
-     * S3 bucket identifier.
+     * Amazon S3 bucket identifier.
      * </p>
      */
     private String bucket;
     /**
      * <p>
-     * S3 bucket key.
+     * Amazon S3 bucket key.
      * </p>
      */
     private String key;
 
+    private String roleArn;
+
     /**
      * <p>
-     * S3 bucket identifier.
+     * Amazon S3 bucket identifier.
      * </p>
      * 
      * @param bucket
-     *        S3 bucket identifier.
+     *        Amazon S3 bucket identifier.
      */
+
     public void setBucket(String bucket) {
         this.bucket = bucket;
     }
 
     /**
      * <p>
-     * S3 bucket identifier.
+     * Amazon S3 bucket identifier.
      * </p>
      * 
-     * @return S3 bucket identifier.
+     * @return Amazon S3 bucket identifier.
      */
+
     public String getBucket() {
         return this.bucket;
     }
 
     /**
      * <p>
-     * S3 bucket identifier.
+     * Amazon S3 bucket identifier.
      * </p>
      * 
      * @param bucket
-     *        S3 bucket identifier.
+     *        Amazon S3 bucket identifier.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public S3Location withBucket(String bucket) {
         setBucket(bucket);
         return this;
@@ -81,39 +87,69 @@ public class S3Location implements Serializable, Cloneable {
 
     /**
      * <p>
-     * S3 bucket key.
+     * Amazon S3 bucket key.
      * </p>
      * 
      * @param key
-     *        S3 bucket key.
+     *        Amazon S3 bucket key.
      */
+
     public void setKey(String key) {
         this.key = key;
     }
 
     /**
      * <p>
-     * S3 bucket key.
+     * Amazon S3 bucket key.
      * </p>
      * 
-     * @return S3 bucket key.
+     * @return Amazon S3 bucket key.
      */
+
     public String getKey() {
         return this.key;
     }
 
     /**
      * <p>
-     * S3 bucket key.
+     * Amazon S3 bucket key.
      * </p>
      * 
      * @param key
-     *        S3 bucket key.
+     *        Amazon S3 bucket key.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public S3Location withKey(String key) {
         setKey(key);
+        return this;
+    }
+
+    /**
+     * @param roleArn
+     */
+
+    public void setRoleArn(String roleArn) {
+        this.roleArn = roleArn;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getRoleArn() {
+        return this.roleArn;
+    }
+
+    /**
+     * @param roleArn
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public S3Location withRoleArn(String roleArn) {
+        setRoleArn(roleArn);
         return this;
     }
 
@@ -132,7 +168,9 @@ public class S3Location implements Serializable, Cloneable {
         if (getBucket() != null)
             sb.append("Bucket: " + getBucket() + ",");
         if (getKey() != null)
-            sb.append("Key: " + getKey());
+            sb.append("Key: " + getKey() + ",");
+        if (getRoleArn() != null)
+            sb.append("RoleArn: " + getRoleArn());
         sb.append("}");
         return sb.toString();
     }
@@ -157,6 +195,11 @@ public class S3Location implements Serializable, Cloneable {
         if (other.getKey() != null
                 && other.getKey().equals(this.getKey()) == false)
             return false;
+        if (other.getRoleArn() == null ^ this.getRoleArn() == null)
+            return false;
+        if (other.getRoleArn() != null
+                && other.getRoleArn().equals(this.getRoleArn()) == false)
+            return false;
         return true;
     }
 
@@ -169,6 +212,8 @@ public class S3Location implements Serializable, Cloneable {
                 + ((getBucket() == null) ? 0 : getBucket().hashCode());
         hashCode = prime * hashCode
                 + ((getKey() == null) ? 0 : getKey().hashCode());
+        hashCode = prime * hashCode
+                + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         return hashCode;
     }
 

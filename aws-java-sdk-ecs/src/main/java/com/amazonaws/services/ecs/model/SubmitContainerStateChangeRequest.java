@@ -80,6 +80,7 @@ public class SubmitContainerStateChangeRequest extends AmazonWebServiceRequest
      *        The short name or full Amazon Resource Name (ARN) of the cluster
      *        that hosts the container.
      */
+
     public void setCluster(String cluster) {
         this.cluster = cluster;
     }
@@ -93,6 +94,7 @@ public class SubmitContainerStateChangeRequest extends AmazonWebServiceRequest
      * @return The short name or full Amazon Resource Name (ARN) of the cluster
      *         that hosts the container.
      */
+
     public String getCluster() {
         return this.cluster;
     }
@@ -109,6 +111,7 @@ public class SubmitContainerStateChangeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SubmitContainerStateChangeRequest withCluster(String cluster) {
         setCluster(cluster);
         return this;
@@ -124,6 +127,7 @@ public class SubmitContainerStateChangeRequest extends AmazonWebServiceRequest
      *        The task ID or full Amazon Resource Name (ARN) of the task that
      *        hosts the container.
      */
+
     public void setTask(String task) {
         this.task = task;
     }
@@ -137,6 +141,7 @@ public class SubmitContainerStateChangeRequest extends AmazonWebServiceRequest
      * @return The task ID or full Amazon Resource Name (ARN) of the task that
      *         hosts the container.
      */
+
     public String getTask() {
         return this.task;
     }
@@ -153,6 +158,7 @@ public class SubmitContainerStateChangeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SubmitContainerStateChangeRequest withTask(String task) {
         setTask(task);
         return this;
@@ -166,6 +172,7 @@ public class SubmitContainerStateChangeRequest extends AmazonWebServiceRequest
      * @param containerName
      *        The name of the container.
      */
+
     public void setContainerName(String containerName) {
         this.containerName = containerName;
     }
@@ -177,6 +184,7 @@ public class SubmitContainerStateChangeRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the container.
      */
+
     public String getContainerName() {
         return this.containerName;
     }
@@ -191,6 +199,7 @@ public class SubmitContainerStateChangeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SubmitContainerStateChangeRequest withContainerName(
             String containerName) {
         setContainerName(containerName);
@@ -205,6 +214,7 @@ public class SubmitContainerStateChangeRequest extends AmazonWebServiceRequest
      * @param status
      *        The status of the state change request.
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -216,6 +226,7 @@ public class SubmitContainerStateChangeRequest extends AmazonWebServiceRequest
      * 
      * @return The status of the state change request.
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -230,6 +241,7 @@ public class SubmitContainerStateChangeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SubmitContainerStateChangeRequest withStatus(String status) {
         setStatus(status);
         return this;
@@ -243,6 +255,7 @@ public class SubmitContainerStateChangeRequest extends AmazonWebServiceRequest
      * @param exitCode
      *        The exit code returned for the state change request.
      */
+
     public void setExitCode(Integer exitCode) {
         this.exitCode = exitCode;
     }
@@ -254,6 +267,7 @@ public class SubmitContainerStateChangeRequest extends AmazonWebServiceRequest
      * 
      * @return The exit code returned for the state change request.
      */
+
     public Integer getExitCode() {
         return this.exitCode;
     }
@@ -268,6 +282,7 @@ public class SubmitContainerStateChangeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SubmitContainerStateChangeRequest withExitCode(Integer exitCode) {
         setExitCode(exitCode);
         return this;
@@ -281,6 +296,7 @@ public class SubmitContainerStateChangeRequest extends AmazonWebServiceRequest
      * @param reason
      *        The reason for the state change request.
      */
+
     public void setReason(String reason) {
         this.reason = reason;
     }
@@ -292,6 +308,7 @@ public class SubmitContainerStateChangeRequest extends AmazonWebServiceRequest
      * 
      * @return The reason for the state change request.
      */
+
     public String getReason() {
         return this.reason;
     }
@@ -306,6 +323,7 @@ public class SubmitContainerStateChangeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SubmitContainerStateChangeRequest withReason(String reason) {
         setReason(reason);
         return this;
@@ -318,6 +336,7 @@ public class SubmitContainerStateChangeRequest extends AmazonWebServiceRequest
      * 
      * @return The network bindings of the container.
      */
+
     public java.util.List<NetworkBinding> getNetworkBindings() {
         if (networkBindings == null) {
             networkBindings = new com.amazonaws.internal.SdkInternalList<NetworkBinding>();
@@ -333,6 +352,7 @@ public class SubmitContainerStateChangeRequest extends AmazonWebServiceRequest
      * @param networkBindings
      *        The network bindings of the container.
      */
+
     public void setNetworkBindings(
             java.util.Collection<NetworkBinding> networkBindings) {
         if (networkBindings == null) {
@@ -360,6 +380,7 @@ public class SubmitContainerStateChangeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SubmitContainerStateChangeRequest withNetworkBindings(
             NetworkBinding... networkBindings) {
         if (this.networkBindings == null) {
@@ -382,6 +403,7 @@ public class SubmitContainerStateChangeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SubmitContainerStateChangeRequest withNetworkBindings(
             java.util.Collection<NetworkBinding> networkBindings) {
         setNetworkBindings(networkBindings);

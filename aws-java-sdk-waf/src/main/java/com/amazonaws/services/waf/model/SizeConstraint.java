@@ -177,6 +177,7 @@ public class SizeConstraint implements Serializable, Cloneable {
     /**
      * @param fieldToMatch
      */
+
     public void setFieldToMatch(FieldToMatch fieldToMatch) {
         this.fieldToMatch = fieldToMatch;
     }
@@ -184,6 +185,7 @@ public class SizeConstraint implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public FieldToMatch getFieldToMatch() {
         return this.fieldToMatch;
     }
@@ -193,6 +195,7 @@ public class SizeConstraint implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SizeConstraint withFieldToMatch(FieldToMatch fieldToMatch) {
         setFieldToMatch(fieldToMatch);
         return this;
@@ -373,6 +376,7 @@ public class SizeConstraint implements Serializable, Cloneable {
      *        Use this option to decode a URL-encoded value.
      * @see TextTransformation
      */
+
     public void setTextTransformation(String textTransformation) {
         this.textTransformation = textTransformation;
     }
@@ -552,6 +556,7 @@ public class SizeConstraint implements Serializable, Cloneable {
      *         Use this option to decode a URL-encoded value.
      * @see TextTransformation
      */
+
     public String getTextTransformation() {
         return this.textTransformation;
     }
@@ -733,6 +738,7 @@ public class SizeConstraint implements Serializable, Cloneable {
      *         chained together.
      * @see TextTransformation
      */
+
     public SizeConstraint withTextTransformation(String textTransformation) {
         setTextTransformation(textTransformation);
         return this;
@@ -915,6 +921,7 @@ public class SizeConstraint implements Serializable, Cloneable {
      *         chained together.
      * @see TextTransformation
      */
+
     public void setTextTransformation(TextTransformation textTransformation) {
         this.textTransformation = textTransformation.toString();
     }
@@ -1096,6 +1103,7 @@ public class SizeConstraint implements Serializable, Cloneable {
      *         chained together.
      * @see TextTransformation
      */
+
     public SizeConstraint withTextTransformation(
             TextTransformation textTransformation) {
         setTextTransformation(textTransformation);
@@ -1168,6 +1176,7 @@ public class SizeConstraint implements Serializable, Cloneable {
      *        greater than the size of the <code>FieldToMatch</code>
      * @see ComparisonOperator
      */
+
     public void setComparisonOperator(String comparisonOperator) {
         this.comparisonOperator = comparisonOperator;
     }
@@ -1237,6 +1246,7 @@ public class SizeConstraint implements Serializable, Cloneable {
      *         greater than the size of the <code>FieldToMatch</code>
      * @see ComparisonOperator
      */
+
     public String getComparisonOperator() {
         return this.comparisonOperator;
     }
@@ -1309,6 +1319,7 @@ public class SizeConstraint implements Serializable, Cloneable {
      *         chained together.
      * @see ComparisonOperator
      */
+
     public SizeConstraint withComparisonOperator(String comparisonOperator) {
         setComparisonOperator(comparisonOperator);
         return this;
@@ -1382,6 +1393,7 @@ public class SizeConstraint implements Serializable, Cloneable {
      *         chained together.
      * @see ComparisonOperator
      */
+
     public void setComparisonOperator(ComparisonOperator comparisonOperator) {
         this.comparisonOperator = comparisonOperator.toString();
     }
@@ -1454,6 +1466,7 @@ public class SizeConstraint implements Serializable, Cloneable {
      *         chained together.
      * @see ComparisonOperator
      */
+
     public SizeConstraint withComparisonOperator(
             ComparisonOperator comparisonOperator) {
         setComparisonOperator(comparisonOperator);
@@ -1495,6 +1508,7 @@ public class SizeConstraint implements Serializable, Cloneable {
      *        , the / in the URI counts as one character. For example, the URI
      *        <code>/logo.jpg</code> is nine characters long.
      */
+
     public void setSize(Long size) {
         this.size = size;
     }
@@ -1533,6 +1547,7 @@ public class SizeConstraint implements Serializable, Cloneable {
      *         <code>Type</code>, the / in the URI counts as one character. For
      *         example, the URI <code>/logo.jpg</code> is nine characters long.
      */
+
     public Long getSize() {
         return this.size;
     }
@@ -1574,6 +1589,7 @@ public class SizeConstraint implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SizeConstraint withSize(Long size) {
         setSize(size);
         return this;

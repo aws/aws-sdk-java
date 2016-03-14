@@ -30,6 +30,7 @@ public class DescribeDestinationsResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public java.util.List<Destination> getDestinations() {
         if (destinations == null) {
             destinations = new com.amazonaws.internal.SdkInternalList<Destination>();
@@ -40,6 +41,7 @@ public class DescribeDestinationsResult implements Serializable, Cloneable {
     /**
      * @param destinations
      */
+
     public void setDestinations(java.util.Collection<Destination> destinations) {
         if (destinations == null) {
             this.destinations = null;
@@ -62,6 +64,7 @@ public class DescribeDestinationsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeDestinationsResult withDestinations(
             Destination... destinations) {
         if (this.destinations == null) {
@@ -79,6 +82,7 @@ public class DescribeDestinationsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeDestinationsResult withDestinations(
             java.util.Collection<Destination> destinations) {
         setDestinations(destinations);
@@ -88,6 +92,7 @@ public class DescribeDestinationsResult implements Serializable, Cloneable {
     /**
      * @param nextToken
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -95,6 +100,7 @@ public class DescribeDestinationsResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -104,6 +110,7 @@ public class DescribeDestinationsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeDestinationsResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

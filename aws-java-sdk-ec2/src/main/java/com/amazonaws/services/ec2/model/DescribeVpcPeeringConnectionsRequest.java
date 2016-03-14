@@ -141,6 +141,7 @@ public class DescribeVpcPeeringConnectionsRequest extends
      *         <p>
      *         Default: Describes all your VPC peering connections.
      */
+
     public java.util.List<String> getVpcPeeringConnectionIds() {
         if (vpcPeeringConnectionIds == null) {
             vpcPeeringConnectionIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -161,6 +162,7 @@ public class DescribeVpcPeeringConnectionsRequest extends
      *        <p>
      *        Default: Describes all your VPC peering connections.
      */
+
     public void setVpcPeeringConnectionIds(
             java.util.Collection<String> vpcPeeringConnectionIds) {
         if (vpcPeeringConnectionIds == null) {
@@ -193,6 +195,7 @@ public class DescribeVpcPeeringConnectionsRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVpcPeeringConnectionsRequest withVpcPeeringConnectionIds(
             String... vpcPeeringConnectionIds) {
         if (this.vpcPeeringConnectionIds == null) {
@@ -220,6 +223,7 @@ public class DescribeVpcPeeringConnectionsRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVpcPeeringConnectionsRequest withVpcPeeringConnectionIds(
             java.util.Collection<String> vpcPeeringConnectionIds) {
         setVpcPeeringConnectionIds(vpcPeeringConnectionIds);
@@ -407,6 +411,7 @@ public class DescribeVpcPeeringConnectionsRequest extends
      *         </p>
      *         </li>
      */
+
     public java.util.List<Filter> getFilters() {
         if (filters == null) {
             filters = new com.amazonaws.internal.SdkInternalList<Filter>();
@@ -596,6 +601,7 @@ public class DescribeVpcPeeringConnectionsRequest extends
      *        </p>
      *        </li>
      */
+
     public void setFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
             this.filters = null;
@@ -796,6 +802,7 @@ public class DescribeVpcPeeringConnectionsRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVpcPeeringConnectionsRequest withFilters(Filter... filters) {
         if (this.filters == null) {
             setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(
@@ -991,6 +998,7 @@ public class DescribeVpcPeeringConnectionsRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVpcPeeringConnectionsRequest withFilters(
             java.util.Collection<Filter> filters) {
         setFilters(filters);

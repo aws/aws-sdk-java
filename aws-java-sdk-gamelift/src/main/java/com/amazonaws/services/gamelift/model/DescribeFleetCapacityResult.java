@@ -39,6 +39,13 @@ public class DescribeFleetCapacityResult implements Serializable, Cloneable {
      * this action. If no token is returned, these results represent the end of
      * the list.
      * </p>
+     * <note>
+     * <p>
+     * If a request has a limit that exactly matches the number of remaining
+     * results, a token is returned even though there are no more results to
+     * retrieve.
+     * </p>
+     * </note>
      */
     private String nextToken;
 
@@ -53,6 +60,7 @@ public class DescribeFleetCapacityResult implements Serializable, Cloneable {
      *         requested fleet ID. Leave this parameter empty to retrieve
      *         capacity information for all fleets.
      */
+
     public java.util.List<FleetCapacity> getFleetCapacity() {
         return fleetCapacity;
     }
@@ -69,6 +77,7 @@ public class DescribeFleetCapacityResult implements Serializable, Cloneable {
      *        requested fleet ID. Leave this parameter empty to retrieve
      *        capacity information for all fleets.
      */
+
     public void setFleetCapacity(
             java.util.Collection<FleetCapacity> fleetCapacity) {
         if (fleetCapacity == null) {
@@ -100,6 +109,7 @@ public class DescribeFleetCapacityResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeFleetCapacityResult withFleetCapacity(
             FleetCapacity... fleetCapacity) {
         if (this.fleetCapacity == null) {
@@ -126,6 +136,7 @@ public class DescribeFleetCapacityResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeFleetCapacityResult withFleetCapacity(
             java.util.Collection<FleetCapacity> fleetCapacity) {
         setFleetCapacity(fleetCapacity);
@@ -138,12 +149,25 @@ public class DescribeFleetCapacityResult implements Serializable, Cloneable {
      * this action. If no token is returned, these results represent the end of
      * the list.
      * </p>
+     * <note>
+     * <p>
+     * If a request has a limit that exactly matches the number of remaining
+     * results, a token is returned even though there are no more results to
+     * retrieve.
+     * </p>
+     * </note>
      * 
      * @param nextToken
      *        Token indicating where to resume retrieving results on the next
      *        call to this action. If no token is returned, these results
-     *        represent the end of the list.
+     *        represent the end of the list.</p> <note>
+     *        <p>
+     *        If a request has a limit that exactly matches the number of
+     *        remaining results, a token is returned even though there are no
+     *        more results to retrieve.
+     *        </p>
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -154,11 +178,24 @@ public class DescribeFleetCapacityResult implements Serializable, Cloneable {
      * this action. If no token is returned, these results represent the end of
      * the list.
      * </p>
+     * <note>
+     * <p>
+     * If a request has a limit that exactly matches the number of remaining
+     * results, a token is returned even though there are no more results to
+     * retrieve.
+     * </p>
+     * </note>
      * 
      * @return Token indicating where to resume retrieving results on the next
      *         call to this action. If no token is returned, these results
-     *         represent the end of the list.
+     *         represent the end of the list.</p> <note>
+     *         <p>
+     *         If a request has a limit that exactly matches the number of
+     *         remaining results, a token is returned even though there are no
+     *         more results to retrieve.
+     *         </p>
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -169,14 +206,27 @@ public class DescribeFleetCapacityResult implements Serializable, Cloneable {
      * this action. If no token is returned, these results represent the end of
      * the list.
      * </p>
+     * <note>
+     * <p>
+     * If a request has a limit that exactly matches the number of remaining
+     * results, a token is returned even though there are no more results to
+     * retrieve.
+     * </p>
+     * </note>
      * 
      * @param nextToken
      *        Token indicating where to resume retrieving results on the next
      *        call to this action. If no token is returned, these results
-     *        represent the end of the list.
+     *        represent the end of the list.</p> <note>
+     *        <p>
+     *        If a request has a limit that exactly matches the number of
+     *        remaining results, a token is returned even though there are no
+     *        more results to retrieve.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeFleetCapacityResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

@@ -32,6 +32,7 @@ public class ConfirmPublicVirtualInterfaceRequest extends
     /**
      * @param virtualInterfaceId
      */
+
     public void setVirtualInterfaceId(String virtualInterfaceId) {
         this.virtualInterfaceId = virtualInterfaceId;
     }
@@ -39,6 +40,7 @@ public class ConfirmPublicVirtualInterfaceRequest extends
     /**
      * @return
      */
+
     public String getVirtualInterfaceId() {
         return this.virtualInterfaceId;
     }
@@ -48,6 +50,7 @@ public class ConfirmPublicVirtualInterfaceRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfirmPublicVirtualInterfaceRequest withVirtualInterfaceId(
             String virtualInterfaceId) {
         setVirtualInterfaceId(virtualInterfaceId);

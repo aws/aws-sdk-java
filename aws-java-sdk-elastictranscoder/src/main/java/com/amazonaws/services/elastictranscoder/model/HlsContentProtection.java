@@ -116,6 +116,7 @@ public class HlsContentProtection implements Serializable, Cloneable {
      *        This value will be written into the method attribute of the
      *        <code>EXT-X-KEY</code> metadata tag in the output playlist.
      */
+
     public void setMethod(String method) {
         this.method = method;
     }
@@ -136,6 +137,7 @@ public class HlsContentProtection implements Serializable, Cloneable {
      *         This value will be written into the method attribute of the
      *         <code>EXT-X-KEY</code> metadata tag in the output playlist.
      */
+
     public String getMethod() {
         return this.method;
     }
@@ -159,6 +161,7 @@ public class HlsContentProtection implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HlsContentProtection withMethod(String method) {
         setMethod(method);
         return this;
@@ -189,6 +192,7 @@ public class HlsContentProtection implements Serializable, Cloneable {
      *        <p>
      *        <code>128</code>, <code>192</code>, or <code>256</code>.
      */
+
     public void setKey(String key) {
         this.key = key;
     }
@@ -217,6 +221,7 @@ public class HlsContentProtection implements Serializable, Cloneable {
      *         <p>
      *         <code>128</code>, <code>192</code>, or <code>256</code>.
      */
+
     public String getKey() {
         return this.key;
     }
@@ -248,6 +253,7 @@ public class HlsContentProtection implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HlsContentProtection withKey(String key) {
         setKey(key);
         return this;
@@ -276,6 +282,7 @@ public class HlsContentProtection implements Serializable, Cloneable {
      *        transit. The key MD5 must be base64-encoded, and it must be
      *        exactly 16 bytes before being base64- encoded.
      */
+
     public void setKeyMd5(String keyMd5) {
         this.keyMd5 = keyMd5;
     }
@@ -302,6 +309,7 @@ public class HlsContentProtection implements Serializable, Cloneable {
      *         transit. The key MD5 must be base64-encoded, and it must be
      *         exactly 16 bytes before being base64- encoded.
      */
+
     public String getKeyMd5() {
         return this.keyMd5;
     }
@@ -331,6 +339,7 @@ public class HlsContentProtection implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HlsContentProtection withKeyMd5(String keyMd5) {
         setKeyMd5(keyMd5);
         return this;
@@ -359,6 +368,7 @@ public class HlsContentProtection implements Serializable, Cloneable {
      *        vector must be base64-encoded, and it must be exactly 16 bytes
      *        before being base64-encoded.
      */
+
     public void setInitializationVector(String initializationVector) {
         this.initializationVector = initializationVector;
     }
@@ -385,6 +395,7 @@ public class HlsContentProtection implements Serializable, Cloneable {
      *         initialization vector must be base64-encoded, and it must be
      *         exactly 16 bytes before being base64-encoded.
      */
+
     public String getInitializationVector() {
         return this.initializationVector;
     }
@@ -414,6 +425,7 @@ public class HlsContentProtection implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HlsContentProtection withInitializationVector(
             String initializationVector) {
         setInitializationVector(initializationVector);
@@ -433,6 +445,7 @@ public class HlsContentProtection implements Serializable, Cloneable {
      *        the URI attribute of the EXT-X-KEY metadata tag in the playlist
      *        file.
      */
+
     public void setLicenseAcquisitionUrl(String licenseAcquisitionUrl) {
         this.licenseAcquisitionUrl = licenseAcquisitionUrl;
     }
@@ -449,6 +462,7 @@ public class HlsContentProtection implements Serializable, Cloneable {
      *         the URI attribute of the EXT-X-KEY metadata tag in the playlist
      *         file.
      */
+
     public String getLicenseAcquisitionUrl() {
         return this.licenseAcquisitionUrl;
     }
@@ -468,6 +482,7 @@ public class HlsContentProtection implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HlsContentProtection withLicenseAcquisitionUrl(
             String licenseAcquisitionUrl) {
         setLicenseAcquisitionUrl(licenseAcquisitionUrl);
@@ -491,6 +506,7 @@ public class HlsContentProtection implements Serializable, Cloneable {
      *        Transcoder writes your data key into the same bucket as the
      *        associated playlist.
      */
+
     public void setKeyStoragePolicy(String keyStoragePolicy) {
         this.keyStoragePolicy = keyStoragePolicy;
     }
@@ -511,6 +527,7 @@ public class HlsContentProtection implements Serializable, Cloneable {
      *         Transcoder writes your data key into the same bucket as the
      *         associated playlist.
      */
+
     public String getKeyStoragePolicy() {
         return this.keyStoragePolicy;
     }
@@ -534,6 +551,7 @@ public class HlsContentProtection implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HlsContentProtection withKeyStoragePolicy(String keyStoragePolicy) {
         setKeyStoragePolicy(keyStoragePolicy);
         return this;

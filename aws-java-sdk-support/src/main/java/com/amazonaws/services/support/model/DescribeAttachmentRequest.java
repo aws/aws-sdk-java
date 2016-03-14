@@ -43,6 +43,7 @@ public class DescribeAttachmentRequest extends AmazonWebServiceRequest
      *        The ID of the attachment to return. Attachment IDs are returned by
      *        the <a>DescribeCommunications</a> operation.
      */
+
     public void setAttachmentId(String attachmentId) {
         this.attachmentId = attachmentId;
     }
@@ -56,6 +57,7 @@ public class DescribeAttachmentRequest extends AmazonWebServiceRequest
      * @return The ID of the attachment to return. Attachment IDs are returned
      *         by the <a>DescribeCommunications</a> operation.
      */
+
     public String getAttachmentId() {
         return this.attachmentId;
     }
@@ -72,6 +74,7 @@ public class DescribeAttachmentRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAttachmentRequest withAttachmentId(String attachmentId) {
         setAttachmentId(attachmentId);
         return this;

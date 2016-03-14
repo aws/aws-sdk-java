@@ -72,6 +72,7 @@ public class CreateKeyPairRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        Constraints: Up to 255 ASCII characters
      */
+
     public void setKeyName(String keyName) {
         this.keyName = keyName;
     }
@@ -88,6 +89,7 @@ public class CreateKeyPairRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Constraints: Up to 255 ASCII characters
      */
+
     public String getKeyName() {
         return this.keyName;
     }
@@ -107,6 +109,7 @@ public class CreateKeyPairRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateKeyPairRequest withKeyName(String keyName) {
         setKeyName(keyName);
         return this;

@@ -43,6 +43,7 @@ public class MoveAddressToVpcRequest extends AmazonWebServiceRequest implements
      * @param publicIp
      *        The Elastic IP address.
      */
+
     public void setPublicIp(String publicIp) {
         this.publicIp = publicIp;
     }
@@ -54,6 +55,7 @@ public class MoveAddressToVpcRequest extends AmazonWebServiceRequest implements
      * 
      * @return The Elastic IP address.
      */
+
     public String getPublicIp() {
         return this.publicIp;
     }
@@ -68,6 +70,7 @@ public class MoveAddressToVpcRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MoveAddressToVpcRequest withPublicIp(String publicIp) {
         setPublicIp(publicIp);
         return this;

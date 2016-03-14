@@ -77,6 +77,7 @@ public class Container implements Serializable, Cloneable {
      * @param containerArn
      *        The Amazon Resource Name (ARN) of the container.
      */
+
     public void setContainerArn(String containerArn) {
         this.containerArn = containerArn;
     }
@@ -88,6 +89,7 @@ public class Container implements Serializable, Cloneable {
      * 
      * @return The Amazon Resource Name (ARN) of the container.
      */
+
     public String getContainerArn() {
         return this.containerArn;
     }
@@ -102,6 +104,7 @@ public class Container implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Container withContainerArn(String containerArn) {
         setContainerArn(containerArn);
         return this;
@@ -115,6 +118,7 @@ public class Container implements Serializable, Cloneable {
      * @param taskArn
      *        The Amazon Resource Name (ARN) of the task.
      */
+
     public void setTaskArn(String taskArn) {
         this.taskArn = taskArn;
     }
@@ -126,6 +130,7 @@ public class Container implements Serializable, Cloneable {
      * 
      * @return The Amazon Resource Name (ARN) of the task.
      */
+
     public String getTaskArn() {
         return this.taskArn;
     }
@@ -140,6 +145,7 @@ public class Container implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Container withTaskArn(String taskArn) {
         setTaskArn(taskArn);
         return this;
@@ -153,6 +159,7 @@ public class Container implements Serializable, Cloneable {
      * @param name
      *        The name of the container.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -164,6 +171,7 @@ public class Container implements Serializable, Cloneable {
      * 
      * @return The name of the container.
      */
+
     public String getName() {
         return this.name;
     }
@@ -178,6 +186,7 @@ public class Container implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Container withName(String name) {
         setName(name);
         return this;
@@ -191,6 +200,7 @@ public class Container implements Serializable, Cloneable {
      * @param lastStatus
      *        The last known status of the container.
      */
+
     public void setLastStatus(String lastStatus) {
         this.lastStatus = lastStatus;
     }
@@ -202,6 +212,7 @@ public class Container implements Serializable, Cloneable {
      * 
      * @return The last known status of the container.
      */
+
     public String getLastStatus() {
         return this.lastStatus;
     }
@@ -216,6 +227,7 @@ public class Container implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Container withLastStatus(String lastStatus) {
         setLastStatus(lastStatus);
         return this;
@@ -229,6 +241,7 @@ public class Container implements Serializable, Cloneable {
      * @param exitCode
      *        The exit code returned from the container.
      */
+
     public void setExitCode(Integer exitCode) {
         this.exitCode = exitCode;
     }
@@ -240,6 +253,7 @@ public class Container implements Serializable, Cloneable {
      * 
      * @return The exit code returned from the container.
      */
+
     public Integer getExitCode() {
         return this.exitCode;
     }
@@ -254,6 +268,7 @@ public class Container implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Container withExitCode(Integer exitCode) {
         setExitCode(exitCode);
         return this;
@@ -269,6 +284,7 @@ public class Container implements Serializable, Cloneable {
      *        A short (255 max characters) human-readable string to provide
      *        additional detail about a running or stopped container.
      */
+
     public void setReason(String reason) {
         this.reason = reason;
     }
@@ -282,6 +298,7 @@ public class Container implements Serializable, Cloneable {
      * @return A short (255 max characters) human-readable string to provide
      *         additional detail about a running or stopped container.
      */
+
     public String getReason() {
         return this.reason;
     }
@@ -298,6 +315,7 @@ public class Container implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Container withReason(String reason) {
         setReason(reason);
         return this;
@@ -310,6 +328,7 @@ public class Container implements Serializable, Cloneable {
      * 
      * @return The network bindings associated with the container.
      */
+
     public java.util.List<NetworkBinding> getNetworkBindings() {
         if (networkBindings == null) {
             networkBindings = new com.amazonaws.internal.SdkInternalList<NetworkBinding>();
@@ -325,6 +344,7 @@ public class Container implements Serializable, Cloneable {
      * @param networkBindings
      *        The network bindings associated with the container.
      */
+
     public void setNetworkBindings(
             java.util.Collection<NetworkBinding> networkBindings) {
         if (networkBindings == null) {
@@ -352,6 +372,7 @@ public class Container implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Container withNetworkBindings(NetworkBinding... networkBindings) {
         if (this.networkBindings == null) {
             setNetworkBindings(new com.amazonaws.internal.SdkInternalList<NetworkBinding>(
@@ -373,6 +394,7 @@ public class Container implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Container withNetworkBindings(
             java.util.Collection<NetworkBinding> networkBindings) {
         setNetworkBindings(networkBindings);

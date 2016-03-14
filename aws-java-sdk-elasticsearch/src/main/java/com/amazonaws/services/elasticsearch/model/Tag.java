@@ -54,6 +54,7 @@ public class Tag implements Serializable, Cloneable {
      *        must be unique for the Elasticsearch domain to which they are
      *        attached.
      */
+
     public void setKey(String key) {
         this.key = key;
     }
@@ -68,6 +69,7 @@ public class Tag implements Serializable, Cloneable {
      *         must be unique for the Elasticsearch domain to which they are
      *         attached.
      */
+
     public String getKey() {
         return this.key;
     }
@@ -85,6 +87,7 @@ public class Tag implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Tag withKey(String key) {
         setKey(key);
         return this;
@@ -106,6 +109,7 @@ public class Tag implements Serializable, Cloneable {
      *        in a tag set of <code>project : Trinity</code> and
      *        <code>cost-center : Trinity</code>
      */
+
     public void setValue(String value) {
         this.value = value;
     }
@@ -125,6 +129,7 @@ public class Tag implements Serializable, Cloneable {
      *         pair in a tag set of <code>project : Trinity</code> and
      *         <code>cost-center : Trinity</code>
      */
+
     public String getValue() {
         return this.value;
     }
@@ -147,6 +152,7 @@ public class Tag implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Tag withValue(String value) {
         setValue(value);
         return this;

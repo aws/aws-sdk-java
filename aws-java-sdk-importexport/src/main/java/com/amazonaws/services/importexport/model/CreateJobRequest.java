@@ -39,6 +39,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements
      * @param jobType
      * @see JobType
      */
+
     public void setJobType(String jobType) {
         this.jobType = jobType;
     }
@@ -47,6 +48,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements
      * @return
      * @see JobType
      */
+
     public String getJobType() {
         return this.jobType;
     }
@@ -57,6 +59,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see JobType
      */
+
     public CreateJobRequest withJobType(String jobType) {
         setJobType(jobType);
         return this;
@@ -68,6 +71,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see JobType
      */
+
     public void setJobType(JobType jobType) {
         this.jobType = jobType.toString();
     }
@@ -78,6 +82,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see JobType
      */
+
     public CreateJobRequest withJobType(JobType jobType) {
         setJobType(jobType);
         return this;
@@ -86,6 +91,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements
     /**
      * @param manifest
      */
+
     public void setManifest(String manifest) {
         this.manifest = manifest;
     }
@@ -93,6 +99,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public String getManifest() {
         return this.manifest;
     }
@@ -102,6 +109,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateJobRequest withManifest(String manifest) {
         setManifest(manifest);
         return this;
@@ -110,6 +118,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements
     /**
      * @param manifestAddendum
      */
+
     public void setManifestAddendum(String manifestAddendum) {
         this.manifestAddendum = manifestAddendum;
     }
@@ -117,6 +126,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public String getManifestAddendum() {
         return this.manifestAddendum;
     }
@@ -126,6 +136,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateJobRequest withManifestAddendum(String manifestAddendum) {
         setManifestAddendum(manifestAddendum);
         return this;
@@ -134,6 +145,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements
     /**
      * @param validateOnly
      */
+
     public void setValidateOnly(Boolean validateOnly) {
         this.validateOnly = validateOnly;
     }
@@ -141,6 +153,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public Boolean getValidateOnly() {
         return this.validateOnly;
     }
@@ -150,6 +163,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateJobRequest withValidateOnly(Boolean validateOnly) {
         setValidateOnly(validateOnly);
         return this;
@@ -158,6 +172,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public Boolean isValidateOnly() {
         return this.validateOnly;
     }
@@ -165,6 +180,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements
     /**
      * @param aPIVersion
      */
+
     public void setAPIVersion(String aPIVersion) {
         this.aPIVersion = aPIVersion;
     }
@@ -172,6 +188,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public String getAPIVersion() {
         return this.aPIVersion;
     }
@@ -181,6 +198,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateJobRequest withAPIVersion(String aPIVersion) {
         setAPIVersion(aPIVersion);
         return this;

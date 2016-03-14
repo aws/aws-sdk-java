@@ -43,6 +43,7 @@ public class DescribeApplicationVersionsResult implements Serializable,
      * @return List of <code>ApplicationVersionDescription</code> objects sorted
      *         by order of creation.
      */
+
     public java.util.List<ApplicationVersionDescription> getApplicationVersions() {
         if (applicationVersions == null) {
             applicationVersions = new com.amazonaws.internal.SdkInternalList<ApplicationVersionDescription>();
@@ -60,6 +61,7 @@ public class DescribeApplicationVersionsResult implements Serializable,
      *        List of <code>ApplicationVersionDescription</code> objects sorted
      *        by order of creation.
      */
+
     public void setApplicationVersions(
             java.util.Collection<ApplicationVersionDescription> applicationVersions) {
         if (applicationVersions == null) {
@@ -89,6 +91,7 @@ public class DescribeApplicationVersionsResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeApplicationVersionsResult withApplicationVersions(
             ApplicationVersionDescription... applicationVersions) {
         if (this.applicationVersions == null) {
@@ -113,6 +116,7 @@ public class DescribeApplicationVersionsResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeApplicationVersionsResult withApplicationVersions(
             java.util.Collection<ApplicationVersionDescription> applicationVersions) {
         setApplicationVersions(applicationVersions);

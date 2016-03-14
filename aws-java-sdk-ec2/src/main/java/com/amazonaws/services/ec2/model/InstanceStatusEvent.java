@@ -64,6 +64,7 @@ public class InstanceStatusEvent implements Serializable, Cloneable {
      *        The event code.
      * @see EventCode
      */
+
     public void setCode(String code) {
         this.code = code;
     }
@@ -76,6 +77,7 @@ public class InstanceStatusEvent implements Serializable, Cloneable {
      * @return The event code.
      * @see EventCode
      */
+
     public String getCode() {
         return this.code;
     }
@@ -91,6 +93,7 @@ public class InstanceStatusEvent implements Serializable, Cloneable {
      *         chained together.
      * @see EventCode
      */
+
     public InstanceStatusEvent withCode(String code) {
         setCode(code);
         return this;
@@ -107,6 +110,7 @@ public class InstanceStatusEvent implements Serializable, Cloneable {
      *         chained together.
      * @see EventCode
      */
+
     public void setCode(EventCode code) {
         this.code = code.toString();
     }
@@ -122,6 +126,7 @@ public class InstanceStatusEvent implements Serializable, Cloneable {
      *         chained together.
      * @see EventCode
      */
+
     public InstanceStatusEvent withCode(EventCode code) {
         setCode(code);
         return this;
@@ -144,6 +149,7 @@ public class InstanceStatusEvent implements Serializable, Cloneable {
      *        for up to a week. If the event has been completed, this
      *        description starts with the following text: [Completed].
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -164,6 +170,7 @@ public class InstanceStatusEvent implements Serializable, Cloneable {
      *         for up to a week. If the event has been completed, this
      *         description starts with the following text: [Completed].
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -187,6 +194,7 @@ public class InstanceStatusEvent implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceStatusEvent withDescription(String description) {
         setDescription(description);
         return this;
@@ -200,6 +208,7 @@ public class InstanceStatusEvent implements Serializable, Cloneable {
      * @param notBefore
      *        The earliest scheduled start time for the event.
      */
+
     public void setNotBefore(java.util.Date notBefore) {
         this.notBefore = notBefore;
     }
@@ -211,6 +220,7 @@ public class InstanceStatusEvent implements Serializable, Cloneable {
      * 
      * @return The earliest scheduled start time for the event.
      */
+
     public java.util.Date getNotBefore() {
         return this.notBefore;
     }
@@ -225,6 +235,7 @@ public class InstanceStatusEvent implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceStatusEvent withNotBefore(java.util.Date notBefore) {
         setNotBefore(notBefore);
         return this;
@@ -238,6 +249,7 @@ public class InstanceStatusEvent implements Serializable, Cloneable {
      * @param notAfter
      *        The latest scheduled end time for the event.
      */
+
     public void setNotAfter(java.util.Date notAfter) {
         this.notAfter = notAfter;
     }
@@ -249,6 +261,7 @@ public class InstanceStatusEvent implements Serializable, Cloneable {
      * 
      * @return The latest scheduled end time for the event.
      */
+
     public java.util.Date getNotAfter() {
         return this.notAfter;
     }
@@ -263,6 +276,7 @@ public class InstanceStatusEvent implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceStatusEvent withNotAfter(java.util.Date notAfter) {
         setNotAfter(notAfter);
         return this;

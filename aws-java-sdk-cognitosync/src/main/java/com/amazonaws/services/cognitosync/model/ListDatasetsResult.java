@@ -35,6 +35,7 @@ public class ListDatasetsResult implements Serializable, Cloneable {
      * 
      * @return A set of datasets.
      */
+
     public java.util.List<Dataset> getDatasets() {
         if (datasets == null) {
             datasets = new com.amazonaws.internal.SdkInternalList<Dataset>();
@@ -48,6 +49,7 @@ public class ListDatasetsResult implements Serializable, Cloneable {
      * @param datasets
      *        A set of datasets.
      */
+
     public void setDatasets(java.util.Collection<Dataset> datasets) {
         if (datasets == null) {
             this.datasets = null;
@@ -72,6 +74,7 @@ public class ListDatasetsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListDatasetsResult withDatasets(Dataset... datasets) {
         if (this.datasets == null) {
             setDatasets(new com.amazonaws.internal.SdkInternalList<Dataset>(
@@ -91,6 +94,7 @@ public class ListDatasetsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListDatasetsResult withDatasets(
             java.util.Collection<Dataset> datasets) {
         setDatasets(datasets);
@@ -103,6 +107,7 @@ public class ListDatasetsResult implements Serializable, Cloneable {
      * @param count
      *        Number of datasets returned.
      */
+
     public void setCount(Integer count) {
         this.count = count;
     }
@@ -112,6 +117,7 @@ public class ListDatasetsResult implements Serializable, Cloneable {
      * 
      * @return Number of datasets returned.
      */
+
     public Integer getCount() {
         return this.count;
     }
@@ -124,6 +130,7 @@ public class ListDatasetsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListDatasetsResult withCount(Integer count) {
         setCount(count);
         return this;
@@ -135,6 +142,7 @@ public class ListDatasetsResult implements Serializable, Cloneable {
      * @param nextToken
      *        A pagination token for obtaining the next page of results.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -144,6 +152,7 @@ public class ListDatasetsResult implements Serializable, Cloneable {
      * 
      * @return A pagination token for obtaining the next page of results.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -156,6 +165,7 @@ public class ListDatasetsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListDatasetsResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

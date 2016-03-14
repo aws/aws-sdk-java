@@ -97,6 +97,7 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest
      *        The Amazon Resource Name (ARN) of the role that the caller is
      *        assuming.
      */
+
     public void setRoleArn(String roleArn) {
         this.roleArn = roleArn;
     }
@@ -109,6 +110,7 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest
      * @return The Amazon Resource Name (ARN) of the role that the caller is
      *         assuming.
      */
+
     public String getRoleArn() {
         return this.roleArn;
     }
@@ -124,6 +126,7 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssumeRoleWithSAMLRequest withRoleArn(String roleArn) {
         setRoleArn(roleArn);
         return this;
@@ -139,6 +142,7 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest
      *        The Amazon Resource Name (ARN) of the SAML provider in IAM that
      *        describes the IdP.
      */
+
     public void setPrincipalArn(String principalArn) {
         this.principalArn = principalArn;
     }
@@ -152,6 +156,7 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest
      * @return The Amazon Resource Name (ARN) of the SAML provider in IAM that
      *         describes the IdP.
      */
+
     public String getPrincipalArn() {
         return this.principalArn;
     }
@@ -168,6 +173,7 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssumeRoleWithSAMLRequest withPrincipalArn(String principalArn) {
         setPrincipalArn(principalArn);
         return this;
@@ -193,6 +199,7 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest
      *        >Configuring a Relying Party and Adding Claims</a> in the <i>Using
      *        IAM</i> guide.
      */
+
     public void setSAMLAssertion(String sAMLAssertion) {
         this.sAMLAssertion = sAMLAssertion;
     }
@@ -216,6 +223,7 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest
      *         >Configuring a Relying Party and Adding Claims</a> in the
      *         <i>Using IAM</i> guide.
      */
+
     public String getSAMLAssertion() {
         return this.sAMLAssertion;
     }
@@ -242,6 +250,7 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssumeRoleWithSAMLRequest withSAMLAssertion(String sAMLAssertion) {
         setSAMLAssertion(sAMLAssertion);
         return this;
@@ -292,6 +301,7 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest
      *        element indicates by percentage how close to the upper size limit
      *        the policy is, with 100% equaling the maximum allowed size.
      */
+
     public void setPolicy(String policy) {
         this.policy = policy;
     }
@@ -341,6 +351,7 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest
      *         size limit the policy is, with 100% equaling the maximum allowed
      *         size.
      */
+
     public String getPolicy() {
         return this.policy;
     }
@@ -392,6 +403,7 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssumeRoleWithSAMLRequest withPolicy(String policy) {
         setPolicy(policy);
         return this;
@@ -419,6 +431,7 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest
      *        a session is 1 hour, and the minimum duration is 15 minutes, even
      *        if values outside this range are specified.
      */
+
     public void setDurationSeconds(Integer durationSeconds) {
         this.durationSeconds = durationSeconds;
     }
@@ -444,6 +457,7 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest
      *         duration for a session is 1 hour, and the minimum duration is 15
      *         minutes, even if values outside this range are specified.
      */
+
     public Integer getDurationSeconds() {
         return this.durationSeconds;
     }
@@ -472,6 +486,7 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssumeRoleWithSAMLRequest withDurationSeconds(Integer durationSeconds) {
         setDurationSeconds(durationSeconds);
         return this;

@@ -37,6 +37,7 @@ public class SendCommandResult implements Serializable, Cloneable {
      *        The request as it was received by SSM. Also provides the command
      *        ID which can be used future references to this request.
      */
+
     public void setCommand(Command command) {
         this.command = command;
     }
@@ -48,6 +49,7 @@ public class SendCommandResult implements Serializable, Cloneable {
      * @return The request as it was received by SSM. Also provides the command
      *         ID which can be used future references to this request.
      */
+
     public Command getCommand() {
         return this.command;
     }
@@ -62,6 +64,7 @@ public class SendCommandResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendCommandResult withCommand(Command command) {
         setCommand(command);
         return this;

@@ -51,6 +51,7 @@ public class GetUserRequest extends AmazonWebServiceRequest implements
      *        This parameter is optional. If it is not included, it defaults to
      *        the user making the request.
      */
+
     public void setUserName(String userName) {
         this.userName = userName;
     }
@@ -69,6 +70,7 @@ public class GetUserRequest extends AmazonWebServiceRequest implements
      *         This parameter is optional. If it is not included, it defaults to
      *         the user making the request.
      */
+
     public String getUserName() {
         return this.userName;
     }
@@ -90,6 +92,7 @@ public class GetUserRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetUserRequest withUserName(String userName) {
         setUserName(userName);
         return this;

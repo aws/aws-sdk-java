@@ -131,6 +131,7 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
      * @param imageId
      *        The ID of the Amazon Machine Image (AMI).
      */
+
     public void setImageId(String imageId) {
         this.imageId = imageId;
     }
@@ -142,6 +143,7 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
      * 
      * @return The ID of the Amazon Machine Image (AMI).
      */
+
     public String getImageId() {
         return this.imageId;
     }
@@ -156,6 +158,7 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstancesLaunchSpecification withImageId(String imageId) {
         setImageId(imageId);
         return this;
@@ -169,6 +172,7 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
      * @param keyName
      *        The name of the key pair.
      */
+
     public void setKeyName(String keyName) {
         this.keyName = keyName;
     }
@@ -180,6 +184,7 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
      * 
      * @return The name of the key pair.
      */
+
     public String getKeyName() {
         return this.keyName;
     }
@@ -194,6 +199,7 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstancesLaunchSpecification withKeyName(String keyName) {
         setKeyName(keyName);
         return this;
@@ -206,6 +212,7 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
      * 
      * @return The IDs of one or more security groups.
      */
+
     public java.util.List<String> getSecurityGroupIds() {
         if (securityGroupIds == null) {
             securityGroupIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -221,6 +228,7 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
      * @param securityGroupIds
      *        The IDs of one or more security groups.
      */
+
     public void setSecurityGroupIds(
             java.util.Collection<String> securityGroupIds) {
         if (securityGroupIds == null) {
@@ -248,6 +256,7 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstancesLaunchSpecification withSecurityGroupIds(
             String... securityGroupIds) {
         if (this.securityGroupIds == null) {
@@ -270,6 +279,7 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstancesLaunchSpecification withSecurityGroupIds(
             java.util.Collection<String> securityGroupIds) {
         setSecurityGroupIds(securityGroupIds);
@@ -284,6 +294,7 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
      * @param userData
      *        The base64-encoded MIME user data.
      */
+
     public void setUserData(String userData) {
         this.userData = userData;
     }
@@ -295,6 +306,7 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
      * 
      * @return The base64-encoded MIME user data.
      */
+
     public String getUserData() {
         return this.userData;
     }
@@ -309,6 +321,7 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstancesLaunchSpecification withUserData(String userData) {
         setUserData(userData);
         return this;
@@ -322,6 +335,7 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
      * @param placement
      *        The placement information.
      */
+
     public void setPlacement(ScheduledInstancesPlacement placement) {
         this.placement = placement;
     }
@@ -333,6 +347,7 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
      * 
      * @return The placement information.
      */
+
     public ScheduledInstancesPlacement getPlacement() {
         return this.placement;
     }
@@ -347,6 +362,7 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstancesLaunchSpecification withPlacement(
             ScheduledInstancesPlacement placement) {
         setPlacement(placement);
@@ -361,6 +377,7 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
      * @param kernelId
      *        The ID of the kernel.
      */
+
     public void setKernelId(String kernelId) {
         this.kernelId = kernelId;
     }
@@ -372,6 +389,7 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
      * 
      * @return The ID of the kernel.
      */
+
     public String getKernelId() {
         return this.kernelId;
     }
@@ -386,6 +404,7 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstancesLaunchSpecification withKernelId(String kernelId) {
         setKernelId(kernelId);
         return this;
@@ -399,6 +418,7 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
      * @param instanceType
      *        The instance type.
      */
+
     public void setInstanceType(String instanceType) {
         this.instanceType = instanceType;
     }
@@ -410,6 +430,7 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
      * 
      * @return The instance type.
      */
+
     public String getInstanceType() {
         return this.instanceType;
     }
@@ -424,6 +445,7 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstancesLaunchSpecification withInstanceType(
             String instanceType) {
         setInstanceType(instanceType);
@@ -438,6 +460,7 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
      * @param ramdiskId
      *        The ID of the RAM disk.
      */
+
     public void setRamdiskId(String ramdiskId) {
         this.ramdiskId = ramdiskId;
     }
@@ -449,6 +472,7 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
      * 
      * @return The ID of the RAM disk.
      */
+
     public String getRamdiskId() {
         return this.ramdiskId;
     }
@@ -463,6 +487,7 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstancesLaunchSpecification withRamdiskId(String ramdiskId) {
         setRamdiskId(ramdiskId);
         return this;
@@ -475,6 +500,7 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
      * 
      * @return One or more block device mapping entries.
      */
+
     public java.util.List<ScheduledInstancesBlockDeviceMapping> getBlockDeviceMappings() {
         if (blockDeviceMappings == null) {
             blockDeviceMappings = new com.amazonaws.internal.SdkInternalList<ScheduledInstancesBlockDeviceMapping>();
@@ -490,6 +516,7 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
      * @param blockDeviceMappings
      *        One or more block device mapping entries.
      */
+
     public void setBlockDeviceMappings(
             java.util.Collection<ScheduledInstancesBlockDeviceMapping> blockDeviceMappings) {
         if (blockDeviceMappings == null) {
@@ -517,6 +544,7 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstancesLaunchSpecification withBlockDeviceMappings(
             ScheduledInstancesBlockDeviceMapping... blockDeviceMappings) {
         if (this.blockDeviceMappings == null) {
@@ -539,6 +567,7 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstancesLaunchSpecification withBlockDeviceMappings(
             java.util.Collection<ScheduledInstancesBlockDeviceMapping> blockDeviceMappings) {
         setBlockDeviceMappings(blockDeviceMappings);
@@ -553,6 +582,7 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
      * @param monitoring
      *        Enable or disable monitoring for the instances.
      */
+
     public void setMonitoring(ScheduledInstancesMonitoring monitoring) {
         this.monitoring = monitoring;
     }
@@ -564,6 +594,7 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
      * 
      * @return Enable or disable monitoring for the instances.
      */
+
     public ScheduledInstancesMonitoring getMonitoring() {
         return this.monitoring;
     }
@@ -578,6 +609,7 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstancesLaunchSpecification withMonitoring(
             ScheduledInstancesMonitoring monitoring) {
         setMonitoring(monitoring);
@@ -592,6 +624,7 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
      * @param subnetId
      *        The ID of the subnet in which to launch the instances.
      */
+
     public void setSubnetId(String subnetId) {
         this.subnetId = subnetId;
     }
@@ -603,6 +636,7 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
      * 
      * @return The ID of the subnet in which to launch the instances.
      */
+
     public String getSubnetId() {
         return this.subnetId;
     }
@@ -617,6 +651,7 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstancesLaunchSpecification withSubnetId(String subnetId) {
         setSubnetId(subnetId);
         return this;
@@ -629,6 +664,7 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
      * 
      * @return One or more network interfaces.
      */
+
     public java.util.List<ScheduledInstancesNetworkInterface> getNetworkInterfaces() {
         if (networkInterfaces == null) {
             networkInterfaces = new com.amazonaws.internal.SdkInternalList<ScheduledInstancesNetworkInterface>();
@@ -644,6 +680,7 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
      * @param networkInterfaces
      *        One or more network interfaces.
      */
+
     public void setNetworkInterfaces(
             java.util.Collection<ScheduledInstancesNetworkInterface> networkInterfaces) {
         if (networkInterfaces == null) {
@@ -671,6 +708,7 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstancesLaunchSpecification withNetworkInterfaces(
             ScheduledInstancesNetworkInterface... networkInterfaces) {
         if (this.networkInterfaces == null) {
@@ -693,6 +731,7 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstancesLaunchSpecification withNetworkInterfaces(
             java.util.Collection<ScheduledInstancesNetworkInterface> networkInterfaces) {
         setNetworkInterfaces(networkInterfaces);
@@ -707,6 +746,7 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
      * @param iamInstanceProfile
      *        The IAM instance profile.
      */
+
     public void setIamInstanceProfile(
             ScheduledInstancesIamInstanceProfile iamInstanceProfile) {
         this.iamInstanceProfile = iamInstanceProfile;
@@ -719,6 +759,7 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
      * 
      * @return The IAM instance profile.
      */
+
     public ScheduledInstancesIamInstanceProfile getIamInstanceProfile() {
         return this.iamInstanceProfile;
     }
@@ -733,6 +774,7 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstancesLaunchSpecification withIamInstanceProfile(
             ScheduledInstancesIamInstanceProfile iamInstanceProfile) {
         setIamInstanceProfile(iamInstanceProfile);
@@ -761,6 +803,7 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
      *        <p>
      *        Default: <code>false</code>
      */
+
     public void setEbsOptimized(Boolean ebsOptimized) {
         this.ebsOptimized = ebsOptimized;
     }
@@ -786,6 +829,7 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
      *         <p>
      *         Default: <code>false</code>
      */
+
     public Boolean getEbsOptimized() {
         return this.ebsOptimized;
     }
@@ -814,6 +858,7 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstancesLaunchSpecification withEbsOptimized(
             Boolean ebsOptimized) {
         setEbsOptimized(ebsOptimized);
@@ -841,6 +886,7 @@ public class ScheduledInstancesLaunchSpecification implements Serializable,
      *         <p>
      *         Default: <code>false</code>
      */
+
     public Boolean isEbsOptimized() {
         return this.ebsOptimized;
     }

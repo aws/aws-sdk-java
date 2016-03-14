@@ -45,6 +45,7 @@ public class ListTargetsByRuleResult implements Serializable, Cloneable {
      * 
      * @return Lists the targets assigned to the rule.
      */
+
     public java.util.List<Target> getTargets() {
         return targets;
     }
@@ -57,6 +58,7 @@ public class ListTargetsByRuleResult implements Serializable, Cloneable {
      * @param targets
      *        Lists the targets assigned to the rule.
      */
+
     public void setTargets(java.util.Collection<Target> targets) {
         if (targets == null) {
             this.targets = null;
@@ -82,6 +84,7 @@ public class ListTargetsByRuleResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTargetsByRuleResult withTargets(Target... targets) {
         if (this.targets == null) {
             setTargets(new java.util.ArrayList<Target>(targets.length));
@@ -102,6 +105,7 @@ public class ListTargetsByRuleResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTargetsByRuleResult withTargets(
             java.util.Collection<Target> targets) {
         setTargets(targets);
@@ -116,6 +120,7 @@ public class ListTargetsByRuleResult implements Serializable, Cloneable {
      * @param nextToken
      *        Indicates that there are additional results to retrieve.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -127,6 +132,7 @@ public class ListTargetsByRuleResult implements Serializable, Cloneable {
      * 
      * @return Indicates that there are additional results to retrieve.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -141,6 +147,7 @@ public class ListTargetsByRuleResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTargetsByRuleResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

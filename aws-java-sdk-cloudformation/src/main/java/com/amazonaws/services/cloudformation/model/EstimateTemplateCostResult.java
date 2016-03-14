@@ -43,6 +43,7 @@ public class EstimateTemplateCostResult implements Serializable, Cloneable {
      *        An AWS Simple Monthly Calculator URL with a query string that
      *        describes the resources required to run the template.
      */
+
     public void setUrl(String url) {
         this.url = url;
     }
@@ -56,6 +57,7 @@ public class EstimateTemplateCostResult implements Serializable, Cloneable {
      * @return An AWS Simple Monthly Calculator URL with a query string that
      *         describes the resources required to run the template.
      */
+
     public String getUrl() {
         return this.url;
     }
@@ -72,6 +74,7 @@ public class EstimateTemplateCostResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EstimateTemplateCostResult withUrl(String url) {
         setUrl(url);
         return this;

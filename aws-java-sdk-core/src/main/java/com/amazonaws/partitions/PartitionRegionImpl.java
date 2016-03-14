@@ -57,12 +57,19 @@ public class PartitionRegionImpl implements RegionImpl {
         this.region = ValidationUtils.assertNotNull(region, "region");
     }
 
+    @Override
     public String getName() {
         return region;
     }
 
+    @Override
     public String getDomain() {
         return partition.getDnsSuffix();
+    }
+
+    @Override
+    public String getPartition() {
+        return partition.getPartition();
     }
 
     /**
@@ -71,6 +78,7 @@ public class PartitionRegionImpl implements RegionImpl {
      * the region regex, then this system tries to guess the endpoint and
      * returns it.
      */
+    @Override
     public String getServiceEndpoint(String serviceName) {
         return getEndpointString(serviceName, getEndpoint(serviceName));
     }
@@ -145,6 +153,7 @@ public class PartitionRegionImpl implements RegionImpl {
      * For new regions that match the partition's region regex, if the
      * service is enabled partition wide then this method will return true.
      */
+    @Override
     public boolean isServiceSupported(String serviceName) {
         return isServiceSupportedInRegion(serviceName) || isServicePartitionWide
                 (serviceName);
@@ -173,6 +182,7 @@ public class PartitionRegionImpl implements RegionImpl {
      * For new regions that match the partition's region regex, if the
      * service is enabled partition wide then this method will return true.
      */
+    @Override
     public boolean hasHttpsEndpoint(String serviceName) {
 
         if (!isServiceSupported(serviceName)) return false;
@@ -188,6 +198,7 @@ public class PartitionRegionImpl implements RegionImpl {
      * For new regions that match the partition's region regex, if the
      * service is enabled partition wide then this method will return true.
      */
+    @Override
     public boolean hasHttpEndpoint(String serviceName) {
         if (!isServiceSupported(serviceName)) return false;
 

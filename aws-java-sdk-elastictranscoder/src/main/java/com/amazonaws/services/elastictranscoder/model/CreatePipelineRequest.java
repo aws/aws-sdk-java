@@ -280,6 +280,7 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        Constraints: Maximum 40 characters.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -298,6 +299,7 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Constraints: Maximum 40 characters.
      */
+
     public String getName() {
         return this.name;
     }
@@ -319,6 +321,7 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePipelineRequest withName(String name) {
         setName(name);
         return this;
@@ -334,6 +337,7 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements
      *        The Amazon S3 bucket in which you saved the media files that you
      *        want to transcode.
      */
+
     public void setInputBucket(String inputBucket) {
         this.inputBucket = inputBucket;
     }
@@ -347,6 +351,7 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements
      * @return The Amazon S3 bucket in which you saved the media files that you
      *         want to transcode.
      */
+
     public String getInputBucket() {
         return this.inputBucket;
     }
@@ -363,6 +368,7 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePipelineRequest withInputBucket(String inputBucket) {
         setInputBucket(inputBucket);
         return this;
@@ -426,6 +432,7 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements
      *        specify values for <code>ContentConfig</code> and
      *        <code>ThumbnailConfig</code> instead.
      */
+
     public void setOutputBucket(String outputBucket) {
         this.outputBucket = outputBucket;
     }
@@ -487,6 +494,7 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements
      *         specify values for <code>ContentConfig</code> and
      *         <code>ThumbnailConfig</code> instead.
      */
+
     public String getOutputBucket() {
         return this.outputBucket;
     }
@@ -551,6 +559,7 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePipelineRequest withOutputBucket(String outputBucket) {
         setOutputBucket(outputBucket);
         return this;
@@ -566,6 +575,7 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements
      *        The IAM Amazon Resource Name (ARN) for the role that you want
      *        Elastic Transcoder to use to create the pipeline.
      */
+
     public void setRole(String role) {
         this.role = role;
     }
@@ -579,6 +589,7 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements
      * @return The IAM Amazon Resource Name (ARN) for the role that you want
      *         Elastic Transcoder to use to create the pipeline.
      */
+
     public String getRole() {
         return this.role;
     }
@@ -595,6 +606,7 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePipelineRequest withRole(String role) {
         setRole(role);
         return this;
@@ -627,6 +639,7 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements
      *        using an <code>Encryption:Mode</code> of <code>AES-PKCS7</code>,
      *        <code>AES-CTR</code>, or <code>AES-GCM</code>.
      */
+
     public void setAwsKmsKeyArn(String awsKmsKeyArn) {
         this.awsKmsKeyArn = awsKmsKeyArn;
     }
@@ -658,6 +671,7 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements
      *         <code>AES-PKCS7</code>, <code>AES-CTR</code>, or
      *         <code>AES-GCM</code>.
      */
+
     public String getAwsKmsKeyArn() {
         return this.awsKmsKeyArn;
     }
@@ -691,6 +705,7 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePipelineRequest withAwsKmsKeyArn(String awsKmsKeyArn) {
         setAwsKmsKeyArn(awsKmsKeyArn);
         return this;
@@ -749,6 +764,7 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements
      *        condition while processing a job in this pipeline. This is the ARN
      *        that Amazon SNS returned when you created the topic.</li>
      */
+
     public void setNotifications(Notifications notifications) {
         this.notifications = notifications;
     }
@@ -805,6 +821,7 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements
      *         condition while processing a job in this pipeline. This is the
      *         ARN that Amazon SNS returned when you created the topic.</li>
      */
+
     public Notifications getNotifications() {
         return this.notifications;
     }
@@ -864,6 +881,7 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePipelineRequest withNotifications(Notifications notifications) {
         setNotifications(notifications);
         return this;
@@ -1011,6 +1029,7 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements
      *        want Elastic Transcoder to assign to the video files and playlists
      *        that it stores in your Amazon S3 bucket.</li>
      */
+
     public void setContentConfig(PipelineOutputConfig contentConfig) {
         this.contentConfig = contentConfig;
     }
@@ -1160,6 +1179,7 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements
      *         want Elastic Transcoder to assign to the video files and
      *         playlists that it stores in your Amazon S3 bucket.</li>
      */
+
     public PipelineOutputConfig getContentConfig() {
         return this.contentConfig;
     }
@@ -1308,6 +1328,7 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePipelineRequest withContentConfig(
             PipelineOutputConfig contentConfig) {
         setContentConfig(contentConfig);
@@ -1448,6 +1469,7 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements
      *        want Elastic Transcoder to assign to the thumbnails that it stores
      *        in your Amazon S3 bucket.</li>
      */
+
     public void setThumbnailConfig(PipelineOutputConfig thumbnailConfig) {
         this.thumbnailConfig = thumbnailConfig;
     }
@@ -1587,6 +1609,7 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements
      *         want Elastic Transcoder to assign to the thumbnails that it
      *         stores in your Amazon S3 bucket.</li>
      */
+
     public PipelineOutputConfig getThumbnailConfig() {
         return this.thumbnailConfig;
     }
@@ -1727,6 +1750,7 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePipelineRequest withThumbnailConfig(
             PipelineOutputConfig thumbnailConfig) {
         setThumbnailConfig(thumbnailConfig);

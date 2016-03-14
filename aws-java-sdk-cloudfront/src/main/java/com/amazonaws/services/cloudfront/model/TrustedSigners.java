@@ -76,6 +76,7 @@ public class TrustedSigners implements Serializable, Cloneable {
      *        Specifies whether you want to require end users to use signed URLs
      *        to access the files specified by PathPattern and TargetOriginId.
      */
+
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
     }
@@ -88,6 +89,7 @@ public class TrustedSigners implements Serializable, Cloneable {
      *         URLs to access the files specified by PathPattern and
      *         TargetOriginId.
      */
+
     public Boolean getEnabled() {
         return this.enabled;
     }
@@ -102,6 +104,7 @@ public class TrustedSigners implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TrustedSigners withEnabled(Boolean enabled) {
         setEnabled(enabled);
         return this;
@@ -115,6 +118,7 @@ public class TrustedSigners implements Serializable, Cloneable {
      *         URLs to access the files specified by PathPattern and
      *         TargetOriginId.
      */
+
     public Boolean isEnabled() {
         return this.enabled;
     }
@@ -125,6 +129,7 @@ public class TrustedSigners implements Serializable, Cloneable {
      * @param quantity
      *        The number of trusted signers for this cache behavior.
      */
+
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
@@ -134,6 +139,7 @@ public class TrustedSigners implements Serializable, Cloneable {
      * 
      * @return The number of trusted signers for this cache behavior.
      */
+
     public Integer getQuantity() {
         return this.quantity;
     }
@@ -146,6 +152,7 @@ public class TrustedSigners implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TrustedSigners withQuantity(Integer quantity) {
         setQuantity(quantity);
         return this;
@@ -158,6 +165,7 @@ public class TrustedSigners implements Serializable, Cloneable {
      * @return Optional: A complex type that contains trusted signers for this
      *         cache behavior. If Quantity is 0, you can omit Items.
      */
+
     public java.util.List<String> getItems() {
         if (items == null) {
             items = new com.amazonaws.internal.SdkInternalList<String>();
@@ -173,6 +181,7 @@ public class TrustedSigners implements Serializable, Cloneable {
      *        Optional: A complex type that contains trusted signers for this
      *        cache behavior. If Quantity is 0, you can omit Items.
      */
+
     public void setItems(java.util.Collection<String> items) {
         if (items == null) {
             this.items = null;
@@ -198,6 +207,7 @@ public class TrustedSigners implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TrustedSigners withItems(String... items) {
         if (this.items == null) {
             setItems(new com.amazonaws.internal.SdkInternalList<String>(
@@ -219,6 +229,7 @@ public class TrustedSigners implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TrustedSigners withItems(java.util.Collection<String> items) {
         setItems(items);
         return this;

@@ -71,6 +71,7 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest
      * @param networkInterfaceId
      *        The ID of the network interface.
      */
+
     public void setNetworkInterfaceId(String networkInterfaceId) {
         this.networkInterfaceId = networkInterfaceId;
     }
@@ -82,6 +83,7 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the network interface.
      */
+
     public String getNetworkInterfaceId() {
         return this.networkInterfaceId;
     }
@@ -96,6 +98,7 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssignPrivateIpAddressesRequest withNetworkInterfaceId(
             String networkInterfaceId) {
         setNetworkInterfaceId(networkInterfaceId);
@@ -121,6 +124,7 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest
      *         If you don't specify an IP address, Amazon EC2 automatically
      *         selects an IP address within the subnet range.
      */
+
     public java.util.List<String> getPrivateIpAddresses() {
         if (privateIpAddresses == null) {
             privateIpAddresses = new com.amazonaws.internal.SdkInternalList<String>();
@@ -147,6 +151,7 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest
      *        If you don't specify an IP address, Amazon EC2 automatically
      *        selects an IP address within the subnet range.
      */
+
     public void setPrivateIpAddresses(
             java.util.Collection<String> privateIpAddresses) {
         if (privateIpAddresses == null) {
@@ -185,6 +190,7 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssignPrivateIpAddressesRequest withPrivateIpAddresses(
             String... privateIpAddresses) {
         if (this.privateIpAddresses == null) {
@@ -218,6 +224,7 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssignPrivateIpAddressesRequest withPrivateIpAddresses(
             java.util.Collection<String> privateIpAddresses) {
         setPrivateIpAddresses(privateIpAddresses);
@@ -236,6 +243,7 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest
      *        interface. You can't specify this parameter when also specifying
      *        private IP addresses.
      */
+
     public void setSecondaryPrivateIpAddressCount(
             Integer secondaryPrivateIpAddressCount) {
         this.secondaryPrivateIpAddressCount = secondaryPrivateIpAddressCount;
@@ -252,6 +260,7 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest
      *         interface. You can't specify this parameter when also specifying
      *         private IP addresses.
      */
+
     public Integer getSecondaryPrivateIpAddressCount() {
         return this.secondaryPrivateIpAddressCount;
     }
@@ -270,6 +279,7 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssignPrivateIpAddressesRequest withSecondaryPrivateIpAddressCount(
             Integer secondaryPrivateIpAddressCount) {
         setSecondaryPrivateIpAddressCount(secondaryPrivateIpAddressCount);
@@ -288,6 +298,7 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest
      *        to another network interface or instance to be reassigned to the
      *        specified network interface.
      */
+
     public void setAllowReassignment(Boolean allowReassignment) {
         this.allowReassignment = allowReassignment;
     }
@@ -303,6 +314,7 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest
      *         to another network interface or instance to be reassigned to the
      *         specified network interface.
      */
+
     public Boolean getAllowReassignment() {
         return this.allowReassignment;
     }
@@ -321,6 +333,7 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssignPrivateIpAddressesRequest withAllowReassignment(
             Boolean allowReassignment) {
         setAllowReassignment(allowReassignment);
@@ -338,6 +351,7 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest
      *         to another network interface or instance to be reassigned to the
      *         specified network interface.
      */
+
     public Boolean isAllowReassignment() {
         return this.allowReassignment;
     }

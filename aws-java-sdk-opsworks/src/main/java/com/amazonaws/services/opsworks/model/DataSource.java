@@ -56,6 +56,7 @@ public class DataSource implements Serializable, Cloneable {
      *        <code>AutoSelectOpsworksMysqlInstance</code>,
      *        <code>OpsworksMysqlInstance</code>, or <code>RdsDbInstance</code>.
      */
+
     public void setType(String type) {
         this.type = type;
     }
@@ -71,6 +72,7 @@ public class DataSource implements Serializable, Cloneable {
      *         <code>OpsworksMysqlInstance</code>, or <code>RdsDbInstance</code>
      *         .
      */
+
     public String getType() {
         return this.type;
     }
@@ -88,6 +90,7 @@ public class DataSource implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DataSource withType(String type) {
         setType(type);
         return this;
@@ -101,6 +104,7 @@ public class DataSource implements Serializable, Cloneable {
      * @param arn
      *        The data source's ARN.
      */
+
     public void setArn(String arn) {
         this.arn = arn;
     }
@@ -112,6 +116,7 @@ public class DataSource implements Serializable, Cloneable {
      * 
      * @return The data source's ARN.
      */
+
     public String getArn() {
         return this.arn;
     }
@@ -126,6 +131,7 @@ public class DataSource implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DataSource withArn(String arn) {
         setArn(arn);
         return this;
@@ -139,6 +145,7 @@ public class DataSource implements Serializable, Cloneable {
      * @param databaseName
      *        The database name.
      */
+
     public void setDatabaseName(String databaseName) {
         this.databaseName = databaseName;
     }
@@ -150,6 +157,7 @@ public class DataSource implements Serializable, Cloneable {
      * 
      * @return The database name.
      */
+
     public String getDatabaseName() {
         return this.databaseName;
     }
@@ -164,6 +172,7 @@ public class DataSource implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DataSource withDatabaseName(String databaseName) {
         setDatabaseName(databaseName);
         return this;

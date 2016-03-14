@@ -30,6 +30,7 @@ public class ListVolumeRecoveryPointsResult implements Serializable, Cloneable {
     /**
      * @param gatewayARN
      */
+
     public void setGatewayARN(String gatewayARN) {
         this.gatewayARN = gatewayARN;
     }
@@ -37,6 +38,7 @@ public class ListVolumeRecoveryPointsResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getGatewayARN() {
         return this.gatewayARN;
     }
@@ -46,6 +48,7 @@ public class ListVolumeRecoveryPointsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListVolumeRecoveryPointsResult withGatewayARN(String gatewayARN) {
         setGatewayARN(gatewayARN);
         return this;
@@ -54,6 +57,7 @@ public class ListVolumeRecoveryPointsResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public java.util.List<VolumeRecoveryPointInfo> getVolumeRecoveryPointInfos() {
         if (volumeRecoveryPointInfos == null) {
             volumeRecoveryPointInfos = new com.amazonaws.internal.SdkInternalList<VolumeRecoveryPointInfo>();
@@ -64,6 +68,7 @@ public class ListVolumeRecoveryPointsResult implements Serializable, Cloneable {
     /**
      * @param volumeRecoveryPointInfos
      */
+
     public void setVolumeRecoveryPointInfos(
             java.util.Collection<VolumeRecoveryPointInfo> volumeRecoveryPointInfos) {
         if (volumeRecoveryPointInfos == null) {
@@ -87,6 +92,7 @@ public class ListVolumeRecoveryPointsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListVolumeRecoveryPointsResult withVolumeRecoveryPointInfos(
             VolumeRecoveryPointInfo... volumeRecoveryPointInfos) {
         if (this.volumeRecoveryPointInfos == null) {
@@ -104,6 +110,7 @@ public class ListVolumeRecoveryPointsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListVolumeRecoveryPointsResult withVolumeRecoveryPointInfos(
             java.util.Collection<VolumeRecoveryPointInfo> volumeRecoveryPointInfos) {
         setVolumeRecoveryPointInfos(volumeRecoveryPointInfos);

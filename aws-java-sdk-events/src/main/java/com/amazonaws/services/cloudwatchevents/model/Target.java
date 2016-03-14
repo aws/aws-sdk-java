@@ -77,6 +77,7 @@ public class Target implements Serializable, Cloneable {
      * @param id
      *        The unique target assignment ID.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -88,6 +89,7 @@ public class Target implements Serializable, Cloneable {
      * 
      * @return The unique target assignment ID.
      */
+
     public String getId() {
         return this.id;
     }
@@ -102,6 +104,7 @@ public class Target implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Target withId(String id) {
         setId(id);
         return this;
@@ -115,6 +118,7 @@ public class Target implements Serializable, Cloneable {
      * @param arn
      *        The Amazon Resource Name (ARN) associated of the target.
      */
+
     public void setArn(String arn) {
         this.arn = arn;
     }
@@ -126,6 +130,7 @@ public class Target implements Serializable, Cloneable {
      * 
      * @return The Amazon Resource Name (ARN) associated of the target.
      */
+
     public String getArn() {
         return this.arn;
     }
@@ -140,6 +145,7 @@ public class Target implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Target withArn(String arn) {
         setArn(arn);
         return this;
@@ -158,6 +164,7 @@ public class Target implements Serializable, Cloneable {
      *        href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript
      *        Object Notation (JSON) Data Interchange Format</a>.
      */
+
     public void setInput(String input) {
         this.input = input;
     }
@@ -174,6 +181,7 @@ public class Target implements Serializable, Cloneable {
      *         href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript
      *         Object Notation (JSON) Data Interchange Format</a>.
      */
+
     public String getInput() {
         return this.input;
     }
@@ -193,6 +201,7 @@ public class Target implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Target withInput(String input) {
         setInput(input);
         return this;
@@ -211,6 +220,7 @@ public class Target implements Serializable, Cloneable {
      *        about JSON paths, see <a
      *        href="http://goessner.net/articles/JsonPath/">JSONPath</a>.
      */
+
     public void setInputPath(String inputPath) {
         this.inputPath = inputPath;
     }
@@ -227,6 +237,7 @@ public class Target implements Serializable, Cloneable {
      *         about JSON paths, see <a
      *         href="http://goessner.net/articles/JsonPath/">JSONPath</a>.
      */
+
     public String getInputPath() {
         return this.inputPath;
     }
@@ -246,6 +257,7 @@ public class Target implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Target withInputPath(String inputPath) {
         setInputPath(inputPath);
         return this;

@@ -67,6 +67,7 @@ public class VgwTelemetry implements Serializable, Cloneable {
      *        The Internet-routable IP address of the virtual private gateway's
      *        outside interface.
      */
+
     public void setOutsideIpAddress(String outsideIpAddress) {
         this.outsideIpAddress = outsideIpAddress;
     }
@@ -80,6 +81,7 @@ public class VgwTelemetry implements Serializable, Cloneable {
      * @return The Internet-routable IP address of the virtual private gateway's
      *         outside interface.
      */
+
     public String getOutsideIpAddress() {
         return this.outsideIpAddress;
     }
@@ -96,6 +98,7 @@ public class VgwTelemetry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VgwTelemetry withOutsideIpAddress(String outsideIpAddress) {
         setOutsideIpAddress(outsideIpAddress);
         return this;
@@ -110,6 +113,7 @@ public class VgwTelemetry implements Serializable, Cloneable {
      *        The status of the VPN tunnel.
      * @see TelemetryStatus
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -122,6 +126,7 @@ public class VgwTelemetry implements Serializable, Cloneable {
      * @return The status of the VPN tunnel.
      * @see TelemetryStatus
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -137,6 +142,7 @@ public class VgwTelemetry implements Serializable, Cloneable {
      *         chained together.
      * @see TelemetryStatus
      */
+
     public VgwTelemetry withStatus(String status) {
         setStatus(status);
         return this;
@@ -153,6 +159,7 @@ public class VgwTelemetry implements Serializable, Cloneable {
      *         chained together.
      * @see TelemetryStatus
      */
+
     public void setStatus(TelemetryStatus status) {
         this.status = status.toString();
     }
@@ -168,6 +175,7 @@ public class VgwTelemetry implements Serializable, Cloneable {
      *         chained together.
      * @see TelemetryStatus
      */
+
     public VgwTelemetry withStatus(TelemetryStatus status) {
         setStatus(status);
         return this;
@@ -181,6 +189,7 @@ public class VgwTelemetry implements Serializable, Cloneable {
      * @param lastStatusChange
      *        The date and time of the last change in status.
      */
+
     public void setLastStatusChange(java.util.Date lastStatusChange) {
         this.lastStatusChange = lastStatusChange;
     }
@@ -192,6 +201,7 @@ public class VgwTelemetry implements Serializable, Cloneable {
      * 
      * @return The date and time of the last change in status.
      */
+
     public java.util.Date getLastStatusChange() {
         return this.lastStatusChange;
     }
@@ -206,6 +216,7 @@ public class VgwTelemetry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VgwTelemetry withLastStatusChange(java.util.Date lastStatusChange) {
         setLastStatusChange(lastStatusChange);
         return this;
@@ -219,6 +230,7 @@ public class VgwTelemetry implements Serializable, Cloneable {
      * @param statusMessage
      *        If an error occurs, a description of the error.
      */
+
     public void setStatusMessage(String statusMessage) {
         this.statusMessage = statusMessage;
     }
@@ -230,6 +242,7 @@ public class VgwTelemetry implements Serializable, Cloneable {
      * 
      * @return If an error occurs, a description of the error.
      */
+
     public String getStatusMessage() {
         return this.statusMessage;
     }
@@ -244,6 +257,7 @@ public class VgwTelemetry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VgwTelemetry withStatusMessage(String statusMessage) {
         setStatusMessage(statusMessage);
         return this;
@@ -257,6 +271,7 @@ public class VgwTelemetry implements Serializable, Cloneable {
      * @param acceptedRouteCount
      *        The number of accepted routes.
      */
+
     public void setAcceptedRouteCount(Integer acceptedRouteCount) {
         this.acceptedRouteCount = acceptedRouteCount;
     }
@@ -268,6 +283,7 @@ public class VgwTelemetry implements Serializable, Cloneable {
      * 
      * @return The number of accepted routes.
      */
+
     public Integer getAcceptedRouteCount() {
         return this.acceptedRouteCount;
     }
@@ -282,6 +298,7 @@ public class VgwTelemetry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VgwTelemetry withAcceptedRouteCount(Integer acceptedRouteCount) {
         setAcceptedRouteCount(acceptedRouteCount);
         return this;

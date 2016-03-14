@@ -50,6 +50,7 @@ public class Signer implements Serializable, Cloneable {
      *        the distribution can created signed URLs, or an AWS account
      *        number. Omit the dashes in the account number.
      */
+
     public void setAwsAccountNumber(String awsAccountNumber) {
         this.awsAccountNumber = awsAccountNumber;
     }
@@ -65,6 +66,7 @@ public class Signer implements Serializable, Cloneable {
      *         create the distribution can created signed URLs, or an AWS
      *         account number. Omit the dashes in the account number.
      */
+
     public String getAwsAccountNumber() {
         return this.awsAccountNumber;
     }
@@ -83,6 +85,7 @@ public class Signer implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Signer withAwsAccountNumber(String awsAccountNumber) {
         setAwsAccountNumber(awsAccountNumber);
         return this;
@@ -96,6 +99,7 @@ public class Signer implements Serializable, Cloneable {
      *        A complex type that lists the active CloudFront key pairs, if any,
      *        that are associated with AwsAccountNumber.
      */
+
     public void setKeyPairIds(KeyPairIds keyPairIds) {
         this.keyPairIds = keyPairIds;
     }
@@ -107,6 +111,7 @@ public class Signer implements Serializable, Cloneable {
      * @return A complex type that lists the active CloudFront key pairs, if
      *         any, that are associated with AwsAccountNumber.
      */
+
     public KeyPairIds getKeyPairIds() {
         return this.keyPairIds;
     }
@@ -121,6 +126,7 @@ public class Signer implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Signer withKeyPairIds(KeyPairIds keyPairIds) {
         setKeyPairIds(keyPairIds);
         return this;

@@ -37,6 +37,7 @@ public class ListIdentityPoolUsageResult implements Serializable, Cloneable {
      * 
      * @return Usage information for the identity pools.
      */
+
     public java.util.List<IdentityPoolUsage> getIdentityPoolUsages() {
         if (identityPoolUsages == null) {
             identityPoolUsages = new com.amazonaws.internal.SdkInternalList<IdentityPoolUsage>();
@@ -50,6 +51,7 @@ public class ListIdentityPoolUsageResult implements Serializable, Cloneable {
      * @param identityPoolUsages
      *        Usage information for the identity pools.
      */
+
     public void setIdentityPoolUsages(
             java.util.Collection<IdentityPoolUsage> identityPoolUsages) {
         if (identityPoolUsages == null) {
@@ -75,6 +77,7 @@ public class ListIdentityPoolUsageResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListIdentityPoolUsageResult withIdentityPoolUsages(
             IdentityPoolUsage... identityPoolUsages) {
         if (this.identityPoolUsages == null) {
@@ -95,6 +98,7 @@ public class ListIdentityPoolUsageResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListIdentityPoolUsageResult withIdentityPoolUsages(
             java.util.Collection<IdentityPoolUsage> identityPoolUsages) {
         setIdentityPoolUsages(identityPoolUsages);
@@ -107,6 +111,7 @@ public class ListIdentityPoolUsageResult implements Serializable, Cloneable {
      * @param maxResults
      *        The maximum number of results to be returned.
      */
+
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
     }
@@ -116,6 +121,7 @@ public class ListIdentityPoolUsageResult implements Serializable, Cloneable {
      * 
      * @return The maximum number of results to be returned.
      */
+
     public Integer getMaxResults() {
         return this.maxResults;
     }
@@ -128,6 +134,7 @@ public class ListIdentityPoolUsageResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListIdentityPoolUsageResult withMaxResults(Integer maxResults) {
         setMaxResults(maxResults);
         return this;
@@ -139,6 +146,7 @@ public class ListIdentityPoolUsageResult implements Serializable, Cloneable {
      * @param count
      *        Total number of identities for the identity pool.
      */
+
     public void setCount(Integer count) {
         this.count = count;
     }
@@ -148,6 +156,7 @@ public class ListIdentityPoolUsageResult implements Serializable, Cloneable {
      * 
      * @return Total number of identities for the identity pool.
      */
+
     public Integer getCount() {
         return this.count;
     }
@@ -160,6 +169,7 @@ public class ListIdentityPoolUsageResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListIdentityPoolUsageResult withCount(Integer count) {
         setCount(count);
         return this;
@@ -171,6 +181,7 @@ public class ListIdentityPoolUsageResult implements Serializable, Cloneable {
      * @param nextToken
      *        A pagination token for obtaining the next page of results.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -180,6 +191,7 @@ public class ListIdentityPoolUsageResult implements Serializable, Cloneable {
      * 
      * @return A pagination token for obtaining the next page of results.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -192,6 +204,7 @@ public class ListIdentityPoolUsageResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListIdentityPoolUsageResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

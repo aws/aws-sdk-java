@@ -84,6 +84,7 @@ public class ListChangeBatchesByRRSetRequest extends AmazonWebServiceRequest
      * @param hostedZoneId
      *        The ID of the hosted zone that you want to see changes for.
      */
+
     public void setHostedZoneId(String hostedZoneId) {
         this.hostedZoneId = hostedZoneId;
     }
@@ -95,6 +96,7 @@ public class ListChangeBatchesByRRSetRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the hosted zone that you want to see changes for.
      */
+
     public String getHostedZoneId() {
         return this.hostedZoneId;
     }
@@ -109,6 +111,7 @@ public class ListChangeBatchesByRRSetRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListChangeBatchesByRRSetRequest withHostedZoneId(String hostedZoneId) {
         setHostedZoneId(hostedZoneId);
         return this;
@@ -122,6 +125,7 @@ public class ListChangeBatchesByRRSetRequest extends AmazonWebServiceRequest
      * @param name
      *        The name of the RRSet that you want to see changes for.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -133,6 +137,7 @@ public class ListChangeBatchesByRRSetRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the RRSet that you want to see changes for.
      */
+
     public String getName() {
         return this.name;
     }
@@ -147,6 +152,7 @@ public class ListChangeBatchesByRRSetRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListChangeBatchesByRRSetRequest withName(String name) {
         setName(name);
         return this;
@@ -161,6 +167,7 @@ public class ListChangeBatchesByRRSetRequest extends AmazonWebServiceRequest
      *        The type of the RRSet that you want to see changes for.
      * @see RRType
      */
+
     public void setType(String type) {
         this.type = type;
     }
@@ -173,6 +180,7 @@ public class ListChangeBatchesByRRSetRequest extends AmazonWebServiceRequest
      * @return The type of the RRSet that you want to see changes for.
      * @see RRType
      */
+
     public String getType() {
         return this.type;
     }
@@ -188,6 +196,7 @@ public class ListChangeBatchesByRRSetRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see RRType
      */
+
     public ListChangeBatchesByRRSetRequest withType(String type) {
         setType(type);
         return this;
@@ -204,6 +213,7 @@ public class ListChangeBatchesByRRSetRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see RRType
      */
+
     public void setType(RRType type) {
         this.type = type.toString();
     }
@@ -219,6 +229,7 @@ public class ListChangeBatchesByRRSetRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see RRType
      */
+
     public ListChangeBatchesByRRSetRequest withType(RRType type) {
         setType(type);
         return this;
@@ -232,6 +243,7 @@ public class ListChangeBatchesByRRSetRequest extends AmazonWebServiceRequest
      * @param setIdentifier
      *        The identifier of the RRSet that you want to see changes for.
      */
+
     public void setSetIdentifier(String setIdentifier) {
         this.setIdentifier = setIdentifier;
     }
@@ -243,6 +255,7 @@ public class ListChangeBatchesByRRSetRequest extends AmazonWebServiceRequest
      * 
      * @return The identifier of the RRSet that you want to see changes for.
      */
+
     public String getSetIdentifier() {
         return this.setIdentifier;
     }
@@ -257,6 +270,7 @@ public class ListChangeBatchesByRRSetRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListChangeBatchesByRRSetRequest withSetIdentifier(
             String setIdentifier) {
         setSetIdentifier(setIdentifier);
@@ -271,6 +285,7 @@ public class ListChangeBatchesByRRSetRequest extends AmazonWebServiceRequest
      * @param startDate
      *        The start of the time period you want to see changes for.
      */
+
     public void setStartDate(String startDate) {
         this.startDate = startDate;
     }
@@ -282,6 +297,7 @@ public class ListChangeBatchesByRRSetRequest extends AmazonWebServiceRequest
      * 
      * @return The start of the time period you want to see changes for.
      */
+
     public String getStartDate() {
         return this.startDate;
     }
@@ -296,6 +312,7 @@ public class ListChangeBatchesByRRSetRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListChangeBatchesByRRSetRequest withStartDate(String startDate) {
         setStartDate(startDate);
         return this;
@@ -309,6 +326,7 @@ public class ListChangeBatchesByRRSetRequest extends AmazonWebServiceRequest
      * @param endDate
      *        The end of the time period you want to see changes for.
      */
+
     public void setEndDate(String endDate) {
         this.endDate = endDate;
     }
@@ -320,6 +338,7 @@ public class ListChangeBatchesByRRSetRequest extends AmazonWebServiceRequest
      * 
      * @return The end of the time period you want to see changes for.
      */
+
     public String getEndDate() {
         return this.endDate;
     }
@@ -334,6 +353,7 @@ public class ListChangeBatchesByRRSetRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListChangeBatchesByRRSetRequest withEndDate(String endDate) {
         setEndDate(endDate);
         return this;
@@ -347,6 +367,7 @@ public class ListChangeBatchesByRRSetRequest extends AmazonWebServiceRequest
      * @param maxItems
      *        The maximum number of items on a page.
      */
+
     public void setMaxItems(String maxItems) {
         this.maxItems = maxItems;
     }
@@ -358,6 +379,7 @@ public class ListChangeBatchesByRRSetRequest extends AmazonWebServiceRequest
      * 
      * @return The maximum number of items on a page.
      */
+
     public String getMaxItems() {
         return this.maxItems;
     }
@@ -372,6 +394,7 @@ public class ListChangeBatchesByRRSetRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListChangeBatchesByRRSetRequest withMaxItems(String maxItems) {
         setMaxItems(maxItems);
         return this;
@@ -385,6 +408,7 @@ public class ListChangeBatchesByRRSetRequest extends AmazonWebServiceRequest
      * @param marker
      *        The page marker.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -396,6 +420,7 @@ public class ListChangeBatchesByRRSetRequest extends AmazonWebServiceRequest
      * 
      * @return The page marker.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -410,6 +435,7 @@ public class ListChangeBatchesByRRSetRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListChangeBatchesByRRSetRequest withMarker(String marker) {
         setMarker(marker);
         return this;

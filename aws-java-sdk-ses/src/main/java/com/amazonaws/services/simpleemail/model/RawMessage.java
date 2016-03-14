@@ -145,6 +145,7 @@ public class RawMessage implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html"
      *        >Amazon SES Developer Guide</a>.
      */
+
     public void setData(java.nio.ByteBuffer data) {
         this.data = data;
     }
@@ -206,6 +207,7 @@ public class RawMessage implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html"
      *         >Amazon SES Developer Guide</a>.
      */
+
     public java.nio.ByteBuffer getData() {
         return this.data;
     }
@@ -260,6 +262,7 @@ public class RawMessage implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RawMessage withData(java.nio.ByteBuffer data) {
         setData(data);
         return this;

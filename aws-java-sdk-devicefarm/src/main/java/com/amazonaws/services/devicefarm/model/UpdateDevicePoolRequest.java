@@ -65,6 +65,7 @@ public class UpdateDevicePoolRequest extends AmazonWebServiceRequest implements
      *        The Amazon Resourc Name (ARN) of the Device Farm device pool you
      *        wish to update.
      */
+
     public void setArn(String arn) {
         this.arn = arn;
     }
@@ -78,6 +79,7 @@ public class UpdateDevicePoolRequest extends AmazonWebServiceRequest implements
      * @return The Amazon Resourc Name (ARN) of the Device Farm device pool you
      *         wish to update.
      */
+
     public String getArn() {
         return this.arn;
     }
@@ -94,6 +96,7 @@ public class UpdateDevicePoolRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateDevicePoolRequest withArn(String arn) {
         setArn(arn);
         return this;
@@ -108,6 +111,7 @@ public class UpdateDevicePoolRequest extends AmazonWebServiceRequest implements
      *        A string representing the name of the device pool you wish to
      *        update.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -120,6 +124,7 @@ public class UpdateDevicePoolRequest extends AmazonWebServiceRequest implements
      * @return A string representing the name of the device pool you wish to
      *         update.
      */
+
     public String getName() {
         return this.name;
     }
@@ -135,6 +140,7 @@ public class UpdateDevicePoolRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateDevicePoolRequest withName(String name) {
         setName(name);
         return this;
@@ -148,6 +154,7 @@ public class UpdateDevicePoolRequest extends AmazonWebServiceRequest implements
      * @param description
      *        A description of the device pool you wish to update.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -159,6 +166,7 @@ public class UpdateDevicePoolRequest extends AmazonWebServiceRequest implements
      * 
      * @return A description of the device pool you wish to update.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -173,6 +181,7 @@ public class UpdateDevicePoolRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateDevicePoolRequest withDescription(String description) {
         setDescription(description);
         return this;
@@ -190,6 +199,7 @@ public class UpdateDevicePoolRequest extends AmazonWebServiceRequest implements
      *         rules for your request, the update will replace the existing
      *         rules.
      */
+
     public java.util.List<Rule> getRules() {
         return rules;
     }
@@ -206,6 +216,7 @@ public class UpdateDevicePoolRequest extends AmazonWebServiceRequest implements
      *        Updating rules is optional; however, if you choose to update rules
      *        for your request, the update will replace the existing rules.
      */
+
     public void setRules(java.util.Collection<Rule> rules) {
         if (rules == null) {
             this.rules = null;
@@ -235,6 +246,7 @@ public class UpdateDevicePoolRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateDevicePoolRequest withRules(Rule... rules) {
         if (this.rules == null) {
             setRules(new java.util.ArrayList<Rule>(rules.length));
@@ -259,6 +271,7 @@ public class UpdateDevicePoolRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateDevicePoolRequest withRules(java.util.Collection<Rule> rules) {
         setRules(rules);
         return this;

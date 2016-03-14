@@ -55,6 +55,7 @@ public class DescribeVpcAttributeResult implements Serializable, Cloneable {
      * @param vpcId
      *        The ID of the VPC.
      */
+
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
@@ -66,6 +67,7 @@ public class DescribeVpcAttributeResult implements Serializable, Cloneable {
      * 
      * @return The ID of the VPC.
      */
+
     public String getVpcId() {
         return this.vpcId;
     }
@@ -80,6 +82,7 @@ public class DescribeVpcAttributeResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVpcAttributeResult withVpcId(String vpcId) {
         setVpcId(vpcId);
         return this;
@@ -99,6 +102,7 @@ public class DescribeVpcAttributeResult implements Serializable, Cloneable {
      *        hostnames for your instances to their corresponding IP addresses;
      *        otherwise, it does not.
      */
+
     public void setEnableDnsSupport(Boolean enableDnsSupport) {
         this.enableDnsSupport = enableDnsSupport;
     }
@@ -116,6 +120,7 @@ public class DescribeVpcAttributeResult implements Serializable, Cloneable {
      *         DNS hostnames for your instances to their corresponding IP
      *         addresses; otherwise, it does not.
      */
+
     public Boolean getEnableDnsSupport() {
         return this.enableDnsSupport;
     }
@@ -136,6 +141,7 @@ public class DescribeVpcAttributeResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVpcAttributeResult withEnableDnsSupport(
             Boolean enableDnsSupport) {
         setEnableDnsSupport(enableDnsSupport);
@@ -155,6 +161,7 @@ public class DescribeVpcAttributeResult implements Serializable, Cloneable {
      *         DNS hostnames for your instances to their corresponding IP
      *         addresses; otherwise, it does not.
      */
+
     public Boolean isEnableDnsSupport() {
         return this.enableDnsSupport;
     }
@@ -171,6 +178,7 @@ public class DescribeVpcAttributeResult implements Serializable, Cloneable {
      *        hostnames. If this attribute is <code>true</code>, instances in
      *        the VPC get DNS hostnames; otherwise, they do not.
      */
+
     public void setEnableDnsHostnames(Boolean enableDnsHostnames) {
         this.enableDnsHostnames = enableDnsHostnames;
     }
@@ -186,6 +194,7 @@ public class DescribeVpcAttributeResult implements Serializable, Cloneable {
      *         hostnames. If this attribute is <code>true</code>, instances in
      *         the VPC get DNS hostnames; otherwise, they do not.
      */
+
     public Boolean getEnableDnsHostnames() {
         return this.enableDnsHostnames;
     }
@@ -204,6 +213,7 @@ public class DescribeVpcAttributeResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVpcAttributeResult withEnableDnsHostnames(
             Boolean enableDnsHostnames) {
         setEnableDnsHostnames(enableDnsHostnames);
@@ -221,6 +231,7 @@ public class DescribeVpcAttributeResult implements Serializable, Cloneable {
      *         hostnames. If this attribute is <code>true</code>, instances in
      *         the VPC get DNS hostnames; otherwise, they do not.
      */
+
     public Boolean isEnableDnsHostnames() {
         return this.enableDnsHostnames;
     }

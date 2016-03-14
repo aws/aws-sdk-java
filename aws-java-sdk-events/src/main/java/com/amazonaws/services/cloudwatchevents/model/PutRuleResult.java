@@ -40,6 +40,7 @@ public class PutRuleResult implements Serializable, Cloneable {
      * @param ruleArn
      *        The Amazon Resource Name (ARN) that identifies the rule.
      */
+
     public void setRuleArn(String ruleArn) {
         this.ruleArn = ruleArn;
     }
@@ -51,6 +52,7 @@ public class PutRuleResult implements Serializable, Cloneable {
      * 
      * @return The Amazon Resource Name (ARN) that identifies the rule.
      */
+
     public String getRuleArn() {
         return this.ruleArn;
     }
@@ -65,6 +67,7 @@ public class PutRuleResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutRuleResult withRuleArn(String ruleArn) {
         setRuleArn(ruleArn);
         return this;

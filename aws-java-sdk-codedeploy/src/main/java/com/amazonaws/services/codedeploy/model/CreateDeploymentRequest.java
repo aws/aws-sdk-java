@@ -92,6 +92,7 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
      *        The name of an existing AWS CodeDeploy application associated with
      *        the applicable IAM user or AWS account.
      */
+
     public void setApplicationName(String applicationName) {
         this.applicationName = applicationName;
     }
@@ -105,6 +106,7 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
      * @return The name of an existing AWS CodeDeploy application associated
      *         with the applicable IAM user or AWS account.
      */
+
     public String getApplicationName() {
         return this.applicationName;
     }
@@ -121,6 +123,7 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDeploymentRequest withApplicationName(String applicationName) {
         setApplicationName(applicationName);
         return this;
@@ -134,6 +137,7 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
      * @param deploymentGroupName
      *        The deployment group's name.
      */
+
     public void setDeploymentGroupName(String deploymentGroupName) {
         this.deploymentGroupName = deploymentGroupName;
     }
@@ -145,6 +149,7 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
      * 
      * @return The deployment group's name.
      */
+
     public String getDeploymentGroupName() {
         return this.deploymentGroupName;
     }
@@ -159,6 +164,7 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDeploymentRequest withDeploymentGroupName(
             String deploymentGroupName) {
         setDeploymentGroupName(deploymentGroupName);
@@ -175,6 +181,7 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
      *        The type of revision to deploy, along with information about the
      *        revision's location.
      */
+
     public void setRevision(RevisionLocation revision) {
         this.revision = revision;
     }
@@ -188,6 +195,7 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
      * @return The type of revision to deploy, along with information about the
      *         revision's location.
      */
+
     public RevisionLocation getRevision() {
         return this.revision;
     }
@@ -204,6 +212,7 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDeploymentRequest withRevision(RevisionLocation revision) {
         setRevision(revision);
         return this;
@@ -230,6 +239,7 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
      *        a deployment configuration associated with it, then
      *        CodeDeployDefault.OneAtATime will be used by default.
      */
+
     public void setDeploymentConfigName(String deploymentConfigName) {
         this.deploymentConfigName = deploymentConfigName;
     }
@@ -254,6 +264,7 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
      *         have a deployment configuration associated with it, then
      *         CodeDeployDefault.OneAtATime will be used by default.
      */
+
     public String getDeploymentConfigName() {
         return this.deploymentConfigName;
     }
@@ -281,6 +292,7 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDeploymentRequest withDeploymentConfigName(
             String deploymentConfigName) {
         setDeploymentConfigName(deploymentConfigName);
@@ -295,6 +307,7 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
      * @param description
      *        A comment about the deployment.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -306,6 +319,7 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
      * 
      * @return A comment about the deployment.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -320,6 +334,7 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDeploymentRequest withDescription(String description) {
         setDescription(description);
         return this;
@@ -351,6 +366,7 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
      *        specific instance, the deployment will stop to that instance, and
      *        the deployment to that instance will be considered to have failed.
      */
+
     public void setIgnoreApplicationStopFailures(
             Boolean ignoreApplicationStopFailures) {
         this.ignoreApplicationStopFailures = ignoreApplicationStopFailures;
@@ -382,6 +398,7 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
      *         the deployment to that instance will be considered to have
      *         failed.
      */
+
     public Boolean getIgnoreApplicationStopFailures() {
         return this.ignoreApplicationStopFailures;
     }
@@ -414,6 +431,7 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDeploymentRequest withIgnoreApplicationStopFailures(
             Boolean ignoreApplicationStopFailures) {
         setIgnoreApplicationStopFailures(ignoreApplicationStopFailures);
@@ -446,6 +464,7 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
      *         the deployment to that instance will be considered to have
      *         failed.
      */
+
     public Boolean isIgnoreApplicationStopFailures() {
         return this.ignoreApplicationStopFailures;
     }

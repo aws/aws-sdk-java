@@ -103,6 +103,7 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements
      * @param subject
      *        The title of the AWS Support case.
      */
+
     public void setSubject(String subject) {
         this.subject = subject;
     }
@@ -114,6 +115,7 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements
      * 
      * @return The title of the AWS Support case.
      */
+
     public String getSubject() {
         return this.subject;
     }
@@ -128,6 +130,7 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateCaseRequest withSubject(String subject) {
         setSubject(subject);
         return this;
@@ -143,6 +146,7 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements
      *        The code for the AWS service returned by the call to
      *        <a>DescribeServices</a>.
      */
+
     public void setServiceCode(String serviceCode) {
         this.serviceCode = serviceCode;
     }
@@ -156,6 +160,7 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements
      * @return The code for the AWS service returned by the call to
      *         <a>DescribeServices</a>.
      */
+
     public String getServiceCode() {
         return this.serviceCode;
     }
@@ -172,6 +177,7 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateCaseRequest withServiceCode(String serviceCode) {
         setServiceCode(serviceCode);
         return this;
@@ -199,6 +205,7 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements
      *        necessarily require the urgent level of response time.
      *        </p>
      */
+
     public void setSeverityCode(String severityCode) {
         this.severityCode = severityCode;
     }
@@ -224,6 +231,7 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements
      *         necessarily require the urgent level of response time.
      *         </p>
      */
+
     public String getSeverityCode() {
         return this.severityCode;
     }
@@ -252,6 +260,7 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateCaseRequest withSeverityCode(String severityCode) {
         setSeverityCode(severityCode);
         return this;
@@ -265,6 +274,7 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements
      * @param categoryCode
      *        The category of problem for the AWS Support case.
      */
+
     public void setCategoryCode(String categoryCode) {
         this.categoryCode = categoryCode;
     }
@@ -276,6 +286,7 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements
      * 
      * @return The category of problem for the AWS Support case.
      */
+
     public String getCategoryCode() {
         return this.categoryCode;
     }
@@ -290,6 +301,7 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateCaseRequest withCategoryCode(String categoryCode) {
         setCategoryCode(categoryCode);
         return this;
@@ -305,6 +317,7 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements
      *        The communication body text when you create an AWS Support case by
      *        calling <a>CreateCase</a>.
      */
+
     public void setCommunicationBody(String communicationBody) {
         this.communicationBody = communicationBody;
     }
@@ -318,6 +331,7 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements
      * @return The communication body text when you create an AWS Support case
      *         by calling <a>CreateCase</a>.
      */
+
     public String getCommunicationBody() {
         return this.communicationBody;
     }
@@ -334,6 +348,7 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateCaseRequest withCommunicationBody(String communicationBody) {
         setCommunicationBody(communicationBody);
         return this;
@@ -347,6 +362,7 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements
      * @return A list of email addresses that AWS Support copies on case
      *         correspondence.
      */
+
     public java.util.List<String> getCcEmailAddresses() {
         if (ccEmailAddresses == null) {
             ccEmailAddresses = new com.amazonaws.internal.SdkInternalList<String>();
@@ -363,6 +379,7 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements
      *        A list of email addresses that AWS Support copies on case
      *        correspondence.
      */
+
     public void setCcEmailAddresses(
             java.util.Collection<String> ccEmailAddresses) {
         if (ccEmailAddresses == null) {
@@ -391,6 +408,7 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateCaseRequest withCcEmailAddresses(String... ccEmailAddresses) {
         if (this.ccEmailAddresses == null) {
             setCcEmailAddresses(new com.amazonaws.internal.SdkInternalList<String>(
@@ -413,6 +431,7 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateCaseRequest withCcEmailAddresses(
             java.util.Collection<String> ccEmailAddresses) {
         setCcEmailAddresses(ccEmailAddresses);
@@ -432,6 +451,7 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements
      *        Language parameters must be passed explicitly for operations that
      *        take them.
      */
+
     public void setLanguage(String language) {
         this.language = language;
     }
@@ -448,6 +468,7 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements
      *         Japanese ("ja"). Language parameters must be passed explicitly
      *         for operations that take them.
      */
+
     public String getLanguage() {
         return this.language;
     }
@@ -467,6 +488,7 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateCaseRequest withLanguage(String language) {
         setLanguage(language);
         return this;
@@ -484,6 +506,7 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements
      *        "customer-service" or "technical." If you do not indicate a value,
      *        the default is "technical."
      */
+
     public void setIssueType(String issueType) {
         this.issueType = issueType;
     }
@@ -499,6 +522,7 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements
      *         "customer-service" or "technical." If you do not indicate a
      *         value, the default is "technical."
      */
+
     public String getIssueType() {
         return this.issueType;
     }
@@ -517,6 +541,7 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateCaseRequest withIssueType(String issueType) {
         setIssueType(issueType);
         return this;
@@ -532,6 +557,7 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements
      *        The ID of a set of one or more attachments for the case. Create
      *        the set by using <a>AddAttachmentsToSet</a>.
      */
+
     public void setAttachmentSetId(String attachmentSetId) {
         this.attachmentSetId = attachmentSetId;
     }
@@ -545,6 +571,7 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements
      * @return The ID of a set of one or more attachments for the case. Create
      *         the set by using <a>AddAttachmentsToSet</a>.
      */
+
     public String getAttachmentSetId() {
         return this.attachmentSetId;
     }
@@ -561,6 +588,7 @@ public class CreateCaseRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateCaseRequest withAttachmentSetId(String attachmentSetId) {
         setAttachmentSetId(attachmentSetId);
         return this;

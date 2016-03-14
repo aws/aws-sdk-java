@@ -43,6 +43,7 @@ public class RejectVpcPeeringConnectionRequest extends AmazonWebServiceRequest
      * @param vpcPeeringConnectionId
      *        The ID of the VPC peering connection.
      */
+
     public void setVpcPeeringConnectionId(String vpcPeeringConnectionId) {
         this.vpcPeeringConnectionId = vpcPeeringConnectionId;
     }
@@ -54,6 +55,7 @@ public class RejectVpcPeeringConnectionRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the VPC peering connection.
      */
+
     public String getVpcPeeringConnectionId() {
         return this.vpcPeeringConnectionId;
     }
@@ -68,6 +70,7 @@ public class RejectVpcPeeringConnectionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RejectVpcPeeringConnectionRequest withVpcPeeringConnectionId(
             String vpcPeeringConnectionId) {
         setVpcPeeringConnectionId(vpcPeeringConnectionId);

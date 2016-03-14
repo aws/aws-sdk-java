@@ -110,6 +110,7 @@ public class GenerateDataKeyWithoutPlaintextRequest extends
      *        <li>Alias Name Example - alias/MyAliasName</li>
      *        </ul>
      */
+
     public void setKeyId(String keyId) {
         this.keyId = keyId;
     }
@@ -145,6 +146,7 @@ public class GenerateDataKeyWithoutPlaintextRequest extends
      *         <li>Alias Name Example - alias/MyAliasName</li>
      *         </ul>
      */
+
     public String getKeyId() {
         return this.keyId;
     }
@@ -183,6 +185,7 @@ public class GenerateDataKeyWithoutPlaintextRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GenerateDataKeyWithoutPlaintextRequest withKeyId(String keyId) {
         setKeyId(keyId);
         return this;
@@ -197,6 +200,7 @@ public class GenerateDataKeyWithoutPlaintextRequest extends
      * @return Name:value pair that contains additional data to be authenticated
      *         during the encryption and decryption processes.
      */
+
     public java.util.Map<String, String> getEncryptionContext() {
         if (encryptionContext == null) {
             encryptionContext = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -214,6 +218,7 @@ public class GenerateDataKeyWithoutPlaintextRequest extends
      *        Name:value pair that contains additional data to be authenticated
      *        during the encryption and decryption processes.
      */
+
     public void setEncryptionContext(
             java.util.Map<String, String> encryptionContext) {
         this.encryptionContext = encryptionContext == null ? null
@@ -233,6 +238,7 @@ public class GenerateDataKeyWithoutPlaintextRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GenerateDataKeyWithoutPlaintextRequest withEncryptionContext(
             java.util.Map<String, String> encryptionContext) {
         setEncryptionContext(encryptionContext);
@@ -255,6 +261,7 @@ public class GenerateDataKeyWithoutPlaintextRequest extends
      * Removes all the entries added into EncryptionContext. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public GenerateDataKeyWithoutPlaintextRequest clearEncryptionContextEntries() {
         this.encryptionContext = null;
         return this;
@@ -271,6 +278,7 @@ public class GenerateDataKeyWithoutPlaintextRequest extends
      *        Currently this can be AES_128 or AES_256.
      * @see DataKeySpec
      */
+
     public void setKeySpec(String keySpec) {
         this.keySpec = keySpec;
     }
@@ -285,6 +293,7 @@ public class GenerateDataKeyWithoutPlaintextRequest extends
      *         Currently this can be AES_128 or AES_256.
      * @see DataKeySpec
      */
+
     public String getKeySpec() {
         return this.keySpec;
     }
@@ -302,6 +311,7 @@ public class GenerateDataKeyWithoutPlaintextRequest extends
      *         chained together.
      * @see DataKeySpec
      */
+
     public GenerateDataKeyWithoutPlaintextRequest withKeySpec(String keySpec) {
         setKeySpec(keySpec);
         return this;
@@ -320,6 +330,7 @@ public class GenerateDataKeyWithoutPlaintextRequest extends
      *         chained together.
      * @see DataKeySpec
      */
+
     public void setKeySpec(DataKeySpec keySpec) {
         this.keySpec = keySpec.toString();
     }
@@ -337,6 +348,7 @@ public class GenerateDataKeyWithoutPlaintextRequest extends
      *         chained together.
      * @see DataKeySpec
      */
+
     public GenerateDataKeyWithoutPlaintextRequest withKeySpec(
             DataKeySpec keySpec) {
         setKeySpec(keySpec);
@@ -355,6 +367,7 @@ public class GenerateDataKeyWithoutPlaintextRequest extends
      *        values are 128, 256, 512, 1024 and so on. We recommend that you
      *        use the <code>KeySpec</code> parameter instead.
      */
+
     public void setNumberOfBytes(Integer numberOfBytes) {
         this.numberOfBytes = numberOfBytes;
     }
@@ -370,6 +383,7 @@ public class GenerateDataKeyWithoutPlaintextRequest extends
      *         values are 128, 256, 512, 1024 and so on. We recommend that you
      *         use the <code>KeySpec</code> parameter instead.
      */
+
     public Integer getNumberOfBytes() {
         return this.numberOfBytes;
     }
@@ -388,6 +402,7 @@ public class GenerateDataKeyWithoutPlaintextRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GenerateDataKeyWithoutPlaintextRequest withNumberOfBytes(
             Integer numberOfBytes) {
         setNumberOfBytes(numberOfBytes);
@@ -412,6 +427,7 @@ public class GenerateDataKeyWithoutPlaintextRequest extends
      *         >Grant Tokens</a> in the <i>AWS Key Management Service Developer
      *         Guide</i>.
      */
+
     public java.util.List<String> getGrantTokens() {
         if (grantTokens == null) {
             grantTokens = new com.amazonaws.internal.SdkInternalList<String>();
@@ -438,6 +454,7 @@ public class GenerateDataKeyWithoutPlaintextRequest extends
      *        >Grant Tokens</a> in the <i>AWS Key Management Service Developer
      *        Guide</i>.
      */
+
     public void setGrantTokens(java.util.Collection<String> grantTokens) {
         if (grantTokens == null) {
             this.grantTokens = null;
@@ -475,6 +492,7 @@ public class GenerateDataKeyWithoutPlaintextRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GenerateDataKeyWithoutPlaintextRequest withGrantTokens(
             String... grantTokens) {
         if (this.grantTokens == null) {
@@ -508,6 +526,7 @@ public class GenerateDataKeyWithoutPlaintextRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GenerateDataKeyWithoutPlaintextRequest withGrantTokens(
             java.util.Collection<String> grantTokens) {
         setGrantTokens(grantTokens);

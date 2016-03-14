@@ -46,6 +46,7 @@ public class ListClustersResult implements Serializable, Cloneable {
      * 
      * @return The list of clusters for the account based on the given filters.
      */
+
     public java.util.List<ClusterSummary> getClusters() {
         if (clusters == null) {
             clusters = new com.amazonaws.internal.SdkInternalList<ClusterSummary>();
@@ -61,6 +62,7 @@ public class ListClustersResult implements Serializable, Cloneable {
      * @param clusters
      *        The list of clusters for the account based on the given filters.
      */
+
     public void setClusters(java.util.Collection<ClusterSummary> clusters) {
         if (clusters == null) {
             this.clusters = null;
@@ -87,6 +89,7 @@ public class ListClustersResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListClustersResult withClusters(ClusterSummary... clusters) {
         if (this.clusters == null) {
             setClusters(new com.amazonaws.internal.SdkInternalList<ClusterSummary>(
@@ -108,6 +111,7 @@ public class ListClustersResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListClustersResult withClusters(
             java.util.Collection<ClusterSummary> clusters) {
         setClusters(clusters);
@@ -123,6 +127,7 @@ public class ListClustersResult implements Serializable, Cloneable {
      *        The pagination token that indicates the next set of results to
      *        retrieve.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -135,6 +140,7 @@ public class ListClustersResult implements Serializable, Cloneable {
      * @return The pagination token that indicates the next set of results to
      *         retrieve.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -150,6 +156,7 @@ public class ListClustersResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListClustersResult withMarker(String marker) {
         setMarker(marker);
         return this;

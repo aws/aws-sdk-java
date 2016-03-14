@@ -72,6 +72,7 @@ public class Communication implements Serializable, Cloneable {
      *        case ID is an alphanumeric string formatted as shown in this
      *        example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
      */
+
     public void setCaseId(String caseId) {
         this.caseId = caseId;
     }
@@ -87,6 +88,7 @@ public class Communication implements Serializable, Cloneable {
      *         case ID is an alphanumeric string formatted as shown in this
      *         example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
      */
+
     public String getCaseId() {
         return this.caseId;
     }
@@ -105,6 +107,7 @@ public class Communication implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Communication withCaseId(String caseId) {
         setCaseId(caseId);
         return this;
@@ -119,6 +122,7 @@ public class Communication implements Serializable, Cloneable {
      *        The text of the communication between the customer and AWS
      *        Support.
      */
+
     public void setBody(String body) {
         this.body = body;
     }
@@ -131,6 +135,7 @@ public class Communication implements Serializable, Cloneable {
      * @return The text of the communication between the customer and AWS
      *         Support.
      */
+
     public String getBody() {
         return this.body;
     }
@@ -146,6 +151,7 @@ public class Communication implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Communication withBody(String body) {
         setBody(body);
         return this;
@@ -160,6 +166,7 @@ public class Communication implements Serializable, Cloneable {
      *        The email address of the account that submitted the AWS Support
      *        case.
      */
+
     public void setSubmittedBy(String submittedBy) {
         this.submittedBy = submittedBy;
     }
@@ -172,6 +179,7 @@ public class Communication implements Serializable, Cloneable {
      * @return The email address of the account that submitted the AWS Support
      *         case.
      */
+
     public String getSubmittedBy() {
         return this.submittedBy;
     }
@@ -187,6 +195,7 @@ public class Communication implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Communication withSubmittedBy(String submittedBy) {
         setSubmittedBy(submittedBy);
         return this;
@@ -200,6 +209,7 @@ public class Communication implements Serializable, Cloneable {
      * @param timeCreated
      *        The time the communication was created.
      */
+
     public void setTimeCreated(String timeCreated) {
         this.timeCreated = timeCreated;
     }
@@ -211,6 +221,7 @@ public class Communication implements Serializable, Cloneable {
      * 
      * @return The time the communication was created.
      */
+
     public String getTimeCreated() {
         return this.timeCreated;
     }
@@ -225,6 +236,7 @@ public class Communication implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Communication withTimeCreated(String timeCreated) {
         setTimeCreated(timeCreated);
         return this;
@@ -237,6 +249,7 @@ public class Communication implements Serializable, Cloneable {
      * 
      * @return Information about the attachments to the case communication.
      */
+
     public java.util.List<AttachmentDetails> getAttachmentSet() {
         if (attachmentSet == null) {
             attachmentSet = new com.amazonaws.internal.SdkInternalList<AttachmentDetails>();
@@ -252,6 +265,7 @@ public class Communication implements Serializable, Cloneable {
      * @param attachmentSet
      *        Information about the attachments to the case communication.
      */
+
     public void setAttachmentSet(
             java.util.Collection<AttachmentDetails> attachmentSet) {
         if (attachmentSet == null) {
@@ -279,6 +293,7 @@ public class Communication implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Communication withAttachmentSet(AttachmentDetails... attachmentSet) {
         if (this.attachmentSet == null) {
             setAttachmentSet(new com.amazonaws.internal.SdkInternalList<AttachmentDetails>(
@@ -300,6 +315,7 @@ public class Communication implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Communication withAttachmentSet(
             java.util.Collection<AttachmentDetails> attachmentSet) {
         setAttachmentSet(attachmentSet);

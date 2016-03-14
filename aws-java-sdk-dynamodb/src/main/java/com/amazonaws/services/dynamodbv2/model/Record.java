@@ -93,6 +93,7 @@ public class Record implements Serializable, Cloneable {
      *        A globally unique identifier for the event that was recorded in
      *        this stream record.
      */
+
     public void setEventID(String eventID) {
         this.eventID = eventID;
     }
@@ -106,6 +107,7 @@ public class Record implements Serializable, Cloneable {
      * @return A globally unique identifier for the event that was recorded in
      *         this stream record.
      */
+
     public String getEventID() {
         return this.eventID;
     }
@@ -122,6 +124,7 @@ public class Record implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Record withEventID(String eventID) {
         setEventID(eventID);
         return this;
@@ -171,6 +174,7 @@ public class Record implements Serializable, Cloneable {
      *        </li>
      * @see OperationType
      */
+
     public void setEventName(String eventName) {
         this.eventName = eventName;
     }
@@ -218,6 +222,7 @@ public class Record implements Serializable, Cloneable {
      *         </li>
      * @see OperationType
      */
+
     public String getEventName() {
         return this.eventName;
     }
@@ -268,6 +273,7 @@ public class Record implements Serializable, Cloneable {
      *         chained together.
      * @see OperationType
      */
+
     public Record withEventName(String eventName) {
         setEventName(eventName);
         return this;
@@ -319,6 +325,7 @@ public class Record implements Serializable, Cloneable {
      *         chained together.
      * @see OperationType
      */
+
     public void setEventName(OperationType eventName) {
         this.eventName = eventName.toString();
     }
@@ -369,6 +376,7 @@ public class Record implements Serializable, Cloneable {
      *         chained together.
      * @see OperationType
      */
+
     public Record withEventName(OperationType eventName) {
         setEventName(eventName);
         return this;
@@ -384,6 +392,7 @@ public class Record implements Serializable, Cloneable {
      *        The version number of the stream record format. Currently, this is
      *        <i>1.0</i>.
      */
+
     public void setEventVersion(String eventVersion) {
         this.eventVersion = eventVersion;
     }
@@ -397,6 +406,7 @@ public class Record implements Serializable, Cloneable {
      * @return The version number of the stream record format. Currently, this
      *         is <i>1.0</i>.
      */
+
     public String getEventVersion() {
         return this.eventVersion;
     }
@@ -413,6 +423,7 @@ public class Record implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Record withEventVersion(String eventVersion) {
         setEventVersion(eventVersion);
         return this;
@@ -428,6 +439,7 @@ public class Record implements Serializable, Cloneable {
      *        The AWS service from which the stream record originated. For
      *        DynamoDB Streams, this is <i>aws:dynamodb</i>.
      */
+
     public void setEventSource(String eventSource) {
         this.eventSource = eventSource;
     }
@@ -441,6 +453,7 @@ public class Record implements Serializable, Cloneable {
      * @return The AWS service from which the stream record originated. For
      *         DynamoDB Streams, this is <i>aws:dynamodb</i>.
      */
+
     public String getEventSource() {
         return this.eventSource;
     }
@@ -457,6 +470,7 @@ public class Record implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Record withEventSource(String eventSource) {
         setEventSource(eventSource);
         return this;
@@ -470,6 +484,7 @@ public class Record implements Serializable, Cloneable {
      * @param awsRegion
      *        The region in which the <i>GetRecords</i> request was received.
      */
+
     public void setAwsRegion(String awsRegion) {
         this.awsRegion = awsRegion;
     }
@@ -481,6 +496,7 @@ public class Record implements Serializable, Cloneable {
      * 
      * @return The region in which the <i>GetRecords</i> request was received.
      */
+
     public String getAwsRegion() {
         return this.awsRegion;
     }
@@ -495,6 +511,7 @@ public class Record implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Record withAwsRegion(String awsRegion) {
         setAwsRegion(awsRegion);
         return this;
@@ -510,6 +527,7 @@ public class Record implements Serializable, Cloneable {
      *        The main body of the stream record, containing all of the
      *        DynamoDB-specific fields.
      */
+
     public void setDynamodb(StreamRecord dynamodb) {
         this.dynamodb = dynamodb;
     }
@@ -523,6 +541,7 @@ public class Record implements Serializable, Cloneable {
      * @return The main body of the stream record, containing all of the
      *         DynamoDB-specific fields.
      */
+
     public StreamRecord getDynamodb() {
         return this.dynamodb;
     }
@@ -539,6 +558,7 @@ public class Record implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Record withDynamodb(StreamRecord dynamodb) {
         setDynamodb(dynamodb);
         return this;

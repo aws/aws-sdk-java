@@ -52,6 +52,7 @@ public class CreateSizeConstraintSetRequest extends AmazonWebServiceRequest
      *        You can't change <code>Name</code> after you create a
      *        <code>SizeConstraintSet</code>.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -67,6 +68,7 @@ public class CreateSizeConstraintSetRequest extends AmazonWebServiceRequest
      *         You can't change <code>Name</code> after you create a
      *         <code>SizeConstraintSet</code>.
      */
+
     public String getName() {
         return this.name;
     }
@@ -85,6 +87,7 @@ public class CreateSizeConstraintSetRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateSizeConstraintSetRequest withName(String name) {
         setName(name);
         return this;
@@ -99,6 +102,7 @@ public class CreateSizeConstraintSetRequest extends AmazonWebServiceRequest
      *        The value returned by the most recent call to
      *        <a>GetChangeToken</a>.
      */
+
     public void setChangeToken(String changeToken) {
         this.changeToken = changeToken;
     }
@@ -111,6 +115,7 @@ public class CreateSizeConstraintSetRequest extends AmazonWebServiceRequest
      * @return The value returned by the most recent call to
      *         <a>GetChangeToken</a>.
      */
+
     public String getChangeToken() {
         return this.changeToken;
     }
@@ -126,6 +131,7 @@ public class CreateSizeConstraintSetRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateSizeConstraintSetRequest withChangeToken(String changeToken) {
         setChangeToken(changeToken);
         return this;

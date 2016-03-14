@@ -58,6 +58,7 @@ public class SetStatusRequest extends AmazonWebServiceRequest implements
      * @param pipelineId
      *        The ID of the pipeline that contains the objects.
      */
+
     public void setPipelineId(String pipelineId) {
         this.pipelineId = pipelineId;
     }
@@ -69,6 +70,7 @@ public class SetStatusRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ID of the pipeline that contains the objects.
      */
+
     public String getPipelineId() {
         return this.pipelineId;
     }
@@ -83,6 +85,7 @@ public class SetStatusRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetStatusRequest withPipelineId(String pipelineId) {
         setPipelineId(pipelineId);
         return this;
@@ -97,6 +100,7 @@ public class SetStatusRequest extends AmazonWebServiceRequest implements
      * @return The IDs of the objects. The corresponding objects can be either
      *         physical or components, but not a mix of both types.
      */
+
     public java.util.List<String> getObjectIds() {
         if (objectIds == null) {
             objectIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -114,6 +118,7 @@ public class SetStatusRequest extends AmazonWebServiceRequest implements
      *        The IDs of the objects. The corresponding objects can be either
      *        physical or components, but not a mix of both types.
      */
+
     public void setObjectIds(java.util.Collection<String> objectIds) {
         if (objectIds == null) {
             this.objectIds = null;
@@ -142,6 +147,7 @@ public class SetStatusRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetStatusRequest withObjectIds(String... objectIds) {
         if (this.objectIds == null) {
             setObjectIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -165,6 +171,7 @@ public class SetStatusRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetStatusRequest withObjectIds(java.util.Collection<String> objectIds) {
         setObjectIds(objectIds);
         return this;
@@ -184,6 +191,7 @@ public class SetStatusRequest extends AmazonWebServiceRequest implements
      *        <code>RESUME</code>. For instances, use <code>TRY_CANCEL</code>,
      *        <code>RERUN</code>, or <code>MARK_FINISHED</code>.
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -201,6 +209,7 @@ public class SetStatusRequest extends AmazonWebServiceRequest implements
      *         <code>RESUME</code>. For instances, use <code>TRY_CANCEL</code>,
      *         <code>RERUN</code>, or <code>MARK_FINISHED</code>.
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -221,6 +230,7 @@ public class SetStatusRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetStatusRequest withStatus(String status) {
         setStatus(status);
         return this;

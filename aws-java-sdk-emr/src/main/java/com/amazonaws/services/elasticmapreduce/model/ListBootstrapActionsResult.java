@@ -45,6 +45,7 @@ public class ListBootstrapActionsResult implements Serializable, Cloneable {
      * 
      * @return The bootstrap actions associated with the cluster .
      */
+
     public java.util.List<Command> getBootstrapActions() {
         if (bootstrapActions == null) {
             bootstrapActions = new com.amazonaws.internal.SdkInternalList<Command>();
@@ -60,6 +61,7 @@ public class ListBootstrapActionsResult implements Serializable, Cloneable {
      * @param bootstrapActions
      *        The bootstrap actions associated with the cluster .
      */
+
     public void setBootstrapActions(
             java.util.Collection<Command> bootstrapActions) {
         if (bootstrapActions == null) {
@@ -87,6 +89,7 @@ public class ListBootstrapActionsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListBootstrapActionsResult withBootstrapActions(
             Command... bootstrapActions) {
         if (this.bootstrapActions == null) {
@@ -109,6 +112,7 @@ public class ListBootstrapActionsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListBootstrapActionsResult withBootstrapActions(
             java.util.Collection<Command> bootstrapActions) {
         setBootstrapActions(bootstrapActions);
@@ -124,6 +128,7 @@ public class ListBootstrapActionsResult implements Serializable, Cloneable {
      *        The pagination token that indicates the next set of results to
      *        retrieve .
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -136,6 +141,7 @@ public class ListBootstrapActionsResult implements Serializable, Cloneable {
      * @return The pagination token that indicates the next set of results to
      *         retrieve .
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -151,6 +157,7 @@ public class ListBootstrapActionsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListBootstrapActionsResult withMarker(String marker) {
         setMarker(marker);
         return this;

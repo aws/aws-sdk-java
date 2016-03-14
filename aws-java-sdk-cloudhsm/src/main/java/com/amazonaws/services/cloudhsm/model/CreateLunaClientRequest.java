@@ -49,6 +49,7 @@ public class CreateLunaClientRequest extends AmazonWebServiceRequest implements
      * @param label
      *        The label for the client.
      */
+
     public void setLabel(String label) {
         this.label = label;
     }
@@ -60,6 +61,7 @@ public class CreateLunaClientRequest extends AmazonWebServiceRequest implements
      * 
      * @return The label for the client.
      */
+
     public String getLabel() {
         return this.label;
     }
@@ -74,6 +76,7 @@ public class CreateLunaClientRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateLunaClientRequest withLabel(String label) {
         setLabel(label);
         return this;
@@ -89,6 +92,7 @@ public class CreateLunaClientRequest extends AmazonWebServiceRequest implements
      *        The contents of a Base64-Encoded X.509 v3 certificate to be
      *        installed on the HSMs used by this client.
      */
+
     public void setCertificate(String certificate) {
         this.certificate = certificate;
     }
@@ -102,6 +106,7 @@ public class CreateLunaClientRequest extends AmazonWebServiceRequest implements
      * @return The contents of a Base64-Encoded X.509 v3 certificate to be
      *         installed on the HSMs used by this client.
      */
+
     public String getCertificate() {
         return this.certificate;
     }
@@ -118,6 +123,7 @@ public class CreateLunaClientRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateLunaClientRequest withCertificate(String certificate) {
         setCertificate(certificate);
         return this;

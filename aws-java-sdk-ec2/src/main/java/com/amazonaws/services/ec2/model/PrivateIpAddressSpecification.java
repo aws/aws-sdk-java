@@ -47,6 +47,7 @@ public class PrivateIpAddressSpecification implements Serializable, Cloneable {
      * @param privateIpAddress
      *        The private IP addresses.
      */
+
     public void setPrivateIpAddress(String privateIpAddress) {
         this.privateIpAddress = privateIpAddress;
     }
@@ -58,6 +59,7 @@ public class PrivateIpAddressSpecification implements Serializable, Cloneable {
      * 
      * @return The private IP addresses.
      */
+
     public String getPrivateIpAddress() {
         return this.privateIpAddress;
     }
@@ -72,6 +74,7 @@ public class PrivateIpAddressSpecification implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PrivateIpAddressSpecification withPrivateIpAddress(
             String privateIpAddress) {
         setPrivateIpAddress(privateIpAddress);
@@ -88,6 +91,7 @@ public class PrivateIpAddressSpecification implements Serializable, Cloneable {
      *        Indicates whether the private IP address is the primary private IP
      *        address. Only one IP address can be designated as primary.
      */
+
     public void setPrimary(Boolean primary) {
         this.primary = primary;
     }
@@ -101,6 +105,7 @@ public class PrivateIpAddressSpecification implements Serializable, Cloneable {
      * @return Indicates whether the private IP address is the primary private
      *         IP address. Only one IP address can be designated as primary.
      */
+
     public Boolean getPrimary() {
         return this.primary;
     }
@@ -117,6 +122,7 @@ public class PrivateIpAddressSpecification implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PrivateIpAddressSpecification withPrimary(Boolean primary) {
         setPrimary(primary);
         return this;
@@ -131,6 +137,7 @@ public class PrivateIpAddressSpecification implements Serializable, Cloneable {
      * @return Indicates whether the private IP address is the primary private
      *         IP address. Only one IP address can be designated as primary.
      */
+
     public Boolean isPrimary() {
         return this.primary;
     }

@@ -55,6 +55,7 @@ public class ReadPipelineResult implements Serializable, Cloneable {
      *        A section of the response body that provides information about the
      *        pipeline.
      */
+
     public void setPipeline(Pipeline pipeline) {
         this.pipeline = pipeline;
     }
@@ -68,6 +69,7 @@ public class ReadPipelineResult implements Serializable, Cloneable {
      * @return A section of the response body that provides information about
      *         the pipeline.
      */
+
     public Pipeline getPipeline() {
         return this.pipeline;
     }
@@ -84,6 +86,7 @@ public class ReadPipelineResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReadPipelineResult withPipeline(Pipeline pipeline) {
         setPipeline(pipeline);
         return this;
@@ -107,6 +110,7 @@ public class ReadPipelineResult implements Serializable, Cloneable {
      *         buckets, Amazon SNS notification topics, and AWS KMS key, reduces
      *         processing time and prevents cross-regional charges.
      */
+
     public java.util.List<Warning> getWarnings() {
         if (warnings == null) {
             warnings = new com.amazonaws.internal.SdkInternalList<Warning>();
@@ -133,6 +137,7 @@ public class ReadPipelineResult implements Serializable, Cloneable {
      *        buckets, Amazon SNS notification topics, and AWS KMS key, reduces
      *        processing time and prevents cross-regional charges.
      */
+
     public void setWarnings(java.util.Collection<Warning> warnings) {
         if (warnings == null) {
             this.warnings = null;
@@ -170,6 +175,7 @@ public class ReadPipelineResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReadPipelineResult withWarnings(Warning... warnings) {
         if (this.warnings == null) {
             setWarnings(new com.amazonaws.internal.SdkInternalList<Warning>(
@@ -202,6 +208,7 @@ public class ReadPipelineResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReadPipelineResult withWarnings(
             java.util.Collection<Warning> warnings) {
         setWarnings(warnings);

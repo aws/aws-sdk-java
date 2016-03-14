@@ -41,6 +41,7 @@ public class ComputeType implements Serializable, Cloneable {
      *        The name of the compute type for the bundle.
      * @see Compute
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -53,6 +54,7 @@ public class ComputeType implements Serializable, Cloneable {
      * @return The name of the compute type for the bundle.
      * @see Compute
      */
+
     public String getName() {
         return this.name;
     }
@@ -68,6 +70,7 @@ public class ComputeType implements Serializable, Cloneable {
      *         chained together.
      * @see Compute
      */
+
     public ComputeType withName(String name) {
         setName(name);
         return this;
@@ -84,6 +87,7 @@ public class ComputeType implements Serializable, Cloneable {
      *         chained together.
      * @see Compute
      */
+
     public void setName(Compute name) {
         this.name = name.toString();
     }
@@ -99,6 +103,7 @@ public class ComputeType implements Serializable, Cloneable {
      *         chained together.
      * @see Compute
      */
+
     public ComputeType withName(Compute name) {
         setName(name);
         return this;

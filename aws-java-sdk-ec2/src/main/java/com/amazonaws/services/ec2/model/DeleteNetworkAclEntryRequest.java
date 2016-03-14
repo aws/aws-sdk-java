@@ -55,6 +55,7 @@ public class DeleteNetworkAclEntryRequest extends AmazonWebServiceRequest
      * @param networkAclId
      *        The ID of the network ACL.
      */
+
     public void setNetworkAclId(String networkAclId) {
         this.networkAclId = networkAclId;
     }
@@ -66,6 +67,7 @@ public class DeleteNetworkAclEntryRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the network ACL.
      */
+
     public String getNetworkAclId() {
         return this.networkAclId;
     }
@@ -80,6 +82,7 @@ public class DeleteNetworkAclEntryRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteNetworkAclEntryRequest withNetworkAclId(String networkAclId) {
         setNetworkAclId(networkAclId);
         return this;
@@ -93,6 +96,7 @@ public class DeleteNetworkAclEntryRequest extends AmazonWebServiceRequest
      * @param ruleNumber
      *        The rule number of the entry to delete.
      */
+
     public void setRuleNumber(Integer ruleNumber) {
         this.ruleNumber = ruleNumber;
     }
@@ -104,6 +108,7 @@ public class DeleteNetworkAclEntryRequest extends AmazonWebServiceRequest
      * 
      * @return The rule number of the entry to delete.
      */
+
     public Integer getRuleNumber() {
         return this.ruleNumber;
     }
@@ -118,6 +123,7 @@ public class DeleteNetworkAclEntryRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteNetworkAclEntryRequest withRuleNumber(Integer ruleNumber) {
         setRuleNumber(ruleNumber);
         return this;
@@ -131,6 +137,7 @@ public class DeleteNetworkAclEntryRequest extends AmazonWebServiceRequest
      * @param egress
      *        Indicates whether the rule is an egress rule.
      */
+
     public void setEgress(Boolean egress) {
         this.egress = egress;
     }
@@ -142,6 +149,7 @@ public class DeleteNetworkAclEntryRequest extends AmazonWebServiceRequest
      * 
      * @return Indicates whether the rule is an egress rule.
      */
+
     public Boolean getEgress() {
         return this.egress;
     }
@@ -156,6 +164,7 @@ public class DeleteNetworkAclEntryRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteNetworkAclEntryRequest withEgress(Boolean egress) {
         setEgress(egress);
         return this;
@@ -168,6 +177,7 @@ public class DeleteNetworkAclEntryRequest extends AmazonWebServiceRequest
      * 
      * @return Indicates whether the rule is an egress rule.
      */
+
     public Boolean isEgress() {
         return this.egress;
     }

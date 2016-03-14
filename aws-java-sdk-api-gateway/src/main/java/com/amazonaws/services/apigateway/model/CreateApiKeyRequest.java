@@ -58,6 +58,7 @@ public class CreateApiKeyRequest extends AmazonWebServiceRequest implements
      * @param name
      *        The name of the <a>ApiKey</a>.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -69,6 +70,7 @@ public class CreateApiKeyRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the <a>ApiKey</a>.
      */
+
     public String getName() {
         return this.name;
     }
@@ -83,6 +85,7 @@ public class CreateApiKeyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateApiKeyRequest withName(String name) {
         setName(name);
         return this;
@@ -96,6 +99,7 @@ public class CreateApiKeyRequest extends AmazonWebServiceRequest implements
      * @param description
      *        The description of the <a>ApiKey</a>.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -107,6 +111,7 @@ public class CreateApiKeyRequest extends AmazonWebServiceRequest implements
      * 
      * @return The description of the <a>ApiKey</a>.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -121,6 +126,7 @@ public class CreateApiKeyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateApiKeyRequest withDescription(String description) {
         setDescription(description);
         return this;
@@ -134,6 +140,7 @@ public class CreateApiKeyRequest extends AmazonWebServiceRequest implements
      * @param enabled
      *        Specifies whether the <a>ApiKey</a> can be used by callers.
      */
+
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
     }
@@ -145,6 +152,7 @@ public class CreateApiKeyRequest extends AmazonWebServiceRequest implements
      * 
      * @return Specifies whether the <a>ApiKey</a> can be used by callers.
      */
+
     public Boolean getEnabled() {
         return this.enabled;
     }
@@ -159,6 +167,7 @@ public class CreateApiKeyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateApiKeyRequest withEnabled(Boolean enabled) {
         setEnabled(enabled);
         return this;
@@ -171,6 +180,7 @@ public class CreateApiKeyRequest extends AmazonWebServiceRequest implements
      * 
      * @return Specifies whether the <a>ApiKey</a> can be used by callers.
      */
+
     public Boolean isEnabled() {
         return this.enabled;
     }
@@ -182,6 +192,7 @@ public class CreateApiKeyRequest extends AmazonWebServiceRequest implements
      * 
      * @return Specifies whether the <a>ApiKey</a> can be used by callers.
      */
+
     public java.util.List<StageKey> getStageKeys() {
         return stageKeys;
     }
@@ -194,6 +205,7 @@ public class CreateApiKeyRequest extends AmazonWebServiceRequest implements
      * @param stageKeys
      *        Specifies whether the <a>ApiKey</a> can be used by callers.
      */
+
     public void setStageKeys(java.util.Collection<StageKey> stageKeys) {
         if (stageKeys == null) {
             this.stageKeys = null;
@@ -219,6 +231,7 @@ public class CreateApiKeyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateApiKeyRequest withStageKeys(StageKey... stageKeys) {
         if (this.stageKeys == null) {
             setStageKeys(new java.util.ArrayList<StageKey>(stageKeys.length));
@@ -239,6 +252,7 @@ public class CreateApiKeyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateApiKeyRequest withStageKeys(
             java.util.Collection<StageKey> stageKeys) {
         setStageKeys(stageKeys);

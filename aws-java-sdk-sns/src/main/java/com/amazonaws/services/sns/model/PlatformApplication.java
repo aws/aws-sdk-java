@@ -46,6 +46,7 @@ public class PlatformApplication implements Serializable, Cloneable {
      * @param platformApplicationArn
      *        PlatformApplicationArn for platform application object.
      */
+
     public void setPlatformApplicationArn(String platformApplicationArn) {
         this.platformApplicationArn = platformApplicationArn;
     }
@@ -57,6 +58,7 @@ public class PlatformApplication implements Serializable, Cloneable {
      * 
      * @return PlatformApplicationArn for platform application object.
      */
+
     public String getPlatformApplicationArn() {
         return this.platformApplicationArn;
     }
@@ -71,6 +73,7 @@ public class PlatformApplication implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PlatformApplication withPlatformApplicationArn(
             String platformApplicationArn) {
         setPlatformApplicationArn(platformApplicationArn);
@@ -84,6 +87,7 @@ public class PlatformApplication implements Serializable, Cloneable {
      * 
      * @return Attributes for platform application object.
      */
+
     public java.util.Map<String, String> getAttributes() {
         if (attributes == null) {
             attributes = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -99,6 +103,7 @@ public class PlatformApplication implements Serializable, Cloneable {
      * @param attributes
      *        Attributes for platform application object.
      */
+
     public void setAttributes(java.util.Map<String, String> attributes) {
         this.attributes = attributes == null ? null
                 : new com.amazonaws.internal.SdkInternalMap<String, String>(
@@ -115,6 +120,7 @@ public class PlatformApplication implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PlatformApplication withAttributes(
             java.util.Map<String, String> attributes) {
         setAttributes(attributes);
@@ -136,6 +142,7 @@ public class PlatformApplication implements Serializable, Cloneable {
      * Removes all the entries added into Attributes. &lt;p> Returns a reference
      * to this object so that method calls can be chained together.
      */
+
     public PlatformApplication clearAttributesEntries() {
         this.attributes = null;
         return this;

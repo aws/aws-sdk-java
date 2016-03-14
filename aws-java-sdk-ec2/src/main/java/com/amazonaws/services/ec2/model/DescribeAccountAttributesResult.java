@@ -37,6 +37,7 @@ public class DescribeAccountAttributesResult implements Serializable, Cloneable 
      * 
      * @return Information about one or more account attributes.
      */
+
     public java.util.List<AccountAttribute> getAccountAttributes() {
         if (accountAttributes == null) {
             accountAttributes = new com.amazonaws.internal.SdkInternalList<AccountAttribute>();
@@ -52,6 +53,7 @@ public class DescribeAccountAttributesResult implements Serializable, Cloneable 
      * @param accountAttributes
      *        Information about one or more account attributes.
      */
+
     public void setAccountAttributes(
             java.util.Collection<AccountAttribute> accountAttributes) {
         if (accountAttributes == null) {
@@ -79,6 +81,7 @@ public class DescribeAccountAttributesResult implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAccountAttributesResult withAccountAttributes(
             AccountAttribute... accountAttributes) {
         if (this.accountAttributes == null) {
@@ -101,6 +104,7 @@ public class DescribeAccountAttributesResult implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAccountAttributesResult withAccountAttributes(
             java.util.Collection<AccountAttribute> accountAttributes) {
         setAccountAttributes(accountAttributes);

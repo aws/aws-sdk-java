@@ -32,6 +32,7 @@ public class OutputLogEvent implements Serializable, Cloneable {
     /**
      * @param timestamp
      */
+
     public void setTimestamp(Long timestamp) {
         this.timestamp = timestamp;
     }
@@ -39,6 +40,7 @@ public class OutputLogEvent implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Long getTimestamp() {
         return this.timestamp;
     }
@@ -48,6 +50,7 @@ public class OutputLogEvent implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public OutputLogEvent withTimestamp(Long timestamp) {
         setTimestamp(timestamp);
         return this;
@@ -56,6 +59,7 @@ public class OutputLogEvent implements Serializable, Cloneable {
     /**
      * @param message
      */
+
     public void setMessage(String message) {
         this.message = message;
     }
@@ -63,6 +67,7 @@ public class OutputLogEvent implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getMessage() {
         return this.message;
     }
@@ -72,6 +77,7 @@ public class OutputLogEvent implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public OutputLogEvent withMessage(String message) {
         setMessage(message);
         return this;
@@ -80,6 +86,7 @@ public class OutputLogEvent implements Serializable, Cloneable {
     /**
      * @param ingestionTime
      */
+
     public void setIngestionTime(Long ingestionTime) {
         this.ingestionTime = ingestionTime;
     }
@@ -87,6 +94,7 @@ public class OutputLogEvent implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Long getIngestionTime() {
         return this.ingestionTime;
     }
@@ -96,6 +104,7 @@ public class OutputLogEvent implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public OutputLogEvent withIngestionTime(Long ingestionTime) {
         setIngestionTime(ingestionTime);
         return this;

@@ -48,6 +48,7 @@ public class RetrieveDomainAuthCodeResult implements Serializable, Cloneable {
      *        <p>
      *        Type: String
      */
+
     public void setAuthCode(String authCode) {
         this.authCode = authCode;
     }
@@ -64,6 +65,7 @@ public class RetrieveDomainAuthCodeResult implements Serializable, Cloneable {
      *         <p>
      *         Type: String
      */
+
     public String getAuthCode() {
         return this.authCode;
     }
@@ -83,6 +85,7 @@ public class RetrieveDomainAuthCodeResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RetrieveDomainAuthCodeResult withAuthCode(String authCode) {
         setAuthCode(authCode);
         return this;

@@ -236,6 +236,7 @@ public class PresetWatermark implements Serializable, Cloneable {
      *        A unique identifier for the settings for one watermark. The value
      *        of <code>Id</code> can be up to 40 characters long.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -247,6 +248,7 @@ public class PresetWatermark implements Serializable, Cloneable {
      * @return A unique identifier for the settings for one watermark. The value
      *         of <code>Id</code> can be up to 40 characters long.
      */
+
     public String getId() {
         return this.id;
     }
@@ -261,6 +263,7 @@ public class PresetWatermark implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PresetWatermark withId(String id) {
         setId(id);
         return this;
@@ -295,6 +298,7 @@ public class PresetWatermark implements Serializable, Cloneable {
      *        value of <code>MaxWidth</code>.
      *        </ul>
      */
+
     public void setMaxWidth(String maxWidth) {
         this.maxWidth = maxWidth;
     }
@@ -327,6 +331,7 @@ public class PresetWatermark implements Serializable, Cloneable {
      *         value of <code>MaxWidth</code>.
      *         </ul>
      */
+
     public String getMaxWidth() {
         return this.maxWidth;
     }
@@ -362,6 +367,7 @@ public class PresetWatermark implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PresetWatermark withMaxWidth(String maxWidth) {
         setMaxWidth(maxWidth);
         return this;
@@ -396,6 +402,7 @@ public class PresetWatermark implements Serializable, Cloneable {
      *        If you specify the value in pixels, it must be less than or equal
      *        to the value of <code>MaxHeight</code>.
      */
+
     public void setMaxHeight(String maxHeight) {
         this.maxHeight = maxHeight;
     }
@@ -428,6 +435,7 @@ public class PresetWatermark implements Serializable, Cloneable {
      *         If you specify the value in pixels, it must be less than or equal
      *         to the value of <code>MaxHeight</code>.
      */
+
     public String getMaxHeight() {
         return this.maxHeight;
     }
@@ -463,6 +471,7 @@ public class PresetWatermark implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PresetWatermark withMaxHeight(String maxHeight) {
         setMaxHeight(maxHeight);
         return this;
@@ -509,6 +518,7 @@ public class PresetWatermark implements Serializable, Cloneable {
      *        watermark up.</li>
      *        </ul>
      */
+
     public void setSizingPolicy(String sizingPolicy) {
         this.sizingPolicy = sizingPolicy;
     }
@@ -553,6 +563,7 @@ public class PresetWatermark implements Serializable, Cloneable {
      *         watermark up.</li>
      *         </ul>
      */
+
     public String getSizingPolicy() {
         return this.sizingPolicy;
     }
@@ -600,6 +611,7 @@ public class PresetWatermark implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PresetWatermark withSizingPolicy(String sizingPolicy) {
         setSizingPolicy(sizingPolicy);
         return this;
@@ -631,6 +643,7 @@ public class PresetWatermark implements Serializable, Cloneable {
      *        right borders.</li>
      *        </ul>
      */
+
     public void setHorizontalAlign(String horizontalAlign) {
         this.horizontalAlign = horizontalAlign;
     }
@@ -660,6 +673,7 @@ public class PresetWatermark implements Serializable, Cloneable {
      *         right borders.</li>
      *         </ul>
      */
+
     public String getHorizontalAlign() {
         return this.horizontalAlign;
     }
@@ -692,6 +706,7 @@ public class PresetWatermark implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PresetWatermark withHorizontalAlign(String horizontalAlign) {
         setHorizontalAlign(horizontalAlign);
         return this;
@@ -754,6 +769,7 @@ public class PresetWatermark implements Serializable, Cloneable {
      *        to include the black bars that are added by Elastic Transcoder, if
      *        any, in the offset calculation.
      */
+
     public void setHorizontalOffset(String horizontalOffset) {
         this.horizontalOffset = horizontalOffset;
     }
@@ -814,6 +830,7 @@ public class PresetWatermark implements Serializable, Cloneable {
      *         to include the black bars that are added by Elastic Transcoder,
      *         if any, in the offset calculation.
      */
+
     public String getHorizontalOffset() {
         return this.horizontalOffset;
     }
@@ -877,6 +894,7 @@ public class PresetWatermark implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PresetWatermark withHorizontalOffset(String horizontalOffset) {
         setHorizontalOffset(horizontalOffset);
         return this;
@@ -908,6 +926,7 @@ public class PresetWatermark implements Serializable, Cloneable {
      *        bottom borders.</li>
      *        </ul>
      */
+
     public void setVerticalAlign(String verticalAlign) {
         this.verticalAlign = verticalAlign;
     }
@@ -937,6 +956,7 @@ public class PresetWatermark implements Serializable, Cloneable {
      *         bottom borders.</li>
      *         </ul>
      */
+
     public String getVerticalAlign() {
         return this.verticalAlign;
     }
@@ -969,6 +989,7 @@ public class PresetWatermark implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PresetWatermark withVerticalAlign(String verticalAlign) {
         setVerticalAlign(verticalAlign);
         return this;
@@ -1039,6 +1060,7 @@ public class PresetWatermark implements Serializable, Cloneable {
      *        Elastic Transcoder to include the black bars that are added by
      *        Elastic Transcoder, if any, in the offset calculation.
      */
+
     public void setVerticalOffset(String verticalOffset) {
         this.verticalOffset = verticalOffset;
     }
@@ -1107,6 +1129,7 @@ public class PresetWatermark implements Serializable, Cloneable {
      *         Elastic Transcoder to include the black bars that are added by
      *         Elastic Transcoder, if any, in the offset calculation.
      */
+
     public String getVerticalOffset() {
         return this.verticalOffset;
     }
@@ -1178,6 +1201,7 @@ public class PresetWatermark implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PresetWatermark withVerticalOffset(String verticalOffset) {
         setVerticalOffset(verticalOffset);
         return this;
@@ -1209,6 +1233,7 @@ public class PresetWatermark implements Serializable, Cloneable {
      *        as if you had specified a value of 0 for <code>Opacity</code>. The
      *        .jpg file format doesn't support transparency.
      */
+
     public void setOpacity(String opacity) {
         this.opacity = opacity;
     }
@@ -1238,6 +1263,7 @@ public class PresetWatermark implements Serializable, Cloneable {
      *         as if you had specified a value of 0 for <code>Opacity</code>.
      *         The .jpg file format doesn't support transparency.
      */
+
     public String getOpacity() {
         return this.opacity;
     }
@@ -1270,6 +1296,7 @@ public class PresetWatermark implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PresetWatermark withOpacity(String opacity) {
         setOpacity(opacity);
         return this;
@@ -1318,6 +1345,7 @@ public class PresetWatermark implements Serializable, Cloneable {
      *        added by Elastic Transcoder, if any.
      *        </ul>
      */
+
     public void setTarget(String target) {
         this.target = target;
     }
@@ -1364,6 +1392,7 @@ public class PresetWatermark implements Serializable, Cloneable {
      *         added by Elastic Transcoder, if any.
      *         </ul>
      */
+
     public String getTarget() {
         return this.target;
     }
@@ -1413,6 +1442,7 @@ public class PresetWatermark implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PresetWatermark withTarget(String target) {
         setTarget(target);
         return this;

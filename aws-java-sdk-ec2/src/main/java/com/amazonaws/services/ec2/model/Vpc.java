@@ -77,6 +77,7 @@ public class Vpc implements Serializable, Cloneable {
      * @param vpcId
      *        The ID of the VPC.
      */
+
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
@@ -88,6 +89,7 @@ public class Vpc implements Serializable, Cloneable {
      * 
      * @return The ID of the VPC.
      */
+
     public String getVpcId() {
         return this.vpcId;
     }
@@ -102,6 +104,7 @@ public class Vpc implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Vpc withVpcId(String vpcId) {
         setVpcId(vpcId);
         return this;
@@ -116,6 +119,7 @@ public class Vpc implements Serializable, Cloneable {
      *        The current state of the VPC.
      * @see VpcState
      */
+
     public void setState(String state) {
         this.state = state;
     }
@@ -128,6 +132,7 @@ public class Vpc implements Serializable, Cloneable {
      * @return The current state of the VPC.
      * @see VpcState
      */
+
     public String getState() {
         return this.state;
     }
@@ -143,6 +148,7 @@ public class Vpc implements Serializable, Cloneable {
      *         chained together.
      * @see VpcState
      */
+
     public Vpc withState(String state) {
         setState(state);
         return this;
@@ -159,6 +165,7 @@ public class Vpc implements Serializable, Cloneable {
      *         chained together.
      * @see VpcState
      */
+
     public void setState(VpcState state) {
         this.state = state.toString();
     }
@@ -174,6 +181,7 @@ public class Vpc implements Serializable, Cloneable {
      *         chained together.
      * @see VpcState
      */
+
     public Vpc withState(VpcState state) {
         setState(state);
         return this;
@@ -187,6 +195,7 @@ public class Vpc implements Serializable, Cloneable {
      * @param cidrBlock
      *        The CIDR block for the VPC.
      */
+
     public void setCidrBlock(String cidrBlock) {
         this.cidrBlock = cidrBlock;
     }
@@ -198,6 +207,7 @@ public class Vpc implements Serializable, Cloneable {
      * 
      * @return The CIDR block for the VPC.
      */
+
     public String getCidrBlock() {
         return this.cidrBlock;
     }
@@ -212,6 +222,7 @@ public class Vpc implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Vpc withCidrBlock(String cidrBlock) {
         setCidrBlock(cidrBlock);
         return this;
@@ -228,6 +239,7 @@ public class Vpc implements Serializable, Cloneable {
      *        (or <code>default</code> if the default options are associated
      *        with the VPC).
      */
+
     public void setDhcpOptionsId(String dhcpOptionsId) {
         this.dhcpOptionsId = dhcpOptionsId;
     }
@@ -242,6 +254,7 @@ public class Vpc implements Serializable, Cloneable {
      *         (or <code>default</code> if the default options are associated
      *         with the VPC).
      */
+
     public String getDhcpOptionsId() {
         return this.dhcpOptionsId;
     }
@@ -259,6 +272,7 @@ public class Vpc implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Vpc withDhcpOptionsId(String dhcpOptionsId) {
         setDhcpOptionsId(dhcpOptionsId);
         return this;
@@ -271,6 +285,7 @@ public class Vpc implements Serializable, Cloneable {
      * 
      * @return Any tags assigned to the VPC.
      */
+
     public java.util.List<Tag> getTags() {
         if (tags == null) {
             tags = new com.amazonaws.internal.SdkInternalList<Tag>();
@@ -286,6 +301,7 @@ public class Vpc implements Serializable, Cloneable {
      * @param tags
      *        Any tags assigned to the VPC.
      */
+
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
             this.tags = null;
@@ -311,6 +327,7 @@ public class Vpc implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Vpc withTags(Tag... tags) {
         if (this.tags == null) {
             setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
@@ -331,6 +348,7 @@ public class Vpc implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Vpc withTags(java.util.Collection<Tag> tags) {
         setTags(tags);
         return this;
@@ -345,6 +363,7 @@ public class Vpc implements Serializable, Cloneable {
      *        The allowed tenancy of instances launched into the VPC.
      * @see Tenancy
      */
+
     public void setInstanceTenancy(String instanceTenancy) {
         this.instanceTenancy = instanceTenancy;
     }
@@ -357,6 +376,7 @@ public class Vpc implements Serializable, Cloneable {
      * @return The allowed tenancy of instances launched into the VPC.
      * @see Tenancy
      */
+
     public String getInstanceTenancy() {
         return this.instanceTenancy;
     }
@@ -372,6 +392,7 @@ public class Vpc implements Serializable, Cloneable {
      *         chained together.
      * @see Tenancy
      */
+
     public Vpc withInstanceTenancy(String instanceTenancy) {
         setInstanceTenancy(instanceTenancy);
         return this;
@@ -388,6 +409,7 @@ public class Vpc implements Serializable, Cloneable {
      *         chained together.
      * @see Tenancy
      */
+
     public void setInstanceTenancy(Tenancy instanceTenancy) {
         this.instanceTenancy = instanceTenancy.toString();
     }
@@ -403,6 +425,7 @@ public class Vpc implements Serializable, Cloneable {
      *         chained together.
      * @see Tenancy
      */
+
     public Vpc withInstanceTenancy(Tenancy instanceTenancy) {
         setInstanceTenancy(instanceTenancy);
         return this;
@@ -416,6 +439,7 @@ public class Vpc implements Serializable, Cloneable {
      * @param isDefault
      *        Indicates whether the VPC is the default VPC.
      */
+
     public void setIsDefault(Boolean isDefault) {
         this.isDefault = isDefault;
     }
@@ -427,6 +451,7 @@ public class Vpc implements Serializable, Cloneable {
      * 
      * @return Indicates whether the VPC is the default VPC.
      */
+
     public Boolean getIsDefault() {
         return this.isDefault;
     }
@@ -441,6 +466,7 @@ public class Vpc implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Vpc withIsDefault(Boolean isDefault) {
         setIsDefault(isDefault);
         return this;
@@ -453,6 +479,7 @@ public class Vpc implements Serializable, Cloneable {
      * 
      * @return Indicates whether the VPC is the default VPC.
      */
+
     public Boolean isDefault() {
         return this.isDefault;
     }

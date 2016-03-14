@@ -115,6 +115,7 @@ public class RaidArray implements Serializable, Cloneable {
      * @param raidArrayId
      *        The array ID.
      */
+
     public void setRaidArrayId(String raidArrayId) {
         this.raidArrayId = raidArrayId;
     }
@@ -126,6 +127,7 @@ public class RaidArray implements Serializable, Cloneable {
      * 
      * @return The array ID.
      */
+
     public String getRaidArrayId() {
         return this.raidArrayId;
     }
@@ -140,6 +142,7 @@ public class RaidArray implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RaidArray withRaidArrayId(String raidArrayId) {
         setRaidArrayId(raidArrayId);
         return this;
@@ -153,6 +156,7 @@ public class RaidArray implements Serializable, Cloneable {
      * @param instanceId
      *        The instance ID.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -164,6 +168,7 @@ public class RaidArray implements Serializable, Cloneable {
      * 
      * @return The instance ID.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
@@ -178,6 +183,7 @@ public class RaidArray implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RaidArray withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;
@@ -191,6 +197,7 @@ public class RaidArray implements Serializable, Cloneable {
      * @param name
      *        The array name.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -202,6 +209,7 @@ public class RaidArray implements Serializable, Cloneable {
      * 
      * @return The array name.
      */
+
     public String getName() {
         return this.name;
     }
@@ -216,6 +224,7 @@ public class RaidArray implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RaidArray withName(String name) {
         setName(name);
         return this;
@@ -232,6 +241,7 @@ public class RaidArray implements Serializable, Cloneable {
      *        href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID
      *        level</a>.
      */
+
     public void setRaidLevel(Integer raidLevel) {
         this.raidLevel = raidLevel;
     }
@@ -246,6 +256,7 @@ public class RaidArray implements Serializable, Cloneable {
      *         href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID
      *         level</a>.
      */
+
     public Integer getRaidLevel() {
         return this.raidLevel;
     }
@@ -263,6 +274,7 @@ public class RaidArray implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RaidArray withRaidLevel(Integer raidLevel) {
         setRaidLevel(raidLevel);
         return this;
@@ -276,6 +288,7 @@ public class RaidArray implements Serializable, Cloneable {
      * @param numberOfDisks
      *        The number of disks in the array.
      */
+
     public void setNumberOfDisks(Integer numberOfDisks) {
         this.numberOfDisks = numberOfDisks;
     }
@@ -287,6 +300,7 @@ public class RaidArray implements Serializable, Cloneable {
      * 
      * @return The number of disks in the array.
      */
+
     public Integer getNumberOfDisks() {
         return this.numberOfDisks;
     }
@@ -301,6 +315,7 @@ public class RaidArray implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RaidArray withNumberOfDisks(Integer numberOfDisks) {
         setNumberOfDisks(numberOfDisks);
         return this;
@@ -314,6 +329,7 @@ public class RaidArray implements Serializable, Cloneable {
      * @param size
      *        The array's size.
      */
+
     public void setSize(Integer size) {
         this.size = size;
     }
@@ -325,6 +341,7 @@ public class RaidArray implements Serializable, Cloneable {
      * 
      * @return The array's size.
      */
+
     public Integer getSize() {
         return this.size;
     }
@@ -339,6 +356,7 @@ public class RaidArray implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RaidArray withSize(Integer size) {
         setSize(size);
         return this;
@@ -352,6 +370,7 @@ public class RaidArray implements Serializable, Cloneable {
      * @param device
      *        The array's Linux device. For example /dev/mdadm0.
      */
+
     public void setDevice(String device) {
         this.device = device;
     }
@@ -363,6 +382,7 @@ public class RaidArray implements Serializable, Cloneable {
      * 
      * @return The array's Linux device. For example /dev/mdadm0.
      */
+
     public String getDevice() {
         return this.device;
     }
@@ -377,6 +397,7 @@ public class RaidArray implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RaidArray withDevice(String device) {
         setDevice(device);
         return this;
@@ -390,6 +411,7 @@ public class RaidArray implements Serializable, Cloneable {
      * @param mountPoint
      *        The array's mount point.
      */
+
     public void setMountPoint(String mountPoint) {
         this.mountPoint = mountPoint;
     }
@@ -401,6 +423,7 @@ public class RaidArray implements Serializable, Cloneable {
      * 
      * @return The array's mount point.
      */
+
     public String getMountPoint() {
         return this.mountPoint;
     }
@@ -415,6 +438,7 @@ public class RaidArray implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RaidArray withMountPoint(String mountPoint) {
         setMountPoint(mountPoint);
         return this;
@@ -432,6 +456,7 @@ public class RaidArray implements Serializable, Cloneable {
      *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html"
      *        >Regions and Endpoints</a>.
      */
+
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
@@ -447,6 +472,7 @@ public class RaidArray implements Serializable, Cloneable {
      *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html"
      *         >Regions and Endpoints</a>.
      */
+
     public String getAvailabilityZone() {
         return this.availabilityZone;
     }
@@ -465,6 +491,7 @@ public class RaidArray implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RaidArray withAvailabilityZone(String availabilityZone) {
         setAvailabilityZone(availabilityZone);
         return this;
@@ -478,6 +505,7 @@ public class RaidArray implements Serializable, Cloneable {
      * @param createdAt
      *        When the RAID array was created.
      */
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -489,6 +517,7 @@ public class RaidArray implements Serializable, Cloneable {
      * 
      * @return When the RAID array was created.
      */
+
     public String getCreatedAt() {
         return this.createdAt;
     }
@@ -503,6 +532,7 @@ public class RaidArray implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RaidArray withCreatedAt(String createdAt) {
         setCreatedAt(createdAt);
         return this;
@@ -516,6 +546,7 @@ public class RaidArray implements Serializable, Cloneable {
      * @param stackId
      *        The stack ID.
      */
+
     public void setStackId(String stackId) {
         this.stackId = stackId;
     }
@@ -527,6 +558,7 @@ public class RaidArray implements Serializable, Cloneable {
      * 
      * @return The stack ID.
      */
+
     public String getStackId() {
         return this.stackId;
     }
@@ -541,6 +573,7 @@ public class RaidArray implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RaidArray withStackId(String stackId) {
         setStackId(stackId);
         return this;
@@ -554,6 +587,7 @@ public class RaidArray implements Serializable, Cloneable {
      * @param volumeType
      *        The volume type, standard or PIOPS.
      */
+
     public void setVolumeType(String volumeType) {
         this.volumeType = volumeType;
     }
@@ -565,6 +599,7 @@ public class RaidArray implements Serializable, Cloneable {
      * 
      * @return The volume type, standard or PIOPS.
      */
+
     public String getVolumeType() {
         return this.volumeType;
     }
@@ -579,6 +614,7 @@ public class RaidArray implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RaidArray withVolumeType(String volumeType) {
         setVolumeType(volumeType);
         return this;
@@ -592,6 +628,7 @@ public class RaidArray implements Serializable, Cloneable {
      * @param iops
      *        For PIOPS volumes, the IOPS per disk.
      */
+
     public void setIops(Integer iops) {
         this.iops = iops;
     }
@@ -603,6 +640,7 @@ public class RaidArray implements Serializable, Cloneable {
      * 
      * @return For PIOPS volumes, the IOPS per disk.
      */
+
     public Integer getIops() {
         return this.iops;
     }
@@ -617,6 +655,7 @@ public class RaidArray implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RaidArray withIops(Integer iops) {
         setIops(iops);
         return this;

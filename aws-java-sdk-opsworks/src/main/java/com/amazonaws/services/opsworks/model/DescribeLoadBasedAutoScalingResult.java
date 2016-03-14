@@ -43,6 +43,7 @@ public class DescribeLoadBasedAutoScalingResult implements Serializable,
      * @return An array of <code>LoadBasedAutoScalingConfiguration</code>
      *         objects that describe each layer's configuration.
      */
+
     public java.util.List<LoadBasedAutoScalingConfiguration> getLoadBasedAutoScalingConfigurations() {
         if (loadBasedAutoScalingConfigurations == null) {
             loadBasedAutoScalingConfigurations = new com.amazonaws.internal.SdkInternalList<LoadBasedAutoScalingConfiguration>();
@@ -60,6 +61,7 @@ public class DescribeLoadBasedAutoScalingResult implements Serializable,
      *        An array of <code>LoadBasedAutoScalingConfiguration</code> objects
      *        that describe each layer's configuration.
      */
+
     public void setLoadBasedAutoScalingConfigurations(
             java.util.Collection<LoadBasedAutoScalingConfiguration> loadBasedAutoScalingConfigurations) {
         if (loadBasedAutoScalingConfigurations == null) {
@@ -90,6 +92,7 @@ public class DescribeLoadBasedAutoScalingResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLoadBasedAutoScalingResult withLoadBasedAutoScalingConfigurations(
             LoadBasedAutoScalingConfiguration... loadBasedAutoScalingConfigurations) {
         if (this.loadBasedAutoScalingConfigurations == null) {
@@ -114,6 +117,7 @@ public class DescribeLoadBasedAutoScalingResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLoadBasedAutoScalingResult withLoadBasedAutoScalingConfigurations(
             java.util.Collection<LoadBasedAutoScalingConfiguration> loadBasedAutoScalingConfigurations) {
         setLoadBasedAutoScalingConfigurations(loadBasedAutoScalingConfigurations);

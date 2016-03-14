@@ -37,6 +37,7 @@ public class DescribeLifecycleHooksResult implements Serializable, Cloneable {
      * 
      * @return The lifecycle hooks for the specified group.
      */
+
     public java.util.List<LifecycleHook> getLifecycleHooks() {
         if (lifecycleHooks == null) {
             lifecycleHooks = new com.amazonaws.internal.SdkInternalList<LifecycleHook>();
@@ -52,6 +53,7 @@ public class DescribeLifecycleHooksResult implements Serializable, Cloneable {
      * @param lifecycleHooks
      *        The lifecycle hooks for the specified group.
      */
+
     public void setLifecycleHooks(
             java.util.Collection<LifecycleHook> lifecycleHooks) {
         if (lifecycleHooks == null) {
@@ -79,6 +81,7 @@ public class DescribeLifecycleHooksResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLifecycleHooksResult withLifecycleHooks(
             LifecycleHook... lifecycleHooks) {
         if (this.lifecycleHooks == null) {
@@ -101,6 +104,7 @@ public class DescribeLifecycleHooksResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLifecycleHooksResult withLifecycleHooks(
             java.util.Collection<LifecycleHook> lifecycleHooks) {
         setLifecycleHooks(lifecycleHooks);

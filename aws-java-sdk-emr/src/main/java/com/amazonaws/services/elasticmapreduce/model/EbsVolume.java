@@ -46,6 +46,7 @@ public class EbsVolume implements Serializable, Cloneable {
      * @param device
      *        The device name that is exposed to the instance, such as /dev/sdh.
      */
+
     public void setDevice(String device) {
         this.device = device;
     }
@@ -58,6 +59,7 @@ public class EbsVolume implements Serializable, Cloneable {
      * @return The device name that is exposed to the instance, such as
      *         /dev/sdh.
      */
+
     public String getDevice() {
         return this.device;
     }
@@ -72,6 +74,7 @@ public class EbsVolume implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EbsVolume withDevice(String device) {
         setDevice(device);
         return this;
@@ -85,6 +88,7 @@ public class EbsVolume implements Serializable, Cloneable {
      * @param volumeId
      *        The volume identifier of the EBS volume.
      */
+
     public void setVolumeId(String volumeId) {
         this.volumeId = volumeId;
     }
@@ -96,6 +100,7 @@ public class EbsVolume implements Serializable, Cloneable {
      * 
      * @return The volume identifier of the EBS volume.
      */
+
     public String getVolumeId() {
         return this.volumeId;
     }
@@ -110,6 +115,7 @@ public class EbsVolume implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EbsVolume withVolumeId(String volumeId) {
         setVolumeId(volumeId);
         return this;

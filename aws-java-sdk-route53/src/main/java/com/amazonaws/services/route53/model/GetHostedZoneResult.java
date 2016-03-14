@@ -57,6 +57,7 @@ public class GetHostedZoneResult implements Serializable, Cloneable {
      *        A complex type that contains the information about the specified
      *        hosted zone.
      */
+
     public void setHostedZone(HostedZone hostedZone) {
         this.hostedZone = hostedZone;
     }
@@ -70,6 +71,7 @@ public class GetHostedZoneResult implements Serializable, Cloneable {
      * @return A complex type that contains the information about the specified
      *         hosted zone.
      */
+
     public HostedZone getHostedZone() {
         return this.hostedZone;
     }
@@ -86,6 +88,7 @@ public class GetHostedZoneResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetHostedZoneResult withHostedZone(HostedZone hostedZone) {
         setHostedZone(hostedZone);
         return this;
@@ -101,6 +104,7 @@ public class GetHostedZoneResult implements Serializable, Cloneable {
      *        A complex type that contains information about the name servers
      *        for the specified hosted zone.
      */
+
     public void setDelegationSet(DelegationSet delegationSet) {
         this.delegationSet = delegationSet;
     }
@@ -114,6 +118,7 @@ public class GetHostedZoneResult implements Serializable, Cloneable {
      * @return A complex type that contains information about the name servers
      *         for the specified hosted zone.
      */
+
     public DelegationSet getDelegationSet() {
         return this.delegationSet;
     }
@@ -130,6 +135,7 @@ public class GetHostedZoneResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetHostedZoneResult withDelegationSet(DelegationSet delegationSet) {
         setDelegationSet(delegationSet);
         return this;
@@ -144,6 +150,7 @@ public class GetHostedZoneResult implements Serializable, Cloneable {
      * @return A complex type that contains information about VPCs associated
      *         with the specified hosted zone.
      */
+
     public java.util.List<VPC> getVPCs() {
         if (vPCs == null) {
             vPCs = new com.amazonaws.internal.SdkInternalList<VPC>();
@@ -161,6 +168,7 @@ public class GetHostedZoneResult implements Serializable, Cloneable {
      *        A complex type that contains information about VPCs associated
      *        with the specified hosted zone.
      */
+
     public void setVPCs(java.util.Collection<VPC> vPCs) {
         if (vPCs == null) {
             this.vPCs = null;
@@ -188,6 +196,7 @@ public class GetHostedZoneResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetHostedZoneResult withVPCs(VPC... vPCs) {
         if (this.vPCs == null) {
             setVPCs(new com.amazonaws.internal.SdkInternalList<VPC>(vPCs.length));
@@ -210,6 +219,7 @@ public class GetHostedZoneResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetHostedZoneResult withVPCs(java.util.Collection<VPC> vPCs) {
         setVPCs(vPCs);
         return this;

@@ -69,6 +69,7 @@ public class PutRecordsResultEntry implements Serializable, Cloneable {
      * @param sequenceNumber
      *        The sequence number for an individual record result.
      */
+
     public void setSequenceNumber(String sequenceNumber) {
         this.sequenceNumber = sequenceNumber;
     }
@@ -80,6 +81,7 @@ public class PutRecordsResultEntry implements Serializable, Cloneable {
      * 
      * @return The sequence number for an individual record result.
      */
+
     public String getSequenceNumber() {
         return this.sequenceNumber;
     }
@@ -94,6 +96,7 @@ public class PutRecordsResultEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutRecordsResultEntry withSequenceNumber(String sequenceNumber) {
         setSequenceNumber(sequenceNumber);
         return this;
@@ -107,6 +110,7 @@ public class PutRecordsResultEntry implements Serializable, Cloneable {
      * @param shardId
      *        The shard ID for an individual record result.
      */
+
     public void setShardId(String shardId) {
         this.shardId = shardId;
     }
@@ -118,6 +122,7 @@ public class PutRecordsResultEntry implements Serializable, Cloneable {
      * 
      * @return The shard ID for an individual record result.
      */
+
     public String getShardId() {
         return this.shardId;
     }
@@ -132,6 +137,7 @@ public class PutRecordsResultEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutRecordsResultEntry withShardId(String shardId) {
         setShardId(shardId);
         return this;
@@ -150,6 +156,7 @@ public class PutRecordsResultEntry implements Serializable, Cloneable {
      *        <code>ProvisionedThroughputExceededException</code> or
      *        <code>InternalFailure</code>.
      */
+
     public void setErrorCode(String errorCode) {
         this.errorCode = errorCode;
     }
@@ -166,6 +173,7 @@ public class PutRecordsResultEntry implements Serializable, Cloneable {
      *         <code>ProvisionedThroughputExceededException</code> or
      *         <code>InternalFailure</code>.
      */
+
     public String getErrorCode() {
         return this.errorCode;
     }
@@ -185,6 +193,7 @@ public class PutRecordsResultEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutRecordsResultEntry withErrorCode(String errorCode) {
         setErrorCode(errorCode);
         return this;
@@ -208,6 +217,7 @@ public class PutRecordsResultEntry implements Serializable, Cloneable {
      *        An <code>ErrorCode</code> value of <code>InternalFailure</code>
      *        has the error message <code>"Internal Service Failure"</code>.
      */
+
     public void setErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;
     }
@@ -229,6 +239,7 @@ public class PutRecordsResultEntry implements Serializable, Cloneable {
      *         An <code>ErrorCode</code> value of <code>InternalFailure</code>
      *         has the error message <code>"Internal Service Failure"</code>.
      */
+
     public String getErrorMessage() {
         return this.errorMessage;
     }
@@ -253,6 +264,7 @@ public class PutRecordsResultEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutRecordsResultEntry withErrorMessage(String errorMessage) {
         setErrorMessage(errorMessage);
         return this;

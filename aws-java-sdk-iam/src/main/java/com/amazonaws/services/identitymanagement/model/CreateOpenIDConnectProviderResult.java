@@ -48,6 +48,7 @@ public class CreateOpenIDConnectProviderResult implements Serializable,
      *        that was created. For more information, see
      *        <a>OpenIDConnectProviderListEntry</a>.
      */
+
     public void setOpenIDConnectProviderArn(String openIDConnectProviderArn) {
         this.openIDConnectProviderArn = openIDConnectProviderArn;
     }
@@ -63,6 +64,7 @@ public class CreateOpenIDConnectProviderResult implements Serializable,
      *         that was created. For more information, see
      *         <a>OpenIDConnectProviderListEntry</a>.
      */
+
     public String getOpenIDConnectProviderArn() {
         return this.openIDConnectProviderArn;
     }
@@ -81,6 +83,7 @@ public class CreateOpenIDConnectProviderResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateOpenIDConnectProviderResult withOpenIDConnectProviderArn(
             String openIDConnectProviderArn) {
         setOpenIDConnectProviderArn(openIDConnectProviderArn);

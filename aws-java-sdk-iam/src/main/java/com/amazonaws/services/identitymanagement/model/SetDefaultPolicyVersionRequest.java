@@ -41,6 +41,7 @@ public class SetDefaultPolicyVersionRequest extends AmazonWebServiceRequest
     /**
      * @param policyArn
      */
+
     public void setPolicyArn(String policyArn) {
         this.policyArn = policyArn;
     }
@@ -48,6 +49,7 @@ public class SetDefaultPolicyVersionRequest extends AmazonWebServiceRequest
     /**
      * @return
      */
+
     public String getPolicyArn() {
         return this.policyArn;
     }
@@ -57,6 +59,7 @@ public class SetDefaultPolicyVersionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetDefaultPolicyVersionRequest withPolicyArn(String policyArn) {
         setPolicyArn(policyArn);
         return this;
@@ -80,6 +83,7 @@ public class SetDefaultPolicyVersionRequest extends AmazonWebServiceRequest
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html"
      *        >Versioning for Managed Policies</a> in the <i>IAM User Guide</i>.
      */
+
     public void setVersionId(String versionId) {
         this.versionId = versionId;
     }
@@ -102,6 +106,7 @@ public class SetDefaultPolicyVersionRequest extends AmazonWebServiceRequest
      *         >Versioning for Managed Policies</a> in the <i>IAM User
      *         Guide</i>.
      */
+
     public String getVersionId() {
         return this.versionId;
     }
@@ -126,6 +131,7 @@ public class SetDefaultPolicyVersionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetDefaultPolicyVersionRequest withVersionId(String versionId) {
         setVersionId(versionId);
         return this;

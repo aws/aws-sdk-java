@@ -94,6 +94,7 @@ public class ActivatedRule implements Serializable, Cloneable {
      *        multiple <code>Rules</code> to a <code>WebACL</code>, the values
      *        don't need to be consecutive.
      */
+
     public void setPriority(Integer priority) {
         this.priority = priority;
     }
@@ -115,6 +116,7 @@ public class ActivatedRule implements Serializable, Cloneable {
      *         add multiple <code>Rules</code> to a <code>WebACL</code>, the
      *         values don't need to be consecutive.
      */
+
     public Integer getPriority() {
         return this.priority;
     }
@@ -139,6 +141,7 @@ public class ActivatedRule implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActivatedRule withPriority(Integer priority) {
         setPriority(priority);
         return this;
@@ -170,6 +173,7 @@ public class ActivatedRule implements Serializable, Cloneable {
      *        <code>RuleId</code> is returned by <a>CreateRule</a> and by
      *        <a>ListRules</a>.
      */
+
     public void setRuleId(String ruleId) {
         this.ruleId = ruleId;
     }
@@ -199,6 +203,7 @@ public class ActivatedRule implements Serializable, Cloneable {
      *         <code>RuleId</code> is returned by <a>CreateRule</a> and by
      *         <a>ListRules</a>.
      */
+
     public String getRuleId() {
         return this.ruleId;
     }
@@ -231,6 +236,7 @@ public class ActivatedRule implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActivatedRule withRuleId(String ruleId) {
         setRuleId(ruleId);
         return this;
@@ -265,6 +271,7 @@ public class ActivatedRule implements Serializable, Cloneable {
      *        inspect the web request based on the remaining rules in the web
      *        ACL.</li>
      */
+
     public void setAction(WafAction action) {
         this.action = action;
     }
@@ -297,6 +304,7 @@ public class ActivatedRule implements Serializable, Cloneable {
      *         inspect the web request based on the remaining rules in the web
      *         ACL.</li>
      */
+
     public WafAction getAction() {
         return this.action;
     }
@@ -332,6 +340,7 @@ public class ActivatedRule implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActivatedRule withAction(WafAction action) {
         setAction(action);
         return this;

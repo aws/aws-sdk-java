@@ -43,6 +43,7 @@ public class GetDirectoryLimitsResult implements Serializable, Cloneable {
      *        A <a>DirectoryLimits</a> object that contains the directory limits
      *        for the current region.
      */
+
     public void setDirectoryLimits(DirectoryLimits directoryLimits) {
         this.directoryLimits = directoryLimits;
     }
@@ -56,6 +57,7 @@ public class GetDirectoryLimitsResult implements Serializable, Cloneable {
      * @return A <a>DirectoryLimits</a> object that contains the directory
      *         limits for the current region.
      */
+
     public DirectoryLimits getDirectoryLimits() {
         return this.directoryLimits;
     }
@@ -72,6 +74,7 @@ public class GetDirectoryLimitsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDirectoryLimitsResult withDirectoryLimits(
             DirectoryLimits directoryLimits) {
         setDirectoryLimits(directoryLimits);

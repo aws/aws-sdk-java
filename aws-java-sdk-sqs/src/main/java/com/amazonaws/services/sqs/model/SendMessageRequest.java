@@ -89,6 +89,7 @@ public class SendMessageRequest extends AmazonWebServiceRequest implements
      * @param queueUrl
      *        The URL of the Amazon SQS queue to take action on.
      */
+
     public void setQueueUrl(String queueUrl) {
         this.queueUrl = queueUrl;
     }
@@ -100,6 +101,7 @@ public class SendMessageRequest extends AmazonWebServiceRequest implements
      * 
      * @return The URL of the Amazon SQS queue to take action on.
      */
+
     public String getQueueUrl() {
         return this.queueUrl;
     }
@@ -114,6 +116,7 @@ public class SendMessageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendMessageRequest withQueueUrl(String queueUrl) {
         setQueueUrl(queueUrl);
         return this;
@@ -129,6 +132,7 @@ public class SendMessageRequest extends AmazonWebServiceRequest implements
      *        The message to send. String maximum 256 KB in size. For a list of
      *        allowed characters, see the preceding important note.
      */
+
     public void setMessageBody(String messageBody) {
         this.messageBody = messageBody;
     }
@@ -142,6 +146,7 @@ public class SendMessageRequest extends AmazonWebServiceRequest implements
      * @return The message to send. String maximum 256 KB in size. For a list of
      *         allowed characters, see the preceding important note.
      */
+
     public String getMessageBody() {
         return this.messageBody;
     }
@@ -158,6 +163,7 @@ public class SendMessageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendMessageRequest withMessageBody(String messageBody) {
         setMessageBody(messageBody);
         return this;
@@ -178,6 +184,7 @@ public class SendMessageRequest extends AmazonWebServiceRequest implements
      *        If you don't specify a value, the default value for the queue
      *        applies.
      */
+
     public void setDelaySeconds(Integer delaySeconds) {
         this.delaySeconds = delaySeconds;
     }
@@ -196,6 +203,7 @@ public class SendMessageRequest extends AmazonWebServiceRequest implements
      *         If you don't specify a value, the default value for the queue
      *         applies.
      */
+
     public Integer getDelaySeconds() {
         return this.delaySeconds;
     }
@@ -217,6 +225,7 @@ public class SendMessageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendMessageRequest withDelaySeconds(Integer delaySeconds) {
         setDelaySeconds(delaySeconds);
         return this;
@@ -235,6 +244,7 @@ public class SendMessageRequest extends AmazonWebServiceRequest implements
      *         "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributesNTV"
      *         >Message Attribute Items</a>.
      */
+
     public java.util.Map<String, MessageAttributeValue> getMessageAttributes() {
         if (messageAttributes == null) {
             messageAttributes = new com.amazonaws.internal.SdkInternalMap<String, MessageAttributeValue>();
@@ -256,6 +266,7 @@ public class SendMessageRequest extends AmazonWebServiceRequest implements
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributesNTV"
      *        >Message Attribute Items</a>.
      */
+
     public void setMessageAttributes(
             java.util.Map<String, MessageAttributeValue> messageAttributes) {
         this.messageAttributes = messageAttributes == null ? null
@@ -279,6 +290,7 @@ public class SendMessageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendMessageRequest withMessageAttributes(
             java.util.Map<String, MessageAttributeValue> messageAttributes) {
         setMessageAttributes(messageAttributes);
@@ -301,6 +313,7 @@ public class SendMessageRequest extends AmazonWebServiceRequest implements
      * Removes all the entries added into MessageAttributes. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public SendMessageRequest clearMessageAttributesEntries() {
         this.messageAttributes = null;
         return this;

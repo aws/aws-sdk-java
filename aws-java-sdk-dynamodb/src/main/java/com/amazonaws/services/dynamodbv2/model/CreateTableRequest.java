@@ -486,6 +486,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements
      * @return An array of attributes that describe the key schema for the table
      *         and indexes.
      */
+
     public java.util.List<AttributeDefinition> getAttributeDefinitions() {
         return attributeDefinitions;
     }
@@ -500,6 +501,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements
      *        An array of attributes that describe the key schema for the table
      *        and indexes.
      */
+
     public void setAttributeDefinitions(
             java.util.Collection<AttributeDefinition> attributeDefinitions) {
         if (attributeDefinitions == null) {
@@ -529,6 +531,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateTableRequest withAttributeDefinitions(
             AttributeDefinition... attributeDefinitions) {
         if (this.attributeDefinitions == null) {
@@ -553,6 +556,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateTableRequest withAttributeDefinitions(
             java.util.Collection<AttributeDefinition> attributeDefinitions) {
         setAttributeDefinitions(attributeDefinitions);
@@ -567,6 +571,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements
      * @param tableName
      *        The name of the table to create.
      */
+
     public void setTableName(String tableName) {
         this.tableName = tableName;
     }
@@ -578,6 +583,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the table to create.
      */
+
     public String getTableName() {
         return this.tableName;
     }
@@ -592,6 +598,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateTableRequest withTableName(String tableName) {
         setTableName(tableName);
         return this;
@@ -728,6 +735,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements
      *         >Specifying the Primary Key</a> in the <i>Amazon DynamoDB
      *         Developer Guide</i>.
      */
+
     public java.util.List<KeySchemaElement> getKeySchema() {
         return keySchema;
     }
@@ -863,6 +871,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements
      *        >Specifying the Primary Key</a> in the <i>Amazon DynamoDB
      *        Developer Guide</i>.
      */
+
     public void setKeySchema(java.util.Collection<KeySchemaElement> keySchema) {
         if (keySchema == null) {
             this.keySchema = null;
@@ -1011,6 +1020,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateTableRequest withKeySchema(KeySchemaElement... keySchema) {
         if (this.keySchema == null) {
             setKeySchema(new java.util.ArrayList<KeySchemaElement>(
@@ -1155,6 +1165,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateTableRequest withKeySchema(
             java.util.Collection<KeySchemaElement> keySchema) {
         setKeySchema(keySchema);
@@ -1303,6 +1314,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements
      *         </ul>
      *         </li>
      */
+
     public java.util.List<LocalSecondaryIndex> getLocalSecondaryIndexes() {
         return localSecondaryIndexes;
     }
@@ -1450,6 +1462,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements
      *        </ul>
      *        </li>
      */
+
     public void setLocalSecondaryIndexes(
             java.util.Collection<LocalSecondaryIndex> localSecondaryIndexes) {
         if (localSecondaryIndexes == null) {
@@ -1612,6 +1625,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateTableRequest withLocalSecondaryIndexes(
             LocalSecondaryIndex... localSecondaryIndexes) {
         if (this.localSecondaryIndexes == null) {
@@ -1769,6 +1783,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateTableRequest withLocalSecondaryIndexes(
             java.util.Collection<LocalSecondaryIndex> localSecondaryIndexes) {
         setLocalSecondaryIndexes(localSecondaryIndexes);
@@ -1919,6 +1934,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements
      *         </p>
      *         </li>
      */
+
     public java.util.List<GlobalSecondaryIndex> getGlobalSecondaryIndexes() {
         return globalSecondaryIndexes;
     }
@@ -2068,6 +2084,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements
      *        </p>
      *        </li>
      */
+
     public void setGlobalSecondaryIndexes(
             java.util.Collection<GlobalSecondaryIndex> globalSecondaryIndexes) {
         if (globalSecondaryIndexes == null) {
@@ -2232,6 +2249,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateTableRequest withGlobalSecondaryIndexes(
             GlobalSecondaryIndex... globalSecondaryIndexes) {
         if (this.globalSecondaryIndexes == null) {
@@ -2391,6 +2409,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateTableRequest withGlobalSecondaryIndexes(
             java.util.Collection<GlobalSecondaryIndex> globalSecondaryIndexes) {
         setGlobalSecondaryIndexes(globalSecondaryIndexes);
@@ -2400,6 +2419,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements
     /**
      * @param provisionedThroughput
      */
+
     public void setProvisionedThroughput(
             ProvisionedThroughput provisionedThroughput) {
         this.provisionedThroughput = provisionedThroughput;
@@ -2408,6 +2428,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public ProvisionedThroughput getProvisionedThroughput() {
         return this.provisionedThroughput;
     }
@@ -2417,6 +2438,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateTableRequest withProvisionedThroughput(
             ProvisionedThroughput provisionedThroughput) {
         setProvisionedThroughput(provisionedThroughput);
@@ -2514,6 +2536,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements
      *        </ul>
      *        </li>
      */
+
     public void setStreamSpecification(StreamSpecification streamSpecification) {
         this.streamSpecification = streamSpecification;
     }
@@ -2608,6 +2631,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements
      *         </ul>
      *         </li>
      */
+
     public StreamSpecification getStreamSpecification() {
         return this.streamSpecification;
     }
@@ -2705,6 +2729,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateTableRequest withStreamSpecification(
             StreamSpecification streamSpecification) {
         setStreamSpecification(streamSpecification);

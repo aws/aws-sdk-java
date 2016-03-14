@@ -46,6 +46,7 @@ public class ErrorDetails implements Serializable, Cloneable {
      * @param code
      *        The system ID or error number code of the error.
      */
+
     public void setCode(String code) {
         this.code = code;
     }
@@ -57,6 +58,7 @@ public class ErrorDetails implements Serializable, Cloneable {
      * 
      * @return The system ID or error number code of the error.
      */
+
     public String getCode() {
         return this.code;
     }
@@ -71,6 +73,7 @@ public class ErrorDetails implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ErrorDetails withCode(String code) {
         setCode(code);
         return this;
@@ -84,6 +87,7 @@ public class ErrorDetails implements Serializable, Cloneable {
      * @param message
      *        The text of the error message.
      */
+
     public void setMessage(String message) {
         this.message = message;
     }
@@ -95,6 +99,7 @@ public class ErrorDetails implements Serializable, Cloneable {
      * 
      * @return The text of the error message.
      */
+
     public String getMessage() {
         return this.message;
     }
@@ -109,6 +114,7 @@ public class ErrorDetails implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ErrorDetails withMessage(String message) {
         setMessage(message);
         return this;

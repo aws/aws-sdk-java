@@ -60,6 +60,7 @@ public class InstancePrivateIpAddress implements Serializable, Cloneable {
      * @param privateIpAddress
      *        The private IP address of the network interface.
      */
+
     public void setPrivateIpAddress(String privateIpAddress) {
         this.privateIpAddress = privateIpAddress;
     }
@@ -71,6 +72,7 @@ public class InstancePrivateIpAddress implements Serializable, Cloneable {
      * 
      * @return The private IP address of the network interface.
      */
+
     public String getPrivateIpAddress() {
         return this.privateIpAddress;
     }
@@ -85,6 +87,7 @@ public class InstancePrivateIpAddress implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstancePrivateIpAddress withPrivateIpAddress(String privateIpAddress) {
         setPrivateIpAddress(privateIpAddress);
         return this;
@@ -98,6 +101,7 @@ public class InstancePrivateIpAddress implements Serializable, Cloneable {
      * @param privateDnsName
      *        The private DNS name.
      */
+
     public void setPrivateDnsName(String privateDnsName) {
         this.privateDnsName = privateDnsName;
     }
@@ -109,6 +113,7 @@ public class InstancePrivateIpAddress implements Serializable, Cloneable {
      * 
      * @return The private DNS name.
      */
+
     public String getPrivateDnsName() {
         return this.privateDnsName;
     }
@@ -123,6 +128,7 @@ public class InstancePrivateIpAddress implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstancePrivateIpAddress withPrivateDnsName(String privateDnsName) {
         setPrivateDnsName(privateDnsName);
         return this;
@@ -138,6 +144,7 @@ public class InstancePrivateIpAddress implements Serializable, Cloneable {
      *        Indicates whether this IP address is the primary private IP
      *        address of the network interface.
      */
+
     public void setPrimary(Boolean primary) {
         this.primary = primary;
     }
@@ -151,6 +158,7 @@ public class InstancePrivateIpAddress implements Serializable, Cloneable {
      * @return Indicates whether this IP address is the primary private IP
      *         address of the network interface.
      */
+
     public Boolean getPrimary() {
         return this.primary;
     }
@@ -167,6 +175,7 @@ public class InstancePrivateIpAddress implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstancePrivateIpAddress withPrimary(Boolean primary) {
         setPrimary(primary);
         return this;
@@ -181,6 +190,7 @@ public class InstancePrivateIpAddress implements Serializable, Cloneable {
      * @return Indicates whether this IP address is the primary private IP
      *         address of the network interface.
      */
+
     public Boolean isPrimary() {
         return this.primary;
     }
@@ -195,6 +205,7 @@ public class InstancePrivateIpAddress implements Serializable, Cloneable {
      *        The association information for an Elastic IP address for the
      *        network interface.
      */
+
     public void setAssociation(InstanceNetworkInterfaceAssociation association) {
         this.association = association;
     }
@@ -208,6 +219,7 @@ public class InstancePrivateIpAddress implements Serializable, Cloneable {
      * @return The association information for an Elastic IP address for the
      *         network interface.
      */
+
     public InstanceNetworkInterfaceAssociation getAssociation() {
         return this.association;
     }
@@ -224,6 +236,7 @@ public class InstancePrivateIpAddress implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstancePrivateIpAddress withAssociation(
             InstanceNetworkInterfaceAssociation association) {
         setAssociation(association);

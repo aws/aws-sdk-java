@@ -40,6 +40,7 @@ public class CreateLoginProfileResult implements Serializable, Cloneable {
      * @param loginProfile
      *        The user name and password create date.
      */
+
     public void setLoginProfile(LoginProfile loginProfile) {
         this.loginProfile = loginProfile;
     }
@@ -51,6 +52,7 @@ public class CreateLoginProfileResult implements Serializable, Cloneable {
      * 
      * @return The user name and password create date.
      */
+
     public LoginProfile getLoginProfile() {
         return this.loginProfile;
     }
@@ -65,6 +67,7 @@ public class CreateLoginProfileResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateLoginProfileResult withLoginProfile(LoginProfile loginProfile) {
         setLoginProfile(loginProfile);
         return this;

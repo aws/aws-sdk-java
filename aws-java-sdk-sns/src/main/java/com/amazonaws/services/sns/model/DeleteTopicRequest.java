@@ -60,6 +60,7 @@ public class DeleteTopicRequest extends AmazonWebServiceRequest implements
      * @param topicArn
      *        The ARN of the topic you want to delete.
      */
+
     public void setTopicArn(String topicArn) {
         this.topicArn = topicArn;
     }
@@ -71,6 +72,7 @@ public class DeleteTopicRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ARN of the topic you want to delete.
      */
+
     public String getTopicArn() {
         return this.topicArn;
     }
@@ -85,6 +87,7 @@ public class DeleteTopicRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteTopicRequest withTopicArn(String topicArn) {
         setTopicArn(topicArn);
         return this;

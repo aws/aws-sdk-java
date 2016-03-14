@@ -48,6 +48,7 @@ public class NetworkInterfaceAttachmentChanges implements Serializable,
      * @param attachmentId
      *        The ID of the network interface attachment.
      */
+
     public void setAttachmentId(String attachmentId) {
         this.attachmentId = attachmentId;
     }
@@ -59,6 +60,7 @@ public class NetworkInterfaceAttachmentChanges implements Serializable,
      * 
      * @return The ID of the network interface attachment.
      */
+
     public String getAttachmentId() {
         return this.attachmentId;
     }
@@ -73,6 +75,7 @@ public class NetworkInterfaceAttachmentChanges implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NetworkInterfaceAttachmentChanges withAttachmentId(
             String attachmentId) {
         setAttachmentId(attachmentId);
@@ -89,6 +92,7 @@ public class NetworkInterfaceAttachmentChanges implements Serializable,
      *        Indicates whether the network interface is deleted when the
      *        instance is terminated.
      */
+
     public void setDeleteOnTermination(Boolean deleteOnTermination) {
         this.deleteOnTermination = deleteOnTermination;
     }
@@ -102,6 +106,7 @@ public class NetworkInterfaceAttachmentChanges implements Serializable,
      * @return Indicates whether the network interface is deleted when the
      *         instance is terminated.
      */
+
     public Boolean getDeleteOnTermination() {
         return this.deleteOnTermination;
     }
@@ -118,6 +123,7 @@ public class NetworkInterfaceAttachmentChanges implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NetworkInterfaceAttachmentChanges withDeleteOnTermination(
             Boolean deleteOnTermination) {
         setDeleteOnTermination(deleteOnTermination);
@@ -133,6 +139,7 @@ public class NetworkInterfaceAttachmentChanges implements Serializable,
      * @return Indicates whether the network interface is deleted when the
      *         instance is terminated.
      */
+
     public Boolean isDeleteOnTermination() {
         return this.deleteOnTermination;
     }

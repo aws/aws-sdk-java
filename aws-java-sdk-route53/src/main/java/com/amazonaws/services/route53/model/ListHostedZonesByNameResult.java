@@ -105,6 +105,7 @@ public class ListHostedZonesByNameResult implements Serializable, Cloneable {
      * @return A complex type that contains information about the hosted zones
      *         associated with the current AWS account.
      */
+
     public java.util.List<HostedZone> getHostedZones() {
         if (hostedZones == null) {
             hostedZones = new com.amazonaws.internal.SdkInternalList<HostedZone>();
@@ -122,6 +123,7 @@ public class ListHostedZonesByNameResult implements Serializable, Cloneable {
      *        A complex type that contains information about the hosted zones
      *        associated with the current AWS account.
      */
+
     public void setHostedZones(java.util.Collection<HostedZone> hostedZones) {
         if (hostedZones == null) {
             this.hostedZones = null;
@@ -150,6 +152,7 @@ public class ListHostedZonesByNameResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListHostedZonesByNameResult withHostedZones(
             HostedZone... hostedZones) {
         if (this.hostedZones == null) {
@@ -174,6 +177,7 @@ public class ListHostedZonesByNameResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListHostedZonesByNameResult withHostedZones(
             java.util.Collection<HostedZone> hostedZones) {
         setHostedZones(hostedZones);
@@ -188,6 +192,7 @@ public class ListHostedZonesByNameResult implements Serializable, Cloneable {
      * @param dNSName
      *        The <code>DNSName</code> value sent in the request.
      */
+
     public void setDNSName(String dNSName) {
         this.dNSName = dNSName;
     }
@@ -199,6 +204,7 @@ public class ListHostedZonesByNameResult implements Serializable, Cloneable {
      * 
      * @return The <code>DNSName</code> value sent in the request.
      */
+
     public String getDNSName() {
         return this.dNSName;
     }
@@ -213,6 +219,7 @@ public class ListHostedZonesByNameResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListHostedZonesByNameResult withDNSName(String dNSName) {
         setDNSName(dNSName);
         return this;
@@ -226,6 +233,7 @@ public class ListHostedZonesByNameResult implements Serializable, Cloneable {
      * @param hostedZoneId
      *        The <code>HostedZoneId</code> value sent in the request.
      */
+
     public void setHostedZoneId(String hostedZoneId) {
         this.hostedZoneId = hostedZoneId;
     }
@@ -237,6 +245,7 @@ public class ListHostedZonesByNameResult implements Serializable, Cloneable {
      * 
      * @return The <code>HostedZoneId</code> value sent in the request.
      */
+
     public String getHostedZoneId() {
         return this.hostedZoneId;
     }
@@ -251,6 +260,7 @@ public class ListHostedZonesByNameResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListHostedZonesByNameResult withHostedZoneId(String hostedZoneId) {
         setHostedZoneId(hostedZoneId);
         return this;
@@ -276,6 +286,7 @@ public class ListHostedZonesByNameResult implements Serializable, Cloneable {
      *        <p>
      *        Valid Values: <code>true</code> | <code>false</code>
      */
+
     public void setIsTruncated(Boolean isTruncated) {
         this.isTruncated = isTruncated;
     }
@@ -299,6 +310,7 @@ public class ListHostedZonesByNameResult implements Serializable, Cloneable {
      *         <p>
      *         Valid Values: <code>true</code> | <code>false</code>
      */
+
     public Boolean getIsTruncated() {
         return this.isTruncated;
     }
@@ -325,6 +337,7 @@ public class ListHostedZonesByNameResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListHostedZonesByNameResult withIsTruncated(Boolean isTruncated) {
         setIsTruncated(isTruncated);
         return this;
@@ -349,6 +362,7 @@ public class ListHostedZonesByNameResult implements Serializable, Cloneable {
      *         <p>
      *         Valid Values: <code>true</code> | <code>false</code>
      */
+
     public Boolean isTruncated() {
         return this.isTruncated;
     }
@@ -375,6 +389,7 @@ public class ListHostedZonesByNameResult implements Serializable, Cloneable {
      *        <a>ListHostedZonesByNameResponse$NextHostedZoneId</a> in the
      *        <a>ListHostedZonesByNameRequest$HostedZoneId</a> element.
      */
+
     public void setNextDNSName(String nextDNSName) {
         this.nextDNSName = nextDNSName;
     }
@@ -400,6 +415,7 @@ public class ListHostedZonesByNameResult implements Serializable, Cloneable {
      *         <a>ListHostedZonesByNameResponse$NextHostedZoneId</a> in the
      *         <a>ListHostedZonesByNameRequest$HostedZoneId</a> element.
      */
+
     public String getNextDNSName() {
         return this.nextDNSName;
     }
@@ -428,6 +444,7 @@ public class ListHostedZonesByNameResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListHostedZonesByNameResult withNextDNSName(String nextDNSName) {
         setNextDNSName(nextDNSName);
         return this;
@@ -455,6 +472,7 @@ public class ListHostedZonesByNameResult implements Serializable, Cloneable {
      *        <a>ListHostedZonesByNameResponse$NextHostedZoneId</a> in the
      *        <a>ListHostedZonesByNameRequest$HostedZoneId</a> element.
      */
+
     public void setNextHostedZoneId(String nextHostedZoneId) {
         this.nextHostedZoneId = nextHostedZoneId;
     }
@@ -480,6 +498,7 @@ public class ListHostedZonesByNameResult implements Serializable, Cloneable {
      *         <a>ListHostedZonesByNameResponse$NextHostedZoneId</a> in the
      *         <a>ListHostedZonesByNameRequest$HostedZoneId</a> element.
      */
+
     public String getNextHostedZoneId() {
         return this.nextHostedZoneId;
     }
@@ -508,6 +527,7 @@ public class ListHostedZonesByNameResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListHostedZonesByNameResult withNextHostedZoneId(
             String nextHostedZoneId) {
         setNextHostedZoneId(nextHostedZoneId);
@@ -537,6 +557,7 @@ public class ListHostedZonesByNameResult implements Serializable, Cloneable {
      *        <a>ListHostedZonesByNameResponse$NextHostedZoneId</a> elements
      *        respectively to get the next page of results.
      */
+
     public void setMaxItems(String maxItems) {
         this.maxItems = maxItems;
     }
@@ -563,6 +584,7 @@ public class ListHostedZonesByNameResult implements Serializable, Cloneable {
      *         <a>ListHostedZonesByNameResponse$NextHostedZoneId</a> elements
      *         respectively to get the next page of results.
      */
+
     public String getMaxItems() {
         return this.maxItems;
     }
@@ -592,6 +614,7 @@ public class ListHostedZonesByNameResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListHostedZonesByNameResult withMaxItems(String maxItems) {
         setMaxItems(maxItems);
         return this;

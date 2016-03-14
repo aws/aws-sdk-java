@@ -43,6 +43,7 @@ public class DescribeIdFormatRequest extends AmazonWebServiceRequest implements
      * @param resource
      *        The type of resource.
      */
+
     public void setResource(String resource) {
         this.resource = resource;
     }
@@ -54,6 +55,7 @@ public class DescribeIdFormatRequest extends AmazonWebServiceRequest implements
      * 
      * @return The type of resource.
      */
+
     public String getResource() {
         return this.resource;
     }
@@ -68,6 +70,7 @@ public class DescribeIdFormatRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeIdFormatRequest withResource(String resource) {
         setResource(resource);
         return this;

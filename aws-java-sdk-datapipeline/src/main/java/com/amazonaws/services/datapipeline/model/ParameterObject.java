@@ -46,6 +46,7 @@ public class ParameterObject implements Serializable, Cloneable {
      * @param id
      *        The ID of the parameter object.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -57,6 +58,7 @@ public class ParameterObject implements Serializable, Cloneable {
      * 
      * @return The ID of the parameter object.
      */
+
     public String getId() {
         return this.id;
     }
@@ -71,6 +73,7 @@ public class ParameterObject implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ParameterObject withId(String id) {
         setId(id);
         return this;
@@ -83,6 +86,7 @@ public class ParameterObject implements Serializable, Cloneable {
      * 
      * @return The attributes of the parameter object.
      */
+
     public java.util.List<ParameterAttribute> getAttributes() {
         if (attributes == null) {
             attributes = new com.amazonaws.internal.SdkInternalList<ParameterAttribute>();
@@ -98,6 +102,7 @@ public class ParameterObject implements Serializable, Cloneable {
      * @param attributes
      *        The attributes of the parameter object.
      */
+
     public void setAttributes(
             java.util.Collection<ParameterAttribute> attributes) {
         if (attributes == null) {
@@ -125,6 +130,7 @@ public class ParameterObject implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ParameterObject withAttributes(ParameterAttribute... attributes) {
         if (this.attributes == null) {
             setAttributes(new com.amazonaws.internal.SdkInternalList<ParameterAttribute>(
@@ -146,6 +152,7 @@ public class ParameterObject implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ParameterObject withAttributes(
             java.util.Collection<ParameterAttribute> attributes) {
         setAttributes(attributes);

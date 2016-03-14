@@ -60,6 +60,7 @@ public class DeleteServerCertificateRequest extends AmazonWebServiceRequest
      * @param serverCertificateName
      *        The name of the server certificate you want to delete.
      */
+
     public void setServerCertificateName(String serverCertificateName) {
         this.serverCertificateName = serverCertificateName;
     }
@@ -71,6 +72,7 @@ public class DeleteServerCertificateRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the server certificate you want to delete.
      */
+
     public String getServerCertificateName() {
         return this.serverCertificateName;
     }
@@ -85,6 +87,7 @@ public class DeleteServerCertificateRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteServerCertificateRequest withServerCertificateName(
             String serverCertificateName) {
         setServerCertificateName(serverCertificateName);

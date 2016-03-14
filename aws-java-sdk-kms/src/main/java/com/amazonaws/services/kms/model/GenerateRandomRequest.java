@@ -44,6 +44,7 @@ public class GenerateRandomRequest extends AmazonWebServiceRequest implements
      *        values are 128, 256, 512, 1024 and so on. The current limit is
      *        1024 bytes.
      */
+
     public void setNumberOfBytes(Integer numberOfBytes) {
         this.numberOfBytes = numberOfBytes;
     }
@@ -58,6 +59,7 @@ public class GenerateRandomRequest extends AmazonWebServiceRequest implements
      *         values are 128, 256, 512, 1024 and so on. The current limit is
      *         1024 bytes.
      */
+
     public Integer getNumberOfBytes() {
         return this.numberOfBytes;
     }
@@ -75,6 +77,7 @@ public class GenerateRandomRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GenerateRandomRequest withNumberOfBytes(Integer numberOfBytes) {
         setNumberOfBytes(numberOfBytes);
         return this;

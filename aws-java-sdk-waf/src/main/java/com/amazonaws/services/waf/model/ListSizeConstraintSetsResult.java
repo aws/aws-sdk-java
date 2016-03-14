@@ -62,6 +62,7 @@ public class ListSizeConstraintSetsResult implements Serializable, Cloneable {
      *        <code>NextMarker</code> value from the response in the
      *        <code>NextMarker</code> value in the next request.
      */
+
     public void setNextMarker(String nextMarker) {
         this.nextMarker = nextMarker;
     }
@@ -85,6 +86,7 @@ public class ListSizeConstraintSetsResult implements Serializable, Cloneable {
      *         <code>NextMarker</code> value from the response in the
      *         <code>NextMarker</code> value in the next request.
      */
+
     public String getNextMarker() {
         return this.nextMarker;
     }
@@ -111,6 +113,7 @@ public class ListSizeConstraintSetsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListSizeConstraintSetsResult withNextMarker(String nextMarker) {
         setNextMarker(nextMarker);
         return this;
@@ -123,6 +126,7 @@ public class ListSizeConstraintSetsResult implements Serializable, Cloneable {
      * 
      * @return An array of <a>SizeConstraintSetSummary</a> objects.
      */
+
     public java.util.List<SizeConstraintSetSummary> getSizeConstraintSets() {
         return sizeConstraintSets;
     }
@@ -135,6 +139,7 @@ public class ListSizeConstraintSetsResult implements Serializable, Cloneable {
      * @param sizeConstraintSets
      *        An array of <a>SizeConstraintSetSummary</a> objects.
      */
+
     public void setSizeConstraintSets(
             java.util.Collection<SizeConstraintSetSummary> sizeConstraintSets) {
         if (sizeConstraintSets == null) {
@@ -162,6 +167,7 @@ public class ListSizeConstraintSetsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListSizeConstraintSetsResult withSizeConstraintSets(
             SizeConstraintSetSummary... sizeConstraintSets) {
         if (this.sizeConstraintSets == null) {
@@ -184,6 +190,7 @@ public class ListSizeConstraintSetsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListSizeConstraintSetsResult withSizeConstraintSets(
             java.util.Collection<SizeConstraintSetSummary> sizeConstraintSets) {
         setSizeConstraintSets(sizeConstraintSets);

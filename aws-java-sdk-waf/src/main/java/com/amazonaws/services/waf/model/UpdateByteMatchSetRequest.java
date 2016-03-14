@@ -69,6 +69,7 @@ public class UpdateByteMatchSetRequest extends AmazonWebServiceRequest
      *        you want to update. <code>ByteMatchSetId</code> is returned by
      *        <a>CreateByteMatchSet</a> and by <a>ListByteMatchSets</a>.
      */
+
     public void setByteMatchSetId(String byteMatchSetId) {
         this.byteMatchSetId = byteMatchSetId;
     }
@@ -84,6 +85,7 @@ public class UpdateByteMatchSetRequest extends AmazonWebServiceRequest
      *         you want to update. <code>ByteMatchSetId</code> is returned by
      *         <a>CreateByteMatchSet</a> and by <a>ListByteMatchSets</a>.
      */
+
     public String getByteMatchSetId() {
         return this.byteMatchSetId;
     }
@@ -102,6 +104,7 @@ public class UpdateByteMatchSetRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateByteMatchSetRequest withByteMatchSetId(String byteMatchSetId) {
         setByteMatchSetId(byteMatchSetId);
         return this;
@@ -116,6 +119,7 @@ public class UpdateByteMatchSetRequest extends AmazonWebServiceRequest
      *        The value returned by the most recent call to
      *        <a>GetChangeToken</a>.
      */
+
     public void setChangeToken(String changeToken) {
         this.changeToken = changeToken;
     }
@@ -128,6 +132,7 @@ public class UpdateByteMatchSetRequest extends AmazonWebServiceRequest
      * @return The value returned by the most recent call to
      *         <a>GetChangeToken</a>.
      */
+
     public String getChangeToken() {
         return this.changeToken;
     }
@@ -143,6 +148,7 @@ public class UpdateByteMatchSetRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateByteMatchSetRequest withChangeToken(String changeToken) {
         setChangeToken(changeToken);
         return this;
@@ -176,6 +182,7 @@ public class UpdateByteMatchSetRequest extends AmazonWebServiceRequest
      *         <li><a>FieldToMatch</a>: Contains <code>Data</code> and
      *         <code>Type</code></li>
      */
+
     public java.util.List<ByteMatchSetUpdate> getUpdates() {
         return updates;
     }
@@ -209,6 +216,7 @@ public class UpdateByteMatchSetRequest extends AmazonWebServiceRequest
      *        <li><a>FieldToMatch</a>: Contains <code>Data</code> and
      *        <code>Type</code></li>
      */
+
     public void setUpdates(java.util.Collection<ByteMatchSetUpdate> updates) {
         if (updates == null) {
             this.updates = null;
@@ -255,6 +263,7 @@ public class UpdateByteMatchSetRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateByteMatchSetRequest withUpdates(ByteMatchSetUpdate... updates) {
         if (this.updates == null) {
             setUpdates(new java.util.ArrayList<ByteMatchSetUpdate>(
@@ -297,6 +306,7 @@ public class UpdateByteMatchSetRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateByteMatchSetRequest withUpdates(
             java.util.Collection<ByteMatchSetUpdate> updates) {
         setUpdates(updates);

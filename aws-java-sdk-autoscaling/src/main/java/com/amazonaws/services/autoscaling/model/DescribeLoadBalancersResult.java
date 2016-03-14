@@ -44,6 +44,7 @@ public class DescribeLoadBalancersResult implements Serializable, Cloneable {
      * 
      * @return The load balancers.
      */
+
     public java.util.List<LoadBalancerState> getLoadBalancers() {
         if (loadBalancers == null) {
             loadBalancers = new com.amazonaws.internal.SdkInternalList<LoadBalancerState>();
@@ -59,6 +60,7 @@ public class DescribeLoadBalancersResult implements Serializable, Cloneable {
      * @param loadBalancers
      *        The load balancers.
      */
+
     public void setLoadBalancers(
             java.util.Collection<LoadBalancerState> loadBalancers) {
         if (loadBalancers == null) {
@@ -86,6 +88,7 @@ public class DescribeLoadBalancersResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLoadBalancersResult withLoadBalancers(
             LoadBalancerState... loadBalancers) {
         if (this.loadBalancers == null) {
@@ -108,6 +111,7 @@ public class DescribeLoadBalancersResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLoadBalancersResult withLoadBalancers(
             java.util.Collection<LoadBalancerState> loadBalancers) {
         setLoadBalancers(loadBalancers);
@@ -124,6 +128,7 @@ public class DescribeLoadBalancersResult implements Serializable, Cloneable {
      *        The token to use when requesting the next set of items. If there
      *        are no additional items to return, the string is empty.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -137,6 +142,7 @@ public class DescribeLoadBalancersResult implements Serializable, Cloneable {
      * @return The token to use when requesting the next set of items. If there
      *         are no additional items to return, the string is empty.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -153,6 +159,7 @@ public class DescribeLoadBalancersResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLoadBalancersResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

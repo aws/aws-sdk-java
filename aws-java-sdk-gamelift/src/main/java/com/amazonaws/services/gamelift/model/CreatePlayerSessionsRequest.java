@@ -48,6 +48,7 @@ public class CreatePlayerSessionsRequest extends AmazonWebServiceRequest
      * @param gameSessionId
      *        Unique identifier for a game session.
      */
+
     public void setGameSessionId(String gameSessionId) {
         this.gameSessionId = gameSessionId;
     }
@@ -59,6 +60,7 @@ public class CreatePlayerSessionsRequest extends AmazonWebServiceRequest
      * 
      * @return Unique identifier for a game session.
      */
+
     public String getGameSessionId() {
         return this.gameSessionId;
     }
@@ -73,6 +75,7 @@ public class CreatePlayerSessionsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePlayerSessionsRequest withGameSessionId(String gameSessionId) {
         setGameSessionId(gameSessionId);
         return this;
@@ -85,6 +88,7 @@ public class CreatePlayerSessionsRequest extends AmazonWebServiceRequest
      * 
      * @return List of unique identifiers for the players to be added.
      */
+
     public java.util.List<String> getPlayerIds() {
         return playerIds;
     }
@@ -97,6 +101,7 @@ public class CreatePlayerSessionsRequest extends AmazonWebServiceRequest
      * @param playerIds
      *        List of unique identifiers for the players to be added.
      */
+
     public void setPlayerIds(java.util.Collection<String> playerIds) {
         if (playerIds == null) {
             this.playerIds = null;
@@ -122,6 +127,7 @@ public class CreatePlayerSessionsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePlayerSessionsRequest withPlayerIds(String... playerIds) {
         if (this.playerIds == null) {
             setPlayerIds(new java.util.ArrayList<String>(playerIds.length));
@@ -142,6 +148,7 @@ public class CreatePlayerSessionsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePlayerSessionsRequest withPlayerIds(
             java.util.Collection<String> playerIds) {
         setPlayerIds(playerIds);

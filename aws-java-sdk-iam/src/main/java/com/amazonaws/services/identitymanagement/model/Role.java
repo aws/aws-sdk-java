@@ -104,6 +104,7 @@ public class Role implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *        >IAM Identifiers</a> in the <i>Using IAM</i> guide.
      */
+
     public void setPath(String path) {
         this.path = path;
     }
@@ -120,6 +121,7 @@ public class Role implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *         >IAM Identifiers</a> in the <i>Using IAM</i> guide.
      */
+
     public String getPath() {
         return this.path;
     }
@@ -139,6 +141,7 @@ public class Role implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Role withPath(String path) {
         setPath(path);
         return this;
@@ -152,6 +155,7 @@ public class Role implements Serializable, Cloneable {
      * @param roleName
      *        The friendly name that identifies the role.
      */
+
     public void setRoleName(String roleName) {
         this.roleName = roleName;
     }
@@ -163,6 +167,7 @@ public class Role implements Serializable, Cloneable {
      * 
      * @return The friendly name that identifies the role.
      */
+
     public String getRoleName() {
         return this.roleName;
     }
@@ -177,6 +182,7 @@ public class Role implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Role withRoleName(String roleName) {
         setRoleName(roleName);
         return this;
@@ -196,6 +202,7 @@ public class Role implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *        >IAM Identifiers</a> in the <i>Using IAM</i> guide.
      */
+
     public void setRoleId(String roleId) {
         this.roleId = roleId;
     }
@@ -213,6 +220,7 @@ public class Role implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *         >IAM Identifiers</a> in the <i>Using IAM</i> guide.
      */
+
     public String getRoleId() {
         return this.roleId;
     }
@@ -233,6 +241,7 @@ public class Role implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Role withRoleId(String roleId) {
         setRoleId(roleId);
         return this;
@@ -253,6 +262,7 @@ public class Role implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *        >IAM Identifiers</a> in the <i>Using IAM</i> guide.
      */
+
     public void setArn(String arn) {
         this.arn = arn;
     }
@@ -271,6 +281,7 @@ public class Role implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *         >IAM Identifiers</a> in the <i>Using IAM</i> guide.
      */
+
     public String getArn() {
         return this.arn;
     }
@@ -292,6 +303,7 @@ public class Role implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Role withArn(String arn) {
         setArn(arn);
         return this;
@@ -307,6 +319,7 @@ public class Role implements Serializable, Cloneable {
      *        The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO
      *        8601 date-time format</a>, when the role was created.
      */
+
     public void setCreateDate(java.util.Date createDate) {
         this.createDate = createDate;
     }
@@ -321,6 +334,7 @@ public class Role implements Serializable, Cloneable {
      *         href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
      *         format</a>, when the role was created.
      */
+
     public java.util.Date getCreateDate() {
         return this.createDate;
     }
@@ -337,6 +351,7 @@ public class Role implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Role withCreateDate(java.util.Date createDate) {
         setCreateDate(createDate);
         return this;
@@ -350,6 +365,7 @@ public class Role implements Serializable, Cloneable {
      * @param assumeRolePolicyDocument
      *        The policy that grants an entity permission to assume the role.
      */
+
     public void setAssumeRolePolicyDocument(String assumeRolePolicyDocument) {
         this.assumeRolePolicyDocument = assumeRolePolicyDocument;
     }
@@ -361,6 +377,7 @@ public class Role implements Serializable, Cloneable {
      * 
      * @return The policy that grants an entity permission to assume the role.
      */
+
     public String getAssumeRolePolicyDocument() {
         return this.assumeRolePolicyDocument;
     }
@@ -375,6 +392,7 @@ public class Role implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Role withAssumeRolePolicyDocument(String assumeRolePolicyDocument) {
         setAssumeRolePolicyDocument(assumeRolePolicyDocument);
         return this;

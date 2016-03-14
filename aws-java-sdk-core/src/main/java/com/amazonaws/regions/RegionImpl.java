@@ -40,6 +40,13 @@ public interface RegionImpl {
     String getDomain();
 
     /**
+     * Returns the partition this region is in. I.E. 'aws' or 'aws-cn'
+     *
+     * @return The partition this region is in.
+     */
+    String getPartition();
+
+    /**
      * Returns whether the given service is supported in this region.
      *
      * @see ServiceAbbreviations

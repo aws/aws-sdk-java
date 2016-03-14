@@ -48,6 +48,7 @@ public class PutRecordBatchRequest extends AmazonWebServiceRequest implements
      * @param deliveryStreamName
      *        The name of the delivery stream.
      */
+
     public void setDeliveryStreamName(String deliveryStreamName) {
         this.deliveryStreamName = deliveryStreamName;
     }
@@ -59,6 +60,7 @@ public class PutRecordBatchRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the delivery stream.
      */
+
     public String getDeliveryStreamName() {
         return this.deliveryStreamName;
     }
@@ -73,6 +75,7 @@ public class PutRecordBatchRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutRecordBatchRequest withDeliveryStreamName(
             String deliveryStreamName) {
         setDeliveryStreamName(deliveryStreamName);
@@ -86,6 +89,7 @@ public class PutRecordBatchRequest extends AmazonWebServiceRequest implements
      * 
      * @return One or more records.
      */
+
     public java.util.List<Record> getRecords() {
         return records;
     }
@@ -98,6 +102,7 @@ public class PutRecordBatchRequest extends AmazonWebServiceRequest implements
      * @param records
      *        One or more records.
      */
+
     public void setRecords(java.util.Collection<Record> records) {
         if (records == null) {
             this.records = null;
@@ -123,6 +128,7 @@ public class PutRecordBatchRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutRecordBatchRequest withRecords(Record... records) {
         if (this.records == null) {
             setRecords(new java.util.ArrayList<Record>(records.length));
@@ -143,6 +149,7 @@ public class PutRecordBatchRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutRecordBatchRequest withRecords(
             java.util.Collection<Record> records) {
         setRecords(records);

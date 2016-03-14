@@ -62,6 +62,7 @@ public class ListByteMatchSetsResult implements Serializable, Cloneable {
      *        <code>NextMarker</code> value from the response in the
      *        <code>NextMarker</code> value in the next request.
      */
+
     public void setNextMarker(String nextMarker) {
         this.nextMarker = nextMarker;
     }
@@ -85,6 +86,7 @@ public class ListByteMatchSetsResult implements Serializable, Cloneable {
      *         <code>NextMarker</code> value from the response in the
      *         <code>NextMarker</code> value in the next request.
      */
+
     public String getNextMarker() {
         return this.nextMarker;
     }
@@ -111,6 +113,7 @@ public class ListByteMatchSetsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListByteMatchSetsResult withNextMarker(String nextMarker) {
         setNextMarker(nextMarker);
         return this;
@@ -123,6 +126,7 @@ public class ListByteMatchSetsResult implements Serializable, Cloneable {
      * 
      * @return An array of <a>ByteMatchSetSummary</a> objects.
      */
+
     public java.util.List<ByteMatchSetSummary> getByteMatchSets() {
         return byteMatchSets;
     }
@@ -135,6 +139,7 @@ public class ListByteMatchSetsResult implements Serializable, Cloneable {
      * @param byteMatchSets
      *        An array of <a>ByteMatchSetSummary</a> objects.
      */
+
     public void setByteMatchSets(
             java.util.Collection<ByteMatchSetSummary> byteMatchSets) {
         if (byteMatchSets == null) {
@@ -162,6 +167,7 @@ public class ListByteMatchSetsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListByteMatchSetsResult withByteMatchSets(
             ByteMatchSetSummary... byteMatchSets) {
         if (this.byteMatchSets == null) {
@@ -184,6 +190,7 @@ public class ListByteMatchSetsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListByteMatchSetsResult withByteMatchSets(
             java.util.Collection<ByteMatchSetSummary> byteMatchSets) {
         setByteMatchSets(byteMatchSets);

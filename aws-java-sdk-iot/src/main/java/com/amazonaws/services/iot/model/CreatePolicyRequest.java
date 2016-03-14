@@ -50,6 +50,7 @@ public class CreatePolicyRequest extends AmazonWebServiceRequest implements
      * @param policyName
      *        The policy name.
      */
+
     public void setPolicyName(String policyName) {
         this.policyName = policyName;
     }
@@ -61,6 +62,7 @@ public class CreatePolicyRequest extends AmazonWebServiceRequest implements
      * 
      * @return The policy name.
      */
+
     public String getPolicyName() {
         return this.policyName;
     }
@@ -75,6 +77,7 @@ public class CreatePolicyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePolicyRequest withPolicyName(String policyName) {
         setPolicyName(policyName);
         return this;
@@ -92,6 +95,7 @@ public class CreatePolicyRequest extends AmazonWebServiceRequest implements
      *        <b>policyDocument</b> must be a minimum length of 1, with a
      *        maximum length of 2048, excluding whitespace.
      */
+
     public void setPolicyDocument(String policyDocument) {
         this.policyDocument = policyDocument;
     }
@@ -107,6 +111,7 @@ public class CreatePolicyRequest extends AmazonWebServiceRequest implements
      *         <b>policyDocument</b> must be a minimum length of 1, with a
      *         maximum length of 2048, excluding whitespace.
      */
+
     public String getPolicyDocument() {
         return this.policyDocument;
     }
@@ -125,6 +130,7 @@ public class CreatePolicyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePolicyRequest withPolicyDocument(String policyDocument) {
         setPolicyDocument(policyDocument);
         return this;

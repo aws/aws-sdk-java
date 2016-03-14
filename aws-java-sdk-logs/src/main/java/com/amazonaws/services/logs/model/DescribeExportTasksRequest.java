@@ -65,6 +65,7 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest
      *        Export task that matches the specified task Id will be returned.
      *        This can result in zero or one export task.
      */
+
     public void setTaskId(String taskId) {
         this.taskId = taskId;
     }
@@ -78,6 +79,7 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest
      * @return Export task that matches the specified task Id will be returned.
      *         This can result in zero or one export task.
      */
+
     public String getTaskId() {
         return this.taskId;
     }
@@ -94,6 +96,7 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeExportTasksRequest withTaskId(String taskId) {
         setTaskId(taskId);
         return this;
@@ -110,6 +113,7 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest
      *        returned. This can return zero or more export tasks.
      * @see ExportTaskStatusCode
      */
+
     public void setStatusCode(String statusCode) {
         this.statusCode = statusCode;
     }
@@ -124,6 +128,7 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest
      *         returned. This can return zero or more export tasks.
      * @see ExportTaskStatusCode
      */
+
     public String getStatusCode() {
         return this.statusCode;
     }
@@ -141,6 +146,7 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see ExportTaskStatusCode
      */
+
     public DescribeExportTasksRequest withStatusCode(String statusCode) {
         setStatusCode(statusCode);
         return this;
@@ -159,6 +165,7 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see ExportTaskStatusCode
      */
+
     public void setStatusCode(ExportTaskStatusCode statusCode) {
         this.statusCode = statusCode.toString();
     }
@@ -176,6 +183,7 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see ExportTaskStatusCode
      */
+
     public DescribeExportTasksRequest withStatusCode(
             ExportTaskStatusCode statusCode) {
         setStatusCode(statusCode);
@@ -194,6 +202,7 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest
      *        results. It must be a value obtained from the response of the
      *        previous <code class="code">DescribeExportTasks</code> request.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -209,6 +218,7 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest
      *         of results. It must be a value obtained from the response of the
      *         previous <code class="code">DescribeExportTasks</code> request.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -227,6 +237,7 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeExportTasksRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -242,6 +253,7 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest
      *        The maximum number of items returned in the response. If you don't
      *        specify a value, the request would return up to 50 items.
      */
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -255,6 +267,7 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest
      * @return The maximum number of items returned in the response. If you
      *         don't specify a value, the request would return up to 50 items.
      */
+
     public Integer getLimit() {
         return this.limit;
     }
@@ -271,6 +284,7 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeExportTasksRequest withLimit(Integer limit) {
         setLimit(limit);
         return this;

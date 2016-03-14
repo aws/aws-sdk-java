@@ -63,6 +63,7 @@ public class CreateDhcpOptionsRequest extends AmazonWebServiceRequest implements
      * 
      * @return A DHCP configuration option.
      */
+
     public java.util.List<DhcpConfiguration> getDhcpConfigurations() {
         if (dhcpConfigurations == null) {
             dhcpConfigurations = new com.amazonaws.internal.SdkInternalList<DhcpConfiguration>();
@@ -78,6 +79,7 @@ public class CreateDhcpOptionsRequest extends AmazonWebServiceRequest implements
      * @param dhcpConfigurations
      *        A DHCP configuration option.
      */
+
     public void setDhcpConfigurations(
             java.util.Collection<DhcpConfiguration> dhcpConfigurations) {
         if (dhcpConfigurations == null) {
@@ -105,6 +107,7 @@ public class CreateDhcpOptionsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDhcpOptionsRequest withDhcpConfigurations(
             DhcpConfiguration... dhcpConfigurations) {
         if (this.dhcpConfigurations == null) {
@@ -127,6 +130,7 @@ public class CreateDhcpOptionsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDhcpOptionsRequest withDhcpConfigurations(
             java.util.Collection<DhcpConfiguration> dhcpConfigurations) {
         setDhcpConfigurations(dhcpConfigurations);

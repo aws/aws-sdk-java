@@ -54,6 +54,7 @@ public class UpdateContainerAgentRequest extends AmazonWebServiceRequest
      *        that your container instance is running on. If you do not specify
      *        a cluster, the default cluster is assumed.
      */
+
     public void setCluster(String cluster) {
         this.cluster = cluster;
     }
@@ -69,6 +70,7 @@ public class UpdateContainerAgentRequest extends AmazonWebServiceRequest
      *         that your container instance is running on. If you do not specify
      *         a cluster, the default cluster is assumed.
      */
+
     public String getCluster() {
         return this.cluster;
     }
@@ -87,6 +89,7 @@ public class UpdateContainerAgentRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateContainerAgentRequest withCluster(String cluster) {
         setCluster(cluster);
         return this;
@@ -104,6 +107,7 @@ public class UpdateContainerAgentRequest extends AmazonWebServiceRequest
      *        entries for the container instance on which you would like to
      *        update the Amazon ECS container agent.
      */
+
     public void setContainerInstance(String containerInstance) {
         this.containerInstance = containerInstance;
     }
@@ -119,6 +123,7 @@ public class UpdateContainerAgentRequest extends AmazonWebServiceRequest
      *         entries for the container instance on which you would like to
      *         update the Amazon ECS container agent.
      */
+
     public String getContainerInstance() {
         return this.containerInstance;
     }
@@ -137,6 +142,7 @@ public class UpdateContainerAgentRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateContainerAgentRequest withContainerInstance(
             String containerInstance) {
         setContainerInstance(containerInstance);

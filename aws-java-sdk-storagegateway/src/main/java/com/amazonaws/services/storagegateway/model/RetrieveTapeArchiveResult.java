@@ -40,6 +40,7 @@ public class RetrieveTapeArchiveResult implements Serializable, Cloneable {
      * @param tapeARN
      *        The Amazon Resource Name (ARN) of the retrieved virtual tape.
      */
+
     public void setTapeARN(String tapeARN) {
         this.tapeARN = tapeARN;
     }
@@ -51,6 +52,7 @@ public class RetrieveTapeArchiveResult implements Serializable, Cloneable {
      * 
      * @return The Amazon Resource Name (ARN) of the retrieved virtual tape.
      */
+
     public String getTapeARN() {
         return this.tapeARN;
     }
@@ -65,6 +67,7 @@ public class RetrieveTapeArchiveResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RetrieveTapeArchiveResult withTapeARN(String tapeARN) {
         setTapeARN(tapeARN);
         return this;

@@ -37,6 +37,7 @@ public class DescribeCustomerGatewaysResult implements Serializable, Cloneable {
      * 
      * @return Information about one or more customer gateways.
      */
+
     public java.util.List<CustomerGateway> getCustomerGateways() {
         if (customerGateways == null) {
             customerGateways = new com.amazonaws.internal.SdkInternalList<CustomerGateway>();
@@ -52,6 +53,7 @@ public class DescribeCustomerGatewaysResult implements Serializable, Cloneable {
      * @param customerGateways
      *        Information about one or more customer gateways.
      */
+
     public void setCustomerGateways(
             java.util.Collection<CustomerGateway> customerGateways) {
         if (customerGateways == null) {
@@ -79,6 +81,7 @@ public class DescribeCustomerGatewaysResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeCustomerGatewaysResult withCustomerGateways(
             CustomerGateway... customerGateways) {
         if (this.customerGateways == null) {
@@ -101,6 +104,7 @@ public class DescribeCustomerGatewaysResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeCustomerGatewaysResult withCustomerGateways(
             java.util.Collection<CustomerGateway> customerGateways) {
         setCustomerGateways(customerGateways);

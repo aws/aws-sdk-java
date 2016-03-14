@@ -63,6 +63,7 @@ public class InstanceBlockDeviceMappingSpecification implements Serializable,
      *        The device name exposed to the instance (for example,
      *        <code>/dev/sdh</code> or <code>xvdh</code>).
      */
+
     public void setDeviceName(String deviceName) {
         this.deviceName = deviceName;
     }
@@ -76,6 +77,7 @@ public class InstanceBlockDeviceMappingSpecification implements Serializable,
      * @return The device name exposed to the instance (for example,
      *         <code>/dev/sdh</code> or <code>xvdh</code>).
      */
+
     public String getDeviceName() {
         return this.deviceName;
     }
@@ -92,6 +94,7 @@ public class InstanceBlockDeviceMappingSpecification implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceBlockDeviceMappingSpecification withDeviceName(
             String deviceName) {
         setDeviceName(deviceName);
@@ -108,6 +111,7 @@ public class InstanceBlockDeviceMappingSpecification implements Serializable,
      *        Parameters used to automatically set up EBS volumes when the
      *        instance is launched.
      */
+
     public void setEbs(EbsInstanceBlockDeviceSpecification ebs) {
         this.ebs = ebs;
     }
@@ -121,6 +125,7 @@ public class InstanceBlockDeviceMappingSpecification implements Serializable,
      * @return Parameters used to automatically set up EBS volumes when the
      *         instance is launched.
      */
+
     public EbsInstanceBlockDeviceSpecification getEbs() {
         return this.ebs;
     }
@@ -137,6 +142,7 @@ public class InstanceBlockDeviceMappingSpecification implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceBlockDeviceMappingSpecification withEbs(
             EbsInstanceBlockDeviceSpecification ebs) {
         setEbs(ebs);
@@ -151,6 +157,7 @@ public class InstanceBlockDeviceMappingSpecification implements Serializable,
      * @param virtualName
      *        The virtual device name.
      */
+
     public void setVirtualName(String virtualName) {
         this.virtualName = virtualName;
     }
@@ -162,6 +169,7 @@ public class InstanceBlockDeviceMappingSpecification implements Serializable,
      * 
      * @return The virtual device name.
      */
+
     public String getVirtualName() {
         return this.virtualName;
     }
@@ -176,6 +184,7 @@ public class InstanceBlockDeviceMappingSpecification implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceBlockDeviceMappingSpecification withVirtualName(
             String virtualName) {
         setVirtualName(virtualName);
@@ -191,6 +200,7 @@ public class InstanceBlockDeviceMappingSpecification implements Serializable,
      *        suppress the specified device included in the block device
      *        mapping.
      */
+
     public void setNoDevice(String noDevice) {
         this.noDevice = noDevice;
     }
@@ -203,6 +213,7 @@ public class InstanceBlockDeviceMappingSpecification implements Serializable,
      * @return suppress the specified device included in the block device
      *         mapping.
      */
+
     public String getNoDevice() {
         return this.noDevice;
     }
@@ -218,6 +229,7 @@ public class InstanceBlockDeviceMappingSpecification implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceBlockDeviceMappingSpecification withNoDevice(String noDevice) {
         setNoDevice(noDevice);
         return this;

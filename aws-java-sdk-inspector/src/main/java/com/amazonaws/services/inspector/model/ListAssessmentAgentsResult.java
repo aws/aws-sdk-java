@@ -46,6 +46,7 @@ public class ListAssessmentAgentsResult implements Serializable, Cloneable {
      * 
      * @return A list of ARNs specifying the agents returned by the action.
      */
+
     public java.util.List<Agent> getAgentList() {
         return agentList;
     }
@@ -58,6 +59,7 @@ public class ListAssessmentAgentsResult implements Serializable, Cloneable {
      * @param agentList
      *        A list of ARNs specifying the agents returned by the action.
      */
+
     public void setAgentList(java.util.Collection<Agent> agentList) {
         if (agentList == null) {
             this.agentList = null;
@@ -83,6 +85,7 @@ public class ListAssessmentAgentsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListAssessmentAgentsResult withAgentList(Agent... agentList) {
         if (this.agentList == null) {
             setAgentList(new java.util.ArrayList<Agent>(agentList.length));
@@ -103,6 +106,7 @@ public class ListAssessmentAgentsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListAssessmentAgentsResult withAgentList(
             java.util.Collection<Agent> agentList) {
         setAgentList(agentList);
@@ -124,6 +128,7 @@ public class ListAssessmentAgentsResult implements Serializable, Cloneable {
      *        pagination request. If there is no more data to be listed, this
      *        parameter is set to 'null'.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -142,6 +147,7 @@ public class ListAssessmentAgentsResult implements Serializable, Cloneable {
      *         pagination request. If there is no more data to be listed, this
      *         parameter is set to 'null'.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -163,6 +169,7 @@ public class ListAssessmentAgentsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListAssessmentAgentsResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

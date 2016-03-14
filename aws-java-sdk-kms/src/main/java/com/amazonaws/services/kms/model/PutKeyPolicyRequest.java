@@ -79,6 +79,7 @@ public class PutKeyPolicyRequest extends AmazonWebServiceRequest implements
      *        12345678-1234-1234-1234-123456789012</li>
      *        </ul>
      */
+
     public void setKeyId(String keyId) {
         this.keyId = keyId;
     }
@@ -107,6 +108,7 @@ public class PutKeyPolicyRequest extends AmazonWebServiceRequest implements
      *         12345678-1234-1234-1234-123456789012</li>
      *         </ul>
      */
+
     public String getKeyId() {
         return this.keyId;
     }
@@ -137,6 +139,7 @@ public class PutKeyPolicyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutKeyPolicyRequest withKeyId(String keyId) {
         setKeyId(keyId);
         return this;
@@ -152,6 +155,7 @@ public class PutKeyPolicyRequest extends AmazonWebServiceRequest implements
      *        Name of the policy to be attached. Currently, the only supported
      *        name is "default".
      */
+
     public void setPolicyName(String policyName) {
         this.policyName = policyName;
     }
@@ -165,6 +169,7 @@ public class PutKeyPolicyRequest extends AmazonWebServiceRequest implements
      * @return Name of the policy to be attached. Currently, the only supported
      *         name is "default".
      */
+
     public String getPolicyName() {
         return this.policyName;
     }
@@ -181,6 +186,7 @@ public class PutKeyPolicyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutKeyPolicyRequest withPolicyName(String policyName) {
         setPolicyName(policyName);
         return this;
@@ -198,6 +204,7 @@ public class PutKeyPolicyRequest extends AmazonWebServiceRequest implements
      *        back to the account. The key is the root of trust. The policy size
      *        limit is 32 KiB (32768 bytes).
      */
+
     public void setPolicy(String policy) {
         this.policy = policy;
     }
@@ -213,6 +220,7 @@ public class PutKeyPolicyRequest extends AmazonWebServiceRequest implements
      *         back to the account. The key is the root of trust. The policy
      *         size limit is 32 KiB (32768 bytes).
      */
+
     public String getPolicy() {
         return this.policy;
     }
@@ -231,6 +239,7 @@ public class PutKeyPolicyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutKeyPolicyRequest withPolicy(String policy) {
         setPolicy(policy);
         return this;

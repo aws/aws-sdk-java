@@ -43,6 +43,7 @@ public class DescribeClustersResult implements Serializable, Cloneable {
      * 
      * @return The list of clusters.
      */
+
     public java.util.List<Cluster> getClusters() {
         if (clusters == null) {
             clusters = new com.amazonaws.internal.SdkInternalList<Cluster>();
@@ -58,6 +59,7 @@ public class DescribeClustersResult implements Serializable, Cloneable {
      * @param clusters
      *        The list of clusters.
      */
+
     public void setClusters(java.util.Collection<Cluster> clusters) {
         if (clusters == null) {
             this.clusters = null;
@@ -84,6 +86,7 @@ public class DescribeClustersResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeClustersResult withClusters(Cluster... clusters) {
         if (this.clusters == null) {
             setClusters(new com.amazonaws.internal.SdkInternalList<Cluster>(
@@ -105,6 +108,7 @@ public class DescribeClustersResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeClustersResult withClusters(
             java.util.Collection<Cluster> clusters) {
         setClusters(clusters);
@@ -118,6 +122,7 @@ public class DescribeClustersResult implements Serializable, Cloneable {
      * 
      * @return Any failures associated with the call.
      */
+
     public java.util.List<Failure> getFailures() {
         if (failures == null) {
             failures = new com.amazonaws.internal.SdkInternalList<Failure>();
@@ -133,6 +138,7 @@ public class DescribeClustersResult implements Serializable, Cloneable {
      * @param failures
      *        Any failures associated with the call.
      */
+
     public void setFailures(java.util.Collection<Failure> failures) {
         if (failures == null) {
             this.failures = null;
@@ -159,6 +165,7 @@ public class DescribeClustersResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeClustersResult withFailures(Failure... failures) {
         if (this.failures == null) {
             setFailures(new com.amazonaws.internal.SdkInternalList<Failure>(
@@ -180,6 +187,7 @@ public class DescribeClustersResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeClustersResult withFailures(
             java.util.Collection<Failure> failures) {
         setFailures(failures);

@@ -49,6 +49,7 @@ public class DescribeVolumeAttributeRequest extends AmazonWebServiceRequest
      * @param volumeId
      *        The ID of the volume.
      */
+
     public void setVolumeId(String volumeId) {
         this.volumeId = volumeId;
     }
@@ -60,6 +61,7 @@ public class DescribeVolumeAttributeRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the volume.
      */
+
     public String getVolumeId() {
         return this.volumeId;
     }
@@ -74,6 +76,7 @@ public class DescribeVolumeAttributeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVolumeAttributeRequest withVolumeId(String volumeId) {
         setVolumeId(volumeId);
         return this;
@@ -88,6 +91,7 @@ public class DescribeVolumeAttributeRequest extends AmazonWebServiceRequest
      *        The instance attribute.
      * @see VolumeAttributeName
      */
+
     public void setAttribute(String attribute) {
         this.attribute = attribute;
     }
@@ -100,6 +104,7 @@ public class DescribeVolumeAttributeRequest extends AmazonWebServiceRequest
      * @return The instance attribute.
      * @see VolumeAttributeName
      */
+
     public String getAttribute() {
         return this.attribute;
     }
@@ -115,6 +120,7 @@ public class DescribeVolumeAttributeRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see VolumeAttributeName
      */
+
     public DescribeVolumeAttributeRequest withAttribute(String attribute) {
         setAttribute(attribute);
         return this;
@@ -131,6 +137,7 @@ public class DescribeVolumeAttributeRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see VolumeAttributeName
      */
+
     public void setAttribute(VolumeAttributeName attribute) {
         this.attribute = attribute.toString();
     }
@@ -146,6 +153,7 @@ public class DescribeVolumeAttributeRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see VolumeAttributeName
      */
+
     public DescribeVolumeAttributeRequest withAttribute(
             VolumeAttributeName attribute) {
         setAttribute(attribute);

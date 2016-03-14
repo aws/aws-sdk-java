@@ -41,6 +41,7 @@ public class DescribeConfigurationRecordersRequest extends
      * 
      * @return A list of configuration recorder names.
      */
+
     public java.util.List<String> getConfigurationRecorderNames() {
         if (configurationRecorderNames == null) {
             configurationRecorderNames = new com.amazonaws.internal.SdkInternalList<String>();
@@ -56,6 +57,7 @@ public class DescribeConfigurationRecordersRequest extends
      * @param configurationRecorderNames
      *        A list of configuration recorder names.
      */
+
     public void setConfigurationRecorderNames(
             java.util.Collection<String> configurationRecorderNames) {
         if (configurationRecorderNames == null) {
@@ -83,6 +85,7 @@ public class DescribeConfigurationRecordersRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeConfigurationRecordersRequest withConfigurationRecorderNames(
             String... configurationRecorderNames) {
         if (this.configurationRecorderNames == null) {
@@ -105,6 +108,7 @@ public class DescribeConfigurationRecordersRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeConfigurationRecordersRequest withConfigurationRecorderNames(
             java.util.Collection<String> configurationRecorderNames) {
         setConfigurationRecorderNames(configurationRecorderNames);

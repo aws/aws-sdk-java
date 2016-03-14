@@ -54,6 +54,7 @@ public class VolumeSpecification implements Serializable, Cloneable {
      * @param volumeType
      *        The volume type. Volume types supported are gp2, io1, standard.
      */
+
     public void setVolumeType(String volumeType) {
         this.volumeType = volumeType;
     }
@@ -65,6 +66,7 @@ public class VolumeSpecification implements Serializable, Cloneable {
      * 
      * @return The volume type. Volume types supported are gp2, io1, standard.
      */
+
     public String getVolumeType() {
         return this.volumeType;
     }
@@ -79,6 +81,7 @@ public class VolumeSpecification implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VolumeSpecification withVolumeType(String volumeType) {
         setVolumeType(volumeType);
         return this;
@@ -93,6 +96,7 @@ public class VolumeSpecification implements Serializable, Cloneable {
      *        The number of I/O operations per second (IOPS) that the volume
      *        supports.
      */
+
     public void setIops(Integer iops) {
         this.iops = iops;
     }
@@ -105,6 +109,7 @@ public class VolumeSpecification implements Serializable, Cloneable {
      * @return The number of I/O operations per second (IOPS) that the volume
      *         supports.
      */
+
     public Integer getIops() {
         return this.iops;
     }
@@ -120,6 +125,7 @@ public class VolumeSpecification implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VolumeSpecification withIops(Integer iops) {
         setIops(iops);
         return this;
@@ -136,6 +142,7 @@ public class VolumeSpecification implements Serializable, Cloneable {
      *        1024. If the volume type is EBS-optimized, the minimum value is
      *        10.
      */
+
     public void setSizeInGB(Integer sizeInGB) {
         this.sizeInGB = sizeInGB;
     }
@@ -150,6 +157,7 @@ public class VolumeSpecification implements Serializable, Cloneable {
      *         – 1024. If the volume type is EBS-optimized, the minimum value is
      *         10.
      */
+
     public Integer getSizeInGB() {
         return this.sizeInGB;
     }
@@ -167,6 +175,7 @@ public class VolumeSpecification implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VolumeSpecification withSizeInGB(Integer sizeInGB) {
         setSizeInGB(sizeInGB);
         return this;

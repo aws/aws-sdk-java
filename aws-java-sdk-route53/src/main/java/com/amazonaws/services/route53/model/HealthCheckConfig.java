@@ -149,6 +149,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * @param iPAddress
      *        IP Address of the instance being checked.
      */
+
     public void setIPAddress(String iPAddress) {
         this.iPAddress = iPAddress;
     }
@@ -160,6 +161,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * 
      * @return IP Address of the instance being checked.
      */
+
     public String getIPAddress() {
         return this.iPAddress;
     }
@@ -174,6 +176,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HealthCheckConfig withIPAddress(String iPAddress) {
         setIPAddress(iPAddress);
         return this;
@@ -193,6 +196,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *        is not specified. For HTTPS and HTTPS_STR_MATCH this defaults to
      *        443 if the port is not specified.
      */
+
     public void setPort(Integer port) {
         this.port = port;
     }
@@ -210,6 +214,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *         port is not specified. For HTTPS and HTTPS_STR_MATCH this
      *         defaults to 443 if the port is not specified.
      */
+
     public Integer getPort() {
         return this.port;
     }
@@ -230,6 +235,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HealthCheckConfig withPort(Integer port) {
         setPort(port);
         return this;
@@ -246,6 +252,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *        types are TCP, HTTP, HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH.
      * @see HealthCheckType
      */
+
     public void setType(String type) {
         this.type = type;
     }
@@ -260,6 +267,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *         types are TCP, HTTP, HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH.
      * @see HealthCheckType
      */
+
     public String getType() {
         return this.type;
     }
@@ -277,6 +285,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *         chained together.
      * @see HealthCheckType
      */
+
     public HealthCheckConfig withType(String type) {
         setType(type);
         return this;
@@ -295,6 +304,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *         chained together.
      * @see HealthCheckType
      */
+
     public void setType(HealthCheckType type) {
         this.type = type.toString();
     }
@@ -312,6 +322,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *         chained together.
      * @see HealthCheckType
      */
+
     public HealthCheckConfig withType(HealthCheckType type) {
         setType(type);
         return this;
@@ -330,6 +341,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *        The HTTP request is issued to the instance on the given port and
      *        path.
      */
+
     public void setResourcePath(String resourcePath) {
         this.resourcePath = resourcePath;
     }
@@ -346,6 +358,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *         The HTTP request is issued to the instance on the given port and
      *         path.
      */
+
     public String getResourcePath() {
         return this.resourcePath;
     }
@@ -365,6 +378,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HealthCheckConfig withResourcePath(String resourcePath) {
         setResourcePath(resourcePath);
         return this;
@@ -378,6 +392,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * @param fullyQualifiedDomainName
      *        Fully qualified domain name of the instance to be health checked.
      */
+
     public void setFullyQualifiedDomainName(String fullyQualifiedDomainName) {
         this.fullyQualifiedDomainName = fullyQualifiedDomainName;
     }
@@ -389,6 +404,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * 
      * @return Fully qualified domain name of the instance to be health checked.
      */
+
     public String getFullyQualifiedDomainName() {
         return this.fullyQualifiedDomainName;
     }
@@ -403,6 +419,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HealthCheckConfig withFullyQualifiedDomainName(
             String fullyQualifiedDomainName) {
         setFullyQualifiedDomainName(fullyQualifiedDomainName);
@@ -423,6 +440,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *        Amazon Route 53 considers case when searching for
      *        <code>SearchString</code> in the response body.
      */
+
     public void setSearchString(String searchString) {
         this.searchString = searchString;
     }
@@ -440,6 +458,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *         Amazon Route 53 considers case when searching for
      *         <code>SearchString</code> in the response body.
      */
+
     public String getSearchString() {
         return this.searchString;
     }
@@ -460,6 +479,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HealthCheckConfig withSearchString(String searchString) {
         setSearchString(searchString);
         return this;
@@ -484,6 +504,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *        Each Amazon Route 53 health checker makes requests at this
      *        interval. Valid values are 10 and 30. The default value is 30.
      */
+
     public void setRequestInterval(Integer requestInterval) {
         this.requestInterval = requestInterval;
     }
@@ -506,6 +527,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *         Each Amazon Route 53 health checker makes requests at this
      *         interval. Valid values are 10 and 30. The default value is 30.
      */
+
     public Integer getRequestInterval() {
         return this.requestInterval;
     }
@@ -531,6 +553,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HealthCheckConfig withRequestInterval(Integer requestInterval) {
         setRequestInterval(requestInterval);
         return this;
@@ -558,6 +581,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *        "How Amazon Route 53 Determines Whether an Endpoint Is Healthy" in
      *        the Amazon Route 53 Developer Guide.
      */
+
     public void setFailureThreshold(Integer failureThreshold) {
         this.failureThreshold = failureThreshold;
     }
@@ -583,6 +607,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *         "How Amazon Route 53 Determines Whether an Endpoint Is Healthy"
      *         in the Amazon Route 53 Developer Guide.
      */
+
     public Integer getFailureThreshold() {
         return this.failureThreshold;
     }
@@ -611,6 +636,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HealthCheckConfig withFailureThreshold(Integer failureThreshold) {
         setFailureThreshold(failureThreshold);
         return this;
@@ -630,6 +656,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *        regions and your endpoint and to display CloudWatch latency graphs
      *        in the Amazon Route 53 console.
      */
+
     public void setMeasureLatency(Boolean measureLatency) {
         this.measureLatency = measureLatency;
     }
@@ -647,6 +674,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *         regions and your endpoint and to display CloudWatch latency
      *         graphs in the Amazon Route 53 console.
      */
+
     public Boolean getMeasureLatency() {
         return this.measureLatency;
     }
@@ -667,6 +695,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HealthCheckConfig withMeasureLatency(Boolean measureLatency) {
         setMeasureLatency(measureLatency);
         return this;
@@ -685,6 +714,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *         regions and your endpoint and to display CloudWatch latency
      *         graphs in the Amazon Route 53 console.
      */
+
     public Boolean isMeasureLatency() {
         return this.measureLatency;
     }
@@ -703,6 +733,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *        <code>Inverted</code> is <code>True</code>, then Amazon Route 53
      *        considers the health check to be unhealthy.
      */
+
     public void setInverted(Boolean inverted) {
         this.inverted = inverted;
     }
@@ -720,6 +751,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *         <code>Inverted</code> is <code>True</code>, then Amazon Route 53
      *         considers the health check to be unhealthy.
      */
+
     public Boolean getInverted() {
         return this.inverted;
     }
@@ -740,6 +772,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HealthCheckConfig withInverted(Boolean inverted) {
         setInverted(inverted);
         return this;
@@ -758,6 +791,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *         <code>Inverted</code> is <code>True</code>, then Amazon Route 53
      *         considers the health check to be unhealthy.
      */
+
     public Boolean isInverted() {
         return this.inverted;
     }
@@ -774,6 +808,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *        Amazon Route 53 to consider the parent health check to be healthy.
      *        Valid values are integers between 0 and 256, inclusive.
      */
+
     public void setHealthThreshold(Integer healthThreshold) {
         this.healthThreshold = healthThreshold;
     }
@@ -789,6 +824,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *         for Amazon Route 53 to consider the parent health check to be
      *         healthy. Valid values are integers between 0 and 256, inclusive.
      */
+
     public Integer getHealthThreshold() {
         return this.healthThreshold;
     }
@@ -807,6 +843,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HealthCheckConfig withHealthThreshold(Integer healthThreshold) {
         setHealthThreshold(healthThreshold);
         return this;
@@ -822,6 +859,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *         <code>HealthCheckId</code> values for the associated child health
      *         checks.
      */
+
     public java.util.List<String> getChildHealthChecks() {
         if (childHealthChecks == null) {
             childHealthChecks = new com.amazonaws.internal.SdkInternalList<String>();
@@ -840,6 +878,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *        <code>HealthCheckId</code> values for the associated child health
      *        checks.
      */
+
     public void setChildHealthChecks(
             java.util.Collection<String> childHealthChecks) {
         if (childHealthChecks == null) {
@@ -870,6 +909,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HealthCheckConfig withChildHealthChecks(String... childHealthChecks) {
         if (this.childHealthChecks == null) {
             setChildHealthChecks(new com.amazonaws.internal.SdkInternalList<String>(
@@ -894,6 +934,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HealthCheckConfig withChildHealthChecks(
             java.util.Collection<String> childHealthChecks) {
         setChildHealthChecks(childHealthChecks);
@@ -920,6 +961,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *        <code>HTTPS</code> or <code>HTTPS_STR_MATCH</code> and defaults to
      *        <code>false</code> when <code>Type</code> is any other value.
      */
+
     public void setEnableSNI(Boolean enableSNI) {
         this.enableSNI = enableSNI;
     }
@@ -943,6 +985,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *         <code>HTTPS</code> or <code>HTTPS_STR_MATCH</code> and defaults
      *         to <code>false</code> when <code>Type</code> is any other value.
      */
+
     public Boolean getEnableSNI() {
         return this.enableSNI;
     }
@@ -969,6 +1012,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HealthCheckConfig withEnableSNI(Boolean enableSNI) {
         setEnableSNI(enableSNI);
         return this;
@@ -993,6 +1037,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *         <code>HTTPS</code> or <code>HTTPS_STR_MATCH</code> and defaults
      *         to <code>false</code> when <code>Type</code> is any other value.
      */
+
     public Boolean isEnableSNI() {
         return this.enableSNI;
     }

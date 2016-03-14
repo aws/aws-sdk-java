@@ -46,6 +46,7 @@ public class DescribeVTLDevicesResult implements Serializable, Cloneable {
     /**
      * @param gatewayARN
      */
+
     public void setGatewayARN(String gatewayARN) {
         this.gatewayARN = gatewayARN;
     }
@@ -53,6 +54,7 @@ public class DescribeVTLDevicesResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getGatewayARN() {
         return this.gatewayARN;
     }
@@ -62,6 +64,7 @@ public class DescribeVTLDevicesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVTLDevicesResult withGatewayARN(String gatewayARN) {
         setGatewayARN(gatewayARN);
         return this;
@@ -76,6 +79,7 @@ public class DescribeVTLDevicesResult implements Serializable, Cloneable {
      * @return An array of VTL device objects composed of the Amazon Resource
      *         Name(ARN) of the VTL devices.
      */
+
     public java.util.List<VTLDevice> getVTLDevices() {
         if (vTLDevices == null) {
             vTLDevices = new com.amazonaws.internal.SdkInternalList<VTLDevice>();
@@ -93,6 +97,7 @@ public class DescribeVTLDevicesResult implements Serializable, Cloneable {
      *        An array of VTL device objects composed of the Amazon Resource
      *        Name(ARN) of the VTL devices.
      */
+
     public void setVTLDevices(java.util.Collection<VTLDevice> vTLDevices) {
         if (vTLDevices == null) {
             this.vTLDevices = null;
@@ -121,6 +126,7 @@ public class DescribeVTLDevicesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVTLDevicesResult withVTLDevices(VTLDevice... vTLDevices) {
         if (this.vTLDevices == null) {
             setVTLDevices(new com.amazonaws.internal.SdkInternalList<VTLDevice>(
@@ -144,6 +150,7 @@ public class DescribeVTLDevicesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVTLDevicesResult withVTLDevices(
             java.util.Collection<VTLDevice> vTLDevices) {
         setVTLDevices(vTLDevices);
@@ -165,6 +172,7 @@ public class DescribeVTLDevicesResult implements Serializable, Cloneable {
      *        list. If there are no more VTL devices to describe, this field
      *        does not appear in the response.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -183,6 +191,7 @@ public class DescribeVTLDevicesResult implements Serializable, Cloneable {
      *         list. If there are no more VTL devices to describe, this field
      *         does not appear in the response.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -204,6 +213,7 @@ public class DescribeVTLDevicesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVTLDevicesResult withMarker(String marker) {
         setMarker(marker);
         return this;

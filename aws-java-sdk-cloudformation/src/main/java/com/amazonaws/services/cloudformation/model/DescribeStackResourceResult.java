@@ -43,6 +43,7 @@ public class DescribeStackResourceResult implements Serializable, Cloneable {
      *        A <code>StackResourceDetail</code> structure containing the
      *        description of the specified resource in the specified stack.
      */
+
     public void setStackResourceDetail(StackResourceDetail stackResourceDetail) {
         this.stackResourceDetail = stackResourceDetail;
     }
@@ -56,6 +57,7 @@ public class DescribeStackResourceResult implements Serializable, Cloneable {
      * @return A <code>StackResourceDetail</code> structure containing the
      *         description of the specified resource in the specified stack.
      */
+
     public StackResourceDetail getStackResourceDetail() {
         return this.stackResourceDetail;
     }
@@ -72,6 +74,7 @@ public class DescribeStackResourceResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeStackResourceResult withStackResourceDetail(
             StackResourceDetail stackResourceDetail) {
         setStackResourceDetail(stackResourceDetail);

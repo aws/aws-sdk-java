@@ -50,6 +50,7 @@ public class UpdateAccountResult implements Serializable, Cloneable {
      *        Specifies the Amazon resource name (ARN) of an Amazon CloudWatch
      *        role for the current <a>Account</a> resource.
      */
+
     public void setCloudwatchRoleArn(String cloudwatchRoleArn) {
         this.cloudwatchRoleArn = cloudwatchRoleArn;
     }
@@ -63,6 +64,7 @@ public class UpdateAccountResult implements Serializable, Cloneable {
      * @return Specifies the Amazon resource name (ARN) of an Amazon CloudWatch
      *         role for the current <a>Account</a> resource.
      */
+
     public String getCloudwatchRoleArn() {
         return this.cloudwatchRoleArn;
     }
@@ -79,6 +81,7 @@ public class UpdateAccountResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateAccountResult withCloudwatchRoleArn(String cloudwatchRoleArn) {
         setCloudwatchRoleArn(cloudwatchRoleArn);
         return this;
@@ -94,6 +97,7 @@ public class UpdateAccountResult implements Serializable, Cloneable {
      *        Specifies the application programming interface (API) throttle
      *        settings for the current <a>Account</a> resource.
      */
+
     public void setThrottleSettings(ThrottleSettings throttleSettings) {
         this.throttleSettings = throttleSettings;
     }
@@ -107,6 +111,7 @@ public class UpdateAccountResult implements Serializable, Cloneable {
      * @return Specifies the application programming interface (API) throttle
      *         settings for the current <a>Account</a> resource.
      */
+
     public ThrottleSettings getThrottleSettings() {
         return this.throttleSettings;
     }
@@ -123,6 +128,7 @@ public class UpdateAccountResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateAccountResult withThrottleSettings(
             ThrottleSettings throttleSettings) {
         setThrottleSettings(throttleSettings);

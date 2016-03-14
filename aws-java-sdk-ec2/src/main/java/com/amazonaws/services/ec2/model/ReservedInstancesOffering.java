@@ -116,6 +116,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      * @param reservedInstancesOfferingId
      *        The ID of the Reserved Instance offering.
      */
+
     public void setReservedInstancesOfferingId(
             String reservedInstancesOfferingId) {
         this.reservedInstancesOfferingId = reservedInstancesOfferingId;
@@ -128,6 +129,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      * 
      * @return The ID of the Reserved Instance offering.
      */
+
     public String getReservedInstancesOfferingId() {
         return this.reservedInstancesOfferingId;
     }
@@ -142,6 +144,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReservedInstancesOffering withReservedInstancesOfferingId(
             String reservedInstancesOfferingId) {
         setReservedInstancesOfferingId(reservedInstancesOfferingId);
@@ -157,6 +160,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      *        The instance type on which the Reserved Instance can be used.
      * @see InstanceType
      */
+
     public void setInstanceType(String instanceType) {
         this.instanceType = instanceType;
     }
@@ -169,6 +173,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      * @return The instance type on which the Reserved Instance can be used.
      * @see InstanceType
      */
+
     public String getInstanceType() {
         return this.instanceType;
     }
@@ -184,6 +189,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      *         chained together.
      * @see InstanceType
      */
+
     public ReservedInstancesOffering withInstanceType(String instanceType) {
         setInstanceType(instanceType);
         return this;
@@ -200,6 +206,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      *         chained together.
      * @see InstanceType
      */
+
     public void setInstanceType(InstanceType instanceType) {
         this.instanceType = instanceType.toString();
     }
@@ -215,6 +222,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      *         chained together.
      * @see InstanceType
      */
+
     public ReservedInstancesOffering withInstanceType(InstanceType instanceType) {
         setInstanceType(instanceType);
         return this;
@@ -228,6 +236,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      * @param availabilityZone
      *        The Availability Zone in which the Reserved Instance can be used.
      */
+
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
@@ -239,6 +248,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      * 
      * @return The Availability Zone in which the Reserved Instance can be used.
      */
+
     public String getAvailabilityZone() {
         return this.availabilityZone;
     }
@@ -253,6 +263,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReservedInstancesOffering withAvailabilityZone(
             String availabilityZone) {
         setAvailabilityZone(availabilityZone);
@@ -267,6 +278,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      * @param duration
      *        The duration of the Reserved Instance, in seconds.
      */
+
     public void setDuration(Long duration) {
         this.duration = duration;
     }
@@ -278,6 +290,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      * 
      * @return The duration of the Reserved Instance, in seconds.
      */
+
     public Long getDuration() {
         return this.duration;
     }
@@ -292,6 +305,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReservedInstancesOffering withDuration(Long duration) {
         setDuration(duration);
         return this;
@@ -305,6 +319,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      * @param usagePrice
      *        The usage price of the Reserved Instance, per hour.
      */
+
     public void setUsagePrice(Float usagePrice) {
         this.usagePrice = usagePrice;
     }
@@ -316,6 +331,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      * 
      * @return The usage price of the Reserved Instance, per hour.
      */
+
     public Float getUsagePrice() {
         return this.usagePrice;
     }
@@ -330,6 +346,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReservedInstancesOffering withUsagePrice(Float usagePrice) {
         setUsagePrice(usagePrice);
         return this;
@@ -343,6 +360,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      * @param fixedPrice
      *        The purchase price of the Reserved Instance.
      */
+
     public void setFixedPrice(Float fixedPrice) {
         this.fixedPrice = fixedPrice;
     }
@@ -354,6 +372,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      * 
      * @return The purchase price of the Reserved Instance.
      */
+
     public Float getFixedPrice() {
         return this.fixedPrice;
     }
@@ -368,6 +387,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReservedInstancesOffering withFixedPrice(Float fixedPrice) {
         setFixedPrice(fixedPrice);
         return this;
@@ -382,6 +402,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      *        The Reserved Instance product platform description.
      * @see RIProductDescription
      */
+
     public void setProductDescription(String productDescription) {
         this.productDescription = productDescription;
     }
@@ -394,6 +415,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      * @return The Reserved Instance product platform description.
      * @see RIProductDescription
      */
+
     public String getProductDescription() {
         return this.productDescription;
     }
@@ -409,6 +431,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      *         chained together.
      * @see RIProductDescription
      */
+
     public ReservedInstancesOffering withProductDescription(
             String productDescription) {
         setProductDescription(productDescription);
@@ -426,6 +449,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      *         chained together.
      * @see RIProductDescription
      */
+
     public void setProductDescription(RIProductDescription productDescription) {
         this.productDescription = productDescription.toString();
     }
@@ -441,6 +465,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      *         chained together.
      * @see RIProductDescription
      */
+
     public ReservedInstancesOffering withProductDescription(
             RIProductDescription productDescription) {
         setProductDescription(productDescription);
@@ -456,6 +481,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      *        The tenancy of the instance.
      * @see Tenancy
      */
+
     public void setInstanceTenancy(String instanceTenancy) {
         this.instanceTenancy = instanceTenancy;
     }
@@ -468,6 +494,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      * @return The tenancy of the instance.
      * @see Tenancy
      */
+
     public String getInstanceTenancy() {
         return this.instanceTenancy;
     }
@@ -483,6 +510,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      *         chained together.
      * @see Tenancy
      */
+
     public ReservedInstancesOffering withInstanceTenancy(String instanceTenancy) {
         setInstanceTenancy(instanceTenancy);
         return this;
@@ -499,6 +527,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      *         chained together.
      * @see Tenancy
      */
+
     public void setInstanceTenancy(Tenancy instanceTenancy) {
         this.instanceTenancy = instanceTenancy.toString();
     }
@@ -514,6 +543,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      *         chained together.
      * @see Tenancy
      */
+
     public ReservedInstancesOffering withInstanceTenancy(Tenancy instanceTenancy) {
         setInstanceTenancy(instanceTenancy);
         return this;
@@ -532,6 +562,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      *        time, the only supported currency is <code>USD</code>.
      * @see CurrencyCodeValues
      */
+
     public void setCurrencyCode(String currencyCode) {
         this.currencyCode = currencyCode;
     }
@@ -549,6 +580,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      *         <code>USD</code>.
      * @see CurrencyCodeValues
      */
+
     public String getCurrencyCode() {
         return this.currencyCode;
     }
@@ -568,6 +600,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      *         chained together.
      * @see CurrencyCodeValues
      */
+
     public ReservedInstancesOffering withCurrencyCode(String currencyCode) {
         setCurrencyCode(currencyCode);
         return this;
@@ -588,6 +621,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      *         chained together.
      * @see CurrencyCodeValues
      */
+
     public void setCurrencyCode(CurrencyCodeValues currencyCode) {
         this.currencyCode = currencyCode.toString();
     }
@@ -607,6 +641,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      *         chained together.
      * @see CurrencyCodeValues
      */
+
     public ReservedInstancesOffering withCurrencyCode(
             CurrencyCodeValues currencyCode) {
         setCurrencyCode(currencyCode);
@@ -622,6 +657,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      *        The Reserved Instance offering type.
      * @see OfferingTypeValues
      */
+
     public void setOfferingType(String offeringType) {
         this.offeringType = offeringType;
     }
@@ -634,6 +670,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      * @return The Reserved Instance offering type.
      * @see OfferingTypeValues
      */
+
     public String getOfferingType() {
         return this.offeringType;
     }
@@ -649,6 +686,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      *         chained together.
      * @see OfferingTypeValues
      */
+
     public ReservedInstancesOffering withOfferingType(String offeringType) {
         setOfferingType(offeringType);
         return this;
@@ -665,6 +703,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      *         chained together.
      * @see OfferingTypeValues
      */
+
     public void setOfferingType(OfferingTypeValues offeringType) {
         this.offeringType = offeringType.toString();
     }
@@ -680,6 +719,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      *         chained together.
      * @see OfferingTypeValues
      */
+
     public ReservedInstancesOffering withOfferingType(
             OfferingTypeValues offeringType) {
         setOfferingType(offeringType);
@@ -693,6 +733,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      * 
      * @return The recurring charge tag assigned to the resource.
      */
+
     public java.util.List<RecurringCharge> getRecurringCharges() {
         if (recurringCharges == null) {
             recurringCharges = new com.amazonaws.internal.SdkInternalList<RecurringCharge>();
@@ -708,6 +749,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      * @param recurringCharges
      *        The recurring charge tag assigned to the resource.
      */
+
     public void setRecurringCharges(
             java.util.Collection<RecurringCharge> recurringCharges) {
         if (recurringCharges == null) {
@@ -735,6 +777,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReservedInstancesOffering withRecurringCharges(
             RecurringCharge... recurringCharges) {
         if (this.recurringCharges == null) {
@@ -757,6 +800,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReservedInstancesOffering withRecurringCharges(
             java.util.Collection<RecurringCharge> recurringCharges) {
         setRecurringCharges(recurringCharges);
@@ -775,6 +819,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      *        Instance Marketplace (resale) or AWS. If it's a Reserved Instance
      *        Marketplace offering, this is <code>true</code>.
      */
+
     public void setMarketplace(Boolean marketplace) {
         this.marketplace = marketplace;
     }
@@ -790,6 +835,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      *         Instance Marketplace (resale) or AWS. If it's a Reserved Instance
      *         Marketplace offering, this is <code>true</code>.
      */
+
     public Boolean getMarketplace() {
         return this.marketplace;
     }
@@ -808,6 +854,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReservedInstancesOffering withMarketplace(Boolean marketplace) {
         setMarketplace(marketplace);
         return this;
@@ -824,6 +871,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      *         Instance Marketplace (resale) or AWS. If it's a Reserved Instance
      *         Marketplace offering, this is <code>true</code>.
      */
+
     public Boolean isMarketplace() {
         return this.marketplace;
     }
@@ -835,6 +883,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      * 
      * @return The pricing details of the Reserved Instance offering.
      */
+
     public java.util.List<PricingDetail> getPricingDetails() {
         if (pricingDetails == null) {
             pricingDetails = new com.amazonaws.internal.SdkInternalList<PricingDetail>();
@@ -850,6 +899,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      * @param pricingDetails
      *        The pricing details of the Reserved Instance offering.
      */
+
     public void setPricingDetails(
             java.util.Collection<PricingDetail> pricingDetails) {
         if (pricingDetails == null) {
@@ -877,6 +927,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReservedInstancesOffering withPricingDetails(
             PricingDetail... pricingDetails) {
         if (this.pricingDetails == null) {
@@ -899,6 +950,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReservedInstancesOffering withPricingDetails(
             java.util.Collection<PricingDetail> pricingDetails) {
         setPricingDetails(pricingDetails);

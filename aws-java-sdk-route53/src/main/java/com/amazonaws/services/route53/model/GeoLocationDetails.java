@@ -83,6 +83,7 @@ public class GeoLocationDetails implements Serializable, Cloneable {
      *        The code for a continent geo location. Note: only continent
      *        locations have a continent code.
      */
+
     public void setContinentCode(String continentCode) {
         this.continentCode = continentCode;
     }
@@ -96,6 +97,7 @@ public class GeoLocationDetails implements Serializable, Cloneable {
      * @return The code for a continent geo location. Note: only continent
      *         locations have a continent code.
      */
+
     public String getContinentCode() {
         return this.continentCode;
     }
@@ -112,6 +114,7 @@ public class GeoLocationDetails implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GeoLocationDetails withContinentCode(String continentCode) {
         setContinentCode(continentCode);
         return this;
@@ -127,6 +130,7 @@ public class GeoLocationDetails implements Serializable, Cloneable {
      *        The name of the continent. This element is only present if
      *        <code>ContinentCode</code> is also present.
      */
+
     public void setContinentName(String continentName) {
         this.continentName = continentName;
     }
@@ -140,6 +144,7 @@ public class GeoLocationDetails implements Serializable, Cloneable {
      * @return The name of the continent. This element is only present if
      *         <code>ContinentCode</code> is also present.
      */
+
     public String getContinentName() {
         return this.continentName;
     }
@@ -156,6 +161,7 @@ public class GeoLocationDetails implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GeoLocationDetails withContinentName(String continentName) {
         setContinentName(continentName);
         return this;
@@ -181,6 +187,7 @@ public class GeoLocationDetails implements Serializable, Cloneable {
      *        code. All other country codes follow the ISO 3166 two-character
      *        code.
      */
+
     public void setCountryCode(String countryCode) {
         this.countryCode = countryCode;
     }
@@ -204,6 +211,7 @@ public class GeoLocationDetails implements Serializable, Cloneable {
      *         code. All other country codes follow the ISO 3166 two-character
      *         code.
      */
+
     public String getCountryCode() {
         return this.countryCode;
     }
@@ -230,6 +238,7 @@ public class GeoLocationDetails implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GeoLocationDetails withCountryCode(String countryCode) {
         setCountryCode(countryCode);
         return this;
@@ -245,6 +254,7 @@ public class GeoLocationDetails implements Serializable, Cloneable {
      *        The name of the country. This element is only present if
      *        <code>CountryCode</code> is also present.
      */
+
     public void setCountryName(String countryName) {
         this.countryName = countryName;
     }
@@ -258,6 +268,7 @@ public class GeoLocationDetails implements Serializable, Cloneable {
      * @return The name of the country. This element is only present if
      *         <code>CountryCode</code> is also present.
      */
+
     public String getCountryName() {
         return this.countryName;
     }
@@ -274,6 +285,7 @@ public class GeoLocationDetails implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GeoLocationDetails withCountryName(String countryName) {
         setCountryName(countryName);
         return this;
@@ -290,6 +302,7 @@ public class GeoLocationDetails implements Serializable, Cloneable {
      *        A subdivision code is only valid with the appropriate country
      *        code.
      */
+
     public void setSubdivisionCode(String subdivisionCode) {
         this.subdivisionCode = subdivisionCode;
     }
@@ -304,6 +317,7 @@ public class GeoLocationDetails implements Serializable, Cloneable {
      *         Canada). A subdivision code is only valid with the appropriate
      *         country code.
      */
+
     public String getSubdivisionCode() {
         return this.subdivisionCode;
     }
@@ -321,6 +335,7 @@ public class GeoLocationDetails implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GeoLocationDetails withSubdivisionCode(String subdivisionCode) {
         setSubdivisionCode(subdivisionCode);
         return this;
@@ -336,6 +351,7 @@ public class GeoLocationDetails implements Serializable, Cloneable {
      *        The name of the subdivision. This element is only present if
      *        <code>SubdivisionCode</code> is also present.
      */
+
     public void setSubdivisionName(String subdivisionName) {
         this.subdivisionName = subdivisionName;
     }
@@ -349,6 +365,7 @@ public class GeoLocationDetails implements Serializable, Cloneable {
      * @return The name of the subdivision. This element is only present if
      *         <code>SubdivisionCode</code> is also present.
      */
+
     public String getSubdivisionName() {
         return this.subdivisionName;
     }
@@ -365,6 +382,7 @@ public class GeoLocationDetails implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GeoLocationDetails withSubdivisionName(String subdivisionName) {
         setSubdivisionName(subdivisionName);
         return this;

@@ -52,6 +52,7 @@ public class ClusterTimeline implements Serializable, Cloneable {
      * @param creationDateTime
      *        The creation date and time of the cluster.
      */
+
     public void setCreationDateTime(java.util.Date creationDateTime) {
         this.creationDateTime = creationDateTime;
     }
@@ -63,6 +64,7 @@ public class ClusterTimeline implements Serializable, Cloneable {
      * 
      * @return The creation date and time of the cluster.
      */
+
     public java.util.Date getCreationDateTime() {
         return this.creationDateTime;
     }
@@ -77,6 +79,7 @@ public class ClusterTimeline implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ClusterTimeline withCreationDateTime(java.util.Date creationDateTime) {
         setCreationDateTime(creationDateTime);
         return this;
@@ -90,6 +93,7 @@ public class ClusterTimeline implements Serializable, Cloneable {
      * @param readyDateTime
      *        The date and time when the cluster was ready to execute steps.
      */
+
     public void setReadyDateTime(java.util.Date readyDateTime) {
         this.readyDateTime = readyDateTime;
     }
@@ -101,6 +105,7 @@ public class ClusterTimeline implements Serializable, Cloneable {
      * 
      * @return The date and time when the cluster was ready to execute steps.
      */
+
     public java.util.Date getReadyDateTime() {
         return this.readyDateTime;
     }
@@ -115,6 +120,7 @@ public class ClusterTimeline implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ClusterTimeline withReadyDateTime(java.util.Date readyDateTime) {
         setReadyDateTime(readyDateTime);
         return this;
@@ -128,6 +134,7 @@ public class ClusterTimeline implements Serializable, Cloneable {
      * @param endDateTime
      *        The date and time when the cluster was terminated.
      */
+
     public void setEndDateTime(java.util.Date endDateTime) {
         this.endDateTime = endDateTime;
     }
@@ -139,6 +146,7 @@ public class ClusterTimeline implements Serializable, Cloneable {
      * 
      * @return The date and time when the cluster was terminated.
      */
+
     public java.util.Date getEndDateTime() {
         return this.endDateTime;
     }
@@ -153,6 +161,7 @@ public class ClusterTimeline implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ClusterTimeline withEndDateTime(java.util.Date endDateTime) {
         setEndDateTime(endDateTime);
         return this;

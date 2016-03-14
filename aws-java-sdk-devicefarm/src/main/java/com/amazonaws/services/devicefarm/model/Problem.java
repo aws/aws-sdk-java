@@ -116,6 +116,7 @@ public class Problem implements Serializable, Cloneable {
      * @param run
      *        Information about the associated run.
      */
+
     public void setRun(ProblemDetail run) {
         this.run = run;
     }
@@ -127,6 +128,7 @@ public class Problem implements Serializable, Cloneable {
      * 
      * @return Information about the associated run.
      */
+
     public ProblemDetail getRun() {
         return this.run;
     }
@@ -141,6 +143,7 @@ public class Problem implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Problem withRun(ProblemDetail run) {
         setRun(run);
         return this;
@@ -154,6 +157,7 @@ public class Problem implements Serializable, Cloneable {
      * @param job
      *        Information about the associated job.
      */
+
     public void setJob(ProblemDetail job) {
         this.job = job;
     }
@@ -165,6 +169,7 @@ public class Problem implements Serializable, Cloneable {
      * 
      * @return Information about the associated job.
      */
+
     public ProblemDetail getJob() {
         return this.job;
     }
@@ -179,6 +184,7 @@ public class Problem implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Problem withJob(ProblemDetail job) {
         setJob(job);
         return this;
@@ -192,6 +198,7 @@ public class Problem implements Serializable, Cloneable {
      * @param suite
      *        Information about the associated suite.
      */
+
     public void setSuite(ProblemDetail suite) {
         this.suite = suite;
     }
@@ -203,6 +210,7 @@ public class Problem implements Serializable, Cloneable {
      * 
      * @return Information about the associated suite.
      */
+
     public ProblemDetail getSuite() {
         return this.suite;
     }
@@ -217,6 +225,7 @@ public class Problem implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Problem withSuite(ProblemDetail suite) {
         setSuite(suite);
         return this;
@@ -230,6 +239,7 @@ public class Problem implements Serializable, Cloneable {
      * @param test
      *        Information about the associated test.
      */
+
     public void setTest(ProblemDetail test) {
         this.test = test;
     }
@@ -241,6 +251,7 @@ public class Problem implements Serializable, Cloneable {
      * 
      * @return Information about the associated test.
      */
+
     public ProblemDetail getTest() {
         return this.test;
     }
@@ -255,6 +266,7 @@ public class Problem implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Problem withTest(ProblemDetail test) {
         setTest(test);
         return this;
@@ -268,6 +280,7 @@ public class Problem implements Serializable, Cloneable {
      * @param device
      *        Information about the associated device.
      */
+
     public void setDevice(Device device) {
         this.device = device;
     }
@@ -279,6 +292,7 @@ public class Problem implements Serializable, Cloneable {
      * 
      * @return Information about the associated device.
      */
+
     public Device getDevice() {
         return this.device;
     }
@@ -293,6 +307,7 @@ public class Problem implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Problem withDevice(Device device) {
         setDevice(device);
         return this;
@@ -386,6 +401,7 @@ public class Problem implements Serializable, Cloneable {
      *        </li>
      * @see ExecutionResult
      */
+
     public void setResult(String result) {
         this.result = result;
     }
@@ -477,6 +493,7 @@ public class Problem implements Serializable, Cloneable {
      *         </li>
      * @see ExecutionResult
      */
+
     public String getResult() {
         return this.result;
     }
@@ -571,6 +588,7 @@ public class Problem implements Serializable, Cloneable {
      *         chained together.
      * @see ExecutionResult
      */
+
     public Problem withResult(String result) {
         setResult(result);
         return this;
@@ -666,6 +684,7 @@ public class Problem implements Serializable, Cloneable {
      *         chained together.
      * @see ExecutionResult
      */
+
     public void setResult(ExecutionResult result) {
         this.result = result.toString();
     }
@@ -760,6 +779,7 @@ public class Problem implements Serializable, Cloneable {
      *         chained together.
      * @see ExecutionResult
      */
+
     public Problem withResult(ExecutionResult result) {
         setResult(result);
         return this;
@@ -773,6 +793,7 @@ public class Problem implements Serializable, Cloneable {
      * @param message
      *        A message about the problem's result.
      */
+
     public void setMessage(String message) {
         this.message = message;
     }
@@ -784,6 +805,7 @@ public class Problem implements Serializable, Cloneable {
      * 
      * @return A message about the problem's result.
      */
+
     public String getMessage() {
         return this.message;
     }
@@ -798,6 +820,7 @@ public class Problem implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Problem withMessage(String message) {
         setMessage(message);
         return this;

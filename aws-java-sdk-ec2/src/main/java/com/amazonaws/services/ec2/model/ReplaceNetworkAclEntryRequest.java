@@ -91,6 +91,7 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest
      * @param networkAclId
      *        The ID of the ACL.
      */
+
     public void setNetworkAclId(String networkAclId) {
         this.networkAclId = networkAclId;
     }
@@ -102,6 +103,7 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the ACL.
      */
+
     public String getNetworkAclId() {
         return this.networkAclId;
     }
@@ -116,6 +118,7 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReplaceNetworkAclEntryRequest withNetworkAclId(String networkAclId) {
         setNetworkAclId(networkAclId);
         return this;
@@ -129,6 +132,7 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest
      * @param ruleNumber
      *        The rule number of the entry to replace.
      */
+
     public void setRuleNumber(Integer ruleNumber) {
         this.ruleNumber = ruleNumber;
     }
@@ -140,6 +144,7 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest
      * 
      * @return The rule number of the entry to replace.
      */
+
     public Integer getRuleNumber() {
         return this.ruleNumber;
     }
@@ -154,6 +159,7 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReplaceNetworkAclEntryRequest withRuleNumber(Integer ruleNumber) {
         setRuleNumber(ruleNumber);
         return this;
@@ -169,6 +175,7 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest
      *        The IP protocol. You can specify <code>all</code> or
      *        <code>-1</code> to mean all protocols.
      */
+
     public void setProtocol(String protocol) {
         this.protocol = protocol;
     }
@@ -182,6 +189,7 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest
      * @return The IP protocol. You can specify <code>all</code> or
      *         <code>-1</code> to mean all protocols.
      */
+
     public String getProtocol() {
         return this.protocol;
     }
@@ -198,6 +206,7 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReplaceNetworkAclEntryRequest withProtocol(String protocol) {
         setProtocol(protocol);
         return this;
@@ -213,6 +222,7 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest
      *        rule.
      * @see RuleAction
      */
+
     public void setRuleAction(String ruleAction) {
         this.ruleAction = ruleAction;
     }
@@ -226,6 +236,7 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest
      *         rule.
      * @see RuleAction
      */
+
     public String getRuleAction() {
         return this.ruleAction;
     }
@@ -242,6 +253,7 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see RuleAction
      */
+
     public ReplaceNetworkAclEntryRequest withRuleAction(String ruleAction) {
         setRuleAction(ruleAction);
         return this;
@@ -259,6 +271,7 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see RuleAction
      */
+
     public void setRuleAction(RuleAction ruleAction) {
         this.ruleAction = ruleAction.toString();
     }
@@ -275,6 +288,7 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see RuleAction
      */
+
     public ReplaceNetworkAclEntryRequest withRuleAction(RuleAction ruleAction) {
         setRuleAction(ruleAction);
         return this;
@@ -293,6 +307,7 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest
      *        <p>
      *        Default: If no value is specified, we replace the ingress rule.
      */
+
     public void setEgress(Boolean egress) {
         this.egress = egress;
     }
@@ -309,6 +324,7 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest
      *         <p>
      *         Default: If no value is specified, we replace the ingress rule.
      */
+
     public Boolean getEgress() {
         return this.egress;
     }
@@ -328,6 +344,7 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReplaceNetworkAclEntryRequest withEgress(Boolean egress) {
         setEgress(egress);
         return this;
@@ -345,6 +362,7 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest
      *         <p>
      *         Default: If no value is specified, we replace the ingress rule.
      */
+
     public Boolean isEgress() {
         return this.egress;
     }
@@ -357,6 +375,7 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest
      * @param cidrBlock
      *        The network range to allow or deny, in CIDR notation.
      */
+
     public void setCidrBlock(String cidrBlock) {
         this.cidrBlock = cidrBlock;
     }
@@ -368,6 +387,7 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest
      * 
      * @return The network range to allow or deny, in CIDR notation.
      */
+
     public String getCidrBlock() {
         return this.cidrBlock;
     }
@@ -382,6 +402,7 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReplaceNetworkAclEntryRequest withCidrBlock(String cidrBlock) {
         setCidrBlock(cidrBlock);
         return this;
@@ -397,6 +418,7 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest
      *        ICMP protocol: The ICMP type and code. Required if specifying 1
      *        (ICMP) for the protocol.
      */
+
     public void setIcmpTypeCode(IcmpTypeCode icmpTypeCode) {
         this.icmpTypeCode = icmpTypeCode;
     }
@@ -410,6 +432,7 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest
      * @return ICMP protocol: The ICMP type and code. Required if specifying 1
      *         (ICMP) for the protocol.
      */
+
     public IcmpTypeCode getIcmpTypeCode() {
         return this.icmpTypeCode;
     }
@@ -426,6 +449,7 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReplaceNetworkAclEntryRequest withIcmpTypeCode(
             IcmpTypeCode icmpTypeCode) {
         setIcmpTypeCode(icmpTypeCode);
@@ -442,6 +466,7 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest
      *        TCP or UDP protocols: The range of ports the rule applies to.
      *        Required if specifying 6 (TCP) or 17 (UDP) for the protocol.
      */
+
     public void setPortRange(PortRange portRange) {
         this.portRange = portRange;
     }
@@ -455,6 +480,7 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest
      * @return TCP or UDP protocols: The range of ports the rule applies to.
      *         Required if specifying 6 (TCP) or 17 (UDP) for the protocol.
      */
+
     public PortRange getPortRange() {
         return this.portRange;
     }
@@ -471,6 +497,7 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReplaceNetworkAclEntryRequest withPortRange(PortRange portRange) {
         setPortRange(portRange);
         return this;

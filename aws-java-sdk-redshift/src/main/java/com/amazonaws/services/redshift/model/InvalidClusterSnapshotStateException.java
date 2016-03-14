@@ -18,8 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The state of the cluster snapshot is not <code>available</code> , or
- * other accounts are authorized to access the snapshot.
+ * The specified cluster snapshot is not in the <code>available</code>
+ * state, or other accounts are authorized to access the snapshot.
  * </p>
  */        
 public class InvalidClusterSnapshotStateException extends AmazonServiceException {

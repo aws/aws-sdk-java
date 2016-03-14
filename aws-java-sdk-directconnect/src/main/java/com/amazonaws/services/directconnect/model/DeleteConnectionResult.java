@@ -58,6 +58,7 @@ public class DeleteConnectionResult implements Serializable, Cloneable {
     /**
      * @param ownerAccount
      */
+
     public void setOwnerAccount(String ownerAccount) {
         this.ownerAccount = ownerAccount;
     }
@@ -65,6 +66,7 @@ public class DeleteConnectionResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getOwnerAccount() {
         return this.ownerAccount;
     }
@@ -74,6 +76,7 @@ public class DeleteConnectionResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteConnectionResult withOwnerAccount(String ownerAccount) {
         setOwnerAccount(ownerAccount);
         return this;
@@ -82,6 +85,7 @@ public class DeleteConnectionResult implements Serializable, Cloneable {
     /**
      * @param connectionId
      */
+
     public void setConnectionId(String connectionId) {
         this.connectionId = connectionId;
     }
@@ -89,6 +93,7 @@ public class DeleteConnectionResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getConnectionId() {
         return this.connectionId;
     }
@@ -98,6 +103,7 @@ public class DeleteConnectionResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteConnectionResult withConnectionId(String connectionId) {
         setConnectionId(connectionId);
         return this;
@@ -106,6 +112,7 @@ public class DeleteConnectionResult implements Serializable, Cloneable {
     /**
      * @param connectionName
      */
+
     public void setConnectionName(String connectionName) {
         this.connectionName = connectionName;
     }
@@ -113,6 +120,7 @@ public class DeleteConnectionResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getConnectionName() {
         return this.connectionName;
     }
@@ -122,6 +130,7 @@ public class DeleteConnectionResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteConnectionResult withConnectionName(String connectionName) {
         setConnectionName(connectionName);
         return this;
@@ -131,6 +140,7 @@ public class DeleteConnectionResult implements Serializable, Cloneable {
      * @param connectionState
      * @see ConnectionState
      */
+
     public void setConnectionState(String connectionState) {
         this.connectionState = connectionState;
     }
@@ -139,6 +149,7 @@ public class DeleteConnectionResult implements Serializable, Cloneable {
      * @return
      * @see ConnectionState
      */
+
     public String getConnectionState() {
         return this.connectionState;
     }
@@ -149,6 +160,7 @@ public class DeleteConnectionResult implements Serializable, Cloneable {
      *         chained together.
      * @see ConnectionState
      */
+
     public DeleteConnectionResult withConnectionState(String connectionState) {
         setConnectionState(connectionState);
         return this;
@@ -160,6 +172,7 @@ public class DeleteConnectionResult implements Serializable, Cloneable {
      *         chained together.
      * @see ConnectionState
      */
+
     public void setConnectionState(ConnectionState connectionState) {
         this.connectionState = connectionState.toString();
     }
@@ -170,6 +183,7 @@ public class DeleteConnectionResult implements Serializable, Cloneable {
      *         chained together.
      * @see ConnectionState
      */
+
     public DeleteConnectionResult withConnectionState(
             ConnectionState connectionState) {
         setConnectionState(connectionState);
@@ -179,6 +193,7 @@ public class DeleteConnectionResult implements Serializable, Cloneable {
     /**
      * @param region
      */
+
     public void setRegion(String region) {
         this.region = region;
     }
@@ -186,6 +201,7 @@ public class DeleteConnectionResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getRegion() {
         return this.region;
     }
@@ -195,6 +211,7 @@ public class DeleteConnectionResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteConnectionResult withRegion(String region) {
         setRegion(region);
         return this;
@@ -203,6 +220,7 @@ public class DeleteConnectionResult implements Serializable, Cloneable {
     /**
      * @param location
      */
+
     public void setLocation(String location) {
         this.location = location;
     }
@@ -210,6 +228,7 @@ public class DeleteConnectionResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getLocation() {
         return this.location;
     }
@@ -219,6 +238,7 @@ public class DeleteConnectionResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteConnectionResult withLocation(String location) {
         setLocation(location);
         return this;
@@ -245,6 +265,7 @@ public class DeleteConnectionResult implements Serializable, Cloneable {
      *        <p>
      *        Default: None
      */
+
     public void setBandwidth(String bandwidth) {
         this.bandwidth = bandwidth;
     }
@@ -269,6 +290,7 @@ public class DeleteConnectionResult implements Serializable, Cloneable {
      *         <p>
      *         Default: None
      */
+
     public String getBandwidth() {
         return this.bandwidth;
     }
@@ -296,6 +318,7 @@ public class DeleteConnectionResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteConnectionResult withBandwidth(String bandwidth) {
         setBandwidth(bandwidth);
         return this;
@@ -304,6 +327,7 @@ public class DeleteConnectionResult implements Serializable, Cloneable {
     /**
      * @param vlan
      */
+
     public void setVlan(Integer vlan) {
         this.vlan = vlan;
     }
@@ -311,6 +335,7 @@ public class DeleteConnectionResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Integer getVlan() {
         return this.vlan;
     }
@@ -320,6 +345,7 @@ public class DeleteConnectionResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteConnectionResult withVlan(Integer vlan) {
         setVlan(vlan);
         return this;
@@ -328,6 +354,7 @@ public class DeleteConnectionResult implements Serializable, Cloneable {
     /**
      * @param partnerName
      */
+
     public void setPartnerName(String partnerName) {
         this.partnerName = partnerName;
     }
@@ -335,6 +362,7 @@ public class DeleteConnectionResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getPartnerName() {
         return this.partnerName;
     }
@@ -344,6 +372,7 @@ public class DeleteConnectionResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteConnectionResult withPartnerName(String partnerName) {
         setPartnerName(partnerName);
         return this;

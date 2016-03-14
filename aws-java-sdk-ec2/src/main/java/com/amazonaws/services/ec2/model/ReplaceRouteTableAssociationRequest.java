@@ -49,6 +49,7 @@ public class ReplaceRouteTableAssociationRequest extends
      * @param associationId
      *        The association ID.
      */
+
     public void setAssociationId(String associationId) {
         this.associationId = associationId;
     }
@@ -60,6 +61,7 @@ public class ReplaceRouteTableAssociationRequest extends
      * 
      * @return The association ID.
      */
+
     public String getAssociationId() {
         return this.associationId;
     }
@@ -74,6 +76,7 @@ public class ReplaceRouteTableAssociationRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReplaceRouteTableAssociationRequest withAssociationId(
             String associationId) {
         setAssociationId(associationId);
@@ -88,6 +91,7 @@ public class ReplaceRouteTableAssociationRequest extends
      * @param routeTableId
      *        The ID of the new route table to associate with the subnet.
      */
+
     public void setRouteTableId(String routeTableId) {
         this.routeTableId = routeTableId;
     }
@@ -99,6 +103,7 @@ public class ReplaceRouteTableAssociationRequest extends
      * 
      * @return The ID of the new route table to associate with the subnet.
      */
+
     public String getRouteTableId() {
         return this.routeTableId;
     }
@@ -113,6 +118,7 @@ public class ReplaceRouteTableAssociationRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReplaceRouteTableAssociationRequest withRouteTableId(
             String routeTableId) {
         setRouteTableId(routeTableId);

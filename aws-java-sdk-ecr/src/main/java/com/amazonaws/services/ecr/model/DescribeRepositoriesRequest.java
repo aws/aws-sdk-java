@@ -80,6 +80,7 @@ public class DescribeRepositoriesRequest extends AmazonWebServiceRequest
      *        repositories to be described. If you do not specify a registry,
      *        the default registry is assumed.
      */
+
     public void setRegistryId(String registryId) {
         this.registryId = registryId;
     }
@@ -95,6 +96,7 @@ public class DescribeRepositoriesRequest extends AmazonWebServiceRequest
      *         repositories to be described. If you do not specify a registry,
      *         the default registry is assumed.
      */
+
     public String getRegistryId() {
         return this.registryId;
     }
@@ -113,6 +115,7 @@ public class DescribeRepositoriesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeRepositoriesRequest withRegistryId(String registryId) {
         setRegistryId(registryId);
         return this;
@@ -127,6 +130,7 @@ public class DescribeRepositoriesRequest extends AmazonWebServiceRequest
      * @return A list of repositories to describe. If this parameter is omitted,
      *         then all repositories in a registry are described.
      */
+
     public java.util.List<String> getRepositoryNames() {
         return repositoryNames;
     }
@@ -141,6 +145,7 @@ public class DescribeRepositoriesRequest extends AmazonWebServiceRequest
      *        A list of repositories to describe. If this parameter is omitted,
      *        then all repositories in a registry are described.
      */
+
     public void setRepositoryNames(java.util.Collection<String> repositoryNames) {
         if (repositoryNames == null) {
             this.repositoryNames = null;
@@ -168,6 +173,7 @@ public class DescribeRepositoriesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeRepositoriesRequest withRepositoryNames(
             String... repositoryNames) {
         if (this.repositoryNames == null) {
@@ -192,6 +198,7 @@ public class DescribeRepositoriesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeRepositoriesRequest withRepositoryNames(
             java.util.Collection<String> repositoryNames) {
         setRepositoryNames(repositoryNames);
@@ -217,6 +224,7 @@ public class DescribeRepositoriesRequest extends AmazonWebServiceRequest
      *        This value is <code>null</code> when there are no more results to
      *        return.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -239,6 +247,7 @@ public class DescribeRepositoriesRequest extends AmazonWebServiceRequest
      *         This value is <code>null</code> when there are no more results to
      *         return.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -264,6 +273,7 @@ public class DescribeRepositoriesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeRepositoriesRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -297,6 +307,7 @@ public class DescribeRepositoriesRequest extends AmazonWebServiceRequest
      *        <code>DescribeRepositories</code> returns up to 100 results and a
      *        <code>nextToken</code> value, if applicable.
      */
+
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
     }
@@ -328,6 +339,7 @@ public class DescribeRepositoriesRequest extends AmazonWebServiceRequest
      *         <code>DescribeRepositories</code> returns up to 100 results and a
      *         <code>nextToken</code> value, if applicable.
      */
+
     public Integer getMaxResults() {
         return this.maxResults;
     }
@@ -362,6 +374,7 @@ public class DescribeRepositoriesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeRepositoriesRequest withMaxResults(Integer maxResults) {
         setMaxResults(maxResults);
         return this;

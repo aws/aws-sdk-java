@@ -30,6 +30,7 @@ public class GetClientCertificatesResult implements Serializable, Cloneable {
     /**
      * @param position
      */
+
     public void setPosition(String position) {
         this.position = position;
     }
@@ -37,6 +38,7 @@ public class GetClientCertificatesResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getPosition() {
         return this.position;
     }
@@ -46,6 +48,7 @@ public class GetClientCertificatesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetClientCertificatesResult withPosition(String position) {
         setPosition(position);
         return this;
@@ -54,6 +57,7 @@ public class GetClientCertificatesResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public java.util.List<ClientCertificate> getItems() {
         return items;
     }
@@ -61,6 +65,7 @@ public class GetClientCertificatesResult implements Serializable, Cloneable {
     /**
      * @param items
      */
+
     public void setItems(java.util.Collection<ClientCertificate> items) {
         if (items == null) {
             this.items = null;
@@ -82,6 +87,7 @@ public class GetClientCertificatesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetClientCertificatesResult withItems(ClientCertificate... items) {
         if (this.items == null) {
             setItems(new java.util.ArrayList<ClientCertificate>(items.length));
@@ -97,6 +103,7 @@ public class GetClientCertificatesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetClientCertificatesResult withItems(
             java.util.Collection<ClientCertificate> items) {
         setItems(items);

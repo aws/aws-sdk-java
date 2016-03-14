@@ -42,6 +42,7 @@ public class DocumentIdentifier implements Serializable, Cloneable {
      * @param name
      *        The name of the SSM document.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -53,6 +54,7 @@ public class DocumentIdentifier implements Serializable, Cloneable {
      * 
      * @return The name of the SSM document.
      */
+
     public String getName() {
         return this.name;
     }
@@ -67,6 +69,7 @@ public class DocumentIdentifier implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DocumentIdentifier withName(String name) {
         setName(name);
         return this;
@@ -78,6 +81,7 @@ public class DocumentIdentifier implements Serializable, Cloneable {
      * @return The operating system platform.
      * @see PlatformType
      */
+
     public java.util.List<String> getPlatformTypes() {
         if (platformTypes == null) {
             platformTypes = new com.amazonaws.internal.SdkInternalList<String>();
@@ -92,6 +96,7 @@ public class DocumentIdentifier implements Serializable, Cloneable {
      *        The operating system platform.
      * @see PlatformType
      */
+
     public void setPlatformTypes(java.util.Collection<String> platformTypes) {
         if (platformTypes == null) {
             this.platformTypes = null;
@@ -117,6 +122,7 @@ public class DocumentIdentifier implements Serializable, Cloneable {
      *         chained together.
      * @see PlatformType
      */
+
     public DocumentIdentifier withPlatformTypes(String... platformTypes) {
         if (this.platformTypes == null) {
             setPlatformTypes(new com.amazonaws.internal.SdkInternalList<String>(
@@ -137,6 +143,7 @@ public class DocumentIdentifier implements Serializable, Cloneable {
      *         chained together.
      * @see PlatformType
      */
+
     public DocumentIdentifier withPlatformTypes(
             java.util.Collection<String> platformTypes) {
         setPlatformTypes(platformTypes);
@@ -152,6 +159,7 @@ public class DocumentIdentifier implements Serializable, Cloneable {
      *         chained together.
      * @see PlatformType
      */
+
     public DocumentIdentifier withPlatformTypes(PlatformType... platformTypes) {
         com.amazonaws.internal.SdkInternalList<String> platformTypesCopy = new com.amazonaws.internal.SdkInternalList<String>(
                 platformTypes.length);

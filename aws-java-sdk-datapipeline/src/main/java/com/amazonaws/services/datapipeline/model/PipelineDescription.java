@@ -72,6 +72,7 @@ public class PipelineDescription implements Serializable, Cloneable {
      *        The pipeline identifier that was assigned by AWS Data Pipeline.
      *        This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.
      */
+
     public void setPipelineId(String pipelineId) {
         this.pipelineId = pipelineId;
     }
@@ -85,6 +86,7 @@ public class PipelineDescription implements Serializable, Cloneable {
      * @return The pipeline identifier that was assigned by AWS Data Pipeline.
      *         This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.
      */
+
     public String getPipelineId() {
         return this.pipelineId;
     }
@@ -101,6 +103,7 @@ public class PipelineDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PipelineDescription withPipelineId(String pipelineId) {
         setPipelineId(pipelineId);
         return this;
@@ -114,6 +117,7 @@ public class PipelineDescription implements Serializable, Cloneable {
      * @param name
      *        The name of the pipeline.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -125,6 +129,7 @@ public class PipelineDescription implements Serializable, Cloneable {
      * 
      * @return The name of the pipeline.
      */
+
     public String getName() {
         return this.name;
     }
@@ -139,6 +144,7 @@ public class PipelineDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PipelineDescription withName(String name) {
         setName(name);
         return this;
@@ -153,6 +159,7 @@ public class PipelineDescription implements Serializable, Cloneable {
      * @return A list of read-only fields that contain metadata about the
      *         pipeline: @userId, @accountId, and @pipelineState.
      */
+
     public java.util.List<Field> getFields() {
         if (fields == null) {
             fields = new com.amazonaws.internal.SdkInternalList<Field>();
@@ -170,6 +177,7 @@ public class PipelineDescription implements Serializable, Cloneable {
      *        A list of read-only fields that contain metadata about the
      *        pipeline: @userId, @accountId, and @pipelineState.
      */
+
     public void setFields(java.util.Collection<Field> fields) {
         if (fields == null) {
             this.fields = null;
@@ -197,6 +205,7 @@ public class PipelineDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PipelineDescription withFields(Field... fields) {
         if (this.fields == null) {
             setFields(new com.amazonaws.internal.SdkInternalList<Field>(
@@ -220,6 +229,7 @@ public class PipelineDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PipelineDescription withFields(java.util.Collection<Field> fields) {
         setFields(fields);
         return this;
@@ -233,6 +243,7 @@ public class PipelineDescription implements Serializable, Cloneable {
      * @param description
      *        Description of the pipeline.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -244,6 +255,7 @@ public class PipelineDescription implements Serializable, Cloneable {
      * 
      * @return Description of the pipeline.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -258,6 +270,7 @@ public class PipelineDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PipelineDescription withDescription(String description) {
         setDescription(description);
         return this;
@@ -278,6 +291,7 @@ public class PipelineDescription implements Serializable, Cloneable {
      *         >Controlling User Access to Pipelines</a> in the <i>AWS Data
      *         Pipeline Developer Guide</i>.
      */
+
     public java.util.List<Tag> getTags() {
         if (tags == null) {
             tags = new com.amazonaws.internal.SdkInternalList<Tag>();
@@ -301,6 +315,7 @@ public class PipelineDescription implements Serializable, Cloneable {
      *        >Controlling User Access to Pipelines</a> in the <i>AWS Data
      *        Pipeline Developer Guide</i>.
      */
+
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
             this.tags = null;
@@ -334,6 +349,7 @@ public class PipelineDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PipelineDescription withTags(Tag... tags) {
         if (this.tags == null) {
             setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
@@ -362,6 +378,7 @@ public class PipelineDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PipelineDescription withTags(java.util.Collection<Tag> tags) {
         setTags(tags);
         return this;

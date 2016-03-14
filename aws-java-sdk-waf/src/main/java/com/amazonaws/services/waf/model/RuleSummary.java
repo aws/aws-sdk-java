@@ -75,6 +75,7 @@ public class RuleSummary implements Serializable, Cloneable {
      *        <code>RuleId</code> is returned by <a>CreateRule</a> and by
      *        <a>ListRules</a>.
      */
+
     public void setRuleId(String ruleId) {
         this.ruleId = ruleId;
     }
@@ -104,6 +105,7 @@ public class RuleSummary implements Serializable, Cloneable {
      *         <code>RuleId</code> is returned by <a>CreateRule</a> and by
      *         <a>ListRules</a>.
      */
+
     public String getRuleId() {
         return this.ruleId;
     }
@@ -136,6 +138,7 @@ public class RuleSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RuleSummary withRuleId(String ruleId) {
         setRuleId(ruleId);
         return this;
@@ -151,6 +154,7 @@ public class RuleSummary implements Serializable, Cloneable {
      *        A friendly name or description of the <a>Rule</a>. You can't
      *        change the name of a <code>Rule</code> after you create it.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -164,6 +168,7 @@ public class RuleSummary implements Serializable, Cloneable {
      * @return A friendly name or description of the <a>Rule</a>. You can't
      *         change the name of a <code>Rule</code> after you create it.
      */
+
     public String getName() {
         return this.name;
     }
@@ -180,6 +185,7 @@ public class RuleSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RuleSummary withName(String name) {
         setName(name);
         return this;

@@ -53,6 +53,7 @@ public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest
      * @param autoScalingGroupName
      *        The name of the group.
      */
+
     public void setAutoScalingGroupName(String autoScalingGroupName) {
         this.autoScalingGroupName = autoScalingGroupName;
     }
@@ -64,6 +65,7 @@ public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the group.
      */
+
     public String getAutoScalingGroupName() {
         return this.autoScalingGroupName;
     }
@@ -78,6 +80,7 @@ public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLoadBalancersRequest withAutoScalingGroupName(
             String autoScalingGroupName) {
         setAutoScalingGroupName(autoScalingGroupName);
@@ -94,6 +97,7 @@ public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest
      *        The token for the next set of items to return. (You received this
      *        token from a previous call.)
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -107,6 +111,7 @@ public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest
      * @return The token for the next set of items to return. (You received this
      *         token from a previous call.)
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -123,6 +128,7 @@ public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLoadBalancersRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -136,6 +142,7 @@ public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest
      * @param maxRecords
      *        The maximum number of items to return with this call.
      */
+
     public void setMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
     }
@@ -147,6 +154,7 @@ public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest
      * 
      * @return The maximum number of items to return with this call.
      */
+
     public Integer getMaxRecords() {
         return this.maxRecords;
     }
@@ -161,6 +169,7 @@ public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLoadBalancersRequest withMaxRecords(Integer maxRecords) {
         setMaxRecords(maxRecords);
         return this;

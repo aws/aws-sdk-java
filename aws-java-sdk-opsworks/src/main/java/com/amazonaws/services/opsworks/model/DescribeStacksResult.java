@@ -39,6 +39,7 @@ public class DescribeStacksResult implements Serializable, Cloneable {
      * 
      * @return An array of <code>Stack</code> objects that describe the stacks.
      */
+
     public java.util.List<Stack> getStacks() {
         if (stacks == null) {
             stacks = new com.amazonaws.internal.SdkInternalList<Stack>();
@@ -54,6 +55,7 @@ public class DescribeStacksResult implements Serializable, Cloneable {
      * @param stacks
      *        An array of <code>Stack</code> objects that describe the stacks.
      */
+
     public void setStacks(java.util.Collection<Stack> stacks) {
         if (stacks == null) {
             this.stacks = null;
@@ -79,6 +81,7 @@ public class DescribeStacksResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeStacksResult withStacks(Stack... stacks) {
         if (this.stacks == null) {
             setStacks(new com.amazonaws.internal.SdkInternalList<Stack>(
@@ -100,6 +103,7 @@ public class DescribeStacksResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeStacksResult withStacks(java.util.Collection<Stack> stacks) {
         setStacks(stacks);
         return this;

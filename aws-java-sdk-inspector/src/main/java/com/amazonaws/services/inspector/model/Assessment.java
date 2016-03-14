@@ -101,6 +101,7 @@ public class Assessment implements Serializable, Cloneable {
      * @param assessmentArn
      *        The ARN of the assessment.
      */
+
     public void setAssessmentArn(String assessmentArn) {
         this.assessmentArn = assessmentArn;
     }
@@ -112,6 +113,7 @@ public class Assessment implements Serializable, Cloneable {
      * 
      * @return The ARN of the assessment.
      */
+
     public String getAssessmentArn() {
         return this.assessmentArn;
     }
@@ -126,6 +128,7 @@ public class Assessment implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Assessment withAssessmentArn(String assessmentArn) {
         setAssessmentArn(assessmentArn);
         return this;
@@ -139,6 +142,7 @@ public class Assessment implements Serializable, Cloneable {
      * @param assessmentName
      *        The name of the assessment.
      */
+
     public void setAssessmentName(String assessmentName) {
         this.assessmentName = assessmentName;
     }
@@ -150,6 +154,7 @@ public class Assessment implements Serializable, Cloneable {
      * 
      * @return The name of the assessment.
      */
+
     public String getAssessmentName() {
         return this.assessmentName;
     }
@@ -164,6 +169,7 @@ public class Assessment implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Assessment withAssessmentName(String assessmentName) {
         setAssessmentName(assessmentName);
         return this;
@@ -177,6 +183,7 @@ public class Assessment implements Serializable, Cloneable {
      * @param applicationArn
      *        The ARN of the application that corresponds to this assessment.
      */
+
     public void setApplicationArn(String applicationArn) {
         this.applicationArn = applicationArn;
     }
@@ -188,6 +195,7 @@ public class Assessment implements Serializable, Cloneable {
      * 
      * @return The ARN of the application that corresponds to this assessment.
      */
+
     public String getApplicationArn() {
         return this.applicationArn;
     }
@@ -202,6 +210,7 @@ public class Assessment implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Assessment withApplicationArn(String applicationArn) {
         setApplicationArn(applicationArn);
         return this;
@@ -217,6 +226,7 @@ public class Assessment implements Serializable, Cloneable {
      *        The state of the assessment. Values can be set to <i>Created</i>,
      *        <i>Collecting Data</i>, <i>Stopping</i>, and <i>Completed</i>.
      */
+
     public void setAssessmentState(String assessmentState) {
         this.assessmentState = assessmentState;
     }
@@ -230,6 +240,7 @@ public class Assessment implements Serializable, Cloneable {
      * @return The state of the assessment. Values can be set to <i>Created</i>,
      *         <i>Collecting Data</i>, <i>Stopping</i>, and <i>Completed</i>.
      */
+
     public String getAssessmentState() {
         return this.assessmentState;
     }
@@ -246,6 +257,7 @@ public class Assessment implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Assessment withAssessmentState(String assessmentState) {
         setAssessmentState(assessmentState);
         return this;
@@ -259,6 +271,7 @@ public class Assessment implements Serializable, Cloneable {
      * @param failureMessage
      *        This data type property is not currently used.
      */
+
     public void setFailureMessage(String failureMessage) {
         this.failureMessage = failureMessage;
     }
@@ -270,6 +283,7 @@ public class Assessment implements Serializable, Cloneable {
      * 
      * @return This data type property is not currently used.
      */
+
     public String getFailureMessage() {
         return this.failureMessage;
     }
@@ -284,6 +298,7 @@ public class Assessment implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Assessment withFailureMessage(String failureMessage) {
         setFailureMessage(failureMessage);
         return this;
@@ -299,6 +314,7 @@ public class Assessment implements Serializable, Cloneable {
      *        Boolean value (true or false) specifying whether the data
      *        collection process is completed.
      */
+
     public void setDataCollected(Boolean dataCollected) {
         this.dataCollected = dataCollected;
     }
@@ -312,6 +328,7 @@ public class Assessment implements Serializable, Cloneable {
      * @return Boolean value (true or false) specifying whether the data
      *         collection process is completed.
      */
+
     public Boolean getDataCollected() {
         return this.dataCollected;
     }
@@ -328,6 +345,7 @@ public class Assessment implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Assessment withDataCollected(Boolean dataCollected) {
         setDataCollected(dataCollected);
         return this;
@@ -342,6 +360,7 @@ public class Assessment implements Serializable, Cloneable {
      * @return Boolean value (true or false) specifying whether the data
      *         collection process is completed.
      */
+
     public Boolean isDataCollected() {
         return this.dataCollected;
     }
@@ -354,6 +373,7 @@ public class Assessment implements Serializable, Cloneable {
      * @param startTime
      *        The assessment start time.
      */
+
     public void setStartTime(java.util.Date startTime) {
         this.startTime = startTime;
     }
@@ -365,6 +385,7 @@ public class Assessment implements Serializable, Cloneable {
      * 
      * @return The assessment start time.
      */
+
     public java.util.Date getStartTime() {
         return this.startTime;
     }
@@ -379,6 +400,7 @@ public class Assessment implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Assessment withStartTime(java.util.Date startTime) {
         setStartTime(startTime);
         return this;
@@ -392,6 +414,7 @@ public class Assessment implements Serializable, Cloneable {
      * @param endTime
      *        The assessment end time.
      */
+
     public void setEndTime(java.util.Date endTime) {
         this.endTime = endTime;
     }
@@ -403,6 +426,7 @@ public class Assessment implements Serializable, Cloneable {
      * 
      * @return The assessment end time.
      */
+
     public java.util.Date getEndTime() {
         return this.endTime;
     }
@@ -417,6 +441,7 @@ public class Assessment implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Assessment withEndTime(java.util.Date endTime) {
         setEndTime(endTime);
         return this;
@@ -432,6 +457,7 @@ public class Assessment implements Serializable, Cloneable {
      *        The assessment duration in seconds. The default value is 3600
      *        seconds (one hour). The maximum value is 86400 seconds (one day).
      */
+
     public void setDurationInSeconds(Integer durationInSeconds) {
         this.durationInSeconds = durationInSeconds;
     }
@@ -445,6 +471,7 @@ public class Assessment implements Serializable, Cloneable {
      * @return The assessment duration in seconds. The default value is 3600
      *         seconds (one hour). The maximum value is 86400 seconds (one day).
      */
+
     public Integer getDurationInSeconds() {
         return this.durationInSeconds;
     }
@@ -461,6 +488,7 @@ public class Assessment implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Assessment withDurationInSeconds(Integer durationInSeconds) {
         setDurationInSeconds(durationInSeconds);
         return this;
@@ -474,6 +502,7 @@ public class Assessment implements Serializable, Cloneable {
      * @return The user-defined attributes that are assigned to every generated
      *         finding.
      */
+
     public java.util.List<Attribute> getUserAttributesForFindings() {
         return userAttributesForFindings;
     }
@@ -487,6 +516,7 @@ public class Assessment implements Serializable, Cloneable {
      *        The user-defined attributes that are assigned to every generated
      *        finding.
      */
+
     public void setUserAttributesForFindings(
             java.util.Collection<Attribute> userAttributesForFindings) {
         if (userAttributesForFindings == null) {
@@ -515,6 +545,7 @@ public class Assessment implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Assessment withUserAttributesForFindings(
             Attribute... userAttributesForFindings) {
         if (this.userAttributesForFindings == null) {
@@ -538,6 +569,7 @@ public class Assessment implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Assessment withUserAttributesForFindings(
             java.util.Collection<Attribute> userAttributesForFindings) {
         setUserAttributesForFindings(userAttributesForFindings);

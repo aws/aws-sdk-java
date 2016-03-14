@@ -46,6 +46,7 @@ public class ArtifactDetails implements Serializable, Cloneable {
      * @param minimumCount
      *        The minimum number of artifacts allowed for the action type.
      */
+
     public void setMinimumCount(Integer minimumCount) {
         this.minimumCount = minimumCount;
     }
@@ -57,6 +58,7 @@ public class ArtifactDetails implements Serializable, Cloneable {
      * 
      * @return The minimum number of artifacts allowed for the action type.
      */
+
     public Integer getMinimumCount() {
         return this.minimumCount;
     }
@@ -71,6 +73,7 @@ public class ArtifactDetails implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ArtifactDetails withMinimumCount(Integer minimumCount) {
         setMinimumCount(minimumCount);
         return this;
@@ -84,6 +87,7 @@ public class ArtifactDetails implements Serializable, Cloneable {
      * @param maximumCount
      *        The maximum number of artifacts allowed for the action type.
      */
+
     public void setMaximumCount(Integer maximumCount) {
         this.maximumCount = maximumCount;
     }
@@ -95,6 +99,7 @@ public class ArtifactDetails implements Serializable, Cloneable {
      * 
      * @return The maximum number of artifacts allowed for the action type.
      */
+
     public Integer getMaximumCount() {
         return this.maximumCount;
     }
@@ -109,6 +114,7 @@ public class ArtifactDetails implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ArtifactDetails withMaximumCount(Integer maximumCount) {
         setMaximumCount(maximumCount);
         return this;

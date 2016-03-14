@@ -48,6 +48,7 @@ public class PutRecordRequest extends AmazonWebServiceRequest implements
      * @param deliveryStreamName
      *        The name of the delivery stream.
      */
+
     public void setDeliveryStreamName(String deliveryStreamName) {
         this.deliveryStreamName = deliveryStreamName;
     }
@@ -59,6 +60,7 @@ public class PutRecordRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the delivery stream.
      */
+
     public String getDeliveryStreamName() {
         return this.deliveryStreamName;
     }
@@ -73,6 +75,7 @@ public class PutRecordRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutRecordRequest withDeliveryStreamName(String deliveryStreamName) {
         setDeliveryStreamName(deliveryStreamName);
         return this;
@@ -86,6 +89,7 @@ public class PutRecordRequest extends AmazonWebServiceRequest implements
      * @param record
      *        The record.
      */
+
     public void setRecord(Record record) {
         this.record = record;
     }
@@ -97,6 +101,7 @@ public class PutRecordRequest extends AmazonWebServiceRequest implements
      * 
      * @return The record.
      */
+
     public Record getRecord() {
         return this.record;
     }
@@ -111,6 +116,7 @@ public class PutRecordRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutRecordRequest withRecord(Record record) {
         setRecord(record);
         return this;

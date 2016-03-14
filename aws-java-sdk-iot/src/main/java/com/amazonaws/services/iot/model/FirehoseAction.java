@@ -46,6 +46,7 @@ public class FirehoseAction implements Serializable, Cloneable {
      * @param roleArn
      *        The IAM role that grants access to the firehose stream.
      */
+
     public void setRoleArn(String roleArn) {
         this.roleArn = roleArn;
     }
@@ -57,6 +58,7 @@ public class FirehoseAction implements Serializable, Cloneable {
      * 
      * @return The IAM role that grants access to the firehose stream.
      */
+
     public String getRoleArn() {
         return this.roleArn;
     }
@@ -71,6 +73,7 @@ public class FirehoseAction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FirehoseAction withRoleArn(String roleArn) {
         setRoleArn(roleArn);
         return this;
@@ -84,6 +87,7 @@ public class FirehoseAction implements Serializable, Cloneable {
      * @param deliveryStreamName
      *        The delivery stream name.
      */
+
     public void setDeliveryStreamName(String deliveryStreamName) {
         this.deliveryStreamName = deliveryStreamName;
     }
@@ -95,6 +99,7 @@ public class FirehoseAction implements Serializable, Cloneable {
      * 
      * @return The delivery stream name.
      */
+
     public String getDeliveryStreamName() {
         return this.deliveryStreamName;
     }
@@ -109,6 +114,7 @@ public class FirehoseAction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FirehoseAction withDeliveryStreamName(String deliveryStreamName) {
         setDeliveryStreamName(deliveryStreamName);
         return this;

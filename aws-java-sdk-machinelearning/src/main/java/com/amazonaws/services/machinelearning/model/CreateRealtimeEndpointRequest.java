@@ -40,6 +40,7 @@ public class CreateRealtimeEndpointRequest extends AmazonWebServiceRequest
      * @param mLModelId
      *        The ID assigned to the <code>MLModel</code> during creation.
      */
+
     public void setMLModelId(String mLModelId) {
         this.mLModelId = mLModelId;
     }
@@ -51,6 +52,7 @@ public class CreateRealtimeEndpointRequest extends AmazonWebServiceRequest
      * 
      * @return The ID assigned to the <code>MLModel</code> during creation.
      */
+
     public String getMLModelId() {
         return this.mLModelId;
     }
@@ -65,6 +67,7 @@ public class CreateRealtimeEndpointRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateRealtimeEndpointRequest withMLModelId(String mLModelId) {
         setMLModelId(mLModelId);
         return this;

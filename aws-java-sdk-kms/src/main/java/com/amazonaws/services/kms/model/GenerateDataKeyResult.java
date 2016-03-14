@@ -81,6 +81,7 @@ public class GenerateDataKeyResult implements Serializable, Cloneable {
      *        If you are using the CLI, the value is Base64 encoded. Otherwise,
      *        it is not encoded.
      */
+
     public void setCiphertextBlob(java.nio.ByteBuffer ciphertextBlob) {
         this.ciphertextBlob = ciphertextBlob;
     }
@@ -118,6 +119,7 @@ public class GenerateDataKeyResult implements Serializable, Cloneable {
      *         If you are using the CLI, the value is Base64 encoded. Otherwise,
      *         it is not encoded.
      */
+
     public java.nio.ByteBuffer getCiphertextBlob() {
         return this.ciphertextBlob;
     }
@@ -148,6 +150,7 @@ public class GenerateDataKeyResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GenerateDataKeyResult withCiphertextBlob(
             java.nio.ByteBuffer ciphertextBlob) {
         setCiphertextBlob(ciphertextBlob);
@@ -169,6 +172,7 @@ public class GenerateDataKeyResult implements Serializable, Cloneable {
      *        Plaintext that contains the data key. Use this for encryption and
      *        decryption and then remove it from memory as soon as possible.
      */
+
     public void setPlaintext(java.nio.ByteBuffer plaintext) {
         this.plaintext = plaintext;
     }
@@ -192,6 +196,7 @@ public class GenerateDataKeyResult implements Serializable, Cloneable {
      * @return Plaintext that contains the data key. Use this for encryption and
      *         decryption and then remove it from memory as soon as possible.
      */
+
     public java.nio.ByteBuffer getPlaintext() {
         return this.plaintext;
     }
@@ -208,6 +213,7 @@ public class GenerateDataKeyResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GenerateDataKeyResult withPlaintext(java.nio.ByteBuffer plaintext) {
         setPlaintext(plaintext);
         return this;
@@ -223,6 +229,7 @@ public class GenerateDataKeyResult implements Serializable, Cloneable {
      *        System generated unique identifier of the key to be used to
      *        decrypt the encrypted copy of the data key.
      */
+
     public void setKeyId(String keyId) {
         this.keyId = keyId;
     }
@@ -236,6 +243,7 @@ public class GenerateDataKeyResult implements Serializable, Cloneable {
      * @return System generated unique identifier of the key to be used to
      *         decrypt the encrypted copy of the data key.
      */
+
     public String getKeyId() {
         return this.keyId;
     }
@@ -252,6 +260,7 @@ public class GenerateDataKeyResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GenerateDataKeyResult withKeyId(String keyId) {
         setKeyId(keyId);
         return this;

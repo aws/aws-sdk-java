@@ -54,6 +54,7 @@ public class PipelineContext implements Serializable, Cloneable {
      *        names must be unique across all pipeline names under an Amazon Web
      *        Services account.
      */
+
     public void setPipelineName(String pipelineName) {
         this.pipelineName = pipelineName;
     }
@@ -69,6 +70,7 @@ public class PipelineContext implements Serializable, Cloneable {
      *         Pipeline names must be unique across all pipeline names under an
      *         Amazon Web Services account.
      */
+
     public String getPipelineName() {
         return this.pipelineName;
     }
@@ -87,6 +89,7 @@ public class PipelineContext implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PipelineContext withPipelineName(String pipelineName) {
         setPipelineName(pipelineName);
         return this;
@@ -100,6 +103,7 @@ public class PipelineContext implements Serializable, Cloneable {
      * @param stage
      *        The stage of the pipeline.
      */
+
     public void setStage(StageContext stage) {
         this.stage = stage;
     }
@@ -111,6 +115,7 @@ public class PipelineContext implements Serializable, Cloneable {
      * 
      * @return The stage of the pipeline.
      */
+
     public StageContext getStage() {
         return this.stage;
     }
@@ -125,6 +130,7 @@ public class PipelineContext implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PipelineContext withStage(StageContext stage) {
         setStage(stage);
         return this;
@@ -133,6 +139,7 @@ public class PipelineContext implements Serializable, Cloneable {
     /**
      * @param action
      */
+
     public void setAction(ActionContext action) {
         this.action = action;
     }
@@ -140,6 +147,7 @@ public class PipelineContext implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public ActionContext getAction() {
         return this.action;
     }
@@ -149,6 +157,7 @@ public class PipelineContext implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PipelineContext withAction(ActionContext action) {
         setAction(action);
         return this;

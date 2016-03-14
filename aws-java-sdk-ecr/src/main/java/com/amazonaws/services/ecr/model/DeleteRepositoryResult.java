@@ -28,6 +28,7 @@ public class DeleteRepositoryResult implements Serializable, Cloneable {
     /**
      * @param repository
      */
+
     public void setRepository(Repository repository) {
         this.repository = repository;
     }
@@ -35,6 +36,7 @@ public class DeleteRepositoryResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Repository getRepository() {
         return this.repository;
     }
@@ -44,6 +46,7 @@ public class DeleteRepositoryResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteRepositoryResult withRepository(Repository repository) {
         setRepository(repository);
         return this;

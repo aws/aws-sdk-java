@@ -255,6 +255,7 @@ public class BatchWriteItemResult implements Serializable, Cloneable {
      *         If there are no unprocessed items remaining, the response
      *         contains an empty <i>UnprocessedItems</i> map.
      */
+
     public java.util.Map<String, java.util.List<WriteRequest>> getUnprocessedItems() {
         return unprocessedItems;
     }
@@ -375,6 +376,7 @@ public class BatchWriteItemResult implements Serializable, Cloneable {
      *        If there are no unprocessed items remaining, the response contains
      *        an empty <i>UnprocessedItems</i> map.
      */
+
     public void setUnprocessedItems(
             java.util.Map<String, java.util.List<WriteRequest>> unprocessedItems) {
         this.unprocessedItems = unprocessedItems;
@@ -498,6 +500,7 @@ public class BatchWriteItemResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchWriteItemResult withUnprocessedItems(
             java.util.Map<String, java.util.List<WriteRequest>> unprocessedItems) {
         setUnprocessedItems(unprocessedItems);
@@ -520,6 +523,7 @@ public class BatchWriteItemResult implements Serializable, Cloneable {
      * Removes all the entries added into UnprocessedItems. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public BatchWriteItemResult clearUnprocessedItemsEntries() {
         this.unprocessedItems = null;
         return this;
@@ -588,6 +592,7 @@ public class BatchWriteItemResult implements Serializable, Cloneable {
      *         </p>
      *         </li>
      */
+
     public java.util.Map<String, java.util.List<ItemCollectionMetrics>> getItemCollectionMetrics() {
         return itemCollectionMetrics;
     }
@@ -656,6 +661,7 @@ public class BatchWriteItemResult implements Serializable, Cloneable {
      *        </p>
      *        </li>
      */
+
     public void setItemCollectionMetrics(
             java.util.Map<String, java.util.List<ItemCollectionMetrics>> itemCollectionMetrics) {
         this.itemCollectionMetrics = itemCollectionMetrics;
@@ -727,6 +733,7 @@ public class BatchWriteItemResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchWriteItemResult withItemCollectionMetrics(
             java.util.Map<String, java.util.List<ItemCollectionMetrics>> itemCollectionMetrics) {
         setItemCollectionMetrics(itemCollectionMetrics);
@@ -749,6 +756,7 @@ public class BatchWriteItemResult implements Serializable, Cloneable {
      * Removes all the entries added into ItemCollectionMetrics. &lt;p> Returns
      * a reference to this object so that method calls can be chained together.
      */
+
     public BatchWriteItemResult clearItemCollectionMetricsEntries() {
         this.itemCollectionMetrics = null;
         return this;
@@ -792,6 +800,7 @@ public class BatchWriteItemResult implements Serializable, Cloneable {
      *         </p>
      *         </li>
      */
+
     public java.util.List<ConsumedCapacity> getConsumedCapacity() {
         return consumedCapacity;
     }
@@ -835,6 +844,7 @@ public class BatchWriteItemResult implements Serializable, Cloneable {
      *        </p>
      *        </li>
      */
+
     public void setConsumedCapacity(
             java.util.Collection<ConsumedCapacity> consumedCapacity) {
         if (consumedCapacity == null) {
@@ -893,6 +903,7 @@ public class BatchWriteItemResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchWriteItemResult withConsumedCapacity(
             ConsumedCapacity... consumedCapacity) {
         if (this.consumedCapacity == null) {
@@ -946,6 +957,7 @@ public class BatchWriteItemResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchWriteItemResult withConsumedCapacity(
             java.util.Collection<ConsumedCapacity> consumedCapacity) {
         setConsumedCapacity(consumedCapacity);

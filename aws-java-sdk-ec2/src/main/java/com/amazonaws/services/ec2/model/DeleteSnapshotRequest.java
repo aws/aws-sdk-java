@@ -62,6 +62,7 @@ public class DeleteSnapshotRequest extends AmazonWebServiceRequest implements
      * @param snapshotId
      *        The ID of the EBS snapshot.
      */
+
     public void setSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
     }
@@ -73,6 +74,7 @@ public class DeleteSnapshotRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ID of the EBS snapshot.
      */
+
     public String getSnapshotId() {
         return this.snapshotId;
     }
@@ -87,6 +89,7 @@ public class DeleteSnapshotRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteSnapshotRequest withSnapshotId(String snapshotId) {
         setSnapshotId(snapshotId);
         return this;

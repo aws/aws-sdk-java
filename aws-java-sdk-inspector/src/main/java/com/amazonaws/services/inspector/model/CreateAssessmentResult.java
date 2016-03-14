@@ -38,6 +38,7 @@ public class CreateAssessmentResult implements Serializable, Cloneable {
      * @param assessmentArn
      *        The ARN specifying the assessment that is created.
      */
+
     public void setAssessmentArn(String assessmentArn) {
         this.assessmentArn = assessmentArn;
     }
@@ -49,6 +50,7 @@ public class CreateAssessmentResult implements Serializable, Cloneable {
      * 
      * @return The ARN specifying the assessment that is created.
      */
+
     public String getAssessmentArn() {
         return this.assessmentArn;
     }
@@ -63,6 +65,7 @@ public class CreateAssessmentResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateAssessmentResult withAssessmentArn(String assessmentArn) {
         setAssessmentArn(assessmentArn);
         return this;

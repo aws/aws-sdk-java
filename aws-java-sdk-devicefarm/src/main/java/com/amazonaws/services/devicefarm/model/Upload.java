@@ -63,6 +63,11 @@ public class Upload implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * WEB_APP: A web appliction upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * EXTERNAL_DATA: An external data upload.
      * </p>
      * </li>
@@ -79,12 +84,39 @@ public class Upload implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * APPIUM_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package
+     * upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package
+     * upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * CALABASH_TEST_PACKAGE: A Calabash test package upload.
      * </p>
      * </li>
      * <li>
      * <p>
      * INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UIAUTOMATION_TEST_PACKAGE: A uiautomation test package upload.
      * </p>
      * </li>
      * <li>
@@ -99,14 +131,7 @@ public class Upload implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package
-     * upload.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package
-     * upload.
+     * XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
      * </p>
      * </li>
      * </ul>
@@ -179,6 +204,7 @@ public class Upload implements Serializable, Cloneable {
      * @param arn
      *        The upload's ARN.
      */
+
     public void setArn(String arn) {
         this.arn = arn;
     }
@@ -190,6 +216,7 @@ public class Upload implements Serializable, Cloneable {
      * 
      * @return The upload's ARN.
      */
+
     public String getArn() {
         return this.arn;
     }
@@ -204,6 +231,7 @@ public class Upload implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Upload withArn(String arn) {
         setArn(arn);
         return this;
@@ -217,6 +245,7 @@ public class Upload implements Serializable, Cloneable {
      * @param name
      *        The upload's file name.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -228,6 +257,7 @@ public class Upload implements Serializable, Cloneable {
      * 
      * @return The upload's file name.
      */
+
     public String getName() {
         return this.name;
     }
@@ -242,6 +272,7 @@ public class Upload implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Upload withName(String name) {
         setName(name);
         return this;
@@ -255,6 +286,7 @@ public class Upload implements Serializable, Cloneable {
      * @param created
      *        When the upload was created.
      */
+
     public void setCreated(java.util.Date created) {
         this.created = created;
     }
@@ -266,6 +298,7 @@ public class Upload implements Serializable, Cloneable {
      * 
      * @return When the upload was created.
      */
+
     public java.util.Date getCreated() {
         return this.created;
     }
@@ -280,6 +313,7 @@ public class Upload implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Upload withCreated(java.util.Date created) {
         setCreated(created);
         return this;
@@ -305,6 +339,11 @@ public class Upload implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * WEB_APP: A web appliction upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * EXTERNAL_DATA: An external data upload.
      * </p>
      * </li>
@@ -321,12 +360,39 @@ public class Upload implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * APPIUM_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package
+     * upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package
+     * upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * CALABASH_TEST_PACKAGE: A Calabash test package upload.
      * </p>
      * </li>
      * <li>
      * <p>
      * INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UIAUTOMATION_TEST_PACKAGE: A uiautomation test package upload.
      * </p>
      * </li>
      * <li>
@@ -341,14 +407,7 @@ public class Upload implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package
-     * upload.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package
-     * upload.
+     * XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
      * </p>
      * </li>
      * </ul>
@@ -371,6 +430,11 @@ public class Upload implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
+     *        WEB_APP: A web appliction upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        EXTERNAL_DATA: An external data upload.
      *        </p>
      *        </li>
@@ -388,22 +452,7 @@ public class Upload implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        CALABASH_TEST_PACKAGE: A Calabash test package upload.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        XCTEST_TEST_PACKAGE: An XCode test package upload.
+     *        APPIUM_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
      *        </p>
      *        </li>
      *        <li>
@@ -418,8 +467,45 @@ public class Upload implements Serializable, Cloneable {
      *        package upload.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package
+     *        upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CALABASH_TEST_PACKAGE: A Calabash test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        UIAUTOMATION_TEST_PACKAGE: A uiautomation test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST_TEST_PACKAGE: An XCode test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
+     *        </p>
+     *        </li>
      * @see UploadType
      */
+
     public void setType(String type) {
         this.type = type;
     }
@@ -444,6 +530,11 @@ public class Upload implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * WEB_APP: A web appliction upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * EXTERNAL_DATA: An external data upload.
      * </p>
      * </li>
@@ -460,12 +551,39 @@ public class Upload implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * APPIUM_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package
+     * upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package
+     * upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * CALABASH_TEST_PACKAGE: A Calabash test package upload.
      * </p>
      * </li>
      * <li>
      * <p>
      * INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UIAUTOMATION_TEST_PACKAGE: A uiautomation test package upload.
      * </p>
      * </li>
      * <li>
@@ -480,14 +598,7 @@ public class Upload implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package
-     * upload.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package
-     * upload.
+     * XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
      * </p>
      * </li>
      * </ul>
@@ -509,6 +620,11 @@ public class Upload implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
+     *         WEB_APP: A web appliction upload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         EXTERNAL_DATA: An external data upload.
      *         </p>
      *         </li>
@@ -526,22 +642,7 @@ public class Upload implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         CALABASH_TEST_PACKAGE: A Calabash test package upload.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         XCTEST_TEST_PACKAGE: An XCode test package upload.
+     *         APPIUM_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
      *         </p>
      *         </li>
      *         <li>
@@ -556,8 +657,45 @@ public class Upload implements Serializable, Cloneable {
      *         package upload.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package
+     *         upload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         CALABASH_TEST_PACKAGE: A Calabash test package upload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UIAUTOMATION_TEST_PACKAGE: A uiautomation test package upload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         XCTEST_TEST_PACKAGE: An XCode test package upload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
+     *         </p>
+     *         </li>
      * @see UploadType
      */
+
     public String getType() {
         return this.type;
     }
@@ -582,6 +720,11 @@ public class Upload implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * WEB_APP: A web appliction upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * EXTERNAL_DATA: An external data upload.
      * </p>
      * </li>
@@ -598,12 +741,39 @@ public class Upload implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * APPIUM_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package
+     * upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package
+     * upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * CALABASH_TEST_PACKAGE: A Calabash test package upload.
      * </p>
      * </li>
      * <li>
      * <p>
      * INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UIAUTOMATION_TEST_PACKAGE: A uiautomation test package upload.
      * </p>
      * </li>
      * <li>
@@ -618,14 +788,7 @@ public class Upload implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package
-     * upload.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package
-     * upload.
+     * XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
      * </p>
      * </li>
      * </ul>
@@ -648,6 +811,11 @@ public class Upload implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
+     *        WEB_APP: A web appliction upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        EXTERNAL_DATA: An external data upload.
      *        </p>
      *        </li>
@@ -665,22 +833,7 @@ public class Upload implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        CALABASH_TEST_PACKAGE: A Calabash test package upload.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        XCTEST_TEST_PACKAGE: An XCode test package upload.
+     *        APPIUM_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
      *        </p>
      *        </li>
      *        <li>
@@ -695,10 +848,47 @@ public class Upload implements Serializable, Cloneable {
      *        package upload.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package
+     *        upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CALABASH_TEST_PACKAGE: A Calabash test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        UIAUTOMATION_TEST_PACKAGE: A uiautomation test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST_TEST_PACKAGE: An XCode test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see UploadType
      */
+
     public Upload withType(String type) {
         setType(type);
         return this;
@@ -724,6 +914,11 @@ public class Upload implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * WEB_APP: A web appliction upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * EXTERNAL_DATA: An external data upload.
      * </p>
      * </li>
@@ -740,12 +935,39 @@ public class Upload implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * APPIUM_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package
+     * upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package
+     * upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * CALABASH_TEST_PACKAGE: A Calabash test package upload.
      * </p>
      * </li>
      * <li>
      * <p>
      * INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UIAUTOMATION_TEST_PACKAGE: A uiautomation test package upload.
      * </p>
      * </li>
      * <li>
@@ -760,14 +982,7 @@ public class Upload implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package
-     * upload.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package
-     * upload.
+     * XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
      * </p>
      * </li>
      * </ul>
@@ -790,6 +1005,11 @@ public class Upload implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
+     *        WEB_APP: A web appliction upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        EXTERNAL_DATA: An external data upload.
      *        </p>
      *        </li>
@@ -807,22 +1027,7 @@ public class Upload implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        CALABASH_TEST_PACKAGE: A Calabash test package upload.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        XCTEST_TEST_PACKAGE: An XCode test package upload.
+     *        APPIUM_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
      *        </p>
      *        </li>
      *        <li>
@@ -837,10 +1042,47 @@ public class Upload implements Serializable, Cloneable {
      *        package upload.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package
+     *        upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CALABASH_TEST_PACKAGE: A Calabash test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        UIAUTOMATION_TEST_PACKAGE: A uiautomation test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST_TEST_PACKAGE: An XCode test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see UploadType
      */
+
     public void setType(UploadType type) {
         this.type = type.toString();
     }
@@ -865,6 +1107,11 @@ public class Upload implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * WEB_APP: A web appliction upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * EXTERNAL_DATA: An external data upload.
      * </p>
      * </li>
@@ -881,12 +1128,39 @@ public class Upload implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * APPIUM_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package
+     * upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package
+     * upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * CALABASH_TEST_PACKAGE: A Calabash test package upload.
      * </p>
      * </li>
      * <li>
      * <p>
      * INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UIAUTOMATION_TEST_PACKAGE: A uiautomation test package upload.
      * </p>
      * </li>
      * <li>
@@ -901,14 +1175,7 @@ public class Upload implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package
-     * upload.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package
-     * upload.
+     * XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
      * </p>
      * </li>
      * </ul>
@@ -931,6 +1198,11 @@ public class Upload implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
+     *        WEB_APP: A web appliction upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        EXTERNAL_DATA: An external data upload.
      *        </p>
      *        </li>
@@ -948,22 +1220,7 @@ public class Upload implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        CALABASH_TEST_PACKAGE: A Calabash test package upload.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        XCTEST_TEST_PACKAGE: An XCode test package upload.
+     *        APPIUM_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
      *        </p>
      *        </li>
      *        <li>
@@ -978,10 +1235,47 @@ public class Upload implements Serializable, Cloneable {
      *        package upload.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package
+     *        upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CALABASH_TEST_PACKAGE: A Calabash test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        UIAUTOMATION_TEST_PACKAGE: A uiautomation test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST_TEST_PACKAGE: An XCode test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see UploadType
      */
+
     public Upload withType(UploadType type) {
         setType(type);
         return this;
@@ -1045,6 +1339,7 @@ public class Upload implements Serializable, Cloneable {
      *        </li>
      * @see UploadStatus
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -1106,6 +1401,7 @@ public class Upload implements Serializable, Cloneable {
      *         </li>
      * @see UploadStatus
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -1170,6 +1466,7 @@ public class Upload implements Serializable, Cloneable {
      *         chained together.
      * @see UploadStatus
      */
+
     public Upload withStatus(String status) {
         setStatus(status);
         return this;
@@ -1235,6 +1532,7 @@ public class Upload implements Serializable, Cloneable {
      *         chained together.
      * @see UploadStatus
      */
+
     public void setStatus(UploadStatus status) {
         this.status = status.toString();
     }
@@ -1299,6 +1597,7 @@ public class Upload implements Serializable, Cloneable {
      *         chained together.
      * @see UploadStatus
      */
+
     public Upload withStatus(UploadStatus status) {
         setStatus(status);
         return this;
@@ -1314,6 +1613,7 @@ public class Upload implements Serializable, Cloneable {
      *        The pre-signed Amazon S3 URL that was used to store a file through
      *        a corresponding PUT request.
      */
+
     public void setUrl(String url) {
         this.url = url;
     }
@@ -1327,6 +1627,7 @@ public class Upload implements Serializable, Cloneable {
      * @return The pre-signed Amazon S3 URL that was used to store a file
      *         through a corresponding PUT request.
      */
+
     public String getUrl() {
         return this.url;
     }
@@ -1343,6 +1644,7 @@ public class Upload implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Upload withUrl(String url) {
         setUrl(url);
         return this;
@@ -1360,6 +1662,7 @@ public class Upload implements Serializable, Cloneable {
      *        information that is parsed from the manifest and is displayed in
      *        the AWS Device Farm console after the associated app is uploaded.
      */
+
     public void setMetadata(String metadata) {
         this.metadata = metadata;
     }
@@ -1375,6 +1678,7 @@ public class Upload implements Serializable, Cloneable {
      *         information that is parsed from the manifest and is displayed in
      *         the AWS Device Farm console after the associated app is uploaded.
      */
+
     public String getMetadata() {
         return this.metadata;
     }
@@ -1393,6 +1697,7 @@ public class Upload implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Upload withMetadata(String metadata) {
         setMetadata(metadata);
         return this;
@@ -1407,6 +1712,7 @@ public class Upload implements Serializable, Cloneable {
      *        The upload's content type (for example,
      *        "application/octet-stream").
      */
+
     public void setContentType(String contentType) {
         this.contentType = contentType;
     }
@@ -1419,6 +1725,7 @@ public class Upload implements Serializable, Cloneable {
      * @return The upload's content type (for example,
      *         "application/octet-stream").
      */
+
     public String getContentType() {
         return this.contentType;
     }
@@ -1434,6 +1741,7 @@ public class Upload implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Upload withContentType(String contentType) {
         setContentType(contentType);
         return this;
@@ -1447,6 +1755,7 @@ public class Upload implements Serializable, Cloneable {
      * @param message
      *        A message about the upload's result.
      */
+
     public void setMessage(String message) {
         this.message = message;
     }
@@ -1458,6 +1767,7 @@ public class Upload implements Serializable, Cloneable {
      * 
      * @return A message about the upload's result.
      */
+
     public String getMessage() {
         return this.message;
     }
@@ -1472,6 +1782,7 @@ public class Upload implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Upload withMessage(String message) {
         setMessage(message);
         return this;

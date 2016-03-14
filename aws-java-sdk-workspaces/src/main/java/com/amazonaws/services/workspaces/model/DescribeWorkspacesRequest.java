@@ -102,6 +102,7 @@ public class DescribeWorkspacesRequest extends AmazonWebServiceRequest
      *         <a>DescribeWorkspaces</a> with this identifier, no information
      *         will be returned.
      */
+
     public java.util.List<String> getWorkspaceIds() {
         if (workspaceIds == null) {
             workspaceIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -132,6 +133,7 @@ public class DescribeWorkspacesRequest extends AmazonWebServiceRequest
      *        available. If you immediately call <a>DescribeWorkspaces</a> with
      *        this identifier, no information will be returned.
      */
+
     public void setWorkspaceIds(java.util.Collection<String> workspaceIds) {
         if (workspaceIds == null) {
             this.workspaceIds = null;
@@ -173,6 +175,7 @@ public class DescribeWorkspacesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeWorkspacesRequest withWorkspaceIds(String... workspaceIds) {
         if (this.workspaceIds == null) {
             setWorkspaceIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -209,6 +212,7 @@ public class DescribeWorkspacesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeWorkspacesRequest withWorkspaceIds(
             java.util.Collection<String> workspaceIds) {
         setWorkspaceIds(workspaceIds);
@@ -229,6 +233,7 @@ public class DescribeWorkspacesRequest extends AmazonWebServiceRequest
      *        with the <code>UserName</code> parameter. This parameter cannot be
      *        combined with any other filter parameter.
      */
+
     public void setDirectoryId(String directoryId) {
         this.directoryId = directoryId;
     }
@@ -246,6 +251,7 @@ public class DescribeWorkspacesRequest extends AmazonWebServiceRequest
      *         with the <code>UserName</code> parameter. This parameter cannot
      *         be combined with any other filter parameter.
      */
+
     public String getDirectoryId() {
         return this.directoryId;
     }
@@ -266,6 +272,7 @@ public class DescribeWorkspacesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeWorkspacesRequest withDirectoryId(String directoryId) {
         setDirectoryId(directoryId);
         return this;
@@ -281,6 +288,7 @@ public class DescribeWorkspacesRequest extends AmazonWebServiceRequest
      *        Used with the <code>DirectoryId</code> parameter to specify the
      *        directory user for which to obtain the WorkSpace.
      */
+
     public void setUserName(String userName) {
         this.userName = userName;
     }
@@ -294,6 +302,7 @@ public class DescribeWorkspacesRequest extends AmazonWebServiceRequest
      * @return Used with the <code>DirectoryId</code> parameter to specify the
      *         directory user for which to obtain the WorkSpace.
      */
+
     public String getUserName() {
         return this.userName;
     }
@@ -310,6 +319,7 @@ public class DescribeWorkspacesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeWorkspacesRequest withUserName(String userName) {
         setUserName(userName);
         return this;
@@ -327,6 +337,7 @@ public class DescribeWorkspacesRequest extends AmazonWebServiceRequest
      *        WorkSpaces that are created from this bundle will be retrieved.
      *        This parameter cannot be combined with any other filter parameter.
      */
+
     public void setBundleId(String bundleId) {
         this.bundleId = bundleId;
     }
@@ -343,6 +354,7 @@ public class DescribeWorkspacesRequest extends AmazonWebServiceRequest
      *         This parameter cannot be combined with any other filter
      *         parameter.
      */
+
     public String getBundleId() {
         return this.bundleId;
     }
@@ -361,6 +373,7 @@ public class DescribeWorkspacesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeWorkspacesRequest withBundleId(String bundleId) {
         setBundleId(bundleId);
         return this;
@@ -374,6 +387,7 @@ public class DescribeWorkspacesRequest extends AmazonWebServiceRequest
      * @param limit
      *        The maximum number of items to return.
      */
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -385,6 +399,7 @@ public class DescribeWorkspacesRequest extends AmazonWebServiceRequest
      * 
      * @return The maximum number of items to return.
      */
+
     public Integer getLimit() {
         return this.limit;
     }
@@ -399,6 +414,7 @@ public class DescribeWorkspacesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeWorkspacesRequest withLimit(Integer limit) {
         setLimit(limit);
         return this;
@@ -414,6 +430,7 @@ public class DescribeWorkspacesRequest extends AmazonWebServiceRequest
      *        The <code>NextToken</code> value from a previous call to this
      *        operation. Pass null if this is the first call.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -427,6 +444,7 @@ public class DescribeWorkspacesRequest extends AmazonWebServiceRequest
      * @return The <code>NextToken</code> value from a previous call to this
      *         operation. Pass null if this is the first call.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -443,6 +461,7 @@ public class DescribeWorkspacesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeWorkspacesRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

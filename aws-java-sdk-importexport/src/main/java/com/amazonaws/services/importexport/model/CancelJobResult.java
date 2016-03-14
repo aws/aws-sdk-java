@@ -28,6 +28,7 @@ public class CancelJobResult implements Serializable, Cloneable {
     /**
      * @param success
      */
+
     public void setSuccess(Boolean success) {
         this.success = success;
     }
@@ -35,6 +36,7 @@ public class CancelJobResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Boolean getSuccess() {
         return this.success;
     }
@@ -44,6 +46,7 @@ public class CancelJobResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CancelJobResult withSuccess(Boolean success) {
         setSuccess(success);
         return this;
@@ -52,6 +55,7 @@ public class CancelJobResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Boolean isSuccess() {
         return this.success;
     }

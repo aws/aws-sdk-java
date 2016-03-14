@@ -40,6 +40,7 @@ public class DeleteAssessmentRequest extends AmazonWebServiceRequest implements
      * @param assessmentArn
      *        The ARN specifying the assessment that you want to delete.
      */
+
     public void setAssessmentArn(String assessmentArn) {
         this.assessmentArn = assessmentArn;
     }
@@ -51,6 +52,7 @@ public class DeleteAssessmentRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ARN specifying the assessment that you want to delete.
      */
+
     public String getAssessmentArn() {
         return this.assessmentArn;
     }
@@ -65,6 +67,7 @@ public class DeleteAssessmentRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteAssessmentRequest withAssessmentArn(String assessmentArn) {
         setAssessmentArn(assessmentArn);
         return this;

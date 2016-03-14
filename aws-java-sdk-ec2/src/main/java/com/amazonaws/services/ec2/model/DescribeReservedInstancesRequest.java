@@ -166,6 +166,7 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest
      *         Default: Describes all your Reserved Instances, or only those
      *         otherwise specified.
      */
+
     public java.util.List<String> getReservedInstancesIds() {
         if (reservedInstancesIds == null) {
             reservedInstancesIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -188,6 +189,7 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest
      *        Default: Describes all your Reserved Instances, or only those
      *        otherwise specified.
      */
+
     public void setReservedInstancesIds(
             java.util.Collection<String> reservedInstancesIds) {
         if (reservedInstancesIds == null) {
@@ -222,6 +224,7 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeReservedInstancesRequest withReservedInstancesIds(
             String... reservedInstancesIds) {
         if (this.reservedInstancesIds == null) {
@@ -251,6 +254,7 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeReservedInstancesRequest withReservedInstancesIds(
             java.util.Collection<String> reservedInstancesIds) {
         setReservedInstancesIds(reservedInstancesIds);
@@ -466,6 +470,7 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest
      *         </p>
      *         </li>
      */
+
     public java.util.List<Filter> getFilters() {
         if (filters == null) {
             filters = new com.amazonaws.internal.SdkInternalList<Filter>();
@@ -683,6 +688,7 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest
      *        </p>
      *        </li>
      */
+
     public void setFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
             this.filters = null;
@@ -911,6 +917,7 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeReservedInstancesRequest withFilters(Filter... filters) {
         if (this.filters == null) {
             setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(
@@ -1134,6 +1141,7 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeReservedInstancesRequest withFilters(
             java.util.Collection<Filter> filters) {
         setFilters(filters);
@@ -1153,6 +1161,7 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest
      *        <code>Medium Utilization</code> Reserved Instance offering type.
      * @see OfferingTypeValues
      */
+
     public void setOfferingType(String offeringType) {
         this.offeringType = offeringType;
     }
@@ -1169,6 +1178,7 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest
      *         <code>Medium Utilization</code> Reserved Instance offering type.
      * @see OfferingTypeValues
      */
+
     public String getOfferingType() {
         return this.offeringType;
     }
@@ -1188,6 +1198,7 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see OfferingTypeValues
      */
+
     public DescribeReservedInstancesRequest withOfferingType(String offeringType) {
         setOfferingType(offeringType);
         return this;
@@ -1208,6 +1219,7 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see OfferingTypeValues
      */
+
     public void setOfferingType(OfferingTypeValues offeringType) {
         this.offeringType = offeringType.toString();
     }
@@ -1227,6 +1239,7 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see OfferingTypeValues
      */
+
     public DescribeReservedInstancesRequest withOfferingType(
             OfferingTypeValues offeringType) {
         setOfferingType(offeringType);

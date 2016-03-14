@@ -64,6 +64,7 @@ public class GenericRevisionInfo implements Serializable, Cloneable {
      * @param description
      *        A comment about the revision.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -75,6 +76,7 @@ public class GenericRevisionInfo implements Serializable, Cloneable {
      * 
      * @return A comment about the revision.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -89,6 +91,7 @@ public class GenericRevisionInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GenericRevisionInfo withDescription(String description) {
         setDescription(description);
         return this;
@@ -101,6 +104,7 @@ public class GenericRevisionInfo implements Serializable, Cloneable {
      * 
      * @return The deployment groups where this is the current target revision.
      */
+
     public java.util.List<String> getDeploymentGroups() {
         if (deploymentGroups == null) {
             deploymentGroups = new com.amazonaws.internal.SdkInternalList<String>();
@@ -116,6 +120,7 @@ public class GenericRevisionInfo implements Serializable, Cloneable {
      * @param deploymentGroups
      *        The deployment groups where this is the current target revision.
      */
+
     public void setDeploymentGroups(
             java.util.Collection<String> deploymentGroups) {
         if (deploymentGroups == null) {
@@ -143,6 +148,7 @@ public class GenericRevisionInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GenericRevisionInfo withDeploymentGroups(String... deploymentGroups) {
         if (this.deploymentGroups == null) {
             setDeploymentGroups(new com.amazonaws.internal.SdkInternalList<String>(
@@ -164,6 +170,7 @@ public class GenericRevisionInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GenericRevisionInfo withDeploymentGroups(
             java.util.Collection<String> deploymentGroups) {
         setDeploymentGroups(deploymentGroups);
@@ -178,6 +185,7 @@ public class GenericRevisionInfo implements Serializable, Cloneable {
      * @param firstUsedTime
      *        When the revision was first used by AWS CodeDeploy.
      */
+
     public void setFirstUsedTime(java.util.Date firstUsedTime) {
         this.firstUsedTime = firstUsedTime;
     }
@@ -189,6 +197,7 @@ public class GenericRevisionInfo implements Serializable, Cloneable {
      * 
      * @return When the revision was first used by AWS CodeDeploy.
      */
+
     public java.util.Date getFirstUsedTime() {
         return this.firstUsedTime;
     }
@@ -203,6 +212,7 @@ public class GenericRevisionInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GenericRevisionInfo withFirstUsedTime(java.util.Date firstUsedTime) {
         setFirstUsedTime(firstUsedTime);
         return this;
@@ -216,6 +226,7 @@ public class GenericRevisionInfo implements Serializable, Cloneable {
      * @param lastUsedTime
      *        When the revision was last used by AWS CodeDeploy.
      */
+
     public void setLastUsedTime(java.util.Date lastUsedTime) {
         this.lastUsedTime = lastUsedTime;
     }
@@ -227,6 +238,7 @@ public class GenericRevisionInfo implements Serializable, Cloneable {
      * 
      * @return When the revision was last used by AWS CodeDeploy.
      */
+
     public java.util.Date getLastUsedTime() {
         return this.lastUsedTime;
     }
@@ -241,6 +253,7 @@ public class GenericRevisionInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GenericRevisionInfo withLastUsedTime(java.util.Date lastUsedTime) {
         setLastUsedTime(lastUsedTime);
         return this;
@@ -254,6 +267,7 @@ public class GenericRevisionInfo implements Serializable, Cloneable {
      * @param registerTime
      *        When the revision was registered with AWS CodeDeploy.
      */
+
     public void setRegisterTime(java.util.Date registerTime) {
         this.registerTime = registerTime;
     }
@@ -265,6 +279,7 @@ public class GenericRevisionInfo implements Serializable, Cloneable {
      * 
      * @return When the revision was registered with AWS CodeDeploy.
      */
+
     public java.util.Date getRegisterTime() {
         return this.registerTime;
     }
@@ -279,6 +294,7 @@ public class GenericRevisionInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GenericRevisionInfo withRegisterTime(java.util.Date registerTime) {
         setRegisterTime(registerTime);
         return this;

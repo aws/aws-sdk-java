@@ -38,6 +38,7 @@ public class GetCloudFrontOriginAccessIdentityResult implements Serializable,
      * @param cloudFrontOriginAccessIdentity
      *        The origin access identity's information.
      */
+
     public void setCloudFrontOriginAccessIdentity(
             CloudFrontOriginAccessIdentity cloudFrontOriginAccessIdentity) {
         this.cloudFrontOriginAccessIdentity = cloudFrontOriginAccessIdentity;
@@ -48,6 +49,7 @@ public class GetCloudFrontOriginAccessIdentityResult implements Serializable,
      * 
      * @return The origin access identity's information.
      */
+
     public CloudFrontOriginAccessIdentity getCloudFrontOriginAccessIdentity() {
         return this.cloudFrontOriginAccessIdentity;
     }
@@ -60,6 +62,7 @@ public class GetCloudFrontOriginAccessIdentityResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetCloudFrontOriginAccessIdentityResult withCloudFrontOriginAccessIdentity(
             CloudFrontOriginAccessIdentity cloudFrontOriginAccessIdentity) {
         setCloudFrontOriginAccessIdentity(cloudFrontOriginAccessIdentity);
@@ -74,6 +77,7 @@ public class GetCloudFrontOriginAccessIdentityResult implements Serializable,
      *        The current version of the origin access identity's information.
      *        For example: E2QWRUHAPOMQZL.
      */
+
     public void setETag(String eTag) {
         this.eTag = eTag;
     }
@@ -85,6 +89,7 @@ public class GetCloudFrontOriginAccessIdentityResult implements Serializable,
      * @return The current version of the origin access identity's information.
      *         For example: E2QWRUHAPOMQZL.
      */
+
     public String getETag() {
         return this.eTag;
     }
@@ -99,6 +104,7 @@ public class GetCloudFrontOriginAccessIdentityResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetCloudFrontOriginAccessIdentityResult withETag(String eTag) {
         setETag(eTag);
         return this;

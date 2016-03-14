@@ -111,6 +111,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements
      * @param description
      *        A description string for the import image task.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -122,6 +123,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements
      * 
      * @return A description string for the import image task.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -136,6 +138,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportImageRequest withDescription(String description) {
         setDescription(description);
         return this;
@@ -148,6 +151,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements
      * 
      * @return Information about the disk containers.
      */
+
     public java.util.List<ImageDiskContainer> getDiskContainers() {
         if (diskContainers == null) {
             diskContainers = new com.amazonaws.internal.SdkInternalList<ImageDiskContainer>();
@@ -163,6 +167,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements
      * @param diskContainers
      *        Information about the disk containers.
      */
+
     public void setDiskContainers(
             java.util.Collection<ImageDiskContainer> diskContainers) {
         if (diskContainers == null) {
@@ -190,6 +195,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportImageRequest withDiskContainers(
             ImageDiskContainer... diskContainers) {
         if (this.diskContainers == null) {
@@ -212,6 +218,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportImageRequest withDiskContainers(
             java.util.Collection<ImageDiskContainer> diskContainers) {
         setDiskContainers(diskContainers);
@@ -249,6 +256,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        Valid values: <code>AWS</code> | <code>BYOL</code>
      */
+
     public void setLicenseType(String licenseType) {
         this.licenseType = licenseType;
     }
@@ -283,6 +291,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Valid values: <code>AWS</code> | <code>BYOL</code>
      */
+
     public String getLicenseType() {
         return this.licenseType;
     }
@@ -320,6 +329,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportImageRequest withLicenseType(String licenseType) {
         setLicenseType(licenseType);
         return this;
@@ -338,6 +348,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        Valid values: <code>xen</code>
      */
+
     public void setHypervisor(String hypervisor) {
         this.hypervisor = hypervisor;
     }
@@ -354,6 +365,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Valid values: <code>xen</code>
      */
+
     public String getHypervisor() {
         return this.hypervisor;
     }
@@ -373,6 +385,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportImageRequest withHypervisor(String hypervisor) {
         setHypervisor(hypervisor);
         return this;
@@ -391,6 +404,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        Valid values: <code>i386</code> | <code>x86_64</code>
      */
+
     public void setArchitecture(String architecture) {
         this.architecture = architecture;
     }
@@ -407,6 +421,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Valid values: <code>i386</code> | <code>x86_64</code>
      */
+
     public String getArchitecture() {
         return this.architecture;
     }
@@ -426,6 +441,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportImageRequest withArchitecture(String architecture) {
         setArchitecture(architecture);
         return this;
@@ -444,6 +460,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        Valid values: <code>Windows</code> | <code>Linux</code>
      */
+
     public void setPlatform(String platform) {
         this.platform = platform;
     }
@@ -460,6 +477,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Valid values: <code>Windows</code> | <code>Linux</code>
      */
+
     public String getPlatform() {
         return this.platform;
     }
@@ -479,6 +497,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportImageRequest withPlatform(String platform) {
         setPlatform(platform);
         return this;
@@ -492,6 +511,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements
      * @param clientData
      *        The client-specific data.
      */
+
     public void setClientData(ClientData clientData) {
         this.clientData = clientData;
     }
@@ -503,6 +523,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements
      * 
      * @return The client-specific data.
      */
+
     public ClientData getClientData() {
         return this.clientData;
     }
@@ -517,6 +538,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportImageRequest withClientData(ClientData clientData) {
         setClientData(clientData);
         return this;
@@ -530,6 +552,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements
      * @param clientToken
      *        The token to enable idempotency for VM import requests.
      */
+
     public void setClientToken(String clientToken) {
         this.clientToken = clientToken;
     }
@@ -541,6 +564,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements
      * 
      * @return The token to enable idempotency for VM import requests.
      */
+
     public String getClientToken() {
         return this.clientToken;
     }
@@ -555,6 +579,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportImageRequest withClientToken(String clientToken) {
         setClientToken(clientToken);
         return this;
@@ -569,6 +594,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements
      *        The name of the role to use when not using the default role,
      *        'vmimport'.
      */
+
     public void setRoleName(String roleName) {
         this.roleName = roleName;
     }
@@ -581,6 +607,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements
      * @return The name of the role to use when not using the default role,
      *         'vmimport'.
      */
+
     public String getRoleName() {
         return this.roleName;
     }
@@ -596,6 +623,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportImageRequest withRoleName(String roleName) {
         setRoleName(roleName);
         return this;

@@ -59,6 +59,7 @@ public class ListIPSetsResult implements Serializable, Cloneable {
      *        request, and specify the <code>NextMarker</code> value from the
      *        response in the <code>NextMarker</code> value in the next request.
      */
+
     public void setNextMarker(String nextMarker) {
         this.nextMarker = nextMarker;
     }
@@ -81,6 +82,7 @@ public class ListIPSetsResult implements Serializable, Cloneable {
      *         <code>NextMarker</code> value from the response in the
      *         <code>NextMarker</code> value in the next request.
      */
+
     public String getNextMarker() {
         return this.nextMarker;
     }
@@ -105,6 +107,7 @@ public class ListIPSetsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListIPSetsResult withNextMarker(String nextMarker) {
         setNextMarker(nextMarker);
         return this;
@@ -117,6 +120,7 @@ public class ListIPSetsResult implements Serializable, Cloneable {
      * 
      * @return An array of <a>IPSetSummary</a> objects.
      */
+
     public java.util.List<IPSetSummary> getIPSets() {
         return iPSets;
     }
@@ -129,6 +133,7 @@ public class ListIPSetsResult implements Serializable, Cloneable {
      * @param iPSets
      *        An array of <a>IPSetSummary</a> objects.
      */
+
     public void setIPSets(java.util.Collection<IPSetSummary> iPSets) {
         if (iPSets == null) {
             this.iPSets = null;
@@ -154,6 +159,7 @@ public class ListIPSetsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListIPSetsResult withIPSets(IPSetSummary... iPSets) {
         if (this.iPSets == null) {
             setIPSets(new java.util.ArrayList<IPSetSummary>(iPSets.length));
@@ -174,6 +180,7 @@ public class ListIPSetsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListIPSetsResult withIPSets(java.util.Collection<IPSetSummary> iPSets) {
         setIPSets(iPSets);
         return this;

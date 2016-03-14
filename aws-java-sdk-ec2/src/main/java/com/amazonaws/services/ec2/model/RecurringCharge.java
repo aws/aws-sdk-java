@@ -47,6 +47,7 @@ public class RecurringCharge implements Serializable, Cloneable {
      *        The frequency of the recurring charge.
      * @see RecurringChargeFrequency
      */
+
     public void setFrequency(String frequency) {
         this.frequency = frequency;
     }
@@ -59,6 +60,7 @@ public class RecurringCharge implements Serializable, Cloneable {
      * @return The frequency of the recurring charge.
      * @see RecurringChargeFrequency
      */
+
     public String getFrequency() {
         return this.frequency;
     }
@@ -74,6 +76,7 @@ public class RecurringCharge implements Serializable, Cloneable {
      *         chained together.
      * @see RecurringChargeFrequency
      */
+
     public RecurringCharge withFrequency(String frequency) {
         setFrequency(frequency);
         return this;
@@ -90,6 +93,7 @@ public class RecurringCharge implements Serializable, Cloneable {
      *         chained together.
      * @see RecurringChargeFrequency
      */
+
     public void setFrequency(RecurringChargeFrequency frequency) {
         this.frequency = frequency.toString();
     }
@@ -105,6 +109,7 @@ public class RecurringCharge implements Serializable, Cloneable {
      *         chained together.
      * @see RecurringChargeFrequency
      */
+
     public RecurringCharge withFrequency(RecurringChargeFrequency frequency) {
         setFrequency(frequency);
         return this;
@@ -118,6 +123,7 @@ public class RecurringCharge implements Serializable, Cloneable {
      * @param amount
      *        The amount of the recurring charge.
      */
+
     public void setAmount(Double amount) {
         this.amount = amount;
     }
@@ -129,6 +135,7 @@ public class RecurringCharge implements Serializable, Cloneable {
      * 
      * @return The amount of the recurring charge.
      */
+
     public Double getAmount() {
         return this.amount;
     }
@@ -143,6 +150,7 @@ public class RecurringCharge implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RecurringCharge withAmount(Double amount) {
         setAmount(amount);
         return this;

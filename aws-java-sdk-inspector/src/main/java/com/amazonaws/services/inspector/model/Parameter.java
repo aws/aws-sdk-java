@@ -46,6 +46,7 @@ public class Parameter implements Serializable, Cloneable {
      * @param name
      *        The name of the variable that is being replaced.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -57,6 +58,7 @@ public class Parameter implements Serializable, Cloneable {
      * 
      * @return The name of the variable that is being replaced.
      */
+
     public String getName() {
         return this.name;
     }
@@ -71,6 +73,7 @@ public class Parameter implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Parameter withName(String name) {
         setName(name);
         return this;
@@ -84,6 +87,7 @@ public class Parameter implements Serializable, Cloneable {
      * @param value
      *        The value assigned to the variable that is being replaced.
      */
+
     public void setValue(String value) {
         this.value = value;
     }
@@ -95,6 +99,7 @@ public class Parameter implements Serializable, Cloneable {
      * 
      * @return The value assigned to the variable that is being replaced.
      */
+
     public String getValue() {
         return this.value;
     }
@@ -109,6 +114,7 @@ public class Parameter implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Parameter withValue(String value) {
         setValue(value);
         return this;

@@ -69,6 +69,7 @@ public class CreateReservedInstancesListingRequest extends
      * @param reservedInstancesId
      *        The ID of the active Reserved Instance.
      */
+
     public void setReservedInstancesId(String reservedInstancesId) {
         this.reservedInstancesId = reservedInstancesId;
     }
@@ -80,6 +81,7 @@ public class CreateReservedInstancesListingRequest extends
      * 
      * @return The ID of the active Reserved Instance.
      */
+
     public String getReservedInstancesId() {
         return this.reservedInstancesId;
     }
@@ -94,6 +96,7 @@ public class CreateReservedInstancesListingRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateReservedInstancesListingRequest withReservedInstancesId(
             String reservedInstancesId) {
         setReservedInstancesId(reservedInstancesId);
@@ -114,6 +117,7 @@ public class CreateReservedInstancesListingRequest extends
      *        number should be less than or equal to the instance count
      *        associated with the Reserved Instance ID specified in this call.
      */
+
     public void setInstanceCount(Integer instanceCount) {
         this.instanceCount = instanceCount;
     }
@@ -131,6 +135,7 @@ public class CreateReservedInstancesListingRequest extends
      *         number should be less than or equal to the instance count
      *         associated with the Reserved Instance ID specified in this call.
      */
+
     public Integer getInstanceCount() {
         return this.instanceCount;
     }
@@ -151,6 +156,7 @@ public class CreateReservedInstancesListingRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateReservedInstancesListingRequest withInstanceCount(
             Integer instanceCount) {
         setInstanceCount(instanceCount);
@@ -166,6 +172,7 @@ public class CreateReservedInstancesListingRequest extends
      * @return A list specifying the price of the Reserved Instance for each
      *         month remaining in the Reserved Instance term.
      */
+
     public java.util.List<PriceScheduleSpecification> getPriceSchedules() {
         if (priceSchedules == null) {
             priceSchedules = new com.amazonaws.internal.SdkInternalList<PriceScheduleSpecification>();
@@ -183,6 +190,7 @@ public class CreateReservedInstancesListingRequest extends
      *        A list specifying the price of the Reserved Instance for each
      *        month remaining in the Reserved Instance term.
      */
+
     public void setPriceSchedules(
             java.util.Collection<PriceScheduleSpecification> priceSchedules) {
         if (priceSchedules == null) {
@@ -212,6 +220,7 @@ public class CreateReservedInstancesListingRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateReservedInstancesListingRequest withPriceSchedules(
             PriceScheduleSpecification... priceSchedules) {
         if (this.priceSchedules == null) {
@@ -236,6 +245,7 @@ public class CreateReservedInstancesListingRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateReservedInstancesListingRequest withPriceSchedules(
             java.util.Collection<PriceScheduleSpecification> priceSchedules) {
         setPriceSchedules(priceSchedules);
@@ -258,6 +268,7 @@ public class CreateReservedInstancesListingRequest extends
      *        "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html"
      *        >Ensuring Idempotency</a>.
      */
+
     public void setClientToken(String clientToken) {
         this.clientToken = clientToken;
     }
@@ -277,6 +288,7 @@ public class CreateReservedInstancesListingRequest extends
      *         "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html"
      *         >Ensuring Idempotency</a>.
      */
+
     public String getClientToken() {
         return this.clientToken;
     }
@@ -299,6 +311,7 @@ public class CreateReservedInstancesListingRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateReservedInstancesListingRequest withClientToken(
             String clientToken) {
         setClientToken(clientToken);

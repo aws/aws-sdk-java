@@ -80,6 +80,7 @@ public class DescribeReservedInstancesListingsRequest extends
      * @param reservedInstancesId
      *        One or more Reserved Instance IDs.
      */
+
     public void setReservedInstancesId(String reservedInstancesId) {
         this.reservedInstancesId = reservedInstancesId;
     }
@@ -91,6 +92,7 @@ public class DescribeReservedInstancesListingsRequest extends
      * 
      * @return One or more Reserved Instance IDs.
      */
+
     public String getReservedInstancesId() {
         return this.reservedInstancesId;
     }
@@ -105,6 +107,7 @@ public class DescribeReservedInstancesListingsRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeReservedInstancesListingsRequest withReservedInstancesId(
             String reservedInstancesId) {
         setReservedInstancesId(reservedInstancesId);
@@ -119,6 +122,7 @@ public class DescribeReservedInstancesListingsRequest extends
      * @param reservedInstancesListingId
      *        One or more Reserved Instance listing IDs.
      */
+
     public void setReservedInstancesListingId(String reservedInstancesListingId) {
         this.reservedInstancesListingId = reservedInstancesListingId;
     }
@@ -130,6 +134,7 @@ public class DescribeReservedInstancesListingsRequest extends
      * 
      * @return One or more Reserved Instance listing IDs.
      */
+
     public String getReservedInstancesListingId() {
         return this.reservedInstancesListingId;
     }
@@ -144,6 +149,7 @@ public class DescribeReservedInstancesListingsRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeReservedInstancesListingsRequest withReservedInstancesListingId(
             String reservedInstancesListingId) {
         setReservedInstancesListingId(reservedInstancesListingId);
@@ -207,6 +213,7 @@ public class DescribeReservedInstancesListingsRequest extends
      *         </p>
      *         </li>
      */
+
     public java.util.List<Filter> getFilters() {
         if (filters == null) {
             filters = new com.amazonaws.internal.SdkInternalList<Filter>();
@@ -272,6 +279,7 @@ public class DescribeReservedInstancesListingsRequest extends
      *        </p>
      *        </li>
      */
+
     public void setFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
             this.filters = null;
@@ -348,6 +356,7 @@ public class DescribeReservedInstancesListingsRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeReservedInstancesListingsRequest withFilters(
             Filter... filters) {
         if (this.filters == null) {
@@ -420,6 +429,7 @@ public class DescribeReservedInstancesListingsRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeReservedInstancesListingsRequest withFilters(
             java.util.Collection<Filter> filters) {
         setFilters(filters);

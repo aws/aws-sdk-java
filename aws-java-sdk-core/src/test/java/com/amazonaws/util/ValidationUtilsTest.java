@@ -14,9 +14,9 @@
  */
 package com.amazonaws.util;
 
-import static org.junit.Assert.assertEquals;
-
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class ValidationUtilsTest {
 
@@ -30,4 +30,20 @@ public class ValidationUtilsTest {
         String nonNullString = "foo";
         assertEquals(nonNullString, ValidationUtils.assertNotNull(nonNullString, "nonNullString"));
     }
+
+    @Test
+    public void assertAllAreNull_AllNull_DoesNotThrow() {
+        ValidationUtils.assertAllAreNull("foo", null, null, null);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void assertAllAreNull_SomeNull_ThrowsException() {
+        ValidationUtils.assertAllAreNull("foo", null, "non-null", null, null);
+    }
+
+    @Test
+    public void assertAllAreNull_NoneProvided_DoesNotThrow() {
+        ValidationUtils.assertAllAreNull("foo");
+    }
+
 }

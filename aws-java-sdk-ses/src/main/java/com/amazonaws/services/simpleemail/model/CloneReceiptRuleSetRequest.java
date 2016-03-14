@@ -63,6 +63,7 @@ public class CloneReceiptRuleSetRequest extends AmazonWebServiceRequest
      *        <li>Start and end with a letter or number.</li>
      *        <li>Contain less than 64 characters.</li>
      */
+
     public void setRuleSetName(String ruleSetName) {
         this.ruleSetName = ruleSetName;
     }
@@ -85,6 +86,7 @@ public class CloneReceiptRuleSetRequest extends AmazonWebServiceRequest
      *         <li>Start and end with a letter or number.</li>
      *         <li>Contain less than 64 characters.</li>
      */
+
     public String getRuleSetName() {
         return this.ruleSetName;
     }
@@ -110,6 +112,7 @@ public class CloneReceiptRuleSetRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CloneReceiptRuleSetRequest withRuleSetName(String ruleSetName) {
         setRuleSetName(ruleSetName);
         return this;
@@ -123,6 +126,7 @@ public class CloneReceiptRuleSetRequest extends AmazonWebServiceRequest
      * @param originalRuleSetName
      *        The name of the rule set to clone.
      */
+
     public void setOriginalRuleSetName(String originalRuleSetName) {
         this.originalRuleSetName = originalRuleSetName;
     }
@@ -134,6 +138,7 @@ public class CloneReceiptRuleSetRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the rule set to clone.
      */
+
     public String getOriginalRuleSetName() {
         return this.originalRuleSetName;
     }
@@ -148,6 +153,7 @@ public class CloneReceiptRuleSetRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CloneReceiptRuleSetRequest withOriginalRuleSetName(
             String originalRuleSetName) {
         setOriginalRuleSetName(originalRuleSetName);

@@ -46,6 +46,7 @@ public class DeleteSSHPublicKeyRequest extends AmazonWebServiceRequest
      * @param userName
      *        The name of the IAM user associated with the SSH public key.
      */
+
     public void setUserName(String userName) {
         this.userName = userName;
     }
@@ -57,6 +58,7 @@ public class DeleteSSHPublicKeyRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the IAM user associated with the SSH public key.
      */
+
     public String getUserName() {
         return this.userName;
     }
@@ -71,6 +73,7 @@ public class DeleteSSHPublicKeyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteSSHPublicKeyRequest withUserName(String userName) {
         setUserName(userName);
         return this;
@@ -84,6 +87,7 @@ public class DeleteSSHPublicKeyRequest extends AmazonWebServiceRequest
      * @param sSHPublicKeyId
      *        The unique identifier for the SSH public key.
      */
+
     public void setSSHPublicKeyId(String sSHPublicKeyId) {
         this.sSHPublicKeyId = sSHPublicKeyId;
     }
@@ -95,6 +99,7 @@ public class DeleteSSHPublicKeyRequest extends AmazonWebServiceRequest
      * 
      * @return The unique identifier for the SSH public key.
      */
+
     public String getSSHPublicKeyId() {
         return this.sSHPublicKeyId;
     }
@@ -109,6 +114,7 @@ public class DeleteSSHPublicKeyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteSSHPublicKeyRequest withSSHPublicKeyId(String sSHPublicKeyId) {
         setSSHPublicKeyId(sSHPublicKeyId);
         return this;

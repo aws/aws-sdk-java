@@ -70,6 +70,7 @@ public class OutputArtifact implements Serializable, Cloneable {
      *        <p>
      *        Output artifact names must be unique within a pipeline.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -101,6 +102,7 @@ public class OutputArtifact implements Serializable, Cloneable {
      *         <p>
      *         Output artifact names must be unique within a pipeline.
      */
+
     public String getName() {
         return this.name;
     }
@@ -135,6 +137,7 @@ public class OutputArtifact implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public OutputArtifact withName(String name) {
         setName(name);
         return this;

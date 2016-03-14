@@ -30,6 +30,7 @@ public class GenerateClientCertificateRequest extends AmazonWebServiceRequest
     /**
      * @param description
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -37,6 +38,7 @@ public class GenerateClientCertificateRequest extends AmazonWebServiceRequest
     /**
      * @return
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -46,6 +48,7 @@ public class GenerateClientCertificateRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GenerateClientCertificateRequest withDescription(String description) {
         setDescription(description);
         return this;

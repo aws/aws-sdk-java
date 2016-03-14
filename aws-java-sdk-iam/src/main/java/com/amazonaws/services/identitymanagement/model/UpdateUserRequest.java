@@ -78,6 +78,7 @@ public class UpdateUserRequest extends AmazonWebServiceRequest implements
      *        Name of the user to update. If you're changing the name of the
      *        user, this is the original user name.
      */
+
     public void setUserName(String userName) {
         this.userName = userName;
     }
@@ -91,6 +92,7 @@ public class UpdateUserRequest extends AmazonWebServiceRequest implements
      * @return Name of the user to update. If you're changing the name of the
      *         user, this is the original user name.
      */
+
     public String getUserName() {
         return this.userName;
     }
@@ -107,6 +109,7 @@ public class UpdateUserRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateUserRequest withUserName(String userName) {
         setUserName(userName);
         return this;
@@ -122,6 +125,7 @@ public class UpdateUserRequest extends AmazonWebServiceRequest implements
      *        New path for the user. Include this parameter only if you're
      *        changing the user's path.
      */
+
     public void setNewPath(String newPath) {
         this.newPath = newPath;
     }
@@ -135,6 +139,7 @@ public class UpdateUserRequest extends AmazonWebServiceRequest implements
      * @return New path for the user. Include this parameter only if you're
      *         changing the user's path.
      */
+
     public String getNewPath() {
         return this.newPath;
     }
@@ -151,6 +156,7 @@ public class UpdateUserRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateUserRequest withNewPath(String newPath) {
         setNewPath(newPath);
         return this;
@@ -166,6 +172,7 @@ public class UpdateUserRequest extends AmazonWebServiceRequest implements
      *        New name for the user. Include this parameter only if you're
      *        changing the user's name.
      */
+
     public void setNewUserName(String newUserName) {
         this.newUserName = newUserName;
     }
@@ -179,6 +186,7 @@ public class UpdateUserRequest extends AmazonWebServiceRequest implements
      * @return New name for the user. Include this parameter only if you're
      *         changing the user's name.
      */
+
     public String getNewUserName() {
         return this.newUserName;
     }
@@ -195,6 +203,7 @@ public class UpdateUserRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateUserRequest withNewUserName(String newUserName) {
         setNewUserName(newUserName);
         return this;

@@ -69,6 +69,7 @@ public class SetPlatformApplicationAttributesRequest extends
      *        PlatformApplicationArn for SetPlatformApplicationAttributes
      *        action.
      */
+
     public void setPlatformApplicationArn(String platformApplicationArn) {
         this.platformApplicationArn = platformApplicationArn;
     }
@@ -81,6 +82,7 @@ public class SetPlatformApplicationAttributesRequest extends
      * @return PlatformApplicationArn for SetPlatformApplicationAttributes
      *         action.
      */
+
     public String getPlatformApplicationArn() {
         return this.platformApplicationArn;
     }
@@ -96,6 +98,7 @@ public class SetPlatformApplicationAttributesRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetPlatformApplicationAttributesRequest withPlatformApplicationArn(
             String platformApplicationArn) {
         setPlatformApplicationArn(platformApplicationArn);
@@ -150,6 +153,7 @@ public class SetPlatformApplicationAttributesRequest extends
      *         Publish delivery failure (permanent) to one of the application's
      *         endpoints.</li>
      */
+
     public java.util.Map<String, String> getAttributes() {
         if (attributes == null) {
             attributes = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -205,6 +209,7 @@ public class SetPlatformApplicationAttributesRequest extends
      *        Publish delivery failure (permanent) to one of the application's
      *        endpoints.</li>
      */
+
     public void setAttributes(java.util.Map<String, String> attributes) {
         this.attributes = attributes == null ? null
                 : new com.amazonaws.internal.SdkInternalMap<String, String>(
@@ -261,6 +266,7 @@ public class SetPlatformApplicationAttributesRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetPlatformApplicationAttributesRequest withAttributes(
             java.util.Map<String, String> attributes) {
         setAttributes(attributes);
@@ -283,6 +289,7 @@ public class SetPlatformApplicationAttributesRequest extends
      * Removes all the entries added into Attributes. &lt;p> Returns a reference
      * to this object so that method calls can be chained together.
      */
+
     public SetPlatformApplicationAttributesRequest clearAttributesEntries() {
         this.attributes = null;
         return this;

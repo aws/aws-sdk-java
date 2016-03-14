@@ -40,6 +40,7 @@ public class CreateDeliveryStreamResult implements Serializable, Cloneable {
      * @param deliveryStreamARN
      *        The ARN of the delivery stream.
      */
+
     public void setDeliveryStreamARN(String deliveryStreamARN) {
         this.deliveryStreamARN = deliveryStreamARN;
     }
@@ -51,6 +52,7 @@ public class CreateDeliveryStreamResult implements Serializable, Cloneable {
      * 
      * @return The ARN of the delivery stream.
      */
+
     public String getDeliveryStreamARN() {
         return this.deliveryStreamARN;
     }
@@ -65,6 +67,7 @@ public class CreateDeliveryStreamResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDeliveryStreamResult withDeliveryStreamARN(
             String deliveryStreamARN) {
         setDeliveryStreamARN(deliveryStreamARN);

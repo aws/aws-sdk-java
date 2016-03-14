@@ -56,6 +56,7 @@ public class LookupEventsResult implements Serializable, Cloneable {
      *         specified and the CloudTrail event. The events list is sorted by
      *         time. The most recent event is listed first.
      */
+
     public java.util.List<Event> getEvents() {
         if (events == null) {
             events = new com.amazonaws.internal.SdkInternalList<Event>();
@@ -75,6 +76,7 @@ public class LookupEventsResult implements Serializable, Cloneable {
      *        and the CloudTrail event. The events list is sorted by time. The
      *        most recent event is listed first.
      */
+
     public void setEvents(java.util.Collection<Event> events) {
         if (events == null) {
             this.events = null;
@@ -104,6 +106,7 @@ public class LookupEventsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LookupEventsResult withEvents(Event... events) {
         if (this.events == null) {
             setEvents(new com.amazonaws.internal.SdkInternalList<Event>(
@@ -129,6 +132,7 @@ public class LookupEventsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LookupEventsResult withEvents(java.util.Collection<Event> events) {
         setEvents(events);
         return this;
@@ -152,6 +156,7 @@ public class LookupEventsResult implements Serializable, Cloneable {
      *        AttributeKey of 'Username' with a value of 'root', the call with
      *        NextToken should include those same parameters.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -173,6 +178,7 @@ public class LookupEventsResult implements Serializable, Cloneable {
      *         an AttributeKey of 'Username' with a value of 'root', the call
      *         with NextToken should include those same parameters.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -197,6 +203,7 @@ public class LookupEventsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LookupEventsResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

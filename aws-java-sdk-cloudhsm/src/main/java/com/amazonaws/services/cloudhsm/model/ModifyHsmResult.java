@@ -40,6 +40,7 @@ public class ModifyHsmResult implements Serializable, Cloneable {
      * @param hsmArn
      *        The ARN of the HSM.
      */
+
     public void setHsmArn(String hsmArn) {
         this.hsmArn = hsmArn;
     }
@@ -51,6 +52,7 @@ public class ModifyHsmResult implements Serializable, Cloneable {
      * 
      * @return The ARN of the HSM.
      */
+
     public String getHsmArn() {
         return this.hsmArn;
     }
@@ -65,6 +67,7 @@ public class ModifyHsmResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyHsmResult withHsmArn(String hsmArn) {
         setHsmArn(hsmArn);
         return this;

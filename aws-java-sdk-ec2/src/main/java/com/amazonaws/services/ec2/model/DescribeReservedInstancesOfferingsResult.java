@@ -45,6 +45,7 @@ public class DescribeReservedInstancesOfferingsResult implements Serializable,
      * 
      * @return A list of Reserved Instances offerings.
      */
+
     public java.util.List<ReservedInstancesOffering> getReservedInstancesOfferings() {
         if (reservedInstancesOfferings == null) {
             reservedInstancesOfferings = new com.amazonaws.internal.SdkInternalList<ReservedInstancesOffering>();
@@ -60,6 +61,7 @@ public class DescribeReservedInstancesOfferingsResult implements Serializable,
      * @param reservedInstancesOfferings
      *        A list of Reserved Instances offerings.
      */
+
     public void setReservedInstancesOfferings(
             java.util.Collection<ReservedInstancesOffering> reservedInstancesOfferings) {
         if (reservedInstancesOfferings == null) {
@@ -87,6 +89,7 @@ public class DescribeReservedInstancesOfferingsResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeReservedInstancesOfferingsResult withReservedInstancesOfferings(
             ReservedInstancesOffering... reservedInstancesOfferings) {
         if (this.reservedInstancesOfferings == null) {
@@ -109,6 +112,7 @@ public class DescribeReservedInstancesOfferingsResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeReservedInstancesOfferingsResult withReservedInstancesOfferings(
             java.util.Collection<ReservedInstancesOffering> reservedInstancesOfferings) {
         setReservedInstancesOfferings(reservedInstancesOfferings);
@@ -125,6 +129,7 @@ public class DescribeReservedInstancesOfferingsResult implements Serializable,
      *        The token to use to retrieve the next page of results. This value
      *        is <code>null</code> when there are no more results to return.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -138,6 +143,7 @@ public class DescribeReservedInstancesOfferingsResult implements Serializable,
      * @return The token to use to retrieve the next page of results. This value
      *         is <code>null</code> when there are no more results to return.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -154,6 +160,7 @@ public class DescribeReservedInstancesOfferingsResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeReservedInstancesOfferingsResult withNextToken(
             String nextToken) {
         setNextToken(nextToken);

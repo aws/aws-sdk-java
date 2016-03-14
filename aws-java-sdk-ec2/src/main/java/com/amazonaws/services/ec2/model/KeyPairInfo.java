@@ -49,6 +49,7 @@ public class KeyPairInfo implements Serializable, Cloneable {
      * @param keyName
      *        The name of the key pair.
      */
+
     public void setKeyName(String keyName) {
         this.keyName = keyName;
     }
@@ -60,6 +61,7 @@ public class KeyPairInfo implements Serializable, Cloneable {
      * 
      * @return The name of the key pair.
      */
+
     public String getKeyName() {
         return this.keyName;
     }
@@ -74,6 +76,7 @@ public class KeyPairInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public KeyPairInfo withKeyName(String keyName) {
         setKeyName(keyName);
         return this;
@@ -93,6 +96,7 @@ public class KeyPairInfo implements Serializable, Cloneable {
      *        <a>ImportKeyPair</a> to provide AWS the public key, this is the
      *        MD5 public key fingerprint as specified in section 4 of RFC4716.
      */
+
     public void setKeyFingerprint(String keyFingerprint) {
         this.keyFingerprint = keyFingerprint;
     }
@@ -110,6 +114,7 @@ public class KeyPairInfo implements Serializable, Cloneable {
      *         <a>ImportKeyPair</a> to provide AWS the public key, this is the
      *         MD5 public key fingerprint as specified in section 4 of RFC4716.
      */
+
     public String getKeyFingerprint() {
         return this.keyFingerprint;
     }
@@ -130,6 +135,7 @@ public class KeyPairInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public KeyPairInfo withKeyFingerprint(String keyFingerprint) {
         setKeyFingerprint(keyFingerprint);
         return this;

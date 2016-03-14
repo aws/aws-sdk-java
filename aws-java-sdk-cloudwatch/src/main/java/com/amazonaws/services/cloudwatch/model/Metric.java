@@ -59,6 +59,7 @@ public class Metric implements Serializable, Cloneable {
      * @param namespace
      *        The namespace of the metric.
      */
+
     public void setNamespace(String namespace) {
         this.namespace = namespace;
     }
@@ -70,6 +71,7 @@ public class Metric implements Serializable, Cloneable {
      * 
      * @return The namespace of the metric.
      */
+
     public String getNamespace() {
         return this.namespace;
     }
@@ -84,6 +86,7 @@ public class Metric implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Metric withNamespace(String namespace) {
         setNamespace(namespace);
         return this;
@@ -97,6 +100,7 @@ public class Metric implements Serializable, Cloneable {
      * @param metricName
      *        The name of the metric.
      */
+
     public void setMetricName(String metricName) {
         this.metricName = metricName;
     }
@@ -108,6 +112,7 @@ public class Metric implements Serializable, Cloneable {
      * 
      * @return The name of the metric.
      */
+
     public String getMetricName() {
         return this.metricName;
     }
@@ -122,6 +127,7 @@ public class Metric implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Metric withMetricName(String metricName) {
         setMetricName(metricName);
         return this;
@@ -134,6 +140,7 @@ public class Metric implements Serializable, Cloneable {
      * 
      * @return A list of dimensions associated with the metric.
      */
+
     public java.util.List<Dimension> getDimensions() {
         if (dimensions == null) {
             dimensions = new com.amazonaws.internal.SdkInternalList<Dimension>();
@@ -149,6 +156,7 @@ public class Metric implements Serializable, Cloneable {
      * @param dimensions
      *        A list of dimensions associated with the metric.
      */
+
     public void setDimensions(java.util.Collection<Dimension> dimensions) {
         if (dimensions == null) {
             this.dimensions = null;
@@ -175,6 +183,7 @@ public class Metric implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Metric withDimensions(Dimension... dimensions) {
         if (this.dimensions == null) {
             setDimensions(new com.amazonaws.internal.SdkInternalList<Dimension>(
@@ -196,6 +205,7 @@ public class Metric implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Metric withDimensions(java.util.Collection<Dimension> dimensions) {
         setDimensions(dimensions);
         return this;

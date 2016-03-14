@@ -31,6 +31,7 @@ public class DescribeSubscriptionFiltersResult implements Serializable,
     /**
      * @return
      */
+
     public java.util.List<SubscriptionFilter> getSubscriptionFilters() {
         if (subscriptionFilters == null) {
             subscriptionFilters = new com.amazonaws.internal.SdkInternalList<SubscriptionFilter>();
@@ -41,6 +42,7 @@ public class DescribeSubscriptionFiltersResult implements Serializable,
     /**
      * @param subscriptionFilters
      */
+
     public void setSubscriptionFilters(
             java.util.Collection<SubscriptionFilter> subscriptionFilters) {
         if (subscriptionFilters == null) {
@@ -64,6 +66,7 @@ public class DescribeSubscriptionFiltersResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSubscriptionFiltersResult withSubscriptionFilters(
             SubscriptionFilter... subscriptionFilters) {
         if (this.subscriptionFilters == null) {
@@ -81,6 +84,7 @@ public class DescribeSubscriptionFiltersResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSubscriptionFiltersResult withSubscriptionFilters(
             java.util.Collection<SubscriptionFilter> subscriptionFilters) {
         setSubscriptionFilters(subscriptionFilters);
@@ -90,6 +94,7 @@ public class DescribeSubscriptionFiltersResult implements Serializable,
     /**
      * @param nextToken
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -97,6 +102,7 @@ public class DescribeSubscriptionFiltersResult implements Serializable,
     /**
      * @return
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -106,6 +112,7 @@ public class DescribeSubscriptionFiltersResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSubscriptionFiltersResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

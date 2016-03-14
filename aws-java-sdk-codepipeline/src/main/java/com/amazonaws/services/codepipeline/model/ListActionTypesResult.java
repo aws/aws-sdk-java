@@ -47,6 +47,7 @@ public class ListActionTypesResult implements Serializable, Cloneable {
      * 
      * @return Provides details of the action types.
      */
+
     public java.util.List<ActionType> getActionTypes() {
         return actionTypes;
     }
@@ -59,6 +60,7 @@ public class ListActionTypesResult implements Serializable, Cloneable {
      * @param actionTypes
      *        Provides details of the action types.
      */
+
     public void setActionTypes(java.util.Collection<ActionType> actionTypes) {
         if (actionTypes == null) {
             this.actionTypes = null;
@@ -84,6 +86,7 @@ public class ListActionTypesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListActionTypesResult withActionTypes(ActionType... actionTypes) {
         if (this.actionTypes == null) {
             setActionTypes(new java.util.ArrayList<ActionType>(
@@ -105,6 +108,7 @@ public class ListActionTypesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListActionTypesResult withActionTypes(
             java.util.Collection<ActionType> actionTypes) {
         setActionTypes(actionTypes);
@@ -124,6 +128,7 @@ public class ListActionTypesResult implements Serializable, Cloneable {
      *        action types call to return the next set of action types in the
      *        list.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -140,6 +145,7 @@ public class ListActionTypesResult implements Serializable, Cloneable {
      *         list action types call to return the next set of action types in
      *         the list.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -159,6 +165,7 @@ public class ListActionTypesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListActionTypesResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

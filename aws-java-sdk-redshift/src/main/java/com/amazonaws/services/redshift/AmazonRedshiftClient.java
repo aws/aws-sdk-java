@@ -266,6 +266,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         exceptionUnmarshallers.add(new InvalidHsmClientCertificateStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new UnsupportedOperationExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ClusterSecurityGroupNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DependentServiceRequestThrottlingExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ResizeNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TagLimitExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SnapshotCopyAlreadyDisabledExceptionUnmarshaller());
@@ -296,12 +297,15 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         exceptionUnmarshallers.add(new AuthorizationQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SNSTopicArnNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new UnsupportedOptionExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TableRestoreNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new UnauthorizedOperationExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidElasticIpExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidTableRestoreArgumentExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidClusterSnapshotStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidS3KeyPrefixExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SourceNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidClusterSecurityGroupStateExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InProgressTableRestoreQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SubscriptionEventIdNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ClusterSubnetGroupNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ClusterSubnetGroupAlreadyExistsExceptionUnmarshaller());
@@ -444,6 +448,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws SubnetAlreadyInUseException
      * @throws InvalidSubnetException
      * @throws UnauthorizedOperationException
+     * @throws DependentServiceRequestThrottlingException
      * @throws ClusterSubnetQuotaExceededException
      * @throws ClusterSubnetGroupNotFoundException
      *
@@ -705,8 +710,10 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @return The response from the ModifyCluster service method, as
      *         returned by AmazonRedshift.
      * 
+     * @throws InvalidElasticIpException
      * @throws InvalidClusterSecurityGroupStateException
      * @throws HsmConfigurationNotFoundException
+     * @throws DependentServiceRequestThrottlingException
      * @throws InvalidClusterStateException
      * @throws UnsupportedOptionException
      * @throws ClusterAlreadyExistsException
@@ -714,8 +721,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws InsufficientClusterCapacityException
      * @throws UnauthorizedOperationException
      * @throws NumberOfNodesQuotaExceededException
-     * @throws LimitExceededException
      * @throws ClusterNotFoundException
+     * @throws LimitExceededException
      * @throws HsmClientCertificateNotFoundException
      * @throws ClusterSecurityGroupNotFoundException
      *
@@ -995,6 +1002,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws InvalidSubnetException
      * @throws InvalidTagException
      * @throws UnauthorizedOperationException
+     * @throws DependentServiceRequestThrottlingException
      * @throws ClusterSubnetQuotaExceededException
      * @throws ClusterSubnetGroupAlreadyExistsException
      * @throws ClusterSubnetGroupQuotaExceededException
@@ -1025,6 +1033,61 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
             }
 
             response = invoke(request, new ClusterSubnetGroupStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
+     * Lists the status of one or more table restore requests made using the
+     * RestoreTableFromClusterSnapshot API action. If you don't specify a
+     * value for the <code>TableRestoreRequestId</code> parameter, then
+     * <code>DescribeTableRestoreStatus</code> returns the status of all
+     * in-progress table restore requests. Otherwise
+     * <code>DescribeTableRestoreStatus</code> returns the status of the
+     * table specified by <code>TableRestoreRequestId</code> .
+     * </p>
+     *
+     * @param describeTableRestoreStatusRequest Container for the necessary
+     *           parameters to execute the DescribeTableRestoreStatus service method on
+     *           AmazonRedshift.
+     * 
+     * @return The response from the DescribeTableRestoreStatus service
+     *         method, as returned by AmazonRedshift.
+     * 
+     * @throws ClusterNotFoundException
+     * @throws TableRestoreNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRedshift indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeTableRestoreStatusResult describeTableRestoreStatus(DescribeTableRestoreStatusRequest describeTableRestoreStatusRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeTableRestoreStatusRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeTableRestoreStatusRequest> request = null;
+        Response<DescribeTableRestoreStatusResult> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeTableRestoreStatusRequestMarshaller().marshall(super.beforeMarshalling(describeTableRestoreStatusRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request, new DescribeTableRestoreStatusResultStaxUnmarshaller(), executionContext);
             return response.getAwsResponse();
 
         } finally {
@@ -1330,14 +1393,15 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws InvalidSubnetException
      * @throws HsmConfigurationNotFoundException
      * @throws InvalidTagException
+     * @throws DependentServiceRequestThrottlingException
      * @throws ClusterSubnetGroupNotFoundException
      * @throws InvalidClusterSubnetGroupStateException
      * @throws ClusterAlreadyExistsException
      * @throws InvalidVPCNetworkStateException
      * @throws ClusterParameterGroupNotFoundException
      * @throws TagLimitExceededException
-     * @throws InsufficientClusterCapacityException
      * @throws UnauthorizedOperationException
+     * @throws InsufficientClusterCapacityException
      * @throws NumberOfNodesQuotaExceededException
      * @throws NumberOfNodesPerClusterLimitExceededException
      * @throws LimitExceededException
@@ -1433,17 +1497,21 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * <p>
      * Adds an inbound (ingress) rule to an Amazon Redshift security group.
      * Depending on whether the application accessing your cluster is running
-     * on the Internet or an EC2 instance, you can authorize inbound access
-     * to either a Classless Interdomain Routing (CIDR) IP address range or
-     * an EC2 security group. You can add as many as 20 ingress rules to an
-     * Amazon Redshift security group.
+     * on the Internet or an Amazon EC2 instance, you can authorize inbound
+     * access to either a Classless Interdomain Routing (CIDR)/Internet
+     * Protocol (IP) range or to an Amazon EC2 security group. You can add as
+     * many as 20 ingress rules to an Amazon Redshift security group.
      * </p>
      * <p>
-     * <b>NOTE:</b> The EC2 security group must be defined in the AWS region
-     * where the cluster resides.
+     * If you authorize access to an Amazon EC2 security group, specify
+     * <i>EC2SecurityGroupName</i> and <i>EC2SecurityGroupOwnerId</i> . The
+     * Amazon EC2 security group and Amazon Redshift cluster must be in the
+     * same AWS region.
      * </p>
      * <p>
-     * For an overview of CIDR blocks, see the Wikipedia article on
+     * If you authorize access to a CIDR/IP address range, specify
+     * <i>CIDRIP</i> . For an overview of CIDR blocks, see the Wikipedia
+     * article on
      * <a href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing"> Classless Inter-Domain Routing </a>
      * .
      * </p>
@@ -1515,6 +1583,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      *         returned by AmazonRedshift.
      * 
      * @throws InvalidClusterStateException
+     * @throws DependentServiceRequestThrottlingException
      * @throws ClusterNotFoundException
      *
      * @throws AmazonClientException
@@ -1929,6 +1998,75 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
     
     /**
      * <p>
+     * Creates a new table from a table in an Amazon Redshift cluster
+     * snapshot. You must create the new table within the Amazon Redshift
+     * cluster that the snapshot was taken from.
+     * </p>
+     * <p>
+     * You cannot use <code>RestoreTableFromClusterSnapshot</code> to
+     * restore a table with the same name as an existing table in an Amazon
+     * Redshift cluster. That is, you cannot overwrite an existing table in a
+     * cluster with a restored table. If you want to replace your original
+     * table with a new, restored table, then rename or drop your original
+     * table before you call <code>RestoreTableFromClusterSnapshot</code> .
+     * When you have renamed your original table, then you can pass the
+     * original name of the table as the <code>NewTableName</code> parameter
+     * value in the call to <code>RestoreTableFromClusterSnapshot</code> .
+     * This way, you can replace the original table with the table created
+     * from the snapshot.
+     * </p>
+     *
+     * @param restoreTableFromClusterSnapshotRequest Container for the
+     *           necessary parameters to execute the RestoreTableFromClusterSnapshot
+     *           service method on AmazonRedshift.
+     * 
+     * @return The response from the RestoreTableFromClusterSnapshot service
+     *         method, as returned by AmazonRedshift.
+     * 
+     * @throws InProgressTableRestoreQuotaExceededException
+     * @throws InvalidClusterStateException
+     * @throws UnsupportedOperationException
+     * @throws ClusterNotFoundException
+     * @throws ClusterSnapshotNotFoundException
+     * @throws InvalidTableRestoreArgumentException
+     * @throws InvalidClusterSnapshotStateException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRedshift indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public TableRestoreStatus restoreTableFromClusterSnapshot(RestoreTableFromClusterSnapshotRequest restoreTableFromClusterSnapshotRequest) {
+        ExecutionContext executionContext = createExecutionContext(restoreTableFromClusterSnapshotRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RestoreTableFromClusterSnapshotRequest> request = null;
+        Response<TableRestoreStatus> response = null;
+        
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RestoreTableFromClusterSnapshotRequestMarshaller().marshall(super.beforeMarshalling(restoreTableFromClusterSnapshotRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            response = invoke(request, new TableRestoreStatusStaxUnmarshaller(), executionContext);
+            return response.getAwsResponse();
+
+        } finally {
+            
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+    
+    /**
+     * <p>
      * Creates a new cluster from a snapshot. By default, Amazon Redshift
      * creates the resulting cluster with the same configuration as the
      * original cluster from which the snapshot was created, except that the
@@ -1959,6 +2097,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws InvalidElasticIpException
      * @throws InvalidSubnetException
      * @throws HsmConfigurationNotFoundException
+     * @throws DependentServiceRequestThrottlingException
      * @throws ClusterSubnetGroupNotFoundException
      * @throws InvalidClusterSubnetGroupStateException
      * @throws ClusterAlreadyExistsException
@@ -2821,9 +2960,12 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @return The response from the AuthorizeSnapshotAccess service method,
      *         as returned by AmazonRedshift.
      * 
+     * @throws DependentServiceRequestThrottlingException
      * @throws AuthorizationAlreadyExistsException
+     * @throws LimitExceededException
      * @throws ClusterSnapshotNotFoundException
      * @throws AuthorizationQuotaExceededException
+     * @throws InvalidClusterSnapshotStateException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2875,6 +3017,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws CopyToRegionDisabledException
      * @throws UnauthorizedOperationException
      * @throws InvalidClusterStateException
+     * @throws DependentServiceRequestThrottlingException
      * @throws ClusterNotFoundException
      * @throws LimitExceededException
      * @throws IncompatibleOrderableOptionsException
@@ -3717,6 +3860,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * 
      * @throws TagLimitExceededException
      * @throws InvalidTagException
+     * @throws DependentServiceRequestThrottlingException
      * @throws LimitExceededException
      * @throws SnapshotCopyGrantAlreadyExistsException
      * @throws SnapshotCopyGrantQuotaExceededException
@@ -3783,6 +3927,35 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      */
     public DescribeOrderableClusterOptionsResult describeOrderableClusterOptions() throws AmazonServiceException, AmazonClientException {
         return describeOrderableClusterOptions(new DescribeOrderableClusterOptionsRequest());
+    }
+    
+    /**
+     * <p>
+     * Lists the status of one or more table restore requests made using the
+     * RestoreTableFromClusterSnapshot API action. If you don't specify a
+     * value for the <code>TableRestoreRequestId</code> parameter, then
+     * <code>DescribeTableRestoreStatus</code> returns the status of all
+     * in-progress table restore requests. Otherwise
+     * <code>DescribeTableRestoreStatus</code> returns the status of the
+     * table specified by <code>TableRestoreRequestId</code> .
+     * </p>
+     * 
+     * @return The response from the DescribeTableRestoreStatus service
+     *         method, as returned by AmazonRedshift.
+     * 
+     * @throws ClusterNotFoundException
+     * @throws TableRestoreNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRedshift indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeTableRestoreStatusResult describeTableRestoreStatus() throws AmazonServiceException, AmazonClientException {
+        return describeTableRestoreStatus(new DescribeTableRestoreStatusRequest());
     }
     
     /**

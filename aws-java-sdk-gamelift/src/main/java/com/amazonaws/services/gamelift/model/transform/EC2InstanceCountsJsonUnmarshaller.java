@@ -56,6 +56,16 @@ public class EC2InstanceCountsJsonUnmarshaller implements
                     eC2InstanceCounts.setDESIRED(IntegerJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
+                if (context.testExpression("MINIMUM", targetDepth)) {
+                    context.nextToken();
+                    eC2InstanceCounts.setMINIMUM(IntegerJsonUnmarshaller
+                            .getInstance().unmarshall(context));
+                }
+                if (context.testExpression("MAXIMUM", targetDepth)) {
+                    context.nextToken();
+                    eC2InstanceCounts.setMAXIMUM(IntegerJsonUnmarshaller
+                            .getInstance().unmarshall(context));
+                }
                 if (context.testExpression("PENDING", targetDepth)) {
                     context.nextToken();
                     eC2InstanceCounts.setPENDING(IntegerJsonUnmarshaller
@@ -64,6 +74,11 @@ public class EC2InstanceCountsJsonUnmarshaller implements
                 if (context.testExpression("ACTIVE", targetDepth)) {
                     context.nextToken();
                     eC2InstanceCounts.setACTIVE(IntegerJsonUnmarshaller
+                            .getInstance().unmarshall(context));
+                }
+                if (context.testExpression("IDLE", targetDepth)) {
+                    context.nextToken();
+                    eC2InstanceCounts.setIDLE(IntegerJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TERMINATING", targetDepth)) {

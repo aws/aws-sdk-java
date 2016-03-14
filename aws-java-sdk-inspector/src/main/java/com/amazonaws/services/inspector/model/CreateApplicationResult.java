@@ -38,6 +38,7 @@ public class CreateApplicationResult implements Serializable, Cloneable {
      * @param applicationArn
      *        The ARN specifying the application that is created.
      */
+
     public void setApplicationArn(String applicationArn) {
         this.applicationArn = applicationArn;
     }
@@ -49,6 +50,7 @@ public class CreateApplicationResult implements Serializable, Cloneable {
      * 
      * @return The ARN specifying the application that is created.
      */
+
     public String getApplicationArn() {
         return this.applicationArn;
     }
@@ -63,6 +65,7 @@ public class CreateApplicationResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateApplicationResult withApplicationArn(String applicationArn) {
         setApplicationArn(applicationArn);
         return this;

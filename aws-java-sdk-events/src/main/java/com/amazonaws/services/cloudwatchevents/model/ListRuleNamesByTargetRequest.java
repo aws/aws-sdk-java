@@ -58,6 +58,7 @@ public class ListRuleNamesByTargetRequest extends AmazonWebServiceRequest
      *        The Amazon Resource Name (ARN) of the target resource that you
      *        want to list the rules for.
      */
+
     public void setTargetArn(String targetArn) {
         this.targetArn = targetArn;
     }
@@ -71,6 +72,7 @@ public class ListRuleNamesByTargetRequest extends AmazonWebServiceRequest
      * @return The Amazon Resource Name (ARN) of the target resource that you
      *         want to list the rules for.
      */
+
     public String getTargetArn() {
         return this.targetArn;
     }
@@ -87,6 +89,7 @@ public class ListRuleNamesByTargetRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListRuleNamesByTargetRequest withTargetArn(String targetArn) {
         setTargetArn(targetArn);
         return this;
@@ -102,6 +105,7 @@ public class ListRuleNamesByTargetRequest extends AmazonWebServiceRequest
      *        The token returned by a previous call to indicate that there is
      *        more data available.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -115,6 +119,7 @@ public class ListRuleNamesByTargetRequest extends AmazonWebServiceRequest
      * @return The token returned by a previous call to indicate that there is
      *         more data available.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -131,6 +136,7 @@ public class ListRuleNamesByTargetRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListRuleNamesByTargetRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -144,6 +150,7 @@ public class ListRuleNamesByTargetRequest extends AmazonWebServiceRequest
      * @param limit
      *        The maximum number of results to return.
      */
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -155,6 +162,7 @@ public class ListRuleNamesByTargetRequest extends AmazonWebServiceRequest
      * 
      * @return The maximum number of results to return.
      */
+
     public Integer getLimit() {
         return this.limit;
     }
@@ -169,6 +177,7 @@ public class ListRuleNamesByTargetRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListRuleNamesByTargetRequest withLimit(Integer limit) {
         setLimit(limit);
         return this;

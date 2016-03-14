@@ -46,6 +46,7 @@ public class Region implements Serializable, Cloneable {
      * @param regionName
      *        The name of the region.
      */
+
     public void setRegionName(String regionName) {
         this.regionName = regionName;
     }
@@ -57,6 +58,7 @@ public class Region implements Serializable, Cloneable {
      * 
      * @return The name of the region.
      */
+
     public String getRegionName() {
         return this.regionName;
     }
@@ -71,6 +73,7 @@ public class Region implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Region withRegionName(String regionName) {
         setRegionName(regionName);
         return this;
@@ -84,6 +87,7 @@ public class Region implements Serializable, Cloneable {
      * @param endpoint
      *        The region service endpoint.
      */
+
     public void setEndpoint(String endpoint) {
         this.endpoint = endpoint;
     }
@@ -95,6 +99,7 @@ public class Region implements Serializable, Cloneable {
      * 
      * @return The region service endpoint.
      */
+
     public String getEndpoint() {
         return this.endpoint;
     }
@@ -109,6 +114,7 @@ public class Region implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Region withEndpoint(String endpoint) {
         setEndpoint(endpoint);
         return this;

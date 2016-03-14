@@ -36,6 +36,7 @@ public class GetAuthorizersResult implements Serializable, Cloneable {
     /**
      * @param position
      */
+
     public void setPosition(String position) {
         this.position = position;
     }
@@ -43,6 +44,7 @@ public class GetAuthorizersResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getPosition() {
         return this.position;
     }
@@ -52,6 +54,7 @@ public class GetAuthorizersResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetAuthorizersResult withPosition(String position) {
         setPosition(position);
         return this;
@@ -65,6 +68,7 @@ public class GetAuthorizersResult implements Serializable, Cloneable {
      * @return Gets the current list of <a>Authorizer</a> resources in the
      *         collection.
      */
+
     public java.util.List<Authorizer> getItems() {
         return items;
     }
@@ -78,6 +82,7 @@ public class GetAuthorizersResult implements Serializable, Cloneable {
      *        Gets the current list of <a>Authorizer</a> resources in the
      *        collection.
      */
+
     public void setItems(java.util.Collection<Authorizer> items) {
         if (items == null) {
             this.items = null;
@@ -104,6 +109,7 @@ public class GetAuthorizersResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetAuthorizersResult withItems(Authorizer... items) {
         if (this.items == null) {
             setItems(new java.util.ArrayList<Authorizer>(items.length));
@@ -125,6 +131,7 @@ public class GetAuthorizersResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetAuthorizersResult withItems(java.util.Collection<Authorizer> items) {
         setItems(items);
         return this;

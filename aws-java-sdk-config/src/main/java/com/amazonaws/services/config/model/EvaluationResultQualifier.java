@@ -53,6 +53,7 @@ public class EvaluationResultQualifier implements Serializable, Cloneable {
      * @param configRuleName
      *        The name of the AWS Config rule that was used in the evaluation.
      */
+
     public void setConfigRuleName(String configRuleName) {
         this.configRuleName = configRuleName;
     }
@@ -64,6 +65,7 @@ public class EvaluationResultQualifier implements Serializable, Cloneable {
      * 
      * @return The name of the AWS Config rule that was used in the evaluation.
      */
+
     public String getConfigRuleName() {
         return this.configRuleName;
     }
@@ -78,6 +80,7 @@ public class EvaluationResultQualifier implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EvaluationResultQualifier withConfigRuleName(String configRuleName) {
         setConfigRuleName(configRuleName);
         return this;
@@ -91,6 +94,7 @@ public class EvaluationResultQualifier implements Serializable, Cloneable {
      * @param resourceType
      *        The type of AWS resource that was evaluated.
      */
+
     public void setResourceType(String resourceType) {
         this.resourceType = resourceType;
     }
@@ -102,6 +106,7 @@ public class EvaluationResultQualifier implements Serializable, Cloneable {
      * 
      * @return The type of AWS resource that was evaluated.
      */
+
     public String getResourceType() {
         return this.resourceType;
     }
@@ -116,6 +121,7 @@ public class EvaluationResultQualifier implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EvaluationResultQualifier withResourceType(String resourceType) {
         setResourceType(resourceType);
         return this;
@@ -129,6 +135,7 @@ public class EvaluationResultQualifier implements Serializable, Cloneable {
      * @param resourceId
      *        The ID of the evaluated AWS resource.
      */
+
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
     }
@@ -140,6 +147,7 @@ public class EvaluationResultQualifier implements Serializable, Cloneable {
      * 
      * @return The ID of the evaluated AWS resource.
      */
+
     public String getResourceId() {
         return this.resourceId;
     }
@@ -154,6 +162,7 @@ public class EvaluationResultQualifier implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EvaluationResultQualifier withResourceId(String resourceId) {
         setResourceId(resourceId);
         return this;

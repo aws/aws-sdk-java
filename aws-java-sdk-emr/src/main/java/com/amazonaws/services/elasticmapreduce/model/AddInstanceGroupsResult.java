@@ -46,6 +46,7 @@ public class AddInstanceGroupsResult implements Serializable, Cloneable {
      * @param jobFlowId
      *        The job flow ID in which the instance groups are added.
      */
+
     public void setJobFlowId(String jobFlowId) {
         this.jobFlowId = jobFlowId;
     }
@@ -57,6 +58,7 @@ public class AddInstanceGroupsResult implements Serializable, Cloneable {
      * 
      * @return The job flow ID in which the instance groups are added.
      */
+
     public String getJobFlowId() {
         return this.jobFlowId;
     }
@@ -71,6 +73,7 @@ public class AddInstanceGroupsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddInstanceGroupsResult withJobFlowId(String jobFlowId) {
         setJobFlowId(jobFlowId);
         return this;
@@ -83,6 +86,7 @@ public class AddInstanceGroupsResult implements Serializable, Cloneable {
      * 
      * @return Instance group IDs of the newly created instance groups.
      */
+
     public java.util.List<String> getInstanceGroupIds() {
         if (instanceGroupIds == null) {
             instanceGroupIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -98,6 +102,7 @@ public class AddInstanceGroupsResult implements Serializable, Cloneable {
      * @param instanceGroupIds
      *        Instance group IDs of the newly created instance groups.
      */
+
     public void setInstanceGroupIds(
             java.util.Collection<String> instanceGroupIds) {
         if (instanceGroupIds == null) {
@@ -125,6 +130,7 @@ public class AddInstanceGroupsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddInstanceGroupsResult withInstanceGroupIds(
             String... instanceGroupIds) {
         if (this.instanceGroupIds == null) {
@@ -147,6 +153,7 @@ public class AddInstanceGroupsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddInstanceGroupsResult withInstanceGroupIds(
             java.util.Collection<String> instanceGroupIds) {
         setInstanceGroupIds(instanceGroupIds);

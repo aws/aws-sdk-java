@@ -49,6 +49,7 @@ public class CreateIPSetRequest extends AmazonWebServiceRequest implements
      *        A friendly name or description of the <a>IPSet</a>. You can't
      *        change <code>Name</code> after you create the <code>IPSet</code>.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -62,6 +63,7 @@ public class CreateIPSetRequest extends AmazonWebServiceRequest implements
      * @return A friendly name or description of the <a>IPSet</a>. You can't
      *         change <code>Name</code> after you create the <code>IPSet</code>.
      */
+
     public String getName() {
         return this.name;
     }
@@ -78,6 +80,7 @@ public class CreateIPSetRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateIPSetRequest withName(String name) {
         setName(name);
         return this;
@@ -92,6 +95,7 @@ public class CreateIPSetRequest extends AmazonWebServiceRequest implements
      *        The value returned by the most recent call to
      *        <a>GetChangeToken</a>.
      */
+
     public void setChangeToken(String changeToken) {
         this.changeToken = changeToken;
     }
@@ -104,6 +108,7 @@ public class CreateIPSetRequest extends AmazonWebServiceRequest implements
      * @return The value returned by the most recent call to
      *         <a>GetChangeToken</a>.
      */
+
     public String getChangeToken() {
         return this.changeToken;
     }
@@ -119,6 +124,7 @@ public class CreateIPSetRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateIPSetRequest withChangeToken(String changeToken) {
         setChangeToken(changeToken);
         return this;

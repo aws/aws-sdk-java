@@ -68,6 +68,7 @@ public class ListJobsByStatusRequest extends AmazonWebServiceRequest implements
      *        , <code>Complete</code>, <code>Canceled</code>, or
      *        <code>Error</code>.
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -86,6 +87,7 @@ public class ListJobsByStatusRequest extends AmazonWebServiceRequest implements
      *         <code>Progressing</code>, <code>Complete</code>,
      *         <code>Canceled</code>, or <code>Error</code>.
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -107,6 +109,7 @@ public class ListJobsByStatusRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListJobsByStatusRequest withStatus(String status) {
         setStatus(status);
         return this;
@@ -124,6 +127,7 @@ public class ListJobsByStatusRequest extends AmazonWebServiceRequest implements
      *        were submitted, enter <code>true</code>. To list jobs in reverse
      *        chronological order, enter <code>false</code>.
      */
+
     public void setAscending(String ascending) {
         this.ascending = ascending;
     }
@@ -139,6 +143,7 @@ public class ListJobsByStatusRequest extends AmazonWebServiceRequest implements
      *         they were submitted, enter <code>true</code>. To list jobs in
      *         reverse chronological order, enter <code>false</code>.
      */
+
     public String getAscending() {
         return this.ascending;
     }
@@ -157,6 +162,7 @@ public class ListJobsByStatusRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListJobsByStatusRequest withAscending(String ascending) {
         setAscending(ascending);
         return this;
@@ -174,6 +180,7 @@ public class ListJobsByStatusRequest extends AmazonWebServiceRequest implements
      *        <code>pageToken</code> in subsequent <code>GET</code> requests to
      *        get each successive page of results.
      */
+
     public void setPageToken(String pageToken) {
         this.pageToken = pageToken;
     }
@@ -189,6 +196,7 @@ public class ListJobsByStatusRequest extends AmazonWebServiceRequest implements
      *         use <code>pageToken</code> in subsequent <code>GET</code>
      *         requests to get each successive page of results.
      */
+
     public String getPageToken() {
         return this.pageToken;
     }
@@ -207,6 +215,7 @@ public class ListJobsByStatusRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListJobsByStatusRequest withPageToken(String pageToken) {
         setPageToken(pageToken);
         return this;

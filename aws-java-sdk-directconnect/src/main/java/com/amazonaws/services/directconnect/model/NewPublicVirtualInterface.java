@@ -42,6 +42,7 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable {
     /**
      * @param virtualInterfaceName
      */
+
     public void setVirtualInterfaceName(String virtualInterfaceName) {
         this.virtualInterfaceName = virtualInterfaceName;
     }
@@ -49,6 +50,7 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getVirtualInterfaceName() {
         return this.virtualInterfaceName;
     }
@@ -58,6 +60,7 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NewPublicVirtualInterface withVirtualInterfaceName(
             String virtualInterfaceName) {
         setVirtualInterfaceName(virtualInterfaceName);
@@ -67,6 +70,7 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable {
     /**
      * @param vlan
      */
+
     public void setVlan(Integer vlan) {
         this.vlan = vlan;
     }
@@ -74,6 +78,7 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Integer getVlan() {
         return this.vlan;
     }
@@ -83,6 +88,7 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NewPublicVirtualInterface withVlan(Integer vlan) {
         setVlan(vlan);
         return this;
@@ -91,6 +97,7 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable {
     /**
      * @param asn
      */
+
     public void setAsn(Integer asn) {
         this.asn = asn;
     }
@@ -98,6 +105,7 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Integer getAsn() {
         return this.asn;
     }
@@ -107,6 +115,7 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NewPublicVirtualInterface withAsn(Integer asn) {
         setAsn(asn);
         return this;
@@ -115,6 +124,7 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable {
     /**
      * @param authKey
      */
+
     public void setAuthKey(String authKey) {
         this.authKey = authKey;
     }
@@ -122,6 +132,7 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getAuthKey() {
         return this.authKey;
     }
@@ -131,6 +142,7 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NewPublicVirtualInterface withAuthKey(String authKey) {
         setAuthKey(authKey);
         return this;
@@ -139,6 +151,7 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable {
     /**
      * @param amazonAddress
      */
+
     public void setAmazonAddress(String amazonAddress) {
         this.amazonAddress = amazonAddress;
     }
@@ -146,6 +159,7 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getAmazonAddress() {
         return this.amazonAddress;
     }
@@ -155,6 +169,7 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NewPublicVirtualInterface withAmazonAddress(String amazonAddress) {
         setAmazonAddress(amazonAddress);
         return this;
@@ -163,6 +178,7 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable {
     /**
      * @param customerAddress
      */
+
     public void setCustomerAddress(String customerAddress) {
         this.customerAddress = customerAddress;
     }
@@ -170,6 +186,7 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getCustomerAddress() {
         return this.customerAddress;
     }
@@ -179,6 +196,7 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NewPublicVirtualInterface withCustomerAddress(String customerAddress) {
         setCustomerAddress(customerAddress);
         return this;
@@ -187,6 +205,7 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public java.util.List<RouteFilterPrefix> getRouteFilterPrefixes() {
         if (routeFilterPrefixes == null) {
             routeFilterPrefixes = new com.amazonaws.internal.SdkInternalList<RouteFilterPrefix>();
@@ -197,6 +216,7 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable {
     /**
      * @param routeFilterPrefixes
      */
+
     public void setRouteFilterPrefixes(
             java.util.Collection<RouteFilterPrefix> routeFilterPrefixes) {
         if (routeFilterPrefixes == null) {
@@ -220,6 +240,7 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NewPublicVirtualInterface withRouteFilterPrefixes(
             RouteFilterPrefix... routeFilterPrefixes) {
         if (this.routeFilterPrefixes == null) {
@@ -237,6 +258,7 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NewPublicVirtualInterface withRouteFilterPrefixes(
             java.util.Collection<RouteFilterPrefix> routeFilterPrefixes) {
         setRouteFilterPrefixes(routeFilterPrefixes);

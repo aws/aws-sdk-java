@@ -61,6 +61,7 @@ public class VolumeStatusAction implements Serializable, Cloneable {
      *        The code identifying the operation, for example,
      *        <code>enable-volume-io</code>.
      */
+
     public void setCode(String code) {
         this.code = code;
     }
@@ -74,6 +75,7 @@ public class VolumeStatusAction implements Serializable, Cloneable {
      * @return The code identifying the operation, for example,
      *         <code>enable-volume-io</code>.
      */
+
     public String getCode() {
         return this.code;
     }
@@ -90,6 +92,7 @@ public class VolumeStatusAction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VolumeStatusAction withCode(String code) {
         setCode(code);
         return this;
@@ -103,6 +106,7 @@ public class VolumeStatusAction implements Serializable, Cloneable {
      * @param description
      *        A description of the operation.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -114,6 +118,7 @@ public class VolumeStatusAction implements Serializable, Cloneable {
      * 
      * @return A description of the operation.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -128,6 +133,7 @@ public class VolumeStatusAction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VolumeStatusAction withDescription(String description) {
         setDescription(description);
         return this;
@@ -141,6 +147,7 @@ public class VolumeStatusAction implements Serializable, Cloneable {
      * @param eventType
      *        The event type associated with this operation.
      */
+
     public void setEventType(String eventType) {
         this.eventType = eventType;
     }
@@ -152,6 +159,7 @@ public class VolumeStatusAction implements Serializable, Cloneable {
      * 
      * @return The event type associated with this operation.
      */
+
     public String getEventType() {
         return this.eventType;
     }
@@ -166,6 +174,7 @@ public class VolumeStatusAction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VolumeStatusAction withEventType(String eventType) {
         setEventType(eventType);
         return this;
@@ -179,6 +188,7 @@ public class VolumeStatusAction implements Serializable, Cloneable {
      * @param eventId
      *        The ID of the event associated with this operation.
      */
+
     public void setEventId(String eventId) {
         this.eventId = eventId;
     }
@@ -190,6 +200,7 @@ public class VolumeStatusAction implements Serializable, Cloneable {
      * 
      * @return The ID of the event associated with this operation.
      */
+
     public String getEventId() {
         return this.eventId;
     }
@@ -204,6 +215,7 @@ public class VolumeStatusAction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VolumeStatusAction withEventId(String eventId) {
         setEventId(eventId);
         return this;

@@ -52,6 +52,7 @@ public class UpdateVTLDeviceTypeRequest extends AmazonWebServiceRequest
      *        The Amazon Resource Name (ARN) of the medium changer you want to
      *        select.
      */
+
     public void setVTLDeviceARN(String vTLDeviceARN) {
         this.vTLDeviceARN = vTLDeviceARN;
     }
@@ -64,6 +65,7 @@ public class UpdateVTLDeviceTypeRequest extends AmazonWebServiceRequest
      * @return The Amazon Resource Name (ARN) of the medium changer you want to
      *         select.
      */
+
     public String getVTLDeviceARN() {
         return this.vTLDeviceARN;
     }
@@ -79,6 +81,7 @@ public class UpdateVTLDeviceTypeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateVTLDeviceTypeRequest withVTLDeviceARN(String vTLDeviceARN) {
         setVTLDeviceARN(vTLDeviceARN);
         return this;
@@ -97,6 +100,7 @@ public class UpdateVTLDeviceTypeRequest extends AmazonWebServiceRequest
      *        <p>
      *        <i>Valid Values</i>: "STK-L700", "AWS-Gateway-VTL"
      */
+
     public void setDeviceType(String deviceType) {
         this.deviceType = deviceType;
     }
@@ -113,6 +117,7 @@ public class UpdateVTLDeviceTypeRequest extends AmazonWebServiceRequest
      *         <p>
      *         <i>Valid Values</i>: "STK-L700", "AWS-Gateway-VTL"
      */
+
     public String getDeviceType() {
         return this.deviceType;
     }
@@ -132,6 +137,7 @@ public class UpdateVTLDeviceTypeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateVTLDeviceTypeRequest withDeviceType(String deviceType) {
         setDeviceType(deviceType);
         return this;

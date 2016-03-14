@@ -38,6 +38,7 @@ public class PutScalingPolicyResult implements Serializable, Cloneable {
      * @param policyARN
      *        The Amazon Resource Name (ARN) of the policy.
      */
+
     public void setPolicyARN(String policyARN) {
         this.policyARN = policyARN;
     }
@@ -49,6 +50,7 @@ public class PutScalingPolicyResult implements Serializable, Cloneable {
      * 
      * @return The Amazon Resource Name (ARN) of the policy.
      */
+
     public String getPolicyARN() {
         return this.policyARN;
     }
@@ -63,6 +65,7 @@ public class PutScalingPolicyResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutScalingPolicyResult withPolicyARN(String policyARN) {
         setPolicyARN(policyARN);
         return this;

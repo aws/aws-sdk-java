@@ -43,6 +43,8 @@ public class CreateBuildRequest extends AmazonWebServiceRequest implements
      */
     private String version;
 
+    private S3Location storageLocation;
+
     /**
      * <p>
      * Descriptive label associated with this build. Build names do not need to
@@ -54,6 +56,7 @@ public class CreateBuildRequest extends AmazonWebServiceRequest implements
      *        need to be unique. A build name can be changed later using
      *        <a>UpdateBuild</a>.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -68,6 +71,7 @@ public class CreateBuildRequest extends AmazonWebServiceRequest implements
      *         need to be unique. A build name can be changed later using
      *         <a>UpdateBuild</a>.
      */
+
     public String getName() {
         return this.name;
     }
@@ -85,6 +89,7 @@ public class CreateBuildRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateBuildRequest withName(String name) {
         setName(name);
         return this;
@@ -102,6 +107,7 @@ public class CreateBuildRequest extends AmazonWebServiceRequest implements
      *        be unique to a build. A build version can be changed later using
      *        <a>UpdateBuild</a>.
      */
+
     public void setVersion(String version) {
         this.version = version;
     }
@@ -117,6 +123,7 @@ public class CreateBuildRequest extends AmazonWebServiceRequest implements
      *         to be unique to a build. A build version can be changed later
      *         using <a>UpdateBuild</a>.
      */
+
     public String getVersion() {
         return this.version;
     }
@@ -135,8 +142,36 @@ public class CreateBuildRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateBuildRequest withVersion(String version) {
         setVersion(version);
+        return this;
+    }
+
+    /**
+     * @param storageLocation
+     */
+
+    public void setStorageLocation(S3Location storageLocation) {
+        this.storageLocation = storageLocation;
+    }
+
+    /**
+     * @return
+     */
+
+    public S3Location getStorageLocation() {
+        return this.storageLocation;
+    }
+
+    /**
+     * @param storageLocation
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public CreateBuildRequest withStorageLocation(S3Location storageLocation) {
+        setStorageLocation(storageLocation);
         return this;
     }
 
@@ -155,7 +190,9 @@ public class CreateBuildRequest extends AmazonWebServiceRequest implements
         if (getName() != null)
             sb.append("Name: " + getName() + ",");
         if (getVersion() != null)
-            sb.append("Version: " + getVersion());
+            sb.append("Version: " + getVersion() + ",");
+        if (getStorageLocation() != null)
+            sb.append("StorageLocation: " + getStorageLocation());
         sb.append("}");
         return sb.toString();
     }
@@ -180,6 +217,12 @@ public class CreateBuildRequest extends AmazonWebServiceRequest implements
         if (other.getVersion() != null
                 && other.getVersion().equals(this.getVersion()) == false)
             return false;
+        if (other.getStorageLocation() == null
+                ^ this.getStorageLocation() == null)
+            return false;
+        if (other.getStorageLocation() != null
+                && other.getStorageLocation().equals(this.getStorageLocation()) == false)
+            return false;
         return true;
     }
 
@@ -192,6 +235,10 @@ public class CreateBuildRequest extends AmazonWebServiceRequest implements
                 + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode
                 + ((getVersion() == null) ? 0 : getVersion().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getStorageLocation() == null) ? 0 : getStorageLocation()
+                        .hashCode());
         return hashCode;
     }
 

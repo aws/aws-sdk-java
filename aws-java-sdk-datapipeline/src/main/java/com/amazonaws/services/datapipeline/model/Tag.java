@@ -67,6 +67,7 @@ public class Tag implements Serializable, Cloneable {
      *        >Controlling User Access to Pipelines</a> in the <i>AWS Data
      *        Pipeline Developer Guide</i>.
      */
+
     public void setKey(String key) {
         this.key = key;
     }
@@ -86,6 +87,7 @@ public class Tag implements Serializable, Cloneable {
      *         >Controlling User Access to Pipelines</a> in the <i>AWS Data
      *         Pipeline Developer Guide</i>.
      */
+
     public String getKey() {
         return this.key;
     }
@@ -108,6 +110,7 @@ public class Tag implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Tag withKey(String key) {
         setKey(key);
         return this;
@@ -129,6 +132,7 @@ public class Tag implements Serializable, Cloneable {
      *        >Controlling User Access to Pipelines</a> in the <i>AWS Data
      *        Pipeline Developer Guide</i>.
      */
+
     public void setValue(String value) {
         this.value = value;
     }
@@ -148,6 +152,7 @@ public class Tag implements Serializable, Cloneable {
      *         >Controlling User Access to Pipelines</a> in the <i>AWS Data
      *         Pipeline Developer Guide</i>.
      */
+
     public String getValue() {
         return this.value;
     }
@@ -170,6 +175,7 @@ public class Tag implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Tag withValue(String value) {
         setValue(value);
         return this;

@@ -46,6 +46,7 @@ public class ResolveCaseRequest extends AmazonWebServiceRequest implements
      *        case ID is an alphanumeric string formatted as shown in this
      *        example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
      */
+
     public void setCaseId(String caseId) {
         this.caseId = caseId;
     }
@@ -61,6 +62,7 @@ public class ResolveCaseRequest extends AmazonWebServiceRequest implements
      *         case ID is an alphanumeric string formatted as shown in this
      *         example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
      */
+
     public String getCaseId() {
         return this.caseId;
     }
@@ -79,6 +81,7 @@ public class ResolveCaseRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ResolveCaseRequest withCaseId(String caseId) {
         setCaseId(caseId);
         return this;

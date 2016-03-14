@@ -64,6 +64,7 @@ public class DelegationSet implements Serializable, Cloneable {
     /**
      * @param id
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -71,6 +72,7 @@ public class DelegationSet implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getId() {
         return this.id;
     }
@@ -80,6 +82,7 @@ public class DelegationSet implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DelegationSet withId(String id) {
         setId(id);
         return this;
@@ -88,6 +91,7 @@ public class DelegationSet implements Serializable, Cloneable {
     /**
      * @param callerReference
      */
+
     public void setCallerReference(String callerReference) {
         this.callerReference = callerReference;
     }
@@ -95,6 +99,7 @@ public class DelegationSet implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getCallerReference() {
         return this.callerReference;
     }
@@ -104,6 +109,7 @@ public class DelegationSet implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DelegationSet withCallerReference(String callerReference) {
         setCallerReference(callerReference);
         return this;
@@ -122,6 +128,7 @@ public class DelegationSet implements Serializable, Cloneable {
      *         to add an NS record to your domain for each
      *         <code>NameServer</code> that is assigned to your hosted zone.
      */
+
     public java.util.List<String> getNameServers() {
         if (nameServers == null) {
             nameServers = new com.amazonaws.internal.SdkInternalList<String>();
@@ -143,6 +150,7 @@ public class DelegationSet implements Serializable, Cloneable {
      *        to add an NS record to your domain for each
      *        <code>NameServer</code> that is assigned to your hosted zone.
      */
+
     public void setNameServers(java.util.Collection<String> nameServers) {
         if (nameServers == null) {
             this.nameServers = null;
@@ -175,6 +183,7 @@ public class DelegationSet implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DelegationSet withNameServers(String... nameServers) {
         if (this.nameServers == null) {
             setNameServers(new com.amazonaws.internal.SdkInternalList<String>(
@@ -202,6 +211,7 @@ public class DelegationSet implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DelegationSet withNameServers(
             java.util.Collection<String> nameServers) {
         setNameServers(nameServers);

@@ -63,6 +63,7 @@ public class DomainValidationOption implements Serializable, Cloneable {
      *        Fully Qualified Domain Name (FQDN) of the certificate being
      *        requested.
      */
+
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
@@ -75,6 +76,7 @@ public class DomainValidationOption implements Serializable, Cloneable {
      * @return Fully Qualified Domain Name (FQDN) of the certificate being
      *         requested.
      */
+
     public String getDomainName() {
         return this.domainName;
     }
@@ -90,6 +92,7 @@ public class DomainValidationOption implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DomainValidationOption withDomainName(String domainName) {
         setDomainName(domainName);
         return this;
@@ -134,6 +137,7 @@ public class DomainValidationOption implements Serializable, Cloneable {
      *        <li>webmaster@subdomain.example.com</li>
      *        </ul>
      */
+
     public void setValidationDomain(String validationDomain) {
         this.validationDomain = validationDomain;
     }
@@ -176,6 +180,7 @@ public class DomainValidationOption implements Serializable, Cloneable {
      *         <li>webmaster@subdomain.example.com</li>
      *         </ul>
      */
+
     public String getValidationDomain() {
         return this.validationDomain;
     }
@@ -221,6 +226,7 @@ public class DomainValidationOption implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DomainValidationOption withValidationDomain(String validationDomain) {
         setValidationDomain(validationDomain);
         return this;

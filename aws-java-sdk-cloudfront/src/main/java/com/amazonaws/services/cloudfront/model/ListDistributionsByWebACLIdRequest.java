@@ -61,6 +61,7 @@ public class ListDistributionsByWebACLIdRequest extends AmazonWebServiceRequest
      *        specify the value of NextMarker from the last response. (For the
      *        first request, omit Marker.)
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -79,6 +80,7 @@ public class ListDistributionsByWebACLIdRequest extends AmazonWebServiceRequest
      *         specify the value of NextMarker from the last response. (For the
      *         first request, omit Marker.)
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -100,6 +102,7 @@ public class ListDistributionsByWebACLIdRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListDistributionsByWebACLIdRequest withMarker(String marker) {
         setMarker(marker);
         return this;
@@ -114,6 +117,7 @@ public class ListDistributionsByWebACLIdRequest extends AmazonWebServiceRequest
      *        return in the response body. The maximum and default values are
      *        both 100.
      */
+
     public void setMaxItems(String maxItems) {
         this.maxItems = maxItems;
     }
@@ -126,6 +130,7 @@ public class ListDistributionsByWebACLIdRequest extends AmazonWebServiceRequest
      *         return in the response body. The maximum and default values are
      *         both 100.
      */
+
     public String getMaxItems() {
         return this.maxItems;
     }
@@ -141,6 +146,7 @@ public class ListDistributionsByWebACLIdRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListDistributionsByWebACLIdRequest withMaxItems(String maxItems) {
         setMaxItems(maxItems);
         return this;
@@ -157,6 +163,7 @@ public class ListDistributionsByWebACLIdRequest extends AmazonWebServiceRequest
      *        request returns a list of the distributions that aren't associated
      *        with a web ACL.
      */
+
     public void setWebACLId(String webACLId) {
         this.webACLId = webACLId;
     }
@@ -171,6 +178,7 @@ public class ListDistributionsByWebACLIdRequest extends AmazonWebServiceRequest
      *         request returns a list of the distributions that aren't
      *         associated with a web ACL.
      */
+
     public String getWebACLId() {
         return this.webACLId;
     }
@@ -188,6 +196,7 @@ public class ListDistributionsByWebACLIdRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListDistributionsByWebACLIdRequest withWebACLId(String webACLId) {
         setWebACLId(webACLId);
         return this;

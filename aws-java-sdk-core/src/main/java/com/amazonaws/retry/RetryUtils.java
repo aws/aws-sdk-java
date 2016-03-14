@@ -21,6 +21,21 @@ import com.amazonaws.AmazonServiceException;
 public class RetryUtils {
 
     /**
+     * Returns true if the specified exception is a retryable service side
+     * exception.
+     *
+     * @param ase
+     *            The exception to test.
+     *
+     * @return True if the exception resulted from a retryable service error,
+     *         otherwise false.
+     */
+    public static boolean isRetryableServiceException(AmazonServiceException ase) {
+        return ((ase != null) && (ase.getStatusCode() == HttpStatus.SC_INTERNAL_SERVER_ERROR
+                || ase.getStatusCode() == HttpStatus.SC_SERVICE_UNAVAILABLE));
+    }
+
+    /**
      * Returns true if the specified exception is a throttling error.
      *
      * @param ase

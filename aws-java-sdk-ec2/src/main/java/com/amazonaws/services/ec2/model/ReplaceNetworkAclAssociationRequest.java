@@ -52,6 +52,7 @@ public class ReplaceNetworkAclAssociationRequest extends
      *        The ID of the current association between the original network ACL
      *        and the subnet.
      */
+
     public void setAssociationId(String associationId) {
         this.associationId = associationId;
     }
@@ -65,6 +66,7 @@ public class ReplaceNetworkAclAssociationRequest extends
      * @return The ID of the current association between the original network
      *         ACL and the subnet.
      */
+
     public String getAssociationId() {
         return this.associationId;
     }
@@ -81,6 +83,7 @@ public class ReplaceNetworkAclAssociationRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReplaceNetworkAclAssociationRequest withAssociationId(
             String associationId) {
         setAssociationId(associationId);
@@ -95,6 +98,7 @@ public class ReplaceNetworkAclAssociationRequest extends
      * @param networkAclId
      *        The ID of the new network ACL to associate with the subnet.
      */
+
     public void setNetworkAclId(String networkAclId) {
         this.networkAclId = networkAclId;
     }
@@ -106,6 +110,7 @@ public class ReplaceNetworkAclAssociationRequest extends
      * 
      * @return The ID of the new network ACL to associate with the subnet.
      */
+
     public String getNetworkAclId() {
         return this.networkAclId;
     }
@@ -120,6 +125,7 @@ public class ReplaceNetworkAclAssociationRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReplaceNetworkAclAssociationRequest withNetworkAclId(
             String networkAclId) {
         setNetworkAclId(networkAclId);

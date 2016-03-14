@@ -59,6 +59,7 @@ public class ListStreamsRequest extends AmazonWebServiceRequest implements
      *        If this parameter is provided, then only the streams associated
      *        with this table name are returned.
      */
+
     public void setTableName(String tableName) {
         this.tableName = tableName;
     }
@@ -72,6 +73,7 @@ public class ListStreamsRequest extends AmazonWebServiceRequest implements
      * @return If this parameter is provided, then only the streams associated
      *         with this table name are returned.
      */
+
     public String getTableName() {
         return this.tableName;
     }
@@ -88,6 +90,7 @@ public class ListStreamsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListStreamsRequest withTableName(String tableName) {
         setTableName(tableName);
         return this;
@@ -101,6 +104,7 @@ public class ListStreamsRequest extends AmazonWebServiceRequest implements
      * @param limit
      *        The maximum number of streams to return. The upper limit is 100.
      */
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -112,6 +116,7 @@ public class ListStreamsRequest extends AmazonWebServiceRequest implements
      * 
      * @return The maximum number of streams to return. The upper limit is 100.
      */
+
     public Integer getLimit() {
         return this.limit;
     }
@@ -126,6 +131,7 @@ public class ListStreamsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListStreamsRequest withLimit(Integer limit) {
         setLimit(limit);
         return this;
@@ -143,6 +149,7 @@ public class ListStreamsRequest extends AmazonWebServiceRequest implements
      *        operation will evaluate. Use the value that was returned for
      *        <code>LastEvaluatedStreamArn</code> in the previous operation.
      */
+
     public void setExclusiveStartStreamArn(String exclusiveStartStreamArn) {
         this.exclusiveStartStreamArn = exclusiveStartStreamArn;
     }
@@ -158,6 +165,7 @@ public class ListStreamsRequest extends AmazonWebServiceRequest implements
      *         operation will evaluate. Use the value that was returned for
      *         <code>LastEvaluatedStreamArn</code> in the previous operation.
      */
+
     public String getExclusiveStartStreamArn() {
         return this.exclusiveStartStreamArn;
     }
@@ -176,6 +184,7 @@ public class ListStreamsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListStreamsRequest withExclusiveStartStreamArn(
             String exclusiveStartStreamArn) {
         setExclusiveStartStreamArn(exclusiveStartStreamArn);

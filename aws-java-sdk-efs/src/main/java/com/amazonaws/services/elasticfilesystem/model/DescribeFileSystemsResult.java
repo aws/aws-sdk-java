@@ -52,6 +52,7 @@ public class DescribeFileSystemsResult implements Serializable, Cloneable {
      * @param marker
      *        A string, present if provided by caller in the request.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -63,6 +64,7 @@ public class DescribeFileSystemsResult implements Serializable, Cloneable {
      * 
      * @return A string, present if provided by caller in the request.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -77,6 +79,7 @@ public class DescribeFileSystemsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeFileSystemsResult withMarker(String marker) {
         setMarker(marker);
         return this;
@@ -89,6 +92,7 @@ public class DescribeFileSystemsResult implements Serializable, Cloneable {
      * 
      * @return An array of file system descriptions.
      */
+
     public java.util.List<FileSystemDescription> getFileSystems() {
         if (fileSystems == null) {
             fileSystems = new com.amazonaws.internal.SdkInternalList<FileSystemDescription>();
@@ -104,6 +108,7 @@ public class DescribeFileSystemsResult implements Serializable, Cloneable {
      * @param fileSystems
      *        An array of file system descriptions.
      */
+
     public void setFileSystems(
             java.util.Collection<FileSystemDescription> fileSystems) {
         if (fileSystems == null) {
@@ -131,6 +136,7 @@ public class DescribeFileSystemsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeFileSystemsResult withFileSystems(
             FileSystemDescription... fileSystems) {
         if (this.fileSystems == null) {
@@ -153,6 +159,7 @@ public class DescribeFileSystemsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeFileSystemsResult withFileSystems(
             java.util.Collection<FileSystemDescription> fileSystems) {
         setFileSystems(fileSystems);
@@ -171,6 +178,7 @@ public class DescribeFileSystemsResult implements Serializable, Cloneable {
      *        the response. You can use the <code>NextMarker</code> in the
      *        subsequent request to fetch the descriptions.
      */
+
     public void setNextMarker(String nextMarker) {
         this.nextMarker = nextMarker;
     }
@@ -186,6 +194,7 @@ public class DescribeFileSystemsResult implements Serializable, Cloneable {
      *         the response. You can use the <code>NextMarker</code> in the
      *         subsequent request to fetch the descriptions.
      */
+
     public String getNextMarker() {
         return this.nextMarker;
     }
@@ -204,6 +213,7 @@ public class DescribeFileSystemsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeFileSystemsResult withNextMarker(String nextMarker) {
         setNextMarker(nextMarker);
         return this;

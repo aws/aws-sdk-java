@@ -47,6 +47,7 @@ public class ListAttachedRulesPackagesResult implements Serializable, Cloneable 
      * @return A list of ARNs specifying the rules packages returned by the
      *         action.
      */
+
     public java.util.List<String> getRulesPackageArnList() {
         return rulesPackageArnList;
     }
@@ -60,6 +61,7 @@ public class ListAttachedRulesPackagesResult implements Serializable, Cloneable 
      *        A list of ARNs specifying the rules packages returned by the
      *        action.
      */
+
     public void setRulesPackageArnList(
             java.util.Collection<String> rulesPackageArnList) {
         if (rulesPackageArnList == null) {
@@ -88,6 +90,7 @@ public class ListAttachedRulesPackagesResult implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListAttachedRulesPackagesResult withRulesPackageArnList(
             String... rulesPackageArnList) {
         if (this.rulesPackageArnList == null) {
@@ -111,6 +114,7 @@ public class ListAttachedRulesPackagesResult implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListAttachedRulesPackagesResult withRulesPackageArnList(
             java.util.Collection<String> rulesPackageArnList) {
         setRulesPackageArnList(rulesPackageArnList);
@@ -132,6 +136,7 @@ public class ListAttachedRulesPackagesResult implements Serializable, Cloneable 
      *        pagination request. If there is no more data to be listed, this
      *        parameter is set to 'null'.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -150,6 +155,7 @@ public class ListAttachedRulesPackagesResult implements Serializable, Cloneable 
      *         pagination request. If there is no more data to be listed, this
      *         parameter is set to 'null'.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -171,6 +177,7 @@ public class ListAttachedRulesPackagesResult implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListAttachedRulesPackagesResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

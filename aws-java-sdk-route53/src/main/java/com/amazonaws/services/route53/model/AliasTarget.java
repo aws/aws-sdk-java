@@ -369,6 +369,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *        >Example: Creating Alias Resource Record Sets</a> in the <i>Amazon
      *        Route 53 API Reference
      */
+
     public void setHostedZoneId(String hostedZoneId) {
         this.hostedZoneId = hostedZoneId;
     }
@@ -436,6 +437,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *         >Example: Creating Alias Resource Record Sets</a> in the
      *         <i>Amazon Route 53 API Reference
      */
+
     public String getHostedZoneId() {
         return this.hostedZoneId;
     }
@@ -506,6 +508,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AliasTarget withHostedZoneId(String hostedZoneId) {
         setHostedZoneId(hostedZoneId);
         return this;
@@ -608,6 +611,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *        >Example: Creating Alias Resource Record Sets</a> in the <i>Amazon
      *        Route 53 API Reference
      */
+
     public void setDNSName(String dNSName) {
         this.dNSName = dNSName;
     }
@@ -709,6 +713,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *         >Example: Creating Alias Resource Record Sets</a> in the
      *         <i>Amazon Route 53 API Reference
      */
+
     public String getDNSName() {
         return this.dNSName;
     }
@@ -812,6 +817,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AliasTarget withDNSName(String dNSName) {
         setDNSName(dNSName);
         return this;
@@ -973,6 +979,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *        >Amazon Route 53 Health Checks and DNS Failover</a> in the
      *        <i>Amazon Route 53 Developer Guide
      */
+
     public void setEvaluateTargetHealth(Boolean evaluateTargetHealth) {
         this.evaluateTargetHealth = evaluateTargetHealth;
     }
@@ -1133,6 +1140,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *         >Amazon Route 53 Health Checks and DNS Failover</a> in the
      *         <i>Amazon Route 53 Developer Guide
      */
+
     public Boolean getEvaluateTargetHealth() {
         return this.evaluateTargetHealth;
     }
@@ -1295,6 +1303,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AliasTarget withEvaluateTargetHealth(Boolean evaluateTargetHealth) {
         setEvaluateTargetHealth(evaluateTargetHealth);
         return this;
@@ -1456,6 +1465,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *         >Amazon Route 53 Health Checks and DNS Failover</a> in the
      *         <i>Amazon Route 53 Developer Guide
      */
+
     public Boolean isEvaluateTargetHealth() {
         return this.evaluateTargetHealth;
     }

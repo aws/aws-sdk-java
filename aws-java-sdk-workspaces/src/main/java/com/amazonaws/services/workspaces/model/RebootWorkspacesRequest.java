@@ -41,6 +41,7 @@ public class RebootWorkspacesRequest extends AmazonWebServiceRequest implements
      * 
      * @return An array of structures that specify the WorkSpaces to reboot.
      */
+
     public java.util.List<RebootRequest> getRebootWorkspaceRequests() {
         if (rebootWorkspaceRequests == null) {
             rebootWorkspaceRequests = new com.amazonaws.internal.SdkInternalList<RebootRequest>();
@@ -56,6 +57,7 @@ public class RebootWorkspacesRequest extends AmazonWebServiceRequest implements
      * @param rebootWorkspaceRequests
      *        An array of structures that specify the WorkSpaces to reboot.
      */
+
     public void setRebootWorkspaceRequests(
             java.util.Collection<RebootRequest> rebootWorkspaceRequests) {
         if (rebootWorkspaceRequests == null) {
@@ -83,6 +85,7 @@ public class RebootWorkspacesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RebootWorkspacesRequest withRebootWorkspaceRequests(
             RebootRequest... rebootWorkspaceRequests) {
         if (this.rebootWorkspaceRequests == null) {
@@ -105,6 +108,7 @@ public class RebootWorkspacesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RebootWorkspacesRequest withRebootWorkspaceRequests(
             java.util.Collection<RebootRequest> rebootWorkspaceRequests) {
         setRebootWorkspaceRequests(rebootWorkspaceRequests);

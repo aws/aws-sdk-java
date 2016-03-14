@@ -86,6 +86,7 @@ public class Agent implements Serializable, Cloneable {
      * @param agentId
      *        The EC2 instance ID where the agent is installed.
      */
+
     public void setAgentId(String agentId) {
         this.agentId = agentId;
     }
@@ -97,6 +98,7 @@ public class Agent implements Serializable, Cloneable {
      * 
      * @return The EC2 instance ID where the agent is installed.
      */
+
     public String getAgentId() {
         return this.agentId;
     }
@@ -111,6 +113,7 @@ public class Agent implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Agent withAgentId(String agentId) {
         setAgentId(agentId);
         return this;
@@ -124,6 +127,7 @@ public class Agent implements Serializable, Cloneable {
      * @param assessmentArn
      *        The ARN of the assessment that is associated with the agent.
      */
+
     public void setAssessmentArn(String assessmentArn) {
         this.assessmentArn = assessmentArn;
     }
@@ -135,6 +139,7 @@ public class Agent implements Serializable, Cloneable {
      * 
      * @return The ARN of the assessment that is associated with the agent.
      */
+
     public String getAssessmentArn() {
         return this.assessmentArn;
     }
@@ -149,6 +154,7 @@ public class Agent implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Agent withAssessmentArn(String assessmentArn) {
         setAssessmentArn(assessmentArn);
         return this;
@@ -164,6 +170,7 @@ public class Agent implements Serializable, Cloneable {
      *        The current health state of the agent. Values can be set to
      *        <i>HEALTHY</i> or <i>UNHEALTHY</i>.
      */
+
     public void setAgentHealth(String agentHealth) {
         this.agentHealth = agentHealth;
     }
@@ -177,6 +184,7 @@ public class Agent implements Serializable, Cloneable {
      * @return The current health state of the agent. Values can be set to
      *         <i>HEALTHY</i> or <i>UNHEALTHY</i>.
      */
+
     public String getAgentHealth() {
         return this.agentHealth;
     }
@@ -193,6 +201,7 @@ public class Agent implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Agent withAgentHealth(String agentHealth) {
         setAgentHealth(agentHealth);
         return this;
@@ -210,6 +219,7 @@ public class Agent implements Serializable, Cloneable {
      *        <i>RUNNING</i>, <i>HEALTHY</i>, <i>UNHEALTHY</i>, <i>UNKNOWN</i>,
      *        <i>BLACKLISTED</i>, <i>SHUTDOWN</i>, <i>THROTTLED</i>.
      */
+
     public void setAgentHealthCode(String agentHealthCode) {
         this.agentHealthCode = agentHealthCode;
     }
@@ -225,6 +235,7 @@ public class Agent implements Serializable, Cloneable {
      *         <i>RUNNING</i>, <i>HEALTHY</i>, <i>UNHEALTHY</i>, <i>UNKNOWN</i>,
      *         <i>BLACKLISTED</i>, <i>SHUTDOWN</i>, <i>THROTTLED</i>.
      */
+
     public String getAgentHealthCode() {
         return this.agentHealthCode;
     }
@@ -243,6 +254,7 @@ public class Agent implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Agent withAgentHealthCode(String agentHealthCode) {
         setAgentHealthCode(agentHealthCode);
         return this;
@@ -256,6 +268,7 @@ public class Agent implements Serializable, Cloneable {
      * @param agentHealthDetails
      *        The description for the agent health code.
      */
+
     public void setAgentHealthDetails(String agentHealthDetails) {
         this.agentHealthDetails = agentHealthDetails;
     }
@@ -267,6 +280,7 @@ public class Agent implements Serializable, Cloneable {
      * 
      * @return The description for the agent health code.
      */
+
     public String getAgentHealthDetails() {
         return this.agentHealthDetails;
     }
@@ -281,6 +295,7 @@ public class Agent implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Agent withAgentHealthDetails(String agentHealthDetails) {
         setAgentHealthDetails(agentHealthDetails);
         return this;
@@ -294,6 +309,7 @@ public class Agent implements Serializable, Cloneable {
      * @param autoScalingGroup
      *        This data type property is currently not used.
      */
+
     public void setAutoScalingGroup(String autoScalingGroup) {
         this.autoScalingGroup = autoScalingGroup;
     }
@@ -305,6 +321,7 @@ public class Agent implements Serializable, Cloneable {
      * 
      * @return This data type property is currently not used.
      */
+
     public String getAutoScalingGroup() {
         return this.autoScalingGroup;
     }
@@ -319,6 +336,7 @@ public class Agent implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Agent withAutoScalingGroup(String autoScalingGroup) {
         setAutoScalingGroup(autoScalingGroup);
         return this;
@@ -332,6 +350,7 @@ public class Agent implements Serializable, Cloneable {
      * @param accountId
      *        AWS account of the EC2 instance where the agent is installed.
      */
+
     public void setAccountId(String accountId) {
         this.accountId = accountId;
     }
@@ -343,6 +362,7 @@ public class Agent implements Serializable, Cloneable {
      * 
      * @return AWS account of the EC2 instance where the agent is installed.
      */
+
     public String getAccountId() {
         return this.accountId;
     }
@@ -357,6 +377,7 @@ public class Agent implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Agent withAccountId(String accountId) {
         setAccountId(accountId);
         return this;
@@ -369,6 +390,7 @@ public class Agent implements Serializable, Cloneable {
      * 
      * @return The Inspector application data metrics collected by the agent.
      */
+
     public java.util.List<Telemetry> getTelemetry() {
         return telemetry;
     }
@@ -381,6 +403,7 @@ public class Agent implements Serializable, Cloneable {
      * @param telemetry
      *        The Inspector application data metrics collected by the agent.
      */
+
     public void setTelemetry(java.util.Collection<Telemetry> telemetry) {
         if (telemetry == null) {
             this.telemetry = null;
@@ -406,6 +429,7 @@ public class Agent implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Agent withTelemetry(Telemetry... telemetry) {
         if (this.telemetry == null) {
             setTelemetry(new java.util.ArrayList<Telemetry>(telemetry.length));
@@ -426,6 +450,7 @@ public class Agent implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Agent withTelemetry(java.util.Collection<Telemetry> telemetry) {
         setTelemetry(telemetry);
         return this;

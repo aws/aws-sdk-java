@@ -47,6 +47,7 @@ public class TerminateInstanceInAutoScalingGroupRequest extends
      * @param instanceId
      *        The ID of the EC2 instance.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -58,6 +59,7 @@ public class TerminateInstanceInAutoScalingGroupRequest extends
      * 
      * @return The ID of the EC2 instance.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
@@ -72,6 +74,7 @@ public class TerminateInstanceInAutoScalingGroupRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TerminateInstanceInAutoScalingGroupRequest withInstanceId(
             String instanceId) {
         setInstanceId(instanceId);
@@ -88,6 +91,7 @@ public class TerminateInstanceInAutoScalingGroupRequest extends
      *        If <code>true</code>, terminating the instance also decrements the
      *        size of the Auto Scaling group.
      */
+
     public void setShouldDecrementDesiredCapacity(
             Boolean shouldDecrementDesiredCapacity) {
         this.shouldDecrementDesiredCapacity = shouldDecrementDesiredCapacity;
@@ -102,6 +106,7 @@ public class TerminateInstanceInAutoScalingGroupRequest extends
      * @return If <code>true</code>, terminating the instance also decrements
      *         the size of the Auto Scaling group.
      */
+
     public Boolean getShouldDecrementDesiredCapacity() {
         return this.shouldDecrementDesiredCapacity;
     }
@@ -118,6 +123,7 @@ public class TerminateInstanceInAutoScalingGroupRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TerminateInstanceInAutoScalingGroupRequest withShouldDecrementDesiredCapacity(
             Boolean shouldDecrementDesiredCapacity) {
         setShouldDecrementDesiredCapacity(shouldDecrementDesiredCapacity);
@@ -133,6 +139,7 @@ public class TerminateInstanceInAutoScalingGroupRequest extends
      * @return If <code>true</code>, terminating the instance also decrements
      *         the size of the Auto Scaling group.
      */
+
     public Boolean isShouldDecrementDesiredCapacity() {
         return this.shouldDecrementDesiredCapacity;
     }

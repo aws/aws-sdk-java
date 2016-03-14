@@ -55,6 +55,7 @@ public class ListPoliciesRequest extends AmazonWebServiceRequest implements
      * @param marker
      *        The marker for the next set of results.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -66,6 +67,7 @@ public class ListPoliciesRequest extends AmazonWebServiceRequest implements
      * 
      * @return The marker for the next set of results.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -80,6 +82,7 @@ public class ListPoliciesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListPoliciesRequest withMarker(String marker) {
         setMarker(marker);
         return this;
@@ -93,6 +96,7 @@ public class ListPoliciesRequest extends AmazonWebServiceRequest implements
      * @param pageSize
      *        The result page size.
      */
+
     public void setPageSize(Integer pageSize) {
         this.pageSize = pageSize;
     }
@@ -104,6 +108,7 @@ public class ListPoliciesRequest extends AmazonWebServiceRequest implements
      * 
      * @return The result page size.
      */
+
     public Integer getPageSize() {
         return this.pageSize;
     }
@@ -118,6 +123,7 @@ public class ListPoliciesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListPoliciesRequest withPageSize(Integer pageSize) {
         setPageSize(pageSize);
         return this;
@@ -133,6 +139,7 @@ public class ListPoliciesRequest extends AmazonWebServiceRequest implements
      *        Specifies the order for results. If true, the results are returned
      *        in ascending creation order.
      */
+
     public void setAscendingOrder(Boolean ascendingOrder) {
         this.ascendingOrder = ascendingOrder;
     }
@@ -146,6 +153,7 @@ public class ListPoliciesRequest extends AmazonWebServiceRequest implements
      * @return Specifies the order for results. If true, the results are
      *         returned in ascending creation order.
      */
+
     public Boolean getAscendingOrder() {
         return this.ascendingOrder;
     }
@@ -162,6 +170,7 @@ public class ListPoliciesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListPoliciesRequest withAscendingOrder(Boolean ascendingOrder) {
         setAscendingOrder(ascendingOrder);
         return this;
@@ -176,6 +185,7 @@ public class ListPoliciesRequest extends AmazonWebServiceRequest implements
      * @return Specifies the order for results. If true, the results are
      *         returned in ascending creation order.
      */
+
     public Boolean isAscendingOrder() {
         return this.ascendingOrder;
     }

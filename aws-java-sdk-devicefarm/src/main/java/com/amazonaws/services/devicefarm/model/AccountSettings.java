@@ -49,6 +49,7 @@ public class AccountSettings implements Serializable, Cloneable {
      *        The AWS account number specified in the
      *        <code>AccountSettings</code> container.
      */
+
     public void setAwsAccountNumber(String awsAccountNumber) {
         this.awsAccountNumber = awsAccountNumber;
     }
@@ -62,6 +63,7 @@ public class AccountSettings implements Serializable, Cloneable {
      * @return The AWS account number specified in the
      *         <code>AccountSettings</code> container.
      */
+
     public String getAwsAccountNumber() {
         return this.awsAccountNumber;
     }
@@ -78,6 +80,7 @@ public class AccountSettings implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AccountSettings withAwsAccountNumber(String awsAccountNumber) {
         setAwsAccountNumber(awsAccountNumber);
         return this;
@@ -90,6 +93,7 @@ public class AccountSettings implements Serializable, Cloneable {
      * 
      * @return Returns the unmetered devices you have purchased.
      */
+
     public java.util.Map<String, Integer> getUnmeteredDevices() {
         return unmeteredDevices;
     }
@@ -102,6 +106,7 @@ public class AccountSettings implements Serializable, Cloneable {
      * @param unmeteredDevices
      *        Returns the unmetered devices you have purchased.
      */
+
     public void setUnmeteredDevices(
             java.util.Map<String, Integer> unmeteredDevices) {
         this.unmeteredDevices = unmeteredDevices;
@@ -117,6 +122,7 @@ public class AccountSettings implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AccountSettings withUnmeteredDevices(
             java.util.Map<String, Integer> unmeteredDevices) {
         setUnmeteredDevices(unmeteredDevices);
@@ -138,6 +144,7 @@ public class AccountSettings implements Serializable, Cloneable {
      * Removes all the entries added into UnmeteredDevices. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public AccountSettings clearUnmeteredDevicesEntries() {
         this.unmeteredDevices = null;
         return this;

@@ -92,6 +92,7 @@ public class ExecutePolicyRequest extends AmazonWebServiceRequest implements
      * @param autoScalingGroupName
      *        The name or Amazon Resource Name (ARN) of the Auto Scaling group.
      */
+
     public void setAutoScalingGroupName(String autoScalingGroupName) {
         this.autoScalingGroupName = autoScalingGroupName;
     }
@@ -103,6 +104,7 @@ public class ExecutePolicyRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name or Amazon Resource Name (ARN) of the Auto Scaling group.
      */
+
     public String getAutoScalingGroupName() {
         return this.autoScalingGroupName;
     }
@@ -117,6 +119,7 @@ public class ExecutePolicyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ExecutePolicyRequest withAutoScalingGroupName(
             String autoScalingGroupName) {
         setAutoScalingGroupName(autoScalingGroupName);
@@ -131,6 +134,7 @@ public class ExecutePolicyRequest extends AmazonWebServiceRequest implements
      * @param policyName
      *        The name or ARN of the policy.
      */
+
     public void setPolicyName(String policyName) {
         this.policyName = policyName;
     }
@@ -142,6 +146,7 @@ public class ExecutePolicyRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name or ARN of the policy.
      */
+
     public String getPolicyName() {
         return this.policyName;
     }
@@ -156,6 +161,7 @@ public class ExecutePolicyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ExecutePolicyRequest withPolicyName(String policyName) {
         setPolicyName(policyName);
         return this;
@@ -193,6 +199,7 @@ public class ExecutePolicyRequest extends AmazonWebServiceRequest implements
      *        >Understanding Auto Scaling Cooldowns</a> in the <i>Auto Scaling
      *        Developer Guide</i>.
      */
+
     public void setHonorCooldown(Boolean honorCooldown) {
         this.honorCooldown = honorCooldown;
     }
@@ -228,6 +235,7 @@ public class ExecutePolicyRequest extends AmazonWebServiceRequest implements
      *         >Understanding Auto Scaling Cooldowns</a> in the <i>Auto Scaling
      *         Developer Guide</i>.
      */
+
     public Boolean getHonorCooldown() {
         return this.honorCooldown;
     }
@@ -266,6 +274,7 @@ public class ExecutePolicyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ExecutePolicyRequest withHonorCooldown(Boolean honorCooldown) {
         setHonorCooldown(honorCooldown);
         return this;
@@ -302,6 +311,7 @@ public class ExecutePolicyRequest extends AmazonWebServiceRequest implements
      *         >Understanding Auto Scaling Cooldowns</a> in the <i>Auto Scaling
      *         Developer Guide</i>.
      */
+
     public Boolean isHonorCooldown() {
         return this.honorCooldown;
     }
@@ -338,6 +348,7 @@ public class ExecutePolicyRequest extends AmazonWebServiceRequest implements
      *        This parameter is required if the policy type is
      *        <code>StepScaling</code> and not supported otherwise.
      */
+
     public void setMetricValue(Double metricValue) {
         this.metricValue = metricValue;
     }
@@ -373,6 +384,7 @@ public class ExecutePolicyRequest extends AmazonWebServiceRequest implements
      *         This parameter is required if the policy type is
      *         <code>StepScaling</code> and not supported otherwise.
      */
+
     public Double getMetricValue() {
         return this.metricValue;
     }
@@ -411,6 +423,7 @@ public class ExecutePolicyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ExecutePolicyRequest withMetricValue(Double metricValue) {
         setMetricValue(metricValue);
         return this;
@@ -431,6 +444,7 @@ public class ExecutePolicyRequest extends AmazonWebServiceRequest implements
      *        This parameter is required if the policy type is
      *        <code>StepScaling</code> and not supported otherwise.
      */
+
     public void setBreachThreshold(Double breachThreshold) {
         this.breachThreshold = breachThreshold;
     }
@@ -449,6 +463,7 @@ public class ExecutePolicyRequest extends AmazonWebServiceRequest implements
      *         This parameter is required if the policy type is
      *         <code>StepScaling</code> and not supported otherwise.
      */
+
     public Double getBreachThreshold() {
         return this.breachThreshold;
     }
@@ -470,6 +485,7 @@ public class ExecutePolicyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ExecutePolicyRequest withBreachThreshold(Double breachThreshold) {
         setBreachThreshold(breachThreshold);
         return this;

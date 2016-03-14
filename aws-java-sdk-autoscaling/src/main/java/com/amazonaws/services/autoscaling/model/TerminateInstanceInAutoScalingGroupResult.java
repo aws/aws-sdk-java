@@ -39,6 +39,7 @@ public class TerminateInstanceInAutoScalingGroupResult implements Serializable,
      * @param activity
      *        A scaling activity.
      */
+
     public void setActivity(Activity activity) {
         this.activity = activity;
     }
@@ -50,6 +51,7 @@ public class TerminateInstanceInAutoScalingGroupResult implements Serializable,
      * 
      * @return A scaling activity.
      */
+
     public Activity getActivity() {
         return this.activity;
     }
@@ -64,6 +66,7 @@ public class TerminateInstanceInAutoScalingGroupResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TerminateInstanceInAutoScalingGroupResult withActivity(
             Activity activity) {
         setActivity(activity);

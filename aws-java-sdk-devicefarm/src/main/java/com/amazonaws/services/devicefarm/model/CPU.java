@@ -56,6 +56,7 @@ public class CPU implements Serializable, Cloneable {
      * @param frequency
      *        The CPU's frequency.
      */
+
     public void setFrequency(String frequency) {
         this.frequency = frequency;
     }
@@ -67,6 +68,7 @@ public class CPU implements Serializable, Cloneable {
      * 
      * @return The CPU's frequency.
      */
+
     public String getFrequency() {
         return this.frequency;
     }
@@ -81,6 +83,7 @@ public class CPU implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CPU withFrequency(String frequency) {
         setFrequency(frequency);
         return this;
@@ -94,6 +97,7 @@ public class CPU implements Serializable, Cloneable {
      * @param architecture
      *        The CPU's architecture, for example x86 or ARM.
      */
+
     public void setArchitecture(String architecture) {
         this.architecture = architecture;
     }
@@ -105,6 +109,7 @@ public class CPU implements Serializable, Cloneable {
      * 
      * @return The CPU's architecture, for example x86 or ARM.
      */
+
     public String getArchitecture() {
         return this.architecture;
     }
@@ -119,6 +124,7 @@ public class CPU implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CPU withArchitecture(String architecture) {
         setArchitecture(architecture);
         return this;
@@ -134,6 +140,7 @@ public class CPU implements Serializable, Cloneable {
      *        The clock speed of the device's CPU, expressed in hertz (Hz). For
      *        example, a 1.2 GHz CPU is expressed as 1200000000.
      */
+
     public void setClock(Double clock) {
         this.clock = clock;
     }
@@ -147,6 +154,7 @@ public class CPU implements Serializable, Cloneable {
      * @return The clock speed of the device's CPU, expressed in hertz (Hz). For
      *         example, a 1.2 GHz CPU is expressed as 1200000000.
      */
+
     public Double getClock() {
         return this.clock;
     }
@@ -163,6 +171,7 @@ public class CPU implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CPU withClock(Double clock) {
         setClock(clock);
         return this;

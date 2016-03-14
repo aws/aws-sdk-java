@@ -223,6 +223,7 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements
      *        <i>Return-Path</i> header that you might include in the raw text
      *        of the message.
      */
+
     public void setSource(String source) {
         this.source = source;
     }
@@ -264,6 +265,7 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements
      *         <i>Return-Path</i> header that you might include in the raw text
      *         of the message.
      */
+
     public String getSource() {
         return this.source;
     }
@@ -308,6 +310,7 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendRawEmailRequest withSource(String source) {
         setSource(source);
         return this;
@@ -322,6 +325,7 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements
      * @return A list of destinations for the message, consisting of To:, CC:,
      *         and BCC: addresses.
      */
+
     public java.util.List<String> getDestinations() {
         if (destinations == null) {
             destinations = new com.amazonaws.internal.SdkInternalList<String>();
@@ -339,6 +343,7 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements
      *        A list of destinations for the message, consisting of To:, CC:,
      *        and BCC: addresses.
      */
+
     public void setDestinations(java.util.Collection<String> destinations) {
         if (destinations == null) {
             this.destinations = null;
@@ -367,6 +372,7 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendRawEmailRequest withDestinations(String... destinations) {
         if (this.destinations == null) {
             setDestinations(new com.amazonaws.internal.SdkInternalList<String>(
@@ -390,6 +396,7 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendRawEmailRequest withDestinations(
             java.util.Collection<String> destinations) {
         setDestinations(destinations);
@@ -431,6 +438,7 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements
      *        <li>Content must be base64-encoded, if MIME requires it.</li>
      *        </ul>
      */
+
     public void setRawMessage(RawMessage rawMessage) {
         this.rawMessage = rawMessage;
     }
@@ -469,6 +477,7 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements
      *         <li>Content must be base64-encoded, if MIME requires it.</li>
      *         </ul>
      */
+
     public RawMessage getRawMessage() {
         return this.rawMessage;
     }
@@ -510,6 +519,7 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendRawEmailRequest withRawMessage(RawMessage rawMessage) {
         setRawMessage(rawMessage);
         return this;
@@ -552,6 +562,7 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements
      *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
      *        >Amazon SES Developer Guide</a>.
      */
+
     public void setFromArn(String fromArn) {
         this.fromArn = fromArn;
     }
@@ -592,6 +603,7 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements
      *         "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
      *         >Amazon SES Developer Guide</a>.
      */
+
     public String getFromArn() {
         return this.fromArn;
     }
@@ -635,6 +647,7 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendRawEmailRequest withFromArn(String fromArn) {
         setFromArn(fromArn);
         return this;
@@ -696,6 +709,7 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements
      *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
      *        >Amazon SES Developer Guide</a>.
      */
+
     public void setSourceArn(String sourceArn) {
         this.sourceArn = sourceArn;
     }
@@ -756,6 +770,7 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements
      *         "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
      *         >Amazon SES Developer Guide</a>.
      */
+
     public String getSourceArn() {
         return this.sourceArn;
     }
@@ -818,6 +833,7 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendRawEmailRequest withSourceArn(String sourceArn) {
         setSourceArn(sourceArn);
         return this;
@@ -881,6 +897,7 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements
      *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
      *        >Amazon SES Developer Guide</a>.
      */
+
     public void setReturnPathArn(String returnPathArn) {
         this.returnPathArn = returnPathArn;
     }
@@ -942,6 +959,7 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements
      *         "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html"
      *         >Amazon SES Developer Guide</a>.
      */
+
     public String getReturnPathArn() {
         return this.returnPathArn;
     }
@@ -1006,6 +1024,7 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendRawEmailRequest withReturnPathArn(String returnPathArn) {
         setReturnPathArn(returnPathArn);
         return this;

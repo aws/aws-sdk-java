@@ -66,6 +66,7 @@ public class Tag implements Serializable, Cloneable {
      * @param resourceId
      *        The name of the group.
      */
+
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
     }
@@ -77,6 +78,7 @@ public class Tag implements Serializable, Cloneable {
      * 
      * @return The name of the group.
      */
+
     public String getResourceId() {
         return this.resourceId;
     }
@@ -91,6 +93,7 @@ public class Tag implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Tag withResourceId(String resourceId) {
         setResourceId(resourceId);
         return this;
@@ -106,6 +109,7 @@ public class Tag implements Serializable, Cloneable {
      *        The type of resource. The only supported value is
      *        <code>auto-scaling-group</code>.
      */
+
     public void setResourceType(String resourceType) {
         this.resourceType = resourceType;
     }
@@ -119,6 +123,7 @@ public class Tag implements Serializable, Cloneable {
      * @return The type of resource. The only supported value is
      *         <code>auto-scaling-group</code>.
      */
+
     public String getResourceType() {
         return this.resourceType;
     }
@@ -135,6 +140,7 @@ public class Tag implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Tag withResourceType(String resourceType) {
         setResourceType(resourceType);
         return this;
@@ -148,6 +154,7 @@ public class Tag implements Serializable, Cloneable {
      * @param key
      *        The tag key.
      */
+
     public void setKey(String key) {
         this.key = key;
     }
@@ -159,6 +166,7 @@ public class Tag implements Serializable, Cloneable {
      * 
      * @return The tag key.
      */
+
     public String getKey() {
         return this.key;
     }
@@ -173,6 +181,7 @@ public class Tag implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Tag withKey(String key) {
         setKey(key);
         return this;
@@ -186,6 +195,7 @@ public class Tag implements Serializable, Cloneable {
      * @param value
      *        The tag value.
      */
+
     public void setValue(String value) {
         this.value = value;
     }
@@ -197,6 +207,7 @@ public class Tag implements Serializable, Cloneable {
      * 
      * @return The tag value.
      */
+
     public String getValue() {
         return this.value;
     }
@@ -211,6 +222,7 @@ public class Tag implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Tag withValue(String value) {
         setValue(value);
         return this;
@@ -226,6 +238,7 @@ public class Tag implements Serializable, Cloneable {
      *        Determines whether the tag is added to new instances as they are
      *        launched in the group.
      */
+
     public void setPropagateAtLaunch(Boolean propagateAtLaunch) {
         this.propagateAtLaunch = propagateAtLaunch;
     }
@@ -239,6 +252,7 @@ public class Tag implements Serializable, Cloneable {
      * @return Determines whether the tag is added to new instances as they are
      *         launched in the group.
      */
+
     public Boolean getPropagateAtLaunch() {
         return this.propagateAtLaunch;
     }
@@ -255,6 +269,7 @@ public class Tag implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Tag withPropagateAtLaunch(Boolean propagateAtLaunch) {
         setPropagateAtLaunch(propagateAtLaunch);
         return this;
@@ -269,6 +284,7 @@ public class Tag implements Serializable, Cloneable {
      * @return Determines whether the tag is added to new instances as they are
      *         launched in the group.
      */
+
     public Boolean isPropagateAtLaunch() {
         return this.propagateAtLaunch;
     }

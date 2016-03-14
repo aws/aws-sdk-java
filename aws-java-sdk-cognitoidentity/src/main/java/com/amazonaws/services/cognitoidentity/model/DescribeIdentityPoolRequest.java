@@ -34,6 +34,7 @@ public class DescribeIdentityPoolRequest extends AmazonWebServiceRequest
      * @param identityPoolId
      *        An identity pool ID in the format REGION:GUID.
      */
+
     public void setIdentityPoolId(String identityPoolId) {
         this.identityPoolId = identityPoolId;
     }
@@ -43,6 +44,7 @@ public class DescribeIdentityPoolRequest extends AmazonWebServiceRequest
      * 
      * @return An identity pool ID in the format REGION:GUID.
      */
+
     public String getIdentityPoolId() {
         return this.identityPoolId;
     }
@@ -55,6 +57,7 @@ public class DescribeIdentityPoolRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeIdentityPoolRequest withIdentityPoolId(String identityPoolId) {
         setIdentityPoolId(identityPoolId);
         return this;

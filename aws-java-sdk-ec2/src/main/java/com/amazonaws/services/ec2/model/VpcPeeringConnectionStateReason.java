@@ -47,6 +47,7 @@ public class VpcPeeringConnectionStateReason implements Serializable, Cloneable 
      *        The status of the VPC peering connection.
      * @see VpcPeeringConnectionStateReasonCode
      */
+
     public void setCode(String code) {
         this.code = code;
     }
@@ -59,6 +60,7 @@ public class VpcPeeringConnectionStateReason implements Serializable, Cloneable 
      * @return The status of the VPC peering connection.
      * @see VpcPeeringConnectionStateReasonCode
      */
+
     public String getCode() {
         return this.code;
     }
@@ -74,6 +76,7 @@ public class VpcPeeringConnectionStateReason implements Serializable, Cloneable 
      *         chained together.
      * @see VpcPeeringConnectionStateReasonCode
      */
+
     public VpcPeeringConnectionStateReason withCode(String code) {
         setCode(code);
         return this;
@@ -90,6 +93,7 @@ public class VpcPeeringConnectionStateReason implements Serializable, Cloneable 
      *         chained together.
      * @see VpcPeeringConnectionStateReasonCode
      */
+
     public void setCode(VpcPeeringConnectionStateReasonCode code) {
         this.code = code.toString();
     }
@@ -105,6 +109,7 @@ public class VpcPeeringConnectionStateReason implements Serializable, Cloneable 
      *         chained together.
      * @see VpcPeeringConnectionStateReasonCode
      */
+
     public VpcPeeringConnectionStateReason withCode(
             VpcPeeringConnectionStateReasonCode code) {
         setCode(code);
@@ -120,6 +125,7 @@ public class VpcPeeringConnectionStateReason implements Serializable, Cloneable 
      *        A message that provides more information about the status, if
      *        applicable.
      */
+
     public void setMessage(String message) {
         this.message = message;
     }
@@ -132,6 +138,7 @@ public class VpcPeeringConnectionStateReason implements Serializable, Cloneable 
      * @return A message that provides more information about the status, if
      *         applicable.
      */
+
     public String getMessage() {
         return this.message;
     }
@@ -147,6 +154,7 @@ public class VpcPeeringConnectionStateReason implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VpcPeeringConnectionStateReason withMessage(String message) {
         setMessage(message);
         return this;

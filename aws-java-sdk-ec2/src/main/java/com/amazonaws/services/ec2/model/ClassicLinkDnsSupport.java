@@ -46,6 +46,7 @@ public class ClassicLinkDnsSupport implements Serializable, Cloneable {
      * @param vpcId
      *        The ID of the VPC.
      */
+
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
@@ -57,6 +58,7 @@ public class ClassicLinkDnsSupport implements Serializable, Cloneable {
      * 
      * @return The ID of the VPC.
      */
+
     public String getVpcId() {
         return this.vpcId;
     }
@@ -71,6 +73,7 @@ public class ClassicLinkDnsSupport implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ClassicLinkDnsSupport withVpcId(String vpcId) {
         setVpcId(vpcId);
         return this;
@@ -84,6 +87,7 @@ public class ClassicLinkDnsSupport implements Serializable, Cloneable {
      * @param classicLinkDnsSupported
      *        Indicates whether ClassicLink DNS support is enabled for the VPC.
      */
+
     public void setClassicLinkDnsSupported(Boolean classicLinkDnsSupported) {
         this.classicLinkDnsSupported = classicLinkDnsSupported;
     }
@@ -95,6 +99,7 @@ public class ClassicLinkDnsSupport implements Serializable, Cloneable {
      * 
      * @return Indicates whether ClassicLink DNS support is enabled for the VPC.
      */
+
     public Boolean getClassicLinkDnsSupported() {
         return this.classicLinkDnsSupported;
     }
@@ -109,6 +114,7 @@ public class ClassicLinkDnsSupport implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ClassicLinkDnsSupport withClassicLinkDnsSupported(
             Boolean classicLinkDnsSupported) {
         setClassicLinkDnsSupported(classicLinkDnsSupported);
@@ -122,6 +128,7 @@ public class ClassicLinkDnsSupport implements Serializable, Cloneable {
      * 
      * @return Indicates whether ClassicLink DNS support is enabled for the VPC.
      */
+
     public Boolean isClassicLinkDnsSupported() {
         return this.classicLinkDnsSupported;
     }

@@ -53,6 +53,7 @@ public class CreateInstanceProfileRequest extends AmazonWebServiceRequest
      * @param instanceProfileName
      *        The name of the instance profile to create.
      */
+
     public void setInstanceProfileName(String instanceProfileName) {
         this.instanceProfileName = instanceProfileName;
     }
@@ -64,6 +65,7 @@ public class CreateInstanceProfileRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the instance profile to create.
      */
+
     public String getInstanceProfileName() {
         return this.instanceProfileName;
     }
@@ -78,6 +80,7 @@ public class CreateInstanceProfileRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateInstanceProfileRequest withInstanceProfileName(
             String instanceProfileName) {
         setInstanceProfileName(instanceProfileName);
@@ -105,6 +108,7 @@ public class CreateInstanceProfileRequest extends AmazonWebServiceRequest
      *        This parameter is optional. If it is not included, it defaults to
      *        a slash (/).
      */
+
     public void setPath(String path) {
         this.path = path;
     }
@@ -129,6 +133,7 @@ public class CreateInstanceProfileRequest extends AmazonWebServiceRequest
      *         This parameter is optional. If it is not included, it defaults to
      *         a slash (/).
      */
+
     public String getPath() {
         return this.path;
     }
@@ -156,6 +161,7 @@ public class CreateInstanceProfileRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateInstanceProfileRequest withPath(String path) {
         setPath(path);
         return this;

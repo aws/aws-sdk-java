@@ -72,6 +72,7 @@ public class BouncedRecipientInfo implements Serializable, Cloneable {
      * @param recipient
      *        The email address of the recipient of the bounced email.
      */
+
     public void setRecipient(String recipient) {
         this.recipient = recipient;
     }
@@ -83,6 +84,7 @@ public class BouncedRecipientInfo implements Serializable, Cloneable {
      * 
      * @return The email address of the recipient of the bounced email.
      */
+
     public String getRecipient() {
         return this.recipient;
     }
@@ -97,6 +99,7 @@ public class BouncedRecipientInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BouncedRecipientInfo withRecipient(String recipient) {
         setRecipient(recipient);
         return this;
@@ -121,6 +124,7 @@ public class BouncedRecipientInfo implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html"
      *        >Amazon SES Developer Guide</a>.
      */
+
     public void setRecipientArn(String recipientArn) {
         this.recipientArn = recipientArn;
     }
@@ -143,6 +147,7 @@ public class BouncedRecipientInfo implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html"
      *         >Amazon SES Developer Guide</a>.
      */
+
     public String getRecipientArn() {
         return this.recipientArn;
     }
@@ -168,6 +173,7 @@ public class BouncedRecipientInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BouncedRecipientInfo withRecipientArn(String recipientArn) {
         setRecipientArn(recipientArn);
         return this;
@@ -184,6 +190,7 @@ public class BouncedRecipientInfo implements Serializable, Cloneable {
      *        or <code>RecipientDsnFields</code>.
      * @see BounceType
      */
+
     public void setBounceType(String bounceType) {
         this.bounceType = bounceType;
     }
@@ -198,6 +205,7 @@ public class BouncedRecipientInfo implements Serializable, Cloneable {
      *         or <code>RecipientDsnFields</code>.
      * @see BounceType
      */
+
     public String getBounceType() {
         return this.bounceType;
     }
@@ -215,6 +223,7 @@ public class BouncedRecipientInfo implements Serializable, Cloneable {
      *         chained together.
      * @see BounceType
      */
+
     public BouncedRecipientInfo withBounceType(String bounceType) {
         setBounceType(bounceType);
         return this;
@@ -233,6 +242,7 @@ public class BouncedRecipientInfo implements Serializable, Cloneable {
      *         chained together.
      * @see BounceType
      */
+
     public void setBounceType(BounceType bounceType) {
         this.bounceType = bounceType.toString();
     }
@@ -250,6 +260,7 @@ public class BouncedRecipientInfo implements Serializable, Cloneable {
      *         chained together.
      * @see BounceType
      */
+
     public BouncedRecipientInfo withBounceType(BounceType bounceType) {
         setBounceType(bounceType);
         return this;
@@ -268,6 +279,7 @@ public class BouncedRecipientInfo implements Serializable, Cloneable {
      *        <code>BounceType</code>. You must provide either this parameter or
      *        <code>BounceType</code>.
      */
+
     public void setRecipientDsnFields(RecipientDsnFields recipientDsnFields) {
         this.recipientDsnFields = recipientDsnFields;
     }
@@ -284,6 +296,7 @@ public class BouncedRecipientInfo implements Serializable, Cloneable {
      *         <code>BounceType</code>. You must provide either this parameter
      *         or <code>BounceType</code>.
      */
+
     public RecipientDsnFields getRecipientDsnFields() {
         return this.recipientDsnFields;
     }
@@ -303,6 +316,7 @@ public class BouncedRecipientInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BouncedRecipientInfo withRecipientDsnFields(
             RecipientDsnFields recipientDsnFields) {
         setRecipientDsnFields(recipientDsnFields);

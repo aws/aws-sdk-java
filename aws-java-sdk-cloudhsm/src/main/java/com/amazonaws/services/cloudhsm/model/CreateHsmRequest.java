@@ -87,6 +87,7 @@ public class CreateHsmRequest extends AmazonWebServiceRequest implements
      *        The identifier of the subnet in your VPC in which to place the
      *        HSM.
      */
+
     public void setSubnetId(String subnetId) {
         this.subnetId = subnetId;
     }
@@ -99,6 +100,7 @@ public class CreateHsmRequest extends AmazonWebServiceRequest implements
      * @return The identifier of the subnet in your VPC in which to place the
      *         HSM.
      */
+
     public String getSubnetId() {
         return this.subnetId;
     }
@@ -114,6 +116,7 @@ public class CreateHsmRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateHsmRequest withSubnetId(String subnetId) {
         setSubnetId(subnetId);
         return this;
@@ -127,6 +130,7 @@ public class CreateHsmRequest extends AmazonWebServiceRequest implements
      * @param sshKey
      *        The SSH public key to install on the HSM.
      */
+
     public void setSshKey(String sshKey) {
         this.sshKey = sshKey;
     }
@@ -138,6 +142,7 @@ public class CreateHsmRequest extends AmazonWebServiceRequest implements
      * 
      * @return The SSH public key to install on the HSM.
      */
+
     public String getSshKey() {
         return this.sshKey;
     }
@@ -152,6 +157,7 @@ public class CreateHsmRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateHsmRequest withSshKey(String sshKey) {
         setSshKey(sshKey);
         return this;
@@ -165,6 +171,7 @@ public class CreateHsmRequest extends AmazonWebServiceRequest implements
      * @param eniIp
      *        The IP address to assign to the HSM's ENI.
      */
+
     public void setEniIp(String eniIp) {
         this.eniIp = eniIp;
     }
@@ -176,6 +183,7 @@ public class CreateHsmRequest extends AmazonWebServiceRequest implements
      * 
      * @return The IP address to assign to the HSM's ENI.
      */
+
     public String getEniIp() {
         return this.eniIp;
     }
@@ -190,6 +198,7 @@ public class CreateHsmRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateHsmRequest withEniIp(String eniIp) {
         setEniIp(eniIp);
         return this;
@@ -205,6 +214,7 @@ public class CreateHsmRequest extends AmazonWebServiceRequest implements
      *        The ARN of an IAM role to enable the AWS CloudHSM service to
      *        allocate an ENI on your behalf.
      */
+
     public void setIamRoleArn(String iamRoleArn) {
         this.iamRoleArn = iamRoleArn;
     }
@@ -218,6 +228,7 @@ public class CreateHsmRequest extends AmazonWebServiceRequest implements
      * @return The ARN of an IAM role to enable the AWS CloudHSM service to
      *         allocate an ENI on your behalf.
      */
+
     public String getIamRoleArn() {
         return this.iamRoleArn;
     }
@@ -234,6 +245,7 @@ public class CreateHsmRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateHsmRequest withIamRoleArn(String iamRoleArn) {
         setIamRoleArn(iamRoleArn);
         return this;
@@ -247,6 +259,7 @@ public class CreateHsmRequest extends AmazonWebServiceRequest implements
      * @param externalId
      *        The external ID from <b>IamRoleArn</b>, if present.
      */
+
     public void setExternalId(String externalId) {
         this.externalId = externalId;
     }
@@ -258,6 +271,7 @@ public class CreateHsmRequest extends AmazonWebServiceRequest implements
      * 
      * @return The external ID from <b>IamRoleArn</b>, if present.
      */
+
     public String getExternalId() {
         return this.externalId;
     }
@@ -272,6 +286,7 @@ public class CreateHsmRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateHsmRequest withExternalId(String externalId) {
         setExternalId(externalId);
         return this;
@@ -286,6 +301,7 @@ public class CreateHsmRequest extends AmazonWebServiceRequest implements
      *        The subscription type.
      * @see SubscriptionType
      */
+
     public void setSubscriptionType(String subscriptionType) {
         this.subscriptionType = subscriptionType;
     }
@@ -298,6 +314,7 @@ public class CreateHsmRequest extends AmazonWebServiceRequest implements
      * @return The subscription type.
      * @see SubscriptionType
      */
+
     public String getSubscriptionType() {
         return this.subscriptionType;
     }
@@ -313,6 +330,7 @@ public class CreateHsmRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see SubscriptionType
      */
+
     public CreateHsmRequest withSubscriptionType(String subscriptionType) {
         setSubscriptionType(subscriptionType);
         return this;
@@ -329,6 +347,7 @@ public class CreateHsmRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see SubscriptionType
      */
+
     public void setSubscriptionType(SubscriptionType subscriptionType) {
         this.subscriptionType = subscriptionType.toString();
     }
@@ -344,6 +363,7 @@ public class CreateHsmRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see SubscriptionType
      */
+
     public CreateHsmRequest withSubscriptionType(
             SubscriptionType subscriptionType) {
         setSubscriptionType(subscriptionType);
@@ -360,6 +380,7 @@ public class CreateHsmRequest extends AmazonWebServiceRequest implements
      *        A user-defined token to ensure idempotence. Subsequent calls to
      *        this action with the same token will be ignored.
      */
+
     public void setClientToken(String clientToken) {
         this.clientToken = clientToken;
     }
@@ -373,6 +394,7 @@ public class CreateHsmRequest extends AmazonWebServiceRequest implements
      * @return A user-defined token to ensure idempotence. Subsequent calls to
      *         this action with the same token will be ignored.
      */
+
     public String getClientToken() {
         return this.clientToken;
     }
@@ -389,6 +411,7 @@ public class CreateHsmRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateHsmRequest withClientToken(String clientToken) {
         setClientToken(clientToken);
         return this;
@@ -402,6 +425,7 @@ public class CreateHsmRequest extends AmazonWebServiceRequest implements
      * @param syslogIp
      *        The IP address for the syslog monitoring server.
      */
+
     public void setSyslogIp(String syslogIp) {
         this.syslogIp = syslogIp;
     }
@@ -413,6 +437,7 @@ public class CreateHsmRequest extends AmazonWebServiceRequest implements
      * 
      * @return The IP address for the syslog monitoring server.
      */
+
     public String getSyslogIp() {
         return this.syslogIp;
     }
@@ -427,6 +452,7 @@ public class CreateHsmRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateHsmRequest withSyslogIp(String syslogIp) {
         setSyslogIp(syslogIp);
         return this;

@@ -41,6 +41,7 @@ public class DeleteGlobalSecondaryIndexAction implements Serializable,
      * @param indexName
      *        The name of the global secondary index to be deleted.
      */
+
     public void setIndexName(String indexName) {
         this.indexName = indexName;
     }
@@ -52,6 +53,7 @@ public class DeleteGlobalSecondaryIndexAction implements Serializable,
      * 
      * @return The name of the global secondary index to be deleted.
      */
+
     public String getIndexName() {
         return this.indexName;
     }
@@ -66,6 +68,7 @@ public class DeleteGlobalSecondaryIndexAction implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteGlobalSecondaryIndexAction withIndexName(String indexName) {
         setIndexName(indexName);
         return this;

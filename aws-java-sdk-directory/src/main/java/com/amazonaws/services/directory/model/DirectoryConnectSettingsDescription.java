@@ -71,6 +71,7 @@ public class DirectoryConnectSettingsDescription implements Serializable,
      * @param vpcId
      *        The identifier of the VPC that the AD Connector is in.
      */
+
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
@@ -82,6 +83,7 @@ public class DirectoryConnectSettingsDescription implements Serializable,
      * 
      * @return The identifier of the VPC that the AD Connector is in.
      */
+
     public String getVpcId() {
         return this.vpcId;
     }
@@ -96,6 +98,7 @@ public class DirectoryConnectSettingsDescription implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DirectoryConnectSettingsDescription withVpcId(String vpcId) {
         setVpcId(vpcId);
         return this;
@@ -109,6 +112,7 @@ public class DirectoryConnectSettingsDescription implements Serializable,
      * @return A list of subnet identifiers in the VPC that the AD connector is
      *         in.
      */
+
     public java.util.List<String> getSubnetIds() {
         if (subnetIds == null) {
             subnetIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -125,6 +129,7 @@ public class DirectoryConnectSettingsDescription implements Serializable,
      *        A list of subnet identifiers in the VPC that the AD connector is
      *        in.
      */
+
     public void setSubnetIds(java.util.Collection<String> subnetIds) {
         if (subnetIds == null) {
             this.subnetIds = null;
@@ -152,6 +157,7 @@ public class DirectoryConnectSettingsDescription implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DirectoryConnectSettingsDescription withSubnetIds(
             String... subnetIds) {
         if (this.subnetIds == null) {
@@ -175,6 +181,7 @@ public class DirectoryConnectSettingsDescription implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DirectoryConnectSettingsDescription withSubnetIds(
             java.util.Collection<String> subnetIds) {
         setSubnetIds(subnetIds);
@@ -189,6 +196,7 @@ public class DirectoryConnectSettingsDescription implements Serializable,
      * @param customerUserName
      *        The username of the service account in the on-premises directory.
      */
+
     public void setCustomerUserName(String customerUserName) {
         this.customerUserName = customerUserName;
     }
@@ -200,6 +208,7 @@ public class DirectoryConnectSettingsDescription implements Serializable,
      * 
      * @return The username of the service account in the on-premises directory.
      */
+
     public String getCustomerUserName() {
         return this.customerUserName;
     }
@@ -214,6 +223,7 @@ public class DirectoryConnectSettingsDescription implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DirectoryConnectSettingsDescription withCustomerUserName(
             String customerUserName) {
         setCustomerUserName(customerUserName);
@@ -228,6 +238,7 @@ public class DirectoryConnectSettingsDescription implements Serializable,
      * @param securityGroupId
      *        The security group identifier for the AD Connector directory.
      */
+
     public void setSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
     }
@@ -239,6 +250,7 @@ public class DirectoryConnectSettingsDescription implements Serializable,
      * 
      * @return The security group identifier for the AD Connector directory.
      */
+
     public String getSecurityGroupId() {
         return this.securityGroupId;
     }
@@ -253,6 +265,7 @@ public class DirectoryConnectSettingsDescription implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DirectoryConnectSettingsDescription withSecurityGroupId(
             String securityGroupId) {
         setSecurityGroupId(securityGroupId);
@@ -266,6 +279,7 @@ public class DirectoryConnectSettingsDescription implements Serializable,
      * 
      * @return A list of the Availability Zones that the directory is in.
      */
+
     public java.util.List<String> getAvailabilityZones() {
         if (availabilityZones == null) {
             availabilityZones = new com.amazonaws.internal.SdkInternalList<String>();
@@ -281,6 +295,7 @@ public class DirectoryConnectSettingsDescription implements Serializable,
      * @param availabilityZones
      *        A list of the Availability Zones that the directory is in.
      */
+
     public void setAvailabilityZones(
             java.util.Collection<String> availabilityZones) {
         if (availabilityZones == null) {
@@ -308,6 +323,7 @@ public class DirectoryConnectSettingsDescription implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DirectoryConnectSettingsDescription withAvailabilityZones(
             String... availabilityZones) {
         if (this.availabilityZones == null) {
@@ -330,6 +346,7 @@ public class DirectoryConnectSettingsDescription implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DirectoryConnectSettingsDescription withAvailabilityZones(
             java.util.Collection<String> availabilityZones) {
         setAvailabilityZones(availabilityZones);
@@ -343,6 +360,7 @@ public class DirectoryConnectSettingsDescription implements Serializable,
      * 
      * @return The IP addresses of the AD Connector servers.
      */
+
     public java.util.List<String> getConnectIps() {
         if (connectIps == null) {
             connectIps = new com.amazonaws.internal.SdkInternalList<String>();
@@ -358,6 +376,7 @@ public class DirectoryConnectSettingsDescription implements Serializable,
      * @param connectIps
      *        The IP addresses of the AD Connector servers.
      */
+
     public void setConnectIps(java.util.Collection<String> connectIps) {
         if (connectIps == null) {
             this.connectIps = null;
@@ -384,6 +403,7 @@ public class DirectoryConnectSettingsDescription implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DirectoryConnectSettingsDescription withConnectIps(
             String... connectIps) {
         if (this.connectIps == null) {
@@ -406,6 +426,7 @@ public class DirectoryConnectSettingsDescription implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DirectoryConnectSettingsDescription withConnectIps(
             java.util.Collection<String> connectIps) {
         setConnectIps(connectIps);

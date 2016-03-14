@@ -82,6 +82,7 @@ public class ApiKey implements Serializable, Cloneable {
      * @param id
      *        The identifier of the API Key.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -93,6 +94,7 @@ public class ApiKey implements Serializable, Cloneable {
      * 
      * @return The identifier of the API Key.
      */
+
     public String getId() {
         return this.id;
     }
@@ -107,6 +109,7 @@ public class ApiKey implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ApiKey withId(String id) {
         setId(id);
         return this;
@@ -120,6 +123,7 @@ public class ApiKey implements Serializable, Cloneable {
      * @param name
      *        The name of the API Key.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -131,6 +135,7 @@ public class ApiKey implements Serializable, Cloneable {
      * 
      * @return The name of the API Key.
      */
+
     public String getName() {
         return this.name;
     }
@@ -145,6 +150,7 @@ public class ApiKey implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ApiKey withName(String name) {
         setName(name);
         return this;
@@ -158,6 +164,7 @@ public class ApiKey implements Serializable, Cloneable {
      * @param description
      *        The description of the API Key.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -169,6 +176,7 @@ public class ApiKey implements Serializable, Cloneable {
      * 
      * @return The description of the API Key.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -183,6 +191,7 @@ public class ApiKey implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ApiKey withDescription(String description) {
         setDescription(description);
         return this;
@@ -196,6 +205,7 @@ public class ApiKey implements Serializable, Cloneable {
      * @param enabled
      *        Specifies whether the API Key can be used by callers.
      */
+
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
     }
@@ -207,6 +217,7 @@ public class ApiKey implements Serializable, Cloneable {
      * 
      * @return Specifies whether the API Key can be used by callers.
      */
+
     public Boolean getEnabled() {
         return this.enabled;
     }
@@ -221,6 +232,7 @@ public class ApiKey implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ApiKey withEnabled(Boolean enabled) {
         setEnabled(enabled);
         return this;
@@ -233,6 +245,7 @@ public class ApiKey implements Serializable, Cloneable {
      * 
      * @return Specifies whether the API Key can be used by callers.
      */
+
     public Boolean isEnabled() {
         return this.enabled;
     }
@@ -246,6 +259,7 @@ public class ApiKey implements Serializable, Cloneable {
      * @return A list of <a>Stage</a> resources that are associated with the
      *         <a>ApiKey</a> resource.
      */
+
     public java.util.List<String> getStageKeys() {
         return stageKeys;
     }
@@ -260,6 +274,7 @@ public class ApiKey implements Serializable, Cloneable {
      *        A list of <a>Stage</a> resources that are associated with the
      *        <a>ApiKey</a> resource.
      */
+
     public void setStageKeys(java.util.Collection<String> stageKeys) {
         if (stageKeys == null) {
             this.stageKeys = null;
@@ -287,6 +302,7 @@ public class ApiKey implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ApiKey withStageKeys(String... stageKeys) {
         if (this.stageKeys == null) {
             setStageKeys(new java.util.ArrayList<String>(stageKeys.length));
@@ -309,6 +325,7 @@ public class ApiKey implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ApiKey withStageKeys(java.util.Collection<String> stageKeys) {
         setStageKeys(stageKeys);
         return this;
@@ -326,6 +343,7 @@ public class ApiKey implements Serializable, Cloneable {
      *        href="http://www.iso.org/iso/home/standards/iso8601.htm"
      *        target="_blank">ISO 8601 format</a>.
      */
+
     public void setCreatedDate(java.util.Date createdDate) {
         this.createdDate = createdDate;
     }
@@ -341,6 +359,7 @@ public class ApiKey implements Serializable, Cloneable {
      *         href="http://www.iso.org/iso/home/standards/iso8601.htm"
      *         target="_blank">ISO 8601 format</a>.
      */
+
     public java.util.Date getCreatedDate() {
         return this.createdDate;
     }
@@ -359,6 +378,7 @@ public class ApiKey implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ApiKey withCreatedDate(java.util.Date createdDate) {
         setCreatedDate(createdDate);
         return this;
@@ -372,6 +392,7 @@ public class ApiKey implements Serializable, Cloneable {
      * @param lastUpdatedDate
      *        When the API Key was last updated, in ISO 8601 format.
      */
+
     public void setLastUpdatedDate(java.util.Date lastUpdatedDate) {
         this.lastUpdatedDate = lastUpdatedDate;
     }
@@ -383,6 +404,7 @@ public class ApiKey implements Serializable, Cloneable {
      * 
      * @return When the API Key was last updated, in ISO 8601 format.
      */
+
     public java.util.Date getLastUpdatedDate() {
         return this.lastUpdatedDate;
     }
@@ -397,6 +419,7 @@ public class ApiKey implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ApiKey withLastUpdatedDate(java.util.Date lastUpdatedDate) {
         setLastUpdatedDate(lastUpdatedDate);
         return this;

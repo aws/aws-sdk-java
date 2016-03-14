@@ -43,6 +43,7 @@ public class DescribeCachediSCSIVolumesResult implements Serializable,
      * @return An array of objects where each object contains metadata about one
      *         cached volume.
      */
+
     public java.util.List<CachediSCSIVolume> getCachediSCSIVolumes() {
         if (cachediSCSIVolumes == null) {
             cachediSCSIVolumes = new com.amazonaws.internal.SdkInternalList<CachediSCSIVolume>();
@@ -60,6 +61,7 @@ public class DescribeCachediSCSIVolumesResult implements Serializable,
      *        An array of objects where each object contains metadata about one
      *        cached volume.
      */
+
     public void setCachediSCSIVolumes(
             java.util.Collection<CachediSCSIVolume> cachediSCSIVolumes) {
         if (cachediSCSIVolumes == null) {
@@ -89,6 +91,7 @@ public class DescribeCachediSCSIVolumesResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeCachediSCSIVolumesResult withCachediSCSIVolumes(
             CachediSCSIVolume... cachediSCSIVolumes) {
         if (this.cachediSCSIVolumes == null) {
@@ -113,6 +116,7 @@ public class DescribeCachediSCSIVolumesResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeCachediSCSIVolumesResult withCachediSCSIVolumes(
             java.util.Collection<CachediSCSIVolume> cachediSCSIVolumes) {
         setCachediSCSIVolumes(cachediSCSIVolumes);

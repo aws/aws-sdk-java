@@ -60,6 +60,7 @@ public class CreateLogGroupRequest extends AmazonWebServiceRequest implements
      * @param logGroupName
      *        The name of the log group to create.
      */
+
     public void setLogGroupName(String logGroupName) {
         this.logGroupName = logGroupName;
     }
@@ -71,6 +72,7 @@ public class CreateLogGroupRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the log group to create.
      */
+
     public String getLogGroupName() {
         return this.logGroupName;
     }
@@ -85,6 +87,7 @@ public class CreateLogGroupRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateLogGroupRequest withLogGroupName(String logGroupName) {
         setLogGroupName(logGroupName);
         return this;

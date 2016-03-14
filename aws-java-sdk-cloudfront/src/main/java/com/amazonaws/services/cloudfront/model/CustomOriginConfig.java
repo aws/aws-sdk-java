@@ -41,6 +41,7 @@ public class CustomOriginConfig implements Serializable, Cloneable {
      * @param hTTPPort
      *        The HTTP port the custom origin listens on.
      */
+
     public void setHTTPPort(Integer hTTPPort) {
         this.hTTPPort = hTTPPort;
     }
@@ -50,6 +51,7 @@ public class CustomOriginConfig implements Serializable, Cloneable {
      * 
      * @return The HTTP port the custom origin listens on.
      */
+
     public Integer getHTTPPort() {
         return this.hTTPPort;
     }
@@ -62,6 +64,7 @@ public class CustomOriginConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CustomOriginConfig withHTTPPort(Integer hTTPPort) {
         setHTTPPort(hTTPPort);
         return this;
@@ -73,6 +76,7 @@ public class CustomOriginConfig implements Serializable, Cloneable {
      * @param hTTPSPort
      *        The HTTPS port the custom origin listens on.
      */
+
     public void setHTTPSPort(Integer hTTPSPort) {
         this.hTTPSPort = hTTPSPort;
     }
@@ -82,6 +86,7 @@ public class CustomOriginConfig implements Serializable, Cloneable {
      * 
      * @return The HTTPS port the custom origin listens on.
      */
+
     public Integer getHTTPSPort() {
         return this.hTTPSPort;
     }
@@ -94,6 +99,7 @@ public class CustomOriginConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CustomOriginConfig withHTTPSPort(Integer hTTPSPort) {
         setHTTPSPort(hTTPSPort);
         return this;
@@ -106,6 +112,7 @@ public class CustomOriginConfig implements Serializable, Cloneable {
      *        The origin protocol policy to apply to your origin.
      * @see OriginProtocolPolicy
      */
+
     public void setOriginProtocolPolicy(String originProtocolPolicy) {
         this.originProtocolPolicy = originProtocolPolicy;
     }
@@ -116,6 +123,7 @@ public class CustomOriginConfig implements Serializable, Cloneable {
      * @return The origin protocol policy to apply to your origin.
      * @see OriginProtocolPolicy
      */
+
     public String getOriginProtocolPolicy() {
         return this.originProtocolPolicy;
     }
@@ -129,6 +137,7 @@ public class CustomOriginConfig implements Serializable, Cloneable {
      *         chained together.
      * @see OriginProtocolPolicy
      */
+
     public CustomOriginConfig withOriginProtocolPolicy(
             String originProtocolPolicy) {
         setOriginProtocolPolicy(originProtocolPolicy);
@@ -144,6 +153,7 @@ public class CustomOriginConfig implements Serializable, Cloneable {
      *         chained together.
      * @see OriginProtocolPolicy
      */
+
     public void setOriginProtocolPolicy(
             OriginProtocolPolicy originProtocolPolicy) {
         this.originProtocolPolicy = originProtocolPolicy.toString();
@@ -158,6 +168,7 @@ public class CustomOriginConfig implements Serializable, Cloneable {
      *         chained together.
      * @see OriginProtocolPolicy
      */
+
     public CustomOriginConfig withOriginProtocolPolicy(
             OriginProtocolPolicy originProtocolPolicy) {
         setOriginProtocolPolicy(originProtocolPolicy);
@@ -172,6 +183,7 @@ public class CustomOriginConfig implements Serializable, Cloneable {
      *        The SSL/TLS protocols that you want CloudFront to use when
      *        communicating with your origin over HTTPS.
      */
+
     public void setOriginSslProtocols(OriginSslProtocols originSslProtocols) {
         this.originSslProtocols = originSslProtocols;
     }
@@ -183,6 +195,7 @@ public class CustomOriginConfig implements Serializable, Cloneable {
      * @return The SSL/TLS protocols that you want CloudFront to use when
      *         communicating with your origin over HTTPS.
      */
+
     public OriginSslProtocols getOriginSslProtocols() {
         return this.originSslProtocols;
     }
@@ -197,6 +210,7 @@ public class CustomOriginConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CustomOriginConfig withOriginSslProtocols(
             OriginSslProtocols originSslProtocols) {
         setOriginSslProtocols(originSslProtocols);

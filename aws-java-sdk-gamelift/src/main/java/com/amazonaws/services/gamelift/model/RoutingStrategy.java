@@ -27,14 +27,15 @@ public class RoutingStrategy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Type of routing strategy.
-     * </p>
-     * <p>
-     * ltulgtltligtSIMPLE: The alias resolves to one specific fleet. Use this
-     * type when routing to active fleets.lt/ligtltligtTERMINAL: The alias does
-     * not resolve to any fleet but instead displays an message screen to the
-     * user. A terminal type alias throws a TerminalRoutingStrategyException
-     * with terminal routing strategy message embedded.lt/ligtlt/ulgt
+     * Type of routing strategy. Possible routing types include:
+     * <ul>
+     * <li>SIMPLE: The alias resolves to one specific fleet. Use this type when
+     * routing to active fleets.</li>
+     * <li>TERMINAL: The alias does not resolve to a fleet but instead can be
+     * used to display a message to the user. A terminal alias throws a
+     * TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
+     * embedded.</li>
+     * </ul>
      * </p>
      */
     private String type;
@@ -46,89 +47,98 @@ public class RoutingStrategy implements Serializable, Cloneable {
     private String fleetId;
     /**
      * <p>
-     * Message text to be displayed with a terminal routing strategy.
+     * Message text to be used with a terminal routing strategy.
      * </p>
      */
     private String message;
 
     /**
      * <p>
-     * Type of routing strategy.
-     * </p>
-     * <p>
-     * ltulgtltligtSIMPLE: The alias resolves to one specific fleet. Use this
-     * type when routing to active fleets.lt/ligtltligtTERMINAL: The alias does
-     * not resolve to any fleet but instead displays an message screen to the
-     * user. A terminal type alias throws a TerminalRoutingStrategyException
-     * with terminal routing strategy message embedded.lt/ligtlt/ulgt
+     * Type of routing strategy. Possible routing types include:
+     * <ul>
+     * <li>SIMPLE: The alias resolves to one specific fleet. Use this type when
+     * routing to active fleets.</li>
+     * <li>TERMINAL: The alias does not resolve to a fleet but instead can be
+     * used to display a message to the user. A terminal alias throws a
+     * TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
+     * embedded.</li>
+     * </ul>
      * </p>
      * 
      * @param type
-     *        Type of routing strategy.</p>
-     *        <p>
-     *        ltulgtltligtSIMPLE: The alias resolves to one specific fleet. Use
-     *        this type when routing to active fleets.lt/ligtltligtTERMINAL: The
-     *        alias does not resolve to any fleet but instead displays an
-     *        message screen to the user. A terminal type alias throws a
-     *        TerminalRoutingStrategyException with terminal routing strategy
-     *        message embedded.lt/ligtlt/ulgt
+     *        Type of routing strategy. Possible routing types include:
+     *        <ul>
+     *        <li>SIMPLE: The alias resolves to one specific fleet. Use this
+     *        type when routing to active fleets.</li>
+     *        <li>TERMINAL: The alias does not resolve to a fleet but instead
+     *        can be used to display a message to the user. A terminal alias
+     *        throws a TerminalRoutingStrategyException with the
+     *        <a>RoutingStrategy</a> message embedded.</li>
+     *        </ul>
      * @see RoutingStrategyType
      */
+
     public void setType(String type) {
         this.type = type;
     }
 
     /**
      * <p>
-     * Type of routing strategy.
-     * </p>
-     * <p>
-     * ltulgtltligtSIMPLE: The alias resolves to one specific fleet. Use this
-     * type when routing to active fleets.lt/ligtltligtTERMINAL: The alias does
-     * not resolve to any fleet but instead displays an message screen to the
-     * user. A terminal type alias throws a TerminalRoutingStrategyException
-     * with terminal routing strategy message embedded.lt/ligtlt/ulgt
+     * Type of routing strategy. Possible routing types include:
+     * <ul>
+     * <li>SIMPLE: The alias resolves to one specific fleet. Use this type when
+     * routing to active fleets.</li>
+     * <li>TERMINAL: The alias does not resolve to a fleet but instead can be
+     * used to display a message to the user. A terminal alias throws a
+     * TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
+     * embedded.</li>
+     * </ul>
      * </p>
      * 
-     * @return Type of routing strategy.</p>
-     *         <p>
-     *         ltulgtltligtSIMPLE: The alias resolves to one specific fleet. Use
-     *         this type when routing to active fleets.lt/ligtltligtTERMINAL:
-     *         The alias does not resolve to any fleet but instead displays an
-     *         message screen to the user. A terminal type alias throws a
-     *         TerminalRoutingStrategyException with terminal routing strategy
-     *         message embedded.lt/ligtlt/ulgt
+     * @return Type of routing strategy. Possible routing types include:
+     *         <ul>
+     *         <li>SIMPLE: The alias resolves to one specific fleet. Use this
+     *         type when routing to active fleets.</li>
+     *         <li>TERMINAL: The alias does not resolve to a fleet but instead
+     *         can be used to display a message to the user. A terminal alias
+     *         throws a TerminalRoutingStrategyException with the
+     *         <a>RoutingStrategy</a> message embedded.</li>
+     *         </ul>
      * @see RoutingStrategyType
      */
+
     public String getType() {
         return this.type;
     }
 
     /**
      * <p>
-     * Type of routing strategy.
-     * </p>
-     * <p>
-     * ltulgtltligtSIMPLE: The alias resolves to one specific fleet. Use this
-     * type when routing to active fleets.lt/ligtltligtTERMINAL: The alias does
-     * not resolve to any fleet but instead displays an message screen to the
-     * user. A terminal type alias throws a TerminalRoutingStrategyException
-     * with terminal routing strategy message embedded.lt/ligtlt/ulgt
+     * Type of routing strategy. Possible routing types include:
+     * <ul>
+     * <li>SIMPLE: The alias resolves to one specific fleet. Use this type when
+     * routing to active fleets.</li>
+     * <li>TERMINAL: The alias does not resolve to a fleet but instead can be
+     * used to display a message to the user. A terminal alias throws a
+     * TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
+     * embedded.</li>
+     * </ul>
      * </p>
      * 
      * @param type
-     *        Type of routing strategy.</p>
-     *        <p>
-     *        ltulgtltligtSIMPLE: The alias resolves to one specific fleet. Use
-     *        this type when routing to active fleets.lt/ligtltligtTERMINAL: The
-     *        alias does not resolve to any fleet but instead displays an
-     *        message screen to the user. A terminal type alias throws a
-     *        TerminalRoutingStrategyException with terminal routing strategy
-     *        message embedded.lt/ligtlt/ulgt
+     *        Type of routing strategy. Possible routing types include:
+     *        <ul>
+     *        <li>SIMPLE: The alias resolves to one specific fleet. Use this
+     *        type when routing to active fleets.</li>
+     *        <li>TERMINAL: The alias does not resolve to a fleet but instead
+     *        can be used to display a message to the user. A terminal alias
+     *        throws a TerminalRoutingStrategyException with the
+     *        <a>RoutingStrategy</a> message embedded.</li>
+     *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see RoutingStrategyType
      */
+
     public RoutingStrategy withType(String type) {
         setType(type);
         return this;
@@ -136,58 +146,64 @@ public class RoutingStrategy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Type of routing strategy.
-     * </p>
-     * <p>
-     * ltulgtltligtSIMPLE: The alias resolves to one specific fleet. Use this
-     * type when routing to active fleets.lt/ligtltligtTERMINAL: The alias does
-     * not resolve to any fleet but instead displays an message screen to the
-     * user. A terminal type alias throws a TerminalRoutingStrategyException
-     * with terminal routing strategy message embedded.lt/ligtlt/ulgt
+     * Type of routing strategy. Possible routing types include:
+     * <ul>
+     * <li>SIMPLE: The alias resolves to one specific fleet. Use this type when
+     * routing to active fleets.</li>
+     * <li>TERMINAL: The alias does not resolve to a fleet but instead can be
+     * used to display a message to the user. A terminal alias throws a
+     * TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
+     * embedded.</li>
+     * </ul>
      * </p>
      * 
      * @param type
-     *        Type of routing strategy.</p>
-     *        <p>
-     *        ltulgtltligtSIMPLE: The alias resolves to one specific fleet. Use
-     *        this type when routing to active fleets.lt/ligtltligtTERMINAL: The
-     *        alias does not resolve to any fleet but instead displays an
-     *        message screen to the user. A terminal type alias throws a
-     *        TerminalRoutingStrategyException with terminal routing strategy
-     *        message embedded.lt/ligtlt/ulgt
+     *        Type of routing strategy. Possible routing types include:
+     *        <ul>
+     *        <li>SIMPLE: The alias resolves to one specific fleet. Use this
+     *        type when routing to active fleets.</li>
+     *        <li>TERMINAL: The alias does not resolve to a fleet but instead
+     *        can be used to display a message to the user. A terminal alias
+     *        throws a TerminalRoutingStrategyException with the
+     *        <a>RoutingStrategy</a> message embedded.</li>
+     *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see RoutingStrategyType
      */
+
     public void setType(RoutingStrategyType type) {
         this.type = type.toString();
     }
 
     /**
      * <p>
-     * Type of routing strategy.
-     * </p>
-     * <p>
-     * ltulgtltligtSIMPLE: The alias resolves to one specific fleet. Use this
-     * type when routing to active fleets.lt/ligtltligtTERMINAL: The alias does
-     * not resolve to any fleet but instead displays an message screen to the
-     * user. A terminal type alias throws a TerminalRoutingStrategyException
-     * with terminal routing strategy message embedded.lt/ligtlt/ulgt
+     * Type of routing strategy. Possible routing types include:
+     * <ul>
+     * <li>SIMPLE: The alias resolves to one specific fleet. Use this type when
+     * routing to active fleets.</li>
+     * <li>TERMINAL: The alias does not resolve to a fleet but instead can be
+     * used to display a message to the user. A terminal alias throws a
+     * TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
+     * embedded.</li>
+     * </ul>
      * </p>
      * 
      * @param type
-     *        Type of routing strategy.</p>
-     *        <p>
-     *        ltulgtltligtSIMPLE: The alias resolves to one specific fleet. Use
-     *        this type when routing to active fleets.lt/ligtltligtTERMINAL: The
-     *        alias does not resolve to any fleet but instead displays an
-     *        message screen to the user. A terminal type alias throws a
-     *        TerminalRoutingStrategyException with terminal routing strategy
-     *        message embedded.lt/ligtlt/ulgt
+     *        Type of routing strategy. Possible routing types include:
+     *        <ul>
+     *        <li>SIMPLE: The alias resolves to one specific fleet. Use this
+     *        type when routing to active fleets.</li>
+     *        <li>TERMINAL: The alias does not resolve to a fleet but instead
+     *        can be used to display a message to the user. A terminal alias
+     *        throws a TerminalRoutingStrategyException with the
+     *        <a>RoutingStrategy</a> message embedded.</li>
+     *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see RoutingStrategyType
      */
+
     public RoutingStrategy withType(RoutingStrategyType type) {
         setType(type);
         return this;
@@ -201,6 +217,7 @@ public class RoutingStrategy implements Serializable, Cloneable {
      * @param fleetId
      *        Unique identifier for a fleet.
      */
+
     public void setFleetId(String fleetId) {
         this.fleetId = fleetId;
     }
@@ -212,6 +229,7 @@ public class RoutingStrategy implements Serializable, Cloneable {
      * 
      * @return Unique identifier for a fleet.
      */
+
     public String getFleetId() {
         return this.fleetId;
     }
@@ -226,6 +244,7 @@ public class RoutingStrategy implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RoutingStrategy withFleetId(String fleetId) {
         setFleetId(fleetId);
         return this;
@@ -233,37 +252,40 @@ public class RoutingStrategy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Message text to be displayed with a terminal routing strategy.
+     * Message text to be used with a terminal routing strategy.
      * </p>
      * 
      * @param message
-     *        Message text to be displayed with a terminal routing strategy.
+     *        Message text to be used with a terminal routing strategy.
      */
+
     public void setMessage(String message) {
         this.message = message;
     }
 
     /**
      * <p>
-     * Message text to be displayed with a terminal routing strategy.
+     * Message text to be used with a terminal routing strategy.
      * </p>
      * 
-     * @return Message text to be displayed with a terminal routing strategy.
+     * @return Message text to be used with a terminal routing strategy.
      */
+
     public String getMessage() {
         return this.message;
     }
 
     /**
      * <p>
-     * Message text to be displayed with a terminal routing strategy.
+     * Message text to be used with a terminal routing strategy.
      * </p>
      * 
      * @param message
-     *        Message text to be displayed with a terminal routing strategy.
+     *        Message text to be used with a terminal routing strategy.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RoutingStrategy withMessage(String message) {
         setMessage(message);
         return this;

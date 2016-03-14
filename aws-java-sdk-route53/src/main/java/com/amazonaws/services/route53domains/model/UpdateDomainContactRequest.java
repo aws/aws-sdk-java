@@ -143,6 +143,7 @@ public class UpdateDomainContactRequest extends AmazonWebServiceRequest
      *        <p>
      *        Required: Yes
      */
+
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
@@ -181,6 +182,7 @@ public class UpdateDomainContactRequest extends AmazonWebServiceRequest
      *         <p>
      *         Required: Yes
      */
+
     public String getDomainName() {
         return this.domainName;
     }
@@ -222,6 +224,7 @@ public class UpdateDomainContactRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateDomainContactRequest withDomainName(String domainName) {
         setDomainName(domainName);
         return this;
@@ -263,6 +266,7 @@ public class UpdateDomainContactRequest extends AmazonWebServiceRequest
      *        <p>
      *        Required: Yes
      */
+
     public void setAdminContact(ContactDetail adminContact) {
         this.adminContact = adminContact;
     }
@@ -302,6 +306,7 @@ public class UpdateDomainContactRequest extends AmazonWebServiceRequest
      *         <p>
      *         Required: Yes
      */
+
     public ContactDetail getAdminContact() {
         return this.adminContact;
     }
@@ -344,6 +349,7 @@ public class UpdateDomainContactRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateDomainContactRequest withAdminContact(
             ContactDetail adminContact) {
         setAdminContact(adminContact);
@@ -386,6 +392,7 @@ public class UpdateDomainContactRequest extends AmazonWebServiceRequest
      *        <p>
      *        Required: Yes
      */
+
     public void setRegistrantContact(ContactDetail registrantContact) {
         this.registrantContact = registrantContact;
     }
@@ -425,6 +432,7 @@ public class UpdateDomainContactRequest extends AmazonWebServiceRequest
      *         <p>
      *         Required: Yes
      */
+
     public ContactDetail getRegistrantContact() {
         return this.registrantContact;
     }
@@ -467,6 +475,7 @@ public class UpdateDomainContactRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateDomainContactRequest withRegistrantContact(
             ContactDetail registrantContact) {
         setRegistrantContact(registrantContact);
@@ -509,6 +518,7 @@ public class UpdateDomainContactRequest extends AmazonWebServiceRequest
      *        <p>
      *        Required: Yes
      */
+
     public void setTechContact(ContactDetail techContact) {
         this.techContact = techContact;
     }
@@ -548,6 +558,7 @@ public class UpdateDomainContactRequest extends AmazonWebServiceRequest
      *         <p>
      *         Required: Yes
      */
+
     public ContactDetail getTechContact() {
         return this.techContact;
     }
@@ -590,6 +601,7 @@ public class UpdateDomainContactRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateDomainContactRequest withTechContact(ContactDetail techContact) {
         setTechContact(techContact);
         return this;

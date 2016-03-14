@@ -40,6 +40,7 @@ public class CreateGroupResult implements Serializable, Cloneable {
      * @param group
      *        Information about the group.
      */
+
     public void setGroup(Group group) {
         this.group = group;
     }
@@ -51,6 +52,7 @@ public class CreateGroupResult implements Serializable, Cloneable {
      * 
      * @return Information about the group.
      */
+
     public Group getGroup() {
         return this.group;
     }
@@ -65,6 +67,7 @@ public class CreateGroupResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateGroupResult withGroup(Group group) {
         setGroup(group);
         return this;

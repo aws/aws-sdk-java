@@ -52,6 +52,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements
      * 
      * @return A filter used to scope the tags to return.
      */
+
     public java.util.List<Filter> getFilters() {
         if (filters == null) {
             filters = new com.amazonaws.internal.SdkInternalList<Filter>();
@@ -67,6 +68,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements
      * @param filters
      *        A filter used to scope the tags to return.
      */
+
     public void setFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
             this.filters = null;
@@ -93,6 +95,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTagsRequest withFilters(Filter... filters) {
         if (this.filters == null) {
             setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(
@@ -114,6 +117,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTagsRequest withFilters(java.util.Collection<Filter> filters) {
         setFilters(filters);
         return this;
@@ -129,6 +133,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements
      *        The token for the next set of items to return. (You received this
      *        token from a previous call.)
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -142,6 +147,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements
      * @return The token for the next set of items to return. (You received this
      *         token from a previous call.)
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -158,6 +164,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTagsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -171,6 +178,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements
      * @param maxRecords
      *        The maximum number of items to return with this call.
      */
+
     public void setMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
     }
@@ -182,6 +190,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements
      * 
      * @return The maximum number of items to return with this call.
      */
+
     public Integer getMaxRecords() {
         return this.maxRecords;
     }
@@ -196,6 +205,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTagsRequest withMaxRecords(Integer maxRecords) {
         setMaxRecords(maxRecords);
         return this;

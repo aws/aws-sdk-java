@@ -57,6 +57,26 @@ public class ScheduleRunTest implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * APPIUM_PYTHON: The Appium Python type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * CALABASH: The Calabash type.
      * </p>
      * </li>
@@ -78,6 +98,11 @@ public class ScheduleRunTest implements Serializable, Cloneable {
      * <li>
      * <p>
      * XCTEST: The XCode test type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_UI: The XCode UI test type.
      * </p>
      * </li>
      * </ul>
@@ -135,6 +160,26 @@ public class ScheduleRunTest implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * APPIUM_PYTHON: The Appium Python type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * CALABASH: The Calabash type.
      * </p>
      * </li>
@@ -156,6 +201,11 @@ public class ScheduleRunTest implements Serializable, Cloneable {
      * <li>
      * <p>
      * XCTEST: The XCode test type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_UI: The XCode UI test type.
      * </p>
      * </li>
      * </ul>
@@ -190,6 +240,26 @@ public class ScheduleRunTest implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
+     *        APPIUM_PYTHON: The Appium Python type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        CALABASH: The Calabash type.
      *        </p>
      *        </li>
@@ -213,8 +283,14 @@ public class ScheduleRunTest implements Serializable, Cloneable {
      *        XCTEST: The XCode test type.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST_UI: The XCode UI test type.
+     *        </p>
+     *        </li>
      * @see TestType
      */
+
     public void setType(String type) {
         this.type = type;
     }
@@ -251,6 +327,26 @@ public class ScheduleRunTest implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * APPIUM_PYTHON: The Appium Python type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * CALABASH: The Calabash type.
      * </p>
      * </li>
@@ -272,6 +368,11 @@ public class ScheduleRunTest implements Serializable, Cloneable {
      * <li>
      * <p>
      * XCTEST: The XCode test type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_UI: The XCode UI test type.
      * </p>
      * </li>
      * </ul>
@@ -305,6 +406,26 @@ public class ScheduleRunTest implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
+     *         APPIUM_PYTHON: The Appium Python type.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         CALABASH: The Calabash type.
      *         </p>
      *         </li>
@@ -328,8 +449,14 @@ public class ScheduleRunTest implements Serializable, Cloneable {
      *         XCTEST: The XCode test type.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         XCTEST_UI: The XCode UI test type.
+     *         </p>
+     *         </li>
      * @see TestType
      */
+
     public String getType() {
         return this.type;
     }
@@ -366,6 +493,26 @@ public class ScheduleRunTest implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * APPIUM_PYTHON: The Appium Python type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * CALABASH: The Calabash type.
      * </p>
      * </li>
@@ -387,6 +534,11 @@ public class ScheduleRunTest implements Serializable, Cloneable {
      * <li>
      * <p>
      * XCTEST: The XCode test type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_UI: The XCode UI test type.
      * </p>
      * </li>
      * </ul>
@@ -421,6 +573,26 @@ public class ScheduleRunTest implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
+     *        APPIUM_PYTHON: The Appium Python type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        CALABASH: The Calabash type.
      *        </p>
      *        </li>
@@ -444,10 +616,16 @@ public class ScheduleRunTest implements Serializable, Cloneable {
      *        XCTEST: The XCode test type.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST_UI: The XCode UI test type.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see TestType
      */
+
     public ScheduleRunTest withType(String type) {
         setType(type);
         return this;
@@ -485,6 +663,26 @@ public class ScheduleRunTest implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * APPIUM_PYTHON: The Appium Python type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * CALABASH: The Calabash type.
      * </p>
      * </li>
@@ -506,6 +704,11 @@ public class ScheduleRunTest implements Serializable, Cloneable {
      * <li>
      * <p>
      * XCTEST: The XCode test type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_UI: The XCode UI test type.
      * </p>
      * </li>
      * </ul>
@@ -540,6 +743,26 @@ public class ScheduleRunTest implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
+     *        APPIUM_PYTHON: The Appium Python type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        CALABASH: The Calabash type.
      *        </p>
      *        </li>
@@ -563,10 +786,16 @@ public class ScheduleRunTest implements Serializable, Cloneable {
      *        XCTEST: The XCode test type.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST_UI: The XCode UI test type.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see TestType
      */
+
     public void setType(TestType type) {
         this.type = type.toString();
     }
@@ -603,6 +832,26 @@ public class ScheduleRunTest implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * APPIUM_PYTHON: The Appium Python type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * CALABASH: The Calabash type.
      * </p>
      * </li>
@@ -624,6 +873,11 @@ public class ScheduleRunTest implements Serializable, Cloneable {
      * <li>
      * <p>
      * XCTEST: The XCode test type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_UI: The XCode UI test type.
      * </p>
      * </li>
      * </ul>
@@ -658,6 +912,26 @@ public class ScheduleRunTest implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
+     *        APPIUM_PYTHON: The Appium Python type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        CALABASH: The Calabash type.
      *        </p>
      *        </li>
@@ -681,10 +955,16 @@ public class ScheduleRunTest implements Serializable, Cloneable {
      *        XCTEST: The XCode test type.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST_UI: The XCode UI test type.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see TestType
      */
+
     public ScheduleRunTest withType(TestType type) {
         setType(type);
         return this;
@@ -698,6 +978,7 @@ public class ScheduleRunTest implements Serializable, Cloneable {
      * @param testPackageArn
      *        The ARN of the uploaded test that will be run.
      */
+
     public void setTestPackageArn(String testPackageArn) {
         this.testPackageArn = testPackageArn;
     }
@@ -709,6 +990,7 @@ public class ScheduleRunTest implements Serializable, Cloneable {
      * 
      * @return The ARN of the uploaded test that will be run.
      */
+
     public String getTestPackageArn() {
         return this.testPackageArn;
     }
@@ -723,6 +1005,7 @@ public class ScheduleRunTest implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduleRunTest withTestPackageArn(String testPackageArn) {
         setTestPackageArn(testPackageArn);
         return this;
@@ -736,6 +1019,7 @@ public class ScheduleRunTest implements Serializable, Cloneable {
      * @param filter
      *        The test's filter.
      */
+
     public void setFilter(String filter) {
         this.filter = filter;
     }
@@ -747,6 +1031,7 @@ public class ScheduleRunTest implements Serializable, Cloneable {
      * 
      * @return The test's filter.
      */
+
     public String getFilter() {
         return this.filter;
     }
@@ -761,6 +1046,7 @@ public class ScheduleRunTest implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduleRunTest withFilter(String filter) {
         setFilter(filter);
         return this;
@@ -775,6 +1061,7 @@ public class ScheduleRunTest implements Serializable, Cloneable {
      * @return The test's parameters, such as test framework parameters and
      *         fixture settings.
      */
+
     public java.util.Map<String, String> getParameters() {
         return parameters;
     }
@@ -789,6 +1076,7 @@ public class ScheduleRunTest implements Serializable, Cloneable {
      *        The test's parameters, such as test framework parameters and
      *        fixture settings.
      */
+
     public void setParameters(java.util.Map<String, String> parameters) {
         this.parameters = parameters;
     }
@@ -805,6 +1093,7 @@ public class ScheduleRunTest implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduleRunTest withParameters(
             java.util.Map<String, String> parameters) {
         setParameters(parameters);
@@ -826,6 +1115,7 @@ public class ScheduleRunTest implements Serializable, Cloneable {
      * Removes all the entries added into Parameters. &lt;p> Returns a reference
      * to this object so that method calls can be chained together.
      */
+
     public ScheduleRunTest clearParametersEntries() {
         this.parameters = null;
         return this;

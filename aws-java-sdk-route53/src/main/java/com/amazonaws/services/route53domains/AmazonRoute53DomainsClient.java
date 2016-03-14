@@ -61,6 +61,12 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient
     private static final String DEFAULT_ENDPOINT_PREFIX = "route53domains";
 
     /**
+     * Client configuration factory providing ClientConfigurations tailored to
+     * this client
+     */
+    protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
+
+    /**
      * List of exception unmarshallers for all Amazon Route 53 Domains
      * exceptions.
      */
@@ -84,8 +90,8 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonRoute53DomainsClient() {
-        this(new DefaultAWSCredentialsProviderChain(),
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
+        this(new DefaultAWSCredentialsProviderChain(), configFactory
+                .getConfig());
     }
 
     /**
@@ -127,8 +133,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient
      *        authenticating with AWS services.
      */
     public AmazonRoute53DomainsClient(AWSCredentials awsCredentials) {
-        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
-                .defaultConfig());
+        this(awsCredentials, configFactory.getConfig());
     }
 
     /**
@@ -170,8 +175,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient
      */
     public AmazonRoute53DomainsClient(
             AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider,
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
+        this(awsCredentialsProvider, configFactory.getConfig());
     }
 
     /**

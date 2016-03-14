@@ -54,6 +54,7 @@ public class FailedWorkspaceChangeRequest implements Serializable, Cloneable {
      * @param workspaceId
      *        The identifier of the WorkSpace.
      */
+
     public void setWorkspaceId(String workspaceId) {
         this.workspaceId = workspaceId;
     }
@@ -65,6 +66,7 @@ public class FailedWorkspaceChangeRequest implements Serializable, Cloneable {
      * 
      * @return The identifier of the WorkSpace.
      */
+
     public String getWorkspaceId() {
         return this.workspaceId;
     }
@@ -79,6 +81,7 @@ public class FailedWorkspaceChangeRequest implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FailedWorkspaceChangeRequest withWorkspaceId(String workspaceId) {
         setWorkspaceId(workspaceId);
         return this;
@@ -92,6 +95,7 @@ public class FailedWorkspaceChangeRequest implements Serializable, Cloneable {
      * @param errorCode
      *        The error code.
      */
+
     public void setErrorCode(String errorCode) {
         this.errorCode = errorCode;
     }
@@ -103,6 +107,7 @@ public class FailedWorkspaceChangeRequest implements Serializable, Cloneable {
      * 
      * @return The error code.
      */
+
     public String getErrorCode() {
         return this.errorCode;
     }
@@ -117,6 +122,7 @@ public class FailedWorkspaceChangeRequest implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FailedWorkspaceChangeRequest withErrorCode(String errorCode) {
         setErrorCode(errorCode);
         return this;
@@ -130,6 +136,7 @@ public class FailedWorkspaceChangeRequest implements Serializable, Cloneable {
      * @param errorMessage
      *        The textual error message.
      */
+
     public void setErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;
     }
@@ -141,6 +148,7 @@ public class FailedWorkspaceChangeRequest implements Serializable, Cloneable {
      * 
      * @return The textual error message.
      */
+
     public String getErrorMessage() {
         return this.errorMessage;
     }
@@ -155,6 +163,7 @@ public class FailedWorkspaceChangeRequest implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FailedWorkspaceChangeRequest withErrorMessage(String errorMessage) {
         setErrorMessage(errorMessage);
         return this;

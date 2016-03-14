@@ -51,6 +51,7 @@ public class CreatePlayerSessionRequest extends AmazonWebServiceRequest
      *        Unique identifier for a game session. Specify the game session you
      *        want to add a player to.
      */
+
     public void setGameSessionId(String gameSessionId) {
         this.gameSessionId = gameSessionId;
     }
@@ -64,6 +65,7 @@ public class CreatePlayerSessionRequest extends AmazonWebServiceRequest
      * @return Unique identifier for a game session. Specify the game session
      *         you want to add a player to.
      */
+
     public String getGameSessionId() {
         return this.gameSessionId;
     }
@@ -80,6 +82,7 @@ public class CreatePlayerSessionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePlayerSessionRequest withGameSessionId(String gameSessionId) {
         setGameSessionId(gameSessionId);
         return this;
@@ -93,6 +96,7 @@ public class CreatePlayerSessionRequest extends AmazonWebServiceRequest
      * @param playerId
      *        Unique identifier for the player to be added.
      */
+
     public void setPlayerId(String playerId) {
         this.playerId = playerId;
     }
@@ -104,6 +108,7 @@ public class CreatePlayerSessionRequest extends AmazonWebServiceRequest
      * 
      * @return Unique identifier for the player to be added.
      */
+
     public String getPlayerId() {
         return this.playerId;
     }
@@ -118,6 +123,7 @@ public class CreatePlayerSessionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePlayerSessionRequest withPlayerId(String playerId) {
         setPlayerId(playerId);
         return this;

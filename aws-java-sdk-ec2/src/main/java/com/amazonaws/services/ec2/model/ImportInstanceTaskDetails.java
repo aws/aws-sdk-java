@@ -57,6 +57,7 @@ public class ImportInstanceTaskDetails implements Serializable, Cloneable {
      * 
      * @return One or more volumes.
      */
+
     public java.util.List<ImportInstanceVolumeDetailItem> getVolumes() {
         if (volumes == null) {
             volumes = new com.amazonaws.internal.SdkInternalList<ImportInstanceVolumeDetailItem>();
@@ -72,6 +73,7 @@ public class ImportInstanceTaskDetails implements Serializable, Cloneable {
      * @param volumes
      *        One or more volumes.
      */
+
     public void setVolumes(
             java.util.Collection<ImportInstanceVolumeDetailItem> volumes) {
         if (volumes == null) {
@@ -99,6 +101,7 @@ public class ImportInstanceTaskDetails implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportInstanceTaskDetails withVolumes(
             ImportInstanceVolumeDetailItem... volumes) {
         if (this.volumes == null) {
@@ -121,6 +124,7 @@ public class ImportInstanceTaskDetails implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportInstanceTaskDetails withVolumes(
             java.util.Collection<ImportInstanceVolumeDetailItem> volumes) {
         setVolumes(volumes);
@@ -135,6 +139,7 @@ public class ImportInstanceTaskDetails implements Serializable, Cloneable {
      * @param instanceId
      *        The ID of the instance.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -146,6 +151,7 @@ public class ImportInstanceTaskDetails implements Serializable, Cloneable {
      * 
      * @return The ID of the instance.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
@@ -160,6 +166,7 @@ public class ImportInstanceTaskDetails implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportInstanceTaskDetails withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;
@@ -174,6 +181,7 @@ public class ImportInstanceTaskDetails implements Serializable, Cloneable {
      *        The instance operating system.
      * @see PlatformValues
      */
+
     public void setPlatform(String platform) {
         this.platform = platform;
     }
@@ -186,6 +194,7 @@ public class ImportInstanceTaskDetails implements Serializable, Cloneable {
      * @return The instance operating system.
      * @see PlatformValues
      */
+
     public String getPlatform() {
         return this.platform;
     }
@@ -201,6 +210,7 @@ public class ImportInstanceTaskDetails implements Serializable, Cloneable {
      *         chained together.
      * @see PlatformValues
      */
+
     public ImportInstanceTaskDetails withPlatform(String platform) {
         setPlatform(platform);
         return this;
@@ -217,6 +227,7 @@ public class ImportInstanceTaskDetails implements Serializable, Cloneable {
      *         chained together.
      * @see PlatformValues
      */
+
     public void setPlatform(PlatformValues platform) {
         this.platform = platform.toString();
     }
@@ -232,6 +243,7 @@ public class ImportInstanceTaskDetails implements Serializable, Cloneable {
      *         chained together.
      * @see PlatformValues
      */
+
     public ImportInstanceTaskDetails withPlatform(PlatformValues platform) {
         setPlatform(platform);
         return this;
@@ -245,6 +257,7 @@ public class ImportInstanceTaskDetails implements Serializable, Cloneable {
      * @param description
      *        A description of the task.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -256,6 +269,7 @@ public class ImportInstanceTaskDetails implements Serializable, Cloneable {
      * 
      * @return A description of the task.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -270,6 +284,7 @@ public class ImportInstanceTaskDetails implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportInstanceTaskDetails withDescription(String description) {
         setDescription(description);
         return this;

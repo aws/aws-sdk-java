@@ -40,6 +40,7 @@ public class GetOnPremisesInstanceResult implements Serializable, Cloneable {
      * @param instanceInfo
      *        Information about the on-premises instance.
      */
+
     public void setInstanceInfo(InstanceInfo instanceInfo) {
         this.instanceInfo = instanceInfo;
     }
@@ -51,6 +52,7 @@ public class GetOnPremisesInstanceResult implements Serializable, Cloneable {
      * 
      * @return Information about the on-premises instance.
      */
+
     public InstanceInfo getInstanceInfo() {
         return this.instanceInfo;
     }
@@ -65,6 +67,7 @@ public class GetOnPremisesInstanceResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetOnPremisesInstanceResult withInstanceInfo(
             InstanceInfo instanceInfo) {
         setInstanceInfo(instanceInfo);

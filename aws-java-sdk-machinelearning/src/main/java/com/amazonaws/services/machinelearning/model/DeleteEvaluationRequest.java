@@ -43,6 +43,7 @@ public class DeleteEvaluationRequest extends AmazonWebServiceRequest implements
      *        A user-supplied ID that uniquely identifies the
      *        <code>Evaluation</code> to delete.
      */
+
     public void setEvaluationId(String evaluationId) {
         this.evaluationId = evaluationId;
     }
@@ -56,6 +57,7 @@ public class DeleteEvaluationRequest extends AmazonWebServiceRequest implements
      * @return A user-supplied ID that uniquely identifies the
      *         <code>Evaluation</code> to delete.
      */
+
     public String getEvaluationId() {
         return this.evaluationId;
     }
@@ -72,6 +74,7 @@ public class DeleteEvaluationRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteEvaluationRequest withEvaluationId(String evaluationId) {
         setEvaluationId(evaluationId);
         return this;

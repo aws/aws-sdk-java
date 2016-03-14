@@ -49,6 +49,7 @@ public class CreateVpnConnectionRouteRequest extends AmazonWebServiceRequest
      * @param vpnConnectionId
      *        The ID of the VPN connection.
      */
+
     public void setVpnConnectionId(String vpnConnectionId) {
         this.vpnConnectionId = vpnConnectionId;
     }
@@ -60,6 +61,7 @@ public class CreateVpnConnectionRouteRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the VPN connection.
      */
+
     public String getVpnConnectionId() {
         return this.vpnConnectionId;
     }
@@ -74,6 +76,7 @@ public class CreateVpnConnectionRouteRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateVpnConnectionRouteRequest withVpnConnectionId(
             String vpnConnectionId) {
         setVpnConnectionId(vpnConnectionId);
@@ -89,6 +92,7 @@ public class CreateVpnConnectionRouteRequest extends AmazonWebServiceRequest
      *        The CIDR block associated with the local subnet of the customer
      *        network.
      */
+
     public void setDestinationCidrBlock(String destinationCidrBlock) {
         this.destinationCidrBlock = destinationCidrBlock;
     }
@@ -101,6 +105,7 @@ public class CreateVpnConnectionRouteRequest extends AmazonWebServiceRequest
      * @return The CIDR block associated with the local subnet of the customer
      *         network.
      */
+
     public String getDestinationCidrBlock() {
         return this.destinationCidrBlock;
     }
@@ -116,6 +121,7 @@ public class CreateVpnConnectionRouteRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateVpnConnectionRouteRequest withDestinationCidrBlock(
             String destinationCidrBlock) {
         setDestinationCidrBlock(destinationCidrBlock);

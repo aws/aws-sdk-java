@@ -47,6 +47,7 @@ public class ListStackResourcesResult implements Serializable, Cloneable {
      * 
      * @return A list of <code>StackResourceSummary</code> structures.
      */
+
     public java.util.List<StackResourceSummary> getStackResourceSummaries() {
         if (stackResourceSummaries == null) {
             stackResourceSummaries = new com.amazonaws.internal.SdkInternalList<StackResourceSummary>();
@@ -62,6 +63,7 @@ public class ListStackResourcesResult implements Serializable, Cloneable {
      * @param stackResourceSummaries
      *        A list of <code>StackResourceSummary</code> structures.
      */
+
     public void setStackResourceSummaries(
             java.util.Collection<StackResourceSummary> stackResourceSummaries) {
         if (stackResourceSummaries == null) {
@@ -89,6 +91,7 @@ public class ListStackResourcesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListStackResourcesResult withStackResourceSummaries(
             StackResourceSummary... stackResourceSummaries) {
         if (this.stackResourceSummaries == null) {
@@ -111,6 +114,7 @@ public class ListStackResourcesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListStackResourcesResult withStackResourceSummaries(
             java.util.Collection<StackResourceSummary> stackResourceSummaries) {
         setStackResourceSummaries(stackResourceSummaries);
@@ -129,6 +133,7 @@ public class ListStackResourcesResult implements Serializable, Cloneable {
      *        next page of stack resources. If no additional page exists, this
      *        value is null.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -144,6 +149,7 @@ public class ListStackResourcesResult implements Serializable, Cloneable {
      *         next page of stack resources. If no additional page exists, this
      *         value is null.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -162,6 +168,7 @@ public class ListStackResourcesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListStackResourcesResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

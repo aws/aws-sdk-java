@@ -43,6 +43,7 @@ public class DeleteHostedZoneResult implements Serializable, Cloneable {
      *        A complex type that contains the ID, the status, and the date and
      *        time of your delete request.
      */
+
     public void setChangeInfo(ChangeInfo changeInfo) {
         this.changeInfo = changeInfo;
     }
@@ -56,6 +57,7 @@ public class DeleteHostedZoneResult implements Serializable, Cloneable {
      * @return A complex type that contains the ID, the status, and the date and
      *         time of your delete request.
      */
+
     public ChangeInfo getChangeInfo() {
         return this.changeInfo;
     }
@@ -72,6 +74,7 @@ public class DeleteHostedZoneResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteHostedZoneResult withChangeInfo(ChangeInfo changeInfo) {
         setChangeInfo(changeInfo);
         return this;

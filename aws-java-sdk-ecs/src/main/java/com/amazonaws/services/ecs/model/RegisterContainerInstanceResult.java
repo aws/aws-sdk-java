@@ -28,6 +28,7 @@ public class RegisterContainerInstanceResult implements Serializable, Cloneable 
     /**
      * @param containerInstance
      */
+
     public void setContainerInstance(ContainerInstance containerInstance) {
         this.containerInstance = containerInstance;
     }
@@ -35,6 +36,7 @@ public class RegisterContainerInstanceResult implements Serializable, Cloneable 
     /**
      * @return
      */
+
     public ContainerInstance getContainerInstance() {
         return this.containerInstance;
     }
@@ -44,6 +46,7 @@ public class RegisterContainerInstanceResult implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterContainerInstanceResult withContainerInstance(
             ContainerInstance containerInstance) {
         setContainerInstance(containerInstance);

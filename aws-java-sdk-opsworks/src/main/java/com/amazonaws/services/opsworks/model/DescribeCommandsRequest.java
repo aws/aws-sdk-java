@@ -62,6 +62,7 @@ public class DescribeCommandsRequest extends AmazonWebServiceRequest implements
      *        <code>DescribeCommands</code> returns a description of the
      *        commands associated with the specified deployment.
      */
+
     public void setDeploymentId(String deploymentId) {
         this.deploymentId = deploymentId;
     }
@@ -77,6 +78,7 @@ public class DescribeCommandsRequest extends AmazonWebServiceRequest implements
      *         <code>DescribeCommands</code> returns a description of the
      *         commands associated with the specified deployment.
      */
+
     public String getDeploymentId() {
         return this.deploymentId;
     }
@@ -95,6 +97,7 @@ public class DescribeCommandsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeCommandsRequest withDeploymentId(String deploymentId) {
         setDeploymentId(deploymentId);
         return this;
@@ -112,6 +115,7 @@ public class DescribeCommandsRequest extends AmazonWebServiceRequest implements
      *        <code>DescribeCommands</code> returns a description of the
      *        commands associated with the specified instance.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -127,6 +131,7 @@ public class DescribeCommandsRequest extends AmazonWebServiceRequest implements
      *         <code>DescribeCommands</code> returns a description of the
      *         commands associated with the specified instance.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
@@ -145,6 +150,7 @@ public class DescribeCommandsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeCommandsRequest withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;
@@ -162,6 +168,7 @@ public class DescribeCommandsRequest extends AmazonWebServiceRequest implements
      *         specified commands. Otherwise, it returns a description of every
      *         command.
      */
+
     public java.util.List<String> getCommandIds() {
         if (commandIds == null) {
             commandIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -182,6 +189,7 @@ public class DescribeCommandsRequest extends AmazonWebServiceRequest implements
      *        specified commands. Otherwise, it returns a description of every
      *        command.
      */
+
     public void setCommandIds(java.util.Collection<String> commandIds) {
         if (commandIds == null) {
             this.commandIds = null;
@@ -213,6 +221,7 @@ public class DescribeCommandsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeCommandsRequest withCommandIds(String... commandIds) {
         if (this.commandIds == null) {
             setCommandIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -239,6 +248,7 @@ public class DescribeCommandsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeCommandsRequest withCommandIds(
             java.util.Collection<String> commandIds) {
         setCommandIds(commandIds);

@@ -54,6 +54,7 @@ public class Field implements Serializable, Cloneable {
      * @param key
      *        The field identifier.
      */
+
     public void setKey(String key) {
         this.key = key;
     }
@@ -65,6 +66,7 @@ public class Field implements Serializable, Cloneable {
      * 
      * @return The field identifier.
      */
+
     public String getKey() {
         return this.key;
     }
@@ -79,6 +81,7 @@ public class Field implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Field withKey(String key) {
         setKey(key);
         return this;
@@ -92,6 +95,7 @@ public class Field implements Serializable, Cloneable {
      * @param stringValue
      *        The field value, expressed as a String.
      */
+
     public void setStringValue(String stringValue) {
         this.stringValue = stringValue;
     }
@@ -103,6 +107,7 @@ public class Field implements Serializable, Cloneable {
      * 
      * @return The field value, expressed as a String.
      */
+
     public String getStringValue() {
         return this.stringValue;
     }
@@ -117,6 +122,7 @@ public class Field implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Field withStringValue(String stringValue) {
         setStringValue(stringValue);
         return this;
@@ -130,6 +136,7 @@ public class Field implements Serializable, Cloneable {
      * @param refValue
      *        The field value, expressed as the identifier of another object.
      */
+
     public void setRefValue(String refValue) {
         this.refValue = refValue;
     }
@@ -141,6 +148,7 @@ public class Field implements Serializable, Cloneable {
      * 
      * @return The field value, expressed as the identifier of another object.
      */
+
     public String getRefValue() {
         return this.refValue;
     }
@@ -155,6 +163,7 @@ public class Field implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Field withRefValue(String refValue) {
         setRefValue(refValue);
         return this;

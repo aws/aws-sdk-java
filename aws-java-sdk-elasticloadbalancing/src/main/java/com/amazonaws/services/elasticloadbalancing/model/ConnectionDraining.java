@@ -48,6 +48,7 @@ public class ConnectionDraining implements Serializable, Cloneable {
      *        Specifies whether connection draining is enabled for the load
      *        balancer.
      */
+
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
     }
@@ -60,6 +61,7 @@ public class ConnectionDraining implements Serializable, Cloneable {
      * @return Specifies whether connection draining is enabled for the load
      *         balancer.
      */
+
     public Boolean getEnabled() {
         return this.enabled;
     }
@@ -75,6 +77,7 @@ public class ConnectionDraining implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConnectionDraining withEnabled(Boolean enabled) {
         setEnabled(enabled);
         return this;
@@ -88,6 +91,7 @@ public class ConnectionDraining implements Serializable, Cloneable {
      * @return Specifies whether connection draining is enabled for the load
      *         balancer.
      */
+
     public Boolean isEnabled() {
         return this.enabled;
     }
@@ -102,6 +106,7 @@ public class ConnectionDraining implements Serializable, Cloneable {
      *        The maximum time, in seconds, to keep the existing connections
      *        open before deregistering the instances.
      */
+
     public void setTimeout(Integer timeout) {
         this.timeout = timeout;
     }
@@ -115,6 +120,7 @@ public class ConnectionDraining implements Serializable, Cloneable {
      * @return The maximum time, in seconds, to keep the existing connections
      *         open before deregistering the instances.
      */
+
     public Integer getTimeout() {
         return this.timeout;
     }
@@ -131,6 +137,7 @@ public class ConnectionDraining implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConnectionDraining withTimeout(Integer timeout) {
         setTimeout(timeout);
         return this;

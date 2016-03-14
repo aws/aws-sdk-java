@@ -48,6 +48,7 @@ public class Category implements Serializable, Cloneable {
      * @param code
      *        The category code for the support case.
      */
+
     public void setCode(String code) {
         this.code = code;
     }
@@ -59,6 +60,7 @@ public class Category implements Serializable, Cloneable {
      * 
      * @return The category code for the support case.
      */
+
     public String getCode() {
         return this.code;
     }
@@ -73,6 +75,7 @@ public class Category implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Category withCode(String code) {
         setCode(code);
         return this;
@@ -86,6 +89,7 @@ public class Category implements Serializable, Cloneable {
      * @param name
      *        The category name for the support case.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -97,6 +101,7 @@ public class Category implements Serializable, Cloneable {
      * 
      * @return The category name for the support case.
      */
+
     public String getName() {
         return this.name;
     }
@@ -111,6 +116,7 @@ public class Category implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Category withName(String name) {
         setName(name);
         return this;

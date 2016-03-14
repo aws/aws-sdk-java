@@ -47,6 +47,7 @@ public class PutDestinationPolicyRequest extends AmazonWebServiceRequest
      * @param destinationName
      *        A name for an existing destination.
      */
+
     public void setDestinationName(String destinationName) {
         this.destinationName = destinationName;
     }
@@ -58,6 +59,7 @@ public class PutDestinationPolicyRequest extends AmazonWebServiceRequest
      * 
      * @return A name for an existing destination.
      */
+
     public String getDestinationName() {
         return this.destinationName;
     }
@@ -72,6 +74,7 @@ public class PutDestinationPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutDestinationPolicyRequest withDestinationName(
             String destinationName) {
         setDestinationName(destinationName);
@@ -88,6 +91,7 @@ public class PutDestinationPolicyRequest extends AmazonWebServiceRequest
      *        An IAM policy document that authorizes cross-account users to
      *        deliver their log events to associated destination.
      */
+
     public void setAccessPolicy(String accessPolicy) {
         this.accessPolicy = accessPolicy;
     }
@@ -101,6 +105,7 @@ public class PutDestinationPolicyRequest extends AmazonWebServiceRequest
      * @return An IAM policy document that authorizes cross-account users to
      *         deliver their log events to associated destination.
      */
+
     public String getAccessPolicy() {
         return this.accessPolicy;
     }
@@ -117,6 +122,7 @@ public class PutDestinationPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutDestinationPolicyRequest withAccessPolicy(String accessPolicy) {
         setAccessPolicy(accessPolicy);
         return this;

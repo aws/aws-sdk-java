@@ -42,6 +42,7 @@ public class CreateProjectRequest extends AmazonWebServiceRequest implements
      * @param name
      *        The project's name.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -53,6 +54,7 @@ public class CreateProjectRequest extends AmazonWebServiceRequest implements
      * 
      * @return The project's name.
      */
+
     public String getName() {
         return this.name;
     }
@@ -67,6 +69,7 @@ public class CreateProjectRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateProjectRequest withName(String name) {
         setName(name);
         return this;

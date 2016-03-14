@@ -45,6 +45,7 @@ public class ListDeliveryStreamsResult implements Serializable, Cloneable {
      * 
      * @return The names of the delivery streams.
      */
+
     public java.util.List<String> getDeliveryStreamNames() {
         return deliveryStreamNames;
     }
@@ -57,6 +58,7 @@ public class ListDeliveryStreamsResult implements Serializable, Cloneable {
      * @param deliveryStreamNames
      *        The names of the delivery streams.
      */
+
     public void setDeliveryStreamNames(
             java.util.Collection<String> deliveryStreamNames) {
         if (deliveryStreamNames == null) {
@@ -84,6 +86,7 @@ public class ListDeliveryStreamsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListDeliveryStreamsResult withDeliveryStreamNames(
             String... deliveryStreamNames) {
         if (this.deliveryStreamNames == null) {
@@ -106,6 +109,7 @@ public class ListDeliveryStreamsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListDeliveryStreamsResult withDeliveryStreamNames(
             java.util.Collection<String> deliveryStreamNames) {
         setDeliveryStreamNames(deliveryStreamNames);
@@ -121,6 +125,7 @@ public class ListDeliveryStreamsResult implements Serializable, Cloneable {
      *        Indicates whether there are more delivery streams available to
      *        list.
      */
+
     public void setHasMoreDeliveryStreams(Boolean hasMoreDeliveryStreams) {
         this.hasMoreDeliveryStreams = hasMoreDeliveryStreams;
     }
@@ -133,6 +138,7 @@ public class ListDeliveryStreamsResult implements Serializable, Cloneable {
      * @return Indicates whether there are more delivery streams available to
      *         list.
      */
+
     public Boolean getHasMoreDeliveryStreams() {
         return this.hasMoreDeliveryStreams;
     }
@@ -148,6 +154,7 @@ public class ListDeliveryStreamsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListDeliveryStreamsResult withHasMoreDeliveryStreams(
             Boolean hasMoreDeliveryStreams) {
         setHasMoreDeliveryStreams(hasMoreDeliveryStreams);
@@ -162,6 +169,7 @@ public class ListDeliveryStreamsResult implements Serializable, Cloneable {
      * @return Indicates whether there are more delivery streams available to
      *         list.
      */
+
     public Boolean isHasMoreDeliveryStreams() {
         return this.hasMoreDeliveryStreams;
     }

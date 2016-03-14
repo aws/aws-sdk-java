@@ -78,6 +78,7 @@ public class InstanceGroupModifyConfig implements Serializable, Cloneable {
      * @param instanceGroupId
      *        Unique ID of the instance group to expand or shrink.
      */
+
     public void setInstanceGroupId(String instanceGroupId) {
         this.instanceGroupId = instanceGroupId;
     }
@@ -89,6 +90,7 @@ public class InstanceGroupModifyConfig implements Serializable, Cloneable {
      * 
      * @return Unique ID of the instance group to expand or shrink.
      */
+
     public String getInstanceGroupId() {
         return this.instanceGroupId;
     }
@@ -103,6 +105,7 @@ public class InstanceGroupModifyConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceGroupModifyConfig withInstanceGroupId(String instanceGroupId) {
         setInstanceGroupId(instanceGroupId);
         return this;
@@ -116,6 +119,7 @@ public class InstanceGroupModifyConfig implements Serializable, Cloneable {
      * @param instanceCount
      *        Target size for the instance group.
      */
+
     public void setInstanceCount(Integer instanceCount) {
         this.instanceCount = instanceCount;
     }
@@ -127,6 +131,7 @@ public class InstanceGroupModifyConfig implements Serializable, Cloneable {
      * 
      * @return Target size for the instance group.
      */
+
     public Integer getInstanceCount() {
         return this.instanceCount;
     }
@@ -141,6 +146,7 @@ public class InstanceGroupModifyConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceGroupModifyConfig withInstanceCount(Integer instanceCount) {
         setInstanceCount(instanceCount);
         return this;
@@ -157,6 +163,7 @@ public class InstanceGroupModifyConfig implements Serializable, Cloneable {
      *         you terminate the instances, the instance group will not return
      *         to its original requested size.
      */
+
     public java.util.List<String> getEC2InstanceIdsToTerminate() {
         if (eC2InstanceIdsToTerminate == null) {
             eC2InstanceIdsToTerminate = new com.amazonaws.internal.SdkInternalList<String>();
@@ -176,6 +183,7 @@ public class InstanceGroupModifyConfig implements Serializable, Cloneable {
      *        you terminate the instances, the instance group will not return to
      *        its original requested size.
      */
+
     public void setEC2InstanceIdsToTerminate(
             java.util.Collection<String> eC2InstanceIdsToTerminate) {
         if (eC2InstanceIdsToTerminate == null) {
@@ -207,6 +215,7 @@ public class InstanceGroupModifyConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceGroupModifyConfig withEC2InstanceIdsToTerminate(
             String... eC2InstanceIdsToTerminate) {
         if (this.eC2InstanceIdsToTerminate == null) {
@@ -233,6 +242,7 @@ public class InstanceGroupModifyConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceGroupModifyConfig withEC2InstanceIdsToTerminate(
             java.util.Collection<String> eC2InstanceIdsToTerminate) {
         setEC2InstanceIdsToTerminate(eC2InstanceIdsToTerminate);

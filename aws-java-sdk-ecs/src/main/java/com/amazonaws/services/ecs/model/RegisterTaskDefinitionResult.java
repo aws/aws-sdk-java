@@ -38,6 +38,7 @@ public class RegisterTaskDefinitionResult implements Serializable, Cloneable {
      * @param taskDefinition
      *        The full description of the registered task definition.
      */
+
     public void setTaskDefinition(TaskDefinition taskDefinition) {
         this.taskDefinition = taskDefinition;
     }
@@ -49,6 +50,7 @@ public class RegisterTaskDefinitionResult implements Serializable, Cloneable {
      * 
      * @return The full description of the registered task definition.
      */
+
     public TaskDefinition getTaskDefinition() {
         return this.taskDefinition;
     }
@@ -63,6 +65,7 @@ public class RegisterTaskDefinitionResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterTaskDefinitionResult withTaskDefinition(
             TaskDefinition taskDefinition) {
         setTaskDefinition(taskDefinition);

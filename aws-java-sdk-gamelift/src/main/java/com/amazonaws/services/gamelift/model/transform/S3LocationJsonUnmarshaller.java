@@ -61,6 +61,11 @@ public class S3LocationJsonUnmarshaller implements
                     s3Location.setKey(StringJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
+                if (context.testExpression("RoleArn", targetDepth)) {
+                    context.nextToken();
+                    s3Location.setRoleArn(StringJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null
                         || context.getLastParsedParentElement().equals(

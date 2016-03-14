@@ -66,6 +66,7 @@ public class Shard implements Serializable, Cloneable {
      *        The unique identifier of the shard within the Amazon Kinesis
      *        stream.
      */
+
     public void setShardId(String shardId) {
         this.shardId = shardId;
     }
@@ -78,6 +79,7 @@ public class Shard implements Serializable, Cloneable {
      * @return The unique identifier of the shard within the Amazon Kinesis
      *         stream.
      */
+
     public String getShardId() {
         return this.shardId;
     }
@@ -93,6 +95,7 @@ public class Shard implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Shard withShardId(String shardId) {
         setShardId(shardId);
         return this;
@@ -106,6 +109,7 @@ public class Shard implements Serializable, Cloneable {
      * @param parentShardId
      *        The shard Id of the shard's parent.
      */
+
     public void setParentShardId(String parentShardId) {
         this.parentShardId = parentShardId;
     }
@@ -117,6 +121,7 @@ public class Shard implements Serializable, Cloneable {
      * 
      * @return The shard Id of the shard's parent.
      */
+
     public String getParentShardId() {
         return this.parentShardId;
     }
@@ -131,6 +136,7 @@ public class Shard implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Shard withParentShardId(String parentShardId) {
         setParentShardId(parentShardId);
         return this;
@@ -144,6 +150,7 @@ public class Shard implements Serializable, Cloneable {
      * @param adjacentParentShardId
      *        The shard Id of the shard adjacent to the shard's parent.
      */
+
     public void setAdjacentParentShardId(String adjacentParentShardId) {
         this.adjacentParentShardId = adjacentParentShardId;
     }
@@ -155,6 +162,7 @@ public class Shard implements Serializable, Cloneable {
      * 
      * @return The shard Id of the shard adjacent to the shard's parent.
      */
+
     public String getAdjacentParentShardId() {
         return this.adjacentParentShardId;
     }
@@ -169,6 +177,7 @@ public class Shard implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Shard withAdjacentParentShardId(String adjacentParentShardId) {
         setAdjacentParentShardId(adjacentParentShardId);
         return this;
@@ -184,6 +193,7 @@ public class Shard implements Serializable, Cloneable {
      *        The range of possible hash key values for the shard, which is a
      *        set of ordered contiguous positive integers.
      */
+
     public void setHashKeyRange(HashKeyRange hashKeyRange) {
         this.hashKeyRange = hashKeyRange;
     }
@@ -197,6 +207,7 @@ public class Shard implements Serializable, Cloneable {
      * @return The range of possible hash key values for the shard, which is a
      *         set of ordered contiguous positive integers.
      */
+
     public HashKeyRange getHashKeyRange() {
         return this.hashKeyRange;
     }
@@ -213,6 +224,7 @@ public class Shard implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Shard withHashKeyRange(HashKeyRange hashKeyRange) {
         setHashKeyRange(hashKeyRange);
         return this;
@@ -226,6 +238,7 @@ public class Shard implements Serializable, Cloneable {
      * @param sequenceNumberRange
      *        The range of possible sequence numbers for the shard.
      */
+
     public void setSequenceNumberRange(SequenceNumberRange sequenceNumberRange) {
         this.sequenceNumberRange = sequenceNumberRange;
     }
@@ -237,6 +250,7 @@ public class Shard implements Serializable, Cloneable {
      * 
      * @return The range of possible sequence numbers for the shard.
      */
+
     public SequenceNumberRange getSequenceNumberRange() {
         return this.sequenceNumberRange;
     }
@@ -251,6 +265,7 @@ public class Shard implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Shard withSequenceNumberRange(SequenceNumberRange sequenceNumberRange) {
         setSequenceNumberRange(sequenceNumberRange);
         return this;

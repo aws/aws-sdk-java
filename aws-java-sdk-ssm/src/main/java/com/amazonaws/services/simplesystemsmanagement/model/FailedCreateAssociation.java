@@ -52,6 +52,7 @@ public class FailedCreateAssociation implements Serializable, Cloneable {
      * @param entry
      *        The association.
      */
+
     public void setEntry(CreateAssociationBatchRequestEntry entry) {
         this.entry = entry;
     }
@@ -63,6 +64,7 @@ public class FailedCreateAssociation implements Serializable, Cloneable {
      * 
      * @return The association.
      */
+
     public CreateAssociationBatchRequestEntry getEntry() {
         return this.entry;
     }
@@ -77,6 +79,7 @@ public class FailedCreateAssociation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FailedCreateAssociation withEntry(
             CreateAssociationBatchRequestEntry entry) {
         setEntry(entry);
@@ -91,6 +94,7 @@ public class FailedCreateAssociation implements Serializable, Cloneable {
      * @param message
      *        A description of the failure.
      */
+
     public void setMessage(String message) {
         this.message = message;
     }
@@ -102,6 +106,7 @@ public class FailedCreateAssociation implements Serializable, Cloneable {
      * 
      * @return A description of the failure.
      */
+
     public String getMessage() {
         return this.message;
     }
@@ -116,6 +121,7 @@ public class FailedCreateAssociation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FailedCreateAssociation withMessage(String message) {
         setMessage(message);
         return this;
@@ -130,6 +136,7 @@ public class FailedCreateAssociation implements Serializable, Cloneable {
      *        The source of the failure.
      * @see Fault
      */
+
     public void setFault(String fault) {
         this.fault = fault;
     }
@@ -142,6 +149,7 @@ public class FailedCreateAssociation implements Serializable, Cloneable {
      * @return The source of the failure.
      * @see Fault
      */
+
     public String getFault() {
         return this.fault;
     }
@@ -157,6 +165,7 @@ public class FailedCreateAssociation implements Serializable, Cloneable {
      *         chained together.
      * @see Fault
      */
+
     public FailedCreateAssociation withFault(String fault) {
         setFault(fault);
         return this;
@@ -173,6 +182,7 @@ public class FailedCreateAssociation implements Serializable, Cloneable {
      *         chained together.
      * @see Fault
      */
+
     public void setFault(Fault fault) {
         this.fault = fault.toString();
     }
@@ -188,6 +198,7 @@ public class FailedCreateAssociation implements Serializable, Cloneable {
      *         chained together.
      * @see Fault
      */
+
     public FailedCreateAssociation withFault(Fault fault) {
         setFault(fault);
         return this;

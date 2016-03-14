@@ -55,6 +55,7 @@ public class IdFormat implements Serializable, Cloneable {
      * @param resource
      *        The type of resource.
      */
+
     public void setResource(String resource) {
         this.resource = resource;
     }
@@ -66,6 +67,7 @@ public class IdFormat implements Serializable, Cloneable {
      * 
      * @return The type of resource.
      */
+
     public String getResource() {
         return this.resource;
     }
@@ -80,6 +82,7 @@ public class IdFormat implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public IdFormat withResource(String resource) {
         setResource(resource);
         return this;
@@ -95,6 +98,7 @@ public class IdFormat implements Serializable, Cloneable {
      *        Indicates whether longer IDs (17-character IDs) are enabled for
      *        the resource.
      */
+
     public void setUseLongIds(Boolean useLongIds) {
         this.useLongIds = useLongIds;
     }
@@ -108,6 +112,7 @@ public class IdFormat implements Serializable, Cloneable {
      * @return Indicates whether longer IDs (17-character IDs) are enabled for
      *         the resource.
      */
+
     public Boolean getUseLongIds() {
         return this.useLongIds;
     }
@@ -124,6 +129,7 @@ public class IdFormat implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public IdFormat withUseLongIds(Boolean useLongIds) {
         setUseLongIds(useLongIds);
         return this;
@@ -138,6 +144,7 @@ public class IdFormat implements Serializable, Cloneable {
      * @return Indicates whether longer IDs (17-character IDs) are enabled for
      *         the resource.
      */
+
     public Boolean isUseLongIds() {
         return this.useLongIds;
     }
@@ -154,6 +161,7 @@ public class IdFormat implements Serializable, Cloneable {
      *        using longer IDs. If a deadline is not yet available for this
      *        resource type, this field is not returned.
      */
+
     public void setDeadline(java.util.Date deadline) {
         this.deadline = deadline;
     }
@@ -169,6 +177,7 @@ public class IdFormat implements Serializable, Cloneable {
      *         using longer IDs. If a deadline is not yet available for this
      *         resource type, this field is not returned.
      */
+
     public java.util.Date getDeadline() {
         return this.deadline;
     }
@@ -187,6 +196,7 @@ public class IdFormat implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public IdFormat withDeadline(java.util.Date deadline) {
         setDeadline(deadline);
         return this;

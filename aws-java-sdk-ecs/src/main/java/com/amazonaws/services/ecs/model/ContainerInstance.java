@@ -132,6 +132,7 @@ public class ContainerInstance implements Serializable, Cloneable {
      *        :ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/
      *        <i>container_instance_ID</i>.
      */
+
     public void setContainerInstanceArn(String containerInstanceArn) {
         this.containerInstanceArn = containerInstanceArn;
     }
@@ -156,6 +157,7 @@ public class ContainerInstance implements Serializable, Cloneable {
      *         :ecs:<i>region</i>:<i>aws_account_id</i>:container-instance
      *         /<i>container_instance_ID</i>.
      */
+
     public String getContainerInstanceArn() {
         return this.containerInstanceArn;
     }
@@ -183,6 +185,7 @@ public class ContainerInstance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContainerInstance withContainerInstanceArn(
             String containerInstanceArn) {
         setContainerInstanceArn(containerInstanceArn);
@@ -197,6 +200,7 @@ public class ContainerInstance implements Serializable, Cloneable {
      * @param ec2InstanceId
      *        The EC2 instance ID of the container instance.
      */
+
     public void setEc2InstanceId(String ec2InstanceId) {
         this.ec2InstanceId = ec2InstanceId;
     }
@@ -208,6 +212,7 @@ public class ContainerInstance implements Serializable, Cloneable {
      * 
      * @return The EC2 instance ID of the container instance.
      */
+
     public String getEc2InstanceId() {
         return this.ec2InstanceId;
     }
@@ -222,6 +227,7 @@ public class ContainerInstance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContainerInstance withEc2InstanceId(String ec2InstanceId) {
         setEc2InstanceId(ec2InstanceId);
         return this;
@@ -237,6 +243,7 @@ public class ContainerInstance implements Serializable, Cloneable {
      *        The version information for the Amazon ECS container agent and
      *        Docker daemon running on the container instance.
      */
+
     public void setVersionInfo(VersionInfo versionInfo) {
         this.versionInfo = versionInfo;
     }
@@ -250,6 +257,7 @@ public class ContainerInstance implements Serializable, Cloneable {
      * @return The version information for the Amazon ECS container agent and
      *         Docker daemon running on the container instance.
      */
+
     public VersionInfo getVersionInfo() {
         return this.versionInfo;
     }
@@ -266,6 +274,7 @@ public class ContainerInstance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContainerInstance withVersionInfo(VersionInfo versionInfo) {
         setVersionInfo(versionInfo);
         return this;
@@ -280,6 +289,7 @@ public class ContainerInstance implements Serializable, Cloneable {
      * @return The remaining resources of the container instance that are
      *         available for new tasks.
      */
+
     public java.util.List<Resource> getRemainingResources() {
         if (remainingResources == null) {
             remainingResources = new com.amazonaws.internal.SdkInternalList<Resource>();
@@ -297,6 +307,7 @@ public class ContainerInstance implements Serializable, Cloneable {
      *        The remaining resources of the container instance that are
      *        available for new tasks.
      */
+
     public void setRemainingResources(
             java.util.Collection<Resource> remainingResources) {
         if (remainingResources == null) {
@@ -326,6 +337,7 @@ public class ContainerInstance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContainerInstance withRemainingResources(
             Resource... remainingResources) {
         if (this.remainingResources == null) {
@@ -350,6 +362,7 @@ public class ContainerInstance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContainerInstance withRemainingResources(
             java.util.Collection<Resource> remainingResources) {
         setRemainingResources(remainingResources);
@@ -365,6 +378,7 @@ public class ContainerInstance implements Serializable, Cloneable {
      * @return The registered resources on the container instance that are in
      *         use by current tasks.
      */
+
     public java.util.List<Resource> getRegisteredResources() {
         if (registeredResources == null) {
             registeredResources = new com.amazonaws.internal.SdkInternalList<Resource>();
@@ -382,6 +396,7 @@ public class ContainerInstance implements Serializable, Cloneable {
      *        The registered resources on the container instance that are in use
      *        by current tasks.
      */
+
     public void setRegisteredResources(
             java.util.Collection<Resource> registeredResources) {
         if (registeredResources == null) {
@@ -411,6 +426,7 @@ public class ContainerInstance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContainerInstance withRegisteredResources(
             Resource... registeredResources) {
         if (this.registeredResources == null) {
@@ -435,6 +451,7 @@ public class ContainerInstance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContainerInstance withRegisteredResources(
             java.util.Collection<Resource> registeredResources) {
         setRegisteredResources(registeredResources);
@@ -453,6 +470,7 @@ public class ContainerInstance implements Serializable, Cloneable {
      *        <code>ACTIVE</code> or <code>INACTIVE</code>. <code>ACTIVE</code>
      *        indicates that the container instance can accept tasks.
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -468,6 +486,7 @@ public class ContainerInstance implements Serializable, Cloneable {
      *         <code>ACTIVE</code> or <code>INACTIVE</code>. <code>ACTIVE</code>
      *         indicates that the container instance can accept tasks.
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -486,6 +505,7 @@ public class ContainerInstance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContainerInstance withStatus(String status) {
         setStatus(status);
         return this;
@@ -506,6 +526,7 @@ public class ContainerInstance implements Serializable, Cloneable {
      *        instances without a connected agent cannot accept placement
      *        requests.
      */
+
     public void setAgentConnected(Boolean agentConnected) {
         this.agentConnected = agentConnected;
     }
@@ -524,6 +545,7 @@ public class ContainerInstance implements Serializable, Cloneable {
      *         instances without a connected agent cannot accept placement
      *         requests.
      */
+
     public Boolean getAgentConnected() {
         return this.agentConnected;
     }
@@ -545,6 +567,7 @@ public class ContainerInstance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContainerInstance withAgentConnected(Boolean agentConnected) {
         setAgentConnected(agentConnected);
         return this;
@@ -564,6 +587,7 @@ public class ContainerInstance implements Serializable, Cloneable {
      *         instances without a connected agent cannot accept placement
      *         requests.
      */
+
     public Boolean isAgentConnected() {
         return this.agentConnected;
     }
@@ -578,6 +602,7 @@ public class ContainerInstance implements Serializable, Cloneable {
      *        The number of tasks on the container instance that are in the
      *        <code>RUNNING</code> status.
      */
+
     public void setRunningTasksCount(Integer runningTasksCount) {
         this.runningTasksCount = runningTasksCount;
     }
@@ -591,6 +616,7 @@ public class ContainerInstance implements Serializable, Cloneable {
      * @return The number of tasks on the container instance that are in the
      *         <code>RUNNING</code> status.
      */
+
     public Integer getRunningTasksCount() {
         return this.runningTasksCount;
     }
@@ -607,6 +633,7 @@ public class ContainerInstance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContainerInstance withRunningTasksCount(Integer runningTasksCount) {
         setRunningTasksCount(runningTasksCount);
         return this;
@@ -622,6 +649,7 @@ public class ContainerInstance implements Serializable, Cloneable {
      *        The number of tasks on the container instance that are in the
      *        <code>PENDING</code> status.
      */
+
     public void setPendingTasksCount(Integer pendingTasksCount) {
         this.pendingTasksCount = pendingTasksCount;
     }
@@ -635,6 +663,7 @@ public class ContainerInstance implements Serializable, Cloneable {
      * @return The number of tasks on the container instance that are in the
      *         <code>PENDING</code> status.
      */
+
     public Integer getPendingTasksCount() {
         return this.pendingTasksCount;
     }
@@ -651,6 +680,7 @@ public class ContainerInstance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContainerInstance withPendingTasksCount(Integer pendingTasksCount) {
         setPendingTasksCount(pendingTasksCount);
         return this;
@@ -667,6 +697,7 @@ public class ContainerInstance implements Serializable, Cloneable {
      *        been requested, this value is <code>NULL</code>.
      * @see AgentUpdateStatus
      */
+
     public void setAgentUpdateStatus(String agentUpdateStatus) {
         this.agentUpdateStatus = agentUpdateStatus;
     }
@@ -681,6 +712,7 @@ public class ContainerInstance implements Serializable, Cloneable {
      *         never been requested, this value is <code>NULL</code>.
      * @see AgentUpdateStatus
      */
+
     public String getAgentUpdateStatus() {
         return this.agentUpdateStatus;
     }
@@ -698,6 +730,7 @@ public class ContainerInstance implements Serializable, Cloneable {
      *         chained together.
      * @see AgentUpdateStatus
      */
+
     public ContainerInstance withAgentUpdateStatus(String agentUpdateStatus) {
         setAgentUpdateStatus(agentUpdateStatus);
         return this;
@@ -716,6 +749,7 @@ public class ContainerInstance implements Serializable, Cloneable {
      *         chained together.
      * @see AgentUpdateStatus
      */
+
     public void setAgentUpdateStatus(AgentUpdateStatus agentUpdateStatus) {
         this.agentUpdateStatus = agentUpdateStatus.toString();
     }
@@ -733,6 +767,7 @@ public class ContainerInstance implements Serializable, Cloneable {
      *         chained together.
      * @see AgentUpdateStatus
      */
+
     public ContainerInstance withAgentUpdateStatus(
             AgentUpdateStatus agentUpdateStatus) {
         setAgentUpdateStatus(agentUpdateStatus);
@@ -748,6 +783,7 @@ public class ContainerInstance implements Serializable, Cloneable {
      * @return The attributes set for the container instance by the Amazon ECS
      *         container agent at instance registration.
      */
+
     public java.util.List<Attribute> getAttributes() {
         if (attributes == null) {
             attributes = new com.amazonaws.internal.SdkInternalList<Attribute>();
@@ -765,6 +801,7 @@ public class ContainerInstance implements Serializable, Cloneable {
      *        The attributes set for the container instance by the Amazon ECS
      *        container agent at instance registration.
      */
+
     public void setAttributes(java.util.Collection<Attribute> attributes) {
         if (attributes == null) {
             this.attributes = null;
@@ -793,6 +830,7 @@ public class ContainerInstance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContainerInstance withAttributes(Attribute... attributes) {
         if (this.attributes == null) {
             setAttributes(new com.amazonaws.internal.SdkInternalList<Attribute>(
@@ -816,6 +854,7 @@ public class ContainerInstance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContainerInstance withAttributes(
             java.util.Collection<Attribute> attributes) {
         setAttributes(attributes);

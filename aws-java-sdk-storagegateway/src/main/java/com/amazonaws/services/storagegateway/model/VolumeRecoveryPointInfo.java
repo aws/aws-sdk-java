@@ -34,6 +34,7 @@ public class VolumeRecoveryPointInfo implements Serializable, Cloneable {
     /**
      * @param volumeARN
      */
+
     public void setVolumeARN(String volumeARN) {
         this.volumeARN = volumeARN;
     }
@@ -41,6 +42,7 @@ public class VolumeRecoveryPointInfo implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getVolumeARN() {
         return this.volumeARN;
     }
@@ -50,6 +52,7 @@ public class VolumeRecoveryPointInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VolumeRecoveryPointInfo withVolumeARN(String volumeARN) {
         setVolumeARN(volumeARN);
         return this;
@@ -58,6 +61,7 @@ public class VolumeRecoveryPointInfo implements Serializable, Cloneable {
     /**
      * @param volumeSizeInBytes
      */
+
     public void setVolumeSizeInBytes(Long volumeSizeInBytes) {
         this.volumeSizeInBytes = volumeSizeInBytes;
     }
@@ -65,6 +69,7 @@ public class VolumeRecoveryPointInfo implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Long getVolumeSizeInBytes() {
         return this.volumeSizeInBytes;
     }
@@ -74,6 +79,7 @@ public class VolumeRecoveryPointInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VolumeRecoveryPointInfo withVolumeSizeInBytes(Long volumeSizeInBytes) {
         setVolumeSizeInBytes(volumeSizeInBytes);
         return this;
@@ -82,6 +88,7 @@ public class VolumeRecoveryPointInfo implements Serializable, Cloneable {
     /**
      * @param volumeUsageInBytes
      */
+
     public void setVolumeUsageInBytes(Long volumeUsageInBytes) {
         this.volumeUsageInBytes = volumeUsageInBytes;
     }
@@ -89,6 +96,7 @@ public class VolumeRecoveryPointInfo implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Long getVolumeUsageInBytes() {
         return this.volumeUsageInBytes;
     }
@@ -98,6 +106,7 @@ public class VolumeRecoveryPointInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VolumeRecoveryPointInfo withVolumeUsageInBytes(
             Long volumeUsageInBytes) {
         setVolumeUsageInBytes(volumeUsageInBytes);
@@ -107,6 +116,7 @@ public class VolumeRecoveryPointInfo implements Serializable, Cloneable {
     /**
      * @param volumeRecoveryPointTime
      */
+
     public void setVolumeRecoveryPointTime(String volumeRecoveryPointTime) {
         this.volumeRecoveryPointTime = volumeRecoveryPointTime;
     }
@@ -114,6 +124,7 @@ public class VolumeRecoveryPointInfo implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getVolumeRecoveryPointTime() {
         return this.volumeRecoveryPointTime;
     }
@@ -123,6 +134,7 @@ public class VolumeRecoveryPointInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VolumeRecoveryPointInfo withVolumeRecoveryPointTime(
             String volumeRecoveryPointTime) {
         setVolumeRecoveryPointTime(volumeRecoveryPointTime);

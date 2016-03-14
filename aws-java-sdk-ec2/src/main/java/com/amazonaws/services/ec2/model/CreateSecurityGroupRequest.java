@@ -136,6 +136,7 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest
      *        Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and
      *        ._-:/()#,@[]+=<![CDATA[&amp;]]>;{}!$
      **/
+
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
@@ -166,6 +167,7 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest
      *         Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and
      *         ._-:/()#,@[]+=<![CDATA[&amp;]]>;{}!$
      **/
+
     public String getGroupName() {
         return this.groupName;
     }
@@ -199,6 +201,7 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateSecurityGroupRequest withGroupName(String groupName) {
         setGroupName(groupName);
         return this;
@@ -232,6 +235,7 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest
      *        Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and
      *        ._-:/()#,@[]+=<![CDATA[&amp;]]>;{}!$
      **/
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -263,6 +267,7 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest
      *         Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and
      *         ._-:/()#,@[]+=<![CDATA[&amp;]]>;{}!$
      **/
+
     public String getDescription() {
         return this.description;
     }
@@ -297,6 +302,7 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateSecurityGroupRequest withDescription(String description) {
         setDescription(description);
         return this;
@@ -310,6 +316,7 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest
      * @param vpcId
      *        [EC2-VPC] The ID of the VPC. Required for EC2-VPC.
      */
+
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
@@ -321,6 +328,7 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest
      * 
      * @return [EC2-VPC] The ID of the VPC. Required for EC2-VPC.
      */
+
     public String getVpcId() {
         return this.vpcId;
     }
@@ -335,6 +343,7 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateSecurityGroupRequest withVpcId(String vpcId) {
         setVpcId(vpcId);
         return this;

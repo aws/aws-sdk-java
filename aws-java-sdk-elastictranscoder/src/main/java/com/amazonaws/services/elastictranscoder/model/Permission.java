@@ -99,6 +99,7 @@ public class Permission implements Serializable, Cloneable {
      *        <code>LogDelivery</code>.</li>
      *        </ul>
      */
+
     public void setGranteeType(String granteeType) {
         this.granteeType = granteeType;
     }
@@ -131,6 +132,7 @@ public class Permission implements Serializable, Cloneable {
      *         or <code>LogDelivery</code>.</li>
      *         </ul>
      */
+
     public String getGranteeType() {
         return this.granteeType;
     }
@@ -166,6 +168,7 @@ public class Permission implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Permission withGranteeType(String granteeType) {
         setGranteeType(granteeType);
         return this;
@@ -187,6 +190,7 @@ public class Permission implements Serializable, Cloneable {
      *        identity for a CloudFront distribution, the registered email
      *        address of an AWS account, or a predefined Amazon S3 group.
      */
+
     public void setGrantee(String grantee) {
         this.grantee = grantee;
     }
@@ -206,6 +210,7 @@ public class Permission implements Serializable, Cloneable {
      *         access identity for a CloudFront distribution, the registered
      *         email address of an AWS account, or a predefined Amazon S3 group.
      */
+
     public String getGrantee() {
         return this.grantee;
     }
@@ -228,6 +233,7 @@ public class Permission implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Permission withGrantee(String grantee) {
         setGrantee(grantee);
         return this;
@@ -266,6 +272,7 @@ public class Permission implements Serializable, Cloneable {
      *         Transcoder adds to the Amazon S3 bucket.</li>
      *         </ul>
      */
+
     public java.util.List<String> getAccess() {
         if (access == null) {
             access = new com.amazonaws.internal.SdkInternalList<String>();
@@ -306,6 +313,7 @@ public class Permission implements Serializable, Cloneable {
      *        adds to the Amazon S3 bucket.</li>
      *        </ul>
      */
+
     public void setAccess(java.util.Collection<String> access) {
         if (access == null) {
             this.access = null;
@@ -356,6 +364,7 @@ public class Permission implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Permission withAccess(String... access) {
         if (this.access == null) {
             setAccess(new com.amazonaws.internal.SdkInternalList<String>(
@@ -402,6 +411,7 @@ public class Permission implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Permission withAccess(java.util.Collection<String> access) {
         setAccess(access);
         return this;

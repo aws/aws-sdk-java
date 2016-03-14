@@ -29,7 +29,7 @@ public class ElasticIpStatus implements Serializable, Cloneable {
     private String elasticIp;
 
     /**
-     * Describes the status of the elastic IP (EIP) address.
+     * The status of the elastic IP (EIP) address.
      */
     private String status;
 
@@ -67,29 +67,29 @@ public class ElasticIpStatus implements Serializable, Cloneable {
     }
 
     /**
-     * Describes the status of the elastic IP (EIP) address.
+     * The status of the elastic IP (EIP) address.
      *
-     * @return Describes the status of the elastic IP (EIP) address.
+     * @return The status of the elastic IP (EIP) address.
      */
     public String getStatus() {
         return status;
     }
     
     /**
-     * Describes the status of the elastic IP (EIP) address.
+     * The status of the elastic IP (EIP) address.
      *
-     * @param status Describes the status of the elastic IP (EIP) address.
+     * @param status The status of the elastic IP (EIP) address.
      */
     public void setStatus(String status) {
         this.status = status;
     }
     
     /**
-     * Describes the status of the elastic IP (EIP) address.
+     * The status of the elastic IP (EIP) address.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param status Describes the status of the elastic IP (EIP) address.
+     * @param status The status of the elastic IP (EIP) address.
      *
      * @return A reference to this updated object so that method calls can be chained
      *         together.

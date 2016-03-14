@@ -43,6 +43,7 @@ public class CrossZoneLoadBalancing implements Serializable, Cloneable {
      *        Specifies whether cross-zone load balancing is enabled for the
      *        load balancer.
      */
+
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
     }
@@ -56,6 +57,7 @@ public class CrossZoneLoadBalancing implements Serializable, Cloneable {
      * @return Specifies whether cross-zone load balancing is enabled for the
      *         load balancer.
      */
+
     public Boolean getEnabled() {
         return this.enabled;
     }
@@ -72,6 +74,7 @@ public class CrossZoneLoadBalancing implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CrossZoneLoadBalancing withEnabled(Boolean enabled) {
         setEnabled(enabled);
         return this;
@@ -86,6 +89,7 @@ public class CrossZoneLoadBalancing implements Serializable, Cloneable {
      * @return Specifies whether cross-zone load balancing is enabled for the
      *         load balancer.
      */
+
     public Boolean isEnabled() {
         return this.enabled;
     }

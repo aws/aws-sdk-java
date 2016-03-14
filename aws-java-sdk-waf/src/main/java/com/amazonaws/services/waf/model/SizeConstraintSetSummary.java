@@ -81,6 +81,7 @@ public class SizeConstraintSetSummary implements Serializable, Cloneable {
      *        <a>CreateSizeConstraintSet</a> and by
      *        <a>ListSizeConstraintSets</a>.
      */
+
     public void setSizeConstraintSetId(String sizeConstraintSetId) {
         this.sizeConstraintSetId = sizeConstraintSetId;
     }
@@ -115,6 +116,7 @@ public class SizeConstraintSetSummary implements Serializable, Cloneable {
      *         <a>CreateSizeConstraintSet</a> and by
      *         <a>ListSizeConstraintSets</a>.
      */
+
     public String getSizeConstraintSetId() {
         return this.sizeConstraintSetId;
     }
@@ -152,6 +154,7 @@ public class SizeConstraintSetSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SizeConstraintSetSummary withSizeConstraintSetId(
             String sizeConstraintSetId) {
         setSizeConstraintSetId(sizeConstraintSetId);
@@ -166,6 +169,7 @@ public class SizeConstraintSetSummary implements Serializable, Cloneable {
      * @param name
      *        The name of the <code>SizeConstraintSet</code>, if any.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -177,6 +181,7 @@ public class SizeConstraintSetSummary implements Serializable, Cloneable {
      * 
      * @return The name of the <code>SizeConstraintSet</code>, if any.
      */
+
     public String getName() {
         return this.name;
     }
@@ -191,6 +196,7 @@ public class SizeConstraintSetSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SizeConstraintSetSummary withName(String name) {
         setName(name);
         return this;

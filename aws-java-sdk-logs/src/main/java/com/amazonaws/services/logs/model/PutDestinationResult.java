@@ -28,6 +28,7 @@ public class PutDestinationResult implements Serializable, Cloneable {
     /**
      * @param destination
      */
+
     public void setDestination(Destination destination) {
         this.destination = destination;
     }
@@ -35,6 +36,7 @@ public class PutDestinationResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Destination getDestination() {
         return this.destination;
     }
@@ -44,6 +46,7 @@ public class PutDestinationResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutDestinationResult withDestination(Destination destination) {
         setDestination(destination);
         return this;

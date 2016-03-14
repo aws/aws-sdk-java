@@ -20,12 +20,11 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Exception thrown when the service is unable to resolve the routing for a
- * particular alias because it has a TerminalRoutingStrategy associated with it.
- * Requests that result in failures of this type should only be retried by
- * clients if they modify the routing strategy for the specified alias. The
- * message returned in this exception is the message defined in the
- * TerminalRoutingStrategy itself.
+ * The service is unable to resolve the routing for a particular alias because
+ * it has a terminal <a>RoutingStrategy</a> associated with it. The message
+ * returned in this exception is the message defined in the
+ * TerminalRoutingStrategy itself. Such requests should only be retried if the
+ * routing strategy for the specified alias is modified.
  * </p>
  */
 public class TerminalRoutingStrategyException extends AmazonServiceException {

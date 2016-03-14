@@ -132,6 +132,7 @@ public class BatchPrediction implements Serializable, Cloneable {
      *        This value should be identical to the value of the
      *        <code>BatchPredictionID</code> in the request.
      */
+
     public void setBatchPredictionId(String batchPredictionId) {
         this.batchPredictionId = batchPredictionId;
     }
@@ -147,6 +148,7 @@ public class BatchPrediction implements Serializable, Cloneable {
      *         This value should be identical to the value of the
      *         <code>BatchPredictionID</code> in the request.
      */
+
     public String getBatchPredictionId() {
         return this.batchPredictionId;
     }
@@ -165,6 +167,7 @@ public class BatchPrediction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchPrediction withBatchPredictionId(String batchPredictionId) {
         setBatchPredictionId(batchPredictionId);
         return this;
@@ -180,6 +183,7 @@ public class BatchPrediction implements Serializable, Cloneable {
      *        The ID of the <code>MLModel</code> that generated predictions for
      *        the <code>BatchPrediction</code> request.
      */
+
     public void setMLModelId(String mLModelId) {
         this.mLModelId = mLModelId;
     }
@@ -193,6 +197,7 @@ public class BatchPrediction implements Serializable, Cloneable {
      * @return The ID of the <code>MLModel</code> that generated predictions for
      *         the <code>BatchPrediction</code> request.
      */
+
     public String getMLModelId() {
         return this.mLModelId;
     }
@@ -209,6 +214,7 @@ public class BatchPrediction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchPrediction withMLModelId(String mLModelId) {
         setMLModelId(mLModelId);
         return this;
@@ -224,6 +230,7 @@ public class BatchPrediction implements Serializable, Cloneable {
      *        The ID of the <code>DataSource</code> that points to the group of
      *        observations to predict.
      */
+
     public void setBatchPredictionDataSourceId(
             String batchPredictionDataSourceId) {
         this.batchPredictionDataSourceId = batchPredictionDataSourceId;
@@ -238,6 +245,7 @@ public class BatchPrediction implements Serializable, Cloneable {
      * @return The ID of the <code>DataSource</code> that points to the group of
      *         observations to predict.
      */
+
     public String getBatchPredictionDataSourceId() {
         return this.batchPredictionDataSourceId;
     }
@@ -254,6 +262,7 @@ public class BatchPrediction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchPrediction withBatchPredictionDataSourceId(
             String batchPredictionDataSourceId) {
         setBatchPredictionDataSourceId(batchPredictionDataSourceId);
@@ -270,6 +279,7 @@ public class BatchPrediction implements Serializable, Cloneable {
      *        The location of the data file or directory in Amazon Simple
      *        Storage Service (Amazon S3).
      */
+
     public void setInputDataLocationS3(String inputDataLocationS3) {
         this.inputDataLocationS3 = inputDataLocationS3;
     }
@@ -283,6 +293,7 @@ public class BatchPrediction implements Serializable, Cloneable {
      * @return The location of the data file or directory in Amazon Simple
      *         Storage Service (Amazon S3).
      */
+
     public String getInputDataLocationS3() {
         return this.inputDataLocationS3;
     }
@@ -299,6 +310,7 @@ public class BatchPrediction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchPrediction withInputDataLocationS3(String inputDataLocationS3) {
         setInputDataLocationS3(inputDataLocationS3);
         return this;
@@ -316,6 +328,7 @@ public class BatchPrediction implements Serializable, Cloneable {
      *        . The account type can be either an AWS root account or an AWS
      *        Identity and Access Management (IAM) user account.
      */
+
     public void setCreatedByIamUser(String createdByIamUser) {
         this.createdByIamUser = createdByIamUser;
     }
@@ -332,6 +345,7 @@ public class BatchPrediction implements Serializable, Cloneable {
      *         AWS root account or an AWS Identity and Access Management (IAM)
      *         user account.
      */
+
     public String getCreatedByIamUser() {
         return this.createdByIamUser;
     }
@@ -350,6 +364,7 @@ public class BatchPrediction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchPrediction withCreatedByIamUser(String createdByIamUser) {
         setCreatedByIamUser(createdByIamUser);
         return this;
@@ -365,6 +380,7 @@ public class BatchPrediction implements Serializable, Cloneable {
      *        The time that the <code>BatchPrediction</code> was created. The
      *        time is expressed in epoch time.
      */
+
     public void setCreatedAt(java.util.Date createdAt) {
         this.createdAt = createdAt;
     }
@@ -378,6 +394,7 @@ public class BatchPrediction implements Serializable, Cloneable {
      * @return The time that the <code>BatchPrediction</code> was created. The
      *         time is expressed in epoch time.
      */
+
     public java.util.Date getCreatedAt() {
         return this.createdAt;
     }
@@ -394,6 +411,7 @@ public class BatchPrediction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchPrediction withCreatedAt(java.util.Date createdAt) {
         setCreatedAt(createdAt);
         return this;
@@ -409,6 +427,7 @@ public class BatchPrediction implements Serializable, Cloneable {
      *        The time of the most recent edit to the
      *        <code>BatchPrediction</code>. The time is expressed in epoch time.
      */
+
     public void setLastUpdatedAt(java.util.Date lastUpdatedAt) {
         this.lastUpdatedAt = lastUpdatedAt;
     }
@@ -423,6 +442,7 @@ public class BatchPrediction implements Serializable, Cloneable {
      *         <code>BatchPrediction</code>. The time is expressed in epoch
      *         time.
      */
+
     public java.util.Date getLastUpdatedAt() {
         return this.lastUpdatedAt;
     }
@@ -439,6 +459,7 @@ public class BatchPrediction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchPrediction withLastUpdatedAt(java.util.Date lastUpdatedAt) {
         setLastUpdatedAt(lastUpdatedAt);
         return this;
@@ -453,6 +474,7 @@ public class BatchPrediction implements Serializable, Cloneable {
      *        A user-supplied name or description of the
      *        <code>BatchPrediction</code>.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -465,6 +487,7 @@ public class BatchPrediction implements Serializable, Cloneable {
      * @return A user-supplied name or description of the
      *         <code>BatchPrediction</code>.
      */
+
     public String getName() {
         return this.name;
     }
@@ -480,6 +503,7 @@ public class BatchPrediction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchPrediction withName(String name) {
         setName(name);
         return this;
@@ -518,6 +542,7 @@ public class BatchPrediction implements Serializable, Cloneable {
      *        marked as deleted. It is not usable.</li>
      * @see EntityStatus
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -554,6 +579,7 @@ public class BatchPrediction implements Serializable, Cloneable {
      *         marked as deleted. It is not usable.</li>
      * @see EntityStatus
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -593,6 +619,7 @@ public class BatchPrediction implements Serializable, Cloneable {
      *         chained together.
      * @see EntityStatus
      */
+
     public BatchPrediction withStatus(String status) {
         setStatus(status);
         return this;
@@ -633,6 +660,7 @@ public class BatchPrediction implements Serializable, Cloneable {
      *         chained together.
      * @see EntityStatus
      */
+
     public void setStatus(EntityStatus status) {
         this.status = status.toString();
     }
@@ -672,6 +700,7 @@ public class BatchPrediction implements Serializable, Cloneable {
      *         chained together.
      * @see EntityStatus
      */
+
     public BatchPrediction withStatus(EntityStatus status) {
         setStatus(status);
         return this;
@@ -689,6 +718,7 @@ public class BatchPrediction implements Serializable, Cloneable {
      *        operation results. The following substrings are not allowed in the
      *        s3 key portion of the "outputURI" field: ':', '//', '/./', '/../'.
      */
+
     public void setOutputUri(String outputUri) {
         this.outputUri = outputUri;
     }
@@ -705,6 +735,7 @@ public class BatchPrediction implements Serializable, Cloneable {
      *         the s3 key portion of the "outputURI" field: ':', '//', '/./',
      *         '/../'.
      */
+
     public String getOutputUri() {
         return this.outputUri;
     }
@@ -723,6 +754,7 @@ public class BatchPrediction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchPrediction withOutputUri(String outputUri) {
         setOutputUri(outputUri);
         return this;
@@ -738,6 +770,7 @@ public class BatchPrediction implements Serializable, Cloneable {
      *        A description of the most recent details about processing the
      *        batch prediction request.
      */
+
     public void setMessage(String message) {
         this.message = message;
     }
@@ -751,6 +784,7 @@ public class BatchPrediction implements Serializable, Cloneable {
      * @return A description of the most recent details about processing the
      *         batch prediction request.
      */
+
     public String getMessage() {
         return this.message;
     }
@@ -767,6 +801,7 @@ public class BatchPrediction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchPrediction withMessage(String message) {
         setMessage(message);
         return this;

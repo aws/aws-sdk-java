@@ -55,6 +55,7 @@ public class PutNotificationConfigurationRequest extends
      * @param autoScalingGroupName
      *        The name of the Auto Scaling group.
      */
+
     public void setAutoScalingGroupName(String autoScalingGroupName) {
         this.autoScalingGroupName = autoScalingGroupName;
     }
@@ -66,6 +67,7 @@ public class PutNotificationConfigurationRequest extends
      * 
      * @return The name of the Auto Scaling group.
      */
+
     public String getAutoScalingGroupName() {
         return this.autoScalingGroupName;
     }
@@ -80,6 +82,7 @@ public class PutNotificationConfigurationRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutNotificationConfigurationRequest withAutoScalingGroupName(
             String autoScalingGroupName) {
         setAutoScalingGroupName(autoScalingGroupName);
@@ -96,6 +99,7 @@ public class PutNotificationConfigurationRequest extends
      *        The Amazon Resource Name (ARN) of the Amazon Simple Notification
      *        Service (SNS) topic.
      */
+
     public void setTopicARN(String topicARN) {
         this.topicARN = topicARN;
     }
@@ -109,6 +113,7 @@ public class PutNotificationConfigurationRequest extends
      * @return The Amazon Resource Name (ARN) of the Amazon Simple Notification
      *         Service (SNS) topic.
      */
+
     public String getTopicARN() {
         return this.topicARN;
     }
@@ -125,6 +130,7 @@ public class PutNotificationConfigurationRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutNotificationConfigurationRequest withTopicARN(String topicARN) {
         setTopicARN(topicARN);
         return this;
@@ -141,6 +147,7 @@ public class PutNotificationConfigurationRequest extends
      *         For details about notification types supported by Auto Scaling,
      *         see <a>DescribeAutoScalingNotificationTypes</a>.
      */
+
     public java.util.List<String> getNotificationTypes() {
         if (notificationTypes == null) {
             notificationTypes = new com.amazonaws.internal.SdkInternalList<String>();
@@ -160,6 +167,7 @@ public class PutNotificationConfigurationRequest extends
      *        details about notification types supported by Auto Scaling, see
      *        <a>DescribeAutoScalingNotificationTypes</a>.
      */
+
     public void setNotificationTypes(
             java.util.Collection<String> notificationTypes) {
         if (notificationTypes == null) {
@@ -191,6 +199,7 @@ public class PutNotificationConfigurationRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutNotificationConfigurationRequest withNotificationTypes(
             String... notificationTypes) {
         if (this.notificationTypes == null) {
@@ -217,6 +226,7 @@ public class PutNotificationConfigurationRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutNotificationConfigurationRequest withNotificationTypes(
             java.util.Collection<String> notificationTypes) {
         setNotificationTypes(notificationTypes);

@@ -30,6 +30,7 @@ public class UpdateTableResult implements Serializable, Cloneable {
     /**
      * @param tableDescription
      */
+
     public void setTableDescription(TableDescription tableDescription) {
         this.tableDescription = tableDescription;
     }
@@ -37,6 +38,7 @@ public class UpdateTableResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public TableDescription getTableDescription() {
         return this.tableDescription;
     }
@@ -46,6 +48,7 @@ public class UpdateTableResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateTableResult withTableDescription(
             TableDescription tableDescription) {
         setTableDescription(tableDescription);

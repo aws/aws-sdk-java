@@ -37,6 +37,7 @@ public class DescribeRegionsResult implements Serializable, Cloneable {
      * 
      * @return Information about one or more regions.
      */
+
     public java.util.List<Region> getRegions() {
         if (regions == null) {
             regions = new com.amazonaws.internal.SdkInternalList<Region>();
@@ -52,6 +53,7 @@ public class DescribeRegionsResult implements Serializable, Cloneable {
      * @param regions
      *        Information about one or more regions.
      */
+
     public void setRegions(java.util.Collection<Region> regions) {
         if (regions == null) {
             this.regions = null;
@@ -78,6 +80,7 @@ public class DescribeRegionsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeRegionsResult withRegions(Region... regions) {
         if (this.regions == null) {
             setRegions(new com.amazonaws.internal.SdkInternalList<Region>(
@@ -99,6 +102,7 @@ public class DescribeRegionsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeRegionsResult withRegions(
             java.util.Collection<Region> regions) {
         setRegions(regions);

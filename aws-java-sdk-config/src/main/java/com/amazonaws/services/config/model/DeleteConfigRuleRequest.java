@@ -40,6 +40,7 @@ public class DeleteConfigRuleRequest extends AmazonWebServiceRequest implements
      * @param configRuleName
      *        The name of the AWS Config rule that you want to delete.
      */
+
     public void setConfigRuleName(String configRuleName) {
         this.configRuleName = configRuleName;
     }
@@ -51,6 +52,7 @@ public class DeleteConfigRuleRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the AWS Config rule that you want to delete.
      */
+
     public String getConfigRuleName() {
         return this.configRuleName;
     }
@@ -65,6 +67,7 @@ public class DeleteConfigRuleRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteConfigRuleRequest withConfigRuleName(String configRuleName) {
         setConfigRuleName(configRuleName);
         return this;

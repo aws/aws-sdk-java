@@ -32,6 +32,7 @@ public class DescribeIdentityUsageResult implements Serializable, Cloneable {
      * @param identityUsage
      *        Usage information for the identity.
      */
+
     public void setIdentityUsage(IdentityUsage identityUsage) {
         this.identityUsage = identityUsage;
     }
@@ -41,6 +42,7 @@ public class DescribeIdentityUsageResult implements Serializable, Cloneable {
      * 
      * @return Usage information for the identity.
      */
+
     public IdentityUsage getIdentityUsage() {
         return this.identityUsage;
     }
@@ -53,6 +55,7 @@ public class DescribeIdentityUsageResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeIdentityUsageResult withIdentityUsage(
             IdentityUsage identityUsage) {
         setIdentityUsage(identityUsage);

@@ -30,6 +30,7 @@ public class EbsConfiguration implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public java.util.List<EbsBlockDeviceConfig> getEbsBlockDeviceConfigs() {
         if (ebsBlockDeviceConfigs == null) {
             ebsBlockDeviceConfigs = new com.amazonaws.internal.SdkInternalList<EbsBlockDeviceConfig>();
@@ -40,6 +41,7 @@ public class EbsConfiguration implements Serializable, Cloneable {
     /**
      * @param ebsBlockDeviceConfigs
      */
+
     public void setEbsBlockDeviceConfigs(
             java.util.Collection<EbsBlockDeviceConfig> ebsBlockDeviceConfigs) {
         if (ebsBlockDeviceConfigs == null) {
@@ -63,6 +65,7 @@ public class EbsConfiguration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EbsConfiguration withEbsBlockDeviceConfigs(
             EbsBlockDeviceConfig... ebsBlockDeviceConfigs) {
         if (this.ebsBlockDeviceConfigs == null) {
@@ -80,6 +83,7 @@ public class EbsConfiguration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EbsConfiguration withEbsBlockDeviceConfigs(
             java.util.Collection<EbsBlockDeviceConfig> ebsBlockDeviceConfigs) {
         setEbsBlockDeviceConfigs(ebsBlockDeviceConfigs);
@@ -89,6 +93,7 @@ public class EbsConfiguration implements Serializable, Cloneable {
     /**
      * @param ebsOptimized
      */
+
     public void setEbsOptimized(Boolean ebsOptimized) {
         this.ebsOptimized = ebsOptimized;
     }
@@ -96,6 +101,7 @@ public class EbsConfiguration implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Boolean getEbsOptimized() {
         return this.ebsOptimized;
     }
@@ -105,6 +111,7 @@ public class EbsConfiguration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EbsConfiguration withEbsOptimized(Boolean ebsOptimized) {
         setEbsOptimized(ebsOptimized);
         return this;
@@ -113,6 +120,7 @@ public class EbsConfiguration implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Boolean isEbsOptimized() {
         return this.ebsOptimized;
     }

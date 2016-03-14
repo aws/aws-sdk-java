@@ -260,6 +260,7 @@ public class CaptionFormat implements Serializable, Cloneable {
      *        </p>
      *        </li>
      */
+
     public void setFormat(String format) {
         this.format = format;
     }
@@ -396,6 +397,7 @@ public class CaptionFormat implements Serializable, Cloneable {
      *         </p>
      *         </li>
      */
+
     public String getFormat() {
         return this.format;
     }
@@ -534,6 +536,7 @@ public class CaptionFormat implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CaptionFormat withFormat(String format) {
         setFormat(format);
         return this;
@@ -586,6 +589,7 @@ public class CaptionFormat implements Serializable, Cloneable {
      *        captions is English (en), the name of the first caption file will
      *        be Sydney-en-sunrise00000.srt.
      */
+
     public void setPattern(String pattern) {
         this.pattern = pattern;
     }
@@ -636,6 +640,7 @@ public class CaptionFormat implements Serializable, Cloneable {
      *         the captions is English (en), the name of the first caption file
      *         will be Sydney-en-sunrise00000.srt.
      */
+
     public String getPattern() {
         return this.pattern;
     }
@@ -689,6 +694,7 @@ public class CaptionFormat implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CaptionFormat withPattern(String pattern) {
         setPattern(pattern);
         return this;
@@ -704,6 +710,7 @@ public class CaptionFormat implements Serializable, Cloneable {
      *        The encryption settings, if any, that you want Elastic Transcoder
      *        to apply to your caption formats.
      */
+
     public void setEncryption(Encryption encryption) {
         this.encryption = encryption;
     }
@@ -717,6 +724,7 @@ public class CaptionFormat implements Serializable, Cloneable {
      * @return The encryption settings, if any, that you want Elastic Transcoder
      *         to apply to your caption formats.
      */
+
     public Encryption getEncryption() {
         return this.encryption;
     }
@@ -733,6 +741,7 @@ public class CaptionFormat implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CaptionFormat withEncryption(Encryption encryption) {
         setEncryption(encryption);
         return this;

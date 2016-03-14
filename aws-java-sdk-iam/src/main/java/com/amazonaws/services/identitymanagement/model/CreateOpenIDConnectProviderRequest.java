@@ -117,6 +117,7 @@ public class CreateOpenIDConnectProviderRequest extends AmazonWebServiceRequest
      *        for an OpenID Connect provider in the AWS account, you will get an
      *        error.
      */
+
     public void setUrl(String url) {
         this.url = url;
     }
@@ -147,6 +148,7 @@ public class CreateOpenIDConnectProviderRequest extends AmazonWebServiceRequest
      *         used for an OpenID Connect provider in the AWS account, you will
      *         get an error.
      */
+
     public String getUrl() {
         return this.url;
     }
@@ -180,6 +182,7 @@ public class CreateOpenIDConnectProviderRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateOpenIDConnectProviderRequest withUrl(String url) {
         setUrl(url);
         return this;
@@ -219,6 +222,7 @@ public class CreateOpenIDConnectProviderRequest extends AmazonWebServiceRequest
      *         <code>CreateOpenIDConnectProviderRequest</code> action accepts
      *         client IDs up to 255 characters long.
      */
+
     public java.util.List<String> getClientIDList() {
         if (clientIDList == null) {
             clientIDList = new com.amazonaws.internal.SdkInternalList<String>();
@@ -261,6 +265,7 @@ public class CreateOpenIDConnectProviderRequest extends AmazonWebServiceRequest
      *        <code>CreateOpenIDConnectProviderRequest</code> action accepts
      *        client IDs up to 255 characters long.
      */
+
     public void setClientIDList(java.util.Collection<String> clientIDList) {
         if (clientIDList == null) {
             this.clientIDList = null;
@@ -314,6 +319,7 @@ public class CreateOpenIDConnectProviderRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateOpenIDConnectProviderRequest withClientIDList(
             String... clientIDList) {
         if (this.clientIDList == null) {
@@ -363,6 +369,7 @@ public class CreateOpenIDConnectProviderRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateOpenIDConnectProviderRequest withClientIDList(
             java.util.Collection<String> clientIDList) {
         setClientIDList(clientIDList);
@@ -425,6 +432,7 @@ public class CreateOpenIDConnectProviderRequest extends AmazonWebServiceRequest
      *         >Obtaining the Thumbprint for an OpenID Connect Provider</a> in
      *         the <i>IAM User Guide</i>.
      */
+
     public java.util.List<String> getThumbprintList() {
         if (thumbprintList == null) {
             thumbprintList = new com.amazonaws.internal.SdkInternalList<String>();
@@ -489,6 +497,7 @@ public class CreateOpenIDConnectProviderRequest extends AmazonWebServiceRequest
      *        >Obtaining the Thumbprint for an OpenID Connect Provider</a> in
      *        the <i>IAM User Guide</i>.
      */
+
     public void setThumbprintList(java.util.Collection<String> thumbprintList) {
         if (thumbprintList == null) {
             this.thumbprintList = null;
@@ -564,6 +573,7 @@ public class CreateOpenIDConnectProviderRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateOpenIDConnectProviderRequest withThumbprintList(
             String... thumbprintList) {
         if (this.thumbprintList == null) {
@@ -635,6 +645,7 @@ public class CreateOpenIDConnectProviderRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateOpenIDConnectProviderRequest withThumbprintList(
             java.util.Collection<String> thumbprintList) {
         setThumbprintList(thumbprintList);

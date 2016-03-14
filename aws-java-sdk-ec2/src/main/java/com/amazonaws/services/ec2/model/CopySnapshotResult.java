@@ -38,6 +38,7 @@ public class CopySnapshotResult implements Serializable, Cloneable {
      * @param snapshotId
      *        The ID of the new snapshot.
      */
+
     public void setSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
     }
@@ -49,6 +50,7 @@ public class CopySnapshotResult implements Serializable, Cloneable {
      * 
      * @return The ID of the new snapshot.
      */
+
     public String getSnapshotId() {
         return this.snapshotId;
     }
@@ -63,6 +65,7 @@ public class CopySnapshotResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CopySnapshotResult withSnapshotId(String snapshotId) {
         setSnapshotId(snapshotId);
         return this;

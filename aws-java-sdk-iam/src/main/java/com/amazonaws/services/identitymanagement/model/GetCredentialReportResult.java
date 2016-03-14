@@ -58,6 +58,7 @@ public class GetCredentialReportResult implements Serializable, Cloneable {
      * @param content
      *        Contains the credential report. The report is Base64-encoded.
      */
+
     public void setContent(java.nio.ByteBuffer content) {
         this.content = content;
     }
@@ -79,6 +80,7 @@ public class GetCredentialReportResult implements Serializable, Cloneable {
      * 
      * @return Contains the credential report. The report is Base64-encoded.
      */
+
     public java.nio.ByteBuffer getContent() {
         return this.content;
     }
@@ -93,6 +95,7 @@ public class GetCredentialReportResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetCredentialReportResult withContent(java.nio.ByteBuffer content) {
         setContent(content);
         return this;
@@ -107,6 +110,7 @@ public class GetCredentialReportResult implements Serializable, Cloneable {
      *        The format (MIME type) of the credential report.
      * @see ReportFormatType
      */
+
     public void setReportFormat(String reportFormat) {
         this.reportFormat = reportFormat;
     }
@@ -119,6 +123,7 @@ public class GetCredentialReportResult implements Serializable, Cloneable {
      * @return The format (MIME type) of the credential report.
      * @see ReportFormatType
      */
+
     public String getReportFormat() {
         return this.reportFormat;
     }
@@ -134,6 +139,7 @@ public class GetCredentialReportResult implements Serializable, Cloneable {
      *         chained together.
      * @see ReportFormatType
      */
+
     public GetCredentialReportResult withReportFormat(String reportFormat) {
         setReportFormat(reportFormat);
         return this;
@@ -150,6 +156,7 @@ public class GetCredentialReportResult implements Serializable, Cloneable {
      *         chained together.
      * @see ReportFormatType
      */
+
     public void setReportFormat(ReportFormatType reportFormat) {
         this.reportFormat = reportFormat.toString();
     }
@@ -165,6 +172,7 @@ public class GetCredentialReportResult implements Serializable, Cloneable {
      *         chained together.
      * @see ReportFormatType
      */
+
     public GetCredentialReportResult withReportFormat(
             ReportFormatType reportFormat) {
         setReportFormat(reportFormat);
@@ -182,6 +190,7 @@ public class GetCredentialReportResult implements Serializable, Cloneable {
      *        href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
      *        format</a>.
      */
+
     public void setGeneratedTime(java.util.Date generatedTime) {
         this.generatedTime = generatedTime;
     }
@@ -196,6 +205,7 @@ public class GetCredentialReportResult implements Serializable, Cloneable {
      *         href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
      *         format</a>.
      */
+
     public java.util.Date getGeneratedTime() {
         return this.generatedTime;
     }
@@ -213,6 +223,7 @@ public class GetCredentialReportResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetCredentialReportResult withGeneratedTime(
             java.util.Date generatedTime) {
         setGeneratedTime(generatedTime);

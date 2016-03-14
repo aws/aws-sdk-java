@@ -49,6 +49,7 @@ public class EnableVgwRoutePropagationRequest extends AmazonWebServiceRequest
      * @param routeTableId
      *        The ID of the route table.
      */
+
     public void setRouteTableId(String routeTableId) {
         this.routeTableId = routeTableId;
     }
@@ -60,6 +61,7 @@ public class EnableVgwRoutePropagationRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the route table.
      */
+
     public String getRouteTableId() {
         return this.routeTableId;
     }
@@ -74,6 +76,7 @@ public class EnableVgwRoutePropagationRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EnableVgwRoutePropagationRequest withRouteTableId(String routeTableId) {
         setRouteTableId(routeTableId);
         return this;
@@ -87,6 +90,7 @@ public class EnableVgwRoutePropagationRequest extends AmazonWebServiceRequest
      * @param gatewayId
      *        The ID of the virtual private gateway.
      */
+
     public void setGatewayId(String gatewayId) {
         this.gatewayId = gatewayId;
     }
@@ -98,6 +102,7 @@ public class EnableVgwRoutePropagationRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the virtual private gateway.
      */
+
     public String getGatewayId() {
         return this.gatewayId;
     }
@@ -112,6 +117,7 @@ public class EnableVgwRoutePropagationRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EnableVgwRoutePropagationRequest withGatewayId(String gatewayId) {
         setGatewayId(gatewayId);
         return this;

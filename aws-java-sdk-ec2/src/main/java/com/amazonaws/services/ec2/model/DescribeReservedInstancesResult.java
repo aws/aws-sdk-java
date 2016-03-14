@@ -37,6 +37,7 @@ public class DescribeReservedInstancesResult implements Serializable, Cloneable 
      * 
      * @return A list of Reserved Instances.
      */
+
     public java.util.List<ReservedInstances> getReservedInstances() {
         if (reservedInstances == null) {
             reservedInstances = new com.amazonaws.internal.SdkInternalList<ReservedInstances>();
@@ -52,6 +53,7 @@ public class DescribeReservedInstancesResult implements Serializable, Cloneable 
      * @param reservedInstances
      *        A list of Reserved Instances.
      */
+
     public void setReservedInstances(
             java.util.Collection<ReservedInstances> reservedInstances) {
         if (reservedInstances == null) {
@@ -79,6 +81,7 @@ public class DescribeReservedInstancesResult implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeReservedInstancesResult withReservedInstances(
             ReservedInstances... reservedInstances) {
         if (this.reservedInstances == null) {
@@ -101,6 +104,7 @@ public class DescribeReservedInstancesResult implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeReservedInstancesResult withReservedInstances(
             java.util.Collection<ReservedInstances> reservedInstances) {
         setReservedInstances(reservedInstances);

@@ -230,6 +230,7 @@ public class SendEmailRequest extends AmazonWebServiceRequest implements
      *        information, see <a href="http://tools.ietf.org/html/rfc2047">RFC
      *        2047</a>.
      */
+
     public void setSource(String source) {
         this.source = source;
     }
@@ -283,6 +284,7 @@ public class SendEmailRequest extends AmazonWebServiceRequest implements
      *         information, see <a href="http://tools.ietf.org/html/rfc2047">RFC
      *         2047</a>.
      */
+
     public String getSource() {
         return this.source;
     }
@@ -339,6 +341,7 @@ public class SendEmailRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendEmailRequest withSource(String source) {
         setSource(source);
         return this;
@@ -353,6 +356,7 @@ public class SendEmailRequest extends AmazonWebServiceRequest implements
      *        The destination for this email, composed of To:, CC:, and BCC:
      *        fields.
      */
+
     public void setDestination(Destination destination) {
         this.destination = destination;
     }
@@ -365,6 +369,7 @@ public class SendEmailRequest extends AmazonWebServiceRequest implements
      * @return The destination for this email, composed of To:, CC:, and BCC:
      *         fields.
      */
+
     public Destination getDestination() {
         return this.destination;
     }
@@ -380,6 +385,7 @@ public class SendEmailRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendEmailRequest withDestination(Destination destination) {
         setDestination(destination);
         return this;
@@ -393,6 +399,7 @@ public class SendEmailRequest extends AmazonWebServiceRequest implements
      * @param message
      *        The message to be sent.
      */
+
     public void setMessage(Message message) {
         this.message = message;
     }
@@ -404,6 +411,7 @@ public class SendEmailRequest extends AmazonWebServiceRequest implements
      * 
      * @return The message to be sent.
      */
+
     public Message getMessage() {
         return this.message;
     }
@@ -418,6 +426,7 @@ public class SendEmailRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendEmailRequest withMessage(Message message) {
         setMessage(message);
         return this;
@@ -433,6 +442,7 @@ public class SendEmailRequest extends AmazonWebServiceRequest implements
      *         replies to the message, each reply-to address will receive the
      *         reply.
      */
+
     public java.util.List<String> getReplyToAddresses() {
         if (replyToAddresses == null) {
             replyToAddresses = new com.amazonaws.internal.SdkInternalList<String>();
@@ -451,6 +461,7 @@ public class SendEmailRequest extends AmazonWebServiceRequest implements
      *        replies to the message, each reply-to address will receive the
      *        reply.
      */
+
     public void setReplyToAddresses(
             java.util.Collection<String> replyToAddresses) {
         if (replyToAddresses == null) {
@@ -481,6 +492,7 @@ public class SendEmailRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendEmailRequest withReplyToAddresses(String... replyToAddresses) {
         if (this.replyToAddresses == null) {
             setReplyToAddresses(new com.amazonaws.internal.SdkInternalList<String>(
@@ -505,6 +517,7 @@ public class SendEmailRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendEmailRequest withReplyToAddresses(
             java.util.Collection<String> replyToAddresses) {
         setReplyToAddresses(replyToAddresses);
@@ -534,6 +547,7 @@ public class SendEmailRequest extends AmazonWebServiceRequest implements
      *        individually verified with Amazon SES, or from a domain that has
      *        been verified with Amazon SES.
      */
+
     public void setReturnPath(String returnPath) {
         this.returnPath = returnPath;
     }
@@ -560,6 +574,7 @@ public class SendEmailRequest extends AmazonWebServiceRequest implements
      *         individually verified with Amazon SES, or from a domain that has
      *         been verified with Amazon SES.
      */
+
     public String getReturnPath() {
         return this.returnPath;
     }
@@ -589,6 +604,7 @@ public class SendEmailRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendEmailRequest withReturnPath(String returnPath) {
         setReturnPath(returnPath);
         return this;
@@ -636,6 +652,7 @@ public class SendEmailRequest extends AmazonWebServiceRequest implements
      *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html"
      *        >Amazon SES Developer Guide</a>.
      */
+
     public void setSourceArn(String sourceArn) {
         this.sourceArn = sourceArn;
     }
@@ -683,6 +700,7 @@ public class SendEmailRequest extends AmazonWebServiceRequest implements
      *         "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html"
      *         >Amazon SES Developer Guide</a>.
      */
+
     public String getSourceArn() {
         return this.sourceArn;
     }
@@ -731,6 +749,7 @@ public class SendEmailRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendEmailRequest withSourceArn(String sourceArn) {
         setSourceArn(sourceArn);
         return this;
@@ -779,6 +798,7 @@ public class SendEmailRequest extends AmazonWebServiceRequest implements
      *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html"
      *        >Amazon SES Developer Guide</a>.
      */
+
     public void setReturnPathArn(String returnPathArn) {
         this.returnPathArn = returnPathArn;
     }
@@ -826,6 +846,7 @@ public class SendEmailRequest extends AmazonWebServiceRequest implements
      *         "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html"
      *         >Amazon SES Developer Guide</a>.
      */
+
     public String getReturnPathArn() {
         return this.returnPathArn;
     }
@@ -875,6 +896,7 @@ public class SendEmailRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendEmailRequest withReturnPathArn(String returnPathArn) {
         setReturnPathArn(returnPathArn);
         return this;

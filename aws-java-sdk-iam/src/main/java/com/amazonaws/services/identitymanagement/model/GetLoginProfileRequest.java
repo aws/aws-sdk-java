@@ -60,6 +60,7 @@ public class GetLoginProfileRequest extends AmazonWebServiceRequest implements
      * @param userName
      *        The name of the user whose login profile you want to retrieve.
      */
+
     public void setUserName(String userName) {
         this.userName = userName;
     }
@@ -71,6 +72,7 @@ public class GetLoginProfileRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the user whose login profile you want to retrieve.
      */
+
     public String getUserName() {
         return this.userName;
     }
@@ -85,6 +87,7 @@ public class GetLoginProfileRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetLoginProfileRequest withUserName(String userName) {
         setUserName(userName);
         return this;

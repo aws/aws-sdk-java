@@ -140,6 +140,7 @@ public class ChangeInfo implements Serializable, Cloneable {
      *        The ID of the request. Use this ID to track when the change has
      *        completed across all Amazon Route 53 DNS servers.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -153,6 +154,7 @@ public class ChangeInfo implements Serializable, Cloneable {
      * @return The ID of the request. Use this ID to track when the change has
      *         completed across all Amazon Route 53 DNS servers.
      */
+
     public String getId() {
         return this.id;
     }
@@ -169,6 +171,7 @@ public class ChangeInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ChangeInfo withId(String id) {
         setId(id);
         return this;
@@ -191,6 +194,7 @@ public class ChangeInfo implements Serializable, Cloneable {
      *        Valid Values: <code>PENDING</code> | <code>INSYNC</code>
      * @see ChangeStatus
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -211,6 +215,7 @@ public class ChangeInfo implements Serializable, Cloneable {
      *         Valid Values: <code>PENDING</code> | <code>INSYNC</code>
      * @see ChangeStatus
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -234,6 +239,7 @@ public class ChangeInfo implements Serializable, Cloneable {
      *         chained together.
      * @see ChangeStatus
      */
+
     public ChangeInfo withStatus(String status) {
         setStatus(status);
         return this;
@@ -258,6 +264,7 @@ public class ChangeInfo implements Serializable, Cloneable {
      *         chained together.
      * @see ChangeStatus
      */
+
     public void setStatus(ChangeStatus status) {
         this.status = status.toString();
     }
@@ -281,6 +288,7 @@ public class ChangeInfo implements Serializable, Cloneable {
      *         chained together.
      * @see ChangeStatus
      */
+
     public ChangeInfo withStatus(ChangeStatus status) {
         setStatus(status);
         return this;
@@ -301,6 +309,7 @@ public class ChangeInfo implements Serializable, Cloneable {
      *        after the time indicates that the time is listed in Coordinated
      *        Universal Time (UTC).
      */
+
     public void setSubmittedAt(java.util.Date submittedAt) {
         this.submittedAt = submittedAt;
     }
@@ -319,6 +328,7 @@ public class ChangeInfo implements Serializable, Cloneable {
      *         after the time indicates that the time is listed in Coordinated
      *         Universal Time (UTC).
      */
+
     public java.util.Date getSubmittedAt() {
         return this.submittedAt;
     }
@@ -340,6 +350,7 @@ public class ChangeInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ChangeInfo withSubmittedAt(java.util.Date submittedAt) {
         setSubmittedAt(submittedAt);
         return this;
@@ -363,6 +374,7 @@ public class ChangeInfo implements Serializable, Cloneable {
      *        <a>GetChange</a> action to get detailed information about the
      *        change.
      */
+
     public void setComment(String comment) {
         this.comment = comment;
     }
@@ -384,6 +396,7 @@ public class ChangeInfo implements Serializable, Cloneable {
      *         <a>GetChange</a> action to get detailed information about the
      *         change.
      */
+
     public String getComment() {
         return this.comment;
     }
@@ -408,6 +421,7 @@ public class ChangeInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ChangeInfo withComment(String comment) {
         setComment(comment);
         return this;

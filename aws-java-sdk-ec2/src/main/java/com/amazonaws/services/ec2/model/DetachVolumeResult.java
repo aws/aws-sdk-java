@@ -39,6 +39,7 @@ public class DetachVolumeResult implements Serializable, Cloneable {
      * @param attachment
      *        Describes volume attachment details.
      */
+
     public void setAttachment(VolumeAttachment attachment) {
         this.attachment = attachment;
     }
@@ -50,6 +51,7 @@ public class DetachVolumeResult implements Serializable, Cloneable {
      * 
      * @return Describes volume attachment details.
      */
+
     public VolumeAttachment getAttachment() {
         return this.attachment;
     }
@@ -64,6 +66,7 @@ public class DetachVolumeResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DetachVolumeResult withAttachment(VolumeAttachment attachment) {
         setAttachment(attachment);
         return this;

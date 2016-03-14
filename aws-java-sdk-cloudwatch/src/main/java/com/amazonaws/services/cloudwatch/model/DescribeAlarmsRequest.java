@@ -71,6 +71,7 @@ public class DescribeAlarmsRequest extends AmazonWebServiceRequest implements
      * 
      * @return A list of alarm names to retrieve information for.
      */
+
     public java.util.List<String> getAlarmNames() {
         if (alarmNames == null) {
             alarmNames = new com.amazonaws.internal.SdkInternalList<String>();
@@ -86,6 +87,7 @@ public class DescribeAlarmsRequest extends AmazonWebServiceRequest implements
      * @param alarmNames
      *        A list of alarm names to retrieve information for.
      */
+
     public void setAlarmNames(java.util.Collection<String> alarmNames) {
         if (alarmNames == null) {
             this.alarmNames = null;
@@ -112,6 +114,7 @@ public class DescribeAlarmsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAlarmsRequest withAlarmNames(String... alarmNames) {
         if (this.alarmNames == null) {
             setAlarmNames(new com.amazonaws.internal.SdkInternalList<String>(
@@ -133,6 +136,7 @@ public class DescribeAlarmsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAlarmsRequest withAlarmNames(
             java.util.Collection<String> alarmNames) {
         setAlarmNames(alarmNames);
@@ -149,6 +153,7 @@ public class DescribeAlarmsRequest extends AmazonWebServiceRequest implements
      *        The alarm name prefix. <code>AlarmNames</code> cannot be specified
      *        if this parameter is specified.
      */
+
     public void setAlarmNamePrefix(String alarmNamePrefix) {
         this.alarmNamePrefix = alarmNamePrefix;
     }
@@ -162,6 +167,7 @@ public class DescribeAlarmsRequest extends AmazonWebServiceRequest implements
      * @return The alarm name prefix. <code>AlarmNames</code> cannot be
      *         specified if this parameter is specified.
      */
+
     public String getAlarmNamePrefix() {
         return this.alarmNamePrefix;
     }
@@ -178,6 +184,7 @@ public class DescribeAlarmsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAlarmsRequest withAlarmNamePrefix(String alarmNamePrefix) {
         setAlarmNamePrefix(alarmNamePrefix);
         return this;
@@ -192,6 +199,7 @@ public class DescribeAlarmsRequest extends AmazonWebServiceRequest implements
      *        The state value to be used in matching alarms.
      * @see StateValue
      */
+
     public void setStateValue(String stateValue) {
         this.stateValue = stateValue;
     }
@@ -204,6 +212,7 @@ public class DescribeAlarmsRequest extends AmazonWebServiceRequest implements
      * @return The state value to be used in matching alarms.
      * @see StateValue
      */
+
     public String getStateValue() {
         return this.stateValue;
     }
@@ -219,6 +228,7 @@ public class DescribeAlarmsRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see StateValue
      */
+
     public DescribeAlarmsRequest withStateValue(String stateValue) {
         setStateValue(stateValue);
         return this;
@@ -235,6 +245,7 @@ public class DescribeAlarmsRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see StateValue
      */
+
     public void setStateValue(StateValue stateValue) {
         this.stateValue = stateValue.toString();
     }
@@ -250,6 +261,7 @@ public class DescribeAlarmsRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see StateValue
      */
+
     public DescribeAlarmsRequest withStateValue(StateValue stateValue) {
         setStateValue(stateValue);
         return this;
@@ -263,6 +275,7 @@ public class DescribeAlarmsRequest extends AmazonWebServiceRequest implements
      * @param actionPrefix
      *        The action name prefix.
      */
+
     public void setActionPrefix(String actionPrefix) {
         this.actionPrefix = actionPrefix;
     }
@@ -274,6 +287,7 @@ public class DescribeAlarmsRequest extends AmazonWebServiceRequest implements
      * 
      * @return The action name prefix.
      */
+
     public String getActionPrefix() {
         return this.actionPrefix;
     }
@@ -288,6 +302,7 @@ public class DescribeAlarmsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAlarmsRequest withActionPrefix(String actionPrefix) {
         setActionPrefix(actionPrefix);
         return this;
@@ -301,6 +316,7 @@ public class DescribeAlarmsRequest extends AmazonWebServiceRequest implements
      * @param maxRecords
      *        The maximum number of alarm descriptions to retrieve.
      */
+
     public void setMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
     }
@@ -312,6 +328,7 @@ public class DescribeAlarmsRequest extends AmazonWebServiceRequest implements
      * 
      * @return The maximum number of alarm descriptions to retrieve.
      */
+
     public Integer getMaxRecords() {
         return this.maxRecords;
     }
@@ -326,6 +343,7 @@ public class DescribeAlarmsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAlarmsRequest withMaxRecords(Integer maxRecords) {
         setMaxRecords(maxRecords);
         return this;
@@ -341,6 +359,7 @@ public class DescribeAlarmsRequest extends AmazonWebServiceRequest implements
      *        The token returned by a previous call to indicate that there is
      *        more data available.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -354,6 +373,7 @@ public class DescribeAlarmsRequest extends AmazonWebServiceRequest implements
      * @return The token returned by a previous call to indicate that there is
      *         more data available.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -370,6 +390,7 @@ public class DescribeAlarmsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAlarmsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

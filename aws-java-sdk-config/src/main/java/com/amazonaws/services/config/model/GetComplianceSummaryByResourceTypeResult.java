@@ -47,6 +47,7 @@ public class GetComplianceSummaryByResourceTypeResult implements Serializable,
      *         with the request, the numbers are returned for each resource
      *         type. The maximum number returned is 100.
      */
+
     public java.util.List<ComplianceSummaryByResourceType> getComplianceSummariesByResourceType() {
         if (complianceSummariesByResourceType == null) {
             complianceSummariesByResourceType = new com.amazonaws.internal.SdkInternalList<ComplianceSummaryByResourceType>();
@@ -68,6 +69,7 @@ public class GetComplianceSummaryByResourceTypeResult implements Serializable,
      *        request, the numbers are returned for each resource type. The
      *        maximum number returned is 100.
      */
+
     public void setComplianceSummariesByResourceType(
             java.util.Collection<ComplianceSummaryByResourceType> complianceSummariesByResourceType) {
         if (complianceSummariesByResourceType == null) {
@@ -102,6 +104,7 @@ public class GetComplianceSummaryByResourceTypeResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetComplianceSummaryByResourceTypeResult withComplianceSummariesByResourceType(
             ComplianceSummaryByResourceType... complianceSummariesByResourceType) {
         if (this.complianceSummariesByResourceType == null) {
@@ -130,6 +133,7 @@ public class GetComplianceSummaryByResourceTypeResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetComplianceSummaryByResourceTypeResult withComplianceSummariesByResourceType(
             java.util.Collection<ComplianceSummaryByResourceType> complianceSummariesByResourceType) {
         setComplianceSummariesByResourceType(complianceSummariesByResourceType);

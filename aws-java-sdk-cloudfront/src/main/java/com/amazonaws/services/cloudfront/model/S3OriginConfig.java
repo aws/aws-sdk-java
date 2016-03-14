@@ -68,6 +68,7 @@ public class S3OriginConfig implements Serializable, Cloneable {
      *        CloudFront returned in the Id element when you created the origin
      *        access identity.
      */
+
     public void setOriginAccessIdentity(String originAccessIdentity) {
         this.originAccessIdentity = originAccessIdentity;
     }
@@ -100,6 +101,7 @@ public class S3OriginConfig implements Serializable, Cloneable {
      *         CloudFront returned in the Id element when you created the origin
      *         access identity.
      */
+
     public String getOriginAccessIdentity() {
         return this.originAccessIdentity;
     }
@@ -135,6 +137,7 @@ public class S3OriginConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public S3OriginConfig withOriginAccessIdentity(String originAccessIdentity) {
         setOriginAccessIdentity(originAccessIdentity);
         return this;

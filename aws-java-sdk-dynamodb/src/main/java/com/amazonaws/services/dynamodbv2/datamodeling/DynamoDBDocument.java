@@ -25,6 +25,7 @@ import java.lang.annotation.Target;
  * document or sub-document. Behaves exactly the same as {@link DynamoDBTable},
  * but without requiring you to specify a {@code tableName}.
  */
+@DynamoDB
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
 @Inherited

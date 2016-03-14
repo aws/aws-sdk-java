@@ -181,6 +181,7 @@ public class UpdateEnvironmentResult implements Serializable, Cloneable {
      * @param environmentName
      *        The name of this environment.
      */
+
     public void setEnvironmentName(String environmentName) {
         this.environmentName = environmentName;
     }
@@ -192,6 +193,7 @@ public class UpdateEnvironmentResult implements Serializable, Cloneable {
      * 
      * @return The name of this environment.
      */
+
     public String getEnvironmentName() {
         return this.environmentName;
     }
@@ -206,6 +208,7 @@ public class UpdateEnvironmentResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateEnvironmentResult withEnvironmentName(String environmentName) {
         setEnvironmentName(environmentName);
         return this;
@@ -219,6 +222,7 @@ public class UpdateEnvironmentResult implements Serializable, Cloneable {
      * @param environmentId
      *        The ID of this environment.
      */
+
     public void setEnvironmentId(String environmentId) {
         this.environmentId = environmentId;
     }
@@ -230,6 +234,7 @@ public class UpdateEnvironmentResult implements Serializable, Cloneable {
      * 
      * @return The ID of this environment.
      */
+
     public String getEnvironmentId() {
         return this.environmentId;
     }
@@ -244,6 +249,7 @@ public class UpdateEnvironmentResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateEnvironmentResult withEnvironmentId(String environmentId) {
         setEnvironmentId(environmentId);
         return this;
@@ -257,6 +263,7 @@ public class UpdateEnvironmentResult implements Serializable, Cloneable {
      * @param applicationName
      *        The name of the application associated with this environment.
      */
+
     public void setApplicationName(String applicationName) {
         this.applicationName = applicationName;
     }
@@ -268,6 +275,7 @@ public class UpdateEnvironmentResult implements Serializable, Cloneable {
      * 
      * @return The name of the application associated with this environment.
      */
+
     public String getApplicationName() {
         return this.applicationName;
     }
@@ -282,6 +290,7 @@ public class UpdateEnvironmentResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateEnvironmentResult withApplicationName(String applicationName) {
         setApplicationName(applicationName);
         return this;
@@ -295,6 +304,7 @@ public class UpdateEnvironmentResult implements Serializable, Cloneable {
      * @param versionLabel
      *        The application version deployed in this environment.
      */
+
     public void setVersionLabel(String versionLabel) {
         this.versionLabel = versionLabel;
     }
@@ -306,6 +316,7 @@ public class UpdateEnvironmentResult implements Serializable, Cloneable {
      * 
      * @return The application version deployed in this environment.
      */
+
     public String getVersionLabel() {
         return this.versionLabel;
     }
@@ -320,6 +331,7 @@ public class UpdateEnvironmentResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateEnvironmentResult withVersionLabel(String versionLabel) {
         setVersionLabel(versionLabel);
         return this;
@@ -335,6 +347,7 @@ public class UpdateEnvironmentResult implements Serializable, Cloneable {
      *        The name of the <code>SolutionStack</code> deployed with this
      *        environment.
      */
+
     public void setSolutionStackName(String solutionStackName) {
         this.solutionStackName = solutionStackName;
     }
@@ -348,6 +361,7 @@ public class UpdateEnvironmentResult implements Serializable, Cloneable {
      * @return The name of the <code>SolutionStack</code> deployed with this
      *         environment.
      */
+
     public String getSolutionStackName() {
         return this.solutionStackName;
     }
@@ -364,6 +378,7 @@ public class UpdateEnvironmentResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateEnvironmentResult withSolutionStackName(
             String solutionStackName) {
         setSolutionStackName(solutionStackName);
@@ -380,6 +395,7 @@ public class UpdateEnvironmentResult implements Serializable, Cloneable {
      *        The name of the configuration template used to originally launch
      *        this environment.
      */
+
     public void setTemplateName(String templateName) {
         this.templateName = templateName;
     }
@@ -393,6 +409,7 @@ public class UpdateEnvironmentResult implements Serializable, Cloneable {
      * @return The name of the configuration template used to originally launch
      *         this environment.
      */
+
     public String getTemplateName() {
         return this.templateName;
     }
@@ -409,6 +426,7 @@ public class UpdateEnvironmentResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateEnvironmentResult withTemplateName(String templateName) {
         setTemplateName(templateName);
         return this;
@@ -422,6 +440,7 @@ public class UpdateEnvironmentResult implements Serializable, Cloneable {
      * @param description
      *        Describes this environment.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -433,6 +452,7 @@ public class UpdateEnvironmentResult implements Serializable, Cloneable {
      * 
      * @return Describes this environment.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -447,6 +467,7 @@ public class UpdateEnvironmentResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateEnvironmentResult withDescription(String description) {
         setDescription(description);
         return this;
@@ -463,6 +484,7 @@ public class UpdateEnvironmentResult implements Serializable, Cloneable {
      *        LoadBalancer. For single-instance environments, the IP address of
      *        the instance.
      */
+
     public void setEndpointURL(String endpointURL) {
         this.endpointURL = endpointURL;
     }
@@ -477,6 +499,7 @@ public class UpdateEnvironmentResult implements Serializable, Cloneable {
      *         LoadBalancer. For single-instance environments, the IP address of
      *         the instance.
      */
+
     public String getEndpointURL() {
         return this.endpointURL;
     }
@@ -494,6 +517,7 @@ public class UpdateEnvironmentResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateEnvironmentResult withEndpointURL(String endpointURL) {
         setEndpointURL(endpointURL);
         return this;
@@ -507,6 +531,7 @@ public class UpdateEnvironmentResult implements Serializable, Cloneable {
      * @param cNAME
      *        The URL to the CNAME for this environment.
      */
+
     public void setCNAME(String cNAME) {
         this.cNAME = cNAME;
     }
@@ -518,6 +543,7 @@ public class UpdateEnvironmentResult implements Serializable, Cloneable {
      * 
      * @return The URL to the CNAME for this environment.
      */
+
     public String getCNAME() {
         return this.cNAME;
     }
@@ -532,6 +558,7 @@ public class UpdateEnvironmentResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateEnvironmentResult withCNAME(String cNAME) {
         setCNAME(cNAME);
         return this;
@@ -545,6 +572,7 @@ public class UpdateEnvironmentResult implements Serializable, Cloneable {
      * @param dateCreated
      *        The creation date for this environment.
      */
+
     public void setDateCreated(java.util.Date dateCreated) {
         this.dateCreated = dateCreated;
     }
@@ -556,6 +584,7 @@ public class UpdateEnvironmentResult implements Serializable, Cloneable {
      * 
      * @return The creation date for this environment.
      */
+
     public java.util.Date getDateCreated() {
         return this.dateCreated;
     }
@@ -570,6 +599,7 @@ public class UpdateEnvironmentResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateEnvironmentResult withDateCreated(java.util.Date dateCreated) {
         setDateCreated(dateCreated);
         return this;
@@ -583,6 +613,7 @@ public class UpdateEnvironmentResult implements Serializable, Cloneable {
      * @param dateUpdated
      *        The last modified date for this environment.
      */
+
     public void setDateUpdated(java.util.Date dateUpdated) {
         this.dateUpdated = dateUpdated;
     }
@@ -594,6 +625,7 @@ public class UpdateEnvironmentResult implements Serializable, Cloneable {
      * 
      * @return The last modified date for this environment.
      */
+
     public java.util.Date getDateUpdated() {
         return this.dateUpdated;
     }
@@ -608,6 +640,7 @@ public class UpdateEnvironmentResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateEnvironmentResult withDateUpdated(java.util.Date dateUpdated) {
         setDateUpdated(dateUpdated);
         return this;
@@ -642,6 +675,7 @@ public class UpdateEnvironmentResult implements Serializable, Cloneable {
      *        <li> <code>Terminated</code>: Environment is not running.</li>
      * @see EnvironmentStatus
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -674,6 +708,7 @@ public class UpdateEnvironmentResult implements Serializable, Cloneable {
      *         <li> <code>Terminated</code>: Environment is not running.</li>
      * @see EnvironmentStatus
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -709,6 +744,7 @@ public class UpdateEnvironmentResult implements Serializable, Cloneable {
      *         chained together.
      * @see EnvironmentStatus
      */
+
     public UpdateEnvironmentResult withStatus(String status) {
         setStatus(status);
         return this;
@@ -745,6 +781,7 @@ public class UpdateEnvironmentResult implements Serializable, Cloneable {
      *         chained together.
      * @see EnvironmentStatus
      */
+
     public void setStatus(EnvironmentStatus status) {
         this.status = status.toString();
     }
@@ -780,6 +817,7 @@ public class UpdateEnvironmentResult implements Serializable, Cloneable {
      *         chained together.
      * @see EnvironmentStatus
      */
+
     public UpdateEnvironmentResult withStatus(EnvironmentStatus status) {
         setStatus(status);
         return this;
@@ -806,6 +844,7 @@ public class UpdateEnvironmentResult implements Serializable, Cloneable {
      *        <p>
      *        <code>false:</code> There are no updates currently in progress.
      */
+
     public void setAbortableOperationInProgress(
             Boolean abortableOperationInProgress) {
         this.abortableOperationInProgress = abortableOperationInProgress;
@@ -831,6 +870,7 @@ public class UpdateEnvironmentResult implements Serializable, Cloneable {
      *         <p>
      *         <code>false:</code> There are no updates currently in progress.
      */
+
     public Boolean getAbortableOperationInProgress() {
         return this.abortableOperationInProgress;
     }
@@ -858,6 +898,7 @@ public class UpdateEnvironmentResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateEnvironmentResult withAbortableOperationInProgress(
             Boolean abortableOperationInProgress) {
         setAbortableOperationInProgress(abortableOperationInProgress);
@@ -884,6 +925,7 @@ public class UpdateEnvironmentResult implements Serializable, Cloneable {
      *         <p>
      *         <code>false:</code> There are no updates currently in progress.
      */
+
     public Boolean isAbortableOperationInProgress() {
         return this.abortableOperationInProgress;
     }
@@ -931,6 +973,7 @@ public class UpdateEnvironmentResult implements Serializable, Cloneable {
      *        Default: <code>Grey</code>
      * @see EnvironmentHealth
      */
+
     public void setHealth(String health) {
         this.health = health;
     }
@@ -977,6 +1020,7 @@ public class UpdateEnvironmentResult implements Serializable, Cloneable {
      *         Default: <code>Grey</code>
      * @see EnvironmentHealth
      */
+
     public String getHealth() {
         return this.health;
     }
@@ -1026,6 +1070,7 @@ public class UpdateEnvironmentResult implements Serializable, Cloneable {
      *         chained together.
      * @see EnvironmentHealth
      */
+
     public UpdateEnvironmentResult withHealth(String health) {
         setHealth(health);
         return this;
@@ -1076,6 +1121,7 @@ public class UpdateEnvironmentResult implements Serializable, Cloneable {
      *         chained together.
      * @see EnvironmentHealth
      */
+
     public void setHealth(EnvironmentHealth health) {
         this.health = health.toString();
     }
@@ -1125,6 +1171,7 @@ public class UpdateEnvironmentResult implements Serializable, Cloneable {
      *         chained together.
      * @see EnvironmentHealth
      */
+
     public UpdateEnvironmentResult withHealth(EnvironmentHealth health) {
         setHealth(health);
         return this;
@@ -1145,6 +1192,7 @@ public class UpdateEnvironmentResult implements Serializable, Cloneable {
      *        >Health Colors and Statuses</a>.
      * @see EnvironmentHealthStatus
      */
+
     public void setHealthStatus(String healthStatus) {
         this.healthStatus = healthStatus;
     }
@@ -1163,6 +1211,7 @@ public class UpdateEnvironmentResult implements Serializable, Cloneable {
      *         >Health Colors and Statuses</a>.
      * @see EnvironmentHealthStatus
      */
+
     public String getHealthStatus() {
         return this.healthStatus;
     }
@@ -1184,6 +1233,7 @@ public class UpdateEnvironmentResult implements Serializable, Cloneable {
      *         chained together.
      * @see EnvironmentHealthStatus
      */
+
     public UpdateEnvironmentResult withHealthStatus(String healthStatus) {
         setHealthStatus(healthStatus);
         return this;
@@ -1206,6 +1256,7 @@ public class UpdateEnvironmentResult implements Serializable, Cloneable {
      *         chained together.
      * @see EnvironmentHealthStatus
      */
+
     public void setHealthStatus(EnvironmentHealthStatus healthStatus) {
         this.healthStatus = healthStatus.toString();
     }
@@ -1227,6 +1278,7 @@ public class UpdateEnvironmentResult implements Serializable, Cloneable {
      *         chained together.
      * @see EnvironmentHealthStatus
      */
+
     public UpdateEnvironmentResult withHealthStatus(
             EnvironmentHealthStatus healthStatus) {
         setHealthStatus(healthStatus);
@@ -1241,6 +1293,7 @@ public class UpdateEnvironmentResult implements Serializable, Cloneable {
      * @param resources
      *        The description of the AWS resources used by this environment.
      */
+
     public void setResources(EnvironmentResourcesDescription resources) {
         this.resources = resources;
     }
@@ -1252,6 +1305,7 @@ public class UpdateEnvironmentResult implements Serializable, Cloneable {
      * 
      * @return The description of the AWS resources used by this environment.
      */
+
     public EnvironmentResourcesDescription getResources() {
         return this.resources;
     }
@@ -1266,6 +1320,7 @@ public class UpdateEnvironmentResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateEnvironmentResult withResources(
             EnvironmentResourcesDescription resources) {
         setResources(resources);
@@ -1280,6 +1335,7 @@ public class UpdateEnvironmentResult implements Serializable, Cloneable {
      * @param tier
      *        Describes the current tier of this environment.
      */
+
     public void setTier(EnvironmentTier tier) {
         this.tier = tier;
     }
@@ -1291,6 +1347,7 @@ public class UpdateEnvironmentResult implements Serializable, Cloneable {
      * 
      * @return Describes the current tier of this environment.
      */
+
     public EnvironmentTier getTier() {
         return this.tier;
     }
@@ -1305,6 +1362,7 @@ public class UpdateEnvironmentResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateEnvironmentResult withTier(EnvironmentTier tier) {
         setTier(tier);
         return this;
@@ -1317,6 +1375,7 @@ public class UpdateEnvironmentResult implements Serializable, Cloneable {
      * 
      * @return A list of links to other environments in the same group.
      */
+
     public java.util.List<EnvironmentLink> getEnvironmentLinks() {
         if (environmentLinks == null) {
             environmentLinks = new com.amazonaws.internal.SdkInternalList<EnvironmentLink>();
@@ -1332,6 +1391,7 @@ public class UpdateEnvironmentResult implements Serializable, Cloneable {
      * @param environmentLinks
      *        A list of links to other environments in the same group.
      */
+
     public void setEnvironmentLinks(
             java.util.Collection<EnvironmentLink> environmentLinks) {
         if (environmentLinks == null) {
@@ -1359,6 +1419,7 @@ public class UpdateEnvironmentResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateEnvironmentResult withEnvironmentLinks(
             EnvironmentLink... environmentLinks) {
         if (this.environmentLinks == null) {
@@ -1381,6 +1442,7 @@ public class UpdateEnvironmentResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateEnvironmentResult withEnvironmentLinks(
             java.util.Collection<EnvironmentLink> environmentLinks) {
         setEnvironmentLinks(environmentLinks);

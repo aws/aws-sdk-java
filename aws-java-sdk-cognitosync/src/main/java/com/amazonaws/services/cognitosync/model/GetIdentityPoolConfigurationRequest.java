@@ -49,6 +49,7 @@ public class GetIdentityPoolConfigurationRequest extends
      *        Cognito. This is the ID of the pool for which to return a
      *        configuration.
      */
+
     public void setIdentityPoolId(String identityPoolId) {
         this.identityPoolId = identityPoolId;
     }
@@ -65,6 +66,7 @@ public class GetIdentityPoolConfigurationRequest extends
      *         Cognito. This is the ID of the pool for which to return a
      *         configuration.
      */
+
     public String getIdentityPoolId() {
         return this.identityPoolId;
     }
@@ -84,6 +86,7 @@ public class GetIdentityPoolConfigurationRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetIdentityPoolConfigurationRequest withIdentityPoolId(
             String identityPoolId) {
         setIdentityPoolId(identityPoolId);

@@ -53,6 +53,7 @@ public class DescribePermissionsRequest extends AmazonWebServiceRequest
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *        >Using Identifiers</a>.
      */
+
     public void setIamUserArn(String iamUserArn) {
         this.iamUserArn = iamUserArn;
     }
@@ -69,6 +70,7 @@ public class DescribePermissionsRequest extends AmazonWebServiceRequest
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *         >Using Identifiers</a>.
      */
+
     public String getIamUserArn() {
         return this.iamUserArn;
     }
@@ -88,6 +90,7 @@ public class DescribePermissionsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribePermissionsRequest withIamUserArn(String iamUserArn) {
         setIamUserArn(iamUserArn);
         return this;
@@ -101,6 +104,7 @@ public class DescribePermissionsRequest extends AmazonWebServiceRequest
      * @param stackId
      *        The stack ID.
      */
+
     public void setStackId(String stackId) {
         this.stackId = stackId;
     }
@@ -112,6 +116,7 @@ public class DescribePermissionsRequest extends AmazonWebServiceRequest
      * 
      * @return The stack ID.
      */
+
     public String getStackId() {
         return this.stackId;
     }
@@ -126,6 +131,7 @@ public class DescribePermissionsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribePermissionsRequest withStackId(String stackId) {
         setStackId(stackId);
         return this;

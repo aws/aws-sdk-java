@@ -48,6 +48,7 @@ public class DescribeBatchPredictionsResult implements Serializable, Cloneable {
      * @return A list of <a>BatchPrediction</a> objects that meet the search
      *         criteria.
      */
+
     public java.util.List<BatchPrediction> getResults() {
         if (results == null) {
             results = new com.amazonaws.internal.SdkInternalList<BatchPrediction>();
@@ -64,6 +65,7 @@ public class DescribeBatchPredictionsResult implements Serializable, Cloneable {
      *        A list of <a>BatchPrediction</a> objects that meet the search
      *        criteria.
      */
+
     public void setResults(java.util.Collection<BatchPrediction> results) {
         if (results == null) {
             this.results = null;
@@ -91,6 +93,7 @@ public class DescribeBatchPredictionsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeBatchPredictionsResult withResults(
             BatchPrediction... results) {
         if (this.results == null) {
@@ -114,6 +117,7 @@ public class DescribeBatchPredictionsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeBatchPredictionsResult withResults(
             java.util.Collection<BatchPrediction> results) {
         setResults(results);
@@ -130,6 +134,7 @@ public class DescribeBatchPredictionsResult implements Serializable, Cloneable {
      *        The ID of the next page in the paginated results that indicates at
      *        least one more page follows.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -143,6 +148,7 @@ public class DescribeBatchPredictionsResult implements Serializable, Cloneable {
      * @return The ID of the next page in the paginated results that indicates
      *         at least one more page follows.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -159,6 +165,7 @@ public class DescribeBatchPredictionsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeBatchPredictionsResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

@@ -116,6 +116,7 @@ public class Workspace implements Serializable, Cloneable {
      * @param workspaceId
      *        The identifier of the WorkSpace.
      */
+
     public void setWorkspaceId(String workspaceId) {
         this.workspaceId = workspaceId;
     }
@@ -127,6 +128,7 @@ public class Workspace implements Serializable, Cloneable {
      * 
      * @return The identifier of the WorkSpace.
      */
+
     public String getWorkspaceId() {
         return this.workspaceId;
     }
@@ -141,6 +143,7 @@ public class Workspace implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Workspace withWorkspaceId(String workspaceId) {
         setWorkspaceId(workspaceId);
         return this;
@@ -156,6 +159,7 @@ public class Workspace implements Serializable, Cloneable {
      *        The identifier of the AWS Directory Service directory that the
      *        WorkSpace belongs to.
      */
+
     public void setDirectoryId(String directoryId) {
         this.directoryId = directoryId;
     }
@@ -169,6 +173,7 @@ public class Workspace implements Serializable, Cloneable {
      * @return The identifier of the AWS Directory Service directory that the
      *         WorkSpace belongs to.
      */
+
     public String getDirectoryId() {
         return this.directoryId;
     }
@@ -185,6 +190,7 @@ public class Workspace implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Workspace withDirectoryId(String directoryId) {
         setDirectoryId(directoryId);
         return this;
@@ -198,6 +204,7 @@ public class Workspace implements Serializable, Cloneable {
      * @param userName
      *        The user that the WorkSpace is assigned to.
      */
+
     public void setUserName(String userName) {
         this.userName = userName;
     }
@@ -209,6 +216,7 @@ public class Workspace implements Serializable, Cloneable {
      * 
      * @return The user that the WorkSpace is assigned to.
      */
+
     public String getUserName() {
         return this.userName;
     }
@@ -223,6 +231,7 @@ public class Workspace implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Workspace withUserName(String userName) {
         setUserName(userName);
         return this;
@@ -236,6 +245,7 @@ public class Workspace implements Serializable, Cloneable {
      * @param ipAddress
      *        The IP address of the WorkSpace.
      */
+
     public void setIpAddress(String ipAddress) {
         this.ipAddress = ipAddress;
     }
@@ -247,6 +257,7 @@ public class Workspace implements Serializable, Cloneable {
      * 
      * @return The IP address of the WorkSpace.
      */
+
     public String getIpAddress() {
         return this.ipAddress;
     }
@@ -261,6 +272,7 @@ public class Workspace implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Workspace withIpAddress(String ipAddress) {
         setIpAddress(ipAddress);
         return this;
@@ -275,6 +287,7 @@ public class Workspace implements Serializable, Cloneable {
      *        The operational state of the WorkSpace.
      * @see WorkspaceState
      */
+
     public void setState(String state) {
         this.state = state;
     }
@@ -287,6 +300,7 @@ public class Workspace implements Serializable, Cloneable {
      * @return The operational state of the WorkSpace.
      * @see WorkspaceState
      */
+
     public String getState() {
         return this.state;
     }
@@ -302,6 +316,7 @@ public class Workspace implements Serializable, Cloneable {
      *         chained together.
      * @see WorkspaceState
      */
+
     public Workspace withState(String state) {
         setState(state);
         return this;
@@ -318,6 +333,7 @@ public class Workspace implements Serializable, Cloneable {
      *         chained together.
      * @see WorkspaceState
      */
+
     public void setState(WorkspaceState state) {
         this.state = state.toString();
     }
@@ -333,6 +349,7 @@ public class Workspace implements Serializable, Cloneable {
      *         chained together.
      * @see WorkspaceState
      */
+
     public Workspace withState(WorkspaceState state) {
         setState(state);
         return this;
@@ -346,6 +363,7 @@ public class Workspace implements Serializable, Cloneable {
      * @param bundleId
      *        The identifier of the bundle that the WorkSpace was created from.
      */
+
     public void setBundleId(String bundleId) {
         this.bundleId = bundleId;
     }
@@ -357,6 +375,7 @@ public class Workspace implements Serializable, Cloneable {
      * 
      * @return The identifier of the bundle that the WorkSpace was created from.
      */
+
     public String getBundleId() {
         return this.bundleId;
     }
@@ -371,6 +390,7 @@ public class Workspace implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Workspace withBundleId(String bundleId) {
         setBundleId(bundleId);
         return this;
@@ -384,6 +404,7 @@ public class Workspace implements Serializable, Cloneable {
      * @param subnetId
      *        The identifier of the subnet that the WorkSpace is in.
      */
+
     public void setSubnetId(String subnetId) {
         this.subnetId = subnetId;
     }
@@ -395,6 +416,7 @@ public class Workspace implements Serializable, Cloneable {
      * 
      * @return The identifier of the subnet that the WorkSpace is in.
      */
+
     public String getSubnetId() {
         return this.subnetId;
     }
@@ -409,6 +431,7 @@ public class Workspace implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Workspace withSubnetId(String subnetId) {
         setSubnetId(subnetId);
         return this;
@@ -424,6 +447,7 @@ public class Workspace implements Serializable, Cloneable {
      *        If the WorkSpace could not be created, this contains a textual
      *        error message that describes the failure.
      */
+
     public void setErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;
     }
@@ -437,6 +461,7 @@ public class Workspace implements Serializable, Cloneable {
      * @return If the WorkSpace could not be created, this contains a textual
      *         error message that describes the failure.
      */
+
     public String getErrorMessage() {
         return this.errorMessage;
     }
@@ -453,6 +478,7 @@ public class Workspace implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Workspace withErrorMessage(String errorMessage) {
         setErrorMessage(errorMessage);
         return this;
@@ -467,6 +493,7 @@ public class Workspace implements Serializable, Cloneable {
      *        If the WorkSpace could not be created, this contains the error
      *        code.
      */
+
     public void setErrorCode(String errorCode) {
         this.errorCode = errorCode;
     }
@@ -479,6 +506,7 @@ public class Workspace implements Serializable, Cloneable {
      * @return If the WorkSpace could not be created, this contains the error
      *         code.
      */
+
     public String getErrorCode() {
         return this.errorCode;
     }
@@ -494,6 +522,7 @@ public class Workspace implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Workspace withErrorCode(String errorCode) {
         setErrorCode(errorCode);
         return this;
@@ -507,6 +536,7 @@ public class Workspace implements Serializable, Cloneable {
      * @param computerName
      *        The name of the WorkSpace as seen by the operating system.
      */
+
     public void setComputerName(String computerName) {
         this.computerName = computerName;
     }
@@ -518,6 +548,7 @@ public class Workspace implements Serializable, Cloneable {
      * 
      * @return The name of the WorkSpace as seen by the operating system.
      */
+
     public String getComputerName() {
         return this.computerName;
     }
@@ -532,6 +563,7 @@ public class Workspace implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Workspace withComputerName(String computerName) {
         setComputerName(computerName);
         return this;
@@ -545,6 +577,7 @@ public class Workspace implements Serializable, Cloneable {
      * @param volumeEncryptionKey
      *        The KMS key used to encrypt data stored on your WorkSpace.
      */
+
     public void setVolumeEncryptionKey(String volumeEncryptionKey) {
         this.volumeEncryptionKey = volumeEncryptionKey;
     }
@@ -556,6 +589,7 @@ public class Workspace implements Serializable, Cloneable {
      * 
      * @return The KMS key used to encrypt data stored on your WorkSpace.
      */
+
     public String getVolumeEncryptionKey() {
         return this.volumeEncryptionKey;
     }
@@ -570,6 +604,7 @@ public class Workspace implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Workspace withVolumeEncryptionKey(String volumeEncryptionKey) {
         setVolumeEncryptionKey(volumeEncryptionKey);
         return this;
@@ -585,6 +620,7 @@ public class Workspace implements Serializable, Cloneable {
      *        Specifies whether the data stored on the user volume, or D: drive,
      *        is encrypted.
      */
+
     public void setUserVolumeEncryptionEnabled(
             Boolean userVolumeEncryptionEnabled) {
         this.userVolumeEncryptionEnabled = userVolumeEncryptionEnabled;
@@ -599,6 +635,7 @@ public class Workspace implements Serializable, Cloneable {
      * @return Specifies whether the data stored on the user volume, or D:
      *         drive, is encrypted.
      */
+
     public Boolean getUserVolumeEncryptionEnabled() {
         return this.userVolumeEncryptionEnabled;
     }
@@ -615,6 +652,7 @@ public class Workspace implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Workspace withUserVolumeEncryptionEnabled(
             Boolean userVolumeEncryptionEnabled) {
         setUserVolumeEncryptionEnabled(userVolumeEncryptionEnabled);
@@ -630,6 +668,7 @@ public class Workspace implements Serializable, Cloneable {
      * @return Specifies whether the data stored on the user volume, or D:
      *         drive, is encrypted.
      */
+
     public Boolean isUserVolumeEncryptionEnabled() {
         return this.userVolumeEncryptionEnabled;
     }
@@ -644,6 +683,7 @@ public class Workspace implements Serializable, Cloneable {
      *        Specifies whether the data stored on the root volume, or C: drive,
      *        is encrypted.
      */
+
     public void setRootVolumeEncryptionEnabled(
             Boolean rootVolumeEncryptionEnabled) {
         this.rootVolumeEncryptionEnabled = rootVolumeEncryptionEnabled;
@@ -658,6 +698,7 @@ public class Workspace implements Serializable, Cloneable {
      * @return Specifies whether the data stored on the root volume, or C:
      *         drive, is encrypted.
      */
+
     public Boolean getRootVolumeEncryptionEnabled() {
         return this.rootVolumeEncryptionEnabled;
     }
@@ -674,6 +715,7 @@ public class Workspace implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Workspace withRootVolumeEncryptionEnabled(
             Boolean rootVolumeEncryptionEnabled) {
         setRootVolumeEncryptionEnabled(rootVolumeEncryptionEnabled);
@@ -689,6 +731,7 @@ public class Workspace implements Serializable, Cloneable {
      * @return Specifies whether the data stored on the root volume, or C:
      *         drive, is encrypted.
      */
+
     public Boolean isRootVolumeEncryptionEnabled() {
         return this.rootVolumeEncryptionEnabled;
     }

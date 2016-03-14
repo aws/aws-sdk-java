@@ -30,6 +30,7 @@ public class VolumeInfo implements Serializable, Cloneable {
     /**
      * @param volumeARN
      */
+
     public void setVolumeARN(String volumeARN) {
         this.volumeARN = volumeARN;
     }
@@ -37,6 +38,7 @@ public class VolumeInfo implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getVolumeARN() {
         return this.volumeARN;
     }
@@ -46,6 +48,7 @@ public class VolumeInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VolumeInfo withVolumeARN(String volumeARN) {
         setVolumeARN(volumeARN);
         return this;
@@ -54,6 +57,7 @@ public class VolumeInfo implements Serializable, Cloneable {
     /**
      * @param volumeType
      */
+
     public void setVolumeType(String volumeType) {
         this.volumeType = volumeType;
     }
@@ -61,6 +65,7 @@ public class VolumeInfo implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getVolumeType() {
         return this.volumeType;
     }
@@ -70,6 +75,7 @@ public class VolumeInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VolumeInfo withVolumeType(String volumeType) {
         setVolumeType(volumeType);
         return this;

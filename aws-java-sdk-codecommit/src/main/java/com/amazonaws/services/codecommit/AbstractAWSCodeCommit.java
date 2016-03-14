@@ -67,7 +67,18 @@ public class AbstractAWSCodeCommit implements AWSCodeCommit {
     }
 
     @Override
+    public GetCommitResult getCommit(GetCommitRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetRepositoryResult getRepository(GetRepositoryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetRepositoryTriggersResult getRepositoryTriggers(
+            GetRepositoryTriggersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -79,6 +90,18 @@ public class AbstractAWSCodeCommit implements AWSCodeCommit {
     @Override
     public ListRepositoriesResult listRepositories(
             ListRepositoriesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutRepositoryTriggersResult putRepositoryTriggers(
+            PutRepositoryTriggersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TestRepositoryTriggersResult testRepositoryTriggers(
+            TestRepositoryTriggersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

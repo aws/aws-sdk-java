@@ -74,6 +74,7 @@ public class InstanceStatus implements Serializable, Cloneable {
      * @param instanceId
      *        The ID of the instance.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -85,6 +86,7 @@ public class InstanceStatus implements Serializable, Cloneable {
      * 
      * @return The ID of the instance.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
@@ -99,6 +101,7 @@ public class InstanceStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceStatus withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;
@@ -112,6 +115,7 @@ public class InstanceStatus implements Serializable, Cloneable {
      * @param availabilityZone
      *        The Availability Zone of the instance.
      */
+
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
@@ -123,6 +127,7 @@ public class InstanceStatus implements Serializable, Cloneable {
      * 
      * @return The Availability Zone of the instance.
      */
+
     public String getAvailabilityZone() {
         return this.availabilityZone;
     }
@@ -137,6 +142,7 @@ public class InstanceStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceStatus withAvailabilityZone(String availabilityZone) {
         setAvailabilityZone(availabilityZone);
         return this;
@@ -149,6 +155,7 @@ public class InstanceStatus implements Serializable, Cloneable {
      * 
      * @return Any scheduled events associated with the instance.
      */
+
     public java.util.List<InstanceStatusEvent> getEvents() {
         if (events == null) {
             events = new com.amazonaws.internal.SdkInternalList<InstanceStatusEvent>();
@@ -164,6 +171,7 @@ public class InstanceStatus implements Serializable, Cloneable {
      * @param events
      *        Any scheduled events associated with the instance.
      */
+
     public void setEvents(java.util.Collection<InstanceStatusEvent> events) {
         if (events == null) {
             this.events = null;
@@ -190,6 +198,7 @@ public class InstanceStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceStatus withEvents(InstanceStatusEvent... events) {
         if (this.events == null) {
             setEvents(new com.amazonaws.internal.SdkInternalList<InstanceStatusEvent>(
@@ -211,6 +220,7 @@ public class InstanceStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceStatus withEvents(
             java.util.Collection<InstanceStatusEvent> events) {
         setEvents(events);
@@ -227,6 +237,7 @@ public class InstanceStatus implements Serializable, Cloneable {
      *        The intended state of the instance. <a>DescribeInstanceStatus</a>
      *        requires that an instance be in the <code>running</code> state.
      */
+
     public void setInstanceState(InstanceState instanceState) {
         this.instanceState = instanceState;
     }
@@ -240,6 +251,7 @@ public class InstanceStatus implements Serializable, Cloneable {
      * @return The intended state of the instance. <a>DescribeInstanceStatus</a>
      *         requires that an instance be in the <code>running</code> state.
      */
+
     public InstanceState getInstanceState() {
         return this.instanceState;
     }
@@ -256,6 +268,7 @@ public class InstanceStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceStatus withInstanceState(InstanceState instanceState) {
         setInstanceState(instanceState);
         return this;
@@ -273,6 +286,7 @@ public class InstanceStatus implements Serializable, Cloneable {
      *        the systems that support an instance, such as hardware failures
      *        and network connectivity problems.
      */
+
     public void setSystemStatus(InstanceStatusSummary systemStatus) {
         this.systemStatus = systemStatus;
     }
@@ -288,6 +302,7 @@ public class InstanceStatus implements Serializable, Cloneable {
      *         the systems that support an instance, such as hardware failures
      *         and network connectivity problems.
      */
+
     public InstanceStatusSummary getSystemStatus() {
         return this.systemStatus;
     }
@@ -306,6 +321,7 @@ public class InstanceStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceStatus withSystemStatus(InstanceStatusSummary systemStatus) {
         setSystemStatus(systemStatus);
         return this;
@@ -321,6 +337,7 @@ public class InstanceStatus implements Serializable, Cloneable {
      *        Reports impaired functionality that stems from issues internal to
      *        the instance, such as impaired reachability.
      */
+
     public void setInstanceStatus(InstanceStatusSummary instanceStatus) {
         this.instanceStatus = instanceStatus;
     }
@@ -334,6 +351,7 @@ public class InstanceStatus implements Serializable, Cloneable {
      * @return Reports impaired functionality that stems from issues internal to
      *         the instance, such as impaired reachability.
      */
+
     public InstanceStatusSummary getInstanceStatus() {
         return this.instanceStatus;
     }
@@ -350,6 +368,7 @@ public class InstanceStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceStatus withInstanceStatus(
             InstanceStatusSummary instanceStatus) {
         setInstanceStatus(instanceStatus);

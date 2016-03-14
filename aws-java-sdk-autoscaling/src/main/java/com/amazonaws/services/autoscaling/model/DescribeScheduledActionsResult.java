@@ -44,6 +44,7 @@ public class DescribeScheduledActionsResult implements Serializable, Cloneable {
      * 
      * @return The scheduled actions.
      */
+
     public java.util.List<ScheduledUpdateGroupAction> getScheduledUpdateGroupActions() {
         if (scheduledUpdateGroupActions == null) {
             scheduledUpdateGroupActions = new com.amazonaws.internal.SdkInternalList<ScheduledUpdateGroupAction>();
@@ -59,6 +60,7 @@ public class DescribeScheduledActionsResult implements Serializable, Cloneable {
      * @param scheduledUpdateGroupActions
      *        The scheduled actions.
      */
+
     public void setScheduledUpdateGroupActions(
             java.util.Collection<ScheduledUpdateGroupAction> scheduledUpdateGroupActions) {
         if (scheduledUpdateGroupActions == null) {
@@ -86,6 +88,7 @@ public class DescribeScheduledActionsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeScheduledActionsResult withScheduledUpdateGroupActions(
             ScheduledUpdateGroupAction... scheduledUpdateGroupActions) {
         if (this.scheduledUpdateGroupActions == null) {
@@ -108,6 +111,7 @@ public class DescribeScheduledActionsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeScheduledActionsResult withScheduledUpdateGroupActions(
             java.util.Collection<ScheduledUpdateGroupAction> scheduledUpdateGroupActions) {
         setScheduledUpdateGroupActions(scheduledUpdateGroupActions);
@@ -124,6 +128,7 @@ public class DescribeScheduledActionsResult implements Serializable, Cloneable {
      *        The token to use when requesting the next set of items. If there
      *        are no additional items to return, the string is empty.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -137,6 +142,7 @@ public class DescribeScheduledActionsResult implements Serializable, Cloneable {
      * @return The token to use when requesting the next set of items. If there
      *         are no additional items to return, the string is empty.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -153,6 +159,7 @@ public class DescribeScheduledActionsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeScheduledActionsResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

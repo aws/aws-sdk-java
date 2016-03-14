@@ -66,6 +66,7 @@ public class DeleteSigningCertificateRequest extends AmazonWebServiceRequest
      * @param userName
      *        The name of the user the signing certificate belongs to.
      */
+
     public void setUserName(String userName) {
         this.userName = userName;
     }
@@ -77,6 +78,7 @@ public class DeleteSigningCertificateRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the user the signing certificate belongs to.
      */
+
     public String getUserName() {
         return this.userName;
     }
@@ -91,6 +93,7 @@ public class DeleteSigningCertificateRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteSigningCertificateRequest withUserName(String userName) {
         setUserName(userName);
         return this;
@@ -104,6 +107,7 @@ public class DeleteSigningCertificateRequest extends AmazonWebServiceRequest
      * @param certificateId
      *        The ID of the signing certificate to delete.
      */
+
     public void setCertificateId(String certificateId) {
         this.certificateId = certificateId;
     }
@@ -115,6 +119,7 @@ public class DeleteSigningCertificateRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the signing certificate to delete.
      */
+
     public String getCertificateId() {
         return this.certificateId;
     }
@@ -129,6 +134,7 @@ public class DeleteSigningCertificateRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteSigningCertificateRequest withCertificateId(
             String certificateId) {
         setCertificateId(certificateId);

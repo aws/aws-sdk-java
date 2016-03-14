@@ -30,6 +30,7 @@ public class GetTestResult implements Serializable, Cloneable {
     /**
      * @param test
      */
+
     public void setTest(Test test) {
         this.test = test;
     }
@@ -37,6 +38,7 @@ public class GetTestResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Test getTest() {
         return this.test;
     }
@@ -46,6 +48,7 @@ public class GetTestResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetTestResult withTest(Test test) {
         setTest(test);
         return this;

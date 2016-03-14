@@ -74,6 +74,7 @@ public class LoadBalancerState implements Serializable, Cloneable {
      * @param loadBalancerName
      *        The name of the load balancer.
      */
+
     public void setLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
     }
@@ -85,6 +86,7 @@ public class LoadBalancerState implements Serializable, Cloneable {
      * 
      * @return The name of the load balancer.
      */
+
     public String getLoadBalancerName() {
         return this.loadBalancerName;
     }
@@ -99,6 +101,7 @@ public class LoadBalancerState implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LoadBalancerState withLoadBalancerName(String loadBalancerName) {
         setLoadBalancerName(loadBalancerName);
         return this;
@@ -167,6 +170,7 @@ public class LoadBalancerState implements Serializable, Cloneable {
      *        </p>
      *        </li>
      */
+
     public void setState(String state) {
         this.state = state;
     }
@@ -233,6 +237,7 @@ public class LoadBalancerState implements Serializable, Cloneable {
      *         </p>
      *         </li>
      */
+
     public String getState() {
         return this.state;
     }
@@ -302,6 +307,7 @@ public class LoadBalancerState implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LoadBalancerState withState(String state) {
         setState(state);
         return this;

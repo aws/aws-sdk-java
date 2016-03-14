@@ -41,6 +41,7 @@ public class UpdateSAMLProviderResult implements Serializable, Cloneable {
      *        The Amazon Resource Name (ARN) of the SAML provider that was
      *        updated.
      */
+
     public void setSAMLProviderArn(String sAMLProviderArn) {
         this.sAMLProviderArn = sAMLProviderArn;
     }
@@ -53,6 +54,7 @@ public class UpdateSAMLProviderResult implements Serializable, Cloneable {
      * @return The Amazon Resource Name (ARN) of the SAML provider that was
      *         updated.
      */
+
     public String getSAMLProviderArn() {
         return this.sAMLProviderArn;
     }
@@ -68,6 +70,7 @@ public class UpdateSAMLProviderResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateSAMLProviderResult withSAMLProviderArn(String sAMLProviderArn) {
         setSAMLProviderArn(sAMLProviderArn);
         return this;

@@ -37,6 +37,7 @@ public class DescribeConversionTasksResult implements Serializable, Cloneable {
      * 
      * @return Information about the conversion tasks.
      */
+
     public java.util.List<ConversionTask> getConversionTasks() {
         if (conversionTasks == null) {
             conversionTasks = new com.amazonaws.internal.SdkInternalList<ConversionTask>();
@@ -52,6 +53,7 @@ public class DescribeConversionTasksResult implements Serializable, Cloneable {
      * @param conversionTasks
      *        Information about the conversion tasks.
      */
+
     public void setConversionTasks(
             java.util.Collection<ConversionTask> conversionTasks) {
         if (conversionTasks == null) {
@@ -79,6 +81,7 @@ public class DescribeConversionTasksResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeConversionTasksResult withConversionTasks(
             ConversionTask... conversionTasks) {
         if (this.conversionTasks == null) {
@@ -101,6 +104,7 @@ public class DescribeConversionTasksResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeConversionTasksResult withConversionTasks(
             java.util.Collection<ConversionTask> conversionTasks) {
         setConversionTasks(conversionTasks);

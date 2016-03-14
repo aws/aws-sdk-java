@@ -46,6 +46,7 @@ public class DescribeAgentVersionsRequest extends AmazonWebServiceRequest
      * @param stackId
      *        The stack ID.
      */
+
     public void setStackId(String stackId) {
         this.stackId = stackId;
     }
@@ -57,6 +58,7 @@ public class DescribeAgentVersionsRequest extends AmazonWebServiceRequest
      * 
      * @return The stack ID.
      */
+
     public String getStackId() {
         return this.stackId;
     }
@@ -71,6 +73,7 @@ public class DescribeAgentVersionsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAgentVersionsRequest withStackId(String stackId) {
         setStackId(stackId);
         return this;
@@ -84,6 +87,7 @@ public class DescribeAgentVersionsRequest extends AmazonWebServiceRequest
      * @param configurationManager
      *        The configuration manager.
      */
+
     public void setConfigurationManager(
             StackConfigurationManager configurationManager) {
         this.configurationManager = configurationManager;
@@ -96,6 +100,7 @@ public class DescribeAgentVersionsRequest extends AmazonWebServiceRequest
      * 
      * @return The configuration manager.
      */
+
     public StackConfigurationManager getConfigurationManager() {
         return this.configurationManager;
     }
@@ -110,6 +115,7 @@ public class DescribeAgentVersionsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAgentVersionsRequest withConfigurationManager(
             StackConfigurationManager configurationManager) {
         setConfigurationManager(configurationManager);

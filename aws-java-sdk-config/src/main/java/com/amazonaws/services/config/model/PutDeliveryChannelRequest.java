@@ -46,6 +46,7 @@ public class PutDeliveryChannelRequest extends AmazonWebServiceRequest
      *        configuration information to an Amazon S3 bucket, and to an Amazon
      *        SNS topic.
      */
+
     public void setDeliveryChannel(DeliveryChannel deliveryChannel) {
         this.deliveryChannel = deliveryChannel;
     }
@@ -60,6 +61,7 @@ public class PutDeliveryChannelRequest extends AmazonWebServiceRequest
      *         configuration information to an Amazon S3 bucket, and to an
      *         Amazon SNS topic.
      */
+
     public DeliveryChannel getDeliveryChannel() {
         return this.deliveryChannel;
     }
@@ -77,6 +79,7 @@ public class PutDeliveryChannelRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutDeliveryChannelRequest withDeliveryChannel(
             DeliveryChannel deliveryChannel) {
         setDeliveryChannel(deliveryChannel);

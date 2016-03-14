@@ -58,6 +58,7 @@ public class UpdateIdentityPoolResult implements Serializable, Cloneable {
      * @param identityPoolId
      *        An identity pool ID in the format REGION:GUID.
      */
+
     public void setIdentityPoolId(String identityPoolId) {
         this.identityPoolId = identityPoolId;
     }
@@ -67,6 +68,7 @@ public class UpdateIdentityPoolResult implements Serializable, Cloneable {
      * 
      * @return An identity pool ID in the format REGION:GUID.
      */
+
     public String getIdentityPoolId() {
         return this.identityPoolId;
     }
@@ -79,6 +81,7 @@ public class UpdateIdentityPoolResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateIdentityPoolResult withIdentityPoolId(String identityPoolId) {
         setIdentityPoolId(identityPoolId);
         return this;
@@ -92,6 +95,7 @@ public class UpdateIdentityPoolResult implements Serializable, Cloneable {
      * @param identityPoolName
      *        A string that you provide.
      */
+
     public void setIdentityPoolName(String identityPoolName) {
         this.identityPoolName = identityPoolName;
     }
@@ -103,6 +107,7 @@ public class UpdateIdentityPoolResult implements Serializable, Cloneable {
      * 
      * @return A string that you provide.
      */
+
     public String getIdentityPoolName() {
         return this.identityPoolName;
     }
@@ -117,6 +122,7 @@ public class UpdateIdentityPoolResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateIdentityPoolResult withIdentityPoolName(String identityPoolName) {
         setIdentityPoolName(identityPoolName);
         return this;
@@ -128,6 +134,7 @@ public class UpdateIdentityPoolResult implements Serializable, Cloneable {
      * @param allowUnauthenticatedIdentities
      *        TRUE if the identity pool supports unauthenticated logins.
      */
+
     public void setAllowUnauthenticatedIdentities(
             Boolean allowUnauthenticatedIdentities) {
         this.allowUnauthenticatedIdentities = allowUnauthenticatedIdentities;
@@ -138,6 +145,7 @@ public class UpdateIdentityPoolResult implements Serializable, Cloneable {
      * 
      * @return TRUE if the identity pool supports unauthenticated logins.
      */
+
     public Boolean getAllowUnauthenticatedIdentities() {
         return this.allowUnauthenticatedIdentities;
     }
@@ -150,6 +158,7 @@ public class UpdateIdentityPoolResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateIdentityPoolResult withAllowUnauthenticatedIdentities(
             Boolean allowUnauthenticatedIdentities) {
         setAllowUnauthenticatedIdentities(allowUnauthenticatedIdentities);
@@ -161,6 +170,7 @@ public class UpdateIdentityPoolResult implements Serializable, Cloneable {
      * 
      * @return TRUE if the identity pool supports unauthenticated logins.
      */
+
     public Boolean isAllowUnauthenticatedIdentities() {
         return this.allowUnauthenticatedIdentities;
     }
@@ -173,6 +183,7 @@ public class UpdateIdentityPoolResult implements Serializable, Cloneable {
      * @return Optional key:value pairs mapping provider names to provider app
      *         IDs.
      */
+
     public java.util.Map<String, String> getSupportedLoginProviders() {
         return supportedLoginProviders;
     }
@@ -186,6 +197,7 @@ public class UpdateIdentityPoolResult implements Serializable, Cloneable {
      *        Optional key:value pairs mapping provider names to provider app
      *        IDs.
      */
+
     public void setSupportedLoginProviders(
             java.util.Map<String, String> supportedLoginProviders) {
         this.supportedLoginProviders = supportedLoginProviders;
@@ -202,6 +214,7 @@ public class UpdateIdentityPoolResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateIdentityPoolResult withSupportedLoginProviders(
             java.util.Map<String, String> supportedLoginProviders) {
         setSupportedLoginProviders(supportedLoginProviders);
@@ -225,6 +238,7 @@ public class UpdateIdentityPoolResult implements Serializable, Cloneable {
      * Returns a reference to this object so that method calls can be chained
      * together.
      */
+
     public UpdateIdentityPoolResult clearSupportedLoginProvidersEntries() {
         this.supportedLoginProviders = null;
         return this;
@@ -238,6 +252,7 @@ public class UpdateIdentityPoolResult implements Serializable, Cloneable {
      * @param developerProviderName
      *        The "domain" by which Cognito will refer to your users.
      */
+
     public void setDeveloperProviderName(String developerProviderName) {
         this.developerProviderName = developerProviderName;
     }
@@ -249,6 +264,7 @@ public class UpdateIdentityPoolResult implements Serializable, Cloneable {
      * 
      * @return The "domain" by which Cognito will refer to your users.
      */
+
     public String getDeveloperProviderName() {
         return this.developerProviderName;
     }
@@ -263,6 +279,7 @@ public class UpdateIdentityPoolResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateIdentityPoolResult withDeveloperProviderName(
             String developerProviderName) {
         setDeveloperProviderName(developerProviderName);
@@ -276,6 +293,7 @@ public class UpdateIdentityPoolResult implements Serializable, Cloneable {
      * 
      * @return A list of OpendID Connect provider ARNs.
      */
+
     public java.util.List<String> getOpenIdConnectProviderARNs() {
         return openIdConnectProviderARNs;
     }
@@ -288,6 +306,7 @@ public class UpdateIdentityPoolResult implements Serializable, Cloneable {
      * @param openIdConnectProviderARNs
      *        A list of OpendID Connect provider ARNs.
      */
+
     public void setOpenIdConnectProviderARNs(
             java.util.Collection<String> openIdConnectProviderARNs) {
         if (openIdConnectProviderARNs == null) {
@@ -315,6 +334,7 @@ public class UpdateIdentityPoolResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateIdentityPoolResult withOpenIdConnectProviderARNs(
             String... openIdConnectProviderARNs) {
         if (this.openIdConnectProviderARNs == null) {
@@ -337,6 +357,7 @@ public class UpdateIdentityPoolResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateIdentityPoolResult withOpenIdConnectProviderARNs(
             java.util.Collection<String> openIdConnectProviderARNs) {
         setOpenIdConnectProviderARNs(openIdConnectProviderARNs);

@@ -40,6 +40,7 @@ public class DescribeTrailsResult implements Serializable, Cloneable {
      * 
      * @return The list of trail objects.
      */
+
     public java.util.List<Trail> getTrailList() {
         if (trailList == null) {
             trailList = new com.amazonaws.internal.SdkInternalList<Trail>();
@@ -55,6 +56,7 @@ public class DescribeTrailsResult implements Serializable, Cloneable {
      * @param trailList
      *        The list of trail objects.
      */
+
     public void setTrailList(java.util.Collection<Trail> trailList) {
         if (trailList == null) {
             this.trailList = null;
@@ -81,6 +83,7 @@ public class DescribeTrailsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTrailsResult withTrailList(Trail... trailList) {
         if (this.trailList == null) {
             setTrailList(new com.amazonaws.internal.SdkInternalList<Trail>(
@@ -102,6 +105,7 @@ public class DescribeTrailsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTrailsResult withTrailList(
             java.util.Collection<Trail> trailList) {
         setTrailList(trailList);

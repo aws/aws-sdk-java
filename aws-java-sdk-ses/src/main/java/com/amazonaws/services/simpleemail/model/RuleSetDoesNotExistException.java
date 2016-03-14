@@ -42,6 +42,7 @@ public class RuleSetDoesNotExistException extends AmazonServiceException {
     /**
      * @param name
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -49,6 +50,7 @@ public class RuleSetDoesNotExistException extends AmazonServiceException {
     /**
      * @return
      */
+
     public String getName() {
         return this.name;
     }
@@ -58,6 +60,7 @@ public class RuleSetDoesNotExistException extends AmazonServiceException {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RuleSetDoesNotExistException withName(String name) {
         setName(name);
         return this;

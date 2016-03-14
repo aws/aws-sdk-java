@@ -30,6 +30,7 @@ public class EncryptionKey implements Serializable, Cloneable {
     /**
      * @param id
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -37,6 +38,7 @@ public class EncryptionKey implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getId() {
         return this.id;
     }
@@ -46,6 +48,7 @@ public class EncryptionKey implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EncryptionKey withId(String id) {
         setId(id);
         return this;
@@ -55,6 +58,7 @@ public class EncryptionKey implements Serializable, Cloneable {
      * @param type
      * @see EncryptionKeyType
      */
+
     public void setType(String type) {
         this.type = type;
     }
@@ -63,6 +67,7 @@ public class EncryptionKey implements Serializable, Cloneable {
      * @return
      * @see EncryptionKeyType
      */
+
     public String getType() {
         return this.type;
     }
@@ -73,6 +78,7 @@ public class EncryptionKey implements Serializable, Cloneable {
      *         chained together.
      * @see EncryptionKeyType
      */
+
     public EncryptionKey withType(String type) {
         setType(type);
         return this;
@@ -84,6 +90,7 @@ public class EncryptionKey implements Serializable, Cloneable {
      *         chained together.
      * @see EncryptionKeyType
      */
+
     public void setType(EncryptionKeyType type) {
         this.type = type.toString();
     }
@@ -94,6 +101,7 @@ public class EncryptionKey implements Serializable, Cloneable {
      *         chained together.
      * @see EncryptionKeyType
      */
+
     public EncryptionKey withType(EncryptionKeyType type) {
         setType(type);
         return this;

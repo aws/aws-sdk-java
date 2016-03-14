@@ -83,6 +83,7 @@ public class AssumeRoleResult implements Serializable, Cloneable {
      *        less than 4096 bytes, but that can vary. Also, future updates to
      *        AWS might require larger sizes.
      */
+
     public void setCredentials(Credentials credentials) {
         this.credentials = credentials;
     }
@@ -109,6 +110,7 @@ public class AssumeRoleResult implements Serializable, Cloneable {
      *         less than 4096 bytes, but that can vary. Also, future updates to
      *         AWS might require larger sizes.
      */
+
     public Credentials getCredentials() {
         return this.credentials;
     }
@@ -138,6 +140,7 @@ public class AssumeRoleResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssumeRoleResult withCredentials(Credentials credentials) {
         setCredentials(credentials);
         return this;
@@ -162,6 +165,7 @@ public class AssumeRoleResult implements Serializable, Cloneable {
      *        <code>RoleSessionName</code> that you specified when you called
      *        <code>AssumeRole</code>.
      */
+
     public void setAssumedRoleUser(AssumedRoleUser assumedRoleUser) {
         this.assumedRoleUser = assumedRoleUser;
     }
@@ -184,6 +188,7 @@ public class AssumeRoleResult implements Serializable, Cloneable {
      *         <code>RoleSessionName</code> that you specified when you called
      *         <code>AssumeRole</code>.
      */
+
     public AssumedRoleUser getAssumedRoleUser() {
         return this.assumedRoleUser;
     }
@@ -209,6 +214,7 @@ public class AssumeRoleResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssumeRoleResult withAssumedRoleUser(AssumedRoleUser assumedRoleUser) {
         setAssumedRoleUser(assumedRoleUser);
         return this;
@@ -227,6 +233,7 @@ public class AssumeRoleResult implements Serializable, Cloneable {
      *        than 100 percent, which means the policy exceeded the allowed
      *        space.
      */
+
     public void setPackedPolicySize(Integer packedPolicySize) {
         this.packedPolicySize = packedPolicySize;
     }
@@ -243,6 +250,7 @@ public class AssumeRoleResult implements Serializable, Cloneable {
      *         greater than 100 percent, which means the policy exceeded the
      *         allowed space.
      */
+
     public Integer getPackedPolicySize() {
         return this.packedPolicySize;
     }
@@ -262,6 +270,7 @@ public class AssumeRoleResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssumeRoleResult withPackedPolicySize(Integer packedPolicySize) {
         setPackedPolicySize(packedPolicySize);
         return this;

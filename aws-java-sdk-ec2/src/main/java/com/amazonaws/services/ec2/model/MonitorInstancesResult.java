@@ -37,6 +37,7 @@ public class MonitorInstancesResult implements Serializable, Cloneable {
      * 
      * @return Monitoring information for one or more instances.
      */
+
     public java.util.List<InstanceMonitoring> getInstanceMonitorings() {
         if (instanceMonitorings == null) {
             instanceMonitorings = new com.amazonaws.internal.SdkInternalList<InstanceMonitoring>();
@@ -52,6 +53,7 @@ public class MonitorInstancesResult implements Serializable, Cloneable {
      * @param instanceMonitorings
      *        Monitoring information for one or more instances.
      */
+
     public void setInstanceMonitorings(
             java.util.Collection<InstanceMonitoring> instanceMonitorings) {
         if (instanceMonitorings == null) {
@@ -79,6 +81,7 @@ public class MonitorInstancesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MonitorInstancesResult withInstanceMonitorings(
             InstanceMonitoring... instanceMonitorings) {
         if (this.instanceMonitorings == null) {
@@ -101,6 +104,7 @@ public class MonitorInstancesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MonitorInstancesResult withInstanceMonitorings(
             java.util.Collection<InstanceMonitoring> instanceMonitorings) {
         setInstanceMonitorings(instanceMonitorings);

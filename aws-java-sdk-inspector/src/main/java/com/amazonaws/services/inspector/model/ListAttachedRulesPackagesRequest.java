@@ -58,6 +58,7 @@ public class ListAttachedRulesPackagesRequest extends AmazonWebServiceRequest
      *        The ARN specifying the assessment whose rules packages you want to
      *        list.
      */
+
     public void setAssessmentArn(String assessmentArn) {
         this.assessmentArn = assessmentArn;
     }
@@ -70,6 +71,7 @@ public class ListAttachedRulesPackagesRequest extends AmazonWebServiceRequest
      * @return The ARN specifying the assessment whose rules packages you want
      *         to list.
      */
+
     public String getAssessmentArn() {
         return this.assessmentArn;
     }
@@ -85,6 +87,7 @@ public class ListAttachedRulesPackagesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListAttachedRulesPackagesRequest withAssessmentArn(
             String assessmentArn) {
         setAssessmentArn(assessmentArn);
@@ -107,6 +110,7 @@ public class ListAttachedRulesPackagesRequest extends AmazonWebServiceRequest
      *        action fill <b>nextToken</b> in the request with the value of
      *        <b>NextToken</b> from previous response to continue listing data.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -126,6 +130,7 @@ public class ListAttachedRulesPackagesRequest extends AmazonWebServiceRequest
      *         action fill <b>nextToken</b> in the request with the value of
      *         <b>NextToken</b> from previous response to continue listing data.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -148,6 +153,7 @@ public class ListAttachedRulesPackagesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListAttachedRulesPackagesRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -164,6 +170,7 @@ public class ListAttachedRulesPackagesRequest extends AmazonWebServiceRequest
      *        you want in the response. The default value is 10. The maximum
      *        value is 500.
      */
+
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
     }
@@ -178,6 +185,7 @@ public class ListAttachedRulesPackagesRequest extends AmazonWebServiceRequest
      *         items you want in the response. The default value is 10. The
      *         maximum value is 500.
      */
+
     public Integer getMaxResults() {
         return this.maxResults;
     }
@@ -195,6 +203,7 @@ public class ListAttachedRulesPackagesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListAttachedRulesPackagesRequest withMaxResults(Integer maxResults) {
         setMaxResults(maxResults);
         return this;

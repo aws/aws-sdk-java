@@ -52,6 +52,7 @@ public class SetInstanceProtectionRequest extends AmazonWebServiceRequest
      * 
      * @return One or more instance IDs.
      */
+
     public java.util.List<String> getInstanceIds() {
         if (instanceIds == null) {
             instanceIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -67,6 +68,7 @@ public class SetInstanceProtectionRequest extends AmazonWebServiceRequest
      * @param instanceIds
      *        One or more instance IDs.
      */
+
     public void setInstanceIds(java.util.Collection<String> instanceIds) {
         if (instanceIds == null) {
             this.instanceIds = null;
@@ -93,6 +95,7 @@ public class SetInstanceProtectionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetInstanceProtectionRequest withInstanceIds(String... instanceIds) {
         if (this.instanceIds == null) {
             setInstanceIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -114,6 +117,7 @@ public class SetInstanceProtectionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetInstanceProtectionRequest withInstanceIds(
             java.util.Collection<String> instanceIds) {
         setInstanceIds(instanceIds);
@@ -128,6 +132,7 @@ public class SetInstanceProtectionRequest extends AmazonWebServiceRequest
      * @param autoScalingGroupName
      *        The name of the group.
      */
+
     public void setAutoScalingGroupName(String autoScalingGroupName) {
         this.autoScalingGroupName = autoScalingGroupName;
     }
@@ -139,6 +144,7 @@ public class SetInstanceProtectionRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the group.
      */
+
     public String getAutoScalingGroupName() {
         return this.autoScalingGroupName;
     }
@@ -153,6 +159,7 @@ public class SetInstanceProtectionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetInstanceProtectionRequest withAutoScalingGroupName(
             String autoScalingGroupName) {
         setAutoScalingGroupName(autoScalingGroupName);
@@ -169,6 +176,7 @@ public class SetInstanceProtectionRequest extends AmazonWebServiceRequest
      *        Indicates whether the instance is protected from termination by
      *        Auto Scaling when scaling in.
      */
+
     public void setProtectedFromScaleIn(Boolean protectedFromScaleIn) {
         this.protectedFromScaleIn = protectedFromScaleIn;
     }
@@ -182,6 +190,7 @@ public class SetInstanceProtectionRequest extends AmazonWebServiceRequest
      * @return Indicates whether the instance is protected from termination by
      *         Auto Scaling when scaling in.
      */
+
     public Boolean getProtectedFromScaleIn() {
         return this.protectedFromScaleIn;
     }
@@ -198,6 +207,7 @@ public class SetInstanceProtectionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetInstanceProtectionRequest withProtectedFromScaleIn(
             Boolean protectedFromScaleIn) {
         setProtectedFromScaleIn(protectedFromScaleIn);
@@ -213,6 +223,7 @@ public class SetInstanceProtectionRequest extends AmazonWebServiceRequest
      * @return Indicates whether the instance is protected from termination by
      *         Auto Scaling when scaling in.
      */
+
     public Boolean isProtectedFromScaleIn() {
         return this.protectedFromScaleIn;
     }

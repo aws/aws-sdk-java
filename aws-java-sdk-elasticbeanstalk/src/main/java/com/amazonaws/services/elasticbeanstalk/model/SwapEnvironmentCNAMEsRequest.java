@@ -98,6 +98,7 @@ public class SwapEnvironmentCNAMEsRequest extends AmazonWebServiceRequest
      *        you specify the <code>SourceEnvironmentId</code>, you must specify
      *        the <code>DestinationEnvironmentId</code>.
      */
+
     public void setSourceEnvironmentId(String sourceEnvironmentId) {
         this.sourceEnvironmentId = sourceEnvironmentId;
     }
@@ -121,6 +122,7 @@ public class SwapEnvironmentCNAMEsRequest extends AmazonWebServiceRequest
      *         you specify the <code>SourceEnvironmentId</code>, you must
      *         specify the <code>DestinationEnvironmentId</code>.
      */
+
     public String getSourceEnvironmentId() {
         return this.sourceEnvironmentId;
     }
@@ -147,6 +149,7 @@ public class SwapEnvironmentCNAMEsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SwapEnvironmentCNAMEsRequest withSourceEnvironmentId(
             String sourceEnvironmentId) {
         setSourceEnvironmentId(sourceEnvironmentId);
@@ -173,6 +176,7 @@ public class SwapEnvironmentCNAMEsRequest extends AmazonWebServiceRequest
      *        you specify the <code>SourceEnvironmentName</code>, you must
      *        specify the <code>DestinationEnvironmentName</code>.
      */
+
     public void setSourceEnvironmentName(String sourceEnvironmentName) {
         this.sourceEnvironmentName = sourceEnvironmentName;
     }
@@ -196,6 +200,7 @@ public class SwapEnvironmentCNAMEsRequest extends AmazonWebServiceRequest
      *         you specify the <code>SourceEnvironmentName</code>, you must
      *         specify the <code>DestinationEnvironmentName</code>.
      */
+
     public String getSourceEnvironmentName() {
         return this.sourceEnvironmentName;
     }
@@ -222,6 +227,7 @@ public class SwapEnvironmentCNAMEsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SwapEnvironmentCNAMEsRequest withSourceEnvironmentName(
             String sourceEnvironmentName) {
         setSourceEnvironmentName(sourceEnvironmentName);
@@ -249,6 +255,7 @@ public class SwapEnvironmentCNAMEsRequest extends AmazonWebServiceRequest
      *        both. You must specify the <code>SourceEnvironmentId</code> with
      *        the <code>DestinationEnvironmentId</code>.
      */
+
     public void setDestinationEnvironmentId(String destinationEnvironmentId) {
         this.destinationEnvironmentId = destinationEnvironmentId;
     }
@@ -273,6 +280,7 @@ public class SwapEnvironmentCNAMEsRequest extends AmazonWebServiceRequest
      *         both. You must specify the <code>SourceEnvironmentId</code> with
      *         the <code>DestinationEnvironmentId</code>.
      */
+
     public String getDestinationEnvironmentId() {
         return this.destinationEnvironmentId;
     }
@@ -300,6 +308,7 @@ public class SwapEnvironmentCNAMEsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SwapEnvironmentCNAMEsRequest withDestinationEnvironmentId(
             String destinationEnvironmentId) {
         setDestinationEnvironmentId(destinationEnvironmentId);
@@ -327,6 +336,7 @@ public class SwapEnvironmentCNAMEsRequest extends AmazonWebServiceRequest
      *        both. You must specify the <code>SourceEnvironmentName</code> with
      *        the <code>DestinationEnvironmentName</code>.
      */
+
     public void setDestinationEnvironmentName(String destinationEnvironmentName) {
         this.destinationEnvironmentName = destinationEnvironmentName;
     }
@@ -351,6 +361,7 @@ public class SwapEnvironmentCNAMEsRequest extends AmazonWebServiceRequest
      *         both. You must specify the <code>SourceEnvironmentName</code>
      *         with the <code>DestinationEnvironmentName</code>.
      */
+
     public String getDestinationEnvironmentName() {
         return this.destinationEnvironmentName;
     }
@@ -378,6 +389,7 @@ public class SwapEnvironmentCNAMEsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SwapEnvironmentCNAMEsRequest withDestinationEnvironmentName(
             String destinationEnvironmentName) {
         setDestinationEnvironmentName(destinationEnvironmentName);

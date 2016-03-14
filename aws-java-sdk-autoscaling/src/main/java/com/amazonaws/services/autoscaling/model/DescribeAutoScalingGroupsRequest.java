@@ -52,6 +52,7 @@ public class DescribeAutoScalingGroupsRequest extends AmazonWebServiceRequest
      * 
      * @return The group names.
      */
+
     public java.util.List<String> getAutoScalingGroupNames() {
         if (autoScalingGroupNames == null) {
             autoScalingGroupNames = new com.amazonaws.internal.SdkInternalList<String>();
@@ -67,6 +68,7 @@ public class DescribeAutoScalingGroupsRequest extends AmazonWebServiceRequest
      * @param autoScalingGroupNames
      *        The group names.
      */
+
     public void setAutoScalingGroupNames(
             java.util.Collection<String> autoScalingGroupNames) {
         if (autoScalingGroupNames == null) {
@@ -94,6 +96,7 @@ public class DescribeAutoScalingGroupsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAutoScalingGroupsRequest withAutoScalingGroupNames(
             String... autoScalingGroupNames) {
         if (this.autoScalingGroupNames == null) {
@@ -116,6 +119,7 @@ public class DescribeAutoScalingGroupsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAutoScalingGroupsRequest withAutoScalingGroupNames(
             java.util.Collection<String> autoScalingGroupNames) {
         setAutoScalingGroupNames(autoScalingGroupNames);
@@ -132,6 +136,7 @@ public class DescribeAutoScalingGroupsRequest extends AmazonWebServiceRequest
      *        The token for the next set of items to return. (You received this
      *        token from a previous call.)
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -145,6 +150,7 @@ public class DescribeAutoScalingGroupsRequest extends AmazonWebServiceRequest
      * @return The token for the next set of items to return. (You received this
      *         token from a previous call.)
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -161,6 +167,7 @@ public class DescribeAutoScalingGroupsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAutoScalingGroupsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -174,6 +181,7 @@ public class DescribeAutoScalingGroupsRequest extends AmazonWebServiceRequest
      * @param maxRecords
      *        The maximum number of items to return with this call.
      */
+
     public void setMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
     }
@@ -185,6 +193,7 @@ public class DescribeAutoScalingGroupsRequest extends AmazonWebServiceRequest
      * 
      * @return The maximum number of items to return with this call.
      */
+
     public Integer getMaxRecords() {
         return this.maxRecords;
     }
@@ -199,6 +208,7 @@ public class DescribeAutoScalingGroupsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAutoScalingGroupsRequest withMaxRecords(Integer maxRecords) {
         setMaxRecords(maxRecords);
         return this;

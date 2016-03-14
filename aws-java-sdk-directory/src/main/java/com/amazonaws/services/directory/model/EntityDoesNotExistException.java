@@ -43,6 +43,7 @@ public class EntityDoesNotExistException extends AmazonServiceException {
     /**
      * @param requestId
      */
+
     public void setRequestId(String requestId) {
         this.requestId = requestId;
     }
@@ -50,6 +51,7 @@ public class EntityDoesNotExistException extends AmazonServiceException {
     /**
      * @return
      */
+
     public String getRequestId() {
         return this.requestId;
     }
@@ -59,6 +61,7 @@ public class EntityDoesNotExistException extends AmazonServiceException {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EntityDoesNotExistException withRequestId(String requestId) {
         setRequestId(requestId);
         return this;

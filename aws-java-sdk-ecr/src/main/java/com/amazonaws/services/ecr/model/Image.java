@@ -60,6 +60,7 @@ public class Image implements Serializable, Cloneable {
      *        The AWS account ID associated with the registry containing the
      *        image.
      */
+
     public void setRegistryId(String registryId) {
         this.registryId = registryId;
     }
@@ -72,6 +73,7 @@ public class Image implements Serializable, Cloneable {
      * @return The AWS account ID associated with the registry containing the
      *         image.
      */
+
     public String getRegistryId() {
         return this.registryId;
     }
@@ -87,6 +89,7 @@ public class Image implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Image withRegistryId(String registryId) {
         setRegistryId(registryId);
         return this;
@@ -100,6 +103,7 @@ public class Image implements Serializable, Cloneable {
      * @param repositoryName
      *        The name of the repository associated with the image.
      */
+
     public void setRepositoryName(String repositoryName) {
         this.repositoryName = repositoryName;
     }
@@ -111,6 +115,7 @@ public class Image implements Serializable, Cloneable {
      * 
      * @return The name of the repository associated with the image.
      */
+
     public String getRepositoryName() {
         return this.repositoryName;
     }
@@ -125,6 +130,7 @@ public class Image implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Image withRepositoryName(String repositoryName) {
         setRepositoryName(repositoryName);
         return this;
@@ -140,6 +146,7 @@ public class Image implements Serializable, Cloneable {
      *        An object containing the image tag and image digest associated
      *        with an image.
      */
+
     public void setImageId(ImageIdentifier imageId) {
         this.imageId = imageId;
     }
@@ -153,6 +160,7 @@ public class Image implements Serializable, Cloneable {
      * @return An object containing the image tag and image digest associated
      *         with an image.
      */
+
     public ImageIdentifier getImageId() {
         return this.imageId;
     }
@@ -169,6 +177,7 @@ public class Image implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Image withImageId(ImageIdentifier imageId) {
         setImageId(imageId);
         return this;
@@ -182,6 +191,7 @@ public class Image implements Serializable, Cloneable {
      * @param imageManifest
      *        The image manifest associated with the image.
      */
+
     public void setImageManifest(String imageManifest) {
         this.imageManifest = imageManifest;
     }
@@ -193,6 +203,7 @@ public class Image implements Serializable, Cloneable {
      * 
      * @return The image manifest associated with the image.
      */
+
     public String getImageManifest() {
         return this.imageManifest;
     }
@@ -207,6 +218,7 @@ public class Image implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Image withImageManifest(String imageManifest) {
         setImageManifest(imageManifest);
         return this;

@@ -69,6 +69,7 @@ public class S3Location implements Serializable, Cloneable {
      * @param s3Bucket
      *        The Amazon S3 bucket where the data is located.
      */
+
     public void setS3Bucket(String s3Bucket) {
         this.s3Bucket = s3Bucket;
     }
@@ -80,6 +81,7 @@ public class S3Location implements Serializable, Cloneable {
      * 
      * @return The Amazon S3 bucket where the data is located.
      */
+
     public String getS3Bucket() {
         return this.s3Bucket;
     }
@@ -94,6 +96,7 @@ public class S3Location implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public S3Location withS3Bucket(String s3Bucket) {
         setS3Bucket(s3Bucket);
         return this;
@@ -107,6 +110,7 @@ public class S3Location implements Serializable, Cloneable {
      * @param s3Key
      *        The Amazon S3 key where the data is located.
      */
+
     public void setS3Key(String s3Key) {
         this.s3Key = s3Key;
     }
@@ -118,6 +122,7 @@ public class S3Location implements Serializable, Cloneable {
      * 
      * @return The Amazon S3 key where the data is located.
      */
+
     public String getS3Key() {
         return this.s3Key;
     }
@@ -132,6 +137,7 @@ public class S3Location implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public S3Location withS3Key(String s3Key) {
         setS3Key(s3Key);
         return this;

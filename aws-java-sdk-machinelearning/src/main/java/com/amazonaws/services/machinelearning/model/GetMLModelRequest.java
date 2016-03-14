@@ -53,6 +53,7 @@ public class GetMLModelRequest extends AmazonWebServiceRequest implements
      * @param mLModelId
      *        The ID assigned to the <code>MLModel</code> at creation.
      */
+
     public void setMLModelId(String mLModelId) {
         this.mLModelId = mLModelId;
     }
@@ -64,6 +65,7 @@ public class GetMLModelRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ID assigned to the <code>MLModel</code> at creation.
      */
+
     public String getMLModelId() {
         return this.mLModelId;
     }
@@ -78,6 +80,7 @@ public class GetMLModelRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetMLModelRequest withMLModelId(String mLModelId) {
         setMLModelId(mLModelId);
         return this;
@@ -104,6 +107,7 @@ public class GetMLModelRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        If false, <code>Recipe</code> is not returned.
      */
+
     public void setVerbose(Boolean verbose) {
         this.verbose = verbose;
     }
@@ -128,6 +132,7 @@ public class GetMLModelRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         If false, <code>Recipe</code> is not returned.
      */
+
     public Boolean getVerbose() {
         return this.verbose;
     }
@@ -155,6 +160,7 @@ public class GetMLModelRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetMLModelRequest withVerbose(Boolean verbose) {
         setVerbose(verbose);
         return this;
@@ -180,6 +186,7 @@ public class GetMLModelRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         If false, <code>Recipe</code> is not returned.
      */
+
     public Boolean isVerbose() {
         return this.verbose;
     }

@@ -37,6 +37,7 @@ public class StopInstancesResult implements Serializable, Cloneable {
      * 
      * @return Information about one or more stopped instances.
      */
+
     public java.util.List<InstanceStateChange> getStoppingInstances() {
         if (stoppingInstances == null) {
             stoppingInstances = new com.amazonaws.internal.SdkInternalList<InstanceStateChange>();
@@ -52,6 +53,7 @@ public class StopInstancesResult implements Serializable, Cloneable {
      * @param stoppingInstances
      *        Information about one or more stopped instances.
      */
+
     public void setStoppingInstances(
             java.util.Collection<InstanceStateChange> stoppingInstances) {
         if (stoppingInstances == null) {
@@ -79,6 +81,7 @@ public class StopInstancesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StopInstancesResult withStoppingInstances(
             InstanceStateChange... stoppingInstances) {
         if (this.stoppingInstances == null) {
@@ -101,6 +104,7 @@ public class StopInstancesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StopInstancesResult withStoppingInstances(
             java.util.Collection<InstanceStateChange> stoppingInstances) {
         setStoppingInstances(stoppingInstances);

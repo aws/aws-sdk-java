@@ -76,6 +76,7 @@ public class CreateHealthCheckRequest extends AmazonWebServiceRequest implements
      *        XML 1.0 document. The UTF-8 encoding of the value must be less
      *        than 128 bytes.
      */
+
     public void setCallerReference(String callerReference) {
         this.callerReference = callerReference;
     }
@@ -106,6 +107,7 @@ public class CreateHealthCheckRequest extends AmazonWebServiceRequest implements
      *         XML 1.0 document. The UTF-8 encoding of the value must be less
      *         than 128 bytes.
      */
+
     public String getCallerReference() {
         return this.callerReference;
     }
@@ -138,6 +140,7 @@ public class CreateHealthCheckRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateHealthCheckRequest withCallerReference(String callerReference) {
         setCallerReference(callerReference);
         return this;
@@ -151,6 +154,7 @@ public class CreateHealthCheckRequest extends AmazonWebServiceRequest implements
      * @param healthCheckConfig
      *        A complex type that contains health check configuration.
      */
+
     public void setHealthCheckConfig(HealthCheckConfig healthCheckConfig) {
         this.healthCheckConfig = healthCheckConfig;
     }
@@ -162,6 +166,7 @@ public class CreateHealthCheckRequest extends AmazonWebServiceRequest implements
      * 
      * @return A complex type that contains health check configuration.
      */
+
     public HealthCheckConfig getHealthCheckConfig() {
         return this.healthCheckConfig;
     }
@@ -176,6 +181,7 @@ public class CreateHealthCheckRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateHealthCheckRequest withHealthCheckConfig(
             HealthCheckConfig healthCheckConfig) {
         setHealthCheckConfig(healthCheckConfig);

@@ -46,6 +46,7 @@ public class GetTopicRuleResult implements Serializable, Cloneable {
      * @param ruleArn
      *        The rule ARN.
      */
+
     public void setRuleArn(String ruleArn) {
         this.ruleArn = ruleArn;
     }
@@ -57,6 +58,7 @@ public class GetTopicRuleResult implements Serializable, Cloneable {
      * 
      * @return The rule ARN.
      */
+
     public String getRuleArn() {
         return this.ruleArn;
     }
@@ -71,6 +73,7 @@ public class GetTopicRuleResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetTopicRuleResult withRuleArn(String ruleArn) {
         setRuleArn(ruleArn);
         return this;
@@ -84,6 +87,7 @@ public class GetTopicRuleResult implements Serializable, Cloneable {
      * @param rule
      *        The rule.
      */
+
     public void setRule(TopicRule rule) {
         this.rule = rule;
     }
@@ -95,6 +99,7 @@ public class GetTopicRuleResult implements Serializable, Cloneable {
      * 
      * @return The rule.
      */
+
     public TopicRule getRule() {
         return this.rule;
     }
@@ -109,6 +114,7 @@ public class GetTopicRuleResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetTopicRuleResult withRule(TopicRule rule) {
         setRule(rule);
         return this;

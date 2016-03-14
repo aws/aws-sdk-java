@@ -71,6 +71,7 @@ public class Reservation implements Serializable, Cloneable {
      * @param reservationId
      *        The ID of the reservation.
      */
+
     public void setReservationId(String reservationId) {
         this.reservationId = reservationId;
     }
@@ -82,6 +83,7 @@ public class Reservation implements Serializable, Cloneable {
      * 
      * @return The ID of the reservation.
      */
+
     public String getReservationId() {
         return this.reservationId;
     }
@@ -96,6 +98,7 @@ public class Reservation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Reservation withReservationId(String reservationId) {
         setReservationId(reservationId);
         return this;
@@ -109,6 +112,7 @@ public class Reservation implements Serializable, Cloneable {
      * @param ownerId
      *        The ID of the AWS account that owns the reservation.
      */
+
     public void setOwnerId(String ownerId) {
         this.ownerId = ownerId;
     }
@@ -120,6 +124,7 @@ public class Reservation implements Serializable, Cloneable {
      * 
      * @return The ID of the AWS account that owns the reservation.
      */
+
     public String getOwnerId() {
         return this.ownerId;
     }
@@ -134,6 +139,7 @@ public class Reservation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Reservation withOwnerId(String ownerId) {
         setOwnerId(ownerId);
         return this;
@@ -149,6 +155,7 @@ public class Reservation implements Serializable, Cloneable {
      *        The ID of the requester that launched the instances on your behalf
      *        (for example, AWS Management Console or Auto Scaling).
      */
+
     public void setRequesterId(String requesterId) {
         this.requesterId = requesterId;
     }
@@ -162,6 +169,7 @@ public class Reservation implements Serializable, Cloneable {
      * @return The ID of the requester that launched the instances on your
      *         behalf (for example, AWS Management Console or Auto Scaling).
      */
+
     public String getRequesterId() {
         return this.requesterId;
     }
@@ -178,6 +186,7 @@ public class Reservation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Reservation withRequesterId(String requesterId) {
         setRequesterId(requesterId);
         return this;
@@ -190,6 +199,7 @@ public class Reservation implements Serializable, Cloneable {
      * 
      * @return [EC2-Classic only] One or more security groups.
      */
+
     public java.util.List<GroupIdentifier> getGroups() {
         if (groups == null) {
             groups = new com.amazonaws.internal.SdkInternalList<GroupIdentifier>();
@@ -205,6 +215,7 @@ public class Reservation implements Serializable, Cloneable {
      * @param groups
      *        [EC2-Classic only] One or more security groups.
      */
+
     public void setGroups(java.util.Collection<GroupIdentifier> groups) {
         if (groups == null) {
             this.groups = null;
@@ -231,6 +242,7 @@ public class Reservation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Reservation withGroups(GroupIdentifier... groups) {
         if (this.groups == null) {
             setGroups(new com.amazonaws.internal.SdkInternalList<GroupIdentifier>(
@@ -252,6 +264,7 @@ public class Reservation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Reservation withGroups(java.util.Collection<GroupIdentifier> groups) {
         setGroups(groups);
         return this;
@@ -264,6 +277,7 @@ public class Reservation implements Serializable, Cloneable {
      * 
      * @return One or more instances.
      */
+
     public java.util.List<Instance> getInstances() {
         if (instances == null) {
             instances = new com.amazonaws.internal.SdkInternalList<Instance>();
@@ -279,6 +293,7 @@ public class Reservation implements Serializable, Cloneable {
      * @param instances
      *        One or more instances.
      */
+
     public void setInstances(java.util.Collection<Instance> instances) {
         if (instances == null) {
             this.instances = null;
@@ -305,6 +320,7 @@ public class Reservation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Reservation withInstances(Instance... instances) {
         if (this.instances == null) {
             setInstances(new com.amazonaws.internal.SdkInternalList<Instance>(
@@ -326,6 +342,7 @@ public class Reservation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Reservation withInstances(java.util.Collection<Instance> instances) {
         setInstances(instances);
         return this;
@@ -338,6 +355,7 @@ public class Reservation implements Serializable, Cloneable {
      * 
      * @return One or more security group names.
      */
+
     public java.util.List<String> getGroupNames() {
         if (groupNames == null) {
             groupNames = new com.amazonaws.internal.SdkInternalList<String>();
@@ -353,6 +371,7 @@ public class Reservation implements Serializable, Cloneable {
      * @param groupNames
      *        One or more security group names.
      */
+
     public void setGroupNames(java.util.Collection<String> groupNames) {
         if (groupNames == null) {
             this.groupNames = null;
@@ -379,6 +398,7 @@ public class Reservation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Reservation withGroupNames(String... groupNames) {
         if (this.groupNames == null) {
             setGroupNames(new com.amazonaws.internal.SdkInternalList<String>(
@@ -400,6 +420,7 @@ public class Reservation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Reservation withGroupNames(java.util.Collection<String> groupNames) {
         setGroupNames(groupNames);
         return this;

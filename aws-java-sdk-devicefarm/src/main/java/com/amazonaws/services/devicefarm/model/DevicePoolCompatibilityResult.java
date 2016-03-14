@@ -42,6 +42,7 @@ public class DevicePoolCompatibilityResult implements Serializable, Cloneable {
     /**
      * @param device
      */
+
     public void setDevice(Device device) {
         this.device = device;
     }
@@ -49,6 +50,7 @@ public class DevicePoolCompatibilityResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Device getDevice() {
         return this.device;
     }
@@ -58,6 +60,7 @@ public class DevicePoolCompatibilityResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DevicePoolCompatibilityResult withDevice(Device device) {
         setDevice(device);
         return this;
@@ -71,6 +74,7 @@ public class DevicePoolCompatibilityResult implements Serializable, Cloneable {
      * @param compatible
      *        Whether the result was compatible with the device pool.
      */
+
     public void setCompatible(Boolean compatible) {
         this.compatible = compatible;
     }
@@ -82,6 +86,7 @@ public class DevicePoolCompatibilityResult implements Serializable, Cloneable {
      * 
      * @return Whether the result was compatible with the device pool.
      */
+
     public Boolean getCompatible() {
         return this.compatible;
     }
@@ -96,6 +101,7 @@ public class DevicePoolCompatibilityResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DevicePoolCompatibilityResult withCompatible(Boolean compatible) {
         setCompatible(compatible);
         return this;
@@ -108,6 +114,7 @@ public class DevicePoolCompatibilityResult implements Serializable, Cloneable {
      * 
      * @return Whether the result was compatible with the device pool.
      */
+
     public Boolean isCompatible() {
         return this.compatible;
     }
@@ -119,6 +126,7 @@ public class DevicePoolCompatibilityResult implements Serializable, Cloneable {
      * 
      * @return Information about the compatibility.
      */
+
     public java.util.List<IncompatibilityMessage> getIncompatibilityMessages() {
         return incompatibilityMessages;
     }
@@ -131,6 +139,7 @@ public class DevicePoolCompatibilityResult implements Serializable, Cloneable {
      * @param incompatibilityMessages
      *        Information about the compatibility.
      */
+
     public void setIncompatibilityMessages(
             java.util.Collection<IncompatibilityMessage> incompatibilityMessages) {
         if (incompatibilityMessages == null) {
@@ -158,6 +167,7 @@ public class DevicePoolCompatibilityResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DevicePoolCompatibilityResult withIncompatibilityMessages(
             IncompatibilityMessage... incompatibilityMessages) {
         if (this.incompatibilityMessages == null) {
@@ -180,6 +190,7 @@ public class DevicePoolCompatibilityResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DevicePoolCompatibilityResult withIncompatibilityMessages(
             java.util.Collection<IncompatibilityMessage> incompatibilityMessages) {
         setIncompatibilityMessages(incompatibilityMessages);

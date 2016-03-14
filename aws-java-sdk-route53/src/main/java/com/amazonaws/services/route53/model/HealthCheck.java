@@ -60,6 +60,7 @@ public class HealthCheck implements Serializable, Cloneable {
      * @param id
      *        The ID of the specified health check.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -71,6 +72,7 @@ public class HealthCheck implements Serializable, Cloneable {
      * 
      * @return The ID of the specified health check.
      */
+
     public String getId() {
         return this.id;
     }
@@ -85,6 +87,7 @@ public class HealthCheck implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HealthCheck withId(String id) {
         setId(id);
         return this;
@@ -99,6 +102,7 @@ public class HealthCheck implements Serializable, Cloneable {
      *        A unique string that identifies the request to create the health
      *        check.
      */
+
     public void setCallerReference(String callerReference) {
         this.callerReference = callerReference;
     }
@@ -111,6 +115,7 @@ public class HealthCheck implements Serializable, Cloneable {
      * @return A unique string that identifies the request to create the health
      *         check.
      */
+
     public String getCallerReference() {
         return this.callerReference;
     }
@@ -126,6 +131,7 @@ public class HealthCheck implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HealthCheck withCallerReference(String callerReference) {
         setCallerReference(callerReference);
         return this;
@@ -139,6 +145,7 @@ public class HealthCheck implements Serializable, Cloneable {
      * @param healthCheckConfig
      *        A complex type that contains the health check configuration.
      */
+
     public void setHealthCheckConfig(HealthCheckConfig healthCheckConfig) {
         this.healthCheckConfig = healthCheckConfig;
     }
@@ -150,6 +157,7 @@ public class HealthCheck implements Serializable, Cloneable {
      * 
      * @return A complex type that contains the health check configuration.
      */
+
     public HealthCheckConfig getHealthCheckConfig() {
         return this.healthCheckConfig;
     }
@@ -164,6 +172,7 @@ public class HealthCheck implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HealthCheck withHealthCheckConfig(HealthCheckConfig healthCheckConfig) {
         setHealthCheckConfig(healthCheckConfig);
         return this;
@@ -181,6 +190,7 @@ public class HealthCheck implements Serializable, Cloneable {
      *        value in a call to <code>UpdateHealthCheck</code> to prevent
      *        overwriting another change to the health check.
      */
+
     public void setHealthCheckVersion(Long healthCheckVersion) {
         this.healthCheckVersion = healthCheckVersion;
     }
@@ -196,6 +206,7 @@ public class HealthCheck implements Serializable, Cloneable {
      *         value in a call to <code>UpdateHealthCheck</code> to prevent
      *         overwriting another change to the health check.
      */
+
     public Long getHealthCheckVersion() {
         return this.healthCheckVersion;
     }
@@ -214,6 +225,7 @@ public class HealthCheck implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HealthCheck withHealthCheckVersion(Long healthCheckVersion) {
         setHealthCheckVersion(healthCheckVersion);
         return this;

@@ -54,6 +54,12 @@ public class PolicyRoleStaxUnmarshaller implements
                             .unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("RoleId", targetDepth)) {
+                    policyRole.setRoleId(StringStaxUnmarshaller.getInstance()
+                            .unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return policyRole;

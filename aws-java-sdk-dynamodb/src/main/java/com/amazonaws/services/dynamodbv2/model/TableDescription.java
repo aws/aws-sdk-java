@@ -467,6 +467,7 @@ public class TableDescription implements Serializable, Cloneable {
      *         </p>
      *         </li>
      */
+
     public java.util.List<AttributeDefinition> getAttributeDefinitions() {
         return attributeDefinitions;
     }
@@ -512,6 +513,7 @@ public class TableDescription implements Serializable, Cloneable {
      *        </p>
      *        </li>
      */
+
     public void setAttributeDefinitions(
             java.util.Collection<AttributeDefinition> attributeDefinitions) {
         if (attributeDefinitions == null) {
@@ -572,6 +574,7 @@ public class TableDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TableDescription withAttributeDefinitions(
             AttributeDefinition... attributeDefinitions) {
         if (this.attributeDefinitions == null) {
@@ -627,6 +630,7 @@ public class TableDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TableDescription withAttributeDefinitions(
             java.util.Collection<AttributeDefinition> attributeDefinitions) {
         setAttributeDefinitions(attributeDefinitions);
@@ -641,6 +645,7 @@ public class TableDescription implements Serializable, Cloneable {
      * @param tableName
      *        The name of the table.
      */
+
     public void setTableName(String tableName) {
         this.tableName = tableName;
     }
@@ -652,6 +657,7 @@ public class TableDescription implements Serializable, Cloneable {
      * 
      * @return The name of the table.
      */
+
     public String getTableName() {
         return this.tableName;
     }
@@ -666,6 +672,7 @@ public class TableDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TableDescription withTableName(String tableName) {
         setTableName(tableName);
         return this;
@@ -766,6 +773,7 @@ public class TableDescription implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey"
      *         >Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
+
     public java.util.List<KeySchemaElement> getKeySchema() {
         return keySchema;
     }
@@ -866,6 +874,7 @@ public class TableDescription implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey"
      *        >Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
+
     public void setKeySchema(java.util.Collection<KeySchemaElement> keySchema) {
         if (keySchema == null) {
             this.keySchema = null;
@@ -979,6 +988,7 @@ public class TableDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TableDescription withKeySchema(KeySchemaElement... keySchema) {
         if (this.keySchema == null) {
             setKeySchema(new java.util.ArrayList<KeySchemaElement>(
@@ -1088,6 +1098,7 @@ public class TableDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TableDescription withKeySchema(
             java.util.Collection<KeySchemaElement> keySchema) {
         setKeySchema(keySchema);
@@ -1146,6 +1157,7 @@ public class TableDescription implements Serializable, Cloneable {
      *        </li>
      * @see TableStatus
      */
+
     public void setTableStatus(String tableStatus) {
         this.tableStatus = tableStatus;
     }
@@ -1201,6 +1213,7 @@ public class TableDescription implements Serializable, Cloneable {
      *         </li>
      * @see TableStatus
      */
+
     public String getTableStatus() {
         return this.tableStatus;
     }
@@ -1259,6 +1272,7 @@ public class TableDescription implements Serializable, Cloneable {
      *         chained together.
      * @see TableStatus
      */
+
     public TableDescription withTableStatus(String tableStatus) {
         setTableStatus(tableStatus);
         return this;
@@ -1318,6 +1332,7 @@ public class TableDescription implements Serializable, Cloneable {
      *         chained together.
      * @see TableStatus
      */
+
     public void setTableStatus(TableStatus tableStatus) {
         this.tableStatus = tableStatus.toString();
     }
@@ -1376,6 +1391,7 @@ public class TableDescription implements Serializable, Cloneable {
      *         chained together.
      * @see TableStatus
      */
+
     public TableDescription withTableStatus(TableStatus tableStatus) {
         setTableStatus(tableStatus);
         return this;
@@ -1391,6 +1407,7 @@ public class TableDescription implements Serializable, Cloneable {
      *        The date and time when the table was created, in <a
      *        href="http://www.epochconverter.com/">UNIX epoch time</a> format.
      */
+
     public void setCreationDateTime(java.util.Date creationDateTime) {
         this.creationDateTime = creationDateTime;
     }
@@ -1404,6 +1421,7 @@ public class TableDescription implements Serializable, Cloneable {
      * @return The date and time when the table was created, in <a
      *         href="http://www.epochconverter.com/">UNIX epoch time</a> format.
      */
+
     public java.util.Date getCreationDateTime() {
         return this.creationDateTime;
     }
@@ -1420,6 +1438,7 @@ public class TableDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TableDescription withCreationDateTime(java.util.Date creationDateTime) {
         setCreationDateTime(creationDateTime);
         return this;
@@ -1436,6 +1455,7 @@ public class TableDescription implements Serializable, Cloneable {
      *        read and write capacity units, along with data about increases and
      *        decreases.
      */
+
     public void setProvisionedThroughput(
             ProvisionedThroughputDescription provisionedThroughput) {
         this.provisionedThroughput = provisionedThroughput;
@@ -1451,6 +1471,7 @@ public class TableDescription implements Serializable, Cloneable {
      *         read and write capacity units, along with data about increases
      *         and decreases.
      */
+
     public ProvisionedThroughputDescription getProvisionedThroughput() {
         return this.provisionedThroughput;
     }
@@ -1468,6 +1489,7 @@ public class TableDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TableDescription withProvisionedThroughput(
             ProvisionedThroughputDescription provisionedThroughput) {
         setProvisionedThroughput(provisionedThroughput);
@@ -1486,6 +1508,7 @@ public class TableDescription implements Serializable, Cloneable {
      *        this value approximately every six hours. Recent changes might not
      *        be reflected in this value.
      */
+
     public void setTableSizeBytes(Long tableSizeBytes) {
         this.tableSizeBytes = tableSizeBytes;
     }
@@ -1501,6 +1524,7 @@ public class TableDescription implements Serializable, Cloneable {
      *         this value approximately every six hours. Recent changes might
      *         not be reflected in this value.
      */
+
     public Long getTableSizeBytes() {
         return this.tableSizeBytes;
     }
@@ -1519,6 +1543,7 @@ public class TableDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TableDescription withTableSizeBytes(Long tableSizeBytes) {
         setTableSizeBytes(tableSizeBytes);
         return this;
@@ -1536,6 +1561,7 @@ public class TableDescription implements Serializable, Cloneable {
      *        value approximately every six hours. Recent changes might not be
      *        reflected in this value.
      */
+
     public void setItemCount(Long itemCount) {
         this.itemCount = itemCount;
     }
@@ -1551,6 +1577,7 @@ public class TableDescription implements Serializable, Cloneable {
      *         value approximately every six hours. Recent changes might not be
      *         reflected in this value.
      */
+
     public Long getItemCount() {
         return this.itemCount;
     }
@@ -1569,6 +1596,7 @@ public class TableDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TableDescription withItemCount(Long itemCount) {
         setItemCount(itemCount);
         return this;
@@ -1582,6 +1610,7 @@ public class TableDescription implements Serializable, Cloneable {
      * @param tableArn
      *        The Amazon Resource Name (ARN) that uniquely identifies the table.
      */
+
     public void setTableArn(String tableArn) {
         this.tableArn = tableArn;
     }
@@ -1594,6 +1623,7 @@ public class TableDescription implements Serializable, Cloneable {
      * @return The Amazon Resource Name (ARN) that uniquely identifies the
      *         table.
      */
+
     public String getTableArn() {
         return this.tableArn;
     }
@@ -1608,6 +1638,7 @@ public class TableDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TableDescription withTableArn(String tableArn) {
         setTableArn(tableArn);
         return this;
@@ -1785,6 +1816,7 @@ public class TableDescription implements Serializable, Cloneable {
      *         If the table is in the <code>DELETING</code> state, no
      *         information about indexes will be returned.
      */
+
     public java.util.List<LocalSecondaryIndexDescription> getLocalSecondaryIndexes() {
         return localSecondaryIndexes;
     }
@@ -1962,6 +1994,7 @@ public class TableDescription implements Serializable, Cloneable {
      *        If the table is in the <code>DELETING</code> state, no information
      *        about indexes will be returned.
      */
+
     public void setLocalSecondaryIndexes(
             java.util.Collection<LocalSecondaryIndexDescription> localSecondaryIndexes) {
         if (localSecondaryIndexes == null) {
@@ -2154,6 +2187,7 @@ public class TableDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TableDescription withLocalSecondaryIndexes(
             LocalSecondaryIndexDescription... localSecondaryIndexes) {
         if (this.localSecondaryIndexes == null) {
@@ -2341,6 +2375,7 @@ public class TableDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TableDescription withLocalSecondaryIndexes(
             java.util.Collection<LocalSecondaryIndexDescription> localSecondaryIndexes) {
         setLocalSecondaryIndexes(localSecondaryIndexes);
@@ -2604,6 +2639,7 @@ public class TableDescription implements Serializable, Cloneable {
      *         If the table is in the <code>DELETING</code> state, no
      *         information about indexes will be returned.
      */
+
     public java.util.List<GlobalSecondaryIndexDescription> getGlobalSecondaryIndexes() {
         return globalSecondaryIndexes;
     }
@@ -2865,6 +2901,7 @@ public class TableDescription implements Serializable, Cloneable {
      *        If the table is in the <code>DELETING</code> state, no information
      *        about indexes will be returned.
      */
+
     public void setGlobalSecondaryIndexes(
             java.util.Collection<GlobalSecondaryIndexDescription> globalSecondaryIndexes) {
         if (globalSecondaryIndexes == null) {
@@ -3141,6 +3178,7 @@ public class TableDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TableDescription withGlobalSecondaryIndexes(
             GlobalSecondaryIndexDescription... globalSecondaryIndexes) {
         if (this.globalSecondaryIndexes == null) {
@@ -3412,6 +3450,7 @@ public class TableDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TableDescription withGlobalSecondaryIndexes(
             java.util.Collection<GlobalSecondaryIndexDescription> globalSecondaryIndexes) {
         setGlobalSecondaryIndexes(globalSecondaryIndexes);
@@ -3426,6 +3465,7 @@ public class TableDescription implements Serializable, Cloneable {
      * @param streamSpecification
      *        The current DynamoDB Streams configuration for the table.
      */
+
     public void setStreamSpecification(StreamSpecification streamSpecification) {
         this.streamSpecification = streamSpecification;
     }
@@ -3437,6 +3477,7 @@ public class TableDescription implements Serializable, Cloneable {
      * 
      * @return The current DynamoDB Streams configuration for the table.
      */
+
     public StreamSpecification getStreamSpecification() {
         return this.streamSpecification;
     }
@@ -3451,6 +3492,7 @@ public class TableDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TableDescription withStreamSpecification(
             StreamSpecification streamSpecification) {
         setStreamSpecification(streamSpecification);
@@ -3510,6 +3552,7 @@ public class TableDescription implements Serializable, Cloneable {
      *        </p>
      *        </li>
      */
+
     public void setLatestStreamLabel(String latestStreamLabel) {
         this.latestStreamLabel = latestStreamLabel;
     }
@@ -3566,6 +3609,7 @@ public class TableDescription implements Serializable, Cloneable {
      *         </p>
      *         </li>
      */
+
     public String getLatestStreamLabel() {
         return this.latestStreamLabel;
     }
@@ -3625,6 +3669,7 @@ public class TableDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TableDescription withLatestStreamLabel(String latestStreamLabel) {
         setLatestStreamLabel(latestStreamLabel);
         return this;
@@ -3640,6 +3685,7 @@ public class TableDescription implements Serializable, Cloneable {
      *        The Amazon Resource Name (ARN) that uniquely identifies the latest
      *        stream for this table.
      */
+
     public void setLatestStreamArn(String latestStreamArn) {
         this.latestStreamArn = latestStreamArn;
     }
@@ -3653,6 +3699,7 @@ public class TableDescription implements Serializable, Cloneable {
      * @return The Amazon Resource Name (ARN) that uniquely identifies the
      *         latest stream for this table.
      */
+
     public String getLatestStreamArn() {
         return this.latestStreamArn;
     }
@@ -3669,6 +3716,7 @@ public class TableDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TableDescription withLatestStreamArn(String latestStreamArn) {
         setLatestStreamArn(latestStreamArn);
         return this;

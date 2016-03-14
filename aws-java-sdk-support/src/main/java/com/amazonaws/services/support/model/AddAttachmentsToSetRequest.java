@@ -57,6 +57,7 @@ public class AddAttachmentsToSetRequest extends AmazonWebServiceRequest
      *        <code>AttachmentSetId</code> is specified, the attachments are
      *        added to the specified set, if it exists.
      */
+
     public void setAttachmentSetId(String attachmentSetId) {
         this.attachmentSetId = attachmentSetId;
     }
@@ -75,6 +76,7 @@ public class AddAttachmentsToSetRequest extends AmazonWebServiceRequest
      *         <code>AttachmentSetId</code> is specified, the attachments are
      *         added to the specified set, if it exists.
      */
+
     public String getAttachmentSetId() {
         return this.attachmentSetId;
     }
@@ -96,6 +98,7 @@ public class AddAttachmentsToSetRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddAttachmentsToSetRequest withAttachmentSetId(String attachmentSetId) {
         setAttachmentSetId(attachmentSetId);
         return this;
@@ -110,6 +113,7 @@ public class AddAttachmentsToSetRequest extends AmazonWebServiceRequest
      * @return One or more attachments to add to the set. The limit is 3
      *         attachments per set, and the size limit is 5 MB per attachment.
      */
+
     public java.util.List<Attachment> getAttachments() {
         if (attachments == null) {
             attachments = new com.amazonaws.internal.SdkInternalList<Attachment>();
@@ -127,6 +131,7 @@ public class AddAttachmentsToSetRequest extends AmazonWebServiceRequest
      *        One or more attachments to add to the set. The limit is 3
      *        attachments per set, and the size limit is 5 MB per attachment.
      */
+
     public void setAttachments(java.util.Collection<Attachment> attachments) {
         if (attachments == null) {
             this.attachments = null;
@@ -155,6 +160,7 @@ public class AddAttachmentsToSetRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddAttachmentsToSetRequest withAttachments(Attachment... attachments) {
         if (this.attachments == null) {
             setAttachments(new com.amazonaws.internal.SdkInternalList<Attachment>(
@@ -178,6 +184,7 @@ public class AddAttachmentsToSetRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddAttachmentsToSetRequest withAttachments(
             java.util.Collection<Attachment> attachments) {
         setAttachments(attachments);

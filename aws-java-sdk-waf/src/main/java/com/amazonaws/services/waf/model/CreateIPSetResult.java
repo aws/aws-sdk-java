@@ -48,6 +48,7 @@ public class CreateIPSetResult implements Serializable, Cloneable {
      *        The <a>IPSet</a> returned in the <code>CreateIPSet</code>
      *        response.
      */
+
     public void setIPSet(IPSet iPSet) {
         this.iPSet = iPSet;
     }
@@ -60,6 +61,7 @@ public class CreateIPSetResult implements Serializable, Cloneable {
      * @return The <a>IPSet</a> returned in the <code>CreateIPSet</code>
      *         response.
      */
+
     public IPSet getIPSet() {
         return this.iPSet;
     }
@@ -75,6 +77,7 @@ public class CreateIPSetResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateIPSetResult withIPSet(IPSet iPSet) {
         setIPSet(iPSet);
         return this;
@@ -94,6 +97,7 @@ public class CreateIPSetResult implements Serializable, Cloneable {
      *        query the status of the request. For more information, see
      *        <a>GetChangeTokenStatus</a>.
      */
+
     public void setChangeToken(String changeToken) {
         this.changeToken = changeToken;
     }
@@ -111,6 +115,7 @@ public class CreateIPSetResult implements Serializable, Cloneable {
      *         query the status of the request. For more information, see
      *         <a>GetChangeTokenStatus</a>.
      */
+
     public String getChangeToken() {
         return this.changeToken;
     }
@@ -131,6 +136,7 @@ public class CreateIPSetResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateIPSetResult withChangeToken(String changeToken) {
         setChangeToken(changeToken);
         return this;

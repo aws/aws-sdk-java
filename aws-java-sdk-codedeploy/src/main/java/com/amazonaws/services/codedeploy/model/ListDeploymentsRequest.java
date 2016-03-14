@@ -79,6 +79,7 @@ public class ListDeploymentsRequest extends AmazonWebServiceRequest implements
      *        The name of an existing AWS CodeDeploy application associated with
      *        the applicable IAM user or AWS account.
      */
+
     public void setApplicationName(String applicationName) {
         this.applicationName = applicationName;
     }
@@ -92,6 +93,7 @@ public class ListDeploymentsRequest extends AmazonWebServiceRequest implements
      * @return The name of an existing AWS CodeDeploy application associated
      *         with the applicable IAM user or AWS account.
      */
+
     public String getApplicationName() {
         return this.applicationName;
     }
@@ -108,6 +110,7 @@ public class ListDeploymentsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListDeploymentsRequest withApplicationName(String applicationName) {
         setApplicationName(applicationName);
         return this;
@@ -122,6 +125,7 @@ public class ListDeploymentsRequest extends AmazonWebServiceRequest implements
      *        The name of an existing deployment group for the specified
      *        application.
      */
+
     public void setDeploymentGroupName(String deploymentGroupName) {
         this.deploymentGroupName = deploymentGroupName;
     }
@@ -134,6 +138,7 @@ public class ListDeploymentsRequest extends AmazonWebServiceRequest implements
      * @return The name of an existing deployment group for the specified
      *         application.
      */
+
     public String getDeploymentGroupName() {
         return this.deploymentGroupName;
     }
@@ -149,6 +154,7 @@ public class ListDeploymentsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListDeploymentsRequest withDeploymentGroupName(
             String deploymentGroupName) {
         setDeploymentGroupName(deploymentGroupName);
@@ -180,6 +186,7 @@ public class ListDeploymentsRequest extends AmazonWebServiceRequest implements
      *         <li>Aborted: Include in the resulting list aborted deployments.</li>
      * @see DeploymentStatus
      */
+
     public java.util.List<String> getIncludeOnlyStatuses() {
         if (includeOnlyStatuses == null) {
             includeOnlyStatuses = new com.amazonaws.internal.SdkInternalList<String>();
@@ -213,6 +220,7 @@ public class ListDeploymentsRequest extends AmazonWebServiceRequest implements
      *        <li>Aborted: Include in the resulting list aborted deployments.</li>
      * @see DeploymentStatus
      */
+
     public void setIncludeOnlyStatuses(
             java.util.Collection<String> includeOnlyStatuses) {
         if (includeOnlyStatuses == null) {
@@ -258,6 +266,7 @@ public class ListDeploymentsRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see DeploymentStatus
      */
+
     public ListDeploymentsRequest withIncludeOnlyStatuses(
             String... includeOnlyStatuses) {
         if (this.includeOnlyStatuses == null) {
@@ -298,6 +307,7 @@ public class ListDeploymentsRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see DeploymentStatus
      */
+
     public ListDeploymentsRequest withIncludeOnlyStatuses(
             java.util.Collection<String> includeOnlyStatuses) {
         setIncludeOnlyStatuses(includeOnlyStatuses);
@@ -332,6 +342,7 @@ public class ListDeploymentsRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see DeploymentStatus
      */
+
     public ListDeploymentsRequest withIncludeOnlyStatuses(
             DeploymentStatus... includeOnlyStatuses) {
         com.amazonaws.internal.SdkInternalList<String> includeOnlyStatusesCopy = new com.amazonaws.internal.SdkInternalList<String>(
@@ -357,6 +368,7 @@ public class ListDeploymentsRequest extends AmazonWebServiceRequest implements
      *        A deployment creation start- and end-time range for returning a
      *        subset of the list of deployments.
      */
+
     public void setCreateTimeRange(TimeRange createTimeRange) {
         this.createTimeRange = createTimeRange;
     }
@@ -370,6 +382,7 @@ public class ListDeploymentsRequest extends AmazonWebServiceRequest implements
      * @return A deployment creation start- and end-time range for returning a
      *         subset of the list of deployments.
      */
+
     public TimeRange getCreateTimeRange() {
         return this.createTimeRange;
     }
@@ -386,6 +399,7 @@ public class ListDeploymentsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListDeploymentsRequest withCreateTimeRange(TimeRange createTimeRange) {
         setCreateTimeRange(createTimeRange);
         return this;
@@ -402,6 +416,7 @@ public class ListDeploymentsRequest extends AmazonWebServiceRequest implements
      *        call, which can be used to return the next set of deployments in
      *        the list.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -416,6 +431,7 @@ public class ListDeploymentsRequest extends AmazonWebServiceRequest implements
      *         deployments call, which can be used to return the next set of
      *         deployments in the list.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -433,6 +449,7 @@ public class ListDeploymentsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListDeploymentsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

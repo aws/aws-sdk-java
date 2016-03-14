@@ -20,9 +20,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Exception is thrown when performing the requested operation would cause the
- * resource to exceed the allowed service limit. Requests that result in
- * failures of this type should be first resolved by the client before retrying.
+ * The requested operation would cause the resource to exceed the allowed
+ * service limit. Please resolve the issue before retrying.
  * </p>
  */
 public class LimitExceededException extends AmazonServiceException {

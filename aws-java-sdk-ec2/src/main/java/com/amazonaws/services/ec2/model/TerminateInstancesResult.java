@@ -37,6 +37,7 @@ public class TerminateInstancesResult implements Serializable, Cloneable {
      * 
      * @return Information about one or more terminated instances.
      */
+
     public java.util.List<InstanceStateChange> getTerminatingInstances() {
         if (terminatingInstances == null) {
             terminatingInstances = new com.amazonaws.internal.SdkInternalList<InstanceStateChange>();
@@ -52,6 +53,7 @@ public class TerminateInstancesResult implements Serializable, Cloneable {
      * @param terminatingInstances
      *        Information about one or more terminated instances.
      */
+
     public void setTerminatingInstances(
             java.util.Collection<InstanceStateChange> terminatingInstances) {
         if (terminatingInstances == null) {
@@ -79,6 +81,7 @@ public class TerminateInstancesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TerminateInstancesResult withTerminatingInstances(
             InstanceStateChange... terminatingInstances) {
         if (this.terminatingInstances == null) {
@@ -101,6 +104,7 @@ public class TerminateInstancesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TerminateInstancesResult withTerminatingInstances(
             java.util.Collection<InstanceStateChange> terminatingInstances) {
         setTerminatingInstances(terminatingInstances);

@@ -60,6 +60,7 @@ public class DeleteUserRequest extends AmazonWebServiceRequest implements
      * @param userName
      *        The name of the user to delete.
      */
+
     public void setUserName(String userName) {
         this.userName = userName;
     }
@@ -71,6 +72,7 @@ public class DeleteUserRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the user to delete.
      */
+
     public String getUserName() {
         return this.userName;
     }
@@ -85,6 +87,7 @@ public class DeleteUserRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteUserRequest withUserName(String userName) {
         setUserName(userName);
         return this;

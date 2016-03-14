@@ -169,6 +169,7 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest
      *         <p>
      *         Default: Describes all your network ACLs.
      */
+
     public java.util.List<String> getNetworkAclIds() {
         if (networkAclIds == null) {
             networkAclIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -189,6 +190,7 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest
      *        <p>
      *        Default: Describes all your network ACLs.
      */
+
     public void setNetworkAclIds(java.util.Collection<String> networkAclIds) {
         if (networkAclIds == null) {
             this.networkAclIds = null;
@@ -220,6 +222,7 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeNetworkAclsRequest withNetworkAclIds(String... networkAclIds) {
         if (this.networkAclIds == null) {
             setNetworkAclIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -246,6 +249,7 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeNetworkAclsRequest withNetworkAclIds(
             java.util.Collection<String> networkAclIds) {
         setNetworkAclIds(networkAclIds);
@@ -486,6 +490,7 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest
      *         </p>
      *         </li>
      */
+
     public java.util.List<Filter> getFilters() {
         if (filters == null) {
             filters = new com.amazonaws.internal.SdkInternalList<Filter>();
@@ -728,6 +733,7 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest
      *        </p>
      *        </li>
      */
+
     public void setFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
             this.filters = null;
@@ -981,6 +987,7 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeNetworkAclsRequest withFilters(Filter... filters) {
         if (this.filters == null) {
             setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(
@@ -1229,6 +1236,7 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeNetworkAclsRequest withFilters(
             java.util.Collection<Filter> filters) {
         setFilters(filters);

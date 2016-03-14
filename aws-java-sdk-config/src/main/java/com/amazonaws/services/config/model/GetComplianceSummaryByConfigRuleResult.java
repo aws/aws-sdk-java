@@ -42,6 +42,7 @@ public class GetComplianceSummaryByConfigRuleResult implements Serializable,
      *        The number of AWS Config rules that are compliant and the number
      *        that are noncompliant, up to a maximum of 25 for each.
      */
+
     public void setComplianceSummary(ComplianceSummary complianceSummary) {
         this.complianceSummary = complianceSummary;
     }
@@ -55,6 +56,7 @@ public class GetComplianceSummaryByConfigRuleResult implements Serializable,
      * @return The number of AWS Config rules that are compliant and the number
      *         that are noncompliant, up to a maximum of 25 for each.
      */
+
     public ComplianceSummary getComplianceSummary() {
         return this.complianceSummary;
     }
@@ -71,6 +73,7 @@ public class GetComplianceSummaryByConfigRuleResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetComplianceSummaryByConfigRuleResult withComplianceSummary(
             ComplianceSummary complianceSummary) {
         setComplianceSummary(complianceSummary);

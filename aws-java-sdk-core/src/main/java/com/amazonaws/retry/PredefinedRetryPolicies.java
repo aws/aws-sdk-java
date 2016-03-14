@@ -14,15 +14,13 @@
  */
 package com.amazonaws.retry;
 
-import java.io.IOException;
-import java.util.Random;
-
-import org.apache.http.HttpStatus;
-
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.ClientConfiguration;
+
+import java.io.IOException;
+import java.util.Random;
 
 /**
  * This class includes a set of pre-defined retry policies, including default
@@ -168,10 +166,7 @@ public class PredefinedRetryPolicies {
                  * an exponential back-off strategy so that we don't overload
                  * a server with a flood of retries.
                  */
-                if (ase.getStatusCode() == HttpStatus.SC_INTERNAL_SERVER_ERROR
-                    || ase.getStatusCode() == HttpStatus.SC_SERVICE_UNAVAILABLE) {
-                    return true;
-                }
+                if (RetryUtils.isRetryableServiceException(ase)) return true;
 
                 /*
                  * Throttling is reported as a 400 error from newer services. To try

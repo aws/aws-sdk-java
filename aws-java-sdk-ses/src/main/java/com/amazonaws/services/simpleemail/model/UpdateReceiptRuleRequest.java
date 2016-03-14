@@ -47,6 +47,7 @@ public class UpdateReceiptRuleRequest extends AmazonWebServiceRequest implements
      *        The name of the receipt rule set to which the receipt rule
      *        belongs.
      */
+
     public void setRuleSetName(String ruleSetName) {
         this.ruleSetName = ruleSetName;
     }
@@ -59,6 +60,7 @@ public class UpdateReceiptRuleRequest extends AmazonWebServiceRequest implements
      * @return The name of the receipt rule set to which the receipt rule
      *         belongs.
      */
+
     public String getRuleSetName() {
         return this.ruleSetName;
     }
@@ -74,6 +76,7 @@ public class UpdateReceiptRuleRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateReceiptRuleRequest withRuleSetName(String ruleSetName) {
         setRuleSetName(ruleSetName);
         return this;
@@ -88,6 +91,7 @@ public class UpdateReceiptRuleRequest extends AmazonWebServiceRequest implements
      *        A data structure that contains the updated receipt rule
      *        information.
      */
+
     public void setRule(ReceiptRule rule) {
         this.rule = rule;
     }
@@ -100,6 +104,7 @@ public class UpdateReceiptRuleRequest extends AmazonWebServiceRequest implements
      * @return A data structure that contains the updated receipt rule
      *         information.
      */
+
     public ReceiptRule getRule() {
         return this.rule;
     }
@@ -115,6 +120,7 @@ public class UpdateReceiptRuleRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateReceiptRuleRequest withRule(ReceiptRule rule) {
         setRule(rule);
         return this;

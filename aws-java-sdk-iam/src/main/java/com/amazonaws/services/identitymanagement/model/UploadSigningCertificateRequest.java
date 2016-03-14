@@ -66,6 +66,7 @@ public class UploadSigningCertificateRequest extends AmazonWebServiceRequest
      * @param userName
      *        The name of the user the signing certificate is for.
      */
+
     public void setUserName(String userName) {
         this.userName = userName;
     }
@@ -77,6 +78,7 @@ public class UploadSigningCertificateRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the user the signing certificate is for.
      */
+
     public String getUserName() {
         return this.userName;
     }
@@ -91,6 +93,7 @@ public class UploadSigningCertificateRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UploadSigningCertificateRequest withUserName(String userName) {
         setUserName(userName);
         return this;
@@ -104,6 +107,7 @@ public class UploadSigningCertificateRequest extends AmazonWebServiceRequest
      * @param certificateBody
      *        The contents of the signing certificate.
      */
+
     public void setCertificateBody(String certificateBody) {
         this.certificateBody = certificateBody;
     }
@@ -115,6 +119,7 @@ public class UploadSigningCertificateRequest extends AmazonWebServiceRequest
      * 
      * @return The contents of the signing certificate.
      */
+
     public String getCertificateBody() {
         return this.certificateBody;
     }
@@ -129,6 +134,7 @@ public class UploadSigningCertificateRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UploadSigningCertificateRequest withCertificateBody(
             String certificateBody) {
         setCertificateBody(certificateBody);

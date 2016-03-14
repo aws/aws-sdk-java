@@ -38,6 +38,7 @@ public class CreateInstanceExportTaskResult implements Serializable, Cloneable {
      * @param exportTask
      *        Information about the instance export task.
      */
+
     public void setExportTask(ExportTask exportTask) {
         this.exportTask = exportTask;
     }
@@ -49,6 +50,7 @@ public class CreateInstanceExportTaskResult implements Serializable, Cloneable {
      * 
      * @return Information about the instance export task.
      */
+
     public ExportTask getExportTask() {
         return this.exportTask;
     }
@@ -63,6 +65,7 @@ public class CreateInstanceExportTaskResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateInstanceExportTaskResult withExportTask(ExportTask exportTask) {
         setExportTask(exportTask);
         return this;

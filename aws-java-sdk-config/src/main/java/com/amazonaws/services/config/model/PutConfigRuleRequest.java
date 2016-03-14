@@ -30,6 +30,7 @@ public class PutConfigRuleRequest extends AmazonWebServiceRequest implements
     /**
      * @param configRule
      */
+
     public void setConfigRule(ConfigRule configRule) {
         this.configRule = configRule;
     }
@@ -37,6 +38,7 @@ public class PutConfigRuleRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public ConfigRule getConfigRule() {
         return this.configRule;
     }
@@ -46,6 +48,7 @@ public class PutConfigRuleRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutConfigRuleRequest withConfigRule(ConfigRule configRule) {
         setConfigRule(configRule);
         return this;

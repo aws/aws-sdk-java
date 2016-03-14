@@ -75,6 +75,7 @@ public class CreatePolicyRequest extends AmazonWebServiceRequest implements
      * @param policyName
      *        The name of the policy document.
      */
+
     public void setPolicyName(String policyName) {
         this.policyName = policyName;
     }
@@ -86,6 +87,7 @@ public class CreatePolicyRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the policy document.
      */
+
     public String getPolicyName() {
         return this.policyName;
     }
@@ -100,6 +102,7 @@ public class CreatePolicyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePolicyRequest withPolicyName(String policyName) {
         setPolicyName(policyName);
         return this;
@@ -130,6 +133,7 @@ public class CreatePolicyRequest extends AmazonWebServiceRequest implements
      *        This parameter is optional. If it is not included, it defaults to
      *        a slash (/).
      */
+
     public void setPath(String path) {
         this.path = path;
     }
@@ -158,6 +162,7 @@ public class CreatePolicyRequest extends AmazonWebServiceRequest implements
      *         This parameter is optional. If it is not included, it defaults to
      *         a slash (/).
      */
+
     public String getPath() {
         return this.path;
     }
@@ -189,6 +194,7 @@ public class CreatePolicyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePolicyRequest withPath(String path) {
         setPath(path);
         return this;
@@ -202,6 +208,7 @@ public class CreatePolicyRequest extends AmazonWebServiceRequest implements
      * @param policyDocument
      *        The policy document.
      */
+
     public void setPolicyDocument(String policyDocument) {
         this.policyDocument = policyDocument;
     }
@@ -213,6 +220,7 @@ public class CreatePolicyRequest extends AmazonWebServiceRequest implements
      * 
      * @return The policy document.
      */
+
     public String getPolicyDocument() {
         return this.policyDocument;
     }
@@ -227,6 +235,7 @@ public class CreatePolicyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePolicyRequest withPolicyDocument(String policyDocument) {
         setPolicyDocument(policyDocument);
         return this;
@@ -256,6 +265,7 @@ public class CreatePolicyRequest extends AmazonWebServiceRequest implements
      *        The policy description is immutable. After a value is assigned, it
      *        cannot be changed.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -283,6 +293,7 @@ public class CreatePolicyRequest extends AmazonWebServiceRequest implements
      *         The policy description is immutable. After a value is assigned,
      *         it cannot be changed.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -313,6 +324,7 @@ public class CreatePolicyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePolicyRequest withDescription(String description) {
         setDescription(description);
         return this;

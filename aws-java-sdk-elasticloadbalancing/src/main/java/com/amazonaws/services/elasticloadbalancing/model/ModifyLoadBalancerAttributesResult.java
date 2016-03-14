@@ -41,6 +41,7 @@ public class ModifyLoadBalancerAttributesResult implements Serializable,
      * @param loadBalancerName
      *        The name of the load balancer.
      */
+
     public void setLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
     }
@@ -52,6 +53,7 @@ public class ModifyLoadBalancerAttributesResult implements Serializable,
      * 
      * @return The name of the load balancer.
      */
+
     public String getLoadBalancerName() {
         return this.loadBalancerName;
     }
@@ -66,6 +68,7 @@ public class ModifyLoadBalancerAttributesResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyLoadBalancerAttributesResult withLoadBalancerName(
             String loadBalancerName) {
         setLoadBalancerName(loadBalancerName);
@@ -75,6 +78,7 @@ public class ModifyLoadBalancerAttributesResult implements Serializable,
     /**
      * @param loadBalancerAttributes
      */
+
     public void setLoadBalancerAttributes(
             LoadBalancerAttributes loadBalancerAttributes) {
         this.loadBalancerAttributes = loadBalancerAttributes;
@@ -83,6 +87,7 @@ public class ModifyLoadBalancerAttributesResult implements Serializable,
     /**
      * @return
      */
+
     public LoadBalancerAttributes getLoadBalancerAttributes() {
         return this.loadBalancerAttributes;
     }
@@ -92,6 +97,7 @@ public class ModifyLoadBalancerAttributesResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyLoadBalancerAttributesResult withLoadBalancerAttributes(
             LoadBalancerAttributes loadBalancerAttributes) {
         setLoadBalancerAttributes(loadBalancerAttributes);

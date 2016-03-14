@@ -93,6 +93,7 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest
     /**
      * @param gatewayARN
      */
+
     public void setGatewayARN(String gatewayARN) {
         this.gatewayARN = gatewayARN;
     }
@@ -100,6 +101,7 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest
     /**
      * @return
      */
+
     public String getGatewayARN() {
         return this.gatewayARN;
     }
@@ -109,6 +111,7 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateStorediSCSIVolumeRequest withGatewayARN(String gatewayARN) {
         setGatewayARN(gatewayARN);
         return this;
@@ -128,6 +131,7 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest
      *        "http://docs.aws.amazon.com/storagegateway/latest/userguide/API_ListLocalDisks.html"
      *        >ListLocalDisks</a> to list disk IDs for a gateway.
      */
+
     public void setDiskId(String diskId) {
         this.diskId = diskId;
     }
@@ -145,6 +149,7 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest
      *         "http://docs.aws.amazon.com/storagegateway/latest/userguide/API_ListLocalDisks.html"
      *         >ListLocalDisks</a> to list disk IDs for a gateway.
      */
+
     public String getDiskId() {
         return this.diskId;
     }
@@ -165,6 +170,7 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateStorediSCSIVolumeRequest withDiskId(String diskId) {
         setDiskId(diskId);
         return this;
@@ -190,6 +196,7 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest
      *        >DescribeSnapshots</a> in the <i>Amazon Elastic Compute Cloud API
      *        Reference</i>.
      */
+
     public void setSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
     }
@@ -214,6 +221,7 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest
      *         >DescribeSnapshots</a> in the <i>Amazon Elastic Compute Cloud API
      *         Reference</i>.
      */
+
     public String getSnapshotId() {
         return this.snapshotId;
     }
@@ -240,6 +248,7 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateStorediSCSIVolumeRequest withSnapshotId(String snapshotId) {
         setSnapshotId(snapshotId);
         return this;
@@ -261,6 +270,7 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest
      *        <p>
      *        <i>Valid Values</i>: true, false
      */
+
     public void setPreserveExistingData(Boolean preserveExistingData) {
         this.preserveExistingData = preserveExistingData;
     }
@@ -280,6 +290,7 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest
      *         <p>
      *         <i>Valid Values</i>: true, false
      */
+
     public Boolean getPreserveExistingData() {
         return this.preserveExistingData;
     }
@@ -302,6 +313,7 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateStorediSCSIVolumeRequest withPreserveExistingData(
             Boolean preserveExistingData) {
         setPreserveExistingData(preserveExistingData);
@@ -323,6 +335,7 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest
      *         <p>
      *         <i>Valid Values</i>: true, false
      */
+
     public Boolean isPreserveExistingData() {
         return this.preserveExistingData;
     }
@@ -347,6 +360,7 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest
      *        A3456B/target/iqn.1997-05.com.amazon:myvolume. The target name
      *        must be unique across all volumes of a gateway.
      */
+
     public void setTargetName(String targetName) {
         this.targetName = targetName;
     }
@@ -370,6 +384,7 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest
      *         /sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume. The target
      *         name must be unique across all volumes of a gateway.
      */
+
     public String getTargetName() {
         return this.targetName;
     }
@@ -396,6 +411,7 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateStorediSCSIVolumeRequest withTargetName(String targetName) {
         setTargetName(targetName);
         return this;
@@ -419,6 +435,7 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest
      *        <p>
      *        <i>Valid Values</i>: A valid IP address.
      */
+
     public void setNetworkInterfaceId(String networkInterfaceId) {
         this.networkInterfaceId = networkInterfaceId;
     }
@@ -440,6 +457,7 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest
      *         <p>
      *         <i>Valid Values</i>: A valid IP address.
      */
+
     public String getNetworkInterfaceId() {
         return this.networkInterfaceId;
     }
@@ -464,6 +482,7 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateStorediSCSIVolumeRequest withNetworkInterfaceId(
             String networkInterfaceId) {
         setNetworkInterfaceId(networkInterfaceId);

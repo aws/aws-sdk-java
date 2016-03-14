@@ -82,6 +82,7 @@ public class VerifyDomainDkimResult implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html"
      *         >Amazon SES Developer Guide</a>.
      */
+
     public java.util.List<String> getDkimTokens() {
         if (dkimTokens == null) {
             dkimTokens = new com.amazonaws.internal.SdkInternalList<String>();
@@ -127,6 +128,7 @@ public class VerifyDomainDkimResult implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html"
      *        >Amazon SES Developer Guide</a>.
      */
+
     public void setDkimTokens(java.util.Collection<String> dkimTokens) {
         if (dkimTokens == null) {
             this.dkimTokens = null;
@@ -183,6 +185,7 @@ public class VerifyDomainDkimResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VerifyDomainDkimResult withDkimTokens(String... dkimTokens) {
         if (this.dkimTokens == null) {
             setDkimTokens(new com.amazonaws.internal.SdkInternalList<String>(
@@ -234,6 +237,7 @@ public class VerifyDomainDkimResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VerifyDomainDkimResult withDkimTokens(
             java.util.Collection<String> dkimTokens) {
         setDkimTokens(dkimTokens);

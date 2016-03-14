@@ -42,6 +42,7 @@ public class GetSnapshotLimitsRequest extends AmazonWebServiceRequest implements
      * @param directoryId
      *        Contains the identifier of the directory to obtain the limits for.
      */
+
     public void setDirectoryId(String directoryId) {
         this.directoryId = directoryId;
     }
@@ -54,6 +55,7 @@ public class GetSnapshotLimitsRequest extends AmazonWebServiceRequest implements
      * @return Contains the identifier of the directory to obtain the limits
      *         for.
      */
+
     public String getDirectoryId() {
         return this.directoryId;
     }
@@ -68,6 +70,7 @@ public class GetSnapshotLimitsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetSnapshotLimitsRequest withDirectoryId(String directoryId) {
         setDirectoryId(directoryId);
         return this;

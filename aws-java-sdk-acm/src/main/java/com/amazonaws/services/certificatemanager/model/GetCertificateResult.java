@@ -48,6 +48,7 @@ public class GetCertificateResult implements Serializable, Cloneable {
      *        String that contains the ACM Certificate represented by the ARN
      *        specified at input.
      */
+
     public void setCertificate(String certificate) {
         this.certificate = certificate;
     }
@@ -61,6 +62,7 @@ public class GetCertificateResult implements Serializable, Cloneable {
      * @return String that contains the ACM Certificate represented by the ARN
      *         specified at input.
      */
+
     public String getCertificate() {
         return this.certificate;
     }
@@ -77,6 +79,7 @@ public class GetCertificateResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetCertificateResult withCertificate(String certificate) {
         setCertificate(certificate);
         return this;
@@ -92,6 +95,7 @@ public class GetCertificateResult implements Serializable, Cloneable {
      *        The certificate chain that contains the root certificate issued by
      *        the certificate authority (CA).
      */
+
     public void setCertificateChain(String certificateChain) {
         this.certificateChain = certificateChain;
     }
@@ -105,6 +109,7 @@ public class GetCertificateResult implements Serializable, Cloneable {
      * @return The certificate chain that contains the root certificate issued
      *         by the certificate authority (CA).
      */
+
     public String getCertificateChain() {
         return this.certificateChain;
     }
@@ -121,6 +126,7 @@ public class GetCertificateResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetCertificateResult withCertificateChain(String certificateChain) {
         setCertificateChain(certificateChain);
         return this;

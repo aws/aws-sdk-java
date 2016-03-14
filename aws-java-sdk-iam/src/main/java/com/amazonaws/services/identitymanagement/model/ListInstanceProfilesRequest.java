@@ -84,6 +84,7 @@ public class ListInstanceProfilesRequest extends AmazonWebServiceRequest
      *        This parameter is optional. If it is not included, it defaults to
      *        a slash (/), listing all instance profiles.
      */
+
     public void setPathPrefix(String pathPrefix) {
         this.pathPrefix = pathPrefix;
     }
@@ -107,6 +108,7 @@ public class ListInstanceProfilesRequest extends AmazonWebServiceRequest
      *         This parameter is optional. If it is not included, it defaults to
      *         a slash (/), listing all instance profiles.
      */
+
     public String getPathPrefix() {
         return this.pathPrefix;
     }
@@ -133,6 +135,7 @@ public class ListInstanceProfilesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListInstanceProfilesRequest withPathPrefix(String pathPrefix) {
         setPathPrefix(pathPrefix);
         return this;
@@ -152,6 +155,7 @@ public class ListInstanceProfilesRequest extends AmazonWebServiceRequest
      *        it to the value of the <code>Marker</code> element in the response
      *        that you received to indicate where the next call should start.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -170,6 +174,7 @@ public class ListInstanceProfilesRequest extends AmazonWebServiceRequest
      *         response that you received to indicate where the next call should
      *         start.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -190,6 +195,7 @@ public class ListInstanceProfilesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListInstanceProfilesRequest withMarker(String marker) {
         setMarker(marker);
         return this;
@@ -225,6 +231,7 @@ public class ListInstanceProfilesRequest extends AmazonWebServiceRequest
      *        include in the subsequent call that tells the service where to
      *        continue from.
      */
+
     public void setMaxItems(Integer maxItems) {
         this.maxItems = maxItems;
     }
@@ -259,6 +266,7 @@ public class ListInstanceProfilesRequest extends AmazonWebServiceRequest
      *         include in the subsequent call that tells the service where to
      *         continue from.
      */
+
     public Integer getMaxItems() {
         return this.maxItems;
     }
@@ -295,6 +303,7 @@ public class ListInstanceProfilesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListInstanceProfilesRequest withMaxItems(Integer maxItems) {
         setMaxItems(maxItems);
         return this;

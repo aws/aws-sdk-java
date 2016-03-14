@@ -78,6 +78,7 @@ public class GetEndpointAttributesResult implements Serializable, Cloneable {
      *         from the notification service when an app and mobile device are
      *         registered with the notification service.</li>
      */
+
     public java.util.Map<String, String> getAttributes() {
         if (attributes == null) {
             attributes = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -119,6 +120,7 @@ public class GetEndpointAttributesResult implements Serializable, Cloneable {
      *        from the notification service when an app and mobile device are
      *        registered with the notification service.</li>
      */
+
     public void setAttributes(java.util.Map<String, String> attributes) {
         this.attributes = attributes == null ? null
                 : new com.amazonaws.internal.SdkInternalMap<String, String>(
@@ -161,6 +163,7 @@ public class GetEndpointAttributesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetEndpointAttributesResult withAttributes(
             java.util.Map<String, String> attributes) {
         setAttributes(attributes);
@@ -183,6 +186,7 @@ public class GetEndpointAttributesResult implements Serializable, Cloneable {
      * Removes all the entries added into Attributes. &lt;p> Returns a reference
      * to this object so that method calls can be chained together.
      */
+
     public GetEndpointAttributesResult clearAttributesEntries() {
         this.attributes = null;
         return this;

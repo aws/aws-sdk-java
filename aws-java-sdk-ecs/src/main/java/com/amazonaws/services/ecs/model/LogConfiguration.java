@@ -65,6 +65,7 @@ public class LogConfiguration implements Serializable, Cloneable {
      *        <code>sudo docker version | grep "Server API version"</code>
      * @see LogDriver
      */
+
     public void setLogDriver(String logDriver) {
         this.logDriver = logDriver;
     }
@@ -86,6 +87,7 @@ public class LogConfiguration implements Serializable, Cloneable {
      *         <code>sudo docker version | grep "Server API version"</code>
      * @see LogDriver
      */
+
     public String getLogDriver() {
         return this.logDriver;
     }
@@ -110,6 +112,7 @@ public class LogConfiguration implements Serializable, Cloneable {
      *         chained together.
      * @see LogDriver
      */
+
     public LogConfiguration withLogDriver(String logDriver) {
         setLogDriver(logDriver);
         return this;
@@ -135,6 +138,7 @@ public class LogConfiguration implements Serializable, Cloneable {
      *         chained together.
      * @see LogDriver
      */
+
     public void setLogDriver(LogDriver logDriver) {
         this.logDriver = logDriver.toString();
     }
@@ -159,6 +163,7 @@ public class LogConfiguration implements Serializable, Cloneable {
      *         chained together.
      * @see LogDriver
      */
+
     public LogConfiguration withLogDriver(LogDriver logDriver) {
         setLogDriver(logDriver);
         return this;
@@ -181,6 +186,7 @@ public class LogConfiguration implements Serializable, Cloneable {
      *         instance and run the following command:
      *         <code>sudo docker version | grep "Server API version"</code>
      */
+
     public java.util.Map<String, String> getOptions() {
         return options;
     }
@@ -203,6 +209,7 @@ public class LogConfiguration implements Serializable, Cloneable {
      *        instance and run the following command:
      *        <code>sudo docker version | grep "Server API version"</code>
      */
+
     public void setOptions(java.util.Map<String, String> options) {
         this.options = options;
     }
@@ -227,6 +234,7 @@ public class LogConfiguration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LogConfiguration withOptions(java.util.Map<String, String> options) {
         setOptions(options);
         return this;
@@ -247,6 +255,7 @@ public class LogConfiguration implements Serializable, Cloneable {
      * Removes all the entries added into Options. &lt;p> Returns a reference to
      * this object so that method calls can be chained together.
      */
+
     public LogConfiguration clearOptionsEntries() {
         this.options = null;
         return this;

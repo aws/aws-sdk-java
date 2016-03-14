@@ -86,6 +86,7 @@ public class Address implements Serializable, Cloneable {
      *        The ID of the instance that the address is associated with (if
      *        any).
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -98,6 +99,7 @@ public class Address implements Serializable, Cloneable {
      * @return The ID of the instance that the address is associated with (if
      *         any).
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
@@ -113,6 +115,7 @@ public class Address implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Address withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;
@@ -126,6 +129,7 @@ public class Address implements Serializable, Cloneable {
      * @param publicIp
      *        The Elastic IP address.
      */
+
     public void setPublicIp(String publicIp) {
         this.publicIp = publicIp;
     }
@@ -137,6 +141,7 @@ public class Address implements Serializable, Cloneable {
      * 
      * @return The Elastic IP address.
      */
+
     public String getPublicIp() {
         return this.publicIp;
     }
@@ -151,6 +156,7 @@ public class Address implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Address withPublicIp(String publicIp) {
         setPublicIp(publicIp);
         return this;
@@ -165,6 +171,7 @@ public class Address implements Serializable, Cloneable {
      *        The ID representing the allocation of the address for use with
      *        EC2-VPC.
      */
+
     public void setAllocationId(String allocationId) {
         this.allocationId = allocationId;
     }
@@ -177,6 +184,7 @@ public class Address implements Serializable, Cloneable {
      * @return The ID representing the allocation of the address for use with
      *         EC2-VPC.
      */
+
     public String getAllocationId() {
         return this.allocationId;
     }
@@ -192,6 +200,7 @@ public class Address implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Address withAllocationId(String allocationId) {
         setAllocationId(allocationId);
         return this;
@@ -207,6 +216,7 @@ public class Address implements Serializable, Cloneable {
      *        The ID representing the association of the address with an
      *        instance in a VPC.
      */
+
     public void setAssociationId(String associationId) {
         this.associationId = associationId;
     }
@@ -220,6 +230,7 @@ public class Address implements Serializable, Cloneable {
      * @return The ID representing the association of the address with an
      *         instance in a VPC.
      */
+
     public String getAssociationId() {
         return this.associationId;
     }
@@ -236,6 +247,7 @@ public class Address implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Address withAssociationId(String associationId) {
         setAssociationId(associationId);
         return this;
@@ -254,6 +266,7 @@ public class Address implements Serializable, Cloneable {
      *        VPC (<code>vpc</code>).
      * @see DomainType
      */
+
     public void setDomain(String domain) {
         this.domain = domain;
     }
@@ -270,6 +283,7 @@ public class Address implements Serializable, Cloneable {
      *         a VPC (<code>vpc</code>).
      * @see DomainType
      */
+
     public String getDomain() {
         return this.domain;
     }
@@ -289,6 +303,7 @@ public class Address implements Serializable, Cloneable {
      *         chained together.
      * @see DomainType
      */
+
     public Address withDomain(String domain) {
         setDomain(domain);
         return this;
@@ -309,6 +324,7 @@ public class Address implements Serializable, Cloneable {
      *         chained together.
      * @see DomainType
      */
+
     public void setDomain(DomainType domain) {
         this.domain = domain.toString();
     }
@@ -328,6 +344,7 @@ public class Address implements Serializable, Cloneable {
      *         chained together.
      * @see DomainType
      */
+
     public Address withDomain(DomainType domain) {
         setDomain(domain);
         return this;
@@ -341,6 +358,7 @@ public class Address implements Serializable, Cloneable {
      * @param networkInterfaceId
      *        The ID of the network interface.
      */
+
     public void setNetworkInterfaceId(String networkInterfaceId) {
         this.networkInterfaceId = networkInterfaceId;
     }
@@ -352,6 +370,7 @@ public class Address implements Serializable, Cloneable {
      * 
      * @return The ID of the network interface.
      */
+
     public String getNetworkInterfaceId() {
         return this.networkInterfaceId;
     }
@@ -366,6 +385,7 @@ public class Address implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Address withNetworkInterfaceId(String networkInterfaceId) {
         setNetworkInterfaceId(networkInterfaceId);
         return this;
@@ -379,6 +399,7 @@ public class Address implements Serializable, Cloneable {
      * @param networkInterfaceOwnerId
      *        The ID of the AWS account that owns the network interface.
      */
+
     public void setNetworkInterfaceOwnerId(String networkInterfaceOwnerId) {
         this.networkInterfaceOwnerId = networkInterfaceOwnerId;
     }
@@ -390,6 +411,7 @@ public class Address implements Serializable, Cloneable {
      * 
      * @return The ID of the AWS account that owns the network interface.
      */
+
     public String getNetworkInterfaceOwnerId() {
         return this.networkInterfaceOwnerId;
     }
@@ -404,6 +426,7 @@ public class Address implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Address withNetworkInterfaceOwnerId(String networkInterfaceOwnerId) {
         setNetworkInterfaceOwnerId(networkInterfaceOwnerId);
         return this;
@@ -417,6 +440,7 @@ public class Address implements Serializable, Cloneable {
      * @param privateIpAddress
      *        The private IP address associated with the Elastic IP address.
      */
+
     public void setPrivateIpAddress(String privateIpAddress) {
         this.privateIpAddress = privateIpAddress;
     }
@@ -428,6 +452,7 @@ public class Address implements Serializable, Cloneable {
      * 
      * @return The private IP address associated with the Elastic IP address.
      */
+
     public String getPrivateIpAddress() {
         return this.privateIpAddress;
     }
@@ -442,6 +467,7 @@ public class Address implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Address withPrivateIpAddress(String privateIpAddress) {
         setPrivateIpAddress(privateIpAddress);
         return this;

@@ -49,6 +49,7 @@ public class DeleteRouteRequest extends AmazonWebServiceRequest implements
      * @param routeTableId
      *        The ID of the route table.
      */
+
     public void setRouteTableId(String routeTableId) {
         this.routeTableId = routeTableId;
     }
@@ -60,6 +61,7 @@ public class DeleteRouteRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ID of the route table.
      */
+
     public String getRouteTableId() {
         return this.routeTableId;
     }
@@ -74,6 +76,7 @@ public class DeleteRouteRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteRouteRequest withRouteTableId(String routeTableId) {
         setRouteTableId(routeTableId);
         return this;
@@ -89,6 +92,7 @@ public class DeleteRouteRequest extends AmazonWebServiceRequest implements
      *        The CIDR range for the route. The value you specify must match the
      *        CIDR for the route exactly.
      */
+
     public void setDestinationCidrBlock(String destinationCidrBlock) {
         this.destinationCidrBlock = destinationCidrBlock;
     }
@@ -102,6 +106,7 @@ public class DeleteRouteRequest extends AmazonWebServiceRequest implements
      * @return The CIDR range for the route. The value you specify must match
      *         the CIDR for the route exactly.
      */
+
     public String getDestinationCidrBlock() {
         return this.destinationCidrBlock;
     }
@@ -118,6 +123,7 @@ public class DeleteRouteRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteRouteRequest withDestinationCidrBlock(
             String destinationCidrBlock) {
         setDestinationCidrBlock(destinationCidrBlock);

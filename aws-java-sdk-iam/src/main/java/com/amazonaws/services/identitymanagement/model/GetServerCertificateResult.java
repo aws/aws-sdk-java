@@ -40,6 +40,7 @@ public class GetServerCertificateResult implements Serializable, Cloneable {
      * @param serverCertificate
      *        Information about the server certificate.
      */
+
     public void setServerCertificate(ServerCertificate serverCertificate) {
         this.serverCertificate = serverCertificate;
     }
@@ -51,6 +52,7 @@ public class GetServerCertificateResult implements Serializable, Cloneable {
      * 
      * @return Information about the server certificate.
      */
+
     public ServerCertificate getServerCertificate() {
         return this.serverCertificate;
     }
@@ -65,6 +67,7 @@ public class GetServerCertificateResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetServerCertificateResult withServerCertificate(
             ServerCertificate serverCertificate) {
         setServerCertificate(serverCertificate);

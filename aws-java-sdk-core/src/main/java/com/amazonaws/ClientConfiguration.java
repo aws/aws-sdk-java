@@ -14,15 +14,14 @@
  */
 package com.amazonaws;
 
-import java.net.InetAddress;
-import java.security.SecureRandom;
-
-import org.apache.http.annotation.NotThreadSafe;
-
 import com.amazonaws.http.IdleConnectionReaper;
 import com.amazonaws.retry.PredefinedRetryPolicies;
 import com.amazonaws.retry.RetryPolicy;
 import com.amazonaws.util.VersionInfoUtils;
+import org.apache.http.annotation.NotThreadSafe;
+
+import java.net.InetAddress;
+import java.security.SecureRandom;
 
 /**
  * Client configuration options such as proxy settings, user agent string, max retry attempts, etc.
@@ -103,6 +102,11 @@ public class ClientConfiguration {
      * The default on whether to use TCP KeepAlive.
      */
     public static final boolean DEFAULT_TCP_KEEP_ALIVE = false;
+
+    /**
+     * The default on whether to throttle retries.
+     */
+    public static final boolean DEFAULT_THROTTLE_RETRIES = false;
 
     /**
      * The default response metadata cache size.
@@ -197,6 +201,8 @@ public class ClientConfiguration {
     private int requestTimeout = DEFAULT_REQUEST_TIMEOUT;
 
     private int clientExecutionTimeout = DEFAULT_CLIENT_EXECUTION_TIMEOUT;
+
+    private boolean throttleRetries = DEFAULT_THROTTLE_RETRIES;
 
     /**
      * Optional size hint (in bytes) for the low level TCP send buffer. This is an advanced option
@@ -322,6 +328,7 @@ public class ClientConfiguration {
         this.maxConnections = other.maxConnections;
         this.maxErrorRetry = other.maxErrorRetry;
         this.retryPolicy = other.retryPolicy;
+        this.throttleRetries = other.throttleRetries;
         this.localAddress = other.localAddress;
         this.protocol = other.protocol;
         this.proxyDomain = other.proxyDomain;
@@ -1179,6 +1186,81 @@ public class ClientConfiguration {
      */
     public ClientConfiguration withReaper(boolean use) {
         setUseReaper(use);
+        return this;
+    }
+
+    /**
+     * Returns whether retry throttling will be used.
+     * <p>
+     * Retry throttling is a feature which intelligently throttles retry attempts when a
+     * large percentage of requests are failing and retries are unsuccessful, particularly
+     * in scenarios of degraded service health.  In these situations the client will drain its
+     * internal retry capacity and slowly roll off from retry attempts until requests begin
+     * to succeed again.  At that point the retry capacity pool will begin to refill and
+     * retries will once again be permitted.
+     * </p>
+     * <p>
+     * In situations where retries have been throttled this feature will effectively result in
+     * fail-fast behavior from the client.  Because retries are circumvented exceptions will
+     * be immediately returned to the caller if the initial request is unsuccessful.  This
+     * will result in a greater number of exceptions being returned up front but prevents
+     * requests being tied up attempting subsequent retries which are also likely to fail.
+     * </p>
+     *
+     * @return true if retry throttling will be used
+     */
+    public boolean useThrottledRetries() {
+        return throttleRetries || getSystemProperty(
+                SDKGlobalConfiguration.RETRY_THROTTLING_SYSTEM_PROPERTY) != null;
+    }
+
+    /**
+     * Sets whether throttled retries should be used
+     * <p>
+     * Retry throttling is a feature which intelligently throttles retry attempts when a
+     * large percentage of requests are failing and retries are unsuccessful, particularly
+     * in scenarios of degraded service health.  In these situations the client will drain its
+     * internal retry capacity and slowly roll off from retry attempts until requests begin
+     * to succeed again.  At that point the retry capacity pool will begin to refill and
+     * retries will once again be permitted.
+     * </p>
+     * <p>
+     * In situations where retries have been throttled this feature will effectively result in
+     * fail-fast behavior from the client.  Because retries are circumvented exceptions will
+     * be immediately returned to the caller if the initial request is unsuccessful.  This
+     * will result in a greater number of exceptions being returned up front but prevents
+     * requests being tied up attempting subsequent retries which are also likely to fail.
+     * </p>
+     *
+     * @param use
+     *            true if throttled retries should be used
+     */
+    public void setUseThrottleRetries(boolean use) { this.throttleRetries = use; }
+
+    /**
+     * Sets whether throttled retries should be used
+     * <p>
+     * Retry throttling is a feature which intelligently throttles retry attempts when a
+     * large percentage of requests are failing and retries are unsuccessful, particularly
+     * in scenarios of degraded service health.  In these situations the client will drain its
+     * internal retry capacity and slowly roll off from retry attempts until requests begin
+     * to succeed again.  At that point the retry capacity pool will begin to refill and
+     * retries will once again be permitted.
+     * </p>
+     * <p>
+     * In situations where retries have been throttled this feature will effectively result in
+     * fail-fast behavior from the client.  Because retries are circumvented exceptions will
+     * be immediately returned to the caller if the initial request is unsuccessful.  This
+     * will result in a greater number of exceptions being returned up front but prevents
+     * requests being tied up attempting subsequent retries which are also likely to fail.
+     * </p>
+
+     * @param use
+     *            true if throttled retries should be used
+     * @return The updated ClientConfiguration object.
+     */
+    public ClientConfiguration withThrottledRetries(boolean use) {
+        setUseThrottleRetries(use);
         return this;
     }
 

@@ -53,6 +53,7 @@ public class PollForTaskResult implements Serializable, Cloneable {
      *        in subsequent calls to <a>ReportTaskProgress</a> and
      *        <a>SetTaskStatus</a>.
      */
+
     public void setTaskObject(TaskObject taskObject) {
         this.taskObject = taskObject;
     }
@@ -73,6 +74,7 @@ public class PollForTaskResult implements Serializable, Cloneable {
      *         <code>taskId</code> in subsequent calls to
      *         <a>ReportTaskProgress</a> and <a>SetTaskStatus</a>.
      */
+
     public TaskObject getTaskObject() {
         return this.taskObject;
     }
@@ -96,6 +98,7 @@ public class PollForTaskResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PollForTaskResult withTaskObject(TaskObject taskObject) {
         setTaskObject(taskObject);
         return this;

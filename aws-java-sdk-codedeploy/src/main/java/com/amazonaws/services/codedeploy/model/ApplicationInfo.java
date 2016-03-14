@@ -59,6 +59,7 @@ public class ApplicationInfo implements Serializable, Cloneable {
      * @param applicationId
      *        The application ID.
      */
+
     public void setApplicationId(String applicationId) {
         this.applicationId = applicationId;
     }
@@ -70,6 +71,7 @@ public class ApplicationInfo implements Serializable, Cloneable {
      * 
      * @return The application ID.
      */
+
     public String getApplicationId() {
         return this.applicationId;
     }
@@ -84,6 +86,7 @@ public class ApplicationInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ApplicationInfo withApplicationId(String applicationId) {
         setApplicationId(applicationId);
         return this;
@@ -97,6 +100,7 @@ public class ApplicationInfo implements Serializable, Cloneable {
      * @param applicationName
      *        The application name.
      */
+
     public void setApplicationName(String applicationName) {
         this.applicationName = applicationName;
     }
@@ -108,6 +112,7 @@ public class ApplicationInfo implements Serializable, Cloneable {
      * 
      * @return The application name.
      */
+
     public String getApplicationName() {
         return this.applicationName;
     }
@@ -122,6 +127,7 @@ public class ApplicationInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ApplicationInfo withApplicationName(String applicationName) {
         setApplicationName(applicationName);
         return this;
@@ -135,6 +141,7 @@ public class ApplicationInfo implements Serializable, Cloneable {
      * @param createTime
      *        The time that the application was created.
      */
+
     public void setCreateTime(java.util.Date createTime) {
         this.createTime = createTime;
     }
@@ -146,6 +153,7 @@ public class ApplicationInfo implements Serializable, Cloneable {
      * 
      * @return The time that the application was created.
      */
+
     public java.util.Date getCreateTime() {
         return this.createTime;
     }
@@ -160,6 +168,7 @@ public class ApplicationInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ApplicationInfo withCreateTime(java.util.Date createTime) {
         setCreateTime(createTime);
         return this;
@@ -175,6 +184,7 @@ public class ApplicationInfo implements Serializable, Cloneable {
      *        True if the user has authenticated with GitHub for the specified
      *        application; otherwise, false.
      */
+
     public void setLinkedToGitHub(Boolean linkedToGitHub) {
         this.linkedToGitHub = linkedToGitHub;
     }
@@ -188,6 +198,7 @@ public class ApplicationInfo implements Serializable, Cloneable {
      * @return True if the user has authenticated with GitHub for the specified
      *         application; otherwise, false.
      */
+
     public Boolean getLinkedToGitHub() {
         return this.linkedToGitHub;
     }
@@ -204,6 +215,7 @@ public class ApplicationInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ApplicationInfo withLinkedToGitHub(Boolean linkedToGitHub) {
         setLinkedToGitHub(linkedToGitHub);
         return this;
@@ -218,6 +230,7 @@ public class ApplicationInfo implements Serializable, Cloneable {
      * @return True if the user has authenticated with GitHub for the specified
      *         application; otherwise, false.
      */
+
     public Boolean isLinkedToGitHub() {
         return this.linkedToGitHub;
     }

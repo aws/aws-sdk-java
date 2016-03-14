@@ -33,6 +33,7 @@ public class RedshiftDatabase implements Serializable, Cloneable {
     /**
      * @param databaseName
      */
+
     public void setDatabaseName(String databaseName) {
         this.databaseName = databaseName;
     }
@@ -40,6 +41,7 @@ public class RedshiftDatabase implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getDatabaseName() {
         return this.databaseName;
     }
@@ -49,6 +51,7 @@ public class RedshiftDatabase implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RedshiftDatabase withDatabaseName(String databaseName) {
         setDatabaseName(databaseName);
         return this;
@@ -57,6 +60,7 @@ public class RedshiftDatabase implements Serializable, Cloneable {
     /**
      * @param clusterIdentifier
      */
+
     public void setClusterIdentifier(String clusterIdentifier) {
         this.clusterIdentifier = clusterIdentifier;
     }
@@ -64,6 +68,7 @@ public class RedshiftDatabase implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getClusterIdentifier() {
         return this.clusterIdentifier;
     }
@@ -73,6 +78,7 @@ public class RedshiftDatabase implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RedshiftDatabase withClusterIdentifier(String clusterIdentifier) {
         setClusterIdentifier(clusterIdentifier);
         return this;

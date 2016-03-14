@@ -84,6 +84,7 @@ public class LoginProfile implements Serializable, Cloneable {
      *        The name of the user, which can be used for signing in to the AWS
      *        Management Console.
      */
+
     public void setUserName(String userName) {
         this.userName = userName;
     }
@@ -97,6 +98,7 @@ public class LoginProfile implements Serializable, Cloneable {
      * @return The name of the user, which can be used for signing in to the AWS
      *         Management Console.
      */
+
     public String getUserName() {
         return this.userName;
     }
@@ -113,6 +115,7 @@ public class LoginProfile implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LoginProfile withUserName(String userName) {
         setUserName(userName);
         return this;
@@ -126,6 +129,7 @@ public class LoginProfile implements Serializable, Cloneable {
      * @param createDate
      *        The date when the password for the user was created.
      */
+
     public void setCreateDate(java.util.Date createDate) {
         this.createDate = createDate;
     }
@@ -137,6 +141,7 @@ public class LoginProfile implements Serializable, Cloneable {
      * 
      * @return The date when the password for the user was created.
      */
+
     public java.util.Date getCreateDate() {
         return this.createDate;
     }
@@ -151,6 +156,7 @@ public class LoginProfile implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LoginProfile withCreateDate(java.util.Date createDate) {
         setCreateDate(createDate);
         return this;
@@ -166,6 +172,7 @@ public class LoginProfile implements Serializable, Cloneable {
      *        Specifies whether the user is required to set a new password on
      *        next sign-in.
      */
+
     public void setPasswordResetRequired(Boolean passwordResetRequired) {
         this.passwordResetRequired = passwordResetRequired;
     }
@@ -179,6 +186,7 @@ public class LoginProfile implements Serializable, Cloneable {
      * @return Specifies whether the user is required to set a new password on
      *         next sign-in.
      */
+
     public Boolean getPasswordResetRequired() {
         return this.passwordResetRequired;
     }
@@ -195,6 +203,7 @@ public class LoginProfile implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LoginProfile withPasswordResetRequired(Boolean passwordResetRequired) {
         setPasswordResetRequired(passwordResetRequired);
         return this;
@@ -209,6 +218,7 @@ public class LoginProfile implements Serializable, Cloneable {
      * @return Specifies whether the user is required to set a new password on
      *         next sign-in.
      */
+
     public Boolean isPasswordResetRequired() {
         return this.passwordResetRequired;
     }

@@ -50,6 +50,7 @@ public class AbortEnvironmentUpdateRequest extends AmazonWebServiceRequest
      *        This specifies the ID of the environment with the in-progress
      *        update that you want to cancel.
      */
+
     public void setEnvironmentId(String environmentId) {
         this.environmentId = environmentId;
     }
@@ -63,6 +64,7 @@ public class AbortEnvironmentUpdateRequest extends AmazonWebServiceRequest
      * @return This specifies the ID of the environment with the in-progress
      *         update that you want to cancel.
      */
+
     public String getEnvironmentId() {
         return this.environmentId;
     }
@@ -79,6 +81,7 @@ public class AbortEnvironmentUpdateRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AbortEnvironmentUpdateRequest withEnvironmentId(String environmentId) {
         setEnvironmentId(environmentId);
         return this;
@@ -94,6 +97,7 @@ public class AbortEnvironmentUpdateRequest extends AmazonWebServiceRequest
      *        This specifies the name of the environment with the in-progress
      *        update that you want to cancel.
      */
+
     public void setEnvironmentName(String environmentName) {
         this.environmentName = environmentName;
     }
@@ -107,6 +111,7 @@ public class AbortEnvironmentUpdateRequest extends AmazonWebServiceRequest
      * @return This specifies the name of the environment with the in-progress
      *         update that you want to cancel.
      */
+
     public String getEnvironmentName() {
         return this.environmentName;
     }
@@ -123,6 +128,7 @@ public class AbortEnvironmentUpdateRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AbortEnvironmentUpdateRequest withEnvironmentName(
             String environmentName) {
         setEnvironmentName(environmentName);

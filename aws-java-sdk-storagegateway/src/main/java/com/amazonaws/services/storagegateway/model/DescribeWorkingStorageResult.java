@@ -53,6 +53,7 @@ public class DescribeWorkingStorageResult implements Serializable, Cloneable {
     /**
      * @param gatewayARN
      */
+
     public void setGatewayARN(String gatewayARN) {
         this.gatewayARN = gatewayARN;
     }
@@ -60,6 +61,7 @@ public class DescribeWorkingStorageResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getGatewayARN() {
         return this.gatewayARN;
     }
@@ -69,6 +71,7 @@ public class DescribeWorkingStorageResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeWorkingStorageResult withGatewayARN(String gatewayARN) {
         setGatewayARN(gatewayARN);
         return this;
@@ -88,6 +91,7 @@ public class DescribeWorkingStorageResult implements Serializable, Cloneable {
      *         disks are configured as working storage, then the DiskIds array
      *         is empty.
      */
+
     public java.util.List<String> getDiskIds() {
         if (diskIds == null) {
             diskIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -110,6 +114,7 @@ public class DescribeWorkingStorageResult implements Serializable, Cloneable {
      *        are configured as working storage, then the DiskIds array is
      *        empty.
      */
+
     public void setDiskIds(java.util.Collection<String> diskIds) {
         if (diskIds == null) {
             this.diskIds = null;
@@ -143,6 +148,7 @@ public class DescribeWorkingStorageResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeWorkingStorageResult withDiskIds(String... diskIds) {
         if (this.diskIds == null) {
             setDiskIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -171,6 +177,7 @@ public class DescribeWorkingStorageResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeWorkingStorageResult withDiskIds(
             java.util.Collection<String> diskIds) {
         setDiskIds(diskIds);
@@ -188,6 +195,7 @@ public class DescribeWorkingStorageResult implements Serializable, Cloneable {
      *        working storage is configured for the gateway, this field returns
      *        0.
      */
+
     public void setWorkingStorageUsedInBytes(Long workingStorageUsedInBytes) {
         this.workingStorageUsedInBytes = workingStorageUsedInBytes;
     }
@@ -202,6 +210,7 @@ public class DescribeWorkingStorageResult implements Serializable, Cloneable {
      *         working storage is configured for the gateway, this field returns
      *         0.
      */
+
     public Long getWorkingStorageUsedInBytes() {
         return this.workingStorageUsedInBytes;
     }
@@ -219,6 +228,7 @@ public class DescribeWorkingStorageResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeWorkingStorageResult withWorkingStorageUsedInBytes(
             Long workingStorageUsedInBytes) {
         setWorkingStorageUsedInBytes(workingStorageUsedInBytes);
@@ -236,6 +246,7 @@ public class DescribeWorkingStorageResult implements Serializable, Cloneable {
      *        no working storage is configured for the gateway, this field
      *        returns 0.
      */
+
     public void setWorkingStorageAllocatedInBytes(
             Long workingStorageAllocatedInBytes) {
         this.workingStorageAllocatedInBytes = workingStorageAllocatedInBytes;
@@ -251,6 +262,7 @@ public class DescribeWorkingStorageResult implements Serializable, Cloneable {
      *         no working storage is configured for the gateway, this field
      *         returns 0.
      */
+
     public Long getWorkingStorageAllocatedInBytes() {
         return this.workingStorageAllocatedInBytes;
     }
@@ -268,6 +280,7 @@ public class DescribeWorkingStorageResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeWorkingStorageResult withWorkingStorageAllocatedInBytes(
             Long workingStorageAllocatedInBytes) {
         setWorkingStorageAllocatedInBytes(workingStorageAllocatedInBytes);

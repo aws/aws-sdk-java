@@ -62,6 +62,15 @@ public class Region {
     }
 
     /**
+     * Returns the partition this region is in. I.E. 'aws' or 'aws-cn'
+     *
+     * @return The partition this region is in.
+     */
+    public String getPartition() {
+        return regionImpl.getPartition();
+    }
+
+    /**
      * Returns the endpoint for the service given.
      *
      * @see ServiceAbbreviations

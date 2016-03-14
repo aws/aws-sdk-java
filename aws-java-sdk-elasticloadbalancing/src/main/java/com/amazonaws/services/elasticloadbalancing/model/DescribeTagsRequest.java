@@ -39,6 +39,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements
      * 
      * @return The names of the load balancers.
      */
+
     public java.util.List<String> getLoadBalancerNames() {
         if (loadBalancerNames == null) {
             loadBalancerNames = new com.amazonaws.internal.SdkInternalList<String>();
@@ -54,6 +55,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements
      * @param loadBalancerNames
      *        The names of the load balancers.
      */
+
     public void setLoadBalancerNames(
             java.util.Collection<String> loadBalancerNames) {
         if (loadBalancerNames == null) {
@@ -81,6 +83,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTagsRequest withLoadBalancerNames(
             String... loadBalancerNames) {
         if (this.loadBalancerNames == null) {
@@ -103,6 +106,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTagsRequest withLoadBalancerNames(
             java.util.Collection<String> loadBalancerNames) {
         setLoadBalancerNames(loadBalancerNames);

@@ -165,6 +165,7 @@ public class AudioCodecOptions implements Serializable, Cloneable {
      *        can change the value as required.
      *        </p>
      */
+
     public void setProfile(String profile) {
         this.profile = profile;
     }
@@ -229,6 +230,7 @@ public class AudioCodecOptions implements Serializable, Cloneable {
      *         AAC-LC. You can change the value as required.
      *         </p>
      */
+
     public String getProfile() {
         return this.profile;
     }
@@ -296,6 +298,7 @@ public class AudioCodecOptions implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AudioCodecOptions withProfile(String profile) {
         setProfile(profile);
         return this;
@@ -333,6 +336,7 @@ public class AudioCodecOptions implements Serializable, Cloneable {
      *        <p>
      *        The most common bit depth is <code>24</code>.
      */
+
     public void setBitDepth(String bitDepth) {
         this.bitDepth = bitDepth;
     }
@@ -368,6 +372,7 @@ public class AudioCodecOptions implements Serializable, Cloneable {
      *         <p>
      *         The most common bit depth is <code>24</code>.
      */
+
     public String getBitDepth() {
         return this.bitDepth;
     }
@@ -406,6 +411,7 @@ public class AudioCodecOptions implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AudioCodecOptions withBitDepth(String bitDepth) {
         setBitDepth(bitDepth);
         return this;
@@ -432,6 +438,7 @@ public class AudioCodecOptions implements Serializable, Cloneable {
      *        <p>
      *        The supported value is <code>LittleEndian</code>.
      */
+
     public void setBitOrder(String bitOrder) {
         this.bitOrder = bitOrder;
     }
@@ -456,6 +463,7 @@ public class AudioCodecOptions implements Serializable, Cloneable {
      *         <p>
      *         The supported value is <code>LittleEndian</code>.
      */
+
     public String getBitOrder() {
         return this.bitOrder;
     }
@@ -483,6 +491,7 @@ public class AudioCodecOptions implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AudioCodecOptions withBitOrder(String bitOrder) {
         setBitOrder(bitOrder);
         return this;
@@ -511,6 +520,7 @@ public class AudioCodecOptions implements Serializable, Cloneable {
      *        <p>
      *        The supported value is <code>Signed</code>.
      */
+
     public void setSigned(String signed) {
         this.signed = signed;
     }
@@ -537,6 +547,7 @@ public class AudioCodecOptions implements Serializable, Cloneable {
      *         <p>
      *         The supported value is <code>Signed</code>.
      */
+
     public String getSigned() {
         return this.signed;
     }
@@ -566,6 +577,7 @@ public class AudioCodecOptions implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AudioCodecOptions withSigned(String signed) {
         setSigned(signed);
         return this;

@@ -29,11 +29,17 @@ public class ListAliasesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * ltulgtltligtSIMPLE: The alias resolves to one specific fleet. Use this
-     * type when routing to active fleets.lt/ligtltligtTERMINAL: The alias does
-     * not resolve to any fleet but instead displays an message screen to the
-     * user. A terminal type alias throws a TerminalRoutingStrategyException
-     * with terminal routing strategy message embedded.lt/ligtlt/ulgt
+     * Type of routing to filter results on. Use this parameter to retrieve only
+     * aliases of a certain type. To retrieve all aliases, leave this parameter
+     * empty. Possible routing types include:
+     * <ul>
+     * <li>SIMPLE: The alias resolves to one specific fleet. Use this type when
+     * routing to active fleets.</li>
+     * <li>TERMINAL: The alias does not resolve to a fleet but instead can be
+     * used to display a message to the user. A terminal alias throws a
+     * TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
+     * embedded.</li>
+     * </ul>
      * </p>
      */
     private String routingStrategyType;
@@ -53,77 +59,112 @@ public class ListAliasesRequest extends AmazonWebServiceRequest implements
     private Integer limit;
     /**
      * <p>
-     * Token indicating the start of the next sequential page of results. A
-     * token is returned any time there may be additional results to be
-     * retrieved. To start at the beginning of a result set, do not set this
-     * parameter.
+     * Token indicating the start of the next sequential page of results. Use
+     * the token that is returned with a previous call to this action. To
+     * specify the start of the result set, do not specify a value.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * ltulgtltligtSIMPLE: The alias resolves to one specific fleet. Use this
-     * type when routing to active fleets.lt/ligtltligtTERMINAL: The alias does
-     * not resolve to any fleet but instead displays an message screen to the
-     * user. A terminal type alias throws a TerminalRoutingStrategyException
-     * with terminal routing strategy message embedded.lt/ligtlt/ulgt
+     * Type of routing to filter results on. Use this parameter to retrieve only
+     * aliases of a certain type. To retrieve all aliases, leave this parameter
+     * empty. Possible routing types include:
+     * <ul>
+     * <li>SIMPLE: The alias resolves to one specific fleet. Use this type when
+     * routing to active fleets.</li>
+     * <li>TERMINAL: The alias does not resolve to a fleet but instead can be
+     * used to display a message to the user. A terminal alias throws a
+     * TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
+     * embedded.</li>
+     * </ul>
      * </p>
      * 
      * @param routingStrategyType
-     *        ltulgtltligtSIMPLE: The alias resolves to one specific fleet. Use
-     *        this type when routing to active fleets.lt/ligtltligtTERMINAL: The
-     *        alias does not resolve to any fleet but instead displays an
-     *        message screen to the user. A terminal type alias throws a
-     *        TerminalRoutingStrategyException with terminal routing strategy
-     *        message embedded.lt/ligtlt/ulgt
+     *        Type of routing to filter results on. Use this parameter to
+     *        retrieve only aliases of a certain type. To retrieve all aliases,
+     *        leave this parameter empty. Possible routing types include:
+     *        <ul>
+     *        <li>SIMPLE: The alias resolves to one specific fleet. Use this
+     *        type when routing to active fleets.</li>
+     *        <li>TERMINAL: The alias does not resolve to a fleet but instead
+     *        can be used to display a message to the user. A terminal alias
+     *        throws a TerminalRoutingStrategyException with the
+     *        <a>RoutingStrategy</a> message embedded.</li>
+     *        </ul>
      * @see RoutingStrategyType
      */
+
     public void setRoutingStrategyType(String routingStrategyType) {
         this.routingStrategyType = routingStrategyType;
     }
 
     /**
      * <p>
-     * ltulgtltligtSIMPLE: The alias resolves to one specific fleet. Use this
-     * type when routing to active fleets.lt/ligtltligtTERMINAL: The alias does
-     * not resolve to any fleet but instead displays an message screen to the
-     * user. A terminal type alias throws a TerminalRoutingStrategyException
-     * with terminal routing strategy message embedded.lt/ligtlt/ulgt
+     * Type of routing to filter results on. Use this parameter to retrieve only
+     * aliases of a certain type. To retrieve all aliases, leave this parameter
+     * empty. Possible routing types include:
+     * <ul>
+     * <li>SIMPLE: The alias resolves to one specific fleet. Use this type when
+     * routing to active fleets.</li>
+     * <li>TERMINAL: The alias does not resolve to a fleet but instead can be
+     * used to display a message to the user. A terminal alias throws a
+     * TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
+     * embedded.</li>
+     * </ul>
      * </p>
      * 
-     * @return ltulgtltligtSIMPLE: The alias resolves to one specific fleet. Use
-     *         this type when routing to active fleets.lt/ligtltligtTERMINAL:
-     *         The alias does not resolve to any fleet but instead displays an
-     *         message screen to the user. A terminal type alias throws a
-     *         TerminalRoutingStrategyException with terminal routing strategy
-     *         message embedded.lt/ligtlt/ulgt
+     * @return Type of routing to filter results on. Use this parameter to
+     *         retrieve only aliases of a certain type. To retrieve all aliases,
+     *         leave this parameter empty. Possible routing types include:
+     *         <ul>
+     *         <li>SIMPLE: The alias resolves to one specific fleet. Use this
+     *         type when routing to active fleets.</li>
+     *         <li>TERMINAL: The alias does not resolve to a fleet but instead
+     *         can be used to display a message to the user. A terminal alias
+     *         throws a TerminalRoutingStrategyException with the
+     *         <a>RoutingStrategy</a> message embedded.</li>
+     *         </ul>
      * @see RoutingStrategyType
      */
+
     public String getRoutingStrategyType() {
         return this.routingStrategyType;
     }
 
     /**
      * <p>
-     * ltulgtltligtSIMPLE: The alias resolves to one specific fleet. Use this
-     * type when routing to active fleets.lt/ligtltligtTERMINAL: The alias does
-     * not resolve to any fleet but instead displays an message screen to the
-     * user. A terminal type alias throws a TerminalRoutingStrategyException
-     * with terminal routing strategy message embedded.lt/ligtlt/ulgt
+     * Type of routing to filter results on. Use this parameter to retrieve only
+     * aliases of a certain type. To retrieve all aliases, leave this parameter
+     * empty. Possible routing types include:
+     * <ul>
+     * <li>SIMPLE: The alias resolves to one specific fleet. Use this type when
+     * routing to active fleets.</li>
+     * <li>TERMINAL: The alias does not resolve to a fleet but instead can be
+     * used to display a message to the user. A terminal alias throws a
+     * TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
+     * embedded.</li>
+     * </ul>
      * </p>
      * 
      * @param routingStrategyType
-     *        ltulgtltligtSIMPLE: The alias resolves to one specific fleet. Use
-     *        this type when routing to active fleets.lt/ligtltligtTERMINAL: The
-     *        alias does not resolve to any fleet but instead displays an
-     *        message screen to the user. A terminal type alias throws a
-     *        TerminalRoutingStrategyException with terminal routing strategy
-     *        message embedded.lt/ligtlt/ulgt
+     *        Type of routing to filter results on. Use this parameter to
+     *        retrieve only aliases of a certain type. To retrieve all aliases,
+     *        leave this parameter empty. Possible routing types include:
+     *        <ul>
+     *        <li>SIMPLE: The alias resolves to one specific fleet. Use this
+     *        type when routing to active fleets.</li>
+     *        <li>TERMINAL: The alias does not resolve to a fleet but instead
+     *        can be used to display a message to the user. A terminal alias
+     *        throws a TerminalRoutingStrategyException with the
+     *        <a>RoutingStrategy</a> message embedded.</li>
+     *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see RoutingStrategyType
      */
+
     public ListAliasesRequest withRoutingStrategyType(String routingStrategyType) {
         setRoutingStrategyType(routingStrategyType);
         return this;
@@ -131,48 +172,72 @@ public class ListAliasesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * ltulgtltligtSIMPLE: The alias resolves to one specific fleet. Use this
-     * type when routing to active fleets.lt/ligtltligtTERMINAL: The alias does
-     * not resolve to any fleet but instead displays an message screen to the
-     * user. A terminal type alias throws a TerminalRoutingStrategyException
-     * with terminal routing strategy message embedded.lt/ligtlt/ulgt
+     * Type of routing to filter results on. Use this parameter to retrieve only
+     * aliases of a certain type. To retrieve all aliases, leave this parameter
+     * empty. Possible routing types include:
+     * <ul>
+     * <li>SIMPLE: The alias resolves to one specific fleet. Use this type when
+     * routing to active fleets.</li>
+     * <li>TERMINAL: The alias does not resolve to a fleet but instead can be
+     * used to display a message to the user. A terminal alias throws a
+     * TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
+     * embedded.</li>
+     * </ul>
      * </p>
      * 
      * @param routingStrategyType
-     *        ltulgtltligtSIMPLE: The alias resolves to one specific fleet. Use
-     *        this type when routing to active fleets.lt/ligtltligtTERMINAL: The
-     *        alias does not resolve to any fleet but instead displays an
-     *        message screen to the user. A terminal type alias throws a
-     *        TerminalRoutingStrategyException with terminal routing strategy
-     *        message embedded.lt/ligtlt/ulgt
+     *        Type of routing to filter results on. Use this parameter to
+     *        retrieve only aliases of a certain type. To retrieve all aliases,
+     *        leave this parameter empty. Possible routing types include:
+     *        <ul>
+     *        <li>SIMPLE: The alias resolves to one specific fleet. Use this
+     *        type when routing to active fleets.</li>
+     *        <li>TERMINAL: The alias does not resolve to a fleet but instead
+     *        can be used to display a message to the user. A terminal alias
+     *        throws a TerminalRoutingStrategyException with the
+     *        <a>RoutingStrategy</a> message embedded.</li>
+     *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see RoutingStrategyType
      */
+
     public void setRoutingStrategyType(RoutingStrategyType routingStrategyType) {
         this.routingStrategyType = routingStrategyType.toString();
     }
 
     /**
      * <p>
-     * ltulgtltligtSIMPLE: The alias resolves to one specific fleet. Use this
-     * type when routing to active fleets.lt/ligtltligtTERMINAL: The alias does
-     * not resolve to any fleet but instead displays an message screen to the
-     * user. A terminal type alias throws a TerminalRoutingStrategyException
-     * with terminal routing strategy message embedded.lt/ligtlt/ulgt
+     * Type of routing to filter results on. Use this parameter to retrieve only
+     * aliases of a certain type. To retrieve all aliases, leave this parameter
+     * empty. Possible routing types include:
+     * <ul>
+     * <li>SIMPLE: The alias resolves to one specific fleet. Use this type when
+     * routing to active fleets.</li>
+     * <li>TERMINAL: The alias does not resolve to a fleet but instead can be
+     * used to display a message to the user. A terminal alias throws a
+     * TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
+     * embedded.</li>
+     * </ul>
      * </p>
      * 
      * @param routingStrategyType
-     *        ltulgtltligtSIMPLE: The alias resolves to one specific fleet. Use
-     *        this type when routing to active fleets.lt/ligtltligtTERMINAL: The
-     *        alias does not resolve to any fleet but instead displays an
-     *        message screen to the user. A terminal type alias throws a
-     *        TerminalRoutingStrategyException with terminal routing strategy
-     *        message embedded.lt/ligtlt/ulgt
+     *        Type of routing to filter results on. Use this parameter to
+     *        retrieve only aliases of a certain type. To retrieve all aliases,
+     *        leave this parameter empty. Possible routing types include:
+     *        <ul>
+     *        <li>SIMPLE: The alias resolves to one specific fleet. Use this
+     *        type when routing to active fleets.</li>
+     *        <li>TERMINAL: The alias does not resolve to a fleet but instead
+     *        can be used to display a message to the user. A terminal alias
+     *        throws a TerminalRoutingStrategyException with the
+     *        <a>RoutingStrategy</a> message embedded.</li>
+     *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see RoutingStrategyType
      */
+
     public ListAliasesRequest withRoutingStrategyType(
             RoutingStrategyType routingStrategyType) {
         setRoutingStrategyType(routingStrategyType);
@@ -189,6 +254,7 @@ public class ListAliasesRequest extends AmazonWebServiceRequest implements
      *        Descriptive label associated with this alias. Alias names do not
      *        need to be unique.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -202,6 +268,7 @@ public class ListAliasesRequest extends AmazonWebServiceRequest implements
      * @return Descriptive label associated with this alias. Alias names do not
      *         need to be unique.
      */
+
     public String getName() {
         return this.name;
     }
@@ -218,6 +285,7 @@ public class ListAliasesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListAliasesRequest withName(String name) {
         setName(name);
         return this;
@@ -233,6 +301,7 @@ public class ListAliasesRequest extends AmazonWebServiceRequest implements
      *        Maximum number of results to return. You can use this parameter
      *        with <i>NextToken</i> to get results as a set of sequential pages.
      */
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -247,6 +316,7 @@ public class ListAliasesRequest extends AmazonWebServiceRequest implements
      *         with <i>NextToken</i> to get results as a set of sequential
      *         pages.
      */
+
     public Integer getLimit() {
         return this.limit;
     }
@@ -263,6 +333,7 @@ public class ListAliasesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListAliasesRequest withLimit(Integer limit) {
         setLimit(limit);
         return this;
@@ -270,55 +341,55 @@ public class ListAliasesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Token indicating the start of the next sequential page of results. A
-     * token is returned any time there may be additional results to be
-     * retrieved. To start at the beginning of a result set, do not set this
-     * parameter.
+     * Token indicating the start of the next sequential page of results. Use
+     * the token that is returned with a previous call to this action. To
+     * specify the start of the result set, do not specify a value.
      * </p>
      * 
      * @param nextToken
      *        Token indicating the start of the next sequential page of results.
-     *        A token is returned any time there may be additional results to be
-     *        retrieved. To start at the beginning of a result set, do not set
-     *        this parameter.
+     *        Use the token that is returned with a previous call to this
+     *        action. To specify the start of the result set, do not specify a
+     *        value.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
 
     /**
      * <p>
-     * Token indicating the start of the next sequential page of results. A
-     * token is returned any time there may be additional results to be
-     * retrieved. To start at the beginning of a result set, do not set this
-     * parameter.
+     * Token indicating the start of the next sequential page of results. Use
+     * the token that is returned with a previous call to this action. To
+     * specify the start of the result set, do not specify a value.
      * </p>
      * 
      * @return Token indicating the start of the next sequential page of
-     *         results. A token is returned any time there may be additional
-     *         results to be retrieved. To start at the beginning of a result
-     *         set, do not set this parameter.
+     *         results. Use the token that is returned with a previous call to
+     *         this action. To specify the start of the result set, do not
+     *         specify a value.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
 
     /**
      * <p>
-     * Token indicating the start of the next sequential page of results. A
-     * token is returned any time there may be additional results to be
-     * retrieved. To start at the beginning of a result set, do not set this
-     * parameter.
+     * Token indicating the start of the next sequential page of results. Use
+     * the token that is returned with a previous call to this action. To
+     * specify the start of the result set, do not specify a value.
      * </p>
      * 
      * @param nextToken
      *        Token indicating the start of the next sequential page of results.
-     *        A token is returned any time there may be additional results to be
-     *        retrieved. To start at the beginning of a result set, do not set
-     *        this parameter.
+     *        Use the token that is returned with a previous call to this
+     *        action. To specify the start of the result set, do not specify a
+     *        value.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListAliasesRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

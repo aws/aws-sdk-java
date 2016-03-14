@@ -43,6 +43,7 @@ public class GetAssessmentTelemetryRequest extends AmazonWebServiceRequest
      *        The ARN specifying the assessment the telemetry of which you want
      *        to obtain.
      */
+
     public void setAssessmentArn(String assessmentArn) {
         this.assessmentArn = assessmentArn;
     }
@@ -56,6 +57,7 @@ public class GetAssessmentTelemetryRequest extends AmazonWebServiceRequest
      * @return The ARN specifying the assessment the telemetry of which you want
      *         to obtain.
      */
+
     public String getAssessmentArn() {
         return this.assessmentArn;
     }
@@ -72,6 +74,7 @@ public class GetAssessmentTelemetryRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetAssessmentTelemetryRequest withAssessmentArn(String assessmentArn) {
         setAssessmentArn(assessmentArn);
         return this;

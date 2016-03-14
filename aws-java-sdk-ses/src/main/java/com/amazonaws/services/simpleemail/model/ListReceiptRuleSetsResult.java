@@ -52,6 +52,7 @@ public class ListReceiptRuleSetsResult implements Serializable, Cloneable {
      *         metadata consists of the rule set name and the timestamp of when
      *         the rule set was created.
      */
+
     public java.util.List<ReceiptRuleSetMetadata> getRuleSets() {
         if (ruleSets == null) {
             ruleSets = new com.amazonaws.internal.SdkInternalList<ReceiptRuleSetMetadata>();
@@ -71,6 +72,7 @@ public class ListReceiptRuleSetsResult implements Serializable, Cloneable {
      *        metadata consists of the rule set name and the timestamp of when
      *        the rule set was created.
      */
+
     public void setRuleSets(
             java.util.Collection<ReceiptRuleSetMetadata> ruleSets) {
         if (ruleSets == null) {
@@ -102,6 +104,7 @@ public class ListReceiptRuleSetsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListReceiptRuleSetsResult withRuleSets(
             ReceiptRuleSetMetadata... ruleSets) {
         if (this.ruleSets == null) {
@@ -128,6 +131,7 @@ public class ListReceiptRuleSetsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListReceiptRuleSetsResult withRuleSets(
             java.util.Collection<ReceiptRuleSetMetadata> ruleSets) {
         setRuleSets(ruleSets);
@@ -148,6 +152,7 @@ public class ListReceiptRuleSetsResult implements Serializable, Cloneable {
      *        <code>ListReceiptRuleSets</code> to retrieve up to 100 receipt
      *        rule sets at a time.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -165,6 +170,7 @@ public class ListReceiptRuleSetsResult implements Serializable, Cloneable {
      *         <code>ListReceiptRuleSets</code> to retrieve up to 100 receipt
      *         rule sets at a time.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -185,6 +191,7 @@ public class ListReceiptRuleSetsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListReceiptRuleSetsResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

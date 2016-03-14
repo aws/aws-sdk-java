@@ -44,6 +44,7 @@ public class ImportKeyPairResult implements Serializable, Cloneable {
      * @param keyName
      *        The key pair name you provided.
      */
+
     public void setKeyName(String keyName) {
         this.keyName = keyName;
     }
@@ -55,6 +56,7 @@ public class ImportKeyPairResult implements Serializable, Cloneable {
      * 
      * @return The key pair name you provided.
      */
+
     public String getKeyName() {
         return this.keyName;
     }
@@ -69,6 +71,7 @@ public class ImportKeyPairResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportKeyPairResult withKeyName(String keyName) {
         setKeyName(keyName);
         return this;
@@ -83,6 +86,7 @@ public class ImportKeyPairResult implements Serializable, Cloneable {
      *        The MD5 public key fingerprint as specified in section 4 of RFC
      *        4716.
      */
+
     public void setKeyFingerprint(String keyFingerprint) {
         this.keyFingerprint = keyFingerprint;
     }
@@ -95,6 +99,7 @@ public class ImportKeyPairResult implements Serializable, Cloneable {
      * @return The MD5 public key fingerprint as specified in section 4 of RFC
      *         4716.
      */
+
     public String getKeyFingerprint() {
         return this.keyFingerprint;
     }
@@ -110,6 +115,7 @@ public class ImportKeyPairResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportKeyPairResult withKeyFingerprint(String keyFingerprint) {
         setKeyFingerprint(keyFingerprint);
         return this;

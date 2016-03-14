@@ -57,6 +57,7 @@ public class DescribeDeliveryStreamRequest extends AmazonWebServiceRequest
      * @param deliveryStreamName
      *        The name of the delivery stream.
      */
+
     public void setDeliveryStreamName(String deliveryStreamName) {
         this.deliveryStreamName = deliveryStreamName;
     }
@@ -68,6 +69,7 @@ public class DescribeDeliveryStreamRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the delivery stream.
      */
+
     public String getDeliveryStreamName() {
         return this.deliveryStreamName;
     }
@@ -82,6 +84,7 @@ public class DescribeDeliveryStreamRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeDeliveryStreamRequest withDeliveryStreamName(
             String deliveryStreamName) {
         setDeliveryStreamName(deliveryStreamName);
@@ -98,6 +101,7 @@ public class DescribeDeliveryStreamRequest extends AmazonWebServiceRequest
      *        The limit on the number of destinations to return. Currently, you
      *        can have one destination per delivery stream.
      */
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -111,6 +115,7 @@ public class DescribeDeliveryStreamRequest extends AmazonWebServiceRequest
      * @return The limit on the number of destinations to return. Currently, you
      *         can have one destination per delivery stream.
      */
+
     public Integer getLimit() {
         return this.limit;
     }
@@ -127,6 +132,7 @@ public class DescribeDeliveryStreamRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeDeliveryStreamRequest withLimit(Integer limit) {
         setLimit(limit);
         return this;
@@ -144,6 +150,7 @@ public class DescribeDeliveryStreamRequest extends AmazonWebServiceRequest
      *        information. Currently Amazon Kinesis Firehose supports one
      *        destination per delivery stream.
      */
+
     public void setExclusiveStartDestinationId(
             String exclusiveStartDestinationId) {
         this.exclusiveStartDestinationId = exclusiveStartDestinationId;
@@ -160,6 +167,7 @@ public class DescribeDeliveryStreamRequest extends AmazonWebServiceRequest
      *         information. Currently Amazon Kinesis Firehose supports one
      *         destination per delivery stream.
      */
+
     public String getExclusiveStartDestinationId() {
         return this.exclusiveStartDestinationId;
     }
@@ -178,6 +186,7 @@ public class DescribeDeliveryStreamRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeDeliveryStreamRequest withExclusiveStartDestinationId(
             String exclusiveStartDestinationId) {
         setExclusiveStartDestinationId(exclusiveStartDestinationId);

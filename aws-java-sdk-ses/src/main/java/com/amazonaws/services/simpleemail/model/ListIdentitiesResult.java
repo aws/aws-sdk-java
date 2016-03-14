@@ -43,6 +43,7 @@ public class ListIdentitiesResult implements Serializable, Cloneable {
      * 
      * @return A list of identities.
      */
+
     public java.util.List<String> getIdentities() {
         if (identities == null) {
             identities = new com.amazonaws.internal.SdkInternalList<String>();
@@ -58,6 +59,7 @@ public class ListIdentitiesResult implements Serializable, Cloneable {
      * @param identities
      *        A list of identities.
      */
+
     public void setIdentities(java.util.Collection<String> identities) {
         if (identities == null) {
             this.identities = null;
@@ -84,6 +86,7 @@ public class ListIdentitiesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListIdentitiesResult withIdentities(String... identities) {
         if (this.identities == null) {
             setIdentities(new com.amazonaws.internal.SdkInternalList<String>(
@@ -105,6 +108,7 @@ public class ListIdentitiesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListIdentitiesResult withIdentities(
             java.util.Collection<String> identities) {
         setIdentities(identities);
@@ -119,6 +123,7 @@ public class ListIdentitiesResult implements Serializable, Cloneable {
      * @param nextToken
      *        The token used for pagination.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -130,6 +135,7 @@ public class ListIdentitiesResult implements Serializable, Cloneable {
      * 
      * @return The token used for pagination.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -144,6 +150,7 @@ public class ListIdentitiesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListIdentitiesResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

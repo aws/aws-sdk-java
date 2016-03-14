@@ -430,6 +430,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
     /**
      * @param value
      */
+
     public void setValue(AttributeValue value) {
         this.value = value;
     }
@@ -437,6 +438,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public AttributeValue getValue() {
         return this.value;
     }
@@ -446,6 +448,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ExpectedAttributeValue withValue(AttributeValue value) {
         setValue(value);
         return this;
@@ -548,6 +551,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *        </p>
      *        </li>
      */
+
     public void setExists(Boolean exists) {
         this.exists = exists;
     }
@@ -648,6 +652,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *         </p>
      *         </li>
      */
+
     public Boolean getExists() {
         return this.exists;
     }
@@ -751,6 +756,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ExpectedAttributeValue withExists(Boolean exists) {
         setExists(exists);
         return this;
@@ -852,6 +858,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *         </p>
      *         </li>
      */
+
     public Boolean isExists() {
         return this.exists;
     }
@@ -1297,6 +1304,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *        </li>
      * @see ComparisonOperator
      */
+
     public void setComparisonOperator(String comparisonOperator) {
         this.comparisonOperator = comparisonOperator;
     }
@@ -1744,6 +1752,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *         </li>
      * @see ComparisonOperator
      */
+
     public String getComparisonOperator() {
         return this.comparisonOperator;
     }
@@ -2191,6 +2200,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *         chained together.
      * @see ComparisonOperator
      */
+
     public ExpectedAttributeValue withComparisonOperator(
             String comparisonOperator) {
         setComparisonOperator(comparisonOperator);
@@ -2640,6 +2650,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *         chained together.
      * @see ComparisonOperator
      */
+
     public void setComparisonOperator(ComparisonOperator comparisonOperator) {
         this.comparisonOperator = comparisonOperator.toString();
     }
@@ -3087,6 +3098,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *         chained together.
      * @see ComparisonOperator
      */
+
     public ExpectedAttributeValue withComparisonOperator(
             ComparisonOperator comparisonOperator) {
         setComparisonOperator(comparisonOperator);
@@ -3146,6 +3158,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *         >JSON Data Format</a> in the <i>Amazon DynamoDB Developer
      *         Guide</i>.
      */
+
     public java.util.List<AttributeValue> getAttributeValueList() {
         return attributeValueList;
     }
@@ -3204,6 +3217,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *        >JSON Data Format</a> in the <i>Amazon DynamoDB Developer
      *        Guide</i>.
      */
+
     public void setAttributeValueList(
             java.util.Collection<AttributeValue> attributeValueList) {
         if (attributeValueList == null) {
@@ -3277,6 +3291,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ExpectedAttributeValue withAttributeValueList(
             AttributeValue... attributeValueList) {
         if (this.attributeValueList == null) {
@@ -3345,6 +3360,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ExpectedAttributeValue withAttributeValueList(
             java.util.Collection<AttributeValue> attributeValueList) {
         setAttributeValueList(attributeValueList);

@@ -149,6 +149,7 @@ public class CaseDetails implements Serializable, Cloneable {
      *        case ID is an alphanumeric string formatted as shown in this
      *        example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
      */
+
     public void setCaseId(String caseId) {
         this.caseId = caseId;
     }
@@ -164,6 +165,7 @@ public class CaseDetails implements Serializable, Cloneable {
      *         case ID is an alphanumeric string formatted as shown in this
      *         example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
      */
+
     public String getCaseId() {
         return this.caseId;
     }
@@ -182,6 +184,7 @@ public class CaseDetails implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CaseDetails withCaseId(String caseId) {
         setCaseId(caseId);
         return this;
@@ -197,6 +200,7 @@ public class CaseDetails implements Serializable, Cloneable {
      *        The ID displayed for the case in the AWS Support Center. This is a
      *        numeric string.
      */
+
     public void setDisplayId(String displayId) {
         this.displayId = displayId;
     }
@@ -210,6 +214,7 @@ public class CaseDetails implements Serializable, Cloneable {
      * @return The ID displayed for the case in the AWS Support Center. This is
      *         a numeric string.
      */
+
     public String getDisplayId() {
         return this.displayId;
     }
@@ -226,6 +231,7 @@ public class CaseDetails implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CaseDetails withDisplayId(String displayId) {
         setDisplayId(displayId);
         return this;
@@ -239,6 +245,7 @@ public class CaseDetails implements Serializable, Cloneable {
      * @param subject
      *        The subject line for the case in the AWS Support Center.
      */
+
     public void setSubject(String subject) {
         this.subject = subject;
     }
@@ -250,6 +257,7 @@ public class CaseDetails implements Serializable, Cloneable {
      * 
      * @return The subject line for the case in the AWS Support Center.
      */
+
     public String getSubject() {
         return this.subject;
     }
@@ -264,6 +272,7 @@ public class CaseDetails implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CaseDetails withSubject(String subject) {
         setSubject(subject);
         return this;
@@ -277,6 +286,7 @@ public class CaseDetails implements Serializable, Cloneable {
      * @param status
      *        The status of the case.
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -288,6 +298,7 @@ public class CaseDetails implements Serializable, Cloneable {
      * 
      * @return The status of the case.
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -302,6 +313,7 @@ public class CaseDetails implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CaseDetails withStatus(String status) {
         setStatus(status);
         return this;
@@ -317,6 +329,7 @@ public class CaseDetails implements Serializable, Cloneable {
      *        The code for the AWS service returned by the call to
      *        <a>DescribeServices</a>.
      */
+
     public void setServiceCode(String serviceCode) {
         this.serviceCode = serviceCode;
     }
@@ -330,6 +343,7 @@ public class CaseDetails implements Serializable, Cloneable {
      * @return The code for the AWS service returned by the call to
      *         <a>DescribeServices</a>.
      */
+
     public String getServiceCode() {
         return this.serviceCode;
     }
@@ -346,6 +360,7 @@ public class CaseDetails implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CaseDetails withServiceCode(String serviceCode) {
         setServiceCode(serviceCode);
         return this;
@@ -359,6 +374,7 @@ public class CaseDetails implements Serializable, Cloneable {
      * @param categoryCode
      *        The category of problem for the AWS Support case.
      */
+
     public void setCategoryCode(String categoryCode) {
         this.categoryCode = categoryCode;
     }
@@ -370,6 +386,7 @@ public class CaseDetails implements Serializable, Cloneable {
      * 
      * @return The category of problem for the AWS Support case.
      */
+
     public String getCategoryCode() {
         return this.categoryCode;
     }
@@ -384,6 +401,7 @@ public class CaseDetails implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CaseDetails withCategoryCode(String categoryCode) {
         setCategoryCode(categoryCode);
         return this;
@@ -399,6 +417,7 @@ public class CaseDetails implements Serializable, Cloneable {
      *        The code for the severity level returned by the call to
      *        <a>DescribeSeverityLevels</a>.
      */
+
     public void setSeverityCode(String severityCode) {
         this.severityCode = severityCode;
     }
@@ -412,6 +431,7 @@ public class CaseDetails implements Serializable, Cloneable {
      * @return The code for the severity level returned by the call to
      *         <a>DescribeSeverityLevels</a>.
      */
+
     public String getSeverityCode() {
         return this.severityCode;
     }
@@ -428,6 +448,7 @@ public class CaseDetails implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CaseDetails withSeverityCode(String severityCode) {
         setSeverityCode(severityCode);
         return this;
@@ -441,6 +462,7 @@ public class CaseDetails implements Serializable, Cloneable {
      * @param submittedBy
      *        The email address of the account that submitted the case.
      */
+
     public void setSubmittedBy(String submittedBy) {
         this.submittedBy = submittedBy;
     }
@@ -452,6 +474,7 @@ public class CaseDetails implements Serializable, Cloneable {
      * 
      * @return The email address of the account that submitted the case.
      */
+
     public String getSubmittedBy() {
         return this.submittedBy;
     }
@@ -466,6 +489,7 @@ public class CaseDetails implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CaseDetails withSubmittedBy(String submittedBy) {
         setSubmittedBy(submittedBy);
         return this;
@@ -479,6 +503,7 @@ public class CaseDetails implements Serializable, Cloneable {
      * @param timeCreated
      *        The time that the case was case created in the AWS Support Center.
      */
+
     public void setTimeCreated(String timeCreated) {
         this.timeCreated = timeCreated;
     }
@@ -491,6 +516,7 @@ public class CaseDetails implements Serializable, Cloneable {
      * @return The time that the case was case created in the AWS Support
      *         Center.
      */
+
     public String getTimeCreated() {
         return this.timeCreated;
     }
@@ -505,6 +531,7 @@ public class CaseDetails implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CaseDetails withTimeCreated(String timeCreated) {
         setTimeCreated(timeCreated);
         return this;
@@ -524,6 +551,7 @@ public class CaseDetails implements Serializable, Cloneable {
      *        communications. Also includes a <code>nextToken</code> that you
      *        can use to retrieve earlier communications.
      */
+
     public void setRecentCommunications(
             RecentCaseCommunications recentCommunications) {
         this.recentCommunications = recentCommunications;
@@ -542,6 +570,7 @@ public class CaseDetails implements Serializable, Cloneable {
      *         communications. Also includes a <code>nextToken</code> that you
      *         can use to retrieve earlier communications.
      */
+
     public RecentCaseCommunications getRecentCommunications() {
         return this.recentCommunications;
     }
@@ -562,6 +591,7 @@ public class CaseDetails implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CaseDetails withRecentCommunications(
             RecentCaseCommunications recentCommunications) {
         setRecentCommunications(recentCommunications);
@@ -576,6 +606,7 @@ public class CaseDetails implements Serializable, Cloneable {
      * @return The email addresses that receive copies of communication about
      *         the case.
      */
+
     public java.util.List<String> getCcEmailAddresses() {
         if (ccEmailAddresses == null) {
             ccEmailAddresses = new com.amazonaws.internal.SdkInternalList<String>();
@@ -592,6 +623,7 @@ public class CaseDetails implements Serializable, Cloneable {
      *        The email addresses that receive copies of communication about the
      *        case.
      */
+
     public void setCcEmailAddresses(
             java.util.Collection<String> ccEmailAddresses) {
         if (ccEmailAddresses == null) {
@@ -620,6 +652,7 @@ public class CaseDetails implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CaseDetails withCcEmailAddresses(String... ccEmailAddresses) {
         if (this.ccEmailAddresses == null) {
             setCcEmailAddresses(new com.amazonaws.internal.SdkInternalList<String>(
@@ -642,6 +675,7 @@ public class CaseDetails implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CaseDetails withCcEmailAddresses(
             java.util.Collection<String> ccEmailAddresses) {
         setCcEmailAddresses(ccEmailAddresses);
@@ -661,6 +695,7 @@ public class CaseDetails implements Serializable, Cloneable {
      *        Language parameters must be passed explicitly for operations that
      *        take them.
      */
+
     public void setLanguage(String language) {
         this.language = language;
     }
@@ -677,6 +712,7 @@ public class CaseDetails implements Serializable, Cloneable {
      *         Japanese ("ja"). Language parameters must be passed explicitly
      *         for operations that take them.
      */
+
     public String getLanguage() {
         return this.language;
     }
@@ -696,6 +732,7 @@ public class CaseDetails implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CaseDetails withLanguage(String language) {
         setLanguage(language);
         return this;

@@ -61,6 +61,7 @@ public class Deployment implements Serializable, Cloneable {
      * @param id
      *        The identifier for the deployment resource.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -72,6 +73,7 @@ public class Deployment implements Serializable, Cloneable {
      * 
      * @return The identifier for the deployment resource.
      */
+
     public String getId() {
         return this.id;
     }
@@ -86,6 +88,7 @@ public class Deployment implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Deployment withId(String id) {
         setId(id);
         return this;
@@ -99,6 +102,7 @@ public class Deployment implements Serializable, Cloneable {
      * @param description
      *        The description for the deployment resource.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -110,6 +114,7 @@ public class Deployment implements Serializable, Cloneable {
      * 
      * @return The description for the deployment resource.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -124,6 +129,7 @@ public class Deployment implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Deployment withDescription(String description) {
         setDescription(description);
         return this;
@@ -137,6 +143,7 @@ public class Deployment implements Serializable, Cloneable {
      * @param createdDate
      *        The date and time that the deployment resource was created.
      */
+
     public void setCreatedDate(java.util.Date createdDate) {
         this.createdDate = createdDate;
     }
@@ -148,6 +155,7 @@ public class Deployment implements Serializable, Cloneable {
      * 
      * @return The date and time that the deployment resource was created.
      */
+
     public java.util.Date getCreatedDate() {
         return this.createdDate;
     }
@@ -162,6 +170,7 @@ public class Deployment implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Deployment withCreatedDate(java.util.Date createdDate) {
         setCreatedDate(createdDate);
         return this;
@@ -176,6 +185,7 @@ public class Deployment implements Serializable, Cloneable {
      * @return Gets a summary of the <a>RestApi</a> at the date and time that
      *         the deployment resource was created.
      */
+
     public java.util.Map<String, java.util.Map<String, MethodSnapshot>> getApiSummary() {
         return apiSummary;
     }
@@ -190,6 +200,7 @@ public class Deployment implements Serializable, Cloneable {
      *        Gets a summary of the <a>RestApi</a> at the date and time that the
      *        deployment resource was created.
      */
+
     public void setApiSummary(
             java.util.Map<String, java.util.Map<String, MethodSnapshot>> apiSummary) {
         this.apiSummary = apiSummary;
@@ -207,6 +218,7 @@ public class Deployment implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Deployment withApiSummary(
             java.util.Map<String, java.util.Map<String, MethodSnapshot>> apiSummary) {
         setApiSummary(apiSummary);
@@ -229,6 +241,7 @@ public class Deployment implements Serializable, Cloneable {
      * Removes all the entries added into ApiSummary. &lt;p> Returns a reference
      * to this object so that method calls can be chained together.
      */
+
     public Deployment clearApiSummaryEntries() {
         this.apiSummary = null;
         return this;

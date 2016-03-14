@@ -55,6 +55,7 @@ public class MergeShardsRequest extends AmazonWebServiceRequest implements
      * @param streamName
      *        The name of the stream for the merge.
      */
+
     public void setStreamName(String streamName) {
         this.streamName = streamName;
     }
@@ -66,6 +67,7 @@ public class MergeShardsRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the stream for the merge.
      */
+
     public String getStreamName() {
         return this.streamName;
     }
@@ -80,6 +82,7 @@ public class MergeShardsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MergeShardsRequest withStreamName(String streamName) {
         setStreamName(streamName);
         return this;
@@ -95,6 +98,7 @@ public class MergeShardsRequest extends AmazonWebServiceRequest implements
      *        The shard ID of the shard to combine with the adjacent shard for
      *        the merge.
      */
+
     public void setShardToMerge(String shardToMerge) {
         this.shardToMerge = shardToMerge;
     }
@@ -108,6 +112,7 @@ public class MergeShardsRequest extends AmazonWebServiceRequest implements
      * @return The shard ID of the shard to combine with the adjacent shard for
      *         the merge.
      */
+
     public String getShardToMerge() {
         return this.shardToMerge;
     }
@@ -124,6 +129,7 @@ public class MergeShardsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MergeShardsRequest withShardToMerge(String shardToMerge) {
         setShardToMerge(shardToMerge);
         return this;
@@ -137,6 +143,7 @@ public class MergeShardsRequest extends AmazonWebServiceRequest implements
      * @param adjacentShardToMerge
      *        The shard ID of the adjacent shard for the merge.
      */
+
     public void setAdjacentShardToMerge(String adjacentShardToMerge) {
         this.adjacentShardToMerge = adjacentShardToMerge;
     }
@@ -148,6 +155,7 @@ public class MergeShardsRequest extends AmazonWebServiceRequest implements
      * 
      * @return The shard ID of the adjacent shard for the merge.
      */
+
     public String getAdjacentShardToMerge() {
         return this.adjacentShardToMerge;
     }
@@ -162,6 +170,7 @@ public class MergeShardsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MergeShardsRequest withAdjacentShardToMerge(
             String adjacentShardToMerge) {
         setAdjacentShardToMerge(adjacentShardToMerge);

@@ -40,6 +40,7 @@ public class ScheduleRunResult implements Serializable, Cloneable {
      * @param run
      *        Information about the scheduled run.
      */
+
     public void setRun(Run run) {
         this.run = run;
     }
@@ -51,6 +52,7 @@ public class ScheduleRunResult implements Serializable, Cloneable {
      * 
      * @return Information about the scheduled run.
      */
+
     public Run getRun() {
         return this.run;
     }
@@ -65,6 +67,7 @@ public class ScheduleRunResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduleRunResult withRun(Run run) {
         setRun(run);
         return this;

@@ -79,6 +79,7 @@ public class Destination implements Serializable, Cloneable {
      * 
      * @return The To: field(s) of the message.
      */
+
     public java.util.List<String> getToAddresses() {
         if (toAddresses == null) {
             toAddresses = new com.amazonaws.internal.SdkInternalList<String>();
@@ -94,6 +95,7 @@ public class Destination implements Serializable, Cloneable {
      * @param toAddresses
      *        The To: field(s) of the message.
      */
+
     public void setToAddresses(java.util.Collection<String> toAddresses) {
         if (toAddresses == null) {
             this.toAddresses = null;
@@ -120,6 +122,7 @@ public class Destination implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Destination withToAddresses(String... toAddresses) {
         if (this.toAddresses == null) {
             setToAddresses(new com.amazonaws.internal.SdkInternalList<String>(
@@ -141,6 +144,7 @@ public class Destination implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Destination withToAddresses(java.util.Collection<String> toAddresses) {
         setToAddresses(toAddresses);
         return this;
@@ -153,6 +157,7 @@ public class Destination implements Serializable, Cloneable {
      * 
      * @return The CC: field(s) of the message.
      */
+
     public java.util.List<String> getCcAddresses() {
         if (ccAddresses == null) {
             ccAddresses = new com.amazonaws.internal.SdkInternalList<String>();
@@ -168,6 +173,7 @@ public class Destination implements Serializable, Cloneable {
      * @param ccAddresses
      *        The CC: field(s) of the message.
      */
+
     public void setCcAddresses(java.util.Collection<String> ccAddresses) {
         if (ccAddresses == null) {
             this.ccAddresses = null;
@@ -194,6 +200,7 @@ public class Destination implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Destination withCcAddresses(String... ccAddresses) {
         if (this.ccAddresses == null) {
             setCcAddresses(new com.amazonaws.internal.SdkInternalList<String>(
@@ -215,6 +222,7 @@ public class Destination implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Destination withCcAddresses(java.util.Collection<String> ccAddresses) {
         setCcAddresses(ccAddresses);
         return this;
@@ -227,6 +235,7 @@ public class Destination implements Serializable, Cloneable {
      * 
      * @return The BCC: field(s) of the message.
      */
+
     public java.util.List<String> getBccAddresses() {
         if (bccAddresses == null) {
             bccAddresses = new com.amazonaws.internal.SdkInternalList<String>();
@@ -242,6 +251,7 @@ public class Destination implements Serializable, Cloneable {
      * @param bccAddresses
      *        The BCC: field(s) of the message.
      */
+
     public void setBccAddresses(java.util.Collection<String> bccAddresses) {
         if (bccAddresses == null) {
             this.bccAddresses = null;
@@ -268,6 +278,7 @@ public class Destination implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Destination withBccAddresses(String... bccAddresses) {
         if (this.bccAddresses == null) {
             setBccAddresses(new com.amazonaws.internal.SdkInternalList<String>(
@@ -289,6 +300,7 @@ public class Destination implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Destination withBccAddresses(
             java.util.Collection<String> bccAddresses) {
         setBccAddresses(bccAddresses);

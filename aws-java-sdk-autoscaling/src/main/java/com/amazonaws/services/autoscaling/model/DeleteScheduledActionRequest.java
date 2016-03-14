@@ -46,6 +46,7 @@ public class DeleteScheduledActionRequest extends AmazonWebServiceRequest
      * @param autoScalingGroupName
      *        The name of the Auto Scaling group.
      */
+
     public void setAutoScalingGroupName(String autoScalingGroupName) {
         this.autoScalingGroupName = autoScalingGroupName;
     }
@@ -57,6 +58,7 @@ public class DeleteScheduledActionRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the Auto Scaling group.
      */
+
     public String getAutoScalingGroupName() {
         return this.autoScalingGroupName;
     }
@@ -71,6 +73,7 @@ public class DeleteScheduledActionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteScheduledActionRequest withAutoScalingGroupName(
             String autoScalingGroupName) {
         setAutoScalingGroupName(autoScalingGroupName);
@@ -85,6 +88,7 @@ public class DeleteScheduledActionRequest extends AmazonWebServiceRequest
      * @param scheduledActionName
      *        The name of the action to delete.
      */
+
     public void setScheduledActionName(String scheduledActionName) {
         this.scheduledActionName = scheduledActionName;
     }
@@ -96,6 +100,7 @@ public class DeleteScheduledActionRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the action to delete.
      */
+
     public String getScheduledActionName() {
         return this.scheduledActionName;
     }
@@ -110,6 +115,7 @@ public class DeleteScheduledActionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteScheduledActionRequest withScheduledActionName(
             String scheduledActionName) {
         setScheduledActionName(scheduledActionName);

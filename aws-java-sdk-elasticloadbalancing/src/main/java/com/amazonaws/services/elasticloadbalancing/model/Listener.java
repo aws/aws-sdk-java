@@ -121,6 +121,7 @@ public class Listener implements Serializable, Cloneable {
      *        The load balancer transport protocol to use for routing: HTTP,
      *        HTTPS, TCP, or SSL.
      */
+
     public void setProtocol(String protocol) {
         this.protocol = protocol;
     }
@@ -134,6 +135,7 @@ public class Listener implements Serializable, Cloneable {
      * @return The load balancer transport protocol to use for routing: HTTP,
      *         HTTPS, TCP, or SSL.
      */
+
     public String getProtocol() {
         return this.protocol;
     }
@@ -150,6 +152,7 @@ public class Listener implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Listener withProtocol(String protocol) {
         setProtocol(protocol);
         return this;
@@ -168,6 +171,7 @@ public class Listener implements Serializable, Cloneable {
      *        can specify any port from the following list: 25, 80, 443, 465,
      *        587, 1024-65535.
      */
+
     public void setLoadBalancerPort(Integer loadBalancerPort) {
         this.loadBalancerPort = loadBalancerPort;
     }
@@ -184,6 +188,7 @@ public class Listener implements Serializable, Cloneable {
      *         can specify any port from the following list: 25, 80, 443, 465,
      *         587, 1024-65535.
      */
+
     public Integer getLoadBalancerPort() {
         return this.loadBalancerPort;
     }
@@ -203,6 +208,7 @@ public class Listener implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Listener withLoadBalancerPort(Integer loadBalancerPort) {
         setLoadBalancerPort(loadBalancerPort);
         return this;
@@ -247,6 +253,7 @@ public class Listener implements Serializable, Cloneable {
      *        HTTP or TCP, the listener's <code>InstanceProtocol</code> must be
      *        HTTP or TCP.
      */
+
     public void setInstanceProtocol(String instanceProtocol) {
         this.instanceProtocol = instanceProtocol;
     }
@@ -289,6 +296,7 @@ public class Listener implements Serializable, Cloneable {
      *         HTTP or TCP, the listener's <code>InstanceProtocol</code> must be
      *         HTTP or TCP.
      */
+
     public String getInstanceProtocol() {
         return this.instanceProtocol;
     }
@@ -334,6 +342,7 @@ public class Listener implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Listener withInstanceProtocol(String instanceProtocol) {
         setInstanceProtocol(instanceProtocol);
         return this;
@@ -347,6 +356,7 @@ public class Listener implements Serializable, Cloneable {
      * @param instancePort
      *        The port on which the instance is listening.
      */
+
     public void setInstancePort(Integer instancePort) {
         this.instancePort = instancePort;
     }
@@ -358,6 +368,7 @@ public class Listener implements Serializable, Cloneable {
      * 
      * @return The port on which the instance is listening.
      */
+
     public Integer getInstancePort() {
         return this.instancePort;
     }
@@ -372,6 +383,7 @@ public class Listener implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Listener withInstancePort(Integer instancePort) {
         setInstancePort(instancePort);
         return this;
@@ -385,6 +397,7 @@ public class Listener implements Serializable, Cloneable {
      * @param sSLCertificateId
      *        The Amazon Resource Name (ARN) of the server certificate.
      */
+
     public void setSSLCertificateId(String sSLCertificateId) {
         this.sSLCertificateId = sSLCertificateId;
     }
@@ -396,6 +409,7 @@ public class Listener implements Serializable, Cloneable {
      * 
      * @return The Amazon Resource Name (ARN) of the server certificate.
      */
+
     public String getSSLCertificateId() {
         return this.sSLCertificateId;
     }
@@ -410,6 +424,7 @@ public class Listener implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Listener withSSLCertificateId(String sSLCertificateId) {
         setSSLCertificateId(sSLCertificateId);
         return this;

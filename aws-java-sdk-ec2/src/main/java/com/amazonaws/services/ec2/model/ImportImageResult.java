@@ -98,6 +98,7 @@ public class ImportImageResult implements Serializable, Cloneable {
      * @param importTaskId
      *        The task ID of the import image task.
      */
+
     public void setImportTaskId(String importTaskId) {
         this.importTaskId = importTaskId;
     }
@@ -109,6 +110,7 @@ public class ImportImageResult implements Serializable, Cloneable {
      * 
      * @return The task ID of the import image task.
      */
+
     public String getImportTaskId() {
         return this.importTaskId;
     }
@@ -123,6 +125,7 @@ public class ImportImageResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportImageResult withImportTaskId(String importTaskId) {
         setImportTaskId(importTaskId);
         return this;
@@ -136,6 +139,7 @@ public class ImportImageResult implements Serializable, Cloneable {
      * @param architecture
      *        The architecture of the virtual machine.
      */
+
     public void setArchitecture(String architecture) {
         this.architecture = architecture;
     }
@@ -147,6 +151,7 @@ public class ImportImageResult implements Serializable, Cloneable {
      * 
      * @return The architecture of the virtual machine.
      */
+
     public String getArchitecture() {
         return this.architecture;
     }
@@ -161,6 +166,7 @@ public class ImportImageResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportImageResult withArchitecture(String architecture) {
         setArchitecture(architecture);
         return this;
@@ -174,6 +180,7 @@ public class ImportImageResult implements Serializable, Cloneable {
      * @param licenseType
      *        The license type of the virtual machine.
      */
+
     public void setLicenseType(String licenseType) {
         this.licenseType = licenseType;
     }
@@ -185,6 +192,7 @@ public class ImportImageResult implements Serializable, Cloneable {
      * 
      * @return The license type of the virtual machine.
      */
+
     public String getLicenseType() {
         return this.licenseType;
     }
@@ -199,6 +207,7 @@ public class ImportImageResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportImageResult withLicenseType(String licenseType) {
         setLicenseType(licenseType);
         return this;
@@ -212,6 +221,7 @@ public class ImportImageResult implements Serializable, Cloneable {
      * @param platform
      *        The operating system of the virtual machine.
      */
+
     public void setPlatform(String platform) {
         this.platform = platform;
     }
@@ -223,6 +233,7 @@ public class ImportImageResult implements Serializable, Cloneable {
      * 
      * @return The operating system of the virtual machine.
      */
+
     public String getPlatform() {
         return this.platform;
     }
@@ -237,6 +248,7 @@ public class ImportImageResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportImageResult withPlatform(String platform) {
         setPlatform(platform);
         return this;
@@ -250,6 +262,7 @@ public class ImportImageResult implements Serializable, Cloneable {
      * @param hypervisor
      *        The target hypervisor of the import task.
      */
+
     public void setHypervisor(String hypervisor) {
         this.hypervisor = hypervisor;
     }
@@ -261,6 +274,7 @@ public class ImportImageResult implements Serializable, Cloneable {
      * 
      * @return The target hypervisor of the import task.
      */
+
     public String getHypervisor() {
         return this.hypervisor;
     }
@@ -275,6 +289,7 @@ public class ImportImageResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportImageResult withHypervisor(String hypervisor) {
         setHypervisor(hypervisor);
         return this;
@@ -288,6 +303,7 @@ public class ImportImageResult implements Serializable, Cloneable {
      * @param description
      *        A description of the import task.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -299,6 +315,7 @@ public class ImportImageResult implements Serializable, Cloneable {
      * 
      * @return A description of the import task.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -313,6 +330,7 @@ public class ImportImageResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportImageResult withDescription(String description) {
         setDescription(description);
         return this;
@@ -325,6 +343,7 @@ public class ImportImageResult implements Serializable, Cloneable {
      * 
      * @return Information about the snapshots.
      */
+
     public java.util.List<SnapshotDetail> getSnapshotDetails() {
         if (snapshotDetails == null) {
             snapshotDetails = new com.amazonaws.internal.SdkInternalList<SnapshotDetail>();
@@ -340,6 +359,7 @@ public class ImportImageResult implements Serializable, Cloneable {
      * @param snapshotDetails
      *        Information about the snapshots.
      */
+
     public void setSnapshotDetails(
             java.util.Collection<SnapshotDetail> snapshotDetails) {
         if (snapshotDetails == null) {
@@ -367,6 +387,7 @@ public class ImportImageResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportImageResult withSnapshotDetails(
             SnapshotDetail... snapshotDetails) {
         if (this.snapshotDetails == null) {
@@ -389,6 +410,7 @@ public class ImportImageResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportImageResult withSnapshotDetails(
             java.util.Collection<SnapshotDetail> snapshotDetails) {
         setSnapshotDetails(snapshotDetails);
@@ -404,6 +426,7 @@ public class ImportImageResult implements Serializable, Cloneable {
      *        The ID of the Amazon Machine Image (AMI) created by the import
      *        task.
      */
+
     public void setImageId(String imageId) {
         this.imageId = imageId;
     }
@@ -416,6 +439,7 @@ public class ImportImageResult implements Serializable, Cloneable {
      * @return The ID of the Amazon Machine Image (AMI) created by the import
      *         task.
      */
+
     public String getImageId() {
         return this.imageId;
     }
@@ -431,6 +455,7 @@ public class ImportImageResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportImageResult withImageId(String imageId) {
         setImageId(imageId);
         return this;
@@ -444,6 +469,7 @@ public class ImportImageResult implements Serializable, Cloneable {
      * @param progress
      *        The progress of the task.
      */
+
     public void setProgress(String progress) {
         this.progress = progress;
     }
@@ -455,6 +481,7 @@ public class ImportImageResult implements Serializable, Cloneable {
      * 
      * @return The progress of the task.
      */
+
     public String getProgress() {
         return this.progress;
     }
@@ -469,6 +496,7 @@ public class ImportImageResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportImageResult withProgress(String progress) {
         setProgress(progress);
         return this;
@@ -482,6 +510,7 @@ public class ImportImageResult implements Serializable, Cloneable {
      * @param statusMessage
      *        A detailed status message of the import task.
      */
+
     public void setStatusMessage(String statusMessage) {
         this.statusMessage = statusMessage;
     }
@@ -493,6 +522,7 @@ public class ImportImageResult implements Serializable, Cloneable {
      * 
      * @return A detailed status message of the import task.
      */
+
     public String getStatusMessage() {
         return this.statusMessage;
     }
@@ -507,6 +537,7 @@ public class ImportImageResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportImageResult withStatusMessage(String statusMessage) {
         setStatusMessage(statusMessage);
         return this;
@@ -520,6 +551,7 @@ public class ImportImageResult implements Serializable, Cloneable {
      * @param status
      *        A brief status of the task.
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -531,6 +563,7 @@ public class ImportImageResult implements Serializable, Cloneable {
      * 
      * @return A brief status of the task.
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -545,6 +578,7 @@ public class ImportImageResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportImageResult withStatus(String status) {
         setStatus(status);
         return this;

@@ -50,6 +50,7 @@ public class ListTasksResult implements Serializable, Cloneable {
      * @return The list of task Amazon Resource Name (ARN) entries for the
      *         <code>ListTasks</code> request.
      */
+
     public java.util.List<String> getTaskArns() {
         if (taskArns == null) {
             taskArns = new com.amazonaws.internal.SdkInternalList<String>();
@@ -67,6 +68,7 @@ public class ListTasksResult implements Serializable, Cloneable {
      *        The list of task Amazon Resource Name (ARN) entries for the
      *        <code>ListTasks</code> request.
      */
+
     public void setTaskArns(java.util.Collection<String> taskArns) {
         if (taskArns == null) {
             this.taskArns = null;
@@ -95,6 +97,7 @@ public class ListTasksResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTasksResult withTaskArns(String... taskArns) {
         if (this.taskArns == null) {
             setTaskArns(new com.amazonaws.internal.SdkInternalList<String>(
@@ -118,6 +121,7 @@ public class ListTasksResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTasksResult withTaskArns(java.util.Collection<String> taskArns) {
         setTaskArns(taskArns);
         return this;
@@ -140,6 +144,7 @@ public class ListTasksResult implements Serializable, Cloneable {
      *        value is <code>null</code> when there are no more results to
      *        return.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -160,6 +165,7 @@ public class ListTasksResult implements Serializable, Cloneable {
      *         value is <code>null</code> when there are no more results to
      *         return.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -183,6 +189,7 @@ public class ListTasksResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTasksResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

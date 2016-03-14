@@ -40,6 +40,7 @@ public class DeleteMessageBatchResultEntry implements Serializable, Cloneable {
      * @param id
      *        Represents a successfully deleted message.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -51,6 +52,7 @@ public class DeleteMessageBatchResultEntry implements Serializable, Cloneable {
      * 
      * @return Represents a successfully deleted message.
      */
+
     public String getId() {
         return this.id;
     }
@@ -65,6 +67,7 @@ public class DeleteMessageBatchResultEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteMessageBatchResultEntry withId(String id) {
         setId(id);
         return this;

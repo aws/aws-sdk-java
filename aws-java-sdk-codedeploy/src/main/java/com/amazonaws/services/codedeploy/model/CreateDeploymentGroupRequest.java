@@ -172,6 +172,7 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest
      *        The name of an existing AWS CodeDeploy application associated with
      *        the applicable IAM user or AWS account.
      */
+
     public void setApplicationName(String applicationName) {
         this.applicationName = applicationName;
     }
@@ -185,6 +186,7 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest
      * @return The name of an existing AWS CodeDeploy application associated
      *         with the applicable IAM user or AWS account.
      */
+
     public String getApplicationName() {
         return this.applicationName;
     }
@@ -201,6 +203,7 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDeploymentGroupRequest withApplicationName(
             String applicationName) {
         setApplicationName(applicationName);
@@ -215,6 +218,7 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest
      * @param deploymentGroupName
      *        The name of a new deployment group for the specified application.
      */
+
     public void setDeploymentGroupName(String deploymentGroupName) {
         this.deploymentGroupName = deploymentGroupName;
     }
@@ -226,6 +230,7 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest
      * 
      * @return The name of a new deployment group for the specified application.
      */
+
     public String getDeploymentGroupName() {
         return this.deploymentGroupName;
     }
@@ -240,6 +245,7 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDeploymentGroupRequest withDeploymentGroupName(
             String deploymentGroupName) {
         setDeploymentGroupName(deploymentGroupName);
@@ -421,6 +427,7 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest
      *        </p>
      *        </li>
      */
+
     public void setDeploymentConfigName(String deploymentConfigName) {
         this.deploymentConfigName = deploymentConfigName;
     }
@@ -599,6 +606,7 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest
      *         </p>
      *         </li>
      */
+
     public String getDeploymentConfigName() {
         return this.deploymentConfigName;
     }
@@ -780,6 +788,7 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDeploymentGroupRequest withDeploymentConfigName(
             String deploymentConfigName) {
         setDeploymentConfigName(deploymentConfigName);
@@ -793,6 +802,7 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest
      * 
      * @return The Amazon EC2 tags to filter on.
      */
+
     public java.util.List<EC2TagFilter> getEc2TagFilters() {
         if (ec2TagFilters == null) {
             ec2TagFilters = new com.amazonaws.internal.SdkInternalList<EC2TagFilter>();
@@ -808,6 +818,7 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest
      * @param ec2TagFilters
      *        The Amazon EC2 tags to filter on.
      */
+
     public void setEc2TagFilters(
             java.util.Collection<EC2TagFilter> ec2TagFilters) {
         if (ec2TagFilters == null) {
@@ -835,6 +846,7 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDeploymentGroupRequest withEc2TagFilters(
             EC2TagFilter... ec2TagFilters) {
         if (this.ec2TagFilters == null) {
@@ -857,6 +869,7 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDeploymentGroupRequest withEc2TagFilters(
             java.util.Collection<EC2TagFilter> ec2TagFilters) {
         setEc2TagFilters(ec2TagFilters);
@@ -870,6 +883,7 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest
      * 
      * @return The on-premises instance tags to filter on.
      */
+
     public java.util.List<TagFilter> getOnPremisesInstanceTagFilters() {
         if (onPremisesInstanceTagFilters == null) {
             onPremisesInstanceTagFilters = new com.amazonaws.internal.SdkInternalList<TagFilter>();
@@ -885,6 +899,7 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest
      * @param onPremisesInstanceTagFilters
      *        The on-premises instance tags to filter on.
      */
+
     public void setOnPremisesInstanceTagFilters(
             java.util.Collection<TagFilter> onPremisesInstanceTagFilters) {
         if (onPremisesInstanceTagFilters == null) {
@@ -912,6 +927,7 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDeploymentGroupRequest withOnPremisesInstanceTagFilters(
             TagFilter... onPremisesInstanceTagFilters) {
         if (this.onPremisesInstanceTagFilters == null) {
@@ -934,6 +950,7 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDeploymentGroupRequest withOnPremisesInstanceTagFilters(
             java.util.Collection<TagFilter> onPremisesInstanceTagFilters) {
         setOnPremisesInstanceTagFilters(onPremisesInstanceTagFilters);
@@ -947,6 +964,7 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest
      * 
      * @return A list of associated Auto Scaling groups.
      */
+
     public java.util.List<String> getAutoScalingGroups() {
         if (autoScalingGroups == null) {
             autoScalingGroups = new com.amazonaws.internal.SdkInternalList<String>();
@@ -962,6 +980,7 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest
      * @param autoScalingGroups
      *        A list of associated Auto Scaling groups.
      */
+
     public void setAutoScalingGroups(
             java.util.Collection<String> autoScalingGroups) {
         if (autoScalingGroups == null) {
@@ -989,6 +1008,7 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDeploymentGroupRequest withAutoScalingGroups(
             String... autoScalingGroups) {
         if (this.autoScalingGroups == null) {
@@ -1011,6 +1031,7 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDeploymentGroupRequest withAutoScalingGroups(
             java.util.Collection<String> autoScalingGroups) {
         setAutoScalingGroups(autoScalingGroups);
@@ -1027,6 +1048,7 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest
      *        A service role ARN that allows AWS CodeDeploy to act on the user's
      *        behalf when interacting with AWS services.
      */
+
     public void setServiceRoleArn(String serviceRoleArn) {
         this.serviceRoleArn = serviceRoleArn;
     }
@@ -1040,6 +1062,7 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest
      * @return A service role ARN that allows AWS CodeDeploy to act on the
      *         user's behalf when interacting with AWS services.
      */
+
     public String getServiceRoleArn() {
         return this.serviceRoleArn;
     }
@@ -1056,6 +1079,7 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDeploymentGroupRequest withServiceRoleArn(String serviceRoleArn) {
         setServiceRoleArn(serviceRoleArn);
         return this;
@@ -1070,6 +1094,7 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest
      * @return Information about triggers to create when the deployment group is
      *         created.
      */
+
     public java.util.List<TriggerConfig> getTriggerConfigurations() {
         if (triggerConfigurations == null) {
             triggerConfigurations = new com.amazonaws.internal.SdkInternalList<TriggerConfig>();
@@ -1087,6 +1112,7 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest
      *        Information about triggers to create when the deployment group is
      *        created.
      */
+
     public void setTriggerConfigurations(
             java.util.Collection<TriggerConfig> triggerConfigurations) {
         if (triggerConfigurations == null) {
@@ -1116,6 +1142,7 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDeploymentGroupRequest withTriggerConfigurations(
             TriggerConfig... triggerConfigurations) {
         if (this.triggerConfigurations == null) {
@@ -1140,6 +1167,7 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDeploymentGroupRequest withTriggerConfigurations(
             java.util.Collection<TriggerConfig> triggerConfigurations) {
         setTriggerConfigurations(triggerConfigurations);

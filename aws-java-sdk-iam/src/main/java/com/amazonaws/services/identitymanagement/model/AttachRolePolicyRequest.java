@@ -43,6 +43,7 @@ public class AttachRolePolicyRequest extends AmazonWebServiceRequest implements
      *        The name (friendly name, not ARN) of the role to attach the policy
      *        to.
      */
+
     public void setRoleName(String roleName) {
         this.roleName = roleName;
     }
@@ -55,6 +56,7 @@ public class AttachRolePolicyRequest extends AmazonWebServiceRequest implements
      * @return The name (friendly name, not ARN) of the role to attach the
      *         policy to.
      */
+
     public String getRoleName() {
         return this.roleName;
     }
@@ -70,6 +72,7 @@ public class AttachRolePolicyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AttachRolePolicyRequest withRoleName(String roleName) {
         setRoleName(roleName);
         return this;
@@ -78,6 +81,7 @@ public class AttachRolePolicyRequest extends AmazonWebServiceRequest implements
     /**
      * @param policyArn
      */
+
     public void setPolicyArn(String policyArn) {
         this.policyArn = policyArn;
     }
@@ -85,6 +89,7 @@ public class AttachRolePolicyRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public String getPolicyArn() {
         return this.policyArn;
     }
@@ -94,6 +99,7 @@ public class AttachRolePolicyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AttachRolePolicyRequest withPolicyArn(String policyArn) {
         setPolicyArn(policyArn);
         return this;

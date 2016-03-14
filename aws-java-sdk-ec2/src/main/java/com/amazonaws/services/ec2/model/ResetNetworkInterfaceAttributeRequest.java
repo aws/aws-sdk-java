@@ -50,6 +50,7 @@ public class ResetNetworkInterfaceAttributeRequest extends
      * @param networkInterfaceId
      *        The ID of the network interface.
      */
+
     public void setNetworkInterfaceId(String networkInterfaceId) {
         this.networkInterfaceId = networkInterfaceId;
     }
@@ -61,6 +62,7 @@ public class ResetNetworkInterfaceAttributeRequest extends
      * 
      * @return The ID of the network interface.
      */
+
     public String getNetworkInterfaceId() {
         return this.networkInterfaceId;
     }
@@ -75,6 +77,7 @@ public class ResetNetworkInterfaceAttributeRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ResetNetworkInterfaceAttributeRequest withNetworkInterfaceId(
             String networkInterfaceId) {
         setNetworkInterfaceId(networkInterfaceId);
@@ -91,6 +94,7 @@ public class ResetNetworkInterfaceAttributeRequest extends
      *        The source/destination checking attribute. Resets the value to
      *        <code>true</code>.
      */
+
     public void setSourceDestCheck(String sourceDestCheck) {
         this.sourceDestCheck = sourceDestCheck;
     }
@@ -104,6 +108,7 @@ public class ResetNetworkInterfaceAttributeRequest extends
      * @return The source/destination checking attribute. Resets the value to
      *         <code>true</code>.
      */
+
     public String getSourceDestCheck() {
         return this.sourceDestCheck;
     }
@@ -120,6 +125,7 @@ public class ResetNetworkInterfaceAttributeRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ResetNetworkInterfaceAttributeRequest withSourceDestCheck(
             String sourceDestCheck) {
         setSourceDestCheck(sourceDestCheck);

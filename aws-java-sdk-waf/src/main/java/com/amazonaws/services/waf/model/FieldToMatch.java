@@ -128,6 +128,7 @@ public class FieldToMatch implements Serializable, Cloneable {
      *        information, see <a>CreateSizeConstraintSet</a>.</li>
      * @see MatchFieldType
      */
+
     public void setType(String type) {
         this.type = type;
     }
@@ -190,6 +191,7 @@ public class FieldToMatch implements Serializable, Cloneable {
      *         more information, see <a>CreateSizeConstraintSet</a>.</li>
      * @see MatchFieldType
      */
+
     public String getType() {
         return this.type;
     }
@@ -255,6 +257,7 @@ public class FieldToMatch implements Serializable, Cloneable {
      *         chained together.
      * @see MatchFieldType
      */
+
     public FieldToMatch withType(String type) {
         setType(type);
         return this;
@@ -321,6 +324,7 @@ public class FieldToMatch implements Serializable, Cloneable {
      *         chained together.
      * @see MatchFieldType
      */
+
     public void setType(MatchFieldType type) {
         this.type = type.toString();
     }
@@ -386,6 +390,7 @@ public class FieldToMatch implements Serializable, Cloneable {
      *         chained together.
      * @see MatchFieldType
      */
+
     public FieldToMatch withType(MatchFieldType type) {
         setType(type);
         return this;
@@ -411,6 +416,7 @@ public class FieldToMatch implements Serializable, Cloneable {
      *        <p>
      *        The name of the header is not case sensitive.
      */
+
     public void setData(String data) {
         this.data = data;
     }
@@ -434,6 +440,7 @@ public class FieldToMatch implements Serializable, Cloneable {
      *         <p>
      *         The name of the header is not case sensitive.
      */
+
     public String getData() {
         return this.data;
     }
@@ -460,6 +467,7 @@ public class FieldToMatch implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FieldToMatch withData(String data) {
         setData(data);
         return this;

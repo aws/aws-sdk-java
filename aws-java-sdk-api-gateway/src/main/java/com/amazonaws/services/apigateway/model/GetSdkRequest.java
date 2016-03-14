@@ -36,6 +36,7 @@ public class GetSdkRequest extends AmazonWebServiceRequest implements
     /**
      * @param restApiId
      */
+
     public void setRestApiId(String restApiId) {
         this.restApiId = restApiId;
     }
@@ -43,6 +44,7 @@ public class GetSdkRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public String getRestApiId() {
         return this.restApiId;
     }
@@ -52,6 +54,7 @@ public class GetSdkRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetSdkRequest withRestApiId(String restApiId) {
         setRestApiId(restApiId);
         return this;
@@ -60,6 +63,7 @@ public class GetSdkRequest extends AmazonWebServiceRequest implements
     /**
      * @param stageName
      */
+
     public void setStageName(String stageName) {
         this.stageName = stageName;
     }
@@ -67,6 +71,7 @@ public class GetSdkRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public String getStageName() {
         return this.stageName;
     }
@@ -76,6 +81,7 @@ public class GetSdkRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetSdkRequest withStageName(String stageName) {
         setStageName(stageName);
         return this;
@@ -84,6 +90,7 @@ public class GetSdkRequest extends AmazonWebServiceRequest implements
     /**
      * @param sdkType
      */
+
     public void setSdkType(String sdkType) {
         this.sdkType = sdkType;
     }
@@ -91,6 +98,7 @@ public class GetSdkRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public String getSdkType() {
         return this.sdkType;
     }
@@ -100,6 +108,7 @@ public class GetSdkRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetSdkRequest withSdkType(String sdkType) {
         setSdkType(sdkType);
         return this;
@@ -108,6 +117,7 @@ public class GetSdkRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public java.util.Map<String, String> getParameters() {
         return parameters;
     }
@@ -115,6 +125,7 @@ public class GetSdkRequest extends AmazonWebServiceRequest implements
     /**
      * @param parameters
      */
+
     public void setParameters(java.util.Map<String, String> parameters) {
         this.parameters = parameters;
     }
@@ -124,6 +135,7 @@ public class GetSdkRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetSdkRequest withParameters(java.util.Map<String, String> parameters) {
         setParameters(parameters);
         return this;
@@ -144,6 +156,7 @@ public class GetSdkRequest extends AmazonWebServiceRequest implements
      * Removes all the entries added into Parameters. &lt;p> Returns a reference
      * to this object so that method calls can be chained together.
      */
+
     public GetSdkRequest clearParametersEntries() {
         this.parameters = null;
         return this;

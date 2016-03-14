@@ -70,6 +70,7 @@ public class DescribeWorkspaceBundlesRequest extends AmazonWebServiceRequest
      *         to retrieve. This parameter cannot be combined with any other
      *         filter parameter.
      */
+
     public java.util.List<String> getBundleIds() {
         if (bundleIds == null) {
             bundleIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -89,6 +90,7 @@ public class DescribeWorkspaceBundlesRequest extends AmazonWebServiceRequest
      *        to retrieve. This parameter cannot be combined with any other
      *        filter parameter.
      */
+
     public void setBundleIds(java.util.Collection<String> bundleIds) {
         if (bundleIds == null) {
             this.bundleIds = null;
@@ -119,6 +121,7 @@ public class DescribeWorkspaceBundlesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeWorkspaceBundlesRequest withBundleIds(String... bundleIds) {
         if (this.bundleIds == null) {
             setBundleIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -144,6 +147,7 @@ public class DescribeWorkspaceBundlesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeWorkspaceBundlesRequest withBundleIds(
             java.util.Collection<String> bundleIds) {
         setBundleIds(bundleIds);
@@ -177,6 +181,7 @@ public class DescribeWorkspaceBundlesRequest extends AmazonWebServiceRequest
      *        <li><code>AMAZON</code> - Retrieves the bundles that are provided
      *        by AWS.</li>
      */
+
     public void setOwner(String owner) {
         this.owner = owner;
     }
@@ -207,6 +212,7 @@ public class DescribeWorkspaceBundlesRequest extends AmazonWebServiceRequest
      *         <li><code>AMAZON</code> - Retrieves the bundles that are provided
      *         by AWS.</li>
      */
+
     public String getOwner() {
         return this.owner;
     }
@@ -240,6 +246,7 @@ public class DescribeWorkspaceBundlesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeWorkspaceBundlesRequest withOwner(String owner) {
         setOwner(owner);
         return this;
@@ -255,6 +262,7 @@ public class DescribeWorkspaceBundlesRequest extends AmazonWebServiceRequest
      *        The <code>NextToken</code> value from a previous call to this
      *        operation. Pass null if this is the first call.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -268,6 +276,7 @@ public class DescribeWorkspaceBundlesRequest extends AmazonWebServiceRequest
      * @return The <code>NextToken</code> value from a previous call to this
      *         operation. Pass null if this is the first call.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -284,6 +293,7 @@ public class DescribeWorkspaceBundlesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeWorkspaceBundlesRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

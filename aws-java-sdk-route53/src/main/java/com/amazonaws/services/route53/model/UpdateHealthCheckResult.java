@@ -28,6 +28,7 @@ public class UpdateHealthCheckResult implements Serializable, Cloneable {
     /**
      * @param healthCheck
      */
+
     public void setHealthCheck(HealthCheck healthCheck) {
         this.healthCheck = healthCheck;
     }
@@ -35,6 +36,7 @@ public class UpdateHealthCheckResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public HealthCheck getHealthCheck() {
         return this.healthCheck;
     }
@@ -44,6 +46,7 @@ public class UpdateHealthCheckResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateHealthCheckResult withHealthCheck(HealthCheck healthCheck) {
         setHealthCheck(healthCheck);
         return this;

@@ -172,6 +172,7 @@ public class UpdateTagsForDomainRequest extends AmazonWebServiceRequest
      *        <p>
      *        Required: Yes
      */
+
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
@@ -222,6 +223,7 @@ public class UpdateTagsForDomainRequest extends AmazonWebServiceRequest
      *         <p>
      *         Required: Yes
      */
+
     public String getDomainName() {
         return this.domainName;
     }
@@ -275,6 +277,7 @@ public class UpdateTagsForDomainRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateTagsForDomainRequest withDomainName(String domainName) {
         setDomainName(domainName);
         return this;
@@ -416,6 +419,7 @@ public class UpdateTagsForDomainRequest extends AmazonWebServiceRequest
      *         </p>
      *         </li>
      */
+
     public java.util.List<Tag> getTagsToUpdate() {
         if (tagsToUpdate == null) {
             tagsToUpdate = new com.amazonaws.internal.SdkInternalList<Tag>();
@@ -560,6 +564,7 @@ public class UpdateTagsForDomainRequest extends AmazonWebServiceRequest
      *        </p>
      *        </li>
      */
+
     public void setTagsToUpdate(java.util.Collection<Tag> tagsToUpdate) {
         if (tagsToUpdate == null) {
             this.tagsToUpdate = null;
@@ -715,6 +720,7 @@ public class UpdateTagsForDomainRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateTagsForDomainRequest withTagsToUpdate(Tag... tagsToUpdate) {
         if (this.tagsToUpdate == null) {
             setTagsToUpdate(new com.amazonaws.internal.SdkInternalList<Tag>(
@@ -865,6 +871,7 @@ public class UpdateTagsForDomainRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateTagsForDomainRequest withTagsToUpdate(
             java.util.Collection<Tag> tagsToUpdate) {
         setTagsToUpdate(tagsToUpdate);

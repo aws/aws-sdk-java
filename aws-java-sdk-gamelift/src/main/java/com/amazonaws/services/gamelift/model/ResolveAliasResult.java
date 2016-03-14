@@ -40,6 +40,7 @@ public class ResolveAliasResult implements Serializable, Cloneable {
      * @param fleetId
      *        Fleet ID associated with the requested alias.
      */
+
     public void setFleetId(String fleetId) {
         this.fleetId = fleetId;
     }
@@ -51,6 +52,7 @@ public class ResolveAliasResult implements Serializable, Cloneable {
      * 
      * @return Fleet ID associated with the requested alias.
      */
+
     public String getFleetId() {
         return this.fleetId;
     }
@@ -65,6 +67,7 @@ public class ResolveAliasResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ResolveAliasResult withFleetId(String fleetId) {
         setFleetId(fleetId);
         return this;

@@ -85,6 +85,7 @@ public class CreateGroupRequest extends AmazonWebServiceRequest implements
      *        This parameter is optional. If it is not included, it defaults to
      *        a slash (/).
      */
+
     public void setPath(String path) {
         this.path = path;
     }
@@ -108,6 +109,7 @@ public class CreateGroupRequest extends AmazonWebServiceRequest implements
      *         This parameter is optional. If it is not included, it defaults to
      *         a slash (/).
      */
+
     public String getPath() {
         return this.path;
     }
@@ -134,6 +136,7 @@ public class CreateGroupRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateGroupRequest withPath(String path) {
         setPath(path);
         return this;
@@ -148,6 +151,7 @@ public class CreateGroupRequest extends AmazonWebServiceRequest implements
      *        The name of the group to create. Do not include the path in this
      *        value.
      */
+
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
@@ -160,6 +164,7 @@ public class CreateGroupRequest extends AmazonWebServiceRequest implements
      * @return The name of the group to create. Do not include the path in this
      *         value.
      */
+
     public String getGroupName() {
         return this.groupName;
     }
@@ -175,6 +180,7 @@ public class CreateGroupRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateGroupRequest withGroupName(String groupName) {
         setGroupName(groupName);
         return this;

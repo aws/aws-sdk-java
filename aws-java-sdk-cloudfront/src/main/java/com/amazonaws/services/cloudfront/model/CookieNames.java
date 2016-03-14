@@ -39,6 +39,7 @@ public class CookieNames implements Serializable, Cloneable {
      * @param quantity
      *        The number of whitelisted cookies for this cache behavior.
      */
+
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
@@ -48,6 +49,7 @@ public class CookieNames implements Serializable, Cloneable {
      * 
      * @return The number of whitelisted cookies for this cache behavior.
      */
+
     public Integer getQuantity() {
         return this.quantity;
     }
@@ -60,6 +62,7 @@ public class CookieNames implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CookieNames withQuantity(Integer quantity) {
         setQuantity(quantity);
         return this;
@@ -72,6 +75,7 @@ public class CookieNames implements Serializable, Cloneable {
      * @return Optional: A complex type that contains whitelisted cookies for
      *         this cache behavior. If Quantity is 0, you can omit Items.
      */
+
     public java.util.List<String> getItems() {
         if (items == null) {
             items = new com.amazonaws.internal.SdkInternalList<String>();
@@ -87,6 +91,7 @@ public class CookieNames implements Serializable, Cloneable {
      *        Optional: A complex type that contains whitelisted cookies for
      *        this cache behavior. If Quantity is 0, you can omit Items.
      */
+
     public void setItems(java.util.Collection<String> items) {
         if (items == null) {
             this.items = null;
@@ -112,6 +117,7 @@ public class CookieNames implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CookieNames withItems(String... items) {
         if (this.items == null) {
             setItems(new com.amazonaws.internal.SdkInternalList<String>(
@@ -133,6 +139,7 @@ public class CookieNames implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CookieNames withItems(java.util.Collection<String> items) {
         setItems(items);
         return this;

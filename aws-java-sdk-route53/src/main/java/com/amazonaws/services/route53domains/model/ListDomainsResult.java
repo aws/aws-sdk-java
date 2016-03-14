@@ -73,6 +73,7 @@ public class ListDomainsResult implements Serializable, Cloneable {
      *         Children: <code>AutoRenew</code>, <code>DomainName</code>,
      *         <code>Expiry</code>, <code>TransferLock</code>
      */
+
     public java.util.List<DomainSummary> getDomains() {
         if (domains == null) {
             domains = new com.amazonaws.internal.SdkInternalList<DomainSummary>();
@@ -101,6 +102,7 @@ public class ListDomainsResult implements Serializable, Cloneable {
      *        Children: <code>AutoRenew</code>, <code>DomainName</code>,
      *        <code>Expiry</code>, <code>TransferLock</code>
      */
+
     public void setDomains(java.util.Collection<DomainSummary> domains) {
         if (domains == null) {
             this.domains = null;
@@ -140,6 +142,7 @@ public class ListDomainsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListDomainsResult withDomains(DomainSummary... domains) {
         if (this.domains == null) {
             setDomains(new com.amazonaws.internal.SdkInternalList<DomainSummary>(
@@ -174,6 +177,7 @@ public class ListDomainsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListDomainsResult withDomains(
             java.util.Collection<DomainSummary> domains) {
         setDomains(domains);
@@ -204,6 +208,7 @@ public class ListDomainsResult implements Serializable, Cloneable {
      *        <p>
      *        Parent: <code>Operations</code>
      */
+
     public void setNextPageMarker(String nextPageMarker) {
         this.nextPageMarker = nextPageMarker;
     }
@@ -231,6 +236,7 @@ public class ListDomainsResult implements Serializable, Cloneable {
      *         <p>
      *         Parent: <code>Operations</code>
      */
+
     public String getNextPageMarker() {
         return this.nextPageMarker;
     }
@@ -261,6 +267,7 @@ public class ListDomainsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListDomainsResult withNextPageMarker(String nextPageMarker) {
         setNextPageMarker(nextPageMarker);
         return this;

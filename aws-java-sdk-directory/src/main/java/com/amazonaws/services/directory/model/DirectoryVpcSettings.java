@@ -49,6 +49,7 @@ public class DirectoryVpcSettings implements Serializable, Cloneable {
      * @param vpcId
      *        The identifier of the VPC in which to create the directory.
      */
+
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
@@ -60,6 +61,7 @@ public class DirectoryVpcSettings implements Serializable, Cloneable {
      * 
      * @return The identifier of the VPC in which to create the directory.
      */
+
     public String getVpcId() {
         return this.vpcId;
     }
@@ -74,6 +76,7 @@ public class DirectoryVpcSettings implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DirectoryVpcSettings withVpcId(String vpcId) {
         setVpcId(vpcId);
         return this;
@@ -91,6 +94,7 @@ public class DirectoryVpcSettings implements Serializable, Cloneable {
      *         Service creates a directory server and a DNS server in each of
      *         these subnets.
      */
+
     public java.util.List<String> getSubnetIds() {
         if (subnetIds == null) {
             subnetIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -111,6 +115,7 @@ public class DirectoryVpcSettings implements Serializable, Cloneable {
      *        Service creates a directory server and a DNS server in each of
      *        these subnets.
      */
+
     public void setSubnetIds(java.util.Collection<String> subnetIds) {
         if (subnetIds == null) {
             this.subnetIds = null;
@@ -142,6 +147,7 @@ public class DirectoryVpcSettings implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DirectoryVpcSettings withSubnetIds(String... subnetIds) {
         if (this.subnetIds == null) {
             setSubnetIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -168,6 +174,7 @@ public class DirectoryVpcSettings implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DirectoryVpcSettings withSubnetIds(
             java.util.Collection<String> subnetIds) {
         setSubnetIds(subnetIds);

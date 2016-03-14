@@ -52,6 +52,7 @@ public class TimeRange implements Serializable, Cloneable {
      *        The time range's start time.</p> <note>Specify null to leave the
      *        time range's start time open-ended.
      */
+
     public void setStart(java.util.Date start) {
         this.start = start;
     }
@@ -66,6 +67,7 @@ public class TimeRange implements Serializable, Cloneable {
      * @return The time range's start time.</p> <note>Specify null to leave the
      *         time range's start time open-ended.
      */
+
     public java.util.Date getStart() {
         return this.start;
     }
@@ -83,6 +85,7 @@ public class TimeRange implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TimeRange withStart(java.util.Date start) {
         setStart(start);
         return this;
@@ -98,6 +101,7 @@ public class TimeRange implements Serializable, Cloneable {
      *        The time range's end time.</p> <note>Specify null to leave the
      *        time range's end time open-ended.
      */
+
     public void setEnd(java.util.Date end) {
         this.end = end;
     }
@@ -111,6 +115,7 @@ public class TimeRange implements Serializable, Cloneable {
      * @return The time range's end time.</p> <note>Specify null to leave the
      *         time range's end time open-ended.
      */
+
     public java.util.Date getEnd() {
         return this.end;
     }
@@ -127,6 +132,7 @@ public class TimeRange implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TimeRange withEnd(java.util.Date end) {
         setEnd(end);
         return this;

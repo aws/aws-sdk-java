@@ -47,6 +47,7 @@ public class DescribeReceiptRuleRequest extends AmazonWebServiceRequest
      *        The name of the receipt rule set to which the receipt rule
      *        belongs.
      */
+
     public void setRuleSetName(String ruleSetName) {
         this.ruleSetName = ruleSetName;
     }
@@ -59,6 +60,7 @@ public class DescribeReceiptRuleRequest extends AmazonWebServiceRequest
      * @return The name of the receipt rule set to which the receipt rule
      *         belongs.
      */
+
     public String getRuleSetName() {
         return this.ruleSetName;
     }
@@ -74,6 +76,7 @@ public class DescribeReceiptRuleRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeReceiptRuleRequest withRuleSetName(String ruleSetName) {
         setRuleSetName(ruleSetName);
         return this;
@@ -87,6 +90,7 @@ public class DescribeReceiptRuleRequest extends AmazonWebServiceRequest
      * @param ruleName
      *        The name of the receipt rule.
      */
+
     public void setRuleName(String ruleName) {
         this.ruleName = ruleName;
     }
@@ -98,6 +102,7 @@ public class DescribeReceiptRuleRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the receipt rule.
      */
+
     public String getRuleName() {
         return this.ruleName;
     }
@@ -112,6 +117,7 @@ public class DescribeReceiptRuleRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeReceiptRuleRequest withRuleName(String ruleName) {
         setRuleName(ruleName);
         return this;

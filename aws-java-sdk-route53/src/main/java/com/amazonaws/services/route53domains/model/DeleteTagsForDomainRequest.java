@@ -117,6 +117,7 @@ public class DeleteTagsForDomainRequest extends AmazonWebServiceRequest
      *        <p>
      *        Required: Yes
      */
+
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
@@ -167,6 +168,7 @@ public class DeleteTagsForDomainRequest extends AmazonWebServiceRequest
      *         <p>
      *         Required: Yes
      */
+
     public String getDomainName() {
         return this.domainName;
     }
@@ -220,6 +222,7 @@ public class DeleteTagsForDomainRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteTagsForDomainRequest withDomainName(String domainName) {
         setDomainName(domainName);
         return this;
@@ -251,6 +254,7 @@ public class DeleteTagsForDomainRequest extends AmazonWebServiceRequest
      *         <p>
      *         Required: No
      */
+
     public java.util.List<String> getTagsToDelete() {
         if (tagsToDelete == null) {
             tagsToDelete = new com.amazonaws.internal.SdkInternalList<String>();
@@ -285,6 +289,7 @@ public class DeleteTagsForDomainRequest extends AmazonWebServiceRequest
      *        <p>
      *        Required: No
      */
+
     public void setTagsToDelete(java.util.Collection<String> tagsToDelete) {
         if (tagsToDelete == null) {
             this.tagsToDelete = null;
@@ -330,6 +335,7 @@ public class DeleteTagsForDomainRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteTagsForDomainRequest withTagsToDelete(String... tagsToDelete) {
         if (this.tagsToDelete == null) {
             setTagsToDelete(new com.amazonaws.internal.SdkInternalList<String>(
@@ -370,6 +376,7 @@ public class DeleteTagsForDomainRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteTagsForDomainRequest withTagsToDelete(
             java.util.Collection<String> tagsToDelete) {
         setTagsToDelete(tagsToDelete);

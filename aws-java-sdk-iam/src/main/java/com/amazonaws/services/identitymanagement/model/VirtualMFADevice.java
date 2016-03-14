@@ -67,6 +67,7 @@ public class VirtualMFADevice implements Serializable, Cloneable {
      * @param serialNumber
      *        The serial number associated with <code>VirtualMFADevice</code>.
      */
+
     public void setSerialNumber(String serialNumber) {
         this.serialNumber = serialNumber;
     }
@@ -78,6 +79,7 @@ public class VirtualMFADevice implements Serializable, Cloneable {
      * 
      * @return The serial number associated with <code>VirtualMFADevice</code>.
      */
+
     public String getSerialNumber() {
         return this.serialNumber;
     }
@@ -92,6 +94,7 @@ public class VirtualMFADevice implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VirtualMFADevice withSerialNumber(String serialNumber) {
         setSerialNumber(serialNumber);
         return this;
@@ -114,6 +117,7 @@ public class VirtualMFADevice implements Serializable, Cloneable {
      *        href="http://www.ietf.org/rfc/rfc3548.txt">RFC3548</a>. The
      *        <code>Base32StringSeed</code> is Base64-encoded.
      */
+
     public void setBase32StringSeed(java.nio.ByteBuffer base32StringSeed) {
         this.base32StringSeed = base32StringSeed;
     }
@@ -139,6 +143,7 @@ public class VirtualMFADevice implements Serializable, Cloneable {
      *         href="http://www.ietf.org/rfc/rfc3548.txt">RFC3548</a>. The
      *         <code>Base32StringSeed</code> is Base64-encoded.
      */
+
     public java.nio.ByteBuffer getBase32StringSeed() {
         return this.base32StringSeed;
     }
@@ -157,6 +162,7 @@ public class VirtualMFADevice implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VirtualMFADevice withBase32StringSeed(
             java.nio.ByteBuffer base32StringSeed) {
         setBase32StringSeed(base32StringSeed);
@@ -187,6 +193,7 @@ public class VirtualMFADevice implements Serializable, Cloneable {
      *        <code>Base32String</code> is the seed in Base32 format. The
      *        <code>Base32String</code> value is Base64-encoded.
      */
+
     public void setQRCodePNG(java.nio.ByteBuffer qRCodePNG) {
         this.qRCodePNG = qRCodePNG;
     }
@@ -219,6 +226,7 @@ public class VirtualMFADevice implements Serializable, Cloneable {
      *         <code>Base32String</code> is the seed in Base32 format. The
      *         <code>Base32String</code> value is Base64-encoded.
      */
+
     public java.nio.ByteBuffer getQRCodePNG() {
         return this.qRCodePNG;
     }
@@ -244,6 +252,7 @@ public class VirtualMFADevice implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VirtualMFADevice withQRCodePNG(java.nio.ByteBuffer qRCodePNG) {
         setQRCodePNG(qRCodePNG);
         return this;
@@ -252,6 +261,7 @@ public class VirtualMFADevice implements Serializable, Cloneable {
     /**
      * @param user
      */
+
     public void setUser(User user) {
         this.user = user;
     }
@@ -259,6 +269,7 @@ public class VirtualMFADevice implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public User getUser() {
         return this.user;
     }
@@ -268,6 +279,7 @@ public class VirtualMFADevice implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VirtualMFADevice withUser(User user) {
         setUser(user);
         return this;
@@ -281,6 +293,7 @@ public class VirtualMFADevice implements Serializable, Cloneable {
      * @param enableDate
      *        The date and time on which the virtual MFA device was enabled.
      */
+
     public void setEnableDate(java.util.Date enableDate) {
         this.enableDate = enableDate;
     }
@@ -292,6 +305,7 @@ public class VirtualMFADevice implements Serializable, Cloneable {
      * 
      * @return The date and time on which the virtual MFA device was enabled.
      */
+
     public java.util.Date getEnableDate() {
         return this.enableDate;
     }
@@ -306,6 +320,7 @@ public class VirtualMFADevice implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VirtualMFADevice withEnableDate(java.util.Date enableDate) {
         setEnableDate(enableDate);
         return this;

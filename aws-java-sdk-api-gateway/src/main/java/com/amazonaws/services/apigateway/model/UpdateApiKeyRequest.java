@@ -49,6 +49,7 @@ public class UpdateApiKeyRequest extends AmazonWebServiceRequest implements
      * @param apiKey
      *        The identifier of the <a>ApiKey</a> resource to be updated.
      */
+
     public void setApiKey(String apiKey) {
         this.apiKey = apiKey;
     }
@@ -60,6 +61,7 @@ public class UpdateApiKeyRequest extends AmazonWebServiceRequest implements
      * 
      * @return The identifier of the <a>ApiKey</a> resource to be updated.
      */
+
     public String getApiKey() {
         return this.apiKey;
     }
@@ -74,6 +76,7 @@ public class UpdateApiKeyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateApiKeyRequest withApiKey(String apiKey) {
         setApiKey(apiKey);
         return this;
@@ -89,6 +92,7 @@ public class UpdateApiKeyRequest extends AmazonWebServiceRequest implements
      *         specified resource. The patches are applied in the order
      *         specified in the list.
      */
+
     public java.util.List<PatchOperation> getPatchOperations() {
         return patchOperations;
     }
@@ -104,6 +108,7 @@ public class UpdateApiKeyRequest extends AmazonWebServiceRequest implements
      *        specified resource. The patches are applied in the order specified
      *        in the list.
      */
+
     public void setPatchOperations(
             java.util.Collection<PatchOperation> patchOperations) {
         if (patchOperations == null) {
@@ -134,6 +139,7 @@ public class UpdateApiKeyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateApiKeyRequest withPatchOperations(
             PatchOperation... patchOperations) {
         if (this.patchOperations == null) {
@@ -159,6 +165,7 @@ public class UpdateApiKeyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateApiKeyRequest withPatchOperations(
             java.util.Collection<PatchOperation> patchOperations) {
         setPatchOperations(patchOperations);

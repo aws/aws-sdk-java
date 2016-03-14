@@ -30,6 +30,7 @@ public class GetPipelineResult implements Serializable, Cloneable {
     /**
      * @param pipeline
      */
+
     public void setPipeline(PipelineDeclaration pipeline) {
         this.pipeline = pipeline;
     }
@@ -37,6 +38,7 @@ public class GetPipelineResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public PipelineDeclaration getPipeline() {
         return this.pipeline;
     }
@@ -46,6 +48,7 @@ public class GetPipelineResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetPipelineResult withPipeline(PipelineDeclaration pipeline) {
         setPipeline(pipeline);
         return this;

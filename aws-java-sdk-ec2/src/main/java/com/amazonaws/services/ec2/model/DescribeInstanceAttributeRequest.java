@@ -88,6 +88,7 @@ public class DescribeInstanceAttributeRequest extends AmazonWebServiceRequest
      * @param instanceId
      *        The ID of the instance.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -99,6 +100,7 @@ public class DescribeInstanceAttributeRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the instance.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
@@ -113,6 +115,7 @@ public class DescribeInstanceAttributeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeInstanceAttributeRequest withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;
@@ -127,6 +130,7 @@ public class DescribeInstanceAttributeRequest extends AmazonWebServiceRequest
      *        The instance attribute.
      * @see InstanceAttributeName
      */
+
     public void setAttribute(String attribute) {
         this.attribute = attribute;
     }
@@ -139,6 +143,7 @@ public class DescribeInstanceAttributeRequest extends AmazonWebServiceRequest
      * @return The instance attribute.
      * @see InstanceAttributeName
      */
+
     public String getAttribute() {
         return this.attribute;
     }
@@ -154,6 +159,7 @@ public class DescribeInstanceAttributeRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see InstanceAttributeName
      */
+
     public DescribeInstanceAttributeRequest withAttribute(String attribute) {
         setAttribute(attribute);
         return this;
@@ -170,6 +176,7 @@ public class DescribeInstanceAttributeRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see InstanceAttributeName
      */
+
     public void setAttribute(InstanceAttributeName attribute) {
         this.attribute = attribute.toString();
     }
@@ -185,6 +192,7 @@ public class DescribeInstanceAttributeRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see InstanceAttributeName
      */
+
     public DescribeInstanceAttributeRequest withAttribute(
             InstanceAttributeName attribute) {
         setAttribute(attribute);

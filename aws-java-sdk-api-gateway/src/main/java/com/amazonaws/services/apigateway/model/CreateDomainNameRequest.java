@@ -72,6 +72,7 @@ public class CreateDomainNameRequest extends AmazonWebServiceRequest implements
      * @param domainName
      *        The name of the <a>DomainName</a> resource.
      */
+
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
@@ -83,6 +84,7 @@ public class CreateDomainNameRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the <a>DomainName</a> resource.
      */
+
     public String getDomainName() {
         return this.domainName;
     }
@@ -97,6 +99,7 @@ public class CreateDomainNameRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDomainNameRequest withDomainName(String domainName) {
         setDomainName(domainName);
         return this;
@@ -110,6 +113,7 @@ public class CreateDomainNameRequest extends AmazonWebServiceRequest implements
      * @param certificateName
      *        The name of the certificate.
      */
+
     public void setCertificateName(String certificateName) {
         this.certificateName = certificateName;
     }
@@ -121,6 +125,7 @@ public class CreateDomainNameRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the certificate.
      */
+
     public String getCertificateName() {
         return this.certificateName;
     }
@@ -135,6 +140,7 @@ public class CreateDomainNameRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDomainNameRequest withCertificateName(String certificateName) {
         setCertificateName(certificateName);
         return this;
@@ -150,6 +156,7 @@ public class CreateDomainNameRequest extends AmazonWebServiceRequest implements
      *        The body of the server certificate provided by your certificate
      *        authority.
      */
+
     public void setCertificateBody(String certificateBody) {
         this.certificateBody = certificateBody;
     }
@@ -163,6 +170,7 @@ public class CreateDomainNameRequest extends AmazonWebServiceRequest implements
      * @return The body of the server certificate provided by your certificate
      *         authority.
      */
+
     public String getCertificateBody() {
         return this.certificateBody;
     }
@@ -179,6 +187,7 @@ public class CreateDomainNameRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDomainNameRequest withCertificateBody(String certificateBody) {
         setCertificateBody(certificateBody);
         return this;
@@ -192,6 +201,7 @@ public class CreateDomainNameRequest extends AmazonWebServiceRequest implements
      * @param certificatePrivateKey
      *        Your certificate's private key.
      */
+
     public void setCertificatePrivateKey(String certificatePrivateKey) {
         this.certificatePrivateKey = certificatePrivateKey;
     }
@@ -203,6 +213,7 @@ public class CreateDomainNameRequest extends AmazonWebServiceRequest implements
      * 
      * @return Your certificate's private key.
      */
+
     public String getCertificatePrivateKey() {
         return this.certificatePrivateKey;
     }
@@ -217,6 +228,7 @@ public class CreateDomainNameRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDomainNameRequest withCertificatePrivateKey(
             String certificatePrivateKey) {
         setCertificatePrivateKey(certificatePrivateKey);
@@ -242,6 +254,7 @@ public class CreateDomainNameRequest extends AmazonWebServiceRequest implements
      *        certificate authority. Do not include any intermediaries that are
      *        not in the chain of trust path.
      */
+
     public void setCertificateChain(String certificateChain) {
         this.certificateChain = certificateChain;
     }
@@ -264,6 +277,7 @@ public class CreateDomainNameRequest extends AmazonWebServiceRequest implements
      *         certificate authority. Do not include any intermediaries that are
      *         not in the chain of trust path.
      */
+
     public String getCertificateChain() {
         return this.certificateChain;
     }
@@ -289,6 +303,7 @@ public class CreateDomainNameRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDomainNameRequest withCertificateChain(String certificateChain) {
         setCertificateChain(certificateChain);
         return this;

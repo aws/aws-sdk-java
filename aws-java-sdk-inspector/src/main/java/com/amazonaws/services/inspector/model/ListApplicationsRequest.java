@@ -74,6 +74,7 @@ public class ListApplicationsRequest extends AmazonWebServiceRequest implements
      *        must match. When multiple values are specified for a filter
      *        attribute, any of the values can match.
      */
+
     public void setFilter(ApplicationsFilter filter) {
         this.filter = filter;
     }
@@ -96,6 +97,7 @@ public class ListApplicationsRequest extends AmazonWebServiceRequest implements
      *         must match. When multiple values are specified for a filter
      *         attribute, any of the values can match.
      */
+
     public ApplicationsFilter getFilter() {
         return this.filter;
     }
@@ -121,6 +123,7 @@ public class ListApplicationsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListApplicationsRequest withFilter(ApplicationsFilter filter) {
         setFilter(filter);
         return this;
@@ -142,6 +145,7 @@ public class ListApplicationsRequest extends AmazonWebServiceRequest implements
      *        fill <b>nextToken</b> in the request with the value of
      *        <b>NextToken</b> from previous response to continue listing data.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -161,6 +165,7 @@ public class ListApplicationsRequest extends AmazonWebServiceRequest implements
      *         fill <b>nextToken</b> in the request with the value of
      *         <b>NextToken</b> from previous response to continue listing data.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -183,6 +188,7 @@ public class ListApplicationsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListApplicationsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -199,6 +205,7 @@ public class ListApplicationsRequest extends AmazonWebServiceRequest implements
      *        you want in the response. The default value is 10. The maximum
      *        value is 500.
      */
+
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
     }
@@ -213,6 +220,7 @@ public class ListApplicationsRequest extends AmazonWebServiceRequest implements
      *         items you want in the response. The default value is 10. The
      *         maximum value is 500.
      */
+
     public Integer getMaxResults() {
         return this.maxResults;
     }
@@ -230,6 +238,7 @@ public class ListApplicationsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListApplicationsRequest withMaxResults(Integer maxResults) {
         setMaxResults(maxResults);
         return this;

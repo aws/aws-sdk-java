@@ -62,6 +62,7 @@ public class ListAccountAliasesResult implements Serializable, Cloneable {
      * @return A list of aliases associated with the account. AWS supports only
      *         one alias per account.
      */
+
     public java.util.List<String> getAccountAliases() {
         if (accountAliases == null) {
             accountAliases = new com.amazonaws.internal.SdkInternalList<String>();
@@ -79,6 +80,7 @@ public class ListAccountAliasesResult implements Serializable, Cloneable {
      *        A list of aliases associated with the account. AWS supports only
      *        one alias per account.
      */
+
     public void setAccountAliases(java.util.Collection<String> accountAliases) {
         if (accountAliases == null) {
             this.accountAliases = null;
@@ -107,6 +109,7 @@ public class ListAccountAliasesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListAccountAliasesResult withAccountAliases(String... accountAliases) {
         if (this.accountAliases == null) {
             setAccountAliases(new com.amazonaws.internal.SdkInternalList<String>(
@@ -130,6 +133,7 @@ public class ListAccountAliasesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListAccountAliasesResult withAccountAliases(
             java.util.Collection<String> accountAliases) {
         setAccountAliases(accountAliases);
@@ -157,6 +161,7 @@ public class ListAccountAliasesResult implements Serializable, Cloneable {
      *        <code>IsTruncated</code> after every call to ensure that you
      *        receive all of your results.
      */
+
     public void setIsTruncated(Boolean isTruncated) {
         this.isTruncated = isTruncated;
     }
@@ -181,6 +186,7 @@ public class ListAccountAliasesResult implements Serializable, Cloneable {
      *         <code>IsTruncated</code> after every call to ensure that you
      *         receive all of your results.
      */
+
     public Boolean getIsTruncated() {
         return this.isTruncated;
     }
@@ -208,6 +214,7 @@ public class ListAccountAliasesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListAccountAliasesResult withIsTruncated(Boolean isTruncated) {
         setIsTruncated(isTruncated);
         return this;
@@ -233,6 +240,7 @@ public class ListAccountAliasesResult implements Serializable, Cloneable {
      *         <code>IsTruncated</code> after every call to ensure that you
      *         receive all of your results.
      */
+
     public Boolean isTruncated() {
         return this.isTruncated;
     }
@@ -249,6 +257,7 @@ public class ListAccountAliasesResult implements Serializable, Cloneable {
      *        is present and contains the value to use for the
      *        <code>Marker</code> parameter in a subsequent pagination request.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -264,6 +273,7 @@ public class ListAccountAliasesResult implements Serializable, Cloneable {
      *         is present and contains the value to use for the
      *         <code>Marker</code> parameter in a subsequent pagination request.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -282,6 +292,7 @@ public class ListAccountAliasesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListAccountAliasesResult withMarker(String marker) {
         setMarker(marker);
         return this;

@@ -197,6 +197,7 @@ public class HealthCheck implements Serializable, Cloneable {
      *        The total length of the HTTP ping target must be 1024 16-bit
      *        Unicode characters or less.
      */
+
     public void setTarget(String target) {
         this.target = target;
     }
@@ -251,6 +252,7 @@ public class HealthCheck implements Serializable, Cloneable {
      *         The total length of the HTTP ping target must be 1024 16-bit
      *         Unicode characters or less.
      */
+
     public String getTarget() {
         return this.target;
     }
@@ -308,6 +310,7 @@ public class HealthCheck implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HealthCheck withTarget(String target) {
         setTarget(target);
         return this;
@@ -323,6 +326,7 @@ public class HealthCheck implements Serializable, Cloneable {
      *        The approximate interval, in seconds, between health checks of an
      *        individual instance.
      */
+
     public void setInterval(Integer interval) {
         this.interval = interval;
     }
@@ -336,6 +340,7 @@ public class HealthCheck implements Serializable, Cloneable {
      * @return The approximate interval, in seconds, between health checks of an
      *         individual instance.
      */
+
     public Integer getInterval() {
         return this.interval;
     }
@@ -352,6 +357,7 @@ public class HealthCheck implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HealthCheck withInterval(Integer interval) {
         setInterval(interval);
         return this;
@@ -372,6 +378,7 @@ public class HealthCheck implements Serializable, Cloneable {
      *        <p>
      *        This value must be less than the <code>Interval</code> value.
      */
+
     public void setTimeout(Integer timeout) {
         this.timeout = timeout;
     }
@@ -390,6 +397,7 @@ public class HealthCheck implements Serializable, Cloneable {
      *         <p>
      *         This value must be less than the <code>Interval</code> value.
      */
+
     public Integer getTimeout() {
         return this.timeout;
     }
@@ -411,6 +419,7 @@ public class HealthCheck implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HealthCheck withTimeout(Integer timeout) {
         setTimeout(timeout);
         return this;
@@ -426,6 +435,7 @@ public class HealthCheck implements Serializable, Cloneable {
      *        The number of consecutive health check failures required before
      *        moving the instance to the <code>Unhealthy</code> state.
      */
+
     public void setUnhealthyThreshold(Integer unhealthyThreshold) {
         this.unhealthyThreshold = unhealthyThreshold;
     }
@@ -439,6 +449,7 @@ public class HealthCheck implements Serializable, Cloneable {
      * @return The number of consecutive health check failures required before
      *         moving the instance to the <code>Unhealthy</code> state.
      */
+
     public Integer getUnhealthyThreshold() {
         return this.unhealthyThreshold;
     }
@@ -455,6 +466,7 @@ public class HealthCheck implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HealthCheck withUnhealthyThreshold(Integer unhealthyThreshold) {
         setUnhealthyThreshold(unhealthyThreshold);
         return this;
@@ -470,6 +482,7 @@ public class HealthCheck implements Serializable, Cloneable {
      *        The number of consecutive health checks successes required before
      *        moving the instance to the <code>Healthy</code> state.
      */
+
     public void setHealthyThreshold(Integer healthyThreshold) {
         this.healthyThreshold = healthyThreshold;
     }
@@ -483,6 +496,7 @@ public class HealthCheck implements Serializable, Cloneable {
      * @return The number of consecutive health checks successes required before
      *         moving the instance to the <code>Healthy</code> state.
      */
+
     public Integer getHealthyThreshold() {
         return this.healthyThreshold;
     }
@@ -499,6 +513,7 @@ public class HealthCheck implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HealthCheck withHealthyThreshold(Integer healthyThreshold) {
         setHealthyThreshold(healthyThreshold);
         return this;

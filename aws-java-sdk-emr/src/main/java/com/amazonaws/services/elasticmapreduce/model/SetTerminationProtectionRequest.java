@@ -55,6 +55,7 @@ public class SetTerminationProtectionRequest extends AmazonWebServiceRequest
      *         protect. This identifier is returned by <a>RunJobFlow</a> and can
      *         also be obtained from <a>DescribeJobFlows</a> .
      */
+
     public java.util.List<String> getJobFlowIds() {
         if (jobFlowIds == null) {
             jobFlowIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -74,6 +75,7 @@ public class SetTerminationProtectionRequest extends AmazonWebServiceRequest
      *        This identifier is returned by <a>RunJobFlow</a> and can also be
      *        obtained from <a>DescribeJobFlows</a> .
      */
+
     public void setJobFlowIds(java.util.Collection<String> jobFlowIds) {
         if (jobFlowIds == null) {
             this.jobFlowIds = null;
@@ -104,6 +106,7 @@ public class SetTerminationProtectionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetTerminationProtectionRequest withJobFlowIds(String... jobFlowIds) {
         if (this.jobFlowIds == null) {
             setJobFlowIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -129,6 +132,7 @@ public class SetTerminationProtectionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetTerminationProtectionRequest withJobFlowIds(
             java.util.Collection<String> jobFlowIds) {
         setJobFlowIds(jobFlowIds);
@@ -147,6 +151,7 @@ public class SetTerminationProtectionRequest extends AmazonWebServiceRequest
      *        prevent the Amazon EC2 instances in the cluster from shutting down
      *        due to API calls, user intervention, or job-flow error.
      */
+
     public void setTerminationProtected(Boolean terminationProtected) {
         this.terminationProtected = terminationProtected;
     }
@@ -162,6 +167,7 @@ public class SetTerminationProtectionRequest extends AmazonWebServiceRequest
      *         prevent the Amazon EC2 instances in the cluster from shutting
      *         down due to API calls, user intervention, or job-flow error.
      */
+
     public Boolean getTerminationProtected() {
         return this.terminationProtected;
     }
@@ -180,6 +186,7 @@ public class SetTerminationProtectionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetTerminationProtectionRequest withTerminationProtected(
             Boolean terminationProtected) {
         setTerminationProtected(terminationProtected);
@@ -197,6 +204,7 @@ public class SetTerminationProtectionRequest extends AmazonWebServiceRequest
      *         prevent the Amazon EC2 instances in the cluster from shutting
      *         down due to API calls, user intervention, or job-flow error.
      */
+
     public Boolean isTerminationProtected() {
         return this.terminationProtected;
     }

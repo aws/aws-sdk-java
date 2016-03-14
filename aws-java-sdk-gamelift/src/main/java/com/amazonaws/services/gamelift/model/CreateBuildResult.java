@@ -42,7 +42,8 @@ public class CreateBuildResult implements Serializable, Cloneable {
     private Credentials uploadCredentials;
     /**
      * <p>
-     * S3 path and key, identifying where the game build files are stored.
+     * Amazon S3 path and key, identifying where the game build files are
+     * stored.
      * </p>
      */
     private S3Location storageLocation;
@@ -55,6 +56,7 @@ public class CreateBuildResult implements Serializable, Cloneable {
      * @param build
      *        Set of properties for the newly created build.
      */
+
     public void setBuild(Build build) {
         this.build = build;
     }
@@ -66,6 +68,7 @@ public class CreateBuildResult implements Serializable, Cloneable {
      * 
      * @return Set of properties for the newly created build.
      */
+
     public Build getBuild() {
         return this.build;
     }
@@ -80,6 +83,7 @@ public class CreateBuildResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateBuildResult withBuild(Build build) {
         setBuild(build);
         return this;
@@ -99,6 +103,7 @@ public class CreateBuildResult implements Serializable, Cloneable {
      *        are valid only for the build they were issued for. If you need to
      *        get fresh credentials, call <a>RequestUploadCredentials</a>.
      */
+
     public void setUploadCredentials(Credentials uploadCredentials) {
         this.uploadCredentials = uploadCredentials;
     }
@@ -116,6 +121,7 @@ public class CreateBuildResult implements Serializable, Cloneable {
      *         are valid only for the build they were issued for. If you need to
      *         get fresh credentials, call <a>RequestUploadCredentials</a>.
      */
+
     public Credentials getUploadCredentials() {
         return this.uploadCredentials;
     }
@@ -136,6 +142,7 @@ public class CreateBuildResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateBuildResult withUploadCredentials(Credentials uploadCredentials) {
         setUploadCredentials(uploadCredentials);
         return this;
@@ -143,40 +150,46 @@ public class CreateBuildResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * S3 path and key, identifying where the game build files are stored.
+     * Amazon S3 path and key, identifying where the game build files are
+     * stored.
      * </p>
      * 
      * @param storageLocation
-     *        S3 path and key, identifying where the game build files are
+     *        Amazon S3 path and key, identifying where the game build files are
      *        stored.
      */
+
     public void setStorageLocation(S3Location storageLocation) {
         this.storageLocation = storageLocation;
     }
 
     /**
      * <p>
-     * S3 path and key, identifying where the game build files are stored.
+     * Amazon S3 path and key, identifying where the game build files are
+     * stored.
      * </p>
      * 
-     * @return S3 path and key, identifying where the game build files are
-     *         stored.
+     * @return Amazon S3 path and key, identifying where the game build files
+     *         are stored.
      */
+
     public S3Location getStorageLocation() {
         return this.storageLocation;
     }
 
     /**
      * <p>
-     * S3 path and key, identifying where the game build files are stored.
+     * Amazon S3 path and key, identifying where the game build files are
+     * stored.
      * </p>
      * 
      * @param storageLocation
-     *        S3 path and key, identifying where the game build files are
+     *        Amazon S3 path and key, identifying where the game build files are
      *        stored.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateBuildResult withStorageLocation(S3Location storageLocation) {
         setStorageLocation(storageLocation);
         return this;

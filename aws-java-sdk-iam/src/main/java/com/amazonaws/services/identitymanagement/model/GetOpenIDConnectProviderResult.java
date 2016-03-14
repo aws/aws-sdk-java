@@ -67,6 +67,7 @@ public class GetOpenIDConnectProviderResult implements Serializable, Cloneable {
      *        The URL that the IAM OpenID Connect provider is associated with.
      *        For more information, see <a>CreateOpenIDConnectProvider</a>.
      */
+
     public void setUrl(String url) {
         this.url = url;
     }
@@ -80,6 +81,7 @@ public class GetOpenIDConnectProviderResult implements Serializable, Cloneable {
      * @return The URL that the IAM OpenID Connect provider is associated with.
      *         For more information, see <a>CreateOpenIDConnectProvider</a>.
      */
+
     public String getUrl() {
         return this.url;
     }
@@ -96,6 +98,7 @@ public class GetOpenIDConnectProviderResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetOpenIDConnectProviderResult withUrl(String url) {
         setUrl(url);
         return this;
@@ -112,6 +115,7 @@ public class GetOpenIDConnectProviderResult implements Serializable, Cloneable {
      *         associated with the specified IAM OpenID Connect provider. For
      *         more information, see <a>CreateOpenIDConnectProvider</a>.
      */
+
     public java.util.List<String> getClientIDList() {
         if (clientIDList == null) {
             clientIDList = new com.amazonaws.internal.SdkInternalList<String>();
@@ -131,6 +135,7 @@ public class GetOpenIDConnectProviderResult implements Serializable, Cloneable {
      *        with the specified IAM OpenID Connect provider. For more
      *        information, see <a>CreateOpenIDConnectProvider</a>.
      */
+
     public void setClientIDList(java.util.Collection<String> clientIDList) {
         if (clientIDList == null) {
             this.clientIDList = null;
@@ -161,6 +166,7 @@ public class GetOpenIDConnectProviderResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetOpenIDConnectProviderResult withClientIDList(
             String... clientIDList) {
         if (this.clientIDList == null) {
@@ -187,6 +193,7 @@ public class GetOpenIDConnectProviderResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetOpenIDConnectProviderResult withClientIDList(
             java.util.Collection<String> clientIDList) {
         setClientIDList(clientIDList);
@@ -204,6 +211,7 @@ public class GetOpenIDConnectProviderResult implements Serializable, Cloneable {
      *         specified IAM OpenID Connect provider. For more information, see
      *         <a>CreateOpenIDConnectProvider</a>.
      */
+
     public java.util.List<String> getThumbprintList() {
         if (thumbprintList == null) {
             thumbprintList = new com.amazonaws.internal.SdkInternalList<String>();
@@ -223,6 +231,7 @@ public class GetOpenIDConnectProviderResult implements Serializable, Cloneable {
      *        specified IAM OpenID Connect provider. For more information, see
      *        <a>CreateOpenIDConnectProvider</a>.
      */
+
     public void setThumbprintList(java.util.Collection<String> thumbprintList) {
         if (thumbprintList == null) {
             this.thumbprintList = null;
@@ -253,6 +262,7 @@ public class GetOpenIDConnectProviderResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetOpenIDConnectProviderResult withThumbprintList(
             String... thumbprintList) {
         if (this.thumbprintList == null) {
@@ -279,6 +289,7 @@ public class GetOpenIDConnectProviderResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetOpenIDConnectProviderResult withThumbprintList(
             java.util.Collection<String> thumbprintList) {
         setThumbprintList(thumbprintList);
@@ -295,6 +306,7 @@ public class GetOpenIDConnectProviderResult implements Serializable, Cloneable {
      *        The date and time when the IAM OpenID Connect provider entity was
      *        created in the AWS account.
      */
+
     public void setCreateDate(java.util.Date createDate) {
         this.createDate = createDate;
     }
@@ -308,6 +320,7 @@ public class GetOpenIDConnectProviderResult implements Serializable, Cloneable {
      * @return The date and time when the IAM OpenID Connect provider entity was
      *         created in the AWS account.
      */
+
     public java.util.Date getCreateDate() {
         return this.createDate;
     }
@@ -324,6 +337,7 @@ public class GetOpenIDConnectProviderResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetOpenIDConnectProviderResult withCreateDate(
             java.util.Date createDate) {
         setCreateDate(createDate);

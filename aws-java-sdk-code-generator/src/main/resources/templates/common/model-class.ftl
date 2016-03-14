@@ -7,6 +7,9 @@ import java.io.Serializable;
 /**
  * <#if shape.documentation?has_content>${shape.documentation}</#if>
  */
+<#if shape.deprecated>
+@Deprecated
+</#if>
 public class ${shape.shapeName} implements Serializable, Cloneable {
 
     <@VariableDeclarationMacro.content shape/>

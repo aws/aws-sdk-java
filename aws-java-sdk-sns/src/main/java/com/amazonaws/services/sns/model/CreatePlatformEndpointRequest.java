@@ -71,6 +71,7 @@ public class CreatePlatformEndpointRequest extends AmazonWebServiceRequest
      *        PlatformApplicationArn returned from CreatePlatformApplication is
      *        used to create a an endpoint.
      */
+
     public void setPlatformApplicationArn(String platformApplicationArn) {
         this.platformApplicationArn = platformApplicationArn;
     }
@@ -84,6 +85,7 @@ public class CreatePlatformEndpointRequest extends AmazonWebServiceRequest
      * @return PlatformApplicationArn returned from CreatePlatformApplication is
      *         used to create a an endpoint.
      */
+
     public String getPlatformApplicationArn() {
         return this.platformApplicationArn;
     }
@@ -100,6 +102,7 @@ public class CreatePlatformEndpointRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePlatformEndpointRequest withPlatformApplicationArn(
             String platformApplicationArn) {
         setPlatformApplicationArn(platformApplicationArn);
@@ -124,6 +127,7 @@ public class CreatePlatformEndpointRequest extends AmazonWebServiceRequest
      *        Alternatively, when using GCM or ADM, the device token equivalent
      *        is called the registration ID.
      */
+
     public void setToken(String token) {
         this.token = token;
     }
@@ -145,6 +149,7 @@ public class CreatePlatformEndpointRequest extends AmazonWebServiceRequest
      *         Alternatively, when using GCM or ADM, the device token equivalent
      *         is called the registration ID.
      */
+
     public String getToken() {
         return this.token;
     }
@@ -169,6 +174,7 @@ public class CreatePlatformEndpointRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePlatformEndpointRequest withToken(String token) {
         setToken(token);
         return this;
@@ -185,6 +191,7 @@ public class CreatePlatformEndpointRequest extends AmazonWebServiceRequest
      *        does not use this data. The data must be in UTF-8 format and less
      *        than 2KB.
      */
+
     public void setCustomUserData(String customUserData) {
         this.customUserData = customUserData;
     }
@@ -199,6 +206,7 @@ public class CreatePlatformEndpointRequest extends AmazonWebServiceRequest
      *         does not use this data. The data must be in UTF-8 format and less
      *         than 2KB.
      */
+
     public String getCustomUserData() {
         return this.customUserData;
     }
@@ -216,6 +224,7 @@ public class CreatePlatformEndpointRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePlatformEndpointRequest withCustomUserData(
             String customUserData) {
         setCustomUserData(customUserData);
@@ -233,6 +242,7 @@ public class CreatePlatformEndpointRequest extends AmazonWebServiceRequest
      *         "http://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html"
      *         >SetEndpointAttributes</a>.
      */
+
     public java.util.Map<String, String> getAttributes() {
         if (attributes == null) {
             attributes = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -252,6 +262,7 @@ public class CreatePlatformEndpointRequest extends AmazonWebServiceRequest
      *        "http://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html"
      *        >SetEndpointAttributes</a>.
      */
+
     public void setAttributes(java.util.Map<String, String> attributes) {
         this.attributes = attributes == null ? null
                 : new com.amazonaws.internal.SdkInternalMap<String, String>(
@@ -272,6 +283,7 @@ public class CreatePlatformEndpointRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePlatformEndpointRequest withAttributes(
             java.util.Map<String, String> attributes) {
         setAttributes(attributes);
@@ -294,6 +306,7 @@ public class CreatePlatformEndpointRequest extends AmazonWebServiceRequest
      * Removes all the entries added into Attributes. &lt;p> Returns a reference
      * to this object so that method calls can be chained together.
      */
+
     public CreatePlatformEndpointRequest clearAttributesEntries() {
         this.attributes = null;
         return this;

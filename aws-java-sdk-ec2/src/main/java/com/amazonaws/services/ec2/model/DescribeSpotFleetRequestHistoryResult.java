@@ -73,6 +73,7 @@ public class DescribeSpotFleetRequestHistoryResult implements Serializable,
      * @param spotFleetRequestId
      *        The ID of the Spot fleet request.
      */
+
     public void setSpotFleetRequestId(String spotFleetRequestId) {
         this.spotFleetRequestId = spotFleetRequestId;
     }
@@ -84,6 +85,7 @@ public class DescribeSpotFleetRequestHistoryResult implements Serializable,
      * 
      * @return The ID of the Spot fleet request.
      */
+
     public String getSpotFleetRequestId() {
         return this.spotFleetRequestId;
     }
@@ -98,6 +100,7 @@ public class DescribeSpotFleetRequestHistoryResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSpotFleetRequestHistoryResult withSpotFleetRequestId(
             String spotFleetRequestId) {
         setSpotFleetRequestId(spotFleetRequestId);
@@ -115,6 +118,7 @@ public class DescribeSpotFleetRequestHistoryResult implements Serializable,
      *        example,
      *        <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      */
+
     public void setStartTime(java.util.Date startTime) {
         this.startTime = startTime;
     }
@@ -129,6 +133,7 @@ public class DescribeSpotFleetRequestHistoryResult implements Serializable,
      *         example,
      *         <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      */
+
     public java.util.Date getStartTime() {
         return this.startTime;
     }
@@ -146,6 +151,7 @@ public class DescribeSpotFleetRequestHistoryResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSpotFleetRequestHistoryResult withStartTime(
             java.util.Date startTime) {
         setStartTime(startTime);
@@ -171,6 +177,7 @@ public class DescribeSpotFleetRequestHistoryResult implements Serializable,
      *        If <code>nextToken</code> indicates that there are more results,
      *        this value is not present.
      */
+
     public void setLastEvaluatedTime(java.util.Date lastEvaluatedTime) {
         this.lastEvaluatedTime = lastEvaluatedTime;
     }
@@ -194,6 +201,7 @@ public class DescribeSpotFleetRequestHistoryResult implements Serializable,
      *         If <code>nextToken</code> indicates that there are more results,
      *         this value is not present.
      */
+
     public java.util.Date getLastEvaluatedTime() {
         return this.lastEvaluatedTime;
     }
@@ -219,6 +227,7 @@ public class DescribeSpotFleetRequestHistoryResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSpotFleetRequestHistoryResult withLastEvaluatedTime(
             java.util.Date lastEvaluatedTime) {
         setLastEvaluatedTime(lastEvaluatedTime);
@@ -233,6 +242,7 @@ public class DescribeSpotFleetRequestHistoryResult implements Serializable,
      * @return Information about the events in the history of the Spot fleet
      *         request.
      */
+
     public java.util.List<HistoryRecord> getHistoryRecords() {
         if (historyRecords == null) {
             historyRecords = new com.amazonaws.internal.SdkInternalList<HistoryRecord>();
@@ -249,6 +259,7 @@ public class DescribeSpotFleetRequestHistoryResult implements Serializable,
      *        Information about the events in the history of the Spot fleet
      *        request.
      */
+
     public void setHistoryRecords(
             java.util.Collection<HistoryRecord> historyRecords) {
         if (historyRecords == null) {
@@ -277,6 +288,7 @@ public class DescribeSpotFleetRequestHistoryResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSpotFleetRequestHistoryResult withHistoryRecords(
             HistoryRecord... historyRecords) {
         if (this.historyRecords == null) {
@@ -300,6 +312,7 @@ public class DescribeSpotFleetRequestHistoryResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSpotFleetRequestHistoryResult withHistoryRecords(
             java.util.Collection<HistoryRecord> historyRecords) {
         setHistoryRecords(historyRecords);
@@ -316,6 +329,7 @@ public class DescribeSpotFleetRequestHistoryResult implements Serializable,
      *        The token required to retrieve the next set of results. This value
      *        is <code>null</code> when there are no more results to return.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -330,6 +344,7 @@ public class DescribeSpotFleetRequestHistoryResult implements Serializable,
      *         value is <code>null</code> when there are no more results to
      *         return.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -346,6 +361,7 @@ public class DescribeSpotFleetRequestHistoryResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSpotFleetRequestHistoryResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

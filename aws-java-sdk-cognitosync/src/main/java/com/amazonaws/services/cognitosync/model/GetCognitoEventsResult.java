@@ -39,6 +39,7 @@ public class GetCognitoEventsResult implements Serializable, Cloneable {
      * 
      * @return The Cognito Events returned from the GetCognitoEvents request
      */
+
     public java.util.Map<String, String> getEvents() {
         if (events == null) {
             events = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -54,6 +55,7 @@ public class GetCognitoEventsResult implements Serializable, Cloneable {
      * @param events
      *        The Cognito Events returned from the GetCognitoEvents request
      */
+
     public void setEvents(java.util.Map<String, String> events) {
         this.events = events == null ? null
                 : new com.amazonaws.internal.SdkInternalMap<String, String>(
@@ -70,6 +72,7 @@ public class GetCognitoEventsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetCognitoEventsResult withEvents(
             java.util.Map<String, String> events) {
         setEvents(events);
@@ -91,6 +94,7 @@ public class GetCognitoEventsResult implements Serializable, Cloneable {
      * Removes all the entries added into Events. &lt;p> Returns a reference to
      * this object so that method calls can be chained together.
      */
+
     public GetCognitoEventsResult clearEventsEntries() {
         this.events = null;
         return this;

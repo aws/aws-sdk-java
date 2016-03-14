@@ -882,6 +882,7 @@ public class GetAccountSummaryResult implements Serializable, Cloneable {
      *         </li>
      *         </ul>
      */
+
     public java.util.Map<String, Integer> getSummaryMap() {
         if (summaryMap == null) {
             summaryMap = new com.amazonaws.internal.SdkInternalMap<String, Integer>();
@@ -1460,6 +1461,7 @@ public class GetAccountSummaryResult implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      */
+
     public void setSummaryMap(java.util.Map<String, Integer> summaryMap) {
         this.summaryMap = summaryMap == null ? null
                 : new com.amazonaws.internal.SdkInternalMap<String, Integer>(
@@ -2039,6 +2041,7 @@ public class GetAccountSummaryResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetAccountSummaryResult withSummaryMap(
             java.util.Map<String, Integer> summaryMap) {
         setSummaryMap(summaryMap);
@@ -2060,6 +2063,7 @@ public class GetAccountSummaryResult implements Serializable, Cloneable {
      * Removes all the entries added into SummaryMap. &lt;p> Returns a reference
      * to this object so that method calls can be chained together.
      */
+
     public GetAccountSummaryResult clearSummaryMapEntries() {
         this.summaryMap = null;
         return this;

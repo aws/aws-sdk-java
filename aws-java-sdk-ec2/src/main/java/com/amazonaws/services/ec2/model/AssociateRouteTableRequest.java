@@ -49,6 +49,7 @@ public class AssociateRouteTableRequest extends AmazonWebServiceRequest
      * @param subnetId
      *        The ID of the subnet.
      */
+
     public void setSubnetId(String subnetId) {
         this.subnetId = subnetId;
     }
@@ -60,6 +61,7 @@ public class AssociateRouteTableRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the subnet.
      */
+
     public String getSubnetId() {
         return this.subnetId;
     }
@@ -74,6 +76,7 @@ public class AssociateRouteTableRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssociateRouteTableRequest withSubnetId(String subnetId) {
         setSubnetId(subnetId);
         return this;
@@ -87,6 +90,7 @@ public class AssociateRouteTableRequest extends AmazonWebServiceRequest
      * @param routeTableId
      *        The ID of the route table.
      */
+
     public void setRouteTableId(String routeTableId) {
         this.routeTableId = routeTableId;
     }
@@ -98,6 +102,7 @@ public class AssociateRouteTableRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the route table.
      */
+
     public String getRouteTableId() {
         return this.routeTableId;
     }
@@ -112,6 +117,7 @@ public class AssociateRouteTableRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssociateRouteTableRequest withRouteTableId(String routeTableId) {
         setRouteTableId(routeTableId);
         return this;

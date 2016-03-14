@@ -47,6 +47,7 @@ public class ListJobsResult implements Serializable, Cloneable {
      * 
      * @return Information about the jobs.
      */
+
     public java.util.List<Job> getJobs() {
         return jobs;
     }
@@ -59,6 +60,7 @@ public class ListJobsResult implements Serializable, Cloneable {
      * @param jobs
      *        Information about the jobs.
      */
+
     public void setJobs(java.util.Collection<Job> jobs) {
         if (jobs == null) {
             this.jobs = null;
@@ -84,6 +86,7 @@ public class ListJobsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListJobsResult withJobs(Job... jobs) {
         if (this.jobs == null) {
             setJobs(new java.util.ArrayList<Job>(jobs.length));
@@ -104,6 +107,7 @@ public class ListJobsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListJobsResult withJobs(java.util.Collection<Job> jobs) {
         setJobs(jobs);
         return this;
@@ -122,6 +126,7 @@ public class ListJobsResult implements Serializable, Cloneable {
      *        a subsequent call to this operation to return the next set of
      *        items in the list.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -138,6 +143,7 @@ public class ListJobsResult implements Serializable, Cloneable {
      *         a subsequent call to this operation to return the next set of
      *         items in the list.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -157,6 +163,7 @@ public class ListJobsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListJobsResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

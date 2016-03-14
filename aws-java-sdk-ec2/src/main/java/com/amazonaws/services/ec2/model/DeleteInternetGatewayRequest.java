@@ -43,6 +43,7 @@ public class DeleteInternetGatewayRequest extends AmazonWebServiceRequest
      * @param internetGatewayId
      *        The ID of the Internet gateway.
      */
+
     public void setInternetGatewayId(String internetGatewayId) {
         this.internetGatewayId = internetGatewayId;
     }
@@ -54,6 +55,7 @@ public class DeleteInternetGatewayRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the Internet gateway.
      */
+
     public String getInternetGatewayId() {
         return this.internetGatewayId;
     }
@@ -68,6 +70,7 @@ public class DeleteInternetGatewayRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteInternetGatewayRequest withInternetGatewayId(
             String internetGatewayId) {
         setInternetGatewayId(internetGatewayId);

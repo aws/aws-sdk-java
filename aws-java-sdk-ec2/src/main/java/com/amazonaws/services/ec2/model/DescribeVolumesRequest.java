@@ -197,6 +197,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements
      * 
      * @return One or more volume IDs.
      */
+
     public java.util.List<String> getVolumeIds() {
         if (volumeIds == null) {
             volumeIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -212,6 +213,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements
      * @param volumeIds
      *        One or more volume IDs.
      */
+
     public void setVolumeIds(java.util.Collection<String> volumeIds) {
         if (volumeIds == null) {
             this.volumeIds = null;
@@ -238,6 +240,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVolumesRequest withVolumeIds(String... volumeIds) {
         if (this.volumeIds == null) {
             setVolumeIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -259,6 +262,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVolumesRequest withVolumeIds(
             java.util.Collection<String> volumeIds) {
         setVolumeIds(volumeIds);
@@ -481,6 +485,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements
      *         </p>
      *         </li>
      */
+
     public java.util.List<Filter> getFilters() {
         if (filters == null) {
             filters = new com.amazonaws.internal.SdkInternalList<Filter>();
@@ -705,6 +710,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements
      *        </p>
      *        </li>
      */
+
     public void setFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
             this.filters = null;
@@ -940,6 +946,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVolumesRequest withFilters(Filter... filters) {
         if (this.filters == null) {
             setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(
@@ -1170,6 +1177,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVolumesRequest withFilters(
             java.util.Collection<Filter> filters) {
         setFilters(filters);
@@ -1195,6 +1203,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements
      *        This value is <code>null</code> when there are no more results to
      *        return.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -1217,6 +1226,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements
      *         This value is <code>null</code> when there are no more results to
      *         return.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -1242,6 +1252,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVolumesRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -1277,6 +1288,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements
      *        cannot specify this parameter and the volume IDs parameter in the
      *        same request.
      */
+
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
     }
@@ -1310,6 +1322,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements
      *         cannot specify this parameter and the volume IDs parameter in the
      *         same request.
      */
+
     public Integer getMaxResults() {
         return this.maxResults;
     }
@@ -1346,6 +1359,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVolumesRequest withMaxResults(Integer maxResults) {
         setMaxResults(maxResults);
         return this;

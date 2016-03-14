@@ -50,6 +50,7 @@ public class CreateFlowLogsResult implements Serializable, Cloneable {
      * 
      * @return The IDs of the flow logs.
      */
+
     public java.util.List<String> getFlowLogIds() {
         if (flowLogIds == null) {
             flowLogIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -65,6 +66,7 @@ public class CreateFlowLogsResult implements Serializable, Cloneable {
      * @param flowLogIds
      *        The IDs of the flow logs.
      */
+
     public void setFlowLogIds(java.util.Collection<String> flowLogIds) {
         if (flowLogIds == null) {
             this.flowLogIds = null;
@@ -91,6 +93,7 @@ public class CreateFlowLogsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateFlowLogsResult withFlowLogIds(String... flowLogIds) {
         if (this.flowLogIds == null) {
             setFlowLogIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -112,6 +115,7 @@ public class CreateFlowLogsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateFlowLogsResult withFlowLogIds(
             java.util.Collection<String> flowLogIds) {
         setFlowLogIds(flowLogIds);
@@ -128,6 +132,7 @@ public class CreateFlowLogsResult implements Serializable, Cloneable {
      *        Unique, case-sensitive identifier you provide to ensure the
      *        idempotency of the request.
      */
+
     public void setClientToken(String clientToken) {
         this.clientToken = clientToken;
     }
@@ -141,6 +146,7 @@ public class CreateFlowLogsResult implements Serializable, Cloneable {
      * @return Unique, case-sensitive identifier you provide to ensure the
      *         idempotency of the request.
      */
+
     public String getClientToken() {
         return this.clientToken;
     }
@@ -157,6 +163,7 @@ public class CreateFlowLogsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateFlowLogsResult withClientToken(String clientToken) {
         setClientToken(clientToken);
         return this;
@@ -170,6 +177,7 @@ public class CreateFlowLogsResult implements Serializable, Cloneable {
      * @return Information about the flow logs that could not be created
      *         successfully.
      */
+
     public java.util.List<UnsuccessfulItem> getUnsuccessful() {
         if (unsuccessful == null) {
             unsuccessful = new com.amazonaws.internal.SdkInternalList<UnsuccessfulItem>();
@@ -186,6 +194,7 @@ public class CreateFlowLogsResult implements Serializable, Cloneable {
      *        Information about the flow logs that could not be created
      *        successfully.
      */
+
     public void setUnsuccessful(
             java.util.Collection<UnsuccessfulItem> unsuccessful) {
         if (unsuccessful == null) {
@@ -214,6 +223,7 @@ public class CreateFlowLogsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateFlowLogsResult withUnsuccessful(
             UnsuccessfulItem... unsuccessful) {
         if (this.unsuccessful == null) {
@@ -237,6 +247,7 @@ public class CreateFlowLogsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateFlowLogsResult withUnsuccessful(
             java.util.Collection<UnsuccessfulItem> unsuccessful) {
         setUnsuccessful(unsuccessful);

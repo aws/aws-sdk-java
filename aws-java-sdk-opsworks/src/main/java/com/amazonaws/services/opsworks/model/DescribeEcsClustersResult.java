@@ -52,6 +52,7 @@ public class DescribeEcsClustersResult implements Serializable, Cloneable {
      * @return A list of <code>EcsCluster</code> objects containing the cluster
      *         descriptions.
      */
+
     public java.util.List<EcsCluster> getEcsClusters() {
         if (ecsClusters == null) {
             ecsClusters = new com.amazonaws.internal.SdkInternalList<EcsCluster>();
@@ -69,6 +70,7 @@ public class DescribeEcsClustersResult implements Serializable, Cloneable {
      *        A list of <code>EcsCluster</code> objects containing the cluster
      *        descriptions.
      */
+
     public void setEcsClusters(java.util.Collection<EcsCluster> ecsClusters) {
         if (ecsClusters == null) {
             this.ecsClusters = null;
@@ -97,6 +99,7 @@ public class DescribeEcsClustersResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeEcsClustersResult withEcsClusters(EcsCluster... ecsClusters) {
         if (this.ecsClusters == null) {
             setEcsClusters(new com.amazonaws.internal.SdkInternalList<EcsCluster>(
@@ -120,6 +123,7 @@ public class DescribeEcsClustersResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeEcsClustersResult withEcsClusters(
             java.util.Collection<EcsCluster> ecsClusters) {
         setEcsClusters(ecsClusters);
@@ -143,6 +147,7 @@ public class DescribeEcsClustersResult implements Serializable, Cloneable {
      *        returned all of the remaining results, this parameter is set to
      *        <code>null</code>.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -163,6 +168,7 @@ public class DescribeEcsClustersResult implements Serializable, Cloneable {
      *         returned all of the remaining results, this parameter is set to
      *         <code>null</code>.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -186,6 +192,7 @@ public class DescribeEcsClustersResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeEcsClustersResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

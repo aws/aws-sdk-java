@@ -58,6 +58,7 @@ public class TagDescription implements Serializable, Cloneable {
      * @param resourceId
      *        The ID of the resource. For example, <code>ami-1a2b3c4d</code>.
      */
+
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
     }
@@ -69,6 +70,7 @@ public class TagDescription implements Serializable, Cloneable {
      * 
      * @return The ID of the resource. For example, <code>ami-1a2b3c4d</code>.
      */
+
     public String getResourceId() {
         return this.resourceId;
     }
@@ -83,6 +85,7 @@ public class TagDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TagDescription withResourceId(String resourceId) {
         setResourceId(resourceId);
         return this;
@@ -97,6 +100,7 @@ public class TagDescription implements Serializable, Cloneable {
      *        The resource type.
      * @see ResourceType
      */
+
     public void setResourceType(String resourceType) {
         this.resourceType = resourceType;
     }
@@ -109,6 +113,7 @@ public class TagDescription implements Serializable, Cloneable {
      * @return The resource type.
      * @see ResourceType
      */
+
     public String getResourceType() {
         return this.resourceType;
     }
@@ -124,6 +129,7 @@ public class TagDescription implements Serializable, Cloneable {
      *         chained together.
      * @see ResourceType
      */
+
     public TagDescription withResourceType(String resourceType) {
         setResourceType(resourceType);
         return this;
@@ -140,6 +146,7 @@ public class TagDescription implements Serializable, Cloneable {
      *         chained together.
      * @see ResourceType
      */
+
     public void setResourceType(ResourceType resourceType) {
         this.resourceType = resourceType.toString();
     }
@@ -155,6 +162,7 @@ public class TagDescription implements Serializable, Cloneable {
      *         chained together.
      * @see ResourceType
      */
+
     public TagDescription withResourceType(ResourceType resourceType) {
         setResourceType(resourceType);
         return this;
@@ -168,6 +176,7 @@ public class TagDescription implements Serializable, Cloneable {
      * @param key
      *        The tag key.
      */
+
     public void setKey(String key) {
         this.key = key;
     }
@@ -179,6 +188,7 @@ public class TagDescription implements Serializable, Cloneable {
      * 
      * @return The tag key.
      */
+
     public String getKey() {
         return this.key;
     }
@@ -193,6 +203,7 @@ public class TagDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TagDescription withKey(String key) {
         setKey(key);
         return this;
@@ -206,6 +217,7 @@ public class TagDescription implements Serializable, Cloneable {
      * @param value
      *        The tag value.
      */
+
     public void setValue(String value) {
         this.value = value;
     }
@@ -217,6 +229,7 @@ public class TagDescription implements Serializable, Cloneable {
      * 
      * @return The tag value.
      */
+
     public String getValue() {
         return this.value;
     }
@@ -231,6 +244,7 @@ public class TagDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TagDescription withValue(String value) {
         setValue(value);
         return this;

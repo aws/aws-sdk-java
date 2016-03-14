@@ -64,6 +64,7 @@ public class TopicRuleListItem implements Serializable, Cloneable {
      * @param ruleArn
      *        The rule ARN.
      */
+
     public void setRuleArn(String ruleArn) {
         this.ruleArn = ruleArn;
     }
@@ -75,6 +76,7 @@ public class TopicRuleListItem implements Serializable, Cloneable {
      * 
      * @return The rule ARN.
      */
+
     public String getRuleArn() {
         return this.ruleArn;
     }
@@ -89,6 +91,7 @@ public class TopicRuleListItem implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TopicRuleListItem withRuleArn(String ruleArn) {
         setRuleArn(ruleArn);
         return this;
@@ -102,6 +105,7 @@ public class TopicRuleListItem implements Serializable, Cloneable {
      * @param ruleName
      *        The name of the rule.
      */
+
     public void setRuleName(String ruleName) {
         this.ruleName = ruleName;
     }
@@ -113,6 +117,7 @@ public class TopicRuleListItem implements Serializable, Cloneable {
      * 
      * @return The name of the rule.
      */
+
     public String getRuleName() {
         return this.ruleName;
     }
@@ -127,6 +132,7 @@ public class TopicRuleListItem implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TopicRuleListItem withRuleName(String ruleName) {
         setRuleName(ruleName);
         return this;
@@ -140,6 +146,7 @@ public class TopicRuleListItem implements Serializable, Cloneable {
      * @param topicPattern
      *        The pattern for the topic names that apply.
      */
+
     public void setTopicPattern(String topicPattern) {
         this.topicPattern = topicPattern;
     }
@@ -151,6 +158,7 @@ public class TopicRuleListItem implements Serializable, Cloneable {
      * 
      * @return The pattern for the topic names that apply.
      */
+
     public String getTopicPattern() {
         return this.topicPattern;
     }
@@ -165,6 +173,7 @@ public class TopicRuleListItem implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TopicRuleListItem withTopicPattern(String topicPattern) {
         setTopicPattern(topicPattern);
         return this;
@@ -178,6 +187,7 @@ public class TopicRuleListItem implements Serializable, Cloneable {
      * @param createdAt
      *        The date and time the rule was created.
      */
+
     public void setCreatedAt(java.util.Date createdAt) {
         this.createdAt = createdAt;
     }
@@ -189,6 +199,7 @@ public class TopicRuleListItem implements Serializable, Cloneable {
      * 
      * @return The date and time the rule was created.
      */
+
     public java.util.Date getCreatedAt() {
         return this.createdAt;
     }
@@ -203,6 +214,7 @@ public class TopicRuleListItem implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TopicRuleListItem withCreatedAt(java.util.Date createdAt) {
         setCreatedAt(createdAt);
         return this;
@@ -216,6 +228,7 @@ public class TopicRuleListItem implements Serializable, Cloneable {
      * @param ruleDisabled
      *        Specifies whether the rule is disabled.
      */
+
     public void setRuleDisabled(Boolean ruleDisabled) {
         this.ruleDisabled = ruleDisabled;
     }
@@ -227,6 +240,7 @@ public class TopicRuleListItem implements Serializable, Cloneable {
      * 
      * @return Specifies whether the rule is disabled.
      */
+
     public Boolean getRuleDisabled() {
         return this.ruleDisabled;
     }
@@ -241,6 +255,7 @@ public class TopicRuleListItem implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TopicRuleListItem withRuleDisabled(Boolean ruleDisabled) {
         setRuleDisabled(ruleDisabled);
         return this;
@@ -253,6 +268,7 @@ public class TopicRuleListItem implements Serializable, Cloneable {
      * 
      * @return Specifies whether the rule is disabled.
      */
+
     public Boolean isRuleDisabled() {
         return this.ruleDisabled;
     }

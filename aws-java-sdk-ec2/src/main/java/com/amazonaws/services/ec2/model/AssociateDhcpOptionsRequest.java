@@ -72,6 +72,7 @@ public class AssociateDhcpOptionsRequest extends AmazonWebServiceRequest
      *        The ID of the DHCP options set, or <code>default</code> to
      *        associate no DHCP options with the VPC.
      */
+
     public void setDhcpOptionsId(String dhcpOptionsId) {
         this.dhcpOptionsId = dhcpOptionsId;
     }
@@ -85,6 +86,7 @@ public class AssociateDhcpOptionsRequest extends AmazonWebServiceRequest
      * @return The ID of the DHCP options set, or <code>default</code> to
      *         associate no DHCP options with the VPC.
      */
+
     public String getDhcpOptionsId() {
         return this.dhcpOptionsId;
     }
@@ -101,6 +103,7 @@ public class AssociateDhcpOptionsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssociateDhcpOptionsRequest withDhcpOptionsId(String dhcpOptionsId) {
         setDhcpOptionsId(dhcpOptionsId);
         return this;
@@ -114,6 +117,7 @@ public class AssociateDhcpOptionsRequest extends AmazonWebServiceRequest
      * @param vpcId
      *        The ID of the VPC.
      */
+
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
@@ -125,6 +129,7 @@ public class AssociateDhcpOptionsRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the VPC.
      */
+
     public String getVpcId() {
         return this.vpcId;
     }
@@ -139,6 +144,7 @@ public class AssociateDhcpOptionsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssociateDhcpOptionsRequest withVpcId(String vpcId) {
         setVpcId(vpcId);
         return this;

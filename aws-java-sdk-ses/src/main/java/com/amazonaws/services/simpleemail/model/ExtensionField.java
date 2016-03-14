@@ -59,6 +59,7 @@ public class ExtensionField implements Serializable, Cloneable {
      *        characters, inclusive, and consist of alphanumeric (a-z, A-Z, 0-9)
      *        characters and dashes only.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -74,6 +75,7 @@ public class ExtensionField implements Serializable, Cloneable {
      *         characters, inclusive, and consist of alphanumeric (a-z, A-Z,
      *         0-9) characters and dashes only.
      */
+
     public String getName() {
         return this.name;
     }
@@ -92,6 +94,7 @@ public class ExtensionField implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ExtensionField withName(String name) {
         setName(name);
         return this;
@@ -107,6 +110,7 @@ public class ExtensionField implements Serializable, Cloneable {
      *        The value of the header to add. Must be less than 2048 characters,
      *        and must not contain newline characters ("\r" or "\n").
      */
+
     public void setValue(String value) {
         this.value = value;
     }
@@ -121,6 +125,7 @@ public class ExtensionField implements Serializable, Cloneable {
      *         characters, and must not contain newline characters ("\r" or
      *         "\n").
      */
+
     public String getValue() {
         return this.value;
     }
@@ -137,6 +142,7 @@ public class ExtensionField implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ExtensionField withValue(String value) {
         setValue(value);
         return this;

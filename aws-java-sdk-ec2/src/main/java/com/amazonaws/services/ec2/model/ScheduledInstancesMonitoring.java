@@ -40,6 +40,7 @@ public class ScheduledInstancesMonitoring implements Serializable, Cloneable {
      * @param enabled
      *        Indicates whether monitoring is enabled.
      */
+
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
     }
@@ -51,6 +52,7 @@ public class ScheduledInstancesMonitoring implements Serializable, Cloneable {
      * 
      * @return Indicates whether monitoring is enabled.
      */
+
     public Boolean getEnabled() {
         return this.enabled;
     }
@@ -65,6 +67,7 @@ public class ScheduledInstancesMonitoring implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstancesMonitoring withEnabled(Boolean enabled) {
         setEnabled(enabled);
         return this;
@@ -77,6 +80,7 @@ public class ScheduledInstancesMonitoring implements Serializable, Cloneable {
      * 
      * @return Indicates whether monitoring is enabled.
      */
+
     public Boolean isEnabled() {
         return this.enabled;
     }

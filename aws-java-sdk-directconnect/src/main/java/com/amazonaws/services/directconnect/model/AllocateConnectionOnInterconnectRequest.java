@@ -109,6 +109,7 @@ public class AllocateConnectionOnInterconnectRequest extends
      *        <p>
      *        Default: None
      */
+
     public void setBandwidth(String bandwidth) {
         this.bandwidth = bandwidth;
     }
@@ -131,6 +132,7 @@ public class AllocateConnectionOnInterconnectRequest extends
      *         <p>
      *         Default: None
      */
+
     public String getBandwidth() {
         return this.bandwidth;
     }
@@ -156,6 +158,7 @@ public class AllocateConnectionOnInterconnectRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AllocateConnectionOnInterconnectRequest withBandwidth(
             String bandwidth) {
         setBandwidth(bandwidth);
@@ -181,6 +184,7 @@ public class AllocateConnectionOnInterconnectRequest extends
      *        <p>
      *        Default: None
      */
+
     public void setConnectionName(String connectionName) {
         this.connectionName = connectionName;
     }
@@ -203,6 +207,7 @@ public class AllocateConnectionOnInterconnectRequest extends
      *         <p>
      *         Default: None
      */
+
     public String getConnectionName() {
         return this.connectionName;
     }
@@ -228,6 +233,7 @@ public class AllocateConnectionOnInterconnectRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AllocateConnectionOnInterconnectRequest withConnectionName(
             String connectionName) {
         setConnectionName(connectionName);
@@ -255,6 +261,7 @@ public class AllocateConnectionOnInterconnectRequest extends
      *        <p>
      *        Default: None
      */
+
     public void setOwnerAccount(String ownerAccount) {
         this.ownerAccount = ownerAccount;
     }
@@ -279,6 +286,7 @@ public class AllocateConnectionOnInterconnectRequest extends
      *         <p>
      *         Default: None
      */
+
     public String getOwnerAccount() {
         return this.ownerAccount;
     }
@@ -306,6 +314,7 @@ public class AllocateConnectionOnInterconnectRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AllocateConnectionOnInterconnectRequest withOwnerAccount(
             String ownerAccount) {
         setOwnerAccount(ownerAccount);
@@ -332,6 +341,7 @@ public class AllocateConnectionOnInterconnectRequest extends
      *        <p>
      *        Default: None
      */
+
     public void setInterconnectId(String interconnectId) {
         this.interconnectId = interconnectId;
     }
@@ -355,6 +365,7 @@ public class AllocateConnectionOnInterconnectRequest extends
      *         <p>
      *         Default: None
      */
+
     public String getInterconnectId() {
         return this.interconnectId;
     }
@@ -381,6 +392,7 @@ public class AllocateConnectionOnInterconnectRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AllocateConnectionOnInterconnectRequest withInterconnectId(
             String interconnectId) {
         setInterconnectId(interconnectId);
@@ -406,6 +418,7 @@ public class AllocateConnectionOnInterconnectRequest extends
      *        <p>
      *        Default: None
      */
+
     public void setVlan(Integer vlan) {
         this.vlan = vlan;
     }
@@ -428,6 +441,7 @@ public class AllocateConnectionOnInterconnectRequest extends
      *         <p>
      *         Default: None
      */
+
     public Integer getVlan() {
         return this.vlan;
     }
@@ -453,6 +467,7 @@ public class AllocateConnectionOnInterconnectRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AllocateConnectionOnInterconnectRequest withVlan(Integer vlan) {
         setVlan(vlan);
         return this;

@@ -62,6 +62,7 @@ public class DescribeTrustsRequest extends AmazonWebServiceRequest implements
      *        The Directory ID of the AWS directory that is a part of the
      *        requested trust relationship.
      */
+
     public void setDirectoryId(String directoryId) {
         this.directoryId = directoryId;
     }
@@ -73,6 +74,7 @@ public class DescribeTrustsRequest extends AmazonWebServiceRequest implements
      * @return The Directory ID of the AWS directory that is a part of the
      *         requested trust relationship.
      */
+
     public String getDirectoryId() {
         return this.directoryId;
     }
@@ -87,6 +89,7 @@ public class DescribeTrustsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTrustsRequest withDirectoryId(String directoryId) {
         setDirectoryId(directoryId);
         return this;
@@ -111,6 +114,7 @@ public class DescribeTrustsRequest extends AmazonWebServiceRequest implements
      *         An empty list results in an
      *         <code>InvalidParameterException</code> being thrown.
      */
+
     public java.util.List<String> getTrustIds() {
         if (trustIds == null) {
             trustIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -137,6 +141,7 @@ public class DescribeTrustsRequest extends AmazonWebServiceRequest implements
      *        An empty list results in an <code>InvalidParameterException</code>
      *        being thrown.
      */
+
     public void setTrustIds(java.util.Collection<String> trustIds) {
         if (trustIds == null) {
             this.trustIds = null;
@@ -174,6 +179,7 @@ public class DescribeTrustsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTrustsRequest withTrustIds(String... trustIds) {
         if (this.trustIds == null) {
             setTrustIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -206,6 +212,7 @@ public class DescribeTrustsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTrustsRequest withTrustIds(
             java.util.Collection<String> trustIds) {
         setTrustIds(trustIds);
@@ -223,6 +230,7 @@ public class DescribeTrustsRequest extends AmazonWebServiceRequest implements
      *        call to <a>DescribeTrusts</a>. Pass null if this is the first
      *        call.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -237,6 +245,7 @@ public class DescribeTrustsRequest extends AmazonWebServiceRequest implements
      *         call to <a>DescribeTrusts</a>. Pass null if this is the first
      *         call.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -254,6 +263,7 @@ public class DescribeTrustsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTrustsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -265,6 +275,7 @@ public class DescribeTrustsRequest extends AmazonWebServiceRequest implements
      * @param limit
      *        The maximum number of objects to return.
      */
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -274,6 +285,7 @@ public class DescribeTrustsRequest extends AmazonWebServiceRequest implements
      * 
      * @return The maximum number of objects to return.
      */
+
     public Integer getLimit() {
         return this.limit;
     }
@@ -286,6 +298,7 @@ public class DescribeTrustsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTrustsRequest withLimit(Integer limit) {
         setLimit(limit);
         return this;

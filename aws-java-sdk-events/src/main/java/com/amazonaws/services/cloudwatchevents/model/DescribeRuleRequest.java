@@ -42,6 +42,7 @@ public class DescribeRuleRequest extends AmazonWebServiceRequest implements
      * @param name
      *        The name of the rule you want to describe details for.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -53,6 +54,7 @@ public class DescribeRuleRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the rule you want to describe details for.
      */
+
     public String getName() {
         return this.name;
     }
@@ -67,6 +69,7 @@ public class DescribeRuleRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeRuleRequest withName(String name) {
         setName(name);
         return this;

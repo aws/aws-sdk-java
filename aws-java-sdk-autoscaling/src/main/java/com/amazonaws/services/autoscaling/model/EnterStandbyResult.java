@@ -40,6 +40,7 @@ public class EnterStandbyResult implements Serializable, Cloneable {
      * @return The activities related to moving instances into
      *         <code>Standby</code> mode.
      */
+
     public java.util.List<Activity> getActivities() {
         if (activities == null) {
             activities = new com.amazonaws.internal.SdkInternalList<Activity>();
@@ -57,6 +58,7 @@ public class EnterStandbyResult implements Serializable, Cloneable {
      *        The activities related to moving instances into
      *        <code>Standby</code> mode.
      */
+
     public void setActivities(java.util.Collection<Activity> activities) {
         if (activities == null) {
             this.activities = null;
@@ -85,6 +87,7 @@ public class EnterStandbyResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EnterStandbyResult withActivities(Activity... activities) {
         if (this.activities == null) {
             setActivities(new com.amazonaws.internal.SdkInternalList<Activity>(
@@ -108,6 +111,7 @@ public class EnterStandbyResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EnterStandbyResult withActivities(
             java.util.Collection<Activity> activities) {
         setActivities(activities);

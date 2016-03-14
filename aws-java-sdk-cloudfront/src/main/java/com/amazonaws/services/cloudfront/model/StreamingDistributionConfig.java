@@ -148,6 +148,7 @@ public class StreamingDistributionConfig implements Serializable, Cloneable {
      *        StreamingDistributionConfig is different from the original
      *        request, CloudFront returns a DistributionAlreadyExists error.
      */
+
     public void setCallerReference(String callerReference) {
         this.callerReference = callerReference;
     }
@@ -178,6 +179,7 @@ public class StreamingDistributionConfig implements Serializable, Cloneable {
      *         StreamingDistributionConfig is different from the original
      *         request, CloudFront returns a DistributionAlreadyExists error.
      */
+
     public String getCallerReference() {
         return this.callerReference;
     }
@@ -211,6 +213,7 @@ public class StreamingDistributionConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StreamingDistributionConfig withCallerReference(
             String callerReference) {
         setCallerReference(callerReference);
@@ -226,6 +229,7 @@ public class StreamingDistributionConfig implements Serializable, Cloneable {
      *        bucket from which you want CloudFront to get your media files for
      *        distribution.
      */
+
     public void setS3Origin(S3Origin s3Origin) {
         this.s3Origin = s3Origin;
     }
@@ -238,6 +242,7 @@ public class StreamingDistributionConfig implements Serializable, Cloneable {
      *         bucket from which you want CloudFront to get your media files for
      *         distribution.
      */
+
     public S3Origin getS3Origin() {
         return this.s3Origin;
     }
@@ -253,6 +258,7 @@ public class StreamingDistributionConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StreamingDistributionConfig withS3Origin(S3Origin s3Origin) {
         setS3Origin(s3Origin);
         return this;
@@ -266,6 +272,7 @@ public class StreamingDistributionConfig implements Serializable, Cloneable {
      *        A complex type that contains information about CNAMEs (alternate
      *        domain names), if any, for this streaming distribution.
      */
+
     public void setAliases(Aliases aliases) {
         this.aliases = aliases;
     }
@@ -277,6 +284,7 @@ public class StreamingDistributionConfig implements Serializable, Cloneable {
      * @return A complex type that contains information about CNAMEs (alternate
      *         domain names), if any, for this streaming distribution.
      */
+
     public Aliases getAliases() {
         return this.aliases;
     }
@@ -291,6 +299,7 @@ public class StreamingDistributionConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StreamingDistributionConfig withAliases(Aliases aliases) {
         setAliases(aliases);
         return this;
@@ -302,6 +311,7 @@ public class StreamingDistributionConfig implements Serializable, Cloneable {
      * @param comment
      *        Any comments you want to include about the streaming distribution.
      */
+
     public void setComment(String comment) {
         this.comment = comment;
     }
@@ -312,6 +322,7 @@ public class StreamingDistributionConfig implements Serializable, Cloneable {
      * @return Any comments you want to include about the streaming
      *         distribution.
      */
+
     public String getComment() {
         return this.comment;
     }
@@ -324,6 +335,7 @@ public class StreamingDistributionConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StreamingDistributionConfig withComment(String comment) {
         setComment(comment);
         return this;
@@ -337,6 +349,7 @@ public class StreamingDistributionConfig implements Serializable, Cloneable {
      *        A complex type that controls whether access logs are written for
      *        the streaming distribution.
      */
+
     public void setLogging(StreamingLoggingConfig logging) {
         this.logging = logging;
     }
@@ -348,6 +361,7 @@ public class StreamingDistributionConfig implements Serializable, Cloneable {
      * @return A complex type that controls whether access logs are written for
      *         the streaming distribution.
      */
+
     public StreamingLoggingConfig getLogging() {
         return this.logging;
     }
@@ -362,6 +376,7 @@ public class StreamingDistributionConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StreamingDistributionConfig withLogging(
             StreamingLoggingConfig logging) {
         setLogging(logging);
@@ -397,6 +412,7 @@ public class StreamingDistributionConfig implements Serializable, Cloneable {
      *        as applicable, and specify all of the trusted signers that you
      *        want to include in the updated distribution.
      */
+
     public void setTrustedSigners(TrustedSigners trustedSigners) {
         this.trustedSigners = trustedSigners;
     }
@@ -430,6 +446,7 @@ public class StreamingDistributionConfig implements Serializable, Cloneable {
      *         trusted signers that you want to include in the updated
      *         distribution.
      */
+
     public TrustedSigners getTrustedSigners() {
         return this.trustedSigners;
     }
@@ -465,6 +482,7 @@ public class StreamingDistributionConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StreamingDistributionConfig withTrustedSigners(
             TrustedSigners trustedSigners) {
         setTrustedSigners(trustedSigners);
@@ -480,6 +498,7 @@ public class StreamingDistributionConfig implements Serializable, Cloneable {
      *        this streaming distribution.
      * @see PriceClass
      */
+
     public void setPriceClass(String priceClass) {
         this.priceClass = priceClass;
     }
@@ -492,6 +511,7 @@ public class StreamingDistributionConfig implements Serializable, Cloneable {
      *         this streaming distribution.
      * @see PriceClass
      */
+
     public String getPriceClass() {
         return this.priceClass;
     }
@@ -507,6 +527,7 @@ public class StreamingDistributionConfig implements Serializable, Cloneable {
      *         chained together.
      * @see PriceClass
      */
+
     public StreamingDistributionConfig withPriceClass(String priceClass) {
         setPriceClass(priceClass);
         return this;
@@ -523,6 +544,7 @@ public class StreamingDistributionConfig implements Serializable, Cloneable {
      *         chained together.
      * @see PriceClass
      */
+
     public void setPriceClass(PriceClass priceClass) {
         this.priceClass = priceClass.toString();
     }
@@ -538,6 +560,7 @@ public class StreamingDistributionConfig implements Serializable, Cloneable {
      *         chained together.
      * @see PriceClass
      */
+
     public StreamingDistributionConfig withPriceClass(PriceClass priceClass) {
         setPriceClass(priceClass);
         return this;
@@ -551,6 +574,7 @@ public class StreamingDistributionConfig implements Serializable, Cloneable {
      *        Whether the streaming distribution is enabled to accept end user
      *        requests for content.
      */
+
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
     }
@@ -562,6 +586,7 @@ public class StreamingDistributionConfig implements Serializable, Cloneable {
      * @return Whether the streaming distribution is enabled to accept end user
      *         requests for content.
      */
+
     public Boolean getEnabled() {
         return this.enabled;
     }
@@ -576,6 +601,7 @@ public class StreamingDistributionConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StreamingDistributionConfig withEnabled(Boolean enabled) {
         setEnabled(enabled);
         return this;
@@ -588,6 +614,7 @@ public class StreamingDistributionConfig implements Serializable, Cloneable {
      * @return Whether the streaming distribution is enabled to accept end user
      *         requests for content.
      */
+
     public Boolean isEnabled() {
         return this.enabled;
     }

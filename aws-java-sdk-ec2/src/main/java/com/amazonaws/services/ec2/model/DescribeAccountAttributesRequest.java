@@ -43,6 +43,7 @@ public class DescribeAccountAttributesRequest extends AmazonWebServiceRequest
      * @return One or more account attribute names.
      * @see AccountAttributeName
      */
+
     public java.util.List<String> getAttributeNames() {
         if (attributeNames == null) {
             attributeNames = new com.amazonaws.internal.SdkInternalList<String>();
@@ -59,6 +60,7 @@ public class DescribeAccountAttributesRequest extends AmazonWebServiceRequest
      *        One or more account attribute names.
      * @see AccountAttributeName
      */
+
     public void setAttributeNames(java.util.Collection<String> attributeNames) {
         if (attributeNames == null) {
             this.attributeNames = null;
@@ -86,6 +88,7 @@ public class DescribeAccountAttributesRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see AccountAttributeName
      */
+
     public DescribeAccountAttributesRequest withAttributeNames(
             String... attributeNames) {
         if (this.attributeNames == null) {
@@ -109,6 +112,7 @@ public class DescribeAccountAttributesRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see AccountAttributeName
      */
+
     public DescribeAccountAttributesRequest withAttributeNames(
             java.util.Collection<String> attributeNames) {
         setAttributeNames(attributeNames);
@@ -126,6 +130,7 @@ public class DescribeAccountAttributesRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see AccountAttributeName
      */
+
     public DescribeAccountAttributesRequest withAttributeNames(
             AccountAttributeName... attributeNames) {
         com.amazonaws.internal.SdkInternalList<String> attributeNamesCopy = new com.amazonaws.internal.SdkInternalList<String>(

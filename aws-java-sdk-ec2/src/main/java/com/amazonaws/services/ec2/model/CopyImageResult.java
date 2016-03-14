@@ -38,6 +38,7 @@ public class CopyImageResult implements Serializable, Cloneable {
      * @param imageId
      *        The ID of the new AMI.
      */
+
     public void setImageId(String imageId) {
         this.imageId = imageId;
     }
@@ -49,6 +50,7 @@ public class CopyImageResult implements Serializable, Cloneable {
      * 
      * @return The ID of the new AMI.
      */
+
     public String getImageId() {
         return this.imageId;
     }
@@ -63,6 +65,7 @@ public class CopyImageResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CopyImageResult withImageId(String imageId) {
         setImageId(imageId);
         return this;

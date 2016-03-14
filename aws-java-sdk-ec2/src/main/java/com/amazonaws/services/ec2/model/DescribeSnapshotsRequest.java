@@ -171,6 +171,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      *         Default: Describes snapshots for which you have launch
      *         permissions.
      */
+
     public java.util.List<String> getSnapshotIds() {
         if (snapshotIds == null) {
             snapshotIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -192,6 +193,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      *        Default: Describes snapshots for which you have launch
      *        permissions.
      */
+
     public void setSnapshotIds(java.util.Collection<String> snapshotIds) {
         if (snapshotIds == null) {
             this.snapshotIds = null;
@@ -224,6 +226,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSnapshotsRequest withSnapshotIds(String... snapshotIds) {
         if (this.snapshotIds == null) {
             setSnapshotIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -251,6 +254,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSnapshotsRequest withSnapshotIds(
             java.util.Collection<String> snapshotIds) {
         setSnapshotIds(snapshotIds);
@@ -266,6 +270,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      * @return Returns the snapshots owned by the specified owner. Multiple
      *         owners can be specified.
      */
+
     public java.util.List<String> getOwnerIds() {
         if (ownerIds == null) {
             ownerIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -283,6 +288,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      *        Returns the snapshots owned by the specified owner. Multiple
      *        owners can be specified.
      */
+
     public void setOwnerIds(java.util.Collection<String> ownerIds) {
         if (ownerIds == null) {
             this.ownerIds = null;
@@ -311,6 +317,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSnapshotsRequest withOwnerIds(String... ownerIds) {
         if (this.ownerIds == null) {
             setOwnerIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -334,6 +341,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSnapshotsRequest withOwnerIds(
             java.util.Collection<String> ownerIds) {
         setOwnerIds(ownerIds);
@@ -348,6 +356,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      * @return One or more AWS accounts IDs that can create volumes from the
      *         snapshot.
      */
+
     public java.util.List<String> getRestorableByUserIds() {
         if (restorableByUserIds == null) {
             restorableByUserIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -364,6 +373,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      *        One or more AWS accounts IDs that can create volumes from the
      *        snapshot.
      */
+
     public void setRestorableByUserIds(
             java.util.Collection<String> restorableByUserIds) {
         if (restorableByUserIds == null) {
@@ -392,6 +402,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSnapshotsRequest withRestorableByUserIds(
             String... restorableByUserIds) {
         if (this.restorableByUserIds == null) {
@@ -415,6 +426,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSnapshotsRequest withRestorableByUserIds(
             java.util.Collection<String> restorableByUserIds) {
         setRestorableByUserIds(restorableByUserIds);
@@ -579,6 +591,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      *         </p>
      *         </li>
      */
+
     public java.util.List<Filter> getFilters() {
         if (filters == null) {
             filters = new com.amazonaws.internal.SdkInternalList<Filter>();
@@ -744,6 +757,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      *        </p>
      *        </li>
      */
+
     public void setFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
             this.filters = null;
@@ -920,6 +934,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSnapshotsRequest withFilters(Filter... filters) {
         if (this.filters == null) {
             setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(
@@ -1091,6 +1106,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSnapshotsRequest withFilters(
             java.util.Collection<Filter> filters) {
         setFilters(filters);
@@ -1116,6 +1132,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      *        This value is <code>null</code> when there are no more results to
      *        return.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -1138,6 +1155,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      *         This value is <code>null</code> when there are no more results to
      *         return.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -1163,6 +1181,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSnapshotsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -1199,6 +1218,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      *        cannot specify this parameter and the snapshot IDs parameter in
      *        the same request.
      */
+
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
     }
@@ -1233,6 +1253,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      *         You cannot specify this parameter and the snapshot IDs parameter
      *         in the same request.
      */
+
     public Integer getMaxResults() {
         return this.maxResults;
     }
@@ -1270,6 +1291,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSnapshotsRequest withMaxResults(Integer maxResults) {
         setMaxResults(maxResults);
         return this;

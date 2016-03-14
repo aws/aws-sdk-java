@@ -53,6 +53,7 @@ public class UpdateCertificateRequest extends AmazonWebServiceRequest implements
      * @param certificateId
      *        The ID of the certificate.
      */
+
     public void setCertificateId(String certificateId) {
         this.certificateId = certificateId;
     }
@@ -64,6 +65,7 @@ public class UpdateCertificateRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ID of the certificate.
      */
+
     public String getCertificateId() {
         return this.certificateId;
     }
@@ -78,6 +80,7 @@ public class UpdateCertificateRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateCertificateRequest withCertificateId(String certificateId) {
         setCertificateId(certificateId);
         return this;
@@ -101,6 +104,7 @@ public class UpdateCertificateRequest extends AmazonWebServiceRequest implements
      *        internally by AWS IoT and is not meant to be used by developers.
      * @see CertificateStatus
      */
+
     public void setNewStatus(String newStatus) {
         this.newStatus = newStatus;
     }
@@ -122,6 +126,7 @@ public class UpdateCertificateRequest extends AmazonWebServiceRequest implements
      *         internally by AWS IoT and is not meant to be used by developers.
      * @see CertificateStatus
      */
+
     public String getNewStatus() {
         return this.newStatus;
     }
@@ -146,6 +151,7 @@ public class UpdateCertificateRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see CertificateStatus
      */
+
     public UpdateCertificateRequest withNewStatus(String newStatus) {
         setNewStatus(newStatus);
         return this;
@@ -171,6 +177,7 @@ public class UpdateCertificateRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see CertificateStatus
      */
+
     public void setNewStatus(CertificateStatus newStatus) {
         this.newStatus = newStatus.toString();
     }
@@ -195,6 +202,7 @@ public class UpdateCertificateRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see CertificateStatus
      */
+
     public UpdateCertificateRequest withNewStatus(CertificateStatus newStatus) {
         setNewStatus(newStatus);
         return this;

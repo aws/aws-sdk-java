@@ -68,6 +68,7 @@ public class WebACLSummary implements Serializable, Cloneable {
      *        <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by
      *        <a>ListWebACLs</a>.
      */
+
     public void setWebACLId(String webACLId) {
         this.webACLId = webACLId;
     }
@@ -93,6 +94,7 @@ public class WebACLSummary implements Serializable, Cloneable {
      *         <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by
      *         <a>ListWebACLs</a>.
      */
+
     public String getWebACLId() {
         return this.webACLId;
     }
@@ -121,6 +123,7 @@ public class WebACLSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public WebACLSummary withWebACLId(String webACLId) {
         setWebACLId(webACLId);
         return this;
@@ -136,6 +139,7 @@ public class WebACLSummary implements Serializable, Cloneable {
      *        A friendly name or description of the <a>WebACL</a>. You can't
      *        change the name of a <code>WebACL</code> after you create it.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -149,6 +153,7 @@ public class WebACLSummary implements Serializable, Cloneable {
      * @return A friendly name or description of the <a>WebACL</a>. You can't
      *         change the name of a <code>WebACL</code> after you create it.
      */
+
     public String getName() {
         return this.name;
     }
@@ -165,6 +170,7 @@ public class WebACLSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public WebACLSummary withName(String name) {
         setName(name);
         return this;

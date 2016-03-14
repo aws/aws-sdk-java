@@ -52,6 +52,7 @@ public class DeleteInstanceRequest extends AmazonWebServiceRequest implements
      * @param instanceId
      *        The instance ID.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -63,6 +64,7 @@ public class DeleteInstanceRequest extends AmazonWebServiceRequest implements
      * 
      * @return The instance ID.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
@@ -77,6 +79,7 @@ public class DeleteInstanceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteInstanceRequest withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;
@@ -90,6 +93,7 @@ public class DeleteInstanceRequest extends AmazonWebServiceRequest implements
      * @param deleteElasticIp
      *        Whether to delete the instance Elastic IP address.
      */
+
     public void setDeleteElasticIp(Boolean deleteElasticIp) {
         this.deleteElasticIp = deleteElasticIp;
     }
@@ -101,6 +105,7 @@ public class DeleteInstanceRequest extends AmazonWebServiceRequest implements
      * 
      * @return Whether to delete the instance Elastic IP address.
      */
+
     public Boolean getDeleteElasticIp() {
         return this.deleteElasticIp;
     }
@@ -115,6 +120,7 @@ public class DeleteInstanceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteInstanceRequest withDeleteElasticIp(Boolean deleteElasticIp) {
         setDeleteElasticIp(deleteElasticIp);
         return this;
@@ -127,6 +133,7 @@ public class DeleteInstanceRequest extends AmazonWebServiceRequest implements
      * 
      * @return Whether to delete the instance Elastic IP address.
      */
+
     public Boolean isDeleteElasticIp() {
         return this.deleteElasticIp;
     }
@@ -139,6 +146,7 @@ public class DeleteInstanceRequest extends AmazonWebServiceRequest implements
      * @param deleteVolumes
      *        Whether to delete the instance's Amazon EBS volumes.
      */
+
     public void setDeleteVolumes(Boolean deleteVolumes) {
         this.deleteVolumes = deleteVolumes;
     }
@@ -150,6 +158,7 @@ public class DeleteInstanceRequest extends AmazonWebServiceRequest implements
      * 
      * @return Whether to delete the instance's Amazon EBS volumes.
      */
+
     public Boolean getDeleteVolumes() {
         return this.deleteVolumes;
     }
@@ -164,6 +173,7 @@ public class DeleteInstanceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteInstanceRequest withDeleteVolumes(Boolean deleteVolumes) {
         setDeleteVolumes(deleteVolumes);
         return this;
@@ -176,6 +186,7 @@ public class DeleteInstanceRequest extends AmazonWebServiceRequest implements
      * 
      * @return Whether to delete the instance's Amazon EBS volumes.
      */
+
     public Boolean isDeleteVolumes() {
         return this.deleteVolumes;
     }

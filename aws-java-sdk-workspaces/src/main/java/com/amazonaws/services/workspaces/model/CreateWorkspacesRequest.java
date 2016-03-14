@@ -41,6 +41,7 @@ public class CreateWorkspacesRequest extends AmazonWebServiceRequest implements
      * 
      * @return An array of structures that specify the WorkSpaces to create.
      */
+
     public java.util.List<WorkspaceRequest> getWorkspaces() {
         if (workspaces == null) {
             workspaces = new com.amazonaws.internal.SdkInternalList<WorkspaceRequest>();
@@ -56,6 +57,7 @@ public class CreateWorkspacesRequest extends AmazonWebServiceRequest implements
      * @param workspaces
      *        An array of structures that specify the WorkSpaces to create.
      */
+
     public void setWorkspaces(java.util.Collection<WorkspaceRequest> workspaces) {
         if (workspaces == null) {
             this.workspaces = null;
@@ -82,6 +84,7 @@ public class CreateWorkspacesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateWorkspacesRequest withWorkspaces(
             WorkspaceRequest... workspaces) {
         if (this.workspaces == null) {
@@ -104,6 +107,7 @@ public class CreateWorkspacesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateWorkspacesRequest withWorkspaces(
             java.util.Collection<WorkspaceRequest> workspaces) {
         setWorkspaces(workspaces);

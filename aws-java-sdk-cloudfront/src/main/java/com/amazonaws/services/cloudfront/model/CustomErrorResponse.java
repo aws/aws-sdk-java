@@ -69,6 +69,7 @@ public class CustomErrorResponse implements Serializable, Cloneable {
      *        list of HTTP status codes that you can customize, see CloudFront
      *        documentation.
      */
+
     public void setErrorCode(Integer errorCode) {
         this.errorCode = errorCode;
     }
@@ -81,6 +82,7 @@ public class CustomErrorResponse implements Serializable, Cloneable {
      *         list of HTTP status codes that you can customize, see CloudFront
      *         documentation.
      */
+
     public Integer getErrorCode() {
         return this.errorCode;
     }
@@ -96,6 +98,7 @@ public class CustomErrorResponse implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CustomErrorResponse withErrorCode(Integer errorCode) {
         setErrorCode(errorCode);
         return this;
@@ -118,6 +121,7 @@ public class CustomErrorResponse implements Serializable, Cloneable {
      *        characters. Do not URL encode any other characters in the path, or
      *        CloudFront will not return the custom error page to the viewer.
      */
+
     public void setResponsePagePath(String responsePagePath) {
         this.responsePagePath = responsePagePath;
     }
@@ -139,6 +143,7 @@ public class CustomErrorResponse implements Serializable, Cloneable {
      *         or CloudFront will not return the custom error page to the
      *         viewer.
      */
+
     public String getResponsePagePath() {
         return this.responsePagePath;
     }
@@ -162,6 +167,7 @@ public class CustomErrorResponse implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CustomErrorResponse withResponsePagePath(String responsePagePath) {
         setResponsePagePath(responsePagePath);
         return this;
@@ -177,6 +183,7 @@ public class CustomErrorResponse implements Serializable, Cloneable {
      *        custom error page to the viewer. For a list of HTTP status codes
      *        that you can replace, see CloudFront Documentation.
      */
+
     public void setResponseCode(String responseCode) {
         this.responseCode = responseCode;
     }
@@ -190,6 +197,7 @@ public class CustomErrorResponse implements Serializable, Cloneable {
      *         custom error page to the viewer. For a list of HTTP status codes
      *         that you can replace, see CloudFront Documentation.
      */
+
     public String getResponseCode() {
         return this.responseCode;
     }
@@ -206,6 +214,7 @@ public class CustomErrorResponse implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CustomErrorResponse withResponseCode(String responseCode) {
         setResponseCode(responseCode);
         return this;
@@ -222,6 +231,7 @@ public class CustomErrorResponse implements Serializable, Cloneable {
      *        whether the object has been updated. You can specify a value from
      *        0 to 31,536,000.
      */
+
     public void setErrorCachingMinTTL(Long errorCachingMinTTL) {
         this.errorCachingMinTTL = errorCachingMinTTL;
     }
@@ -236,6 +246,7 @@ public class CustomErrorResponse implements Serializable, Cloneable {
      *         whether the object has been updated. You can specify a value from
      *         0 to 31,536,000.
      */
+
     public Long getErrorCachingMinTTL() {
         return this.errorCachingMinTTL;
     }
@@ -253,6 +264,7 @@ public class CustomErrorResponse implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CustomErrorResponse withErrorCachingMinTTL(Long errorCachingMinTTL) {
         setErrorCachingMinTTL(errorCachingMinTTL);
         return this;

@@ -130,6 +130,7 @@ public class DescribeChapCredentialsResult implements Serializable, Cloneable {
      *         </p>
      *         </li>
      */
+
     public java.util.List<ChapInfo> getChapCredentials() {
         if (chapCredentials == null) {
             chapCredentials = new com.amazonaws.internal.SdkInternalList<ChapInfo>();
@@ -206,6 +207,7 @@ public class DescribeChapCredentialsResult implements Serializable, Cloneable {
      *        </p>
      *        </li>
      */
+
     public void setChapCredentials(
             java.util.Collection<ChapInfo> chapCredentials) {
         if (chapCredentials == null) {
@@ -294,6 +296,7 @@ public class DescribeChapCredentialsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeChapCredentialsResult withChapCredentials(
             ChapInfo... chapCredentials) {
         if (this.chapCredentials == null) {
@@ -377,6 +380,7 @@ public class DescribeChapCredentialsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeChapCredentialsResult withChapCredentials(
             java.util.Collection<ChapInfo> chapCredentials) {
         setChapCredentials(chapCredentials);

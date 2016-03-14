@@ -49,6 +49,7 @@ public class DetachNetworkInterfaceRequest extends AmazonWebServiceRequest
      * @param attachmentId
      *        The ID of the attachment.
      */
+
     public void setAttachmentId(String attachmentId) {
         this.attachmentId = attachmentId;
     }
@@ -60,6 +61,7 @@ public class DetachNetworkInterfaceRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the attachment.
      */
+
     public String getAttachmentId() {
         return this.attachmentId;
     }
@@ -74,6 +76,7 @@ public class DetachNetworkInterfaceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DetachNetworkInterfaceRequest withAttachmentId(String attachmentId) {
         setAttachmentId(attachmentId);
         return this;
@@ -87,6 +90,7 @@ public class DetachNetworkInterfaceRequest extends AmazonWebServiceRequest
      * @param force
      *        Specifies whether to force a detachment.
      */
+
     public void setForce(Boolean force) {
         this.force = force;
     }
@@ -98,6 +102,7 @@ public class DetachNetworkInterfaceRequest extends AmazonWebServiceRequest
      * 
      * @return Specifies whether to force a detachment.
      */
+
     public Boolean getForce() {
         return this.force;
     }
@@ -112,6 +117,7 @@ public class DetachNetworkInterfaceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DetachNetworkInterfaceRequest withForce(Boolean force) {
         setForce(force);
         return this;
@@ -124,6 +130,7 @@ public class DetachNetworkInterfaceRequest extends AmazonWebServiceRequest
      * 
      * @return Specifies whether to force a detachment.
      */
+
     public Boolean isForce() {
         return this.force;
     }

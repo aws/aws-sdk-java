@@ -46,6 +46,7 @@ public class DeleteOpenIDConnectProviderRequest extends AmazonWebServiceRequest
      *        to delete. You can get a list of OpenID Connect provider ARNs by
      *        using the <a>ListOpenIDConnectProviders</a> action.
      */
+
     public void setOpenIDConnectProviderArn(String openIDConnectProviderArn) {
         this.openIDConnectProviderArn = openIDConnectProviderArn;
     }
@@ -61,6 +62,7 @@ public class DeleteOpenIDConnectProviderRequest extends AmazonWebServiceRequest
      *         to delete. You can get a list of OpenID Connect provider ARNs by
      *         using the <a>ListOpenIDConnectProviders</a> action.
      */
+
     public String getOpenIDConnectProviderArn() {
         return this.openIDConnectProviderArn;
     }
@@ -79,6 +81,7 @@ public class DeleteOpenIDConnectProviderRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteOpenIDConnectProviderRequest withOpenIDConnectProviderArn(
             String openIDConnectProviderArn) {
         setOpenIDConnectProviderArn(openIDConnectProviderArn);

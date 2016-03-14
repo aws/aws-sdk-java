@@ -111,6 +111,7 @@ public class HostedZone implements Serializable, Cloneable {
      * @param id
      *        The ID of the specified hosted zone.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -122,6 +123,7 @@ public class HostedZone implements Serializable, Cloneable {
      * 
      * @return The ID of the specified hosted zone.
      */
+
     public String getId() {
         return this.id;
     }
@@ -136,6 +138,7 @@ public class HostedZone implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HostedZone withId(String id) {
         setId(id);
         return this;
@@ -169,6 +172,7 @@ public class HostedZone implements Serializable, Cloneable {
      *        for your domain to the set of <code>NameServers</code> elements
      *        returned in <code>DelegationSet</code>.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -200,6 +204,7 @@ public class HostedZone implements Serializable, Cloneable {
      *         servers for your domain to the set of <code>NameServers</code>
      *         elements returned in <code>DelegationSet</code>.
      */
+
     public String getName() {
         return this.name;
     }
@@ -234,6 +239,7 @@ public class HostedZone implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HostedZone withName(String name) {
         setName(name);
         return this;
@@ -248,6 +254,7 @@ public class HostedZone implements Serializable, Cloneable {
      *        A unique string that identifies the request to create the hosted
      *        zone.
      */
+
     public void setCallerReference(String callerReference) {
         this.callerReference = callerReference;
     }
@@ -260,6 +267,7 @@ public class HostedZone implements Serializable, Cloneable {
      * @return A unique string that identifies the request to create the hosted
      *         zone.
      */
+
     public String getCallerReference() {
         return this.callerReference;
     }
@@ -275,6 +283,7 @@ public class HostedZone implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HostedZone withCallerReference(String callerReference) {
         setCallerReference(callerReference);
         return this;
@@ -288,6 +297,7 @@ public class HostedZone implements Serializable, Cloneable {
      * @param config
      *        A complex type that contains the <code>Comment</code> element.
      */
+
     public void setConfig(HostedZoneConfig config) {
         this.config = config;
     }
@@ -299,6 +309,7 @@ public class HostedZone implements Serializable, Cloneable {
      * 
      * @return A complex type that contains the <code>Comment</code> element.
      */
+
     public HostedZoneConfig getConfig() {
         return this.config;
     }
@@ -313,6 +324,7 @@ public class HostedZone implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HostedZone withConfig(HostedZoneConfig config) {
         setConfig(config);
         return this;
@@ -326,6 +338,7 @@ public class HostedZone implements Serializable, Cloneable {
      * @param resourceRecordSetCount
      *        Total number of resource record sets in the hosted zone.
      */
+
     public void setResourceRecordSetCount(Long resourceRecordSetCount) {
         this.resourceRecordSetCount = resourceRecordSetCount;
     }
@@ -337,6 +350,7 @@ public class HostedZone implements Serializable, Cloneable {
      * 
      * @return Total number of resource record sets in the hosted zone.
      */
+
     public Long getResourceRecordSetCount() {
         return this.resourceRecordSetCount;
     }
@@ -351,6 +365,7 @@ public class HostedZone implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HostedZone withResourceRecordSetCount(Long resourceRecordSetCount) {
         setResourceRecordSetCount(resourceRecordSetCount);
         return this;

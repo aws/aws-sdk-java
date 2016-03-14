@@ -46,6 +46,7 @@ public class ListFindingsResult implements Serializable, Cloneable {
      * 
      * @return A list of ARNs specifying the findings returned by the action.
      */
+
     public java.util.List<String> getFindingArnList() {
         return findingArnList;
     }
@@ -58,6 +59,7 @@ public class ListFindingsResult implements Serializable, Cloneable {
      * @param findingArnList
      *        A list of ARNs specifying the findings returned by the action.
      */
+
     public void setFindingArnList(java.util.Collection<String> findingArnList) {
         if (findingArnList == null) {
             this.findingArnList = null;
@@ -83,6 +85,7 @@ public class ListFindingsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListFindingsResult withFindingArnList(String... findingArnList) {
         if (this.findingArnList == null) {
             setFindingArnList(new java.util.ArrayList<String>(
@@ -104,6 +107,7 @@ public class ListFindingsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListFindingsResult withFindingArnList(
             java.util.Collection<String> findingArnList) {
         setFindingArnList(findingArnList);
@@ -125,6 +129,7 @@ public class ListFindingsResult implements Serializable, Cloneable {
      *        pagination request. If there is no more data to be listed, this
      *        parameter is set to 'null'.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -143,6 +148,7 @@ public class ListFindingsResult implements Serializable, Cloneable {
      *         pagination request. If there is no more data to be listed, this
      *         parameter is set to 'null'.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -164,6 +170,7 @@ public class ListFindingsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListFindingsResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

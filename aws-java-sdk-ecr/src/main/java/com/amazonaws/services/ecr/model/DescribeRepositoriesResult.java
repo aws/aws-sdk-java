@@ -47,6 +47,7 @@ public class DescribeRepositoriesResult implements Serializable, Cloneable {
      * 
      * @return A list of repository objects corresponding to valid repositories.
      */
+
     public java.util.List<Repository> getRepositories() {
         return repositories;
     }
@@ -59,6 +60,7 @@ public class DescribeRepositoriesResult implements Serializable, Cloneable {
      * @param repositories
      *        A list of repository objects corresponding to valid repositories.
      */
+
     public void setRepositories(java.util.Collection<Repository> repositories) {
         if (repositories == null) {
             this.repositories = null;
@@ -84,6 +86,7 @@ public class DescribeRepositoriesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeRepositoriesResult withRepositories(
             Repository... repositories) {
         if (this.repositories == null) {
@@ -106,6 +109,7 @@ public class DescribeRepositoriesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeRepositoriesResult withRepositories(
             java.util.Collection<Repository> repositories) {
         setRepositories(repositories);
@@ -129,6 +133,7 @@ public class DescribeRepositoriesResult implements Serializable, Cloneable {
      *        next page of results. This value is <code>null</code> when there
      *        are no more results to return.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -149,6 +154,7 @@ public class DescribeRepositoriesResult implements Serializable, Cloneable {
      *         next page of results. This value is <code>null</code> when there
      *         are no more results to return.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -172,6 +178,7 @@ public class DescribeRepositoriesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeRepositoriesResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

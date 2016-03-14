@@ -60,6 +60,7 @@ public class CreateAccountAliasRequest extends AmazonWebServiceRequest
      * @param accountAlias
      *        The account alias to create.
      */
+
     public void setAccountAlias(String accountAlias) {
         this.accountAlias = accountAlias;
     }
@@ -71,6 +72,7 @@ public class CreateAccountAliasRequest extends AmazonWebServiceRequest
      * 
      * @return The account alias to create.
      */
+
     public String getAccountAlias() {
         return this.accountAlias;
     }
@@ -85,6 +87,7 @@ public class CreateAccountAliasRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateAccountAliasRequest withAccountAlias(String accountAlias) {
         setAccountAlias(accountAlias);
         return this;

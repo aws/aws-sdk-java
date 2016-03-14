@@ -68,6 +68,7 @@ public class DirectoryConnectSettings implements Serializable, Cloneable {
      * @param vpcId
      *        The identifier of the VPC in which the AD Connector is created.
      */
+
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
@@ -79,6 +80,7 @@ public class DirectoryConnectSettings implements Serializable, Cloneable {
      * 
      * @return The identifier of the VPC in which the AD Connector is created.
      */
+
     public String getVpcId() {
         return this.vpcId;
     }
@@ -93,6 +95,7 @@ public class DirectoryConnectSettings implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DirectoryConnectSettings withVpcId(String vpcId) {
         setVpcId(vpcId);
         return this;
@@ -107,6 +110,7 @@ public class DirectoryConnectSettings implements Serializable, Cloneable {
      * @return A list of subnet identifiers in the VPC in which the AD Connector
      *         is created.
      */
+
     public java.util.List<String> getSubnetIds() {
         if (subnetIds == null) {
             subnetIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -124,6 +128,7 @@ public class DirectoryConnectSettings implements Serializable, Cloneable {
      *        A list of subnet identifiers in the VPC in which the AD Connector
      *        is created.
      */
+
     public void setSubnetIds(java.util.Collection<String> subnetIds) {
         if (subnetIds == null) {
             this.subnetIds = null;
@@ -152,6 +157,7 @@ public class DirectoryConnectSettings implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DirectoryConnectSettings withSubnetIds(String... subnetIds) {
         if (this.subnetIds == null) {
             setSubnetIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -175,6 +181,7 @@ public class DirectoryConnectSettings implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DirectoryConnectSettings withSubnetIds(
             java.util.Collection<String> subnetIds) {
         setSubnetIds(subnetIds);
@@ -190,6 +197,7 @@ public class DirectoryConnectSettings implements Serializable, Cloneable {
      * @return A list of one or more IP addresses of DNS servers or domain
      *         controllers in the on-premises directory.
      */
+
     public java.util.List<String> getCustomerDnsIps() {
         if (customerDnsIps == null) {
             customerDnsIps = new com.amazonaws.internal.SdkInternalList<String>();
@@ -207,6 +215,7 @@ public class DirectoryConnectSettings implements Serializable, Cloneable {
      *        A list of one or more IP addresses of DNS servers or domain
      *        controllers in the on-premises directory.
      */
+
     public void setCustomerDnsIps(java.util.Collection<String> customerDnsIps) {
         if (customerDnsIps == null) {
             this.customerDnsIps = null;
@@ -235,6 +244,7 @@ public class DirectoryConnectSettings implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DirectoryConnectSettings withCustomerDnsIps(String... customerDnsIps) {
         if (this.customerDnsIps == null) {
             setCustomerDnsIps(new com.amazonaws.internal.SdkInternalList<String>(
@@ -258,6 +268,7 @@ public class DirectoryConnectSettings implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DirectoryConnectSettings withCustomerDnsIps(
             java.util.Collection<String> customerDnsIps) {
         setCustomerDnsIps(customerDnsIps);
@@ -285,6 +296,7 @@ public class DirectoryConnectSettings implements Serializable, Cloneable {
      *        <li>Create computer objects</li>
      *        <li>Join computers to the domain</li>
      */
+
     public void setCustomerUserName(String customerUserName) {
         this.customerUserName = customerUserName;
     }
@@ -309,6 +321,7 @@ public class DirectoryConnectSettings implements Serializable, Cloneable {
      *         <li>Create computer objects</li>
      *         <li>Join computers to the domain</li>
      */
+
     public String getCustomerUserName() {
         return this.customerUserName;
     }
@@ -336,6 +349,7 @@ public class DirectoryConnectSettings implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DirectoryConnectSettings withCustomerUserName(String customerUserName) {
         setCustomerUserName(customerUserName);
         return this;

@@ -42,6 +42,7 @@ public class GetOnPremisesInstanceRequest extends AmazonWebServiceRequest
      * @param instanceName
      *        The name of the on-premises instance to get information about
      */
+
     public void setInstanceName(String instanceName) {
         this.instanceName = instanceName;
     }
@@ -53,6 +54,7 @@ public class GetOnPremisesInstanceRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the on-premises instance to get information about
      */
+
     public String getInstanceName() {
         return this.instanceName;
     }
@@ -67,6 +69,7 @@ public class GetOnPremisesInstanceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetOnPremisesInstanceRequest withInstanceName(String instanceName) {
         setInstanceName(instanceName);
         return this;

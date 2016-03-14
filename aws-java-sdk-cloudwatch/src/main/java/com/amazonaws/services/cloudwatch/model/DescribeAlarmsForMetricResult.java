@@ -39,6 +39,7 @@ public class DescribeAlarmsForMetricResult implements Serializable, Cloneable {
      * 
      * @return A list of information for each alarm with the specified metric.
      */
+
     public java.util.List<MetricAlarm> getMetricAlarms() {
         if (metricAlarms == null) {
             metricAlarms = new com.amazonaws.internal.SdkInternalList<MetricAlarm>();
@@ -54,6 +55,7 @@ public class DescribeAlarmsForMetricResult implements Serializable, Cloneable {
      * @param metricAlarms
      *        A list of information for each alarm with the specified metric.
      */
+
     public void setMetricAlarms(java.util.Collection<MetricAlarm> metricAlarms) {
         if (metricAlarms == null) {
             this.metricAlarms = null;
@@ -80,6 +82,7 @@ public class DescribeAlarmsForMetricResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAlarmsForMetricResult withMetricAlarms(
             MetricAlarm... metricAlarms) {
         if (this.metricAlarms == null) {
@@ -102,6 +105,7 @@ public class DescribeAlarmsForMetricResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAlarmsForMetricResult withMetricAlarms(
             java.util.Collection<MetricAlarm> metricAlarms) {
         setMetricAlarms(metricAlarms);

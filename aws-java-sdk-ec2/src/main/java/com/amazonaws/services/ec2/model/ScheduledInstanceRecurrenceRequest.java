@@ -77,6 +77,7 @@ public class ScheduledInstanceRecurrenceRequest implements Serializable,
      *        The frequency (<code>Daily</code>, <code>Weekly</code>, or
      *        <code>Monthly</code>).
      */
+
     public void setFrequency(String frequency) {
         this.frequency = frequency;
     }
@@ -90,6 +91,7 @@ public class ScheduledInstanceRecurrenceRequest implements Serializable,
      * @return The frequency (<code>Daily</code>, <code>Weekly</code>, or
      *         <code>Monthly</code>).
      */
+
     public String getFrequency() {
         return this.frequency;
     }
@@ -106,6 +108,7 @@ public class ScheduledInstanceRecurrenceRequest implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstanceRecurrenceRequest withFrequency(String frequency) {
         setFrequency(frequency);
         return this;
@@ -122,6 +125,7 @@ public class ScheduledInstanceRecurrenceRequest implements Serializable,
      *        <code>Frequency</code>. For example, every 2 weeks or every 2
      *        months.
      */
+
     public void setInterval(Integer interval) {
         this.interval = interval;
     }
@@ -136,6 +140,7 @@ public class ScheduledInstanceRecurrenceRequest implements Serializable,
      *         <code>Frequency</code>. For example, every 2 weeks or every 2
      *         months.
      */
+
     public Integer getInterval() {
         return this.interval;
     }
@@ -153,6 +158,7 @@ public class ScheduledInstanceRecurrenceRequest implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstanceRecurrenceRequest withInterval(Integer interval) {
         setInterval(interval);
         return this;
@@ -173,6 +179,7 @@ public class ScheduledInstanceRecurrenceRequest implements Serializable,
      *         with a daily schedule. If the occurrence is relative to the end
      *         of the month, you can specify only a single day.
      */
+
     public java.util.List<Integer> getOccurrenceDays() {
         if (occurrenceDays == null) {
             occurrenceDays = new com.amazonaws.internal.SdkInternalList<Integer>();
@@ -196,6 +203,7 @@ public class ScheduledInstanceRecurrenceRequest implements Serializable,
      *        with a daily schedule. If the occurrence is relative to the end of
      *        the month, you can specify only a single day.
      */
+
     public void setOccurrenceDays(java.util.Collection<Integer> occurrenceDays) {
         if (occurrenceDays == null) {
             this.occurrenceDays = null;
@@ -230,6 +238,7 @@ public class ScheduledInstanceRecurrenceRequest implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstanceRecurrenceRequest withOccurrenceDays(
             Integer... occurrenceDays) {
         if (this.occurrenceDays == null) {
@@ -260,6 +269,7 @@ public class ScheduledInstanceRecurrenceRequest implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstanceRecurrenceRequest withOccurrenceDays(
             java.util.Collection<Integer> occurrenceDays) {
         setOccurrenceDays(occurrenceDays);
@@ -277,6 +287,7 @@ public class ScheduledInstanceRecurrenceRequest implements Serializable,
      *        specified week or month. You can't specify this value with a daily
      *        schedule.
      */
+
     public void setOccurrenceRelativeToEnd(Boolean occurrenceRelativeToEnd) {
         this.occurrenceRelativeToEnd = occurrenceRelativeToEnd;
     }
@@ -291,6 +302,7 @@ public class ScheduledInstanceRecurrenceRequest implements Serializable,
      *         specified week or month. You can't specify this value with a
      *         daily schedule.
      */
+
     public Boolean getOccurrenceRelativeToEnd() {
         return this.occurrenceRelativeToEnd;
     }
@@ -308,6 +320,7 @@ public class ScheduledInstanceRecurrenceRequest implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstanceRecurrenceRequest withOccurrenceRelativeToEnd(
             Boolean occurrenceRelativeToEnd) {
         setOccurrenceRelativeToEnd(occurrenceRelativeToEnd);
@@ -324,6 +337,7 @@ public class ScheduledInstanceRecurrenceRequest implements Serializable,
      *         specified week or month. You can't specify this value with a
      *         daily schedule.
      */
+
     public Boolean isOccurrenceRelativeToEnd() {
         return this.occurrenceRelativeToEnd;
     }
@@ -342,6 +356,7 @@ public class ScheduledInstanceRecurrenceRequest implements Serializable,
      *        schedule. You can't specify <code>DayOfWeek</code> with a weekly
      *        schedule. You can't specify this value with a daily schedule.
      */
+
     public void setOccurrenceUnit(String occurrenceUnit) {
         this.occurrenceUnit = occurrenceUnit;
     }
@@ -359,6 +374,7 @@ public class ScheduledInstanceRecurrenceRequest implements Serializable,
      *         schedule. You can't specify <code>DayOfWeek</code> with a weekly
      *         schedule. You can't specify this value with a daily schedule.
      */
+
     public String getOccurrenceUnit() {
         return this.occurrenceUnit;
     }
@@ -379,6 +395,7 @@ public class ScheduledInstanceRecurrenceRequest implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstanceRecurrenceRequest withOccurrenceUnit(
             String occurrenceUnit) {
         setOccurrenceUnit(occurrenceUnit);

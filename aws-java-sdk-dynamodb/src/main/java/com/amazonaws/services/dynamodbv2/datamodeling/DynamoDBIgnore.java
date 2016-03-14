@@ -28,6 +28,7 @@ import java.lang.annotation.Target;
  * All getter methods not marked with this annotation are assumed to be modeled
  * properties and included in any save() requests.
  */
+@DynamoDB
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.FIELD, ElementType.METHOD})
 public @interface DynamoDBIgnore {

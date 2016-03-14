@@ -57,6 +57,7 @@ public class SetDesiredCapacityRequest extends AmazonWebServiceRequest
      * @param autoScalingGroupName
      *        The name of the Auto Scaling group.
      */
+
     public void setAutoScalingGroupName(String autoScalingGroupName) {
         this.autoScalingGroupName = autoScalingGroupName;
     }
@@ -68,6 +69,7 @@ public class SetDesiredCapacityRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the Auto Scaling group.
      */
+
     public String getAutoScalingGroupName() {
         return this.autoScalingGroupName;
     }
@@ -82,6 +84,7 @@ public class SetDesiredCapacityRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetDesiredCapacityRequest withAutoScalingGroupName(
             String autoScalingGroupName) {
         setAutoScalingGroupName(autoScalingGroupName);
@@ -98,6 +101,7 @@ public class SetDesiredCapacityRequest extends AmazonWebServiceRequest
      *        The number of EC2 instances that should be running in the Auto
      *        Scaling group.
      */
+
     public void setDesiredCapacity(Integer desiredCapacity) {
         this.desiredCapacity = desiredCapacity;
     }
@@ -111,6 +115,7 @@ public class SetDesiredCapacityRequest extends AmazonWebServiceRequest
      * @return The number of EC2 instances that should be running in the Auto
      *         Scaling group.
      */
+
     public Integer getDesiredCapacity() {
         return this.desiredCapacity;
     }
@@ -127,6 +132,7 @@ public class SetDesiredCapacityRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetDesiredCapacityRequest withDesiredCapacity(Integer desiredCapacity) {
         setDesiredCapacity(desiredCapacity);
         return this;
@@ -149,6 +155,7 @@ public class SetDesiredCapacityRequest extends AmazonWebServiceRequest
      *        initiating a scaling activity to set your Auto Scaling group to
      *        its new capacity.
      */
+
     public void setHonorCooldown(Boolean honorCooldown) {
         this.honorCooldown = honorCooldown;
     }
@@ -169,6 +176,7 @@ public class SetDesiredCapacityRequest extends AmazonWebServiceRequest
      *         initiating a scaling activity to set your Auto Scaling group to
      *         its new capacity.
      */
+
     public Boolean getHonorCooldown() {
         return this.honorCooldown;
     }
@@ -192,6 +200,7 @@ public class SetDesiredCapacityRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetDesiredCapacityRequest withHonorCooldown(Boolean honorCooldown) {
         setHonorCooldown(honorCooldown);
         return this;
@@ -213,6 +222,7 @@ public class SetDesiredCapacityRequest extends AmazonWebServiceRequest
      *         initiating a scaling activity to set your Auto Scaling group to
      *         its new capacity.
      */
+
     public Boolean isHonorCooldown() {
         return this.honorCooldown;
     }

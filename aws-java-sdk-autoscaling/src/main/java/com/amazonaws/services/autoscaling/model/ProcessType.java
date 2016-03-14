@@ -170,6 +170,7 @@ public class ProcessType implements Serializable, Cloneable {
      *        </p>
      *        </li>
      */
+
     public void setProcessName(String processName) {
         this.processName = processName;
     }
@@ -264,6 +265,7 @@ public class ProcessType implements Serializable, Cloneable {
      *         </p>
      *         </li>
      */
+
     public String getProcessName() {
         return this.processName;
     }
@@ -361,6 +363,7 @@ public class ProcessType implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ProcessType withProcessName(String processName) {
         setProcessName(processName);
         return this;

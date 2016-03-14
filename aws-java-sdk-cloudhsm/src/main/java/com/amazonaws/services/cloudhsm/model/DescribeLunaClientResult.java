@@ -62,6 +62,7 @@ public class DescribeLunaClientResult implements Serializable, Cloneable {
      * @param clientArn
      *        The ARN of the client.
      */
+
     public void setClientArn(String clientArn) {
         this.clientArn = clientArn;
     }
@@ -73,6 +74,7 @@ public class DescribeLunaClientResult implements Serializable, Cloneable {
      * 
      * @return The ARN of the client.
      */
+
     public String getClientArn() {
         return this.clientArn;
     }
@@ -87,6 +89,7 @@ public class DescribeLunaClientResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLunaClientResult withClientArn(String clientArn) {
         setClientArn(clientArn);
         return this;
@@ -100,6 +103,7 @@ public class DescribeLunaClientResult implements Serializable, Cloneable {
      * @param certificate
      *        The certificate installed on the HSMs used by this client.
      */
+
     public void setCertificate(String certificate) {
         this.certificate = certificate;
     }
@@ -111,6 +115,7 @@ public class DescribeLunaClientResult implements Serializable, Cloneable {
      * 
      * @return The certificate installed on the HSMs used by this client.
      */
+
     public String getCertificate() {
         return this.certificate;
     }
@@ -125,6 +130,7 @@ public class DescribeLunaClientResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLunaClientResult withCertificate(String certificate) {
         setCertificate(certificate);
         return this;
@@ -138,6 +144,7 @@ public class DescribeLunaClientResult implements Serializable, Cloneable {
      * @param certificateFingerprint
      *        The certificate fingerprint.
      */
+
     public void setCertificateFingerprint(String certificateFingerprint) {
         this.certificateFingerprint = certificateFingerprint;
     }
@@ -149,6 +156,7 @@ public class DescribeLunaClientResult implements Serializable, Cloneable {
      * 
      * @return The certificate fingerprint.
      */
+
     public String getCertificateFingerprint() {
         return this.certificateFingerprint;
     }
@@ -163,6 +171,7 @@ public class DescribeLunaClientResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLunaClientResult withCertificateFingerprint(
             String certificateFingerprint) {
         setCertificateFingerprint(certificateFingerprint);
@@ -177,6 +186,7 @@ public class DescribeLunaClientResult implements Serializable, Cloneable {
      * @param lastModifiedTimestamp
      *        The date and time the client was last modified.
      */
+
     public void setLastModifiedTimestamp(String lastModifiedTimestamp) {
         this.lastModifiedTimestamp = lastModifiedTimestamp;
     }
@@ -188,6 +198,7 @@ public class DescribeLunaClientResult implements Serializable, Cloneable {
      * 
      * @return The date and time the client was last modified.
      */
+
     public String getLastModifiedTimestamp() {
         return this.lastModifiedTimestamp;
     }
@@ -202,6 +213,7 @@ public class DescribeLunaClientResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLunaClientResult withLastModifiedTimestamp(
             String lastModifiedTimestamp) {
         setLastModifiedTimestamp(lastModifiedTimestamp);
@@ -216,6 +228,7 @@ public class DescribeLunaClientResult implements Serializable, Cloneable {
      * @param label
      *        The label of the client.
      */
+
     public void setLabel(String label) {
         this.label = label;
     }
@@ -227,6 +240,7 @@ public class DescribeLunaClientResult implements Serializable, Cloneable {
      * 
      * @return The label of the client.
      */
+
     public String getLabel() {
         return this.label;
     }
@@ -241,6 +255,7 @@ public class DescribeLunaClientResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLunaClientResult withLabel(String label) {
         setLabel(label);
         return this;

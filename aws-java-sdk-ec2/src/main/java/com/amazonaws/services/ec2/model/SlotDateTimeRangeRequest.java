@@ -50,6 +50,7 @@ public class SlotDateTimeRangeRequest implements Serializable, Cloneable {
      *        The earliest date and time, in UTC, for the Scheduled Instance to
      *        start.
      */
+
     public void setEarliestTime(java.util.Date earliestTime) {
         this.earliestTime = earliestTime;
     }
@@ -62,6 +63,7 @@ public class SlotDateTimeRangeRequest implements Serializable, Cloneable {
      * @return The earliest date and time, in UTC, for the Scheduled Instance to
      *         start.
      */
+
     public java.util.Date getEarliestTime() {
         return this.earliestTime;
     }
@@ -77,6 +79,7 @@ public class SlotDateTimeRangeRequest implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SlotDateTimeRangeRequest withEarliestTime(java.util.Date earliestTime) {
         setEarliestTime(earliestTime);
         return this;
@@ -94,6 +97,7 @@ public class SlotDateTimeRangeRequest implements Serializable, Cloneable {
      *        start. This value must be later than or equal to the earliest date
      *        and at most three months in the future.
      */
+
     public void setLatestTime(java.util.Date latestTime) {
         this.latestTime = latestTime;
     }
@@ -109,6 +113,7 @@ public class SlotDateTimeRangeRequest implements Serializable, Cloneable {
      *         start. This value must be later than or equal to the earliest
      *         date and at most three months in the future.
      */
+
     public java.util.Date getLatestTime() {
         return this.latestTime;
     }
@@ -127,6 +132,7 @@ public class SlotDateTimeRangeRequest implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SlotDateTimeRangeRequest withLatestTime(java.util.Date latestTime) {
         setLatestTime(latestTime);
         return this;

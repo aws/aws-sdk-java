@@ -67,6 +67,7 @@ public class StartInstancesRequest extends AmazonWebServiceRequest implements
      * 
      * @return One or more instance IDs.
      */
+
     public java.util.List<String> getInstanceIds() {
         if (instanceIds == null) {
             instanceIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -82,6 +83,7 @@ public class StartInstancesRequest extends AmazonWebServiceRequest implements
      * @param instanceIds
      *        One or more instance IDs.
      */
+
     public void setInstanceIds(java.util.Collection<String> instanceIds) {
         if (instanceIds == null) {
             this.instanceIds = null;
@@ -108,6 +110,7 @@ public class StartInstancesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StartInstancesRequest withInstanceIds(String... instanceIds) {
         if (this.instanceIds == null) {
             setInstanceIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -129,6 +132,7 @@ public class StartInstancesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StartInstancesRequest withInstanceIds(
             java.util.Collection<String> instanceIds) {
         setInstanceIds(instanceIds);
@@ -143,6 +147,7 @@ public class StartInstancesRequest extends AmazonWebServiceRequest implements
      * @param additionalInfo
      *        Reserved.
      */
+
     public void setAdditionalInfo(String additionalInfo) {
         this.additionalInfo = additionalInfo;
     }
@@ -154,6 +159,7 @@ public class StartInstancesRequest extends AmazonWebServiceRequest implements
      * 
      * @return Reserved.
      */
+
     public String getAdditionalInfo() {
         return this.additionalInfo;
     }
@@ -168,6 +174,7 @@ public class StartInstancesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StartInstancesRequest withAdditionalInfo(String additionalInfo) {
         setAdditionalInfo(additionalInfo);
         return this;

@@ -59,6 +59,7 @@ public class BatchCheckLayerAvailabilityRequest extends AmazonWebServiceRequest
      *        image layers to check. If you do not specify a registry, the
      *        default registry is assumed.
      */
+
     public void setRegistryId(String registryId) {
         this.registryId = registryId;
     }
@@ -74,6 +75,7 @@ public class BatchCheckLayerAvailabilityRequest extends AmazonWebServiceRequest
      *         image layers to check. If you do not specify a registry, the
      *         default registry is assumed.
      */
+
     public String getRegistryId() {
         return this.registryId;
     }
@@ -92,6 +94,7 @@ public class BatchCheckLayerAvailabilityRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchCheckLayerAvailabilityRequest withRegistryId(String registryId) {
         setRegistryId(registryId);
         return this;
@@ -107,6 +110,7 @@ public class BatchCheckLayerAvailabilityRequest extends AmazonWebServiceRequest
      *        The name of the repository that is associated with the image
      *        layers to check.
      */
+
     public void setRepositoryName(String repositoryName) {
         this.repositoryName = repositoryName;
     }
@@ -120,6 +124,7 @@ public class BatchCheckLayerAvailabilityRequest extends AmazonWebServiceRequest
      * @return The name of the repository that is associated with the image
      *         layers to check.
      */
+
     public String getRepositoryName() {
         return this.repositoryName;
     }
@@ -136,6 +141,7 @@ public class BatchCheckLayerAvailabilityRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchCheckLayerAvailabilityRequest withRepositoryName(
             String repositoryName) {
         setRepositoryName(repositoryName);
@@ -149,6 +155,7 @@ public class BatchCheckLayerAvailabilityRequest extends AmazonWebServiceRequest
      * 
      * @return The digests of the image layers to check.
      */
+
     public java.util.List<String> getLayerDigests() {
         return layerDigests;
     }
@@ -161,6 +168,7 @@ public class BatchCheckLayerAvailabilityRequest extends AmazonWebServiceRequest
      * @param layerDigests
      *        The digests of the image layers to check.
      */
+
     public void setLayerDigests(java.util.Collection<String> layerDigests) {
         if (layerDigests == null) {
             this.layerDigests = null;
@@ -186,6 +194,7 @@ public class BatchCheckLayerAvailabilityRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchCheckLayerAvailabilityRequest withLayerDigests(
             String... layerDigests) {
         if (this.layerDigests == null) {
@@ -207,6 +216,7 @@ public class BatchCheckLayerAvailabilityRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchCheckLayerAvailabilityRequest withLayerDigests(
             java.util.Collection<String> layerDigests) {
         setLayerDigests(layerDigests);

@@ -51,6 +51,7 @@ public class CancelSpotFleetRequestsRequest extends AmazonWebServiceRequest
      * 
      * @return The IDs of the Spot fleet requests.
      */
+
     public java.util.List<String> getSpotFleetRequestIds() {
         if (spotFleetRequestIds == null) {
             spotFleetRequestIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -66,6 +67,7 @@ public class CancelSpotFleetRequestsRequest extends AmazonWebServiceRequest
      * @param spotFleetRequestIds
      *        The IDs of the Spot fleet requests.
      */
+
     public void setSpotFleetRequestIds(
             java.util.Collection<String> spotFleetRequestIds) {
         if (spotFleetRequestIds == null) {
@@ -93,6 +95,7 @@ public class CancelSpotFleetRequestsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CancelSpotFleetRequestsRequest withSpotFleetRequestIds(
             String... spotFleetRequestIds) {
         if (this.spotFleetRequestIds == null) {
@@ -115,6 +118,7 @@ public class CancelSpotFleetRequestsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CancelSpotFleetRequestsRequest withSpotFleetRequestIds(
             java.util.Collection<String> spotFleetRequestIds) {
         setSpotFleetRequestIds(spotFleetRequestIds);
@@ -131,6 +135,7 @@ public class CancelSpotFleetRequestsRequest extends AmazonWebServiceRequest
      *        Indicates whether to terminate instances for a Spot fleet request
      *        if it is canceled successfully.
      */
+
     public void setTerminateInstances(Boolean terminateInstances) {
         this.terminateInstances = terminateInstances;
     }
@@ -144,6 +149,7 @@ public class CancelSpotFleetRequestsRequest extends AmazonWebServiceRequest
      * @return Indicates whether to terminate instances for a Spot fleet request
      *         if it is canceled successfully.
      */
+
     public Boolean getTerminateInstances() {
         return this.terminateInstances;
     }
@@ -160,6 +166,7 @@ public class CancelSpotFleetRequestsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CancelSpotFleetRequestsRequest withTerminateInstances(
             Boolean terminateInstances) {
         setTerminateInstances(terminateInstances);
@@ -175,6 +182,7 @@ public class CancelSpotFleetRequestsRequest extends AmazonWebServiceRequest
      * @return Indicates whether to terminate instances for a Spot fleet request
      *         if it is canceled successfully.
      */
+
     public Boolean isTerminateInstances() {
         return this.terminateInstances;
     }

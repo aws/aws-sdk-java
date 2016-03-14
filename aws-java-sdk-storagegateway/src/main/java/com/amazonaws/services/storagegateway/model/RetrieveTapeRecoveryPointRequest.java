@@ -47,6 +47,7 @@ public class RetrieveTapeRecoveryPointRequest extends AmazonWebServiceRequest
      *        The Amazon Resource Name (ARN) of the virtual tape for which you
      *        want to retrieve the recovery point.
      */
+
     public void setTapeARN(String tapeARN) {
         this.tapeARN = tapeARN;
     }
@@ -60,6 +61,7 @@ public class RetrieveTapeRecoveryPointRequest extends AmazonWebServiceRequest
      * @return The Amazon Resource Name (ARN) of the virtual tape for which you
      *         want to retrieve the recovery point.
      */
+
     public String getTapeARN() {
         return this.tapeARN;
     }
@@ -76,6 +78,7 @@ public class RetrieveTapeRecoveryPointRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RetrieveTapeRecoveryPointRequest withTapeARN(String tapeARN) {
         setTapeARN(tapeARN);
         return this;
@@ -84,6 +87,7 @@ public class RetrieveTapeRecoveryPointRequest extends AmazonWebServiceRequest
     /**
      * @param gatewayARN
      */
+
     public void setGatewayARN(String gatewayARN) {
         this.gatewayARN = gatewayARN;
     }
@@ -91,6 +95,7 @@ public class RetrieveTapeRecoveryPointRequest extends AmazonWebServiceRequest
     /**
      * @return
      */
+
     public String getGatewayARN() {
         return this.gatewayARN;
     }
@@ -100,6 +105,7 @@ public class RetrieveTapeRecoveryPointRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RetrieveTapeRecoveryPointRequest withGatewayARN(String gatewayARN) {
         setGatewayARN(gatewayARN);
         return this;

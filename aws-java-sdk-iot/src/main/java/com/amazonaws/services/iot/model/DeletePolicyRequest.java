@@ -42,6 +42,7 @@ public class DeletePolicyRequest extends AmazonWebServiceRequest implements
      * @param policyName
      *        The name of the policy to delete.
      */
+
     public void setPolicyName(String policyName) {
         this.policyName = policyName;
     }
@@ -53,6 +54,7 @@ public class DeletePolicyRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the policy to delete.
      */
+
     public String getPolicyName() {
         return this.policyName;
     }
@@ -67,6 +69,7 @@ public class DeletePolicyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeletePolicyRequest withPolicyName(String policyName) {
         setPolicyName(policyName);
         return this;

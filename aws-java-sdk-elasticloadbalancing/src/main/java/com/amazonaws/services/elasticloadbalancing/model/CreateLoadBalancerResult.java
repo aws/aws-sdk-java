@@ -38,6 +38,7 @@ public class CreateLoadBalancerResult implements Serializable, Cloneable {
      * @param dNSName
      *        The DNS name of the load balancer.
      */
+
     public void setDNSName(String dNSName) {
         this.dNSName = dNSName;
     }
@@ -49,6 +50,7 @@ public class CreateLoadBalancerResult implements Serializable, Cloneable {
      * 
      * @return The DNS name of the load balancer.
      */
+
     public String getDNSName() {
         return this.dNSName;
     }
@@ -63,6 +65,7 @@ public class CreateLoadBalancerResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateLoadBalancerResult withDNSName(String dNSName) {
         setDNSName(dNSName);
         return this;

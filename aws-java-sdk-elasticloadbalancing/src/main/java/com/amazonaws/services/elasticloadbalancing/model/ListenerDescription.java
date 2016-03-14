@@ -36,6 +36,7 @@ public class ListenerDescription implements Serializable, Cloneable {
     /**
      * @param listener
      */
+
     public void setListener(Listener listener) {
         this.listener = listener;
     }
@@ -43,6 +44,7 @@ public class ListenerDescription implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Listener getListener() {
         return this.listener;
     }
@@ -52,6 +54,7 @@ public class ListenerDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListenerDescription withListener(Listener listener) {
         setListener(listener);
         return this;
@@ -65,6 +68,7 @@ public class ListenerDescription implements Serializable, Cloneable {
      * @return The policies. If there are no policies enabled, the list is
      *         empty.
      */
+
     public java.util.List<String> getPolicyNames() {
         if (policyNames == null) {
             policyNames = new com.amazonaws.internal.SdkInternalList<String>();
@@ -80,6 +84,7 @@ public class ListenerDescription implements Serializable, Cloneable {
      * @param policyNames
      *        The policies. If there are no policies enabled, the list is empty.
      */
+
     public void setPolicyNames(java.util.Collection<String> policyNames) {
         if (policyNames == null) {
             this.policyNames = null;
@@ -106,6 +111,7 @@ public class ListenerDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListenerDescription withPolicyNames(String... policyNames) {
         if (this.policyNames == null) {
             setPolicyNames(new com.amazonaws.internal.SdkInternalList<String>(
@@ -127,6 +133,7 @@ public class ListenerDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListenerDescription withPolicyNames(
             java.util.Collection<String> policyNames) {
         setPolicyNames(policyNames);

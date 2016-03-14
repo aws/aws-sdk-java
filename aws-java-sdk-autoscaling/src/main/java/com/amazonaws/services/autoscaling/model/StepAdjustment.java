@@ -129,6 +129,7 @@ public class StepAdjustment implements Serializable, Cloneable {
      *        threshold plus the lower bound). A null value indicates negative
      *        infinity.
      */
+
     public void setMetricIntervalLowerBound(Double metricIntervalLowerBound) {
         this.metricIntervalLowerBound = metricIntervalLowerBound;
     }
@@ -151,6 +152,7 @@ public class StepAdjustment implements Serializable, Cloneable {
      *         threshold plus the lower bound). A null value indicates negative
      *         infinity.
      */
+
     public Double getMetricIntervalLowerBound() {
         return this.metricIntervalLowerBound;
     }
@@ -176,6 +178,7 @@ public class StepAdjustment implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StepAdjustment withMetricIntervalLowerBound(
             Double metricIntervalLowerBound) {
         setMetricIntervalLowerBound(metricIntervalLowerBound);
@@ -206,6 +209,7 @@ public class StepAdjustment implements Serializable, Cloneable {
      *        <p>
      *        The upper bound must be greater than the lower bound.
      */
+
     public void setMetricIntervalUpperBound(Double metricIntervalUpperBound) {
         this.metricIntervalUpperBound = metricIntervalUpperBound;
     }
@@ -233,6 +237,7 @@ public class StepAdjustment implements Serializable, Cloneable {
      *         <p>
      *         The upper bound must be greater than the lower bound.
      */
+
     public Double getMetricIntervalUpperBound() {
         return this.metricIntervalUpperBound;
     }
@@ -263,6 +268,7 @@ public class StepAdjustment implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StepAdjustment withMetricIntervalUpperBound(
             Double metricIntervalUpperBound) {
         setMetricIntervalUpperBound(metricIntervalUpperBound);
@@ -281,6 +287,7 @@ public class StepAdjustment implements Serializable, Cloneable {
      *        type. A positive value adds to the current capacity while a
      *        negative number removes from the current capacity.
      */
+
     public void setScalingAdjustment(Integer scalingAdjustment) {
         this.scalingAdjustment = scalingAdjustment;
     }
@@ -296,6 +303,7 @@ public class StepAdjustment implements Serializable, Cloneable {
      *         type. A positive value adds to the current capacity while a
      *         negative number removes from the current capacity.
      */
+
     public Integer getScalingAdjustment() {
         return this.scalingAdjustment;
     }
@@ -314,6 +322,7 @@ public class StepAdjustment implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StepAdjustment withScalingAdjustment(Integer scalingAdjustment) {
         setScalingAdjustment(scalingAdjustment);
         return this;

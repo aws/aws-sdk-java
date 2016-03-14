@@ -72,6 +72,7 @@ public class GetKeyPolicyRequest extends AmazonWebServiceRequest implements
      *        12345678-1234-1234-1234-123456789012</li>
      *        </ul>
      */
+
     public void setKeyId(String keyId) {
         this.keyId = keyId;
     }
@@ -100,6 +101,7 @@ public class GetKeyPolicyRequest extends AmazonWebServiceRequest implements
      *         12345678-1234-1234-1234-123456789012</li>
      *         </ul>
      */
+
     public String getKeyId() {
         return this.keyId;
     }
@@ -130,6 +132,7 @@ public class GetKeyPolicyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetKeyPolicyRequest withKeyId(String keyId) {
         setKeyId(keyId);
         return this;
@@ -147,6 +150,7 @@ public class GetKeyPolicyRequest extends AmazonWebServiceRequest implements
      *        be "default". Policy names can be discovered by calling
      *        <a>ListKeyPolicies</a>.
      */
+
     public void setPolicyName(String policyName) {
         this.policyName = policyName;
     }
@@ -162,6 +166,7 @@ public class GetKeyPolicyRequest extends AmazonWebServiceRequest implements
      *         be "default". Policy names can be discovered by calling
      *         <a>ListKeyPolicies</a>.
      */
+
     public String getPolicyName() {
         return this.policyName;
     }
@@ -180,6 +185,7 @@ public class GetKeyPolicyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetKeyPolicyRequest withPolicyName(String policyName) {
         setPolicyName(policyName);
         return this;

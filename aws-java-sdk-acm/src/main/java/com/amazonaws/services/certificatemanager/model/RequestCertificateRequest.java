@@ -94,6 +94,7 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      *        protects www.example.com, site.example.com, and
      *        images.example.com.
      */
+
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
@@ -114,6 +115,7 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      *         protects www.example.com, site.example.com, and
      *         images.example.com.
      */
+
     public String getDomainName() {
         return this.domainName;
     }
@@ -137,6 +139,7 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RequestCertificateRequest withDomainName(String domainName) {
         setDomainName(domainName);
         return this;
@@ -156,6 +159,7 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      *         <code>DomainName</code> field is www.example.com if users can
      *         reach your site by using either name.
      */
+
     public java.util.List<String> getSubjectAlternativeNames() {
         return subjectAlternativeNames;
     }
@@ -175,6 +179,7 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      *        <code>DomainName</code> field is www.example.com if users can
      *        reach your site by using either name.
      */
+
     public void setSubjectAlternativeNames(
             java.util.Collection<String> subjectAlternativeNames) {
         if (subjectAlternativeNames == null) {
@@ -209,6 +214,7 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RequestCertificateRequest withSubjectAlternativeNames(
             String... subjectAlternativeNames) {
         if (this.subjectAlternativeNames == null) {
@@ -238,6 +244,7 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RequestCertificateRequest withSubjectAlternativeNames(
             java.util.Collection<String> subjectAlternativeNames) {
         setSubjectAlternativeNames(subjectAlternativeNames);
@@ -265,6 +272,7 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      *        change the idempotency token for each call, ACM recognizes that
      *        you are requesting multiple certificates.
      */
+
     public void setIdempotencyToken(String idempotencyToken) {
         this.idempotencyToken = idempotencyToken;
     }
@@ -289,6 +297,7 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      *         change the idempotency token for each call, ACM recognizes that
      *         you are requesting multiple certificates.
      */
+
     public String getIdempotencyToken() {
         return this.idempotencyToken;
     }
@@ -316,6 +325,7 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RequestCertificateRequest withIdempotencyToken(
             String idempotencyToken) {
         setIdempotencyToken(idempotencyToken);
@@ -357,6 +367,7 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      *         <li>webmaster@example.com</li>
      *         </ul>
      */
+
     public java.util.List<DomainValidationOption> getDomainValidationOptions() {
         return domainValidationOptions;
     }
@@ -397,6 +408,7 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      *        <li>webmaster@example.com</li>
      *        </ul>
      */
+
     public void setDomainValidationOptions(
             java.util.Collection<DomainValidationOption> domainValidationOptions) {
         if (domainValidationOptions == null) {
@@ -452,6 +464,7 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RequestCertificateRequest withDomainValidationOptions(
             DomainValidationOption... domainValidationOptions) {
         if (this.domainValidationOptions == null) {
@@ -502,6 +515,7 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RequestCertificateRequest withDomainValidationOptions(
             java.util.Collection<DomainValidationOption> domainValidationOptions) {
         setDomainValidationOptions(domainValidationOptions);

@@ -35,7 +35,8 @@ public class RequestUploadCredentialsResult implements Serializable, Cloneable {
     private Credentials uploadCredentials;
     /**
      * <p>
-     * S3 path and key, identifying where the game build files are stored.
+     * Amazon S3 path and key, identifying where the game build files are
+     * stored.
      * </p>
      */
     private S3Location storageLocation;
@@ -52,6 +53,7 @@ public class RequestUploadCredentialsResult implements Serializable, Cloneable {
      *        storage location. These credentials have a limited lifespan and
      *        are valid only for the build they were issued for.
      */
+
     public void setUploadCredentials(Credentials uploadCredentials) {
         this.uploadCredentials = uploadCredentials;
     }
@@ -67,6 +69,7 @@ public class RequestUploadCredentialsResult implements Serializable, Cloneable {
      *         storage location. These credentials have a limited lifespan and
      *         are valid only for the build they were issued for.
      */
+
     public Credentials getUploadCredentials() {
         return this.uploadCredentials;
     }
@@ -85,6 +88,7 @@ public class RequestUploadCredentialsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RequestUploadCredentialsResult withUploadCredentials(
             Credentials uploadCredentials) {
         setUploadCredentials(uploadCredentials);
@@ -93,40 +97,46 @@ public class RequestUploadCredentialsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * S3 path and key, identifying where the game build files are stored.
+     * Amazon S3 path and key, identifying where the game build files are
+     * stored.
      * </p>
      * 
      * @param storageLocation
-     *        S3 path and key, identifying where the game build files are
+     *        Amazon S3 path and key, identifying where the game build files are
      *        stored.
      */
+
     public void setStorageLocation(S3Location storageLocation) {
         this.storageLocation = storageLocation;
     }
 
     /**
      * <p>
-     * S3 path and key, identifying where the game build files are stored.
+     * Amazon S3 path and key, identifying where the game build files are
+     * stored.
      * </p>
      * 
-     * @return S3 path and key, identifying where the game build files are
-     *         stored.
+     * @return Amazon S3 path and key, identifying where the game build files
+     *         are stored.
      */
+
     public S3Location getStorageLocation() {
         return this.storageLocation;
     }
 
     /**
      * <p>
-     * S3 path and key, identifying where the game build files are stored.
+     * Amazon S3 path and key, identifying where the game build files are
+     * stored.
      * </p>
      * 
      * @param storageLocation
-     *        S3 path and key, identifying where the game build files are
+     *        Amazon S3 path and key, identifying where the game build files are
      *        stored.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RequestUploadCredentialsResult withStorageLocation(
             S3Location storageLocation) {
         setStorageLocation(storageLocation);

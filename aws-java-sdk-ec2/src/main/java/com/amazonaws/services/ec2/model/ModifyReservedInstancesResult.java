@@ -38,6 +38,7 @@ public class ModifyReservedInstancesResult implements Serializable, Cloneable {
      * @param reservedInstancesModificationId
      *        The ID for the modification.
      */
+
     public void setReservedInstancesModificationId(
             String reservedInstancesModificationId) {
         this.reservedInstancesModificationId = reservedInstancesModificationId;
@@ -50,6 +51,7 @@ public class ModifyReservedInstancesResult implements Serializable, Cloneable {
      * 
      * @return The ID for the modification.
      */
+
     public String getReservedInstancesModificationId() {
         return this.reservedInstancesModificationId;
     }
@@ -64,6 +66,7 @@ public class ModifyReservedInstancesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyReservedInstancesResult withReservedInstancesModificationId(
             String reservedInstancesModificationId) {
         setReservedInstancesModificationId(reservedInstancesModificationId);

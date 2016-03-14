@@ -30,6 +30,7 @@ public class ListJobsResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public java.util.List<Job> getJobs() {
         if (jobs == null) {
             jobs = new com.amazonaws.internal.SdkInternalList<Job>();
@@ -40,6 +41,7 @@ public class ListJobsResult implements Serializable, Cloneable {
     /**
      * @param jobs
      */
+
     public void setJobs(java.util.Collection<Job> jobs) {
         if (jobs == null) {
             this.jobs = null;
@@ -61,6 +63,7 @@ public class ListJobsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListJobsResult withJobs(Job... jobs) {
         if (this.jobs == null) {
             setJobs(new com.amazonaws.internal.SdkInternalList<Job>(jobs.length));
@@ -76,6 +79,7 @@ public class ListJobsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListJobsResult withJobs(java.util.Collection<Job> jobs) {
         setJobs(jobs);
         return this;
@@ -84,6 +88,7 @@ public class ListJobsResult implements Serializable, Cloneable {
     /**
      * @param isTruncated
      */
+
     public void setIsTruncated(Boolean isTruncated) {
         this.isTruncated = isTruncated;
     }
@@ -91,6 +96,7 @@ public class ListJobsResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Boolean getIsTruncated() {
         return this.isTruncated;
     }
@@ -100,6 +106,7 @@ public class ListJobsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListJobsResult withIsTruncated(Boolean isTruncated) {
         setIsTruncated(isTruncated);
         return this;
@@ -108,6 +115,7 @@ public class ListJobsResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Boolean isTruncated() {
         return this.isTruncated;
     }

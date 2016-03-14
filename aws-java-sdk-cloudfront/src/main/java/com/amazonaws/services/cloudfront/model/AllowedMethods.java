@@ -58,6 +58,7 @@ public class AllowedMethods implements Serializable, Cloneable {
      *        (for GET, HEAD and OPTIONS requests) and 7 (for GET, HEAD,
      *        OPTIONS, PUT, PATCH, POST, and DELETE requests).
      */
+
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
@@ -73,6 +74,7 @@ public class AllowedMethods implements Serializable, Cloneable {
      *         (for GET, HEAD and OPTIONS requests) and 7 (for GET, HEAD,
      *         OPTIONS, PUT, PATCH, POST, and DELETE requests).
      */
+
     public Integer getQuantity() {
         return this.quantity;
     }
@@ -91,6 +93,7 @@ public class AllowedMethods implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AllowedMethods withQuantity(Integer quantity) {
         setQuantity(quantity);
         return this;
@@ -104,6 +107,7 @@ public class AllowedMethods implements Serializable, Cloneable {
      *         CloudFront to process and forward to your origin.
      * @see Method
      */
+
     public java.util.List<String> getItems() {
         if (items == null) {
             items = new com.amazonaws.internal.SdkInternalList<String>();
@@ -120,6 +124,7 @@ public class AllowedMethods implements Serializable, Cloneable {
      *        CloudFront to process and forward to your origin.
      * @see Method
      */
+
     public void setItems(java.util.Collection<String> items) {
         if (items == null) {
             this.items = null;
@@ -146,6 +151,7 @@ public class AllowedMethods implements Serializable, Cloneable {
      *         chained together.
      * @see Method
      */
+
     public AllowedMethods withItems(String... items) {
         if (this.items == null) {
             setItems(new com.amazonaws.internal.SdkInternalList<String>(
@@ -168,6 +174,7 @@ public class AllowedMethods implements Serializable, Cloneable {
      *         chained together.
      * @see Method
      */
+
     public AllowedMethods withItems(java.util.Collection<String> items) {
         setItems(items);
         return this;
@@ -184,6 +191,7 @@ public class AllowedMethods implements Serializable, Cloneable {
      *         chained together.
      * @see Method
      */
+
     public AllowedMethods withItems(Method... items) {
         com.amazonaws.internal.SdkInternalList<String> itemsCopy = new com.amazonaws.internal.SdkInternalList<String>(
                 items.length);
@@ -201,6 +209,7 @@ public class AllowedMethods implements Serializable, Cloneable {
     /**
      * @param cachedMethods
      */
+
     public void setCachedMethods(CachedMethods cachedMethods) {
         this.cachedMethods = cachedMethods;
     }
@@ -208,6 +217,7 @@ public class AllowedMethods implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public CachedMethods getCachedMethods() {
         return this.cachedMethods;
     }
@@ -217,6 +227,7 @@ public class AllowedMethods implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AllowedMethods withCachedMethods(CachedMethods cachedMethods) {
         setCachedMethods(cachedMethods);
         return this;

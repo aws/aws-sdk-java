@@ -50,6 +50,7 @@ public class DetachAssessmentAndRulesPackageRequest extends
      *        The ARN specifying the assessment from which you want to detach a
      *        rules package.
      */
+
     public void setAssessmentArn(String assessmentArn) {
         this.assessmentArn = assessmentArn;
     }
@@ -63,6 +64,7 @@ public class DetachAssessmentAndRulesPackageRequest extends
      * @return The ARN specifying the assessment from which you want to detach a
      *         rules package.
      */
+
     public String getAssessmentArn() {
         return this.assessmentArn;
     }
@@ -79,6 +81,7 @@ public class DetachAssessmentAndRulesPackageRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DetachAssessmentAndRulesPackageRequest withAssessmentArn(
             String assessmentArn) {
         setAssessmentArn(assessmentArn);
@@ -95,6 +98,7 @@ public class DetachAssessmentAndRulesPackageRequest extends
      *        The ARN specifying the rules package that you want to detach from
      *        the assessment.
      */
+
     public void setRulesPackageArn(String rulesPackageArn) {
         this.rulesPackageArn = rulesPackageArn;
     }
@@ -108,6 +112,7 @@ public class DetachAssessmentAndRulesPackageRequest extends
      * @return The ARN specifying the rules package that you want to detach from
      *         the assessment.
      */
+
     public String getRulesPackageArn() {
         return this.rulesPackageArn;
     }
@@ -124,6 +129,7 @@ public class DetachAssessmentAndRulesPackageRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DetachAssessmentAndRulesPackageRequest withRulesPackageArn(
             String rulesPackageArn) {
         setRulesPackageArn(rulesPackageArn);

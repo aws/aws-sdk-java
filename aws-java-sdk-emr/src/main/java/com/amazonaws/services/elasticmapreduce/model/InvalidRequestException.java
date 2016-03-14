@@ -53,6 +53,7 @@ public class InvalidRequestException extends AmazonServiceException {
      * @param errorCode
      *        The error code associated with the exception.
      */
+
     public void setErrorCode(String errorCode) {
         this.errorCode = errorCode;
     }
@@ -64,6 +65,7 @@ public class InvalidRequestException extends AmazonServiceException {
      * 
      * @return The error code associated with the exception.
      */
+
     public String getErrorCode() {
         return this.errorCode;
     }
@@ -78,6 +80,7 @@ public class InvalidRequestException extends AmazonServiceException {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InvalidRequestException withErrorCode(String errorCode) {
         setErrorCode(errorCode);
         return this;

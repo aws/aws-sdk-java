@@ -41,6 +41,7 @@ public class DescribeEnvironmentResourcesResult implements Serializable,
      * @param environmentResources
      *        A list of <a>EnvironmentResourceDescription</a>.
      */
+
     public void setEnvironmentResources(
             EnvironmentResourceDescription environmentResources) {
         this.environmentResources = environmentResources;
@@ -53,6 +54,7 @@ public class DescribeEnvironmentResourcesResult implements Serializable,
      * 
      * @return A list of <a>EnvironmentResourceDescription</a>.
      */
+
     public EnvironmentResourceDescription getEnvironmentResources() {
         return this.environmentResources;
     }
@@ -67,6 +69,7 @@ public class DescribeEnvironmentResourcesResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeEnvironmentResourcesResult withEnvironmentResources(
             EnvironmentResourceDescription environmentResources) {
         setEnvironmentResources(environmentResources);

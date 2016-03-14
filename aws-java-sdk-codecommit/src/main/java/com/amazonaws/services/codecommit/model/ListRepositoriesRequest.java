@@ -63,6 +63,7 @@ public class ListRepositoriesRequest extends AmazonWebServiceRequest implements
      *        repository operations. When the client sends the token back to AWS
      *        CodeCommit, another page of 1,000 records is retrieved.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -80,6 +81,7 @@ public class ListRepositoriesRequest extends AmazonWebServiceRequest implements
      *         repository operations. When the client sends the token back to
      *         AWS CodeCommit, another page of 1,000 records is retrieved.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -100,6 +102,7 @@ public class ListRepositoriesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListRepositoriesRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -115,6 +118,7 @@ public class ListRepositoriesRequest extends AmazonWebServiceRequest implements
      *        operation.
      * @see SortByEnum
      */
+
     public void setSortBy(String sortBy) {
         this.sortBy = sortBy;
     }
@@ -128,6 +132,7 @@ public class ListRepositoriesRequest extends AmazonWebServiceRequest implements
      *         operation.
      * @see SortByEnum
      */
+
     public String getSortBy() {
         return this.sortBy;
     }
@@ -144,6 +149,7 @@ public class ListRepositoriesRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see SortByEnum
      */
+
     public ListRepositoriesRequest withSortBy(String sortBy) {
         setSortBy(sortBy);
         return this;
@@ -161,6 +167,7 @@ public class ListRepositoriesRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see SortByEnum
      */
+
     public void setSortBy(SortByEnum sortBy) {
         this.sortBy = sortBy.toString();
     }
@@ -177,6 +184,7 @@ public class ListRepositoriesRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see SortByEnum
      */
+
     public ListRepositoriesRequest withSortBy(SortByEnum sortBy) {
         setSortBy(sortBy);
         return this;
@@ -192,6 +200,7 @@ public class ListRepositoriesRequest extends AmazonWebServiceRequest implements
      *        operation.
      * @see OrderEnum
      */
+
     public void setOrder(String order) {
         this.order = order;
     }
@@ -205,6 +214,7 @@ public class ListRepositoriesRequest extends AmazonWebServiceRequest implements
      *         operation.
      * @see OrderEnum
      */
+
     public String getOrder() {
         return this.order;
     }
@@ -221,6 +231,7 @@ public class ListRepositoriesRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see OrderEnum
      */
+
     public ListRepositoriesRequest withOrder(String order) {
         setOrder(order);
         return this;
@@ -238,6 +249,7 @@ public class ListRepositoriesRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see OrderEnum
      */
+
     public void setOrder(OrderEnum order) {
         this.order = order.toString();
     }
@@ -254,6 +266,7 @@ public class ListRepositoriesRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see OrderEnum
      */
+
     public ListRepositoriesRequest withOrder(OrderEnum order) {
         setOrder(order);
         return this;

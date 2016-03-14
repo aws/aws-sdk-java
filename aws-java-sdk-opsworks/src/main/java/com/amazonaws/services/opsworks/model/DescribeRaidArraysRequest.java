@@ -60,6 +60,7 @@ public class DescribeRaidArraysRequest extends AmazonWebServiceRequest
      *        <code>DescribeRaidArrays</code> returns descriptions of the RAID
      *        arrays associated with the specified instance.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -75,6 +76,7 @@ public class DescribeRaidArraysRequest extends AmazonWebServiceRequest
      *         <code>DescribeRaidArrays</code> returns descriptions of the RAID
      *         arrays associated with the specified instance.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
@@ -93,6 +95,7 @@ public class DescribeRaidArraysRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeRaidArraysRequest withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;
@@ -106,6 +109,7 @@ public class DescribeRaidArraysRequest extends AmazonWebServiceRequest
      * @param stackId
      *        The stack ID.
      */
+
     public void setStackId(String stackId) {
         this.stackId = stackId;
     }
@@ -117,6 +121,7 @@ public class DescribeRaidArraysRequest extends AmazonWebServiceRequest
      * 
      * @return The stack ID.
      */
+
     public String getStackId() {
         return this.stackId;
     }
@@ -131,6 +136,7 @@ public class DescribeRaidArraysRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeRaidArraysRequest withStackId(String stackId) {
         setStackId(stackId);
         return this;
@@ -148,6 +154,7 @@ public class DescribeRaidArraysRequest extends AmazonWebServiceRequest
      *         specified arrays. Otherwise, it returns a description of every
      *         array.
      */
+
     public java.util.List<String> getRaidArrayIds() {
         if (raidArrayIds == null) {
             raidArrayIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -168,6 +175,7 @@ public class DescribeRaidArraysRequest extends AmazonWebServiceRequest
      *        specified arrays. Otherwise, it returns a description of every
      *        array.
      */
+
     public void setRaidArrayIds(java.util.Collection<String> raidArrayIds) {
         if (raidArrayIds == null) {
             this.raidArrayIds = null;
@@ -199,6 +207,7 @@ public class DescribeRaidArraysRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeRaidArraysRequest withRaidArrayIds(String... raidArrayIds) {
         if (this.raidArrayIds == null) {
             setRaidArrayIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -225,6 +234,7 @@ public class DescribeRaidArraysRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeRaidArraysRequest withRaidArrayIds(
             java.util.Collection<String> raidArrayIds) {
         setRaidArrayIds(raidArrayIds);

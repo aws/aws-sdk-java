@@ -45,6 +45,7 @@ public class DeleteApplicationRequest extends AmazonWebServiceRequest implements
      *        The name of an existing AWS CodeDeploy application associated with
      *        the applicable IAM user or AWS account.
      */
+
     public void setApplicationName(String applicationName) {
         this.applicationName = applicationName;
     }
@@ -58,6 +59,7 @@ public class DeleteApplicationRequest extends AmazonWebServiceRequest implements
      * @return The name of an existing AWS CodeDeploy application associated
      *         with the applicable IAM user or AWS account.
      */
+
     public String getApplicationName() {
         return this.applicationName;
     }
@@ -74,6 +76,7 @@ public class DeleteApplicationRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteApplicationRequest withApplicationName(String applicationName) {
         setApplicationName(applicationName);
         return this;

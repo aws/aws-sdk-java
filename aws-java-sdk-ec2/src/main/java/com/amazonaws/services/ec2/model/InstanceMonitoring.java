@@ -46,6 +46,7 @@ public class InstanceMonitoring implements Serializable, Cloneable {
      * @param instanceId
      *        The ID of the instance.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -57,6 +58,7 @@ public class InstanceMonitoring implements Serializable, Cloneable {
      * 
      * @return The ID of the instance.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
@@ -71,6 +73,7 @@ public class InstanceMonitoring implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceMonitoring withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;
@@ -84,6 +87,7 @@ public class InstanceMonitoring implements Serializable, Cloneable {
      * @param monitoring
      *        The monitoring information.
      */
+
     public void setMonitoring(Monitoring monitoring) {
         this.monitoring = monitoring;
     }
@@ -95,6 +99,7 @@ public class InstanceMonitoring implements Serializable, Cloneable {
      * 
      * @return The monitoring information.
      */
+
     public Monitoring getMonitoring() {
         return this.monitoring;
     }
@@ -109,6 +114,7 @@ public class InstanceMonitoring implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceMonitoring withMonitoring(Monitoring monitoring) {
         setMonitoring(monitoring);
         return this;

@@ -47,6 +47,7 @@ public class UpdateDataSourceRequest extends AmazonWebServiceRequest implements
      * @param dataSourceId
      *        The ID assigned to the <code>DataSource</code> during creation.
      */
+
     public void setDataSourceId(String dataSourceId) {
         this.dataSourceId = dataSourceId;
     }
@@ -58,6 +59,7 @@ public class UpdateDataSourceRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ID assigned to the <code>DataSource</code> during creation.
      */
+
     public String getDataSourceId() {
         return this.dataSourceId;
     }
@@ -72,6 +74,7 @@ public class UpdateDataSourceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateDataSourceRequest withDataSourceId(String dataSourceId) {
         setDataSourceId(dataSourceId);
         return this;
@@ -87,6 +90,7 @@ public class UpdateDataSourceRequest extends AmazonWebServiceRequest implements
      *        A new user-supplied name or description of the
      *        <code>DataSource</code> that will replace the current description.
      */
+
     public void setDataSourceName(String dataSourceName) {
         this.dataSourceName = dataSourceName;
     }
@@ -101,6 +105,7 @@ public class UpdateDataSourceRequest extends AmazonWebServiceRequest implements
      *         <code>DataSource</code> that will replace the current
      *         description.
      */
+
     public String getDataSourceName() {
         return this.dataSourceName;
     }
@@ -117,6 +122,7 @@ public class UpdateDataSourceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateDataSourceRequest withDataSourceName(String dataSourceName) {
         setDataSourceName(dataSourceName);
         return this;

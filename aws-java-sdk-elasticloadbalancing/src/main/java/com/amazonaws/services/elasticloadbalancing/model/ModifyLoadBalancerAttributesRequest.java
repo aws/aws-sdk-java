@@ -46,6 +46,7 @@ public class ModifyLoadBalancerAttributesRequest extends
      * @param loadBalancerName
      *        The name of the load balancer.
      */
+
     public void setLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
     }
@@ -57,6 +58,7 @@ public class ModifyLoadBalancerAttributesRequest extends
      * 
      * @return The name of the load balancer.
      */
+
     public String getLoadBalancerName() {
         return this.loadBalancerName;
     }
@@ -71,6 +73,7 @@ public class ModifyLoadBalancerAttributesRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyLoadBalancerAttributesRequest withLoadBalancerName(
             String loadBalancerName) {
         setLoadBalancerName(loadBalancerName);
@@ -85,6 +88,7 @@ public class ModifyLoadBalancerAttributesRequest extends
      * @param loadBalancerAttributes
      *        The attributes of the load balancer.
      */
+
     public void setLoadBalancerAttributes(
             LoadBalancerAttributes loadBalancerAttributes) {
         this.loadBalancerAttributes = loadBalancerAttributes;
@@ -97,6 +101,7 @@ public class ModifyLoadBalancerAttributesRequest extends
      * 
      * @return The attributes of the load balancer.
      */
+
     public LoadBalancerAttributes getLoadBalancerAttributes() {
         return this.loadBalancerAttributes;
     }
@@ -111,6 +116,7 @@ public class ModifyLoadBalancerAttributesRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyLoadBalancerAttributesRequest withLoadBalancerAttributes(
             LoadBalancerAttributes loadBalancerAttributes) {
         setLoadBalancerAttributes(loadBalancerAttributes);

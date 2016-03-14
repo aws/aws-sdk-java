@@ -500,6 +500,7 @@ public class SearchRequest extends AmazonWebServiceRequest implements
      *        >Paginating Results</a> in the <i>Amazon CloudSearch Developer
      *        Guide</i>.
      */
+
     public void setCursor(String cursor) {
         this.cursor = cursor;
     }
@@ -534,6 +535,7 @@ public class SearchRequest extends AmazonWebServiceRequest implements
      *         >Paginating Results</a> in the <i>Amazon CloudSearch Developer
      *         Guide</i>.
      */
+
     public String getCursor() {
         return this.cursor;
     }
@@ -571,6 +573,7 @@ public class SearchRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SearchRequest withCursor(String cursor) {
         setCursor(cursor);
         return this;
@@ -617,6 +620,7 @@ public class SearchRequest extends AmazonWebServiceRequest implements
      *        >Writing Expressions</a> in the <i>Amazon CloudSearch Developer
      *        Guide</i>.
      */
+
     public void setExpr(String expr) {
         this.expr = expr;
     }
@@ -661,6 +665,7 @@ public class SearchRequest extends AmazonWebServiceRequest implements
      *         >Writing Expressions</a> in the <i>Amazon CloudSearch Developer
      *         Guide</i>.
      */
+
     public String getExpr() {
         return this.expr;
     }
@@ -708,6 +713,7 @@ public class SearchRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SearchRequest withExpr(String expr) {
         setExpr(expr);
         return this;
@@ -887,6 +893,7 @@ public class SearchRequest extends AmazonWebServiceRequest implements
      *        >Getting and Using Facet Information</a> in the <i>Amazon
      *        CloudSearch Developer Guide</i>.
      */
+
     public void setFacet(String facet) {
         this.facet = facet;
     }
@@ -1064,6 +1071,7 @@ public class SearchRequest extends AmazonWebServiceRequest implements
      *         >Getting and Using Facet Information</a> in the <i>Amazon
      *         CloudSearch Developer Guide</i>.
      */
+
     public String getFacet() {
         return this.facet;
     }
@@ -1244,6 +1252,7 @@ public class SearchRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SearchRequest withFacet(String facet) {
         setFacet(facet);
         return this;
@@ -1283,6 +1292,7 @@ public class SearchRequest extends AmazonWebServiceRequest implements
      *        >Filtering Matching Documents</a> in the <i>Amazon CloudSearch
      *        Developer Guide</i>.
      */
+
     public void setFilterQuery(String filterQuery) {
         this.filterQuery = filterQuery;
     }
@@ -1320,6 +1330,7 @@ public class SearchRequest extends AmazonWebServiceRequest implements
      *         >Filtering Matching Documents</a> in the <i>Amazon CloudSearch
      *         Developer Guide</i>.
      */
+
     public String getFilterQuery() {
         return this.filterQuery;
     }
@@ -1360,6 +1371,7 @@ public class SearchRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SearchRequest withFilterQuery(String filterQuery) {
         setFilterQuery(filterQuery);
         return this;
@@ -1448,6 +1460,7 @@ public class SearchRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        <code>{ "actors": {}, "title": {"format": "text","max_phrases": 2,"pre_tag": "<b>","post_tag": "</b>"} }</code>
      */
+
     public void setHighlight(String highlight) {
         this.highlight = highlight;
     }
@@ -1534,6 +1547,7 @@ public class SearchRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         <code>{ "actors": {}, "title": {"format": "text","max_phrases": 2,"pre_tag": "<b>","post_tag": "</b>"} }</code>
      */
+
     public String getHighlight() {
         return this.highlight;
     }
@@ -1623,6 +1637,7 @@ public class SearchRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SearchRequest withHighlight(String highlight) {
         setHighlight(highlight);
         return this;
@@ -1658,6 +1673,7 @@ public class SearchRequest extends AmazonWebServiceRequest implements
      *        indicating that the results might be incomplete due to a temporary
      *        system outage.
      */
+
     public void setPartial(Boolean partial) {
         this.partial = partial;
     }
@@ -1691,6 +1707,7 @@ public class SearchRequest extends AmazonWebServiceRequest implements
      *         a message indicating that the results might be incomplete due to
      *         a temporary system outage.
      */
+
     public Boolean getPartial() {
         return this.partial;
     }
@@ -1727,6 +1744,7 @@ public class SearchRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SearchRequest withPartial(Boolean partial) {
         setPartial(partial);
         return this;
@@ -1761,6 +1779,7 @@ public class SearchRequest extends AmazonWebServiceRequest implements
      *         a message indicating that the results might be incomplete due to
      *         a temporary system outage.
      */
+
     public Boolean isPartial() {
         return this.partial;
     }
@@ -1797,6 +1816,7 @@ public class SearchRequest extends AmazonWebServiceRequest implements
      *        >Searching Your Data</a> in the <i>Amazon CloudSearch Developer
      *        Guide</i>.
      */
+
     public void setQuery(String query) {
         this.query = query;
     }
@@ -1833,6 +1853,7 @@ public class SearchRequest extends AmazonWebServiceRequest implements
      *         >Searching Your Data</a> in the <i>Amazon CloudSearch Developer
      *         Guide</i>.
      */
+
     public String getQuery() {
         return this.query;
     }
@@ -1871,6 +1892,7 @@ public class SearchRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SearchRequest withQuery(String query) {
         setQuery(query);
         return this;
@@ -2103,6 +2125,7 @@ public class SearchRequest extends AmazonWebServiceRequest implements
      *        <code>"tieBreaker":1</code>. Valid values: 0.0 to 1.0. Default:
      *        0.0. Valid for: <code>dismax</code>.</li>
      */
+
     public void setQueryOptions(String queryOptions) {
         this.queryOptions = queryOptions;
     }
@@ -2334,6 +2357,7 @@ public class SearchRequest extends AmazonWebServiceRequest implements
      *         <code>"tieBreaker":1</code>. Valid values: 0.0 to 1.0. Default:
      *         0.0. Valid for: <code>dismax</code>.</li>
      */
+
     public String getQueryOptions() {
         return this.queryOptions;
     }
@@ -2567,6 +2591,7 @@ public class SearchRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SearchRequest withQueryOptions(String queryOptions) {
         setQueryOptions(queryOptions);
         return this;
@@ -2663,6 +2688,7 @@ public class SearchRequest extends AmazonWebServiceRequest implements
      *        >DisMax Query Parser Syntax</a>.</li>
      * @see QueryParser
      */
+
     public void setQueryParser(String queryParser) {
         this.queryParser = queryParser;
     }
@@ -2757,6 +2783,7 @@ public class SearchRequest extends AmazonWebServiceRequest implements
      *         >DisMax Query Parser Syntax</a>.</li>
      * @see QueryParser
      */
+
     public String getQueryParser() {
         return this.queryParser;
     }
@@ -2854,6 +2881,7 @@ public class SearchRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see QueryParser
      */
+
     public SearchRequest withQueryParser(String queryParser) {
         setQueryParser(queryParser);
         return this;
@@ -2952,6 +2980,7 @@ public class SearchRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see QueryParser
      */
+
     public void setQueryParser(QueryParser queryParser) {
         this.queryParser = queryParser.toString();
     }
@@ -3049,6 +3078,7 @@ public class SearchRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see QueryParser
      */
+
     public SearchRequest withQueryParser(QueryParser queryParser) {
         setQueryParser(queryParser);
         return this;
@@ -3074,6 +3104,7 @@ public class SearchRequest extends AmazonWebServiceRequest implements
      *        <code>_no_fields</code>. To retrieve the relevance score
      *        calculated for each document, specify <code>_score</code>.
      */
+
     public void setReturn(String returnValue) {
         this.returnValue = returnValue;
     }
@@ -3097,6 +3128,7 @@ public class SearchRequest extends AmazonWebServiceRequest implements
      *         <code>_no_fields</code>. To retrieve the relevance score
      *         calculated for each document, specify <code>_score</code>.
      */
+
     public String getReturn() {
         return this.returnValue;
     }
@@ -3123,6 +3155,7 @@ public class SearchRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SearchRequest withReturn(String returnValue) {
         setReturn(returnValue);
         return this;
@@ -3137,6 +3170,7 @@ public class SearchRequest extends AmazonWebServiceRequest implements
      *        Specifies the maximum number of search hits to include in the
      *        response.
      */
+
     public void setSize(Long size) {
         this.size = size;
     }
@@ -3149,6 +3183,7 @@ public class SearchRequest extends AmazonWebServiceRequest implements
      * @return Specifies the maximum number of search hits to include in the
      *         response.
      */
+
     public Long getSize() {
         return this.size;
     }
@@ -3164,6 +3199,7 @@ public class SearchRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SearchRequest withSize(Long size) {
         setSize(size);
         return this;
@@ -3207,6 +3243,7 @@ public class SearchRequest extends AmazonWebServiceRequest implements
      *        >Sorting Results</a> in the <i>Amazon CloudSearch Developer
      *        Guide</i>.
      */
+
     public void setSort(String sort) {
         this.sort = sort;
     }
@@ -3248,6 +3285,7 @@ public class SearchRequest extends AmazonWebServiceRequest implements
      *         >Sorting Results</a> in the <i>Amazon CloudSearch Developer
      *         Guide</i>.
      */
+
     public String getSort() {
         return this.sort;
     }
@@ -3292,6 +3330,7 @@ public class SearchRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SearchRequest withSort(String sort) {
         setSort(sort);
         return this;
@@ -3322,6 +3361,7 @@ public class SearchRequest extends AmazonWebServiceRequest implements
      *        >Paginating Results</a> in the <i>Amazon CloudSearch Developer
      *        Guide</i>.
      */
+
     public void setStart(Long start) {
         this.start = start;
     }
@@ -3350,6 +3390,7 @@ public class SearchRequest extends AmazonWebServiceRequest implements
      *         >Paginating Results</a> in the <i>Amazon CloudSearch Developer
      *         Guide</i>.
      */
+
     public Long getStart() {
         return this.start;
     }
@@ -3381,6 +3422,7 @@ public class SearchRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SearchRequest withStart(Long start) {
         setStart(start);
         return this;
@@ -3405,6 +3447,7 @@ public class SearchRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        There are currently no options supported for statistics.
      */
+
     public void setStats(String stats) {
         this.stats = stats;
     }
@@ -3427,6 +3470,7 @@ public class SearchRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         There are currently no options supported for statistics.
      */
+
     public String getStats() {
         return this.stats;
     }
@@ -3452,6 +3496,7 @@ public class SearchRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SearchRequest withStats(String stats) {
         setStats(stats);
         return this;

@@ -55,6 +55,7 @@ public class UpdateFleetPortSettingsRequest extends AmazonWebServiceRequest
      *        Unique identifier for the fleet you want to update port settings
      *        for.
      */
+
     public void setFleetId(String fleetId) {
         this.fleetId = fleetId;
     }
@@ -67,6 +68,7 @@ public class UpdateFleetPortSettingsRequest extends AmazonWebServiceRequest
      * @return Unique identifier for the fleet you want to update port settings
      *         for.
      */
+
     public String getFleetId() {
         return this.fleetId;
     }
@@ -82,6 +84,7 @@ public class UpdateFleetPortSettingsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateFleetPortSettingsRequest withFleetId(String fleetId) {
         setFleetId(fleetId);
         return this;
@@ -94,6 +97,7 @@ public class UpdateFleetPortSettingsRequest extends AmazonWebServiceRequest
      * 
      * @return Collection of port settings to be added to the fleet record.
      */
+
     public java.util.List<IpPermission> getInboundPermissionAuthorizations() {
         return inboundPermissionAuthorizations;
     }
@@ -106,6 +110,7 @@ public class UpdateFleetPortSettingsRequest extends AmazonWebServiceRequest
      * @param inboundPermissionAuthorizations
      *        Collection of port settings to be added to the fleet record.
      */
+
     public void setInboundPermissionAuthorizations(
             java.util.Collection<IpPermission> inboundPermissionAuthorizations) {
         if (inboundPermissionAuthorizations == null) {
@@ -134,6 +139,7 @@ public class UpdateFleetPortSettingsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateFleetPortSettingsRequest withInboundPermissionAuthorizations(
             IpPermission... inboundPermissionAuthorizations) {
         if (this.inboundPermissionAuthorizations == null) {
@@ -156,6 +162,7 @@ public class UpdateFleetPortSettingsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateFleetPortSettingsRequest withInboundPermissionAuthorizations(
             java.util.Collection<IpPermission> inboundPermissionAuthorizations) {
         setInboundPermissionAuthorizations(inboundPermissionAuthorizations);
@@ -169,6 +176,7 @@ public class UpdateFleetPortSettingsRequest extends AmazonWebServiceRequest
      * 
      * @return Collection of port settings to be removed from the fleet record.
      */
+
     public java.util.List<IpPermission> getInboundPermissionRevocations() {
         return inboundPermissionRevocations;
     }
@@ -181,6 +189,7 @@ public class UpdateFleetPortSettingsRequest extends AmazonWebServiceRequest
      * @param inboundPermissionRevocations
      *        Collection of port settings to be removed from the fleet record.
      */
+
     public void setInboundPermissionRevocations(
             java.util.Collection<IpPermission> inboundPermissionRevocations) {
         if (inboundPermissionRevocations == null) {
@@ -208,6 +217,7 @@ public class UpdateFleetPortSettingsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateFleetPortSettingsRequest withInboundPermissionRevocations(
             IpPermission... inboundPermissionRevocations) {
         if (this.inboundPermissionRevocations == null) {
@@ -230,6 +240,7 @@ public class UpdateFleetPortSettingsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateFleetPortSettingsRequest withInboundPermissionRevocations(
             java.util.Collection<IpPermission> inboundPermissionRevocations) {
         setInboundPermissionRevocations(inboundPermissionRevocations);

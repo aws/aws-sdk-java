@@ -42,6 +42,7 @@ public class ListTagsForDomainRequest extends AmazonWebServiceRequest implements
      * @param domainName
      *        The domain for which you want to get a list of tags.
      */
+
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
@@ -53,6 +54,7 @@ public class ListTagsForDomainRequest extends AmazonWebServiceRequest implements
      * 
      * @return The domain for which you want to get a list of tags.
      */
+
     public String getDomainName() {
         return this.domainName;
     }
@@ -67,6 +69,7 @@ public class ListTagsForDomainRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTagsForDomainRequest withDomainName(String domainName) {
         setDomainName(domainName);
         return this;

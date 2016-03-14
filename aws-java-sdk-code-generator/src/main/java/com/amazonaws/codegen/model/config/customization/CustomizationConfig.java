@@ -18,7 +18,6 @@ package com.amazonaws.codegen.model.config.customization;
 import java.util.List;
 import java.util.Map;
 
-import com.amazonaws.Request;
 import com.amazonaws.codegen.model.config.ConstructorFormsWrapper;
 import com.amazonaws.codegen.model.config.templates.CodeGenTemplatesConfig;
 
@@ -63,14 +62,14 @@ public class CustomizationConfig {
     private String customExceptionUnmarshallerImpl;
 
     /**
-     * Call to a constructor, factory method, or constant that returns an implementation of
-     * ClientConfiguration that should be used by the client when an explicit ClientConfiguration is
-     * not provided in the service client's constructor.
+     * Fully qualified class name of the client configuration factory to use when producing
+     * client configurations for this client.  This factory is called when an explicit
+     * ClientConfiguration is not provided in the service client's constructor.
      * <p>
-     * Example: "com.amazonaws.retry.PredefinedClientConfigurations.dynamoDefault()"
+     * Example: "com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientConfigurationFactory"
      * </p>
      */
-    private String customClientConfiguration;
+    private String customClientConfigFactory;
 
     /**
      * The name of the custom class returned by the client method getCacheResponseMetadata.
@@ -171,12 +170,10 @@ public class CustomizationConfig {
         this.customExceptionUnmarshallerImpl = customExceptionUnmarshallerImpl;
     }
 
-    public String getCustomClientConfiguration() {
-        return customClientConfiguration;
-    }
+    public String getCustomClientConfigFactory() { return customClientConfigFactory; }
 
-    public void setCustomClientConfiguration(String customClientConfiguration) {
-        this.customClientConfiguration = customClientConfiguration;
+    public void setCustomClientConfigFactory(String customClientConfigFactory) {
+        this.customClientConfigFactory = customClientConfigFactory;
     }
 
     public String getCustomResponseMetadataClassName() {

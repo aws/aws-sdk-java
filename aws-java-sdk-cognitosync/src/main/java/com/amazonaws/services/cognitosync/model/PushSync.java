@@ -47,6 +47,7 @@ public class PushSync implements Serializable, Cloneable {
      * @return List of SNS platform application ARNs that could be used by
      *         clients.
      */
+
     public java.util.List<String> getApplicationArns() {
         if (applicationArns == null) {
             applicationArns = new com.amazonaws.internal.SdkInternalList<String>();
@@ -63,6 +64,7 @@ public class PushSync implements Serializable, Cloneable {
      *        List of SNS platform application ARNs that could be used by
      *        clients.
      */
+
     public void setApplicationArns(java.util.Collection<String> applicationArns) {
         if (applicationArns == null) {
             this.applicationArns = null;
@@ -90,6 +92,7 @@ public class PushSync implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PushSync withApplicationArns(String... applicationArns) {
         if (this.applicationArns == null) {
             setApplicationArns(new com.amazonaws.internal.SdkInternalList<String>(
@@ -112,6 +115,7 @@ public class PushSync implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PushSync withApplicationArns(
             java.util.Collection<String> applicationArns) {
         setApplicationArns(applicationArns);
@@ -128,6 +132,7 @@ public class PushSync implements Serializable, Cloneable {
      *        A role configured to allow Cognito to call SNS on behalf of the
      *        developer.
      */
+
     public void setRoleArn(String roleArn) {
         this.roleArn = roleArn;
     }
@@ -141,6 +146,7 @@ public class PushSync implements Serializable, Cloneable {
      * @return A role configured to allow Cognito to call SNS on behalf of the
      *         developer.
      */
+
     public String getRoleArn() {
         return this.roleArn;
     }
@@ -157,6 +163,7 @@ public class PushSync implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PushSync withRoleArn(String roleArn) {
         setRoleArn(roleArn);
         return this;

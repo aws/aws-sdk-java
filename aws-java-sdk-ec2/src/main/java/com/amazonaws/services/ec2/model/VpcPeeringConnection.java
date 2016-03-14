@@ -70,6 +70,7 @@ public class VpcPeeringConnection implements Serializable, Cloneable {
      * @param accepterVpcInfo
      *        The information of the peer VPC.
      */
+
     public void setAccepterVpcInfo(VpcPeeringConnectionVpcInfo accepterVpcInfo) {
         this.accepterVpcInfo = accepterVpcInfo;
     }
@@ -81,6 +82,7 @@ public class VpcPeeringConnection implements Serializable, Cloneable {
      * 
      * @return The information of the peer VPC.
      */
+
     public VpcPeeringConnectionVpcInfo getAccepterVpcInfo() {
         return this.accepterVpcInfo;
     }
@@ -95,6 +97,7 @@ public class VpcPeeringConnection implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VpcPeeringConnection withAccepterVpcInfo(
             VpcPeeringConnectionVpcInfo accepterVpcInfo) {
         setAccepterVpcInfo(accepterVpcInfo);
@@ -109,6 +112,7 @@ public class VpcPeeringConnection implements Serializable, Cloneable {
      * @param expirationTime
      *        The time that an unaccepted VPC peering connection will expire.
      */
+
     public void setExpirationTime(java.util.Date expirationTime) {
         this.expirationTime = expirationTime;
     }
@@ -120,6 +124,7 @@ public class VpcPeeringConnection implements Serializable, Cloneable {
      * 
      * @return The time that an unaccepted VPC peering connection will expire.
      */
+
     public java.util.Date getExpirationTime() {
         return this.expirationTime;
     }
@@ -134,6 +139,7 @@ public class VpcPeeringConnection implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VpcPeeringConnection withExpirationTime(java.util.Date expirationTime) {
         setExpirationTime(expirationTime);
         return this;
@@ -147,6 +153,7 @@ public class VpcPeeringConnection implements Serializable, Cloneable {
      * @param requesterVpcInfo
      *        The information of the requester VPC.
      */
+
     public void setRequesterVpcInfo(VpcPeeringConnectionVpcInfo requesterVpcInfo) {
         this.requesterVpcInfo = requesterVpcInfo;
     }
@@ -158,6 +165,7 @@ public class VpcPeeringConnection implements Serializable, Cloneable {
      * 
      * @return The information of the requester VPC.
      */
+
     public VpcPeeringConnectionVpcInfo getRequesterVpcInfo() {
         return this.requesterVpcInfo;
     }
@@ -172,6 +180,7 @@ public class VpcPeeringConnection implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VpcPeeringConnection withRequesterVpcInfo(
             VpcPeeringConnectionVpcInfo requesterVpcInfo) {
         setRequesterVpcInfo(requesterVpcInfo);
@@ -186,6 +195,7 @@ public class VpcPeeringConnection implements Serializable, Cloneable {
      * @param status
      *        The status of the VPC peering connection.
      */
+
     public void setStatus(VpcPeeringConnectionStateReason status) {
         this.status = status;
     }
@@ -197,6 +207,7 @@ public class VpcPeeringConnection implements Serializable, Cloneable {
      * 
      * @return The status of the VPC peering connection.
      */
+
     public VpcPeeringConnectionStateReason getStatus() {
         return this.status;
     }
@@ -211,6 +222,7 @@ public class VpcPeeringConnection implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VpcPeeringConnection withStatus(
             VpcPeeringConnectionStateReason status) {
         setStatus(status);
@@ -224,6 +236,7 @@ public class VpcPeeringConnection implements Serializable, Cloneable {
      * 
      * @return Any tags assigned to the resource.
      */
+
     public java.util.List<Tag> getTags() {
         if (tags == null) {
             tags = new com.amazonaws.internal.SdkInternalList<Tag>();
@@ -239,6 +252,7 @@ public class VpcPeeringConnection implements Serializable, Cloneable {
      * @param tags
      *        Any tags assigned to the resource.
      */
+
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
             this.tags = null;
@@ -264,6 +278,7 @@ public class VpcPeeringConnection implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VpcPeeringConnection withTags(Tag... tags) {
         if (this.tags == null) {
             setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
@@ -284,6 +299,7 @@ public class VpcPeeringConnection implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VpcPeeringConnection withTags(java.util.Collection<Tag> tags) {
         setTags(tags);
         return this;
@@ -297,6 +313,7 @@ public class VpcPeeringConnection implements Serializable, Cloneable {
      * @param vpcPeeringConnectionId
      *        The ID of the VPC peering connection.
      */
+
     public void setVpcPeeringConnectionId(String vpcPeeringConnectionId) {
         this.vpcPeeringConnectionId = vpcPeeringConnectionId;
     }
@@ -308,6 +325,7 @@ public class VpcPeeringConnection implements Serializable, Cloneable {
      * 
      * @return The ID of the VPC peering connection.
      */
+
     public String getVpcPeeringConnectionId() {
         return this.vpcPeeringConnectionId;
     }
@@ -322,6 +340,7 @@ public class VpcPeeringConnection implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VpcPeeringConnection withVpcPeeringConnectionId(
             String vpcPeeringConnectionId) {
         setVpcPeeringConnectionId(vpcPeeringConnectionId);

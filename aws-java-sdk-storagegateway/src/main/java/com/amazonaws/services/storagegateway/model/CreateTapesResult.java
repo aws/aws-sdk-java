@@ -42,6 +42,7 @@ public class CreateTapesResult implements Serializable, Cloneable {
      * @return A list of unique Amazon Resource Names (ARNs) that represents the
      *         virtual tapes that were created.
      */
+
     public java.util.List<String> getTapeARNs() {
         if (tapeARNs == null) {
             tapeARNs = new com.amazonaws.internal.SdkInternalList<String>();
@@ -59,6 +60,7 @@ public class CreateTapesResult implements Serializable, Cloneable {
      *        A list of unique Amazon Resource Names (ARNs) that represents the
      *        virtual tapes that were created.
      */
+
     public void setTapeARNs(java.util.Collection<String> tapeARNs) {
         if (tapeARNs == null) {
             this.tapeARNs = null;
@@ -87,6 +89,7 @@ public class CreateTapesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateTapesResult withTapeARNs(String... tapeARNs) {
         if (this.tapeARNs == null) {
             setTapeARNs(new com.amazonaws.internal.SdkInternalList<String>(
@@ -110,6 +113,7 @@ public class CreateTapesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateTapesResult withTapeARNs(java.util.Collection<String> tapeARNs) {
         setTapeARNs(tapeARNs);
         return this;

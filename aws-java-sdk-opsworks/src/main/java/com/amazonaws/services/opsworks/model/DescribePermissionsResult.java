@@ -74,6 +74,7 @@ public class DescribePermissionsResult implements Serializable, Cloneable {
      *         contains a single <code>Permission</code> object with permissions
      *         for the specified stack and IAM ARN.</li>
      */
+
     public java.util.List<Permission> getPermissions() {
         if (permissions == null) {
             permissions = new com.amazonaws.internal.SdkInternalList<Permission>();
@@ -112,6 +113,7 @@ public class DescribePermissionsResult implements Serializable, Cloneable {
      *        contains a single <code>Permission</code> object with permissions
      *        for the specified stack and IAM ARN.</li>
      */
+
     public void setPermissions(java.util.Collection<Permission> permissions) {
         if (permissions == null) {
             this.permissions = null;
@@ -161,6 +163,7 @@ public class DescribePermissionsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribePermissionsResult withPermissions(Permission... permissions) {
         if (this.permissions == null) {
             setPermissions(new com.amazonaws.internal.SdkInternalList<Permission>(
@@ -205,6 +208,7 @@ public class DescribePermissionsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribePermissionsResult withPermissions(
             java.util.Collection<Permission> permissions) {
         setPermissions(permissions);

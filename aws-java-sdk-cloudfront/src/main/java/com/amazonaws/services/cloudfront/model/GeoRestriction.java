@@ -121,6 +121,7 @@ public class GeoRestriction implements Serializable, Cloneable {
      *        you want CloudFront to distribute your content.
      * @see GeoRestrictionType
      */
+
     public void setRestrictionType(String restrictionType) {
         this.restrictionType = restrictionType;
     }
@@ -143,6 +144,7 @@ public class GeoRestriction implements Serializable, Cloneable {
      *         in which you want CloudFront to distribute your content.
      * @see GeoRestrictionType
      */
+
     public String getRestrictionType() {
         return this.restrictionType;
     }
@@ -168,6 +170,7 @@ public class GeoRestriction implements Serializable, Cloneable {
      *         chained together.
      * @see GeoRestrictionType
      */
+
     public GeoRestriction withRestrictionType(String restrictionType) {
         setRestrictionType(restrictionType);
         return this;
@@ -194,6 +197,7 @@ public class GeoRestriction implements Serializable, Cloneable {
      *         chained together.
      * @see GeoRestrictionType
      */
+
     public void setRestrictionType(GeoRestrictionType restrictionType) {
         this.restrictionType = restrictionType.toString();
     }
@@ -219,6 +223,7 @@ public class GeoRestriction implements Serializable, Cloneable {
      *         chained together.
      * @see GeoRestrictionType
      */
+
     public GeoRestriction withRestrictionType(GeoRestrictionType restrictionType) {
         setRestrictionType(restrictionType);
         return this;
@@ -234,6 +239,7 @@ public class GeoRestriction implements Serializable, Cloneable {
      *        in your whitelist or blacklist. Otherwise, when it is not enabled,
      *        Quantity is 0, and you can omit Items.
      */
+
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
@@ -247,6 +253,7 @@ public class GeoRestriction implements Serializable, Cloneable {
      *         in your whitelist or blacklist. Otherwise, when it is not
      *         enabled, Quantity is 0, and you can omit Items.
      */
+
     public Integer getQuantity() {
         return this.quantity;
     }
@@ -263,6 +270,7 @@ public class GeoRestriction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GeoRestriction withQuantity(Integer quantity) {
         setQuantity(quantity);
         return this;
@@ -292,6 +300,7 @@ public class GeoRestriction implements Serializable, Cloneable {
      *         website. You can also refer to the country list in the CloudFront
      *         console, which includes both country names and codes.
      */
+
     public java.util.List<String> getItems() {
         if (items == null) {
             items = new com.amazonaws.internal.SdkInternalList<String>();
@@ -324,6 +333,7 @@ public class GeoRestriction implements Serializable, Cloneable {
      *        can also refer to the country list in the CloudFront console,
      *        which includes both country names and codes.
      */
+
     public void setItems(java.util.Collection<String> items) {
         if (items == null) {
             this.items = null;
@@ -366,6 +376,7 @@ public class GeoRestriction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GeoRestriction withItems(String... items) {
         if (this.items == null) {
             setItems(new com.amazonaws.internal.SdkInternalList<String>(
@@ -404,6 +415,7 @@ public class GeoRestriction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GeoRestriction withItems(java.util.Collection<String> items) {
         setItems(items);
         return this;

@@ -38,6 +38,7 @@ public class ImportInstanceResult implements Serializable, Cloneable {
      * @param conversionTask
      *        Information about the conversion task.
      */
+
     public void setConversionTask(ConversionTask conversionTask) {
         this.conversionTask = conversionTask;
     }
@@ -49,6 +50,7 @@ public class ImportInstanceResult implements Serializable, Cloneable {
      * 
      * @return Information about the conversion task.
      */
+
     public ConversionTask getConversionTask() {
         return this.conversionTask;
     }
@@ -63,6 +65,7 @@ public class ImportInstanceResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ImportInstanceResult withConversionTask(ConversionTask conversionTask) {
         setConversionTask(conversionTask);
         return this;

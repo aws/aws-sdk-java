@@ -55,6 +55,7 @@ public class ExecutionDetails implements Serializable, Cloneable {
      * @param summary
      *        The summary of the current status of the actions.
      */
+
     public void setSummary(String summary) {
         this.summary = summary;
     }
@@ -66,6 +67,7 @@ public class ExecutionDetails implements Serializable, Cloneable {
      * 
      * @return The summary of the current status of the actions.
      */
+
     public String getSummary() {
         return this.summary;
     }
@@ -80,6 +82,7 @@ public class ExecutionDetails implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ExecutionDetails withSummary(String summary) {
         setSummary(summary);
         return this;
@@ -95,6 +98,7 @@ public class ExecutionDetails implements Serializable, Cloneable {
      *        The system-generated unique ID of this action used to identify
      *        this job worker in any external systems, such as AWS CodeDeploy.
      */
+
     public void setExternalExecutionId(String externalExecutionId) {
         this.externalExecutionId = externalExecutionId;
     }
@@ -108,6 +112,7 @@ public class ExecutionDetails implements Serializable, Cloneable {
      * @return The system-generated unique ID of this action used to identify
      *         this job worker in any external systems, such as AWS CodeDeploy.
      */
+
     public String getExternalExecutionId() {
         return this.externalExecutionId;
     }
@@ -124,6 +129,7 @@ public class ExecutionDetails implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ExecutionDetails withExternalExecutionId(String externalExecutionId) {
         setExternalExecutionId(externalExecutionId);
         return this;
@@ -139,6 +145,7 @@ public class ExecutionDetails implements Serializable, Cloneable {
      *        The percentage of work completed on the action, represented on a
      *        scale of zero to one hundred percent.
      */
+
     public void setPercentComplete(Integer percentComplete) {
         this.percentComplete = percentComplete;
     }
@@ -152,6 +159,7 @@ public class ExecutionDetails implements Serializable, Cloneable {
      * @return The percentage of work completed on the action, represented on a
      *         scale of zero to one hundred percent.
      */
+
     public Integer getPercentComplete() {
         return this.percentComplete;
     }
@@ -168,6 +176,7 @@ public class ExecutionDetails implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ExecutionDetails withPercentComplete(Integer percentComplete) {
         setPercentComplete(percentComplete);
         return this;

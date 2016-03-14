@@ -73,6 +73,7 @@ public class StackResourceSummary implements Serializable, Cloneable {
      * @param logicalResourceId
      *        The logical name of the resource specified in the template.
      */
+
     public void setLogicalResourceId(String logicalResourceId) {
         this.logicalResourceId = logicalResourceId;
     }
@@ -84,6 +85,7 @@ public class StackResourceSummary implements Serializable, Cloneable {
      * 
      * @return The logical name of the resource specified in the template.
      */
+
     public String getLogicalResourceId() {
         return this.logicalResourceId;
     }
@@ -98,6 +100,7 @@ public class StackResourceSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StackResourceSummary withLogicalResourceId(String logicalResourceId) {
         setLogicalResourceId(logicalResourceId);
         return this;
@@ -113,6 +116,7 @@ public class StackResourceSummary implements Serializable, Cloneable {
      *        The name or unique identifier that corresponds to a physical
      *        instance ID of the resource.
      */
+
     public void setPhysicalResourceId(String physicalResourceId) {
         this.physicalResourceId = physicalResourceId;
     }
@@ -126,6 +130,7 @@ public class StackResourceSummary implements Serializable, Cloneable {
      * @return The name or unique identifier that corresponds to a physical
      *         instance ID of the resource.
      */
+
     public String getPhysicalResourceId() {
         return this.physicalResourceId;
     }
@@ -142,6 +147,7 @@ public class StackResourceSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StackResourceSummary withPhysicalResourceId(String physicalResourceId) {
         setPhysicalResourceId(physicalResourceId);
         return this;
@@ -160,6 +166,7 @@ public class StackResourceSummary implements Serializable, Cloneable {
      *        > AWS Resource Types Reference</a> in the AWS CloudFormation User
      *        Guide.)
      */
+
     public void setResourceType(String resourceType) {
         this.resourceType = resourceType;
     }
@@ -176,6 +183,7 @@ public class StackResourceSummary implements Serializable, Cloneable {
      *         > AWS Resource Types Reference</a> in the AWS CloudFormation User
      *         Guide.)
      */
+
     public String getResourceType() {
         return this.resourceType;
     }
@@ -195,6 +203,7 @@ public class StackResourceSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StackResourceSummary withResourceType(String resourceType) {
         setResourceType(resourceType);
         return this;
@@ -208,6 +217,7 @@ public class StackResourceSummary implements Serializable, Cloneable {
      * @param lastUpdatedTimestamp
      *        Time the status was updated.
      */
+
     public void setLastUpdatedTimestamp(java.util.Date lastUpdatedTimestamp) {
         this.lastUpdatedTimestamp = lastUpdatedTimestamp;
     }
@@ -219,6 +229,7 @@ public class StackResourceSummary implements Serializable, Cloneable {
      * 
      * @return Time the status was updated.
      */
+
     public java.util.Date getLastUpdatedTimestamp() {
         return this.lastUpdatedTimestamp;
     }
@@ -233,6 +244,7 @@ public class StackResourceSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StackResourceSummary withLastUpdatedTimestamp(
             java.util.Date lastUpdatedTimestamp) {
         setLastUpdatedTimestamp(lastUpdatedTimestamp);
@@ -248,6 +260,7 @@ public class StackResourceSummary implements Serializable, Cloneable {
      *        Current status of the resource.
      * @see ResourceStatus
      */
+
     public void setResourceStatus(String resourceStatus) {
         this.resourceStatus = resourceStatus;
     }
@@ -260,6 +273,7 @@ public class StackResourceSummary implements Serializable, Cloneable {
      * @return Current status of the resource.
      * @see ResourceStatus
      */
+
     public String getResourceStatus() {
         return this.resourceStatus;
     }
@@ -275,6 +289,7 @@ public class StackResourceSummary implements Serializable, Cloneable {
      *         chained together.
      * @see ResourceStatus
      */
+
     public StackResourceSummary withResourceStatus(String resourceStatus) {
         setResourceStatus(resourceStatus);
         return this;
@@ -291,6 +306,7 @@ public class StackResourceSummary implements Serializable, Cloneable {
      *         chained together.
      * @see ResourceStatus
      */
+
     public void setResourceStatus(ResourceStatus resourceStatus) {
         this.resourceStatus = resourceStatus.toString();
     }
@@ -306,6 +322,7 @@ public class StackResourceSummary implements Serializable, Cloneable {
      *         chained together.
      * @see ResourceStatus
      */
+
     public StackResourceSummary withResourceStatus(ResourceStatus resourceStatus) {
         setResourceStatus(resourceStatus);
         return this;
@@ -319,6 +336,7 @@ public class StackResourceSummary implements Serializable, Cloneable {
      * @param resourceStatusReason
      *        Success/failure message associated with the resource.
      */
+
     public void setResourceStatusReason(String resourceStatusReason) {
         this.resourceStatusReason = resourceStatusReason;
     }
@@ -330,6 +348,7 @@ public class StackResourceSummary implements Serializable, Cloneable {
      * 
      * @return Success/failure message associated with the resource.
      */
+
     public String getResourceStatusReason() {
         return this.resourceStatusReason;
     }
@@ -344,6 +363,7 @@ public class StackResourceSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StackResourceSummary withResourceStatusReason(
             String resourceStatusReason) {
         setResourceStatusReason(resourceStatusReason);

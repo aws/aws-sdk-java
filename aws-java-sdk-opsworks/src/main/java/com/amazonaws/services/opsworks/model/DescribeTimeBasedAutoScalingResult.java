@@ -44,6 +44,7 @@ public class DescribeTimeBasedAutoScalingResult implements Serializable,
      *         objects that describe the configuration for the specified
      *         instances.
      */
+
     public java.util.List<TimeBasedAutoScalingConfiguration> getTimeBasedAutoScalingConfigurations() {
         if (timeBasedAutoScalingConfigurations == null) {
             timeBasedAutoScalingConfigurations = new com.amazonaws.internal.SdkInternalList<TimeBasedAutoScalingConfiguration>();
@@ -61,6 +62,7 @@ public class DescribeTimeBasedAutoScalingResult implements Serializable,
      *        An array of <code>TimeBasedAutoScalingConfiguration</code> objects
      *        that describe the configuration for the specified instances.
      */
+
     public void setTimeBasedAutoScalingConfigurations(
             java.util.Collection<TimeBasedAutoScalingConfiguration> timeBasedAutoScalingConfigurations) {
         if (timeBasedAutoScalingConfigurations == null) {
@@ -91,6 +93,7 @@ public class DescribeTimeBasedAutoScalingResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTimeBasedAutoScalingResult withTimeBasedAutoScalingConfigurations(
             TimeBasedAutoScalingConfiguration... timeBasedAutoScalingConfigurations) {
         if (this.timeBasedAutoScalingConfigurations == null) {
@@ -115,6 +118,7 @@ public class DescribeTimeBasedAutoScalingResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTimeBasedAutoScalingResult withTimeBasedAutoScalingConfigurations(
             java.util.Collection<TimeBasedAutoScalingConfiguration> timeBasedAutoScalingConfigurations) {
         setTimeBasedAutoScalingConfigurations(timeBasedAutoScalingConfigurations);

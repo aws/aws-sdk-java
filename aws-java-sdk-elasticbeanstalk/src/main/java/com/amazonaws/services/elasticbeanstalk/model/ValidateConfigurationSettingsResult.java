@@ -40,6 +40,7 @@ public class ValidateConfigurationSettingsResult implements Serializable,
      * 
      * @return A list of <a>ValidationMessage</a>.
      */
+
     public java.util.List<ValidationMessage> getMessages() {
         if (messages == null) {
             messages = new com.amazonaws.internal.SdkInternalList<ValidationMessage>();
@@ -55,6 +56,7 @@ public class ValidateConfigurationSettingsResult implements Serializable,
      * @param messages
      *        A list of <a>ValidationMessage</a>.
      */
+
     public void setMessages(java.util.Collection<ValidationMessage> messages) {
         if (messages == null) {
             this.messages = null;
@@ -81,6 +83,7 @@ public class ValidateConfigurationSettingsResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ValidateConfigurationSettingsResult withMessages(
             ValidationMessage... messages) {
         if (this.messages == null) {
@@ -103,6 +106,7 @@ public class ValidateConfigurationSettingsResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ValidateConfigurationSettingsResult withMessages(
             java.util.Collection<ValidationMessage> messages) {
         setMessages(messages);

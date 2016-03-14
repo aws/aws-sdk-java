@@ -39,6 +39,7 @@ public class CreateInvalidationResult implements Serializable, Cloneable {
      *        The fully qualified URI of the distribution and invalidation batch
      *        request, including the Invalidation ID.
      */
+
     public void setLocation(String location) {
         this.location = location;
     }
@@ -50,6 +51,7 @@ public class CreateInvalidationResult implements Serializable, Cloneable {
      * @return The fully qualified URI of the distribution and invalidation
      *         batch request, including the Invalidation ID.
      */
+
     public String getLocation() {
         return this.location;
     }
@@ -64,6 +66,7 @@ public class CreateInvalidationResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateInvalidationResult withLocation(String location) {
         setLocation(location);
         return this;
@@ -75,6 +78,7 @@ public class CreateInvalidationResult implements Serializable, Cloneable {
      * @param invalidation
      *        The invalidation's information.
      */
+
     public void setInvalidation(Invalidation invalidation) {
         this.invalidation = invalidation;
     }
@@ -84,6 +88,7 @@ public class CreateInvalidationResult implements Serializable, Cloneable {
      * 
      * @return The invalidation's information.
      */
+
     public Invalidation getInvalidation() {
         return this.invalidation;
     }
@@ -96,6 +101,7 @@ public class CreateInvalidationResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateInvalidationResult withInvalidation(Invalidation invalidation) {
         setInvalidation(invalidation);
         return this;

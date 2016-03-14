@@ -123,6 +123,7 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Default: Describes all your subnets.
      */
+
     public java.util.List<String> getSubnetIds() {
         if (subnetIds == null) {
             subnetIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -143,6 +144,7 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        Default: Describes all your subnets.
      */
+
     public void setSubnetIds(java.util.Collection<String> subnetIds) {
         if (subnetIds == null) {
             this.subnetIds = null;
@@ -174,6 +176,7 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSubnetsRequest withSubnetIds(String... subnetIds) {
         if (this.subnetIds == null) {
             setSubnetIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -200,6 +203,7 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSubnetsRequest withSubnetIds(
             java.util.Collection<String> subnetIds) {
         setSubnetIds(subnetIds);
@@ -351,6 +355,7 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements
      *         </p>
      *         </li>
      */
+
     public java.util.List<Filter> getFilters() {
         if (filters == null) {
             filters = new com.amazonaws.internal.SdkInternalList<Filter>();
@@ -504,6 +509,7 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements
      *        </p>
      *        </li>
      */
+
     public void setFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
             this.filters = null;
@@ -668,6 +674,7 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSubnetsRequest withFilters(Filter... filters) {
         if (this.filters == null) {
             setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(
@@ -827,6 +834,7 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSubnetsRequest withFilters(
             java.util.Collection<Filter> filters) {
         setFilters(filters);

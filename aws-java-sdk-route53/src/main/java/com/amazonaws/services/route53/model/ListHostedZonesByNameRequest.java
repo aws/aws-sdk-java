@@ -97,6 +97,7 @@ public class ListHostedZonesByNameRequest extends AmazonWebServiceRequest
      *        <code>DNSName</code> and <code>HostedZoneId</code> parameters to
      *        get the next page of results.
      */
+
     public void setDNSName(String dNSName) {
         this.dNSName = dNSName;
     }
@@ -124,6 +125,7 @@ public class ListHostedZonesByNameRequest extends AmazonWebServiceRequest
      *         <code>DNSName</code> and <code>HostedZoneId</code> parameters to
      *         get the next page of results.
      */
+
     public String getDNSName() {
         return this.dNSName;
     }
@@ -154,6 +156,7 @@ public class ListHostedZonesByNameRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListHostedZonesByNameRequest withDNSName(String dNSName) {
         setDNSName(dNSName);
         return this;
@@ -175,6 +178,7 @@ public class ListHostedZonesByNameRequest extends AmazonWebServiceRequest
      *        <code>DNSName</code> and <code>HostedZoneId</code> parameters to
      *        get the next page of results.
      */
+
     public void setHostedZoneId(String hostedZoneId) {
         this.hostedZoneId = hostedZoneId;
     }
@@ -194,6 +198,7 @@ public class ListHostedZonesByNameRequest extends AmazonWebServiceRequest
      *         <code>DNSName</code> and <code>HostedZoneId</code> parameters to
      *         get the next page of results.
      */
+
     public String getHostedZoneId() {
         return this.hostedZoneId;
     }
@@ -216,6 +221,7 @@ public class ListHostedZonesByNameRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListHostedZonesByNameRequest withHostedZoneId(String hostedZoneId) {
         setHostedZoneId(hostedZoneId);
         return this;
@@ -230,6 +236,7 @@ public class ListHostedZonesByNameRequest extends AmazonWebServiceRequest
      *        Specify the maximum number of hosted zones to return per page of
      *        results.
      */
+
     public void setMaxItems(String maxItems) {
         this.maxItems = maxItems;
     }
@@ -242,6 +249,7 @@ public class ListHostedZonesByNameRequest extends AmazonWebServiceRequest
      * @return Specify the maximum number of hosted zones to return per page of
      *         results.
      */
+
     public String getMaxItems() {
         return this.maxItems;
     }
@@ -257,6 +265,7 @@ public class ListHostedZonesByNameRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListHostedZonesByNameRequest withMaxItems(String maxItems) {
         setMaxItems(maxItems);
         return this;

@@ -113,6 +113,7 @@ public class SqlInjectionMatchTuple implements Serializable, Cloneable {
     /**
      * @param fieldToMatch
      */
+
     public void setFieldToMatch(FieldToMatch fieldToMatch) {
         this.fieldToMatch = fieldToMatch;
     }
@@ -120,6 +121,7 @@ public class SqlInjectionMatchTuple implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public FieldToMatch getFieldToMatch() {
         return this.fieldToMatch;
     }
@@ -129,6 +131,7 @@ public class SqlInjectionMatchTuple implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SqlInjectionMatchTuple withFieldToMatch(FieldToMatch fieldToMatch) {
         setFieldToMatch(fieldToMatch);
         return this;
@@ -297,6 +300,7 @@ public class SqlInjectionMatchTuple implements Serializable, Cloneable {
      *        transformations.
      * @see TextTransformation
      */
+
     public void setTextTransformation(String textTransformation) {
         this.textTransformation = textTransformation;
     }
@@ -464,6 +468,7 @@ public class SqlInjectionMatchTuple implements Serializable, Cloneable {
      *         transformations.
      * @see TextTransformation
      */
+
     public String getTextTransformation() {
         return this.textTransformation;
     }
@@ -633,6 +638,7 @@ public class SqlInjectionMatchTuple implements Serializable, Cloneable {
      *         chained together.
      * @see TextTransformation
      */
+
     public SqlInjectionMatchTuple withTextTransformation(
             String textTransformation) {
         setTextTransformation(textTransformation);
@@ -804,6 +810,7 @@ public class SqlInjectionMatchTuple implements Serializable, Cloneable {
      *         chained together.
      * @see TextTransformation
      */
+
     public void setTextTransformation(TextTransformation textTransformation) {
         this.textTransformation = textTransformation.toString();
     }
@@ -973,6 +980,7 @@ public class SqlInjectionMatchTuple implements Serializable, Cloneable {
      *         chained together.
      * @see TextTransformation
      */
+
     public SqlInjectionMatchTuple withTextTransformation(
             TextTransformation textTransformation) {
         setTextTransformation(textTransformation);

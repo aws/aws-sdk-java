@@ -126,6 +126,7 @@ public class Stack implements Serializable, Cloneable {
      * @param stackId
      *        Unique identifier of the stack.
      */
+
     public void setStackId(String stackId) {
         this.stackId = stackId;
     }
@@ -137,6 +138,7 @@ public class Stack implements Serializable, Cloneable {
      * 
      * @return Unique identifier of the stack.
      */
+
     public String getStackId() {
         return this.stackId;
     }
@@ -151,6 +153,7 @@ public class Stack implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Stack withStackId(String stackId) {
         setStackId(stackId);
         return this;
@@ -164,6 +167,7 @@ public class Stack implements Serializable, Cloneable {
      * @param stackName
      *        The name associated with the stack.
      */
+
     public void setStackName(String stackName) {
         this.stackName = stackName;
     }
@@ -175,6 +179,7 @@ public class Stack implements Serializable, Cloneable {
      * 
      * @return The name associated with the stack.
      */
+
     public String getStackName() {
         return this.stackName;
     }
@@ -189,6 +194,7 @@ public class Stack implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Stack withStackName(String stackName) {
         setStackName(stackName);
         return this;
@@ -202,6 +208,7 @@ public class Stack implements Serializable, Cloneable {
      * @param description
      *        A user-defined description associated with the stack.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -213,6 +220,7 @@ public class Stack implements Serializable, Cloneable {
      * 
      * @return A user-defined description associated with the stack.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -227,6 +235,7 @@ public class Stack implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Stack withDescription(String description) {
         setDescription(description);
         return this;
@@ -239,6 +248,7 @@ public class Stack implements Serializable, Cloneable {
      * 
      * @return A list of <code>Parameter</code> structures.
      */
+
     public java.util.List<Parameter> getParameters() {
         if (parameters == null) {
             parameters = new com.amazonaws.internal.SdkInternalList<Parameter>();
@@ -254,6 +264,7 @@ public class Stack implements Serializable, Cloneable {
      * @param parameters
      *        A list of <code>Parameter</code> structures.
      */
+
     public void setParameters(java.util.Collection<Parameter> parameters) {
         if (parameters == null) {
             this.parameters = null;
@@ -280,6 +291,7 @@ public class Stack implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Stack withParameters(Parameter... parameters) {
         if (this.parameters == null) {
             setParameters(new com.amazonaws.internal.SdkInternalList<Parameter>(
@@ -301,6 +313,7 @@ public class Stack implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Stack withParameters(java.util.Collection<Parameter> parameters) {
         setParameters(parameters);
         return this;
@@ -314,6 +327,7 @@ public class Stack implements Serializable, Cloneable {
      * @param creationTime
      *        The time at which the stack was created.
      */
+
     public void setCreationTime(java.util.Date creationTime) {
         this.creationTime = creationTime;
     }
@@ -325,6 +339,7 @@ public class Stack implements Serializable, Cloneable {
      * 
      * @return The time at which the stack was created.
      */
+
     public java.util.Date getCreationTime() {
         return this.creationTime;
     }
@@ -339,6 +354,7 @@ public class Stack implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Stack withCreationTime(java.util.Date creationTime) {
         setCreationTime(creationTime);
         return this;
@@ -354,6 +370,7 @@ public class Stack implements Serializable, Cloneable {
      *        The time the stack was last updated. This field will only be
      *        returned if the stack has been updated at least once.
      */
+
     public void setLastUpdatedTime(java.util.Date lastUpdatedTime) {
         this.lastUpdatedTime = lastUpdatedTime;
     }
@@ -367,6 +384,7 @@ public class Stack implements Serializable, Cloneable {
      * @return The time the stack was last updated. This field will only be
      *         returned if the stack has been updated at least once.
      */
+
     public java.util.Date getLastUpdatedTime() {
         return this.lastUpdatedTime;
     }
@@ -383,6 +401,7 @@ public class Stack implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Stack withLastUpdatedTime(java.util.Date lastUpdatedTime) {
         setLastUpdatedTime(lastUpdatedTime);
         return this;
@@ -397,6 +416,7 @@ public class Stack implements Serializable, Cloneable {
      *        Current status of the stack.
      * @see StackStatus
      */
+
     public void setStackStatus(String stackStatus) {
         this.stackStatus = stackStatus;
     }
@@ -409,6 +429,7 @@ public class Stack implements Serializable, Cloneable {
      * @return Current status of the stack.
      * @see StackStatus
      */
+
     public String getStackStatus() {
         return this.stackStatus;
     }
@@ -424,6 +445,7 @@ public class Stack implements Serializable, Cloneable {
      *         chained together.
      * @see StackStatus
      */
+
     public Stack withStackStatus(String stackStatus) {
         setStackStatus(stackStatus);
         return this;
@@ -440,6 +462,7 @@ public class Stack implements Serializable, Cloneable {
      *         chained together.
      * @see StackStatus
      */
+
     public void setStackStatus(StackStatus stackStatus) {
         this.stackStatus = stackStatus.toString();
     }
@@ -455,6 +478,7 @@ public class Stack implements Serializable, Cloneable {
      *         chained together.
      * @see StackStatus
      */
+
     public Stack withStackStatus(StackStatus stackStatus) {
         setStackStatus(stackStatus);
         return this;
@@ -468,6 +492,7 @@ public class Stack implements Serializable, Cloneable {
      * @param stackStatusReason
      *        Success/failure message associated with the stack status.
      */
+
     public void setStackStatusReason(String stackStatusReason) {
         this.stackStatusReason = stackStatusReason;
     }
@@ -479,6 +504,7 @@ public class Stack implements Serializable, Cloneable {
      * 
      * @return Success/failure message associated with the stack status.
      */
+
     public String getStackStatusReason() {
         return this.stackStatusReason;
     }
@@ -493,6 +519,7 @@ public class Stack implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Stack withStackStatusReason(String stackStatusReason) {
         setStackStatusReason(stackStatusReason);
         return this;
@@ -518,6 +545,7 @@ public class Stack implements Serializable, Cloneable {
      *        <li><code>false</code>: enable rollback</li>
      *        </ul>
      */
+
     public void setDisableRollback(Boolean disableRollback) {
         this.disableRollback = disableRollback;
     }
@@ -541,6 +569,7 @@ public class Stack implements Serializable, Cloneable {
      *         <li><code>false</code>: enable rollback</li>
      *         </ul>
      */
+
     public Boolean getDisableRollback() {
         return this.disableRollback;
     }
@@ -567,6 +596,7 @@ public class Stack implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Stack withDisableRollback(Boolean disableRollback) {
         setDisableRollback(disableRollback);
         return this;
@@ -591,6 +621,7 @@ public class Stack implements Serializable, Cloneable {
      *         <li><code>false</code>: enable rollback</li>
      *         </ul>
      */
+
     public Boolean isDisableRollback() {
         return this.disableRollback;
     }
@@ -602,6 +633,7 @@ public class Stack implements Serializable, Cloneable {
      * 
      * @return SNS topic ARNs to which stack related events are published.
      */
+
     public java.util.List<String> getNotificationARNs() {
         if (notificationARNs == null) {
             notificationARNs = new com.amazonaws.internal.SdkInternalList<String>();
@@ -617,6 +649,7 @@ public class Stack implements Serializable, Cloneable {
      * @param notificationARNs
      *        SNS topic ARNs to which stack related events are published.
      */
+
     public void setNotificationARNs(
             java.util.Collection<String> notificationARNs) {
         if (notificationARNs == null) {
@@ -644,6 +677,7 @@ public class Stack implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Stack withNotificationARNs(String... notificationARNs) {
         if (this.notificationARNs == null) {
             setNotificationARNs(new com.amazonaws.internal.SdkInternalList<String>(
@@ -665,6 +699,7 @@ public class Stack implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Stack withNotificationARNs(
             java.util.Collection<String> notificationARNs) {
         setNotificationARNs(notificationARNs);
@@ -679,6 +714,7 @@ public class Stack implements Serializable, Cloneable {
      * @param timeoutInMinutes
      *        The amount of time within which stack creation should complete.
      */
+
     public void setTimeoutInMinutes(Integer timeoutInMinutes) {
         this.timeoutInMinutes = timeoutInMinutes;
     }
@@ -690,6 +726,7 @@ public class Stack implements Serializable, Cloneable {
      * 
      * @return The amount of time within which stack creation should complete.
      */
+
     public Integer getTimeoutInMinutes() {
         return this.timeoutInMinutes;
     }
@@ -704,6 +741,7 @@ public class Stack implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Stack withTimeoutInMinutes(Integer timeoutInMinutes) {
         setTimeoutInMinutes(timeoutInMinutes);
         return this;
@@ -717,6 +755,7 @@ public class Stack implements Serializable, Cloneable {
      * @return The capabilities allowed in the stack.
      * @see Capability
      */
+
     public java.util.List<String> getCapabilities() {
         if (capabilities == null) {
             capabilities = new com.amazonaws.internal.SdkInternalList<String>();
@@ -733,6 +772,7 @@ public class Stack implements Serializable, Cloneable {
      *        The capabilities allowed in the stack.
      * @see Capability
      */
+
     public void setCapabilities(java.util.Collection<String> capabilities) {
         if (capabilities == null) {
             this.capabilities = null;
@@ -760,6 +800,7 @@ public class Stack implements Serializable, Cloneable {
      *         chained together.
      * @see Capability
      */
+
     public Stack withCapabilities(String... capabilities) {
         if (this.capabilities == null) {
             setCapabilities(new com.amazonaws.internal.SdkInternalList<String>(
@@ -782,6 +823,7 @@ public class Stack implements Serializable, Cloneable {
      *         chained together.
      * @see Capability
      */
+
     public Stack withCapabilities(java.util.Collection<String> capabilities) {
         setCapabilities(capabilities);
         return this;
@@ -798,6 +840,7 @@ public class Stack implements Serializable, Cloneable {
      *         chained together.
      * @see Capability
      */
+
     public Stack withCapabilities(Capability... capabilities) {
         com.amazonaws.internal.SdkInternalList<String> capabilitiesCopy = new com.amazonaws.internal.SdkInternalList<String>(
                 capabilities.length);
@@ -819,6 +862,7 @@ public class Stack implements Serializable, Cloneable {
      * 
      * @return A list of output structures.
      */
+
     public java.util.List<Output> getOutputs() {
         if (outputs == null) {
             outputs = new com.amazonaws.internal.SdkInternalList<Output>();
@@ -834,6 +878,7 @@ public class Stack implements Serializable, Cloneable {
      * @param outputs
      *        A list of output structures.
      */
+
     public void setOutputs(java.util.Collection<Output> outputs) {
         if (outputs == null) {
             this.outputs = null;
@@ -860,6 +905,7 @@ public class Stack implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Stack withOutputs(Output... outputs) {
         if (this.outputs == null) {
             setOutputs(new com.amazonaws.internal.SdkInternalList<Output>(
@@ -881,6 +927,7 @@ public class Stack implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Stack withOutputs(java.util.Collection<Output> outputs) {
         setOutputs(outputs);
         return this;
@@ -895,6 +942,7 @@ public class Stack implements Serializable, Cloneable {
      * @return A list of <code>Tag</code>s that specify cost allocation
      *         information for the stack.
      */
+
     public java.util.List<Tag> getTags() {
         if (tags == null) {
             tags = new com.amazonaws.internal.SdkInternalList<Tag>();
@@ -912,6 +960,7 @@ public class Stack implements Serializable, Cloneable {
      *        A list of <code>Tag</code>s that specify cost allocation
      *        information for the stack.
      */
+
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
             this.tags = null;
@@ -939,6 +988,7 @@ public class Stack implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Stack withTags(Tag... tags) {
         if (this.tags == null) {
             setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
@@ -961,6 +1011,7 @@ public class Stack implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Stack withTags(java.util.Collection<Tag> tags) {
         setTags(tags);
         return this;

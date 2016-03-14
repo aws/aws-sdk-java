@@ -86,6 +86,7 @@ public class AttachVolumeRequest extends AmazonWebServiceRequest implements
      *        The ID of the EBS volume. The volume and instance must be within
      *        the same Availability Zone.
      */
+
     public void setVolumeId(String volumeId) {
         this.volumeId = volumeId;
     }
@@ -99,6 +100,7 @@ public class AttachVolumeRequest extends AmazonWebServiceRequest implements
      * @return The ID of the EBS volume. The volume and instance must be within
      *         the same Availability Zone.
      */
+
     public String getVolumeId() {
         return this.volumeId;
     }
@@ -115,6 +117,7 @@ public class AttachVolumeRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AttachVolumeRequest withVolumeId(String volumeId) {
         setVolumeId(volumeId);
         return this;
@@ -128,6 +131,7 @@ public class AttachVolumeRequest extends AmazonWebServiceRequest implements
      * @param instanceId
      *        The ID of the instance.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -139,6 +143,7 @@ public class AttachVolumeRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ID of the instance.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
@@ -153,6 +158,7 @@ public class AttachVolumeRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AttachVolumeRequest withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;
@@ -168,6 +174,7 @@ public class AttachVolumeRequest extends AmazonWebServiceRequest implements
      *        The device name to expose to the instance (for example,
      *        <code>/dev/sdh</code> or <code>xvdh</code>).
      */
+
     public void setDevice(String device) {
         this.device = device;
     }
@@ -181,6 +188,7 @@ public class AttachVolumeRequest extends AmazonWebServiceRequest implements
      * @return The device name to expose to the instance (for example,
      *         <code>/dev/sdh</code> or <code>xvdh</code>).
      */
+
     public String getDevice() {
         return this.device;
     }
@@ -197,6 +205,7 @@ public class AttachVolumeRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AttachVolumeRequest withDevice(String device) {
         setDevice(device);
         return this;

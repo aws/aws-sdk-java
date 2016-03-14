@@ -38,6 +38,7 @@ public class CreateNetworkAclResult implements Serializable, Cloneable {
      * @param networkAcl
      *        Information about the network ACL.
      */
+
     public void setNetworkAcl(NetworkAcl networkAcl) {
         this.networkAcl = networkAcl;
     }
@@ -49,6 +50,7 @@ public class CreateNetworkAclResult implements Serializable, Cloneable {
      * 
      * @return Information about the network ACL.
      */
+
     public NetworkAcl getNetworkAcl() {
         return this.networkAcl;
     }
@@ -63,6 +65,7 @@ public class CreateNetworkAclResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateNetworkAclResult withNetworkAcl(NetworkAcl networkAcl) {
         setNetworkAcl(networkAcl);
         return this;

@@ -97,6 +97,7 @@ public class DescribeTrailsRequest extends AmazonWebServiceRequest implements
      *         only to the current region. To return information about a trail
      *         in another region, you must specify its trail ARN.
      */
+
     public java.util.List<String> getTrailNameList() {
         if (trailNameList == null) {
             trailNameList = new com.amazonaws.internal.SdkInternalList<String>();
@@ -144,6 +145,7 @@ public class DescribeTrailsRequest extends AmazonWebServiceRequest implements
      *        only to the current region. To return information about a trail in
      *        another region, you must specify its trail ARN.
      */
+
     public void setTrailNameList(java.util.Collection<String> trailNameList) {
         if (trailNameList == null) {
             this.trailNameList = null;
@@ -202,6 +204,7 @@ public class DescribeTrailsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTrailsRequest withTrailNameList(String... trailNameList) {
         if (this.trailNameList == null) {
             setTrailNameList(new com.amazonaws.internal.SdkInternalList<String>(
@@ -255,6 +258,7 @@ public class DescribeTrailsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTrailsRequest withTrailNameList(
             java.util.Collection<String> trailNameList) {
         setTrailNameList(trailNameList);
@@ -273,6 +277,7 @@ public class DescribeTrailsRequest extends AmazonWebServiceRequest implements
      *        shadow trail is the replication in a region of a trail that was
      *        created in a different region. The default is true.
      */
+
     public void setIncludeShadowTrails(Boolean includeShadowTrails) {
         this.includeShadowTrails = includeShadowTrails;
     }
@@ -288,6 +293,7 @@ public class DescribeTrailsRequest extends AmazonWebServiceRequest implements
      *         shadow trail is the replication in a region of a trail that was
      *         created in a different region. The default is true.
      */
+
     public Boolean getIncludeShadowTrails() {
         return this.includeShadowTrails;
     }
@@ -306,6 +312,7 @@ public class DescribeTrailsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTrailsRequest withIncludeShadowTrails(
             Boolean includeShadowTrails) {
         setIncludeShadowTrails(includeShadowTrails);
@@ -323,6 +330,7 @@ public class DescribeTrailsRequest extends AmazonWebServiceRequest implements
      *         shadow trail is the replication in a region of a trail that was
      *         created in a different region. The default is true.
      */
+
     public Boolean isIncludeShadowTrails() {
         return this.includeShadowTrails;
     }

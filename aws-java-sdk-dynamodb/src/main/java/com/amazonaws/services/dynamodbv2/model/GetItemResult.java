@@ -44,6 +44,7 @@ public class GetItemResult implements Serializable, Cloneable {
      * @return A map of attribute names to <i>AttributeValue</i> objects, as
      *         specified by <i>AttributesToGet</i>.
      */
+
     public java.util.Map<String, AttributeValue> getItem() {
         return item;
     }
@@ -58,6 +59,7 @@ public class GetItemResult implements Serializable, Cloneable {
      *        A map of attribute names to <i>AttributeValue</i> objects, as
      *        specified by <i>AttributesToGet</i>.
      */
+
     public void setItem(java.util.Map<String, AttributeValue> item) {
         this.item = item;
     }
@@ -74,6 +76,7 @@ public class GetItemResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetItemResult withItem(java.util.Map<String, AttributeValue> item) {
         setItem(item);
         return this;
@@ -94,6 +97,7 @@ public class GetItemResult implements Serializable, Cloneable {
      * Removes all the entries added into Item. &lt;p> Returns a reference to
      * this object so that method calls can be chained together.
      */
+
     public GetItemResult clearItemEntries() {
         this.item = null;
         return this;
@@ -102,6 +106,7 @@ public class GetItemResult implements Serializable, Cloneable {
     /**
      * @param consumedCapacity
      */
+
     public void setConsumedCapacity(ConsumedCapacity consumedCapacity) {
         this.consumedCapacity = consumedCapacity;
     }
@@ -109,6 +114,7 @@ public class GetItemResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public ConsumedCapacity getConsumedCapacity() {
         return this.consumedCapacity;
     }
@@ -118,6 +124,7 @@ public class GetItemResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetItemResult withConsumedCapacity(ConsumedCapacity consumedCapacity) {
         setConsumedCapacity(consumedCapacity);
         return this;

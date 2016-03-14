@@ -51,6 +51,7 @@ public class DeleteDeploymentGroupRequest extends AmazonWebServiceRequest
      *        The name of an existing AWS CodeDeploy application associated with
      *        the applicable IAM user or AWS account.
      */
+
     public void setApplicationName(String applicationName) {
         this.applicationName = applicationName;
     }
@@ -64,6 +65,7 @@ public class DeleteDeploymentGroupRequest extends AmazonWebServiceRequest
      * @return The name of an existing AWS CodeDeploy application associated
      *         with the applicable IAM user or AWS account.
      */
+
     public String getApplicationName() {
         return this.applicationName;
     }
@@ -80,6 +82,7 @@ public class DeleteDeploymentGroupRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteDeploymentGroupRequest withApplicationName(
             String applicationName) {
         setApplicationName(applicationName);
@@ -95,6 +98,7 @@ public class DeleteDeploymentGroupRequest extends AmazonWebServiceRequest
      *        The name of an existing deployment group for the specified
      *        application.
      */
+
     public void setDeploymentGroupName(String deploymentGroupName) {
         this.deploymentGroupName = deploymentGroupName;
     }
@@ -107,6 +111,7 @@ public class DeleteDeploymentGroupRequest extends AmazonWebServiceRequest
      * @return The name of an existing deployment group for the specified
      *         application.
      */
+
     public String getDeploymentGroupName() {
         return this.deploymentGroupName;
     }
@@ -122,6 +127,7 @@ public class DeleteDeploymentGroupRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteDeploymentGroupRequest withDeploymentGroupName(
             String deploymentGroupName) {
         setDeploymentGroupName(deploymentGroupName);

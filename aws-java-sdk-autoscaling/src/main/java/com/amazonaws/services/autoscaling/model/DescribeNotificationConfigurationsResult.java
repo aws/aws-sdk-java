@@ -45,6 +45,7 @@ public class DescribeNotificationConfigurationsResult implements Serializable,
      * 
      * @return The notification configurations.
      */
+
     public java.util.List<NotificationConfiguration> getNotificationConfigurations() {
         if (notificationConfigurations == null) {
             notificationConfigurations = new com.amazonaws.internal.SdkInternalList<NotificationConfiguration>();
@@ -60,6 +61,7 @@ public class DescribeNotificationConfigurationsResult implements Serializable,
      * @param notificationConfigurations
      *        The notification configurations.
      */
+
     public void setNotificationConfigurations(
             java.util.Collection<NotificationConfiguration> notificationConfigurations) {
         if (notificationConfigurations == null) {
@@ -87,6 +89,7 @@ public class DescribeNotificationConfigurationsResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeNotificationConfigurationsResult withNotificationConfigurations(
             NotificationConfiguration... notificationConfigurations) {
         if (this.notificationConfigurations == null) {
@@ -109,6 +112,7 @@ public class DescribeNotificationConfigurationsResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeNotificationConfigurationsResult withNotificationConfigurations(
             java.util.Collection<NotificationConfiguration> notificationConfigurations) {
         setNotificationConfigurations(notificationConfigurations);
@@ -125,6 +129,7 @@ public class DescribeNotificationConfigurationsResult implements Serializable,
      *        The token to use when requesting the next set of items. If there
      *        are no additional items to return, the string is empty.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -138,6 +143,7 @@ public class DescribeNotificationConfigurationsResult implements Serializable,
      * @return The token to use when requesting the next set of items. If there
      *         are no additional items to return, the string is empty.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -154,6 +160,7 @@ public class DescribeNotificationConfigurationsResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeNotificationConfigurationsResult withNextToken(
             String nextToken) {
         setNextToken(nextToken);

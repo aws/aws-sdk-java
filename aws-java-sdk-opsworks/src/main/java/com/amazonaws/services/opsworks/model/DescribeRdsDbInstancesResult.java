@@ -42,6 +42,7 @@ public class DescribeRdsDbInstancesResult implements Serializable, Cloneable {
      * @return An a array of <code>RdsDbInstance</code> objects that describe
      *         the instances.
      */
+
     public java.util.List<RdsDbInstance> getRdsDbInstances() {
         if (rdsDbInstances == null) {
             rdsDbInstances = new com.amazonaws.internal.SdkInternalList<RdsDbInstance>();
@@ -59,6 +60,7 @@ public class DescribeRdsDbInstancesResult implements Serializable, Cloneable {
      *        An a array of <code>RdsDbInstance</code> objects that describe the
      *        instances.
      */
+
     public void setRdsDbInstances(
             java.util.Collection<RdsDbInstance> rdsDbInstances) {
         if (rdsDbInstances == null) {
@@ -88,6 +90,7 @@ public class DescribeRdsDbInstancesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeRdsDbInstancesResult withRdsDbInstances(
             RdsDbInstance... rdsDbInstances) {
         if (this.rdsDbInstances == null) {
@@ -112,6 +115,7 @@ public class DescribeRdsDbInstancesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeRdsDbInstancesResult withRdsDbInstances(
             java.util.Collection<RdsDbInstance> rdsDbInstances) {
         setRdsDbInstances(rdsDbInstances);

@@ -152,6 +152,7 @@ public class JobFlowDetail implements Serializable, Cloneable {
      * @param jobFlowId
      *        The job flow identifier.
      */
+
     public void setJobFlowId(String jobFlowId) {
         this.jobFlowId = jobFlowId;
     }
@@ -163,6 +164,7 @@ public class JobFlowDetail implements Serializable, Cloneable {
      * 
      * @return The job flow identifier.
      */
+
     public String getJobFlowId() {
         return this.jobFlowId;
     }
@@ -177,6 +179,7 @@ public class JobFlowDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobFlowDetail withJobFlowId(String jobFlowId) {
         setJobFlowId(jobFlowId);
         return this;
@@ -190,6 +193,7 @@ public class JobFlowDetail implements Serializable, Cloneable {
      * @param name
      *        The name of the job flow.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -201,6 +205,7 @@ public class JobFlowDetail implements Serializable, Cloneable {
      * 
      * @return The name of the job flow.
      */
+
     public String getName() {
         return this.name;
     }
@@ -215,6 +220,7 @@ public class JobFlowDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobFlowDetail withName(String name) {
         setName(name);
         return this;
@@ -228,6 +234,7 @@ public class JobFlowDetail implements Serializable, Cloneable {
      * @param logUri
      *        The location in Amazon S3 where log files for the job are stored.
      */
+
     public void setLogUri(String logUri) {
         this.logUri = logUri;
     }
@@ -239,6 +246,7 @@ public class JobFlowDetail implements Serializable, Cloneable {
      * 
      * @return The location in Amazon S3 where log files for the job are stored.
      */
+
     public String getLogUri() {
         return this.logUri;
     }
@@ -253,6 +261,7 @@ public class JobFlowDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobFlowDetail withLogUri(String logUri) {
         setLogUri(logUri);
         return this;
@@ -276,6 +285,7 @@ public class JobFlowDetail implements Serializable, Cloneable {
      *        >AMI Versions Supported in Elastic MapReduce</a> in the <i>Amazon
      *        Elastic MapReduce Developer Guide.</i>
      */
+
     public void setAmiVersion(String amiVersion) {
         this.amiVersion = amiVersion;
     }
@@ -297,6 +307,7 @@ public class JobFlowDetail implements Serializable, Cloneable {
      *         >AMI Versions Supported in Elastic MapReduce</a> in the <i>Amazon
      *         Elastic MapReduce Developer Guide.</i>
      */
+
     public String getAmiVersion() {
         return this.amiVersion;
     }
@@ -321,6 +332,7 @@ public class JobFlowDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobFlowDetail withAmiVersion(String amiVersion) {
         setAmiVersion(amiVersion);
         return this;
@@ -334,6 +346,7 @@ public class JobFlowDetail implements Serializable, Cloneable {
      * @param executionStatusDetail
      *        Describes the execution status of the job flow.
      */
+
     public void setExecutionStatusDetail(
             JobFlowExecutionStatusDetail executionStatusDetail) {
         this.executionStatusDetail = executionStatusDetail;
@@ -346,6 +359,7 @@ public class JobFlowDetail implements Serializable, Cloneable {
      * 
      * @return Describes the execution status of the job flow.
      */
+
     public JobFlowExecutionStatusDetail getExecutionStatusDetail() {
         return this.executionStatusDetail;
     }
@@ -360,6 +374,7 @@ public class JobFlowDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobFlowDetail withExecutionStatusDetail(
             JobFlowExecutionStatusDetail executionStatusDetail) {
         setExecutionStatusDetail(executionStatusDetail);
@@ -374,6 +389,7 @@ public class JobFlowDetail implements Serializable, Cloneable {
      * @param instances
      *        Describes the Amazon EC2 instances of the job flow.
      */
+
     public void setInstances(JobFlowInstancesDetail instances) {
         this.instances = instances;
     }
@@ -385,6 +401,7 @@ public class JobFlowDetail implements Serializable, Cloneable {
      * 
      * @return Describes the Amazon EC2 instances of the job flow.
      */
+
     public JobFlowInstancesDetail getInstances() {
         return this.instances;
     }
@@ -399,6 +416,7 @@ public class JobFlowDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobFlowDetail withInstances(JobFlowInstancesDetail instances) {
         setInstances(instances);
         return this;
@@ -411,6 +429,7 @@ public class JobFlowDetail implements Serializable, Cloneable {
      * 
      * @return A list of steps run by the job flow.
      */
+
     public java.util.List<StepDetail> getSteps() {
         if (steps == null) {
             steps = new com.amazonaws.internal.SdkInternalList<StepDetail>();
@@ -426,6 +445,7 @@ public class JobFlowDetail implements Serializable, Cloneable {
      * @param steps
      *        A list of steps run by the job flow.
      */
+
     public void setSteps(java.util.Collection<StepDetail> steps) {
         if (steps == null) {
             this.steps = null;
@@ -452,6 +472,7 @@ public class JobFlowDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobFlowDetail withSteps(StepDetail... steps) {
         if (this.steps == null) {
             setSteps(new com.amazonaws.internal.SdkInternalList<StepDetail>(
@@ -473,6 +494,7 @@ public class JobFlowDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobFlowDetail withSteps(java.util.Collection<StepDetail> steps) {
         setSteps(steps);
         return this;
@@ -485,6 +507,7 @@ public class JobFlowDetail implements Serializable, Cloneable {
      * 
      * @return A list of the bootstrap actions run by the job flow.
      */
+
     public java.util.List<BootstrapActionDetail> getBootstrapActions() {
         if (bootstrapActions == null) {
             bootstrapActions = new com.amazonaws.internal.SdkInternalList<BootstrapActionDetail>();
@@ -500,6 +523,7 @@ public class JobFlowDetail implements Serializable, Cloneable {
      * @param bootstrapActions
      *        A list of the bootstrap actions run by the job flow.
      */
+
     public void setBootstrapActions(
             java.util.Collection<BootstrapActionDetail> bootstrapActions) {
         if (bootstrapActions == null) {
@@ -527,6 +551,7 @@ public class JobFlowDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobFlowDetail withBootstrapActions(
             BootstrapActionDetail... bootstrapActions) {
         if (this.bootstrapActions == null) {
@@ -549,6 +574,7 @@ public class JobFlowDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobFlowDetail withBootstrapActions(
             java.util.Collection<BootstrapActionDetail> bootstrapActions) {
         setBootstrapActions(bootstrapActions);
@@ -566,6 +592,7 @@ public class JobFlowDetail implements Serializable, Cloneable {
      *         is launched. If you are not using third party software to manage
      *         the job flow this value is empty.
      */
+
     public java.util.List<String> getSupportedProducts() {
         if (supportedProducts == null) {
             supportedProducts = new com.amazonaws.internal.SdkInternalList<String>();
@@ -585,6 +612,7 @@ public class JobFlowDetail implements Serializable, Cloneable {
      *        launched. If you are not using third party software to manage the
      *        job flow this value is empty.
      */
+
     public void setSupportedProducts(
             java.util.Collection<String> supportedProducts) {
         if (supportedProducts == null) {
@@ -616,6 +644,7 @@ public class JobFlowDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobFlowDetail withSupportedProducts(String... supportedProducts) {
         if (this.supportedProducts == null) {
             setSupportedProducts(new com.amazonaws.internal.SdkInternalList<String>(
@@ -641,6 +670,7 @@ public class JobFlowDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobFlowDetail withSupportedProducts(
             java.util.Collection<String> supportedProducts) {
         setSupportedProducts(supportedProducts);
@@ -667,6 +697,7 @@ public class JobFlowDetail implements Serializable, Cloneable {
      *        created the job flow can view and manage it. This value can be
      *        changed using the <a>SetVisibleToAllUsers</a> action.
      */
+
     public void setVisibleToAllUsers(Boolean visibleToAllUsers) {
         this.visibleToAllUsers = visibleToAllUsers;
     }
@@ -690,6 +721,7 @@ public class JobFlowDetail implements Serializable, Cloneable {
      *         created the job flow can view and manage it. This value can be
      *         changed using the <a>SetVisibleToAllUsers</a> action.
      */
+
     public Boolean getVisibleToAllUsers() {
         return this.visibleToAllUsers;
     }
@@ -716,6 +748,7 @@ public class JobFlowDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobFlowDetail withVisibleToAllUsers(Boolean visibleToAllUsers) {
         setVisibleToAllUsers(visibleToAllUsers);
         return this;
@@ -740,6 +773,7 @@ public class JobFlowDetail implements Serializable, Cloneable {
      *         created the job flow can view and manage it. This value can be
      *         changed using the <a>SetVisibleToAllUsers</a> action.
      */
+
     public Boolean isVisibleToAllUsers() {
         return this.visibleToAllUsers;
     }
@@ -754,6 +788,7 @@ public class JobFlowDetail implements Serializable, Cloneable {
      *        The IAM role that was specified when the job flow was launched.
      *        The EC2 instances of the job flow assume this role.
      */
+
     public void setJobFlowRole(String jobFlowRole) {
         this.jobFlowRole = jobFlowRole;
     }
@@ -767,6 +802,7 @@ public class JobFlowDetail implements Serializable, Cloneable {
      * @return The IAM role that was specified when the job flow was launched.
      *         The EC2 instances of the job flow assume this role.
      */
+
     public String getJobFlowRole() {
         return this.jobFlowRole;
     }
@@ -783,6 +819,7 @@ public class JobFlowDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobFlowDetail withJobFlowRole(String jobFlowRole) {
         setJobFlowRole(jobFlowRole);
         return this;
@@ -798,6 +835,7 @@ public class JobFlowDetail implements Serializable, Cloneable {
      *        The IAM role that will be assumed by the Amazon EMR service to
      *        access AWS resources on your behalf.
      */
+
     public void setServiceRole(String serviceRole) {
         this.serviceRole = serviceRole;
     }
@@ -811,6 +849,7 @@ public class JobFlowDetail implements Serializable, Cloneable {
      * @return The IAM role that will be assumed by the Amazon EMR service to
      *         access AWS resources on your behalf.
      */
+
     public String getServiceRole() {
         return this.serviceRole;
     }
@@ -827,6 +866,7 @@ public class JobFlowDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobFlowDetail withServiceRole(String serviceRole) {
         setServiceRole(serviceRole);
         return this;

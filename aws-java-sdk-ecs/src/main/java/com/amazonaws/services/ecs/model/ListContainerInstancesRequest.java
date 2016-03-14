@@ -73,6 +73,7 @@ public class ListContainerInstancesRequest extends AmazonWebServiceRequest
      *        that hosts the container instances to list. If you do not specify
      *        a cluster, the default cluster is assumed..
      */
+
     public void setCluster(String cluster) {
         this.cluster = cluster;
     }
@@ -88,6 +89,7 @@ public class ListContainerInstancesRequest extends AmazonWebServiceRequest
      *         that hosts the container instances to list. If you do not specify
      *         a cluster, the default cluster is assumed..
      */
+
     public String getCluster() {
         return this.cluster;
     }
@@ -106,6 +108,7 @@ public class ListContainerInstancesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListContainerInstancesRequest withCluster(String cluster) {
         setCluster(cluster);
         return this;
@@ -130,6 +133,7 @@ public class ListContainerInstancesRequest extends AmazonWebServiceRequest
      *        This value is <code>null</code> when there are no more results to
      *        return.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -152,6 +156,7 @@ public class ListContainerInstancesRequest extends AmazonWebServiceRequest
      *         This value is <code>null</code> when there are no more results to
      *         return.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -177,6 +182,7 @@ public class ListContainerInstancesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListContainerInstancesRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -210,6 +216,7 @@ public class ListContainerInstancesRequest extends AmazonWebServiceRequest
      *        <code>ListContainerInstances</code> returns up to 100 results and
      *        a <code>nextToken</code> value if applicable.
      */
+
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
     }
@@ -241,6 +248,7 @@ public class ListContainerInstancesRequest extends AmazonWebServiceRequest
      *         <code>ListContainerInstances</code> returns up to 100 results and
      *         a <code>nextToken</code> value if applicable.
      */
+
     public Integer getMaxResults() {
         return this.maxResults;
     }
@@ -275,6 +283,7 @@ public class ListContainerInstancesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListContainerInstancesRequest withMaxResults(Integer maxResults) {
         setMaxResults(maxResults);
         return this;

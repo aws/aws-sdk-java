@@ -119,6 +119,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest
      * @param imageId
      *        The ID of the AMI.
      */
+
     public void setImageId(String imageId) {
         this.imageId = imageId;
     }
@@ -130,6 +131,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the AMI.
      */
+
     public String getImageId() {
         return this.imageId;
     }
@@ -144,6 +146,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyImageAttributeRequest withImageId(String imageId) {
         setImageId(imageId);
         return this;
@@ -157,6 +160,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest
      * @param attribute
      *        The name of the attribute to modify.
      */
+
     public void setAttribute(String attribute) {
         this.attribute = attribute;
     }
@@ -168,6 +172,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the attribute to modify.
      */
+
     public String getAttribute() {
         return this.attribute;
     }
@@ -182,6 +187,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyImageAttributeRequest withAttribute(String attribute) {
         setAttribute(attribute);
         return this;
@@ -196,6 +202,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest
      *        The operation type.
      * @see OperationType
      */
+
     public void setOperationType(String operationType) {
         this.operationType = operationType;
     }
@@ -208,6 +215,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest
      * @return The operation type.
      * @see OperationType
      */
+
     public String getOperationType() {
         return this.operationType;
     }
@@ -223,6 +231,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see OperationType
      */
+
     public ModifyImageAttributeRequest withOperationType(String operationType) {
         setOperationType(operationType);
         return this;
@@ -239,6 +248,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see OperationType
      */
+
     public void setOperationType(OperationType operationType) {
         this.operationType = operationType.toString();
     }
@@ -254,6 +264,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see OperationType
      */
+
     public ModifyImageAttributeRequest withOperationType(
             OperationType operationType) {
         setOperationType(operationType);
@@ -269,6 +280,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest
      * @return One or more AWS account IDs. This is only valid when modifying
      *         the <code>launchPermission</code> attribute.
      */
+
     public java.util.List<String> getUserIds() {
         if (userIds == null) {
             userIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -286,6 +298,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest
      *        One or more AWS account IDs. This is only valid when modifying the
      *        <code>launchPermission</code> attribute.
      */
+
     public void setUserIds(java.util.Collection<String> userIds) {
         if (userIds == null) {
             this.userIds = null;
@@ -314,6 +327,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyImageAttributeRequest withUserIds(String... userIds) {
         if (this.userIds == null) {
             setUserIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -337,6 +351,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyImageAttributeRequest withUserIds(
             java.util.Collection<String> userIds) {
         setUserIds(userIds);
@@ -352,6 +367,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest
      * @return One or more user groups. This is only valid when modifying the
      *         <code>launchPermission</code> attribute.
      */
+
     public java.util.List<String> getUserGroups() {
         if (userGroups == null) {
             userGroups = new com.amazonaws.internal.SdkInternalList<String>();
@@ -369,6 +385,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest
      *        One or more user groups. This is only valid when modifying the
      *        <code>launchPermission</code> attribute.
      */
+
     public void setUserGroups(java.util.Collection<String> userGroups) {
         if (userGroups == null) {
             this.userGroups = null;
@@ -397,6 +414,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyImageAttributeRequest withUserGroups(String... userGroups) {
         if (this.userGroups == null) {
             setUserGroups(new com.amazonaws.internal.SdkInternalList<String>(
@@ -420,6 +438,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyImageAttributeRequest withUserGroups(
             java.util.Collection<String> userGroups) {
         setUserGroups(userGroups);
@@ -437,6 +456,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest
      *         AMI, it can't be removed. This is only valid when modifying the
      *         <code>productCodes</code> attribute.
      */
+
     public java.util.List<String> getProductCodes() {
         if (productCodes == null) {
             productCodes = new com.amazonaws.internal.SdkInternalList<String>();
@@ -456,6 +476,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest
      *        it can't be removed. This is only valid when modifying the
      *        <code>productCodes</code> attribute.
      */
+
     public void setProductCodes(java.util.Collection<String> productCodes) {
         if (productCodes == null) {
             this.productCodes = null;
@@ -486,6 +507,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyImageAttributeRequest withProductCodes(String... productCodes) {
         if (this.productCodes == null) {
             setProductCodes(new com.amazonaws.internal.SdkInternalList<String>(
@@ -511,6 +533,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyImageAttributeRequest withProductCodes(
             java.util.Collection<String> productCodes) {
         setProductCodes(productCodes);
@@ -527,6 +550,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest
      *        The value of the attribute being modified. This is only valid when
      *        modifying the <code>description</code> attribute.
      */
+
     public void setValue(String value) {
         this.value = value;
     }
@@ -540,6 +564,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest
      * @return The value of the attribute being modified. This is only valid
      *         when modifying the <code>description</code> attribute.
      */
+
     public String getValue() {
         return this.value;
     }
@@ -556,6 +581,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyImageAttributeRequest withValue(String value) {
         setValue(value);
         return this;
@@ -569,6 +595,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest
      * @param launchPermission
      *        A launch permission modification.
      */
+
     public void setLaunchPermission(
             LaunchPermissionModifications launchPermission) {
         this.launchPermission = launchPermission;
@@ -581,6 +608,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest
      * 
      * @return A launch permission modification.
      */
+
     public LaunchPermissionModifications getLaunchPermission() {
         return this.launchPermission;
     }
@@ -595,6 +623,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyImageAttributeRequest withLaunchPermission(
             LaunchPermissionModifications launchPermission) {
         setLaunchPermission(launchPermission);
@@ -609,6 +638,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest
      * @param description
      *        A description for the AMI.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -620,6 +650,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest
      * 
      * @return A description for the AMI.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -634,6 +665,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyImageAttributeRequest withDescription(String description) {
         setDescription(description);
         return this;

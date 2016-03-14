@@ -69,6 +69,7 @@ public class GetAccountAuthorizationDetailsRequest extends
      *         or AWS managed policy) for filtering the results.
      * @see EntityType
      */
+
     public java.util.List<String> getFilter() {
         if (filter == null) {
             filter = new com.amazonaws.internal.SdkInternalList<String>();
@@ -87,6 +88,7 @@ public class GetAccountAuthorizationDetailsRequest extends
      *        or AWS managed policy) for filtering the results.
      * @see EntityType
      */
+
     public void setFilter(java.util.Collection<String> filter) {
         if (filter == null) {
             this.filter = null;
@@ -115,6 +117,7 @@ public class GetAccountAuthorizationDetailsRequest extends
      *         chained together.
      * @see EntityType
      */
+
     public GetAccountAuthorizationDetailsRequest withFilter(String... filter) {
         if (this.filter == null) {
             setFilter(new com.amazonaws.internal.SdkInternalList<String>(
@@ -139,6 +142,7 @@ public class GetAccountAuthorizationDetailsRequest extends
      *         chained together.
      * @see EntityType
      */
+
     public GetAccountAuthorizationDetailsRequest withFilter(
             java.util.Collection<String> filter) {
         setFilter(filter);
@@ -158,6 +162,7 @@ public class GetAccountAuthorizationDetailsRequest extends
      *         chained together.
      * @see EntityType
      */
+
     public GetAccountAuthorizationDetailsRequest withFilter(
             EntityType... filter) {
         com.amazonaws.internal.SdkInternalList<String> filterCopy = new com.amazonaws.internal.SdkInternalList<String>(
@@ -203,6 +208,7 @@ public class GetAccountAuthorizationDetailsRequest extends
      *        include in the subsequent call that tells the service where to
      *        continue from.
      */
+
     public void setMaxItems(Integer maxItems) {
         this.maxItems = maxItems;
     }
@@ -237,6 +243,7 @@ public class GetAccountAuthorizationDetailsRequest extends
      *         include in the subsequent call that tells the service where to
      *         continue from.
      */
+
     public Integer getMaxItems() {
         return this.maxItems;
     }
@@ -273,6 +280,7 @@ public class GetAccountAuthorizationDetailsRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetAccountAuthorizationDetailsRequest withMaxItems(Integer maxItems) {
         setMaxItems(maxItems);
         return this;
@@ -292,6 +300,7 @@ public class GetAccountAuthorizationDetailsRequest extends
      *        it to the value of the <code>Marker</code> element in the response
      *        that you received to indicate where the next call should start.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -310,6 +319,7 @@ public class GetAccountAuthorizationDetailsRequest extends
      *         response that you received to indicate where the next call should
      *         start.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -330,6 +340,7 @@ public class GetAccountAuthorizationDetailsRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetAccountAuthorizationDetailsRequest withMarker(String marker) {
         setMarker(marker);
         return this;

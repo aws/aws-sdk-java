@@ -44,6 +44,7 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
     /**
      * @param id
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -51,6 +52,7 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getId() {
         return this.id;
     }
@@ -60,6 +62,7 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TrafficPolicyInstance withId(String id) {
         setId(id);
         return this;
@@ -68,6 +71,7 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
     /**
      * @param hostedZoneId
      */
+
     public void setHostedZoneId(String hostedZoneId) {
         this.hostedZoneId = hostedZoneId;
     }
@@ -75,6 +79,7 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getHostedZoneId() {
         return this.hostedZoneId;
     }
@@ -84,6 +89,7 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TrafficPolicyInstance withHostedZoneId(String hostedZoneId) {
         setHostedZoneId(hostedZoneId);
         return this;
@@ -92,6 +98,7 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
     /**
      * @param name
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -99,6 +106,7 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getName() {
         return this.name;
     }
@@ -108,6 +116,7 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TrafficPolicyInstance withName(String name) {
         setName(name);
         return this;
@@ -116,6 +125,7 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
     /**
      * @param tTL
      */
+
     public void setTTL(Long tTL) {
         this.tTL = tTL;
     }
@@ -123,6 +133,7 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Long getTTL() {
         return this.tTL;
     }
@@ -132,6 +143,7 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TrafficPolicyInstance withTTL(Long tTL) {
         setTTL(tTL);
         return this;
@@ -140,6 +152,7 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
     /**
      * @param state
      */
+
     public void setState(String state) {
         this.state = state;
     }
@@ -147,6 +160,7 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getState() {
         return this.state;
     }
@@ -156,6 +170,7 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TrafficPolicyInstance withState(String state) {
         setState(state);
         return this;
@@ -164,6 +179,7 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
     /**
      * @param message
      */
+
     public void setMessage(String message) {
         this.message = message;
     }
@@ -171,6 +187,7 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getMessage() {
         return this.message;
     }
@@ -180,6 +197,7 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TrafficPolicyInstance withMessage(String message) {
         setMessage(message);
         return this;
@@ -188,6 +206,7 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
     /**
      * @param trafficPolicyId
      */
+
     public void setTrafficPolicyId(String trafficPolicyId) {
         this.trafficPolicyId = trafficPolicyId;
     }
@@ -195,6 +214,7 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getTrafficPolicyId() {
         return this.trafficPolicyId;
     }
@@ -204,6 +224,7 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TrafficPolicyInstance withTrafficPolicyId(String trafficPolicyId) {
         setTrafficPolicyId(trafficPolicyId);
         return this;
@@ -212,6 +233,7 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
     /**
      * @param trafficPolicyVersion
      */
+
     public void setTrafficPolicyVersion(Integer trafficPolicyVersion) {
         this.trafficPolicyVersion = trafficPolicyVersion;
     }
@@ -219,6 +241,7 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Integer getTrafficPolicyVersion() {
         return this.trafficPolicyVersion;
     }
@@ -228,6 +251,7 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TrafficPolicyInstance withTrafficPolicyVersion(
             Integer trafficPolicyVersion) {
         setTrafficPolicyVersion(trafficPolicyVersion);
@@ -238,6 +262,7 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
      * @param trafficPolicyType
      * @see RRType
      */
+
     public void setTrafficPolicyType(String trafficPolicyType) {
         this.trafficPolicyType = trafficPolicyType;
     }
@@ -246,6 +271,7 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
      * @return
      * @see RRType
      */
+
     public String getTrafficPolicyType() {
         return this.trafficPolicyType;
     }
@@ -256,6 +282,7 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
      *         chained together.
      * @see RRType
      */
+
     public TrafficPolicyInstance withTrafficPolicyType(String trafficPolicyType) {
         setTrafficPolicyType(trafficPolicyType);
         return this;
@@ -267,6 +294,7 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
      *         chained together.
      * @see RRType
      */
+
     public void setTrafficPolicyType(RRType trafficPolicyType) {
         this.trafficPolicyType = trafficPolicyType.toString();
     }
@@ -277,6 +305,7 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
      *         chained together.
      * @see RRType
      */
+
     public TrafficPolicyInstance withTrafficPolicyType(RRType trafficPolicyType) {
         setTrafficPolicyType(trafficPolicyType);
         return this;

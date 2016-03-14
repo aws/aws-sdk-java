@@ -75,6 +75,7 @@ public class DescribeEnvironmentHealthRequest extends AmazonWebServiceRequest
      *        both. If you do not specify either, AWS Elastic Beanstalk returns
      *        <code>MissingRequiredParameter</code> error.
      */
+
     public void setEnvironmentName(String environmentName) {
         this.environmentName = environmentName;
     }
@@ -95,6 +96,7 @@ public class DescribeEnvironmentHealthRequest extends AmazonWebServiceRequest
      *         both. If you do not specify either, AWS Elastic Beanstalk returns
      *         <code>MissingRequiredParameter</code> error.
      */
+
     public String getEnvironmentName() {
         return this.environmentName;
     }
@@ -118,6 +120,7 @@ public class DescribeEnvironmentHealthRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeEnvironmentHealthRequest withEnvironmentName(
             String environmentName) {
         setEnvironmentName(environmentName);
@@ -141,6 +144,7 @@ public class DescribeEnvironmentHealthRequest extends AmazonWebServiceRequest
      *        both. If you do not specify either, AWS Elastic Beanstalk returns
      *        <code>MissingRequiredParameter</code> error.
      */
+
     public void setEnvironmentId(String environmentId) {
         this.environmentId = environmentId;
     }
@@ -161,6 +165,7 @@ public class DescribeEnvironmentHealthRequest extends AmazonWebServiceRequest
      *         both. If you do not specify either, AWS Elastic Beanstalk returns
      *         <code>MissingRequiredParameter</code> error.
      */
+
     public String getEnvironmentId() {
         return this.environmentId;
     }
@@ -184,6 +189,7 @@ public class DescribeEnvironmentHealthRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeEnvironmentHealthRequest withEnvironmentId(
             String environmentId) {
         setEnvironmentId(environmentId);
@@ -202,6 +208,7 @@ public class DescribeEnvironmentHealthRequest extends AmazonWebServiceRequest
      *         the name of the environment.
      * @see EnvironmentHealthAttribute
      */
+
     public java.util.List<String> getAttributeNames() {
         if (attributeNames == null) {
             attributeNames = new com.amazonaws.internal.SdkInternalList<String>();
@@ -222,6 +229,7 @@ public class DescribeEnvironmentHealthRequest extends AmazonWebServiceRequest
      *        the name of the environment.
      * @see EnvironmentHealthAttribute
      */
+
     public void setAttributeNames(java.util.Collection<String> attributeNames) {
         if (attributeNames == null) {
             this.attributeNames = null;
@@ -253,6 +261,7 @@ public class DescribeEnvironmentHealthRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see EnvironmentHealthAttribute
      */
+
     public DescribeEnvironmentHealthRequest withAttributeNames(
             String... attributeNames) {
         if (this.attributeNames == null) {
@@ -280,6 +289,7 @@ public class DescribeEnvironmentHealthRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see EnvironmentHealthAttribute
      */
+
     public DescribeEnvironmentHealthRequest withAttributeNames(
             java.util.Collection<String> attributeNames) {
         setAttributeNames(attributeNames);
@@ -301,6 +311,7 @@ public class DescribeEnvironmentHealthRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see EnvironmentHealthAttribute
      */
+
     public DescribeEnvironmentHealthRequest withAttributeNames(
             EnvironmentHealthAttribute... attributeNames) {
         com.amazonaws.internal.SdkInternalList<String> attributeNamesCopy = new com.amazonaws.internal.SdkInternalList<String>(

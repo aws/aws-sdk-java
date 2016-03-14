@@ -58,6 +58,7 @@ public class AvailabilityZone implements Serializable, Cloneable {
      * @param zoneName
      *        The name of the Availability Zone.
      */
+
     public void setZoneName(String zoneName) {
         this.zoneName = zoneName;
     }
@@ -69,6 +70,7 @@ public class AvailabilityZone implements Serializable, Cloneable {
      * 
      * @return The name of the Availability Zone.
      */
+
     public String getZoneName() {
         return this.zoneName;
     }
@@ -83,6 +85,7 @@ public class AvailabilityZone implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AvailabilityZone withZoneName(String zoneName) {
         setZoneName(zoneName);
         return this;
@@ -97,6 +100,7 @@ public class AvailabilityZone implements Serializable, Cloneable {
      *        The state of the Availability Zone.
      * @see AvailabilityZoneState
      */
+
     public void setState(String state) {
         this.state = state;
     }
@@ -109,6 +113,7 @@ public class AvailabilityZone implements Serializable, Cloneable {
      * @return The state of the Availability Zone.
      * @see AvailabilityZoneState
      */
+
     public String getState() {
         return this.state;
     }
@@ -124,6 +129,7 @@ public class AvailabilityZone implements Serializable, Cloneable {
      *         chained together.
      * @see AvailabilityZoneState
      */
+
     public AvailabilityZone withState(String state) {
         setState(state);
         return this;
@@ -140,6 +146,7 @@ public class AvailabilityZone implements Serializable, Cloneable {
      *         chained together.
      * @see AvailabilityZoneState
      */
+
     public void setState(AvailabilityZoneState state) {
         this.state = state.toString();
     }
@@ -155,6 +162,7 @@ public class AvailabilityZone implements Serializable, Cloneable {
      *         chained together.
      * @see AvailabilityZoneState
      */
+
     public AvailabilityZone withState(AvailabilityZoneState state) {
         setState(state);
         return this;
@@ -168,6 +176,7 @@ public class AvailabilityZone implements Serializable, Cloneable {
      * @param regionName
      *        The name of the region.
      */
+
     public void setRegionName(String regionName) {
         this.regionName = regionName;
     }
@@ -179,6 +188,7 @@ public class AvailabilityZone implements Serializable, Cloneable {
      * 
      * @return The name of the region.
      */
+
     public String getRegionName() {
         return this.regionName;
     }
@@ -193,6 +203,7 @@ public class AvailabilityZone implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AvailabilityZone withRegionName(String regionName) {
         setRegionName(regionName);
         return this;
@@ -205,6 +216,7 @@ public class AvailabilityZone implements Serializable, Cloneable {
      * 
      * @return Any messages about the Availability Zone.
      */
+
     public java.util.List<AvailabilityZoneMessage> getMessages() {
         if (messages == null) {
             messages = new com.amazonaws.internal.SdkInternalList<AvailabilityZoneMessage>();
@@ -220,6 +232,7 @@ public class AvailabilityZone implements Serializable, Cloneable {
      * @param messages
      *        Any messages about the Availability Zone.
      */
+
     public void setMessages(
             java.util.Collection<AvailabilityZoneMessage> messages) {
         if (messages == null) {
@@ -247,6 +260,7 @@ public class AvailabilityZone implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AvailabilityZone withMessages(AvailabilityZoneMessage... messages) {
         if (this.messages == null) {
             setMessages(new com.amazonaws.internal.SdkInternalList<AvailabilityZoneMessage>(
@@ -268,6 +282,7 @@ public class AvailabilityZone implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AvailabilityZone withMessages(
             java.util.Collection<AvailabilityZoneMessage> messages) {
         setMessages(messages);

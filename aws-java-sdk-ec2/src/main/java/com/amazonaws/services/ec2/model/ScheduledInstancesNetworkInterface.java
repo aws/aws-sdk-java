@@ -101,6 +101,7 @@ public class ScheduledInstancesNetworkInterface implements Serializable,
      * @param networkInterfaceId
      *        The ID of the network interface.
      */
+
     public void setNetworkInterfaceId(String networkInterfaceId) {
         this.networkInterfaceId = networkInterfaceId;
     }
@@ -112,6 +113,7 @@ public class ScheduledInstancesNetworkInterface implements Serializable,
      * 
      * @return The ID of the network interface.
      */
+
     public String getNetworkInterfaceId() {
         return this.networkInterfaceId;
     }
@@ -126,6 +128,7 @@ public class ScheduledInstancesNetworkInterface implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstancesNetworkInterface withNetworkInterfaceId(
             String networkInterfaceId) {
         setNetworkInterfaceId(networkInterfaceId);
@@ -140,6 +143,7 @@ public class ScheduledInstancesNetworkInterface implements Serializable,
      * @param deviceIndex
      *        The index of the device for the network interface attachment.
      */
+
     public void setDeviceIndex(Integer deviceIndex) {
         this.deviceIndex = deviceIndex;
     }
@@ -151,6 +155,7 @@ public class ScheduledInstancesNetworkInterface implements Serializable,
      * 
      * @return The index of the device for the network interface attachment.
      */
+
     public Integer getDeviceIndex() {
         return this.deviceIndex;
     }
@@ -165,6 +170,7 @@ public class ScheduledInstancesNetworkInterface implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstancesNetworkInterface withDeviceIndex(
             Integer deviceIndex) {
         setDeviceIndex(deviceIndex);
@@ -179,6 +185,7 @@ public class ScheduledInstancesNetworkInterface implements Serializable,
      * @param subnetId
      *        The ID of the subnet.
      */
+
     public void setSubnetId(String subnetId) {
         this.subnetId = subnetId;
     }
@@ -190,6 +197,7 @@ public class ScheduledInstancesNetworkInterface implements Serializable,
      * 
      * @return The ID of the subnet.
      */
+
     public String getSubnetId() {
         return this.subnetId;
     }
@@ -204,6 +212,7 @@ public class ScheduledInstancesNetworkInterface implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstancesNetworkInterface withSubnetId(String subnetId) {
         setSubnetId(subnetId);
         return this;
@@ -217,6 +226,7 @@ public class ScheduledInstancesNetworkInterface implements Serializable,
      * @param description
      *        The description.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -228,6 +238,7 @@ public class ScheduledInstancesNetworkInterface implements Serializable,
      * 
      * @return The description.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -242,6 +253,7 @@ public class ScheduledInstancesNetworkInterface implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstancesNetworkInterface withDescription(String description) {
         setDescription(description);
         return this;
@@ -255,6 +267,7 @@ public class ScheduledInstancesNetworkInterface implements Serializable,
      * @param privateIpAddress
      *        The IP address of the network interface within the subnet.
      */
+
     public void setPrivateIpAddress(String privateIpAddress) {
         this.privateIpAddress = privateIpAddress;
     }
@@ -266,6 +279,7 @@ public class ScheduledInstancesNetworkInterface implements Serializable,
      * 
      * @return The IP address of the network interface within the subnet.
      */
+
     public String getPrivateIpAddress() {
         return this.privateIpAddress;
     }
@@ -280,6 +294,7 @@ public class ScheduledInstancesNetworkInterface implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstancesNetworkInterface withPrivateIpAddress(
             String privateIpAddress) {
         setPrivateIpAddress(privateIpAddress);
@@ -293,6 +308,7 @@ public class ScheduledInstancesNetworkInterface implements Serializable,
      * 
      * @return The private IP addresses.
      */
+
     public java.util.List<ScheduledInstancesPrivateIpAddressConfig> getPrivateIpAddressConfigs() {
         if (privateIpAddressConfigs == null) {
             privateIpAddressConfigs = new com.amazonaws.internal.SdkInternalList<ScheduledInstancesPrivateIpAddressConfig>();
@@ -308,6 +324,7 @@ public class ScheduledInstancesNetworkInterface implements Serializable,
      * @param privateIpAddressConfigs
      *        The private IP addresses.
      */
+
     public void setPrivateIpAddressConfigs(
             java.util.Collection<ScheduledInstancesPrivateIpAddressConfig> privateIpAddressConfigs) {
         if (privateIpAddressConfigs == null) {
@@ -335,6 +352,7 @@ public class ScheduledInstancesNetworkInterface implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstancesNetworkInterface withPrivateIpAddressConfigs(
             ScheduledInstancesPrivateIpAddressConfig... privateIpAddressConfigs) {
         if (this.privateIpAddressConfigs == null) {
@@ -357,6 +375,7 @@ public class ScheduledInstancesNetworkInterface implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstancesNetworkInterface withPrivateIpAddressConfigs(
             java.util.Collection<ScheduledInstancesPrivateIpAddressConfig> privateIpAddressConfigs) {
         setPrivateIpAddressConfigs(privateIpAddressConfigs);
@@ -371,6 +390,7 @@ public class ScheduledInstancesNetworkInterface implements Serializable,
      * @param secondaryPrivateIpAddressCount
      *        The number of secondary private IP addresses.
      */
+
     public void setSecondaryPrivateIpAddressCount(
             Integer secondaryPrivateIpAddressCount) {
         this.secondaryPrivateIpAddressCount = secondaryPrivateIpAddressCount;
@@ -383,6 +403,7 @@ public class ScheduledInstancesNetworkInterface implements Serializable,
      * 
      * @return The number of secondary private IP addresses.
      */
+
     public Integer getSecondaryPrivateIpAddressCount() {
         return this.secondaryPrivateIpAddressCount;
     }
@@ -397,6 +418,7 @@ public class ScheduledInstancesNetworkInterface implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstancesNetworkInterface withSecondaryPrivateIpAddressCount(
             Integer secondaryPrivateIpAddressCount) {
         setSecondaryPrivateIpAddressCount(secondaryPrivateIpAddressCount);
@@ -421,6 +443,7 @@ public class ScheduledInstancesNetworkInterface implements Serializable,
      *        than one network interface in the request. If launching into a
      *        default subnet, the default value is <code>true</code>.
      */
+
     public void setAssociatePublicIpAddress(Boolean associatePublicIpAddress) {
         this.associatePublicIpAddress = associatePublicIpAddress;
     }
@@ -442,6 +465,7 @@ public class ScheduledInstancesNetworkInterface implements Serializable,
      *         than one network interface in the request. If launching into a
      *         default subnet, the default value is <code>true</code>.
      */
+
     public Boolean getAssociatePublicIpAddress() {
         return this.associatePublicIpAddress;
     }
@@ -466,6 +490,7 @@ public class ScheduledInstancesNetworkInterface implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstancesNetworkInterface withAssociatePublicIpAddress(
             Boolean associatePublicIpAddress) {
         setAssociatePublicIpAddress(associatePublicIpAddress);
@@ -489,6 +514,7 @@ public class ScheduledInstancesNetworkInterface implements Serializable,
      *         than one network interface in the request. If launching into a
      *         default subnet, the default value is <code>true</code>.
      */
+
     public Boolean isAssociatePublicIpAddress() {
         return this.associatePublicIpAddress;
     }
@@ -500,6 +526,7 @@ public class ScheduledInstancesNetworkInterface implements Serializable,
      * 
      * @return The IDs of one or more security groups.
      */
+
     public java.util.List<String> getGroups() {
         if (groups == null) {
             groups = new com.amazonaws.internal.SdkInternalList<String>();
@@ -515,6 +542,7 @@ public class ScheduledInstancesNetworkInterface implements Serializable,
      * @param groups
      *        The IDs of one or more security groups.
      */
+
     public void setGroups(java.util.Collection<String> groups) {
         if (groups == null) {
             this.groups = null;
@@ -540,6 +568,7 @@ public class ScheduledInstancesNetworkInterface implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstancesNetworkInterface withGroups(String... groups) {
         if (this.groups == null) {
             setGroups(new com.amazonaws.internal.SdkInternalList<String>(
@@ -561,6 +590,7 @@ public class ScheduledInstancesNetworkInterface implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstancesNetworkInterface withGroups(
             java.util.Collection<String> groups) {
         setGroups(groups);
@@ -577,6 +607,7 @@ public class ScheduledInstancesNetworkInterface implements Serializable,
      *        Indicates whether to delete the interface when the instance is
      *        terminated.
      */
+
     public void setDeleteOnTermination(Boolean deleteOnTermination) {
         this.deleteOnTermination = deleteOnTermination;
     }
@@ -590,6 +621,7 @@ public class ScheduledInstancesNetworkInterface implements Serializable,
      * @return Indicates whether to delete the interface when the instance is
      *         terminated.
      */
+
     public Boolean getDeleteOnTermination() {
         return this.deleteOnTermination;
     }
@@ -606,6 +638,7 @@ public class ScheduledInstancesNetworkInterface implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduledInstancesNetworkInterface withDeleteOnTermination(
             Boolean deleteOnTermination) {
         setDeleteOnTermination(deleteOnTermination);
@@ -621,6 +654,7 @@ public class ScheduledInstancesNetworkInterface implements Serializable,
      * @return Indicates whether to delete the interface when the instance is
      *         terminated.
      */
+
     public Boolean isDeleteOnTermination() {
         return this.deleteOnTermination;
     }

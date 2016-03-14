@@ -51,6 +51,7 @@ public class CreateTrafficPolicyInstanceResult implements Serializable,
      *        A complex type that contains settings for the new traffic policy
      *        instance.
      */
+
     public void setTrafficPolicyInstance(
             TrafficPolicyInstance trafficPolicyInstance) {
         this.trafficPolicyInstance = trafficPolicyInstance;
@@ -65,6 +66,7 @@ public class CreateTrafficPolicyInstanceResult implements Serializable,
      * @return A complex type that contains settings for the new traffic policy
      *         instance.
      */
+
     public TrafficPolicyInstance getTrafficPolicyInstance() {
         return this.trafficPolicyInstance;
     }
@@ -81,6 +83,7 @@ public class CreateTrafficPolicyInstanceResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateTrafficPolicyInstanceResult withTrafficPolicyInstance(
             TrafficPolicyInstance trafficPolicyInstance) {
         setTrafficPolicyInstance(trafficPolicyInstance);
@@ -95,6 +98,7 @@ public class CreateTrafficPolicyInstanceResult implements Serializable,
      * @param location
      *        A unique URL that represents a new traffic policy instance.
      */
+
     public void setLocation(String location) {
         this.location = location;
     }
@@ -106,6 +110,7 @@ public class CreateTrafficPolicyInstanceResult implements Serializable,
      * 
      * @return A unique URL that represents a new traffic policy instance.
      */
+
     public String getLocation() {
         return this.location;
     }
@@ -120,6 +125,7 @@ public class CreateTrafficPolicyInstanceResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateTrafficPolicyInstanceResult withLocation(String location) {
         setLocation(location);
         return this;

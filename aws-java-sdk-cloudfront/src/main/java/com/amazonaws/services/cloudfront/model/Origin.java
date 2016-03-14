@@ -77,6 +77,7 @@ public class Origin implements Serializable, Cloneable {
      *        routes a request to when the request matches the path pattern for
      *        that cache behavior.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -93,6 +94,7 @@ public class Origin implements Serializable, Cloneable {
      *         CloudFront routes a request to when the request matches the path
      *         pattern for that cache behavior.
      */
+
     public String getId() {
         return this.id;
     }
@@ -112,6 +114,7 @@ public class Origin implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Origin withId(String id) {
         setId(id);
         return this;
@@ -131,6 +134,7 @@ public class Origin implements Serializable, Cloneable {
      *        for the HTTP server from which you want CloudFront to get objects
      *        for this origin, for example, www.example.com.
      */
+
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
@@ -148,6 +152,7 @@ public class Origin implements Serializable, Cloneable {
      *         domain name for the HTTP server from which you want CloudFront to
      *         get objects for this origin, for example, www.example.com.
      */
+
     public String getDomainName() {
         return this.domainName;
     }
@@ -168,6 +173,7 @@ public class Origin implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Origin withDomainName(String domainName) {
         setDomainName(domainName);
         return this;
@@ -186,6 +192,7 @@ public class Origin implements Serializable, Cloneable {
      *        name, beginning with a /. CloudFront appends the directory name to
      *        the value of DomainName.
      */
+
     public void setOriginPath(String originPath) {
         this.originPath = originPath;
     }
@@ -202,6 +209,7 @@ public class Origin implements Serializable, Cloneable {
      *         directory name, beginning with a /. CloudFront appends the
      *         directory name to the value of DomainName.
      */
+
     public String getOriginPath() {
         return this.originPath;
     }
@@ -221,6 +229,7 @@ public class Origin implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Origin withOriginPath(String originPath) {
         setOriginPath(originPath);
         return this;
@@ -234,6 +243,7 @@ public class Origin implements Serializable, Cloneable {
      *        A complex type that contains information about the custom headers
      *        associated with this Origin.
      */
+
     public void setCustomHeaders(CustomHeaders customHeaders) {
         this.customHeaders = customHeaders;
     }
@@ -245,6 +255,7 @@ public class Origin implements Serializable, Cloneable {
      * @return A complex type that contains information about the custom headers
      *         associated with this Origin.
      */
+
     public CustomHeaders getCustomHeaders() {
         return this.customHeaders;
     }
@@ -259,6 +270,7 @@ public class Origin implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Origin withCustomHeaders(CustomHeaders customHeaders) {
         setCustomHeaders(customHeaders);
         return this;
@@ -274,6 +286,7 @@ public class Origin implements Serializable, Cloneable {
      *        origin. If the origin is a custom origin, use the
      *        CustomOriginConfig element instead.
      */
+
     public void setS3OriginConfig(S3OriginConfig s3OriginConfig) {
         this.s3OriginConfig = s3OriginConfig;
     }
@@ -287,6 +300,7 @@ public class Origin implements Serializable, Cloneable {
      *         origin. If the origin is a custom origin, use the
      *         CustomOriginConfig element instead.
      */
+
     public S3OriginConfig getS3OriginConfig() {
         return this.s3OriginConfig;
     }
@@ -303,6 +317,7 @@ public class Origin implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Origin withS3OriginConfig(S3OriginConfig s3OriginConfig) {
         setS3OriginConfig(s3OriginConfig);
         return this;
@@ -317,6 +332,7 @@ public class Origin implements Serializable, Cloneable {
      *        the origin is an Amazon S3 bucket, use the S3OriginConfig element
      *        instead.
      */
+
     public void setCustomOriginConfig(CustomOriginConfig customOriginConfig) {
         this.customOriginConfig = customOriginConfig;
     }
@@ -329,6 +345,7 @@ public class Origin implements Serializable, Cloneable {
      *         If the origin is an Amazon S3 bucket, use the S3OriginConfig
      *         element instead.
      */
+
     public CustomOriginConfig getCustomOriginConfig() {
         return this.customOriginConfig;
     }
@@ -344,6 +361,7 @@ public class Origin implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Origin withCustomOriginConfig(CustomOriginConfig customOriginConfig) {
         setCustomOriginConfig(customOriginConfig);
         return this;

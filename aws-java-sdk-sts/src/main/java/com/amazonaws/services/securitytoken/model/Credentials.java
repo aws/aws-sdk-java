@@ -92,6 +92,7 @@ public class Credentials implements Serializable, Cloneable {
      *        The access key ID that identifies the temporary security
      *        credentials.
      */
+
     public void setAccessKeyId(String accessKeyId) {
         this.accessKeyId = accessKeyId;
     }
@@ -104,6 +105,7 @@ public class Credentials implements Serializable, Cloneable {
      * @return The access key ID that identifies the temporary security
      *         credentials.
      */
+
     public String getAccessKeyId() {
         return this.accessKeyId;
     }
@@ -119,6 +121,7 @@ public class Credentials implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Credentials withAccessKeyId(String accessKeyId) {
         setAccessKeyId(accessKeyId);
         return this;
@@ -132,6 +135,7 @@ public class Credentials implements Serializable, Cloneable {
      * @param secretAccessKey
      *        The secret access key that can be used to sign requests.
      */
+
     public void setSecretAccessKey(String secretAccessKey) {
         this.secretAccessKey = secretAccessKey;
     }
@@ -143,6 +147,7 @@ public class Credentials implements Serializable, Cloneable {
      * 
      * @return The secret access key that can be used to sign requests.
      */
+
     public String getSecretAccessKey() {
         return this.secretAccessKey;
     }
@@ -157,6 +162,7 @@ public class Credentials implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Credentials withSecretAccessKey(String secretAccessKey) {
         setSecretAccessKey(secretAccessKey);
         return this;
@@ -172,6 +178,7 @@ public class Credentials implements Serializable, Cloneable {
      *        The token that users must pass to the service API to use the
      *        temporary credentials.
      */
+
     public void setSessionToken(String sessionToken) {
         this.sessionToken = sessionToken;
     }
@@ -185,6 +192,7 @@ public class Credentials implements Serializable, Cloneable {
      * @return The token that users must pass to the service API to use the
      *         temporary credentials.
      */
+
     public String getSessionToken() {
         return this.sessionToken;
     }
@@ -201,6 +209,7 @@ public class Credentials implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Credentials withSessionToken(String sessionToken) {
         setSessionToken(sessionToken);
         return this;
@@ -214,6 +223,7 @@ public class Credentials implements Serializable, Cloneable {
      * @param expiration
      *        The date on which the current credentials expire.
      */
+
     public void setExpiration(java.util.Date expiration) {
         this.expiration = expiration;
     }
@@ -225,6 +235,7 @@ public class Credentials implements Serializable, Cloneable {
      * 
      * @return The date on which the current credentials expire.
      */
+
     public java.util.Date getExpiration() {
         return this.expiration;
     }
@@ -239,6 +250,7 @@ public class Credentials implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Credentials withExpiration(java.util.Date expiration) {
         setExpiration(expiration);
         return this;

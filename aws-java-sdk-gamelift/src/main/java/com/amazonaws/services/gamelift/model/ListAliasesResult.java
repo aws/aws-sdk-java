@@ -37,6 +37,13 @@ public class ListAliasesResult implements Serializable, Cloneable {
      * this action. If no token is returned, these results represent the end of
      * the list.
      * </p>
+     * <note>
+     * <p>
+     * If a request has a limit that exactly matches the number of remaining
+     * results, a token is returned even though there are no more results to
+     * retrieve.
+     * </p>
+     * </note>
      */
     private String nextToken;
 
@@ -47,6 +54,7 @@ public class ListAliasesResult implements Serializable, Cloneable {
      * 
      * @return Collection of alias records that match the list request.
      */
+
     public java.util.List<Alias> getAliases() {
         return aliases;
     }
@@ -59,6 +67,7 @@ public class ListAliasesResult implements Serializable, Cloneable {
      * @param aliases
      *        Collection of alias records that match the list request.
      */
+
     public void setAliases(java.util.Collection<Alias> aliases) {
         if (aliases == null) {
             this.aliases = null;
@@ -84,6 +93,7 @@ public class ListAliasesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListAliasesResult withAliases(Alias... aliases) {
         if (this.aliases == null) {
             setAliases(new java.util.ArrayList<Alias>(aliases.length));
@@ -104,6 +114,7 @@ public class ListAliasesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListAliasesResult withAliases(java.util.Collection<Alias> aliases) {
         setAliases(aliases);
         return this;
@@ -115,12 +126,25 @@ public class ListAliasesResult implements Serializable, Cloneable {
      * this action. If no token is returned, these results represent the end of
      * the list.
      * </p>
+     * <note>
+     * <p>
+     * If a request has a limit that exactly matches the number of remaining
+     * results, a token is returned even though there are no more results to
+     * retrieve.
+     * </p>
+     * </note>
      * 
      * @param nextToken
      *        Token indicating where to resume retrieving results on the next
      *        call to this action. If no token is returned, these results
-     *        represent the end of the list.
+     *        represent the end of the list.</p> <note>
+     *        <p>
+     *        If a request has a limit that exactly matches the number of
+     *        remaining results, a token is returned even though there are no
+     *        more results to retrieve.
+     *        </p>
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -131,11 +155,24 @@ public class ListAliasesResult implements Serializable, Cloneable {
      * this action. If no token is returned, these results represent the end of
      * the list.
      * </p>
+     * <note>
+     * <p>
+     * If a request has a limit that exactly matches the number of remaining
+     * results, a token is returned even though there are no more results to
+     * retrieve.
+     * </p>
+     * </note>
      * 
      * @return Token indicating where to resume retrieving results on the next
      *         call to this action. If no token is returned, these results
-     *         represent the end of the list.
+     *         represent the end of the list.</p> <note>
+     *         <p>
+     *         If a request has a limit that exactly matches the number of
+     *         remaining results, a token is returned even though there are no
+     *         more results to retrieve.
+     *         </p>
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -146,14 +183,27 @@ public class ListAliasesResult implements Serializable, Cloneable {
      * this action. If no token is returned, these results represent the end of
      * the list.
      * </p>
+     * <note>
+     * <p>
+     * If a request has a limit that exactly matches the number of remaining
+     * results, a token is returned even though there are no more results to
+     * retrieve.
+     * </p>
+     * </note>
      * 
      * @param nextToken
      *        Token indicating where to resume retrieving results on the next
      *        call to this action. If no token is returned, these results
-     *        represent the end of the list.
+     *        represent the end of the list.</p> <note>
+     *        <p>
+     *        If a request has a limit that exactly matches the number of
+     *        remaining results, a token is returned even though there are no
+     *        more results to retrieve.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListAliasesResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

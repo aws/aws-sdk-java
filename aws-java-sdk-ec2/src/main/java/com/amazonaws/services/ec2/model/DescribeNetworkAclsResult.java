@@ -37,6 +37,7 @@ public class DescribeNetworkAclsResult implements Serializable, Cloneable {
      * 
      * @return Information about one or more network ACLs.
      */
+
     public java.util.List<NetworkAcl> getNetworkAcls() {
         if (networkAcls == null) {
             networkAcls = new com.amazonaws.internal.SdkInternalList<NetworkAcl>();
@@ -52,6 +53,7 @@ public class DescribeNetworkAclsResult implements Serializable, Cloneable {
      * @param networkAcls
      *        Information about one or more network ACLs.
      */
+
     public void setNetworkAcls(java.util.Collection<NetworkAcl> networkAcls) {
         if (networkAcls == null) {
             this.networkAcls = null;
@@ -78,6 +80,7 @@ public class DescribeNetworkAclsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeNetworkAclsResult withNetworkAcls(NetworkAcl... networkAcls) {
         if (this.networkAcls == null) {
             setNetworkAcls(new com.amazonaws.internal.SdkInternalList<NetworkAcl>(
@@ -99,6 +102,7 @@ public class DescribeNetworkAclsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeNetworkAclsResult withNetworkAcls(
             java.util.Collection<NetworkAcl> networkAcls) {
         setNetworkAcls(networkAcls);

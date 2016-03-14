@@ -74,6 +74,7 @@ public class CustomerGateway implements Serializable, Cloneable {
      * @param customerGatewayId
      *        The ID of the customer gateway.
      */
+
     public void setCustomerGatewayId(String customerGatewayId) {
         this.customerGatewayId = customerGatewayId;
     }
@@ -85,6 +86,7 @@ public class CustomerGateway implements Serializable, Cloneable {
      * 
      * @return The ID of the customer gateway.
      */
+
     public String getCustomerGatewayId() {
         return this.customerGatewayId;
     }
@@ -99,6 +101,7 @@ public class CustomerGateway implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CustomerGateway withCustomerGatewayId(String customerGatewayId) {
         setCustomerGatewayId(customerGatewayId);
         return this;
@@ -114,6 +117,7 @@ public class CustomerGateway implements Serializable, Cloneable {
      *        The current state of the customer gateway (
      *        <code>pending | available | deleting | deleted</code>).
      */
+
     public void setState(String state) {
         this.state = state;
     }
@@ -127,6 +131,7 @@ public class CustomerGateway implements Serializable, Cloneable {
      * @return The current state of the customer gateway (
      *         <code>pending | available | deleting | deleted</code>).
      */
+
     public String getState() {
         return this.state;
     }
@@ -143,6 +148,7 @@ public class CustomerGateway implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CustomerGateway withState(String state) {
         setState(state);
         return this;
@@ -158,6 +164,7 @@ public class CustomerGateway implements Serializable, Cloneable {
      *        The type of VPN connection the customer gateway supports (
      *        <code>ipsec.1</code>).
      */
+
     public void setType(String type) {
         this.type = type;
     }
@@ -171,6 +178,7 @@ public class CustomerGateway implements Serializable, Cloneable {
      * @return The type of VPN connection the customer gateway supports (
      *         <code>ipsec.1</code>).
      */
+
     public String getType() {
         return this.type;
     }
@@ -187,6 +195,7 @@ public class CustomerGateway implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CustomerGateway withType(String type) {
         setType(type);
         return this;
@@ -202,6 +211,7 @@ public class CustomerGateway implements Serializable, Cloneable {
      *        The Internet-routable IP address of the customer gateway's outside
      *        interface.
      */
+
     public void setIpAddress(String ipAddress) {
         this.ipAddress = ipAddress;
     }
@@ -215,6 +225,7 @@ public class CustomerGateway implements Serializable, Cloneable {
      * @return The Internet-routable IP address of the customer gateway's
      *         outside interface.
      */
+
     public String getIpAddress() {
         return this.ipAddress;
     }
@@ -231,6 +242,7 @@ public class CustomerGateway implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CustomerGateway withIpAddress(String ipAddress) {
         setIpAddress(ipAddress);
         return this;
@@ -246,6 +258,7 @@ public class CustomerGateway implements Serializable, Cloneable {
      *        The customer gateway's Border Gateway Protocol (BGP) Autonomous
      *        System Number (ASN).
      */
+
     public void setBgpAsn(String bgpAsn) {
         this.bgpAsn = bgpAsn;
     }
@@ -259,6 +272,7 @@ public class CustomerGateway implements Serializable, Cloneable {
      * @return The customer gateway's Border Gateway Protocol (BGP) Autonomous
      *         System Number (ASN).
      */
+
     public String getBgpAsn() {
         return this.bgpAsn;
     }
@@ -275,6 +289,7 @@ public class CustomerGateway implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CustomerGateway withBgpAsn(String bgpAsn) {
         setBgpAsn(bgpAsn);
         return this;
@@ -287,6 +302,7 @@ public class CustomerGateway implements Serializable, Cloneable {
      * 
      * @return Any tags assigned to the customer gateway.
      */
+
     public java.util.List<Tag> getTags() {
         if (tags == null) {
             tags = new com.amazonaws.internal.SdkInternalList<Tag>();
@@ -302,6 +318,7 @@ public class CustomerGateway implements Serializable, Cloneable {
      * @param tags
      *        Any tags assigned to the customer gateway.
      */
+
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
             this.tags = null;
@@ -327,6 +344,7 @@ public class CustomerGateway implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CustomerGateway withTags(Tag... tags) {
         if (this.tags == null) {
             setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
@@ -347,6 +365,7 @@ public class CustomerGateway implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CustomerGateway withTags(java.util.Collection<Tag> tags) {
         setTags(tags);
         return this;

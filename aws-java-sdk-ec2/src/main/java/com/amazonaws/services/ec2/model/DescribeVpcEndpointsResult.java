@@ -44,6 +44,7 @@ public class DescribeVpcEndpointsResult implements Serializable, Cloneable {
      * 
      * @return Information about the endpoints.
      */
+
     public java.util.List<VpcEndpoint> getVpcEndpoints() {
         if (vpcEndpoints == null) {
             vpcEndpoints = new com.amazonaws.internal.SdkInternalList<VpcEndpoint>();
@@ -59,6 +60,7 @@ public class DescribeVpcEndpointsResult implements Serializable, Cloneable {
      * @param vpcEndpoints
      *        Information about the endpoints.
      */
+
     public void setVpcEndpoints(java.util.Collection<VpcEndpoint> vpcEndpoints) {
         if (vpcEndpoints == null) {
             this.vpcEndpoints = null;
@@ -85,6 +87,7 @@ public class DescribeVpcEndpointsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVpcEndpointsResult withVpcEndpoints(
             VpcEndpoint... vpcEndpoints) {
         if (this.vpcEndpoints == null) {
@@ -107,6 +110,7 @@ public class DescribeVpcEndpointsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVpcEndpointsResult withVpcEndpoints(
             java.util.Collection<VpcEndpoint> vpcEndpoints) {
         setVpcEndpoints(vpcEndpoints);
@@ -123,6 +127,7 @@ public class DescribeVpcEndpointsResult implements Serializable, Cloneable {
      *        The token to use when requesting the next set of items. If there
      *        are no additional items to return, the string is empty.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -136,6 +141,7 @@ public class DescribeVpcEndpointsResult implements Serializable, Cloneable {
      * @return The token to use when requesting the next set of items. If there
      *         are no additional items to return, the string is empty.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -152,6 +158,7 @@ public class DescribeVpcEndpointsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVpcEndpointsResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

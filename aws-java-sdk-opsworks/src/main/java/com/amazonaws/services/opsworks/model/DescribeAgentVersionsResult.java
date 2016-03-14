@@ -45,6 +45,7 @@ public class DescribeAgentVersionsResult implements Serializable, Cloneable {
      *         manager. Note that this value is the complete version number, not
      *         the abbreviated number used by the console.
      */
+
     public java.util.List<AgentVersion> getAgentVersions() {
         if (agentVersions == null) {
             agentVersions = new com.amazonaws.internal.SdkInternalList<AgentVersion>();
@@ -64,6 +65,7 @@ public class DescribeAgentVersionsResult implements Serializable, Cloneable {
      *        manager. Note that this value is the complete version number, not
      *        the abbreviated number used by the console.
      */
+
     public void setAgentVersions(
             java.util.Collection<AgentVersion> agentVersions) {
         if (agentVersions == null) {
@@ -95,6 +97,7 @@ public class DescribeAgentVersionsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAgentVersionsResult withAgentVersions(
             AgentVersion... agentVersions) {
         if (this.agentVersions == null) {
@@ -121,6 +124,7 @@ public class DescribeAgentVersionsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAgentVersionsResult withAgentVersions(
             java.util.Collection<AgentVersion> agentVersions) {
         setAgentVersions(agentVersions);

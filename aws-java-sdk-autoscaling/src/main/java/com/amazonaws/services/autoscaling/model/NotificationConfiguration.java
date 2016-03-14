@@ -80,6 +80,7 @@ public class NotificationConfiguration implements Serializable, Cloneable {
      * @param autoScalingGroupName
      *        The name of the group.
      */
+
     public void setAutoScalingGroupName(String autoScalingGroupName) {
         this.autoScalingGroupName = autoScalingGroupName;
     }
@@ -91,6 +92,7 @@ public class NotificationConfiguration implements Serializable, Cloneable {
      * 
      * @return The name of the group.
      */
+
     public String getAutoScalingGroupName() {
         return this.autoScalingGroupName;
     }
@@ -105,6 +107,7 @@ public class NotificationConfiguration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NotificationConfiguration withAutoScalingGroupName(
             String autoScalingGroupName) {
         setAutoScalingGroupName(autoScalingGroupName);
@@ -121,6 +124,7 @@ public class NotificationConfiguration implements Serializable, Cloneable {
      *        The Amazon Resource Name (ARN) of the Amazon Simple Notification
      *        Service (SNS) topic.
      */
+
     public void setTopicARN(String topicARN) {
         this.topicARN = topicARN;
     }
@@ -134,6 +138,7 @@ public class NotificationConfiguration implements Serializable, Cloneable {
      * @return The Amazon Resource Name (ARN) of the Amazon Simple Notification
      *         Service (SNS) topic.
      */
+
     public String getTopicARN() {
         return this.topicARN;
     }
@@ -150,6 +155,7 @@ public class NotificationConfiguration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NotificationConfiguration withTopicARN(String topicARN) {
         setTopicARN(topicARN);
         return this;
@@ -216,6 +222,7 @@ public class NotificationConfiguration implements Serializable, Cloneable {
      *        </p>
      *        </li>
      */
+
     public void setNotificationType(String notificationType) {
         this.notificationType = notificationType;
     }
@@ -280,6 +287,7 @@ public class NotificationConfiguration implements Serializable, Cloneable {
      *         </p>
      *         </li>
      */
+
     public String getNotificationType() {
         return this.notificationType;
     }
@@ -347,6 +355,7 @@ public class NotificationConfiguration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NotificationConfiguration withNotificationType(
             String notificationType) {
         setNotificationType(notificationType);

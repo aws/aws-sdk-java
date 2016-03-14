@@ -43,6 +43,7 @@ public class AttachUserPolicyRequest extends AmazonWebServiceRequest implements
      *        The name (friendly name, not ARN) of the user to attach the policy
      *        to.
      */
+
     public void setUserName(String userName) {
         this.userName = userName;
     }
@@ -55,6 +56,7 @@ public class AttachUserPolicyRequest extends AmazonWebServiceRequest implements
      * @return The name (friendly name, not ARN) of the user to attach the
      *         policy to.
      */
+
     public String getUserName() {
         return this.userName;
     }
@@ -70,6 +72,7 @@ public class AttachUserPolicyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AttachUserPolicyRequest withUserName(String userName) {
         setUserName(userName);
         return this;
@@ -78,6 +81,7 @@ public class AttachUserPolicyRequest extends AmazonWebServiceRequest implements
     /**
      * @param policyArn
      */
+
     public void setPolicyArn(String policyArn) {
         this.policyArn = policyArn;
     }
@@ -85,6 +89,7 @@ public class AttachUserPolicyRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public String getPolicyArn() {
         return this.policyArn;
     }
@@ -94,6 +99,7 @@ public class AttachUserPolicyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AttachUserPolicyRequest withPolicyArn(String policyArn) {
         setPolicyArn(policyArn);
         return this;

@@ -50,6 +50,7 @@ public class GetConfigResult implements Serializable, Cloneable {
      * @param configType
      *        The type of credentials.
      */
+
     public void setConfigType(String configType) {
         this.configType = configType;
     }
@@ -61,6 +62,7 @@ public class GetConfigResult implements Serializable, Cloneable {
      * 
      * @return The type of credentials.
      */
+
     public String getConfigType() {
         return this.configType;
     }
@@ -75,6 +77,7 @@ public class GetConfigResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetConfigResult withConfigType(String configType) {
         setConfigType(configType);
         return this;
@@ -88,6 +91,7 @@ public class GetConfigResult implements Serializable, Cloneable {
      * @param configFile
      *        The chrystoki.conf configuration file.
      */
+
     public void setConfigFile(String configFile) {
         this.configFile = configFile;
     }
@@ -99,6 +103,7 @@ public class GetConfigResult implements Serializable, Cloneable {
      * 
      * @return The chrystoki.conf configuration file.
      */
+
     public String getConfigFile() {
         return this.configFile;
     }
@@ -113,6 +118,7 @@ public class GetConfigResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetConfigResult withConfigFile(String configFile) {
         setConfigFile(configFile);
         return this;
@@ -126,6 +132,7 @@ public class GetConfigResult implements Serializable, Cloneable {
      * @param configCred
      *        The certificate file containing the server.pem files of the HSMs.
      */
+
     public void setConfigCred(String configCred) {
         this.configCred = configCred;
     }
@@ -137,6 +144,7 @@ public class GetConfigResult implements Serializable, Cloneable {
      * 
      * @return The certificate file containing the server.pem files of the HSMs.
      */
+
     public String getConfigCred() {
         return this.configCred;
     }
@@ -151,6 +159,7 @@ public class GetConfigResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetConfigResult withConfigCred(String configCred) {
         setConfigCred(configCred);
         return this;

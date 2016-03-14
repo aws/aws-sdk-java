@@ -55,6 +55,7 @@ public class CreateDocumentRequest extends AmazonWebServiceRequest implements
      *        "http://docs.aws.amazon.com/ssm/latest/APIReference/aws-ssm-document.html"
      *        >SSM Document</a>.
      */
+
     public void setContent(String content) {
         this.content = content;
     }
@@ -72,6 +73,7 @@ public class CreateDocumentRequest extends AmazonWebServiceRequest implements
      *         "http://docs.aws.amazon.com/ssm/latest/APIReference/aws-ssm-document.html"
      *         >SSM Document</a>.
      */
+
     public String getContent() {
         return this.content;
     }
@@ -92,6 +94,7 @@ public class CreateDocumentRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDocumentRequest withContent(String content) {
         setContent(content);
         return this;
@@ -105,6 +108,7 @@ public class CreateDocumentRequest extends AmazonWebServiceRequest implements
      * @param name
      *        A name for the SSM document.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -116,6 +120,7 @@ public class CreateDocumentRequest extends AmazonWebServiceRequest implements
      * 
      * @return A name for the SSM document.
      */
+
     public String getName() {
         return this.name;
     }
@@ -130,6 +135,7 @@ public class CreateDocumentRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDocumentRequest withName(String name) {
         setName(name);
         return this;

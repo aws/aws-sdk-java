@@ -39,6 +39,7 @@ public class ListThingPrincipalsResult implements Serializable, Cloneable {
      * 
      * @return The principals.
      */
+
     public java.util.List<String> getPrincipals() {
         return principals;
     }
@@ -51,6 +52,7 @@ public class ListThingPrincipalsResult implements Serializable, Cloneable {
      * @param principals
      *        The principals.
      */
+
     public void setPrincipals(java.util.Collection<String> principals) {
         if (principals == null) {
             this.principals = null;
@@ -76,6 +78,7 @@ public class ListThingPrincipalsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListThingPrincipalsResult withPrincipals(String... principals) {
         if (this.principals == null) {
             setPrincipals(new java.util.ArrayList<String>(principals.length));
@@ -96,6 +99,7 @@ public class ListThingPrincipalsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListThingPrincipalsResult withPrincipals(
             java.util.Collection<String> principals) {
         setPrincipals(principals);

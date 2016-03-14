@@ -38,6 +38,7 @@ public class DeleteLunaClientResult implements Serializable, Cloneable {
      * @param status
      *        The status of the action.
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -49,6 +50,7 @@ public class DeleteLunaClientResult implements Serializable, Cloneable {
      * 
      * @return The status of the action.
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -63,6 +65,7 @@ public class DeleteLunaClientResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteLunaClientResult withStatus(String status) {
         setStatus(status);
         return this;

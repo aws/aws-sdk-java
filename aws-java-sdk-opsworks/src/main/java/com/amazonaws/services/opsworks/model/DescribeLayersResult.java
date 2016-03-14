@@ -39,6 +39,7 @@ public class DescribeLayersResult implements Serializable, Cloneable {
      * 
      * @return An array of <code>Layer</code> objects that describe the layers.
      */
+
     public java.util.List<Layer> getLayers() {
         if (layers == null) {
             layers = new com.amazonaws.internal.SdkInternalList<Layer>();
@@ -54,6 +55,7 @@ public class DescribeLayersResult implements Serializable, Cloneable {
      * @param layers
      *        An array of <code>Layer</code> objects that describe the layers.
      */
+
     public void setLayers(java.util.Collection<Layer> layers) {
         if (layers == null) {
             this.layers = null;
@@ -79,6 +81,7 @@ public class DescribeLayersResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLayersResult withLayers(Layer... layers) {
         if (this.layers == null) {
             setLayers(new com.amazonaws.internal.SdkInternalList<Layer>(
@@ -100,6 +103,7 @@ public class DescribeLayersResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLayersResult withLayers(java.util.Collection<Layer> layers) {
         setLayers(layers);
         return this;

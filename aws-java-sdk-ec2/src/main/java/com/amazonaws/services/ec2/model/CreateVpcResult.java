@@ -38,6 +38,7 @@ public class CreateVpcResult implements Serializable, Cloneable {
      * @param vpc
      *        Information about the VPC.
      */
+
     public void setVpc(Vpc vpc) {
         this.vpc = vpc;
     }
@@ -49,6 +50,7 @@ public class CreateVpcResult implements Serializable, Cloneable {
      * 
      * @return Information about the VPC.
      */
+
     public Vpc getVpc() {
         return this.vpc;
     }
@@ -63,6 +65,7 @@ public class CreateVpcResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateVpcResult withVpc(Vpc vpc) {
         setVpc(vpc);
         return this;

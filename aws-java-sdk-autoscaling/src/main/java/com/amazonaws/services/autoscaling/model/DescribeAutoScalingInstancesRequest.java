@@ -59,6 +59,7 @@ public class DescribeAutoScalingInstancesRequest extends
      *         are described. If you specify an ID that does not exist, it is
      *         ignored with no error.
      */
+
     public java.util.List<String> getInstanceIds() {
         if (instanceIds == null) {
             instanceIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -79,6 +80,7 @@ public class DescribeAutoScalingInstancesRequest extends
      *        are described. If you specify an ID that does not exist, it is
      *        ignored with no error.
      */
+
     public void setInstanceIds(java.util.Collection<String> instanceIds) {
         if (instanceIds == null) {
             this.instanceIds = null;
@@ -110,6 +112,7 @@ public class DescribeAutoScalingInstancesRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAutoScalingInstancesRequest withInstanceIds(
             String... instanceIds) {
         if (this.instanceIds == null) {
@@ -137,6 +140,7 @@ public class DescribeAutoScalingInstancesRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAutoScalingInstancesRequest withInstanceIds(
             java.util.Collection<String> instanceIds) {
         setInstanceIds(instanceIds);
@@ -151,6 +155,7 @@ public class DescribeAutoScalingInstancesRequest extends
      * @param maxRecords
      *        The maximum number of items to return with this call.
      */
+
     public void setMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
     }
@@ -162,6 +167,7 @@ public class DescribeAutoScalingInstancesRequest extends
      * 
      * @return The maximum number of items to return with this call.
      */
+
     public Integer getMaxRecords() {
         return this.maxRecords;
     }
@@ -176,6 +182,7 @@ public class DescribeAutoScalingInstancesRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAutoScalingInstancesRequest withMaxRecords(Integer maxRecords) {
         setMaxRecords(maxRecords);
         return this;
@@ -191,6 +198,7 @@ public class DescribeAutoScalingInstancesRequest extends
      *        The token for the next set of items to return. (You received this
      *        token from a previous call.)
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -204,6 +212,7 @@ public class DescribeAutoScalingInstancesRequest extends
      * @return The token for the next set of items to return. (You received this
      *         token from a previous call.)
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -220,6 +229,7 @@ public class DescribeAutoScalingInstancesRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAutoScalingInstancesRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

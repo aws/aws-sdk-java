@@ -48,6 +48,7 @@ public class DescribeImportSnapshotTasksResult implements Serializable,
      * @return A list of zero or more import snapshot tasks that are currently
      *         active or were completed or canceled in the previous 7 days.
      */
+
     public java.util.List<ImportSnapshotTask> getImportSnapshotTasks() {
         if (importSnapshotTasks == null) {
             importSnapshotTasks = new com.amazonaws.internal.SdkInternalList<ImportSnapshotTask>();
@@ -65,6 +66,7 @@ public class DescribeImportSnapshotTasksResult implements Serializable,
      *        A list of zero or more import snapshot tasks that are currently
      *        active or were completed or canceled in the previous 7 days.
      */
+
     public void setImportSnapshotTasks(
             java.util.Collection<ImportSnapshotTask> importSnapshotTasks) {
         if (importSnapshotTasks == null) {
@@ -94,6 +96,7 @@ public class DescribeImportSnapshotTasksResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeImportSnapshotTasksResult withImportSnapshotTasks(
             ImportSnapshotTask... importSnapshotTasks) {
         if (this.importSnapshotTasks == null) {
@@ -118,6 +121,7 @@ public class DescribeImportSnapshotTasksResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeImportSnapshotTasksResult withImportSnapshotTasks(
             java.util.Collection<ImportSnapshotTask> importSnapshotTasks) {
         setImportSnapshotTasks(importSnapshotTasks);
@@ -134,6 +138,7 @@ public class DescribeImportSnapshotTasksResult implements Serializable,
      *        The token to use to get the next page of results. This value is
      *        <code>null</code> when there are no more results to return.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -147,6 +152,7 @@ public class DescribeImportSnapshotTasksResult implements Serializable,
      * @return The token to use to get the next page of results. This value is
      *         <code>null</code> when there are no more results to return.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -163,6 +169,7 @@ public class DescribeImportSnapshotTasksResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeImportSnapshotTasksResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

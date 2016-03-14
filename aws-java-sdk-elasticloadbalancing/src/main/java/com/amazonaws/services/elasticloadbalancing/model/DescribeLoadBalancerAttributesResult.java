@@ -39,6 +39,7 @@ public class DescribeLoadBalancerAttributesResult implements Serializable,
      * @param loadBalancerAttributes
      *        Information about the load balancer attributes.
      */
+
     public void setLoadBalancerAttributes(
             LoadBalancerAttributes loadBalancerAttributes) {
         this.loadBalancerAttributes = loadBalancerAttributes;
@@ -51,6 +52,7 @@ public class DescribeLoadBalancerAttributesResult implements Serializable,
      * 
      * @return Information about the load balancer attributes.
      */
+
     public LoadBalancerAttributes getLoadBalancerAttributes() {
         return this.loadBalancerAttributes;
     }
@@ -65,6 +67,7 @@ public class DescribeLoadBalancerAttributesResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLoadBalancerAttributesResult withLoadBalancerAttributes(
             LoadBalancerAttributes loadBalancerAttributes) {
         setLoadBalancerAttributes(loadBalancerAttributes);

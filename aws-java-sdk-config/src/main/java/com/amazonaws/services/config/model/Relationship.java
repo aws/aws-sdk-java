@@ -59,6 +59,7 @@ public class Relationship implements Serializable, Cloneable {
      *        The resource type of the related resource.
      * @see ResourceType
      */
+
     public void setResourceType(String resourceType) {
         this.resourceType = resourceType;
     }
@@ -71,6 +72,7 @@ public class Relationship implements Serializable, Cloneable {
      * @return The resource type of the related resource.
      * @see ResourceType
      */
+
     public String getResourceType() {
         return this.resourceType;
     }
@@ -86,6 +88,7 @@ public class Relationship implements Serializable, Cloneable {
      *         chained together.
      * @see ResourceType
      */
+
     public Relationship withResourceType(String resourceType) {
         setResourceType(resourceType);
         return this;
@@ -102,6 +105,7 @@ public class Relationship implements Serializable, Cloneable {
      *         chained together.
      * @see ResourceType
      */
+
     public void setResourceType(ResourceType resourceType) {
         this.resourceType = resourceType.toString();
     }
@@ -117,6 +121,7 @@ public class Relationship implements Serializable, Cloneable {
      *         chained together.
      * @see ResourceType
      */
+
     public Relationship withResourceType(ResourceType resourceType) {
         setResourceType(resourceType);
         return this;
@@ -131,6 +136,7 @@ public class Relationship implements Serializable, Cloneable {
      *        The ID of the related resource (for example,
      *        <code>sg-xxxxxx</code>).
      */
+
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
     }
@@ -143,6 +149,7 @@ public class Relationship implements Serializable, Cloneable {
      * @return The ID of the related resource (for example,
      *         <code>sg-xxxxxx</code>).
      */
+
     public String getResourceId() {
         return this.resourceId;
     }
@@ -158,6 +165,7 @@ public class Relationship implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Relationship withResourceId(String resourceId) {
         setResourceId(resourceId);
         return this;
@@ -171,6 +179,7 @@ public class Relationship implements Serializable, Cloneable {
      * @param resourceName
      *        The custom name of the related resource, if available.
      */
+
     public void setResourceName(String resourceName) {
         this.resourceName = resourceName;
     }
@@ -182,6 +191,7 @@ public class Relationship implements Serializable, Cloneable {
      * 
      * @return The custom name of the related resource, if available.
      */
+
     public String getResourceName() {
         return this.resourceName;
     }
@@ -196,6 +206,7 @@ public class Relationship implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Relationship withResourceName(String resourceName) {
         setResourceName(resourceName);
         return this;
@@ -209,6 +220,7 @@ public class Relationship implements Serializable, Cloneable {
      * @param relationshipName
      *        The type of relationship with the related resource.
      */
+
     public void setRelationshipName(String relationshipName) {
         this.relationshipName = relationshipName;
     }
@@ -220,6 +232,7 @@ public class Relationship implements Serializable, Cloneable {
      * 
      * @return The type of relationship with the related resource.
      */
+
     public String getRelationshipName() {
         return this.relationshipName;
     }
@@ -234,6 +247,7 @@ public class Relationship implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Relationship withRelationshipName(String relationshipName) {
         setRelationshipName(relationshipName);
         return this;

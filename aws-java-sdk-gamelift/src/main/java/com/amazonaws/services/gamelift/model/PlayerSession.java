@@ -27,7 +27,7 @@ public class PlayerSession implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Unique identifier for a playersession.
+     * Unique identifier for a player session.
      * </p>
      */
     private String playerSessionId;
@@ -52,20 +52,32 @@ public class PlayerSession implements Serializable, Cloneable {
     /**
      * <p>
      * Time stamp indicating when this object was created. Format is an integer
-     * representing the number of seconds since epoch.
+     * representing the number of seconds since the Unix epoch (Unix time).
      * </p>
      */
     private java.util.Date creationTime;
     /**
      * <p>
      * Time stamp indicating when this fleet was terminated. Format is an
-     * integer representing the number of seconds since epoch.
+     * integer representing the number of seconds since the Unix epoch (Unix
+     * time).
      * </p>
      */
     private java.util.Date terminationTime;
     /**
      * <p>
-     * Current status of the game session.
+     * Current status of the player session. Possible player session states
+     * include:
+     * <ul>
+     * <li>RESERVED: The player session request has been received, but the
+     * player has not yet connected to the game server and/or been validated.</li>
+     * <li>ACTIVE: The player has been validated by the game server and is
+     * currently connected.</li>
+     * <li>COMPLETED: The player connection has been dropped.</li>
+     * <li>TIMEDOUT: A player session request was received, but the player did
+     * not connect and/or was not validated within the time-out limit (60
+     * seconds).</li>
+     * </ul>
      * </p>
      */
     private String status;
@@ -79,37 +91,40 @@ public class PlayerSession implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Unique identifier for a playersession.
+     * Unique identifier for a player session.
      * </p>
      * 
      * @param playerSessionId
-     *        Unique identifier for a playersession.
+     *        Unique identifier for a player session.
      */
+
     public void setPlayerSessionId(String playerSessionId) {
         this.playerSessionId = playerSessionId;
     }
 
     /**
      * <p>
-     * Unique identifier for a playersession.
+     * Unique identifier for a player session.
      * </p>
      * 
-     * @return Unique identifier for a playersession.
+     * @return Unique identifier for a player session.
      */
+
     public String getPlayerSessionId() {
         return this.playerSessionId;
     }
 
     /**
      * <p>
-     * Unique identifier for a playersession.
+     * Unique identifier for a player session.
      * </p>
      * 
      * @param playerSessionId
-     *        Unique identifier for a playersession.
+     *        Unique identifier for a player session.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PlayerSession withPlayerSessionId(String playerSessionId) {
         setPlayerSessionId(playerSessionId);
         return this;
@@ -123,6 +138,7 @@ public class PlayerSession implements Serializable, Cloneable {
      * @param playerId
      *        Unique identifier for a player.
      */
+
     public void setPlayerId(String playerId) {
         this.playerId = playerId;
     }
@@ -134,6 +150,7 @@ public class PlayerSession implements Serializable, Cloneable {
      * 
      * @return Unique identifier for a player.
      */
+
     public String getPlayerId() {
         return this.playerId;
     }
@@ -148,6 +165,7 @@ public class PlayerSession implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PlayerSession withPlayerId(String playerId) {
         setPlayerId(playerId);
         return this;
@@ -161,6 +179,7 @@ public class PlayerSession implements Serializable, Cloneable {
      * @param gameSessionId
      *        Unique identifier for a game session.
      */
+
     public void setGameSessionId(String gameSessionId) {
         this.gameSessionId = gameSessionId;
     }
@@ -172,6 +191,7 @@ public class PlayerSession implements Serializable, Cloneable {
      * 
      * @return Unique identifier for a game session.
      */
+
     public String getGameSessionId() {
         return this.gameSessionId;
     }
@@ -186,6 +206,7 @@ public class PlayerSession implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PlayerSession withGameSessionId(String gameSessionId) {
         setGameSessionId(gameSessionId);
         return this;
@@ -199,6 +220,7 @@ public class PlayerSession implements Serializable, Cloneable {
      * @param fleetId
      *        Unique identifier for a fleet.
      */
+
     public void setFleetId(String fleetId) {
         this.fleetId = fleetId;
     }
@@ -210,6 +232,7 @@ public class PlayerSession implements Serializable, Cloneable {
      * 
      * @return Unique identifier for a fleet.
      */
+
     public String getFleetId() {
         return this.fleetId;
     }
@@ -224,6 +247,7 @@ public class PlayerSession implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PlayerSession withFleetId(String fleetId) {
         setFleetId(fleetId);
         return this;
@@ -232,13 +256,15 @@ public class PlayerSession implements Serializable, Cloneable {
     /**
      * <p>
      * Time stamp indicating when this object was created. Format is an integer
-     * representing the number of seconds since epoch.
+     * representing the number of seconds since the Unix epoch (Unix time).
      * </p>
      * 
      * @param creationTime
      *        Time stamp indicating when this object was created. Format is an
-     *        integer representing the number of seconds since epoch.
+     *        integer representing the number of seconds since the Unix epoch
+     *        (Unix time).
      */
+
     public void setCreationTime(java.util.Date creationTime) {
         this.creationTime = creationTime;
     }
@@ -246,12 +272,14 @@ public class PlayerSession implements Serializable, Cloneable {
     /**
      * <p>
      * Time stamp indicating when this object was created. Format is an integer
-     * representing the number of seconds since epoch.
+     * representing the number of seconds since the Unix epoch (Unix time).
      * </p>
      * 
      * @return Time stamp indicating when this object was created. Format is an
-     *         integer representing the number of seconds since epoch.
+     *         integer representing the number of seconds since the Unix epoch
+     *         (Unix time).
      */
+
     public java.util.Date getCreationTime() {
         return this.creationTime;
     }
@@ -259,15 +287,17 @@ public class PlayerSession implements Serializable, Cloneable {
     /**
      * <p>
      * Time stamp indicating when this object was created. Format is an integer
-     * representing the number of seconds since epoch.
+     * representing the number of seconds since the Unix epoch (Unix time).
      * </p>
      * 
      * @param creationTime
      *        Time stamp indicating when this object was created. Format is an
-     *        integer representing the number of seconds since epoch.
+     *        integer representing the number of seconds since the Unix epoch
+     *        (Unix time).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PlayerSession withCreationTime(java.util.Date creationTime) {
         setCreationTime(creationTime);
         return this;
@@ -276,13 +306,16 @@ public class PlayerSession implements Serializable, Cloneable {
     /**
      * <p>
      * Time stamp indicating when this fleet was terminated. Format is an
-     * integer representing the number of seconds since epoch.
+     * integer representing the number of seconds since the Unix epoch (Unix
+     * time).
      * </p>
      * 
      * @param terminationTime
      *        Time stamp indicating when this fleet was terminated. Format is an
-     *        integer representing the number of seconds since epoch.
+     *        integer representing the number of seconds since the Unix epoch
+     *        (Unix time).
      */
+
     public void setTerminationTime(java.util.Date terminationTime) {
         this.terminationTime = terminationTime;
     }
@@ -290,12 +323,15 @@ public class PlayerSession implements Serializable, Cloneable {
     /**
      * <p>
      * Time stamp indicating when this fleet was terminated. Format is an
-     * integer representing the number of seconds since epoch.
+     * integer representing the number of seconds since the Unix epoch (Unix
+     * time).
      * </p>
      * 
      * @return Time stamp indicating when this fleet was terminated. Format is
-     *         an integer representing the number of seconds since epoch.
+     *         an integer representing the number of seconds since the Unix
+     *         epoch (Unix time).
      */
+
     public java.util.Date getTerminationTime() {
         return this.terminationTime;
     }
@@ -303,15 +339,18 @@ public class PlayerSession implements Serializable, Cloneable {
     /**
      * <p>
      * Time stamp indicating when this fleet was terminated. Format is an
-     * integer representing the number of seconds since epoch.
+     * integer representing the number of seconds since the Unix epoch (Unix
+     * time).
      * </p>
      * 
      * @param terminationTime
      *        Time stamp indicating when this fleet was terminated. Format is an
-     *        integer representing the number of seconds since epoch.
+     *        integer representing the number of seconds since the Unix epoch
+     *        (Unix time).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PlayerSession withTerminationTime(java.util.Date terminationTime) {
         setTerminationTime(terminationTime);
         return this;
@@ -319,40 +358,112 @@ public class PlayerSession implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Current status of the game session.
+     * Current status of the player session. Possible player session states
+     * include:
+     * <ul>
+     * <li>RESERVED: The player session request has been received, but the
+     * player has not yet connected to the game server and/or been validated.</li>
+     * <li>ACTIVE: The player has been validated by the game server and is
+     * currently connected.</li>
+     * <li>COMPLETED: The player connection has been dropped.</li>
+     * <li>TIMEDOUT: A player session request was received, but the player did
+     * not connect and/or was not validated within the time-out limit (60
+     * seconds).</li>
+     * </ul>
      * </p>
      * 
      * @param status
-     *        Current status of the game session.
+     *        Current status of the player session. Possible player session
+     *        states include:
+     *        <ul>
+     *        <li>RESERVED: The player session request has been received, but
+     *        the player has not yet connected to the game server and/or been
+     *        validated.</li>
+     *        <li>ACTIVE: The player has been validated by the game server and
+     *        is currently connected.</li>
+     *        <li>COMPLETED: The player connection has been dropped.</li>
+     *        <li>TIMEDOUT: A player session request was received, but the
+     *        player did not connect and/or was not validated within the
+     *        time-out limit (60 seconds).</li>
+     *        </ul>
      * @see PlayerSessionStatus
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
 
     /**
      * <p>
-     * Current status of the game session.
+     * Current status of the player session. Possible player session states
+     * include:
+     * <ul>
+     * <li>RESERVED: The player session request has been received, but the
+     * player has not yet connected to the game server and/or been validated.</li>
+     * <li>ACTIVE: The player has been validated by the game server and is
+     * currently connected.</li>
+     * <li>COMPLETED: The player connection has been dropped.</li>
+     * <li>TIMEDOUT: A player session request was received, but the player did
+     * not connect and/or was not validated within the time-out limit (60
+     * seconds).</li>
+     * </ul>
      * </p>
      * 
-     * @return Current status of the game session.
+     * @return Current status of the player session. Possible player session
+     *         states include:
+     *         <ul>
+     *         <li>RESERVED: The player session request has been received, but
+     *         the player has not yet connected to the game server and/or been
+     *         validated.</li>
+     *         <li>ACTIVE: The player has been validated by the game server and
+     *         is currently connected.</li>
+     *         <li>COMPLETED: The player connection has been dropped.</li>
+     *         <li>TIMEDOUT: A player session request was received, but the
+     *         player did not connect and/or was not validated within the
+     *         time-out limit (60 seconds).</li>
+     *         </ul>
      * @see PlayerSessionStatus
      */
+
     public String getStatus() {
         return this.status;
     }
 
     /**
      * <p>
-     * Current status of the game session.
+     * Current status of the player session. Possible player session states
+     * include:
+     * <ul>
+     * <li>RESERVED: The player session request has been received, but the
+     * player has not yet connected to the game server and/or been validated.</li>
+     * <li>ACTIVE: The player has been validated by the game server and is
+     * currently connected.</li>
+     * <li>COMPLETED: The player connection has been dropped.</li>
+     * <li>TIMEDOUT: A player session request was received, but the player did
+     * not connect and/or was not validated within the time-out limit (60
+     * seconds).</li>
+     * </ul>
      * </p>
      * 
      * @param status
-     *        Current status of the game session.
+     *        Current status of the player session. Possible player session
+     *        states include:
+     *        <ul>
+     *        <li>RESERVED: The player session request has been received, but
+     *        the player has not yet connected to the game server and/or been
+     *        validated.</li>
+     *        <li>ACTIVE: The player has been validated by the game server and
+     *        is currently connected.</li>
+     *        <li>COMPLETED: The player connection has been dropped.</li>
+     *        <li>TIMEDOUT: A player session request was received, but the
+     *        player did not connect and/or was not validated within the
+     *        time-out limit (60 seconds).</li>
+     *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see PlayerSessionStatus
      */
+
     public PlayerSession withStatus(String status) {
         setStatus(status);
         return this;
@@ -360,30 +471,78 @@ public class PlayerSession implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Current status of the game session.
+     * Current status of the player session. Possible player session states
+     * include:
+     * <ul>
+     * <li>RESERVED: The player session request has been received, but the
+     * player has not yet connected to the game server and/or been validated.</li>
+     * <li>ACTIVE: The player has been validated by the game server and is
+     * currently connected.</li>
+     * <li>COMPLETED: The player connection has been dropped.</li>
+     * <li>TIMEDOUT: A player session request was received, but the player did
+     * not connect and/or was not validated within the time-out limit (60
+     * seconds).</li>
+     * </ul>
      * </p>
      * 
      * @param status
-     *        Current status of the game session.
+     *        Current status of the player session. Possible player session
+     *        states include:
+     *        <ul>
+     *        <li>RESERVED: The player session request has been received, but
+     *        the player has not yet connected to the game server and/or been
+     *        validated.</li>
+     *        <li>ACTIVE: The player has been validated by the game server and
+     *        is currently connected.</li>
+     *        <li>COMPLETED: The player connection has been dropped.</li>
+     *        <li>TIMEDOUT: A player session request was received, but the
+     *        player did not connect and/or was not validated within the
+     *        time-out limit (60 seconds).</li>
+     *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see PlayerSessionStatus
      */
+
     public void setStatus(PlayerSessionStatus status) {
         this.status = status.toString();
     }
 
     /**
      * <p>
-     * Current status of the game session.
+     * Current status of the player session. Possible player session states
+     * include:
+     * <ul>
+     * <li>RESERVED: The player session request has been received, but the
+     * player has not yet connected to the game server and/or been validated.</li>
+     * <li>ACTIVE: The player has been validated by the game server and is
+     * currently connected.</li>
+     * <li>COMPLETED: The player connection has been dropped.</li>
+     * <li>TIMEDOUT: A player session request was received, but the player did
+     * not connect and/or was not validated within the time-out limit (60
+     * seconds).</li>
+     * </ul>
      * </p>
      * 
      * @param status
-     *        Current status of the game session.
+     *        Current status of the player session. Possible player session
+     *        states include:
+     *        <ul>
+     *        <li>RESERVED: The player session request has been received, but
+     *        the player has not yet connected to the game server and/or been
+     *        validated.</li>
+     *        <li>ACTIVE: The player has been validated by the game server and
+     *        is currently connected.</li>
+     *        <li>COMPLETED: The player connection has been dropped.</li>
+     *        <li>TIMEDOUT: A player session request was received, but the
+     *        player did not connect and/or was not validated within the
+     *        time-out limit (60 seconds).</li>
+     *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see PlayerSessionStatus
      */
+
     public PlayerSession withStatus(PlayerSessionStatus status) {
         setStatus(status);
         return this;
@@ -399,6 +558,7 @@ public class PlayerSession implements Serializable, Cloneable {
      *        Game session IP address. All player sessions reference the game
      *        session location.
      */
+
     public void setIpAddress(String ipAddress) {
         this.ipAddress = ipAddress;
     }
@@ -412,6 +572,7 @@ public class PlayerSession implements Serializable, Cloneable {
      * @return Game session IP address. All player sessions reference the game
      *         session location.
      */
+
     public String getIpAddress() {
         return this.ipAddress;
     }
@@ -428,6 +589,7 @@ public class PlayerSession implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PlayerSession withIpAddress(String ipAddress) {
         setIpAddress(ipAddress);
         return this;

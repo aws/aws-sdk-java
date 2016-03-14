@@ -125,6 +125,7 @@ public class UpdateTableRequest extends AmazonWebServiceRequest implements
      *         the table, <i>AttributeDefinitions</i> must include the key
      *         element(s) of the new index.
      */
+
     public java.util.List<AttributeDefinition> getAttributeDefinitions() {
         return attributeDefinitions;
     }
@@ -143,6 +144,7 @@ public class UpdateTableRequest extends AmazonWebServiceRequest implements
      *        table, <i>AttributeDefinitions</i> must include the key element(s)
      *        of the new index.
      */
+
     public void setAttributeDefinitions(
             java.util.Collection<AttributeDefinition> attributeDefinitions) {
         if (attributeDefinitions == null) {
@@ -176,6 +178,7 @@ public class UpdateTableRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateTableRequest withAttributeDefinitions(
             AttributeDefinition... attributeDefinitions) {
         if (this.attributeDefinitions == null) {
@@ -204,6 +207,7 @@ public class UpdateTableRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateTableRequest withAttributeDefinitions(
             java.util.Collection<AttributeDefinition> attributeDefinitions) {
         setAttributeDefinitions(attributeDefinitions);
@@ -218,6 +222,7 @@ public class UpdateTableRequest extends AmazonWebServiceRequest implements
      * @param tableName
      *        The name of the table to be updated.
      */
+
     public void setTableName(String tableName) {
         this.tableName = tableName;
     }
@@ -229,6 +234,7 @@ public class UpdateTableRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the table to be updated.
      */
+
     public String getTableName() {
         return this.tableName;
     }
@@ -243,6 +249,7 @@ public class UpdateTableRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateTableRequest withTableName(String tableName) {
         setTableName(tableName);
         return this;
@@ -251,6 +258,7 @@ public class UpdateTableRequest extends AmazonWebServiceRequest implements
     /**
      * @param provisionedThroughput
      */
+
     public void setProvisionedThroughput(
             ProvisionedThroughput provisionedThroughput) {
         this.provisionedThroughput = provisionedThroughput;
@@ -259,6 +267,7 @@ public class UpdateTableRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public ProvisionedThroughput getProvisionedThroughput() {
         return this.provisionedThroughput;
     }
@@ -268,6 +277,7 @@ public class UpdateTableRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateTableRequest withProvisionedThroughput(
             ProvisionedThroughput provisionedThroughput) {
         setProvisionedThroughput(provisionedThroughput);
@@ -330,6 +340,7 @@ public class UpdateTableRequest extends AmazonWebServiceRequest implements
      *         >Managing Global Secondary Indexes</a> in the <i>Amazon DynamoDB
      *         Developer Guide</i>.
      */
+
     public java.util.List<GlobalSecondaryIndexUpdate> getGlobalSecondaryIndexUpdates() {
         return globalSecondaryIndexUpdates;
     }
@@ -391,6 +402,7 @@ public class UpdateTableRequest extends AmazonWebServiceRequest implements
      *        >Managing Global Secondary Indexes</a> in the <i>Amazon DynamoDB
      *        Developer Guide</i>.
      */
+
     public void setGlobalSecondaryIndexUpdates(
             java.util.Collection<GlobalSecondaryIndexUpdate> globalSecondaryIndexUpdates) {
         if (globalSecondaryIndexUpdates == null) {
@@ -467,6 +479,7 @@ public class UpdateTableRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateTableRequest withGlobalSecondaryIndexUpdates(
             GlobalSecondaryIndexUpdate... globalSecondaryIndexUpdates) {
         if (this.globalSecondaryIndexUpdates == null) {
@@ -538,6 +551,7 @@ public class UpdateTableRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateTableRequest withGlobalSecondaryIndexUpdates(
             java.util.Collection<GlobalSecondaryIndexUpdate> globalSecondaryIndexUpdates) {
         setGlobalSecondaryIndexUpdates(globalSecondaryIndexUpdates);
@@ -566,6 +580,7 @@ public class UpdateTableRequest extends AmazonWebServiceRequest implements
      *        stream.
      *        </p>
      */
+
     public void setStreamSpecification(StreamSpecification streamSpecification) {
         this.streamSpecification = streamSpecification;
     }
@@ -591,6 +606,7 @@ public class UpdateTableRequest extends AmazonWebServiceRequest implements
      *         stream.
      *         </p>
      */
+
     public StreamSpecification getStreamSpecification() {
         return this.streamSpecification;
     }
@@ -619,6 +635,7 @@ public class UpdateTableRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateTableRequest withStreamSpecification(
             StreamSpecification streamSpecification) {
         setStreamSpecification(streamSpecification);

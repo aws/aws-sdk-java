@@ -343,6 +343,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * @param sourceStackId
      *        The source stack ID.
      */
+
     public void setSourceStackId(String sourceStackId) {
         this.sourceStackId = sourceStackId;
     }
@@ -354,6 +355,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * 
      * @return The source stack ID.
      */
+
     public String getSourceStackId() {
         return this.sourceStackId;
     }
@@ -368,6 +370,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CloneStackRequest withSourceStackId(String sourceStackId) {
         setSourceStackId(sourceStackId);
         return this;
@@ -381,6 +384,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * @param name
      *        The cloned stack name.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -392,6 +396,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * 
      * @return The cloned stack name.
      */
+
     public String getName() {
         return this.name;
     }
@@ -406,6 +411,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CloneStackRequest withName(String name) {
         setName(name);
         return this;
@@ -425,6 +431,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html"
      *        >Regions and Endpoints</a>.
      */
+
     public void setRegion(String region) {
         this.region = region;
     }
@@ -442,6 +449,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html"
      *         >Regions and Endpoints</a>.
      */
+
     public String getRegion() {
         return this.region;
     }
@@ -462,6 +470,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CloneStackRequest withRegion(String region) {
         setRegion(region);
         return this;
@@ -540,6 +549,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html"
      *        >Supported Platforms</a>.
      */
+
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
@@ -616,6 +626,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      *         "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html"
      *         >Supported Platforms</a>.
      */
+
     public String getVpcId() {
         return this.vpcId;
     }
@@ -695,6 +706,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CloneStackRequest withVpcId(String vpcId) {
         setVpcId(vpcId);
         return this;
@@ -709,6 +721,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * @return A list of stack attributes and values as key/value pairs to be
      *         added to the cloned stack.
      */
+
     public java.util.Map<String, String> getAttributes() {
         if (attributes == null) {
             attributes = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -726,6 +739,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      *        A list of stack attributes and values as key/value pairs to be
      *        added to the cloned stack.
      */
+
     public void setAttributes(java.util.Map<String, String> attributes) {
         this.attributes = attributes == null ? null
                 : new com.amazonaws.internal.SdkInternalMap<String, String>(
@@ -744,6 +758,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CloneStackRequest withAttributes(
             java.util.Map<String, String> attributes) {
         setAttributes(attributes);
@@ -765,6 +780,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * Removes all the entries added into Attributes. &lt;p> Returns a reference
      * to this object so that method calls can be chained together.
      */
+
     public CloneStackRequest clearAttributesEntries() {
         this.attributes = null;
         return this;
@@ -808,6 +824,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      *        explicitly.
      *        </p>
      */
+
     public void setServiceRoleArn(String serviceRoleArn) {
         this.serviceRoleArn = serviceRoleArn;
     }
@@ -849,6 +866,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      *         so explicitly.
      *         </p>
      */
+
     public String getServiceRoleArn() {
         return this.serviceRoleArn;
     }
@@ -893,6 +911,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CloneStackRequest withServiceRoleArn(String serviceRoleArn) {
         setServiceRoleArn(serviceRoleArn);
         return this;
@@ -914,6 +933,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *        >Using Identifiers</a>.
      */
+
     public void setDefaultInstanceProfileArn(String defaultInstanceProfileArn) {
         this.defaultInstanceProfileArn = defaultInstanceProfileArn;
     }
@@ -933,6 +953,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *         >Using Identifiers</a>.
      */
+
     public String getDefaultInstanceProfileArn() {
         return this.defaultInstanceProfileArn;
     }
@@ -955,6 +976,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CloneStackRequest withDefaultInstanceProfileArn(
             String defaultInstanceProfileArn) {
         setDefaultInstanceProfileArn(defaultInstanceProfileArn);
@@ -1012,6 +1034,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      *        cloned stack, but you cannot change from Linux to Windows or
      *        Windows to Linux.
      */
+
     public void setDefaultOs(String defaultOs) {
         this.defaultOs = defaultOs;
     }
@@ -1066,6 +1089,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      *         cloned stack, but you cannot change from Linux to Windows or
      *         Windows to Linux.
      */
+
     public String getDefaultOs() {
         return this.defaultOs;
     }
@@ -1123,6 +1147,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CloneStackRequest withDefaultOs(String defaultOs) {
         setDefaultOs(defaultOs);
         return this;
@@ -1179,6 +1204,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      *        <code>GetHostNameSuggestion</code>, which returns a host name
      *        based on the current theme.
      */
+
     public void setHostnameTheme(String hostnameTheme) {
         this.hostnameTheme = hostnameTheme;
     }
@@ -1233,6 +1259,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      *         <code>GetHostNameSuggestion</code>, which returns a host name
      *         based on the current theme.
      */
+
     public String getHostnameTheme() {
         return this.hostnameTheme;
     }
@@ -1290,6 +1317,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CloneStackRequest withHostnameTheme(String hostnameTheme) {
         setHostnameTheme(hostnameTheme);
         return this;
@@ -1314,6 +1342,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      *        For more information, see the <code>VpcId</code> parameter
      *        description.
      */
+
     public void setDefaultAvailabilityZone(String defaultAvailabilityZone) {
         this.defaultAvailabilityZone = defaultAvailabilityZone;
     }
@@ -1336,6 +1365,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      *         zone. For more information, see the <code>VpcId</code> parameter
      *         description.
      */
+
     public String getDefaultAvailabilityZone() {
         return this.defaultAvailabilityZone;
     }
@@ -1361,6 +1391,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CloneStackRequest withDefaultAvailabilityZone(
             String defaultAvailabilityZone) {
         setDefaultAvailabilityZone(defaultAvailabilityZone);
@@ -1388,6 +1419,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      *        parameter is required, see the <code>VpcId</code> parameter
      *        description.
      */
+
     public void setDefaultSubnetId(String defaultSubnetId) {
         this.defaultSubnetId = defaultSubnetId;
     }
@@ -1412,6 +1444,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      *         parameter is required, see the <code>VpcId</code> parameter
      *         description.
      */
+
     public String getDefaultSubnetId() {
         return this.defaultSubnetId;
     }
@@ -1439,6 +1472,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CloneStackRequest withDefaultSubnetId(String defaultSubnetId) {
         setDefaultSubnetId(defaultSubnetId);
         return this;
@@ -1472,6 +1506,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html"
      *        >Use Custom JSON to Modify the Stack Configuration Attributes</a>
      */
+
     public void setCustomJson(String customJson) {
         this.customJson = customJson;
     }
@@ -1503,6 +1538,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      *         "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html"
      *         >Use Custom JSON to Modify the Stack Configuration Attributes</a>
      */
+
     public String getCustomJson() {
         return this.customJson;
     }
@@ -1537,6 +1573,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CloneStackRequest withCustomJson(String customJson) {
         setCustomJson(customJson);
         return this;
@@ -1556,6 +1593,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      *        version: 12, 11.10, or 11.4 for Linux stacks, or 12.2 for Windows
      *        stacks. The default value for Linux stacks is currently 11.4.
      */
+
     public void setConfigurationManager(
             StackConfigurationManager configurationManager) {
         this.configurationManager = configurationManager;
@@ -1574,6 +1612,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      *         version: 12, 11.10, or 11.4 for Linux stacks, or 12.2 for Windows
      *         stacks. The default value for Linux stacks is currently 11.4.
      */
+
     public StackConfigurationManager getConfigurationManager() {
         return this.configurationManager;
     }
@@ -1594,6 +1633,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CloneStackRequest withConfigurationManager(
             StackConfigurationManager configurationManager) {
         setConfigurationManager(configurationManager);
@@ -1616,6 +1656,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html"
      *        >Create a New Stack</a>.
      */
+
     public void setChefConfiguration(ChefConfiguration chefConfiguration) {
         this.chefConfiguration = chefConfiguration;
     }
@@ -1635,6 +1676,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      *         "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html"
      *         >Create a New Stack</a>.
      */
+
     public ChefConfiguration getChefConfiguration() {
         return this.chefConfiguration;
     }
@@ -1657,6 +1699,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CloneStackRequest withChefConfiguration(
             ChefConfiguration chefConfiguration) {
         setChefConfiguration(chefConfiguration);
@@ -1671,6 +1714,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * @param useCustomCookbooks
      *        Whether to use custom cookbooks.
      */
+
     public void setUseCustomCookbooks(Boolean useCustomCookbooks) {
         this.useCustomCookbooks = useCustomCookbooks;
     }
@@ -1682,6 +1726,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * 
      * @return Whether to use custom cookbooks.
      */
+
     public Boolean getUseCustomCookbooks() {
         return this.useCustomCookbooks;
     }
@@ -1696,6 +1741,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CloneStackRequest withUseCustomCookbooks(Boolean useCustomCookbooks) {
         setUseCustomCookbooks(useCustomCookbooks);
         return this;
@@ -1708,6 +1754,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * 
      * @return Whether to use custom cookbooks.
      */
+
     public Boolean isUseCustomCookbooks() {
         return this.useCustomCookbooks;
     }
@@ -1770,6 +1817,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html"
      *        >Create a New Stack</a>.
      */
+
     public void setUseOpsworksSecurityGroups(Boolean useOpsworksSecurityGroups) {
         this.useOpsworksSecurityGroups = useOpsworksSecurityGroups;
     }
@@ -1832,6 +1880,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      *         "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html"
      *         >Create a New Stack</a>.
      */
+
     public Boolean getUseOpsworksSecurityGroups() {
         return this.useOpsworksSecurityGroups;
     }
@@ -1896,6 +1945,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CloneStackRequest withUseOpsworksSecurityGroups(
             Boolean useOpsworksSecurityGroups) {
         setUseOpsworksSecurityGroups(useOpsworksSecurityGroups);
@@ -1960,6 +2010,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      *         "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html"
      *         >Create a New Stack</a>.
      */
+
     public Boolean isUseOpsworksSecurityGroups() {
         return this.useOpsworksSecurityGroups;
     }
@@ -1967,6 +2018,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
     /**
      * @param customCookbooksSource
      */
+
     public void setCustomCookbooksSource(Source customCookbooksSource) {
         this.customCookbooksSource = customCookbooksSource;
     }
@@ -1974,6 +2026,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public Source getCustomCookbooksSource() {
         return this.customCookbooksSource;
     }
@@ -1983,6 +2036,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CloneStackRequest withCustomCookbooksSource(
             Source customCookbooksSource) {
         setCustomCookbooksSource(customCookbooksSource);
@@ -2017,6 +2071,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html"
      *        > create an instance</a>.
      */
+
     public void setDefaultSshKeyName(String defaultSshKeyName) {
         this.defaultSshKeyName = defaultSshKeyName;
     }
@@ -2050,6 +2105,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      *         "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html"
      *         > create an instance</a>.
      */
+
     public String getDefaultSshKeyName() {
         return this.defaultSshKeyName;
     }
@@ -2084,6 +2140,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CloneStackRequest withDefaultSshKeyName(String defaultSshKeyName) {
         setDefaultSshKeyName(defaultSshKeyName);
         return this;
@@ -2097,6 +2154,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * @param clonePermissions
      *        Whether to clone the source stack's permissions.
      */
+
     public void setClonePermissions(Boolean clonePermissions) {
         this.clonePermissions = clonePermissions;
     }
@@ -2108,6 +2166,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * 
      * @return Whether to clone the source stack's permissions.
      */
+
     public Boolean getClonePermissions() {
         return this.clonePermissions;
     }
@@ -2122,6 +2181,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CloneStackRequest withClonePermissions(Boolean clonePermissions) {
         setClonePermissions(clonePermissions);
         return this;
@@ -2134,6 +2194,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * 
      * @return Whether to clone the source stack's permissions.
      */
+
     public Boolean isClonePermissions() {
         return this.clonePermissions;
     }
@@ -2146,6 +2207,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * @return A list of source stack app IDs to be included in the cloned
      *         stack.
      */
+
     public java.util.List<String> getCloneAppIds() {
         if (cloneAppIds == null) {
             cloneAppIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -2161,6 +2223,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * @param cloneAppIds
      *        A list of source stack app IDs to be included in the cloned stack.
      */
+
     public void setCloneAppIds(java.util.Collection<String> cloneAppIds) {
         if (cloneAppIds == null) {
             this.cloneAppIds = null;
@@ -2187,6 +2250,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CloneStackRequest withCloneAppIds(String... cloneAppIds) {
         if (this.cloneAppIds == null) {
             setCloneAppIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -2208,6 +2272,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CloneStackRequest withCloneAppIds(
             java.util.Collection<String> cloneAppIds) {
         setCloneAppIds(cloneAppIds);
@@ -2231,6 +2296,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      *        >Storage for the Root Device</a>.
      * @see RootDeviceType
      */
+
     public void setDefaultRootDeviceType(String defaultRootDeviceType) {
         this.defaultRootDeviceType = defaultRootDeviceType;
     }
@@ -2251,6 +2317,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      *         >Storage for the Root Device</a>.
      * @see RootDeviceType
      */
+
     public String getDefaultRootDeviceType() {
         return this.defaultRootDeviceType;
     }
@@ -2274,6 +2341,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see RootDeviceType
      */
+
     public CloneStackRequest withDefaultRootDeviceType(
             String defaultRootDeviceType) {
         setDefaultRootDeviceType(defaultRootDeviceType);
@@ -2299,6 +2367,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see RootDeviceType
      */
+
     public void setDefaultRootDeviceType(RootDeviceType defaultRootDeviceType) {
         this.defaultRootDeviceType = defaultRootDeviceType.toString();
     }
@@ -2322,6 +2391,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see RootDeviceType
      */
+
     public CloneStackRequest withDefaultRootDeviceType(
             RootDeviceType defaultRootDeviceType) {
         setDefaultRootDeviceType(defaultRootDeviceType);
@@ -2371,6 +2441,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      *        <note>You can also specify an agent version when you create or
      *        update an instance, which overrides the stack's default setting.
      */
+
     public void setAgentVersion(String agentVersion) {
         this.agentVersion = agentVersion;
     }
@@ -2417,6 +2488,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      *         <note>You can also specify an agent version when you create or
      *         update an instance, which overrides the stack's default setting.
      */
+
     public String getAgentVersion() {
         return this.agentVersion;
     }
@@ -2466,6 +2538,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CloneStackRequest withAgentVersion(String agentVersion) {
         setAgentVersion(agentVersion);
         return this;

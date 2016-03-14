@@ -50,6 +50,7 @@ public class DescribeSnapshotAttributeResult implements Serializable, Cloneable 
      * @param snapshotId
      *        The ID of the EBS snapshot.
      */
+
     public void setSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
     }
@@ -61,6 +62,7 @@ public class DescribeSnapshotAttributeResult implements Serializable, Cloneable 
      * 
      * @return The ID of the EBS snapshot.
      */
+
     public String getSnapshotId() {
         return this.snapshotId;
     }
@@ -75,6 +77,7 @@ public class DescribeSnapshotAttributeResult implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSnapshotAttributeResult withSnapshotId(String snapshotId) {
         setSnapshotId(snapshotId);
         return this;
@@ -87,6 +90,7 @@ public class DescribeSnapshotAttributeResult implements Serializable, Cloneable 
      * 
      * @return A list of permissions for creating volumes from the snapshot.
      */
+
     public java.util.List<CreateVolumePermission> getCreateVolumePermissions() {
         if (createVolumePermissions == null) {
             createVolumePermissions = new com.amazonaws.internal.SdkInternalList<CreateVolumePermission>();
@@ -102,6 +106,7 @@ public class DescribeSnapshotAttributeResult implements Serializable, Cloneable 
      * @param createVolumePermissions
      *        A list of permissions for creating volumes from the snapshot.
      */
+
     public void setCreateVolumePermissions(
             java.util.Collection<CreateVolumePermission> createVolumePermissions) {
         if (createVolumePermissions == null) {
@@ -129,6 +134,7 @@ public class DescribeSnapshotAttributeResult implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSnapshotAttributeResult withCreateVolumePermissions(
             CreateVolumePermission... createVolumePermissions) {
         if (this.createVolumePermissions == null) {
@@ -151,6 +157,7 @@ public class DescribeSnapshotAttributeResult implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSnapshotAttributeResult withCreateVolumePermissions(
             java.util.Collection<CreateVolumePermission> createVolumePermissions) {
         setCreateVolumePermissions(createVolumePermissions);
@@ -164,6 +171,7 @@ public class DescribeSnapshotAttributeResult implements Serializable, Cloneable 
      * 
      * @return A list of product codes.
      */
+
     public java.util.List<ProductCode> getProductCodes() {
         if (productCodes == null) {
             productCodes = new com.amazonaws.internal.SdkInternalList<ProductCode>();
@@ -179,6 +187,7 @@ public class DescribeSnapshotAttributeResult implements Serializable, Cloneable 
      * @param productCodes
      *        A list of product codes.
      */
+
     public void setProductCodes(java.util.Collection<ProductCode> productCodes) {
         if (productCodes == null) {
             this.productCodes = null;
@@ -205,6 +214,7 @@ public class DescribeSnapshotAttributeResult implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSnapshotAttributeResult withProductCodes(
             ProductCode... productCodes) {
         if (this.productCodes == null) {
@@ -227,6 +237,7 @@ public class DescribeSnapshotAttributeResult implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSnapshotAttributeResult withProductCodes(
             java.util.Collection<ProductCode> productCodes) {
         setProductCodes(productCodes);

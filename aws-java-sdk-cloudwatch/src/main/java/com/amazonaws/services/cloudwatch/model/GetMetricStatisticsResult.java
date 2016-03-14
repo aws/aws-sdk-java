@@ -46,6 +46,7 @@ public class GetMetricStatisticsResult implements Serializable, Cloneable {
      * @param label
      *        A label describing the specified metric.
      */
+
     public void setLabel(String label) {
         this.label = label;
     }
@@ -57,6 +58,7 @@ public class GetMetricStatisticsResult implements Serializable, Cloneable {
      * 
      * @return A label describing the specified metric.
      */
+
     public String getLabel() {
         return this.label;
     }
@@ -71,6 +73,7 @@ public class GetMetricStatisticsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetMetricStatisticsResult withLabel(String label) {
         setLabel(label);
         return this;
@@ -83,6 +86,7 @@ public class GetMetricStatisticsResult implements Serializable, Cloneable {
      * 
      * @return The datapoints for the specified metric.
      */
+
     public java.util.List<Datapoint> getDatapoints() {
         if (datapoints == null) {
             datapoints = new com.amazonaws.internal.SdkInternalList<Datapoint>();
@@ -98,6 +102,7 @@ public class GetMetricStatisticsResult implements Serializable, Cloneable {
      * @param datapoints
      *        The datapoints for the specified metric.
      */
+
     public void setDatapoints(java.util.Collection<Datapoint> datapoints) {
         if (datapoints == null) {
             this.datapoints = null;
@@ -124,6 +129,7 @@ public class GetMetricStatisticsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetMetricStatisticsResult withDatapoints(Datapoint... datapoints) {
         if (this.datapoints == null) {
             setDatapoints(new com.amazonaws.internal.SdkInternalList<Datapoint>(
@@ -145,6 +151,7 @@ public class GetMetricStatisticsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetMetricStatisticsResult withDatapoints(
             java.util.Collection<Datapoint> datapoints) {
         setDatapoints(datapoints);

@@ -40,6 +40,7 @@ public class StartPipelineExecutionResult implements Serializable, Cloneable {
      * @param pipelineExecutionId
      *        The unique system-generated ID of the pipeline that was started.
      */
+
     public void setPipelineExecutionId(String pipelineExecutionId) {
         this.pipelineExecutionId = pipelineExecutionId;
     }
@@ -51,6 +52,7 @@ public class StartPipelineExecutionResult implements Serializable, Cloneable {
      * 
      * @return The unique system-generated ID of the pipeline that was started.
      */
+
     public String getPipelineExecutionId() {
         return this.pipelineExecutionId;
     }
@@ -65,6 +67,7 @@ public class StartPipelineExecutionResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StartPipelineExecutionResult withPipelineExecutionId(
             String pipelineExecutionId) {
         setPipelineExecutionId(pipelineExecutionId);

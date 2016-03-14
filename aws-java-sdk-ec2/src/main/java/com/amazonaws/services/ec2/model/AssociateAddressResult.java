@@ -41,6 +41,7 @@ public class AssociateAddressResult implements Serializable, Cloneable {
      *        [EC2-VPC] The ID that represents the association of the Elastic IP
      *        address with an instance.
      */
+
     public void setAssociationId(String associationId) {
         this.associationId = associationId;
     }
@@ -54,6 +55,7 @@ public class AssociateAddressResult implements Serializable, Cloneable {
      * @return [EC2-VPC] The ID that represents the association of the Elastic
      *         IP address with an instance.
      */
+
     public String getAssociationId() {
         return this.associationId;
     }
@@ -70,6 +72,7 @@ public class AssociateAddressResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssociateAddressResult withAssociationId(String associationId) {
         setAssociationId(associationId);
         return this;

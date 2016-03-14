@@ -51,6 +51,7 @@ public class UpdateProjectRequest extends AmazonWebServiceRequest implements
      *        The Amazon Resource Name (ARN) of the project whose name you wish
      *        to update.
      */
+
     public void setArn(String arn) {
         this.arn = arn;
     }
@@ -64,6 +65,7 @@ public class UpdateProjectRequest extends AmazonWebServiceRequest implements
      * @return The Amazon Resource Name (ARN) of the project whose name you wish
      *         to update.
      */
+
     public String getArn() {
         return this.arn;
     }
@@ -80,6 +82,7 @@ public class UpdateProjectRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateProjectRequest withArn(String arn) {
         setArn(arn);
         return this;
@@ -94,6 +97,7 @@ public class UpdateProjectRequest extends AmazonWebServiceRequest implements
      *        A string representing the new name of the project that you are
      *        updating.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -106,6 +110,7 @@ public class UpdateProjectRequest extends AmazonWebServiceRequest implements
      * @return A string representing the new name of the project that you are
      *         updating.
      */
+
     public String getName() {
         return this.name;
     }
@@ -121,6 +126,7 @@ public class UpdateProjectRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateProjectRequest withName(String name) {
         setName(name);
         return this;

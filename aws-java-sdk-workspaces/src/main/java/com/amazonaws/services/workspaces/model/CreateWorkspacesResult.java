@@ -54,6 +54,7 @@ public class CreateWorkspacesResult implements Serializable, Cloneable {
      * @return An array of structures that represent the WorkSpaces that could
      *         not be created.
      */
+
     public java.util.List<FailedCreateWorkspaceRequest> getFailedRequests() {
         if (failedRequests == null) {
             failedRequests = new com.amazonaws.internal.SdkInternalList<FailedCreateWorkspaceRequest>();
@@ -71,6 +72,7 @@ public class CreateWorkspacesResult implements Serializable, Cloneable {
      *        An array of structures that represent the WorkSpaces that could
      *        not be created.
      */
+
     public void setFailedRequests(
             java.util.Collection<FailedCreateWorkspaceRequest> failedRequests) {
         if (failedRequests == null) {
@@ -100,6 +102,7 @@ public class CreateWorkspacesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateWorkspacesResult withFailedRequests(
             FailedCreateWorkspaceRequest... failedRequests) {
         if (this.failedRequests == null) {
@@ -124,6 +127,7 @@ public class CreateWorkspacesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateWorkspacesResult withFailedRequests(
             java.util.Collection<FailedCreateWorkspaceRequest> failedRequests) {
         setFailedRequests(failedRequests);
@@ -149,6 +153,7 @@ public class CreateWorkspacesResult implements Serializable, Cloneable {
      *         immediately call <a>DescribeWorkspaces</a> with this identifier,
      *         no information will be returned.
      */
+
     public java.util.List<Workspace> getPendingRequests() {
         if (pendingRequests == null) {
             pendingRequests = new com.amazonaws.internal.SdkInternalList<Workspace>();
@@ -176,6 +181,7 @@ public class CreateWorkspacesResult implements Serializable, Cloneable {
      *        immediately call <a>DescribeWorkspaces</a> with this identifier,
      *        no information will be returned.
      */
+
     public void setPendingRequests(
             java.util.Collection<Workspace> pendingRequests) {
         if (pendingRequests == null) {
@@ -215,6 +221,7 @@ public class CreateWorkspacesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateWorkspacesResult withPendingRequests(
             Workspace... pendingRequests) {
         if (this.pendingRequests == null) {
@@ -249,6 +256,7 @@ public class CreateWorkspacesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateWorkspacesResult withPendingRequests(
             java.util.Collection<Workspace> pendingRequests) {
         setPendingRequests(pendingRequests);

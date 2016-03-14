@@ -29,6 +29,7 @@ public class DescribeStorediSCSIVolumesResult implements Serializable,
     /**
      * @return
      */
+
     public java.util.List<StorediSCSIVolume> getStorediSCSIVolumes() {
         if (storediSCSIVolumes == null) {
             storediSCSIVolumes = new com.amazonaws.internal.SdkInternalList<StorediSCSIVolume>();
@@ -39,6 +40,7 @@ public class DescribeStorediSCSIVolumesResult implements Serializable,
     /**
      * @param storediSCSIVolumes
      */
+
     public void setStorediSCSIVolumes(
             java.util.Collection<StorediSCSIVolume> storediSCSIVolumes) {
         if (storediSCSIVolumes == null) {
@@ -62,6 +64,7 @@ public class DescribeStorediSCSIVolumesResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeStorediSCSIVolumesResult withStorediSCSIVolumes(
             StorediSCSIVolume... storediSCSIVolumes) {
         if (this.storediSCSIVolumes == null) {
@@ -79,6 +82,7 @@ public class DescribeStorediSCSIVolumesResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeStorediSCSIVolumesResult withStorediSCSIVolumes(
             java.util.Collection<StorediSCSIVolume> storediSCSIVolumes) {
         setStorediSCSIVolumes(storediSCSIVolumes);

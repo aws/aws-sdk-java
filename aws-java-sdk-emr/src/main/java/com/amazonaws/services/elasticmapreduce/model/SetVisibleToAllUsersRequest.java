@@ -52,6 +52,7 @@ public class SetVisibleToAllUsersRequest extends AmazonWebServiceRequest
      * @return Identifiers of the job flows to receive the new visibility
      *         setting.
      */
+
     public java.util.List<String> getJobFlowIds() {
         if (jobFlowIds == null) {
             jobFlowIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -68,6 +69,7 @@ public class SetVisibleToAllUsersRequest extends AmazonWebServiceRequest
      *        Identifiers of the job flows to receive the new visibility
      *        setting.
      */
+
     public void setJobFlowIds(java.util.Collection<String> jobFlowIds) {
         if (jobFlowIds == null) {
             this.jobFlowIds = null;
@@ -95,6 +97,7 @@ public class SetVisibleToAllUsersRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetVisibleToAllUsersRequest withJobFlowIds(String... jobFlowIds) {
         if (this.jobFlowIds == null) {
             setJobFlowIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -117,6 +120,7 @@ public class SetVisibleToAllUsersRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetVisibleToAllUsersRequest withJobFlowIds(
             java.util.Collection<String> jobFlowIds) {
         setJobFlowIds(jobFlowIds);
@@ -140,6 +144,7 @@ public class SetVisibleToAllUsersRequest extends AmazonWebServiceRequest
      *        If it is set to False, only the IAM user that created a job flow
      *        can view and manage it.
      */
+
     public void setVisibleToAllUsers(Boolean visibleToAllUsers) {
         this.visibleToAllUsers = visibleToAllUsers;
     }
@@ -160,6 +165,7 @@ public class SetVisibleToAllUsersRequest extends AmazonWebServiceRequest
      *         flows. If it is set to False, only the IAM user that created a
      *         job flow can view and manage it.
      */
+
     public Boolean getVisibleToAllUsers() {
         return this.visibleToAllUsers;
     }
@@ -183,6 +189,7 @@ public class SetVisibleToAllUsersRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetVisibleToAllUsersRequest withVisibleToAllUsers(
             Boolean visibleToAllUsers) {
         setVisibleToAllUsers(visibleToAllUsers);
@@ -205,6 +212,7 @@ public class SetVisibleToAllUsersRequest extends AmazonWebServiceRequest
      *         flows. If it is set to False, only the IAM user that created a
      *         job flow can view and manage it.
      */
+
     public Boolean isVisibleToAllUsers() {
         return this.visibleToAllUsers;
     }

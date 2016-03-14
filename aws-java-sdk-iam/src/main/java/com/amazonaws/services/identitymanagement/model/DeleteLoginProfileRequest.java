@@ -60,6 +60,7 @@ public class DeleteLoginProfileRequest extends AmazonWebServiceRequest
      * @param userName
      *        The name of the user whose password you want to delete.
      */
+
     public void setUserName(String userName) {
         this.userName = userName;
     }
@@ -71,6 +72,7 @@ public class DeleteLoginProfileRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the user whose password you want to delete.
      */
+
     public String getUserName() {
         return this.userName;
     }
@@ -85,6 +87,7 @@ public class DeleteLoginProfileRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteLoginProfileRequest withUserName(String userName) {
         setUserName(userName);
         return this;

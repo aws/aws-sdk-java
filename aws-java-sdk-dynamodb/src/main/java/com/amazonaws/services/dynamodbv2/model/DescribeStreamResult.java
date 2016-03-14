@@ -49,6 +49,7 @@ public class DescribeStreamResult implements Serializable, Cloneable {
      *        IDs within the stream, and the beginning and ending sequence
      *        numbers of stream records within the shards.
      */
+
     public void setStreamDescription(StreamDescription streamDescription) {
         this.streamDescription = streamDescription;
     }
@@ -66,6 +67,7 @@ public class DescribeStreamResult implements Serializable, Cloneable {
      *         shard IDs within the stream, and the beginning and ending
      *         sequence numbers of stream records within the shards.
      */
+
     public StreamDescription getStreamDescription() {
         return this.streamDescription;
     }
@@ -86,6 +88,7 @@ public class DescribeStreamResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeStreamResult withStreamDescription(
             StreamDescription streamDescription) {
         setStreamDescription(streamDescription);

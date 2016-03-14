@@ -46,6 +46,7 @@ public class GetRolePolicyRequest extends AmazonWebServiceRequest implements
      * @param roleName
      *        The name of the role associated with the policy.
      */
+
     public void setRoleName(String roleName) {
         this.roleName = roleName;
     }
@@ -57,6 +58,7 @@ public class GetRolePolicyRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the role associated with the policy.
      */
+
     public String getRoleName() {
         return this.roleName;
     }
@@ -71,6 +73,7 @@ public class GetRolePolicyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetRolePolicyRequest withRoleName(String roleName) {
         setRoleName(roleName);
         return this;
@@ -84,6 +87,7 @@ public class GetRolePolicyRequest extends AmazonWebServiceRequest implements
      * @param policyName
      *        The name of the policy document to get.
      */
+
     public void setPolicyName(String policyName) {
         this.policyName = policyName;
     }
@@ -95,6 +99,7 @@ public class GetRolePolicyRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the policy document to get.
      */
+
     public String getPolicyName() {
         return this.policyName;
     }
@@ -109,6 +114,7 @@ public class GetRolePolicyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetRolePolicyRequest withPolicyName(String policyName) {
         setPolicyName(policyName);
         return this;

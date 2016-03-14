@@ -63,6 +63,7 @@ public class UpdateMethodResponseResult implements Serializable, Cloneable {
      * @param statusCode
      *        The method response's status code.
      */
+
     public void setStatusCode(String statusCode) {
         this.statusCode = statusCode;
     }
@@ -74,6 +75,7 @@ public class UpdateMethodResponseResult implements Serializable, Cloneable {
      * 
      * @return The method response's status code.
      */
+
     public String getStatusCode() {
         return this.statusCode;
     }
@@ -88,6 +90,7 @@ public class UpdateMethodResponseResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateMethodResponseResult withStatusCode(String statusCode) {
         setStatusCode(statusCode);
         return this;
@@ -115,6 +118,7 @@ public class UpdateMethodResponseResult implements Serializable, Cloneable {
      *         specified here are available to the integration for mapping from
      *         integration response parameters.
      */
+
     public java.util.Map<String, Boolean> getResponseParameters() {
         return responseParameters;
     }
@@ -142,6 +146,7 @@ public class UpdateMethodResponseResult implements Serializable, Cloneable {
      *        specified here are available to the integration for mapping from
      *        integration response parameters.
      */
+
     public void setResponseParameters(
             java.util.Map<String, Boolean> responseParameters) {
         this.responseParameters = responseParameters;
@@ -172,6 +177,7 @@ public class UpdateMethodResponseResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateMethodResponseResult withResponseParameters(
             java.util.Map<String, Boolean> responseParameters) {
         setResponseParameters(responseParameters);
@@ -194,6 +200,7 @@ public class UpdateMethodResponseResult implements Serializable, Cloneable {
      * Removes all the entries added into ResponseParameters. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public UpdateMethodResponseResult clearResponseParametersEntries() {
         this.responseParameters = null;
         return this;
@@ -211,6 +218,7 @@ public class UpdateMethodResponseResult implements Serializable, Cloneable {
      *         with a content-type as the key and a <a>Model</a> name as the
      *         value.
      */
+
     public java.util.Map<String, String> getResponseModels() {
         return responseModels;
     }
@@ -228,6 +236,7 @@ public class UpdateMethodResponseResult implements Serializable, Cloneable {
      *        with a content-type as the key and a <a>Model</a> name as the
      *        value.
      */
+
     public void setResponseModels(java.util.Map<String, String> responseModels) {
         this.responseModels = responseModels;
     }
@@ -247,6 +256,7 @@ public class UpdateMethodResponseResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateMethodResponseResult withResponseModels(
             java.util.Map<String, String> responseModels) {
         setResponseModels(responseModels);
@@ -269,6 +279,7 @@ public class UpdateMethodResponseResult implements Serializable, Cloneable {
      * Removes all the entries added into ResponseModels. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public UpdateMethodResponseResult clearResponseModelsEntries() {
         this.responseModels = null;
         return this;

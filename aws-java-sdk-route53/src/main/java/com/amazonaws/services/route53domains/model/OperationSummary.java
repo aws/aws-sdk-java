@@ -78,6 +78,7 @@ public class OperationSummary implements Serializable, Cloneable {
      *        <p>
      *        Type: String
      */
+
     public void setOperationId(String operationId) {
         this.operationId = operationId;
     }
@@ -94,6 +95,7 @@ public class OperationSummary implements Serializable, Cloneable {
      *         <p>
      *         Type: String
      */
+
     public String getOperationId() {
         return this.operationId;
     }
@@ -113,6 +115,7 @@ public class OperationSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public OperationSummary withOperationId(String operationId) {
         setOperationId(operationId);
         return this;
@@ -132,6 +135,7 @@ public class OperationSummary implements Serializable, Cloneable {
      *        Type: String
      * @see OperationStatus
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -149,6 +153,7 @@ public class OperationSummary implements Serializable, Cloneable {
      *         Type: String
      * @see OperationStatus
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -169,6 +174,7 @@ public class OperationSummary implements Serializable, Cloneable {
      *         chained together.
      * @see OperationStatus
      */
+
     public OperationSummary withStatus(String status) {
         setStatus(status);
         return this;
@@ -190,6 +196,7 @@ public class OperationSummary implements Serializable, Cloneable {
      *         chained together.
      * @see OperationStatus
      */
+
     public void setStatus(OperationStatus status) {
         this.status = status.toString();
     }
@@ -210,6 +217,7 @@ public class OperationSummary implements Serializable, Cloneable {
      *         chained together.
      * @see OperationStatus
      */
+
     public OperationSummary withStatus(OperationStatus status) {
         setStatus(status);
         return this;
@@ -242,6 +250,7 @@ public class OperationSummary implements Serializable, Cloneable {
      *        <code>CHANGE_PRIVACY_PROTECTION</code> | <code>DOMAIN_LOCK</code>
      * @see OperationType
      */
+
     public void setType(String type) {
         this.type = type;
     }
@@ -272,6 +281,7 @@ public class OperationSummary implements Serializable, Cloneable {
      *         <code>CHANGE_PRIVACY_PROTECTION</code> | <code>DOMAIN_LOCK</code>
      * @see OperationType
      */
+
     public String getType() {
         return this.type;
     }
@@ -305,6 +315,7 @@ public class OperationSummary implements Serializable, Cloneable {
      *         chained together.
      * @see OperationType
      */
+
     public OperationSummary withType(String type) {
         setType(type);
         return this;
@@ -339,6 +350,7 @@ public class OperationSummary implements Serializable, Cloneable {
      *         chained together.
      * @see OperationType
      */
+
     public void setType(OperationType type) {
         this.type = type.toString();
     }
@@ -372,6 +384,7 @@ public class OperationSummary implements Serializable, Cloneable {
      *         chained together.
      * @see OperationType
      */
+
     public OperationSummary withType(OperationType type) {
         setType(type);
         return this;
@@ -385,6 +398,7 @@ public class OperationSummary implements Serializable, Cloneable {
      * @param submittedDate
      *        The date when the request was submitted.
      */
+
     public void setSubmittedDate(java.util.Date submittedDate) {
         this.submittedDate = submittedDate;
     }
@@ -396,6 +410,7 @@ public class OperationSummary implements Serializable, Cloneable {
      * 
      * @return The date when the request was submitted.
      */
+
     public java.util.Date getSubmittedDate() {
         return this.submittedDate;
     }
@@ -410,6 +425,7 @@ public class OperationSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public OperationSummary withSubmittedDate(java.util.Date submittedDate) {
         setSubmittedDate(submittedDate);
         return this;

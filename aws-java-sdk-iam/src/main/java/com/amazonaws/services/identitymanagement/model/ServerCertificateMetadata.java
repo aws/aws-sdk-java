@@ -130,6 +130,7 @@ public class ServerCertificateMetadata implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *        >IAM Identifiers</a> in the <i>Using IAM</i> guide.
      */
+
     public void setPath(String path) {
         this.path = path;
     }
@@ -147,6 +148,7 @@ public class ServerCertificateMetadata implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *         >IAM Identifiers</a> in the <i>Using IAM</i> guide.
      */
+
     public String getPath() {
         return this.path;
     }
@@ -167,6 +169,7 @@ public class ServerCertificateMetadata implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ServerCertificateMetadata withPath(String path) {
         setPath(path);
         return this;
@@ -180,6 +183,7 @@ public class ServerCertificateMetadata implements Serializable, Cloneable {
      * @param serverCertificateName
      *        The name that identifies the server certificate.
      */
+
     public void setServerCertificateName(String serverCertificateName) {
         this.serverCertificateName = serverCertificateName;
     }
@@ -191,6 +195,7 @@ public class ServerCertificateMetadata implements Serializable, Cloneable {
      * 
      * @return The name that identifies the server certificate.
      */
+
     public String getServerCertificateName() {
         return this.serverCertificateName;
     }
@@ -205,6 +210,7 @@ public class ServerCertificateMetadata implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ServerCertificateMetadata withServerCertificateName(
             String serverCertificateName) {
         setServerCertificateName(serverCertificateName);
@@ -225,6 +231,7 @@ public class ServerCertificateMetadata implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *        >IAM Identifiers</a> in the <i>Using IAM</i> guide.
      */
+
     public void setServerCertificateId(String serverCertificateId) {
         this.serverCertificateId = serverCertificateId;
     }
@@ -242,6 +249,7 @@ public class ServerCertificateMetadata implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *         >IAM Identifiers</a> in the <i>Using IAM</i> guide.
      */
+
     public String getServerCertificateId() {
         return this.serverCertificateId;
     }
@@ -262,6 +270,7 @@ public class ServerCertificateMetadata implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ServerCertificateMetadata withServerCertificateId(
             String serverCertificateId) {
         setServerCertificateId(serverCertificateId);
@@ -283,6 +292,7 @@ public class ServerCertificateMetadata implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *        >IAM Identifiers</a> in the <i>Using IAM</i> guide.
      */
+
     public void setArn(String arn) {
         this.arn = arn;
     }
@@ -301,6 +311,7 @@ public class ServerCertificateMetadata implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *         >IAM Identifiers</a> in the <i>Using IAM</i> guide.
      */
+
     public String getArn() {
         return this.arn;
     }
@@ -322,6 +333,7 @@ public class ServerCertificateMetadata implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ServerCertificateMetadata withArn(String arn) {
         setArn(arn);
         return this;
@@ -335,6 +347,7 @@ public class ServerCertificateMetadata implements Serializable, Cloneable {
      * @param uploadDate
      *        The date when the server certificate was uploaded.
      */
+
     public void setUploadDate(java.util.Date uploadDate) {
         this.uploadDate = uploadDate;
     }
@@ -346,6 +359,7 @@ public class ServerCertificateMetadata implements Serializable, Cloneable {
      * 
      * @return The date when the server certificate was uploaded.
      */
+
     public java.util.Date getUploadDate() {
         return this.uploadDate;
     }
@@ -360,6 +374,7 @@ public class ServerCertificateMetadata implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ServerCertificateMetadata withUploadDate(java.util.Date uploadDate) {
         setUploadDate(uploadDate);
         return this;
@@ -373,6 +388,7 @@ public class ServerCertificateMetadata implements Serializable, Cloneable {
      * @param expiration
      *        The date on which the certificate is set to expire.
      */
+
     public void setExpiration(java.util.Date expiration) {
         this.expiration = expiration;
     }
@@ -384,6 +400,7 @@ public class ServerCertificateMetadata implements Serializable, Cloneable {
      * 
      * @return The date on which the certificate is set to expire.
      */
+
     public java.util.Date getExpiration() {
         return this.expiration;
     }
@@ -398,6 +415,7 @@ public class ServerCertificateMetadata implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ServerCertificateMetadata withExpiration(java.util.Date expiration) {
         setExpiration(expiration);
         return this;

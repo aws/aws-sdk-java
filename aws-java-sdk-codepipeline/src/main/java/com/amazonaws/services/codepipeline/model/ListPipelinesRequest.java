@@ -46,6 +46,7 @@ public class ListPipelinesRequest extends AmazonWebServiceRequest implements
      *        call, which can be used to return the next set of pipelines in the
      *        list.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -60,6 +61,7 @@ public class ListPipelinesRequest extends AmazonWebServiceRequest implements
      *         call, which can be used to return the next set of pipelines in
      *         the list.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -77,6 +79,7 @@ public class ListPipelinesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListPipelinesRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

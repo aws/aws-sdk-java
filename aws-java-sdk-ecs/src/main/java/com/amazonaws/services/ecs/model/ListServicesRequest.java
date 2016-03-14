@@ -71,6 +71,7 @@ public class ListServicesRequest extends AmazonWebServiceRequest implements
      *        that hosts the services to list. If you do not specify a cluster,
      *        the default cluster is assumed..
      */
+
     public void setCluster(String cluster) {
         this.cluster = cluster;
     }
@@ -86,6 +87,7 @@ public class ListServicesRequest extends AmazonWebServiceRequest implements
      *         that hosts the services to list. If you do not specify a cluster,
      *         the default cluster is assumed..
      */
+
     public String getCluster() {
         return this.cluster;
     }
@@ -104,6 +106,7 @@ public class ListServicesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListServicesRequest withCluster(String cluster) {
         setCluster(cluster);
         return this;
@@ -128,6 +131,7 @@ public class ListServicesRequest extends AmazonWebServiceRequest implements
      *        This value is <code>null</code> when there are no more results to
      *        return.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -150,6 +154,7 @@ public class ListServicesRequest extends AmazonWebServiceRequest implements
      *         This value is <code>null</code> when there are no more results to
      *         return.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -175,6 +180,7 @@ public class ListServicesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListServicesRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -206,6 +212,7 @@ public class ListServicesRequest extends AmazonWebServiceRequest implements
      *        returns up to 10 results and a <code>nextToken</code> value if
      *        applicable.
      */
+
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
     }
@@ -235,6 +242,7 @@ public class ListServicesRequest extends AmazonWebServiceRequest implements
      *         returns up to 10 results and a <code>nextToken</code> value if
      *         applicable.
      */
+
     public Integer getMaxResults() {
         return this.maxResults;
     }
@@ -267,6 +275,7 @@ public class ListServicesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListServicesRequest withMaxResults(Integer maxResults) {
         setMaxResults(maxResults);
         return this;

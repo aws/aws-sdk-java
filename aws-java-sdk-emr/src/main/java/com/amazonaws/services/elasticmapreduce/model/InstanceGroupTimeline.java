@@ -52,6 +52,7 @@ public class InstanceGroupTimeline implements Serializable, Cloneable {
      * @param creationDateTime
      *        The creation date and time of the instance group.
      */
+
     public void setCreationDateTime(java.util.Date creationDateTime) {
         this.creationDateTime = creationDateTime;
     }
@@ -63,6 +64,7 @@ public class InstanceGroupTimeline implements Serializable, Cloneable {
      * 
      * @return The creation date and time of the instance group.
      */
+
     public java.util.Date getCreationDateTime() {
         return this.creationDateTime;
     }
@@ -77,6 +79,7 @@ public class InstanceGroupTimeline implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceGroupTimeline withCreationDateTime(
             java.util.Date creationDateTime) {
         setCreationDateTime(creationDateTime);
@@ -92,6 +95,7 @@ public class InstanceGroupTimeline implements Serializable, Cloneable {
      *        The date and time when the instance group became ready to perform
      *        tasks.
      */
+
     public void setReadyDateTime(java.util.Date readyDateTime) {
         this.readyDateTime = readyDateTime;
     }
@@ -104,6 +108,7 @@ public class InstanceGroupTimeline implements Serializable, Cloneable {
      * @return The date and time when the instance group became ready to perform
      *         tasks.
      */
+
     public java.util.Date getReadyDateTime() {
         return this.readyDateTime;
     }
@@ -119,6 +124,7 @@ public class InstanceGroupTimeline implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceGroupTimeline withReadyDateTime(java.util.Date readyDateTime) {
         setReadyDateTime(readyDateTime);
         return this;
@@ -132,6 +138,7 @@ public class InstanceGroupTimeline implements Serializable, Cloneable {
      * @param endDateTime
      *        The date and time when the instance group terminated.
      */
+
     public void setEndDateTime(java.util.Date endDateTime) {
         this.endDateTime = endDateTime;
     }
@@ -143,6 +150,7 @@ public class InstanceGroupTimeline implements Serializable, Cloneable {
      * 
      * @return The date and time when the instance group terminated.
      */
+
     public java.util.Date getEndDateTime() {
         return this.endDateTime;
     }
@@ -157,6 +165,7 @@ public class InstanceGroupTimeline implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceGroupTimeline withEndDateTime(java.util.Date endDateTime) {
         setEndDateTime(endDateTime);
         return this;

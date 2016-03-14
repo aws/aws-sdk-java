@@ -18,7 +18,6 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the output from the <code>DescribeTags</code> action.
  * </p>
  */
 public class DescribeTagsResult implements Serializable, Cloneable {

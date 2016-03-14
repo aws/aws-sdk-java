@@ -58,6 +58,7 @@ public class DeploymentConfigInfo implements Serializable, Cloneable {
      * @param deploymentConfigId
      *        The deployment configuration ID.
      */
+
     public void setDeploymentConfigId(String deploymentConfigId) {
         this.deploymentConfigId = deploymentConfigId;
     }
@@ -69,6 +70,7 @@ public class DeploymentConfigInfo implements Serializable, Cloneable {
      * 
      * @return The deployment configuration ID.
      */
+
     public String getDeploymentConfigId() {
         return this.deploymentConfigId;
     }
@@ -83,6 +85,7 @@ public class DeploymentConfigInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeploymentConfigInfo withDeploymentConfigId(String deploymentConfigId) {
         setDeploymentConfigId(deploymentConfigId);
         return this;
@@ -96,6 +99,7 @@ public class DeploymentConfigInfo implements Serializable, Cloneable {
      * @param deploymentConfigName
      *        The deployment configuration name.
      */
+
     public void setDeploymentConfigName(String deploymentConfigName) {
         this.deploymentConfigName = deploymentConfigName;
     }
@@ -107,6 +111,7 @@ public class DeploymentConfigInfo implements Serializable, Cloneable {
      * 
      * @return The deployment configuration name.
      */
+
     public String getDeploymentConfigName() {
         return this.deploymentConfigName;
     }
@@ -121,6 +126,7 @@ public class DeploymentConfigInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeploymentConfigInfo withDeploymentConfigName(
             String deploymentConfigName) {
         setDeploymentConfigName(deploymentConfigName);
@@ -136,6 +142,7 @@ public class DeploymentConfigInfo implements Serializable, Cloneable {
      *        Information about the number or percentage of minimum healthy
      *        instances.
      */
+
     public void setMinimumHealthyHosts(MinimumHealthyHosts minimumHealthyHosts) {
         this.minimumHealthyHosts = minimumHealthyHosts;
     }
@@ -148,6 +155,7 @@ public class DeploymentConfigInfo implements Serializable, Cloneable {
      * @return Information about the number or percentage of minimum healthy
      *         instances.
      */
+
     public MinimumHealthyHosts getMinimumHealthyHosts() {
         return this.minimumHealthyHosts;
     }
@@ -163,6 +171,7 @@ public class DeploymentConfigInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeploymentConfigInfo withMinimumHealthyHosts(
             MinimumHealthyHosts minimumHealthyHosts) {
         setMinimumHealthyHosts(minimumHealthyHosts);
@@ -177,6 +186,7 @@ public class DeploymentConfigInfo implements Serializable, Cloneable {
      * @param createTime
      *        The time that the deployment configuration was created.
      */
+
     public void setCreateTime(java.util.Date createTime) {
         this.createTime = createTime;
     }
@@ -188,6 +198,7 @@ public class DeploymentConfigInfo implements Serializable, Cloneable {
      * 
      * @return The time that the deployment configuration was created.
      */
+
     public java.util.Date getCreateTime() {
         return this.createTime;
     }
@@ -202,6 +213,7 @@ public class DeploymentConfigInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeploymentConfigInfo withCreateTime(java.util.Date createTime) {
         setCreateTime(createTime);
         return this;

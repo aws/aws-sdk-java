@@ -100,6 +100,7 @@ public class EnableMetricsCollectionRequest extends AmazonWebServiceRequest
      * @param autoScalingGroupName
      *        The name or ARN of the Auto Scaling group.
      */
+
     public void setAutoScalingGroupName(String autoScalingGroupName) {
         this.autoScalingGroupName = autoScalingGroupName;
     }
@@ -111,6 +112,7 @@ public class EnableMetricsCollectionRequest extends AmazonWebServiceRequest
      * 
      * @return The name or ARN of the Auto Scaling group.
      */
+
     public String getAutoScalingGroupName() {
         return this.autoScalingGroupName;
     }
@@ -125,6 +127,7 @@ public class EnableMetricsCollectionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EnableMetricsCollectionRequest withAutoScalingGroupName(
             String autoScalingGroupName) {
         setAutoScalingGroupName(autoScalingGroupName);
@@ -231,6 +234,7 @@ public class EnableMetricsCollectionRequest extends AmazonWebServiceRequest
      *         Note that the <code>GroupStandbyInstances</code> metric is not
      *         enabled by default. You must explicitly request this metric.
      */
+
     public java.util.List<String> getMetrics() {
         if (metrics == null) {
             metrics = new com.amazonaws.internal.SdkInternalList<String>();
@@ -339,6 +343,7 @@ public class EnableMetricsCollectionRequest extends AmazonWebServiceRequest
      *        Note that the <code>GroupStandbyInstances</code> metric is not
      *        enabled by default. You must explicitly request this metric.
      */
+
     public void setMetrics(java.util.Collection<String> metrics) {
         if (metrics == null) {
             this.metrics = null;
@@ -458,6 +463,7 @@ public class EnableMetricsCollectionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EnableMetricsCollectionRequest withMetrics(String... metrics) {
         if (this.metrics == null) {
             setMetrics(new com.amazonaws.internal.SdkInternalList<String>(
@@ -572,6 +578,7 @@ public class EnableMetricsCollectionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EnableMetricsCollectionRequest withMetrics(
             java.util.Collection<String> metrics) {
         setMetrics(metrics);
@@ -588,6 +595,7 @@ public class EnableMetricsCollectionRequest extends AmazonWebServiceRequest
      *        The granularity to associate with the metrics to collect. The only
      *        valid value is <code>1Minute</code>.
      */
+
     public void setGranularity(String granularity) {
         this.granularity = granularity;
     }
@@ -601,6 +609,7 @@ public class EnableMetricsCollectionRequest extends AmazonWebServiceRequest
      * @return The granularity to associate with the metrics to collect. The
      *         only valid value is <code>1Minute</code>.
      */
+
     public String getGranularity() {
         return this.granularity;
     }
@@ -617,6 +626,7 @@ public class EnableMetricsCollectionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EnableMetricsCollectionRequest withGranularity(String granularity) {
         setGranularity(granularity);
         return this;

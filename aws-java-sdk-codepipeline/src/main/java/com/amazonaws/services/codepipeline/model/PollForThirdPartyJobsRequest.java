@@ -38,6 +38,7 @@ public class PollForThirdPartyJobsRequest extends AmazonWebServiceRequest
     /**
      * @param actionTypeId
      */
+
     public void setActionTypeId(ActionTypeId actionTypeId) {
         this.actionTypeId = actionTypeId;
     }
@@ -45,6 +46,7 @@ public class PollForThirdPartyJobsRequest extends AmazonWebServiceRequest
     /**
      * @return
      */
+
     public ActionTypeId getActionTypeId() {
         return this.actionTypeId;
     }
@@ -54,6 +56,7 @@ public class PollForThirdPartyJobsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PollForThirdPartyJobsRequest withActionTypeId(
             ActionTypeId actionTypeId) {
         setActionTypeId(actionTypeId);
@@ -68,6 +71,7 @@ public class PollForThirdPartyJobsRequest extends AmazonWebServiceRequest
      * @param maxBatchSize
      *        The maximum number of jobs to return in a poll for jobs call.
      */
+
     public void setMaxBatchSize(Integer maxBatchSize) {
         this.maxBatchSize = maxBatchSize;
     }
@@ -79,6 +83,7 @@ public class PollForThirdPartyJobsRequest extends AmazonWebServiceRequest
      * 
      * @return The maximum number of jobs to return in a poll for jobs call.
      */
+
     public Integer getMaxBatchSize() {
         return this.maxBatchSize;
     }
@@ -93,6 +98,7 @@ public class PollForThirdPartyJobsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PollForThirdPartyJobsRequest withMaxBatchSize(Integer maxBatchSize) {
         setMaxBatchSize(maxBatchSize);
         return this;

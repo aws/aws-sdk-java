@@ -81,6 +81,7 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest
      *        <a>DescribeStorediSCSIVolumes</a> operation to return the
      *        TargetARN for specified VolumeARN.
      */
+
     public void setTargetARN(String targetARN) {
         this.targetARN = targetARN;
     }
@@ -96,6 +97,7 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest
      *         the <a>DescribeStorediSCSIVolumes</a> operation to return the
      *         TargetARN for specified VolumeARN.
      */
+
     public String getTargetARN() {
         return this.targetARN;
     }
@@ -114,6 +116,7 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateChapCredentialsRequest withTargetARN(String targetARN) {
         setTargetARN(targetARN);
         return this;
@@ -133,6 +136,7 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest
      *        target.</p> <note>The secret key must be between 12 and 16 bytes
      *        when encoded in UTF-8.
      */
+
     public void setSecretToAuthenticateInitiator(
             String secretToAuthenticateInitiator) {
         this.secretToAuthenticateInitiator = secretToAuthenticateInitiator;
@@ -151,6 +155,7 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest
      *         target.</p> <note>The secret key must be between 12 and 16 bytes
      *         when encoded in UTF-8.
      */
+
     public String getSecretToAuthenticateInitiator() {
         return this.secretToAuthenticateInitiator;
     }
@@ -171,6 +176,7 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateChapCredentialsRequest withSecretToAuthenticateInitiator(
             String secretToAuthenticateInitiator) {
         setSecretToAuthenticateInitiator(secretToAuthenticateInitiator);
@@ -185,6 +191,7 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest
      * @param initiatorName
      *        The iSCSI initiator that connects to the target.
      */
+
     public void setInitiatorName(String initiatorName) {
         this.initiatorName = initiatorName;
     }
@@ -196,6 +203,7 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest
      * 
      * @return The iSCSI initiator that connects to the target.
      */
+
     public String getInitiatorName() {
         return this.initiatorName;
     }
@@ -210,6 +218,7 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateChapCredentialsRequest withInitiatorName(String initiatorName) {
         setInitiatorName(initiatorName);
         return this;
@@ -235,6 +244,7 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest
      *        <note>The secret key must be between 12 and 16 bytes when encoded
      *        in UTF-8.
      */
+
     public void setSecretToAuthenticateTarget(String secretToAuthenticateTarget) {
         this.secretToAuthenticateTarget = secretToAuthenticateTarget;
     }
@@ -258,6 +268,7 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest
      *         <note>The secret key must be between 12 and 16 bytes when encoded
      *         in UTF-8.
      */
+
     public String getSecretToAuthenticateTarget() {
         return this.secretToAuthenticateTarget;
     }
@@ -284,6 +295,7 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateChapCredentialsRequest withSecretToAuthenticateTarget(
             String secretToAuthenticateTarget) {
         setSecretToAuthenticateTarget(secretToAuthenticateTarget);

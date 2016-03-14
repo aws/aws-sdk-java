@@ -80,6 +80,7 @@ public class RedshiftDestinationConfiguration implements Serializable,
      * @param roleARN
      *        The ARN of the AWS credentials.
      */
+
     public void setRoleARN(String roleARN) {
         this.roleARN = roleARN;
     }
@@ -91,6 +92,7 @@ public class RedshiftDestinationConfiguration implements Serializable,
      * 
      * @return The ARN of the AWS credentials.
      */
+
     public String getRoleARN() {
         return this.roleARN;
     }
@@ -105,6 +107,7 @@ public class RedshiftDestinationConfiguration implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RedshiftDestinationConfiguration withRoleARN(String roleARN) {
         setRoleARN(roleARN);
         return this;
@@ -118,6 +121,7 @@ public class RedshiftDestinationConfiguration implements Serializable,
      * @param clusterJDBCURL
      *        The database connection string.
      */
+
     public void setClusterJDBCURL(String clusterJDBCURL) {
         this.clusterJDBCURL = clusterJDBCURL;
     }
@@ -129,6 +133,7 @@ public class RedshiftDestinationConfiguration implements Serializable,
      * 
      * @return The database connection string.
      */
+
     public String getClusterJDBCURL() {
         return this.clusterJDBCURL;
     }
@@ -143,6 +148,7 @@ public class RedshiftDestinationConfiguration implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RedshiftDestinationConfiguration withClusterJDBCURL(
             String clusterJDBCURL) {
         setClusterJDBCURL(clusterJDBCURL);
@@ -157,6 +163,7 @@ public class RedshiftDestinationConfiguration implements Serializable,
      * @param copyCommand
      *        The <code>COPY</code> command.
      */
+
     public void setCopyCommand(CopyCommand copyCommand) {
         this.copyCommand = copyCommand;
     }
@@ -168,6 +175,7 @@ public class RedshiftDestinationConfiguration implements Serializable,
      * 
      * @return The <code>COPY</code> command.
      */
+
     public CopyCommand getCopyCommand() {
         return this.copyCommand;
     }
@@ -182,6 +190,7 @@ public class RedshiftDestinationConfiguration implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RedshiftDestinationConfiguration withCopyCommand(
             CopyCommand copyCommand) {
         setCopyCommand(copyCommand);
@@ -196,6 +205,7 @@ public class RedshiftDestinationConfiguration implements Serializable,
      * @param username
      *        The name of the user.
      */
+
     public void setUsername(String username) {
         this.username = username;
     }
@@ -207,6 +217,7 @@ public class RedshiftDestinationConfiguration implements Serializable,
      * 
      * @return The name of the user.
      */
+
     public String getUsername() {
         return this.username;
     }
@@ -221,6 +232,7 @@ public class RedshiftDestinationConfiguration implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RedshiftDestinationConfiguration withUsername(String username) {
         setUsername(username);
         return this;
@@ -234,6 +246,7 @@ public class RedshiftDestinationConfiguration implements Serializable,
      * @param password
      *        The user password.
      */
+
     public void setPassword(String password) {
         this.password = password;
     }
@@ -245,6 +258,7 @@ public class RedshiftDestinationConfiguration implements Serializable,
      * 
      * @return The user password.
      */
+
     public String getPassword() {
         return this.password;
     }
@@ -259,6 +273,7 @@ public class RedshiftDestinationConfiguration implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RedshiftDestinationConfiguration withPassword(String password) {
         setPassword(password);
         return this;
@@ -289,6 +304,7 @@ public class RedshiftDestinationConfiguration implements Serializable,
      *        because the Amazon Redshift <code>COPY</code> operation that reads
      *        from the S3 bucket doesn't support these compression formats.
      */
+
     public void setS3Configuration(S3DestinationConfiguration s3Configuration) {
         this.s3Configuration = s3Configuration;
     }
@@ -318,6 +334,7 @@ public class RedshiftDestinationConfiguration implements Serializable,
      *         reads from the S3 bucket doesn't support these compression
      *         formats.
      */
+
     public S3DestinationConfiguration getS3Configuration() {
         return this.s3Configuration;
     }
@@ -349,6 +366,7 @@ public class RedshiftDestinationConfiguration implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RedshiftDestinationConfiguration withS3Configuration(
             S3DestinationConfiguration s3Configuration) {
         setS3Configuration(s3Configuration);

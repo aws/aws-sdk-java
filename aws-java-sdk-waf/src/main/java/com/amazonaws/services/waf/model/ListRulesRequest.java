@@ -68,6 +68,7 @@ public class ListRulesRequest extends AmazonWebServiceRequest implements
      *        value of <code>NextMarker</code> from the previous response to get
      *        information about another batch of <code>Rules</code>.
      */
+
     public void setNextMarker(String nextMarker) {
         this.nextMarker = nextMarker;
     }
@@ -91,6 +92,7 @@ public class ListRulesRequest extends AmazonWebServiceRequest implements
      *         the value of <code>NextMarker</code> from the previous response
      *         to get information about another batch of <code>Rules</code>.
      */
+
     public String getNextMarker() {
         return this.nextMarker;
     }
@@ -117,6 +119,7 @@ public class ListRulesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListRulesRequest withNextMarker(String nextMarker) {
         setNextMarker(nextMarker);
         return this;
@@ -138,6 +141,7 @@ public class ListRulesRequest extends AmazonWebServiceRequest implements
      *        response includes a <code>NextMarker</code> value that you can use
      *        to get another batch of <code>Rules</code>.
      */
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -157,6 +161,7 @@ public class ListRulesRequest extends AmazonWebServiceRequest implements
      *         response includes a <code>NextMarker</code> value that you can
      *         use to get another batch of <code>Rules</code>.
      */
+
     public Integer getLimit() {
         return this.limit;
     }
@@ -179,6 +184,7 @@ public class ListRulesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListRulesRequest withLimit(Integer limit) {
         setLimit(limit);
         return this;

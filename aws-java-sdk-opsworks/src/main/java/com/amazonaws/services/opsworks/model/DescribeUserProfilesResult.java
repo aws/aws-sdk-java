@@ -39,6 +39,7 @@ public class DescribeUserProfilesResult implements Serializable, Cloneable {
      * 
      * @return A <code>Users</code> object that describes the specified users.
      */
+
     public java.util.List<UserProfile> getUserProfiles() {
         if (userProfiles == null) {
             userProfiles = new com.amazonaws.internal.SdkInternalList<UserProfile>();
@@ -54,6 +55,7 @@ public class DescribeUserProfilesResult implements Serializable, Cloneable {
      * @param userProfiles
      *        A <code>Users</code> object that describes the specified users.
      */
+
     public void setUserProfiles(java.util.Collection<UserProfile> userProfiles) {
         if (userProfiles == null) {
             this.userProfiles = null;
@@ -80,6 +82,7 @@ public class DescribeUserProfilesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeUserProfilesResult withUserProfiles(
             UserProfile... userProfiles) {
         if (this.userProfiles == null) {
@@ -102,6 +105,7 @@ public class DescribeUserProfilesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeUserProfilesResult withUserProfiles(
             java.util.Collection<UserProfile> userProfiles) {
         setUserProfiles(userProfiles);

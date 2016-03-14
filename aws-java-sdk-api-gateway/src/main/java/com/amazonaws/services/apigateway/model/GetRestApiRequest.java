@@ -42,6 +42,7 @@ public class GetRestApiRequest extends AmazonWebServiceRequest implements
      * @param restApiId
      *        The identifier of the <a>RestApi</a> resource.
      */
+
     public void setRestApiId(String restApiId) {
         this.restApiId = restApiId;
     }
@@ -53,6 +54,7 @@ public class GetRestApiRequest extends AmazonWebServiceRequest implements
      * 
      * @return The identifier of the <a>RestApi</a> resource.
      */
+
     public String getRestApiId() {
         return this.restApiId;
     }
@@ -67,6 +69,7 @@ public class GetRestApiRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetRestApiRequest withRestApiId(String restApiId) {
         setRestApiId(restApiId);
         return this;

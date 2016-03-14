@@ -114,6 +114,7 @@ public class ListTasksRequest extends AmazonWebServiceRequest implements
      *        that hosts the tasks to list. If you do not specify a cluster, the
      *        default cluster is assumed..
      */
+
     public void setCluster(String cluster) {
         this.cluster = cluster;
     }
@@ -129,6 +130,7 @@ public class ListTasksRequest extends AmazonWebServiceRequest implements
      *         that hosts the tasks to list. If you do not specify a cluster,
      *         the default cluster is assumed..
      */
+
     public String getCluster() {
         return this.cluster;
     }
@@ -147,6 +149,7 @@ public class ListTasksRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTasksRequest withCluster(String cluster) {
         setCluster(cluster);
         return this;
@@ -167,6 +170,7 @@ public class ListTasksRequest extends AmazonWebServiceRequest implements
      *        <code>containerInstance</code> limits the results to tasks that
      *        belong to that container instance.
      */
+
     public void setContainerInstance(String containerInstance) {
         this.containerInstance = containerInstance;
     }
@@ -185,6 +189,7 @@ public class ListTasksRequest extends AmazonWebServiceRequest implements
      *         <code>containerInstance</code> limits the results to tasks that
      *         belong to that container instance.
      */
+
     public String getContainerInstance() {
         return this.containerInstance;
     }
@@ -206,6 +211,7 @@ public class ListTasksRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTasksRequest withContainerInstance(String containerInstance) {
         setContainerInstance(containerInstance);
         return this;
@@ -223,6 +229,7 @@ public class ListTasksRequest extends AmazonWebServiceRequest implements
      *        <code>ListTasks</code> results. Specifying a <code>family</code>
      *        limits the results to tasks that belong to that family.
      */
+
     public void setFamily(String family) {
         this.family = family;
     }
@@ -238,6 +245,7 @@ public class ListTasksRequest extends AmazonWebServiceRequest implements
      *         <code>ListTasks</code> results. Specifying a <code>family</code>
      *         limits the results to tasks that belong to that family.
      */
+
     public String getFamily() {
         return this.family;
     }
@@ -256,6 +264,7 @@ public class ListTasksRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTasksRequest withFamily(String family) {
         setFamily(family);
         return this;
@@ -280,6 +289,7 @@ public class ListTasksRequest extends AmazonWebServiceRequest implements
      *        This value is <code>null</code> when there are no more results to
      *        return.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -302,6 +312,7 @@ public class ListTasksRequest extends AmazonWebServiceRequest implements
      *         This value is <code>null</code> when there are no more results to
      *         return.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -327,6 +338,7 @@ public class ListTasksRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTasksRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -357,6 +369,7 @@ public class ListTasksRequest extends AmazonWebServiceRequest implements
      *        <code>ListTasks</code> returns up to 100 results and a
      *        <code>nextToken</code> value if applicable.
      */
+
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
     }
@@ -386,6 +399,7 @@ public class ListTasksRequest extends AmazonWebServiceRequest implements
      *         returns up to 100 results and a <code>nextToken</code> value if
      *         applicable.
      */
+
     public Integer getMaxResults() {
         return this.maxResults;
     }
@@ -417,6 +431,7 @@ public class ListTasksRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTasksRequest withMaxResults(Integer maxResults) {
         setMaxResults(maxResults);
         return this;
@@ -434,6 +449,7 @@ public class ListTasksRequest extends AmazonWebServiceRequest implements
      *        results. Specifying a <code>startedBy</code> value limits the
      *        results to tasks that were started with that value.
      */
+
     public void setStartedBy(String startedBy) {
         this.startedBy = startedBy;
     }
@@ -449,6 +465,7 @@ public class ListTasksRequest extends AmazonWebServiceRequest implements
      *         results. Specifying a <code>startedBy</code> value limits the
      *         results to tasks that were started with that value.
      */
+
     public String getStartedBy() {
         return this.startedBy;
     }
@@ -467,6 +484,7 @@ public class ListTasksRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTasksRequest withStartedBy(String startedBy) {
         setStartedBy(startedBy);
         return this;
@@ -485,6 +503,7 @@ public class ListTasksRequest extends AmazonWebServiceRequest implements
      *        <code>serviceName</code> limits the results to tasks that belong
      *        to that service.
      */
+
     public void setServiceName(String serviceName) {
         this.serviceName = serviceName;
     }
@@ -501,6 +520,7 @@ public class ListTasksRequest extends AmazonWebServiceRequest implements
      *         <code>serviceName</code> limits the results to tasks that belong
      *         to that service.
      */
+
     public String getServiceName() {
         return this.serviceName;
     }
@@ -520,6 +540,7 @@ public class ListTasksRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTasksRequest withServiceName(String serviceName) {
         setServiceName(serviceName);
         return this;
@@ -543,6 +564,7 @@ public class ListTasksRequest extends AmazonWebServiceRequest implements
      *        default status filter is <code>RUNNING</code>.
      * @see DesiredStatus
      */
+
     public void setDesiredStatus(String desiredStatus) {
         this.desiredStatus = desiredStatus;
     }
@@ -564,6 +586,7 @@ public class ListTasksRequest extends AmazonWebServiceRequest implements
      *         The default status filter is <code>RUNNING</code>.
      * @see DesiredStatus
      */
+
     public String getDesiredStatus() {
         return this.desiredStatus;
     }
@@ -588,6 +611,7 @@ public class ListTasksRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see DesiredStatus
      */
+
     public ListTasksRequest withDesiredStatus(String desiredStatus) {
         setDesiredStatus(desiredStatus);
         return this;
@@ -613,6 +637,7 @@ public class ListTasksRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see DesiredStatus
      */
+
     public void setDesiredStatus(DesiredStatus desiredStatus) {
         this.desiredStatus = desiredStatus.toString();
     }
@@ -637,6 +662,7 @@ public class ListTasksRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see DesiredStatus
      */
+
     public ListTasksRequest withDesiredStatus(DesiredStatus desiredStatus) {
         setDesiredStatus(desiredStatus);
         return this;

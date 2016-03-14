@@ -48,6 +48,7 @@ public class ListDeliveryStreamsRequest extends AmazonWebServiceRequest
      * @param limit
      *        The maximum number of delivery streams to list.
      */
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -59,6 +60,7 @@ public class ListDeliveryStreamsRequest extends AmazonWebServiceRequest
      * 
      * @return The maximum number of delivery streams to list.
      */
+
     public Integer getLimit() {
         return this.limit;
     }
@@ -73,6 +75,7 @@ public class ListDeliveryStreamsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListDeliveryStreamsRequest withLimit(Integer limit) {
         setLimit(limit);
         return this;
@@ -86,6 +89,7 @@ public class ListDeliveryStreamsRequest extends AmazonWebServiceRequest
      * @param exclusiveStartDeliveryStreamName
      *        The name of the delivery stream to start the list with.
      */
+
     public void setExclusiveStartDeliveryStreamName(
             String exclusiveStartDeliveryStreamName) {
         this.exclusiveStartDeliveryStreamName = exclusiveStartDeliveryStreamName;
@@ -98,6 +102,7 @@ public class ListDeliveryStreamsRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the delivery stream to start the list with.
      */
+
     public String getExclusiveStartDeliveryStreamName() {
         return this.exclusiveStartDeliveryStreamName;
     }
@@ -112,6 +117,7 @@ public class ListDeliveryStreamsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListDeliveryStreamsRequest withExclusiveStartDeliveryStreamName(
             String exclusiveStartDeliveryStreamName) {
         setExclusiveStartDeliveryStreamName(exclusiveStartDeliveryStreamName);

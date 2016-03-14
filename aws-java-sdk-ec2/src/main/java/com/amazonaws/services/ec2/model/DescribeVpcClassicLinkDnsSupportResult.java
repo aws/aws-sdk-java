@@ -44,6 +44,7 @@ public class DescribeVpcClassicLinkDnsSupportResult implements Serializable,
      * 
      * @return Information about the ClassicLink DNS support status of the VPCs.
      */
+
     public java.util.List<ClassicLinkDnsSupport> getVpcs() {
         if (vpcs == null) {
             vpcs = new com.amazonaws.internal.SdkInternalList<ClassicLinkDnsSupport>();
@@ -59,6 +60,7 @@ public class DescribeVpcClassicLinkDnsSupportResult implements Serializable,
      * @param vpcs
      *        Information about the ClassicLink DNS support status of the VPCs.
      */
+
     public void setVpcs(java.util.Collection<ClassicLinkDnsSupport> vpcs) {
         if (vpcs == null) {
             this.vpcs = null;
@@ -85,6 +87,7 @@ public class DescribeVpcClassicLinkDnsSupportResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVpcClassicLinkDnsSupportResult withVpcs(
             ClassicLinkDnsSupport... vpcs) {
         if (this.vpcs == null) {
@@ -107,6 +110,7 @@ public class DescribeVpcClassicLinkDnsSupportResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVpcClassicLinkDnsSupportResult withVpcs(
             java.util.Collection<ClassicLinkDnsSupport> vpcs) {
         setVpcs(vpcs);
@@ -121,6 +125,7 @@ public class DescribeVpcClassicLinkDnsSupportResult implements Serializable,
      * @param nextToken
      *        The token to use when requesting the next set of items.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -132,6 +137,7 @@ public class DescribeVpcClassicLinkDnsSupportResult implements Serializable,
      * 
      * @return The token to use when requesting the next set of items.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -146,6 +152,7 @@ public class DescribeVpcClassicLinkDnsSupportResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVpcClassicLinkDnsSupportResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

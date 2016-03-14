@@ -68,6 +68,7 @@ public class DescribeEcsClustersRequest extends AmazonWebServiceRequest
      * 
      * @return A list of ARNs, one for each cluster to be described.
      */
+
     public java.util.List<String> getEcsClusterArns() {
         if (ecsClusterArns == null) {
             ecsClusterArns = new com.amazonaws.internal.SdkInternalList<String>();
@@ -83,6 +84,7 @@ public class DescribeEcsClustersRequest extends AmazonWebServiceRequest
      * @param ecsClusterArns
      *        A list of ARNs, one for each cluster to be described.
      */
+
     public void setEcsClusterArns(java.util.Collection<String> ecsClusterArns) {
         if (ecsClusterArns == null) {
             this.ecsClusterArns = null;
@@ -109,6 +111,7 @@ public class DescribeEcsClustersRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeEcsClustersRequest withEcsClusterArns(
             String... ecsClusterArns) {
         if (this.ecsClusterArns == null) {
@@ -131,6 +134,7 @@ public class DescribeEcsClustersRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeEcsClustersRequest withEcsClusterArns(
             java.util.Collection<String> ecsClusterArns) {
         setEcsClusterArns(ecsClusterArns);
@@ -147,6 +151,7 @@ public class DescribeEcsClustersRequest extends AmazonWebServiceRequest
      *        A stack ID. <code>DescribeEcsClusters</code> returns a description
      *        of the cluster that is registered with the stack.
      */
+
     public void setStackId(String stackId) {
         this.stackId = stackId;
     }
@@ -160,6 +165,7 @@ public class DescribeEcsClustersRequest extends AmazonWebServiceRequest
      * @return A stack ID. <code>DescribeEcsClusters</code> returns a
      *         description of the cluster that is registered with the stack.
      */
+
     public String getStackId() {
         return this.stackId;
     }
@@ -176,6 +182,7 @@ public class DescribeEcsClustersRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeEcsClustersRequest withStackId(String stackId) {
         setStackId(stackId);
         return this;
@@ -202,6 +209,7 @@ public class DescribeEcsClustersRequest extends AmazonWebServiceRequest
      *        response object's <code>NextToken</code> parameter is set to
      *        <code>null</code>.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -226,6 +234,7 @@ public class DescribeEcsClustersRequest extends AmazonWebServiceRequest
      *         response object's <code>NextToken</code> parameter is set to
      *         <code>null</code>.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -253,6 +262,7 @@ public class DescribeEcsClustersRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeEcsClustersRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -275,6 +285,7 @@ public class DescribeEcsClustersRequest extends AmazonWebServiceRequest
      *        <code>NextToken</code> request parameter to get the next set of
      *        results.
      */
+
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
     }
@@ -295,6 +306,7 @@ public class DescribeEcsClustersRequest extends AmazonWebServiceRequest
      *         assign to the <code>NextToken</code> request parameter to get the
      *         next set of results.
      */
+
     public Integer getMaxResults() {
         return this.maxResults;
     }
@@ -318,6 +330,7 @@ public class DescribeEcsClustersRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeEcsClustersRequest withMaxResults(Integer maxResults) {
         setMaxResults(maxResults);
         return this;

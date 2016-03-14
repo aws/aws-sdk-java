@@ -32,6 +32,7 @@ public class ListVolumesResult implements Serializable, Cloneable {
     /**
      * @param gatewayARN
      */
+
     public void setGatewayARN(String gatewayARN) {
         this.gatewayARN = gatewayARN;
     }
@@ -39,6 +40,7 @@ public class ListVolumesResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getGatewayARN() {
         return this.gatewayARN;
     }
@@ -48,6 +50,7 @@ public class ListVolumesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListVolumesResult withGatewayARN(String gatewayARN) {
         setGatewayARN(gatewayARN);
         return this;
@@ -56,6 +59,7 @@ public class ListVolumesResult implements Serializable, Cloneable {
     /**
      * @param marker
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -63,6 +67,7 @@ public class ListVolumesResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -72,6 +77,7 @@ public class ListVolumesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListVolumesResult withMarker(String marker) {
         setMarker(marker);
         return this;
@@ -80,6 +86,7 @@ public class ListVolumesResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public java.util.List<VolumeInfo> getVolumeInfos() {
         if (volumeInfos == null) {
             volumeInfos = new com.amazonaws.internal.SdkInternalList<VolumeInfo>();
@@ -90,6 +97,7 @@ public class ListVolumesResult implements Serializable, Cloneable {
     /**
      * @param volumeInfos
      */
+
     public void setVolumeInfos(java.util.Collection<VolumeInfo> volumeInfos) {
         if (volumeInfos == null) {
             this.volumeInfos = null;
@@ -112,6 +120,7 @@ public class ListVolumesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListVolumesResult withVolumeInfos(VolumeInfo... volumeInfos) {
         if (this.volumeInfos == null) {
             setVolumeInfos(new com.amazonaws.internal.SdkInternalList<VolumeInfo>(
@@ -128,6 +137,7 @@ public class ListVolumesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListVolumesResult withVolumeInfos(
             java.util.Collection<VolumeInfo> volumeInfos) {
         setVolumeInfos(volumeInfos);

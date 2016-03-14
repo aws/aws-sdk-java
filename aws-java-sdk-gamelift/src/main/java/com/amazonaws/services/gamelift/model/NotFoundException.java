@@ -20,9 +20,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Exception thrown when a service resource associated with the request could
- * not be found. Requests that result in failures of this type should not be
- * retried by clients.
+ * A service resource associated with the request could not be found. Such
+ * requests should not be retried by clients.
  * </p>
  */
 public class NotFoundException extends AmazonServiceException {

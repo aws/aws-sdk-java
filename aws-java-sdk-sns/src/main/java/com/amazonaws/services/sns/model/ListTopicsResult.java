@@ -46,6 +46,7 @@ public class ListTopicsResult implements Serializable, Cloneable {
      * 
      * @return A list of topic ARNs.
      */
+
     public java.util.List<Topic> getTopics() {
         if (topics == null) {
             topics = new com.amazonaws.internal.SdkInternalList<Topic>();
@@ -61,6 +62,7 @@ public class ListTopicsResult implements Serializable, Cloneable {
      * @param topics
      *        A list of topic ARNs.
      */
+
     public void setTopics(java.util.Collection<Topic> topics) {
         if (topics == null) {
             this.topics = null;
@@ -86,6 +88,7 @@ public class ListTopicsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTopicsResult withTopics(Topic... topics) {
         if (this.topics == null) {
             setTopics(new com.amazonaws.internal.SdkInternalList<Topic>(
@@ -107,6 +110,7 @@ public class ListTopicsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTopicsResult withTopics(java.util.Collection<Topic> topics) {
         setTopics(topics);
         return this;
@@ -123,6 +127,7 @@ public class ListTopicsResult implements Serializable, Cloneable {
      *        This element is returned if there are additional topics to
      *        retrieve.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -137,6 +142,7 @@ public class ListTopicsResult implements Serializable, Cloneable {
      *         This element is returned if there are additional topics to
      *         retrieve.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -154,6 +160,7 @@ public class ListTopicsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTopicsResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

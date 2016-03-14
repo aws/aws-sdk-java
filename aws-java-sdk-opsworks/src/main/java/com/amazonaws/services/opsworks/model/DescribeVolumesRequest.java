@@ -69,6 +69,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements
      *        <code>DescribeVolumes</code> returns descriptions of the volumes
      *        associated with the specified instance.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -84,6 +85,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements
      *         <code>DescribeVolumes</code> returns descriptions of the volumes
      *         associated with the specified instance.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
@@ -102,6 +104,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVolumesRequest withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;
@@ -117,6 +120,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements
      *        A stack ID. The action describes the stack's registered Amazon EBS
      *        volumes.
      */
+
     public void setStackId(String stackId) {
         this.stackId = stackId;
     }
@@ -130,6 +134,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements
      * @return A stack ID. The action describes the stack's registered Amazon
      *         EBS volumes.
      */
+
     public String getStackId() {
         return this.stackId;
     }
@@ -146,6 +151,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVolumesRequest withStackId(String stackId) {
         setStackId(stackId);
         return this;
@@ -163,6 +169,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements
      *        <code>DescribeVolumes</code> returns descriptions of the volumes
      *        associated with the specified RAID array.
      */
+
     public void setRaidArrayId(String raidArrayId) {
         this.raidArrayId = raidArrayId;
     }
@@ -178,6 +185,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements
      *         <code>DescribeVolumes</code> returns descriptions of the volumes
      *         associated with the specified RAID array.
      */
+
     public String getRaidArrayId() {
         return this.raidArrayId;
     }
@@ -196,6 +204,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVolumesRequest withRaidArrayId(String raidArrayId) {
         setRaidArrayId(raidArrayId);
         return this;
@@ -213,6 +222,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements
      *         specified volumes. Otherwise, it returns a description of every
      *         volume.
      */
+
     public java.util.List<String> getVolumeIds() {
         if (volumeIds == null) {
             volumeIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -232,6 +242,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements
      *        <code>DescribeVolumes</code> returns descriptions of the specified
      *        volumes. Otherwise, it returns a description of every volume.
      */
+
     public void setVolumeIds(java.util.Collection<String> volumeIds) {
         if (volumeIds == null) {
             this.volumeIds = null;
@@ -262,6 +273,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVolumesRequest withVolumeIds(String... volumeIds) {
         if (this.volumeIds == null) {
             setVolumeIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -287,6 +299,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVolumesRequest withVolumeIds(
             java.util.Collection<String> volumeIds) {
         setVolumeIds(volumeIds);

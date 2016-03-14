@@ -38,16 +38,19 @@ public class DescribeFleetUtilizationRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * Maximum number of results to return. You can use this parameter with
-     * <i>NextToken</i> to get results as a set of sequential pages.
+     * <i>NextToken</i> to get results as a set of sequential pages. This
+     * parameter is ignored when the request specifies one or a list of fleet
+     * IDs.
      * </p>
      */
     private Integer limit;
     /**
      * <p>
-     * Token indicating the start of the next sequential page of results. A
-     * token is returned any time there may be additional results to be
-     * retrieved. To start at the beginning of a result set, do not set this
-     * parameter.
+     * Token indicating the start of the next sequential page of results. Use
+     * the token that is returned with a previous call to this action. To
+     * specify the start of the result set, do not specify a value. This
+     * parameter is ignored when the request specifies one or a list of fleet
+     * IDs.
      * </p>
      */
     private String nextToken;
@@ -63,6 +66,7 @@ public class DescribeFleetUtilizationRequest extends AmazonWebServiceRequest
      *         utilization data for. Leave this parameter empty to retrieve
      *         utilization data for all fleets.
      */
+
     public java.util.List<String> getFleetIds() {
         return fleetIds;
     }
@@ -79,6 +83,7 @@ public class DescribeFleetUtilizationRequest extends AmazonWebServiceRequest
      *        utilization data for. Leave this parameter empty to retrieve
      *        utilization data for all fleets.
      */
+
     public void setFleetIds(java.util.Collection<String> fleetIds) {
         if (fleetIds == null) {
             this.fleetIds = null;
@@ -108,6 +113,7 @@ public class DescribeFleetUtilizationRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeFleetUtilizationRequest withFleetIds(String... fleetIds) {
         if (this.fleetIds == null) {
             setFleetIds(new java.util.ArrayList<String>(fleetIds.length));
@@ -132,6 +138,7 @@ public class DescribeFleetUtilizationRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeFleetUtilizationRequest withFleetIds(
             java.util.Collection<String> fleetIds) {
         setFleetIds(fleetIds);
@@ -141,13 +148,18 @@ public class DescribeFleetUtilizationRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * Maximum number of results to return. You can use this parameter with
-     * <i>NextToken</i> to get results as a set of sequential pages.
+     * <i>NextToken</i> to get results as a set of sequential pages. This
+     * parameter is ignored when the request specifies one or a list of fleet
+     * IDs.
      * </p>
      * 
      * @param limit
      *        Maximum number of results to return. You can use this parameter
      *        with <i>NextToken</i> to get results as a set of sequential pages.
+     *        This parameter is ignored when the request specifies one or a list
+     *        of fleet IDs.
      */
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -155,13 +167,17 @@ public class DescribeFleetUtilizationRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * Maximum number of results to return. You can use this parameter with
-     * <i>NextToken</i> to get results as a set of sequential pages.
+     * <i>NextToken</i> to get results as a set of sequential pages. This
+     * parameter is ignored when the request specifies one or a list of fleet
+     * IDs.
      * </p>
      * 
      * @return Maximum number of results to return. You can use this parameter
      *         with <i>NextToken</i> to get results as a set of sequential
-     *         pages.
+     *         pages. This parameter is ignored when the request specifies one
+     *         or a list of fleet IDs.
      */
+
     public Integer getLimit() {
         return this.limit;
     }
@@ -169,15 +185,20 @@ public class DescribeFleetUtilizationRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * Maximum number of results to return. You can use this parameter with
-     * <i>NextToken</i> to get results as a set of sequential pages.
+     * <i>NextToken</i> to get results as a set of sequential pages. This
+     * parameter is ignored when the request specifies one or a list of fleet
+     * IDs.
      * </p>
      * 
      * @param limit
      *        Maximum number of results to return. You can use this parameter
      *        with <i>NextToken</i> to get results as a set of sequential pages.
+     *        This parameter is ignored when the request specifies one or a list
+     *        of fleet IDs.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeFleetUtilizationRequest withLimit(Integer limit) {
         setLimit(limit);
         return this;
@@ -185,55 +206,64 @@ public class DescribeFleetUtilizationRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Token indicating the start of the next sequential page of results. A
-     * token is returned any time there may be additional results to be
-     * retrieved. To start at the beginning of a result set, do not set this
-     * parameter.
+     * Token indicating the start of the next sequential page of results. Use
+     * the token that is returned with a previous call to this action. To
+     * specify the start of the result set, do not specify a value. This
+     * parameter is ignored when the request specifies one or a list of fleet
+     * IDs.
      * </p>
      * 
      * @param nextToken
      *        Token indicating the start of the next sequential page of results.
-     *        A token is returned any time there may be additional results to be
-     *        retrieved. To start at the beginning of a result set, do not set
-     *        this parameter.
+     *        Use the token that is returned with a previous call to this
+     *        action. To specify the start of the result set, do not specify a
+     *        value. This parameter is ignored when the request specifies one or
+     *        a list of fleet IDs.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
 
     /**
      * <p>
-     * Token indicating the start of the next sequential page of results. A
-     * token is returned any time there may be additional results to be
-     * retrieved. To start at the beginning of a result set, do not set this
-     * parameter.
+     * Token indicating the start of the next sequential page of results. Use
+     * the token that is returned with a previous call to this action. To
+     * specify the start of the result set, do not specify a value. This
+     * parameter is ignored when the request specifies one or a list of fleet
+     * IDs.
      * </p>
      * 
      * @return Token indicating the start of the next sequential page of
-     *         results. A token is returned any time there may be additional
-     *         results to be retrieved. To start at the beginning of a result
-     *         set, do not set this parameter.
+     *         results. Use the token that is returned with a previous call to
+     *         this action. To specify the start of the result set, do not
+     *         specify a value. This parameter is ignored when the request
+     *         specifies one or a list of fleet IDs.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
 
     /**
      * <p>
-     * Token indicating the start of the next sequential page of results. A
-     * token is returned any time there may be additional results to be
-     * retrieved. To start at the beginning of a result set, do not set this
-     * parameter.
+     * Token indicating the start of the next sequential page of results. Use
+     * the token that is returned with a previous call to this action. To
+     * specify the start of the result set, do not specify a value. This
+     * parameter is ignored when the request specifies one or a list of fleet
+     * IDs.
      * </p>
      * 
      * @param nextToken
      *        Token indicating the start of the next sequential page of results.
-     *        A token is returned any time there may be additional results to be
-     *        retrieved. To start at the beginning of a result set, do not set
-     *        this parameter.
+     *        Use the token that is returned with a previous call to this
+     *        action. To specify the start of the result set, do not specify a
+     *        value. This parameter is ignored when the request specifies one or
+     *        a list of fleet IDs.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeFleetUtilizationRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

@@ -70,6 +70,7 @@ public class DeregisterInstancesFromLoadBalancerRequest extends
      * @param loadBalancerName
      *        The name of the load balancer.
      */
+
     public void setLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
     }
@@ -81,6 +82,7 @@ public class DeregisterInstancesFromLoadBalancerRequest extends
      * 
      * @return The name of the load balancer.
      */
+
     public String getLoadBalancerName() {
         return this.loadBalancerName;
     }
@@ -95,6 +97,7 @@ public class DeregisterInstancesFromLoadBalancerRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeregisterInstancesFromLoadBalancerRequest withLoadBalancerName(
             String loadBalancerName) {
         setLoadBalancerName(loadBalancerName);
@@ -108,6 +111,7 @@ public class DeregisterInstancesFromLoadBalancerRequest extends
      * 
      * @return The IDs of the instances.
      */
+
     public java.util.List<Instance> getInstances() {
         if (instances == null) {
             instances = new com.amazonaws.internal.SdkInternalList<Instance>();
@@ -123,6 +127,7 @@ public class DeregisterInstancesFromLoadBalancerRequest extends
      * @param instances
      *        The IDs of the instances.
      */
+
     public void setInstances(java.util.Collection<Instance> instances) {
         if (instances == null) {
             this.instances = null;
@@ -149,6 +154,7 @@ public class DeregisterInstancesFromLoadBalancerRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeregisterInstancesFromLoadBalancerRequest withInstances(
             Instance... instances) {
         if (this.instances == null) {
@@ -171,6 +177,7 @@ public class DeregisterInstancesFromLoadBalancerRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeregisterInstancesFromLoadBalancerRequest withInstances(
             java.util.Collection<Instance> instances) {
         setInstances(instances);

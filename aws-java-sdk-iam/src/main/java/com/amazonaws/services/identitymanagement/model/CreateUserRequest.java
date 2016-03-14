@@ -86,6 +86,7 @@ public class CreateUserRequest extends AmazonWebServiceRequest implements
      *        This parameter is optional. If it is not included, it defaults to
      *        a slash (/).
      */
+
     public void setPath(String path) {
         this.path = path;
     }
@@ -110,6 +111,7 @@ public class CreateUserRequest extends AmazonWebServiceRequest implements
      *         This parameter is optional. If it is not included, it defaults to
      *         a slash (/).
      */
+
     public String getPath() {
         return this.path;
     }
@@ -137,6 +139,7 @@ public class CreateUserRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateUserRequest withPath(String path) {
         setPath(path);
         return this;
@@ -150,6 +153,7 @@ public class CreateUserRequest extends AmazonWebServiceRequest implements
      * @param userName
      *        The name of the user to create.
      */
+
     public void setUserName(String userName) {
         this.userName = userName;
     }
@@ -161,6 +165,7 @@ public class CreateUserRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the user to create.
      */
+
     public String getUserName() {
         return this.userName;
     }
@@ -175,6 +180,7 @@ public class CreateUserRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateUserRequest withUserName(String userName) {
         setUserName(userName);
         return this;

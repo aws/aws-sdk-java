@@ -889,6 +889,73 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
 
     /**
      * <p>
+     * Lists the status of one or more table restore requests made using the
+     * RestoreTableFromClusterSnapshot API action. If you don't specify a
+     * value for the <code>TableRestoreRequestId</code> parameter, then
+     * <code>DescribeTableRestoreStatus</code> returns the status of all
+     * in-progress table restore requests. Otherwise
+     * <code>DescribeTableRestoreStatus</code> returns the status of the
+     * table specified by <code>TableRestoreRequestId</code> .
+     * </p>
+     *
+     * @param describeTableRestoreStatusRequest Container for the necessary
+     *           parameters to execute the DescribeTableRestoreStatus operation on
+     *           AmazonRedshift.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeTableRestoreStatus service method, as returned by
+     *         AmazonRedshift.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRedshift indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeTableRestoreStatusResult> describeTableRestoreStatusAsync(DescribeTableRestoreStatusRequest describeTableRestoreStatusRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Lists the status of one or more table restore requests made using the
+     * RestoreTableFromClusterSnapshot API action. If you don't specify a
+     * value for the <code>TableRestoreRequestId</code> parameter, then
+     * <code>DescribeTableRestoreStatus</code> returns the status of all
+     * in-progress table restore requests. Otherwise
+     * <code>DescribeTableRestoreStatus</code> returns the status of the
+     * table specified by <code>TableRestoreRequestId</code> .
+     * </p>
+     *
+     * @param describeTableRestoreStatusRequest Container for the necessary
+     *           parameters to execute the DescribeTableRestoreStatus operation on
+     *           AmazonRedshift.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeTableRestoreStatus service method, as returned by
+     *         AmazonRedshift.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRedshift indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeTableRestoreStatusResult> describeTableRestoreStatusAsync(DescribeTableRestoreStatusRequest describeTableRestoreStatusRequest,
+            AsyncHandler<DescribeTableRestoreStatusRequest, DescribeTableRestoreStatusResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Deletes the specified HSM client certificate.
      * </p>
      *
@@ -1346,17 +1413,21 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * <p>
      * Adds an inbound (ingress) rule to an Amazon Redshift security group.
      * Depending on whether the application accessing your cluster is running
-     * on the Internet or an EC2 instance, you can authorize inbound access
-     * to either a Classless Interdomain Routing (CIDR) IP address range or
-     * an EC2 security group. You can add as many as 20 ingress rules to an
-     * Amazon Redshift security group.
+     * on the Internet or an Amazon EC2 instance, you can authorize inbound
+     * access to either a Classless Interdomain Routing (CIDR)/Internet
+     * Protocol (IP) range or to an Amazon EC2 security group. You can add as
+     * many as 20 ingress rules to an Amazon Redshift security group.
      * </p>
      * <p>
-     * <b>NOTE:</b> The EC2 security group must be defined in the AWS region
-     * where the cluster resides.
+     * If you authorize access to an Amazon EC2 security group, specify
+     * <i>EC2SecurityGroupName</i> and <i>EC2SecurityGroupOwnerId</i> . The
+     * Amazon EC2 security group and Amazon Redshift cluster must be in the
+     * same AWS region.
      * </p>
      * <p>
-     * For an overview of CIDR blocks, see the Wikipedia article on
+     * If you authorize access to a CIDR/IP address range, specify
+     * <i>CIDRIP</i> . For an overview of CIDR blocks, see the Wikipedia
+     * article on
      * <a href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing"> Classless Inter-Domain Routing </a>
      * .
      * </p>
@@ -1393,17 +1464,21 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * <p>
      * Adds an inbound (ingress) rule to an Amazon Redshift security group.
      * Depending on whether the application accessing your cluster is running
-     * on the Internet or an EC2 instance, you can authorize inbound access
-     * to either a Classless Interdomain Routing (CIDR) IP address range or
-     * an EC2 security group. You can add as many as 20 ingress rules to an
-     * Amazon Redshift security group.
+     * on the Internet or an Amazon EC2 instance, you can authorize inbound
+     * access to either a Classless Interdomain Routing (CIDR)/Internet
+     * Protocol (IP) range or to an Amazon EC2 security group. You can add as
+     * many as 20 ingress rules to an Amazon Redshift security group.
      * </p>
      * <p>
-     * <b>NOTE:</b> The EC2 security group must be defined in the AWS region
-     * where the cluster resides.
+     * If you authorize access to an Amazon EC2 security group, specify
+     * <i>EC2SecurityGroupName</i> and <i>EC2SecurityGroupOwnerId</i> . The
+     * Amazon EC2 security group and Amazon Redshift cluster must be in the
+     * same AWS region.
      * </p>
      * <p>
-     * For an overview of CIDR blocks, see the Wikipedia article on
+     * If you authorize access to a CIDR/IP address range, specify
+     * <i>CIDRIP</i> . For an overview of CIDR blocks, see the Wikipedia
+     * article on
      * <a href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing"> Classless Inter-Domain Routing </a>
      * .
      * </p>
@@ -1935,6 +2010,91 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      */
     public Future<DescribeClusterVersionsResult> describeClusterVersionsAsync(DescribeClusterVersionsRequest describeClusterVersionsRequest,
             AsyncHandler<DescribeClusterVersionsRequest, DescribeClusterVersionsResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Creates a new table from a table in an Amazon Redshift cluster
+     * snapshot. You must create the new table within the Amazon Redshift
+     * cluster that the snapshot was taken from.
+     * </p>
+     * <p>
+     * You cannot use <code>RestoreTableFromClusterSnapshot</code> to
+     * restore a table with the same name as an existing table in an Amazon
+     * Redshift cluster. That is, you cannot overwrite an existing table in a
+     * cluster with a restored table. If you want to replace your original
+     * table with a new, restored table, then rename or drop your original
+     * table before you call <code>RestoreTableFromClusterSnapshot</code> .
+     * When you have renamed your original table, then you can pass the
+     * original name of the table as the <code>NewTableName</code> parameter
+     * value in the call to <code>RestoreTableFromClusterSnapshot</code> .
+     * This way, you can replace the original table with the table created
+     * from the snapshot.
+     * </p>
+     *
+     * @param restoreTableFromClusterSnapshotRequest Container for the
+     *           necessary parameters to execute the RestoreTableFromClusterSnapshot
+     *           operation on AmazonRedshift.
+     * 
+     * @return A Java Future object containing the response from the
+     *         RestoreTableFromClusterSnapshot service method, as returned by
+     *         AmazonRedshift.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRedshift indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<TableRestoreStatus> restoreTableFromClusterSnapshotAsync(RestoreTableFromClusterSnapshotRequest restoreTableFromClusterSnapshotRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Creates a new table from a table in an Amazon Redshift cluster
+     * snapshot. You must create the new table within the Amazon Redshift
+     * cluster that the snapshot was taken from.
+     * </p>
+     * <p>
+     * You cannot use <code>RestoreTableFromClusterSnapshot</code> to
+     * restore a table with the same name as an existing table in an Amazon
+     * Redshift cluster. That is, you cannot overwrite an existing table in a
+     * cluster with a restored table. If you want to replace your original
+     * table with a new, restored table, then rename or drop your original
+     * table before you call <code>RestoreTableFromClusterSnapshot</code> .
+     * When you have renamed your original table, then you can pass the
+     * original name of the table as the <code>NewTableName</code> parameter
+     * value in the call to <code>RestoreTableFromClusterSnapshot</code> .
+     * This way, you can replace the original table with the table created
+     * from the snapshot.
+     * </p>
+     *
+     * @param restoreTableFromClusterSnapshotRequest Container for the
+     *           necessary parameters to execute the RestoreTableFromClusterSnapshot
+     *           operation on AmazonRedshift.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         RestoreTableFromClusterSnapshot service method, as returned by
+     *         AmazonRedshift.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRedshift indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<TableRestoreStatus> restoreTableFromClusterSnapshotAsync(RestoreTableFromClusterSnapshotRequest restoreTableFromClusterSnapshotRequest,
+            AsyncHandler<RestoreTableFromClusterSnapshotRequest, TableRestoreStatus> asyncHandler)
                     throws AmazonServiceException, AmazonClientException;
 
     /**

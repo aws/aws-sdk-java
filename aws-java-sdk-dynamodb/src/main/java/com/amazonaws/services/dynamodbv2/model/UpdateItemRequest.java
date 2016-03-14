@@ -1575,6 +1575,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * @param tableName
      *        The name of the table containing the item to update.
      */
+
     public void setTableName(String tableName) {
         this.tableName = tableName;
     }
@@ -1586,6 +1587,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the table containing the item to update.
      */
+
     public String getTableName() {
         return this.tableName;
     }
@@ -1600,6 +1602,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateItemRequest withTableName(String tableName) {
         setTableName(tableName);
         return this;
@@ -1625,6 +1628,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *         value for the partition key. For a composite primary key, you
      *         must provide values for both the partition key and the sort key.
      */
+
     public java.util.Map<String, AttributeValue> getKey() {
         return key;
     }
@@ -1650,6 +1654,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *        value for the partition key. For a composite primary key, you must
      *        provide values for both the partition key and the sort key.
      */
+
     public void setKey(java.util.Map<String, AttributeValue> key) {
         this.key = key;
     }
@@ -1677,6 +1682,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateItemRequest withKey(java.util.Map<String, AttributeValue> key) {
         setKey(key);
         return this;
@@ -1697,6 +1703,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * Removes all the entries added into Key. &lt;p> Returns a reference to
      * this object so that method calls can be chained together.
      */
+
     public UpdateItemRequest clearKeyEntries() {
         this.key = null;
         return this;
@@ -2011,6 +2018,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *         the data types for those attributes must match those of the
      *         schema in the table's attribute definition.
      */
+
     public java.util.Map<String, AttributeValueUpdate> getAttributeUpdates() {
         return attributeUpdates;
     }
@@ -2324,6 +2332,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *        the data types for those attributes must match those of the schema
      *        in the table's attribute definition.
      */
+
     public void setAttributeUpdates(
             java.util.Map<String, AttributeValueUpdate> attributeUpdates) {
         this.attributeUpdates = attributeUpdates;
@@ -2640,6 +2649,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateItemRequest withAttributeUpdates(
             java.util.Map<String, AttributeValueUpdate> attributeUpdates) {
         setAttributeUpdates(attributeUpdates);
@@ -2662,6 +2672,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * Removes all the entries added into AttributeUpdates. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public UpdateItemRequest clearAttributeUpdatesEntries() {
         this.attributeUpdates = null;
         return this;
@@ -3351,6 +3362,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *         This parameter does not support attributes of type List or Map.
      *         </p>
      */
+
     public java.util.Map<String, ExpectedAttributeValue> getExpected() {
         return expected;
     }
@@ -4037,6 +4049,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *        This parameter does not support attributes of type List or Map.
      *        </p>
      */
+
     public void setExpected(
             java.util.Map<String, ExpectedAttributeValue> expected) {
         this.expected = expected;
@@ -4726,6 +4739,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateItemRequest withExpected(
             java.util.Map<String, ExpectedAttributeValue> expected) {
         setExpected(expected);
@@ -4748,6 +4762,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * Removes all the entries added into Expected. &lt;p> Returns a reference
      * to this object so that method calls can be chained together.
      */
+
     public UpdateItemRequest clearExpectedEntries() {
         this.expected = null;
         return this;
@@ -4833,6 +4848,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *        </p>
      * @see ConditionalOperator
      */
+
     public void setConditionalOperator(String conditionalOperator) {
         this.conditionalOperator = conditionalOperator;
     }
@@ -4916,6 +4932,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *         </p>
      * @see ConditionalOperator
      */
+
     public String getConditionalOperator() {
         return this.conditionalOperator;
     }
@@ -5002,6 +5019,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ConditionalOperator
      */
+
     public UpdateItemRequest withConditionalOperator(String conditionalOperator) {
         setConditionalOperator(conditionalOperator);
         return this;
@@ -5089,6 +5107,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ConditionalOperator
      */
+
     public void setConditionalOperator(ConditionalOperator conditionalOperator) {
         this.conditionalOperator = conditionalOperator.toString();
     }
@@ -5175,6 +5194,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ConditionalOperator
      */
+
     public UpdateItemRequest withConditionalOperator(
             ConditionalOperator conditionalOperator) {
         setConditionalOperator(conditionalOperator);
@@ -5275,6 +5295,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *        Values returned are strongly consistent
      * @see ReturnValue
      */
+
     public void setReturnValues(String returnValues) {
         this.returnValues = returnValues;
     }
@@ -5373,6 +5394,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *         Values returned are strongly consistent
      * @see ReturnValue
      */
+
     public String getReturnValues() {
         return this.returnValues;
     }
@@ -5473,6 +5495,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ReturnValue
      */
+
     public UpdateItemRequest withReturnValues(String returnValues) {
         setReturnValues(returnValues);
         return this;
@@ -5574,6 +5597,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ReturnValue
      */
+
     public void setReturnValues(ReturnValue returnValues) {
         this.returnValues = returnValues.toString();
     }
@@ -5674,6 +5698,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ReturnValue
      */
+
     public UpdateItemRequest withReturnValues(ReturnValue returnValues) {
         setReturnValues(returnValues);
         return this;
@@ -5683,6 +5708,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * @param returnConsumedCapacity
      * @see ReturnConsumedCapacity
      */
+
     public void setReturnConsumedCapacity(String returnConsumedCapacity) {
         this.returnConsumedCapacity = returnConsumedCapacity;
     }
@@ -5691,6 +5717,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * @return
      * @see ReturnConsumedCapacity
      */
+
     public String getReturnConsumedCapacity() {
         return this.returnConsumedCapacity;
     }
@@ -5701,6 +5728,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ReturnConsumedCapacity
      */
+
     public UpdateItemRequest withReturnConsumedCapacity(
             String returnConsumedCapacity) {
         setReturnConsumedCapacity(returnConsumedCapacity);
@@ -5713,6 +5741,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ReturnConsumedCapacity
      */
+
     public void setReturnConsumedCapacity(
             ReturnConsumedCapacity returnConsumedCapacity) {
         this.returnConsumedCapacity = returnConsumedCapacity.toString();
@@ -5724,6 +5753,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ReturnConsumedCapacity
      */
+
     public UpdateItemRequest withReturnConsumedCapacity(
             ReturnConsumedCapacity returnConsumedCapacity) {
         setReturnConsumedCapacity(returnConsumedCapacity);
@@ -5747,6 +5777,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *        default), no statistics are returned.
      * @see ReturnItemCollectionMetrics
      */
+
     public void setReturnItemCollectionMetrics(
             String returnItemCollectionMetrics) {
         this.returnItemCollectionMetrics = returnItemCollectionMetrics;
@@ -5768,6 +5799,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *         default), no statistics are returned.
      * @see ReturnItemCollectionMetrics
      */
+
     public String getReturnItemCollectionMetrics() {
         return this.returnItemCollectionMetrics;
     }
@@ -5791,6 +5823,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ReturnItemCollectionMetrics
      */
+
     public UpdateItemRequest withReturnItemCollectionMetrics(
             String returnItemCollectionMetrics) {
         setReturnItemCollectionMetrics(returnItemCollectionMetrics);
@@ -5816,6 +5849,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ReturnItemCollectionMetrics
      */
+
     public void setReturnItemCollectionMetrics(
             ReturnItemCollectionMetrics returnItemCollectionMetrics) {
         this.returnItemCollectionMetrics = returnItemCollectionMetrics
@@ -5841,6 +5875,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ReturnItemCollectionMetrics
      */
+
     public UpdateItemRequest withReturnItemCollectionMetrics(
             ReturnItemCollectionMetrics returnItemCollectionMetrics) {
         setReturnItemCollectionMetrics(returnItemCollectionMetrics);
@@ -6127,6 +6162,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *        <i>AttributeUpdates</i> parameter.
      *        </p>
      */
+
     public void setUpdateExpression(String updateExpression) {
         this.updateExpression = updateExpression;
     }
@@ -6413,6 +6449,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *         <i>AttributeUpdates</i> parameter.
      *         </p>
      */
+
     public String getUpdateExpression() {
         return this.updateExpression;
     }
@@ -6699,6 +6736,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateItemRequest withUpdateExpression(String updateExpression) {
         setUpdateExpression(updateExpression);
         return this;
@@ -6786,6 +6824,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *        <i>ConditionalOperator</i> and <i>Expected</i> parameters.
      *        </p>
      */
+
     public void setConditionExpression(String conditionExpression) {
         this.conditionExpression = conditionExpression;
     }
@@ -6871,6 +6910,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *         <i>ConditionalOperator</i> and <i>Expected</i> parameters.
      *         </p>
      */
+
     public String getConditionExpression() {
         return this.conditionExpression;
     }
@@ -6959,6 +6999,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateItemRequest withConditionExpression(String conditionExpression) {
         setConditionExpression(conditionExpression);
         return this;
@@ -7115,6 +7156,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *         >Accessing Item Attributes</a> in the <i>Amazon DynamoDB
      *         Developer Guide</i>.
      */
+
     public java.util.Map<String, String> getExpressionAttributeNames() {
         return expressionAttributeNames;
     }
@@ -7271,6 +7313,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *        >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer
      *        Guide</i>.
      */
+
     public void setExpressionAttributeNames(
             java.util.Map<String, String> expressionAttributeNames) {
         this.expressionAttributeNames = expressionAttributeNames;
@@ -7430,6 +7473,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateItemRequest withExpressionAttributeNames(
             java.util.Map<String, String> expressionAttributeNames) {
         setExpressionAttributeNames(expressionAttributeNames);
@@ -7453,6 +7497,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * Returns a reference to this object so that method calls can be chained
      * together.
      */
+
     public UpdateItemRequest clearExpressionAttributeNamesEntries() {
         this.expressionAttributeNames = null;
         return this;
@@ -7518,6 +7563,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *         >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer
      *         Guide</i>.
      */
+
     public java.util.Map<String, AttributeValue> getExpressionAttributeValues() {
         return expressionAttributeValues;
     }
@@ -7583,6 +7629,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *        >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer
      *        Guide</i>.
      */
+
     public void setExpressionAttributeValues(
             java.util.Map<String, AttributeValue> expressionAttributeValues) {
         this.expressionAttributeValues = expressionAttributeValues;
@@ -7651,6 +7698,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateItemRequest withExpressionAttributeValues(
             java.util.Map<String, AttributeValue> expressionAttributeValues) {
         setExpressionAttributeValues(expressionAttributeValues);
@@ -7674,6 +7722,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * Returns a reference to this object so that method calls can be chained
      * together.
      */
+
     public UpdateItemRequest clearExpressionAttributeValuesEntries() {
         this.expressionAttributeValues = null;
         return this;

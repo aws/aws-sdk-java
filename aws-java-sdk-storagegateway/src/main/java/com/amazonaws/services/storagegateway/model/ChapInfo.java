@@ -72,6 +72,7 @@ public class ChapInfo implements Serializable, Cloneable {
      *        <i>Valid Values</i>: 50 to 500 lowercase letters, numbers, periods
      *        (.), and hyphens (-).
      */
+
     public void setTargetARN(String targetARN) {
         this.targetARN = targetARN;
     }
@@ -90,6 +91,7 @@ public class ChapInfo implements Serializable, Cloneable {
      *         <i>Valid Values</i>: 50 to 500 lowercase letters, numbers,
      *         periods (.), and hyphens (-).
      */
+
     public String getTargetARN() {
         return this.targetARN;
     }
@@ -111,6 +113,7 @@ public class ChapInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ChapInfo withTargetARN(String targetARN) {
         setTargetARN(targetARN);
         return this;
@@ -127,6 +130,7 @@ public class ChapInfo implements Serializable, Cloneable {
      *        client) must provide to participate in mutual CHAP with the
      *        target.
      */
+
     public void setSecretToAuthenticateInitiator(
             String secretToAuthenticateInitiator) {
         this.secretToAuthenticateInitiator = secretToAuthenticateInitiator;
@@ -142,6 +146,7 @@ public class ChapInfo implements Serializable, Cloneable {
      *         client) must provide to participate in mutual CHAP with the
      *         target.
      */
+
     public String getSecretToAuthenticateInitiator() {
         return this.secretToAuthenticateInitiator;
     }
@@ -159,6 +164,7 @@ public class ChapInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ChapInfo withSecretToAuthenticateInitiator(
             String secretToAuthenticateInitiator) {
         setSecretToAuthenticateInitiator(secretToAuthenticateInitiator);
@@ -173,6 +179,7 @@ public class ChapInfo implements Serializable, Cloneable {
      * @param initiatorName
      *        The iSCSI initiator that connects to the target.
      */
+
     public void setInitiatorName(String initiatorName) {
         this.initiatorName = initiatorName;
     }
@@ -184,6 +191,7 @@ public class ChapInfo implements Serializable, Cloneable {
      * 
      * @return The iSCSI initiator that connects to the target.
      */
+
     public String getInitiatorName() {
         return this.initiatorName;
     }
@@ -198,6 +206,7 @@ public class ChapInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ChapInfo withInitiatorName(String initiatorName) {
         setInitiatorName(initiatorName);
         return this;
@@ -213,6 +222,7 @@ public class ChapInfo implements Serializable, Cloneable {
      *        The secret key that the target must provide to participate in
      *        mutual CHAP with the initiator (e.g. Windows client).
      */
+
     public void setSecretToAuthenticateTarget(String secretToAuthenticateTarget) {
         this.secretToAuthenticateTarget = secretToAuthenticateTarget;
     }
@@ -226,6 +236,7 @@ public class ChapInfo implements Serializable, Cloneable {
      * @return The secret key that the target must provide to participate in
      *         mutual CHAP with the initiator (e.g. Windows client).
      */
+
     public String getSecretToAuthenticateTarget() {
         return this.secretToAuthenticateTarget;
     }
@@ -242,6 +253,7 @@ public class ChapInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ChapInfo withSecretToAuthenticateTarget(
             String secretToAuthenticateTarget) {
         setSecretToAuthenticateTarget(secretToAuthenticateTarget);
