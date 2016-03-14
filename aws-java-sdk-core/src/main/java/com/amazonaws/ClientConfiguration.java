@@ -26,16 +26,20 @@ import com.amazonaws.util.VersionInfoUtils;
 
 /**
  * Client configuration options such as proxy settings, user agent string, max retry attempts, etc.
- * 
+ *
  * @see PredefinedClientConfigurations
  */
 @NotThreadSafe
 public class ClientConfiguration {
 
-    /** The default timeout for creating new connections. */
+    /**
+     * The default timeout for creating new connections.
+     */
     public static final int DEFAULT_CONNECTION_TIMEOUT = 50 * 1000;
 
-    /** The default timeout for reading from a connected socket. */
+    /**
+     * The default timeout for reading from a connected socket.
+     */
     public static final int DEFAULT_SOCKET_TIMEOUT = 50 * 1000;
 
     /**
@@ -48,7 +52,9 @@ public class ClientConfiguration {
      */
     public static final int DEFAULT_CLIENT_EXECUTION_TIMEOUT = 0;
 
-    /** The default max connection pool size. */
+    /**
+     * The default max connection pool size.
+     */
     public static final int DEFAULT_MAX_CONNECTIONS = 50;
 
     /**
@@ -57,7 +63,9 @@ public class ClientConfiguration {
      */
     private static final boolean DEFAULT_USE_EXPECT_CONTINUE = true;
 
-    /** The default HTTP user agent header for AWS Java SDK clients. */
+    /**
+     * The default HTTP user agent header for AWS Java SDK clients.
+     */
     public static final String DEFAULT_USER_AGENT = VersionInfoUtils.getUserAgent();
 
     /**
@@ -100,21 +108,24 @@ public class ClientConfiguration {
      * The default response metadata cache size.
      */
     public static final int DEFAULT_RESPONSE_METADATA_CACHE_SIZE = 50;
-
-    /** The HTTP user agent header passed with all HTTP requests. */
+    /**
+     * The HTTP user agent header passed with all HTTP requests.
+     */
     private String userAgent = DEFAULT_USER_AGENT;
-
     /**
      * The maximum number of times that a retryable failed request (ex: a 5xx response from a
      * service) will be retried. Or -1 if the user has not explicitly set this value, in which case
      * the configured RetryPolicy will be used to control the retry count.
      */
     private int maxErrorRetry = -1;
-
-    /** The retry policy upon failed requests. **/
+    /**
+     * The retry policy upon failed requests.
+     **/
     private RetryPolicy retryPolicy = DEFAULT_RETRY_POLICY;
 
-    /** Optionally specifies the local address to bind to */
+    /**
+     * Optionally specifies the local address to bind to
+     */
     private InetAddress localAddress;
 
     /**
@@ -124,22 +135,34 @@ public class ClientConfiguration {
      */
     private Protocol protocol = Protocol.HTTPS;
 
-    /** Optionally specifies the proxy host to connect through. */
+    /**
+     * Optionally specifies the proxy host to connect through.
+     */
     private String proxyHost = null;
 
-    /** Optionally specifies the port on the proxy host to connect through. */
+    /**
+     * Optionally specifies the port on the proxy host to connect through.
+     */
     private int proxyPort = -1;
 
-    /** Optionally specifies the user name to use when connecting through a proxy. */
+    /**
+     * Optionally specifies the user name to use when connecting through a proxy.
+     */
     private String proxyUsername = null;
 
-    /** Optionally specifies the password to use when connecting through a proxy. */
+    /**
+     * Optionally specifies the password to use when connecting through a proxy.
+     */
     private String proxyPassword = null;
 
-    /** Optional Windows domain name for configuring NTLM proxy support. */
+    /**
+     * Optional Windows domain name for configuring NTLM proxy support.
+     */
     private String proxyDomain = null;
 
-    /** Optional Windows workstation name for configuring NTLM proxy support. */
+    /**
+     * Optional Windows workstation name for configuring NTLM proxy support.
+     */
     private String proxyWorkstation = null;
 
     /**
@@ -147,7 +170,9 @@ public class ClientConfiguration {
      */
     private boolean preemptiveBasicProxyAuth;
 
-    /** The maximum number of open HTTP connections. */
+    /**
+     * The maximum number of open HTTP connections.
+     */
     private int maxConnections = DEFAULT_MAX_CONNECTIONS;
 
     /**
@@ -264,6 +289,30 @@ public class ClientConfiguration {
      */
     private final ApacheHttpClientConfig apacheHttpClientConfig;
 
+    /**
+     * Proxy related System property key constants
+     */
+    public static final String SYSPROPKEY_HTTPS_PROXY_HOST = "https.proxyHost";
+    public static final String SYSPROPKEY_HTTP_PROXY_HOST = "http.proxyHost";
+    public static final String SYSPROPKEY_HTTPS_PROXY_PORT = "https.proxyPort";
+    public static final String SYSPROPKEY_HTTP_PROXY_PORT = "http.proxyPort";
+    public static final String SYSPROPKEY_HTTPS_PROXY_USER = "https.proxyUser";
+    public static final String SYSPROPKEY_HTTP_PROXY_USER = "http.proxyUser";
+    public static final String SYSPROPKEY_HTTPS_PROXY_PWD = "https.proxyPassword";
+    public static final String SYSPROPKEY_HTTP_PROXY_PWD = "http.proxyPassword";
+
+    public static final String HTTP_PROXY = "HTTP_PROXY";
+    public static final String HTTPS_PROXY = "HTTPS_PROXY";
+
+    public static final String COLON = ":";
+    public static final String AT = "@";
+    public static final String EMPTYSTRING = "";
+
+    public static final int HTTP_PORT = 80;
+    public static final int HTTPS_PORT = 443;
+
+    public static final int NOTFOUND = -1;
+
     public ClientConfiguration() {
         apacheHttpClientConfig = new ApacheHttpClientConfig();
     }
@@ -319,8 +368,7 @@ public class ClientConfiguration {
      * Individual clients can also override this setting by explicitly including the protocol as
      * part of the endpoint URL when calling {@link AmazonWebServiceClient#setEndpoint(String)}.
      *
-     * @param protocol
-     *            The protocol to use when connecting to Amazon Web Services.
+     * @param protocol The protocol to use when connecting to Amazon Web Services.
      */
     public void setProtocol(Protocol protocol) {
         this.protocol = protocol;
@@ -336,8 +384,7 @@ public class ClientConfiguration {
      * Individual clients can also override this setting by explicitly including the protocol as
      * part of the endpoint URL when calling {@link AmazonWebServiceClient#setEndpoint(String)}.
      *
-     * @param protocol
-     *            The protocol to use when connecting to Amazon Web Services.
+     * @param protocol The protocol to use when connecting to Amazon Web Services.
      * @return The updated ClientConfiguration object with the new max HTTP connections setting.
      */
     public ClientConfiguration withProtocol(Protocol protocol) {
@@ -357,8 +404,7 @@ public class ClientConfiguration {
     /**
      * Sets the maximum number of allowed open HTTP connections.
      *
-     * @param maxConnections
-     *            The maximum number of allowed open HTTP connections.
+     * @param maxConnections The maximum number of allowed open HTTP connections.
      */
     public void setMaxConnections(int maxConnections) {
         this.maxConnections = maxConnections;
@@ -368,8 +414,7 @@ public class ClientConfiguration {
      * Sets the maximum number of allowed open HTTP connections and returns the updated
      * ClientConfiguration object.
      *
-     * @param maxConnections
-     *            The maximum number of allowed open HTTP connections.
+     * @param maxConnections The maximum number of allowed open HTTP connections.
      * @return The updated ClientConfiguration object with the new max HTTP connections setting.
      */
     public ClientConfiguration withMaxConnections(int maxConnections) {
@@ -389,8 +434,7 @@ public class ClientConfiguration {
     /**
      * Sets the HTTP user agent header to send with all requests.
      *
-     * @param userAgent
-     *            The user agent string to use when sending requests.
+     * @param userAgent The user agent string to use when sending requests.
      */
     public void setUserAgent(String userAgent) {
         this.userAgent = userAgent;
@@ -400,8 +444,7 @@ public class ClientConfiguration {
      * Sets the HTTP user agent header used in requests and returns the updated ClientConfiguration
      * object.
      *
-     * @param userAgent
-     *            The user agent string to use when sending requests.
+     * @param userAgent The user agent string to use when sending requests.
      * @return The updated ClientConfiguration object.
      */
     public ClientConfiguration withUserAgent(String userAgent) {
@@ -421,8 +464,7 @@ public class ClientConfiguration {
     /**
      * Sets the optional local address the client will bind to.
      *
-     * @param localAddress
-     *            The local address the client will bind to.
+     * @param localAddress The local address the client will bind to.
      */
     public void setLocalAddress(InetAddress localAddress) {
         this.localAddress = localAddress;
@@ -432,8 +474,7 @@ public class ClientConfiguration {
      * Sets the optional local address the client will bind to and returns the updated
      * ClientConfiguration object.
      *
-     * @param localAddress
-     *            The local address the client will bind to.
+     * @param localAddress The local address the client will bind to.
      * @return The updated ClientConfiguration object.
      */
     public ClientConfiguration withLocalAddress(InetAddress localAddress) {
@@ -441,11 +482,76 @@ public class ClientConfiguration {
         return this;
     }
 
+    private void mylog(String s) {
+        System.out.println(s);
+    }
+
     /**
      * Returns the value for the given system property.
      */
     private String getSystemProperty(String property) {
+        if (null == System.getProperty(property)) {
+            if (null != System.getenv(HTTPS_PROXY) && this.protocol.equals(Protocol.HTTPS)) {
+                return getProxyPropertyFromHttpProxyVar(System.getenv(HTTPS_PROXY), property, SYSPROPKEY_HTTPS_PROXY_USER, SYSPROPKEY_HTTPS_PROXY_PWD);
+            } else if (null != System.getenv(HTTP_PROXY) && this.protocol.equals(Protocol.HTTP)) {
+                return getProxyPropertyFromHttpProxyVar(System.getenv(HTTP_PROXY), property, SYSPROPKEY_HTTP_PROXY_USER, SYSPROPKEY_HTTP_PROXY_PWD);
+            }
+        }
         return System.getProperty(property);
+    }
+
+    private String getProxyPropertyFromHttpProxyVar(String httpsProxyUrl, String property, String syspropkeyProxyUser, String syspropkeyProxyPwd) {
+        int lastIndexOfAtChar = httpsProxyUrl.lastIndexOf(AT);
+        if (NOTFOUND != lastIndexOfAtChar) {
+            String usr = getUserNameOrPwdFromHttpProxy(property, httpsProxyUrl, lastIndexOfAtChar);
+            if (usr != null) return usr;
+            return getHostnameOrPortFromHttpProxy(property, httpsProxyUrl, lastIndexOfAtChar);
+        } else {
+            if (syspropkeyProxyUser.equals(property)) {
+                return EMPTYSTRING;
+            }
+            if (syspropkeyProxyPwd.equals(property)) {
+                return EMPTYSTRING;
+            }
+            return getHostnameOrPortFromHttpProxy(property, httpsProxyUrl, httpsProxyUrl.indexOf("//") + 1);
+        }
+    }
+
+    private String getUserNameOrPwdFromHttpProxy(String property, String httpProxyUrl, int lastIndexOfAtChar) {
+        String protocol_UserName_Pwd = httpProxyUrl.substring(0, lastIndexOfAtChar).replaceAll("https?://", "");
+        if (protocol_UserName_Pwd.split(AT).length > 2) {
+            return EMPTYSTRING;
+        }
+        if (SYSPROPKEY_HTTPS_PROXY_USER.equals(property) || SYSPROPKEY_HTTP_PROXY_USER.equals(property)) {
+            return protocol_UserName_Pwd.substring(0, protocol_UserName_Pwd.indexOf(COLON));
+        }
+
+        if (SYSPROPKEY_HTTPS_PROXY_PWD.equals(property) || SYSPROPKEY_HTTP_PROXY_PWD.equals(property)) {
+            return protocol_UserName_Pwd.substring(protocol_UserName_Pwd.indexOf(COLON) + 1);
+        }
+        return null;
+    }
+
+    private String getHostnameOrPortFromHttpProxy(String property, String httpProxyUrl, int lastIndexOfAtChar) {
+        String hostname_Port = httpProxyUrl.substring(lastIndexOfAtChar + 1);
+        if (hostname_Port.split(COLON).length > 2) {
+            return EMPTYSTRING;
+        }
+        if (SYSPROPKEY_HTTPS_PROXY_HOST.equals(property) || SYSPROPKEY_HTTP_PROXY_HOST.equals(property)) {
+            return getHostnameFromURL(hostname_Port);
+        }
+        if (SYSPROPKEY_HTTPS_PROXY_PORT.equals(property) || SYSPROPKEY_HTTP_PROXY_PORT.equals(property)) {
+            return getPortFromURL(hostname_Port);
+        }
+        return null;
+    }
+
+    private String getPortFromURL(String hostname_Port) {
+        return (NOTFOUND != hostname_Port.lastIndexOf(COLON) && hostname_Port.lastIndexOf(COLON) < hostname_Port.length() - 1) ? hostname_Port.substring(hostname_Port.lastIndexOf(COLON) + 1) : (this.protocol.equals(Protocol.HTTPS)) ? String.valueOf(HTTPS_PORT) : String.valueOf(HTTP_PORT);
+    }
+
+    private String getHostnameFromURL(String protocol_UserName_Pwd) {
+        return protocol_UserName_Pwd.substring(0, (NOTFOUND != protocol_UserName_Pwd.indexOf(COLON) ? protocol_UserName_Pwd.indexOf(COLON) : protocol_UserName_Pwd.length()));
     }
 
     /**
@@ -456,8 +562,8 @@ public class ClientConfiguration {
      */
     private String getProxyHostProperty() {
         return getProtocol() == Protocol.HTTPS
-                ? getSystemProperty("https.proxyHost")
-                : getSystemProperty("http.proxyHost");
+                ? getSystemProperty(SYSPROPKEY_HTTPS_PROXY_HOST)
+                : getSystemProperty(SYSPROPKEY_HTTP_PROXY_HOST);
     }
 
     /**
@@ -477,8 +583,7 @@ public class ClientConfiguration {
     /**
      * Sets the optional proxy host the client will connect through.
      *
-     * @param proxyHost
-     *            The proxy host the client will connect through.
+     * @param proxyHost The proxy host the client will connect through.
      */
     public void setProxyHost(String proxyHost) {
         this.proxyHost = proxyHost;
@@ -488,8 +593,7 @@ public class ClientConfiguration {
      * Sets the optional proxy host the client will connect through and returns the updated
      * ClientConfiguration object.
      *
-     * @param proxyHost
-     *            The proxy host the client will connect through.
+     * @param proxyHost The proxy host the client will connect through.
      * @return The updated ClientConfiguration object.
      */
     public ClientConfiguration withProxyHost(String proxyHost) {
@@ -505,9 +609,10 @@ public class ClientConfiguration {
      * if the system property is not set with a valid port number.
      */
     private int getProxyPortProperty() {
+
         final String proxyPortString = (getProtocol() == Protocol.HTTPS)
-                    ? getSystemProperty("https.proxyPort")
-                    : getSystemProperty("http.proxyPort");
+                ? getSystemProperty(SYSPROPKEY_HTTPS_PROXY_PORT)
+                : getSystemProperty(SYSPROPKEY_HTTP_PROXY_PORT);
         try {
             return Integer.parseInt(proxyPortString);
         } catch (NumberFormatException e) {
@@ -532,8 +637,7 @@ public class ClientConfiguration {
     /**
      * Sets the optional proxy port the client will connect through.
      *
-     * @param proxyPort
-     *            The proxy port the client will connect through.
+     * @param proxyPort The proxy port the client will connect through.
      */
     public void setProxyPort(int proxyPort) {
         this.proxyPort = proxyPort;
@@ -543,8 +647,7 @@ public class ClientConfiguration {
      * Sets the optional proxy port the client will connect through and returns the updated
      * ClientConfiguration object.
      *
-     * @param proxyPort
-     *            The proxy port the client will connect through.
+     * @param proxyPort The proxy port the client will connect through.
      * @return The updated ClientConfiguration object.
      */
     public ClientConfiguration withProxyPort(int proxyPort) {
@@ -560,8 +663,8 @@ public class ClientConfiguration {
      */
     private String getProxyUsernameProperty() {
         return (getProtocol() == Protocol.HTTPS)
-                ? getSystemProperty("https.proxyUser")
-                : getSystemProperty("http.proxyUser");
+                ? getSystemProperty(SYSPROPKEY_HTTPS_PROXY_USER)
+                : getSystemProperty(SYSPROPKEY_HTTP_PROXY_USER);
     }
 
     /**
@@ -574,7 +677,7 @@ public class ClientConfiguration {
      * http.proxyUsername.
      *
      * @return The optional proxy user name the configured client will use if connecting through a
-     *         proxy.
+     * proxy.
      */
     public String getProxyUsername() {
         return (proxyUsername != null) ? proxyUsername : getProxyUsernameProperty();
@@ -583,8 +686,7 @@ public class ClientConfiguration {
     /**
      * Sets the optional proxy user name to use if connecting through a proxy.
      *
-     * @param proxyUsername
-     *            The proxy user name to use if connecting through a proxy.
+     * @param proxyUsername The proxy user name to use if connecting through a proxy.
      */
     public void setProxyUsername(String proxyUsername) {
         this.proxyUsername = proxyUsername;
@@ -593,8 +695,7 @@ public class ClientConfiguration {
     /**
      * Sets the optional proxy user name and returns the updated ClientConfiguration object.
      *
-     * @param proxyUsername
-     *            The proxy user name to use if connecting through a proxy.
+     * @param proxyUsername The proxy user name to use if connecting through a proxy.
      * @return The updated ClientConfiguration object.
      */
     public ClientConfiguration withProxyUsername(String proxyUsername) {
@@ -610,8 +711,8 @@ public class ClientConfiguration {
      */
     private String getProxyPasswordProperty() {
         return (getProtocol() == Protocol.HTTPS)
-                ? getSystemProperty("https.proxyPassword")
-                : getSystemProperty("http.proxyPassword");
+                ? getSystemProperty(SYSPROPKEY_HTTPS_PROXY_PWD)
+                : getSystemProperty(SYSPROPKEY_HTTP_PROXY_PWD);
     }
 
     /**
@@ -632,8 +733,7 @@ public class ClientConfiguration {
     /**
      * Sets the optional proxy password to use when connecting through a proxy.
      *
-     * @param proxyPassword
-     *            The password to use when connecting through a proxy.
+     * @param proxyPassword The password to use when connecting through a proxy.
      */
     public void setProxyPassword(String proxyPassword) {
         this.proxyPassword = proxyPassword;
@@ -643,8 +743,7 @@ public class ClientConfiguration {
      * Sets the optional proxy password to use when connecting through a proxy, and returns the
      * updated ClientConfiguration object.
      *
-     * @param proxyPassword
-     *            The password to use when connecting through a proxy.
+     * @param proxyPassword The password to use when connecting through a proxy.
      * @return The updated ClientConfiguration object.
      */
     public ClientConfiguration withProxyPassword(String proxyPassword) {
@@ -666,8 +765,7 @@ public class ClientConfiguration {
      * Sets the optional Windows domain name for configuration an NTLM proxy. If you aren't using a
      * Windows NTLM proxy, you do not need to set this field.
      *
-     * @param proxyDomain
-     *            The optional Windows domain name for configuring an NTLM proxy.
+     * @param proxyDomain The optional Windows domain name for configuring an NTLM proxy.
      */
     public void setProxyDomain(String proxyDomain) {
         this.proxyDomain = proxyDomain;
@@ -678,8 +776,7 @@ public class ClientConfiguration {
      * to this updated ClientConfiguration object so that additional method calls can be chained
      * together. If you aren't using a Windows NTLM proxy, you do not need to set this field.
      *
-     * @param proxyDomain
-     *            The optional Windows domain name for configuring an NTLM proxy.
+     * @param proxyDomain The optional Windows domain name for configuring an NTLM proxy.
      * @return The updated ClientConfiguration object.
      */
     public ClientConfiguration withProxyDomain(String proxyDomain) {
@@ -701,8 +798,7 @@ public class ClientConfiguration {
      * Sets the optional Windows workstation name for configuring NTLM proxy support. If you aren't
      * using a Windows NTLM proxy, you do not need to set this field.
      *
-     * @param proxyWorkstation
-     *            The optional Windows workstation name for configuring NTLM proxy support.
+     * @param proxyWorkstation The optional Windows workstation name for configuring NTLM proxy support.
      */
     public void setProxyWorkstation(String proxyWorkstation) {
         this.proxyWorkstation = proxyWorkstation;
@@ -713,8 +809,7 @@ public class ClientConfiguration {
      * the updated ClientConfiguration object so that additional method calls can be chained
      * together. If you aren't using a Windows NTLM proxy, you do not need to set this field.
      *
-     * @param proxyWorkstation
-     *            The optional Windows workstation name for configuring NTLM proxy support.
+     * @param proxyWorkstation The optional Windows workstation name for configuring NTLM proxy support.
      * @return The updated ClientConfiguration object.
      */
     public ClientConfiguration withProxyWorkstation(String proxyWorkstation) {
@@ -735,8 +830,7 @@ public class ClientConfiguration {
      * Sets the retry policy upon failed requests. User could specify whether the RetryPolicy should
      * honor maxErrorRetry set by {@link #setMaxErrorRetry(int)}.
      *
-     * @param retryPolicy
-     *            The retry policy upon failed requests.
+     * @param retryPolicy The retry policy upon failed requests.
      */
     public void setRetryPolicy(RetryPolicy retryPolicy) {
         this.retryPolicy = retryPolicy;
@@ -747,8 +841,7 @@ public class ClientConfiguration {
      * object. User could specify whether the RetryPolicy should honor maxErrorRetry set by
      * {@link #setMaxErrorRetry(int)}
      *
-     * @param retryPolicy
-     *            The retry policy upon failed requests.
+     * @param retryPolicy The retry policy upon failed requests.
      */
     public ClientConfiguration withRetryPolicy(RetryPolicy retryPolicy) {
         setRetryPolicy(retryPolicy);
@@ -762,7 +855,7 @@ public class ClientConfiguration {
      * to control the retry count.
      *
      * @return The maximum number of retry attempts for failed retryable requests, or -1 if
-     *         maxErrorRetry has not been set by {@link #setMaxErrorRetry(int)}.
+     * maxErrorRetry has not been set by {@link #setMaxErrorRetry(int)}.
      */
     public int getMaxErrorRetry() {
         return maxErrorRetry;
@@ -772,9 +865,8 @@ public class ClientConfiguration {
      * Sets the maximum number of retry attempts for failed retryable requests (ex: 5xx error
      * responses from services).
      *
-     * @param maxErrorRetry
-     *            The maximum number of retry attempts for failed retryable requests. This value
-     *            should not be negative.
+     * @param maxErrorRetry The maximum number of retry attempts for failed retryable requests. This value
+     *                      should not be negative.
      */
     public void setMaxErrorRetry(int maxErrorRetry) {
         if (maxErrorRetry < 0) {
@@ -787,9 +879,8 @@ public class ClientConfiguration {
      * Sets the maximum number of retry attempts for failed retryable requests (ex: 5xx error
      * responses from services), and returns the updated ClientConfiguration object.
      *
-     * @param maxErrorRetry
-     *            The maximum number of retry attempts for failed retryable requests. This value
-     *            should not be negative.
+     * @param maxErrorRetry The maximum number of retry attempts for failed retryable requests. This value
+     *                      should not be negative.
      * @return The updated ClientConfiguration object.
      */
     public ClientConfiguration withMaxErrorRetry(int maxErrorRetry) {
@@ -803,7 +894,7 @@ public class ClientConfiguration {
      * means infinity, and isn't recommended.
      *
      * @return The amount of time to wait (in milliseconds) for data to be transfered over an
-     *         established, open connection before the connection times out and is closed.
+     * established, open connection before the connection times out and is closed.
      */
     public int getSocketTimeout() {
         return socketTimeout;
@@ -814,9 +905,8 @@ public class ClientConfiguration {
      * established, open connection before the connection times out and is closed. A value of 0
      * means infinity, and isn't recommended.
      *
-     * @param socketTimeout
-     *            The amount of time to wait (in milliseconds) for data to be transfered over an
-     *            established, open connection before the connection is times out and is closed.
+     * @param socketTimeout The amount of time to wait (in milliseconds) for data to be transfered over an
+     *                      established, open connection before the connection is times out and is closed.
      */
     public void setSocketTimeout(int socketTimeout) {
         this.socketTimeout = socketTimeout;
@@ -827,9 +917,8 @@ public class ClientConfiguration {
      * established, open connection before the connection times out and is closed, and returns the
      * updated ClientConfiguration object so that additional method calls may be chained together.
      *
-     * @param socketTimeout
-     *            The amount of time to wait (in milliseconds) for data to be transfered over an
-     *            established, open connection before the connection is times out and is closed.
+     * @param socketTimeout The amount of time to wait (in milliseconds) for data to be transfered over an
+     *                      established, open connection before the connection is times out and is closed.
      * @return The updated ClientConfiguration object.
      */
     public ClientConfiguration withSocketTimeout(int socketTimeout) {
@@ -842,7 +931,7 @@ public class ClientConfiguration {
      * before giving up and timing out. A value of 0 means infinity, and is not recommended.
      *
      * @return The amount of time to wait (in milliseconds) when initially establishing a connection
-     *         before giving up and timing out.
+     * before giving up and timing out.
      */
     public int getConnectionTimeout() {
         return connectionTimeout;
@@ -852,9 +941,8 @@ public class ClientConfiguration {
      * Sets the amount of time to wait (in milliseconds) when initially establishing a connection
      * before giving up and timing out. A value of 0 means infinity, and is not recommended.
      *
-     * @param connectionTimeout
-     *            The amount of time to wait (in milliseconds) when initially establishing a
-     *            connection before giving up and timing out.
+     * @param connectionTimeout The amount of time to wait (in milliseconds) when initially establishing a
+     *                          connection before giving up and timing out.
      */
     public void setConnectionTimeout(int connectionTimeout) {
         this.connectionTimeout = connectionTimeout;
@@ -865,9 +953,8 @@ public class ClientConfiguration {
      * before giving up and timing out, and returns the updated ClientConfiguration object so that
      * additional method calls may be chained together.
      *
-     * @param connectionTimeout
-     *            the amount of time to wait (in milliseconds) when initially establishing a
-     *            connection before giving up and timing out.
+     * @param connectionTimeout the amount of time to wait (in milliseconds) when initially establishing a
+     *                          connection before giving up and timing out.
      * @return The updated ClientConfiguration object.
      */
     public ClientConfiguration withConnectionTimeout(int connectionTimeout) {
@@ -894,9 +981,9 @@ public class ClientConfiguration {
      * </p>
      *
      * @return The amount of time to wait (in milliseconds) for the request to complete before
-     *         giving up and timing out.
+     * giving up and timing out.
      * @see {@link ClientConfiguration#setClientExecutionTimeout(int)} to enforce a timeout across
-     *      all retries
+     * all retries
      */
     public int getRequestTimeout() {
         return requestTimeout;
@@ -921,11 +1008,10 @@ public class ClientConfiguration {
      * <b>Note:</b> This feature is not compatible with Java 1.6.
      * </p>
      *
-     * @param requestTimeout
-     *            The amount of time to wait (in milliseconds) for the request to complete before
-     *            giving up and timing out.
+     * @param requestTimeout The amount of time to wait (in milliseconds) for the request to complete before
+     *                       giving up and timing out.
      * @see {@link ClientConfiguration#setClientExecutionTimeout(int)} to enforce a timeout across
-     *      all retries
+     * all retries
      */
     public void setRequestTimeout(int requestTimeout) {
         this.requestTimeout = requestTimeout;
@@ -951,12 +1037,11 @@ public class ClientConfiguration {
      * <b>Note:</b> This feature is not compatible with Java 1.6.
      * </p>
      *
-     * @param requestTimeout
-     *            The amount of time to wait (in milliseconds) for the request to complete before
-     *            giving up and timing out.
+     * @param requestTimeout The amount of time to wait (in milliseconds) for the request to complete before
+     *                       giving up and timing out.
      * @return The updated ClientConfiguration object.
      * @see {@link ClientConfiguration#setClientExecutionTimeout(int)} to enforce a timeout across
-     *      all retries
+     * all retries
      */
     public ClientConfiguration withRequestTimeout(int requestTimeout) {
         setRequestTimeout(requestTimeout);
@@ -988,9 +1073,9 @@ public class ClientConfiguration {
      * <p>
      * <b>Note:</b> This feature is not compatible with Java 1.6.
      * </p>
-     * 
+     *
      * @return The amount of time (in milliseconds) to allow the client to complete the execution of
-     *         an API call.
+     * an API call.
      * @see {@link ClientConfiguration#setRequestTimeout(int)} to enforce a timeout per HTTP request
      */
     public int getClientExecutionTimeout() {
@@ -1023,9 +1108,8 @@ public class ClientConfiguration {
      * <b>Note:</b> This feature is not compatible with Java 1.6.
      * </p>
      *
-     * @param clientExecutionTimeout
-     *            The amount of time (in milliseconds) to allow the client to complete the execution
-     *            of an API call. A value of null disables this feature for this request.
+     * @param clientExecutionTimeout The amount of time (in milliseconds) to allow the client to complete the execution
+     *                               of an API call. A value of null disables this feature for this request.
      * @see {@link ClientConfiguration#setRequestTimeout(int)} to enforce a timeout per HTTP request
      */
     public void setClientExecutionTimeout(int clientExecutionTimeout) {
@@ -1058,9 +1142,8 @@ public class ClientConfiguration {
      * <b>Note:</b> This feature is not compatible with Java 1.6.
      * </p>
      *
-     * @param clientExecutionTimeout
-     *            The amount of time (in milliseconds) to allow the client to complete the execution
-     *            of an API call. A value of null disables this feature for this request.
+     * @param clientExecutionTimeout The amount of time (in milliseconds) to allow the client to complete the execution
+     *                               of an API call. A value of null disables this feature for this request.
      * @return The updated ClientConfiguration object for method chaining
      * @see {@link ClientConfiguration#setRequestTimeout(int)} to enforce a timeout per HTTP request
      */
@@ -1081,8 +1164,7 @@ public class ClientConfiguration {
     /**
      * Sets whether the {@link IdleConnectionReaper} is to be started as a daemon thread
      *
-     * @param use
-     *            whether the {@link IdleConnectionReaper} is to be started as a daemon thread
+     * @param use whether the {@link IdleConnectionReaper} is to be started as a daemon thread
      * @see IdleConnectionReaper
      */
     public void setUseReaper(boolean use) {
@@ -1092,8 +1174,7 @@ public class ClientConfiguration {
     /**
      * Sets whether the {@link IdleConnectionReaper} is to be started as a daemon thread
      *
-     * @param use
-     *            the {@link IdleConnectionReaper} is to be started as a daemon thread
+     * @param use the {@link IdleConnectionReaper} is to be started as a daemon thread
      * @return The updated ClientConfiguration object.
      */
     public ClientConfiguration withReaper(boolean use) {
@@ -1113,8 +1194,7 @@ public class ClientConfiguration {
     /**
      * Sets whether gzip compression should be used
      *
-     * @param use
-     *            whether gzip compression should be used
+     * @param use whether gzip compression should be used
      */
     public void setUseGzip(boolean use) {
         this.useGzip = use;
@@ -1123,8 +1203,7 @@ public class ClientConfiguration {
     /**
      * Sets whether gzip compression should be used
      *
-     * @param use
-     *            whether gzip compression should be used
+     * @param use whether gzip compression should be used
      * @return The updated ClientConfiguration object.
      */
     public ClientConfiguration withGzip(boolean use) {
@@ -1160,10 +1239,10 @@ public class ClientConfiguration {
      * </ul>
      *
      * @return A two element array containing first the TCP send buffer size hint and then the TCP
-     *         receive buffer size hint.
+     * receive buffer size hint.
      */
     public int[] getSocketBufferSizeHints() {
-        return new int[] { socketSendBufferSizeHint, socketReceiveBufferSizeHint };
+        return new int[]{socketSendBufferSizeHint, socketReceiveBufferSizeHint};
     }
 
     /**
@@ -1193,10 +1272,8 @@ public class ClientConfiguration {
      * <li>http://fasterdata.es.net/TCP-tuning/</li>
      * </ul>
      *
-     * @param socketSendBufferSizeHint
-     *            The size hint (in bytes) for the low level TCP send buffer.
-     * @param socketReceiveBufferSizeHint
-     *            The size hint (in bytes) for the low level TCP receive buffer.
+     * @param socketSendBufferSizeHint    The size hint (in bytes) for the low level TCP send buffer.
+     * @param socketReceiveBufferSizeHint The size hint (in bytes) for the low level TCP receive buffer.
      */
     public void setSocketBufferSizeHints(int socketSendBufferSizeHint, int socketReceiveBufferSizeHint) {
         this.socketSendBufferSizeHint = socketSendBufferSizeHint;
@@ -1233,10 +1310,8 @@ public class ClientConfiguration {
      * <li>http://fasterdata.es.net/TCP-tuning/</li>
      * </ul>
      *
-     * @param socketSendBufferSizeHint
-     *            The size hint (in bytes) for the low level TCP send buffer.
-     * @param socketReceiveBufferSizeHint
-     *            The size hint (in bytes) for the low level TCP receive buffer.
+     * @param socketSendBufferSizeHint    The size hint (in bytes) for the low level TCP send buffer.
+     * @param socketReceiveBufferSizeHint The size hint (in bytes) for the low level TCP receive buffer.
      * @return The updated ClientConfiguration object.
      */
     public ClientConfiguration withSocketBufferSizeHints(int socketSendBufferSizeHint,
@@ -1287,8 +1362,7 @@ public class ClientConfiguration {
      * If non-null, the name returned from this method is used to look up a {@code Signer} class
      * implementing the chosen algorithm by the {@code com.amazonaws.auth.SignerFactory} class.
      *
-     * @param value
-     *            The signature algorithm to use for this client, or null to use the default.
+     * @param value The signature algorithm to use for this client, or null to use the default.
      */
     public void setSignerOverride(final String value) {
         signerOverride = value;
@@ -1312,8 +1386,7 @@ public class ClientConfiguration {
      * If non-null, the name returned from this method is used to look up a {@code Signer} class
      * implementing the chosen algorithm by the {@code com.amazonaws.auth.SignerFactory} class.
      *
-     * @param value
-     *            The signature algorithm to use for this client, or null to use the default.
+     * @param value The signature algorithm to use for this client, or null to use the default.
      * @return The updated ClientConfiguration object.
      */
     public ClientConfiguration withSignerOverride(final String value) {
@@ -1335,8 +1408,7 @@ public class ClientConfiguration {
      * Sets whether to attempt to authenticate preemptively against proxy servers using basic
      * authentication
      *
-     * @param preemptiveBasicProxyAuth
-     *            Whether to authenticate preemptively against proxy server.
+     * @param preemptiveBasicProxyAuth Whether to authenticate preemptively against proxy server.
      */
     public void setPreemptiveBasicProxyAuth(Boolean preemptiveBasicProxyAuth) {
         this.preemptiveBasicProxyAuth = preemptiveBasicProxyAuth;
@@ -1347,8 +1419,7 @@ public class ClientConfiguration {
      * authentication, and returns the updated ClientConfiguration object so that additional method
      * calls may be chained together.
      *
-     * @param preemptiveBasicProxyAuth
-     *            Whether to authenticate preemptively against proxy server.
+     * @param preemptiveBasicProxyAuth Whether to authenticate preemptively against proxy server.
      * @return The updated ClientConfiguration object.
      */
     public ClientConfiguration withPreemptiveBasicProxyAuth(boolean preemptiveBasicProxyAuth) {
@@ -1386,8 +1457,7 @@ public class ClientConfiguration {
      * <p>
      * By default, it is set to {@code -1], i.e. connections do not expire.
      *
-     * @param connectionTTL
-     *            the connection TTL, in milliseconds
+     * @param connectionTTL the connection TTL, in milliseconds
      */
     public void setConnectionTTL(long connectionTTL) {
         this.connectionTTL = connectionTTL;
@@ -1406,8 +1476,7 @@ public class ClientConfiguration {
      * <p>
      * By default, it is set to {@code -1}, i.e. connections do not expire.
      *
-     * @param connectionTTL
-     *            the connection TTL, in milliseconds
+     * @param connectionTTL the connection TTL, in milliseconds
      * @return the updated ClientConfiguration object
      */
     public ClientConfiguration withConnectionTTL(long connectionTTL) {
@@ -1445,8 +1514,7 @@ public class ClientConfiguration {
      * <p>
      * By default, it is set to one minute (60000ms).
      *
-     * @param connectionMaxIdleMillis
-     *            the connection maximum idle time, in milliseconds
+     * @param connectionMaxIdleMillis the connection maximum idle time, in milliseconds
      */
     public void setConnectionMaxIdleMillis(long connectionMaxIdleMillis) {
         this.connectionMaxIdleMillis = connectionMaxIdleMillis;
@@ -1465,8 +1533,7 @@ public class ClientConfiguration {
      * <p>
      * By default, it is set to one minute (60000ms).
      *
-     * @param connectionMaxIdleMillis
-     *            the connection maximum idle time, in milliseconds
+     * @param connectionMaxIdleMillis the connection maximum idle time, in milliseconds
      * @return the updated ClientConfiguration object
      */
     public ClientConfiguration withConnectionMaxIdleMillis(long connectionMaxIdleMillis) {
@@ -1491,7 +1558,7 @@ public class ClientConfiguration {
 
     /**
      * Sets whether or not to enable TCP KeepAlive support at the socket level.
-     * 
+     *
      * @return The updated ClientConfiguration object.
      */
     public ClientConfiguration withTcpKeepAlive(final boolean use) {
@@ -1518,7 +1585,7 @@ public class ClientConfiguration {
 
     /**
      * Sets the DNS Resolver that should be used to for resolving AWS IP addresses.
-     * 
+     *
      * @return The updated ClientConfiguration object.
      */
     public ClientConfiguration withDnsResolver(final DnsResolver resolver) {
@@ -1536,9 +1603,8 @@ public class ClientConfiguration {
     /**
      * Sets the response metadata cache size. By default, it is set to
      * {@value #DEFAULT_RESPONSE_METADATA_CACHE_SIZE}.
-     * 
-     * @param responseMetadataCacheSize
-     *            maximum cache size.
+     *
+     * @param responseMetadataCacheSize maximum cache size.
      */
     public void setResponseMetadataCacheSize(int responseMetadataCacheSize) {
         this.responseMetadataCacheSize = responseMetadataCacheSize;
@@ -1547,9 +1613,8 @@ public class ClientConfiguration {
     /**
      * Sets the response metadata cache size. By default, it is set to
      * {@value #DEFAULT_RESPONSE_METADATA_CACHE_SIZE}.
-     * 
-     * @param responseMetadataCacheSize
-     *            maximum cache size.
+     *
+     * @param responseMetadataCacheSize maximum cache size.
      * @return The updated ClientConfiguration object.
      */
     public ClientConfiguration withResponseMetadataCacheSize(int responseMetadataCacheSize) {
@@ -1603,8 +1668,7 @@ public class ClientConfiguration {
      * Sets if use expect continue should be enabled. By default, it is set to
      * {@value #DEFAULT_USE_EXPECT_CONTINUE}.
      *
-     * @param useExpectContinue
-     *            use expect continue HTTP/1.1 header.
+     * @param useExpectContinue use expect continue HTTP/1.1 header.
      */
     public void setUseExpectContinue(boolean useExpectContinue) {
         this.useExpectContinue = useExpectContinue;
@@ -1614,8 +1678,7 @@ public class ClientConfiguration {
      * Sets if use expect continue should be enabled. By default, it is set to
      * {@value #DEFAULT_USE_EXPECT_CONTINUE}.
      *
-     * @param useExpectContinue
-     *            use expect continue HTTP/1.1 header.
+     * @param useExpectContinue use expect continue HTTP/1.1 header.
      * @return The updated ClientConfiguration object.
      */
     public ClientConfiguration withUseExpectContinue(boolean useExpectContinue) {
