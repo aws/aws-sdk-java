@@ -57,8 +57,10 @@ public enum CodecommitActions implements Action {
     UpdateRepositoryDescription("codecommit:UpdateRepositoryDescription"),
     /** Action for the UpdateRepositoryName operation. */
     UpdateRepositoryName("codecommit:UpdateRepositoryName"),
-
-    ;
+    /** Action for the GitPull operation. */
+    GitPull("codecommit:GitPull"),
+    /** Action for the GitPush operation. */
+    GitPush("codecommit:GitPush");
 
     private final String action;
 
