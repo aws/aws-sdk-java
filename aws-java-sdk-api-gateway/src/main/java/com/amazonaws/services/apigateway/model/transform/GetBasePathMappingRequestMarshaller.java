@@ -37,6 +37,7 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -64,16 +65,17 @@ public class GetBasePathMappingRequestMarshaller
 
         String uriResourcePath = "/domainnames/{domain_name}/basepathmappings/{base_path}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{domain_name}",
-                (getBasePathMappingRequest.getDomainName() == null) ? ""
-                        : StringUtils.fromString(getBasePathMappingRequest
-                                .getDomainName()));
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{domain_name}",
+                        (getBasePathMappingRequest.getDomainName() != null) ? StringUtils
+                                .fromString(getBasePathMappingRequest
+                                        .getDomainName()) : "");
         uriResourcePath = uriResourcePath.replace(
                 "{base_path}",
-                (getBasePathMappingRequest.getBasePath() == null) ? ""
-                        : StringUtils.fromString(getBasePathMappingRequest
-                                .getBasePath()));
+                (getBasePathMappingRequest.getBasePath() != null) ? StringUtils
+                        .fromString(getBasePathMappingRequest.getBasePath())
+                        : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

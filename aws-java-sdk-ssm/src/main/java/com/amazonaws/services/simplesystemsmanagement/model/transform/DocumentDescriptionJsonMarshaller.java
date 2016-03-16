@@ -30,6 +30,7 @@ import com.amazonaws.services.simplesystemsmanagement.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,20 +55,16 @@ public class DocumentDescriptionJsonMarshaller {
             if (documentDescription.getSha1() != null) {
                 jsonWriter.key("Sha1").value(documentDescription.getSha1());
             }
-
             if (documentDescription.getName() != null) {
                 jsonWriter.key("Name").value(documentDescription.getName());
             }
-
             if (documentDescription.getCreatedDate() != null) {
                 jsonWriter.key("CreatedDate").value(
                         documentDescription.getCreatedDate());
             }
-
             if (documentDescription.getStatus() != null) {
                 jsonWriter.key("Status").value(documentDescription.getStatus());
             }
-
             if (documentDescription.getDescription() != null) {
                 jsonWriter.key("Description").value(
                         documentDescription.getDescription());

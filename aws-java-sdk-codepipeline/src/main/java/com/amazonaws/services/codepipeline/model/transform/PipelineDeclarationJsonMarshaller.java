@@ -30,6 +30,7 @@ import com.amazonaws.services.codepipeline.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,12 +55,10 @@ public class PipelineDeclarationJsonMarshaller {
             if (pipelineDeclaration.getName() != null) {
                 jsonWriter.key("name").value(pipelineDeclaration.getName());
             }
-
             if (pipelineDeclaration.getRoleArn() != null) {
                 jsonWriter.key("roleArn").value(
                         pipelineDeclaration.getRoleArn());
             }
-
             if (pipelineDeclaration.getArtifactStore() != null) {
                 jsonWriter.key("artifactStore");
                 ArtifactStoreJsonMarshaller.getInstance().marshall(
@@ -80,7 +79,6 @@ public class PipelineDeclarationJsonMarshaller {
                 }
                 jsonWriter.endArray();
             }
-
             if (pipelineDeclaration.getVersion() != null) {
                 jsonWriter.key("version").value(
                         pipelineDeclaration.getVersion());

@@ -30,6 +30,7 @@ import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -56,7 +57,6 @@ public class TimeBasedAutoScalingConfigurationJsonMarshaller {
                 jsonWriter.key("InstanceId").value(
                         timeBasedAutoScalingConfiguration.getInstanceId());
             }
-
             if (timeBasedAutoScalingConfiguration.getAutoScalingSchedule() != null) {
                 jsonWriter.key("AutoScalingSchedule");
                 WeeklyAutoScalingScheduleJsonMarshaller

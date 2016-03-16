@@ -30,6 +30,7 @@ import com.amazonaws.services.gamelift.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,15 +54,12 @@ public class IpPermissionJsonMarshaller {
             if (ipPermission.getFromPort() != null) {
                 jsonWriter.key("FromPort").value(ipPermission.getFromPort());
             }
-
             if (ipPermission.getToPort() != null) {
                 jsonWriter.key("ToPort").value(ipPermission.getToPort());
             }
-
             if (ipPermission.getIpRange() != null) {
                 jsonWriter.key("IpRange").value(ipPermission.getIpRange());
             }
-
             if (ipPermission.getProtocol() != null) {
                 jsonWriter.key("Protocol").value(ipPermission.getProtocol());
             }

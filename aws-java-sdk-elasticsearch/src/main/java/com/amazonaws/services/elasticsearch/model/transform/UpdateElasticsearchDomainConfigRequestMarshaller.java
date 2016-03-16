@@ -37,6 +37,7 @@ import com.amazonaws.services.elasticsearch.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -67,10 +68,10 @@ public class UpdateElasticsearchDomainConfigRequestMarshaller
         uriResourcePath = uriResourcePath
                 .replace(
                         "{DomainName}",
-                        (updateElasticsearchDomainConfigRequest.getDomainName() == null) ? ""
-                                : StringUtils
-                                        .fromString(updateElasticsearchDomainConfigRequest
-                                                .getDomainName()));
+                        (updateElasticsearchDomainConfigRequest.getDomainName() != null) ? StringUtils
+                                .fromString(updateElasticsearchDomainConfigRequest
+                                        .getDomainName())
+                                : "");
         request.setResourcePath(uriResourcePath);
 
         try {
@@ -89,14 +90,12 @@ public class UpdateElasticsearchDomainConfigRequestMarshaller
                                         .getElasticsearchClusterConfig(),
                                 jsonWriter);
             }
-
             if (updateElasticsearchDomainConfigRequest.getEBSOptions() != null) {
                 jsonWriter.key("EBSOptions");
                 EBSOptionsJsonMarshaller.getInstance().marshall(
                         updateElasticsearchDomainConfigRequest.getEBSOptions(),
                         jsonWriter);
             }
-
             if (updateElasticsearchDomainConfigRequest.getSnapshotOptions() != null) {
                 jsonWriter.key("SnapshotOptions");
                 SnapshotOptionsJsonMarshaller
@@ -123,7 +122,6 @@ public class UpdateElasticsearchDomainConfigRequestMarshaller
                 }
                 jsonWriter.endObject();
             }
-
             if (updateElasticsearchDomainConfigRequest.getAccessPolicies() != null) {
                 jsonWriter.key("AccessPolicies").value(
                         updateElasticsearchDomainConfigRequest

@@ -30,6 +30,7 @@ import com.amazonaws.services.codedeploy.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,13 +56,11 @@ public class RevisionLocationJsonMarshaller {
                 jsonWriter.key("revisionType").value(
                         revisionLocation.getRevisionType());
             }
-
             if (revisionLocation.getS3Location() != null) {
                 jsonWriter.key("s3Location");
                 S3LocationJsonMarshaller.getInstance().marshall(
                         revisionLocation.getS3Location(), jsonWriter);
             }
-
             if (revisionLocation.getGitHubLocation() != null) {
                 jsonWriter.key("gitHubLocation");
                 GitHubLocationJsonMarshaller.getInstance().marshall(

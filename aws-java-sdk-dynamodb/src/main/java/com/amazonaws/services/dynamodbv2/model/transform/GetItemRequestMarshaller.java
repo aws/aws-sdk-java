@@ -37,6 +37,7 @@ import com.amazonaws.services.dynamodbv2.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -102,17 +103,14 @@ public class GetItemRequestMarshaller implements
                 }
                 jsonWriter.endArray();
             }
-
             if (getItemRequest.getConsistentRead() != null) {
                 jsonWriter.key("ConsistentRead").value(
                         getItemRequest.getConsistentRead());
             }
-
             if (getItemRequest.getReturnConsumedCapacity() != null) {
                 jsonWriter.key("ReturnConsumedCapacity").value(
                         getItemRequest.getReturnConsumedCapacity());
             }
-
             if (getItemRequest.getProjectionExpression() != null) {
                 jsonWriter.key("ProjectionExpression").value(
                         getItemRequest.getProjectionExpression());

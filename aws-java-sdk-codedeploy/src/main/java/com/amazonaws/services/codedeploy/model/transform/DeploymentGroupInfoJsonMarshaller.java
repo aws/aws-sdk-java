@@ -30,6 +30,7 @@ import com.amazonaws.services.codedeploy.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,17 +56,14 @@ public class DeploymentGroupInfoJsonMarshaller {
                 jsonWriter.key("applicationName").value(
                         deploymentGroupInfo.getApplicationName());
             }
-
             if (deploymentGroupInfo.getDeploymentGroupId() != null) {
                 jsonWriter.key("deploymentGroupId").value(
                         deploymentGroupInfo.getDeploymentGroupId());
             }
-
             if (deploymentGroupInfo.getDeploymentGroupName() != null) {
                 jsonWriter.key("deploymentGroupName").value(
                         deploymentGroupInfo.getDeploymentGroupName());
             }
-
             if (deploymentGroupInfo.getDeploymentConfigName() != null) {
                 jsonWriter.key("deploymentConfigName").value(
                         deploymentGroupInfo.getDeploymentConfigName());
@@ -119,12 +117,10 @@ public class DeploymentGroupInfoJsonMarshaller {
                 }
                 jsonWriter.endArray();
             }
-
             if (deploymentGroupInfo.getServiceRoleArn() != null) {
                 jsonWriter.key("serviceRoleArn").value(
                         deploymentGroupInfo.getServiceRoleArn());
             }
-
             if (deploymentGroupInfo.getTargetRevision() != null) {
                 jsonWriter.key("targetRevision");
                 RevisionLocationJsonMarshaller.getInstance().marshall(

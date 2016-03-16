@@ -30,6 +30,7 @@ import com.amazonaws.services.dynamodbv2.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,27 +56,22 @@ public class StreamDescriptionJsonMarshaller {
                 jsonWriter.key("StreamArn").value(
                         streamDescription.getStreamArn());
             }
-
             if (streamDescription.getStreamLabel() != null) {
                 jsonWriter.key("StreamLabel").value(
                         streamDescription.getStreamLabel());
             }
-
             if (streamDescription.getStreamStatus() != null) {
                 jsonWriter.key("StreamStatus").value(
                         streamDescription.getStreamStatus());
             }
-
             if (streamDescription.getStreamViewType() != null) {
                 jsonWriter.key("StreamViewType").value(
                         streamDescription.getStreamViewType());
             }
-
             if (streamDescription.getCreationRequestDateTime() != null) {
                 jsonWriter.key("CreationRequestDateTime").value(
                         streamDescription.getCreationRequestDateTime());
             }
-
             if (streamDescription.getTableName() != null) {
                 jsonWriter.key("TableName").value(
                         streamDescription.getTableName());
@@ -109,7 +105,6 @@ public class StreamDescriptionJsonMarshaller {
                 }
                 jsonWriter.endArray();
             }
-
             if (streamDescription.getLastEvaluatedShardId() != null) {
                 jsonWriter.key("LastEvaluatedShardId").value(
                         streamDescription.getLastEvaluatedShardId());

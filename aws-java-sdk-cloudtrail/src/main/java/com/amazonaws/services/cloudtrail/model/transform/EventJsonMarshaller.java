@@ -30,6 +30,7 @@ import com.amazonaws.services.cloudtrail.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,15 +54,12 @@ public class EventJsonMarshaller {
             if (event.getEventId() != null) {
                 jsonWriter.key("EventId").value(event.getEventId());
             }
-
             if (event.getEventName() != null) {
                 jsonWriter.key("EventName").value(event.getEventName());
             }
-
             if (event.getEventTime() != null) {
                 jsonWriter.key("EventTime").value(event.getEventTime());
             }
-
             if (event.getUsername() != null) {
                 jsonWriter.key("Username").value(event.getUsername());
             }
@@ -80,7 +78,6 @@ public class EventJsonMarshaller {
                 }
                 jsonWriter.endArray();
             }
-
             if (event.getCloudTrailEvent() != null) {
                 jsonWriter.key("CloudTrailEvent").value(
                         event.getCloudTrailEvent());

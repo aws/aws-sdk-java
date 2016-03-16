@@ -37,6 +37,7 @@ import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -65,16 +66,14 @@ public class ListPresetsRequestMarshaller implements
 
         request.setResourcePath(uriResourcePath);
 
-        String ascending = (listPresetsRequest.getAscending() == null) ? null
-                : StringUtils.fromString(listPresetsRequest.getAscending());
-        if (ascending != null) {
-            request.addParameter("Ascending", ascending);
+        if (listPresetsRequest.getAscending() != null) {
+            request.addParameter("Ascending",
+                    StringUtils.fromString(listPresetsRequest.getAscending()));
         }
 
-        String pageToken = (listPresetsRequest.getPageToken() == null) ? null
-                : StringUtils.fromString(listPresetsRequest.getPageToken());
-        if (pageToken != null) {
-            request.addParameter("PageToken", pageToken);
+        if (listPresetsRequest.getPageToken() != null) {
+            request.addParameter("PageToken",
+                    StringUtils.fromString(listPresetsRequest.getPageToken()));
         }
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

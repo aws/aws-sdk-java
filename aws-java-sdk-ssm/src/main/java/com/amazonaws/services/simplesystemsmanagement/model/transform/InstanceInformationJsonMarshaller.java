@@ -30,6 +30,7 @@ import com.amazonaws.services.simplesystemsmanagement.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,37 +56,30 @@ public class InstanceInformationJsonMarshaller {
                 jsonWriter.key("InstanceId").value(
                         instanceInformation.getInstanceId());
             }
-
             if (instanceInformation.getPingStatus() != null) {
                 jsonWriter.key("PingStatus").value(
                         instanceInformation.getPingStatus());
             }
-
             if (instanceInformation.getLastPingDateTime() != null) {
                 jsonWriter.key("LastPingDateTime").value(
                         instanceInformation.getLastPingDateTime());
             }
-
             if (instanceInformation.getAgentVersion() != null) {
                 jsonWriter.key("AgentVersion").value(
                         instanceInformation.getAgentVersion());
             }
-
             if (instanceInformation.getIsLatestVersion() != null) {
                 jsonWriter.key("IsLatestVersion").value(
                         instanceInformation.getIsLatestVersion());
             }
-
             if (instanceInformation.getPlatformType() != null) {
                 jsonWriter.key("PlatformType").value(
                         instanceInformation.getPlatformType());
             }
-
             if (instanceInformation.getPlatformName() != null) {
                 jsonWriter.key("PlatformName").value(
                         instanceInformation.getPlatformName());
             }
-
             if (instanceInformation.getPlatformVersion() != null) {
                 jsonWriter.key("PlatformVersion").value(
                         instanceInformation.getPlatformVersion());

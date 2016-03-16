@@ -37,6 +37,7 @@ import com.amazonaws.services.dynamodbv2.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -70,11 +71,9 @@ public class QueryRequestMarshaller implements
             if (queryRequest.getTableName() != null) {
                 jsonWriter.key("TableName").value(queryRequest.getTableName());
             }
-
             if (queryRequest.getIndexName() != null) {
                 jsonWriter.key("IndexName").value(queryRequest.getIndexName());
             }
-
             if (queryRequest.getSelect() != null) {
                 jsonWriter.key("Select").value(queryRequest.getSelect());
             }
@@ -91,11 +90,9 @@ public class QueryRequestMarshaller implements
                 }
                 jsonWriter.endArray();
             }
-
             if (queryRequest.getLimit() != null) {
                 jsonWriter.key("Limit").value(queryRequest.getLimit());
             }
-
             if (queryRequest.getConsistentRead() != null) {
                 jsonWriter.key("ConsistentRead").value(
                         queryRequest.getConsistentRead());
@@ -136,12 +133,10 @@ public class QueryRequestMarshaller implements
                 }
                 jsonWriter.endObject();
             }
-
             if (queryRequest.getConditionalOperator() != null) {
                 jsonWriter.key("ConditionalOperator").value(
                         queryRequest.getConditionalOperator());
             }
-
             if (queryRequest.getScanIndexForward() != null) {
                 jsonWriter.key("ScanIndexForward").value(
                         queryRequest.getScanIndexForward());
@@ -165,22 +160,18 @@ public class QueryRequestMarshaller implements
                 }
                 jsonWriter.endObject();
             }
-
             if (queryRequest.getReturnConsumedCapacity() != null) {
                 jsonWriter.key("ReturnConsumedCapacity").value(
                         queryRequest.getReturnConsumedCapacity());
             }
-
             if (queryRequest.getProjectionExpression() != null) {
                 jsonWriter.key("ProjectionExpression").value(
                         queryRequest.getProjectionExpression());
             }
-
             if (queryRequest.getFilterExpression() != null) {
                 jsonWriter.key("FilterExpression").value(
                         queryRequest.getFilterExpression());
             }
-
             if (queryRequest.getKeyConditionExpression() != null) {
                 jsonWriter.key("KeyConditionExpression").value(
                         queryRequest.getKeyConditionExpression());

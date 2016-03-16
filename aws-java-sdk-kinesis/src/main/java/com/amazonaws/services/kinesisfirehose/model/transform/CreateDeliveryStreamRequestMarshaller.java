@@ -37,6 +37,7 @@ import com.amazonaws.services.kinesisfirehose.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -74,7 +75,6 @@ public class CreateDeliveryStreamRequestMarshaller
                 jsonWriter.key("DeliveryStreamName").value(
                         createDeliveryStreamRequest.getDeliveryStreamName());
             }
-
             if (createDeliveryStreamRequest.getS3DestinationConfiguration() != null) {
                 jsonWriter.key("S3DestinationConfiguration");
                 S3DestinationConfigurationJsonMarshaller
@@ -84,7 +84,6 @@ public class CreateDeliveryStreamRequestMarshaller
                                         .getS3DestinationConfiguration(),
                                 jsonWriter);
             }
-
             if (createDeliveryStreamRequest
                     .getRedshiftDestinationConfiguration() != null) {
                 jsonWriter.key("RedshiftDestinationConfiguration");

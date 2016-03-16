@@ -37,6 +37,7 @@ import com.amazonaws.services.route53domains.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -73,52 +74,43 @@ public class RegisterDomainRequestMarshaller implements
                 jsonWriter.key("DomainName").value(
                         registerDomainRequest.getDomainName());
             }
-
             if (registerDomainRequest.getIdnLangCode() != null) {
                 jsonWriter.key("IdnLangCode").value(
                         registerDomainRequest.getIdnLangCode());
             }
-
             if (registerDomainRequest.getDurationInYears() != null) {
                 jsonWriter.key("DurationInYears").value(
                         registerDomainRequest.getDurationInYears());
             }
-
             if (registerDomainRequest.getAutoRenew() != null) {
                 jsonWriter.key("AutoRenew").value(
                         registerDomainRequest.getAutoRenew());
             }
-
             if (registerDomainRequest.getAdminContact() != null) {
                 jsonWriter.key("AdminContact");
                 ContactDetailJsonMarshaller.getInstance().marshall(
                         registerDomainRequest.getAdminContact(), jsonWriter);
             }
-
             if (registerDomainRequest.getRegistrantContact() != null) {
                 jsonWriter.key("RegistrantContact");
                 ContactDetailJsonMarshaller.getInstance().marshall(
                         registerDomainRequest.getRegistrantContact(),
                         jsonWriter);
             }
-
             if (registerDomainRequest.getTechContact() != null) {
                 jsonWriter.key("TechContact");
                 ContactDetailJsonMarshaller.getInstance().marshall(
                         registerDomainRequest.getTechContact(), jsonWriter);
             }
-
             if (registerDomainRequest.getPrivacyProtectAdminContact() != null) {
                 jsonWriter.key("PrivacyProtectAdminContact").value(
                         registerDomainRequest.getPrivacyProtectAdminContact());
             }
-
             if (registerDomainRequest.getPrivacyProtectRegistrantContact() != null) {
                 jsonWriter.key("PrivacyProtectRegistrantContact").value(
                         registerDomainRequest
                                 .getPrivacyProtectRegistrantContact());
             }
-
             if (registerDomainRequest.getPrivacyProtectTechContact() != null) {
                 jsonWriter.key("PrivacyProtectTechContact").value(
                         registerDomainRequest.getPrivacyProtectTechContact());

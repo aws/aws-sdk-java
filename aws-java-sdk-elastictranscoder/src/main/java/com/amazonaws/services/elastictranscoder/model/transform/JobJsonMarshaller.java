@@ -30,6 +30,7 @@ import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,21 +54,17 @@ public class JobJsonMarshaller {
             if (job.getId() != null) {
                 jsonWriter.key("Id").value(job.getId());
             }
-
             if (job.getArn() != null) {
                 jsonWriter.key("Arn").value(job.getArn());
             }
-
             if (job.getPipelineId() != null) {
                 jsonWriter.key("PipelineId").value(job.getPipelineId());
             }
-
             if (job.getInput() != null) {
                 jsonWriter.key("Input");
                 JobInputJsonMarshaller.getInstance().marshall(job.getInput(),
                         jsonWriter);
             }
-
             if (job.getOutput() != null) {
                 jsonWriter.key("Output");
                 JobOutputJsonMarshaller.getInstance().marshall(job.getOutput(),
@@ -88,7 +85,6 @@ public class JobJsonMarshaller {
                 }
                 jsonWriter.endArray();
             }
-
             if (job.getOutputKeyPrefix() != null) {
                 jsonWriter.key("OutputKeyPrefix").value(
                         job.getOutputKeyPrefix());
@@ -108,7 +104,6 @@ public class JobJsonMarshaller {
                 }
                 jsonWriter.endArray();
             }
-
             if (job.getStatus() != null) {
                 jsonWriter.key("Status").value(job.getStatus());
             }
@@ -130,7 +125,6 @@ public class JobJsonMarshaller {
                 }
                 jsonWriter.endObject();
             }
-
             if (job.getTiming() != null) {
                 jsonWriter.key("Timing");
                 TimingJsonMarshaller.getInstance().marshall(job.getTiming(),

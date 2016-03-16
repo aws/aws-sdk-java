@@ -12,7 +12,11 @@
         <#list shape.members as member>
         <#if member.http.isUri() >
             <#local getMember = getterFunctionPrefix + ".get" + member.name />
-            uriResourcePath = uriResourcePath.replace("{${member.http.marshallLocationName}}", (${getMember}() == null ) ? "" : StringUtils.from${member.variable.simpleType}(${getMember}()));
+            <#if member.idempotencyToken>
+                uriResourcePath = uriResourcePath.replace("{${member.http.marshallLocationName}}", <@IdempotencyTokenMacro.content getMember member.variable.simpleType/>);
+            <#else>
+                uriResourcePath = uriResourcePath.replace("{${member.http.marshallLocationName}}", (${getMember}() != null ) ? StringUtils.from${member.variable.simpleType}(${getMember}()) : "");
+            </#if>
         </#if>
         </#list>
      </#if>

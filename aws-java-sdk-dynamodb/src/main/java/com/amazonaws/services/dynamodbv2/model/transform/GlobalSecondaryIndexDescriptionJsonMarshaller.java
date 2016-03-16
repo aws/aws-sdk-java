@@ -30,6 +30,7 @@ import com.amazonaws.services.dynamodbv2.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -71,24 +72,20 @@ public class GlobalSecondaryIndexDescriptionJsonMarshaller {
                 }
                 jsonWriter.endArray();
             }
-
             if (globalSecondaryIndexDescription.getProjection() != null) {
                 jsonWriter.key("Projection");
                 ProjectionJsonMarshaller.getInstance().marshall(
                         globalSecondaryIndexDescription.getProjection(),
                         jsonWriter);
             }
-
             if (globalSecondaryIndexDescription.getIndexStatus() != null) {
                 jsonWriter.key("IndexStatus").value(
                         globalSecondaryIndexDescription.getIndexStatus());
             }
-
             if (globalSecondaryIndexDescription.getBackfilling() != null) {
                 jsonWriter.key("Backfilling").value(
                         globalSecondaryIndexDescription.getBackfilling());
             }
-
             if (globalSecondaryIndexDescription.getProvisionedThroughput() != null) {
                 jsonWriter.key("ProvisionedThroughput");
                 ProvisionedThroughputDescriptionJsonMarshaller
@@ -98,17 +95,14 @@ public class GlobalSecondaryIndexDescriptionJsonMarshaller {
                                         .getProvisionedThroughput(),
                                 jsonWriter);
             }
-
             if (globalSecondaryIndexDescription.getIndexSizeBytes() != null) {
                 jsonWriter.key("IndexSizeBytes").value(
                         globalSecondaryIndexDescription.getIndexSizeBytes());
             }
-
             if (globalSecondaryIndexDescription.getItemCount() != null) {
                 jsonWriter.key("ItemCount").value(
                         globalSecondaryIndexDescription.getItemCount());
             }
-
             if (globalSecondaryIndexDescription.getIndexArn() != null) {
                 jsonWriter.key("IndexArn").value(
                         globalSecondaryIndexDescription.getIndexArn());

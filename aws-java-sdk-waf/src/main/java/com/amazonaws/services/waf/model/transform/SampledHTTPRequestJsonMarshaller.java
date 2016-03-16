@@ -30,6 +30,7 @@ import com.amazonaws.services.waf.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -56,16 +57,13 @@ public class SampledHTTPRequestJsonMarshaller {
                 HTTPRequestJsonMarshaller.getInstance().marshall(
                         sampledHTTPRequest.getRequest(), jsonWriter);
             }
-
             if (sampledHTTPRequest.getWeight() != null) {
                 jsonWriter.key("Weight").value(sampledHTTPRequest.getWeight());
             }
-
             if (sampledHTTPRequest.getTimestamp() != null) {
                 jsonWriter.key("Timestamp").value(
                         sampledHTTPRequest.getTimestamp());
             }
-
             if (sampledHTTPRequest.getAction() != null) {
                 jsonWriter.key("Action").value(sampledHTTPRequest.getAction());
             }

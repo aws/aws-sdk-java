@@ -30,6 +30,7 @@ import com.amazonaws.services.codepipeline.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,7 +56,6 @@ public class S3ArtifactLocationJsonMarshaller {
                 jsonWriter.key("bucketName").value(
                         s3ArtifactLocation.getBucketName());
             }
-
             if (s3ArtifactLocation.getObjectKey() != null) {
                 jsonWriter.key("objectKey").value(
                         s3ArtifactLocation.getObjectKey());

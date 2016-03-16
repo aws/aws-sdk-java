@@ -32,6 +32,7 @@ import com.amazonaws.services.cloudfront.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.XMLWriter;
 
 /**
@@ -63,12 +64,12 @@ public class DeleteStreamingDistributionRequestMarshaller
 
         String uriResourcePath = "/2016-01-28/streaming-distribution/{Id}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{Id}",
-                (deleteStreamingDistributionRequest.getId() == null) ? ""
-                        : StringUtils
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{Id}",
+                        (deleteStreamingDistributionRequest.getId() != null) ? StringUtils
                                 .fromString(deleteStreamingDistributionRequest
-                                        .getId()));
+                                        .getId()) : "");
         request.setResourcePath(uriResourcePath);
 
         return request;

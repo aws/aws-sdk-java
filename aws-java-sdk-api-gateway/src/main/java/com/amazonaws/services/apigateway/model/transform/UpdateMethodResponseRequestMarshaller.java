@@ -37,6 +37,7 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -64,26 +65,30 @@ public class UpdateMethodResponseRequestMarshaller
 
         String uriResourcePath = "/restapis/{restapi_id}/resources/{resource_id}/methods/{http_method}/responses/{status_code}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{restapi_id}",
-                (updateMethodResponseRequest.getRestApiId() == null) ? ""
-                        : StringUtils.fromString(updateMethodResponseRequest
-                                .getRestApiId()));
-        uriResourcePath = uriResourcePath.replace(
-                "{resource_id}",
-                (updateMethodResponseRequest.getResourceId() == null) ? ""
-                        : StringUtils.fromString(updateMethodResponseRequest
-                                .getResourceId()));
-        uriResourcePath = uriResourcePath.replace(
-                "{http_method}",
-                (updateMethodResponseRequest.getHttpMethod() == null) ? ""
-                        : StringUtils.fromString(updateMethodResponseRequest
-                                .getHttpMethod()));
-        uriResourcePath = uriResourcePath.replace(
-                "{status_code}",
-                (updateMethodResponseRequest.getStatusCode() == null) ? ""
-                        : StringUtils.fromString(updateMethodResponseRequest
-                                .getStatusCode()));
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{restapi_id}",
+                        (updateMethodResponseRequest.getRestApiId() != null) ? StringUtils
+                                .fromString(updateMethodResponseRequest
+                                        .getRestApiId()) : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{resource_id}",
+                        (updateMethodResponseRequest.getResourceId() != null) ? StringUtils
+                                .fromString(updateMethodResponseRequest
+                                        .getResourceId()) : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{http_method}",
+                        (updateMethodResponseRequest.getHttpMethod() != null) ? StringUtils
+                                .fromString(updateMethodResponseRequest
+                                        .getHttpMethod()) : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{status_code}",
+                        (updateMethodResponseRequest.getStatusCode() != null) ? StringUtils
+                                .fromString(updateMethodResponseRequest
+                                        .getStatusCode()) : "");
         request.setResourcePath(uriResourcePath);
 
         try {

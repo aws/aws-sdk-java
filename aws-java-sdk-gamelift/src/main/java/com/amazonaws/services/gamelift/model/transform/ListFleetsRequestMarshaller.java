@@ -37,6 +37,7 @@ import com.amazonaws.services.gamelift.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -71,11 +72,9 @@ public class ListFleetsRequestMarshaller implements
             if (listFleetsRequest.getBuildId() != null) {
                 jsonWriter.key("BuildId").value(listFleetsRequest.getBuildId());
             }
-
             if (listFleetsRequest.getLimit() != null) {
                 jsonWriter.key("Limit").value(listFleetsRequest.getLimit());
             }
-
             if (listFleetsRequest.getNextToken() != null) {
                 jsonWriter.key("NextToken").value(
                         listFleetsRequest.getNextToken());

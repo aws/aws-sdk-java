@@ -37,6 +37,7 @@ import com.amazonaws.services.directory.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -87,12 +88,10 @@ public class DescribeSnapshotsRequestMarshaller implements
                 }
                 jsonWriter.endArray();
             }
-
             if (describeSnapshotsRequest.getNextToken() != null) {
                 jsonWriter.key("NextToken").value(
                         describeSnapshotsRequest.getNextToken());
             }
-
             if (describeSnapshotsRequest.getLimit() != null) {
                 jsonWriter.key("Limit").value(
                         describeSnapshotsRequest.getLimit());

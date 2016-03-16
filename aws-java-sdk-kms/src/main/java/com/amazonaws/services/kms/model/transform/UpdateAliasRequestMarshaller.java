@@ -37,6 +37,7 @@ import com.amazonaws.services.kms.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -72,7 +73,6 @@ public class UpdateAliasRequestMarshaller implements
                 jsonWriter.key("AliasName").value(
                         updateAliasRequest.getAliasName());
             }
-
             if (updateAliasRequest.getTargetKeyId() != null) {
                 jsonWriter.key("TargetKeyId").value(
                         updateAliasRequest.getTargetKeyId());

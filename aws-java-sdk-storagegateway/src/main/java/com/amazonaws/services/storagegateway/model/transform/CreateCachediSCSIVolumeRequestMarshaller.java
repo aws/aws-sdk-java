@@ -37,6 +37,7 @@ import com.amazonaws.services.storagegateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -74,27 +75,22 @@ public class CreateCachediSCSIVolumeRequestMarshaller
                 jsonWriter.key("GatewayARN").value(
                         createCachediSCSIVolumeRequest.getGatewayARN());
             }
-
             if (createCachediSCSIVolumeRequest.getVolumeSizeInBytes() != null) {
                 jsonWriter.key("VolumeSizeInBytes").value(
                         createCachediSCSIVolumeRequest.getVolumeSizeInBytes());
             }
-
             if (createCachediSCSIVolumeRequest.getSnapshotId() != null) {
                 jsonWriter.key("SnapshotId").value(
                         createCachediSCSIVolumeRequest.getSnapshotId());
             }
-
             if (createCachediSCSIVolumeRequest.getTargetName() != null) {
                 jsonWriter.key("TargetName").value(
                         createCachediSCSIVolumeRequest.getTargetName());
             }
-
             if (createCachediSCSIVolumeRequest.getNetworkInterfaceId() != null) {
                 jsonWriter.key("NetworkInterfaceId").value(
                         createCachediSCSIVolumeRequest.getNetworkInterfaceId());
             }
-
             if (createCachediSCSIVolumeRequest.getClientToken() != null) {
                 jsonWriter.key("ClientToken").value(
                         createCachediSCSIVolumeRequest.getClientToken());

@@ -32,6 +32,7 @@ import com.amazonaws.services.cloudfront.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.XMLWriter;
 
 /**
@@ -56,15 +57,16 @@ public class GetInvalidationRequestMarshaller implements
 
         String uriResourcePath = "/2016-01-28/distribution/{DistributionId}/invalidation/{Id}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{DistributionId}",
-                (getInvalidationRequest.getDistributionId() == null) ? ""
-                        : StringUtils.fromString(getInvalidationRequest
-                                .getDistributionId()));
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{DistributionId}",
+                        (getInvalidationRequest.getDistributionId() != null) ? StringUtils
+                                .fromString(getInvalidationRequest
+                                        .getDistributionId()) : "");
         uriResourcePath = uriResourcePath.replace(
                 "{Id}",
-                (getInvalidationRequest.getId() == null) ? "" : StringUtils
-                        .fromString(getInvalidationRequest.getId()));
+                (getInvalidationRequest.getId() != null) ? StringUtils
+                        .fromString(getInvalidationRequest.getId()) : "");
         request.setResourcePath(uriResourcePath);
 
         return request;

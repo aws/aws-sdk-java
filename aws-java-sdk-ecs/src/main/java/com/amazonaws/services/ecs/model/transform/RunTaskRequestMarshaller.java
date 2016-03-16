@@ -37,6 +37,7 @@ import com.amazonaws.services.ecs.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -71,22 +72,18 @@ public class RunTaskRequestMarshaller implements
             if (runTaskRequest.getCluster() != null) {
                 jsonWriter.key("cluster").value(runTaskRequest.getCluster());
             }
-
             if (runTaskRequest.getTaskDefinition() != null) {
                 jsonWriter.key("taskDefinition").value(
                         runTaskRequest.getTaskDefinition());
             }
-
             if (runTaskRequest.getOverrides() != null) {
                 jsonWriter.key("overrides");
                 TaskOverrideJsonMarshaller.getInstance().marshall(
                         runTaskRequest.getOverrides(), jsonWriter);
             }
-
             if (runTaskRequest.getCount() != null) {
                 jsonWriter.key("count").value(runTaskRequest.getCount());
             }
-
             if (runTaskRequest.getStartedBy() != null) {
                 jsonWriter.key("startedBy")
                         .value(runTaskRequest.getStartedBy());

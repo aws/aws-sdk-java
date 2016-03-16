@@ -30,6 +30,7 @@ import com.amazonaws.services.inspector.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,12 +55,10 @@ public class ApplicationJsonMarshaller {
                 jsonWriter.key("applicationArn").value(
                         application.getApplicationArn());
             }
-
             if (application.getApplicationName() != null) {
                 jsonWriter.key("applicationName").value(
                         application.getApplicationName());
             }
-
             if (application.getResourceGroupArn() != null) {
                 jsonWriter.key("resourceGroupArn").value(
                         application.getResourceGroupArn());

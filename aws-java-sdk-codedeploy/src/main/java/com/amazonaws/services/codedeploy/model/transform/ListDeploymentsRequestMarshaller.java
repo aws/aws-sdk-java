@@ -37,6 +37,7 @@ import com.amazonaws.services.codedeploy.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -72,7 +73,6 @@ public class ListDeploymentsRequestMarshaller implements
                 jsonWriter.key("applicationName").value(
                         listDeploymentsRequest.getApplicationName());
             }
-
             if (listDeploymentsRequest.getDeploymentGroupName() != null) {
                 jsonWriter.key("deploymentGroupName").value(
                         listDeploymentsRequest.getDeploymentGroupName());
@@ -91,14 +91,12 @@ public class ListDeploymentsRequestMarshaller implements
                 }
                 jsonWriter.endArray();
             }
-
             if (listDeploymentsRequest.getCreateTimeRange() != null) {
                 jsonWriter.key("createTimeRange");
                 TimeRangeJsonMarshaller.getInstance()
                         .marshall(listDeploymentsRequest.getCreateTimeRange(),
                                 jsonWriter);
             }
-
             if (listDeploymentsRequest.getNextToken() != null) {
                 jsonWriter.key("nextToken").value(
                         listDeploymentsRequest.getNextToken());

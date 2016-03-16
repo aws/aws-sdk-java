@@ -37,6 +37,7 @@ import com.amazonaws.services.machinelearning.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -74,23 +75,19 @@ public class CreateBatchPredictionRequestMarshaller
                 jsonWriter.key("BatchPredictionId").value(
                         createBatchPredictionRequest.getBatchPredictionId());
             }
-
             if (createBatchPredictionRequest.getBatchPredictionName() != null) {
                 jsonWriter.key("BatchPredictionName").value(
                         createBatchPredictionRequest.getBatchPredictionName());
             }
-
             if (createBatchPredictionRequest.getMLModelId() != null) {
                 jsonWriter.key("MLModelId").value(
                         createBatchPredictionRequest.getMLModelId());
             }
-
             if (createBatchPredictionRequest.getBatchPredictionDataSourceId() != null) {
                 jsonWriter.key("BatchPredictionDataSourceId").value(
                         createBatchPredictionRequest
                                 .getBatchPredictionDataSourceId());
             }
-
             if (createBatchPredictionRequest.getOutputUri() != null) {
                 jsonWriter.key("OutputUri").value(
                         createBatchPredictionRequest.getOutputUri());

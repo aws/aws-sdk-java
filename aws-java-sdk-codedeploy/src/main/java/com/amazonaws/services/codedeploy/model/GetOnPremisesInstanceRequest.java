@@ -29,18 +29,19 @@ public class GetOnPremisesInstanceRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the on-premises instance to get information about
+     * The name of the on-premises instance about which to get information.
      * </p>
      */
     private String instanceName;
 
     /**
      * <p>
-     * The name of the on-premises instance to get information about
+     * The name of the on-premises instance about which to get information.
      * </p>
      * 
      * @param instanceName
-     *        The name of the on-premises instance to get information about
+     *        The name of the on-premises instance about which to get
+     *        information.
      */
 
     public void setInstanceName(String instanceName) {
@@ -49,10 +50,11 @@ public class GetOnPremisesInstanceRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the on-premises instance to get information about
+     * The name of the on-premises instance about which to get information.
      * </p>
      * 
-     * @return The name of the on-premises instance to get information about
+     * @return The name of the on-premises instance about which to get
+     *         information.
      */
 
     public String getInstanceName() {
@@ -61,11 +63,12 @@ public class GetOnPremisesInstanceRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the on-premises instance to get information about
+     * The name of the on-premises instance about which to get information.
      * </p>
      * 
      * @param instanceName
-     *        The name of the on-premises instance to get information about
+     *        The name of the on-premises instance about which to get
+     *        information.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

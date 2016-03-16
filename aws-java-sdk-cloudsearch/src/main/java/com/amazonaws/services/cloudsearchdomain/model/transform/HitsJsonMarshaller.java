@@ -30,6 +30,7 @@ import com.amazonaws.services.cloudsearchdomain.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,11 +54,9 @@ public class HitsJsonMarshaller {
             if (hits.getFound() != null) {
                 jsonWriter.key("found").value(hits.getFound());
             }
-
             if (hits.getStart() != null) {
                 jsonWriter.key("start").value(hits.getStart());
             }
-
             if (hits.getCursor() != null) {
                 jsonWriter.key("cursor").value(hits.getCursor());
             }

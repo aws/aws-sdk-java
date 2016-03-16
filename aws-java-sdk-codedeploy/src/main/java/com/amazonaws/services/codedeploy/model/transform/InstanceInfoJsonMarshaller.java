@@ -30,6 +30,7 @@ import com.amazonaws.services.codedeploy.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,22 +55,18 @@ public class InstanceInfoJsonMarshaller {
                 jsonWriter.key("instanceName").value(
                         instanceInfo.getInstanceName());
             }
-
             if (instanceInfo.getIamUserArn() != null) {
                 jsonWriter.key("iamUserArn")
                         .value(instanceInfo.getIamUserArn());
             }
-
             if (instanceInfo.getInstanceArn() != null) {
                 jsonWriter.key("instanceArn").value(
                         instanceInfo.getInstanceArn());
             }
-
             if (instanceInfo.getRegisterTime() != null) {
                 jsonWriter.key("registerTime").value(
                         instanceInfo.getRegisterTime());
             }
-
             if (instanceInfo.getDeregisterTime() != null) {
                 jsonWriter.key("deregisterTime").value(
                         instanceInfo.getDeregisterTime());

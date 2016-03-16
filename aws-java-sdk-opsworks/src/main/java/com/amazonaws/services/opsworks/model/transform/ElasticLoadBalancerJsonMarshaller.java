@@ -30,6 +30,7 @@ import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,26 +56,21 @@ public class ElasticLoadBalancerJsonMarshaller {
                 jsonWriter.key("ElasticLoadBalancerName").value(
                         elasticLoadBalancer.getElasticLoadBalancerName());
             }
-
             if (elasticLoadBalancer.getRegion() != null) {
                 jsonWriter.key("Region").value(elasticLoadBalancer.getRegion());
             }
-
             if (elasticLoadBalancer.getDnsName() != null) {
                 jsonWriter.key("DnsName").value(
                         elasticLoadBalancer.getDnsName());
             }
-
             if (elasticLoadBalancer.getStackId() != null) {
                 jsonWriter.key("StackId").value(
                         elasticLoadBalancer.getStackId());
             }
-
             if (elasticLoadBalancer.getLayerId() != null) {
                 jsonWriter.key("LayerId").value(
                         elasticLoadBalancer.getLayerId());
             }
-
             if (elasticLoadBalancer.getVpcId() != null) {
                 jsonWriter.key("VpcId").value(elasticLoadBalancer.getVpcId());
             }

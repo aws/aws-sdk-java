@@ -9,11 +9,14 @@
     <#local http = (member.http) />
     <#if !(http.location)?? && !(http.isStreaming) && !(http.isPayload)>
         <#local getMember = getterFunctionPrefix + ".get" + member.name />
-
         <#if member.simple>
-           if (${getMember}() != null) {
-                jsonWriter.key("${http.marshallLocationName}").value(${getMember}());
-           }
+            <#if member.idempotencyToken>
+                jsonWriter.key("${http.marshallLocationName}").value(<@IdempotencyTokenMacro.content getMember member.variable.simpleType/>);
+            <#else>
+                if(${getMember}() != null) {
+                    jsonWriter.key("${http.marshallLocationName}").value(${getMember}());
+                }
+            </#if>
         <#elseif member.list>
             <#local listModel = member.listModel />
             <#local listMemberType = listModel.memberType/>
@@ -37,7 +40,6 @@
                   }
                   jsonWriter.endArray();
               }
-
         <#elseif member.map>
             <#local mapModel = member.mapModel />
             <#local memberVariableName = member.name?uncap_first/>

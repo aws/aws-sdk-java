@@ -30,6 +30,7 @@ import com.amazonaws.services.codedeploy.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,7 +55,6 @@ public class MinimumHealthyHostsJsonMarshaller {
             if (minimumHealthyHosts.getValue() != null) {
                 jsonWriter.key("value").value(minimumHealthyHosts.getValue());
             }
-
             if (minimumHealthyHosts.getType() != null) {
                 jsonWriter.key("type").value(minimumHealthyHosts.getType());
             }

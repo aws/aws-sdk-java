@@ -30,6 +30,7 @@ import com.amazonaws.services.storagegateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,7 +54,6 @@ public class VolumeInfoJsonMarshaller {
             if (volumeInfo.getVolumeARN() != null) {
                 jsonWriter.key("VolumeARN").value(volumeInfo.getVolumeARN());
             }
-
             if (volumeInfo.getVolumeType() != null) {
                 jsonWriter.key("VolumeType").value(volumeInfo.getVolumeType());
             }

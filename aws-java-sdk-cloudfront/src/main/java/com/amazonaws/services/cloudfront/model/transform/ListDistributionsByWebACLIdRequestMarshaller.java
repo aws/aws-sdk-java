@@ -32,6 +32,7 @@ import com.amazonaws.services.cloudfront.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.XMLWriter;
 
 /**
@@ -57,26 +58,23 @@ public class ListDistributionsByWebACLIdRequestMarshaller
 
         String uriResourcePath = "/2016-01-28/distributionsByWebACLId/{WebACLId}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{WebACLId}",
-                (listDistributionsByWebACLIdRequest.getWebACLId() == null) ? ""
-                        : StringUtils
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{WebACLId}",
+                        (listDistributionsByWebACLIdRequest.getWebACLId() != null) ? StringUtils
                                 .fromString(listDistributionsByWebACLIdRequest
-                                        .getWebACLId()));
+                                        .getWebACLId()) : "");
         request.setResourcePath(uriResourcePath);
 
-        String marker = (listDistributionsByWebACLIdRequest.getMarker() == null) ? null
-                : StringUtils.fromString(listDistributionsByWebACLIdRequest
-                        .getMarker());
-        if (marker != null) {
-            request.addParameter("Marker", marker);
+        if (listDistributionsByWebACLIdRequest.getMarker() != null) {
+            request.addParameter("Marker", StringUtils
+                    .fromString(listDistributionsByWebACLIdRequest.getMarker()));
         }
 
-        String maxItems = (listDistributionsByWebACLIdRequest.getMaxItems() == null) ? null
-                : StringUtils.fromString(listDistributionsByWebACLIdRequest
-                        .getMaxItems());
-        if (maxItems != null) {
-            request.addParameter("MaxItems", maxItems);
+        if (listDistributionsByWebACLIdRequest.getMaxItems() != null) {
+            request.addParameter("MaxItems", StringUtils
+                    .fromString(listDistributionsByWebACLIdRequest
+                            .getMaxItems()));
         }
 
         return request;

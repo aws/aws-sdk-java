@@ -37,6 +37,7 @@ import com.amazonaws.services.devicefarm.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -72,26 +73,21 @@ public class ScheduleRunRequestMarshaller implements
                 jsonWriter.key("projectArn").value(
                         scheduleRunRequest.getProjectArn());
             }
-
             if (scheduleRunRequest.getAppArn() != null) {
                 jsonWriter.key("appArn").value(scheduleRunRequest.getAppArn());
             }
-
             if (scheduleRunRequest.getDevicePoolArn() != null) {
                 jsonWriter.key("devicePoolArn").value(
                         scheduleRunRequest.getDevicePoolArn());
             }
-
             if (scheduleRunRequest.getName() != null) {
                 jsonWriter.key("name").value(scheduleRunRequest.getName());
             }
-
             if (scheduleRunRequest.getTest() != null) {
                 jsonWriter.key("test");
                 ScheduleRunTestJsonMarshaller.getInstance().marshall(
                         scheduleRunRequest.getTest(), jsonWriter);
             }
-
             if (scheduleRunRequest.getConfiguration() != null) {
                 jsonWriter.key("configuration");
                 ScheduleRunConfigurationJsonMarshaller.getInstance().marshall(

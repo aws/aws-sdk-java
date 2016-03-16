@@ -30,6 +30,7 @@ import com.amazonaws.services.inspector.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,30 +54,24 @@ public class AgentJsonMarshaller {
             if (agent.getAgentId() != null) {
                 jsonWriter.key("agentId").value(agent.getAgentId());
             }
-
             if (agent.getAssessmentArn() != null) {
                 jsonWriter.key("assessmentArn").value(agent.getAssessmentArn());
             }
-
             if (agent.getAgentHealth() != null) {
                 jsonWriter.key("agentHealth").value(agent.getAgentHealth());
             }
-
             if (agent.getAgentHealthCode() != null) {
                 jsonWriter.key("agentHealthCode").value(
                         agent.getAgentHealthCode());
             }
-
             if (agent.getAgentHealthDetails() != null) {
                 jsonWriter.key("agentHealthDetails").value(
                         agent.getAgentHealthDetails());
             }
-
             if (agent.getAutoScalingGroup() != null) {
                 jsonWriter.key("autoScalingGroup").value(
                         agent.getAutoScalingGroup());
             }
-
             if (agent.getAccountId() != null) {
                 jsonWriter.key("accountId").value(agent.getAccountId());
             }

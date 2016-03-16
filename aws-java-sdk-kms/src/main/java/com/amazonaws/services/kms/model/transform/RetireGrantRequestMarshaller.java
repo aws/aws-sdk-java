@@ -37,6 +37,7 @@ import com.amazonaws.services.kms.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -72,11 +73,9 @@ public class RetireGrantRequestMarshaller implements
                 jsonWriter.key("GrantToken").value(
                         retireGrantRequest.getGrantToken());
             }
-
             if (retireGrantRequest.getKeyId() != null) {
                 jsonWriter.key("KeyId").value(retireGrantRequest.getKeyId());
             }
-
             if (retireGrantRequest.getGrantId() != null) {
                 jsonWriter.key("GrantId")
                         .value(retireGrantRequest.getGrantId());

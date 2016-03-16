@@ -37,6 +37,7 @@ import com.amazonaws.services.elasticsearch.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -64,12 +65,12 @@ public class DeleteElasticsearchDomainRequestMarshaller
 
         String uriResourcePath = "/2015-01-01/es/domain/{DomainName}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{DomainName}",
-                (deleteElasticsearchDomainRequest.getDomainName() == null) ? ""
-                        : StringUtils
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{DomainName}",
+                        (deleteElasticsearchDomainRequest.getDomainName() != null) ? StringUtils
                                 .fromString(deleteElasticsearchDomainRequest
-                                        .getDomainName()));
+                                        .getDomainName()) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

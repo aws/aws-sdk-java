@@ -37,6 +37,7 @@ import com.amazonaws.services.machinelearning.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -74,19 +75,16 @@ public class CreateDataSourceFromS3RequestMarshaller
                 jsonWriter.key("DataSourceId").value(
                         createDataSourceFromS3Request.getDataSourceId());
             }
-
             if (createDataSourceFromS3Request.getDataSourceName() != null) {
                 jsonWriter.key("DataSourceName").value(
                         createDataSourceFromS3Request.getDataSourceName());
             }
-
             if (createDataSourceFromS3Request.getDataSpec() != null) {
                 jsonWriter.key("DataSpec");
                 S3DataSpecJsonMarshaller.getInstance()
                         .marshall(createDataSourceFromS3Request.getDataSpec(),
                                 jsonWriter);
             }
-
             if (createDataSourceFromS3Request.getComputeStatistics() != null) {
                 jsonWriter.key("ComputeStatistics").value(
                         createDataSourceFromS3Request.getComputeStatistics());

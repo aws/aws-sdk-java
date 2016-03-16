@@ -35,6 +35,8 @@ public class Member {
 
     private XmlNamespace xmlNamespace;
 
+    private boolean idempotencyToken;
+
     private boolean deprecated;
 
     public String getShape() {
@@ -107,6 +109,14 @@ public class Member {
 
     public void setXmlNamespace(XmlNamespace xmlNamespace) {
         this.xmlNamespace = xmlNamespace;
+    }
+
+    public boolean isIdempotencyToken() {
+        return idempotencyToken;
+    }
+
+    public void setIdempotencyToken(boolean idempotencyToken) {
+        this.idempotencyToken = idempotencyToken;
     }
 
     public boolean isDeprecated() {

@@ -37,6 +37,7 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -65,18 +66,16 @@ public class DeleteMethodRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
-                (deleteMethodRequest.getRestApiId() == null) ? "" : StringUtils
-                        .fromString(deleteMethodRequest.getRestApiId()));
+                (deleteMethodRequest.getRestApiId() != null) ? StringUtils
+                        .fromString(deleteMethodRequest.getRestApiId()) : "");
         uriResourcePath = uriResourcePath.replace(
                 "{resource_id}",
-                (deleteMethodRequest.getResourceId() == null) ? ""
-                        : StringUtils.fromString(deleteMethodRequest
-                                .getResourceId()));
+                (deleteMethodRequest.getResourceId() != null) ? StringUtils
+                        .fromString(deleteMethodRequest.getResourceId()) : "");
         uriResourcePath = uriResourcePath.replace(
                 "{http_method}",
-                (deleteMethodRequest.getHttpMethod() == null) ? ""
-                        : StringUtils.fromString(deleteMethodRequest
-                                .getHttpMethod()));
+                (deleteMethodRequest.getHttpMethod() != null) ? StringUtils
+                        .fromString(deleteMethodRequest.getHttpMethod()) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

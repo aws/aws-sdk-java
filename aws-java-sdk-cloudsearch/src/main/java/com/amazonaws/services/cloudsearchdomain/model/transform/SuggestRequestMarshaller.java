@@ -37,6 +37,7 @@ import com.amazonaws.services.cloudsearchdomain.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -67,22 +68,19 @@ public class SuggestRequestMarshaller implements
 
         request.setResourcePath(uriResourcePath);
 
-        String query = (suggestRequest.getQuery() == null) ? null : StringUtils
-                .fromString(suggestRequest.getQuery());
-        if (query != null) {
-            request.addParameter("q", query);
+        if (suggestRequest.getQuery() != null) {
+            request.addParameter("q",
+                    StringUtils.fromString(suggestRequest.getQuery()));
         }
 
-        String suggester = (suggestRequest.getSuggester() == null) ? null
-                : StringUtils.fromString(suggestRequest.getSuggester());
-        if (suggester != null) {
-            request.addParameter("suggester", suggester);
+        if (suggestRequest.getSuggester() != null) {
+            request.addParameter("suggester",
+                    StringUtils.fromString(suggestRequest.getSuggester()));
         }
 
-        String size = (suggestRequest.getSize() == null) ? null : StringUtils
-                .fromLong(suggestRequest.getSize());
-        if (size != null) {
-            request.addParameter("size", size);
+        if (suggestRequest.getSize() != null) {
+            request.addParameter("size",
+                    StringUtils.fromLong(suggestRequest.getSize()));
         }
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

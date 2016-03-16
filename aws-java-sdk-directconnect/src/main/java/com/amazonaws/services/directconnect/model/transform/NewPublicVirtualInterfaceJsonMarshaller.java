@@ -30,6 +30,7 @@ import com.amazonaws.services.directconnect.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,26 +56,21 @@ public class NewPublicVirtualInterfaceJsonMarshaller {
                 jsonWriter.key("virtualInterfaceName").value(
                         newPublicVirtualInterface.getVirtualInterfaceName());
             }
-
             if (newPublicVirtualInterface.getVlan() != null) {
                 jsonWriter.key("vlan").value(
                         newPublicVirtualInterface.getVlan());
             }
-
             if (newPublicVirtualInterface.getAsn() != null) {
                 jsonWriter.key("asn").value(newPublicVirtualInterface.getAsn());
             }
-
             if (newPublicVirtualInterface.getAuthKey() != null) {
                 jsonWriter.key("authKey").value(
                         newPublicVirtualInterface.getAuthKey());
             }
-
             if (newPublicVirtualInterface.getAmazonAddress() != null) {
                 jsonWriter.key("amazonAddress").value(
                         newPublicVirtualInterface.getAmazonAddress());
             }
-
             if (newPublicVirtualInterface.getCustomerAddress() != null) {
                 jsonWriter.key("customerAddress").value(
                         newPublicVirtualInterface.getCustomerAddress());

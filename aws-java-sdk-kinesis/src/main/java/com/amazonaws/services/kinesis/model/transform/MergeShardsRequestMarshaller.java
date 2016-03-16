@@ -37,6 +37,7 @@ import com.amazonaws.services.kinesis.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -72,12 +73,10 @@ public class MergeShardsRequestMarshaller implements
                 jsonWriter.key("StreamName").value(
                         mergeShardsRequest.getStreamName());
             }
-
             if (mergeShardsRequest.getShardToMerge() != null) {
                 jsonWriter.key("ShardToMerge").value(
                         mergeShardsRequest.getShardToMerge());
             }
-
             if (mergeShardsRequest.getAdjacentShardToMerge() != null) {
                 jsonWriter.key("AdjacentShardToMerge").value(
                         mergeShardsRequest.getAdjacentShardToMerge());

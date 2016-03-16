@@ -37,6 +37,7 @@ import com.amazonaws.services.directory.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -72,26 +73,21 @@ public class ConnectDirectoryRequestMarshaller implements
             if (connectDirectoryRequest.getName() != null) {
                 jsonWriter.key("Name").value(connectDirectoryRequest.getName());
             }
-
             if (connectDirectoryRequest.getShortName() != null) {
                 jsonWriter.key("ShortName").value(
                         connectDirectoryRequest.getShortName());
             }
-
             if (connectDirectoryRequest.getPassword() != null) {
                 jsonWriter.key("Password").value(
                         connectDirectoryRequest.getPassword());
             }
-
             if (connectDirectoryRequest.getDescription() != null) {
                 jsonWriter.key("Description").value(
                         connectDirectoryRequest.getDescription());
             }
-
             if (connectDirectoryRequest.getSize() != null) {
                 jsonWriter.key("Size").value(connectDirectoryRequest.getSize());
             }
-
             if (connectDirectoryRequest.getConnectSettings() != null) {
                 jsonWriter.key("ConnectSettings");
                 DirectoryConnectSettingsJsonMarshaller.getInstance().marshall(

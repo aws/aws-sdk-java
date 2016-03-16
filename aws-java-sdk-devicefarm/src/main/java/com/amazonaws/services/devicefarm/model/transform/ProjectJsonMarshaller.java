@@ -30,6 +30,7 @@ import com.amazonaws.services.devicefarm.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,11 +54,9 @@ public class ProjectJsonMarshaller {
             if (project.getArn() != null) {
                 jsonWriter.key("arn").value(project.getArn());
             }
-
             if (project.getName() != null) {
                 jsonWriter.key("name").value(project.getName());
             }
-
             if (project.getCreated() != null) {
                 jsonWriter.key("created").value(project.getCreated());
             }

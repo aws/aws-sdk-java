@@ -37,6 +37,7 @@ import com.amazonaws.services.storagegateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -74,12 +75,10 @@ public class DescribeTapeRecoveryPointsRequestMarshaller
                 jsonWriter.key("GatewayARN").value(
                         describeTapeRecoveryPointsRequest.getGatewayARN());
             }
-
             if (describeTapeRecoveryPointsRequest.getMarker() != null) {
                 jsonWriter.key("Marker").value(
                         describeTapeRecoveryPointsRequest.getMarker());
             }
-
             if (describeTapeRecoveryPointsRequest.getLimit() != null) {
                 jsonWriter.key("Limit").value(
                         describeTapeRecoveryPointsRequest.getLimit());

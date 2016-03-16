@@ -37,6 +37,7 @@ import com.amazonaws.services.machinelearning.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -72,7 +73,6 @@ public class GetMLModelRequestMarshaller implements
                 jsonWriter.key("MLModelId").value(
                         getMLModelRequest.getMLModelId());
             }
-
             if (getMLModelRequest.getVerbose() != null) {
                 jsonWriter.key("Verbose").value(getMLModelRequest.getVerbose());
             }

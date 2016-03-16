@@ -37,6 +37,7 @@ import com.amazonaws.services.config.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -74,33 +75,27 @@ public class GetResourceConfigHistoryRequestMarshaller
                 jsonWriter.key("resourceType").value(
                         getResourceConfigHistoryRequest.getResourceType());
             }
-
             if (getResourceConfigHistoryRequest.getResourceId() != null) {
                 jsonWriter.key("resourceId").value(
                         getResourceConfigHistoryRequest.getResourceId());
             }
-
             if (getResourceConfigHistoryRequest.getLaterTime() != null) {
                 jsonWriter.key("laterTime").value(
                         getResourceConfigHistoryRequest.getLaterTime());
             }
-
             if (getResourceConfigHistoryRequest.getEarlierTime() != null) {
                 jsonWriter.key("earlierTime").value(
                         getResourceConfigHistoryRequest.getEarlierTime());
             }
-
             if (getResourceConfigHistoryRequest.getChronologicalOrder() != null) {
                 jsonWriter.key("chronologicalOrder")
                         .value(getResourceConfigHistoryRequest
                                 .getChronologicalOrder());
             }
-
             if (getResourceConfigHistoryRequest.getLimit() != null) {
                 jsonWriter.key("limit").value(
                         getResourceConfigHistoryRequest.getLimit());
             }
-
             if (getResourceConfigHistoryRequest.getNextToken() != null) {
                 jsonWriter.key("nextToken").value(
                         getResourceConfigHistoryRequest.getNextToken());

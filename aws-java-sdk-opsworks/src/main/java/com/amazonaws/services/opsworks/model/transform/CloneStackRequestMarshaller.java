@@ -37,6 +37,7 @@ import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -72,15 +73,12 @@ public class CloneStackRequestMarshaller implements
                 jsonWriter.key("SourceStackId").value(
                         cloneStackRequest.getSourceStackId());
             }
-
             if (cloneStackRequest.getName() != null) {
                 jsonWriter.key("Name").value(cloneStackRequest.getName());
             }
-
             if (cloneStackRequest.getRegion() != null) {
                 jsonWriter.key("Region").value(cloneStackRequest.getRegion());
             }
-
             if (cloneStackRequest.getVpcId() != null) {
                 jsonWriter.key("VpcId").value(cloneStackRequest.getVpcId());
             }
@@ -101,77 +99,63 @@ public class CloneStackRequestMarshaller implements
                 }
                 jsonWriter.endObject();
             }
-
             if (cloneStackRequest.getServiceRoleArn() != null) {
                 jsonWriter.key("ServiceRoleArn").value(
                         cloneStackRequest.getServiceRoleArn());
             }
-
             if (cloneStackRequest.getDefaultInstanceProfileArn() != null) {
                 jsonWriter.key("DefaultInstanceProfileArn").value(
                         cloneStackRequest.getDefaultInstanceProfileArn());
             }
-
             if (cloneStackRequest.getDefaultOs() != null) {
                 jsonWriter.key("DefaultOs").value(
                         cloneStackRequest.getDefaultOs());
             }
-
             if (cloneStackRequest.getHostnameTheme() != null) {
                 jsonWriter.key("HostnameTheme").value(
                         cloneStackRequest.getHostnameTheme());
             }
-
             if (cloneStackRequest.getDefaultAvailabilityZone() != null) {
                 jsonWriter.key("DefaultAvailabilityZone").value(
                         cloneStackRequest.getDefaultAvailabilityZone());
             }
-
             if (cloneStackRequest.getDefaultSubnetId() != null) {
                 jsonWriter.key("DefaultSubnetId").value(
                         cloneStackRequest.getDefaultSubnetId());
             }
-
             if (cloneStackRequest.getCustomJson() != null) {
                 jsonWriter.key("CustomJson").value(
                         cloneStackRequest.getCustomJson());
             }
-
             if (cloneStackRequest.getConfigurationManager() != null) {
                 jsonWriter.key("ConfigurationManager");
                 StackConfigurationManagerJsonMarshaller.getInstance()
                         .marshall(cloneStackRequest.getConfigurationManager(),
                                 jsonWriter);
             }
-
             if (cloneStackRequest.getChefConfiguration() != null) {
                 jsonWriter.key("ChefConfiguration");
                 ChefConfigurationJsonMarshaller.getInstance().marshall(
                         cloneStackRequest.getChefConfiguration(), jsonWriter);
             }
-
             if (cloneStackRequest.getUseCustomCookbooks() != null) {
                 jsonWriter.key("UseCustomCookbooks").value(
                         cloneStackRequest.getUseCustomCookbooks());
             }
-
             if (cloneStackRequest.getUseOpsworksSecurityGroups() != null) {
                 jsonWriter.key("UseOpsworksSecurityGroups").value(
                         cloneStackRequest.getUseOpsworksSecurityGroups());
             }
-
             if (cloneStackRequest.getCustomCookbooksSource() != null) {
                 jsonWriter.key("CustomCookbooksSource");
                 SourceJsonMarshaller.getInstance().marshall(
                         cloneStackRequest.getCustomCookbooksSource(),
                         jsonWriter);
             }
-
             if (cloneStackRequest.getDefaultSshKeyName() != null) {
                 jsonWriter.key("DefaultSshKeyName").value(
                         cloneStackRequest.getDefaultSshKeyName());
             }
-
             if (cloneStackRequest.getClonePermissions() != null) {
                 jsonWriter.key("ClonePermissions").value(
                         cloneStackRequest.getClonePermissions());
@@ -190,12 +174,10 @@ public class CloneStackRequestMarshaller implements
                 }
                 jsonWriter.endArray();
             }
-
             if (cloneStackRequest.getDefaultRootDeviceType() != null) {
                 jsonWriter.key("DefaultRootDeviceType").value(
                         cloneStackRequest.getDefaultRootDeviceType());
             }
-
             if (cloneStackRequest.getAgentVersion() != null) {
                 jsonWriter.key("AgentVersion").value(
                         cloneStackRequest.getAgentVersion());

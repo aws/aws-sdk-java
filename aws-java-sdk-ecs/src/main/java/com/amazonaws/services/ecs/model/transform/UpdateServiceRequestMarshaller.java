@@ -37,6 +37,7 @@ import com.amazonaws.services.ecs.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -73,22 +74,18 @@ public class UpdateServiceRequestMarshaller implements
                 jsonWriter.key("cluster").value(
                         updateServiceRequest.getCluster());
             }
-
             if (updateServiceRequest.getService() != null) {
                 jsonWriter.key("service").value(
                         updateServiceRequest.getService());
             }
-
             if (updateServiceRequest.getDesiredCount() != null) {
                 jsonWriter.key("desiredCount").value(
                         updateServiceRequest.getDesiredCount());
             }
-
             if (updateServiceRequest.getTaskDefinition() != null) {
                 jsonWriter.key("taskDefinition").value(
                         updateServiceRequest.getTaskDefinition());
             }
-
             if (updateServiceRequest.getDeploymentConfiguration() != null) {
                 jsonWriter.key("deploymentConfiguration");
                 DeploymentConfigurationJsonMarshaller.getInstance().marshall(

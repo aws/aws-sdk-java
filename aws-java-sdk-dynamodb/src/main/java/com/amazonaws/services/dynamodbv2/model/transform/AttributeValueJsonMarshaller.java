@@ -30,6 +30,7 @@ import com.amazonaws.services.dynamodbv2.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,11 +54,9 @@ public class AttributeValueJsonMarshaller {
             if (attributeValue.getS() != null) {
                 jsonWriter.key("S").value(attributeValue.getS());
             }
-
             if (attributeValue.getN() != null) {
                 jsonWriter.key("N").value(attributeValue.getN());
             }
-
             if (attributeValue.getB() != null) {
                 jsonWriter.key("B").value(attributeValue.getB());
             }
@@ -128,11 +127,9 @@ public class AttributeValueJsonMarshaller {
                 }
                 jsonWriter.endArray();
             }
-
             if (attributeValue.getNULL() != null) {
                 jsonWriter.key("NULL").value(attributeValue.getNULL());
             }
-
             if (attributeValue.getBOOL() != null) {
                 jsonWriter.key("BOOL").value(attributeValue.getBOOL());
             }

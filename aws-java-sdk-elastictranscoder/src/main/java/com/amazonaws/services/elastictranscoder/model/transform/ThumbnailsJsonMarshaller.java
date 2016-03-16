@@ -30,6 +30,7 @@ import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,33 +54,26 @@ public class ThumbnailsJsonMarshaller {
             if (thumbnails.getFormat() != null) {
                 jsonWriter.key("Format").value(thumbnails.getFormat());
             }
-
             if (thumbnails.getInterval() != null) {
                 jsonWriter.key("Interval").value(thumbnails.getInterval());
             }
-
             if (thumbnails.getResolution() != null) {
                 jsonWriter.key("Resolution").value(thumbnails.getResolution());
             }
-
             if (thumbnails.getAspectRatio() != null) {
                 jsonWriter.key("AspectRatio")
                         .value(thumbnails.getAspectRatio());
             }
-
             if (thumbnails.getMaxWidth() != null) {
                 jsonWriter.key("MaxWidth").value(thumbnails.getMaxWidth());
             }
-
             if (thumbnails.getMaxHeight() != null) {
                 jsonWriter.key("MaxHeight").value(thumbnails.getMaxHeight());
             }
-
             if (thumbnails.getSizingPolicy() != null) {
                 jsonWriter.key("SizingPolicy").value(
                         thumbnails.getSizingPolicy());
             }
-
             if (thumbnails.getPaddingPolicy() != null) {
                 jsonWriter.key("PaddingPolicy").value(
                         thumbnails.getPaddingPolicy());

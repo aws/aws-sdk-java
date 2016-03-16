@@ -30,6 +30,7 @@ import com.amazonaws.services.gamelift.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,17 +55,14 @@ public class FleetUtilizationJsonMarshaller {
             if (fleetUtilization.getFleetId() != null) {
                 jsonWriter.key("FleetId").value(fleetUtilization.getFleetId());
             }
-
             if (fleetUtilization.getActiveGameSessionCount() != null) {
                 jsonWriter.key("ActiveGameSessionCount").value(
                         fleetUtilization.getActiveGameSessionCount());
             }
-
             if (fleetUtilization.getCurrentPlayerSessionCount() != null) {
                 jsonWriter.key("CurrentPlayerSessionCount").value(
                         fleetUtilization.getCurrentPlayerSessionCount());
             }
-
             if (fleetUtilization.getMaximumPlayerSessionCount() != null) {
                 jsonWriter.key("MaximumPlayerSessionCount").value(
                         fleetUtilization.getMaximumPlayerSessionCount());

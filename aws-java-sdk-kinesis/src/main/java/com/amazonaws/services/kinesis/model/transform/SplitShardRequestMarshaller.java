@@ -37,6 +37,7 @@ import com.amazonaws.services.kinesis.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -72,12 +73,10 @@ public class SplitShardRequestMarshaller implements
                 jsonWriter.key("StreamName").value(
                         splitShardRequest.getStreamName());
             }
-
             if (splitShardRequest.getShardToSplit() != null) {
                 jsonWriter.key("ShardToSplit").value(
                         splitShardRequest.getShardToSplit());
             }
-
             if (splitShardRequest.getNewStartingHashKey() != null) {
                 jsonWriter.key("NewStartingHashKey").value(
                         splitShardRequest.getNewStartingHashKey());

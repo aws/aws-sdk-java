@@ -37,6 +37,7 @@ import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -64,11 +65,12 @@ public class ListThingPrincipalsRequestMarshaller
 
         String uriResourcePath = "/things/{thingName}/principals";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{thingName}",
-                (listThingPrincipalsRequest.getThingName() == null) ? ""
-                        : StringUtils.fromString(listThingPrincipalsRequest
-                                .getThingName()));
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{thingName}",
+                        (listThingPrincipalsRequest.getThingName() != null) ? StringUtils
+                                .fromString(listThingPrincipalsRequest
+                                        .getThingName()) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

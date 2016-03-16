@@ -37,6 +37,7 @@ import com.amazonaws.services.gamelift.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -71,37 +72,30 @@ public class PutScalingPolicyRequestMarshaller implements
             if (putScalingPolicyRequest.getName() != null) {
                 jsonWriter.key("Name").value(putScalingPolicyRequest.getName());
             }
-
             if (putScalingPolicyRequest.getFleetId() != null) {
                 jsonWriter.key("FleetId").value(
                         putScalingPolicyRequest.getFleetId());
             }
-
             if (putScalingPolicyRequest.getScalingAdjustment() != null) {
                 jsonWriter.key("ScalingAdjustment").value(
                         putScalingPolicyRequest.getScalingAdjustment());
             }
-
             if (putScalingPolicyRequest.getScalingAdjustmentType() != null) {
                 jsonWriter.key("ScalingAdjustmentType").value(
                         putScalingPolicyRequest.getScalingAdjustmentType());
             }
-
             if (putScalingPolicyRequest.getThreshold() != null) {
                 jsonWriter.key("Threshold").value(
                         putScalingPolicyRequest.getThreshold());
             }
-
             if (putScalingPolicyRequest.getComparisonOperator() != null) {
                 jsonWriter.key("ComparisonOperator").value(
                         putScalingPolicyRequest.getComparisonOperator());
             }
-
             if (putScalingPolicyRequest.getEvaluationPeriods() != null) {
                 jsonWriter.key("EvaluationPeriods").value(
                         putScalingPolicyRequest.getEvaluationPeriods());
             }
-
             if (putScalingPolicyRequest.getMetricName() != null) {
                 jsonWriter.key("MetricName").value(
                         putScalingPolicyRequest.getMetricName());

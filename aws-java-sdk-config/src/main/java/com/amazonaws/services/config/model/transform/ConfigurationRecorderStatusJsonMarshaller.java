@@ -30,6 +30,7 @@ import com.amazonaws.services.config.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -56,37 +57,30 @@ public class ConfigurationRecorderStatusJsonMarshaller {
                 jsonWriter.key("name").value(
                         configurationRecorderStatus.getName());
             }
-
             if (configurationRecorderStatus.getLastStartTime() != null) {
                 jsonWriter.key("lastStartTime").value(
                         configurationRecorderStatus.getLastStartTime());
             }
-
             if (configurationRecorderStatus.getLastStopTime() != null) {
                 jsonWriter.key("lastStopTime").value(
                         configurationRecorderStatus.getLastStopTime());
             }
-
             if (configurationRecorderStatus.getRecording() != null) {
                 jsonWriter.key("recording").value(
                         configurationRecorderStatus.getRecording());
             }
-
             if (configurationRecorderStatus.getLastStatus() != null) {
                 jsonWriter.key("lastStatus").value(
                         configurationRecorderStatus.getLastStatus());
             }
-
             if (configurationRecorderStatus.getLastErrorCode() != null) {
                 jsonWriter.key("lastErrorCode").value(
                         configurationRecorderStatus.getLastErrorCode());
             }
-
             if (configurationRecorderStatus.getLastErrorMessage() != null) {
                 jsonWriter.key("lastErrorMessage").value(
                         configurationRecorderStatus.getLastErrorMessage());
             }
-
             if (configurationRecorderStatus.getLastStatusChangeTime() != null) {
                 jsonWriter.key("lastStatusChangeTime").value(
                         configurationRecorderStatus.getLastStatusChangeTime());

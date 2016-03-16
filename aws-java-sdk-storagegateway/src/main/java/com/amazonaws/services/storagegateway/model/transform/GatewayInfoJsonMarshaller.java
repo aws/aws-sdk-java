@@ -30,6 +30,7 @@ import com.amazonaws.services.storagegateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,17 +54,14 @@ public class GatewayInfoJsonMarshaller {
             if (gatewayInfo.getGatewayARN() != null) {
                 jsonWriter.key("GatewayARN").value(gatewayInfo.getGatewayARN());
             }
-
             if (gatewayInfo.getGatewayType() != null) {
                 jsonWriter.key("GatewayType").value(
                         gatewayInfo.getGatewayType());
             }
-
             if (gatewayInfo.getGatewayOperationalState() != null) {
                 jsonWriter.key("GatewayOperationalState").value(
                         gatewayInfo.getGatewayOperationalState());
             }
-
             if (gatewayInfo.getGatewayName() != null) {
                 jsonWriter.key("GatewayName").value(
                         gatewayInfo.getGatewayName());

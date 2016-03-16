@@ -30,6 +30,7 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,30 +54,24 @@ public class StageJsonMarshaller {
             if (stage.getDeploymentId() != null) {
                 jsonWriter.key("deploymentId").value(stage.getDeploymentId());
             }
-
             if (stage.getClientCertificateId() != null) {
                 jsonWriter.key("clientCertificateId").value(
                         stage.getClientCertificateId());
             }
-
             if (stage.getStageName() != null) {
                 jsonWriter.key("stageName").value(stage.getStageName());
             }
-
             if (stage.getDescription() != null) {
                 jsonWriter.key("description").value(stage.getDescription());
             }
-
             if (stage.getCacheClusterEnabled() != null) {
                 jsonWriter.key("cacheClusterEnabled").value(
                         stage.getCacheClusterEnabled());
             }
-
             if (stage.getCacheClusterSize() != null) {
                 jsonWriter.key("cacheClusterSize").value(
                         stage.getCacheClusterSize());
             }
-
             if (stage.getCacheClusterStatus() != null) {
                 jsonWriter.key("cacheClusterStatus").value(
                         stage.getCacheClusterStatus());
@@ -115,11 +110,9 @@ public class StageJsonMarshaller {
                 }
                 jsonWriter.endObject();
             }
-
             if (stage.getCreatedDate() != null) {
                 jsonWriter.key("createdDate").value(stage.getCreatedDate());
             }
-
             if (stage.getLastUpdatedDate() != null) {
                 jsonWriter.key("lastUpdatedDate").value(
                         stage.getLastUpdatedDate());

@@ -30,6 +30,7 @@ import com.amazonaws.services.directory.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,42 +55,34 @@ public class DirectoryLimitsJsonMarshaller {
                 jsonWriter.key("CloudOnlyDirectoriesLimit").value(
                         directoryLimits.getCloudOnlyDirectoriesLimit());
             }
-
             if (directoryLimits.getCloudOnlyDirectoriesCurrentCount() != null) {
                 jsonWriter.key("CloudOnlyDirectoriesCurrentCount").value(
                         directoryLimits.getCloudOnlyDirectoriesCurrentCount());
             }
-
             if (directoryLimits.getCloudOnlyDirectoriesLimitReached() != null) {
                 jsonWriter.key("CloudOnlyDirectoriesLimitReached").value(
                         directoryLimits.getCloudOnlyDirectoriesLimitReached());
             }
-
             if (directoryLimits.getCloudOnlyMicrosoftADLimit() != null) {
                 jsonWriter.key("CloudOnlyMicrosoftADLimit").value(
                         directoryLimits.getCloudOnlyMicrosoftADLimit());
             }
-
             if (directoryLimits.getCloudOnlyMicrosoftADCurrentCount() != null) {
                 jsonWriter.key("CloudOnlyMicrosoftADCurrentCount").value(
                         directoryLimits.getCloudOnlyMicrosoftADCurrentCount());
             }
-
             if (directoryLimits.getCloudOnlyMicrosoftADLimitReached() != null) {
                 jsonWriter.key("CloudOnlyMicrosoftADLimitReached").value(
                         directoryLimits.getCloudOnlyMicrosoftADLimitReached());
             }
-
             if (directoryLimits.getConnectedDirectoriesLimit() != null) {
                 jsonWriter.key("ConnectedDirectoriesLimit").value(
                         directoryLimits.getConnectedDirectoriesLimit());
             }
-
             if (directoryLimits.getConnectedDirectoriesCurrentCount() != null) {
                 jsonWriter.key("ConnectedDirectoriesCurrentCount").value(
                         directoryLimits.getConnectedDirectoriesCurrentCount());
             }
-
             if (directoryLimits.getConnectedDirectoriesLimitReached() != null) {
                 jsonWriter.key("ConnectedDirectoriesLimitReached").value(
                         directoryLimits.getConnectedDirectoriesLimitReached());

@@ -30,6 +30,7 @@ import com.amazonaws.services.elasticsearch.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,27 +56,22 @@ public class ElasticsearchClusterConfigJsonMarshaller {
                 jsonWriter.key("InstanceType").value(
                         elasticsearchClusterConfig.getInstanceType());
             }
-
             if (elasticsearchClusterConfig.getInstanceCount() != null) {
                 jsonWriter.key("InstanceCount").value(
                         elasticsearchClusterConfig.getInstanceCount());
             }
-
             if (elasticsearchClusterConfig.getDedicatedMasterEnabled() != null) {
                 jsonWriter.key("DedicatedMasterEnabled").value(
                         elasticsearchClusterConfig.getDedicatedMasterEnabled());
             }
-
             if (elasticsearchClusterConfig.getZoneAwarenessEnabled() != null) {
                 jsonWriter.key("ZoneAwarenessEnabled").value(
                         elasticsearchClusterConfig.getZoneAwarenessEnabled());
             }
-
             if (elasticsearchClusterConfig.getDedicatedMasterType() != null) {
                 jsonWriter.key("DedicatedMasterType").value(
                         elasticsearchClusterConfig.getDedicatedMasterType());
             }
-
             if (elasticsearchClusterConfig.getDedicatedMasterCount() != null) {
                 jsonWriter.key("DedicatedMasterCount").value(
                         elasticsearchClusterConfig.getDedicatedMasterCount());

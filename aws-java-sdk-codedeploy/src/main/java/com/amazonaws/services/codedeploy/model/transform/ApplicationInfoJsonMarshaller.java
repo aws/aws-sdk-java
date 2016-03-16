@@ -30,6 +30,7 @@ import com.amazonaws.services.codedeploy.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,17 +55,14 @@ public class ApplicationInfoJsonMarshaller {
                 jsonWriter.key("applicationId").value(
                         applicationInfo.getApplicationId());
             }
-
             if (applicationInfo.getApplicationName() != null) {
                 jsonWriter.key("applicationName").value(
                         applicationInfo.getApplicationName());
             }
-
             if (applicationInfo.getCreateTime() != null) {
                 jsonWriter.key("createTime").value(
                         applicationInfo.getCreateTime());
             }
-
             if (applicationInfo.getLinkedToGitHub() != null) {
                 jsonWriter.key("linkedToGitHub").value(
                         applicationInfo.getLinkedToGitHub());

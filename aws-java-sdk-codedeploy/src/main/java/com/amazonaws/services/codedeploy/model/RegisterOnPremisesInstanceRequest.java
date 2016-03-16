@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input of register on-premises instance operation.
+ * Represents the input of the register on-premises instance operation.
  * </p>
  */
 public class RegisterOnPremisesInstanceRequest extends AmazonWebServiceRequest

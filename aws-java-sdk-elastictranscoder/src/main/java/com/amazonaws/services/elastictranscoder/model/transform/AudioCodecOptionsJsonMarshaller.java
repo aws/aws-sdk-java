@@ -30,6 +30,7 @@ import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,17 +55,14 @@ public class AudioCodecOptionsJsonMarshaller {
             if (audioCodecOptions.getProfile() != null) {
                 jsonWriter.key("Profile").value(audioCodecOptions.getProfile());
             }
-
             if (audioCodecOptions.getBitDepth() != null) {
                 jsonWriter.key("BitDepth").value(
                         audioCodecOptions.getBitDepth());
             }
-
             if (audioCodecOptions.getBitOrder() != null) {
                 jsonWriter.key("BitOrder").value(
                         audioCodecOptions.getBitOrder());
             }
-
             if (audioCodecOptions.getSigned() != null) {
                 jsonWriter.key("Signed").value(audioCodecOptions.getSigned());
             }

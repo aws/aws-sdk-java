@@ -37,6 +37,7 @@ import com.amazonaws.services.marketplacecommerceanalytics.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -73,27 +74,22 @@ public class GenerateDataSetRequestMarshaller implements
                 jsonWriter.key("dataSetType").value(
                         generateDataSetRequest.getDataSetType());
             }
-
             if (generateDataSetRequest.getDataSetPublicationDate() != null) {
                 jsonWriter.key("dataSetPublicationDate").value(
                         generateDataSetRequest.getDataSetPublicationDate());
             }
-
             if (generateDataSetRequest.getRoleNameArn() != null) {
                 jsonWriter.key("roleNameArn").value(
                         generateDataSetRequest.getRoleNameArn());
             }
-
             if (generateDataSetRequest.getDestinationS3BucketName() != null) {
                 jsonWriter.key("destinationS3BucketName").value(
                         generateDataSetRequest.getDestinationS3BucketName());
             }
-
             if (generateDataSetRequest.getDestinationS3Prefix() != null) {
                 jsonWriter.key("destinationS3Prefix").value(
                         generateDataSetRequest.getDestinationS3Prefix());
             }
-
             if (generateDataSetRequest.getSnsTopicArn() != null) {
                 jsonWriter.key("snsTopicArn").value(
                         generateDataSetRequest.getSnsTopicArn());

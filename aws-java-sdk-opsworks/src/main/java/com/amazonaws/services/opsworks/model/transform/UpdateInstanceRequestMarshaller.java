@@ -37,6 +37,7 @@ import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -85,50 +86,40 @@ public class UpdateInstanceRequestMarshaller implements
                 }
                 jsonWriter.endArray();
             }
-
             if (updateInstanceRequest.getInstanceType() != null) {
                 jsonWriter.key("InstanceType").value(
                         updateInstanceRequest.getInstanceType());
             }
-
             if (updateInstanceRequest.getAutoScalingType() != null) {
                 jsonWriter.key("AutoScalingType").value(
                         updateInstanceRequest.getAutoScalingType());
             }
-
             if (updateInstanceRequest.getHostname() != null) {
                 jsonWriter.key("Hostname").value(
                         updateInstanceRequest.getHostname());
             }
-
             if (updateInstanceRequest.getOs() != null) {
                 jsonWriter.key("Os").value(updateInstanceRequest.getOs());
             }
-
             if (updateInstanceRequest.getAmiId() != null) {
                 jsonWriter.key("AmiId").value(updateInstanceRequest.getAmiId());
             }
-
             if (updateInstanceRequest.getSshKeyName() != null) {
                 jsonWriter.key("SshKeyName").value(
                         updateInstanceRequest.getSshKeyName());
             }
-
             if (updateInstanceRequest.getArchitecture() != null) {
                 jsonWriter.key("Architecture").value(
                         updateInstanceRequest.getArchitecture());
             }
-
             if (updateInstanceRequest.getInstallUpdatesOnBoot() != null) {
                 jsonWriter.key("InstallUpdatesOnBoot").value(
                         updateInstanceRequest.getInstallUpdatesOnBoot());
             }
-
             if (updateInstanceRequest.getEbsOptimized() != null) {
                 jsonWriter.key("EbsOptimized").value(
                         updateInstanceRequest.getEbsOptimized());
             }
-
             if (updateInstanceRequest.getAgentVersion() != null) {
                 jsonWriter.key("AgentVersion").value(
                         updateInstanceRequest.getAgentVersion());

@@ -30,6 +30,7 @@ import com.amazonaws.services.codepipeline.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,13 +55,11 @@ public class PipelineContextJsonMarshaller {
                 jsonWriter.key("pipelineName").value(
                         pipelineContext.getPipelineName());
             }
-
             if (pipelineContext.getStage() != null) {
                 jsonWriter.key("stage");
                 StageContextJsonMarshaller.getInstance().marshall(
                         pipelineContext.getStage(), jsonWriter);
             }
-
             if (pipelineContext.getAction() != null) {
                 jsonWriter.key("action");
                 ActionContextJsonMarshaller.getInstance().marshall(

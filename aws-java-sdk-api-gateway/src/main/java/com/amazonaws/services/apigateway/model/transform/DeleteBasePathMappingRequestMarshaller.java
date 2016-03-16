@@ -37,6 +37,7 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -64,16 +65,18 @@ public class DeleteBasePathMappingRequestMarshaller
 
         String uriResourcePath = "/domainnames/{domain_name}/basepathmappings/{base_path}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{domain_name}",
-                (deleteBasePathMappingRequest.getDomainName() == null) ? ""
-                        : StringUtils.fromString(deleteBasePathMappingRequest
-                                .getDomainName()));
-        uriResourcePath = uriResourcePath.replace(
-                "{base_path}",
-                (deleteBasePathMappingRequest.getBasePath() == null) ? ""
-                        : StringUtils.fromString(deleteBasePathMappingRequest
-                                .getBasePath()));
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{domain_name}",
+                        (deleteBasePathMappingRequest.getDomainName() != null) ? StringUtils
+                                .fromString(deleteBasePathMappingRequest
+                                        .getDomainName()) : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{base_path}",
+                        (deleteBasePathMappingRequest.getBasePath() != null) ? StringUtils
+                                .fromString(deleteBasePathMappingRequest
+                                        .getBasePath()) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

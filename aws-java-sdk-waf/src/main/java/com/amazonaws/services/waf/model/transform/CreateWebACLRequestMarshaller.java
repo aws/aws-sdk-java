@@ -37,6 +37,7 @@ import com.amazonaws.services.waf.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -71,18 +72,15 @@ public class CreateWebACLRequestMarshaller implements
             if (createWebACLRequest.getName() != null) {
                 jsonWriter.key("Name").value(createWebACLRequest.getName());
             }
-
             if (createWebACLRequest.getMetricName() != null) {
                 jsonWriter.key("MetricName").value(
                         createWebACLRequest.getMetricName());
             }
-
             if (createWebACLRequest.getDefaultAction() != null) {
                 jsonWriter.key("DefaultAction");
                 WafActionJsonMarshaller.getInstance().marshall(
                         createWebACLRequest.getDefaultAction(), jsonWriter);
             }
-
             if (createWebACLRequest.getChangeToken() != null) {
                 jsonWriter.key("ChangeToken").value(
                         createWebACLRequest.getChangeToken());

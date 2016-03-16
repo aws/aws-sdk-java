@@ -37,6 +37,7 @@ public final class ServiceAbbreviations {
     public static final String DataPipeline = "datapipeline";
     public static final String DirectConnect = "directconnect";
     public static final String Directory = "ds";
+    public static final String DMS = "dms";
     public static final String Dynamodb = "dynamodb";
     public static final String DynamodbStreams = "streams.dynamodb";
     public static final String EC2 = "ec2";

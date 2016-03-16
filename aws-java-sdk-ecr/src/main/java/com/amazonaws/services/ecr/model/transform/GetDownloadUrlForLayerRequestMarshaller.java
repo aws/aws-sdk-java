@@ -37,6 +37,7 @@ import com.amazonaws.services.ecr.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -74,12 +75,10 @@ public class GetDownloadUrlForLayerRequestMarshaller
                 jsonWriter.key("registryId").value(
                         getDownloadUrlForLayerRequest.getRegistryId());
             }
-
             if (getDownloadUrlForLayerRequest.getRepositoryName() != null) {
                 jsonWriter.key("repositoryName").value(
                         getDownloadUrlForLayerRequest.getRepositoryName());
             }
-
             if (getDownloadUrlForLayerRequest.getLayerDigest() != null) {
                 jsonWriter.key("layerDigest").value(
                         getDownloadUrlForLayerRequest.getLayerDigest());

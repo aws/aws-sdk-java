@@ -30,6 +30,7 @@ import com.amazonaws.services.directory.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -69,7 +70,6 @@ public class DirectoryVpcSettingsDescriptionJsonMarshaller {
                 }
                 jsonWriter.endArray();
             }
-
             if (directoryVpcSettingsDescription.getSecurityGroupId() != null) {
                 jsonWriter.key("SecurityGroupId").value(
                         directoryVpcSettingsDescription.getSecurityGroupId());

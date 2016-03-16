@@ -37,6 +37,7 @@ import com.amazonaws.services.gamelift.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -72,18 +73,15 @@ public class CreateGameSessionRequestMarshaller implements
                 jsonWriter.key("FleetId").value(
                         createGameSessionRequest.getFleetId());
             }
-
             if (createGameSessionRequest.getAliasId() != null) {
                 jsonWriter.key("AliasId").value(
                         createGameSessionRequest.getAliasId());
             }
-
             if (createGameSessionRequest.getMaximumPlayerSessionCount() != null) {
                 jsonWriter.key("MaximumPlayerSessionCount")
                         .value(createGameSessionRequest
                                 .getMaximumPlayerSessionCount());
             }
-
             if (createGameSessionRequest.getName() != null) {
                 jsonWriter.key("Name")
                         .value(createGameSessionRequest.getName());

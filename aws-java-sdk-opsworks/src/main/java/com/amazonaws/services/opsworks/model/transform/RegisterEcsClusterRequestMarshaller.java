@@ -37,6 +37,7 @@ import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -74,7 +75,6 @@ public class RegisterEcsClusterRequestMarshaller
                 jsonWriter.key("EcsClusterArn").value(
                         registerEcsClusterRequest.getEcsClusterArn());
             }
-
             if (registerEcsClusterRequest.getStackId() != null) {
                 jsonWriter.key("StackId").value(
                         registerEcsClusterRequest.getStackId());

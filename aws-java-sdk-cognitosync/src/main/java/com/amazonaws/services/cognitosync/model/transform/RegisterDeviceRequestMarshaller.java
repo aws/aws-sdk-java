@@ -37,6 +37,7 @@ import com.amazonaws.services.cognitosync.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -63,16 +64,18 @@ public class RegisterDeviceRequestMarshaller implements
 
         String uriResourcePath = "/identitypools/{IdentityPoolId}/identity/{IdentityId}/device";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{IdentityPoolId}",
-                (registerDeviceRequest.getIdentityPoolId() == null) ? ""
-                        : StringUtils.fromString(registerDeviceRequest
-                                .getIdentityPoolId()));
-        uriResourcePath = uriResourcePath.replace(
-                "{IdentityId}",
-                (registerDeviceRequest.getIdentityId() == null) ? ""
-                        : StringUtils.fromString(registerDeviceRequest
-                                .getIdentityId()));
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{IdentityPoolId}",
+                        (registerDeviceRequest.getIdentityPoolId() != null) ? StringUtils
+                                .fromString(registerDeviceRequest
+                                        .getIdentityPoolId()) : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{IdentityId}",
+                        (registerDeviceRequest.getIdentityId() != null) ? StringUtils
+                                .fromString(registerDeviceRequest
+                                        .getIdentityId()) : "");
         request.setResourcePath(uriResourcePath);
 
         try {
@@ -85,7 +88,6 @@ public class RegisterDeviceRequestMarshaller implements
                 jsonWriter.key("Platform").value(
                         registerDeviceRequest.getPlatform());
             }
-
             if (registerDeviceRequest.getToken() != null) {
                 jsonWriter.key("Token").value(registerDeviceRequest.getToken());
             }

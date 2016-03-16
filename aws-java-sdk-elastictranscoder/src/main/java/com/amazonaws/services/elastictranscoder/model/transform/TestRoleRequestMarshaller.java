@@ -37,6 +37,7 @@ import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -73,12 +74,10 @@ public class TestRoleRequestMarshaller implements
             if (testRoleRequest.getRole() != null) {
                 jsonWriter.key("Role").value(testRoleRequest.getRole());
             }
-
             if (testRoleRequest.getInputBucket() != null) {
                 jsonWriter.key("InputBucket").value(
                         testRoleRequest.getInputBucket());
             }
-
             if (testRoleRequest.getOutputBucket() != null) {
                 jsonWriter.key("OutputBucket").value(
                         testRoleRequest.getOutputBucket());

@@ -30,6 +30,7 @@ import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,12 +54,10 @@ public class KinesisActionJsonMarshaller {
             if (kinesisAction.getRoleArn() != null) {
                 jsonWriter.key("roleArn").value(kinesisAction.getRoleArn());
             }
-
             if (kinesisAction.getStreamName() != null) {
                 jsonWriter.key("streamName").value(
                         kinesisAction.getStreamName());
             }
-
             if (kinesisAction.getPartitionKey() != null) {
                 jsonWriter.key("partitionKey").value(
                         kinesisAction.getPartitionKey());

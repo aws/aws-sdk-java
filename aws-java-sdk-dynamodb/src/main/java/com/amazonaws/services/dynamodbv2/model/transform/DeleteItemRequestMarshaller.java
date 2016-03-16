@@ -37,6 +37,7 @@ import com.amazonaws.services.dynamodbv2.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -109,27 +110,22 @@ public class DeleteItemRequestMarshaller implements
                 }
                 jsonWriter.endObject();
             }
-
             if (deleteItemRequest.getConditionalOperator() != null) {
                 jsonWriter.key("ConditionalOperator").value(
                         deleteItemRequest.getConditionalOperator());
             }
-
             if (deleteItemRequest.getReturnValues() != null) {
                 jsonWriter.key("ReturnValues").value(
                         deleteItemRequest.getReturnValues());
             }
-
             if (deleteItemRequest.getReturnConsumedCapacity() != null) {
                 jsonWriter.key("ReturnConsumedCapacity").value(
                         deleteItemRequest.getReturnConsumedCapacity());
             }
-
             if (deleteItemRequest.getReturnItemCollectionMetrics() != null) {
                 jsonWriter.key("ReturnItemCollectionMetrics").value(
                         deleteItemRequest.getReturnItemCollectionMetrics());
             }
-
             if (deleteItemRequest.getConditionExpression() != null) {
                 jsonWriter.key("ConditionExpression").value(
                         deleteItemRequest.getConditionExpression());

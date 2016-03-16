@@ -30,6 +30,7 @@ import com.amazonaws.services.support.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -56,17 +57,14 @@ public class TrustedAdvisorCheckDescriptionJsonMarshaller {
                 jsonWriter.key("id").value(
                         trustedAdvisorCheckDescription.getId());
             }
-
             if (trustedAdvisorCheckDescription.getName() != null) {
                 jsonWriter.key("name").value(
                         trustedAdvisorCheckDescription.getName());
             }
-
             if (trustedAdvisorCheckDescription.getDescription() != null) {
                 jsonWriter.key("description").value(
                         trustedAdvisorCheckDescription.getDescription());
             }
-
             if (trustedAdvisorCheckDescription.getCategory() != null) {
                 jsonWriter.key("category").value(
                         trustedAdvisorCheckDescription.getCategory());

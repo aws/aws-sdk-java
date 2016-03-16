@@ -30,6 +30,7 @@ import com.amazonaws.services.ecr.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,7 +55,6 @@ public class ImageIdentifierJsonMarshaller {
                 jsonWriter.key("imageDigest").value(
                         imageIdentifier.getImageDigest());
             }
-
             if (imageIdentifier.getImageTag() != null) {
                 jsonWriter.key("imageTag").value(imageIdentifier.getImageTag());
             }

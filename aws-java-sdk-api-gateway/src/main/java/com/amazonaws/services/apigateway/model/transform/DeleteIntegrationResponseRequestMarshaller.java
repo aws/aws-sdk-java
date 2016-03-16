@@ -37,6 +37,7 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -64,30 +65,30 @@ public class DeleteIntegrationResponseRequestMarshaller
 
         String uriResourcePath = "/restapis/{restapi_id}/resources/{resource_id}/methods/{http_method}/integration/responses/{status_code}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{restapi_id}",
-                (deleteIntegrationResponseRequest.getRestApiId() == null) ? ""
-                        : StringUtils
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{restapi_id}",
+                        (deleteIntegrationResponseRequest.getRestApiId() != null) ? StringUtils
                                 .fromString(deleteIntegrationResponseRequest
-                                        .getRestApiId()));
-        uriResourcePath = uriResourcePath.replace(
-                "{resource_id}",
-                (deleteIntegrationResponseRequest.getResourceId() == null) ? ""
-                        : StringUtils
+                                        .getRestApiId()) : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{resource_id}",
+                        (deleteIntegrationResponseRequest.getResourceId() != null) ? StringUtils
                                 .fromString(deleteIntegrationResponseRequest
-                                        .getResourceId()));
-        uriResourcePath = uriResourcePath.replace(
-                "{http_method}",
-                (deleteIntegrationResponseRequest.getHttpMethod() == null) ? ""
-                        : StringUtils
+                                        .getResourceId()) : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{http_method}",
+                        (deleteIntegrationResponseRequest.getHttpMethod() != null) ? StringUtils
                                 .fromString(deleteIntegrationResponseRequest
-                                        .getHttpMethod()));
-        uriResourcePath = uriResourcePath.replace(
-                "{status_code}",
-                (deleteIntegrationResponseRequest.getStatusCode() == null) ? ""
-                        : StringUtils
+                                        .getHttpMethod()) : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{status_code}",
+                        (deleteIntegrationResponseRequest.getStatusCode() != null) ? StringUtils
                                 .fromString(deleteIntegrationResponseRequest
-                                        .getStatusCode()));
+                                        .getStatusCode()) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

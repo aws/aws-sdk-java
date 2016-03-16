@@ -37,6 +37,7 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -65,8 +66,8 @@ public class DeleteApiKeyRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{api_Key}",
-                (deleteApiKeyRequest.getApiKey() == null) ? "" : StringUtils
-                        .fromString(deleteApiKeyRequest.getApiKey()));
+                (deleteApiKeyRequest.getApiKey() != null) ? StringUtils
+                        .fromString(deleteApiKeyRequest.getApiKey()) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

@@ -37,6 +37,7 @@ import com.amazonaws.services.kinesis.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -72,11 +73,9 @@ public class DescribeStreamRequestMarshaller implements
                 jsonWriter.key("StreamName").value(
                         describeStreamRequest.getStreamName());
             }
-
             if (describeStreamRequest.getLimit() != null) {
                 jsonWriter.key("Limit").value(describeStreamRequest.getLimit());
             }
-
             if (describeStreamRequest.getExclusiveStartShardId() != null) {
                 jsonWriter.key("ExclusiveStartShardId").value(
                         describeStreamRequest.getExclusiveStartShardId());

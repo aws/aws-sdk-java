@@ -33,8 +33,7 @@ public class GetApplicationRevisionResult implements Serializable, Cloneable {
     private String applicationName;
     /**
      * <p>
-     * Additional information about the revision, including the revision's type
-     * and its location.
+     * Additional information about the revision, including type and location.
      * </p>
      */
     private RevisionLocation revision;
@@ -89,13 +88,12 @@ public class GetApplicationRevisionResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Additional information about the revision, including the revision's type
-     * and its location.
+     * Additional information about the revision, including type and location.
      * </p>
      * 
      * @param revision
-     *        Additional information about the revision, including the
-     *        revision's type and its location.
+     *        Additional information about the revision, including type and
+     *        location.
      */
 
     public void setRevision(RevisionLocation revision) {
@@ -104,12 +102,11 @@ public class GetApplicationRevisionResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Additional information about the revision, including the revision's type
-     * and its location.
+     * Additional information about the revision, including type and location.
      * </p>
      * 
-     * @return Additional information about the revision, including the
-     *         revision's type and its location.
+     * @return Additional information about the revision, including type and
+     *         location.
      */
 
     public RevisionLocation getRevision() {
@@ -118,13 +115,12 @@ public class GetApplicationRevisionResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Additional information about the revision, including the revision's type
-     * and its location.
+     * Additional information about the revision, including type and location.
      * </p>
      * 
      * @param revision
-     *        Additional information about the revision, including the
-     *        revision's type and its location.
+     *        Additional information about the revision, including type and
+     *        location.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

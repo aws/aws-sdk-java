@@ -35,8 +35,8 @@ public class GetApplicationRevisionRequest extends AmazonWebServiceRequest
     private String applicationName;
     /**
      * <p>
-     * Information about the application revision to get, including the
-     * revision's type and its location.
+     * Information about the application revision to get, including type and
+     * location.
      * </p>
      */
     private RevisionLocation revision;
@@ -85,13 +85,13 @@ public class GetApplicationRevisionRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Information about the application revision to get, including the
-     * revision's type and its location.
+     * Information about the application revision to get, including type and
+     * location.
      * </p>
      * 
      * @param revision
-     *        Information about the application revision to get, including the
-     *        revision's type and its location.
+     *        Information about the application revision to get, including type
+     *        and location.
      */
 
     public void setRevision(RevisionLocation revision) {
@@ -100,12 +100,12 @@ public class GetApplicationRevisionRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Information about the application revision to get, including the
-     * revision's type and its location.
+     * Information about the application revision to get, including type and
+     * location.
      * </p>
      * 
-     * @return Information about the application revision to get, including the
-     *         revision's type and its location.
+     * @return Information about the application revision to get, including type
+     *         and location.
      */
 
     public RevisionLocation getRevision() {
@@ -114,13 +114,13 @@ public class GetApplicationRevisionRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Information about the application revision to get, including the
-     * revision's type and its location.
+     * Information about the application revision to get, including type and
+     * location.
      * </p>
      * 
      * @param revision
-     *        Information about the application revision to get, including the
-     *        revision's type and its location.
+     *        Information about the application revision to get, including type
+     *        and location.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -30,6 +30,7 @@ import com.amazonaws.services.cloudwatchevents.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,12 +56,10 @@ public class RemoveTargetsResultEntryJsonMarshaller {
                 jsonWriter.key("TargetId").value(
                         removeTargetsResultEntry.getTargetId());
             }
-
             if (removeTargetsResultEntry.getErrorCode() != null) {
                 jsonWriter.key("ErrorCode").value(
                         removeTargetsResultEntry.getErrorCode());
             }
-
             if (removeTargetsResultEntry.getErrorMessage() != null) {
                 jsonWriter.key("ErrorMessage").value(
                         removeTargetsResultEntry.getErrorMessage());

@@ -37,6 +37,7 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -74,12 +75,10 @@ public class CreateApiKeyRequestMarshaller implements
             if (createApiKeyRequest.getName() != null) {
                 jsonWriter.key("name").value(createApiKeyRequest.getName());
             }
-
             if (createApiKeyRequest.getDescription() != null) {
                 jsonWriter.key("description").value(
                         createApiKeyRequest.getDescription());
             }
-
             if (createApiKeyRequest.getEnabled() != null) {
                 jsonWriter.key("enabled").value(
                         createApiKeyRequest.getEnabled());

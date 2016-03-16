@@ -20,14 +20,14 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Information about an application revision's location.
+ * Information about the location of an application revision.
  * </p>
  */
 public class RevisionLocation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The application revision's type:
+     * The type of application revision:
      * </p>
      * <ul>
      * <li>S3: An application revision stored in Amazon S3.</li>
@@ -42,7 +42,7 @@ public class RevisionLocation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The application revision's type:
+     * The type of application revision:
      * </p>
      * <ul>
      * <li>S3: An application revision stored in Amazon S3.</li>
@@ -50,7 +50,7 @@ public class RevisionLocation implements Serializable, Cloneable {
      * </ul>
      * 
      * @param revisionType
-     *        The application revision's type:</p>
+     *        The type of application revision:</p>
      *        <ul>
      *        <li>S3: An application revision stored in Amazon S3.</li>
      *        <li>GitHub: An application revision stored in GitHub.</li>
@@ -63,14 +63,14 @@ public class RevisionLocation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The application revision's type:
+     * The type of application revision:
      * </p>
      * <ul>
      * <li>S3: An application revision stored in Amazon S3.</li>
      * <li>GitHub: An application revision stored in GitHub.</li>
      * </ul>
      * 
-     * @return The application revision's type:</p>
+     * @return The type of application revision:</p>
      *         <ul>
      *         <li>S3: An application revision stored in Amazon S3.</li>
      *         <li>GitHub: An application revision stored in GitHub.</li>
@@ -83,7 +83,7 @@ public class RevisionLocation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The application revision's type:
+     * The type of application revision:
      * </p>
      * <ul>
      * <li>S3: An application revision stored in Amazon S3.</li>
@@ -91,7 +91,7 @@ public class RevisionLocation implements Serializable, Cloneable {
      * </ul>
      * 
      * @param revisionType
-     *        The application revision's type:</p>
+     *        The type of application revision:</p>
      *        <ul>
      *        <li>S3: An application revision stored in Amazon S3.</li>
      *        <li>GitHub: An application revision stored in GitHub.</li>
@@ -107,7 +107,7 @@ public class RevisionLocation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The application revision's type:
+     * The type of application revision:
      * </p>
      * <ul>
      * <li>S3: An application revision stored in Amazon S3.</li>
@@ -115,7 +115,7 @@ public class RevisionLocation implements Serializable, Cloneable {
      * </ul>
      * 
      * @param revisionType
-     *        The application revision's type:</p>
+     *        The type of application revision:</p>
      *        <ul>
      *        <li>S3: An application revision stored in Amazon S3.</li>
      *        <li>GitHub: An application revision stored in GitHub.</li>
@@ -130,7 +130,7 @@ public class RevisionLocation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The application revision's type:
+     * The type of application revision:
      * </p>
      * <ul>
      * <li>S3: An application revision stored in Amazon S3.</li>
@@ -138,7 +138,7 @@ public class RevisionLocation implements Serializable, Cloneable {
      * </ul>
      * 
      * @param revisionType
-     *        The application revision's type:</p>
+     *        The type of application revision:</p>
      *        <ul>
      *        <li>S3: An application revision stored in Amazon S3.</li>
      *        <li>GitHub: An application revision stored in GitHub.</li>

@@ -30,6 +30,7 @@ import com.amazonaws.services.workspaces.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -56,24 +57,20 @@ public class DefaultWorkspaceCreationPropertiesJsonMarshaller {
                 jsonWriter.key("EnableWorkDocs").value(
                         defaultWorkspaceCreationProperties.getEnableWorkDocs());
             }
-
             if (defaultWorkspaceCreationProperties.getEnableInternetAccess() != null) {
                 jsonWriter.key("EnableInternetAccess").value(
                         defaultWorkspaceCreationProperties
                                 .getEnableInternetAccess());
             }
-
             if (defaultWorkspaceCreationProperties.getDefaultOu() != null) {
                 jsonWriter.key("DefaultOu").value(
                         defaultWorkspaceCreationProperties.getDefaultOu());
             }
-
             if (defaultWorkspaceCreationProperties.getCustomSecurityGroupId() != null) {
                 jsonWriter.key("CustomSecurityGroupId").value(
                         defaultWorkspaceCreationProperties
                                 .getCustomSecurityGroupId());
             }
-
             if (defaultWorkspaceCreationProperties
                     .getUserEnabledAsLocalAdministrator() != null) {
                 jsonWriter.key("UserEnabledAsLocalAdministrator").value(

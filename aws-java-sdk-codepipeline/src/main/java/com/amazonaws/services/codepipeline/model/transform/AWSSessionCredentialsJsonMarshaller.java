@@ -30,6 +30,7 @@ import com.amazonaws.services.codepipeline.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,12 +56,10 @@ public class AWSSessionCredentialsJsonMarshaller {
                 jsonWriter.key("accessKeyId").value(
                         aWSSessionCredentials.getAccessKeyId());
             }
-
             if (aWSSessionCredentials.getSecretAccessKey() != null) {
                 jsonWriter.key("secretAccessKey").value(
                         aWSSessionCredentials.getSecretAccessKey());
             }
-
             if (aWSSessionCredentials.getSessionToken() != null) {
                 jsonWriter.key("sessionToken").value(
                         aWSSessionCredentials.getSessionToken());

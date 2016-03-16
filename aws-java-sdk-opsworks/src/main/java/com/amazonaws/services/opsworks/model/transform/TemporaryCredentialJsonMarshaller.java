@@ -30,6 +30,7 @@ import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,17 +56,14 @@ public class TemporaryCredentialJsonMarshaller {
                 jsonWriter.key("Username").value(
                         temporaryCredential.getUsername());
             }
-
             if (temporaryCredential.getPassword() != null) {
                 jsonWriter.key("Password").value(
                         temporaryCredential.getPassword());
             }
-
             if (temporaryCredential.getValidForInMinutes() != null) {
                 jsonWriter.key("ValidForInMinutes").value(
                         temporaryCredential.getValidForInMinutes());
             }
-
             if (temporaryCredential.getInstanceId() != null) {
                 jsonWriter.key("InstanceId").value(
                         temporaryCredential.getInstanceId());

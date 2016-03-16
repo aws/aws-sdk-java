@@ -37,6 +37,7 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -74,12 +75,10 @@ public class CreateRestApiRequestMarshaller implements
             if (createRestApiRequest.getName() != null) {
                 jsonWriter.key("name").value(createRestApiRequest.getName());
             }
-
             if (createRestApiRequest.getDescription() != null) {
                 jsonWriter.key("description").value(
                         createRestApiRequest.getDescription());
             }
-
             if (createRestApiRequest.getCloneFrom() != null) {
                 jsonWriter.key("cloneFrom").value(
                         createRestApiRequest.getCloneFrom());

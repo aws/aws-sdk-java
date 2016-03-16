@@ -30,6 +30,7 @@ import com.amazonaws.services.codepipeline.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,23 +54,19 @@ public class ActionStateJsonMarshaller {
             if (actionState.getActionName() != null) {
                 jsonWriter.key("actionName").value(actionState.getActionName());
             }
-
             if (actionState.getCurrentRevision() != null) {
                 jsonWriter.key("currentRevision");
                 ActionRevisionJsonMarshaller.getInstance().marshall(
                         actionState.getCurrentRevision(), jsonWriter);
             }
-
             if (actionState.getLatestExecution() != null) {
                 jsonWriter.key("latestExecution");
                 ActionExecutionJsonMarshaller.getInstance().marshall(
                         actionState.getLatestExecution(), jsonWriter);
             }
-
             if (actionState.getEntityUrl() != null) {
                 jsonWriter.key("entityUrl").value(actionState.getEntityUrl());
             }
-
             if (actionState.getRevisionUrl() != null) {
                 jsonWriter.key("revisionUrl").value(
                         actionState.getRevisionUrl());

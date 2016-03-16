@@ -37,6 +37,7 @@ import com.amazonaws.services.support.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -71,22 +72,18 @@ public class CreateCaseRequestMarshaller implements
             if (createCaseRequest.getSubject() != null) {
                 jsonWriter.key("subject").value(createCaseRequest.getSubject());
             }
-
             if (createCaseRequest.getServiceCode() != null) {
                 jsonWriter.key("serviceCode").value(
                         createCaseRequest.getServiceCode());
             }
-
             if (createCaseRequest.getSeverityCode() != null) {
                 jsonWriter.key("severityCode").value(
                         createCaseRequest.getSeverityCode());
             }
-
             if (createCaseRequest.getCategoryCode() != null) {
                 jsonWriter.key("categoryCode").value(
                         createCaseRequest.getCategoryCode());
             }
-
             if (createCaseRequest.getCommunicationBody() != null) {
                 jsonWriter.key("communicationBody").value(
                         createCaseRequest.getCommunicationBody());
@@ -105,17 +102,14 @@ public class CreateCaseRequestMarshaller implements
                 }
                 jsonWriter.endArray();
             }
-
             if (createCaseRequest.getLanguage() != null) {
                 jsonWriter.key("language").value(
                         createCaseRequest.getLanguage());
             }
-
             if (createCaseRequest.getIssueType() != null) {
                 jsonWriter.key("issueType").value(
                         createCaseRequest.getIssueType());
             }
-
             if (createCaseRequest.getAttachmentSetId() != null) {
                 jsonWriter.key("attachmentSetId").value(
                         createCaseRequest.getAttachmentSetId());

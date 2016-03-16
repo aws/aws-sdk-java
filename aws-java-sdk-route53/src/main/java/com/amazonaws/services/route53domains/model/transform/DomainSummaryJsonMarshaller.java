@@ -30,6 +30,7 @@ import com.amazonaws.services.route53domains.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,16 +55,13 @@ public class DomainSummaryJsonMarshaller {
                 jsonWriter.key("DomainName").value(
                         domainSummary.getDomainName());
             }
-
             if (domainSummary.getAutoRenew() != null) {
                 jsonWriter.key("AutoRenew").value(domainSummary.getAutoRenew());
             }
-
             if (domainSummary.getTransferLock() != null) {
                 jsonWriter.key("TransferLock").value(
                         domainSummary.getTransferLock());
             }
-
             if (domainSummary.getExpiry() != null) {
                 jsonWriter.key("Expiry").value(domainSummary.getExpiry());
             }

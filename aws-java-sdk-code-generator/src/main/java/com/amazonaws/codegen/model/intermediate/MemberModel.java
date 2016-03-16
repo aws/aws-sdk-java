@@ -47,6 +47,8 @@ public class MemberModel extends DocumentationModel {
 
     private String xmlNameSpaceUri;
 
+    private boolean idempotencyToken;
+
     private ShapeModel shape;
 
     public String getName() {
@@ -333,6 +335,13 @@ public class MemberModel extends DocumentationModel {
         return docBuilder.toString();
     }
 
+    public boolean isIdempotencyToken() {
+        return idempotencyToken;
+    }
+
+    public void setIdempotencyToken(boolean idempotencyToken) {
+        this.idempotencyToken = idempotencyToken;
+    }
 
     @JsonIgnore
     public ShapeModel getShape() {

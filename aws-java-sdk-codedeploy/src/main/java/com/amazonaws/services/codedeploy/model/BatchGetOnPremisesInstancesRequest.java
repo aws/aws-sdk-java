@@ -29,17 +29,18 @@ public class BatchGetOnPremisesInstancesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The names of the on-premises instances to get information about.
+     * The names of the on-premises instances about which to get information.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> instanceNames;
 
     /**
      * <p>
-     * The names of the on-premises instances to get information about.
+     * The names of the on-premises instances about which to get information.
      * </p>
      * 
-     * @return The names of the on-premises instances to get information about.
+     * @return The names of the on-premises instances about which to get
+     *         information.
      */
 
     public java.util.List<String> getInstanceNames() {
@@ -51,11 +52,12 @@ public class BatchGetOnPremisesInstancesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The names of the on-premises instances to get information about.
+     * The names of the on-premises instances about which to get information.
      * </p>
      * 
      * @param instanceNames
-     *        The names of the on-premises instances to get information about.
+     *        The names of the on-premises instances about which to get
+     *        information.
      */
 
     public void setInstanceNames(java.util.Collection<String> instanceNames) {
@@ -70,7 +72,7 @@ public class BatchGetOnPremisesInstancesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The names of the on-premises instances to get information about.
+     * The names of the on-premises instances about which to get information.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -80,7 +82,8 @@ public class BatchGetOnPremisesInstancesRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param instanceNames
-     *        The names of the on-premises instances to get information about.
+     *        The names of the on-premises instances about which to get
+     *        information.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -99,11 +102,12 @@ public class BatchGetOnPremisesInstancesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The names of the on-premises instances to get information about.
+     * The names of the on-premises instances about which to get information.
      * </p>
      * 
      * @param instanceNames
-     *        The names of the on-premises instances to get information about.
+     *        The names of the on-premises instances about which to get
+     *        information.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

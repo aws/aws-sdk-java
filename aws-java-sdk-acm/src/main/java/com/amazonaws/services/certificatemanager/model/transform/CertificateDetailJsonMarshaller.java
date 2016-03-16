@@ -30,6 +30,7 @@ import com.amazonaws.services.certificatemanager.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,7 +56,6 @@ public class CertificateDetailJsonMarshaller {
                 jsonWriter.key("CertificateArn").value(
                         certificateDetail.getCertificateArn());
             }
-
             if (certificateDetail.getDomainName() != null) {
                 jsonWriter.key("DomainName").value(
                         certificateDetail.getDomainName());
@@ -88,58 +88,46 @@ public class CertificateDetailJsonMarshaller {
                 }
                 jsonWriter.endArray();
             }
-
             if (certificateDetail.getSerial() != null) {
                 jsonWriter.key("Serial").value(certificateDetail.getSerial());
             }
-
             if (certificateDetail.getSubject() != null) {
                 jsonWriter.key("Subject").value(certificateDetail.getSubject());
             }
-
             if (certificateDetail.getIssuer() != null) {
                 jsonWriter.key("Issuer").value(certificateDetail.getIssuer());
             }
-
             if (certificateDetail.getCreatedAt() != null) {
                 jsonWriter.key("CreatedAt").value(
                         certificateDetail.getCreatedAt());
             }
-
             if (certificateDetail.getIssuedAt() != null) {
                 jsonWriter.key("IssuedAt").value(
                         certificateDetail.getIssuedAt());
             }
-
             if (certificateDetail.getStatus() != null) {
                 jsonWriter.key("Status").value(certificateDetail.getStatus());
             }
-
             if (certificateDetail.getRevokedAt() != null) {
                 jsonWriter.key("RevokedAt").value(
                         certificateDetail.getRevokedAt());
             }
-
             if (certificateDetail.getRevocationReason() != null) {
                 jsonWriter.key("RevocationReason").value(
                         certificateDetail.getRevocationReason());
             }
-
             if (certificateDetail.getNotBefore() != null) {
                 jsonWriter.key("NotBefore").value(
                         certificateDetail.getNotBefore());
             }
-
             if (certificateDetail.getNotAfter() != null) {
                 jsonWriter.key("NotAfter").value(
                         certificateDetail.getNotAfter());
             }
-
             if (certificateDetail.getKeyAlgorithm() != null) {
                 jsonWriter.key("KeyAlgorithm").value(
                         certificateDetail.getKeyAlgorithm());
             }
-
             if (certificateDetail.getSignatureAlgorithm() != null) {
                 jsonWriter.key("SignatureAlgorithm").value(
                         certificateDetail.getSignatureAlgorithm());

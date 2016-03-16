@@ -37,6 +37,7 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -64,26 +65,30 @@ public class PutIntegrationResponseRequestMarshaller
 
         String uriResourcePath = "/restapis/{restapi_id}/resources/{resource_id}/methods/{http_method}/integration/responses/{status_code}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{restapi_id}",
-                (putIntegrationResponseRequest.getRestApiId() == null) ? ""
-                        : StringUtils.fromString(putIntegrationResponseRequest
-                                .getRestApiId()));
-        uriResourcePath = uriResourcePath.replace(
-                "{resource_id}",
-                (putIntegrationResponseRequest.getResourceId() == null) ? ""
-                        : StringUtils.fromString(putIntegrationResponseRequest
-                                .getResourceId()));
-        uriResourcePath = uriResourcePath.replace(
-                "{http_method}",
-                (putIntegrationResponseRequest.getHttpMethod() == null) ? ""
-                        : StringUtils.fromString(putIntegrationResponseRequest
-                                .getHttpMethod()));
-        uriResourcePath = uriResourcePath.replace(
-                "{status_code}",
-                (putIntegrationResponseRequest.getStatusCode() == null) ? ""
-                        : StringUtils.fromString(putIntegrationResponseRequest
-                                .getStatusCode()));
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{restapi_id}",
+                        (putIntegrationResponseRequest.getRestApiId() != null) ? StringUtils
+                                .fromString(putIntegrationResponseRequest
+                                        .getRestApiId()) : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{resource_id}",
+                        (putIntegrationResponseRequest.getResourceId() != null) ? StringUtils
+                                .fromString(putIntegrationResponseRequest
+                                        .getResourceId()) : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{http_method}",
+                        (putIntegrationResponseRequest.getHttpMethod() != null) ? StringUtils
+                                .fromString(putIntegrationResponseRequest
+                                        .getHttpMethod()) : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{status_code}",
+                        (putIntegrationResponseRequest.getStatusCode() != null) ? StringUtils
+                                .fromString(putIntegrationResponseRequest
+                                        .getStatusCode()) : "");
         request.setResourcePath(uriResourcePath);
 
         try {

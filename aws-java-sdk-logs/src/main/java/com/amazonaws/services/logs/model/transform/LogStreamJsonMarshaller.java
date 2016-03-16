@@ -30,6 +30,7 @@ import com.amazonaws.services.logs.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,36 +55,29 @@ public class LogStreamJsonMarshaller {
                 jsonWriter.key("logStreamName").value(
                         logStream.getLogStreamName());
             }
-
             if (logStream.getCreationTime() != null) {
                 jsonWriter.key("creationTime").value(
                         logStream.getCreationTime());
             }
-
             if (logStream.getFirstEventTimestamp() != null) {
                 jsonWriter.key("firstEventTimestamp").value(
                         logStream.getFirstEventTimestamp());
             }
-
             if (logStream.getLastEventTimestamp() != null) {
                 jsonWriter.key("lastEventTimestamp").value(
                         logStream.getLastEventTimestamp());
             }
-
             if (logStream.getLastIngestionTime() != null) {
                 jsonWriter.key("lastIngestionTime").value(
                         logStream.getLastIngestionTime());
             }
-
             if (logStream.getUploadSequenceToken() != null) {
                 jsonWriter.key("uploadSequenceToken").value(
                         logStream.getUploadSequenceToken());
             }
-
             if (logStream.getArn() != null) {
                 jsonWriter.key("arn").value(logStream.getArn());
             }
-
             if (logStream.getStoredBytes() != null) {
                 jsonWriter.key("storedBytes").value(logStream.getStoredBytes());
             }

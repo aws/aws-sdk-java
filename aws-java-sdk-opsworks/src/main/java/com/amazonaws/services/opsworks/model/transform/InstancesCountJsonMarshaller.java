@@ -30,6 +30,7 @@ import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,87 +55,69 @@ public class InstancesCountJsonMarshaller {
                 jsonWriter.key("Assigning")
                         .value(instancesCount.getAssigning());
             }
-
             if (instancesCount.getBooting() != null) {
                 jsonWriter.key("Booting").value(instancesCount.getBooting());
             }
-
             if (instancesCount.getConnectionLost() != null) {
                 jsonWriter.key("ConnectionLost").value(
                         instancesCount.getConnectionLost());
             }
-
             if (instancesCount.getDeregistering() != null) {
                 jsonWriter.key("Deregistering").value(
                         instancesCount.getDeregistering());
             }
-
             if (instancesCount.getOnline() != null) {
                 jsonWriter.key("Online").value(instancesCount.getOnline());
             }
-
             if (instancesCount.getPending() != null) {
                 jsonWriter.key("Pending").value(instancesCount.getPending());
             }
-
             if (instancesCount.getRebooting() != null) {
                 jsonWriter.key("Rebooting")
                         .value(instancesCount.getRebooting());
             }
-
             if (instancesCount.getRegistered() != null) {
                 jsonWriter.key("Registered").value(
                         instancesCount.getRegistered());
             }
-
             if (instancesCount.getRegistering() != null) {
                 jsonWriter.key("Registering").value(
                         instancesCount.getRegistering());
             }
-
             if (instancesCount.getRequested() != null) {
                 jsonWriter.key("Requested")
                         .value(instancesCount.getRequested());
             }
-
             if (instancesCount.getRunningSetup() != null) {
                 jsonWriter.key("RunningSetup").value(
                         instancesCount.getRunningSetup());
             }
-
             if (instancesCount.getSetupFailed() != null) {
                 jsonWriter.key("SetupFailed").value(
                         instancesCount.getSetupFailed());
             }
-
             if (instancesCount.getShuttingDown() != null) {
                 jsonWriter.key("ShuttingDown").value(
                         instancesCount.getShuttingDown());
             }
-
             if (instancesCount.getStartFailed() != null) {
                 jsonWriter.key("StartFailed").value(
                         instancesCount.getStartFailed());
             }
-
             if (instancesCount.getStopped() != null) {
                 jsonWriter.key("Stopped").value(instancesCount.getStopped());
             }
-
             if (instancesCount.getStopping() != null) {
                 jsonWriter.key("Stopping").value(instancesCount.getStopping());
             }
-
             if (instancesCount.getTerminated() != null) {
                 jsonWriter.key("Terminated").value(
                         instancesCount.getTerminated());
             }
-
             if (instancesCount.getTerminating() != null) {
                 jsonWriter.key("Terminating").value(
                         instancesCount.getTerminating());
             }
-
             if (instancesCount.getUnassigning() != null) {
                 jsonWriter.key("Unassigning").value(
                         instancesCount.getUnassigning());

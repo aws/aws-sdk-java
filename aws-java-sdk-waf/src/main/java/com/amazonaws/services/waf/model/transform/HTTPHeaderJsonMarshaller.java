@@ -30,6 +30,7 @@ import com.amazonaws.services.waf.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,7 +54,6 @@ public class HTTPHeaderJsonMarshaller {
             if (hTTPHeader.getName() != null) {
                 jsonWriter.key("Name").value(hTTPHeader.getName());
             }
-
             if (hTTPHeader.getValue() != null) {
                 jsonWriter.key("Value").value(hTTPHeader.getValue());
             }

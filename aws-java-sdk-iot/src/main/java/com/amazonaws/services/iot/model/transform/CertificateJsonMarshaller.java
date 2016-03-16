@@ -30,6 +30,7 @@ import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,16 +55,13 @@ public class CertificateJsonMarshaller {
                 jsonWriter.key("certificateArn").value(
                         certificate.getCertificateArn());
             }
-
             if (certificate.getCertificateId() != null) {
                 jsonWriter.key("certificateId").value(
                         certificate.getCertificateId());
             }
-
             if (certificate.getStatus() != null) {
                 jsonWriter.key("status").value(certificate.getStatus());
             }
-
             if (certificate.getCreationDate() != null) {
                 jsonWriter.key("creationDate").value(
                         certificate.getCreationDate());

@@ -37,6 +37,7 @@ import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -65,9 +66,8 @@ public class DeletePolicyRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{policyName}",
-                (deletePolicyRequest.getPolicyName() == null) ? ""
-                        : StringUtils.fromString(deletePolicyRequest
-                                .getPolicyName()));
+                (deletePolicyRequest.getPolicyName() != null) ? StringUtils
+                        .fromString(deletePolicyRequest.getPolicyName()) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

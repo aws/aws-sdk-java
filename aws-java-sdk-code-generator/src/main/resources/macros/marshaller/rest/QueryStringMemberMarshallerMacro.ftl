@@ -17,14 +17,17 @@
         <#elseif member.list>
             if (${getMember}() != null && !(${getMember}().isEmpty())) {
                 for(${member.listModel.simpleType} value : ${getMember}()) {
-                    request.addParameter("${member.http.marshallLocationName}", StringUtils.from${member.listModel.simpleType}(value));        
+                    request.addParameter("${member.http.marshallLocationName}", StringUtils.from${member.listModel.simpleType}(value));
                 }
             }
         <#else>
-            String ${variable.variableName} = (${getMember}() == null ) ? null : StringUtils.from${variable.simpleType}(${getMember}());
-            if (${variable.variableName} != null) {
-                request.addParameter("${member.http.marshallLocationName}", ${variable.variableName});
-            }
+            <#if member.idempotencyToken>
+                request.addParameter("${member.http.marshallLocationName}", <@IdempotencyTokenMacro.content getMember member.variable.simpleType/>);
+            <#else>
+                if(${getMember}() != null) {
+                    request.addParameter("${member.http.marshallLocationName}", StringUtils.from${variable.simpleType}(${getMember}()));
+                }
+            </#if>
         </#if>
     </#if>
     </#list>

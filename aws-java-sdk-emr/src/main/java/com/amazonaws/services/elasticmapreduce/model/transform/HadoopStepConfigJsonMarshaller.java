@@ -30,6 +30,7 @@ import com.amazonaws.services.elasticmapreduce.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -71,7 +72,6 @@ public class HadoopStepConfigJsonMarshaller {
                 }
                 jsonWriter.endObject();
             }
-
             if (hadoopStepConfig.getMainClass() != null) {
                 jsonWriter.key("MainClass").value(
                         hadoopStepConfig.getMainClass());

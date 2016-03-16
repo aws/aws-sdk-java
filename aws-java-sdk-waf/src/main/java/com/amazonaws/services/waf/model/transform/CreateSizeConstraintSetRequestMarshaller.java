@@ -37,6 +37,7 @@ import com.amazonaws.services.waf.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -74,7 +75,6 @@ public class CreateSizeConstraintSetRequestMarshaller
                 jsonWriter.key("Name").value(
                         createSizeConstraintSetRequest.getName());
             }
-
             if (createSizeConstraintSetRequest.getChangeToken() != null) {
                 jsonWriter.key("ChangeToken").value(
                         createSizeConstraintSetRequest.getChangeToken());

@@ -32,6 +32,7 @@ import com.amazonaws.services.route53.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.XMLWriter;
 
 /**
@@ -59,13 +60,13 @@ public class DeleteTrafficPolicyRequestMarshaller
 
         uriResourcePath = uriResourcePath.replace(
                 "{Id}",
-                (deleteTrafficPolicyRequest.getId() == null) ? "" : StringUtils
-                        .fromString(deleteTrafficPolicyRequest.getId()));
+                (deleteTrafficPolicyRequest.getId() != null) ? StringUtils
+                        .fromString(deleteTrafficPolicyRequest.getId()) : "");
         uriResourcePath = uriResourcePath.replace(
                 "{Version}",
-                (deleteTrafficPolicyRequest.getVersion() == null) ? ""
-                        : StringUtils.fromInteger(deleteTrafficPolicyRequest
-                                .getVersion()));
+                (deleteTrafficPolicyRequest.getVersion() != null) ? StringUtils
+                        .fromInteger(deleteTrafficPolicyRequest.getVersion())
+                        : "");
         request.setResourcePath(uriResourcePath);
 
         return request;

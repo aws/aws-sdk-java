@@ -32,6 +32,7 @@ import com.amazonaws.services.cloudfront.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.XMLWriter;
 
 /**
@@ -58,8 +59,8 @@ public class GetDistributionRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{Id}",
-                (getDistributionRequest.getId() == null) ? "" : StringUtils
-                        .fromString(getDistributionRequest.getId()));
+                (getDistributionRequest.getId() != null) ? StringUtils
+                        .fromString(getDistributionRequest.getId()) : "");
         request.setResourcePath(uriResourcePath);
 
         return request;

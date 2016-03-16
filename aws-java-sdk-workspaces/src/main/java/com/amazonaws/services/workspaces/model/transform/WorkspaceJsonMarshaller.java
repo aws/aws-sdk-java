@@ -30,6 +30,7 @@ import com.amazonaws.services.workspaces.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,55 +54,43 @@ public class WorkspaceJsonMarshaller {
             if (workspace.getWorkspaceId() != null) {
                 jsonWriter.key("WorkspaceId").value(workspace.getWorkspaceId());
             }
-
             if (workspace.getDirectoryId() != null) {
                 jsonWriter.key("DirectoryId").value(workspace.getDirectoryId());
             }
-
             if (workspace.getUserName() != null) {
                 jsonWriter.key("UserName").value(workspace.getUserName());
             }
-
             if (workspace.getIpAddress() != null) {
                 jsonWriter.key("IpAddress").value(workspace.getIpAddress());
             }
-
             if (workspace.getState() != null) {
                 jsonWriter.key("State").value(workspace.getState());
             }
-
             if (workspace.getBundleId() != null) {
                 jsonWriter.key("BundleId").value(workspace.getBundleId());
             }
-
             if (workspace.getSubnetId() != null) {
                 jsonWriter.key("SubnetId").value(workspace.getSubnetId());
             }
-
             if (workspace.getErrorMessage() != null) {
                 jsonWriter.key("ErrorMessage").value(
                         workspace.getErrorMessage());
             }
-
             if (workspace.getErrorCode() != null) {
                 jsonWriter.key("ErrorCode").value(workspace.getErrorCode());
             }
-
             if (workspace.getComputerName() != null) {
                 jsonWriter.key("ComputerName").value(
                         workspace.getComputerName());
             }
-
             if (workspace.getVolumeEncryptionKey() != null) {
                 jsonWriter.key("VolumeEncryptionKey").value(
                         workspace.getVolumeEncryptionKey());
             }
-
             if (workspace.getUserVolumeEncryptionEnabled() != null) {
                 jsonWriter.key("UserVolumeEncryptionEnabled").value(
                         workspace.getUserVolumeEncryptionEnabled());
             }
-
             if (workspace.getRootVolumeEncryptionEnabled() != null) {
                 jsonWriter.key("RootVolumeEncryptionEnabled").value(
                         workspace.getRootVolumeEncryptionEnabled());

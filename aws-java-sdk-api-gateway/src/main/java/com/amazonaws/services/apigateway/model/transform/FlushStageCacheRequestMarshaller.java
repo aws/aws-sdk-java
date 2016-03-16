@@ -37,6 +37,7 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -63,16 +64,18 @@ public class FlushStageCacheRequestMarshaller implements
 
         String uriResourcePath = "/restapis/{restapi_id}/stages/{stage_name}/cache/data";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{restapi_id}",
-                (flushStageCacheRequest.getRestApiId() == null) ? ""
-                        : StringUtils.fromString(flushStageCacheRequest
-                                .getRestApiId()));
-        uriResourcePath = uriResourcePath.replace(
-                "{stage_name}",
-                (flushStageCacheRequest.getStageName() == null) ? ""
-                        : StringUtils.fromString(flushStageCacheRequest
-                                .getStageName()));
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{restapi_id}",
+                        (flushStageCacheRequest.getRestApiId() != null) ? StringUtils
+                                .fromString(flushStageCacheRequest
+                                        .getRestApiId()) : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{stage_name}",
+                        (flushStageCacheRequest.getStageName() != null) ? StringUtils
+                                .fromString(flushStageCacheRequest
+                                        .getStageName()) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

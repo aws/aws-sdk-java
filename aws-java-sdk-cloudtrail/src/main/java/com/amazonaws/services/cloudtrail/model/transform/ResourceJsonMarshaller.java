@@ -30,6 +30,7 @@ import com.amazonaws.services.cloudtrail.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,7 +55,6 @@ public class ResourceJsonMarshaller {
                 jsonWriter.key("ResourceType")
                         .value(resource.getResourceType());
             }
-
             if (resource.getResourceName() != null) {
                 jsonWriter.key("ResourceName")
                         .value(resource.getResourceName());

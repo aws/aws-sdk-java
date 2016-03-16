@@ -30,6 +30,7 @@ import com.amazonaws.services.cognitosync.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,25 +54,20 @@ public class RecordJsonMarshaller {
             if (record.getKey() != null) {
                 jsonWriter.key("Key").value(record.getKey());
             }
-
             if (record.getValue() != null) {
                 jsonWriter.key("Value").value(record.getValue());
             }
-
             if (record.getSyncCount() != null) {
                 jsonWriter.key("SyncCount").value(record.getSyncCount());
             }
-
             if (record.getLastModifiedDate() != null) {
                 jsonWriter.key("LastModifiedDate").value(
                         record.getLastModifiedDate());
             }
-
             if (record.getLastModifiedBy() != null) {
                 jsonWriter.key("LastModifiedBy").value(
                         record.getLastModifiedBy());
             }
-
             if (record.getDeviceLastModifiedDate() != null) {
                 jsonWriter.key("DeviceLastModifiedDate").value(
                         record.getDeviceLastModifiedDate());

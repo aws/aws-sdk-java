@@ -37,6 +37,7 @@ import com.amazonaws.services.cognitoidentity.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -74,7 +75,6 @@ public class CreateIdentityPoolRequestMarshaller
                 jsonWriter.key("IdentityPoolName").value(
                         createIdentityPoolRequest.getIdentityPoolName());
             }
-
             if (createIdentityPoolRequest.getAllowUnauthenticatedIdentities() != null) {
                 jsonWriter.key("AllowUnauthenticatedIdentities").value(
                         createIdentityPoolRequest
@@ -99,7 +99,6 @@ public class CreateIdentityPoolRequestMarshaller
                 }
                 jsonWriter.endObject();
             }
-
             if (createIdentityPoolRequest.getDeveloperProviderName() != null) {
                 jsonWriter.key("DeveloperProviderName").value(
                         createIdentityPoolRequest.getDeveloperProviderName());

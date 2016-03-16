@@ -37,6 +37,7 @@ import com.amazonaws.services.directory.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -73,22 +74,18 @@ public class CreateMicrosoftADRequestMarshaller implements
                 jsonWriter.key("Name")
                         .value(createMicrosoftADRequest.getName());
             }
-
             if (createMicrosoftADRequest.getShortName() != null) {
                 jsonWriter.key("ShortName").value(
                         createMicrosoftADRequest.getShortName());
             }
-
             if (createMicrosoftADRequest.getPassword() != null) {
                 jsonWriter.key("Password").value(
                         createMicrosoftADRequest.getPassword());
             }
-
             if (createMicrosoftADRequest.getDescription() != null) {
                 jsonWriter.key("Description").value(
                         createMicrosoftADRequest.getDescription());
             }
-
             if (createMicrosoftADRequest.getVpcSettings() != null) {
                 jsonWriter.key("VpcSettings");
                 DirectoryVpcSettingsJsonMarshaller.getInstance().marshall(

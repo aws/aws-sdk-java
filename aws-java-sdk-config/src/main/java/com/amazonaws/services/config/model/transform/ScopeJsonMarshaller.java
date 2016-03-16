@@ -30,6 +30,7 @@ import com.amazonaws.services.config.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -63,15 +64,12 @@ public class ScopeJsonMarshaller {
                 }
                 jsonWriter.endArray();
             }
-
             if (scope.getTagKey() != null) {
                 jsonWriter.key("TagKey").value(scope.getTagKey());
             }
-
             if (scope.getTagValue() != null) {
                 jsonWriter.key("TagValue").value(scope.getTagValue());
             }
-
             if (scope.getComplianceResourceId() != null) {
                 jsonWriter.key("ComplianceResourceId").value(
                         scope.getComplianceResourceId());

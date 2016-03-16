@@ -30,6 +30,7 @@ import com.amazonaws.services.config.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,7 +56,6 @@ public class ComplianceByConfigRuleJsonMarshaller {
                 jsonWriter.key("ConfigRuleName").value(
                         complianceByConfigRule.getConfigRuleName());
             }
-
             if (complianceByConfigRule.getCompliance() != null) {
                 jsonWriter.key("Compliance");
                 ComplianceJsonMarshaller.getInstance().marshall(

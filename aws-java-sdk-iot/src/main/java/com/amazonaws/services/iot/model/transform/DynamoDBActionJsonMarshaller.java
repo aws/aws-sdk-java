@@ -30,6 +30,7 @@ import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,31 +55,25 @@ public class DynamoDBActionJsonMarshaller {
                 jsonWriter.key("tableName")
                         .value(dynamoDBAction.getTableName());
             }
-
             if (dynamoDBAction.getRoleArn() != null) {
                 jsonWriter.key("roleArn").value(dynamoDBAction.getRoleArn());
             }
-
             if (dynamoDBAction.getHashKeyField() != null) {
                 jsonWriter.key("hashKeyField").value(
                         dynamoDBAction.getHashKeyField());
             }
-
             if (dynamoDBAction.getHashKeyValue() != null) {
                 jsonWriter.key("hashKeyValue").value(
                         dynamoDBAction.getHashKeyValue());
             }
-
             if (dynamoDBAction.getRangeKeyField() != null) {
                 jsonWriter.key("rangeKeyField").value(
                         dynamoDBAction.getRangeKeyField());
             }
-
             if (dynamoDBAction.getRangeKeyValue() != null) {
                 jsonWriter.key("rangeKeyValue").value(
                         dynamoDBAction.getRangeKeyValue());
             }
-
             if (dynamoDBAction.getPayloadField() != null) {
                 jsonWriter.key("payloadField").value(
                         dynamoDBAction.getPayloadField());

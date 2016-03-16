@@ -37,6 +37,7 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -65,16 +66,14 @@ public class GetDomainNamesRequestMarshaller implements
 
         request.setResourcePath(uriResourcePath);
 
-        String position = (getDomainNamesRequest.getPosition() == null) ? null
-                : StringUtils.fromString(getDomainNamesRequest.getPosition());
-        if (position != null) {
-            request.addParameter("position", position);
+        if (getDomainNamesRequest.getPosition() != null) {
+            request.addParameter("position",
+                    StringUtils.fromString(getDomainNamesRequest.getPosition()));
         }
 
-        String limit = (getDomainNamesRequest.getLimit() == null) ? null
-                : StringUtils.fromInteger(getDomainNamesRequest.getLimit());
-        if (limit != null) {
-            request.addParameter("limit", limit);
+        if (getDomainNamesRequest.getLimit() != null) {
+            request.addParameter("limit",
+                    StringUtils.fromInteger(getDomainNamesRequest.getLimit()));
         }
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

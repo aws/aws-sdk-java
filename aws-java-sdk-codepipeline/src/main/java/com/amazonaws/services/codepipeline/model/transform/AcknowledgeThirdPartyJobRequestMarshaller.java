@@ -37,6 +37,7 @@ import com.amazonaws.services.codepipeline.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -74,12 +75,10 @@ public class AcknowledgeThirdPartyJobRequestMarshaller
                 jsonWriter.key("jobId").value(
                         acknowledgeThirdPartyJobRequest.getJobId());
             }
-
             if (acknowledgeThirdPartyJobRequest.getNonce() != null) {
                 jsonWriter.key("nonce").value(
                         acknowledgeThirdPartyJobRequest.getNonce());
             }
-
             if (acknowledgeThirdPartyJobRequest.getClientToken() != null) {
                 jsonWriter.key("clientToken").value(
                         acknowledgeThirdPartyJobRequest.getClientToken());

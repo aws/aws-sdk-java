@@ -37,6 +37,7 @@ import com.amazonaws.services.simplesystemsmanagement.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -81,17 +82,14 @@ public class SendCommandRequestMarshaller implements
                 }
                 jsonWriter.endArray();
             }
-
             if (sendCommandRequest.getDocumentName() != null) {
                 jsonWriter.key("DocumentName").value(
                         sendCommandRequest.getDocumentName());
             }
-
             if (sendCommandRequest.getTimeoutSeconds() != null) {
                 jsonWriter.key("TimeoutSeconds").value(
                         sendCommandRequest.getTimeoutSeconds());
             }
-
             if (sendCommandRequest.getComment() != null) {
                 jsonWriter.key("Comment")
                         .value(sendCommandRequest.getComment());
@@ -120,12 +118,10 @@ public class SendCommandRequestMarshaller implements
                 }
                 jsonWriter.endObject();
             }
-
             if (sendCommandRequest.getOutputS3BucketName() != null) {
                 jsonWriter.key("OutputS3BucketName").value(
                         sendCommandRequest.getOutputS3BucketName());
             }
-
             if (sendCommandRequest.getOutputS3KeyPrefix() != null) {
                 jsonWriter.key("OutputS3KeyPrefix").value(
                         sendCommandRequest.getOutputS3KeyPrefix());

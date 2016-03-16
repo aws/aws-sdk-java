@@ -37,6 +37,7 @@ import com.amazonaws.services.route53domains.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -74,18 +75,15 @@ public class UpdateDomainContactPrivacyRequestMarshaller
                 jsonWriter.key("DomainName").value(
                         updateDomainContactPrivacyRequest.getDomainName());
             }
-
             if (updateDomainContactPrivacyRequest.getAdminPrivacy() != null) {
                 jsonWriter.key("AdminPrivacy").value(
                         updateDomainContactPrivacyRequest.getAdminPrivacy());
             }
-
             if (updateDomainContactPrivacyRequest.getRegistrantPrivacy() != null) {
                 jsonWriter.key("RegistrantPrivacy").value(
                         updateDomainContactPrivacyRequest
                                 .getRegistrantPrivacy());
             }
-
             if (updateDomainContactPrivacyRequest.getTechPrivacy() != null) {
                 jsonWriter.key("TechPrivacy").value(
                         updateDomainContactPrivacyRequest.getTechPrivacy());

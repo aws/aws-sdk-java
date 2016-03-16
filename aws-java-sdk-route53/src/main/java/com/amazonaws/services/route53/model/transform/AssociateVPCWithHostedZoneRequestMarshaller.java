@@ -32,6 +32,7 @@ import com.amazonaws.services.route53.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.XMLWriter;
 
 /**
@@ -60,10 +61,9 @@ public class AssociateVPCWithHostedZoneRequestMarshaller
         uriResourcePath = uriResourcePath
                 .replace(
                         "{Id}",
-                        (associateVPCWithHostedZoneRequest.getHostedZoneId() == null) ? ""
-                                : StringUtils
-                                        .fromString(associateVPCWithHostedZoneRequest
-                                                .getHostedZoneId()));
+                        (associateVPCWithHostedZoneRequest.getHostedZoneId() != null) ? StringUtils
+                                .fromString(associateVPCWithHostedZoneRequest
+                                        .getHostedZoneId()) : "");
         request.setResourcePath(uriResourcePath);
 
         try {

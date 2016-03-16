@@ -37,6 +37,7 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -64,11 +65,12 @@ public class CreateBasePathMappingRequestMarshaller
 
         String uriResourcePath = "/domainnames/{domain_name}/basepathmappings";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{domain_name}",
-                (createBasePathMappingRequest.getDomainName() == null) ? ""
-                        : StringUtils.fromString(createBasePathMappingRequest
-                                .getDomainName()));
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{domain_name}",
+                        (createBasePathMappingRequest.getDomainName() != null) ? StringUtils
+                                .fromString(createBasePathMappingRequest
+                                        .getDomainName()) : "");
         request.setResourcePath(uriResourcePath);
 
         try {
@@ -81,12 +83,10 @@ public class CreateBasePathMappingRequestMarshaller
                 jsonWriter.key("basePath").value(
                         createBasePathMappingRequest.getBasePath());
             }
-
             if (createBasePathMappingRequest.getRestApiId() != null) {
                 jsonWriter.key("restApiId").value(
                         createBasePathMappingRequest.getRestApiId());
             }
-
             if (createBasePathMappingRequest.getStage() != null) {
                 jsonWriter.key("stage").value(
                         createBasePathMappingRequest.getStage());

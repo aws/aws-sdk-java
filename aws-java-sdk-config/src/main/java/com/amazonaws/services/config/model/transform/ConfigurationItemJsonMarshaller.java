@@ -30,6 +30,7 @@ import com.amazonaws.services.config.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,61 +55,49 @@ public class ConfigurationItemJsonMarshaller {
             if (configurationItem.getVersion() != null) {
                 jsonWriter.key("version").value(configurationItem.getVersion());
             }
-
             if (configurationItem.getAccountId() != null) {
                 jsonWriter.key("accountId").value(
                         configurationItem.getAccountId());
             }
-
             if (configurationItem.getConfigurationItemCaptureTime() != null) {
                 jsonWriter.key("configurationItemCaptureTime").value(
                         configurationItem.getConfigurationItemCaptureTime());
             }
-
             if (configurationItem.getConfigurationItemStatus() != null) {
                 jsonWriter.key("configurationItemStatus").value(
                         configurationItem.getConfigurationItemStatus());
             }
-
             if (configurationItem.getConfigurationStateId() != null) {
                 jsonWriter.key("configurationStateId").value(
                         configurationItem.getConfigurationStateId());
             }
-
             if (configurationItem.getConfigurationItemMD5Hash() != null) {
                 jsonWriter.key("configurationItemMD5Hash").value(
                         configurationItem.getConfigurationItemMD5Hash());
             }
-
             if (configurationItem.getArn() != null) {
                 jsonWriter.key("arn").value(configurationItem.getArn());
             }
-
             if (configurationItem.getResourceType() != null) {
                 jsonWriter.key("resourceType").value(
                         configurationItem.getResourceType());
             }
-
             if (configurationItem.getResourceId() != null) {
                 jsonWriter.key("resourceId").value(
                         configurationItem.getResourceId());
             }
-
             if (configurationItem.getResourceName() != null) {
                 jsonWriter.key("resourceName").value(
                         configurationItem.getResourceName());
             }
-
             if (configurationItem.getAwsRegion() != null) {
                 jsonWriter.key("awsRegion").value(
                         configurationItem.getAwsRegion());
             }
-
             if (configurationItem.getAvailabilityZone() != null) {
                 jsonWriter.key("availabilityZone").value(
                         configurationItem.getAvailabilityZone());
             }
-
             if (configurationItem.getResourceCreationTime() != null) {
                 jsonWriter.key("resourceCreationTime").value(
                         configurationItem.getResourceCreationTime());
@@ -159,7 +148,6 @@ public class ConfigurationItemJsonMarshaller {
                 }
                 jsonWriter.endArray();
             }
-
             if (configurationItem.getConfiguration() != null) {
                 jsonWriter.key("configuration").value(
                         configurationItem.getConfiguration());

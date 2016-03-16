@@ -37,6 +37,7 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -69,16 +70,16 @@ public class GetExportRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
-                (getExportRequest.getRestApiId() == null) ? "" : StringUtils
-                        .fromString(getExportRequest.getRestApiId()));
+                (getExportRequest.getRestApiId() != null) ? StringUtils
+                        .fromString(getExportRequest.getRestApiId()) : "");
         uriResourcePath = uriResourcePath.replace(
                 "{stage_name}",
-                (getExportRequest.getStageName() == null) ? "" : StringUtils
-                        .fromString(getExportRequest.getStageName()));
+                (getExportRequest.getStageName() != null) ? StringUtils
+                        .fromString(getExportRequest.getStageName()) : "");
         uriResourcePath = uriResourcePath.replace(
                 "{export_type}",
-                (getExportRequest.getExportType() == null) ? "" : StringUtils
-                        .fromString(getExportRequest.getExportType()));
+                (getExportRequest.getExportType() != null) ? StringUtils
+                        .fromString(getExportRequest.getExportType()) : "");
         request.setResourcePath(uriResourcePath);
 
         java.util.Map<String, String> parameters = getExportRequest

@@ -37,6 +37,7 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -65,14 +66,15 @@ public class UpdateAuthorizerRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
-                (updateAuthorizerRequest.getRestApiId() == null) ? ""
-                        : StringUtils.fromString(updateAuthorizerRequest
-                                .getRestApiId()));
-        uriResourcePath = uriResourcePath.replace(
-                "{authorizer_id}",
-                (updateAuthorizerRequest.getAuthorizerId() == null) ? ""
-                        : StringUtils.fromString(updateAuthorizerRequest
-                                .getAuthorizerId()));
+                (updateAuthorizerRequest.getRestApiId() != null) ? StringUtils
+                        .fromString(updateAuthorizerRequest.getRestApiId())
+                        : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{authorizer_id}",
+                        (updateAuthorizerRequest.getAuthorizerId() != null) ? StringUtils
+                                .fromString(updateAuthorizerRequest
+                                        .getAuthorizerId()) : "");
         request.setResourcePath(uriResourcePath);
 
         try {

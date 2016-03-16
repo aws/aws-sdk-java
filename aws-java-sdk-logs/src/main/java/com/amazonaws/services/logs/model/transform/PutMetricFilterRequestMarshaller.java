@@ -37,6 +37,7 @@ import com.amazonaws.services.logs.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -72,12 +73,10 @@ public class PutMetricFilterRequestMarshaller implements
                 jsonWriter.key("logGroupName").value(
                         putMetricFilterRequest.getLogGroupName());
             }
-
             if (putMetricFilterRequest.getFilterName() != null) {
                 jsonWriter.key("filterName").value(
                         putMetricFilterRequest.getFilterName());
             }
-
             if (putMetricFilterRequest.getFilterPattern() != null) {
                 jsonWriter.key("filterPattern").value(
                         putMetricFilterRequest.getFilterPattern());

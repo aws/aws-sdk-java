@@ -30,6 +30,7 @@ import com.amazonaws.services.config.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,7 +55,6 @@ public class SourceDetailJsonMarshaller {
                 jsonWriter.key("EventSource").value(
                         sourceDetail.getEventSource());
             }
-
             if (sourceDetail.getMessageType() != null) {
                 jsonWriter.key("MessageType").value(
                         sourceDetail.getMessageType());

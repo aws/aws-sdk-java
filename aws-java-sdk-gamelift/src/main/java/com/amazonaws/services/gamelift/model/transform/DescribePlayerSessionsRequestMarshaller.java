@@ -37,6 +37,7 @@ import com.amazonaws.services.gamelift.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -73,28 +74,23 @@ public class DescribePlayerSessionsRequestMarshaller
                 jsonWriter.key("GameSessionId").value(
                         describePlayerSessionsRequest.getGameSessionId());
             }
-
             if (describePlayerSessionsRequest.getPlayerId() != null) {
                 jsonWriter.key("PlayerId").value(
                         describePlayerSessionsRequest.getPlayerId());
             }
-
             if (describePlayerSessionsRequest.getPlayerSessionId() != null) {
                 jsonWriter.key("PlayerSessionId").value(
                         describePlayerSessionsRequest.getPlayerSessionId());
             }
-
             if (describePlayerSessionsRequest.getPlayerSessionStatusFilter() != null) {
                 jsonWriter.key("PlayerSessionStatusFilter").value(
                         describePlayerSessionsRequest
                                 .getPlayerSessionStatusFilter());
             }
-
             if (describePlayerSessionsRequest.getLimit() != null) {
                 jsonWriter.key("Limit").value(
                         describePlayerSessionsRequest.getLimit());
             }
-
             if (describePlayerSessionsRequest.getNextToken() != null) {
                 jsonWriter.key("NextToken").value(
                         describePlayerSessionsRequest.getNextToken());

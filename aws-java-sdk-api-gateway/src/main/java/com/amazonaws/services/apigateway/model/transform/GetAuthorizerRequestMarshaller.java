@@ -37,6 +37,7 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -65,14 +66,13 @@ public class GetAuthorizerRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
-                (getAuthorizerRequest.getRestApiId() == null) ? ""
-                        : StringUtils.fromString(getAuthorizerRequest
-                                .getRestApiId()));
+                (getAuthorizerRequest.getRestApiId() != null) ? StringUtils
+                        .fromString(getAuthorizerRequest.getRestApiId()) : "");
         uriResourcePath = uriResourcePath.replace(
                 "{authorizer_id}",
-                (getAuthorizerRequest.getAuthorizerId() == null) ? ""
-                        : StringUtils.fromString(getAuthorizerRequest
-                                .getAuthorizerId()));
+                (getAuthorizerRequest.getAuthorizerId() != null) ? StringUtils
+                        .fromString(getAuthorizerRequest.getAuthorizerId())
+                        : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

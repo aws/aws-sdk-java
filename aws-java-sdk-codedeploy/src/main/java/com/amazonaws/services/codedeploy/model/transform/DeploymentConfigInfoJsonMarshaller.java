@@ -30,6 +30,7 @@ import com.amazonaws.services.codedeploy.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,19 +56,16 @@ public class DeploymentConfigInfoJsonMarshaller {
                 jsonWriter.key("deploymentConfigId").value(
                         deploymentConfigInfo.getDeploymentConfigId());
             }
-
             if (deploymentConfigInfo.getDeploymentConfigName() != null) {
                 jsonWriter.key("deploymentConfigName").value(
                         deploymentConfigInfo.getDeploymentConfigName());
             }
-
             if (deploymentConfigInfo.getMinimumHealthyHosts() != null) {
                 jsonWriter.key("minimumHealthyHosts");
                 MinimumHealthyHostsJsonMarshaller.getInstance().marshall(
                         deploymentConfigInfo.getMinimumHealthyHosts(),
                         jsonWriter);
             }
-
             if (deploymentConfigInfo.getCreateTime() != null) {
                 jsonWriter.key("createTime").value(
                         deploymentConfigInfo.getCreateTime());

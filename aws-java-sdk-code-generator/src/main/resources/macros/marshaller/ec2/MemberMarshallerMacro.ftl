@@ -13,10 +13,15 @@
         <#if contextPath?has_content>
             <#local marshallLocationName = contextPath + "." + marshallLocationName/>
         </#if>
+
         <#if member.simple>
-            if (${getMember}() != null) {
-                request.addParameter("${marshallLocationName}", StringUtils.from${member.variable.simpleType}(${getMember}()));
-            }
+            <#if member.idempotencyToken>
+                request.addParameter("${marshallLocationName}", <@IdempotencyTokenMacro.content getMember member.variable.simpleType/>);
+            <#else>
+                if(${getMember}() != null) {
+                    request.addParameter("${marshallLocationName}", StringUtils.from${member.variable.simpleType}(${getMember}()));
+                }
+            </#if>
         <#elseif member.list>
             <#local listModel = member.listModel />
             <#local listMemberType = listModel.memberType/>

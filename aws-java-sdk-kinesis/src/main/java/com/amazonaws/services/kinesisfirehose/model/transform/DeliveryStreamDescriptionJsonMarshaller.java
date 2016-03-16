@@ -30,6 +30,7 @@ import com.amazonaws.services.kinesisfirehose.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,27 +56,22 @@ public class DeliveryStreamDescriptionJsonMarshaller {
                 jsonWriter.key("DeliveryStreamName").value(
                         deliveryStreamDescription.getDeliveryStreamName());
             }
-
             if (deliveryStreamDescription.getDeliveryStreamARN() != null) {
                 jsonWriter.key("DeliveryStreamARN").value(
                         deliveryStreamDescription.getDeliveryStreamARN());
             }
-
             if (deliveryStreamDescription.getDeliveryStreamStatus() != null) {
                 jsonWriter.key("DeliveryStreamStatus").value(
                         deliveryStreamDescription.getDeliveryStreamStatus());
             }
-
             if (deliveryStreamDescription.getVersionId() != null) {
                 jsonWriter.key("VersionId").value(
                         deliveryStreamDescription.getVersionId());
             }
-
             if (deliveryStreamDescription.getCreateTimestamp() != null) {
                 jsonWriter.key("CreateTimestamp").value(
                         deliveryStreamDescription.getCreateTimestamp());
             }
-
             if (deliveryStreamDescription.getLastUpdateTimestamp() != null) {
                 jsonWriter.key("LastUpdateTimestamp").value(
                         deliveryStreamDescription.getLastUpdateTimestamp());
@@ -95,7 +91,6 @@ public class DeliveryStreamDescriptionJsonMarshaller {
                 }
                 jsonWriter.endArray();
             }
-
             if (deliveryStreamDescription.getHasMoreDestinations() != null) {
                 jsonWriter.key("HasMoreDestinations").value(
                         deliveryStreamDescription.getHasMoreDestinations());

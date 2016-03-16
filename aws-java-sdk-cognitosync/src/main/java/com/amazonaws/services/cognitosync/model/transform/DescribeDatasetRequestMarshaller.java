@@ -37,6 +37,7 @@ import com.amazonaws.services.cognitosync.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -63,21 +64,22 @@ public class DescribeDatasetRequestMarshaller implements
 
         String uriResourcePath = "/identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets/{DatasetName}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{IdentityPoolId}",
-                (describeDatasetRequest.getIdentityPoolId() == null) ? ""
-                        : StringUtils.fromString(describeDatasetRequest
-                                .getIdentityPoolId()));
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{IdentityPoolId}",
+                        (describeDatasetRequest.getIdentityPoolId() != null) ? StringUtils
+                                .fromString(describeDatasetRequest
+                                        .getIdentityPoolId()) : "");
         uriResourcePath = uriResourcePath.replace(
                 "{IdentityId}",
-                (describeDatasetRequest.getIdentityId() == null) ? ""
-                        : StringUtils.fromString(describeDatasetRequest
-                                .getIdentityId()));
+                (describeDatasetRequest.getIdentityId() != null) ? StringUtils
+                        .fromString(describeDatasetRequest.getIdentityId())
+                        : "");
         uriResourcePath = uriResourcePath.replace(
                 "{DatasetName}",
-                (describeDatasetRequest.getDatasetName() == null) ? ""
-                        : StringUtils.fromString(describeDatasetRequest
-                                .getDatasetName()));
+                (describeDatasetRequest.getDatasetName() != null) ? StringUtils
+                        .fromString(describeDatasetRequest.getDatasetName())
+                        : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

@@ -30,6 +30,7 @@ import com.amazonaws.services.machinelearning.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,27 +56,22 @@ public class RDSMetadataJsonMarshaller {
                 RDSDatabaseJsonMarshaller.getInstance().marshall(
                         rDSMetadata.getDatabase(), jsonWriter);
             }
-
             if (rDSMetadata.getDatabaseUserName() != null) {
                 jsonWriter.key("DatabaseUserName").value(
                         rDSMetadata.getDatabaseUserName());
             }
-
             if (rDSMetadata.getSelectSqlQuery() != null) {
                 jsonWriter.key("SelectSqlQuery").value(
                         rDSMetadata.getSelectSqlQuery());
             }
-
             if (rDSMetadata.getResourceRole() != null) {
                 jsonWriter.key("ResourceRole").value(
                         rDSMetadata.getResourceRole());
             }
-
             if (rDSMetadata.getServiceRole() != null) {
                 jsonWriter.key("ServiceRole").value(
                         rDSMetadata.getServiceRole());
             }
-
             if (rDSMetadata.getDataPipelineId() != null) {
                 jsonWriter.key("DataPipelineId").value(
                         rDSMetadata.getDataPipelineId());

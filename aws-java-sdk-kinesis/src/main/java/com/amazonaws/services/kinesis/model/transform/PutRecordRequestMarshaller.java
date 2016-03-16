@@ -37,6 +37,7 @@ import com.amazonaws.services.kinesis.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -71,21 +72,17 @@ public class PutRecordRequestMarshaller implements
                 jsonWriter.key("StreamName").value(
                         putRecordRequest.getStreamName());
             }
-
             if (putRecordRequest.getData() != null) {
                 jsonWriter.key("Data").value(putRecordRequest.getData());
             }
-
             if (putRecordRequest.getPartitionKey() != null) {
                 jsonWriter.key("PartitionKey").value(
                         putRecordRequest.getPartitionKey());
             }
-
             if (putRecordRequest.getExplicitHashKey() != null) {
                 jsonWriter.key("ExplicitHashKey").value(
                         putRecordRequest.getExplicitHashKey());
             }
-
             if (putRecordRequest.getSequenceNumberForOrdering() != null) {
                 jsonWriter.key("SequenceNumberForOrdering").value(
                         putRecordRequest.getSequenceNumberForOrdering());

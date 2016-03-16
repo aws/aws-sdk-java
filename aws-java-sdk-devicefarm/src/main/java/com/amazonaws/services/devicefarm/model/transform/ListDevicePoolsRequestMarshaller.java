@@ -37,6 +37,7 @@ import com.amazonaws.services.devicefarm.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -71,11 +72,9 @@ public class ListDevicePoolsRequestMarshaller implements
             if (listDevicePoolsRequest.getArn() != null) {
                 jsonWriter.key("arn").value(listDevicePoolsRequest.getArn());
             }
-
             if (listDevicePoolsRequest.getType() != null) {
                 jsonWriter.key("type").value(listDevicePoolsRequest.getType());
             }
-
             if (listDevicePoolsRequest.getNextToken() != null) {
                 jsonWriter.key("nextToken").value(
                         listDevicePoolsRequest.getNextToken());

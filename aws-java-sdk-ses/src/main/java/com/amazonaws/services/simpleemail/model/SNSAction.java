@@ -63,7 +63,7 @@ public class SNSAction implements Serializable, Cloneable {
      * The encoding to use for the email within the Amazon SNS notification.
      * UTF-8 is easier to use, but may not preserve all special characters when
      * a message was encoded with a different encoding format. Base64 preserves
-     * all special characters. The default value is Base64.
+     * all special characters. The default value is UTF-8.
      * </p>
      */
     private String encoding;
@@ -144,7 +144,7 @@ public class SNSAction implements Serializable, Cloneable {
      * The encoding to use for the email within the Amazon SNS notification.
      * UTF-8 is easier to use, but may not preserve all special characters when
      * a message was encoded with a different encoding format. Base64 preserves
-     * all special characters. The default value is Base64.
+     * all special characters. The default value is UTF-8.
      * </p>
      * 
      * @param encoding
@@ -152,7 +152,7 @@ public class SNSAction implements Serializable, Cloneable {
      *        notification. UTF-8 is easier to use, but may not preserve all
      *        special characters when a message was encoded with a different
      *        encoding format. Base64 preserves all special characters. The
-     *        default value is Base64.
+     *        default value is UTF-8.
      * @see SNSActionEncoding
      */
 
@@ -165,14 +165,14 @@ public class SNSAction implements Serializable, Cloneable {
      * The encoding to use for the email within the Amazon SNS notification.
      * UTF-8 is easier to use, but may not preserve all special characters when
      * a message was encoded with a different encoding format. Base64 preserves
-     * all special characters. The default value is Base64.
+     * all special characters. The default value is UTF-8.
      * </p>
      * 
      * @return The encoding to use for the email within the Amazon SNS
      *         notification. UTF-8 is easier to use, but may not preserve all
      *         special characters when a message was encoded with a different
      *         encoding format. Base64 preserves all special characters. The
-     *         default value is Base64.
+     *         default value is UTF-8.
      * @see SNSActionEncoding
      */
 
@@ -185,7 +185,7 @@ public class SNSAction implements Serializable, Cloneable {
      * The encoding to use for the email within the Amazon SNS notification.
      * UTF-8 is easier to use, but may not preserve all special characters when
      * a message was encoded with a different encoding format. Base64 preserves
-     * all special characters. The default value is Base64.
+     * all special characters. The default value is UTF-8.
      * </p>
      * 
      * @param encoding
@@ -193,7 +193,7 @@ public class SNSAction implements Serializable, Cloneable {
      *        notification. UTF-8 is easier to use, but may not preserve all
      *        special characters when a message was encoded with a different
      *        encoding format. Base64 preserves all special characters. The
-     *        default value is Base64.
+     *        default value is UTF-8.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see SNSActionEncoding
@@ -209,7 +209,7 @@ public class SNSAction implements Serializable, Cloneable {
      * The encoding to use for the email within the Amazon SNS notification.
      * UTF-8 is easier to use, but may not preserve all special characters when
      * a message was encoded with a different encoding format. Base64 preserves
-     * all special characters. The default value is Base64.
+     * all special characters. The default value is UTF-8.
      * </p>
      * 
      * @param encoding
@@ -217,7 +217,7 @@ public class SNSAction implements Serializable, Cloneable {
      *        notification. UTF-8 is easier to use, but may not preserve all
      *        special characters when a message was encoded with a different
      *        encoding format. Base64 preserves all special characters. The
-     *        default value is Base64.
+     *        default value is UTF-8.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see SNSActionEncoding
@@ -232,7 +232,7 @@ public class SNSAction implements Serializable, Cloneable {
      * The encoding to use for the email within the Amazon SNS notification.
      * UTF-8 is easier to use, but may not preserve all special characters when
      * a message was encoded with a different encoding format. Base64 preserves
-     * all special characters. The default value is Base64.
+     * all special characters. The default value is UTF-8.
      * </p>
      * 
      * @param encoding
@@ -240,7 +240,7 @@ public class SNSAction implements Serializable, Cloneable {
      *        notification. UTF-8 is easier to use, but may not preserve all
      *        special characters when a message was encoded with a different
      *        encoding format. Base64 preserves all special characters. The
-     *        default value is Base64.
+     *        default value is UTF-8.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see SNSActionEncoding

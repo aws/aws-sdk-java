@@ -30,6 +30,7 @@ import com.amazonaws.services.devicefarm.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,11 +54,9 @@ public class CPUJsonMarshaller {
             if (cPU.getFrequency() != null) {
                 jsonWriter.key("frequency").value(cPU.getFrequency());
             }
-
             if (cPU.getArchitecture() != null) {
                 jsonWriter.key("architecture").value(cPU.getArchitecture());
             }
-
             if (cPU.getClock() != null) {
                 jsonWriter.key("clock").value(cPU.getClock());
             }

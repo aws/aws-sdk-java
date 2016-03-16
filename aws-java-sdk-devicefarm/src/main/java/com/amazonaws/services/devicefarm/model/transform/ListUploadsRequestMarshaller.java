@@ -37,6 +37,7 @@ import com.amazonaws.services.devicefarm.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -71,7 +72,6 @@ public class ListUploadsRequestMarshaller implements
             if (listUploadsRequest.getArn() != null) {
                 jsonWriter.key("arn").value(listUploadsRequest.getArn());
             }
-
             if (listUploadsRequest.getNextToken() != null) {
                 jsonWriter.key("nextToken").value(
                         listUploadsRequest.getNextToken());

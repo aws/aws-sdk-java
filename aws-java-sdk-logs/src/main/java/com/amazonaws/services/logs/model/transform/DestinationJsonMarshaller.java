@@ -30,6 +30,7 @@ import com.amazonaws.services.logs.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,24 +55,19 @@ public class DestinationJsonMarshaller {
                 jsonWriter.key("destinationName").value(
                         destination.getDestinationName());
             }
-
             if (destination.getTargetArn() != null) {
                 jsonWriter.key("targetArn").value(destination.getTargetArn());
             }
-
             if (destination.getRoleArn() != null) {
                 jsonWriter.key("roleArn").value(destination.getRoleArn());
             }
-
             if (destination.getAccessPolicy() != null) {
                 jsonWriter.key("accessPolicy").value(
                         destination.getAccessPolicy());
             }
-
             if (destination.getArn() != null) {
                 jsonWriter.key("arn").value(destination.getArn());
             }
-
             if (destination.getCreationTime() != null) {
                 jsonWriter.key("creationTime").value(
                         destination.getCreationTime());

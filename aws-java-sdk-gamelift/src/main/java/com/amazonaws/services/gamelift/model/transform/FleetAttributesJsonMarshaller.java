@@ -30,6 +30,7 @@ import com.amazonaws.services.gamelift.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,39 +54,31 @@ public class FleetAttributesJsonMarshaller {
             if (fleetAttributes.getFleetId() != null) {
                 jsonWriter.key("FleetId").value(fleetAttributes.getFleetId());
             }
-
             if (fleetAttributes.getDescription() != null) {
                 jsonWriter.key("Description").value(
                         fleetAttributes.getDescription());
             }
-
             if (fleetAttributes.getName() != null) {
                 jsonWriter.key("Name").value(fleetAttributes.getName());
             }
-
             if (fleetAttributes.getCreationTime() != null) {
                 jsonWriter.key("CreationTime").value(
                         fleetAttributes.getCreationTime());
             }
-
             if (fleetAttributes.getTerminationTime() != null) {
                 jsonWriter.key("TerminationTime").value(
                         fleetAttributes.getTerminationTime());
             }
-
             if (fleetAttributes.getStatus() != null) {
                 jsonWriter.key("Status").value(fleetAttributes.getStatus());
             }
-
             if (fleetAttributes.getBuildId() != null) {
                 jsonWriter.key("BuildId").value(fleetAttributes.getBuildId());
             }
-
             if (fleetAttributes.getServerLaunchPath() != null) {
                 jsonWriter.key("ServerLaunchPath").value(
                         fleetAttributes.getServerLaunchPath());
             }
-
             if (fleetAttributes.getServerLaunchParameters() != null) {
                 jsonWriter.key("ServerLaunchParameters").value(
                         fleetAttributes.getServerLaunchParameters());
@@ -102,7 +95,6 @@ public class FleetAttributesJsonMarshaller {
                 }
                 jsonWriter.endArray();
             }
-
             if (fleetAttributes.getNewGameSessionProtectionPolicy() != null) {
                 jsonWriter.key("NewGameSessionProtectionPolicy").value(
                         fleetAttributes.getNewGameSessionProtectionPolicy());

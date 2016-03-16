@@ -37,6 +37,7 @@ import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -74,13 +75,11 @@ public class CreateJobRequestMarshaller implements
                 jsonWriter.key("PipelineId").value(
                         createJobRequest.getPipelineId());
             }
-
             if (createJobRequest.getInput() != null) {
                 jsonWriter.key("Input");
                 JobInputJsonMarshaller.getInstance().marshall(
                         createJobRequest.getInput(), jsonWriter);
             }
-
             if (createJobRequest.getOutput() != null) {
                 jsonWriter.key("Output");
                 CreateJobOutputJsonMarshaller.getInstance().marshall(
@@ -101,7 +100,6 @@ public class CreateJobRequestMarshaller implements
                 }
                 jsonWriter.endArray();
             }
-
             if (createJobRequest.getOutputKeyPrefix() != null) {
                 jsonWriter.key("OutputKeyPrefix").value(
                         createJobRequest.getOutputKeyPrefix());

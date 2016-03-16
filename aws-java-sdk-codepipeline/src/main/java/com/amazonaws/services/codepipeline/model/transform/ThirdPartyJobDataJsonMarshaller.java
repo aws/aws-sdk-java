@@ -30,6 +30,7 @@ import com.amazonaws.services.codepipeline.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -56,13 +57,11 @@ public class ThirdPartyJobDataJsonMarshaller {
                 ActionTypeIdJsonMarshaller.getInstance().marshall(
                         thirdPartyJobData.getActionTypeId(), jsonWriter);
             }
-
             if (thirdPartyJobData.getActionConfiguration() != null) {
                 jsonWriter.key("actionConfiguration");
                 ActionConfigurationJsonMarshaller.getInstance().marshall(
                         thirdPartyJobData.getActionConfiguration(), jsonWriter);
             }
-
             if (thirdPartyJobData.getPipelineContext() != null) {
                 jsonWriter.key("pipelineContext");
                 PipelineContextJsonMarshaller.getInstance().marshall(
@@ -98,18 +97,15 @@ public class ThirdPartyJobDataJsonMarshaller {
                 }
                 jsonWriter.endArray();
             }
-
             if (thirdPartyJobData.getArtifactCredentials() != null) {
                 jsonWriter.key("artifactCredentials");
                 AWSSessionCredentialsJsonMarshaller.getInstance().marshall(
                         thirdPartyJobData.getArtifactCredentials(), jsonWriter);
             }
-
             if (thirdPartyJobData.getContinuationToken() != null) {
                 jsonWriter.key("continuationToken").value(
                         thirdPartyJobData.getContinuationToken());
             }
-
             if (thirdPartyJobData.getEncryptionKey() != null) {
                 jsonWriter.key("encryptionKey");
                 EncryptionKeyJsonMarshaller.getInstance().marshall(

@@ -37,6 +37,7 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -64,18 +65,18 @@ public class FlushStageAuthorizersCacheRequestMarshaller
 
         String uriResourcePath = "/restapis/{restapi_id}/stages/{stage_name}/cache/authorizers";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{restapi_id}",
-                (flushStageAuthorizersCacheRequest.getRestApiId() == null) ? ""
-                        : StringUtils
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{restapi_id}",
+                        (flushStageAuthorizersCacheRequest.getRestApiId() != null) ? StringUtils
                                 .fromString(flushStageAuthorizersCacheRequest
-                                        .getRestApiId()));
-        uriResourcePath = uriResourcePath.replace(
-                "{stage_name}",
-                (flushStageAuthorizersCacheRequest.getStageName() == null) ? ""
-                        : StringUtils
+                                        .getRestApiId()) : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{stage_name}",
+                        (flushStageAuthorizersCacheRequest.getStageName() != null) ? StringUtils
                                 .fromString(flushStageAuthorizersCacheRequest
-                                        .getStageName()));
+                                        .getStageName()) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

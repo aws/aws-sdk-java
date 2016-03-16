@@ -30,6 +30,7 @@ import com.amazonaws.services.ecs.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,16 +54,13 @@ public class NetworkBindingJsonMarshaller {
             if (networkBinding.getBindIP() != null) {
                 jsonWriter.key("bindIP").value(networkBinding.getBindIP());
             }
-
             if (networkBinding.getContainerPort() != null) {
                 jsonWriter.key("containerPort").value(
                         networkBinding.getContainerPort());
             }
-
             if (networkBinding.getHostPort() != null) {
                 jsonWriter.key("hostPort").value(networkBinding.getHostPort());
             }
-
             if (networkBinding.getProtocol() != null) {
                 jsonWriter.key("protocol").value(networkBinding.getProtocol());
             }

@@ -30,6 +30,7 @@ import com.amazonaws.services.waf.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,19 +54,15 @@ public class HTTPRequestJsonMarshaller {
             if (hTTPRequest.getClientIP() != null) {
                 jsonWriter.key("ClientIP").value(hTTPRequest.getClientIP());
             }
-
             if (hTTPRequest.getCountry() != null) {
                 jsonWriter.key("Country").value(hTTPRequest.getCountry());
             }
-
             if (hTTPRequest.getURI() != null) {
                 jsonWriter.key("URI").value(hTTPRequest.getURI());
             }
-
             if (hTTPRequest.getMethod() != null) {
                 jsonWriter.key("Method").value(hTTPRequest.getMethod());
             }
-
             if (hTTPRequest.getHTTPVersion() != null) {
                 jsonWriter.key("HTTPVersion").value(
                         hTTPRequest.getHTTPVersion());

@@ -751,6 +751,51 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
 
     /**
      * <p>
+     * Returns the custom MAIL FROM attributes for a list of identities (email
+     * addresses and/or domains).
+     * </p>
+     * <p>
+     * This action is throttled at one request per second and can only get
+     * custom MAIL FROM attributes for up to 100 identities at a time.
+     * </p>
+     * 
+     * @param getIdentityMailFromDomainAttributesRequest
+     * @return A Java Future containing the result of the
+     *         GetIdentityMailFromDomainAttributes operation returned by the
+     *         service.
+     * @sample AmazonSimpleEmailServiceAsync.GetIdentityMailFromDomainAttributes
+     */
+    java.util.concurrent.Future<GetIdentityMailFromDomainAttributesResult> getIdentityMailFromDomainAttributesAsync(
+            GetIdentityMailFromDomainAttributesRequest getIdentityMailFromDomainAttributesRequest);
+
+    /**
+     * <p>
+     * Returns the custom MAIL FROM attributes for a list of identities (email
+     * addresses and/or domains).
+     * </p>
+     * <p>
+     * This action is throttled at one request per second and can only get
+     * custom MAIL FROM attributes for up to 100 identities at a time.
+     * </p>
+     * 
+     * @param getIdentityMailFromDomainAttributesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         GetIdentityMailFromDomainAttributes operation returned by the
+     *         service.
+     * @sample 
+     *         AmazonSimpleEmailServiceAsyncHandler.GetIdentityMailFromDomainAttributes
+     */
+    java.util.concurrent.Future<GetIdentityMailFromDomainAttributesResult> getIdentityMailFromDomainAttributesAsync(
+            GetIdentityMailFromDomainAttributesRequest getIdentityMailFromDomainAttributesRequest,
+            com.amazonaws.handlers.AsyncHandler<GetIdentityMailFromDomainAttributesRequest, GetIdentityMailFromDomainAttributesResult> asyncHandler);
+
+    /**
+     * <p>
      * Given a list of verified identities (email addresses and/or domains),
      * returns a structure describing identity notification attributes.
      * </p>
@@ -1907,6 +1952,58 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
     java.util.concurrent.Future<SetIdentityFeedbackForwardingEnabledResult> setIdentityFeedbackForwardingEnabledAsync(
             SetIdentityFeedbackForwardingEnabledRequest setIdentityFeedbackForwardingEnabledRequest,
             com.amazonaws.handlers.AsyncHandler<SetIdentityFeedbackForwardingEnabledRequest, SetIdentityFeedbackForwardingEnabledResult> asyncHandler);
+
+    /**
+     * <p>
+     * Enables or disables the custom MAIL FROM domain setup for a verified
+     * identity (email address or domain).
+     * </p>
+     * <important>To send emails using the specified MAIL FROM domain, you must
+     * add an MX record to your MAIL FROM domain's DNS settings. If you want
+     * your emails to pass Sender Policy Framework (SPF) checks, you must also
+     * add or update an SPF record. For more information, see the <a href=
+     * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-set.html"
+     * >Amazon SES Developer Guide</a>.</important>
+     * <p>
+     * This action is throttled at one request per second.
+     * </p>
+     * 
+     * @param setIdentityMailFromDomainRequest
+     * @return A Java Future containing the result of the
+     *         SetIdentityMailFromDomain operation returned by the service.
+     * @sample AmazonSimpleEmailServiceAsync.SetIdentityMailFromDomain
+     */
+    java.util.concurrent.Future<SetIdentityMailFromDomainResult> setIdentityMailFromDomainAsync(
+            SetIdentityMailFromDomainRequest setIdentityMailFromDomainRequest);
+
+    /**
+     * <p>
+     * Enables or disables the custom MAIL FROM domain setup for a verified
+     * identity (email address or domain).
+     * </p>
+     * <important>To send emails using the specified MAIL FROM domain, you must
+     * add an MX record to your MAIL FROM domain's DNS settings. If you want
+     * your emails to pass Sender Policy Framework (SPF) checks, you must also
+     * add or update an SPF record. For more information, see the <a href=
+     * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-set.html"
+     * >Amazon SES Developer Guide</a>.</important>
+     * <p>
+     * This action is throttled at one request per second.
+     * </p>
+     * 
+     * @param setIdentityMailFromDomainRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         SetIdentityMailFromDomain operation returned by the service.
+     * @sample AmazonSimpleEmailServiceAsyncHandler.SetIdentityMailFromDomain
+     */
+    java.util.concurrent.Future<SetIdentityMailFromDomainResult> setIdentityMailFromDomainAsync(
+            SetIdentityMailFromDomainRequest setIdentityMailFromDomainRequest,
+            com.amazonaws.handlers.AsyncHandler<SetIdentityMailFromDomainRequest, SetIdentityMailFromDomainResult> asyncHandler);
 
     /**
      * <p>

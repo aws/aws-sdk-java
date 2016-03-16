@@ -30,6 +30,7 @@ import com.amazonaws.services.elasticmapreduce.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,7 +55,6 @@ public class BootstrapActionConfigJsonMarshaller {
             if (bootstrapActionConfig.getName() != null) {
                 jsonWriter.key("Name").value(bootstrapActionConfig.getName());
             }
-
             if (bootstrapActionConfig.getScriptBootstrapAction() != null) {
                 jsonWriter.key("ScriptBootstrapAction");
                 ScriptBootstrapActionConfigJsonMarshaller

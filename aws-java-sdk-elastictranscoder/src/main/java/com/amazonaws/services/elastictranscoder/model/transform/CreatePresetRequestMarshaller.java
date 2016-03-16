@@ -37,6 +37,7 @@ import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -74,29 +75,24 @@ public class CreatePresetRequestMarshaller implements
             if (createPresetRequest.getName() != null) {
                 jsonWriter.key("Name").value(createPresetRequest.getName());
             }
-
             if (createPresetRequest.getDescription() != null) {
                 jsonWriter.key("Description").value(
                         createPresetRequest.getDescription());
             }
-
             if (createPresetRequest.getContainer() != null) {
                 jsonWriter.key("Container").value(
                         createPresetRequest.getContainer());
             }
-
             if (createPresetRequest.getVideo() != null) {
                 jsonWriter.key("Video");
                 VideoParametersJsonMarshaller.getInstance().marshall(
                         createPresetRequest.getVideo(), jsonWriter);
             }
-
             if (createPresetRequest.getAudio() != null) {
                 jsonWriter.key("Audio");
                 AudioParametersJsonMarshaller.getInstance().marshall(
                         createPresetRequest.getAudio(), jsonWriter);
             }
-
             if (createPresetRequest.getThumbnails() != null) {
                 jsonWriter.key("Thumbnails");
                 ThumbnailsJsonMarshaller.getInstance().marshall(

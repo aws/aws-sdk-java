@@ -37,6 +37,7 @@ import com.amazonaws.services.inspector.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -72,12 +73,10 @@ public class UpdateApplicationRequestMarshaller implements
                 jsonWriter.key("applicationArn").value(
                         updateApplicationRequest.getApplicationArn());
             }
-
             if (updateApplicationRequest.getApplicationName() != null) {
                 jsonWriter.key("applicationName").value(
                         updateApplicationRequest.getApplicationName());
             }
-
             if (updateApplicationRequest.getResourceGroupArn() != null) {
                 jsonWriter.key("resourceGroupArn").value(
                         updateApplicationRequest.getResourceGroupArn());

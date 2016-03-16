@@ -37,6 +37,7 @@ import com.amazonaws.services.simplesystemsmanagement.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -72,17 +73,14 @@ public class ListCommandsRequestMarshaller implements
                 jsonWriter.key("CommandId").value(
                         listCommandsRequest.getCommandId());
             }
-
             if (listCommandsRequest.getInstanceId() != null) {
                 jsonWriter.key("InstanceId").value(
                         listCommandsRequest.getInstanceId());
             }
-
             if (listCommandsRequest.getMaxResults() != null) {
                 jsonWriter.key("MaxResults").value(
                         listCommandsRequest.getMaxResults());
             }
-
             if (listCommandsRequest.getNextToken() != null) {
                 jsonWriter.key("NextToken").value(
                         listCommandsRequest.getNextToken());

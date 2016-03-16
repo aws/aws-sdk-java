@@ -30,6 +30,7 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,15 +54,12 @@ public class ApiKeyJsonMarshaller {
             if (apiKey.getId() != null) {
                 jsonWriter.key("id").value(apiKey.getId());
             }
-
             if (apiKey.getName() != null) {
                 jsonWriter.key("name").value(apiKey.getName());
             }
-
             if (apiKey.getDescription() != null) {
                 jsonWriter.key("description").value(apiKey.getDescription());
             }
-
             if (apiKey.getEnabled() != null) {
                 jsonWriter.key("enabled").value(apiKey.getEnabled());
             }
@@ -77,11 +75,9 @@ public class ApiKeyJsonMarshaller {
                 }
                 jsonWriter.endArray();
             }
-
             if (apiKey.getCreatedDate() != null) {
                 jsonWriter.key("createdDate").value(apiKey.getCreatedDate());
             }
-
             if (apiKey.getLastUpdatedDate() != null) {
                 jsonWriter.key("lastUpdatedDate").value(
                         apiKey.getLastUpdatedDate());

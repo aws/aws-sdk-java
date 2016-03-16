@@ -35,7 +35,7 @@ public class RemoveTagsFromOnPremisesInstancesRequest extends
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
     /**
      * <p>
-     * The names of the on-premises instances to remove tags from.
+     * The names of the on-premises instances from which to remove tags.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> instanceNames;
@@ -119,10 +119,10 @@ public class RemoveTagsFromOnPremisesInstancesRequest extends
 
     /**
      * <p>
-     * The names of the on-premises instances to remove tags from.
+     * The names of the on-premises instances from which to remove tags.
      * </p>
      * 
-     * @return The names of the on-premises instances to remove tags from.
+     * @return The names of the on-premises instances from which to remove tags.
      */
 
     public java.util.List<String> getInstanceNames() {
@@ -134,11 +134,11 @@ public class RemoveTagsFromOnPremisesInstancesRequest extends
 
     /**
      * <p>
-     * The names of the on-premises instances to remove tags from.
+     * The names of the on-premises instances from which to remove tags.
      * </p>
      * 
      * @param instanceNames
-     *        The names of the on-premises instances to remove tags from.
+     *        The names of the on-premises instances from which to remove tags.
      */
 
     public void setInstanceNames(java.util.Collection<String> instanceNames) {
@@ -153,7 +153,7 @@ public class RemoveTagsFromOnPremisesInstancesRequest extends
 
     /**
      * <p>
-     * The names of the on-premises instances to remove tags from.
+     * The names of the on-premises instances from which to remove tags.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -163,7 +163,7 @@ public class RemoveTagsFromOnPremisesInstancesRequest extends
      * </p>
      * 
      * @param instanceNames
-     *        The names of the on-premises instances to remove tags from.
+     *        The names of the on-premises instances from which to remove tags.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -182,11 +182,11 @@ public class RemoveTagsFromOnPremisesInstancesRequest extends
 
     /**
      * <p>
-     * The names of the on-premises instances to remove tags from.
+     * The names of the on-premises instances from which to remove tags.
      * </p>
      * 
      * @param instanceNames
-     *        The names of the on-premises instances to remove tags from.
+     *        The names of the on-premises instances from which to remove tags.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

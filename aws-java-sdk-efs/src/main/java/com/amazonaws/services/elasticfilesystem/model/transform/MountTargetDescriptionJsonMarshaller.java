@@ -30,6 +30,7 @@ import com.amazonaws.services.elasticfilesystem.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,32 +56,26 @@ public class MountTargetDescriptionJsonMarshaller {
                 jsonWriter.key("OwnerId").value(
                         mountTargetDescription.getOwnerId());
             }
-
             if (mountTargetDescription.getMountTargetId() != null) {
                 jsonWriter.key("MountTargetId").value(
                         mountTargetDescription.getMountTargetId());
             }
-
             if (mountTargetDescription.getFileSystemId() != null) {
                 jsonWriter.key("FileSystemId").value(
                         mountTargetDescription.getFileSystemId());
             }
-
             if (mountTargetDescription.getSubnetId() != null) {
                 jsonWriter.key("SubnetId").value(
                         mountTargetDescription.getSubnetId());
             }
-
             if (mountTargetDescription.getLifeCycleState() != null) {
                 jsonWriter.key("LifeCycleState").value(
                         mountTargetDescription.getLifeCycleState());
             }
-
             if (mountTargetDescription.getIpAddress() != null) {
                 jsonWriter.key("IpAddress").value(
                         mountTargetDescription.getIpAddress());
             }
-
             if (mountTargetDescription.getNetworkInterfaceId() != null) {
                 jsonWriter.key("NetworkInterfaceId").value(
                         mountTargetDescription.getNetworkInterfaceId());

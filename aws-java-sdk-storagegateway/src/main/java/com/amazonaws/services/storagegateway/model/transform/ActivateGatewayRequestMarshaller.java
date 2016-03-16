@@ -37,6 +37,7 @@ import com.amazonaws.services.storagegateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -73,32 +74,26 @@ public class ActivateGatewayRequestMarshaller implements
                 jsonWriter.key("ActivationKey").value(
                         activateGatewayRequest.getActivationKey());
             }
-
             if (activateGatewayRequest.getGatewayName() != null) {
                 jsonWriter.key("GatewayName").value(
                         activateGatewayRequest.getGatewayName());
             }
-
             if (activateGatewayRequest.getGatewayTimezone() != null) {
                 jsonWriter.key("GatewayTimezone").value(
                         activateGatewayRequest.getGatewayTimezone());
             }
-
             if (activateGatewayRequest.getGatewayRegion() != null) {
                 jsonWriter.key("GatewayRegion").value(
                         activateGatewayRequest.getGatewayRegion());
             }
-
             if (activateGatewayRequest.getGatewayType() != null) {
                 jsonWriter.key("GatewayType").value(
                         activateGatewayRequest.getGatewayType());
             }
-
             if (activateGatewayRequest.getTapeDriveType() != null) {
                 jsonWriter.key("TapeDriveType").value(
                         activateGatewayRequest.getTapeDriveType());
             }
-
             if (activateGatewayRequest.getMediumChangerType() != null) {
                 jsonWriter.key("MediumChangerType").value(
                         activateGatewayRequest.getMediumChangerType());

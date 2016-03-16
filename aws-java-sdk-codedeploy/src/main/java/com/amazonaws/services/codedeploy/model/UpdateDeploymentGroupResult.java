@@ -30,7 +30,7 @@ public class UpdateDeploymentGroupResult implements Serializable, Cloneable {
      * If the output contains no data, and the corresponding deployment group
      * contained at least one Auto Scaling group, AWS CodeDeploy successfully
      * removed all corresponding Auto Scaling lifecycle event hooks from the AWS
-     * account. If the output does contain data, AWS CodeDeploy could not remove
+     * account. If the output contains data, AWS CodeDeploy could not remove
      * some Auto Scaling lifecycle event hooks from the AWS account.
      * </p>
      */
@@ -41,16 +41,16 @@ public class UpdateDeploymentGroupResult implements Serializable, Cloneable {
      * If the output contains no data, and the corresponding deployment group
      * contained at least one Auto Scaling group, AWS CodeDeploy successfully
      * removed all corresponding Auto Scaling lifecycle event hooks from the AWS
-     * account. If the output does contain data, AWS CodeDeploy could not remove
+     * account. If the output contains data, AWS CodeDeploy could not remove
      * some Auto Scaling lifecycle event hooks from the AWS account.
      * </p>
      * 
      * @return If the output contains no data, and the corresponding deployment
      *         group contained at least one Auto Scaling group, AWS CodeDeploy
      *         successfully removed all corresponding Auto Scaling lifecycle
-     *         event hooks from the AWS account. If the output does contain
-     *         data, AWS CodeDeploy could not remove some Auto Scaling lifecycle
-     *         event hooks from the AWS account.
+     *         event hooks from the AWS account. If the output contains data,
+     *         AWS CodeDeploy could not remove some Auto Scaling lifecycle event
+     *         hooks from the AWS account.
      */
 
     public java.util.List<AutoScalingGroup> getHooksNotCleanedUp() {
@@ -65,7 +65,7 @@ public class UpdateDeploymentGroupResult implements Serializable, Cloneable {
      * If the output contains no data, and the corresponding deployment group
      * contained at least one Auto Scaling group, AWS CodeDeploy successfully
      * removed all corresponding Auto Scaling lifecycle event hooks from the AWS
-     * account. If the output does contain data, AWS CodeDeploy could not remove
+     * account. If the output contains data, AWS CodeDeploy could not remove
      * some Auto Scaling lifecycle event hooks from the AWS account.
      * </p>
      * 
@@ -73,8 +73,8 @@ public class UpdateDeploymentGroupResult implements Serializable, Cloneable {
      *        If the output contains no data, and the corresponding deployment
      *        group contained at least one Auto Scaling group, AWS CodeDeploy
      *        successfully removed all corresponding Auto Scaling lifecycle
-     *        event hooks from the AWS account. If the output does contain data,
-     *        AWS CodeDeploy could not remove some Auto Scaling lifecycle event
+     *        event hooks from the AWS account. If the output contains data, AWS
+     *        CodeDeploy could not remove some Auto Scaling lifecycle event
      *        hooks from the AWS account.
      */
 
@@ -94,7 +94,7 @@ public class UpdateDeploymentGroupResult implements Serializable, Cloneable {
      * If the output contains no data, and the corresponding deployment group
      * contained at least one Auto Scaling group, AWS CodeDeploy successfully
      * removed all corresponding Auto Scaling lifecycle event hooks from the AWS
-     * account. If the output does contain data, AWS CodeDeploy could not remove
+     * account. If the output contains data, AWS CodeDeploy could not remove
      * some Auto Scaling lifecycle event hooks from the AWS account.
      * </p>
      * <p>
@@ -108,8 +108,8 @@ public class UpdateDeploymentGroupResult implements Serializable, Cloneable {
      *        If the output contains no data, and the corresponding deployment
      *        group contained at least one Auto Scaling group, AWS CodeDeploy
      *        successfully removed all corresponding Auto Scaling lifecycle
-     *        event hooks from the AWS account. If the output does contain data,
-     *        AWS CodeDeploy could not remove some Auto Scaling lifecycle event
+     *        event hooks from the AWS account. If the output contains data, AWS
+     *        CodeDeploy could not remove some Auto Scaling lifecycle event
      *        hooks from the AWS account.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -132,7 +132,7 @@ public class UpdateDeploymentGroupResult implements Serializable, Cloneable {
      * If the output contains no data, and the corresponding deployment group
      * contained at least one Auto Scaling group, AWS CodeDeploy successfully
      * removed all corresponding Auto Scaling lifecycle event hooks from the AWS
-     * account. If the output does contain data, AWS CodeDeploy could not remove
+     * account. If the output contains data, AWS CodeDeploy could not remove
      * some Auto Scaling lifecycle event hooks from the AWS account.
      * </p>
      * 
@@ -140,8 +140,8 @@ public class UpdateDeploymentGroupResult implements Serializable, Cloneable {
      *        If the output contains no data, and the corresponding deployment
      *        group contained at least one Auto Scaling group, AWS CodeDeploy
      *        successfully removed all corresponding Auto Scaling lifecycle
-     *        event hooks from the AWS account. If the output does contain data,
-     *        AWS CodeDeploy could not remove some Auto Scaling lifecycle event
+     *        event hooks from the AWS account. If the output contains data, AWS
+     *        CodeDeploy could not remove some Auto Scaling lifecycle event
      *        hooks from the AWS account.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.

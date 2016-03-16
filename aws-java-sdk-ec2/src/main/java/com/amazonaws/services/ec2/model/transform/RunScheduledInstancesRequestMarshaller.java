@@ -27,6 +27,7 @@ import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.ec2.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 
 /**
  * RunScheduledInstancesRequest Marshaller
@@ -50,10 +51,8 @@ public class RunScheduledInstancesRequestMarshaller
         request.addParameter("Version", "2015-10-01");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (runScheduledInstancesRequest.getClientToken() != null) {
-            request.addParameter("ClientToken", StringUtils
-                    .fromString(runScheduledInstancesRequest.getClientToken()));
-        }
+        request.addParameter("ClientToken", IdempotentUtils
+                .resolveString(runScheduledInstancesRequest.getClientToken()));
 
         if (runScheduledInstancesRequest.getInstanceCount() != null) {
             request.addParameter("InstanceCount", StringUtils

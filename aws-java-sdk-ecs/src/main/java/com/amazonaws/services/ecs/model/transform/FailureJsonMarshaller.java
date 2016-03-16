@@ -30,6 +30,7 @@ import com.amazonaws.services.ecs.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,7 +54,6 @@ public class FailureJsonMarshaller {
             if (failure.getArn() != null) {
                 jsonWriter.key("arn").value(failure.getArn());
             }
-
             if (failure.getReason() != null) {
                 jsonWriter.key("reason").value(failure.getReason());
             }

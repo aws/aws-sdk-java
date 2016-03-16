@@ -30,6 +30,7 @@ import ${metadata.packageName}.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -43,7 +44,7 @@ public class ${shapeName}Marshaller implements Marshaller<Request<${shapeName}>,
          default to empty string.
     -->
     private static final String DEFAULT_CONTENT_TYPE = "${contentType}";
-    
+
     <#local shape = shapes[shapeName]/>
     public Request<${shapeName}> marshall(${shape.variable.variableType} ${shape.variable.variableName}) {
 

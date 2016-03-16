@@ -37,6 +37,7 @@ import com.amazonaws.services.codepipeline.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -74,17 +75,14 @@ public class CreateCustomActionTypeRequestMarshaller
                 jsonWriter.key("category").value(
                         createCustomActionTypeRequest.getCategory());
             }
-
             if (createCustomActionTypeRequest.getProvider() != null) {
                 jsonWriter.key("provider").value(
                         createCustomActionTypeRequest.getProvider());
             }
-
             if (createCustomActionTypeRequest.getVersion() != null) {
                 jsonWriter.key("version").value(
                         createCustomActionTypeRequest.getVersion());
             }
-
             if (createCustomActionTypeRequest.getSettings() != null) {
                 jsonWriter.key("settings");
                 ActionTypeSettingsJsonMarshaller.getInstance()
@@ -107,7 +105,6 @@ public class CreateCustomActionTypeRequestMarshaller
                 }
                 jsonWriter.endArray();
             }
-
             if (createCustomActionTypeRequest.getInputArtifactDetails() != null) {
                 jsonWriter.key("inputArtifactDetails");
                 ArtifactDetailsJsonMarshaller
@@ -117,7 +114,6 @@ public class CreateCustomActionTypeRequestMarshaller
                                         .getInputArtifactDetails(),
                                 jsonWriter);
             }
-
             if (createCustomActionTypeRequest.getOutputArtifactDetails() != null) {
                 jsonWriter.key("outputArtifactDetails");
                 ArtifactDetailsJsonMarshaller

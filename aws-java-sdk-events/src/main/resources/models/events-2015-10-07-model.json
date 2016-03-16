@@ -4,12 +4,11 @@
     "apiVersion":"2015-10-07",
     "endpointPrefix":"events",
     "jsonVersion":"1.1",
+    "protocol":"json",
     "serviceFullName":"Amazon CloudWatch Events",
     "signatureVersion":"v4",
-    "targetPrefix":"AWSEvents",
-    "protocol":"json"
+    "targetPrefix":"AWSEvents"
   },
-  "documentation":"<p>Amazon CloudWatch Events helps you to respond to state changes in your AWS resources. When your resources change state they automatically send events into an event stream. You can create rules that match selected events in the stream and route them to targets to take action. You can also use rules to take action on a pre-determined schedule. For example, you can configure rules to: </p> <ul> <li>Automatically invoke an AWS Lambda function to update DNS entries when an event notifies you that Amazon EC2 instance enters the running state.</li> <li>Direct specific API records from CloudTrail to an Amazon Kinesis stream for detailed analysis of potential security or availability risks.</li> <li>Periodically invoke a built-in target to create a snapshot of an Amazon EBS volume.</li> </ul> <p> For more information about Amazon CloudWatch Events features, see the <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide\">Amazon CloudWatch Developer Guide</a>. </p>",
   "operations":{
     "DeleteRule":{
       "name":"DeleteRule",
@@ -17,22 +16,10 @@
         "method":"POST",
         "requestUri":"/"
       },
-      "input":{
-        "shape":"DeleteRuleRequest",
-        "documentation":"<p>Container for the parameters to the <a>DeleteRule</a> operation.</p>"
-      },
+      "input":{"shape":"DeleteRuleRequest"},
       "errors":[
-        {
-          "shape":"ConcurrentModificationException",
-          "exception":true,
-          "documentation":"<p>This exception occurs if there is concurrent modification on rule or target.</p>"
-        },
-        {
-          "shape":"InternalException",
-          "exception":true,
-          "fault":true,
-          "documentation":"<p>This exception occurs due to unexpected causes.</p>"
-        }
+        {"shape":"ConcurrentModificationException"},
+        {"shape":"InternalException"}
       ],
       "documentation":"<p>Deletes a rule. You must remove all targets from a rule using <a>RemoveTargets</a> before you can delete the rule.</p> <p> <b>Note:</b> When you delete a rule, incoming events might still continue to match to the deleted rule. Please allow a short period of time for changes to take effect. </p>"
     },
@@ -42,26 +29,11 @@
         "method":"POST",
         "requestUri":"/"
       },
-      "input":{
-        "shape":"DescribeRuleRequest",
-        "documentation":"<p>Container for the parameters to the <a>DescribeRule</a> operation.</p>"
-      },
-      "output":{
-        "shape":"DescribeRuleResponse",
-        "documentation":"<p>The result of the <a>DescribeRule</a> operation.</p>"
-      },
+      "input":{"shape":"DescribeRuleRequest"},
+      "output":{"shape":"DescribeRuleResponse"},
       "errors":[
-        {
-          "shape":"ResourceNotFoundException",
-          "exception":true,
-          "documentation":"<p>The rule does not exist.</p>"
-        },
-        {
-          "shape":"InternalException",
-          "exception":true,
-          "fault":true,
-          "documentation":"<p>This exception occurs due to unexpected causes.</p>"
-        }
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InternalException"}
       ],
       "documentation":"<p>Describes the details of the specified rule.</p>"
     },
@@ -71,27 +43,11 @@
         "method":"POST",
         "requestUri":"/"
       },
-      "input":{
-        "shape":"DisableRuleRequest",
-        "documentation":"<p>Container for the parameters to the <a>DisableRule</a> operation.</p>"
-      },
+      "input":{"shape":"DisableRuleRequest"},
       "errors":[
-        {
-          "shape":"ResourceNotFoundException",
-          "exception":true,
-          "documentation":"<p>The rule does not exist.</p>"
-        },
-        {
-          "shape":"ConcurrentModificationException",
-          "exception":true,
-          "documentation":"<p>This exception occurs if there is concurrent modification on rule or target.</p>"
-        },
-        {
-          "shape":"InternalException",
-          "exception":true,
-          "fault":true,
-          "documentation":"<p>This exception occurs due to unexpected causes.</p>"
-        }
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ConcurrentModificationException"},
+        {"shape":"InternalException"}
       ],
       "documentation":"<p>Disables a rule. A disabled rule won't match any events, and won't self-trigger if it has a schedule expression.</p> <p> <b>Note:</b> When you disable a rule, incoming events might still continue to match to the disabled rule. Please allow a short period of time for changes to take effect. </p>"
     },
@@ -101,27 +57,11 @@
         "method":"POST",
         "requestUri":"/"
       },
-      "input":{
-        "shape":"EnableRuleRequest",
-        "documentation":"<p>Container for the parameters to the <a>EnableRule</a> operation.</p>"
-      },
+      "input":{"shape":"EnableRuleRequest"},
       "errors":[
-        {
-          "shape":"ResourceNotFoundException",
-          "exception":true,
-          "documentation":"<p>The rule does not exist.</p>"
-        },
-        {
-          "shape":"ConcurrentModificationException",
-          "exception":true,
-          "documentation":"<p>This exception occurs if there is concurrent modification on rule or target.</p>"
-        },
-        {
-          "shape":"InternalException",
-          "exception":true,
-          "fault":true,
-          "documentation":"<p>This exception occurs due to unexpected causes.</p>"
-        }
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ConcurrentModificationException"},
+        {"shape":"InternalException"}
       ],
       "documentation":"<p>Enables a rule. If the rule does not exist, the operation fails.</p> <p> <b>Note:</b> When you enable a rule, incoming events might not immediately start matching to a newly enabled rule. Please allow a short period of time for changes to take effect. </p>"
     },
@@ -131,21 +71,10 @@
         "method":"POST",
         "requestUri":"/"
       },
-      "input":{
-        "shape":"ListRuleNamesByTargetRequest",
-        "documentation":"<p>Container for the parameters to the <a>ListRuleNamesByTarget</a> operation.</p>"
-      },
-      "output":{
-        "shape":"ListRuleNamesByTargetResponse",
-        "documentation":"<p>The result of the <a>ListRuleNamesByTarget</a> operation.</p>"
-      },
+      "input":{"shape":"ListRuleNamesByTargetRequest"},
+      "output":{"shape":"ListRuleNamesByTargetResponse"},
       "errors":[
-        {
-          "shape":"InternalException",
-          "exception":true,
-          "fault":true,
-          "documentation":"<p>This exception occurs due to unexpected causes.</p>"
-        }
+        {"shape":"InternalException"}
       ],
       "documentation":"<p>Lists the names of the rules that the given target is put to. You can see which of the rules in Amazon CloudWatch Events can invoke a specific target in your account. If you have more rules in your account than the given limit, the results will be paginated. In that case, use the next token returned in the response and repeat ListRulesByTarget until the NextToken in the response is returned as null.</p>"
     },
@@ -155,21 +84,10 @@
         "method":"POST",
         "requestUri":"/"
       },
-      "input":{
-        "shape":"ListRulesRequest",
-        "documentation":"<p>Container for the parameters to the <a>ListRules</a> operation.</p>"
-      },
-      "output":{
-        "shape":"ListRulesResponse",
-        "documentation":"<p>The result of the <a>ListRules</a> operation.</p>"
-      },
+      "input":{"shape":"ListRulesRequest"},
+      "output":{"shape":"ListRulesResponse"},
       "errors":[
-        {
-          "shape":"InternalException",
-          "exception":true,
-          "fault":true,
-          "documentation":"<p>This exception occurs due to unexpected causes.</p>"
-        }
+        {"shape":"InternalException"}
       ],
       "documentation":"<p>Lists the Amazon CloudWatch Events rules in your account. You can either list all the rules or you can provide a prefix to match to the rule names. If you have more rules in your account than the given limit, the results will be paginated. In that case, use the next token returned in the response and repeat ListRules until the NextToken in the response is returned as null.</p>"
     },
@@ -179,26 +97,11 @@
         "method":"POST",
         "requestUri":"/"
       },
-      "input":{
-        "shape":"ListTargetsByRuleRequest",
-        "documentation":"<p>Container for the parameters to the <a>ListTargetsByRule</a> operation.</p>"
-      },
-      "output":{
-        "shape":"ListTargetsByRuleResponse",
-        "documentation":"<p>The result of the <a>ListTargetsByRule</a> operation.</p>"
-      },
+      "input":{"shape":"ListTargetsByRuleRequest"},
+      "output":{"shape":"ListTargetsByRuleResponse"},
       "errors":[
-        {
-          "shape":"ResourceNotFoundException",
-          "exception":true,
-          "documentation":"<p>The rule does not exist.</p>"
-        },
-        {
-          "shape":"InternalException",
-          "exception":true,
-          "fault":true,
-          "documentation":"<p>This exception occurs due to unexpected causes.</p>"
-        }
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InternalException"}
       ],
       "documentation":"<p>Lists of targets assigned to the rule.</p>"
     },
@@ -208,21 +111,10 @@
         "method":"POST",
         "requestUri":"/"
       },
-      "input":{
-        "shape":"PutEventsRequest",
-        "documentation":"<p>Container for the parameters to the <a>PutEvents</a> operation.</p>"
-      },
-      "output":{
-        "shape":"PutEventsResponse",
-        "documentation":"<p>The result of the <a>PutEvents</a> operation.</p>"
-      },
+      "input":{"shape":"PutEventsRequest"},
+      "output":{"shape":"PutEventsResponse"},
       "errors":[
-        {
-          "shape":"InternalException",
-          "exception":true,
-          "fault":true,
-          "documentation":"<p>This exception occurs due to unexpected causes.</p>"
-        }
+        {"shape":"InternalException"}
       ],
       "documentation":"<p>Sends custom events to Amazon CloudWatch Events so that they can be matched to rules.</p>"
     },
@@ -232,36 +124,13 @@
         "method":"POST",
         "requestUri":"/"
       },
-      "input":{
-        "shape":"PutRuleRequest",
-        "documentation":"<p>Container for the parameters to the <a>PutRule</a> operation.</p>"
-      },
-      "output":{
-        "shape":"PutRuleResponse",
-        "documentation":"<p>The result of the <a>PutRule</a> operation.</p>"
-      },
+      "input":{"shape":"PutRuleRequest"},
+      "output":{"shape":"PutRuleResponse"},
       "errors":[
-        {
-          "shape":"InvalidEventPatternException",
-          "exception":true,
-          "documentation":"<p>The event pattern is invalid.</p>"
-        },
-        {
-          "shape":"LimitExceededException",
-          "exception":true,
-          "documentation":"<p>This exception occurs if you try to create more rules or add more targets to a rule than allowed by default.</p>"
-        },
-        {
-          "shape":"ConcurrentModificationException",
-          "exception":true,
-          "documentation":"<p>This exception occurs if there is concurrent modification on rule or target.</p>"
-        },
-        {
-          "shape":"InternalException",
-          "exception":true,
-          "fault":true,
-          "documentation":"<p>This exception occurs due to unexpected causes.</p>"
-        }
+        {"shape":"InvalidEventPatternException"},
+        {"shape":"LimitExceededException"},
+        {"shape":"ConcurrentModificationException"},
+        {"shape":"InternalException"}
       ],
       "documentation":"<p>Creates or updates a rule. Rules are enabled by default, or based on value of the State parameter. You can disable a rule using <a>DisableRule</a>.</p> <p> <b>Note:</b> When you create or update a rule, incoming events might not immediately start matching to new or updated rules. Please allow a short period of time for changes to take effect.</p> <p>A rule must contain at least an EventPattern or ScheduleExpression. Rules with EventPatterns are triggered when a matching event is observed. Rules with ScheduleExpressions self-trigger based on the given schedule. A rule can have both an EventPattern and a ScheduleExpression, in which case the rule will trigger on matching events as well as on a schedule.</p> <p> <b>Note:</b> Most services in AWS treat : or / as the same character in Amazon Resource Names (ARNs). However, CloudWatch Events uses an exact match in event patterns and rules. Be sure to use the correct ARN characters when creating event patterns so that they match the ARN syntax in the event you want to match. </p>"
     },
@@ -271,38 +140,15 @@
         "method":"POST",
         "requestUri":"/"
       },
-      "input":{
-        "shape":"PutTargetsRequest",
-        "documentation":"<p>Container for the parameters to the <a>PutTargets</a> operation.</p>"
-      },
-      "output":{
-        "shape":"PutTargetsResponse",
-        "documentation":"<p>The result of the <a>PutTargets</a> operation.</p>"
-      },
+      "input":{"shape":"PutTargetsRequest"},
+      "output":{"shape":"PutTargetsResponse"},
       "errors":[
-        {
-          "shape":"ResourceNotFoundException",
-          "exception":true,
-          "documentation":"<p>The rule does not exist.</p>"
-        },
-        {
-          "shape":"ConcurrentModificationException",
-          "exception":true,
-          "documentation":"<p>This exception occurs if there is concurrent modification on rule or target.</p>"
-        },
-        {
-          "shape":"LimitExceededException",
-          "exception":true,
-          "documentation":"<p>This exception occurs if you try to create more rules or add more targets to a rule than allowed by default.</p>"
-        },
-        {
-          "shape":"InternalException",
-          "exception":true,
-          "fault":true,
-          "documentation":"<p>This exception occurs due to unexpected causes.</p>"
-        }
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ConcurrentModificationException"},
+        {"shape":"LimitExceededException"},
+        {"shape":"InternalException"}
       ],
-      "documentation":"<p>Adds target(s) to a rule. Targets are the resources that can be invoked when a rule is triggered. For example, AWS Lambda functions, Amazon Kinesis streams, and built-in targets. Updates the target(s) if they are already associated with the role. In other words, if there is already a target with the given target ID, then the target associated with that ID is updated.</p> <p>In order to be able to make API calls against the resources you own, Amazon CloudWatch Events needs the appropriate permissions. For AWS Lambda and Amazon SNS resources, CloudWatch Events relies on resource-based policies. For Amazon Kinesis streams, CloudWatch Events relies on IAM roles. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/EventsTargetPermissions.html\">Permissions for Sending Events to Targets</a> in the <b><i>Amazon CloudWatch Developer Guide</i></b>.</p> <p><b>Input</b> and <b>InputPath</b> are mutually-exclusive and optional parameters of a target. When a rule is triggered due to a matched event, if for a target:</p> <ul> <li>Neither <b>Input</b> nor <b>InputPath</b> is specified, then the entire event is passed to the target in JSON form.</li> <li> <b>InputPath</b> is specified in the form of JSONPath (e.g. <b>$.detail</b>), then only the part of the event specified in the path is passed to the target (e.g. only the detail part of the event is passed). </li> <li> <b>Input</b> is specified in the form of a valid JSON, then the matched event is overridden with this constant.</li> </ul> <p> <b>Note:</b> When you add targets to a rule, when the associated rule triggers, new or updated targets might not be immediately invoked. Please allow a short period of time for changes to take effect. </p>"
+      "documentation":"<p>Adds target(s) to a rule. Targets are the resources that can be invoked when a rule is triggered. For example, AWS Lambda functions, Amazon Kinesis streams, and built-in targets. Updates the target(s) if they are already associated with the role. In other words, if there is already a target with the given target ID, then the target associated with that ID is updated.</p> <p>In order to be able to make API calls against the resources you own, Amazon CloudWatch Events needs the appropriate permissions. For AWS Lambda and Amazon SNS resources, CloudWatch Events relies on resource-based policies. For Amazon Kinesis streams, CloudWatch Events relies on IAM roles. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/EventsTargetPermissions.html\">Permissions for Sending Events to Targets</a> in the <b><i>Amazon CloudWatch Developer Guide</i></b>.</p> <p><b>Input</b> and <b>InputPath</b> are mutually-exclusive and optional parameters of a target. When a rule is triggered due to a matched event, if for a target:</p> <ul> <li>Neither <b>Input</b> nor <b>InputPath</b> is specified, then the entire event is passed to the target in JSON form.</li> <li><b>InputPath</b> is specified in the form of JSONPath (e.g. <b>$.detail</b>), then only the part of the event specified in the path is passed to the target (e.g. only the detail part of the event is passed). </li> <li><b>Input</b> is specified in the form of a valid JSON, then the matched event is overridden with this constant.</li> </ul> <p> <b>Note:</b> When you add targets to a rule, when the associated rule triggers, new or updated targets might not be immediately invoked. Please allow a short period of time for changes to take effect. </p>"
     },
     "RemoveTargets":{
       "name":"RemoveTargets",
@@ -310,31 +156,12 @@
         "method":"POST",
         "requestUri":"/"
       },
-      "input":{
-        "shape":"RemoveTargetsRequest",
-        "documentation":"<p>Container for the parameters to the <a>RemoveTargets</a> operation.</p>"
-      },
-      "output":{
-        "shape":"RemoveTargetsResponse",
-        "documentation":"<p>The result of the <a>RemoveTargets</a> operation.</p>"
-      },
+      "input":{"shape":"RemoveTargetsRequest"},
+      "output":{"shape":"RemoveTargetsResponse"},
       "errors":[
-        {
-          "shape":"ResourceNotFoundException",
-          "exception":true,
-          "documentation":"<p>The rule does not exist.</p>"
-        },
-        {
-          "shape":"ConcurrentModificationException",
-          "exception":true,
-          "documentation":"<p>This exception occurs if there is concurrent modification on rule or target.</p>"
-        },
-        {
-          "shape":"InternalException",
-          "exception":true,
-          "fault":true,
-          "documentation":"<p>This exception occurs due to unexpected causes.</p>"
-        }
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ConcurrentModificationException"},
+        {"shape":"InternalException"}
       ],
       "documentation":"<p>Removes target(s) from a rule so that when the rule is triggered, those targets will no longer be invoked.</p> <p> <b>Note:</b> When you remove a target, when the associated rule triggers, removed targets might still continue to be invoked. Please allow a short period of time for changes to take effect. </p>"
     },
@@ -344,26 +171,11 @@
         "method":"POST",
         "requestUri":"/"
       },
-      "input":{
-        "shape":"TestEventPatternRequest",
-        "documentation":"<p>Container for the parameters to the <a>TestEventPattern</a> operation.</p>"
-      },
-      "output":{
-        "shape":"TestEventPatternResponse",
-        "documentation":"<p>The result of the <a>TestEventPattern</a> operation.</p>"
-      },
+      "input":{"shape":"TestEventPatternRequest"},
+      "output":{"shape":"TestEventPatternResponse"},
       "errors":[
-        {
-          "shape":"InvalidEventPatternException",
-          "exception":true,
-          "documentation":"<p>The event pattern is invalid.</p>"
-        },
-        {
-          "shape":"InternalException",
-          "exception":true,
-          "fault":true,
-          "documentation":"<p>This exception occurs due to unexpected causes.</p>"
-        }
+        {"shape":"InvalidEventPatternException"},
+        {"shape":"InternalException"}
       ],
       "documentation":"<p>Tests whether an event pattern matches the provided event.</p> <p> <b>Note:</b> Most services in AWS treat : or / as the same character in Amazon Resource Names (ARNs). However, CloudWatch Events uses an exact match in event patterns and rules. Be sure to use the correct ARN characters when creating event patterns so that they match the ARN syntax in the event you want to match. </p>"
     }
@@ -374,8 +186,8 @@
       "type":"structure",
       "members":{
       },
-      "exception":true,
-      "documentation":"<p>This exception occurs if there is concurrent modification on rule or target.</p>"
+      "documentation":"<p>This exception occurs if there is concurrent modification on rule or target.</p>",
+      "exception":true
     },
     "DeleteRuleRequest":{
       "type":"structure",
@@ -473,28 +285,28 @@
       "type":"structure",
       "members":{
       },
+      "documentation":"<p>This exception occurs due to unexpected causes.</p>",
       "exception":true,
-      "fault":true,
-      "documentation":"<p>This exception occurs due to unexpected causes.</p>"
+      "fault":true
     },
     "InvalidEventPatternException":{
       "type":"structure",
       "members":{
       },
-      "exception":true,
-      "documentation":"<p>The event pattern is invalid.</p>"
+      "documentation":"<p>The event pattern is invalid.</p>",
+      "exception":true
     },
     "LimitExceededException":{
       "type":"structure",
       "members":{
       },
-      "exception":true,
-      "documentation":"<p>This exception occurs if you try to create more rules or add more targets to a rule than allowed by default.</p>"
+      "documentation":"<p>This exception occurs if you try to create more rules or add more targets to a rule than allowed by default.</p>",
+      "exception":true
     },
     "LimitMax100":{
       "type":"integer",
-      "min":1,
-      "max":100
+      "max":100,
+      "min":1
     },
     "ListRuleNamesByTargetRequest":{
       "type":"structure",
@@ -596,8 +408,8 @@
     },
     "NextToken":{
       "type":"string",
-      "min":1,
-      "max":2048
+      "max":2048,
+      "min":1
     },
     "PutEventsRequest":{
       "type":"structure",
@@ -639,8 +451,8 @@
     "PutEventsRequestEntryList":{
       "type":"list",
       "member":{"shape":"PutEventsRequestEntry"},
-      "min":1,
-      "max":10
+      "max":10,
+      "min":1
     },
     "PutEventsResponse":{
       "type":"structure",
@@ -831,13 +643,13 @@
       "type":"structure",
       "members":{
       },
-      "exception":true,
-      "documentation":"<p>The rule does not exist.</p>"
+      "documentation":"<p>The rule does not exist.</p>",
+      "exception":true
     },
     "RoleArn":{
       "type":"string",
-      "min":1,
-      "max":1600
+      "max":1600,
+      "min":1
     },
     "Rule":{
       "type":"structure",
@@ -875,8 +687,8 @@
     },
     "RuleArn":{
       "type":"string",
-      "min":1,
-      "max":1600
+      "max":1600,
+      "min":1
     },
     "RuleDescription":{
       "type":"string",
@@ -884,8 +696,8 @@
     },
     "RuleName":{
       "type":"string",
-      "min":1,
       "max":64,
+      "min":1,
       "pattern":"[\\.\\-_A-Za-z0-9]+"
     },
     "RuleNameList":{
@@ -932,24 +744,24 @@
           "documentation":"<p>The value of the JSONPath that is used for extracting part of the matched event when passing it to the target. For more information about JSON paths, see <a href=\"http://goessner.net/articles/JsonPath/\">JSONPath</a>.</p>"
         }
       },
-      "documentation":"<p>Targets are the resources that can be invoked when a rule is triggered. For example, AWS Lambda functions, Amazon Kinesis streams, and built-in targets.</p> <p><b>Input</b> and <b>InputPath</b> are mutually-exclusive and optional parameters of a target. When a rule is triggered due to a matched event, if for a target:</p> <ul> <li>Neither <b>Input</b> nor <b>InputPath</b> is specified, then the entire event is passed to the target in JSON form.</li> <li> <b>InputPath</b> is specified in the form of JSONPath (e.g. <b>$.detail</b>), then only the part of the event specified in the path is passed to the target (e.g. only the detail part of the event is passed). </li> <li> <b>Input</b> is specified in the form of a valid JSON, then the matched event is overridden with this constant.</li> </ul>"
+      "documentation":"<p>Targets are the resources that can be invoked when a rule is triggered. For example, AWS Lambda functions, Amazon Kinesis streams, and built-in targets.</p> <p><b>Input</b> and <b>InputPath</b> are mutually-exclusive and optional parameters of a target. When a rule is triggered due to a matched event, if for a target:</p> <ul> <li>Neither <b>Input</b> nor <b>InputPath</b> is specified, then the entire event is passed to the target in JSON form.</li> <li><b>InputPath</b> is specified in the form of JSONPath (e.g. <b>$.detail</b>), then only the part of the event specified in the path is passed to the target (e.g. only the detail part of the event is passed). </li> <li><b>Input</b> is specified in the form of a valid JSON, then the matched event is overridden with this constant.</li> </ul>"
     },
     "TargetArn":{
       "type":"string",
-      "min":1,
-      "max":1600
+      "max":1600,
+      "min":1
     },
     "TargetId":{
       "type":"string",
-      "min":1,
       "max":64,
+      "min":1,
       "pattern":"[\\.\\-_A-Za-z0-9]+"
     },
     "TargetIdList":{
       "type":"list",
       "member":{"shape":"TargetId"},
-      "min":1,
-      "max":100
+      "max":100,
+      "min":1
     },
     "TargetInput":{
       "type":"string",
@@ -992,6 +804,5 @@
       "documentation":"<p>The result of the <a>TestEventPattern</a> operation.</p>"
     }
   },
-  "examples":{
-  }
+  "documentation":"<p>Amazon CloudWatch Events helps you to respond to state changes in your AWS resources. When your resources change state they automatically send events into an event stream. You can create rules that match selected events in the stream and route them to targets to take action. You can also use rules to take action on a pre-determined schedule. For example, you can configure rules to: </p> <ul> <li>Automatically invoke an AWS Lambda function to update DNS entries when an event notifies you that Amazon EC2 instance enters the running state.</li> <li>Direct specific API records from CloudTrail to an Amazon Kinesis stream for detailed analysis of potential security or availability risks.</li> <li>Periodically invoke a built-in target to create a snapshot of an Amazon EBS volume.</li> </ul> <p> For more information about Amazon CloudWatch Events features, see the <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide\">Amazon CloudWatch Developer Guide</a>. </p>"
 }

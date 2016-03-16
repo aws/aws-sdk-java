@@ -37,6 +37,7 @@ import com.amazonaws.services.config.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -83,7 +84,6 @@ public class DescribeConfigRulesRequestMarshaller
                 }
                 jsonWriter.endArray();
             }
-
             if (describeConfigRulesRequest.getNextToken() != null) {
                 jsonWriter.key("NextToken").value(
                         describeConfigRulesRequest.getNextToken());

@@ -37,6 +37,7 @@ import com.amazonaws.services.devicefarm.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -74,12 +75,10 @@ public class GetDevicePoolCompatibilityRequestMarshaller
                 jsonWriter.key("devicePoolArn").value(
                         getDevicePoolCompatibilityRequest.getDevicePoolArn());
             }
-
             if (getDevicePoolCompatibilityRequest.getAppArn() != null) {
                 jsonWriter.key("appArn").value(
                         getDevicePoolCompatibilityRequest.getAppArn());
             }
-
             if (getDevicePoolCompatibilityRequest.getTestType() != null) {
                 jsonWriter.key("testType").value(
                         getDevicePoolCompatibilityRequest.getTestType());

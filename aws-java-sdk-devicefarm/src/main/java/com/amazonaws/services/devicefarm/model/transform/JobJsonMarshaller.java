@@ -30,6 +30,7 @@ import com.amazonaws.services.devicefarm.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,51 +54,40 @@ public class JobJsonMarshaller {
             if (job.getArn() != null) {
                 jsonWriter.key("arn").value(job.getArn());
             }
-
             if (job.getName() != null) {
                 jsonWriter.key("name").value(job.getName());
             }
-
             if (job.getType() != null) {
                 jsonWriter.key("type").value(job.getType());
             }
-
             if (job.getCreated() != null) {
                 jsonWriter.key("created").value(job.getCreated());
             }
-
             if (job.getStatus() != null) {
                 jsonWriter.key("status").value(job.getStatus());
             }
-
             if (job.getResult() != null) {
                 jsonWriter.key("result").value(job.getResult());
             }
-
             if (job.getStarted() != null) {
                 jsonWriter.key("started").value(job.getStarted());
             }
-
             if (job.getStopped() != null) {
                 jsonWriter.key("stopped").value(job.getStopped());
             }
-
             if (job.getCounters() != null) {
                 jsonWriter.key("counters");
                 CountersJsonMarshaller.getInstance().marshall(
                         job.getCounters(), jsonWriter);
             }
-
             if (job.getMessage() != null) {
                 jsonWriter.key("message").value(job.getMessage());
             }
-
             if (job.getDevice() != null) {
                 jsonWriter.key("device");
                 DeviceJsonMarshaller.getInstance().marshall(job.getDevice(),
                         jsonWriter);
             }
-
             if (job.getDeviceMinutes() != null) {
                 jsonWriter.key("deviceMinutes");
                 DeviceMinutesJsonMarshaller.getInstance().marshall(

@@ -30,6 +30,7 @@ import com.amazonaws.services.dynamodbv2.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,13 +54,11 @@ public class ShardJsonMarshaller {
             if (shard.getShardId() != null) {
                 jsonWriter.key("ShardId").value(shard.getShardId());
             }
-
             if (shard.getSequenceNumberRange() != null) {
                 jsonWriter.key("SequenceNumberRange");
                 SequenceNumberRangeJsonMarshaller.getInstance().marshall(
                         shard.getSequenceNumberRange(), jsonWriter);
             }
-
             if (shard.getParentShardId() != null) {
                 jsonWriter.key("ParentShardId").value(shard.getParentShardId());
             }

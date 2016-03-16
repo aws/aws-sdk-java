@@ -37,6 +37,7 @@ import com.amazonaws.services.kms.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -71,11 +72,9 @@ public class ListGrantsRequestMarshaller implements
             if (listGrantsRequest.getLimit() != null) {
                 jsonWriter.key("Limit").value(listGrantsRequest.getLimit());
             }
-
             if (listGrantsRequest.getMarker() != null) {
                 jsonWriter.key("Marker").value(listGrantsRequest.getMarker());
             }
-
             if (listGrantsRequest.getKeyId() != null) {
                 jsonWriter.key("KeyId").value(listGrantsRequest.getKeyId());
             }

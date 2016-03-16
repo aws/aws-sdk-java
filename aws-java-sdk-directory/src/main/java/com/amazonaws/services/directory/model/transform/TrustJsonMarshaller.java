@@ -30,6 +30,7 @@ import com.amazonaws.services.directory.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,39 +54,31 @@ public class TrustJsonMarshaller {
             if (trust.getDirectoryId() != null) {
                 jsonWriter.key("DirectoryId").value(trust.getDirectoryId());
             }
-
             if (trust.getTrustId() != null) {
                 jsonWriter.key("TrustId").value(trust.getTrustId());
             }
-
             if (trust.getRemoteDomainName() != null) {
                 jsonWriter.key("RemoteDomainName").value(
                         trust.getRemoteDomainName());
             }
-
             if (trust.getTrustType() != null) {
                 jsonWriter.key("TrustType").value(trust.getTrustType());
             }
-
             if (trust.getTrustDirection() != null) {
                 jsonWriter.key("TrustDirection").value(
                         trust.getTrustDirection());
             }
-
             if (trust.getTrustState() != null) {
                 jsonWriter.key("TrustState").value(trust.getTrustState());
             }
-
             if (trust.getCreatedDateTime() != null) {
                 jsonWriter.key("CreatedDateTime").value(
                         trust.getCreatedDateTime());
             }
-
             if (trust.getLastUpdatedDateTime() != null) {
                 jsonWriter.key("LastUpdatedDateTime").value(
                         trust.getLastUpdatedDateTime());
             }
-
             if (trust.getStateLastUpdatedDateTime() != null) {
                 jsonWriter.key("StateLastUpdatedDateTime").value(
                         trust.getStateLastUpdatedDateTime());

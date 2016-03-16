@@ -30,6 +30,7 @@ import com.amazonaws.services.simplesystemsmanagement.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,16 +55,13 @@ public class DocumentParameterJsonMarshaller {
             if (documentParameter.getName() != null) {
                 jsonWriter.key("Name").value(documentParameter.getName());
             }
-
             if (documentParameter.getType() != null) {
                 jsonWriter.key("Type").value(documentParameter.getType());
             }
-
             if (documentParameter.getDescription() != null) {
                 jsonWriter.key("Description").value(
                         documentParameter.getDescription());
             }
-
             if (documentParameter.getDefaultValue() != null) {
                 jsonWriter.key("DefaultValue").value(
                         documentParameter.getDefaultValue());

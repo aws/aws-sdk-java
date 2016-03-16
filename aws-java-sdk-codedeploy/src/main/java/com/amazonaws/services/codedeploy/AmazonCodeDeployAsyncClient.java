@@ -26,21 +26,21 @@ import com.amazonaws.annotation.ThreadSafe;
  * <p>
  * <fullname>AWS CodeDeploy</fullname> <b>Overview</b>
  * <p>
- * This is the AWS CodeDeploy API Reference. This guide provides descriptions of
- * the AWS CodeDeploy APIs. For additional information, see the <a
- * href="http://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy
- * User Guide</a>.
+ * This reference guide provides descriptions of the AWS CodeDeploy APIs. For
+ * more information about AWS CodeDeploy, see the <a
+ * href="docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy User
+ * Guide</a>.
  * </p>
  * <b>Using the APIs</b>
  * <p>
- * You can use the AWS CodeDeploy APIs to work with the following items:
+ * You can use the AWS CodeDeploy APIs to work with the following:
  * </p>
  * <ul>
  * <li>
  * <p>
- * Applications are unique identifiers that AWS CodeDeploy uses to ensure that
- * the correct combinations of revisions, deployment configurations, and
- * deployment groups are being referenced during deployments.
+ * Applications are unique identifiers used by AWS CodeDeploy to ensure the
+ * correct combinations of revisions, deployment configurations, and deployment
+ * groups are being referenced during deployments.
  * </p>
  * <p>
  * You can use the AWS CodeDeploy APIs to create, delete, get, list, and update
@@ -49,8 +49,8 @@ import com.amazonaws.annotation.ThreadSafe;
  * </li>
  * <li>
  * <p>
- * Deployment configurations are sets of deployment rules and deployment success
- * and failure conditions that AWS CodeDeploy uses during deployments.
+ * Deployment configurations are sets of deployment rules and success and
+ * failure conditions used by AWS CodeDeploy during deployments.
  * </p>
  * <p>
  * You can use the AWS CodeDeploy APIs to create, delete, get, and list
@@ -74,7 +74,7 @@ import com.amazonaws.annotation.ThreadSafe;
  * group names. Instances belong to deployment groups.
  * </p>
  * <p>
- * You can use the AWS CodeDeploy APIs to get and list instances.
+ * You can use the AWS CodeDeploy APIs to get and list instance.
  * </p>
  * </li>
  * <li>
@@ -88,16 +88,16 @@ import com.amazonaws.annotation.ThreadSafe;
  * </li>
  * <li>
  * <p>
- * Application revisions are archive files that are stored in Amazon S3 buckets
- * or GitHub repositories. These revisions contain source content (such as
- * source code, web pages, executable files, any deployment scripts, and
- * similar) along with an Application Specification file (AppSpec file). (The
- * AppSpec file is unique to AWS CodeDeploy; it defines a series of deployment
- * actions that you want AWS CodeDeploy to execute.) An application revision is
- * uniquely identified by its Amazon S3 object key and its ETag, version, or
- * both (for application revisions that are stored in Amazon S3 buckets) or by
- * its repository name and commit ID (for applications revisions that are stored
- * in GitHub repositories). Application revisions are deployed through
+ * Application revisions are archive files stored in Amazon S3 buckets or GitHub
+ * repositories. These revisions contain source content (such as source code,
+ * web pages, executable files, and deployment scripts) along with an
+ * application specification (AppSpec) file. (The AppSpec file is unique to AWS
+ * CodeDeploy; it defines the deployment actions you want AWS CodeDeploy to
+ * execute.) Ffor application revisions stored in Amazon S3 buckets, an
+ * application revision is uniquely identified by its Amazon S3 object key and
+ * its ETag, version, or both. For application revisions stored in GitHub
+ * repositories, an application revision is uniquely identified by its
+ * repository name and commit ID. Application revisions are deployed through
  * deployment groups.
  * </p>
  * <p>
@@ -466,6 +466,42 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient
 
         return batchGetApplicationsAsync(new BatchGetApplicationsRequest(),
                 asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetDeploymentGroupsResult> batchGetDeploymentGroupsAsync(
+            BatchGetDeploymentGroupsRequest request) {
+
+        return batchGetDeploymentGroupsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetDeploymentGroupsResult> batchGetDeploymentGroupsAsync(
+            final BatchGetDeploymentGroupsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchGetDeploymentGroupsRequest, BatchGetDeploymentGroupsResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<BatchGetDeploymentGroupsResult>() {
+                    @Override
+                    public BatchGetDeploymentGroupsResult call()
+                            throws Exception {
+                        BatchGetDeploymentGroupsResult result;
+
+                        try {
+                            result = batchGetDeploymentGroups(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
     }
 
     @Override

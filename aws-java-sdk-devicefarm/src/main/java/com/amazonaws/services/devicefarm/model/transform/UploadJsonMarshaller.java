@@ -30,6 +30,7 @@ import com.amazonaws.services.devicefarm.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,35 +54,27 @@ public class UploadJsonMarshaller {
             if (upload.getArn() != null) {
                 jsonWriter.key("arn").value(upload.getArn());
             }
-
             if (upload.getName() != null) {
                 jsonWriter.key("name").value(upload.getName());
             }
-
             if (upload.getCreated() != null) {
                 jsonWriter.key("created").value(upload.getCreated());
             }
-
             if (upload.getType() != null) {
                 jsonWriter.key("type").value(upload.getType());
             }
-
             if (upload.getStatus() != null) {
                 jsonWriter.key("status").value(upload.getStatus());
             }
-
             if (upload.getUrl() != null) {
                 jsonWriter.key("url").value(upload.getUrl());
             }
-
             if (upload.getMetadata() != null) {
                 jsonWriter.key("metadata").value(upload.getMetadata());
             }
-
             if (upload.getContentType() != null) {
                 jsonWriter.key("contentType").value(upload.getContentType());
             }
-
             if (upload.getMessage() != null) {
                 jsonWriter.key("message").value(upload.getMessage());
             }

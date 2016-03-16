@@ -30,6 +30,7 @@ import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,11 +54,9 @@ public class DataSourceJsonMarshaller {
             if (dataSource.getType() != null) {
                 jsonWriter.key("Type").value(dataSource.getType());
             }
-
             if (dataSource.getArn() != null) {
                 jsonWriter.key("Arn").value(dataSource.getArn());
             }
-
             if (dataSource.getDatabaseName() != null) {
                 jsonWriter.key("DatabaseName").value(
                         dataSource.getDatabaseName());

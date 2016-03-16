@@ -37,6 +37,7 @@ import com.amazonaws.services.cloudhsm.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -71,35 +72,28 @@ public class CreateHsmRequestMarshaller implements
                 jsonWriter.key("SubnetId")
                         .value(createHsmRequest.getSubnetId());
             }
-
             if (createHsmRequest.getSshKey() != null) {
                 jsonWriter.key("SshKey").value(createHsmRequest.getSshKey());
             }
-
             if (createHsmRequest.getEniIp() != null) {
                 jsonWriter.key("EniIp").value(createHsmRequest.getEniIp());
             }
-
             if (createHsmRequest.getIamRoleArn() != null) {
                 jsonWriter.key("IamRoleArn").value(
                         createHsmRequest.getIamRoleArn());
             }
-
             if (createHsmRequest.getExternalId() != null) {
                 jsonWriter.key("ExternalId").value(
                         createHsmRequest.getExternalId());
             }
-
             if (createHsmRequest.getSubscriptionType() != null) {
                 jsonWriter.key("SubscriptionType").value(
                         createHsmRequest.getSubscriptionType());
             }
-
             if (createHsmRequest.getClientToken() != null) {
                 jsonWriter.key("ClientToken").value(
                         createHsmRequest.getClientToken());
             }
-
             if (createHsmRequest.getSyslogIp() != null) {
                 jsonWriter.key("SyslogIp")
                         .value(createHsmRequest.getSyslogIp());

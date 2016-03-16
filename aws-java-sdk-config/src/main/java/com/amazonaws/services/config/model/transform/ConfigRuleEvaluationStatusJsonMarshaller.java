@@ -30,6 +30,7 @@ import com.amazonaws.services.config.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,56 +56,46 @@ public class ConfigRuleEvaluationStatusJsonMarshaller {
                 jsonWriter.key("ConfigRuleName").value(
                         configRuleEvaluationStatus.getConfigRuleName());
             }
-
             if (configRuleEvaluationStatus.getConfigRuleArn() != null) {
                 jsonWriter.key("ConfigRuleArn").value(
                         configRuleEvaluationStatus.getConfigRuleArn());
             }
-
             if (configRuleEvaluationStatus.getConfigRuleId() != null) {
                 jsonWriter.key("ConfigRuleId").value(
                         configRuleEvaluationStatus.getConfigRuleId());
             }
-
             if (configRuleEvaluationStatus.getLastSuccessfulInvocationTime() != null) {
                 jsonWriter.key("LastSuccessfulInvocationTime").value(
                         configRuleEvaluationStatus
                                 .getLastSuccessfulInvocationTime());
             }
-
             if (configRuleEvaluationStatus.getLastFailedInvocationTime() != null) {
                 jsonWriter.key("LastFailedInvocationTime").value(
                         configRuleEvaluationStatus
                                 .getLastFailedInvocationTime());
             }
-
             if (configRuleEvaluationStatus.getLastSuccessfulEvaluationTime() != null) {
                 jsonWriter.key("LastSuccessfulEvaluationTime").value(
                         configRuleEvaluationStatus
                                 .getLastSuccessfulEvaluationTime());
             }
-
             if (configRuleEvaluationStatus.getLastFailedEvaluationTime() != null) {
                 jsonWriter.key("LastFailedEvaluationTime").value(
                         configRuleEvaluationStatus
                                 .getLastFailedEvaluationTime());
             }
-
             if (configRuleEvaluationStatus.getFirstActivatedTime() != null) {
                 jsonWriter.key("FirstActivatedTime").value(
                         configRuleEvaluationStatus.getFirstActivatedTime());
             }
-
             if (configRuleEvaluationStatus.getLastErrorCode() != null) {
                 jsonWriter.key("LastErrorCode").value(
                         configRuleEvaluationStatus.getLastErrorCode());
             }
-
             if (configRuleEvaluationStatus.getLastErrorMessage() != null) {
                 jsonWriter.key("LastErrorMessage").value(
                         configRuleEvaluationStatus.getLastErrorMessage());
             }
-
             if (configRuleEvaluationStatus.getFirstEvaluationStarted() != null) {
                 jsonWriter.key("FirstEvaluationStarted").value(
                         configRuleEvaluationStatus.getFirstEvaluationStarted());

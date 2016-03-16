@@ -30,6 +30,7 @@ import com.amazonaws.services.gamelift.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,19 +54,15 @@ public class EventJsonMarshaller {
             if (event.getEventId() != null) {
                 jsonWriter.key("EventId").value(event.getEventId());
             }
-
             if (event.getResourceId() != null) {
                 jsonWriter.key("ResourceId").value(event.getResourceId());
             }
-
             if (event.getEventCode() != null) {
                 jsonWriter.key("EventCode").value(event.getEventCode());
             }
-
             if (event.getMessage() != null) {
                 jsonWriter.key("Message").value(event.getMessage());
             }
-
             if (event.getEventTime() != null) {
                 jsonWriter.key("EventTime").value(event.getEventTime());
             }

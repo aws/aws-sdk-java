@@ -30,6 +30,7 @@ import com.amazonaws.services.kinesisfirehose.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,12 +55,10 @@ public class CopyCommandJsonMarshaller {
                 jsonWriter.key("DataTableName").value(
                         copyCommand.getDataTableName());
             }
-
             if (copyCommand.getDataTableColumns() != null) {
                 jsonWriter.key("DataTableColumns").value(
                         copyCommand.getDataTableColumns());
             }
-
             if (copyCommand.getCopyOptions() != null) {
                 jsonWriter.key("CopyOptions").value(
                         copyCommand.getCopyOptions());

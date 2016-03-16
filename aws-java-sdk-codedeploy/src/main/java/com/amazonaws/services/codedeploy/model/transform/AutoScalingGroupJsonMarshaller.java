@@ -30,6 +30,7 @@ import com.amazonaws.services.codedeploy.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,7 +55,6 @@ public class AutoScalingGroupJsonMarshaller {
             if (autoScalingGroup.getName() != null) {
                 jsonWriter.key("name").value(autoScalingGroup.getName());
             }
-
             if (autoScalingGroup.getHook() != null) {
                 jsonWriter.key("hook").value(autoScalingGroup.getHook());
             }

@@ -37,6 +37,7 @@ import com.amazonaws.services.simplesystemsmanagement.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -83,12 +84,10 @@ public class ListDocumentsRequestMarshaller implements
                 }
                 jsonWriter.endArray();
             }
-
             if (listDocumentsRequest.getMaxResults() != null) {
                 jsonWriter.key("MaxResults").value(
                         listDocumentsRequest.getMaxResults());
             }
-
             if (listDocumentsRequest.getNextToken() != null) {
                 jsonWriter.key("NextToken").value(
                         listDocumentsRequest.getNextToken());

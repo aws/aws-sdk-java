@@ -30,6 +30,7 @@ import com.amazonaws.services.devicefarm.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,45 +54,35 @@ public class SuiteJsonMarshaller {
             if (suite.getArn() != null) {
                 jsonWriter.key("arn").value(suite.getArn());
             }
-
             if (suite.getName() != null) {
                 jsonWriter.key("name").value(suite.getName());
             }
-
             if (suite.getType() != null) {
                 jsonWriter.key("type").value(suite.getType());
             }
-
             if (suite.getCreated() != null) {
                 jsonWriter.key("created").value(suite.getCreated());
             }
-
             if (suite.getStatus() != null) {
                 jsonWriter.key("status").value(suite.getStatus());
             }
-
             if (suite.getResult() != null) {
                 jsonWriter.key("result").value(suite.getResult());
             }
-
             if (suite.getStarted() != null) {
                 jsonWriter.key("started").value(suite.getStarted());
             }
-
             if (suite.getStopped() != null) {
                 jsonWriter.key("stopped").value(suite.getStopped());
             }
-
             if (suite.getCounters() != null) {
                 jsonWriter.key("counters");
                 CountersJsonMarshaller.getInstance().marshall(
                         suite.getCounters(), jsonWriter);
             }
-
             if (suite.getMessage() != null) {
                 jsonWriter.key("message").value(suite.getMessage());
             }
-
             if (suite.getDeviceMinutes() != null) {
                 jsonWriter.key("deviceMinutes");
                 DeviceMinutesJsonMarshaller.getInstance().marshall(

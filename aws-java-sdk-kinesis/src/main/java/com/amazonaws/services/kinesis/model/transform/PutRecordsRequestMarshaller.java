@@ -37,6 +37,7 @@ import com.amazonaws.services.kinesis.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -82,7 +83,6 @@ public class PutRecordsRequestMarshaller implements
                 }
                 jsonWriter.endArray();
             }
-
             if (putRecordsRequest.getStreamName() != null) {
                 jsonWriter.key("StreamName").value(
                         putRecordsRequest.getStreamName());

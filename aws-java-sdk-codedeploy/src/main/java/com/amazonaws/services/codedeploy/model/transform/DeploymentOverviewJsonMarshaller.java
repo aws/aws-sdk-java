@@ -30,6 +30,7 @@ import com.amazonaws.services.codedeploy.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,21 +56,17 @@ public class DeploymentOverviewJsonMarshaller {
                 jsonWriter.key("Pending")
                         .value(deploymentOverview.getPending());
             }
-
             if (deploymentOverview.getInProgress() != null) {
                 jsonWriter.key("InProgress").value(
                         deploymentOverview.getInProgress());
             }
-
             if (deploymentOverview.getSucceeded() != null) {
                 jsonWriter.key("Succeeded").value(
                         deploymentOverview.getSucceeded());
             }
-
             if (deploymentOverview.getFailed() != null) {
                 jsonWriter.key("Failed").value(deploymentOverview.getFailed());
             }
-
             if (deploymentOverview.getSkipped() != null) {
                 jsonWriter.key("Skipped")
                         .value(deploymentOverview.getSkipped());

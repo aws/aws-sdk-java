@@ -37,6 +37,7 @@ import com.amazonaws.services.dynamodbv2.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -83,7 +84,6 @@ public class CreateTableRequestMarshaller implements
                 }
                 jsonWriter.endArray();
             }
-
             if (createTableRequest.getTableName() != null) {
                 jsonWriter.key("TableName").value(
                         createTableRequest.getTableName());
@@ -135,14 +135,12 @@ public class CreateTableRequestMarshaller implements
                 }
                 jsonWriter.endArray();
             }
-
             if (createTableRequest.getProvisionedThroughput() != null) {
                 jsonWriter.key("ProvisionedThroughput");
                 ProvisionedThroughputJsonMarshaller.getInstance().marshall(
                         createTableRequest.getProvisionedThroughput(),
                         jsonWriter);
             }
-
             if (createTableRequest.getStreamSpecification() != null) {
                 jsonWriter.key("StreamSpecification");
                 StreamSpecificationJsonMarshaller.getInstance()

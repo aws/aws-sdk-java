@@ -37,6 +37,7 @@ import com.amazonaws.services.cognitosync.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -68,21 +69,22 @@ public class UpdateRecordsRequestMarshaller implements
 
         String uriResourcePath = "/identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets/{DatasetName}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{IdentityPoolId}",
-                (updateRecordsRequest.getIdentityPoolId() == null) ? ""
-                        : StringUtils.fromString(updateRecordsRequest
-                                .getIdentityPoolId()));
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{IdentityPoolId}",
+                        (updateRecordsRequest.getIdentityPoolId() != null) ? StringUtils
+                                .fromString(updateRecordsRequest
+                                        .getIdentityPoolId()) : "");
         uriResourcePath = uriResourcePath.replace(
                 "{IdentityId}",
-                (updateRecordsRequest.getIdentityId() == null) ? ""
-                        : StringUtils.fromString(updateRecordsRequest
-                                .getIdentityId()));
-        uriResourcePath = uriResourcePath.replace(
-                "{DatasetName}",
-                (updateRecordsRequest.getDatasetName() == null) ? ""
-                        : StringUtils.fromString(updateRecordsRequest
-                                .getDatasetName()));
+                (updateRecordsRequest.getIdentityId() != null) ? StringUtils
+                        .fromString(updateRecordsRequest.getIdentityId()) : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{DatasetName}",
+                        (updateRecordsRequest.getDatasetName() != null) ? StringUtils
+                                .fromString(updateRecordsRequest
+                                        .getDatasetName()) : "");
         request.setResourcePath(uriResourcePath);
 
         try {
@@ -111,7 +113,6 @@ public class UpdateRecordsRequestMarshaller implements
                 }
                 jsonWriter.endArray();
             }
-
             if (updateRecordsRequest.getSyncSessionToken() != null) {
                 jsonWriter.key("SyncSessionToken").value(
                         updateRecordsRequest.getSyncSessionToken());

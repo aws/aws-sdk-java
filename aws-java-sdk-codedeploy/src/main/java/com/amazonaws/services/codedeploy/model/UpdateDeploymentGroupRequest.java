@@ -35,7 +35,7 @@ public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest
     private String applicationName;
     /**
      * <p>
-     * The current name of the existing deployment group.
+     * The current name of the deployment group.
      * </p>
      */
     private String currentDeploymentGroupName;
@@ -54,7 +54,7 @@ public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest
     private String deploymentConfigName;
     /**
      * <p>
-     * The replacement set of Amazon EC2 tags to filter on, if you want to
+     * The replacement set of Amazon EC2 tags on which to filter, if you want to
      * change them. To keep the existing tags, enter their names. To remove
      * tags, do not enter any tag names.
      * </p>
@@ -62,8 +62,8 @@ public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest
     private com.amazonaws.internal.SdkInternalList<EC2TagFilter> ec2TagFilters;
     /**
      * <p>
-     * The replacement set of on-premises instance tags for filter on, if you
-     * want to change them. To keep the existing tags, enter their names. To
+     * The replacement set of on-premises instance tags on which to filter, if
+     * you want to change them. To keep the existing tags, enter their names. To
      * remove tags, do not enter any tag names.
      * </p>
      */
@@ -71,15 +71,15 @@ public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * The replacement list of Auto Scaling groups to be included in the
-     * deployment group, if you want to change them. To keep the existing Auto
-     * Scaling groups, enter their names. To remove Auto Scaling groups, do not
-     * enter any Auto Scaling group names.
+     * deployment group, if you want to change them. To keep the Auto Scaling
+     * groups, enter their names. To remove Auto Scaling groups, do not enter
+     * any Auto Scaling group names.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> autoScalingGroups;
     /**
      * <p>
-     * A replacement service role's ARN, if you want to change it.
+     * A replacement ARN for the service role, if you want to change it.
      * </p>
      */
     private String serviceRoleArn;
@@ -138,11 +138,11 @@ public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The current name of the existing deployment group.
+     * The current name of the deployment group.
      * </p>
      * 
      * @param currentDeploymentGroupName
-     *        The current name of the existing deployment group.
+     *        The current name of the deployment group.
      */
 
     public void setCurrentDeploymentGroupName(String currentDeploymentGroupName) {
@@ -151,10 +151,10 @@ public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The current name of the existing deployment group.
+     * The current name of the deployment group.
      * </p>
      * 
-     * @return The current name of the existing deployment group.
+     * @return The current name of the deployment group.
      */
 
     public String getCurrentDeploymentGroupName() {
@@ -163,11 +163,11 @@ public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The current name of the existing deployment group.
+     * The current name of the deployment group.
      * </p>
      * 
      * @param currentDeploymentGroupName
-     *        The current name of the existing deployment group.
+     *        The current name of the deployment group.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -270,14 +270,14 @@ public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The replacement set of Amazon EC2 tags to filter on, if you want to
+     * The replacement set of Amazon EC2 tags on which to filter, if you want to
      * change them. To keep the existing tags, enter their names. To remove
      * tags, do not enter any tag names.
      * </p>
      * 
-     * @return The replacement set of Amazon EC2 tags to filter on, if you want
-     *         to change them. To keep the existing tags, enter their names. To
-     *         remove tags, do not enter any tag names.
+     * @return The replacement set of Amazon EC2 tags on which to filter, if you
+     *         want to change them. To keep the existing tags, enter their
+     *         names. To remove tags, do not enter any tag names.
      */
 
     public java.util.List<EC2TagFilter> getEc2TagFilters() {
@@ -289,15 +289,15 @@ public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The replacement set of Amazon EC2 tags to filter on, if you want to
+     * The replacement set of Amazon EC2 tags on which to filter, if you want to
      * change them. To keep the existing tags, enter their names. To remove
      * tags, do not enter any tag names.
      * </p>
      * 
      * @param ec2TagFilters
-     *        The replacement set of Amazon EC2 tags to filter on, if you want
-     *        to change them. To keep the existing tags, enter their names. To
-     *        remove tags, do not enter any tag names.
+     *        The replacement set of Amazon EC2 tags on which to filter, if you
+     *        want to change them. To keep the existing tags, enter their names.
+     *        To remove tags, do not enter any tag names.
      */
 
     public void setEc2TagFilters(
@@ -313,7 +313,7 @@ public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The replacement set of Amazon EC2 tags to filter on, if you want to
+     * The replacement set of Amazon EC2 tags on which to filter, if you want to
      * change them. To keep the existing tags, enter their names. To remove
      * tags, do not enter any tag names.
      * </p>
@@ -325,9 +325,9 @@ public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param ec2TagFilters
-     *        The replacement set of Amazon EC2 tags to filter on, if you want
-     *        to change them. To keep the existing tags, enter their names. To
-     *        remove tags, do not enter any tag names.
+     *        The replacement set of Amazon EC2 tags on which to filter, if you
+     *        want to change them. To keep the existing tags, enter their names.
+     *        To remove tags, do not enter any tag names.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -346,15 +346,15 @@ public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The replacement set of Amazon EC2 tags to filter on, if you want to
+     * The replacement set of Amazon EC2 tags on which to filter, if you want to
      * change them. To keep the existing tags, enter their names. To remove
      * tags, do not enter any tag names.
      * </p>
      * 
      * @param ec2TagFilters
-     *        The replacement set of Amazon EC2 tags to filter on, if you want
-     *        to change them. To keep the existing tags, enter their names. To
-     *        remove tags, do not enter any tag names.
+     *        The replacement set of Amazon EC2 tags on which to filter, if you
+     *        want to change them. To keep the existing tags, enter their names.
+     *        To remove tags, do not enter any tag names.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -367,14 +367,14 @@ public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The replacement set of on-premises instance tags for filter on, if you
-     * want to change them. To keep the existing tags, enter their names. To
+     * The replacement set of on-premises instance tags on which to filter, if
+     * you want to change them. To keep the existing tags, enter their names. To
      * remove tags, do not enter any tag names.
      * </p>
      * 
-     * @return The replacement set of on-premises instance tags for filter on,
-     *         if you want to change them. To keep the existing tags, enter
-     *         their names. To remove tags, do not enter any tag names.
+     * @return The replacement set of on-premises instance tags on which to
+     *         filter, if you want to change them. To keep the existing tags,
+     *         enter their names. To remove tags, do not enter any tag names.
      */
 
     public java.util.List<TagFilter> getOnPremisesInstanceTagFilters() {
@@ -386,15 +386,15 @@ public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The replacement set of on-premises instance tags for filter on, if you
-     * want to change them. To keep the existing tags, enter their names. To
+     * The replacement set of on-premises instance tags on which to filter, if
+     * you want to change them. To keep the existing tags, enter their names. To
      * remove tags, do not enter any tag names.
      * </p>
      * 
      * @param onPremisesInstanceTagFilters
-     *        The replacement set of on-premises instance tags for filter on, if
-     *        you want to change them. To keep the existing tags, enter their
-     *        names. To remove tags, do not enter any tag names.
+     *        The replacement set of on-premises instance tags on which to
+     *        filter, if you want to change them. To keep the existing tags,
+     *        enter their names. To remove tags, do not enter any tag names.
      */
 
     public void setOnPremisesInstanceTagFilters(
@@ -410,8 +410,8 @@ public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The replacement set of on-premises instance tags for filter on, if you
-     * want to change them. To keep the existing tags, enter their names. To
+     * The replacement set of on-premises instance tags on which to filter, if
+     * you want to change them. To keep the existing tags, enter their names. To
      * remove tags, do not enter any tag names.
      * </p>
      * <p>
@@ -422,9 +422,9 @@ public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param onPremisesInstanceTagFilters
-     *        The replacement set of on-premises instance tags for filter on, if
-     *        you want to change them. To keep the existing tags, enter their
-     *        names. To remove tags, do not enter any tag names.
+     *        The replacement set of on-premises instance tags on which to
+     *        filter, if you want to change them. To keep the existing tags,
+     *        enter their names. To remove tags, do not enter any tag names.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -443,15 +443,15 @@ public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The replacement set of on-premises instance tags for filter on, if you
-     * want to change them. To keep the existing tags, enter their names. To
+     * The replacement set of on-premises instance tags on which to filter, if
+     * you want to change them. To keep the existing tags, enter their names. To
      * remove tags, do not enter any tag names.
      * </p>
      * 
      * @param onPremisesInstanceTagFilters
-     *        The replacement set of on-premises instance tags for filter on, if
-     *        you want to change them. To keep the existing tags, enter their
-     *        names. To remove tags, do not enter any tag names.
+     *        The replacement set of on-premises instance tags on which to
+     *        filter, if you want to change them. To keep the existing tags,
+     *        enter their names. To remove tags, do not enter any tag names.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -465,15 +465,15 @@ public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * The replacement list of Auto Scaling groups to be included in the
-     * deployment group, if you want to change them. To keep the existing Auto
-     * Scaling groups, enter their names. To remove Auto Scaling groups, do not
-     * enter any Auto Scaling group names.
+     * deployment group, if you want to change them. To keep the Auto Scaling
+     * groups, enter their names. To remove Auto Scaling groups, do not enter
+     * any Auto Scaling group names.
      * </p>
      * 
      * @return The replacement list of Auto Scaling groups to be included in the
-     *         deployment group, if you want to change them. To keep the
-     *         existing Auto Scaling groups, enter their names. To remove Auto
-     *         Scaling groups, do not enter any Auto Scaling group names.
+     *         deployment group, if you want to change them. To keep the Auto
+     *         Scaling groups, enter their names. To remove Auto Scaling groups,
+     *         do not enter any Auto Scaling group names.
      */
 
     public java.util.List<String> getAutoScalingGroups() {
@@ -486,16 +486,16 @@ public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * The replacement list of Auto Scaling groups to be included in the
-     * deployment group, if you want to change them. To keep the existing Auto
-     * Scaling groups, enter their names. To remove Auto Scaling groups, do not
-     * enter any Auto Scaling group names.
+     * deployment group, if you want to change them. To keep the Auto Scaling
+     * groups, enter their names. To remove Auto Scaling groups, do not enter
+     * any Auto Scaling group names.
      * </p>
      * 
      * @param autoScalingGroups
      *        The replacement list of Auto Scaling groups to be included in the
-     *        deployment group, if you want to change them. To keep the existing
-     *        Auto Scaling groups, enter their names. To remove Auto Scaling
-     *        groups, do not enter any Auto Scaling group names.
+     *        deployment group, if you want to change them. To keep the Auto
+     *        Scaling groups, enter their names. To remove Auto Scaling groups,
+     *        do not enter any Auto Scaling group names.
      */
 
     public void setAutoScalingGroups(
@@ -512,9 +512,9 @@ public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * The replacement list of Auto Scaling groups to be included in the
-     * deployment group, if you want to change them. To keep the existing Auto
-     * Scaling groups, enter their names. To remove Auto Scaling groups, do not
-     * enter any Auto Scaling group names.
+     * deployment group, if you want to change them. To keep the Auto Scaling
+     * groups, enter their names. To remove Auto Scaling groups, do not enter
+     * any Auto Scaling group names.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -525,9 +525,9 @@ public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest
      * 
      * @param autoScalingGroups
      *        The replacement list of Auto Scaling groups to be included in the
-     *        deployment group, if you want to change them. To keep the existing
-     *        Auto Scaling groups, enter their names. To remove Auto Scaling
-     *        groups, do not enter any Auto Scaling group names.
+     *        deployment group, if you want to change them. To keep the Auto
+     *        Scaling groups, enter their names. To remove Auto Scaling groups,
+     *        do not enter any Auto Scaling group names.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -547,16 +547,16 @@ public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * The replacement list of Auto Scaling groups to be included in the
-     * deployment group, if you want to change them. To keep the existing Auto
-     * Scaling groups, enter their names. To remove Auto Scaling groups, do not
-     * enter any Auto Scaling group names.
+     * deployment group, if you want to change them. To keep the Auto Scaling
+     * groups, enter their names. To remove Auto Scaling groups, do not enter
+     * any Auto Scaling group names.
      * </p>
      * 
      * @param autoScalingGroups
      *        The replacement list of Auto Scaling groups to be included in the
-     *        deployment group, if you want to change them. To keep the existing
-     *        Auto Scaling groups, enter their names. To remove Auto Scaling
-     *        groups, do not enter any Auto Scaling group names.
+     *        deployment group, if you want to change them. To keep the Auto
+     *        Scaling groups, enter their names. To remove Auto Scaling groups,
+     *        do not enter any Auto Scaling group names.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -569,11 +569,11 @@ public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A replacement service role's ARN, if you want to change it.
+     * A replacement ARN for the service role, if you want to change it.
      * </p>
      * 
      * @param serviceRoleArn
-     *        A replacement service role's ARN, if you want to change it.
+     *        A replacement ARN for the service role, if you want to change it.
      */
 
     public void setServiceRoleArn(String serviceRoleArn) {
@@ -582,10 +582,10 @@ public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A replacement service role's ARN, if you want to change it.
+     * A replacement ARN for the service role, if you want to change it.
      * </p>
      * 
-     * @return A replacement service role's ARN, if you want to change it.
+     * @return A replacement ARN for the service role, if you want to change it.
      */
 
     public String getServiceRoleArn() {
@@ -594,11 +594,11 @@ public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A replacement service role's ARN, if you want to change it.
+     * A replacement ARN for the service role, if you want to change it.
      * </p>
      * 
      * @param serviceRoleArn
-     *        A replacement service role's ARN, if you want to change it.
+     *        A replacement ARN for the service role, if you want to change it.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

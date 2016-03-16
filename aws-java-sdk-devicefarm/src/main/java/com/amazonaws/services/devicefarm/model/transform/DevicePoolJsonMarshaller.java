@@ -30,6 +30,7 @@ import com.amazonaws.services.devicefarm.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,16 +54,13 @@ public class DevicePoolJsonMarshaller {
             if (devicePool.getArn() != null) {
                 jsonWriter.key("arn").value(devicePool.getArn());
             }
-
             if (devicePool.getName() != null) {
                 jsonWriter.key("name").value(devicePool.getName());
             }
-
             if (devicePool.getDescription() != null) {
                 jsonWriter.key("description")
                         .value(devicePool.getDescription());
             }
-
             if (devicePool.getType() != null) {
                 jsonWriter.key("type").value(devicePool.getType());
             }

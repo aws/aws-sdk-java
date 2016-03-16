@@ -37,6 +37,7 @@ import com.amazonaws.services.gamelift.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -72,16 +73,13 @@ public class UpdateAliasRequestMarshaller implements
                 jsonWriter.key("AliasId")
                         .value(updateAliasRequest.getAliasId());
             }
-
             if (updateAliasRequest.getName() != null) {
                 jsonWriter.key("Name").value(updateAliasRequest.getName());
             }
-
             if (updateAliasRequest.getDescription() != null) {
                 jsonWriter.key("Description").value(
                         updateAliasRequest.getDescription());
             }
-
             if (updateAliasRequest.getRoutingStrategy() != null) {
                 jsonWriter.key("RoutingStrategy");
                 RoutingStrategyJsonMarshaller.getInstance().marshall(

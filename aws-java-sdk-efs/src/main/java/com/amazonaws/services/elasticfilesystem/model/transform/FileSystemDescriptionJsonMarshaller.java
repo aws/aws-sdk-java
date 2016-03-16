@@ -30,6 +30,7 @@ import com.amazonaws.services.elasticfilesystem.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,36 +56,29 @@ public class FileSystemDescriptionJsonMarshaller {
                 jsonWriter.key("OwnerId").value(
                         fileSystemDescription.getOwnerId());
             }
-
             if (fileSystemDescription.getCreationToken() != null) {
                 jsonWriter.key("CreationToken").value(
                         fileSystemDescription.getCreationToken());
             }
-
             if (fileSystemDescription.getFileSystemId() != null) {
                 jsonWriter.key("FileSystemId").value(
                         fileSystemDescription.getFileSystemId());
             }
-
             if (fileSystemDescription.getCreationTime() != null) {
                 jsonWriter.key("CreationTime").value(
                         fileSystemDescription.getCreationTime());
             }
-
             if (fileSystemDescription.getLifeCycleState() != null) {
                 jsonWriter.key("LifeCycleState").value(
                         fileSystemDescription.getLifeCycleState());
             }
-
             if (fileSystemDescription.getName() != null) {
                 jsonWriter.key("Name").value(fileSystemDescription.getName());
             }
-
             if (fileSystemDescription.getNumberOfMountTargets() != null) {
                 jsonWriter.key("NumberOfMountTargets").value(
                         fileSystemDescription.getNumberOfMountTargets());
             }
-
             if (fileSystemDescription.getSizeInBytes() != null) {
                 jsonWriter.key("SizeInBytes");
                 FileSystemSizeJsonMarshaller.getInstance().marshall(

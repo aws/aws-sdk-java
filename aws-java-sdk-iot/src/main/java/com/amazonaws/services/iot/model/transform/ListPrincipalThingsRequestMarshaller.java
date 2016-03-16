@@ -37,6 +37,7 @@ import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -71,18 +72,14 @@ public class ListPrincipalThingsRequestMarshaller
 
         request.setResourcePath(uriResourcePath);
 
-        String nextToken = (listPrincipalThingsRequest.getNextToken() == null) ? null
-                : StringUtils.fromString(listPrincipalThingsRequest
-                        .getNextToken());
-        if (nextToken != null) {
-            request.addParameter("nextToken", nextToken);
+        if (listPrincipalThingsRequest.getNextToken() != null) {
+            request.addParameter("nextToken", StringUtils
+                    .fromString(listPrincipalThingsRequest.getNextToken()));
         }
 
-        String maxResults = (listPrincipalThingsRequest.getMaxResults() == null) ? null
-                : StringUtils.fromInteger(listPrincipalThingsRequest
-                        .getMaxResults());
-        if (maxResults != null) {
-            request.addParameter("maxResults", maxResults);
+        if (listPrincipalThingsRequest.getMaxResults() != null) {
+            request.addParameter("maxResults", StringUtils
+                    .fromInteger(listPrincipalThingsRequest.getMaxResults()));
         }
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

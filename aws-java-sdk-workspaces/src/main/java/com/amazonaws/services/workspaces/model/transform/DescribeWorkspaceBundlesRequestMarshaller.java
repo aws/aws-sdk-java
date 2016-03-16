@@ -37,6 +37,7 @@ import com.amazonaws.services.workspaces.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -82,12 +83,10 @@ public class DescribeWorkspaceBundlesRequestMarshaller
                 }
                 jsonWriter.endArray();
             }
-
             if (describeWorkspaceBundlesRequest.getOwner() != null) {
                 jsonWriter.key("Owner").value(
                         describeWorkspaceBundlesRequest.getOwner());
             }
-
             if (describeWorkspaceBundlesRequest.getNextToken() != null) {
                 jsonWriter.key("NextToken").value(
                         describeWorkspaceBundlesRequest.getNextToken());

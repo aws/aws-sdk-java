@@ -30,6 +30,7 @@ import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,11 +54,9 @@ public class CaptionFormatJsonMarshaller {
             if (captionFormat.getFormat() != null) {
                 jsonWriter.key("Format").value(captionFormat.getFormat());
             }
-
             if (captionFormat.getPattern() != null) {
                 jsonWriter.key("Pattern").value(captionFormat.getPattern());
             }
-
             if (captionFormat.getEncryption() != null) {
                 jsonWriter.key("Encryption");
                 EncryptionJsonMarshaller.getInstance().marshall(

@@ -37,6 +37,7 @@ import com.amazonaws.services.elasticsearch.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -76,7 +77,6 @@ public class CreateElasticsearchDomainRequestMarshaller
                 jsonWriter.key("DomainName").value(
                         createElasticsearchDomainRequest.getDomainName());
             }
-
             if (createElasticsearchDomainRequest
                     .getElasticsearchClusterConfig() != null) {
                 jsonWriter.key("ElasticsearchClusterConfig");
@@ -87,19 +87,16 @@ public class CreateElasticsearchDomainRequestMarshaller
                                         .getElasticsearchClusterConfig(),
                                 jsonWriter);
             }
-
             if (createElasticsearchDomainRequest.getEBSOptions() != null) {
                 jsonWriter.key("EBSOptions");
                 EBSOptionsJsonMarshaller.getInstance().marshall(
                         createElasticsearchDomainRequest.getEBSOptions(),
                         jsonWriter);
             }
-
             if (createElasticsearchDomainRequest.getAccessPolicies() != null) {
                 jsonWriter.key("AccessPolicies").value(
                         createElasticsearchDomainRequest.getAccessPolicies());
             }
-
             if (createElasticsearchDomainRequest.getSnapshotOptions() != null) {
                 jsonWriter.key("SnapshotOptions");
                 SnapshotOptionsJsonMarshaller.getInstance().marshall(

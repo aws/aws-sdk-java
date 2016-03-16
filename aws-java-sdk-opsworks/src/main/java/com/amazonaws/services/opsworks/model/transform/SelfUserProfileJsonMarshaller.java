@@ -30,6 +30,7 @@ import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,16 +55,13 @@ public class SelfUserProfileJsonMarshaller {
                 jsonWriter.key("IamUserArn").value(
                         selfUserProfile.getIamUserArn());
             }
-
             if (selfUserProfile.getName() != null) {
                 jsonWriter.key("Name").value(selfUserProfile.getName());
             }
-
             if (selfUserProfile.getSshUsername() != null) {
                 jsonWriter.key("SshUsername").value(
                         selfUserProfile.getSshUsername());
             }
-
             if (selfUserProfile.getSshPublicKey() != null) {
                 jsonWriter.key("SshPublicKey").value(
                         selfUserProfile.getSshPublicKey());

@@ -37,6 +37,7 @@ import com.amazonaws.services.support.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -74,22 +75,18 @@ public class DescribeCommunicationsRequestMarshaller
                 jsonWriter.key("caseId").value(
                         describeCommunicationsRequest.getCaseId());
             }
-
             if (describeCommunicationsRequest.getBeforeTime() != null) {
                 jsonWriter.key("beforeTime").value(
                         describeCommunicationsRequest.getBeforeTime());
             }
-
             if (describeCommunicationsRequest.getAfterTime() != null) {
                 jsonWriter.key("afterTime").value(
                         describeCommunicationsRequest.getAfterTime());
             }
-
             if (describeCommunicationsRequest.getNextToken() != null) {
                 jsonWriter.key("nextToken").value(
                         describeCommunicationsRequest.getNextToken());
             }
-
             if (describeCommunicationsRequest.getMaxResults() != null) {
                 jsonWriter.key("maxResults").value(
                         describeCommunicationsRequest.getMaxResults());

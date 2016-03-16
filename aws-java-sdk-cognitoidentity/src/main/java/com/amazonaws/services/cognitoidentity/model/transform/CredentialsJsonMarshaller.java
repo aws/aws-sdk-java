@@ -30,6 +30,7 @@ import com.amazonaws.services.cognitoidentity.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,16 +55,13 @@ public class CredentialsJsonMarshaller {
                 jsonWriter.key("AccessKeyId").value(
                         credentials.getAccessKeyId());
             }
-
             if (credentials.getSecretKey() != null) {
                 jsonWriter.key("SecretKey").value(credentials.getSecretKey());
             }
-
             if (credentials.getSessionToken() != null) {
                 jsonWriter.key("SessionToken").value(
                         credentials.getSessionToken());
             }
-
             if (credentials.getExpiration() != null) {
                 jsonWriter.key("Expiration").value(credentials.getExpiration());
             }

@@ -37,6 +37,7 @@ import com.amazonaws.services.ecs.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -74,13 +75,11 @@ public class DeregisterContainerInstanceRequestMarshaller
                 jsonWriter.key("cluster").value(
                         deregisterContainerInstanceRequest.getCluster());
             }
-
             if (deregisterContainerInstanceRequest.getContainerInstance() != null) {
                 jsonWriter.key("containerInstance").value(
                         deregisterContainerInstanceRequest
                                 .getContainerInstance());
             }
-
             if (deregisterContainerInstanceRequest.getForce() != null) {
                 jsonWriter.key("force").value(
                         deregisterContainerInstanceRequest.getForce());

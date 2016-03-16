@@ -30,6 +30,7 @@ import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,27 +56,22 @@ public class AutoScalingThresholdsJsonMarshaller {
                 jsonWriter.key("InstanceCount").value(
                         autoScalingThresholds.getInstanceCount());
             }
-
             if (autoScalingThresholds.getThresholdsWaitTime() != null) {
                 jsonWriter.key("ThresholdsWaitTime").value(
                         autoScalingThresholds.getThresholdsWaitTime());
             }
-
             if (autoScalingThresholds.getIgnoreMetricsTime() != null) {
                 jsonWriter.key("IgnoreMetricsTime").value(
                         autoScalingThresholds.getIgnoreMetricsTime());
             }
-
             if (autoScalingThresholds.getCpuThreshold() != null) {
                 jsonWriter.key("CpuThreshold").value(
                         autoScalingThresholds.getCpuThreshold());
             }
-
             if (autoScalingThresholds.getMemoryThreshold() != null) {
                 jsonWriter.key("MemoryThreshold").value(
                         autoScalingThresholds.getMemoryThreshold());
             }
-
             if (autoScalingThresholds.getLoadThreshold() != null) {
                 jsonWriter.key("LoadThreshold").value(
                         autoScalingThresholds.getLoadThreshold());

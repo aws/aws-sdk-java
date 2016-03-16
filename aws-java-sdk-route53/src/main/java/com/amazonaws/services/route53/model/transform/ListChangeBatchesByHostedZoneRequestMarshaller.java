@@ -32,6 +32,7 @@ import com.amazonaws.services.route53.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.XMLWriter;
 
 /**
@@ -60,38 +61,34 @@ public class ListChangeBatchesByHostedZoneRequestMarshaller
         uriResourcePath = uriResourcePath
                 .replace(
                         "{Id}",
-                        (listChangeBatchesByHostedZoneRequest.getHostedZoneId() == null) ? ""
-                                : StringUtils
-                                        .fromString(listChangeBatchesByHostedZoneRequest
-                                                .getHostedZoneId()));
+                        (listChangeBatchesByHostedZoneRequest.getHostedZoneId() != null) ? StringUtils
+                                .fromString(listChangeBatchesByHostedZoneRequest
+                                        .getHostedZoneId())
+                                : "");
         request.setResourcePath(uriResourcePath);
 
-        String startDate = (listChangeBatchesByHostedZoneRequest.getStartDate() == null) ? null
-                : StringUtils.fromString(listChangeBatchesByHostedZoneRequest
-                        .getStartDate());
-        if (startDate != null) {
-            request.addParameter("startDate", startDate);
+        if (listChangeBatchesByHostedZoneRequest.getStartDate() != null) {
+            request.addParameter("startDate", StringUtils
+                    .fromString(listChangeBatchesByHostedZoneRequest
+                            .getStartDate()));
         }
 
-        String endDate = (listChangeBatchesByHostedZoneRequest.getEndDate() == null) ? null
-                : StringUtils.fromString(listChangeBatchesByHostedZoneRequest
-                        .getEndDate());
-        if (endDate != null) {
-            request.addParameter("endDate", endDate);
+        if (listChangeBatchesByHostedZoneRequest.getEndDate() != null) {
+            request.addParameter("endDate", StringUtils
+                    .fromString(listChangeBatchesByHostedZoneRequest
+                            .getEndDate()));
         }
 
-        String maxItems = (listChangeBatchesByHostedZoneRequest.getMaxItems() == null) ? null
-                : StringUtils.fromString(listChangeBatchesByHostedZoneRequest
-                        .getMaxItems());
-        if (maxItems != null) {
-            request.addParameter("maxItems", maxItems);
+        if (listChangeBatchesByHostedZoneRequest.getMaxItems() != null) {
+            request.addParameter("maxItems", StringUtils
+                    .fromString(listChangeBatchesByHostedZoneRequest
+                            .getMaxItems()));
         }
 
-        String marker = (listChangeBatchesByHostedZoneRequest.getMarker() == null) ? null
-                : StringUtils.fromString(listChangeBatchesByHostedZoneRequest
-                        .getMarker());
-        if (marker != null) {
-            request.addParameter("marker", marker);
+        if (listChangeBatchesByHostedZoneRequest.getMarker() != null) {
+            request.addParameter("marker", StringUtils
+                    .fromString(listChangeBatchesByHostedZoneRequest
+                            .getMarker()));
         }
 
         return request;

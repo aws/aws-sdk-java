@@ -30,6 +30,7 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,17 +54,14 @@ public class DomainNameJsonMarshaller {
             if (domainName.getDomainName() != null) {
                 jsonWriter.key("domainName").value(domainName.getDomainName());
             }
-
             if (domainName.getCertificateName() != null) {
                 jsonWriter.key("certificateName").value(
                         domainName.getCertificateName());
             }
-
             if (domainName.getCertificateUploadDate() != null) {
                 jsonWriter.key("certificateUploadDate").value(
                         domainName.getCertificateUploadDate());
             }
-
             if (domainName.getDistributionDomainName() != null) {
                 jsonWriter.key("distributionDomainName").value(
                         domainName.getDistributionDomainName());

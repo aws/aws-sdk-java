@@ -8,9 +8,13 @@
 
 <#if !(http.location)?? && !(http.isStreaming) && !(http.isPayload)>
 <#if member.simple>
-   if (${getMember}() != null) {
-        xmlWriter.startElement("${http.marshallLocationName}").value(${getMember}()).endElement();
-   }
+    <#if member.idempotencyToken>
+        xmlWriter.startElement("${http.marshallLocationName}").value(<@IdempotencyTokenMacro.content getMember member.variable.simpleType/>).endElement();
+    <#else>
+        if(${getMember}() != null) {
+            xmlWriter.startElement("${http.marshallLocationName}").value(${getMember}()).endElement();
+        }
+    </#if>
 <#elseif member.list>
     <#local listModel = member.listModel />
     <#-- More explicit name in order to avoid variable name collision -->

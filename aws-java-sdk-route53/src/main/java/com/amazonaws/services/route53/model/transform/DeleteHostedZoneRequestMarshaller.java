@@ -32,6 +32,7 @@ import com.amazonaws.services.route53.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.XMLWriter;
 
 /**
@@ -58,8 +59,8 @@ public class DeleteHostedZoneRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{Id}",
-                (deleteHostedZoneRequest.getId() == null) ? "" : StringUtils
-                        .fromString(deleteHostedZoneRequest.getId()));
+                (deleteHostedZoneRequest.getId() != null) ? StringUtils
+                        .fromString(deleteHostedZoneRequest.getId()) : "");
         request.setResourcePath(uriResourcePath);
 
         return request;

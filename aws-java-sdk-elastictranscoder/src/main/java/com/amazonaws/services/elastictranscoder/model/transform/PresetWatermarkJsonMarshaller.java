@@ -30,6 +30,7 @@ import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,45 +54,36 @@ public class PresetWatermarkJsonMarshaller {
             if (presetWatermark.getId() != null) {
                 jsonWriter.key("Id").value(presetWatermark.getId());
             }
-
             if (presetWatermark.getMaxWidth() != null) {
                 jsonWriter.key("MaxWidth").value(presetWatermark.getMaxWidth());
             }
-
             if (presetWatermark.getMaxHeight() != null) {
                 jsonWriter.key("MaxHeight").value(
                         presetWatermark.getMaxHeight());
             }
-
             if (presetWatermark.getSizingPolicy() != null) {
                 jsonWriter.key("SizingPolicy").value(
                         presetWatermark.getSizingPolicy());
             }
-
             if (presetWatermark.getHorizontalAlign() != null) {
                 jsonWriter.key("HorizontalAlign").value(
                         presetWatermark.getHorizontalAlign());
             }
-
             if (presetWatermark.getHorizontalOffset() != null) {
                 jsonWriter.key("HorizontalOffset").value(
                         presetWatermark.getHorizontalOffset());
             }
-
             if (presetWatermark.getVerticalAlign() != null) {
                 jsonWriter.key("VerticalAlign").value(
                         presetWatermark.getVerticalAlign());
             }
-
             if (presetWatermark.getVerticalOffset() != null) {
                 jsonWriter.key("VerticalOffset").value(
                         presetWatermark.getVerticalOffset());
             }
-
             if (presetWatermark.getOpacity() != null) {
                 jsonWriter.key("Opacity").value(presetWatermark.getOpacity());
             }
-
             if (presetWatermark.getTarget() != null) {
                 jsonWriter.key("Target").value(presetWatermark.getTarget());
             }

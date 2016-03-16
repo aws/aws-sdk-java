@@ -30,6 +30,7 @@ import com.amazonaws.services.ecs.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,35 +54,28 @@ public class DeploymentJsonMarshaller {
             if (deployment.getId() != null) {
                 jsonWriter.key("id").value(deployment.getId());
             }
-
             if (deployment.getStatus() != null) {
                 jsonWriter.key("status").value(deployment.getStatus());
             }
-
             if (deployment.getTaskDefinition() != null) {
                 jsonWriter.key("taskDefinition").value(
                         deployment.getTaskDefinition());
             }
-
             if (deployment.getDesiredCount() != null) {
                 jsonWriter.key("desiredCount").value(
                         deployment.getDesiredCount());
             }
-
             if (deployment.getPendingCount() != null) {
                 jsonWriter.key("pendingCount").value(
                         deployment.getPendingCount());
             }
-
             if (deployment.getRunningCount() != null) {
                 jsonWriter.key("runningCount").value(
                         deployment.getRunningCount());
             }
-
             if (deployment.getCreatedAt() != null) {
                 jsonWriter.key("createdAt").value(deployment.getCreatedAt());
             }
-
             if (deployment.getUpdatedAt() != null) {
                 jsonWriter.key("updatedAt").value(deployment.getUpdatedAt());
             }

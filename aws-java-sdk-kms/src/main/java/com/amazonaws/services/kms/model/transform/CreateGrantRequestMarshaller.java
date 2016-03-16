@@ -37,6 +37,7 @@ import com.amazonaws.services.kms.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -71,12 +72,10 @@ public class CreateGrantRequestMarshaller implements
             if (createGrantRequest.getKeyId() != null) {
                 jsonWriter.key("KeyId").value(createGrantRequest.getKeyId());
             }
-
             if (createGrantRequest.getGranteePrincipal() != null) {
                 jsonWriter.key("GranteePrincipal").value(
                         createGrantRequest.getGranteePrincipal());
             }
-
             if (createGrantRequest.getRetiringPrincipal() != null) {
                 jsonWriter.key("RetiringPrincipal").value(
                         createGrantRequest.getRetiringPrincipal());
@@ -94,7 +93,6 @@ public class CreateGrantRequestMarshaller implements
                 }
                 jsonWriter.endArray();
             }
-
             if (createGrantRequest.getConstraints() != null) {
                 jsonWriter.key("Constraints");
                 GrantConstraintsJsonMarshaller.getInstance().marshall(
@@ -114,7 +112,6 @@ public class CreateGrantRequestMarshaller implements
                 }
                 jsonWriter.endArray();
             }
-
             if (createGrantRequest.getName() != null) {
                 jsonWriter.key("Name").value(createGrantRequest.getName());
             }

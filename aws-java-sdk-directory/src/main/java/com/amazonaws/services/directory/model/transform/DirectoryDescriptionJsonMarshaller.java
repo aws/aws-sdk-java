@@ -30,6 +30,7 @@ import com.amazonaws.services.directory.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,29 +56,23 @@ public class DirectoryDescriptionJsonMarshaller {
                 jsonWriter.key("DirectoryId").value(
                         directoryDescription.getDirectoryId());
             }
-
             if (directoryDescription.getName() != null) {
                 jsonWriter.key("Name").value(directoryDescription.getName());
             }
-
             if (directoryDescription.getShortName() != null) {
                 jsonWriter.key("ShortName").value(
                         directoryDescription.getShortName());
             }
-
             if (directoryDescription.getSize() != null) {
                 jsonWriter.key("Size").value(directoryDescription.getSize());
             }
-
             if (directoryDescription.getAlias() != null) {
                 jsonWriter.key("Alias").value(directoryDescription.getAlias());
             }
-
             if (directoryDescription.getAccessUrl() != null) {
                 jsonWriter.key("AccessUrl").value(
                         directoryDescription.getAccessUrl());
             }
-
             if (directoryDescription.getDescription() != null) {
                 jsonWriter.key("Description").value(
                         directoryDescription.getDescription());
@@ -95,55 +90,45 @@ public class DirectoryDescriptionJsonMarshaller {
                 }
                 jsonWriter.endArray();
             }
-
             if (directoryDescription.getStage() != null) {
                 jsonWriter.key("Stage").value(directoryDescription.getStage());
             }
-
             if (directoryDescription.getLaunchTime() != null) {
                 jsonWriter.key("LaunchTime").value(
                         directoryDescription.getLaunchTime());
             }
-
             if (directoryDescription.getStageLastUpdatedDateTime() != null) {
                 jsonWriter.key("StageLastUpdatedDateTime").value(
                         directoryDescription.getStageLastUpdatedDateTime());
             }
-
             if (directoryDescription.getType() != null) {
                 jsonWriter.key("Type").value(directoryDescription.getType());
             }
-
             if (directoryDescription.getVpcSettings() != null) {
                 jsonWriter.key("VpcSettings");
                 DirectoryVpcSettingsDescriptionJsonMarshaller.getInstance()
                         .marshall(directoryDescription.getVpcSettings(),
                                 jsonWriter);
             }
-
             if (directoryDescription.getConnectSettings() != null) {
                 jsonWriter.key("ConnectSettings");
                 DirectoryConnectSettingsDescriptionJsonMarshaller.getInstance()
                         .marshall(directoryDescription.getConnectSettings(),
                                 jsonWriter);
             }
-
             if (directoryDescription.getRadiusSettings() != null) {
                 jsonWriter.key("RadiusSettings");
                 RadiusSettingsJsonMarshaller.getInstance().marshall(
                         directoryDescription.getRadiusSettings(), jsonWriter);
             }
-
             if (directoryDescription.getRadiusStatus() != null) {
                 jsonWriter.key("RadiusStatus").value(
                         directoryDescription.getRadiusStatus());
             }
-
             if (directoryDescription.getStageReason() != null) {
                 jsonWriter.key("StageReason").value(
                         directoryDescription.getStageReason());
             }
-
             if (directoryDescription.getSsoEnabled() != null) {
                 jsonWriter.key("SsoEnabled").value(
                         directoryDescription.getSsoEnabled());

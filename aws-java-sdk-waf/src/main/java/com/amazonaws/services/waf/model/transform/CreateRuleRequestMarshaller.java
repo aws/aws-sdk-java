@@ -37,6 +37,7 @@ import com.amazonaws.services.waf.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -71,12 +72,10 @@ public class CreateRuleRequestMarshaller implements
             if (createRuleRequest.getName() != null) {
                 jsonWriter.key("Name").value(createRuleRequest.getName());
             }
-
             if (createRuleRequest.getMetricName() != null) {
                 jsonWriter.key("MetricName").value(
                         createRuleRequest.getMetricName());
             }
-
             if (createRuleRequest.getChangeToken() != null) {
                 jsonWriter.key("ChangeToken").value(
                         createRuleRequest.getChangeToken());

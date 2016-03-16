@@ -37,6 +37,7 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -65,21 +66,18 @@ public class GetAuthorizersRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
-                (getAuthorizersRequest.getRestApiId() == null) ? ""
-                        : StringUtils.fromString(getAuthorizersRequest
-                                .getRestApiId()));
+                (getAuthorizersRequest.getRestApiId() != null) ? StringUtils
+                        .fromString(getAuthorizersRequest.getRestApiId()) : "");
         request.setResourcePath(uriResourcePath);
 
-        String position = (getAuthorizersRequest.getPosition() == null) ? null
-                : StringUtils.fromString(getAuthorizersRequest.getPosition());
-        if (position != null) {
-            request.addParameter("position", position);
+        if (getAuthorizersRequest.getPosition() != null) {
+            request.addParameter("position",
+                    StringUtils.fromString(getAuthorizersRequest.getPosition()));
         }
 
-        String limit = (getAuthorizersRequest.getLimit() == null) ? null
-                : StringUtils.fromInteger(getAuthorizersRequest.getLimit());
-        if (limit != null) {
-            request.addParameter("limit", limit);
+        if (getAuthorizersRequest.getLimit() != null) {
+            request.addParameter("limit",
+                    StringUtils.fromInteger(getAuthorizersRequest.getLimit()));
         }
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

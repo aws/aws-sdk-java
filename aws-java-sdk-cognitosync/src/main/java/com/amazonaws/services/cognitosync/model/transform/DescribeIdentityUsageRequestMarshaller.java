@@ -37,6 +37,7 @@ import com.amazonaws.services.cognitosync.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -64,16 +65,18 @@ public class DescribeIdentityUsageRequestMarshaller
 
         String uriResourcePath = "/identitypools/{IdentityPoolId}/identities/{IdentityId}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{IdentityPoolId}",
-                (describeIdentityUsageRequest.getIdentityPoolId() == null) ? ""
-                        : StringUtils.fromString(describeIdentityUsageRequest
-                                .getIdentityPoolId()));
-        uriResourcePath = uriResourcePath.replace(
-                "{IdentityId}",
-                (describeIdentityUsageRequest.getIdentityId() == null) ? ""
-                        : StringUtils.fromString(describeIdentityUsageRequest
-                                .getIdentityId()));
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{IdentityPoolId}",
+                        (describeIdentityUsageRequest.getIdentityPoolId() != null) ? StringUtils
+                                .fromString(describeIdentityUsageRequest
+                                        .getIdentityPoolId()) : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{IdentityId}",
+                        (describeIdentityUsageRequest.getIdentityId() != null) ? StringUtils
+                                .fromString(describeIdentityUsageRequest
+                                        .getIdentityId()) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

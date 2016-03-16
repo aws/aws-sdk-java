@@ -37,6 +37,7 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -64,26 +65,30 @@ public class DeleteMethodResponseRequestMarshaller
 
         String uriResourcePath = "/restapis/{restapi_id}/resources/{resource_id}/methods/{http_method}/responses/{status_code}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{restapi_id}",
-                (deleteMethodResponseRequest.getRestApiId() == null) ? ""
-                        : StringUtils.fromString(deleteMethodResponseRequest
-                                .getRestApiId()));
-        uriResourcePath = uriResourcePath.replace(
-                "{resource_id}",
-                (deleteMethodResponseRequest.getResourceId() == null) ? ""
-                        : StringUtils.fromString(deleteMethodResponseRequest
-                                .getResourceId()));
-        uriResourcePath = uriResourcePath.replace(
-                "{http_method}",
-                (deleteMethodResponseRequest.getHttpMethod() == null) ? ""
-                        : StringUtils.fromString(deleteMethodResponseRequest
-                                .getHttpMethod()));
-        uriResourcePath = uriResourcePath.replace(
-                "{status_code}",
-                (deleteMethodResponseRequest.getStatusCode() == null) ? ""
-                        : StringUtils.fromString(deleteMethodResponseRequest
-                                .getStatusCode()));
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{restapi_id}",
+                        (deleteMethodResponseRequest.getRestApiId() != null) ? StringUtils
+                                .fromString(deleteMethodResponseRequest
+                                        .getRestApiId()) : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{resource_id}",
+                        (deleteMethodResponseRequest.getResourceId() != null) ? StringUtils
+                                .fromString(deleteMethodResponseRequest
+                                        .getResourceId()) : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{http_method}",
+                        (deleteMethodResponseRequest.getHttpMethod() != null) ? StringUtils
+                                .fromString(deleteMethodResponseRequest
+                                        .getHttpMethod()) : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{status_code}",
+                        (deleteMethodResponseRequest.getStatusCode() != null) ? StringUtils
+                                .fromString(deleteMethodResponseRequest
+                                        .getStatusCode()) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

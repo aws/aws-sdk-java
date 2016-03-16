@@ -30,6 +30,7 @@ import com.amazonaws.services.machinelearning.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,16 +55,13 @@ public class S3DataSpecJsonMarshaller {
                 jsonWriter.key("DataLocationS3").value(
                         s3DataSpec.getDataLocationS3());
             }
-
             if (s3DataSpec.getDataRearrangement() != null) {
                 jsonWriter.key("DataRearrangement").value(
                         s3DataSpec.getDataRearrangement());
             }
-
             if (s3DataSpec.getDataSchema() != null) {
                 jsonWriter.key("DataSchema").value(s3DataSpec.getDataSchema());
             }
-
             if (s3DataSpec.getDataSchemaLocationS3() != null) {
                 jsonWriter.key("DataSchemaLocationS3").value(
                         s3DataSpec.getDataSchemaLocationS3());

@@ -30,6 +30,7 @@ import com.amazonaws.services.storagegateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,12 +56,10 @@ public class NetworkInterfaceJsonMarshaller {
                 jsonWriter.key("Ipv4Address").value(
                         networkInterface.getIpv4Address());
             }
-
             if (networkInterface.getMacAddress() != null) {
                 jsonWriter.key("MacAddress").value(
                         networkInterface.getMacAddress());
             }
-
             if (networkInterface.getIpv6Address() != null) {
                 jsonWriter.key("Ipv6Address").value(
                         networkInterface.getIpv6Address());

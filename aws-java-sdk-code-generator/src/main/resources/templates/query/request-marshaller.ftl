@@ -13,6 +13,8 @@ import com.amazonaws.http.HttpMethodName;
 import ${metadata.packageName}.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
+
 
 /**
  * ${shapeName} Marshaller

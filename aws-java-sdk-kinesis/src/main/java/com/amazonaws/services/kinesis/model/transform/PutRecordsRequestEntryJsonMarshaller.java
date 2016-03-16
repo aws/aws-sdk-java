@@ -30,6 +30,7 @@ import com.amazonaws.services.kinesis.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,12 +55,10 @@ public class PutRecordsRequestEntryJsonMarshaller {
             if (putRecordsRequestEntry.getData() != null) {
                 jsonWriter.key("Data").value(putRecordsRequestEntry.getData());
             }
-
             if (putRecordsRequestEntry.getExplicitHashKey() != null) {
                 jsonWriter.key("ExplicitHashKey").value(
                         putRecordsRequestEntry.getExplicitHashKey());
             }
-
             if (putRecordsRequestEntry.getPartitionKey() != null) {
                 jsonWriter.key("PartitionKey").value(
                         putRecordsRequestEntry.getPartitionKey());

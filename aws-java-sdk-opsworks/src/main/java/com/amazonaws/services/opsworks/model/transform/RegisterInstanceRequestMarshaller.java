@@ -37,6 +37,7 @@ import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -72,32 +73,26 @@ public class RegisterInstanceRequestMarshaller implements
                 jsonWriter.key("StackId").value(
                         registerInstanceRequest.getStackId());
             }
-
             if (registerInstanceRequest.getHostname() != null) {
                 jsonWriter.key("Hostname").value(
                         registerInstanceRequest.getHostname());
             }
-
             if (registerInstanceRequest.getPublicIp() != null) {
                 jsonWriter.key("PublicIp").value(
                         registerInstanceRequest.getPublicIp());
             }
-
             if (registerInstanceRequest.getPrivateIp() != null) {
                 jsonWriter.key("PrivateIp").value(
                         registerInstanceRequest.getPrivateIp());
             }
-
             if (registerInstanceRequest.getRsaPublicKey() != null) {
                 jsonWriter.key("RsaPublicKey").value(
                         registerInstanceRequest.getRsaPublicKey());
             }
-
             if (registerInstanceRequest.getRsaPublicKeyFingerprint() != null) {
                 jsonWriter.key("RsaPublicKeyFingerprint").value(
                         registerInstanceRequest.getRsaPublicKeyFingerprint());
             }
-
             if (registerInstanceRequest.getInstanceIdentity() != null) {
                 jsonWriter.key("InstanceIdentity");
                 InstanceIdentityJsonMarshaller.getInstance().marshall(

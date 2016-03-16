@@ -30,6 +30,7 @@ import com.amazonaws.services.elasticmapreduce.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,17 +54,14 @@ public class ClusterSummaryJsonMarshaller {
             if (clusterSummary.getId() != null) {
                 jsonWriter.key("Id").value(clusterSummary.getId());
             }
-
             if (clusterSummary.getName() != null) {
                 jsonWriter.key("Name").value(clusterSummary.getName());
             }
-
             if (clusterSummary.getStatus() != null) {
                 jsonWriter.key("Status");
                 ClusterStatusJsonMarshaller.getInstance().marshall(
                         clusterSummary.getStatus(), jsonWriter);
             }
-
             if (clusterSummary.getNormalizedInstanceHours() != null) {
                 jsonWriter.key("NormalizedInstanceHours").value(
                         clusterSummary.getNormalizedInstanceHours());

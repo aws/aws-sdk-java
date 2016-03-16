@@ -37,6 +37,7 @@ import com.amazonaws.services.directory.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -71,12 +72,10 @@ public class EnableSsoRequestMarshaller implements
                 jsonWriter.key("DirectoryId").value(
                         enableSsoRequest.getDirectoryId());
             }
-
             if (enableSsoRequest.getUserName() != null) {
                 jsonWriter.key("UserName")
                         .value(enableSsoRequest.getUserName());
             }
-
             if (enableSsoRequest.getPassword() != null) {
                 jsonWriter.key("Password")
                         .value(enableSsoRequest.getPassword());

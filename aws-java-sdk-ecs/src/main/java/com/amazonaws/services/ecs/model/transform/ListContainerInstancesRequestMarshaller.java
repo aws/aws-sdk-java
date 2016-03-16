@@ -37,6 +37,7 @@ import com.amazonaws.services.ecs.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -74,12 +75,10 @@ public class ListContainerInstancesRequestMarshaller
                 jsonWriter.key("cluster").value(
                         listContainerInstancesRequest.getCluster());
             }
-
             if (listContainerInstancesRequest.getNextToken() != null) {
                 jsonWriter.key("nextToken").value(
                         listContainerInstancesRequest.getNextToken());
             }
-
             if (listContainerInstancesRequest.getMaxResults() != null) {
                 jsonWriter.key("maxResults").value(
                         listContainerInstancesRequest.getMaxResults());

@@ -37,6 +37,7 @@ import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -63,11 +64,12 @@ public class DeleteCertificateRequestMarshaller implements
 
         String uriResourcePath = "/certificates/{certificateId}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{certificateId}",
-                (deleteCertificateRequest.getCertificateId() == null) ? ""
-                        : StringUtils.fromString(deleteCertificateRequest
-                                .getCertificateId()));
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{certificateId}",
+                        (deleteCertificateRequest.getCertificateId() != null) ? StringUtils
+                                .fromString(deleteCertificateRequest
+                                        .getCertificateId()) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

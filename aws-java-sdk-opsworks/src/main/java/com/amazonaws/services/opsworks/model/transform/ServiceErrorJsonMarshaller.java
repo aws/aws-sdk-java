@@ -30,6 +30,7 @@ import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,24 +55,19 @@ public class ServiceErrorJsonMarshaller {
                 jsonWriter.key("ServiceErrorId").value(
                         serviceError.getServiceErrorId());
             }
-
             if (serviceError.getStackId() != null) {
                 jsonWriter.key("StackId").value(serviceError.getStackId());
             }
-
             if (serviceError.getInstanceId() != null) {
                 jsonWriter.key("InstanceId")
                         .value(serviceError.getInstanceId());
             }
-
             if (serviceError.getType() != null) {
                 jsonWriter.key("Type").value(serviceError.getType());
             }
-
             if (serviceError.getMessage() != null) {
                 jsonWriter.key("Message").value(serviceError.getMessage());
             }
-
             if (serviceError.getCreatedAt() != null) {
                 jsonWriter.key("CreatedAt").value(serviceError.getCreatedAt());
             }

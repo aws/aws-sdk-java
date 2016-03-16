@@ -30,6 +30,7 @@ import com.amazonaws.services.codepipeline.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,11 +54,9 @@ public class FailureDetailsJsonMarshaller {
             if (failureDetails.getType() != null) {
                 jsonWriter.key("type").value(failureDetails.getType());
             }
-
             if (failureDetails.getMessage() != null) {
                 jsonWriter.key("message").value(failureDetails.getMessage());
             }
-
             if (failureDetails.getExternalExecutionId() != null) {
                 jsonWriter.key("externalExecutionId").value(
                         failureDetails.getExternalExecutionId());

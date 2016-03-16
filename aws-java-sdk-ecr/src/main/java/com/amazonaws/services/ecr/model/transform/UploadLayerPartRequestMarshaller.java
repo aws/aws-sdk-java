@@ -37,6 +37,7 @@ import com.amazonaws.services.ecr.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -73,27 +74,22 @@ public class UploadLayerPartRequestMarshaller implements
                 jsonWriter.key("registryId").value(
                         uploadLayerPartRequest.getRegistryId());
             }
-
             if (uploadLayerPartRequest.getRepositoryName() != null) {
                 jsonWriter.key("repositoryName").value(
                         uploadLayerPartRequest.getRepositoryName());
             }
-
             if (uploadLayerPartRequest.getUploadId() != null) {
                 jsonWriter.key("uploadId").value(
                         uploadLayerPartRequest.getUploadId());
             }
-
             if (uploadLayerPartRequest.getPartFirstByte() != null) {
                 jsonWriter.key("partFirstByte").value(
                         uploadLayerPartRequest.getPartFirstByte());
             }
-
             if (uploadLayerPartRequest.getPartLastByte() != null) {
                 jsonWriter.key("partLastByte").value(
                         uploadLayerPartRequest.getPartLastByte());
             }
-
             if (uploadLayerPartRequest.getLayerPartBlob() != null) {
                 jsonWriter.key("layerPartBlob").value(
                         uploadLayerPartRequest.getLayerPartBlob());

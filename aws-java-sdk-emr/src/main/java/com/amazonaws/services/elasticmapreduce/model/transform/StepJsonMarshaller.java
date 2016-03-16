@@ -30,6 +30,7 @@ import com.amazonaws.services.elasticmapreduce.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,22 +54,18 @@ public class StepJsonMarshaller {
             if (step.getId() != null) {
                 jsonWriter.key("Id").value(step.getId());
             }
-
             if (step.getName() != null) {
                 jsonWriter.key("Name").value(step.getName());
             }
-
             if (step.getConfig() != null) {
                 jsonWriter.key("Config");
                 HadoopStepConfigJsonMarshaller.getInstance().marshall(
                         step.getConfig(), jsonWriter);
             }
-
             if (step.getActionOnFailure() != null) {
                 jsonWriter.key("ActionOnFailure").value(
                         step.getActionOnFailure());
             }
-
             if (step.getStatus() != null) {
                 jsonWriter.key("Status");
                 StepStatusJsonMarshaller.getInstance().marshall(

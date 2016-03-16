@@ -51,13 +51,13 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
     private String deploymentConfigName;
     /**
      * <p>
-     * The Amazon EC2 tags to filter on.
+     * The Amazon EC2 tags on which to filter.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<EC2TagFilter> ec2TagFilters;
     /**
      * <p>
-     * The on-premises instance tags to filter on.
+     * The on-premises instance tags on which to filter.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<TagFilter> onPremisesInstanceTagFilters;
@@ -75,8 +75,8 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
     private String serviceRoleArn;
     /**
      * <p>
-     * Information about the deployment group's target revision, including the
-     * revision's type and its location.
+     * Information about the deployment group's target revision, including type
+     * and location.
      * </p>
      */
     private RevisionLocation targetRevision;
@@ -255,10 +255,10 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon EC2 tags to filter on.
+     * The Amazon EC2 tags on which to filter.
      * </p>
      * 
-     * @return The Amazon EC2 tags to filter on.
+     * @return The Amazon EC2 tags on which to filter.
      */
 
     public java.util.List<EC2TagFilter> getEc2TagFilters() {
@@ -270,11 +270,11 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon EC2 tags to filter on.
+     * The Amazon EC2 tags on which to filter.
      * </p>
      * 
      * @param ec2TagFilters
-     *        The Amazon EC2 tags to filter on.
+     *        The Amazon EC2 tags on which to filter.
      */
 
     public void setEc2TagFilters(
@@ -290,7 +290,7 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon EC2 tags to filter on.
+     * The Amazon EC2 tags on which to filter.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -300,7 +300,7 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
      * </p>
      * 
      * @param ec2TagFilters
-     *        The Amazon EC2 tags to filter on.
+     *        The Amazon EC2 tags on which to filter.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -318,11 +318,11 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon EC2 tags to filter on.
+     * The Amazon EC2 tags on which to filter.
      * </p>
      * 
      * @param ec2TagFilters
-     *        The Amazon EC2 tags to filter on.
+     *        The Amazon EC2 tags on which to filter.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -335,10 +335,10 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The on-premises instance tags to filter on.
+     * The on-premises instance tags on which to filter.
      * </p>
      * 
-     * @return The on-premises instance tags to filter on.
+     * @return The on-premises instance tags on which to filter.
      */
 
     public java.util.List<TagFilter> getOnPremisesInstanceTagFilters() {
@@ -350,11 +350,11 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The on-premises instance tags to filter on.
+     * The on-premises instance tags on which to filter.
      * </p>
      * 
      * @param onPremisesInstanceTagFilters
-     *        The on-premises instance tags to filter on.
+     *        The on-premises instance tags on which to filter.
      */
 
     public void setOnPremisesInstanceTagFilters(
@@ -370,7 +370,7 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The on-premises instance tags to filter on.
+     * The on-premises instance tags on which to filter.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -380,7 +380,7 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
      * </p>
      * 
      * @param onPremisesInstanceTagFilters
-     *        The on-premises instance tags to filter on.
+     *        The on-premises instance tags on which to filter.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -399,11 +399,11 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The on-premises instance tags to filter on.
+     * The on-premises instance tags on which to filter.
      * </p>
      * 
      * @param onPremisesInstanceTagFilters
-     *        The on-premises instance tags to filter on.
+     *        The on-premises instance tags on which to filter.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -538,13 +538,13 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the deployment group's target revision, including the
-     * revision's type and its location.
+     * Information about the deployment group's target revision, including type
+     * and location.
      * </p>
      * 
      * @param targetRevision
      *        Information about the deployment group's target revision,
-     *        including the revision's type and its location.
+     *        including type and location.
      */
 
     public void setTargetRevision(RevisionLocation targetRevision) {
@@ -553,12 +553,12 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the deployment group's target revision, including the
-     * revision's type and its location.
+     * Information about the deployment group's target revision, including type
+     * and location.
      * </p>
      * 
      * @return Information about the deployment group's target revision,
-     *         including the revision's type and its location.
+     *         including type and location.
      */
 
     public RevisionLocation getTargetRevision() {
@@ -567,13 +567,13 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the deployment group's target revision, including the
-     * revision's type and its location.
+     * Information about the deployment group's target revision, including type
+     * and location.
      * </p>
      * 
      * @param targetRevision
      *        Information about the deployment group's target revision,
-     *        including the revision's type and its location.
+     *        including type and location.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

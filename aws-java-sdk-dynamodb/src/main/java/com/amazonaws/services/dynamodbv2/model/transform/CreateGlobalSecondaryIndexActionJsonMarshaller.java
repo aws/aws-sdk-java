@@ -30,6 +30,7 @@ import com.amazonaws.services.dynamodbv2.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -71,14 +72,12 @@ public class CreateGlobalSecondaryIndexActionJsonMarshaller {
                 }
                 jsonWriter.endArray();
             }
-
             if (createGlobalSecondaryIndexAction.getProjection() != null) {
                 jsonWriter.key("Projection");
                 ProjectionJsonMarshaller.getInstance().marshall(
                         createGlobalSecondaryIndexAction.getProjection(),
                         jsonWriter);
             }
-
             if (createGlobalSecondaryIndexAction.getProvisionedThroughput() != null) {
                 jsonWriter.key("ProvisionedThroughput");
                 ProvisionedThroughputJsonMarshaller

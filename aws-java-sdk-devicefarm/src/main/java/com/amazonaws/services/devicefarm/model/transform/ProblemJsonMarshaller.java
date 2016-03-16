@@ -30,6 +30,7 @@ import com.amazonaws.services.devicefarm.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,35 +56,29 @@ public class ProblemJsonMarshaller {
                 ProblemDetailJsonMarshaller.getInstance().marshall(
                         problem.getRun(), jsonWriter);
             }
-
             if (problem.getJob() != null) {
                 jsonWriter.key("job");
                 ProblemDetailJsonMarshaller.getInstance().marshall(
                         problem.getJob(), jsonWriter);
             }
-
             if (problem.getSuite() != null) {
                 jsonWriter.key("suite");
                 ProblemDetailJsonMarshaller.getInstance().marshall(
                         problem.getSuite(), jsonWriter);
             }
-
             if (problem.getTest() != null) {
                 jsonWriter.key("test");
                 ProblemDetailJsonMarshaller.getInstance().marshall(
                         problem.getTest(), jsonWriter);
             }
-
             if (problem.getDevice() != null) {
                 jsonWriter.key("device");
                 DeviceJsonMarshaller.getInstance().marshall(
                         problem.getDevice(), jsonWriter);
             }
-
             if (problem.getResult() != null) {
                 jsonWriter.key("result").value(problem.getResult());
             }
-
             if (problem.getMessage() != null) {
                 jsonWriter.key("message").value(problem.getMessage());
             }

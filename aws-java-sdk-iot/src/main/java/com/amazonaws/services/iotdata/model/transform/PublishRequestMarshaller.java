@@ -37,6 +37,7 @@ import com.amazonaws.services.iotdata.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -64,14 +65,13 @@ public class PublishRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{topic}",
-                (publishRequest.getTopic() == null) ? "" : StringUtils
-                        .fromString(publishRequest.getTopic()));
+                (publishRequest.getTopic() != null) ? StringUtils
+                        .fromString(publishRequest.getTopic()) : "");
         request.setResourcePath(uriResourcePath);
 
-        String qos = (publishRequest.getQos() == null) ? null : StringUtils
-                .fromInteger(publishRequest.getQos());
-        if (qos != null) {
-            request.addParameter("qos", qos);
+        if (publishRequest.getQos() != null) {
+            request.addParameter("qos",
+                    StringUtils.fromInteger(publishRequest.getQos()));
         }
 
         request.setContent(BinaryUtils.toStream(publishRequest.getPayload()));

@@ -30,6 +30,7 @@ import com.amazonaws.services.workspaces.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,27 +56,22 @@ public class WorkspaceRequestJsonMarshaller {
                 jsonWriter.key("DirectoryId").value(
                         workspaceRequest.getDirectoryId());
             }
-
             if (workspaceRequest.getUserName() != null) {
                 jsonWriter.key("UserName")
                         .value(workspaceRequest.getUserName());
             }
-
             if (workspaceRequest.getBundleId() != null) {
                 jsonWriter.key("BundleId")
                         .value(workspaceRequest.getBundleId());
             }
-
             if (workspaceRequest.getVolumeEncryptionKey() != null) {
                 jsonWriter.key("VolumeEncryptionKey").value(
                         workspaceRequest.getVolumeEncryptionKey());
             }
-
             if (workspaceRequest.getUserVolumeEncryptionEnabled() != null) {
                 jsonWriter.key("UserVolumeEncryptionEnabled").value(
                         workspaceRequest.getUserVolumeEncryptionEnabled());
             }
-
             if (workspaceRequest.getRootVolumeEncryptionEnabled() != null) {
                 jsonWriter.key("RootVolumeEncryptionEnabled").value(
                         workspaceRequest.getRootVolumeEncryptionEnabled());

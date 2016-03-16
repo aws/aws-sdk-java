@@ -30,6 +30,7 @@ import com.amazonaws.services.cloudsearchdomain.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,32 +54,25 @@ public class FieldStatsJsonMarshaller {
             if (fieldStats.getMin() != null) {
                 jsonWriter.key("min").value(fieldStats.getMin());
             }
-
             if (fieldStats.getMax() != null) {
                 jsonWriter.key("max").value(fieldStats.getMax());
             }
-
             if (fieldStats.getCount() != null) {
                 jsonWriter.key("count").value(fieldStats.getCount());
             }
-
             if (fieldStats.getMissing() != null) {
                 jsonWriter.key("missing").value(fieldStats.getMissing());
             }
-
             if (fieldStats.getSum() != null) {
                 jsonWriter.key("sum").value(fieldStats.getSum());
             }
-
             if (fieldStats.getSumOfSquares() != null) {
                 jsonWriter.key("sumOfSquares").value(
                         fieldStats.getSumOfSquares());
             }
-
             if (fieldStats.getMean() != null) {
                 jsonWriter.key("mean").value(fieldStats.getMean());
             }
-
             if (fieldStats.getStddev() != null) {
                 jsonWriter.key("stddev").value(fieldStats.getStddev());
             }

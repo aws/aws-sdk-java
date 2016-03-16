@@ -30,6 +30,7 @@ import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,21 +55,17 @@ public class DetectedPropertiesJsonMarshaller {
             if (detectedProperties.getWidth() != null) {
                 jsonWriter.key("Width").value(detectedProperties.getWidth());
             }
-
             if (detectedProperties.getHeight() != null) {
                 jsonWriter.key("Height").value(detectedProperties.getHeight());
             }
-
             if (detectedProperties.getFrameRate() != null) {
                 jsonWriter.key("FrameRate").value(
                         detectedProperties.getFrameRate());
             }
-
             if (detectedProperties.getFileSize() != null) {
                 jsonWriter.key("FileSize").value(
                         detectedProperties.getFileSize());
             }
-
             if (detectedProperties.getDurationMillis() != null) {
                 jsonWriter.key("DurationMillis").value(
                         detectedProperties.getDurationMillis());

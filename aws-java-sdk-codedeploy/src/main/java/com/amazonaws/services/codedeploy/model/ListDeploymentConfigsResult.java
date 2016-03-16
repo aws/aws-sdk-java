@@ -27,28 +27,27 @@ public class ListDeploymentConfigsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of deployment configurations, including the built-in
-     * configurations such as CodeDeployDefault.OneAtATime.
+     * A list of deployment configurations, including built-in configurations
+     * such as CodeDeployDefault.OneAtATime.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> deploymentConfigsList;
     /**
      * <p>
-     * If the amount of information that is returned is significantly large, an
-     * identifier will also be returned, which can be used in a subsequent list
-     * deployment configurations call to return the next set of deployment
-     * configurations in the list.
+     * If a large amount of information is returned, an identifier is also
+     * returned. It can be used in a subsequent list deployment configurations
+     * call to return the next set of deployment configurations in the list.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * A list of deployment configurations, including the built-in
-     * configurations such as CodeDeployDefault.OneAtATime.
+     * A list of deployment configurations, including built-in configurations
+     * such as CodeDeployDefault.OneAtATime.
      * </p>
      * 
-     * @return A list of deployment configurations, including the built-in
+     * @return A list of deployment configurations, including built-in
      *         configurations such as CodeDeployDefault.OneAtATime.
      */
 
@@ -61,12 +60,12 @@ public class ListDeploymentConfigsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of deployment configurations, including the built-in
-     * configurations such as CodeDeployDefault.OneAtATime.
+     * A list of deployment configurations, including built-in configurations
+     * such as CodeDeployDefault.OneAtATime.
      * </p>
      * 
      * @param deploymentConfigsList
-     *        A list of deployment configurations, including the built-in
+     *        A list of deployment configurations, including built-in
      *        configurations such as CodeDeployDefault.OneAtATime.
      */
 
@@ -83,8 +82,8 @@ public class ListDeploymentConfigsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of deployment configurations, including the built-in
-     * configurations such as CodeDeployDefault.OneAtATime.
+     * A list of deployment configurations, including built-in configurations
+     * such as CodeDeployDefault.OneAtATime.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -94,7 +93,7 @@ public class ListDeploymentConfigsResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param deploymentConfigsList
-     *        A list of deployment configurations, including the built-in
+     *        A list of deployment configurations, including built-in
      *        configurations such as CodeDeployDefault.OneAtATime.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -114,12 +113,12 @@ public class ListDeploymentConfigsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of deployment configurations, including the built-in
-     * configurations such as CodeDeployDefault.OneAtATime.
+     * A list of deployment configurations, including built-in configurations
+     * such as CodeDeployDefault.OneAtATime.
      * </p>
      * 
      * @param deploymentConfigsList
-     *        A list of deployment configurations, including the built-in
+     *        A list of deployment configurations, including built-in
      *        configurations such as CodeDeployDefault.OneAtATime.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -133,17 +132,16 @@ public class ListDeploymentConfigsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the amount of information that is returned is significantly large, an
-     * identifier will also be returned, which can be used in a subsequent list
-     * deployment configurations call to return the next set of deployment
-     * configurations in the list.
+     * If a large amount of information is returned, an identifier is also
+     * returned. It can be used in a subsequent list deployment configurations
+     * call to return the next set of deployment configurations in the list.
      * </p>
      * 
      * @param nextToken
-     *        If the amount of information that is returned is significantly
-     *        large, an identifier will also be returned, which can be used in a
-     *        subsequent list deployment configurations call to return the next
-     *        set of deployment configurations in the list.
+     *        If a large amount of information is returned, an identifier is
+     *        also returned. It can be used in a subsequent list deployment
+     *        configurations call to return the next set of deployment
+     *        configurations in the list.
      */
 
     public void setNextToken(String nextToken) {
@@ -152,16 +150,15 @@ public class ListDeploymentConfigsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the amount of information that is returned is significantly large, an
-     * identifier will also be returned, which can be used in a subsequent list
-     * deployment configurations call to return the next set of deployment
-     * configurations in the list.
+     * If a large amount of information is returned, an identifier is also
+     * returned. It can be used in a subsequent list deployment configurations
+     * call to return the next set of deployment configurations in the list.
      * </p>
      * 
-     * @return If the amount of information that is returned is significantly
-     *         large, an identifier will also be returned, which can be used in
-     *         a subsequent list deployment configurations call to return the
-     *         next set of deployment configurations in the list.
+     * @return If a large amount of information is returned, an identifier is
+     *         also returned. It can be used in a subsequent list deployment
+     *         configurations call to return the next set of deployment
+     *         configurations in the list.
      */
 
     public String getNextToken() {
@@ -170,17 +167,16 @@ public class ListDeploymentConfigsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the amount of information that is returned is significantly large, an
-     * identifier will also be returned, which can be used in a subsequent list
-     * deployment configurations call to return the next set of deployment
-     * configurations in the list.
+     * If a large amount of information is returned, an identifier is also
+     * returned. It can be used in a subsequent list deployment configurations
+     * call to return the next set of deployment configurations in the list.
      * </p>
      * 
      * @param nextToken
-     *        If the amount of information that is returned is significantly
-     *        large, an identifier will also be returned, which can be used in a
-     *        subsequent list deployment configurations call to return the next
-     *        set of deployment configurations in the list.
+     *        If a large amount of information is returned, an identifier is
+     *        also returned. It can be used in a subsequent list deployment
+     *        configurations call to return the next set of deployment
+     *        configurations in the list.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

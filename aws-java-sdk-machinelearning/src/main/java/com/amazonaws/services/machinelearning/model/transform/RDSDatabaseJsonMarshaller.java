@@ -30,6 +30,7 @@ import com.amazonaws.services.machinelearning.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,7 +55,6 @@ public class RDSDatabaseJsonMarshaller {
                 jsonWriter.key("InstanceIdentifier").value(
                         rDSDatabase.getInstanceIdentifier());
             }
-
             if (rDSDatabase.getDatabaseName() != null) {
                 jsonWriter.key("DatabaseName").value(
                         rDSDatabase.getDatabaseName());

@@ -37,6 +37,7 @@ import com.amazonaws.services.logs.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -72,31 +73,25 @@ public class GetLogEventsRequestMarshaller implements
                 jsonWriter.key("logGroupName").value(
                         getLogEventsRequest.getLogGroupName());
             }
-
             if (getLogEventsRequest.getLogStreamName() != null) {
                 jsonWriter.key("logStreamName").value(
                         getLogEventsRequest.getLogStreamName());
             }
-
             if (getLogEventsRequest.getStartTime() != null) {
                 jsonWriter.key("startTime").value(
                         getLogEventsRequest.getStartTime());
             }
-
             if (getLogEventsRequest.getEndTime() != null) {
                 jsonWriter.key("endTime").value(
                         getLogEventsRequest.getEndTime());
             }
-
             if (getLogEventsRequest.getNextToken() != null) {
                 jsonWriter.key("nextToken").value(
                         getLogEventsRequest.getNextToken());
             }
-
             if (getLogEventsRequest.getLimit() != null) {
                 jsonWriter.key("limit").value(getLogEventsRequest.getLimit());
             }
-
             if (getLogEventsRequest.getStartFromHead() != null) {
                 jsonWriter.key("startFromHead").value(
                         getLogEventsRequest.getStartFromHead());

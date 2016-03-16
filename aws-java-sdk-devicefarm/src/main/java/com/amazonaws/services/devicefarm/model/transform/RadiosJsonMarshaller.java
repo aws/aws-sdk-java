@@ -30,6 +30,7 @@ import com.amazonaws.services.devicefarm.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,15 +54,12 @@ public class RadiosJsonMarshaller {
             if (radios.getWifi() != null) {
                 jsonWriter.key("wifi").value(radios.getWifi());
             }
-
             if (radios.getBluetooth() != null) {
                 jsonWriter.key("bluetooth").value(radios.getBluetooth());
             }
-
             if (radios.getNfc() != null) {
                 jsonWriter.key("nfc").value(radios.getNfc());
             }
-
             if (radios.getGps() != null) {
                 jsonWriter.key("gps").value(radios.getGps());
             }

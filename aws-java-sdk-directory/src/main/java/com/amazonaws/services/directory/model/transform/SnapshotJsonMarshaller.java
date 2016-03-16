@@ -30,6 +30,7 @@ import com.amazonaws.services.directory.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,23 +54,18 @@ public class SnapshotJsonMarshaller {
             if (snapshot.getDirectoryId() != null) {
                 jsonWriter.key("DirectoryId").value(snapshot.getDirectoryId());
             }
-
             if (snapshot.getSnapshotId() != null) {
                 jsonWriter.key("SnapshotId").value(snapshot.getSnapshotId());
             }
-
             if (snapshot.getType() != null) {
                 jsonWriter.key("Type").value(snapshot.getType());
             }
-
             if (snapshot.getName() != null) {
                 jsonWriter.key("Name").value(snapshot.getName());
             }
-
             if (snapshot.getStatus() != null) {
                 jsonWriter.key("Status").value(snapshot.getStatus());
             }
-
             if (snapshot.getStartTime() != null) {
                 jsonWriter.key("StartTime").value(snapshot.getStartTime());
             }

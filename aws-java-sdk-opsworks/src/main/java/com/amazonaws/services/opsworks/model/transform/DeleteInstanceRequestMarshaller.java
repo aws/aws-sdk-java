@@ -37,6 +37,7 @@ import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -72,12 +73,10 @@ public class DeleteInstanceRequestMarshaller implements
                 jsonWriter.key("InstanceId").value(
                         deleteInstanceRequest.getInstanceId());
             }
-
             if (deleteInstanceRequest.getDeleteElasticIp() != null) {
                 jsonWriter.key("DeleteElasticIp").value(
                         deleteInstanceRequest.getDeleteElasticIp());
             }
-
             if (deleteInstanceRequest.getDeleteVolumes() != null) {
                 jsonWriter.key("DeleteVolumes").value(
                         deleteInstanceRequest.getDeleteVolumes());

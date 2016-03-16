@@ -37,6 +37,7 @@ import com.amazonaws.services.certificatemanager.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -80,12 +81,10 @@ public class ListCertificatesRequestMarshaller implements
                 }
                 jsonWriter.endArray();
             }
-
             if (listCertificatesRequest.getNextToken() != null) {
                 jsonWriter.key("NextToken").value(
                         listCertificatesRequest.getNextToken());
             }
-
             if (listCertificatesRequest.getMaxItems() != null) {
                 jsonWriter.key("MaxItems").value(
                         listCertificatesRequest.getMaxItems());

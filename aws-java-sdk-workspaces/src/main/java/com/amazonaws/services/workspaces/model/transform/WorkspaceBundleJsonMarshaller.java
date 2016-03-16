@@ -30,6 +30,7 @@ import com.amazonaws.services.workspaces.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,26 +54,21 @@ public class WorkspaceBundleJsonMarshaller {
             if (workspaceBundle.getBundleId() != null) {
                 jsonWriter.key("BundleId").value(workspaceBundle.getBundleId());
             }
-
             if (workspaceBundle.getName() != null) {
                 jsonWriter.key("Name").value(workspaceBundle.getName());
             }
-
             if (workspaceBundle.getOwner() != null) {
                 jsonWriter.key("Owner").value(workspaceBundle.getOwner());
             }
-
             if (workspaceBundle.getDescription() != null) {
                 jsonWriter.key("Description").value(
                         workspaceBundle.getDescription());
             }
-
             if (workspaceBundle.getUserStorage() != null) {
                 jsonWriter.key("UserStorage");
                 UserStorageJsonMarshaller.getInstance().marshall(
                         workspaceBundle.getUserStorage(), jsonWriter);
             }
-
             if (workspaceBundle.getComputeType() != null) {
                 jsonWriter.key("ComputeType");
                 ComputeTypeJsonMarshaller.getInstance().marshall(

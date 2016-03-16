@@ -37,6 +37,7 @@ import com.amazonaws.services.waf.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -75,7 +76,6 @@ public class UpdateSqlInjectionMatchSetRequestMarshaller
                         updateSqlInjectionMatchSetRequest
                                 .getSqlInjectionMatchSetId());
             }
-
             if (updateSqlInjectionMatchSetRequest.getChangeToken() != null) {
                 jsonWriter.key("ChangeToken").value(
                         updateSqlInjectionMatchSetRequest.getChangeToken());

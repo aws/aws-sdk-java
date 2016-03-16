@@ -37,6 +37,7 @@ import com.amazonaws.services.elasticfilesystem.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -63,23 +64,22 @@ public class DescribeTagsRequestMarshaller implements
 
         String uriResourcePath = "/2015-02-01/tags/{FileSystemId}/";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{FileSystemId}",
-                (describeTagsRequest.getFileSystemId() == null) ? ""
-                        : StringUtils.fromString(describeTagsRequest
-                                .getFileSystemId()));
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{FileSystemId}",
+                        (describeTagsRequest.getFileSystemId() != null) ? StringUtils
+                                .fromString(describeTagsRequest
+                                        .getFileSystemId()) : "");
         request.setResourcePath(uriResourcePath);
 
-        String maxItems = (describeTagsRequest.getMaxItems() == null) ? null
-                : StringUtils.fromInteger(describeTagsRequest.getMaxItems());
-        if (maxItems != null) {
-            request.addParameter("MaxItems", maxItems);
+        if (describeTagsRequest.getMaxItems() != null) {
+            request.addParameter("MaxItems",
+                    StringUtils.fromInteger(describeTagsRequest.getMaxItems()));
         }
 
-        String marker = (describeTagsRequest.getMarker() == null) ? null
-                : StringUtils.fromString(describeTagsRequest.getMarker());
-        if (marker != null) {
-            request.addParameter("Marker", marker);
+        if (describeTagsRequest.getMarker() != null) {
+            request.addParameter("Marker",
+                    StringUtils.fromString(describeTagsRequest.getMarker()));
         }
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

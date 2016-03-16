@@ -35,29 +35,25 @@ public class ListDeploymentInstancesRequest extends AmazonWebServiceRequest
     private String deploymentId;
     /**
      * <p>
-     * An identifier that was returned from the previous list deployment
-     * instances call, which can be used to return the next set of deployment
-     * instances in the list.
+     * An identifier returned from the previous list deployment instances call.
+     * It can be used to return the next set of deployment instances in the
+     * list.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * A subset of instances to list, by status:
+     * A subset of instances to list by status:
      * </p>
      * <ul>
-     * <li>Pending: Include in the resulting list those instances with pending
-     * deployments.</li>
-     * <li>InProgress: Include in the resulting list those instances with
-     * in-progress deployments.</li>
-     * <li>Succeeded: Include in the resulting list those instances with
-     * succeeded deployments.</li>
-     * <li>Failed: Include in the resulting list those instances with failed
-     * deployments.</li>
-     * <li>Skipped: Include in the resulting list those instances with skipped
-     * deployments.</li>
-     * <li>Unknown: Include in the resulting list those instances with
-     * deployments in an unknown state.</li>
+     * <li>Pending: Include those instance with pending deployments.</li>
+     * <li>InProgress: Include those instance where deployments are still in
+     * progress.</li>
+     * <li>Succeeded: Include those instances with successful deployments.</li>
+     * <li>Failed: Include those instance with failed deployments.</li>
+     * <li>Skipped: Include those instance with skipped deployments.</li>
+     * <li>Unknown: Include those instance with deployments in an unknown state.
+     * </li>
      * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<String> instanceStatusFilter;
@@ -105,15 +101,15 @@ public class ListDeploymentInstancesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * An identifier that was returned from the previous list deployment
-     * instances call, which can be used to return the next set of deployment
-     * instances in the list.
+     * An identifier returned from the previous list deployment instances call.
+     * It can be used to return the next set of deployment instances in the
+     * list.
      * </p>
      * 
      * @param nextToken
-     *        An identifier that was returned from the previous list deployment
-     *        instances call, which can be used to return the next set of
-     *        deployment instances in the list.
+     *        An identifier returned from the previous list deployment instances
+     *        call. It can be used to return the next set of deployment
+     *        instances in the list.
      */
 
     public void setNextToken(String nextToken) {
@@ -122,13 +118,13 @@ public class ListDeploymentInstancesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * An identifier that was returned from the previous list deployment
-     * instances call, which can be used to return the next set of deployment
-     * instances in the list.
+     * An identifier returned from the previous list deployment instances call.
+     * It can be used to return the next set of deployment instances in the
+     * list.
      * </p>
      * 
-     * @return An identifier that was returned from the previous list deployment
-     *         instances call, which can be used to return the next set of
+     * @return An identifier returned from the previous list deployment
+     *         instances call. It can be used to return the next set of
      *         deployment instances in the list.
      */
 
@@ -138,15 +134,15 @@ public class ListDeploymentInstancesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * An identifier that was returned from the previous list deployment
-     * instances call, which can be used to return the next set of deployment
-     * instances in the list.
+     * An identifier returned from the previous list deployment instances call.
+     * It can be used to return the next set of deployment instances in the
+     * list.
      * </p>
      * 
      * @param nextToken
-     *        An identifier that was returned from the previous list deployment
-     *        instances call, which can be used to return the next set of
-     *        deployment instances in the list.
+     *        An identifier returned from the previous list deployment instances
+     *        call. It can be used to return the next set of deployment
+     *        instances in the list.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -158,37 +154,30 @@ public class ListDeploymentInstancesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A subset of instances to list, by status:
+     * A subset of instances to list by status:
      * </p>
      * <ul>
-     * <li>Pending: Include in the resulting list those instances with pending
-     * deployments.</li>
-     * <li>InProgress: Include in the resulting list those instances with
-     * in-progress deployments.</li>
-     * <li>Succeeded: Include in the resulting list those instances with
-     * succeeded deployments.</li>
-     * <li>Failed: Include in the resulting list those instances with failed
-     * deployments.</li>
-     * <li>Skipped: Include in the resulting list those instances with skipped
-     * deployments.</li>
-     * <li>Unknown: Include in the resulting list those instances with
-     * deployments in an unknown state.</li>
+     * <li>Pending: Include those instance with pending deployments.</li>
+     * <li>InProgress: Include those instance where deployments are still in
+     * progress.</li>
+     * <li>Succeeded: Include those instances with successful deployments.</li>
+     * <li>Failed: Include those instance with failed deployments.</li>
+     * <li>Skipped: Include those instance with skipped deployments.</li>
+     * <li>Unknown: Include those instance with deployments in an unknown state.
+     * </li>
      * </ul>
      * 
-     * @return A subset of instances to list, by status:</p>
+     * @return A subset of instances to list by status:</p>
      *         <ul>
-     *         <li>Pending: Include in the resulting list those instances with
-     *         pending deployments.</li>
-     *         <li>InProgress: Include in the resulting list those instances
-     *         with in-progress deployments.</li>
-     *         <li>Succeeded: Include in the resulting list those instances with
-     *         succeeded deployments.</li>
-     *         <li>Failed: Include in the resulting list those instances with
-     *         failed deployments.</li>
-     *         <li>Skipped: Include in the resulting list those instances with
-     *         skipped deployments.</li>
-     *         <li>Unknown: Include in the resulting list those instances with
-     *         deployments in an unknown state.</li>
+     *         <li>Pending: Include those instance with pending deployments.</li>
+     *         <li>InProgress: Include those instance where deployments are
+     *         still in progress.</li>
+     *         <li>Succeeded: Include those instances with successful
+     *         deployments.</li>
+     *         <li>Failed: Include those instance with failed deployments.</li>
+     *         <li>Skipped: Include those instance with skipped deployments.</li>
+     *         <li>Unknown: Include those instance with deployments in an
+     *         unknown state.</li>
      * @see InstanceStatus
      */
 
@@ -201,38 +190,31 @@ public class ListDeploymentInstancesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A subset of instances to list, by status:
+     * A subset of instances to list by status:
      * </p>
      * <ul>
-     * <li>Pending: Include in the resulting list those instances with pending
-     * deployments.</li>
-     * <li>InProgress: Include in the resulting list those instances with
-     * in-progress deployments.</li>
-     * <li>Succeeded: Include in the resulting list those instances with
-     * succeeded deployments.</li>
-     * <li>Failed: Include in the resulting list those instances with failed
-     * deployments.</li>
-     * <li>Skipped: Include in the resulting list those instances with skipped
-     * deployments.</li>
-     * <li>Unknown: Include in the resulting list those instances with
-     * deployments in an unknown state.</li>
+     * <li>Pending: Include those instance with pending deployments.</li>
+     * <li>InProgress: Include those instance where deployments are still in
+     * progress.</li>
+     * <li>Succeeded: Include those instances with successful deployments.</li>
+     * <li>Failed: Include those instance with failed deployments.</li>
+     * <li>Skipped: Include those instance with skipped deployments.</li>
+     * <li>Unknown: Include those instance with deployments in an unknown state.
+     * </li>
      * </ul>
      * 
      * @param instanceStatusFilter
-     *        A subset of instances to list, by status:</p>
+     *        A subset of instances to list by status:</p>
      *        <ul>
-     *        <li>Pending: Include in the resulting list those instances with
-     *        pending deployments.</li>
-     *        <li>InProgress: Include in the resulting list those instances with
-     *        in-progress deployments.</li>
-     *        <li>Succeeded: Include in the resulting list those instances with
-     *        succeeded deployments.</li>
-     *        <li>Failed: Include in the resulting list those instances with
-     *        failed deployments.</li>
-     *        <li>Skipped: Include in the resulting list those instances with
-     *        skipped deployments.</li>
-     *        <li>Unknown: Include in the resulting list those instances with
-     *        deployments in an unknown state.</li>
+     *        <li>Pending: Include those instance with pending deployments.</li>
+     *        <li>InProgress: Include those instance where deployments are still
+     *        in progress.</li>
+     *        <li>Succeeded: Include those instances with successful
+     *        deployments.</li>
+     *        <li>Failed: Include those instance with failed deployments.</li>
+     *        <li>Skipped: Include those instance with skipped deployments.</li>
+     *        <li>Unknown: Include those instance with deployments in an unknown
+     *        state.</li>
      * @see InstanceStatus
      */
 
@@ -249,21 +231,17 @@ public class ListDeploymentInstancesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A subset of instances to list, by status:
+     * A subset of instances to list by status:
      * </p>
      * <ul>
-     * <li>Pending: Include in the resulting list those instances with pending
-     * deployments.</li>
-     * <li>InProgress: Include in the resulting list those instances with
-     * in-progress deployments.</li>
-     * <li>Succeeded: Include in the resulting list those instances with
-     * succeeded deployments.</li>
-     * <li>Failed: Include in the resulting list those instances with failed
-     * deployments.</li>
-     * <li>Skipped: Include in the resulting list those instances with skipped
-     * deployments.</li>
-     * <li>Unknown: Include in the resulting list those instances with
-     * deployments in an unknown state.</li>
+     * <li>Pending: Include those instance with pending deployments.</li>
+     * <li>InProgress: Include those instance where deployments are still in
+     * progress.</li>
+     * <li>Succeeded: Include those instances with successful deployments.</li>
+     * <li>Failed: Include those instance with failed deployments.</li>
+     * <li>Skipped: Include those instance with skipped deployments.</li>
+     * <li>Unknown: Include those instance with deployments in an unknown state.
+     * </li>
      * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -273,20 +251,17 @@ public class ListDeploymentInstancesRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param instanceStatusFilter
-     *        A subset of instances to list, by status:</p>
+     *        A subset of instances to list by status:</p>
      *        <ul>
-     *        <li>Pending: Include in the resulting list those instances with
-     *        pending deployments.</li>
-     *        <li>InProgress: Include in the resulting list those instances with
-     *        in-progress deployments.</li>
-     *        <li>Succeeded: Include in the resulting list those instances with
-     *        succeeded deployments.</li>
-     *        <li>Failed: Include in the resulting list those instances with
-     *        failed deployments.</li>
-     *        <li>Skipped: Include in the resulting list those instances with
-     *        skipped deployments.</li>
-     *        <li>Unknown: Include in the resulting list those instances with
-     *        deployments in an unknown state.</li>
+     *        <li>Pending: Include those instance with pending deployments.</li>
+     *        <li>InProgress: Include those instance where deployments are still
+     *        in progress.</li>
+     *        <li>Succeeded: Include those instances with successful
+     *        deployments.</li>
+     *        <li>Failed: Include those instance with failed deployments.</li>
+     *        <li>Skipped: Include those instance with skipped deployments.</li>
+     *        <li>Unknown: Include those instance with deployments in an unknown
+     *        state.</li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see InstanceStatus
@@ -306,38 +281,31 @@ public class ListDeploymentInstancesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A subset of instances to list, by status:
+     * A subset of instances to list by status:
      * </p>
      * <ul>
-     * <li>Pending: Include in the resulting list those instances with pending
-     * deployments.</li>
-     * <li>InProgress: Include in the resulting list those instances with
-     * in-progress deployments.</li>
-     * <li>Succeeded: Include in the resulting list those instances with
-     * succeeded deployments.</li>
-     * <li>Failed: Include in the resulting list those instances with failed
-     * deployments.</li>
-     * <li>Skipped: Include in the resulting list those instances with skipped
-     * deployments.</li>
-     * <li>Unknown: Include in the resulting list those instances with
-     * deployments in an unknown state.</li>
+     * <li>Pending: Include those instance with pending deployments.</li>
+     * <li>InProgress: Include those instance where deployments are still in
+     * progress.</li>
+     * <li>Succeeded: Include those instances with successful deployments.</li>
+     * <li>Failed: Include those instance with failed deployments.</li>
+     * <li>Skipped: Include those instance with skipped deployments.</li>
+     * <li>Unknown: Include those instance with deployments in an unknown state.
+     * </li>
      * </ul>
      * 
      * @param instanceStatusFilter
-     *        A subset of instances to list, by status:</p>
+     *        A subset of instances to list by status:</p>
      *        <ul>
-     *        <li>Pending: Include in the resulting list those instances with
-     *        pending deployments.</li>
-     *        <li>InProgress: Include in the resulting list those instances with
-     *        in-progress deployments.</li>
-     *        <li>Succeeded: Include in the resulting list those instances with
-     *        succeeded deployments.</li>
-     *        <li>Failed: Include in the resulting list those instances with
-     *        failed deployments.</li>
-     *        <li>Skipped: Include in the resulting list those instances with
-     *        skipped deployments.</li>
-     *        <li>Unknown: Include in the resulting list those instances with
-     *        deployments in an unknown state.</li>
+     *        <li>Pending: Include those instance with pending deployments.</li>
+     *        <li>InProgress: Include those instance where deployments are still
+     *        in progress.</li>
+     *        <li>Succeeded: Include those instances with successful
+     *        deployments.</li>
+     *        <li>Failed: Include those instance with failed deployments.</li>
+     *        <li>Skipped: Include those instance with skipped deployments.</li>
+     *        <li>Unknown: Include those instance with deployments in an unknown
+     *        state.</li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see InstanceStatus
@@ -351,38 +319,31 @@ public class ListDeploymentInstancesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A subset of instances to list, by status:
+     * A subset of instances to list by status:
      * </p>
      * <ul>
-     * <li>Pending: Include in the resulting list those instances with pending
-     * deployments.</li>
-     * <li>InProgress: Include in the resulting list those instances with
-     * in-progress deployments.</li>
-     * <li>Succeeded: Include in the resulting list those instances with
-     * succeeded deployments.</li>
-     * <li>Failed: Include in the resulting list those instances with failed
-     * deployments.</li>
-     * <li>Skipped: Include in the resulting list those instances with skipped
-     * deployments.</li>
-     * <li>Unknown: Include in the resulting list those instances with
-     * deployments in an unknown state.</li>
+     * <li>Pending: Include those instance with pending deployments.</li>
+     * <li>InProgress: Include those instance where deployments are still in
+     * progress.</li>
+     * <li>Succeeded: Include those instances with successful deployments.</li>
+     * <li>Failed: Include those instance with failed deployments.</li>
+     * <li>Skipped: Include those instance with skipped deployments.</li>
+     * <li>Unknown: Include those instance with deployments in an unknown state.
+     * </li>
      * </ul>
      * 
      * @param instanceStatusFilter
-     *        A subset of instances to list, by status:</p>
+     *        A subset of instances to list by status:</p>
      *        <ul>
-     *        <li>Pending: Include in the resulting list those instances with
-     *        pending deployments.</li>
-     *        <li>InProgress: Include in the resulting list those instances with
-     *        in-progress deployments.</li>
-     *        <li>Succeeded: Include in the resulting list those instances with
-     *        succeeded deployments.</li>
-     *        <li>Failed: Include in the resulting list those instances with
-     *        failed deployments.</li>
-     *        <li>Skipped: Include in the resulting list those instances with
-     *        skipped deployments.</li>
-     *        <li>Unknown: Include in the resulting list those instances with
-     *        deployments in an unknown state.</li>
+     *        <li>Pending: Include those instance with pending deployments.</li>
+     *        <li>InProgress: Include those instance where deployments are still
+     *        in progress.</li>
+     *        <li>Succeeded: Include those instances with successful
+     *        deployments.</li>
+     *        <li>Failed: Include those instance with failed deployments.</li>
+     *        <li>Skipped: Include those instance with skipped deployments.</li>
+     *        <li>Unknown: Include those instance with deployments in an unknown
+     *        state.</li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see InstanceStatus

@@ -25,21 +25,21 @@ import com.amazonaws.services.codedeploy.model.*;
  * <p>
  * <fullname>AWS CodeDeploy</fullname> <b>Overview</b>
  * <p>
- * This is the AWS CodeDeploy API Reference. This guide provides descriptions of
- * the AWS CodeDeploy APIs. For additional information, see the <a
- * href="http://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy
- * User Guide</a>.
+ * This reference guide provides descriptions of the AWS CodeDeploy APIs. For
+ * more information about AWS CodeDeploy, see the <a
+ * href="docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy User
+ * Guide</a>.
  * </p>
  * <b>Using the APIs</b>
  * <p>
- * You can use the AWS CodeDeploy APIs to work with the following items:
+ * You can use the AWS CodeDeploy APIs to work with the following:
  * </p>
  * <ul>
  * <li>
  * <p>
- * Applications are unique identifiers that AWS CodeDeploy uses to ensure that
- * the correct combinations of revisions, deployment configurations, and
- * deployment groups are being referenced during deployments.
+ * Applications are unique identifiers used by AWS CodeDeploy to ensure the
+ * correct combinations of revisions, deployment configurations, and deployment
+ * groups are being referenced during deployments.
  * </p>
  * <p>
  * You can use the AWS CodeDeploy APIs to create, delete, get, list, and update
@@ -48,8 +48,8 @@ import com.amazonaws.services.codedeploy.model.*;
  * </li>
  * <li>
  * <p>
- * Deployment configurations are sets of deployment rules and deployment success
- * and failure conditions that AWS CodeDeploy uses during deployments.
+ * Deployment configurations are sets of deployment rules and success and
+ * failure conditions used by AWS CodeDeploy during deployments.
  * </p>
  * <p>
  * You can use the AWS CodeDeploy APIs to create, delete, get, and list
@@ -73,7 +73,7 @@ import com.amazonaws.services.codedeploy.model.*;
  * group names. Instances belong to deployment groups.
  * </p>
  * <p>
- * You can use the AWS CodeDeploy APIs to get and list instances.
+ * You can use the AWS CodeDeploy APIs to get and list instance.
  * </p>
  * </li>
  * <li>
@@ -87,16 +87,16 @@ import com.amazonaws.services.codedeploy.model.*;
  * </li>
  * <li>
  * <p>
- * Application revisions are archive files that are stored in Amazon S3 buckets
- * or GitHub repositories. These revisions contain source content (such as
- * source code, web pages, executable files, any deployment scripts, and
- * similar) along with an Application Specification file (AppSpec file). (The
- * AppSpec file is unique to AWS CodeDeploy; it defines a series of deployment
- * actions that you want AWS CodeDeploy to execute.) An application revision is
- * uniquely identified by its Amazon S3 object key and its ETag, version, or
- * both (for application revisions that are stored in Amazon S3 buckets) or by
- * its repository name and commit ID (for applications revisions that are stored
- * in GitHub repositories). Application revisions are deployed through
+ * Application revisions are archive files stored in Amazon S3 buckets or GitHub
+ * repositories. These revisions contain source content (such as source code,
+ * web pages, executable files, and deployment scripts) along with an
+ * application specification (AppSpec) file. (The AppSpec file is unique to AWS
+ * CodeDeploy; it defines the deployment actions you want AWS CodeDeploy to
+ * execute.) Ffor application revisions stored in Amazon S3 buckets, an
+ * application revision is uniquely identified by its Amazon S3 object key and
+ * its ETag, version, or both. For application revisions stored in GitHub
+ * repositories, an application revision is uniquely identified by its
+ * repository name and commit ID. Application revisions are deployed through
  * deployment groups.
  * </p>
  * <p>
@@ -114,7 +114,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * </p>
      * 
      * @param addTagsToOnPremisesInstancesRequest
-     *        Represents the input of and adds tags to on-premises instance
+     *        Represents the input of, and adds tags to, an on-premises instance
      *        operation.
      * @sample AmazonCodeDeployAsync.AddTagsToOnPremisesInstances
      */
@@ -127,7 +127,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * </p>
      * 
      * @param addTagsToOnPremisesInstancesRequest
-     *        Represents the input of and adds tags to on-premises instance
+     *        Represents the input of, and adds tags to, an on-premises instance
      *        operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
@@ -229,8 +229,42 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
 
     /**
      * <p>
-     * Gets information about one or more instances that are part of a
-     * deployment group.
+     * Get information about one or more deployment groups.
+     * </p>
+     * 
+     * @param batchGetDeploymentGroupsRequest
+     *        Represents the input of a batch get deployment groups operation.
+     * @return A Java Future containing the result of the
+     *         BatchGetDeploymentGroups operation returned by the service.
+     * @sample AmazonCodeDeployAsync.BatchGetDeploymentGroups
+     */
+    java.util.concurrent.Future<BatchGetDeploymentGroupsResult> batchGetDeploymentGroupsAsync(
+            BatchGetDeploymentGroupsRequest batchGetDeploymentGroupsRequest);
+
+    /**
+     * <p>
+     * Get information about one or more deployment groups.
+     * </p>
+     * 
+     * @param batchGetDeploymentGroupsRequest
+     *        Represents the input of a batch get deployment groups operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         BatchGetDeploymentGroups operation returned by the service.
+     * @sample AmazonCodeDeployAsyncHandler.BatchGetDeploymentGroups
+     */
+    java.util.concurrent.Future<BatchGetDeploymentGroupsResult> batchGetDeploymentGroupsAsync(
+            BatchGetDeploymentGroupsRequest batchGetDeploymentGroupsRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchGetDeploymentGroupsRequest, BatchGetDeploymentGroupsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets information about one or more instance that are part of a deployment
+     * group.
      * </p>
      * 
      * @param batchGetDeploymentInstancesRequest
@@ -245,8 +279,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
 
     /**
      * <p>
-     * Gets information about one or more instances that are part of a
-     * deployment group.
+     * Gets information about one or more instance that are part of a deployment
+     * group.
      * </p>
      * 
      * @param batchGetDeploymentInstancesRequest
@@ -372,7 +406,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
 
     /**
      * <p>
-     * Creates a new application.
+     * Creates an application.
      * </p>
      * 
      * @param createApplicationRequest
@@ -386,7 +420,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
 
     /**
      * <p>
-     * Creates a new application.
+     * Creates an application.
      * </p>
      * 
      * @param createApplicationRequest
@@ -440,7 +474,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
 
     /**
      * <p>
-     * Creates a new deployment configuration.
+     * Creates a deployment configuration.
      * </p>
      * 
      * @param createDeploymentConfigRequest
@@ -455,7 +489,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
 
     /**
      * <p>
-     * Creates a new deployment configuration.
+     * Creates a deployment configuration.
      * </p>
      * 
      * @param createDeploymentConfigRequest
@@ -476,8 +510,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
 
     /**
      * <p>
-     * Creates a new deployment group for application revisions to be deployed
-     * to.
+     * Creates a deployment group to which application revisions will be
+     * deployed.
      * </p>
      * 
      * @param createDeploymentGroupRequest
@@ -491,8 +525,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
 
     /**
      * <p>
-     * Creates a new deployment group for application revisions to be deployed
-     * to.
+     * Creates a deployment group to which application revisions will be
+     * deployed.
      * </p>
      * 
      * @param createDeploymentGroupRequest
@@ -545,7 +579,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * Deletes a deployment configuration.
      * </p>
      * <note>A deployment configuration cannot be deleted if it is currently in
-     * use. Also, predefined configurations cannot be deleted.</note>
+     * use. Predefined configurations cannot be deleted.</note>
      * 
      * @param deleteDeploymentConfigRequest
      *        Represents the input of a delete deployment configuration
@@ -560,7 +594,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * Deletes a deployment configuration.
      * </p>
      * <note>A deployment configuration cannot be deleted if it is currently in
-     * use. Also, predefined configurations cannot be deleted.</note>
+     * use. Predefined configurations cannot be deleted.</note>
      * 
      * @param deleteDeploymentConfigRequest
      *        Represents the input of a delete deployment configuration
@@ -1060,7 +1094,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
 
     /**
      * <p>
-     * Lists the instances for a deployment associated with the applicable IAM
+     * Lists the instance for a deployment associated with the applicable IAM
      * user or AWS account.
      * </p>
      * 
@@ -1075,7 +1109,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
 
     /**
      * <p>
-     * Lists the instances for a deployment associated with the applicable IAM
+     * Lists the instance for a deployment associated with the applicable IAM
      * user or AWS account.
      * </p>
      * 
@@ -1096,8 +1130,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
 
     /**
      * <p>
-     * Lists the deployments within a deployment group for an application
-     * registered with the applicable IAM user or AWS account.
+     * Lists the deployments in a deployment group for an application registered
+     * with the applicable IAM user or AWS account.
      * </p>
      * 
      * @param listDeploymentsRequest
@@ -1111,8 +1145,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
 
     /**
      * <p>
-     * Lists the deployments within a deployment group for an application
-     * registered with the applicable IAM user or AWS account.
+     * Lists the deployments in a deployment group for an application registered
+     * with the applicable IAM user or AWS account.
      * </p>
      * 
      * @param listDeploymentsRequest
@@ -1149,7 +1183,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
 
     /**
      * <p>
-     * Gets a list of one or more on-premises instance names.
+     * Gets a list of names for one or more on-premises instances.
      * </p>
      * <p>
      * Unless otherwise specified, both registered and deregistered on-premises
@@ -1168,7 +1202,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
 
     /**
      * <p>
-     * Gets a list of one or more on-premises instance names.
+     * Gets a list of names for one or more on-premises instances.
      * </p>
      * <p>
      * Unless otherwise specified, both registered and deregistered on-premises
@@ -1245,7 +1279,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * </p>
      * 
      * @param registerOnPremisesInstanceRequest
-     *        Represents the input of register on-premises instance operation.
+     *        Represents the input of the register on-premises instance
+     *        operation.
      * @sample AmazonCodeDeployAsync.RegisterOnPremisesInstance
      */
     java.util.concurrent.Future<Void> registerOnPremisesInstanceAsync(
@@ -1257,7 +1292,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * </p>
      * 
      * @param registerOnPremisesInstanceRequest
-     *        Represents the input of register on-premises instance operation.
+     *        Represents the input of the register on-premises instance
+     *        operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -1337,7 +1373,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
 
     /**
      * <p>
-     * Changes an existing application's name.
+     * Changes the name of an application.
      * </p>
      * 
      * @param updateApplicationRequest
@@ -1349,7 +1385,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
 
     /**
      * <p>
-     * Changes an existing application's name.
+     * Changes the name of an application.
      * </p>
      * 
      * @param updateApplicationRequest
@@ -1384,7 +1420,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
 
     /**
      * <p>
-     * Changes information about an existing deployment group.
+     * Changes information about a deployment group.
      * </p>
      * 
      * @param updateDeploymentGroupRequest
@@ -1398,7 +1434,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
 
     /**
      * <p>
-     * Changes information about an existing deployment group.
+     * Changes information about a deployment group.
      * </p>
      * 
      * @param updateDeploymentGroupRequest

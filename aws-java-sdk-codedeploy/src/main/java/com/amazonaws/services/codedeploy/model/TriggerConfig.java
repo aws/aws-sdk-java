@@ -25,11 +25,15 @@ import java.io.Serializable;
  */
 public class TriggerConfig implements Serializable, Cloneable {
 
-    /** <para>The name of the notification trigger.</para> */
+    /**
+     * <p>
+     * The name of the notification trigger.
+     * </p>
+     */
     private String triggerName;
     /**
      * <p>
-     * The arn of the Amazon Simple Notification Service topic through which
+     * The ARN of the Amazon Simple Notification Service topic through which
      * notifications about deployment or instance events are sent.
      * </p>
      */
@@ -54,7 +58,9 @@ public class TriggerConfig implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<String> triggerEvents;
 
     /**
-     * <para>The name of the notification trigger.</para>
+     * <p>
+     * The name of the notification trigger.
+     * </p>
      * 
      * @param triggerName
      *        The name of the notification trigger.
@@ -65,7 +71,9 @@ public class TriggerConfig implements Serializable, Cloneable {
     }
 
     /**
-     * <para>The name of the notification trigger.</para>
+     * <p>
+     * The name of the notification trigger.
+     * </p>
      * 
      * @return The name of the notification trigger.
      */
@@ -75,7 +83,9 @@ public class TriggerConfig implements Serializable, Cloneable {
     }
 
     /**
-     * <para>The name of the notification trigger.</para>
+     * <p>
+     * The name of the notification trigger.
+     * </p>
      * 
      * @param triggerName
      *        The name of the notification trigger.
@@ -90,12 +100,12 @@ public class TriggerConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The arn of the Amazon Simple Notification Service topic through which
+     * The ARN of the Amazon Simple Notification Service topic through which
      * notifications about deployment or instance events are sent.
      * </p>
      * 
      * @param triggerTargetArn
-     *        The arn of the Amazon Simple Notification Service topic through
+     *        The ARN of the Amazon Simple Notification Service topic through
      *        which notifications about deployment or instance events are sent.
      */
 
@@ -105,11 +115,11 @@ public class TriggerConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The arn of the Amazon Simple Notification Service topic through which
+     * The ARN of the Amazon Simple Notification Service topic through which
      * notifications about deployment or instance events are sent.
      * </p>
      * 
-     * @return The arn of the Amazon Simple Notification Service topic through
+     * @return The ARN of the Amazon Simple Notification Service topic through
      *         which notifications about deployment or instance events are sent.
      */
 
@@ -119,12 +129,12 @@ public class TriggerConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The arn of the Amazon Simple Notification Service topic through which
+     * The ARN of the Amazon Simple Notification Service topic through which
      * notifications about deployment or instance events are sent.
      * </p>
      * 
      * @param triggerTargetArn
-     *        The arn of the Amazon Simple Notification Service topic through
+     *        The ARN of the Amazon Simple Notification Service topic through
      *        which notifications about deployment or instance events are sent.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.

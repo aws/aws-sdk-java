@@ -37,6 +37,7 @@ import com.amazonaws.services.elasticmapreduce.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -72,7 +73,6 @@ public class ListInstancesRequestMarshaller implements
                 jsonWriter.key("ClusterId").value(
                         listInstancesRequest.getClusterId());
             }
-
             if (listInstancesRequest.getInstanceGroupId() != null) {
                 jsonWriter.key("InstanceGroupId").value(
                         listInstancesRequest.getInstanceGroupId());
@@ -91,7 +91,6 @@ public class ListInstancesRequestMarshaller implements
                 }
                 jsonWriter.endArray();
             }
-
             if (listInstancesRequest.getMarker() != null) {
                 jsonWriter.key("Marker")
                         .value(listInstancesRequest.getMarker());

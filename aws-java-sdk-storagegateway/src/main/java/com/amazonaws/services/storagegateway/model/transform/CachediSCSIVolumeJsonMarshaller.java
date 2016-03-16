@@ -30,6 +30,7 @@ import com.amazonaws.services.storagegateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,37 +56,30 @@ public class CachediSCSIVolumeJsonMarshaller {
                 jsonWriter.key("VolumeARN").value(
                         cachediSCSIVolume.getVolumeARN());
             }
-
             if (cachediSCSIVolume.getVolumeId() != null) {
                 jsonWriter.key("VolumeId").value(
                         cachediSCSIVolume.getVolumeId());
             }
-
             if (cachediSCSIVolume.getVolumeType() != null) {
                 jsonWriter.key("VolumeType").value(
                         cachediSCSIVolume.getVolumeType());
             }
-
             if (cachediSCSIVolume.getVolumeStatus() != null) {
                 jsonWriter.key("VolumeStatus").value(
                         cachediSCSIVolume.getVolumeStatus());
             }
-
             if (cachediSCSIVolume.getVolumeSizeInBytes() != null) {
                 jsonWriter.key("VolumeSizeInBytes").value(
                         cachediSCSIVolume.getVolumeSizeInBytes());
             }
-
             if (cachediSCSIVolume.getVolumeProgress() != null) {
                 jsonWriter.key("VolumeProgress").value(
                         cachediSCSIVolume.getVolumeProgress());
             }
-
             if (cachediSCSIVolume.getSourceSnapshotId() != null) {
                 jsonWriter.key("SourceSnapshotId").value(
                         cachediSCSIVolume.getSourceSnapshotId());
             }
-
             if (cachediSCSIVolume.getVolumeiSCSIAttributes() != null) {
                 jsonWriter.key("VolumeiSCSIAttributes");
                 VolumeiSCSIAttributesJsonMarshaller.getInstance().marshall(

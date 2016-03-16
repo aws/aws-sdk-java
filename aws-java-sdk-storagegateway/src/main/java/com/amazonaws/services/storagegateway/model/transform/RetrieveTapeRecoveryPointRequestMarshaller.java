@@ -37,6 +37,7 @@ import com.amazonaws.services.storagegateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -74,7 +75,6 @@ public class RetrieveTapeRecoveryPointRequestMarshaller
                 jsonWriter.key("TapeARN").value(
                         retrieveTapeRecoveryPointRequest.getTapeARN());
             }
-
             if (retrieveTapeRecoveryPointRequest.getGatewayARN() != null) {
                 jsonWriter.key("GatewayARN").value(
                         retrieveTapeRecoveryPointRequest.getGatewayARN());

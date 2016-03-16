@@ -30,6 +30,7 @@ import com.amazonaws.services.elasticmapreduce.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,34 +56,28 @@ public class Ec2InstanceAttributesJsonMarshaller {
                 jsonWriter.key("Ec2KeyName").value(
                         ec2InstanceAttributes.getEc2KeyName());
             }
-
             if (ec2InstanceAttributes.getEc2SubnetId() != null) {
                 jsonWriter.key("Ec2SubnetId").value(
                         ec2InstanceAttributes.getEc2SubnetId());
             }
-
             if (ec2InstanceAttributes.getEc2AvailabilityZone() != null) {
                 jsonWriter.key("Ec2AvailabilityZone").value(
                         ec2InstanceAttributes.getEc2AvailabilityZone());
             }
-
             if (ec2InstanceAttributes.getIamInstanceProfile() != null) {
                 jsonWriter.key("IamInstanceProfile").value(
                         ec2InstanceAttributes.getIamInstanceProfile());
             }
-
             if (ec2InstanceAttributes.getEmrManagedMasterSecurityGroup() != null) {
                 jsonWriter.key("EmrManagedMasterSecurityGroup").value(
                         ec2InstanceAttributes
                                 .getEmrManagedMasterSecurityGroup());
             }
-
             if (ec2InstanceAttributes.getEmrManagedSlaveSecurityGroup() != null) {
                 jsonWriter.key("EmrManagedSlaveSecurityGroup")
                         .value(ec2InstanceAttributes
                                 .getEmrManagedSlaveSecurityGroup());
             }
-
             if (ec2InstanceAttributes.getServiceAccessSecurityGroup() != null) {
                 jsonWriter.key("ServiceAccessSecurityGroup").value(
                         ec2InstanceAttributes.getServiceAccessSecurityGroup());

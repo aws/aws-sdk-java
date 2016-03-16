@@ -37,6 +37,7 @@ import com.amazonaws.services.datapipeline.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -72,22 +73,18 @@ public class SetTaskStatusRequestMarshaller implements
                 jsonWriter.key("taskId")
                         .value(setTaskStatusRequest.getTaskId());
             }
-
             if (setTaskStatusRequest.getTaskStatus() != null) {
                 jsonWriter.key("taskStatus").value(
                         setTaskStatusRequest.getTaskStatus());
             }
-
             if (setTaskStatusRequest.getErrorId() != null) {
                 jsonWriter.key("errorId").value(
                         setTaskStatusRequest.getErrorId());
             }
-
             if (setTaskStatusRequest.getErrorMessage() != null) {
                 jsonWriter.key("errorMessage").value(
                         setTaskStatusRequest.getErrorMessage());
             }
-
             if (setTaskStatusRequest.getErrorStackTrace() != null) {
                 jsonWriter.key("errorStackTrace").value(
                         setTaskStatusRequest.getErrorStackTrace());

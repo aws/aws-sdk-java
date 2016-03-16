@@ -30,6 +30,7 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,15 +54,12 @@ public class IntegrationJsonMarshaller {
             if (integration.getType() != null) {
                 jsonWriter.key("type").value(integration.getType());
             }
-
             if (integration.getHttpMethod() != null) {
                 jsonWriter.key("httpMethod").value(integration.getHttpMethod());
             }
-
             if (integration.getUri() != null) {
                 jsonWriter.key("uri").value(integration.getUri());
             }
-
             if (integration.getCredentials() != null) {
                 jsonWriter.key("credentials").value(
                         integration.getCredentials());
@@ -100,7 +98,6 @@ public class IntegrationJsonMarshaller {
                 }
                 jsonWriter.endObject();
             }
-
             if (integration.getCacheNamespace() != null) {
                 jsonWriter.key("cacheNamespace").value(
                         integration.getCacheNamespace());

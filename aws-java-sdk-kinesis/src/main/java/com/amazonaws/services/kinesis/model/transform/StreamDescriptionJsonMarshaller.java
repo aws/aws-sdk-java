@@ -30,6 +30,7 @@ import com.amazonaws.services.kinesis.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,12 +56,10 @@ public class StreamDescriptionJsonMarshaller {
                 jsonWriter.key("StreamName").value(
                         streamDescription.getStreamName());
             }
-
             if (streamDescription.getStreamARN() != null) {
                 jsonWriter.key("StreamARN").value(
                         streamDescription.getStreamARN());
             }
-
             if (streamDescription.getStreamStatus() != null) {
                 jsonWriter.key("StreamStatus").value(
                         streamDescription.getStreamStatus());
@@ -80,12 +79,10 @@ public class StreamDescriptionJsonMarshaller {
                 }
                 jsonWriter.endArray();
             }
-
             if (streamDescription.getHasMoreShards() != null) {
                 jsonWriter.key("HasMoreShards").value(
                         streamDescription.getHasMoreShards());
             }
-
             if (streamDescription.getRetentionPeriodHours() != null) {
                 jsonWriter.key("RetentionPeriodHours").value(
                         streamDescription.getRetentionPeriodHours());

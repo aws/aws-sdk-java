@@ -37,6 +37,7 @@ import com.amazonaws.services.codedeploy.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -73,28 +74,23 @@ public class CreateDeploymentRequestMarshaller implements
                 jsonWriter.key("applicationName").value(
                         createDeploymentRequest.getApplicationName());
             }
-
             if (createDeploymentRequest.getDeploymentGroupName() != null) {
                 jsonWriter.key("deploymentGroupName").value(
                         createDeploymentRequest.getDeploymentGroupName());
             }
-
             if (createDeploymentRequest.getRevision() != null) {
                 jsonWriter.key("revision");
                 RevisionLocationJsonMarshaller.getInstance().marshall(
                         createDeploymentRequest.getRevision(), jsonWriter);
             }
-
             if (createDeploymentRequest.getDeploymentConfigName() != null) {
                 jsonWriter.key("deploymentConfigName").value(
                         createDeploymentRequest.getDeploymentConfigName());
             }
-
             if (createDeploymentRequest.getDescription() != null) {
                 jsonWriter.key("description").value(
                         createDeploymentRequest.getDescription());
             }
-
             if (createDeploymentRequest.getIgnoreApplicationStopFailures() != null) {
                 jsonWriter.key("ignoreApplicationStopFailures").value(
                         createDeploymentRequest

@@ -30,6 +30,7 @@ import com.amazonaws.services.elasticsearch.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,15 +54,12 @@ public class EBSOptionsJsonMarshaller {
             if (eBSOptions.getEBSEnabled() != null) {
                 jsonWriter.key("EBSEnabled").value(eBSOptions.getEBSEnabled());
             }
-
             if (eBSOptions.getVolumeType() != null) {
                 jsonWriter.key("VolumeType").value(eBSOptions.getVolumeType());
             }
-
             if (eBSOptions.getVolumeSize() != null) {
                 jsonWriter.key("VolumeSize").value(eBSOptions.getVolumeSize());
             }
-
             if (eBSOptions.getIops() != null) {
                 jsonWriter.key("Iops").value(eBSOptions.getIops());
             }

@@ -37,6 +37,7 @@ import com.amazonaws.services.machinelearning.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -72,17 +73,14 @@ public class CreateEvaluationRequestMarshaller implements
                 jsonWriter.key("EvaluationId").value(
                         createEvaluationRequest.getEvaluationId());
             }
-
             if (createEvaluationRequest.getEvaluationName() != null) {
                 jsonWriter.key("EvaluationName").value(
                         createEvaluationRequest.getEvaluationName());
             }
-
             if (createEvaluationRequest.getMLModelId() != null) {
                 jsonWriter.key("MLModelId").value(
                         createEvaluationRequest.getMLModelId());
             }
-
             if (createEvaluationRequest.getEvaluationDataSourceId() != null) {
                 jsonWriter.key("EvaluationDataSourceId").value(
                         createEvaluationRequest.getEvaluationDataSourceId());

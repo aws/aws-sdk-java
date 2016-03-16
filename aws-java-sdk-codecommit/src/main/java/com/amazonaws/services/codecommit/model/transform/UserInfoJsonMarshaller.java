@@ -30,6 +30,7 @@ import com.amazonaws.services.codecommit.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,11 +54,9 @@ public class UserInfoJsonMarshaller {
             if (userInfo.getName() != null) {
                 jsonWriter.key("name").value(userInfo.getName());
             }
-
             if (userInfo.getEmail() != null) {
                 jsonWriter.key("email").value(userInfo.getEmail());
             }
-
             if (userInfo.getDate() != null) {
                 jsonWriter.key("date").value(userInfo.getDate());
             }

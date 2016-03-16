@@ -30,6 +30,7 @@ import com.amazonaws.services.directory.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,20 +55,16 @@ public class EventTopicJsonMarshaller {
                 jsonWriter.key("DirectoryId")
                         .value(eventTopic.getDirectoryId());
             }
-
             if (eventTopic.getTopicName() != null) {
                 jsonWriter.key("TopicName").value(eventTopic.getTopicName());
             }
-
             if (eventTopic.getTopicArn() != null) {
                 jsonWriter.key("TopicArn").value(eventTopic.getTopicArn());
             }
-
             if (eventTopic.getCreatedDateTime() != null) {
                 jsonWriter.key("CreatedDateTime").value(
                         eventTopic.getCreatedDateTime());
             }
-
             if (eventTopic.getStatus() != null) {
                 jsonWriter.key("Status").value(eventTopic.getStatus());
             }

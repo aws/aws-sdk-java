@@ -37,6 +37,7 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -65,19 +66,21 @@ public class DeleteIntegrationRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
-                (deleteIntegrationRequest.getRestApiId() == null) ? ""
-                        : StringUtils.fromString(deleteIntegrationRequest
-                                .getRestApiId()));
-        uriResourcePath = uriResourcePath.replace(
-                "{resource_id}",
-                (deleteIntegrationRequest.getResourceId() == null) ? ""
-                        : StringUtils.fromString(deleteIntegrationRequest
-                                .getResourceId()));
-        uriResourcePath = uriResourcePath.replace(
-                "{http_method}",
-                (deleteIntegrationRequest.getHttpMethod() == null) ? ""
-                        : StringUtils.fromString(deleteIntegrationRequest
-                                .getHttpMethod()));
+                (deleteIntegrationRequest.getRestApiId() != null) ? StringUtils
+                        .fromString(deleteIntegrationRequest.getRestApiId())
+                        : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{resource_id}",
+                        (deleteIntegrationRequest.getResourceId() != null) ? StringUtils
+                                .fromString(deleteIntegrationRequest
+                                        .getResourceId()) : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{http_method}",
+                        (deleteIntegrationRequest.getHttpMethod() != null) ? StringUtils
+                                .fromString(deleteIntegrationRequest
+                                        .getHttpMethod()) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

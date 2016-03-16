@@ -30,6 +30,7 @@ import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,11 +54,9 @@ public class S3ActionJsonMarshaller {
             if (s3Action.getRoleArn() != null) {
                 jsonWriter.key("roleArn").value(s3Action.getRoleArn());
             }
-
             if (s3Action.getBucketName() != null) {
                 jsonWriter.key("bucketName").value(s3Action.getBucketName());
             }
-
             if (s3Action.getKey() != null) {
                 jsonWriter.key("key").value(s3Action.getKey());
             }

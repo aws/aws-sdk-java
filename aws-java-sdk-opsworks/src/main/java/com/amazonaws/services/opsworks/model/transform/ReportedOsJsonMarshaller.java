@@ -30,6 +30,7 @@ import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,11 +54,9 @@ public class ReportedOsJsonMarshaller {
             if (reportedOs.getFamily() != null) {
                 jsonWriter.key("Family").value(reportedOs.getFamily());
             }
-
             if (reportedOs.getName() != null) {
                 jsonWriter.key("Name").value(reportedOs.getName());
             }
-
             if (reportedOs.getVersion() != null) {
                 jsonWriter.key("Version").value(reportedOs.getVersion());
             }

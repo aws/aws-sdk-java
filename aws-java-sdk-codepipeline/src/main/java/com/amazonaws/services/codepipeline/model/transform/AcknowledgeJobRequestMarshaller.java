@@ -37,6 +37,7 @@ import com.amazonaws.services.codepipeline.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -72,7 +73,6 @@ public class AcknowledgeJobRequestMarshaller implements
             if (acknowledgeJobRequest.getJobId() != null) {
                 jsonWriter.key("jobId").value(acknowledgeJobRequest.getJobId());
             }
-
             if (acknowledgeJobRequest.getNonce() != null) {
                 jsonWriter.key("nonce").value(acknowledgeJobRequest.getNonce());
             }

@@ -30,6 +30,7 @@ import com.amazonaws.services.directconnect.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,64 +56,51 @@ public class VirtualInterfaceJsonMarshaller {
                 jsonWriter.key("ownerAccount").value(
                         virtualInterface.getOwnerAccount());
             }
-
             if (virtualInterface.getVirtualInterfaceId() != null) {
                 jsonWriter.key("virtualInterfaceId").value(
                         virtualInterface.getVirtualInterfaceId());
             }
-
             if (virtualInterface.getLocation() != null) {
                 jsonWriter.key("location")
                         .value(virtualInterface.getLocation());
             }
-
             if (virtualInterface.getConnectionId() != null) {
                 jsonWriter.key("connectionId").value(
                         virtualInterface.getConnectionId());
             }
-
             if (virtualInterface.getVirtualInterfaceType() != null) {
                 jsonWriter.key("virtualInterfaceType").value(
                         virtualInterface.getVirtualInterfaceType());
             }
-
             if (virtualInterface.getVirtualInterfaceName() != null) {
                 jsonWriter.key("virtualInterfaceName").value(
                         virtualInterface.getVirtualInterfaceName());
             }
-
             if (virtualInterface.getVlan() != null) {
                 jsonWriter.key("vlan").value(virtualInterface.getVlan());
             }
-
             if (virtualInterface.getAsn() != null) {
                 jsonWriter.key("asn").value(virtualInterface.getAsn());
             }
-
             if (virtualInterface.getAuthKey() != null) {
                 jsonWriter.key("authKey").value(virtualInterface.getAuthKey());
             }
-
             if (virtualInterface.getAmazonAddress() != null) {
                 jsonWriter.key("amazonAddress").value(
                         virtualInterface.getAmazonAddress());
             }
-
             if (virtualInterface.getCustomerAddress() != null) {
                 jsonWriter.key("customerAddress").value(
                         virtualInterface.getCustomerAddress());
             }
-
             if (virtualInterface.getVirtualInterfaceState() != null) {
                 jsonWriter.key("virtualInterfaceState").value(
                         virtualInterface.getVirtualInterfaceState());
             }
-
             if (virtualInterface.getCustomerRouterConfig() != null) {
                 jsonWriter.key("customerRouterConfig").value(
                         virtualInterface.getCustomerRouterConfig());
             }
-
             if (virtualInterface.getVirtualGatewayId() != null) {
                 jsonWriter.key("virtualGatewayId").value(
                         virtualInterface.getVirtualGatewayId());

@@ -30,6 +30,7 @@ import com.amazonaws.services.support.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,16 +54,13 @@ public class CommunicationJsonMarshaller {
             if (communication.getCaseId() != null) {
                 jsonWriter.key("caseId").value(communication.getCaseId());
             }
-
             if (communication.getBody() != null) {
                 jsonWriter.key("body").value(communication.getBody());
             }
-
             if (communication.getSubmittedBy() != null) {
                 jsonWriter.key("submittedBy").value(
                         communication.getSubmittedBy());
             }
-
             if (communication.getTimeCreated() != null) {
                 jsonWriter.key("timeCreated").value(
                         communication.getTimeCreated());

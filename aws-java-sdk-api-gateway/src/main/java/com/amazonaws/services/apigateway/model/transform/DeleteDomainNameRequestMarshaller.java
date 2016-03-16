@@ -37,6 +37,7 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -65,9 +66,9 @@ public class DeleteDomainNameRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{domain_name}",
-                (deleteDomainNameRequest.getDomainName() == null) ? ""
-                        : StringUtils.fromString(deleteDomainNameRequest
-                                .getDomainName()));
+                (deleteDomainNameRequest.getDomainName() != null) ? StringUtils
+                        .fromString(deleteDomainNameRequest.getDomainName())
+                        : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

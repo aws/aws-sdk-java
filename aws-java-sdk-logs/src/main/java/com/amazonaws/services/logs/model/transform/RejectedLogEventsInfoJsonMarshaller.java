@@ -30,6 +30,7 @@ import com.amazonaws.services.logs.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,12 +56,10 @@ public class RejectedLogEventsInfoJsonMarshaller {
                 jsonWriter.key("tooNewLogEventStartIndex").value(
                         rejectedLogEventsInfo.getTooNewLogEventStartIndex());
             }
-
             if (rejectedLogEventsInfo.getTooOldLogEventEndIndex() != null) {
                 jsonWriter.key("tooOldLogEventEndIndex").value(
                         rejectedLogEventsInfo.getTooOldLogEventEndIndex());
             }
-
             if (rejectedLogEventsInfo.getExpiredLogEventEndIndex() != null) {
                 jsonWriter.key("expiredLogEventEndIndex").value(
                         rejectedLogEventsInfo.getExpiredLogEventEndIndex());

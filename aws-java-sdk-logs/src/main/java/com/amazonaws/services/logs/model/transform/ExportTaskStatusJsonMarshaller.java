@@ -30,6 +30,7 @@ import com.amazonaws.services.logs.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,7 +55,6 @@ public class ExportTaskStatusJsonMarshaller {
             if (exportTaskStatus.getCode() != null) {
                 jsonWriter.key("code").value(exportTaskStatus.getCode());
             }
-
             if (exportTaskStatus.getMessage() != null) {
                 jsonWriter.key("message").value(exportTaskStatus.getMessage());
             }

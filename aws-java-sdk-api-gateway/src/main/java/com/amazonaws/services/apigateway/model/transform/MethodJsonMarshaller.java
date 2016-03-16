@@ -30,6 +30,7 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,16 +54,13 @@ public class MethodJsonMarshaller {
             if (method.getHttpMethod() != null) {
                 jsonWriter.key("httpMethod").value(method.getHttpMethod());
             }
-
             if (method.getAuthorizationType() != null) {
                 jsonWriter.key("authorizationType").value(
                         method.getAuthorizationType());
             }
-
             if (method.getAuthorizerId() != null) {
                 jsonWriter.key("authorizerId").value(method.getAuthorizerId());
             }
-
             if (method.getApiKeyRequired() != null) {
                 jsonWriter.key("apiKeyRequired").value(
                         method.getApiKeyRequired());
@@ -119,7 +117,6 @@ public class MethodJsonMarshaller {
                 }
                 jsonWriter.endObject();
             }
-
             if (method.getMethodIntegration() != null) {
                 jsonWriter.key("methodIntegration");
                 IntegrationJsonMarshaller.getInstance().marshall(

@@ -37,6 +37,7 @@ import com.amazonaws.services.ecs.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -74,27 +75,22 @@ public class SubmitContainerStateChangeRequestMarshaller
                 jsonWriter.key("cluster").value(
                         submitContainerStateChangeRequest.getCluster());
             }
-
             if (submitContainerStateChangeRequest.getTask() != null) {
                 jsonWriter.key("task").value(
                         submitContainerStateChangeRequest.getTask());
             }
-
             if (submitContainerStateChangeRequest.getContainerName() != null) {
                 jsonWriter.key("containerName").value(
                         submitContainerStateChangeRequest.getContainerName());
             }
-
             if (submitContainerStateChangeRequest.getStatus() != null) {
                 jsonWriter.key("status").value(
                         submitContainerStateChangeRequest.getStatus());
             }
-
             if (submitContainerStateChangeRequest.getExitCode() != null) {
                 jsonWriter.key("exitCode").value(
                         submitContainerStateChangeRequest.getExitCode());
             }
-
             if (submitContainerStateChangeRequest.getReason() != null) {
                 jsonWriter.key("reason").value(
                         submitContainerStateChangeRequest.getReason());

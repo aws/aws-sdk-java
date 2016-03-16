@@ -37,6 +37,7 @@ import com.amazonaws.services.gamelift.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -73,7 +74,6 @@ public class DeleteScalingPolicyRequestMarshaller
                 jsonWriter.key("Name").value(
                         deleteScalingPolicyRequest.getName());
             }
-
             if (deleteScalingPolicyRequest.getFleetId() != null) {
                 jsonWriter.key("FleetId").value(
                         deleteScalingPolicyRequest.getFleetId());

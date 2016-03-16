@@ -37,6 +37,7 @@ import com.amazonaws.services.cloudtrail.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -72,47 +73,38 @@ public class CreateTrailRequestMarshaller implements
             if (createTrailRequest.getName() != null) {
                 jsonWriter.key("Name").value(createTrailRequest.getName());
             }
-
             if (createTrailRequest.getS3BucketName() != null) {
                 jsonWriter.key("S3BucketName").value(
                         createTrailRequest.getS3BucketName());
             }
-
             if (createTrailRequest.getS3KeyPrefix() != null) {
                 jsonWriter.key("S3KeyPrefix").value(
                         createTrailRequest.getS3KeyPrefix());
             }
-
             if (createTrailRequest.getSnsTopicName() != null) {
                 jsonWriter.key("SnsTopicName").value(
                         createTrailRequest.getSnsTopicName());
             }
-
             if (createTrailRequest.getIncludeGlobalServiceEvents() != null) {
                 jsonWriter.key("IncludeGlobalServiceEvents").value(
                         createTrailRequest.getIncludeGlobalServiceEvents());
             }
-
             if (createTrailRequest.getIsMultiRegionTrail() != null) {
                 jsonWriter.key("IsMultiRegionTrail").value(
                         createTrailRequest.getIsMultiRegionTrail());
             }
-
             if (createTrailRequest.getEnableLogFileValidation() != null) {
                 jsonWriter.key("EnableLogFileValidation").value(
                         createTrailRequest.getEnableLogFileValidation());
             }
-
             if (createTrailRequest.getCloudWatchLogsLogGroupArn() != null) {
                 jsonWriter.key("CloudWatchLogsLogGroupArn").value(
                         createTrailRequest.getCloudWatchLogsLogGroupArn());
             }
-
             if (createTrailRequest.getCloudWatchLogsRoleArn() != null) {
                 jsonWriter.key("CloudWatchLogsRoleArn").value(
                         createTrailRequest.getCloudWatchLogsRoleArn());
             }
-
             if (createTrailRequest.getKmsKeyId() != null) {
                 jsonWriter.key("KmsKeyId").value(
                         createTrailRequest.getKmsKeyId());

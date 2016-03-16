@@ -30,6 +30,7 @@ import com.amazonaws.services.codepipeline.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,12 +55,10 @@ public class ActionRevisionJsonMarshaller {
                 jsonWriter.key("revisionId").value(
                         actionRevision.getRevisionId());
             }
-
             if (actionRevision.getRevisionChangeId() != null) {
                 jsonWriter.key("revisionChangeId").value(
                         actionRevision.getRevisionChangeId());
             }
-
             if (actionRevision.getCreated() != null) {
                 jsonWriter.key("created").value(actionRevision.getCreated());
             }

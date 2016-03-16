@@ -37,6 +37,7 @@ import com.amazonaws.services.inspector.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -80,18 +81,15 @@ public class ListFindingsRequestMarshaller implements
                 }
                 jsonWriter.endArray();
             }
-
             if (listFindingsRequest.getFilter() != null) {
                 jsonWriter.key("filter");
                 FindingsFilterJsonMarshaller.getInstance().marshall(
                         listFindingsRequest.getFilter(), jsonWriter);
             }
-
             if (listFindingsRequest.getNextToken() != null) {
                 jsonWriter.key("nextToken").value(
                         listFindingsRequest.getNextToken());
             }
-
             if (listFindingsRequest.getMaxResults() != null) {
                 jsonWriter.key("maxResults").value(
                         listFindingsRequest.getMaxResults());

@@ -37,6 +37,7 @@ import com.amazonaws.services.kinesisfirehose.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -72,25 +73,21 @@ public class UpdateDestinationRequestMarshaller implements
                 jsonWriter.key("DeliveryStreamName").value(
                         updateDestinationRequest.getDeliveryStreamName());
             }
-
             if (updateDestinationRequest.getCurrentDeliveryStreamVersionId() != null) {
                 jsonWriter.key("CurrentDeliveryStreamVersionId").value(
                         updateDestinationRequest
                                 .getCurrentDeliveryStreamVersionId());
             }
-
             if (updateDestinationRequest.getDestinationId() != null) {
                 jsonWriter.key("DestinationId").value(
                         updateDestinationRequest.getDestinationId());
             }
-
             if (updateDestinationRequest.getS3DestinationUpdate() != null) {
                 jsonWriter.key("S3DestinationUpdate");
                 S3DestinationUpdateJsonMarshaller.getInstance().marshall(
                         updateDestinationRequest.getS3DestinationUpdate(),
                         jsonWriter);
             }
-
             if (updateDestinationRequest.getRedshiftDestinationUpdate() != null) {
                 jsonWriter.key("RedshiftDestinationUpdate");
                 RedshiftDestinationUpdateJsonMarshaller

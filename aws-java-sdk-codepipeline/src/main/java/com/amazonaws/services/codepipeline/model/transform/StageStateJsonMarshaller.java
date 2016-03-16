@@ -30,6 +30,7 @@ import com.amazonaws.services.codepipeline.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,7 +54,6 @@ public class StageStateJsonMarshaller {
             if (stageState.getStageName() != null) {
                 jsonWriter.key("stageName").value(stageState.getStageName());
             }
-
             if (stageState.getInboundTransitionState() != null) {
                 jsonWriter.key("inboundTransitionState");
                 TransitionStateJsonMarshaller.getInstance().marshall(

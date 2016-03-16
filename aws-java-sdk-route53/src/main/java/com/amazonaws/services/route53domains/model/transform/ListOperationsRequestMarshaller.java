@@ -37,6 +37,7 @@ import com.amazonaws.services.route53domains.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -73,7 +74,6 @@ public class ListOperationsRequestMarshaller implements
                 jsonWriter.key("Marker").value(
                         listOperationsRequest.getMarker());
             }
-
             if (listOperationsRequest.getMaxItems() != null) {
                 jsonWriter.key("MaxItems").value(
                         listOperationsRequest.getMaxItems());

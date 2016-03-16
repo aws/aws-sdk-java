@@ -51,8 +51,8 @@ public class DeploymentInfo implements Serializable, Cloneable {
     private String deploymentId;
     /**
      * <p>
-     * Information about the location of application artifacts that are stored
-     * and the service to retrieve them from.
+     * Information about the location of stored application artifacts and the
+     * service from which to retrieve them.
      * </p>
      */
     private RevisionLocation revision;
@@ -76,20 +76,19 @@ public class DeploymentInfo implements Serializable, Cloneable {
     private java.util.Date createTime;
     /**
      * <p>
-     * A timestamp indicating when the deployment began deploying to the
-     * deployment group.
+     * A timestamp indicating when the deployment was deployed to the deployment
+     * group.
      * </p>
      * <p>
-     * Note that in some cases, the reported value of the start time may be
-     * later than the complete time. This is due to differences in the clock
-     * settings of various back-end servers that participate in the overall
-     * deployment process.
+     * In some cases, the reported value of the start time may be later than the
+     * complete time. This is due to differences in the clock settings of
+     * back-end servers that participate in the deployment process.
      * </p>
      */
     private java.util.Date startTime;
     /**
      * <p>
-     * A timestamp indicating when the deployment was completed.
+     * A timestamp indicating when the deployment was complete.
      * </p>
      */
     private java.util.Date completeTime;
@@ -107,7 +106,7 @@ public class DeploymentInfo implements Serializable, Cloneable {
     private String description;
     /**
      * <p>
-     * How the deployment was created:
+     * The means by which the deployment was created:
      * </p>
      * <ul>
      * <li>user: A user created the deployment.</li>
@@ -118,15 +117,15 @@ public class DeploymentInfo implements Serializable, Cloneable {
     /**
      * <p>
      * If true, then if the deployment causes the ApplicationStop deployment
-     * lifecycle event to fail to a specific instance, the deployment will not
-     * be considered to have failed to that instance at that point and will
-     * continue on to the BeforeInstall deployment lifecycle event.
+     * lifecycle event to an instance to fail, the deployment to that instance
+     * will not be considered to have failed at that point and will continue on
+     * to the BeforeInstall deployment lifecycle event.
      * </p>
      * <p>
      * If false or not specified, then if the deployment causes the
-     * ApplicationStop deployment lifecycle event to fail to a specific
-     * instance, the deployment will stop to that instance, and the deployment
-     * to that instance will be considered to have failed.
+     * ApplicationStop deployment lifecycle event to an instance to fail, the
+     * deployment to that instance will stop, and the deployment to that
+     * instance will be considered to have failed.
      * </p>
      */
     private Boolean ignoreApplicationStopFailures;
@@ -297,13 +296,13 @@ public class DeploymentInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the location of application artifacts that are stored
-     * and the service to retrieve them from.
+     * Information about the location of stored application artifacts and the
+     * service from which to retrieve them.
      * </p>
      * 
      * @param revision
-     *        Information about the location of application artifacts that are
-     *        stored and the service to retrieve them from.
+     *        Information about the location of stored application artifacts and
+     *        the service from which to retrieve them.
      */
 
     public void setRevision(RevisionLocation revision) {
@@ -312,12 +311,12 @@ public class DeploymentInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the location of application artifacts that are stored
-     * and the service to retrieve them from.
+     * Information about the location of stored application artifacts and the
+     * service from which to retrieve them.
      * </p>
      * 
-     * @return Information about the location of application artifacts that are
-     *         stored and the service to retrieve them from.
+     * @return Information about the location of stored application artifacts
+     *         and the service from which to retrieve them.
      */
 
     public RevisionLocation getRevision() {
@@ -326,13 +325,13 @@ public class DeploymentInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the location of application artifacts that are stored
-     * and the service to retrieve them from.
+     * Information about the location of stored application artifacts and the
+     * service from which to retrieve them.
      * </p>
      * 
      * @param revision
-     *        Information about the location of application artifacts that are
-     *        stored and the service to retrieve them from.
+     *        Information about the location of stored application artifacts and
+     *        the service from which to retrieve them.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -503,24 +502,23 @@ public class DeploymentInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A timestamp indicating when the deployment began deploying to the
-     * deployment group.
+     * A timestamp indicating when the deployment was deployed to the deployment
+     * group.
      * </p>
      * <p>
-     * Note that in some cases, the reported value of the start time may be
-     * later than the complete time. This is due to differences in the clock
-     * settings of various back-end servers that participate in the overall
-     * deployment process.
+     * In some cases, the reported value of the start time may be later than the
+     * complete time. This is due to differences in the clock settings of
+     * back-end servers that participate in the deployment process.
      * </p>
      * 
      * @param startTime
-     *        A timestamp indicating when the deployment began deploying to the
+     *        A timestamp indicating when the deployment was deployed to the
      *        deployment group.</p>
      *        <p>
-     *        Note that in some cases, the reported value of the start time may
-     *        be later than the complete time. This is due to differences in the
-     *        clock settings of various back-end servers that participate in the
-     *        overall deployment process.
+     *        In some cases, the reported value of the start time may be later
+     *        than the complete time. This is due to differences in the clock
+     *        settings of back-end servers that participate in the deployment
+     *        process.
      */
 
     public void setStartTime(java.util.Date startTime) {
@@ -529,23 +527,22 @@ public class DeploymentInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A timestamp indicating when the deployment began deploying to the
-     * deployment group.
+     * A timestamp indicating when the deployment was deployed to the deployment
+     * group.
      * </p>
      * <p>
-     * Note that in some cases, the reported value of the start time may be
-     * later than the complete time. This is due to differences in the clock
-     * settings of various back-end servers that participate in the overall
-     * deployment process.
+     * In some cases, the reported value of the start time may be later than the
+     * complete time. This is due to differences in the clock settings of
+     * back-end servers that participate in the deployment process.
      * </p>
      * 
-     * @return A timestamp indicating when the deployment began deploying to the
+     * @return A timestamp indicating when the deployment was deployed to the
      *         deployment group.</p>
      *         <p>
-     *         Note that in some cases, the reported value of the start time may
-     *         be later than the complete time. This is due to differences in
-     *         the clock settings of various back-end servers that participate
-     *         in the overall deployment process.
+     *         In some cases, the reported value of the start time may be later
+     *         than the complete time. This is due to differences in the clock
+     *         settings of back-end servers that participate in the deployment
+     *         process.
      */
 
     public java.util.Date getStartTime() {
@@ -554,24 +551,23 @@ public class DeploymentInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A timestamp indicating when the deployment began deploying to the
-     * deployment group.
+     * A timestamp indicating when the deployment was deployed to the deployment
+     * group.
      * </p>
      * <p>
-     * Note that in some cases, the reported value of the start time may be
-     * later than the complete time. This is due to differences in the clock
-     * settings of various back-end servers that participate in the overall
-     * deployment process.
+     * In some cases, the reported value of the start time may be later than the
+     * complete time. This is due to differences in the clock settings of
+     * back-end servers that participate in the deployment process.
      * </p>
      * 
      * @param startTime
-     *        A timestamp indicating when the deployment began deploying to the
+     *        A timestamp indicating when the deployment was deployed to the
      *        deployment group.</p>
      *        <p>
-     *        Note that in some cases, the reported value of the start time may
-     *        be later than the complete time. This is due to differences in the
-     *        clock settings of various back-end servers that participate in the
-     *        overall deployment process.
+     *        In some cases, the reported value of the start time may be later
+     *        than the complete time. This is due to differences in the clock
+     *        settings of back-end servers that participate in the deployment
+     *        process.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -583,11 +579,11 @@ public class DeploymentInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A timestamp indicating when the deployment was completed.
+     * A timestamp indicating when the deployment was complete.
      * </p>
      * 
      * @param completeTime
-     *        A timestamp indicating when the deployment was completed.
+     *        A timestamp indicating when the deployment was complete.
      */
 
     public void setCompleteTime(java.util.Date completeTime) {
@@ -596,10 +592,10 @@ public class DeploymentInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A timestamp indicating when the deployment was completed.
+     * A timestamp indicating when the deployment was complete.
      * </p>
      * 
-     * @return A timestamp indicating when the deployment was completed.
+     * @return A timestamp indicating when the deployment was complete.
      */
 
     public java.util.Date getCompleteTime() {
@@ -608,11 +604,11 @@ public class DeploymentInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A timestamp indicating when the deployment was completed.
+     * A timestamp indicating when the deployment was complete.
      * </p>
      * 
      * @param completeTime
-     *        A timestamp indicating when the deployment was completed.
+     *        A timestamp indicating when the deployment was complete.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -710,7 +706,7 @@ public class DeploymentInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * How the deployment was created:
+     * The means by which the deployment was created:
      * </p>
      * <ul>
      * <li>user: A user created the deployment.</li>
@@ -718,7 +714,7 @@ public class DeploymentInfo implements Serializable, Cloneable {
      * </ul>
      * 
      * @param creator
-     *        How the deployment was created:</p>
+     *        The means by which the deployment was created:</p>
      *        <ul>
      *        <li>user: A user created the deployment.</li>
      *        <li>autoscaling: Auto Scaling created the deployment.</li>
@@ -731,14 +727,14 @@ public class DeploymentInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * How the deployment was created:
+     * The means by which the deployment was created:
      * </p>
      * <ul>
      * <li>user: A user created the deployment.</li>
      * <li>autoscaling: Auto Scaling created the deployment.</li>
      * </ul>
      * 
-     * @return How the deployment was created:</p>
+     * @return The means by which the deployment was created:</p>
      *         <ul>
      *         <li>user: A user created the deployment.</li>
      *         <li>autoscaling: Auto Scaling created the deployment.</li>
@@ -751,7 +747,7 @@ public class DeploymentInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * How the deployment was created:
+     * The means by which the deployment was created:
      * </p>
      * <ul>
      * <li>user: A user created the deployment.</li>
@@ -759,7 +755,7 @@ public class DeploymentInfo implements Serializable, Cloneable {
      * </ul>
      * 
      * @param creator
-     *        How the deployment was created:</p>
+     *        The means by which the deployment was created:</p>
      *        <ul>
      *        <li>user: A user created the deployment.</li>
      *        <li>autoscaling: Auto Scaling created the deployment.</li>
@@ -775,7 +771,7 @@ public class DeploymentInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * How the deployment was created:
+     * The means by which the deployment was created:
      * </p>
      * <ul>
      * <li>user: A user created the deployment.</li>
@@ -783,7 +779,7 @@ public class DeploymentInfo implements Serializable, Cloneable {
      * </ul>
      * 
      * @param creator
-     *        How the deployment was created:</p>
+     *        The means by which the deployment was created:</p>
      *        <ul>
      *        <li>user: A user created the deployment.</li>
      *        <li>autoscaling: Auto Scaling created the deployment.</li>
@@ -798,7 +794,7 @@ public class DeploymentInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * How the deployment was created:
+     * The means by which the deployment was created:
      * </p>
      * <ul>
      * <li>user: A user created the deployment.</li>
@@ -806,7 +802,7 @@ public class DeploymentInfo implements Serializable, Cloneable {
      * </ul>
      * 
      * @param creator
-     *        How the deployment was created:</p>
+     *        The means by which the deployment was created:</p>
      *        <ul>
      *        <li>user: A user created the deployment.</li>
      *        <li>autoscaling: Auto Scaling created the deployment.</li>
@@ -823,28 +819,28 @@ public class DeploymentInfo implements Serializable, Cloneable {
     /**
      * <p>
      * If true, then if the deployment causes the ApplicationStop deployment
-     * lifecycle event to fail to a specific instance, the deployment will not
-     * be considered to have failed to that instance at that point and will
-     * continue on to the BeforeInstall deployment lifecycle event.
+     * lifecycle event to an instance to fail, the deployment to that instance
+     * will not be considered to have failed at that point and will continue on
+     * to the BeforeInstall deployment lifecycle event.
      * </p>
      * <p>
      * If false or not specified, then if the deployment causes the
-     * ApplicationStop deployment lifecycle event to fail to a specific
-     * instance, the deployment will stop to that instance, and the deployment
-     * to that instance will be considered to have failed.
+     * ApplicationStop deployment lifecycle event to an instance to fail, the
+     * deployment to that instance will stop, and the deployment to that
+     * instance will be considered to have failed.
      * </p>
      * 
      * @param ignoreApplicationStopFailures
      *        If true, then if the deployment causes the ApplicationStop
-     *        deployment lifecycle event to fail to a specific instance, the
-     *        deployment will not be considered to have failed to that instance
-     *        at that point and will continue on to the BeforeInstall deployment
+     *        deployment lifecycle event to an instance to fail, the deployment
+     *        to that instance will not be considered to have failed at that
+     *        point and will continue on to the BeforeInstall deployment
      *        lifecycle event.</p>
      *        <p>
      *        If false or not specified, then if the deployment causes the
-     *        ApplicationStop deployment lifecycle event to fail to a specific
-     *        instance, the deployment will stop to that instance, and the
-     *        deployment to that instance will be considered to have failed.
+     *        ApplicationStop deployment lifecycle event to an instance to fail,
+     *        the deployment to that instance will stop, and the deployment to
+     *        that instance will be considered to have failed.
      */
 
     public void setIgnoreApplicationStopFailures(
@@ -855,26 +851,26 @@ public class DeploymentInfo implements Serializable, Cloneable {
     /**
      * <p>
      * If true, then if the deployment causes the ApplicationStop deployment
-     * lifecycle event to fail to a specific instance, the deployment will not
-     * be considered to have failed to that instance at that point and will
-     * continue on to the BeforeInstall deployment lifecycle event.
+     * lifecycle event to an instance to fail, the deployment to that instance
+     * will not be considered to have failed at that point and will continue on
+     * to the BeforeInstall deployment lifecycle event.
      * </p>
      * <p>
      * If false or not specified, then if the deployment causes the
-     * ApplicationStop deployment lifecycle event to fail to a specific
-     * instance, the deployment will stop to that instance, and the deployment
-     * to that instance will be considered to have failed.
+     * ApplicationStop deployment lifecycle event to an instance to fail, the
+     * deployment to that instance will stop, and the deployment to that
+     * instance will be considered to have failed.
      * </p>
      * 
      * @return If true, then if the deployment causes the ApplicationStop
-     *         deployment lifecycle event to fail to a specific instance, the
-     *         deployment will not be considered to have failed to that instance
-     *         at that point and will continue on to the BeforeInstall
-     *         deployment lifecycle event.</p>
+     *         deployment lifecycle event to an instance to fail, the deployment
+     *         to that instance will not be considered to have failed at that
+     *         point and will continue on to the BeforeInstall deployment
+     *         lifecycle event.</p>
      *         <p>
      *         If false or not specified, then if the deployment causes the
-     *         ApplicationStop deployment lifecycle event to fail to a specific
-     *         instance, the deployment will stop to that instance, and the
+     *         ApplicationStop deployment lifecycle event to an instance to
+     *         fail, the deployment to that instance will stop, and the
      *         deployment to that instance will be considered to have failed.
      */
 
@@ -885,28 +881,28 @@ public class DeploymentInfo implements Serializable, Cloneable {
     /**
      * <p>
      * If true, then if the deployment causes the ApplicationStop deployment
-     * lifecycle event to fail to a specific instance, the deployment will not
-     * be considered to have failed to that instance at that point and will
-     * continue on to the BeforeInstall deployment lifecycle event.
+     * lifecycle event to an instance to fail, the deployment to that instance
+     * will not be considered to have failed at that point and will continue on
+     * to the BeforeInstall deployment lifecycle event.
      * </p>
      * <p>
      * If false or not specified, then if the deployment causes the
-     * ApplicationStop deployment lifecycle event to fail to a specific
-     * instance, the deployment will stop to that instance, and the deployment
-     * to that instance will be considered to have failed.
+     * ApplicationStop deployment lifecycle event to an instance to fail, the
+     * deployment to that instance will stop, and the deployment to that
+     * instance will be considered to have failed.
      * </p>
      * 
      * @param ignoreApplicationStopFailures
      *        If true, then if the deployment causes the ApplicationStop
-     *        deployment lifecycle event to fail to a specific instance, the
-     *        deployment will not be considered to have failed to that instance
-     *        at that point and will continue on to the BeforeInstall deployment
+     *        deployment lifecycle event to an instance to fail, the deployment
+     *        to that instance will not be considered to have failed at that
+     *        point and will continue on to the BeforeInstall deployment
      *        lifecycle event.</p>
      *        <p>
      *        If false or not specified, then if the deployment causes the
-     *        ApplicationStop deployment lifecycle event to fail to a specific
-     *        instance, the deployment will stop to that instance, and the
-     *        deployment to that instance will be considered to have failed.
+     *        ApplicationStop deployment lifecycle event to an instance to fail,
+     *        the deployment to that instance will stop, and the deployment to
+     *        that instance will be considered to have failed.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -920,26 +916,26 @@ public class DeploymentInfo implements Serializable, Cloneable {
     /**
      * <p>
      * If true, then if the deployment causes the ApplicationStop deployment
-     * lifecycle event to fail to a specific instance, the deployment will not
-     * be considered to have failed to that instance at that point and will
-     * continue on to the BeforeInstall deployment lifecycle event.
+     * lifecycle event to an instance to fail, the deployment to that instance
+     * will not be considered to have failed at that point and will continue on
+     * to the BeforeInstall deployment lifecycle event.
      * </p>
      * <p>
      * If false or not specified, then if the deployment causes the
-     * ApplicationStop deployment lifecycle event to fail to a specific
-     * instance, the deployment will stop to that instance, and the deployment
-     * to that instance will be considered to have failed.
+     * ApplicationStop deployment lifecycle event to an instance to fail, the
+     * deployment to that instance will stop, and the deployment to that
+     * instance will be considered to have failed.
      * </p>
      * 
      * @return If true, then if the deployment causes the ApplicationStop
-     *         deployment lifecycle event to fail to a specific instance, the
-     *         deployment will not be considered to have failed to that instance
-     *         at that point and will continue on to the BeforeInstall
-     *         deployment lifecycle event.</p>
+     *         deployment lifecycle event to an instance to fail, the deployment
+     *         to that instance will not be considered to have failed at that
+     *         point and will continue on to the BeforeInstall deployment
+     *         lifecycle event.</p>
      *         <p>
      *         If false or not specified, then if the deployment causes the
-     *         ApplicationStop deployment lifecycle event to fail to a specific
-     *         instance, the deployment will stop to that instance, and the
+     *         ApplicationStop deployment lifecycle event to an instance to
+     *         fail, the deployment to that instance will stop, and the
      *         deployment to that instance will be considered to have failed.
      */
 

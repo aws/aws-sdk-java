@@ -241,6 +241,21 @@ public class AbstractAmazonSimpleEmailServiceAsync extends
     }
 
     @Override
+    public java.util.concurrent.Future<GetIdentityMailFromDomainAttributesResult> getIdentityMailFromDomainAttributesAsync(
+            GetIdentityMailFromDomainAttributesRequest request) {
+
+        return getIdentityMailFromDomainAttributesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetIdentityMailFromDomainAttributesResult> getIdentityMailFromDomainAttributesAsync(
+            GetIdentityMailFromDomainAttributesRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetIdentityMailFromDomainAttributesRequest, GetIdentityMailFromDomainAttributesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetIdentityNotificationAttributesResult> getIdentityNotificationAttributesAsync(
             GetIdentityNotificationAttributesRequest request) {
 
@@ -605,6 +620,21 @@ public class AbstractAmazonSimpleEmailServiceAsync extends
     public java.util.concurrent.Future<SetIdentityFeedbackForwardingEnabledResult> setIdentityFeedbackForwardingEnabledAsync(
             SetIdentityFeedbackForwardingEnabledRequest request,
             com.amazonaws.handlers.AsyncHandler<SetIdentityFeedbackForwardingEnabledRequest, SetIdentityFeedbackForwardingEnabledResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetIdentityMailFromDomainResult> setIdentityMailFromDomainAsync(
+            SetIdentityMailFromDomainRequest request) {
+
+        return setIdentityMailFromDomainAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetIdentityMailFromDomainResult> setIdentityMailFromDomainAsync(
+            SetIdentityMailFromDomainRequest request,
+            com.amazonaws.handlers.AsyncHandler<SetIdentityMailFromDomainRequest, SetIdentityMailFromDomainResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

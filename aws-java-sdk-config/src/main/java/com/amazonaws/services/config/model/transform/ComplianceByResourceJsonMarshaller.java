@@ -30,6 +30,7 @@ import com.amazonaws.services.config.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,12 +56,10 @@ public class ComplianceByResourceJsonMarshaller {
                 jsonWriter.key("ResourceType").value(
                         complianceByResource.getResourceType());
             }
-
             if (complianceByResource.getResourceId() != null) {
                 jsonWriter.key("ResourceId").value(
                         complianceByResource.getResourceId());
             }
-
             if (complianceByResource.getCompliance() != null) {
                 jsonWriter.key("Compliance");
                 ComplianceJsonMarshaller.getInstance().marshall(

@@ -30,6 +30,7 @@ import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,7 +55,6 @@ public class CreateJobPlaylistJsonMarshaller {
             if (createJobPlaylist.getName() != null) {
                 jsonWriter.key("Name").value(createJobPlaylist.getName());
             }
-
             if (createJobPlaylist.getFormat() != null) {
                 jsonWriter.key("Format").value(createJobPlaylist.getFormat());
             }
@@ -71,14 +71,12 @@ public class CreateJobPlaylistJsonMarshaller {
                 }
                 jsonWriter.endArray();
             }
-
             if (createJobPlaylist.getHlsContentProtection() != null) {
                 jsonWriter.key("HlsContentProtection");
                 HlsContentProtectionJsonMarshaller.getInstance()
                         .marshall(createJobPlaylist.getHlsContentProtection(),
                                 jsonWriter);
             }
-
             if (createJobPlaylist.getPlayReadyDrm() != null) {
                 jsonWriter.key("PlayReadyDrm");
                 PlayReadyDrmJsonMarshaller.getInstance().marshall(

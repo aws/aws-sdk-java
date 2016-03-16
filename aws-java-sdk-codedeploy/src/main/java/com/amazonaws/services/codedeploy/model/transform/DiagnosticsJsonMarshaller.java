@@ -30,6 +30,7 @@ import com.amazonaws.services.codedeploy.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,15 +54,12 @@ public class DiagnosticsJsonMarshaller {
             if (diagnostics.getErrorCode() != null) {
                 jsonWriter.key("errorCode").value(diagnostics.getErrorCode());
             }
-
             if (diagnostics.getScriptName() != null) {
                 jsonWriter.key("scriptName").value(diagnostics.getScriptName());
             }
-
             if (diagnostics.getMessage() != null) {
                 jsonWriter.key("message").value(diagnostics.getMessage());
             }
-
             if (diagnostics.getLogTail() != null) {
                 jsonWriter.key("logTail").value(diagnostics.getLogTail());
             }

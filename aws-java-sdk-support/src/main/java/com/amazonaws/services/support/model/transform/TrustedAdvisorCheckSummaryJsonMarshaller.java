@@ -30,6 +30,7 @@ import com.amazonaws.services.support.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,22 +56,18 @@ public class TrustedAdvisorCheckSummaryJsonMarshaller {
                 jsonWriter.key("checkId").value(
                         trustedAdvisorCheckSummary.getCheckId());
             }
-
             if (trustedAdvisorCheckSummary.getTimestamp() != null) {
                 jsonWriter.key("timestamp").value(
                         trustedAdvisorCheckSummary.getTimestamp());
             }
-
             if (trustedAdvisorCheckSummary.getStatus() != null) {
                 jsonWriter.key("status").value(
                         trustedAdvisorCheckSummary.getStatus());
             }
-
             if (trustedAdvisorCheckSummary.getHasFlaggedResources() != null) {
                 jsonWriter.key("hasFlaggedResources").value(
                         trustedAdvisorCheckSummary.getHasFlaggedResources());
             }
-
             if (trustedAdvisorCheckSummary.getResourcesSummary() != null) {
                 jsonWriter.key("resourcesSummary");
                 TrustedAdvisorResourcesSummaryJsonMarshaller
@@ -80,7 +77,6 @@ public class TrustedAdvisorCheckSummaryJsonMarshaller {
                                         .getResourcesSummary(),
                                 jsonWriter);
             }
-
             if (trustedAdvisorCheckSummary.getCategorySpecificSummary() != null) {
                 jsonWriter.key("categorySpecificSummary");
                 TrustedAdvisorCategorySpecificSummaryJsonMarshaller

@@ -30,6 +30,7 @@ import com.amazonaws.services.storagegateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,22 +55,18 @@ public class VTLDeviceJsonMarshaller {
                 jsonWriter.key("VTLDeviceARN").value(
                         vTLDevice.getVTLDeviceARN());
             }
-
             if (vTLDevice.getVTLDeviceType() != null) {
                 jsonWriter.key("VTLDeviceType").value(
                         vTLDevice.getVTLDeviceType());
             }
-
             if (vTLDevice.getVTLDeviceVendor() != null) {
                 jsonWriter.key("VTLDeviceVendor").value(
                         vTLDevice.getVTLDeviceVendor());
             }
-
             if (vTLDevice.getVTLDeviceProductIdentifier() != null) {
                 jsonWriter.key("VTLDeviceProductIdentifier").value(
                         vTLDevice.getVTLDeviceProductIdentifier());
             }
-
             if (vTLDevice.getDeviceiSCSIAttributes() != null) {
                 jsonWriter.key("DeviceiSCSIAttributes");
                 DeviceiSCSIAttributesJsonMarshaller.getInstance().marshall(

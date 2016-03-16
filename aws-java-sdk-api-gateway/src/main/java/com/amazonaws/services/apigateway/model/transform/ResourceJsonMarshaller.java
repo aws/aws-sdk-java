@@ -30,6 +30,7 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,15 +54,12 @@ public class ResourceJsonMarshaller {
             if (resource.getId() != null) {
                 jsonWriter.key("id").value(resource.getId());
             }
-
             if (resource.getParentId() != null) {
                 jsonWriter.key("parentId").value(resource.getParentId());
             }
-
             if (resource.getPathPart() != null) {
                 jsonWriter.key("pathPart").value(resource.getPathPart());
             }
-
             if (resource.getPath() != null) {
                 jsonWriter.key("path").value(resource.getPath());
             }

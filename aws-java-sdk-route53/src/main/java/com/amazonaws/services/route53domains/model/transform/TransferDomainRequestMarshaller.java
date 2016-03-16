@@ -37,6 +37,7 @@ import com.amazonaws.services.route53domains.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -73,12 +74,10 @@ public class TransferDomainRequestMarshaller implements
                 jsonWriter.key("DomainName").value(
                         transferDomainRequest.getDomainName());
             }
-
             if (transferDomainRequest.getIdnLangCode() != null) {
                 jsonWriter.key("IdnLangCode").value(
                         transferDomainRequest.getIdnLangCode());
             }
-
             if (transferDomainRequest.getDurationInYears() != null) {
                 jsonWriter.key("DurationInYears").value(
                         transferDomainRequest.getDurationInYears());
@@ -99,47 +98,39 @@ public class TransferDomainRequestMarshaller implements
                 }
                 jsonWriter.endArray();
             }
-
             if (transferDomainRequest.getAuthCode() != null) {
                 jsonWriter.key("AuthCode").value(
                         transferDomainRequest.getAuthCode());
             }
-
             if (transferDomainRequest.getAutoRenew() != null) {
                 jsonWriter.key("AutoRenew").value(
                         transferDomainRequest.getAutoRenew());
             }
-
             if (transferDomainRequest.getAdminContact() != null) {
                 jsonWriter.key("AdminContact");
                 ContactDetailJsonMarshaller.getInstance().marshall(
                         transferDomainRequest.getAdminContact(), jsonWriter);
             }
-
             if (transferDomainRequest.getRegistrantContact() != null) {
                 jsonWriter.key("RegistrantContact");
                 ContactDetailJsonMarshaller.getInstance().marshall(
                         transferDomainRequest.getRegistrantContact(),
                         jsonWriter);
             }
-
             if (transferDomainRequest.getTechContact() != null) {
                 jsonWriter.key("TechContact");
                 ContactDetailJsonMarshaller.getInstance().marshall(
                         transferDomainRequest.getTechContact(), jsonWriter);
             }
-
             if (transferDomainRequest.getPrivacyProtectAdminContact() != null) {
                 jsonWriter.key("PrivacyProtectAdminContact").value(
                         transferDomainRequest.getPrivacyProtectAdminContact());
             }
-
             if (transferDomainRequest.getPrivacyProtectRegistrantContact() != null) {
                 jsonWriter.key("PrivacyProtectRegistrantContact").value(
                         transferDomainRequest
                                 .getPrivacyProtectRegistrantContact());
             }
-
             if (transferDomainRequest.getPrivacyProtectTechContact() != null) {
                 jsonWriter.key("PrivacyProtectTechContact").value(
                         transferDomainRequest.getPrivacyProtectTechContact());

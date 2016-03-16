@@ -30,6 +30,7 @@ import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,46 +55,36 @@ public class DeploymentJsonMarshaller {
                 jsonWriter.key("DeploymentId").value(
                         deployment.getDeploymentId());
             }
-
             if (deployment.getStackId() != null) {
                 jsonWriter.key("StackId").value(deployment.getStackId());
             }
-
             if (deployment.getAppId() != null) {
                 jsonWriter.key("AppId").value(deployment.getAppId());
             }
-
             if (deployment.getCreatedAt() != null) {
                 jsonWriter.key("CreatedAt").value(deployment.getCreatedAt());
             }
-
             if (deployment.getCompletedAt() != null) {
                 jsonWriter.key("CompletedAt")
                         .value(deployment.getCompletedAt());
             }
-
             if (deployment.getDuration() != null) {
                 jsonWriter.key("Duration").value(deployment.getDuration());
             }
-
             if (deployment.getIamUserArn() != null) {
                 jsonWriter.key("IamUserArn").value(deployment.getIamUserArn());
             }
-
             if (deployment.getComment() != null) {
                 jsonWriter.key("Comment").value(deployment.getComment());
             }
-
             if (deployment.getCommand() != null) {
                 jsonWriter.key("Command");
                 DeploymentCommandJsonMarshaller.getInstance().marshall(
                         deployment.getCommand(), jsonWriter);
             }
-
             if (deployment.getStatus() != null) {
                 jsonWriter.key("Status").value(deployment.getStatus());
             }
-
             if (deployment.getCustomJson() != null) {
                 jsonWriter.key("CustomJson").value(deployment.getCustomJson());
             }

@@ -37,6 +37,7 @@ import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -70,16 +71,13 @@ public class CreateAppRequestMarshaller implements
             if (createAppRequest.getStackId() != null) {
                 jsonWriter.key("StackId").value(createAppRequest.getStackId());
             }
-
             if (createAppRequest.getShortname() != null) {
                 jsonWriter.key("Shortname").value(
                         createAppRequest.getShortname());
             }
-
             if (createAppRequest.getName() != null) {
                 jsonWriter.key("Name").value(createAppRequest.getName());
             }
-
             if (createAppRequest.getDescription() != null) {
                 jsonWriter.key("Description").value(
                         createAppRequest.getDescription());
@@ -100,11 +98,9 @@ public class CreateAppRequestMarshaller implements
                 }
                 jsonWriter.endArray();
             }
-
             if (createAppRequest.getType() != null) {
                 jsonWriter.key("Type").value(createAppRequest.getType());
             }
-
             if (createAppRequest.getAppSource() != null) {
                 jsonWriter.key("AppSource");
                 SourceJsonMarshaller.getInstance().marshall(
@@ -123,12 +119,10 @@ public class CreateAppRequestMarshaller implements
                 }
                 jsonWriter.endArray();
             }
-
             if (createAppRequest.getEnableSsl() != null) {
                 jsonWriter.key("EnableSsl").value(
                         createAppRequest.getEnableSsl());
             }
-
             if (createAppRequest.getSslConfiguration() != null) {
                 jsonWriter.key("SslConfiguration");
                 SslConfigurationJsonMarshaller.getInstance().marshall(

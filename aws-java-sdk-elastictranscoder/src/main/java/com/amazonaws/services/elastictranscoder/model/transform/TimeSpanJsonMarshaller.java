@@ -30,6 +30,7 @@ import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,7 +54,6 @@ public class TimeSpanJsonMarshaller {
             if (timeSpan.getStartTime() != null) {
                 jsonWriter.key("StartTime").value(timeSpan.getStartTime());
             }
-
             if (timeSpan.getDuration() != null) {
                 jsonWriter.key("Duration").value(timeSpan.getDuration());
             }

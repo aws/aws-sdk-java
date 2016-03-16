@@ -131,6 +131,15 @@ abstract class AddShapes {
         final String variableType = getJavaDataType(allC2jShapes, c2jShapeName);
         final String variableDeclarationType = getJavaDataType(allC2jShapes, c2jShapeName, customConfig);
 
+        //If member is idempotent, then it should be of string type
+        //Else throw IllegalArgumentException.
+        if(c2jMemberDefinition.isIdempotencyToken() && !variableType.equals(String.class.getSimpleName())) {
+            throw new IllegalArgumentException(
+                    c2jMemberName + " is idempotent. It's shape should be string type but it is of "
+                            + variableType + " type.");
+        }
+
+
         final MemberModel memberModel = new MemberModel();
 
         memberModel.withC2jName(c2jMemberName)
@@ -144,6 +153,8 @@ abstract class AddShapes {
                                            .withDocumentation(generateGetterDocumentation()));
         memberModel.setDocumentation(c2jMemberDefinition.getDocumentation());
         memberModel.setDeprecated(c2jMemberDefinition.isDeprecated());
+
+        memberModel.setIdempotencyToken(c2jMemberDefinition.isIdempotencyToken());
 
         // Pass the xmlNameSpace from the member reference
         if (c2jMemberDefinition.getXmlNamespace() != null) {

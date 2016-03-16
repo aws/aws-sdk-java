@@ -30,6 +30,7 @@ import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,26 +56,21 @@ public class HlsContentProtectionJsonMarshaller {
                 jsonWriter.key("Method")
                         .value(hlsContentProtection.getMethod());
             }
-
             if (hlsContentProtection.getKey() != null) {
                 jsonWriter.key("Key").value(hlsContentProtection.getKey());
             }
-
             if (hlsContentProtection.getKeyMd5() != null) {
                 jsonWriter.key("KeyMd5")
                         .value(hlsContentProtection.getKeyMd5());
             }
-
             if (hlsContentProtection.getInitializationVector() != null) {
                 jsonWriter.key("InitializationVector").value(
                         hlsContentProtection.getInitializationVector());
             }
-
             if (hlsContentProtection.getLicenseAcquisitionUrl() != null) {
                 jsonWriter.key("LicenseAcquisitionUrl").value(
                         hlsContentProtection.getLicenseAcquisitionUrl());
             }
-
             if (hlsContentProtection.getKeyStoragePolicy() != null) {
                 jsonWriter.key("KeyStoragePolicy").value(
                         hlsContentProtection.getKeyStoragePolicy());

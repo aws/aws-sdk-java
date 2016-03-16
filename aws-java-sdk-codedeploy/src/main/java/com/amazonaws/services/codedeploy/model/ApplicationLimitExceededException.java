@@ -20,7 +20,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * More applications were attempted to be created than were allowed.
+ * More applications were attempted to be created than are allowed.
  * </p>
  */
 public class ApplicationLimitExceededException extends AmazonServiceException {

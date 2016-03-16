@@ -30,6 +30,7 @@ import com.amazonaws.services.codedeploy.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,16 +55,13 @@ public class InstanceSummaryJsonMarshaller {
                 jsonWriter.key("deploymentId").value(
                         instanceSummary.getDeploymentId());
             }
-
             if (instanceSummary.getInstanceId() != null) {
                 jsonWriter.key("instanceId").value(
                         instanceSummary.getInstanceId());
             }
-
             if (instanceSummary.getStatus() != null) {
                 jsonWriter.key("status").value(instanceSummary.getStatus());
             }
-
             if (instanceSummary.getLastUpdatedAt() != null) {
                 jsonWriter.key("lastUpdatedAt").value(
                         instanceSummary.getLastUpdatedAt());

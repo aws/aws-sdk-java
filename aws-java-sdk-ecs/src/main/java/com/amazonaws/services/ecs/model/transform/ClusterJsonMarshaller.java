@@ -30,6 +30,7 @@ import com.amazonaws.services.ecs.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,30 +54,24 @@ public class ClusterJsonMarshaller {
             if (cluster.getClusterArn() != null) {
                 jsonWriter.key("clusterArn").value(cluster.getClusterArn());
             }
-
             if (cluster.getClusterName() != null) {
                 jsonWriter.key("clusterName").value(cluster.getClusterName());
             }
-
             if (cluster.getStatus() != null) {
                 jsonWriter.key("status").value(cluster.getStatus());
             }
-
             if (cluster.getRegisteredContainerInstancesCount() != null) {
                 jsonWriter.key("registeredContainerInstancesCount").value(
                         cluster.getRegisteredContainerInstancesCount());
             }
-
             if (cluster.getRunningTasksCount() != null) {
                 jsonWriter.key("runningTasksCount").value(
                         cluster.getRunningTasksCount());
             }
-
             if (cluster.getPendingTasksCount() != null) {
                 jsonWriter.key("pendingTasksCount").value(
                         cluster.getPendingTasksCount());
             }
-
             if (cluster.getActiveServicesCount() != null) {
                 jsonWriter.key("activeServicesCount").value(
                         cluster.getActiveServicesCount());

@@ -37,6 +37,7 @@ import com.amazonaws.services.gamelift.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -71,22 +72,18 @@ public class CreateFleetRequestMarshaller implements
             if (createFleetRequest.getName() != null) {
                 jsonWriter.key("Name").value(createFleetRequest.getName());
             }
-
             if (createFleetRequest.getDescription() != null) {
                 jsonWriter.key("Description").value(
                         createFleetRequest.getDescription());
             }
-
             if (createFleetRequest.getBuildId() != null) {
                 jsonWriter.key("BuildId")
                         .value(createFleetRequest.getBuildId());
             }
-
             if (createFleetRequest.getServerLaunchPath() != null) {
                 jsonWriter.key("ServerLaunchPath").value(
                         createFleetRequest.getServerLaunchPath());
             }
-
             if (createFleetRequest.getServerLaunchParameters() != null) {
                 jsonWriter.key("ServerLaunchParameters").value(
                         createFleetRequest.getServerLaunchParameters());
@@ -104,7 +101,6 @@ public class CreateFleetRequestMarshaller implements
                 }
                 jsonWriter.endArray();
             }
-
             if (createFleetRequest.getEC2InstanceType() != null) {
                 jsonWriter.key("EC2InstanceType").value(
                         createFleetRequest.getEC2InstanceType());
@@ -124,7 +120,6 @@ public class CreateFleetRequestMarshaller implements
                 }
                 jsonWriter.endArray();
             }
-
             if (createFleetRequest.getNewGameSessionProtectionPolicy() != null) {
                 jsonWriter.key("NewGameSessionProtectionPolicy").value(
                         createFleetRequest.getNewGameSessionProtectionPolicy());

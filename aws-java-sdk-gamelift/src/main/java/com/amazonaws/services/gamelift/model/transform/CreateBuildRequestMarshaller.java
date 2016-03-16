@@ -37,6 +37,7 @@ import com.amazonaws.services.gamelift.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -71,12 +72,10 @@ public class CreateBuildRequestMarshaller implements
             if (createBuildRequest.getName() != null) {
                 jsonWriter.key("Name").value(createBuildRequest.getName());
             }
-
             if (createBuildRequest.getVersion() != null) {
                 jsonWriter.key("Version")
                         .value(createBuildRequest.getVersion());
             }
-
             if (createBuildRequest.getStorageLocation() != null) {
                 jsonWriter.key("StorageLocation");
                 S3LocationJsonMarshaller.getInstance().marshall(

@@ -30,6 +30,7 @@ import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,19 +54,15 @@ public class ElasticIpJsonMarshaller {
             if (elasticIp.getIp() != null) {
                 jsonWriter.key("Ip").value(elasticIp.getIp());
             }
-
             if (elasticIp.getName() != null) {
                 jsonWriter.key("Name").value(elasticIp.getName());
             }
-
             if (elasticIp.getDomain() != null) {
                 jsonWriter.key("Domain").value(elasticIp.getDomain());
             }
-
             if (elasticIp.getRegion() != null) {
                 jsonWriter.key("Region").value(elasticIp.getRegion());
             }
-
             if (elasticIp.getInstanceId() != null) {
                 jsonWriter.key("InstanceId").value(elasticIp.getInstanceId());
             }

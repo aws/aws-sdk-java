@@ -30,6 +30,7 @@ import com.amazonaws.services.waf.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,11 +54,9 @@ public class PredicateJsonMarshaller {
             if (predicate.getNegated() != null) {
                 jsonWriter.key("Negated").value(predicate.getNegated());
             }
-
             if (predicate.getType() != null) {
                 jsonWriter.key("Type").value(predicate.getType());
             }
-
             if (predicate.getDataId() != null) {
                 jsonWriter.key("DataId").value(predicate.getDataId());
             }

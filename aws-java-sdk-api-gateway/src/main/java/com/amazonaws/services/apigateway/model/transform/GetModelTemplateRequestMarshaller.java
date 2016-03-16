@@ -37,6 +37,7 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -65,14 +66,14 @@ public class GetModelTemplateRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
-                (getModelTemplateRequest.getRestApiId() == null) ? ""
-                        : StringUtils.fromString(getModelTemplateRequest
-                                .getRestApiId()));
+                (getModelTemplateRequest.getRestApiId() != null) ? StringUtils
+                        .fromString(getModelTemplateRequest.getRestApiId())
+                        : "");
         uriResourcePath = uriResourcePath.replace(
                 "{model_name}",
-                (getModelTemplateRequest.getModelName() == null) ? ""
-                        : StringUtils.fromString(getModelTemplateRequest
-                                .getModelName()));
+                (getModelTemplateRequest.getModelName() != null) ? StringUtils
+                        .fromString(getModelTemplateRequest.getModelName())
+                        : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

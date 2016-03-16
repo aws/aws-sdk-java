@@ -95,6 +95,9 @@
         {
           "location" : "/macros/marshaller/query/MemberMarshallerMacro.ftl",
           "importAsNamespace" : "MemberMarshallerMacro"
+        }, {
+          "location" : "/macros/marshaller/common/IdempotencyTokenMacro.ftl",
+          "importAsNamespace" : "IdempotencyTokenMacro"
         }
     ]
   },

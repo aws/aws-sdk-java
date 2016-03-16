@@ -30,6 +30,7 @@ import com.amazonaws.services.codedeploy.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,7 +54,6 @@ public class TimeRangeJsonMarshaller {
             if (timeRange.getStart() != null) {
                 jsonWriter.key("start").value(timeRange.getStart());
             }
-
             if (timeRange.getEnd() != null) {
                 jsonWriter.key("end").value(timeRange.getEnd());
             }

@@ -37,6 +37,7 @@ import com.amazonaws.services.codepipeline.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -71,7 +72,6 @@ public class GetPipelineRequestMarshaller implements
             if (getPipelineRequest.getName() != null) {
                 jsonWriter.key("name").value(getPipelineRequest.getName());
             }
-
             if (getPipelineRequest.getVersion() != null) {
                 jsonWriter.key("version")
                         .value(getPipelineRequest.getVersion());

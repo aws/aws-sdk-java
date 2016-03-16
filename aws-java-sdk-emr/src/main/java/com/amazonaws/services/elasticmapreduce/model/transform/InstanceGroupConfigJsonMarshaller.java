@@ -30,6 +30,7 @@ import com.amazonaws.services.elasticmapreduce.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,26 +55,21 @@ public class InstanceGroupConfigJsonMarshaller {
             if (instanceGroupConfig.getName() != null) {
                 jsonWriter.key("Name").value(instanceGroupConfig.getName());
             }
-
             if (instanceGroupConfig.getMarket() != null) {
                 jsonWriter.key("Market").value(instanceGroupConfig.getMarket());
             }
-
             if (instanceGroupConfig.getInstanceRole() != null) {
                 jsonWriter.key("InstanceRole").value(
                         instanceGroupConfig.getInstanceRole());
             }
-
             if (instanceGroupConfig.getBidPrice() != null) {
                 jsonWriter.key("BidPrice").value(
                         instanceGroupConfig.getBidPrice());
             }
-
             if (instanceGroupConfig.getInstanceType() != null) {
                 jsonWriter.key("InstanceType").value(
                         instanceGroupConfig.getInstanceType());
             }
-
             if (instanceGroupConfig.getInstanceCount() != null) {
                 jsonWriter.key("InstanceCount").value(
                         instanceGroupConfig.getInstanceCount());
@@ -94,7 +90,6 @@ public class InstanceGroupConfigJsonMarshaller {
                 }
                 jsonWriter.endArray();
             }
-
             if (instanceGroupConfig.getEbsConfiguration() != null) {
                 jsonWriter.key("EbsConfiguration");
                 EbsConfigurationJsonMarshaller.getInstance().marshall(

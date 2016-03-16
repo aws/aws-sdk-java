@@ -122,6 +122,9 @@
         }, {
           "location" : "/macros/marshaller/json/MapMemberMacro.ftl",
           "importAsNamespace" : "MapMemberMacro"
+        }, {
+          "location" : "/macros/marshaller/common/IdempotencyTokenMacro.ftl",
+          "importAsNamespace" : "IdempotencyTokenMacro"
         }
     ]
   },

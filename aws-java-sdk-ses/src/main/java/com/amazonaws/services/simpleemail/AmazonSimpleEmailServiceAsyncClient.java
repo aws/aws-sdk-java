@@ -759,6 +759,42 @@ public class AmazonSimpleEmailServiceAsyncClient extends
     }
 
     @Override
+    public java.util.concurrent.Future<GetIdentityMailFromDomainAttributesResult> getIdentityMailFromDomainAttributesAsync(
+            GetIdentityMailFromDomainAttributesRequest request) {
+
+        return getIdentityMailFromDomainAttributesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetIdentityMailFromDomainAttributesResult> getIdentityMailFromDomainAttributesAsync(
+            final GetIdentityMailFromDomainAttributesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetIdentityMailFromDomainAttributesRequest, GetIdentityMailFromDomainAttributesResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<GetIdentityMailFromDomainAttributesResult>() {
+                    @Override
+                    public GetIdentityMailFromDomainAttributesResult call()
+                            throws Exception {
+                        GetIdentityMailFromDomainAttributesResult result;
+
+                        try {
+                            result = getIdentityMailFromDomainAttributes(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetIdentityNotificationAttributesResult> getIdentityNotificationAttributesAsync(
             GetIdentityNotificationAttributesRequest request) {
 
@@ -1477,6 +1513,42 @@ public class AmazonSimpleEmailServiceAsyncClient extends
 
                         try {
                             result = setIdentityFeedbackForwardingEnabled(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetIdentityMailFromDomainResult> setIdentityMailFromDomainAsync(
+            SetIdentityMailFromDomainRequest request) {
+
+        return setIdentityMailFromDomainAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetIdentityMailFromDomainResult> setIdentityMailFromDomainAsync(
+            final SetIdentityMailFromDomainRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SetIdentityMailFromDomainRequest, SetIdentityMailFromDomainResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<SetIdentityMailFromDomainResult>() {
+                    @Override
+                    public SetIdentityMailFromDomainResult call()
+                            throws Exception {
+                        SetIdentityMailFromDomainResult result;
+
+                        try {
+                            result = setIdentityMailFromDomain(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

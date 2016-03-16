@@ -37,6 +37,7 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -65,19 +66,20 @@ public class PutIntegrationRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
-                (putIntegrationRequest.getRestApiId() == null) ? ""
-                        : StringUtils.fromString(putIntegrationRequest
-                                .getRestApiId()));
-        uriResourcePath = uriResourcePath.replace(
-                "{resource_id}",
-                (putIntegrationRequest.getResourceId() == null) ? ""
-                        : StringUtils.fromString(putIntegrationRequest
-                                .getResourceId()));
-        uriResourcePath = uriResourcePath.replace(
-                "{http_method}",
-                (putIntegrationRequest.getHttpMethod() == null) ? ""
-                        : StringUtils.fromString(putIntegrationRequest
-                                .getHttpMethod()));
+                (putIntegrationRequest.getRestApiId() != null) ? StringUtils
+                        .fromString(putIntegrationRequest.getRestApiId()) : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{resource_id}",
+                        (putIntegrationRequest.getResourceId() != null) ? StringUtils
+                                .fromString(putIntegrationRequest
+                                        .getResourceId()) : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{http_method}",
+                        (putIntegrationRequest.getHttpMethod() != null) ? StringUtils
+                                .fromString(putIntegrationRequest
+                                        .getHttpMethod()) : "");
         request.setResourcePath(uriResourcePath);
 
         try {
@@ -89,16 +91,13 @@ public class PutIntegrationRequestMarshaller implements
             if (putIntegrationRequest.getType() != null) {
                 jsonWriter.key("type").value(putIntegrationRequest.getType());
             }
-
             if (putIntegrationRequest.getIntegrationHttpMethod() != null) {
                 jsonWriter.key("httpMethod").value(
                         putIntegrationRequest.getIntegrationHttpMethod());
             }
-
             if (putIntegrationRequest.getUri() != null) {
                 jsonWriter.key("uri").value(putIntegrationRequest.getUri());
             }
-
             if (putIntegrationRequest.getCredentials() != null) {
                 jsonWriter.key("credentials").value(
                         putIntegrationRequest.getCredentials());
@@ -137,7 +136,6 @@ public class PutIntegrationRequestMarshaller implements
                 }
                 jsonWriter.endObject();
             }
-
             if (putIntegrationRequest.getCacheNamespace() != null) {
                 jsonWriter.key("cacheNamespace").value(
                         putIntegrationRequest.getCacheNamespace());

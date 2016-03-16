@@ -37,6 +37,7 @@ import com.amazonaws.services.cloudhsm.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -71,7 +72,6 @@ public class ModifyHapgRequestMarshaller implements
             if (modifyHapgRequest.getHapgArn() != null) {
                 jsonWriter.key("HapgArn").value(modifyHapgRequest.getHapgArn());
             }
-
             if (modifyHapgRequest.getLabel() != null) {
                 jsonWriter.key("Label").value(modifyHapgRequest.getLabel());
             }

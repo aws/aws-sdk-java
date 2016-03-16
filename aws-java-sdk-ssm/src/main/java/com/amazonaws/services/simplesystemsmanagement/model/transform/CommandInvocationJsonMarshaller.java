@@ -30,6 +30,7 @@ import com.amazonaws.services.simplesystemsmanagement.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,30 +56,24 @@ public class CommandInvocationJsonMarshaller {
                 jsonWriter.key("CommandId").value(
                         commandInvocation.getCommandId());
             }
-
             if (commandInvocation.getInstanceId() != null) {
                 jsonWriter.key("InstanceId").value(
                         commandInvocation.getInstanceId());
             }
-
             if (commandInvocation.getComment() != null) {
                 jsonWriter.key("Comment").value(commandInvocation.getComment());
             }
-
             if (commandInvocation.getDocumentName() != null) {
                 jsonWriter.key("DocumentName").value(
                         commandInvocation.getDocumentName());
             }
-
             if (commandInvocation.getRequestedDateTime() != null) {
                 jsonWriter.key("RequestedDateTime").value(
                         commandInvocation.getRequestedDateTime());
             }
-
             if (commandInvocation.getStatus() != null) {
                 jsonWriter.key("Status").value(commandInvocation.getStatus());
             }
-
             if (commandInvocation.getTraceOutput() != null) {
                 jsonWriter.key("TraceOutput").value(
                         commandInvocation.getTraceOutput());

@@ -37,6 +37,7 @@ import com.amazonaws.services.inspector.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -72,7 +73,6 @@ public class RunAssessmentRequestMarshaller implements
                 jsonWriter.key("assessmentArn").value(
                         runAssessmentRequest.getAssessmentArn());
             }
-
             if (runAssessmentRequest.getRunName() != null) {
                 jsonWriter.key("runName").value(
                         runAssessmentRequest.getRunName());

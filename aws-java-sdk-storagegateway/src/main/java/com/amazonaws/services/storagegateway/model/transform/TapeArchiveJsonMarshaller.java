@@ -30,6 +30,7 @@ import com.amazonaws.services.storagegateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,27 +54,22 @@ public class TapeArchiveJsonMarshaller {
             if (tapeArchive.getTapeARN() != null) {
                 jsonWriter.key("TapeARN").value(tapeArchive.getTapeARN());
             }
-
             if (tapeArchive.getTapeBarcode() != null) {
                 jsonWriter.key("TapeBarcode").value(
                         tapeArchive.getTapeBarcode());
             }
-
             if (tapeArchive.getTapeSizeInBytes() != null) {
                 jsonWriter.key("TapeSizeInBytes").value(
                         tapeArchive.getTapeSizeInBytes());
             }
-
             if (tapeArchive.getCompletionTime() != null) {
                 jsonWriter.key("CompletionTime").value(
                         tapeArchive.getCompletionTime());
             }
-
             if (tapeArchive.getRetrievedTo() != null) {
                 jsonWriter.key("RetrievedTo").value(
                         tapeArchive.getRetrievedTo());
             }
-
             if (tapeArchive.getTapeStatus() != null) {
                 jsonWriter.key("TapeStatus").value(tapeArchive.getTapeStatus());
             }

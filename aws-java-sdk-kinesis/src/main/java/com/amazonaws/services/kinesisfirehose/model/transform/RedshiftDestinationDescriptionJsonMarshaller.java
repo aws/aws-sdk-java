@@ -30,6 +30,7 @@ import com.amazonaws.services.kinesisfirehose.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -56,24 +57,20 @@ public class RedshiftDestinationDescriptionJsonMarshaller {
                 jsonWriter.key("RoleARN").value(
                         redshiftDestinationDescription.getRoleARN());
             }
-
             if (redshiftDestinationDescription.getClusterJDBCURL() != null) {
                 jsonWriter.key("ClusterJDBCURL").value(
                         redshiftDestinationDescription.getClusterJDBCURL());
             }
-
             if (redshiftDestinationDescription.getCopyCommand() != null) {
                 jsonWriter.key("CopyCommand");
                 CopyCommandJsonMarshaller.getInstance().marshall(
                         redshiftDestinationDescription.getCopyCommand(),
                         jsonWriter);
             }
-
             if (redshiftDestinationDescription.getUsername() != null) {
                 jsonWriter.key("Username").value(
                         redshiftDestinationDescription.getUsername());
             }
-
             if (redshiftDestinationDescription.getS3DestinationDescription() != null) {
                 jsonWriter.key("S3DestinationDescription");
                 S3DestinationDescriptionJsonMarshaller

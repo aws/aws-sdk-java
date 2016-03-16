@@ -479,6 +479,24 @@ public interface AmazonSimpleEmailService {
 
     /**
      * <p>
+     * Returns the custom MAIL FROM attributes for a list of identities (email
+     * addresses and/or domains).
+     * </p>
+     * <p>
+     * This action is throttled at one request per second and can only get
+     * custom MAIL FROM attributes for up to 100 identities at a time.
+     * </p>
+     * 
+     * @param getIdentityMailFromDomainAttributesRequest
+     * @return Result of the GetIdentityMailFromDomainAttributes operation
+     *         returned by the service.
+     * @sample AmazonSimpleEmailService.GetIdentityMailFromDomainAttributes
+     */
+    GetIdentityMailFromDomainAttributesResult getIdentityMailFromDomainAttributes(
+            GetIdentityMailFromDomainAttributesRequest getIdentityMailFromDomainAttributesRequest);
+
+    /**
+     * <p>
      * Given a list of verified identities (email addresses and/or domains),
      * returns a structure describing identity notification attributes.
      * </p>
@@ -842,6 +860,13 @@ public interface AmazonSimpleEmailService {
      *         Indicates that the action failed, and the message could not be
      *         sent. Check the error stack for more information about what
      *         caused the error.
+     * @throws MailFromDomainNotVerifiedException
+     *         Indicates that the message could not be sent because Amazon SES
+     *         could not read the MX record required to use the specified MAIL
+     *         FROM domain. For information about editing the custom MAIL FROM
+     *         domain settings for an identity, see the <a href=
+     *         "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-edit.html"
+     *         >Amazon SES Developer Guide</a>.
      * @sample AmazonSimpleEmailService.SendEmail
      */
     SendEmailResult sendEmail(SendEmailRequest sendEmailRequest);
@@ -913,6 +938,13 @@ public interface AmazonSimpleEmailService {
      *         Indicates that the action failed, and the message could not be
      *         sent. Check the error stack for more information about what
      *         caused the error.
+     * @throws MailFromDomainNotVerifiedException
+     *         Indicates that the message could not be sent because Amazon SES
+     *         could not read the MX record required to use the specified MAIL
+     *         FROM domain. For information about editing the custom MAIL FROM
+     *         domain settings for an identity, see the <a href=
+     *         "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-edit.html"
+     *         >Amazon SES Developer Guide</a>.
      * @sample AmazonSimpleEmailService.SendRawEmail
      */
     SendRawEmailResult sendRawEmail(SendRawEmailRequest sendRawEmailRequest);
@@ -1003,6 +1035,29 @@ public interface AmazonSimpleEmailService {
      */
     SetIdentityFeedbackForwardingEnabledResult setIdentityFeedbackForwardingEnabled(
             SetIdentityFeedbackForwardingEnabledRequest setIdentityFeedbackForwardingEnabledRequest);
+
+    /**
+     * <p>
+     * Enables or disables the custom MAIL FROM domain setup for a verified
+     * identity (email address or domain).
+     * </p>
+     * <important>To send emails using the specified MAIL FROM domain, you must
+     * add an MX record to your MAIL FROM domain's DNS settings. If you want
+     * your emails to pass Sender Policy Framework (SPF) checks, you must also
+     * add or update an SPF record. For more information, see the <a href=
+     * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-set.html"
+     * >Amazon SES Developer Guide</a>.</important>
+     * <p>
+     * This action is throttled at one request per second.
+     * </p>
+     * 
+     * @param setIdentityMailFromDomainRequest
+     * @return Result of the SetIdentityMailFromDomain operation returned by the
+     *         service.
+     * @sample AmazonSimpleEmailService.SetIdentityMailFromDomain
+     */
+    SetIdentityMailFromDomainResult setIdentityMailFromDomain(
+            SetIdentityMailFromDomainRequest setIdentityMailFromDomainRequest);
 
     /**
      * <p>

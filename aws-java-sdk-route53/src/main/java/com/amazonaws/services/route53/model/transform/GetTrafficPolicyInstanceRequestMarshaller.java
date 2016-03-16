@@ -32,6 +32,7 @@ import com.amazonaws.services.route53.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.XMLWriter;
 
 /**
@@ -59,10 +60,9 @@ public class GetTrafficPolicyInstanceRequestMarshaller
 
         uriResourcePath = uriResourcePath.replace(
                 "{Id}",
-                (getTrafficPolicyInstanceRequest.getId() == null) ? ""
-                        : StringUtils
-                                .fromString(getTrafficPolicyInstanceRequest
-                                        .getId()));
+                (getTrafficPolicyInstanceRequest.getId() != null) ? StringUtils
+                        .fromString(getTrafficPolicyInstanceRequest.getId())
+                        : "");
         request.setResourcePath(uriResourcePath);
 
         return request;

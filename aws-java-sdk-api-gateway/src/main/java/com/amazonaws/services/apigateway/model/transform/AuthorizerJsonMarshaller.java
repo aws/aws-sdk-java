@@ -30,6 +30,7 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,35 +54,28 @@ public class AuthorizerJsonMarshaller {
             if (authorizer.getId() != null) {
                 jsonWriter.key("id").value(authorizer.getId());
             }
-
             if (authorizer.getName() != null) {
                 jsonWriter.key("name").value(authorizer.getName());
             }
-
             if (authorizer.getType() != null) {
                 jsonWriter.key("type").value(authorizer.getType());
             }
-
             if (authorizer.getAuthorizerUri() != null) {
                 jsonWriter.key("authorizerUri").value(
                         authorizer.getAuthorizerUri());
             }
-
             if (authorizer.getAuthorizerCredentials() != null) {
                 jsonWriter.key("authorizerCredentials").value(
                         authorizer.getAuthorizerCredentials());
             }
-
             if (authorizer.getIdentitySource() != null) {
                 jsonWriter.key("identitySource").value(
                         authorizer.getIdentitySource());
             }
-
             if (authorizer.getIdentityValidationExpression() != null) {
                 jsonWriter.key("identityValidationExpression").value(
                         authorizer.getIdentityValidationExpression());
             }
-
             if (authorizer.getAuthorizerResultTtlInSeconds() != null) {
                 jsonWriter.key("authorizerResultTtlInSeconds").value(
                         authorizer.getAuthorizerResultTtlInSeconds());

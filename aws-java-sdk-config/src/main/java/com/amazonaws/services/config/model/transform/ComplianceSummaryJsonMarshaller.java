@@ -30,6 +30,7 @@ import com.amazonaws.services.config.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -58,7 +59,6 @@ public class ComplianceSummaryJsonMarshaller {
                                 complianceSummary.getCompliantResourceCount(),
                                 jsonWriter);
             }
-
             if (complianceSummary.getNonCompliantResourceCount() != null) {
                 jsonWriter.key("NonCompliantResourceCount");
                 ComplianceContributorCountJsonMarshaller
@@ -68,7 +68,6 @@ public class ComplianceSummaryJsonMarshaller {
                                         .getNonCompliantResourceCount(),
                                 jsonWriter);
             }
-
             if (complianceSummary.getComplianceSummaryTimestamp() != null) {
                 jsonWriter.key("ComplianceSummaryTimestamp").value(
                         complianceSummary.getComplianceSummaryTimestamp());

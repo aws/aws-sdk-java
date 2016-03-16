@@ -37,6 +37,7 @@ import com.amazonaws.services.codepipeline.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -74,12 +75,10 @@ public class DeleteCustomActionTypeRequestMarshaller
                 jsonWriter.key("category").value(
                         deleteCustomActionTypeRequest.getCategory());
             }
-
             if (deleteCustomActionTypeRequest.getProvider() != null) {
                 jsonWriter.key("provider").value(
                         deleteCustomActionTypeRequest.getProvider());
             }
-
             if (deleteCustomActionTypeRequest.getVersion() != null) {
                 jsonWriter.key("version").value(
                         deleteCustomActionTypeRequest.getVersion());

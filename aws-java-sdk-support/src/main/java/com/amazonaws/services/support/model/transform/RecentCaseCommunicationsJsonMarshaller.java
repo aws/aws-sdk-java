@@ -30,6 +30,7 @@ import com.amazonaws.services.support.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -66,7 +67,6 @@ public class RecentCaseCommunicationsJsonMarshaller {
                 }
                 jsonWriter.endArray();
             }
-
             if (recentCaseCommunications.getNextToken() != null) {
                 jsonWriter.key("nextToken").value(
                         recentCaseCommunications.getNextToken());

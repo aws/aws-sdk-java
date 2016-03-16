@@ -30,6 +30,7 @@ import com.amazonaws.services.elasticsearch.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,36 +56,29 @@ public class ElasticsearchDomainStatusJsonMarshaller {
                 jsonWriter.key("DomainId").value(
                         elasticsearchDomainStatus.getDomainId());
             }
-
             if (elasticsearchDomainStatus.getDomainName() != null) {
                 jsonWriter.key("DomainName").value(
                         elasticsearchDomainStatus.getDomainName());
             }
-
             if (elasticsearchDomainStatus.getARN() != null) {
                 jsonWriter.key("ARN").value(elasticsearchDomainStatus.getARN());
             }
-
             if (elasticsearchDomainStatus.getCreated() != null) {
                 jsonWriter.key("Created").value(
                         elasticsearchDomainStatus.getCreated());
             }
-
             if (elasticsearchDomainStatus.getDeleted() != null) {
                 jsonWriter.key("Deleted").value(
                         elasticsearchDomainStatus.getDeleted());
             }
-
             if (elasticsearchDomainStatus.getEndpoint() != null) {
                 jsonWriter.key("Endpoint").value(
                         elasticsearchDomainStatus.getEndpoint());
             }
-
             if (elasticsearchDomainStatus.getProcessing() != null) {
                 jsonWriter.key("Processing").value(
                         elasticsearchDomainStatus.getProcessing());
             }
-
             if (elasticsearchDomainStatus.getElasticsearchClusterConfig() != null) {
                 jsonWriter.key("ElasticsearchClusterConfig");
                 ElasticsearchClusterConfigJsonMarshaller
@@ -94,18 +88,15 @@ public class ElasticsearchDomainStatusJsonMarshaller {
                                         .getElasticsearchClusterConfig(),
                                 jsonWriter);
             }
-
             if (elasticsearchDomainStatus.getEBSOptions() != null) {
                 jsonWriter.key("EBSOptions");
                 EBSOptionsJsonMarshaller.getInstance().marshall(
                         elasticsearchDomainStatus.getEBSOptions(), jsonWriter);
             }
-
             if (elasticsearchDomainStatus.getAccessPolicies() != null) {
                 jsonWriter.key("AccessPolicies").value(
                         elasticsearchDomainStatus.getAccessPolicies());
             }
-
             if (elasticsearchDomainStatus.getSnapshotOptions() != null) {
                 jsonWriter.key("SnapshotOptions");
                 SnapshotOptionsJsonMarshaller.getInstance().marshall(

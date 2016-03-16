@@ -27,42 +27,43 @@ public class DeploymentOverview implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of instances that are pending in the deployment.
+     * The number of instances in the deployment in a pending state.
      * </p>
      */
     private Long pending;
     /**
      * <p>
-     * The number of instances that are in progress in the deployment.
+     * The number of instances in which the deployment is in progress.
      * </p>
      */
     private Long inProgress;
     /**
      * <p>
-     * The number of instances that have succeeded in the deployment.
+     * The number of instances in the deployment to which revisions have been
+     * successfully deployed.
      * </p>
      */
     private Long succeeded;
     /**
      * <p>
-     * The number of instances that have failed in the deployment.
+     * The number of instances in the deployment in a failed state.
      * </p>
      */
     private Long failed;
     /**
      * <p>
-     * The number of instances that have been skipped in the deployment.
+     * The number of instances in the deployment in a skipped state.
      * </p>
      */
     private Long skipped;
 
     /**
      * <p>
-     * The number of instances that are pending in the deployment.
+     * The number of instances in the deployment in a pending state.
      * </p>
      * 
      * @param pending
-     *        The number of instances that are pending in the deployment.
+     *        The number of instances in the deployment in a pending state.
      */
 
     public void setPending(Long pending) {
@@ -71,10 +72,10 @@ public class DeploymentOverview implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of instances that are pending in the deployment.
+     * The number of instances in the deployment in a pending state.
      * </p>
      * 
-     * @return The number of instances that are pending in the deployment.
+     * @return The number of instances in the deployment in a pending state.
      */
 
     public Long getPending() {
@@ -83,11 +84,11 @@ public class DeploymentOverview implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of instances that are pending in the deployment.
+     * The number of instances in the deployment in a pending state.
      * </p>
      * 
      * @param pending
-     *        The number of instances that are pending in the deployment.
+     *        The number of instances in the deployment in a pending state.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -99,11 +100,11 @@ public class DeploymentOverview implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of instances that are in progress in the deployment.
+     * The number of instances in which the deployment is in progress.
      * </p>
      * 
      * @param inProgress
-     *        The number of instances that are in progress in the deployment.
+     *        The number of instances in which the deployment is in progress.
      */
 
     public void setInProgress(Long inProgress) {
@@ -112,10 +113,10 @@ public class DeploymentOverview implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of instances that are in progress in the deployment.
+     * The number of instances in which the deployment is in progress.
      * </p>
      * 
-     * @return The number of instances that are in progress in the deployment.
+     * @return The number of instances in which the deployment is in progress.
      */
 
     public Long getInProgress() {
@@ -124,11 +125,11 @@ public class DeploymentOverview implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of instances that are in progress in the deployment.
+     * The number of instances in which the deployment is in progress.
      * </p>
      * 
      * @param inProgress
-     *        The number of instances that are in progress in the deployment.
+     *        The number of instances in which the deployment is in progress.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -140,11 +141,13 @@ public class DeploymentOverview implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of instances that have succeeded in the deployment.
+     * The number of instances in the deployment to which revisions have been
+     * successfully deployed.
      * </p>
      * 
      * @param succeeded
-     *        The number of instances that have succeeded in the deployment.
+     *        The number of instances in the deployment to which revisions have
+     *        been successfully deployed.
      */
 
     public void setSucceeded(Long succeeded) {
@@ -153,10 +156,12 @@ public class DeploymentOverview implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of instances that have succeeded in the deployment.
+     * The number of instances in the deployment to which revisions have been
+     * successfully deployed.
      * </p>
      * 
-     * @return The number of instances that have succeeded in the deployment.
+     * @return The number of instances in the deployment to which revisions have
+     *         been successfully deployed.
      */
 
     public Long getSucceeded() {
@@ -165,11 +170,13 @@ public class DeploymentOverview implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of instances that have succeeded in the deployment.
+     * The number of instances in the deployment to which revisions have been
+     * successfully deployed.
      * </p>
      * 
      * @param succeeded
-     *        The number of instances that have succeeded in the deployment.
+     *        The number of instances in the deployment to which revisions have
+     *        been successfully deployed.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -181,11 +188,11 @@ public class DeploymentOverview implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of instances that have failed in the deployment.
+     * The number of instances in the deployment in a failed state.
      * </p>
      * 
      * @param failed
-     *        The number of instances that have failed in the deployment.
+     *        The number of instances in the deployment in a failed state.
      */
 
     public void setFailed(Long failed) {
@@ -194,10 +201,10 @@ public class DeploymentOverview implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of instances that have failed in the deployment.
+     * The number of instances in the deployment in a failed state.
      * </p>
      * 
-     * @return The number of instances that have failed in the deployment.
+     * @return The number of instances in the deployment in a failed state.
      */
 
     public Long getFailed() {
@@ -206,11 +213,11 @@ public class DeploymentOverview implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of instances that have failed in the deployment.
+     * The number of instances in the deployment in a failed state.
      * </p>
      * 
      * @param failed
-     *        The number of instances that have failed in the deployment.
+     *        The number of instances in the deployment in a failed state.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -222,11 +229,11 @@ public class DeploymentOverview implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of instances that have been skipped in the deployment.
+     * The number of instances in the deployment in a skipped state.
      * </p>
      * 
      * @param skipped
-     *        The number of instances that have been skipped in the deployment.
+     *        The number of instances in the deployment in a skipped state.
      */
 
     public void setSkipped(Long skipped) {
@@ -235,10 +242,10 @@ public class DeploymentOverview implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of instances that have been skipped in the deployment.
+     * The number of instances in the deployment in a skipped state.
      * </p>
      * 
-     * @return The number of instances that have been skipped in the deployment.
+     * @return The number of instances in the deployment in a skipped state.
      */
 
     public Long getSkipped() {
@@ -247,11 +254,11 @@ public class DeploymentOverview implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of instances that have been skipped in the deployment.
+     * The number of instances in the deployment in a skipped state.
      * </p>
      * 
      * @param skipped
-     *        The number of instances that have been skipped in the deployment.
+     *        The number of instances in the deployment in a skipped state.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

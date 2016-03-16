@@ -37,6 +37,7 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -65,8 +66,8 @@ public class CreateStageRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
-                (createStageRequest.getRestApiId() == null) ? "" : StringUtils
-                        .fromString(createStageRequest.getRestApiId()));
+                (createStageRequest.getRestApiId() != null) ? StringUtils
+                        .fromString(createStageRequest.getRestApiId()) : "");
         request.setResourcePath(uriResourcePath);
 
         try {
@@ -79,22 +80,18 @@ public class CreateStageRequestMarshaller implements
                 jsonWriter.key("stageName").value(
                         createStageRequest.getStageName());
             }
-
             if (createStageRequest.getDeploymentId() != null) {
                 jsonWriter.key("deploymentId").value(
                         createStageRequest.getDeploymentId());
             }
-
             if (createStageRequest.getDescription() != null) {
                 jsonWriter.key("description").value(
                         createStageRequest.getDescription());
             }
-
             if (createStageRequest.getCacheClusterEnabled() != null) {
                 jsonWriter.key("cacheClusterEnabled").value(
                         createStageRequest.getCacheClusterEnabled());
             }
-
             if (createStageRequest.getCacheClusterSize() != null) {
                 jsonWriter.key("cacheClusterSize").value(
                         createStageRequest.getCacheClusterSize());

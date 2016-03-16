@@ -30,6 +30,7 @@ import com.amazonaws.services.devicefarm.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,11 +54,9 @@ public class DeviceMinutesJsonMarshaller {
             if (deviceMinutes.getTotal() != null) {
                 jsonWriter.key("total").value(deviceMinutes.getTotal());
             }
-
             if (deviceMinutes.getMetered() != null) {
                 jsonWriter.key("metered").value(deviceMinutes.getMetered());
             }
-
             if (deviceMinutes.getUnmetered() != null) {
                 jsonWriter.key("unmetered").value(deviceMinutes.getUnmetered());
             }

@@ -30,6 +30,7 @@ import com.amazonaws.services.support.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,7 +54,6 @@ public class CategoryJsonMarshaller {
             if (category.getCode() != null) {
                 jsonWriter.key("code").value(category.getCode());
             }
-
             if (category.getName() != null) {
                 jsonWriter.key("name").value(category.getName());
             }

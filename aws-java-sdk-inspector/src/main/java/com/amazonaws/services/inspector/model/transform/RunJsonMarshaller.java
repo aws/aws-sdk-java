@@ -30,6 +30,7 @@ import com.amazonaws.services.inspector.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,15 +54,12 @@ public class RunJsonMarshaller {
             if (run.getRunArn() != null) {
                 jsonWriter.key("runArn").value(run.getRunArn());
             }
-
             if (run.getRunName() != null) {
                 jsonWriter.key("runName").value(run.getRunName());
             }
-
             if (run.getAssessmentArn() != null) {
                 jsonWriter.key("assessmentArn").value(run.getAssessmentArn());
             }
-
             if (run.getRunState() != null) {
                 jsonWriter.key("runState").value(run.getRunState());
             }
@@ -77,11 +75,9 @@ public class RunJsonMarshaller {
                 }
                 jsonWriter.endArray();
             }
-
             if (run.getCreationTime() != null) {
                 jsonWriter.key("creationTime").value(run.getCreationTime());
             }
-
             if (run.getCompletionTime() != null) {
                 jsonWriter.key("completionTime").value(run.getCompletionTime());
             }

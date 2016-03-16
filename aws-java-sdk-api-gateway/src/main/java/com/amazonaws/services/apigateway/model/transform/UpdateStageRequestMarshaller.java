@@ -37,6 +37,7 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -65,12 +66,12 @@ public class UpdateStageRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
-                (updateStageRequest.getRestApiId() == null) ? "" : StringUtils
-                        .fromString(updateStageRequest.getRestApiId()));
+                (updateStageRequest.getRestApiId() != null) ? StringUtils
+                        .fromString(updateStageRequest.getRestApiId()) : "");
         uriResourcePath = uriResourcePath.replace(
                 "{stage_name}",
-                (updateStageRequest.getStageName() == null) ? "" : StringUtils
-                        .fromString(updateStageRequest.getStageName()));
+                (updateStageRequest.getStageName() != null) ? StringUtils
+                        .fromString(updateStageRequest.getStageName()) : "");
         request.setResourcePath(uriResourcePath);
 
         try {

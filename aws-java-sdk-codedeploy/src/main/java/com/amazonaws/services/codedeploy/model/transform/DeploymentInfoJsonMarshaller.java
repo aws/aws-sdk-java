@@ -30,6 +30,7 @@ import com.amazonaws.services.codedeploy.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,68 +55,55 @@ public class DeploymentInfoJsonMarshaller {
                 jsonWriter.key("applicationName").value(
                         deploymentInfo.getApplicationName());
             }
-
             if (deploymentInfo.getDeploymentGroupName() != null) {
                 jsonWriter.key("deploymentGroupName").value(
                         deploymentInfo.getDeploymentGroupName());
             }
-
             if (deploymentInfo.getDeploymentConfigName() != null) {
                 jsonWriter.key("deploymentConfigName").value(
                         deploymentInfo.getDeploymentConfigName());
             }
-
             if (deploymentInfo.getDeploymentId() != null) {
                 jsonWriter.key("deploymentId").value(
                         deploymentInfo.getDeploymentId());
             }
-
             if (deploymentInfo.getRevision() != null) {
                 jsonWriter.key("revision");
                 RevisionLocationJsonMarshaller.getInstance().marshall(
                         deploymentInfo.getRevision(), jsonWriter);
             }
-
             if (deploymentInfo.getStatus() != null) {
                 jsonWriter.key("status").value(deploymentInfo.getStatus());
             }
-
             if (deploymentInfo.getErrorInformation() != null) {
                 jsonWriter.key("errorInformation");
                 ErrorInformationJsonMarshaller.getInstance().marshall(
                         deploymentInfo.getErrorInformation(), jsonWriter);
             }
-
             if (deploymentInfo.getCreateTime() != null) {
                 jsonWriter.key("createTime").value(
                         deploymentInfo.getCreateTime());
             }
-
             if (deploymentInfo.getStartTime() != null) {
                 jsonWriter.key("startTime")
                         .value(deploymentInfo.getStartTime());
             }
-
             if (deploymentInfo.getCompleteTime() != null) {
                 jsonWriter.key("completeTime").value(
                         deploymentInfo.getCompleteTime());
             }
-
             if (deploymentInfo.getDeploymentOverview() != null) {
                 jsonWriter.key("deploymentOverview");
                 DeploymentOverviewJsonMarshaller.getInstance().marshall(
                         deploymentInfo.getDeploymentOverview(), jsonWriter);
             }
-
             if (deploymentInfo.getDescription() != null) {
                 jsonWriter.key("description").value(
                         deploymentInfo.getDescription());
             }
-
             if (deploymentInfo.getCreator() != null) {
                 jsonWriter.key("creator").value(deploymentInfo.getCreator());
             }
-
             if (deploymentInfo.getIgnoreApplicationStopFailures() != null) {
                 jsonWriter.key("ignoreApplicationStopFailures").value(
                         deploymentInfo.getIgnoreApplicationStopFailures());

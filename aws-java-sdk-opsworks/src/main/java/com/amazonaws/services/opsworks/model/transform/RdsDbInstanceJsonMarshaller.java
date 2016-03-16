@@ -30,6 +30,7 @@ import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,37 +55,29 @@ public class RdsDbInstanceJsonMarshaller {
                 jsonWriter.key("RdsDbInstanceArn").value(
                         rdsDbInstance.getRdsDbInstanceArn());
             }
-
             if (rdsDbInstance.getDbInstanceIdentifier() != null) {
                 jsonWriter.key("DbInstanceIdentifier").value(
                         rdsDbInstance.getDbInstanceIdentifier());
             }
-
             if (rdsDbInstance.getDbUser() != null) {
                 jsonWriter.key("DbUser").value(rdsDbInstance.getDbUser());
             }
-
             if (rdsDbInstance.getDbPassword() != null) {
                 jsonWriter.key("DbPassword").value(
                         rdsDbInstance.getDbPassword());
             }
-
             if (rdsDbInstance.getRegion() != null) {
                 jsonWriter.key("Region").value(rdsDbInstance.getRegion());
             }
-
             if (rdsDbInstance.getAddress() != null) {
                 jsonWriter.key("Address").value(rdsDbInstance.getAddress());
             }
-
             if (rdsDbInstance.getEngine() != null) {
                 jsonWriter.key("Engine").value(rdsDbInstance.getEngine());
             }
-
             if (rdsDbInstance.getStackId() != null) {
                 jsonWriter.key("StackId").value(rdsDbInstance.getStackId());
             }
-
             if (rdsDbInstance.getMissingOnRds() != null) {
                 jsonWriter.key("MissingOnRds").value(
                         rdsDbInstance.getMissingOnRds());

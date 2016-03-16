@@ -30,6 +30,7 @@ import com.amazonaws.services.kinesisfirehose.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -56,12 +57,10 @@ public class PutRecordBatchResponseEntryJsonMarshaller {
                 jsonWriter.key("RecordId").value(
                         putRecordBatchResponseEntry.getRecordId());
             }
-
             if (putRecordBatchResponseEntry.getErrorCode() != null) {
                 jsonWriter.key("ErrorCode").value(
                         putRecordBatchResponseEntry.getErrorCode());
             }
-
             if (putRecordBatchResponseEntry.getErrorMessage() != null) {
                 jsonWriter.key("ErrorMessage").value(
                         putRecordBatchResponseEntry.getErrorMessage());

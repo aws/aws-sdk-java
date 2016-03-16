@@ -30,6 +30,7 @@ import com.amazonaws.services.dynamodbv2.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,23 +54,18 @@ public class RecordJsonMarshaller {
             if (record.getEventID() != null) {
                 jsonWriter.key("eventID").value(record.getEventID());
             }
-
             if (record.getEventName() != null) {
                 jsonWriter.key("eventName").value(record.getEventName());
             }
-
             if (record.getEventVersion() != null) {
                 jsonWriter.key("eventVersion").value(record.getEventVersion());
             }
-
             if (record.getEventSource() != null) {
                 jsonWriter.key("eventSource").value(record.getEventSource());
             }
-
             if (record.getAwsRegion() != null) {
                 jsonWriter.key("awsRegion").value(record.getAwsRegion());
             }
-
             if (record.getDynamodb() != null) {
                 jsonWriter.key("dynamodb");
                 StreamRecordJsonMarshaller.getInstance().marshall(

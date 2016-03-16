@@ -30,6 +30,7 @@ import com.amazonaws.services.logs.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,11 +55,9 @@ public class OutputLogEventJsonMarshaller {
                 jsonWriter.key("timestamp")
                         .value(outputLogEvent.getTimestamp());
             }
-
             if (outputLogEvent.getMessage() != null) {
                 jsonWriter.key("message").value(outputLogEvent.getMessage());
             }
-
             if (outputLogEvent.getIngestionTime() != null) {
                 jsonWriter.key("ingestionTime").value(
                         outputLogEvent.getIngestionTime());

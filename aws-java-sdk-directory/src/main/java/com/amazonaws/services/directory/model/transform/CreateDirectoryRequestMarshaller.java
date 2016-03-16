@@ -37,6 +37,7 @@ import com.amazonaws.services.directory.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -72,26 +73,21 @@ public class CreateDirectoryRequestMarshaller implements
             if (createDirectoryRequest.getName() != null) {
                 jsonWriter.key("Name").value(createDirectoryRequest.getName());
             }
-
             if (createDirectoryRequest.getShortName() != null) {
                 jsonWriter.key("ShortName").value(
                         createDirectoryRequest.getShortName());
             }
-
             if (createDirectoryRequest.getPassword() != null) {
                 jsonWriter.key("Password").value(
                         createDirectoryRequest.getPassword());
             }
-
             if (createDirectoryRequest.getDescription() != null) {
                 jsonWriter.key("Description").value(
                         createDirectoryRequest.getDescription());
             }
-
             if (createDirectoryRequest.getSize() != null) {
                 jsonWriter.key("Size").value(createDirectoryRequest.getSize());
             }
-
             if (createDirectoryRequest.getVpcSettings() != null) {
                 jsonWriter.key("VpcSettings");
                 DirectoryVpcSettingsJsonMarshaller.getInstance().marshall(

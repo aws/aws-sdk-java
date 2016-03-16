@@ -37,6 +37,7 @@ import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -70,11 +71,9 @@ public class UpdateAppRequestMarshaller implements
             if (updateAppRequest.getAppId() != null) {
                 jsonWriter.key("AppId").value(updateAppRequest.getAppId());
             }
-
             if (updateAppRequest.getName() != null) {
                 jsonWriter.key("Name").value(updateAppRequest.getName());
             }
-
             if (updateAppRequest.getDescription() != null) {
                 jsonWriter.key("Description").value(
                         updateAppRequest.getDescription());
@@ -95,11 +94,9 @@ public class UpdateAppRequestMarshaller implements
                 }
                 jsonWriter.endArray();
             }
-
             if (updateAppRequest.getType() != null) {
                 jsonWriter.key("Type").value(updateAppRequest.getType());
             }
-
             if (updateAppRequest.getAppSource() != null) {
                 jsonWriter.key("AppSource");
                 SourceJsonMarshaller.getInstance().marshall(
@@ -118,12 +115,10 @@ public class UpdateAppRequestMarshaller implements
                 }
                 jsonWriter.endArray();
             }
-
             if (updateAppRequest.getEnableSsl() != null) {
                 jsonWriter.key("EnableSsl").value(
                         updateAppRequest.getEnableSsl());
             }
-
             if (updateAppRequest.getSslConfiguration() != null) {
                 jsonWriter.key("SslConfiguration");
                 SslConfigurationJsonMarshaller.getInstance().marshall(

@@ -37,6 +37,7 @@ import com.amazonaws.services.elasticfilesystem.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -63,11 +64,12 @@ public class DeleteFileSystemRequestMarshaller implements
 
         String uriResourcePath = "/2015-02-01/file-systems/{FileSystemId}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{FileSystemId}",
-                (deleteFileSystemRequest.getFileSystemId() == null) ? ""
-                        : StringUtils.fromString(deleteFileSystemRequest
-                                .getFileSystemId()));
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{FileSystemId}",
+                        (deleteFileSystemRequest.getFileSystemId() != null) ? StringUtils
+                                .fromString(deleteFileSystemRequest
+                                        .getFileSystemId()) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

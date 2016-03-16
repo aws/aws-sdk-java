@@ -37,6 +37,7 @@ import com.amazonaws.services.machinelearning.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -74,46 +75,36 @@ public class DescribeEvaluationsRequestMarshaller
                 jsonWriter.key("FilterVariable").value(
                         describeEvaluationsRequest.getFilterVariable());
             }
-
             if (describeEvaluationsRequest.getEQ() != null) {
                 jsonWriter.key("EQ").value(describeEvaluationsRequest.getEQ());
             }
-
             if (describeEvaluationsRequest.getGT() != null) {
                 jsonWriter.key("GT").value(describeEvaluationsRequest.getGT());
             }
-
             if (describeEvaluationsRequest.getLT() != null) {
                 jsonWriter.key("LT").value(describeEvaluationsRequest.getLT());
             }
-
             if (describeEvaluationsRequest.getGE() != null) {
                 jsonWriter.key("GE").value(describeEvaluationsRequest.getGE());
             }
-
             if (describeEvaluationsRequest.getLE() != null) {
                 jsonWriter.key("LE").value(describeEvaluationsRequest.getLE());
             }
-
             if (describeEvaluationsRequest.getNE() != null) {
                 jsonWriter.key("NE").value(describeEvaluationsRequest.getNE());
             }
-
             if (describeEvaluationsRequest.getPrefix() != null) {
                 jsonWriter.key("Prefix").value(
                         describeEvaluationsRequest.getPrefix());
             }
-
             if (describeEvaluationsRequest.getSortOrder() != null) {
                 jsonWriter.key("SortOrder").value(
                         describeEvaluationsRequest.getSortOrder());
             }
-
             if (describeEvaluationsRequest.getNextToken() != null) {
                 jsonWriter.key("NextToken").value(
                         describeEvaluationsRequest.getNextToken());
             }
-
             if (describeEvaluationsRequest.getLimit() != null) {
                 jsonWriter.key("Limit").value(
                         describeEvaluationsRequest.getLimit());

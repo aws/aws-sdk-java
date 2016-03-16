@@ -100,6 +100,21 @@ public class AbstractAmazonCodeDeployAsync extends AbstractAmazonCodeDeploy
     }
 
     @Override
+    public java.util.concurrent.Future<BatchGetDeploymentGroupsResult> batchGetDeploymentGroupsAsync(
+            BatchGetDeploymentGroupsRequest request) {
+
+        return batchGetDeploymentGroupsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetDeploymentGroupsResult> batchGetDeploymentGroupsAsync(
+            BatchGetDeploymentGroupsRequest request,
+            com.amazonaws.handlers.AsyncHandler<BatchGetDeploymentGroupsRequest, BatchGetDeploymentGroupsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<BatchGetDeploymentInstancesResult> batchGetDeploymentInstancesAsync(
             BatchGetDeploymentInstancesRequest request) {
 

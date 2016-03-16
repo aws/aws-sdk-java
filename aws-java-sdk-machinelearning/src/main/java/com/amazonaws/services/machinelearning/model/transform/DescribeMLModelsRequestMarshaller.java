@@ -37,6 +37,7 @@ import com.amazonaws.services.machinelearning.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -72,46 +73,36 @@ public class DescribeMLModelsRequestMarshaller implements
                 jsonWriter.key("FilterVariable").value(
                         describeMLModelsRequest.getFilterVariable());
             }
-
             if (describeMLModelsRequest.getEQ() != null) {
                 jsonWriter.key("EQ").value(describeMLModelsRequest.getEQ());
             }
-
             if (describeMLModelsRequest.getGT() != null) {
                 jsonWriter.key("GT").value(describeMLModelsRequest.getGT());
             }
-
             if (describeMLModelsRequest.getLT() != null) {
                 jsonWriter.key("LT").value(describeMLModelsRequest.getLT());
             }
-
             if (describeMLModelsRequest.getGE() != null) {
                 jsonWriter.key("GE").value(describeMLModelsRequest.getGE());
             }
-
             if (describeMLModelsRequest.getLE() != null) {
                 jsonWriter.key("LE").value(describeMLModelsRequest.getLE());
             }
-
             if (describeMLModelsRequest.getNE() != null) {
                 jsonWriter.key("NE").value(describeMLModelsRequest.getNE());
             }
-
             if (describeMLModelsRequest.getPrefix() != null) {
                 jsonWriter.key("Prefix").value(
                         describeMLModelsRequest.getPrefix());
             }
-
             if (describeMLModelsRequest.getSortOrder() != null) {
                 jsonWriter.key("SortOrder").value(
                         describeMLModelsRequest.getSortOrder());
             }
-
             if (describeMLModelsRequest.getNextToken() != null) {
                 jsonWriter.key("NextToken").value(
                         describeMLModelsRequest.getNextToken());
             }
-
             if (describeMLModelsRequest.getLimit() != null) {
                 jsonWriter.key("Limit").value(
                         describeMLModelsRequest.getLimit());

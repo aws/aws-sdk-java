@@ -37,6 +37,7 @@ import com.amazonaws.services.codedeploy.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -75,12 +76,10 @@ public class RegisterApplicationRevisionRequestMarshaller
                         .value(registerApplicationRevisionRequest
                                 .getApplicationName());
             }
-
             if (registerApplicationRevisionRequest.getDescription() != null) {
                 jsonWriter.key("description").value(
                         registerApplicationRevisionRequest.getDescription());
             }
-
             if (registerApplicationRevisionRequest.getRevision() != null) {
                 jsonWriter.key("revision");
                 RevisionLocationJsonMarshaller.getInstance().marshall(

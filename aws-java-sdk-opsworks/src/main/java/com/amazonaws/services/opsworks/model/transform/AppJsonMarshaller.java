@@ -30,6 +30,7 @@ import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,19 +54,15 @@ public class AppJsonMarshaller {
             if (app.getAppId() != null) {
                 jsonWriter.key("AppId").value(app.getAppId());
             }
-
             if (app.getStackId() != null) {
                 jsonWriter.key("StackId").value(app.getStackId());
             }
-
             if (app.getShortname() != null) {
                 jsonWriter.key("Shortname").value(app.getShortname());
             }
-
             if (app.getName() != null) {
                 jsonWriter.key("Name").value(app.getName());
             }
-
             if (app.getDescription() != null) {
                 jsonWriter.key("Description").value(app.getDescription());
             }
@@ -85,11 +82,9 @@ public class AppJsonMarshaller {
                 }
                 jsonWriter.endArray();
             }
-
             if (app.getType() != null) {
                 jsonWriter.key("Type").value(app.getType());
             }
-
             if (app.getAppSource() != null) {
                 jsonWriter.key("AppSource");
                 SourceJsonMarshaller.getInstance().marshall(app.getAppSource(),
@@ -108,11 +103,9 @@ public class AppJsonMarshaller {
                 }
                 jsonWriter.endArray();
             }
-
             if (app.getEnableSsl() != null) {
                 jsonWriter.key("EnableSsl").value(app.getEnableSsl());
             }
-
             if (app.getSslConfiguration() != null) {
                 jsonWriter.key("SslConfiguration");
                 SslConfigurationJsonMarshaller.getInstance().marshall(
@@ -135,7 +128,6 @@ public class AppJsonMarshaller {
                 }
                 jsonWriter.endObject();
             }
-
             if (app.getCreatedAt() != null) {
                 jsonWriter.key("CreatedAt").value(app.getCreatedAt());
             }

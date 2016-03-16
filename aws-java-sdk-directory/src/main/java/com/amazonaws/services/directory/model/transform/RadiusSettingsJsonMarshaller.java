@@ -30,6 +30,7 @@ import com.amazonaws.services.directory.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -63,37 +64,30 @@ public class RadiusSettingsJsonMarshaller {
                 }
                 jsonWriter.endArray();
             }
-
             if (radiusSettings.getRadiusPort() != null) {
                 jsonWriter.key("RadiusPort").value(
                         radiusSettings.getRadiusPort());
             }
-
             if (radiusSettings.getRadiusTimeout() != null) {
                 jsonWriter.key("RadiusTimeout").value(
                         radiusSettings.getRadiusTimeout());
             }
-
             if (radiusSettings.getRadiusRetries() != null) {
                 jsonWriter.key("RadiusRetries").value(
                         radiusSettings.getRadiusRetries());
             }
-
             if (radiusSettings.getSharedSecret() != null) {
                 jsonWriter.key("SharedSecret").value(
                         radiusSettings.getSharedSecret());
             }
-
             if (radiusSettings.getAuthenticationProtocol() != null) {
                 jsonWriter.key("AuthenticationProtocol").value(
                         radiusSettings.getAuthenticationProtocol());
             }
-
             if (radiusSettings.getDisplayLabel() != null) {
                 jsonWriter.key("DisplayLabel").value(
                         radiusSettings.getDisplayLabel());
             }
-
             if (radiusSettings.getUseSameUsername() != null) {
                 jsonWriter.key("UseSameUsername").value(
                         radiusSettings.getUseSameUsername());

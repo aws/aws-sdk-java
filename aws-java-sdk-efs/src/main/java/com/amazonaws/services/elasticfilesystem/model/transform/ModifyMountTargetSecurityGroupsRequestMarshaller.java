@@ -37,6 +37,7 @@ import com.amazonaws.services.elasticfilesystem.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -69,10 +70,10 @@ public class ModifyMountTargetSecurityGroupsRequestMarshaller
                 .replace(
                         "{MountTargetId}",
                         (modifyMountTargetSecurityGroupsRequest
-                                .getMountTargetId() == null) ? ""
-                                : StringUtils
-                                        .fromString(modifyMountTargetSecurityGroupsRequest
-                                                .getMountTargetId()));
+                                .getMountTargetId() != null) ? StringUtils
+                                .fromString(modifyMountTargetSecurityGroupsRequest
+                                        .getMountTargetId())
+                                : "");
         request.setResourcePath(uriResourcePath);
 
         try {

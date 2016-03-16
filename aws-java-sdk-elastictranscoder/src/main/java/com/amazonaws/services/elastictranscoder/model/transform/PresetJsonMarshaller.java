@@ -30,6 +30,7 @@ import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,41 +54,33 @@ public class PresetJsonMarshaller {
             if (preset.getId() != null) {
                 jsonWriter.key("Id").value(preset.getId());
             }
-
             if (preset.getArn() != null) {
                 jsonWriter.key("Arn").value(preset.getArn());
             }
-
             if (preset.getName() != null) {
                 jsonWriter.key("Name").value(preset.getName());
             }
-
             if (preset.getDescription() != null) {
                 jsonWriter.key("Description").value(preset.getDescription());
             }
-
             if (preset.getContainer() != null) {
                 jsonWriter.key("Container").value(preset.getContainer());
             }
-
             if (preset.getAudio() != null) {
                 jsonWriter.key("Audio");
                 AudioParametersJsonMarshaller.getInstance().marshall(
                         preset.getAudio(), jsonWriter);
             }
-
             if (preset.getVideo() != null) {
                 jsonWriter.key("Video");
                 VideoParametersJsonMarshaller.getInstance().marshall(
                         preset.getVideo(), jsonWriter);
             }
-
             if (preset.getThumbnails() != null) {
                 jsonWriter.key("Thumbnails");
                 ThumbnailsJsonMarshaller.getInstance().marshall(
                         preset.getThumbnails(), jsonWriter);
             }
-
             if (preset.getType() != null) {
                 jsonWriter.key("Type").value(preset.getType());
             }

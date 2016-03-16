@@ -30,6 +30,7 @@ import com.amazonaws.services.machinelearning.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -56,34 +57,28 @@ public class RedshiftDataSpecJsonMarshaller {
                 RedshiftDatabaseJsonMarshaller.getInstance().marshall(
                         redshiftDataSpec.getDatabaseInformation(), jsonWriter);
             }
-
             if (redshiftDataSpec.getSelectSqlQuery() != null) {
                 jsonWriter.key("SelectSqlQuery").value(
                         redshiftDataSpec.getSelectSqlQuery());
             }
-
             if (redshiftDataSpec.getDatabaseCredentials() != null) {
                 jsonWriter.key("DatabaseCredentials");
                 RedshiftDatabaseCredentialsJsonMarshaller.getInstance()
                         .marshall(redshiftDataSpec.getDatabaseCredentials(),
                                 jsonWriter);
             }
-
             if (redshiftDataSpec.getS3StagingLocation() != null) {
                 jsonWriter.key("S3StagingLocation").value(
                         redshiftDataSpec.getS3StagingLocation());
             }
-
             if (redshiftDataSpec.getDataRearrangement() != null) {
                 jsonWriter.key("DataRearrangement").value(
                         redshiftDataSpec.getDataRearrangement());
             }
-
             if (redshiftDataSpec.getDataSchema() != null) {
                 jsonWriter.key("DataSchema").value(
                         redshiftDataSpec.getDataSchema());
             }
-
             if (redshiftDataSpec.getDataSchemaUri() != null) {
                 jsonWriter.key("DataSchemaUri").value(
                         redshiftDataSpec.getDataSchemaUri());

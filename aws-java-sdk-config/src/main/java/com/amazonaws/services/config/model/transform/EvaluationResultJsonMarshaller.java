@@ -30,6 +30,7 @@ import com.amazonaws.services.config.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -60,27 +61,22 @@ public class EvaluationResultJsonMarshaller {
                                         .getEvaluationResultIdentifier(),
                                 jsonWriter);
             }
-
             if (evaluationResult.getComplianceType() != null) {
                 jsonWriter.key("ComplianceType").value(
                         evaluationResult.getComplianceType());
             }
-
             if (evaluationResult.getResultRecordedTime() != null) {
                 jsonWriter.key("ResultRecordedTime").value(
                         evaluationResult.getResultRecordedTime());
             }
-
             if (evaluationResult.getConfigRuleInvokedTime() != null) {
                 jsonWriter.key("ConfigRuleInvokedTime").value(
                         evaluationResult.getConfigRuleInvokedTime());
             }
-
             if (evaluationResult.getAnnotation() != null) {
                 jsonWriter.key("Annotation").value(
                         evaluationResult.getAnnotation());
             }
-
             if (evaluationResult.getResultToken() != null) {
                 jsonWriter.key("ResultToken").value(
                         evaluationResult.getResultToken());

@@ -30,6 +30,7 @@ import com.amazonaws.services.logs.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,40 +54,32 @@ public class ExportTaskJsonMarshaller {
             if (exportTask.getTaskId() != null) {
                 jsonWriter.key("taskId").value(exportTask.getTaskId());
             }
-
             if (exportTask.getTaskName() != null) {
                 jsonWriter.key("taskName").value(exportTask.getTaskName());
             }
-
             if (exportTask.getLogGroupName() != null) {
                 jsonWriter.key("logGroupName").value(
                         exportTask.getLogGroupName());
             }
-
             if (exportTask.getFrom() != null) {
                 jsonWriter.key("from").value(exportTask.getFrom());
             }
-
             if (exportTask.getTo() != null) {
                 jsonWriter.key("to").value(exportTask.getTo());
             }
-
             if (exportTask.getDestination() != null) {
                 jsonWriter.key("destination")
                         .value(exportTask.getDestination());
             }
-
             if (exportTask.getDestinationPrefix() != null) {
                 jsonWriter.key("destinationPrefix").value(
                         exportTask.getDestinationPrefix());
             }
-
             if (exportTask.getStatus() != null) {
                 jsonWriter.key("status");
                 ExportTaskStatusJsonMarshaller.getInstance().marshall(
                         exportTask.getStatus(), jsonWriter);
             }
-
             if (exportTask.getExecutionInfo() != null) {
                 jsonWriter.key("executionInfo");
                 ExportTaskExecutionInfoJsonMarshaller.getInstance().marshall(

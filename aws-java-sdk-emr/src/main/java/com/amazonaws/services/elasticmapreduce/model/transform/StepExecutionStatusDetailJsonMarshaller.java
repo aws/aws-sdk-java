@@ -30,6 +30,7 @@ import com.amazonaws.services.elasticmapreduce.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,22 +56,18 @@ public class StepExecutionStatusDetailJsonMarshaller {
                 jsonWriter.key("State").value(
                         stepExecutionStatusDetail.getState());
             }
-
             if (stepExecutionStatusDetail.getCreationDateTime() != null) {
                 jsonWriter.key("CreationDateTime").value(
                         stepExecutionStatusDetail.getCreationDateTime());
             }
-
             if (stepExecutionStatusDetail.getStartDateTime() != null) {
                 jsonWriter.key("StartDateTime").value(
                         stepExecutionStatusDetail.getStartDateTime());
             }
-
             if (stepExecutionStatusDetail.getEndDateTime() != null) {
                 jsonWriter.key("EndDateTime").value(
                         stepExecutionStatusDetail.getEndDateTime());
             }
-
             if (stepExecutionStatusDetail.getLastStateChangeReason() != null) {
                 jsonWriter.key("LastStateChangeReason").value(
                         stepExecutionStatusDetail.getLastStateChangeReason());

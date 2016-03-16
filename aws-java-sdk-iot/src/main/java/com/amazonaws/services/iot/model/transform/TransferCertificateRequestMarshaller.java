@@ -37,6 +37,7 @@ import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -64,18 +65,18 @@ public class TransferCertificateRequestMarshaller
 
         String uriResourcePath = "/transfer-certificate/{certificateId}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{certificateId}",
-                (transferCertificateRequest.getCertificateId() == null) ? ""
-                        : StringUtils.fromString(transferCertificateRequest
-                                .getCertificateId()));
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{certificateId}",
+                        (transferCertificateRequest.getCertificateId() != null) ? StringUtils
+                                .fromString(transferCertificateRequest
+                                        .getCertificateId()) : "");
         request.setResourcePath(uriResourcePath);
 
-        String targetAwsAccount = (transferCertificateRequest
-                .getTargetAwsAccount() == null) ? null : StringUtils
-                .fromString(transferCertificateRequest.getTargetAwsAccount());
-        if (targetAwsAccount != null) {
-            request.addParameter("targetAwsAccount", targetAwsAccount);
+        if (transferCertificateRequest.getTargetAwsAccount() != null) {
+            request.addParameter("targetAwsAccount", StringUtils
+                    .fromString(transferCertificateRequest
+                            .getTargetAwsAccount()));
         }
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

@@ -21,9 +21,13 @@
                 request.addHeader("${member.http.marshallLocationName}", builder.toString());
             }
         <#else>
-            if (${getMember}() != null) {
-                request.addHeader("${member.http.marshallLocationName}", StringUtils.from${member.variable.simpleType}(${getMember}()));
-            }
+            <#if member.idempotencyToken>
+                request.addHeader("${member.http.marshallLocationName}", <@IdempotencyTokenMacro.content getMember member.variable.simpleType/>);
+            <#else>
+                if(${getMember}() != null) {
+                    request.addHeader("${member.http.marshallLocationName}", StringUtils.from${member.variable.simpleType}(${getMember}()));
+                }
+            </#if>
         </#if>
     </#if>
     </#list>

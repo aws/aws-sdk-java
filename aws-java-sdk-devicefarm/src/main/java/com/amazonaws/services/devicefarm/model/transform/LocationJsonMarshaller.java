@@ -30,6 +30,7 @@ import com.amazonaws.services.devicefarm.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,7 +54,6 @@ public class LocationJsonMarshaller {
             if (location.getLatitude() != null) {
                 jsonWriter.key("latitude").value(location.getLatitude());
             }
-
             if (location.getLongitude() != null) {
                 jsonWriter.key("longitude").value(location.getLongitude());
             }

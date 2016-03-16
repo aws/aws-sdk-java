@@ -30,6 +30,7 @@ import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,21 +55,17 @@ public class InstanceJsonMarshaller {
                 jsonWriter.key("AgentVersion")
                         .value(instance.getAgentVersion());
             }
-
             if (instance.getAmiId() != null) {
                 jsonWriter.key("AmiId").value(instance.getAmiId());
             }
-
             if (instance.getArchitecture() != null) {
                 jsonWriter.key("Architecture")
                         .value(instance.getArchitecture());
             }
-
             if (instance.getAutoScalingType() != null) {
                 jsonWriter.key("AutoScalingType").value(
                         instance.getAutoScalingType());
             }
-
             if (instance.getAvailabilityZone() != null) {
                 jsonWriter.key("AvailabilityZone").value(
                         instance.getAvailabilityZone());
@@ -90,63 +87,50 @@ public class InstanceJsonMarshaller {
                 }
                 jsonWriter.endArray();
             }
-
             if (instance.getCreatedAt() != null) {
                 jsonWriter.key("CreatedAt").value(instance.getCreatedAt());
             }
-
             if (instance.getEbsOptimized() != null) {
                 jsonWriter.key("EbsOptimized")
                         .value(instance.getEbsOptimized());
             }
-
             if (instance.getEc2InstanceId() != null) {
                 jsonWriter.key("Ec2InstanceId").value(
                         instance.getEc2InstanceId());
             }
-
             if (instance.getEcsClusterArn() != null) {
                 jsonWriter.key("EcsClusterArn").value(
                         instance.getEcsClusterArn());
             }
-
             if (instance.getEcsContainerInstanceArn() != null) {
                 jsonWriter.key("EcsContainerInstanceArn").value(
                         instance.getEcsContainerInstanceArn());
             }
-
             if (instance.getElasticIp() != null) {
                 jsonWriter.key("ElasticIp").value(instance.getElasticIp());
             }
-
             if (instance.getHostname() != null) {
                 jsonWriter.key("Hostname").value(instance.getHostname());
             }
-
             if (instance.getInfrastructureClass() != null) {
                 jsonWriter.key("InfrastructureClass").value(
                         instance.getInfrastructureClass());
             }
-
             if (instance.getInstallUpdatesOnBoot() != null) {
                 jsonWriter.key("InstallUpdatesOnBoot").value(
                         instance.getInstallUpdatesOnBoot());
             }
-
             if (instance.getInstanceId() != null) {
                 jsonWriter.key("InstanceId").value(instance.getInstanceId());
             }
-
             if (instance.getInstanceProfileArn() != null) {
                 jsonWriter.key("InstanceProfileArn").value(
                         instance.getInstanceProfileArn());
             }
-
             if (instance.getInstanceType() != null) {
                 jsonWriter.key("InstanceType")
                         .value(instance.getInstanceType());
             }
-
             if (instance.getLastServiceErrorId() != null) {
                 jsonWriter.key("LastServiceErrorId").value(
                         instance.getLastServiceErrorId());
@@ -164,52 +148,41 @@ public class InstanceJsonMarshaller {
                 }
                 jsonWriter.endArray();
             }
-
             if (instance.getOs() != null) {
                 jsonWriter.key("Os").value(instance.getOs());
             }
-
             if (instance.getPlatform() != null) {
                 jsonWriter.key("Platform").value(instance.getPlatform());
             }
-
             if (instance.getPrivateDns() != null) {
                 jsonWriter.key("PrivateDns").value(instance.getPrivateDns());
             }
-
             if (instance.getPrivateIp() != null) {
                 jsonWriter.key("PrivateIp").value(instance.getPrivateIp());
             }
-
             if (instance.getPublicDns() != null) {
                 jsonWriter.key("PublicDns").value(instance.getPublicDns());
             }
-
             if (instance.getPublicIp() != null) {
                 jsonWriter.key("PublicIp").value(instance.getPublicIp());
             }
-
             if (instance.getRegisteredBy() != null) {
                 jsonWriter.key("RegisteredBy")
                         .value(instance.getRegisteredBy());
             }
-
             if (instance.getReportedAgentVersion() != null) {
                 jsonWriter.key("ReportedAgentVersion").value(
                         instance.getReportedAgentVersion());
             }
-
             if (instance.getReportedOs() != null) {
                 jsonWriter.key("ReportedOs");
                 ReportedOsJsonMarshaller.getInstance().marshall(
                         instance.getReportedOs(), jsonWriter);
             }
-
             if (instance.getRootDeviceType() != null) {
                 jsonWriter.key("RootDeviceType").value(
                         instance.getRootDeviceType());
             }
-
             if (instance.getRootDeviceVolumeId() != null) {
                 jsonWriter.key("RootDeviceVolumeId").value(
                         instance.getRootDeviceVolumeId());
@@ -228,33 +201,26 @@ public class InstanceJsonMarshaller {
                 }
                 jsonWriter.endArray();
             }
-
             if (instance.getSshHostDsaKeyFingerprint() != null) {
                 jsonWriter.key("SshHostDsaKeyFingerprint").value(
                         instance.getSshHostDsaKeyFingerprint());
             }
-
             if (instance.getSshHostRsaKeyFingerprint() != null) {
                 jsonWriter.key("SshHostRsaKeyFingerprint").value(
                         instance.getSshHostRsaKeyFingerprint());
             }
-
             if (instance.getSshKeyName() != null) {
                 jsonWriter.key("SshKeyName").value(instance.getSshKeyName());
             }
-
             if (instance.getStackId() != null) {
                 jsonWriter.key("StackId").value(instance.getStackId());
             }
-
             if (instance.getStatus() != null) {
                 jsonWriter.key("Status").value(instance.getStatus());
             }
-
             if (instance.getSubnetId() != null) {
                 jsonWriter.key("SubnetId").value(instance.getSubnetId());
             }
-
             if (instance.getVirtualizationType() != null) {
                 jsonWriter.key("VirtualizationType").value(
                         instance.getVirtualizationType());

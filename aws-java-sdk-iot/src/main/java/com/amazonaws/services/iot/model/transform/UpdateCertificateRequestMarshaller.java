@@ -37,6 +37,7 @@ import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -63,18 +64,17 @@ public class UpdateCertificateRequestMarshaller implements
 
         String uriResourcePath = "/certificates/{certificateId}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{certificateId}",
-                (updateCertificateRequest.getCertificateId() == null) ? ""
-                        : StringUtils.fromString(updateCertificateRequest
-                                .getCertificateId()));
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{certificateId}",
+                        (updateCertificateRequest.getCertificateId() != null) ? StringUtils
+                                .fromString(updateCertificateRequest
+                                        .getCertificateId()) : "");
         request.setResourcePath(uriResourcePath);
 
-        String newStatus = (updateCertificateRequest.getNewStatus() == null) ? null
-                : StringUtils.fromString(updateCertificateRequest
-                        .getNewStatus());
-        if (newStatus != null) {
-            request.addParameter("newStatus", newStatus);
+        if (updateCertificateRequest.getNewStatus() != null) {
+            request.addParameter("newStatus", StringUtils
+                    .fromString(updateCertificateRequest.getNewStatus()));
         }
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

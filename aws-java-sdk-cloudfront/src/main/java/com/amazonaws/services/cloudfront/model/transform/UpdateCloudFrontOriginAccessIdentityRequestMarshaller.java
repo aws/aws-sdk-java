@@ -32,6 +32,7 @@ import com.amazonaws.services.cloudfront.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.XMLWriter;
 
 /**
@@ -66,10 +67,10 @@ public class UpdateCloudFrontOriginAccessIdentityRequestMarshaller
         uriResourcePath = uriResourcePath
                 .replace(
                         "{Id}",
-                        (updateCloudFrontOriginAccessIdentityRequest.getId() == null) ? ""
-                                : StringUtils
-                                        .fromString(updateCloudFrontOriginAccessIdentityRequest
-                                                .getId()));
+                        (updateCloudFrontOriginAccessIdentityRequest.getId() != null) ? StringUtils
+                                .fromString(updateCloudFrontOriginAccessIdentityRequest
+                                        .getId())
+                                : "");
         request.setResourcePath(uriResourcePath);
 
         try {

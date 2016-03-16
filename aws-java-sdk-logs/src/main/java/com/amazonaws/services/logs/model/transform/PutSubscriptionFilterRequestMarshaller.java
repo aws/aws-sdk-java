@@ -37,6 +37,7 @@ import com.amazonaws.services.logs.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -73,22 +74,18 @@ public class PutSubscriptionFilterRequestMarshaller
                 jsonWriter.key("logGroupName").value(
                         putSubscriptionFilterRequest.getLogGroupName());
             }
-
             if (putSubscriptionFilterRequest.getFilterName() != null) {
                 jsonWriter.key("filterName").value(
                         putSubscriptionFilterRequest.getFilterName());
             }
-
             if (putSubscriptionFilterRequest.getFilterPattern() != null) {
                 jsonWriter.key("filterPattern").value(
                         putSubscriptionFilterRequest.getFilterPattern());
             }
-
             if (putSubscriptionFilterRequest.getDestinationArn() != null) {
                 jsonWriter.key("destinationArn").value(
                         putSubscriptionFilterRequest.getDestinationArn());
             }
-
             if (putSubscriptionFilterRequest.getRoleArn() != null) {
                 jsonWriter.key("roleArn").value(
                         putSubscriptionFilterRequest.getRoleArn());

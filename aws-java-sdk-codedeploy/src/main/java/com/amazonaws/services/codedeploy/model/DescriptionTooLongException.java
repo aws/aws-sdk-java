@@ -20,7 +20,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The description that was provided is too long.
+ * The description is too long.
  * </p>
  */
 public class DescriptionTooLongException extends AmazonServiceException {

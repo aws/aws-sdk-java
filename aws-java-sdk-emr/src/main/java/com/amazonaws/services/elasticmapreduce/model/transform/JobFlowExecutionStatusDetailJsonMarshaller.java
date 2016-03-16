@@ -30,6 +30,7 @@ import com.amazonaws.services.elasticmapreduce.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -56,27 +57,22 @@ public class JobFlowExecutionStatusDetailJsonMarshaller {
                 jsonWriter.key("State").value(
                         jobFlowExecutionStatusDetail.getState());
             }
-
             if (jobFlowExecutionStatusDetail.getCreationDateTime() != null) {
                 jsonWriter.key("CreationDateTime").value(
                         jobFlowExecutionStatusDetail.getCreationDateTime());
             }
-
             if (jobFlowExecutionStatusDetail.getStartDateTime() != null) {
                 jsonWriter.key("StartDateTime").value(
                         jobFlowExecutionStatusDetail.getStartDateTime());
             }
-
             if (jobFlowExecutionStatusDetail.getReadyDateTime() != null) {
                 jsonWriter.key("ReadyDateTime").value(
                         jobFlowExecutionStatusDetail.getReadyDateTime());
             }
-
             if (jobFlowExecutionStatusDetail.getEndDateTime() != null) {
                 jsonWriter.key("EndDateTime").value(
                         jobFlowExecutionStatusDetail.getEndDateTime());
             }
-
             if (jobFlowExecutionStatusDetail.getLastStateChangeReason() != null) {
                 jsonWriter.key("LastStateChangeReason")
                         .value(jobFlowExecutionStatusDetail

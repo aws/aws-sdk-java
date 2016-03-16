@@ -30,6 +30,7 @@ import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,21 +55,17 @@ public class EbsBlockDeviceJsonMarshaller {
                 jsonWriter.key("SnapshotId").value(
                         ebsBlockDevice.getSnapshotId());
             }
-
             if (ebsBlockDevice.getIops() != null) {
                 jsonWriter.key("Iops").value(ebsBlockDevice.getIops());
             }
-
             if (ebsBlockDevice.getVolumeSize() != null) {
                 jsonWriter.key("VolumeSize").value(
                         ebsBlockDevice.getVolumeSize());
             }
-
             if (ebsBlockDevice.getVolumeType() != null) {
                 jsonWriter.key("VolumeType").value(
                         ebsBlockDevice.getVolumeType());
             }
-
             if (ebsBlockDevice.getDeleteOnTermination() != null) {
                 jsonWriter.key("DeleteOnTermination").value(
                         ebsBlockDevice.getDeleteOnTermination());

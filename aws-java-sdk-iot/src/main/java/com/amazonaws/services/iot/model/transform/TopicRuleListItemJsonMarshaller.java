@@ -30,6 +30,7 @@ import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,22 +55,18 @@ public class TopicRuleListItemJsonMarshaller {
             if (topicRuleListItem.getRuleArn() != null) {
                 jsonWriter.key("ruleArn").value(topicRuleListItem.getRuleArn());
             }
-
             if (topicRuleListItem.getRuleName() != null) {
                 jsonWriter.key("ruleName").value(
                         topicRuleListItem.getRuleName());
             }
-
             if (topicRuleListItem.getTopicPattern() != null) {
                 jsonWriter.key("topicPattern").value(
                         topicRuleListItem.getTopicPattern());
             }
-
             if (topicRuleListItem.getCreatedAt() != null) {
                 jsonWriter.key("createdAt").value(
                         topicRuleListItem.getCreatedAt());
             }
-
             if (topicRuleListItem.getRuleDisabled() != null) {
                 jsonWriter.key("ruleDisabled").value(
                         topicRuleListItem.getRuleDisabled());

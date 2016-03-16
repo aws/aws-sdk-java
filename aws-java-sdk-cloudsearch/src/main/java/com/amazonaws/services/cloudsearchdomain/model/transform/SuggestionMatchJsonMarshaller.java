@@ -30,6 +30,7 @@ import com.amazonaws.services.cloudsearchdomain.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,11 +55,9 @@ public class SuggestionMatchJsonMarshaller {
                 jsonWriter.key("suggestion").value(
                         suggestionMatch.getSuggestion());
             }
-
             if (suggestionMatch.getScore() != null) {
                 jsonWriter.key("score").value(suggestionMatch.getScore());
             }
-
             if (suggestionMatch.getId() != null) {
                 jsonWriter.key("id").value(suggestionMatch.getId());
             }

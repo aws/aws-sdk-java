@@ -37,6 +37,7 @@ import com.amazonaws.services.directory.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -73,22 +74,18 @@ public class CreateTrustRequestMarshaller implements
                 jsonWriter.key("DirectoryId").value(
                         createTrustRequest.getDirectoryId());
             }
-
             if (createTrustRequest.getRemoteDomainName() != null) {
                 jsonWriter.key("RemoteDomainName").value(
                         createTrustRequest.getRemoteDomainName());
             }
-
             if (createTrustRequest.getTrustPassword() != null) {
                 jsonWriter.key("TrustPassword").value(
                         createTrustRequest.getTrustPassword());
             }
-
             if (createTrustRequest.getTrustDirection() != null) {
                 jsonWriter.key("TrustDirection").value(
                         createTrustRequest.getTrustDirection());
             }
-
             if (createTrustRequest.getTrustType() != null) {
                 jsonWriter.key("TrustType").value(
                         createTrustRequest.getTrustType());

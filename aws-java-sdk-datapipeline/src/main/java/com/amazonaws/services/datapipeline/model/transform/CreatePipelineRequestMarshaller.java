@@ -37,6 +37,7 @@ import com.amazonaws.services.datapipeline.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -71,12 +72,10 @@ public class CreatePipelineRequestMarshaller implements
             if (createPipelineRequest.getName() != null) {
                 jsonWriter.key("name").value(createPipelineRequest.getName());
             }
-
             if (createPipelineRequest.getUniqueId() != null) {
                 jsonWriter.key("uniqueId").value(
                         createPipelineRequest.getUniqueId());
             }
-
             if (createPipelineRequest.getDescription() != null) {
                 jsonWriter.key("description").value(
                         createPipelineRequest.getDescription());

@@ -30,6 +30,7 @@ import com.amazonaws.services.ecr.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,18 +54,15 @@ public class ImageJsonMarshaller {
             if (image.getRegistryId() != null) {
                 jsonWriter.key("registryId").value(image.getRegistryId());
             }
-
             if (image.getRepositoryName() != null) {
                 jsonWriter.key("repositoryName").value(
                         image.getRepositoryName());
             }
-
             if (image.getImageId() != null) {
                 jsonWriter.key("imageId");
                 ImageIdentifierJsonMarshaller.getInstance().marshall(
                         image.getImageId(), jsonWriter);
             }
-
             if (image.getImageManifest() != null) {
                 jsonWriter.key("imageManifest").value(image.getImageManifest());
             }

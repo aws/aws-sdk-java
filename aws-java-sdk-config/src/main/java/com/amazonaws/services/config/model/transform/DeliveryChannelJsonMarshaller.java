@@ -30,6 +30,7 @@ import com.amazonaws.services.config.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,22 +54,18 @@ public class DeliveryChannelJsonMarshaller {
             if (deliveryChannel.getName() != null) {
                 jsonWriter.key("name").value(deliveryChannel.getName());
             }
-
             if (deliveryChannel.getS3BucketName() != null) {
                 jsonWriter.key("s3BucketName").value(
                         deliveryChannel.getS3BucketName());
             }
-
             if (deliveryChannel.getS3KeyPrefix() != null) {
                 jsonWriter.key("s3KeyPrefix").value(
                         deliveryChannel.getS3KeyPrefix());
             }
-
             if (deliveryChannel.getSnsTopicARN() != null) {
                 jsonWriter.key("snsTopicARN").value(
                         deliveryChannel.getSnsTopicARN());
             }
-
             if (deliveryChannel.getConfigSnapshotDeliveryProperties() != null) {
                 jsonWriter.key("configSnapshotDeliveryProperties");
                 ConfigSnapshotDeliveryPropertiesJsonMarshaller

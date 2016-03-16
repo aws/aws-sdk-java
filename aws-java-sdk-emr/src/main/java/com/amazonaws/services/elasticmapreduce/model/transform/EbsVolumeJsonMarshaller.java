@@ -30,6 +30,7 @@ import com.amazonaws.services.elasticmapreduce.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,7 +54,6 @@ public class EbsVolumeJsonMarshaller {
             if (ebsVolume.getDevice() != null) {
                 jsonWriter.key("Device").value(ebsVolume.getDevice());
             }
-
             if (ebsVolume.getVolumeId() != null) {
                 jsonWriter.key("VolumeId").value(ebsVolume.getVolumeId());
             }

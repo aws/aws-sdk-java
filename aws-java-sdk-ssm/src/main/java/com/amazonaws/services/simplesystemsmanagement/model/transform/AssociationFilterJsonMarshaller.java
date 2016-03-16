@@ -30,6 +30,7 @@ import com.amazonaws.services.simplesystemsmanagement.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,7 +55,6 @@ public class AssociationFilterJsonMarshaller {
             if (associationFilter.getKey() != null) {
                 jsonWriter.key("key").value(associationFilter.getKey());
             }
-
             if (associationFilter.getValue() != null) {
                 jsonWriter.key("value").value(associationFilter.getValue());
             }

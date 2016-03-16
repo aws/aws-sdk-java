@@ -37,6 +37,7 @@ import com.amazonaws.services.codedeploy.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -74,19 +75,16 @@ public class UpdateDeploymentGroupRequestMarshaller
                 jsonWriter.key("applicationName").value(
                         updateDeploymentGroupRequest.getApplicationName());
             }
-
             if (updateDeploymentGroupRequest.getCurrentDeploymentGroupName() != null) {
                 jsonWriter.key("currentDeploymentGroupName").value(
                         updateDeploymentGroupRequest
                                 .getCurrentDeploymentGroupName());
             }
-
             if (updateDeploymentGroupRequest.getNewDeploymentGroupName() != null) {
                 jsonWriter.key("newDeploymentGroupName").value(
                         updateDeploymentGroupRequest
                                 .getNewDeploymentGroupName());
             }
-
             if (updateDeploymentGroupRequest.getDeploymentConfigName() != null) {
                 jsonWriter.key("deploymentConfigName").value(
                         updateDeploymentGroupRequest.getDeploymentConfigName());
@@ -138,7 +136,6 @@ public class UpdateDeploymentGroupRequestMarshaller
                 }
                 jsonWriter.endArray();
             }
-
             if (updateDeploymentGroupRequest.getServiceRoleArn() != null) {
                 jsonWriter.key("serviceRoleArn").value(
                         updateDeploymentGroupRequest.getServiceRoleArn());

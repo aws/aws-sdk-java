@@ -30,6 +30,7 @@ import com.amazonaws.services.machinelearning.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,47 +56,38 @@ public class RDSDataSpecJsonMarshaller {
                 RDSDatabaseJsonMarshaller.getInstance().marshall(
                         rDSDataSpec.getDatabaseInformation(), jsonWriter);
             }
-
             if (rDSDataSpec.getSelectSqlQuery() != null) {
                 jsonWriter.key("SelectSqlQuery").value(
                         rDSDataSpec.getSelectSqlQuery());
             }
-
             if (rDSDataSpec.getDatabaseCredentials() != null) {
                 jsonWriter.key("DatabaseCredentials");
                 RDSDatabaseCredentialsJsonMarshaller.getInstance().marshall(
                         rDSDataSpec.getDatabaseCredentials(), jsonWriter);
             }
-
             if (rDSDataSpec.getS3StagingLocation() != null) {
                 jsonWriter.key("S3StagingLocation").value(
                         rDSDataSpec.getS3StagingLocation());
             }
-
             if (rDSDataSpec.getDataRearrangement() != null) {
                 jsonWriter.key("DataRearrangement").value(
                         rDSDataSpec.getDataRearrangement());
             }
-
             if (rDSDataSpec.getDataSchema() != null) {
                 jsonWriter.key("DataSchema").value(rDSDataSpec.getDataSchema());
             }
-
             if (rDSDataSpec.getDataSchemaUri() != null) {
                 jsonWriter.key("DataSchemaUri").value(
                         rDSDataSpec.getDataSchemaUri());
             }
-
             if (rDSDataSpec.getResourceRole() != null) {
                 jsonWriter.key("ResourceRole").value(
                         rDSDataSpec.getResourceRole());
             }
-
             if (rDSDataSpec.getServiceRole() != null) {
                 jsonWriter.key("ServiceRole").value(
                         rDSDataSpec.getServiceRole());
             }
-
             if (rDSDataSpec.getSubnetId() != null) {
                 jsonWriter.key("SubnetId").value(rDSDataSpec.getSubnetId());
             }

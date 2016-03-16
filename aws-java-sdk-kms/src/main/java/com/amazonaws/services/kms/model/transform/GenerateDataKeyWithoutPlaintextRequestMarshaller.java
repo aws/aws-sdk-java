@@ -37,6 +37,7 @@ import com.amazonaws.services.kms.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -92,12 +93,10 @@ public class GenerateDataKeyWithoutPlaintextRequestMarshaller
                 }
                 jsonWriter.endObject();
             }
-
             if (generateDataKeyWithoutPlaintextRequest.getKeySpec() != null) {
                 jsonWriter.key("KeySpec").value(
                         generateDataKeyWithoutPlaintextRequest.getKeySpec());
             }
-
             if (generateDataKeyWithoutPlaintextRequest.getNumberOfBytes() != null) {
                 jsonWriter.key("NumberOfBytes").value(
                         generateDataKeyWithoutPlaintextRequest

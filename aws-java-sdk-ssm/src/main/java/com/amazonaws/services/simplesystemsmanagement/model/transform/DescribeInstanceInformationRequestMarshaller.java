@@ -37,6 +37,7 @@ import com.amazonaws.services.simplesystemsmanagement.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -88,12 +89,10 @@ public class DescribeInstanceInformationRequestMarshaller
                 }
                 jsonWriter.endArray();
             }
-
             if (describeInstanceInformationRequest.getMaxResults() != null) {
                 jsonWriter.key("MaxResults").value(
                         describeInstanceInformationRequest.getMaxResults());
             }
-
             if (describeInstanceInformationRequest.getNextToken() != null) {
                 jsonWriter.key("NextToken").value(
                         describeInstanceInformationRequest.getNextToken());

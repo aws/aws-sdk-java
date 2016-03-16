@@ -30,6 +30,7 @@ import com.amazonaws.services.machinelearning.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,38 +54,30 @@ public class MLModelJsonMarshaller {
             if (mLModel.getMLModelId() != null) {
                 jsonWriter.key("MLModelId").value(mLModel.getMLModelId());
             }
-
             if (mLModel.getTrainingDataSourceId() != null) {
                 jsonWriter.key("TrainingDataSourceId").value(
                         mLModel.getTrainingDataSourceId());
             }
-
             if (mLModel.getCreatedByIamUser() != null) {
                 jsonWriter.key("CreatedByIamUser").value(
                         mLModel.getCreatedByIamUser());
             }
-
             if (mLModel.getCreatedAt() != null) {
                 jsonWriter.key("CreatedAt").value(mLModel.getCreatedAt());
             }
-
             if (mLModel.getLastUpdatedAt() != null) {
                 jsonWriter.key("LastUpdatedAt").value(
                         mLModel.getLastUpdatedAt());
             }
-
             if (mLModel.getName() != null) {
                 jsonWriter.key("Name").value(mLModel.getName());
             }
-
             if (mLModel.getStatus() != null) {
                 jsonWriter.key("Status").value(mLModel.getStatus());
             }
-
             if (mLModel.getSizeInBytes() != null) {
                 jsonWriter.key("SizeInBytes").value(mLModel.getSizeInBytes());
             }
-
             if (mLModel.getEndpointInfo() != null) {
                 jsonWriter.key("EndpointInfo");
                 RealtimeEndpointInfoJsonMarshaller.getInstance().marshall(
@@ -108,30 +101,24 @@ public class MLModelJsonMarshaller {
                 }
                 jsonWriter.endObject();
             }
-
             if (mLModel.getInputDataLocationS3() != null) {
                 jsonWriter.key("InputDataLocationS3").value(
                         mLModel.getInputDataLocationS3());
             }
-
             if (mLModel.getAlgorithm() != null) {
                 jsonWriter.key("Algorithm").value(mLModel.getAlgorithm());
             }
-
             if (mLModel.getMLModelType() != null) {
                 jsonWriter.key("MLModelType").value(mLModel.getMLModelType());
             }
-
             if (mLModel.getScoreThreshold() != null) {
                 jsonWriter.key("ScoreThreshold").value(
                         mLModel.getScoreThreshold());
             }
-
             if (mLModel.getScoreThresholdLastUpdatedAt() != null) {
                 jsonWriter.key("ScoreThresholdLastUpdatedAt").value(
                         mLModel.getScoreThresholdLastUpdatedAt());
             }
-
             if (mLModel.getMessage() != null) {
                 jsonWriter.key("Message").value(mLModel.getMessage());
             }

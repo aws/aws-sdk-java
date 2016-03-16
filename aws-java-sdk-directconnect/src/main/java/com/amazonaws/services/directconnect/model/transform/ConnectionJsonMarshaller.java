@@ -30,6 +30,7 @@ import com.amazonaws.services.directconnect.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,38 +55,30 @@ public class ConnectionJsonMarshaller {
                 jsonWriter.key("ownerAccount").value(
                         connection.getOwnerAccount());
             }
-
             if (connection.getConnectionId() != null) {
                 jsonWriter.key("connectionId").value(
                         connection.getConnectionId());
             }
-
             if (connection.getConnectionName() != null) {
                 jsonWriter.key("connectionName").value(
                         connection.getConnectionName());
             }
-
             if (connection.getConnectionState() != null) {
                 jsonWriter.key("connectionState").value(
                         connection.getConnectionState());
             }
-
             if (connection.getRegion() != null) {
                 jsonWriter.key("region").value(connection.getRegion());
             }
-
             if (connection.getLocation() != null) {
                 jsonWriter.key("location").value(connection.getLocation());
             }
-
             if (connection.getBandwidth() != null) {
                 jsonWriter.key("bandwidth").value(connection.getBandwidth());
             }
-
             if (connection.getVlan() != null) {
                 jsonWriter.key("vlan").value(connection.getVlan());
             }
-
             if (connection.getPartnerName() != null) {
                 jsonWriter.key("partnerName")
                         .value(connection.getPartnerName());

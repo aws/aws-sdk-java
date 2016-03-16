@@ -30,6 +30,7 @@ import com.amazonaws.services.codepipeline.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,13 +55,11 @@ public class ActionDeclarationJsonMarshaller {
             if (actionDeclaration.getName() != null) {
                 jsonWriter.key("name").value(actionDeclaration.getName());
             }
-
             if (actionDeclaration.getActionTypeId() != null) {
                 jsonWriter.key("actionTypeId");
                 ActionTypeIdJsonMarshaller.getInstance().marshall(
                         actionDeclaration.getActionTypeId(), jsonWriter);
             }
-
             if (actionDeclaration.getRunOrder() != null) {
                 jsonWriter.key("runOrder").value(
                         actionDeclaration.getRunOrder());
@@ -112,7 +111,6 @@ public class ActionDeclarationJsonMarshaller {
                 }
                 jsonWriter.endArray();
             }
-
             if (actionDeclaration.getRoleArn() != null) {
                 jsonWriter.key("roleArn").value(actionDeclaration.getRoleArn());
             }

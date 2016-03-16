@@ -30,6 +30,7 @@ import com.amazonaws.services.gamelift.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,23 +54,18 @@ public class BuildJsonMarshaller {
             if (build.getBuildId() != null) {
                 jsonWriter.key("BuildId").value(build.getBuildId());
             }
-
             if (build.getName() != null) {
                 jsonWriter.key("Name").value(build.getName());
             }
-
             if (build.getVersion() != null) {
                 jsonWriter.key("Version").value(build.getVersion());
             }
-
             if (build.getStatus() != null) {
                 jsonWriter.key("Status").value(build.getStatus());
             }
-
             if (build.getSizeOnDisk() != null) {
                 jsonWriter.key("SizeOnDisk").value(build.getSizeOnDisk());
             }
-
             if (build.getCreationTime() != null) {
                 jsonWriter.key("CreationTime").value(build.getCreationTime());
             }

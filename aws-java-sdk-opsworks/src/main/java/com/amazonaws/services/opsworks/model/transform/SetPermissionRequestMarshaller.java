@@ -37,6 +37,7 @@ import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -72,22 +73,18 @@ public class SetPermissionRequestMarshaller implements
                 jsonWriter.key("StackId").value(
                         setPermissionRequest.getStackId());
             }
-
             if (setPermissionRequest.getIamUserArn() != null) {
                 jsonWriter.key("IamUserArn").value(
                         setPermissionRequest.getIamUserArn());
             }
-
             if (setPermissionRequest.getAllowSsh() != null) {
                 jsonWriter.key("AllowSsh").value(
                         setPermissionRequest.getAllowSsh());
             }
-
             if (setPermissionRequest.getAllowSudo() != null) {
                 jsonWriter.key("AllowSudo").value(
                         setPermissionRequest.getAllowSudo());
             }
-
             if (setPermissionRequest.getLevel() != null) {
                 jsonWriter.key("Level").value(setPermissionRequest.getLevel());
             }

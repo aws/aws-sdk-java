@@ -30,6 +30,7 @@ import com.amazonaws.services.devicefarm.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,27 +54,21 @@ public class CountersJsonMarshaller {
             if (counters.getTotal() != null) {
                 jsonWriter.key("total").value(counters.getTotal());
             }
-
             if (counters.getPassed() != null) {
                 jsonWriter.key("passed").value(counters.getPassed());
             }
-
             if (counters.getFailed() != null) {
                 jsonWriter.key("failed").value(counters.getFailed());
             }
-
             if (counters.getWarned() != null) {
                 jsonWriter.key("warned").value(counters.getWarned());
             }
-
             if (counters.getErrored() != null) {
                 jsonWriter.key("errored").value(counters.getErrored());
             }
-
             if (counters.getStopped() != null) {
                 jsonWriter.key("stopped").value(counters.getStopped());
             }
-
             if (counters.getSkipped() != null) {
                 jsonWriter.key("skipped").value(counters.getSkipped());
             }

@@ -32,6 +32,7 @@ import com.amazonaws.services.cloudfront.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.XMLWriter;
 
 /**
@@ -63,12 +64,12 @@ public class UpdateStreamingDistributionRequestMarshaller
 
         String uriResourcePath = "/2016-01-28/streaming-distribution/{Id}/config";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{Id}",
-                (updateStreamingDistributionRequest.getId() == null) ? ""
-                        : StringUtils
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{Id}",
+                        (updateStreamingDistributionRequest.getId() != null) ? StringUtils
                                 .fromString(updateStreamingDistributionRequest
-                                        .getId()));
+                                        .getId()) : "");
         request.setResourcePath(uriResourcePath);
 
         try {

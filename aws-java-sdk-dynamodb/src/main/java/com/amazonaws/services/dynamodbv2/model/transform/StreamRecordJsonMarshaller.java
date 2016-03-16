@@ -30,6 +30,7 @@ import com.amazonaws.services.dynamodbv2.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -103,16 +104,13 @@ public class StreamRecordJsonMarshaller {
                 }
                 jsonWriter.endObject();
             }
-
             if (streamRecord.getSequenceNumber() != null) {
                 jsonWriter.key("SequenceNumber").value(
                         streamRecord.getSequenceNumber());
             }
-
             if (streamRecord.getSizeBytes() != null) {
                 jsonWriter.key("SizeBytes").value(streamRecord.getSizeBytes());
             }
-
             if (streamRecord.getStreamViewType() != null) {
                 jsonWriter.key("StreamViewType").value(
                         streamRecord.getStreamViewType());

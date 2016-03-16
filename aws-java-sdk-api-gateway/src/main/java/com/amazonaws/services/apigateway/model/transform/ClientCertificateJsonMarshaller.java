@@ -30,6 +30,7 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,22 +56,18 @@ public class ClientCertificateJsonMarshaller {
                 jsonWriter.key("clientCertificateId").value(
                         clientCertificate.getClientCertificateId());
             }
-
             if (clientCertificate.getDescription() != null) {
                 jsonWriter.key("description").value(
                         clientCertificate.getDescription());
             }
-
             if (clientCertificate.getPemEncodedCertificate() != null) {
                 jsonWriter.key("pemEncodedCertificate").value(
                         clientCertificate.getPemEncodedCertificate());
             }
-
             if (clientCertificate.getCreatedDate() != null) {
                 jsonWriter.key("createdDate").value(
                         clientCertificate.getCreatedDate());
             }
-
             if (clientCertificate.getExpirationDate() != null) {
                 jsonWriter.key("expirationDate").value(
                         clientCertificate.getExpirationDate());

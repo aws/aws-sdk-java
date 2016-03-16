@@ -37,6 +37,7 @@ import com.amazonaws.services.directconnect.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -74,25 +75,21 @@ public class AllocateConnectionOnInterconnectRequestMarshaller
                 jsonWriter.key("bandwidth").value(
                         allocateConnectionOnInterconnectRequest.getBandwidth());
             }
-
             if (allocateConnectionOnInterconnectRequest.getConnectionName() != null) {
                 jsonWriter.key("connectionName").value(
                         allocateConnectionOnInterconnectRequest
                                 .getConnectionName());
             }
-
             if (allocateConnectionOnInterconnectRequest.getOwnerAccount() != null) {
                 jsonWriter.key("ownerAccount").value(
                         allocateConnectionOnInterconnectRequest
                                 .getOwnerAccount());
             }
-
             if (allocateConnectionOnInterconnectRequest.getInterconnectId() != null) {
                 jsonWriter.key("interconnectId").value(
                         allocateConnectionOnInterconnectRequest
                                 .getInterconnectId());
             }
-
             if (allocateConnectionOnInterconnectRequest.getVlan() != null) {
                 jsonWriter.key("vlan").value(
                         allocateConnectionOnInterconnectRequest.getVlan());

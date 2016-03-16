@@ -33,7 +33,7 @@ public class GenericRevisionInfo implements Serializable, Cloneable {
     private String description;
     /**
      * <p>
-     * The deployment groups where this is the current target revision.
+     * The deployment groups for which this is the current target revision.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> deploymentGroups;
@@ -99,10 +99,11 @@ public class GenericRevisionInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The deployment groups where this is the current target revision.
+     * The deployment groups for which this is the current target revision.
      * </p>
      * 
-     * @return The deployment groups where this is the current target revision.
+     * @return The deployment groups for which this is the current target
+     *         revision.
      */
 
     public java.util.List<String> getDeploymentGroups() {
@@ -114,11 +115,12 @@ public class GenericRevisionInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The deployment groups where this is the current target revision.
+     * The deployment groups for which this is the current target revision.
      * </p>
      * 
      * @param deploymentGroups
-     *        The deployment groups where this is the current target revision.
+     *        The deployment groups for which this is the current target
+     *        revision.
      */
 
     public void setDeploymentGroups(
@@ -134,7 +136,7 @@ public class GenericRevisionInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The deployment groups where this is the current target revision.
+     * The deployment groups for which this is the current target revision.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -144,7 +146,8 @@ public class GenericRevisionInfo implements Serializable, Cloneable {
      * </p>
      * 
      * @param deploymentGroups
-     *        The deployment groups where this is the current target revision.
+     *        The deployment groups for which this is the current target
+     *        revision.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -162,11 +165,12 @@ public class GenericRevisionInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The deployment groups where this is the current target revision.
+     * The deployment groups for which this is the current target revision.
      * </p>
      * 
      * @param deploymentGroups
-     *        The deployment groups where this is the current target revision.
+     *        The deployment groups for which this is the current target
+     *        revision.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

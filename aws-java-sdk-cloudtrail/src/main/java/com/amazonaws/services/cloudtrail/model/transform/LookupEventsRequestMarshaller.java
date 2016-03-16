@@ -37,6 +37,7 @@ import com.amazonaws.services.cloudtrail.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -84,22 +85,18 @@ public class LookupEventsRequestMarshaller implements
                 }
                 jsonWriter.endArray();
             }
-
             if (lookupEventsRequest.getStartTime() != null) {
                 jsonWriter.key("StartTime").value(
                         lookupEventsRequest.getStartTime());
             }
-
             if (lookupEventsRequest.getEndTime() != null) {
                 jsonWriter.key("EndTime").value(
                         lookupEventsRequest.getEndTime());
             }
-
             if (lookupEventsRequest.getMaxResults() != null) {
                 jsonWriter.key("MaxResults").value(
                         lookupEventsRequest.getMaxResults());
             }
-
             if (lookupEventsRequest.getNextToken() != null) {
                 jsonWriter.key("NextToken").value(
                         lookupEventsRequest.getNextToken());

@@ -37,6 +37,7 @@ import com.amazonaws.services.cloudhsm.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -70,26 +71,21 @@ public class ModifyHsmRequestMarshaller implements
             if (modifyHsmRequest.getHsmArn() != null) {
                 jsonWriter.key("HsmArn").value(modifyHsmRequest.getHsmArn());
             }
-
             if (modifyHsmRequest.getSubnetId() != null) {
                 jsonWriter.key("SubnetId")
                         .value(modifyHsmRequest.getSubnetId());
             }
-
             if (modifyHsmRequest.getEniIp() != null) {
                 jsonWriter.key("EniIp").value(modifyHsmRequest.getEniIp());
             }
-
             if (modifyHsmRequest.getIamRoleArn() != null) {
                 jsonWriter.key("IamRoleArn").value(
                         modifyHsmRequest.getIamRoleArn());
             }
-
             if (modifyHsmRequest.getExternalId() != null) {
                 jsonWriter.key("ExternalId").value(
                         modifyHsmRequest.getExternalId());
             }
-
             if (modifyHsmRequest.getSyslogIp() != null) {
                 jsonWriter.key("SyslogIp")
                         .value(modifyHsmRequest.getSyslogIp());

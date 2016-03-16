@@ -30,6 +30,7 @@ import com.amazonaws.services.ecs.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,15 +55,12 @@ public class ContainerDefinitionJsonMarshaller {
             if (containerDefinition.getName() != null) {
                 jsonWriter.key("name").value(containerDefinition.getName());
             }
-
             if (containerDefinition.getImage() != null) {
                 jsonWriter.key("image").value(containerDefinition.getImage());
             }
-
             if (containerDefinition.getCpu() != null) {
                 jsonWriter.key("cpu").value(containerDefinition.getCpu());
             }
-
             if (containerDefinition.getMemory() != null) {
                 jsonWriter.key("memory").value(containerDefinition.getMemory());
             }
@@ -95,7 +93,6 @@ public class ContainerDefinitionJsonMarshaller {
                 }
                 jsonWriter.endArray();
             }
-
             if (containerDefinition.getEssential() != null) {
                 jsonWriter.key("essential").value(
                         containerDefinition.getEssential());
@@ -174,31 +171,25 @@ public class ContainerDefinitionJsonMarshaller {
                 }
                 jsonWriter.endArray();
             }
-
             if (containerDefinition.getHostname() != null) {
                 jsonWriter.key("hostname").value(
                         containerDefinition.getHostname());
             }
-
             if (containerDefinition.getUser() != null) {
                 jsonWriter.key("user").value(containerDefinition.getUser());
             }
-
             if (containerDefinition.getWorkingDirectory() != null) {
                 jsonWriter.key("workingDirectory").value(
                         containerDefinition.getWorkingDirectory());
             }
-
             if (containerDefinition.getDisableNetworking() != null) {
                 jsonWriter.key("disableNetworking").value(
                         containerDefinition.getDisableNetworking());
             }
-
             if (containerDefinition.getPrivileged() != null) {
                 jsonWriter.key("privileged").value(
                         containerDefinition.getPrivileged());
             }
-
             if (containerDefinition.getReadonlyRootFilesystem() != null) {
                 jsonWriter.key("readonlyRootFilesystem").value(
                         containerDefinition.getReadonlyRootFilesystem());
@@ -291,7 +282,6 @@ public class ContainerDefinitionJsonMarshaller {
                 }
                 jsonWriter.endArray();
             }
-
             if (containerDefinition.getLogConfiguration() != null) {
                 jsonWriter.key("logConfiguration");
                 LogConfigurationJsonMarshaller.getInstance().marshall(

@@ -30,6 +30,7 @@ import com.amazonaws.services.cloudtrail.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,7 +55,6 @@ public class LookupAttributeJsonMarshaller {
                 jsonWriter.key("AttributeKey").value(
                         lookupAttribute.getAttributeKey());
             }
-
             if (lookupAttribute.getAttributeValue() != null) {
                 jsonWriter.key("AttributeValue").value(
                         lookupAttribute.getAttributeValue());

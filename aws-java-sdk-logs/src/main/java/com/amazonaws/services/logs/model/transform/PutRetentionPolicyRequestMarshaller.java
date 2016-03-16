@@ -37,6 +37,7 @@ import com.amazonaws.services.logs.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -73,7 +74,6 @@ public class PutRetentionPolicyRequestMarshaller
                 jsonWriter.key("logGroupName").value(
                         putRetentionPolicyRequest.getLogGroupName());
             }
-
             if (putRetentionPolicyRequest.getRetentionInDays() != null) {
                 jsonWriter.key("retentionInDays").value(
                         putRetentionPolicyRequest.getRetentionInDays());

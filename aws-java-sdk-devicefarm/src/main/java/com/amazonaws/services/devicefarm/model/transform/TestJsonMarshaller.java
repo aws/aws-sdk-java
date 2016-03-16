@@ -30,6 +30,7 @@ import com.amazonaws.services.devicefarm.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,45 +54,35 @@ public class TestJsonMarshaller {
             if (test.getArn() != null) {
                 jsonWriter.key("arn").value(test.getArn());
             }
-
             if (test.getName() != null) {
                 jsonWriter.key("name").value(test.getName());
             }
-
             if (test.getType() != null) {
                 jsonWriter.key("type").value(test.getType());
             }
-
             if (test.getCreated() != null) {
                 jsonWriter.key("created").value(test.getCreated());
             }
-
             if (test.getStatus() != null) {
                 jsonWriter.key("status").value(test.getStatus());
             }
-
             if (test.getResult() != null) {
                 jsonWriter.key("result").value(test.getResult());
             }
-
             if (test.getStarted() != null) {
                 jsonWriter.key("started").value(test.getStarted());
             }
-
             if (test.getStopped() != null) {
                 jsonWriter.key("stopped").value(test.getStopped());
             }
-
             if (test.getCounters() != null) {
                 jsonWriter.key("counters");
                 CountersJsonMarshaller.getInstance().marshall(
                         test.getCounters(), jsonWriter);
             }
-
             if (test.getMessage() != null) {
                 jsonWriter.key("message").value(test.getMessage());
             }
-
             if (test.getDeviceMinutes() != null) {
                 jsonWriter.key("deviceMinutes");
                 DeviceMinutesJsonMarshaller.getInstance().marshall(

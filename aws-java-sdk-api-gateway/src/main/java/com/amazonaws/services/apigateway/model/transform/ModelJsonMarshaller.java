@@ -30,6 +30,7 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,19 +54,15 @@ public class ModelJsonMarshaller {
             if (model.getId() != null) {
                 jsonWriter.key("id").value(model.getId());
             }
-
             if (model.getName() != null) {
                 jsonWriter.key("name").value(model.getName());
             }
-
             if (model.getDescription() != null) {
                 jsonWriter.key("description").value(model.getDescription());
             }
-
             if (model.getSchema() != null) {
                 jsonWriter.key("schema").value(model.getSchema());
             }
-
             if (model.getContentType() != null) {
                 jsonWriter.key("contentType").value(model.getContentType());
             }

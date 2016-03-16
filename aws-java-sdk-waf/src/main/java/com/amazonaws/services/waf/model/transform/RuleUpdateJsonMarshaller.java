@@ -30,6 +30,7 @@ import com.amazonaws.services.waf.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,7 +54,6 @@ public class RuleUpdateJsonMarshaller {
             if (ruleUpdate.getAction() != null) {
                 jsonWriter.key("Action").value(ruleUpdate.getAction());
             }
-
             if (ruleUpdate.getPredicate() != null) {
                 jsonWriter.key("Predicate");
                 PredicateJsonMarshaller.getInstance().marshall(

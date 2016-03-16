@@ -37,6 +37,7 @@ import com.amazonaws.services.ecr.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -73,12 +74,10 @@ public class DeleteRepositoryRequestMarshaller implements
                 jsonWriter.key("registryId").value(
                         deleteRepositoryRequest.getRegistryId());
             }
-
             if (deleteRepositoryRequest.getRepositoryName() != null) {
                 jsonWriter.key("repositoryName").value(
                         deleteRepositoryRequest.getRepositoryName());
             }
-
             if (deleteRepositoryRequest.getForce() != null) {
                 jsonWriter.key("force").value(
                         deleteRepositoryRequest.getForce());

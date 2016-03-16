@@ -37,6 +37,7 @@ import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -65,9 +66,8 @@ public class CreateTopicRuleRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{ruleName}",
-                (createTopicRuleRequest.getRuleName() == null) ? ""
-                        : StringUtils.fromString(createTopicRuleRequest
-                                .getRuleName()));
+                (createTopicRuleRequest.getRuleName() != null) ? StringUtils
+                        .fromString(createTopicRuleRequest.getRuleName()) : "");
         request.setResourcePath(uriResourcePath);
 
         try {
@@ -78,11 +78,9 @@ public class CreateTopicRuleRequestMarshaller implements
                     .getTopicRulePayload();
             if (topicRulePayload != null) {
                 jsonWriter.object();
-
                 if (topicRulePayload.getSql() != null) {
                     jsonWriter.key("sql").value(topicRulePayload.getSql());
                 }
-
                 if (topicRulePayload.getDescription() != null) {
                     jsonWriter.key("description").value(
                             topicRulePayload.getDescription());
@@ -102,7 +100,6 @@ public class CreateTopicRuleRequestMarshaller implements
                     }
                     jsonWriter.endArray();
                 }
-
                 if (topicRulePayload.getRuleDisabled() != null) {
                     jsonWriter.key("ruleDisabled").value(
                             topicRulePayload.getRuleDisabled());

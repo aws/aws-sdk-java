@@ -37,6 +37,7 @@ import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -67,10 +68,9 @@ public class CancelCertificateTransferRequestMarshaller
         uriResourcePath = uriResourcePath
                 .replace(
                         "{certificateId}",
-                        (cancelCertificateTransferRequest.getCertificateId() == null) ? ""
-                                : StringUtils
-                                        .fromString(cancelCertificateTransferRequest
-                                                .getCertificateId()));
+                        (cancelCertificateTransferRequest.getCertificateId() != null) ? StringUtils
+                                .fromString(cancelCertificateTransferRequest
+                                        .getCertificateId()) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

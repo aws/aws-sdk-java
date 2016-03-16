@@ -30,6 +30,7 @@ import com.amazonaws.services.codedeploy.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,22 +55,18 @@ public class LifecycleEventJsonMarshaller {
                 jsonWriter.key("lifecycleEventName").value(
                         lifecycleEvent.getLifecycleEventName());
             }
-
             if (lifecycleEvent.getDiagnostics() != null) {
                 jsonWriter.key("diagnostics");
                 DiagnosticsJsonMarshaller.getInstance().marshall(
                         lifecycleEvent.getDiagnostics(), jsonWriter);
             }
-
             if (lifecycleEvent.getStartTime() != null) {
                 jsonWriter.key("startTime")
                         .value(lifecycleEvent.getStartTime());
             }
-
             if (lifecycleEvent.getEndTime() != null) {
                 jsonWriter.key("endTime").value(lifecycleEvent.getEndTime());
             }
-
             if (lifecycleEvent.getStatus() != null) {
                 jsonWriter.key("status").value(lifecycleEvent.getStatus());
             }

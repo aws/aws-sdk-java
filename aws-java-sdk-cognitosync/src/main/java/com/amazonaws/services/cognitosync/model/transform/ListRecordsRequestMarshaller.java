@@ -37,6 +37,7 @@ import com.amazonaws.services.cognitosync.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -65,43 +66,37 @@ public class ListRecordsRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{IdentityPoolId}",
-                (listRecordsRequest.getIdentityPoolId() == null) ? ""
-                        : StringUtils.fromString(listRecordsRequest
-                                .getIdentityPoolId()));
+                (listRecordsRequest.getIdentityPoolId() != null) ? StringUtils
+                        .fromString(listRecordsRequest.getIdentityPoolId())
+                        : "");
         uriResourcePath = uriResourcePath.replace(
                 "{IdentityId}",
-                (listRecordsRequest.getIdentityId() == null) ? "" : StringUtils
-                        .fromString(listRecordsRequest.getIdentityId()));
+                (listRecordsRequest.getIdentityId() != null) ? StringUtils
+                        .fromString(listRecordsRequest.getIdentityId()) : "");
         uriResourcePath = uriResourcePath.replace(
                 "{DatasetName}",
-                (listRecordsRequest.getDatasetName() == null) ? ""
-                        : StringUtils.fromString(listRecordsRequest
-                                .getDatasetName()));
+                (listRecordsRequest.getDatasetName() != null) ? StringUtils
+                        .fromString(listRecordsRequest.getDatasetName()) : "");
         request.setResourcePath(uriResourcePath);
 
-        String lastSyncCount = (listRecordsRequest.getLastSyncCount() == null) ? null
-                : StringUtils.fromLong(listRecordsRequest.getLastSyncCount());
-        if (lastSyncCount != null) {
-            request.addParameter("lastSyncCount", lastSyncCount);
+        if (listRecordsRequest.getLastSyncCount() != null) {
+            request.addParameter("lastSyncCount",
+                    StringUtils.fromLong(listRecordsRequest.getLastSyncCount()));
         }
 
-        String nextToken = (listRecordsRequest.getNextToken() == null) ? null
-                : StringUtils.fromString(listRecordsRequest.getNextToken());
-        if (nextToken != null) {
-            request.addParameter("nextToken", nextToken);
+        if (listRecordsRequest.getNextToken() != null) {
+            request.addParameter("nextToken",
+                    StringUtils.fromString(listRecordsRequest.getNextToken()));
         }
 
-        String maxResults = (listRecordsRequest.getMaxResults() == null) ? null
-                : StringUtils.fromInteger(listRecordsRequest.getMaxResults());
-        if (maxResults != null) {
-            request.addParameter("maxResults", maxResults);
+        if (listRecordsRequest.getMaxResults() != null) {
+            request.addParameter("maxResults",
+                    StringUtils.fromInteger(listRecordsRequest.getMaxResults()));
         }
 
-        String syncSessionToken = (listRecordsRequest.getSyncSessionToken() == null) ? null
-                : StringUtils.fromString(listRecordsRequest
-                        .getSyncSessionToken());
-        if (syncSessionToken != null) {
-            request.addParameter("syncSessionToken", syncSessionToken);
+        if (listRecordsRequest.getSyncSessionToken() != null) {
+            request.addParameter("syncSessionToken", StringUtils
+                    .fromString(listRecordsRequest.getSyncSessionToken()));
         }
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

@@ -37,6 +37,7 @@ import com.amazonaws.services.cloudhsm.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -73,7 +74,6 @@ public class CreateLunaClientRequestMarshaller implements
                 jsonWriter.key("Label").value(
                         createLunaClientRequest.getLabel());
             }
-
             if (createLunaClientRequest.getCertificate() != null) {
                 jsonWriter.key("Certificate").value(
                         createLunaClientRequest.getCertificate());

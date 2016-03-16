@@ -37,6 +37,7 @@ import com.amazonaws.services.ecs.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -74,22 +75,18 @@ public class ListTaskDefinitionsRequestMarshaller
                 jsonWriter.key("familyPrefix").value(
                         listTaskDefinitionsRequest.getFamilyPrefix());
             }
-
             if (listTaskDefinitionsRequest.getStatus() != null) {
                 jsonWriter.key("status").value(
                         listTaskDefinitionsRequest.getStatus());
             }
-
             if (listTaskDefinitionsRequest.getSort() != null) {
                 jsonWriter.key("sort").value(
                         listTaskDefinitionsRequest.getSort());
             }
-
             if (listTaskDefinitionsRequest.getNextToken() != null) {
                 jsonWriter.key("nextToken").value(
                         listTaskDefinitionsRequest.getNextToken());
             }
-
             if (listTaskDefinitionsRequest.getMaxResults() != null) {
                 jsonWriter.key("maxResults").value(
                         listTaskDefinitionsRequest.getMaxResults());

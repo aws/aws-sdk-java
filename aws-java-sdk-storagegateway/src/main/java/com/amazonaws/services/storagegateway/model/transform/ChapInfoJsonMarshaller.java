@@ -30,6 +30,7 @@ import com.amazonaws.services.storagegateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,17 +54,14 @@ public class ChapInfoJsonMarshaller {
             if (chapInfo.getTargetARN() != null) {
                 jsonWriter.key("TargetARN").value(chapInfo.getTargetARN());
             }
-
             if (chapInfo.getSecretToAuthenticateInitiator() != null) {
                 jsonWriter.key("SecretToAuthenticateInitiator").value(
                         chapInfo.getSecretToAuthenticateInitiator());
             }
-
             if (chapInfo.getInitiatorName() != null) {
                 jsonWriter.key("InitiatorName").value(
                         chapInfo.getInitiatorName());
             }
-
             if (chapInfo.getSecretToAuthenticateTarget() != null) {
                 jsonWriter.key("SecretToAuthenticateTarget").value(
                         chapInfo.getSecretToAuthenticateTarget());

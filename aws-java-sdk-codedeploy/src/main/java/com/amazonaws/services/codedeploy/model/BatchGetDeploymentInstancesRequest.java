@@ -35,7 +35,7 @@ public class BatchGetDeploymentInstancesRequest extends AmazonWebServiceRequest
     private String deploymentId;
     /**
      * <p>
-     * The unique IDs of instances in the deployment's deployment group.
+     * The unique IDs of instances in the deployment group.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> instanceIds;
@@ -84,10 +84,10 @@ public class BatchGetDeploymentInstancesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The unique IDs of instances in the deployment's deployment group.
+     * The unique IDs of instances in the deployment group.
      * </p>
      * 
-     * @return The unique IDs of instances in the deployment's deployment group.
+     * @return The unique IDs of instances in the deployment group.
      */
 
     public java.util.List<String> getInstanceIds() {
@@ -99,11 +99,11 @@ public class BatchGetDeploymentInstancesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The unique IDs of instances in the deployment's deployment group.
+     * The unique IDs of instances in the deployment group.
      * </p>
      * 
      * @param instanceIds
-     *        The unique IDs of instances in the deployment's deployment group.
+     *        The unique IDs of instances in the deployment group.
      */
 
     public void setInstanceIds(java.util.Collection<String> instanceIds) {
@@ -118,7 +118,7 @@ public class BatchGetDeploymentInstancesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The unique IDs of instances in the deployment's deployment group.
+     * The unique IDs of instances in the deployment group.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -128,7 +128,7 @@ public class BatchGetDeploymentInstancesRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param instanceIds
-     *        The unique IDs of instances in the deployment's deployment group.
+     *        The unique IDs of instances in the deployment group.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -147,11 +147,11 @@ public class BatchGetDeploymentInstancesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The unique IDs of instances in the deployment's deployment group.
+     * The unique IDs of instances in the deployment group.
      * </p>
      * 
      * @param instanceIds
-     *        The unique IDs of instances in the deployment's deployment group.
+     *        The unique IDs of instances in the deployment group.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

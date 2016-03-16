@@ -30,6 +30,7 @@ import com.amazonaws.services.ecs.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,31 +54,25 @@ public class TaskJsonMarshaller {
             if (task.getTaskArn() != null) {
                 jsonWriter.key("taskArn").value(task.getTaskArn());
             }
-
             if (task.getClusterArn() != null) {
                 jsonWriter.key("clusterArn").value(task.getClusterArn());
             }
-
             if (task.getTaskDefinitionArn() != null) {
                 jsonWriter.key("taskDefinitionArn").value(
                         task.getTaskDefinitionArn());
             }
-
             if (task.getContainerInstanceArn() != null) {
                 jsonWriter.key("containerInstanceArn").value(
                         task.getContainerInstanceArn());
             }
-
             if (task.getOverrides() != null) {
                 jsonWriter.key("overrides");
                 TaskOverrideJsonMarshaller.getInstance().marshall(
                         task.getOverrides(), jsonWriter);
             }
-
             if (task.getLastStatus() != null) {
                 jsonWriter.key("lastStatus").value(task.getLastStatus());
             }
-
             if (task.getDesiredStatus() != null) {
                 jsonWriter.key("desiredStatus").value(task.getDesiredStatus());
             }
@@ -96,23 +91,18 @@ public class TaskJsonMarshaller {
                 }
                 jsonWriter.endArray();
             }
-
             if (task.getStartedBy() != null) {
                 jsonWriter.key("startedBy").value(task.getStartedBy());
             }
-
             if (task.getStoppedReason() != null) {
                 jsonWriter.key("stoppedReason").value(task.getStoppedReason());
             }
-
             if (task.getCreatedAt() != null) {
                 jsonWriter.key("createdAt").value(task.getCreatedAt());
             }
-
             if (task.getStartedAt() != null) {
                 jsonWriter.key("startedAt").value(task.getStartedAt());
             }
-
             if (task.getStoppedAt() != null) {
                 jsonWriter.key("stoppedAt").value(task.getStoppedAt());
             }

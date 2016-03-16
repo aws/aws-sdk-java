@@ -37,6 +37,7 @@ import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -64,18 +65,17 @@ public class CreatePolicyVersionRequestMarshaller
 
         String uriResourcePath = "/policies/{policyName}/version";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{policyName}",
-                (createPolicyVersionRequest.getPolicyName() == null) ? ""
-                        : StringUtils.fromString(createPolicyVersionRequest
-                                .getPolicyName()));
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{policyName}",
+                        (createPolicyVersionRequest.getPolicyName() != null) ? StringUtils
+                                .fromString(createPolicyVersionRequest
+                                        .getPolicyName()) : "");
         request.setResourcePath(uriResourcePath);
 
-        String setAsDefault = (createPolicyVersionRequest.getSetAsDefault() == null) ? null
-                : StringUtils.fromBoolean(createPolicyVersionRequest
-                        .getSetAsDefault());
-        if (setAsDefault != null) {
-            request.addParameter("setAsDefault", setAsDefault);
+        if (createPolicyVersionRequest.getSetAsDefault() != null) {
+            request.addParameter("setAsDefault", StringUtils
+                    .fromBoolean(createPolicyVersionRequest.getSetAsDefault()));
         }
 
         try {

@@ -30,6 +30,7 @@ import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,43 +56,36 @@ public class ActionJsonMarshaller {
                 DynamoDBActionJsonMarshaller.getInstance().marshall(
                         action.getDynamoDB(), jsonWriter);
             }
-
             if (action.getLambda() != null) {
                 jsonWriter.key("lambda");
                 LambdaActionJsonMarshaller.getInstance().marshall(
                         action.getLambda(), jsonWriter);
             }
-
             if (action.getSns() != null) {
                 jsonWriter.key("sns");
                 SnsActionJsonMarshaller.getInstance().marshall(action.getSns(),
                         jsonWriter);
             }
-
             if (action.getSqs() != null) {
                 jsonWriter.key("sqs");
                 SqsActionJsonMarshaller.getInstance().marshall(action.getSqs(),
                         jsonWriter);
             }
-
             if (action.getKinesis() != null) {
                 jsonWriter.key("kinesis");
                 KinesisActionJsonMarshaller.getInstance().marshall(
                         action.getKinesis(), jsonWriter);
             }
-
             if (action.getRepublish() != null) {
                 jsonWriter.key("republish");
                 RepublishActionJsonMarshaller.getInstance().marshall(
                         action.getRepublish(), jsonWriter);
             }
-
             if (action.getS3() != null) {
                 jsonWriter.key("s3");
                 S3ActionJsonMarshaller.getInstance().marshall(action.getS3(),
                         jsonWriter);
             }
-
             if (action.getFirehose() != null) {
                 jsonWriter.key("firehose");
                 FirehoseActionJsonMarshaller.getInstance().marshall(

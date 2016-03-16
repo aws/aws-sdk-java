@@ -30,6 +30,7 @@ import com.amazonaws.services.elasticmapreduce.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,11 +56,9 @@ public class VolumeSpecificationJsonMarshaller {
                 jsonWriter.key("VolumeType").value(
                         volumeSpecification.getVolumeType());
             }
-
             if (volumeSpecification.getIops() != null) {
                 jsonWriter.key("Iops").value(volumeSpecification.getIops());
             }
-
             if (volumeSpecification.getSizeInGB() != null) {
                 jsonWriter.key("SizeInGB").value(
                         volumeSpecification.getSizeInGB());

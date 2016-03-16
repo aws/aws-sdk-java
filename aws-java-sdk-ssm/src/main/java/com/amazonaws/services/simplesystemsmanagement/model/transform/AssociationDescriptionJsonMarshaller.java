@@ -30,6 +30,7 @@ import com.amazonaws.services.simplesystemsmanagement.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,16 +55,13 @@ public class AssociationDescriptionJsonMarshaller {
             if (associationDescription.getName() != null) {
                 jsonWriter.key("Name").value(associationDescription.getName());
             }
-
             if (associationDescription.getInstanceId() != null) {
                 jsonWriter.key("InstanceId").value(
                         associationDescription.getInstanceId());
             }
-
             if (associationDescription.getDate() != null) {
                 jsonWriter.key("Date").value(associationDescription.getDate());
             }
-
             if (associationDescription.getStatus() != null) {
                 jsonWriter.key("Status");
                 AssociationStatusJsonMarshaller.getInstance().marshall(

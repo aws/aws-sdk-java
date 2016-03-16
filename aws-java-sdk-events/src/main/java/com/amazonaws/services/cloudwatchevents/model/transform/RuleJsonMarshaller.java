@@ -30,6 +30,7 @@ import com.amazonaws.services.cloudwatchevents.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,28 +54,22 @@ public class RuleJsonMarshaller {
             if (rule.getName() != null) {
                 jsonWriter.key("Name").value(rule.getName());
             }
-
             if (rule.getArn() != null) {
                 jsonWriter.key("Arn").value(rule.getArn());
             }
-
             if (rule.getEventPattern() != null) {
                 jsonWriter.key("EventPattern").value(rule.getEventPattern());
             }
-
             if (rule.getState() != null) {
                 jsonWriter.key("State").value(rule.getState());
             }
-
             if (rule.getDescription() != null) {
                 jsonWriter.key("Description").value(rule.getDescription());
             }
-
             if (rule.getScheduleExpression() != null) {
                 jsonWriter.key("ScheduleExpression").value(
                         rule.getScheduleExpression());
             }
-
             if (rule.getRoleArn() != null) {
                 jsonWriter.key("RoleArn").value(rule.getRoleArn());
             }

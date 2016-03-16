@@ -37,6 +37,7 @@ import com.amazonaws.services.simplesystemsmanagement.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -72,7 +73,6 @@ public class DeleteAssociationRequestMarshaller implements
                 jsonWriter.key("Name")
                         .value(deleteAssociationRequest.getName());
             }
-
             if (deleteAssociationRequest.getInstanceId() != null) {
                 jsonWriter.key("InstanceId").value(
                         deleteAssociationRequest.getInstanceId());

@@ -37,6 +37,7 @@ import com.amazonaws.services.codedeploy.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -74,12 +75,10 @@ public class CreateDeploymentGroupRequestMarshaller
                 jsonWriter.key("applicationName").value(
                         createDeploymentGroupRequest.getApplicationName());
             }
-
             if (createDeploymentGroupRequest.getDeploymentGroupName() != null) {
                 jsonWriter.key("deploymentGroupName").value(
                         createDeploymentGroupRequest.getDeploymentGroupName());
             }
-
             if (createDeploymentGroupRequest.getDeploymentConfigName() != null) {
                 jsonWriter.key("deploymentConfigName").value(
                         createDeploymentGroupRequest.getDeploymentConfigName());
@@ -131,7 +130,6 @@ public class CreateDeploymentGroupRequestMarshaller
                 }
                 jsonWriter.endArray();
             }
-
             if (createDeploymentGroupRequest.getServiceRoleArn() != null) {
                 jsonWriter.key("serviceRoleArn").value(
                         createDeploymentGroupRequest.getServiceRoleArn());

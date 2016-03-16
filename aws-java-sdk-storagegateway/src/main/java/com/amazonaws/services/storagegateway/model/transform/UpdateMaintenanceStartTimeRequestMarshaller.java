@@ -37,6 +37,7 @@ import com.amazonaws.services.storagegateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -74,17 +75,14 @@ public class UpdateMaintenanceStartTimeRequestMarshaller
                 jsonWriter.key("GatewayARN").value(
                         updateMaintenanceStartTimeRequest.getGatewayARN());
             }
-
             if (updateMaintenanceStartTimeRequest.getHourOfDay() != null) {
                 jsonWriter.key("HourOfDay").value(
                         updateMaintenanceStartTimeRequest.getHourOfDay());
             }
-
             if (updateMaintenanceStartTimeRequest.getMinuteOfHour() != null) {
                 jsonWriter.key("MinuteOfHour").value(
                         updateMaintenanceStartTimeRequest.getMinuteOfHour());
             }
-
             if (updateMaintenanceStartTimeRequest.getDayOfWeek() != null) {
                 jsonWriter.key("DayOfWeek").value(
                         updateMaintenanceStartTimeRequest.getDayOfWeek());

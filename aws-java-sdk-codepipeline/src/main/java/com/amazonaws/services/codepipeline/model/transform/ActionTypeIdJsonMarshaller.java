@@ -30,6 +30,7 @@ import com.amazonaws.services.codepipeline.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,15 +54,12 @@ public class ActionTypeIdJsonMarshaller {
             if (actionTypeId.getCategory() != null) {
                 jsonWriter.key("category").value(actionTypeId.getCategory());
             }
-
             if (actionTypeId.getOwner() != null) {
                 jsonWriter.key("owner").value(actionTypeId.getOwner());
             }
-
             if (actionTypeId.getProvider() != null) {
                 jsonWriter.key("provider").value(actionTypeId.getProvider());
             }
-
             if (actionTypeId.getVersion() != null) {
                 jsonWriter.key("version").value(actionTypeId.getVersion());
             }

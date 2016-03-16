@@ -30,6 +30,7 @@ import com.amazonaws.services.kms.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,7 +54,6 @@ public class KeyListEntryJsonMarshaller {
             if (keyListEntry.getKeyId() != null) {
                 jsonWriter.key("KeyId").value(keyListEntry.getKeyId());
             }
-
             if (keyListEntry.getKeyArn() != null) {
                 jsonWriter.key("KeyArn").value(keyListEntry.getKeyArn());
             }

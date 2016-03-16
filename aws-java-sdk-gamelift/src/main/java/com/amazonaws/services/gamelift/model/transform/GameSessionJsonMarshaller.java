@@ -30,6 +30,7 @@ import com.amazonaws.services.gamelift.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,35 +55,28 @@ public class GameSessionJsonMarshaller {
                 jsonWriter.key("GameSessionId").value(
                         gameSession.getGameSessionId());
             }
-
             if (gameSession.getName() != null) {
                 jsonWriter.key("Name").value(gameSession.getName());
             }
-
             if (gameSession.getFleetId() != null) {
                 jsonWriter.key("FleetId").value(gameSession.getFleetId());
             }
-
             if (gameSession.getCreationTime() != null) {
                 jsonWriter.key("CreationTime").value(
                         gameSession.getCreationTime());
             }
-
             if (gameSession.getTerminationTime() != null) {
                 jsonWriter.key("TerminationTime").value(
                         gameSession.getTerminationTime());
             }
-
             if (gameSession.getCurrentPlayerSessionCount() != null) {
                 jsonWriter.key("CurrentPlayerSessionCount").value(
                         gameSession.getCurrentPlayerSessionCount());
             }
-
             if (gameSession.getMaximumPlayerSessionCount() != null) {
                 jsonWriter.key("MaximumPlayerSessionCount").value(
                         gameSession.getMaximumPlayerSessionCount());
             }
-
             if (gameSession.getStatus() != null) {
                 jsonWriter.key("Status").value(gameSession.getStatus());
             }
@@ -101,11 +95,9 @@ public class GameSessionJsonMarshaller {
                 }
                 jsonWriter.endArray();
             }
-
             if (gameSession.getIpAddress() != null) {
                 jsonWriter.key("IpAddress").value(gameSession.getIpAddress());
             }
-
             if (gameSession.getPlayerSessionCreationPolicy() != null) {
                 jsonWriter.key("PlayerSessionCreationPolicy").value(
                         gameSession.getPlayerSessionCreationPolicy());

@@ -20,8 +20,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Information about the location of application artifacts that are stored in
- * Amazon S3.
+ * Information about the location of application artifacts stored in Amazon S3.
  * </p>
  */
 public class S3Location implements Serializable, Cloneable {

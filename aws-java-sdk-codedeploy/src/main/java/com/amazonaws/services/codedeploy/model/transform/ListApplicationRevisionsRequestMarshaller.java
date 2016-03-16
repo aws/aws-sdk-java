@@ -37,6 +37,7 @@ import com.amazonaws.services.codedeploy.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -74,32 +75,26 @@ public class ListApplicationRevisionsRequestMarshaller
                 jsonWriter.key("applicationName").value(
                         listApplicationRevisionsRequest.getApplicationName());
             }
-
             if (listApplicationRevisionsRequest.getSortBy() != null) {
                 jsonWriter.key("sortBy").value(
                         listApplicationRevisionsRequest.getSortBy());
             }
-
             if (listApplicationRevisionsRequest.getSortOrder() != null) {
                 jsonWriter.key("sortOrder").value(
                         listApplicationRevisionsRequest.getSortOrder());
             }
-
             if (listApplicationRevisionsRequest.getS3Bucket() != null) {
                 jsonWriter.key("s3Bucket").value(
                         listApplicationRevisionsRequest.getS3Bucket());
             }
-
             if (listApplicationRevisionsRequest.getS3KeyPrefix() != null) {
                 jsonWriter.key("s3KeyPrefix").value(
                         listApplicationRevisionsRequest.getS3KeyPrefix());
             }
-
             if (listApplicationRevisionsRequest.getDeployed() != null) {
                 jsonWriter.key("deployed").value(
                         listApplicationRevisionsRequest.getDeployed());
             }
-
             if (listApplicationRevisionsRequest.getNextToken() != null) {
                 jsonWriter.key("nextToken").value(
                         listApplicationRevisionsRequest.getNextToken());

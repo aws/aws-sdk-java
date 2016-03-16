@@ -30,6 +30,7 @@ import com.amazonaws.services.gamelift.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,39 +54,31 @@ public class ScalingPolicyJsonMarshaller {
             if (scalingPolicy.getFleetId() != null) {
                 jsonWriter.key("FleetId").value(scalingPolicy.getFleetId());
             }
-
             if (scalingPolicy.getName() != null) {
                 jsonWriter.key("Name").value(scalingPolicy.getName());
             }
-
             if (scalingPolicy.getStatus() != null) {
                 jsonWriter.key("Status").value(scalingPolicy.getStatus());
             }
-
             if (scalingPolicy.getScalingAdjustment() != null) {
                 jsonWriter.key("ScalingAdjustment").value(
                         scalingPolicy.getScalingAdjustment());
             }
-
             if (scalingPolicy.getScalingAdjustmentType() != null) {
                 jsonWriter.key("ScalingAdjustmentType").value(
                         scalingPolicy.getScalingAdjustmentType());
             }
-
             if (scalingPolicy.getComparisonOperator() != null) {
                 jsonWriter.key("ComparisonOperator").value(
                         scalingPolicy.getComparisonOperator());
             }
-
             if (scalingPolicy.getThreshold() != null) {
                 jsonWriter.key("Threshold").value(scalingPolicy.getThreshold());
             }
-
             if (scalingPolicy.getEvaluationPeriods() != null) {
                 jsonWriter.key("EvaluationPeriods").value(
                         scalingPolicy.getEvaluationPeriods());
             }
-
             if (scalingPolicy.getMetricName() != null) {
                 jsonWriter.key("MetricName").value(
                         scalingPolicy.getMetricName());

@@ -30,6 +30,7 @@ import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,29 +54,23 @@ public class ArtworkJsonMarshaller {
             if (artwork.getInputKey() != null) {
                 jsonWriter.key("InputKey").value(artwork.getInputKey());
             }
-
             if (artwork.getMaxWidth() != null) {
                 jsonWriter.key("MaxWidth").value(artwork.getMaxWidth());
             }
-
             if (artwork.getMaxHeight() != null) {
                 jsonWriter.key("MaxHeight").value(artwork.getMaxHeight());
             }
-
             if (artwork.getSizingPolicy() != null) {
                 jsonWriter.key("SizingPolicy").value(artwork.getSizingPolicy());
             }
-
             if (artwork.getPaddingPolicy() != null) {
                 jsonWriter.key("PaddingPolicy").value(
                         artwork.getPaddingPolicy());
             }
-
             if (artwork.getAlbumArtFormat() != null) {
                 jsonWriter.key("AlbumArtFormat").value(
                         artwork.getAlbumArtFormat());
             }
-
             if (artwork.getEncryption() != null) {
                 jsonWriter.key("Encryption");
                 EncryptionJsonMarshaller.getInstance().marshall(

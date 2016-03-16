@@ -37,6 +37,7 @@ import com.amazonaws.services.logs.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -72,30 +73,24 @@ public class CreateExportTaskRequestMarshaller implements
                 jsonWriter.key("taskName").value(
                         createExportTaskRequest.getTaskName());
             }
-
             if (createExportTaskRequest.getLogGroupName() != null) {
                 jsonWriter.key("logGroupName").value(
                         createExportTaskRequest.getLogGroupName());
             }
-
             if (createExportTaskRequest.getLogStreamNamePrefix() != null) {
                 jsonWriter.key("logStreamNamePrefix").value(
                         createExportTaskRequest.getLogStreamNamePrefix());
             }
-
             if (createExportTaskRequest.getFrom() != null) {
                 jsonWriter.key("from").value(createExportTaskRequest.getFrom());
             }
-
             if (createExportTaskRequest.getTo() != null) {
                 jsonWriter.key("to").value(createExportTaskRequest.getTo());
             }
-
             if (createExportTaskRequest.getDestination() != null) {
                 jsonWriter.key("destination").value(
                         createExportTaskRequest.getDestination());
             }
-
             if (createExportTaskRequest.getDestinationPrefix() != null) {
                 jsonWriter.key("destinationPrefix").value(
                         createExportTaskRequest.getDestinationPrefix());

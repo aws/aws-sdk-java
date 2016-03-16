@@ -30,6 +30,7 @@ import com.amazonaws.services.logs.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,27 +56,22 @@ public class SubscriptionFilterJsonMarshaller {
                 jsonWriter.key("filterName").value(
                         subscriptionFilter.getFilterName());
             }
-
             if (subscriptionFilter.getLogGroupName() != null) {
                 jsonWriter.key("logGroupName").value(
                         subscriptionFilter.getLogGroupName());
             }
-
             if (subscriptionFilter.getFilterPattern() != null) {
                 jsonWriter.key("filterPattern").value(
                         subscriptionFilter.getFilterPattern());
             }
-
             if (subscriptionFilter.getDestinationArn() != null) {
                 jsonWriter.key("destinationArn").value(
                         subscriptionFilter.getDestinationArn());
             }
-
             if (subscriptionFilter.getRoleArn() != null) {
                 jsonWriter.key("roleArn")
                         .value(subscriptionFilter.getRoleArn());
             }
-
             if (subscriptionFilter.getCreationTime() != null) {
                 jsonWriter.key("creationTime").value(
                         subscriptionFilter.getCreationTime());

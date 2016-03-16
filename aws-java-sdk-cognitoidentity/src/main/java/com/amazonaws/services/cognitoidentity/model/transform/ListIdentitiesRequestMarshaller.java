@@ -37,6 +37,7 @@ import com.amazonaws.services.cognitoidentity.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -73,17 +74,14 @@ public class ListIdentitiesRequestMarshaller implements
                 jsonWriter.key("IdentityPoolId").value(
                         listIdentitiesRequest.getIdentityPoolId());
             }
-
             if (listIdentitiesRequest.getMaxResults() != null) {
                 jsonWriter.key("MaxResults").value(
                         listIdentitiesRequest.getMaxResults());
             }
-
             if (listIdentitiesRequest.getNextToken() != null) {
                 jsonWriter.key("NextToken").value(
                         listIdentitiesRequest.getNextToken());
             }
-
             if (listIdentitiesRequest.getHideDisabled() != null) {
                 jsonWriter.key("HideDisabled").value(
                         listIdentitiesRequest.getHideDisabled());

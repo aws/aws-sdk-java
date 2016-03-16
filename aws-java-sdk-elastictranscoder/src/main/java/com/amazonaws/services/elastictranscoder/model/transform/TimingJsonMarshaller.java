@@ -30,6 +30,7 @@ import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,12 +55,10 @@ public class TimingJsonMarshaller {
                 jsonWriter.key("SubmitTimeMillis").value(
                         timing.getSubmitTimeMillis());
             }
-
             if (timing.getStartTimeMillis() != null) {
                 jsonWriter.key("StartTimeMillis").value(
                         timing.getStartTimeMillis());
             }
-
             if (timing.getFinishTimeMillis() != null) {
                 jsonWriter.key("FinishTimeMillis").value(
                         timing.getFinishTimeMillis());

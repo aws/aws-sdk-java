@@ -30,6 +30,7 @@ import com.amazonaws.services.inspector.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,40 +55,32 @@ public class AssessmentJsonMarshaller {
                 jsonWriter.key("assessmentArn").value(
                         assessment.getAssessmentArn());
             }
-
             if (assessment.getAssessmentName() != null) {
                 jsonWriter.key("assessmentName").value(
                         assessment.getAssessmentName());
             }
-
             if (assessment.getApplicationArn() != null) {
                 jsonWriter.key("applicationArn").value(
                         assessment.getApplicationArn());
             }
-
             if (assessment.getAssessmentState() != null) {
                 jsonWriter.key("assessmentState").value(
                         assessment.getAssessmentState());
             }
-
             if (assessment.getFailureMessage() != null) {
                 jsonWriter.key("failureMessage").value(
                         assessment.getFailureMessage());
             }
-
             if (assessment.getDataCollected() != null) {
                 jsonWriter.key("dataCollected").value(
                         assessment.getDataCollected());
             }
-
             if (assessment.getStartTime() != null) {
                 jsonWriter.key("startTime").value(assessment.getStartTime());
             }
-
             if (assessment.getEndTime() != null) {
                 jsonWriter.key("endTime").value(assessment.getEndTime());
             }
-
             if (assessment.getDurationInSeconds() != null) {
                 jsonWriter.key("durationInSeconds").value(
                         assessment.getDurationInSeconds());

@@ -37,6 +37,7 @@ import com.amazonaws.services.ecs.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -74,13 +75,11 @@ public class RegisterContainerInstanceRequestMarshaller
                 jsonWriter.key("cluster").value(
                         registerContainerInstanceRequest.getCluster());
             }
-
             if (registerContainerInstanceRequest.getInstanceIdentityDocument() != null) {
                 jsonWriter.key("instanceIdentityDocument").value(
                         registerContainerInstanceRequest
                                 .getInstanceIdentityDocument());
             }
-
             if (registerContainerInstanceRequest
                     .getInstanceIdentityDocumentSignature() != null) {
                 jsonWriter.key("instanceIdentityDocumentSignature").value(
@@ -103,14 +102,12 @@ public class RegisterContainerInstanceRequestMarshaller
                 }
                 jsonWriter.endArray();
             }
-
             if (registerContainerInstanceRequest.getVersionInfo() != null) {
                 jsonWriter.key("versionInfo");
                 VersionInfoJsonMarshaller.getInstance().marshall(
                         registerContainerInstanceRequest.getVersionInfo(),
                         jsonWriter);
             }
-
             if (registerContainerInstanceRequest.getContainerInstanceArn() != null) {
                 jsonWriter.key("containerInstanceArn").value(
                         registerContainerInstanceRequest

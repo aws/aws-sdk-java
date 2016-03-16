@@ -30,6 +30,7 @@ import com.amazonaws.services.logs.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,21 +56,17 @@ public class FilteredLogEventJsonMarshaller {
                 jsonWriter.key("logStreamName").value(
                         filteredLogEvent.getLogStreamName());
             }
-
             if (filteredLogEvent.getTimestamp() != null) {
                 jsonWriter.key("timestamp").value(
                         filteredLogEvent.getTimestamp());
             }
-
             if (filteredLogEvent.getMessage() != null) {
                 jsonWriter.key("message").value(filteredLogEvent.getMessage());
             }
-
             if (filteredLogEvent.getIngestionTime() != null) {
                 jsonWriter.key("ingestionTime").value(
                         filteredLogEvent.getIngestionTime());
             }
-
             if (filteredLogEvent.getEventId() != null) {
                 jsonWriter.key("eventId").value(filteredLogEvent.getEventId());
             }

@@ -37,6 +37,7 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -64,18 +65,17 @@ public class GetModelRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
-                (getModelRequest.getRestApiId() == null) ? "" : StringUtils
-                        .fromString(getModelRequest.getRestApiId()));
+                (getModelRequest.getRestApiId() != null) ? StringUtils
+                        .fromString(getModelRequest.getRestApiId()) : "");
         uriResourcePath = uriResourcePath.replace(
                 "{model_name}",
-                (getModelRequest.getModelName() == null) ? "" : StringUtils
-                        .fromString(getModelRequest.getModelName()));
+                (getModelRequest.getModelName() != null) ? StringUtils
+                        .fromString(getModelRequest.getModelName()) : "");
         request.setResourcePath(uriResourcePath);
 
-        String flatten = (getModelRequest.getFlatten() == null) ? null
-                : StringUtils.fromBoolean(getModelRequest.getFlatten());
-        if (flatten != null) {
-            request.addParameter("flatten", flatten);
+        if (getModelRequest.getFlatten() != null) {
+            request.addParameter("flatten",
+                    StringUtils.fromBoolean(getModelRequest.getFlatten()));
         }
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

@@ -30,6 +30,7 @@ import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,23 +54,18 @@ public class SourceJsonMarshaller {
             if (source.getType() != null) {
                 jsonWriter.key("Type").value(source.getType());
             }
-
             if (source.getUrl() != null) {
                 jsonWriter.key("Url").value(source.getUrl());
             }
-
             if (source.getUsername() != null) {
                 jsonWriter.key("Username").value(source.getUsername());
             }
-
             if (source.getPassword() != null) {
                 jsonWriter.key("Password").value(source.getPassword());
             }
-
             if (source.getSshKey() != null) {
                 jsonWriter.key("SshKey").value(source.getSshKey());
             }
-
             if (source.getRevision() != null) {
                 jsonWriter.key("Revision").value(source.getRevision());
             }

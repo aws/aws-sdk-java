@@ -30,6 +30,7 @@ import com.amazonaws.services.gamelift.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,34 +55,27 @@ public class PlayerSessionJsonMarshaller {
                 jsonWriter.key("PlayerSessionId").value(
                         playerSession.getPlayerSessionId());
             }
-
             if (playerSession.getPlayerId() != null) {
                 jsonWriter.key("PlayerId").value(playerSession.getPlayerId());
             }
-
             if (playerSession.getGameSessionId() != null) {
                 jsonWriter.key("GameSessionId").value(
                         playerSession.getGameSessionId());
             }
-
             if (playerSession.getFleetId() != null) {
                 jsonWriter.key("FleetId").value(playerSession.getFleetId());
             }
-
             if (playerSession.getCreationTime() != null) {
                 jsonWriter.key("CreationTime").value(
                         playerSession.getCreationTime());
             }
-
             if (playerSession.getTerminationTime() != null) {
                 jsonWriter.key("TerminationTime").value(
                         playerSession.getTerminationTime());
             }
-
             if (playerSession.getStatus() != null) {
                 jsonWriter.key("Status").value(playerSession.getStatus());
             }
-
             if (playerSession.getIpAddress() != null) {
                 jsonWriter.key("IpAddress").value(playerSession.getIpAddress());
             }

@@ -30,6 +30,7 @@ import com.amazonaws.services.route53domains.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,57 +54,45 @@ public class ContactDetailJsonMarshaller {
             if (contactDetail.getFirstName() != null) {
                 jsonWriter.key("FirstName").value(contactDetail.getFirstName());
             }
-
             if (contactDetail.getLastName() != null) {
                 jsonWriter.key("LastName").value(contactDetail.getLastName());
             }
-
             if (contactDetail.getContactType() != null) {
                 jsonWriter.key("ContactType").value(
                         contactDetail.getContactType());
             }
-
             if (contactDetail.getOrganizationName() != null) {
                 jsonWriter.key("OrganizationName").value(
                         contactDetail.getOrganizationName());
             }
-
             if (contactDetail.getAddressLine1() != null) {
                 jsonWriter.key("AddressLine1").value(
                         contactDetail.getAddressLine1());
             }
-
             if (contactDetail.getAddressLine2() != null) {
                 jsonWriter.key("AddressLine2").value(
                         contactDetail.getAddressLine2());
             }
-
             if (contactDetail.getCity() != null) {
                 jsonWriter.key("City").value(contactDetail.getCity());
             }
-
             if (contactDetail.getState() != null) {
                 jsonWriter.key("State").value(contactDetail.getState());
             }
-
             if (contactDetail.getCountryCode() != null) {
                 jsonWriter.key("CountryCode").value(
                         contactDetail.getCountryCode());
             }
-
             if (contactDetail.getZipCode() != null) {
                 jsonWriter.key("ZipCode").value(contactDetail.getZipCode());
             }
-
             if (contactDetail.getPhoneNumber() != null) {
                 jsonWriter.key("PhoneNumber").value(
                         contactDetail.getPhoneNumber());
             }
-
             if (contactDetail.getEmail() != null) {
                 jsonWriter.key("Email").value(contactDetail.getEmail());
             }
-
             if (contactDetail.getFax() != null) {
                 jsonWriter.key("Fax").value(contactDetail.getFax());
             }

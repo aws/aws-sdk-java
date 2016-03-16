@@ -37,6 +37,7 @@ import com.amazonaws.services.storagegateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -74,28 +75,23 @@ public class CreateStorediSCSIVolumeRequestMarshaller
                 jsonWriter.key("GatewayARN").value(
                         createStorediSCSIVolumeRequest.getGatewayARN());
             }
-
             if (createStorediSCSIVolumeRequest.getDiskId() != null) {
                 jsonWriter.key("DiskId").value(
                         createStorediSCSIVolumeRequest.getDiskId());
             }
-
             if (createStorediSCSIVolumeRequest.getSnapshotId() != null) {
                 jsonWriter.key("SnapshotId").value(
                         createStorediSCSIVolumeRequest.getSnapshotId());
             }
-
             if (createStorediSCSIVolumeRequest.getPreserveExistingData() != null) {
                 jsonWriter.key("PreserveExistingData").value(
                         createStorediSCSIVolumeRequest
                                 .getPreserveExistingData());
             }
-
             if (createStorediSCSIVolumeRequest.getTargetName() != null) {
                 jsonWriter.key("TargetName").value(
                         createStorediSCSIVolumeRequest.getTargetName());
             }
-
             if (createStorediSCSIVolumeRequest.getNetworkInterfaceId() != null) {
                 jsonWriter.key("NetworkInterfaceId").value(
                         createStorediSCSIVolumeRequest.getNetworkInterfaceId());

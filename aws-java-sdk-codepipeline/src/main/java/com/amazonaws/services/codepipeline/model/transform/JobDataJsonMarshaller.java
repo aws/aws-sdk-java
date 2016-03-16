@@ -30,6 +30,7 @@ import com.amazonaws.services.codepipeline.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,13 +56,11 @@ public class JobDataJsonMarshaller {
                 ActionTypeIdJsonMarshaller.getInstance().marshall(
                         jobData.getActionTypeId(), jsonWriter);
             }
-
             if (jobData.getActionConfiguration() != null) {
                 jsonWriter.key("actionConfiguration");
                 ActionConfigurationJsonMarshaller.getInstance().marshall(
                         jobData.getActionConfiguration(), jsonWriter);
             }
-
             if (jobData.getPipelineContext() != null) {
                 jsonWriter.key("pipelineContext");
                 PipelineContextJsonMarshaller.getInstance().marshall(
@@ -97,18 +96,15 @@ public class JobDataJsonMarshaller {
                 }
                 jsonWriter.endArray();
             }
-
             if (jobData.getArtifactCredentials() != null) {
                 jsonWriter.key("artifactCredentials");
                 AWSSessionCredentialsJsonMarshaller.getInstance().marshall(
                         jobData.getArtifactCredentials(), jsonWriter);
             }
-
             if (jobData.getContinuationToken() != null) {
                 jsonWriter.key("continuationToken").value(
                         jobData.getContinuationToken());
             }
-
             if (jobData.getEncryptionKey() != null) {
                 jsonWriter.key("encryptionKey");
                 EncryptionKeyJsonMarshaller.getInstance().marshall(

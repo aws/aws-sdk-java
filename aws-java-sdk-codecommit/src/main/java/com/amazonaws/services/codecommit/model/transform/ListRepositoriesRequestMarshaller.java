@@ -37,6 +37,7 @@ import com.amazonaws.services.codecommit.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -73,12 +74,10 @@ public class ListRepositoriesRequestMarshaller implements
                 jsonWriter.key("nextToken").value(
                         listRepositoriesRequest.getNextToken());
             }
-
             if (listRepositoriesRequest.getSortBy() != null) {
                 jsonWriter.key("sortBy").value(
                         listRepositoriesRequest.getSortBy());
             }
-
             if (listRepositoriesRequest.getOrder() != null) {
                 jsonWriter.key("order").value(
                         listRepositoriesRequest.getOrder());

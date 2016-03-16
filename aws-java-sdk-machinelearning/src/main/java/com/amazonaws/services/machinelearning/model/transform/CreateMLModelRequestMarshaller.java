@@ -37,6 +37,7 @@ import com.amazonaws.services.machinelearning.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -72,12 +73,10 @@ public class CreateMLModelRequestMarshaller implements
                 jsonWriter.key("MLModelId").value(
                         createMLModelRequest.getMLModelId());
             }
-
             if (createMLModelRequest.getMLModelName() != null) {
                 jsonWriter.key("MLModelName").value(
                         createMLModelRequest.getMLModelName());
             }
-
             if (createMLModelRequest.getMLModelType() != null) {
                 jsonWriter.key("MLModelType").value(
                         createMLModelRequest.getMLModelType());
@@ -99,17 +98,14 @@ public class CreateMLModelRequestMarshaller implements
                 }
                 jsonWriter.endObject();
             }
-
             if (createMLModelRequest.getTrainingDataSourceId() != null) {
                 jsonWriter.key("TrainingDataSourceId").value(
                         createMLModelRequest.getTrainingDataSourceId());
             }
-
             if (createMLModelRequest.getRecipe() != null) {
                 jsonWriter.key("Recipe")
                         .value(createMLModelRequest.getRecipe());
             }
-
             if (createMLModelRequest.getRecipeUri() != null) {
                 jsonWriter.key("RecipeUri").value(
                         createMLModelRequest.getRecipeUri());

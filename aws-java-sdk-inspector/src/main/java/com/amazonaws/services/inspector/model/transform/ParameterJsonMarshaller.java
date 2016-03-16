@@ -30,6 +30,7 @@ import com.amazonaws.services.inspector.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,7 +54,6 @@ public class ParameterJsonMarshaller {
             if (parameter.getName() != null) {
                 jsonWriter.key("name").value(parameter.getName());
             }
-
             if (parameter.getValue() != null) {
                 jsonWriter.key("value").value(parameter.getValue());
             }

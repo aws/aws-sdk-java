@@ -30,6 +30,7 @@ import com.amazonaws.services.elasticmapreduce.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,51 +54,41 @@ public class ClusterJsonMarshaller {
             if (cluster.getId() != null) {
                 jsonWriter.key("Id").value(cluster.getId());
             }
-
             if (cluster.getName() != null) {
                 jsonWriter.key("Name").value(cluster.getName());
             }
-
             if (cluster.getStatus() != null) {
                 jsonWriter.key("Status");
                 ClusterStatusJsonMarshaller.getInstance().marshall(
                         cluster.getStatus(), jsonWriter);
             }
-
             if (cluster.getEc2InstanceAttributes() != null) {
                 jsonWriter.key("Ec2InstanceAttributes");
                 Ec2InstanceAttributesJsonMarshaller.getInstance().marshall(
                         cluster.getEc2InstanceAttributes(), jsonWriter);
             }
-
             if (cluster.getLogUri() != null) {
                 jsonWriter.key("LogUri").value(cluster.getLogUri());
             }
-
             if (cluster.getRequestedAmiVersion() != null) {
                 jsonWriter.key("RequestedAmiVersion").value(
                         cluster.getRequestedAmiVersion());
             }
-
             if (cluster.getRunningAmiVersion() != null) {
                 jsonWriter.key("RunningAmiVersion").value(
                         cluster.getRunningAmiVersion());
             }
-
             if (cluster.getReleaseLabel() != null) {
                 jsonWriter.key("ReleaseLabel").value(cluster.getReleaseLabel());
             }
-
             if (cluster.getAutoTerminate() != null) {
                 jsonWriter.key("AutoTerminate").value(
                         cluster.getAutoTerminate());
             }
-
             if (cluster.getTerminationProtected() != null) {
                 jsonWriter.key("TerminationProtected").value(
                         cluster.getTerminationProtected());
             }
-
             if (cluster.getVisibleToAllUsers() != null) {
                 jsonWriter.key("VisibleToAllUsers").value(
                         cluster.getVisibleToAllUsers());
@@ -133,16 +124,13 @@ public class ClusterJsonMarshaller {
                 }
                 jsonWriter.endArray();
             }
-
             if (cluster.getServiceRole() != null) {
                 jsonWriter.key("ServiceRole").value(cluster.getServiceRole());
             }
-
             if (cluster.getNormalizedInstanceHours() != null) {
                 jsonWriter.key("NormalizedInstanceHours").value(
                         cluster.getNormalizedInstanceHours());
             }
-
             if (cluster.getMasterPublicDnsName() != null) {
                 jsonWriter.key("MasterPublicDnsName").value(
                         cluster.getMasterPublicDnsName());

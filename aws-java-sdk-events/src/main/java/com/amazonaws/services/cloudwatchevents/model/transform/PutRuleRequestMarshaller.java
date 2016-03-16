@@ -37,6 +37,7 @@ import com.amazonaws.services.cloudwatchevents.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -70,26 +71,21 @@ public class PutRuleRequestMarshaller implements
             if (putRuleRequest.getName() != null) {
                 jsonWriter.key("Name").value(putRuleRequest.getName());
             }
-
             if (putRuleRequest.getScheduleExpression() != null) {
                 jsonWriter.key("ScheduleExpression").value(
                         putRuleRequest.getScheduleExpression());
             }
-
             if (putRuleRequest.getEventPattern() != null) {
                 jsonWriter.key("EventPattern").value(
                         putRuleRequest.getEventPattern());
             }
-
             if (putRuleRequest.getState() != null) {
                 jsonWriter.key("State").value(putRuleRequest.getState());
             }
-
             if (putRuleRequest.getDescription() != null) {
                 jsonWriter.key("Description").value(
                         putRuleRequest.getDescription());
             }
-
             if (putRuleRequest.getRoleArn() != null) {
                 jsonWriter.key("RoleArn").value(putRuleRequest.getRoleArn());
             }

@@ -37,6 +37,7 @@ import com.amazonaws.services.kinesis.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -72,7 +73,6 @@ public class GetRecordsRequestMarshaller implements
                 jsonWriter.key("ShardIterator").value(
                         getRecordsRequest.getShardIterator());
             }
-
             if (getRecordsRequest.getLimit() != null) {
                 jsonWriter.key("Limit").value(getRecordsRequest.getLimit());
             }

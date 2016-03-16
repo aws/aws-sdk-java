@@ -37,6 +37,7 @@ import com.amazonaws.services.elasticsearch.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -64,10 +65,9 @@ public class ListTagsRequestMarshaller implements
 
         request.setResourcePath(uriResourcePath);
 
-        String aRN = (listTagsRequest.getARN() == null) ? null : StringUtils
-                .fromString(listTagsRequest.getARN());
-        if (aRN != null) {
-            request.addParameter("arn", aRN);
+        if (listTagsRequest.getARN() != null) {
+            request.addParameter("arn",
+                    StringUtils.fromString(listTagsRequest.getARN()));
         }
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

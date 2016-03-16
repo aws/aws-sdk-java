@@ -30,6 +30,7 @@ import com.amazonaws.services.cognitosync.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,22 +55,18 @@ public class IdentityUsageJsonMarshaller {
                 jsonWriter.key("IdentityId").value(
                         identityUsage.getIdentityId());
             }
-
             if (identityUsage.getIdentityPoolId() != null) {
                 jsonWriter.key("IdentityPoolId").value(
                         identityUsage.getIdentityPoolId());
             }
-
             if (identityUsage.getLastModifiedDate() != null) {
                 jsonWriter.key("LastModifiedDate").value(
                         identityUsage.getLastModifiedDate());
             }
-
             if (identityUsage.getDatasetCount() != null) {
                 jsonWriter.key("DatasetCount").value(
                         identityUsage.getDatasetCount());
             }
-
             if (identityUsage.getDataStorage() != null) {
                 jsonWriter.key("DataStorage").value(
                         identityUsage.getDataStorage());

@@ -30,6 +30,7 @@ import com.amazonaws.services.inspector.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,20 +55,16 @@ public class RulesPackageJsonMarshaller {
                 jsonWriter.key("rulesPackageArn").value(
                         rulesPackage.getRulesPackageArn());
             }
-
             if (rulesPackage.getRulesPackageName() != null) {
                 jsonWriter.key("rulesPackageName").value(
                         rulesPackage.getRulesPackageName());
             }
-
             if (rulesPackage.getVersion() != null) {
                 jsonWriter.key("version").value(rulesPackage.getVersion());
             }
-
             if (rulesPackage.getProvider() != null) {
                 jsonWriter.key("provider").value(rulesPackage.getProvider());
             }
-
             if (rulesPackage.getDescription() != null) {
                 jsonWriter.key("description");
                 LocalizedTextJsonMarshaller.getInstance().marshall(

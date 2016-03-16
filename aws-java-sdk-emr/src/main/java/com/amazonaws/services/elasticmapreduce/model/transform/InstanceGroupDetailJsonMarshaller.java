@@ -30,6 +30,7 @@ import com.amazonaws.services.elasticmapreduce.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,64 +56,51 @@ public class InstanceGroupDetailJsonMarshaller {
                 jsonWriter.key("InstanceGroupId").value(
                         instanceGroupDetail.getInstanceGroupId());
             }
-
             if (instanceGroupDetail.getName() != null) {
                 jsonWriter.key("Name").value(instanceGroupDetail.getName());
             }
-
             if (instanceGroupDetail.getMarket() != null) {
                 jsonWriter.key("Market").value(instanceGroupDetail.getMarket());
             }
-
             if (instanceGroupDetail.getInstanceRole() != null) {
                 jsonWriter.key("InstanceRole").value(
                         instanceGroupDetail.getInstanceRole());
             }
-
             if (instanceGroupDetail.getBidPrice() != null) {
                 jsonWriter.key("BidPrice").value(
                         instanceGroupDetail.getBidPrice());
             }
-
             if (instanceGroupDetail.getInstanceType() != null) {
                 jsonWriter.key("InstanceType").value(
                         instanceGroupDetail.getInstanceType());
             }
-
             if (instanceGroupDetail.getInstanceRequestCount() != null) {
                 jsonWriter.key("InstanceRequestCount").value(
                         instanceGroupDetail.getInstanceRequestCount());
             }
-
             if (instanceGroupDetail.getInstanceRunningCount() != null) {
                 jsonWriter.key("InstanceRunningCount").value(
                         instanceGroupDetail.getInstanceRunningCount());
             }
-
             if (instanceGroupDetail.getState() != null) {
                 jsonWriter.key("State").value(instanceGroupDetail.getState());
             }
-
             if (instanceGroupDetail.getLastStateChangeReason() != null) {
                 jsonWriter.key("LastStateChangeReason").value(
                         instanceGroupDetail.getLastStateChangeReason());
             }
-
             if (instanceGroupDetail.getCreationDateTime() != null) {
                 jsonWriter.key("CreationDateTime").value(
                         instanceGroupDetail.getCreationDateTime());
             }
-
             if (instanceGroupDetail.getStartDateTime() != null) {
                 jsonWriter.key("StartDateTime").value(
                         instanceGroupDetail.getStartDateTime());
             }
-
             if (instanceGroupDetail.getReadyDateTime() != null) {
                 jsonWriter.key("ReadyDateTime").value(
                         instanceGroupDetail.getReadyDateTime());
             }
-
             if (instanceGroupDetail.getEndDateTime() != null) {
                 jsonWriter.key("EndDateTime").value(
                         instanceGroupDetail.getEndDateTime());

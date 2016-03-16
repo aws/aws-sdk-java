@@ -30,6 +30,7 @@ import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,64 +54,50 @@ public class JobOutputJsonMarshaller {
             if (jobOutput.getId() != null) {
                 jsonWriter.key("Id").value(jobOutput.getId());
             }
-
             if (jobOutput.getKey() != null) {
                 jsonWriter.key("Key").value(jobOutput.getKey());
             }
-
             if (jobOutput.getThumbnailPattern() != null) {
                 jsonWriter.key("ThumbnailPattern").value(
                         jobOutput.getThumbnailPattern());
             }
-
             if (jobOutput.getThumbnailEncryption() != null) {
                 jsonWriter.key("ThumbnailEncryption");
                 EncryptionJsonMarshaller.getInstance().marshall(
                         jobOutput.getThumbnailEncryption(), jsonWriter);
             }
-
             if (jobOutput.getRotate() != null) {
                 jsonWriter.key("Rotate").value(jobOutput.getRotate());
             }
-
             if (jobOutput.getPresetId() != null) {
                 jsonWriter.key("PresetId").value(jobOutput.getPresetId());
             }
-
             if (jobOutput.getSegmentDuration() != null) {
                 jsonWriter.key("SegmentDuration").value(
                         jobOutput.getSegmentDuration());
             }
-
             if (jobOutput.getStatus() != null) {
                 jsonWriter.key("Status").value(jobOutput.getStatus());
             }
-
             if (jobOutput.getStatusDetail() != null) {
                 jsonWriter.key("StatusDetail").value(
                         jobOutput.getStatusDetail());
             }
-
             if (jobOutput.getDuration() != null) {
                 jsonWriter.key("Duration").value(jobOutput.getDuration());
             }
-
             if (jobOutput.getWidth() != null) {
                 jsonWriter.key("Width").value(jobOutput.getWidth());
             }
-
             if (jobOutput.getHeight() != null) {
                 jsonWriter.key("Height").value(jobOutput.getHeight());
             }
-
             if (jobOutput.getFrameRate() != null) {
                 jsonWriter.key("FrameRate").value(jobOutput.getFrameRate());
             }
-
             if (jobOutput.getFileSize() != null) {
                 jsonWriter.key("FileSize").value(jobOutput.getFileSize());
             }
-
             if (jobOutput.getDurationMillis() != null) {
                 jsonWriter.key("DurationMillis").value(
                         jobOutput.getDurationMillis());
@@ -130,7 +117,6 @@ public class JobOutputJsonMarshaller {
                 }
                 jsonWriter.endArray();
             }
-
             if (jobOutput.getAlbumArt() != null) {
                 jsonWriter.key("AlbumArt");
                 JobAlbumArtJsonMarshaller.getInstance().marshall(
@@ -152,19 +138,16 @@ public class JobOutputJsonMarshaller {
                 }
                 jsonWriter.endArray();
             }
-
             if (jobOutput.getCaptions() != null) {
                 jsonWriter.key("Captions");
                 CaptionsJsonMarshaller.getInstance().marshall(
                         jobOutput.getCaptions(), jsonWriter);
             }
-
             if (jobOutput.getEncryption() != null) {
                 jsonWriter.key("Encryption");
                 EncryptionJsonMarshaller.getInstance().marshall(
                         jobOutput.getEncryption(), jsonWriter);
             }
-
             if (jobOutput.getAppliedColorSpaceConversion() != null) {
                 jsonWriter.key("AppliedColorSpaceConversion").value(
                         jobOutput.getAppliedColorSpaceConversion());

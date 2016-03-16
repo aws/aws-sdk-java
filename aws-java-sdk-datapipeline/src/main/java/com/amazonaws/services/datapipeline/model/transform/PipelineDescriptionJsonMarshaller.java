@@ -30,6 +30,7 @@ import com.amazonaws.services.datapipeline.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,7 +56,6 @@ public class PipelineDescriptionJsonMarshaller {
                 jsonWriter.key("pipelineId").value(
                         pipelineDescription.getPipelineId());
             }
-
             if (pipelineDescription.getName() != null) {
                 jsonWriter.key("name").value(pipelineDescription.getName());
             }
@@ -74,7 +74,6 @@ public class PipelineDescriptionJsonMarshaller {
                 }
                 jsonWriter.endArray();
             }
-
             if (pipelineDescription.getDescription() != null) {
                 jsonWriter.key("description").value(
                         pipelineDescription.getDescription());

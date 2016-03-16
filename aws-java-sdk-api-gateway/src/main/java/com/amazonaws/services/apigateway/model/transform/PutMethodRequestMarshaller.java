@@ -37,6 +37,7 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -64,16 +65,16 @@ public class PutMethodRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
-                (putMethodRequest.getRestApiId() == null) ? "" : StringUtils
-                        .fromString(putMethodRequest.getRestApiId()));
+                (putMethodRequest.getRestApiId() != null) ? StringUtils
+                        .fromString(putMethodRequest.getRestApiId()) : "");
         uriResourcePath = uriResourcePath.replace(
                 "{resource_id}",
-                (putMethodRequest.getResourceId() == null) ? "" : StringUtils
-                        .fromString(putMethodRequest.getResourceId()));
+                (putMethodRequest.getResourceId() != null) ? StringUtils
+                        .fromString(putMethodRequest.getResourceId()) : "");
         uriResourcePath = uriResourcePath.replace(
                 "{http_method}",
-                (putMethodRequest.getHttpMethod() == null) ? "" : StringUtils
-                        .fromString(putMethodRequest.getHttpMethod()));
+                (putMethodRequest.getHttpMethod() != null) ? StringUtils
+                        .fromString(putMethodRequest.getHttpMethod()) : "");
         request.setResourcePath(uriResourcePath);
 
         try {
@@ -86,12 +87,10 @@ public class PutMethodRequestMarshaller implements
                 jsonWriter.key("authorizationType").value(
                         putMethodRequest.getAuthorizationType());
             }
-
             if (putMethodRequest.getAuthorizerId() != null) {
                 jsonWriter.key("authorizerId").value(
                         putMethodRequest.getAuthorizerId());
             }
-
             if (putMethodRequest.getApiKeyRequired() != null) {
                 jsonWriter.key("apiKeyRequired").value(
                         putMethodRequest.getApiKeyRequired());

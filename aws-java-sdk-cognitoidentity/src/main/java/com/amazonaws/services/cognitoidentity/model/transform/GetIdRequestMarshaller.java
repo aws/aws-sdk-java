@@ -37,6 +37,7 @@ import com.amazonaws.services.cognitoidentity.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -70,7 +71,6 @@ public class GetIdRequestMarshaller implements
             if (getIdRequest.getAccountId() != null) {
                 jsonWriter.key("AccountId").value(getIdRequest.getAccountId());
             }
-
             if (getIdRequest.getIdentityPoolId() != null) {
                 jsonWriter.key("IdentityPoolId").value(
                         getIdRequest.getIdentityPoolId());

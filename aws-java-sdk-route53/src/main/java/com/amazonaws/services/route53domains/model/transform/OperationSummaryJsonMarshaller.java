@@ -30,6 +30,7 @@ import com.amazonaws.services.route53domains.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,15 +56,12 @@ public class OperationSummaryJsonMarshaller {
                 jsonWriter.key("OperationId").value(
                         operationSummary.getOperationId());
             }
-
             if (operationSummary.getStatus() != null) {
                 jsonWriter.key("Status").value(operationSummary.getStatus());
             }
-
             if (operationSummary.getType() != null) {
                 jsonWriter.key("Type").value(operationSummary.getType());
             }
-
             if (operationSummary.getSubmittedDate() != null) {
                 jsonWriter.key("SubmittedDate").value(
                         operationSummary.getSubmittedDate());

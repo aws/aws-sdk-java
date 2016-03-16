@@ -37,6 +37,7 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -65,18 +66,16 @@ public class UpdateMethodRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
-                (updateMethodRequest.getRestApiId() == null) ? "" : StringUtils
-                        .fromString(updateMethodRequest.getRestApiId()));
+                (updateMethodRequest.getRestApiId() != null) ? StringUtils
+                        .fromString(updateMethodRequest.getRestApiId()) : "");
         uriResourcePath = uriResourcePath.replace(
                 "{resource_id}",
-                (updateMethodRequest.getResourceId() == null) ? ""
-                        : StringUtils.fromString(updateMethodRequest
-                                .getResourceId()));
+                (updateMethodRequest.getResourceId() != null) ? StringUtils
+                        .fromString(updateMethodRequest.getResourceId()) : "");
         uriResourcePath = uriResourcePath.replace(
                 "{http_method}",
-                (updateMethodRequest.getHttpMethod() == null) ? ""
-                        : StringUtils.fromString(updateMethodRequest
-                                .getHttpMethod()));
+                (updateMethodRequest.getHttpMethod() != null) ? StringUtils
+                        .fromString(updateMethodRequest.getHttpMethod()) : "");
         request.setResourcePath(uriResourcePath);
 
         try {

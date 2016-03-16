@@ -32,6 +32,7 @@ import com.amazonaws.services.route53.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.XMLWriter;
 
 /**
@@ -57,40 +58,35 @@ public class ListResourceRecordSetsRequestMarshaller
 
         String uriResourcePath = "/2013-04-01/hostedzone/{Id}/rrset";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{Id}",
-                (listResourceRecordSetsRequest.getHostedZoneId() == null) ? ""
-                        : StringUtils.fromString(listResourceRecordSetsRequest
-                                .getHostedZoneId()));
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{Id}",
+                        (listResourceRecordSetsRequest.getHostedZoneId() != null) ? StringUtils
+                                .fromString(listResourceRecordSetsRequest
+                                        .getHostedZoneId()) : "");
         request.setResourcePath(uriResourcePath);
 
-        String startRecordName = (listResourceRecordSetsRequest
-                .getStartRecordName() == null) ? null : StringUtils
-                .fromString(listResourceRecordSetsRequest.getStartRecordName());
-        if (startRecordName != null) {
-            request.addParameter("name", startRecordName);
+        if (listResourceRecordSetsRequest.getStartRecordName() != null) {
+            request.addParameter("name", StringUtils
+                    .fromString(listResourceRecordSetsRequest
+                            .getStartRecordName()));
         }
 
-        String startRecordType = (listResourceRecordSetsRequest
-                .getStartRecordType() == null) ? null : StringUtils
-                .fromString(listResourceRecordSetsRequest.getStartRecordType());
-        if (startRecordType != null) {
-            request.addParameter("type", startRecordType);
+        if (listResourceRecordSetsRequest.getStartRecordType() != null) {
+            request.addParameter("type", StringUtils
+                    .fromString(listResourceRecordSetsRequest
+                            .getStartRecordType()));
         }
 
-        String startRecordIdentifier = (listResourceRecordSetsRequest
-                .getStartRecordIdentifier() == null) ? null : StringUtils
-                .fromString(listResourceRecordSetsRequest
-                        .getStartRecordIdentifier());
-        if (startRecordIdentifier != null) {
-            request.addParameter("identifier", startRecordIdentifier);
+        if (listResourceRecordSetsRequest.getStartRecordIdentifier() != null) {
+            request.addParameter("identifier", StringUtils
+                    .fromString(listResourceRecordSetsRequest
+                            .getStartRecordIdentifier()));
         }
 
-        String maxItems = (listResourceRecordSetsRequest.getMaxItems() == null) ? null
-                : StringUtils.fromString(listResourceRecordSetsRequest
-                        .getMaxItems());
-        if (maxItems != null) {
-            request.addParameter("maxitems", maxItems);
+        if (listResourceRecordSetsRequest.getMaxItems() != null) {
+            request.addParameter("maxitems", StringUtils
+                    .fromString(listResourceRecordSetsRequest.getMaxItems()));
         }
 
         return request;

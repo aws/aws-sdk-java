@@ -37,6 +37,7 @@ import com.amazonaws.services.cognitosync.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -63,21 +64,22 @@ public class DeleteDatasetRequestMarshaller implements
 
         String uriResourcePath = "/identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets/{DatasetName}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{IdentityPoolId}",
-                (deleteDatasetRequest.getIdentityPoolId() == null) ? ""
-                        : StringUtils.fromString(deleteDatasetRequest
-                                .getIdentityPoolId()));
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{IdentityPoolId}",
+                        (deleteDatasetRequest.getIdentityPoolId() != null) ? StringUtils
+                                .fromString(deleteDatasetRequest
+                                        .getIdentityPoolId()) : "");
         uriResourcePath = uriResourcePath.replace(
                 "{IdentityId}",
-                (deleteDatasetRequest.getIdentityId() == null) ? ""
-                        : StringUtils.fromString(deleteDatasetRequest
-                                .getIdentityId()));
-        uriResourcePath = uriResourcePath.replace(
-                "{DatasetName}",
-                (deleteDatasetRequest.getDatasetName() == null) ? ""
-                        : StringUtils.fromString(deleteDatasetRequest
-                                .getDatasetName()));
+                (deleteDatasetRequest.getIdentityId() != null) ? StringUtils
+                        .fromString(deleteDatasetRequest.getIdentityId()) : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{DatasetName}",
+                        (deleteDatasetRequest.getDatasetName() != null) ? StringUtils
+                                .fromString(deleteDatasetRequest
+                                        .getDatasetName()) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

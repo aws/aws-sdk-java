@@ -30,6 +30,7 @@ import com.amazonaws.services.storagegateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,17 +56,14 @@ public class DeviceiSCSIAttributesJsonMarshaller {
                 jsonWriter.key("TargetARN").value(
                         deviceiSCSIAttributes.getTargetARN());
             }
-
             if (deviceiSCSIAttributes.getNetworkInterfaceId() != null) {
                 jsonWriter.key("NetworkInterfaceId").value(
                         deviceiSCSIAttributes.getNetworkInterfaceId());
             }
-
             if (deviceiSCSIAttributes.getNetworkInterfacePort() != null) {
                 jsonWriter.key("NetworkInterfacePort").value(
                         deviceiSCSIAttributes.getNetworkInterfacePort());
             }
-
             if (deviceiSCSIAttributes.getChapEnabled() != null) {
                 jsonWriter.key("ChapEnabled").value(
                         deviceiSCSIAttributes.getChapEnabled());

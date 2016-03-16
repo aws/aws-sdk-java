@@ -37,6 +37,7 @@ import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -74,38 +75,31 @@ public class CreatePipelineRequestMarshaller implements
             if (createPipelineRequest.getName() != null) {
                 jsonWriter.key("Name").value(createPipelineRequest.getName());
             }
-
             if (createPipelineRequest.getInputBucket() != null) {
                 jsonWriter.key("InputBucket").value(
                         createPipelineRequest.getInputBucket());
             }
-
             if (createPipelineRequest.getOutputBucket() != null) {
                 jsonWriter.key("OutputBucket").value(
                         createPipelineRequest.getOutputBucket());
             }
-
             if (createPipelineRequest.getRole() != null) {
                 jsonWriter.key("Role").value(createPipelineRequest.getRole());
             }
-
             if (createPipelineRequest.getAwsKmsKeyArn() != null) {
                 jsonWriter.key("AwsKmsKeyArn").value(
                         createPipelineRequest.getAwsKmsKeyArn());
             }
-
             if (createPipelineRequest.getNotifications() != null) {
                 jsonWriter.key("Notifications");
                 NotificationsJsonMarshaller.getInstance().marshall(
                         createPipelineRequest.getNotifications(), jsonWriter);
             }
-
             if (createPipelineRequest.getContentConfig() != null) {
                 jsonWriter.key("ContentConfig");
                 PipelineOutputConfigJsonMarshaller.getInstance().marshall(
                         createPipelineRequest.getContentConfig(), jsonWriter);
             }
-
             if (createPipelineRequest.getThumbnailConfig() != null) {
                 jsonWriter.key("ThumbnailConfig");
                 PipelineOutputConfigJsonMarshaller.getInstance().marshall(

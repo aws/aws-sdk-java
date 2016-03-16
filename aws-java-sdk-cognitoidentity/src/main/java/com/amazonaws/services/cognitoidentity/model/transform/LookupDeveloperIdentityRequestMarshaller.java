@@ -37,6 +37,7 @@ import com.amazonaws.services.cognitoidentity.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -74,23 +75,19 @@ public class LookupDeveloperIdentityRequestMarshaller
                 jsonWriter.key("IdentityPoolId").value(
                         lookupDeveloperIdentityRequest.getIdentityPoolId());
             }
-
             if (lookupDeveloperIdentityRequest.getIdentityId() != null) {
                 jsonWriter.key("IdentityId").value(
                         lookupDeveloperIdentityRequest.getIdentityId());
             }
-
             if (lookupDeveloperIdentityRequest.getDeveloperUserIdentifier() != null) {
                 jsonWriter.key("DeveloperUserIdentifier").value(
                         lookupDeveloperIdentityRequest
                                 .getDeveloperUserIdentifier());
             }
-
             if (lookupDeveloperIdentityRequest.getMaxResults() != null) {
                 jsonWriter.key("MaxResults").value(
                         lookupDeveloperIdentityRequest.getMaxResults());
             }
-
             if (lookupDeveloperIdentityRequest.getNextToken() != null) {
                 jsonWriter.key("NextToken").value(
                         lookupDeveloperIdentityRequest.getNextToken());

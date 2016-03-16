@@ -37,6 +37,7 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -64,16 +65,18 @@ public class UpdateBasePathMappingRequestMarshaller
 
         String uriResourcePath = "/domainnames/{domain_name}/basepathmappings/{base_path}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{domain_name}",
-                (updateBasePathMappingRequest.getDomainName() == null) ? ""
-                        : StringUtils.fromString(updateBasePathMappingRequest
-                                .getDomainName()));
-        uriResourcePath = uriResourcePath.replace(
-                "{base_path}",
-                (updateBasePathMappingRequest.getBasePath() == null) ? ""
-                        : StringUtils.fromString(updateBasePathMappingRequest
-                                .getBasePath()));
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{domain_name}",
+                        (updateBasePathMappingRequest.getDomainName() != null) ? StringUtils
+                                .fromString(updateBasePathMappingRequest
+                                        .getDomainName()) : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{base_path}",
+                        (updateBasePathMappingRequest.getBasePath() != null) ? StringUtils
+                                .fromString(updateBasePathMappingRequest
+                                        .getBasePath()) : "");
         request.setResourcePath(uriResourcePath);
 
         try {

@@ -30,6 +30,7 @@ import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,11 +55,9 @@ public class JobWatermarkJsonMarshaller {
                 jsonWriter.key("PresetWatermarkId").value(
                         jobWatermark.getPresetWatermarkId());
             }
-
             if (jobWatermark.getInputKey() != null) {
                 jsonWriter.key("InputKey").value(jobWatermark.getInputKey());
             }
-
             if (jobWatermark.getEncryption() != null) {
                 jsonWriter.key("Encryption");
                 EncryptionJsonMarshaller.getInstance().marshall(

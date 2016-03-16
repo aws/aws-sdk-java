@@ -37,6 +37,7 @@ import com.amazonaws.services.iotdata.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -65,9 +66,9 @@ public class DeleteThingShadowRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{thingName}",
-                (deleteThingShadowRequest.getThingName() == null) ? ""
-                        : StringUtils.fromString(deleteThingShadowRequest
-                                .getThingName()));
+                (deleteThingShadowRequest.getThingName() != null) ? StringUtils
+                        .fromString(deleteThingShadowRequest.getThingName())
+                        : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

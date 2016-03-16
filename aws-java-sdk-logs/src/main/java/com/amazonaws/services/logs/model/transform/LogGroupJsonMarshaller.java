@@ -30,6 +30,7 @@ import com.amazonaws.services.logs.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,26 +55,21 @@ public class LogGroupJsonMarshaller {
                 jsonWriter.key("logGroupName")
                         .value(logGroup.getLogGroupName());
             }
-
             if (logGroup.getCreationTime() != null) {
                 jsonWriter.key("creationTime")
                         .value(logGroup.getCreationTime());
             }
-
             if (logGroup.getRetentionInDays() != null) {
                 jsonWriter.key("retentionInDays").value(
                         logGroup.getRetentionInDays());
             }
-
             if (logGroup.getMetricFilterCount() != null) {
                 jsonWriter.key("metricFilterCount").value(
                         logGroup.getMetricFilterCount());
             }
-
             if (logGroup.getArn() != null) {
                 jsonWriter.key("arn").value(logGroup.getArn());
             }
-
             if (logGroup.getStoredBytes() != null) {
                 jsonWriter.key("storedBytes").value(logGroup.getStoredBytes());
             }

@@ -30,6 +30,7 @@ import com.amazonaws.services.support.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,7 +56,6 @@ public class AttachmentDetailsJsonMarshaller {
                 jsonWriter.key("attachmentId").value(
                         attachmentDetails.getAttachmentId());
             }
-
             if (attachmentDetails.getFileName() != null) {
                 jsonWriter.key("fileName").value(
                         attachmentDetails.getFileName());

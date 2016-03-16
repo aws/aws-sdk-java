@@ -30,6 +30,7 @@ import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,25 +54,20 @@ public class AudioParametersJsonMarshaller {
             if (audioParameters.getCodec() != null) {
                 jsonWriter.key("Codec").value(audioParameters.getCodec());
             }
-
             if (audioParameters.getSampleRate() != null) {
                 jsonWriter.key("SampleRate").value(
                         audioParameters.getSampleRate());
             }
-
             if (audioParameters.getBitRate() != null) {
                 jsonWriter.key("BitRate").value(audioParameters.getBitRate());
             }
-
             if (audioParameters.getChannels() != null) {
                 jsonWriter.key("Channels").value(audioParameters.getChannels());
             }
-
             if (audioParameters.getAudioPackingMode() != null) {
                 jsonWriter.key("AudioPackingMode").value(
                         audioParameters.getAudioPackingMode());
             }
-
             if (audioParameters.getCodecOptions() != null) {
                 jsonWriter.key("CodecOptions");
                 AudioCodecOptionsJsonMarshaller.getInstance().marshall(

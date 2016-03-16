@@ -30,6 +30,7 @@ import com.amazonaws.services.inspector.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,45 +54,36 @@ public class FindingJsonMarshaller {
             if (finding.getFindingArn() != null) {
                 jsonWriter.key("findingArn").value(finding.getFindingArn());
             }
-
             if (finding.getRunArn() != null) {
                 jsonWriter.key("runArn").value(finding.getRunArn());
             }
-
             if (finding.getRulesPackageArn() != null) {
                 jsonWriter.key("rulesPackageArn").value(
                         finding.getRulesPackageArn());
             }
-
             if (finding.getRuleName() != null) {
                 jsonWriter.key("ruleName").value(finding.getRuleName());
             }
-
             if (finding.getAgentId() != null) {
                 jsonWriter.key("agentId").value(finding.getAgentId());
             }
-
             if (finding.getAutoScalingGroup() != null) {
                 jsonWriter.key("autoScalingGroup").value(
                         finding.getAutoScalingGroup());
             }
-
             if (finding.getSeverity() != null) {
                 jsonWriter.key("severity").value(finding.getSeverity());
             }
-
             if (finding.getFinding() != null) {
                 jsonWriter.key("finding");
                 LocalizedTextJsonMarshaller.getInstance().marshall(
                         finding.getFinding(), jsonWriter);
             }
-
             if (finding.getDescription() != null) {
                 jsonWriter.key("description");
                 LocalizedTextJsonMarshaller.getInstance().marshall(
                         finding.getDescription(), jsonWriter);
             }
-
             if (finding.getRecommendation() != null) {
                 jsonWriter.key("recommendation");
                 LocalizedTextJsonMarshaller.getInstance().marshall(

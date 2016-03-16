@@ -30,6 +30,7 @@ import com.amazonaws.services.elasticsearch.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -60,27 +61,23 @@ public class ElasticsearchDomainConfigJsonMarshaller {
                                         .getElasticsearchClusterConfig(),
                                 jsonWriter);
             }
-
             if (elasticsearchDomainConfig.getEBSOptions() != null) {
                 jsonWriter.key("EBSOptions");
                 EBSOptionsStatusJsonMarshaller.getInstance().marshall(
                         elasticsearchDomainConfig.getEBSOptions(), jsonWriter);
             }
-
             if (elasticsearchDomainConfig.getAccessPolicies() != null) {
                 jsonWriter.key("AccessPolicies");
                 AccessPoliciesStatusJsonMarshaller.getInstance().marshall(
                         elasticsearchDomainConfig.getAccessPolicies(),
                         jsonWriter);
             }
-
             if (elasticsearchDomainConfig.getSnapshotOptions() != null) {
                 jsonWriter.key("SnapshotOptions");
                 SnapshotOptionsStatusJsonMarshaller.getInstance().marshall(
                         elasticsearchDomainConfig.getSnapshotOptions(),
                         jsonWriter);
             }
-
             if (elasticsearchDomainConfig.getAdvancedOptions() != null) {
                 jsonWriter.key("AdvancedOptions");
                 AdvancedOptionsStatusJsonMarshaller.getInstance().marshall(

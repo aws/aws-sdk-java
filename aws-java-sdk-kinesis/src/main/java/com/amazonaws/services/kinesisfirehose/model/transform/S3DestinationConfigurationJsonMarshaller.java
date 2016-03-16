@@ -30,6 +30,7 @@ import com.amazonaws.services.kinesisfirehose.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,29 +56,24 @@ public class S3DestinationConfigurationJsonMarshaller {
                 jsonWriter.key("RoleARN").value(
                         s3DestinationConfiguration.getRoleARN());
             }
-
             if (s3DestinationConfiguration.getBucketARN() != null) {
                 jsonWriter.key("BucketARN").value(
                         s3DestinationConfiguration.getBucketARN());
             }
-
             if (s3DestinationConfiguration.getPrefix() != null) {
                 jsonWriter.key("Prefix").value(
                         s3DestinationConfiguration.getPrefix());
             }
-
             if (s3DestinationConfiguration.getBufferingHints() != null) {
                 jsonWriter.key("BufferingHints");
                 BufferingHintsJsonMarshaller.getInstance().marshall(
                         s3DestinationConfiguration.getBufferingHints(),
                         jsonWriter);
             }
-
             if (s3DestinationConfiguration.getCompressionFormat() != null) {
                 jsonWriter.key("CompressionFormat").value(
                         s3DestinationConfiguration.getCompressionFormat());
             }
-
             if (s3DestinationConfiguration.getEncryptionConfiguration() != null) {
                 jsonWriter.key("EncryptionConfiguration");
                 EncryptionConfigurationJsonMarshaller

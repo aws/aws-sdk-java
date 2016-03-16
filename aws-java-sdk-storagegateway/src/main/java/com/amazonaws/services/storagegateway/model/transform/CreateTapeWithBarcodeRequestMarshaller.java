@@ -37,6 +37,7 @@ import com.amazonaws.services.storagegateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -74,12 +75,10 @@ public class CreateTapeWithBarcodeRequestMarshaller
                 jsonWriter.key("GatewayARN").value(
                         createTapeWithBarcodeRequest.getGatewayARN());
             }
-
             if (createTapeWithBarcodeRequest.getTapeSizeInBytes() != null) {
                 jsonWriter.key("TapeSizeInBytes").value(
                         createTapeWithBarcodeRequest.getTapeSizeInBytes());
             }
-
             if (createTapeWithBarcodeRequest.getTapeBarcode() != null) {
                 jsonWriter.key("TapeBarcode").value(
                         createTapeWithBarcodeRequest.getTapeBarcode());

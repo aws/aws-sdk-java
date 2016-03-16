@@ -37,6 +37,7 @@ import com.amazonaws.services.datapipeline.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -73,12 +74,10 @@ public class EvaluateExpressionRequestMarshaller
                 jsonWriter.key("pipelineId").value(
                         evaluateExpressionRequest.getPipelineId());
             }
-
             if (evaluateExpressionRequest.getObjectId() != null) {
                 jsonWriter.key("objectId").value(
                         evaluateExpressionRequest.getObjectId());
             }
-
             if (evaluateExpressionRequest.getExpression() != null) {
                 jsonWriter.key("expression").value(
                         evaluateExpressionRequest.getExpression());

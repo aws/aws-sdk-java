@@ -123,6 +123,12 @@ public class AbstractAmazonSimpleEmailService implements
     }
 
     @Override
+    public GetIdentityMailFromDomainAttributesResult getIdentityMailFromDomainAttributes(
+            GetIdentityMailFromDomainAttributesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetIdentityNotificationAttributesResult getIdentityNotificationAttributes(
             GetIdentityNotificationAttributesRequest request) {
         throw new java.lang.UnsupportedOperationException();
@@ -242,6 +248,12 @@ public class AbstractAmazonSimpleEmailService implements
     @Override
     public SetIdentityFeedbackForwardingEnabledResult setIdentityFeedbackForwardingEnabled(
             SetIdentityFeedbackForwardingEnabledRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public SetIdentityMailFromDomainResult setIdentityMailFromDomain(
+            SetIdentityMailFromDomainRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

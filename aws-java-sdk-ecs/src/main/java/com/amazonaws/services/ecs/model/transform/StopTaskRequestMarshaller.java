@@ -37,6 +37,7 @@ import com.amazonaws.services.ecs.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -71,11 +72,9 @@ public class StopTaskRequestMarshaller implements
             if (stopTaskRequest.getCluster() != null) {
                 jsonWriter.key("cluster").value(stopTaskRequest.getCluster());
             }
-
             if (stopTaskRequest.getTask() != null) {
                 jsonWriter.key("task").value(stopTaskRequest.getTask());
             }
-
             if (stopTaskRequest.getReason() != null) {
                 jsonWriter.key("reason").value(stopTaskRequest.getReason());
             }

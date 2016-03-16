@@ -37,6 +37,7 @@ import com.amazonaws.services.codepipeline.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -74,17 +75,14 @@ public class DisableStageTransitionRequestMarshaller
                 jsonWriter.key("pipelineName").value(
                         disableStageTransitionRequest.getPipelineName());
             }
-
             if (disableStageTransitionRequest.getStageName() != null) {
                 jsonWriter.key("stageName").value(
                         disableStageTransitionRequest.getStageName());
             }
-
             if (disableStageTransitionRequest.getTransitionType() != null) {
                 jsonWriter.key("transitionType").value(
                         disableStageTransitionRequest.getTransitionType());
             }
-
             if (disableStageTransitionRequest.getReason() != null) {
                 jsonWriter.key("reason").value(
                         disableStageTransitionRequest.getReason());

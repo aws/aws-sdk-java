@@ -30,6 +30,7 @@ import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,19 +54,15 @@ public class LayerJsonMarshaller {
             if (layer.getStackId() != null) {
                 jsonWriter.key("StackId").value(layer.getStackId());
             }
-
             if (layer.getLayerId() != null) {
                 jsonWriter.key("LayerId").value(layer.getLayerId());
             }
-
             if (layer.getType() != null) {
                 jsonWriter.key("Type").value(layer.getType());
             }
-
             if (layer.getName() != null) {
                 jsonWriter.key("Name").value(layer.getName());
             }
-
             if (layer.getShortname() != null) {
                 jsonWriter.key("Shortname").value(layer.getShortname());
             }
@@ -86,12 +83,10 @@ public class LayerJsonMarshaller {
                 }
                 jsonWriter.endObject();
             }
-
             if (layer.getCustomInstanceProfileArn() != null) {
                 jsonWriter.key("CustomInstanceProfileArn").value(
                         layer.getCustomInstanceProfileArn());
             }
-
             if (layer.getCustomJson() != null) {
                 jsonWriter.key("CustomJson").value(layer.getCustomJson());
             }
@@ -153,48 +148,39 @@ public class LayerJsonMarshaller {
                 }
                 jsonWriter.endArray();
             }
-
             if (layer.getEnableAutoHealing() != null) {
                 jsonWriter.key("EnableAutoHealing").value(
                         layer.getEnableAutoHealing());
             }
-
             if (layer.getAutoAssignElasticIps() != null) {
                 jsonWriter.key("AutoAssignElasticIps").value(
                         layer.getAutoAssignElasticIps());
             }
-
             if (layer.getAutoAssignPublicIps() != null) {
                 jsonWriter.key("AutoAssignPublicIps").value(
                         layer.getAutoAssignPublicIps());
             }
-
             if (layer.getDefaultRecipes() != null) {
                 jsonWriter.key("DefaultRecipes");
                 RecipesJsonMarshaller.getInstance().marshall(
                         layer.getDefaultRecipes(), jsonWriter);
             }
-
             if (layer.getCustomRecipes() != null) {
                 jsonWriter.key("CustomRecipes");
                 RecipesJsonMarshaller.getInstance().marshall(
                         layer.getCustomRecipes(), jsonWriter);
             }
-
             if (layer.getCreatedAt() != null) {
                 jsonWriter.key("CreatedAt").value(layer.getCreatedAt());
             }
-
             if (layer.getInstallUpdatesOnBoot() != null) {
                 jsonWriter.key("InstallUpdatesOnBoot").value(
                         layer.getInstallUpdatesOnBoot());
             }
-
             if (layer.getUseEbsOptimizedInstances() != null) {
                 jsonWriter.key("UseEbsOptimizedInstances").value(
                         layer.getUseEbsOptimizedInstances());
             }
-
             if (layer.getLifecycleEventConfiguration() != null) {
                 jsonWriter.key("LifecycleEventConfiguration");
                 LifecycleEventConfigurationJsonMarshaller.getInstance()

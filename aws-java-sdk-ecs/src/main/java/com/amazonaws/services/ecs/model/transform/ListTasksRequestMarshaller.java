@@ -37,6 +37,7 @@ import com.amazonaws.services.ecs.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -71,36 +72,29 @@ public class ListTasksRequestMarshaller implements
             if (listTasksRequest.getCluster() != null) {
                 jsonWriter.key("cluster").value(listTasksRequest.getCluster());
             }
-
             if (listTasksRequest.getContainerInstance() != null) {
                 jsonWriter.key("containerInstance").value(
                         listTasksRequest.getContainerInstance());
             }
-
             if (listTasksRequest.getFamily() != null) {
                 jsonWriter.key("family").value(listTasksRequest.getFamily());
             }
-
             if (listTasksRequest.getNextToken() != null) {
                 jsonWriter.key("nextToken").value(
                         listTasksRequest.getNextToken());
             }
-
             if (listTasksRequest.getMaxResults() != null) {
                 jsonWriter.key("maxResults").value(
                         listTasksRequest.getMaxResults());
             }
-
             if (listTasksRequest.getStartedBy() != null) {
                 jsonWriter.key("startedBy").value(
                         listTasksRequest.getStartedBy());
             }
-
             if (listTasksRequest.getServiceName() != null) {
                 jsonWriter.key("serviceName").value(
                         listTasksRequest.getServiceName());
             }
-
             if (listTasksRequest.getDesiredStatus() != null) {
                 jsonWriter.key("desiredStatus").value(
                         listTasksRequest.getDesiredStatus());

@@ -37,6 +37,7 @@ import com.amazonaws.services.workspaces.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -83,27 +84,22 @@ public class DescribeWorkspacesRequestMarshaller
                 }
                 jsonWriter.endArray();
             }
-
             if (describeWorkspacesRequest.getDirectoryId() != null) {
                 jsonWriter.key("DirectoryId").value(
                         describeWorkspacesRequest.getDirectoryId());
             }
-
             if (describeWorkspacesRequest.getUserName() != null) {
                 jsonWriter.key("UserName").value(
                         describeWorkspacesRequest.getUserName());
             }
-
             if (describeWorkspacesRequest.getBundleId() != null) {
                 jsonWriter.key("BundleId").value(
                         describeWorkspacesRequest.getBundleId());
             }
-
             if (describeWorkspacesRequest.getLimit() != null) {
                 jsonWriter.key("Limit").value(
                         describeWorkspacesRequest.getLimit());
             }
-
             if (describeWorkspacesRequest.getNextToken() != null) {
                 jsonWriter.key("NextToken").value(
                         describeWorkspacesRequest.getNextToken());

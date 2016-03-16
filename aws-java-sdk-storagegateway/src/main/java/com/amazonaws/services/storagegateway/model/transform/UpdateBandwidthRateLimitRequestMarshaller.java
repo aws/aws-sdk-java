@@ -37,6 +37,7 @@ import com.amazonaws.services.storagegateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -74,14 +75,12 @@ public class UpdateBandwidthRateLimitRequestMarshaller
                 jsonWriter.key("GatewayARN").value(
                         updateBandwidthRateLimitRequest.getGatewayARN());
             }
-
             if (updateBandwidthRateLimitRequest
                     .getAverageUploadRateLimitInBitsPerSec() != null) {
                 jsonWriter.key("AverageUploadRateLimitInBitsPerSec").value(
                         updateBandwidthRateLimitRequest
                                 .getAverageUploadRateLimitInBitsPerSec());
             }
-
             if (updateBandwidthRateLimitRequest
                     .getAverageDownloadRateLimitInBitsPerSec() != null) {
                 jsonWriter.key("AverageDownloadRateLimitInBitsPerSec").value(

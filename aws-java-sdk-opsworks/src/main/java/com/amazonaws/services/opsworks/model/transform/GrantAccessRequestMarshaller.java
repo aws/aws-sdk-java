@@ -37,6 +37,7 @@ import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -72,7 +73,6 @@ public class GrantAccessRequestMarshaller implements
                 jsonWriter.key("InstanceId").value(
                         grantAccessRequest.getInstanceId());
             }
-
             if (grantAccessRequest.getValidForInMinutes() != null) {
                 jsonWriter.key("ValidForInMinutes").value(
                         grantAccessRequest.getValidForInMinutes());

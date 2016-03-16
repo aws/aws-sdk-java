@@ -12,10 +12,13 @@
     <#if contextPath?has_content>
         <#local parameterPath = contextPath + "." + parameterPath/>
     </#if>
-
-    if (${getMember}() != null) {
-        request.addParameter("${parameterPath}", StringUtils.from${variable.simpleType}(${getMember}()));
-    }
+    <#if member.idempotencyToken>
+        request.addParameter("${parameterPath}", <@IdempotencyTokenMacro.content getMember member.variable.simpleType/>);
+    <#else>
+        if(${getMember}() != null) {
+            request.addParameter("${parameterPath}", StringUtils.from${variable.simpleType}(${getMember}()));
+        }
+    </#if>
 <#elseif member.list>
     <#local listModel = member.listModel />
     <#local memberVariableName = member.name?uncap_first/>

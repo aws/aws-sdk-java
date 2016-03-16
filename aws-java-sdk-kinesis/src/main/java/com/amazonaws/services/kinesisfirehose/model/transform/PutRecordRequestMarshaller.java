@@ -37,6 +37,7 @@ import com.amazonaws.services.kinesisfirehose.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -71,7 +72,6 @@ public class PutRecordRequestMarshaller implements
                 jsonWriter.key("DeliveryStreamName").value(
                         putRecordRequest.getDeliveryStreamName());
             }
-
             if (putRecordRequest.getRecord() != null) {
                 jsonWriter.key("Record");
                 RecordJsonMarshaller.getInstance().marshall(

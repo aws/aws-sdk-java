@@ -30,6 +30,7 @@ import com.amazonaws.services.gamelift.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,12 +55,10 @@ public class CredentialsJsonMarshaller {
                 jsonWriter.key("AccessKeyId").value(
                         credentials.getAccessKeyId());
             }
-
             if (credentials.getSecretAccessKey() != null) {
                 jsonWriter.key("SecretAccessKey").value(
                         credentials.getSecretAccessKey());
             }
-
             if (credentials.getSessionToken() != null) {
                 jsonWriter.key("SessionToken").value(
                         credentials.getSessionToken());

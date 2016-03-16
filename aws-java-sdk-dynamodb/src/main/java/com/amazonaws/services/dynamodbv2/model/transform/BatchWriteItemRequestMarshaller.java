@@ -37,6 +37,7 @@ import com.amazonaws.services.dynamodbv2.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -94,12 +95,10 @@ public class BatchWriteItemRequestMarshaller implements
                 }
                 jsonWriter.endObject();
             }
-
             if (batchWriteItemRequest.getReturnConsumedCapacity() != null) {
                 jsonWriter.key("ReturnConsumedCapacity").value(
                         batchWriteItemRequest.getReturnConsumedCapacity());
             }
-
             if (batchWriteItemRequest.getReturnItemCollectionMetrics() != null) {
                 jsonWriter.key("ReturnItemCollectionMetrics").value(
                         batchWriteItemRequest.getReturnItemCollectionMetrics());

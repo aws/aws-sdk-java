@@ -37,6 +37,7 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -65,19 +66,20 @@ public class GetIntegrationRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
-                (getIntegrationRequest.getRestApiId() == null) ? ""
-                        : StringUtils.fromString(getIntegrationRequest
-                                .getRestApiId()));
-        uriResourcePath = uriResourcePath.replace(
-                "{resource_id}",
-                (getIntegrationRequest.getResourceId() == null) ? ""
-                        : StringUtils.fromString(getIntegrationRequest
-                                .getResourceId()));
-        uriResourcePath = uriResourcePath.replace(
-                "{http_method}",
-                (getIntegrationRequest.getHttpMethod() == null) ? ""
-                        : StringUtils.fromString(getIntegrationRequest
-                                .getHttpMethod()));
+                (getIntegrationRequest.getRestApiId() != null) ? StringUtils
+                        .fromString(getIntegrationRequest.getRestApiId()) : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{resource_id}",
+                        (getIntegrationRequest.getResourceId() != null) ? StringUtils
+                                .fromString(getIntegrationRequest
+                                        .getResourceId()) : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{http_method}",
+                        (getIntegrationRequest.getHttpMethod() != null) ? StringUtils
+                                .fromString(getIntegrationRequest
+                                        .getHttpMethod()) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

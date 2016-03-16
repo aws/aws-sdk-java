@@ -30,6 +30,7 @@ import com.amazonaws.services.simplesystemsmanagement.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,35 +54,28 @@ public class CommandPluginJsonMarshaller {
             if (commandPlugin.getName() != null) {
                 jsonWriter.key("Name").value(commandPlugin.getName());
             }
-
             if (commandPlugin.getStatus() != null) {
                 jsonWriter.key("Status").value(commandPlugin.getStatus());
             }
-
             if (commandPlugin.getResponseCode() != null) {
                 jsonWriter.key("ResponseCode").value(
                         commandPlugin.getResponseCode());
             }
-
             if (commandPlugin.getResponseStartDateTime() != null) {
                 jsonWriter.key("ResponseStartDateTime").value(
                         commandPlugin.getResponseStartDateTime());
             }
-
             if (commandPlugin.getResponseFinishDateTime() != null) {
                 jsonWriter.key("ResponseFinishDateTime").value(
                         commandPlugin.getResponseFinishDateTime());
             }
-
             if (commandPlugin.getOutput() != null) {
                 jsonWriter.key("Output").value(commandPlugin.getOutput());
             }
-
             if (commandPlugin.getOutputS3BucketName() != null) {
                 jsonWriter.key("OutputS3BucketName").value(
                         commandPlugin.getOutputS3BucketName());
             }
-
             if (commandPlugin.getOutputS3KeyPrefix() != null) {
                 jsonWriter.key("OutputS3KeyPrefix").value(
                         commandPlugin.getOutputS3KeyPrefix());

@@ -37,6 +37,7 @@ import com.amazonaws.services.logs.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -72,7 +73,6 @@ public class PutLogEventsRequestMarshaller implements
                 jsonWriter.key("logGroupName").value(
                         putLogEventsRequest.getLogGroupName());
             }
-
             if (putLogEventsRequest.getLogStreamName() != null) {
                 jsonWriter.key("logStreamName").value(
                         putLogEventsRequest.getLogStreamName());
@@ -92,7 +92,6 @@ public class PutLogEventsRequestMarshaller implements
                 }
                 jsonWriter.endArray();
             }
-
             if (putLogEventsRequest.getSequenceToken() != null) {
                 jsonWriter.key("sequenceToken").value(
                         putLogEventsRequest.getSequenceToken());

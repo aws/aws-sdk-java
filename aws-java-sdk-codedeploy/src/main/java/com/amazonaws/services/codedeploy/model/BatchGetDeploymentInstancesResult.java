@@ -20,7 +20,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Represents the output of a batch get deployment instances operation.
+ * Represents the output of a batch get deployment instance operation.
  * </p>
  */
 public class BatchGetDeploymentInstancesResult implements Serializable,
@@ -28,7 +28,7 @@ public class BatchGetDeploymentInstancesResult implements Serializable,
 
     /**
      * <p>
-     * Information about the instances.
+     * Information about the instance.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<InstanceSummary> instancesSummary;
@@ -41,10 +41,10 @@ public class BatchGetDeploymentInstancesResult implements Serializable,
 
     /**
      * <p>
-     * Information about the instances.
+     * Information about the instance.
      * </p>
      * 
-     * @return Information about the instances.
+     * @return Information about the instance.
      */
 
     public java.util.List<InstanceSummary> getInstancesSummary() {
@@ -56,11 +56,11 @@ public class BatchGetDeploymentInstancesResult implements Serializable,
 
     /**
      * <p>
-     * Information about the instances.
+     * Information about the instance.
      * </p>
      * 
      * @param instancesSummary
-     *        Information about the instances.
+     *        Information about the instance.
      */
 
     public void setInstancesSummary(
@@ -76,7 +76,7 @@ public class BatchGetDeploymentInstancesResult implements Serializable,
 
     /**
      * <p>
-     * Information about the instances.
+     * Information about the instance.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -86,7 +86,7 @@ public class BatchGetDeploymentInstancesResult implements Serializable,
      * </p>
      * 
      * @param instancesSummary
-     *        Information about the instances.
+     *        Information about the instance.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -105,11 +105,11 @@ public class BatchGetDeploymentInstancesResult implements Serializable,
 
     /**
      * <p>
-     * Information about the instances.
+     * Information about the instance.
      * </p>
      * 
      * @param instancesSummary
-     *        Information about the instances.
+     *        Information about the instance.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

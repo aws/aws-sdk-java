@@ -30,6 +30,7 @@ import com.amazonaws.services.kms.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,37 +55,29 @@ public class KeyMetadataJsonMarshaller {
                 jsonWriter.key("AWSAccountId").value(
                         keyMetadata.getAWSAccountId());
             }
-
             if (keyMetadata.getKeyId() != null) {
                 jsonWriter.key("KeyId").value(keyMetadata.getKeyId());
             }
-
             if (keyMetadata.getArn() != null) {
                 jsonWriter.key("Arn").value(keyMetadata.getArn());
             }
-
             if (keyMetadata.getCreationDate() != null) {
                 jsonWriter.key("CreationDate").value(
                         keyMetadata.getCreationDate());
             }
-
             if (keyMetadata.getEnabled() != null) {
                 jsonWriter.key("Enabled").value(keyMetadata.getEnabled());
             }
-
             if (keyMetadata.getDescription() != null) {
                 jsonWriter.key("Description").value(
                         keyMetadata.getDescription());
             }
-
             if (keyMetadata.getKeyUsage() != null) {
                 jsonWriter.key("KeyUsage").value(keyMetadata.getKeyUsage());
             }
-
             if (keyMetadata.getKeyState() != null) {
                 jsonWriter.key("KeyState").value(keyMetadata.getKeyState());
             }
-
             if (keyMetadata.getDeletionDate() != null) {
                 jsonWriter.key("DeletionDate").value(
                         keyMetadata.getDeletionDate());

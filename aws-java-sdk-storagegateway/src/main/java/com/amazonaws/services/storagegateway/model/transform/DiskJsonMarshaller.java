@@ -30,6 +30,7 @@ import com.amazonaws.services.storagegateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,29 +54,23 @@ public class DiskJsonMarshaller {
             if (disk.getDiskId() != null) {
                 jsonWriter.key("DiskId").value(disk.getDiskId());
             }
-
             if (disk.getDiskPath() != null) {
                 jsonWriter.key("DiskPath").value(disk.getDiskPath());
             }
-
             if (disk.getDiskNode() != null) {
                 jsonWriter.key("DiskNode").value(disk.getDiskNode());
             }
-
             if (disk.getDiskStatus() != null) {
                 jsonWriter.key("DiskStatus").value(disk.getDiskStatus());
             }
-
             if (disk.getDiskSizeInBytes() != null) {
                 jsonWriter.key("DiskSizeInBytes").value(
                         disk.getDiskSizeInBytes());
             }
-
             if (disk.getDiskAllocationType() != null) {
                 jsonWriter.key("DiskAllocationType").value(
                         disk.getDiskAllocationType());
             }
-
             if (disk.getDiskAllocationResource() != null) {
                 jsonWriter.key("DiskAllocationResource").value(
                         disk.getDiskAllocationResource());

@@ -30,6 +30,7 @@ import com.amazonaws.services.support.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -56,17 +57,14 @@ public class TrustedAdvisorResourceDetailJsonMarshaller {
                 jsonWriter.key("status").value(
                         trustedAdvisorResourceDetail.getStatus());
             }
-
             if (trustedAdvisorResourceDetail.getRegion() != null) {
                 jsonWriter.key("region").value(
                         trustedAdvisorResourceDetail.getRegion());
             }
-
             if (trustedAdvisorResourceDetail.getResourceId() != null) {
                 jsonWriter.key("resourceId").value(
                         trustedAdvisorResourceDetail.getResourceId());
             }
-
             if (trustedAdvisorResourceDetail.getIsSuppressed() != null) {
                 jsonWriter.key("isSuppressed").value(
                         trustedAdvisorResourceDetail.getIsSuppressed());

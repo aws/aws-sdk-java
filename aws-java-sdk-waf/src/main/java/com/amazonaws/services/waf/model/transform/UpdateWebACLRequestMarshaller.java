@@ -37,6 +37,7 @@ import com.amazonaws.services.waf.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -72,7 +73,6 @@ public class UpdateWebACLRequestMarshaller implements
                 jsonWriter.key("WebACLId").value(
                         updateWebACLRequest.getWebACLId());
             }
-
             if (updateWebACLRequest.getChangeToken() != null) {
                 jsonWriter.key("ChangeToken").value(
                         updateWebACLRequest.getChangeToken());
@@ -92,7 +92,6 @@ public class UpdateWebACLRequestMarshaller implements
                 }
                 jsonWriter.endArray();
             }
-
             if (updateWebACLRequest.getDefaultAction() != null) {
                 jsonWriter.key("DefaultAction");
                 WafActionJsonMarshaller.getInstance().marshall(

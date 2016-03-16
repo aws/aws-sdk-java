@@ -53,7 +53,7 @@ public class ReceiptRule implements Serializable, Cloneable {
     /**
      * <p>
      * If <code>true</code>, the receipt rule is active. The default value is
-     * true.
+     * <code>false</code>.
      * </p>
      */
     private Boolean enabled;
@@ -86,7 +86,8 @@ public class ReceiptRule implements Serializable, Cloneable {
     /**
      * <p>
      * If <code>true</code>, then messages to which this receipt rule applies
-     * are scanned for spam and viruses. The default value is <code>true</code>.
+     * are scanned for spam and viruses. The default value is <code>false</code>
+     * .
      * </p>
      */
     private Boolean scanEnabled;
@@ -168,12 +169,12 @@ public class ReceiptRule implements Serializable, Cloneable {
     /**
      * <p>
      * If <code>true</code>, the receipt rule is active. The default value is
-     * true.
+     * <code>false</code>.
      * </p>
      * 
      * @param enabled
      *        If <code>true</code>, the receipt rule is active. The default
-     *        value is true.
+     *        value is <code>false</code>.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -183,11 +184,11 @@ public class ReceiptRule implements Serializable, Cloneable {
     /**
      * <p>
      * If <code>true</code>, the receipt rule is active. The default value is
-     * true.
+     * <code>false</code>.
      * </p>
      * 
      * @return If <code>true</code>, the receipt rule is active. The default
-     *         value is true.
+     *         value is <code>false</code>.
      */
 
     public Boolean getEnabled() {
@@ -197,12 +198,12 @@ public class ReceiptRule implements Serializable, Cloneable {
     /**
      * <p>
      * If <code>true</code>, the receipt rule is active. The default value is
-     * true.
+     * <code>false</code>.
      * </p>
      * 
      * @param enabled
      *        If <code>true</code>, the receipt rule is active. The default
-     *        value is true.
+     *        value is <code>false</code>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -215,11 +216,11 @@ public class ReceiptRule implements Serializable, Cloneable {
     /**
      * <p>
      * If <code>true</code>, the receipt rule is active. The default value is
-     * true.
+     * <code>false</code>.
      * </p>
      * 
      * @return If <code>true</code>, the receipt rule is active. The default
-     *         value is true.
+     *         value is <code>false</code>.
      */
 
     public Boolean isEnabled() {
@@ -534,13 +535,14 @@ public class ReceiptRule implements Serializable, Cloneable {
     /**
      * <p>
      * If <code>true</code>, then messages to which this receipt rule applies
-     * are scanned for spam and viruses. The default value is <code>true</code>.
+     * are scanned for spam and viruses. The default value is <code>false</code>
+     * .
      * </p>
      * 
      * @param scanEnabled
      *        If <code>true</code>, then messages to which this receipt rule
      *        applies are scanned for spam and viruses. The default value is
-     *        <code>true</code>.
+     *        <code>false</code>.
      */
 
     public void setScanEnabled(Boolean scanEnabled) {
@@ -550,12 +552,13 @@ public class ReceiptRule implements Serializable, Cloneable {
     /**
      * <p>
      * If <code>true</code>, then messages to which this receipt rule applies
-     * are scanned for spam and viruses. The default value is <code>true</code>.
+     * are scanned for spam and viruses. The default value is <code>false</code>
+     * .
      * </p>
      * 
      * @return If <code>true</code>, then messages to which this receipt rule
      *         applies are scanned for spam and viruses. The default value is
-     *         <code>true</code>.
+     *         <code>false</code>.
      */
 
     public Boolean getScanEnabled() {
@@ -565,13 +568,14 @@ public class ReceiptRule implements Serializable, Cloneable {
     /**
      * <p>
      * If <code>true</code>, then messages to which this receipt rule applies
-     * are scanned for spam and viruses. The default value is <code>true</code>.
+     * are scanned for spam and viruses. The default value is <code>false</code>
+     * .
      * </p>
      * 
      * @param scanEnabled
      *        If <code>true</code>, then messages to which this receipt rule
      *        applies are scanned for spam and viruses. The default value is
-     *        <code>true</code>.
+     *        <code>false</code>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -584,12 +588,13 @@ public class ReceiptRule implements Serializable, Cloneable {
     /**
      * <p>
      * If <code>true</code>, then messages to which this receipt rule applies
-     * are scanned for spam and viruses. The default value is <code>true</code>.
+     * are scanned for spam and viruses. The default value is <code>false</code>
+     * .
      * </p>
      * 
      * @return If <code>true</code>, then messages to which this receipt rule
      *         applies are scanned for spam and viruses. The default value is
-     *         <code>true</code>.
+     *         <code>false</code>.
      */
 
     public Boolean isScanEnabled() {

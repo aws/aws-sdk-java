@@ -30,6 +30,7 @@ import com.amazonaws.services.machinelearning.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,7 +56,6 @@ public class RDSDatabaseCredentialsJsonMarshaller {
                 jsonWriter.key("Username").value(
                         rDSDatabaseCredentials.getUsername());
             }
-
             if (rDSDatabaseCredentials.getPassword() != null) {
                 jsonWriter.key("Password").value(
                         rDSDatabaseCredentials.getPassword());

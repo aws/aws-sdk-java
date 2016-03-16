@@ -37,6 +37,7 @@ import com.amazonaws.services.datapipeline.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -72,21 +73,17 @@ public class QueryObjectsRequestMarshaller implements
                 jsonWriter.key("pipelineId").value(
                         queryObjectsRequest.getPipelineId());
             }
-
             if (queryObjectsRequest.getQuery() != null) {
                 jsonWriter.key("query");
                 QueryJsonMarshaller.getInstance().marshall(
                         queryObjectsRequest.getQuery(), jsonWriter);
             }
-
             if (queryObjectsRequest.getSphere() != null) {
                 jsonWriter.key("sphere").value(queryObjectsRequest.getSphere());
             }
-
             if (queryObjectsRequest.getMarker() != null) {
                 jsonWriter.key("marker").value(queryObjectsRequest.getMarker());
             }
-
             if (queryObjectsRequest.getLimit() != null) {
                 jsonWriter.key("limit").value(queryObjectsRequest.getLimit());
             }

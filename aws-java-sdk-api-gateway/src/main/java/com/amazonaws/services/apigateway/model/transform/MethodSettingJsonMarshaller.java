@@ -30,6 +30,7 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,47 +55,38 @@ public class MethodSettingJsonMarshaller {
                 jsonWriter.key("metricsEnabled").value(
                         methodSetting.getMetricsEnabled());
             }
-
             if (methodSetting.getLoggingLevel() != null) {
                 jsonWriter.key("loggingLevel").value(
                         methodSetting.getLoggingLevel());
             }
-
             if (methodSetting.getDataTraceEnabled() != null) {
                 jsonWriter.key("dataTraceEnabled").value(
                         methodSetting.getDataTraceEnabled());
             }
-
             if (methodSetting.getThrottlingBurstLimit() != null) {
                 jsonWriter.key("throttlingBurstLimit").value(
                         methodSetting.getThrottlingBurstLimit());
             }
-
             if (methodSetting.getThrottlingRateLimit() != null) {
                 jsonWriter.key("throttlingRateLimit").value(
                         methodSetting.getThrottlingRateLimit());
             }
-
             if (methodSetting.getCachingEnabled() != null) {
                 jsonWriter.key("cachingEnabled").value(
                         methodSetting.getCachingEnabled());
             }
-
             if (methodSetting.getCacheTtlInSeconds() != null) {
                 jsonWriter.key("cacheTtlInSeconds").value(
                         methodSetting.getCacheTtlInSeconds());
             }
-
             if (methodSetting.getCacheDataEncrypted() != null) {
                 jsonWriter.key("cacheDataEncrypted").value(
                         methodSetting.getCacheDataEncrypted());
             }
-
             if (methodSetting.getRequireAuthorizationForCacheControl() != null) {
                 jsonWriter.key("requireAuthorizationForCacheControl").value(
                         methodSetting.getRequireAuthorizationForCacheControl());
             }
-
             if (methodSetting.getUnauthorizedCacheControlHeaderStrategy() != null) {
                 jsonWriter.key("unauthorizedCacheControlHeaderStrategy").value(
                         methodSetting

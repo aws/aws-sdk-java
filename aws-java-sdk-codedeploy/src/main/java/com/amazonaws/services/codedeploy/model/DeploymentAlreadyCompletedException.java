@@ -20,7 +20,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The deployment is already completed.
+ * The deployment is already complete.
  * </p>
  */
 public class DeploymentAlreadyCompletedException extends AmazonServiceException {

@@ -30,6 +30,7 @@ import com.amazonaws.services.kinesis.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,16 +55,13 @@ public class RecordJsonMarshaller {
                 jsonWriter.key("SequenceNumber").value(
                         record.getSequenceNumber());
             }
-
             if (record.getApproximateArrivalTimestamp() != null) {
                 jsonWriter.key("ApproximateArrivalTimestamp").value(
                         record.getApproximateArrivalTimestamp());
             }
-
             if (record.getData() != null) {
                 jsonWriter.key("Data").value(record.getData());
             }
-
             if (record.getPartitionKey() != null) {
                 jsonWriter.key("PartitionKey").value(record.getPartitionKey());
             }

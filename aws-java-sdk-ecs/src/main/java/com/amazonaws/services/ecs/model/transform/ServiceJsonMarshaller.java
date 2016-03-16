@@ -30,6 +30,7 @@ import com.amazonaws.services.ecs.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,11 +54,9 @@ public class ServiceJsonMarshaller {
             if (service.getServiceArn() != null) {
                 jsonWriter.key("serviceArn").value(service.getServiceArn());
             }
-
             if (service.getServiceName() != null) {
                 jsonWriter.key("serviceName").value(service.getServiceName());
             }
-
             if (service.getClusterArn() != null) {
                 jsonWriter.key("clusterArn").value(service.getClusterArn());
             }
@@ -77,28 +76,22 @@ public class ServiceJsonMarshaller {
                 }
                 jsonWriter.endArray();
             }
-
             if (service.getStatus() != null) {
                 jsonWriter.key("status").value(service.getStatus());
             }
-
             if (service.getDesiredCount() != null) {
                 jsonWriter.key("desiredCount").value(service.getDesiredCount());
             }
-
             if (service.getRunningCount() != null) {
                 jsonWriter.key("runningCount").value(service.getRunningCount());
             }
-
             if (service.getPendingCount() != null) {
                 jsonWriter.key("pendingCount").value(service.getPendingCount());
             }
-
             if (service.getTaskDefinition() != null) {
                 jsonWriter.key("taskDefinition").value(
                         service.getTaskDefinition());
             }
-
             if (service.getDeploymentConfiguration() != null) {
                 jsonWriter.key("deploymentConfiguration");
                 DeploymentConfigurationJsonMarshaller.getInstance().marshall(
@@ -120,7 +113,6 @@ public class ServiceJsonMarshaller {
                 }
                 jsonWriter.endArray();
             }
-
             if (service.getRoleArn() != null) {
                 jsonWriter.key("roleArn").value(service.getRoleArn());
             }

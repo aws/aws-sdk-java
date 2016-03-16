@@ -37,6 +37,7 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -64,16 +65,16 @@ public class GetSdkRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
-                (getSdkRequest.getRestApiId() == null) ? "" : StringUtils
-                        .fromString(getSdkRequest.getRestApiId()));
+                (getSdkRequest.getRestApiId() != null) ? StringUtils
+                        .fromString(getSdkRequest.getRestApiId()) : "");
         uriResourcePath = uriResourcePath.replace(
                 "{stage_name}",
-                (getSdkRequest.getStageName() == null) ? "" : StringUtils
-                        .fromString(getSdkRequest.getStageName()));
+                (getSdkRequest.getStageName() != null) ? StringUtils
+                        .fromString(getSdkRequest.getStageName()) : "");
         uriResourcePath = uriResourcePath.replace(
                 "{sdk_type}",
-                (getSdkRequest.getSdkType() == null) ? "" : StringUtils
-                        .fromString(getSdkRequest.getSdkType()));
+                (getSdkRequest.getSdkType() != null) ? StringUtils
+                        .fromString(getSdkRequest.getSdkType()) : "");
         request.setResourcePath(uriResourcePath);
 
         java.util.Map<String, String> parameters = getSdkRequest

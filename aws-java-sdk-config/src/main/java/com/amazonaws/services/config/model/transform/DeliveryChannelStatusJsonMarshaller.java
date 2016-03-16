@@ -30,6 +30,7 @@ import com.amazonaws.services.config.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,21 +55,18 @@ public class DeliveryChannelStatusJsonMarshaller {
             if (deliveryChannelStatus.getName() != null) {
                 jsonWriter.key("name").value(deliveryChannelStatus.getName());
             }
-
             if (deliveryChannelStatus.getConfigSnapshotDeliveryInfo() != null) {
                 jsonWriter.key("configSnapshotDeliveryInfo");
                 ConfigExportDeliveryInfoJsonMarshaller.getInstance().marshall(
                         deliveryChannelStatus.getConfigSnapshotDeliveryInfo(),
                         jsonWriter);
             }
-
             if (deliveryChannelStatus.getConfigHistoryDeliveryInfo() != null) {
                 jsonWriter.key("configHistoryDeliveryInfo");
                 ConfigExportDeliveryInfoJsonMarshaller.getInstance().marshall(
                         deliveryChannelStatus.getConfigHistoryDeliveryInfo(),
                         jsonWriter);
             }
-
             if (deliveryChannelStatus.getConfigStreamDeliveryInfo() != null) {
                 jsonWriter.key("configStreamDeliveryInfo");
                 ConfigStreamDeliveryInfoJsonMarshaller.getInstance().marshall(

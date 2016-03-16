@@ -5,50 +5,59 @@
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.10.61-SNAPSHOT</version>
+    <version>1.10.61</version>
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-dynamodb</artifactId>
   <name>AWS Java SDK for Amazon DynamoDB</name>
   <description>The AWS Java SDK for Amazon DynamoDB module holds the client classes that are used for communicating with Amazon DynamoDB Service</description>
   <url>https://aws.amazon.com/sdkforjava</url>
+
+  <!-- The dependencies section in pom.xml is auto generated. No manual changes are allowed -->
   <dependencies>
     <dependency>
-      <groupId>com.amazonaws</groupId>
-      <artifactId>aws-java-sdk-s3</artifactId>
-      <version>1.10.60</version>
-      <optional>false</optional>
+        <artifactId>aws-java-sdk-s3</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>1.10.61</version>
     </dependency>
     <dependency>
-      <groupId>com.amazonaws</groupId>
-      <artifactId>aws-java-sdk-core</artifactId>
-      <version>1.10.60</version>
-      <optional>false</optional>
+        <artifactId>aws-java-sdk-core</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>1.10.61</version>
     </dependency>
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <scope>test</scope>
-      <optional>false</optional>
+        <artifactId>junit</artifactId>
+        <groupId>junit</groupId>
+        <optional>false</optional>
+        <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.easymock</groupId>
-      <artifactId>easymock</artifactId>
-      <version>3.2</version>
-      <scope>test</scope>
-      <optional>false</optional>
+        <artifactId>easymock</artifactId>
+        <groupId>org.easymock</groupId>
+        <optional>false</optional>
+        <scope>test</scope>
+        <version>3.2</version>
     </dependency>
-  </dependencies>
+</dependencies>
+
   <build>
     <plugins>
       <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
       </plugin>
+
       <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
       </plugin>
     </plugins>
   </build>
+
+  <!-- This profile uses the JAPICMP plugin to generate a report of changes between the release version and the latest version -->
+  <!-- For more information on the plugin, see https://github.com/siom79/japicmp -->
   <profiles>
     <profile>
       <id>versiondiff</id>

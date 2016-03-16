@@ -30,6 +30,7 @@ import com.amazonaws.services.codedeploy.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -69,17 +70,14 @@ public class GenericRevisionInfoJsonMarshaller {
                 }
                 jsonWriter.endArray();
             }
-
             if (genericRevisionInfo.getFirstUsedTime() != null) {
                 jsonWriter.key("firstUsedTime").value(
                         genericRevisionInfo.getFirstUsedTime());
             }
-
             if (genericRevisionInfo.getLastUsedTime() != null) {
                 jsonWriter.key("lastUsedTime").value(
                         genericRevisionInfo.getLastUsedTime());
             }
-
             if (genericRevisionInfo.getRegisterTime() != null) {
                 jsonWriter.key("registerTime").value(
                         genericRevisionInfo.getRegisterTime());

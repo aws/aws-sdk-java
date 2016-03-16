@@ -30,6 +30,7 @@ import com.amazonaws.services.cognitosync.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,29 +54,23 @@ public class DatasetJsonMarshaller {
             if (dataset.getIdentityId() != null) {
                 jsonWriter.key("IdentityId").value(dataset.getIdentityId());
             }
-
             if (dataset.getDatasetName() != null) {
                 jsonWriter.key("DatasetName").value(dataset.getDatasetName());
             }
-
             if (dataset.getCreationDate() != null) {
                 jsonWriter.key("CreationDate").value(dataset.getCreationDate());
             }
-
             if (dataset.getLastModifiedDate() != null) {
                 jsonWriter.key("LastModifiedDate").value(
                         dataset.getLastModifiedDate());
             }
-
             if (dataset.getLastModifiedBy() != null) {
                 jsonWriter.key("LastModifiedBy").value(
                         dataset.getLastModifiedBy());
             }
-
             if (dataset.getDataStorage() != null) {
                 jsonWriter.key("DataStorage").value(dataset.getDataStorage());
             }
-
             if (dataset.getNumRecords() != null) {
                 jsonWriter.key("NumRecords").value(dataset.getNumRecords());
             }

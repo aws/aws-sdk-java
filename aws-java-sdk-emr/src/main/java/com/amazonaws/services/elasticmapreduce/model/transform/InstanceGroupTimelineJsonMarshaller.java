@@ -30,6 +30,7 @@ import com.amazonaws.services.elasticmapreduce.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,12 +56,10 @@ public class InstanceGroupTimelineJsonMarshaller {
                 jsonWriter.key("CreationDateTime").value(
                         instanceGroupTimeline.getCreationDateTime());
             }
-
             if (instanceGroupTimeline.getReadyDateTime() != null) {
                 jsonWriter.key("ReadyDateTime").value(
                         instanceGroupTimeline.getReadyDateTime());
             }
-
             if (instanceGroupTimeline.getEndDateTime() != null) {
                 jsonWriter.key("EndDateTime").value(
                         instanceGroupTimeline.getEndDateTime());

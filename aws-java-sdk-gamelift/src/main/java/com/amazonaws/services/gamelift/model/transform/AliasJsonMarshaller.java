@@ -30,6 +30,7 @@ import com.amazonaws.services.gamelift.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,25 +54,20 @@ public class AliasJsonMarshaller {
             if (alias.getAliasId() != null) {
                 jsonWriter.key("AliasId").value(alias.getAliasId());
             }
-
             if (alias.getName() != null) {
                 jsonWriter.key("Name").value(alias.getName());
             }
-
             if (alias.getDescription() != null) {
                 jsonWriter.key("Description").value(alias.getDescription());
             }
-
             if (alias.getRoutingStrategy() != null) {
                 jsonWriter.key("RoutingStrategy");
                 RoutingStrategyJsonMarshaller.getInstance().marshall(
                         alias.getRoutingStrategy(), jsonWriter);
             }
-
             if (alias.getCreationTime() != null) {
                 jsonWriter.key("CreationTime").value(alias.getCreationTime());
             }
-
             if (alias.getLastUpdatedTime() != null) {
                 jsonWriter.key("LastUpdatedTime").value(
                         alias.getLastUpdatedTime());

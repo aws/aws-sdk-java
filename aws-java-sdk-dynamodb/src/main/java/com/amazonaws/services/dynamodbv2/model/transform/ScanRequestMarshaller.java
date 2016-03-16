@@ -37,6 +37,7 @@ import com.amazonaws.services.dynamodbv2.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -70,7 +71,6 @@ public class ScanRequestMarshaller implements
             if (scanRequest.getTableName() != null) {
                 jsonWriter.key("TableName").value(scanRequest.getTableName());
             }
-
             if (scanRequest.getIndexName() != null) {
                 jsonWriter.key("IndexName").value(scanRequest.getIndexName());
             }
@@ -87,11 +87,9 @@ public class ScanRequestMarshaller implements
                 }
                 jsonWriter.endArray();
             }
-
             if (scanRequest.getLimit() != null) {
                 jsonWriter.key("Limit").value(scanRequest.getLimit());
             }
-
             if (scanRequest.getSelect() != null) {
                 jsonWriter.key("Select").value(scanRequest.getSelect());
             }
@@ -113,7 +111,6 @@ public class ScanRequestMarshaller implements
                 }
                 jsonWriter.endObject();
             }
-
             if (scanRequest.getConditionalOperator() != null) {
                 jsonWriter.key("ConditionalOperator").value(
                         scanRequest.getConditionalOperator());
@@ -137,26 +134,21 @@ public class ScanRequestMarshaller implements
                 }
                 jsonWriter.endObject();
             }
-
             if (scanRequest.getReturnConsumedCapacity() != null) {
                 jsonWriter.key("ReturnConsumedCapacity").value(
                         scanRequest.getReturnConsumedCapacity());
             }
-
             if (scanRequest.getTotalSegments() != null) {
                 jsonWriter.key("TotalSegments").value(
                         scanRequest.getTotalSegments());
             }
-
             if (scanRequest.getSegment() != null) {
                 jsonWriter.key("Segment").value(scanRequest.getSegment());
             }
-
             if (scanRequest.getProjectionExpression() != null) {
                 jsonWriter.key("ProjectionExpression").value(
                         scanRequest.getProjectionExpression());
             }
-
             if (scanRequest.getFilterExpression() != null) {
                 jsonWriter.key("FilterExpression").value(
                         scanRequest.getFilterExpression());
@@ -200,7 +192,6 @@ public class ScanRequestMarshaller implements
                 }
                 jsonWriter.endObject();
             }
-
             if (scanRequest.getConsistentRead() != null) {
                 jsonWriter.key("ConsistentRead").value(
                         scanRequest.getConsistentRead());

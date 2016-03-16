@@ -30,6 +30,7 @@ import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,26 +54,21 @@ public class CreateJobOutputJsonMarshaller {
             if (createJobOutput.getKey() != null) {
                 jsonWriter.key("Key").value(createJobOutput.getKey());
             }
-
             if (createJobOutput.getThumbnailPattern() != null) {
                 jsonWriter.key("ThumbnailPattern").value(
                         createJobOutput.getThumbnailPattern());
             }
-
             if (createJobOutput.getThumbnailEncryption() != null) {
                 jsonWriter.key("ThumbnailEncryption");
                 EncryptionJsonMarshaller.getInstance().marshall(
                         createJobOutput.getThumbnailEncryption(), jsonWriter);
             }
-
             if (createJobOutput.getRotate() != null) {
                 jsonWriter.key("Rotate").value(createJobOutput.getRotate());
             }
-
             if (createJobOutput.getPresetId() != null) {
                 jsonWriter.key("PresetId").value(createJobOutput.getPresetId());
             }
-
             if (createJobOutput.getSegmentDuration() != null) {
                 jsonWriter.key("SegmentDuration").value(
                         createJobOutput.getSegmentDuration());
@@ -92,7 +88,6 @@ public class CreateJobOutputJsonMarshaller {
                 }
                 jsonWriter.endArray();
             }
-
             if (createJobOutput.getAlbumArt() != null) {
                 jsonWriter.key("AlbumArt");
                 JobAlbumArtJsonMarshaller.getInstance().marshall(
@@ -114,13 +109,11 @@ public class CreateJobOutputJsonMarshaller {
                 }
                 jsonWriter.endArray();
             }
-
             if (createJobOutput.getCaptions() != null) {
                 jsonWriter.key("Captions");
                 CaptionsJsonMarshaller.getInstance().marshall(
                         createJobOutput.getCaptions(), jsonWriter);
             }
-
             if (createJobOutput.getEncryption() != null) {
                 jsonWriter.key("Encryption");
                 EncryptionJsonMarshaller.getInstance().marshall(

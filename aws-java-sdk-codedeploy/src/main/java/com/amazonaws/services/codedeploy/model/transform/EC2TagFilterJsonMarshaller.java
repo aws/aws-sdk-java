@@ -30,6 +30,7 @@ import com.amazonaws.services.codedeploy.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,11 +54,9 @@ public class EC2TagFilterJsonMarshaller {
             if (eC2TagFilter.getKey() != null) {
                 jsonWriter.key("Key").value(eC2TagFilter.getKey());
             }
-
             if (eC2TagFilter.getValue() != null) {
                 jsonWriter.key("Value").value(eC2TagFilter.getValue());
             }
-
             if (eC2TagFilter.getType() != null) {
                 jsonWriter.key("Type").value(eC2TagFilter.getType());
             }

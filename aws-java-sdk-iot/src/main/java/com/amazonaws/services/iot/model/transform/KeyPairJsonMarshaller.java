@@ -30,6 +30,7 @@ import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,7 +54,6 @@ public class KeyPairJsonMarshaller {
             if (keyPair.getPublicKey() != null) {
                 jsonWriter.key("PublicKey").value(keyPair.getPublicKey());
             }
-
             if (keyPair.getPrivateKey() != null) {
                 jsonWriter.key("PrivateKey").value(keyPair.getPrivateKey());
             }

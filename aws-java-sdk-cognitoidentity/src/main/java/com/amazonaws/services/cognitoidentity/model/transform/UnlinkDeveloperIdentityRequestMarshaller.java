@@ -37,6 +37,7 @@ import com.amazonaws.services.cognitoidentity.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -74,18 +75,15 @@ public class UnlinkDeveloperIdentityRequestMarshaller
                 jsonWriter.key("IdentityId").value(
                         unlinkDeveloperIdentityRequest.getIdentityId());
             }
-
             if (unlinkDeveloperIdentityRequest.getIdentityPoolId() != null) {
                 jsonWriter.key("IdentityPoolId").value(
                         unlinkDeveloperIdentityRequest.getIdentityPoolId());
             }
-
             if (unlinkDeveloperIdentityRequest.getDeveloperProviderName() != null) {
                 jsonWriter.key("DeveloperProviderName").value(
                         unlinkDeveloperIdentityRequest
                                 .getDeveloperProviderName());
             }
-
             if (unlinkDeveloperIdentityRequest.getDeveloperUserIdentifier() != null) {
                 jsonWriter.key("DeveloperUserIdentifier").value(
                         unlinkDeveloperIdentityRequest

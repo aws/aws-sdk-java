@@ -30,6 +30,7 @@ import com.amazonaws.services.devicefarm.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,12 +54,10 @@ public class ScheduleRunTestJsonMarshaller {
             if (scheduleRunTest.getType() != null) {
                 jsonWriter.key("type").value(scheduleRunTest.getType());
             }
-
             if (scheduleRunTest.getTestPackageArn() != null) {
                 jsonWriter.key("testPackageArn").value(
                         scheduleRunTest.getTestPackageArn());
             }
-
             if (scheduleRunTest.getFilter() != null) {
                 jsonWriter.key("filter").value(scheduleRunTest.getFilter());
             }

@@ -37,6 +37,7 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -65,9 +66,8 @@ public class GetDomainNameRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{domain_name}",
-                (getDomainNameRequest.getDomainName() == null) ? ""
-                        : StringUtils.fromString(getDomainNameRequest
-                                .getDomainName()));
+                (getDomainNameRequest.getDomainName() != null) ? StringUtils
+                        .fromString(getDomainNameRequest.getDomainName()) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

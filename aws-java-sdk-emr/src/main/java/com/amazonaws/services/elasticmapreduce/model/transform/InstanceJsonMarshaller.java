@@ -30,6 +30,7 @@ import com.amazonaws.services.elasticmapreduce.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,38 +54,31 @@ public class InstanceJsonMarshaller {
             if (instance.getId() != null) {
                 jsonWriter.key("Id").value(instance.getId());
             }
-
             if (instance.getEc2InstanceId() != null) {
                 jsonWriter.key("Ec2InstanceId").value(
                         instance.getEc2InstanceId());
             }
-
             if (instance.getPublicDnsName() != null) {
                 jsonWriter.key("PublicDnsName").value(
                         instance.getPublicDnsName());
             }
-
             if (instance.getPublicIpAddress() != null) {
                 jsonWriter.key("PublicIpAddress").value(
                         instance.getPublicIpAddress());
             }
-
             if (instance.getPrivateDnsName() != null) {
                 jsonWriter.key("PrivateDnsName").value(
                         instance.getPrivateDnsName());
             }
-
             if (instance.getPrivateIpAddress() != null) {
                 jsonWriter.key("PrivateIpAddress").value(
                         instance.getPrivateIpAddress());
             }
-
             if (instance.getStatus() != null) {
                 jsonWriter.key("Status");
                 InstanceStatusJsonMarshaller.getInstance().marshall(
                         instance.getStatus(), jsonWriter);
             }
-
             if (instance.getInstanceGroupId() != null) {
                 jsonWriter.key("InstanceGroupId").value(
                         instance.getInstanceGroupId());

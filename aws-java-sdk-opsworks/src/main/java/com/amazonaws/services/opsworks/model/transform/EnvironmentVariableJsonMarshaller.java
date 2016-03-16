@@ -30,6 +30,7 @@ import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,11 +55,9 @@ public class EnvironmentVariableJsonMarshaller {
             if (environmentVariable.getKey() != null) {
                 jsonWriter.key("Key").value(environmentVariable.getKey());
             }
-
             if (environmentVariable.getValue() != null) {
                 jsonWriter.key("Value").value(environmentVariable.getValue());
             }
-
             if (environmentVariable.getSecure() != null) {
                 jsonWriter.key("Secure").value(environmentVariable.getSecure());
             }

@@ -37,6 +37,7 @@ import com.amazonaws.services.ecr.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -74,17 +75,14 @@ public class SetRepositoryPolicyRequestMarshaller
                 jsonWriter.key("registryId").value(
                         setRepositoryPolicyRequest.getRegistryId());
             }
-
             if (setRepositoryPolicyRequest.getRepositoryName() != null) {
                 jsonWriter.key("repositoryName").value(
                         setRepositoryPolicyRequest.getRepositoryName());
             }
-
             if (setRepositoryPolicyRequest.getPolicyText() != null) {
                 jsonWriter.key("policyText").value(
                         setRepositoryPolicyRequest.getPolicyText());
             }
-
             if (setRepositoryPolicyRequest.getForce() != null) {
                 jsonWriter.key("force").value(
                         setRepositoryPolicyRequest.getForce());

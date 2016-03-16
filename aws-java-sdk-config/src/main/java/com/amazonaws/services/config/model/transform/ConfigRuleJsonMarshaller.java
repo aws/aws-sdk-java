@@ -30,6 +30,7 @@ import com.amazonaws.services.config.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,44 +55,36 @@ public class ConfigRuleJsonMarshaller {
                 jsonWriter.key("ConfigRuleName").value(
                         configRule.getConfigRuleName());
             }
-
             if (configRule.getConfigRuleArn() != null) {
                 jsonWriter.key("ConfigRuleArn").value(
                         configRule.getConfigRuleArn());
             }
-
             if (configRule.getConfigRuleId() != null) {
                 jsonWriter.key("ConfigRuleId").value(
                         configRule.getConfigRuleId());
             }
-
             if (configRule.getDescription() != null) {
                 jsonWriter.key("Description")
                         .value(configRule.getDescription());
             }
-
             if (configRule.getScope() != null) {
                 jsonWriter.key("Scope");
                 ScopeJsonMarshaller.getInstance().marshall(
                         configRule.getScope(), jsonWriter);
             }
-
             if (configRule.getSource() != null) {
                 jsonWriter.key("Source");
                 SourceJsonMarshaller.getInstance().marshall(
                         configRule.getSource(), jsonWriter);
             }
-
             if (configRule.getInputParameters() != null) {
                 jsonWriter.key("InputParameters").value(
                         configRule.getInputParameters());
             }
-
             if (configRule.getMaximumExecutionFrequency() != null) {
                 jsonWriter.key("MaximumExecutionFrequency").value(
                         configRule.getMaximumExecutionFrequency());
             }
-
             if (configRule.getConfigRuleState() != null) {
                 jsonWriter.key("ConfigRuleState").value(
                         configRule.getConfigRuleState());

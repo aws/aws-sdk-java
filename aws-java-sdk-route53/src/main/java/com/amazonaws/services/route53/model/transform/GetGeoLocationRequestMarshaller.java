@@ -32,6 +32,7 @@ import com.amazonaws.services.route53.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.XMLWriter;
 
 /**
@@ -58,25 +59,19 @@ public class GetGeoLocationRequestMarshaller implements
 
         request.setResourcePath(uriResourcePath);
 
-        String continentCode = (getGeoLocationRequest.getContinentCode() == null) ? null
-                : StringUtils.fromString(getGeoLocationRequest
-                        .getContinentCode());
-        if (continentCode != null) {
-            request.addParameter("continentcode", continentCode);
+        if (getGeoLocationRequest.getContinentCode() != null) {
+            request.addParameter("continentcode", StringUtils
+                    .fromString(getGeoLocationRequest.getContinentCode()));
         }
 
-        String countryCode = (getGeoLocationRequest.getCountryCode() == null) ? null
-                : StringUtils
-                        .fromString(getGeoLocationRequest.getCountryCode());
-        if (countryCode != null) {
-            request.addParameter("countrycode", countryCode);
+        if (getGeoLocationRequest.getCountryCode() != null) {
+            request.addParameter("countrycode", StringUtils
+                    .fromString(getGeoLocationRequest.getCountryCode()));
         }
 
-        String subdivisionCode = (getGeoLocationRequest.getSubdivisionCode() == null) ? null
-                : StringUtils.fromString(getGeoLocationRequest
-                        .getSubdivisionCode());
-        if (subdivisionCode != null) {
-            request.addParameter("subdivisioncode", subdivisionCode);
+        if (getGeoLocationRequest.getSubdivisionCode() != null) {
+            request.addParameter("subdivisioncode", StringUtils
+                    .fromString(getGeoLocationRequest.getSubdivisionCode()));
         }
 
         return request;

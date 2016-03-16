@@ -30,6 +30,7 @@ import com.amazonaws.services.datapipeline.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,11 +54,9 @@ public class FieldJsonMarshaller {
             if (field.getKey() != null) {
                 jsonWriter.key("key").value(field.getKey());
             }
-
             if (field.getStringValue() != null) {
                 jsonWriter.key("stringValue").value(field.getStringValue());
             }
-
             if (field.getRefValue() != null) {
                 jsonWriter.key("refValue").value(field.getRefValue());
             }

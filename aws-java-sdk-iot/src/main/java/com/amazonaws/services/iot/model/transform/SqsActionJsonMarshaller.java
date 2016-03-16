@@ -30,6 +30,7 @@ import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,11 +54,9 @@ public class SqsActionJsonMarshaller {
             if (sqsAction.getRoleArn() != null) {
                 jsonWriter.key("roleArn").value(sqsAction.getRoleArn());
             }
-
             if (sqsAction.getQueueUrl() != null) {
                 jsonWriter.key("queueUrl").value(sqsAction.getQueueUrl());
             }
-
             if (sqsAction.getUseBase64() != null) {
                 jsonWriter.key("useBase64").value(sqsAction.getUseBase64());
             }

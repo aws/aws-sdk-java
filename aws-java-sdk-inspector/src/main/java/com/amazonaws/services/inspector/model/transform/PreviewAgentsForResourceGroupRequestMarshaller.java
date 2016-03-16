@@ -37,6 +37,7 @@ import com.amazonaws.services.inspector.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -75,12 +76,10 @@ public class PreviewAgentsForResourceGroupRequestMarshaller
                         previewAgentsForResourceGroupRequest
                                 .getResourceGroupArn());
             }
-
             if (previewAgentsForResourceGroupRequest.getNextToken() != null) {
                 jsonWriter.key("nextToken").value(
                         previewAgentsForResourceGroupRequest.getNextToken());
             }
-
             if (previewAgentsForResourceGroupRequest.getMaxResults() != null) {
                 jsonWriter.key("maxResults").value(
                         previewAgentsForResourceGroupRequest.getMaxResults());

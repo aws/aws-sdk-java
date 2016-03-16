@@ -37,6 +37,7 @@ import com.amazonaws.services.storagegateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -73,7 +74,6 @@ public class CancelArchivalRequestMarshaller implements
                 jsonWriter.key("GatewayARN").value(
                         cancelArchivalRequest.getGatewayARN());
             }
-
             if (cancelArchivalRequest.getTapeARN() != null) {
                 jsonWriter.key("TapeARN").value(
                         cancelArchivalRequest.getTapeARN());

@@ -37,6 +37,7 @@ import com.amazonaws.services.elasticmapreduce.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -71,26 +72,21 @@ public class RunJobFlowRequestMarshaller implements
             if (runJobFlowRequest.getName() != null) {
                 jsonWriter.key("Name").value(runJobFlowRequest.getName());
             }
-
             if (runJobFlowRequest.getLogUri() != null) {
                 jsonWriter.key("LogUri").value(runJobFlowRequest.getLogUri());
             }
-
             if (runJobFlowRequest.getAdditionalInfo() != null) {
                 jsonWriter.key("AdditionalInfo").value(
                         runJobFlowRequest.getAdditionalInfo());
             }
-
             if (runJobFlowRequest.getAmiVersion() != null) {
                 jsonWriter.key("AmiVersion").value(
                         runJobFlowRequest.getAmiVersion());
             }
-
             if (runJobFlowRequest.getReleaseLabel() != null) {
                 jsonWriter.key("ReleaseLabel").value(
                         runJobFlowRequest.getReleaseLabel());
             }
-
             if (runJobFlowRequest.getInstances() != null) {
                 jsonWriter.key("Instances");
                 JobFlowInstancesConfigJsonMarshaller.getInstance().marshall(
@@ -191,17 +187,14 @@ public class RunJobFlowRequestMarshaller implements
                 }
                 jsonWriter.endArray();
             }
-
             if (runJobFlowRequest.getVisibleToAllUsers() != null) {
                 jsonWriter.key("VisibleToAllUsers").value(
                         runJobFlowRequest.getVisibleToAllUsers());
             }
-
             if (runJobFlowRequest.getJobFlowRole() != null) {
                 jsonWriter.key("JobFlowRole").value(
                         runJobFlowRequest.getJobFlowRole());
             }
-
             if (runJobFlowRequest.getServiceRole() != null) {
                 jsonWriter.key("ServiceRole").value(
                         runJobFlowRequest.getServiceRole());

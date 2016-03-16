@@ -37,6 +37,7 @@ import com.amazonaws.services.datapipeline.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -73,7 +74,6 @@ public class DeactivatePipelineRequestMarshaller
                 jsonWriter.key("pipelineId").value(
                         deactivatePipelineRequest.getPipelineId());
             }
-
             if (deactivatePipelineRequest.getCancelActive() != null) {
                 jsonWriter.key("cancelActive").value(
                         deactivatePipelineRequest.getCancelActive());

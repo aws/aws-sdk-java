@@ -37,6 +37,7 @@ import com.amazonaws.services.directory.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -73,17 +74,14 @@ public class CreateComputerRequestMarshaller implements
                 jsonWriter.key("DirectoryId").value(
                         createComputerRequest.getDirectoryId());
             }
-
             if (createComputerRequest.getComputerName() != null) {
                 jsonWriter.key("ComputerName").value(
                         createComputerRequest.getComputerName());
             }
-
             if (createComputerRequest.getPassword() != null) {
                 jsonWriter.key("Password").value(
                         createComputerRequest.getPassword());
             }
-
             if (createComputerRequest.getOrganizationalUnitDistinguishedName() != null) {
                 jsonWriter.key("OrganizationalUnitDistinguishedName").value(
                         createComputerRequest

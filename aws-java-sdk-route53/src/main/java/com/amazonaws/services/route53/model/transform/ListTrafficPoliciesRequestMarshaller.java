@@ -32,6 +32,7 @@ import com.amazonaws.services.route53.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.XMLWriter;
 
 /**
@@ -59,19 +60,15 @@ public class ListTrafficPoliciesRequestMarshaller
 
         request.setResourcePath(uriResourcePath);
 
-        String trafficPolicyIdMarker = (listTrafficPoliciesRequest
-                .getTrafficPolicyIdMarker() == null) ? null : StringUtils
-                .fromString(listTrafficPoliciesRequest
-                        .getTrafficPolicyIdMarker());
-        if (trafficPolicyIdMarker != null) {
-            request.addParameter("trafficpolicyid", trafficPolicyIdMarker);
+        if (listTrafficPoliciesRequest.getTrafficPolicyIdMarker() != null) {
+            request.addParameter("trafficpolicyid", StringUtils
+                    .fromString(listTrafficPoliciesRequest
+                            .getTrafficPolicyIdMarker()));
         }
 
-        String maxItems = (listTrafficPoliciesRequest.getMaxItems() == null) ? null
-                : StringUtils.fromString(listTrafficPoliciesRequest
-                        .getMaxItems());
-        if (maxItems != null) {
-            request.addParameter("maxitems", maxItems);
+        if (listTrafficPoliciesRequest.getMaxItems() != null) {
+            request.addParameter("maxitems", StringUtils
+                    .fromString(listTrafficPoliciesRequest.getMaxItems()));
         }
 
         return request;

@@ -30,7 +30,7 @@ public class DeleteDeploymentGroupResult implements Serializable, Cloneable {
      * If the output contains no data, and the corresponding deployment group
      * contained at least one Auto Scaling group, AWS CodeDeploy successfully
      * removed all corresponding Auto Scaling lifecycle event hooks from the
-     * Amazon EC2 instances in the Auto Scaling. If the output does contain
+     * Amazon EC2 instances in the Auto Scaling group. If the output contains
      * data, AWS CodeDeploy could not remove some Auto Scaling lifecycle event
      * hooks from the Amazon EC2 instances in the Auto Scaling group.
      * </p>
@@ -42,7 +42,7 @@ public class DeleteDeploymentGroupResult implements Serializable, Cloneable {
      * If the output contains no data, and the corresponding deployment group
      * contained at least one Auto Scaling group, AWS CodeDeploy successfully
      * removed all corresponding Auto Scaling lifecycle event hooks from the
-     * Amazon EC2 instances in the Auto Scaling. If the output does contain
+     * Amazon EC2 instances in the Auto Scaling group. If the output contains
      * data, AWS CodeDeploy could not remove some Auto Scaling lifecycle event
      * hooks from the Amazon EC2 instances in the Auto Scaling group.
      * </p>
@@ -50,10 +50,10 @@ public class DeleteDeploymentGroupResult implements Serializable, Cloneable {
      * @return If the output contains no data, and the corresponding deployment
      *         group contained at least one Auto Scaling group, AWS CodeDeploy
      *         successfully removed all corresponding Auto Scaling lifecycle
-     *         event hooks from the Amazon EC2 instances in the Auto Scaling. If
-     *         the output does contain data, AWS CodeDeploy could not remove
-     *         some Auto Scaling lifecycle event hooks from the Amazon EC2
-     *         instances in the Auto Scaling group.
+     *         event hooks from the Amazon EC2 instances in the Auto Scaling
+     *         group. If the output contains data, AWS CodeDeploy could not
+     *         remove some Auto Scaling lifecycle event hooks from the Amazon
+     *         EC2 instances in the Auto Scaling group.
      */
 
     public java.util.List<AutoScalingGroup> getHooksNotCleanedUp() {
@@ -68,7 +68,7 @@ public class DeleteDeploymentGroupResult implements Serializable, Cloneable {
      * If the output contains no data, and the corresponding deployment group
      * contained at least one Auto Scaling group, AWS CodeDeploy successfully
      * removed all corresponding Auto Scaling lifecycle event hooks from the
-     * Amazon EC2 instances in the Auto Scaling. If the output does contain
+     * Amazon EC2 instances in the Auto Scaling group. If the output contains
      * data, AWS CodeDeploy could not remove some Auto Scaling lifecycle event
      * hooks from the Amazon EC2 instances in the Auto Scaling group.
      * </p>
@@ -77,10 +77,10 @@ public class DeleteDeploymentGroupResult implements Serializable, Cloneable {
      *        If the output contains no data, and the corresponding deployment
      *        group contained at least one Auto Scaling group, AWS CodeDeploy
      *        successfully removed all corresponding Auto Scaling lifecycle
-     *        event hooks from the Amazon EC2 instances in the Auto Scaling. If
-     *        the output does contain data, AWS CodeDeploy could not remove some
-     *        Auto Scaling lifecycle event hooks from the Amazon EC2 instances
-     *        in the Auto Scaling group.
+     *        event hooks from the Amazon EC2 instances in the Auto Scaling
+     *        group. If the output contains data, AWS CodeDeploy could not
+     *        remove some Auto Scaling lifecycle event hooks from the Amazon EC2
+     *        instances in the Auto Scaling group.
      */
 
     public void setHooksNotCleanedUp(
@@ -99,7 +99,7 @@ public class DeleteDeploymentGroupResult implements Serializable, Cloneable {
      * If the output contains no data, and the corresponding deployment group
      * contained at least one Auto Scaling group, AWS CodeDeploy successfully
      * removed all corresponding Auto Scaling lifecycle event hooks from the
-     * Amazon EC2 instances in the Auto Scaling. If the output does contain
+     * Amazon EC2 instances in the Auto Scaling group. If the output contains
      * data, AWS CodeDeploy could not remove some Auto Scaling lifecycle event
      * hooks from the Amazon EC2 instances in the Auto Scaling group.
      * </p>
@@ -114,10 +114,10 @@ public class DeleteDeploymentGroupResult implements Serializable, Cloneable {
      *        If the output contains no data, and the corresponding deployment
      *        group contained at least one Auto Scaling group, AWS CodeDeploy
      *        successfully removed all corresponding Auto Scaling lifecycle
-     *        event hooks from the Amazon EC2 instances in the Auto Scaling. If
-     *        the output does contain data, AWS CodeDeploy could not remove some
-     *        Auto Scaling lifecycle event hooks from the Amazon EC2 instances
-     *        in the Auto Scaling group.
+     *        event hooks from the Amazon EC2 instances in the Auto Scaling
+     *        group. If the output contains data, AWS CodeDeploy could not
+     *        remove some Auto Scaling lifecycle event hooks from the Amazon EC2
+     *        instances in the Auto Scaling group.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -139,7 +139,7 @@ public class DeleteDeploymentGroupResult implements Serializable, Cloneable {
      * If the output contains no data, and the corresponding deployment group
      * contained at least one Auto Scaling group, AWS CodeDeploy successfully
      * removed all corresponding Auto Scaling lifecycle event hooks from the
-     * Amazon EC2 instances in the Auto Scaling. If the output does contain
+     * Amazon EC2 instances in the Auto Scaling group. If the output contains
      * data, AWS CodeDeploy could not remove some Auto Scaling lifecycle event
      * hooks from the Amazon EC2 instances in the Auto Scaling group.
      * </p>
@@ -148,10 +148,10 @@ public class DeleteDeploymentGroupResult implements Serializable, Cloneable {
      *        If the output contains no data, and the corresponding deployment
      *        group contained at least one Auto Scaling group, AWS CodeDeploy
      *        successfully removed all corresponding Auto Scaling lifecycle
-     *        event hooks from the Amazon EC2 instances in the Auto Scaling. If
-     *        the output does contain data, AWS CodeDeploy could not remove some
-     *        Auto Scaling lifecycle event hooks from the Amazon EC2 instances
-     *        in the Auto Scaling group.
+     *        event hooks from the Amazon EC2 instances in the Auto Scaling
+     *        group. If the output contains data, AWS CodeDeploy could not
+     *        remove some Auto Scaling lifecycle event hooks from the Amazon EC2
+     *        instances in the Auto Scaling group.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

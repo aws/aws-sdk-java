@@ -30,6 +30,7 @@ import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,26 +56,21 @@ public class VolumeConfigurationJsonMarshaller {
                 jsonWriter.key("MountPoint").value(
                         volumeConfiguration.getMountPoint());
             }
-
             if (volumeConfiguration.getRaidLevel() != null) {
                 jsonWriter.key("RaidLevel").value(
                         volumeConfiguration.getRaidLevel());
             }
-
             if (volumeConfiguration.getNumberOfDisks() != null) {
                 jsonWriter.key("NumberOfDisks").value(
                         volumeConfiguration.getNumberOfDisks());
             }
-
             if (volumeConfiguration.getSize() != null) {
                 jsonWriter.key("Size").value(volumeConfiguration.getSize());
             }
-
             if (volumeConfiguration.getVolumeType() != null) {
                 jsonWriter.key("VolumeType").value(
                         volumeConfiguration.getVolumeType());
             }
-
             if (volumeConfiguration.getIops() != null) {
                 jsonWriter.key("Iops").value(volumeConfiguration.getIops());
             }

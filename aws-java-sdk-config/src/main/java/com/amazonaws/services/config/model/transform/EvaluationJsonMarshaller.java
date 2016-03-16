@@ -30,6 +30,7 @@ import com.amazonaws.services.config.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,21 +55,17 @@ public class EvaluationJsonMarshaller {
                 jsonWriter.key("ComplianceResourceType").value(
                         evaluation.getComplianceResourceType());
             }
-
             if (evaluation.getComplianceResourceId() != null) {
                 jsonWriter.key("ComplianceResourceId").value(
                         evaluation.getComplianceResourceId());
             }
-
             if (evaluation.getComplianceType() != null) {
                 jsonWriter.key("ComplianceType").value(
                         evaluation.getComplianceType());
             }
-
             if (evaluation.getAnnotation() != null) {
                 jsonWriter.key("Annotation").value(evaluation.getAnnotation());
             }
-
             if (evaluation.getOrderingTimestamp() != null) {
                 jsonWriter.key("OrderingTimestamp").value(
                         evaluation.getOrderingTimestamp());

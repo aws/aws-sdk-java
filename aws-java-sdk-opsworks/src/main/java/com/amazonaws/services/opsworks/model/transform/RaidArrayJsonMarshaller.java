@@ -30,6 +30,7 @@ import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,53 +54,41 @@ public class RaidArrayJsonMarshaller {
             if (raidArray.getRaidArrayId() != null) {
                 jsonWriter.key("RaidArrayId").value(raidArray.getRaidArrayId());
             }
-
             if (raidArray.getInstanceId() != null) {
                 jsonWriter.key("InstanceId").value(raidArray.getInstanceId());
             }
-
             if (raidArray.getName() != null) {
                 jsonWriter.key("Name").value(raidArray.getName());
             }
-
             if (raidArray.getRaidLevel() != null) {
                 jsonWriter.key("RaidLevel").value(raidArray.getRaidLevel());
             }
-
             if (raidArray.getNumberOfDisks() != null) {
                 jsonWriter.key("NumberOfDisks").value(
                         raidArray.getNumberOfDisks());
             }
-
             if (raidArray.getSize() != null) {
                 jsonWriter.key("Size").value(raidArray.getSize());
             }
-
             if (raidArray.getDevice() != null) {
                 jsonWriter.key("Device").value(raidArray.getDevice());
             }
-
             if (raidArray.getMountPoint() != null) {
                 jsonWriter.key("MountPoint").value(raidArray.getMountPoint());
             }
-
             if (raidArray.getAvailabilityZone() != null) {
                 jsonWriter.key("AvailabilityZone").value(
                         raidArray.getAvailabilityZone());
             }
-
             if (raidArray.getCreatedAt() != null) {
                 jsonWriter.key("CreatedAt").value(raidArray.getCreatedAt());
             }
-
             if (raidArray.getStackId() != null) {
                 jsonWriter.key("StackId").value(raidArray.getStackId());
             }
-
             if (raidArray.getVolumeType() != null) {
                 jsonWriter.key("VolumeType").value(raidArray.getVolumeType());
             }
-
             if (raidArray.getIops() != null) {
                 jsonWriter.key("Iops").value(raidArray.getIops());
             }

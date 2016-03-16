@@ -37,6 +37,7 @@ import com.amazonaws.services.waf.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -73,18 +74,15 @@ public class GetSampledRequestsRequestMarshaller
                 jsonWriter.key("WebAclId").value(
                         getSampledRequestsRequest.getWebAclId());
             }
-
             if (getSampledRequestsRequest.getRuleId() != null) {
                 jsonWriter.key("RuleId").value(
                         getSampledRequestsRequest.getRuleId());
             }
-
             if (getSampledRequestsRequest.getTimeWindow() != null) {
                 jsonWriter.key("TimeWindow");
                 TimeWindowJsonMarshaller.getInstance().marshall(
                         getSampledRequestsRequest.getTimeWindow(), jsonWriter);
             }
-
             if (getSampledRequestsRequest.getMaxItems() != null) {
                 jsonWriter.key("MaxItems").value(
                         getSampledRequestsRequest.getMaxItems());

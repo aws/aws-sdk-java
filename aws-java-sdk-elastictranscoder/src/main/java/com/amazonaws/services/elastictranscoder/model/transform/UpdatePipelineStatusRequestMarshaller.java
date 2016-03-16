@@ -37,6 +37,7 @@ import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -66,9 +67,8 @@ public class UpdatePipelineStatusRequestMarshaller
 
         uriResourcePath = uriResourcePath.replace(
                 "{Id}",
-                (updatePipelineStatusRequest.getId() == null) ? ""
-                        : StringUtils.fromString(updatePipelineStatusRequest
-                                .getId()));
+                (updatePipelineStatusRequest.getId() != null) ? StringUtils
+                        .fromString(updatePipelineStatusRequest.getId()) : "");
         request.setResourcePath(uriResourcePath);
 
         try {

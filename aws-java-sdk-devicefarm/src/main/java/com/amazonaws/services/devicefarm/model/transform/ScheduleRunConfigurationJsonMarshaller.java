@@ -30,6 +30,7 @@ import com.amazonaws.services.devicefarm.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,23 +56,19 @@ public class ScheduleRunConfigurationJsonMarshaller {
                 jsonWriter.key("extraDataPackageArn").value(
                         scheduleRunConfiguration.getExtraDataPackageArn());
             }
-
             if (scheduleRunConfiguration.getNetworkProfileArn() != null) {
                 jsonWriter.key("networkProfileArn").value(
                         scheduleRunConfiguration.getNetworkProfileArn());
             }
-
             if (scheduleRunConfiguration.getLocale() != null) {
                 jsonWriter.key("locale").value(
                         scheduleRunConfiguration.getLocale());
             }
-
             if (scheduleRunConfiguration.getLocation() != null) {
                 jsonWriter.key("location");
                 LocationJsonMarshaller.getInstance().marshall(
                         scheduleRunConfiguration.getLocation(), jsonWriter);
             }
-
             if (scheduleRunConfiguration.getRadios() != null) {
                 jsonWriter.key("radios");
                 RadiosJsonMarshaller.getInstance().marshall(
@@ -90,7 +87,6 @@ public class ScheduleRunConfigurationJsonMarshaller {
                 }
                 jsonWriter.endArray();
             }
-
             if (scheduleRunConfiguration.getBillingMethod() != null) {
                 jsonWriter.key("billingMethod").value(
                         scheduleRunConfiguration.getBillingMethod());

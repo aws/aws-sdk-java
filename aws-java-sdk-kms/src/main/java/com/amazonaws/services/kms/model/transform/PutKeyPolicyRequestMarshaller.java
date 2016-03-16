@@ -37,6 +37,7 @@ import com.amazonaws.services.kms.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -71,12 +72,10 @@ public class PutKeyPolicyRequestMarshaller implements
             if (putKeyPolicyRequest.getKeyId() != null) {
                 jsonWriter.key("KeyId").value(putKeyPolicyRequest.getKeyId());
             }
-
             if (putKeyPolicyRequest.getPolicyName() != null) {
                 jsonWriter.key("PolicyName").value(
                         putKeyPolicyRequest.getPolicyName());
             }
-
             if (putKeyPolicyRequest.getPolicy() != null) {
                 jsonWriter.key("Policy").value(putKeyPolicyRequest.getPolicy());
             }

@@ -30,6 +30,7 @@ import com.amazonaws.services.machinelearning.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,49 +55,39 @@ public class EvaluationJsonMarshaller {
                 jsonWriter.key("EvaluationId").value(
                         evaluation.getEvaluationId());
             }
-
             if (evaluation.getMLModelId() != null) {
                 jsonWriter.key("MLModelId").value(evaluation.getMLModelId());
             }
-
             if (evaluation.getEvaluationDataSourceId() != null) {
                 jsonWriter.key("EvaluationDataSourceId").value(
                         evaluation.getEvaluationDataSourceId());
             }
-
             if (evaluation.getInputDataLocationS3() != null) {
                 jsonWriter.key("InputDataLocationS3").value(
                         evaluation.getInputDataLocationS3());
             }
-
             if (evaluation.getCreatedByIamUser() != null) {
                 jsonWriter.key("CreatedByIamUser").value(
                         evaluation.getCreatedByIamUser());
             }
-
             if (evaluation.getCreatedAt() != null) {
                 jsonWriter.key("CreatedAt").value(evaluation.getCreatedAt());
             }
-
             if (evaluation.getLastUpdatedAt() != null) {
                 jsonWriter.key("LastUpdatedAt").value(
                         evaluation.getLastUpdatedAt());
             }
-
             if (evaluation.getName() != null) {
                 jsonWriter.key("Name").value(evaluation.getName());
             }
-
             if (evaluation.getStatus() != null) {
                 jsonWriter.key("Status").value(evaluation.getStatus());
             }
-
             if (evaluation.getPerformanceMetrics() != null) {
                 jsonWriter.key("PerformanceMetrics");
                 PerformanceMetricsJsonMarshaller.getInstance().marshall(
                         evaluation.getPerformanceMetrics(), jsonWriter);
             }
-
             if (evaluation.getMessage() != null) {
                 jsonWriter.key("Message").value(evaluation.getMessage());
             }

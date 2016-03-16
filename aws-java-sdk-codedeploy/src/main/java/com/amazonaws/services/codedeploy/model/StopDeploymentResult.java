@@ -31,7 +31,7 @@ public class StopDeploymentResult implements Serializable, Cloneable {
      * </p>
      * <ul>
      * <li>Pending: The stop operation is pending.</li>
-     * <li>Succeeded: The stop operation succeeded.</li>
+     * <li>Succeeded: The stop operation was successful.</li>
      * </ul>
      */
     private String status;
@@ -48,14 +48,14 @@ public class StopDeploymentResult implements Serializable, Cloneable {
      * </p>
      * <ul>
      * <li>Pending: The stop operation is pending.</li>
-     * <li>Succeeded: The stop operation succeeded.</li>
+     * <li>Succeeded: The stop operation was successful.</li>
      * </ul>
      * 
      * @param status
      *        The status of the stop deployment operation:</p>
      *        <ul>
      *        <li>Pending: The stop operation is pending.</li>
-     *        <li>Succeeded: The stop operation succeeded.</li>
+     *        <li>Succeeded: The stop operation was successful.</li>
      * @see StopStatus
      */
 
@@ -69,13 +69,13 @@ public class StopDeploymentResult implements Serializable, Cloneable {
      * </p>
      * <ul>
      * <li>Pending: The stop operation is pending.</li>
-     * <li>Succeeded: The stop operation succeeded.</li>
+     * <li>Succeeded: The stop operation was successful.</li>
      * </ul>
      * 
      * @return The status of the stop deployment operation:</p>
      *         <ul>
      *         <li>Pending: The stop operation is pending.</li>
-     *         <li>Succeeded: The stop operation succeeded.</li>
+     *         <li>Succeeded: The stop operation was successful.</li>
      * @see StopStatus
      */
 
@@ -89,14 +89,14 @@ public class StopDeploymentResult implements Serializable, Cloneable {
      * </p>
      * <ul>
      * <li>Pending: The stop operation is pending.</li>
-     * <li>Succeeded: The stop operation succeeded.</li>
+     * <li>Succeeded: The stop operation was successful.</li>
      * </ul>
      * 
      * @param status
      *        The status of the stop deployment operation:</p>
      *        <ul>
      *        <li>Pending: The stop operation is pending.</li>
-     *        <li>Succeeded: The stop operation succeeded.</li>
+     *        <li>Succeeded: The stop operation was successful.</li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see StopStatus
@@ -113,14 +113,14 @@ public class StopDeploymentResult implements Serializable, Cloneable {
      * </p>
      * <ul>
      * <li>Pending: The stop operation is pending.</li>
-     * <li>Succeeded: The stop operation succeeded.</li>
+     * <li>Succeeded: The stop operation was successful.</li>
      * </ul>
      * 
      * @param status
      *        The status of the stop deployment operation:</p>
      *        <ul>
      *        <li>Pending: The stop operation is pending.</li>
-     *        <li>Succeeded: The stop operation succeeded.</li>
+     *        <li>Succeeded: The stop operation was successful.</li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see StopStatus
@@ -136,14 +136,14 @@ public class StopDeploymentResult implements Serializable, Cloneable {
      * </p>
      * <ul>
      * <li>Pending: The stop operation is pending.</li>
-     * <li>Succeeded: The stop operation succeeded.</li>
+     * <li>Succeeded: The stop operation was successful.</li>
      * </ul>
      * 
      * @param status
      *        The status of the stop deployment operation:</p>
      *        <ul>
      *        <li>Pending: The stop operation is pending.</li>
-     *        <li>Succeeded: The stop operation succeeded.</li>
+     *        <li>Succeeded: The stop operation was successful.</li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see StopStatus

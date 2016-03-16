@@ -37,6 +37,7 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -65,20 +66,18 @@ public class GetResourcesRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
-                (getResourcesRequest.getRestApiId() == null) ? "" : StringUtils
-                        .fromString(getResourcesRequest.getRestApiId()));
+                (getResourcesRequest.getRestApiId() != null) ? StringUtils
+                        .fromString(getResourcesRequest.getRestApiId()) : "");
         request.setResourcePath(uriResourcePath);
 
-        String position = (getResourcesRequest.getPosition() == null) ? null
-                : StringUtils.fromString(getResourcesRequest.getPosition());
-        if (position != null) {
-            request.addParameter("position", position);
+        if (getResourcesRequest.getPosition() != null) {
+            request.addParameter("position",
+                    StringUtils.fromString(getResourcesRequest.getPosition()));
         }
 
-        String limit = (getResourcesRequest.getLimit() == null) ? null
-                : StringUtils.fromInteger(getResourcesRequest.getLimit());
-        if (limit != null) {
-            request.addParameter("limit", limit);
+        if (getResourcesRequest.getLimit() != null) {
+            request.addParameter("limit",
+                    StringUtils.fromInteger(getResourcesRequest.getLimit()));
         }
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

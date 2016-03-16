@@ -37,6 +37,7 @@ import com.amazonaws.services.directconnect.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -75,13 +76,11 @@ public class AllocatePrivateVirtualInterfaceRequestMarshaller
                         allocatePrivateVirtualInterfaceRequest
                                 .getConnectionId());
             }
-
             if (allocatePrivateVirtualInterfaceRequest.getOwnerAccount() != null) {
                 jsonWriter.key("ownerAccount").value(
                         allocatePrivateVirtualInterfaceRequest
                                 .getOwnerAccount());
             }
-
             if (allocatePrivateVirtualInterfaceRequest
                     .getNewPrivateVirtualInterfaceAllocation() != null) {
                 jsonWriter.key("newPrivateVirtualInterfaceAllocation");

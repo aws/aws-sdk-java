@@ -33,9 +33,9 @@ public class ListApplicationsResult implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<String> applications;
     /**
      * <p>
-     * If the amount of information that is returned is significantly large, an
-     * identifier will also be returned, which can be used in a subsequent list
-     * applications call to return the next set of applications in the list.
+     * If a large amount of information is returned, an identifier is also
+     * returned. It can be used in a subsequent list applications call to return
+     * the next set of applications, will also be returned. in the list.
      * </p>
      */
     private String nextToken;
@@ -121,16 +121,16 @@ public class ListApplicationsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the amount of information that is returned is significantly large, an
-     * identifier will also be returned, which can be used in a subsequent list
-     * applications call to return the next set of applications in the list.
+     * If a large amount of information is returned, an identifier is also
+     * returned. It can be used in a subsequent list applications call to return
+     * the next set of applications, will also be returned. in the list.
      * </p>
      * 
      * @param nextToken
-     *        If the amount of information that is returned is significantly
-     *        large, an identifier will also be returned, which can be used in a
-     *        subsequent list applications call to return the next set of
-     *        applications in the list.
+     *        If a large amount of information is returned, an identifier is
+     *        also returned. It can be used in a subsequent list applications
+     *        call to return the next set of applications, will also be
+     *        returned. in the list.
      */
 
     public void setNextToken(String nextToken) {
@@ -139,15 +139,15 @@ public class ListApplicationsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the amount of information that is returned is significantly large, an
-     * identifier will also be returned, which can be used in a subsequent list
-     * applications call to return the next set of applications in the list.
+     * If a large amount of information is returned, an identifier is also
+     * returned. It can be used in a subsequent list applications call to return
+     * the next set of applications, will also be returned. in the list.
      * </p>
      * 
-     * @return If the amount of information that is returned is significantly
-     *         large, an identifier will also be returned, which can be used in
-     *         a subsequent list applications call to return the next set of
-     *         applications in the list.
+     * @return If a large amount of information is returned, an identifier is
+     *         also returned. It can be used in a subsequent list applications
+     *         call to return the next set of applications, will also be
+     *         returned. in the list.
      */
 
     public String getNextToken() {
@@ -156,16 +156,16 @@ public class ListApplicationsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the amount of information that is returned is significantly large, an
-     * identifier will also be returned, which can be used in a subsequent list
-     * applications call to return the next set of applications in the list.
+     * If a large amount of information is returned, an identifier is also
+     * returned. It can be used in a subsequent list applications call to return
+     * the next set of applications, will also be returned. in the list.
      * </p>
      * 
      * @param nextToken
-     *        If the amount of information that is returned is significantly
-     *        large, an identifier will also be returned, which can be used in a
-     *        subsequent list applications call to return the next set of
-     *        applications in the list.
+     *        If a large amount of information is returned, an identifier is
+     *        also returned. It can be used in a subsequent list applications
+     *        call to return the next set of applications, will also be
+     *        returned. in the list.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

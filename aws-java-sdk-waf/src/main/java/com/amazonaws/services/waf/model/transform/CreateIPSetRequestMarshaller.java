@@ -37,6 +37,7 @@ import com.amazonaws.services.waf.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -71,7 +72,6 @@ public class CreateIPSetRequestMarshaller implements
             if (createIPSetRequest.getName() != null) {
                 jsonWriter.key("Name").value(createIPSetRequest.getName());
             }
-
             if (createIPSetRequest.getChangeToken() != null) {
                 jsonWriter.key("ChangeToken").value(
                         createIPSetRequest.getChangeToken());

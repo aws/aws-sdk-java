@@ -37,6 +37,7 @@ import com.amazonaws.services.elasticmapreduce.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -97,7 +98,6 @@ public class ListStepsRequestMarshaller implements
                 }
                 jsonWriter.endArray();
             }
-
             if (listStepsRequest.getMarker() != null) {
                 jsonWriter.key("Marker").value(listStepsRequest.getMarker());
             }

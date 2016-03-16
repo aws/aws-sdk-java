@@ -30,6 +30,7 @@ import com.amazonaws.services.gamelift.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,11 +54,9 @@ public class S3LocationJsonMarshaller {
             if (s3Location.getBucket() != null) {
                 jsonWriter.key("Bucket").value(s3Location.getBucket());
             }
-
             if (s3Location.getKey() != null) {
                 jsonWriter.key("Key").value(s3Location.getKey());
             }
-
             if (s3Location.getRoleArn() != null) {
                 jsonWriter.key("RoleArn").value(s3Location.getRoleArn());
             }

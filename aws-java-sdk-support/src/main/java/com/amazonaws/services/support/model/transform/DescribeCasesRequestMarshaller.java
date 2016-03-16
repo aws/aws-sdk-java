@@ -37,6 +37,7 @@ import com.amazonaws.services.support.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -80,42 +81,34 @@ public class DescribeCasesRequestMarshaller implements
                 }
                 jsonWriter.endArray();
             }
-
             if (describeCasesRequest.getDisplayId() != null) {
                 jsonWriter.key("displayId").value(
                         describeCasesRequest.getDisplayId());
             }
-
             if (describeCasesRequest.getAfterTime() != null) {
                 jsonWriter.key("afterTime").value(
                         describeCasesRequest.getAfterTime());
             }
-
             if (describeCasesRequest.getBeforeTime() != null) {
                 jsonWriter.key("beforeTime").value(
                         describeCasesRequest.getBeforeTime());
             }
-
             if (describeCasesRequest.getIncludeResolvedCases() != null) {
                 jsonWriter.key("includeResolvedCases").value(
                         describeCasesRequest.getIncludeResolvedCases());
             }
-
             if (describeCasesRequest.getNextToken() != null) {
                 jsonWriter.key("nextToken").value(
                         describeCasesRequest.getNextToken());
             }
-
             if (describeCasesRequest.getMaxResults() != null) {
                 jsonWriter.key("maxResults").value(
                         describeCasesRequest.getMaxResults());
             }
-
             if (describeCasesRequest.getLanguage() != null) {
                 jsonWriter.key("language").value(
                         describeCasesRequest.getLanguage());
             }
-
             if (describeCasesRequest.getIncludeCommunications() != null) {
                 jsonWriter.key("includeCommunications").value(
                         describeCasesRequest.getIncludeCommunications());

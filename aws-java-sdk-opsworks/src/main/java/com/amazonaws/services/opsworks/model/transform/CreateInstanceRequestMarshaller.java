@@ -37,6 +37,7 @@ import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -85,55 +86,44 @@ public class CreateInstanceRequestMarshaller implements
                 }
                 jsonWriter.endArray();
             }
-
             if (createInstanceRequest.getInstanceType() != null) {
                 jsonWriter.key("InstanceType").value(
                         createInstanceRequest.getInstanceType());
             }
-
             if (createInstanceRequest.getAutoScalingType() != null) {
                 jsonWriter.key("AutoScalingType").value(
                         createInstanceRequest.getAutoScalingType());
             }
-
             if (createInstanceRequest.getHostname() != null) {
                 jsonWriter.key("Hostname").value(
                         createInstanceRequest.getHostname());
             }
-
             if (createInstanceRequest.getOs() != null) {
                 jsonWriter.key("Os").value(createInstanceRequest.getOs());
             }
-
             if (createInstanceRequest.getAmiId() != null) {
                 jsonWriter.key("AmiId").value(createInstanceRequest.getAmiId());
             }
-
             if (createInstanceRequest.getSshKeyName() != null) {
                 jsonWriter.key("SshKeyName").value(
                         createInstanceRequest.getSshKeyName());
             }
-
             if (createInstanceRequest.getAvailabilityZone() != null) {
                 jsonWriter.key("AvailabilityZone").value(
                         createInstanceRequest.getAvailabilityZone());
             }
-
             if (createInstanceRequest.getVirtualizationType() != null) {
                 jsonWriter.key("VirtualizationType").value(
                         createInstanceRequest.getVirtualizationType());
             }
-
             if (createInstanceRequest.getSubnetId() != null) {
                 jsonWriter.key("SubnetId").value(
                         createInstanceRequest.getSubnetId());
             }
-
             if (createInstanceRequest.getArchitecture() != null) {
                 jsonWriter.key("Architecture").value(
                         createInstanceRequest.getArchitecture());
             }
-
             if (createInstanceRequest.getRootDeviceType() != null) {
                 jsonWriter.key("RootDeviceType").value(
                         createInstanceRequest.getRootDeviceType());
@@ -155,17 +145,14 @@ public class CreateInstanceRequestMarshaller implements
                 }
                 jsonWriter.endArray();
             }
-
             if (createInstanceRequest.getInstallUpdatesOnBoot() != null) {
                 jsonWriter.key("InstallUpdatesOnBoot").value(
                         createInstanceRequest.getInstallUpdatesOnBoot());
             }
-
             if (createInstanceRequest.getEbsOptimized() != null) {
                 jsonWriter.key("EbsOptimized").value(
                         createInstanceRequest.getEbsOptimized());
             }
-
             if (createInstanceRequest.getAgentVersion() != null) {
                 jsonWriter.key("AgentVersion").value(
                         createInstanceRequest.getAgentVersion());

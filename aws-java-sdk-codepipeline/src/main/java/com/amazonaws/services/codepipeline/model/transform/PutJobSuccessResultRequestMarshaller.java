@@ -37,6 +37,7 @@ import com.amazonaws.services.codepipeline.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -74,19 +75,16 @@ public class PutJobSuccessResultRequestMarshaller
                 jsonWriter.key("jobId").value(
                         putJobSuccessResultRequest.getJobId());
             }
-
             if (putJobSuccessResultRequest.getCurrentRevision() != null) {
                 jsonWriter.key("currentRevision");
                 CurrentRevisionJsonMarshaller.getInstance().marshall(
                         putJobSuccessResultRequest.getCurrentRevision(),
                         jsonWriter);
             }
-
             if (putJobSuccessResultRequest.getContinuationToken() != null) {
                 jsonWriter.key("continuationToken").value(
                         putJobSuccessResultRequest.getContinuationToken());
             }
-
             if (putJobSuccessResultRequest.getExecutionDetails() != null) {
                 jsonWriter.key("executionDetails");
                 ExecutionDetailsJsonMarshaller.getInstance().marshall(

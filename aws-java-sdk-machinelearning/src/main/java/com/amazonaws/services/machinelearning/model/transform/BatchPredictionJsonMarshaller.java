@@ -30,6 +30,7 @@ import com.amazonaws.services.machinelearning.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,50 +55,40 @@ public class BatchPredictionJsonMarshaller {
                 jsonWriter.key("BatchPredictionId").value(
                         batchPrediction.getBatchPredictionId());
             }
-
             if (batchPrediction.getMLModelId() != null) {
                 jsonWriter.key("MLModelId").value(
                         batchPrediction.getMLModelId());
             }
-
             if (batchPrediction.getBatchPredictionDataSourceId() != null) {
                 jsonWriter.key("BatchPredictionDataSourceId").value(
                         batchPrediction.getBatchPredictionDataSourceId());
             }
-
             if (batchPrediction.getInputDataLocationS3() != null) {
                 jsonWriter.key("InputDataLocationS3").value(
                         batchPrediction.getInputDataLocationS3());
             }
-
             if (batchPrediction.getCreatedByIamUser() != null) {
                 jsonWriter.key("CreatedByIamUser").value(
                         batchPrediction.getCreatedByIamUser());
             }
-
             if (batchPrediction.getCreatedAt() != null) {
                 jsonWriter.key("CreatedAt").value(
                         batchPrediction.getCreatedAt());
             }
-
             if (batchPrediction.getLastUpdatedAt() != null) {
                 jsonWriter.key("LastUpdatedAt").value(
                         batchPrediction.getLastUpdatedAt());
             }
-
             if (batchPrediction.getName() != null) {
                 jsonWriter.key("Name").value(batchPrediction.getName());
             }
-
             if (batchPrediction.getStatus() != null) {
                 jsonWriter.key("Status").value(batchPrediction.getStatus());
             }
-
             if (batchPrediction.getOutputUri() != null) {
                 jsonWriter.key("OutputUri").value(
                         batchPrediction.getOutputUri());
             }
-
             if (batchPrediction.getMessage() != null) {
                 jsonWriter.key("Message").value(batchPrediction.getMessage());
             }

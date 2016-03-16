@@ -30,6 +30,7 @@ import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,7 +54,6 @@ public class PlaylistJsonMarshaller {
             if (playlist.getName() != null) {
                 jsonWriter.key("Name").value(playlist.getName());
             }
-
             if (playlist.getFormat() != null) {
                 jsonWriter.key("Format").value(playlist.getFormat());
             }
@@ -70,23 +70,19 @@ public class PlaylistJsonMarshaller {
                 }
                 jsonWriter.endArray();
             }
-
             if (playlist.getHlsContentProtection() != null) {
                 jsonWriter.key("HlsContentProtection");
                 HlsContentProtectionJsonMarshaller.getInstance().marshall(
                         playlist.getHlsContentProtection(), jsonWriter);
             }
-
             if (playlist.getPlayReadyDrm() != null) {
                 jsonWriter.key("PlayReadyDrm");
                 PlayReadyDrmJsonMarshaller.getInstance().marshall(
                         playlist.getPlayReadyDrm(), jsonWriter);
             }
-
             if (playlist.getStatus() != null) {
                 jsonWriter.key("Status").value(playlist.getStatus());
             }
-
             if (playlist.getStatusDetail() != null) {
                 jsonWriter.key("StatusDetail")
                         .value(playlist.getStatusDetail());

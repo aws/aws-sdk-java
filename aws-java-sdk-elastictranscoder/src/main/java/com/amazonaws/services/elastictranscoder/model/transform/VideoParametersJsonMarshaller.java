@@ -30,6 +30,7 @@ import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -71,59 +72,47 @@ public class VideoParametersJsonMarshaller {
                 }
                 jsonWriter.endObject();
             }
-
             if (videoParameters.getKeyframesMaxDist() != null) {
                 jsonWriter.key("KeyframesMaxDist").value(
                         videoParameters.getKeyframesMaxDist());
             }
-
             if (videoParameters.getFixedGOP() != null) {
                 jsonWriter.key("FixedGOP").value(videoParameters.getFixedGOP());
             }
-
             if (videoParameters.getBitRate() != null) {
                 jsonWriter.key("BitRate").value(videoParameters.getBitRate());
             }
-
             if (videoParameters.getFrameRate() != null) {
                 jsonWriter.key("FrameRate").value(
                         videoParameters.getFrameRate());
             }
-
             if (videoParameters.getMaxFrameRate() != null) {
                 jsonWriter.key("MaxFrameRate").value(
                         videoParameters.getMaxFrameRate());
             }
-
             if (videoParameters.getResolution() != null) {
                 jsonWriter.key("Resolution").value(
                         videoParameters.getResolution());
             }
-
             if (videoParameters.getAspectRatio() != null) {
                 jsonWriter.key("AspectRatio").value(
                         videoParameters.getAspectRatio());
             }
-
             if (videoParameters.getMaxWidth() != null) {
                 jsonWriter.key("MaxWidth").value(videoParameters.getMaxWidth());
             }
-
             if (videoParameters.getMaxHeight() != null) {
                 jsonWriter.key("MaxHeight").value(
                         videoParameters.getMaxHeight());
             }
-
             if (videoParameters.getDisplayAspectRatio() != null) {
                 jsonWriter.key("DisplayAspectRatio").value(
                         videoParameters.getDisplayAspectRatio());
             }
-
             if (videoParameters.getSizingPolicy() != null) {
                 jsonWriter.key("SizingPolicy").value(
                         videoParameters.getSizingPolicy());
             }
-
             if (videoParameters.getPaddingPolicy() != null) {
                 jsonWriter.key("PaddingPolicy").value(
                         videoParameters.getPaddingPolicy());

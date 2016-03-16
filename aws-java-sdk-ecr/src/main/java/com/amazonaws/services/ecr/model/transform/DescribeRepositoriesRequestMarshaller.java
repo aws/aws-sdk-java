@@ -37,6 +37,7 @@ import com.amazonaws.services.ecr.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -87,12 +88,10 @@ public class DescribeRepositoriesRequestMarshaller
                 }
                 jsonWriter.endArray();
             }
-
             if (describeRepositoriesRequest.getNextToken() != null) {
                 jsonWriter.key("nextToken").value(
                         describeRepositoriesRequest.getNextToken());
             }
-
             if (describeRepositoriesRequest.getMaxResults() != null) {
                 jsonWriter.key("maxResults").value(
                         describeRepositoriesRequest.getMaxResults());

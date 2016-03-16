@@ -40,8 +40,8 @@ public class BatchGetApplicationRevisionsResult implements Serializable,
     private String errorMessage;
     /**
      * <p>
-     * Additional information about the revisions, including the revision type
-     * and location.
+     * Additional information about the revisions, including the type and
+     * location.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<RevisionInfo> revisions;
@@ -135,12 +135,12 @@ public class BatchGetApplicationRevisionsResult implements Serializable,
 
     /**
      * <p>
-     * Additional information about the revisions, including the revision type
-     * and location.
+     * Additional information about the revisions, including the type and
+     * location.
      * </p>
      * 
-     * @return Additional information about the revisions, including the
-     *         revision type and location.
+     * @return Additional information about the revisions, including the type
+     *         and location.
      */
 
     public java.util.List<RevisionInfo> getRevisions() {
@@ -152,13 +152,13 @@ public class BatchGetApplicationRevisionsResult implements Serializable,
 
     /**
      * <p>
-     * Additional information about the revisions, including the revision type
-     * and location.
+     * Additional information about the revisions, including the type and
+     * location.
      * </p>
      * 
      * @param revisions
-     *        Additional information about the revisions, including the revision
-     *        type and location.
+     *        Additional information about the revisions, including the type and
+     *        location.
      */
 
     public void setRevisions(java.util.Collection<RevisionInfo> revisions) {
@@ -173,8 +173,8 @@ public class BatchGetApplicationRevisionsResult implements Serializable,
 
     /**
      * <p>
-     * Additional information about the revisions, including the revision type
-     * and location.
+     * Additional information about the revisions, including the type and
+     * location.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -184,8 +184,8 @@ public class BatchGetApplicationRevisionsResult implements Serializable,
      * </p>
      * 
      * @param revisions
-     *        Additional information about the revisions, including the revision
-     *        type and location.
+     *        Additional information about the revisions, including the type and
+     *        location.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -204,13 +204,13 @@ public class BatchGetApplicationRevisionsResult implements Serializable,
 
     /**
      * <p>
-     * Additional information about the revisions, including the revision type
-     * and location.
+     * Additional information about the revisions, including the type and
+     * location.
      * </p>
      * 
      * @param revisions
-     *        Additional information about the revisions, including the revision
-     *        type and location.
+     *        Additional information about the revisions, including the type and
+     *        location.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -30,6 +30,7 @@ import com.amazonaws.services.codepipeline.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,13 +54,11 @@ public class JobDetailsJsonMarshaller {
             if (jobDetails.getId() != null) {
                 jsonWriter.key("id").value(jobDetails.getId());
             }
-
             if (jobDetails.getData() != null) {
                 jsonWriter.key("data");
                 JobDataJsonMarshaller.getInstance().marshall(
                         jobDetails.getData(), jsonWriter);
             }
-
             if (jobDetails.getAccountId() != null) {
                 jsonWriter.key("accountId").value(jobDetails.getAccountId());
             }

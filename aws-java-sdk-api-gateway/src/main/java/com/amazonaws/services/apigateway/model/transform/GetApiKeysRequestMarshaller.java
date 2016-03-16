@@ -37,6 +37,7 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -65,16 +66,14 @@ public class GetApiKeysRequestMarshaller implements
 
         request.setResourcePath(uriResourcePath);
 
-        String position = (getApiKeysRequest.getPosition() == null) ? null
-                : StringUtils.fromString(getApiKeysRequest.getPosition());
-        if (position != null) {
-            request.addParameter("position", position);
+        if (getApiKeysRequest.getPosition() != null) {
+            request.addParameter("position",
+                    StringUtils.fromString(getApiKeysRequest.getPosition()));
         }
 
-        String limit = (getApiKeysRequest.getLimit() == null) ? null
-                : StringUtils.fromInteger(getApiKeysRequest.getLimit());
-        if (limit != null) {
-            request.addParameter("limit", limit);
+        if (getApiKeysRequest.getLimit() != null) {
+            request.addParameter("limit",
+                    StringUtils.fromInteger(getApiKeysRequest.getLimit()));
         }
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

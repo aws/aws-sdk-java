@@ -30,6 +30,7 @@ import com.amazonaws.services.dynamodbv2.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -71,24 +72,20 @@ public class LocalSecondaryIndexDescriptionJsonMarshaller {
                 }
                 jsonWriter.endArray();
             }
-
             if (localSecondaryIndexDescription.getProjection() != null) {
                 jsonWriter.key("Projection");
                 ProjectionJsonMarshaller.getInstance().marshall(
                         localSecondaryIndexDescription.getProjection(),
                         jsonWriter);
             }
-
             if (localSecondaryIndexDescription.getIndexSizeBytes() != null) {
                 jsonWriter.key("IndexSizeBytes").value(
                         localSecondaryIndexDescription.getIndexSizeBytes());
             }
-
             if (localSecondaryIndexDescription.getItemCount() != null) {
                 jsonWriter.key("ItemCount").value(
                         localSecondaryIndexDescription.getItemCount());
             }
-
             if (localSecondaryIndexDescription.getIndexArn() != null) {
                 jsonWriter.key("IndexArn").value(
                         localSecondaryIndexDescription.getIndexArn());

@@ -29,28 +29,27 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The name of an existing AWS CodeDeploy application associated with the
-     * applicable IAM user or AWS account.
+     * The name of an AWS CodeDeploy application associated with the applicable
+     * IAM user or AWS account.
      * </p>
      */
     private String applicationName;
     /**
      * <p>
-     * The deployment group's name.
+     * The name of the deployment group.
      * </p>
      */
     private String deploymentGroupName;
     /**
      * <p>
-     * The type of revision to deploy, along with information about the
-     * revision's location.
+     * The type and location of the revision to deploy.
      * </p>
      */
     private RevisionLocation revision;
     /**
      * <p>
-     * The name of an existing deployment configuration associated with the
-     * applicable IAM user or AWS account.
+     * The name of a deployment configuration associated with the applicable IAM
+     * user or AWS account.
      * </p>
      * <p>
      * If not specified, the value configured in the deployment group will be
@@ -69,28 +68,28 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * If set to true, then if the deployment causes the ApplicationStop
-     * deployment lifecycle event to fail to a specific instance, the deployment
-     * will not be considered to have failed to that instance at that point and
-     * will continue on to the BeforeInstall deployment lifecycle event.
+     * deployment lifecycle event to an instance to fail, the deployment to that
+     * instance will not be considered to have failed at that point and will
+     * continue on to the BeforeInstall deployment lifecycle event.
      * </p>
      * <p>
      * If set to false or not specified, then if the deployment causes the
-     * ApplicationStop deployment lifecycle event to fail to a specific
-     * instance, the deployment will stop to that instance, and the deployment
-     * to that instance will be considered to have failed.
+     * ApplicationStop deployment lifecycle event to fail to an instance, the
+     * deployment to that instance will stop, and the deployment to that
+     * instance will be considered to have failed.
      * </p>
      */
     private Boolean ignoreApplicationStopFailures;
 
     /**
      * <p>
-     * The name of an existing AWS CodeDeploy application associated with the
-     * applicable IAM user or AWS account.
+     * The name of an AWS CodeDeploy application associated with the applicable
+     * IAM user or AWS account.
      * </p>
      * 
      * @param applicationName
-     *        The name of an existing AWS CodeDeploy application associated with
-     *        the applicable IAM user or AWS account.
+     *        The name of an AWS CodeDeploy application associated with the
+     *        applicable IAM user or AWS account.
      */
 
     public void setApplicationName(String applicationName) {
@@ -99,12 +98,12 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The name of an existing AWS CodeDeploy application associated with the
-     * applicable IAM user or AWS account.
+     * The name of an AWS CodeDeploy application associated with the applicable
+     * IAM user or AWS account.
      * </p>
      * 
-     * @return The name of an existing AWS CodeDeploy application associated
-     *         with the applicable IAM user or AWS account.
+     * @return The name of an AWS CodeDeploy application associated with the
+     *         applicable IAM user or AWS account.
      */
 
     public String getApplicationName() {
@@ -113,13 +112,13 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The name of an existing AWS CodeDeploy application associated with the
-     * applicable IAM user or AWS account.
+     * The name of an AWS CodeDeploy application associated with the applicable
+     * IAM user or AWS account.
      * </p>
      * 
      * @param applicationName
-     *        The name of an existing AWS CodeDeploy application associated with
-     *        the applicable IAM user or AWS account.
+     *        The name of an AWS CodeDeploy application associated with the
+     *        applicable IAM user or AWS account.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -131,11 +130,11 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The deployment group's name.
+     * The name of the deployment group.
      * </p>
      * 
      * @param deploymentGroupName
-     *        The deployment group's name.
+     *        The name of the deployment group.
      */
 
     public void setDeploymentGroupName(String deploymentGroupName) {
@@ -144,10 +143,10 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The deployment group's name.
+     * The name of the deployment group.
      * </p>
      * 
-     * @return The deployment group's name.
+     * @return The name of the deployment group.
      */
 
     public String getDeploymentGroupName() {
@@ -156,11 +155,11 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The deployment group's name.
+     * The name of the deployment group.
      * </p>
      * 
      * @param deploymentGroupName
-     *        The deployment group's name.
+     *        The name of the deployment group.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -173,13 +172,11 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The type of revision to deploy, along with information about the
-     * revision's location.
+     * The type and location of the revision to deploy.
      * </p>
      * 
      * @param revision
-     *        The type of revision to deploy, along with information about the
-     *        revision's location.
+     *        The type and location of the revision to deploy.
      */
 
     public void setRevision(RevisionLocation revision) {
@@ -188,12 +185,10 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The type of revision to deploy, along with information about the
-     * revision's location.
+     * The type and location of the revision to deploy.
      * </p>
      * 
-     * @return The type of revision to deploy, along with information about the
-     *         revision's location.
+     * @return The type and location of the revision to deploy.
      */
 
     public RevisionLocation getRevision() {
@@ -202,13 +197,11 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The type of revision to deploy, along with information about the
-     * revision's location.
+     * The type and location of the revision to deploy.
      * </p>
      * 
      * @param revision
-     *        The type of revision to deploy, along with information about the
-     *        revision's location.
+     *        The type and location of the revision to deploy.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -220,8 +213,8 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The name of an existing deployment configuration associated with the
-     * applicable IAM user or AWS account.
+     * The name of a deployment configuration associated with the applicable IAM
+     * user or AWS account.
      * </p>
      * <p>
      * If not specified, the value configured in the deployment group will be
@@ -231,8 +224,8 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param deploymentConfigName
-     *        The name of an existing deployment configuration associated with
-     *        the applicable IAM user or AWS account.</p>
+     *        The name of a deployment configuration associated with the
+     *        applicable IAM user or AWS account.</p>
      *        <p>
      *        If not specified, the value configured in the deployment group
      *        will be used as the default. If the deployment group does not have
@@ -246,8 +239,8 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The name of an existing deployment configuration associated with the
-     * applicable IAM user or AWS account.
+     * The name of a deployment configuration associated with the applicable IAM
+     * user or AWS account.
      * </p>
      * <p>
      * If not specified, the value configured in the deployment group will be
@@ -256,8 +249,8 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
      * be used by default.
      * </p>
      * 
-     * @return The name of an existing deployment configuration associated with
-     *         the applicable IAM user or AWS account.</p>
+     * @return The name of a deployment configuration associated with the
+     *         applicable IAM user or AWS account.</p>
      *         <p>
      *         If not specified, the value configured in the deployment group
      *         will be used as the default. If the deployment group does not
@@ -271,8 +264,8 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The name of an existing deployment configuration associated with the
-     * applicable IAM user or AWS account.
+     * The name of a deployment configuration associated with the applicable IAM
+     * user or AWS account.
      * </p>
      * <p>
      * If not specified, the value configured in the deployment group will be
@@ -282,8 +275,8 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param deploymentConfigName
-     *        The name of an existing deployment configuration associated with
-     *        the applicable IAM user or AWS account.</p>
+     *        The name of a deployment configuration associated with the
+     *        applicable IAM user or AWS account.</p>
      *        <p>
      *        If not specified, the value configured in the deployment group
      *        will be used as the default. If the deployment group does not have
@@ -343,28 +336,28 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * If set to true, then if the deployment causes the ApplicationStop
-     * deployment lifecycle event to fail to a specific instance, the deployment
-     * will not be considered to have failed to that instance at that point and
-     * will continue on to the BeforeInstall deployment lifecycle event.
+     * deployment lifecycle event to an instance to fail, the deployment to that
+     * instance will not be considered to have failed at that point and will
+     * continue on to the BeforeInstall deployment lifecycle event.
      * </p>
      * <p>
      * If set to false or not specified, then if the deployment causes the
-     * ApplicationStop deployment lifecycle event to fail to a specific
-     * instance, the deployment will stop to that instance, and the deployment
-     * to that instance will be considered to have failed.
+     * ApplicationStop deployment lifecycle event to fail to an instance, the
+     * deployment to that instance will stop, and the deployment to that
+     * instance will be considered to have failed.
      * </p>
      * 
      * @param ignoreApplicationStopFailures
      *        If set to true, then if the deployment causes the ApplicationStop
-     *        deployment lifecycle event to fail to a specific instance, the
-     *        deployment will not be considered to have failed to that instance
-     *        at that point and will continue on to the BeforeInstall deployment
+     *        deployment lifecycle event to an instance to fail, the deployment
+     *        to that instance will not be considered to have failed at that
+     *        point and will continue on to the BeforeInstall deployment
      *        lifecycle event.</p>
      *        <p>
      *        If set to false or not specified, then if the deployment causes
-     *        the ApplicationStop deployment lifecycle event to fail to a
-     *        specific instance, the deployment will stop to that instance, and
-     *        the deployment to that instance will be considered to have failed.
+     *        the ApplicationStop deployment lifecycle event to fail to an
+     *        instance, the deployment to that instance will stop, and the
+     *        deployment to that instance will be considered to have failed.
      */
 
     public void setIgnoreApplicationStopFailures(
@@ -375,28 +368,27 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * If set to true, then if the deployment causes the ApplicationStop
-     * deployment lifecycle event to fail to a specific instance, the deployment
-     * will not be considered to have failed to that instance at that point and
-     * will continue on to the BeforeInstall deployment lifecycle event.
+     * deployment lifecycle event to an instance to fail, the deployment to that
+     * instance will not be considered to have failed at that point and will
+     * continue on to the BeforeInstall deployment lifecycle event.
      * </p>
      * <p>
      * If set to false or not specified, then if the deployment causes the
-     * ApplicationStop deployment lifecycle event to fail to a specific
-     * instance, the deployment will stop to that instance, and the deployment
-     * to that instance will be considered to have failed.
+     * ApplicationStop deployment lifecycle event to fail to an instance, the
+     * deployment to that instance will stop, and the deployment to that
+     * instance will be considered to have failed.
      * </p>
      * 
      * @return If set to true, then if the deployment causes the ApplicationStop
-     *         deployment lifecycle event to fail to a specific instance, the
-     *         deployment will not be considered to have failed to that instance
-     *         at that point and will continue on to the BeforeInstall
-     *         deployment lifecycle event.</p>
+     *         deployment lifecycle event to an instance to fail, the deployment
+     *         to that instance will not be considered to have failed at that
+     *         point and will continue on to the BeforeInstall deployment
+     *         lifecycle event.</p>
      *         <p>
      *         If set to false or not specified, then if the deployment causes
-     *         the ApplicationStop deployment lifecycle event to fail to a
-     *         specific instance, the deployment will stop to that instance, and
-     *         the deployment to that instance will be considered to have
-     *         failed.
+     *         the ApplicationStop deployment lifecycle event to fail to an
+     *         instance, the deployment to that instance will stop, and the
+     *         deployment to that instance will be considered to have failed.
      */
 
     public Boolean getIgnoreApplicationStopFailures() {
@@ -406,28 +398,28 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * If set to true, then if the deployment causes the ApplicationStop
-     * deployment lifecycle event to fail to a specific instance, the deployment
-     * will not be considered to have failed to that instance at that point and
-     * will continue on to the BeforeInstall deployment lifecycle event.
+     * deployment lifecycle event to an instance to fail, the deployment to that
+     * instance will not be considered to have failed at that point and will
+     * continue on to the BeforeInstall deployment lifecycle event.
      * </p>
      * <p>
      * If set to false or not specified, then if the deployment causes the
-     * ApplicationStop deployment lifecycle event to fail to a specific
-     * instance, the deployment will stop to that instance, and the deployment
-     * to that instance will be considered to have failed.
+     * ApplicationStop deployment lifecycle event to fail to an instance, the
+     * deployment to that instance will stop, and the deployment to that
+     * instance will be considered to have failed.
      * </p>
      * 
      * @param ignoreApplicationStopFailures
      *        If set to true, then if the deployment causes the ApplicationStop
-     *        deployment lifecycle event to fail to a specific instance, the
-     *        deployment will not be considered to have failed to that instance
-     *        at that point and will continue on to the BeforeInstall deployment
+     *        deployment lifecycle event to an instance to fail, the deployment
+     *        to that instance will not be considered to have failed at that
+     *        point and will continue on to the BeforeInstall deployment
      *        lifecycle event.</p>
      *        <p>
      *        If set to false or not specified, then if the deployment causes
-     *        the ApplicationStop deployment lifecycle event to fail to a
-     *        specific instance, the deployment will stop to that instance, and
-     *        the deployment to that instance will be considered to have failed.
+     *        the ApplicationStop deployment lifecycle event to fail to an
+     *        instance, the deployment to that instance will stop, and the
+     *        deployment to that instance will be considered to have failed.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -441,28 +433,27 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * If set to true, then if the deployment causes the ApplicationStop
-     * deployment lifecycle event to fail to a specific instance, the deployment
-     * will not be considered to have failed to that instance at that point and
-     * will continue on to the BeforeInstall deployment lifecycle event.
+     * deployment lifecycle event to an instance to fail, the deployment to that
+     * instance will not be considered to have failed at that point and will
+     * continue on to the BeforeInstall deployment lifecycle event.
      * </p>
      * <p>
      * If set to false or not specified, then if the deployment causes the
-     * ApplicationStop deployment lifecycle event to fail to a specific
-     * instance, the deployment will stop to that instance, and the deployment
-     * to that instance will be considered to have failed.
+     * ApplicationStop deployment lifecycle event to fail to an instance, the
+     * deployment to that instance will stop, and the deployment to that
+     * instance will be considered to have failed.
      * </p>
      * 
      * @return If set to true, then if the deployment causes the ApplicationStop
-     *         deployment lifecycle event to fail to a specific instance, the
-     *         deployment will not be considered to have failed to that instance
-     *         at that point and will continue on to the BeforeInstall
-     *         deployment lifecycle event.</p>
+     *         deployment lifecycle event to an instance to fail, the deployment
+     *         to that instance will not be considered to have failed at that
+     *         point and will continue on to the BeforeInstall deployment
+     *         lifecycle event.</p>
      *         <p>
      *         If set to false or not specified, then if the deployment causes
-     *         the ApplicationStop deployment lifecycle event to fail to a
-     *         specific instance, the deployment will stop to that instance, and
-     *         the deployment to that instance will be considered to have
-     *         failed.
+     *         the ApplicationStop deployment lifecycle event to fail to an
+     *         instance, the deployment to that instance will stop, and the
+     *         deployment to that instance will be considered to have failed.
      */
 
     public Boolean isIgnoreApplicationStopFailures() {

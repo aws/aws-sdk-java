@@ -30,6 +30,7 @@ import com.amazonaws.services.codepipeline.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,17 +54,14 @@ public class TransitionStateJsonMarshaller {
             if (transitionState.getEnabled() != null) {
                 jsonWriter.key("enabled").value(transitionState.getEnabled());
             }
-
             if (transitionState.getLastChangedBy() != null) {
                 jsonWriter.key("lastChangedBy").value(
                         transitionState.getLastChangedBy());
             }
-
             if (transitionState.getLastChangedAt() != null) {
                 jsonWriter.key("lastChangedAt").value(
                         transitionState.getLastChangedAt());
             }
-
             if (transitionState.getDisabledReason() != null) {
                 jsonWriter.key("disabledReason").value(
                         transitionState.getDisabledReason());

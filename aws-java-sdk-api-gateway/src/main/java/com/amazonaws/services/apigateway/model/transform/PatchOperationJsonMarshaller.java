@@ -30,6 +30,7 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,15 +54,12 @@ public class PatchOperationJsonMarshaller {
             if (patchOperation.getOp() != null) {
                 jsonWriter.key("op").value(patchOperation.getOp());
             }
-
             if (patchOperation.getPath() != null) {
                 jsonWriter.key("path").value(patchOperation.getPath());
             }
-
             if (patchOperation.getValue() != null) {
                 jsonWriter.key("value").value(patchOperation.getValue());
             }
-
             if (patchOperation.getFrom() != null) {
                 jsonWriter.key("from").value(patchOperation.getFrom());
             }

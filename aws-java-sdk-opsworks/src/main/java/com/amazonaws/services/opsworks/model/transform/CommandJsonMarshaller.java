@@ -30,6 +30,7 @@ import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,40 +54,31 @@ public class CommandJsonMarshaller {
             if (command.getCommandId() != null) {
                 jsonWriter.key("CommandId").value(command.getCommandId());
             }
-
             if (command.getInstanceId() != null) {
                 jsonWriter.key("InstanceId").value(command.getInstanceId());
             }
-
             if (command.getDeploymentId() != null) {
                 jsonWriter.key("DeploymentId").value(command.getDeploymentId());
             }
-
             if (command.getCreatedAt() != null) {
                 jsonWriter.key("CreatedAt").value(command.getCreatedAt());
             }
-
             if (command.getAcknowledgedAt() != null) {
                 jsonWriter.key("AcknowledgedAt").value(
                         command.getAcknowledgedAt());
             }
-
             if (command.getCompletedAt() != null) {
                 jsonWriter.key("CompletedAt").value(command.getCompletedAt());
             }
-
             if (command.getStatus() != null) {
                 jsonWriter.key("Status").value(command.getStatus());
             }
-
             if (command.getExitCode() != null) {
                 jsonWriter.key("ExitCode").value(command.getExitCode());
             }
-
             if (command.getLogUrl() != null) {
                 jsonWriter.key("LogUrl").value(command.getLogUrl());
             }
-
             if (command.getType() != null) {
                 jsonWriter.key("Type").value(command.getType());
             }

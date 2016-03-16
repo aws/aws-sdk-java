@@ -37,6 +37,7 @@ import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -74,19 +75,16 @@ public class SetLoadBasedAutoScalingRequestMarshaller
                 jsonWriter.key("LayerId").value(
                         setLoadBasedAutoScalingRequest.getLayerId());
             }
-
             if (setLoadBasedAutoScalingRequest.getEnable() != null) {
                 jsonWriter.key("Enable").value(
                         setLoadBasedAutoScalingRequest.getEnable());
             }
-
             if (setLoadBasedAutoScalingRequest.getUpScaling() != null) {
                 jsonWriter.key("UpScaling");
                 AutoScalingThresholdsJsonMarshaller.getInstance().marshall(
                         setLoadBasedAutoScalingRequest.getUpScaling(),
                         jsonWriter);
             }
-
             if (setLoadBasedAutoScalingRequest.getDownScaling() != null) {
                 jsonWriter.key("DownScaling");
                 AutoScalingThresholdsJsonMarshaller.getInstance().marshall(

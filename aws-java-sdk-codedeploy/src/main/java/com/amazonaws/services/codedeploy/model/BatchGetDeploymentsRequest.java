@@ -29,20 +29,17 @@ public class BatchGetDeploymentsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of deployment IDs, with multiple deployment IDs separated by
-     * spaces.
+     * A list of deployment IDs, separated by spaces.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> deploymentIds;
 
     /**
      * <p>
-     * A list of deployment IDs, with multiple deployment IDs separated by
-     * spaces.
+     * A list of deployment IDs, separated by spaces.
      * </p>
      * 
-     * @return A list of deployment IDs, with multiple deployment IDs separated
-     *         by spaces.
+     * @return A list of deployment IDs, separated by spaces.
      */
 
     public java.util.List<String> getDeploymentIds() {
@@ -54,13 +51,11 @@ public class BatchGetDeploymentsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of deployment IDs, with multiple deployment IDs separated by
-     * spaces.
+     * A list of deployment IDs, separated by spaces.
      * </p>
      * 
      * @param deploymentIds
-     *        A list of deployment IDs, with multiple deployment IDs separated
-     *        by spaces.
+     *        A list of deployment IDs, separated by spaces.
      */
 
     public void setDeploymentIds(java.util.Collection<String> deploymentIds) {
@@ -75,8 +70,7 @@ public class BatchGetDeploymentsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of deployment IDs, with multiple deployment IDs separated by
-     * spaces.
+     * A list of deployment IDs, separated by spaces.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -86,8 +80,7 @@ public class BatchGetDeploymentsRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param deploymentIds
-     *        A list of deployment IDs, with multiple deployment IDs separated
-     *        by spaces.
+     *        A list of deployment IDs, separated by spaces.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -105,13 +98,11 @@ public class BatchGetDeploymentsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of deployment IDs, with multiple deployment IDs separated by
-     * spaces.
+     * A list of deployment IDs, separated by spaces.
      * </p>
      * 
      * @param deploymentIds
-     *        A list of deployment IDs, with multiple deployment IDs separated
-     *        by spaces.
+     *        A list of deployment IDs, separated by spaces.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

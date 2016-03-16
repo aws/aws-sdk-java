@@ -37,6 +37,7 @@ import com.amazonaws.services.certificatemanager.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -87,7 +88,6 @@ public class RequestCertificateRequestMarshaller
                 }
                 jsonWriter.endArray();
             }
-
             if (requestCertificateRequest.getIdempotencyToken() != null) {
                 jsonWriter.key("IdempotencyToken").value(
                         requestCertificateRequest.getIdempotencyToken());

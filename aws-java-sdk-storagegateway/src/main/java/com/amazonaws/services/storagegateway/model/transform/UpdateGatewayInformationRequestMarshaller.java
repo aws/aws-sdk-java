@@ -37,6 +37,7 @@ import com.amazonaws.services.storagegateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -74,12 +75,10 @@ public class UpdateGatewayInformationRequestMarshaller
                 jsonWriter.key("GatewayARN").value(
                         updateGatewayInformationRequest.getGatewayARN());
             }
-
             if (updateGatewayInformationRequest.getGatewayName() != null) {
                 jsonWriter.key("GatewayName").value(
                         updateGatewayInformationRequest.getGatewayName());
             }
-
             if (updateGatewayInformationRequest.getGatewayTimezone() != null) {
                 jsonWriter.key("GatewayTimezone").value(
                         updateGatewayInformationRequest.getGatewayTimezone());

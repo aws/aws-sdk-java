@@ -30,6 +30,7 @@ import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,19 +54,15 @@ public class PermissionJsonMarshaller {
             if (permission.getStackId() != null) {
                 jsonWriter.key("StackId").value(permission.getStackId());
             }
-
             if (permission.getIamUserArn() != null) {
                 jsonWriter.key("IamUserArn").value(permission.getIamUserArn());
             }
-
             if (permission.getAllowSsh() != null) {
                 jsonWriter.key("AllowSsh").value(permission.getAllowSsh());
             }
-
             if (permission.getAllowSudo() != null) {
                 jsonWriter.key("AllowSudo").value(permission.getAllowSudo());
             }
-
             if (permission.getLevel() != null) {
                 jsonWriter.key("Level").value(permission.getLevel());
             }

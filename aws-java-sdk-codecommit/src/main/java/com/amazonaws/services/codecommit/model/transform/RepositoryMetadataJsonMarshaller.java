@@ -30,6 +30,7 @@ import com.amazonaws.services.codecommit.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,47 +56,38 @@ public class RepositoryMetadataJsonMarshaller {
                 jsonWriter.key("accountId").value(
                         repositoryMetadata.getAccountId());
             }
-
             if (repositoryMetadata.getRepositoryId() != null) {
                 jsonWriter.key("repositoryId").value(
                         repositoryMetadata.getRepositoryId());
             }
-
             if (repositoryMetadata.getRepositoryName() != null) {
                 jsonWriter.key("repositoryName").value(
                         repositoryMetadata.getRepositoryName());
             }
-
             if (repositoryMetadata.getRepositoryDescription() != null) {
                 jsonWriter.key("repositoryDescription").value(
                         repositoryMetadata.getRepositoryDescription());
             }
-
             if (repositoryMetadata.getDefaultBranch() != null) {
                 jsonWriter.key("defaultBranch").value(
                         repositoryMetadata.getDefaultBranch());
             }
-
             if (repositoryMetadata.getLastModifiedDate() != null) {
                 jsonWriter.key("lastModifiedDate").value(
                         repositoryMetadata.getLastModifiedDate());
             }
-
             if (repositoryMetadata.getCreationDate() != null) {
                 jsonWriter.key("creationDate").value(
                         repositoryMetadata.getCreationDate());
             }
-
             if (repositoryMetadata.getCloneUrlHttp() != null) {
                 jsonWriter.key("cloneUrlHttp").value(
                         repositoryMetadata.getCloneUrlHttp());
             }
-
             if (repositoryMetadata.getCloneUrlSsh() != null) {
                 jsonWriter.key("cloneUrlSsh").value(
                         repositoryMetadata.getCloneUrlSsh());
             }
-
             if (repositoryMetadata.getArn() != null) {
                 jsonWriter.key("Arn").value(repositoryMetadata.getArn());
             }

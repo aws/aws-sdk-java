@@ -30,6 +30,7 @@ import com.amazonaws.services.codepipeline.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,7 +56,6 @@ public class ActionTypeJsonMarshaller {
                 ActionTypeIdJsonMarshaller.getInstance().marshall(
                         actionType.getId(), jsonWriter);
             }
-
             if (actionType.getSettings() != null) {
                 jsonWriter.key("settings");
                 ActionTypeSettingsJsonMarshaller.getInstance().marshall(
@@ -78,13 +78,11 @@ public class ActionTypeJsonMarshaller {
                 }
                 jsonWriter.endArray();
             }
-
             if (actionType.getInputArtifactDetails() != null) {
                 jsonWriter.key("inputArtifactDetails");
                 ArtifactDetailsJsonMarshaller.getInstance().marshall(
                         actionType.getInputArtifactDetails(), jsonWriter);
             }
-
             if (actionType.getOutputArtifactDetails() != null) {
                 jsonWriter.key("outputArtifactDetails");
                 ArtifactDetailsJsonMarshaller.getInstance().marshall(

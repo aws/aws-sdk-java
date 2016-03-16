@@ -39,7 +39,7 @@ public class ApplicationInfo implements Serializable, Cloneable {
     private String applicationName;
     /**
      * <p>
-     * The time that the application was created.
+     * The time at which the application was created.
      * </p>
      */
     private java.util.Date createTime;
@@ -135,11 +135,11 @@ public class ApplicationInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time that the application was created.
+     * The time at which the application was created.
      * </p>
      * 
      * @param createTime
-     *        The time that the application was created.
+     *        The time at which the application was created.
      */
 
     public void setCreateTime(java.util.Date createTime) {
@@ -148,10 +148,10 @@ public class ApplicationInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time that the application was created.
+     * The time at which the application was created.
      * </p>
      * 
-     * @return The time that the application was created.
+     * @return The time at which the application was created.
      */
 
     public java.util.Date getCreateTime() {
@@ -160,11 +160,11 @@ public class ApplicationInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time that the application was created.
+     * The time at which the application was created.
      * </p>
      * 
      * @param createTime
-     *        The time that the application was created.
+     *        The time at which the application was created.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

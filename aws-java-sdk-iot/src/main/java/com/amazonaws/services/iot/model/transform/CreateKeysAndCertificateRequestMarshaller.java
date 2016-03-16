@@ -37,6 +37,7 @@ import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -66,11 +67,10 @@ public class CreateKeysAndCertificateRequestMarshaller
 
         request.setResourcePath(uriResourcePath);
 
-        String setAsActive = (createKeysAndCertificateRequest.getSetAsActive() == null) ? null
-                : StringUtils.fromBoolean(createKeysAndCertificateRequest
-                        .getSetAsActive());
-        if (setAsActive != null) {
-            request.addParameter("setAsActive", setAsActive);
+        if (createKeysAndCertificateRequest.getSetAsActive() != null) {
+            request.addParameter("setAsActive", StringUtils
+                    .fromBoolean(createKeysAndCertificateRequest
+                            .getSetAsActive()));
         }
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

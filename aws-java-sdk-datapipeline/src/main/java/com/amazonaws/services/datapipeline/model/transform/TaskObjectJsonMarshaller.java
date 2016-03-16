@@ -30,6 +30,7 @@ import com.amazonaws.services.datapipeline.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,11 +54,9 @@ public class TaskObjectJsonMarshaller {
             if (taskObject.getTaskId() != null) {
                 jsonWriter.key("taskId").value(taskObject.getTaskId());
             }
-
             if (taskObject.getPipelineId() != null) {
                 jsonWriter.key("pipelineId").value(taskObject.getPipelineId());
             }
-
             if (taskObject.getAttemptId() != null) {
                 jsonWriter.key("attemptId").value(taskObject.getAttemptId());
             }

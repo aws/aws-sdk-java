@@ -29,20 +29,17 @@ public class BatchGetApplicationsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of application names, with multiple application names separated by
-     * spaces.
+     * A list of application names separated by spaces.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> applicationNames;
 
     /**
      * <p>
-     * A list of application names, with multiple application names separated by
-     * spaces.
+     * A list of application names separated by spaces.
      * </p>
      * 
-     * @return A list of application names, with multiple application names
-     *         separated by spaces.
+     * @return A list of application names separated by spaces.
      */
 
     public java.util.List<String> getApplicationNames() {
@@ -54,13 +51,11 @@ public class BatchGetApplicationsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of application names, with multiple application names separated by
-     * spaces.
+     * A list of application names separated by spaces.
      * </p>
      * 
      * @param applicationNames
-     *        A list of application names, with multiple application names
-     *        separated by spaces.
+     *        A list of application names separated by spaces.
      */
 
     public void setApplicationNames(
@@ -76,8 +71,7 @@ public class BatchGetApplicationsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of application names, with multiple application names separated by
-     * spaces.
+     * A list of application names separated by spaces.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -87,8 +81,7 @@ public class BatchGetApplicationsRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param applicationNames
-     *        A list of application names, with multiple application names
-     *        separated by spaces.
+     *        A list of application names separated by spaces.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -107,13 +100,11 @@ public class BatchGetApplicationsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of application names, with multiple application names separated by
-     * spaces.
+     * A list of application names separated by spaces.
      * </p>
      * 
      * @param applicationNames
-     *        A list of application names, with multiple application names
-     *        separated by spaces.
+     *        A list of application names separated by spaces.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

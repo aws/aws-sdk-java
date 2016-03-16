@@ -30,6 +30,7 @@ import com.amazonaws.services.kinesis.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,17 +56,14 @@ public class PutRecordsResultEntryJsonMarshaller {
                 jsonWriter.key("SequenceNumber").value(
                         putRecordsResultEntry.getSequenceNumber());
             }
-
             if (putRecordsResultEntry.getShardId() != null) {
                 jsonWriter.key("ShardId").value(
                         putRecordsResultEntry.getShardId());
             }
-
             if (putRecordsResultEntry.getErrorCode() != null) {
                 jsonWriter.key("ErrorCode").value(
                         putRecordsResultEntry.getErrorCode());
             }
-
             if (putRecordsResultEntry.getErrorMessage() != null) {
                 jsonWriter.key("ErrorMessage").value(
                         putRecordsResultEntry.getErrorMessage());

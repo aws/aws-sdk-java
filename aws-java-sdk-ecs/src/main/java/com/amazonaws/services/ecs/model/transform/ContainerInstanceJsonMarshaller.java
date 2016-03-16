@@ -30,6 +30,7 @@ import com.amazonaws.services.ecs.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,12 +56,10 @@ public class ContainerInstanceJsonMarshaller {
                 jsonWriter.key("containerInstanceArn").value(
                         containerInstance.getContainerInstanceArn());
             }
-
             if (containerInstance.getEc2InstanceId() != null) {
                 jsonWriter.key("ec2InstanceId").value(
                         containerInstance.getEc2InstanceId());
             }
-
             if (containerInstance.getVersionInfo() != null) {
                 jsonWriter.key("versionInfo");
                 VersionInfoJsonMarshaller.getInstance().marshall(
@@ -98,26 +97,21 @@ public class ContainerInstanceJsonMarshaller {
                 }
                 jsonWriter.endArray();
             }
-
             if (containerInstance.getStatus() != null) {
                 jsonWriter.key("status").value(containerInstance.getStatus());
             }
-
             if (containerInstance.getAgentConnected() != null) {
                 jsonWriter.key("agentConnected").value(
                         containerInstance.getAgentConnected());
             }
-
             if (containerInstance.getRunningTasksCount() != null) {
                 jsonWriter.key("runningTasksCount").value(
                         containerInstance.getRunningTasksCount());
             }
-
             if (containerInstance.getPendingTasksCount() != null) {
                 jsonWriter.key("pendingTasksCount").value(
                         containerInstance.getPendingTasksCount());
             }
-
             if (containerInstance.getAgentUpdateStatus() != null) {
                 jsonWriter.key("agentUpdateStatus").value(
                         containerInstance.getAgentUpdateStatus());

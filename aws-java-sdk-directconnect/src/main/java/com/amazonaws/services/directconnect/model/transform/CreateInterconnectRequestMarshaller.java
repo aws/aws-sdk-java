@@ -37,6 +37,7 @@ import com.amazonaws.services.directconnect.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -73,12 +74,10 @@ public class CreateInterconnectRequestMarshaller
                 jsonWriter.key("interconnectName").value(
                         createInterconnectRequest.getInterconnectName());
             }
-
             if (createInterconnectRequest.getBandwidth() != null) {
                 jsonWriter.key("bandwidth").value(
                         createInterconnectRequest.getBandwidth());
             }
-
             if (createInterconnectRequest.getLocation() != null) {
                 jsonWriter.key("location").value(
                         createInterconnectRequest.getLocation());

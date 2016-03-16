@@ -37,6 +37,7 @@ import com.amazonaws.services.machinelearning.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -74,52 +75,42 @@ public class DescribeBatchPredictionsRequestMarshaller
                 jsonWriter.key("FilterVariable").value(
                         describeBatchPredictionsRequest.getFilterVariable());
             }
-
             if (describeBatchPredictionsRequest.getEQ() != null) {
                 jsonWriter.key("EQ").value(
                         describeBatchPredictionsRequest.getEQ());
             }
-
             if (describeBatchPredictionsRequest.getGT() != null) {
                 jsonWriter.key("GT").value(
                         describeBatchPredictionsRequest.getGT());
             }
-
             if (describeBatchPredictionsRequest.getLT() != null) {
                 jsonWriter.key("LT").value(
                         describeBatchPredictionsRequest.getLT());
             }
-
             if (describeBatchPredictionsRequest.getGE() != null) {
                 jsonWriter.key("GE").value(
                         describeBatchPredictionsRequest.getGE());
             }
-
             if (describeBatchPredictionsRequest.getLE() != null) {
                 jsonWriter.key("LE").value(
                         describeBatchPredictionsRequest.getLE());
             }
-
             if (describeBatchPredictionsRequest.getNE() != null) {
                 jsonWriter.key("NE").value(
                         describeBatchPredictionsRequest.getNE());
             }
-
             if (describeBatchPredictionsRequest.getPrefix() != null) {
                 jsonWriter.key("Prefix").value(
                         describeBatchPredictionsRequest.getPrefix());
             }
-
             if (describeBatchPredictionsRequest.getSortOrder() != null) {
                 jsonWriter.key("SortOrder").value(
                         describeBatchPredictionsRequest.getSortOrder());
             }
-
             if (describeBatchPredictionsRequest.getNextToken() != null) {
                 jsonWriter.key("NextToken").value(
                         describeBatchPredictionsRequest.getNextToken());
             }
-
             if (describeBatchPredictionsRequest.getLimit() != null) {
                 jsonWriter.key("Limit").value(
                         describeBatchPredictionsRequest.getLimit());

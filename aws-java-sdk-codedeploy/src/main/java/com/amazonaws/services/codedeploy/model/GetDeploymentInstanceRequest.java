@@ -35,7 +35,7 @@ public class GetDeploymentInstanceRequest extends AmazonWebServiceRequest
     private String deploymentId;
     /**
      * <p>
-     * The unique ID of an instance in the deployment's deployment group.
+     * The unique ID of an instance in the deployment group.
      * </p>
      */
     private String instanceId;
@@ -83,11 +83,11 @@ public class GetDeploymentInstanceRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The unique ID of an instance in the deployment's deployment group.
+     * The unique ID of an instance in the deployment group.
      * </p>
      * 
      * @param instanceId
-     *        The unique ID of an instance in the deployment's deployment group.
+     *        The unique ID of an instance in the deployment group.
      */
 
     public void setInstanceId(String instanceId) {
@@ -96,11 +96,10 @@ public class GetDeploymentInstanceRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The unique ID of an instance in the deployment's deployment group.
+     * The unique ID of an instance in the deployment group.
      * </p>
      * 
-     * @return The unique ID of an instance in the deployment's deployment
-     *         group.
+     * @return The unique ID of an instance in the deployment group.
      */
 
     public String getInstanceId() {
@@ -109,11 +108,11 @@ public class GetDeploymentInstanceRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The unique ID of an instance in the deployment's deployment group.
+     * The unique ID of an instance in the deployment group.
      * </p>
      * 
      * @param instanceId
-     *        The unique ID of an instance in the deployment's deployment group.
+     *        The unique ID of an instance in the deployment group.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

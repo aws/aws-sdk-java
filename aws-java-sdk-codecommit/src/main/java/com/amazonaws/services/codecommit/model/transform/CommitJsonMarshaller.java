@@ -30,6 +30,7 @@ import com.amazonaws.services.codecommit.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -65,23 +66,19 @@ public class CommitJsonMarshaller {
                 }
                 jsonWriter.endArray();
             }
-
             if (commit.getMessage() != null) {
                 jsonWriter.key("message").value(commit.getMessage());
             }
-
             if (commit.getAuthor() != null) {
                 jsonWriter.key("author");
                 UserInfoJsonMarshaller.getInstance().marshall(
                         commit.getAuthor(), jsonWriter);
             }
-
             if (commit.getCommitter() != null) {
                 jsonWriter.key("committer");
                 UserInfoJsonMarshaller.getInstance().marshall(
                         commit.getCommitter(), jsonWriter);
             }
-
             if (commit.getAdditionalData() != null) {
                 jsonWriter.key("additionalData").value(
                         commit.getAdditionalData());

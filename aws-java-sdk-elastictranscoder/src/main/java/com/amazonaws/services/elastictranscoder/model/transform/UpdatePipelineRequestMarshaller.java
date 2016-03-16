@@ -37,6 +37,7 @@ import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -65,8 +66,8 @@ public class UpdatePipelineRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{Id}",
-                (updatePipelineRequest.getId() == null) ? "" : StringUtils
-                        .fromString(updatePipelineRequest.getId()));
+                (updatePipelineRequest.getId() != null) ? StringUtils
+                        .fromString(updatePipelineRequest.getId()) : "");
         request.setResourcePath(uriResourcePath);
 
         try {
@@ -78,33 +79,27 @@ public class UpdatePipelineRequestMarshaller implements
             if (updatePipelineRequest.getName() != null) {
                 jsonWriter.key("Name").value(updatePipelineRequest.getName());
             }
-
             if (updatePipelineRequest.getInputBucket() != null) {
                 jsonWriter.key("InputBucket").value(
                         updatePipelineRequest.getInputBucket());
             }
-
             if (updatePipelineRequest.getRole() != null) {
                 jsonWriter.key("Role").value(updatePipelineRequest.getRole());
             }
-
             if (updatePipelineRequest.getAwsKmsKeyArn() != null) {
                 jsonWriter.key("AwsKmsKeyArn").value(
                         updatePipelineRequest.getAwsKmsKeyArn());
             }
-
             if (updatePipelineRequest.getNotifications() != null) {
                 jsonWriter.key("Notifications");
                 NotificationsJsonMarshaller.getInstance().marshall(
                         updatePipelineRequest.getNotifications(), jsonWriter);
             }
-
             if (updatePipelineRequest.getContentConfig() != null) {
                 jsonWriter.key("ContentConfig");
                 PipelineOutputConfigJsonMarshaller.getInstance().marshall(
                         updatePipelineRequest.getContentConfig(), jsonWriter);
             }
-
             if (updatePipelineRequest.getThumbnailConfig() != null) {
                 jsonWriter.key("ThumbnailConfig");
                 PipelineOutputConfigJsonMarshaller.getInstance().marshall(

@@ -37,6 +37,7 @@ import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -72,7 +73,6 @@ public class RegisterElasticIpRequestMarshaller implements
                 jsonWriter.key("ElasticIp").value(
                         registerElasticIpRequest.getElasticIp());
             }
-
             if (registerElasticIpRequest.getStackId() != null) {
                 jsonWriter.key("StackId").value(
                         registerElasticIpRequest.getStackId());

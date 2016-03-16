@@ -30,6 +30,7 @@ import com.amazonaws.services.codepipeline.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -56,32 +57,26 @@ public class ActionConfigurationPropertyJsonMarshaller {
                 jsonWriter.key("name").value(
                         actionConfigurationProperty.getName());
             }
-
             if (actionConfigurationProperty.getRequired() != null) {
                 jsonWriter.key("required").value(
                         actionConfigurationProperty.getRequired());
             }
-
             if (actionConfigurationProperty.getKey() != null) {
                 jsonWriter.key("key").value(
                         actionConfigurationProperty.getKey());
             }
-
             if (actionConfigurationProperty.getSecret() != null) {
                 jsonWriter.key("secret").value(
                         actionConfigurationProperty.getSecret());
             }
-
             if (actionConfigurationProperty.getQueryable() != null) {
                 jsonWriter.key("queryable").value(
                         actionConfigurationProperty.getQueryable());
             }
-
             if (actionConfigurationProperty.getDescription() != null) {
                 jsonWriter.key("description").value(
                         actionConfigurationProperty.getDescription());
             }
-
             if (actionConfigurationProperty.getType() != null) {
                 jsonWriter.key("type").value(
                         actionConfigurationProperty.getType());

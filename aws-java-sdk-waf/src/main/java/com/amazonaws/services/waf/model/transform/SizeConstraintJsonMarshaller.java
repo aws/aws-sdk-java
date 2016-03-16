@@ -30,6 +30,7 @@ import com.amazonaws.services.waf.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,17 +56,14 @@ public class SizeConstraintJsonMarshaller {
                 FieldToMatchJsonMarshaller.getInstance().marshall(
                         sizeConstraint.getFieldToMatch(), jsonWriter);
             }
-
             if (sizeConstraint.getTextTransformation() != null) {
                 jsonWriter.key("TextTransformation").value(
                         sizeConstraint.getTextTransformation());
             }
-
             if (sizeConstraint.getComparisonOperator() != null) {
                 jsonWriter.key("ComparisonOperator").value(
                         sizeConstraint.getComparisonOperator());
             }
-
             if (sizeConstraint.getSize() != null) {
                 jsonWriter.key("Size").value(sizeConstraint.getSize());
             }

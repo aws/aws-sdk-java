@@ -30,6 +30,7 @@ import com.amazonaws.services.storagegateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,47 +56,38 @@ public class StorediSCSIVolumeJsonMarshaller {
                 jsonWriter.key("VolumeARN").value(
                         storediSCSIVolume.getVolumeARN());
             }
-
             if (storediSCSIVolume.getVolumeId() != null) {
                 jsonWriter.key("VolumeId").value(
                         storediSCSIVolume.getVolumeId());
             }
-
             if (storediSCSIVolume.getVolumeType() != null) {
                 jsonWriter.key("VolumeType").value(
                         storediSCSIVolume.getVolumeType());
             }
-
             if (storediSCSIVolume.getVolumeStatus() != null) {
                 jsonWriter.key("VolumeStatus").value(
                         storediSCSIVolume.getVolumeStatus());
             }
-
             if (storediSCSIVolume.getVolumeSizeInBytes() != null) {
                 jsonWriter.key("VolumeSizeInBytes").value(
                         storediSCSIVolume.getVolumeSizeInBytes());
             }
-
             if (storediSCSIVolume.getVolumeProgress() != null) {
                 jsonWriter.key("VolumeProgress").value(
                         storediSCSIVolume.getVolumeProgress());
             }
-
             if (storediSCSIVolume.getVolumeDiskId() != null) {
                 jsonWriter.key("VolumeDiskId").value(
                         storediSCSIVolume.getVolumeDiskId());
             }
-
             if (storediSCSIVolume.getSourceSnapshotId() != null) {
                 jsonWriter.key("SourceSnapshotId").value(
                         storediSCSIVolume.getSourceSnapshotId());
             }
-
             if (storediSCSIVolume.getPreservedExistingData() != null) {
                 jsonWriter.key("PreservedExistingData").value(
                         storediSCSIVolume.getPreservedExistingData());
             }
-
             if (storediSCSIVolume.getVolumeiSCSIAttributes() != null) {
                 jsonWriter.key("VolumeiSCSIAttributes");
                 VolumeiSCSIAttributesJsonMarshaller.getInstance().marshall(

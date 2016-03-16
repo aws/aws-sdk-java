@@ -37,6 +37,7 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -68,10 +69,9 @@ public class DeleteClientCertificateRequestMarshaller
                 .replace(
                         "{clientcertificate_id}",
                         (deleteClientCertificateRequest
-                                .getClientCertificateId() == null) ? ""
-                                : StringUtils
-                                        .fromString(deleteClientCertificateRequest
-                                                .getClientCertificateId()));
+                                .getClientCertificateId() != null) ? StringUtils
+                                .fromString(deleteClientCertificateRequest
+                                        .getClientCertificateId()) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

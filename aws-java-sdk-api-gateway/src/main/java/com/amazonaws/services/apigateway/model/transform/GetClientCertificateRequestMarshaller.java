@@ -37,6 +37,7 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -67,10 +68,9 @@ public class GetClientCertificateRequestMarshaller
         uriResourcePath = uriResourcePath
                 .replace(
                         "{clientcertificate_id}",
-                        (getClientCertificateRequest.getClientCertificateId() == null) ? ""
-                                : StringUtils
-                                        .fromString(getClientCertificateRequest
-                                                .getClientCertificateId()));
+                        (getClientCertificateRequest.getClientCertificateId() != null) ? StringUtils
+                                .fromString(getClientCertificateRequest
+                                        .getClientCertificateId()) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

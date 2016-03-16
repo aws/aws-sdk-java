@@ -29,8 +29,8 @@ public class ListDeploymentsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The name of an existing AWS CodeDeploy application associated with the
-     * applicable IAM user or AWS account.
+     * The name of an AWS CodeDeploy application associated with the applicable
+     * IAM user or AWS account.
      * </p>
      */
     private String applicationName;
@@ -42,42 +42,42 @@ public class ListDeploymentsRequest extends AmazonWebServiceRequest implements
     private String deploymentGroupName;
     /**
      * <p>
-     * A subset of deployments to list, by status:
+     * A subset of deployments to list by status:
      * </p>
      * <ul>
-     * <li>Created: Include in the resulting list created deployments.</li>
-     * <li>Queued: Include in the resulting list queued deployments.</li>
-     * <li>In Progress: Include in the resulting list in-progress deployments.</li>
-     * <li>Succeeded: Include in the resulting list succeeded deployments.</li>
-     * <li>Failed: Include in the resulting list failed deployments.</li>
-     * <li>Aborted: Include in the resulting list aborted deployments.</li>
+     * <li>Created: Include created deployments in the resulting list.</li>
+     * <li>Queued: Include queued deployments in the resulting list.</li>
+     * <li>In Progress: Include in-progress deployments in the resulting list.</li>
+     * <li>Succeeded: Include successful deployments in the resulting list.</li>
+     * <li>Failed: Include failed deployments in the resulting list.</li>
+     * <li>Aborted: Include aborted deployments in the resulting list.</li>
      * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<String> includeOnlyStatuses;
     /**
      * <p>
-     * A deployment creation start- and end-time range for returning a subset of
-     * the list of deployments.
+     * A time range (start and end) for returning a subset of the list of
+     * deployments.
      * </p>
      */
     private TimeRange createTimeRange;
     /**
      * <p>
-     * An identifier that was returned from the previous list deployments call,
-     * which can be used to return the next set of deployments in the list.
+     * An identifier returned from the previous list deployments call. It can be
+     * used to return the next set of deployments in the list.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * The name of an existing AWS CodeDeploy application associated with the
-     * applicable IAM user or AWS account.
+     * The name of an AWS CodeDeploy application associated with the applicable
+     * IAM user or AWS account.
      * </p>
      * 
      * @param applicationName
-     *        The name of an existing AWS CodeDeploy application associated with
-     *        the applicable IAM user or AWS account.
+     *        The name of an AWS CodeDeploy application associated with the
+     *        applicable IAM user or AWS account.
      */
 
     public void setApplicationName(String applicationName) {
@@ -86,12 +86,12 @@ public class ListDeploymentsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The name of an existing AWS CodeDeploy application associated with the
-     * applicable IAM user or AWS account.
+     * The name of an AWS CodeDeploy application associated with the applicable
+     * IAM user or AWS account.
      * </p>
      * 
-     * @return The name of an existing AWS CodeDeploy application associated
-     *         with the applicable IAM user or AWS account.
+     * @return The name of an AWS CodeDeploy application associated with the
+     *         applicable IAM user or AWS account.
      */
 
     public String getApplicationName() {
@@ -100,13 +100,13 @@ public class ListDeploymentsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The name of an existing AWS CodeDeploy application associated with the
-     * applicable IAM user or AWS account.
+     * The name of an AWS CodeDeploy application associated with the applicable
+     * IAM user or AWS account.
      * </p>
      * 
      * @param applicationName
-     *        The name of an existing AWS CodeDeploy application associated with
-     *        the applicable IAM user or AWS account.
+     *        The name of an AWS CodeDeploy application associated with the
+     *        applicable IAM user or AWS account.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -163,27 +163,27 @@ public class ListDeploymentsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A subset of deployments to list, by status:
+     * A subset of deployments to list by status:
      * </p>
      * <ul>
-     * <li>Created: Include in the resulting list created deployments.</li>
-     * <li>Queued: Include in the resulting list queued deployments.</li>
-     * <li>In Progress: Include in the resulting list in-progress deployments.</li>
-     * <li>Succeeded: Include in the resulting list succeeded deployments.</li>
-     * <li>Failed: Include in the resulting list failed deployments.</li>
-     * <li>Aborted: Include in the resulting list aborted deployments.</li>
+     * <li>Created: Include created deployments in the resulting list.</li>
+     * <li>Queued: Include queued deployments in the resulting list.</li>
+     * <li>In Progress: Include in-progress deployments in the resulting list.</li>
+     * <li>Succeeded: Include successful deployments in the resulting list.</li>
+     * <li>Failed: Include failed deployments in the resulting list.</li>
+     * <li>Aborted: Include aborted deployments in the resulting list.</li>
      * </ul>
      * 
-     * @return A subset of deployments to list, by status:</p>
+     * @return A subset of deployments to list by status:</p>
      *         <ul>
-     *         <li>Created: Include in the resulting list created deployments.</li>
-     *         <li>Queued: Include in the resulting list queued deployments.</li>
-     *         <li>In Progress: Include in the resulting list in-progress
-     *         deployments.</li>
-     *         <li>Succeeded: Include in the resulting list succeeded
-     *         deployments.</li>
-     *         <li>Failed: Include in the resulting list failed deployments.</li>
-     *         <li>Aborted: Include in the resulting list aborted deployments.</li>
+     *         <li>Created: Include created deployments in the resulting list.</li>
+     *         <li>Queued: Include queued deployments in the resulting list.</li>
+     *         <li>In Progress: Include in-progress deployments in the resulting
+     *         list.</li>
+     *         <li>Succeeded: Include successful deployments in the resulting
+     *         list.</li>
+     *         <li>Failed: Include failed deployments in the resulting list.</li>
+     *         <li>Aborted: Include aborted deployments in the resulting list.</li>
      * @see DeploymentStatus
      */
 
@@ -196,28 +196,28 @@ public class ListDeploymentsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A subset of deployments to list, by status:
+     * A subset of deployments to list by status:
      * </p>
      * <ul>
-     * <li>Created: Include in the resulting list created deployments.</li>
-     * <li>Queued: Include in the resulting list queued deployments.</li>
-     * <li>In Progress: Include in the resulting list in-progress deployments.</li>
-     * <li>Succeeded: Include in the resulting list succeeded deployments.</li>
-     * <li>Failed: Include in the resulting list failed deployments.</li>
-     * <li>Aborted: Include in the resulting list aborted deployments.</li>
+     * <li>Created: Include created deployments in the resulting list.</li>
+     * <li>Queued: Include queued deployments in the resulting list.</li>
+     * <li>In Progress: Include in-progress deployments in the resulting list.</li>
+     * <li>Succeeded: Include successful deployments in the resulting list.</li>
+     * <li>Failed: Include failed deployments in the resulting list.</li>
+     * <li>Aborted: Include aborted deployments in the resulting list.</li>
      * </ul>
      * 
      * @param includeOnlyStatuses
-     *        A subset of deployments to list, by status:</p>
+     *        A subset of deployments to list by status:</p>
      *        <ul>
-     *        <li>Created: Include in the resulting list created deployments.</li>
-     *        <li>Queued: Include in the resulting list queued deployments.</li>
-     *        <li>In Progress: Include in the resulting list in-progress
-     *        deployments.</li>
-     *        <li>Succeeded: Include in the resulting list succeeded
-     *        deployments.</li>
-     *        <li>Failed: Include in the resulting list failed deployments.</li>
-     *        <li>Aborted: Include in the resulting list aborted deployments.</li>
+     *        <li>Created: Include created deployments in the resulting list.</li>
+     *        <li>Queued: Include queued deployments in the resulting list.</li>
+     *        <li>In Progress: Include in-progress deployments in the resulting
+     *        list.</li>
+     *        <li>Succeeded: Include successful deployments in the resulting
+     *        list.</li>
+     *        <li>Failed: Include failed deployments in the resulting list.</li>
+     *        <li>Aborted: Include aborted deployments in the resulting list.</li>
      * @see DeploymentStatus
      */
 
@@ -234,15 +234,15 @@ public class ListDeploymentsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A subset of deployments to list, by status:
+     * A subset of deployments to list by status:
      * </p>
      * <ul>
-     * <li>Created: Include in the resulting list created deployments.</li>
-     * <li>Queued: Include in the resulting list queued deployments.</li>
-     * <li>In Progress: Include in the resulting list in-progress deployments.</li>
-     * <li>Succeeded: Include in the resulting list succeeded deployments.</li>
-     * <li>Failed: Include in the resulting list failed deployments.</li>
-     * <li>Aborted: Include in the resulting list aborted deployments.</li>
+     * <li>Created: Include created deployments in the resulting list.</li>
+     * <li>Queued: Include queued deployments in the resulting list.</li>
+     * <li>In Progress: Include in-progress deployments in the resulting list.</li>
+     * <li>Succeeded: Include successful deployments in the resulting list.</li>
+     * <li>Failed: Include failed deployments in the resulting list.</li>
+     * <li>Aborted: Include aborted deployments in the resulting list.</li>
      * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -252,16 +252,16 @@ public class ListDeploymentsRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param includeOnlyStatuses
-     *        A subset of deployments to list, by status:</p>
+     *        A subset of deployments to list by status:</p>
      *        <ul>
-     *        <li>Created: Include in the resulting list created deployments.</li>
-     *        <li>Queued: Include in the resulting list queued deployments.</li>
-     *        <li>In Progress: Include in the resulting list in-progress
-     *        deployments.</li>
-     *        <li>Succeeded: Include in the resulting list succeeded
-     *        deployments.</li>
-     *        <li>Failed: Include in the resulting list failed deployments.</li>
-     *        <li>Aborted: Include in the resulting list aborted deployments.</li>
+     *        <li>Created: Include created deployments in the resulting list.</li>
+     *        <li>Queued: Include queued deployments in the resulting list.</li>
+     *        <li>In Progress: Include in-progress deployments in the resulting
+     *        list.</li>
+     *        <li>Succeeded: Include successful deployments in the resulting
+     *        list.</li>
+     *        <li>Failed: Include failed deployments in the resulting list.</li>
+     *        <li>Aborted: Include aborted deployments in the resulting list.</li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see DeploymentStatus
@@ -281,28 +281,28 @@ public class ListDeploymentsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A subset of deployments to list, by status:
+     * A subset of deployments to list by status:
      * </p>
      * <ul>
-     * <li>Created: Include in the resulting list created deployments.</li>
-     * <li>Queued: Include in the resulting list queued deployments.</li>
-     * <li>In Progress: Include in the resulting list in-progress deployments.</li>
-     * <li>Succeeded: Include in the resulting list succeeded deployments.</li>
-     * <li>Failed: Include in the resulting list failed deployments.</li>
-     * <li>Aborted: Include in the resulting list aborted deployments.</li>
+     * <li>Created: Include created deployments in the resulting list.</li>
+     * <li>Queued: Include queued deployments in the resulting list.</li>
+     * <li>In Progress: Include in-progress deployments in the resulting list.</li>
+     * <li>Succeeded: Include successful deployments in the resulting list.</li>
+     * <li>Failed: Include failed deployments in the resulting list.</li>
+     * <li>Aborted: Include aborted deployments in the resulting list.</li>
      * </ul>
      * 
      * @param includeOnlyStatuses
-     *        A subset of deployments to list, by status:</p>
+     *        A subset of deployments to list by status:</p>
      *        <ul>
-     *        <li>Created: Include in the resulting list created deployments.</li>
-     *        <li>Queued: Include in the resulting list queued deployments.</li>
-     *        <li>In Progress: Include in the resulting list in-progress
-     *        deployments.</li>
-     *        <li>Succeeded: Include in the resulting list succeeded
-     *        deployments.</li>
-     *        <li>Failed: Include in the resulting list failed deployments.</li>
-     *        <li>Aborted: Include in the resulting list aborted deployments.</li>
+     *        <li>Created: Include created deployments in the resulting list.</li>
+     *        <li>Queued: Include queued deployments in the resulting list.</li>
+     *        <li>In Progress: Include in-progress deployments in the resulting
+     *        list.</li>
+     *        <li>Succeeded: Include successful deployments in the resulting
+     *        list.</li>
+     *        <li>Failed: Include failed deployments in the resulting list.</li>
+     *        <li>Aborted: Include aborted deployments in the resulting list.</li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see DeploymentStatus
@@ -316,28 +316,28 @@ public class ListDeploymentsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A subset of deployments to list, by status:
+     * A subset of deployments to list by status:
      * </p>
      * <ul>
-     * <li>Created: Include in the resulting list created deployments.</li>
-     * <li>Queued: Include in the resulting list queued deployments.</li>
-     * <li>In Progress: Include in the resulting list in-progress deployments.</li>
-     * <li>Succeeded: Include in the resulting list succeeded deployments.</li>
-     * <li>Failed: Include in the resulting list failed deployments.</li>
-     * <li>Aborted: Include in the resulting list aborted deployments.</li>
+     * <li>Created: Include created deployments in the resulting list.</li>
+     * <li>Queued: Include queued deployments in the resulting list.</li>
+     * <li>In Progress: Include in-progress deployments in the resulting list.</li>
+     * <li>Succeeded: Include successful deployments in the resulting list.</li>
+     * <li>Failed: Include failed deployments in the resulting list.</li>
+     * <li>Aborted: Include aborted deployments in the resulting list.</li>
      * </ul>
      * 
      * @param includeOnlyStatuses
-     *        A subset of deployments to list, by status:</p>
+     *        A subset of deployments to list by status:</p>
      *        <ul>
-     *        <li>Created: Include in the resulting list created deployments.</li>
-     *        <li>Queued: Include in the resulting list queued deployments.</li>
-     *        <li>In Progress: Include in the resulting list in-progress
-     *        deployments.</li>
-     *        <li>Succeeded: Include in the resulting list succeeded
-     *        deployments.</li>
-     *        <li>Failed: Include in the resulting list failed deployments.</li>
-     *        <li>Aborted: Include in the resulting list aborted deployments.</li>
+     *        <li>Created: Include created deployments in the resulting list.</li>
+     *        <li>Queued: Include queued deployments in the resulting list.</li>
+     *        <li>In Progress: Include in-progress deployments in the resulting
+     *        list.</li>
+     *        <li>Succeeded: Include successful deployments in the resulting
+     *        list.</li>
+     *        <li>Failed: Include failed deployments in the resulting list.</li>
+     *        <li>Aborted: Include aborted deployments in the resulting list.</li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see DeploymentStatus
@@ -360,13 +360,13 @@ public class ListDeploymentsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A deployment creation start- and end-time range for returning a subset of
-     * the list of deployments.
+     * A time range (start and end) for returning a subset of the list of
+     * deployments.
      * </p>
      * 
      * @param createTimeRange
-     *        A deployment creation start- and end-time range for returning a
-     *        subset of the list of deployments.
+     *        A time range (start and end) for returning a subset of the list of
+     *        deployments.
      */
 
     public void setCreateTimeRange(TimeRange createTimeRange) {
@@ -375,12 +375,12 @@ public class ListDeploymentsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A deployment creation start- and end-time range for returning a subset of
-     * the list of deployments.
+     * A time range (start and end) for returning a subset of the list of
+     * deployments.
      * </p>
      * 
-     * @return A deployment creation start- and end-time range for returning a
-     *         subset of the list of deployments.
+     * @return A time range (start and end) for returning a subset of the list
+     *         of deployments.
      */
 
     public TimeRange getCreateTimeRange() {
@@ -389,13 +389,13 @@ public class ListDeploymentsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A deployment creation start- and end-time range for returning a subset of
-     * the list of deployments.
+     * A time range (start and end) for returning a subset of the list of
+     * deployments.
      * </p>
      * 
      * @param createTimeRange
-     *        A deployment creation start- and end-time range for returning a
-     *        subset of the list of deployments.
+     *        A time range (start and end) for returning a subset of the list of
+     *        deployments.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -407,14 +407,13 @@ public class ListDeploymentsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * An identifier that was returned from the previous list deployments call,
-     * which can be used to return the next set of deployments in the list.
+     * An identifier returned from the previous list deployments call. It can be
+     * used to return the next set of deployments in the list.
      * </p>
      * 
      * @param nextToken
-     *        An identifier that was returned from the previous list deployments
-     *        call, which can be used to return the next set of deployments in
-     *        the list.
+     *        An identifier returned from the previous list deployments call. It
+     *        can be used to return the next set of deployments in the list.
      */
 
     public void setNextToken(String nextToken) {
@@ -423,13 +422,12 @@ public class ListDeploymentsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * An identifier that was returned from the previous list deployments call,
-     * which can be used to return the next set of deployments in the list.
+     * An identifier returned from the previous list deployments call. It can be
+     * used to return the next set of deployments in the list.
      * </p>
      * 
-     * @return An identifier that was returned from the previous list
-     *         deployments call, which can be used to return the next set of
-     *         deployments in the list.
+     * @return An identifier returned from the previous list deployments call.
+     *         It can be used to return the next set of deployments in the list.
      */
 
     public String getNextToken() {
@@ -438,14 +436,13 @@ public class ListDeploymentsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * An identifier that was returned from the previous list deployments call,
-     * which can be used to return the next set of deployments in the list.
+     * An identifier returned from the previous list deployments call. It can be
+     * used to return the next set of deployments in the list.
      * </p>
      * 
      * @param nextToken
-     *        An identifier that was returned from the previous list deployments
-     *        call, which can be used to return the next set of deployments in
-     *        the list.
+     *        An identifier returned from the previous list deployments call. It
+     *        can be used to return the next set of deployments in the list.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

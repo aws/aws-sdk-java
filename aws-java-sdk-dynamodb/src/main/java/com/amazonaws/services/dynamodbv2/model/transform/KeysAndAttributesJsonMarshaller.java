@@ -30,6 +30,7 @@ import com.amazonaws.services.dynamodbv2.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -87,12 +88,10 @@ public class KeysAndAttributesJsonMarshaller {
                 }
                 jsonWriter.endArray();
             }
-
             if (keysAndAttributes.getConsistentRead() != null) {
                 jsonWriter.key("ConsistentRead").value(
                         keysAndAttributes.getConsistentRead());
             }
-
             if (keysAndAttributes.getProjectionExpression() != null) {
                 jsonWriter.key("ProjectionExpression").value(
                         keysAndAttributes.getProjectionExpression());

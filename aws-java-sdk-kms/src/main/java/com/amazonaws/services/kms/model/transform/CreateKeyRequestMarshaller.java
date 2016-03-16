@@ -37,6 +37,7 @@ import com.amazonaws.services.kms.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -70,12 +71,10 @@ public class CreateKeyRequestMarshaller implements
             if (createKeyRequest.getPolicy() != null) {
                 jsonWriter.key("Policy").value(createKeyRequest.getPolicy());
             }
-
             if (createKeyRequest.getDescription() != null) {
                 jsonWriter.key("Description").value(
                         createKeyRequest.getDescription());
             }
-
             if (createKeyRequest.getKeyUsage() != null) {
                 jsonWriter.key("KeyUsage")
                         .value(createKeyRequest.getKeyUsage());

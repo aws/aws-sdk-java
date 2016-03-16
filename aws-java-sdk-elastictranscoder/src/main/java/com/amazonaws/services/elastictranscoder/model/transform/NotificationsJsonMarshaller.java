@@ -30,6 +30,7 @@ import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,15 +55,12 @@ public class NotificationsJsonMarshaller {
                 jsonWriter.key("Progressing").value(
                         notifications.getProgressing());
             }
-
             if (notifications.getCompleted() != null) {
                 jsonWriter.key("Completed").value(notifications.getCompleted());
             }
-
             if (notifications.getWarning() != null) {
                 jsonWriter.key("Warning").value(notifications.getWarning());
             }
-
             if (notifications.getError() != null) {
                 jsonWriter.key("Error").value(notifications.getError());
             }

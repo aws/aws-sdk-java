@@ -37,6 +37,7 @@ import com.amazonaws.services.directory.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -73,7 +74,6 @@ public class CreateSnapshotRequestMarshaller implements
                 jsonWriter.key("DirectoryId").value(
                         createSnapshotRequest.getDirectoryId());
             }
-
             if (createSnapshotRequest.getName() != null) {
                 jsonWriter.key("Name").value(createSnapshotRequest.getName());
             }

@@ -37,6 +37,7 @@ import com.amazonaws.services.codecommit.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -74,7 +75,6 @@ public class UpdateRepositoryNameRequestMarshaller
                 jsonWriter.key("oldName").value(
                         updateRepositoryNameRequest.getOldName());
             }
-
             if (updateRepositoryNameRequest.getNewName() != null) {
                 jsonWriter.key("newName").value(
                         updateRepositoryNameRequest.getNewName());

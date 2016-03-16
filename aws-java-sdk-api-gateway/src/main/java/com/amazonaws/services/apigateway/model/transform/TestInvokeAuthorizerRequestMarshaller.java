@@ -37,6 +37,7 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -64,16 +65,18 @@ public class TestInvokeAuthorizerRequestMarshaller
 
         String uriResourcePath = "/restapis/{restapi_id}/authorizers/{authorizer_id}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{restapi_id}",
-                (testInvokeAuthorizerRequest.getRestApiId() == null) ? ""
-                        : StringUtils.fromString(testInvokeAuthorizerRequest
-                                .getRestApiId()));
-        uriResourcePath = uriResourcePath.replace(
-                "{authorizer_id}",
-                (testInvokeAuthorizerRequest.getAuthorizerId() == null) ? ""
-                        : StringUtils.fromString(testInvokeAuthorizerRequest
-                                .getAuthorizerId()));
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{restapi_id}",
+                        (testInvokeAuthorizerRequest.getRestApiId() != null) ? StringUtils
+                                .fromString(testInvokeAuthorizerRequest
+                                        .getRestApiId()) : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{authorizer_id}",
+                        (testInvokeAuthorizerRequest.getAuthorizerId() != null) ? StringUtils
+                                .fromString(testInvokeAuthorizerRequest
+                                        .getAuthorizerId()) : "");
         request.setResourcePath(uriResourcePath);
 
         try {
@@ -98,12 +101,10 @@ public class TestInvokeAuthorizerRequestMarshaller
                 }
                 jsonWriter.endObject();
             }
-
             if (testInvokeAuthorizerRequest.getPathWithQueryString() != null) {
                 jsonWriter.key("pathWithQueryString").value(
                         testInvokeAuthorizerRequest.getPathWithQueryString());
             }
-
             if (testInvokeAuthorizerRequest.getBody() != null) {
                 jsonWriter.key("body").value(
                         testInvokeAuthorizerRequest.getBody());

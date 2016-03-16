@@ -37,6 +37,7 @@ import com.amazonaws.services.codecommit.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -72,12 +73,10 @@ public class CreateBranchRequestMarshaller implements
                 jsonWriter.key("repositoryName").value(
                         createBranchRequest.getRepositoryName());
             }
-
             if (createBranchRequest.getBranchName() != null) {
                 jsonWriter.key("branchName").value(
                         createBranchRequest.getBranchName());
             }
-
             if (createBranchRequest.getCommitId() != null) {
                 jsonWriter.key("commitId").value(
                         createBranchRequest.getCommitId());

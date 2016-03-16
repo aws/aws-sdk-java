@@ -37,6 +37,7 @@ import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -72,11 +73,9 @@ public class UpdateLayerRequestMarshaller implements
                 jsonWriter.key("LayerId")
                         .value(updateLayerRequest.getLayerId());
             }
-
             if (updateLayerRequest.getName() != null) {
                 jsonWriter.key("Name").value(updateLayerRequest.getName());
             }
-
             if (updateLayerRequest.getShortname() != null) {
                 jsonWriter.key("Shortname").value(
                         updateLayerRequest.getShortname());
@@ -98,12 +97,10 @@ public class UpdateLayerRequestMarshaller implements
                 }
                 jsonWriter.endObject();
             }
-
             if (updateLayerRequest.getCustomInstanceProfileArn() != null) {
                 jsonWriter.key("CustomInstanceProfileArn").value(
                         updateLayerRequest.getCustomInstanceProfileArn());
             }
-
             if (updateLayerRequest.getCustomJson() != null) {
                 jsonWriter.key("CustomJson").value(
                         updateLayerRequest.getCustomJson());
@@ -152,38 +149,31 @@ public class UpdateLayerRequestMarshaller implements
                 }
                 jsonWriter.endArray();
             }
-
             if (updateLayerRequest.getEnableAutoHealing() != null) {
                 jsonWriter.key("EnableAutoHealing").value(
                         updateLayerRequest.getEnableAutoHealing());
             }
-
             if (updateLayerRequest.getAutoAssignElasticIps() != null) {
                 jsonWriter.key("AutoAssignElasticIps").value(
                         updateLayerRequest.getAutoAssignElasticIps());
             }
-
             if (updateLayerRequest.getAutoAssignPublicIps() != null) {
                 jsonWriter.key("AutoAssignPublicIps").value(
                         updateLayerRequest.getAutoAssignPublicIps());
             }
-
             if (updateLayerRequest.getCustomRecipes() != null) {
                 jsonWriter.key("CustomRecipes");
                 RecipesJsonMarshaller.getInstance().marshall(
                         updateLayerRequest.getCustomRecipes(), jsonWriter);
             }
-
             if (updateLayerRequest.getInstallUpdatesOnBoot() != null) {
                 jsonWriter.key("InstallUpdatesOnBoot").value(
                         updateLayerRequest.getInstallUpdatesOnBoot());
             }
-
             if (updateLayerRequest.getUseEbsOptimizedInstances() != null) {
                 jsonWriter.key("UseEbsOptimizedInstances").value(
                         updateLayerRequest.getUseEbsOptimizedInstances());
             }
-
             if (updateLayerRequest.getLifecycleEventConfiguration() != null) {
                 jsonWriter.key("LifecycleEventConfiguration");
                 LifecycleEventConfigurationJsonMarshaller

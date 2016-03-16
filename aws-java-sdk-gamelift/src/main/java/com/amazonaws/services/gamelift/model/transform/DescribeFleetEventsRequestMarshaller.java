@@ -37,6 +37,7 @@ import com.amazonaws.services.gamelift.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -73,22 +74,18 @@ public class DescribeFleetEventsRequestMarshaller
                 jsonWriter.key("FleetId").value(
                         describeFleetEventsRequest.getFleetId());
             }
-
             if (describeFleetEventsRequest.getStartTime() != null) {
                 jsonWriter.key("StartTime").value(
                         describeFleetEventsRequest.getStartTime());
             }
-
             if (describeFleetEventsRequest.getEndTime() != null) {
                 jsonWriter.key("EndTime").value(
                         describeFleetEventsRequest.getEndTime());
             }
-
             if (describeFleetEventsRequest.getLimit() != null) {
                 jsonWriter.key("Limit").value(
                         describeFleetEventsRequest.getLimit());
             }
-
             if (describeFleetEventsRequest.getNextToken() != null) {
                 jsonWriter.key("NextToken").value(
                         describeFleetEventsRequest.getNextToken());

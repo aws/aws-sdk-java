@@ -27,6 +27,7 @@ import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.ec2.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 
 /**
  * PurchaseScheduledInstancesRequest Marshaller
@@ -50,11 +51,9 @@ public class PurchaseScheduledInstancesRequestMarshaller
         request.addParameter("Version", "2015-10-01");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (purchaseScheduledInstancesRequest.getClientToken() != null) {
-            request.addParameter("ClientToken", StringUtils
-                    .fromString(purchaseScheduledInstancesRequest
-                            .getClientToken()));
-        }
+        request.addParameter("ClientToken", IdempotentUtils
+                .resolveString(purchaseScheduledInstancesRequest
+                        .getClientToken()));
 
         com.amazonaws.internal.SdkInternalList<PurchaseRequest> purchaseRequestsList = (com.amazonaws.internal.SdkInternalList<PurchaseRequest>) purchaseScheduledInstancesRequest
                 .getPurchaseRequests();

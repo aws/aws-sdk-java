@@ -30,6 +30,7 @@ import com.amazonaws.services.elasticmapreduce.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,7 +54,6 @@ public class CommandJsonMarshaller {
             if (command.getName() != null) {
                 jsonWriter.key("Name").value(command.getName());
             }
-
             if (command.getScriptPath() != null) {
                 jsonWriter.key("ScriptPath").value(command.getScriptPath());
             }

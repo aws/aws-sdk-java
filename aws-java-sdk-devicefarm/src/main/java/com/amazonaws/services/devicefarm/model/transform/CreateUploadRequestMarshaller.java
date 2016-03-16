@@ -37,6 +37,7 @@ import com.amazonaws.services.devicefarm.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -72,15 +73,12 @@ public class CreateUploadRequestMarshaller implements
                 jsonWriter.key("projectArn").value(
                         createUploadRequest.getProjectArn());
             }
-
             if (createUploadRequest.getName() != null) {
                 jsonWriter.key("name").value(createUploadRequest.getName());
             }
-
             if (createUploadRequest.getType() != null) {
                 jsonWriter.key("type").value(createUploadRequest.getType());
             }
-
             if (createUploadRequest.getContentType() != null) {
                 jsonWriter.key("contentType").value(
                         createUploadRequest.getContentType());

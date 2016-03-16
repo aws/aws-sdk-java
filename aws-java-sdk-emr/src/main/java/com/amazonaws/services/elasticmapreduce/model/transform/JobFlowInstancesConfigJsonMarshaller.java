@@ -30,6 +30,7 @@ import com.amazonaws.services.elasticmapreduce.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,12 +56,10 @@ public class JobFlowInstancesConfigJsonMarshaller {
                 jsonWriter.key("MasterInstanceType").value(
                         jobFlowInstancesConfig.getMasterInstanceType());
             }
-
             if (jobFlowInstancesConfig.getSlaveInstanceType() != null) {
                 jsonWriter.key("SlaveInstanceType").value(
                         jobFlowInstancesConfig.getSlaveInstanceType());
             }
-
             if (jobFlowInstancesConfig.getInstanceCount() != null) {
                 jsonWriter.key("InstanceCount").value(
                         jobFlowInstancesConfig.getInstanceCount());
@@ -81,51 +80,42 @@ public class JobFlowInstancesConfigJsonMarshaller {
                 }
                 jsonWriter.endArray();
             }
-
             if (jobFlowInstancesConfig.getEc2KeyName() != null) {
                 jsonWriter.key("Ec2KeyName").value(
                         jobFlowInstancesConfig.getEc2KeyName());
             }
-
             if (jobFlowInstancesConfig.getPlacement() != null) {
                 jsonWriter.key("Placement");
                 PlacementTypeJsonMarshaller.getInstance().marshall(
                         jobFlowInstancesConfig.getPlacement(), jsonWriter);
             }
-
             if (jobFlowInstancesConfig.getKeepJobFlowAliveWhenNoSteps() != null) {
                 jsonWriter.key("KeepJobFlowAliveWhenNoSteps")
                         .value(jobFlowInstancesConfig
                                 .getKeepJobFlowAliveWhenNoSteps());
             }
-
             if (jobFlowInstancesConfig.getTerminationProtected() != null) {
                 jsonWriter.key("TerminationProtected").value(
                         jobFlowInstancesConfig.getTerminationProtected());
             }
-
             if (jobFlowInstancesConfig.getHadoopVersion() != null) {
                 jsonWriter.key("HadoopVersion").value(
                         jobFlowInstancesConfig.getHadoopVersion());
             }
-
             if (jobFlowInstancesConfig.getEc2SubnetId() != null) {
                 jsonWriter.key("Ec2SubnetId").value(
                         jobFlowInstancesConfig.getEc2SubnetId());
             }
-
             if (jobFlowInstancesConfig.getEmrManagedMasterSecurityGroup() != null) {
                 jsonWriter.key("EmrManagedMasterSecurityGroup").value(
                         jobFlowInstancesConfig
                                 .getEmrManagedMasterSecurityGroup());
             }
-
             if (jobFlowInstancesConfig.getEmrManagedSlaveSecurityGroup() != null) {
                 jsonWriter.key("EmrManagedSlaveSecurityGroup").value(
                         jobFlowInstancesConfig
                                 .getEmrManagedSlaveSecurityGroup());
             }
-
             if (jobFlowInstancesConfig.getServiceAccessSecurityGroup() != null) {
                 jsonWriter.key("ServiceAccessSecurityGroup").value(
                         jobFlowInstancesConfig.getServiceAccessSecurityGroup());

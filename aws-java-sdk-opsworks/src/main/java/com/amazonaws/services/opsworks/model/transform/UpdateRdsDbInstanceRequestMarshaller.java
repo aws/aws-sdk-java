@@ -37,6 +37,7 @@ import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -74,12 +75,10 @@ public class UpdateRdsDbInstanceRequestMarshaller
                 jsonWriter.key("RdsDbInstanceArn").value(
                         updateRdsDbInstanceRequest.getRdsDbInstanceArn());
             }
-
             if (updateRdsDbInstanceRequest.getDbUser() != null) {
                 jsonWriter.key("DbUser").value(
                         updateRdsDbInstanceRequest.getDbUser());
             }
-
             if (updateRdsDbInstanceRequest.getDbPassword() != null) {
                 jsonWriter.key("DbPassword").value(
                         updateRdsDbInstanceRequest.getDbPassword());

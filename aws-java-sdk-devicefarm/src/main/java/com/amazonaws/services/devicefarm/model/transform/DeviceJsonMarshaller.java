@@ -30,6 +30,7 @@ import com.amazonaws.services.devicefarm.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,59 +54,46 @@ public class DeviceJsonMarshaller {
             if (device.getArn() != null) {
                 jsonWriter.key("arn").value(device.getArn());
             }
-
             if (device.getName() != null) {
                 jsonWriter.key("name").value(device.getName());
             }
-
             if (device.getManufacturer() != null) {
                 jsonWriter.key("manufacturer").value(device.getManufacturer());
             }
-
             if (device.getModel() != null) {
                 jsonWriter.key("model").value(device.getModel());
             }
-
             if (device.getFormFactor() != null) {
                 jsonWriter.key("formFactor").value(device.getFormFactor());
             }
-
             if (device.getPlatform() != null) {
                 jsonWriter.key("platform").value(device.getPlatform());
             }
-
             if (device.getOs() != null) {
                 jsonWriter.key("os").value(device.getOs());
             }
-
             if (device.getCpu() != null) {
                 jsonWriter.key("cpu");
                 CPUJsonMarshaller.getInstance().marshall(device.getCpu(),
                         jsonWriter);
             }
-
             if (device.getResolution() != null) {
                 jsonWriter.key("resolution");
                 ResolutionJsonMarshaller.getInstance().marshall(
                         device.getResolution(), jsonWriter);
             }
-
             if (device.getHeapSize() != null) {
                 jsonWriter.key("heapSize").value(device.getHeapSize());
             }
-
             if (device.getMemory() != null) {
                 jsonWriter.key("memory").value(device.getMemory());
             }
-
             if (device.getImage() != null) {
                 jsonWriter.key("image").value(device.getImage());
             }
-
             if (device.getCarrier() != null) {
                 jsonWriter.key("carrier").value(device.getCarrier());
             }
-
             if (device.getRadio() != null) {
                 jsonWriter.key("radio").value(device.getRadio());
             }

@@ -30,6 +30,7 @@ import com.amazonaws.services.kinesisfirehose.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,14 +56,12 @@ public class DestinationDescriptionJsonMarshaller {
                 jsonWriter.key("DestinationId").value(
                         destinationDescription.getDestinationId());
             }
-
             if (destinationDescription.getS3DestinationDescription() != null) {
                 jsonWriter.key("S3DestinationDescription");
                 S3DestinationDescriptionJsonMarshaller.getInstance().marshall(
                         destinationDescription.getS3DestinationDescription(),
                         jsonWriter);
             }
-
             if (destinationDescription.getRedshiftDestinationDescription() != null) {
                 jsonWriter.key("RedshiftDestinationDescription");
                 RedshiftDestinationDescriptionJsonMarshaller

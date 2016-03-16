@@ -30,6 +30,7 @@ import com.amazonaws.services.cognitoidentity.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -67,12 +68,10 @@ public class IdentityDescriptionJsonMarshaller {
                 }
                 jsonWriter.endArray();
             }
-
             if (identityDescription.getCreationDate() != null) {
                 jsonWriter.key("CreationDate").value(
                         identityDescription.getCreationDate());
             }
-
             if (identityDescription.getLastModifiedDate() != null) {
                 jsonWriter.key("LastModifiedDate").value(
                         identityDescription.getLastModifiedDate());

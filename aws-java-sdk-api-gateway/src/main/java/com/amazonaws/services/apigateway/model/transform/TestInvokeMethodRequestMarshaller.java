@@ -37,6 +37,7 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -65,19 +66,19 @@ public class TestInvokeMethodRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
-                (testInvokeMethodRequest.getRestApiId() == null) ? ""
-                        : StringUtils.fromString(testInvokeMethodRequest
-                                .getRestApiId()));
+                (testInvokeMethodRequest.getRestApiId() != null) ? StringUtils
+                        .fromString(testInvokeMethodRequest.getRestApiId())
+                        : "");
         uriResourcePath = uriResourcePath.replace(
                 "{resource_id}",
-                (testInvokeMethodRequest.getResourceId() == null) ? ""
-                        : StringUtils.fromString(testInvokeMethodRequest
-                                .getResourceId()));
+                (testInvokeMethodRequest.getResourceId() != null) ? StringUtils
+                        .fromString(testInvokeMethodRequest.getResourceId())
+                        : "");
         uriResourcePath = uriResourcePath.replace(
                 "{http_method}",
-                (testInvokeMethodRequest.getHttpMethod() == null) ? ""
-                        : StringUtils.fromString(testInvokeMethodRequest
-                                .getHttpMethod()));
+                (testInvokeMethodRequest.getHttpMethod() != null) ? StringUtils
+                        .fromString(testInvokeMethodRequest.getHttpMethod())
+                        : "");
         request.setResourcePath(uriResourcePath);
 
         try {
@@ -90,7 +91,6 @@ public class TestInvokeMethodRequestMarshaller implements
                 jsonWriter.key("pathWithQueryString").value(
                         testInvokeMethodRequest.getPathWithQueryString());
             }
-
             if (testInvokeMethodRequest.getBody() != null) {
                 jsonWriter.key("body").value(testInvokeMethodRequest.getBody());
             }
@@ -111,7 +111,6 @@ public class TestInvokeMethodRequestMarshaller implements
                 }
                 jsonWriter.endObject();
             }
-
             if (testInvokeMethodRequest.getClientCertificateId() != null) {
                 jsonWriter.key("clientCertificateId").value(
                         testInvokeMethodRequest.getClientCertificateId());

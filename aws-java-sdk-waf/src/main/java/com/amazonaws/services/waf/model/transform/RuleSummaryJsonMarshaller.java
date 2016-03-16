@@ -30,6 +30,7 @@ import com.amazonaws.services.waf.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,7 +54,6 @@ public class RuleSummaryJsonMarshaller {
             if (ruleSummary.getRuleId() != null) {
                 jsonWriter.key("RuleId").value(ruleSummary.getRuleId());
             }
-
             if (ruleSummary.getName() != null) {
                 jsonWriter.key("Name").value(ruleSummary.getName());
             }

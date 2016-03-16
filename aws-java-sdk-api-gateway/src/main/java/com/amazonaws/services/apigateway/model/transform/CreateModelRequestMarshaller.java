@@ -37,6 +37,7 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -65,8 +66,8 @@ public class CreateModelRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
-                (createModelRequest.getRestApiId() == null) ? "" : StringUtils
-                        .fromString(createModelRequest.getRestApiId()));
+                (createModelRequest.getRestApiId() != null) ? StringUtils
+                        .fromString(createModelRequest.getRestApiId()) : "");
         request.setResourcePath(uriResourcePath);
 
         try {
@@ -78,16 +79,13 @@ public class CreateModelRequestMarshaller implements
             if (createModelRequest.getName() != null) {
                 jsonWriter.key("name").value(createModelRequest.getName());
             }
-
             if (createModelRequest.getDescription() != null) {
                 jsonWriter.key("description").value(
                         createModelRequest.getDescription());
             }
-
             if (createModelRequest.getSchema() != null) {
                 jsonWriter.key("schema").value(createModelRequest.getSchema());
             }
-
             if (createModelRequest.getContentType() != null) {
                 jsonWriter.key("contentType").value(
                         createModelRequest.getContentType());

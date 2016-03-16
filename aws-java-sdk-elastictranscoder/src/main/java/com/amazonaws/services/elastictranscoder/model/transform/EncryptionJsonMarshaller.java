@@ -30,6 +30,7 @@ import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,15 +54,12 @@ public class EncryptionJsonMarshaller {
             if (encryption.getMode() != null) {
                 jsonWriter.key("Mode").value(encryption.getMode());
             }
-
             if (encryption.getKey() != null) {
                 jsonWriter.key("Key").value(encryption.getKey());
             }
-
             if (encryption.getKeyMd5() != null) {
                 jsonWriter.key("KeyMd5").value(encryption.getKeyMd5());
             }
-
             if (encryption.getInitializationVector() != null) {
                 jsonWriter.key("InitializationVector").value(
                         encryption.getInitializationVector());

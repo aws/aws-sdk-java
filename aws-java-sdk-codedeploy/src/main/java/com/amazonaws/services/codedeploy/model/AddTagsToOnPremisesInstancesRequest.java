@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input of and adds tags to on-premises instance operation.
+ * Represents the input of, and adds tags to, an on-premises instance operation.
  * </p>
  */
 public class AddTagsToOnPremisesInstancesRequest extends
@@ -32,14 +32,14 @@ public class AddTagsToOnPremisesInstancesRequest extends
      * The tag key-value pairs to add to the on-premises instances.
      * </p>
      * <p>
-     * Keys and values are both required. Keys cannot be nulls or empty strings.
+     * Keys and values are both required. Keys cannot be null or empty strings.
      * Value-only tags are not allowed.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
     /**
      * <p>
-     * The names of the on-premises instances to add tags to.
+     * The names of the on-premises instances to which to add tags.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> instanceNames;
@@ -49,13 +49,13 @@ public class AddTagsToOnPremisesInstancesRequest extends
      * The tag key-value pairs to add to the on-premises instances.
      * </p>
      * <p>
-     * Keys and values are both required. Keys cannot be nulls or empty strings.
+     * Keys and values are both required. Keys cannot be null or empty strings.
      * Value-only tags are not allowed.
      * </p>
      * 
      * @return The tag key-value pairs to add to the on-premises instances.</p>
      *         <p>
-     *         Keys and values are both required. Keys cannot be nulls or empty
+     *         Keys and values are both required. Keys cannot be null or empty
      *         strings. Value-only tags are not allowed.
      */
 
@@ -71,14 +71,14 @@ public class AddTagsToOnPremisesInstancesRequest extends
      * The tag key-value pairs to add to the on-premises instances.
      * </p>
      * <p>
-     * Keys and values are both required. Keys cannot be nulls or empty strings.
+     * Keys and values are both required. Keys cannot be null or empty strings.
      * Value-only tags are not allowed.
      * </p>
      * 
      * @param tags
      *        The tag key-value pairs to add to the on-premises instances.</p>
      *        <p>
-     *        Keys and values are both required. Keys cannot be nulls or empty
+     *        Keys and values are both required. Keys cannot be null or empty
      *        strings. Value-only tags are not allowed.
      */
 
@@ -96,7 +96,7 @@ public class AddTagsToOnPremisesInstancesRequest extends
      * The tag key-value pairs to add to the on-premises instances.
      * </p>
      * <p>
-     * Keys and values are both required. Keys cannot be nulls or empty strings.
+     * Keys and values are both required. Keys cannot be null or empty strings.
      * Value-only tags are not allowed.
      * </p>
      * <p>
@@ -109,7 +109,7 @@ public class AddTagsToOnPremisesInstancesRequest extends
      * @param tags
      *        The tag key-value pairs to add to the on-premises instances.</p>
      *        <p>
-     *        Keys and values are both required. Keys cannot be nulls or empty
+     *        Keys and values are both required. Keys cannot be null or empty
      *        strings. Value-only tags are not allowed.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -130,14 +130,14 @@ public class AddTagsToOnPremisesInstancesRequest extends
      * The tag key-value pairs to add to the on-premises instances.
      * </p>
      * <p>
-     * Keys and values are both required. Keys cannot be nulls or empty strings.
+     * Keys and values are both required. Keys cannot be null or empty strings.
      * Value-only tags are not allowed.
      * </p>
      * 
      * @param tags
      *        The tag key-value pairs to add to the on-premises instances.</p>
      *        <p>
-     *        Keys and values are both required. Keys cannot be nulls or empty
+     *        Keys and values are both required. Keys cannot be null or empty
      *        strings. Value-only tags are not allowed.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
@@ -151,10 +151,10 @@ public class AddTagsToOnPremisesInstancesRequest extends
 
     /**
      * <p>
-     * The names of the on-premises instances to add tags to.
+     * The names of the on-premises instances to which to add tags.
      * </p>
      * 
-     * @return The names of the on-premises instances to add tags to.
+     * @return The names of the on-premises instances to which to add tags.
      */
 
     public java.util.List<String> getInstanceNames() {
@@ -166,11 +166,11 @@ public class AddTagsToOnPremisesInstancesRequest extends
 
     /**
      * <p>
-     * The names of the on-premises instances to add tags to.
+     * The names of the on-premises instances to which to add tags.
      * </p>
      * 
      * @param instanceNames
-     *        The names of the on-premises instances to add tags to.
+     *        The names of the on-premises instances to which to add tags.
      */
 
     public void setInstanceNames(java.util.Collection<String> instanceNames) {
@@ -185,7 +185,7 @@ public class AddTagsToOnPremisesInstancesRequest extends
 
     /**
      * <p>
-     * The names of the on-premises instances to add tags to.
+     * The names of the on-premises instances to which to add tags.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -195,7 +195,7 @@ public class AddTagsToOnPremisesInstancesRequest extends
      * </p>
      * 
      * @param instanceNames
-     *        The names of the on-premises instances to add tags to.
+     *        The names of the on-premises instances to which to add tags.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -214,11 +214,11 @@ public class AddTagsToOnPremisesInstancesRequest extends
 
     /**
      * <p>
-     * The names of the on-premises instances to add tags to.
+     * The names of the on-premises instances to which to add tags.
      * </p>
      * 
      * @param instanceNames
-     *        The names of the on-premises instances to add tags to.
+     *        The names of the on-premises instances to which to add tags.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

@@ -30,6 +30,7 @@ import com.amazonaws.services.inspector.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -76,24 +77,20 @@ public class AssessmentsFilterJsonMarshaller {
                 }
                 jsonWriter.endArray();
             }
-
             if (assessmentsFilter.getDataCollected() != null) {
                 jsonWriter.key("dataCollected").value(
                         assessmentsFilter.getDataCollected());
             }
-
             if (assessmentsFilter.getStartTimeRange() != null) {
                 jsonWriter.key("startTimeRange");
                 TimestampRangeJsonMarshaller.getInstance().marshall(
                         assessmentsFilter.getStartTimeRange(), jsonWriter);
             }
-
             if (assessmentsFilter.getEndTimeRange() != null) {
                 jsonWriter.key("endTimeRange");
                 TimestampRangeJsonMarshaller.getInstance().marshall(
                         assessmentsFilter.getEndTimeRange(), jsonWriter);
             }
-
             if (assessmentsFilter.getDurationRange() != null) {
                 jsonWriter.key("durationRange");
                 DurationRangeJsonMarshaller.getInstance().marshall(

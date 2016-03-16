@@ -37,6 +37,7 @@ import com.amazonaws.services.storagegateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -72,7 +73,6 @@ public class DeleteTapeRequestMarshaller implements
                 jsonWriter.key("GatewayARN").value(
                         deleteTapeRequest.getGatewayARN());
             }
-
             if (deleteTapeRequest.getTapeARN() != null) {
                 jsonWriter.key("TapeARN").value(deleteTapeRequest.getTapeARN());
             }

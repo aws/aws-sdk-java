@@ -37,6 +37,7 @@ import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -65,8 +66,8 @@ public class ReadPresetRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{Id}",
-                (readPresetRequest.getId() == null) ? "" : StringUtils
-                        .fromString(readPresetRequest.getId()));
+                (readPresetRequest.getId() != null) ? StringUtils
+                        .fromString(readPresetRequest.getId()) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

@@ -37,6 +37,7 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -65,14 +66,15 @@ public class DeleteAuthorizerRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
-                (deleteAuthorizerRequest.getRestApiId() == null) ? ""
-                        : StringUtils.fromString(deleteAuthorizerRequest
-                                .getRestApiId()));
-        uriResourcePath = uriResourcePath.replace(
-                "{authorizer_id}",
-                (deleteAuthorizerRequest.getAuthorizerId() == null) ? ""
-                        : StringUtils.fromString(deleteAuthorizerRequest
-                                .getAuthorizerId()));
+                (deleteAuthorizerRequest.getRestApiId() != null) ? StringUtils
+                        .fromString(deleteAuthorizerRequest.getRestApiId())
+                        : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{authorizer_id}",
+                        (deleteAuthorizerRequest.getAuthorizerId() != null) ? StringUtils
+                                .fromString(deleteAuthorizerRequest
+                                        .getAuthorizerId()) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

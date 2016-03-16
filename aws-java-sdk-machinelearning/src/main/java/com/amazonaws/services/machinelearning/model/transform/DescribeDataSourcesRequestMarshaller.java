@@ -37,6 +37,7 @@ import com.amazonaws.services.machinelearning.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -74,46 +75,36 @@ public class DescribeDataSourcesRequestMarshaller
                 jsonWriter.key("FilterVariable").value(
                         describeDataSourcesRequest.getFilterVariable());
             }
-
             if (describeDataSourcesRequest.getEQ() != null) {
                 jsonWriter.key("EQ").value(describeDataSourcesRequest.getEQ());
             }
-
             if (describeDataSourcesRequest.getGT() != null) {
                 jsonWriter.key("GT").value(describeDataSourcesRequest.getGT());
             }
-
             if (describeDataSourcesRequest.getLT() != null) {
                 jsonWriter.key("LT").value(describeDataSourcesRequest.getLT());
             }
-
             if (describeDataSourcesRequest.getGE() != null) {
                 jsonWriter.key("GE").value(describeDataSourcesRequest.getGE());
             }
-
             if (describeDataSourcesRequest.getLE() != null) {
                 jsonWriter.key("LE").value(describeDataSourcesRequest.getLE());
             }
-
             if (describeDataSourcesRequest.getNE() != null) {
                 jsonWriter.key("NE").value(describeDataSourcesRequest.getNE());
             }
-
             if (describeDataSourcesRequest.getPrefix() != null) {
                 jsonWriter.key("Prefix").value(
                         describeDataSourcesRequest.getPrefix());
             }
-
             if (describeDataSourcesRequest.getSortOrder() != null) {
                 jsonWriter.key("SortOrder").value(
                         describeDataSourcesRequest.getSortOrder());
             }
-
             if (describeDataSourcesRequest.getNextToken() != null) {
                 jsonWriter.key("NextToken").value(
                         describeDataSourcesRequest.getNextToken());
             }
-
             if (describeDataSourcesRequest.getLimit() != null) {
                 jsonWriter.key("Limit").value(
                         describeDataSourcesRequest.getLimit());

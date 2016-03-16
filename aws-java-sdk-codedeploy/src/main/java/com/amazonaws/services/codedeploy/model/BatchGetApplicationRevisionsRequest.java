@@ -29,28 +29,28 @@ public class BatchGetApplicationRevisionsRequest extends
 
     /**
      * <p>
-     * The name of an existing AWS CodeDeploy application to get revision
-     * information about.
+     * The name of an AWS CodeDeploy application about which to get revision
+     * information.
      * </p>
      */
     private String applicationName;
     /**
      * <p>
-     * Information to get about the application revisions, including revision
-     * type and location.
+     * Information to get about the application revisions, including type and
+     * location.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<RevisionLocation> revisions;
 
     /**
      * <p>
-     * The name of an existing AWS CodeDeploy application to get revision
-     * information about.
+     * The name of an AWS CodeDeploy application about which to get revision
+     * information.
      * </p>
      * 
      * @param applicationName
-     *        The name of an existing AWS CodeDeploy application to get revision
-     *        information about.
+     *        The name of an AWS CodeDeploy application about which to get
+     *        revision information.
      */
 
     public void setApplicationName(String applicationName) {
@@ -59,12 +59,12 @@ public class BatchGetApplicationRevisionsRequest extends
 
     /**
      * <p>
-     * The name of an existing AWS CodeDeploy application to get revision
-     * information about.
+     * The name of an AWS CodeDeploy application about which to get revision
+     * information.
      * </p>
      * 
-     * @return The name of an existing AWS CodeDeploy application to get
-     *         revision information about.
+     * @return The name of an AWS CodeDeploy application about which to get
+     *         revision information.
      */
 
     public String getApplicationName() {
@@ -73,13 +73,13 @@ public class BatchGetApplicationRevisionsRequest extends
 
     /**
      * <p>
-     * The name of an existing AWS CodeDeploy application to get revision
-     * information about.
+     * The name of an AWS CodeDeploy application about which to get revision
+     * information.
      * </p>
      * 
      * @param applicationName
-     *        The name of an existing AWS CodeDeploy application to get revision
-     *        information about.
+     *        The name of an AWS CodeDeploy application about which to get
+     *        revision information.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -92,12 +92,12 @@ public class BatchGetApplicationRevisionsRequest extends
 
     /**
      * <p>
-     * Information to get about the application revisions, including revision
-     * type and location.
+     * Information to get about the application revisions, including type and
+     * location.
      * </p>
      * 
      * @return Information to get about the application revisions, including
-     *         revision type and location.
+     *         type and location.
      */
 
     public java.util.List<RevisionLocation> getRevisions() {
@@ -109,13 +109,13 @@ public class BatchGetApplicationRevisionsRequest extends
 
     /**
      * <p>
-     * Information to get about the application revisions, including revision
-     * type and location.
+     * Information to get about the application revisions, including type and
+     * location.
      * </p>
      * 
      * @param revisions
-     *        Information to get about the application revisions, including
-     *        revision type and location.
+     *        Information to get about the application revisions, including type
+     *        and location.
      */
 
     public void setRevisions(java.util.Collection<RevisionLocation> revisions) {
@@ -130,8 +130,8 @@ public class BatchGetApplicationRevisionsRequest extends
 
     /**
      * <p>
-     * Information to get about the application revisions, including revision
-     * type and location.
+     * Information to get about the application revisions, including type and
+     * location.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -141,8 +141,8 @@ public class BatchGetApplicationRevisionsRequest extends
      * </p>
      * 
      * @param revisions
-     *        Information to get about the application revisions, including
-     *        revision type and location.
+     *        Information to get about the application revisions, including type
+     *        and location.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -161,13 +161,13 @@ public class BatchGetApplicationRevisionsRequest extends
 
     /**
      * <p>
-     * Information to get about the application revisions, including revision
-     * type and location.
+     * Information to get about the application revisions, including type and
+     * location.
      * </p>
      * 
      * @param revisions
-     *        Information to get about the application revisions, including
-     *        revision type and location.
+     *        Information to get about the application revisions, including type
+     *        and location.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

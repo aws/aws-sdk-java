@@ -30,6 +30,7 @@ import com.amazonaws.services.workspaces.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,16 +56,13 @@ public class WorkspaceDirectoryJsonMarshaller {
                 jsonWriter.key("DirectoryId").value(
                         workspaceDirectory.getDirectoryId());
             }
-
             if (workspaceDirectory.getAlias() != null) {
                 jsonWriter.key("Alias").value(workspaceDirectory.getAlias());
             }
-
             if (workspaceDirectory.getDirectoryName() != null) {
                 jsonWriter.key("DirectoryName").value(
                         workspaceDirectory.getDirectoryName());
             }
-
             if (workspaceDirectory.getRegistrationCode() != null) {
                 jsonWriter.key("RegistrationCode").value(
                         workspaceDirectory.getRegistrationCode());
@@ -96,31 +94,25 @@ public class WorkspaceDirectoryJsonMarshaller {
                 }
                 jsonWriter.endArray();
             }
-
             if (workspaceDirectory.getCustomerUserName() != null) {
                 jsonWriter.key("CustomerUserName").value(
                         workspaceDirectory.getCustomerUserName());
             }
-
             if (workspaceDirectory.getIamRoleId() != null) {
                 jsonWriter.key("IamRoleId").value(
                         workspaceDirectory.getIamRoleId());
             }
-
             if (workspaceDirectory.getDirectoryType() != null) {
                 jsonWriter.key("DirectoryType").value(
                         workspaceDirectory.getDirectoryType());
             }
-
             if (workspaceDirectory.getWorkspaceSecurityGroupId() != null) {
                 jsonWriter.key("WorkspaceSecurityGroupId").value(
                         workspaceDirectory.getWorkspaceSecurityGroupId());
             }
-
             if (workspaceDirectory.getState() != null) {
                 jsonWriter.key("State").value(workspaceDirectory.getState());
             }
-
             if (workspaceDirectory.getWorkspaceCreationProperties() != null) {
                 jsonWriter.key("WorkspaceCreationProperties");
                 DefaultWorkspaceCreationPropertiesJsonMarshaller

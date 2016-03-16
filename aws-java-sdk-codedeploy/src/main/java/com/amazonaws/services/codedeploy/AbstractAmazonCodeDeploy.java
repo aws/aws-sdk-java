@@ -62,6 +62,12 @@ public class AbstractAmazonCodeDeploy implements AmazonCodeDeploy {
     }
 
     @Override
+    public BatchGetDeploymentGroupsResult batchGetDeploymentGroups(
+            BatchGetDeploymentGroupsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public BatchGetDeploymentInstancesResult batchGetDeploymentInstances(
             BatchGetDeploymentInstancesRequest request) {
         throw new java.lang.UnsupportedOperationException();

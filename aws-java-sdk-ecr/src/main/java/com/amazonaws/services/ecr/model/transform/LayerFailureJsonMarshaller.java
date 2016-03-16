@@ -30,6 +30,7 @@ import com.amazonaws.services.ecr.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,12 +55,10 @@ public class LayerFailureJsonMarshaller {
                 jsonWriter.key("layerDigest").value(
                         layerFailure.getLayerDigest());
             }
-
             if (layerFailure.getFailureCode() != null) {
                 jsonWriter.key("failureCode").value(
                         layerFailure.getFailureCode());
             }
-
             if (layerFailure.getFailureReason() != null) {
                 jsonWriter.key("failureReason").value(
                         layerFailure.getFailureReason());

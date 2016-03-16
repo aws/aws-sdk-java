@@ -25,21 +25,21 @@ import com.amazonaws.services.codedeploy.model.*;
  * <p>
  * <fullname>AWS CodeDeploy</fullname> <b>Overview</b>
  * <p>
- * This is the AWS CodeDeploy API Reference. This guide provides descriptions of
- * the AWS CodeDeploy APIs. For additional information, see the <a
- * href="http://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy
- * User Guide</a>.
+ * This reference guide provides descriptions of the AWS CodeDeploy APIs. For
+ * more information about AWS CodeDeploy, see the <a
+ * href="docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy User
+ * Guide</a>.
  * </p>
  * <b>Using the APIs</b>
  * <p>
- * You can use the AWS CodeDeploy APIs to work with the following items:
+ * You can use the AWS CodeDeploy APIs to work with the following:
  * </p>
  * <ul>
  * <li>
  * <p>
- * Applications are unique identifiers that AWS CodeDeploy uses to ensure that
- * the correct combinations of revisions, deployment configurations, and
- * deployment groups are being referenced during deployments.
+ * Applications are unique identifiers used by AWS CodeDeploy to ensure the
+ * correct combinations of revisions, deployment configurations, and deployment
+ * groups are being referenced during deployments.
  * </p>
  * <p>
  * You can use the AWS CodeDeploy APIs to create, delete, get, list, and update
@@ -48,8 +48,8 @@ import com.amazonaws.services.codedeploy.model.*;
  * </li>
  * <li>
  * <p>
- * Deployment configurations are sets of deployment rules and deployment success
- * and failure conditions that AWS CodeDeploy uses during deployments.
+ * Deployment configurations are sets of deployment rules and success and
+ * failure conditions used by AWS CodeDeploy during deployments.
  * </p>
  * <p>
  * You can use the AWS CodeDeploy APIs to create, delete, get, and list
@@ -73,7 +73,7 @@ import com.amazonaws.services.codedeploy.model.*;
  * group names. Instances belong to deployment groups.
  * </p>
  * <p>
- * You can use the AWS CodeDeploy APIs to get and list instances.
+ * You can use the AWS CodeDeploy APIs to get and list instance.
  * </p>
  * </li>
  * <li>
@@ -87,16 +87,16 @@ import com.amazonaws.services.codedeploy.model.*;
  * </li>
  * <li>
  * <p>
- * Application revisions are archive files that are stored in Amazon S3 buckets
- * or GitHub repositories. These revisions contain source content (such as
- * source code, web pages, executable files, any deployment scripts, and
- * similar) along with an Application Specification file (AppSpec file). (The
- * AppSpec file is unique to AWS CodeDeploy; it defines a series of deployment
- * actions that you want AWS CodeDeploy to execute.) An application revision is
- * uniquely identified by its Amazon S3 object key and its ETag, version, or
- * both (for application revisions that are stored in Amazon S3 buckets) or by
- * its repository name and commit ID (for applications revisions that are stored
- * in GitHub repositories). Application revisions are deployed through
+ * Application revisions are archive files stored in Amazon S3 buckets or GitHub
+ * repositories. These revisions contain source content (such as source code,
+ * web pages, executable files, and deployment scripts) along with an
+ * application specification (AppSpec) file. (The AppSpec file is unique to AWS
+ * CodeDeploy; it defines the deployment actions you want AWS CodeDeploy to
+ * execute.) Ffor application revisions stored in Amazon S3 buckets, an
+ * application revision is uniquely identified by its Amazon S3 object key and
+ * its ETag, version, or both. For application revisions stored in GitHub
+ * repositories, an application revision is uniquely identified by its
+ * repository name and commit ID. Application revisions are deployed through
  * deployment groups.
  * </p>
  * <p>
@@ -172,7 +172,7 @@ public interface AmazonCodeDeploy {
      * </p>
      * 
      * @param addTagsToOnPremisesInstancesRequest
-     *        Represents the input of and adds tags to on-premises instance
+     *        Represents the input of, and adds tags to, an on-premises instance
      *        operation.
      * @throws InstanceNameRequiredException
      *         An on-premises instance name was not specified.
@@ -256,8 +256,37 @@ public interface AmazonCodeDeploy {
 
     /**
      * <p>
-     * Gets information about one or more instances that are part of a
-     * deployment group.
+     * Get information about one or more deployment groups.
+     * </p>
+     * 
+     * @param batchGetDeploymentGroupsRequest
+     *        Represents the input of a batch get deployment groups operation.
+     * @return Result of the BatchGetDeploymentGroups operation returned by the
+     *         service.
+     * @throws ApplicationNameRequiredException
+     *         The minimum number of required application names was not
+     *         specified.
+     * @throws InvalidApplicationNameException
+     *         The application name was specified in an invalid format.
+     * @throws ApplicationDoesNotExistException
+     *         The application does not exist with the applicable IAM user or
+     *         AWS account.
+     * @throws DeploymentGroupNameRequiredException
+     *         The deployment group name was not specified.
+     * @throws InvalidDeploymentGroupNameException
+     *         The deployment group name was specified in an invalid format.
+     * @throws BatchLimitExceededException
+     *         The maximum number of names or IDs allowed for this request (100)
+     *         was exceeded.
+     * @sample AmazonCodeDeploy.BatchGetDeploymentGroups
+     */
+    BatchGetDeploymentGroupsResult batchGetDeploymentGroups(
+            BatchGetDeploymentGroupsRequest batchGetDeploymentGroupsRequest);
+
+    /**
+     * <p>
+     * Gets information about one or more instance that are part of a deployment
+     * group.
      * </p>
      * 
      * @param batchGetDeploymentInstancesRequest
@@ -348,7 +377,7 @@ public interface AmazonCodeDeploy {
 
     /**
      * <p>
-     * Creates a new application.
+     * Creates an application.
      * </p>
      * 
      * @param createApplicationRequest
@@ -364,7 +393,7 @@ public interface AmazonCodeDeploy {
      *         An application with the specified name already exists with the
      *         applicable IAM user or AWS account.
      * @throws ApplicationLimitExceededException
-     *         More applications were attempted to be created than were allowed.
+     *         More applications were attempted to be created than are allowed.
      * @sample AmazonCodeDeploy.CreateApplication
      */
     CreateApplicationResult createApplication(
@@ -404,7 +433,7 @@ public interface AmazonCodeDeploy {
      *         The deployment configuration does not exist with the applicable
      *         IAM user or AWS account.
      * @throws DescriptionTooLongException
-     *         The description that was provided is too long.
+     *         The description is too long.
      * @throws DeploymentLimitExceededException
      *         The number of allowed deployments was exceeded.
      * @sample AmazonCodeDeploy.CreateDeployment
@@ -414,7 +443,7 @@ public interface AmazonCodeDeploy {
 
     /**
      * <p>
-     * Creates a new deployment configuration.
+     * Creates a deployment configuration.
      * </p>
      * 
      * @param createDeploymentConfigRequest
@@ -431,7 +460,7 @@ public interface AmazonCodeDeploy {
      *         A deployment configuration with the specified name already exists
      *         with the applicable IAM user or AWS account.
      * @throws InvalidMinimumHealthyHostValueException
-     *         The minimum healthy instances value was specified in an invalid
+     *         The minimum healthy instance value was specified in an invalid
      *         format.
      * @throws DeploymentConfigLimitExceededException
      *         The deployment configurations limit was exceeded.
@@ -442,8 +471,8 @@ public interface AmazonCodeDeploy {
 
     /**
      * <p>
-     * Creates a new deployment group for application revisions to be deployed
-     * to.
+     * Creates a deployment group to which application revisions will be
+     * deployed.
      * </p>
      * 
      * @param createDeploymentGroupRequest
@@ -518,7 +547,7 @@ public interface AmazonCodeDeploy {
      * Deletes a deployment configuration.
      * </p>
      * <note>A deployment configuration cannot be deleted if it is currently in
-     * use. Also, predefined configurations cannot be deleted.</note>
+     * use. Predefined configurations cannot be deleted.</note>
      * 
      * @param deleteDeploymentConfigRequest
      *        Represents the input of a delete deployment configuration
@@ -782,7 +811,7 @@ public interface AmazonCodeDeploy {
      *         The specified key prefix filter was specified in an invalid
      *         format.
      * @throws BucketNameFilterRequiredException
-     *         A bucket name is required but was not provided.
+     *         A bucket name is required, but was not provided.
      * @throws InvalidDeployedStateFilterException
      *         The deployed state filter was specified in an invalid format.
      * @throws InvalidNextTokenException
@@ -867,7 +896,7 @@ public interface AmazonCodeDeploy {
 
     /**
      * <p>
-     * Lists the instances for a deployment associated with the applicable IAM
+     * Lists the instance for a deployment associated with the applicable IAM
      * user or AWS account.
      * </p>
      * 
@@ -896,8 +925,8 @@ public interface AmazonCodeDeploy {
 
     /**
      * <p>
-     * Lists the deployments within a deployment group for an application
-     * registered with the applicable IAM user or AWS account.
+     * Lists the deployments in a deployment group for an application registered
+     * with the applicable IAM user or AWS account.
      * </p>
      * 
      * @param listDeploymentsRequest
@@ -939,7 +968,7 @@ public interface AmazonCodeDeploy {
 
     /**
      * <p>
-     * Gets a list of one or more on-premises instance names.
+     * Gets a list of names for one or more on-premises instances.
      * </p>
      * <p>
      * Unless otherwise specified, both registered and deregistered on-premises
@@ -986,7 +1015,7 @@ public interface AmazonCodeDeploy {
      * @throws InvalidApplicationNameException
      *         The application name was specified in an invalid format.
      * @throws DescriptionTooLongException
-     *         The description that was provided is too long.
+     *         The description is too long.
      * @throws RevisionRequiredException
      *         The revision ID was not specified.
      * @throws InvalidRevisionException
@@ -1002,7 +1031,8 @@ public interface AmazonCodeDeploy {
      * </p>
      * 
      * @param registerOnPremisesInstanceRequest
-     *        Represents the input of register on-premises instance operation.
+     *        Represents the input of the register on-premises instance
+     *        operation.
      * @throws InstanceNameAlreadyRegisteredException
      *         The specified on-premises instance name is already registered.
      * @throws IamUserArnAlreadyRegisteredException
@@ -1062,7 +1092,7 @@ public interface AmazonCodeDeploy {
      *         The deployment does not exist with the applicable IAM user or AWS
      *         account.
      * @throws DeploymentAlreadyCompletedException
-     *         The deployment is already completed.
+     *         The deployment is already complete.
      * @throws InvalidDeploymentIdException
      *         At least one of the deployment IDs was specified in an invalid
      *         format.
@@ -1073,7 +1103,7 @@ public interface AmazonCodeDeploy {
 
     /**
      * <p>
-     * Changes an existing application's name.
+     * Changes the name of an application.
      * </p>
      * 
      * @param updateApplicationRequest
@@ -1102,7 +1132,7 @@ public interface AmazonCodeDeploy {
 
     /**
      * <p>
-     * Changes information about an existing deployment group.
+     * Changes information about a deployment group.
      * </p>
      * 
      * @param updateDeploymentGroupRequest

@@ -30,6 +30,7 @@ import com.amazonaws.services.ecs.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,19 +54,15 @@ public class ResourceJsonMarshaller {
             if (resource.getName() != null) {
                 jsonWriter.key("name").value(resource.getName());
             }
-
             if (resource.getType() != null) {
                 jsonWriter.key("type").value(resource.getType());
             }
-
             if (resource.getDoubleValue() != null) {
                 jsonWriter.key("doubleValue").value(resource.getDoubleValue());
             }
-
             if (resource.getLongValue() != null) {
                 jsonWriter.key("longValue").value(resource.getLongValue());
             }
-
             if (resource.getIntegerValue() != null) {
                 jsonWriter.key("integerValue")
                         .value(resource.getIntegerValue());

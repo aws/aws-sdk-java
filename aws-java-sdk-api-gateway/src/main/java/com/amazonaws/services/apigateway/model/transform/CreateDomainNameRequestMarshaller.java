@@ -37,6 +37,7 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -75,22 +76,18 @@ public class CreateDomainNameRequestMarshaller implements
                 jsonWriter.key("domainName").value(
                         createDomainNameRequest.getDomainName());
             }
-
             if (createDomainNameRequest.getCertificateName() != null) {
                 jsonWriter.key("certificateName").value(
                         createDomainNameRequest.getCertificateName());
             }
-
             if (createDomainNameRequest.getCertificateBody() != null) {
                 jsonWriter.key("certificateBody").value(
                         createDomainNameRequest.getCertificateBody());
             }
-
             if (createDomainNameRequest.getCertificatePrivateKey() != null) {
                 jsonWriter.key("certificatePrivateKey").value(
                         createDomainNameRequest.getCertificatePrivateKey());
             }
-
             if (createDomainNameRequest.getCertificateChain() != null) {
                 jsonWriter.key("certificateChain").value(
                         createDomainNameRequest.getCertificateChain());

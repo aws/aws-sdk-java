@@ -37,6 +37,7 @@ import com.amazonaws.services.logs.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -73,7 +74,6 @@ public class PutDestinationPolicyRequestMarshaller
                 jsonWriter.key("destinationName").value(
                         putDestinationPolicyRequest.getDestinationName());
             }
-
             if (putDestinationPolicyRequest.getAccessPolicy() != null) {
                 jsonWriter.key("accessPolicy").value(
                         putDestinationPolicyRequest.getAccessPolicy());

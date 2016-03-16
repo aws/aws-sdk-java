@@ -30,6 +30,7 @@ import com.amazonaws.services.ecr.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,12 +54,10 @@ public class LayerJsonMarshaller {
             if (layer.getLayerDigest() != null) {
                 jsonWriter.key("layerDigest").value(layer.getLayerDigest());
             }
-
             if (layer.getLayerAvailability() != null) {
                 jsonWriter.key("layerAvailability").value(
                         layer.getLayerAvailability());
             }
-
             if (layer.getLayerSize() != null) {
                 jsonWriter.key("layerSize").value(layer.getLayerSize());
             }

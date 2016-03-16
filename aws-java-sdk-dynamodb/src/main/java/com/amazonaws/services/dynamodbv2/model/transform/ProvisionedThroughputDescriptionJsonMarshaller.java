@@ -30,6 +30,7 @@ import com.amazonaws.services.dynamodbv2.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -57,25 +58,21 @@ public class ProvisionedThroughputDescriptionJsonMarshaller {
                         provisionedThroughputDescription
                                 .getLastIncreaseDateTime());
             }
-
             if (provisionedThroughputDescription.getLastDecreaseDateTime() != null) {
                 jsonWriter.key("LastDecreaseDateTime").value(
                         provisionedThroughputDescription
                                 .getLastDecreaseDateTime());
             }
-
             if (provisionedThroughputDescription.getNumberOfDecreasesToday() != null) {
                 jsonWriter.key("NumberOfDecreasesToday").value(
                         provisionedThroughputDescription
                                 .getNumberOfDecreasesToday());
             }
-
             if (provisionedThroughputDescription.getReadCapacityUnits() != null) {
                 jsonWriter.key("ReadCapacityUnits")
                         .value(provisionedThroughputDescription
                                 .getReadCapacityUnits());
             }
-
             if (provisionedThroughputDescription.getWriteCapacityUnits() != null) {
                 jsonWriter.key("WriteCapacityUnits").value(
                         provisionedThroughputDescription

@@ -37,6 +37,7 @@ import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -65,14 +66,15 @@ public class GetPolicyVersionRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{policyName}",
-                (getPolicyVersionRequest.getPolicyName() == null) ? ""
-                        : StringUtils.fromString(getPolicyVersionRequest
-                                .getPolicyName()));
-        uriResourcePath = uriResourcePath.replace(
-                "{policyVersionId}",
-                (getPolicyVersionRequest.getPolicyVersionId() == null) ? ""
-                        : StringUtils.fromString(getPolicyVersionRequest
-                                .getPolicyVersionId()));
+                (getPolicyVersionRequest.getPolicyName() != null) ? StringUtils
+                        .fromString(getPolicyVersionRequest.getPolicyName())
+                        : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{policyVersionId}",
+                        (getPolicyVersionRequest.getPolicyVersionId() != null) ? StringUtils
+                                .fromString(getPolicyVersionRequest
+                                        .getPolicyVersionId()) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

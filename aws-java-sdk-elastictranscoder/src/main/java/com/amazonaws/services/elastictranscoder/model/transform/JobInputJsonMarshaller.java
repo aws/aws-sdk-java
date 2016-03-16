@@ -30,6 +30,7 @@ import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,33 +54,26 @@ public class JobInputJsonMarshaller {
             if (jobInput.getKey() != null) {
                 jsonWriter.key("Key").value(jobInput.getKey());
             }
-
             if (jobInput.getFrameRate() != null) {
                 jsonWriter.key("FrameRate").value(jobInput.getFrameRate());
             }
-
             if (jobInput.getResolution() != null) {
                 jsonWriter.key("Resolution").value(jobInput.getResolution());
             }
-
             if (jobInput.getAspectRatio() != null) {
                 jsonWriter.key("AspectRatio").value(jobInput.getAspectRatio());
             }
-
             if (jobInput.getInterlaced() != null) {
                 jsonWriter.key("Interlaced").value(jobInput.getInterlaced());
             }
-
             if (jobInput.getContainer() != null) {
                 jsonWriter.key("Container").value(jobInput.getContainer());
             }
-
             if (jobInput.getEncryption() != null) {
                 jsonWriter.key("Encryption");
                 EncryptionJsonMarshaller.getInstance().marshall(
                         jobInput.getEncryption(), jsonWriter);
             }
-
             if (jobInput.getDetectedProperties() != null) {
                 jsonWriter.key("DetectedProperties");
                 DetectedPropertiesJsonMarshaller.getInstance().marshall(

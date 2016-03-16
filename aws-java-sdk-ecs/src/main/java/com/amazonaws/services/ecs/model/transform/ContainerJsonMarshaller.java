@@ -30,6 +30,7 @@ import com.amazonaws.services.ecs.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,23 +55,18 @@ public class ContainerJsonMarshaller {
                 jsonWriter.key("containerArn").value(
                         container.getContainerArn());
             }
-
             if (container.getTaskArn() != null) {
                 jsonWriter.key("taskArn").value(container.getTaskArn());
             }
-
             if (container.getName() != null) {
                 jsonWriter.key("name").value(container.getName());
             }
-
             if (container.getLastStatus() != null) {
                 jsonWriter.key("lastStatus").value(container.getLastStatus());
             }
-
             if (container.getExitCode() != null) {
                 jsonWriter.key("exitCode").value(container.getExitCode());
             }
-
             if (container.getReason() != null) {
                 jsonWriter.key("reason").value(container.getReason());
             }

@@ -30,6 +30,7 @@ import com.amazonaws.services.logs.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,7 +56,6 @@ public class SearchedLogStreamJsonMarshaller {
                 jsonWriter.key("logStreamName").value(
                         searchedLogStream.getLogStreamName());
             }
-
             if (searchedLogStream.getSearchedCompletely() != null) {
                 jsonWriter.key("searchedCompletely").value(
                         searchedLogStream.getSearchedCompletely());

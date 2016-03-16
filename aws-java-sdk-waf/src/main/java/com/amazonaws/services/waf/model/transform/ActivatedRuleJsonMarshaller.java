@@ -30,6 +30,7 @@ import com.amazonaws.services.waf.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,11 +54,9 @@ public class ActivatedRuleJsonMarshaller {
             if (activatedRule.getPriority() != null) {
                 jsonWriter.key("Priority").value(activatedRule.getPriority());
             }
-
             if (activatedRule.getRuleId() != null) {
                 jsonWriter.key("RuleId").value(activatedRule.getRuleId());
             }
-
             if (activatedRule.getAction() != null) {
                 jsonWriter.key("Action");
                 WafActionJsonMarshaller.getInstance().marshall(

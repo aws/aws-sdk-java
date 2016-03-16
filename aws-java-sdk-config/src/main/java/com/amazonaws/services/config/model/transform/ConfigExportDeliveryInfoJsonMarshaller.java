@@ -30,6 +30,7 @@ import com.amazonaws.services.config.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,27 +56,22 @@ public class ConfigExportDeliveryInfoJsonMarshaller {
                 jsonWriter.key("lastStatus").value(
                         configExportDeliveryInfo.getLastStatus());
             }
-
             if (configExportDeliveryInfo.getLastErrorCode() != null) {
                 jsonWriter.key("lastErrorCode").value(
                         configExportDeliveryInfo.getLastErrorCode());
             }
-
             if (configExportDeliveryInfo.getLastErrorMessage() != null) {
                 jsonWriter.key("lastErrorMessage").value(
                         configExportDeliveryInfo.getLastErrorMessage());
             }
-
             if (configExportDeliveryInfo.getLastAttemptTime() != null) {
                 jsonWriter.key("lastAttemptTime").value(
                         configExportDeliveryInfo.getLastAttemptTime());
             }
-
             if (configExportDeliveryInfo.getLastSuccessfulTime() != null) {
                 jsonWriter.key("lastSuccessfulTime").value(
                         configExportDeliveryInfo.getLastSuccessfulTime());
             }
-
             if (configExportDeliveryInfo.getNextDeliveryTime() != null) {
                 jsonWriter.key("nextDeliveryTime").value(
                         configExportDeliveryInfo.getNextDeliveryTime());

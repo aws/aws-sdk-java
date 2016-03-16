@@ -37,6 +37,7 @@ import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -72,12 +73,10 @@ public class DescribeVolumesRequestMarshaller implements
                 jsonWriter.key("InstanceId").value(
                         describeVolumesRequest.getInstanceId());
             }
-
             if (describeVolumesRequest.getStackId() != null) {
                 jsonWriter.key("StackId").value(
                         describeVolumesRequest.getStackId());
             }
-
             if (describeVolumesRequest.getRaidArrayId() != null) {
                 jsonWriter.key("RaidArrayId").value(
                         describeVolumesRequest.getRaidArrayId());

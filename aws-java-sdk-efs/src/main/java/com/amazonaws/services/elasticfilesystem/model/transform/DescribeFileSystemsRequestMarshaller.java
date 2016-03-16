@@ -37,6 +37,7 @@ import com.amazonaws.services.elasticfilesystem.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -66,32 +67,24 @@ public class DescribeFileSystemsRequestMarshaller
 
         request.setResourcePath(uriResourcePath);
 
-        String maxItems = (describeFileSystemsRequest.getMaxItems() == null) ? null
-                : StringUtils.fromInteger(describeFileSystemsRequest
-                        .getMaxItems());
-        if (maxItems != null) {
-            request.addParameter("MaxItems", maxItems);
+        if (describeFileSystemsRequest.getMaxItems() != null) {
+            request.addParameter("MaxItems", StringUtils
+                    .fromInteger(describeFileSystemsRequest.getMaxItems()));
         }
 
-        String marker = (describeFileSystemsRequest.getMarker() == null) ? null
-                : StringUtils
-                        .fromString(describeFileSystemsRequest.getMarker());
-        if (marker != null) {
-            request.addParameter("Marker", marker);
+        if (describeFileSystemsRequest.getMarker() != null) {
+            request.addParameter("Marker", StringUtils
+                    .fromString(describeFileSystemsRequest.getMarker()));
         }
 
-        String creationToken = (describeFileSystemsRequest.getCreationToken() == null) ? null
-                : StringUtils.fromString(describeFileSystemsRequest
-                        .getCreationToken());
-        if (creationToken != null) {
-            request.addParameter("CreationToken", creationToken);
+        if (describeFileSystemsRequest.getCreationToken() != null) {
+            request.addParameter("CreationToken", StringUtils
+                    .fromString(describeFileSystemsRequest.getCreationToken()));
         }
 
-        String fileSystemId = (describeFileSystemsRequest.getFileSystemId() == null) ? null
-                : StringUtils.fromString(describeFileSystemsRequest
-                        .getFileSystemId());
-        if (fileSystemId != null) {
-            request.addParameter("FileSystemId", fileSystemId);
+        if (describeFileSystemsRequest.getFileSystemId() != null) {
+            request.addParameter("FileSystemId", StringUtils
+                    .fromString(describeFileSystemsRequest.getFileSystemId()));
         }
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

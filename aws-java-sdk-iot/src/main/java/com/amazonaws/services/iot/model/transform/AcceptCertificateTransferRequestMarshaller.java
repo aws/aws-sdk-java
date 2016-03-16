@@ -37,6 +37,7 @@ import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -67,17 +68,15 @@ public class AcceptCertificateTransferRequestMarshaller
         uriResourcePath = uriResourcePath
                 .replace(
                         "{certificateId}",
-                        (acceptCertificateTransferRequest.getCertificateId() == null) ? ""
-                                : StringUtils
-                                        .fromString(acceptCertificateTransferRequest
-                                                .getCertificateId()));
+                        (acceptCertificateTransferRequest.getCertificateId() != null) ? StringUtils
+                                .fromString(acceptCertificateTransferRequest
+                                        .getCertificateId()) : "");
         request.setResourcePath(uriResourcePath);
 
-        String setAsActive = (acceptCertificateTransferRequest.getSetAsActive() == null) ? null
-                : StringUtils.fromBoolean(acceptCertificateTransferRequest
-                        .getSetAsActive());
-        if (setAsActive != null) {
-            request.addParameter("setAsActive", setAsActive);
+        if (acceptCertificateTransferRequest.getSetAsActive() != null) {
+            request.addParameter("setAsActive", StringUtils
+                    .fromBoolean(acceptCertificateTransferRequest
+                            .getSetAsActive()));
         }
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

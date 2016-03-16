@@ -30,6 +30,7 @@ import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,52 +54,40 @@ public class VolumeJsonMarshaller {
             if (volume.getVolumeId() != null) {
                 jsonWriter.key("VolumeId").value(volume.getVolumeId());
             }
-
             if (volume.getEc2VolumeId() != null) {
                 jsonWriter.key("Ec2VolumeId").value(volume.getEc2VolumeId());
             }
-
             if (volume.getName() != null) {
                 jsonWriter.key("Name").value(volume.getName());
             }
-
             if (volume.getRaidArrayId() != null) {
                 jsonWriter.key("RaidArrayId").value(volume.getRaidArrayId());
             }
-
             if (volume.getInstanceId() != null) {
                 jsonWriter.key("InstanceId").value(volume.getInstanceId());
             }
-
             if (volume.getStatus() != null) {
                 jsonWriter.key("Status").value(volume.getStatus());
             }
-
             if (volume.getSize() != null) {
                 jsonWriter.key("Size").value(volume.getSize());
             }
-
             if (volume.getDevice() != null) {
                 jsonWriter.key("Device").value(volume.getDevice());
             }
-
             if (volume.getMountPoint() != null) {
                 jsonWriter.key("MountPoint").value(volume.getMountPoint());
             }
-
             if (volume.getRegion() != null) {
                 jsonWriter.key("Region").value(volume.getRegion());
             }
-
             if (volume.getAvailabilityZone() != null) {
                 jsonWriter.key("AvailabilityZone").value(
                         volume.getAvailabilityZone());
             }
-
             if (volume.getVolumeType() != null) {
                 jsonWriter.key("VolumeType").value(volume.getVolumeType());
             }
-
             if (volume.getIops() != null) {
                 jsonWriter.key("Iops").value(volume.getIops());
             }

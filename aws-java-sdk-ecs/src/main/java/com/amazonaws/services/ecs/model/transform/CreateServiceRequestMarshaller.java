@@ -37,6 +37,7 @@ import com.amazonaws.services.ecs.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -73,12 +74,10 @@ public class CreateServiceRequestMarshaller implements
                 jsonWriter.key("cluster").value(
                         createServiceRequest.getCluster());
             }
-
             if (createServiceRequest.getServiceName() != null) {
                 jsonWriter.key("serviceName").value(
                         createServiceRequest.getServiceName());
             }
-
             if (createServiceRequest.getTaskDefinition() != null) {
                 jsonWriter.key("taskDefinition").value(
                         createServiceRequest.getTaskDefinition());
@@ -99,21 +98,17 @@ public class CreateServiceRequestMarshaller implements
                 }
                 jsonWriter.endArray();
             }
-
             if (createServiceRequest.getDesiredCount() != null) {
                 jsonWriter.key("desiredCount").value(
                         createServiceRequest.getDesiredCount());
             }
-
             if (createServiceRequest.getClientToken() != null) {
                 jsonWriter.key("clientToken").value(
                         createServiceRequest.getClientToken());
             }
-
             if (createServiceRequest.getRole() != null) {
                 jsonWriter.key("role").value(createServiceRequest.getRole());
             }
-
             if (createServiceRequest.getDeploymentConfiguration() != null) {
                 jsonWriter.key("deploymentConfiguration");
                 DeploymentConfigurationJsonMarshaller.getInstance().marshall(

@@ -37,6 +37,7 @@ import com.amazonaws.services.logs.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -86,32 +87,26 @@ public class FilterLogEventsRequestMarshaller implements
                 }
                 jsonWriter.endArray();
             }
-
             if (filterLogEventsRequest.getStartTime() != null) {
                 jsonWriter.key("startTime").value(
                         filterLogEventsRequest.getStartTime());
             }
-
             if (filterLogEventsRequest.getEndTime() != null) {
                 jsonWriter.key("endTime").value(
                         filterLogEventsRequest.getEndTime());
             }
-
             if (filterLogEventsRequest.getFilterPattern() != null) {
                 jsonWriter.key("filterPattern").value(
                         filterLogEventsRequest.getFilterPattern());
             }
-
             if (filterLogEventsRequest.getNextToken() != null) {
                 jsonWriter.key("nextToken").value(
                         filterLogEventsRequest.getNextToken());
             }
-
             if (filterLogEventsRequest.getLimit() != null) {
                 jsonWriter.key("limit")
                         .value(filterLogEventsRequest.getLimit());
             }
-
             if (filterLogEventsRequest.getInterleaved() != null) {
                 jsonWriter.key("interleaved").value(
                         filterLogEventsRequest.getInterleaved());

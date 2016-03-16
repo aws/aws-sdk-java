@@ -30,6 +30,7 @@ import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,12 +56,10 @@ public class SslConfigurationJsonMarshaller {
                 jsonWriter.key("Certificate").value(
                         sslConfiguration.getCertificate());
             }
-
             if (sslConfiguration.getPrivateKey() != null) {
                 jsonWriter.key("PrivateKey").value(
                         sslConfiguration.getPrivateKey());
             }
-
             if (sslConfiguration.getChain() != null) {
                 jsonWriter.key("Chain").value(sslConfiguration.getChain());
             }

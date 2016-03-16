@@ -30,6 +30,7 @@ import com.amazonaws.services.dynamodbv2.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -66,7 +67,6 @@ public class TableDescriptionJsonMarshaller {
                 }
                 jsonWriter.endArray();
             }
-
             if (tableDescription.getTableName() != null) {
                 jsonWriter.key("TableName").value(
                         tableDescription.getTableName());
@@ -86,34 +86,28 @@ public class TableDescriptionJsonMarshaller {
                 }
                 jsonWriter.endArray();
             }
-
             if (tableDescription.getTableStatus() != null) {
                 jsonWriter.key("TableStatus").value(
                         tableDescription.getTableStatus());
             }
-
             if (tableDescription.getCreationDateTime() != null) {
                 jsonWriter.key("CreationDateTime").value(
                         tableDescription.getCreationDateTime());
             }
-
             if (tableDescription.getProvisionedThroughput() != null) {
                 jsonWriter.key("ProvisionedThroughput");
                 ProvisionedThroughputDescriptionJsonMarshaller.getInstance()
                         .marshall(tableDescription.getProvisionedThroughput(),
                                 jsonWriter);
             }
-
             if (tableDescription.getTableSizeBytes() != null) {
                 jsonWriter.key("TableSizeBytes").value(
                         tableDescription.getTableSizeBytes());
             }
-
             if (tableDescription.getItemCount() != null) {
                 jsonWriter.key("ItemCount").value(
                         tableDescription.getItemCount());
             }
-
             if (tableDescription.getTableArn() != null) {
                 jsonWriter.key("TableArn")
                         .value(tableDescription.getTableArn());
@@ -152,18 +146,15 @@ public class TableDescriptionJsonMarshaller {
                 }
                 jsonWriter.endArray();
             }
-
             if (tableDescription.getStreamSpecification() != null) {
                 jsonWriter.key("StreamSpecification");
                 StreamSpecificationJsonMarshaller.getInstance().marshall(
                         tableDescription.getStreamSpecification(), jsonWriter);
             }
-
             if (tableDescription.getLatestStreamLabel() != null) {
                 jsonWriter.key("LatestStreamLabel").value(
                         tableDescription.getLatestStreamLabel());
             }
-
             if (tableDescription.getLatestStreamArn() != null) {
                 jsonWriter.key("LatestStreamArn").value(
                         tableDescription.getLatestStreamArn());

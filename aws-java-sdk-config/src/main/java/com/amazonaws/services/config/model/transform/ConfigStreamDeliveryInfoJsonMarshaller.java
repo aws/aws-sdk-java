@@ -30,6 +30,7 @@ import com.amazonaws.services.config.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,17 +56,14 @@ public class ConfigStreamDeliveryInfoJsonMarshaller {
                 jsonWriter.key("lastStatus").value(
                         configStreamDeliveryInfo.getLastStatus());
             }
-
             if (configStreamDeliveryInfo.getLastErrorCode() != null) {
                 jsonWriter.key("lastErrorCode").value(
                         configStreamDeliveryInfo.getLastErrorCode());
             }
-
             if (configStreamDeliveryInfo.getLastErrorMessage() != null) {
                 jsonWriter.key("lastErrorMessage").value(
                         configStreamDeliveryInfo.getLastErrorMessage());
             }
-
             if (configStreamDeliveryInfo.getLastStatusChangeTime() != null) {
                 jsonWriter.key("lastStatusChangeTime").value(
                         configStreamDeliveryInfo.getLastStatusChangeTime());

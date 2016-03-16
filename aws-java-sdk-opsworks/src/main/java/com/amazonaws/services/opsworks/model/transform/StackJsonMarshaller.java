@@ -30,6 +30,7 @@ import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,19 +54,15 @@ public class StackJsonMarshaller {
             if (stack.getStackId() != null) {
                 jsonWriter.key("StackId").value(stack.getStackId());
             }
-
             if (stack.getName() != null) {
                 jsonWriter.key("Name").value(stack.getName());
             }
-
             if (stack.getArn() != null) {
                 jsonWriter.key("Arn").value(stack.getArn());
             }
-
             if (stack.getRegion() != null) {
                 jsonWriter.key("Region").value(stack.getRegion());
             }
-
             if (stack.getVpcId() != null) {
                 jsonWriter.key("VpcId").value(stack.getVpcId());
             }
@@ -86,81 +83,65 @@ public class StackJsonMarshaller {
                 }
                 jsonWriter.endObject();
             }
-
             if (stack.getServiceRoleArn() != null) {
                 jsonWriter.key("ServiceRoleArn").value(
                         stack.getServiceRoleArn());
             }
-
             if (stack.getDefaultInstanceProfileArn() != null) {
                 jsonWriter.key("DefaultInstanceProfileArn").value(
                         stack.getDefaultInstanceProfileArn());
             }
-
             if (stack.getDefaultOs() != null) {
                 jsonWriter.key("DefaultOs").value(stack.getDefaultOs());
             }
-
             if (stack.getHostnameTheme() != null) {
                 jsonWriter.key("HostnameTheme").value(stack.getHostnameTheme());
             }
-
             if (stack.getDefaultAvailabilityZone() != null) {
                 jsonWriter.key("DefaultAvailabilityZone").value(
                         stack.getDefaultAvailabilityZone());
             }
-
             if (stack.getDefaultSubnetId() != null) {
                 jsonWriter.key("DefaultSubnetId").value(
                         stack.getDefaultSubnetId());
             }
-
             if (stack.getCustomJson() != null) {
                 jsonWriter.key("CustomJson").value(stack.getCustomJson());
             }
-
             if (stack.getConfigurationManager() != null) {
                 jsonWriter.key("ConfigurationManager");
                 StackConfigurationManagerJsonMarshaller.getInstance().marshall(
                         stack.getConfigurationManager(), jsonWriter);
             }
-
             if (stack.getChefConfiguration() != null) {
                 jsonWriter.key("ChefConfiguration");
                 ChefConfigurationJsonMarshaller.getInstance().marshall(
                         stack.getChefConfiguration(), jsonWriter);
             }
-
             if (stack.getUseCustomCookbooks() != null) {
                 jsonWriter.key("UseCustomCookbooks").value(
                         stack.getUseCustomCookbooks());
             }
-
             if (stack.getUseOpsworksSecurityGroups() != null) {
                 jsonWriter.key("UseOpsworksSecurityGroups").value(
                         stack.getUseOpsworksSecurityGroups());
             }
-
             if (stack.getCustomCookbooksSource() != null) {
                 jsonWriter.key("CustomCookbooksSource");
                 SourceJsonMarshaller.getInstance().marshall(
                         stack.getCustomCookbooksSource(), jsonWriter);
             }
-
             if (stack.getDefaultSshKeyName() != null) {
                 jsonWriter.key("DefaultSshKeyName").value(
                         stack.getDefaultSshKeyName());
             }
-
             if (stack.getCreatedAt() != null) {
                 jsonWriter.key("CreatedAt").value(stack.getCreatedAt());
             }
-
             if (stack.getDefaultRootDeviceType() != null) {
                 jsonWriter.key("DefaultRootDeviceType").value(
                         stack.getDefaultRootDeviceType());
             }
-
             if (stack.getAgentVersion() != null) {
                 jsonWriter.key("AgentVersion").value(stack.getAgentVersion());
             }

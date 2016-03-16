@@ -37,6 +37,7 @@ import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -72,17 +73,14 @@ public class UpdateUserProfileRequestMarshaller implements
                 jsonWriter.key("IamUserArn").value(
                         updateUserProfileRequest.getIamUserArn());
             }
-
             if (updateUserProfileRequest.getSshUsername() != null) {
                 jsonWriter.key("SshUsername").value(
                         updateUserProfileRequest.getSshUsername());
             }
-
             if (updateUserProfileRequest.getSshPublicKey() != null) {
                 jsonWriter.key("SshPublicKey").value(
                         updateUserProfileRequest.getSshPublicKey());
             }
-
             if (updateUserProfileRequest.getAllowSelfManagement() != null) {
                 jsonWriter.key("AllowSelfManagement").value(
                         updateUserProfileRequest.getAllowSelfManagement());

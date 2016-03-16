@@ -37,6 +37,7 @@ import com.amazonaws.services.dynamodbv2.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -128,32 +129,26 @@ public class UpdateItemRequestMarshaller implements
                 }
                 jsonWriter.endObject();
             }
-
             if (updateItemRequest.getConditionalOperator() != null) {
                 jsonWriter.key("ConditionalOperator").value(
                         updateItemRequest.getConditionalOperator());
             }
-
             if (updateItemRequest.getReturnValues() != null) {
                 jsonWriter.key("ReturnValues").value(
                         updateItemRequest.getReturnValues());
             }
-
             if (updateItemRequest.getReturnConsumedCapacity() != null) {
                 jsonWriter.key("ReturnConsumedCapacity").value(
                         updateItemRequest.getReturnConsumedCapacity());
             }
-
             if (updateItemRequest.getReturnItemCollectionMetrics() != null) {
                 jsonWriter.key("ReturnItemCollectionMetrics").value(
                         updateItemRequest.getReturnItemCollectionMetrics());
             }
-
             if (updateItemRequest.getUpdateExpression() != null) {
                 jsonWriter.key("UpdateExpression").value(
                         updateItemRequest.getUpdateExpression());
             }
-
             if (updateItemRequest.getConditionExpression() != null) {
                 jsonWriter.key("ConditionExpression").value(
                         updateItemRequest.getConditionExpression());

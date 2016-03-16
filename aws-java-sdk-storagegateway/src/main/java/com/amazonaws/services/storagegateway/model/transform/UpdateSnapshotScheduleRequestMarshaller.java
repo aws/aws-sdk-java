@@ -37,6 +37,7 @@ import com.amazonaws.services.storagegateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -74,17 +75,14 @@ public class UpdateSnapshotScheduleRequestMarshaller
                 jsonWriter.key("VolumeARN").value(
                         updateSnapshotScheduleRequest.getVolumeARN());
             }
-
             if (updateSnapshotScheduleRequest.getStartAt() != null) {
                 jsonWriter.key("StartAt").value(
                         updateSnapshotScheduleRequest.getStartAt());
             }
-
             if (updateSnapshotScheduleRequest.getRecurrenceInHours() != null) {
                 jsonWriter.key("RecurrenceInHours").value(
                         updateSnapshotScheduleRequest.getRecurrenceInHours());
             }
-
             if (updateSnapshotScheduleRequest.getDescription() != null) {
                 jsonWriter.key("Description").value(
                         updateSnapshotScheduleRequest.getDescription());

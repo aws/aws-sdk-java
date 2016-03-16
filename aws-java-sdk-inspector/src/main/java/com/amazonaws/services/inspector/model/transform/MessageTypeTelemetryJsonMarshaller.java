@@ -30,6 +30,7 @@ import com.amazonaws.services.inspector.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,11 +56,9 @@ public class MessageTypeTelemetryJsonMarshaller {
                 jsonWriter.key("messageType").value(
                         messageTypeTelemetry.getMessageType());
             }
-
             if (messageTypeTelemetry.getCount() != null) {
                 jsonWriter.key("count").value(messageTypeTelemetry.getCount());
             }
-
             if (messageTypeTelemetry.getDataSize() != null) {
                 jsonWriter.key("dataSize").value(
                         messageTypeTelemetry.getDataSize());

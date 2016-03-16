@@ -32,6 +32,7 @@ import com.amazonaws.services.route53.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.XMLWriter;
 
 /**
@@ -57,12 +58,12 @@ public class UpdateTrafficPolicyInstanceRequestMarshaller
 
         String uriResourcePath = "/2013-04-01/trafficpolicyinstance/{Id}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{Id}",
-                (updateTrafficPolicyInstanceRequest.getId() == null) ? ""
-                        : StringUtils
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{Id}",
+                        (updateTrafficPolicyInstanceRequest.getId() != null) ? StringUtils
                                 .fromString(updateTrafficPolicyInstanceRequest
-                                        .getId()));
+                                        .getId()) : "");
         request.setResourcePath(uriResourcePath);
 
         try {

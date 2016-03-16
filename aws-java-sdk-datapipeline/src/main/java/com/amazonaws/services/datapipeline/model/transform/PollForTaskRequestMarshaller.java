@@ -37,6 +37,7 @@ import com.amazonaws.services.datapipeline.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -72,12 +73,10 @@ public class PollForTaskRequestMarshaller implements
                 jsonWriter.key("workerGroup").value(
                         pollForTaskRequest.getWorkerGroup());
             }
-
             if (pollForTaskRequest.getHostname() != null) {
                 jsonWriter.key("hostname").value(
                         pollForTaskRequest.getHostname());
             }
-
             if (pollForTaskRequest.getInstanceIdentity() != null) {
                 jsonWriter.key("instanceIdentity");
                 InstanceIdentityJsonMarshaller.getInstance().marshall(

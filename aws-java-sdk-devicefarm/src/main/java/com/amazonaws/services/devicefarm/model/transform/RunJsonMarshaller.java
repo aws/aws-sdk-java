@@ -30,6 +30,7 @@ import com.amazonaws.services.devicefarm.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,61 +54,47 @@ public class RunJsonMarshaller {
             if (run.getArn() != null) {
                 jsonWriter.key("arn").value(run.getArn());
             }
-
             if (run.getName() != null) {
                 jsonWriter.key("name").value(run.getName());
             }
-
             if (run.getType() != null) {
                 jsonWriter.key("type").value(run.getType());
             }
-
             if (run.getPlatform() != null) {
                 jsonWriter.key("platform").value(run.getPlatform());
             }
-
             if (run.getCreated() != null) {
                 jsonWriter.key("created").value(run.getCreated());
             }
-
             if (run.getStatus() != null) {
                 jsonWriter.key("status").value(run.getStatus());
             }
-
             if (run.getResult() != null) {
                 jsonWriter.key("result").value(run.getResult());
             }
-
             if (run.getStarted() != null) {
                 jsonWriter.key("started").value(run.getStarted());
             }
-
             if (run.getStopped() != null) {
                 jsonWriter.key("stopped").value(run.getStopped());
             }
-
             if (run.getCounters() != null) {
                 jsonWriter.key("counters");
                 CountersJsonMarshaller.getInstance().marshall(
                         run.getCounters(), jsonWriter);
             }
-
             if (run.getMessage() != null) {
                 jsonWriter.key("message").value(run.getMessage());
             }
-
             if (run.getTotalJobs() != null) {
                 jsonWriter.key("totalJobs").value(run.getTotalJobs());
             }
-
             if (run.getCompletedJobs() != null) {
                 jsonWriter.key("completedJobs").value(run.getCompletedJobs());
             }
-
             if (run.getBillingMethod() != null) {
                 jsonWriter.key("billingMethod").value(run.getBillingMethod());
             }
-
             if (run.getDeviceMinutes() != null) {
                 jsonWriter.key("deviceMinutes");
                 DeviceMinutesJsonMarshaller.getInstance().marshall(

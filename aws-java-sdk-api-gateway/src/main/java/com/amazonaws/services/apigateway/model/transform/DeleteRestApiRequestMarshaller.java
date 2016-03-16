@@ -37,6 +37,7 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -65,9 +66,8 @@ public class DeleteRestApiRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
-                (deleteRestApiRequest.getRestApiId() == null) ? ""
-                        : StringUtils.fromString(deleteRestApiRequest
-                                .getRestApiId()));
+                (deleteRestApiRequest.getRestApiId() != null) ? StringUtils
+                        .fromString(deleteRestApiRequest.getRestApiId()) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

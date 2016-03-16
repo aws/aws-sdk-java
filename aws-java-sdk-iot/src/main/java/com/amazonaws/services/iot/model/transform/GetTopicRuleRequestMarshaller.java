@@ -37,6 +37,7 @@ import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -65,8 +66,8 @@ public class GetTopicRuleRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{ruleName}",
-                (getTopicRuleRequest.getRuleName() == null) ? "" : StringUtils
-                        .fromString(getTopicRuleRequest.getRuleName()));
+                (getTopicRuleRequest.getRuleName() != null) ? StringUtils
+                        .fromString(getTopicRuleRequest.getRuleName()) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

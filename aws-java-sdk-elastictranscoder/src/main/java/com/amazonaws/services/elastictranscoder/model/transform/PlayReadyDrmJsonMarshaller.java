@@ -30,6 +30,7 @@ import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,24 +54,19 @@ public class PlayReadyDrmJsonMarshaller {
             if (playReadyDrm.getFormat() != null) {
                 jsonWriter.key("Format").value(playReadyDrm.getFormat());
             }
-
             if (playReadyDrm.getKey() != null) {
                 jsonWriter.key("Key").value(playReadyDrm.getKey());
             }
-
             if (playReadyDrm.getKeyMd5() != null) {
                 jsonWriter.key("KeyMd5").value(playReadyDrm.getKeyMd5());
             }
-
             if (playReadyDrm.getKeyId() != null) {
                 jsonWriter.key("KeyId").value(playReadyDrm.getKeyId());
             }
-
             if (playReadyDrm.getInitializationVector() != null) {
                 jsonWriter.key("InitializationVector").value(
                         playReadyDrm.getInitializationVector());
             }
-
             if (playReadyDrm.getLicenseAcquisitionUrl() != null) {
                 jsonWriter.key("LicenseAcquisitionUrl").value(
                         playReadyDrm.getLicenseAcquisitionUrl());

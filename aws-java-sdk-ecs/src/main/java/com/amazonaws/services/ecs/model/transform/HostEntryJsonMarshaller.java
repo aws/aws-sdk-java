@@ -30,6 +30,7 @@ import com.amazonaws.services.ecs.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,7 +54,6 @@ public class HostEntryJsonMarshaller {
             if (hostEntry.getHostname() != null) {
                 jsonWriter.key("hostname").value(hostEntry.getHostname());
             }
-
             if (hostEntry.getIpAddress() != null) {
                 jsonWriter.key("ipAddress").value(hostEntry.getIpAddress());
             }

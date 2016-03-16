@@ -37,6 +37,7 @@ import com.amazonaws.services.inspector.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -74,18 +75,15 @@ public class ListAssessmentAgentsRequestMarshaller
                 jsonWriter.key("assessmentArn").value(
                         listAssessmentAgentsRequest.getAssessmentArn());
             }
-
             if (listAssessmentAgentsRequest.getFilter() != null) {
                 jsonWriter.key("filter");
                 AgentsFilterJsonMarshaller.getInstance().marshall(
                         listAssessmentAgentsRequest.getFilter(), jsonWriter);
             }
-
             if (listAssessmentAgentsRequest.getNextToken() != null) {
                 jsonWriter.key("nextToken").value(
                         listAssessmentAgentsRequest.getNextToken());
             }
-
             if (listAssessmentAgentsRequest.getMaxResults() != null) {
                 jsonWriter.key("maxResults").value(
                         listAssessmentAgentsRequest.getMaxResults());

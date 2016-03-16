@@ -37,6 +37,7 @@ import com.amazonaws.services.config.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -74,7 +75,6 @@ public class DescribeComplianceByResourceRequestMarshaller
                 jsonWriter.key("ResourceType").value(
                         describeComplianceByResourceRequest.getResourceType());
             }
-
             if (describeComplianceByResourceRequest.getResourceId() != null) {
                 jsonWriter.key("ResourceId").value(
                         describeComplianceByResourceRequest.getResourceId());
@@ -93,12 +93,10 @@ public class DescribeComplianceByResourceRequestMarshaller
                 }
                 jsonWriter.endArray();
             }
-
             if (describeComplianceByResourceRequest.getLimit() != null) {
                 jsonWriter.key("Limit").value(
                         describeComplianceByResourceRequest.getLimit());
             }
-
             if (describeComplianceByResourceRequest.getNextToken() != null) {
                 jsonWriter.key("NextToken").value(
                         describeComplianceByResourceRequest.getNextToken());

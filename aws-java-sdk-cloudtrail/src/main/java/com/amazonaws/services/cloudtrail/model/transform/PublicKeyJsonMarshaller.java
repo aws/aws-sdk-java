@@ -30,6 +30,7 @@ import com.amazonaws.services.cloudtrail.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,17 +54,14 @@ public class PublicKeyJsonMarshaller {
             if (publicKey.getValue() != null) {
                 jsonWriter.key("Value").value(publicKey.getValue());
             }
-
             if (publicKey.getValidityStartTime() != null) {
                 jsonWriter.key("ValidityStartTime").value(
                         publicKey.getValidityStartTime());
             }
-
             if (publicKey.getValidityEndTime() != null) {
                 jsonWriter.key("ValidityEndTime").value(
                         publicKey.getValidityEndTime());
             }
-
             if (publicKey.getFingerprint() != null) {
                 jsonWriter.key("Fingerprint").value(publicKey.getFingerprint());
             }

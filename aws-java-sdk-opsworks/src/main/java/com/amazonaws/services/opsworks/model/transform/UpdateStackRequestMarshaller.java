@@ -37,6 +37,7 @@ import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -72,7 +73,6 @@ public class UpdateStackRequestMarshaller implements
                 jsonWriter.key("StackId")
                         .value(updateStackRequest.getStackId());
             }
-
             if (updateStackRequest.getName() != null) {
                 jsonWriter.key("Name").value(updateStackRequest.getName());
             }
@@ -93,82 +93,67 @@ public class UpdateStackRequestMarshaller implements
                 }
                 jsonWriter.endObject();
             }
-
             if (updateStackRequest.getServiceRoleArn() != null) {
                 jsonWriter.key("ServiceRoleArn").value(
                         updateStackRequest.getServiceRoleArn());
             }
-
             if (updateStackRequest.getDefaultInstanceProfileArn() != null) {
                 jsonWriter.key("DefaultInstanceProfileArn").value(
                         updateStackRequest.getDefaultInstanceProfileArn());
             }
-
             if (updateStackRequest.getDefaultOs() != null) {
                 jsonWriter.key("DefaultOs").value(
                         updateStackRequest.getDefaultOs());
             }
-
             if (updateStackRequest.getHostnameTheme() != null) {
                 jsonWriter.key("HostnameTheme").value(
                         updateStackRequest.getHostnameTheme());
             }
-
             if (updateStackRequest.getDefaultAvailabilityZone() != null) {
                 jsonWriter.key("DefaultAvailabilityZone").value(
                         updateStackRequest.getDefaultAvailabilityZone());
             }
-
             if (updateStackRequest.getDefaultSubnetId() != null) {
                 jsonWriter.key("DefaultSubnetId").value(
                         updateStackRequest.getDefaultSubnetId());
             }
-
             if (updateStackRequest.getCustomJson() != null) {
                 jsonWriter.key("CustomJson").value(
                         updateStackRequest.getCustomJson());
             }
-
             if (updateStackRequest.getConfigurationManager() != null) {
                 jsonWriter.key("ConfigurationManager");
                 StackConfigurationManagerJsonMarshaller.getInstance().marshall(
                         updateStackRequest.getConfigurationManager(),
                         jsonWriter);
             }
-
             if (updateStackRequest.getChefConfiguration() != null) {
                 jsonWriter.key("ChefConfiguration");
                 ChefConfigurationJsonMarshaller.getInstance().marshall(
                         updateStackRequest.getChefConfiguration(), jsonWriter);
             }
-
             if (updateStackRequest.getUseCustomCookbooks() != null) {
                 jsonWriter.key("UseCustomCookbooks").value(
                         updateStackRequest.getUseCustomCookbooks());
             }
-
             if (updateStackRequest.getCustomCookbooksSource() != null) {
                 jsonWriter.key("CustomCookbooksSource");
                 SourceJsonMarshaller.getInstance().marshall(
                         updateStackRequest.getCustomCookbooksSource(),
                         jsonWriter);
             }
-
             if (updateStackRequest.getDefaultSshKeyName() != null) {
                 jsonWriter.key("DefaultSshKeyName").value(
                         updateStackRequest.getDefaultSshKeyName());
             }
-
             if (updateStackRequest.getDefaultRootDeviceType() != null) {
                 jsonWriter.key("DefaultRootDeviceType").value(
                         updateStackRequest.getDefaultRootDeviceType());
             }
-
             if (updateStackRequest.getUseOpsworksSecurityGroups() != null) {
                 jsonWriter.key("UseOpsworksSecurityGroups").value(
                         updateStackRequest.getUseOpsworksSecurityGroups());
             }
-
             if (updateStackRequest.getAgentVersion() != null) {
                 jsonWriter.key("AgentVersion").value(
                         updateStackRequest.getAgentVersion());

@@ -37,6 +37,7 @@ import com.amazonaws.services.route53domains.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -74,7 +75,6 @@ public class CheckDomainAvailabilityRequestMarshaller
                 jsonWriter.key("DomainName").value(
                         checkDomainAvailabilityRequest.getDomainName());
             }
-
             if (checkDomainAvailabilityRequest.getIdnLangCode() != null) {
                 jsonWriter.key("IdnLangCode").value(
                         checkDomainAvailabilityRequest.getIdnLangCode());

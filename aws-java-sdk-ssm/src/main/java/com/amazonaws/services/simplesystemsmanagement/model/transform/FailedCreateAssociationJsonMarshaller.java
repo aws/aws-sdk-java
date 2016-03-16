@@ -30,6 +30,7 @@ import com.amazonaws.services.simplesystemsmanagement.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -57,12 +58,10 @@ public class FailedCreateAssociationJsonMarshaller {
                         .marshall(failedCreateAssociation.getEntry(),
                                 jsonWriter);
             }
-
             if (failedCreateAssociation.getMessage() != null) {
                 jsonWriter.key("Message").value(
                         failedCreateAssociation.getMessage());
             }
-
             if (failedCreateAssociation.getFault() != null) {
                 jsonWriter.key("Fault").value(
                         failedCreateAssociation.getFault());

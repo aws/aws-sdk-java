@@ -37,6 +37,7 @@ import com.amazonaws.services.logs.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -72,12 +73,10 @@ public class DescribeLogGroupsRequestMarshaller implements
                 jsonWriter.key("logGroupNamePrefix").value(
                         describeLogGroupsRequest.getLogGroupNamePrefix());
             }
-
             if (describeLogGroupsRequest.getNextToken() != null) {
                 jsonWriter.key("nextToken").value(
                         describeLogGroupsRequest.getNextToken());
             }
-
             if (describeLogGroupsRequest.getLimit() != null) {
                 jsonWriter.key("limit").value(
                         describeLogGroupsRequest.getLimit());

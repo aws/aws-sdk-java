@@ -30,6 +30,7 @@ import com.amazonaws.services.devicefarm.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,11 +54,9 @@ public class RuleJsonMarshaller {
             if (rule.getAttribute() != null) {
                 jsonWriter.key("attribute").value(rule.getAttribute());
             }
-
             if (rule.getOperator() != null) {
                 jsonWriter.key("operator").value(rule.getOperator());
             }
-
             if (rule.getValue() != null) {
                 jsonWriter.key("value").value(rule.getValue());
             }

@@ -37,6 +37,7 @@ import com.amazonaws.services.ecr.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -73,17 +74,14 @@ public class ListImagesRequestMarshaller implements
                 jsonWriter.key("registryId").value(
                         listImagesRequest.getRegistryId());
             }
-
             if (listImagesRequest.getRepositoryName() != null) {
                 jsonWriter.key("repositoryName").value(
                         listImagesRequest.getRepositoryName());
             }
-
             if (listImagesRequest.getNextToken() != null) {
                 jsonWriter.key("nextToken").value(
                         listImagesRequest.getNextToken());
             }
-
             if (listImagesRequest.getMaxResults() != null) {
                 jsonWriter.key("maxResults").value(
                         listImagesRequest.getMaxResults());

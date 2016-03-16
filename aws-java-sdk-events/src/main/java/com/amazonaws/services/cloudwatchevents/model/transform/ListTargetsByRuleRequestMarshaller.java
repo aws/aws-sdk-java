@@ -37,6 +37,7 @@ import com.amazonaws.services.cloudwatchevents.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -72,12 +73,10 @@ public class ListTargetsByRuleRequestMarshaller implements
                 jsonWriter.key("Rule")
                         .value(listTargetsByRuleRequest.getRule());
             }
-
             if (listTargetsByRuleRequest.getNextToken() != null) {
                 jsonWriter.key("NextToken").value(
                         listTargetsByRuleRequest.getNextToken());
             }
-
             if (listTargetsByRuleRequest.getLimit() != null) {
                 jsonWriter.key("Limit").value(
                         listTargetsByRuleRequest.getLimit());

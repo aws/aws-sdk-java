@@ -30,6 +30,7 @@ import com.amazonaws.services.waf.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,15 +54,12 @@ public class WebACLJsonMarshaller {
             if (webACL.getWebACLId() != null) {
                 jsonWriter.key("WebACLId").value(webACL.getWebACLId());
             }
-
             if (webACL.getName() != null) {
                 jsonWriter.key("Name").value(webACL.getName());
             }
-
             if (webACL.getMetricName() != null) {
                 jsonWriter.key("MetricName").value(webACL.getMetricName());
             }
-
             if (webACL.getDefaultAction() != null) {
                 jsonWriter.key("DefaultAction");
                 WafActionJsonMarshaller.getInstance().marshall(

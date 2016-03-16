@@ -29,22 +29,22 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of an existing AWS CodeDeploy application associated with the
-     * applicable IAM user or AWS account.
+     * The name of an AWS CodeDeploy application associated with the applicable
+     * IAM user or AWS account.
      * </p>
      */
     private String applicationName;
     /**
      * <p>
-     * The column name to sort the list results by:
+     * The column name to use to sort the list results:
      * </p>
      * <ul>
-     * <li>registerTime: Sort the list results by when the revisions were
-     * registered with AWS CodeDeploy.</li>
-     * <li>firstUsedTime: Sort the list results by when the revisions were first
-     * used by in a deployment.</li>
-     * <li>lastUsedTime: Sort the list results by when the revisions were last
-     * used in a deployment.</li>
+     * <li>registerTime: Sort by the time the revisions were registered with AWS
+     * CodeDeploy.</li>
+     * <li>firstUsedTime: Sort by the time the revisions were first used in a
+     * deployment.</li>
+     * <li>lastUsedTime: Sort by the time the revisions were last used in a
+     * deployment.</li>
      * </ul>
      * <p>
      * If not specified or set to null, the results will be returned in an
@@ -54,11 +54,11 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
     private String sortBy;
     /**
      * <p>
-     * The order to sort the list results by:
+     * The order in which to sort the list results:
      * </p>
      * <ul>
-     * <li>ascending: Sort the list of results in ascending order.</li>
-     * <li>descending: Sort the list of results in descending order.</li>
+     * <li>ascending: ascending order.</li>
+     * <li>descending: descending order.</li>
      * </ul>
      * <p>
      * If not specified, the results will be sorted in ascending order.
@@ -70,17 +70,17 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
     private String sortOrder;
     /**
      * <p>
-     * A specific Amazon S3 bucket name to limit the search for revisions.
+     * An Amazon S3 bucket name to limit the search for revisions.
      * </p>
      * <p>
-     * If set to null, then all of the user's buckets will be searched.
+     * If set to null, all of the user's buckets will be searched.
      * </p>
      */
     private String s3Bucket;
     /**
      * <p>
-     * A specific key prefix for the set of Amazon S3 objects to limit the
-     * search for revisions.
+     * A key prefix for the set of Amazon S3 objects to limit the search for
+     * revisions.
      * </p>
      */
     private String s3KeyPrefix;
@@ -94,29 +94,27 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
      * group.</li>
      * <li>exclude: Do not list revisions that are target revisions of a
      * deployment group.</li>
-     * <li>ignore: List all revisions, regardless of whether they are target
-     * revisions of a deployment group.</li>
+     * <li>ignore: List all revisions.</li>
      * </ul>
      */
     private String deployed;
     /**
      * <p>
-     * An identifier that was returned from the previous list application
-     * revisions call, which can be used to return the next set of applications
-     * in the list.
+     * An identifier returned from the previous list application revisions call.
+     * It can be used to return the next set of applications in the list.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * The name of an existing AWS CodeDeploy application associated with the
-     * applicable IAM user or AWS account.
+     * The name of an AWS CodeDeploy application associated with the applicable
+     * IAM user or AWS account.
      * </p>
      * 
      * @param applicationName
-     *        The name of an existing AWS CodeDeploy application associated with
-     *        the applicable IAM user or AWS account.
+     *        The name of an AWS CodeDeploy application associated with the
+     *        applicable IAM user or AWS account.
      */
 
     public void setApplicationName(String applicationName) {
@@ -125,12 +123,12 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of an existing AWS CodeDeploy application associated with the
-     * applicable IAM user or AWS account.
+     * The name of an AWS CodeDeploy application associated with the applicable
+     * IAM user or AWS account.
      * </p>
      * 
-     * @return The name of an existing AWS CodeDeploy application associated
-     *         with the applicable IAM user or AWS account.
+     * @return The name of an AWS CodeDeploy application associated with the
+     *         applicable IAM user or AWS account.
      */
 
     public String getApplicationName() {
@@ -139,13 +137,13 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of an existing AWS CodeDeploy application associated with the
-     * applicable IAM user or AWS account.
+     * The name of an AWS CodeDeploy application associated with the applicable
+     * IAM user or AWS account.
      * </p>
      * 
      * @param applicationName
-     *        The name of an existing AWS CodeDeploy application associated with
-     *        the applicable IAM user or AWS account.
+     *        The name of an AWS CodeDeploy application associated with the
+     *        applicable IAM user or AWS account.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -158,15 +156,15 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The column name to sort the list results by:
+     * The column name to use to sort the list results:
      * </p>
      * <ul>
-     * <li>registerTime: Sort the list results by when the revisions were
-     * registered with AWS CodeDeploy.</li>
-     * <li>firstUsedTime: Sort the list results by when the revisions were first
-     * used by in a deployment.</li>
-     * <li>lastUsedTime: Sort the list results by when the revisions were last
-     * used in a deployment.</li>
+     * <li>registerTime: Sort by the time the revisions were registered with AWS
+     * CodeDeploy.</li>
+     * <li>firstUsedTime: Sort by the time the revisions were first used in a
+     * deployment.</li>
+     * <li>lastUsedTime: Sort by the time the revisions were last used in a
+     * deployment.</li>
      * </ul>
      * <p>
      * If not specified or set to null, the results will be returned in an
@@ -174,14 +172,14 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param sortBy
-     *        The column name to sort the list results by:</p>
+     *        The column name to use to sort the list results:</p>
      *        <ul>
-     *        <li>registerTime: Sort the list results by when the revisions were
-     *        registered with AWS CodeDeploy.</li>
-     *        <li>firstUsedTime: Sort the list results by when the revisions
-     *        were first used by in a deployment.</li>
-     *        <li>lastUsedTime: Sort the list results by when the revisions were
-     *        last used in a deployment.</li>
+     *        <li>registerTime: Sort by the time the revisions were registered
+     *        with AWS CodeDeploy.</li>
+     *        <li>firstUsedTime: Sort by the time the revisions were first used
+     *        in a deployment.</li>
+     *        <li>lastUsedTime: Sort by the time the revisions were last used in
+     *        a deployment.</li>
      *        </ul>
      *        <p>
      *        If not specified or set to null, the results will be returned in
@@ -195,29 +193,29 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The column name to sort the list results by:
+     * The column name to use to sort the list results:
      * </p>
      * <ul>
-     * <li>registerTime: Sort the list results by when the revisions were
-     * registered with AWS CodeDeploy.</li>
-     * <li>firstUsedTime: Sort the list results by when the revisions were first
-     * used by in a deployment.</li>
-     * <li>lastUsedTime: Sort the list results by when the revisions were last
-     * used in a deployment.</li>
+     * <li>registerTime: Sort by the time the revisions were registered with AWS
+     * CodeDeploy.</li>
+     * <li>firstUsedTime: Sort by the time the revisions were first used in a
+     * deployment.</li>
+     * <li>lastUsedTime: Sort by the time the revisions were last used in a
+     * deployment.</li>
      * </ul>
      * <p>
      * If not specified or set to null, the results will be returned in an
      * arbitrary order.
      * </p>
      * 
-     * @return The column name to sort the list results by:</p>
+     * @return The column name to use to sort the list results:</p>
      *         <ul>
-     *         <li>registerTime: Sort the list results by when the revisions
-     *         were registered with AWS CodeDeploy.</li>
-     *         <li>firstUsedTime: Sort the list results by when the revisions
-     *         were first used by in a deployment.</li>
-     *         <li>lastUsedTime: Sort the list results by when the revisions
-     *         were last used in a deployment.</li>
+     *         <li>registerTime: Sort by the time the revisions were registered
+     *         with AWS CodeDeploy.</li>
+     *         <li>firstUsedTime: Sort by the time the revisions were first used
+     *         in a deployment.</li>
+     *         <li>lastUsedTime: Sort by the time the revisions were last used
+     *         in a deployment.</li>
      *         </ul>
      *         <p>
      *         If not specified or set to null, the results will be returned in
@@ -231,15 +229,15 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The column name to sort the list results by:
+     * The column name to use to sort the list results:
      * </p>
      * <ul>
-     * <li>registerTime: Sort the list results by when the revisions were
-     * registered with AWS CodeDeploy.</li>
-     * <li>firstUsedTime: Sort the list results by when the revisions were first
-     * used by in a deployment.</li>
-     * <li>lastUsedTime: Sort the list results by when the revisions were last
-     * used in a deployment.</li>
+     * <li>registerTime: Sort by the time the revisions were registered with AWS
+     * CodeDeploy.</li>
+     * <li>firstUsedTime: Sort by the time the revisions were first used in a
+     * deployment.</li>
+     * <li>lastUsedTime: Sort by the time the revisions were last used in a
+     * deployment.</li>
      * </ul>
      * <p>
      * If not specified or set to null, the results will be returned in an
@@ -247,14 +245,14 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param sortBy
-     *        The column name to sort the list results by:</p>
+     *        The column name to use to sort the list results:</p>
      *        <ul>
-     *        <li>registerTime: Sort the list results by when the revisions were
-     *        registered with AWS CodeDeploy.</li>
-     *        <li>firstUsedTime: Sort the list results by when the revisions
-     *        were first used by in a deployment.</li>
-     *        <li>lastUsedTime: Sort the list results by when the revisions were
-     *        last used in a deployment.</li>
+     *        <li>registerTime: Sort by the time the revisions were registered
+     *        with AWS CodeDeploy.</li>
+     *        <li>firstUsedTime: Sort by the time the revisions were first used
+     *        in a deployment.</li>
+     *        <li>lastUsedTime: Sort by the time the revisions were last used in
+     *        a deployment.</li>
      *        </ul>
      *        <p>
      *        If not specified or set to null, the results will be returned in
@@ -271,15 +269,15 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The column name to sort the list results by:
+     * The column name to use to sort the list results:
      * </p>
      * <ul>
-     * <li>registerTime: Sort the list results by when the revisions were
-     * registered with AWS CodeDeploy.</li>
-     * <li>firstUsedTime: Sort the list results by when the revisions were first
-     * used by in a deployment.</li>
-     * <li>lastUsedTime: Sort the list results by when the revisions were last
-     * used in a deployment.</li>
+     * <li>registerTime: Sort by the time the revisions were registered with AWS
+     * CodeDeploy.</li>
+     * <li>firstUsedTime: Sort by the time the revisions were first used in a
+     * deployment.</li>
+     * <li>lastUsedTime: Sort by the time the revisions were last used in a
+     * deployment.</li>
      * </ul>
      * <p>
      * If not specified or set to null, the results will be returned in an
@@ -287,14 +285,14 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param sortBy
-     *        The column name to sort the list results by:</p>
+     *        The column name to use to sort the list results:</p>
      *        <ul>
-     *        <li>registerTime: Sort the list results by when the revisions were
-     *        registered with AWS CodeDeploy.</li>
-     *        <li>firstUsedTime: Sort the list results by when the revisions
-     *        were first used by in a deployment.</li>
-     *        <li>lastUsedTime: Sort the list results by when the revisions were
-     *        last used in a deployment.</li>
+     *        <li>registerTime: Sort by the time the revisions were registered
+     *        with AWS CodeDeploy.</li>
+     *        <li>firstUsedTime: Sort by the time the revisions were first used
+     *        in a deployment.</li>
+     *        <li>lastUsedTime: Sort by the time the revisions were last used in
+     *        a deployment.</li>
      *        </ul>
      *        <p>
      *        If not specified or set to null, the results will be returned in
@@ -310,15 +308,15 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The column name to sort the list results by:
+     * The column name to use to sort the list results:
      * </p>
      * <ul>
-     * <li>registerTime: Sort the list results by when the revisions were
-     * registered with AWS CodeDeploy.</li>
-     * <li>firstUsedTime: Sort the list results by when the revisions were first
-     * used by in a deployment.</li>
-     * <li>lastUsedTime: Sort the list results by when the revisions were last
-     * used in a deployment.</li>
+     * <li>registerTime: Sort by the time the revisions were registered with AWS
+     * CodeDeploy.</li>
+     * <li>firstUsedTime: Sort by the time the revisions were first used in a
+     * deployment.</li>
+     * <li>lastUsedTime: Sort by the time the revisions were last used in a
+     * deployment.</li>
      * </ul>
      * <p>
      * If not specified or set to null, the results will be returned in an
@@ -326,14 +324,14 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param sortBy
-     *        The column name to sort the list results by:</p>
+     *        The column name to use to sort the list results:</p>
      *        <ul>
-     *        <li>registerTime: Sort the list results by when the revisions were
-     *        registered with AWS CodeDeploy.</li>
-     *        <li>firstUsedTime: Sort the list results by when the revisions
-     *        were first used by in a deployment.</li>
-     *        <li>lastUsedTime: Sort the list results by when the revisions were
-     *        last used in a deployment.</li>
+     *        <li>registerTime: Sort by the time the revisions were registered
+     *        with AWS CodeDeploy.</li>
+     *        <li>firstUsedTime: Sort by the time the revisions were first used
+     *        in a deployment.</li>
+     *        <li>lastUsedTime: Sort by the time the revisions were last used in
+     *        a deployment.</li>
      *        </ul>
      *        <p>
      *        If not specified or set to null, the results will be returned in
@@ -351,11 +349,11 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The order to sort the list results by:
+     * The order in which to sort the list results:
      * </p>
      * <ul>
-     * <li>ascending: Sort the list of results in ascending order.</li>
-     * <li>descending: Sort the list of results in descending order.</li>
+     * <li>ascending: ascending order.</li>
+     * <li>descending: descending order.</li>
      * </ul>
      * <p>
      * If not specified, the results will be sorted in ascending order.
@@ -365,10 +363,10 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param sortOrder
-     *        The order to sort the list results by:</p>
+     *        The order in which to sort the list results:</p>
      *        <ul>
-     *        <li>ascending: Sort the list of results in ascending order.</li>
-     *        <li>descending: Sort the list of results in descending order.</li>
+     *        <li>ascending: ascending order.</li>
+     *        <li>descending: descending order.</li>
      *        </ul>
      *        <p>
      *        If not specified, the results will be sorted in ascending order.
@@ -384,11 +382,11 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The order to sort the list results by:
+     * The order in which to sort the list results:
      * </p>
      * <ul>
-     * <li>ascending: Sort the list of results in ascending order.</li>
-     * <li>descending: Sort the list of results in descending order.</li>
+     * <li>ascending: ascending order.</li>
+     * <li>descending: descending order.</li>
      * </ul>
      * <p>
      * If not specified, the results will be sorted in ascending order.
@@ -397,10 +395,10 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
      * If set to null, the results will be sorted in an arbitrary order.
      * </p>
      * 
-     * @return The order to sort the list results by:</p>
+     * @return The order in which to sort the list results:</p>
      *         <ul>
-     *         <li>ascending: Sort the list of results in ascending order.</li>
-     *         <li>descending: Sort the list of results in descending order.</li>
+     *         <li>ascending: ascending order.</li>
+     *         <li>descending: descending order.</li>
      *         </ul>
      *         <p>
      *         If not specified, the results will be sorted in ascending order.
@@ -416,11 +414,11 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The order to sort the list results by:
+     * The order in which to sort the list results:
      * </p>
      * <ul>
-     * <li>ascending: Sort the list of results in ascending order.</li>
-     * <li>descending: Sort the list of results in descending order.</li>
+     * <li>ascending: ascending order.</li>
+     * <li>descending: descending order.</li>
      * </ul>
      * <p>
      * If not specified, the results will be sorted in ascending order.
@@ -430,10 +428,10 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param sortOrder
-     *        The order to sort the list results by:</p>
+     *        The order in which to sort the list results:</p>
      *        <ul>
-     *        <li>ascending: Sort the list of results in ascending order.</li>
-     *        <li>descending: Sort the list of results in descending order.</li>
+     *        <li>ascending: ascending order.</li>
+     *        <li>descending: descending order.</li>
      *        </ul>
      *        <p>
      *        If not specified, the results will be sorted in ascending order.
@@ -452,11 +450,11 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The order to sort the list results by:
+     * The order in which to sort the list results:
      * </p>
      * <ul>
-     * <li>ascending: Sort the list of results in ascending order.</li>
-     * <li>descending: Sort the list of results in descending order.</li>
+     * <li>ascending: ascending order.</li>
+     * <li>descending: descending order.</li>
      * </ul>
      * <p>
      * If not specified, the results will be sorted in ascending order.
@@ -466,10 +464,10 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param sortOrder
-     *        The order to sort the list results by:</p>
+     *        The order in which to sort the list results:</p>
      *        <ul>
-     *        <li>ascending: Sort the list of results in ascending order.</li>
-     *        <li>descending: Sort the list of results in descending order.</li>
+     *        <li>ascending: ascending order.</li>
+     *        <li>descending: descending order.</li>
      *        </ul>
      *        <p>
      *        If not specified, the results will be sorted in ascending order.
@@ -487,11 +485,11 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The order to sort the list results by:
+     * The order in which to sort the list results:
      * </p>
      * <ul>
-     * <li>ascending: Sort the list of results in ascending order.</li>
-     * <li>descending: Sort the list of results in descending order.</li>
+     * <li>ascending: ascending order.</li>
+     * <li>descending: descending order.</li>
      * </ul>
      * <p>
      * If not specified, the results will be sorted in ascending order.
@@ -501,10 +499,10 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param sortOrder
-     *        The order to sort the list results by:</p>
+     *        The order in which to sort the list results:</p>
      *        <ul>
-     *        <li>ascending: Sort the list of results in ascending order.</li>
-     *        <li>descending: Sort the list of results in descending order.</li>
+     *        <li>ascending: ascending order.</li>
+     *        <li>descending: descending order.</li>
      *        </ul>
      *        <p>
      *        If not specified, the results will be sorted in ascending order.
@@ -523,17 +521,16 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A specific Amazon S3 bucket name to limit the search for revisions.
+     * An Amazon S3 bucket name to limit the search for revisions.
      * </p>
      * <p>
-     * If set to null, then all of the user's buckets will be searched.
+     * If set to null, all of the user's buckets will be searched.
      * </p>
      * 
      * @param s3Bucket
-     *        A specific Amazon S3 bucket name to limit the search for
-     *        revisions.</p>
+     *        An Amazon S3 bucket name to limit the search for revisions.</p>
      *        <p>
-     *        If set to null, then all of the user's buckets will be searched.
+     *        If set to null, all of the user's buckets will be searched.
      */
 
     public void setS3Bucket(String s3Bucket) {
@@ -542,16 +539,15 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A specific Amazon S3 bucket name to limit the search for revisions.
+     * An Amazon S3 bucket name to limit the search for revisions.
      * </p>
      * <p>
-     * If set to null, then all of the user's buckets will be searched.
+     * If set to null, all of the user's buckets will be searched.
      * </p>
      * 
-     * @return A specific Amazon S3 bucket name to limit the search for
-     *         revisions.</p>
+     * @return An Amazon S3 bucket name to limit the search for revisions.</p>
      *         <p>
-     *         If set to null, then all of the user's buckets will be searched.
+     *         If set to null, all of the user's buckets will be searched.
      */
 
     public String getS3Bucket() {
@@ -560,17 +556,16 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A specific Amazon S3 bucket name to limit the search for revisions.
+     * An Amazon S3 bucket name to limit the search for revisions.
      * </p>
      * <p>
-     * If set to null, then all of the user's buckets will be searched.
+     * If set to null, all of the user's buckets will be searched.
      * </p>
      * 
      * @param s3Bucket
-     *        A specific Amazon S3 bucket name to limit the search for
-     *        revisions.</p>
+     *        An Amazon S3 bucket name to limit the search for revisions.</p>
      *        <p>
-     *        If set to null, then all of the user's buckets will be searched.
+     *        If set to null, all of the user's buckets will be searched.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -582,13 +577,13 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A specific key prefix for the set of Amazon S3 objects to limit the
-     * search for revisions.
+     * A key prefix for the set of Amazon S3 objects to limit the search for
+     * revisions.
      * </p>
      * 
      * @param s3KeyPrefix
-     *        A specific key prefix for the set of Amazon S3 objects to limit
-     *        the search for revisions.
+     *        A key prefix for the set of Amazon S3 objects to limit the search
+     *        for revisions.
      */
 
     public void setS3KeyPrefix(String s3KeyPrefix) {
@@ -597,12 +592,12 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A specific key prefix for the set of Amazon S3 objects to limit the
-     * search for revisions.
+     * A key prefix for the set of Amazon S3 objects to limit the search for
+     * revisions.
      * </p>
      * 
-     * @return A specific key prefix for the set of Amazon S3 objects to limit
-     *         the search for revisions.
+     * @return A key prefix for the set of Amazon S3 objects to limit the search
+     *         for revisions.
      */
 
     public String getS3KeyPrefix() {
@@ -611,13 +606,13 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A specific key prefix for the set of Amazon S3 objects to limit the
-     * search for revisions.
+     * A key prefix for the set of Amazon S3 objects to limit the search for
+     * revisions.
      * </p>
      * 
      * @param s3KeyPrefix
-     *        A specific key prefix for the set of Amazon S3 objects to limit
-     *        the search for revisions.
+     *        A key prefix for the set of Amazon S3 objects to limit the search
+     *        for revisions.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -637,8 +632,7 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
      * group.</li>
      * <li>exclude: Do not list revisions that are target revisions of a
      * deployment group.</li>
-     * <li>ignore: List all revisions, regardless of whether they are target
-     * revisions of a deployment group.</li>
+     * <li>ignore: List all revisions.</li>
      * </ul>
      * 
      * @param deployed
@@ -649,8 +643,7 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
      *        deployment group.</li>
      *        <li>exclude: Do not list revisions that are target revisions of a
      *        deployment group.</li>
-     *        <li>ignore: List all revisions, regardless of whether they are
-     *        target revisions of a deployment group.</li>
+     *        <li>ignore: List all revisions.</li>
      * @see ListStateFilterAction
      */
 
@@ -668,8 +661,7 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
      * group.</li>
      * <li>exclude: Do not list revisions that are target revisions of a
      * deployment group.</li>
-     * <li>ignore: List all revisions, regardless of whether they are target
-     * revisions of a deployment group.</li>
+     * <li>ignore: List all revisions.</li>
      * </ul>
      * 
      * @return Whether to list revisions based on whether the revision is the
@@ -679,8 +671,7 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
      *         deployment group.</li>
      *         <li>exclude: Do not list revisions that are target revisions of a
      *         deployment group.</li>
-     *         <li>ignore: List all revisions, regardless of whether they are
-     *         target revisions of a deployment group.</li>
+     *         <li>ignore: List all revisions.</li>
      * @see ListStateFilterAction
      */
 
@@ -698,8 +689,7 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
      * group.</li>
      * <li>exclude: Do not list revisions that are target revisions of a
      * deployment group.</li>
-     * <li>ignore: List all revisions, regardless of whether they are target
-     * revisions of a deployment group.</li>
+     * <li>ignore: List all revisions.</li>
      * </ul>
      * 
      * @param deployed
@@ -710,8 +700,7 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
      *        deployment group.</li>
      *        <li>exclude: Do not list revisions that are target revisions of a
      *        deployment group.</li>
-     *        <li>ignore: List all revisions, regardless of whether they are
-     *        target revisions of a deployment group.</li>
+     *        <li>ignore: List all revisions.</li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ListStateFilterAction
@@ -732,8 +721,7 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
      * group.</li>
      * <li>exclude: Do not list revisions that are target revisions of a
      * deployment group.</li>
-     * <li>ignore: List all revisions, regardless of whether they are target
-     * revisions of a deployment group.</li>
+     * <li>ignore: List all revisions.</li>
      * </ul>
      * 
      * @param deployed
@@ -744,8 +732,7 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
      *        deployment group.</li>
      *        <li>exclude: Do not list revisions that are target revisions of a
      *        deployment group.</li>
-     *        <li>ignore: List all revisions, regardless of whether they are
-     *        target revisions of a deployment group.</li>
+     *        <li>ignore: List all revisions.</li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ListStateFilterAction
@@ -765,8 +752,7 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
      * group.</li>
      * <li>exclude: Do not list revisions that are target revisions of a
      * deployment group.</li>
-     * <li>ignore: List all revisions, regardless of whether they are target
-     * revisions of a deployment group.</li>
+     * <li>ignore: List all revisions.</li>
      * </ul>
      * 
      * @param deployed
@@ -777,8 +763,7 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
      *        deployment group.</li>
      *        <li>exclude: Do not list revisions that are target revisions of a
      *        deployment group.</li>
-     *        <li>ignore: List all revisions, regardless of whether they are
-     *        target revisions of a deployment group.</li>
+     *        <li>ignore: List all revisions.</li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ListStateFilterAction
@@ -792,14 +777,13 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * An identifier that was returned from the previous list application
-     * revisions call, which can be used to return the next set of applications
-     * in the list.
+     * An identifier returned from the previous list application revisions call.
+     * It can be used to return the next set of applications in the list.
      * </p>
      * 
      * @param nextToken
-     *        An identifier that was returned from the previous list application
-     *        revisions call, which can be used to return the next set of
+     *        An identifier returned from the previous list application
+     *        revisions call. It can be used to return the next set of
      *        applications in the list.
      */
 
@@ -809,14 +793,13 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * An identifier that was returned from the previous list application
-     * revisions call, which can be used to return the next set of applications
-     * in the list.
+     * An identifier returned from the previous list application revisions call.
+     * It can be used to return the next set of applications in the list.
      * </p>
      * 
-     * @return An identifier that was returned from the previous list
-     *         application revisions call, which can be used to return the next
-     *         set of applications in the list.
+     * @return An identifier returned from the previous list application
+     *         revisions call. It can be used to return the next set of
+     *         applications in the list.
      */
 
     public String getNextToken() {
@@ -825,14 +808,13 @@ public class ListApplicationRevisionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * An identifier that was returned from the previous list application
-     * revisions call, which can be used to return the next set of applications
-     * in the list.
+     * An identifier returned from the previous list application revisions call.
+     * It can be used to return the next set of applications in the list.
      * </p>
      * 
      * @param nextToken
-     *        An identifier that was returned from the previous list application
-     *        revisions call, which can be used to return the next set of
+     *        An identifier returned from the previous list application
+     *        revisions call. It can be used to return the next set of
      *        applications in the list.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.

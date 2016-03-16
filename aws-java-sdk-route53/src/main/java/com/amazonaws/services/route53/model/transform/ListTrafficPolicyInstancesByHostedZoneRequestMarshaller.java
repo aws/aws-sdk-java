@@ -32,6 +32,7 @@ import com.amazonaws.services.route53.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.XMLWriter;
 
 /**
@@ -59,40 +60,30 @@ public class ListTrafficPolicyInstancesByHostedZoneRequestMarshaller
 
         request.setResourcePath(uriResourcePath);
 
-        String hostedZoneId = (listTrafficPolicyInstancesByHostedZoneRequest
-                .getHostedZoneId() == null) ? null : StringUtils
-                .fromString(listTrafficPolicyInstancesByHostedZoneRequest
-                        .getHostedZoneId());
-        if (hostedZoneId != null) {
-            request.addParameter("id", hostedZoneId);
+        if (listTrafficPolicyInstancesByHostedZoneRequest.getHostedZoneId() != null) {
+            request.addParameter("id", StringUtils
+                    .fromString(listTrafficPolicyInstancesByHostedZoneRequest
+                            .getHostedZoneId()));
         }
 
-        String trafficPolicyInstanceNameMarker = (listTrafficPolicyInstancesByHostedZoneRequest
-                .getTrafficPolicyInstanceNameMarker() == null) ? null
-                : StringUtils
-                        .fromString(listTrafficPolicyInstancesByHostedZoneRequest
-                                .getTrafficPolicyInstanceNameMarker());
-        if (trafficPolicyInstanceNameMarker != null) {
-            request.addParameter("trafficpolicyinstancename",
-                    trafficPolicyInstanceNameMarker);
+        if (listTrafficPolicyInstancesByHostedZoneRequest
+                .getTrafficPolicyInstanceNameMarker() != null) {
+            request.addParameter("trafficpolicyinstancename", StringUtils
+                    .fromString(listTrafficPolicyInstancesByHostedZoneRequest
+                            .getTrafficPolicyInstanceNameMarker()));
         }
 
-        String trafficPolicyInstanceTypeMarker = (listTrafficPolicyInstancesByHostedZoneRequest
-                .getTrafficPolicyInstanceTypeMarker() == null) ? null
-                : StringUtils
-                        .fromString(listTrafficPolicyInstancesByHostedZoneRequest
-                                .getTrafficPolicyInstanceTypeMarker());
-        if (trafficPolicyInstanceTypeMarker != null) {
-            request.addParameter("trafficpolicyinstancetype",
-                    trafficPolicyInstanceTypeMarker);
+        if (listTrafficPolicyInstancesByHostedZoneRequest
+                .getTrafficPolicyInstanceTypeMarker() != null) {
+            request.addParameter("trafficpolicyinstancetype", StringUtils
+                    .fromString(listTrafficPolicyInstancesByHostedZoneRequest
+                            .getTrafficPolicyInstanceTypeMarker()));
         }
 
-        String maxItems = (listTrafficPolicyInstancesByHostedZoneRequest
-                .getMaxItems() == null) ? null : StringUtils
-                .fromString(listTrafficPolicyInstancesByHostedZoneRequest
-                        .getMaxItems());
-        if (maxItems != null) {
-            request.addParameter("maxitems", maxItems);
+        if (listTrafficPolicyInstancesByHostedZoneRequest.getMaxItems() != null) {
+            request.addParameter("maxitems", StringUtils
+                    .fromString(listTrafficPolicyInstancesByHostedZoneRequest
+                            .getMaxItems()));
         }
 
         return request;

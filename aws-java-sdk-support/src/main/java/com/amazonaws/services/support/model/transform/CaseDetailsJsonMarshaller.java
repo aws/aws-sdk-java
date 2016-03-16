@@ -30,6 +30,7 @@ import com.amazonaws.services.support.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,44 +54,35 @@ public class CaseDetailsJsonMarshaller {
             if (caseDetails.getCaseId() != null) {
                 jsonWriter.key("caseId").value(caseDetails.getCaseId());
             }
-
             if (caseDetails.getDisplayId() != null) {
                 jsonWriter.key("displayId").value(caseDetails.getDisplayId());
             }
-
             if (caseDetails.getSubject() != null) {
                 jsonWriter.key("subject").value(caseDetails.getSubject());
             }
-
             if (caseDetails.getStatus() != null) {
                 jsonWriter.key("status").value(caseDetails.getStatus());
             }
-
             if (caseDetails.getServiceCode() != null) {
                 jsonWriter.key("serviceCode").value(
                         caseDetails.getServiceCode());
             }
-
             if (caseDetails.getCategoryCode() != null) {
                 jsonWriter.key("categoryCode").value(
                         caseDetails.getCategoryCode());
             }
-
             if (caseDetails.getSeverityCode() != null) {
                 jsonWriter.key("severityCode").value(
                         caseDetails.getSeverityCode());
             }
-
             if (caseDetails.getSubmittedBy() != null) {
                 jsonWriter.key("submittedBy").value(
                         caseDetails.getSubmittedBy());
             }
-
             if (caseDetails.getTimeCreated() != null) {
                 jsonWriter.key("timeCreated").value(
                         caseDetails.getTimeCreated());
             }
-
             if (caseDetails.getRecentCommunications() != null) {
                 jsonWriter.key("recentCommunications");
                 RecentCaseCommunicationsJsonMarshaller.getInstance().marshall(
@@ -110,7 +102,6 @@ public class CaseDetailsJsonMarshaller {
                 }
                 jsonWriter.endArray();
             }
-
             if (caseDetails.getLanguage() != null) {
                 jsonWriter.key("language").value(caseDetails.getLanguage());
             }

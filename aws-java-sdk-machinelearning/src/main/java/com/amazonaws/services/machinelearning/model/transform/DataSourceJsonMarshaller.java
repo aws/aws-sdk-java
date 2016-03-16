@@ -30,6 +30,7 @@ import com.amazonaws.services.machinelearning.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,69 +55,55 @@ public class DataSourceJsonMarshaller {
                 jsonWriter.key("DataSourceId").value(
                         dataSource.getDataSourceId());
             }
-
             if (dataSource.getDataLocationS3() != null) {
                 jsonWriter.key("DataLocationS3").value(
                         dataSource.getDataLocationS3());
             }
-
             if (dataSource.getDataRearrangement() != null) {
                 jsonWriter.key("DataRearrangement").value(
                         dataSource.getDataRearrangement());
             }
-
             if (dataSource.getCreatedByIamUser() != null) {
                 jsonWriter.key("CreatedByIamUser").value(
                         dataSource.getCreatedByIamUser());
             }
-
             if (dataSource.getCreatedAt() != null) {
                 jsonWriter.key("CreatedAt").value(dataSource.getCreatedAt());
             }
-
             if (dataSource.getLastUpdatedAt() != null) {
                 jsonWriter.key("LastUpdatedAt").value(
                         dataSource.getLastUpdatedAt());
             }
-
             if (dataSource.getDataSizeInBytes() != null) {
                 jsonWriter.key("DataSizeInBytes").value(
                         dataSource.getDataSizeInBytes());
             }
-
             if (dataSource.getNumberOfFiles() != null) {
                 jsonWriter.key("NumberOfFiles").value(
                         dataSource.getNumberOfFiles());
             }
-
             if (dataSource.getName() != null) {
                 jsonWriter.key("Name").value(dataSource.getName());
             }
-
             if (dataSource.getStatus() != null) {
                 jsonWriter.key("Status").value(dataSource.getStatus());
             }
-
             if (dataSource.getMessage() != null) {
                 jsonWriter.key("Message").value(dataSource.getMessage());
             }
-
             if (dataSource.getRedshiftMetadata() != null) {
                 jsonWriter.key("RedshiftMetadata");
                 RedshiftMetadataJsonMarshaller.getInstance().marshall(
                         dataSource.getRedshiftMetadata(), jsonWriter);
             }
-
             if (dataSource.getRDSMetadata() != null) {
                 jsonWriter.key("RDSMetadata");
                 RDSMetadataJsonMarshaller.getInstance().marshall(
                         dataSource.getRDSMetadata(), jsonWriter);
             }
-
             if (dataSource.getRoleARN() != null) {
                 jsonWriter.key("RoleARN").value(dataSource.getRoleARN());
             }
-
             if (dataSource.getComputeStatistics() != null) {
                 jsonWriter.key("ComputeStatistics").value(
                         dataSource.getComputeStatistics());

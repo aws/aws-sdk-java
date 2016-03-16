@@ -37,6 +37,7 @@ import com.amazonaws.services.config.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -88,23 +89,19 @@ public class ListDiscoveredResourcesRequestMarshaller
                 }
                 jsonWriter.endArray();
             }
-
             if (listDiscoveredResourcesRequest.getResourceName() != null) {
                 jsonWriter.key("resourceName").value(
                         listDiscoveredResourcesRequest.getResourceName());
             }
-
             if (listDiscoveredResourcesRequest.getLimit() != null) {
                 jsonWriter.key("limit").value(
                         listDiscoveredResourcesRequest.getLimit());
             }
-
             if (listDiscoveredResourcesRequest.getIncludeDeletedResources() != null) {
                 jsonWriter.key("includeDeletedResources").value(
                         listDiscoveredResourcesRequest
                                 .getIncludeDeletedResources());
             }
-
             if (listDiscoveredResourcesRequest.getNextToken() != null) {
                 jsonWriter.key("nextToken").value(
                         listDiscoveredResourcesRequest.getNextToken());

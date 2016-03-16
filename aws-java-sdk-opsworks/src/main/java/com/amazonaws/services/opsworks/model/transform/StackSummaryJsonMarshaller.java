@@ -30,6 +30,7 @@ import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,24 +54,19 @@ public class StackSummaryJsonMarshaller {
             if (stackSummary.getStackId() != null) {
                 jsonWriter.key("StackId").value(stackSummary.getStackId());
             }
-
             if (stackSummary.getName() != null) {
                 jsonWriter.key("Name").value(stackSummary.getName());
             }
-
             if (stackSummary.getArn() != null) {
                 jsonWriter.key("Arn").value(stackSummary.getArn());
             }
-
             if (stackSummary.getLayersCount() != null) {
                 jsonWriter.key("LayersCount").value(
                         stackSummary.getLayersCount());
             }
-
             if (stackSummary.getAppsCount() != null) {
                 jsonWriter.key("AppsCount").value(stackSummary.getAppsCount());
             }
-
             if (stackSummary.getInstancesCount() != null) {
                 jsonWriter.key("InstancesCount");
                 InstancesCountJsonMarshaller.getInstance().marshall(

@@ -30,6 +30,7 @@ import com.amazonaws.services.ecs.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -54,12 +55,10 @@ public class MountPointJsonMarshaller {
                 jsonWriter.key("sourceVolume").value(
                         mountPoint.getSourceVolume());
             }
-
             if (mountPoint.getContainerPath() != null) {
                 jsonWriter.key("containerPath").value(
                         mountPoint.getContainerPath());
             }
-
             if (mountPoint.getReadOnly() != null) {
                 jsonWriter.key("readOnly").value(mountPoint.getReadOnly());
             }

@@ -37,6 +37,7 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -65,9 +66,9 @@ public class CreateAuthorizerRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
-                (createAuthorizerRequest.getRestApiId() == null) ? ""
-                        : StringUtils.fromString(createAuthorizerRequest
-                                .getRestApiId()));
+                (createAuthorizerRequest.getRestApiId() != null) ? StringUtils
+                        .fromString(createAuthorizerRequest.getRestApiId())
+                        : "");
         request.setResourcePath(uriResourcePath);
 
         try {
@@ -79,32 +80,26 @@ public class CreateAuthorizerRequestMarshaller implements
             if (createAuthorizerRequest.getName() != null) {
                 jsonWriter.key("name").value(createAuthorizerRequest.getName());
             }
-
             if (createAuthorizerRequest.getType() != null) {
                 jsonWriter.key("type").value(createAuthorizerRequest.getType());
             }
-
             if (createAuthorizerRequest.getAuthorizerUri() != null) {
                 jsonWriter.key("authorizerUri").value(
                         createAuthorizerRequest.getAuthorizerUri());
             }
-
             if (createAuthorizerRequest.getAuthorizerCredentials() != null) {
                 jsonWriter.key("authorizerCredentials").value(
                         createAuthorizerRequest.getAuthorizerCredentials());
             }
-
             if (createAuthorizerRequest.getIdentitySource() != null) {
                 jsonWriter.key("identitySource").value(
                         createAuthorizerRequest.getIdentitySource());
             }
-
             if (createAuthorizerRequest.getIdentityValidationExpression() != null) {
                 jsonWriter.key("identityValidationExpression").value(
                         createAuthorizerRequest
                                 .getIdentityValidationExpression());
             }
-
             if (createAuthorizerRequest.getAuthorizerResultTtlInSeconds() != null) {
                 jsonWriter.key("authorizerResultTtlInSeconds").value(
                         createAuthorizerRequest

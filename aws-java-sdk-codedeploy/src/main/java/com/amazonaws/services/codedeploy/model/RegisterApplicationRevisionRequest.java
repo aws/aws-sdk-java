@@ -29,8 +29,8 @@ public class RegisterApplicationRevisionRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of an existing AWS CodeDeploy application associated with the
-     * applicable IAM user or AWS account.
+     * The name of an AWS CodeDeploy application associated with the applicable
+     * IAM user or AWS account.
      * </p>
      */
     private String applicationName;
@@ -42,21 +42,21 @@ public class RegisterApplicationRevisionRequest extends AmazonWebServiceRequest
     private String description;
     /**
      * <p>
-     * Information about the application revision to register, including the
-     * revision's type and its location.
+     * Information about the application revision to register, including type
+     * and location.
      * </p>
      */
     private RevisionLocation revision;
 
     /**
      * <p>
-     * The name of an existing AWS CodeDeploy application associated with the
-     * applicable IAM user or AWS account.
+     * The name of an AWS CodeDeploy application associated with the applicable
+     * IAM user or AWS account.
      * </p>
      * 
      * @param applicationName
-     *        The name of an existing AWS CodeDeploy application associated with
-     *        the applicable IAM user or AWS account.
+     *        The name of an AWS CodeDeploy application associated with the
+     *        applicable IAM user or AWS account.
      */
 
     public void setApplicationName(String applicationName) {
@@ -65,12 +65,12 @@ public class RegisterApplicationRevisionRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of an existing AWS CodeDeploy application associated with the
-     * applicable IAM user or AWS account.
+     * The name of an AWS CodeDeploy application associated with the applicable
+     * IAM user or AWS account.
      * </p>
      * 
-     * @return The name of an existing AWS CodeDeploy application associated
-     *         with the applicable IAM user or AWS account.
+     * @return The name of an AWS CodeDeploy application associated with the
+     *         applicable IAM user or AWS account.
      */
 
     public String getApplicationName() {
@@ -79,13 +79,13 @@ public class RegisterApplicationRevisionRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of an existing AWS CodeDeploy application associated with the
-     * applicable IAM user or AWS account.
+     * The name of an AWS CodeDeploy application associated with the applicable
+     * IAM user or AWS account.
      * </p>
      * 
      * @param applicationName
-     *        The name of an existing AWS CodeDeploy application associated with
-     *        the applicable IAM user or AWS account.
+     *        The name of an AWS CodeDeploy application associated with the
+     *        applicable IAM user or AWS account.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -139,13 +139,13 @@ public class RegisterApplicationRevisionRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Information about the application revision to register, including the
-     * revision's type and its location.
+     * Information about the application revision to register, including type
+     * and location.
      * </p>
      * 
      * @param revision
      *        Information about the application revision to register, including
-     *        the revision's type and its location.
+     *        type and location.
      */
 
     public void setRevision(RevisionLocation revision) {
@@ -154,12 +154,12 @@ public class RegisterApplicationRevisionRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Information about the application revision to register, including the
-     * revision's type and its location.
+     * Information about the application revision to register, including type
+     * and location.
      * </p>
      * 
      * @return Information about the application revision to register, including
-     *         the revision's type and its location.
+     *         type and location.
      */
 
     public RevisionLocation getRevision() {
@@ -168,13 +168,13 @@ public class RegisterApplicationRevisionRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Information about the application revision to register, including the
-     * revision's type and its location.
+     * Information about the application revision to register, including type
+     * and location.
      * </p>
      * 
      * @param revision
      *        Information about the application revision to register, including
-     *        the revision's type and its location.
+     *        type and location.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

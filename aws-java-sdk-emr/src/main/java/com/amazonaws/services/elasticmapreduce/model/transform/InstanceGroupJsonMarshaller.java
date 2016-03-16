@@ -30,6 +30,7 @@ import com.amazonaws.services.elasticmapreduce.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,39 +54,31 @@ public class InstanceGroupJsonMarshaller {
             if (instanceGroup.getId() != null) {
                 jsonWriter.key("Id").value(instanceGroup.getId());
             }
-
             if (instanceGroup.getName() != null) {
                 jsonWriter.key("Name").value(instanceGroup.getName());
             }
-
             if (instanceGroup.getMarket() != null) {
                 jsonWriter.key("Market").value(instanceGroup.getMarket());
             }
-
             if (instanceGroup.getInstanceGroupType() != null) {
                 jsonWriter.key("InstanceGroupType").value(
                         instanceGroup.getInstanceGroupType());
             }
-
             if (instanceGroup.getBidPrice() != null) {
                 jsonWriter.key("BidPrice").value(instanceGroup.getBidPrice());
             }
-
             if (instanceGroup.getInstanceType() != null) {
                 jsonWriter.key("InstanceType").value(
                         instanceGroup.getInstanceType());
             }
-
             if (instanceGroup.getRequestedInstanceCount() != null) {
                 jsonWriter.key("RequestedInstanceCount").value(
                         instanceGroup.getRequestedInstanceCount());
             }
-
             if (instanceGroup.getRunningInstanceCount() != null) {
                 jsonWriter.key("RunningInstanceCount").value(
                         instanceGroup.getRunningInstanceCount());
             }
-
             if (instanceGroup.getStatus() != null) {
                 jsonWriter.key("Status");
                 InstanceGroupStatusJsonMarshaller.getInstance().marshall(
@@ -123,7 +116,6 @@ public class InstanceGroupJsonMarshaller {
                 }
                 jsonWriter.endArray();
             }
-
             if (instanceGroup.getEbsOptimized() != null) {
                 jsonWriter.key("EbsOptimized").value(
                         instanceGroup.getEbsOptimized());

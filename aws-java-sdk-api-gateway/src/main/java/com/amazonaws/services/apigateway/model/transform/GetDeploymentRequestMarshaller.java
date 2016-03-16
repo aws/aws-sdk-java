@@ -37,6 +37,7 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -65,14 +66,13 @@ public class GetDeploymentRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
-                (getDeploymentRequest.getRestApiId() == null) ? ""
-                        : StringUtils.fromString(getDeploymentRequest
-                                .getRestApiId()));
+                (getDeploymentRequest.getRestApiId() != null) ? StringUtils
+                        .fromString(getDeploymentRequest.getRestApiId()) : "");
         uriResourcePath = uriResourcePath.replace(
                 "{deployment_id}",
-                (getDeploymentRequest.getDeploymentId() == null) ? ""
-                        : StringUtils.fromString(getDeploymentRequest
-                                .getDeploymentId()));
+                (getDeploymentRequest.getDeploymentId() != null) ? StringUtils
+                        .fromString(getDeploymentRequest.getDeploymentId())
+                        : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

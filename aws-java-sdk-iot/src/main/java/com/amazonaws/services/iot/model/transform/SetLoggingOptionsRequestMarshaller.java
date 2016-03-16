@@ -37,6 +37,7 @@ import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -73,12 +74,10 @@ public class SetLoggingOptionsRequestMarshaller implements
                     .getLoggingOptionsPayload();
             if (loggingOptionsPayload != null) {
                 jsonWriter.object();
-
                 if (loggingOptionsPayload.getRoleArn() != null) {
                     jsonWriter.key("roleArn").value(
                             loggingOptionsPayload.getRoleArn());
                 }
-
                 if (loggingOptionsPayload.getLogLevel() != null) {
                     jsonWriter.key("logLevel").value(
                             loggingOptionsPayload.getLogLevel());

@@ -30,6 +30,7 @@ import com.amazonaws.services.kms.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,30 +54,24 @@ public class GrantListEntryJsonMarshaller {
             if (grantListEntry.getKeyId() != null) {
                 jsonWriter.key("KeyId").value(grantListEntry.getKeyId());
             }
-
             if (grantListEntry.getGrantId() != null) {
                 jsonWriter.key("GrantId").value(grantListEntry.getGrantId());
             }
-
             if (grantListEntry.getName() != null) {
                 jsonWriter.key("Name").value(grantListEntry.getName());
             }
-
             if (grantListEntry.getCreationDate() != null) {
                 jsonWriter.key("CreationDate").value(
                         grantListEntry.getCreationDate());
             }
-
             if (grantListEntry.getGranteePrincipal() != null) {
                 jsonWriter.key("GranteePrincipal").value(
                         grantListEntry.getGranteePrincipal());
             }
-
             if (grantListEntry.getRetiringPrincipal() != null) {
                 jsonWriter.key("RetiringPrincipal").value(
                         grantListEntry.getRetiringPrincipal());
             }
-
             if (grantListEntry.getIssuingAccount() != null) {
                 jsonWriter.key("IssuingAccount").value(
                         grantListEntry.getIssuingAccount());
@@ -94,7 +89,6 @@ public class GrantListEntryJsonMarshaller {
                 }
                 jsonWriter.endArray();
             }
-
             if (grantListEntry.getConstraints() != null) {
                 jsonWriter.key("Constraints");
                 GrantConstraintsJsonMarshaller.getInstance().marshall(

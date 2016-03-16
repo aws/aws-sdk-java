@@ -37,6 +37,7 @@ import com.amazonaws.services.gamelift.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -81,12 +82,10 @@ public class DescribeFleetUtilizationRequestMarshaller
                 }
                 jsonWriter.endArray();
             }
-
             if (describeFleetUtilizationRequest.getLimit() != null) {
                 jsonWriter.key("Limit").value(
                         describeFleetUtilizationRequest.getLimit());
             }
-
             if (describeFleetUtilizationRequest.getNextToken() != null) {
                 jsonWriter.key("NextToken").value(
                         describeFleetUtilizationRequest.getNextToken());

@@ -30,6 +30,7 @@ import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -55,32 +56,26 @@ public class CertificateDescriptionJsonMarshaller {
                 jsonWriter.key("certificateArn").value(
                         certificateDescription.getCertificateArn());
             }
-
             if (certificateDescription.getCertificateId() != null) {
                 jsonWriter.key("certificateId").value(
                         certificateDescription.getCertificateId());
             }
-
             if (certificateDescription.getStatus() != null) {
                 jsonWriter.key("status").value(
                         certificateDescription.getStatus());
             }
-
             if (certificateDescription.getCertificatePem() != null) {
                 jsonWriter.key("certificatePem").value(
                         certificateDescription.getCertificatePem());
             }
-
             if (certificateDescription.getOwnedBy() != null) {
                 jsonWriter.key("ownedBy").value(
                         certificateDescription.getOwnedBy());
             }
-
             if (certificateDescription.getCreationDate() != null) {
                 jsonWriter.key("creationDate").value(
                         certificateDescription.getCreationDate());
             }
-
             if (certificateDescription.getLastModifiedDate() != null) {
                 jsonWriter.key("lastModifiedDate").value(
                         certificateDescription.getLastModifiedDate());

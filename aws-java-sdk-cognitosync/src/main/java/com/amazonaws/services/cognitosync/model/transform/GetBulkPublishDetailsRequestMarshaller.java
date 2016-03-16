@@ -37,6 +37,7 @@ import com.amazonaws.services.cognitosync.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -64,11 +65,12 @@ public class GetBulkPublishDetailsRequestMarshaller
 
         String uriResourcePath = "/identitypools/{IdentityPoolId}/getBulkPublishDetails";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{IdentityPoolId}",
-                (getBulkPublishDetailsRequest.getIdentityPoolId() == null) ? ""
-                        : StringUtils.fromString(getBulkPublishDetailsRequest
-                                .getIdentityPoolId()));
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{IdentityPoolId}",
+                        (getBulkPublishDetailsRequest.getIdentityPoolId() != null) ? StringUtils
+                                .fromString(getBulkPublishDetailsRequest
+                                        .getIdentityPoolId()) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

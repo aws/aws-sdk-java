@@ -37,6 +37,7 @@ import com.amazonaws.services.storagegateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -72,22 +73,18 @@ public class CreateTapesRequestMarshaller implements
                 jsonWriter.key("GatewayARN").value(
                         createTapesRequest.getGatewayARN());
             }
-
             if (createTapesRequest.getTapeSizeInBytes() != null) {
                 jsonWriter.key("TapeSizeInBytes").value(
                         createTapesRequest.getTapeSizeInBytes());
             }
-
             if (createTapesRequest.getClientToken() != null) {
                 jsonWriter.key("ClientToken").value(
                         createTapesRequest.getClientToken());
             }
-
             if (createTapesRequest.getNumTapesToCreate() != null) {
                 jsonWriter.key("NumTapesToCreate").value(
                         createTapesRequest.getNumTapesToCreate());
             }
-
             if (createTapesRequest.getTapeBarcodePrefix() != null) {
                 jsonWriter.key("TapeBarcodePrefix").value(
                         createTapesRequest.getTapeBarcodePrefix());

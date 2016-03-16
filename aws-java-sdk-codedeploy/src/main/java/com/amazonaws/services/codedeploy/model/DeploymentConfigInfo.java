@@ -39,13 +39,13 @@ public class DeploymentConfigInfo implements Serializable, Cloneable {
     private String deploymentConfigName;
     /**
      * <p>
-     * Information about the number or percentage of minimum healthy instances.
+     * Information about the number or percentage of minimum healthy instance.
      * </p>
      */
     private MinimumHealthyHosts minimumHealthyHosts;
     /**
      * <p>
-     * The time that the deployment configuration was created.
+     * The time at which the deployment configuration was created.
      * </p>
      */
     private java.util.Date createTime;
@@ -135,12 +135,12 @@ public class DeploymentConfigInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the number or percentage of minimum healthy instances.
+     * Information about the number or percentage of minimum healthy instance.
      * </p>
      * 
      * @param minimumHealthyHosts
      *        Information about the number or percentage of minimum healthy
-     *        instances.
+     *        instance.
      */
 
     public void setMinimumHealthyHosts(MinimumHealthyHosts minimumHealthyHosts) {
@@ -149,11 +149,11 @@ public class DeploymentConfigInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the number or percentage of minimum healthy instances.
+     * Information about the number or percentage of minimum healthy instance.
      * </p>
      * 
      * @return Information about the number or percentage of minimum healthy
-     *         instances.
+     *         instance.
      */
 
     public MinimumHealthyHosts getMinimumHealthyHosts() {
@@ -162,12 +162,12 @@ public class DeploymentConfigInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the number or percentage of minimum healthy instances.
+     * Information about the number or percentage of minimum healthy instance.
      * </p>
      * 
      * @param minimumHealthyHosts
      *        Information about the number or percentage of minimum healthy
-     *        instances.
+     *        instance.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
@@ -180,11 +180,11 @@ public class DeploymentConfigInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time that the deployment configuration was created.
+     * The time at which the deployment configuration was created.
      * </p>
      * 
      * @param createTime
-     *        The time that the deployment configuration was created.
+     *        The time at which the deployment configuration was created.
      */
 
     public void setCreateTime(java.util.Date createTime) {
@@ -193,10 +193,10 @@ public class DeploymentConfigInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time that the deployment configuration was created.
+     * The time at which the deployment configuration was created.
      * </p>
      * 
-     * @return The time that the deployment configuration was created.
+     * @return The time at which the deployment configuration was created.
      */
 
     public java.util.Date getCreateTime() {
@@ -205,11 +205,11 @@ public class DeploymentConfigInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time that the deployment configuration was created.
+     * The time at which the deployment configuration was created.
      * </p>
      * 
      * @param createTime
-     *        The time that the deployment configuration was created.
+     *        The time at which the deployment configuration was created.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */

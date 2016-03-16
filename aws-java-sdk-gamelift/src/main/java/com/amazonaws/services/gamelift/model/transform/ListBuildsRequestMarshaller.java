@@ -37,6 +37,7 @@ import com.amazonaws.services.gamelift.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -71,11 +72,9 @@ public class ListBuildsRequestMarshaller implements
             if (listBuildsRequest.getStatus() != null) {
                 jsonWriter.key("Status").value(listBuildsRequest.getStatus());
             }
-
             if (listBuildsRequest.getLimit() != null) {
                 jsonWriter.key("Limit").value(listBuildsRequest.getLimit());
             }
-
             if (listBuildsRequest.getNextToken() != null) {
                 jsonWriter.key("NextToken").value(
                         listBuildsRequest.getNextToken());

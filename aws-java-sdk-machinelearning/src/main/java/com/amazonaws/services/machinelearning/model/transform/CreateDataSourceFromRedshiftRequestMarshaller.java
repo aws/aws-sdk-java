@@ -37,6 +37,7 @@ import com.amazonaws.services.machinelearning.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -74,25 +75,21 @@ public class CreateDataSourceFromRedshiftRequestMarshaller
                 jsonWriter.key("DataSourceId").value(
                         createDataSourceFromRedshiftRequest.getDataSourceId());
             }
-
             if (createDataSourceFromRedshiftRequest.getDataSourceName() != null) {
                 jsonWriter.key("DataSourceName")
                         .value(createDataSourceFromRedshiftRequest
                                 .getDataSourceName());
             }
-
             if (createDataSourceFromRedshiftRequest.getDataSpec() != null) {
                 jsonWriter.key("DataSpec");
                 RedshiftDataSpecJsonMarshaller.getInstance().marshall(
                         createDataSourceFromRedshiftRequest.getDataSpec(),
                         jsonWriter);
             }
-
             if (createDataSourceFromRedshiftRequest.getRoleARN() != null) {
                 jsonWriter.key("RoleARN").value(
                         createDataSourceFromRedshiftRequest.getRoleARN());
             }
-
             if (createDataSourceFromRedshiftRequest.getComputeStatistics() != null) {
                 jsonWriter.key("ComputeStatistics").value(
                         createDataSourceFromRedshiftRequest

@@ -37,6 +37,7 @@ import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -72,7 +73,6 @@ public class CreateDeploymentRequestMarshaller implements
                 jsonWriter.key("StackId").value(
                         createDeploymentRequest.getStackId());
             }
-
             if (createDeploymentRequest.getAppId() != null) {
                 jsonWriter.key("AppId").value(
                         createDeploymentRequest.getAppId());
@@ -91,18 +91,15 @@ public class CreateDeploymentRequestMarshaller implements
                 }
                 jsonWriter.endArray();
             }
-
             if (createDeploymentRequest.getCommand() != null) {
                 jsonWriter.key("Command");
                 DeploymentCommandJsonMarshaller.getInstance().marshall(
                         createDeploymentRequest.getCommand(), jsonWriter);
             }
-
             if (createDeploymentRequest.getComment() != null) {
                 jsonWriter.key("Comment").value(
                         createDeploymentRequest.getComment());
             }
-
             if (createDeploymentRequest.getCustomJson() != null) {
                 jsonWriter.key("CustomJson").value(
                         createDeploymentRequest.getCustomJson());

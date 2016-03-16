@@ -37,6 +37,7 @@ import com.amazonaws.services.cognitosync.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -64,26 +65,29 @@ public class SubscribeToDatasetRequestMarshaller
 
         String uriResourcePath = "/identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets/{DatasetName}/subscriptions/{DeviceId}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{IdentityPoolId}",
-                (subscribeToDatasetRequest.getIdentityPoolId() == null) ? ""
-                        : StringUtils.fromString(subscribeToDatasetRequest
-                                .getIdentityPoolId()));
-        uriResourcePath = uriResourcePath.replace(
-                "{IdentityId}",
-                (subscribeToDatasetRequest.getIdentityId() == null) ? ""
-                        : StringUtils.fromString(subscribeToDatasetRequest
-                                .getIdentityId()));
-        uriResourcePath = uriResourcePath.replace(
-                "{DatasetName}",
-                (subscribeToDatasetRequest.getDatasetName() == null) ? ""
-                        : StringUtils.fromString(subscribeToDatasetRequest
-                                .getDatasetName()));
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{IdentityPoolId}",
+                        (subscribeToDatasetRequest.getIdentityPoolId() != null) ? StringUtils
+                                .fromString(subscribeToDatasetRequest
+                                        .getIdentityPoolId()) : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{IdentityId}",
+                        (subscribeToDatasetRequest.getIdentityId() != null) ? StringUtils
+                                .fromString(subscribeToDatasetRequest
+                                        .getIdentityId()) : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{DatasetName}",
+                        (subscribeToDatasetRequest.getDatasetName() != null) ? StringUtils
+                                .fromString(subscribeToDatasetRequest
+                                        .getDatasetName()) : "");
         uriResourcePath = uriResourcePath.replace(
                 "{DeviceId}",
-                (subscribeToDatasetRequest.getDeviceId() == null) ? ""
-                        : StringUtils.fromString(subscribeToDatasetRequest
-                                .getDeviceId()));
+                (subscribeToDatasetRequest.getDeviceId() != null) ? StringUtils
+                        .fromString(subscribeToDatasetRequest.getDeviceId())
+                        : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

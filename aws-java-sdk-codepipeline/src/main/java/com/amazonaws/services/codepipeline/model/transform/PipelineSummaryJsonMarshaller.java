@@ -30,6 +30,7 @@ import com.amazonaws.services.codepipeline.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
@@ -53,15 +54,12 @@ public class PipelineSummaryJsonMarshaller {
             if (pipelineSummary.getName() != null) {
                 jsonWriter.key("name").value(pipelineSummary.getName());
             }
-
             if (pipelineSummary.getVersion() != null) {
                 jsonWriter.key("version").value(pipelineSummary.getVersion());
             }
-
             if (pipelineSummary.getCreated() != null) {
                 jsonWriter.key("created").value(pipelineSummary.getCreated());
             }
-
             if (pipelineSummary.getUpdated() != null) {
                 jsonWriter.key("updated").value(pipelineSummary.getUpdated());
             }
